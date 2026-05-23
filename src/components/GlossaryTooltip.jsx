@@ -10,8 +10,8 @@ import {
   normalizeGlossaryText,
 } from '../utils/glossary.js';
 
-const DEFAULT_MAX_TERMS_PER_TEXT = 7;
-const PREANSWER_MAX_TERMS_PER_TEXT = 5;
+const DEFAULT_MAX_TERMS_PER_TEXT = 8;
+const PREANSWER_MAX_TERMS_PER_TEXT = 6;
 const VIEWPORT_PADDING = 12;
 const SAFE_TOP_PADDING = 12;
 const TOOLTIP_GAP = 8;
@@ -68,6 +68,27 @@ function clamp(value, min, max) {
 function isStrictAcronymAlias(alias = '') {
   const value = String(alias).trim();
   return /^[A-ZÇĞİÖŞÜ0-9]{1,4}$/.test(value) && /[A-ZÇĞİÖŞÜ]/.test(value);
+}
+
+function getEntryMatchingPriority(entry = {}, alias = '') {
+  const explicit = Number(entry.matchingPriority ?? entry.priorityScore ?? 0);
+  let score = Number.isFinite(explicit) ? explicit : 0;
+  const normalizedAlias = normalizeGlossaryText(alias);
+  const normalizedTerm = normalizeGlossaryText(entry.canonicalTerm || entry.displayTerm || entry.term || '');
+  if (normalizedAlias && normalizedTerm && normalizedAlias === normalizedTerm) score += 18;
+  if (entry.isMultiWordTerm || /\s/.test(String(alias || entry.term || ''))) score += 10;
+  score += Math.min(String(alias || '').trim().split(/\s+/).length, 6);
+  if (!score) score = 50;
+  return score;
+}
+
+function compareAliasSpecificity(a = {}, b = {}) {
+  if (a.alias.length !== b.alias.length) return b.alias.length - a.alias.length;
+  const ap = getEntryMatchingPriority(a.entry, a.alias);
+  const bp = getEntryMatchingPriority(b.entry, b.alias);
+  if (ap !== bp) return bp - ap;
+  if (a.normalized.length !== b.normalized.length) return b.normalized.length - a.normalized.length;
+  return String(a.entry?.term || '').localeCompare(String(b.entry?.term || ''), 'tr');
 }
 
 function isValidAliasMatch(item, matchedValue, source, matchStart, matchEnd, protectedUnitRanges) {
@@ -209,7 +230,7 @@ function makeMatcher(terms = []) {
 
   const deduped = Array.from(
     new Map(aliasEntries.map((item) => [`${item.normalized}::${item.alias}::${item.entry.term}`, item])).values(),
-  ).sort((a, b) => b.alias.length - a.alias.length || b.normalized.length - a.normalized.length);
+  ).sort(compareAliasSpecificity);
 
   if (!deduped.length) {
     MATCHER_CACHE.set(terms, null);
@@ -223,6 +244,11 @@ function makeMatcher(terms = []) {
     map.set(item.normalized, current);
     return map;
   }, new Map());
+
+  aliasMap.forEach((items, key) => {
+    items.sort(compareAliasSpecificity);
+    aliasMap.set(key, items);
+  });
 
   const matcher = {
     regex: new RegExp(`(^|[^\\p{L}\\p{N}_])(${pattern})(${TURKISH_SUFFIX_PATTERN})?(?=$|[^\\p{L}\\p{N}_])`, 'giu'),
@@ -255,10 +281,10 @@ function splitByGlossary(text = '', terms = [], maxTerms = DEFAULT_MAX_TERMS_PER
     const baseValue = match[2] || '';
     const suffixValue = match[3] || '';
     const suffixIsValid = suffixValue ? isLikelyTurkishSuffix(suffixValue) : true;
-    const value = suffixIsValid ? `${baseValue}${suffixValue}` : baseValue;
+    const visibleValue = `${baseValue}${suffixValue || ''}`;
     const matchStart = match.index + prefix.length;
     const baseEnd = matchStart + baseValue.length;
-    const matchEnd = matchStart + value.length;
+    const fullTermEnd = matchStart + visibleValue.length;
 
     if (matchStart > lastIndex) parts.push({ type: 'text', value: source.slice(lastIndex, matchStart) });
 
@@ -268,12 +294,15 @@ function splitByGlossary(text = '', terms = [], maxTerms = DEFAULT_MAX_TERMS_PER
     const canonical = normalizeGlossaryText(entry?.term || baseValue);
 
     if (entry && usedTerms.size < limit && !usedTerms.has(canonical)) {
-      parts.push({ type: 'term', value, entry });
+      parts.push({ type: 'term', value: visibleValue, entry });
       usedTerms.add(canonical);
     } else {
-      parts.push({ type: 'text', value });
+      // If a short alias/prefix was rejected, keep the entire consumed word as
+      // one plain segment. Otherwise Turkish profile words can be visually split
+      // into artificial spans such as "ac" + "il" or "erk" + "ek".
+      parts.push({ type: 'text', value: visibleValue });
     }
-    lastIndex = matchEnd;
+    lastIndex = fullTermEnd;
   }
 
   if (lastIndex < source.length) parts.push({ type: 'text', value: source.slice(lastIndex) });
@@ -542,7 +571,7 @@ function hasPreAnswerLeakageSignal(value = '') {
 
 function neutralPreAnswerDefinition(entry = {}) {
   const category = String(entry.category || '').trim();
-  const term = entry.term || 'Bu kavram';
+  const term = entry.displayTerm || entry.canonicalTerm || entry.term || 'Bu kavram';
   const normalizedCategory = category.toLocaleLowerCase('tr');
 
   if (/ilaç|farmakoloji|antidot|tedavi|ajan|antibiyotik|antikoagülan/.test(normalizedCategory)) {
@@ -584,6 +613,7 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
   const relatedCases = asList(entry.relatedCases || entry.relatedCaseIds);
   const relatedQuestions = asList(entry.relatedQuestions);
   const relatedFlashcards = asList(entry.relatedFlashcards);
+  const cardTitle = entry.displayTerm || entry.canonicalTerm || entry.term || '';
   const secondaryName = entry.abbreviation || entry.EnglishName || entry.LatinName || '';
 
   const blockedKeys = useMemo(() => {
@@ -618,8 +648,8 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
     <span className="smart-glossary-card" data-preanswer={isPreAnswer ? 'true' : 'false'} data-nesting-level={nestingLevel}>
       <span className="smart-glossary-header">
         <span className="smart-glossary-title-wrap">
-          <strong className="smart-glossary-title">{entry.term}</strong>
-          {secondaryName && secondaryName !== entry.term ? <small className="smart-glossary-secondary-name">{secondaryName}</small> : null}
+          <strong className="smart-glossary-title">{cardTitle}</strong>
+          {secondaryName && secondaryName !== cardTitle ? <small className="smart-glossary-secondary-name">{secondaryName}</small> : null}
         </span>
         {canExpand ? (
           <span className="smart-glossary-header-actions">
@@ -675,6 +705,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
   const id = useMemo(() => `glossary-${reactId.replace(/:/g, '')}`, [reactId]);
   const resolvedEntry = entry || { term: String(children || ''), shortDefinition: definition || '' };
   const description = resolvedEntry.shortDefinition || resolvedEntry.definition || definition || '';
+  const visibleTermLabel = resolvedEntry.displayTerm || resolvedEntry.canonicalTerm || resolvedEntry.term || String(children || '');
 
   const clearCloseTimer = useCallback(() => {
     if (closeTimerRef.current) {
@@ -756,7 +787,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
       data-reveal-mode={revealMode}
       data-nesting-level={nestingLevel}
       aria-describedby={open ? id : undefined}
-      aria-label={`${children}: ${description}`}
+      aria-label={`${visibleTermLabel}: ${description}`}
       onMouseEnter={openNow}
       onMouseLeave={scheduleCloseFromTrigger}
       onPointerEnter={(event) => {

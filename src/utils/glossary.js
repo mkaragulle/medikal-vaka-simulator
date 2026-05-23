@@ -5,6 +5,7 @@ import { TUS_GLOSSARY_SCIENTIFIC_TERMS } from '../data/tusGlossaryScientificInde
 import { TUS_GLOSSARY_NESTED_CLINICAL_TERMS } from '../data/tusGlossaryNestedClinicalIndex.js';
 import { TUS_GLOSSARY_CASE_DERIVED_TERMS } from '../data/tusGlossaryCaseDerivedIndex.js';
 import { TUS_GLOSSARY_CLINICAL_BRANCH_DEEP_TERMS } from '../data/tusGlossaryClinicalBranchDeepIndex.js';
+import { TUS_GLOSSARY_CONTEXTUAL_PHRASE_TERMS } from '../data/tusGlossaryContextualPhraseIndex.js';
 
 const teachingOnly = 'teachingOnly';
 
@@ -9466,6 +9467,10 @@ export const branchGlossaryTerms = {};
 export const defaultGlossaryTerms = globalGlossaryTerms;
 
 const STATIC_GLOSSARY_SOURCES = [
+  // Contextual phrase layer comes first so exact clinical phrases such as
+  // "defans", "aktif elevasyon" or "sağ inguinal insizyon" do not get
+  // swallowed by broader disease-level aliases.
+  ...TUS_GLOSSARY_CONTEXTUAL_PHRASE_TERMS,
   ...TUS_GLOSSARY_CLINICAL_BRANCH_DEEP_TERMS,
   ...TUS_GLOSSARY_ADVANCED_TERMS,
   ...TUS_GLOSSARY_EXPANDED_TERMS,
@@ -9498,13 +9503,35 @@ function rememberNormalizedGlossary(cacheKey, value) {
   return value;
 }
 
+
+function getEntryMatchingPriority(entry = {}) {
+  const raw = Number(entry.matchingPriority ?? entry.priorityScore ?? 0);
+  if (Number.isFinite(raw) && raw > 0) return raw;
+  const priority = String(entry.priority || entry.difficulty || '').toLocaleLowerCase('tr');
+  if (priority.includes('çok yüksek') || priority.includes('kritik')) return 95;
+  if (priority.includes('yüksek') || priority.includes('zor')) return 80;
+  if (entry.isMultiWordTerm) return 70;
+  return 50;
+}
+
+function compareGlossaryEntrySpecificity(a = {}, b = {}) {
+  const ap = getEntryMatchingPriority(a);
+  const bp = getEntryMatchingPriority(b);
+  if (ap !== bp) return bp - ap;
+  const aw = String(a.term || '').trim().split(/\s+/).length;
+  const bw = String(b.term || '').trim().split(/\s+/).length;
+  if (aw !== bw) return bw - aw;
+  return String(b.term || '').length - String(a.term || '').length;
+}
+
 function buildNormalizedGlossary(entries = []) {
   const byLabel = new Map();
 
   entries.forEach((entry) => {
-    if (!entry?.term || !(entry?.definition || entry?.shortDefinition || entry?.previewDefinition)) return;
-    const normalized = normalizeGlossaryText(entry.term);
-    const normalizedEntry = normalizeEntry(entry);
+    const canonical = entry?.canonicalTerm || entry?.displayTerm || entry?.term;
+    if (!canonical || !(entry?.definition || entry?.shortDefinition || entry?.previewDefinition || entry?.preAnswerSafeDefinition)) return;
+    const normalized = normalizeGlossaryText(canonical);
+    const normalizedEntry = normalizeEntry({ ...entry, term: canonical });
     if (!normalizedEntry.aliases?.length) return;
 
     if (!byLabel.has(normalized)) {
@@ -9513,12 +9540,14 @@ function buildNormalizedGlossary(entries = []) {
     }
 
     const existing = byLabel.get(normalized);
-    const aliases = Array.from(new Set([...(existing.aliases || []), ...(normalizedEntry.aliases || [])]))
+    const preferred = compareGlossaryEntrySpecificity(existing, normalizedEntry) <= 0 ? existing : normalizedEntry;
+    const secondary = preferred === existing ? normalizedEntry : existing;
+    const aliases = Array.from(new Set([...(preferred.aliases || []), ...(secondary.aliases || [])]))
       .sort((a, b) => b.length - a.length);
-    byLabel.set(normalized, normalizeEntry({ ...existing, aliases }));
+    byLabel.set(normalized, normalizeEntry({ ...secondary, ...preferred, aliases }));
   });
 
-  return Array.from(byLabel.values()).sort((a, b) => b.term.length - a.term.length);
+  return Array.from(byLabel.values()).sort(compareGlossaryEntrySpecificity);
 }
 
 function getExtraTermsCacheKey(extraTerms = []) {
@@ -9529,7 +9558,9 @@ function getExtraTermsCacheKey(extraTerms = []) {
 }
 
 function normalizeEntry(entry = {}) {
-  const aliases = Array.from(new Set([entry.term, ...(entry.aliases || [])].filter(Boolean)))
+  const canonicalTerm = entry.canonicalTerm || entry.displayTerm || entry.term || '';
+  const displayTerm = entry.displayTerm || entry.canonicalTerm || entry.term || canonicalTerm;
+  const aliases = Array.from(new Set([canonicalTerm, displayTerm, entry.term, ...(entry.aliases || [])].filter(Boolean)))
     .flatMap(getGlossaryAliasVariants)
     .map((alias) => String(alias).replace(/\s+/g, ' ').trim())
     .filter(Boolean)
@@ -9538,23 +9569,29 @@ function normalizeEntry(entry = {}) {
   const previewDefinition = entry.previewDefinition || entry.shortDefinition || entry.definition || '';
   const preAnswerSafeDefinition = entry.preAnswerSafeDefinition || previewDefinition;
   const shortDefinition = entry.shortDefinition || previewDefinition || entry.definition || '';
-  const postAnswerExpandedExplanation = entry.postAnswerExpandedExplanation || entry.detailedExplanation || entry.longDefinition || '';
-  const normalizedTerm = entry.normalizedTerm || normalizeGlossaryText(entry.term);
+  const postAnswerExpandedExplanation = entry.postAnswerExpandedExplanation || entry.postAnswerExplanation || entry.detailedExplanation || entry.longDefinition || '';
+  const normalizedTerm = entry.normalizedTerm || normalizeGlossaryText(canonicalTerm);
+  const matchingPriority = getEntryMatchingPriority({ ...entry, term: canonicalTerm });
 
   return {
-    id: entry.id || normalizedTerm.replace(/[^a-z0-9]+/giu, '-').replace(/^-|-$/g, '') || entry.term,
+    id: entry.id || normalizedTerm.replace(/[^a-z0-9]+/giu, '-').replace(/^-|-$/g, '') || canonicalTerm,
     ...entry,
+    term: canonicalTerm,
+    canonicalTerm,
+    displayTerm,
     definition: entry.definition || shortDefinition,
     shortDefinition,
     previewDefinition,
     preAnswerSafeDefinition,
+    postAnswerExplanation: entry.postAnswerExplanation || postAnswerExpandedExplanation || '',
     postAnswerExpandedExplanation,
     detailedExplanation: entry.detailedExplanation || entry.longDefinition || postAnswerExpandedExplanation || '',
     tusPearl: entry.tusPearl || entry.examPearl || entry.pearl || '',
     differentialPoint: entry.differentialPoint || entry.differential || entry.ayiriciNot || '',
-    clinicalRelevance: entry.clinicalRelevance || '',
+    clinicalContext: entry.clinicalContext || entry.clinicalRelevance || '',
+    clinicalRelevance: entry.clinicalRelevance || entry.clinicalContext || '',
     mechanism: entry.mechanism || '',
-    TurkishName: entry.TurkishName || entry.turkishName || entry.term || '',
+    TurkishName: entry.TurkishName || entry.turkishName || canonicalTerm || '',
     EnglishName: entry.EnglishName || entry.englishName || '',
     LatinName: entry.LatinName || entry.latinName || '',
     abbreviation: entry.abbreviation || '',
@@ -9564,6 +9601,12 @@ function normalizeEntry(entry = {}) {
     relatedFlashcards: entry.relatedFlashcards || [],
     difficulty: entry.difficulty || entry.priority || 'orta',
     keywordsForSearch: entry.keywordsForSearch || [],
+    sourceTextExamples: entry.sourceTextExamples || [],
+    matchingPriority,
+    isMultiWordTerm: entry.isMultiWordTerm ?? /\s/.test(canonicalTerm),
+    answerLeakRisk: entry.answerLeakRisk || 'medium',
+    caseSensitiveDisplay: Boolean(entry.caseSensitiveDisplay),
+    capitalizationRule: entry.capitalizationRule || 'canonical-medical-title',
     normalizedTerm,
     aliases,
     normalizedAliases: aliases.map(normalizeGlossaryText),

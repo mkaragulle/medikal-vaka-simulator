@@ -4650,7 +4650,7 @@ body:not(.klinikiq-auth-lock) .tus-pearl-study-shell > :first-child {
 .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .structured-patient-summary-grid.unified-summary-grid,
 .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .structured-patient-summary-grid.unified-summary-grid {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)) !important;
+  grid-template-columns: minmax(0, 1fr) !important;
   gap: 16px !important;
   width: 100% !important;
   max-width: 100% !important;
@@ -4850,5 +4850,82 @@ body:not(.klinikiq-auth-lock) .tus-pearl-study-shell > :first-child {
     grid-template-columns: 36px minmax(0, 1fr) 30px !important;
     gap: 10px !important;
     padding: 13px 12px !important;
+  }
+}
+
+/* ==========================================================
+   V279 — Canonical clinical branch profile layout + word integrity fix
+   Scope: Klinik Branş Seç / qbank case patient summary only.
+   Purpose: keep PROFİL, BAŞVURU and HASTA ÖYKÜSÜ full-width, and prevent
+   GlossaryText segments from creating mid-word breaks such as ac/il or erk/ek.
+   ========================================================== */
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .structured-patient-summary-grid.unified-summary-grid,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .structured-patient-summary-grid.unified-summary-grid {
+  box-sizing: border-box !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-areas: none !important;
+  gap: 16px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .structured-patient-summary-grid.unified-summary-grid > .summary-detail-card,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .structured-patient-summary-grid.unified-summary-grid > .summary-detail-card,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--profile,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--presentation,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--presentation,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block.unified-history-block {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--profile,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile {
+  box-sizing: border-box !important;
+  display: grid !important;
+  grid-template-columns: clamp(44px, 8vw, 58px) minmax(0, 1fr) !important;
+  align-items: flex-start !important;
+  gap: clamp(12px, 2vw, 18px) !important;
+  overflow: visible !important;
+  contain: none !important;
+}
+
+.clinical-case.qbank-case .summary-detail-card--profile .summary-detail-copy,
+.clinical-case.qbank-case .summary-detail-card--profile .summary-profile-copy,
+.clinical-case.qbank-case .summary-detail-card--profile .summary-profile-copy strong,
+.clinical-case.qbank-case .summary-detail-card--profile .summary-profile-copy small,
+.clinical-case.qbank-case .summary-detail-card--profile .summary-profile-copy .glossary-text-flow,
+.clinical-case.qbank-case .summary-detail-card--profile .summary-profile-copy .glossary-plain-segment,
+.clinical-case.qbank-case .summary-detail-card--profile .summary-profile-copy .smart-glossary-term,
+.clinical-case.qbank-case .summary-detail-card--profile .summary-profile-copy .glossary-term {
+  max-width: 100% !important;
+  min-width: 0 !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+  line-break: auto !important;
+  text-wrap: pretty !important;
+}
+
+.clinical-case.qbank-case .summary-detail-card--profile .summary-profile-copy .glossary-text-flow,
+.clinical-case.qbank-case .summary-detail-card--profile .summary-profile-copy .glossary-plain-segment,
+.clinical-case.qbank-case .summary-detail-card--profile .summary-profile-copy .smart-glossary-term,
+.clinical-case.qbank-case .summary-detail-card--profile .summary-profile-copy .glossary-term {
+  display: inline !important;
+}
+
+@media (max-width: 520px) {
+  .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--profile,
+  .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile {
+    grid-template-columns: 42px minmax(0, 1fr) !important;
+    gap: 11px !important;
   }
 }

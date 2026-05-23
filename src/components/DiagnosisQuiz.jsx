@@ -43,7 +43,7 @@ function parseRomanQuestionPrompt(text = '') {
   return { intro, items };
 }
 
-function FormattedQuestionPrompt({ text = '', glossaryEnabled = true, revealMode = 'preAnswer', maxTerms = 7 }) {
+function FormattedQuestionPrompt({ text = '', glossaryEnabled = true, revealMode = 'preAnswer', maxTerms = 8 }) {
   const formatted = useMemo(() => parseRomanQuestionPrompt(text), [text]);
 
   if (!formatted) {
@@ -132,7 +132,7 @@ const AnswerOption = memo(function AnswerOption({ option, index, selected, submi
             {flowSegments.map((segment, segmentIndex) => (
               <span className="answer-flow-item" key={`${segmentIndex}-${segment}`}>
                 <span className="answer-flow-segment" role="listitem">
-                  <GlossaryText text={segment} enabled={glossaryEnabled} revealMode={revealMode} maxTerms={5} />
+                  <GlossaryText text={segment} enabled={glossaryEnabled} revealMode={revealMode} maxTerms={6} />
                 </span>
                 {segmentIndex < flowSegments.length - 1 ? (
                   <span className="answer-flow-arrow" aria-hidden="true">→</span>
@@ -141,7 +141,7 @@ const AnswerOption = memo(function AnswerOption({ option, index, selected, submi
             ))}
           </span>
         ) : (
-          <span className="answer-title"><GlossaryText text={option} enabled={glossaryEnabled} revealMode={revealMode} maxTerms={5} /></span>
+          <span className="answer-title"><GlossaryText text={option} enabled={glossaryEnabled} revealMode={revealMode} maxTerms={6} /></span>
         )}
       </span>
       <span className="answer-status-icon" aria-hidden="true">

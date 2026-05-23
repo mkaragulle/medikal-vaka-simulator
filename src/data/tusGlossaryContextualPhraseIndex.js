@@ -1,0 +1,6083 @@
+// Auto-curated contextual multi-word glossary layer for KlinikIQ V278.
+// Focus: clinical phrase matching, anatomical localization, functional exam, procedure/lab/imaging jargon.
+
+export const TUS_GLOSSARY_CONTEXTUAL_PHRASE_TERMS = [
+  {
+    "id": "ctx-postoperatif-gucluk",
+    "canonicalTerm": "Postoperatif güçlük",
+    "displayTerm": "Postoperatif güçlük",
+    "term": "Postoperatif güçlük",
+    "aliases": [
+      "Postoperatif güçlük"
+    ],
+    "category": "Klinik durum",
+    "subcategory": "Klinik durum",
+    "shortDefinition": "Cerrahi sonrası dönemde hareket, ağrı kontrolü, yara iyileşmesi veya günlük aktivite açısından yaşanan fonksiyonel zorlanmadır.",
+    "previewDefinition": "Cerrahi sonrası dönemde hareket, ağrı kontrolü, yara iyileşmesi veya günlük aktivite açısından yaşanan fonksiyonel zorlanmadır.",
+    "preAnswerSafeDefinition": "Cerrahi sonrası dönemde hareket, ağrı kontrolü, yara iyileşmesi veya günlük aktivite açısından yaşanan fonksiyonel zorlanmadır.",
+    "postAnswerExplanation": "Postoperatif dönemde yeni ağrı, ateş, fonksiyon kaybı veya lokal bulgu varsa komplikasyon açısından değerlendirilir.",
+    "postAnswerExpandedExplanation": "Postoperatif dönemde yeni ağrı, ateş, fonksiyon kaybı veya lokal bulgu varsa komplikasyon açısından değerlendirilir.",
+    "tusPearl": "Postoperatif dönemde yeni ağrı, ateş, fonksiyon kaybı veya lokal bulgu varsa komplikasyon açısından değerlendirilir.",
+    "differentialPoint": "Normal iyileşme süreci enfeksiyon, hematom, sinir hasarı ve mekanik komplikasyondan ayrılmalıdır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi",
+      "ortopedi"
+    ],
+    "sourceTextExamples": [
+      "Omuz hareketinde postoperatif güçlük"
+    ],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "high",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "postoperatif",
+      "güçlük"
+    ]
+  },
+  {
+    "id": "ctx-postoperatif-agri",
+    "canonicalTerm": "Postoperatif ağrı",
+    "displayTerm": "Postoperatif ağrı",
+    "term": "Postoperatif ağrı",
+    "aliases": [
+      "Postoperatif ağrı",
+      "postoperatif dönemde gelişen ağrı"
+    ],
+    "category": "Klinik durum",
+    "subcategory": "Klinik durum",
+    "shortDefinition": "Cerrahi işlem sonrası dönemde ortaya çıkan veya artan ağrıyı ifade eder.",
+    "previewDefinition": "Cerrahi işlem sonrası dönemde ortaya çıkan veya artan ağrıyı ifade eder.",
+    "preAnswerSafeDefinition": "Cerrahi işlem sonrası dönemde ortaya çıkan veya artan ağrıyı ifade eder.",
+    "postAnswerExplanation": "Yeni başlayan, giderek artan veya lokal bulgularla birlikte olan postoperatif ağrı komplikasyon işareti olabilir.",
+    "postAnswerExpandedExplanation": "Yeni başlayan, giderek artan veya lokal bulgularla birlikte olan postoperatif ağrı komplikasyon işareti olabilir.",
+    "tusPearl": "Yeni başlayan, giderek artan veya lokal bulgularla birlikte olan postoperatif ağrı komplikasyon işareti olabilir.",
+    "differentialPoint": "Beklenen cerrahi ağrı; enfeksiyon, hematom, iskemi, sinir hasarı veya kaçak ağrısından klinik bulgularla ayrılır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "postoperatif",
+      "ağrı",
+      "postoperatif dönemde gelişen ağrı"
+    ]
+  },
+  {
+    "id": "ctx-postoperatif-donem",
+    "canonicalTerm": "Postoperatif dönem",
+    "displayTerm": "Postoperatif dönem",
+    "term": "Postoperatif dönem",
+    "aliases": [
+      "Postoperatif dönem",
+      "postoperatif kontrolde",
+      "postoperatif süreç"
+    ],
+    "category": "Klinik süreç",
+    "subcategory": "Klinik süreç",
+    "shortDefinition": "Cerrahi girişimden sonraki erken ve geç iyileşme sürecini ifade eder.",
+    "previewDefinition": "Cerrahi girişimden sonraki erken ve geç iyileşme sürecini ifade eder.",
+    "preAnswerSafeDefinition": "Cerrahi girişimden sonraki erken ve geç iyileşme sürecini ifade eder.",
+    "postAnswerExplanation": "Bu dönemde ateş, ağrı, kanama, fonksiyon kaybı ve yara bulguları komplikasyon açısından izlenir.",
+    "postAnswerExpandedExplanation": "Bu dönemde ateş, ağrı, kanama, fonksiyon kaybı ve yara bulguları komplikasyon açısından izlenir.",
+    "tusPearl": "Bu dönemde ateş, ağrı, kanama, fonksiyon kaybı ve yara bulguları komplikasyon açısından izlenir.",
+    "differentialPoint": "Preoperatif hazırlıktan farklı olarak komplikasyon taraması ve fonksiyonel iyileşme ön plandadır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "postoperatif",
+      "dönem",
+      "postoperatif kontrolde",
+      "postoperatif süreç"
+    ]
+  },
+  {
+    "id": "ctx-aktif-elevasyon",
+    "canonicalTerm": "Aktif elevasyon",
+    "displayTerm": "Aktif elevasyon",
+    "term": "Aktif elevasyon",
+    "aliases": [
+      "Aktif elevasyon",
+      "kol elevasyonu",
+      "omuz elevasyonu"
+    ],
+    "category": "Fonksiyonel muayene bulgusu",
+    "subcategory": "Fonksiyonel muayene bulgusu",
+    "shortDefinition": "Hastanın ekstremitesini kendi kas gücüyle yukarı kaldırma hareketidir.",
+    "previewDefinition": "Hastanın ekstremitesini kendi kas gücüyle yukarı kaldırma hareketidir.",
+    "preAnswerSafeDefinition": "Hastanın ekstremitesini kendi kas gücüyle yukarı kaldırma hareketidir.",
+    "postAnswerExplanation": "Aktif hareket kısıtlı, pasif hareket korunmuşsa kas-tendon veya nörolojik fonksiyon kaybı düşünülür.",
+    "postAnswerExpandedExplanation": "Aktif hareket kısıtlı, pasif hareket korunmuşsa kas-tendon veya nörolojik fonksiyon kaybı düşünülür.",
+    "tusPearl": "Aktif hareket kısıtlı, pasif hareket korunmuşsa kas-tendon veya nörolojik fonksiyon kaybı düşünülür.",
+    "differentialPoint": "Hem aktif hem pasif hareket kısıtlıysa eklem kapsülü, mekanik blok veya inflamatuvar eklem patolojisi daha olasıdır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "ortopedi",
+      "anatomi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "aktif",
+      "elevasyon",
+      "kol elevasyonu",
+      "omuz elevasyonu"
+    ]
+  },
+  {
+    "id": "ctx-pasif-elevasyon",
+    "canonicalTerm": "Pasif elevasyon",
+    "displayTerm": "Pasif elevasyon",
+    "term": "Pasif elevasyon",
+    "aliases": [
+      "Pasif elevasyon"
+    ],
+    "category": "Fonksiyonel muayene bulgusu",
+    "subcategory": "Fonksiyonel muayene bulgusu",
+    "shortDefinition": "Ekstremitenin hastanın aktif kas katkısı olmadan muayene eden kişi tarafından yukarı kaldırılmasıdır.",
+    "previewDefinition": "Ekstremitenin hastanın aktif kas katkısı olmadan muayene eden kişi tarafından yukarı kaldırılmasıdır.",
+    "preAnswerSafeDefinition": "Ekstremitenin hastanın aktif kas katkısı olmadan muayene eden kişi tarafından yukarı kaldırılmasıdır.",
+    "postAnswerExplanation": "Pasif hareketin korunması eklem hareket açıklığının mekanik olarak korunmuş olduğunu destekler.",
+    "postAnswerExpandedExplanation": "Pasif hareketin korunması eklem hareket açıklığının mekanik olarak korunmuş olduğunu destekler.",
+    "tusPearl": "Pasif hareketin korunması eklem hareket açıklığının mekanik olarak korunmuş olduğunu destekler.",
+    "differentialPoint": "Aktif kısıtlılıkla birlikte pasif hareket korunmuşsa kas, tendon veya sinir patolojisi öne çıkar.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "ortopedi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "pasif",
+      "elevasyon"
+    ]
+  },
+  {
+    "id": "ctx-aktif-abduksiyon",
+    "canonicalTerm": "Aktif abdüksiyon",
+    "displayTerm": "Aktif abdüksiyon",
+    "term": "Aktif abdüksiyon",
+    "aliases": [
+      "Aktif abdüksiyon",
+      "omuz aktif abdüksiyonu"
+    ],
+    "category": "Fonksiyonel muayene bulgusu",
+    "subcategory": "Fonksiyonel muayene bulgusu",
+    "shortDefinition": "Hastanın ekstremitesini orta hattan kendi kas gücüyle uzaklaştırmasıdır.",
+    "previewDefinition": "Hastanın ekstremitesini orta hattan kendi kas gücüyle uzaklaştırmasıdır.",
+    "preAnswerSafeDefinition": "Hastanın ekstremitesini orta hattan kendi kas gücüyle uzaklaştırmasıdır.",
+    "postAnswerExplanation": "Omuz aktif abdüksiyon kısıtlılığı deltoid, supraspinatus veya skapulotorasik stabilizasyon problemlerinde görülebilir.",
+    "postAnswerExpandedExplanation": "Omuz aktif abdüksiyon kısıtlılığı deltoid, supraspinatus veya skapulotorasik stabilizasyon problemlerinde görülebilir.",
+    "tusPearl": "Omuz aktif abdüksiyon kısıtlılığı deltoid, supraspinatus veya skapulotorasik stabilizasyon problemlerinde görülebilir.",
+    "differentialPoint": "Pasif abdüksiyon da kısıtlıysa adeziv kapsülit veya eklem içi mekanik kısıtlılık daha olasıdır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "ortopedi",
+      "anatomi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "aktif",
+      "abdüksiyon",
+      "omuz aktif abdüksiyonu"
+    ]
+  },
+  {
+    "id": "ctx-pasif-hareket-acikligi",
+    "canonicalTerm": "Pasif hareket açıklığı",
+    "displayTerm": "Pasif hareket açıklığı",
+    "term": "Pasif hareket açıklığı",
+    "aliases": [
+      "Pasif hareket açıklığı",
+      "pasif ROM",
+      "pasif hareket aralığı",
+      "hareket açıklığı"
+    ],
+    "category": "Fonksiyonel muayene bulgusu",
+    "subcategory": "Fonksiyonel muayene bulgusu",
+    "shortDefinition": "Bir eklemin hastanın kas gücü kullanılmadan dışarıdan hareket ettirilebildiği açıklığı ifade eder.",
+    "previewDefinition": "Bir eklemin hastanın kas gücü kullanılmadan dışarıdan hareket ettirilebildiği açıklığı ifade eder.",
+    "preAnswerSafeDefinition": "Bir eklemin hastanın kas gücü kullanılmadan dışarıdan hareket ettirilebildiği açıklığı ifade eder.",
+    "postAnswerExplanation": "Pasif hareket açıklığı korunurken aktif hareket azalırsa motor güç, tendon veya sinir fonksiyonu sorgulanır.",
+    "postAnswerExpandedExplanation": "Pasif hareket açıklığı korunurken aktif hareket azalırsa motor güç, tendon veya sinir fonksiyonu sorgulanır.",
+    "tusPearl": "Pasif hareket açıklığı korunurken aktif hareket azalırsa motor güç, tendon veya sinir fonksiyonu sorgulanır.",
+    "differentialPoint": "Aktif ve pasif hareket birlikte kısıtlıysa eklem kapsülü veya mekanik blok düşünülür.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "ortopedi",
+      "ftr"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "pasif",
+      "hareket",
+      "açıklığı",
+      "pasif rom",
+      "pasif hareket aralığı",
+      "hareket açıklığı"
+    ]
+  },
+  {
+    "id": "ctx-i-nternal-rotasyon",
+    "canonicalTerm": "İnternal rotasyon",
+    "displayTerm": "İnternal rotasyon",
+    "term": "İnternal rotasyon",
+    "aliases": [
+      "İnternal rotasyon"
+    ],
+    "category": "Fonksiyonel muayene bulgusu",
+    "subcategory": "Fonksiyonel muayene bulgusu",
+    "shortDefinition": "Ekstremitenin anatomik ekseni etrafında içe doğru döndürülmesidir.",
+    "previewDefinition": "Ekstremitenin anatomik ekseni etrafında içe doğru döndürülmesidir.",
+    "preAnswerSafeDefinition": "Ekstremitenin anatomik ekseni etrafında içe doğru döndürülmesidir.",
+    "postAnswerExplanation": "Omuz ve kalça muayenesinde rotasyon kısıtlılığı eklem, kapsül veya kas-tendon patolojisini gösterebilir.",
+    "postAnswerExpandedExplanation": "Omuz ve kalça muayenesinde rotasyon kısıtlılığı eklem, kapsül veya kas-tendon patolojisini gösterebilir.",
+    "tusPearl": "Omuz ve kalça muayenesinde rotasyon kısıtlılığı eklem, kapsül veya kas-tendon patolojisini gösterebilir.",
+    "differentialPoint": "Rotasyon ağrısı radiküler ağrıdan eklem lokalizasyonu ve provokasyonla ayrılır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "ortopedi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "i̇nternal",
+      "rotasyon"
+    ]
+  },
+  {
+    "id": "ctx-eksternal-rotasyon",
+    "canonicalTerm": "Eksternal rotasyon",
+    "displayTerm": "Eksternal rotasyon",
+    "term": "Eksternal rotasyon",
+    "aliases": [
+      "Eksternal rotasyon"
+    ],
+    "category": "Fonksiyonel muayene bulgusu",
+    "subcategory": "Fonksiyonel muayene bulgusu",
+    "shortDefinition": "Ekstremitenin anatomik ekseni etrafında dışa doğru döndürülmesidir.",
+    "previewDefinition": "Ekstremitenin anatomik ekseni etrafında dışa doğru döndürülmesidir.",
+    "preAnswerSafeDefinition": "Ekstremitenin anatomik ekseni etrafında dışa doğru döndürülmesidir.",
+    "postAnswerExplanation": "Rotator manşet ve omuz instabilitesi değerlendirmesinde eksternal rotasyon önemli fonksiyonel bilgidir.",
+    "postAnswerExpandedExplanation": "Rotator manşet ve omuz instabilitesi değerlendirmesinde eksternal rotasyon önemli fonksiyonel bilgidir.",
+    "tusPearl": "Rotator manşet ve omuz instabilitesi değerlendirmesinde eksternal rotasyon önemli fonksiyonel bilgidir.",
+    "differentialPoint": "Güç kaybı kas-tendon hasarını, ağrı baskınlığı inflamatuvar veya mekanik patolojiyi düşündürür.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "ortopedi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "eksternal",
+      "rotasyon"
+    ]
+  },
+  {
+    "id": "ctx-skapular-kanatlanma",
+    "canonicalTerm": "Skapular kanatlanma",
+    "displayTerm": "Skapular kanatlanma",
+    "term": "Skapular kanatlanma",
+    "aliases": [
+      "Skapular kanatlanma",
+      "kanat skapula",
+      "winged scapula"
+    ],
+    "category": "Muayene bulgusu",
+    "subcategory": "Muayene bulgusu",
+    "shortDefinition": "Skapulanın toraks duvarından ayrılarak kanat gibi belirginleşmesidir.",
+    "previewDefinition": "Skapulanın toraks duvarından ayrılarak kanat gibi belirginleşmesidir.",
+    "preAnswerSafeDefinition": "Skapulanın toraks duvarından ayrılarak kanat gibi belirginleşmesidir.",
+    "postAnswerExplanation": "Duvara itme ile belirginleşen kanat skapula nervus thoracicus longus ve serratus anterior fonksiyonu açısından değerlidir.",
+    "postAnswerExpandedExplanation": "Duvara itme ile belirginleşen kanat skapula nervus thoracicus longus ve serratus anterior fonksiyonu açısından değerlidir.",
+    "tusPearl": "Duvara itme ile belirginleşen kanat skapula nervus thoracicus longus ve serratus anterior fonksiyonu açısından değerlidir.",
+    "differentialPoint": "Trapezius veya spinal aksesuar sinir hasarında farklı skapular pozisyon bozuklukları görülebilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "anatomi",
+      "ortopedi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "skapular",
+      "kanatlanma",
+      "kanat skapula",
+      "winged scapula"
+    ]
+  },
+  {
+    "id": "ctx-sag-skapulanin-medial-kenari",
+    "canonicalTerm": "Sağ skapulanın medial kenarı",
+    "displayTerm": "Sağ skapulanın medial kenarı",
+    "term": "Sağ skapulanın medial kenarı",
+    "aliases": [
+      "Sağ skapulanın medial kenarı",
+      "skapulanın medial kenarı",
+      "sağ skapula medial kenarı",
+      "duvara bastırma sırasında skapulanın medial kenarı"
+    ],
+    "category": "Anatomik lokalizasyon",
+    "subcategory": "Anatomik lokalizasyon",
+    "shortDefinition": "Sağ kürek kemiğinin omurgaya bakan iç kenarını ifade eden anatomik bölgedir.",
+    "previewDefinition": "Sağ kürek kemiğinin omurgaya bakan iç kenarını ifade eden anatomik bölgedir.",
+    "preAnswerSafeDefinition": "Sağ kürek kemiğinin omurgaya bakan iç kenarını ifade eden anatomik bölgedir.",
+    "postAnswerExplanation": "Medial kenarın posteriora çıkıntı yapması skapular kanatlanma ve serratus anterior disfonksiyonuna işaret edebilir.",
+    "postAnswerExpandedExplanation": "Medial kenarın posteriora çıkıntı yapması skapular kanatlanma ve serratus anterior disfonksiyonuna işaret edebilir.",
+    "tusPearl": "Medial kenarın posteriora çıkıntı yapması skapular kanatlanma ve serratus anterior disfonksiyonuna işaret edebilir.",
+    "differentialPoint": "Skapular ağrı omuz patolojisi, servikal radikülopati ve torasik duvar kaynaklı ağrılarla karışabilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "anatomi",
+      "ortopedi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "sağ",
+      "skapulanın",
+      "medial",
+      "kenarı",
+      "skapulanın medial kenarı",
+      "sağ skapula medial kenarı",
+      "duvara bastırma sırasında skapulanın medial kenarı"
+    ]
+  },
+  {
+    "id": "ctx-medial-skapular-kenar",
+    "canonicalTerm": "Medial skapular kenar",
+    "displayTerm": "Medial skapular kenar",
+    "term": "Medial skapular kenar",
+    "aliases": [
+      "Medial skapular kenar",
+      "medial skapula kenarı",
+      "skapular medial kenar"
+    ],
+    "category": "Anatomik lokalizasyon",
+    "subcategory": "Anatomik lokalizasyon",
+    "shortDefinition": "Skapulanın vertebral kolona bakan iç kenarıdır.",
+    "previewDefinition": "Skapulanın vertebral kolona bakan iç kenarıdır.",
+    "preAnswerSafeDefinition": "Skapulanın vertebral kolona bakan iç kenarıdır.",
+    "postAnswerExplanation": "Bu bölgenin belirginleşmesi skapulotorasik stabilizasyon bozukluğunda klinik ipucu olabilir.",
+    "postAnswerExpandedExplanation": "Bu bölgenin belirginleşmesi skapulotorasik stabilizasyon bozukluğunda klinik ipucu olabilir.",
+    "tusPearl": "Bu bölgenin belirginleşmesi skapulotorasik stabilizasyon bozukluğunda klinik ipucu olabilir.",
+    "differentialPoint": "Lateral skapular kenar ve glenoid çevresi omuz eklemi patolojileriyle daha yakından ilişkilidir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "anatomi",
+      "ortopedi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "medial",
+      "skapular",
+      "kenar",
+      "medial skapula kenarı",
+      "skapular medial kenar"
+    ]
+  },
+  {
+    "id": "ctx-duvara-itme-testi",
+    "canonicalTerm": "Duvara itme testi",
+    "displayTerm": "Duvara itme testi",
+    "term": "Duvara itme testi",
+    "aliases": [
+      "Duvara itme testi",
+      "wall push-up testi",
+      "duvara bastırma testi"
+    ],
+    "category": "Fonksiyonel muayene testi",
+    "subcategory": "Fonksiyonel muayene testi",
+    "shortDefinition": "Hastanın ellerini duvara bastırmasıyla skapular kanatlanmanın belirginleşip belirginleşmediğini değerlendiren manevradır.",
+    "previewDefinition": "Hastanın ellerini duvara bastırmasıyla skapular kanatlanmanın belirginleşip belirginleşmediğini değerlendiren manevradır.",
+    "preAnswerSafeDefinition": "Hastanın ellerini duvara bastırmasıyla skapular kanatlanmanın belirginleşip belirginleşmediğini değerlendiren manevradır.",
+    "postAnswerExplanation": "Serratus anterior zayıflığında medial skapular kenar posteriora doğru belirginleşebilir.",
+    "postAnswerExpandedExplanation": "Serratus anterior zayıflığında medial skapular kenar posteriora doğru belirginleşebilir.",
+    "tusPearl": "Serratus anterior zayıflığında medial skapular kenar posteriora doğru belirginleşebilir.",
+    "differentialPoint": "Omuz ağrısından çok skapulotorasik stabilizasyonu ve sinir-kas fonksiyonunu değerlendirir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "anatomi",
+      "ortopedi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "duvara",
+      "itme",
+      "testi",
+      "wall push-up testi",
+      "duvara bastırma testi"
+    ]
+  },
+  {
+    "id": "ctx-serratus-anterior-felci",
+    "canonicalTerm": "Serratus anterior felci",
+    "displayTerm": "Serratus anterior felci",
+    "term": "Serratus anterior felci",
+    "aliases": [
+      "Serratus anterior felci",
+      "musculus serratus anterior felci"
+    ],
+    "category": "Nöromüsküler bulgu",
+    "subcategory": "Nöromüsküler bulgu",
+    "shortDefinition": "Serratus anterior kasının işlev kaybına bağlı skapulanın toraks duvarına sabitlenememesidir.",
+    "previewDefinition": "Serratus anterior kasının işlev kaybına bağlı skapulanın toraks duvarına sabitlenememesidir.",
+    "preAnswerSafeDefinition": "Serratus anterior kasının işlev kaybına bağlı skapulanın toraks duvarına sabitlenememesidir.",
+    "postAnswerExplanation": "Aksiller cerrahi sonrası kanat skapula nervus thoracicus longus hasarını düşündürür.",
+    "postAnswerExpandedExplanation": "Aksiller cerrahi sonrası kanat skapula nervus thoracicus longus hasarını düşündürür.",
+    "tusPearl": "Aksiller cerrahi sonrası kanat skapula nervus thoracicus longus hasarını düşündürür.",
+    "differentialPoint": "Trapezius felci spinal aksesuar sinirle ilişkilidir ve skapular pozisyon paterni farklıdır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "anatomi",
+      "ortopedi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "serratus",
+      "anterior",
+      "felci",
+      "musculus serratus anterior felci"
+    ]
+  },
+  {
+    "id": "ctx-nervus-thoracicus-longus-hasari",
+    "canonicalTerm": "Nervus thoracicus longus hasarı",
+    "displayTerm": "Nervus thoracicus longus hasarı",
+    "term": "Nervus thoracicus longus hasarı",
+    "aliases": [
+      "Nervus thoracicus longus hasarı",
+      "uzun torasik sinir hasarı",
+      "long thoracic nerve injury"
+    ],
+    "category": "Anatomik/sinir lezyonu",
+    "subcategory": "Anatomik/sinir lezyonu",
+    "shortDefinition": "Serratus anterior kasını innerve eden uzun torasik sinirin hasarıdır.",
+    "previewDefinition": "Serratus anterior kasını innerve eden uzun torasik sinirin hasarıdır.",
+    "preAnswerSafeDefinition": "Serratus anterior kasını innerve eden uzun torasik sinirin hasarıdır.",
+    "postAnswerExplanation": "Aksiller diseksiyon sonrası skapular kanatlanma ve kol elevasyonunda güçlük bu sinir hasarı için tipiktir.",
+    "postAnswerExpandedExplanation": "Aksiller diseksiyon sonrası skapular kanatlanma ve kol elevasyonunda güçlük bu sinir hasarı için tipiktir.",
+    "tusPearl": "Aksiller diseksiyon sonrası skapular kanatlanma ve kol elevasyonunda güçlük bu sinir hasarı için tipiktir.",
+    "differentialPoint": "Nervus axillaris hasarında deltoid güç kaybı ve lateral omuz duyusu etkilenir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "anatomi",
+      "cerrahi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "nervus",
+      "thoracicus",
+      "longus",
+      "hasarı",
+      "uzun torasik sinir hasarı",
+      "long thoracic nerve injury"
+    ]
+  },
+  {
+    "id": "ctx-aksiller-diseksiyon",
+    "canonicalTerm": "Aksiller diseksiyon",
+    "displayTerm": "Aksiller diseksiyon",
+    "term": "Aksiller diseksiyon",
+    "aliases": [
+      "Aksiller diseksiyon",
+      "aksiller cerrahi"
+    ],
+    "category": "Cerrahi işlem",
+    "subcategory": "Cerrahi işlem",
+    "shortDefinition": "Aksilla lenf nodlarının cerrahi olarak çıkarılması veya değerlendirilmesidir.",
+    "previewDefinition": "Aksilla lenf nodlarının cerrahi olarak çıkarılması veya değerlendirilmesidir.",
+    "preAnswerSafeDefinition": "Aksilla lenf nodlarının cerrahi olarak çıkarılması veya değerlendirilmesidir.",
+    "postAnswerExplanation": "Aksiller diseksiyon sonrası nervus thoracicus longus ve thoracodorsalis hasarı fonksiyonel kayıp oluşturabilir.",
+    "postAnswerExpandedExplanation": "Aksiller diseksiyon sonrası nervus thoracicus longus ve thoracodorsalis hasarı fonksiyonel kayıp oluşturabilir.",
+    "tusPearl": "Aksiller diseksiyon sonrası nervus thoracicus longus ve thoracodorsalis hasarı fonksiyonel kayıp oluşturabilir.",
+    "differentialPoint": "Sentinel lenf nodu biyopsisi daha sınırlı cerrahi yaklaşımdır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi",
+      "anatomi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "aksiller",
+      "diseksiyon",
+      "aksiller cerrahi"
+    ]
+  },
+  {
+    "id": "ctx-sag-inguinal-insizyon",
+    "canonicalTerm": "Sağ inguinal insizyon",
+    "displayTerm": "Sağ inguinal insizyon",
+    "term": "Sağ inguinal insizyon",
+    "aliases": [
+      "Sağ inguinal insizyon",
+      "inguinal insizyon",
+      "sağ kasık insizyonu"
+    ],
+    "category": "Cerrahi/anatomik ifade",
+    "subcategory": "Cerrahi/anatomik ifade",
+    "shortDefinition": "Sağ kasık bölgesinden yapılan cerrahi kesi hattını ifade eder.",
+    "previewDefinition": "Sağ kasık bölgesinden yapılan cerrahi kesi hattını ifade eder.",
+    "preAnswerSafeDefinition": "Sağ kasık bölgesinden yapılan cerrahi kesi hattını ifade eder.",
+    "postAnswerExplanation": "İnguinal cerrahiler sonrası ağrı, şişlik, hematom, enfeksiyon veya fıtık nüksü değerlendirilmelidir.",
+    "postAnswerExpandedExplanation": "İnguinal cerrahiler sonrası ağrı, şişlik, hematom, enfeksiyon veya fıtık nüksü değerlendirilmelidir.",
+    "tusPearl": "İnguinal cerrahiler sonrası ağrı, şişlik, hematom, enfeksiyon veya fıtık nüksü değerlendirilmelidir.",
+    "differentialPoint": "Skrotal ağrı eşlik ediyorsa torsiyon, epididimit, inkarsere herni ve postoperatif komplikasyonlar ayrılmalıdır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi",
+      "üroloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "sağ",
+      "inguinal",
+      "insizyon",
+      "inguinal insizyon",
+      "sağ kasık insizyonu"
+    ]
+  },
+  {
+    "id": "ctx-sag-inguinal-bolge",
+    "canonicalTerm": "Sağ inguinal bölge",
+    "displayTerm": "Sağ inguinal bölge",
+    "term": "Sağ inguinal bölge",
+    "aliases": [
+      "Sağ inguinal bölge",
+      "sağ kasık bölgesi",
+      "inguinal bölgede hassasiyet",
+      "sağ inguinal hassasiyet"
+    ],
+    "category": "Anatomik lokalizasyon",
+    "subcategory": "Anatomik lokalizasyon",
+    "shortDefinition": "Sağ kasık bölgesini ifade eder ve inguinal kanal, ligament ve fıtık değerlendirmesi açısından önemlidir.",
+    "previewDefinition": "Sağ kasık bölgesini ifade eder ve inguinal kanal, ligament ve fıtık değerlendirmesi açısından önemlidir.",
+    "preAnswerSafeDefinition": "Sağ kasık bölgesini ifade eder ve inguinal kanal, ligament ve fıtık değerlendirmesi açısından önemlidir.",
+    "postAnswerExplanation": "Ağrılı kitlede inguinal ligament ve pubik tüberkül ilişkisi femoral/inguinal herni ayrımında değerlidir.",
+    "postAnswerExpandedExplanation": "Ağrılı kitlede inguinal ligament ve pubik tüberkül ilişkisi femoral/inguinal herni ayrımında değerlidir.",
+    "tusPearl": "Ağrılı kitlede inguinal ligament ve pubik tüberkül ilişkisi femoral/inguinal herni ayrımında değerlidir.",
+    "differentialPoint": "Femoral herni inguinal ligamentin altında, inguinal herni genellikle üstünde değerlendirilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi",
+      "anatomi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "sağ",
+      "inguinal",
+      "bölge",
+      "sağ kasık bölgesi",
+      "inguinal bölgede hassasiyet",
+      "sağ inguinal hassasiyet"
+    ]
+  },
+  {
+    "id": "ctx-i-nguinal-ligament",
+    "canonicalTerm": "İnguinal ligament",
+    "displayTerm": "İnguinal ligament",
+    "term": "İnguinal ligament",
+    "aliases": [
+      "İnguinal ligament"
+    ],
+    "category": "Anatomik yapı",
+    "subcategory": "Anatomik yapı",
+    "shortDefinition": "Spina iliaca anterior superior ile pubik tüberkül arasında uzanan bağ yapısıdır.",
+    "previewDefinition": "Spina iliaca anterior superior ile pubik tüberkül arasında uzanan bağ yapısıdır.",
+    "preAnswerSafeDefinition": "Spina iliaca anterior superior ile pubik tüberkül arasında uzanan bağ yapısıdır.",
+    "postAnswerExplanation": "Femoral herni genellikle inguinal ligamentin altında ve pubik tüberkülün lateralinde yerleşir.",
+    "postAnswerExpandedExplanation": "Femoral herni genellikle inguinal ligamentin altında ve pubik tüberkülün lateralinde yerleşir.",
+    "tusPearl": "Femoral herni genellikle inguinal ligamentin altında ve pubik tüberkülün lateralinde yerleşir.",
+    "differentialPoint": "İnguinal herni ve femoral herni ayrımında ligament ilişkisi kritik anatomik ipucudur.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "anatomi",
+      "genel-cerrahi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "i̇nguinal",
+      "ligament"
+    ]
+  },
+  {
+    "id": "ctx-pubik-tuberkul",
+    "canonicalTerm": "Pubik tüberkül",
+    "displayTerm": "Pubik tüberkül",
+    "term": "Pubik tüberkül",
+    "aliases": [
+      "Pubik tüberkül"
+    ],
+    "category": "Anatomik landmark",
+    "subcategory": "Anatomik landmark",
+    "shortDefinition": "Pubis kemiği üzerindeki palpabl kemik çıkıntıdır.",
+    "previewDefinition": "Pubis kemiği üzerindeki palpabl kemik çıkıntıdır.",
+    "preAnswerSafeDefinition": "Pubis kemiği üzerindeki palpabl kemik çıkıntıdır.",
+    "postAnswerExplanation": "Kasık fıtıklarının lokalizasyonunda pubik tüberküle göre medial/lateral ilişki TUS açısından değerlidir.",
+    "postAnswerExpandedExplanation": "Kasık fıtıklarının lokalizasyonunda pubik tüberküle göre medial/lateral ilişki TUS açısından değerlidir.",
+    "tusPearl": "Kasık fıtıklarının lokalizasyonunda pubik tüberküle göre medial/lateral ilişki TUS açısından değerlidir.",
+    "differentialPoint": "Femoral herni pubik tüberkülün inferolateralinde değerlendirilebilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "anatomi",
+      "genel-cerrahi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "pubik",
+      "tüberkül"
+    ]
+  },
+  {
+    "id": "ctx-femoral-kanal",
+    "canonicalTerm": "Femoral kanal",
+    "displayTerm": "Femoral kanal",
+    "term": "Femoral kanal",
+    "aliases": [
+      "Femoral kanal"
+    ],
+    "category": "Anatomik yapı",
+    "subcategory": "Anatomik yapı",
+    "shortDefinition": "Femoral kılıfın medial kompartmanında yer alan ve femoral hernilerle ilişkili anatomik kanaldır.",
+    "previewDefinition": "Femoral kılıfın medial kompartmanında yer alan ve femoral hernilerle ilişkili anatomik kanaldır.",
+    "preAnswerSafeDefinition": "Femoral kılıfın medial kompartmanında yer alan ve femoral hernilerle ilişkili anatomik kanaldır.",
+    "postAnswerExplanation": "Dar femoral halka strangülasyon riskini artırır.",
+    "postAnswerExpandedExplanation": "Dar femoral halka strangülasyon riskini artırır.",
+    "tusPearl": "Dar femoral halka strangülasyon riskini artırır.",
+    "differentialPoint": "Femoral kanalın lateral komşusu femoral vendir; bu ilişki anatomide sık sorgulanır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "anatomi",
+      "genel-cerrahi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "femoral",
+      "kanal"
+    ]
+  },
+  {
+    "id": "ctx-redukte-edilemeyen-kitle",
+    "canonicalTerm": "Redükte edilemeyen kitle",
+    "displayTerm": "Redükte edilemeyen kitle",
+    "term": "Redükte edilemeyen kitle",
+    "aliases": [
+      "Redükte edilemeyen kitle",
+      "redükte edilemeyen şişlik"
+    ],
+    "category": "Cerrahi muayene bulgusu",
+    "subcategory": "Cerrahi muayene bulgusu",
+    "shortDefinition": "Elle veya pozisyonla karın içine geri itilemeyen kitleyi ifade eder.",
+    "previewDefinition": "Elle veya pozisyonla karın içine geri itilemeyen kitleyi ifade eder.",
+    "preAnswerSafeDefinition": "Elle veya pozisyonla karın içine geri itilemeyen kitleyi ifade eder.",
+    "postAnswerExplanation": "Ağrılı ve redükte edilemeyen fıtık inkarsere/strangüle herni açısından acil değerlendirilir.",
+    "postAnswerExpandedExplanation": "Ağrılı ve redükte edilemeyen fıtık inkarsere/strangüle herni açısından acil değerlendirilir.",
+    "tusPearl": "Ağrılı ve redükte edilemeyen fıtık inkarsere/strangüle herni açısından acil değerlendirilir.",
+    "differentialPoint": "Redükte edilebilen asemptomatik kitle elektif yaklaşımı düşündürebilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "redükte",
+      "edilemeyen",
+      "kitle",
+      "redükte edilemeyen şişlik"
+    ]
+  },
+  {
+    "id": "ctx-i-nkarsere-herni",
+    "canonicalTerm": "İnkarsere herni",
+    "displayTerm": "İnkarsere herni",
+    "term": "İnkarsere herni",
+    "aliases": [
+      "İnkarsere herni",
+      "inkarserasyon"
+    ],
+    "category": "Cerrahi klinik tablo",
+    "subcategory": "Cerrahi klinik tablo",
+    "shortDefinition": "Fıtık içeriğinin fıtık kesesi içinde sıkışıp geri itilememesidir.",
+    "previewDefinition": "Fıtık içeriğinin fıtık kesesi içinde sıkışıp geri itilememesidir.",
+    "preAnswerSafeDefinition": "Fıtık içeriğinin fıtık kesesi içinde sıkışıp geri itilememesidir.",
+    "postAnswerExplanation": "Ağrı, redükte edilememe ve obstrüksiyon bulguları varsa cerrahi aciliyet artar.",
+    "postAnswerExpandedExplanation": "Ağrı, redükte edilememe ve obstrüksiyon bulguları varsa cerrahi aciliyet artar.",
+    "tusPearl": "Ağrı, redükte edilememe ve obstrüksiyon bulguları varsa cerrahi aciliyet artar.",
+    "differentialPoint": "Strangülasyonda kanlanma bozulur ve iskemi riski eklenir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "i̇nkarsere",
+      "herni",
+      "inkarserasyon"
+    ]
+  },
+  {
+    "id": "ctx-strangule-herni",
+    "canonicalTerm": "Strangüle herni",
+    "displayTerm": "Strangüle herni",
+    "term": "Strangüle herni",
+    "aliases": [
+      "Strangüle herni"
+    ],
+    "category": "Cerrahi acil",
+    "subcategory": "Cerrahi acil",
+    "shortDefinition": "Fıtık içeriğinin kanlanmasının bozulduğu, iskemi ve nekroz riski taşıyan herni tablosudur.",
+    "previewDefinition": "Fıtık içeriğinin kanlanmasının bozulduğu, iskemi ve nekroz riski taşıyan herni tablosudur.",
+    "preAnswerSafeDefinition": "Fıtık içeriğinin kanlanmasının bozulduğu, iskemi ve nekroz riski taşıyan herni tablosudur.",
+    "postAnswerExplanation": "Ağrı, ateş, cilt değişikliği, lökositoz veya peritonit bulguları strangülasyon lehinedir.",
+    "postAnswerExpandedExplanation": "Ağrı, ateş, cilt değişikliği, lökositoz veya peritonit bulguları strangülasyon lehinedir.",
+    "tusPearl": "Ağrı, ateş, cilt değişikliği, lökositoz veya peritonit bulguları strangülasyon lehinedir.",
+    "differentialPoint": "İnkarsere hernide sıkışma vardır; strangülasyonda vasküler kompromi eklenir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "strangüle",
+      "herni"
+    ]
+  },
+  {
+    "id": "ctx-akut-skrotum",
+    "canonicalTerm": "Akut skrotum",
+    "displayTerm": "Akut skrotum",
+    "term": "Akut skrotum",
+    "aliases": [
+      "Akut skrotum",
+      "akut skrotal tablo",
+      "akut skrotal ağrı"
+    ],
+    "category": "Ürolojik acil",
+    "subcategory": "Ürolojik acil",
+    "shortDefinition": "Ani başlayan skrotal ağrı, şişlik veya hassasiyetle seyreden acil klinik tablodur.",
+    "previewDefinition": "Ani başlayan skrotal ağrı, şişlik veya hassasiyetle seyreden acil klinik tablodur.",
+    "preAnswerSafeDefinition": "Ani başlayan skrotal ağrı, şişlik veya hassasiyetle seyreden acil klinik tablodur.",
+    "postAnswerExplanation": "Testis torsiyonu dışlanana kadar akut skrotum zaman kritik kabul edilir.",
+    "postAnswerExpandedExplanation": "Testis torsiyonu dışlanana kadar akut skrotum zaman kritik kabul edilir.",
+    "tusPearl": "Testis torsiyonu dışlanana kadar akut skrotum zaman kritik kabul edilir.",
+    "differentialPoint": "Epididimitte enfeksiyon bulguları ve artmış kan akımı; torsiyonda kan akımı azalması beklenir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "üroloji",
+      "çocuk-cerrahisi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "akut",
+      "skrotum",
+      "akut skrotal tablo",
+      "akut skrotal ağrı"
+    ]
+  },
+  {
+    "id": "ctx-skrotal-ultrasonografi",
+    "canonicalTerm": "Skrotal ultrasonografi",
+    "displayTerm": "Skrotal ultrasonografi",
+    "term": "Skrotal ultrasonografi",
+    "aliases": [
+      "Skrotal ultrasonografi",
+      "skrotal USG",
+      "skrotal ultrasonografi randevusu"
+    ],
+    "category": "Görüntüleme tetkiki",
+    "subcategory": "Görüntüleme tetkiki",
+    "shortDefinition": "Testis, epididim ve skrotal yapıların ultrasonografik değerlendirilmesidir.",
+    "previewDefinition": "Testis, epididim ve skrotal yapıların ultrasonografik değerlendirilmesidir.",
+    "preAnswerSafeDefinition": "Testis, epididim ve skrotal yapıların ultrasonografik değerlendirilmesidir.",
+    "postAnswerExplanation": "Akut skrotumda Doppler USG kan akımını değerlendirir; kuvvetli torsiyon şüphesinde cerrahi geciktirilmemelidir.",
+    "postAnswerExpandedExplanation": "Akut skrotumda Doppler USG kan akımını değerlendirir; kuvvetli torsiyon şüphesinde cerrahi geciktirilmemelidir.",
+    "tusPearl": "Akut skrotumda Doppler USG kan akımını değerlendirir; kuvvetli torsiyon şüphesinde cerrahi geciktirilmemelidir.",
+    "differentialPoint": "Epididimitte kan akımı artabilirken torsiyonda testiküler kan akımı azalır veya kaybolur.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "üroloji",
+      "radyoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "skrotal",
+      "ultrasonografi",
+      "skrotal usg",
+      "skrotal ultrasonografi randevusu"
+    ]
+  },
+  {
+    "id": "ctx-doppler-ultrasonografi",
+    "canonicalTerm": "Doppler ultrasonografi",
+    "displayTerm": "Doppler ultrasonografi",
+    "term": "Doppler ultrasonografi",
+    "aliases": [
+      "Doppler ultrasonografi",
+      "Doppler USG",
+      "renkli Doppler ultrasonografi"
+    ],
+    "category": "Görüntüleme tetkiki",
+    "subcategory": "Görüntüleme tetkiki",
+    "shortDefinition": "Damar veya organ kan akımını ultrasonografik olarak değerlendiren tetkiktir.",
+    "previewDefinition": "Damar veya organ kan akımını ultrasonografik olarak değerlendiren tetkiktir.",
+    "preAnswerSafeDefinition": "Damar veya organ kan akımını ultrasonografik olarak değerlendiren tetkiktir.",
+    "postAnswerExplanation": "Testis torsiyonunda Doppler ile testiküler kan akımı azalması veya kaybolması aranır.",
+    "postAnswerExpandedExplanation": "Testis torsiyonunda Doppler ile testiküler kan akımı azalması veya kaybolması aranır.",
+    "tusPearl": "Testis torsiyonunda Doppler ile testiküler kan akımı azalması veya kaybolması aranır.",
+    "differentialPoint": "Normal Doppler çok erken torsiyonu tamamen dışlamayabilir; klinik şüphe önemlidir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "radyoloji",
+      "üroloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "doppler",
+      "ultrasonografi",
+      "doppler usg",
+      "renkli doppler ultrasonografi"
+    ]
+  },
+  {
+    "id": "ctx-i-nguinoskrotal-ultrasonografi",
+    "canonicalTerm": "İnguinoskrotal ultrasonografi",
+    "displayTerm": "İnguinoskrotal ultrasonografi",
+    "term": "İnguinoskrotal ultrasonografi",
+    "aliases": [
+      "İnguinoskrotal ultrasonografi",
+      "inguinoskrotal USG"
+    ],
+    "category": "Görüntüleme tetkiki",
+    "subcategory": "Görüntüleme tetkiki",
+    "shortDefinition": "İnguinal kanal ve skrotal yapıların birlikte ultrasonografik değerlendirilmesidir.",
+    "previewDefinition": "İnguinal kanal ve skrotal yapıların birlikte ultrasonografik değerlendirilmesidir.",
+    "preAnswerSafeDefinition": "İnguinal kanal ve skrotal yapıların birlikte ultrasonografik değerlendirilmesidir.",
+    "postAnswerExplanation": "Ele gelmeyen testis veya inguinoskrotal kitle değerlendirmesinde anatomik lokalizasyonu gösterebilir.",
+    "postAnswerExpandedExplanation": "Ele gelmeyen testis veya inguinoskrotal kitle değerlendirmesinde anatomik lokalizasyonu gösterebilir.",
+    "tusPearl": "Ele gelmeyen testis veya inguinoskrotal kitle değerlendirmesinde anatomik lokalizasyonu gösterebilir.",
+    "differentialPoint": "Akut torsiyon şüphesinde klinik karar görüntüleme beklenmeden cerrahiye gidebilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "üroloji",
+      "çocuk-cerrahisi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "i̇nguinoskrotal",
+      "ultrasonografi",
+      "inguinoskrotal usg"
+    ]
+  },
+  {
+    "id": "ctx-kremaster-refleksi-kaybi",
+    "canonicalTerm": "Kremaster refleksi kaybı",
+    "displayTerm": "Kremaster refleksi kaybı",
+    "term": "Kremaster refleksi kaybı",
+    "aliases": [
+      "Kremaster refleksi kaybı",
+      "kremaster refleksinin kaybı",
+      "kremaster refleksi yokluğu"
+    ],
+    "category": "Muayene bulgusu",
+    "subcategory": "Muayene bulgusu",
+    "shortDefinition": "Uyluk iç yüzünün uyarılmasıyla testisin yükselme refleksinin alınamamasıdır.",
+    "previewDefinition": "Uyluk iç yüzünün uyarılmasıyla testisin yükselme refleksinin alınamamasıdır.",
+    "preAnswerSafeDefinition": "Uyluk iç yüzünün uyarılmasıyla testisin yükselme refleksinin alınamamasıdır.",
+    "postAnswerExplanation": "Ani skrotal ağrıda kremaster refleksi kaybı testis torsiyonu açısından önemli ipucudur.",
+    "postAnswerExpandedExplanation": "Ani skrotal ağrıda kremaster refleksi kaybı testis torsiyonu açısından önemli ipucudur.",
+    "tusPearl": "Ani skrotal ağrıda kremaster refleksi kaybı testis torsiyonu açısından önemli ipucudur.",
+    "differentialPoint": "Epididimitte refleks genellikle korunabilir; ancak tek başına kesin dışlama sağlamaz.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "üroloji",
+      "nöroloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "kremaster",
+      "refleksi",
+      "kaybı",
+      "kremaster refleksinin kaybı",
+      "kremaster refleksi yokluğu"
+    ]
+  },
+  {
+    "id": "ctx-yuksek-yerlesimli-testis",
+    "canonicalTerm": "Yüksek yerleşimli testis",
+    "displayTerm": "Yüksek yerleşimli testis",
+    "term": "Yüksek yerleşimli testis",
+    "aliases": [
+      "Yüksek yerleşimli testis",
+      "yüksek yerleşimli transvers testis",
+      "transvers testis"
+    ],
+    "category": "Muayene bulgusu",
+    "subcategory": "Muayene bulgusu",
+    "shortDefinition": "Testisin skrotum içinde normalden daha yukarıda izlenmesidir.",
+    "previewDefinition": "Testisin skrotum içinde normalden daha yukarıda izlenmesidir.",
+    "preAnswerSafeDefinition": "Testisin skrotum içinde normalden daha yukarıda izlenmesidir.",
+    "postAnswerExplanation": "Ani ağrı ve transvers yerleşimle birlikte testis torsiyonu şüphesini artırır.",
+    "postAnswerExpandedExplanation": "Ani ağrı ve transvers yerleşimle birlikte testis torsiyonu şüphesini artırır.",
+    "tusPearl": "Ani ağrı ve transvers yerleşimle birlikte testis torsiyonu şüphesini artırır.",
+    "differentialPoint": "Epididimitte testis pozisyonu genellikle torsiyondaki kadar tipik değişmez.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "üroloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "yüksek",
+      "yerleşimli",
+      "testis",
+      "yüksek yerleşimli transvers testis",
+      "transvers testis"
+    ]
+  },
+  {
+    "id": "ctx-cerrahi-eksplorasyon",
+    "canonicalTerm": "Cerrahi eksplorasyon",
+    "displayTerm": "Cerrahi eksplorasyon",
+    "term": "Cerrahi eksplorasyon",
+    "aliases": [
+      "Cerrahi eksplorasyon",
+      "acil cerrahi eksplorasyon"
+    ],
+    "category": "Cerrahi yaklaşım",
+    "subcategory": "Cerrahi yaklaşım",
+    "shortDefinition": "Tanı veya tedavi amacıyla ilgili anatomik bölgenin cerrahi olarak açılıp doğrudan değerlendirilmesidir.",
+    "previewDefinition": "Tanı veya tedavi amacıyla ilgili anatomik bölgenin cerrahi olarak açılıp doğrudan değerlendirilmesidir.",
+    "preAnswerSafeDefinition": "Tanı veya tedavi amacıyla ilgili anatomik bölgenin cerrahi olarak açılıp doğrudan değerlendirilmesidir.",
+    "postAnswerExplanation": "Testis torsiyonu veya rüptüre ektopik gebelik gibi zaman kritik durumlarda kuvvetli klinik şüphe varsa acil eksplorasyon gerekebilir.",
+    "postAnswerExpandedExplanation": "Testis torsiyonu veya rüptüre ektopik gebelik gibi zaman kritik durumlarda kuvvetli klinik şüphe varsa acil eksplorasyon gerekebilir.",
+    "tusPearl": "Testis torsiyonu veya rüptüre ektopik gebelik gibi zaman kritik durumlarda kuvvetli klinik şüphe varsa acil eksplorasyon gerekebilir.",
+    "differentialPoint": "Elektif değerlendirme ile acil eksplorasyon ayrımı instabilite, iskemi, perforasyon veya strangülasyon şüphesine göre yapılır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi",
+      "üroloji",
+      "kadın-doğum"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "cerrahi",
+      "eksplorasyon",
+      "acil cerrahi eksplorasyon"
+    ]
+  },
+  {
+    "id": "ctx-detorsiyon",
+    "canonicalTerm": "Detorsiyon",
+    "displayTerm": "Detorsiyon",
+    "term": "Detorsiyon",
+    "aliases": [
+      "Detorsiyon",
+      "testiküler detorsiyon"
+    ],
+    "category": "Cerrahi işlem",
+    "subcategory": "Cerrahi işlem",
+    "shortDefinition": "Torsiyone olmuş yapının kendi ekseni etrafındaki dönmesinin düzeltilmesidir.",
+    "previewDefinition": "Torsiyone olmuş yapının kendi ekseni etrafındaki dönmesinin düzeltilmesidir.",
+    "preAnswerSafeDefinition": "Torsiyone olmuş yapının kendi ekseni etrafındaki dönmesinin düzeltilmesidir.",
+    "postAnswerExplanation": "Testis torsiyonunda detorsiyon testiküler perfüzyonu geri kazandırmak için zaman kritik işlemdir.",
+    "postAnswerExpandedExplanation": "Testis torsiyonunda detorsiyon testiküler perfüzyonu geri kazandırmak için zaman kritik işlemdir.",
+    "tusPearl": "Testis torsiyonunda detorsiyon testiküler perfüzyonu geri kazandırmak için zaman kritik işlemdir.",
+    "differentialPoint": "Detorsiyon sonrası genellikle bilateral orşiopeksi nüksü önlemek için yapılır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "üroloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": false,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "detorsiyon",
+      "testiküler detorsiyon"
+    ]
+  },
+  {
+    "id": "ctx-orsiopeksi",
+    "canonicalTerm": "Orşiopeksi",
+    "displayTerm": "Orşiopeksi",
+    "term": "Orşiopeksi",
+    "aliases": [
+      "Orşiopeksi"
+    ],
+    "category": "Cerrahi işlem",
+    "subcategory": "Cerrahi işlem",
+    "shortDefinition": "Testisin skrotum içinde sabitlenmesi işlemidir.",
+    "previewDefinition": "Testisin skrotum içinde sabitlenmesi işlemidir.",
+    "preAnswerSafeDefinition": "Testisin skrotum içinde sabitlenmesi işlemidir.",
+    "postAnswerExplanation": "Testis torsiyonu sonrası nüksü önlemek için karşı taraf da dahil bilateral orşiopeksi uygulanabilir.",
+    "postAnswerExpandedExplanation": "Testis torsiyonu sonrası nüksü önlemek için karşı taraf da dahil bilateral orşiopeksi uygulanabilir.",
+    "tusPearl": "Testis torsiyonu sonrası nüksü önlemek için karşı taraf da dahil bilateral orşiopeksi uygulanabilir.",
+    "differentialPoint": "Orşiektomi canlılığı kaybolmuş testiste gerekebilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "üroloji",
+      "çocuk-cerrahisi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": false,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "orşiopeksi"
+    ]
+  },
+  {
+    "id": "ctx-testikuler-kan-akimi",
+    "canonicalTerm": "Testiküler kan akımı",
+    "displayTerm": "Testiküler kan akımı",
+    "term": "Testiküler kan akımı",
+    "aliases": [
+      "Testiküler kan akımı"
+    ],
+    "category": "Görüntüleme/fizyoloji",
+    "subcategory": "Görüntüleme/fizyoloji",
+    "shortDefinition": "Testis dokusunun vasküler perfüzyonunu ifade eder.",
+    "previewDefinition": "Testis dokusunun vasküler perfüzyonunu ifade eder.",
+    "preAnswerSafeDefinition": "Testis dokusunun vasküler perfüzyonunu ifade eder.",
+    "postAnswerExplanation": "Doppler USG’de azalmış veya kaybolmuş testiküler kan akımı torsiyon lehinedir.",
+    "postAnswerExpandedExplanation": "Doppler USG’de azalmış veya kaybolmuş testiküler kan akımı torsiyon lehinedir.",
+    "tusPearl": "Doppler USG’de azalmış veya kaybolmuş testiküler kan akımı torsiyon lehinedir.",
+    "differentialPoint": "Epididimoorşitte kan akımı inflamasyon nedeniyle artabilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "üroloji",
+      "radyoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "testiküler",
+      "kan",
+      "akımı"
+    ]
+  },
+  {
+    "id": "ctx-refleks-kaybi",
+    "canonicalTerm": "Refleks kaybı",
+    "displayTerm": "Refleks kaybı",
+    "term": "Refleks kaybı",
+    "aliases": [
+      "Refleks kaybı",
+      "derin tendon refleksi kaybı",
+      "DTR kaybı"
+    ],
+    "category": "Nörolojik bulgu",
+    "subcategory": "Nörolojik bulgu",
+    "shortDefinition": "Derin tendon veya yüzeyel refleksin alınamaması ya da azalmasıdır.",
+    "previewDefinition": "Derin tendon veya yüzeyel refleksin alınamaması ya da azalmasıdır.",
+    "preAnswerSafeDefinition": "Derin tendon veya yüzeyel refleksin alınamaması ya da azalmasıdır.",
+    "postAnswerExplanation": "Akut güçsüzlükle birlikte refleks kaybı periferik sinir, kök veya alt motor nöron patolojisini düşündürebilir.",
+    "postAnswerExpandedExplanation": "Akut güçsüzlükle birlikte refleks kaybı periferik sinir, kök veya alt motor nöron patolojisini düşündürebilir.",
+    "tusPearl": "Akut güçsüzlükle birlikte refleks kaybı periferik sinir, kök veya alt motor nöron patolojisini düşündürebilir.",
+    "differentialPoint": "Üst motor nöron lezyonlarında kronik dönemde hiperrefleksi beklenebilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "nöroloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "refleks",
+      "kaybı",
+      "derin tendon refleksi kaybı",
+      "dtr kaybı"
+    ]
+  },
+  {
+    "id": "ctx-patella-refleksinde-azalma",
+    "canonicalTerm": "Patella refleksinde azalma",
+    "displayTerm": "Patella refleksinde azalma",
+    "term": "Patella refleksinde azalma",
+    "aliases": [
+      "Patella refleksinde azalma",
+      "patella refleksi azalması"
+    ],
+    "category": "Nörolojik bulgu",
+    "subcategory": "Nörolojik bulgu",
+    "shortDefinition": "Patellar tendon refleksinin normalden zayıf alınmasıdır.",
+    "previewDefinition": "Patellar tendon refleksinin normalden zayıf alınmasıdır.",
+    "preAnswerSafeDefinition": "Patellar tendon refleksinin normalden zayıf alınmasıdır.",
+    "postAnswerExplanation": "Femoral sinir veya L2-L4 kök etkileniminde patella refleksi azalabilir.",
+    "postAnswerExpandedExplanation": "Femoral sinir veya L2-L4 kök etkileniminde patella refleksi azalabilir.",
+    "tusPearl": "Femoral sinir veya L2-L4 kök etkileniminde patella refleksi azalabilir.",
+    "differentialPoint": "Aşil refleksi daha çok S1 köküyle ilişkilidir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "nöroloji",
+      "anatomi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "patella",
+      "refleksinde",
+      "azalma",
+      "patella refleksi azalması"
+    ]
+  },
+  {
+    "id": "ctx-motor-defisit",
+    "canonicalTerm": "Motor defisit",
+    "displayTerm": "Motor defisit",
+    "term": "Motor defisit",
+    "aliases": [
+      "Motor defisit"
+    ],
+    "category": "Nörolojik bulgu",
+    "subcategory": "Nörolojik bulgu",
+    "shortDefinition": "Kas gücü veya istemli hareket fonksiyonunda kayıp ya da azalmadır.",
+    "previewDefinition": "Kas gücü veya istemli hareket fonksiyonunda kayıp ya da azalmadır.",
+    "preAnswerSafeDefinition": "Kas gücü veya istemli hareket fonksiyonunda kayıp ya da azalmadır.",
+    "postAnswerExplanation": "Akut motor defisit santral inme, spinal kord basısı veya periferik sinir lezyonu açısından lokalize edilmelidir.",
+    "postAnswerExpandedExplanation": "Akut motor defisit santral inme, spinal kord basısı veya periferik sinir lezyonu açısından lokalize edilmelidir.",
+    "tusPearl": "Akut motor defisit santral inme, spinal kord basısı veya periferik sinir lezyonu açısından lokalize edilmelidir.",
+    "differentialPoint": "Duyusal seviye spinal kord; dermatomal dağılım kök; periferik sinir alanı mononöropati düşündürür.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "nöroloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "motor",
+      "defisit"
+    ]
+  },
+  {
+    "id": "ctx-duyusal-seviye",
+    "canonicalTerm": "Duyusal seviye",
+    "displayTerm": "Duyusal seviye",
+    "term": "Duyusal seviye",
+    "aliases": [
+      "Duyusal seviye"
+    ],
+    "category": "Nörolojik lokalizasyon bulgusu",
+    "subcategory": "Nörolojik lokalizasyon bulgusu",
+    "shortDefinition": "Duyu kaybının belirli bir dermatom veya vücut seviyesinden itibaren başlamasıdır.",
+    "previewDefinition": "Duyu kaybının belirli bir dermatom veya vücut seviyesinden itibaren başlamasıdır.",
+    "preAnswerSafeDefinition": "Duyu kaybının belirli bir dermatom veya vücut seviyesinden itibaren başlamasıdır.",
+    "postAnswerExplanation": "Duyusal seviye spinal kord lezyonu veya basısı için önemli lokalizasyon bulgusudur.",
+    "postAnswerExpandedExplanation": "Duyusal seviye spinal kord lezyonu veya basısı için önemli lokalizasyon bulgusudur.",
+    "tusPearl": "Duyusal seviye spinal kord lezyonu veya basısı için önemli lokalizasyon bulgusudur.",
+    "differentialPoint": "Periferik nöropatide genellikle eldiven-çorap tarzı dağılım beklenir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "nöroloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "duyusal",
+      "seviye"
+    ]
+  },
+  {
+    "id": "ctx-akut-fokal-norolojik-defisit",
+    "canonicalTerm": "Akut fokal nörolojik defisit",
+    "displayTerm": "Akut fokal nörolojik defisit",
+    "term": "Akut fokal nörolojik defisit",
+    "aliases": [
+      "Akut fokal nörolojik defisit"
+    ],
+    "category": "Nörolojik acil",
+    "subcategory": "Nörolojik acil",
+    "shortDefinition": "Belirli bir beyin, omurilik veya sinir alanına lokalize ani nörolojik işlev kaybıdır.",
+    "previewDefinition": "Belirli bir beyin, omurilik veya sinir alanına lokalize ani nörolojik işlev kaybıdır.",
+    "preAnswerSafeDefinition": "Belirli bir beyin, omurilik veya sinir alanına lokalize ani nörolojik işlev kaybıdır.",
+    "postAnswerExplanation": "Akut inme şüphesinde reperfüzyon tedavisinden önce intrakraniyal kanama dışlanmalıdır.",
+    "postAnswerExpandedExplanation": "Akut inme şüphesinde reperfüzyon tedavisinden önce intrakraniyal kanama dışlanmalıdır.",
+    "tusPearl": "Akut inme şüphesinde reperfüzyon tedavisinden önce intrakraniyal kanama dışlanmalıdır.",
+    "differentialPoint": "Senkop veya metabolik bozukluklar genellikle fokal değil global bilinç/performans değişikliği yapar.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "nöroloji",
+      "acil"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "high",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "akut",
+      "fokal",
+      "nörolojik",
+      "defisit"
+    ]
+  },
+  {
+    "id": "ctx-spinal-kord-basisi",
+    "canonicalTerm": "Spinal kord basısı",
+    "displayTerm": "Spinal kord basısı",
+    "term": "Spinal kord basısı",
+    "aliases": [
+      "Spinal kord basısı"
+    ],
+    "category": "Nörolojik acil",
+    "subcategory": "Nörolojik acil",
+    "shortDefinition": "Omurilik üzerine mekanik bası sonucu motor, duyusal veya otonom fonksiyon kaybı gelişmesidir.",
+    "previewDefinition": "Omurilik üzerine mekanik bası sonucu motor, duyusal veya otonom fonksiyon kaybı gelişmesidir.",
+    "preAnswerSafeDefinition": "Omurilik üzerine mekanik bası sonucu motor, duyusal veya otonom fonksiyon kaybı gelişmesidir.",
+    "postAnswerExplanation": "Motor defisit, duyusal seviye ve sfinkter bulguları acil spinal görüntüleme gerektirir.",
+    "postAnswerExpandedExplanation": "Motor defisit, duyusal seviye ve sfinkter bulguları acil spinal görüntüleme gerektirir.",
+    "tusPearl": "Motor defisit, duyusal seviye ve sfinkter bulguları acil spinal görüntüleme gerektirir.",
+    "differentialPoint": "Radikülopati tek kök dağılımıyla sınırlıyken kord basısında seviye ve uzun trakt bulguları görülebilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "nöroloji",
+      "ortopedi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "spinal",
+      "kord",
+      "basısı"
+    ]
+  },
+  {
+    "id": "ctx-kauda-equina-sendromu",
+    "canonicalTerm": "Kauda equina sendromu",
+    "displayTerm": "Kauda equina sendromu",
+    "term": "Kauda equina sendromu",
+    "aliases": [
+      "Kauda equina sendromu"
+    ],
+    "category": "Nörolojik acil",
+    "subcategory": "Nörolojik acil",
+    "shortDefinition": "Lumbosakral sinir köklerinin basısına bağlı ağrı, motor-duyusal kayıp ve mesane/bağırsak disfonksiyonudur.",
+    "previewDefinition": "Lumbosakral sinir köklerinin basısına bağlı ağrı, motor-duyusal kayıp ve mesane/bağırsak disfonksiyonudur.",
+    "preAnswerSafeDefinition": "Lumbosakral sinir köklerinin basısına bağlı ağrı, motor-duyusal kayıp ve mesane/bağırsak disfonksiyonudur.",
+    "postAnswerExplanation": "Saddle anestezi ve idrar retansiyonu varsa acil dekompresyon düşünülür.",
+    "postAnswerExpandedExplanation": "Saddle anestezi ve idrar retansiyonu varsa acil dekompresyon düşünülür.",
+    "tusPearl": "Saddle anestezi ve idrar retansiyonu varsa acil dekompresyon düşünülür.",
+    "differentialPoint": "Konus medullaris sendromunda üst motor nöron bulguları daha belirgin olabilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "nöroloji",
+      "beyin-cerrahisi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "kauda",
+      "equina",
+      "sendromu"
+    ]
+  },
+  {
+    "id": "ctx-saddle-anestezi",
+    "canonicalTerm": "Saddle anestezi",
+    "displayTerm": "Saddle anestezi",
+    "term": "Saddle anestezi",
+    "aliases": [
+      "Saddle anestezi"
+    ],
+    "category": "Nörolojik bulgu",
+    "subcategory": "Nörolojik bulgu",
+    "shortDefinition": "Perine ve iç uyluk bölgelerinde eyer tarzı duyu kaybıdır.",
+    "previewDefinition": "Perine ve iç uyluk bölgelerinde eyer tarzı duyu kaybıdır.",
+    "preAnswerSafeDefinition": "Perine ve iç uyluk bölgelerinde eyer tarzı duyu kaybıdır.",
+    "postAnswerExplanation": "Kauda equina sendromu açısından kırmızı bayrak bulgusudur.",
+    "postAnswerExpandedExplanation": "Kauda equina sendromu açısından kırmızı bayrak bulgusudur.",
+    "tusPearl": "Kauda equina sendromu açısından kırmızı bayrak bulgusudur.",
+    "differentialPoint": "Tek taraflı dermatomal uyuşmadan daha yaygın sakral kök etkilenimini gösterir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "nöroloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "saddle",
+      "anestezi"
+    ]
+  },
+  {
+    "id": "ctx-kalca-fleksiyonu-zayifligi",
+    "canonicalTerm": "Kalça fleksiyonu zayıflığı",
+    "displayTerm": "Kalça fleksiyonu zayıflığı",
+    "term": "Kalça fleksiyonu zayıflığı",
+    "aliases": [
+      "Kalça fleksiyonu zayıflığı",
+      "kalça fleksiyon zayıflığı"
+    ],
+    "category": "Motor muayene bulgusu",
+    "subcategory": "Motor muayene bulgusu",
+    "shortDefinition": "Kalçayı öne doğru kaldırma gücünün azalmasıdır.",
+    "previewDefinition": "Kalçayı öne doğru kaldırma gücünün azalmasıdır.",
+    "preAnswerSafeDefinition": "Kalçayı öne doğru kaldırma gücünün azalmasıdır.",
+    "postAnswerExplanation": "İliopsoas, femoral sinir veya L2-L3 kök etkileniminde görülebilir.",
+    "postAnswerExpandedExplanation": "İliopsoas, femoral sinir veya L2-L3 kök etkileniminde görülebilir.",
+    "tusPearl": "İliopsoas, femoral sinir veya L2-L3 kök etkileniminde görülebilir.",
+    "differentialPoint": "Diz ekstansiyonu zayıflığı daha çok quadriceps/femoral sinir ilişkisini güçlendirir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "nöroloji",
+      "anatomi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "kalça",
+      "fleksiyonu",
+      "zayıflığı",
+      "kalça fleksiyon zayıflığı"
+    ]
+  },
+  {
+    "id": "ctx-diz-ekstansiyonu-zayifligi",
+    "canonicalTerm": "Diz ekstansiyonu zayıflığı",
+    "displayTerm": "Diz ekstansiyonu zayıflığı",
+    "term": "Diz ekstansiyonu zayıflığı",
+    "aliases": [
+      "Diz ekstansiyonu zayıflığı"
+    ],
+    "category": "Motor muayene bulgusu",
+    "subcategory": "Motor muayene bulgusu",
+    "shortDefinition": "Dizi düzleştirme gücünün azalmasıdır.",
+    "previewDefinition": "Dizi düzleştirme gücünün azalmasıdır.",
+    "preAnswerSafeDefinition": "Dizi düzleştirme gücünün azalmasıdır.",
+    "postAnswerExplanation": "Quadriceps veya femoral sinir etkilenimiyle ilişkilidir.",
+    "postAnswerExpandedExplanation": "Quadriceps veya femoral sinir etkilenimiyle ilişkilidir.",
+    "tusPearl": "Quadriceps veya femoral sinir etkilenimiyle ilişkilidir.",
+    "differentialPoint": "Ayak dorsifleksiyon zayıflığı peroneal sinir veya L4-L5 kök patolojisini düşündürür.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "nöroloji",
+      "anatomi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "diz",
+      "ekstansiyonu",
+      "zayıflığı"
+    ]
+  },
+  {
+    "id": "ctx-i-liopsoas-hematomu",
+    "canonicalTerm": "İliopsoas hematomu",
+    "displayTerm": "İliopsoas hematomu",
+    "term": "İliopsoas hematomu",
+    "aliases": [
+      "İliopsoas hematomu",
+      "sol iliopsoas hematomu"
+    ],
+    "category": "Kanama/kompresyon tablosu",
+    "subcategory": "Kanama/kompresyon tablosu",
+    "shortDefinition": "İliopsoas kası içinde kan birikmesiyle oluşan retroperitoneal hematomdur.",
+    "previewDefinition": "İliopsoas kası içinde kan birikmesiyle oluşan retroperitoneal hematomdur.",
+    "preAnswerSafeDefinition": "İliopsoas kası içinde kan birikmesiyle oluşan retroperitoneal hematomdur.",
+    "postAnswerExplanation": "Antikoagülan kullanımı sonrası uyluk güçsüzlüğü ve femoral sinir basısı yapabilir.",
+    "postAnswerExpandedExplanation": "Antikoagülan kullanımı sonrası uyluk güçsüzlüğü ve femoral sinir basısı yapabilir.",
+    "tusPearl": "Antikoagülan kullanımı sonrası uyluk güçsüzlüğü ve femoral sinir basısı yapabilir.",
+    "differentialPoint": "Eklem içi kanamadan farklı olarak retroperitoneal alanda sinir kompresyonu bulguları görülebilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "iç-hastalıkları",
+      "nöroloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "i̇liopsoas",
+      "hematomu",
+      "sol iliopsoas hematomu"
+    ]
+  },
+  {
+    "id": "ctx-retroperitoneal-hematom",
+    "canonicalTerm": "Retroperitoneal hematom",
+    "displayTerm": "Retroperitoneal hematom",
+    "term": "Retroperitoneal hematom",
+    "aliases": [
+      "Retroperitoneal hematom"
+    ],
+    "category": "Kanama tablosu",
+    "subcategory": "Kanama tablosu",
+    "shortDefinition": "Retroperitoneal boşlukta kan birikmesidir.",
+    "previewDefinition": "Retroperitoneal boşlukta kan birikmesidir.",
+    "preAnswerSafeDefinition": "Retroperitoneal boşlukta kan birikmesidir.",
+    "postAnswerExplanation": "Antikoagülan kullanan hastada karın/sırt ağrısı, anemi veya femoral nöropati bulguları oluşturabilir.",
+    "postAnswerExpandedExplanation": "Antikoagülan kullanan hastada karın/sırt ağrısı, anemi veya femoral nöropati bulguları oluşturabilir.",
+    "tusPearl": "Antikoagülan kullanan hastada karın/sırt ağrısı, anemi veya femoral nöropati bulguları oluşturabilir.",
+    "differentialPoint": "İntraperitoneal kanamadan farklı olarak periton bulguları daha silik olabilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi",
+      "iç-hastalıkları"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "retroperitoneal",
+      "hematom"
+    ]
+  },
+  {
+    "id": "ctx-peritoneal-irritasyon-bulgusu",
+    "canonicalTerm": "Peritoneal irritasyon bulgusu",
+    "displayTerm": "Peritoneal irritasyon bulgusu",
+    "term": "Peritoneal irritasyon bulgusu",
+    "aliases": [
+      "Peritoneal irritasyon bulgusu",
+      "periton irritasyonu",
+      "periton irritasyon bulgusu",
+      "meningeal irritasyon bulgusu"
+    ],
+    "category": "Fizik muayene bulgusu",
+    "subcategory": "Fizik muayene bulgusu",
+    "shortDefinition": "Peritonun inflamasyon veya kanla uyarıldığını düşündüren defans, rebound ve hassasiyet gibi bulgulardır.",
+    "previewDefinition": "Peritonun inflamasyon veya kanla uyarıldığını düşündüren defans, rebound ve hassasiyet gibi bulgulardır.",
+    "preAnswerSafeDefinition": "Peritonun inflamasyon veya kanla uyarıldığını düşündüren defans, rebound ve hassasiyet gibi bulgulardır.",
+    "postAnswerExplanation": "Akut batında periton irritasyonu perforasyon, apandisit, rüptüre ektopik gebelik veya intraabdominal kanama açısından önemlidir.",
+    "postAnswerExpandedExplanation": "Akut batında periton irritasyonu perforasyon, apandisit, rüptüre ektopik gebelik veya intraabdominal kanama açısından önemlidir.",
+    "tusPearl": "Akut batında periton irritasyonu perforasyon, apandisit, rüptüre ektopik gebelik veya intraabdominal kanama açısından önemlidir.",
+    "differentialPoint": "Visseral ağrı daha yaygın ve küntken periton irritasyonu lokalize hassasiyet ve rebound-defansla ilişkilidir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi",
+      "acil"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "peritoneal",
+      "irritasyon",
+      "bulgusu",
+      "periton irritasyonu",
+      "periton irritasyon bulgusu",
+      "meningeal irritasyon bulgusu"
+    ]
+  },
+  {
+    "id": "ctx-rebound-hassasiyet",
+    "canonicalTerm": "Rebound hassasiyet",
+    "displayTerm": "Rebound hassasiyet",
+    "term": "Rebound hassasiyet",
+    "aliases": [
+      "Rebound hassasiyet",
+      "rebound",
+      "rebound-defans"
+    ],
+    "category": "Fizik muayene bulgusu",
+    "subcategory": "Fizik muayene bulgusu",
+    "shortDefinition": "Karına bası uygulandıktan sonra el çekildiğinde ağrının artmasıdır.",
+    "previewDefinition": "Karına bası uygulandıktan sonra el çekildiğinde ağrının artmasıdır.",
+    "preAnswerSafeDefinition": "Karına bası uygulandıktan sonra el çekildiğinde ağrının artmasıdır.",
+    "postAnswerExplanation": "Rebound lokal veya yaygın periton irritasyonunu destekler.",
+    "postAnswerExpandedExplanation": "Rebound lokal veya yaygın periton irritasyonunu destekler.",
+    "tusPearl": "Rebound lokal veya yaygın periton irritasyonunu destekler.",
+    "differentialPoint": "Sadece palpasyon hassasiyeti daha nonspesifiktir; rebound peritoneal tutulum açısından daha değerlidir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi",
+      "acil"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "rebound",
+      "hassasiyet",
+      "rebound-defans"
+    ]
+  },
+  {
+    "id": "ctx-defans",
+    "canonicalTerm": "Defans",
+    "displayTerm": "Defans",
+    "term": "Defans",
+    "aliases": [
+      "Defans",
+      "istemli defans",
+      "lokal defans"
+    ],
+    "category": "Fizik muayene bulgusu",
+    "subcategory": "Fizik muayene bulgusu",
+    "shortDefinition": "Karın duvarı kaslarının istemli veya istemsiz kasılarak palpasyona direnç göstermesidir.",
+    "previewDefinition": "Karın duvarı kaslarının istemli veya istemsiz kasılarak palpasyona direnç göstermesidir.",
+    "preAnswerSafeDefinition": "Karın duvarı kaslarının istemli veya istemsiz kasılarak palpasyona direnç göstermesidir.",
+    "postAnswerExplanation": "Defans periton irritasyonu ve akut batın değerlendirmesinde kritik muayene bulgusudur.",
+    "postAnswerExpandedExplanation": "Defans periton irritasyonu ve akut batın değerlendirmesinde kritik muayene bulgusudur.",
+    "tusPearl": "Defans periton irritasyonu ve akut batın değerlendirmesinde kritik muayene bulgusudur.",
+    "differentialPoint": "İstemli defans anksiyete/ağrı ile azalabilir; rijidite istemsiz ve daha ciddi peritoneal irritasyonu düşündürür.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi",
+      "acil"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": false,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "defans",
+      "istemli defans",
+      "lokal defans"
+    ]
+  },
+  {
+    "id": "ctx-sag-alt-kadran",
+    "canonicalTerm": "Sağ alt kadran",
+    "displayTerm": "Sağ alt kadran",
+    "term": "Sağ alt kadran",
+    "aliases": [
+      "Sağ alt kadran",
+      "sağ alt kadranda"
+    ],
+    "category": "Anatomik lokalizasyon",
+    "subcategory": "Anatomik lokalizasyon",
+    "shortDefinition": "Karın sağ alt bölümünü ifade eder; apendiks, terminal ileum, çekum ve sağ over/adnekslerle ilişkilidir.",
+    "previewDefinition": "Karın sağ alt bölümünü ifade eder; apendiks, terminal ileum, çekum ve sağ over/adnekslerle ilişkilidir.",
+    "preAnswerSafeDefinition": "Karın sağ alt bölümünü ifade eder; apendiks, terminal ileum, çekum ve sağ over/adnekslerle ilişkilidir.",
+    "postAnswerExplanation": "Periumbilikal başlayıp sağ alt kadrana göç eden ağrı akut apandisit için tipik ipucudur.",
+    "postAnswerExpandedExplanation": "Periumbilikal başlayıp sağ alt kadrana göç eden ağrı akut apandisit için tipik ipucudur.",
+    "tusPearl": "Periumbilikal başlayıp sağ alt kadrana göç eden ağrı akut apandisit için tipik ipucudur.",
+    "differentialPoint": "Jinekolojik ve üriner nedenler sağ alt kadran ağrısını taklit edebilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi",
+      "kadın-doğum"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "sağ",
+      "alt",
+      "kadran",
+      "sağ alt kadranda"
+    ]
+  },
+  {
+    "id": "ctx-sag-ust-kadran",
+    "canonicalTerm": "Sağ üst kadran",
+    "displayTerm": "Sağ üst kadran",
+    "term": "Sağ üst kadran",
+    "aliases": [
+      "Sağ üst kadran"
+    ],
+    "category": "Anatomik lokalizasyon",
+    "subcategory": "Anatomik lokalizasyon",
+    "shortDefinition": "Karın sağ üst bölümünü ifade eder; karaciğer, safra kesesi ve safra yollarıyla ilişkilidir.",
+    "previewDefinition": "Karın sağ üst bölümünü ifade eder; karaciğer, safra kesesi ve safra yollarıyla ilişkilidir.",
+    "preAnswerSafeDefinition": "Karın sağ üst bölümünü ifade eder; karaciğer, safra kesesi ve safra yollarıyla ilişkilidir.",
+    "postAnswerExplanation": "Yağlı yemek sonrası sağ üst kadran ağrısı ve Murphy bulgusu kolesistit/biliyer kolik ayrımında önemlidir.",
+    "postAnswerExpandedExplanation": "Yağlı yemek sonrası sağ üst kadran ağrısı ve Murphy bulgusu kolesistit/biliyer kolik ayrımında önemlidir.",
+    "tusPearl": "Yağlı yemek sonrası sağ üst kadran ağrısı ve Murphy bulgusu kolesistit/biliyer kolik ayrımında önemlidir.",
+    "differentialPoint": "Epigastrik ağrı pankreatit veya peptik ülserle karışabilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi",
+      "gastroenteroloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "sağ",
+      "üst",
+      "kadran"
+    ]
+  },
+  {
+    "id": "ctx-suprapubik-hassasiyet",
+    "canonicalTerm": "Suprapubik hassasiyet",
+    "displayTerm": "Suprapubik hassasiyet",
+    "term": "Suprapubik hassasiyet",
+    "aliases": [
+      "Suprapubik hassasiyet"
+    ],
+    "category": "Fizik muayene bulgusu",
+    "subcategory": "Fizik muayene bulgusu",
+    "shortDefinition": "Pubis kemiği üzerinde, mesane komşuluğunda palpasyonla ağrı/hassasiyet olmasıdır.",
+    "previewDefinition": "Pubis kemiği üzerinde, mesane komşuluğunda palpasyonla ağrı/hassasiyet olmasıdır.",
+    "preAnswerSafeDefinition": "Pubis kemiği üzerinde, mesane komşuluğunda palpasyonla ağrı/hassasiyet olmasıdır.",
+    "postAnswerExplanation": "Dizüri ve sık idrara çıkma ile birlikte sistit veya üriner patoloji düşündürebilir.",
+    "postAnswerExpandedExplanation": "Dizüri ve sık idrara çıkma ile birlikte sistit veya üriner patoloji düşündürebilir.",
+    "tusPearl": "Dizüri ve sık idrara çıkma ile birlikte sistit veya üriner patoloji düşündürebilir.",
+    "differentialPoint": "Kostovertebral açı hassasiyeti üst üriner sistem tutulumunu destekler.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "üroloji",
+      "acil"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "suprapubik",
+      "hassasiyet"
+    ]
+  },
+  {
+    "id": "ctx-kostovertebral-aci-hassasiyeti",
+    "canonicalTerm": "Kostovertebral açı hassasiyeti",
+    "displayTerm": "Kostovertebral açı hassasiyeti",
+    "term": "Kostovertebral açı hassasiyeti",
+    "aliases": [
+      "Kostovertebral açı hassasiyeti",
+      "CVA hassasiyeti"
+    ],
+    "category": "Fizik muayene bulgusu",
+    "subcategory": "Fizik muayene bulgusu",
+    "shortDefinition": "Alt kaburga-vertebra birleşim bölgesinde perküsyonla ağrı alınmasıdır.",
+    "previewDefinition": "Alt kaburga-vertebra birleşim bölgesinde perküsyonla ağrı alınmasıdır.",
+    "preAnswerSafeDefinition": "Alt kaburga-vertebra birleşim bölgesinde perküsyonla ağrı alınmasıdır.",
+    "postAnswerExplanation": "Ateş ve piyüriyle birlikte piyelonefrit lehine önemli bulgudur.",
+    "postAnswerExpandedExplanation": "Ateş ve piyüriyle birlikte piyelonefrit lehine önemli bulgudur.",
+    "tusPearl": "Ateş ve piyüriyle birlikte piyelonefrit lehine önemli bulgudur.",
+    "differentialPoint": "Sistit genellikle suprapubik semptomlarla sınırlıdır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "üroloji",
+      "nefroloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "kostovertebral",
+      "açı",
+      "hassasiyeti",
+      "cva hassasiyeti"
+    ]
+  },
+  {
+    "id": "ctx-kontrast-tutulumu",
+    "canonicalTerm": "Kontrast tutulumu",
+    "displayTerm": "Kontrast tutulumu",
+    "term": "Kontrast tutulumu",
+    "aliases": [
+      "Kontrast tutulumu",
+      "kontrastlanma",
+      "patolojik kontrast tutulumu"
+    ],
+    "category": "Görüntüleme bulgusu",
+    "subcategory": "Görüntüleme bulgusu",
+    "shortDefinition": "Kontrast madde verilmesi sonrası dokuda artmış kontrastlanma görülmesidir.",
+    "previewDefinition": "Kontrast madde verilmesi sonrası dokuda artmış kontrastlanma görülmesidir.",
+    "preAnswerSafeDefinition": "Kontrast madde verilmesi sonrası dokuda artmış kontrastlanma görülmesidir.",
+    "postAnswerExplanation": "İnflamasyon, tümör, vaskülarite veya kan-beyin bariyeri bozulması gibi süreçleri gösterebilir.",
+    "postAnswerExpandedExplanation": "İnflamasyon, tümör, vaskülarite veya kan-beyin bariyeri bozulması gibi süreçleri gösterebilir.",
+    "tusPearl": "İnflamasyon, tümör, vaskülarite veya kan-beyin bariyeri bozulması gibi süreçleri gösterebilir.",
+    "differentialPoint": "Difüzyon kısıtlılığı akut iskemi/abse gibi farklı süreçleri düşündürür.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "radyoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "kontrast",
+      "tutulumu",
+      "kontrastlanma",
+      "patolojik kontrast tutulumu"
+    ]
+  },
+  {
+    "id": "ctx-segmenter-duvar-kalinlasmasi",
+    "canonicalTerm": "Segmenter duvar kalınlaşması",
+    "displayTerm": "Segmenter duvar kalınlaşması",
+    "term": "Segmenter duvar kalınlaşması",
+    "aliases": [
+      "Segmenter duvar kalınlaşması",
+      "duvar kalınlaşması",
+      "barsak duvar kalınlaşması"
+    ],
+    "category": "Görüntüleme bulgusu",
+    "subcategory": "Görüntüleme bulgusu",
+    "shortDefinition": "Bağırsak veya organ duvarının sınırlı bir segmentte kalınlaşmasıdır.",
+    "previewDefinition": "Bağırsak veya organ duvarının sınırlı bir segmentte kalınlaşmasıdır.",
+    "preAnswerSafeDefinition": "Bağırsak veya organ duvarının sınırlı bir segmentte kalınlaşmasıdır.",
+    "postAnswerExplanation": "İnflamatuvar barsak hastalığı, enfeksiyon, iskemi veya tümör ayırıcı tanısında bağlamla değerlendirilir.",
+    "postAnswerExpandedExplanation": "İnflamatuvar barsak hastalığı, enfeksiyon, iskemi veya tümör ayırıcı tanısında bağlamla değerlendirilir.",
+    "tusPearl": "İnflamatuvar barsak hastalığı, enfeksiyon, iskemi veya tümör ayırıcı tanısında bağlamla değerlendirilir.",
+    "differentialPoint": "Diffüz kalınlaşma sistemik/ödematöz süreçleri daha fazla düşündürebilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "radyoloji",
+      "gastroenteroloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "segmenter",
+      "duvar",
+      "kalınlaşması",
+      "duvar kalınlaşması",
+      "barsak duvar kalınlaşması"
+    ]
+  },
+  {
+    "id": "ctx-safra-kesesi-duvar-kalinlasmasi",
+    "canonicalTerm": "Safra kesesi duvar kalınlaşması",
+    "displayTerm": "Safra kesesi duvar kalınlaşması",
+    "term": "Safra kesesi duvar kalınlaşması",
+    "aliases": [
+      "Safra kesesi duvar kalınlaşması",
+      "safra kesesinde duvar kalınlaşması"
+    ],
+    "category": "Görüntüleme bulgusu",
+    "subcategory": "Görüntüleme bulgusu",
+    "shortDefinition": "Safra kesesi duvarının normalden kalın izlenmesidir.",
+    "previewDefinition": "Safra kesesi duvarının normalden kalın izlenmesidir.",
+    "preAnswerSafeDefinition": "Safra kesesi duvarının normalden kalın izlenmesidir.",
+    "postAnswerExplanation": "Taş, ateş ve perikolesistik sıvıyla birlikte akut kolesistit lehine güçlü bulgudur.",
+    "postAnswerExpandedExplanation": "Taş, ateş ve perikolesistik sıvıyla birlikte akut kolesistit lehine güçlü bulgudur.",
+    "tusPearl": "Taş, ateş ve perikolesistik sıvıyla birlikte akut kolesistit lehine güçlü bulgudur.",
+    "differentialPoint": "Tek başına duvar kalınlaşması hepatit, kalp yetmezliği veya hipoalbüminemiyle de görülebilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "genel-cerrahi",
+      "radyoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "safra",
+      "kesesi",
+      "duvar",
+      "kalınlaşması",
+      "safra kesesinde duvar kalınlaşması"
+    ]
+  },
+  {
+    "id": "ctx-perikolesistik-sivi",
+    "canonicalTerm": "Perikolesistik sıvı",
+    "displayTerm": "Perikolesistik sıvı",
+    "term": "Perikolesistik sıvı",
+    "aliases": [
+      "Perikolesistik sıvı"
+    ],
+    "category": "Görüntüleme bulgusu",
+    "subcategory": "Görüntüleme bulgusu",
+    "shortDefinition": "Safra kesesi çevresinde sıvı izlenmesidir.",
+    "previewDefinition": "Safra kesesi çevresinde sıvı izlenmesidir.",
+    "preAnswerSafeDefinition": "Safra kesesi çevresinde sıvı izlenmesidir.",
+    "postAnswerExplanation": "Safra taşı ve duvar kalınlaşmasıyla birlikte akut kolesistiti destekler.",
+    "postAnswerExpandedExplanation": "Safra taşı ve duvar kalınlaşmasıyla birlikte akut kolesistiti destekler.",
+    "tusPearl": "Safra taşı ve duvar kalınlaşmasıyla birlikte akut kolesistiti destekler.",
+    "differentialPoint": "Sistemik ödem durumlarında özgüllüğü azalabilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "radyoloji",
+      "genel-cerrahi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "perikolesistik",
+      "sıvı"
+    ]
+  },
+  {
+    "id": "ctx-kontrastsiz-beyin-bilgisayarli-tomografisi",
+    "canonicalTerm": "Kontrastsız beyin bilgisayarlı tomografisi",
+    "displayTerm": "Kontrastsız beyin bilgisayarlı tomografisi",
+    "term": "Kontrastsız beyin bilgisayarlı tomografisi",
+    "aliases": [
+      "Kontrastsız beyin bilgisayarlı tomografisi",
+      "kontrastsız beyin BT",
+      "kontrastsız beyin tomografisi"
+    ],
+    "category": "Görüntüleme tetkiki",
+    "subcategory": "Görüntüleme tetkiki",
+    "shortDefinition": "Beynin kontrast verilmeden BT ile değerlendirilmesidir.",
+    "previewDefinition": "Beynin kontrast verilmeden BT ile değerlendirilmesidir.",
+    "preAnswerSafeDefinition": "Beynin kontrast verilmeden BT ile değerlendirilmesidir.",
+    "postAnswerExplanation": "Akut inme şüphesinde trombolizden önce intrakraniyal kanamayı dışlamak için ilk pratik görüntülemedir.",
+    "postAnswerExpandedExplanation": "Akut inme şüphesinde trombolizden önce intrakraniyal kanamayı dışlamak için ilk pratik görüntülemedir.",
+    "tusPearl": "Akut inme şüphesinde trombolizden önce intrakraniyal kanamayı dışlamak için ilk pratik görüntülemedir.",
+    "differentialPoint": "MR difüzyon erken iskemide duyarlı olabilir; ancak acilde kanama dışlama için BT hızlıdır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "nöroloji",
+      "radyoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "kontrastsız",
+      "beyin",
+      "bilgisayarlı",
+      "tomografisi",
+      "kontrastsız beyin bt",
+      "kontrastsız beyin tomografisi"
+    ]
+  },
+  {
+    "id": "ctx-mr-difuzyon-kisitliligi",
+    "canonicalTerm": "MR difüzyon kısıtlılığı",
+    "displayTerm": "MR difüzyon kısıtlılığı",
+    "term": "MR difüzyon kısıtlılığı",
+    "aliases": [
+      "MR difüzyon kısıtlılığı",
+      "difüzyon kısıtlılığı",
+      "DWI kısıtlılığı"
+    ],
+    "category": "Görüntüleme bulgusu",
+    "subcategory": "Görüntüleme bulgusu",
+    "shortDefinition": "Difüzyon ağırlıklı MR’da su hareketinin kısıtlandığını gösteren bulgudur.",
+    "previewDefinition": "Difüzyon ağırlıklı MR’da su hareketinin kısıtlandığını gösteren bulgudur.",
+    "preAnswerSafeDefinition": "Difüzyon ağırlıklı MR’da su hareketinin kısıtlandığını gösteren bulgudur.",
+    "postAnswerExplanation": "Akut iskemik inme ve abse gibi hücresel yoğunluğu artmış süreçlerde önemlidir.",
+    "postAnswerExpandedExplanation": "Akut iskemik inme ve abse gibi hücresel yoğunluğu artmış süreçlerde önemlidir.",
+    "tusPearl": "Akut iskemik inme ve abse gibi hücresel yoğunluğu artmış süreçlerde önemlidir.",
+    "differentialPoint": "T2/FLAIR değişiklikleri kronoloji ve ödem hakkında ek bilgi verir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "nöroloji",
+      "radyoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "mr",
+      "difüzyon",
+      "kısıtlılığı",
+      "difüzyon kısıtlılığı",
+      "dwi kısıtlılığı"
+    ]
+  },
+  {
+    "id": "ctx-pelvik-serbest-sivi",
+    "canonicalTerm": "Pelvik serbest sıvı",
+    "displayTerm": "Pelvik serbest sıvı",
+    "term": "Pelvik serbest sıvı",
+    "aliases": [
+      "Pelvik serbest sıvı"
+    ],
+    "category": "Görüntüleme bulgusu",
+    "subcategory": "Görüntüleme bulgusu",
+    "shortDefinition": "Pelvis içinde serbest sıvı izlenmesidir.",
+    "previewDefinition": "Pelvis içinde serbest sıvı izlenmesidir.",
+    "preAnswerSafeDefinition": "Pelvis içinde serbest sıvı izlenmesidir.",
+    "postAnswerExplanation": "Gebelikte instabilite ve uterin kavitede kese yokluğuyla birlikte rüptüre ektopik gebelik lehine önemlidir.",
+    "postAnswerExpandedExplanation": "Gebelikte instabilite ve uterin kavitede kese yokluğuyla birlikte rüptüre ektopik gebelik lehine önemlidir.",
+    "tusPearl": "Gebelikte instabilite ve uterin kavitede kese yokluğuyla birlikte rüptüre ektopik gebelik lehine önemlidir.",
+    "differentialPoint": "Az miktarda fizyolojik sıvı ovulasyon döneminde görülebilir; klinik bağlam belirleyicidir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "kadın-doğum",
+      "radyoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "pelvik",
+      "serbest",
+      "sıvı"
+    ]
+  },
+  {
+    "id": "ctx-klinik-stabilite",
+    "canonicalTerm": "Klinik stabilite",
+    "displayTerm": "Klinik stabilite",
+    "term": "Klinik stabilite",
+    "aliases": [
+      "Klinik stabilite",
+      "klinik stabil",
+      "genel durumu stabil"
+    ],
+    "category": "Klinik durum",
+    "subcategory": "Klinik durum",
+    "shortDefinition": "Hastanın hemodinami, bilinç, solunum ve genel durum açısından akut bozulma göstermemesi durumudur.",
+    "previewDefinition": "Hastanın hemodinami, bilinç, solunum ve genel durum açısından akut bozulma göstermemesi durumudur.",
+    "preAnswerSafeDefinition": "Hastanın hemodinami, bilinç, solunum ve genel durum açısından akut bozulma göstermemesi durumudur.",
+    "postAnswerExplanation": "Stabilite tanı ve tedavi hızını belirler; instabil hastada seri takip yerine acil müdahale gerekebilir.",
+    "postAnswerExpandedExplanation": "Stabilite tanı ve tedavi hızını belirler; instabil hastada seri takip yerine acil müdahale gerekebilir.",
+    "tusPearl": "Stabilite tanı ve tedavi hızını belirler; instabil hastada seri takip yerine acil müdahale gerekebilir.",
+    "differentialPoint": "Vital stabilite lokal iskemi veya zaman kritik cerrahi acili tamamen dışlamaz.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "acil",
+      "genel-cerrahi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "klinik",
+      "stabilite",
+      "klinik stabil",
+      "genel durumu stabil"
+    ]
+  },
+  {
+    "id": "ctx-hemodinamik-instabilite",
+    "canonicalTerm": "Hemodinamik instabilite",
+    "displayTerm": "Hemodinamik instabilite",
+    "term": "Hemodinamik instabilite",
+    "aliases": [
+      "Hemodinamik instabilite",
+      "hemodinamik instabil"
+    ],
+    "category": "Klinik acil",
+    "subcategory": "Klinik acil",
+    "shortDefinition": "Dolaşımın doku perfüzyonunu sürdüremeyecek şekilde bozulmasıdır.",
+    "previewDefinition": "Dolaşımın doku perfüzyonunu sürdüremeyecek şekilde bozulmasıdır.",
+    "preAnswerSafeDefinition": "Dolaşımın doku perfüzyonunu sürdüremeyecek şekilde bozulmasıdır.",
+    "postAnswerExplanation": "Hipotansiyon, taşikardi, bilinç değişikliği veya şok bulguları acil müdahale gerektirir.",
+    "postAnswerExpandedExplanation": "Hipotansiyon, taşikardi, bilinç değişikliği veya şok bulguları acil müdahale gerektirir.",
+    "tusPearl": "Hipotansiyon, taşikardi, bilinç değişikliği veya şok bulguları acil müdahale gerektirir.",
+    "differentialPoint": "Stabil hastada tanısal süreç daha ayrıntılı yürütülebilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "acil",
+      "iç-hastalıkları"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "hemodinamik",
+      "instabilite",
+      "hemodinamik instabil"
+    ]
+  },
+  {
+    "id": "ctx-retikulosit-sayisi",
+    "canonicalTerm": "Retikülosit sayısı",
+    "displayTerm": "Retikülosit sayısı",
+    "term": "Retikülosit sayısı",
+    "aliases": [
+      "Retikülosit sayısı",
+      "retikülosit yanıtı"
+    ],
+    "category": "Laboratuvar parametresi",
+    "subcategory": "Laboratuvar parametresi",
+    "shortDefinition": "Kemik iliğinin eritrosit üretim yanıtını yansıtan genç eritrosit oranı/sayısıdır.",
+    "previewDefinition": "Kemik iliğinin eritrosit üretim yanıtını yansıtan genç eritrosit oranı/sayısıdır.",
+    "preAnswerSafeDefinition": "Kemik iliğinin eritrosit üretim yanıtını yansıtan genç eritrosit oranı/sayısıdır.",
+    "postAnswerExplanation": "Hemolizde retikülosit artışı beklenirken aplastik krizde retikülosit yanıtı düşüktür.",
+    "postAnswerExpandedExplanation": "Hemolizde retikülosit artışı beklenirken aplastik krizde retikülosit yanıtı düşüktür.",
+    "tusPearl": "Hemolizde retikülosit artışı beklenirken aplastik krizde retikülosit yanıtı düşüktür.",
+    "differentialPoint": "Demir/B12 eksikliği ve kemik iliği baskılanmasında retikülosit yanıtı yetersiz olabilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "hematoloji",
+      "pediatri"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "retikülosit",
+      "sayısı",
+      "retikülosit yanıtı"
+    ]
+  },
+  {
+    "id": "ctx-direkt-coombs-testi",
+    "canonicalTerm": "Direkt Coombs testi",
+    "displayTerm": "Direkt Coombs testi",
+    "term": "Direkt Coombs testi",
+    "aliases": [
+      "Direkt Coombs testi",
+      "direkt antiglobulin testi",
+      "DAT"
+    ],
+    "category": "Laboratuvar testi",
+    "subcategory": "Laboratuvar testi",
+    "shortDefinition": "Eritrosit yüzeyine bağlı antikor veya komplemanı gösteren testtir.",
+    "previewDefinition": "Eritrosit yüzeyine bağlı antikor veya komplemanı gösteren testtir.",
+    "preAnswerSafeDefinition": "Eritrosit yüzeyine bağlı antikor veya komplemanı gösteren testtir.",
+    "postAnswerExplanation": "Otoimmün hemolitik anemi ve yenidoğan hemolitik hastalığında direkt Coombs pozitifliği anlamlıdır.",
+    "postAnswerExpandedExplanation": "Otoimmün hemolitik anemi ve yenidoğan hemolitik hastalığında direkt Coombs pozitifliği anlamlıdır.",
+    "tusPearl": "Otoimmün hemolitik anemi ve yenidoğan hemolitik hastalığında direkt Coombs pozitifliği anlamlıdır.",
+    "differentialPoint": "İndirekt Coombs serumdaki serbest antikorları tarar; direkt Coombs eritrosit üzerindeki antikoru gösterir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "hematoloji",
+      "pediatri"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "direkt",
+      "coombs",
+      "testi",
+      "direkt antiglobulin testi",
+      "dat"
+    ]
+  },
+  {
+    "id": "ctx-i-ndirekt-coombs-testi",
+    "canonicalTerm": "İndirekt Coombs testi",
+    "displayTerm": "İndirekt Coombs testi",
+    "term": "İndirekt Coombs testi",
+    "aliases": [
+      "İndirekt Coombs testi",
+      "anne indirekt Coombs testi",
+      "indirekt antiglobulin testi"
+    ],
+    "category": "Laboratuvar testi",
+    "subcategory": "Laboratuvar testi",
+    "shortDefinition": "Serumda eritrosit antijenlerine karşı dolaşan antikorları saptayan testtir.",
+    "previewDefinition": "Serumda eritrosit antijenlerine karşı dolaşan antikorları saptayan testtir.",
+    "preAnswerSafeDefinition": "Serumda eritrosit antijenlerine karşı dolaşan antikorları saptayan testtir.",
+    "postAnswerExplanation": "Rh uygunsuzluğu takibinde anne serumunda indirekt Coombs değerlendirilir.",
+    "postAnswerExpandedExplanation": "Rh uygunsuzluğu takibinde anne serumunda indirekt Coombs değerlendirilir.",
+    "tusPearl": "Rh uygunsuzluğu takibinde anne serumunda indirekt Coombs değerlendirilir.",
+    "differentialPoint": "Direkt Coombs bebek/eritrosit yüzeyine bağlı antikoru gösterir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "kadın-doğum",
+      "pediatri",
+      "hematoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "i̇ndirekt",
+      "coombs",
+      "testi",
+      "anne indirekt coombs testi",
+      "indirekt antiglobulin testi"
+    ]
+  },
+  {
+    "id": "ctx-i-ndirekt-hiperbilirubinemi",
+    "canonicalTerm": "İndirekt hiperbilirubinemi",
+    "displayTerm": "İndirekt hiperbilirubinemi",
+    "term": "İndirekt hiperbilirubinemi",
+    "aliases": [
+      "İndirekt hiperbilirubinemi"
+    ],
+    "category": "Biyokimyasal bulgu",
+    "subcategory": "Biyokimyasal bulgu",
+    "shortDefinition": "Konjuge olmamış bilirubinin kanda artmasıdır.",
+    "previewDefinition": "Konjuge olmamış bilirubinin kanda artmasıdır.",
+    "preAnswerSafeDefinition": "Konjuge olmamış bilirubinin kanda artmasıdır.",
+    "postAnswerExplanation": "Hemoliz, yenidoğan fizyolojik sarılığı ve konjugasyon bozuklukları indirekt hiperbilirubinemi yapabilir.",
+    "postAnswerExpandedExplanation": "Hemoliz, yenidoğan fizyolojik sarılığı ve konjugasyon bozuklukları indirekt hiperbilirubinemi yapabilir.",
+    "tusPearl": "Hemoliz, yenidoğan fizyolojik sarılığı ve konjugasyon bozuklukları indirekt hiperbilirubinemi yapabilir.",
+    "differentialPoint": "Direkt hiperbilirubinemi kolestaz veya hepatoselüler atılım bozukluğunu düşündürür.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "pediatri",
+      "biyokimya",
+      "gastroenteroloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "i̇ndirekt",
+      "hiperbilirubinemi"
+    ]
+  },
+  {
+    "id": "ctx-konjuge-hiperbilirubinemi",
+    "canonicalTerm": "Konjuge hiperbilirubinemi",
+    "displayTerm": "Konjuge hiperbilirubinemi",
+    "term": "Konjuge hiperbilirubinemi",
+    "aliases": [
+      "Konjuge hiperbilirubinemi",
+      "direkt hiperbilirubinemi"
+    ],
+    "category": "Biyokimyasal bulgu",
+    "subcategory": "Biyokimyasal bulgu",
+    "shortDefinition": "Direkt bilirubin fraksiyonunun artmasıdır.",
+    "previewDefinition": "Direkt bilirubin fraksiyonunun artmasıdır.",
+    "preAnswerSafeDefinition": "Direkt bilirubin fraksiyonunun artmasıdır.",
+    "postAnswerExplanation": "Kolestaz, safra yolu obstrüksiyonu ve hepatoselüler atılım bozukluklarında önemlidir.",
+    "postAnswerExpandedExplanation": "Kolestaz, safra yolu obstrüksiyonu ve hepatoselüler atılım bozukluklarında önemlidir.",
+    "tusPearl": "Kolestaz, safra yolu obstrüksiyonu ve hepatoselüler atılım bozukluklarında önemlidir.",
+    "differentialPoint": "İndirekt artış hemoliz veya konjugasyon yetersizliğiyle daha çok ilişkilidir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "gastroenteroloji",
+      "pediatri",
+      "biyokimya"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "konjuge",
+      "hiperbilirubinemi",
+      "direkt hiperbilirubinemi"
+    ]
+  },
+  {
+    "id": "ctx-hemolitik-anemi",
+    "canonicalTerm": "Hemolitik anemi",
+    "displayTerm": "Hemolitik anemi",
+    "term": "Hemolitik anemi",
+    "aliases": [
+      "Hemolitik anemi"
+    ],
+    "category": "Hematolojik tablo",
+    "subcategory": "Hematolojik tablo",
+    "shortDefinition": "Eritrosit yıkımının artmasına bağlı anemi tablosudur.",
+    "previewDefinition": "Eritrosit yıkımının artmasına bağlı anemi tablosudur.",
+    "preAnswerSafeDefinition": "Eritrosit yıkımının artmasına bağlı anemi tablosudur.",
+    "postAnswerExplanation": "LDH ve indirekt bilirubin artışı, haptoglobin düşüklüğü ve retikülositoz hemolizi destekler.",
+    "postAnswerExpandedExplanation": "LDH ve indirekt bilirubin artışı, haptoglobin düşüklüğü ve retikülositoz hemolizi destekler.",
+    "tusPearl": "LDH ve indirekt bilirubin artışı, haptoglobin düşüklüğü ve retikülositoz hemolizi destekler.",
+    "differentialPoint": "Aplastik krizde retikülosit yanıtı azalır; hemolizde genellikle artar.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "hematoloji",
+      "pediatri"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "hemolitik",
+      "anemi"
+    ]
+  },
+  {
+    "id": "ctx-aplastik-kriz",
+    "canonicalTerm": "Aplastik kriz",
+    "displayTerm": "Aplastik kriz",
+    "term": "Aplastik kriz",
+    "aliases": [
+      "Aplastik kriz"
+    ],
+    "category": "Hematolojik acil",
+    "subcategory": "Hematolojik acil",
+    "shortDefinition": "Kemik iliğinde geçici eritropoez baskılanmasına bağlı ani retikülosit düşüklüğü ve anemi tablosudur.",
+    "previewDefinition": "Kemik iliğinde geçici eritropoez baskılanmasına bağlı ani retikülosit düşüklüğü ve anemi tablosudur.",
+    "preAnswerSafeDefinition": "Kemik iliğinde geçici eritropoez baskılanmasına bağlı ani retikülosit düşüklüğü ve anemi tablosudur.",
+    "postAnswerExplanation": "Orak hücre hastalığında Parvovirus B19 sonrası ani solukluk ve düşük retikülosit aplastik krizi düşündürür.",
+    "postAnswerExpandedExplanation": "Orak hücre hastalığında Parvovirus B19 sonrası ani solukluk ve düşük retikülosit aplastik krizi düşündürür.",
+    "tusPearl": "Orak hücre hastalığında Parvovirus B19 sonrası ani solukluk ve düşük retikülosit aplastik krizi düşündürür.",
+    "differentialPoint": "Hemolitik krizde retikülosit yanıtı artma eğilimindedir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "hematoloji",
+      "pediatri"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "aplastik",
+      "kriz"
+    ]
+  },
+  {
+    "id": "ctx-periferik-yayma",
+    "canonicalTerm": "Periferik yayma",
+    "displayTerm": "Periferik yayma",
+    "term": "Periferik yayma",
+    "aliases": [
+      "Periferik yayma",
+      "periferik kan yayması"
+    ],
+    "category": "Laboratuvar testi",
+    "subcategory": "Laboratuvar testi",
+    "shortDefinition": "Kan hücrelerinin mikroskobik morfolojik değerlendirmesidir.",
+    "previewDefinition": "Kan hücrelerinin mikroskobik morfolojik değerlendirmesidir.",
+    "preAnswerSafeDefinition": "Kan hücrelerinin mikroskobik morfolojik değerlendirmesidir.",
+    "postAnswerExplanation": "Şistosit, blast, sferosit veya hedef hücre gibi bulgular tanısal yönlendirme sağlar.",
+    "postAnswerExpandedExplanation": "Şistosit, blast, sferosit veya hedef hücre gibi bulgular tanısal yönlendirme sağlar.",
+    "tusPearl": "Şistosit, blast, sferosit veya hedef hücre gibi bulgular tanısal yönlendirme sağlar.",
+    "differentialPoint": "Tam kan sayımı sayısal bilgi verir; periferik yayma morfolojiyi gösterir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "hematoloji",
+      "mikrobiyoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "periferik",
+      "yayma",
+      "periferik kan yayması"
+    ]
+  },
+  {
+    "id": "ctx-sistosit",
+    "canonicalTerm": "Şistosit",
+    "displayTerm": "Şistosit",
+    "term": "Şistosit",
+    "aliases": [
+      "Şistosit",
+      "şistositler"
+    ],
+    "category": "Periferik yayma bulgusu",
+    "subcategory": "Periferik yayma bulgusu",
+    "shortDefinition": "Mikroanjiyopatik hemolizde görülen parçalanmış eritrosit fragmanıdır.",
+    "previewDefinition": "Mikroanjiyopatik hemolizde görülen parçalanmış eritrosit fragmanıdır.",
+    "preAnswerSafeDefinition": "Mikroanjiyopatik hemolizde görülen parçalanmış eritrosit fragmanıdır.",
+    "postAnswerExplanation": "TTP, HÜS ve DIC gibi tablolarda şistosit TUS açısından yüksek değerli bulgudur.",
+    "postAnswerExpandedExplanation": "TTP, HÜS ve DIC gibi tablolarda şistosit TUS açısından yüksek değerli bulgudur.",
+    "tusPearl": "TTP, HÜS ve DIC gibi tablolarda şistosit TUS açısından yüksek değerli bulgudur.",
+    "differentialPoint": "Sferosit membran kaybını; hedef hücre hemoglobinopati veya karaciğer hastalığını düşündürür.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "hematoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": false,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "şistosit",
+      "şistositler"
+    ]
+  },
+  {
+    "id": "ctx-laktat-yuksekligi",
+    "canonicalTerm": "Laktat yüksekliği",
+    "displayTerm": "Laktat yüksekliği",
+    "term": "Laktat yüksekliği",
+    "aliases": [
+      "Laktat yüksekliği"
+    ],
+    "category": "Laboratuvar bulgusu",
+    "subcategory": "Laboratuvar bulgusu",
+    "shortDefinition": "Doku hipoperfüzyonu veya anaerobik metabolizma artışıyla ilişkili laktat artışıdır.",
+    "previewDefinition": "Doku hipoperfüzyonu veya anaerobik metabolizma artışıyla ilişkili laktat artışıdır.",
+    "preAnswerSafeDefinition": "Doku hipoperfüzyonu veya anaerobik metabolizma artışıyla ilişkili laktat artışıdır.",
+    "postAnswerExplanation": "Şok, sepsis, iskemi ve ağır hipoksi değerlendirmesinde kötü perfüzyon göstergesi olabilir.",
+    "postAnswerExpandedExplanation": "Şok, sepsis, iskemi ve ağır hipoksi değerlendirmesinde kötü perfüzyon göstergesi olabilir.",
+    "tusPearl": "Şok, sepsis, iskemi ve ağır hipoksi değerlendirmesinde kötü perfüzyon göstergesi olabilir.",
+    "differentialPoint": "Tek başına tanı koydurmaz; klinik ve hemodinamik bağlamla yorumlanır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "acil",
+      "biyokimya"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "laktat",
+      "yüksekliği"
+    ]
+  },
+  {
+    "id": "ctx-troponin-yuksekligi",
+    "canonicalTerm": "Troponin yüksekliği",
+    "displayTerm": "Troponin yüksekliği",
+    "term": "Troponin yüksekliği",
+    "aliases": [
+      "Troponin yüksekliği"
+    ],
+    "category": "Laboratuvar bulgusu",
+    "subcategory": "Laboratuvar bulgusu",
+    "shortDefinition": "Kardiyak miyosit hasarını gösteren troponin düzeyi artışıdır.",
+    "previewDefinition": "Kardiyak miyosit hasarını gösteren troponin düzeyi artışıdır.",
+    "preAnswerSafeDefinition": "Kardiyak miyosit hasarını gösteren troponin düzeyi artışıdır.",
+    "postAnswerExplanation": "Akut koroner sendromda dinamik troponin değişimi tanı ve risk sınıflamasında önemlidir.",
+    "postAnswerExpandedExplanation": "Akut koroner sendromda dinamik troponin değişimi tanı ve risk sınıflamasında önemlidir.",
+    "tusPearl": "Akut koroner sendromda dinamik troponin değişimi tanı ve risk sınıflamasında önemlidir.",
+    "differentialPoint": "Sepsis, böbrek yetmezliği ve miyokardit gibi durumlarda da yükselebilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "kardiyoloji",
+      "acil"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "troponin",
+      "yüksekliği"
+    ]
+  },
+  {
+    "id": "ctx-transaminaz-yuksekligi",
+    "canonicalTerm": "Transaminaz yüksekliği",
+    "displayTerm": "Transaminaz yüksekliği",
+    "term": "Transaminaz yüksekliği",
+    "aliases": [
+      "Transaminaz yüksekliği",
+      "AST/ALT yüksekliği"
+    ],
+    "category": "Laboratuvar bulgusu",
+    "subcategory": "Laboratuvar bulgusu",
+    "shortDefinition": "AST ve ALT enzimlerinde artışı ifade eder.",
+    "previewDefinition": "AST ve ALT enzimlerinde artışı ifade eder.",
+    "preAnswerSafeDefinition": "AST ve ALT enzimlerinde artışı ifade eder.",
+    "postAnswerExplanation": "Hepatoselüler hasarı düşündürür; AST/ALT paterni etiyolojik ipucu verebilir.",
+    "postAnswerExpandedExplanation": "Hepatoselüler hasarı düşündürür; AST/ALT paterni etiyolojik ipucu verebilir.",
+    "tusPearl": "Hepatoselüler hasarı düşündürür; AST/ALT paterni etiyolojik ipucu verebilir.",
+    "differentialPoint": "Kolestatik paternde ALP/GGT artışı daha baskındır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "gastroenteroloji",
+      "biyokimya"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "transaminaz",
+      "yüksekliği",
+      "ast/alt yüksekliği"
+    ]
+  },
+  {
+    "id": "ctx-alp-ggt-yuksekligi",
+    "canonicalTerm": "ALP/GGT yüksekliği",
+    "displayTerm": "ALP/GGT yüksekliği",
+    "term": "ALP/GGT yüksekliği",
+    "aliases": [
+      "ALP/GGT yüksekliği"
+    ],
+    "category": "Laboratuvar bulgusu",
+    "subcategory": "Laboratuvar bulgusu",
+    "shortDefinition": "Alkalen fosfataz ve gama-glutamil transferaz artışını ifade eder.",
+    "previewDefinition": "Alkalen fosfataz ve gama-glutamil transferaz artışını ifade eder.",
+    "preAnswerSafeDefinition": "Alkalen fosfataz ve gama-glutamil transferaz artışını ifade eder.",
+    "postAnswerExplanation": "Kolestaz ve safra yolu obstrüksiyonunda ALP/GGT yüksekliği önemlidir.",
+    "postAnswerExpandedExplanation": "Kolestaz ve safra yolu obstrüksiyonunda ALP/GGT yüksekliği önemlidir.",
+    "tusPearl": "Kolestaz ve safra yolu obstrüksiyonunda ALP/GGT yüksekliği önemlidir.",
+    "differentialPoint": "İzole ALP artışında kemik kaynaklı nedenler de düşünülür; GGT karaciğer/safra kaynağını destekler.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "gastroenteroloji",
+      "biyokimya"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "alp/ggt",
+      "yüksekliği"
+    ]
+  },
+  {
+    "id": "ctx-notrofilik-lokositoz",
+    "canonicalTerm": "Nötrofilik lökositoz",
+    "displayTerm": "Nötrofilik lökositoz",
+    "term": "Nötrofilik lökositoz",
+    "aliases": [
+      "Nötrofilik lökositoz"
+    ],
+    "category": "Laboratuvar bulgusu",
+    "subcategory": "Laboratuvar bulgusu",
+    "shortDefinition": "Nötrofil ağırlıklı beyaz küre artışıdır.",
+    "previewDefinition": "Nötrofil ağırlıklı beyaz küre artışıdır.",
+    "preAnswerSafeDefinition": "Nötrofil ağırlıklı beyaz küre artışıdır.",
+    "postAnswerExplanation": "Bakteriyel enfeksiyon, akut inflamasyon ve stres yanıtında görülebilir.",
+    "postAnswerExpandedExplanation": "Bakteriyel enfeksiyon, akut inflamasyon ve stres yanıtında görülebilir.",
+    "tusPearl": "Bakteriyel enfeksiyon, akut inflamasyon ve stres yanıtında görülebilir.",
+    "differentialPoint": "Lenfositoz viral enfeksiyon veya bazı hematolojik süreçlerde daha belirgin olabilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "hematoloji",
+      "enfeksiyon"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "nötrofilik",
+      "lökositoz"
+    ]
+  },
+  {
+    "id": "ctx-i-lk-basamak-tedavi",
+    "canonicalTerm": "İlk basamak tedavi",
+    "displayTerm": "İlk basamak tedavi",
+    "term": "İlk basamak tedavi",
+    "aliases": [
+      "İlk basamak tedavi"
+    ],
+    "category": "Klinik karar terimi",
+    "subcategory": "Klinik karar terimi",
+    "shortDefinition": "Bir klinik durumda öncelikle uygulanması gereken ilk tedavi yaklaşımını ifade eder.",
+    "previewDefinition": "Bir klinik durumda öncelikle uygulanması gereken ilk tedavi yaklaşımını ifade eder.",
+    "preAnswerSafeDefinition": "Bir klinik durumda öncelikle uygulanması gereken ilk tedavi yaklaşımını ifade eder.",
+    "postAnswerExplanation": "TUS sorularında “ilk” ve “en uygun” ifadeleri stabilizasyon ile definitif tedaviyi ayırmayı gerektirir.",
+    "postAnswerExpandedExplanation": "TUS sorularında “ilk” ve “en uygun” ifadeleri stabilizasyon ile definitif tedaviyi ayırmayı gerektirir.",
+    "tusPearl": "TUS sorularında “ilk” ve “en uygun” ifadeleri stabilizasyon ile definitif tedaviyi ayırmayı gerektirir.",
+    "differentialPoint": "Kesin tedavi ile acil ilk basamak aynı olmayabilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "tus-strateji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 70,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "high",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "i̇lk",
+      "basamak",
+      "tedavi"
+    ]
+  },
+  {
+    "id": "ctx-en-uygun-yaklasim",
+    "canonicalTerm": "En uygun yaklaşım",
+    "displayTerm": "En uygun yaklaşım",
+    "term": "En uygun yaklaşım",
+    "aliases": [
+      "En uygun yaklaşım"
+    ],
+    "category": "Klinik karar terimi",
+    "subcategory": "Klinik karar terimi",
+    "shortDefinition": "Verilen klinik senaryoda tanı, tedavi veya izlem açısından en doğru sonraki adımı ifade eder.",
+    "previewDefinition": "Verilen klinik senaryoda tanı, tedavi veya izlem açısından en doğru sonraki adımı ifade eder.",
+    "preAnswerSafeDefinition": "Verilen klinik senaryoda tanı, tedavi veya izlem açısından en doğru sonraki adımı ifade eder.",
+    "postAnswerExplanation": "Seçenekler arasında zamanlama, stabilite ve kontrendikasyonlar birlikte değerlendirilmelidir.",
+    "postAnswerExpandedExplanation": "Seçenekler arasında zamanlama, stabilite ve kontrendikasyonlar birlikte değerlendirilmelidir.",
+    "tusPearl": "Seçenekler arasında zamanlama, stabilite ve kontrendikasyonlar birlikte değerlendirilmelidir.",
+    "differentialPoint": "En olası tanı sorusundan farklı olarak yönetim basamağını sorgulayabilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "tus-strateji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 70,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "high",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "en",
+      "uygun",
+      "yaklaşım"
+    ]
+  },
+  {
+    "id": "ctx-taniyi-dogrulayan-test",
+    "canonicalTerm": "Tanıyı doğrulayan test",
+    "displayTerm": "Tanıyı doğrulayan test",
+    "term": "Tanıyı doğrulayan test",
+    "aliases": [
+      "Tanıyı doğrulayan test"
+    ],
+    "category": "Klinik karar terimi",
+    "subcategory": "Klinik karar terimi",
+    "shortDefinition": "Ön tanıyı kesinleştirmek veya güçlü biçimde desteklemek için kullanılan hedef testtir.",
+    "previewDefinition": "Ön tanıyı kesinleştirmek veya güçlü biçimde desteklemek için kullanılan hedef testtir.",
+    "preAnswerSafeDefinition": "Ön tanıyı kesinleştirmek veya güçlü biçimde desteklemek için kullanılan hedef testtir.",
+    "postAnswerExplanation": "Tarama testi ile doğrulama testi TUS’ta sık ayrılır.",
+    "postAnswerExpandedExplanation": "Tarama testi ile doğrulama testi TUS’ta sık ayrılır.",
+    "tusPearl": "Tarama testi ile doğrulama testi TUS’ta sık ayrılır.",
+    "differentialPoint": "Duyarlılığı yüksek test dışlama, özgüllüğü yüksek test doğrulama açısından değerlidir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "tus-strateji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 70,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "high",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "tanıyı",
+      "doğrulayan",
+      "test"
+    ]
+  },
+  {
+    "id": "ctx-zaman-kritik-durum",
+    "canonicalTerm": "Zaman kritik durum",
+    "displayTerm": "Zaman kritik durum",
+    "term": "Zaman kritik durum",
+    "aliases": [
+      "Zaman kritik durum"
+    ],
+    "category": "Klinik acil",
+    "subcategory": "Klinik acil",
+    "shortDefinition": "Gecikmenin organ kaybı, mortalite veya kalıcı hasar riskini artırdığı klinik durumdur.",
+    "previewDefinition": "Gecikmenin organ kaybı, mortalite veya kalıcı hasar riskini artırdığı klinik durumdur.",
+    "preAnswerSafeDefinition": "Gecikmenin organ kaybı, mortalite veya kalıcı hasar riskini artırdığı klinik durumdur.",
+    "postAnswerExplanation": "Testis torsiyonu, inme, sepsis, anafilaksi ve akut koroner sendrom gibi tablolar zaman yönetimiyle değerlendirilir.",
+    "postAnswerExpandedExplanation": "Testis torsiyonu, inme, sepsis, anafilaksi ve akut koroner sendrom gibi tablolar zaman yönetimiyle değerlendirilir.",
+    "tusPearl": "Testis torsiyonu, inme, sepsis, anafilaksi ve akut koroner sendrom gibi tablolar zaman yönetimiyle değerlendirilir.",
+    "differentialPoint": "Stabil görünüm zaman kritik patolojiyi tamamen dışlamaz.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "acil"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "high",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "zaman",
+      "kritik",
+      "durum"
+    ]
+  },
+  {
+    "id": "ctx-goruntuleme-beklenmeden",
+    "canonicalTerm": "Görüntüleme beklenmeden",
+    "displayTerm": "Görüntüleme beklenmeden",
+    "term": "Görüntüleme beklenmeden",
+    "aliases": [
+      "Görüntüleme beklenmeden"
+    ],
+    "category": "Klinik karar ifadesi",
+    "subcategory": "Klinik karar ifadesi",
+    "shortDefinition": "Klinik şüphe çok kuvvetliyse tanısal görüntüleme gecikmeden tedavi/cerrahi karara geçilebileceğini anlatır.",
+    "previewDefinition": "Klinik şüphe çok kuvvetliyse tanısal görüntüleme gecikmeden tedavi/cerrahi karara geçilebileceğini anlatır.",
+    "preAnswerSafeDefinition": "Klinik şüphe çok kuvvetliyse tanısal görüntüleme gecikmeden tedavi/cerrahi karara geçilebileceğini anlatır.",
+    "postAnswerExplanation": "Torsiyon veya instabil intraabdominal kanama gibi durumlarda gecikme organ/mortalite riski oluşturabilir.",
+    "postAnswerExpandedExplanation": "Torsiyon veya instabil intraabdominal kanama gibi durumlarda gecikme organ/mortalite riski oluşturabilir.",
+    "tusPearl": "Torsiyon veya instabil intraabdominal kanama gibi durumlarda gecikme organ/mortalite riski oluşturabilir.",
+    "differentialPoint": "Stabil ve şüphe düşük olgularda görüntüleme tanısal süreci destekler.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "acil",
+      "cerrahi"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "high",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "görüntüleme",
+      "beklenmeden"
+    ]
+  },
+  {
+    "id": "ctx-membran-stabilizasyonu",
+    "canonicalTerm": "Membran stabilizasyonu",
+    "displayTerm": "Membran stabilizasyonu",
+    "term": "Membran stabilizasyonu",
+    "aliases": [
+      "Membran stabilizasyonu"
+    ],
+    "category": "Patofizyolojik tedavi kavramı",
+    "subcategory": "Patofizyolojik tedavi kavramı",
+    "shortDefinition": "Hücre membranının elektriksel uyarılabilirliğini güvenli aralığa çekmeyi ifade eder.",
+    "previewDefinition": "Hücre membranının elektriksel uyarılabilirliğini güvenli aralığa çekmeyi ifade eder.",
+    "preAnswerSafeDefinition": "Hücre membranının elektriksel uyarılabilirliğini güvenli aralığa çekmeyi ifade eder.",
+    "postAnswerExplanation": "Hiperkalemi ve EKG değişikliği varsa IV kalsiyum membran stabilizasyonu sağlar; potasyumu düşürmez.",
+    "postAnswerExpandedExplanation": "Hiperkalemi ve EKG değişikliği varsa IV kalsiyum membran stabilizasyonu sağlar; potasyumu düşürmez.",
+    "tusPearl": "Hiperkalemi ve EKG değişikliği varsa IV kalsiyum membran stabilizasyonu sağlar; potasyumu düşürmez.",
+    "differentialPoint": "İnsülin-glukoz potasyumu hücre içine kaydırır; kalsiyum ise aritmi riskini azaltır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "acil",
+      "biyokimya"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "high",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "membran",
+      "stabilizasyonu"
+    ]
+  },
+  {
+    "id": "ctx-otoimmun-yanit",
+    "canonicalTerm": "Otoimmün yanıt",
+    "displayTerm": "Otoimmün yanıt",
+    "term": "Otoimmün yanıt",
+    "aliases": [
+      "Otoimmün yanıt"
+    ],
+    "category": "İmmünolojik mekanizma",
+    "subcategory": "İmmünolojik mekanizma",
+    "shortDefinition": "Bağışıklık sisteminin kendi antijenlerine karşı patolojik yanıt geliştirmesidir.",
+    "previewDefinition": "Bağışıklık sisteminin kendi antijenlerine karşı patolojik yanıt geliştirmesidir.",
+    "preAnswerSafeDefinition": "Bağışıklık sisteminin kendi antijenlerine karşı patolojik yanıt geliştirmesidir.",
+    "postAnswerExplanation": "Otoantikor veya T hücre aracılı hasar birçok endokrin, nörolojik ve romatolojik hastalığın temelidir.",
+    "postAnswerExpandedExplanation": "Otoantikor veya T hücre aracılı hasar birçok endokrin, nörolojik ve romatolojik hastalığın temelidir.",
+    "tusPearl": "Otoantikor veya T hücre aracılı hasar birçok endokrin, nörolojik ve romatolojik hastalığın temelidir.",
+    "differentialPoint": "Alerjik yanıt dış antijene karşı gelişirken otoimmün yanıt self antijene yönelir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "immünoloji",
+      "romatoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "otoimmün",
+      "yanıt"
+    ]
+  },
+  {
+    "id": "ctx-i-mmun-kompleks-birikimi",
+    "canonicalTerm": "İmmün kompleks birikimi",
+    "displayTerm": "İmmün kompleks birikimi",
+    "term": "İmmün kompleks birikimi",
+    "aliases": [
+      "İmmün kompleks birikimi"
+    ],
+    "category": "İmmünopatoloji mekanizması",
+    "subcategory": "İmmünopatoloji mekanizması",
+    "shortDefinition": "Antijen-antikor komplekslerinin dokuda birikerek inflamasyon oluşturmasıdır.",
+    "previewDefinition": "Antijen-antikor komplekslerinin dokuda birikerek inflamasyon oluşturmasıdır.",
+    "preAnswerSafeDefinition": "Antijen-antikor komplekslerinin dokuda birikerek inflamasyon oluşturmasıdır.",
+    "postAnswerExplanation": "Tip III aşırı duyarlılık, glomerülonefrit ve vaskülitlerde önemli mekanizmadır.",
+    "postAnswerExpandedExplanation": "Tip III aşırı duyarlılık, glomerülonefrit ve vaskülitlerde önemli mekanizmadır.",
+    "tusPearl": "Tip III aşırı duyarlılık, glomerülonefrit ve vaskülitlerde önemli mekanizmadır.",
+    "differentialPoint": "Tip II reaksiyonda hedef hücre yüzey antijenine karşı antikor aracılı hasar ön plandadır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "immünoloji",
+      "patoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "i̇mmün",
+      "kompleks",
+      "birikimi"
+    ]
+  },
+  {
+    "id": "ctx-kompleman-aktivasyonu",
+    "canonicalTerm": "Kompleman aktivasyonu",
+    "displayTerm": "Kompleman aktivasyonu",
+    "term": "Kompleman aktivasyonu",
+    "aliases": [
+      "Kompleman aktivasyonu"
+    ],
+    "category": "İmmünolojik mekanizma",
+    "subcategory": "İmmünolojik mekanizma",
+    "shortDefinition": "Kompleman sisteminin klasik, alternatif veya lektin yol üzerinden aktive olmasıdır.",
+    "previewDefinition": "Kompleman sisteminin klasik, alternatif veya lektin yol üzerinden aktive olmasıdır.",
+    "preAnswerSafeDefinition": "Kompleman sisteminin klasik, alternatif veya lektin yol üzerinden aktive olmasıdır.",
+    "postAnswerExplanation": "Enfeksiyon savunması, opsonizasyon, kemotaksi ve hücre lizisinde rol oynar.",
+    "postAnswerExpandedExplanation": "Enfeksiyon savunması, opsonizasyon, kemotaksi ve hücre lizisinde rol oynar.",
+    "tusPearl": "Enfeksiyon savunması, opsonizasyon, kemotaksi ve hücre lizisinde rol oynar.",
+    "differentialPoint": "Aşırı aktivasyon doku hasarı ve inflamasyona katkı verebilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "immünoloji",
+      "mikrobiyoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "kompleman",
+      "aktivasyonu"
+    ]
+  },
+  {
+    "id": "ctx-reseptor-aktivasyonu",
+    "canonicalTerm": "Reseptör aktivasyonu",
+    "displayTerm": "Reseptör aktivasyonu",
+    "term": "Reseptör aktivasyonu",
+    "aliases": [
+      "Reseptör aktivasyonu"
+    ],
+    "category": "Moleküler mekanizma",
+    "subcategory": "Moleküler mekanizma",
+    "shortDefinition": "Bir ligandın reseptöre bağlanmasıyla hücre içi sinyal yollarının başlatılmasıdır.",
+    "previewDefinition": "Bir ligandın reseptöre bağlanmasıyla hücre içi sinyal yollarının başlatılmasıdır.",
+    "preAnswerSafeDefinition": "Bir ligandın reseptöre bağlanmasıyla hücre içi sinyal yollarının başlatılmasıdır.",
+    "postAnswerExplanation": "RTK, GPCR ve nükleer reseptörler farklı hücresel yanıtlar oluşturur.",
+    "postAnswerExpandedExplanation": "RTK, GPCR ve nükleer reseptörler farklı hücresel yanıtlar oluşturur.",
+    "tusPearl": "RTK, GPCR ve nükleer reseptörler farklı hücresel yanıtlar oluşturur.",
+    "differentialPoint": "Reseptör sonrası mutasyonlar upstream inhibisyonu bypass edebilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "fizyoloji",
+      "moleküler-biyoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "reseptör",
+      "aktivasyonu"
+    ]
+  },
+  {
+    "id": "ctx-gtpaz-aktivasyonu",
+    "canonicalTerm": "GTPaz aktivasyonu",
+    "displayTerm": "GTPaz aktivasyonu",
+    "term": "GTPaz aktivasyonu",
+    "aliases": [
+      "GTPaz aktivasyonu"
+    ],
+    "category": "Moleküler mekanizma",
+    "subcategory": "Moleküler mekanizma",
+    "shortDefinition": "GTP bağlı durumdaki küçük GTPazların aktif sinyal ileten hâle geçmesidir.",
+    "previewDefinition": "GTP bağlı durumdaki küçük GTPazların aktif sinyal ileten hâle geçmesidir.",
+    "preAnswerSafeDefinition": "GTP bağlı durumdaki küçük GTPazların aktif sinyal ileten hâle geçmesidir.",
+    "postAnswerExplanation": "Ras gibi GTPazlar GEF ile aktive, GAP ile inaktive edilir.",
+    "postAnswerExpandedExplanation": "Ras gibi GTPazlar GEF ile aktive, GAP ile inaktive edilir.",
+    "tusPearl": "Ras gibi GTPazlar GEF ile aktive, GAP ile inaktive edilir.",
+    "differentialPoint": "GTPaz aktivitesini azaltan mutasyonlar sinyalin sürekli açık kalmasına yol açabilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "moleküler-biyoloji",
+      "biyokimya"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "gtpaz",
+      "aktivasyonu"
+    ]
+  },
+  {
+    "id": "ctx-oksidatif-stres",
+    "canonicalTerm": "Oksidatif stres",
+    "displayTerm": "Oksidatif stres",
+    "term": "Oksidatif stres",
+    "aliases": [
+      "Oksidatif stres"
+    ],
+    "category": "Patofizyolojik mekanizma",
+    "subcategory": "Patofizyolojik mekanizma",
+    "shortDefinition": "Reaktif oksijen türleri ile antioksidan savunma arasındaki dengenin oksidanlar lehine bozulmasıdır.",
+    "previewDefinition": "Reaktif oksijen türleri ile antioksidan savunma arasındaki dengenin oksidanlar lehine bozulmasıdır.",
+    "preAnswerSafeDefinition": "Reaktif oksijen türleri ile antioksidan savunma arasındaki dengenin oksidanlar lehine bozulmasıdır.",
+    "postAnswerExplanation": "G6PD eksikliğinde oksidatif stres hemolizi tetikleyebilir.",
+    "postAnswerExpandedExplanation": "G6PD eksikliğinde oksidatif stres hemolizi tetikleyebilir.",
+    "tusPearl": "G6PD eksikliğinde oksidatif stres hemolizi tetikleyebilir.",
+    "differentialPoint": "Mitokondriyal disfonksiyon ve inflamasyon oksidatif yükü artırabilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "biyokimya",
+      "patoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "oksidatif",
+      "stres"
+    ]
+  },
+  {
+    "id": "ctx-mitokondriyal-disfonksiyon",
+    "canonicalTerm": "Mitokondriyal disfonksiyon",
+    "displayTerm": "Mitokondriyal disfonksiyon",
+    "term": "Mitokondriyal disfonksiyon",
+    "aliases": [
+      "Mitokondriyal disfonksiyon"
+    ],
+    "category": "Patofizyolojik mekanizma",
+    "subcategory": "Patofizyolojik mekanizma",
+    "shortDefinition": "Mitokondrinin enerji üretimi, metabolik düzenleme veya apoptotik sinyal işlevlerinin bozulmasıdır.",
+    "previewDefinition": "Mitokondrinin enerji üretimi, metabolik düzenleme veya apoptotik sinyal işlevlerinin bozulmasıdır.",
+    "preAnswerSafeDefinition": "Mitokondrinin enerji üretimi, metabolik düzenleme veya apoptotik sinyal işlevlerinin bozulmasıdır.",
+    "postAnswerExplanation": "Enerji bağımlı dokularda nörolojik ve kas bulguları belirgin olabilir.",
+    "postAnswerExpandedExplanation": "Enerji bağımlı dokularda nörolojik ve kas bulguları belirgin olabilir.",
+    "tusPearl": "Enerji bağımlı dokularda nörolojik ve kas bulguları belirgin olabilir.",
+    "differentialPoint": "Lizozomal depo hastalıklarından farklı olarak oksidatif fosforilasyon etkilenimi öne çıkar.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "biyokimya",
+      "genetik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "mitokondriyal",
+      "disfonksiyon"
+    ]
+  },
+  {
+    "id": "ctx-apoptoz",
+    "canonicalTerm": "Apoptoz",
+    "displayTerm": "Apoptoz",
+    "term": "Apoptoz",
+    "aliases": [
+      "Apoptoz"
+    ],
+    "category": "Hücresel mekanizma",
+    "subcategory": "Hücresel mekanizma",
+    "shortDefinition": "Programlı hücre ölümüdür; inflamasyon oluşturmadan hücrelerin kontrollü elimine edilmesini sağlar.",
+    "previewDefinition": "Programlı hücre ölümüdür; inflamasyon oluşturmadan hücrelerin kontrollü elimine edilmesini sağlar.",
+    "preAnswerSafeDefinition": "Programlı hücre ölümüdür; inflamasyon oluşturmadan hücrelerin kontrollü elimine edilmesini sağlar.",
+    "postAnswerExplanation": "Bcl-2 ailesi, sitokrom c ve kaspaz aktivasyonu intrinsik yolun temel bileşenleridir.",
+    "postAnswerExpandedExplanation": "Bcl-2 ailesi, sitokrom c ve kaspaz aktivasyonu intrinsik yolun temel bileşenleridir.",
+    "tusPearl": "Bcl-2 ailesi, sitokrom c ve kaspaz aktivasyonu intrinsik yolun temel bileşenleridir.",
+    "differentialPoint": "Nekrozda membran bütünlüğü bozulur ve inflamasyon belirgindir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "patoloji",
+      "moleküler-biyoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": false,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "apoptoz"
+    ]
+  },
+  {
+    "id": "ctx-gram-pozitif-kok",
+    "canonicalTerm": "Gram pozitif kok",
+    "displayTerm": "Gram pozitif kok",
+    "term": "Gram pozitif kok",
+    "aliases": [
+      "Gram pozitif kok"
+    ],
+    "category": "Mikrobiyoloji morfolojisi",
+    "subcategory": "Mikrobiyoloji morfolojisi",
+    "shortDefinition": "Gram boyamada mor renk tutan küresel bakterileri ifade eder.",
+    "previewDefinition": "Gram boyamada mor renk tutan küresel bakterileri ifade eder.",
+    "preAnswerSafeDefinition": "Gram boyamada mor renk tutan küresel bakterileri ifade eder.",
+    "postAnswerExplanation": "Staphylococcus ve Streptococcus ayrımı katalaz, koagülaz, hemoliz ve klinik bağlamla yapılır.",
+    "postAnswerExpandedExplanation": "Staphylococcus ve Streptococcus ayrımı katalaz, koagülaz, hemoliz ve klinik bağlamla yapılır.",
+    "tusPearl": "Staphylococcus ve Streptococcus ayrımı katalaz, koagülaz, hemoliz ve klinik bağlamla yapılır.",
+    "differentialPoint": "Gram negatif basiller farklı hücre duvarı ve endotoksin özellikleri taşır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "mikrobiyoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "gram",
+      "pozitif",
+      "kok"
+    ]
+  },
+  {
+    "id": "ctx-aside-direncli-basil",
+    "canonicalTerm": "Aside dirençli basil",
+    "displayTerm": "Aside dirençli basil",
+    "term": "Aside dirençli basil",
+    "aliases": [
+      "Aside dirençli basil",
+      "ARB",
+      "asit-fast basil"
+    ],
+    "category": "Mikrobiyoloji bulgusu",
+    "subcategory": "Mikrobiyoloji bulgusu",
+    "shortDefinition": "Asit-alkol dekolorizasyonuna dirençli boyanan basil formundaki mikroorganizmadır.",
+    "previewDefinition": "Asit-alkol dekolorizasyonuna dirençli boyanan basil formundaki mikroorganizmadır.",
+    "preAnswerSafeDefinition": "Asit-alkol dekolorizasyonuna dirençli boyanan basil formundaki mikroorganizmadır.",
+    "postAnswerExplanation": "Mycobacterium tuberculosis aside dirençli basil olarak aranır.",
+    "postAnswerExpandedExplanation": "Mycobacterium tuberculosis aside dirençli basil olarak aranır.",
+    "tusPearl": "Mycobacterium tuberculosis aside dirençli basil olarak aranır.",
+    "differentialPoint": "Gram boyama mikobakteriler için yeterli değildir; Ziehl-Neelsen veya benzeri boyalar kullanılır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "mikrobiyoloji",
+      "enfeksiyon"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "aside",
+      "dirençli",
+      "basil",
+      "arb",
+      "asit-fast basil"
+    ]
+  },
+  {
+    "id": "ctx-toksin-aracili-hastalik",
+    "canonicalTerm": "Toksin aracılı hastalık",
+    "displayTerm": "Toksin aracılı hastalık",
+    "term": "Toksin aracılı hastalık",
+    "aliases": [
+      "Toksin aracılı hastalık"
+    ],
+    "category": "Mikrobiyoloji mekanizması",
+    "subcategory": "Mikrobiyoloji mekanizması",
+    "shortDefinition": "Mikroorganizmanın doğrudan invazyonundan çok toksin etkisiyle klinik tablo oluşturmasıdır.",
+    "previewDefinition": "Mikroorganizmanın doğrudan invazyonundan çok toksin etkisiyle klinik tablo oluşturmasıdır.",
+    "preAnswerSafeDefinition": "Mikroorganizmanın doğrudan invazyonundan çok toksin etkisiyle klinik tablo oluşturmasıdır.",
+    "postAnswerExplanation": "Botulizm, tetanoz, difteri ve toksik şok gibi tablolar toksin mekanizmasıyla sorgulanır.",
+    "postAnswerExpandedExplanation": "Botulizm, tetanoz, difteri ve toksik şok gibi tablolar toksin mekanizmasıyla sorgulanır.",
+    "tusPearl": "Botulizm, tetanoz, difteri ve toksik şok gibi tablolar toksin mekanizmasıyla sorgulanır.",
+    "differentialPoint": "İnvaziv enfeksiyonlarda doku tutulum ve inflamasyon daha baskın olabilir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "mikrobiyoloji",
+      "enfeksiyon"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "toksin",
+      "aracılı",
+      "hastalık"
+    ]
+  },
+  {
+    "id": "ctx-latent-enfeksiyon",
+    "canonicalTerm": "Latent enfeksiyon",
+    "displayTerm": "Latent enfeksiyon",
+    "term": "Latent enfeksiyon",
+    "aliases": [
+      "Latent enfeksiyon"
+    ],
+    "category": "Enfeksiyon kavramı",
+    "subcategory": "Enfeksiyon kavramı",
+    "shortDefinition": "Mikroorganizmanın klinik hastalık oluşturmadan konakta sessiz kalmasıdır.",
+    "previewDefinition": "Mikroorganizmanın klinik hastalık oluşturmadan konakta sessiz kalmasıdır.",
+    "preAnswerSafeDefinition": "Mikroorganizmanın klinik hastalık oluşturmadan konakta sessiz kalmasıdır.",
+    "postAnswerExplanation": "Tüberküloz ve herpes virüslerinde reaktivasyon riski TUS açısından önemlidir.",
+    "postAnswerExpandedExplanation": "Tüberküloz ve herpes virüslerinde reaktivasyon riski TUS açısından önemlidir.",
+    "tusPearl": "Tüberküloz ve herpes virüslerinde reaktivasyon riski TUS açısından önemlidir.",
+    "differentialPoint": "Aktif enfeksiyonda semptom, bulaştırıcılık veya organ tutulum bulguları ön plandadır.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "enfeksiyon",
+      "mikrobiyoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "latent",
+      "enfeksiyon"
+    ]
+  },
+  {
+    "id": "ctx-reaktivasyon",
+    "canonicalTerm": "Reaktivasyon",
+    "displayTerm": "Reaktivasyon",
+    "term": "Reaktivasyon",
+    "aliases": [
+      "Reaktivasyon"
+    ],
+    "category": "Enfeksiyon/immünoloji kavramı",
+    "subcategory": "Enfeksiyon/immünoloji kavramı",
+    "shortDefinition": "Latent kalan enfeksiyonun bağışıklık baskılanması veya uygun koşullarda yeniden aktifleşmesidir.",
+    "previewDefinition": "Latent kalan enfeksiyonun bağışıklık baskılanması veya uygun koşullarda yeniden aktifleşmesidir.",
+    "preAnswerSafeDefinition": "Latent kalan enfeksiyonun bağışıklık baskılanması veya uygun koşullarda yeniden aktifleşmesidir.",
+    "postAnswerExplanation": "Tüberküloz, HSV, VZV ve CMV reaktivasyonu immünsüpresyonda önemlidir.",
+    "postAnswerExpandedExplanation": "Tüberküloz, HSV, VZV ve CMV reaktivasyonu immünsüpresyonda önemlidir.",
+    "tusPearl": "Tüberküloz, HSV, VZV ve CMV reaktivasyonu immünsüpresyonda önemlidir.",
+    "differentialPoint": "Primer enfeksiyon ilk karşılaşma; reaktivasyon daha önce edinilmiş enfeksiyonun yeniden alevlenmesidir.",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "enfeksiyon",
+      "mikrobiyoloji"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 90,
+    "isMultiWordTerm": false,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "reaktivasyon"
+    ]
+  },
+  {
+    "id": "ctx-hepatomegali",
+    "canonicalTerm": "Hepatomegali",
+    "displayTerm": "Hepatomegali",
+    "term": "Hepatomegali",
+    "aliases": [
+      "Hepatomegali"
+    ],
+    "category": "Fizik muayene bulgusu",
+    "subcategory": "Fizik muayene bulgusu",
+    "shortDefinition": "Karaciğerin normal sınırların üzerinde büyümesidir.",
+    "previewDefinition": "Karaciğerin normal sınırların üzerinde büyümesidir.",
+    "preAnswerSafeDefinition": "Karaciğerin normal sınırların üzerinde büyümesidir.",
+    "postAnswerExplanation": "Depo hastalıkları, konjestif kalp yetmezliği, hepatit ve malignitelerde ayırıcı tanı değeri taşır.",
+    "postAnswerExpandedExplanation": "Depo hastalıkları, konjestif kalp yetmezliği, hepatit ve malignitelerde ayırıcı tanı değeri taşır.",
+    "tusPearl": "Depo hastalıkları, konjestif kalp yetmezliği, hepatit ve malignitelerde ayırıcı tanı değeri taşır.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": false,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "hepatomegali"
+    ]
+  },
+  {
+    "id": "ctx-splenomegali",
+    "canonicalTerm": "Splenomegali",
+    "displayTerm": "Splenomegali",
+    "term": "Splenomegali",
+    "aliases": [
+      "Splenomegali"
+    ],
+    "category": "Fizik muayene bulgusu",
+    "subcategory": "Fizik muayene bulgusu",
+    "shortDefinition": "Dalağın normalden büyük olmasıdır.",
+    "previewDefinition": "Dalağın normalden büyük olmasıdır.",
+    "preAnswerSafeDefinition": "Dalağın normalden büyük olmasıdır.",
+    "postAnswerExplanation": "Portal hipertansiyon, hematolojik hastalık ve enfeksiyonlarda sık sorgulanır.",
+    "postAnswerExpandedExplanation": "Portal hipertansiyon, hematolojik hastalık ve enfeksiyonlarda sık sorgulanır.",
+    "tusPearl": "Portal hipertansiyon, hematolojik hastalık ve enfeksiyonlarda sık sorgulanır.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": false,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "splenomegali"
+    ]
+  },
+  {
+    "id": "ctx-pretibial-odem",
+    "canonicalTerm": "Pretibial ödem",
+    "displayTerm": "Pretibial ödem",
+    "term": "Pretibial ödem",
+    "aliases": [
+      "Pretibial ödem"
+    ],
+    "category": "Fizik muayene bulgusu",
+    "subcategory": "Fizik muayene bulgusu",
+    "shortDefinition": "Tibia ön yüzünde basmakla gode bırakabilen ödemdir.",
+    "previewDefinition": "Tibia ön yüzünde basmakla gode bırakabilen ödemdir.",
+    "preAnswerSafeDefinition": "Tibia ön yüzünde basmakla gode bırakabilen ödemdir.",
+    "postAnswerExplanation": "Kalp yetmezliği, nefrotik sendrom, karaciğer hastalığı ve venöz yetmezlik ayırıcı tanısında önemlidir.",
+    "postAnswerExpandedExplanation": "Kalp yetmezliği, nefrotik sendrom, karaciğer hastalığı ve venöz yetmezlik ayırıcı tanısında önemlidir.",
+    "tusPearl": "Kalp yetmezliği, nefrotik sendrom, karaciğer hastalığı ve venöz yetmezlik ayırıcı tanısında önemlidir.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "pretibial",
+      "ödem"
+    ]
+  },
+  {
+    "id": "ctx-ense-sertligi",
+    "canonicalTerm": "Ense sertliği",
+    "displayTerm": "Ense sertliği",
+    "term": "Ense sertliği",
+    "aliases": [
+      "Ense sertliği"
+    ],
+    "category": "Fizik muayene bulgusu",
+    "subcategory": "Fizik muayene bulgusu",
+    "shortDefinition": "Boyun fleksiyonunda direnç ve ağrı olmasıdır.",
+    "previewDefinition": "Boyun fleksiyonunda direnç ve ağrı olmasıdır.",
+    "preAnswerSafeDefinition": "Boyun fleksiyonunda direnç ve ağrı olmasıdır.",
+    "postAnswerExplanation": "Menenjit ve subaraknoid kanama gibi meningeal irritasyon tablolarında önemlidir.",
+    "postAnswerExpandedExplanation": "Menenjit ve subaraknoid kanama gibi meningeal irritasyon tablolarında önemlidir.",
+    "tusPearl": "Menenjit ve subaraknoid kanama gibi meningeal irritasyon tablolarında önemlidir.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "ense",
+      "sertliği"
+    ]
+  },
+  {
+    "id": "ctx-kernig-bulgusu",
+    "canonicalTerm": "Kernig bulgusu",
+    "displayTerm": "Kernig bulgusu",
+    "term": "Kernig bulgusu",
+    "aliases": [
+      "Kernig bulgusu"
+    ],
+    "category": "Fizik muayene bulgusu",
+    "subcategory": "Fizik muayene bulgusu",
+    "shortDefinition": "Kalça fleksiyondayken diz ekstansiyonunda ağrı/direnç gelişmesidir.",
+    "previewDefinition": "Kalça fleksiyondayken diz ekstansiyonunda ağrı/direnç gelişmesidir.",
+    "preAnswerSafeDefinition": "Kalça fleksiyondayken diz ekstansiyonunda ağrı/direnç gelişmesidir.",
+    "postAnswerExplanation": "Meningeal irritasyon lehine klasik muayene bulgusudur.",
+    "postAnswerExpandedExplanation": "Meningeal irritasyon lehine klasik muayene bulgusudur.",
+    "tusPearl": "Meningeal irritasyon lehine klasik muayene bulgusudur.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "kernig",
+      "bulgusu"
+    ]
+  },
+  {
+    "id": "ctx-brudzinski-bulgusu",
+    "canonicalTerm": "Brudzinski bulgusu",
+    "displayTerm": "Brudzinski bulgusu",
+    "term": "Brudzinski bulgusu",
+    "aliases": [
+      "Brudzinski bulgusu"
+    ],
+    "category": "Fizik muayene bulgusu",
+    "subcategory": "Fizik muayene bulgusu",
+    "shortDefinition": "Boyun fleksiyonuyla kalça/diz fleksiyonunun refleks gelişmesidir.",
+    "previewDefinition": "Boyun fleksiyonuyla kalça/diz fleksiyonunun refleks gelişmesidir.",
+    "preAnswerSafeDefinition": "Boyun fleksiyonuyla kalça/diz fleksiyonunun refleks gelişmesidir.",
+    "postAnswerExplanation": "Meningeal irritasyon değerlendirmesinde kullanılır.",
+    "postAnswerExpandedExplanation": "Meningeal irritasyon değerlendirmesinde kullanılır.",
+    "tusPearl": "Meningeal irritasyon değerlendirmesinde kullanılır.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "brudzinski",
+      "bulgusu"
+    ]
+  },
+  {
+    "id": "ctx-ani-baslayan-skrotal-agri",
+    "canonicalTerm": "Ani başlayan skrotal ağrı",
+    "displayTerm": "Ani başlayan skrotal ağrı",
+    "term": "Ani başlayan skrotal ağrı",
+    "aliases": [
+      "Ani başlayan skrotal ağrı"
+    ],
+    "category": "Semptom",
+    "subcategory": "Semptom",
+    "shortDefinition": "Skrotumda aniden ortaya çıkan şiddetli ağrıdır.",
+    "previewDefinition": "Skrotumda aniden ortaya çıkan şiddetli ağrıdır.",
+    "preAnswerSafeDefinition": "Skrotumda aniden ortaya çıkan şiddetli ağrıdır.",
+    "postAnswerExplanation": "Testis torsiyonu dışlanana kadar acil kabul edilmelidir.",
+    "postAnswerExpandedExplanation": "Testis torsiyonu dışlanana kadar acil kabul edilmelidir.",
+    "tusPearl": "Testis torsiyonu dışlanana kadar acil kabul edilmelidir.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "ani",
+      "başlayan",
+      "skrotal",
+      "ağrı"
+    ]
+  },
+  {
+    "id": "ctx-egzersizle-artan-dispne",
+    "canonicalTerm": "Egzersizle artan dispne",
+    "displayTerm": "Egzersizle artan dispne",
+    "term": "Egzersizle artan dispne",
+    "aliases": [
+      "Egzersizle artan dispne"
+    ],
+    "category": "Semptom",
+    "subcategory": "Semptom",
+    "shortDefinition": "Fiziksel eforla belirginleşen nefes darlığıdır.",
+    "previewDefinition": "Fiziksel eforla belirginleşen nefes darlığıdır.",
+    "preAnswerSafeDefinition": "Fiziksel eforla belirginleşen nefes darlığıdır.",
+    "postAnswerExplanation": "Kalp yetmezliği, anemi, pulmoner hipertansiyon ve obstrüktif akciğer hastalıklarında görülebilir.",
+    "postAnswerExpandedExplanation": "Kalp yetmezliği, anemi, pulmoner hipertansiyon ve obstrüktif akciğer hastalıklarında görülebilir.",
+    "tusPearl": "Kalp yetmezliği, anemi, pulmoner hipertansiyon ve obstrüktif akciğer hastalıklarında görülebilir.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "egzersizle",
+      "artan",
+      "dispne"
+    ]
+  },
+  {
+    "id": "ctx-meningeal-irritasyon-bulgusu",
+    "canonicalTerm": "Meningeal irritasyon bulgusu",
+    "displayTerm": "Meningeal irritasyon bulgusu",
+    "term": "Meningeal irritasyon bulgusu",
+    "aliases": [
+      "Meningeal irritasyon bulgusu"
+    ],
+    "category": "Fizik muayene bulgusu",
+    "subcategory": "Fizik muayene bulgusu",
+    "shortDefinition": "Menenks irritasyonunu düşündüren ense sertliği, Kernig veya Brudzinski gibi bulgulardır.",
+    "previewDefinition": "Menenks irritasyonunu düşündüren ense sertliği, Kernig veya Brudzinski gibi bulgulardır.",
+    "preAnswerSafeDefinition": "Menenks irritasyonunu düşündüren ense sertliği, Kernig veya Brudzinski gibi bulgulardır.",
+    "postAnswerExplanation": "Menenjit ve subaraknoid kanama ayırıcı tanısında önemlidir.",
+    "postAnswerExpandedExplanation": "Menenjit ve subaraknoid kanama ayırıcı tanısında önemlidir.",
+    "tusPearl": "Menenjit ve subaraknoid kanama ayırıcı tanısında önemlidir.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "meningeal",
+      "irritasyon",
+      "bulgusu"
+    ]
+  },
+  {
+    "id": "ctx-bilinc-degisikligi",
+    "canonicalTerm": "Bilinç değişikliği",
+    "displayTerm": "Bilinç değişikliği",
+    "term": "Bilinç değişikliği",
+    "aliases": [
+      "Bilinç değişikliği"
+    ],
+    "category": "Klinik bulgu",
+    "subcategory": "Klinik bulgu",
+    "shortDefinition": "Uyanıklık, oryantasyon veya mental durumun normalden sapmasıdır.",
+    "previewDefinition": "Uyanıklık, oryantasyon veya mental durumun normalden sapmasıdır.",
+    "preAnswerSafeDefinition": "Uyanıklık, oryantasyon veya mental durumun normalden sapmasıdır.",
+    "postAnswerExplanation": "Hipoksi, hipoglisemi, sepsis, intrakraniyal patoloji ve toksik-metabolik nedenler birlikte düşünülür.",
+    "postAnswerExpandedExplanation": "Hipoksi, hipoglisemi, sepsis, intrakraniyal patoloji ve toksik-metabolik nedenler birlikte düşünülür.",
+    "tusPearl": "Hipoksi, hipoglisemi, sepsis, intrakraniyal patoloji ve toksik-metabolik nedenler birlikte düşünülür.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "bilinç",
+      "değişikliği"
+    ]
+  },
+  {
+    "id": "ctx-duktus-bagimli-dolasim",
+    "canonicalTerm": "Duktus bağımlı dolaşım",
+    "displayTerm": "Duktus bağımlı dolaşım",
+    "term": "Duktus bağımlı dolaşım",
+    "aliases": [
+      "Duktus bağımlı dolaşım"
+    ],
+    "category": "Pediatrik kardiyoloji kavramı",
+    "subcategory": "Pediatrik kardiyoloji kavramı",
+    "shortDefinition": "Sistemik veya pulmoner dolaşımın patent duktus arteriozus açıklığına bağımlı olduğu konjenital kalp hastalığı durumudur.",
+    "previewDefinition": "Sistemik veya pulmoner dolaşımın patent duktus arteriozus açıklığına bağımlı olduğu konjenital kalp hastalığı durumudur.",
+    "preAnswerSafeDefinition": "Sistemik veya pulmoner dolaşımın patent duktus arteriozus açıklığına bağımlı olduğu konjenital kalp hastalığı durumudur.",
+    "postAnswerExplanation": "Prostaglandin E1 duktusu açık tutmak için kritik tedavi olabilir.",
+    "postAnswerExpandedExplanation": "Prostaglandin E1 duktusu açık tutmak için kritik tedavi olabilir.",
+    "tusPearl": "Prostaglandin E1 duktusu açık tutmak için kritik tedavi olabilir.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "duktus",
+      "bağımlı",
+      "dolaşım"
+    ]
+  },
+  {
+    "id": "ctx-prostaglandin-e1",
+    "canonicalTerm": "Prostaglandin E1",
+    "displayTerm": "Prostaglandin E1",
+    "term": "Prostaglandin E1",
+    "aliases": [
+      "Prostaglandin E1"
+    ],
+    "category": "İlaç",
+    "subcategory": "İlaç",
+    "shortDefinition": "Duktus arteriozusu açık tutmak için kullanılan prostaglandin analoğudur.",
+    "previewDefinition": "Duktus arteriozusu açık tutmak için kullanılan prostaglandin analoğudur.",
+    "preAnswerSafeDefinition": "Duktus arteriozusu açık tutmak için kullanılan prostaglandin analoğudur.",
+    "postAnswerExplanation": "Duktus bağımlı konjenital kalp hastalığında hayat kurtarıcıdır.",
+    "postAnswerExpandedExplanation": "Duktus bağımlı konjenital kalp hastalığında hayat kurtarıcıdır.",
+    "tusPearl": "Duktus bağımlı konjenital kalp hastalığında hayat kurtarıcıdır.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "prostaglandin",
+      "e1"
+    ]
+  },
+  {
+    "id": "ctx-periumbilikal-agri-migrasyonu",
+    "canonicalTerm": "Periumbilikal ağrı migrasyonu",
+    "displayTerm": "Periumbilikal ağrı migrasyonu",
+    "term": "Periumbilikal ağrı migrasyonu",
+    "aliases": [
+      "Periumbilikal ağrı migrasyonu"
+    ],
+    "category": "Semptom paterni",
+    "subcategory": "Semptom paterni",
+    "shortDefinition": "Ağrının göbek çevresinden sağ alt kadrana yer değiştirmesidir.",
+    "previewDefinition": "Ağrının göbek çevresinden sağ alt kadrana yer değiştirmesidir.",
+    "preAnswerSafeDefinition": "Ağrının göbek çevresinden sağ alt kadrana yer değiştirmesidir.",
+    "postAnswerExplanation": "Akut apandisit için klasik klinik ipucudur.",
+    "postAnswerExpandedExplanation": "Akut apandisit için klasik klinik ipucudur.",
+    "tusPearl": "Akut apandisit için klasik klinik ipucudur.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "periumbilikal",
+      "ağrı",
+      "migrasyonu"
+    ]
+  },
+  {
+    "id": "ctx-kor-sonlanan-tubuler-yapi",
+    "canonicalTerm": "Kör sonlanan tübüler yapı",
+    "displayTerm": "Kör sonlanan tübüler yapı",
+    "term": "Kör sonlanan tübüler yapı",
+    "aliases": [
+      "Kör sonlanan tübüler yapı"
+    ],
+    "category": "Ultrason bulgusu",
+    "subcategory": "Ultrason bulgusu",
+    "shortDefinition": "Ultrasonografide komprese olmayan, kör sonlanan tübüler yapının izlenmesidir.",
+    "previewDefinition": "Ultrasonografide komprese olmayan, kör sonlanan tübüler yapının izlenmesidir.",
+    "preAnswerSafeDefinition": "Ultrasonografide komprese olmayan, kör sonlanan tübüler yapının izlenmesidir.",
+    "postAnswerExplanation": "Sağ alt kadran ağrısında apendiksi düşündüren görüntüleme bulgusudur.",
+    "postAnswerExpandedExplanation": "Sağ alt kadran ağrısında apendiksi düşündüren görüntüleme bulgusudur.",
+    "tusPearl": "Sağ alt kadran ağrısında apendiksi düşündüren görüntüleme bulgusudur.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "kör",
+      "sonlanan",
+      "tübüler",
+      "yapı"
+    ]
+  },
+  {
+    "id": "ctx-komprese-olmayan-apendiks",
+    "canonicalTerm": "Komprese olmayan apendiks",
+    "displayTerm": "Komprese olmayan apendiks",
+    "term": "Komprese olmayan apendiks",
+    "aliases": [
+      "Komprese olmayan apendiks"
+    ],
+    "category": "Ultrason bulgusu",
+    "subcategory": "Ultrason bulgusu",
+    "shortDefinition": "Basmakla sıkışmayan apendiks görünümüdür.",
+    "previewDefinition": "Basmakla sıkışmayan apendiks görünümüdür.",
+    "preAnswerSafeDefinition": "Basmakla sıkışmayan apendiks görünümüdür.",
+    "postAnswerExplanation": "Akut apandisit lehine önemli ultrasonografik bulgudur.",
+    "postAnswerExpandedExplanation": "Akut apandisit lehine önemli ultrasonografik bulgudur.",
+    "tusPearl": "Akut apandisit lehine önemli ultrasonografik bulgudur.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "komprese",
+      "olmayan",
+      "apendiks"
+    ]
+  },
+  {
+    "id": "ctx-murphy-bulgusu",
+    "canonicalTerm": "Murphy bulgusu",
+    "displayTerm": "Murphy bulgusu",
+    "term": "Murphy bulgusu",
+    "aliases": [
+      "Murphy bulgusu"
+    ],
+    "category": "Fizik muayene bulgusu",
+    "subcategory": "Fizik muayene bulgusu",
+    "shortDefinition": "Sağ üst kadran palpasyonu sırasında inspirasyonun ağrı nedeniyle durmasıdır.",
+    "previewDefinition": "Sağ üst kadran palpasyonu sırasında inspirasyonun ağrı nedeniyle durmasıdır.",
+    "preAnswerSafeDefinition": "Sağ üst kadran palpasyonu sırasında inspirasyonun ağrı nedeniyle durmasıdır.",
+    "postAnswerExplanation": "Akut kolesistit için klasik muayene bulgusudur.",
+    "postAnswerExpandedExplanation": "Akut kolesistit için klasik muayene bulgusudur.",
+    "tusPearl": "Akut kolesistit için klasik muayene bulgusudur.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "murphy",
+      "bulgusu"
+    ]
+  },
+  {
+    "id": "ctx-biliyer-kolik",
+    "canonicalTerm": "Biliyer kolik",
+    "displayTerm": "Biliyer kolik",
+    "term": "Biliyer kolik",
+    "aliases": [
+      "Biliyer kolik"
+    ],
+    "category": "Klinik tablo",
+    "subcategory": "Klinik tablo",
+    "shortDefinition": "Safra taşının geçici obstrüksiyonuna bağlı aralıklı sağ üst kadran/epigastrik ağrıdır.",
+    "previewDefinition": "Safra taşının geçici obstrüksiyonuna bağlı aralıklı sağ üst kadran/epigastrik ağrıdır.",
+    "preAnswerSafeDefinition": "Safra taşının geçici obstrüksiyonuna bağlı aralıklı sağ üst kadran/epigastrik ağrıdır.",
+    "postAnswerExplanation": "Ateş ve duvar kalınlaşması eklenirse akut kolesistit düşünülür.",
+    "postAnswerExpandedExplanation": "Ateş ve duvar kalınlaşması eklenirse akut kolesistit düşünülür.",
+    "tusPearl": "Ateş ve duvar kalınlaşması eklenirse akut kolesistit düşünülür.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "biliyer",
+      "kolik"
+    ]
+  },
+  {
+    "id": "ctx-atesli-notropeni",
+    "canonicalTerm": "Ateşli nötropeni",
+    "displayTerm": "Ateşli nötropeni",
+    "term": "Ateşli nötropeni",
+    "aliases": [
+      "Ateşli nötropeni"
+    ],
+    "category": "Hematolojik acil",
+    "subcategory": "Hematolojik acil",
+    "shortDefinition": "Nötropenik hastada ateş gelişmesidir.",
+    "previewDefinition": "Nötropenik hastada ateş gelişmesidir.",
+    "preAnswerSafeDefinition": "Nötropenik hastada ateş gelişmesidir.",
+    "postAnswerExplanation": "Geniş spektrumlu antipseudomonal antibiyotik gecikmeden başlanmalıdır.",
+    "postAnswerExpandedExplanation": "Geniş spektrumlu antipseudomonal antibiyotik gecikmeden başlanmalıdır.",
+    "tusPearl": "Geniş spektrumlu antipseudomonal antibiyotik gecikmeden başlanmalıdır.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "ateşli",
+      "nötropeni"
+    ]
+  },
+  {
+    "id": "ctx-i-mmunsupresyon",
+    "canonicalTerm": "İmmünsüpresyon",
+    "displayTerm": "İmmünsüpresyon",
+    "term": "İmmünsüpresyon",
+    "aliases": [
+      "İmmünsüpresyon"
+    ],
+    "category": "Klinik durum",
+    "subcategory": "Klinik durum",
+    "shortDefinition": "Bağışıklık yanıtının hastalık veya tedavi nedeniyle baskılanmasıdır.",
+    "previewDefinition": "Bağışıklık yanıtının hastalık veya tedavi nedeniyle baskılanmasıdır.",
+    "preAnswerSafeDefinition": "Bağışıklık yanıtının hastalık veya tedavi nedeniyle baskılanmasıdır.",
+    "postAnswerExplanation": "Fırsatçı enfeksiyon, reaktivasyon ve atipik klinik riskini artırır.",
+    "postAnswerExpandedExplanation": "Fırsatçı enfeksiyon, reaktivasyon ve atipik klinik riskini artırır.",
+    "tusPearl": "Fırsatçı enfeksiyon, reaktivasyon ve atipik klinik riskini artırır.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": false,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "i̇mmünsüpresyon"
+    ]
+  },
+  {
+    "id": "ctx-firsatci-enfeksiyon",
+    "canonicalTerm": "Fırsatçı enfeksiyon",
+    "displayTerm": "Fırsatçı enfeksiyon",
+    "term": "Fırsatçı enfeksiyon",
+    "aliases": [
+      "Fırsatçı enfeksiyon"
+    ],
+    "category": "Enfeksiyon kavramı",
+    "subcategory": "Enfeksiyon kavramı",
+    "shortDefinition": "Bağışıklığı baskılanmış konakta hastalık yapan mikroorganizmaların oluşturduğu enfeksiyondur.",
+    "previewDefinition": "Bağışıklığı baskılanmış konakta hastalık yapan mikroorganizmaların oluşturduğu enfeksiyondur.",
+    "preAnswerSafeDefinition": "Bağışıklığı baskılanmış konakta hastalık yapan mikroorganizmaların oluşturduğu enfeksiyondur.",
+    "postAnswerExplanation": "CD4 düzeyi ve immünsüpresyon tipi etkenleri öngörmede önemlidir.",
+    "postAnswerExpandedExplanation": "CD4 düzeyi ve immünsüpresyon tipi etkenleri öngörmede önemlidir.",
+    "tusPearl": "CD4 düzeyi ve immünsüpresyon tipi etkenleri öngörmede önemlidir.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "fırsatçı",
+      "enfeksiyon"
+    ]
+  },
+  {
+    "id": "ctx-oral-antibiyotik",
+    "canonicalTerm": "Oral antibiyotik",
+    "displayTerm": "Oral antibiyotik",
+    "term": "Oral antibiyotik",
+    "aliases": [
+      "Oral antibiyotik"
+    ],
+    "category": "Tedavi yaklaşımı",
+    "subcategory": "Tedavi yaklaşımı",
+    "shortDefinition": "Ağızdan verilen antibiyotik tedavisidir.",
+    "previewDefinition": "Ağızdan verilen antibiyotik tedavisidir.",
+    "preAnswerSafeDefinition": "Ağızdan verilen antibiyotik tedavisidir.",
+    "postAnswerExplanation": "Ağır, sistemik veya komplike enfeksiyonda parenteral tedavi gerekebilir.",
+    "postAnswerExpandedExplanation": "Ağır, sistemik veya komplike enfeksiyonda parenteral tedavi gerekebilir.",
+    "tusPearl": "Ağır, sistemik veya komplike enfeksiyonda parenteral tedavi gerekebilir.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "oral",
+      "antibiyotik"
+    ]
+  },
+  {
+    "id": "ctx-poliklinik-kontrolu",
+    "canonicalTerm": "Poliklinik kontrolü",
+    "displayTerm": "Poliklinik kontrolü",
+    "term": "Poliklinik kontrolü",
+    "aliases": [
+      "Poliklinik kontrolü"
+    ],
+    "category": "İzlem yaklaşımı",
+    "subcategory": "İzlem yaklaşımı",
+    "shortDefinition": "Hastanın acil yatış gerekmeksizin ayaktan takip edilmesidir.",
+    "previewDefinition": "Hastanın acil yatış gerekmeksizin ayaktan takip edilmesidir.",
+    "preAnswerSafeDefinition": "Hastanın acil yatış gerekmeksizin ayaktan takip edilmesidir.",
+    "postAnswerExplanation": "Stabil, düşük riskli ve alarm bulgusu olmayan olgularda uygundur.",
+    "postAnswerExpandedExplanation": "Stabil, düşük riskli ve alarm bulgusu olmayan olgularda uygundur.",
+    "tusPearl": "Stabil, düşük riskli ve alarm bulgusu olmayan olgularda uygundur.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "poliklinik",
+      "kontrolü"
+    ]
+  },
+  {
+    "id": "ctx-yatis-endikasyonu",
+    "canonicalTerm": "Yatış endikasyonu",
+    "displayTerm": "Yatış endikasyonu",
+    "term": "Yatış endikasyonu",
+    "aliases": [
+      "Yatış endikasyonu"
+    ],
+    "category": "Klinik karar",
+    "subcategory": "Klinik karar",
+    "shortDefinition": "Hastanın hastanede izlenmesini veya tedavi almasını gerektiren durumdur.",
+    "previewDefinition": "Hastanın hastanede izlenmesini veya tedavi almasını gerektiren durumdur.",
+    "preAnswerSafeDefinition": "Hastanın hastanede izlenmesini veya tedavi almasını gerektiren durumdur.",
+    "postAnswerExplanation": "İnstabilite, organ yetmezliği, ağır enfeksiyon veya yakın takip gereksinimi yatış nedeni olabilir.",
+    "postAnswerExpandedExplanation": "İnstabilite, organ yetmezliği, ağır enfeksiyon veya yakın takip gereksinimi yatış nedeni olabilir.",
+    "tusPearl": "İnstabilite, organ yetmezliği, ağır enfeksiyon veya yakın takip gereksinimi yatış nedeni olabilir.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "yatış",
+      "endikasyonu"
+    ]
+  },
+  {
+    "id": "ctx-seri-takip",
+    "canonicalTerm": "Seri takip",
+    "displayTerm": "Seri takip",
+    "term": "Seri takip",
+    "aliases": [
+      "Seri takip"
+    ],
+    "category": "Klinik izlem",
+    "subcategory": "Klinik izlem",
+    "shortDefinition": "Hastanın belirli aralıklarla klinik, laboratuvar veya görüntüleme açısından tekrar değerlendirilmesidir.",
+    "previewDefinition": "Hastanın belirli aralıklarla klinik, laboratuvar veya görüntüleme açısından tekrar değerlendirilmesidir.",
+    "preAnswerSafeDefinition": "Hastanın belirli aralıklarla klinik, laboratuvar veya görüntüleme açısından tekrar değerlendirilmesidir.",
+    "postAnswerExplanation": "Stabil hastalarda kullanılabilir; instabil hastada gecikmeye yol açmamalıdır.",
+    "postAnswerExpandedExplanation": "Stabil hastalarda kullanılabilir; instabil hastada gecikmeye yol açmamalıdır.",
+    "tusPearl": "Stabil hastalarda kullanılabilir; instabil hastada gecikmeye yol açmamalıdır.",
+    "differentialPoint": "",
+    "clinicalContext": "",
+    "clinicalRelevance": "",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [],
+    "matchingPriority": 75,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "seri",
+      "takip"
+    ]
+  }
+
+,
+  {
+    "id": "ctx-inguinal-bolgede-hassasiyet",
+    "canonicalTerm": "İnguinal bölgede hassasiyet",
+    "displayTerm": "İnguinal bölgede hassasiyet",
+    "term": "İnguinal bölgede hassasiyet",
+    "aliases": ["İnguinal bölgede hassasiyet", "inguinal hassasiyet", "kasık bölgesinde hassasiyet"],
+    "category": "Fizik muayene/anatomik lokalizasyon",
+    "subcategory": "Fizik muayene/anatomik lokalizasyon",
+    "shortDefinition": "Kasık bölgesinde palpasyonla ağrı veya duyarlılık saptanmasını ifade eder.",
+    "previewDefinition": "Kasık bölgesinde palpasyonla ağrı veya duyarlılık saptanmasını ifade eder.",
+    "preAnswerSafeDefinition": "Kasık bölgesinde palpasyonla ağrı veya duyarlılık saptanmasını ifade eder.",
+    "postAnswerExplanation": "İnguinal hassasiyet herni, lenfadenit, postoperatif komplikasyon, epididimit veya diğer kasık kaynaklı patolojilerde klinik bağlamla değerlendirilir.",
+    "postAnswerExpandedExplanation": "İnguinal hassasiyet herni, lenfadenit, postoperatif komplikasyon, epididimit veya diğer kasık kaynaklı patolojilerde klinik bağlamla değerlendirilir.",
+    "tusPearl": "Ağrılı, redükte edilemeyen inguinal/femoral kitle strangülasyon riski açısından acil değerlendirilmelidir.",
+    "differentialPoint": "Skrotal ağrı eşlik ediyorsa torsiyon, epididimit ve inkarsere herni ayırıcı tanıda birlikte düşünülür.",
+    "clinicalContext": "Kasık ağrısı ve şişlik değerlendirmesinde lokalizasyon ve redükte edilebilirlik önemlidir.",
+    "clinicalRelevance": "Kasık ağrısı ve şişlik değerlendirmesinde lokalizasyon ve redükte edilebilirlik önemlidir.",
+    "mechanism": "",
+    "relatedTerms": ["İnguinal ligament", "Femoral herni", "İnkarsere herni"],
+    "relatedBranches": ["genel-cerrahi", "üroloji"],
+    "sourceTextExamples": ["inguinal bölgede hassasiyet"],
+    "matchingPriority": 94,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": ["inguinal", "hassasiyet", "kasık"]
+  },
+  {
+    "id": "ctx-postoperatif-donemde-gelisen-agri",
+    "canonicalTerm": "Postoperatif dönemde gelişen ağrı",
+    "displayTerm": "Postoperatif dönemde gelişen ağrı",
+    "term": "Postoperatif dönemde gelişen ağrı",
+    "aliases": ["Postoperatif dönemde gelişen ağrı", "postoperatif yeni ağrı", "postoperatif artan ağrı"],
+    "category": "Klinik durum",
+    "subcategory": "Klinik durum",
+    "shortDefinition": "Cerrahi sonrası süreçte yeni başlayan veya beklenenden fazla artan ağrıyı ifade eder.",
+    "previewDefinition": "Cerrahi sonrası süreçte yeni başlayan veya beklenenden fazla artan ağrıyı ifade eder.",
+    "preAnswerSafeDefinition": "Cerrahi sonrası süreçte yeni başlayan veya beklenenden fazla artan ağrıyı ifade eder.",
+    "postAnswerExplanation": "Ateş, lokal hassasiyet, şişlik, fonksiyon kaybı veya hemodinamik bozulma eşlik ediyorsa postoperatif komplikasyon açısından değerlendirilir.",
+    "postAnswerExpandedExplanation": "Ateş, lokal hassasiyet, şişlik, fonksiyon kaybı veya hemodinamik bozulma eşlik ediyorsa postoperatif komplikasyon açısından değerlendirilir.",
+    "tusPearl": "Postoperatif ağrı normal iyileşme ile enfeksiyon, hematom, iskemi, sinir hasarı ve mekanik komplikasyondan ayrılmalıdır.",
+    "differentialPoint": "Sadece hafif beklenen ağrıdan farklı olarak progresif veya sistemik bulgulu ağrı komplikasyon lehinedir.",
+    "clinicalContext": "Postoperatif takipte ağrının zamanı, şiddeti ve eşlik eden lokal/sistemik bulgular önemlidir.",
+    "clinicalRelevance": "Postoperatif takipte ağrının zamanı, şiddeti ve eşlik eden lokal/sistemik bulgular önemlidir.",
+    "mechanism": "",
+    "relatedTerms": ["Postoperatif dönem", "Cerrahi eksplorasyon"],
+    "relatedBranches": ["genel-cerrahi"],
+    "sourceTextExamples": ["postoperatif dönemde gelişen ağrı"],
+    "matchingPriority": 94,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": ["postoperatif", "ağrı", "komplikasyon"]
+  },
+  {
+    "id": "ctx-retikulosit-yaniti",
+    "canonicalTerm": "Retikülosit yanıtı",
+    "displayTerm": "Retikülosit yanıtı",
+    "term": "Retikülosit yanıtı",
+    "aliases": ["Retikülosit yanıtı", "retikülosit cevabı"],
+    "category": "Laboratuvar yorumu",
+    "subcategory": "Laboratuvar yorumu",
+    "shortDefinition": "Kemik iliğinin anemi veya hemolize karşı genç eritrosit üretimini artırıp artırmadığını gösteren yanıttır.",
+    "previewDefinition": "Kemik iliğinin anemi veya hemolize karşı genç eritrosit üretimini artırıp artırmadığını gösteren yanıttır.",
+    "preAnswerSafeDefinition": "Kemik iliğinin anemi veya hemolize karşı genç eritrosit üretimini artırıp artırmadığını gösteren yanıttır.",
+    "postAnswerExplanation": "Hemolizde retikülosit yanıtı genellikle artar; aplastik kriz veya kemik iliği baskılanmasında yanıt yetersizdir.",
+    "postAnswerExpandedExplanation": "Hemolizde retikülosit yanıtı genellikle artar; aplastik kriz veya kemik iliği baskılanmasında yanıt yetersizdir.",
+    "tusPearl": "Orak hücre hastasında ani ağır anemi + düşük retikülosit Parvovirus B19 ilişkili aplastik krizi düşündürür.",
+    "differentialPoint": "Hemolitik kriz retikülositoz yaparken aplastik krizde retikülosit düşüktür.",
+    "clinicalContext": "Aneminin üretim azlığı mı yıkım artışı mı olduğunu ayırmada kullanılır.",
+    "clinicalRelevance": "Aneminin üretim azlığı mı yıkım artışı mı olduğunu ayırmada kullanılır.",
+    "mechanism": "Retikülosit artışı eritropoietik yanıtı, düşüklüğü kemik iliği yanıt yetersizliğini gösterir.",
+    "relatedTerms": ["Retikülosit sayısı", "Hemolitik anemi", "Aplastik kriz"],
+    "relatedBranches": ["hematoloji", "pediatri"],
+    "sourceTextExamples": ["retikülosit yanıtı"],
+    "matchingPriority": 95,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "high",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": ["retikülosit", "anemi", "hemoliz"]
+  },
+  {
+    "id": "ctx-omuz-aktif-abduksiyonu",
+    "canonicalTerm": "Omuz aktif abdüksiyonu",
+    "displayTerm": "Omuz aktif abdüksiyonu",
+    "term": "Omuz aktif abdüksiyonu",
+    "aliases": ["Omuz aktif abdüksiyonu", "omuzda aktif abdüksiyon"],
+    "category": "Fonksiyonel muayene bulgusu",
+    "subcategory": "Fonksiyonel muayene bulgusu",
+    "shortDefinition": "Omuz ekleminde kolun hastanın kendi kas gücüyle gövdeden uzaklaştırılmasıdır.",
+    "previewDefinition": "Omuz ekleminde kolun hastanın kendi kas gücüyle gövdeden uzaklaştırılmasıdır.",
+    "preAnswerSafeDefinition": "Omuz ekleminde kolun hastanın kendi kas gücüyle gövdeden uzaklaştırılmasıdır.",
+    "postAnswerExplanation": "Aktif abdüksiyon kısıtlılığı rotator manşet, deltoid, sinir hasarı veya skapulotorasik stabilizasyon problemleriyle ilişkilendirilebilir.",
+    "postAnswerExpandedExplanation": "Aktif abdüksiyon kısıtlılığı rotator manşet, deltoid, sinir hasarı veya skapulotorasik stabilizasyon problemleriyle ilişkilendirilebilir.",
+    "tusPearl": "Aktif hareket kısıtlı fakat pasif hareket korunmuşsa kas-tendon veya nörolojik fonksiyon kaybı ön plana çıkar.",
+    "differentialPoint": "Hem aktif hem pasif hareket kısıtlıysa kapsülit, artrit veya mekanik blok daha olasıdır.",
+    "clinicalContext": "Omuz fonksiyon muayenesinde aktif ve pasif hareket karşılaştırması lezyon lokalizasyonu sağlar.",
+    "clinicalRelevance": "Omuz fonksiyon muayenesinde aktif ve pasif hareket karşılaştırması lezyon lokalizasyonu sağlar.",
+    "mechanism": "Aktif hareket kas gücü, tendon bütünlüğü ve sinir innervasyonuna bağımlıdır.",
+    "relatedTerms": ["Aktif abdüksiyon", "Pasif hareket açıklığı", "Skapular kanatlanma"],
+    "relatedBranches": ["ortopedi", "anatomi"],
+    "sourceTextExamples": ["omuz aktif abdüksiyonu"],
+    "matchingPriority": 95,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": ["omuz", "aktif", "abdüksiyon"]
+  }
+
+,
+  {
+    "id": "ctx-audit-kilo-kaybi",
+    "canonicalTerm": "Kilo kaybı",
+    "displayTerm": "Kilo kaybı",
+    "term": "Kilo kaybı",
+    "aliases": [
+      "Kilo kaybı"
+    ],
+    "category": "Semptom",
+    "subcategory": "Semptom",
+    "shortDefinition": "İstem dışı veya belirgin vücut ağırlığı azalmasıdır.",
+    "previewDefinition": "İstem dışı veya belirgin vücut ağırlığı azalmasıdır.",
+    "preAnswerSafeDefinition": "İstem dışı veya belirgin vücut ağırlığı azalmasıdır.",
+    "postAnswerExplanation": "Kronik enfeksiyon, malignite, malabsorpsiyon, hipertiroidi ve inflamatuvar hastalıklarla birlikte değerlendirilir.",
+    "postAnswerExpandedExplanation": "Kronik enfeksiyon, malignite, malabsorpsiyon, hipertiroidi ve inflamatuvar hastalıklarla birlikte değerlendirilir.",
+    "tusPearl": "Kronik enfeksiyon, malignite, malabsorpsiyon, hipertiroidi ve inflamatuvar hastalıklarla birlikte değerlendirilir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "İstem dışı veya belirgin vücut ağırlığı azalmasıdır.",
+    "clinicalRelevance": "İstem dışı veya belirgin vücut ağırlığı azalmasıdır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Kilo kaybı"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "kilo",
+      "kaybı"
+    ]
+  },
+  {
+    "id": "ctx-audit-tip-ii-pn-mosit",
+    "canonicalTerm": "Tip II pnömosit",
+    "displayTerm": "Tip II pnömosit",
+    "term": "Tip II pnömosit",
+    "aliases": [
+      "Tip II pnömosit",
+      "II pnömosit",
+      "tip II pnömositler",
+      "II pnömositler"
+    ],
+    "category": "Histoloji/fizyoloji",
+    "subcategory": "Histoloji/fizyoloji",
+    "shortDefinition": "Alveolde surfaktan üreten ve alveoler epitel onarımında rol alan hücredir.",
+    "previewDefinition": "Alveolde surfaktan üreten ve alveoler epitel onarımında rol alan hücredir.",
+    "preAnswerSafeDefinition": "Alveolde surfaktan üreten ve alveoler epitel onarımında rol alan hücredir.",
+    "postAnswerExplanation": "Prematüre bebekte surfaktan eksikliği neonatal respiratuvar distres sendromu ile ilişkilidir.",
+    "postAnswerExpandedExplanation": "Prematüre bebekte surfaktan eksikliği neonatal respiratuvar distres sendromu ile ilişkilidir.",
+    "tusPearl": "Prematüre bebekte surfaktan eksikliği neonatal respiratuvar distres sendromu ile ilişkilidir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Alveolde surfaktan üreten ve alveoler epitel onarımında rol alan hücredir.",
+    "clinicalRelevance": "Alveolde surfaktan üreten ve alveoler epitel onarımında rol alan hücredir.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Tip II pnömosit"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "tip",
+      "ii",
+      "pnömosit"
+    ]
+  },
+  {
+    "id": "ctx-audit-i-sitme-kaybi",
+    "canonicalTerm": "İşitme kaybı",
+    "displayTerm": "İşitme kaybı",
+    "term": "İşitme kaybı",
+    "aliases": [
+      "İşitme kaybı"
+    ],
+    "category": "Semptom/bulgu",
+    "subcategory": "Semptom/bulgu",
+    "shortDefinition": "Ses algısında iletim tipi veya sensörinöral azalmayı ifade eder.",
+    "previewDefinition": "Ses algısında iletim tipi veya sensörinöral azalmayı ifade eder.",
+    "preAnswerSafeDefinition": "Ses algısında iletim tipi veya sensörinöral azalmayı ifade eder.",
+    "postAnswerExplanation": "Konjenital enfeksiyon, ototoksisite, presbiakuzi ve sinir patolojileri ayırıcı tanıda düşünülür.",
+    "postAnswerExpandedExplanation": "Konjenital enfeksiyon, ototoksisite, presbiakuzi ve sinir patolojileri ayırıcı tanıda düşünülür.",
+    "tusPearl": "Konjenital enfeksiyon, ototoksisite, presbiakuzi ve sinir patolojileri ayırıcı tanıda düşünülür.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Ses algısında iletim tipi veya sensörinöral azalmayı ifade eder.",
+    "clinicalRelevance": "Ses algısında iletim tipi veya sensörinöral azalmayı ifade eder.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "İşitme kaybı"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "i̇şitme",
+      "kaybı"
+    ]
+  },
+  {
+    "id": "ctx-audit-kan-kaybi",
+    "canonicalTerm": "Kan kaybı",
+    "displayTerm": "Kan kaybı",
+    "term": "Kan kaybı",
+    "aliases": [
+      "Kan kaybı"
+    ],
+    "category": "Klinik durum",
+    "subcategory": "Klinik durum",
+    "shortDefinition": "Damar dışına veya vücut dışına kan kaybı gelişmesidir.",
+    "previewDefinition": "Damar dışına veya vücut dışına kan kaybı gelişmesidir.",
+    "preAnswerSafeDefinition": "Damar dışına veya vücut dışına kan kaybı gelişmesidir.",
+    "postAnswerExplanation": "Akut kan kaybı taşikardi, hipotansiyon ve hipovolemik şokla sonuçlanabilir.",
+    "postAnswerExpandedExplanation": "Akut kan kaybı taşikardi, hipotansiyon ve hipovolemik şokla sonuçlanabilir.",
+    "tusPearl": "Akut kan kaybı taşikardi, hipotansiyon ve hipovolemik şokla sonuçlanabilir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Damar dışına veya vücut dışına kan kaybı gelişmesidir.",
+    "clinicalRelevance": "Damar dışına veya vücut dışına kan kaybı gelişmesidir.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Kan kaybı"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "kan",
+      "kaybı"
+    ]
+  },
+  {
+    "id": "ctx-audit-protein-kaybi",
+    "canonicalTerm": "Protein kaybı",
+    "displayTerm": "Protein kaybı",
+    "term": "Protein kaybı",
+    "aliases": [
+      "Protein kaybı"
+    ],
+    "category": "Patofizyolojik/laboratuvar kavram",
+    "subcategory": "Patofizyolojik/laboratuvar kavram",
+    "shortDefinition": "Vücuttan özellikle idrar, barsak veya deri yoluyla protein kaybını ifade eder.",
+    "previewDefinition": "Vücuttan özellikle idrar, barsak veya deri yoluyla protein kaybını ifade eder.",
+    "preAnswerSafeDefinition": "Vücuttan özellikle idrar, barsak veya deri yoluyla protein kaybını ifade eder.",
+    "postAnswerExplanation": "Nefrotik sendromda idrarla protein kaybı hipoalbüminemi ve ödem oluşturur.",
+    "postAnswerExpandedExplanation": "Nefrotik sendromda idrarla protein kaybı hipoalbüminemi ve ödem oluşturur.",
+    "tusPearl": "Nefrotik sendromda idrarla protein kaybı hipoalbüminemi ve ödem oluşturur.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Vücuttan özellikle idrar, barsak veya deri yoluyla protein kaybını ifade eder.",
+    "clinicalRelevance": "Vücuttan özellikle idrar, barsak veya deri yoluyla protein kaybını ifade eder.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Protein kaybı"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "protein",
+      "kaybı"
+    ]
+  },
+  {
+    "id": "ctx-audit-ekg-degisikligi",
+    "canonicalTerm": "EKG değişikliği",
+    "displayTerm": "EKG değişikliği",
+    "term": "EKG değişikliği",
+    "aliases": [
+      "EKG değişikliği"
+    ],
+    "category": "EKG bulgusu",
+    "subcategory": "EKG bulgusu",
+    "shortDefinition": "Elektrokardiyografide ritim, iletim, repolarizasyon veya iskemiye ait sapmaları ifade eder.",
+    "previewDefinition": "Elektrokardiyografide ritim, iletim, repolarizasyon veya iskemiye ait sapmaları ifade eder.",
+    "preAnswerSafeDefinition": "Elektrokardiyografide ritim, iletim, repolarizasyon veya iskemiye ait sapmaları ifade eder.",
+    "postAnswerExplanation": "Hiperkalemi, akut koroner sendrom ve aritmilerde EKG değişikliği tedavi önceliğini değiştirebilir.",
+    "postAnswerExpandedExplanation": "Hiperkalemi, akut koroner sendrom ve aritmilerde EKG değişikliği tedavi önceliğini değiştirebilir.",
+    "tusPearl": "Hiperkalemi, akut koroner sendrom ve aritmilerde EKG değişikliği tedavi önceliğini değiştirebilir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Elektrokardiyografide ritim, iletim, repolarizasyon veya iskemiye ait sapmaları ifade eder.",
+    "clinicalRelevance": "Elektrokardiyografide ritim, iletim, repolarizasyon veya iskemiye ait sapmaları ifade eder.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "EKG değişikliği"
+    ],
+    "matchingPriority": 82,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "ekg",
+      "değişikliği"
+    ]
+  },
+  {
+    "id": "ctx-audit-sentinel-lenf-nodu-biyopsisi",
+    "canonicalTerm": "Sentinel lenf nodu biyopsisi",
+    "displayTerm": "Sentinel lenf nodu biyopsisi",
+    "term": "Sentinel lenf nodu biyopsisi",
+    "aliases": [
+      "Sentinel lenf nodu biyopsisi",
+      "sentinel nodu biyopsi",
+      "sentinel nod biyopsisi",
+      "nodu biyopsi"
+    ],
+    "category": "Cerrahi/onkolojik işlem",
+    "subcategory": "Cerrahi/onkolojik işlem",
+    "shortDefinition": "Tümör drenajını alan ilk lenf nodunun örneklenmesi işlemidir.",
+    "previewDefinition": "Tümör drenajını alan ilk lenf nodunun örneklenmesi işlemidir.",
+    "preAnswerSafeDefinition": "Tümör drenajını alan ilk lenf nodunun örneklenmesi işlemidir.",
+    "postAnswerExplanation": "Meme kanseri ve melanomda nodal evreleme için aksiller diseksiyona göre daha sınırlı yaklaşım sağlar.",
+    "postAnswerExpandedExplanation": "Meme kanseri ve melanomda nodal evreleme için aksiller diseksiyona göre daha sınırlı yaklaşım sağlar.",
+    "tusPearl": "Meme kanseri ve melanomda nodal evreleme için aksiller diseksiyona göre daha sınırlı yaklaşım sağlar.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Tümör drenajını alan ilk lenf nodunun örneklenmesi işlemidir.",
+    "clinicalRelevance": "Tümör drenajını alan ilk lenf nodunun örneklenmesi işlemidir.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Sentinel lenf nodu biyopsisi"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "sentinel",
+      "lenf",
+      "nodu",
+      "biyopsisi"
+    ]
+  },
+  {
+    "id": "ctx-audit-anca-iliskili-vask-lit",
+    "canonicalTerm": "ANCA ilişkili vaskülit",
+    "displayTerm": "ANCA ilişkili vaskülit",
+    "term": "ANCA ilişkili vaskülit",
+    "aliases": [
+      "ANCA ilişkili vaskülit",
+      "ANCA ilişkili",
+      "ANCA pozitifliği"
+    ],
+    "category": "Romatoloji/immünoloji",
+    "subcategory": "Romatoloji/immünoloji",
+    "shortDefinition": "ANCA pozitifliğiyle ilişkili küçük damar vaskülitleri grubudur.",
+    "previewDefinition": "ANCA pozitifliğiyle ilişkili küçük damar vaskülitleri grubudur.",
+    "preAnswerSafeDefinition": "ANCA pozitifliğiyle ilişkili küçük damar vaskülitleri grubudur.",
+    "postAnswerExplanation": "Pulmoner-renal sendromda ANCA ilişkili vaskülit ve anti-GBM hastalığı ayırıcı tanıda birlikte düşünülür.",
+    "postAnswerExpandedExplanation": "Pulmoner-renal sendromda ANCA ilişkili vaskülit ve anti-GBM hastalığı ayırıcı tanıda birlikte düşünülür.",
+    "tusPearl": "Pulmoner-renal sendromda ANCA ilişkili vaskülit ve anti-GBM hastalığı ayırıcı tanıda birlikte düşünülür.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "ANCA pozitifliğiyle ilişkili küçük damar vaskülitleri grubudur.",
+    "clinicalRelevance": "ANCA pozitifliğiyle ilişkili küçük damar vaskülitleri grubudur.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "ANCA ilişkili vaskülit"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "anca",
+      "ilişkili",
+      "vaskülit"
+    ]
+  },
+  {
+    "id": "ctx-audit-dna-giraz",
+    "canonicalTerm": "DNA giraz",
+    "displayTerm": "DNA giraz",
+    "term": "DNA giraz",
+    "aliases": [
+      "DNA giraz"
+    ],
+    "category": "Mikrobiyoloji/farmakoloji",
+    "subcategory": "Mikrobiyoloji/farmakoloji",
+    "shortDefinition": "Bakteriyel DNA süpersarmal yapısını düzenleyen topoizomeraz enzimidir.",
+    "previewDefinition": "Bakteriyel DNA süpersarmal yapısını düzenleyen topoizomeraz enzimidir.",
+    "preAnswerSafeDefinition": "Bakteriyel DNA süpersarmal yapısını düzenleyen topoizomeraz enzimidir.",
+    "postAnswerExplanation": "Florokinolonlar DNA giraz/topoizomeraz IV inhibisyonu üzerinden bakterisidal etki gösterir.",
+    "postAnswerExpandedExplanation": "Florokinolonlar DNA giraz/topoizomeraz IV inhibisyonu üzerinden bakterisidal etki gösterir.",
+    "tusPearl": "Florokinolonlar DNA giraz/topoizomeraz IV inhibisyonu üzerinden bakterisidal etki gösterir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Bakteriyel DNA süpersarmal yapısını düzenleyen topoizomeraz enzimidir.",
+    "clinicalRelevance": "Bakteriyel DNA süpersarmal yapısını düzenleyen topoizomeraz enzimidir.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "DNA giraz"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "dna",
+      "giraz"
+    ]
+  },
+  {
+    "id": "ctx-audit-duyu-kaybi",
+    "canonicalTerm": "Duyu kaybı",
+    "displayTerm": "Duyu kaybı",
+    "term": "Duyu kaybı",
+    "aliases": [
+      "Duyu kaybı"
+    ],
+    "category": "Nörolojik bulgu",
+    "subcategory": "Nörolojik bulgu",
+    "shortDefinition": "Belirli bir bölgede dokunma, ağrı, ısı veya vibrasyon duyusunun azalmasıdır.",
+    "previewDefinition": "Belirli bir bölgede dokunma, ağrı, ısı veya vibrasyon duyusunun azalmasıdır.",
+    "preAnswerSafeDefinition": "Belirli bir bölgede dokunma, ağrı, ısı veya vibrasyon duyusunun azalmasıdır.",
+    "postAnswerExplanation": "Dermatomal, periferik sinir veya eldiven-çorap dağılımı lezyon lokalizasyonu sağlar.",
+    "postAnswerExpandedExplanation": "Dermatomal, periferik sinir veya eldiven-çorap dağılımı lezyon lokalizasyonu sağlar.",
+    "tusPearl": "Dermatomal, periferik sinir veya eldiven-çorap dağılımı lezyon lokalizasyonu sağlar.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Belirli bir bölgede dokunma, ağrı, ısı veya vibrasyon duyusunun azalmasıdır.",
+    "clinicalRelevance": "Belirli bir bölgede dokunma, ağrı, ısı veya vibrasyon duyusunun azalmasıdır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Duyu kaybı"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "duyu",
+      "kaybı"
+    ]
+  },
+  {
+    "id": "ctx-audit-sag-st-kadran-agrisi",
+    "canonicalTerm": "Sağ üst kadran ağrısı",
+    "displayTerm": "Sağ üst kadran ağrısı",
+    "term": "Sağ üst kadran ağrısı",
+    "aliases": [
+      "Sağ üst kadran ağrısı"
+    ],
+    "category": "Semptom/lokalizasyon",
+    "subcategory": "Semptom/lokalizasyon",
+    "shortDefinition": "Karın sağ üst bölümünde hissedilen ağrıdır.",
+    "previewDefinition": "Karın sağ üst bölümünde hissedilen ağrıdır.",
+    "preAnswerSafeDefinition": "Karın sağ üst bölümünde hissedilen ağrıdır.",
+    "postAnswerExplanation": "Safra kesesi, karaciğer, safra yolları ve bazen alt akciğer patolojileriyle ilişkilidir.",
+    "postAnswerExpandedExplanation": "Safra kesesi, karaciğer, safra yolları ve bazen alt akciğer patolojileriyle ilişkilidir.",
+    "tusPearl": "Safra kesesi, karaciğer, safra yolları ve bazen alt akciğer patolojileriyle ilişkilidir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Karın sağ üst bölümünde hissedilen ağrıdır.",
+    "clinicalRelevance": "Karın sağ üst bölümünde hissedilen ağrıdır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Sağ üst kadran ağrısı"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "sağ",
+      "üst",
+      "kadran",
+      "ağrısı"
+    ]
+  },
+  {
+    "id": "ctx-audit-lynch-sendromu",
+    "canonicalTerm": "Lynch sendromu",
+    "displayTerm": "Lynch sendromu",
+    "term": "Lynch sendromu",
+    "aliases": [
+      "Lynch sendromu"
+    ],
+    "category": "Genetik kanser sendromu",
+    "subcategory": "Genetik kanser sendromu",
+    "shortDefinition": "DNA mismatch repair gen bozukluklarına bağlı herediter nonpolipozis kolorektal kanser sendromudur.",
+    "previewDefinition": "DNA mismatch repair gen bozukluklarına bağlı herediter nonpolipozis kolorektal kanser sendromudur.",
+    "preAnswerSafeDefinition": "DNA mismatch repair gen bozukluklarına bağlı herediter nonpolipozis kolorektal kanser sendromudur.",
+    "postAnswerExplanation": "MSI yüksekliği ve MMR protein kaybı Lynch sendromu açısından önemlidir.",
+    "postAnswerExpandedExplanation": "MSI yüksekliği ve MMR protein kaybı Lynch sendromu açısından önemlidir.",
+    "tusPearl": "MSI yüksekliği ve MMR protein kaybı Lynch sendromu açısından önemlidir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "DNA mismatch repair gen bozukluklarına bağlı herediter nonpolipozis kolorektal kanser sendromudur.",
+    "clinicalRelevance": "DNA mismatch repair gen bozukluklarına bağlı herediter nonpolipozis kolorektal kanser sendromudur.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Lynch sendromu"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "lynch",
+      "sendromu"
+    ]
+  },
+  {
+    "id": "ctx-audit-uterin-hassasiyet",
+    "canonicalTerm": "Uterin hassasiyet",
+    "displayTerm": "Uterin hassasiyet",
+    "term": "Uterin hassasiyet",
+    "aliases": [
+      "Uterin hassasiyet"
+    ],
+    "category": "Fizik muayene bulgusu",
+    "subcategory": "Fizik muayene bulgusu",
+    "shortDefinition": "Uterus palpasyonu veya mobilizasyonuyla ağrı/hassasiyet olmasıdır.",
+    "previewDefinition": "Uterus palpasyonu veya mobilizasyonuyla ağrı/hassasiyet olmasıdır.",
+    "preAnswerSafeDefinition": "Uterus palpasyonu veya mobilizasyonuyla ağrı/hassasiyet olmasıdır.",
+    "postAnswerExplanation": "Pelvik inflamatuvar hastalık, endometrit ve obstetrik komplikasyonlarda anlamlı olabilir.",
+    "postAnswerExpandedExplanation": "Pelvik inflamatuvar hastalık, endometrit ve obstetrik komplikasyonlarda anlamlı olabilir.",
+    "tusPearl": "Pelvik inflamatuvar hastalık, endometrit ve obstetrik komplikasyonlarda anlamlı olabilir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Uterus palpasyonu veya mobilizasyonuyla ağrı/hassasiyet olmasıdır.",
+    "clinicalRelevance": "Uterus palpasyonu veya mobilizasyonuyla ağrı/hassasiyet olmasıdır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Uterin hassasiyet"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "uterin",
+      "hassasiyet"
+    ]
+  },
+  {
+    "id": "ctx-audit-b-brek-biyopsisi",
+    "canonicalTerm": "Böbrek biyopsisi",
+    "displayTerm": "Böbrek biyopsisi",
+    "term": "Böbrek biyopsisi",
+    "aliases": [
+      "Böbrek biyopsisi",
+      "Böbrek biyopsi"
+    ],
+    "category": "Tanısal işlem",
+    "subcategory": "Tanısal işlem",
+    "shortDefinition": "Renal parankimden histopatolojik inceleme için doku örneği alınmasıdır.",
+    "previewDefinition": "Renal parankimden histopatolojik inceleme için doku örneği alınmasıdır.",
+    "preAnswerSafeDefinition": "Renal parankimden histopatolojik inceleme için doku örneği alınmasıdır.",
+    "postAnswerExplanation": "Nefritik/nefrotik tabloda histolojik patern tanı ve tedaviyi belirleyebilir.",
+    "postAnswerExpandedExplanation": "Nefritik/nefrotik tabloda histolojik patern tanı ve tedaviyi belirleyebilir.",
+    "tusPearl": "Nefritik/nefrotik tabloda histolojik patern tanı ve tedaviyi belirleyebilir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Renal parankimden histopatolojik inceleme için doku örneği alınmasıdır.",
+    "clinicalRelevance": "Renal parankimden histopatolojik inceleme için doku örneği alınmasıdır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Böbrek biyopsisi"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "böbrek",
+      "biyopsisi"
+    ]
+  },
+  {
+    "id": "ctx-audit-serotonin-sendromu",
+    "canonicalTerm": "Serotonin sendromu",
+    "displayTerm": "Serotonin sendromu",
+    "term": "Serotonin sendromu",
+    "aliases": [
+      "Serotonin sendromu"
+    ],
+    "category": "Toksikolojik sendrom",
+    "subcategory": "Toksikolojik sendrom",
+    "shortDefinition": "Serotonerjik aktivite artışına bağlı mental durum değişikliği, otonom hiperaktivite ve nöromüsküler bulgularla seyreden tablodur.",
+    "previewDefinition": "Serotonerjik aktivite artışına bağlı mental durum değişikliği, otonom hiperaktivite ve nöromüsküler bulgularla seyreden tablodur.",
+    "preAnswerSafeDefinition": "Serotonerjik aktivite artışına bağlı mental durum değişikliği, otonom hiperaktivite ve nöromüsküler bulgularla seyreden tablodur.",
+    "postAnswerExplanation": "Klonus ve hiperrefleksi nöroleptik malign sendromdan ayrımda değerlidir.",
+    "postAnswerExpandedExplanation": "Klonus ve hiperrefleksi nöroleptik malign sendromdan ayrımda değerlidir.",
+    "tusPearl": "Klonus ve hiperrefleksi nöroleptik malign sendromdan ayrımda değerlidir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Serotonerjik aktivite artışına bağlı mental durum değişikliği, otonom hiperaktivite ve nöromüsküler bulgularla seyreden tablodur.",
+    "clinicalRelevance": "Serotonerjik aktivite artışına bağlı mental durum değişikliği, otonom hiperaktivite ve nöromüsküler bulgularla seyreden tablodur.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Serotonin sendromu"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "serotonin",
+      "sendromu"
+    ]
+  },
+  {
+    "id": "ctx-audit-tuz-kaybi",
+    "canonicalTerm": "Tuz kaybı",
+    "displayTerm": "Tuz kaybı",
+    "term": "Tuz kaybı",
+    "aliases": [
+      "Tuz kaybı"
+    ],
+    "category": "Elektrolit/sıvı dengesi",
+    "subcategory": "Elektrolit/sıvı dengesi",
+    "shortDefinition": "Sodyum ve su dengesinde sodyum kaybının ön planda olduğu durumu ifade eder.",
+    "previewDefinition": "Sodyum ve su dengesinde sodyum kaybının ön planda olduğu durumu ifade eder.",
+    "preAnswerSafeDefinition": "Sodyum ve su dengesinde sodyum kaybının ön planda olduğu durumu ifade eder.",
+    "postAnswerExplanation": "Konjenital adrenal hiperplazide tuz kaybettiren kriz hiponatremi ve hiperkalemi yapabilir.",
+    "postAnswerExpandedExplanation": "Konjenital adrenal hiperplazide tuz kaybettiren kriz hiponatremi ve hiperkalemi yapabilir.",
+    "tusPearl": "Konjenital adrenal hiperplazide tuz kaybettiren kriz hiponatremi ve hiperkalemi yapabilir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Sodyum ve su dengesinde sodyum kaybının ön planda olduğu durumu ifade eder.",
+    "clinicalRelevance": "Sodyum ve su dengesinde sodyum kaybının ön planda olduğu durumu ifade eder.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Tuz kaybı"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "tuz",
+      "kaybı"
+    ]
+  },
+  {
+    "id": "ctx-audit-g-rme-kaybi",
+    "canonicalTerm": "Görme kaybı",
+    "displayTerm": "Görme kaybı",
+    "term": "Görme kaybı",
+    "aliases": [
+      "Görme kaybı"
+    ],
+    "category": "Semptom/bulgu",
+    "subcategory": "Semptom/bulgu",
+    "shortDefinition": "Görme keskinliği veya görsel alan fonksiyonunda azalma/kayıptır.",
+    "previewDefinition": "Görme keskinliği veya görsel alan fonksiyonunda azalma/kayıptır.",
+    "preAnswerSafeDefinition": "Görme keskinliği veya görsel alan fonksiyonunda azalma/kayıptır.",
+    "postAnswerExplanation": "Retina, optik sinir, korteks veya vasküler nedenler lokalizasyonla ayırt edilir.",
+    "postAnswerExpandedExplanation": "Retina, optik sinir, korteks veya vasküler nedenler lokalizasyonla ayırt edilir.",
+    "tusPearl": "Retina, optik sinir, korteks veya vasküler nedenler lokalizasyonla ayırt edilir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Görme keskinliği veya görsel alan fonksiyonunda azalma/kayıptır.",
+    "clinicalRelevance": "Görme keskinliği veya görsel alan fonksiyonunda azalma/kayıptır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Görme kaybı"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "görme",
+      "kaybı"
+    ]
+  },
+  {
+    "id": "ctx-audit-respiratuvar-asidoz",
+    "canonicalTerm": "Respiratuvar asidoz",
+    "displayTerm": "Respiratuvar asidoz",
+    "term": "Respiratuvar asidoz",
+    "aliases": [
+      "Respiratuvar asidoz"
+    ],
+    "category": "Asit-baz bozukluğu",
+    "subcategory": "Asit-baz bozukluğu",
+    "shortDefinition": "Alveoler hipoventilasyon sonucu PaCO2 artışıyla gelişen asidozdur.",
+    "previewDefinition": "Alveoler hipoventilasyon sonucu PaCO2 artışıyla gelişen asidozdur.",
+    "preAnswerSafeDefinition": "Alveoler hipoventilasyon sonucu PaCO2 artışıyla gelişen asidozdur.",
+    "postAnswerExplanation": "KOAH alevlenmesi, solunum depresyonu ve nöromüsküler yetmezlikte görülebilir.",
+    "postAnswerExpandedExplanation": "KOAH alevlenmesi, solunum depresyonu ve nöromüsküler yetmezlikte görülebilir.",
+    "tusPearl": "KOAH alevlenmesi, solunum depresyonu ve nöromüsküler yetmezlikte görülebilir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Alveoler hipoventilasyon sonucu PaCO2 artışıyla gelişen asidozdur.",
+    "clinicalRelevance": "Alveoler hipoventilasyon sonucu PaCO2 artışıyla gelişen asidozdur.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Respiratuvar asidoz"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "respiratuvar",
+      "asidoz"
+    ]
+  },
+  {
+    "id": "ctx-audit-fonksiyon-kaybi",
+    "canonicalTerm": "Fonksiyon kaybı",
+    "displayTerm": "Fonksiyon kaybı",
+    "term": "Fonksiyon kaybı",
+    "aliases": [
+      "Fonksiyon kaybı"
+    ],
+    "category": "Klinik bulgu",
+    "subcategory": "Klinik bulgu",
+    "shortDefinition": "Bir organ, ekstremite veya sistemin görevini yerine getirme kapasitesinin azalmasıdır.",
+    "previewDefinition": "Bir organ, ekstremite veya sistemin görevini yerine getirme kapasitesinin azalmasıdır.",
+    "preAnswerSafeDefinition": "Bir organ, ekstremite veya sistemin görevini yerine getirme kapasitesinin azalmasıdır.",
+    "postAnswerExplanation": "Akut fonksiyon kaybı nörolojik, vasküler, mekanik veya inflamatuvar nedenler açısından değerlendirilir.",
+    "postAnswerExpandedExplanation": "Akut fonksiyon kaybı nörolojik, vasküler, mekanik veya inflamatuvar nedenler açısından değerlendirilir.",
+    "tusPearl": "Akut fonksiyon kaybı nörolojik, vasküler, mekanik veya inflamatuvar nedenler açısından değerlendirilir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Bir organ, ekstremite veya sistemin görevini yerine getirme kapasitesinin azalmasıdır.",
+    "clinicalRelevance": "Bir organ, ekstremite veya sistemin görevini yerine getirme kapasitesinin azalmasıdır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Fonksiyon kaybı"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "fonksiyon",
+      "kaybı"
+    ]
+  },
+  {
+    "id": "ctx-audit-t-nel-sendromu",
+    "canonicalTerm": "Tünel sendromu",
+    "displayTerm": "Tünel sendromu",
+    "term": "Tünel sendromu",
+    "aliases": [
+      "Tünel sendromu"
+    ],
+    "category": "Nöropati tablosu",
+    "subcategory": "Nöropati tablosu",
+    "shortDefinition": "Periferik sinirin anatomik bir kanalda sıkışmasına bağlı nöropati tablosudur.",
+    "previewDefinition": "Periferik sinirin anatomik bir kanalda sıkışmasına bağlı nöropati tablosudur.",
+    "preAnswerSafeDefinition": "Periferik sinirin anatomik bir kanalda sıkışmasına bağlı nöropati tablosudur.",
+    "postAnswerExplanation": "Karpal tünel sendromunda median sinir etkilenir.",
+    "postAnswerExpandedExplanation": "Karpal tünel sendromunda median sinir etkilenir.",
+    "tusPearl": "Karpal tünel sendromunda median sinir etkilenir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Periferik sinirin anatomik bir kanalda sıkışmasına bağlı nöropati tablosudur.",
+    "clinicalRelevance": "Periferik sinirin anatomik bir kanalda sıkışmasına bağlı nöropati tablosudur.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Tünel sendromu"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "tünel",
+      "sendromu"
+    ]
+  },
+  {
+    "id": "ctx-audit-2-3-bpg-artisi",
+    "canonicalTerm": "2,3-BPG artışı",
+    "displayTerm": "2,3-BPG artışı",
+    "term": "2,3-BPG artışı",
+    "aliases": [
+      "2,3-BPG artışı",
+      "BPG artışı",
+      "2,3 BPG artışı"
+    ],
+    "category": "Biyokimyasal adaptasyon",
+    "subcategory": "Biyokimyasal adaptasyon",
+    "shortDefinition": "Eritrositte 2,3-bifosfogliserat artışı hemoglobinin oksijene afinitesini azaltır.",
+    "previewDefinition": "Eritrositte 2,3-bifosfogliserat artışı hemoglobinin oksijene afinitesini azaltır.",
+    "preAnswerSafeDefinition": "Eritrositte 2,3-bifosfogliserat artışı hemoglobinin oksijene afinitesini azaltır.",
+    "postAnswerExplanation": "Kronik hipokside dokulara oksijen bırakılmasını kolaylaştırır.",
+    "postAnswerExpandedExplanation": "Kronik hipokside dokulara oksijen bırakılmasını kolaylaştırır.",
+    "tusPearl": "Kronik hipokside dokulara oksijen bırakılmasını kolaylaştırır.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Eritrositte 2,3-bifosfogliserat artışı hemoglobinin oksijene afinitesini azaltır.",
+    "clinicalRelevance": "Eritrositte 2,3-bifosfogliserat artışı hemoglobinin oksijene afinitesini azaltır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "2,3-BPG artışı"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "2,3-bpg",
+      "artışı"
+    ]
+  },
+  {
+    "id": "ctx-audit-enzim-y-ksekligi",
+    "canonicalTerm": "Enzim yüksekliği",
+    "displayTerm": "Enzim yüksekliği",
+    "term": "Enzim yüksekliği",
+    "aliases": [
+      "Enzim yüksekliği"
+    ],
+    "category": "Laboratuvar bulgusu",
+    "subcategory": "Laboratuvar bulgusu",
+    "shortDefinition": "Belirli bir enzimin serum veya dokuda normalden yüksek ölçülmesidir.",
+    "previewDefinition": "Belirli bir enzimin serum veya dokuda normalden yüksek ölçülmesidir.",
+    "preAnswerSafeDefinition": "Belirli bir enzimin serum veya dokuda normalden yüksek ölçülmesidir.",
+    "postAnswerExplanation": "Hangi enzimin yükseldiği organ hasarı veya metabolik süreç hakkında ipucu verir.",
+    "postAnswerExpandedExplanation": "Hangi enzimin yükseldiği organ hasarı veya metabolik süreç hakkında ipucu verir.",
+    "tusPearl": "Hangi enzimin yükseldiği organ hasarı veya metabolik süreç hakkında ipucu verir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Belirli bir enzimin serum veya dokuda normalden yüksek ölçülmesidir.",
+    "clinicalRelevance": "Belirli bir enzimin serum veya dokuda normalden yüksek ölçülmesidir.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Enzim yüksekliği"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "enzim",
+      "yüksekliği"
+    ]
+  },
+  {
+    "id": "ctx-audit-kreatinin-y-ksekligi",
+    "canonicalTerm": "Kreatinin yüksekliği",
+    "displayTerm": "Kreatinin yüksekliği",
+    "term": "Kreatinin yüksekliği",
+    "aliases": [
+      "Kreatinin yüksekliği"
+    ],
+    "category": "Laboratuvar bulgusu",
+    "subcategory": "Laboratuvar bulgusu",
+    "shortDefinition": "Serum kreatinin düzeyinin artmasıdır.",
+    "previewDefinition": "Serum kreatinin düzeyinin artmasıdır.",
+    "preAnswerSafeDefinition": "Serum kreatinin düzeyinin artmasıdır.",
+    "postAnswerExplanation": "Akut veya kronik böbrek fonksiyon azalmasını düşündürür; kas kitlesi ve ilaçlar da etkileyebilir.",
+    "postAnswerExpandedExplanation": "Akut veya kronik böbrek fonksiyon azalmasını düşündürür; kas kitlesi ve ilaçlar da etkileyebilir.",
+    "tusPearl": "Akut veya kronik böbrek fonksiyon azalmasını düşündürür; kas kitlesi ve ilaçlar da etkileyebilir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Serum kreatinin düzeyinin artmasıdır.",
+    "clinicalRelevance": "Serum kreatinin düzeyinin artmasıdır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Kreatinin yüksekliği"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "kreatinin",
+      "yüksekliği"
+    ]
+  },
+  {
+    "id": "ctx-audit-bikarbonat-kaybi",
+    "canonicalTerm": "Bikarbonat kaybı",
+    "displayTerm": "Bikarbonat kaybı",
+    "term": "Bikarbonat kaybı",
+    "aliases": [
+      "Bikarbonat kaybı"
+    ],
+    "category": "Asit-baz mekanizması",
+    "subcategory": "Asit-baz mekanizması",
+    "shortDefinition": "Vücuttan bikarbonat kaybı sonucu metabolik asidoz gelişmesidir.",
+    "previewDefinition": "Vücuttan bikarbonat kaybı sonucu metabolik asidoz gelişmesidir.",
+    "preAnswerSafeDefinition": "Vücuttan bikarbonat kaybı sonucu metabolik asidoz gelişmesidir.",
+    "postAnswerExplanation": "Diyare ve renal tübüler asidoz normal anion gap metabolik asidoz nedenleridir.",
+    "postAnswerExpandedExplanation": "Diyare ve renal tübüler asidoz normal anion gap metabolik asidoz nedenleridir.",
+    "tusPearl": "Diyare ve renal tübüler asidoz normal anion gap metabolik asidoz nedenleridir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Vücuttan bikarbonat kaybı sonucu metabolik asidoz gelişmesidir.",
+    "clinicalRelevance": "Vücuttan bikarbonat kaybı sonucu metabolik asidoz gelişmesidir.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Bikarbonat kaybı"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "bikarbonat",
+      "kaybı"
+    ]
+  },
+  {
+    "id": "ctx-audit-rektal-biyopsi",
+    "canonicalTerm": "Rektal biyopsi",
+    "displayTerm": "Rektal biyopsi",
+    "term": "Rektal biyopsi",
+    "aliases": [
+      "Rektal biyopsi"
+    ],
+    "category": "Tanısal işlem",
+    "subcategory": "Tanısal işlem",
+    "shortDefinition": "Rektum mukozasından histolojik inceleme için doku örneği alınmasıdır.",
+    "previewDefinition": "Rektum mukozasından histolojik inceleme için doku örneği alınmasıdır.",
+    "preAnswerSafeDefinition": "Rektum mukozasından histolojik inceleme için doku örneği alınmasıdır.",
+    "postAnswerExplanation": "Hirschsprung hastalığında ganglion hücresi yokluğunu göstermek için kullanılır.",
+    "postAnswerExpandedExplanation": "Hirschsprung hastalığında ganglion hücresi yokluğunu göstermek için kullanılır.",
+    "tusPearl": "Hirschsprung hastalığında ganglion hücresi yokluğunu göstermek için kullanılır.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Rektum mukozasından histolojik inceleme için doku örneği alınmasıdır.",
+    "clinicalRelevance": "Rektum mukozasından histolojik inceleme için doku örneği alınmasıdır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Rektal biyopsi"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "rektal",
+      "biyopsi"
+    ]
+  },
+  {
+    "id": "ctx-audit-napqi-detoksifikasyonu",
+    "canonicalTerm": "NAPQI detoksifikasyonu",
+    "displayTerm": "NAPQI detoksifikasyonu",
+    "term": "NAPQI detoksifikasyonu",
+    "aliases": [
+      "NAPQI detoksifikasyonu",
+      "NAPQI detoksifikasyonunu"
+    ],
+    "category": "Toksikoloji/biyokimya",
+    "subcategory": "Toksikoloji/biyokimya",
+    "shortDefinition": "Parasetamol metaboliti NAPQI’nin glutatyon ile zararsızlaştırılmasıdır.",
+    "previewDefinition": "Parasetamol metaboliti NAPQI’nin glutatyon ile zararsızlaştırılmasıdır.",
+    "preAnswerSafeDefinition": "Parasetamol metaboliti NAPQI’nin glutatyon ile zararsızlaştırılmasıdır.",
+    "postAnswerExplanation": "Glutatyon tükenirse hepatotoksisite gelişir; N-asetilsistein glutatyon prekürsörü sağlar.",
+    "postAnswerExpandedExplanation": "Glutatyon tükenirse hepatotoksisite gelişir; N-asetilsistein glutatyon prekürsörü sağlar.",
+    "tusPearl": "Glutatyon tükenirse hepatotoksisite gelişir; N-asetilsistein glutatyon prekürsörü sağlar.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Parasetamol metaboliti NAPQI’nin glutatyon ile zararsızlaştırılmasıdır.",
+    "clinicalRelevance": "Parasetamol metaboliti NAPQI’nin glutatyon ile zararsızlaştırılmasıdır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "NAPQI detoksifikasyonu"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "napqi",
+      "detoksifikasyonu"
+    ]
+  },
+  {
+    "id": "ctx-audit-fast-ultrasonografi",
+    "canonicalTerm": "FAST ultrasonografi",
+    "displayTerm": "FAST ultrasonografi",
+    "term": "FAST ultrasonografi",
+    "aliases": [
+      "FAST ultrasonografi",
+      "FAST USG"
+    ],
+    "category": "Travma görüntüleme",
+    "subcategory": "Travma görüntüleme",
+    "shortDefinition": "Travmada peritoneal, perikardiyal ve plevral serbest sıvıyı hızlı değerlendiren yatak başı ultrasonografidir.",
+    "previewDefinition": "Travmada peritoneal, perikardiyal ve plevral serbest sıvıyı hızlı değerlendiren yatak başı ultrasonografidir.",
+    "preAnswerSafeDefinition": "Travmada peritoneal, perikardiyal ve plevral serbest sıvıyı hızlı değerlendiren yatak başı ultrasonografidir.",
+    "postAnswerExplanation": "Hemodinamik instabil travmada serbest sıvı saptanması cerrahi kararını hızlandırabilir.",
+    "postAnswerExpandedExplanation": "Hemodinamik instabil travmada serbest sıvı saptanması cerrahi kararını hızlandırabilir.",
+    "tusPearl": "Hemodinamik instabil travmada serbest sıvı saptanması cerrahi kararını hızlandırabilir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Travmada peritoneal, perikardiyal ve plevral serbest sıvıyı hızlı değerlendiren yatak başı ultrasonografidir.",
+    "clinicalRelevance": "Travmada peritoneal, perikardiyal ve plevral serbest sıvıyı hızlı değerlendiren yatak başı ultrasonografidir.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "FAST ultrasonografi"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "fast",
+      "ultrasonografi"
+    ]
+  },
+  {
+    "id": "ctx-audit-nabiz-kaybi",
+    "canonicalTerm": "Nabız kaybı",
+    "displayTerm": "Nabız kaybı",
+    "term": "Nabız kaybı",
+    "aliases": [
+      "Nabız kaybı"
+    ],
+    "category": "Vasküler bulgu",
+    "subcategory": "Vasküler bulgu",
+    "shortDefinition": "Periferik nabzın alınamaması veya belirgin azalmasıdır.",
+    "previewDefinition": "Periferik nabzın alınamaması veya belirgin azalmasıdır.",
+    "preAnswerSafeDefinition": "Periferik nabzın alınamaması veya belirgin azalmasıdır.",
+    "postAnswerExplanation": "Akut arter tıkanıklığı veya ciddi damar yaralanmasında kritik bulgudur.",
+    "postAnswerExpandedExplanation": "Akut arter tıkanıklığı veya ciddi damar yaralanmasında kritik bulgudur.",
+    "tusPearl": "Akut arter tıkanıklığı veya ciddi damar yaralanmasında kritik bulgudur.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Periferik nabzın alınamaması veya belirgin azalmasıdır.",
+    "clinicalRelevance": "Periferik nabzın alınamaması veya belirgin azalmasıdır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Nabız kaybı"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "nabız",
+      "kaybı"
+    ]
+  },
+  {
+    "id": "ctx-audit-hbv-pencere-d-nemi",
+    "canonicalTerm": "HBV pencere dönemi",
+    "displayTerm": "HBV pencere dönemi",
+    "term": "HBV pencere dönemi",
+    "aliases": [
+      "HBV pencere dönemi",
+      "HBV pencere"
+    ],
+    "category": "Seroloji kavramı",
+    "subcategory": "Seroloji kavramı",
+    "shortDefinition": "HBsAg kaybolup anti-HBs henüz oluşmadan önceki dönemi ifade eder.",
+    "previewDefinition": "HBsAg kaybolup anti-HBs henüz oluşmadan önceki dönemi ifade eder.",
+    "preAnswerSafeDefinition": "HBsAg kaybolup anti-HBs henüz oluşmadan önceki dönemi ifade eder.",
+    "postAnswerExplanation": "Bu dönemde anti-HBc IgM pozitifliği akut HBV enfeksiyonunu destekler.",
+    "postAnswerExpandedExplanation": "Bu dönemde anti-HBc IgM pozitifliği akut HBV enfeksiyonunu destekler.",
+    "tusPearl": "Bu dönemde anti-HBc IgM pozitifliği akut HBV enfeksiyonunu destekler.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "HBsAg kaybolup anti-HBs henüz oluşmadan önceki dönemi ifade eder.",
+    "clinicalRelevance": "HBsAg kaybolup anti-HBs henüz oluşmadan önceki dönemi ifade eder.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "HBV pencere dönemi"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "hbv",
+      "pencere",
+      "dönemi"
+    ]
+  },
+  {
+    "id": "ctx-audit-cftr-klor-kanali",
+    "canonicalTerm": "CFTR klor kanalı",
+    "displayTerm": "CFTR klor kanalı",
+    "term": "CFTR klor kanalı",
+    "aliases": [
+      "CFTR klor kanalı",
+      "CFTR klor"
+    ],
+    "category": "Moleküler/fizyoloji",
+    "subcategory": "Moleküler/fizyoloji",
+    "shortDefinition": "Epitel hücrelerinde klor ve su taşınmasını düzenleyen kanaldır.",
+    "previewDefinition": "Epitel hücrelerinde klor ve su taşınmasını düzenleyen kanaldır.",
+    "preAnswerSafeDefinition": "Epitel hücrelerinde klor ve su taşınmasını düzenleyen kanaldır.",
+    "postAnswerExplanation": "Kistik fibroziste CFTR bozukluğu koyu sekresyonlar ve tekrarlayan enfeksiyonlarla ilişkilidir.",
+    "postAnswerExpandedExplanation": "Kistik fibroziste CFTR bozukluğu koyu sekresyonlar ve tekrarlayan enfeksiyonlarla ilişkilidir.",
+    "tusPearl": "Kistik fibroziste CFTR bozukluğu koyu sekresyonlar ve tekrarlayan enfeksiyonlarla ilişkilidir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Epitel hücrelerinde klor ve su taşınmasını düzenleyen kanaldır.",
+    "clinicalRelevance": "Epitel hücrelerinde klor ve su taşınmasını düzenleyen kanaldır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "CFTR klor kanalı"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "cftr",
+      "klor",
+      "kanalı"
+    ]
+  },
+  {
+    "id": "ctx-audit-t-b-ler-asidoz",
+    "canonicalTerm": "Tübüler asidoz",
+    "displayTerm": "Tübüler asidoz",
+    "term": "Tübüler asidoz",
+    "aliases": [
+      "Tübüler asidoz",
+      "renal tübüler asidoz"
+    ],
+    "category": "Nefroloji/asit-baz",
+    "subcategory": "Nefroloji/asit-baz",
+    "shortDefinition": "Böbrek tübüllerinin asit atma veya bikarbonat geri emme bozukluğuna bağlı metabolik asidozdur.",
+    "previewDefinition": "Böbrek tübüllerinin asit atma veya bikarbonat geri emme bozukluğuna bağlı metabolik asidozdur.",
+    "preAnswerSafeDefinition": "Böbrek tübüllerinin asit atma veya bikarbonat geri emme bozukluğuna bağlı metabolik asidozdur.",
+    "postAnswerExplanation": "Genellikle normal anion gap metabolik asidoz yapar.",
+    "postAnswerExpandedExplanation": "Genellikle normal anion gap metabolik asidoz yapar.",
+    "tusPearl": "Genellikle normal anion gap metabolik asidoz yapar.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Böbrek tübüllerinin asit atma veya bikarbonat geri emme bozukluğuna bağlı metabolik asidozdur.",
+    "clinicalRelevance": "Böbrek tübüllerinin asit atma veya bikarbonat geri emme bozukluğuna bağlı metabolik asidozdur.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Tübüler asidoz"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "tübüler",
+      "asidoz"
+    ]
+  },
+  {
+    "id": "ctx-audit-tiroid-ultrasonografisi",
+    "canonicalTerm": "Tiroid ultrasonografisi",
+    "displayTerm": "Tiroid ultrasonografisi",
+    "term": "Tiroid ultrasonografisi",
+    "aliases": [
+      "Tiroid ultrasonografisi",
+      "Tiroid ultrasonografi"
+    ],
+    "category": "Görüntüleme tetkiki",
+    "subcategory": "Görüntüleme tetkiki",
+    "shortDefinition": "Tiroid bezinin nodül, boyut ve parankim özellikleri açısından ultrasonografik değerlendirilmesidir.",
+    "previewDefinition": "Tiroid bezinin nodül, boyut ve parankim özellikleri açısından ultrasonografik değerlendirilmesidir.",
+    "preAnswerSafeDefinition": "Tiroid bezinin nodül, boyut ve parankim özellikleri açısından ultrasonografik değerlendirilmesidir.",
+    "postAnswerExplanation": "Nodül risk sınıflaması ve biyopsi endikasyonunda kullanılır.",
+    "postAnswerExpandedExplanation": "Nodül risk sınıflaması ve biyopsi endikasyonunda kullanılır.",
+    "tusPearl": "Nodül risk sınıflaması ve biyopsi endikasyonunda kullanılır.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Tiroid bezinin nodül, boyut ve parankim özellikleri açısından ultrasonografik değerlendirilmesidir.",
+    "clinicalRelevance": "Tiroid bezinin nodül, boyut ve parankim özellikleri açısından ultrasonografik değerlendirilmesidir.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Tiroid ultrasonografisi"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "tiroid",
+      "ultrasonografisi"
+    ]
+  },
+  {
+    "id": "ctx-audit-kalsitonin-y-ksekligi",
+    "canonicalTerm": "Kalsitonin yüksekliği",
+    "displayTerm": "Kalsitonin yüksekliği",
+    "term": "Kalsitonin yüksekliği",
+    "aliases": [
+      "Kalsitonin yüksekliği"
+    ],
+    "category": "Laboratuvar/tümör belirteci",
+    "subcategory": "Laboratuvar/tümör belirteci",
+    "shortDefinition": "Serum kalsitonin düzeyinin artmasıdır.",
+    "previewDefinition": "Serum kalsitonin düzeyinin artmasıdır.",
+    "preAnswerSafeDefinition": "Serum kalsitonin düzeyinin artmasıdır.",
+    "postAnswerExplanation": "Medüller tiroid karsinomunda tümör belirteci olarak önemlidir.",
+    "postAnswerExpandedExplanation": "Medüller tiroid karsinomunda tümör belirteci olarak önemlidir.",
+    "tusPearl": "Medüller tiroid karsinomunda tümör belirteci olarak önemlidir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Serum kalsitonin düzeyinin artmasıdır.",
+    "clinicalRelevance": "Serum kalsitonin düzeyinin artmasıdır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Kalsitonin yüksekliği"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "kalsitonin",
+      "yüksekliği"
+    ]
+  },
+  {
+    "id": "ctx-audit-duodenum-biyopsisi",
+    "canonicalTerm": "Duodenum biyopsisi",
+    "displayTerm": "Duodenum biyopsisi",
+    "term": "Duodenum biyopsisi",
+    "aliases": [
+      "Duodenum biyopsisi",
+      "Duodenum biyopsi"
+    ],
+    "category": "Tanısal işlem",
+    "subcategory": "Tanısal işlem",
+    "shortDefinition": "Duodenum mukozasından histopatolojik inceleme için doku örneği alınmasıdır.",
+    "previewDefinition": "Duodenum mukozasından histopatolojik inceleme için doku örneği alınmasıdır.",
+    "preAnswerSafeDefinition": "Duodenum mukozasından histopatolojik inceleme için doku örneği alınmasıdır.",
+    "postAnswerExplanation": "Çölyak hastalığında villöz atrofi ve kript hiperplazisi gösterebilir.",
+    "postAnswerExpandedExplanation": "Çölyak hastalığında villöz atrofi ve kript hiperplazisi gösterebilir.",
+    "tusPearl": "Çölyak hastalığında villöz atrofi ve kript hiperplazisi gösterebilir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Duodenum mukozasından histopatolojik inceleme için doku örneği alınmasıdır.",
+    "clinicalRelevance": "Duodenum mukozasından histopatolojik inceleme için doku örneği alınmasıdır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Duodenum biyopsisi"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "duodenum",
+      "biyopsisi"
+    ]
+  },
+  {
+    "id": "ctx-audit-antifosfolipid-sendromu",
+    "canonicalTerm": "Antifosfolipid sendromu",
+    "displayTerm": "Antifosfolipid sendromu",
+    "term": "Antifosfolipid sendromu",
+    "aliases": [
+      "Antifosfolipid sendromu"
+    ],
+    "category": "Otoimmün/trombotik sendrom",
+    "subcategory": "Otoimmün/trombotik sendrom",
+    "shortDefinition": "Antifosfolipid antikorlarına bağlı arteriyel/venöz tromboz ve gebelik kaybı ile seyreden sendromdur.",
+    "previewDefinition": "Antifosfolipid antikorlarına bağlı arteriyel/venöz tromboz ve gebelik kaybı ile seyreden sendromdur.",
+    "preAnswerSafeDefinition": "Antifosfolipid antikorlarına bağlı arteriyel/venöz tromboz ve gebelik kaybı ile seyreden sendromdur.",
+    "postAnswerExplanation": "Tekrarlayan düşük ve tromboz birlikteliğinde düşünülür.",
+    "postAnswerExpandedExplanation": "Tekrarlayan düşük ve tromboz birlikteliğinde düşünülür.",
+    "tusPearl": "Tekrarlayan düşük ve tromboz birlikteliğinde düşünülür.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Antifosfolipid antikorlarına bağlı arteriyel/venöz tromboz ve gebelik kaybı ile seyreden sendromdur.",
+    "clinicalRelevance": "Antifosfolipid antikorlarına bağlı arteriyel/venöz tromboz ve gebelik kaybı ile seyreden sendromdur.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "Antifosfolipid sendromu"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "antifosfolipid",
+      "sendromu"
+    ]
+  },
+  {
+    "id": "ctx-audit-av-d-g-m",
+    "canonicalTerm": "AV düğüm",
+    "displayTerm": "AV düğüm",
+    "term": "AV düğüm",
+    "aliases": [
+      "AV düğüm",
+      "atriyoventriküler düğüm"
+    ],
+    "category": "Kardiyak ileti sistemi",
+    "subcategory": "Kardiyak ileti sistemi",
+    "shortDefinition": "Atriyumdan ventriküle elektriksel iletimi geciktirerek düzenleyen iletim sistemi yapısıdır.",
+    "previewDefinition": "Atriyumdan ventriküle elektriksel iletimi geciktirerek düzenleyen iletim sistemi yapısıdır.",
+    "preAnswerSafeDefinition": "Atriyumdan ventriküle elektriksel iletimi geciktirerek düzenleyen iletim sistemi yapısıdır.",
+    "postAnswerExplanation": "AV nodal bloklar PR uzaması veya iletim kesintisiyle EKG’de değerlendirilir.",
+    "postAnswerExpandedExplanation": "AV nodal bloklar PR uzaması veya iletim kesintisiyle EKG’de değerlendirilir.",
+    "tusPearl": "AV nodal bloklar PR uzaması veya iletim kesintisiyle EKG’de değerlendirilir.",
+    "differentialPoint": "Klinik bağlam, eşlik eden bulgular ve laboratuvar/görüntüleme paterniyle ayırıcı tanı yapılır.",
+    "clinicalContext": "Atriyumdan ventriküle elektriksel iletimi geciktirerek düzenleyen iletim sistemi yapısıdır.",
+    "clinicalRelevance": "Atriyumdan ventriküle elektriksel iletimi geciktirerek düzenleyen iletim sistemi yapısıdır.",
+    "mechanism": "",
+    "relatedTerms": [],
+    "relatedBranches": [
+      "klinik"
+    ],
+    "sourceTextExamples": [
+      "AV düğüm"
+    ],
+    "matchingPriority": 78,
+    "isMultiWordTerm": true,
+    "answerLeakRisk": "medium",
+    "caseSensitiveDisplay": false,
+    "capitalizationRule": "canonical-medical-title",
+    "difficulty": "orta",
+    "keywordsForSearch": [
+      "av",
+      "düğüm"
+    ]
+  }
+];
