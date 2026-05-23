@@ -10,15 +10,51 @@ import {
   normalizeGlossaryText,
 } from '../utils/glossary.js';
 
-const DEFAULT_MAX_TERMS_PER_TEXT = 4;
-const PREANSWER_MAX_TERMS_PER_TEXT = 2;
+const DEFAULT_MAX_TERMS_PER_TEXT = 5;
+const PREANSWER_MAX_TERMS_PER_TEXT = 3;
 const VIEWPORT_PADDING = 12;
 const SAFE_TOP_PADDING = 12;
 const TOOLTIP_GAP = 8;
 const MAX_TOOLTIP_WIDTH = 360;
 const TOOLTIP_ROOT_ID = 'klinikiq-tooltip-layer';
 const TOOLTIP_LAYER_Z = 2147483600;
-const CLOSE_DELAY_MS = 120;
+const CLOSE_DELAY_MS = 220;
+
+
+// Turkish medical terms are frequently used with case/possessive suffixes
+// (e.g. "hiperkalemide", "tüberkülozun", "QRS genişlemesinde").
+// The previous exact-boundary matcher only linked the bare lemma and silently
+// missed many clinically meaningful occurrences in real Turkish UI text.
+const TURKISH_SUFFIXES = [
+  'larında', 'lerinde', 'larından', 'lerinden', 'larının', 'lerinin', 'larıyla', 'leriyle',
+  'ındaki', 'indeki', 'undaki', 'ündeki', 'sındaki', 'sindeki', 'sundaki', 'sündeki',
+  'ından', 'inden', 'undan', 'ünden', 'sından', 'sinden', 'sundan', 'sünden',
+  'ında', 'inde', 'unda', 'ünde', 'sında', 'sinde', 'sunda', 'sünde',
+  'larda', 'lerde', 'lardan', 'lerden', 'ların', 'lerin', 'ları', 'leri',
+  'ıyla', 'iyle', 'uyla', 'üyle', 'yla', 'yle',
+  'ındaki', 'indeki', 'undaki', 'ündeki', 'nda', 'nde', 'ndan', 'nden', 'nın', 'nin', 'nun', 'nün', 'ının', 'inin', 'unun', 'ünün', 'ın', 'in', 'un', 'ün',
+  'dan', 'den', 'tan', 'ten', 'da', 'de', 'ta', 'te',
+  'ları', 'leri', 'lar', 'ler',
+  'sı', 'si', 'su', 'sü', 'nı', 'ni', 'nu', 'nü', 'yı', 'yi', 'yu', 'yü',
+  'a', 'e', 'ya', 'ye', 'ı', 'i', 'u', 'ü',
+  'la', 'le', 'ile',
+  'lı', 'li', 'lu', 'lü', 'lık', 'lik', 'luk', 'lük',
+  'sız', 'siz', 'suz', 'süz', 'sal', 'sel', 'ki',
+];
+
+const TURKISH_SUFFIX_PATTERN = String.raw`['’]?[\p{L}]{1,16}`;
+const TURKISH_SUFFIX_SET = new Set(TURKISH_SUFFIXES.map((suffix) => normalizeGlossaryText(suffix)));
+
+function isLikelyTurkishSuffix(suffix = '') {
+  const cleaned = String(suffix || '').replace(/^['’]/u, '');
+  if (!cleaned) return false;
+  const normalized = normalizeGlossaryText(cleaned);
+  if (!normalized || normalized.length > 16) return false;
+  if (TURKISH_SUFFIX_SET.has(normalized)) return true;
+
+  // Common stacked forms: plural/possessive + locative/ablative/genitive.
+  return /^(?:lar|ler)?(?:i|u|a|e|ya|ye|yi|yu|ni|nu|si|su|da|de|ta|te|dan|den|tan|ten|in|un|nin|nun|nda|nde|ndan|nden|indaki|indeki|undaki|inda|inde|unda|sinda|sinde|sunda|indan|inden|undan|sindan|sinden|sundan|iyla|uyla|yla|yle)$/u.test(normalized);
+}
 
 function escapeRegExp(text = '') {
   return String(text).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -91,6 +127,13 @@ function getTooltipRoot() {
   return root;
 }
 
+function isInsideAnyGlossaryTooltip(node) {
+  if (!node || typeof document === 'undefined') return false;
+  const tooltipRoot = document.getElementById(TOOLTIP_ROOT_ID);
+  if (!tooltipRoot) return false;
+  return tooltipRoot.contains(node);
+}
+
 const MATCHER_CACHE = new Map();
 
 function makeMatcher(terms = []) {
@@ -127,7 +170,7 @@ function makeMatcher(terms = []) {
   }, new Map());
 
   const matcher = {
-    regex: new RegExp(`(^|[^\\p{L}\\p{N}_])(${pattern})(?=$|[^\\p{L}\\p{N}_])`, 'giu'),
+    regex: new RegExp(`(^|[^\\p{L}\\p{N}_])(${pattern})(${TURKISH_SUFFIX_PATTERN})?(?=$|[^\\p{L}\\p{N}_])`, 'giu'),
     aliasMap,
   };
   MATCHER_CACHE.set(cacheKey, matcher);
@@ -148,14 +191,20 @@ function splitByGlossary(text = '', terms = [], maxTerms = DEFAULT_MAX_TERMS_PER
 
   while ((match = matcher.regex.exec(source)) !== null) {
     const prefix = match[1] || '';
-    const value = match[2] || '';
+    const baseValue = match[2] || '';
+    const suffixValue = match[3] || '';
+    const suffixIsValid = suffixValue ? isLikelyTurkishSuffix(suffixValue) : true;
+    const value = suffixIsValid ? `${baseValue}${suffixValue}` : baseValue;
     const matchStart = match.index + prefix.length;
+    const baseEnd = matchStart + baseValue.length;
     const matchEnd = matchStart + value.length;
 
     if (matchStart > lastIndex) parts.push({ type: 'text', value: source.slice(lastIndex, matchStart) });
 
-    const entry = resolveGlossaryEntryForMatch(matcher, value, source, matchStart, matchEnd, protectedUnitRanges);
-    const canonical = normalizeGlossaryText(entry?.term || value);
+    const entry = suffixIsValid
+      ? resolveGlossaryEntryForMatch(matcher, baseValue, source, matchStart, baseEnd, protectedUnitRanges)
+      : null;
+    const canonical = normalizeGlossaryText(entry?.term || baseValue);
 
     if (entry && usedTerms.size < limit && !usedTerms.has(canonical)) {
       parts.push({ type: 'term', value, entry });
@@ -223,7 +272,7 @@ function computeFloatingPosition(referenceEl, floatingEl) {
   };
 }
 
-function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFloatingEnter, onFloatingLeave, revealMode }) {
+function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFloatingEnter, onFloatingLeave, revealMode, nestingLevel = 0 }) {
   const tooltipRef = useRef(null);
   const [portalRoot, setPortalRoot] = useState(null);
   const [position, setPosition] = useState({
@@ -273,7 +322,10 @@ function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFlo
     const handlePointerDown = (event) => {
       const referenceEl = triggerRef.current;
       const floatingEl = tooltipRef.current;
-      if (referenceEl?.contains(event.target) || floatingEl?.contains(event.target)) return;
+      // Nested glossary cards are rendered as sibling portals. A click inside any
+      // glossary tooltip must not close the parent tooltip; otherwise nested
+      // term previews disappear as soon as the child card is clicked or focused.
+      if (referenceEl?.contains(event.target) || floatingEl?.contains(event.target) || isInsideAnyGlossaryTooltip(event.target)) return;
       onRequestClose?.();
     };
     const handleKey = (event) => {
@@ -303,13 +355,15 @@ function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFlo
       role="tooltip"
       data-placement={position.placement}
       data-reveal-mode={revealMode}
+      data-nesting-level={nestingLevel}
+      data-klinikiq-floating-tooltip="true"
       onPointerEnter={onFloatingEnter}
       onPointerLeave={onFloatingLeave}
       onMouseEnter={onFloatingEnter}
       onMouseLeave={onFloatingLeave}
       style={{
         position: 'fixed',
-        zIndex: TOOLTIP_LAYER_Z,
+        zIndex: TOOLTIP_LAYER_Z + Math.min(Number(nestingLevel) || 0, 50),
         maxWidth: `${position.maxWidth}px`,
         visibility: isPositioned ? 'visible' : 'hidden',
         '--tooltip-left': `${position.left}px`,
@@ -335,27 +389,77 @@ function difficultyLabel(value = '') {
   return 'Orta';
 }
 
-function GlossaryCard({ entry, revealMode = 'postAnswer' }) {
+function getEntryKeys(entry = {}) {
+  return Array.from(new Set([
+    entry.id,
+    entry.term,
+    entry.normalizedTerm,
+    ...(Array.isArray(entry.aliases) ? entry.aliases : []),
+  ].filter(Boolean).map((item) => normalizeGlossaryText(item))));
+}
+
+function normalizeSectionText(value = '') {
+  return normalizeGlossaryText(value).replace(/\s+/g, ' ').trim();
+}
+
+function isDuplicateSection(value = '', previousValues = []) {
+  const normalized = normalizeSectionText(value);
+  if (!normalized) return true;
+  return previousValues.some((previous) => {
+    const normalizedPrevious = normalizeSectionText(previous);
+    if (!normalizedPrevious) return false;
+    return normalized === normalizedPrevious || normalized.includes(normalizedPrevious) || normalizedPrevious.includes(normalized);
+  });
+}
+
+function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [], nestingLevel = 0 }) {
   const [expanded, setExpanded] = useState(false);
   const isPreAnswer = revealMode === 'preAnswer' || revealMode === 'neutral';
   const previewDefinition = entry.previewDefinition || entry.shortDefinition || entry.definition || '';
   const safeDefinition = entry.preAnswerSafeDefinition || previewDefinition;
   const shortDefinition = isPreAnswer ? safeDefinition : (entry.shortDefinition || previewDefinition);
-  const detailed = entry.postAnswerExpandedExplanation || entry.detailedExplanation || '';
-  const tusPearl = entry.tusPearl || '';
-  const differential = entry.differentialPoint || '';
-  const relevance = entry.clinicalRelevance || '';
-  const mechanism = entry.mechanism || '';
+  const rawDetailed = entry.postAnswerExpandedExplanation || entry.detailedExplanation || '';
+  const rawTusPearl = entry.tusPearl || '';
+  const rawDifferential = entry.differentialPoint || '';
+  const rawRelevance = entry.clinicalRelevance || '';
+  const rawMechanism = entry.mechanism || '';
   const relatedTerms = asList(entry.relatedTerms).slice(0, 3);
   const relatedCases = asList(entry.relatedCases || entry.relatedCaseIds);
   const relatedQuestions = asList(entry.relatedQuestions);
   const relatedFlashcards = asList(entry.relatedFlashcards);
   const secondaryName = entry.abbreviation || entry.EnglishName || entry.LatinName || '';
-  const hasTeachingContent = Boolean(tusPearl || differential || relevance || mechanism || detailed);
+
+  const blockedKeys = useMemo(() => {
+    const next = new Set((Array.isArray(excludedTermKeys) ? excludedTermKeys : []).map((item) => normalizeGlossaryText(item)));
+    getEntryKeys(entry).forEach((key) => next.add(key));
+    return Array.from(next).filter(Boolean);
+  }, [entry, excludedTermKeys]);
+
+  const baseShownValues = [shortDefinition];
+  const tusPearl = !isDuplicateSection(rawTusPearl, baseShownValues) ? rawTusPearl : '';
+  const differential = !isDuplicateSection(rawDifferential, [...baseShownValues, tusPearl]) ? rawDifferential : '';
+  const detailed = !isDuplicateSection(rawDetailed, [...baseShownValues, tusPearl, differential]) ? rawDetailed : '';
+  const relevance = !isDuplicateSection(rawRelevance, [...baseShownValues, tusPearl, differential, detailed]) ? rawRelevance : '';
+  const mechanism = !isDuplicateSection(rawMechanism, [...baseShownValues, tusPearl, differential, detailed, relevance]) ? rawMechanism : '';
+
+  const hasTeachingContent = Boolean(rawTusPearl || rawDifferential || rawRelevance || rawMechanism || rawDetailed);
   const canExpand = !isPreAnswer && Boolean(detailed || relevance || mechanism || relatedTerms.length);
+  const nestedMaxTerms = isPreAnswer ? 2 : 4;
+  const renderGlossaryInline = (value, localMaxTerms = nestedMaxTerms) => {
+    if (!value) return null;
+    return (
+      <GlossaryText
+        text={value}
+        revealMode={revealMode}
+        maxTerms={localMaxTerms}
+        excludedTermKeys={blockedKeys}
+        nestingLevel={nestingLevel + 1}
+      />
+    );
+  };
 
   return (
-    <span className="smart-glossary-card" data-preanswer={isPreAnswer ? 'true' : 'false'}>
+    <span className="smart-glossary-card" data-preanswer={isPreAnswer ? 'true' : 'false'} data-nesting-level={nestingLevel}>
       <span className="smart-glossary-header">
         <span className="smart-glossary-title-wrap">
           <strong className="smart-glossary-title">{entry.term}</strong>
@@ -381,26 +485,26 @@ function GlossaryCard({ entry, revealMode = 'postAnswer' }) {
         </span>
       </span>
 
-      {shortDefinition ? <span className="smart-glossary-definition">{shortDefinition}</span> : null}
+      {shortDefinition ? <span className="smart-glossary-definition">{renderGlossaryInline(shortDefinition, 3)}</span> : null}
 
       {isPreAnswer && hasTeachingContent ? (
         <span className="smart-glossary-safe-note">TUS ipucu yanıt sonrası açılır.</span>
       ) : null}
 
       {!isPreAnswer && tusPearl ? (
-        <span className="smart-glossary-row pearl"><b>TUS ipucu</b><span>{tusPearl}</span></span>
+        <span className="smart-glossary-row pearl"><b>TUS ipucu</b><span>{renderGlossaryInline(tusPearl)}</span></span>
       ) : null}
 
       {!isPreAnswer && differential ? (
-        <span className="smart-glossary-row differential"><b>Ayırıcı not</b><span>{differential}</span></span>
+        <span className="smart-glossary-row differential"><b>Ayırıcı not</b><span>{renderGlossaryInline(differential)}</span></span>
       ) : null}
 
       {!isPreAnswer && expanded ? (
         <span className="smart-glossary-detail-block">
-          {detailed ? <span>{detailed}</span> : null}
-          {mechanism ? <span><b>Mekanizma:</b> {mechanism}</span> : null}
-          {relevance ? <span><b>Klinik değer:</b> {relevance}</span> : null}
-          {relatedTerms.length ? <span className="smart-glossary-related"><b>İlgili:</b> {relatedTerms.join(' · ')}</span> : null}
+          {detailed ? <span>{renderGlossaryInline(detailed)}</span> : null}
+          {mechanism ? <span><b>Mekanizma:</b> {renderGlossaryInline(mechanism)}</span> : null}
+          {relevance ? <span><b>Klinik değer:</b> {renderGlossaryInline(relevance)}</span> : null}
+          {relatedTerms.length ? <span className="smart-glossary-related"><b>İlgili:</b> {renderGlossaryInline(relatedTerms.join(' · '), 3)}</span> : null}
         </span>
       ) : null}
 
@@ -415,7 +519,7 @@ function GlossaryCard({ entry, revealMode = 'postAnswer' }) {
   );
 }
 
-export function GlossaryTerm({ children, entry = null, definition = '', revealMode = 'postAnswer' }) {
+export function GlossaryTerm({ children, entry = null, definition = '', revealMode = 'postAnswer', excludedTermKeys = [], nestingLevel = 0 }) {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef(null);
   const closeTimerRef = useRef(0);
@@ -436,7 +540,13 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
     setOpen(false);
   }, [clearCloseTimer]);
 
-  const scheduleClose = useCallback(() => {
+  const scheduleClose = useCallback((event) => {
+    const nextTarget = event?.relatedTarget;
+    // Moving from a parent tooltip into a child tooltip should keep the parent
+    // alive. This is what makes tooltip-inside-tooltip previews usable on
+    // desktop without a brittle fixed nesting-depth limit.
+    if (nextTarget && isInsideAnyGlossaryTooltip(nextTarget)) return;
+
     if (typeof window === 'undefined') {
       setOpen(false);
       return;
@@ -459,6 +569,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
       tabIndex={0}
       role="button"
       data-reveal-mode={revealMode}
+      data-nesting-level={nestingLevel}
       aria-describedby={open ? id : undefined}
       aria-label={`${children}: ${description}`}
       onMouseEnter={openNow}
@@ -467,7 +578,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
         if (event.pointerType === 'mouse') openNow();
       }}
       onPointerLeave={(event) => {
-        if (event.pointerType === 'mouse') scheduleClose();
+        if (event.pointerType === 'mouse') scheduleClose(event);
       }}
       onFocus={openNow}
       onBlur={scheduleClose}
@@ -491,11 +602,12 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
         triggerRef={triggerRef}
         open={open}
         revealMode={revealMode}
+        nestingLevel={nestingLevel}
         onRequestClose={close}
         onFloatingEnter={openNow}
         onFloatingLeave={scheduleClose}
       >
-        <GlossaryCard entry={resolvedEntry} revealMode={revealMode} />
+        <GlossaryCard entry={resolvedEntry} revealMode={revealMode} excludedTermKeys={excludedTermKeys} nestingLevel={nestingLevel} />
       </FloatingTooltip>
     </span>
   );
@@ -508,17 +620,36 @@ function GlossaryText({
   branchId = '',
   revealMode = 'postAnswer',
   maxTerms = undefined,
+  excludedTermKeys = [],
+  nestingLevel = 0,
 }) {
-  const terms = useMemo(() => getGlossaryTerms(extraTerms, { branchId }), [extraTerms, branchId]);
+  const excludedKey = Array.isArray(excludedTermKeys)
+    ? excludedTermKeys.map((item) => normalizeGlossaryText(item)).filter(Boolean).sort().join('|')
+    : '';
+  const terms = useMemo(() => {
+    const excluded = new Set((Array.isArray(excludedTermKeys) ? excludedTermKeys : []).map((item) => normalizeGlossaryText(item)).filter(Boolean));
+    return getGlossaryTerms(extraTerms, { branchId }).filter((term) => {
+      const keys = getEntryKeys(term);
+      return !keys.some((key) => excluded.has(key));
+    });
+  }, [extraTerms, branchId, excludedKey]);
   const effectiveMaxTerms = maxTerms ?? (revealMode === 'preAnswer' || revealMode === 'neutral' ? PREANSWER_MAX_TERMS_PER_TEXT : DEFAULT_MAX_TERMS_PER_TEXT);
   const parts = useMemo(() => splitByGlossary(text, enabled ? terms : [], effectiveMaxTerms), [text, enabled, terms, effectiveMaxTerms]);
 
   if (!enabled) return <span className="glossary-text-flow">{text}</span>;
 
   return (
-    <span className="glossary-text-flow">
+    <span className="glossary-text-flow" data-nesting-level={nestingLevel}>
       {parts.map((part, index) => part.type === 'term' ? (
-        <GlossaryTerm key={`${part.value}-${index}`} entry={part.entry} revealMode={revealMode}>{part.value}</GlossaryTerm>
+        <GlossaryTerm
+          key={`${part.value}-${index}`}
+          entry={part.entry}
+          revealMode={revealMode}
+          excludedTermKeys={excludedTermKeys}
+          nestingLevel={nestingLevel}
+        >
+          {part.value}
+        </GlossaryTerm>
       ) : (
         <span className="glossary-plain-segment" key={`${part.value}-${index}`}>{part.value}</span>
       ))}

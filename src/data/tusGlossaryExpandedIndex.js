@@ -1769,6 +1769,7 @@ const EXPANDED_TUS_GLOSSARY_SEEDS = [
   {
     "term": "Graves hastalığı",
     "aliases": [
+      "Graves",
       "Basedow",
       "Graves disease"
     ],

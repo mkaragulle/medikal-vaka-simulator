@@ -1,6 +1,9 @@
 import { TUS_GLOSSARY_ADVANCED_TERMS } from '../data/tusGlossaryIndex.js';
 import { TUS_GLOSSARY_EXPANDED_TERMS } from '../data/tusGlossaryExpandedIndex.js';
 import { TUS_GLOSSARY_SUPPLEMENTAL_TERMS } from '../data/tusGlossarySupplementalIndex.js';
+import { TUS_GLOSSARY_SCIENTIFIC_TERMS } from '../data/tusGlossaryScientificIndex.js';
+import { TUS_GLOSSARY_NESTED_CLINICAL_TERMS } from '../data/tusGlossaryNestedClinicalIndex.js';
+import { TUS_GLOSSARY_CASE_DERIVED_TERMS } from '../data/tusGlossaryCaseDerivedIndex.js';
 
 const teachingOnly = 'teachingOnly';
 
@@ -141,18 +144,89 @@ export const LOW_SIGNAL_GLOSSARY_ALIASES = new Set([
   'serum',
   'pozitif',
   'negatif',
+  'as',
+  'ana',
+  'no',
+  'or',
+  'f',
+  't',
+  'akg',
+  'vkg',
+  'yüksek saptandı',
+  'düşük saptandı',
+  'pozitif saptandı',
+  'negatif saptandı',
+  'normal saptandı',
+  'objektif veri',
+  'sınav notu',
+  'ayırıcı mantık',
+  'sınav odağı',
+  'ölçülen bilgi',
+  'muayene bulgusu',
 ]);
 
 export function isLowSignalGlossaryAlias(alias = '') {
+  const raw = String(alias || '').trim();
+  // Keep true uppercase acronyms linkable (ANA, ANCA, AKG, ACTH, NO), while
+  // suppressing their lowercase generated/noisy forms (ana, anca, akg, no).
+  if (/^[A-ZÇĞİÖŞÜ0-9./+-]{2,5}$/.test(raw) && /[A-ZÇĞİÖŞÜ]/.test(raw)) return false;
   const normalized = normalizeGlossaryText(alias);
   return LOW_SIGNAL_GLOSSARY_ALIASES.has(normalized);
+}
+
+function isShortCaseSensitiveMedicalToken(value = '') {
+  const raw = String(value || '').trim();
+  // Short acronyms such as AS, ANA, NO, F, OR, ACTH must not generate a
+  // lowercase alias. Otherwise they can consume the limited glossary slots in
+  // ordinary Turkish/English prose and hide more useful clinical terms.
+  return raw.length <= 5
+    && /[A-ZÇĞİÖŞÜ]/.test(raw)
+    && /^[A-ZÇĞİÖŞÜ0-9./+-]+$/.test(raw);
+}
+
+function getTurkishNounPhraseVariants(raw = '') {
+  const source = String(raw || '').replace(/\s+/g, ' ').trim();
+  if (!source) return [];
+  const variants = new Set();
+  const add = (value) => {
+    const cleaned = String(value || '').replace(/\s+/g, ' ').trim();
+    if (cleaned && cleaned !== source) variants.add(cleaned);
+  };
+
+  // Common Turkish possessive phrase variants found in real case text:
+  // "Sivri T dalgası" -> "Sivri T dalgaları", "QRS genişlemesi" -> "QRS genişleme".
+  const replacements = [
+    [/sı$/iu, 'ları'], [/si$/iu, 'leri'], [/su$/iu, 'ları'], [/sü$/iu, 'leri'],
+    [/ı$/iu, 'ı'], [/i$/iu, 'i'], [/u$/iu, 'u'], [/ü$/iu, 'ü'],
+  ];
+
+  if (/\s/.test(source)) {
+    if (/[aı]sı$/iu.test(source)) add(source.replace(/sı$/iu, 'ları'));
+    if (/[ei]si$/iu.test(source)) add(source.replace(/si$/iu, 'leri'));
+    if (/[ou]su$/iu.test(source)) add(source.replace(/su$/iu, 'ları'));
+    if (/[öü]sü$/iu.test(source)) add(source.replace(/sü$/iu, 'leri'));
+    if (/mesi$/iu.test(source)) add(source.replace(/mesi$/iu, 'me'));
+    if (/ması$/iu.test(source)) add(source.replace(/ması$/iu, 'ma'));
+    if (/ı$/iu.test(source)) add(source.replace(/ı$/iu, ''));
+    if (/i$/iu.test(source)) add(source.replace(/i$/iu, ''));
+    if (/u$/iu.test(source)) add(source.replace(/u$/iu, ''));
+    if (/ü$/iu.test(source)) add(source.replace(/ü$/iu, ''));
+  }
+
+  return Array.from(variants);
 }
 
 export function getGlossaryAliasVariants(alias = '') {
   const raw = String(alias || '').replace(/\s+/g, ' ').trim();
   if (!raw) return [];
-  const folded = normalizeGlossaryText(raw);
-  return Array.from(new Set([raw, folded].filter(Boolean)));
+
+  if (isShortCaseSensitiveMedicalToken(raw)) {
+    return Array.from(new Set([raw, raw.replace(/\./g, '')].filter(Boolean)));
+  }
+
+  const variants = [raw, ...getTurkishNounPhraseVariants(raw)];
+  const folded = variants.map((item) => normalizeGlossaryText(item)).filter(Boolean);
+  return Array.from(new Set([...variants, ...folded].filter(Boolean)));
 }
 
 export const globalGlossaryTerms = [
@@ -9442,6 +9516,9 @@ export function getGlossaryTerms(extraTerms = [], options = {}) {
     ...TUS_GLOSSARY_ADVANCED_TERMS,
     ...TUS_GLOSSARY_EXPANDED_TERMS,
     ...TUS_GLOSSARY_SUPPLEMENTAL_TERMS,
+    ...TUS_GLOSSARY_SCIENTIFIC_TERMS,
+    ...TUS_GLOSSARY_NESTED_CLINICAL_TERMS,
+    ...TUS_GLOSSARY_CASE_DERIVED_TERMS,
     ...globalGlossaryTerms,
     ...branchTerms,
     ...(Array.isArray(extraTerms) ? extraTerms : []),

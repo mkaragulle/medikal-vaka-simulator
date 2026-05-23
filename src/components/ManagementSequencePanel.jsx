@@ -259,8 +259,8 @@ function ManagementStepCard({
     <article className={`management-step-card advanced-step-card v38-step-card ${inPlan ? 'in-plan' : 'available'} ${stateClass}`.trim()}>
       <div className="management-step-index">{inPlan ? index + 1 : <Icon name="ClipboardList" size={15} />}</div>
       <div className="management-step-copy">
-        <p><GlossaryText text={step.label} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={2} /></p>
-        {submitted ? <small><GlossaryText text={step.rationale} enabled={mode !== 'exam' && !hardMode} revealMode="postAnswer" maxTerms={3} /></small> : null}
+        <p><GlossaryText text={step.label} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={4} /></p>
+        {submitted ? <small><GlossaryText text={step.rationale} enabled={mode !== 'exam' && !hardMode} revealMode="postAnswer" maxTerms={4} /></small> : null}
       </div>
       <div className="management-step-actions">
         <StepStatePill step={step} submitted={submitted} inPlan={inPlan} index={index} correctById={correctById} />
@@ -447,8 +447,8 @@ function ManagementSequencePanel({ clinicalCase, mode = 'study', hardMode = fals
               <li key={step.id}>
                 <span>{step.correctOrder}</span>
                 <div>
-                  <strong><GlossaryText text={step.label} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={2} /></strong>
-                  <p><GlossaryText text={step.rationale} enabled={mode !== 'exam' && !hardMode} revealMode="postAnswer" maxTerms={3} /></p>
+                  <strong><GlossaryText text={step.label} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={4} /></strong>
+                  <p><GlossaryText text={step.rationale} enabled={mode !== 'exam' && !hardMode} revealMode="postAnswer" maxTerms={4} /></p>
                 </div>
               </li>
             ))}

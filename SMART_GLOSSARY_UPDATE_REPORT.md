@@ -141,3 +141,9 @@ Yeni terimler `src/data/tusGlossaryIndex.js` içindeki `TUS_GLOSSARY_ADVANCED_TE
 # V265 Glossary genişletme notu
 
 Aktif ana glossary terimi 534’ten 814’e çıkarıldı. Yeni curated TUS katmanı `src/data/tusGlossaryExpandedIndex.js` ve `src/data/tusGlossarySupplementalIndex.js` dosyalarıyla eklendi. Yeni kayıtlarda pre-answer nötr tanım, post-answer TUS ipucu ve ayırıcı not ayrımı korundu.
+
+---
+
+## V268 Nested Tooltip Update
+
+Tooltip kartlarının içinde geçen glossary terimleri de artık `GlossaryText` ile işlenir. Böylece örneğin Graves hastalığı kartındaki Ekzoftalmi veya Pretibial miksödem ifadeleri kendi preview kartlarını açabilir. Aynı terimin kendi içinde tekrar açılması ve dairesel tooltip zincirleri engellenmiştir; ancak sabit bir nesting-depth limiti konmamıştır. Yeni nested clinical terminology index ile 18 yüksek değerli kavram eklenmiş ve toplam ana glossary term sayısı 909'a çıkarılmıştır.

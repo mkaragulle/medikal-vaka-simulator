@@ -50229,3 +50229,57 @@ html[data-theme="dark"] .bottom-case-browser-tools .bottom-case-browser-count,
 [data-theme='dark'] .smart-glossary-detail-block span { color: #cbd5e1 !important; }
 [data-theme='dark'] .smart-glossary-row b,
 [data-theme='dark'] .smart-glossary-detail-block b { color: #f8fafc !important; }
+
+
+/* =========================================================
+   V267 — Smart glossary visibility + Turkish suffix support UI pass
+   Purpose: make linked medical terminology visibly discoverable without
+   creating AMBOSS-style clutter, and override older reset layers that made
+   glossary terms look like plain text in many cards.
+   ========================================================= */
+:where(.glossary-text-flow .smart-glossary-term, .smart-glossary-term) {
+  color: color-mix(in srgb, #0f766e 86%, currentColor 14%) !important;
+  cursor: help !important;
+  text-decoration-line: underline !important;
+  text-decoration-style: dotted !important;
+  text-decoration-thickness: 1.35px !important;
+  text-underline-offset: 0.17em !important;
+  text-decoration-color: color-mix(in srgb, #0f766e 70%, transparent) !important;
+  background: linear-gradient(180deg, transparent 61%, color-mix(in srgb, #14b8a6 16%, transparent) 61%) !important;
+  border-radius: 3px !important;
+  padding: 0 1px !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+:where(.glossary-text-flow .smart-glossary-term[data-reveal-mode="preAnswer"], .smart-glossary-term[data-reveal-mode="preAnswer"]) {
+  color: color-mix(in srgb, #155e75 76%, currentColor 24%) !important;
+  text-decoration-color: color-mix(in srgb, #0ea5e9 58%, transparent) !important;
+  background: linear-gradient(180deg, transparent 64%, color-mix(in srgb, #0ea5e9 12%, transparent) 64%) !important;
+}
+
+:where(.glossary-text-flow .smart-glossary-term:hover, .glossary-text-flow .smart-glossary-term:focus-visible, .smart-glossary-term:hover, .smart-glossary-term:focus-visible) {
+  color: #0f766e !important;
+  text-decoration-color: #0f766e !important;
+  background: color-mix(in srgb, #14b8a6 16%, transparent) !important;
+  outline: none !important;
+}
+
+:where(.answer-option .smart-glossary-term, .tus-spot-olgular-question-callout .smart-glossary-term, .ai-spot-inline-question-stem .smart-glossary-term) {
+  font-weight: inherit !important;
+}
+
+[data-hard-mode="true"] :where(.smart-glossary-term, .smart-glossary-term:hover, .smart-glossary-term:focus-visible) {
+  color: inherit !important;
+  cursor: inherit !important;
+  text-decoration: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  pointer-events: none !important;
+}
+
+[data-theme="dark"] :where(.glossary-text-flow .smart-glossary-term, .smart-glossary-term) {
+  color: color-mix(in srgb, #5eead4 78%, currentColor 22%) !important;
+  text-decoration-color: color-mix(in srgb, #5eead4 68%, transparent) !important;
+  background: linear-gradient(180deg, transparent 62%, rgba(45, 212, 191, 0.18) 62%) !important;
+}

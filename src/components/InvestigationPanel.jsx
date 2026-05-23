@@ -334,13 +334,13 @@ function ResultFindingList({ rows = [], glossaryEnabled = true }) {
           <div key={`${parameter || 'bulgu'}-${index}`} className={`qualitative-result-finding ${status.tone}`}>
             <div className="qualitative-result-marker" aria-hidden="true" />
             <div className="qualitative-result-copy">
-              <span className="qualitative-result-label"><GlossaryText text={String(parameter || 'Bulgular')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} /></span>
-              <p><GlossaryText text={String(value || 'Objektif bulgu saptanmadı.')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} /></p>
+              <span className="qualitative-result-label"><GlossaryText text={String(parameter || 'Bulgular')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} /></span>
+              <p><GlossaryText text={String(value || 'Objektif bulgu saptanmadı.')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} /></p>
               {showReference || showNote ? (
                 <span className="qualitative-result-meta">
-                  {showReference ? <GlossaryText text={`Beklenen: ${reference}`} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} /> : null}
+                  {showReference ? <GlossaryText text={`Beklenen: ${reference}`} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} /> : null}
                   {showReference && showNote ? ' · ' : ''}
-                  {showNote ? <GlossaryText text={String(note)} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} /> : null}
+                  {showNote ? <GlossaryText text={String(note)} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} /> : null}
                 </span>
               ) : null}
             </div>
@@ -380,12 +380,12 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
                 <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
                   <td>
                     <div className="lab-parameter-cell">
-                      <strong><GlossaryText text={String(parameter || '')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} /></strong>
+                      <strong><GlossaryText text={String(parameter || '')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} /></strong>
                     </div>
                   </td>
                   <td>
-                    <span className="lab-value-text long-result-text"><GlossaryText text={String(value || '')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} /></span>
-                    {secondary ? <span className="lab-cell-subnote"><GlossaryText text={String(secondary)} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} /></span> : null}
+                    <span className="lab-value-text long-result-text"><GlossaryText text={String(value || '')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} /></span>
+                    {secondary ? <span className="lab-cell-subnote"><GlossaryText text={String(secondary)} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} /></span> : null}
                   </td>
                 </tr>
               );
@@ -415,14 +415,14 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
                 <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
                   <td>
                     <div className="lab-parameter-cell">
-                      <strong><GlossaryText text={String(parameter || '')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} /></strong>
+                      <strong><GlossaryText text={String(parameter || '')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} /></strong>
                     </div>
                   </td>
                   <td>
-                    <span className="lab-value-text long-result-text"><GlossaryText text={String(value || '')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} /></span>
-                    {secondary ? <span className="lab-cell-subnote"><GlossaryText text={String(secondary)} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} /></span> : null}
+                    <span className="lab-value-text long-result-text"><GlossaryText text={String(value || '')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} /></span>
+                    {secondary ? <span className="lab-cell-subnote"><GlossaryText text={String(secondary)} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} /></span> : null}
                   </td>
-                  <td><span className="lab-reference-text long-reference-text"><GlossaryText text={String(reference || '—')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} /></span></td>
+                  <td><span className="lab-reference-text long-reference-text"><GlossaryText text={String(reference || '—')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} /></span></td>
                 </tr>
               );
             })}
@@ -451,16 +451,16 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
               <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
                 <td>
                   <div className="lab-parameter-cell">
-                    <strong><GlossaryText text={String(parameter || '')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} /></strong>
+                    <strong><GlossaryText text={String(parameter || '')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} /></strong>
                   </div>
                 </td>
                 <td>
-                  <span className="lab-value-text"><GlossaryText text={String(value || '')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} /></span>
+                  <span className="lab-value-text"><GlossaryText text={String(value || '')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} /></span>
                 </td>
-                <td><span className="lab-reference-text"><GlossaryText text={String(reference || '—')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} /></span></td>
+                <td><span className="lab-reference-text"><GlossaryText text={String(reference || '—')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} /></span></td>
                 <td>
                   <span className={`lab-status-pill ${tone}`}>
-                    <GlossaryText text={String(status.label || '—')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} />
+                    <GlossaryText text={String(status.label || '—')} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} />
                   </span>
                 </td>
               </tr>
@@ -485,7 +485,7 @@ function ResultImages({ images = [], glossaryEnabled = true }) {
             </a>
           </div>
           <figcaption>
-            <strong><GlossaryText text={image.title} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={2} /></strong>
+            <strong><GlossaryText text={image.title} enabled={glossaryEnabled} revealMode="preAnswer" maxTerms={4} /></strong>
           </figcaption>
         </figure>
       ))}
@@ -526,7 +526,7 @@ function InlineOrderResult({ item, mode, hardMode = false }) {
         {shouldShowSummary ? (
           <div className={`ordered-result-comment ${hasRows || hasImages ? 'after-objective-data' : 'standalone'}`}>
             {(hasRows || hasImages) ? <span>Kısa yorum</span> : null}
-            <p className="ordered-result-summary inline-result-summary"><GlossaryText text={result.summary} enabled={mode !== 'exam' && !hardMode} revealMode="preAnswer" maxTerms={2} /></p>
+            <p className="ordered-result-summary inline-result-summary"><GlossaryText text={result.summary} enabled={mode !== 'exam' && !hardMode} revealMode="preAnswer" maxTerms={4} /></p>
           </div>
         ) : null}
         {!hasSummary && !hasRows && !hasImages ? (
@@ -552,8 +552,8 @@ function OrderCard({ item, selected, expanded, onToggle, mode, hardMode = false 
       >
         <IconBadge icon={investigationIconByType[item.type] || 'Search'} tone={selected ? 'success' : 'blue'} size="sm" />
         <span className="investigation-option-copy smart-order-copy requested-test-copy">
-          <strong><GlossaryText text={item.title || item.label} enabled={mode !== 'exam' && !hardMode} revealMode="preAnswer" maxTerms={2} /></strong>
-          <span className="order-card-subline neutral-order-subline"><em><GlossaryText text={subtype} enabled={mode !== 'exam' && !hardMode} revealMode="preAnswer" maxTerms={2} /></em></span>
+          <strong><GlossaryText text={item.title || item.label} enabled={mode !== 'exam' && !hardMode} revealMode="preAnswer" maxTerms={4} /></strong>
+          <span className="order-card-subline neutral-order-subline"><em><GlossaryText text={subtype} enabled={mode !== 'exam' && !hardMode} revealMode="preAnswer" maxTerms={4} /></em></span>
         </span>
         <span className="smart-order-actions requested-test-actions">
           <span className={`investigation-option-state smart-order-state order-status-chip ${selected ? 'requested' : 'idle'}`}>
@@ -577,8 +577,8 @@ function OrderCategorySection({ group, orderedInvestigationIds, openResultIds, o
     <section className="order-category-section smart-order-category-section" aria-labelledby={`order-category-${group.id}`}>
       <header className="order-category-head smart-order-category-head">
         <div>
-          <h3 id={`order-category-${group.id}`}><GlossaryText text={group.meta.label} enabled={mode !== 'exam' && !hardMode} revealMode="preAnswer" maxTerms={2} /></h3>
-          {group.meta.description ? <p><GlossaryText text={group.meta.description} enabled={mode !== 'exam' && !hardMode} revealMode="preAnswer" maxTerms={2} /></p> : null}
+          <h3 id={`order-category-${group.id}`}><GlossaryText text={group.meta.label} enabled={mode !== 'exam' && !hardMode} revealMode="preAnswer" maxTerms={4} /></h3>
+          {group.meta.description ? <p><GlossaryText text={group.meta.description} enabled={mode !== 'exam' && !hardMode} revealMode="preAnswer" maxTerms={4} /></p> : null}
         </div>
       </header>
       <div className="order-category-grid smart-order-category-grid">

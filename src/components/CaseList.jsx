@@ -1,6 +1,7 @@
 import { useLayoutEffect, useMemo, useRef } from 'react';
 import { getDifficultyMeta } from '../utils/scoring.js';
 import { Icon } from './ui.jsx';
+import GlossaryText from './GlossaryTooltip.jsx';
 
 function isSolvedCase(solvedCaseIds, caseId) {
   if (!caseId || !solvedCaseIds) return false;
@@ -78,7 +79,7 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
               <small className="case-list-meta-text">{difficultyMeta.points} puan</small>
               <small className={`difficulty-badge difficulty-tag-pill ${difficultyMeta.tone} ${solved ? 'is-solved' : ''}`}>{difficultyLabel}</small>
             </div>
-            <strong>{caseListTitle}</strong>
+            <strong><GlossaryText text={caseListTitle} enabled revealMode="preAnswer" maxTerms={2} /></strong>
             <span className="case-list-footer" aria-hidden="true">
               <span>{solved ? 'Çözüldü · tekrar aç' : 'Olguyu aç'}</span>
               <Icon name={solved ? 'CheckCircle' : 'ArrowRight'} />
