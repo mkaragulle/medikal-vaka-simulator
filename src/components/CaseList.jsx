@@ -9,6 +9,30 @@ function isSolvedCase(solvedCaseIds, caseId) {
   return false;
 }
 
+
+function cleanDisplayText(value) {
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+function getCaseListTitle(clinicalCase) {
+  const directTitle = cleanDisplayText(
+    clinicalCase.cardTitle
+      || clinicalCase.listTitle
+      || clinicalCase.menuTitle
+      || clinicalCase.displayTitle
+      || clinicalCase.title,
+  );
+  if (directTitle) return directTitle;
+
+  const topicTitle = cleanDisplayText(clinicalCase.learningTarget || clinicalCase.learningOutcome || clinicalCase.clinicalFocus);
+  if (topicTitle) return topicTitle.length > 74 ? `${topicTitle.slice(0, 71).trim()}…` : topicTitle;
+
+  const questionTitle = cleanDisplayText(clinicalCase.question || clinicalCase.diagnosis?.question);
+  if (questionTitle) return questionTitle.length > 74 ? `${questionTitle.slice(0, 71).trim()}…` : questionTitle;
+
+  return 'TUS spot olgu';
+}
+
 function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', solvedCaseIds = new Set() }) {
   const listRef = useRef(null);
   const horizontalResetKey = useMemo(() => {
@@ -37,6 +61,7 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
         const difficultyMeta = getDifficultyMeta(clinicalCase.difficulty);
         const solved = isSolvedCase(solvedCaseIds, clinicalCase.id);
         const difficultyLabel = solved ? `${difficultyMeta.label}-Çözüldü` : difficultyMeta.label;
+        const caseListTitle = getCaseListTitle(clinicalCase);
         return (
           <button
             key={clinicalCase.id}
@@ -53,7 +78,7 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
               <small className="case-list-meta-text">{difficultyMeta.points} puan</small>
               <small className={`difficulty-badge difficulty-tag-pill ${difficultyMeta.tone} ${solved ? 'is-solved' : ''}`}>{difficultyLabel}</small>
             </div>
-            <strong>{clinicalCase.title}</strong>
+            <strong>{caseListTitle}</strong>
             <span className="case-list-footer" aria-hidden="true">
               <span>{solved ? 'Çözüldü · tekrar aç' : 'Olguyu aç'}</span>
               <Icon name={solved ? 'CheckCircle' : 'ArrowRight'} />
