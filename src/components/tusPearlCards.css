@@ -17217,3 +17217,49 @@ html[data-theme='dark'] .pearl-editor-secondary-actions,
     border-radius: 18px !important;
   }
 }
+
+/* ==========================================================
+   V316 — optional fields button centered single-label style
+   ========================================================== */
+.pearl-min-advanced-trigger {
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding: 0 16px !important;
+  background: rgba(20, 184, 166, 0.08) !important;
+  border-color: rgba(153, 246, 228, 0.7) !important;
+}
+
+.pearl-min-advanced-trigger-copy {
+  flex: 0 1 auto !important;
+  width: 100% !important;
+  text-align: center !important;
+  font-weight: 650 !important;
+  color: #0f172a !important;
+}
+
+.pearl-min-advanced-arrow,
+.pearl-min-advanced-trigger svg {
+  display: none !important;
+}
+
+.pearl-min-advanced-trigger:hover,
+.pearl-min-advanced-trigger:focus-visible {
+  background: rgba(20, 184, 166, 0.12) !important;
+  border-color: rgba(45, 212, 191, 0.95) !important;
+}
+
+[data-theme='dark'] .pearl-min-advanced-trigger {
+  background: rgba(20, 184, 166, 0.12) !important;
+  border-color: rgba(45, 212, 191, 0.22) !important;
+}
+
+[data-theme='dark'] .pearl-min-advanced-trigger-copy {
+  color: #f8fafc !important;
+}
+
+[data-theme='dark'] .pearl-min-advanced-trigger:hover,
+[data-theme='dark'] .pearl-min-advanced-trigger:focus-visible {
+  background: rgba(20, 184, 166, 0.18) !important;
+  border-color: rgba(45, 212, 191, 0.34) !important;
+}
