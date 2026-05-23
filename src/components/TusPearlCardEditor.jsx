@@ -197,110 +197,89 @@ function TusPearlCardEditor({
 
   const modalTree = (
     <div
-      className="pearl-editor-backdrop pearl-compose-overlay"
+      className="pearl-editor-backdrop pearl-min-overlay"
       role="presentation"
       onClick={() => onClose?.()}
     >
       <section
-        className="pearl-editor-modal pearl-compose-modal card-surface"
+        className="pearl-editor-modal pearl-min-modal card-surface"
         role="dialog"
         aria-modal="true"
         aria-label={title}
         onClick={(event) => event.stopPropagation()}
       >
-        <header className="pearl-editor-head pearl-compose-header">
-          <div className="pearl-compose-title-wrap">
-            <span className="pearl-compose-eyebrow">Kişisel hap kartı</span>
+        <header className="pearl-min-header">
+          <div className="pearl-min-title">
             <h2>{title}</h2>
-            <p>Kartın ana içeriğini ekle, ardından istersen opsiyonel alanlarla daha öğretici hale getir.</p>
+            <p>Kart içeriğini ekle.</p>
           </div>
-          <button type="button" className="btn btn-icon quiet pearl-editor-close pearl-compose-close" onClick={onClose} aria-label="Kart editörünü kapat">
+          <button type="button" className="btn btn-icon quiet pearl-min-close" onClick={onClose} aria-label="Kart editörünü kapat">
             <Icon name="X" />
           </button>
         </header>
 
-        <form className="pearl-editor-form pearl-compose-form" onSubmit={handleSubmit}>
-          <div className="pearl-compose-scroll">
-            <section className="pearl-compose-section pearl-compose-section-main">
-              <div className="pearl-compose-section-head">
-                <h3>Temel kart içeriği</h3>
-                <p>Kullanıcının göreceği soru ve kısa öğretici yanıt burada tanımlanır.</p>
-              </div>
+        <form className="pearl-min-form" onSubmit={handleSubmit}>
+          <div className="pearl-min-scroll">
+            <div className="pearl-min-main">
+              <label className="pearl-min-field pearl-min-field-front">
+                <span>Ön yüz</span>
+                <textarea
+                  value={form.front}
+                  onChange={(event) => updateField('front', event.target.value)}
+                  placeholder="Örnek: Anafilakside hayat kurtarıcı ilk tedavi nedir?"
+                  rows={5}
+                />
+              </label>
 
-              <div className="pearl-compose-grid">
-                <label className="pearl-editor-panel pearl-compose-card pearl-compose-card-front">
-                  <span>Ön yüz</span>
+              <div className="pearl-min-stack">
+                <label className="pearl-min-field">
+                  <span>Yanıt</span>
                   <textarea
-                    value={form.front}
-                    onChange={(event) => updateField('front', event.target.value)}
-                    placeholder="Örnek: Anafilakside hayat kurtarıcı ilk tedavi nedir?"
-                    rows={5}
+                    value={form.back}
+                    onChange={(event) => updateField('back', event.target.value)}
+                    placeholder="Net cevap: İntramüsküler adrenalin."
+                    rows={3}
                   />
                 </label>
 
-                <div className="pearl-compose-stack">
-                  <label className="pearl-editor-panel pearl-compose-card pearl-compose-card-compact">
-                    <span>Yanıt</span>
-                    <textarea
-                      value={form.back}
-                      onChange={(event) => updateField('back', event.target.value)}
-                      placeholder="Net cevap: İntramüsküler adrenalin."
-                      rows={3}
-                    />
-                  </label>
-
-                  <label className="pearl-editor-panel pearl-compose-card pearl-compose-card-compact">
-                    <span>Kısa gerekçe</span>
-                    <textarea
-                      value={form.explanation}
-                      onChange={(event) => updateField('explanation', event.target.value)}
-                      placeholder="1–2 cümlelik bilimsel gerekçe ekle."
-                      rows={3}
-                    />
-                  </label>
-                </div>
-              </div>
-            </section>
-
-            <section className="pearl-compose-section pearl-compose-section-meta">
-              <div className="pearl-compose-section-head">
-                <h3>Kart yerleşimi</h3>
-                <p>Branşı, katalogu ve opsiyonel zenginleştirme alanlarını buradan yönet.</p>
-              </div>
-
-              <div className="pearl-compose-meta-grid">
-                <label className="pearl-editor-panel pearl-compose-card pearl-compose-select-card">
-                  <span>Branş</span>
-                  <select value={form.branchId} onChange={(event) => updateField('branchId', event.target.value)}>
-                    {branches.map((branch) => <option key={branch.id} value={branch.id}>{branch.shortName || branch.name}</option>)}
-                  </select>
+                <label className="pearl-min-field">
+                  <span>Kısa gerekçe</span>
+                  <textarea
+                    value={form.explanation}
+                    onChange={(event) => updateField('explanation', event.target.value)}
+                    placeholder="1–2 cümlelik bilimsel gerekçe ekle."
+                    rows={3}
+                  />
                 </label>
-
-                <label className="pearl-editor-panel pearl-compose-card pearl-compose-select-card">
-                  <span>Katalog</span>
-                  <select value={form.catalogId} onChange={(event) => updateField('catalogId', event.target.value)}>
-                    <option value="">Kendi kartlarım</option>
-                    {catalogs.map((catalog) => <option key={catalog.id} value={catalog.id}>{catalog.name}</option>)}
-                  </select>
-                </label>
-
-                <button type="button" className="pearl-editor-advanced-toggle pearl-compose-advanced-trigger" onClick={openAdvancedDialog}>
-                  <div className="pearl-compose-advanced-copy">
-                    <span className="pearl-compose-advanced-label">Opsiyonel alanlar</span>
-                    <small>TUS ipucu, ayırıcı not, etiketler ve diğer zenginleştirme alanları</small>
-                  </div>
-                  <div className="pearl-compose-advanced-meta">
-                    <Icon name="Sparkles" size={16} />
-                    <b>{filledAdvancedCount}</b>
-                  </div>
-                </button>
               </div>
-            </section>
+            </div>
 
-            {error ? <p className="pearl-editor-error pearl-compose-error">{error}</p> : null}
+            <div className="pearl-min-meta">
+              <label className="pearl-min-field pearl-min-select">
+                <span>Branş</span>
+                <select value={form.branchId} onChange={(event) => updateField('branchId', event.target.value)}>
+                  {branches.map((branch) => <option key={branch.id} value={branch.id}>{branch.shortName || branch.name}</option>)}
+                </select>
+              </label>
+
+              <label className="pearl-min-field pearl-min-select">
+                <span>Katalog</span>
+                <select value={form.catalogId} onChange={(event) => updateField('catalogId', event.target.value)}>
+                  <option value="">Kendi kartlarım</option>
+                  {catalogs.map((catalog) => <option key={catalog.id} value={catalog.id}>{catalog.name}</option>)}
+                </select>
+              </label>
+
+              <button type="button" className="pearl-min-advanced-trigger" onClick={openAdvancedDialog}>
+                <span>Opsiyonel alanlar</span>
+                <b>{filledAdvancedCount}</b>
+              </button>
+            </div>
+
+            {error ? <p className="pearl-editor-error pearl-min-error">{error}</p> : null}
           </div>
 
-          <footer className="pearl-editor-actions pearl-compose-footer">
+          <footer className="pearl-min-footer">
             <button type="button" className="btn btn-secondary" onClick={onClose}>Vazgeç</button>
             <button type="submit" className="btn btn-primary">
               <Icon name="LayeredCards" />
@@ -314,7 +293,7 @@ function TusPearlCardEditor({
 
   const advancedDialogTree = advancedDialogOpen ? (
     <div
-      className="pearl-editor-secondary-backdrop pearl-compose-sub-overlay"
+      className="pearl-editor-secondary-backdrop pearl-min-sub-overlay"
       role="presentation"
       onClick={(event) => {
         event.stopPropagation();
@@ -322,41 +301,40 @@ function TusPearlCardEditor({
       }}
     >
       <section
-        className="pearl-editor-secondary-modal pearl-compose-sub-modal card-surface"
+        className="pearl-editor-secondary-modal pearl-min-sub-modal card-surface"
         role="dialog"
         aria-modal="true"
         aria-label="Opsiyonel alanlar"
         onClick={(event) => event.stopPropagation()}
       >
-        <header className="pearl-editor-secondary-head pearl-compose-sub-header">
-          <div className="pearl-compose-title-wrap pearl-compose-title-wrap-sm">
-            <span className="pearl-compose-eyebrow">Gelişmiş alanlar</span>
+        <header className="pearl-min-sub-header">
+          <div className="pearl-min-title">
             <h3>Opsiyonel alanlar</h3>
-            <p>Kartı daha öğretici ve daha iyi filtrelenebilir hale getiren destek alanları.</p>
+            <p>İsteğe bağlı kart detayları.</p>
           </div>
-          <button type="button" className="btn btn-icon quiet pearl-editor-close pearl-compose-close" onClick={closeAdvancedDialog} aria-label="Opsiyonel alanları kapat">
+          <button type="button" className="btn btn-icon quiet pearl-min-close" onClick={closeAdvancedDialog} aria-label="Opsiyonel alanları kapat">
             <Icon name="X" />
           </button>
         </header>
 
-        <div className="pearl-editor-advanced-grid pearl-compose-sub-grid">
-          <label className="pearl-compose-field-card">
+        <div className="pearl-min-sub-grid">
+          <label className="pearl-min-sub-field">
             <span>TUS ipucu</span>
             <input value={advancedDraft.tusTip} onChange={(event) => updateAdvancedDraft('tusTip', event.target.value)} placeholder="Kısa patern" />
           </label>
-          <label className="pearl-compose-field-card">
+          <label className="pearl-min-sub-field">
             <span>Ayırıcı not</span>
             <input value={advancedDraft.differentialNote} onChange={(event) => updateAdvancedDraft('differentialNote', event.target.value)} placeholder="Benzer kavram farkı" />
           </label>
-          <label className="pearl-compose-field-card">
+          <label className="pearl-min-sub-field">
             <span>Konu</span>
             <input value={advancedDraft.topic} onChange={(event) => updateAdvancedDraft('topic', event.target.value)} placeholder="Adrenal kriz" />
           </label>
-          <label className="pearl-compose-field-card">
+          <label className="pearl-min-sub-field">
             <span>Ders / başlık</span>
             <input value={advancedDraft.subject} onChange={(event) => updateAdvancedDraft('subject', event.target.value)} placeholder="İç Hastalıkları" />
           </label>
-          <label className="pearl-compose-field-card">
+          <label className="pearl-min-sub-field">
             <span>Zorluk</span>
             <select value={advancedDraft.difficulty} onChange={(event) => updateAdvancedDraft('difficulty', event.target.value)}>
               <option value="kolay">Kolay</option>
@@ -364,21 +342,21 @@ function TusPearlCardEditor({
               <option value="zor">Zor</option>
             </select>
           </label>
-          <label className="pearl-compose-field-card">
+          <label className="pearl-min-sub-field">
             <span>Etiketler</span>
             <input value={advancedDraft.tags} onChange={(event) => updateAdvancedDraft('tags', event.target.value)} placeholder="farmakoloji, kontrendikasyon" />
           </label>
-          <label className="pearl-compose-field-card">
+          <label className="pearl-min-sub-field">
             <span>Anahtar kelimeler</span>
             <input value={advancedDraft.keywords} onChange={(event) => updateAdvancedDraft('keywords', event.target.value)} placeholder="hipotansiyon, hiperkalemi" />
           </label>
-          <label className="pearl-compose-field-card">
+          <label className="pearl-min-sub-field">
             <span>Çıkmış yıl</span>
             <input value={advancedDraft.appearedYears} onChange={(event) => updateAdvancedDraft('appearedYears', event.target.value)} placeholder="2021, 2023" />
           </label>
         </div>
 
-        <footer className="pearl-editor-secondary-actions pearl-compose-sub-footer">
+        <footer className="pearl-min-sub-footer">
           <button type="button" className="btn btn-secondary" onClick={closeAdvancedDialog}>Vazgeç</button>
           <button type="button" className="btn btn-primary" onClick={saveAdvancedDraft}>
             <Icon name="CheckCircle" />
