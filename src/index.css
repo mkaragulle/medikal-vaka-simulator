@@ -49356,114 +49356,38 @@ html[data-theme="dark"] .tus-spot-bank-main .option-grid > .answer-option:hover:
   }
 }
 
-/* --------------------------------------------------------------------------
-   V257 — TUS Spot bottom browser titles + difficulty toolbar
-   -------------------------------------------------------------------------- */
-.bottom-case-browser-title-block {
-  display: grid !important;
-  gap: 5px !important;
-  min-width: 0 !important;
+
+/* ==========================================================
+   V253 — Fix hover clipping in "Diğer olgular" horizontal cards
+   Cause: hover lift + container clipping on the horizontal list.
+   Solution: give the row top breathing room and allow vertical overflow.
+   ========================================================== */
+.bottom-case-browser {
+  overflow: visible !important;
 }
 
-.bottom-case-browser-title-block p {
-  margin: 0 !important;
-  color: color-mix(in srgb, var(--text-secondary) 86%, var(--text-primary) 14%) !important;
-  font-size: 13px !important;
-  font-weight: 520 !important;
-  line-height: 1.45 !important;
+.bottom-case-browser .horizontal-case-list {
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  margin-top: -8px !important;
+  contain: layout !important;
+  align-items: start !important;
 }
 
-.bottom-case-browser-toolbar {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  gap: 12px !important;
-  flex-wrap: wrap !important;
+.bottom-case-browser .horizontal-case-list .horizontal-case-card {
+  transform-origin: center top !important;
 }
 
-.bottom-difficulty-filter {
-  min-height: 42px !important;
-  padding: 4px !important;
-  gap: 5px !important;
-  background: color-mix(in srgb, var(--surface-1) 76%, #eef8f7 24%) !important;
+.bottom-case-browser .horizontal-case-list .horizontal-case-card:hover,
+.bottom-case-browser .horizontal-case-list .horizontal-case-card.active {
+  transform: translateY(-1px) !important;
 }
 
-.bottom-difficulty-filter .difficulty-filter-pill {
-  min-height: 33px !important;
-  padding: 0 12px !important;
-  font-size: 12px !important;
-}
-
-.bottom-case-browser .horizontal-case-card {
-  align-content: start !important;
-  grid-template-rows: auto minmax(42px, auto) auto 1fr !important;
-  min-height: 190px !important;
-  padding: 18px !important;
-}
-
-.bottom-case-browser .horizontal-case-list .case-card-title {
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2 !important;
-  -webkit-box-orient: vertical !important;
-  overflow: hidden !important;
-  min-height: 42px !important;
-  margin-top: 6px !important;
-  color: color-mix(in srgb, var(--text-primary) 94%, var(--accent) 6%) !important;
-  font-size: 15px !important;
-  font-weight: 760 !important;
-  line-height: 1.34 !important;
-  letter-spacing: -0.015em !important;
-}
-
-.bottom-case-browser .horizontal-case-list .case-card-subtitle {
-  display: -webkit-box !important;
-  -webkit-line-clamp: 1 !important;
-  -webkit-box-orient: vertical !important;
-  overflow: hidden !important;
-  min-height: 18px !important;
-  color: color-mix(in srgb, var(--text-secondary) 82%, var(--accent) 18%) !important;
-  font-size: 12px !important;
-  font-weight: 670 !important;
-  line-height: 1.35 !important;
-}
-
-.bottom-case-browser .horizontal-case-list .case-list-footer {
-  align-self: end !important;
-  margin-top: 18px !important;
-}
-
-.bottom-case-browser .horizontal-case-list .case-list-item.active .case-card-title {
-  color: color-mix(in srgb, var(--accent) 44%, var(--text-primary) 56%) !important;
-}
-
-html[data-theme="dark"] .bottom-case-browser-title-block p,
-.app-shell[data-theme="dark"] .bottom-case-browser-title-block p {
-  color: color-mix(in srgb, var(--text-secondary) 88%, #e5f9f6 12%) !important;
-}
-
-html[data-theme="dark"] .bottom-case-browser .horizontal-case-list .case-card-title,
-.app-shell[data-theme="dark"] .bottom-case-browser .horizontal-case-list .case-card-title {
-  color: color-mix(in srgb, #f7fbff 88%, var(--accent) 12%) !important;
-}
-
-html[data-theme="dark"] .bottom-case-browser .horizontal-case-list .case-card-subtitle,
-.app-shell[data-theme="dark"] .bottom-case-browser .horizontal-case-list .case-card-subtitle {
-  color: color-mix(in srgb, #bfd4dd 78%, var(--accent) 22%) !important;
-}
-
-@media (max-width: 1024px) {
-  .bottom-case-browser-toolbar {
-    width: 100% !important;
-    justify-content: flex-start !important;
-  }
-
-  .bottom-difficulty-filter {
-    max-width: 100% !important;
-    overflow-x: auto !important;
-    scrollbar-width: none !important;
-  }
-
-  .bottom-difficulty-filter::-webkit-scrollbar {
-    display: none !important;
+@media (max-width: 760px) {
+  .bottom-case-browser .horizontal-case-list {
+    padding-top: 6px !important;
+    margin-top: -6px !important;
   }
 }

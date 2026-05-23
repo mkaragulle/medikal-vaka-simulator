@@ -37,7 +37,6 @@ const CURRENT_USER_STORAGE_KEY = 'klinikiq-auth-current-user-v1';
 const PRODUCT_MODE_STORAGE_KEY = 'klinikiq-product-mode-v1';
 const SOLVED_CASES_STORAGE_KEY = 'klinikiq-solved-cases-v1';
 const BRANCH_DIFFICULTY_OPTIONS = ['Kolay', 'Orta', 'Zor', 'Acil'];
-const TUS_SPOT_BOTTOM_DIFFICULTY_OPTIONS = ['Kolay', 'Orta', 'Zor'];
 
 const DEMO_CASE_IDS = [
   'tus-spot-forensic-stab-wound-001',
@@ -1550,46 +1549,10 @@ function App() {
 
             <section className="bottom-case-browser card-surface">
               <div className="bottom-case-browser-head">
-                <div className="bottom-case-browser-title-block">
+                <div>
                   <h3>Diğer olgular</h3>
-                  {selectedBranch?.id === 'tus-spot-olgular' ? <p>Konu başlığı ve zorluk düzeyine göre hızlı geçiş yap.</p> : null}
                 </div>
-                <div className="bottom-case-browser-toolbar">
-                  {selectedBranch?.id === 'tus-spot-olgular' ? (
-                    <div className="branch-difficulty-filter bottom-difficulty-filter" role="group" aria-label="TUS Spot zorluk filtresi">
-                      <button
-                        type="button"
-                        className={['difficulty-filter-pill', 'difficulty-all', branchDifficultyFilter === 'all' ? 'active' : ''].filter(Boolean).join(' ')}
-                        onClick={() => handleBranchDifficultyFilterChange('all')}
-                        aria-pressed={branchDifficultyFilter === 'all'}
-                      >
-                        Tümü
-                      </button>
-                      {TUS_SPOT_BOTTOM_DIFFICULTY_OPTIONS.map((difficultyOption) => {
-                        const optionCount = branchDifficultyCounts[difficultyOption] || 0;
-                        const disabled = optionCount < 1;
-                        return (
-                          <button
-                            key={difficultyOption}
-                            type="button"
-                            className={[
-                              'difficulty-filter-pill',
-                              `difficulty-${difficultyOption.toLocaleLowerCase('tr')}`,
-                              branchDifficultyFilter === difficultyOption ? 'active' : '',
-                            ].filter(Boolean).join(' ')}
-                            onClick={() => handleBranchDifficultyFilterChange(difficultyOption)}
-                            disabled={disabled}
-                            aria-pressed={branchDifficultyFilter === difficultyOption}
-                            title={`${difficultyOption}: ${optionCount} olgu`}
-                          >
-                            {difficultyOption}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  ) : null}
-                  <span className="bottom-case-browser-count">{activeBranchCasePool.length} olgu</span>
-                </div>
+                <span className="bottom-case-browser-count">{activeBranchCasePool.length} olgu</span>
               </div>
               <CaseList cases={activeBranchCasePool} selectedCaseId={selectedCase.id} onSelectCase={handleSelectCase} layout="horizontal" solvedCaseIds={solvedCaseIdSet} />
             </section>
