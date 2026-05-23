@@ -10,8 +10,8 @@ import {
   normalizeGlossaryText,
 } from '../utils/glossary.js';
 
-const DEFAULT_MAX_TERMS_PER_TEXT = 5;
-const PREANSWER_MAX_TERMS_PER_TEXT = 3;
+const DEFAULT_MAX_TERMS_PER_TEXT = 7;
+const PREANSWER_MAX_TERMS_PER_TEXT = 5;
 const VIEWPORT_PADDING = 12;
 const SAFE_TOP_PADDING = 12;
 const TOOLTIP_GAP = 8;
@@ -527,11 +527,53 @@ function isDuplicateSection(value = '', previousValues = []) {
   });
 }
 
+
+const PREANSWER_LEAKAGE_PATTERNS = [
+  /\b(?:ilk|öncelikli|en uygun|en olası|kesin|klasik|tipik|patognomonik)\s+(?:tedavi|yaklaşım|basamak|tanı|etken|bulgu|ipucu|seçenek|yanıt)\b/iu,
+  /\b(?:düşündürür|destekler|ayırt ettirir|tanı koydurur|tanısını destekler|tedavisi|verilmelidir|uygulanmalıdır|başlanmalıdır)\b/iu,
+  /\b(?:TUS|soru|sınav)\s+(?:ipucu|notu|odağı)\b/iu,
+  /\b(?:varsa|birlikteliği|kombinasyonu)\s+(?:.*?)(?:düşündürür|gösterir|destekler)\b/iu,
+];
+
+function hasPreAnswerLeakageSignal(value = '') {
+  const text = String(value || '');
+  return PREANSWER_LEAKAGE_PATTERNS.some((pattern) => pattern.test(text));
+}
+
+function neutralPreAnswerDefinition(entry = {}) {
+  const category = String(entry.category || '').trim();
+  const term = entry.term || 'Bu kavram';
+  const normalizedCategory = category.toLocaleLowerCase('tr');
+
+  if (/ilaç|farmakoloji|antidot|tedavi|ajan|antibiyotik|antikoagülan/.test(normalizedCategory)) {
+    return `${term}, klinik yönetim veya farmakolojik tedavi bağlamında kullanılan tıbbi bir terimdir.`;
+  }
+  if (/hastalık|sendrom|enfeksiyon|patoloji|neoplazi|tümör|kanser/.test(normalizedCategory)) {
+    return `${term}, klinik değerlendirmede tanı ve ayırıcı tanı açısından kullanılan bir hastalık/kavram adıdır.`;
+  }
+  if (/laboratuvar|biyokimya|asit|baz|kan gazı|parametre/.test(normalizedCategory)) {
+    return `${term}, laboratuvar veya fizyolojik yorumlamada kullanılan tıbbi bir parametre/kavramdır.`;
+  }
+  if (/bulgu|semptom|muayene|ekg|görüntüleme/.test(normalizedCategory)) {
+    return `${term}, klinik değerlendirmede anlam taşıyan bir bulgu veya işaret olarak kullanılır.`;
+  }
+  if (/mekanizma|fizyoloji|moleküler|genetik|immünoloji/.test(normalizedCategory)) {
+    return `${term}, hastalık mekanizması veya temel bilim yorumlamasında kullanılan bilimsel bir kavramdır.`;
+  }
+  return `${term}, klinik metinlerde anlamı bilinmesi gereken tıbbi/terminolojik bir kavramdır.`;
+}
+
+function getPreAnswerDefinition(entry = {}) {
+  const raw = entry.preAnswerSafeDefinition || entry.previewDefinition || entry.shortDefinition || entry.definition || '';
+  if (!raw) return neutralPreAnswerDefinition(entry);
+  return hasPreAnswerLeakageSignal(raw) ? neutralPreAnswerDefinition(entry) : raw;
+}
+
 function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [], nestingLevel = 0 }) {
   const [expanded, setExpanded] = useState(false);
   const isPreAnswer = revealMode === 'preAnswer' || revealMode === 'neutral';
   const previewDefinition = entry.previewDefinition || entry.shortDefinition || entry.definition || '';
-  const safeDefinition = entry.preAnswerSafeDefinition || previewDefinition;
+  const safeDefinition = getPreAnswerDefinition(entry);
   const shortDefinition = isPreAnswer ? safeDefinition : (entry.shortDefinition || previewDefinition);
   const rawDetailed = entry.postAnswerExpandedExplanation || entry.detailedExplanation || '';
   const rawTusPearl = entry.tusPearl || '';
@@ -617,13 +659,10 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
         </span>
       ) : null}
 
-      {!isPreAnswer && (relatedCases.length || relatedQuestions.length || relatedFlashcards.length) ? (
-        <span className="smart-glossary-links" aria-label="İlişkili öğrenme bağlantıları">
-          {relatedCases.length ? <span>{relatedCases.length} ilgili olgu</span> : null}
-          {relatedQuestions.length ? <span>{relatedQuestions.length} soru</span> : null}
-          {relatedFlashcards.length ? <span>{relatedFlashcards.length} hap kart</span> : null}
-        </span>
-      ) : null}
+      {/* Relationship count chips such as "14 ilgili olgu" are intentionally hidden.
+          They made compact glossary previews feel crowded, especially inside Hap Bilgi cards.
+          The underlying relatedCases/relatedQuestions/relatedFlashcards data is kept for future
+          search/navigation features, but the preview tooltip stays clean and text-focused. */}
     </span>
   );
 }

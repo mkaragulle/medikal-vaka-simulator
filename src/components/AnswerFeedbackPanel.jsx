@@ -922,7 +922,7 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
                 <div className="ai-spot-pearl-icon"><Icon name="Sparkles" size={15} /></div>
                 <div>
                   <span>TUS ipucu</span>
-                  <p><GlossaryText text={ensureSentence(pearl)} enabled={false} /></p>
+                  <p><GlossaryText text={ensureSentence(pearl)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={5} /></p>
                 </div>
               </div>
             ) : null}
@@ -945,7 +945,7 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
                   {row.isSelected ? <em>Seçimin</em> : null}
                   {row.status === 'correct' ? <em className="correct">Doğru cevap</em> : null}
                 </div>
-                <p><GlossaryText text={ensureSentence(row.explanation)} enabled={glossaryEnabled} /></p>
+                <p><GlossaryText text={ensureSentence(row.explanation)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p>
               </article>
             ))}
           </div>
@@ -1029,7 +1029,7 @@ function ReasoningCard({ reasoningText, isCorrect = true, glossaryEnabled = true
       className={`reasoning-evidence-card clinical-reasoning-card ${minimal ? 'minimal-reasoning-card' : ''}`.trim()}
       minimal={minimal}
     >
-      <p className="feedback-body-copy"><GlossaryText text={ensureSentence(reasoningText)} enabled={glossaryEnabled} /></p>
+      <p className="feedback-body-copy"><GlossaryText text={ensureSentence(reasoningText)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={7} /></p>
     </FeedbackSection>
   );
 }
@@ -1046,7 +1046,7 @@ function TusTipCard({ pearl, glossaryEnabled = true, minimal = false }) {
       className={`tus-single-line-tip-card ${minimal ? 'minimal-tip-card' : ''}`.trim()}
       minimal={minimal}
     >
-      <p className="feedback-body-copy tus-single-line-tip"><GlossaryText text={ensureSentence(pearl)} enabled={glossaryEnabled} /></p>
+      <p className="feedback-body-copy tus-single-line-tip"><GlossaryText text={ensureSentence(pearl)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p>
     </FeedbackSection>
   );
 }
@@ -1068,7 +1068,7 @@ function EvidenceChainCard({ evidenceChain, glossaryEnabled = true, minimal = fa
             <b>{index + 1}</b>
             <div className="evidence-chain-copy">
               {!minimal && item.title ? <strong><GlossaryText text={item.title} enabled={glossaryEnabled} /></strong> : null}
-              <p><GlossaryText text={ensureSentence(item.text)} enabled={glossaryEnabled} /></p>
+              <p><GlossaryText text={ensureSentence(item.text)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p>
             </div>
           </li>
         ))}
@@ -1129,7 +1129,7 @@ function FeedbackManagementCard({ managementSteps, glossaryEnabled = true, clini
         {managementSteps.map((step, index) => (
           <div className="management-action-item management-action-item-pro" key={`${step.title}-${step.text}-${index}`}>
             <b>{index + 1}</b>
-            <p><strong><GlossaryText text={step.title} enabled={glossaryEnabled} /></strong>{' '}<GlossaryText text={ensureSentence(step.text)} enabled={glossaryEnabled} /></p>
+            <p><strong><GlossaryText text={step.title} enabled={glossaryEnabled} /></strong>{' '}<GlossaryText text={ensureSentence(step.text)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p>
           </div>
         ))}
       </div>

@@ -401,7 +401,7 @@ function PatientSummaryItems({ items = [], enabled = true, revealMode = 'preAnsw
       {items.map((item) => (
         <li key={item}>
           <span className="summary-clinical-mini-copy clinical-readable-copy">
-            <GlossaryText text={item} enabled={enabled} revealMode={revealMode} maxTerms={5} />
+            <GlossaryText text={item} enabled={enabled} revealMode={revealMode} maxTerms={7} />
           </span>
         </li>
       ))}
@@ -570,7 +570,6 @@ function CasePlayer({
   const vitalEntries = useMemo(() => buildDerivedVitalEntries(clinicalCase.vitals), [clinicalCase.vitals]);
   const investigationOrders = useMemo(() => buildInvestigationOrders(clinicalCase), [clinicalCase]);
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
-  const caseGlossaryRevealMode = isSolved ? 'postAnswer' : 'preAnswer';
   const caseGlossaryEnabled = !hardMode;
   const hasExamData = Array.isArray(clinicalCase.exam) && clinicalCase.exam.some((finding) => String(finding || '').trim());
   const hasVitalData = vitalEntries.length > 0;
@@ -593,6 +592,10 @@ function CasePlayer({
     ? `TUS Spot Olgular • ${clinicalCase.spotCategory || 'TUS spot'}`
     : `${branch.shortName ?? branch.name} • ${toDisplayPhrase(clinicalCase.setting)}`), [branch.name, branch.shortName, clinicalCase.setting, clinicalCase.spotCategory, isSpotCase]);
   const [orderedInvestigationIds, setOrderedInvestigationIds] = useState([]);
+  const [locallyAnsweredCaseId, setLocallyAnsweredCaseId] = useState(null);
+  const isStrictExamMode = Boolean(examMeta?.active && !tutorMode);
+  const caseHasAnsweredState = isSolved || locallyAnsweredCaseId === clinicalCase.id || Boolean(examMeta?.answers?.[clinicalCase.id]);
+  const caseGlossaryRevealMode = caseHasAnsweredState && !isStrictExamMode ? 'postAnswer' : 'preAnswer';
 
   const [highlighted, setHighlighted] = useState({});
   const [activeHighlighter, setActiveHighlighter] = useState('yellow');
@@ -614,6 +617,7 @@ function CasePlayer({
   useEffect(() => {
     setHighlighted({});
     setOrderedInvestigationIds([]);
+    setLocallyAnsweredCaseId(null);
     activeSectionRef.current = 'case-story';
     setActiveSection('case-story');
   }, [clinicalCase.id]);
@@ -702,6 +706,11 @@ function CasePlayer({
     setOrderedInvestigationIds((current) => current.includes(id) ? current : [...current, id]);
   }, []);
 
+  const handleSubmitAnswerWithGlossaryReveal = useCallback((payload) => {
+    setLocallyAnsweredCaseId(clinicalCase.id);
+    onSubmitAnswer?.(payload);
+  }, [clinicalCase.id, onSubmitAnswer]);
+
 
   const examPanelMeta = useMemo(() => (examMeta?.active
     ? { ...examMeta, hasPrevious: examMeta.currentIndex > 0, hasNext: examMeta.currentIndex < examMeta.total - 1 }
@@ -717,7 +726,7 @@ function CasePlayer({
             <DiagnosisQuiz
               clinicalCase={clinicalCase}
               onRandomCase={onRandomCase}
-              onSubmitAnswer={onSubmitAnswer}
+              onSubmitAnswer={handleSubmitAnswerWithGlossaryReveal}
               tutorMode={tutorMode}
               examMeta={examPanelMeta}
               onAdvanceExam={onAdvanceExam}
@@ -754,7 +763,7 @@ function CasePlayer({
 
             <div className="case-hero-main clean-case-hero-main">
               <div className="case-title-copy">
-                <h1><GlossaryText text={clinicalCase.title} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={5} /></h1>
+                <h1><GlossaryText text={clinicalCase.title} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={7} /></h1>
                 <ExamSignalBox signal={caseExamSignal} compact={isSpotCase} />
                 <div className="patient-summary-card professional-patient-summary-card clinical-summary-card premium-reference-summary-card">
                   {/* Hasta özeti, referans görseldeki tek, premium ve okunabilir klinik çerçeve tasarımına göre yeniden düzenlendi. */}
@@ -780,15 +789,15 @@ function CasePlayer({
                             <span className="summary-detail-label">{row.label.toLocaleUpperCase('tr')}</span>
                             {row.items ? (
                               row.items.length ? (
-                                <PatientSummaryItems items={row.items} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={5} />
+                                <PatientSummaryItems items={row.items} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={7} />
                               ) : <p>{row.fallback}</p>
                             ) : profileCopy ? (
                               <p className="summary-profile-copy">
-                                <strong><GlossaryText text={profileCopy.primary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={5} /></strong>
-                                {profileCopy.secondary ? <small><GlossaryText text={profileCopy.secondary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={5} /></small> : null}
+                                <strong><GlossaryText text={profileCopy.primary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={7} /></strong>
+                                {profileCopy.secondary ? <small><GlossaryText text={profileCopy.secondary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={7} /></small> : null}
                               </p>
                             ) : (
-                              <p><GlossaryText text={row.value} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={5} /></p>
+                              <p><GlossaryText text={row.value} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={7} /></p>
                             )}
                           </div>
                         </section>
@@ -820,7 +829,7 @@ function CasePlayer({
                             }}
                             aria-label={`${activeHighlighter} rengiyle öykü cümlesini vurgula`}
                           >
-                            <GlossaryText text={toSentence(part)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={5} />
+                            <GlossaryText text={toSentence(part)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={7} />
                           </span>
                         ))}
                       </div>
@@ -855,7 +864,7 @@ function CasePlayer({
                     >
                       <div className="detail-block exam-finding-block">
                         <ul className="clean-list dense scientific-finding-list">
-                          {clinicalCase.exam.map((finding) => <li key={finding}><GlossaryText text={expandExamFinding(finding)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={5} /></li>)}
+                          {clinicalCase.exam.map((finding) => <li key={finding}><GlossaryText text={expandExamFinding(finding)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={7} /></li>)}
                         </ul>
                       </div>
                     </AccordionItem>
@@ -873,13 +882,14 @@ function CasePlayer({
                   orderedInvestigationIds={orderedInvestigationIds}
                   onOrderInvestigation={handleOrderInvestigation}
                   orders={investigationOrders}
+                  glossaryRevealMode={caseGlossaryRevealMode}
                 />
               </section>
             ) : null}
 
             {showManagementPanel ? (
               <section id="case-management" className="section-anchor" ref={managementRef} data-section="case-management">
-                <ManagementSequencePanel clinicalCase={clinicalCase} mode={examMeta?.active ? 'exam' : mode} hardMode={hardMode} />
+                <ManagementSequencePanel clinicalCase={clinicalCase} mode={examMeta?.active ? 'exam' : mode} hardMode={hardMode} glossaryRevealMode={caseGlossaryRevealMode} />
               </section>
             ) : null}
           </div>
@@ -908,7 +918,7 @@ function CasePlayer({
             <DiagnosisQuiz
               clinicalCase={clinicalCase}
               onRandomCase={onRandomCase}
-              onSubmitAnswer={onSubmitAnswer}
+              onSubmitAnswer={handleSubmitAnswerWithGlossaryReveal}
               tutorMode={tutorMode}
               examMeta={examPanelMeta}
               onAdvanceExam={onAdvanceExam}

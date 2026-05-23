@@ -253,7 +253,7 @@ function ManagementStepCard({
             : ''
     : '';
 
-  const glossaryRevealMode = submitted ? 'postAnswer' : 'preAnswer';
+  const glossaryRevealMode = submitted || parentGlossaryRevealMode === 'postAnswer' ? 'postAnswer' : 'preAnswer';
 
   return (
     <article className={`management-step-card advanced-step-card v38-step-card ${inPlan ? 'in-plan' : 'available'} ${stateClass}`.trim()}>
@@ -310,7 +310,7 @@ function scorePlan(plan = [], sequence = null) {
   return { score: Math.max(score, 0), max, correctRequired, selectedUnnecessary, missingRequired };
 }
 
-function ManagementSequencePanel({ clinicalCase, mode = 'study', hardMode = false }) {
+function ManagementSequencePanel({ clinicalCase, mode = 'study', hardMode = false, glossaryRevealMode: parentGlossaryRevealMode = 'preAnswer' }) {
   const sequence = useMemo(() => buildManagementSequence(clinicalCase), [clinicalCase]);
   const [availableSteps, setAvailableSteps] = useState([]);
   const [planSteps, setPlanSteps] = useState([]);
@@ -328,7 +328,7 @@ function ManagementSequencePanel({ clinicalCase, mode = 'study', hardMode = fals
   const selectedIds = useMemo(() => new Set(planSteps.map((step) => step.id)), [planSteps]);
   const poolSteps = useMemo(() => availableSteps.filter((step) => !selectedIds.has(step.id)), [availableSteps, selectedIds]);
   const planScore = useMemo(() => sequence ? scorePlan(planSteps, sequence) : { score: 0, max: 0, correctRequired: 0, selectedUnnecessary: 0, missingRequired: 0 }, [planSteps, sequence]);
-  const glossaryRevealMode = submitted ? 'postAnswer' : 'preAnswer';
+  const glossaryRevealMode = submitted || parentGlossaryRevealMode === 'postAnswer' ? 'postAnswer' : 'preAnswer';
 
   const addStep = useCallback((step) => {
     if (submitted) return;

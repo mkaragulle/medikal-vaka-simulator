@@ -4,6 +4,7 @@ import { TUS_GLOSSARY_SUPPLEMENTAL_TERMS } from '../data/tusGlossarySupplemental
 import { TUS_GLOSSARY_SCIENTIFIC_TERMS } from '../data/tusGlossaryScientificIndex.js';
 import { TUS_GLOSSARY_NESTED_CLINICAL_TERMS } from '../data/tusGlossaryNestedClinicalIndex.js';
 import { TUS_GLOSSARY_CASE_DERIVED_TERMS } from '../data/tusGlossaryCaseDerivedIndex.js';
+import { TUS_GLOSSARY_CLINICAL_BRANCH_DEEP_TERMS } from '../data/tusGlossaryClinicalBranchDeepIndex.js';
 
 const teachingOnly = 'teachingOnly';
 
@@ -9465,6 +9466,7 @@ export const branchGlossaryTerms = {};
 export const defaultGlossaryTerms = globalGlossaryTerms;
 
 const STATIC_GLOSSARY_SOURCES = [
+  ...TUS_GLOSSARY_CLINICAL_BRANCH_DEEP_TERMS,
   ...TUS_GLOSSARY_ADVANCED_TERMS,
   ...TUS_GLOSSARY_EXPANDED_TERMS,
   ...TUS_GLOSSARY_SUPPLEMENTAL_TERMS,
