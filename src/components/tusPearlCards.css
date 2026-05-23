@@ -17317,3 +17317,164 @@ html[data-theme='dark'] .pearl-editor-secondary-actions,
   background: rgba(20, 184, 166, 0.18) !important;
   border-color: rgba(45, 212, 191, 0.34) !important;
 }
+
+/* ========================================================================== 
+   V318 — Card delete actions and confirmation dialog
+   ========================================================================== */
+.tus-pearl-catalog-card-list .catalog-delete-action.btn.btn-icon.quiet {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  border-radius: 13px !important;
+  border: 1px solid rgba(220, 38, 38, 0.12) !important;
+  background: rgba(254, 242, 242, 0.82) !important;
+  color: var(--ki-danger, #b91c1c) !important;
+  box-shadow: var(--ki-shadow-card, 0 8px 20px rgba(15, 23, 42, 0.035)) !important;
+}
+
+.tus-pearl-catalog-card-list .catalog-delete-action.btn.btn-icon.quiet:hover {
+  border-color: rgba(220, 38, 38, 0.24) !important;
+  background: rgba(254, 226, 226, 0.96) !important;
+  color: #991b1b !important;
+}
+
+.pearl-danger-button.btn.btn-primary.compact {
+  border-color: rgba(220, 38, 38, 0.22) !important;
+  background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+  color: #ffffff !important;
+  box-shadow: 0 14px 28px rgba(185, 28, 28, 0.22) !important;
+}
+
+.pearl-danger-button.btn.btn-primary.compact:hover {
+  filter: brightness(1.02) !important;
+  box-shadow: 0 16px 32px rgba(185, 28, 28, 0.28) !important;
+}
+
+.pearl-confirm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.42);
+  backdrop-filter: blur(10px);
+}
+
+.pearl-confirm-dialog {
+  width: min(100%, 540px);
+  border-radius: 26px;
+  padding: 22px;
+  display: grid;
+  gap: 18px;
+  border: 1px solid var(--ki-border, rgba(15, 118, 110, 0.12));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.98));
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.22);
+}
+
+.pearl-confirm-dialog-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.pearl-confirm-icon {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(254, 226, 226, 0.9);
+  color: var(--ki-danger, #b91c1c);
+  border: 1px solid rgba(220, 38, 38, 0.14);
+}
+
+.pearl-confirm-dialog-head h3 {
+  margin: 0 0 6px;
+  color: var(--ki-text, #0f172a);
+  font-size: 1.08rem;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+}
+
+.pearl-confirm-dialog-head p {
+  margin: 0;
+  color: var(--ki-text-muted, #475569);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.pearl-confirm-card-preview {
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(15, 118, 110, 0.10);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.pearl-confirm-card-preview strong {
+  color: var(--ki-text, #0f172a);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.pearl-confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+[data-theme='dark'] .pearl-confirm-dialog {
+  border-color: rgba(94, 234, 212, 0.14);
+  background: linear-gradient(180deg, rgba(9, 24, 36, 0.98), rgba(7, 18, 28, 0.98));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.48);
+}
+
+[data-theme='dark'] .pearl-confirm-dialog-head h3,
+[data-theme='dark'] .pearl-confirm-card-preview strong {
+  color: var(--ki-text, #e5edf7);
+}
+
+[data-theme='dark'] .pearl-confirm-dialog-head p {
+  color: var(--ki-text-muted, #9fb0c1);
+}
+
+[data-theme='dark'] .pearl-confirm-card-preview {
+  border-color: rgba(94, 234, 212, 0.12);
+  background: rgba(15, 23, 42, 0.72);
+}
+
+[data-theme='dark'] .tus-pearl-catalog-card-list .catalog-delete-action.btn.btn-icon.quiet {
+  border-color: rgba(248, 113, 113, 0.18) !important;
+  background: rgba(69, 10, 10, 0.42) !important;
+  color: #fca5a5 !important;
+}
+
+[data-theme='dark'] .tus-pearl-catalog-card-list .catalog-delete-action.btn.btn-icon.quiet:hover {
+  border-color: rgba(248, 113, 113, 0.3) !important;
+  background: rgba(127, 29, 29, 0.5) !important;
+  color: #fecaca !important;
+}
+
+@media (max-width: 640px) {
+  .pearl-confirm-overlay {
+    padding: 16px;
+  }
+
+  .pearl-confirm-dialog {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .pearl-confirm-actions {
+    flex-direction: column-reverse;
+  }
+
+  .pearl-confirm-actions .btn {
+    width: 100%;
+  }
+}

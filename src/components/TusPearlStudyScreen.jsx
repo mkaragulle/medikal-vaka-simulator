@@ -426,6 +426,7 @@ function TusPearlStudyScreen({
   const [motion, setMotion] = useState('idle');
   const [studySession, setStudySession] = useState(null);
   const [editorState, setEditorState] = useState({ open: false, mode: 'create', card: null, defaultCatalogId: '' });
+  const [confirmDeleteState, setConfirmDeleteState] = useState({ open: false, card: null, context: 'library' });
   const [catalogMenuOpen, setCatalogMenuOpen] = useState(false);
   const [branchMenuOpen, setBranchMenuOpen] = useState(false);
   const [branchMenuPosition, setBranchMenuPosition] = useState({ placement: 'popover', top: 0, left: 0, width: 300 });
@@ -434,7 +435,8 @@ function TusPearlStudyScreen({
   const branchMenuTriggerRef = useRef(null);
   const branchMenuRef = useRef(null);
 
-  const allCards = useMemo(() => [...SYSTEM_PEARL_CARDS, ...(pearlState.userPearlCards || [])], [pearlState.userPearlCards]);
+  const hiddenSet = useMemo(() => toSet(pearlState.hiddenPearlCardIds), [pearlState.hiddenPearlCardIds]);
+  const allCards = useMemo(() => ([...SYSTEM_PEARL_CARDS, ...(pearlState.userPearlCards || [])].filter((card) => !hiddenSet.has(card.id))), [hiddenSet, pearlState.userPearlCards]);
   const cardById = useMemo(() => new Map(allCards.map((card) => [card.id, card])), [allCards]);
   const favoriteSet = useMemo(() => toSet(pearlState.favoritePearlCardIds), [pearlState.favoritePearlCardIds]);
   const wrongSet = useMemo(() => toSet(pearlState.wrongPearlCardIds), [pearlState.wrongPearlCardIds]);
@@ -827,6 +829,15 @@ function TusPearlStudyScreen({
     setEditorState({ open: false, mode: 'create', card: null, defaultCatalogId: '' });
   }
 
+  function requestCardDelete(card, context = 'library') {
+    if (!card) return;
+    setConfirmDeleteState({ open: true, card, context });
+  }
+
+  function closeDeleteConfirm() {
+    setConfirmDeleteState({ open: false, card: null, context: 'library' });
+  }
+
   function saveUserCard(card, { catalogId = '' } = {}) {
     commitState((current) => {
       const nextCatalogs = (current.customCatalogs || []).map((catalog) => (
@@ -844,16 +855,21 @@ function TusPearlStudyScreen({
     lastDeckSignature.current = '';
   }
 
-  function deleteUserCard(cardId) {
+  function deleteCard(card) {
+    if (!card?.id) return;
     commitState((current) => ({
       ...current,
-      userPearlCards: removeUserPearlCard(current.userPearlCards, cardId),
-      favoritePearlCardIds: removeId(current.favoritePearlCardIds, cardId),
-      wrongPearlCardIds: removeId(current.wrongPearlCardIds, cardId),
-      knownPearlCardIds: removeId(current.knownPearlCardIds, cardId),
-      reviewPearlCardIds: removeId(current.reviewPearlCardIds, cardId),
-      customCatalogs: (current.customCatalogs || []).map((catalog) => ({ ...catalog, cardIds: removeId(catalog.cardIds, cardId) })),
+      userPearlCards: card.source === 'user' ? removeUserPearlCard(current.userPearlCards, card.id) : current.userPearlCards,
+      hiddenPearlCardIds: card.source === 'user' ? removeId(current.hiddenPearlCardIds, card.id) : addId(current.hiddenPearlCardIds, card.id),
+      favoritePearlCardIds: removeId(current.favoritePearlCardIds, card.id),
+      wrongPearlCardIds: removeId(current.wrongPearlCardIds, card.id),
+      knownPearlCardIds: removeId(current.knownPearlCardIds, card.id),
+      reviewPearlCardIds: removeId(current.reviewPearlCardIds, card.id),
+      customCatalogs: (current.customCatalogs || []).map((catalog) => ({ ...catalog, cardIds: removeId(catalog.cardIds, card.id) })),
     }));
+    if (editorState.card?.id === card.id) closeEditor();
+    closeDeleteConfirm();
+    setCatalogMenuOpen(false);
     lastDeckSignature.current = '';
   }
 
@@ -1039,7 +1055,10 @@ function TusPearlStudyScreen({
                           </div>
                           <div className="pearl-card-row-actions catalog-card-action">
                             {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
-                            <button type="button" className="btn btn-icon quiet catalog-remove-action" onClick={() => removeCardFromCatalog(card.id)} aria-label="Kartı katalogdan çıkar">
+                            <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={() => requestCardDelete(card, 'catalog-list')} aria-label="Kartı sil" title="Kartı sil">
+                              <Icon name="Trash2" />
+                            </button>
+                            <button type="button" className="btn btn-icon quiet catalog-remove-action" onClick={() => removeCardFromCatalog(card.id)} aria-label="Kartı katalogdan çıkar" title="Katalogdan çıkar">
                               <Icon name="X" />
                             </button>
                           </div>
@@ -1086,6 +1105,9 @@ function TusPearlStudyScreen({
                           ) : (
                             <button type="button" className="btn btn-secondary compact catalog-add-action" onClick={() => addCardToCatalog(card.id)}>Kataloğa ekle</button>
                           )}
+                          <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={() => requestCardDelete(card, 'library-list')} aria-label="Kartı sil" title="Kartı sil">
+                            <Icon name="Trash2" />
+                          </button>
                         </div>
                       </article>
                     ))}
@@ -1292,22 +1314,54 @@ function TusPearlStudyScreen({
                       <Icon name="Notes" size={15} />
                       <span><strong>Kartı Düzenle</strong></span>
                     </button>
-                    <button type="button" onClick={() => deleteUserCard(activeCard.id)}>
+                    <button type="button" onClick={() => requestCardDelete(activeCard, 'study-tools')}>
                       <Icon name="Trash2" size={15} />
                       <span><strong>Kartı Sil</strong></span>
                     </button>
                   </>
                 ) : activeCard ? (
-                  <button type="button" onClick={() => openEditor({ mode: 'copy', card: activeCard, defaultCatalogId: activeCatalogId })}>
-                    <Icon name="User" size={15} />
-                    <span><strong>Kendi Kartıma Kopyala</strong></span>
-                  </button>
+                  <>
+                    <button type="button" onClick={() => openEditor({ mode: 'copy', card: activeCard, defaultCatalogId: activeCatalogId })}>
+                      <Icon name="User" size={15} />
+                      <span><strong>Kendi Kartıma Kopyala</strong></span>
+                    </button>
+                    <button type="button" onClick={() => requestCardDelete(activeCard, 'study-tools')}>
+                      <Icon name="Trash2" size={15} />
+                      <span><strong>Kartı Sil</strong></span>
+                    </button>
+                  </>
                 ) : null}
               </div>
             </section>
           </aside>
         </div>
       )}
+
+      {confirmDeleteState.open && confirmDeleteState.card ? (
+        <div className="pearl-confirm-overlay" role="presentation" onClick={closeDeleteConfirm}>
+          <div className="pearl-confirm-dialog card-surface" role="alertdialog" aria-modal="true" aria-labelledby="pearl-delete-title" aria-describedby="pearl-delete-description" onClick={(event) => event.stopPropagation()}>
+            <div className="pearl-confirm-dialog-head">
+              <span className="pearl-confirm-icon" aria-hidden="true"><Icon name="Trash2" size={18} /></span>
+              <div>
+                <h3 id="pearl-delete-title">Kartı sil</h3>
+                <p id="pearl-delete-description">
+                  {confirmDeleteState.card.source === 'user'
+                    ? 'Bu kişisel kart kalıcı olarak silinecek ve kayıtlı olduğu kataloglardan da kaldırılacak.'
+                    : 'Bu sistem kartı senin görünümünden kaldırılacak; kataloglardan ve çalışma listelerinden de çıkarılacak.'}
+                </p>
+              </div>
+            </div>
+            <div className="pearl-confirm-card-preview">
+              <span className="catalog-card-branch">{getBranchName(confirmDeleteState.card.branchId)}</span>
+              <strong><GlossaryText text={confirmDeleteState.card.front} enabled revealMode="preAnswer" maxTerms={2} /></strong>
+            </div>
+            <div className="pearl-confirm-actions">
+              <button type="button" className="btn btn-secondary compact" onClick={closeDeleteConfirm}>Vazgeç</button>
+              <button type="button" className="btn btn-primary compact pearl-danger-button" onClick={() => deleteCard(confirmDeleteState.card)}>Sil</button>
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       <TusPearlCardEditor
         open={editorState.open}

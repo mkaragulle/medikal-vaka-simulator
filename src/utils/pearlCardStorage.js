@@ -9,6 +9,7 @@ export const defaultPearlState = {
   reviewPearlCardIds: [],
   customCatalogs: [],
   userPearlCards: [],
+  hiddenPearlCardIds: [],
   recentStudyStarts: {},
 };
 
@@ -105,6 +106,7 @@ export function normalizePearlState(value = {}) {
     reviewPearlCardIds: normalizeIds(value.reviewPearlCardIds),
     customCatalogs: normalizeCatalogs(value.customCatalogs),
     userPearlCards: normalizeUserCards(value.userPearlCards),
+    hiddenPearlCardIds: normalizeIds(value.hiddenPearlCardIds),
     recentStudyStarts: normalizeRecentStudyStarts(value.recentStudyStarts),
   };
 }
