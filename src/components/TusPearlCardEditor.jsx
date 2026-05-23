@@ -1,4 +1,4 @@
-import { memo, useEffect, useMemo, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Icon } from './ui.jsx';
 import { branches } from '../data/branches.js';
@@ -63,6 +63,141 @@ function pickAdvancedFields(source) {
 
 function countFilledAdvancedFields(source) {
   return ADVANCED_FIELDS.filter((key) => String(source?.[key] || '').trim()).length;
+}
+
+
+
+function MinimalDropdown({
+  value,
+  options = [],
+  onChange,
+  placeholder = 'Seç',
+  ariaLabel = 'Seçim',
+}) {
+  const [open, setOpen] = useState(false);
+  const [menuStyle, setMenuStyle] = useState(null);
+  const rootRef = useRef(null);
+  const triggerRef = useRef(null);
+  const menuRef = useRef(null);
+
+  const selectedOption = useMemo(
+    () => options.find((option) => option.value === value) || null,
+    [options, value],
+  );
+
+  const updateMenuPosition = useCallback(() => {
+    const trigger = triggerRef.current;
+    if (!trigger || typeof window === 'undefined') return;
+
+    const rect = trigger.getBoundingClientRect();
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const margin = 12;
+    const gap = 8;
+    const width = Math.min(rect.width, viewportWidth - margin * 2);
+    const left = Math.max(margin, Math.min(rect.left, viewportWidth - width - margin));
+    const below = viewportHeight - rect.bottom - margin;
+    const above = rect.top - margin;
+    const openUp = below < 220 && above > below;
+    const availableHeight = openUp ? above - gap : below - gap;
+    const maxHeight = Math.max(160, Math.min(280, availableHeight));
+
+    setMenuStyle({
+      left: `${left}px`,
+      width: `${width}px`,
+      maxHeight: `${maxHeight}px`,
+      ...(openUp
+        ? { top: 'auto', bottom: `${Math.max(margin, viewportHeight - rect.top + gap)}px` }
+        : { top: `${rect.bottom + gap}px`, bottom: 'auto' }),
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!open) {
+      setMenuStyle(null);
+      return undefined;
+    }
+
+    updateMenuPosition();
+
+    const handlePointerDown = (event) => {
+      const target = event.target;
+      if (!rootRef.current?.contains(target) && !menuRef.current?.contains(target)) {
+        setOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+
+    const handleViewportChange = () => updateMenuPosition();
+
+    window.addEventListener('pointerdown', handlePointerDown);
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('resize', handleViewportChange);
+    window.addEventListener('scroll', handleViewportChange, true);
+
+    return () => {
+      window.removeEventListener('pointerdown', handlePointerDown);
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('resize', handleViewportChange);
+      window.removeEventListener('scroll', handleViewportChange, true);
+    };
+  }, [open, updateMenuPosition]);
+
+  const menu = open && menuStyle && typeof document !== 'undefined'
+    ? createPortal(
+        <div
+          className="pearl-min-dropdown-menu"
+          role="listbox"
+          aria-label={ariaLabel}
+          ref={menuRef}
+          style={menuStyle}
+        >
+          {options.map((option) => {
+            const active = option.value === value;
+            return (
+              <button
+                key={option.value}
+                type="button"
+                className={`pearl-min-dropdown-option ${active ? 'active' : ''}`.trim()}
+                role="option"
+                aria-selected={active}
+                onClick={() => {
+                  onChange?.(option.value);
+                  setOpen(false);
+                }}
+              >
+                <span>{option.label}</span>
+                {active ? <Icon name="CheckCircle" size={16} /> : null}
+              </button>
+            );
+          })}
+        </div>,
+        document.body,
+      )
+    : null;
+
+  return (
+    <>
+      <div className={`pearl-min-dropdown ${open ? 'open' : ''}`} ref={rootRef}>
+        <button
+          type="button"
+          className="pearl-min-dropdown-trigger"
+          ref={triggerRef}
+          onClick={() => setOpen((current) => !current)}
+          aria-haspopup="listbox"
+          aria-expanded={open}
+          aria-label={ariaLabel}
+        >
+          <span>{selectedOption?.label || placeholder}</span>
+          <Icon name="ChevronDown" size={16} />
+        </button>
+      </div>
+      {menu}
+    </>
+  );
 }
 
 function TusPearlCardEditor({
@@ -211,7 +346,6 @@ function TusPearlCardEditor({
         <header className="pearl-min-header">
           <div className="pearl-min-title">
             <h2>{title}</h2>
-            <p>Gerekli alanları doldur.</p>
           </div>
           <button type="button" className="btn btn-icon quiet pearl-min-close" onClick={onClose} aria-label="Kart editörünü kapat">
             <Icon name="X" />
@@ -257,22 +391,34 @@ function TusPearlCardEditor({
             <div className="pearl-min-meta">
               <label className="pearl-min-field pearl-min-select">
                 <span>Branş</span>
-                <select value={form.branchId} onChange={(event) => updateField('branchId', event.target.value)}>
-                  {branches.map((branch) => <option key={branch.id} value={branch.id}>{branch.shortName || branch.name}</option>)}
-                </select>
+                <MinimalDropdown
+                  value={form.branchId}
+                  onChange={(value) => updateField('branchId', value)}
+                  ariaLabel="Branş seç"
+                  options={branches.map((branch) => ({
+                    value: branch.id,
+                    label: branch.shortName || branch.name,
+                  }))}
+                />
               </label>
 
               <label className="pearl-min-field pearl-min-select">
                 <span>Katalog</span>
-                <select value={form.catalogId} onChange={(event) => updateField('catalogId', event.target.value)}>
-                  <option value="">Kendi kartlarım</option>
-                  {catalogs.map((catalog) => <option key={catalog.id} value={catalog.id}>{catalog.name}</option>)}
-                </select>
+                <MinimalDropdown
+                  value={form.catalogId}
+                  onChange={(value) => updateField('catalogId', value)}
+                  ariaLabel="Katalog seç"
+                  placeholder="Kendi kartlarım"
+                  options={[
+                    { value: '', label: 'Kendi kartlarım' },
+                    ...catalogs.map((catalog) => ({ value: catalog.id, label: catalog.name })),
+                  ]}
+                />
               </label>
 
               <button type="button" className="pearl-min-advanced-trigger" onClick={openAdvancedDialog}>
                 <span>Opsiyonel alanlar</span>
-                <b>{filledAdvancedCount}</b>
+                <Icon name="ChevronRight" size={16} />
               </button>
             </div>
 
@@ -310,7 +456,6 @@ function TusPearlCardEditor({
         <header className="pearl-min-sub-header">
           <div className="pearl-min-title">
             <h3>Opsiyonel alanlar</h3>
-            <p>İsteğe bağlı alanlar.</p>
           </div>
           <button type="button" className="btn btn-icon quiet pearl-min-close" onClick={closeAdvancedDialog} aria-label="Opsiyonel alanları kapat">
             <Icon name="X" />
