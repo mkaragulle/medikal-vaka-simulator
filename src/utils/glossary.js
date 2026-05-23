@@ -9464,6 +9464,68 @@ export const branchGlossaryTerms = {};
 
 export const defaultGlossaryTerms = globalGlossaryTerms;
 
+const STATIC_GLOSSARY_SOURCES = [
+  ...TUS_GLOSSARY_ADVANCED_TERMS,
+  ...TUS_GLOSSARY_EXPANDED_TERMS,
+  ...TUS_GLOSSARY_SUPPLEMENTAL_TERMS,
+  ...TUS_GLOSSARY_SCIENTIFIC_TERMS,
+  ...TUS_GLOSSARY_NESTED_CLINICAL_TERMS,
+  ...TUS_GLOSSARY_CASE_DERIVED_TERMS,
+  ...globalGlossaryTerms,
+];
+
+const NORMALIZED_GLOSSARY_CACHE = new Map();
+const MAX_NORMALIZED_GLOSSARY_CACHE_SIZE = 24;
+
+function rememberNormalizedGlossary(cacheKey, value) {
+  try {
+    Object.defineProperty(value, '__glossarySignature', {
+      value: cacheKey,
+      enumerable: false,
+      configurable: true,
+    });
+  } catch (_) {
+    // Cache signature is an optimization hint only.
+  }
+
+  NORMALIZED_GLOSSARY_CACHE.set(cacheKey, value);
+  if (NORMALIZED_GLOSSARY_CACHE.size > MAX_NORMALIZED_GLOSSARY_CACHE_SIZE) {
+    const oldestKey = NORMALIZED_GLOSSARY_CACHE.keys().next().value;
+    NORMALIZED_GLOSSARY_CACHE.delete(oldestKey);
+  }
+  return value;
+}
+
+function buildNormalizedGlossary(entries = []) {
+  const byLabel = new Map();
+
+  entries.forEach((entry) => {
+    if (!entry?.term || !(entry?.definition || entry?.shortDefinition || entry?.previewDefinition)) return;
+    const normalized = normalizeGlossaryText(entry.term);
+    const normalizedEntry = normalizeEntry(entry);
+    if (!normalizedEntry.aliases?.length) return;
+
+    if (!byLabel.has(normalized)) {
+      byLabel.set(normalized, normalizedEntry);
+      return;
+    }
+
+    const existing = byLabel.get(normalized);
+    const aliases = Array.from(new Set([...(existing.aliases || []), ...(normalizedEntry.aliases || [])]))
+      .sort((a, b) => b.length - a.length);
+    byLabel.set(normalized, normalizeEntry({ ...existing, aliases }));
+  });
+
+  return Array.from(byLabel.values()).sort((a, b) => b.term.length - a.term.length);
+}
+
+function getExtraTermsCacheKey(extraTerms = []) {
+  if (!Array.isArray(extraTerms) || !extraTerms.length) return '';
+  return extraTerms
+    .map((entry) => `${entry?.id || ''}:${entry?.term || ''}:${entry?.aliases?.length || 0}`)
+    .join('|');
+}
+
 function normalizeEntry(entry = {}) {
   const aliases = Array.from(new Set([entry.term, ...(entry.aliases || [])].filter(Boolean)))
     .flatMap(getGlossaryAliasVariants)
@@ -9510,37 +9572,27 @@ export function getBranchGlossaryTerms(branchId) {
   return branchGlossaryTerms[branchId] || [];
 }
 
-export function getGlossaryTerms(extraTerms = [], options = {}) {
-  const branchTerms = options.branchId ? getBranchGlossaryTerms(options.branchId) : [];
+export function getGlossaryTerms(extraTerms = null, options = {}) {
+  const branchId = options?.branchId || '';
+  const branchTerms = branchId ? getBranchGlossaryTerms(branchId) : [];
+  const hasBranchTerms = branchTerms.length > 0;
+  const hasExtraTerms = Array.isArray(extraTerms) && extraTerms.length > 0;
+  const extraKey = getExtraTermsCacheKey(extraTerms);
+  const cacheKey = `${branchId || 'global'}::${hasBranchTerms ? branchTerms.length : 0}::${extraKey}`;
+
+  if (!hasBranchTerms && !hasExtraTerms && NORMALIZED_GLOSSARY_CACHE.has(cacheKey)) {
+    return NORMALIZED_GLOSSARY_CACHE.get(cacheKey);
+  }
+
+  if ((hasBranchTerms || hasExtraTerms) && NORMALIZED_GLOSSARY_CACHE.has(cacheKey)) {
+    return NORMALIZED_GLOSSARY_CACHE.get(cacheKey);
+  }
+
   const merged = [
-    ...TUS_GLOSSARY_ADVANCED_TERMS,
-    ...TUS_GLOSSARY_EXPANDED_TERMS,
-    ...TUS_GLOSSARY_SUPPLEMENTAL_TERMS,
-    ...TUS_GLOSSARY_SCIENTIFIC_TERMS,
-    ...TUS_GLOSSARY_NESTED_CLINICAL_TERMS,
-    ...TUS_GLOSSARY_CASE_DERIVED_TERMS,
-    ...globalGlossaryTerms,
+    ...STATIC_GLOSSARY_SOURCES,
     ...branchTerms,
-    ...(Array.isArray(extraTerms) ? extraTerms : []),
+    ...(hasExtraTerms ? extraTerms : []),
   ];
 
-  const byLabel = new Map();
-  merged.forEach((entry) => {
-    if (!entry?.term || !(entry?.definition || entry?.shortDefinition)) return;
-    const normalized = normalizeGlossaryText(entry.term);
-    const normalizedEntry = normalizeEntry(entry);
-    if (!normalizedEntry.aliases?.length) return;
-
-    if (!byLabel.has(normalized)) {
-      byLabel.set(normalized, normalizedEntry);
-      return;
-    }
-
-    const existing = byLabel.get(normalized);
-    const aliases = Array.from(new Set([...(existing.aliases || []), ...(normalizedEntry.aliases || [])]))
-      .sort((a, b) => b.length - a.length);
-    byLabel.set(normalized, normalizeEntry({ ...existing, aliases }));
-  });
-
-  return Array.from(byLabel.values()).sort((a, b) => b.term.length - a.term.length);
+  return rememberNormalizedGlossary(cacheKey, buildNormalizedGlossary(merged));
 }

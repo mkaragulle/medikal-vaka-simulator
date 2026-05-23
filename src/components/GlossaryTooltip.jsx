@@ -134,11 +134,66 @@ function isInsideAnyGlossaryTooltip(node) {
   return tooltipRoot.contains(node);
 }
 
-const MATCHER_CACHE = new Map();
+function getClosestFloatingTooltip(node) {
+  if (!node || typeof node.closest !== 'function') return null;
+  return node.closest('[data-glossary-tooltip-owner]');
+}
+
+function isInsideOwnedFloatingTooltip(node, ownerId) {
+  const floating = getClosestFloatingTooltip(node);
+  return Boolean(floating && ownerId && floating.getAttribute('data-glossary-tooltip-owner') === ownerId);
+}
+
+function getClosestFloatingTooltipLevel(node) {
+  const floating = getClosestFloatingTooltip(node);
+  if (!floating) return null;
+  const raw = floating.getAttribute('data-nesting-level');
+  const level = Number(raw);
+  return Number.isFinite(level) ? level : null;
+}
+
+const GLOSSARY_OPEN_EVENT = 'klinikiq-glossary-term-open';
+
+const MATCHER_CACHE = new WeakMap();
+const SPLIT_CACHE = new Map();
+const MAX_SPLIT_CACHE_SIZE = 600;
+
+function rememberSplitCache(key, value) {
+  SPLIT_CACHE.set(key, value);
+  if (SPLIT_CACHE.size > MAX_SPLIT_CACHE_SIZE) {
+    const oldestKey = SPLIT_CACHE.keys().next().value;
+    SPLIT_CACHE.delete(oldestKey);
+  }
+  return value;
+}
+
+function getTermsSignature(terms = []) {
+  if (!Array.isArray(terms)) return 'no-terms';
+  if (terms.__glossarySignature) return terms.__glossarySignature;
+  const signature = `${terms.length}:${terms.slice(0, 24).map((term) => term?.id || term?.term || '').join('|')}`;
+  try {
+    Object.defineProperty(terms, '__glossarySignature', { value: signature, enumerable: false });
+  } catch (_) {
+    // Frozen arrays still work; the computed signature is returned without mutation.
+  }
+  return signature;
+}
+
+function isLikelyGlossaryCandidateText(source = '') {
+  const text = String(source || '').trim();
+  if (text.length < 3) return false;
+  if (!/[\p{L}]/u.test(text)) return false;
+
+  // Numeric lab/vital cells are very common in investigation tables. They should
+  // not pay the cost of the full medical-term matcher.
+  if (/^[\d\s.,:+/<>=%°µμ\-–()]+$/u.test(text)) return false;
+
+  return true;
+}
 
 function makeMatcher(terms = []) {
-  const cacheKey = terms.map((term) => `${term.id || term.term}:${term.aliases?.length || 0}`).join('|');
-  if (MATCHER_CACHE.has(cacheKey)) return MATCHER_CACHE.get(cacheKey);
+  if (!Array.isArray(terms) || !terms.length) return null;
+  if (MATCHER_CACHE.has(terms)) return MATCHER_CACHE.get(terms);
 
   const aliasEntries = [];
   terms.forEach((entry) => {
@@ -157,7 +212,7 @@ function makeMatcher(terms = []) {
   ).sort((a, b) => b.alias.length - a.alias.length || b.normalized.length - a.normalized.length);
 
   if (!deduped.length) {
-    MATCHER_CACHE.set(cacheKey, null);
+    MATCHER_CACHE.set(terms, null);
     return null;
   }
 
@@ -173,15 +228,20 @@ function makeMatcher(terms = []) {
     regex: new RegExp(`(^|[^\\p{L}\\p{N}_])(${pattern})(${TURKISH_SUFFIX_PATTERN})?(?=$|[^\\p{L}\\p{N}_])`, 'giu'),
     aliasMap,
   };
-  MATCHER_CACHE.set(cacheKey, matcher);
+  MATCHER_CACHE.set(terms, matcher);
   return matcher;
 }
 
 function splitByGlossary(text = '', terms = [], maxTerms = DEFAULT_MAX_TERMS_PER_TEXT) {
   const source = String(text);
-  const matcher = makeMatcher(terms);
   const limit = Number.isFinite(maxTerms) ? Math.max(0, maxTerms) : DEFAULT_MAX_TERMS_PER_TEXT;
-  if (!source || !matcher || limit <= 0) return [{ type: 'text', value: source }];
+  if (!source || !Array.isArray(terms) || !terms.length || limit <= 0 || !isLikelyGlossaryCandidateText(source)) return [{ type: 'text', value: source }];
+
+  const cacheKey = `${getTermsSignature(terms)}::${limit}::${source}`;
+  if (SPLIT_CACHE.has(cacheKey)) return SPLIT_CACHE.get(cacheKey);
+
+  const matcher = makeMatcher(terms);
+  if (!matcher) return rememberSplitCache(cacheKey, [{ type: 'text', value: source }]);
 
   const parts = [];
   const usedTerms = new Set();
@@ -189,6 +249,7 @@ function splitByGlossary(text = '', terms = [], maxTerms = DEFAULT_MAX_TERMS_PER
   let lastIndex = 0;
   let match;
 
+  matcher.regex.lastIndex = 0;
   while ((match = matcher.regex.exec(source)) !== null) {
     const prefix = match[1] || '';
     const baseValue = match[2] || '';
@@ -216,7 +277,7 @@ function splitByGlossary(text = '', terms = [], maxTerms = DEFAULT_MAX_TERMS_PER
   }
 
   if (lastIndex < source.length) parts.push({ type: 'text', value: source.slice(lastIndex) });
-  return parts.length ? parts : [{ type: 'text', value: source }];
+  return rememberSplitCache(cacheKey, parts.length ? parts : [{ type: 'text', value: source }]);
 }
 
 function getAnchorRect(referenceEl) {
@@ -356,6 +417,7 @@ function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFlo
       data-placement={position.placement}
       data-reveal-mode={revealMode}
       data-nesting-level={nestingLevel}
+      data-glossary-tooltip-owner={id}
       data-klinikiq-floating-tooltip="true"
       onPointerEnter={onFloatingEnter}
       onPointerLeave={onFloatingLeave}
@@ -540,13 +602,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
     setOpen(false);
   }, [clearCloseTimer]);
 
-  const scheduleClose = useCallback((event) => {
-    const nextTarget = event?.relatedTarget;
-    // Moving from a parent tooltip into a child tooltip should keep the parent
-    // alive. This is what makes tooltip-inside-tooltip previews usable on
-    // desktop without a brittle fixed nesting-depth limit.
-    if (nextTarget && isInsideAnyGlossaryTooltip(nextTarget)) return;
-
+  const scheduleCloseSoon = useCallback(() => {
     if (typeof window === 'undefined') {
       setOpen(false);
       return;
@@ -555,10 +611,53 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
     closeTimerRef.current = window.setTimeout(() => setOpen(false), CLOSE_DELAY_MS);
   }, [clearCloseTimer]);
 
+  const scheduleCloseFromTrigger = useCallback((event) => {
+    const nextTarget = event?.relatedTarget;
+    const triggerEl = triggerRef.current;
+
+    // Keep this term open only when the pointer/focus moves from the trigger
+    // into its own floating card. Moving to another glossary term inside the
+    // same parent tooltip must close this child preview; otherwise sibling
+    // nested tooltips remain stuck on screen.
+    if (nextTarget && (triggerEl?.contains(nextTarget) || isInsideOwnedFloatingTooltip(nextTarget, id))) return;
+    scheduleCloseSoon();
+  }, [id, scheduleCloseSoon]);
+
+  const scheduleCloseFromFloating = useCallback((event) => {
+    const nextTarget = event?.relatedTarget;
+    const triggerEl = triggerRef.current;
+    if (nextTarget && (triggerEl?.contains(nextTarget) || isInsideOwnedFloatingTooltip(nextTarget, id))) return;
+
+    // Parent cards should stay open while the pointer moves from the parent
+    // floating card into a deeper child floating card. The reverse movement
+    // (child -> parent/sibling) should close the child, preventing stale nested
+    // popovers from staying visible.
+    const targetLevel = nextTarget ? getClosestFloatingTooltipLevel(nextTarget) : null;
+    if (targetLevel !== null && targetLevel > Number(nestingLevel || 0)) return;
+
+    scheduleCloseSoon();
+  }, [id, nestingLevel, scheduleCloseSoon]);
+
   const openNow = useCallback(() => {
     clearCloseTimer();
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent(GLOSSARY_OPEN_EVENT, { detail: { id, nestingLevel } }));
+    }
     setOpen(true);
-  }, [clearCloseTimer]);
+  }, [clearCloseTimer, id, nestingLevel]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+    const handleOtherTermOpen = (event) => {
+      const detail = event?.detail || {};
+      if (detail.id && detail.id !== id && Number(detail.nestingLevel || 0) === Number(nestingLevel || 0)) {
+        clearCloseTimer();
+        setOpen(false);
+      }
+    };
+    window.addEventListener(GLOSSARY_OPEN_EVENT, handleOtherTermOpen);
+    return () => window.removeEventListener(GLOSSARY_OPEN_EVENT, handleOtherTermOpen);
+  }, [clearCloseTimer, id, nestingLevel]);
 
   useEffect(() => () => clearCloseTimer(), [clearCloseTimer]);
 
@@ -573,25 +672,35 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
       aria-describedby={open ? id : undefined}
       aria-label={`${children}: ${description}`}
       onMouseEnter={openNow}
-      onMouseLeave={scheduleClose}
+      onMouseLeave={scheduleCloseFromTrigger}
       onPointerEnter={(event) => {
         if (event.pointerType === 'mouse') openNow();
       }}
       onPointerLeave={(event) => {
-        if (event.pointerType === 'mouse') scheduleClose(event);
+        if (event.pointerType === 'mouse') scheduleCloseFromTrigger(event);
       }}
       onFocus={openNow}
-      onBlur={scheduleClose}
+      onBlur={scheduleCloseFromTrigger}
       onClick={(event) => {
         event.stopPropagation();
         clearCloseTimer();
-        setOpen((current) => !current);
+        setOpen((current) => {
+          if (!current && typeof window !== 'undefined') {
+            window.dispatchEvent(new CustomEvent(GLOSSARY_OPEN_EVENT, { detail: { id, nestingLevel } }));
+          }
+          return !current;
+        });
       }}
       onKeyDown={(event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
           clearCloseTimer();
-          setOpen((current) => !current);
+          setOpen((current) => {
+            if (!current && typeof window !== 'undefined') {
+              window.dispatchEvent(new CustomEvent(GLOSSARY_OPEN_EVENT, { detail: { id, nestingLevel } }));
+            }
+            return !current;
+          });
         }
         if (event.key === 'Escape') close();
       }}
@@ -605,7 +714,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
         nestingLevel={nestingLevel}
         onRequestClose={close}
         onFloatingEnter={openNow}
-        onFloatingLeave={scheduleClose}
+        onFloatingLeave={scheduleCloseFromFloating}
       >
         <GlossaryCard entry={resolvedEntry} revealMode={revealMode} excludedTermKeys={excludedTermKeys} nestingLevel={nestingLevel} />
       </FloatingTooltip>
@@ -616,27 +725,45 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
 function GlossaryText({
   text = '',
   enabled = true,
-  terms: extraTerms = [],
+  terms: extraTerms = null,
   branchId = '',
   revealMode = 'postAnswer',
   maxTerms = undefined,
-  excludedTermKeys = [],
+  excludedTermKeys = null,
   nestingLevel = 0,
 }) {
   const excludedKey = Array.isArray(excludedTermKeys)
     ? excludedTermKeys.map((item) => normalizeGlossaryText(item)).filter(Boolean).sort().join('|')
     : '';
+  const extraTermsKey = Array.isArray(extraTerms) && extraTerms.length
+    ? extraTerms.map((term) => `${term?.id || ''}:${term?.term || ''}:${term?.aliases?.length || 0}`).join('|')
+    : '';
   const terms = useMemo(() => {
+    if (!enabled) return [];
+    const baseTerms = getGlossaryTerms(extraTerms, { branchId });
+    if (!excludedKey) return baseTerms;
+
     const excluded = new Set((Array.isArray(excludedTermKeys) ? excludedTermKeys : []).map((item) => normalizeGlossaryText(item)).filter(Boolean));
-    return getGlossaryTerms(extraTerms, { branchId }).filter((term) => {
+    const filtered = baseTerms.filter((term) => {
       const keys = getEntryKeys(term);
       return !keys.some((key) => excluded.has(key));
     });
-  }, [extraTerms, branchId, excludedKey]);
-  const effectiveMaxTerms = maxTerms ?? (revealMode === 'preAnswer' || revealMode === 'neutral' ? PREANSWER_MAX_TERMS_PER_TEXT : DEFAULT_MAX_TERMS_PER_TEXT);
-  const parts = useMemo(() => splitByGlossary(text, enabled ? terms : [], effectiveMaxTerms), [text, enabled, terms, effectiveMaxTerms]);
 
-  if (!enabled) return <span className="glossary-text-flow">{text}</span>;
+    try {
+      Object.defineProperty(filtered, '__glossarySignature', {
+        value: `${getTermsSignature(baseTerms)}::exclude:${excludedKey}`,
+        enumerable: false,
+      });
+    } catch (_) {
+      // Non-critical cache hint.
+    }
+    return filtered;
+  }, [enabled, extraTermsKey, branchId, excludedKey]);
+  const effectiveMaxTerms = maxTerms ?? (revealMode === 'preAnswer' || revealMode === 'neutral' ? PREANSWER_MAX_TERMS_PER_TEXT : DEFAULT_MAX_TERMS_PER_TEXT);
+  const sourceText = String(text || '');
+  const parts = useMemo(() => splitByGlossary(sourceText, enabled ? terms : [], effectiveMaxTerms), [sourceText, enabled, terms, effectiveMaxTerms]);
+
+  if (!enabled) return <span className="glossary-text-flow">{sourceText}</span>;
 
   return (
     <span className="glossary-text-flow" data-nesting-level={nestingLevel}>
