@@ -1,0 +1,619 @@
+/* ========================================================================== 
+   V299 — KlinikIQ canonical theme bridge
+   Goal: token-driven dark surfaces, readable controls and stable contrast across
+   dashboard, personal review, TUS Spot, Hap Kart, case, glossary and overlays.
+   V299 scope: keep legacy behavior stable while moving dark/light surfaces to semantic tokens.
+   ========================================================================== */
+
+:root {
+  --ki-bg: #f7faf9;
+  --ki-bg-soft: #eef6f4;
+  --ki-bg-grid: rgba(15, 23, 42, 0.035);
+  --ki-surface: #ffffff;
+  --ki-surface-elevated: #ffffff;
+  --ki-surface-soft: #f7fbfa;
+  --ki-surface-muted: #eef7f5;
+  --ki-surface-disabled: rgba(100, 116, 139, 0.11);
+  --ki-surface-selected: rgba(15, 143, 134, 0.10);
+  --ki-surface-hover: rgba(15, 143, 134, 0.075);
+  --ki-input-surface: rgba(255, 255, 255, 0.94);
+  --ki-text: #0e1b22;
+  --ki-text-secondary: #334b57;
+  --ki-text-muted: #647983;
+  --ki-text-disabled: #7d919a;
+  --ki-border: rgba(15, 23, 42, 0.09);
+  --ki-border-strong: rgba(15, 118, 110, 0.24);
+  --ki-divider: rgba(15, 23, 42, 0.08);
+  --ki-accent: #0f8f86;
+  --ki-accent-strong: #0d766f;
+  --ki-accent-soft: rgba(15, 143, 134, 0.10);
+  --ki-accent-hover: rgba(15, 143, 134, 0.16);
+  --ki-control-primary-text: #031f1b;
+  --ki-control-primary-bg: linear-gradient(135deg, #14b8a6, #38bdf8);
+  --ki-control-secondary-bg: rgba(255, 255, 255, 0.72);
+  --ki-progress-gradient: linear-gradient(90deg, #14b8a6, #38bdf8);
+  --ki-chip-accent-text: #0f766e;
+  --ki-glossary-hover-text: #0f766e;
+  --ki-danger-contrast: #7f1d1d;
+  --ki-success-contrast: #047857;
+  --ki-danger: #c2413c;
+  --ki-danger-soft: rgba(254, 242, 242, 0.94);
+  --ki-success: #168a52;
+  --ki-success-soft: rgba(236, 253, 245, 0.86);
+  --ki-warning: #b7791f;
+  --ki-warning-soft: rgba(255, 251, 235, 0.88);
+  --ki-info: #2563eb;
+  --ki-info-soft: rgba(239, 246, 255, 0.90);
+  --ki-shadow-card: 0 1px 2px rgba(15, 23, 42, .06), 0 10px 28px rgba(15, 23, 42, .045);
+  --ki-shadow-elevated: 0 18px 50px rgba(15, 23, 42, .11);
+  --ki-shadow-glow: 0 0 0 1px rgba(15, 118, 110, .12), 0 14px 34px rgba(15, 23, 42, .08);
+}
+
+html[data-theme="dark"],
+html[data-theme="dark"] body,
+.app-shell[data-theme="dark"] {
+  color-scheme: dark;
+  --ki-bg: #03110f;
+  --ki-bg-soft: #07171c;
+  --ki-bg-grid: rgba(148, 163, 184, 0.030);
+  --ki-surface: #071a21;
+  --ki-surface-elevated: #0b2230;
+  --ki-surface-soft: #102a35;
+  --ki-surface-muted: #142f3a;
+  --ki-surface-disabled: rgba(148, 163, 184, 0.135);
+  --ki-surface-selected: rgba(20, 184, 166, 0.145);
+  --ki-surface-hover: rgba(45, 212, 191, 0.105);
+  --ki-input-surface: rgba(6, 22, 28, 0.88);
+  --ki-text: #f4f7fb;
+  --ki-text-secondary: #c8d3df;
+  --ki-text-muted: #9caebe;
+  --ki-text-disabled: #7f8d9d;
+  --ki-border: rgba(148, 163, 184, 0.18);
+  --ki-border-strong: rgba(94, 234, 212, 0.28);
+  --ki-divider: rgba(148, 163, 184, 0.14);
+  --ki-accent: #16b8a6;
+  --ki-accent-strong: #5eead4;
+  --ki-accent-soft: rgba(20, 184, 166, 0.14);
+  --ki-accent-hover: rgba(20, 184, 166, 0.22);
+  --ki-control-primary-text: #021715;
+  --ki-control-primary-bg: linear-gradient(135deg, #5eead4, #38bdf8);
+  --ki-control-secondary-bg: rgba(16, 42, 53, 0.72);
+  --ki-progress-gradient: linear-gradient(90deg, #5eead4, #38bdf8);
+  --ki-chip-accent-text: #99f6e4;
+  --ki-glossary-hover-text: #ccfbf1;
+  --ki-danger-contrast: #fecaca;
+  --ki-success-contrast: #a7f3d0;
+  --ki-danger: #f87171;
+  --ki-danger-soft: rgba(127, 29, 29, 0.34);
+  --ki-success: #34d399;
+  --ki-success-soft: rgba(6, 78, 59, 0.32);
+  --ki-warning: #fbbf24;
+  --ki-warning-soft: rgba(120, 53, 15, 0.34);
+  --ki-info: #60a5fa;
+  --ki-info-soft: rgba(30, 64, 175, 0.28);
+  --ki-shadow-card: 0 1px 0 rgba(255, 255, 255, 0.035), 0 14px 34px rgba(0, 0, 0, 0.28);
+  --ki-shadow-elevated: 0 24px 70px rgba(0, 0, 0, 0.40);
+  --ki-shadow-glow: 0 0 0 1px rgba(94, 234, 212, 0.12), 0 18px 44px rgba(0, 0, 0, 0.34);
+
+  /* compatibility aliases used by older components */
+  --bg: var(--ki-bg);
+  --bg-soft: var(--ki-bg-soft);
+  --surface: var(--ki-surface);
+  --surface-1: var(--ki-surface);
+  --surface-2: var(--ki-surface-elevated);
+  --surface-3: var(--ki-surface-soft);
+  --surface-elevated: var(--ki-surface-elevated);
+  --text-primary: var(--ki-text);
+  --text-strong: var(--ki-text);
+  --text-secondary: var(--ki-text-secondary);
+  --text-muted: var(--ki-text-muted);
+  --text-faint: var(--ki-text-disabled);
+  --border-subtle: var(--ki-border);
+  --border-medium: rgba(148, 163, 184, 0.24);
+  --border-accent: var(--ki-border-strong);
+  --accent: var(--ki-accent);
+  --accent-strong: var(--ki-accent-strong);
+  --accent-blue: #38bdf8;
+  --accent-700: var(--ki-accent);
+  --accent-800: #0f766e;
+  --danger: var(--ki-danger);
+  --success: var(--ki-success);
+  --warning: var(--ki-warning);
+  --info: var(--ki-info);
+  --shadow-card: var(--ki-shadow-card);
+  --shadow-elevated: var(--ki-shadow-elevated);
+  --shadow-hover: var(--ki-shadow-glow);
+  --shadow-color: #020617;
+  --scroll-track: rgba(2, 6, 23, 0.34);
+  --scroll-thumb: rgba(148, 163, 184, 0.34);
+  --scroll-thumb-hover: rgba(94, 234, 212, 0.34);
+}
+
+html[data-theme="dark"] body {
+  background: var(--ki-bg) !important;
+  color: var(--ki-text) !important;
+}
+
+.app-shell[data-theme="dark"] {
+  background:
+    radial-gradient(circle at 84% 0%, rgba(20, 184, 166, 0.105), transparent 330px),
+    radial-gradient(circle at 8% 20%, rgba(56, 189, 248, 0.075), transparent 310px),
+    linear-gradient(180deg, var(--ki-bg), var(--ki-bg-soft)) !important;
+  color: var(--ki-text) !important;
+}
+
+.app-shell[data-theme="dark"]::before,
+.app-shell[data-theme="dark"] .tus-hero-soft-grid,
+.app-shell[data-theme="dark"] .home-hero-v8-bg,
+.app-shell[data-theme="dark"] .tus-hero-dot-field {
+  opacity: 0.030 !important;
+  background-color: transparent !important;
+  border-color: var(--ki-bg-grid) !important;
+}
+
+html[data-theme="dark"] ::selection {
+  background: rgba(20, 184, 166, 0.34);
+  color: var(--ki-text);
+}
+
+html[data-theme="dark"] * {
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+
+html[data-theme="dark"] *::-webkit-scrollbar { width: 10px; height: 10px; }
+html[data-theme="dark"] *::-webkit-scrollbar-track { background: var(--scroll-track); }
+html[data-theme="dark"] *::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border: 2px solid transparent;
+  background-clip: content-box;
+  border-radius: 999px;
+}
+html[data-theme="dark"] *::-webkit-scrollbar-thumb:hover { background: var(--scroll-thumb-hover); background-clip: content-box; }
+
+/* Typography and text hierarchy ------------------------------------------ */
+.app-shell[data-theme="dark"] :where(h1, h2, h3, h4, h5, h6, strong, .answer-title, .case-title-copy strong, .tus-hero-title-redesign, .home-brand-title-v10) {
+  color: var(--ki-text) !important;
+}
+
+.app-shell[data-theme="dark"] :where(p, small, .section-subtitle, .branch-card-body p, .home-hero-copy-v8 p, .tus-hero-copy-redesign p, .case-list-meta-text, .detail-copy, .clinical-readable-copy, .feedback-main-copy, .feedback-explanation, .catalog-card-question) {
+  color: var(--ki-text-secondary) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.label-text, .eyebrow, .section-kicker, .case-eyebrow, .tus-pearl-back-kicker, .answer-subtitle, .tool-copy, .stat-copy small, .home-metric-card small, .wrong-full-meta span, .tus-pearl-meta-row, .catalog-card-meta, .feedback-kicker) {
+  color: var(--ki-text-muted) !important;
+}
+
+/* Canonical surfaces ------------------------------------------------------ */
+.app-shell[data-theme="dark"] :where(
+  .card-surface,
+  .question-panel,
+  .right-workspace-shell,
+  .answer-feedback-panel,
+  .case-hero-card,
+  .case-narrative-card,
+  .clinical-data-card,
+  .investigation-section,
+  .media-section,
+  .tools-panel,
+  .dashboard-aside-card,
+  .wrong-answers-panel,
+  .wrong-full-header,
+  .wrong-full-toolbar,
+  .wrong-full-list,
+  .tus-pearl-hub-panel,
+  .tus-pearl-study-shell,
+  .tus-pearl-deck,
+  .tus-pearl-catalog-manager,
+  .tus-pearl-catalog-sidebar,
+  .tus-pearl-catalog-detail,
+  .tus-pearl-catalog-create-card,
+  .home-hero-v8,
+  .home-hero-premium-v10,
+  .tus-hero-redesign,
+  .branch-card,
+  .case-list-item,
+  .professional-case-hero,
+  .professional-patient-summary-card,
+  .clinical-summary-card,
+  .patient-summary-card,
+  .ai-spot-unified-panel,
+  .ai-spot-narrative-card,
+  .ai-spot-support-data-panel,
+  .exam-results-card,
+  .exam-results-panel,
+  .auth-minimal-card,
+  .auth-minimal-feature,
+  .komite-workspace-shell,
+  .material-panel,
+  .lesson-output-panel
+) {
+  border-color: var(--ki-border) !important;
+  background:
+    linear-gradient(180deg, rgba(11, 34, 48, 0.92), rgba(7, 26, 33, 0.92)) !important;
+  color: var(--ki-text) !important;
+  box-shadow: var(--ki-shadow-card) !important;
+}
+
+.app-shell[data-theme="dark"] :where(
+  .stat-card,
+  .compact-stat-card,
+  .pro-stat-card,
+  .home-metric-card,
+  .ai-practice-stat-card,
+  .tool-state-card,
+  .tool-action-card,
+  .mode-card,
+  .clinical-callout,
+  .accordion-item,
+  .detail-copy,
+  .vital-card,
+  .patient-strip-item,
+  .summary-detail-card,
+  .patient-summary-story-block,
+  .feedback-card,
+  .feedback-panel,
+  .feedback-card-minimal,
+  .answer-feedback-summary,
+  .answer-flow-item,
+  .exam-progress-box,
+  .exam-signal-box,
+  .exam-note-feedback-card,
+  .wrong-answer-card,
+  .wrong-full-card,
+  .wrong-answer-more-row,
+  .tus-pearl-hub-stats > *,
+  .tus-pearl-action-grid > *,
+  .tus-pearl-library-card,
+  .tus-pearl-catalog-row,
+  .catalog-create-box,
+  .pearl-detail-panel,
+  .pearl-answer-panel,
+  .tus-pearl-focus-card,
+  .pearl-bridge-callout,
+  .ai-spot-feedback-choice-card,
+  .ai-spot-feedback-section-card,
+  .ai-spot-compact-data-group,
+  .ai-spot-compact-data-item,
+  .answer-option,
+  .investigation-option-card,
+  .smart-order-card,
+  .neutral-order-card,
+  .requested-test-card-head
+) {
+  border-color: var(--ki-border) !important;
+  background: linear-gradient(180deg, rgba(16, 42, 53, 0.82), rgba(8, 26, 33, 0.86)) !important;
+  color: var(--ki-text) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.20) !important;
+}
+
+.app-shell[data-theme="dark"] :where(
+  .home-metric-card-accent,
+  .tus-pearl-hub-panel,
+  .wrong-answer-more-row,
+  .mode-card.active,
+  .answer-option.selected,
+  .case-list-item.active,
+  .branch-card:hover,
+  .tool-state-card:hover:not(:disabled),
+  .answer-option:hover:not(:disabled)
+) {
+  border-color: var(--ki-border-strong) !important;
+  background: linear-gradient(180deg, rgba(20, 184, 166, 0.15), rgba(11, 34, 48, 0.90)) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.answer-option.correct, .feedback.success, .ai-spot-feedback-choice-card.is-correct, .ai-spot-feedback-option-row.is-correct) {
+  border-color: rgba(52, 211, 153, 0.38) !important;
+  background: linear-gradient(180deg, rgba(6, 78, 59, 0.34), rgba(7, 26, 33, 0.88)) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.answer-option.wrong, .feedback.danger, .ai-spot-feedback-choice-card.is-selected-wrong, .ai-spot-feedback-option-row.is-wrong) {
+  border-color: rgba(248, 113, 113, 0.38) !important;
+  background: linear-gradient(180deg, rgba(127, 29, 29, 0.34), rgba(7, 26, 33, 0.88)) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.warning, .clinical-callout.warning, .exam-signal-trap) {
+  color: var(--ki-warning) !important;
+}
+
+/* Topbar and navigation --------------------------------------------------- */
+.app-shell[data-theme="dark"] .global-topbar-v55,
+.app-shell[data-theme="dark"] .top-shell-nav {
+  border-color: rgba(148, 163, 184, 0.16) !important;
+  background: linear-gradient(180deg, rgba(7, 17, 21, 0.86), rgba(4, 14, 18, 0.74)) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+  backdrop-filter: blur(20px) saturate(135%) !important;
+}
+
+.app-shell[data-theme="dark"] .global-topbar-v55 :where(.nav-brand, .nav-stat-chip, .nav-user-chip, .nav-actions .btn, .klinikiq-theme-toggle.nav-theme-toggle, .segmented-control, .product-mode-switch, .nav-mode-switch) {
+  border-color: var(--ki-border) !important;
+  background: rgba(16, 42, 53, 0.62) !important;
+  color: var(--ki-text-secondary) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+}
+
+.app-shell[data-theme="dark"] .global-topbar-v55 :where(.nav-brand:hover, .nav-stat-chip:hover, .nav-actions .btn:hover, .klinikiq-theme-toggle.nav-theme-toggle:hover) {
+  border-color: var(--ki-border-strong) !important;
+  background: var(--ki-accent-hover) !important;
+  color: var(--ki-text) !important;
+}
+
+.app-shell[data-theme="dark"] .segmented-control button {
+  color: var(--ki-text-muted) !important;
+  background: transparent !important;
+}
+
+.app-shell[data-theme="dark"] .segmented-control button.active,
+.app-shell[data-theme="dark"] .segmented-control button[aria-pressed="true"] {
+  color: var(--ki-text) !important;
+  background: linear-gradient(180deg, rgba(20, 184, 166, 0.18), rgba(16, 42, 53, 0.88)) !important;
+  box-shadow: inset 0 0 0 1px rgba(94, 234, 212, 0.18) !important;
+}
+
+.app-shell[data-theme="dark"] .hard-mode-tab.active,
+.app-shell[data-theme="dark"] .hard-mode-active {
+  color: var(--ki-danger-contrast) !important;
+  border-color: rgba(248, 113, 113, 0.34) !important;
+  background: rgba(127, 29, 29, 0.26) !important;
+}
+
+/* Buttons, inputs, badges ------------------------------------------------- */
+.app-shell[data-theme="dark"] :where(.btn-primary, .primary-action, .answer-evaluate-btn, .ai-generate-cta, .wrong-answer-view-all-btn, .catalog-add-action) {
+  color: var(--ki-control-primary-text) !important;
+  border-color: rgba(94, 234, 212, 0.28) !important;
+  background: var(--ki-control-primary-bg) !important;
+  box-shadow: 0 12px 28px rgba(20, 184, 166, 0.20) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.btn-primary:hover, .primary-action:hover, .answer-evaluate-btn:hover, .ai-generate-cta:hover, .wrong-answer-view-all-btn:hover, .catalog-add-action:hover) {
+  color: var(--ki-control-primary-text) !important;
+  filter: saturate(1.04) brightness(1.02);
+  box-shadow: 0 18px 38px rgba(20, 184, 166, 0.25) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.btn-secondary, .secondary-action, .btn-icon, .btn-ghost, .ghost-link, .wrong-clear-btn, .text-reset-button, .toggle-chip, .branch-back-v8, .catalog-edit-action, .catalog-remove-action, .catalog-added-action, .pearl-study-nav-button, .tus-pearl-side-nav) {
+  border-color: var(--ki-border) !important;
+  background: var(--ki-control-secondary-bg) !important;
+  color: var(--ki-text-secondary) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.btn-secondary:hover, .secondary-action:hover, .btn-icon:hover, .btn-ghost:hover, .ghost-link:hover, .wrong-clear-btn:hover, .text-reset-button:hover, .toggle-chip:hover, .catalog-edit-action:hover, .catalog-remove-action:hover, .pearl-study-nav-button:hover, .tus-pearl-side-nav:hover) {
+  border-color: var(--ki-border-strong) !important;
+  background: var(--ki-accent-hover) !important;
+  color: var(--ki-text) !important;
+}
+
+.app-shell[data-theme="dark"] :where(button:disabled, .btn:disabled, .catalog-added-action:disabled, .text-reset-button:disabled, .tool-chip:disabled, .answer-option:disabled, select:disabled) {
+  opacity: 1 !important;
+  border-color: rgba(148, 163, 184, 0.12) !important;
+  background: var(--ki-surface-disabled) !important;
+  color: var(--ki-text-disabled) !important;
+  box-shadow: none !important;
+  cursor: not-allowed !important;
+}
+
+.app-shell[data-theme="dark"] :where(input, textarea, select, .wrong-full-search, .tus-pearl-library-search, .pearl-study-branch-filter, .tus-pearl-filter-row, .tus-pearl-catalog-select-row, .tus-pearl-catalog-rename-row) {
+  border-color: var(--ki-border) !important;
+  background: var(--ki-input-surface) !important;
+  color: var(--ki-text) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+}
+
+.app-shell[data-theme="dark"] :where(input::placeholder, textarea::placeholder) {
+  color: rgba(156, 174, 190, 0.78) !important;
+}
+
+.app-shell[data-theme="dark"] :where(button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [role="button"]:focus-visible, .smart-glossary-term:focus-visible, .glossary-term:focus-visible) {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(94, 234, 212, 0.26) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.icon-badge, .review-panel-icon, .tus-pearl-hub-icon, .home-metric-top .icon-badge, .wrong-answers-empty-icon, .ai-spot-pearl-icon) {
+  border-color: rgba(94, 234, 212, 0.22) !important;
+  background: rgba(20, 184, 166, 0.14) !important;
+  color: var(--ki-accent-strong) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.wrong-answer-branch, .tus-pearl-badge, .tus-pearl-chip, .branch-card-meta span, .case-hero-meta, .case-meta-pill, .compact-meta-pill, .ai-spot-narrative-badge, .catalog-card-branch, .smart-count-chip, .feedback-badge) {
+  border-color: rgba(94, 234, 212, 0.18) !important;
+  background: rgba(20, 184, 166, 0.105) !important;
+  color: var(--ki-chip-accent-text) !important;
+}
+
+/* Hero, dashboard and branch cards --------------------------------------- */
+.app-shell[data-theme="dark"] .home-hero-v8,
+.app-shell[data-theme="dark"] .home-hero-premium-v10,
+.app-shell[data-theme="dark"] .tus-hero-redesign {
+  border-color: rgba(94, 234, 212, 0.18) !important;
+  background:
+    radial-gradient(circle at 78% 14%, rgba(20, 184, 166, 0.17), transparent 35%),
+    radial-gradient(circle at 8% 18%, rgba(56, 189, 248, 0.10), transparent 32%),
+    linear-gradient(145deg, rgba(11, 34, 48, 0.96), rgba(5, 18, 23, 0.98)) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.home-action-panel-v10, .home-mode-v10, .home-mode-v8, .tus-action-panel-redesign, .tus-actions-redesign, .tus-ai-action-redesign) {
+  border-color: var(--ki-border) !important;
+  background: rgba(7, 26, 33, 0.66) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.home-metric-card, .tus-stat-card-redesign, .compact-stat-card, .stat-card, .pro-stat-card) strong {
+  color: var(--ki-text) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.branch-card, .case-list-item) {
+  background: linear-gradient(180deg, rgba(11, 34, 48, 0.82), rgba(7, 26, 33, 0.88)) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.branch-progress, .exam-progress-track, .tus-pearl-progress-track, .progress-track) {
+  background: rgba(2, 6, 23, 0.40) !important;
+  border-color: rgba(148, 163, 184, 0.12) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.branch-progress span, .exam-progress-track span, .progress-bar, .progress-fill, .tus-pearl-progress-fill) {
+  background: var(--ki-progress-gradient) !important;
+}
+
+/* Personal review / wrong answers ---------------------------------------- */
+.app-shell[data-theme="dark"] .wrong-answer-more-row {
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.13), rgba(11, 34, 48, 0.86)) !important;
+  border-color: rgba(94, 234, 212, 0.20) !important;
+}
+
+.app-shell[data-theme="dark"] .wrong-answer-more {
+  color: var(--ki-text-secondary) !important;
+}
+
+.app-shell[data-theme="dark"] .wrong-full-summary {
+  border-color: rgba(248, 113, 113, 0.24) !important;
+  background:
+    radial-gradient(circle at 22% 16%, rgba(248, 113, 113, 0.14), transparent 42%),
+    linear-gradient(135deg, rgba(127, 29, 29, 0.28), rgba(11, 34, 48, 0.86)) !important;
+  color: var(--ki-danger-contrast) !important;
+  box-shadow: 0 16px 34px rgba(127, 29, 29, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+.app-shell[data-theme="dark"] .wrong-full-summary :where(svg, strong, span) {
+  color: var(--ki-danger-contrast) !important;
+}
+
+.app-shell[data-theme="dark"] .wrong-full-card h2,
+.app-shell[data-theme="dark"] .wrong-answer-card h3 {
+  color: var(--ki-text) !important;
+}
+
+.app-shell[data-theme="dark"] .wrong-full-meta span {
+  border: 1px solid rgba(148, 163, 184, 0.12) !important;
+  background: rgba(148, 163, 184, 0.10) !important;
+  color: var(--ki-text-muted) !important;
+}
+
+/* Hap Bilgi / catalog / card study ---------------------------------------- */
+.app-shell[data-theme="dark"] :where(.tus-pearl-hub-panel, .tus-pearl-study-shell, .tus-pearl-focus-card) {
+  background:
+    radial-gradient(circle at 86% 6%, rgba(20, 184, 166, 0.12), transparent 32%),
+    linear-gradient(180deg, rgba(11, 34, 48, 0.94), rgba(7, 26, 33, 0.96)) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.tus-pearl-card-face, .tus-pearl-card-front, .tus-pearl-card-back, .pearl-card-face, .tus-pearl-focus-face, .tus-pearl-focus-front, .pearl-card-question-block, .pearl-back-premium-stack > *, .tus-pearl-answer-block, .tus-pearl-detail-block) {
+  border-color: var(--ki-border) !important;
+  background: linear-gradient(180deg, rgba(16, 42, 53, 0.88), rgba(7, 26, 33, 0.92)) !important;
+  color: var(--ki-text) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.tus-pearl-library-card.catalog-card-row, .tus-pearl-catalog-card-list.addable .tus-pearl-library-card.catalog-card-row) {
+  border-color: rgba(148, 163, 184, 0.16) !important;
+  background: rgba(11, 34, 48, 0.84) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.catalog-card-question, .tus-pearl-card-question-block, .tus-pearl-focus-front) {
+  color: var(--ki-text) !important;
+}
+
+.app-shell[data-theme="dark"] .catalog-added-action.btn.btn-secondary.compact:disabled {
+  border-color: rgba(52, 211, 153, 0.20) !important;
+  background: rgba(6, 78, 59, 0.22) !important;
+  color: var(--ki-success-contrast) !important;
+}
+
+/* TUS Spot / AI generated question screens -------------------------------- */
+.app-shell[data-theme="dark"] :where(.tus-spot-olgular-feature-row, .tus-spot-olgular-card, .tus-spot-bank-shell, .tus-spot-bank-main, .ai-spot-player-shell, .ai-spot-answer-flow, .tus-spot-olgular-question-callout) {
+  border-color: var(--ki-border) !important;
+  background: linear-gradient(180deg, rgba(11, 34, 48, 0.88), rgba(7, 26, 33, 0.92)) !important;
+  color: var(--ki-text) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.ai-spot-narrative-reading-panel, .ai-spot-feedback-choice-grid, .ai-spot-science-flow-v249, .ai-spot-feedback-option-row) {
+  border-color: rgba(148, 163, 184, 0.16) !important;
+  background: var(--ki-control-secondary-bg) !important;
+  color: var(--ki-text) !important;
+}
+
+/* Clinical case / answer / feedback surfaces ----------------------------- */
+.app-shell[data-theme="dark"] :where(.answer-letter, .answer-radio-dot, .answer-status-icon, .question-score-chip, .score-pill-block, .management-score-chip, .sequence-add-btn, .sequence-remove-btn) {
+  border-color: rgba(148, 163, 184, 0.16) !important;
+  background: rgba(7, 26, 33, 0.82) !important;
+  color: var(--ki-text-secondary) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.answer-option:not(.correct):not(.wrong):not(.selected):disabled) {
+  background: rgba(16, 42, 53, 0.52) !important;
+  color: var(--ki-text-muted) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.patient-summary-story-block, .summary-detail-card, .professional-story-card, .clinical-reasoning-card, .clinical-pearl-item, .clinical-pearl-item-pro) {
+  border-color: rgba(148, 163, 184, 0.15) !important;
+  background: rgba(16, 42, 53, 0.74) !important;
+  color: var(--ki-text-secondary) !important;
+}
+
+/* Glossary, tooltip, toolbox and overlays -------------------------------- */
+.app-shell[data-theme="dark"] :where(.glossary-term, .smart-glossary-term) {
+  color: color-mix(in srgb, var(--ki-accent-strong) 72%, var(--ki-text) 28%) !important;
+  text-decoration-color: rgba(94, 234, 212, 0.32) !important;
+  border-bottom-color: rgba(94, 234, 212, 0.32) !important;
+  background: linear-gradient(180deg, transparent 68%, rgba(20, 184, 166, 0.10) 0) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.glossary-term:hover, .smart-glossary-term:hover, .glossary-term:focus-visible, .smart-glossary-term:focus-visible) {
+  color: var(--ki-glossary-hover-text) !important;
+  background: rgba(20, 184, 166, 0.16) !important;
+}
+
+html[data-theme="dark"] #klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover,
+html[data-theme="dark"] .glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover,
+html[data-theme="dark"] .glossary-tooltip,
+html[data-theme="dark"] .smart-glossary-card,
+.app-shell[data-theme="dark"] :where(.smart-glossary-card, .pearl-catalog-popover, .pearl-editor-modal, .pearl-editor-panel, .pearl-editor-backdrop, .dropdown-menu, .popover, .modal, .floating-panel) {
+  border-color: rgba(94, 234, 212, 0.18) !important;
+  background: linear-gradient(180deg, rgba(11, 34, 48, 0.98), rgba(5, 18, 23, 0.98)) !important;
+  color: var(--ki-text-secondary) !important;
+  box-shadow: var(--ki-shadow-elevated) !important;
+}
+
+html[data-theme="dark"] .glossary-tooltip::after,
+html[data-theme="dark"] #klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover::after {
+  border-color: rgba(94, 234, 212, 0.18) !important;
+  background: var(--ki-surface-elevated) !important;
+}
+
+html[data-theme="dark"] :where(.smart-glossary-title, .smart-glossary-title-wrap strong, .smart-glossary-definition strong, .smart-glossary-row strong, .smart-glossary-detail-block strong) {
+  color: var(--ki-text) !important;
+}
+
+html[data-theme="dark"] :where(.smart-glossary-definition, .smart-glossary-row span, .smart-glossary-detail-block span, .smart-glossary-secondary-name, .smart-glossary-depth-note) {
+  color: var(--ki-text-secondary) !important;
+}
+
+html[data-theme="dark"] :where(.smart-glossary-category, .smart-glossary-difficulty, .smart-glossary-breadcrumb, .smart-glossary-breadcrumb-link, .smart-glossary-back, .smart-glossary-detail-toggle, .smart-glossary-safe-note) {
+  border-color: rgba(94, 234, 212, 0.16) !important;
+  background: rgba(20, 184, 166, 0.105) !important;
+  color: var(--ki-chip-accent-text) !important;
+}
+
+/* Auth and Komite overlays ------------------------------------------------ */
+.app-shell[data-theme="dark"] :where(.auth-minimal-shell, .komite-dashboard, .komite-upload-panel, .komite-result-panel, .komite-card, .material-dropzone, .workspace-panel) {
+  color: var(--ki-text) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.auth-minimal-card, .komite-upload-panel, .komite-result-panel, .material-dropzone, .workspace-panel) {
+  border-color: var(--ki-border) !important;
+  background: linear-gradient(180deg, rgba(11, 34, 48, 0.92), rgba(7, 26, 33, 0.94)) !important;
+}
+
+/* Dark-mode hard-coded light cleanup guard -------------------------------- */
+.app-shell[data-theme="dark"] :where([class*="card"], [class*="panel"], [class*="toolbar"], [class*="popover"], [class*="modal"], [class*="dropdown"], [class*="surface"]) {
+  --tw-ring-color: rgba(94, 234, 212, 0.24);
+}
+
+.app-shell[data-theme="dark"] :where(hr, .divider, .section-divider) {
+  border-color: var(--ki-divider) !important;
+  background-color: var(--ki-divider) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-shell[data-theme="dark"] * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

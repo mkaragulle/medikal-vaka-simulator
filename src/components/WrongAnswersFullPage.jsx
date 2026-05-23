@@ -30,8 +30,6 @@ function WrongAnswersFullPage({ wrongAnswers = [], onBack, onOpenCase, onRemoveC
         item.title,
         item.questionPreview,
         item.branchName,
-        item.selected,
-        item.correctAnswer,
       ].filter(Boolean).join(' ').toLocaleLowerCase('tr');
       return haystack.includes(normalizedQuery);
     });
@@ -44,14 +42,14 @@ function WrongAnswersFullPage({ wrongAnswers = [], onBack, onOpenCase, onRemoveC
           <Icon name="ArrowLeft" />
           <span>Kişisel tekrara dön</span>
         </button>
-        <div>
-          <span className="wrong-full-kicker">Kişisel tekrar</span>
+        <div className="wrong-full-title-block">
           <h1>Tüm yanlış çözülenler</h1>
           <p>Kaçırdığın klinik olguları tek ekranda gör, ara ve yeniden çöz.</p>
         </div>
-        <div className="wrong-full-summary" aria-label="Yanlış sayısı">
+        <div className="wrong-full-summary" aria-label="Toplam tekrar hedefi">
+          <Icon name="Target" size={18} />
           <strong>{wrongAnswers.length}</strong>
-          <span>kayıt</span>
+          <span>tekrar hedefi</span>
         </div>
       </section>
 
@@ -62,7 +60,7 @@ function WrongAnswersFullPage({ wrongAnswers = [], onBack, onOpenCase, onRemoveC
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Başlık, branş veya cevap ara…"
+            placeholder="Başlık, branş veya soru metni ara…"
           />
         </label>
         {wrongAnswers.length ? (
@@ -88,12 +86,11 @@ function WrongAnswersFullPage({ wrongAnswers = [], onBack, onOpenCase, onRemoveC
                   </span>
                   <h2>{displayTitle}</h2>
                   {item.questionPreview && item.questionPreview !== displayTitle ? <p>{item.questionPreview}</p> : null}
-                  <div className="wrong-full-meta">
-                    {item.selected ? <span>Seçimin: <strong>{item.selected}</strong></span> : null}
-                    {item.correctAnswer ? <span>Doğru: <strong>{item.correctAnswer}</strong></span> : null}
-                    {item.attempts ? <span>{item.attempts} kez kaçırıldı</span> : null}
-                    {wrongDate ? <span>{wrongDate}</span> : null}
-                  </div>
+                  {wrongDate ? (
+                    <div className="wrong-full-meta" aria-label="Son yanlış zamanı">
+                      <span>Son yanlış: {wrongDate}</span>
+                    </div>
+                  ) : null}
                 </div>
                 <div className="wrong-full-card-actions">
                   <button className="btn btn-primary compact" type="button" onClick={() => onOpenCase(item)}>

@@ -62,7 +62,7 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
           })}
           {hiddenCount ? (
             <div className="wrong-answer-more-row">
-              <span className="wrong-answer-more">+{hiddenCount} kayıt daha listende saklanıyor.</span>
+              <span className="wrong-answer-more">{hiddenCount} soru daha tekrar listende hazır.</span>
               <button type="button" className="wrong-answer-view-all-btn" onClick={onOpenAllWrongAnswers}>
                 <Icon name="ArrowRight" size={15} />
                 <span>Tüm Yanlışları Gör</span>

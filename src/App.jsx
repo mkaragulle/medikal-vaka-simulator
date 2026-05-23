@@ -2,6 +2,7 @@ import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } fro
 import './index.css';
 import './styles/klinikiq-system.css';
 import './styles/klinikiq-refine.css';
+import './styles/klinikiq-dark-mode-system.css';
 import BranchSelector from './components/BranchSelector.jsx';
 import CaseList from './components/CaseList.jsx';
 import WrongAnswersFullPage from './components/WrongAnswersFullPage.jsx';
