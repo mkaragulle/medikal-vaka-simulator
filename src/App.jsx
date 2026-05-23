@@ -1663,21 +1663,22 @@ function App() {
                   <h3>Diğer olgular</h3>
                 </div>
                 <div className="bottom-case-browser-tools">
-                  <label className="bottom-case-search" aria-label="Diğer olgular içinde ara">
-                    <Icon name="Search" />
+                  <div className={`bottom-case-search ${bottomCaseSearchQuery ? 'has-value' : ''}`.trim()} role="search">
+                    <span className="bottom-case-search-icon" aria-hidden="true"><Icon name="Search" /></span>
                     <input
-                      type="search"
+                      type="text"
                       value={bottomCaseSearchQuery}
                       onChange={(event) => setBottomCaseSearchQuery(event.target.value)}
-                      placeholder="Olgu, tanı, mekanizma ara..."
+                      placeholder="Olgu, tanı veya terim ara"
                       autoComplete="off"
+                      aria-label="Diğer olgular içinde ara"
                     />
                     {bottomCaseSearchQuery ? (
                       <button type="button" className="bottom-case-search-clear" onClick={() => setBottomCaseSearchQuery('')} aria-label="Aramayı temizle">
-                        ×
+                        <Icon name="X" />
                       </button>
                     ) : null}
-                  </label>
+                  </div>
                   <span className="bottom-case-browser-count">
                     {hasBottomCaseSearch ? `${searchedBranchCasePool.length}/${activeBranchCasePool.length} olgu` : `${activeBranchCasePool.length} olgu`}
                   </span>
