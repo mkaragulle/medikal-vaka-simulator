@@ -1,20 +1,24 @@
 import { useCallback, useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import {
+  getGlossaryAliasVariants,
   getGlossaryTerms,
   getProtectedUnitRanges,
   isBlacklistedUnitToken,
   isInsideProtectedUnitRange,
+  isLowSignalGlossaryAlias,
   normalizeGlossaryText,
 } from '../utils/glossary.js';
 
-const MAX_TERMS_PER_TEXT = 5;
+const DEFAULT_MAX_TERMS_PER_TEXT = 4;
+const PREANSWER_MAX_TERMS_PER_TEXT = 2;
 const VIEWPORT_PADDING = 12;
 const SAFE_TOP_PADDING = 12;
 const TOOLTIP_GAP = 8;
-const MAX_TOOLTIP_WIDTH = 340;
+const MAX_TOOLTIP_WIDTH = 360;
 const TOOLTIP_ROOT_ID = 'klinikiq-tooltip-layer';
 const TOOLTIP_LAYER_Z = 2147483600;
+const CLOSE_DELAY_MS = 120;
 
 function escapeRegExp(text = '') {
   return String(text).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -87,21 +91,32 @@ function getTooltipRoot() {
   return root;
 }
 
+const MATCHER_CACHE = new Map();
+
 function makeMatcher(terms = []) {
+  const cacheKey = terms.map((term) => `${term.id || term.term}:${term.aliases?.length || 0}`).join('|');
+  if (MATCHER_CACHE.has(cacheKey)) return MATCHER_CACHE.get(cacheKey);
+
   const aliasEntries = [];
   terms.forEach((entry) => {
     const aliases = entry.aliases?.length ? entry.aliases : [entry.term];
     aliases.forEach((alias) => {
-      if (!alias || isBlacklistedUnitToken(alias)) return;
-      aliasEntries.push({ alias: String(alias), normalized: normalizeGlossaryText(alias), entry });
+      if (!alias || isBlacklistedUnitToken(alias) || isLowSignalGlossaryAlias(alias)) return;
+      getGlossaryAliasVariants(alias).forEach((variant) => {
+        if (!variant || isBlacklistedUnitToken(variant) || isLowSignalGlossaryAlias(variant)) return;
+        aliasEntries.push({ alias: String(variant), normalized: normalizeGlossaryText(variant), entry });
+      });
     });
   });
 
   const deduped = Array.from(
     new Map(aliasEntries.map((item) => [`${item.normalized}::${item.alias}::${item.entry.term}`, item])).values(),
-  ).sort((a, b) => b.alias.length - a.alias.length);
+  ).sort((a, b) => b.alias.length - a.alias.length || b.normalized.length - a.normalized.length);
 
-  if (!deduped.length) return null;
+  if (!deduped.length) {
+    MATCHER_CACHE.set(cacheKey, null);
+    return null;
+  }
 
   const pattern = deduped.map((item) => escapeRegExp(item.alias)).join('|');
   const aliasMap = deduped.reduce((map, item) => {
@@ -111,17 +126,19 @@ function makeMatcher(terms = []) {
     return map;
   }, new Map());
 
-  return {
+  const matcher = {
     regex: new RegExp(`(^|[^\\p{L}\\p{N}_])(${pattern})(?=$|[^\\p{L}\\p{N}_])`, 'giu'),
     aliasMap,
   };
+  MATCHER_CACHE.set(cacheKey, matcher);
+  return matcher;
 }
 
-
-function splitByGlossary(text = '', terms = []) {
+function splitByGlossary(text = '', terms = [], maxTerms = DEFAULT_MAX_TERMS_PER_TEXT) {
   const source = String(text);
   const matcher = makeMatcher(terms);
-  if (!source || !matcher) return [{ type: 'text', value: source }];
+  const limit = Number.isFinite(maxTerms) ? Math.max(0, maxTerms) : DEFAULT_MAX_TERMS_PER_TEXT;
+  if (!source || !matcher || limit <= 0) return [{ type: 'text', value: source }];
 
   const parts = [];
   const usedTerms = new Set();
@@ -140,7 +157,7 @@ function splitByGlossary(text = '', terms = []) {
     const entry = resolveGlossaryEntryForMatch(matcher, value, source, matchStart, matchEnd, protectedUnitRanges);
     const canonical = normalizeGlossaryText(entry?.term || value);
 
-    if (entry && usedTerms.size < MAX_TERMS_PER_TEXT && !usedTerms.has(canonical)) {
+    if (entry && usedTerms.size < limit && !usedTerms.has(canonical)) {
       parts.push({ type: 'term', value, entry });
       usedTerms.add(canonical);
     } else {
@@ -164,14 +181,14 @@ function computeFloatingPosition(referenceEl, floatingEl) {
   const viewport = getViewportSize();
   const reference = getAnchorRect(referenceEl);
 
-  const maxWidth = Math.max(180, Math.min(MAX_TOOLTIP_WIDTH, viewport.width - VIEWPORT_PADDING * 2));
+  const maxWidth = Math.max(220, Math.min(MAX_TOOLTIP_WIDTH, viewport.width - VIEWPORT_PADDING * 2));
   floatingEl.style.maxWidth = `${maxWidth}px`;
   floatingEl.style.width = 'max-content';
   floatingEl.style.whiteSpace = 'normal';
 
   const measured = floatingEl.getBoundingClientRect();
-  const floatingWidth = Math.min(Math.max(measured.width || 220, 180), maxWidth);
-  const floatingHeight = Math.max(measured.height || 56, 32);
+  const floatingWidth = Math.min(Math.max(measured.width || 260, 220), maxWidth);
+  const floatingHeight = Math.max(measured.height || 72, 48);
 
   const referenceCenterX = reference.left + reference.width / 2;
   const desiredLeft = referenceCenterX - floatingWidth / 2;
@@ -195,7 +212,7 @@ function computeFloatingPosition(referenceEl, floatingEl) {
     ? Math.max(SAFE_TOP_PADDING, rawTop)
     : clamp(rawTop, VIEWPORT_PADDING, viewport.height - floatingHeight - VIEWPORT_PADDING);
 
-  const arrowX = clamp(referenceCenterX - left, 14, floatingWidth - 14);
+  const arrowX = clamp(referenceCenterX - left, 18, floatingWidth - 18);
 
   return {
     left,
@@ -206,7 +223,7 @@ function computeFloatingPosition(referenceEl, floatingEl) {
   };
 }
 
-function FloatingTooltip({ id, triggerRef, open, definition, onRequestClose }) {
+function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFloatingEnter, onFloatingLeave, revealMode }) {
   const tooltipRef = useRef(null);
   const [portalRoot, setPortalRoot] = useState(null);
   const [position, setPosition] = useState({
@@ -246,7 +263,7 @@ function FloatingTooltip({ id, triggerRef, open, definition, onRequestClose }) {
       window.cancelAnimationFrame(frameOne);
       window.cancelAnimationFrame(frameTwo);
     };
-  }, [definition, open, portalRoot, updatePosition]);
+  }, [children, open, portalRoot, updatePosition]);
 
   useEffect(() => {
     if (!open || typeof document === 'undefined') return undefined;
@@ -282,9 +299,14 @@ function FloatingTooltip({ id, triggerRef, open, definition, onRequestClose }) {
     <span
       id={id}
       ref={tooltipRef}
-      className="glossary-tooltip floating-glossary-tooltip"
+      className="glossary-tooltip floating-glossary-tooltip smart-glossary-popover"
       role="tooltip"
       data-placement={position.placement}
+      data-reveal-mode={revealMode}
+      onPointerEnter={onFloatingEnter}
+      onPointerLeave={onFloatingLeave}
+      onMouseEnter={onFloatingEnter}
+      onMouseLeave={onFloatingLeave}
       style={{
         position: 'fixed',
         zIndex: TOOLTIP_LAYER_Z,
@@ -295,60 +317,208 @@ function FloatingTooltip({ id, triggerRef, open, definition, onRequestClose }) {
         '--tooltip-arrow-left': `${position.arrowX}px`,
       }}
     >
-      {definition}
+      {children}
     </span>,
     portalRoot,
   );
 }
 
-export function GlossaryTerm({ children, definition }) {
+function asList(value) {
+  if (!Array.isArray(value)) return [];
+  return value.map((item) => String(item || '').trim()).filter(Boolean);
+}
+
+function difficultyLabel(value = '') {
+  const normalized = String(value || '').toLocaleLowerCase('tr');
+  if (normalized.includes('kolay') || normalized === 'easy') return 'Kolay';
+  if (normalized.includes('zor') || normalized === 'hard' || normalized.includes('yüksek')) return 'Zor';
+  return 'Orta';
+}
+
+function GlossaryCard({ entry, revealMode = 'postAnswer' }) {
+  const [expanded, setExpanded] = useState(false);
+  const isPreAnswer = revealMode === 'preAnswer' || revealMode === 'neutral';
+  const previewDefinition = entry.previewDefinition || entry.shortDefinition || entry.definition || '';
+  const safeDefinition = entry.preAnswerSafeDefinition || previewDefinition;
+  const shortDefinition = isPreAnswer ? safeDefinition : (entry.shortDefinition || previewDefinition);
+  const detailed = entry.postAnswerExpandedExplanation || entry.detailedExplanation || '';
+  const tusPearl = entry.tusPearl || '';
+  const differential = entry.differentialPoint || '';
+  const relevance = entry.clinicalRelevance || '';
+  const mechanism = entry.mechanism || '';
+  const relatedTerms = asList(entry.relatedTerms).slice(0, 3);
+  const relatedCases = asList(entry.relatedCases || entry.relatedCaseIds);
+  const relatedQuestions = asList(entry.relatedQuestions);
+  const relatedFlashcards = asList(entry.relatedFlashcards);
+  const secondaryName = entry.abbreviation || entry.EnglishName || entry.LatinName || '';
+  const hasTeachingContent = Boolean(tusPearl || differential || relevance || mechanism || detailed);
+  const canExpand = !isPreAnswer && Boolean(detailed || relevance || mechanism || relatedTerms.length);
+
+  return (
+    <span className="smart-glossary-card" data-preanswer={isPreAnswer ? 'true' : 'false'}>
+      <span className="smart-glossary-header">
+        <span className="smart-glossary-title-wrap">
+          <strong className="smart-glossary-title">{entry.term}</strong>
+          {secondaryName && secondaryName !== entry.term ? <small className="smart-glossary-secondary-name">{secondaryName}</small> : null}
+        </span>
+        <span className="smart-glossary-header-actions">
+          {entry.category ? <em className="smart-glossary-category">{entry.category}</em> : null}
+          {canExpand ? (
+            <button
+              type="button"
+              className="smart-glossary-arrow"
+              onClick={(event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                setExpanded((current) => !current);
+              }}
+              aria-label={expanded ? 'Terminoloji detayını gizle' : 'Terminoloji detayını göster'}
+              aria-expanded={expanded}
+            >
+              →
+            </button>
+          ) : null}
+        </span>
+      </span>
+
+      {shortDefinition ? <span className="smart-glossary-definition">{shortDefinition}</span> : null}
+
+      {isPreAnswer && hasTeachingContent ? (
+        <span className="smart-glossary-safe-note">TUS ipucu yanıt sonrası açılır.</span>
+      ) : null}
+
+      {!isPreAnswer && tusPearl ? (
+        <span className="smart-glossary-row pearl"><b>TUS ipucu</b><span>{tusPearl}</span></span>
+      ) : null}
+
+      {!isPreAnswer && differential ? (
+        <span className="smart-glossary-row differential"><b>Ayırıcı not</b><span>{differential}</span></span>
+      ) : null}
+
+      {!isPreAnswer && expanded ? (
+        <span className="smart-glossary-detail-block">
+          {detailed ? <span>{detailed}</span> : null}
+          {mechanism ? <span><b>Mekanizma:</b> {mechanism}</span> : null}
+          {relevance ? <span><b>Klinik değer:</b> {relevance}</span> : null}
+          {relatedTerms.length ? <span className="smart-glossary-related"><b>İlgili:</b> {relatedTerms.join(' · ')}</span> : null}
+        </span>
+      ) : null}
+
+      {!isPreAnswer && (relatedCases.length || relatedQuestions.length || relatedFlashcards.length) ? (
+        <span className="smart-glossary-links" aria-label="İlişkili öğrenme bağlantıları">
+          {relatedCases.length ? <span>{relatedCases.length} ilgili olgu</span> : null}
+          {relatedQuestions.length ? <span>{relatedQuestions.length} soru</span> : null}
+          {relatedFlashcards.length ? <span>{relatedFlashcards.length} hap kart</span> : null}
+        </span>
+      ) : null}
+    </span>
+  );
+}
+
+export function GlossaryTerm({ children, entry = null, definition = '', revealMode = 'postAnswer' }) {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef(null);
+  const closeTimerRef = useRef(0);
   const reactId = useId();
   const id = useMemo(() => `glossary-${reactId.replace(/:/g, '')}`, [reactId]);
+  const resolvedEntry = entry || { term: String(children || ''), shortDefinition: definition || '' };
+  const description = resolvedEntry.shortDefinition || resolvedEntry.definition || definition || '';
 
-  const close = useCallback(() => setOpen(false), []);
+  const clearCloseTimer = useCallback(() => {
+    if (closeTimerRef.current) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = 0;
+    }
+  }, []);
+
+  const close = useCallback(() => {
+    clearCloseTimer();
+    setOpen(false);
+  }, [clearCloseTimer]);
+
+  const scheduleClose = useCallback(() => {
+    if (typeof window === 'undefined') {
+      setOpen(false);
+      return;
+    }
+    clearCloseTimer();
+    closeTimerRef.current = window.setTimeout(() => setOpen(false), CLOSE_DELAY_MS);
+  }, [clearCloseTimer]);
+
+  const openNow = useCallback(() => {
+    clearCloseTimer();
+    setOpen(true);
+  }, [clearCloseTimer]);
+
+  useEffect(() => () => clearCloseTimer(), [clearCloseTimer]);
 
   return (
     <span
       ref={triggerRef}
-      className="glossary-term"
+      className="glossary-term smart-glossary-term"
       tabIndex={0}
       role="button"
+      data-reveal-mode={revealMode}
       aria-describedby={open ? id : undefined}
-      aria-label={`${children}: ${definition}`}
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-      onFocus={() => setOpen(true)}
-      onBlur={() => setOpen(false)}
+      aria-label={`${children}: ${description}`}
+      onMouseEnter={openNow}
+      onMouseLeave={scheduleClose}
+      onPointerEnter={(event) => {
+        if (event.pointerType === 'mouse') openNow();
+      }}
+      onPointerLeave={(event) => {
+        if (event.pointerType === 'mouse') scheduleClose();
+      }}
+      onFocus={openNow}
+      onBlur={scheduleClose}
       onClick={(event) => {
         event.stopPropagation();
+        clearCloseTimer();
         setOpen((current) => !current);
       }}
       onKeyDown={(event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
+          clearCloseTimer();
           setOpen((current) => !current);
         }
-        if (event.key === 'Escape') setOpen(false);
+        if (event.key === 'Escape') close();
       }}
     >
       {children}
-      <FloatingTooltip id={id} triggerRef={triggerRef} open={open} definition={definition} onRequestClose={close} />
+      <FloatingTooltip
+        id={id}
+        triggerRef={triggerRef}
+        open={open}
+        revealMode={revealMode}
+        onRequestClose={close}
+        onFloatingEnter={openNow}
+        onFloatingLeave={scheduleClose}
+      >
+        <GlossaryCard entry={resolvedEntry} revealMode={revealMode} />
+      </FloatingTooltip>
     </span>
   );
 }
 
-function GlossaryText({ text = '', enabled = true, terms: extraTerms = [], branchId }) {
+function GlossaryText({
+  text = '',
+  enabled = true,
+  terms: extraTerms = [],
+  branchId = '',
+  revealMode = 'postAnswer',
+  maxTerms = undefined,
+}) {
   const terms = useMemo(() => getGlossaryTerms(extraTerms, { branchId }), [extraTerms, branchId]);
-  const parts = useMemo(() => splitByGlossary(text, enabled ? terms : []), [text, enabled, terms]);
+  const effectiveMaxTerms = maxTerms ?? (revealMode === 'preAnswer' || revealMode === 'neutral' ? PREANSWER_MAX_TERMS_PER_TEXT : DEFAULT_MAX_TERMS_PER_TEXT);
+  const parts = useMemo(() => splitByGlossary(text, enabled ? terms : [], effectiveMaxTerms), [text, enabled, terms, effectiveMaxTerms]);
 
   if (!enabled) return <span className="glossary-text-flow">{text}</span>;
 
   return (
     <span className="glossary-text-flow">
       {parts.map((part, index) => part.type === 'term' ? (
-        <GlossaryTerm key={`${part.value}-${index}`} definition={part.entry.definition}>{part.value}</GlossaryTerm>
+        <GlossaryTerm key={`${part.value}-${index}`} entry={part.entry} revealMode={revealMode}>{part.value}</GlossaryTerm>
       ) : (
         <span className="glossary-plain-segment" key={`${part.value}-${index}`}>{part.value}</span>
       ))}

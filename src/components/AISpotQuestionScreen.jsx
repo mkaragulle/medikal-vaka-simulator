@@ -206,7 +206,7 @@ function AISpotNarrativePanel({ question, hardMode = false, embedded = false }) 
         <IconBadge icon="ClipboardList" tone="teal" size="lg" />
         <div>
           <span className="ai-spot-narrative-eyebrow">Klinik olgu</span>
-          <p><GlossaryText text={contextLine} enabled={!hardMode} /></p>
+          <p><GlossaryText text={contextLine} enabled={!hardMode} revealMode="preAnswer" maxTerms={3} /></p>
         </div>
       </div>
 
@@ -214,7 +214,7 @@ function AISpotNarrativePanel({ question, hardMode = false, embedded = false }) 
         <div className="ai-spot-narrative-reading-panel">
           {paragraphs.map((paragraph, index) => (
             <p key={`${question.id}-ai-narrative-${index}`}>
-              <GlossaryText text={paragraph} enabled={!hardMode} />
+              <GlossaryText text={paragraph} enabled={!hardMode} revealMode="preAnswer" maxTerms={3} />
             </p>
           ))}
         </div>

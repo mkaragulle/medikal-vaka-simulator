@@ -1,3 +1,7 @@
+import { TUS_GLOSSARY_ADVANCED_TERMS } from '../data/tusGlossaryIndex.js';
+import { TUS_GLOSSARY_EXPANDED_TERMS } from '../data/tusGlossaryExpandedIndex.js';
+import { TUS_GLOSSARY_SUPPLEMENTAL_TERMS } from '../data/tusGlossarySupplementalIndex.js';
+
 const teachingOnly = 'teachingOnly';
 
 // Central KlinikIQ glossary.
@@ -5,10 +9,24 @@ const teachingOnly = 'teachingOnly';
 // Source sheets used: Glossary_All and TUS_Spot_Kelimeler.
 // Duplicate terms are merged by normalized term/alias matching; case linkage is stored as metadata.
 
-export function normalizeGlossaryText(value = '') {
+export function foldTurkishText(value = '') {
   return String(value)
+    .replace(/İ/g, 'i')
+    .replace(/I/g, 'ı')
     .toLocaleLowerCase('tr')
-    .replace(/[İI]/g, 'i')
+    .replace(/ı/g, 'i')
+    .replace(/ğ/g, 'g')
+    .replace(/ü/g, 'u')
+    .replace(/ş/g, 's')
+    .replace(/ö/g, 'o')
+    .replace(/ç/g, 'c')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
+export function normalizeGlossaryText(value = '') {
+  return foldTurkishText(value)
+    .replace(/[^\p{L}\p{N}+/.-]+/gu, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -89,6 +107,52 @@ export function getProtectedUnitRanges(text = '') {
 
 export function isInsideProtectedUnitRange(start, end, ranges = []) {
   return ranges.some((range) => start < range.end && end > range.start);
+}
+
+
+// Terms that are too broad to mark everywhere. They may still appear as part of
+// longer, curated expressions such as "intravenöz kalsiyum glukonat".
+export const LOW_SIGNAL_GLOSSARY_ALIASES = new Set([
+  'hasta',
+  'agri',
+  'ates',
+  'bulgu',
+  'semptom',
+  'test',
+  'tedavi',
+  'tani',
+  'iv',
+  'intravenoz',
+  'ekg',
+  'bt',
+  'mrg',
+  'tomografi',
+  'derivasyon',
+  'vital bulgular',
+  'gogus agrisi',
+  'oksijenizasyon',
+  'bulantı',
+  'kusma',
+  'ishal',
+  'baş ağrısı',
+  'öksürük',
+  'idrar',
+  'kan',
+  'serum',
+  'pozitif',
+  'negatif',
+]);
+
+export function isLowSignalGlossaryAlias(alias = '') {
+  const normalized = normalizeGlossaryText(alias);
+  return LOW_SIGNAL_GLOSSARY_ALIASES.has(normalized);
+}
+
+export function getGlossaryAliasVariants(alias = '') {
+  const raw = String(alias || '').replace(/\s+/g, ' ').trim();
+  if (!raw) return [];
+  const folded = normalizeGlossaryText(raw);
+  return Array.from(new Set([raw, folded].filter(Boolean)));
 }
 
 export const globalGlossaryTerms = [
@@ -9328,12 +9392,41 @@ export const defaultGlossaryTerms = globalGlossaryTerms;
 
 function normalizeEntry(entry = {}) {
   const aliases = Array.from(new Set([entry.term, ...(entry.aliases || [])].filter(Boolean)))
+    .flatMap(getGlossaryAliasVariants)
     .map((alias) => String(alias).replace(/\s+/g, ' ').trim())
     .filter(Boolean)
     .sort((a, b) => b.length - a.length);
 
+  const previewDefinition = entry.previewDefinition || entry.shortDefinition || entry.definition || '';
+  const preAnswerSafeDefinition = entry.preAnswerSafeDefinition || previewDefinition;
+  const shortDefinition = entry.shortDefinition || previewDefinition || entry.definition || '';
+  const postAnswerExpandedExplanation = entry.postAnswerExpandedExplanation || entry.detailedExplanation || entry.longDefinition || '';
+  const normalizedTerm = entry.normalizedTerm || normalizeGlossaryText(entry.term);
+
   return {
+    id: entry.id || normalizedTerm.replace(/[^a-z0-9]+/giu, '-').replace(/^-|-$/g, '') || entry.term,
     ...entry,
+    definition: entry.definition || shortDefinition,
+    shortDefinition,
+    previewDefinition,
+    preAnswerSafeDefinition,
+    postAnswerExpandedExplanation,
+    detailedExplanation: entry.detailedExplanation || entry.longDefinition || postAnswerExpandedExplanation || '',
+    tusPearl: entry.tusPearl || entry.examPearl || entry.pearl || '',
+    differentialPoint: entry.differentialPoint || entry.differential || entry.ayiriciNot || '',
+    clinicalRelevance: entry.clinicalRelevance || '',
+    mechanism: entry.mechanism || '',
+    TurkishName: entry.TurkishName || entry.turkishName || entry.term || '',
+    EnglishName: entry.EnglishName || entry.englishName || '',
+    LatinName: entry.LatinName || entry.latinName || '',
+    abbreviation: entry.abbreviation || '',
+    relatedTerms: entry.relatedTerms || [],
+    relatedCases: entry.relatedCases || entry.relatedCaseIds || [],
+    relatedQuestions: entry.relatedQuestions || [],
+    relatedFlashcards: entry.relatedFlashcards || [],
+    difficulty: entry.difficulty || entry.priority || 'orta',
+    keywordsForSearch: entry.keywordsForSearch || [],
+    normalizedTerm,
     aliases,
     normalizedAliases: aliases.map(normalizeGlossaryText),
   };
@@ -9346,6 +9439,9 @@ export function getBranchGlossaryTerms(branchId) {
 export function getGlossaryTerms(extraTerms = [], options = {}) {
   const branchTerms = options.branchId ? getBranchGlossaryTerms(options.branchId) : [];
   const merged = [
+    ...TUS_GLOSSARY_ADVANCED_TERMS,
+    ...TUS_GLOSSARY_EXPANDED_TERMS,
+    ...TUS_GLOSSARY_SUPPLEMENTAL_TERMS,
     ...globalGlossaryTerms,
     ...branchTerms,
     ...(Array.isArray(extraTerms) ? extraTerms : []),
@@ -9353,7 +9449,7 @@ export function getGlossaryTerms(extraTerms = [], options = {}) {
 
   const byLabel = new Map();
   merged.forEach((entry) => {
-    if (!entry?.term || !entry?.definition) return;
+    if (!entry?.term || !(entry?.definition || entry?.shortDefinition)) return;
     const normalized = normalizeGlossaryText(entry.term);
     const normalizedEntry = normalizeEntry(entry);
     if (!normalizedEntry.aliases?.length) return;

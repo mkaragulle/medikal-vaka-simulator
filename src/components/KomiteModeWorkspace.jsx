@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Icon } from './ui.jsx';
+import GlossaryText from './GlossaryTooltip.jsx';
 import { localBackend } from '../services/localBackend.js';
 import { extractKomiteFile, getKomiteFileExtension } from '../utils/komiteFileExtraction.js';
 
@@ -403,21 +404,27 @@ function lessonTextBlocks(text = '') {
   return blocks;
 }
 
-function InlineLessonText({ text }) {
+function InlineLessonText({ text, revealMode = 'postAnswer', maxTerms = 4 }) {
   const parts = String(text || '').split(/(\*\*[^*]+\*\*)/u).filter(Boolean);
   return parts.map((part, index) => {
     const bold = part.match(/^\*\*([^*]+)\*\*$/u)?.[1];
-    if (bold) return <strong key={`${bold}-${index}`}>{bold}</strong>;
-    return <span key={`${part}-${index}`}>{part}</span>;
+    if (bold) {
+      return (
+        <strong key={`${bold}-${index}`}>
+          <GlossaryText text={bold} enabled revealMode={revealMode} maxTerms={Math.min(maxTerms, 2)} />
+        </strong>
+      );
+    }
+    return <GlossaryText key={`${part}-${index}`} text={part} enabled revealMode={revealMode} maxTerms={maxTerms} />;
   });
 }
 
-function LessonText({ text }) {
+function LessonText({ text, revealMode = 'postAnswer', maxTerms = 4 }) {
   return lessonTextBlocks(text).map((block, index) => {
     if (block.type === 'ul') {
-      return <ul key={`list-${index}`}>{block.items.map((item, itemIndex) => <li key={`${item}-${itemIndex}`}><InlineLessonText text={item} /></li>)}</ul>;
+      return <ul key={`list-${index}`}>{block.items.map((item, itemIndex) => <li key={`${item}-${itemIndex}`}><InlineLessonText text={item} revealMode={revealMode} maxTerms={maxTerms} /></li>)}</ul>;
     }
-    return <p key={`p-${index}`}><InlineLessonText text={block.text} /></p>;
+    return <p key={`p-${index}`}><InlineLessonText text={block.text} revealMode={revealMode} maxTerms={maxTerms} /></p>;
   });
 }
 
@@ -1562,7 +1569,7 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
       <div className="komite-lesson-hero komite-lesson-hero-pro komite-lesson-brief-card">
         <div className="komite-lesson-brief">
           <span className="komite-kicker"><Icon name="BookOpen" size={16} /> AI Ders Anlatımı</span>
-          <p>{improveLessonIntro(lesson.shortSubtitle || lesson.shortIntro || lesson.overview, lesson.title)}</p>
+          <p><GlossaryText text={improveLessonIntro(lesson.shortSubtitle || lesson.shortIntro || lesson.overview, lesson.title)} enabled revealMode="postAnswer" maxTerms={4} /></p>
         </div>
       </div>
 
@@ -1593,13 +1600,13 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
               {lesson.clinicalExamRelevance ? (
                 <div className="komite-context-line">
                   <strong>Klinik / sınav bağlantısı</strong>
-                  <p>{sanitizeTeachingTextForDisplay(lesson.clinicalExamRelevance)}</p>
+                  <p><GlossaryText text={sanitizeTeachingTextForDisplay(lesson.clinicalExamRelevance)} enabled revealMode="postAnswer" maxTerms={4} /></p>
                 </div>
               ) : null}
               {Array.isArray(lesson.commonConfusions) && lesson.commonConfusions.length ? (
                 <div className="komite-context-line">
                   <strong>Sık karıştırılan noktalar</strong>
-                  <ul>{lesson.commonConfusions.map((item, index) => <li key={`${formatLessonListItem(item)}-${index}`}>{formatLessonListItem(item)}</li>)}</ul>
+                  <ul>{lesson.commonConfusions.map((item, index) => <li key={`${formatLessonListItem(item)}-${index}`}><GlossaryText text={formatLessonListItem(item)} enabled revealMode="postAnswer" maxTerms={3} /></li>)}</ul>
                 </div>
               ) : null}
             </div>
@@ -1618,11 +1625,11 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
                       {formatMechanismSteps(section.mechanismFlow).length ? (
                         <div className="komite-note-line komite-flow-line">
                           <strong>Süreç mantığı</strong>
-                          <ol>{formatMechanismSteps(section.mechanismFlow).map((step, stepIndex) => <li key={`${step}-${stepIndex}`}>{step}</li>)}</ol>
+                          <ol>{formatMechanismSteps(section.mechanismFlow).map((step, stepIndex) => <li key={`${step}-${stepIndex}`}><GlossaryText text={step} enabled revealMode="postAnswer" maxTerms={3} /></li>)}</ol>
                         </div>
                       ) : null}
-                      {(section.examAngle || section.clinicalConnection) ? <div className="komite-note-line"><strong>Sınavda nasıl sorulur?</strong><p>{sanitizeTeachingTextForDisplay(section.examAngle || section.clinicalConnection)}</p></div> : null}
-                      {(section.commonTrap || section.examConnection) ? <div className="komite-note-line"><strong>Sık hata</strong><p>{sanitizeTeachingTextForDisplay(section.commonTrap || section.examConnection)}</p></div> : null}
+                      {(section.examAngle || section.clinicalConnection) ? <div className="komite-note-line"><strong>Sınavda nasıl sorulur?</strong><p><GlossaryText text={sanitizeTeachingTextForDisplay(section.examAngle || section.clinicalConnection)} enabled revealMode="postAnswer" maxTerms={3} /></p></div> : null}
+                      {(section.commonTrap || section.examConnection) ? <div className="komite-note-line"><strong>Sık hata</strong><p><GlossaryText text={sanitizeTeachingTextForDisplay(section.commonTrap || section.examConnection)} enabled revealMode="postAnswer" maxTerms={3} /></p></div> : null}
                     </div>
                   ) : null}
                 </div>
@@ -1668,11 +1675,11 @@ function FiguresView({ material }) {
           <article className="komite-figure-card" key={`${figure.title || figure.type}-${index}`}>
             <div className="komite-figure-card-head"><span>{figure.sourcePageOrSlide || 'Kaynak belirtilmedi'}</span><StatusPill tone={status === 'analyzed' ? 'success' : status === 'partial' ? 'warning' : 'neutral'}>{statusLabel[status] || statusLabel.partial}</StatusPill></div>
             <h3>{figure.title || figure.type || 'Görsel / şekil notu'}</h3>
-            <p>{figure.whatCanBeSaidSafely || figure.whatItShows || figure.interpretation || 'Bu görsel güvenilir biçimde analiz edilemedi.'}</p>
+            <p><GlossaryText text={figure.whatCanBeSaidSafely || figure.whatItShows || figure.interpretation || 'Bu görsel güvenilir biçimde analiz edilemedi.'} enabled revealMode="postAnswer" maxTerms={3} /></p>
             <dl>
               {figure.visibleTextAroundFigure ? <><dt>Okunabilen çevre metni</dt><dd>{figure.visibleTextAroundFigure}</dd></> : null}
-              <dt>Sınır</dt><dd>{figure.limitations || figure.commonMistake || 'Görsel içeriği uydurulmaz; yalnızca okunabilir metin kullanılabilir.'}</dd>
-              <dt>Sınav değeri</dt><dd>{figure.examRelevance || 'Görsel tabanlı soru için ek OCR/görsel analiz gerekir.'}</dd>
+              <dt>Sınır</dt><dd><GlossaryText text={figure.limitations || figure.commonMistake || 'Görsel içeriği uydurulmaz; yalnızca okunabilir metin kullanılabilir.'} enabled revealMode="postAnswer" maxTerms={2} /></dd>
+              <dt>Sınav değeri</dt><dd><GlossaryText text={figure.examRelevance || 'Görsel tabanlı soru için ek OCR/görsel analiz gerekir.'} enabled revealMode="postAnswer" maxTerms={2} /></dd>
             </dl>
           </article>
         );
@@ -1697,6 +1704,7 @@ function QuestionsView({ material, onGenerate, onAnswer, onToggleQuestionFlag })
   const isAnswered = Boolean(selected);
   const selectedFeedback = selected ? active.optionFeedback?.[selected] : '';
   const correctFeedback = correctId ? active.optionFeedback?.[correctId] : '';
+  const glossaryRevealMode = isAnswered ? 'postAnswer' : 'preAnswer';
 
   return (
     <div className="komite-question-workspace">
@@ -1709,17 +1717,17 @@ function QuestionsView({ material, onGenerate, onAnswer, onToggleQuestionFlag })
         <article className="komite-question-card">
           <div className="komite-question-meta">
             <StatusPill tone={active.difficulty === 'hard' ? 'danger' : active.difficulty === 'medium' ? 'warning' : 'success'}>{active.difficulty}</StatusPill>
-            <span>{active.learningTarget}</span>
+            <span><GlossaryText text={active.learningTarget || ''} enabled revealMode={glossaryRevealMode} maxTerms={2} /></span>
           </div>
-          <p className="komite-question-stem">{active.stem}</p>
-          {active.supportingData?.length ? <div className="komite-supporting-data">{active.supportingData.map((item) => <span key={item}>{item}</span>)}</div> : null}
-          {active.question ? <h3>{active.question}</h3> : null}
+          <p className="komite-question-stem"><GlossaryText text={active.stem} enabled revealMode={glossaryRevealMode} maxTerms={3} /></p>
+          {active.supportingData?.length ? <div className="komite-supporting-data">{active.supportingData.map((item) => <span key={item}><GlossaryText text={item} enabled revealMode={glossaryRevealMode} maxTerms={2} /></span>)}</div> : null}
+          {active.question ? <h3><GlossaryText text={active.question} enabled revealMode={glossaryRevealMode} maxTerms={3} /></h3> : null}
           <div className="komite-option-list">
             {active.options.map((option) => {
               const stateClass = isAnswered && option.id === correctId ? 'correct' : isAnswered && option.id === selected ? 'wrong' : '';
               return (
                 <button key={option.id} type="button" className={`komite-option ${stateClass}`.trim()} disabled={isAnswered} onClick={() => onAnswer(active.id, option.id)}>
-                  <strong>{option.id}</strong><span>{option.text}</span>
+                  <strong>{option.id}</strong><span><GlossaryText text={option.text} enabled revealMode={glossaryRevealMode} maxTerms={2} /></span>
                 </button>
               );
             })}
@@ -1729,15 +1737,15 @@ function QuestionsView({ material, onGenerate, onAnswer, onToggleQuestionFlag })
               {selected === correctId ? (
                 <>
                   <strong>Doğru yanıt</strong>
-                  <p>{active.explanation}</p>
-                  {active.learningPoint ? <p className="komite-memory-note">{active.learningPoint}</p> : null}{active.memoryNote ? <p className="komite-memory-note">{active.memoryNote}</p> : null}
+                  <p><GlossaryText text={active.explanation} enabled revealMode="postAnswer" maxTerms={4} /></p>
+                  {active.learningPoint ? <p className="komite-memory-note"><GlossaryText text={active.learningPoint} enabled revealMode="postAnswer" maxTerms={3} /></p> : null}{active.memoryNote ? <p className="komite-memory-note"><GlossaryText text={active.memoryNote} enabled revealMode="postAnswer" maxTerms={3} /></p> : null}
                 </>
               ) : (
                 <>
                   <strong>Neden yanlış yaptın?</strong>
-                  <p>{selectedFeedback}</p>
+                  <p><GlossaryText text={selectedFeedback} enabled revealMode="postAnswer" maxTerms={3} /></p>
                   <strong>Doğru seçenek neden doğru?</strong>
-                  <p>{correctFeedback}</p>
+                  <p><GlossaryText text={correctFeedback} enabled revealMode="postAnswer" maxTerms={3} /></p>
                 </>
               )}
             </div>
@@ -1776,7 +1784,7 @@ function FlashcardsView({ material, onGenerate, onUpdateCard }) {
       </div>
       <button type="button" className={`komite-flashcard ${flipped ? 'flipped' : ''}`} onClick={() => setFlipped((current) => !current)}>
         <span className="komite-card-chip-row"><StatusPill tone="neutral">{active.type || 'must_know'}</StatusPill><StatusPill tone={active.difficulty === 'hard' ? 'danger' : active.difficulty === 'medium' ? 'warning' : 'success'}>{active.difficulty || 'medium'}</StatusPill></span>
-        {flipped ? <><small>Yanıt</small><strong>{active.back}</strong>{active.explanation ? <p><b>Mantık: </b>{active.explanation}</p> : null}{active.examTrap ? <p className="komite-memory-note">{active.examTrap}</p> : null}</> : <><small>Soru</small><strong>{active.front}</strong><small>Yanıtı görmek için karta tıkla.</small></>}
+        {flipped ? <><small>Yanıt</small><strong><GlossaryText text={active.back} enabled revealMode="postAnswer" maxTerms={3} /></strong>{active.explanation ? <p><b>Mantık: </b><GlossaryText text={active.explanation} enabled revealMode="postAnswer" maxTerms={3} /></p> : null}{active.examTrap ? <p className="komite-memory-note"><GlossaryText text={active.examTrap} enabled revealMode="postAnswer" maxTerms={3} /></p> : null}</> : <><small>Soru</small><strong><GlossaryText text={active.front} enabled revealMode="preAnswer" maxTerms={3} /></strong><small>Yanıtı görmek için karta tıkla.</small></>}
       </button>
       <div className="komite-card-actions">
         <button type="button" className="btn btn-secondary" onClick={() => onUpdateCard(active.id, { repeatStatus: 'known', isDifficult: false })}>Biliyorum</button>

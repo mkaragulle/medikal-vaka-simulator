@@ -393,7 +393,7 @@ function splitProfileText(value = '') {
   };
 }
 
-function PatientSummaryItems({ items = [], enabled = true }) {
+function PatientSummaryItems({ items = [], enabled = true, revealMode = 'preAnswer' }) {
   if (!items.length) return null;
 
   return (
@@ -401,7 +401,7 @@ function PatientSummaryItems({ items = [], enabled = true }) {
       {items.map((item) => (
         <li key={item}>
           <span className="summary-clinical-mini-copy clinical-readable-copy">
-            <GlossaryText text={item} enabled={enabled} />
+            <GlossaryText text={item} enabled={enabled} revealMode={revealMode} maxTerms={3} />
           </span>
         </li>
       ))}
@@ -570,6 +570,8 @@ function CasePlayer({
   const vitalEntries = useMemo(() => buildDerivedVitalEntries(clinicalCase.vitals), [clinicalCase.vitals]);
   const investigationOrders = useMemo(() => buildInvestigationOrders(clinicalCase), [clinicalCase]);
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
+  const caseGlossaryRevealMode = isSolved ? 'postAnswer' : 'preAnswer';
+  const caseGlossaryEnabled = !hardMode;
   const hasExamData = Array.isArray(clinicalCase.exam) && clinicalCase.exam.some((finding) => String(finding || '').trim());
   const hasVitalData = vitalEntries.length > 0;
   const showExamPanel = !isSpotCase || hasExamData || hasVitalData;
@@ -752,7 +754,7 @@ function CasePlayer({
 
             <div className="case-hero-main clean-case-hero-main">
               <div className="case-title-copy">
-                <h1><GlossaryText text={clinicalCase.title} enabled={!hardMode && !examMeta?.active} /></h1>
+                <h1><GlossaryText text={clinicalCase.title} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={3} /></h1>
                 <ExamSignalBox signal={caseExamSignal} compact={isSpotCase} />
                 <div className="patient-summary-card professional-patient-summary-card clinical-summary-card premium-reference-summary-card">
                   {/* Hasta özeti, referans görseldeki tek, premium ve okunabilir klinik çerçeve tasarımına göre yeniden düzenlendi. */}
@@ -778,15 +780,15 @@ function CasePlayer({
                             <span className="summary-detail-label">{row.label.toLocaleUpperCase('tr')}</span>
                             {row.items ? (
                               row.items.length ? (
-                                <PatientSummaryItems items={row.items} enabled={!hardMode && !examMeta?.active} />
+                                <PatientSummaryItems items={row.items} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={3} />
                               ) : <p>{row.fallback}</p>
                             ) : profileCopy ? (
                               <p className="summary-profile-copy">
-                                <strong><GlossaryText text={profileCopy.primary} enabled={!hardMode && !examMeta?.active} /></strong>
-                                {profileCopy.secondary ? <small><GlossaryText text={profileCopy.secondary} enabled={!hardMode && !examMeta?.active} /></small> : null}
+                                <strong><GlossaryText text={profileCopy.primary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={3} /></strong>
+                                {profileCopy.secondary ? <small><GlossaryText text={profileCopy.secondary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={3} /></small> : null}
                               </p>
                             ) : (
-                              <p><GlossaryText text={row.value} enabled={!hardMode && !examMeta?.active} /></p>
+                              <p><GlossaryText text={row.value} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={3} /></p>
                             )}
                           </div>
                         </section>
@@ -818,7 +820,7 @@ function CasePlayer({
                             }}
                             aria-label={`${activeHighlighter} rengiyle öykü cümlesini vurgula`}
                           >
-                            <GlossaryText text={toSentence(part)} enabled={!hardMode && !examMeta?.active} />
+                            <GlossaryText text={toSentence(part)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={3} />
                           </span>
                         ))}
                       </div>
@@ -853,7 +855,7 @@ function CasePlayer({
                     >
                       <div className="detail-block exam-finding-block">
                         <ul className="clean-list dense scientific-finding-list">
-                          {clinicalCase.exam.map((finding) => <li key={finding}><GlossaryText text={expandExamFinding(finding)} enabled={!hardMode && !examMeta?.active} /></li>)}
+                          {clinicalCase.exam.map((finding) => <li key={finding}><GlossaryText text={expandExamFinding(finding)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={3} /></li>)}
                         </ul>
                       </div>
                     </AccordionItem>

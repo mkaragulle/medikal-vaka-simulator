@@ -43,18 +43,18 @@ function parseRomanQuestionPrompt(text = '') {
   return { intro, items };
 }
 
-function FormattedQuestionPrompt({ text = '', glossaryEnabled = true }) {
+function FormattedQuestionPrompt({ text = '', glossaryEnabled = true, revealMode = 'preAnswer', maxTerms = 3 }) {
   const formatted = useMemo(() => parseRomanQuestionPrompt(text), [text]);
 
   if (!formatted) {
-    return <GlossaryText text={text} enabled={glossaryEnabled} />;
+    return <GlossaryText text={text} enabled={glossaryEnabled} revealMode={revealMode} maxTerms={maxTerms} />;
   }
 
   return (
     <span className="formatted-question-prompt has-roman-items">
       {formatted.intro ? (
         <span className="formatted-question-intro">
-          <GlossaryText text={formatted.intro} enabled={glossaryEnabled} />
+          <GlossaryText text={formatted.intro} enabled={glossaryEnabled} revealMode={revealMode} maxTerms={maxTerms} />
         </span>
       ) : null}
       <span className="formatted-question-roman-list" role="list" aria-label="Numaralandırılmış önermeler">
@@ -62,7 +62,7 @@ function FormattedQuestionPrompt({ text = '', glossaryEnabled = true }) {
           <span className="formatted-question-roman-row" role="listitem" key={`${item.marker}-${item.text}`}>
             <span className="formatted-question-roman-marker">{item.marker}.</span>
             <span className="formatted-question-roman-text">
-              <GlossaryText text={item.text} enabled={glossaryEnabled} />
+              <GlossaryText text={item.text} enabled={glossaryEnabled} revealMode={revealMode} maxTerms={maxTerms} />
             </span>
           </span>
         ))}
@@ -84,7 +84,7 @@ function parseOptionFlow(text = '') {
   return segments;
 }
 
-const AnswerOption = memo(function AnswerOption({ option, index, selected, submitted, correctAnswer, onSelect, glossaryEnabled = true }) {
+const AnswerOption = memo(function AnswerOption({ option, index, selected, submitted, correctAnswer, onSelect, glossaryEnabled = true, revealMode = 'preAnswer' }) {
   const isSelected = selected === option;
   const isCorrectOption = option === correctAnswer;
   const flowSegments = useMemo(() => parseOptionFlow(option), [option]);
@@ -132,7 +132,7 @@ const AnswerOption = memo(function AnswerOption({ option, index, selected, submi
             {flowSegments.map((segment, segmentIndex) => (
               <span className="answer-flow-item" key={`${segmentIndex}-${segment}`}>
                 <span className="answer-flow-segment" role="listitem">
-                  <GlossaryText text={segment} enabled={glossaryEnabled} />
+                  <GlossaryText text={segment} enabled={glossaryEnabled} revealMode={revealMode} maxTerms={2} />
                 </span>
                 {segmentIndex < flowSegments.length - 1 ? (
                   <span className="answer-flow-arrow" aria-hidden="true">→</span>
@@ -141,7 +141,7 @@ const AnswerOption = memo(function AnswerOption({ option, index, selected, submi
             ))}
           </span>
         ) : (
-          <span className="answer-title"><GlossaryText text={option} enabled={glossaryEnabled} /></span>
+          <span className="answer-title"><GlossaryText text={option} enabled={glossaryEnabled} revealMode={revealMode} maxTerms={2} /></span>
         )}
       </span>
       <span className="answer-status-icon" aria-hidden="true">
@@ -222,6 +222,8 @@ function DiagnosisQuiz({
     : '';
   const questionSubtext = questionSubtextOverride || defaultQuestionSubtext;
   const showInlineQuestionStem = Boolean(questionPrompt) && hideSpotQuestionCallout;
+  const glossaryRevealMode = submitted && !isStrictExam ? 'postAnswer' : 'preAnswer';
+  const glossaryEnabled = !hardMode;
 
   const handleSubmit = useCallback(() => {
     if (!selected || submitted) return;
@@ -236,7 +238,7 @@ function DiagnosisQuiz({
           <h2>{questionHeading}</h2>
           {questionSubtext ? (
             <p>
-              <FormattedQuestionPrompt text={questionSubtext} glossaryEnabled={!hardMode && !examMeta?.active} />
+              <FormattedQuestionPrompt text={questionSubtext} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
             </p>
           ) : null}
         </div>
@@ -271,7 +273,7 @@ function DiagnosisQuiz({
         <div className="ai-spot-inline-question-stem" role="note" aria-label="Soru kökü">
           <span className="ai-spot-inline-question-stem-label">Soru kökü</span>
           <strong>
-            <FormattedQuestionPrompt text={questionPrompt} glossaryEnabled={!hardMode && !examMeta?.active} />
+            <FormattedQuestionPrompt text={questionPrompt} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
           </strong>
         </div>
       ) : null}
@@ -280,7 +282,7 @@ function DiagnosisQuiz({
         <div className="tus-spot-olgular-question-callout" role="note">
           <Icon name="Target" size={16} />
           <strong>
-            <FormattedQuestionPrompt text={questionPrompt} glossaryEnabled={!hardMode && !examMeta?.active} />
+            <FormattedQuestionPrompt text={questionPrompt} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
           </strong>
         </div>
       ) : null}
@@ -295,7 +297,8 @@ function DiagnosisQuiz({
             submitted={submitted}
             correctAnswer={clinicalCase.diagnosis.correct}
             onSelect={setSelected}
-            glossaryEnabled={!hardMode && !examMeta?.active}
+            glossaryEnabled={glossaryEnabled}
+            revealMode={glossaryRevealMode}
           />
         ))}
       </div>

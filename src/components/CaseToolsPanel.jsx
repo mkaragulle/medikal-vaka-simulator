@@ -144,7 +144,7 @@ ${snippet}` : snippet);
         </summary>
         <div className="clinical-note-body">
           <ul className="quick-checklist">
-            {checklist.map((item) => <li key={item}><GlossaryText text={item} enabled={!hardMode} /></li>)}
+            {checklist.map((item) => <li key={item}><GlossaryText text={item} enabled={!hardMode} revealMode="preAnswer" maxTerms={3} /></li>)}
           </ul>
           <div className="quick-note-chip-row">
             {QUICK_NOTE_SNIPPETS.map((snippet) => (

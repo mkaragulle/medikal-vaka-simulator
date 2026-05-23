@@ -1,6 +1,7 @@
 import { memo, useCallback, useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Icon } from './ui.jsx';
+import GlossaryText from './GlossaryTooltip.jsx';
 import { TUS_PEARL_CARDS, TUS_PEARL_CARD_STATS } from '../data/tusPearlCards.js';
 import { branches } from '../data/branches.js';
 import {
@@ -1034,8 +1035,8 @@ function TusPearlStudyScreen({
                         <article key={card.id} className="tus-pearl-library-card in-catalog">
                           <div>
                             <span>{card.source === 'user' ? 'Kişisel kart' : 'Sistem kartı'} · {getBranchName(card.branchId)} · {card.cardType || 'Spot'}</span>
-                            <strong>{card.front}</strong>
-                            <p>{card.back}</p>
+                            <strong><GlossaryText text={card.front} enabled revealMode="preAnswer" maxTerms={2} /></strong>
+                            <p><GlossaryText text={card.back} enabled revealMode="postAnswer" maxTerms={2} /></p>
                           </div>
                           <div className="pearl-card-row-actions">
                             {card.source === 'user' ? <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
@@ -1077,7 +1078,7 @@ function TusPearlStudyScreen({
                       <article key={card.id} className="tus-pearl-library-card">
                         <div>
                           <span>{card.source === 'user' ? 'Kişisel kart' : 'Sistem kartı'} · {getBranchName(card.branchId)} · {card.cardType || 'Spot'}</span>
-                          <strong>{card.front}</strong>
+                          <strong><GlossaryText text={card.front} enabled revealMode="preAnswer" maxTerms={2} /></strong>
                         </div>
                         <div className="pearl-card-row-actions">
                           {card.source === 'user' ? <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
@@ -1120,7 +1121,7 @@ function TusPearlStudyScreen({
                   <button type="button" className="tus-pearl-focus-flip" onClick={() => setFlipped((current) => !current)} aria-pressed={flipped}>
                     <span className="tus-pearl-focus-face tus-pearl-focus-front pearl-card-face">
                       <span className="pearl-card-question-block">
-                        <strong>{activeCardContent.frontText || activeCard.front}</strong>
+                        <strong><GlossaryText text={activeCardContent.frontText || activeCard.front} enabled revealMode="preAnswer" maxTerms={3} /></strong>
                       </span>
 
                       <span className="pearl-card-face-footer minimal">
@@ -1133,24 +1134,24 @@ function TusPearlStudyScreen({
                       <span className="tus-pearl-back-stack focus pearl-back-premium-stack">
                         <span className="tus-pearl-answer-block focus pearl-answer-panel">
                           <span className="tus-pearl-back-kicker">Yanıt</span>
-                          <strong className={activeCardContent.isCompactBack ? 'compact' : ''}>{activeCardContent.backText}</strong>
+                          <strong className={activeCardContent.isCompactBack ? 'compact' : ''}><GlossaryText text={activeCardContent.backText} enabled revealMode="postAnswer" maxTerms={3} /></strong>
                         </span>
                         {activeCardContent.detailText ? (
                           <span className="tus-pearl-detail-block focus pearl-detail-panel">
                             <span className="tus-pearl-back-kicker muted">Kısa gerekçe</span>
-                            <span className="tus-pearl-detail-text">{activeCardContent.detailText}</span>
+                            <span className="tus-pearl-detail-text"><GlossaryText text={activeCardContent.detailText} enabled revealMode="postAnswer" maxTerms={3} /></span>
                           </span>
                         ) : null}
                         {activeCardContent.tusTipText ? (
                           <span className="tus-pearl-answer-chain focus pearl-tip-panel" role="note" aria-label="TUS ipucu">
                             <span className="tus-pearl-back-kicker muted">TUS ipucu</span>
-                            <span>{activeCardContent.tusTipText}</span>
+                            <span><GlossaryText text={activeCardContent.tusTipText} enabled revealMode="postAnswer" maxTerms={3} /></span>
                           </span>
                         ) : null}
                         {activeCardContent.noteText ? (
                           <span className="tus-pearl-note-box focus pearl-note-panel" role="note" aria-label={activeCardContent.noteLabel || 'Ayırıcı not'}>
                             <span className="tus-pearl-note-box-label">{activeCardContent.noteLabel || 'Ayırıcı not'}</span>
-                            <span className="tus-pearl-note-box-text">{activeCardContent.noteText}</span>
+                            <span className="tus-pearl-note-box-text"><GlossaryText text={activeCardContent.noteText} enabled revealMode="postAnswer" maxTerms={3} /></span>
                           </span>
                         ) : null}
                       </span>

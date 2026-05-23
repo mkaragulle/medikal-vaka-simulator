@@ -49696,3 +49696,536 @@ html[data-theme="dark"] .bottom-case-browser-tools .bottom-case-browser-count,
     width: max-content !important;
   }
 }
+
+/* ===== v263 KlinikIQ Smart TUS Glossary Layer ===== */
+:where(.glossary-text-flow) {
+  display: inline;
+}
+
+:where(.smart-glossary-term) {
+  color: inherit;
+  cursor: help;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, #14b8a6 58%, transparent);
+  border-radius: 0.35rem;
+  background: linear-gradient(180deg, transparent 58%, color-mix(in srgb, #14b8a6 13%, transparent) 58%);
+  -webkit-tap-highlight-color: transparent;
+}
+
+:where(.smart-glossary-term:hover, .smart-glossary-term:focus-visible) {
+  color: color-mix(in srgb, #0f766e 88%, #111827);
+  outline: none;
+  background: color-mix(in srgb, #14b8a6 13%, transparent);
+  text-decoration-color: color-mix(in srgb, #0f766e 82%, transparent);
+}
+
+:where(.smart-glossary-term[data-reveal-mode="preAnswer"]) {
+  text-decoration-color: color-mix(in srgb, #64748b 44%, transparent);
+  background: linear-gradient(180deg, transparent 62%, color-mix(in srgb, #64748b 10%, transparent) 62%);
+}
+
+#klinikiq-tooltip-layer .smart-glossary-popover,
+.smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip {
+  left: var(--tooltip-left) !important;
+  top: var(--tooltip-top) !important;
+  transform: translate3d(0, 0, 0) !important;
+  display: block !important;
+  width: max-content !important;
+  max-width: min(390px, calc(100vw - 24px)) !important;
+  min-width: min(260px, calc(100vw - 24px)) !important;
+  max-height: min(68vh, 520px);
+  overflow: auto !important;
+  pointer-events: auto !important;
+  padding: 0 !important;
+  border: 1px solid color-mix(in srgb, #0f766e 20%, rgba(148, 163, 184, 0.4));
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 22px 54px rgba(15, 23, 42, 0.18), 0 8px 24px rgba(20, 184, 166, 0.10);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  white-space: normal !important;
+  line-height: 1.45;
+  color: #0f172a;
+}
+
+[data-theme="dark"] #klinikiq-tooltip-layer .smart-glossary-popover,
+[data-theme="dark"] .smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip {
+  background: rgba(15, 23, 42, 0.97);
+  border-color: color-mix(in srgb, #14b8a6 22%, rgba(148, 163, 184, 0.28));
+  color: #e5e7eb;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.42), 0 8px 24px rgba(20, 184, 166, 0.12);
+}
+
+#klinikiq-tooltip-layer .smart-glossary-popover::after,
+.smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip::after {
+  content: "";
+  position: absolute;
+  left: var(--tooltip-arrow-left);
+  width: 12px;
+  height: 12px;
+  background: inherit;
+  border: inherit;
+  transform: translateX(-50%) rotate(45deg);
+  pointer-events: none;
+}
+
+#klinikiq-tooltip-layer .smart-glossary-popover[data-placement="top"]::after,
+.smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip[data-placement="top"]::after {
+  bottom: -6px;
+  border-left: 0;
+  border-top: 0;
+}
+
+#klinikiq-tooltip-layer .smart-glossary-popover[data-placement="bottom"]::after,
+.smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip[data-placement="bottom"]::after {
+  top: -6px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.smart-glossary-card,
+.smart-glossary-card * {
+  box-sizing: border-box;
+}
+
+.smart-glossary-card {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  font-size: 13px;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.smart-glossary-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.smart-glossary-title-wrap {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.smart-glossary-title {
+  display: block;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: inherit;
+}
+
+.smart-glossary-category,
+.smart-glossary-difficulty {
+  width: fit-content;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 10.5px;
+  font-style: normal;
+  font-weight: 700;
+  color: #0f766e;
+  background: color-mix(in srgb, #14b8a6 11%, transparent);
+  border: 1px solid color-mix(in srgb, #14b8a6 19%, transparent);
+}
+
+.smart-glossary-difficulty {
+  flex: 0 0 auto;
+  color: #475569;
+  background: color-mix(in srgb, #64748b 9%, transparent);
+  border-color: color-mix(in srgb, #64748b 16%, transparent);
+}
+
+.smart-glossary-definition,
+.smart-glossary-safe-note,
+.smart-glossary-row,
+.smart-glossary-detail-block,
+.smart-glossary-links {
+  display: block;
+}
+
+.smart-glossary-definition {
+  color: color-mix(in srgb, currentColor 84%, transparent);
+  font-weight: 560;
+}
+
+.smart-glossary-safe-note {
+  border-radius: 12px;
+  padding: 8px 10px;
+  color: #64748b;
+  background: color-mix(in srgb, #64748b 8%, transparent);
+  border: 1px solid color-mix(in srgb, #64748b 12%, transparent);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.smart-glossary-row {
+  border-radius: 13px;
+  padding: 9px 10px;
+  background: color-mix(in srgb, #f8fafc 86%, transparent);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.smart-glossary-row b {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #0f766e;
+}
+
+.smart-glossary-row span {
+  display: block;
+  color: color-mix(in srgb, currentColor 88%, transparent);
+}
+
+.smart-glossary-row.differential b {
+  color: #b45309;
+}
+
+.smart-glossary-detail-toggle {
+  justify-self: start;
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  color: #0f766e;
+  background: color-mix(in srgb, #14b8a6 11%, transparent);
+}
+
+.smart-glossary-detail-toggle:hover,
+.smart-glossary-detail-toggle:focus-visible {
+  outline: none;
+  background: color-mix(in srgb, #14b8a6 18%, transparent);
+}
+
+.smart-glossary-detail-block {
+  display: grid;
+  gap: 7px;
+  color: color-mix(in srgb, currentColor 82%, transparent);
+  border-top: 1px solid color-mix(in srgb, #94a3b8 22%, transparent);
+  padding-top: 10px;
+}
+
+.smart-glossary-related {
+  color: #64748b;
+}
+
+.smart-glossary-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 2px;
+}
+
+.smart-glossary-links span {
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 750;
+  color: #475569;
+  background: color-mix(in srgb, #64748b 8%, transparent);
+}
+
+[data-theme="dark"] .smart-glossary-category,
+[data-theme="dark"] .smart-glossary-detail-toggle {
+  color: #5eead4;
+}
+
+[data-theme="dark"] .smart-glossary-row {
+  background: rgba(30, 41, 59, 0.72);
+  border-color: rgba(148, 163, 184, 0.22);
+}
+
+[data-theme="dark"] .smart-glossary-safe-note,
+[data-theme="dark"] .smart-glossary-links span,
+[data-theme="dark"] .smart-glossary-difficulty {
+  color: #cbd5e1;
+  background: rgba(148, 163, 184, 0.10);
+  border-color: rgba(148, 163, 184, 0.16);
+}
+
+[data-hard-mode="true"] .smart-glossary-term,
+[data-hard-mode="true"] .smart-glossary-term:hover,
+[data-hard-mode="true"] .smart-glossary-term:focus-visible {
+  color: inherit !important;
+  cursor: inherit !important;
+  text-decoration: none !important;
+  background: transparent !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 640px) {
+  #klinikiq-tooltip-layer .smart-glossary-popover,
+  .smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip {
+    max-width: calc(100vw - 20px) !important;
+    min-width: min(300px, calc(100vw - 20px)) !important;
+    border-radius: 16px;
+    max-height: 62vh;
+  }
+
+  .smart-glossary-card {
+    padding: 13px;
+    font-size: 12.5px;
+  }
+}
+
+
+/* ===== v46 AMBOSS-style smart terminology preview layer =====
+   A compact, white, reading-preserving preview card with post-answer expansion. */
+#klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover,
+.glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover {
+  max-width: min(360px, calc(100vw - 24px)) !important;
+  min-width: min(250px, calc(100vw - 24px)) !important;
+  padding: 0 !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(15, 23, 42, .10) !important;
+  background: #ffffff !important;
+  color: #1f2937 !important;
+  box-shadow:
+    0 18px 48px rgba(15, 23, 42, .18),
+    0 2px 8px rgba(15, 23, 42, .08) !important;
+  overflow: visible !important;
+  backdrop-filter: none !important;
+}
+
+#klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover::after,
+.glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover::after {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, .10) !important;
+}
+
+.smart-glossary-card {
+  display: grid !important;
+  gap: 8px !important;
+  padding: 12px 13px 11px !important;
+  color: #1f2937 !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+  letter-spacing: -0.005em !important;
+}
+
+.smart-glossary-header {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  min-width: 0 !important;
+}
+
+.smart-glossary-title-wrap {
+  display: grid !important;
+  gap: 2px !important;
+  min-width: 0 !important;
+}
+
+.smart-glossary-title {
+  display: block !important;
+  color: #0f172a !important;
+  font-size: 14px !important;
+  font-weight: 780 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.015em !important;
+}
+
+.smart-glossary-secondary-name {
+  display: block !important;
+  color: #64748b !important;
+  font-size: 11.5px !important;
+  font-weight: 650 !important;
+  line-height: 1.2 !important;
+}
+
+.smart-glossary-header-actions {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex: 0 0 auto !important;
+}
+
+.smart-glossary-category {
+  display: inline-flex !important;
+  align-items: center !important;
+  max-width: 124px !important;
+  min-height: 22px !important;
+  padding: 3px 7px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(14, 165, 233, .16) !important;
+  background: rgba(14, 165, 233, .07) !important;
+  color: #0369a1 !important;
+  font-size: 10.5px !important;
+  font-style: normal !important;
+  font-weight: 760 !important;
+  line-height: 1 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.smart-glossary-arrow {
+  width: 24px !important;
+  height: 24px !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(15, 23, 42, .10) !important;
+  background: #f8fafc !important;
+  color: #0f766e !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+}
+
+.smart-glossary-arrow:hover,
+.smart-glossary-arrow:focus-visible {
+  background: #eefcf8 !important;
+  border-color: rgba(13, 148, 136, .22) !important;
+  outline: none !important;
+}
+
+.smart-glossary-definition {
+  display: block !important;
+  color: #334155 !important;
+  font-size: 13px !important;
+  font-weight: 520 !important;
+  line-height: 1.45 !important;
+}
+
+.smart-glossary-row {
+  display: grid !important;
+  gap: 3px !important;
+  padding: 8px 9px !important;
+  border-radius: 11px !important;
+  background: #f8fafc !important;
+  border: 1px solid rgba(15, 23, 42, .07) !important;
+}
+
+.smart-glossary-row b,
+.smart-glossary-detail-block b {
+  color: #0f172a !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: .01em !important;
+}
+
+.smart-glossary-row span,
+.smart-glossary-detail-block span {
+  color: #475569 !important;
+  font-size: 12.4px !important;
+  line-height: 1.45 !important;
+}
+
+.smart-glossary-row.pearl {
+  background: #f0fdfa !important;
+  border-color: rgba(13, 148, 136, .16) !important;
+}
+
+.smart-glossary-row.differential {
+  background: #fff7ed !important;
+  border-color: rgba(249, 115, 22, .16) !important;
+}
+
+.smart-glossary-safe-note {
+  display: inline-flex !important;
+  width: fit-content !important;
+  padding: 4px 7px !important;
+  border-radius: 999px !important;
+  background: #f8fafc !important;
+  color: #64748b !important;
+  border: 1px solid rgba(15, 23, 42, .08) !important;
+  font-size: 10.5px !important;
+  font-weight: 720 !important;
+}
+
+.smart-glossary-detail-block {
+  display: grid !important;
+  gap: 6px !important;
+  padding-top: 2px !important;
+}
+
+.smart-glossary-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 5px !important;
+  padding-top: 2px !important;
+}
+
+.smart-glossary-links span {
+  display: inline-flex !important;
+  padding: 4px 7px !important;
+  border-radius: 999px !important;
+  background: #f8fafc !important;
+  border: 1px solid rgba(15, 23, 42, .08) !important;
+  color: #475569 !important;
+  font-size: 10.8px !important;
+  font-weight: 720 !important;
+}
+
+.smart-glossary-difficulty,
+.smart-glossary-detail-toggle {
+  display: none !important;
+}
+
+.smart-glossary-term {
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px !important;
+  text-decoration-style: dotted !important;
+  cursor: help !important;
+  touch-action: manipulation !important;
+}
+
+@media (max-width: 640px) {
+  #klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover,
+  .glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover {
+    max-width: calc(100vw - 20px) !important;
+    min-width: min(280px, calc(100vw - 20px)) !important;
+  }
+
+  .smart-glossary-card {
+    padding: 12px !important;
+    font-size: 12.8px !important;
+  }
+
+  .smart-glossary-category {
+    max-width: 104px !important;
+  }
+}
+
+[data-theme='dark'] #klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover,
+[data-theme='dark'] .glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover {
+  background: #0f172a !important;
+  color: #e5e7eb !important;
+  border-color: rgba(148, 163, 184, .24) !important;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, .42), 0 2px 8px rgba(0, 0, 0, .25) !important;
+}
+
+[data-theme='dark'] #klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover::after,
+[data-theme='dark'] .glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover::after {
+  background: #0f172a !important;
+  border-color: rgba(148, 163, 184, .24) !important;
+}
+
+[data-theme='dark'] .smart-glossary-title { color: #f8fafc !important; }
+[data-theme='dark'] .smart-glossary-secondary-name,
+[data-theme='dark'] .smart-glossary-definition { color: #cbd5e1 !important; }
+[data-theme='dark'] .smart-glossary-row,
+[data-theme='dark'] .smart-glossary-safe-note,
+[data-theme='dark'] .smart-glossary-links span,
+[data-theme='dark'] .smart-glossary-arrow {
+  background: rgba(15, 23, 42, .96) !important;
+  border-color: rgba(148, 163, 184, .20) !important;
+}
+[data-theme='dark'] .smart-glossary-row span,
+[data-theme='dark'] .smart-glossary-detail-block span { color: #cbd5e1 !important; }
+[data-theme='dark'] .smart-glossary-row b,
+[data-theme='dark'] .smart-glossary-detail-block b { color: #f8fafc !important; }

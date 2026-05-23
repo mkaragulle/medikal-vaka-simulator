@@ -253,12 +253,14 @@ function ManagementStepCard({
             : ''
     : '';
 
+  const glossaryRevealMode = submitted ? 'postAnswer' : 'preAnswer';
+
   return (
     <article className={`management-step-card advanced-step-card v38-step-card ${inPlan ? 'in-plan' : 'available'} ${stateClass}`.trim()}>
       <div className="management-step-index">{inPlan ? index + 1 : <Icon name="ClipboardList" size={15} />}</div>
       <div className="management-step-copy">
-        <p><GlossaryText text={step.label} enabled={mode !== 'exam' && !hardMode} /></p>
-        {submitted ? <small><GlossaryText text={step.rationale} enabled={mode !== 'exam' && !hardMode} /></small> : null}
+        <p><GlossaryText text={step.label} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={2} /></p>
+        {submitted ? <small><GlossaryText text={step.rationale} enabled={mode !== 'exam' && !hardMode} revealMode="postAnswer" maxTerms={3} /></small> : null}
       </div>
       <div className="management-step-actions">
         <StepStatePill step={step} submitted={submitted} inPlan={inPlan} index={index} correctById={correctById} />
@@ -326,6 +328,7 @@ function ManagementSequencePanel({ clinicalCase, mode = 'study', hardMode = fals
   const selectedIds = useMemo(() => new Set(planSteps.map((step) => step.id)), [planSteps]);
   const poolSteps = useMemo(() => availableSteps.filter((step) => !selectedIds.has(step.id)), [availableSteps, selectedIds]);
   const planScore = useMemo(() => sequence ? scorePlan(planSteps, sequence) : { score: 0, max: 0, correctRequired: 0, selectedUnnecessary: 0, missingRequired: 0 }, [planSteps, sequence]);
+  const glossaryRevealMode = submitted ? 'postAnswer' : 'preAnswer';
 
   const addStep = useCallback((step) => {
     if (submitted) return;
@@ -444,8 +447,8 @@ function ManagementSequencePanel({ clinicalCase, mode = 'study', hardMode = fals
               <li key={step.id}>
                 <span>{step.correctOrder}</span>
                 <div>
-                  <strong><GlossaryText text={step.label} enabled={mode !== 'exam' && !hardMode} /></strong>
-                  <p><GlossaryText text={step.rationale} enabled={mode !== 'exam' && !hardMode} /></p>
+                  <strong><GlossaryText text={step.label} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={2} /></strong>
+                  <p><GlossaryText text={step.rationale} enabled={mode !== 'exam' && !hardMode} revealMode="postAnswer" maxTerms={3} /></p>
                 </div>
               </li>
             ))}
