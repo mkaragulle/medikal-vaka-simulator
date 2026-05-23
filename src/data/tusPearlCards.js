@@ -80,7 +80,7 @@ export const TUS_PEARL_TOPICS = [
     "topic": "Kavernöz sinüs",
     "mainQuestion": "Kavernöz sinüs içinde internal karotis arterle birlikte seyreden kraniyal sinir hangisidir?",
     "mainAnswer": "abdusens siniri.",
-    "explanation": "III, IV, V1 ve V2 lateral duvardadır; VI. sinir kavernöz sinüs içinde internal karotis arter komşuluğunda seyreder.",
+    "explanation": "Okulomotor, troklear, oftalmik ve maksiller sinirler kavernöz sinüsün lateral duvarındadır; abdusens siniri ise kavernöz sinüs içinde internal karotis arter komşuluğunda seyreder.",
     "keywords": [
       "kavernöz sinüs",
       "abducens",
@@ -8129,10 +8129,10 @@ function polishMedicalTerminology(value = '') {
     .replace(/\bn\.\s*fibularis\s+communis\b/giu, 'nervus fibularis communis')
     .replace(/\bN\.\s*intercostobrachialis\b/giu, 'nervus intercostobrachialis')
     .replace(/\bn\.\s*intercostobrachialis\b/giu, 'nervus intercostobrachialis')
-    .replace(/\bN\.\s*oculomotorius\b/giu, 'nervus oculomotorius')
-    .replace(/\bn\.\s*oculomotorius\b/giu, 'nervus oculomotorius')
-    .replace(/\bN\.\s*abducens\b/giu, 'nervus abducens')
-    .replace(/\bn\.\s*abducens\b/giu, 'nervus abducens')
+    .replace(/\bN\.\s*oculomotorius\b/giu, 'okulomotor sinir')
+    .replace(/\bn\.\s*oculomotorius\b/giu, 'okulomotor sinir')
+    .replace(/\bN\.\s*abducens\b/giu, 'abdusens siniri')
+    .replace(/\bn\.\s*abducens\b/giu, 'abdusens siniri')
     .replace(/\bN\.\s*axillaris\b/giu, 'nervus axillaris')
     .replace(/\bn\.\s*axillaris\b/giu, 'nervus axillaris')
     .replace(/\bN\.\s*tibialis\b/giu, 'nervus tibialis')

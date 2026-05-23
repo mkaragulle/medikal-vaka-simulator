@@ -56,6 +56,29 @@ function normalizeMedicalAbbreviations(value = '') {
   let text = String(value ?? '');
 
   const replacements = [
+    [/\bKavernöz sinüste\s+VI\.\s*sinir\s+içeride,?\s*III-IV-V1-V2\s+lateral\s+duvardadır;?\s*II\.\s*sinir\s+bu\s+listeye\s+girmez\.?/giu, 'Kavernöz sinüste abdusens siniri sinüs içinden geçer; okulomotor, troklear, oftalmik ve maksiller sinirler lateral duvardadır. Optik sinir bu listeye girmez.'],
+    [/\bKavernöz sinüste\s+VI\.\s*sinir\s+içeride\b/giu, 'Kavernöz sinüste abdusens siniri sinüs içinden geçer'],
+    [/\bVI\.\s*sinir(?:i|in)?\b/giu, 'abdusens siniri'],
+    [/\bII\.\s*sinir(?:i|in)?\b/giu, 'optik sinir'],
+    [/\bIII\.\s*sinir(?:i|in)?\b/giu, 'okulomotor sinir'],
+    [/\bIV\.\s*sinir(?:i|in)?\b/giu, 'troklear sinir'],
+    [/\bIII-IV-V1-V2\b/giu, 'okulomotor, troklear, oftalmik ve maksiller sinirler'],
+    [/\bIII\s*,\s*IV\s*,\s*V1\s*(?:ve|,)?\s*V2\b/giu, 'okulomotor, troklear, oftalmik ve maksiller sinirler'],
+    [/\bV1\b/gu, 'oftalmik sinir'],
+    [/\bV2\b/gu, 'maksiller sinir'],
+    [/\bNervus\s+oculomotorius\b/gu, 'Okulomotor sinir'],
+    [/\bnervus\s+oculomotorius\b/gu, 'okulomotor sinir'],
+    [/\bNervus\s+trochlearis\b/gu, 'Troklear sinir'],
+    [/\bnervus\s+trochlearis\b/gu, 'troklear sinir'],
+    [/\bNervus\s+abducens\b/gu, 'Abdusens siniri'],
+    [/\bnervus\s+abducens\b/gu, 'abdusens siniri'],
+    [/\bNervus\s+opticus\b/gu, 'Optik sinir'],
+    [/\bnervus\s+opticus\b/gu, 'optik sinir'],
+    [/\bArteria\s+carotis\s+interna\b/gu, 'İnternal karotis arter'],
+    [/\barteria\s+carotis\s+interna\b/gu, 'internal karotis arter'],
+    [/\bsinus\s+cavernosus\b/giu, 'kavernöz sinüs'],
+    [/\bSinus\s+cavernosus\b/gu, 'Kavernöz sinüs'],
+    [/\bcanalis\s+opticus\b/giu, 'optik kanal'],
     // Microbiology genus abbreviations: prevent sentence splitters from reading
     // "C. difficile" or "E. coli" as a one-letter sentence.
     [/\b[Cc]\.\s*[Dd]ifficile([’'`]?nin|[’'`]?de|[’'`]?den|[’'`]?ye|[’'`]?yi|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Clostridioides difficile${suffix}`],
@@ -207,12 +230,12 @@ function deriveSingleLinePearl(clinicalCase = {}, reasoningText = '') {
     || clinicalCase.diagnosis?.pearls?.[0]
     || '';
   const source = stripFeedbackHeading(itemText(raw));
-  let pearl = singleSentence(source, 260);
+  let pearl = compactParagraph(source, 2, 360);
 
-  // Safety: if a dotted abbreviation slipped through and the first-sentence
-  // extractor produced only "C.", "E.", etc., fall back to the full note.
-  if (/^[A-ZÇĞİÖŞÜ]\.$/u.test(pearl) || pearl.length < 12 || /\b[A-ZÇĞİÖŞÜ]\.$/u.test(pearl)) {
-    pearl = truncateSentence(source, 320);
+  // Safety: if a dotted abbreviation or Roman-numeral cranial nerve shorthand
+  // slipped through and produced only "C.", "VI.", etc., use the repaired full note.
+  if (/^(?:[A-ZÇĞİÖŞÜ]|I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\.$/u.test(pearl) || pearl.length < 12 || /\b(?:[A-ZÇĞİÖŞÜ]|I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\.$/u.test(pearl)) {
+    pearl = truncateSentence(source, 360);
   }
 
   if (!pearl || textLooksSame(pearl, reasoningText, 0.86)) return '';
@@ -259,12 +282,13 @@ function splitIntoSentences(text = '') {
   if (!normalized) return [];
 
   const protectedText = normalized
-    .replace(/\b([A-ZÇĞİÖŞÜ])\.\s+(?=[A-ZÇĞİÖŞÜa-zçğıöşü])/gu, '$1<abbr-dot> ');
+    .replace(/\b([A-ZÇĞİÖŞÜ])\.\s+(?=[A-ZÇĞİÖŞÜa-zçğıöşü])/gu, '$1<abbr-dot> ')
+    .replace(/\b(I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\.\s+(?=(?:sinir|Sinir|kranial|Kranial|[A-ZÇĞİÖŞÜa-zçğıöşü]))/gu, '$1<roman-dot> ');
 
   return protectedText
     .split(/(?<=[.!?])\s+(?=[A-ZÇĞİÖŞÜ0-9])/u)
-    .map((sentence) => sentence.replace(/<abbr-dot>/g, '.').trim())
-    .filter((sentence) => sentence && !/^[A-ZÇĞİÖŞÜ]\.$/u.test(sentence));
+    .map((sentence) => sentence.replace(/<abbr-dot>/g, '.').replace(/<roman-dot>/g, '.').trim())
+    .filter((sentence) => sentence && !/^(?:[A-ZÇĞİÖŞÜ]|I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\.$/u.test(sentence));
 }
 
 function compactParagraph(value = '', maxSentences = 4, maxLength = 620) {

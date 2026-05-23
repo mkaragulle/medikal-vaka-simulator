@@ -51,24 +51,24 @@ export const PEARL_AI_CARD_OUTPUT_SCHEMA = Object.freeze({
 
 function polishPearlMedicalTerminology(value = '') {
   return String(value || '')
-    .replace(/\bN\.\s*fibularis\s+communis\b/giu, 'nervus fibularis communis')
-    .replace(/\bn\.\s*fibularis\s+communis\b/giu, 'nervus fibularis communis')
-    .replace(/\bN\.\s*intercostobrachialis\b/giu, 'nervus intercostobrachialis')
-    .replace(/\bn\.\s*intercostobrachialis\b/giu, 'nervus intercostobrachialis')
-    .replace(/\bN\.\s*oculomotorius\b/giu, 'nervus oculomotorius')
-    .replace(/\bn\.\s*oculomotorius\b/giu, 'nervus oculomotorius')
-    .replace(/\bN\.\s*abducens\b/giu, 'nervus abducens')
-    .replace(/\bn\.\s*abducens\b/giu, 'nervus abducens')
-    .replace(/\bN\.\s*axillaris\b/giu, 'nervus axillaris')
-    .replace(/\bn\.\s*axillaris\b/giu, 'nervus axillaris')
-    .replace(/\bN\.\s*tibialis\b/giu, 'nervus tibialis')
-    .replace(/\bn\.\s*tibialis\b/giu, 'nervus tibialis')
-    .replace(/\bV\.\s*saphena\s+magna\b/giu, 'vena saphena magna')
-    .replace(/\bv\.\s*saphena\s+magna\b/giu, 'vena saphena magna')
-    .replace(/\bV\.\s*saphena\s+parva\b/giu, 'vena saphena parva')
-    .replace(/\bv\.\s*saphena\s+parva\b/giu, 'vena saphena parva')
-    .replace(/\bA\.\s*communicans\s+posterior\b/giu, 'arteria communicans posterior')
-    .replace(/\ba\.\s*communicans\s+posterior\b/giu, 'arteria communicans posterior')
+    .replace(/\bN\.\s*fibularis\s+communis\b/giu, 'ortak fibular sinir')
+    .replace(/\bn\.\s*fibularis\s+communis\b/giu, 'ortak fibular sinir')
+    .replace(/\bN\.\s*intercostobrachialis\b/giu, 'interkostobrakiyal sinir')
+    .replace(/\bn\.\s*intercostobrachialis\b/giu, 'interkostobrakiyal sinir')
+    .replace(/\bN\.\s*oculomotorius\b/giu, 'okulomotor sinir')
+    .replace(/\bn\.\s*oculomotorius\b/giu, 'okulomotor sinir')
+    .replace(/\bN\.\s*abducens\b/giu, 'abdusens siniri')
+    .replace(/\bn\.\s*abducens\b/giu, 'abdusens siniri')
+    .replace(/\bN\.\s*axillaris\b/giu, 'aksiller sinir')
+    .replace(/\bn\.\s*axillaris\b/giu, 'aksiller sinir')
+    .replace(/\bN\.\s*tibialis\b/giu, 'tibial sinir')
+    .replace(/\bn\.\s*tibialis\b/giu, 'tibial sinir')
+    .replace(/\bV\.\s*saphena\s+magna\b/giu, 'büyük safen ven')
+    .replace(/\bv\.\s*saphena\s+magna\b/giu, 'büyük safen ven')
+    .replace(/\bV\.\s*saphena\s+parva\b/giu, 'küçük safen ven')
+    .replace(/\bv\.\s*saphena\s+parva\b/giu, 'küçük safen ven')
+    .replace(/\bA\.\s*communicans\s+posterior\b/giu, 'posterior komünikan arter')
+    .replace(/\ba\.\s*communicans\s+posterior\b/giu, 'posterior komünikan arter')
     .replace(/\bS\.\s*pneumoniae\b/gu, 'Streptococcus pneumoniae')
     .replace(/\bS\.\s*aureus\b/gu, 'Staphylococcus aureus')
     .replace(/\bH\.\s*influenzae\b/gu, 'Haemophilus influenzae')
@@ -85,7 +85,7 @@ function polishPearlMedicalTerminology(value = '') {
 }
 
 function capitalizeTerminologyLead(value = '') {
-  return String(value || '').replace(/^(nervus|arteria|vena|intravenöz|kızarma)/u, (match) => match.charAt(0).toLocaleUpperCase('tr') + match.slice(1));
+  return String(value || '').replace(/^(ortak|interkostobrakiyal|okulomotor|abdusens|aksiller|tibial|büyük|küçük|posterior|intravenöz|kızarma)\b/u, (match) => match.charAt(0).toLocaleUpperCase('tr') + match.slice(1));
 }
 
 function normalizeText(value = '') {

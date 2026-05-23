@@ -50,6 +50,17 @@ function normalizeSpaces(value = '') {
     .trim();
 }
 
+
+function protectSentenceAbbreviations(value = '') {
+  return String(value || '')
+    .replace(/\b([A-ZÇĞİÖŞÜ])\.\s+(?=[A-ZÇĞİÖŞÜa-zçğıöşü])/gu, '$1<abbr-dot> ')
+    .replace(/\b(I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\.\s+(?=(?:sinir|Sinir|kranial|Kranial|[A-ZÇĞİÖŞÜa-zçğıöşü]))/gu, '$1<roman-dot> ');
+}
+
+function restoreSentenceAbbreviations(value = '') {
+  return String(value || '').replace(/<abbr-dot>/g, '.').replace(/<roman-dot>/g, '.');
+}
+
 function asciiKey(value = '') {
   return normalizeSpaces(value)
     .toLocaleLowerCase(TR_LOCALE)
@@ -98,11 +109,11 @@ function ensureQuestion(value = '') {
 }
 
 function splitSentences(value = '') {
-  const text = normalizeSpaces(value);
+  const text = protectSentenceAbbreviations(normalizeSpaces(value));
   if (!text) return [];
   return text
     .split(/(?<=[.!?])\s+(?=[A-ZÇĞİÖŞÜ0-9])/u)
-    .map((item) => item.trim())
+    .map((item) => restoreSentenceAbbreviations(item).trim())
     .filter(Boolean);
 }
 
