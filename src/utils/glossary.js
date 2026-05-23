@@ -15,6 +15,7 @@ import { TUS_GLOSSARY_CONTENT_COVERAGE_TERMS } from '../data/tusGlossaryContentC
 import { TUS_GLOSSARY_RECURSIVE_NESTED_TERMS } from '../data/tusGlossaryRecursiveNestedIndex.js';
 import { TUS_GLOSSARY_CANDIDATE_AUDIT_TERMS } from '../data/tusGlossaryCandidateAuditIndex.js';
 import { TUS_GLOSSARY_DEFINITION_QUALITY_TERMS } from '../data/tusGlossaryDefinitionQualityIndex.js';
+import { TUS_GLOSSARY_V300_SUPPLEMENTAL_TERMS } from '../data/tusGlossaryV300SupplementalIndex.js';
 
 const teachingOnly = 'teachingOnly';
 
@@ -9478,6 +9479,7 @@ export const defaultGlossaryTerms = globalGlossaryTerms;
 const STATIC_GLOSSARY_SOURCES = [
   // Highest-priority quality layer: removes placeholder/filler definitions while preserving aliases and matching behavior.
   ...TUS_GLOSSARY_DEFINITION_QUALITY_TERMS,
+  ...TUS_GLOSSARY_V300_SUPPLEMENTAL_TERMS,
   ...TUS_GLOSSARY_CANDIDATE_AUDIT_TERMS,
   ...TUS_GLOSSARY_RECURSIVE_NESTED_TERMS,
   // Binding corrections come first: they define true canonical owners for terms
