@@ -1,0 +1,1230 @@
+{
+  "generatedAt": "2026-05-23T16:33:19.536Z",
+  "totalEntries": 1371,
+  "totalAliases": 4390,
+  "scannedFiles": 80,
+  "scannedTextCharacters": 9715221,
+  "audit": {
+    "issueCount": 495,
+    "severityCounts": {
+      "critical": 0,
+      "high": 0,
+      "medium": 464,
+      "low": 31
+    },
+    "categorySummary": {
+      "Hücre / molekül / biyokimyasal kavram": 351,
+      "Genel klinik kavram": 277,
+      "Hastalık / sendrom / klinik tablo": 225,
+      "Anatomik bölge / lokalizasyon": 144,
+      "Fizik/fonksiyonel muayene bulgusu": 127,
+      "Patofizyolojik/fizyolojik mekanizma": 68,
+      "Semptom / yakınma": 54,
+      "Farmakolojik ajan / tedavi yaklaşımı": 50,
+      "Tetkik / görüntüleme / laboratuvar": 47,
+      "Cerrahi işlem / girişim": 28
+    },
+    "criticalIssues": [],
+    "highIssues": [],
+    "mediumIssueSample": [
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "quality-reversible-airway-obstruction",
+        "term": "Geri dönüşümlü hava yolu obstrüksiyonu",
+        "category": "Patofizyolojik mekanizma",
+        "definition": "Hava yolu daralmasının bronkodilatör veya spontan düzelme ile belirgin şekilde geri dönebilmesini ifade eder."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "quality-glomerular-filtration-rate",
+        "term": "Glomerüler filtrasyon hızı",
+        "category": "Fizyoloji / Laboratuvar parametresi",
+        "definition": "Birim zamanda glomerüllerden Bowman boşluğuna filtre edilen plazma hacmini ifade eder."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "quality-deep-rapid-breathing",
+        "term": "Derin hızlı solunum",
+        "category": "Semptom / Solunum paterni",
+        "definition": "Metabolik asidozda kompansatuvar olarak derin ve hızlı solunum paterninin gelişmesidir."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "quality-iv-fluid-replacement",
+        "term": "İntravenöz sıvı replasmanı",
+        "category": "Tedavi yaklaşımı",
+        "definition": "Damar yolu üzerinden volüm, elektrolit veya hemodinamik destek amacıyla sıvı verilmesidir."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "quality-oral-iron-therapy",
+        "term": "Oral demir tedavisi",
+        "category": "Farmakolojik ajan / Tedavi yaklaşımı",
+        "definition": "Demir eksikliğini düzeltmek amacıyla ağızdan demir preparatı verilmesidir."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "quality-lumbar-puncture",
+        "term": "Lomber ponksiyon",
+        "category": "Tetkik / İşlem",
+        "definition": "Beyin omurilik sıvısının tanısal veya nadiren terapötik amaçla lomber aralıktan alınmasıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "binding-eosinophil",
+        "term": "Eozinofil",
+        "category": "Hücre / Granülosit",
+        "definition": "Paraziter enfeksiyonlar, alerjik hastalıklar ve bazı inflamatuvar durumlarla ilişkili granülosittir."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-omuz-aktif-abduksiyonu",
+        "term": "Omuz aktif abdüksiyonu",
+        "category": "Fonksiyonel muayene bulgusu",
+        "definition": "Omuz ekleminde kolun hastanın kendi kas gücüyle gövdeden uzaklaştırılmasıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-retikulosit-yaniti",
+        "term": "Retikülosit yanıtı",
+        "category": "Laboratuvar yorumu",
+        "definition": "Kemik iliğinin anemi veya hemolize karşı genç eritrosit üretimini artırıp artırmadığını gösteren yanıttır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-safra-kesesi-duvar-kalinlasmasi",
+        "term": "Safra kesesi duvar kalınlaşması",
+        "category": "Görüntüleme bulgusu",
+        "definition": "Safra kesesi duvarının normalden kalın izlenmesidir."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-segmenter-duvar-kalinlasmasi",
+        "term": "Segmenter duvar kalınlaşması",
+        "category": "Görüntüleme bulgusu",
+        "definition": "Bağırsak veya organ duvarının sınırlı bir segmentte kalınlaşmasıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-kalca-fleksiyonu-zayifligi",
+        "term": "Kalça fleksiyonu zayıflığı",
+        "category": "Motor muayene bulgusu",
+        "definition": "Kalçayı öne doğru kaldırma gücünün azalmasıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-diz-ekstansiyonu-zayifligi",
+        "term": "Diz ekstansiyonu zayıflığı",
+        "category": "Motor muayene bulgusu",
+        "definition": "Dizi düzleştirme gücünün azalmasıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-redukte-edilemeyen-kitle",
+        "term": "Redükte edilemeyen kitle",
+        "category": "Cerrahi muayene bulgusu",
+        "definition": "Elle veya pozisyonla karın içine geri itilemeyen kitleyi ifade eder."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-yuksek-yerlesimli-testis",
+        "term": "Yüksek yerleşimli testis",
+        "category": "Muayene bulgusu",
+        "definition": "Testisin skrotum içinde normalden daha yukarıda izlenmesidir."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-serratus-anterior-felci",
+        "term": "Serratus anterior felci",
+        "category": "Nöromüsküler bulgu",
+        "definition": "Serratus anterior kasının işlev kaybına bağlı skapulanın toraks duvarına sabitlenememesidir."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-i-mmun-kompleks-birikimi",
+        "term": "İmmün kompleks birikimi",
+        "category": "İmmünopatoloji mekanizması",
+        "definition": "Antijen-antikor komplekslerinin dokuda birikerek inflamasyon oluşturmasıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-toksin-aracili-hastalik",
+        "term": "Toksin aracılı hastalık",
+        "category": "Mikrobiyoloji mekanizması",
+        "definition": "Mikroorganizmanın doğrudan invazyonundan çok toksin etkisiyle klinik tablo oluşturmasıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-aside-direncli-basil",
+        "term": "Aside dirençli basil",
+        "category": "Mikrobiyoloji bulgusu",
+        "definition": "Asit-alkol dekolorizasyonuna dirençli boyanan basil formundaki mikroorganizmadır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-pelvik-serbest-sivi",
+        "term": "Pelvik serbest sıvı",
+        "category": "Görüntüleme bulgusu",
+        "definition": "Pelvis içinde serbest sıvı izlenmesidir."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-sag-alt-kadran",
+        "term": "Sağ alt kadran",
+        "category": "Anatomik lokalizasyon",
+        "definition": "Karın sağ alt bölümünü ifade eder; apendiks, terminal ileum, çekum ve sağ over/adnekslerle ilişkilidir."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-sag-ust-kadran",
+        "term": "Sağ üst kadran",
+        "category": "Anatomik lokalizasyon",
+        "definition": "Karın sağ üst bölümünü ifade eder; karaciğer, safra kesesi ve safra yollarıyla ilişkilidir."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-i-ndirekt-hiperbilirubinemi",
+        "term": "İndirekt hiperbilirubinemi",
+        "category": "Biyokimyasal bulgu",
+        "definition": "Konjuge olmamış bilirubinin kanda artmasıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-konjuge-hiperbilirubinemi",
+        "term": "Konjuge hiperbilirubinemi",
+        "category": "Biyokimyasal bulgu",
+        "definition": "Direkt bilirubin fraksiyonunun artmasıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-transaminaz-yuksekligi",
+        "term": "Transaminaz yüksekliği",
+        "category": "Laboratuvar bulgusu",
+        "definition": "AST ve ALT enzimlerinde artışı ifade eder."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-membran-stabilizasyonu",
+        "term": "Membran stabilizasyonu",
+        "category": "Patofizyolojik tedavi kavramı",
+        "definition": "Hücre membranının elektriksel uyarılabilirliğini güvenli aralığa çekmeyi ifade eder."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-kompleman-aktivasyonu",
+        "term": "Kompleman aktivasyonu",
+        "category": "İmmünolojik mekanizma",
+        "definition": "Kompleman sisteminin klasik, alternatif veya lektin yol üzerinden aktive olmasıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-notrofilik-lokositoz",
+        "term": "Nötrofilik lökositoz",
+        "category": "Laboratuvar bulgusu",
+        "definition": "Nötrofil ağırlıklı beyaz küre artışıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-skapular-kanatlanma",
+        "term": "Skapular kanatlanma",
+        "category": "Muayene bulgusu",
+        "definition": "Skapulanın toraks duvarından ayrılarak kanat gibi belirginleşmesidir."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-perikolesistik-sivi",
+        "term": "Perikolesistik sıvı",
+        "category": "Görüntüleme bulgusu",
+        "definition": "Safra kesesi çevresinde sıvı izlenmesidir."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-troponin-yuksekligi",
+        "term": "Troponin yüksekliği",
+        "category": "Laboratuvar bulgusu",
+        "definition": "Kardiyak miyosit hasarını gösteren troponin düzeyi artışıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-retikulosit-sayisi",
+        "term": "Retikülosit sayısı",
+        "category": "Laboratuvar parametresi",
+        "definition": "Kemik iliğinin eritrosit üretim yanıtını yansıtan genç eritrosit oranı/sayısıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-alp-ggt-yuksekligi",
+        "term": "ALP/GGT yüksekliği",
+        "category": "Laboratuvar bulgusu",
+        "definition": "Alkalen fosfataz ve gama-glutamil transferaz artışını ifade eder."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-i-nguinal-ligament",
+        "term": "İnguinal ligament",
+        "category": "Anatomik yapı",
+        "definition": "Spina iliaca anterior superior ile pubik tüberkül arasında uzanan bağ yapısıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-kontrast-tutulumu",
+        "term": "Kontrast tutulumu",
+        "category": "Görüntüleme bulgusu",
+        "definition": "Kontrast madde verilmesi sonrası dokuda artmış kontrastlanma görülmesidir."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-laktat-yuksekligi",
+        "term": "Laktat yüksekliği",
+        "category": "Laboratuvar bulgusu",
+        "definition": "Doku hipoperfüzyonu veya anaerobik metabolizma artışıyla ilişkili laktat artışıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-aktif-abduksiyon",
+        "term": "Aktif abdüksiyon",
+        "category": "Fonksiyonel muayene bulgusu",
+        "definition": "Hastanın ekstremitesini orta hattan kendi kas gücüyle uzaklaştırmasıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-saddle-anestezi",
+        "term": "Saddle anestezi",
+        "category": "Nörolojik bulgu",
+        "definition": "Perine ve iç uyluk bölgelerinde eyer tarzı duyu kaybıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-oksidatif-stres",
+        "term": "Oksidatif stres",
+        "category": "Patofizyolojik mekanizma",
+        "definition": "Reaktif oksijen türleri ile antioksidan savunma arasındaki dengenin oksidanlar lehine bozulmasıdır."
+      },
+      {
+        "severity": "medium",
+        "type": "category-definition-mismatch-suspicion",
+        "id": "ctx-pubik-tuberkul",
+        "term": "Pubik tüberkül",
+        "category": "Anatomik landmark",
+        "definition": "Pubis kemiği üzerindeki palpabl kemik çıkıntıdır."
+      }
+    ]
+  },
+  "genericAliasRisks": [],
+  "acronymRisks": [],
+  "highRiskAliasOwners": [
+    {
+      "alias": "obstrüksiyon",
+      "owners": [
+        {
+          "id": "context-obstruction-general",
+          "term": "Obstrüksiyon",
+          "displayTerm": "Obstrüksiyon",
+          "category": "Genel patofizyolojik kavram",
+          "alias": "Obstrüksiyon",
+          "isGenericConcept": true
+        }
+      ]
+    },
+    {
+      "alias": "tıkanıklık",
+      "owners": [
+        {
+          "id": "context-obstruction-general",
+          "term": "Obstrüksiyon",
+          "displayTerm": "Obstrüksiyon",
+          "category": "Genel patofizyolojik kavram",
+          "alias": "tıkanıklık",
+          "isGenericConcept": true
+        }
+      ]
+    },
+    {
+      "alias": "inflamasyon",
+      "owners": [
+        {
+          "id": "quality-general-inflammation",
+          "term": "İnflamasyon",
+          "displayTerm": "İnflamasyon",
+          "category": "Genel patofizyolojik kavram",
+          "alias": "İnflamasyon",
+          "isGenericConcept": true
+        }
+      ]
+    },
+    {
+      "alias": "enfeksiyon",
+      "owners": [
+        {
+          "id": "quality-general-infection",
+          "term": "Enfeksiyon",
+          "displayTerm": "Enfeksiyon",
+          "category": "Genel klinik kavram",
+          "alias": "Enfeksiyon",
+          "isGenericConcept": true
+        }
+      ]
+    },
+    {
+      "alias": "yetmezlik",
+      "owners": [
+        {
+          "id": "quality-general-failure",
+          "term": "Yetmezlik",
+          "displayTerm": "Yetmezlik",
+          "category": "Genel klinik kavram",
+          "alias": "Yetmezlik",
+          "isGenericConcept": true
+        }
+      ]
+    },
+    {
+      "alias": "iskemi",
+      "owners": [
+        {
+          "id": "quality-general-ischemia",
+          "term": "İskemi",
+          "displayTerm": "İskemi",
+          "category": "Genel patofizyolojik kavram",
+          "alias": "İskemi",
+          "isGenericConcept": true
+        }
+      ]
+    },
+    {
+      "alias": "nekroz",
+      "owners": [
+        {
+          "id": "nekroz",
+          "term": "Nekroz",
+          "displayTerm": "Nekroz",
+          "category": "Patoloji / Hücre ölümü",
+          "alias": "Nekroz",
+          "isGenericConcept": false
+        }
+      ]
+    },
+    {
+      "alias": "ödem",
+      "owners": [
+        {
+          "id": "quality-general-edema",
+          "term": "Ödem",
+          "displayTerm": "Ödem",
+          "category": "Genel patofizyolojik kavram",
+          "alias": "Ödem",
+          "isGenericConcept": true
+        }
+      ]
+    },
+    {
+      "alias": "lezyon",
+      "owners": [
+        {
+          "id": "quality-general-lesion",
+          "term": "Lezyon",
+          "displayTerm": "Lezyon",
+          "category": "Genel klinik kavram",
+          "alias": "Lezyon",
+          "isGenericConcept": true
+        }
+      ]
+    },
+    {
+      "alias": "darlık",
+      "owners": [
+        {
+          "id": "quality-general-stenosis",
+          "term": "Darlık",
+          "displayTerm": "Darlık",
+          "category": "Genel anatomik/patofizyolojik kavram",
+          "alias": "Darlık",
+          "isGenericConcept": true
+        }
+      ]
+    },
+    {
+      "alias": "şok",
+      "owners": [
+        {
+          "id": "sok",
+          "term": "Şok",
+          "displayTerm": "Şok",
+          "category": "Patoloji/Acil / Hemodinamik bozukluk",
+          "alias": "Şok",
+          "isGenericConcept": false
+        }
+      ]
+    },
+    {
+      "alias": "defisit",
+      "owners": [
+        {
+          "id": "quality-general-deficit",
+          "term": "Defisit",
+          "displayTerm": "Defisit",
+          "category": "Genel klinik kavram",
+          "alias": "Defisit",
+          "isGenericConcept": true
+        }
+      ]
+    },
+    {
+      "alias": "tutulum",
+      "owners": [
+        {
+          "id": "quality-general-involvement",
+          "term": "Tutulum",
+          "displayTerm": "Tutulum",
+          "category": "Genel klinik kavram",
+          "alias": "Tutulum",
+          "isGenericConcept": true
+        }
+      ]
+    },
+    {
+      "alias": "yanıt",
+      "owners": [
+        {
+          "id": "quality-general-response",
+          "term": "Yanıt",
+          "displayTerm": "Yanıt",
+          "category": "Genel klinik kavram",
+          "alias": "Yanıt",
+          "isGenericConcept": true
+        }
+      ]
+    },
+    {
+      "alias": "kültür",
+      "owners": [
+        {
+          "id": "quality-bloody-culture-general",
+          "term": "Kültür",
+          "displayTerm": "Kültür",
+          "category": "Tetkik / Mikrobiyoloji",
+          "alias": "Kültür",
+          "isGenericConcept": true
+        }
+      ]
+    },
+    {
+      "alias": "rotasyon",
+      "owners": [
+        {
+          "id": "quality-general-rotation",
+          "term": "Rotasyon",
+          "displayTerm": "Rotasyon",
+          "category": "Fonksiyonel muayene veya hareket terimi",
+          "alias": "Rotasyon",
+          "isGenericConcept": true
+        }
+      ]
+    }
+  ],
+  "missingTermCandidates": [
+    {
+      "term": "intravenöz antibiyotik ve",
+      "normalized": "intravenoz antibiyotik ve",
+      "count": 31
+    },
+    {
+      "term": "intravenöz geniş spektrumlu",
+      "normalized": "intravenoz genis spektrumlu",
+      "count": 30
+    },
+    {
+      "term": "glomerüler filtrasyon hızın",
+      "normalized": "glomeruler filtrasyon hizin",
+      "count": 28
+    },
+    {
+      "term": "Mikrobiyoloji testi",
+      "normalized": "mikrobiyoloji testi",
+      "count": 27
+    },
+    {
+      "term": "nefes testi",
+      "normalized": "nefes testi",
+      "count": 25
+    },
+    {
+      "term": "uyarı testi",
+      "normalized": "uyari testi",
+      "count": 24
+    },
+    {
+      "term": "supresyon testi",
+      "normalized": "supresyon testi",
+      "count": 23
+    },
+    {
+      "term": "intramüsküler adrenalindir",
+      "normalized": "intramuskuler adrenalindir",
+      "count": 21
+    },
+    {
+      "term": "Subkutan hızlı etkili",
+      "normalized": "subkutan hizli etkili",
+      "count": 21
+    },
+    {
+      "term": "oral mukoza değişiklikleri",
+      "normalized": "oral mukoza degisiklikleri",
+      "count": 19
+    },
+    {
+      "term": "glomerüler filtrasyon hızının",
+      "normalized": "glomeruler filtrasyon hizinin",
+      "count": 17
+    },
+    {
+      "term": "tanı testi",
+      "normalized": "tani testi",
+      "count": 17
+    },
+    {
+      "term": "oral antibiyotik başlanmas",
+      "normalized": "oral antibiyotik baslanmas",
+      "count": 16
+    },
+    {
+      "term": "glomerüler filtrasyon ve",
+      "normalized": "glomeruler filtrasyon ve",
+      "count": 16
+    },
+    {
+      "term": "oral analjezik ve",
+      "normalized": "oral analjezik ve",
+      "count": 16
+    },
+    {
+      "term": "kısıtlama testi",
+      "normalized": "kisitlama testi",
+      "count": 16
+    },
+    {
+      "term": "aglütinasyon testi",
+      "normalized": "aglutinasyon testi",
+      "count": 15
+    },
+    {
+      "term": "tüp testi",
+      "normalized": "tup testi",
+      "count": 15
+    },
+    {
+      "term": "tarama testi",
+      "normalized": "tarama testi",
+      "count": 14
+    },
+    {
+      "term": "fonksiyon testi",
+      "normalized": "fonksiyon testi",
+      "count": 13
+    },
+    {
+      "term": "Oral sıvı ve",
+      "normalized": "oral sivi ve",
+      "count": 13
+    },
+    {
+      "term": "oral antibiyotikle ayaktan",
+      "normalized": "oral antibiyotikle ayaktan",
+      "count": 12
+    },
+    {
+      "term": "oral sıvı önerip",
+      "normalized": "oral sivi onerip",
+      "count": 12
+    },
+    {
+      "term": "glomerüler filtrasyon bariyerinde",
+      "normalized": "glomeruler filtrasyon bariyerinde",
+      "count": 11
+    },
+    {
+      "term": "oral antihistaminik verilmesi",
+      "normalized": "oral antihistaminik verilmesi",
+      "count": 11
+    },
+    {
+      "term": "Servikal grafi",
+      "normalized": "servikal grafi",
+      "count": 11
+    },
+    {
+      "term": "antikor testi",
+      "normalized": "antikor testi",
+      "count": 11
+    },
+    {
+      "term": "intravenöz bisfosfonat tedavisi",
+      "normalized": "intravenoz bisfosfonat tedavisi",
+      "count": 10
+    },
+    {
+      "term": "intravenöz antibiyotik başlamak",
+      "normalized": "intravenoz antibiyotik baslamak",
+      "count": 10
+    },
+    {
+      "term": "intravenöz ampirik antibiyotik",
+      "normalized": "intravenoz ampirik antibiyotik",
+      "count": 10
+    },
+    {
+      "term": "nguinoskrotal ultrasonografi",
+      "normalized": "nguinoskrotal ultrasonografi",
+      "count": 10
+    },
+    {
+      "term": "Oral beslenmenin artırılmas",
+      "normalized": "oral beslenmenin artirilmas",
+      "count": 10
+    },
+    {
+      "term": "Oral antibiyotik ve",
+      "normalized": "oral antibiyotik ve",
+      "count": 10
+    },
+    {
+      "term": "Nitrazin testi",
+      "normalized": "nitrazin testi",
+      "count": 10
+    },
+    {
+      "term": "aglütinin testi",
+      "normalized": "aglutinin testi",
+      "count": 9
+    },
+    {
+      "term": "sol alt kadran",
+      "normalized": "sol alt kadran",
+      "count": 9
+    },
+    {
+      "term": "klorür testi",
+      "normalized": "klorur testi",
+      "count": 9
+    },
+    {
+      "term": "oral sıvı ve",
+      "normalized": "oral sivi ve",
+      "count": 9
+    },
+    {
+      "term": "intravenöz antibiyotik başlanmas",
+      "normalized": "intravenoz antibiyotik baslanmas",
+      "count": 8
+    },
+    {
+      "term": "intravenöz antihipertansif ile",
+      "normalized": "intravenoz antihipertansif ile",
+      "count": 8
+    },
+    {
+      "term": "intravenöz antibiyotiği hemen",
+      "normalized": "intravenoz antibiyotigi hemen",
+      "count": 8
+    },
+    {
+      "term": "oral beslenmenin artırılmas",
+      "normalized": "oral beslenmenin artirilmas",
+      "count": 8
+    },
+    {
+      "term": "oral antihistaminik vermek",
+      "normalized": "oral antihistaminik vermek",
+      "count": 8
+    },
+    {
+      "term": "Oral antihistaminik vermek",
+      "normalized": "oral antihistaminik vermek",
+      "count": 8
+    },
+    {
+      "term": "Oral antibiyotik başlanıp",
+      "normalized": "oral antibiyotik baslanip",
+      "count": 8
+    },
+    {
+      "term": "intravenöz K vitamini",
+      "normalized": "intravenoz k vitamini",
+      "count": 8
+    },
+    {
+      "term": "Postoperatif dönemde",
+      "normalized": "postoperatif donemde",
+      "count": 8
+    },
+    {
+      "term": "intravenöz lorazepam",
+      "normalized": "intravenoz lorazepam",
+      "count": 8
+    },
+    {
+      "term": "oral tuz tabletleri",
+      "normalized": "oral tuz tabletleri",
+      "count": 8
+    },
+    {
+      "term": "oral sıvı verilerek",
+      "normalized": "oral sivi verilerek",
+      "count": 8
+    },
+    {
+      "term": "oral aktif kömür",
+      "normalized": "oral aktif komur",
+      "count": 8
+    },
+    {
+      "term": "oral ağrı kesici",
+      "normalized": "oral agri kesici",
+      "count": 8
+    },
+    {
+      "term": "Tarama testi",
+      "normalized": "tarama testi",
+      "count": 8
+    },
+    {
+      "term": "intravenöz kalsiyum glukonattır",
+      "normalized": "intravenoz kalsiyum glukonattir",
+      "count": 7
+    },
+    {
+      "term": "intravenöz hidrokortizon ve",
+      "normalized": "intravenoz hidrokortizon ve",
+      "count": 7
+    },
+    {
+      "term": "oral rehidratasyon ve",
+      "normalized": "oral rehidratasyon ve",
+      "count": 7
+    },
+    {
+      "term": "Oral glukoz yüklemesi",
+      "normalized": "oral glukoz yuklemesi",
+      "count": 7
+    },
+    {
+      "term": "oral antibiyotik ve",
+      "normalized": "oral antibiyotik ve",
+      "count": 7
+    },
+    {
+      "term": "Oral mukozada çilek",
+      "normalized": "oral mukozada cilek",
+      "count": 7
+    },
+    {
+      "term": "Oral beta bloker",
+      "normalized": "oral beta bloker",
+      "count": 7
+    },
+    {
+      "term": "Oral şekerli sıv",
+      "normalized": "oral sekerli siv",
+      "count": 7
+    },
+    {
+      "term": "oral tuz desteği",
+      "normalized": "oral tuz destegi",
+      "count": 7
+    },
+    {
+      "term": "oral K vitamini",
+      "normalized": "oral k vitamini",
+      "count": 7
+    },
+    {
+      "term": "oral D vitamini",
+      "normalized": "oral d vitamini",
+      "count": 7
+    },
+    {
+      "term": "itme testi",
+      "normalized": "itme testi",
+      "count": 7
+    },
+    {
+      "term": "Transvajinal Doppler ultrasonografi",
+      "normalized": "transvajinal doppler ultrasonografi",
+      "count": 6
+    },
+    {
+      "term": "normal anion gap metabolik asidoz",
+      "normalized": "normal anion gap metabolik asidoz",
+      "count": 6
+    },
+    {
+      "term": "intravenöz antibiyotik tedavisini",
+      "normalized": "intravenoz antibiyotik tedavisini",
+      "count": 6
+    },
+    {
+      "term": "transabdominal ultrasonografi",
+      "normalized": "transabdominal ultrasonografi",
+      "count": 6
+    },
+    {
+      "term": "Transabdominal ultrasonografi",
+      "normalized": "transabdominal ultrasonografi",
+      "count": 6
+    },
+    {
+      "term": "venöz Doppler ultrasonografi",
+      "normalized": "venoz doppler ultrasonografi",
+      "count": 6
+    },
+    {
+      "term": "Venöz Doppler ultrasonografi",
+      "normalized": "venoz doppler ultrasonografi",
+      "count": 6
+    },
+    {
+      "term": "intravenöz immün globulin",
+      "normalized": "intravenoz immun globulin",
+      "count": 6
+    },
+    {
+      "term": "Oral antiasit perforasyon",
+      "normalized": "oral antiasit perforasyon",
+      "count": 6
+    },
+    {
+      "term": "Obstetrik ultrasonografi",
+      "normalized": "obstetrik ultrasonografi",
+      "count": 6
+    },
+    {
+      "term": "oral alımın düzenlenmesi",
+      "normalized": "oral alimin duzenlenmesi",
+      "count": 6
+    },
+    {
+      "term": "Aksiller ultrasonografi",
+      "normalized": "aksiller ultrasonografi",
+      "count": 6
+    },
+    {
+      "term": "Kranial ultrasonografi",
+      "normalized": "kranial ultrasonografi",
+      "count": 6
+    },
+    {
+      "term": "Preoperatif abdominal",
+      "normalized": "preoperatif abdominal",
+      "count": 6
+    },
+    {
+      "term": "Torakoabdominal grafi",
+      "normalized": "torakoabdominal grafi",
+      "count": 6
+    }
+  ],
+  "nestedTooltipSafety": {
+    "tooltipBodyContextModeBypass": true,
+    "plainTooltipBodyRenderer": true,
+    "maxNestedDepthProp": true,
+    "entryIdKey": true
+  },
+  "regressionResults": [
+    {
+      "name": "Astım binding",
+      "alias": "astım",
+      "expectedIncludes": "Astım",
+      "forbiddenIncludes": "Eozinofil",
+      "owners": [
+        {
+          "id": "binding-asthma",
+          "term": "Astım",
+          "category": "Hastalık / Obstrüktif hava yolu hastalığı"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "Eozinofil binding",
+      "alias": "eozinofil",
+      "expectedIncludes": "Eozinofil",
+      "forbiddenIncludes": "Astım",
+      "owners": [
+        {
+          "id": "binding-eosinophil",
+          "term": "Eozinofil",
+          "category": "Hücre / Granülosit"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "İleus binding",
+      "alias": "ileus",
+      "expectedIncludes": "İleus",
+      "forbiddenIncludes": "Astım",
+      "owners": [
+        {
+          "id": "expanded-ileus",
+          "term": "İleus",
+          "category": "Genel cerrahi"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "Hiperkalemi binding",
+      "alias": "hiperkalemi",
+      "expectedIncludes": "Hiperkalemi",
+      "owners": [
+        {
+          "id": "elektrolit-hiperkalemi",
+          "term": "Hiperkalemi",
+          "category": "Elektrolit bozukluğu"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "Doppler ultrasonografi binding",
+      "alias": "Doppler ultrasonografi",
+      "expectedIncludes": "Doppler",
+      "owners": [
+        {
+          "id": "ctx-doppler-ultrasonografi",
+          "term": "Doppler ultrasonografi",
+          "category": "Görüntüleme tetkiki"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "Aktif elevasyon binding",
+      "alias": "aktif elevasyon",
+      "expectedIncludes": "Aktif elevasyon",
+      "owners": [
+        {
+          "id": "ctx-aktif-elevasyon",
+          "term": "Aktif elevasyon",
+          "category": "Fonksiyonel muayene bulgusu"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "Sağ inguinal insizyon binding",
+      "alias": "sağ inguinal insizyon",
+      "expectedIncludes": "Sağ inguinal insizyon",
+      "owners": [
+        {
+          "id": "ctx-sag-inguinal-insizyon",
+          "term": "Sağ inguinal insizyon",
+          "category": "Cerrahi/anatomik ifade"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "Glomerüler filtrasyon binding",
+      "alias": "glomerüler filtrasyon",
+      "expectedIncludes": "Glomerüler filtrasyon",
+      "owners": [
+        {
+          "id": "quality-glomerular-filtration-rate",
+          "term": "Glomerüler filtrasyon hızı",
+          "category": "Fizyoloji / Laboratuvar parametresi"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "İntravenöz kalsiyum glukonat binding",
+      "alias": "intravenöz kalsiyum glukonat",
+      "expectedIncludes": "Kalsiyum glukonat",
+      "owners": [
+        {
+          "id": "acil-kalsiyum-glukonat",
+          "term": "Kalsiyum glukonat",
+          "category": "Acil tedavi"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "Direkt Coombs testi binding",
+      "alias": "direkt Coombs testi",
+      "expectedIncludes": "Direkt Coombs testi",
+      "owners": [
+        {
+          "id": "ctx-direkt-coombs-testi",
+          "term": "Direkt Coombs testi",
+          "category": "Laboratuvar testi"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "Hava yolu obstrüksiyonu phrase",
+      "alias": "hava yolu obstrüksiyonu",
+      "expectedIncludes": "Hava yolu obstrüksiyonu",
+      "owners": [
+        {
+          "id": "context-airway-obstruction",
+          "term": "Hava yolu obstrüksiyonu",
+          "category": "Pulmoner patofizyoloji"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "Bağırsak obstrüksiyonu phrase",
+      "alias": "bağırsak obstrüksiyonu",
+      "expectedIncludes": "Bağırsak obstrüksiyonu",
+      "owners": [
+        {
+          "id": "context-intestinal-obstruction",
+          "term": "Bağırsak obstrüksiyonu",
+          "category": "Genel Cerrahi / Akut batın"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "Mesane çıkım obstrüksiyonu phrase",
+      "alias": "mesane çıkım obstrüksiyonu",
+      "expectedIncludes": "Mesane çıkım obstrüksiyonu",
+      "owners": [
+        {
+          "id": "context-bladder-outlet-obstruction",
+          "term": "Mesane çıkım obstrüksiyonu",
+          "category": "Üroloji"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "Obstrüksiyon general does not bind ileus",
+      "alias": "obstrüksiyon",
+      "expectedIncludes": "Obstrüksiyon",
+      "forbiddenIncludes": "İleus",
+      "owners": [
+        {
+          "id": "context-obstruction-general",
+          "term": "Obstrüksiyon",
+          "category": "Genel patofizyolojik kavram"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "Inflamasyon general owner",
+      "alias": "inflamasyon",
+      "expectedIncludes": "İnflamasyon",
+      "owners": [
+        {
+          "id": "quality-general-inflammation",
+          "term": "İnflamasyon",
+          "category": "Genel patofizyolojik kavram"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "Yetmezlik general owner",
+      "alias": "yetmezlik",
+      "expectedIncludes": "Yetmezlik",
+      "owners": [
+        {
+          "id": "quality-general-failure",
+          "term": "Yetmezlik",
+          "category": "Genel klinik kavram"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "Rotasyon general owner",
+      "alias": "rotasyon",
+      "expectedIncludes": "Rotasyon",
+      "owners": [
+        {
+          "id": "quality-general-rotation",
+          "term": "Rotasyon",
+          "category": "Fonksiyonel muayene veya hareket terimi"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "Kan kültürü phrase",
+      "alias": "kan kültürü",
+      "expectedIncludes": "Kan kültürü",
+      "owners": [
+        {
+          "id": "quality-blood-culture",
+          "term": "Kan kültürü",
+          "category": "Tetkik / Mikrobiyoloji"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "İdrar kültürü phrase",
+      "alias": "idrar kültürü",
+      "expectedIncludes": "İdrar kültürü",
+      "owners": [
+        {
+          "id": "quality-urine-culture",
+          "term": "İdrar kültürü",
+          "category": "Tetkik / Mikrobiyoloji"
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "regressionSummary": {
+    "total": 19,
+    "passed": 19,
+    "failed": []
+  }
+}

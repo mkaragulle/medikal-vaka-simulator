@@ -295,16 +295,16 @@ function makeMatcher(terms = []) {
   return matcher;
 }
 
-function splitByGlossary(text = '', terms = [], maxTerms = DEFAULT_MAX_TERMS_PER_TEXT, excludedTermKeys = null) {
+function splitByGlossary(text = '', terms = [], maxTerms = DEFAULT_MAX_TERMS_PER_TEXT, excludedTermKeys = null, contextMode = 'default') {
   const source = String(text);
   const limit = Number.isFinite(maxTerms) ? Math.max(0, maxTerms) : DEFAULT_MAX_TERMS_PER_TEXT;
-  if (!source || !Array.isArray(terms) || !terms.length || limit <= 0 || !isLikelyGlossaryCandidateText(source)) return [{ type: 'text', value: source }];
+  if (!source || contextMode === 'tooltip-body' || !Array.isArray(terms) || !terms.length || limit <= 0 || !isLikelyGlossaryCandidateText(source)) return [{ type: 'text', value: source }];
 
   const excludedKey = Array.isArray(excludedTermKeys) && excludedTermKeys.length
     ? excludedTermKeys.map((item) => normalizeGlossaryText(item)).filter(Boolean).sort().join('|')
     : '';
   const excludedSet = excludedKey ? new Set(excludedKey.split('|').filter(Boolean)) : null;
-  const cacheKey = `${getTermsSignature(terms)}::${limit}::${excludedKey}::${source}`;
+  const cacheKey = `${getTermsSignature(terms)}::${contextMode}::${limit}::${excludedKey}::${source}`;
   if (SPLIT_CACHE.has(cacheKey)) return SPLIT_CACHE.get(cacheKey);
 
   const matcher = makeMatcher(terms);
@@ -736,7 +736,7 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
   );
 }
 
-export function GlossaryTerm({ children, entry = null, definition = '', revealMode = 'postAnswer', excludedTermKeys = [], nestingLevel = 0 }) {
+export function GlossaryTerm({ children, entry = null, definition = '', revealMode = 'postAnswer', excludedTermKeys = [], nestingLevel = 0, contextMode = 'default' }) {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef(null);
   const closeTimerRef = useRef(0);
@@ -823,6 +823,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
       data-glossary-entry-id={resolvedEntry?.id || ''}
       data-glossary-entry-term={visibleTermLabel}
       data-nesting-level={nestingLevel}
+      data-glossary-context-mode={contextMode}
       aria-describedby={open ? id : undefined}
       aria-label={`${visibleTermLabel}: ${description}`}
       onMouseEnter={openNow}
@@ -871,7 +872,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
     >
       {children}
       <FloatingTooltip
-        key={`${resolvedEntry?.id || resolvedEntry?.term || visibleTermLabel}-${revealMode}`}
+        key={`${resolvedEntry?.id || resolvedEntry?.term || visibleTermLabel}-${revealMode}-${contextMode}`}
         id={id}
         triggerRef={triggerRef}
         open={open}
@@ -896,6 +897,9 @@ function GlossaryText({
   maxTerms = undefined,
   excludedTermKeys = null,
   nestingLevel = 0,
+  contextMode = '',
+  maxNestedDepth = 0,
+  enableNestedGlossary = false,
 }) {
   const excludedKey = Array.isArray(excludedTermKeys)
     ? excludedTermKeys.map((item) => normalizeGlossaryText(item)).filter(Boolean).sort().join('|')
@@ -909,15 +913,17 @@ function GlossaryText({
   }, [enabled, extraTermsKey, branchId]);
   const effectiveMaxTerms = maxTerms ?? (revealMode === 'preAnswer' || revealMode === 'neutral' ? PREANSWER_MAX_TERMS_PER_TEXT : DEFAULT_MAX_TERMS_PER_TEXT);
   const sourceText = String(text || '');
+  const effectiveContextMode = contextMode || (nestingLevel > 0 ? 'tooltip-body' : (revealMode === 'preAnswer' ? 'case-pre-answer' : 'case-post-answer'));
+  const nestedAllowed = enableNestedGlossary || nestingLevel <= maxNestedDepth;
   const parts = useMemo(
-    () => splitByGlossary(sourceText, enabled ? terms : [], effectiveMaxTerms, excludedTermKeys),
-    [sourceText, enabled, terms, effectiveMaxTerms, excludedKey],
+    () => splitByGlossary(sourceText, enabled && nestedAllowed ? terms : [], effectiveMaxTerms, excludedTermKeys, effectiveContextMode),
+    [sourceText, enabled, nestedAllowed, terms, effectiveMaxTerms, excludedKey, effectiveContextMode],
   );
 
   if (!enabled) return <span className="glossary-text-flow">{sourceText}</span>;
 
   return (
-    <span className="glossary-text-flow" data-nesting-level={nestingLevel}>
+    <span className="glossary-text-flow" data-nesting-level={nestingLevel} data-glossary-context-mode={effectiveContextMode}>
       {parts.map((part, index) => part.type === 'term' ? (
         <GlossaryTerm
           key={`${part.entry?.id || part.entry?.term || 'term'}-${part.value}-${index}`}
@@ -925,6 +931,7 @@ function GlossaryText({
           revealMode={revealMode}
           excludedTermKeys={excludedTermKeys}
           nestingLevel={nestingLevel}
+          contextMode={effectiveContextMode}
         >
           {part.value}
         </GlossaryTerm>

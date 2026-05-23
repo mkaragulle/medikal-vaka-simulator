@@ -8,6 +8,7 @@ import { TUS_GLOSSARY_CLINICAL_BRANCH_DEEP_TERMS } from '../data/tusGlossaryClin
 import { TUS_GLOSSARY_CONTEXTUAL_PHRASE_TERMS } from '../data/tusGlossaryContextualPhraseIndex.js';
 import { TUS_GLOSSARY_BINDING_CORRECTION_TERMS } from '../data/tusGlossaryBindingCorrectionsIndex.js';
 import { TUS_GLOSSARY_CONTEXT_SAFETY_TERMS } from '../data/tusGlossaryContextSafetyIndex.js';
+import { TUS_GLOSSARY_GLOBAL_QUALITY_TERMS } from '../data/tusGlossaryGlobalQualityIndex.js';
 
 const teachingOnly = 'teachingOnly';
 
@@ -9473,6 +9474,7 @@ const STATIC_GLOSSARY_SOURCES = [
   // that legacy rows sometimes used only as context clues (e.g. asthma inside
   // the eosinophil explanation). This prevents title/definition mismatches.
   ...TUS_GLOSSARY_CONTEXT_SAFETY_TERMS,
+  ...TUS_GLOSSARY_GLOBAL_QUALITY_TERMS,
   ...TUS_GLOSSARY_BINDING_CORRECTION_TERMS,
   // Contextual phrase layer comes next so exact clinical phrases such as
   // "defans", "aktif elevasyon" or "sağ inguinal insizyon" do not get
@@ -9544,16 +9546,33 @@ const UNSAFE_CONTEXT_ALIAS_PATTERNS = [
 // context. It must not point to "İleus" unless the phrase is explicitly
 // intestinal/bowel obstruction.
 const GENERIC_STANDALONE_ALIAS_SET = new Set([
+  // Broad pathophysiology / clinical state words. These may be glossary entries
+  // as general concepts, but must not be standalone aliases for specific
+  // diseases, procedures or organs.
   'obstruksiyon', 'tikaniklik', 'inflamasyon', 'enfeksiyon', 'yetmezlik',
   'iskemi', 'nekroz', 'odem', 'lezyon', 'kitle', 'nodul', 'infiltrasyon',
   'darlik', 'basi', 'hiperreaktivite', 'hassasiyet', 'agri', 'dispne',
-  'hipoksi', 'asidoz', 'alkaloz', 'sok', 'kanama', 'perforasyon', 'torsiyon',
-  'elevasyon', 'defisit', 'tutulum', 'yanit',
+  'hipoksi', 'hipoksemi', 'hiperkapni', 'asidoz', 'alkaloz', 'sok',
+  'kanama', 'perforasyon', 'torsiyon', 'elevasyon', 'defisit', 'tutulum',
+  'yanit', 'komplikasyon', 'atak', 'tablo', 'bulgu', 'semptom',
+  // Broad anatomical direction/location words. They should be linked only as
+  // part of a specific phrase such as "sağ inguinal insizyon".
+  'sag', 'sol', 'medial', 'lateral', 'anterior', 'posterior', 'proksimal',
+  'distal', 'superior', 'inferior', 'santral', 'periferik',
+  // Broad procedure/movement/test roots. Link phrase forms, not the naked word,
+  // unless a dedicated generic concept owns the exact canonical term.
+  'insizyon', 'eksplorasyon', 'drenaj', 'rezeksiyon', 'biyopsi',
+  'abduksiyon', 'adduksiyon', 'fleksiyon', 'ekstansiyon', 'rotasyon',
+  'kultur', 'yayma', 'grafi', 'ultrasonografi', 'tomografi', 'ponksiyon',
 ]);
 
-function isGenericStandaloneAlias(alias = '') {
+export function isGenericStandaloneAlias(alias = '') {
   const normalized = normalizeGlossaryText(alias);
   return Boolean(normalized && GENERIC_STANDALONE_ALIAS_SET.has(normalized));
+}
+
+export function isUnsafeStandaloneAliasForEntry(entry = {}, alias = '') {
+  return isUnsafeContextAlias(entry, alias);
 }
 
 function normalizeEntryOwnerKey(entry = {}) {
@@ -9686,34 +9705,172 @@ function enforceGlossaryAliasIntegrity(entries = []) {
   });
 }
 
-export function auditGlossaryIntegrity(entries = getGlossaryTerms()) {
+const CATEGORY_KEYWORDS = [
+  { key: 'disease', category: /hastalık|sendrom|neoplazi|tümör|kanser|enfeksiyon hastalığı/iu, definition: /hastalık|sendrom|enfeksiyon|tümör|neoplazi|klinik tablo|patoloji/iu },
+  { key: 'cell-molecule', category: /hücre|molekül|reseptör|enzim|protein|genetik|immünoloji|sinyal/iu, definition: /hücre|molekül|reseptör|enzim|protein|gen|sinyal|aktivasyon|ekspresyon|sitokin|antikor/iu },
+  { key: 'test-imaging', category: /tetkik|görüntüleme|radyoloji|laboratuvar|test|kan gazı|mikrobiyoloji/iu, definition: /ölç|değerlendir|görüntü|inceleme|test|tetkik|kültür|boyama|serum|kan|idrar|BOS|ultrason|BT|MR/iu },
+  { key: 'drug-treatment', category: /ilaç|farmakoloji|antidot|tedavi|ajan|antibiyotik|antikoagülan/iu, definition: /ilaç|ajan|reseptör|inhibe|aktive|tedavi|doz|verilir|kullanılır|antidot|antibiyotik/iu },
+  { key: 'anatomy', category: /anatomi|anatomik|lokalizasyon|bölge|sinir|arter|ven|kas/iu, definition: /bölge|lokalizasyon|anatomik|sinir|arter|ven|kas|kenar|çıkım|segment|komşuluk/iu },
+  { key: 'exam-finding', category: /bulgu|semptom|muayene|hareket|fonksiyonel/iu, definition: /bulgu|semptom|yakınma|muayene|hareket|ağrı|kısıtlılık|hassasiyet|duygu|güç|refleks/iu },
+  { key: 'mechanism', category: /mekanizma|patofizyoloji|fizyoloji|biyokimya|asit-baz/iu, definition: /mekanizma|yanıt|aktivasyon|inhibisyon|akım|basınç|metabolik|fizyolojik|patofizyolojik/iu },
+];
+
+const TITLE_DEFINITION_MISMATCH_RULES = [
+  { title: /astım|asthma/iu, forbidden: /paraziter enfeksiyonlarla ilişkili granülosit|granülosittir/iu, reason: 'asthma-title-with-eosinophil-definition' },
+  { title: /eozinofil/iu, forbidden: /geri dönüşümlü hava yolu obstrüksiyonu|bronş hiperreaktivitesi/iu, reason: 'eosinophil-title-with-asthma-definition' },
+  { title: /ileus/iu, forbidden: /hava yolu|bronş|astım|mesane çıkım|safra yolu/iu, reason: 'ileus-definition-with-nonintestinal-obstruction-context' },
+  { title: /Doppler|ultrasonografi|BT|MR|grafi|Coombs|kültür|yayma/iu, forbidden: /tedavi edilir|ilk tedavi|verilmelidir|doz/iu, reason: 'test-title-with-treatment-definition' },
+  { title: /aktif elevasyon|pasif elevasyon|abdüksiyon|rotasyon|fleksiyon|ekstansiyon/iu, forbidden: /bağırsak|safra|idrar kültürü|antibiyotik/iu, reason: 'movement-title-with-unrelated-system-definition' },
+  { title: /insizyon|eksplorasyon|detorsiyon|orşiopeksi|laparotomi|drenaj/iu, forbidden: /granülosit|hücre reseptörü|spirometri|glomerüler filtrasyon/iu, reason: 'procedure-title-with-unrelated-definition' },
+];
+
+function classifyGlossaryCategory(entry = {}) {
+  const category = String(entry.category || '').trim();
+  const term = String(entry.canonicalTerm || entry.displayTerm || entry.term || '').trim();
+  const definition = String(entry.shortDefinition || entry.definition || entry.previewDefinition || '').trim();
+  const combined = `${category} ${term} ${definition}`;
+  if (/hastalık|sendrom|neoplazi|tümör|kanser|enfeksiyon hastalığı/iu.test(combined)) return 'Hastalık / sendrom / klinik tablo';
+  if (/semptom|yakınma|dispne|ağrı|öksürük|senkop|hematemez|melena|hemoptizi/iu.test(combined)) return 'Semptom / yakınma';
+  if (/muayene|bulgu|defans|rebound|hassasiyet|refleks|motor|duyusal|hareket|elevasyon|rotasyon/iu.test(combined)) return 'Fizik/fonksiyonel muayene bulgusu';
+  if (/anatomi|anatomik|lokalizasyon|bölge|sinir|arter|ven|kas|skapula|inguinal/iu.test(combined)) return 'Anatomik bölge / lokalizasyon';
+  if (/cerrahi|insizyon|eksplorasyon|detorsiyon|orşiopeksi|laparotomi|drenaj|rezeksiyon|biyopsi/iu.test(combined)) return 'Cerrahi işlem / girişim';
+  if (/tetkik|görüntüleme|ultrasonografi|Doppler|BT|MR|grafi|Coombs|kültür|yayma|kan gazı/iu.test(combined)) return 'Tetkik / görüntüleme / laboratuvar';
+  if (/biyokimya|enzim|reseptör|molekül|hücre|sitokin|protein|gen|GTPaz|kinaz|kompleman/iu.test(combined)) return 'Hücre / molekül / biyokimyasal kavram';
+  if (/ilaç|farmakoloji|antidot|tedavi|antibiyotik|epinefrin|kalsiyum|magnezyum|nalokson/iu.test(combined)) return 'Farmakolojik ajan / tedavi yaklaşımı';
+  if (/mekanizma|patofizyoloji|fizyoloji|inflamasyon|iskemi|nekroz|ödem|obstrüksiyon|asidoz|alkaloz|perfüzyon/iu.test(combined)) return 'Patofizyolojik/fizyolojik mekanizma';
+  return 'Genel klinik kavram';
+}
+
+function maybeDefinitionMatchesCategory(entry = {}) {
+  const category = String(entry.category || '').trim();
+  const definition = String(entry.shortDefinition || entry.definition || entry.previewDefinition || '').trim();
+  if (!category || !definition) return true;
+  const direct = CATEGORY_KEYWORDS.find((rule) => rule.category.test(category));
+  if (!direct) return true;
+  return direct.definition.test(definition);
+}
+
+function hasSuspiciousTitleDefinitionMismatch(entry = {}) {
+  const title = String(entry.canonicalTerm || entry.displayTerm || entry.term || '').trim();
+  const body = [entry.shortDefinition, entry.preAnswerSafeDefinition, entry.postAnswerExplanation, entry.postAnswerExpandedExplanation, entry.tusPearl, entry.differentialPoint]
+    .filter(Boolean)
+    .join(' ');
+  return TITLE_DEFINITION_MISMATCH_RULES.find((rule) => rule.title.test(title) && rule.forbidden.test(body)) || null;
+}
+
+function isUnsafeShortAcronymAlias(alias = '') {
+  const raw = String(alias || '').trim();
+  return raw.length <= 3 && /^[A-ZÇĞİÖŞÜ]+$/.test(raw) && !['BT', 'MR', 'EKG', 'USG', 'BOS'].includes(raw);
+}
+
+function findPotentialAnswerLeakage(value = '') {
+  const text = String(value || '');
+  if (!text) return false;
+  if (/klinik metinlerde anlamı bilinmesi gereken|klinik yönetim veya tedavi yaklaşımı bağlamında kullanılan|tıbbi\/terminolojik bir kavramdır/iu.test(text)) return false;
+  return /\b(?:ilk|öncelikli|en uygun|en olası|patognomonik|tanı koydurur|düşündürür|tedavisi|verilmelidir|uygulanmalıdır|başlanmalıdır)\b/iu.test(text);
+}
+
+export function auditGlossaryIntegrity(entries = getGlossaryTerms(), options = {}) {
   const issues = [];
   const ids = new Map();
+  const canonicalTerms = new Map();
   const aliases = new Map();
+  const definitions = new Map();
+  const categorySummary = new Map();
+  const knownEntryKeys = new Set(entries.flatMap((item) => [item.id, item.term, item.canonicalTerm, item.displayTerm].filter(Boolean).map(normalizeGlossaryText)));
 
   entries.forEach((entry) => {
-    if (!entry.id) issues.push({ type: 'missing-id', term: entry.term });
-    if (!entry.shortDefinition && !entry.definition && !entry.previewDefinition) issues.push({ type: 'missing-definition', id: entry.id, term: entry.term });
-    const previousId = ids.get(entry.id);
-    if (entry.id && previousId) issues.push({ type: 'duplicate-id', id: entry.id, terms: [previousId, entry.term] });
-    if (entry.id) ids.set(entry.id, entry.term);
+    const id = entry.id || '';
+    const term = entry.canonicalTerm || entry.displayTerm || entry.term || '';
+    const normalizedTerm = normalizeGlossaryText(term);
+    const definition = String(entry.shortDefinition || entry.definition || entry.previewDefinition || '').trim();
+    const classifiedCategory = classifyGlossaryCategory(entry);
+    categorySummary.set(classifiedCategory, (categorySummary.get(classifiedCategory) || 0) + 1);
+
+    if (!id) issues.push({ severity: 'critical', type: 'missing-id', term });
+    if (!definition) issues.push({ severity: 'critical', type: 'missing-definition', id, term });
+    if (definition && definition.length < 24) issues.push({ severity: 'medium', type: 'too-short-definition', id, term, definition });
+
+    const previousTerm = ids.get(id);
+    if (id && previousTerm) issues.push({ severity: 'critical', type: 'duplicate-id', id, terms: [previousTerm, term] });
+    if (id) ids.set(id, term);
+
+    const previousCanonical = canonicalTerms.get(normalizedTerm);
+    if (normalizedTerm && previousCanonical && previousCanonical.id !== id) {
+      issues.push({ severity: 'high', type: 'duplicate-canonical-term', normalizedTerm, entries: [previousCanonical, { id, term }] });
+    } else if (normalizedTerm) {
+      canonicalTerms.set(normalizedTerm, { id, term });
+    }
+
+    if (!maybeDefinitionMatchesCategory(entry)) {
+      issues.push({ severity: 'medium', type: 'category-definition-mismatch-suspicion', id, term, category: entry.category, definition });
+    }
+
+    const titleMismatch = hasSuspiciousTitleDefinitionMismatch(entry);
+    if (titleMismatch) {
+      issues.push({ severity: 'critical', type: 'title-definition-mismatch-suspicion', id, term, reason: titleMismatch.reason });
+    }
+
+    const normalizedDefinition = normalizeGlossaryText(definition);
+    if (normalizedDefinition && normalizedDefinition.length > 32) {
+      const list = definitions.get(normalizedDefinition) || [];
+      list.push({ id, term, category: entry.category });
+      definitions.set(normalizedDefinition, list);
+    }
+
+    if (findPotentialAnswerLeakage(entry.preAnswerSafeDefinition || '')) {
+      issues.push({ severity: 'high', type: 'pre-answer-leakage-risk', id, term, preAnswerSafeDefinition: entry.preAnswerSafeDefinition });
+    }
+
+    if (Array.isArray(entry.relatedTerms)) {
+      entry.relatedTerms.forEach((related) => {
+        const key = normalizeGlossaryText(related);
+        if (key && !knownEntryKeys.has(key)) issues.push({ severity: 'low', type: 'orphan-related-term', id, term, related });
+      });
+    }
+
     (entry.aliases || []).forEach((alias) => {
       const normalized = normalizeGlossaryText(alias);
       if (!normalized) return;
       const list = aliases.get(normalized) || [];
-      list.push({ id: entry.id, term: entry.term, alias });
+      list.push({ id, term, alias, category: entry.category, isGenericConcept: Boolean(entry.isGenericConcept), isContextSensitive: Boolean(entry.isContextSensitive) });
       aliases.set(normalized, list);
+
+      if (isGenericStandaloneAlias(alias) && !entry.isGenericConcept && !isExactCanonicalAlias(entry, alias)) {
+        issues.push({ severity: 'critical', type: 'generic-alias-assigned-to-specific-entry', id, term, alias, category: entry.category });
+      }
+      if (isUnsafeShortAcronymAlias(alias) && !entry.caseSensitiveDisplay) {
+        issues.push({ severity: 'medium', type: 'short-acronym-case-safety-risk', id, term, alias });
+      }
+      if (String(alias).trim().split(/\s+/).length === 1 && entry.isMultiWordTerm && !isExactCanonicalAlias(entry, alias) && isGenericStandaloneAlias(alias)) {
+        issues.push({ severity: 'high', type: 'single-word-alias-shadowing-phrase-risk', id, term, alias });
+      }
     });
   });
 
   aliases.forEach((list, normalizedAlias) => {
     const ownerIds = Array.from(new Set(list.map((item) => item.id)));
-    if (ownerIds.length > 1) issues.push({ type: 'duplicate-normalized-alias', normalizedAlias, entries: list });
+    if (ownerIds.length > 1) issues.push({ severity: 'critical', type: 'duplicate-normalized-alias', normalizedAlias, entries: list });
   });
+
+  definitions.forEach((list, normalizedDefinition) => {
+    const categories = new Set(list.map((item) => String(item.category || '').split('/')[0].trim()));
+    if (list.length > 2 && categories.size > 1) {
+      issues.push({ severity: 'medium', type: 'duplicated-definition-across-unrelated-entries', normalizedDefinition, entries: list.slice(0, 8) });
+    }
+  });
+
+  const severityCounts = issues.reduce((acc, issue) => {
+    acc[issue.severity || 'low'] = (acc[issue.severity || 'low'] || 0) + 1;
+    return acc;
+  }, { critical: 0, high: 0, medium: 0, low: 0 });
 
   return {
     totalEntries: entries.length,
+    totalAliases: entries.reduce((sum, entry) => sum + (entry.aliases?.length || 0), 0),
     issueCount: issues.length,
+    severityCounts,
+    categorySummary: Object.fromEntries([...categorySummary.entries()].sort((a, b) => b[1] - a[1])),
     issues,
   };
 }
@@ -9751,6 +9908,32 @@ function getExtraTermsCacheKey(extraTerms = []) {
     .join('|');
 }
 
+
+const PREANSWER_DEFINITION_LEAKAGE_PATTERNS = [
+  /\b(?:ilk|öncelikli|en uygun|en olası|kesin|klasik|tipik|patognomonik)\s+(?:tedavi|yaklaşım|basamak|tanı|etken|bulgu|ipucu|seçenek|yanıt|manevra|görüntüleme)\b/iu,
+  /\b(?:düşündürür|destekler|ayırt ettirir|tanı koydurur|tanısını destekler|verilmelidir|uygulanmalıdır|başlanmalıdır)\b/iu,
+  /\b(?:ilk kullanılan|ilk uygulanan|ilk görülen|ilk manevra|ilk basamak|ilk ulaştığı|öncelikle uygulanması|başlayan ilk|katalizleyen enzimdir)\b/iu,
+  /\bilk\b/iu,
+  /\b(?:yüksek değerli|ilk geçiş|lenfatik drenajın ilk|ilk ulaştığı|ilk manevralardan)\b/iu,
+  /\b(?:düşük|yüksek|azalmış|artmış)\s+(?:biyoyararlanım|saptanır|saptandı)\b/iu,
+];
+
+function hasPreAnswerDefinitionLeakage(value = '') {
+  const text = String(value || '');
+  return PREANSWER_DEFINITION_LEAKAGE_PATTERNS.some((pattern) => pattern.test(text));
+}
+
+function buildNeutralSafeDefinitionForEntry(entry = {}, canonicalTerm = '') {
+  const term = canonicalTerm || entry.canonicalTerm || entry.displayTerm || entry.term || 'Bu kavram';
+  const category = String(entry.category || '').toLocaleLowerCase('tr');
+  if (/ilaç|farmakoloji|antidot|tedavi|ajan|antibiyotik|antikoagülan|manevra/.test(category)) return `${term}, klinik yönetim veya tedavi yaklaşımı bağlamında kullanılan tıbbi bir kavramdır.`;
+  if (/hastalık|sendrom|enfeksiyon|patoloji|neoplazi|tümör|kanser/.test(category)) return `${term}, klinik değerlendirmede tanı ve ayırıcı tanı açısından kullanılan tıbbi bir kavramdır.`;
+  if (/laboratuvar|biyokimya|asit|baz|kan gazı|parametre|tetkik|görüntüleme/.test(category)) return `${term}, klinik değerlendirme veya laboratuvar/görüntüleme yorumunda kullanılan tıbbi bir kavramdır.`;
+  if (/bulgu|semptom|muayene|ekg/.test(category)) return `${term}, klinik değerlendirmede anlam taşıyan bir bulgu veya muayene terimidir.`;
+  if (/mekanizma|fizyoloji|moleküler|genetik|immünoloji|patofizyoloji/.test(category)) return `${term}, hastalık mekanizması veya temel bilim yorumlamasında kullanılan bilimsel bir kavramdır.`;
+  return `${term}, klinik metinlerde anlamı bilinmesi gereken tıbbi/terminolojik bir kavramdır.`;
+}
+
 function normalizeEntry(entry = {}) {
   const canonicalTerm = entry.canonicalTerm || entry.displayTerm || entry.term || '';
   const displayTerm = entry.displayTerm || entry.canonicalTerm || entry.term || canonicalTerm;
@@ -9761,7 +9944,10 @@ function normalizeEntry(entry = {}) {
     .sort((a, b) => b.length - a.length);
 
   const previewDefinition = entry.previewDefinition || entry.shortDefinition || entry.definition || '';
-  const preAnswerSafeDefinition = entry.preAnswerSafeDefinition || previewDefinition;
+  const rawPreAnswerSafeDefinition = entry.preAnswerSafeDefinition || previewDefinition;
+  const preAnswerSafeDefinition = hasPreAnswerDefinitionLeakage(rawPreAnswerSafeDefinition)
+    ? buildNeutralSafeDefinitionForEntry(entry, canonicalTerm)
+    : rawPreAnswerSafeDefinition;
   const shortDefinition = entry.shortDefinition || previewDefinition || entry.definition || '';
   const postAnswerExpandedExplanation = entry.postAnswerExpandedExplanation || entry.postAnswerExplanation || entry.detailedExplanation || entry.longDefinition || '';
   const normalizedTerm = entry.normalizedTerm || normalizeGlossaryText(canonicalTerm);
@@ -9798,8 +9984,16 @@ function normalizeEntry(entry = {}) {
     sourceTextExamples: entry.sourceTextExamples || [],
     matchingPriority,
     isMultiWordTerm: entry.isMultiWordTerm ?? /\s/.test(canonicalTerm),
+    isGenericConcept: Boolean(entry.isGenericConcept),
+    isContextSensitive: Boolean(entry.isContextSensitive),
+    allowedContexts: entry.allowedContexts || [],
+    blockedContexts: entry.blockedContexts || [],
+    requiredCoTerms: entry.requiredCoTerms || [],
+    forbiddenCoTerms: entry.forbiddenCoTerms || [],
+    nestedGlossaryAllowed: Boolean(entry.nestedGlossaryAllowed),
+    disabledAsStandaloneAlias: Boolean(entry.disabledAsStandaloneAlias),
     answerLeakRisk: entry.answerLeakRisk || 'medium',
-    caseSensitiveDisplay: Boolean(entry.caseSensitiveDisplay),
+    caseSensitiveDisplay: Boolean(entry.caseSensitiveDisplay || aliases.some(isShortCaseSensitiveMedicalToken)),
     capitalizationRule: entry.capitalizationRule || 'canonical-medical-title',
     normalizedTerm,
     aliases,

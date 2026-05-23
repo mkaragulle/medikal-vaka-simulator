@@ -1,0 +1,419 @@
+{
+  "totalEntries": 1371,
+  "totalAliases": 4390,
+  "issueCount": 495,
+  "severityCounts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 464,
+    "low": 31
+  },
+  "blockingIssueCount": 0,
+  "duplicateAliasCollisions": 0,
+  "shortDefinitionCount": 0,
+  "blockingIssues": [],
+  "mediumIssueSample": [
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "quality-reversible-airway-obstruction",
+      "term": "Geri dönüşümlü hava yolu obstrüksiyonu",
+      "category": "Patofizyolojik mekanizma",
+      "definition": "Hava yolu daralmasının bronkodilatör veya spontan düzelme ile belirgin şekilde geri dönebilmesini ifade eder."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "quality-glomerular-filtration-rate",
+      "term": "Glomerüler filtrasyon hızı",
+      "category": "Fizyoloji / Laboratuvar parametresi",
+      "definition": "Birim zamanda glomerüllerden Bowman boşluğuna filtre edilen plazma hacmini ifade eder."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "quality-deep-rapid-breathing",
+      "term": "Derin hızlı solunum",
+      "category": "Semptom / Solunum paterni",
+      "definition": "Metabolik asidozda kompansatuvar olarak derin ve hızlı solunum paterninin gelişmesidir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "quality-iv-fluid-replacement",
+      "term": "İntravenöz sıvı replasmanı",
+      "category": "Tedavi yaklaşımı",
+      "definition": "Damar yolu üzerinden volüm, elektrolit veya hemodinamik destek amacıyla sıvı verilmesidir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "quality-oral-iron-therapy",
+      "term": "Oral demir tedavisi",
+      "category": "Farmakolojik ajan / Tedavi yaklaşımı",
+      "definition": "Demir eksikliğini düzeltmek amacıyla ağızdan demir preparatı verilmesidir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "quality-lumbar-puncture",
+      "term": "Lomber ponksiyon",
+      "category": "Tetkik / İşlem",
+      "definition": "Beyin omurilik sıvısının tanısal veya nadiren terapötik amaçla lomber aralıktan alınmasıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "binding-eosinophil",
+      "term": "Eozinofil",
+      "category": "Hücre / Granülosit",
+      "definition": "Paraziter enfeksiyonlar, alerjik hastalıklar ve bazı inflamatuvar durumlarla ilişkili granülosittir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-omuz-aktif-abduksiyonu",
+      "term": "Omuz aktif abdüksiyonu",
+      "category": "Fonksiyonel muayene bulgusu",
+      "definition": "Omuz ekleminde kolun hastanın kendi kas gücüyle gövdeden uzaklaştırılmasıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-retikulosit-yaniti",
+      "term": "Retikülosit yanıtı",
+      "category": "Laboratuvar yorumu",
+      "definition": "Kemik iliğinin anemi veya hemolize karşı genç eritrosit üretimini artırıp artırmadığını gösteren yanıttır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-safra-kesesi-duvar-kalinlasmasi",
+      "term": "Safra kesesi duvar kalınlaşması",
+      "category": "Görüntüleme bulgusu",
+      "definition": "Safra kesesi duvarının normalden kalın izlenmesidir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-segmenter-duvar-kalinlasmasi",
+      "term": "Segmenter duvar kalınlaşması",
+      "category": "Görüntüleme bulgusu",
+      "definition": "Bağırsak veya organ duvarının sınırlı bir segmentte kalınlaşmasıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-kalca-fleksiyonu-zayifligi",
+      "term": "Kalça fleksiyonu zayıflığı",
+      "category": "Motor muayene bulgusu",
+      "definition": "Kalçayı öne doğru kaldırma gücünün azalmasıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-diz-ekstansiyonu-zayifligi",
+      "term": "Diz ekstansiyonu zayıflığı",
+      "category": "Motor muayene bulgusu",
+      "definition": "Dizi düzleştirme gücünün azalmasıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-redukte-edilemeyen-kitle",
+      "term": "Redükte edilemeyen kitle",
+      "category": "Cerrahi muayene bulgusu",
+      "definition": "Elle veya pozisyonla karın içine geri itilemeyen kitleyi ifade eder."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-yuksek-yerlesimli-testis",
+      "term": "Yüksek yerleşimli testis",
+      "category": "Muayene bulgusu",
+      "definition": "Testisin skrotum içinde normalden daha yukarıda izlenmesidir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-serratus-anterior-felci",
+      "term": "Serratus anterior felci",
+      "category": "Nöromüsküler bulgu",
+      "definition": "Serratus anterior kasının işlev kaybına bağlı skapulanın toraks duvarına sabitlenememesidir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-i-mmun-kompleks-birikimi",
+      "term": "İmmün kompleks birikimi",
+      "category": "İmmünopatoloji mekanizması",
+      "definition": "Antijen-antikor komplekslerinin dokuda birikerek inflamasyon oluşturmasıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-toksin-aracili-hastalik",
+      "term": "Toksin aracılı hastalık",
+      "category": "Mikrobiyoloji mekanizması",
+      "definition": "Mikroorganizmanın doğrudan invazyonundan çok toksin etkisiyle klinik tablo oluşturmasıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-aside-direncli-basil",
+      "term": "Aside dirençli basil",
+      "category": "Mikrobiyoloji bulgusu",
+      "definition": "Asit-alkol dekolorizasyonuna dirençli boyanan basil formundaki mikroorganizmadır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-pelvik-serbest-sivi",
+      "term": "Pelvik serbest sıvı",
+      "category": "Görüntüleme bulgusu",
+      "definition": "Pelvis içinde serbest sıvı izlenmesidir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-sag-alt-kadran",
+      "term": "Sağ alt kadran",
+      "category": "Anatomik lokalizasyon",
+      "definition": "Karın sağ alt bölümünü ifade eder; apendiks, terminal ileum, çekum ve sağ over/adnekslerle ilişkilidir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-sag-ust-kadran",
+      "term": "Sağ üst kadran",
+      "category": "Anatomik lokalizasyon",
+      "definition": "Karın sağ üst bölümünü ifade eder; karaciğer, safra kesesi ve safra yollarıyla ilişkilidir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-i-ndirekt-hiperbilirubinemi",
+      "term": "İndirekt hiperbilirubinemi",
+      "category": "Biyokimyasal bulgu",
+      "definition": "Konjuge olmamış bilirubinin kanda artmasıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-konjuge-hiperbilirubinemi",
+      "term": "Konjuge hiperbilirubinemi",
+      "category": "Biyokimyasal bulgu",
+      "definition": "Direkt bilirubin fraksiyonunun artmasıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-transaminaz-yuksekligi",
+      "term": "Transaminaz yüksekliği",
+      "category": "Laboratuvar bulgusu",
+      "definition": "AST ve ALT enzimlerinde artışı ifade eder."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-membran-stabilizasyonu",
+      "term": "Membran stabilizasyonu",
+      "category": "Patofizyolojik tedavi kavramı",
+      "definition": "Hücre membranının elektriksel uyarılabilirliğini güvenli aralığa çekmeyi ifade eder."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-kompleman-aktivasyonu",
+      "term": "Kompleman aktivasyonu",
+      "category": "İmmünolojik mekanizma",
+      "definition": "Kompleman sisteminin klasik, alternatif veya lektin yol üzerinden aktive olmasıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-notrofilik-lokositoz",
+      "term": "Nötrofilik lökositoz",
+      "category": "Laboratuvar bulgusu",
+      "definition": "Nötrofil ağırlıklı beyaz küre artışıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-skapular-kanatlanma",
+      "term": "Skapular kanatlanma",
+      "category": "Muayene bulgusu",
+      "definition": "Skapulanın toraks duvarından ayrılarak kanat gibi belirginleşmesidir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-perikolesistik-sivi",
+      "term": "Perikolesistik sıvı",
+      "category": "Görüntüleme bulgusu",
+      "definition": "Safra kesesi çevresinde sıvı izlenmesidir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-troponin-yuksekligi",
+      "term": "Troponin yüksekliği",
+      "category": "Laboratuvar bulgusu",
+      "definition": "Kardiyak miyosit hasarını gösteren troponin düzeyi artışıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-retikulosit-sayisi",
+      "term": "Retikülosit sayısı",
+      "category": "Laboratuvar parametresi",
+      "definition": "Kemik iliğinin eritrosit üretim yanıtını yansıtan genç eritrosit oranı/sayısıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-alp-ggt-yuksekligi",
+      "term": "ALP/GGT yüksekliği",
+      "category": "Laboratuvar bulgusu",
+      "definition": "Alkalen fosfataz ve gama-glutamil transferaz artışını ifade eder."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-i-nguinal-ligament",
+      "term": "İnguinal ligament",
+      "category": "Anatomik yapı",
+      "definition": "Spina iliaca anterior superior ile pubik tüberkül arasında uzanan bağ yapısıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-kontrast-tutulumu",
+      "term": "Kontrast tutulumu",
+      "category": "Görüntüleme bulgusu",
+      "definition": "Kontrast madde verilmesi sonrası dokuda artmış kontrastlanma görülmesidir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-laktat-yuksekligi",
+      "term": "Laktat yüksekliği",
+      "category": "Laboratuvar bulgusu",
+      "definition": "Doku hipoperfüzyonu veya anaerobik metabolizma artışıyla ilişkili laktat artışıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-aktif-abduksiyon",
+      "term": "Aktif abdüksiyon",
+      "category": "Fonksiyonel muayene bulgusu",
+      "definition": "Hastanın ekstremitesini orta hattan kendi kas gücüyle uzaklaştırmasıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-saddle-anestezi",
+      "term": "Saddle anestezi",
+      "category": "Nörolojik bulgu",
+      "definition": "Perine ve iç uyluk bölgelerinde eyer tarzı duyu kaybıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-oksidatif-stres",
+      "term": "Oksidatif stres",
+      "category": "Patofizyolojik mekanizma",
+      "definition": "Reaktif oksijen türleri ile antioksidan savunma arasındaki dengenin oksidanlar lehine bozulmasıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-pubik-tuberkul",
+      "term": "Pubik tüberkül",
+      "category": "Anatomik landmark",
+      "definition": "Pubis kemiği üzerindeki palpabl kemik çıkıntıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-duyusal-seviye",
+      "term": "Duyusal seviye",
+      "category": "Nörolojik lokalizasyon bulgusu",
+      "definition": "Duyu kaybının belirli bir dermatom veya vücut seviyesinden itibaren başlamasıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-reaktivasyon",
+      "term": "Reaktivasyon",
+      "category": "Enfeksiyon/immünoloji kavramı",
+      "definition": "Latent kalan enfeksiyonun bağışıklık baskılanması veya uygun koşullarda yeniden aktifleşmesidir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-sistosit",
+      "term": "Şistosit",
+      "category": "Periferik yayma bulgusu",
+      "definition": "Mikroanjiyopatik hemolizde görülen parçalanmış eritrosit fragmanıdır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-defans",
+      "term": "Defans",
+      "category": "Fizik muayene bulgusu",
+      "definition": "Karın duvarı kaslarının istemli veya istemsiz kasılarak palpasyona direnç göstermesidir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "quality-general-edema",
+      "term": "Ödem",
+      "category": "Genel patofizyolojik kavram",
+      "definition": "İnterstisyel veya seröz boşluklarda sıvı birikimini ifade eder."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "ctx-audit-ekg-degisikligi",
+      "term": "EKG değişikliği",
+      "category": "EKG bulgusu",
+      "definition": "Elektrokardiyografide ritim, iletim, repolarizasyon veya iskemiye ait sapmaları ifade eder."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "context-obstruction-general",
+      "term": "Obstrüksiyon",
+      "category": "Genel patofizyolojik kavram",
+      "definition": "Lümenli bir yapıdan hava, sıvı, kan, safra, idrar veya bağırsak içeriği geçişinin kısmen ya da tamamen engellenmesini ifade eder."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "dalli-zincirli-alfa-ketoasit-dehidrogenaz",
+      "term": "Dallı zincirli alfa-ketoasit dehidrogenaz",
+      "category": "Biyokimya / MSUD",
+      "definition": "Lösin, izolösin ve valin katabolizmasında görevli kompleks; MSUD’de eksiktir."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "akcaagac-surubu-idrar-hastaligi",
+      "term": "Akçaağaç şurubu idrar hastalığı",
+      "category": "Biyokimya / Aminoasit metabolizması",
+      "definition": "Dallı zincirli alfa-ketoasit dehidrogenaz eksikliğine bağlı lösin, izolösin ve valin birikimiyle nörotoksisite ve tatlı idrar kokusu yapan hastalıktır."
+    },
+    {
+      "severity": "medium",
+      "type": "category-definition-mismatch-suspicion",
+      "id": "primer-perkutan-koroner-girisim",
+      "term": "Primer perkütan koroner girişim",
+      "category": "İç Hastalıkları",
+      "definition": "STEMI’de tıkalı koroner damarı mekanik olarak açmaya yönelik öncelikli reperfüzyon yöntemidir."
+    }
+  ],
+  "duplicateAliasExamples": [],
+  "shortDefinitionExamples": []
+}
