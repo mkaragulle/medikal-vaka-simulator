@@ -49391,3 +49391,66 @@ html[data-theme="dark"] .tus-spot-bank-main .option-grid > .answer-option:hover:
     margin-top: -6px !important;
   }
 }
+
+/* ==========================================================
+   V256 — Branch selector card clipping fix
+   Fixes intermittent top/side clipping on Klinik Branş Seç cards.
+   Cause was the same family as the “Diğer olgular” issue: branch grid
+   content-visibility/contain + hover/animated icon shadows created a
+   clipped paint box around cards. The branch selector now keeps enough
+   breathing room and allows card shadows/hover states to render fully.
+   ========================================================== */
+.branches-section,
+.branches-section .tus-spot-olgular-feature-row,
+.branches-section .branch-grid,
+.branches-section .tus-branch-grid {
+  overflow: visible !important;
+  contain: none !important;
+  content-visibility: visible !important;
+}
+
+.branches-section .tus-spot-olgular-feature-row,
+.branches-section .tus-branch-grid {
+  padding: 10px 8px 12px !important;
+  margin-left: -8px !important;
+  margin-right: -8px !important;
+}
+
+.branches-section .tus-spot-olgular-feature-row {
+  margin-top: -2px !important;
+}
+
+.branches-section .tus-branch-grid {
+  margin-top: -2px !important;
+  align-items: stretch !important;
+}
+
+.branches-section .branch-card {
+  position: relative !important;
+  z-index: 0 !important;
+  overflow: visible !important;
+  transform-origin: center center !important;
+  backface-visibility: hidden !important;
+}
+
+.branches-section .branch-card:hover,
+.branches-section .branch-card:focus-visible,
+.branches-section .branch-card.is-launching {
+  z-index: 3 !important;
+}
+
+.branches-section .branch-card-head,
+.branches-section .branch-animated-icon,
+.branches-section .branch-animated-svg,
+.branches-section .branch-animated-svg * {
+  overflow: visible !important;
+}
+
+@media (max-width: 760px) {
+  .branches-section .tus-spot-olgular-feature-row,
+  .branches-section .tus-branch-grid {
+    padding-top: 8px !important;
+    padding-inline: 6px !important;
+    margin-inline: -6px !important;
+  }
+}
