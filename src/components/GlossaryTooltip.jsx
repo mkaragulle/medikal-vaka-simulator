@@ -91,6 +91,22 @@ function compareAliasSpecificity(a = {}, b = {}) {
   return String(a.entry?.term || '').localeCompare(String(b.entry?.term || ''), 'tr');
 }
 
+function getEntryNormalizedKeysForMatch(entry = {}) {
+  return Array.from(new Set([
+    entry.id,
+    entry.term,
+    entry.canonicalTerm,
+    entry.displayTerm,
+    entry.normalizedTerm,
+    ...(Array.isArray(entry.aliases) ? entry.aliases : []),
+  ].filter(Boolean).map((item) => normalizeGlossaryText(item))));
+}
+
+function isExcludedGlossaryEntry(entry = {}, excludedSet = null) {
+  if (!excludedSet || !excludedSet.size) return false;
+  return getEntryNormalizedKeysForMatch(entry).some((key) => excludedSet.has(key));
+}
+
 function isValidAliasMatch(item, matchedValue, source, matchStart, matchEnd, protectedUnitRanges) {
   if (!item?.alias || !matchedValue) return false;
 
@@ -110,10 +126,13 @@ function isValidAliasMatch(item, matchedValue, source, matchStart, matchEnd, pro
   return !numericUnitContext;
 }
 
-function resolveGlossaryEntryForMatch(matcher, matchedValue, source, matchStart, matchEnd, protectedUnitRanges) {
+function resolveGlossaryEntryForMatch(matcher, matchedValue, source, matchStart, matchEnd, protectedUnitRanges, excludedSet = null) {
   const normalized = normalizeGlossaryText(matchedValue);
   const candidates = matcher.aliasMap.get(normalized) || [];
-  const selected = candidates.find((item) => isValidAliasMatch(item, matchedValue, source, matchStart, matchEnd, protectedUnitRanges));
+  const selected = candidates.find((item) => (
+    !isExcludedGlossaryEntry(item.entry, excludedSet)
+    && isValidAliasMatch(item, matchedValue, source, matchStart, matchEnd, protectedUnitRanges)
+  ));
   return selected?.entry || null;
 }
 
@@ -173,7 +192,25 @@ function getClosestFloatingTooltipLevel(node) {
   return Number.isFinite(level) ? level : null;
 }
 
-const GLOSSARY_OPEN_EVENT = 'klinikiq-glossary-term-open';
+// Lightweight active-term registry. The previous implementation attached a
+// window event listener for every rendered glossary term; on dense clinical
+// screens this created avoidable main-thread work whenever a tooltip opened.
+// This registry keeps the same sibling-close behavior with one direct close
+// call per nesting level instead of broadcasting to every term on the page.
+const ACTIVE_GLOSSARY_TERM_BY_LEVEL = new Map();
+
+function activateGlossaryTerm(id, nestingLevel, closeFn) {
+  const key = String(Number(nestingLevel || 0));
+  const previous = ACTIVE_GLOSSARY_TERM_BY_LEVEL.get(key);
+  if (previous && previous.id !== id) previous.close?.();
+  ACTIVE_GLOSSARY_TERM_BY_LEVEL.set(key, { id, close: closeFn });
+}
+
+function deactivateGlossaryTerm(id, nestingLevel) {
+  const key = String(Number(nestingLevel || 0));
+  const current = ACTIVE_GLOSSARY_TERM_BY_LEVEL.get(key);
+  if (current?.id === id) ACTIVE_GLOSSARY_TERM_BY_LEVEL.delete(key);
+}
 
 const MATCHER_CACHE = new WeakMap();
 const SPLIT_CACHE = new Map();
@@ -258,12 +295,16 @@ function makeMatcher(terms = []) {
   return matcher;
 }
 
-function splitByGlossary(text = '', terms = [], maxTerms = DEFAULT_MAX_TERMS_PER_TEXT) {
+function splitByGlossary(text = '', terms = [], maxTerms = DEFAULT_MAX_TERMS_PER_TEXT, excludedTermKeys = null) {
   const source = String(text);
   const limit = Number.isFinite(maxTerms) ? Math.max(0, maxTerms) : DEFAULT_MAX_TERMS_PER_TEXT;
   if (!source || !Array.isArray(terms) || !terms.length || limit <= 0 || !isLikelyGlossaryCandidateText(source)) return [{ type: 'text', value: source }];
 
-  const cacheKey = `${getTermsSignature(terms)}::${limit}::${source}`;
+  const excludedKey = Array.isArray(excludedTermKeys) && excludedTermKeys.length
+    ? excludedTermKeys.map((item) => normalizeGlossaryText(item)).filter(Boolean).sort().join('|')
+    : '';
+  const excludedSet = excludedKey ? new Set(excludedKey.split('|').filter(Boolean)) : null;
+  const cacheKey = `${getTermsSignature(terms)}::${limit}::${excludedKey}::${source}`;
   if (SPLIT_CACHE.has(cacheKey)) return SPLIT_CACHE.get(cacheKey);
 
   const matcher = makeMatcher(terms);
@@ -289,7 +330,7 @@ function splitByGlossary(text = '', terms = [], maxTerms = DEFAULT_MAX_TERMS_PER
     if (matchStart > lastIndex) parts.push({ type: 'text', value: source.slice(lastIndex, matchStart) });
 
     const entry = suffixIsValid
-      ? resolveGlossaryEntryForMatch(matcher, baseValue, source, matchStart, baseEnd, protectedUnitRanges)
+      ? resolveGlossaryEntryForMatch(matcher, baseValue, source, matchStart, baseEnd, protectedUnitRanges, excludedSet)
       : null;
     const canonical = normalizeGlossaryText(entry?.term || baseValue);
 
@@ -716,17 +757,22 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
 
   const close = useCallback(() => {
     clearCloseTimer();
+    deactivateGlossaryTerm(id, nestingLevel);
     setOpen(false);
-  }, [clearCloseTimer]);
+  }, [clearCloseTimer, id, nestingLevel]);
 
   const scheduleCloseSoon = useCallback(() => {
     if (typeof window === 'undefined') {
+      deactivateGlossaryTerm(id, nestingLevel);
       setOpen(false);
       return;
     }
     clearCloseTimer();
-    closeTimerRef.current = window.setTimeout(() => setOpen(false), CLOSE_DELAY_MS);
-  }, [clearCloseTimer]);
+    closeTimerRef.current = window.setTimeout(() => {
+      deactivateGlossaryTerm(id, nestingLevel);
+      setOpen(false);
+    }, CLOSE_DELAY_MS);
+  }, [clearCloseTimer, id, nestingLevel]);
 
   const scheduleCloseFromTrigger = useCallback((event) => {
     const nextTarget = event?.relatedTarget;
@@ -757,26 +803,17 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
 
   const openNow = useCallback(() => {
     clearCloseTimer();
-    if (typeof window !== 'undefined') {
-      window.dispatchEvent(new CustomEvent(GLOSSARY_OPEN_EVENT, { detail: { id, nestingLevel } }));
-    }
+    activateGlossaryTerm(id, nestingLevel, () => {
+      clearCloseTimer();
+      setOpen(false);
+    });
     setOpen(true);
   }, [clearCloseTimer, id, nestingLevel]);
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return undefined;
-    const handleOtherTermOpen = (event) => {
-      const detail = event?.detail || {};
-      if (detail.id && detail.id !== id && Number(detail.nestingLevel || 0) === Number(nestingLevel || 0)) {
-        clearCloseTimer();
-        setOpen(false);
-      }
-    };
-    window.addEventListener(GLOSSARY_OPEN_EVENT, handleOtherTermOpen);
-    return () => window.removeEventListener(GLOSSARY_OPEN_EVENT, handleOtherTermOpen);
+  useEffect(() => () => {
+    deactivateGlossaryTerm(id, nestingLevel);
+    clearCloseTimer();
   }, [clearCloseTimer, id, nestingLevel]);
-
-  useEffect(() => () => clearCloseTimer(), [clearCloseTimer]);
 
   return (
     <span
@@ -802,8 +839,13 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
         event.stopPropagation();
         clearCloseTimer();
         setOpen((current) => {
-          if (!current && typeof window !== 'undefined') {
-            window.dispatchEvent(new CustomEvent(GLOSSARY_OPEN_EVENT, { detail: { id, nestingLevel } }));
+          if (!current) {
+            activateGlossaryTerm(id, nestingLevel, () => {
+              clearCloseTimer();
+              setOpen(false);
+            });
+          } else {
+            deactivateGlossaryTerm(id, nestingLevel);
           }
           return !current;
         });
@@ -813,8 +855,13 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
           event.preventDefault();
           clearCloseTimer();
           setOpen((current) => {
-            if (!current && typeof window !== 'undefined') {
-              window.dispatchEvent(new CustomEvent(GLOSSARY_OPEN_EVENT, { detail: { id, nestingLevel } }));
+            if (!current) {
+              activateGlossaryTerm(id, nestingLevel, () => {
+                clearCloseTimer();
+                setOpen(false);
+              });
+            } else {
+              deactivateGlossaryTerm(id, nestingLevel);
             }
             return !current;
           });
@@ -857,28 +904,14 @@ function GlossaryText({
     : '';
   const terms = useMemo(() => {
     if (!enabled) return [];
-    const baseTerms = getGlossaryTerms(extraTerms, { branchId });
-    if (!excludedKey) return baseTerms;
-
-    const excluded = new Set((Array.isArray(excludedTermKeys) ? excludedTermKeys : []).map((item) => normalizeGlossaryText(item)).filter(Boolean));
-    const filtered = baseTerms.filter((term) => {
-      const keys = getEntryKeys(term);
-      return !keys.some((key) => excluded.has(key));
-    });
-
-    try {
-      Object.defineProperty(filtered, '__glossarySignature', {
-        value: `${getTermsSignature(baseTerms)}::exclude:${excludedKey}`,
-        enumerable: false,
-      });
-    } catch (_) {
-      // Non-critical cache hint.
-    }
-    return filtered;
-  }, [enabled, extraTermsKey, branchId, excludedKey]);
+    return getGlossaryTerms(extraTerms, { branchId });
+  }, [enabled, extraTermsKey, branchId]);
   const effectiveMaxTerms = maxTerms ?? (revealMode === 'preAnswer' || revealMode === 'neutral' ? PREANSWER_MAX_TERMS_PER_TEXT : DEFAULT_MAX_TERMS_PER_TEXT);
   const sourceText = String(text || '');
-  const parts = useMemo(() => splitByGlossary(sourceText, enabled ? terms : [], effectiveMaxTerms), [sourceText, enabled, terms, effectiveMaxTerms]);
+  const parts = useMemo(
+    () => splitByGlossary(sourceText, enabled ? terms : [], effectiveMaxTerms, excludedTermKeys),
+    [sourceText, enabled, terms, effectiveMaxTerms, excludedKey],
+  );
 
   if (!enabled) return <span className="glossary-text-flow">{sourceText}</span>;
 
