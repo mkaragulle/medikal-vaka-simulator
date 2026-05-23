@@ -211,7 +211,7 @@ function TusPearlCardEditor({
         <header className="pearl-min-header">
           <div className="pearl-min-title">
             <h2>{title}</h2>
-            <p>Kart içeriğini ekle.</p>
+            <p>Gerekli alanları doldur.</p>
           </div>
           <button type="button" className="btn btn-icon quiet pearl-min-close" onClick={onClose} aria-label="Kart editörünü kapat">
             <Icon name="X" />
@@ -310,7 +310,7 @@ function TusPearlCardEditor({
         <header className="pearl-min-sub-header">
           <div className="pearl-min-title">
             <h3>Opsiyonel alanlar</h3>
-            <p>İsteğe bağlı kart detayları.</p>
+            <p>İsteğe bağlı alanlar.</p>
           </div>
           <button type="button" className="btn btn-icon quiet pearl-min-close" onClick={closeAdvancedDialog} aria-label="Opsiyonel alanları kapat">
             <Icon name="X" />

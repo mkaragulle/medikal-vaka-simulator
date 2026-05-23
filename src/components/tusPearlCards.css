@@ -16638,3 +16638,247 @@ html[data-theme='dark'] .pearl-editor-secondary-actions,
     width: 100% !important;
   }
 }
+
+/* ==========================================================
+   V312 — ultra minimal alignment polish
+   ========================================================== */
+.pearl-editor-backdrop.pearl-min-overlay,
+.pearl-editor-secondary-backdrop.pearl-min-sub-overlay {
+  padding: 20px !important;
+  background: rgba(15, 23, 42, 0.34) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.pearl-editor-secondary-backdrop.pearl-min-sub-overlay {
+  background: rgba(15, 23, 42, 0.42) !important;
+}
+
+.pearl-editor-modal.pearl-min-modal,
+.pearl-editor-secondary-modal.pearl-min-sub-modal {
+  border-radius: 22px !important;
+  border: 1px solid rgba(226, 232, 240, 0.98) !important;
+  background: #ffffff !important;
+  box-shadow: 0 16px 48px rgba(15, 23, 42, 0.10) !important;
+}
+
+.pearl-editor-modal.pearl-min-modal {
+  width: min(860px, calc(100vw - 40px)) !important;
+  max-height: min(680px, calc(100dvh - 40px)) !important;
+}
+
+.pearl-editor-secondary-modal.pearl-min-sub-modal {
+  width: min(660px, calc(100vw - 36px)) !important;
+  max-height: min(600px, calc(100dvh - 36px)) !important;
+}
+
+.pearl-min-header,
+.pearl-min-sub-header {
+  align-items: center !important;
+  padding: 18px 20px 14px !important;
+  gap: 12px !important;
+  border-bottom: 1px solid rgba(241, 245, 249, 1) !important;
+}
+
+.pearl-min-title {
+  display: grid !important;
+  gap: 4px !important;
+}
+
+.pearl-min-title h2,
+.pearl-min-title h3 {
+  font-weight: 700 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.pearl-min-title h2 {
+  font-size: clamp(1.55rem, 1.8vw, 1.8rem) !important;
+}
+
+.pearl-min-title h3 {
+  font-size: clamp(1.28rem, 1.6vw, 1.45rem) !important;
+}
+
+.pearl-min-title p {
+  margin-top: 0 !important;
+  font-size: 0.86rem !important;
+  line-height: 1.4 !important;
+  color: #94a3b8 !important;
+}
+
+.pearl-min-close {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 12px !important;
+  border-color: rgba(226, 232, 240, 1) !important;
+  color: #334155 !important;
+}
+
+.pearl-min-scroll {
+  padding: 16px 20px 12px !important;
+  gap: 12px !important;
+}
+
+.pearl-min-main {
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr) !important;
+  gap: 12px !important;
+  align-items: start !important;
+}
+
+.pearl-min-stack,
+.pearl-min-sub-grid {
+  gap: 12px !important;
+}
+
+.pearl-min-field,
+.pearl-min-sub-field {
+  gap: 6px !important;
+  align-content: start !important;
+}
+
+.pearl-min-field span,
+.pearl-min-sub-field span {
+  font-size: 0.78rem !important;
+  font-weight: 650 !important;
+  color: #64748b !important;
+}
+
+.pearl-min-field textarea,
+.pearl-min-field select,
+.pearl-min-sub-field input,
+.pearl-min-sub-field select,
+.pearl-min-advanced-trigger {
+  border-radius: 14px !important;
+  border: 1px solid rgba(226, 232, 240, 1) !important;
+  background: #ffffff !important;
+  padding: 13px 14px !important;
+  font-size: 0.96rem !important;
+}
+
+.pearl-min-field-front textarea {
+  min-height: 206px !important;
+}
+
+.pearl-min-stack .pearl-min-field textarea {
+  min-height: 92px !important;
+}
+
+.pearl-min-meta {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(170px, 190px) !important;
+  gap: 12px !important;
+  align-items: start !important;
+}
+
+.pearl-min-select,
+.pearl-min-meta .pearl-min-advanced-trigger {
+  display: grid !important;
+  align-content: start !important;
+}
+
+.pearl-min-select select,
+.pearl-min-advanced-trigger {
+  min-height: 50px !important;
+}
+
+.pearl-min-advanced-trigger {
+  align-items: center !important;
+  padding-inline: 14px !important;
+}
+
+.pearl-min-advanced-trigger span {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+}
+
+.pearl-min-advanced-trigger b {
+  min-width: 22px !important;
+  height: 22px !important;
+  padding: 0 6px !important;
+  font-size: 0.74rem !important;
+  background: rgba(15, 118, 110, 0.08) !important;
+}
+
+.pearl-min-footer,
+.pearl-min-sub-footer {
+  padding: 12px 20px 16px !important;
+  gap: 8px !important;
+  border-top: 1px solid rgba(241, 245, 249, 1) !important;
+}
+
+.pearl-min-footer .btn,
+.pearl-min-sub-footer .btn {
+  min-width: 104px !important;
+}
+
+.pearl-min-sub-grid {
+  padding: 16px 20px 12px !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+[data-theme='dark'] .pearl-editor-backdrop.pearl-min-overlay,
+[data-theme='dark'] .pearl-editor-secondary-backdrop.pearl-min-sub-overlay {
+  background: rgba(2, 6, 23, 0.72) !important;
+}
+
+[data-theme='dark'] .pearl-editor-modal.pearl-min-modal,
+[data-theme='dark'] .pearl-editor-secondary-modal.pearl-min-sub-modal {
+  border-color: rgba(30, 41, 59, 1) !important;
+  background: #0b1220 !important;
+  box-shadow: 0 16px 48px rgba(2, 6, 23, 0.42) !important;
+}
+
+[data-theme='dark'] .pearl-min-header,
+[data-theme='dark'] .pearl-min-sub-header,
+[data-theme='dark'] .pearl-min-footer,
+[data-theme='dark'] .pearl-min-sub-footer {
+  border-color: rgba(30, 41, 59, 1) !important;
+  background: #0b1220 !important;
+}
+
+[data-theme='dark'] .pearl-min-title p,
+[data-theme='dark'] .pearl-min-field span,
+[data-theme='dark'] .pearl-min-sub-field span {
+  color: #94a3b8 !important;
+}
+
+[data-theme='dark'] .pearl-min-close,
+[data-theme='dark'] .pearl-min-field textarea,
+[data-theme='dark'] .pearl-min-field select,
+[data-theme='dark'] .pearl-min-sub-field input,
+[data-theme='dark'] .pearl-min-sub-field select,
+[data-theme='dark'] .pearl-min-advanced-trigger {
+  border-color: rgba(30, 41, 59, 1) !important;
+  background: #111827 !important;
+}
+
+@media (max-width: 900px) {
+  .pearl-min-main,
+  .pearl-min-meta,
+  .pearl-min-sub-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .pearl-editor-backdrop.pearl-min-overlay,
+  .pearl-editor-secondary-backdrop.pearl-min-sub-overlay {
+    padding: 10px !important;
+  }
+
+  .pearl-editor-modal.pearl-min-modal,
+  .pearl-editor-secondary-modal.pearl-min-sub-modal {
+    width: 100% !important;
+    max-height: calc(100dvh - 20px) !important;
+    border-radius: 18px !important;
+  }
+
+  .pearl-min-header,
+  .pearl-min-sub-header,
+  .pearl-min-scroll,
+  .pearl-min-footer,
+  .pearl-min-sub-grid,
+  .pearl-min-sub-footer {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
