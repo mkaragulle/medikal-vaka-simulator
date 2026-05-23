@@ -22,11 +22,10 @@ const PREANSWER_MAX_TERMS_PER_TEXT = 6;
 const VIEWPORT_PADDING = 12;
 const SAFE_TOP_PADDING = 12;
 const TOOLTIP_GAP = 8;
-const MAX_TOOLTIP_WIDTH = 360;
+const MAX_TOOLTIP_WIDTH = 520;
 const TOOLTIP_ROOT_ID = 'klinikiq-tooltip-layer';
 const TOOLTIP_LAYER_Z = 2147483600;
 const CLOSE_DELAY_MS = 220;
-const DRILLDOWN_HOVER_DELAY_MS = 140;
 
 const isFiniteNestedDepthLimit = (value) => Number.isFinite(Number(value));
 const hasReachedNestedDepthLimit = (currentDepth = 0, maxDepth = TOOLTIP_BODY_MAX_NESTED_DEPTH) => (
@@ -423,7 +422,7 @@ function computeFloatingPosition(referenceEl, floatingEl, nestingLevel = 0) {
   const measured = floatingEl.getBoundingClientRect();
   const floatingWidth = Math.min(Math.max(measured.width || 260, 220), maxWidth);
   const naturalHeight = Math.max(measured.height || 72, 48);
-  const absoluteMaxHeight = Math.min(naturalHeight, maxViewportHeight, 520);
+  const absoluteMaxHeight = Math.min(naturalHeight, maxViewportHeight, 720);
   const referenceCenterX = reference.left + reference.width / 2;
   const referenceCenterY = reference.top + reference.height / 2;
 
@@ -867,17 +866,22 @@ function GlossaryBreadcrumb({ path = [], onBack, onJump }) {
   );
 }
 
-function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [], nestingLevel = 0, maxNestedDepth = TOOLTIP_BODY_MAX_NESTED_DEPTH }) {
+function GlossaryCard({
+  entry,
+  revealMode = 'postAnswer',
+  excludedTermKeys = [],
+  nestingLevel = 0,
+  maxNestedDepth = TOOLTIP_BODY_MAX_NESTED_DEPTH,
+  visitedEntryIds = [],
+}) {
   const [expanded, setExpanded] = useState(false);
-  const [entryPath, setEntryPath] = useState(() => [entry].filter(Boolean));
 
   useEffect(() => {
-    setEntryPath([entry].filter(Boolean));
     setExpanded(false);
   }, [entry]);
 
-  const currentEntry = entryPath[entryPath.length - 1] || entry || {};
-  const currentDepth = Math.max(0, entryPath.length - 1);
+  const currentEntry = entry || {};
+  const currentDepth = Math.max(0, Number(nestingLevel || 0));
   const isPreAnswer = revealMode === 'preAnswer' || revealMode === 'neutral';
   const previewDefinition = currentEntry.previewDefinition || currentEntry.shortDefinition || currentEntry.definition || '';
   const safeDefinition = getPreAnswerDefinition(currentEntry);
@@ -891,12 +895,17 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
   const cardTitle = currentEntry.displayTerm || currentEntry.canonicalTerm || currentEntry.term || '';
   const secondaryName = currentEntry.abbreviation || currentEntry.EnglishName || currentEntry.LatinName || '';
 
-  const pathEntryIds = useMemo(() => entryPath.map(getEntryStableId).filter(Boolean), [entryPath]);
+  const pathEntryIds = useMemo(() => {
+    const existing = Array.isArray(visitedEntryIds) ? visitedEntryIds : [];
+    return Array.from(new Set([...existing, getEntryStableId(currentEntry)].filter(Boolean)));
+  }, [visitedEntryIds, currentEntry]);
+
   const blockedKeys = useMemo(() => {
     const next = new Set((Array.isArray(excludedTermKeys) ? excludedTermKeys : []).map((item) => normalizeGlossaryText(item)));
-    entryPath.forEach((pathEntry) => getEntryKeys(pathEntry).forEach((key) => next.add(key)));
+    pathEntryIds.forEach((key) => next.add(normalizeGlossaryText(key)));
+    getEntryKeys(currentEntry).forEach((key) => next.add(key));
     return Array.from(next).filter(Boolean);
-  }, [entryPath, excludedTermKeys]);
+  }, [currentEntry, pathEntryIds, excludedTermKeys]);
 
   const baseShownValues = [shortDefinition];
   const tusPearl = !isDuplicateSection(rawTusPearl, baseShownValues) ? rawTusPearl : '';
@@ -919,29 +928,6 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
   }), [currentEntry, allGlossaryTerms, nestedSourceText, revealMode, pathEntryIds, currentDepth, maxNestedDepth]);
   const canUseNestedGlossary = canGoDeeperInNestedGlossary(currentDepth, maxNestedDepth) && safeNestedTerms.length > 0;
 
-  const navigateToEntry = useCallback((nextEntry) => {
-    if (!nextEntry) return false;
-    let navigated = false;
-    setEntryPath((currentPath) => {
-      if (hasReachedNestedDepthLimit(currentPath.length - 1, maxNestedDepth)) return currentPath;
-      if (entryPathContains(currentPath, nextEntry)) return currentPath;
-      navigated = true;
-      return [...currentPath, nextEntry];
-    });
-    if (navigated) setExpanded(false);
-    return navigated;
-  }, [maxNestedDepth]);
-
-  const goBack = useCallback(() => {
-    setEntryPath((currentPath) => currentPath.length > 1 ? currentPath.slice(0, -1) : currentPath);
-    setExpanded(false);
-  }, []);
-
-  const jumpToBreadcrumb = useCallback((index) => {
-    setEntryPath((currentPath) => currentPath.slice(0, Math.max(1, index + 1)));
-    setExpanded(false);
-  }, []);
-
   const renderGlossaryInline = (value, maxTerms = TOOLTIP_BODY_MAX_NESTED_TERMS) => {
     if (!value) return null;
     if (!canUseNestedGlossary) return <span className="smart-glossary-plain-inline">{String(value)}</span>;
@@ -954,42 +940,30 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
         revealMode={revealMode}
         maxTerms={maxTerms}
         excludedTermKeys={blockedKeys}
-        nestingLevel={nestingLevel + currentDepth + 1}
+        nestingLevel={currentDepth + 1}
         contextMode={currentDepth === 0 ? 'tooltip-body' : 'nested-tooltip-body'}
         maxNestedDepth={maxNestedDepth}
-        currentDepth={currentDepth}
+        currentDepth={currentDepth + 1}
         visitedEntryIds={pathEntryIds}
         enableNestedGlossary
-        navigationMode="drilldown"
-        onTermNavigate={navigateToEntry}
+        navigationMode="popover"
       />
     );
   };
 
   return (
-    <span className="smart-glossary-card" data-preanswer={isPreAnswer ? 'true' : 'false'} data-nesting-level={nestingLevel} data-current-depth={currentDepth}>
-      <GlossaryBreadcrumb path={entryPath} onBack={goBack} onJump={jumpToBreadcrumb} />
-
+    <span
+      className="smart-glossary-card smart-glossary-card--stacked-popover"
+      data-preanswer={isPreAnswer ? 'true' : 'false'}
+      data-nesting-level={nestingLevel}
+      data-current-depth={currentDepth}
+    >
       <span className="smart-glossary-header">
         <span className="smart-glossary-title-wrap">
           <strong className="smart-glossary-title">{cardTitle}</strong>
           {secondaryName && secondaryName !== cardTitle ? <small className="smart-glossary-secondary-name">{secondaryName}</small> : null}
         </span>
         <span className="smart-glossary-header-actions">
-          {currentDepth > 0 ? (
-            <button
-              type="button"
-              className="smart-glossary-back-inline"
-              onClick={(event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                goBack();
-              }}
-              aria-label="Önceki kavrama dön"
-            >
-              Geri
-            </button>
-          ) : null}
           {canExpand ? (
             <button
               type="button"
@@ -1026,19 +1000,14 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
           {relatedTerms.length ? <span className="smart-glossary-related"><b>İlgili:</b> {renderGlossaryInline(relatedTerms.join(' · '), 3)}</span> : null}
         </span>
       ) : null}
-
-      {hasReachedNestedDepthLimit(currentDepth, maxNestedDepth) ? (
-        <span className="smart-glossary-depth-note">Kavram zinciri güvenli derinlik sınırına ulaştı.</span>
-      ) : null}
     </span>
   );
 }
 
-export function GlossaryTerm({ children, entry = null, definition = '', revealMode = 'postAnswer', excludedTermKeys = [], nestingLevel = 0, contextMode = 'default', navigationMode = 'popover', onTermNavigate = null, maxNestedDepth = TOOLTIP_BODY_MAX_NESTED_DEPTH }) {
+export function GlossaryTerm({ children, entry = null, definition = '', revealMode = 'postAnswer', excludedTermKeys = [], nestingLevel = 0, contextMode = 'default', navigationMode = 'popover', onTermNavigate = null, maxNestedDepth = TOOLTIP_BODY_MAX_NESTED_DEPTH, currentDepth = 0, visitedEntryIds = [] }) {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef(null);
   const closeTimerRef = useRef(0);
-  const drilldownTimerRef = useRef(0);
   const reactId = useId();
   const id = useMemo(() => `glossary-${reactId.replace(/:/g, '')}`, [reactId]);
   const resolvedEntry = entry || { term: String(children || ''), shortDefinition: definition || '' };
@@ -1052,12 +1021,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
     }
   }, []);
 
-  const clearDrilldownTimer = useCallback(() => {
-    if (drilldownTimerRef.current && typeof window !== 'undefined') {
-      window.clearTimeout(drilldownTimerRef.current);
-      drilldownTimerRef.current = 0;
-    }
-  }, []);
+
 
   const close = useCallback(() => {
     clearCloseTimer();
@@ -1117,58 +1081,8 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
   useEffect(() => () => {
     deactivateGlossaryTerm(id, nestingLevel);
     clearCloseTimer();
-    clearDrilldownTimer();
-  }, [clearCloseTimer, clearDrilldownTimer, id, nestingLevel]);
+  }, [clearCloseTimer, id, nestingLevel]);
 
-  if (navigationMode === 'drilldown' && typeof onTermNavigate === 'function') {
-    const navigate = (event) => {
-      event?.preventDefault?.();
-      event?.stopPropagation?.();
-      clearDrilldownTimer();
-      onTermNavigate(resolvedEntry);
-    };
-
-    const scheduleHoverNavigate = (event) => {
-      if (event?.pointerType && event.pointerType !== 'mouse') return;
-      clearDrilldownTimer();
-      if (typeof window === 'undefined') {
-        onTermNavigate(resolvedEntry);
-        return;
-      }
-      drilldownTimerRef.current = window.setTimeout(() => {
-        drilldownTimerRef.current = 0;
-        onTermNavigate(resolvedEntry);
-      }, DRILLDOWN_HOVER_DELAY_MS);
-    };
-
-    return (
-      <span
-        ref={triggerRef}
-        className="glossary-term smart-glossary-term smart-glossary-term--drilldown smart-glossary-term--hover-drilldown"
-        tabIndex={0}
-        role="button"
-        data-reveal-mode={revealMode}
-        data-glossary-entry-id={resolvedEntry?.id || ''}
-        data-glossary-entry-term={visibleTermLabel}
-        data-nesting-level={nestingLevel}
-        data-glossary-context-mode={contextMode}
-        data-glossary-navigation-mode="hover-drilldown"
-        aria-label={`${visibleTermLabel}: üzerine gelince kavram kartında aç`}
-        title="Üzerine gelince açılır"
-        onPointerEnter={scheduleHoverNavigate}
-        onPointerLeave={clearDrilldownTimer}
-        onMouseEnter={scheduleHoverNavigate}
-        onMouseLeave={clearDrilldownTimer}
-        onFocus={clearDrilldownTimer}
-        onClick={navigate}
-        onKeyDown={(event) => {
-          if (event.key === 'Enter' || event.key === ' ') navigate(event);
-        }}
-      >
-        {children}
-      </span>
-    );
-  }
 
   return (
     <span
@@ -1239,7 +1153,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
         onFloatingEnter={openNow}
         onFloatingLeave={scheduleCloseFromFloating}
       >
-        <GlossaryCard entry={resolvedEntry} revealMode={revealMode} excludedTermKeys={excludedTermKeys} nestingLevel={nestingLevel} maxNestedDepth={maxNestedDepth} />
+        <GlossaryCard entry={resolvedEntry} revealMode={revealMode} excludedTermKeys={excludedTermKeys} nestingLevel={nestingLevel} maxNestedDepth={maxNestedDepth} visitedEntryIds={visitedEntryIds} />
       </FloatingTooltip>
     </span>
   );
@@ -1308,6 +1222,8 @@ function GlossaryText({
           navigationMode={navigationMode}
           onTermNavigate={onTermNavigate}
           maxNestedDepth={maxNestedDepth}
+          currentDepth={currentDepth}
+          visitedEntryIds={visitedEntryIds}
         >
           {part.value}
         </GlossaryTerm>
