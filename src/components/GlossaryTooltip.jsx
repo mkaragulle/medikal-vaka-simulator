@@ -287,20 +287,76 @@ function getAnchorRect(referenceEl) {
   return referenceEl.getBoundingClientRect();
 }
 
-function computeFloatingPosition(referenceEl, floatingEl) {
+function computeFloatingPosition(referenceEl, floatingEl, nestingLevel = 0) {
   const viewport = getViewportSize();
   const reference = getAnchorRect(referenceEl);
 
   const maxWidth = Math.max(220, Math.min(MAX_TOOLTIP_WIDTH, viewport.width - VIEWPORT_PADDING * 2));
+  const maxViewportHeight = Math.max(120, viewport.height - VIEWPORT_PADDING * 2);
+
+  // Measure the natural tooltip size first. The previous implementation relied
+  // on a static CSS max-height, so tooltips could still extend below flashcard
+  // screens that intentionally do not have page-level scroll.
   floatingEl.style.maxWidth = `${maxWidth}px`;
   floatingEl.style.width = 'max-content';
   floatingEl.style.whiteSpace = 'normal';
+  floatingEl.style.maxHeight = `${maxViewportHeight}px`;
 
   const measured = floatingEl.getBoundingClientRect();
   const floatingWidth = Math.min(Math.max(measured.width || 260, 220), maxWidth);
-  const floatingHeight = Math.max(measured.height || 72, 48);
-
+  const naturalHeight = Math.max(measured.height || 72, 48);
+  const absoluteMaxHeight = Math.min(naturalHeight, maxViewportHeight, 520);
   const referenceCenterX = reference.left + reference.width / 2;
+  const referenceCenterY = reference.top + reference.height / 2;
+
+  // Nested cards read better when they open laterally if there is room. This
+  // also prevents nested glossary previews in the Hap Bilgi screen from being
+  // pushed below the viewport while keeping the flashcard area scrollbar-free.
+  if (Number(nestingLevel || 0) > 0) {
+    const spaceRight = viewport.width - reference.right - TOOLTIP_GAP - VIEWPORT_PADDING;
+    const spaceLeft = reference.left - TOOLTIP_GAP - VIEWPORT_PADDING;
+    const canUseRight = spaceRight >= Math.min(floatingWidth, 260);
+    const canUseLeft = spaceLeft >= Math.min(floatingWidth, 260);
+
+    if (canUseRight || canUseLeft) {
+      const placement = canUseRight || spaceRight >= spaceLeft ? 'right' : 'left';
+      const maxHeight = Math.max(120, Math.min(absoluteMaxHeight, maxViewportHeight));
+      const left = placement === 'right'
+        ? Math.min(reference.right + TOOLTIP_GAP, viewport.width - floatingWidth - VIEWPORT_PADDING)
+        : Math.max(VIEWPORT_PADDING, reference.left - floatingWidth - TOOLTIP_GAP);
+      const top = clamp(
+        referenceCenterY - Math.min(naturalHeight, maxHeight) / 2,
+        VIEWPORT_PADDING,
+        viewport.height - Math.min(naturalHeight, maxHeight) - VIEWPORT_PADDING,
+      );
+      const arrowY = clamp(referenceCenterY - top, 18, Math.min(naturalHeight, maxHeight) - 18);
+
+      return {
+        left,
+        top,
+        placement,
+        arrowX: placement === 'right' ? 0 : floatingWidth,
+        arrowY,
+        maxWidth,
+        maxHeight,
+      };
+    }
+  }
+
+  const topSpace = Math.max(0, reference.top - SAFE_TOP_PADDING - TOOLTIP_GAP);
+  const bottomSpace = Math.max(0, viewport.height - reference.bottom - VIEWPORT_PADDING - TOOLTIP_GAP);
+  const preferredPlacement = bottomSpace >= Math.min(absoluteMaxHeight, 240) || bottomSpace >= topSpace
+    ? 'bottom'
+    : 'top';
+  const availableOnPreferredSide = preferredPlacement === 'bottom' ? bottomSpace : topSpace;
+  const availableOnOtherSide = preferredPlacement === 'bottom' ? topSpace : bottomSpace;
+  const placement = availableOnPreferredSide >= Math.min(absoluteMaxHeight, 140) || availableOnPreferredSide >= availableOnOtherSide
+    ? preferredPlacement
+    : preferredPlacement === 'bottom' ? 'top' : 'bottom';
+  const availableHeight = Math.max(0, placement === 'bottom' ? bottomSpace : topSpace);
+  const maxHeight = Math.max(120, Math.min(absoluteMaxHeight, Math.max(availableHeight, 120), maxViewportHeight));
+  const effectiveHeight = Math.min(naturalHeight, maxHeight);
+
   const desiredLeft = referenceCenterX - floatingWidth / 2;
   const left = clamp(
     desiredLeft,
@@ -308,20 +364,11 @@ function computeFloatingPosition(referenceEl, floatingEl) {
     viewport.width - floatingWidth - VIEWPORT_PADDING,
   );
 
-  const topSpace = reference.top - SAFE_TOP_PADDING;
-  const bottomSpace = viewport.height - reference.bottom - VIEWPORT_PADDING;
-  const placement = topSpace >= floatingHeight + TOOLTIP_GAP || topSpace >= bottomSpace
-    ? 'top'
-    : 'bottom';
-
   const rawTop = placement === 'top'
-    ? reference.top - floatingHeight - TOOLTIP_GAP
+    ? reference.top - effectiveHeight - TOOLTIP_GAP
     : reference.bottom + TOOLTIP_GAP;
 
-  const top = placement === 'top'
-    ? Math.max(SAFE_TOP_PADDING, rawTop)
-    : clamp(rawTop, VIEWPORT_PADDING, viewport.height - floatingHeight - VIEWPORT_PADDING);
-
+  const top = clamp(rawTop, VIEWPORT_PADDING, viewport.height - effectiveHeight - VIEWPORT_PADDING);
   const arrowX = clamp(referenceCenterX - left, 18, floatingWidth - 18);
 
   return {
@@ -329,7 +376,9 @@ function computeFloatingPosition(referenceEl, floatingEl) {
     top,
     placement,
     arrowX,
+    arrowY: placement === 'top' ? effectiveHeight : 0,
     maxWidth,
+    maxHeight,
   };
 }
 
@@ -341,7 +390,9 @@ function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFlo
     top: 0,
     placement: 'top',
     arrowX: 24,
+    arrowY: 24,
     maxWidth: MAX_TOOLTIP_WIDTH,
+    maxHeight: 520,
   });
   const [isPositioned, setIsPositioned] = useState(false);
 
@@ -358,10 +409,10 @@ function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFlo
     const referenceEl = triggerRef.current;
     const floatingEl = tooltipRef.current;
     if (!referenceEl || !floatingEl || typeof window === 'undefined') return;
-    const nextPosition = computeFloatingPosition(referenceEl, floatingEl);
+    const nextPosition = computeFloatingPosition(referenceEl, floatingEl, nestingLevel);
     setPosition(nextPosition);
     setIsPositioned(true);
-  }, [triggerRef]);
+  }, [triggerRef, nestingLevel]);
 
   useLayoutEffect(() => {
     if (!open || !portalRoot) return undefined;
@@ -431,6 +482,8 @@ function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFlo
         '--tooltip-left': `${position.left}px`,
         '--tooltip-top': `${position.top}px`,
         '--tooltip-arrow-left': `${position.arrowX}px`,
+        '--tooltip-arrow-top': `${position.arrowY}px`,
+        '--tooltip-max-height': `${position.maxHeight}px`,
       }}
     >
       {children}
@@ -504,7 +557,6 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
   const relevance = !isDuplicateSection(rawRelevance, [...baseShownValues, tusPearl, differential, detailed]) ? rawRelevance : '';
   const mechanism = !isDuplicateSection(rawMechanism, [...baseShownValues, tusPearl, differential, detailed, relevance]) ? rawMechanism : '';
 
-  const hasTeachingContent = Boolean(rawTusPearl || rawDifferential || rawRelevance || rawMechanism || rawDetailed);
   const canExpand = !isPreAnswer && Boolean(detailed || relevance || mechanism || relatedTerms.length);
   const nestedMaxTerms = isPreAnswer ? 2 : 4;
   const renderGlossaryInline = (value, localMaxTerms = nestedMaxTerms) => {
@@ -527,9 +579,8 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
           <strong className="smart-glossary-title">{entry.term}</strong>
           {secondaryName && secondaryName !== entry.term ? <small className="smart-glossary-secondary-name">{secondaryName}</small> : null}
         </span>
-        <span className="smart-glossary-header-actions">
-          {entry.category ? <em className="smart-glossary-category">{entry.category}</em> : null}
-          {canExpand ? (
+        {canExpand ? (
+          <span className="smart-glossary-header-actions">
             <button
               type="button"
               className="smart-glossary-arrow"
@@ -543,15 +594,11 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
             >
               →
             </button>
-          ) : null}
-        </span>
+          </span>
+        ) : null}
       </span>
 
       {shortDefinition ? <span className="smart-glossary-definition">{renderGlossaryInline(shortDefinition, 3)}</span> : null}
-
-      {isPreAnswer && hasTeachingContent ? (
-        <span className="smart-glossary-safe-note">TUS ipucu yanıt sonrası açılır.</span>
-      ) : null}
 
       {!isPreAnswer && tusPearl ? (
         <span className="smart-glossary-row pearl"><b>TUS ipucu</b><span>{renderGlossaryInline(tusPearl)}</span></span>

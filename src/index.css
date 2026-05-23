@@ -49736,8 +49736,8 @@ html[data-theme="dark"] .bottom-case-browser-tools .bottom-case-browser-count,
   width: max-content !important;
   max-width: min(390px, calc(100vw - 24px)) !important;
   min-width: min(260px, calc(100vw - 24px)) !important;
-  max-height: min(68vh, 520px);
-  overflow: auto !important;
+  max-height: min(var(--tooltip-max-height, 520px), calc(100vh - 24px)) !important;
+  overflow: visible !important;
   pointer-events: auto !important;
   padding: 0 !important;
   border: 1px solid color-mix(in srgb, #0f766e 20%, rgba(148, 163, 184, 0.4));
@@ -49757,6 +49757,28 @@ html[data-theme="dark"] .bottom-case-browser-tools .bottom-case-browser-count,
   border-color: color-mix(in srgb, #14b8a6 22%, rgba(148, 163, 184, 0.28));
   color: #e5e7eb;
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.42), 0 8px 24px rgba(20, 184, 166, 0.12);
+}
+
+#klinikiq-tooltip-layer .smart-glossary-popover .smart-glossary-card,
+.smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip .smart-glossary-card {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, #0f766e 28%, transparent) transparent;
+}
+
+#klinikiq-tooltip-layer .smart-glossary-popover .smart-glossary-card::-webkit-scrollbar,
+.smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip .smart-glossary-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+#klinikiq-tooltip-layer .smart-glossary-popover .smart-glossary-card::-webkit-scrollbar-track,
+.smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip .smart-glossary-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#klinikiq-tooltip-layer .smart-glossary-popover .smart-glossary-card::-webkit-scrollbar-thumb,
+.smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip .smart-glossary-card::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: color-mix(in srgb, #0f766e 26%, transparent);
 }
 
 #klinikiq-tooltip-layer .smart-glossary-popover::after,
@@ -49786,6 +49808,25 @@ html[data-theme="dark"] .bottom-case-browser-tools .bottom-case-browser-count,
   border-bottom: 0;
 }
 
+#klinikiq-tooltip-layer .smart-glossary-popover[data-placement="right"]::after,
+.smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip[data-placement="right"]::after {
+  left: -6px;
+  top: var(--tooltip-arrow-top, 24px);
+  transform: translateY(-50%) rotate(45deg);
+  border-right: 0;
+  border-top: 0;
+}
+
+#klinikiq-tooltip-layer .smart-glossary-popover[data-placement="left"]::after,
+.smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip[data-placement="left"]::after {
+  left: auto;
+  right: -6px;
+  top: var(--tooltip-arrow-top, 24px);
+  transform: translateY(-50%) rotate(45deg);
+  border-left: 0;
+  border-bottom: 0;
+}
+
 .smart-glossary-card,
 .smart-glossary-card * {
   box-sizing: border-box;
@@ -49795,6 +49836,10 @@ html[data-theme="dark"] .bottom-case-browser-tools .bottom-case-browser-count,
   display: grid;
   gap: 10px;
   padding: 14px;
+  max-height: min(var(--tooltip-max-height, 520px), calc(100vh - 24px));
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   font-size: 13px;
   letter-spacing: normal;
   text-align: left;
@@ -49970,7 +50015,7 @@ html[data-theme="dark"] .bottom-case-browser-tools .bottom-case-browser-count,
     max-width: calc(100vw - 20px) !important;
     min-width: min(300px, calc(100vw - 20px)) !important;
     border-radius: 16px;
-    max-height: 62vh;
+    max-height: min(var(--tooltip-max-height, 62vh), calc(100vh - 20px)) !important;
   }
 
   .smart-glossary-card {
