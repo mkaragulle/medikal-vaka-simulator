@@ -10,6 +10,9 @@ import { TUS_GLOSSARY_BINDING_CORRECTION_TERMS } from '../data/tusGlossaryBindin
 import { TUS_GLOSSARY_CONTEXT_SAFETY_TERMS } from '../data/tusGlossaryContextSafetyIndex.js';
 import { TUS_GLOSSARY_GLOBAL_QUALITY_TERMS } from '../data/tusGlossaryGlobalQualityIndex.js';
 import { TUS_GLOSSARY_NESTED_COVERAGE_TERMS } from '../data/tusGlossaryNestedCoverageIndex.js';
+import { TUS_GLOSSARY_AMBIGUITY_SAFETY_TERMS } from '../data/tusGlossaryAmbiguitySafetyIndex.js';
+import { TUS_GLOSSARY_CONTENT_COVERAGE_TERMS } from '../data/tusGlossaryContentCoverageIndex.js';
+import { TUS_GLOSSARY_RECURSIVE_NESTED_TERMS } from '../data/tusGlossaryRecursiveNestedIndex.js';
 
 const teachingOnly = 'teachingOnly';
 
@@ -9471,11 +9474,14 @@ export const branchGlossaryTerms = {};
 export const defaultGlossaryTerms = globalGlossaryTerms;
 
 const STATIC_GLOSSARY_SOURCES = [
+  ...TUS_GLOSSARY_RECURSIVE_NESTED_TERMS,
   // Binding corrections come first: they define true canonical owners for terms
   // that legacy rows sometimes used only as context clues (e.g. asthma inside
   // the eosinophil explanation). This prevents title/definition mismatches.
   ...TUS_GLOSSARY_CONTEXT_SAFETY_TERMS,
   ...TUS_GLOSSARY_GLOBAL_QUALITY_TERMS,
+  ...TUS_GLOSSARY_CONTENT_COVERAGE_TERMS,
+  ...TUS_GLOSSARY_AMBIGUITY_SAFETY_TERMS,
   ...TUS_GLOSSARY_NESTED_COVERAGE_TERMS,
   ...TUS_GLOSSARY_BINDING_CORRECTION_TERMS,
   // Contextual phrase layer comes next so exact clinical phrases such as
@@ -9552,6 +9558,7 @@ const GENERIC_STANDALONE_ALIAS_SET = new Set([
   // as general concepts, but must not be standalone aliases for specific
   // diseases, procedures or organs.
   'obstruksiyon', 'tikaniklik', 'inflamasyon', 'enfeksiyon', 'yetmezlik',
+  'asit', 'direnc', 'blok', 'aks', 'depresyon', 'tas', 'plak', 'granulom', 'kalsifikasyon',
   'iskemi', 'nekroz', 'odem', 'lezyon', 'kitle', 'nodul', 'infiltrasyon',
   'darlik', 'basi', 'hiperreaktivite', 'hassasiyet', 'agri', 'dispne',
   'hipoksi', 'hipoksemi', 'hiperkapni', 'asidoz', 'alkaloz', 'sok',
@@ -9571,6 +9578,61 @@ const GENERIC_STANDALONE_ALIAS_SET = new Set([
 export function isGenericStandaloneAlias(alias = '') {
   const normalized = normalizeGlossaryText(alias);
   return Boolean(normalized && GENERIC_STANDALONE_ALIAS_SET.has(normalized));
+}
+
+
+export const AMBIGUOUS_CONTEXT_REQUIRED_ALIAS_SET = new Set([
+  'asit', 'direnc', 'blok', 'sok', 'basi', 'yetmezlik', 'darlik', 'tutulum',
+  'lezyon', 'yanit', 'hassasiyet', 'infiltrasyon', 'elevasyon', 'depresyon',
+  'aks', 'nodul', 'kitle', 'tas', 'agri', 'odem', 'inflamasyon', 'obstruksiyon',
+  'perforasyon', 'torsiyon', 'rotasyon', 'asidoz', 'alkaloz', 'kalsifikasyon',
+  'granulom', 'plak', 'kultur'
+]);
+
+export function isAmbiguousStandaloneAlias(alias = '') {
+  const normalized = normalizeGlossaryText(alias);
+  return Boolean(normalized && AMBIGUOUS_CONTEXT_REQUIRED_ALIAS_SET.has(normalized));
+}
+
+function getContextWindow(source = '', matchStart = 0, matchEnd = 0, radius = 90) {
+  const start = Math.max(0, Number(matchStart || 0) - radius);
+  const end = Math.min(String(source).length, Number(matchEnd || 0) + radius);
+  return normalizeGlossaryText(String(source).slice(start, end));
+}
+
+function listContainsAnyNormalized(context = '', terms = []) {
+  if (!context || !Array.isArray(terms) || !terms.length) return false;
+  return terms.some((term) => {
+    const key = normalizeGlossaryText(term);
+    return key && context.includes(key);
+  });
+}
+
+function getAliasWordCount(alias = '') {
+  return String(alias || '').trim().split(/\s+/u).filter(Boolean).length;
+}
+
+function isContextAllowedForEntry(entry = {}, alias = '', source = '', matchStart = 0, matchEnd = 0) {
+  const wordCount = getAliasWordCount(alias);
+  const context = getContextWindow(source, matchStart, matchEnd);
+  const allowed = Array.isArray(entry.allowedContextKeywords) ? entry.allowedContextKeywords : [];
+  const blocked = Array.isArray(entry.blockedContextKeywords) ? entry.blockedContextKeywords : [];
+  const required = Array.isArray(entry.requiredCoTerms) ? entry.requiredCoTerms : [];
+
+  if (blocked.length && listContainsAnyNormalized(context, blocked)) return false;
+
+  // Context-required or phrase-only entries must not be selected from a naked,
+  // ambiguous one-word alias unless the surrounding text explicitly supports it.
+  if (wordCount === 1 && (entry.contextRequired || entry.phraseOnly || entry.disabledAsStandaloneAlias)) {
+    if (entry.standaloneSafe === true && !required.length && !allowed.length) return true;
+    return listContainsAnyNormalized(context, [...required, ...allowed]);
+  }
+
+  if (wordCount === 1 && isAmbiguousStandaloneAlias(alias) && !entry.isGenericConcept && entry.standaloneSafe !== true) {
+    return listContainsAnyNormalized(context, [...required, ...allowed]);
+  }
+
+  return true;
 }
 
 export function isUnsafeStandaloneAliasForEntry(entry = {}, alias = '') {
@@ -9601,11 +9663,13 @@ function isNamedFieldAlias(entry = {}, alias = '') {
 function isUnsafeContextAlias(entry = {}, alias = '') {
   const raw = String(alias || '').replace(/\s+/g, ' ').trim();
   if (!raw) return true;
+  if ((entry.disabledAsStandaloneAlias || entry.phraseOnly) && raw.trim().split(/\s+/u).length === 1) return true;
   if (isExactCanonicalAlias(entry, raw) || isNamedFieldAlias(entry, raw)) return false;
 
   // Broad standalone words are allowed only when the entry is the broad concept
   // itself. They are removed from specific disease entries such as "İleus".
   if (isGenericStandaloneAlias(raw) && !entry.isGenericConcept) return true;
+  if (isAmbiguousStandaloneAlias(raw) && raw.trim().split(/\s+/u).length === 1 && !entry.isGenericConcept && entry.standaloneSafe !== true) return true;
 
   // Context-sensitive entries can explicitly require co-terms before a broad
   // alias is used. The standalone alias is therefore unsafe at alias-build time;
@@ -9701,7 +9765,17 @@ function enforceGlossaryAliasIntegrity(entries = []) {
     const aliases = (entry.aliases || []).filter((alias) => {
       const normalized = normalizeGlossaryText(alias);
       const winner = winningAliasOwner.get(normalized);
-      return !winner || winner === entry.id;
+      if (winner && winner !== entry.id) return false;
+      // Generic concepts should not inherit specific phrase aliases from legacy
+      // duplicates during canonical merge. Example: the generic chemical
+      // concept "Asit" must not own "asit sıvısı" variants; those belong to
+      // the peritoneal/ascites phrase entry. Explicit safeGenericPhraseAliases
+      // can opt in when a generic multi-word alias is truly intended.
+      if (entry.isGenericConcept && String(alias || '').trim().split(/\s+/u).filter(Boolean).length > 1) {
+        const safePhrases = new Set((entry.safeGenericPhraseAliases || []).map((item) => normalizeGlossaryText(item)).filter(Boolean));
+        if (!safePhrases.has(normalized) && !isExactCanonicalAlias(entry, alias) && !isNamedFieldAlias(entry, alias)) return false;
+      }
+      return true;
     });
     return { ...entry, aliases, normalizedAliases: aliases.map(normalizeGlossaryText) };
   });
@@ -9989,10 +10063,19 @@ function normalizeEntry(entry = {}) {
     isMultiWordTerm: entry.isMultiWordTerm ?? /\s/.test(canonicalTerm),
     isGenericConcept: Boolean(entry.isGenericConcept),
     isContextSensitive: Boolean(entry.isContextSensitive),
+    standaloneSafe: entry.standaloneSafe === true,
+    contextRequired: Boolean(entry.contextRequired),
+    phraseOnly: Boolean(entry.phraseOnly),
     allowedContexts: entry.allowedContexts || [],
     blockedContexts: entry.blockedContexts || [],
+    allowedContextKeywords: entry.allowedContextKeywords || [],
+    blockedContextKeywords: entry.blockedContextKeywords || [],
     requiredCoTerms: entry.requiredCoTerms || [],
     forbiddenCoTerms: entry.forbiddenCoTerms || [],
+    preferredPhraseEntries: entry.preferredPhraseEntries || [],
+    ambiguityGroup: entry.ambiguityGroup || '',
+    disambiguationRule: entry.disambiguationRule || '',
+    genericFallbackEntryId: entry.genericFallbackEntryId || '',
     nestedGlossaryAllowed: entry.nestedGlossaryAllowed !== false,
     disabledAsStandaloneAlias: Boolean(entry.disabledAsStandaloneAlias),
     answerLeakRisk: entry.answerLeakRisk || 'medium',

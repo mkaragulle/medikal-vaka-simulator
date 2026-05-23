@@ -50639,3 +50639,145 @@ html[data-theme="dark"] .bottom-case-browser-tools .bottom-case-browser-count,
   text-decoration-color: rgba(15, 118, 110, 0.62) !important;
   background: rgba(20, 184, 166, 0.10) !important;
 }
+
+/* V289 — recursive nested glossary drill-down UI.
+   Tooltip cards now support concept-to-concept navigation inside one safe popover. */
+.smart-glossary-breadcrumb {
+  display: flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  min-width: 0 !important;
+  padding: 0 0 8px 0 !important;
+  margin-bottom: 2px !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.07) !important;
+}
+
+.smart-glossary-back,
+.smart-glossary-back-inline {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  border: 1px solid rgba(15, 118, 110, 0.14) !important;
+  background: rgba(240, 253, 250, 0.88) !important;
+  color: #0f766e !important;
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+}
+
+.smart-glossary-back {
+  width: 24px !important;
+  height: 24px !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+}
+
+.smart-glossary-back-inline {
+  min-height: 24px !important;
+  padding: 0 9px !important;
+  font-size: 11px !important;
+  letter-spacing: .01em !important;
+}
+
+.smart-glossary-back:hover,
+.smart-glossary-back-inline:hover,
+.smart-glossary-breadcrumb-link:hover {
+  background: rgba(204, 251, 241, 0.92) !important;
+  border-color: rgba(15, 118, 110, 0.24) !important;
+}
+
+.smart-glossary-breadcrumb-list {
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+.smart-glossary-breadcrumb-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-width: 0 !important;
+  gap: 4px !important;
+  color: #64748b !important;
+  font-size: 11px !important;
+  font-weight: 720 !important;
+}
+
+.smart-glossary-breadcrumb-separator {
+  color: #94a3b8 !important;
+  font-weight: 800 !important;
+}
+
+.smart-glossary-breadcrumb-link {
+  max-width: 92px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  padding: 2px 5px !important;
+  color: #0f766e !important;
+  background: transparent !important;
+  font: inherit !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.smart-glossary-breadcrumb-current {
+  max-width: 136px !important;
+  display: inline-block !important;
+  color: #172033 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.smart-glossary-term--drilldown {
+  cursor: pointer !important;
+  text-decoration-style: dotted !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px !important;
+  text-decoration-color: rgba(15, 118, 110, .42) !important;
+  background: linear-gradient(180deg, transparent 64%, rgba(20, 184, 166, .10) 0) !important;
+}
+
+.smart-glossary-term--drilldown:hover,
+.smart-glossary-term--drilldown:focus-visible {
+  color: #0f766e !important;
+  background: rgba(20, 184, 166, .12) !important;
+  outline: none !important;
+}
+
+.smart-glossary-depth-note {
+  display: inline-flex !important;
+  width: fit-content !important;
+  margin-top: 2px !important;
+  padding: 4px 7px !important;
+  border-radius: 999px !important;
+  background: #f8fafc !important;
+  border: 1px solid rgba(15, 23, 42, .08) !important;
+  color: #64748b !important;
+  font-size: 10.5px !important;
+  font-weight: 720 !important;
+}
+
+.smart-glossary-card [data-glossary-context-mode="nested-tooltip-body"] .smart-glossary-term,
+.smart-glossary-card [data-glossary-context-mode="nested-tooltip-body"] .glossary-term {
+  color: inherit !important;
+  font-weight: 700 !important;
+  text-decoration-line: underline !important;
+  text-decoration-style: dotted !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px !important;
+  text-decoration-color: rgba(15, 118, 110, 0.32) !important;
+  background: linear-gradient(180deg, transparent 64%, rgba(20, 184, 166, 0.07) 0) !important;
+  border-radius: 4px !important;
+}
+
+@media (max-width: 640px) {
+  .smart-glossary-breadcrumb-link { max-width: 72px !important; }
+  .smart-glossary-breadcrumb-current { max-width: 104px !important; }
+  .smart-glossary-back-inline { padding: 0 8px !important; }
+}

@@ -9,11 +9,12 @@ import {
   isLowSignalGlossaryAlias,
   normalizeGlossaryText,
   isGenericStandaloneAlias,
+  isAmbiguousStandaloneAlias,
 } from '../utils/glossary.js';
 
 const DEFAULT_MAX_TERMS_PER_TEXT = 8;
 const TOOLTIP_BODY_MAX_NESTED_TERMS = 5;
-const TOOLTIP_BODY_MAX_NESTED_DEPTH = 1;
+const TOOLTIP_BODY_MAX_NESTED_DEPTH = 5;
 const PREANSWER_MAX_TERMS_PER_TEXT = 6;
 const VIEWPORT_PADDING = 12;
 const SAFE_TOP_PADDING = 12;
@@ -129,12 +130,46 @@ function isValidAliasMatch(item, matchedValue, source, matchStart, matchEnd, pro
   return !numericUnitContext;
 }
 
+
+function getLocalContextWindow(source = '', matchStart = 0, matchEnd = 0, radius = 90) {
+  const start = Math.max(0, Number(matchStart || 0) - radius);
+  const end = Math.min(String(source).length, Number(matchEnd || 0) + radius);
+  return normalizeGlossaryText(String(source).slice(start, end));
+}
+
+function localContextHasAny(context = '', terms = []) {
+  if (!context || !Array.isArray(terms) || !terms.length) return false;
+  return terms.some((term) => {
+    const key = normalizeGlossaryText(term);
+    return key && context.includes(key);
+  });
+}
+
+function isContextAllowedForCandidate(entry = {}, alias = '', source = '', matchStart = 0, matchEnd = 0) {
+  const wordCount = String(alias || '').trim().split(/\s+/u).filter(Boolean).length;
+  const context = getLocalContextWindow(source, matchStart, matchEnd);
+  const allowed = Array.isArray(entry.allowedContextKeywords) ? entry.allowedContextKeywords : [];
+  const blocked = Array.isArray(entry.blockedContextKeywords) ? entry.blockedContextKeywords : [];
+  const required = Array.isArray(entry.requiredCoTerms) ? entry.requiredCoTerms : [];
+
+  if (blocked.length && localContextHasAny(context, blocked)) return false;
+  if (wordCount === 1 && (entry.contextRequired || entry.phraseOnly || entry.disabledAsStandaloneAlias)) {
+    if (entry.standaloneSafe === true && !required.length && !allowed.length) return true;
+    return localContextHasAny(context, [...required, ...allowed]);
+  }
+  if (wordCount === 1 && isAmbiguousStandaloneAlias(alias) && !entry.isGenericConcept && entry.standaloneSafe !== true) {
+    return localContextHasAny(context, [...required, ...allowed]);
+  }
+  return true;
+}
+
 function resolveGlossaryEntryForMatch(matcher, matchedValue, source, matchStart, matchEnd, protectedUnitRanges, excludedSet = null) {
   const normalized = normalizeGlossaryText(matchedValue);
   const candidates = matcher.aliasMap.get(normalized) || [];
   const selected = candidates.find((item) => (
     !isExcludedGlossaryEntry(item.entry, excludedSet)
     && isValidAliasMatch(item, matchedValue, source, matchStart, matchEnd, protectedUnitRanges)
+    && isContextAllowedForCandidate(item.entry, item.alias || matchedValue, source, matchStart, matchEnd)
   ));
   return selected?.entry || null;
 }
@@ -695,17 +730,33 @@ function isSafeAutoNestedCandidate(candidate = {}, parent = {}, sourceNormalized
 }
 
 function buildSafeNestedTermPool(parentEntry = {}, allTerms = [], sourceText = '', options = {}) {
-  const { revealMode = 'postAnswer', maxTerms = TOOLTIP_BODY_MAX_NESTED_TERMS } = options || {};
+  const {
+    revealMode = 'postAnswer',
+    maxTerms = TOOLTIP_BODY_MAX_NESTED_TERMS,
+    visitedEntryIds = [],
+    currentDepth = 0,
+    maxDepth = TOOLTIP_BODY_MAX_NESTED_DEPTH,
+  } = options || {};
   if (!parentEntry || !Array.isArray(allTerms) || !allTerms.length) return [];
+  if (Number(currentDepth || 0) >= Number(maxDepth || TOOLTIP_BODY_MAX_NESTED_DEPTH)) return [];
+
   const isPreAnswer = revealMode === 'preAnswer' || revealMode === 'neutral';
   const labels = getSafeNestedLabels(parentEntry);
   const allowedKeys = new Set(labels.map((item) => normalizeGlossaryText(item)).filter(Boolean));
   const sourceNormalized = normalizeGlossaryText(sourceText || '');
   const selected = [];
   const selectedKeys = new Set();
+  const visitedKeys = new Set(
+    (Array.isArray(visitedEntryIds) ? visitedEntryIds : [])
+      .map((item) => normalizeGlossaryText(item))
+      .filter(Boolean),
+  );
+
+  const isVisitedCandidate = (candidate = {}) => getEntryIdentityKeys(candidate).some((key) => visitedKeys.has(key));
 
   const addCandidate = (candidate, explicit = false) => {
     if (!candidate || isSameGlossaryEntry(candidate, parentEntry)) return;
+    if (isVisitedCandidate(candidate)) return;
     if (candidate.nestedGlossaryAllowed === false && !explicit) return;
     if (isPreAnswer && candidate.answerLeakRisk === 'high' && !explicit) return;
     const keys = getEntryIdentityKeys(candidate);
@@ -715,7 +766,11 @@ function buildSafeNestedTermPool(parentEntry = {}, allTerms = [], sourceText = '
     if (explicit && (candidate.isGenericConcept || candidate.isContextSensitive)) {
       const canonical = candidate.canonicalTerm || candidate.displayTerm || candidate.term || '';
       const wordCount = canonical.trim().split(/\s+/).filter(Boolean).length;
-      if (wordCount < 2 && !isGenericStandaloneAlias(canonical)) return;
+      // Tooltip/toolbox body mode is stricter than normal text: a one-word
+      // ambiguous/general concept must not be nested unless the entry explicitly
+      // opts into safe standalone nesting. Specific phrases remain allowed.
+      if (wordCount < 2 && candidate.allowNestedStandalone !== true) return;
+      if (wordCount < 2 && isAmbiguousStandaloneAlias(canonical) && candidate.allowNestedStandalone !== true) return;
     }
     selected.push(candidate);
     keys.forEach((key) => selectedKeys.add(key));
@@ -731,7 +786,7 @@ function buildSafeNestedTermPool(parentEntry = {}, allTerms = [], sourceText = '
   // learning coverage without allowing broad standalone words to hijack tooltips.
   if (selected.length < maxTerms) {
     [...allTerms]
-      .filter((candidate) => !selectedKeys.has(normalizeGlossaryText(candidate?.id || '')))
+      .filter((candidate) => !selectedKeys.has(normalizeGlossaryText(candidate?.id || '')) && !isVisitedCandidate(candidate))
       .sort((a, b) => {
         const ap = Number(a?.matchingPriority || 0) + (a?.isMultiWordTerm ? 40 : 0);
         const bp = Number(b?.matchingPriority || 0) + (b?.isMultiWordTerm ? 40 : 0);
@@ -746,29 +801,92 @@ function buildSafeNestedTermPool(parentEntry = {}, allTerms = [], sourceText = '
   return selected.slice(0, maxTerms);
 }
 
-function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [], nestingLevel = 0 }) {
-  const [expanded, setExpanded] = useState(false);
-  const isPreAnswer = revealMode === 'preAnswer' || revealMode === 'neutral';
-  const previewDefinition = entry.previewDefinition || entry.shortDefinition || entry.definition || '';
-  const safeDefinition = getPreAnswerDefinition(entry);
-  const shortDefinition = isPreAnswer ? safeDefinition : (entry.shortDefinition || previewDefinition);
-  const rawDetailed = entry.postAnswerExpandedExplanation || entry.detailedExplanation || '';
-  const rawTusPearl = entry.tusPearl || '';
-  const rawDifferential = entry.differentialPoint || '';
-  const rawRelevance = entry.clinicalRelevance || '';
-  const rawMechanism = entry.mechanism || '';
-  const relatedTerms = asList(entry.relatedTerms).slice(0, 3);
-  const relatedCases = asList(entry.relatedCases || entry.relatedCaseIds);
-  const relatedQuestions = asList(entry.relatedQuestions);
-  const relatedFlashcards = asList(entry.relatedFlashcards);
-  const cardTitle = entry.displayTerm || entry.canonicalTerm || entry.term || '';
-  const secondaryName = entry.abbreviation || entry.EnglishName || entry.LatinName || '';
+function getEntryStableId(entry = {}) {
+  return normalizeGlossaryText(entry.id || entry.canonicalTerm || entry.displayTerm || entry.term || '');
+}
 
+function entryPathContains(path = [], nextEntry = {}) {
+  const nextKeys = new Set(getEntryIdentityKeys(nextEntry));
+  if (!nextKeys.size) return false;
+  return path.some((pathEntry) => getEntryIdentityKeys(pathEntry).some((key) => nextKeys.has(key)));
+}
+
+function GlossaryBreadcrumb({ path = [], onBack, onJump }) {
+  if (!Array.isArray(path) || path.length <= 1) return null;
+  return (
+    <span className="smart-glossary-breadcrumb" aria-label="Terminoloji zinciri">
+      <button
+        type="button"
+        className="smart-glossary-back"
+        onClick={(event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          onBack?.();
+        }}
+        aria-label="Önceki kavrama dön"
+      >
+        ‹
+      </button>
+      <span className="smart-glossary-breadcrumb-list">
+        {path.map((item, index) => {
+          const label = item?.displayTerm || item?.canonicalTerm || item?.term || 'Kavram';
+          const isLast = index === path.length - 1;
+          return (
+            <span className="smart-glossary-breadcrumb-item" key={`${item?.id || label}-${index}`}>
+              {index > 0 ? <span className="smart-glossary-breadcrumb-separator">›</span> : null}
+              {isLast ? (
+                <span className="smart-glossary-breadcrumb-current">{label}</span>
+              ) : (
+                <button
+                  type="button"
+                  className="smart-glossary-breadcrumb-link"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    onJump?.(index);
+                  }}
+                >
+                  {label}
+                </button>
+              )}
+            </span>
+          );
+        })}
+      </span>
+    </span>
+  );
+}
+
+function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [], nestingLevel = 0, maxNestedDepth = TOOLTIP_BODY_MAX_NESTED_DEPTH }) {
+  const [expanded, setExpanded] = useState(false);
+  const [entryPath, setEntryPath] = useState(() => [entry].filter(Boolean));
+
+  useEffect(() => {
+    setEntryPath([entry].filter(Boolean));
+    setExpanded(false);
+  }, [entry]);
+
+  const currentEntry = entryPath[entryPath.length - 1] || entry || {};
+  const currentDepth = Math.max(0, entryPath.length - 1);
+  const isPreAnswer = revealMode === 'preAnswer' || revealMode === 'neutral';
+  const previewDefinition = currentEntry.previewDefinition || currentEntry.shortDefinition || currentEntry.definition || '';
+  const safeDefinition = getPreAnswerDefinition(currentEntry);
+  const shortDefinition = isPreAnswer ? safeDefinition : (currentEntry.shortDefinition || previewDefinition);
+  const rawDetailed = currentEntry.postAnswerExpandedExplanation || currentEntry.detailedExplanation || '';
+  const rawTusPearl = currentEntry.tusPearl || '';
+  const rawDifferential = currentEntry.differentialPoint || '';
+  const rawRelevance = currentEntry.clinicalRelevance || currentEntry.clinicalContext || '';
+  const rawMechanism = currentEntry.mechanism || '';
+  const relatedTerms = asList(currentEntry.relatedTerms).slice(0, 3);
+  const cardTitle = currentEntry.displayTerm || currentEntry.canonicalTerm || currentEntry.term || '';
+  const secondaryName = currentEntry.abbreviation || currentEntry.EnglishName || currentEntry.LatinName || '';
+
+  const pathEntryIds = useMemo(() => entryPath.map(getEntryStableId).filter(Boolean), [entryPath]);
   const blockedKeys = useMemo(() => {
     const next = new Set((Array.isArray(excludedTermKeys) ? excludedTermKeys : []).map((item) => normalizeGlossaryText(item)));
-    getEntryKeys(entry).forEach((key) => next.add(key));
+    entryPath.forEach((pathEntry) => getEntryKeys(pathEntry).forEach((key) => next.add(key)));
     return Array.from(next).filter(Boolean);
-  }, [entry, excludedTermKeys]);
+  }, [entryPath, excludedTermKeys]);
 
   const baseShownValues = [shortDefinition];
   const tusPearl = !isDuplicateSection(rawTusPearl, baseShownValues) ? rawTusPearl : '';
@@ -778,21 +896,42 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
   const mechanism = !isDuplicateSection(rawMechanism, [...baseShownValues, tusPearl, differential, detailed, relevance]) ? rawMechanism : '';
 
   const canExpand = !isPreAnswer && Boolean(detailed || relevance || mechanism || relatedTerms.length);
-
   const nestedSourceText = [shortDefinition, tusPearl, differential, detailed, mechanism, relevance, relatedTerms.join(' ')]
     .filter(Boolean)
     .join(' ');
   const allGlossaryTerms = useMemo(() => getGlossaryTerms(), []);
-  const safeNestedTerms = useMemo(() => buildSafeNestedTermPool(entry, allGlossaryTerms, nestedSourceText, {
+  const safeNestedTerms = useMemo(() => buildSafeNestedTermPool(currentEntry, allGlossaryTerms, nestedSourceText, {
     revealMode,
-    maxTerms: TOOLTIP_BODY_MAX_NESTED_TERMS,
-  }), [entry, allGlossaryTerms, nestedSourceText, revealMode]);
-  const canUseNestedGlossary = nestingLevel < TOOLTIP_BODY_MAX_NESTED_DEPTH && safeNestedTerms.length > 0;
+    maxTerms: currentEntry.maxNestedChildren || TOOLTIP_BODY_MAX_NESTED_TERMS,
+    visitedEntryIds: pathEntryIds,
+    currentDepth,
+    maxDepth: maxNestedDepth,
+  }), [currentEntry, allGlossaryTerms, nestedSourceText, revealMode, pathEntryIds, currentDepth, maxNestedDepth]);
+  const canUseNestedGlossary = currentDepth < maxNestedDepth && safeNestedTerms.length > 0;
 
-  // Balanced nested tooltip policy: tooltip/toolbox bodies keep meaningful,
-  // explicitly safe concept links, but broad standalone words and ambiguous
-  // aliases are not matched by the global dictionary. Second-level tooltip
-  // bodies render as plain text, preventing endless nested chains.
+  const navigateToEntry = useCallback((nextEntry) => {
+    if (!nextEntry) return false;
+    let navigated = false;
+    setEntryPath((currentPath) => {
+      if (currentPath.length - 1 >= maxNestedDepth) return currentPath;
+      if (entryPathContains(currentPath, nextEntry)) return currentPath;
+      navigated = true;
+      return [...currentPath, nextEntry];
+    });
+    if (navigated) setExpanded(false);
+    return navigated;
+  }, [maxNestedDepth]);
+
+  const goBack = useCallback(() => {
+    setEntryPath((currentPath) => currentPath.length > 1 ? currentPath.slice(0, -1) : currentPath);
+    setExpanded(false);
+  }, []);
+
+  const jumpToBreadcrumb = useCallback((index) => {
+    setEntryPath((currentPath) => currentPath.slice(0, Math.max(1, index + 1)));
+    setExpanded(false);
+  }, []);
+
   const renderGlossaryInline = (value, maxTerms = TOOLTIP_BODY_MAX_NESTED_TERMS) => {
     if (!value) return null;
     if (!canUseNestedGlossary) return <span className="smart-glossary-plain-inline">{String(value)}</span>;
@@ -805,23 +944,43 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
         revealMode={revealMode}
         maxTerms={maxTerms}
         excludedTermKeys={blockedKeys}
-        nestingLevel={nestingLevel + 1}
-        contextMode="tooltip-body"
-        maxNestedDepth={TOOLTIP_BODY_MAX_NESTED_DEPTH}
+        nestingLevel={nestingLevel + currentDepth + 1}
+        contextMode={currentDepth === 0 ? 'tooltip-body' : 'nested-tooltip-body'}
+        maxNestedDepth={maxNestedDepth}
+        currentDepth={currentDepth}
+        visitedEntryIds={pathEntryIds}
         enableNestedGlossary
+        navigationMode="drilldown"
+        onTermNavigate={navigateToEntry}
       />
     );
   };
 
   return (
-    <span className="smart-glossary-card" data-preanswer={isPreAnswer ? 'true' : 'false'} data-nesting-level={nestingLevel}>
+    <span className="smart-glossary-card" data-preanswer={isPreAnswer ? 'true' : 'false'} data-nesting-level={nestingLevel} data-current-depth={currentDepth}>
+      <GlossaryBreadcrumb path={entryPath} onBack={goBack} onJump={jumpToBreadcrumb} />
+
       <span className="smart-glossary-header">
         <span className="smart-glossary-title-wrap">
           <strong className="smart-glossary-title">{cardTitle}</strong>
           {secondaryName && secondaryName !== cardTitle ? <small className="smart-glossary-secondary-name">{secondaryName}</small> : null}
         </span>
-        {canExpand ? (
-          <span className="smart-glossary-header-actions">
+        <span className="smart-glossary-header-actions">
+          {currentDepth > 0 ? (
+            <button
+              type="button"
+              className="smart-glossary-back-inline"
+              onClick={(event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                goBack();
+              }}
+              aria-label="Önceki kavrama dön"
+            >
+              Geri
+            </button>
+          ) : null}
+          {canExpand ? (
             <button
               type="button"
               className="smart-glossary-arrow"
@@ -835,8 +994,8 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
             >
               →
             </button>
-          </span>
-        ) : null}
+          ) : null}
+        </span>
       </span>
 
       {shortDefinition ? <span className="smart-glossary-definition">{renderGlossaryInline(shortDefinition, 3)}</span> : null}
@@ -858,15 +1017,14 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
         </span>
       ) : null}
 
-      {/* Relationship count chips such as "14 ilgili olgu" are intentionally hidden.
-          They made compact glossary previews feel crowded, especially inside Hap Bilgi cards.
-          The underlying relatedCases/relatedQuestions/relatedFlashcards data is kept for future
-          search/navigation features, but the preview tooltip stays clean and text-focused. */}
+      {currentDepth >= maxNestedDepth ? (
+        <span className="smart-glossary-depth-note">Kavram zinciri güvenli derinlik sınırına ulaştı.</span>
+      ) : null}
     </span>
   );
 }
 
-export function GlossaryTerm({ children, entry = null, definition = '', revealMode = 'postAnswer', excludedTermKeys = [], nestingLevel = 0, contextMode = 'default' }) {
+export function GlossaryTerm({ children, entry = null, definition = '', revealMode = 'postAnswer', excludedTermKeys = [], nestingLevel = 0, contextMode = 'default', navigationMode = 'popover', onTermNavigate = null, maxNestedDepth = TOOLTIP_BODY_MAX_NESTED_DEPTH }) {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef(null);
   const closeTimerRef = useRef(0);
@@ -943,6 +1101,36 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
     clearCloseTimer();
   }, [clearCloseTimer, id, nestingLevel]);
 
+  if (navigationMode === 'drilldown' && typeof onTermNavigate === 'function') {
+    const navigate = (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      onTermNavigate(resolvedEntry);
+    };
+
+    return (
+      <span
+        ref={triggerRef}
+        className="glossary-term smart-glossary-term smart-glossary-term--drilldown"
+        tabIndex={0}
+        role="button"
+        data-reveal-mode={revealMode}
+        data-glossary-entry-id={resolvedEntry?.id || ''}
+        data-glossary-entry-term={visibleTermLabel}
+        data-nesting-level={nestingLevel}
+        data-glossary-context-mode={contextMode}
+        data-glossary-navigation-mode="drilldown"
+        aria-label={`${visibleTermLabel}: kavram kartında aç`}
+        onClick={navigate}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter' || event.key === ' ') navigate(event);
+        }}
+      >
+        {children}
+      </span>
+    );
+  }
+
   return (
     <span
       ref={triggerRef}
@@ -1012,7 +1200,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
         onFloatingEnter={openNow}
         onFloatingLeave={scheduleCloseFromFloating}
       >
-        <GlossaryCard entry={resolvedEntry} revealMode={revealMode} excludedTermKeys={excludedTermKeys} nestingLevel={nestingLevel} />
+        <GlossaryCard entry={resolvedEntry} revealMode={revealMode} excludedTermKeys={excludedTermKeys} nestingLevel={nestingLevel} maxNestedDepth={maxNestedDepth} />
       </FloatingTooltip>
     </span>
   );
@@ -1028,12 +1216,16 @@ function GlossaryText({
   excludedTermKeys = null,
   nestingLevel = 0,
   contextMode = '',
-  maxNestedDepth = 0,
+  maxNestedDepth = TOOLTIP_BODY_MAX_NESTED_DEPTH,
+  currentDepth = 0,
+  visitedEntryIds = [],
   enableNestedGlossary = false,
   termsMode = 'augment',
   allowedNestedEntryIds = null,
   blockedNestedEntryIds = null,
   strictEntryBinding = true,
+  navigationMode = 'popover',
+  onTermNavigate = null,
 }) {
   const excludedKey = Array.isArray(excludedTermKeys)
     ? excludedTermKeys.map((item) => normalizeGlossaryText(item)).filter(Boolean).sort().join('|')
@@ -1050,12 +1242,13 @@ function GlossaryText({
   const sourceText = String(text || '');
   const effectiveContextMode = contextMode || (nestingLevel > 0 ? 'tooltip-body' : (revealMode === 'preAnswer' ? 'case-pre-answer' : 'case-post-answer'));
   const isTooltipBodyMode = effectiveContextMode === 'tooltip-body' || effectiveContextMode === 'nested-tooltip-body';
-  const nestedAllowed = !isTooltipBodyMode || (enableNestedGlossary && Number(nestingLevel || 0) <= Number(maxNestedDepth || 0));
+  const nestedAllowed = !isTooltipBodyMode || (enableNestedGlossary && Number(currentDepth || 0) < Number(maxNestedDepth || TOOLTIP_BODY_MAX_NESTED_DEPTH));
   const effectiveExcludedTermKeys = useMemo(() => {
     const base = Array.isArray(excludedTermKeys) ? excludedTermKeys : [];
     const blocked = Array.isArray(blockedNestedEntryIds) ? blockedNestedEntryIds : [];
-    return [...base, ...blocked];
-  }, [excludedKey, blockedNestedEntryIds]);
+    const visited = Array.isArray(visitedEntryIds) ? visitedEntryIds : [];
+    return [...base, ...blocked, ...visited];
+  }, [excludedKey, blockedNestedEntryIds, visitedEntryIds]);
   const parts = useMemo(
     () => splitByGlossary(sourceText, enabled && nestedAllowed ? terms : [], effectiveMaxTerms, effectiveExcludedTermKeys, effectiveContextMode),
     [sourceText, enabled, nestedAllowed, terms, effectiveMaxTerms, effectiveExcludedTermKeys, effectiveContextMode],
@@ -1073,6 +1266,9 @@ function GlossaryText({
           excludedTermKeys={excludedTermKeys}
           nestingLevel={nestingLevel}
           contextMode={effectiveContextMode}
+          navigationMode={navigationMode}
+          onTermNavigate={onTermNavigate}
+          maxNestedDepth={maxNestedDepth}
         >
           {part.value}
         </GlossaryTerm>
