@@ -50844,322 +50844,34 @@ html[data-theme="dark"] .bottom-case-browser-tools .bottom-case-browser-count,
 }
 
 
-/* ==========================================================
-   V296 — Premium minimal glossary UI + nested drill-down cleanup
-   Scope: global glossary/tooltip/toolbox visuals only.
-   Purpose: keep glossary links visible without colored backgrounds, simplify
-   tooltip cards, and avoid parent-child popover overlap by using the
-   breadcrumb/drill-down card behavior implemented in GlossaryTooltip.jsx.
-   ========================================================== */
-:root {
-  --glossary-inline-decoration: rgba(15, 23, 42, 0.32);
-  --glossary-inline-decoration-hover: rgba(15, 118, 110, 0.58);
-  --glossary-card-bg: rgba(255, 255, 255, 0.98);
-  --glossary-card-border: rgba(15, 23, 42, 0.10);
-  --glossary-card-text: #1f2937;
-  --glossary-card-muted: #64748b;
-  --glossary-card-title: #0f172a;
-}
-
-.glossary-term,
-.smart-glossary-term,
-.glossary-word,
-.glossary-term:hover,
-.smart-glossary-term:hover,
-.glossary-word:hover,
-.glossary-term:focus,
-.smart-glossary-term:focus,
-.glossary-term:focus-visible,
-.smart-glossary-term:focus-visible,
-.glossary-term:active,
-.smart-glossary-term:active,
-.smart-glossary-card [data-glossary-context-mode="tooltip-body"] .smart-glossary-term,
-.smart-glossary-card [data-glossary-context-mode="nested-tooltip-body"] .smart-glossary-term,
-.smart-glossary-card.smart-glossary-card--stacked-popover [data-glossary-context-mode="tooltip-body"] .smart-glossary-term,
-.smart-glossary-card.smart-glossary-card--stacked-popover [data-glossary-context-mode="nested-tooltip-body"] .smart-glossary-term {
-  display: inline !important;
-  color: inherit !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  background-image: none !important;
-  box-shadow: none !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  font-weight: inherit !important;
-  cursor: help !important;
-  text-decoration-line: underline !important;
-  text-decoration-style: dotted !important;
-  text-decoration-thickness: 1px !important;
-  text-underline-offset: 3px !important;
-  text-decoration-color: var(--glossary-inline-decoration) !important;
-  box-decoration-break: slice !important;
-  -webkit-box-decoration-break: slice !important;
-  white-space: normal !important;
-  word-break: normal !important;
-  overflow-wrap: break-word !important;
-}
-
-.glossary-term:hover,
-.smart-glossary-term:hover,
-.glossary-word:hover,
-.smart-glossary-card [data-glossary-context-mode="tooltip-body"] .smart-glossary-term:hover,
-.smart-glossary-card [data-glossary-context-mode="nested-tooltip-body"] .smart-glossary-term:hover,
-.smart-glossary-card.smart-glossary-card--stacked-popover [data-glossary-context-mode="tooltip-body"] .smart-glossary-term:hover,
-.smart-glossary-card.smart-glossary-card--stacked-popover [data-glossary-context-mode="nested-tooltip-body"] .smart-glossary-term:hover {
-  color: inherit !important;
-  background: transparent !important;
-  text-decoration-style: solid !important;
-  text-decoration-color: var(--glossary-inline-decoration-hover) !important;
-}
-
-.glossary-term:focus-visible,
-.smart-glossary-term:focus-visible {
-  outline: 2px solid rgba(15, 118, 110, 0.22) !important;
-  outline-offset: 2px !important;
-  border-radius: 3px !important;
-}
-
+/* V296 — Glossary hover-intent UX polish.
+   Open delay is handled in React state; CSS only softens the already-scheduled
+   floating layer so dense glossary paragraphs no longer feel like pop-ups burst
+   into the reading flow. */
 #klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover,
 .glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover {
-  max-width: min(500px, calc(100vw - 24px)) !important;
-  min-width: min(330px, calc(100vw - 24px)) !important;
-  width: max-content !important;
-  padding: 0 !important;
-  border: 1px solid var(--glossary-card-border) !important;
-  border-radius: 18px !important;
-  background: var(--glossary-card-bg) !important;
-  color: var(--glossary-card-text) !important;
-  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.16), 0 3px 10px rgba(15, 23, 42, 0.06) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-  overflow: visible !important;
+  opacity: 1 !important;
+  animation: klinikiqGlossarySoftOpen var(--glossary-tooltip-animation-duration, 140ms) ease-out both !important;
+  will-change: opacity, translate !important;
+  contain: layout paint !important;
 }
 
-#klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover::after,
-.glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover::after {
-  background: var(--glossary-card-bg) !important;
-  border-color: var(--glossary-card-border) !important;
-}
-
-.smart-glossary-card,
-.smart-glossary-card.smart-glossary-card--stacked-popover {
-  display: grid !important;
-  gap: 10px !important;
-  padding: 15px 16px !important;
-  max-height: min(var(--tooltip-max-height, 720px), calc(100vh - 24px)) !important;
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
-  scrollbar-width: thin !important;
-  scrollbar-color: rgba(100, 116, 139, 0.32) transparent !important;
-  color: var(--glossary-card-text) !important;
-  font-size: 13.25px !important;
-  line-height: 1.55 !important;
-  letter-spacing: -0.006em !important;
-}
-
-.smart-glossary-card::-webkit-scrollbar { width: 6px !important; }
-.smart-glossary-card::-webkit-scrollbar-track { background: transparent !important; }
-.smart-glossary-card::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.24) !important;
-  border-radius: 999px !important;
-}
-
-.smart-glossary-header {
-  display: block !important;
-  padding: 0 0 2px !important;
-  border: 0 !important;
-}
-
-.smart-glossary-title-wrap {
-  display: grid !important;
-  gap: 3px !important;
-  min-width: 0 !important;
-}
-
-.smart-glossary-title {
-  color: var(--glossary-card-title) !important;
-  font-size: 15px !important;
-  line-height: 1.25 !important;
-  font-weight: 760 !important;
-  letter-spacing: -0.012em !important;
-}
-
-.smart-glossary-secondary-name {
-  color: var(--glossary-card-muted) !important;
-  font-size: 11.5px !important;
-  line-height: 1.25 !important;
-  font-weight: 650 !important;
-}
-
-.smart-glossary-category,
-.smart-glossary-difficulty,
-.smart-glossary-header-actions,
-.smart-glossary-links,
-.smart-glossary-depth-note {
-  display: none !important;
-}
-
-.smart-glossary-definition {
-  color: #273244 !important;
-  font-size: 13.5px !important;
-  line-height: 1.55 !important;
-  font-weight: 540 !important;
-}
-
-.smart-glossary-row {
-  display: grid !important;
-  gap: 4px !important;
-  padding: 9px 10px !important;
-  border-radius: 13px !important;
-  background: rgba(248, 250, 252, 0.72) !important;
-  border: 1px solid rgba(226, 232, 240, 0.74) !important;
-}
-
-.smart-glossary-row b,
-.smart-glossary-detail-block b {
-  display: inline !important;
-  margin: 0 0 2px !important;
-  color: #475569 !important;
-  font-size: 11px !important;
-  line-height: 1.2 !important;
-  font-weight: 760 !important;
-  text-transform: none !important;
-  letter-spacing: 0 !important;
-}
-
-.smart-glossary-row span,
-.smart-glossary-detail-block span,
-.smart-glossary-related {
-  color: #334155 !important;
-  font-size: 13px !important;
-  line-height: 1.55 !important;
-  font-weight: 500 !important;
-}
-
-.smart-glossary-detail-block {
-  display: grid !important;
-  gap: 7px !important;
-  padding-top: 9px !important;
-  margin-top: 0 !important;
-  border-top: 1px solid rgba(226, 232, 240, 0.78) !important;
-  color: #334155 !important;
-}
-
-.smart-glossary-related b::after { content: " " !important; }
-
-.smart-glossary-breadcrumb {
-  display: flex !important;
-  align-items: center !important;
-  gap: 7px !important;
-  min-width: 0 !important;
-  padding: 0 0 8px !important;
-  margin: 0 0 2px !important;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.76) !important;
-}
-
-.smart-glossary-back,
-.smart-glossary-back-inline {
-  background: transparent !important;
-  border: 1px solid rgba(148, 163, 184, 0.38) !important;
-  color: #475569 !important;
-  box-shadow: none !important;
-}
-
-.smart-glossary-back:hover,
-.smart-glossary-back-inline:hover,
-.smart-glossary-breadcrumb-link:hover {
-  background: rgba(248, 250, 252, 0.92) !important;
-  border-color: rgba(15, 118, 110, 0.22) !important;
-  color: #0f766e !important;
-}
-
-.smart-glossary-breadcrumb-list {
-  color: var(--glossary-card-muted) !important;
-}
-
-.smart-glossary-breadcrumb-item,
-.smart-glossary-breadcrumb-link,
-.smart-glossary-breadcrumb-current,
-.smart-glossary-breadcrumb-separator {
-  color: var(--glossary-card-muted) !important;
-  font-size: 11px !important;
-  font-weight: 650 !important;
-}
-
-.smart-glossary-breadcrumb-current {
-  color: #334155 !important;
-  font-weight: 720 !important;
-}
-
-.smart-glossary-term--drilldown,
-.smart-glossary-term--drilldown:hover,
-.smart-glossary-term--drilldown:focus-visible {
-  color: inherit !important;
-  background: transparent !important;
-  background-image: none !important;
-  cursor: pointer !important;
-  text-decoration-line: underline !important;
-  text-decoration-style: dotted !important;
-  text-decoration-thickness: 1px !important;
-  text-underline-offset: 3px !important;
-  text-decoration-color: rgba(15, 23, 42, 0.34) !important;
-}
-
-.smart-glossary-term--drilldown:hover,
-.smart-glossary-term--drilldown:focus-visible {
-  text-decoration-style: solid !important;
-  text-decoration-color: rgba(15, 118, 110, 0.58) !important;
-}
-
-[data-theme="dark"] {
-  --glossary-inline-decoration: rgba(203, 213, 225, 0.40);
-  --glossary-inline-decoration-hover: rgba(94, 234, 212, 0.68);
-  --glossary-card-bg: rgba(15, 23, 42, 0.98);
-  --glossary-card-border: rgba(148, 163, 184, 0.22);
-  --glossary-card-text: #e5e7eb;
-  --glossary-card-muted: #94a3b8;
-  --glossary-card-title: #f8fafc;
-}
-
-[data-theme="dark"] .smart-glossary-definition,
-[data-theme="dark"] .smart-glossary-row span,
-[data-theme="dark"] .smart-glossary-detail-block span,
-[data-theme="dark"] .smart-glossary-related {
-  color: #cbd5e1 !important;
-}
-
-[data-theme="dark"] .smart-glossary-row {
-  background: rgba(30, 41, 59, 0.62) !important;
-  border-color: rgba(148, 163, 184, 0.20) !important;
-}
-
-@media (max-width: 760px) {
-  #klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover,
-  .glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover {
-    max-width: calc(100vw - 20px) !important;
-    min-width: min(320px, calc(100vw - 20px)) !important;
+@keyframes klinikiqGlossarySoftOpen {
+  from {
+    opacity: 0;
+    translate: 0 2px;
   }
-
-  .smart-glossary-card,
-  .smart-glossary-card.smart-glossary-card--stacked-popover {
-    max-height: min(var(--tooltip-max-height, 80vh), calc(100vh - 20px)) !important;
-    padding: 14px 14px !important;
+  to {
+    opacity: 1;
+    translate: 0 0;
   }
-}
-
-/* V297: controlled glossary hover intent + softer popover motion.
-   The delay is handled in React state; CSS only smooths the resulting open/close. */
-#klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover,
-.glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover {
-  transition: opacity 140ms ease, transform 140ms ease !important;
-  will-change: opacity, transform !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
   #klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover,
   .glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover {
+    animation: none !important;
     transition: none !important;
+    translate: 0 0 !important;
   }
 }
