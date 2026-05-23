@@ -4929,3 +4929,59 @@ body:not(.klinikiq-auth-lock) .tus-pearl-study-shell > :first-child {
     gap: 11px !important;
   }
 }
+
+/* ==========================================================
+   V308 — Timed exam TUS Spot width recovery
+   Mirrors the canonical index.css override because refine.css is imported
+   after base styles in App.jsx. UI/layout only.
+   ========================================================== */
+body:not(.klinikiq-auth-lock) .exam-active-shell.timed-exam-shell .timed-exam-layout > .clinical-case.qbank-case.tus-spot-bank-case,
+body:not(.klinikiq-auth-lock) .exam-active-shell.timed-exam-shell .clinical-case.qbank-case.tus-spot-bank-case {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  justify-self: stretch !important;
+  align-self: start !important;
+}
+
+body:not(.klinikiq-auth-lock) .exam-active-shell.timed-exam-shell .tus-spot-bank-shell.professional-qbank-shell,
+body:not(.klinikiq-auth-lock) .exam-active-shell.timed-exam-shell .tus-spot-bank-shell.qbank-shell {
+  width: 100% !important;
+  max-width: none !important;
+  display: block !important;
+  grid-template-columns: none !important;
+  gap: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .exam-active-shell.timed-exam-shell .tus-spot-bank-main {
+  width: min(100%, 1320px) !important;
+  max-width: 1320px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  min-width: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .exam-active-shell.timed-exam-shell .tus-spot-bank-main .question-panel.diagnostic-decision-panel {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (min-width: 1600px) {
+  body:not(.klinikiq-auth-lock) .exam-active-shell.timed-exam-shell .tus-spot-bank-main {
+    width: min(100%, 1380px) !important;
+    max-width: 1380px !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  body:not(.klinikiq-auth-lock) .exam-active-shell.timed-exam-shell .tus-spot-bank-main {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
