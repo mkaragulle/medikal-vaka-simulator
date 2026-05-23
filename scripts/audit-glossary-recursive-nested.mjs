@@ -74,9 +74,9 @@ const newChainTerms = [
 ];
 const coverage = newChainTerms.map((label) => ({ label, exists: Boolean(resolveTerm(label)), appearsInSource: normalizeGlossaryText(sourceText).includes(normalizeGlossaryText(label)) }));
 
-const maxDepthDefault = 5;
+const maxDepthDefault = 'unlimited';
 const regressions = [
-  { name: 'maxDepth-is-not-one', pass: maxDepthDefault > 1 },
+  { name: 'maxDepth-is-unlimited-or-not-one', pass: maxDepthDefault === 'unlimited' || maxDepthDefault > 1 },
   { name: 'asthma-chain-at-least-3-levels', pass: chainResults[0].path.length >= 3 },
   { name: 'hyperkalemia-chain-at-least-3-levels', pass: chainResults[1].path.length >= 3 },
   { name: 'torsion-chain-at-least-3-levels', pass: chainResults[2].path.length >= 3 },

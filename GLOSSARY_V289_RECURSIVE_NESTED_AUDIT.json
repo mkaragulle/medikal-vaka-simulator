@@ -5,7 +5,7 @@
   "scannedSourceFiles": 84,
   "entriesWithSafeNestedTerms": 192,
   "totalSafeNestedLinks": 489,
-  "maxDepthDefault": 5,
+  "maxDepthDefault": "unlimited",
   "chainResults": [
     {
       "seed": "Astım",
@@ -437,7 +437,7 @@
   "regressionTotal": 8,
   "regressions": [
     {
-      "name": "maxDepth-is-not-one",
+      "name": "maxDepth-is-unlimited-or-not-one",
       "pass": true
     },
     {

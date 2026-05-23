@@ -14,7 +14,10 @@ import {
 
 const DEFAULT_MAX_TERMS_PER_TEXT = 8;
 const TOOLTIP_BODY_MAX_NESTED_TERMS = 5;
-const TOOLTIP_BODY_MAX_NESTED_DEPTH = 5;
+// Nested glossary should not be artificially capped by a fixed depth.
+// Safety is provided by cycle detection (visited entry path), deterministic binding,
+// safeNestedTerms/relatedTerms gating, and per-card nested-term limits.
+const TOOLTIP_BODY_MAX_NESTED_DEPTH = Number.POSITIVE_INFINITY;
 const PREANSWER_MAX_TERMS_PER_TEXT = 6;
 const VIEWPORT_PADDING = 12;
 const SAFE_TOP_PADDING = 12;
@@ -23,6 +26,13 @@ const MAX_TOOLTIP_WIDTH = 360;
 const TOOLTIP_ROOT_ID = 'klinikiq-tooltip-layer';
 const TOOLTIP_LAYER_Z = 2147483600;
 const CLOSE_DELAY_MS = 220;
+const DRILLDOWN_HOVER_DELAY_MS = 140;
+
+const isFiniteNestedDepthLimit = (value) => Number.isFinite(Number(value));
+const hasReachedNestedDepthLimit = (currentDepth = 0, maxDepth = TOOLTIP_BODY_MAX_NESTED_DEPTH) => (
+  isFiniteNestedDepthLimit(maxDepth) && Number(currentDepth || 0) >= Number(maxDepth)
+);
+const canGoDeeperInNestedGlossary = (currentDepth = 0, maxDepth = TOOLTIP_BODY_MAX_NESTED_DEPTH) => !hasReachedNestedDepthLimit(currentDepth, maxDepth);
 
 
 // Turkish medical terms are frequently used with case/possessive suffixes
@@ -738,7 +748,7 @@ function buildSafeNestedTermPool(parentEntry = {}, allTerms = [], sourceText = '
     maxDepth = TOOLTIP_BODY_MAX_NESTED_DEPTH,
   } = options || {};
   if (!parentEntry || !Array.isArray(allTerms) || !allTerms.length) return [];
-  if (Number(currentDepth || 0) >= Number(maxDepth || TOOLTIP_BODY_MAX_NESTED_DEPTH)) return [];
+  if (hasReachedNestedDepthLimit(currentDepth, maxDepth)) return [];
 
   const isPreAnswer = revealMode === 'preAnswer' || revealMode === 'neutral';
   const labels = getSafeNestedLabels(parentEntry);
@@ -907,13 +917,13 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
     currentDepth,
     maxDepth: maxNestedDepth,
   }), [currentEntry, allGlossaryTerms, nestedSourceText, revealMode, pathEntryIds, currentDepth, maxNestedDepth]);
-  const canUseNestedGlossary = currentDepth < maxNestedDepth && safeNestedTerms.length > 0;
+  const canUseNestedGlossary = canGoDeeperInNestedGlossary(currentDepth, maxNestedDepth) && safeNestedTerms.length > 0;
 
   const navigateToEntry = useCallback((nextEntry) => {
     if (!nextEntry) return false;
     let navigated = false;
     setEntryPath((currentPath) => {
-      if (currentPath.length - 1 >= maxNestedDepth) return currentPath;
+      if (hasReachedNestedDepthLimit(currentPath.length - 1, maxNestedDepth)) return currentPath;
       if (entryPathContains(currentPath, nextEntry)) return currentPath;
       navigated = true;
       return [...currentPath, nextEntry];
@@ -1017,7 +1027,7 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
         </span>
       ) : null}
 
-      {currentDepth >= maxNestedDepth ? (
+      {hasReachedNestedDepthLimit(currentDepth, maxNestedDepth) ? (
         <span className="smart-glossary-depth-note">Kavram zinciri güvenli derinlik sınırına ulaştı.</span>
       ) : null}
     </span>
@@ -1028,6 +1038,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
   const [open, setOpen] = useState(false);
   const triggerRef = useRef(null);
   const closeTimerRef = useRef(0);
+  const drilldownTimerRef = useRef(0);
   const reactId = useId();
   const id = useMemo(() => `glossary-${reactId.replace(/:/g, '')}`, [reactId]);
   const resolvedEntry = entry || { term: String(children || ''), shortDefinition: definition || '' };
@@ -1038,6 +1049,13 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
     if (closeTimerRef.current) {
       window.clearTimeout(closeTimerRef.current);
       closeTimerRef.current = 0;
+    }
+  }, []);
+
+  const clearDrilldownTimer = useCallback(() => {
+    if (drilldownTimerRef.current && typeof window !== 'undefined') {
+      window.clearTimeout(drilldownTimerRef.current);
+      drilldownTimerRef.current = 0;
     }
   }, []);
 
@@ -1099,19 +1117,34 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
   useEffect(() => () => {
     deactivateGlossaryTerm(id, nestingLevel);
     clearCloseTimer();
-  }, [clearCloseTimer, id, nestingLevel]);
+    clearDrilldownTimer();
+  }, [clearCloseTimer, clearDrilldownTimer, id, nestingLevel]);
 
   if (navigationMode === 'drilldown' && typeof onTermNavigate === 'function') {
     const navigate = (event) => {
-      event.preventDefault();
-      event.stopPropagation();
+      event?.preventDefault?.();
+      event?.stopPropagation?.();
+      clearDrilldownTimer();
       onTermNavigate(resolvedEntry);
+    };
+
+    const scheduleHoverNavigate = (event) => {
+      if (event?.pointerType && event.pointerType !== 'mouse') return;
+      clearDrilldownTimer();
+      if (typeof window === 'undefined') {
+        onTermNavigate(resolvedEntry);
+        return;
+      }
+      drilldownTimerRef.current = window.setTimeout(() => {
+        drilldownTimerRef.current = 0;
+        onTermNavigate(resolvedEntry);
+      }, DRILLDOWN_HOVER_DELAY_MS);
     };
 
     return (
       <span
         ref={triggerRef}
-        className="glossary-term smart-glossary-term smart-glossary-term--drilldown"
+        className="glossary-term smart-glossary-term smart-glossary-term--drilldown smart-glossary-term--hover-drilldown"
         tabIndex={0}
         role="button"
         data-reveal-mode={revealMode}
@@ -1119,8 +1152,14 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
         data-glossary-entry-term={visibleTermLabel}
         data-nesting-level={nestingLevel}
         data-glossary-context-mode={contextMode}
-        data-glossary-navigation-mode="drilldown"
-        aria-label={`${visibleTermLabel}: kavram kartında aç`}
+        data-glossary-navigation-mode="hover-drilldown"
+        aria-label={`${visibleTermLabel}: üzerine gelince kavram kartında aç`}
+        title="Üzerine gelince açılır"
+        onPointerEnter={scheduleHoverNavigate}
+        onPointerLeave={clearDrilldownTimer}
+        onMouseEnter={scheduleHoverNavigate}
+        onMouseLeave={clearDrilldownTimer}
+        onFocus={clearDrilldownTimer}
         onClick={navigate}
         onKeyDown={(event) => {
           if (event.key === 'Enter' || event.key === ' ') navigate(event);
@@ -1242,7 +1281,7 @@ function GlossaryText({
   const sourceText = String(text || '');
   const effectiveContextMode = contextMode || (nestingLevel > 0 ? 'tooltip-body' : (revealMode === 'preAnswer' ? 'case-pre-answer' : 'case-post-answer'));
   const isTooltipBodyMode = effectiveContextMode === 'tooltip-body' || effectiveContextMode === 'nested-tooltip-body';
-  const nestedAllowed = !isTooltipBodyMode || (enableNestedGlossary && Number(currentDepth || 0) < Number(maxNestedDepth || TOOLTIP_BODY_MAX_NESTED_DEPTH));
+  const nestedAllowed = !isTooltipBodyMode || (enableNestedGlossary && canGoDeeperInNestedGlossary(currentDepth, maxNestedDepth));
   const effectiveExcludedTermKeys = useMemo(() => {
     const base = Array.isArray(excludedTermKeys) ? excludedTermKeys : [];
     const blocked = Array.isArray(blockedNestedEntryIds) ? blockedNestedEntryIds : [];
