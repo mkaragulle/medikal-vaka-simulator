@@ -89,9 +89,21 @@ function TusPearlCardEditor({
   }, [defaultCatalogId, initialCard, open]);
 
   const title = useMemo(() => {
-    if (mode === 'edit') return 'Kartı düzenle';
-    if (mode === 'copy') return 'Kendi kartıma kopyala';
-    return 'Kendi kartını oluştur';
+    if (mode === 'edit') return 'Kartı Düzenle';
+    if (mode === 'copy') return 'Kendi Kartıma Kopyala';
+    return 'Kendi Kartını Oluştur';
+  }, [mode]);
+
+  const description = useMemo(() => {
+    if (mode === 'edit') return 'Kişisel kartının soru, yanıt ve kısa açıklama alanlarını güncelle.';
+    if (mode === 'copy') return 'Bu kartı kişisel koleksiyonuna kopyalayarak düzenlenebilir hale getir.';
+    return 'Kendi tekrar sistemine eklemek için kısa ve net bir hap kart hazırla.';
+  }, [mode]);
+
+  const modeBadge = useMemo(() => {
+    if (mode === 'edit') return 'Kişisel kart';
+    if (mode === 'copy') return 'Kişisel kopya';
+    return 'Yeni kart';
   }, [mode]);
 
   const filledAdvancedCount = useMemo(() => countFilledAdvancedFields(form), [form]);
@@ -172,25 +184,28 @@ function TusPearlCardEditor({
   if (!open) return null;
 
   return (
-    <div className="pearl-editor-backdrop pearl-editor-backdrop-balanced pearl-editor-backdrop-v231" role="presentation" onClick={onClose}>
+    <div className="pearl-editor-backdrop pearl-editor-backdrop-balanced pearl-editor-backdrop-v231 pearl-editor-backdrop-v306" role="presentation" onClick={onClose}>
       <section
-        className="pearl-editor-modal pearl-editor-modal-compact pearl-editor-modal-balanced pearl-editor-modal-v231 card-surface"
+        className={`pearl-editor-modal pearl-editor-modal-compact pearl-editor-modal-balanced pearl-editor-modal-v231 pearl-editor-modal-v306 pearl-editor-modal-${mode}-v306 card-surface`}
         role="dialog"
         aria-modal="true"
-        aria-label={title}
+        aria-labelledby="pearl-editor-title"
+        aria-describedby="pearl-editor-description"
         onClick={(event) => event.stopPropagation()}
       >
-        <header className="pearl-editor-head pearl-editor-head-compact pearl-editor-head-v231">
+        <header className="pearl-editor-head pearl-editor-head-compact pearl-editor-head-v231 pearl-editor-head-v306">
           <div className="pearl-editor-head-copy">
-            <h2>{title}</h2>
+            <span className="pearl-editor-mode-badge-v306">{modeBadge}</span>
+            <h2 id="pearl-editor-title">{title}</h2>
+            <p id="pearl-editor-description" className="pearl-editor-description-v306">{description}</p>
           </div>
           <button type="button" className="btn btn-icon quiet pearl-editor-close pearl-editor-close-compact" onClick={onClose} aria-label="Kart editörünü kapat">
             <Icon name="X" />
           </button>
         </header>
 
-        <form className="pearl-editor-form pearl-editor-form-compact pearl-editor-form-v231" onSubmit={handleSubmit}>
-          <div className="pearl-editor-primary-grid pearl-editor-primary-grid-compact pearl-editor-primary-grid-v231">
+        <form className="pearl-editor-form pearl-editor-form-compact pearl-editor-form-v231 pearl-editor-form-v306" onSubmit={handleSubmit}>
+          <div className="pearl-editor-primary-grid pearl-editor-primary-grid-compact pearl-editor-primary-grid-v231 pearl-editor-primary-grid-v306">
             <label className="pearl-editor-panel pearl-editor-panel-compact-xl pearl-editor-panel-v231 pearl-editor-panel-front-v231">
               <span>Ön yüz</span>
               <textarea
@@ -224,7 +239,7 @@ function TusPearlCardEditor({
             </div>
           </div>
 
-          <div className="pearl-editor-meta-row pearl-editor-meta-row-balanced pearl-editor-meta-row-v229 pearl-editor-meta-row-v231">
+          <div className="pearl-editor-meta-row pearl-editor-meta-row-balanced pearl-editor-meta-row-v229 pearl-editor-meta-row-v231 pearl-editor-meta-row-v306">
             <label className="pearl-editor-panel pearl-editor-panel-inline pearl-editor-select-panel pearl-editor-panel-v231 pearl-editor-select-v231">
               <span>Branş</span>
               <select value={form.branchId} onChange={(event) => updateField('branchId', event.target.value)}>
@@ -262,11 +277,13 @@ function TusPearlCardEditor({
       </section>
 
       {advancedDialogOpen ? (
-        <div className="pearl-editor-secondary-backdrop pearl-editor-secondary-backdrop-v231" role="presentation" onClick={closeAdvancedDialog}>
-          <section className="pearl-editor-secondary-modal pearl-editor-secondary-modal-v231 card-surface" role="dialog" aria-modal="true" aria-label="Opsiyonel alanlar" onClick={(event) => event.stopPropagation()}>
-            <header className="pearl-editor-secondary-head pearl-editor-secondary-head-v231">
+        <div className="pearl-editor-secondary-backdrop pearl-editor-secondary-backdrop-v231 pearl-editor-secondary-backdrop-v306" role="presentation" onClick={closeAdvancedDialog}>
+          <section className="pearl-editor-secondary-modal pearl-editor-secondary-modal-v231 pearl-editor-secondary-modal-v306 card-surface" role="dialog" aria-modal="true" aria-labelledby="pearl-editor-secondary-title" aria-describedby="pearl-editor-secondary-description" onClick={(event) => event.stopPropagation()}>
+            <header className="pearl-editor-secondary-head pearl-editor-secondary-head-v231 pearl-editor-secondary-head-v306">
               <div>
-                <h3>Opsiyonel alanlar</h3>
+                <span className="pearl-editor-mode-badge-v306">Ek bilgiler</span>
+                <h3 id="pearl-editor-secondary-title">Opsiyonel Alanlar</h3>
+                <p id="pearl-editor-secondary-description">Kartı daha iyi sınıflandırmak ve tekrar akışını kişiselleştirmek için gerekli alanları doldur.</p>
               </div>
               <button type="button" className="btn btn-icon quiet pearl-editor-close pearl-editor-close-compact" onClick={closeAdvancedDialog} aria-label="Opsiyonel alanları kapat">
                 <Icon name="X" />
