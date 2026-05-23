@@ -194,14 +194,7 @@ function TusPearlCardEditor({
   if (!open) return null;
 
   const advancedDialogTree = advancedDialogOpen ? (
-    <div
-      className="pearl-editor-secondary-backdrop pearl-editor-secondary-backdrop-v231"
-      role="presentation"
-      onClick={(event) => {
-        event.stopPropagation();
-        closeAdvancedDialog();
-      }}
-    >
+    <div className="pearl-editor-secondary-backdrop pearl-editor-secondary-backdrop-v231" role="presentation" onClick={closeAdvancedDialog}>
       <section className="pearl-editor-secondary-modal pearl-editor-secondary-modal-v231 card-surface" role="dialog" aria-modal="true" aria-label="Opsiyonel alanlar" onClick={(event) => event.stopPropagation()}>
         <header className="pearl-editor-secondary-head pearl-editor-secondary-head-v231">
           <div>

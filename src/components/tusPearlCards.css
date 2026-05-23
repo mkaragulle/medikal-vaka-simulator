@@ -14884,11 +14884,12 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
 
 
 /* ==========================================================
-   V306 — Card editor true viewport modal centering
-   Applies the same fixes used in the newer KlinikIQ modal build:
-   main modal and optional-fields modal are independent viewport layers.
+   KlinikIQ V306 — True viewport modal portal parity
+   Purpose: keep custom card create/copy and optional-fields dialogs centered
+   across app shells, nav bars and transformed parent containers.
    ========================================================== */
-.pearl-editor-backdrop.pearl-editor-backdrop-balanced.pearl-editor-backdrop-v231 {
+.pearl-editor-backdrop.pearl-editor-backdrop-balanced,
+.pearl-editor-backdrop.pearl-editor-backdrop-v231 {
   position: fixed !important;
   inset: 0 !important;
   z-index: 2147483647 !important;
@@ -14897,20 +14898,23 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 24px !important;
-  overflow-y: auto !important;
+  padding: clamp(12px, 2vw, 28px) !important;
+  overflow: auto !important;
   overscroll-behavior: contain !important;
+  isolation: isolate !important;
 }
 
-.pearl-editor-modal.pearl-editor-modal-balanced.pearl-editor-modal-v231 {
+.pearl-editor-modal.pearl-editor-modal-balanced,
+.pearl-editor-modal.pearl-editor-modal-v231 {
   margin: auto !important;
-  max-height: calc(100dvh - 48px) !important;
+  max-height: calc(100dvh - clamp(24px, 4vw, 56px)) !important;
 }
 
-.pearl-editor-secondary-backdrop.pearl-editor-secondary-backdrop-v231 {
+.pearl-editor-secondary-backdrop,
+.pearl-editor-secondary-backdrop-v231 {
   position: fixed !important;
   inset: 0 !important;
-  z-index: 2147483648 !important;
+  z-index: 2147483650 !important;
   width: 100vw !important;
   min-height: 100dvh !important;
   display: flex !important;
@@ -14918,28 +14922,31 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
   justify-content: center !important;
   place-items: initial !important;
   place-content: center !important;
-  padding: 24px !important;
-  overflow-y: auto !important;
+  padding: clamp(12px, 2vw, 28px) !important;
+  overflow: auto !important;
   overscroll-behavior: contain !important;
+  isolation: isolate !important;
 }
 
-.pearl-editor-secondary-modal.pearl-editor-secondary-modal-v231 {
+.pearl-editor-secondary-modal,
+.pearl-editor-secondary-modal-v231 {
   margin: auto !important;
-  max-height: calc(100dvh - 48px) !important;
+  max-height: calc(100dvh - clamp(24px, 4vw, 56px)) !important;
 }
 
 @media (max-width: 640px) {
-  .pearl-editor-backdrop.pearl-editor-backdrop-balanced.pearl-editor-backdrop-v231,
-  .pearl-editor-secondary-backdrop.pearl-editor-secondary-backdrop-v231 {
-    align-items: center !important;
-    justify-content: center !important;
+  .pearl-editor-backdrop.pearl-editor-backdrop-balanced,
+  .pearl-editor-backdrop.pearl-editor-backdrop-v231,
+  .pearl-editor-secondary-backdrop,
+  .pearl-editor-secondary-backdrop-v231 {
     padding: 10px !important;
   }
 
-  .pearl-editor-modal.pearl-editor-modal-balanced.pearl-editor-modal-v231,
-  .pearl-editor-secondary-modal.pearl-editor-secondary-modal-v231 {
+  .pearl-editor-modal.pearl-editor-modal-balanced,
+  .pearl-editor-modal.pearl-editor-modal-v231,
+  .pearl-editor-secondary-modal,
+  .pearl-editor-secondary-modal-v231 {
     width: 100% !important;
     max-height: calc(100dvh - 20px) !important;
-    border-radius: 22px !important;
   }
 }
