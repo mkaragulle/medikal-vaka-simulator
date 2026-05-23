@@ -26,7 +26,14 @@ const TOOLTIP_GAP = 8;
 const MAX_TOOLTIP_WIDTH = 520;
 const TOOLTIP_ROOT_ID = 'klinikiq-tooltip-layer';
 const TOOLTIP_LAYER_Z = 2147483600;
-const CLOSE_DELAY_MS = 220;
+const GLOSSARY_TOOLTIP_TIMING = Object.freeze({
+  hoverOpenDelay: 240,
+  hoverCloseDelay: 150,
+  nestedHoverOpenDelay: 220,
+  focusOpenDelay: 90,
+  animationDuration: 140,
+});
+const CLOSE_DELAY_MS = GLOSSARY_TOOLTIP_TIMING.hoverCloseDelay;
 
 const isFiniteNestedDepthLimit = (value) => Number.isFinite(Number(value));
 const hasReachedNestedDepthLimit = (currentDepth = 0, maxDepth = TOOLTIP_BODY_MAX_NESTED_DEPTH) => (
@@ -874,14 +881,32 @@ function GlossaryCard({
   maxNestedDepth = TOOLTIP_BODY_MAX_NESTED_DEPTH,
   visitedEntryIds = [],
 }) {
-  const [expanded, setExpanded] = useState(false);
+  const [entryPath, setEntryPath] = useState(() => (entry ? [entry] : []));
 
   useEffect(() => {
-    setExpanded(false);
+    setEntryPath(entry ? [entry] : []);
   }, [entry]);
 
-  const currentEntry = entry || {};
-  const currentDepth = Math.max(0, Number(nestingLevel || 0));
+  const currentEntry = entryPath[entryPath.length - 1] || entry || {};
+  const currentDepth = Math.max(0, entryPath.length - 1);
+
+  const handleNestedNavigate = useCallback((nextEntry) => {
+    if (!nextEntry) return;
+    setEntryPath((currentPath) => {
+      const basePath = Array.isArray(currentPath) && currentPath.length ? currentPath : (entry ? [entry] : []);
+      const existingIndex = basePath.findIndex((pathEntry) => isSameGlossaryEntry(pathEntry, nextEntry));
+      if (existingIndex >= 0) return basePath.slice(0, existingIndex + 1);
+      return [...basePath, nextEntry];
+    });
+  }, [entry]);
+
+  const handleBack = useCallback(() => {
+    setEntryPath((currentPath) => (currentPath.length > 1 ? currentPath.slice(0, -1) : currentPath));
+  }, []);
+
+  const handleJump = useCallback((index) => {
+    setEntryPath((currentPath) => currentPath.slice(0, Math.max(0, Number(index || 0)) + 1));
+  }, []);
   const isPreAnswer = false;
   const previewDefinition = currentEntry.previewDefinition || currentEntry.shortDefinition || currentEntry.definition || '';
   const shortDefinition = currentEntry.shortDefinition || previewDefinition || currentEntry.preAnswerSafeDefinition || '';
@@ -896,8 +921,9 @@ function GlossaryCard({
 
   const pathEntryIds = useMemo(() => {
     const existing = Array.isArray(visitedEntryIds) ? visitedEntryIds : [];
-    return Array.from(new Set([...existing, getEntryStableId(currentEntry)].filter(Boolean)));
-  }, [visitedEntryIds, currentEntry]);
+    const pathKeys = entryPath.map((pathEntry) => getEntryStableId(pathEntry)).filter(Boolean);
+    return Array.from(new Set([...existing, ...pathKeys, getEntryStableId(currentEntry)].filter(Boolean)));
+  }, [visitedEntryIds, entryPath, currentEntry]);
 
   const blockedKeys = useMemo(() => {
     const next = new Set((Array.isArray(excludedTermKeys) ? excludedTermKeys : []).map((item) => normalizeGlossaryText(item)));
@@ -946,7 +972,8 @@ function GlossaryCard({
         currentDepth={currentDepth + 1}
         visitedEntryIds={pathEntryIds}
         enableNestedGlossary
-        navigationMode="popover"
+        navigationMode="drilldown"
+        onTermNavigate={handleNestedNavigate}
       />
     );
   };
@@ -959,6 +986,7 @@ function GlossaryCard({
       data-nesting-level={nestingLevel}
       data-current-depth={currentDepth}
     >
+      <GlossaryBreadcrumb path={entryPath} onBack={handleBack} onJump={handleJump} />
       <span className="smart-glossary-header">
         <span className="smart-glossary-title-wrap">
           <strong className="smart-glossary-title">{cardTitle}</strong>
@@ -993,28 +1021,46 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
   const [open, setOpen] = useState(false);
   const triggerRef = useRef(null);
   const closeTimerRef = useRef(0);
+  const openTimerRef = useRef(0);
+  const lastPointerTypeRef = useRef('');
   const reactId = useId();
   const id = useMemo(() => `glossary-${reactId.replace(/:/g, '')}`, [reactId]);
   const resolvedEntry = entry || { term: String(children || ''), shortDefinition: definition || '' };
   const description = resolvedEntry.shortDefinition || resolvedEntry.definition || definition || '';
   const visibleTermLabel = resolvedEntry.displayTerm || resolvedEntry.canonicalTerm || resolvedEntry.term || String(children || '');
+  const isDrilldownNavigation = navigationMode === 'drilldown' && typeof onTermNavigate === 'function';
+
+  const triggerNavigation = useCallback((event) => {
+    if (!isDrilldownNavigation) return false;
+    event?.preventDefault?.();
+    event?.stopPropagation?.();
+    onTermNavigate(resolvedEntry);
+    return true;
+  }, [isDrilldownNavigation, onTermNavigate, resolvedEntry]);
 
   const clearCloseTimer = useCallback(() => {
-    if (closeTimerRef.current) {
+    if (closeTimerRef.current && typeof window !== 'undefined') {
       window.clearTimeout(closeTimerRef.current);
       closeTimerRef.current = 0;
     }
   }, []);
 
-
+  const clearOpenTimer = useCallback(() => {
+    if (openTimerRef.current && typeof window !== 'undefined') {
+      window.clearTimeout(openTimerRef.current);
+      openTimerRef.current = 0;
+    }
+  }, []);
 
   const close = useCallback(() => {
+    clearOpenTimer();
     clearCloseTimer();
     deactivateGlossaryTerm(id, nestingLevel);
     setOpen(false);
-  }, [clearCloseTimer, id, nestingLevel]);
+  }, [clearOpenTimer, clearCloseTimer, id, nestingLevel]);
 
   const scheduleCloseSoon = useCallback(() => {
+    clearOpenTimer();
     if (typeof window === 'undefined') {
       deactivateGlossaryTerm(id, nestingLevel);
       setOpen(false);
@@ -1025,7 +1071,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
       deactivateGlossaryTerm(id, nestingLevel);
       setOpen(false);
     }, CLOSE_DELAY_MS);
-  }, [clearCloseTimer, id, nestingLevel]);
+  }, [clearOpenTimer, clearCloseTimer, id, nestingLevel]);
 
   const scheduleCloseFromTrigger = useCallback((event) => {
     const nextTarget = event?.relatedTarget;
@@ -1055,24 +1101,52 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
   }, [id, nestingLevel, scheduleCloseSoon]);
 
   const openNow = useCallback(() => {
+    clearOpenTimer();
     clearCloseTimer();
     activateGlossaryTerm(id, nestingLevel, () => {
+      clearOpenTimer();
       clearCloseTimer();
       setOpen(false);
     });
     setOpen(true);
-  }, [clearCloseTimer, id, nestingLevel]);
+  }, [clearOpenTimer, clearCloseTimer, id, nestingLevel]);
+
+  const scheduleOpenWithIntent = useCallback((delayMs = GLOSSARY_TOOLTIP_TIMING.hoverOpenDelay) => {
+    if (typeof window === 'undefined') {
+      openNow();
+      return;
+    }
+    clearCloseTimer();
+    clearOpenTimer();
+    openTimerRef.current = window.setTimeout(() => {
+      openTimerRef.current = 0;
+      openNow();
+    }, Math.max(0, Number(delayMs) || 0));
+  }, [clearCloseTimer, clearOpenTimer, openNow]);
+
+  const scheduleHoverOpen = useCallback(() => {
+    const delay = Number(nestingLevel || 0) > 0
+      ? GLOSSARY_TOOLTIP_TIMING.nestedHoverOpenDelay
+      : GLOSSARY_TOOLTIP_TIMING.hoverOpenDelay;
+    scheduleOpenWithIntent(delay);
+  }, [nestingLevel, scheduleOpenWithIntent]);
+
+  const handleFloatingEnter = useCallback(() => {
+    clearOpenTimer();
+    clearCloseTimer();
+  }, [clearOpenTimer, clearCloseTimer]);
 
   useEffect(() => () => {
     deactivateGlossaryTerm(id, nestingLevel);
+    clearOpenTimer();
     clearCloseTimer();
-  }, [clearCloseTimer, id, nestingLevel]);
+  }, [clearOpenTimer, clearCloseTimer, id, nestingLevel]);
 
 
   return (
     <span
       ref={triggerRef}
-      className="glossary-term smart-glossary-term"
+      className={`glossary-term smart-glossary-term${isDrilldownNavigation ? ' smart-glossary-term--drilldown' : ''}`} 
       tabIndex={0}
       role="button"
       data-reveal-mode={GLOSSARY_EXPLANATION_MODE}
@@ -1082,22 +1156,39 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
       data-glossary-context-mode={contextMode}
       aria-describedby={open ? id : undefined}
       aria-label={`${visibleTermLabel}: ${description}`}
-      onMouseEnter={openNow}
-      onMouseLeave={scheduleCloseFromTrigger}
+      onMouseEnter={(event) => {
+        if (isDrilldownNavigation) return;
+        // Fallback for browsers/environments without PointerEvent. In modern
+        // browsers the pointer handlers below already schedule the open timer.
+        if (lastPointerTypeRef.current === 'mouse') return;
+        scheduleHoverOpen(event);
+      }}
+      onMouseLeave={(event) => {
+        if (isDrilldownNavigation) return;
+        if (lastPointerTypeRef.current === 'mouse') return;
+        scheduleCloseFromTrigger(event);
+      }}
       onPointerEnter={(event) => {
-        if (event.pointerType === 'mouse') openNow();
+        if (isDrilldownNavigation) return;
+        lastPointerTypeRef.current = event.pointerType || '';
+        if (event.pointerType === 'mouse' || event.pointerType === 'pen') scheduleHoverOpen(event);
       }}
       onPointerLeave={(event) => {
-        if (event.pointerType === 'mouse') scheduleCloseFromTrigger(event);
+        if (isDrilldownNavigation) return;
+        lastPointerTypeRef.current = event.pointerType || '';
+        if (event.pointerType === 'mouse' || event.pointerType === 'pen') scheduleCloseFromTrigger(event);
       }}
-      onFocus={openNow}
-      onBlur={scheduleCloseFromTrigger}
+      onFocus={isDrilldownNavigation ? undefined : () => scheduleOpenWithIntent(GLOSSARY_TOOLTIP_TIMING.focusOpenDelay)}
+      onBlur={isDrilldownNavigation ? undefined : scheduleCloseFromTrigger}
       onClick={(event) => {
+        if (triggerNavigation(event)) return;
         event.stopPropagation();
+        clearOpenTimer();
         clearCloseTimer();
         setOpen((current) => {
           if (!current) {
             activateGlossaryTerm(id, nestingLevel, () => {
+              clearOpenTimer();
               clearCloseTimer();
               setOpen(false);
             });
@@ -1109,7 +1200,9 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
       }}
       onKeyDown={(event) => {
         if (event.key === 'Enter' || event.key === ' ') {
+          if (triggerNavigation(event)) return;
           event.preventDefault();
+          clearOpenTimer();
           clearCloseTimer();
           setOpen((current) => {
             if (!current) {
@@ -1127,19 +1220,21 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
       }}
     >
       {children}
-      <FloatingTooltip
-        key={`${resolvedEntry?.id || resolvedEntry?.term || visibleTermLabel}-${revealMode}-${contextMode}`}
-        id={id}
-        triggerRef={triggerRef}
-        open={open}
-        revealMode={revealMode}
-        nestingLevel={nestingLevel}
-        onRequestClose={close}
-        onFloatingEnter={openNow}
-        onFloatingLeave={scheduleCloseFromFloating}
-      >
-        <GlossaryCard entry={resolvedEntry} revealMode={revealMode} excludedTermKeys={excludedTermKeys} nestingLevel={nestingLevel} maxNestedDepth={maxNestedDepth} visitedEntryIds={visitedEntryIds} />
-      </FloatingTooltip>
+      {!isDrilldownNavigation ? (
+        <FloatingTooltip
+          key={`${resolvedEntry?.id || resolvedEntry?.term || visibleTermLabel}-${revealMode}-${contextMode}`}
+          id={id}
+          triggerRef={triggerRef}
+          open={open}
+          revealMode={revealMode}
+          nestingLevel={nestingLevel}
+          onRequestClose={close}
+          onFloatingEnter={handleFloatingEnter}
+          onFloatingLeave={scheduleCloseFromFloating}
+        >
+          <GlossaryCard entry={resolvedEntry} revealMode={revealMode} excludedTermKeys={excludedTermKeys} nestingLevel={nestingLevel} maxNestedDepth={maxNestedDepth} visitedEntryIds={visitedEntryIds} />
+        </FloatingTooltip>
+      ) : null}
     </span>
   );
 }

@@ -4929,3 +4929,72 @@ body:not(.klinikiq-auth-lock) .tus-pearl-study-shell > :first-child {
     gap: 11px !important;
   }
 }
+
+/* ==========================================================
+   V296 — final scoped glossary visual override loaded after index.css.
+   Keeps inline terms subtle and prevents older refine rules from restoring
+   colored backgrounds/chip-like glossary words.
+   ========================================================== */
+.glossary-term,
+.smart-glossary-term,
+.glossary-word,
+.glossary-term:hover,
+.smart-glossary-term:hover,
+.glossary-word:hover,
+.glossary-term:focus,
+.smart-glossary-term:focus,
+.glossary-term:focus-visible,
+.smart-glossary-term:focus-visible,
+.glossary-term:active,
+.smart-glossary-term:active {
+  color: inherit !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-weight: inherit !important;
+  cursor: help !important;
+  text-decoration-line: underline !important;
+  text-decoration-style: dotted !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px !important;
+  text-decoration-color: rgba(15, 23, 42, 0.32) !important;
+}
+
+.glossary-term:hover,
+.smart-glossary-term:hover,
+.glossary-word:hover,
+.glossary-term:focus-visible,
+.smart-glossary-term:focus-visible {
+  text-decoration-style: solid !important;
+  text-decoration-color: rgba(15, 118, 110, 0.58) !important;
+}
+
+.smart-glossary-card [data-glossary-context-mode="tooltip-body"] .smart-glossary-term,
+.smart-glossary-card [data-glossary-context-mode="nested-tooltip-body"] .smart-glossary-term,
+.smart-glossary-card.smart-glossary-card--stacked-popover [data-glossary-context-mode="tooltip-body"] .smart-glossary-term,
+.smart-glossary-card.smart-glossary-card--stacked-popover [data-glossary-context-mode="nested-tooltip-body"] .smart-glossary-term,
+.smart-glossary-term--drilldown,
+.smart-glossary-term--drilldown:hover,
+.smart-glossary-term--drilldown:focus-visible {
+  color: inherit !important;
+  background: transparent !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  text-decoration-line: underline !important;
+  text-decoration-style: dotted !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px !important;
+  text-decoration-color: rgba(15, 23, 42, 0.34) !important;
+}
+
+.smart-glossary-term--drilldown:hover,
+.smart-glossary-term--drilldown:focus-visible {
+  text-decoration-style: solid !important;
+  text-decoration-color: rgba(15, 118, 110, 0.58) !important;
+}
