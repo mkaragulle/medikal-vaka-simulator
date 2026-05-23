@@ -6,6 +6,7 @@ import { TUS_GLOSSARY_NESTED_CLINICAL_TERMS } from '../data/tusGlossaryNestedCli
 import { TUS_GLOSSARY_CASE_DERIVED_TERMS } from '../data/tusGlossaryCaseDerivedIndex.js';
 import { TUS_GLOSSARY_CLINICAL_BRANCH_DEEP_TERMS } from '../data/tusGlossaryClinicalBranchDeepIndex.js';
 import { TUS_GLOSSARY_CONTEXTUAL_PHRASE_TERMS } from '../data/tusGlossaryContextualPhraseIndex.js';
+import { TUS_GLOSSARY_BINDING_CORRECTION_TERMS } from '../data/tusGlossaryBindingCorrectionsIndex.js';
 
 const teachingOnly = 'teachingOnly';
 
@@ -9467,7 +9468,11 @@ export const branchGlossaryTerms = {};
 export const defaultGlossaryTerms = globalGlossaryTerms;
 
 const STATIC_GLOSSARY_SOURCES = [
-  // Contextual phrase layer comes first so exact clinical phrases such as
+  // Binding corrections come first: they define true canonical owners for terms
+  // that legacy rows sometimes used only as context clues (e.g. asthma inside
+  // the eosinophil explanation). This prevents title/definition mismatches.
+  ...TUS_GLOSSARY_BINDING_CORRECTION_TERMS,
+  // Contextual phrase layer comes next so exact clinical phrases such as
   // "defans", "aktif elevasyon" or "sağ inguinal insizyon" do not get
   // swallowed by broader disease-level aliases.
   ...TUS_GLOSSARY_CONTEXTUAL_PHRASE_TERMS,
@@ -9524,6 +9529,165 @@ function compareGlossaryEntrySpecificity(a = {}, b = {}) {
   return String(b.term || '').length - String(a.term || '').length;
 }
 
+
+const UNSAFE_CONTEXT_ALIAS_PATTERNS = [
+  /\//u,
+  /\b(?:ana hücresi|ilişkili|düşündürür|destekler|tipiktir|görülür|görülebilir|nedenidir|bulgusudur)\b/iu,
+  /\b(?:parazit|alerji|astım)\s*\/\s*/iu,
+];
+
+function normalizeEntryOwnerKey(entry = {}) {
+  return normalizeGlossaryText(entry.canonicalTerm || entry.displayTerm || entry.term || '');
+}
+
+function isExactCanonicalAlias(entry = {}, alias = '') {
+  const normalized = normalizeGlossaryText(alias);
+  return Boolean(normalized && (
+    normalized === normalizeGlossaryText(entry.canonicalTerm || '')
+    || normalized === normalizeGlossaryText(entry.displayTerm || '')
+    || normalized === normalizeGlossaryText(entry.term || '')
+    || normalized === normalizeGlossaryText(entry.normalizedTerm || '')
+  ));
+}
+
+function isNamedFieldAlias(entry = {}, alias = '') {
+  const normalized = normalizeGlossaryText(alias);
+  return Boolean(normalized && [entry.abbreviation, entry.EnglishName, entry.englishName, entry.LatinName, entry.latinName, entry.TurkishName, entry.turkishName]
+    .filter(Boolean)
+    .some((item) => normalizeGlossaryText(item) === normalized));
+}
+
+function isUnsafeContextAlias(entry = {}, alias = '') {
+  const raw = String(alias || '').replace(/\s+/g, ' ').trim();
+  if (!raw) return true;
+  if (isExactCanonicalAlias(entry, raw) || isNamedFieldAlias(entry, raw)) return false;
+  // Legacy rows sometimes stored clue phrases as aliases. Those phrases should
+  // not hijack the tooltip binding of true terms appearing in case text.
+  if (UNSAFE_CONTEXT_ALIAS_PATTERNS.some((pattern) => pattern.test(raw))) return true;
+  return false;
+}
+
+function scoreAliasOwnership(entry = {}, alias = '') {
+  const normalizedAlias = normalizeGlossaryText(alias);
+  let score = getEntryMatchingPriority(entry);
+  if (normalizedAlias && normalizedAlias === normalizeGlossaryText(entry.canonicalTerm || '')) score += 10000;
+  if (normalizedAlias && normalizedAlias === normalizeGlossaryText(entry.displayTerm || '')) score += 9000;
+  if (normalizedAlias && normalizedAlias === normalizeGlossaryText(entry.term || '')) score += 8500;
+  if (isNamedFieldAlias(entry, alias)) score += 7600;
+  if (entry.isMultiWordTerm || /\s/.test(String(alias || ''))) score += 120;
+  score += Math.min(String(alias || '').length, 80);
+  return score;
+}
+
+function enforceGlossaryAliasIntegrity(entries = []) {
+  const canonicalOwners = new Map();
+  entries.forEach((entry) => {
+    const keys = [entry.canonicalTerm, entry.displayTerm, entry.term, entry.normalizedTerm]
+      .filter(Boolean)
+      .map(normalizeGlossaryText)
+      .filter(Boolean);
+    keys.forEach((key) => {
+      const current = canonicalOwners.get(key);
+      if (!current || scoreAliasOwnership(entry, key) > scoreAliasOwnership(current, key)) canonicalOwners.set(key, entry);
+    });
+  });
+
+  const preliminary = entries.map((entry) => {
+    const seen = new Set();
+    const aliases = [];
+    (entry.aliases || []).forEach((alias) => {
+      const cleaned = String(alias || '').replace(/\s+/g, ' ').trim();
+      const normalized = normalizeGlossaryText(cleaned);
+      if (!cleaned || !normalized || seen.has(normalized)) return;
+      if (isBlacklistedUnitToken(cleaned) || isLowSignalGlossaryAlias(cleaned)) return;
+      if (isUnsafeContextAlias(entry, cleaned)) return;
+      const owner = canonicalOwners.get(normalized);
+      if (owner && owner.id !== entry.id && normalizeEntryOwnerKey(owner) !== normalizeEntryOwnerKey(entry)) return;
+      seen.add(normalized);
+      aliases.push(cleaned);
+    });
+
+    // A glossary entry must always keep its own canonical labels, even if broad
+    // context aliases are discarded.
+    [entry.canonicalTerm, entry.displayTerm, entry.term, entry.abbreviation, entry.EnglishName, entry.LatinName]
+      .filter(Boolean)
+      .forEach((alias) => {
+        const cleaned = String(alias || '').replace(/\s+/g, ' ').trim();
+        const normalized = normalizeGlossaryText(cleaned);
+        if (cleaned && normalized && !seen.has(normalized) && !isBlacklistedUnitToken(cleaned)) {
+          seen.add(normalized);
+          aliases.push(cleaned);
+        }
+      });
+
+    return { ...entry, aliases: aliases.sort((a, b) => b.length - a.length), normalizedAliases: aliases.map(normalizeGlossaryText) };
+  });
+
+  const aliasClaims = new Map();
+  preliminary.forEach((entry) => {
+    (entry.aliases || []).forEach((alias) => {
+      const normalized = normalizeGlossaryText(alias);
+      if (!normalized) return;
+      const claims = aliasClaims.get(normalized) || [];
+      claims.push({ entry, alias, score: scoreAliasOwnership(entry, alias) });
+      aliasClaims.set(normalized, claims);
+    });
+  });
+
+  const winningAliasOwner = new Map();
+  aliasClaims.forEach((claims, normalized) => {
+    const sorted = [...claims].sort((a, b) => {
+      if (a.score !== b.score) return b.score - a.score;
+      const aExact = isExactCanonicalAlias(a.entry, a.alias) ? 1 : 0;
+      const bExact = isExactCanonicalAlias(b.entry, b.alias) ? 1 : 0;
+      if (aExact !== bExact) return bExact - aExact;
+      return String(a.entry.term || '').localeCompare(String(b.entry.term || ''), 'tr');
+    });
+    winningAliasOwner.set(normalized, sorted[0].entry.id);
+  });
+
+  return preliminary.map((entry) => {
+    const aliases = (entry.aliases || []).filter((alias) => {
+      const normalized = normalizeGlossaryText(alias);
+      const winner = winningAliasOwner.get(normalized);
+      return !winner || winner === entry.id;
+    });
+    return { ...entry, aliases, normalizedAliases: aliases.map(normalizeGlossaryText) };
+  });
+}
+
+export function auditGlossaryIntegrity(entries = getGlossaryTerms()) {
+  const issues = [];
+  const ids = new Map();
+  const aliases = new Map();
+
+  entries.forEach((entry) => {
+    if (!entry.id) issues.push({ type: 'missing-id', term: entry.term });
+    if (!entry.shortDefinition && !entry.definition && !entry.previewDefinition) issues.push({ type: 'missing-definition', id: entry.id, term: entry.term });
+    const previousId = ids.get(entry.id);
+    if (entry.id && previousId) issues.push({ type: 'duplicate-id', id: entry.id, terms: [previousId, entry.term] });
+    if (entry.id) ids.set(entry.id, entry.term);
+    (entry.aliases || []).forEach((alias) => {
+      const normalized = normalizeGlossaryText(alias);
+      if (!normalized) return;
+      const list = aliases.get(normalized) || [];
+      list.push({ id: entry.id, term: entry.term, alias });
+      aliases.set(normalized, list);
+    });
+  });
+
+  aliases.forEach((list, normalizedAlias) => {
+    const ownerIds = Array.from(new Set(list.map((item) => item.id)));
+    if (ownerIds.length > 1) issues.push({ type: 'duplicate-normalized-alias', normalizedAlias, entries: list });
+  });
+
+  return {
+    totalEntries: entries.length,
+    issueCount: issues.length,
+    issues,
+  };
+}
+
 function buildNormalizedGlossary(entries = []) {
   const byLabel = new Map();
 
@@ -9547,7 +9711,7 @@ function buildNormalizedGlossary(entries = []) {
     byLabel.set(normalized, normalizeEntry({ ...secondary, ...preferred, aliases }));
   });
 
-  return Array.from(byLabel.values()).sort(compareGlossaryEntrySpecificity);
+  return enforceGlossaryAliasIntegrity(Array.from(byLabel.values()).sort(compareGlossaryEntrySpecificity));
 }
 
 function getExtraTermsCacheKey(extraTerms = []) {

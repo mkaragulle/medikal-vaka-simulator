@@ -266,7 +266,7 @@ function makeMatcher(terms = []) {
   });
 
   const deduped = Array.from(
-    new Map(aliasEntries.map((item) => [`${item.normalized}::${item.alias}::${item.entry.term}`, item])).values(),
+    new Map(aliasEntries.map((item) => [`${item.normalized}::${item.alias}::${item.entry.id || item.entry.term}`, item])).values(),
   ).sort(compareAliasSpecificity);
 
   if (!deduped.length) {
@@ -822,6 +822,8 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
       tabIndex={0}
       role="button"
       data-reveal-mode={revealMode}
+      data-glossary-entry-id={resolvedEntry?.id || ''}
+      data-glossary-entry-term={visibleTermLabel}
       data-nesting-level={nestingLevel}
       aria-describedby={open ? id : undefined}
       aria-label={`${visibleTermLabel}: ${description}`}
@@ -871,6 +873,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
     >
       {children}
       <FloatingTooltip
+        key={`${resolvedEntry?.id || resolvedEntry?.term || visibleTermLabel}-${revealMode}`}
         id={id}
         triggerRef={triggerRef}
         open={open}
@@ -919,7 +922,7 @@ function GlossaryText({
     <span className="glossary-text-flow" data-nesting-level={nestingLevel}>
       {parts.map((part, index) => part.type === 'term' ? (
         <GlossaryTerm
-          key={`${part.value}-${index}`}
+          key={`${part.entry?.id || part.entry?.term || 'term'}-${part.value}-${index}`}
           entry={part.entry}
           revealMode={revealMode}
           excludedTermKeys={excludedTermKeys}
