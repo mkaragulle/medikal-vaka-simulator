@@ -1,0 +1,648 @@
+[
+  {
+    "entryId": "candidate-audit-v293-adrenal-yetmezligi",
+    "canonicalTerm": "Adrenal Yetmezliği",
+    "safeNestedTerms": [
+      "Primer adrenal yetmezlik",
+      "Kortizol eksikliği",
+      "ACTH",
+      "Hiponatremi",
+      "Hiperkalemi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-primer-adrenal-yetmezlik",
+    "canonicalTerm": "Primer Adrenal Yetmezlik",
+    "safeNestedTerms": [
+      "Adrenal Yetmezliği",
+      "ACTH",
+      "Aldosteron",
+      "Hiperkalemi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-sekonder-adrenal-yetmezlik",
+    "canonicalTerm": "Sekonder Adrenal Yetmezlik",
+    "safeNestedTerms": [
+      "Adrenal Yetmezliği",
+      "ACTH",
+      "Kortizol eksikliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-kortizol-eksikligi",
+    "canonicalTerm": "Kortizol eksikliği",
+    "safeNestedTerms": [
+      "Adrenal Yetmezliği",
+      "ACTH",
+      "Hipoglisemi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-karaciger-yetmezligi",
+    "canonicalTerm": "Karaciğer Yetmezliği",
+    "safeNestedTerms": [
+      "Koagülopati",
+      "Hepatik ensefalopati",
+      "Bilirubin",
+      "Albumin"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-pankreatik-ekzokrin-yetmezlik",
+    "canonicalTerm": "Pankreatik Ekzokrin Yetmezlik",
+    "safeNestedTerms": [
+      "Kistik fibrozis",
+      "Steatore",
+      "Ter klorürü",
+      "Malabsorpsiyon"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-prematur-over-yetmezligi",
+    "canonicalTerm": "Prematür Over Yetmezliği",
+    "safeNestedTerms": [
+      "Amenore",
+      "FSH",
+      "Streak gonad",
+      "Turner sendromu"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-pankreas-yetmezligi",
+    "canonicalTerm": "Pankreas Yetmezliği",
+    "safeNestedTerms": [
+      "Pankreatik Ekzokrin Yetmezlik",
+      "Steatore",
+      "Kistik fibrozis"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-iga",
+    "canonicalTerm": "IgA",
+    "safeNestedTerms": [
+      "Selektif IgA Eksikliği",
+      "Mukozal bağışıklık",
+      "IgG",
+      "IgM"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-igg",
+    "canonicalTerm": "IgG",
+    "safeNestedTerms": [
+      "Opsonizasyon",
+      "Kompleman aktivasyonu",
+      "IgM",
+      "IgA"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-igm",
+    "canonicalTerm": "IgM",
+    "safeNestedTerms": [
+      "Kompleman aktivasyonu",
+      "IgG",
+      "Primer immün yanıt"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-selektif-iga-eksikligi",
+    "canonicalTerm": "Selektif IgA Eksikliği",
+    "safeNestedTerms": [
+      "IgA",
+      "Sinopulmoner enfeksiyon",
+      "Transfüzyon reaksiyonu"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-tsh",
+    "canonicalTerm": "TSH",
+    "safeNestedTerms": [
+      "Serbest T4",
+      "Hipotiroidi",
+      "Hipertiroidi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-pth",
+    "canonicalTerm": "PTH",
+    "safeNestedTerms": [
+      "Hipokalsemi",
+      "Hiperkalsemi",
+      "D vitamini"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hbsag",
+    "canonicalTerm": "HBsAg",
+    "safeNestedTerms": [
+      "HBeAg",
+      "Anti-HBs",
+      "HBV"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hbeag",
+    "canonicalTerm": "HBeAg",
+    "safeNestedTerms": [
+      "HBsAg",
+      "HBV DNA",
+      "Anti-HBe"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-pcr",
+    "canonicalTerm": "PCR",
+    "safeNestedTerms": [
+      "Nükleik asit",
+      "Kültür",
+      "Viral yük"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-usg",
+    "canonicalTerm": "USG",
+    "safeNestedTerms": [
+      "Doppler ultrasonografi",
+      "Skrotal ultrasonografi",
+      "Kontrastlı BT"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-mr-kolanjiyografi",
+    "canonicalTerm": "MR Kolanjiyografi",
+    "safeNestedTerms": [
+      "Kolestaz",
+      "Koledok taşı",
+      "ERCP"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-serum-afp",
+    "canonicalTerm": "Serum AFP",
+    "safeNestedTerms": [
+      "Hepatoselüler karsinom",
+      "Germ hücreli tümör",
+      "β-hCG"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-ggt",
+    "canonicalTerm": "GGT",
+    "safeNestedTerms": [
+      "ALP/GGT yüksekliği",
+      "Kolestaz",
+      "Transaminaz yüksekliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-c3-c4-dusuklugu",
+    "canonicalTerm": "C3/C4 Düşüklüğü",
+    "safeNestedTerms": [
+      "Kompleman C3",
+      "SLE",
+      "Glomerülonefrit"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-direkt-bilirubin-yuksekligi",
+    "canonicalTerm": "Direkt bilirubin yüksekliği",
+    "safeNestedTerms": [
+      "Kolestaz",
+      "ALP/GGT yüksekliği",
+      "İndirekt hiperbilirubinemi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hipokalemi",
+    "canonicalTerm": "Hipokalemi",
+    "safeNestedTerms": [
+      "Metabolik alkaloz",
+      "U dalgası",
+      "Aldosteron"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-metabolik-alkaloz",
+    "canonicalTerm": "Metabolik Alkaloz",
+    "safeNestedTerms": [
+      "Hipokalemi",
+      "Kusma",
+      "Diüretik"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hipokalemik-metabolik-alkaloz",
+    "canonicalTerm": "Hipokalemik Metabolik Alkaloz",
+    "safeNestedTerms": [
+      "Hipokalemi",
+      "Metabolik Alkaloz",
+      "Aldosteron"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hipoksemi",
+    "canonicalTerm": "Hipoksemi",
+    "safeNestedTerms": [
+      "Ventilasyon-perfüzyon uyumsuzluğu",
+      "Arter kan gazı",
+      "Hipoksi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hiperamonyemi",
+    "canonicalTerm": "Hiperamonyemi",
+    "safeNestedTerms": [
+      "Üre döngüsü bozukluğu",
+      "Karaciğer Yetmezliği",
+      "Hepatik ensefalopati"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-retikulositoz",
+    "canonicalTerm": "Retikülositoz",
+    "safeNestedTerms": [
+      "Retikülosit sayısı",
+      "Hemoliz",
+      "Kemik iliği yetmezliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-uremi",
+    "canonicalTerm": "Üremi",
+    "safeNestedTerms": [
+      "BUN",
+      "Serum kreatinin",
+      "Hemodiyaliz"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-gastroenterit",
+    "canonicalTerm": "Gastroenterit",
+    "safeNestedTerms": [
+      "Dehidratasyon",
+      "Oral rehidratasyon",
+      "İshal"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-gastrit",
+    "canonicalTerm": "Gastrit",
+    "safeNestedTerms": [
+      "H. pylori",
+      "NSAİİ",
+      "Epigastrik ağrı"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-kolesistit",
+    "canonicalTerm": "Kolesistit",
+    "safeNestedTerms": [
+      "Murphy bulgusu",
+      "Safra taşı",
+      "Ultrasonografi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-akut-kolesistit",
+    "canonicalTerm": "Akut Kolesistit",
+    "safeNestedTerms": [
+      "Kolesistit",
+      "Murphy bulgusu",
+      "Kolelitiazis"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-psodomembranoz-kolit",
+    "canonicalTerm": "Psödomembranöz Kolit",
+    "safeNestedTerms": [
+      "C. difficile toksinleri",
+      "Antibiyotik ilişkili ishal",
+      "Psödomembran"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-psodomembran",
+    "canonicalTerm": "Psödomembran",
+    "safeNestedTerms": [
+      "Psödomembranöz Kolit",
+      "C. difficile toksinleri"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-bronkoskopi",
+    "canonicalTerm": "Bronkoskopi",
+    "safeNestedTerms": [
+      "Hava yolu obstrüksiyonu",
+      "Hemoptizi",
+      "Yabancı cisim aspirasyonu"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-tiroidektomi",
+    "canonicalTerm": "Tiroidektomi",
+    "safeNestedTerms": [
+      "Nervus laryngeus recurrens lezyonu",
+      "Hipokalsemi",
+      "Paratiroid"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-histerektomi",
+    "canonicalTerm": "Histerektomi",
+    "safeNestedTerms": [
+      "Postpartum kanama",
+      "Uterus",
+      "Cerrahi eksplorasyon"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-kolesistektomi",
+    "canonicalTerm": "Kolesistektomi",
+    "safeNestedTerms": [
+      "Akut Kolesistit",
+      "Kolelitiazis",
+      "Laparoskopi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-akut-hepatit",
+    "canonicalTerm": "Akut Hepatit",
+    "safeNestedTerms": [
+      "Transaminaz yüksekliği",
+      "HBsAg",
+      "Karaciğer Yetmezliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-granulomatoz-polianjiit",
+    "canonicalTerm": "Granülomatoz Polianjiit",
+    "safeNestedTerms": [
+      "ANCA",
+      "Glomerülonefrit",
+      "Hemoptizi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-akut-mastoidit",
+    "canonicalTerm": "Akut Mastoidit",
+    "safeNestedTerms": [
+      "Otitis media",
+      "Postauriküler şişlik",
+      "Menenjit"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hartnup-hastaligi",
+    "canonicalTerm": "Hartnup Hastalığı",
+    "safeNestedTerms": [
+      "Triptofan",
+      "Niasin",
+      "Pellagra"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-nocardia-asteroides-kompleksi",
+    "canonicalTerm": "Nocardia asteroides Kompleksi",
+    "safeNestedTerms": [
+      "Aside dirençli basil",
+      "Fırsatçı enfeksiyon",
+      "Beyin apsesi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-serum-hastaligi",
+    "canonicalTerm": "Serum Hastalığı",
+    "safeNestedTerms": [
+      "Tip III aşırı duyarlılık",
+      "İmmün kompleks birikimi",
+      "Kompleman aktivasyonu"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-yapisal-kalp-hastaligi",
+    "canonicalTerm": "Yapısal Kalp Hastalığı",
+    "safeNestedTerms": [
+      "Ventriküler Taşikardi",
+      "Ekokardiyografi",
+      "Kardiyomiyopati"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-sinus-ritmi",
+    "canonicalTerm": "Sinüs Ritmi",
+    "safeNestedTerms": [
+      "P dalgası",
+      "QRS kompleksi",
+      "Sinüs Taşikardi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-sinus-tasikardi",
+    "canonicalTerm": "Sinüs Taşikardi",
+    "safeNestedTerms": [
+      "Sinüs Ritmi",
+      "Hipovolemi",
+      "Hipoksemi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-sinus-bradikardi",
+    "canonicalTerm": "Sinüs Bradikardi",
+    "safeNestedTerms": [
+      "Bradikardi",
+      "AV blok",
+      "Hipotermi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-supraventrikuler-tasikardi",
+    "canonicalTerm": "Supraventriküler Taşikardi",
+    "safeNestedTerms": [
+      "Dar QRS taşikardi",
+      "Adenozin",
+      "Vagal manevra"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-ventrikuler-tasikardi",
+    "canonicalTerm": "Ventriküler Taşikardi",
+    "safeNestedTerms": [
+      "Geniş QRS taşikardi",
+      "Yapısal Kalp Hastalığı",
+      "Hemodinamik instabilite"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-fetal-bradikardi",
+    "canonicalTerm": "Fetal Bradikardi",
+    "safeNestedTerms": [
+      "Vasa previa",
+      "Fetal distres",
+      "Acil doğum"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-nervus-laryngeus-recurrens-lezyonu",
+    "canonicalTerm": "Nervus laryngeus recurrens lezyonu",
+    "safeNestedTerms": [
+      "Tiroidektomi",
+      "Vokal kord paralizisi",
+      "Ses kısıklığı"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-vokal-kord-paralizisi",
+    "canonicalTerm": "Vokal kord paralizisi",
+    "safeNestedTerms": [
+      "Nervus laryngeus recurrens lezyonu",
+      "Ses kısıklığı",
+      "Tiroidektomi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-servikal-lenfadenopati",
+    "canonicalTerm": "Servikal Lenfadenopati",
+    "safeNestedTerms": [
+      "Lenf nodu",
+      "Tüberküloz",
+      "Lenfoma"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-spinal-kord-lezyonu",
+    "canonicalTerm": "Spinal kord lezyonu",
+    "safeNestedTerms": [
+      "Duyusal seviye",
+      "Motor defisit",
+      "Sfinkter disfonksiyonu"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-konus-medullaris-lezyonu",
+    "canonicalTerm": "Konus medullaris lezyonu",
+    "safeNestedTerms": [
+      "Kauda equina sendromu",
+      "Sfinkter disfonksiyonu",
+      "Duyusal seviye"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-kemik-iligi-yetmezligi",
+    "canonicalTerm": "Kemik iliği yetmezliği",
+    "safeNestedTerms": [
+      "Retikülositoz",
+      "Pansitopeni",
+      "Blast"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-b12-eksikligi",
+    "canonicalTerm": "B12 Eksikliği",
+    "safeNestedTerms": [
+      "Megaloblastik anemi",
+      "Nörolojik tutulum",
+      "Folik asit"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-d-vitamini-eksikligi",
+    "canonicalTerm": "D Vitamini Eksikliği",
+    "safeNestedTerms": [
+      "PTH",
+      "Hipokalsemi",
+      "Raşitizm"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-alfa-1-antitripsin-eksikligi",
+    "canonicalTerm": "Alfa-1 Antitripsin Eksikliği",
+    "safeNestedTerms": [
+      "Panasinüler amfizem",
+      "Karaciğer Yetmezliği",
+      "Nötrofil elastaz"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-tiamin-eksikligi",
+    "canonicalTerm": "Tiamin Eksikliği",
+    "safeNestedTerms": [
+      "Wernicke ensefalopatisi",
+      "Piruvat dehidrogenaz",
+      "Laktik asit"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-biotinidaz-eksikligi",
+    "canonicalTerm": "Biotinidaz Eksikliği",
+    "safeNestedTerms": [
+      "Biotin",
+      "Yenidoğan taraması",
+      "Nöbet"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-fruktoz-1-6-bisfosfataz-eksikligi",
+    "canonicalTerm": "Fruktoz-1,6-bisfosfataz Eksikliği",
+    "safeNestedTerms": [
+      "Glukoneogenez",
+      "Hipoglisemi",
+      "Laktik asit"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-kas-glikojen-fosforilaz-eksikligi",
+    "canonicalTerm": "Kas Glikojen Fosforilaz Eksikliği",
+    "safeNestedTerms": [
+      "Glikojen yıkımı",
+      "Egzersiz intoleransı",
+      "Miyoglobinüri"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-intravenoz-dekstroz",
+    "canonicalTerm": "İntravenöz Dekstroz",
+    "safeNestedTerms": [
+      "Hipoglisemi",
+      "Glukoz",
+      "Tiamin Eksikliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hipovolemi",
+    "canonicalTerm": "Hipovolemi",
+    "safeNestedTerms": [
+      "Prerenal azotemi",
+      "Şok",
+      "Taşikardi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hiperlipidemi",
+    "canonicalTerm": "Hiperlipidemi",
+    "safeNestedTerms": [
+      "LDL",
+      "Trigliserid",
+      "Ateroskleroz"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hiperinsulinemi",
+    "canonicalTerm": "Hiperinsülinemi",
+    "safeNestedTerms": [
+      "İnsülin direnci",
+      "C-peptid",
+      "Hipoglisemi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-mr-difuzyon-kisitliligi",
+    "canonicalTerm": "MR difüzyon kısıtlılığı",
+    "safeNestedTerms": [
+      "Akut iskemik inme",
+      "MR",
+      "İskemi"
+    ]
+  }
+]

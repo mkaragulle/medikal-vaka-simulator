@@ -18,7 +18,8 @@ const TOOLTIP_BODY_MAX_NESTED_TERMS = 5;
 // Safety is provided by cycle detection (visited entry path), deterministic binding,
 // safeNestedTerms/relatedTerms gating, and per-card nested-term limits.
 const TOOLTIP_BODY_MAX_NESTED_DEPTH = Number.POSITIVE_INFINITY;
-const PREANSWER_MAX_TERMS_PER_TEXT = 6;
+const PREANSWER_MAX_TERMS_PER_TEXT = 6; // retained for legacy imports; no longer used to restrict glossary content
+const GLOSSARY_EXPLANATION_MODE = 'fullEducational';
 const VIEWPORT_PADDING = 12;
 const SAFE_TOP_PADDING = 12;
 const TOOLTIP_GAP = 8;
@@ -583,7 +584,7 @@ function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFlo
       className="glossary-tooltip floating-glossary-tooltip smart-glossary-popover"
       role="tooltip"
       data-placement={position.placement}
-      data-reveal-mode={revealMode}
+      data-reveal-mode={GLOSSARY_EXPLANATION_MODE}
       data-nesting-level={nestingLevel}
       data-glossary-tooltip-owner={id}
       data-klinikiq-floating-tooltip="true"
@@ -677,7 +678,7 @@ function neutralPreAnswerDefinition(entry = {}) {
   if (/mekanizma|fizyoloji|moleküler|genetik|immünoloji/.test(normalizedCategory)) {
     return `${term}, hastalık mekanizması veya temel bilim yorumlamasında kullanılan bilimsel bir kavramdır.`;
   }
-  return `${term}, klinik metinlerde anlamı bilinmesi gereken tıbbi/terminolojik bir kavramdır.`;
+  return `${term}, ilgili bağlamda temel tanımı ve klinik önemiyle açıklanması gereken tıbbi bir kavramdır.`;
 }
 
 function getPreAnswerDefinition(entry = {}) {
@@ -749,7 +750,7 @@ function buildSafeNestedTermPool(parentEntry = {}, allTerms = [], sourceText = '
   if (!parentEntry || !Array.isArray(allTerms) || !allTerms.length) return [];
   if (hasReachedNestedDepthLimit(currentDepth, maxDepth)) return [];
 
-  const isPreAnswer = revealMode === 'preAnswer' || revealMode === 'neutral';
+  // Glossary is a learning layer: answer state must not reduce nested coverage.
   const labels = getSafeNestedLabels(parentEntry);
   const allowedKeys = new Set(labels.map((item) => normalizeGlossaryText(item)).filter(Boolean));
   const sourceNormalized = normalizeGlossaryText(sourceText || '');
@@ -767,7 +768,6 @@ function buildSafeNestedTermPool(parentEntry = {}, allTerms = [], sourceText = '
     if (!candidate || isSameGlossaryEntry(candidate, parentEntry)) return;
     if (isVisitedCandidate(candidate)) return;
     if (candidate.nestedGlossaryAllowed === false && !explicit) return;
-    if (isPreAnswer && candidate.answerLeakRisk === 'high' && !explicit) return;
     const keys = getEntryIdentityKeys(candidate);
     if (!keys.length || keys.some((key) => selectedKeys.has(key))) return;
     if (!sourceContainsCandidate(sourceNormalized, candidate)) return;
@@ -882,11 +882,10 @@ function GlossaryCard({
 
   const currentEntry = entry || {};
   const currentDepth = Math.max(0, Number(nestingLevel || 0));
-  const isPreAnswer = revealMode === 'preAnswer' || revealMode === 'neutral';
+  const isPreAnswer = false;
   const previewDefinition = currentEntry.previewDefinition || currentEntry.shortDefinition || currentEntry.definition || '';
-  const safeDefinition = getPreAnswerDefinition(currentEntry);
-  const shortDefinition = isPreAnswer ? safeDefinition : (currentEntry.shortDefinition || previewDefinition);
-  const rawDetailed = currentEntry.postAnswerExpandedExplanation || currentEntry.detailedExplanation || '';
+  const shortDefinition = currentEntry.shortDefinition || previewDefinition || currentEntry.preAnswerSafeDefinition || '';
+  const rawDetailed = currentEntry.postAnswerExpandedExplanation || currentEntry.postAnswerExplanation || currentEntry.detailedExplanation || currentEntry.longDefinition || '';
   const rawTusPearl = currentEntry.tusPearl || '';
   const rawDifferential = currentEntry.differentialPoint || '';
   const rawRelevance = currentEntry.clinicalRelevance || currentEntry.clinicalContext || '';
@@ -914,7 +913,8 @@ function GlossaryCard({
   const relevance = !isDuplicateSection(rawRelevance, [...baseShownValues, tusPearl, differential, detailed]) ? rawRelevance : '';
   const mechanism = !isDuplicateSection(rawMechanism, [...baseShownValues, tusPearl, differential, detailed, relevance]) ? rawMechanism : '';
 
-  const canExpand = !isPreAnswer && Boolean(detailed || relevance || mechanism || relatedTerms.length);
+  const canExpand = false;
+  const showFullEducationalDetail = Boolean(detailed || relevance || mechanism || relatedTerms.length);
   const nestedSourceText = [shortDefinition, tusPearl, differential, detailed, mechanism, relevance, relatedTerms.join(' ')]
     .filter(Boolean)
     .join(' ');
@@ -954,7 +954,8 @@ function GlossaryCard({
   return (
     <span
       className="smart-glossary-card smart-glossary-card--stacked-popover"
-      data-preanswer={isPreAnswer ? 'true' : 'false'}
+      data-preanswer="false"
+      data-explanation-mode={GLOSSARY_EXPLANATION_MODE}
       data-nesting-level={nestingLevel}
       data-current-depth={currentDepth}
     >
@@ -963,36 +964,20 @@ function GlossaryCard({
           <strong className="smart-glossary-title">{cardTitle}</strong>
           {secondaryName && secondaryName !== cardTitle ? <small className="smart-glossary-secondary-name">{secondaryName}</small> : null}
         </span>
-        <span className="smart-glossary-header-actions">
-          {canExpand ? (
-            <button
-              type="button"
-              className="smart-glossary-arrow"
-              onClick={(event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                setExpanded((current) => !current);
-              }}
-              aria-label={expanded ? 'Terminoloji detayını gizle' : 'Terminoloji detayını göster'}
-              aria-expanded={expanded}
-            >
-              →
-            </button>
-          ) : null}
-        </span>
+        <span className="smart-glossary-header-actions" aria-hidden="true" />
       </span>
 
       {shortDefinition ? <span className="smart-glossary-definition">{renderGlossaryInline(shortDefinition, 3)}</span> : null}
 
-      {!isPreAnswer && tusPearl ? (
+      {tusPearl ? (
         <span className="smart-glossary-row pearl"><b>TUS ipucu</b><span>{renderGlossaryInline(tusPearl)}</span></span>
       ) : null}
 
-      {!isPreAnswer && differential ? (
+      {differential ? (
         <span className="smart-glossary-row differential"><b>Ayırıcı not</b><span>{renderGlossaryInline(differential)}</span></span>
       ) : null}
 
-      {!isPreAnswer && expanded ? (
+      {showFullEducationalDetail ? (
         <span className="smart-glossary-detail-block">
           {detailed ? <span>{renderGlossaryInline(detailed)}</span> : null}
           {mechanism ? <span><b>Mekanizma:</b> {renderGlossaryInline(mechanism)}</span> : null}
@@ -1090,7 +1075,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
       className="glossary-term smart-glossary-term"
       tabIndex={0}
       role="button"
-      data-reveal-mode={revealMode}
+      data-reveal-mode={GLOSSARY_EXPLANATION_MODE}
       data-glossary-entry-id={resolvedEntry?.id || ''}
       data-glossary-entry-term={visibleTermLabel}
       data-nesting-level={nestingLevel}
@@ -1191,7 +1176,7 @@ function GlossaryText({
     if (termsMode === 'only' && Array.isArray(extraTerms)) return extraTerms;
     return getGlossaryTerms(extraTerms, { branchId });
   }, [enabled, extraTermsKey, branchId, termsMode, extraTerms]);
-  const effectiveMaxTerms = maxTerms ?? (revealMode === 'preAnswer' || revealMode === 'neutral' ? PREANSWER_MAX_TERMS_PER_TEXT : DEFAULT_MAX_TERMS_PER_TEXT);
+  const effectiveMaxTerms = maxTerms ?? DEFAULT_MAX_TERMS_PER_TEXT;
   const sourceText = String(text || '');
   const effectiveContextMode = contextMode || (nestingLevel > 0 ? 'tooltip-body' : (revealMode === 'preAnswer' ? 'case-pre-answer' : 'case-post-answer'));
   const isTooltipBodyMode = effectiveContextMode === 'tooltip-body' || effectiveContextMode === 'nested-tooltip-body';

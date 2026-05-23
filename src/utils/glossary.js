@@ -13,6 +13,8 @@ import { TUS_GLOSSARY_NESTED_COVERAGE_TERMS } from '../data/tusGlossaryNestedCov
 import { TUS_GLOSSARY_AMBIGUITY_SAFETY_TERMS } from '../data/tusGlossaryAmbiguitySafetyIndex.js';
 import { TUS_GLOSSARY_CONTENT_COVERAGE_TERMS } from '../data/tusGlossaryContentCoverageIndex.js';
 import { TUS_GLOSSARY_RECURSIVE_NESTED_TERMS } from '../data/tusGlossaryRecursiveNestedIndex.js';
+import { TUS_GLOSSARY_CANDIDATE_AUDIT_TERMS } from '../data/tusGlossaryCandidateAuditIndex.js';
+import { TUS_GLOSSARY_DEFINITION_QUALITY_TERMS } from '../data/tusGlossaryDefinitionQualityIndex.js';
 
 const teachingOnly = 'teachingOnly';
 
@@ -9474,6 +9476,9 @@ export const branchGlossaryTerms = {};
 export const defaultGlossaryTerms = globalGlossaryTerms;
 
 const STATIC_GLOSSARY_SOURCES = [
+  // Highest-priority quality layer: removes placeholder/filler definitions while preserving aliases and matching behavior.
+  ...TUS_GLOSSARY_DEFINITION_QUALITY_TERMS,
+  ...TUS_GLOSSARY_CANDIDATE_AUDIT_TERMS,
   ...TUS_GLOSSARY_RECURSIVE_NESTED_TERMS,
   // Binding corrections come first: they define true canonical owners for terms
   // that legacy rows sometimes used only as context clues (e.g. asthma inside
@@ -9994,20 +9999,78 @@ const PREANSWER_DEFINITION_LEAKAGE_PATTERNS = [
   /\b(?:düşük|yüksek|azalmış|artmış)\s+(?:biyoyararlanım|saptanır|saptandı)\b/iu,
 ];
 
-function hasPreAnswerDefinitionLeakage(value = '') {
+export function hasPreAnswerDefinitionLeakage(value = '') {
   const text = String(value || '');
   return PREANSWER_DEFINITION_LEAKAGE_PATTERNS.some((pattern) => pattern.test(text));
+}
+
+
+export function isPlaceholderDefinitionText(value = '') {
+  const text = String(value || '').replace(/\s+/g, ' ').trim();
+  if (!text) return false;
+  const patterns = [
+    /klinik metinlerde anlam[ıi] bilinmesi gereken/iu,
+    /t[ıi]bbi\/?terminolojik bir kavramd[ıi]r/iu,
+    /t[ıi]bbi a[çc][ıi]dan [öo]nemli bir kavramd[ıi]r/iu,
+    /klinikte kullan[ıi]lan bir terimdir/iu,
+    /sa[ğg]l[ıi]k alan[ıi]nda kullan[ıi]lan bir ifadedir/iu,
+    /TUS a[çc][ıi]s[ıi]ndan bilinmesi gereken/iu,
+    /bu kavram klinik pratikte [öo]nemlidir/iu,
+    /bu terim t[ıi]bbi metinlerde ge[çc]ebilir/iu,
+    /hakk[ıi]nda bilgi sahibi olmak [öo]nemlidir/iu,
+    /ilgili klinik ba[ğg]lamda de[ğg]erlendirilmelidir/iu,
+    /çeşitli hastalıklarla ilişkili olabilir/iu,
+    /tan[ıi] ve tedavide [öo]nem ta[şs][ıi]r/iu,
+    /klinik tabloyla ilişkili bir terimdir/iu,
+    /belirli semptom, muayene ve objektif veri [öo]r[üu]nt[üu]s[üu]yle tan[ıi]nan/iu,
+    /tipik başvuru, ay[ıi]rt ettirici muayene\/laboratuvar bulgusu/iu,
+    /kaynak c[üu]mlelerde .* ile e[şs]le[şs]mesi/iu,
+    /TUS’ta .* benzer tablolardan bir veya iki ay[ıi]rt ettirici ipucuyla ayr[ıi]l[ıi]r/iu,
+    /başlang[ıi]ç h[ıi]z[ıi], lokalizasyon, sistemik bulgu/iu,
+    /KlinikIQ metinlerinde klinik ak[ıi]l y[üu]r[üu]tmeyi destekleyen/iu,
+    /ge[çc]ti[ğg]i c[üu]mledeki klinik ba[ğg]lama g[öo]re a[çc][ıi]klanmas[ıi] gereken/iu,
+    /neden [öo]nemli, hangi mekanizmaya ba[ğg]lan[ıi]r/iu,
+    /ancak olgu i[çc]indeki ay[ıi]rt ettirici ipucuyla birlikte de[ğg]er kazan[ıi]r/iu,
+    /tooltip bu ipucunu ezber de[ğg]il karar mant[ıi][ğg][ıi] olarak anlatmal[ıi]d[ıi]r/iu,
+  ];
+  return patterns.some((pattern) => pattern.test(text));
 }
 
 function buildNeutralSafeDefinitionForEntry(entry = {}, canonicalTerm = '') {
   const term = canonicalTerm || entry.canonicalTerm || entry.displayTerm || entry.term || 'Bu kavram';
   const category = String(entry.category || '').toLocaleLowerCase('tr');
-  if (/ilaç|farmakoloji|antidot|tedavi|ajan|antibiyotik|antikoagülan|manevra/.test(category)) return `${term}, klinik yönetim veya tedavi yaklaşımı bağlamında kullanılan tıbbi bir kavramdır.`;
-  if (/hastalık|sendrom|enfeksiyon|patoloji|neoplazi|tümör|kanser/.test(category)) return `${term}, klinik değerlendirmede tanı ve ayırıcı tanı açısından kullanılan tıbbi bir kavramdır.`;
-  if (/laboratuvar|biyokimya|asit|baz|kan gazı|parametre|tetkik|görüntüleme/.test(category)) return `${term}, klinik değerlendirme veya laboratuvar/görüntüleme yorumunda kullanılan tıbbi bir kavramdır.`;
-  if (/bulgu|semptom|muayene|ekg/.test(category)) return `${term}, klinik değerlendirmede anlam taşıyan bir bulgu veya muayene terimidir.`;
-  if (/mekanizma|fizyoloji|moleküler|genetik|immünoloji|patofizyoloji/.test(category)) return `${term}, hastalık mekanizması veya temel bilim yorumlamasında kullanılan bilimsel bir kavramdır.`;
-  return `${term}, klinik metinlerde anlamı bilinmesi gereken tıbbi/terminolojik bir kavramdır.`;
+  const shortDefinition = String(entry.shortDefinition || entry.definition || entry.previewDefinition || '').trim();
+
+  // Prefer an already scientific short definition if it is not itself leaky or filler.
+  if (shortDefinition && !hasPreAnswerDefinitionLeakage(shortDefinition) && !isPlaceholderDefinitionText(shortDefinition)) {
+    return shortDefinition;
+  }
+
+  if (/kadın|doğum|obstetrik|preeklampsi|gebelik|postpartum/.test(category)) {
+    return `${term}, gebelik veya postpartum bağlamda maternal-fetal risk değerlendirmesiyle ilişkili klinik bir kavramdır; ayrıntılı tanı/tedavi ipuçları cevap sonrası gösterilir.`;
+  }
+  if (/ilaç|farmakoloji|antidot|tedavi|ajan|antibiyotik|antikoagülan|manevra|girişim|cerrahi/.test(category)) {
+    return `${term}, klinik yönetimde belirli bir mekanizma veya işlem basamağıyla ilişkili yaklaşımdır; uygulama sırası ve endikasyon bağlama göre değerlendirilir.`;
+  }
+  if (/hastalık|sendrom|enfeksiyon|patoloji|neoplazi|tümör|kanser|acil/.test(category)) {
+    return `${term}, belirli organ/sistem etkilenimi ve klinik bulgu örüntüsüyle yorumlanan hastalık veya klinik tablodur.`;
+  }
+  if (/laboratuvar|biyokimya|asit|baz|kan gazı|parametre/.test(category)) {
+    return `${term}, biyolojik süreç veya laboratuvar yorumu açısından anlam taşıyan ölçüm/kavramdır; yorum klinik bağlama göre yapılır.`;
+  }
+  if (/tetkik|görüntüleme|radyoloji|bt|mr|ultrasonografi|grafi/.test(category)) {
+    return `${term}, belirli anatomik veya patolojik soruyu yanıtlamak için kullanılan görüntüleme/değerlendirme yöntemidir.`;
+  }
+  if (/bulgu|semptom|muayene|ekg|hareket|fonksiyonel/.test(category)) {
+    return `${term}, muayene veya klinik gözlemde saptanan ve altta yatan mekanizmayı yorumlamaya yardım eden bulgudur.`;
+  }
+  if (/anatomi|anatomik|lokalizasyon|bölge|sinir|arter|ven|kas/.test(category)) {
+    return `${term}, klinik bulgu veya girişimlerin anatomik yerleşimini anlamak için kullanılan lokalizasyon kavramıdır.`;
+  }
+  if (/mekanizma|fizyoloji|moleküler|genetik|immünoloji|patofizyoloji|sinyal/.test(category)) {
+    return `${term}, hücresel veya sistemik yanıtı açıklayan mekanizma/temel bilim kavramıdır.`;
+  }
+  return `${term}, klinik bağlama göre organ, mekanizma veya karar süreciyle ilişkilendirilerek yorumlanan tıbbi kavramdır.`;
 }
 
 function normalizeEntry(entry = {}) {

@@ -1,0 +1,614 @@
+[
+  {
+    "entryId": "candidate-audit-v293-adrenal-yetmezligi",
+    "canonicalTerm": "Adrenal Yetmezliği",
+    "aliases": [
+      "Adrenal Yetmezliği",
+      "primer adrenal yetmezlik",
+      "Addison hastalığı",
+      "adrenal insufficiency"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-primer-adrenal-yetmezlik",
+    "canonicalTerm": "Primer Adrenal Yetmezlik",
+    "aliases": [
+      "Primer Adrenal Yetmezlik",
+      "primer adrenal yetmezliği",
+      "Addison hastalığı"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-sekonder-adrenal-yetmezlik",
+    "canonicalTerm": "Sekonder Adrenal Yetmezlik",
+    "aliases": [
+      "Sekonder Adrenal Yetmezlik",
+      "sekonder adrenal yetmezliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-kortizol-eksikligi",
+    "canonicalTerm": "Kortizol eksikliği",
+    "aliases": [
+      "Kortizol eksikliği",
+      "düşük kortizol"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-karaciger-yetmezligi",
+    "canonicalTerm": "Karaciğer Yetmezliği",
+    "aliases": [
+      "Karaciğer Yetmezliği",
+      "hepatik yetmezlik",
+      "acute liver failure",
+      "liver failure"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-pankreatik-ekzokrin-yetmezlik",
+    "canonicalTerm": "Pankreatik Ekzokrin Yetmezlik",
+    "aliases": [
+      "Pankreatik Ekzokrin Yetmezlik",
+      "pankreatik ekzokrin yetmezliği",
+      "ekzokrin yetmezliği",
+      "pankreas yetmezliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-prematur-over-yetmezligi",
+    "canonicalTerm": "Prematür Over Yetmezliği",
+    "aliases": [
+      "Prematür Over Yetmezliği",
+      "primer over yetmezliği",
+      "over yetmezliği",
+      "premature ovarian insufficiency"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-pankreas-yetmezligi",
+    "canonicalTerm": "Pankreas Yetmezliği",
+    "aliases": [
+      "Pankreas Yetmezliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-iga",
+    "canonicalTerm": "IgA",
+    "aliases": [
+      "IgA",
+      "immünoglobulin A",
+      "sIgA"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-igg",
+    "canonicalTerm": "IgG",
+    "aliases": [
+      "IgG",
+      "immünoglobulin G"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-igm",
+    "canonicalTerm": "IgM",
+    "aliases": [
+      "IgM",
+      "immünoglobulin M"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-selektif-iga-eksikligi",
+    "canonicalTerm": "Selektif IgA Eksikliği",
+    "aliases": [
+      "Selektif IgA Eksikliği",
+      "IgA eksikliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-tsh",
+    "canonicalTerm": "TSH",
+    "aliases": [
+      "TSH",
+      "tiroid stimülan hormon",
+      "thyroid stimulating hormone"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-pth",
+    "canonicalTerm": "PTH",
+    "aliases": [
+      "PTH",
+      "parathormon",
+      "paratiroid hormon"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hbsag",
+    "canonicalTerm": "HBsAg",
+    "aliases": [
+      "HBsAg",
+      "hepatit B yüzey antijeni",
+      "HBs antijeni"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hbeag",
+    "canonicalTerm": "HBeAg",
+    "aliases": [
+      "HBeAg",
+      "hepatit B e antijeni"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-pcr",
+    "canonicalTerm": "PCR",
+    "aliases": [
+      "PCR",
+      "polimeraz zincir reaksiyonu",
+      "polymerase chain reaction"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-usg",
+    "canonicalTerm": "USG",
+    "aliases": [
+      "USG",
+      "ultrasonografi",
+      "ultrason",
+      "sonografi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-mr-kolanjiyografi",
+    "canonicalTerm": "MR Kolanjiyografi",
+    "aliases": [
+      "MR Kolanjiyografi",
+      "MRCP",
+      "manyetik rezonans kolanjiyografi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-serum-afp",
+    "canonicalTerm": "Serum AFP",
+    "aliases": [
+      "Serum AFP",
+      "AFP",
+      "alfa fetoprotein",
+      "alfa-fetoprotein"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-ggt",
+    "canonicalTerm": "GGT",
+    "aliases": [
+      "GGT",
+      "gama glutamil transferaz",
+      "gamma-GT",
+      "γ-GT"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-c3-c4-dusuklugu",
+    "canonicalTerm": "C3/C4 Düşüklüğü",
+    "aliases": [
+      "C3/C4 Düşüklüğü",
+      "düşük C3",
+      "düşük C4",
+      "kompleman düşüklüğü",
+      "C3 düşüklüğü"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-direkt-bilirubin-yuksekligi",
+    "canonicalTerm": "Direkt bilirubin yüksekliği",
+    "aliases": [
+      "Direkt bilirubin yüksekliği",
+      "direkt hiperbilirubinemi",
+      "konjuge hiperbilirubinemi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hipokalemi",
+    "canonicalTerm": "Hipokalemi",
+    "aliases": [
+      "Hipokalemi",
+      "düşük potasyum",
+      "hipopotasemi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-metabolik-alkaloz",
+    "canonicalTerm": "Metabolik Alkaloz",
+    "aliases": [
+      "Metabolik Alkaloz"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hipokalemik-metabolik-alkaloz",
+    "canonicalTerm": "Hipokalemik Metabolik Alkaloz",
+    "aliases": [
+      "Hipokalemik Metabolik Alkaloz",
+      "hipokalemi metabolik alkaloz",
+      "hipertansiyon hipokalemi metabolik alkaloz"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hipoksemi",
+    "canonicalTerm": "Hipoksemi",
+    "aliases": [
+      "Hipoksemi",
+      "düşük PaO2",
+      "arteriyel hipoksemi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hiperamonyemi",
+    "canonicalTerm": "Hiperamonyemi",
+    "aliases": [
+      "Hiperamonyemi",
+      "hiperammonemi",
+      "yüksek amonyak",
+      "amonyak yüksekliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-retikulositoz",
+    "canonicalTerm": "Retikülositoz",
+    "aliases": [
+      "Retikülositoz",
+      "retikülosit artışı",
+      "retikülosit yüksekliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-uremi",
+    "canonicalTerm": "Üremi",
+    "aliases": [
+      "Üremi",
+      "üremik tablo"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-gastroenterit",
+    "canonicalTerm": "Gastroenterit",
+    "aliases": [
+      "Gastroenterit",
+      "akut gastroenterit"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-gastrit",
+    "canonicalTerm": "Gastrit",
+    "aliases": [
+      "Gastrit",
+      "mide mukozası inflamasyonu"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-kolesistit",
+    "canonicalTerm": "Kolesistit",
+    "aliases": [
+      "Kolesistit",
+      "akut kolesistit"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-akut-kolesistit",
+    "canonicalTerm": "Akut Kolesistit",
+    "aliases": [
+      "Akut Kolesistit",
+      "akut safra kesesi iltihabı"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-psodomembranoz-kolit",
+    "canonicalTerm": "Psödomembranöz Kolit",
+    "aliases": [
+      "Psödomembranöz Kolit",
+      "C. difficile koliti",
+      "antibiyotik ilişkili kolit"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-psodomembran",
+    "canonicalTerm": "Psödomembran",
+    "aliases": [
+      "Psödomembran",
+      "psödomembranöz"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-bronkoskopi",
+    "canonicalTerm": "Bronkoskopi",
+    "aliases": [
+      "Bronkoskopi",
+      "bronkoskopik değerlendirme"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-tiroidektomi",
+    "canonicalTerm": "Tiroidektomi",
+    "aliases": [
+      "Tiroidektomi",
+      "tiroid cerrahisi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-histerektomi",
+    "canonicalTerm": "Histerektomi",
+    "aliases": [
+      "Histerektomi",
+      "uterus çıkarılması"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-kolesistektomi",
+    "canonicalTerm": "Kolesistektomi",
+    "aliases": [
+      "Kolesistektomi",
+      "laparoskopik kolesistektomi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-akut-hepatit",
+    "canonicalTerm": "Akut Hepatit",
+    "aliases": [
+      "Akut Hepatit",
+      "akut karaciğer inflamasyonu"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-granulomatoz-polianjiit",
+    "canonicalTerm": "Granülomatoz Polianjiit",
+    "aliases": [
+      "Granülomatoz Polianjiit",
+      "GPA",
+      "Wegener granülomatozu",
+      "granulomatosis with polyangiitis"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-akut-mastoidit",
+    "canonicalTerm": "Akut Mastoidit",
+    "aliases": [
+      "Akut Mastoidit",
+      "mastoidit"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hartnup-hastaligi",
+    "canonicalTerm": "Hartnup Hastalığı",
+    "aliases": [
+      "Hartnup Hastalığı",
+      "Hartnup"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-nocardia-asteroides-kompleksi",
+    "canonicalTerm": "Nocardia asteroides Kompleksi",
+    "aliases": [
+      "Nocardia asteroides Kompleksi",
+      "Nocardia",
+      "Nocardia asteroides"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-serum-hastaligi",
+    "canonicalTerm": "Serum Hastalığı",
+    "aliases": [
+      "Serum Hastalığı",
+      "serum sickness"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-yapisal-kalp-hastaligi",
+    "canonicalTerm": "Yapısal Kalp Hastalığı",
+    "aliases": [
+      "Yapısal Kalp Hastalığı",
+      "structural heart disease"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-sinus-ritmi",
+    "canonicalTerm": "Sinüs Ritmi",
+    "aliases": [
+      "Sinüs Ritmi",
+      "normal sinüs ritmi",
+      "sinus rhythm"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-sinus-tasikardi",
+    "canonicalTerm": "Sinüs Taşikardi",
+    "aliases": [
+      "Sinüs Taşikardi",
+      "sinüs taşikardisi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-sinus-bradikardi",
+    "canonicalTerm": "Sinüs Bradikardi",
+    "aliases": [
+      "Sinüs Bradikardi",
+      "sinüs bradikardisi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-supraventrikuler-tasikardi",
+    "canonicalTerm": "Supraventriküler Taşikardi",
+    "aliases": [
+      "Supraventriküler Taşikardi",
+      "SVT"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-ventrikuler-tasikardi",
+    "canonicalTerm": "Ventriküler Taşikardi",
+    "aliases": [
+      "Ventriküler Taşikardi",
+      "VT"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-fetal-bradikardi",
+    "canonicalTerm": "Fetal Bradikardi",
+    "aliases": [
+      "Fetal Bradikardi",
+      "fetal bradikardisi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-nervus-laryngeus-recurrens-lezyonu",
+    "canonicalTerm": "Nervus laryngeus recurrens lezyonu",
+    "aliases": [
+      "Nervus laryngeus recurrens lezyonu",
+      "rekürren laringeal sinir lezyonu",
+      "laryngeus recurrens lezyonu"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-vokal-kord-paralizisi",
+    "canonicalTerm": "Vokal kord paralizisi",
+    "aliases": [
+      "Vokal kord paralizisi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-servikal-lenfadenopati",
+    "canonicalTerm": "Servikal Lenfadenopati",
+    "aliases": [
+      "Servikal Lenfadenopati",
+      "boyunda lenfadenopati",
+      "servikal LAP"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-spinal-kord-lezyonu",
+    "canonicalTerm": "Spinal kord lezyonu",
+    "aliases": [
+      "Spinal kord lezyonu",
+      "omurilik lezyonu"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-konus-medullaris-lezyonu",
+    "canonicalTerm": "Konus medullaris lezyonu",
+    "aliases": [
+      "Konus medullaris lezyonu",
+      "konus medullaris sendromu"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-kemik-iligi-yetmezligi",
+    "canonicalTerm": "Kemik iliği yetmezliği",
+    "aliases": [
+      "Kemik iliği yetmezliği",
+      "iliği yetmezliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-b12-eksikligi",
+    "canonicalTerm": "B12 Eksikliği",
+    "aliases": [
+      "B12 Eksikliği",
+      "vitamin B12 eksikliği",
+      "kobalamin eksikliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-d-vitamini-eksikligi",
+    "canonicalTerm": "D Vitamini Eksikliği",
+    "aliases": [
+      "D Vitamini Eksikliği",
+      "vitamin D eksikliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-alfa-1-antitripsin-eksikligi",
+    "canonicalTerm": "Alfa-1 Antitripsin Eksikliği",
+    "aliases": [
+      "Alfa-1 Antitripsin Eksikliği",
+      "A1AT eksikliği",
+      "alfa 1 antitripsin eksikliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-tiamin-eksikligi",
+    "canonicalTerm": "Tiamin Eksikliği",
+    "aliases": [
+      "Tiamin Eksikliği",
+      "vitamin B1 eksikliği",
+      "B1 eksikliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-biotinidaz-eksikligi",
+    "canonicalTerm": "Biotinidaz Eksikliği",
+    "aliases": [
+      "Biotinidaz Eksikliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-fruktoz-1-6-bisfosfataz-eksikligi",
+    "canonicalTerm": "Fruktoz-1,6-bisfosfataz Eksikliği",
+    "aliases": [
+      "Fruktoz-1,6-bisfosfataz Eksikliği",
+      "fruktoz 1,6 bisfosfataz eksikliği",
+      "F1,6BPaz eksikliği",
+      "6-bisfosfataz eksikliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-kas-glikojen-fosforilaz-eksikligi",
+    "canonicalTerm": "Kas Glikojen Fosforilaz Eksikliği",
+    "aliases": [
+      "Kas Glikojen Fosforilaz Eksikliği",
+      "McArdle hastalığı",
+      "myophosphorylase eksikliği"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-intravenoz-dekstroz",
+    "canonicalTerm": "İntravenöz Dekstroz",
+    "aliases": [
+      "İntravenöz Dekstroz",
+      "IV dekstroz",
+      "dekstroz infüzyonu",
+      "intravenöz glukoz"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hipovolemi",
+    "canonicalTerm": "Hipovolemi",
+    "aliases": [
+      "Hipovolemi",
+      "volüm kaybı",
+      "hacim kaybı"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hiperlipidemi",
+    "canonicalTerm": "Hiperlipidemi",
+    "aliases": [
+      "Hiperlipidemi",
+      "dislipidemi"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-hiperinsulinemi",
+    "canonicalTerm": "Hiperinsülinemi",
+    "aliases": [
+      "Hiperinsülinemi",
+      "yüksek insülin"
+    ]
+  },
+  {
+    "entryId": "candidate-audit-v293-mr-difuzyon-kisitliligi",
+    "canonicalTerm": "MR difüzyon kısıtlılığı",
+    "aliases": [
+      "MR difüzyon kısıtlılığı",
+      "DWI kısıtlılığı",
+      "difüzyon kısıtlılığı"
+    ]
+  }
+]

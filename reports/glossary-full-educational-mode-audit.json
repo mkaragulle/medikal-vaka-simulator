@@ -1,0 +1,27 @@
+{
+  "mode": "fullEducational",
+  "checkedAt": "2026-05-23T18:17:44.194Z",
+  "totalEntries": 1543,
+  "definitionFieldsChecked": 12,
+  "entriesWithAnyEducationalDefinition": 1543,
+  "entriesWithPostAnswerOrDetailedExplanation": 1084,
+  "entriesWithTusPearl": 1084,
+  "entriesWithDifferentialPoint": 1063,
+  "entriesWithSafeNestedTerms": 286,
+  "runtimeGuards": {
+    "forbiddenPatternCount": 0,
+    "failedRuntimeGuards": []
+  },
+  "cardContentSelection": {
+    "usesPostAnswerExplanation": true,
+    "tusPearlAlwaysVisible": true,
+    "differentialAlwaysVisible": true,
+    "detailBlockAlwaysVisible": true,
+    "revealModeDataIsFullEducational": true
+  },
+  "regression": {
+    "preAnswerAndPostAnswerUseSameCardContent": true,
+    "nestedCoverageIndependentFromAnswerState": true,
+    "triggerVisualModeNoLongerPreAnswerSpecific": true
+  }
+}

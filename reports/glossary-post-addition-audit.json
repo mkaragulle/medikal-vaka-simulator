@@ -1,0 +1,120 @@
+{
+  "totalEntries": 1543,
+  "totalAliases": 5130,
+  "candidateAuditEntriesDeclared": 71,
+  "candidateAuditEntriesActive": 71,
+  "duplicateIds": 0,
+  "duplicateNormalizedAliases": 0,
+  "integritySeverityCounts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 531,
+    "low": 239
+  },
+  "regressionPassed": 17,
+  "regressionTotal": 17,
+  "regression": [
+    {
+      "query": "Adrenal Yetmezliği",
+      "expected": "Adrenal Yetmezliği",
+      "actual": "Adrenal Yetmezliği",
+      "ok": true
+    },
+    {
+      "query": "Primer Adrenal Yetmezlik",
+      "expected": "Primer Adrenal Yetmezlik",
+      "actual": "Primer Adrenal Yetmezlik",
+      "ok": true
+    },
+    {
+      "query": "Karaciğer Yetmezliği",
+      "expected": "Karaciğer Yetmezliği",
+      "actual": "Karaciğer Yetmezliği",
+      "ok": true
+    },
+    {
+      "query": "IgA",
+      "expected": "IgA",
+      "actual": "IgA",
+      "ok": true
+    },
+    {
+      "query": "IgG",
+      "expected": "IgG",
+      "actual": "IgG",
+      "ok": true
+    },
+    {
+      "query": "IgM",
+      "expected": "IgM",
+      "actual": "IgM",
+      "ok": true
+    },
+    {
+      "query": "TSH",
+      "expected": "TSH",
+      "actual": "TSH",
+      "ok": true
+    },
+    {
+      "query": "PTH",
+      "expected": "PTH",
+      "actual": "PTH",
+      "ok": true
+    },
+    {
+      "query": "HBsAg",
+      "expected": "HBsAg",
+      "actual": "HBsAg",
+      "ok": true
+    },
+    {
+      "query": "PCR",
+      "expected": "PCR",
+      "actual": "PCR",
+      "ok": true
+    },
+    {
+      "query": "Pankreatik Ekzokrin Yetmezlik",
+      "expected": "Pankreatik Ekzokrin Yetmezlik",
+      "actual": "Pankreatik Ekzokrin Yetmezlik",
+      "ok": true
+    },
+    {
+      "query": "Nervus laryngeus recurrens lezyonu",
+      "expected": "Nervus laryngeus recurrens lezyonu",
+      "actual": "Nervus laryngeus recurrens lezyonu",
+      "ok": true
+    },
+    {
+      "query": "Prematür Over Yetmezliği",
+      "expected": "Prematür Over Yetmezliği",
+      "actual": "Prematür Over Yetmezliği",
+      "ok": true
+    },
+    {
+      "query": "Sinüs Bradikardi",
+      "expected": "Sinüs Bradikardi",
+      "actual": "Sinüs Bradikardi",
+      "ok": true
+    },
+    {
+      "query": "MR Kolanjiyografi",
+      "expected": "MR Kolanjiyografi",
+      "actual": "MR Kolanjiyografi",
+      "ok": true
+    },
+    {
+      "query": "Selektif IgA Eksikliği",
+      "expected": "Selektif IgA Eksikliği",
+      "actual": "Selektif IgA Eksikliği",
+      "ok": true
+    },
+    {
+      "query": "Kemik iliği yetmezliği",
+      "expected": "Kemik iliği yetmezliği",
+      "actual": "Kemik iliği yetmezliği",
+      "ok": true
+    }
+  ]
+}
