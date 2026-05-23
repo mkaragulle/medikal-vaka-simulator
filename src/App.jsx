@@ -123,40 +123,110 @@ function resolveDemoCases() {
   return DEMO_CASE_IDS.map((caseId) => getCaseById(caseId)).filter(Boolean);
 }
 
-function buildExamPriorityPool(sourceCases = [], solvedCaseIds = []) {
-  const safeCases = Array.isArray(sourceCases) ? sourceCases.filter(Boolean) : [];
-  const solvedOrder = new Map((Array.isArray(solvedCaseIds) ? solvedCaseIds : []).map((caseId, index) => [caseId, index]));
-  const solvedSet = new Set(solvedOrder.keys());
-
-  const unsolvedCases = safeCases.filter((clinicalCase) => !solvedSet.has(clinicalCase.id));
-  const solvedCases = safeCases.filter((clinicalCase) => solvedSet.has(clinicalCase.id));
-  const recentSolvedThreshold = Math.max(4, Math.ceil(solvedCases.length * 0.25));
-
-  const solvedOldestFirst = [...solvedCases].sort((a, b) => (solvedOrder.get(a.id) ?? 0) - (solvedOrder.get(b.id) ?? 0));
-  const olderSolvedCases = solvedOldestFirst.slice(0, Math.max(0, solvedOldestFirst.length - recentSolvedThreshold));
-  const recentSolvedCases = solvedOldestFirst.slice(Math.max(0, solvedOldestFirst.length - recentSolvedThreshold));
-
-  return [
-    ...shuffleArray(unsolvedCases),
-    ...shuffleArray(olderSolvedCases),
-    ...shuffleArray(recentSolvedCases),
-  ];
+function getSolvedEntryCaseId(entry) {
+  if (!entry) return null;
+  if (typeof entry === 'string') return entry;
+  return entry.caseId || entry.id || null;
 }
 
-function buildExamPool(sourceCases = [], maxQuestionCount = 10, fallbackCases = cases, options = {}) {
-  const safeSource = Array.isArray(sourceCases) ? sourceCases.filter(Boolean) : [];
-  const safeFallback = Array.isArray(fallbackCases) ? fallbackCases.filter(Boolean) : [];
-  const solvedCaseIds = Array.isArray(options.solvedCaseIds) ? options.solvedCaseIds : [];
-  const targetCount = Math.min(maxQuestionCount, Math.max(safeSource.length, safeFallback.length));
-  const prioritizedSource = buildExamPriorityPool(safeSource, solvedCaseIds);
-  const primary = prioritizedSource.slice(0, Math.min(targetCount, prioritizedSource.length));
-  if (primary.length >= targetCount) return primary;
+function normalizeTimestamp(value) {
+  if (!value) return null;
+  const time = typeof value === 'number' ? value : new Date(value).getTime();
+  return Number.isFinite(time) ? time : null;
+}
 
-  const usedIds = new Set(primary.map((item) => item.id));
-  const backup = buildExamPriorityPool(safeFallback, solvedCaseIds)
-    .filter((item) => !usedIds.has(item.id))
-    .slice(0, targetCount - primary.length);
-  return [...primary, ...backup];
+function buildSolvedCaseMap(solvedEntries = [], examHistory = []) {
+  const solvedMap = {};
+
+  (Array.isArray(solvedEntries) ? solvedEntries : []).forEach((entry) => {
+    const caseId = getSolvedEntryCaseId(entry);
+    if (!caseId) return;
+    const solvedAt = typeof entry === 'object'
+      ? normalizeTimestamp(entry.solvedAt || entry.completedAt || entry.answeredAt || entry.updatedAt)
+      : null;
+
+    solvedMap[caseId] = {
+      ...(solvedMap[caseId] || {}),
+      ...(typeof entry === 'object' ? entry : {}),
+      solved: true,
+      solvedAt: solvedAt || solvedMap[caseId]?.solvedAt || null,
+    };
+  });
+
+  (Array.isArray(examHistory) ? examHistory : []).forEach((exam) => {
+    const examTime = normalizeTimestamp(exam.completedAt || exam.finishedAt || exam.createdAt || exam.id);
+    (Array.isArray(exam.review) ? exam.review : []).forEach((reviewItem) => {
+      const caseId = reviewItem?.caseId || reviewItem?.id;
+      if (!caseId) return;
+      const previousTime = normalizeTimestamp(solvedMap[caseId]?.solvedAt);
+      solvedMap[caseId] = {
+        ...(solvedMap[caseId] || {}),
+        solved: true,
+        completed: true,
+        solvedAt: Math.max(previousTime || 0, examTime || 0) || previousTime || examTime || null,
+      };
+    });
+  });
+
+  return solvedMap;
+}
+
+function getSolvedTimestamp(caseItem, solvedMap = {}) {
+  const solvedRecord = solvedMap[caseItem?.id] || {};
+  return (
+    normalizeTimestamp(solvedRecord.solvedAt)
+    || normalizeTimestamp(solvedRecord.completedAt)
+    || normalizeTimestamp(solvedRecord.answeredAt)
+    || normalizeTimestamp(caseItem?.solvedAt)
+    || normalizeTimestamp(caseItem?.completedAt)
+    || normalizeTimestamp(caseItem?.answeredAt)
+    || null
+  );
+}
+
+function isCaseSolved(caseItem, solvedMap = {}) {
+  const solvedRecord = solvedMap[caseItem?.id];
+  return Boolean(
+    solvedRecord?.solved
+    || solvedRecord?.completed
+    || solvedRecord?.answered
+    || caseItem?.solved
+    || caseItem?.completed
+    || caseItem?.answered
+    || caseItem?.tags?.includes?.('çözüldü')
+    || caseItem?.tags?.includes?.('solved')
+  );
+}
+
+function uniqueById(items = []) {
+  const usedIds = new Set();
+  return items.filter((item) => {
+    if (!item?.id || usedIds.has(item.id)) return false;
+    usedIds.add(item.id);
+    return true;
+  });
+}
+
+function buildTimedExamPool(caseBank = [], solvedMap = {}, count = 10) {
+  const eligibleCases = uniqueById((Array.isArray(caseBank) ? caseBank : []).filter(Boolean));
+  const targetCount = Math.min(count, eligibleCases.length);
+  if (!targetCount) return [];
+
+  const unsolved = eligibleCases.filter((item) => !isCaseSolved(item, solvedMap));
+
+  if (unsolved.length >= targetCount) {
+    return shuffleArray(unsolved).slice(0, targetCount);
+  }
+
+  const solvedOldestFirst = eligibleCases
+    .filter((item) => isCaseSolved(item, solvedMap))
+    .sort((a, b) => {
+      const aTime = getSolvedTimestamp(a, solvedMap) || 0;
+      const bTime = getSolvedTimestamp(b, solvedMap) || 0;
+      return aTime - bTime;
+    });
+
+  return uniqueById([...shuffleArray(unsolved), ...solvedOldestFirst]).slice(0, targetCount);
 }
 
 function resolveBranchById(branchId) {
@@ -416,7 +486,8 @@ function App() {
   const accessibleCases = useMemo(() => (isDemoUser ? demoCases : cases), [isDemoUser, demoCases]);
   const accessibleCaseIndex = useMemo(() => buildAccessibleCaseIndex(accessibleCases), [accessibleCases]);
   const accessibleCaseIds = accessibleCaseIndex.ids;
-  const solvedCaseIdSet = useMemo(() => new Set(solvedCaseIds), [solvedCaseIds]);
+  const solvedCaseMap = useMemo(() => buildSolvedCaseMap(solvedCaseIds, examHistory), [solvedCaseIds, examHistory]);
+  const solvedCaseIdSet = useMemo(() => new Set(Object.keys(solvedCaseMap)), [solvedCaseMap]);
   const visibleBranches = useMemo(() => {
     if (!isDemoUser) return branches;
     const branchIds = new Set(accessibleCases.map((clinicalCase) => clinicalCase.branchId));
@@ -1030,7 +1101,10 @@ function App() {
 
   const markCaseSolved = useCallback((caseId) => {
     if (!caseId) return;
-    setSolvedCaseIds((current) => (current.includes(caseId) ? current : [...current, caseId]));
+    setSolvedCaseIds((current) => {
+      const alreadySolved = current.some((entry) => getSolvedEntryCaseId(entry) === caseId);
+      return alreadySolved ? current : [...current, { id: caseId, solved: true, solvedAt: Date.now() }];
+    });
   }, []);
 
   const handleSubmitAnswer = useCallback(({ clinicalCase, selected, isCorrect }) => {
@@ -1227,9 +1301,8 @@ function App() {
   function startBlockExam(sourceCases = accessibleCases, title = isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı') {
     const safeSourceCases = (Array.isArray(sourceCases) ? sourceCases : accessibleCases)
       .filter((clinicalCase) => accessibleCaseIds.has(clinicalCase.id));
-    const pool = isDemoUser
-      ? accessibleCases
-      : buildExamPool(safeSourceCases.length ? safeSourceCases : accessibleCases, 10, cases, { solvedCaseIds });
+    const examSourceCases = safeSourceCases.length ? safeSourceCases : accessibleCases;
+    const pool = buildTimedExamPool(examSourceCases, solvedCaseMap, 10);
     if (!pool.length) return;
     clearAIQuestionTimer();
     setMode('exam');
@@ -1576,8 +1649,8 @@ function App() {
           />
         </Suspense>
       ) : examState?.active && selectedCase ? (
-        <section className="page-shell exam-active-shell exam-case-page-shell stable-case-page-shell">
-          <section className="exam-banner-card card-surface">
+        <section className="page-shell exam-active-shell stable-case-page-shell timed-exam-shell">
+          <section className="exam-banner-card card-surface timed-exam-header">
             <div>
               <h2>{examState.title}</h2>
               <p>
@@ -1588,7 +1661,7 @@ function App() {
             <button type="button" className="btn btn-secondary" onClick={finalizeExam}>Bloku bitir</button>
           </section>
 
-          <div className="case-route-transition" data-case-id={selectedCase.id}>
+          <div className="case-route-transition timed-exam-layout" data-case-id={selectedCase.id}>
             <Suspense fallback={<RouteFallback label="Vaka ekranı hazırlanıyor…" />}>
               <CasePlayer
                 clinicalCase={selectedCase}
