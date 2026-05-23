@@ -1,0 +1,154 @@
+{
+  "total_cases": 478,
+  "spot_cases": 88,
+  "added_count": 8,
+  "added_ids": [
+    "ai-spot-vakasiz-secki-111",
+    "ai-spot-vakasiz-secki-112",
+    "ai-spot-vakasiz-secki-115",
+    "ai-spot-vakasiz-secki-116",
+    "ai-spot-vakasiz-secki-117",
+    "ai-spot-vakasiz-secki-118",
+    "ai-spot-vakasiz-secki-119",
+    "ai-spot-vakasiz-secki-120"
+  ],
+  "skipped": {
+    "ai-spot-vakasiz-secki-113": "Mevcut ai-spot-vakasiz-secki-041 ile aynı parasetamol toksisitesi + N-asetilsistein/glutatyon/NAPQI öğrenme hedefini tekrar ediyor.",
+    "ai-spot-vakasiz-secki-114": "Mevcut ai-spot-vakasiz-secki-016 ile aynı amiloid + Congo red + elma yeşili çift kırılma öğrenme hedefini tekrar ediyor."
+  },
+  "related_branches_added": [
+    "Anatomi",
+    "Fizyoloji",
+    "Genel Cerrahi",
+    "Histoloji ve Embriyoloji",
+    "Kadın Hastalıkları ve Doğum",
+    "Tıbbi Mikrobiyoloji",
+    "Çocuk Sağlığı ve Hastalıkları",
+    "İç Hastalıkları"
+  ],
+  "similarity_report": [
+    {
+      "newId": "ai-spot-vakasiz-secki-112",
+      "stem": "HIV’in konak hücreye girişinde kullanılan reseptör ve koreseptörlerle ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+      "similar": [
+        {
+          "ratio": 0.611,
+          "existingId": "ai-spot-vakasiz-secki-100",
+          "existingStem": "Vaka-kontrol çalışmalarıyla ilgili aşağıdaki ifadelerden hangisi doğrudur?"
+        }
+      ]
+    },
+    {
+      "newId": "ai-spot-vakasiz-secki-113",
+      "stem": "Parasetamol toksisitesinde N-asetilsisteinin hepatoprotektif etkisini en iyi açıklayan mekanizma aşağıdakilerden hangisidir?",
+      "similar": [
+        {
+          "ratio": 0.927,
+          "existingId": "ai-spot-vakasiz-secki-041-n-asetilsistein-glutatyon-parasetamol-toksisitesi",
+          "existingStem": "Parasetamol toksisitesinde kullanılan N-asetilsisteinin hepatoprotektif etkisini en doğru açıklayan mekanizma aşağıdakilerden hangisidir?"
+        },
+        {
+          "ratio": 0.603,
+          "existingId": "ai-spot-vakasiz-secki-092",
+          "existingStem": "Fraksiyone olmayan heparinin antikoagülan etkisinin protamin sülfat ile geri çevrilebilmesini en iyi açıklayan mekanizma aşağıdakilerden hangisidir?"
+        }
+      ]
+    },
+    {
+      "newId": "ai-spot-vakasiz-secki-114",
+      "stem": "Amiloid birikiminin klasik histokimyasal tanımlanması için en uygun ifade aşağıdakilerden hangisidir?",
+      "similar": [
+        {
+          "ratio": 0.623,
+          "existingId": "ai-spot-vakasiz-secki-035-karpal-tunelde-seyreden-tek-sinir",
+          "existingStem": "El bileği düzeyinde karpal tünelin içinden geçen sinir aşağıdakilerden hangisidir?"
+        }
+      ]
+    },
+    {
+      "newId": "ai-spot-vakasiz-secki-115",
+      "stem": "IgA vasküliti için beklenen klasik özelliklerden hangisi değildir?",
+      "similar": [
+        {
+          "ratio": 0.632,
+          "existingId": "ai-spot-vakasiz-secki-091",
+          "existingStem": "Primer metabolik asidozda beklenen temel fizyolojik değişikliklerden hangisi değildir?"
+        },
+        {
+          "ratio": 0.615,
+          "existingId": "ai-spot-vakasiz-secki-004-primer-respiratuvar-alkaloz",
+          "existingStem": "Primer respiratuvar alkalozda beklenen temel fizyolojik değişikliklerden hangisi değildir?"
+        }
+      ]
+    },
+    {
+      "newId": "ai-spot-vakasiz-secki-116",
+      "stem": "RhD immünoglobulin profilaksisinin uygulanması açısından aşağıdaki durumlardan hangisi uygun bir endikasyon değildir?",
+      "similar": [
+        {
+          "ratio": 0.639,
+          "existingId": "ai-spot-vakasiz-secki-095",
+          "existingStem": "Canlı zayıflatılmış aşıların uygulanması açısından aşağıdaki durumlardan hangisi genel kontrendikasyon olarak kabul edilmez?"
+        }
+      ]
+    },
+    {
+      "newId": "ai-spot-vakasiz-secki-117",
+      "stem": "Nervus pudendus ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+      "similar": [
+        {
+          "ratio": 0.74,
+          "existingId": "ai-spot-vakasiz-secki-012-linezolid-yan-etki-ve-mekanizma-ayirimi",
+          "existingStem": "Linezolid ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?"
+        },
+        {
+          "ratio": 0.729,
+          "existingId": "ai-spot-vakasiz-secki-100",
+          "existingStem": "Vaka-kontrol çalışmalarıyla ilgili aşağıdaki ifadelerden hangisi doğrudur?"
+        },
+        {
+          "ratio": 0.717,
+          "existingId": "ai-spot-vakasiz-secki-102",
+          "existingStem": "Mycobacterium tuberculosis’in kord faktörü ile ilgili aşağıdaki ifadelerden hangisi doğrudur?"
+        }
+      ]
+    },
+    {
+      "newId": "ai-spot-vakasiz-secki-118",
+      "stem": "Uygunsuz ADH salınımı sendromu için beklenen laboratuvar ve klinik özelliklerden hangisi değildir?",
+      "similar": [
+        {
+          "ratio": 0.645,
+          "existingId": "ai-spot-vakasiz-secki-047-siadh-laboratuvar-bulgulari-hipourisemi",
+          "existingStem": "Uygunsuz antidiüretik hormon salınımı sendromunda beklenen laboratuvar paternine ilişkin aşağıdaki bulgulardan hangisi diğerlerine göre daha az olasıdır?"
+        }
+      ]
+    },
+    {
+      "newId": "ai-spot-vakasiz-secki-119",
+      "stem": "Akut kolanjitin klasik Charcot triadı içinde aşağıdakilerden hangisi yer almaz?",
+      "similar": [
+        {
+          "ratio": 0.663,
+          "existingId": "ai-spot-vakasiz-secki-008-kawasaki-hastaligi-tani-olcutleri",
+          "existingStem": "Kawasaki hastalığının klasik tanı ölçütleri arasında aşağıdakilerden hangisi yer almaz?"
+        },
+        {
+          "ratio": 0.655,
+          "existingId": "ai-spot-vakasiz-secki-108",
+          "existingStem": "Kawasaki hastalığının klasik klinik bulguları arasında aşağıdakilerden hangisi yer almaz?"
+        },
+        {
+          "ratio": 0.642,
+          "existingId": "ai-spot-vakasiz-secki-010-akut-kolanjit-reynolds-pentadi",
+          "existingStem": "Akut kolanjitte Reynolds pentadını Charcot triadından ayıran ek bulgulardan biri aşağıdakilerden hangisidir?"
+        }
+      ]
+    }
+  ],
+  "node_check": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

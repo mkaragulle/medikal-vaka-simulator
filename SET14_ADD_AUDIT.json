@@ -1,0 +1,120 @@
+{
+  "baseZip": "KlinikIQ_CLINICAL_CASES_V255_TUS_SPOT_SET13_7_OZGUN_SORU_EKLENDI.zip",
+  "setFile": "KlinikIQ_TUS_Spot_Vaka_Disi_10_Soru_Set14_SUPER_KALITE(1).txt",
+  "totalCasesBefore": 485,
+  "spotCasesBefore": 95,
+  "totalCasesAfter": 495,
+  "spotCasesAfter": 105,
+  "addedCount": 10,
+  "addedIds": [
+    "ai-spot-vakasiz-secki-131",
+    "ai-spot-vakasiz-secki-132",
+    "ai-spot-vakasiz-secki-133",
+    "ai-spot-vakasiz-secki-134",
+    "ai-spot-vakasiz-secki-135",
+    "ai-spot-vakasiz-secki-136",
+    "ai-spot-vakasiz-secki-137",
+    "ai-spot-vakasiz-secki-138",
+    "ai-spot-vakasiz-secki-139",
+    "ai-spot-vakasiz-secki-140"
+  ],
+  "skipped": {},
+  "relatedBranches": [
+    "Fizyoloji",
+    "Genel Cerrahi",
+    "Halk Sağlığı",
+    "Kadın Hastalıkları ve Doğum",
+    "Tıbbi Biyokimya",
+    "Tıbbi Farmakoloji",
+    "Tıbbi Mikrobiyoloji",
+    "Tıbbi Patoloji",
+    "Çocuk Sağlığı ve Hastalıkları",
+    "İç Hastalıkları"
+  ],
+  "similarityReport": [
+    {
+      "newId": "ai-spot-vakasiz-secki-134",
+      "stem": "Aminoglikozid antibiyotiklerin bakterisidal etkisini en iyi açıklayan temel mekanizma aşağıdakilerden hangisidir?",
+      "similar": [
+        {
+          "ratio": 0.64,
+          "existingId": "ai-spot-vakasiz-secki-041-n-asetilsistein-glutatyon-parasetamol-toksisitesi",
+          "existingStem": "Parasetamol toksisitesinde kullanılan N-asetilsisteinin hepatoprotektif etkisini en doğru açıklayan mekanizma aşağıdakilerden hangisidir?"
+        }
+      ]
+    },
+    {
+      "newId": "ai-spot-vakasiz-secki-135",
+      "stem": "Granülomatöz inflamasyonla ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+      "similar": [
+        {
+          "ratio": 0.785,
+          "existingId": "ai-spot-vakasiz-secki-012-linezolid-yan-etki-ve-mekanizma-ayirimi",
+          "existingStem": "Linezolid ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?"
+        },
+        {
+          "ratio": 0.676,
+          "existingId": "ai-spot-vakasiz-secki-100",
+          "existingStem": "Vaka-kontrol çalışmalarıyla ilgili aşağıdaki ifadelerden hangisi doğrudur?"
+        },
+        {
+          "ratio": 0.662,
+          "existingId": "ai-spot-vakasiz-secki-128",
+          "existingStem": "Pankreatik psödokist ile ilgili aşağıdaki ifadelerden hangisi doğrudur?"
+        },
+        {
+          "ratio": 0.643,
+          "existingId": "ai-spot-vakasiz-secki-117",
+          "existingStem": "Nervus pudendus ile ilgili aşağıdaki ifadelerden hangisi doğrudur?"
+        }
+      ]
+    },
+    {
+      "newId": "ai-spot-vakasiz-secki-137",
+      "stem": "Papiller tiroid karsinomu için en uygun ifade aşağıdakilerden hangisidir?",
+      "similar": [
+        {
+          "ratio": 0.727,
+          "existingId": "ai-spot-vakasiz-secki-020-meduller-tiroid-karsinomu-marker-ve-genetik",
+          "existingStem": "Medüller tiroid karsinomu ile ilgili doğru eşleştirme aşağıdakilerden hangisidir?"
+        },
+        {
+          "ratio": 0.671,
+          "existingId": "ai-spot-vakasiz-secki-035-karpal-tunelde-seyreden-tek-sinir",
+          "existingStem": "El bileği düzeyinde karpal tünelin içinden geçen sinir aşağıdakilerden hangisidir?"
+        },
+        {
+          "ratio": 0.663,
+          "existingId": "ai-spot-vakasiz-secki-126",
+          "existingStem": "Epidemiyolojik çalışmalarda karıştırıcı değişken için en uygun tanım aşağıdakilerden hangisidir?"
+        },
+        {
+          "ratio": 0.642,
+          "existingId": "ai-spot-vakasiz-secki-039-komplet-hidatiform-mol-androgenetik-diploidi",
+          "existingStem": "Komplet hidatiform mol için en uygun genetik-patolojik tanımlama aşağıdakilerden hangisidir?"
+        },
+        {
+          "ratio": 0.638,
+          "existingId": "ai-spot-vakasiz-secki-121",
+          "existingStem": "Tip IV aşırı duyarlılık reaksiyonunun temel immünolojik mekanizması için en uygun ifade aşağıdakilerden hangisidir?"
+        }
+      ]
+    },
+    {
+      "newId": "ai-spot-vakasiz-secki-138",
+      "stem": "Yenidoğan indirekt hiperbilirubinemisinde fototerapinin temel etki mekanizması aşağıdakilerden hangisidir?",
+      "similar": [
+        {
+          "ratio": 0.689,
+          "existingId": "ai-spot-vakasiz-secki-103",
+          "existingStem": "Malign hipertermi tedavisinde kullanılan dantrolenin temel etki mekanizması aşağıdakilerden hangisidir?"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Set14 kayıtları V252/V255 ai-spot-v2 uyumlu yapıya dönüştürüldü.",
+    "Patoloji branch adı Tıbbi Patoloji standardına normalize edildi.",
+    "title alanı boş bırakıldı."
+  ]
+}
