@@ -417,8 +417,8 @@ function TusPearlCardEditor({
               </label>
 
               <button type="button" className="pearl-min-advanced-trigger" onClick={openAdvancedDialog}>
-                <span>Opsiyonel alanlar</span>
-                <Icon name="ChevronRight" size={16} />
+                <span className="pearl-min-advanced-trigger-copy">Opsiyonel alanlar</span>
+                <span className="pearl-min-advanced-arrow" aria-hidden="true">›</span>
               </button>
             </div>
 
@@ -479,13 +479,18 @@ function TusPearlCardEditor({
             <span>Ders / başlık</span>
             <input value={advancedDraft.subject} onChange={(event) => updateAdvancedDraft('subject', event.target.value)} placeholder="İç Hastalıkları" />
           </label>
-          <label className="pearl-min-sub-field">
+          <label className="pearl-min-sub-field pearl-min-select">
             <span>Zorluk</span>
-            <select value={advancedDraft.difficulty} onChange={(event) => updateAdvancedDraft('difficulty', event.target.value)}>
-              <option value="kolay">Kolay</option>
-              <option value="orta">Orta</option>
-              <option value="zor">Zor</option>
-            </select>
+            <MinimalDropdown
+              value={advancedDraft.difficulty}
+              onChange={(value) => updateAdvancedDraft('difficulty', value)}
+              ariaLabel="Zorluk seç"
+              options={[
+                { value: 'kolay', label: 'Kolay' },
+                { value: 'orta', label: 'Orta' },
+                { value: 'zor', label: 'Zor' },
+              ]}
+            />
           </label>
           <label className="pearl-min-sub-field">
             <span>Etiketler</span>

@@ -17087,3 +17087,133 @@ html[data-theme='dark'] .pearl-editor-secondary-actions,
     min-height: 140px !important;
   }
 }
+
+/* ==========================================================
+   V314 — optional fields trigger cleanup
+   ========================================================== */
+.pearl-min-advanced-trigger {
+  min-height: 58px !important;
+  padding: 0 18px !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+}
+
+.pearl-min-advanced-trigger-copy {
+  display: block !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  text-align: left !important;
+  font-size: 0.98rem !important;
+  line-height: 1.2 !important;
+  font-weight: 600 !important;
+  color: #0f172a !important;
+}
+
+.pearl-min-advanced-arrow {
+  flex: 0 0 auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 20px !important;
+  height: 20px !important;
+  font-size: 1.05rem !important;
+  line-height: 1 !important;
+  color: #64748b !important;
+  transform: translateY(-1px) !important;
+}
+
+.pearl-min-advanced-trigger svg,
+.pearl-min-advanced-trigger::before,
+.pearl-min-advanced-trigger::after {
+  display: none !important;
+  content: none !important;
+}
+
+.pearl-min-advanced-trigger:hover,
+.pearl-min-advanced-trigger:focus-visible {
+  border-color: rgba(148, 163, 184, 0.95) !important;
+  background: #fbfdff !important;
+}
+
+[data-theme='dark'] .pearl-min-advanced-trigger-copy {
+  color: #f8fafc !important;
+}
+
+[data-theme='dark'] .pearl-min-advanced-arrow {
+  color: #94a3b8 !important;
+}
+
+/* ==========================================================
+   V315 — secondary modal centering + custom difficulty dropdown
+   ========================================================== */
+.pearl-editor-secondary-backdrop.pearl-min-sub-overlay {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  min-height: 100dvh !important;
+  padding: 18px !important;
+  overflow: auto !important;
+}
+
+.pearl-editor-secondary-modal.pearl-min-sub-modal {
+  position: relative !important;
+  margin: auto !important;
+  width: min(760px, calc(100vw - 36px)) !important;
+  max-height: min(620px, calc(100dvh - 36px)) !important;
+  transform: none !important;
+}
+
+.pearl-min-sub-header,
+.pearl-min-sub-grid,
+.pearl-min-sub-footer {
+  width: 100% !important;
+}
+
+.pearl-min-sub-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  padding: 18px 22px 14px !important;
+}
+
+.pearl-min-sub-field.pearl-min-select .pearl-min-dropdown-trigger {
+  min-height: 56px !important;
+}
+
+.pearl-min-sub-field input,
+.pearl-min-sub-field .pearl-min-dropdown-trigger {
+  min-height: 56px !important;
+}
+
+.pearl-min-sub-footer {
+  justify-content: flex-end !important;
+}
+
+[data-theme='dark'] .pearl-editor-secondary-backdrop.pearl-min-sub-overlay {
+  background: rgba(2, 6, 23, 0.76) !important;
+}
+
+@media (max-width: 900px) {
+  .pearl-min-sub-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .pearl-editor-secondary-backdrop.pearl-min-sub-overlay {
+    padding: 10px !important;
+  }
+
+  .pearl-editor-secondary-modal.pearl-min-sub-modal {
+    width: 100% !important;
+    max-height: calc(100dvh - 20px) !important;
+    border-radius: 18px !important;
+  }
+}
