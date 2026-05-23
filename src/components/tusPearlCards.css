@@ -17263,3 +17263,57 @@ html[data-theme='dark'] .pearl-editor-secondary-actions,
   background: rgba(20, 184, 166, 0.18) !important;
   border-color: rgba(45, 212, 191, 0.34) !important;
 }
+
+
+/* ==========================================================
+   V317 — optional fields button root-size fix
+   Root problem: the trigger was inheriting old grid/flex child rules,
+   causing the label to sit visually high. This makes the button a
+   fixed-height, single-line centered control with no icon/child offset.
+   ========================================================== */
+.pearl-min-meta > .pearl-min-advanced-trigger {
+  align-self: end !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 58px !important;
+  min-height: 58px !important;
+  max-height: 58px !important;
+  padding: 0 18px !important;
+  margin: 0 !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(153, 246, 228, 0.72) !important;
+  background: rgba(20, 184, 166, 0.08) !important;
+  color: #0f172a !important;
+  font-size: 0.98rem !important;
+  font-weight: 650 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
+  appearance: none !important;
+}
+
+.pearl-min-meta > .pearl-min-advanced-trigger > * {
+  display: none !important;
+}
+
+.pearl-min-meta > .pearl-min-advanced-trigger:hover,
+.pearl-min-meta > .pearl-min-advanced-trigger:focus-visible {
+  background: rgba(20, 184, 166, 0.12) !important;
+  border-color: rgba(45, 212, 191, 0.95) !important;
+}
+
+[data-theme='dark'] .pearl-min-meta > .pearl-min-advanced-trigger {
+  background: rgba(20, 184, 166, 0.12) !important;
+  border-color: rgba(45, 212, 191, 0.22) !important;
+  color: #f8fafc !important;
+}
+
+[data-theme='dark'] .pearl-min-meta > .pearl-min-advanced-trigger:hover,
+[data-theme='dark'] .pearl-min-meta > .pearl-min-advanced-trigger:focus-visible {
+  background: rgba(20, 184, 166, 0.18) !important;
+  border-color: rgba(45, 212, 191, 0.34) !important;
+}

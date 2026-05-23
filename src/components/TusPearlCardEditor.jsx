@@ -417,8 +417,7 @@ function TusPearlCardEditor({
               </label>
 
               <button type="button" className="pearl-min-advanced-trigger" onClick={openAdvancedDialog}>
-                <span className="pearl-min-advanced-trigger-copy">Opsiyonel alanlar</span>
-                <span className="pearl-min-advanced-arrow" aria-hidden="true">›</span>
+                Opsiyonel alanlar
               </button>
             </div>
 
