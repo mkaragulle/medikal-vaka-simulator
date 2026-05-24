@@ -24,6 +24,126 @@ import './tusPearlCards.css';
 
 const SYSTEM_PEARL_CARDS = TUS_PEARL_CARDS.map((card) => ({ ...card, source: 'system' }));
 
+const LIBRARY_SOURCE_OPTIONS = [
+  { value: 'all', label: 'Tüm kaynaklar' },
+  { value: 'system', label: 'Sistem kartları' },
+  { value: 'user', label: 'Kendi kartlarım' },
+];
+
+function LibrarySourceDropdown({ value, onChange }) {
+  const [open, setOpen] = useState(false);
+  const [menuStyle, setMenuStyle] = useState(null);
+  const rootRef = useRef(null);
+  const triggerRef = useRef(null);
+  const menuRef = useRef(null);
+
+  const selected = LIBRARY_SOURCE_OPTIONS.find((option) => option.value === value) || LIBRARY_SOURCE_OPTIONS[0];
+
+  const updateMenuPosition = useCallback(() => {
+    if (typeof window === 'undefined' || !triggerRef.current) return;
+    const rect = triggerRef.current.getBoundingClientRect();
+    const margin = 12;
+    const gap = 8;
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const width = Math.min(rect.width, viewportWidth - margin * 2);
+    const left = Math.max(margin, Math.min(rect.left, viewportWidth - width - margin));
+    const below = viewportHeight - rect.bottom - margin;
+    const above = rect.top - margin;
+    const openUp = below < 168 && above > below;
+    const maxHeight = Math.max(132, Math.min(220, (openUp ? above : below) - gap));
+
+    setMenuStyle({
+      left: `${Math.round(left)}px`,
+      width: `${Math.round(width)}px`,
+      maxHeight: `${Math.round(maxHeight)}px`,
+      ...(openUp
+        ? { top: 'auto', bottom: `${Math.round(viewportHeight - rect.top + gap)}px` }
+        : { top: `${Math.round(rect.bottom + gap)}px`, bottom: 'auto' }),
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!open) {
+      setMenuStyle(null);
+      return undefined;
+    }
+
+    updateMenuPosition();
+
+    const handlePointerDown = (event) => {
+      const target = event.target;
+      if (!rootRef.current?.contains(target) && !menuRef.current?.contains(target)) {
+        setOpen(false);
+      }
+    };
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    const handleViewportChange = () => updateMenuPosition();
+
+    window.addEventListener('pointerdown', handlePointerDown);
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('resize', handleViewportChange);
+    window.addEventListener('scroll', handleViewportChange, true);
+
+    return () => {
+      window.removeEventListener('pointerdown', handlePointerDown);
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('resize', handleViewportChange);
+      window.removeEventListener('scroll', handleViewportChange, true);
+    };
+  }, [open, updateMenuPosition]);
+
+  const menu = open && menuStyle && typeof document !== 'undefined'
+    ? createPortal(
+        <div className="pearl-library-source-menu" role="listbox" aria-label="Kart kaynağı filtresi" ref={menuRef} style={menuStyle}>
+          {LIBRARY_SOURCE_OPTIONS.map((option) => {
+            const active = option.value === value;
+            return (
+              <button
+                key={option.value}
+                type="button"
+                className={`pearl-library-source-option ${active ? 'active' : ''}`.trim()}
+                role="option"
+                aria-selected={active}
+                onClick={() => {
+                  onChange?.(option.value);
+                  setOpen(false);
+                }}
+              >
+                <span>{option.label}</span>
+                {active ? <Icon name="CheckCircle" size={16} /> : null}
+              </button>
+            );
+          })}
+        </div>,
+        document.body,
+      )
+    : null;
+
+  return (
+    <>
+      <div className={`pearl-library-source-select ${open ? 'open' : ''}`} ref={rootRef}>
+        <button
+          type="button"
+          className="pearl-library-source-trigger"
+          ref={triggerRef}
+          aria-haspopup="listbox"
+          aria-expanded={open}
+          aria-label="Kart kaynağı filtresi"
+          onClick={() => setOpen((current) => !current)}
+        >
+          <span>{selected.label}</span>
+          <Icon name="ChevronDown" size={16} />
+        </button>
+      </div>
+      {menu}
+    </>
+  );
+}
+
+
 const STUDY_SETS = [
   { id: 'all', label: 'Tüm kartlar' },
   { id: 'system', label: 'Sistem kartları' },
@@ -1162,11 +1282,7 @@ function TusPearlStudyScreen({
                   </div>
                   <div className="pearl-library-toolbar">
                     <input className="tus-pearl-library-search" value={librarySearch} onChange={(event) => setLibrarySearch(event.target.value)} placeholder="Kart ara: sinir, farmakoloji, tuzak..." />
-                    <select value={sourceLibraryFilter} onChange={(event) => setSourceLibraryFilter(event.target.value)} aria-label="Kart kaynağı filtresi">
-                      <option value="all">Tüm kaynaklar</option>
-                      <option value="system">Sistem kartları</option>
-                      <option value="user">Kendi kartlarım</option>
-                    </select>
+                    <LibrarySourceDropdown value={sourceLibraryFilter} onChange={setSourceLibraryFilter} />
                     <button type="button" className="btn btn-primary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalog.id })}>Yeni kart</button>
                   </div>
                   <div className="tus-pearl-catalog-card-list addable">

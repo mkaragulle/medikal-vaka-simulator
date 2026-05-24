@@ -17825,3 +17825,181 @@ html[data-theme='dark'] .pearl-editor-secondary-actions,
 .app-shell[data-theme='dark'] .pearl-inline-delete-preview {
   scrollbar-color: rgba(148, 163, 184, 0.45) transparent;
 }
+
+/* ==========================================================
+   V328 — themed custom source dropdown for all-card library
+   ========================================================== */
+.pearl-library-toolbar .pearl-library-source-select {
+  min-width: 280px !important;
+  width: 280px !important;
+}
+
+.pearl-library-source-trigger {
+  width: 100% !important;
+  min-height: 58px !important;
+  border: 1px solid rgba(148, 163, 184, 0.18) !important;
+  border-radius: 20px !important;
+  padding: 0 18px 0 20px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 252, 251, 0.94)) !important;
+  color: var(--ki-text, #0f172a) !important;
+  font: inherit !important;
+  font-size: 0.98rem !important;
+  font-weight: 620 !important;
+  letter-spacing: -0.01em !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 8px 20px rgba(15, 23, 42, 0.035) !important;
+  cursor: pointer !important;
+  transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease, transform 160ms ease !important;
+}
+
+.pearl-library-source-trigger span {
+  min-width: 0 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  text-align: left !important;
+}
+
+.pearl-library-source-trigger svg {
+  flex: 0 0 auto !important;
+  color: var(--ki-text-muted, #64748b) !important;
+  transition: transform 160ms ease !important;
+}
+
+.pearl-library-source-select.open .pearl-library-source-trigger,
+.pearl-library-source-trigger:hover,
+.pearl-library-source-trigger:focus-visible {
+  outline: none !important;
+  border-color: rgba(13, 148, 136, 0.28) !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(20, 184, 166, 0.08), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(245, 253, 251, 0.98)) !important;
+  box-shadow:
+    0 0 0 4px rgba(20, 184, 166, 0.08),
+    0 12px 28px rgba(15, 23, 42, 0.055) !important;
+}
+
+.pearl-library-source-select.open .pearl-library-source-trigger svg {
+  transform: rotate(180deg) !important;
+}
+
+.pearl-library-source-menu {
+  position: fixed !important;
+  z-index: 2147483700 !important;
+  display: grid !important;
+  gap: 4px !important;
+  overflow-y: auto !important;
+  padding: 8px !important;
+  border: 1px solid rgba(148, 163, 184, 0.18) !important;
+  border-radius: 18px !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(20, 184, 166, 0.08), transparent 38%),
+    rgba(255, 255, 255, 0.985) !important;
+  box-shadow:
+    0 24px 62px rgba(15, 23, 42, 0.16),
+    0 8px 22px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86) !important;
+  backdrop-filter: blur(14px) saturate(118%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(118%) !important;
+}
+
+.pearl-library-source-option {
+  width: 100% !important;
+  min-height: 42px !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  padding: 0 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  background: transparent !important;
+  color: var(--ki-text, #0f172a) !important;
+  font: inherit !important;
+  font-size: 0.94rem !important;
+  font-weight: 620 !important;
+  line-height: 1.25 !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  transition: background 140ms ease, color 140ms ease, transform 140ms ease !important;
+}
+
+.pearl-library-source-option span {
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.pearl-library-source-option svg {
+  flex: 0 0 auto !important;
+  color: rgb(13, 148, 136) !important;
+}
+
+.pearl-library-source-option:hover {
+  background: rgba(240, 253, 250, 0.92) !important;
+  color: rgb(15, 118, 110) !important;
+}
+
+.pearl-library-source-option.active {
+  background: rgba(20, 184, 166, 0.12) !important;
+  color: rgb(15, 118, 110) !important;
+}
+
+[data-theme='dark'] .pearl-library-source-trigger,
+.app-shell[data-theme='dark'] .pearl-library-source-trigger {
+  border-color: rgba(94, 234, 212, 0.12) !important;
+  background: rgba(15, 23, 42, 0.82) !important;
+  color: var(--ki-text, #e5edf7) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03) !important;
+}
+
+[data-theme='dark'] .pearl-library-source-select.open .pearl-library-source-trigger,
+[data-theme='dark'] .pearl-library-source-trigger:hover,
+[data-theme='dark'] .pearl-library-source-trigger:focus-visible,
+.app-shell[data-theme='dark'] .pearl-library-source-select.open .pearl-library-source-trigger,
+.app-shell[data-theme='dark'] .pearl-library-source-trigger:hover,
+.app-shell[data-theme='dark'] .pearl-library-source-trigger:focus-visible {
+  border-color: rgba(94, 234, 212, 0.24) !important;
+  background: rgba(15, 23, 42, 0.92) !important;
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.10) !important;
+}
+
+[data-theme='dark'] .pearl-library-source-menu,
+.app-shell[data-theme='dark'] .pearl-library-source-menu {
+  border-color: rgba(94, 234, 212, 0.14) !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(20, 184, 166, 0.12), transparent 38%),
+    rgba(15, 23, 42, 0.985) !important;
+  box-shadow: 0 24px 62px rgba(2, 6, 23, 0.58) !important;
+}
+
+[data-theme='dark'] .pearl-library-source-option,
+.app-shell[data-theme='dark'] .pearl-library-source-option {
+  color: var(--ki-text, #e5edf7) !important;
+}
+
+[data-theme='dark'] .pearl-library-source-option:hover,
+.app-shell[data-theme='dark'] .pearl-library-source-option:hover {
+  background: rgba(20, 184, 166, 0.12) !important;
+  color: #99f6e4 !important;
+}
+
+[data-theme='dark'] .pearl-library-source-option.active,
+.app-shell[data-theme='dark'] .pearl-library-source-option.active {
+  background: rgba(20, 184, 166, 0.16) !important;
+  color: #99f6e4 !important;
+}
+
+@media (max-width: 760px) {
+  .pearl-library-toolbar .pearl-library-source-select {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
