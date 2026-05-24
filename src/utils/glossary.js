@@ -21,6 +21,7 @@ import { TUS_GLOSSARY_V319_TEACHABLE_TERMS } from '../data/tusGlossaryV319Teacha
 import { TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS } from '../data/tusGlossaryV320QualityBatch3Index.js';
 import { TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS } from '../data/tusGlossaryV321DeepHighYieldBatch4Index.js';
 import { TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS } from '../data/tusGlossaryV330UltraDeepBatch5And6Index.js';
+import { TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS } from '../data/tusGlossaryV332MajorJargonBatch7Index.js';
 
 const teachingOnly = 'teachingOnly';
 
@@ -9485,6 +9486,7 @@ const STATIC_GLOSSARY_SOURCES = [
   // Highest-priority quality layer: removes placeholder/filler definitions while preserving aliases and matching behavior.
   ...TUS_GLOSSARY_DEFINITION_QUALITY_TERMS,
   ...TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS,
+  ...TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS,
   ...TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS,
   ...TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS,
   ...TUS_GLOSSARY_V319_TEACHABLE_TERMS,
