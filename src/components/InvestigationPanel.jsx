@@ -248,6 +248,118 @@ function normalizeResultRow(row) {
   };
 }
 
+
+const COMPOSITE_RESULT_ANALYTES = [
+  { id: 'ph', label: 'pH', aliases: ['pH'], unit: '' },
+  { id: 'paco2', label: 'PaCO₂', aliases: ['PaCO2', 'PCO2'], unit: 'mmHg' },
+  { id: 'pao2', label: 'PaO₂', aliases: ['PaO2', 'PO2'], unit: 'mmHg' },
+  { id: 'hco3', label: 'HCO₃⁻', aliases: ['HCO3'], unit: 'mmol/L' },
+  { id: 'sao2', label: 'SaO₂', aliases: ['SaO2', 'O2 sat', 'O2 saturasyonu', 'O2 satürasyonu'], unit: '%' },
+  { id: 'lactate', label: 'Laktat', aliases: ['Laktat', 'Lactate'], unit: 'mmol/L' },
+];
+
+function normalizeCompositeLabText(value = '') {
+  return String(value || '')
+    .replace(/₂/g, '2')
+    .replace(/₃/g, '3')
+    .replace(/₄/g, '4')
+    .replace(/[⁻−]/g, '-')
+    .replace(/HCO3\s*-/gi, 'HCO3')
+    .replace(/\bPa\s*CO2\b/gi, 'PaCO2')
+    .replace(/\bPa\s*O2\b/gi, 'PaO2')
+    .replace(/\bSa\s*O2\b/gi, 'SaO2')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function escapeRegexText(value = '') {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function resolveCompositeUnit(analyte, source = '', capturedUnit = '', isReference = false) {
+  const normalizedSource = normalizeCompositeLabText(source).toLocaleLowerCase('tr');
+  const unitText = String(capturedUnit || '').replace(/\s+/g, '').trim();
+
+  if (analyte.id === 'ph') return '';
+  if (['paco2', 'pao2'].includes(analyte.id)) return /mmhg/i.test(normalizedSource) ? 'mmHg' : (unitText || analyte.unit);
+  if (analyte.id === 'hco3') {
+    if (/mmol\s*\/\s*l/i.test(normalizedSource)) return 'mmol/L';
+    if (/meq\s*\/\s*l/i.test(normalizedSource)) return 'mEq/L';
+    return unitText && !/mmhg/i.test(unitText) ? unitText : analyte.unit;
+  }
+  if (analyte.id === 'sao2') return /%/.test(normalizedSource) ? '%' : (unitText || analyte.unit);
+  if (analyte.id === 'lactate') return /mmol\s*\/\s*l/i.test(normalizedSource) ? 'mmol/L' : (unitText || analyte.unit);
+  return unitText || analyte.unit || '';
+}
+
+function normalizeCompositeRange(value = '', isReference = false) {
+  let text = String(value || '').replace(/,/g, '.').replace(/\s+/g, ' ').trim();
+  if (isReference) {
+    text = text.replace(/(\d+(?:\.\d+)?)\s*\/\s*(\d+(?:\.\d+)?)/g, '$1–$2');
+  }
+  return text.replace(/\s*[-–—]\s*/g, '–');
+}
+
+function formatCompositeMeasurement(range = '', unit = '') {
+  const cleanRange = String(range || '').trim();
+  const cleanUnit = String(unit || '').trim();
+  if (!cleanRange) return '';
+  if (!cleanUnit || new RegExp(`(?:^|\\s)${escapeRegexText(cleanUnit)}$`, 'i').test(cleanRange)) return cleanRange;
+  return `${cleanRange} ${cleanUnit}`;
+}
+
+function extractCompositeAnalyteMeasurement(source = '', analyte, isReference = false) {
+  const text = normalizeCompositeLabText(source);
+  if (!text) return '';
+
+  const rangePattern = '([<>≤≥]?\\s*\\d+(?:[.,]\\d+)?(?:\\s*(?:[-–—/]\\s*)\\d+(?:[.,]\\d+)?)?)';
+  const unitPattern = '([a-zA-Zµμ%0-9³]+(?:\\s*\\/\\s*[a-zA-Zµμ0-9³]+)?)?';
+
+  for (const alias of analyte.aliases) {
+    const aliasPattern = escapeRegexText(normalizeCompositeLabText(alias));
+    const regex = new RegExp(`(?:^|[^A-Za-zÇĞİÖŞÜçğıöşü0-9])${aliasPattern}\\s*[:=]?\\s*${rangePattern}\\s*${unitPattern}`, 'i');
+    const match = text.match(regex);
+    if (match) {
+      const range = normalizeCompositeRange(match[1], isReference);
+      const unit = resolveCompositeUnit(analyte, source, match[2], isReference);
+      return formatCompositeMeasurement(range, unit);
+    }
+  }
+
+  return '';
+}
+
+function splitCompositeResultRow(row = {}) {
+  const normalized = normalizeResultRow(row);
+  const combined = normalizeCompositeLabText(`${normalized.parameter} ${normalized.value} ${normalized.reference}`);
+  const detectedAnalytes = COMPOSITE_RESULT_ANALYTES.filter((analyte) => analyte.aliases.some((alias) => {
+    const pattern = new RegExp(`(?:^|[^A-Za-zÇĞİÖŞÜçğıöşü0-9])${escapeRegexText(normalizeCompositeLabText(alias))}(?=\\s*[:=]?\\s*[<>≤≥]?\\d|\\b)`, 'i');
+    return pattern.test(combined);
+  }));
+
+  if (detectedAnalytes.length < 2) return [normalized];
+
+  const splitRows = detectedAnalytes
+    .map((analyte) => {
+      const value = extractCompositeAnalyteMeasurement(normalized.value, analyte, false);
+      const reference = extractCompositeAnalyteMeasurement(normalized.reference, analyte, true);
+      if (!value && !reference) return null;
+      return {
+        parameter: analyte.label,
+        value,
+        reference: reference || '—',
+        note: '',
+      };
+    })
+    .filter(Boolean);
+
+  return splitRows.length >= 2 ? splitRows : [normalized];
+}
+
+function expandCompositeResultRows(rows = []) {
+  return rows.flatMap((row) => splitCompositeResultRow(row));
+}
+
 const PARAMETER_TABLE_TYPES = new Set(['lab', 'urine', 'culture', 'toxicology']);
 const QUALITATIVE_RESULT_TYPES = new Set(['ecg', 'xray', 'ct', 'mri', 'ultrasound', 'imaging', 'microscopy', 'pathology', 'endoscopy', 'clinical', 'neurophysiology', 'nuclear']);
 
@@ -268,7 +380,7 @@ function rowHasQuantitativeSignal(row = {}) {
 }
 
 function shouldRenderParameterTable(rows = [], itemType = '') {
-  const normalizedRows = rows.map(normalizeResultRow);
+  const normalizedRows = expandCompositeResultRows(rows);
   if (PARAMETER_TABLE_TYPES.has(itemType)) return true;
   if (QUALITATIVE_RESULT_TYPES.has(itemType) && !normalizedRows.some(rowHasQuantitativeSignal)) return false;
   return normalizedRows.some(rowHasQuantitativeSignal);
@@ -303,7 +415,7 @@ function isTextDominantRow(row = {}) {
 
 
 function getResultTableVariant(rows = [], itemType = '', hardMode = false) {
-  const normalizedRows = rows.map(normalizeResultRow);
+  const normalizedRows = expandCompositeResultRows(rows);
   const rowCount = normalizedRows.length || 1;
   const quantitativeRows = normalizedRows.filter(rowHasQuantitativeSignal).length;
   const textDominantRows = normalizedRows.filter(isTextDominantRow).length;
@@ -321,7 +433,7 @@ function getResultTableVariant(rows = [], itemType = '', hardMode = false) {
 }
 
 function ResultFindingList({ rows = [], glossaryEnabled = true, glossaryRevealMode = 'preAnswer' }) {
-  const normalizedRows = rows.map(normalizeResultRow);
+  const normalizedRows = expandCompositeResultRows(rows);
 
   return (
     <div className="qualitative-result-list inline-result-finding-list">
@@ -354,7 +466,7 @@ function ResultFindingList({ rows = [], glossaryEnabled = true, glossaryRevealMo
 function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, itemType = '', glossaryRevealMode = 'preAnswer' }) {
   if (!rows.length) return null;
 
-  const normalizedRows = rows.map(normalizeResultRow);
+  const normalizedRows = expandCompositeResultRows(rows);
 
   if (!shouldRenderParameterTable(rows, itemType)) {
     return <ResultFindingList rows={rows} glossaryEnabled={glossaryEnabled} glossaryRevealMode={glossaryRevealMode} />;
