@@ -426,7 +426,7 @@ function TusPearlStudyScreen({
   const [motion, setMotion] = useState('idle');
   const [studySession, setStudySession] = useState(null);
   const [editorState, setEditorState] = useState({ open: false, mode: 'create', card: null, defaultCatalogId: '' });
-  const [confirmDeleteState, setConfirmDeleteState] = useState({ open: false, card: null, context: 'library' });
+  const [confirmDeleteState, setConfirmDeleteState] = useState({ open: false, card: null, context: 'library', position: null });
   const [catalogMenuOpen, setCatalogMenuOpen] = useState(false);
   const [branchMenuOpen, setBranchMenuOpen] = useState(false);
   const [branchMenuPosition, setBranchMenuPosition] = useState({ placement: 'popover', top: 0, left: 0, width: 300 });
@@ -829,27 +829,74 @@ function TusPearlStudyScreen({
     setEditorState({ open: false, mode: 'create', card: null, defaultCatalogId: '' });
   }
 
-  function requestCardDelete(card, context = 'library') {
+  function resolveDeletePopoverPosition(event) {
+    if (typeof window === 'undefined') return null;
+
+    const trigger = event?.currentTarget;
+    if (!trigger?.getBoundingClientRect) return null;
+
+    const rect = trigger.getBoundingClientRect();
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth || 0;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+    const margin = 12;
+    const gap = 10;
+    const popoverWidth = Math.min(320, Math.max(260, viewportWidth - margin * 2));
+    const estimatedHeight = 190;
+    const openUp = viewportHeight - rect.bottom < estimatedHeight + gap && rect.top > estimatedHeight + gap;
+    const left = Math.max(margin, Math.min(rect.right - popoverWidth, viewportWidth - popoverWidth - margin));
+
+    return {
+      left,
+      width: popoverWidth,
+      placement: openUp ? 'top' : 'bottom',
+      top: openUp ? rect.top - gap : rect.bottom + gap,
+    };
+  }
+
+  function requestCardDelete(card, context = 'library', event = null) {
     if (!card) return;
+    event?.stopPropagation?.();
+    const position = resolveDeletePopoverPosition(event);
+
     setConfirmDeleteState((current) => {
       const isSameTarget = current.open && current.card?.id === card.id && current.context === context;
-      return isSameTarget ? { open: false, card: null, context: 'library' } : { open: true, card, context };
+      return isSameTarget
+        ? { open: false, card: null, context: 'library', position: null }
+        : { open: true, card, context, position };
     });
   }
 
   function closeDeleteConfirm() {
-    setConfirmDeleteState({ open: false, card: null, context: 'library' });
+    setConfirmDeleteState({ open: false, card: null, context: 'library', position: null });
   }
 
   function isDeleteConfirmOpen(card, context) {
     return Boolean(confirmDeleteState.open && confirmDeleteState.card?.id === card?.id && confirmDeleteState.context === context);
   }
 
-  function renderInlineDeleteConfirm(card, context = 'library') {
-    if (!isDeleteConfirmOpen(card, context)) return null;
+  function renderInlineDeleteConfirm() {
+    return null;
+  }
 
-    return (
-      <div className="pearl-inline-delete-popover" role="alertdialog" aria-label="Kart silme onayı" onClick={(event) => event.stopPropagation()}>
+  function renderDeleteConfirmPortal() {
+    const card = confirmDeleteState.card;
+    if (!confirmDeleteState.open || !card || typeof document === 'undefined') return null;
+
+    const position = confirmDeleteState.position || { left: 12, top: 96, width: 320, placement: 'bottom' };
+    const style = {
+      left: `${Math.round(position.left)}px`,
+      top: `${Math.round(position.top)}px`,
+      width: `${Math.round(position.width || 320)}px`,
+    };
+
+    return createPortal(
+      <div
+        className={`pearl-inline-delete-popover pearl-inline-delete-popover-portal ${position.placement === 'top' ? 'is-top' : 'is-bottom'}`}
+        role="alertdialog"
+        aria-label="Kart silme onayı"
+        style={style}
+        onClick={(event) => event.stopPropagation()}
+      >
         <div className="pearl-inline-delete-copy">
           <strong>Emin misin?</strong>
           <span>{card.source === 'user' ? 'Bu kart kalıcı olarak silinecek.' : 'Bu sistem kartı görünümünden kaldırılacak.'}</span>
@@ -861,7 +908,8 @@ function TusPearlStudyScreen({
           <button type="button" className="btn btn-secondary compact" onClick={closeDeleteConfirm}>Vazgeç</button>
           <button type="button" className="btn btn-primary compact pearl-danger-button" onClick={() => deleteCard(card)}>Sil</button>
         </div>
-      </div>
+      </div>,
+      document.body,
     );
   }
 
@@ -1083,7 +1131,7 @@ function TusPearlStudyScreen({
                           <div className="pearl-card-row-actions catalog-card-action">
                             {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
                             <span className="pearl-delete-anchor">
-                              <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={() => requestCardDelete(card, 'catalog-list')} aria-label="Kartı sil" title="Kartı sil">
+                              <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={(event) => requestCardDelete(card, 'catalog-list', event)} aria-label="Kartı sil" title="Kartı sil">
                                 <Icon name="Trash2" />
                               </button>
                               {renderInlineDeleteConfirm(card, 'catalog-list')}
@@ -1136,7 +1184,7 @@ function TusPearlStudyScreen({
                             <button type="button" className="btn btn-secondary compact catalog-add-action" onClick={() => addCardToCatalog(card.id)}>Kataloğa ekle</button>
                           )}
                           <span className="pearl-delete-anchor">
-                            <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={() => requestCardDelete(card, 'library-list')} aria-label="Kartı sil" title="Kartı sil">
+                            <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={(event) => requestCardDelete(card, 'library-list', event)} aria-label="Kartı sil" title="Kartı sil">
                               <Icon name="Trash2" />
                             </button>
                             {renderInlineDeleteConfirm(card, 'library-list')}
@@ -1348,7 +1396,7 @@ function TusPearlStudyScreen({
                       <span><strong>Kartı Düzenle</strong></span>
                     </button>
                     <span className="pearl-delete-anchor pearl-delete-anchor-tools">
-                      <button type="button" onClick={() => requestCardDelete(activeCard, 'study-tools')}>
+                      <button type="button" onClick={(event) => requestCardDelete(activeCard, 'study-tools', event)}>
                         <Icon name="Trash2" size={15} />
                         <span><strong>Kartı Sil</strong></span>
                       </button>
@@ -1362,7 +1410,7 @@ function TusPearlStudyScreen({
                       <span><strong>Kendi Kartıma Kopyala</strong></span>
                     </button>
                     <span className="pearl-delete-anchor pearl-delete-anchor-tools">
-                      <button type="button" onClick={() => requestCardDelete(activeCard, 'study-tools')}>
+                      <button type="button" onClick={(event) => requestCardDelete(activeCard, 'study-tools', event)}>
                         <Icon name="Trash2" size={15} />
                         <span><strong>Kartı Sil</strong></span>
                       </button>
@@ -1375,6 +1423,8 @@ function TusPearlStudyScreen({
           </aside>
         </div>
       )}
+
+      {renderDeleteConfirmPortal()}
 
       <TusPearlCardEditor
         open={editorState.open}

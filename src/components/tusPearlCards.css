@@ -17668,3 +17668,46 @@ html[data-theme='dark'] .pearl-editor-secondary-actions,
     flex: 1 1 0 !important;
   }
 }
+
+/* ========================================================================== 
+   V323 — Delete confirmation popover above all cards/layers
+   ========================================================================== */
+.pearl-inline-delete-popover.pearl-inline-delete-popover-portal {
+  position: fixed !important;
+  right: auto !important;
+  bottom: auto !important;
+  z-index: 2147483647 !important;
+  width: min(320px, calc(100vw - 24px)) !important;
+  max-width: calc(100vw - 24px) !important;
+  isolation: isolate !important;
+  pointer-events: auto !important;
+  transform-origin: top right !important;
+}
+
+.pearl-inline-delete-popover.pearl-inline-delete-popover-portal.is-top {
+  transform: translateY(-100%) !important;
+  transform-origin: bottom right !important;
+}
+
+.pearl-inline-delete-popover.pearl-inline-delete-popover-portal.is-top::before {
+  top: auto !important;
+  bottom: -7px !important;
+  border-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 1px solid rgba(220, 38, 38, 0.12) !important;
+  border-bottom: 1px solid rgba(220, 38, 38, 0.12) !important;
+}
+
+.pearl-inline-delete-popover.pearl-inline-delete-popover-portal.is-bottom::before {
+  top: -7px !important;
+  bottom: auto !important;
+}
+
+.tus-pearl-catalog-card-list,
+.tus-pearl-catalog-card-list.addable,
+.tus-pearl-library-card,
+.catalog-card-row,
+.pearl-card-row-actions.catalog-card-action,
+.pearl-delete-anchor {
+  overflow: visible !important;
+}
