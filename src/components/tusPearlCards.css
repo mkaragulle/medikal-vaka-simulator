@@ -17711,3 +17711,31 @@ html[data-theme='dark'] .pearl-editor-secondary-actions,
 .pearl-delete-anchor {
   overflow: visible !important;
 }
+
+/* ========================================================================== 
+   V324 — Fix portal popover visibility: override old absolute top/right rules
+   ========================================================================== */
+.pearl-inline-delete-popover.pearl-inline-delete-popover-portal {
+  position: fixed !important;
+  left: var(--delete-popover-left, 12px) !important;
+  top: var(--delete-popover-top, 96px) !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: var(--delete-popover-width, 320px) !important;
+  max-width: calc(100vw - 24px) !important;
+  z-index: 2147483647 !important;
+  display: grid !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.pearl-inline-delete-popover.pearl-inline-delete-popover-portal.is-top {
+  transform: translateY(-100%) !important;
+  transform-origin: bottom right !important;
+}
+
+.pearl-inline-delete-popover.pearl-inline-delete-popover-portal.is-bottom {
+  transform: none !important;
+  transform-origin: top right !important;
+}

@@ -884,9 +884,9 @@ function TusPearlStudyScreen({
 
     const position = confirmDeleteState.position || { left: 12, top: 96, width: 320, placement: 'bottom' };
     const style = {
-      left: `${Math.round(position.left)}px`,
-      top: `${Math.round(position.top)}px`,
-      width: `${Math.round(position.width || 320)}px`,
+      '--delete-popover-left': `${Math.round(position.left)}px`,
+      '--delete-popover-top': `${Math.round(position.top)}px`,
+      '--delete-popover-width': `${Math.round(position.width || 320)}px`,
     };
 
     return createPortal(
