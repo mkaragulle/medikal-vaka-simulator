@@ -831,11 +831,38 @@ function TusPearlStudyScreen({
 
   function requestCardDelete(card, context = 'library') {
     if (!card) return;
-    setConfirmDeleteState({ open: true, card, context });
+    setConfirmDeleteState((current) => {
+      const isSameTarget = current.open && current.card?.id === card.id && current.context === context;
+      return isSameTarget ? { open: false, card: null, context: 'library' } : { open: true, card, context };
+    });
   }
 
   function closeDeleteConfirm() {
     setConfirmDeleteState({ open: false, card: null, context: 'library' });
+  }
+
+  function isDeleteConfirmOpen(card, context) {
+    return Boolean(confirmDeleteState.open && confirmDeleteState.card?.id === card?.id && confirmDeleteState.context === context);
+  }
+
+  function renderInlineDeleteConfirm(card, context = 'library') {
+    if (!isDeleteConfirmOpen(card, context)) return null;
+
+    return (
+      <div className="pearl-inline-delete-popover" role="alertdialog" aria-label="Kart silme onayı" onClick={(event) => event.stopPropagation()}>
+        <div className="pearl-inline-delete-copy">
+          <strong>Emin misin?</strong>
+          <span>{card.source === 'user' ? 'Bu kart kalıcı olarak silinecek.' : 'Bu sistem kartı görünümünden kaldırılacak.'}</span>
+        </div>
+        <div className="pearl-inline-delete-preview">
+          <GlossaryText text={card.front} enabled revealMode="preAnswer" maxTerms={1} />
+        </div>
+        <div className="pearl-inline-delete-actions">
+          <button type="button" className="btn btn-secondary compact" onClick={closeDeleteConfirm}>Vazgeç</button>
+          <button type="button" className="btn btn-primary compact pearl-danger-button" onClick={() => deleteCard(card)}>Sil</button>
+        </div>
+      </div>
+    );
   }
 
   function saveUserCard(card, { catalogId = '' } = {}) {
@@ -1055,9 +1082,12 @@ function TusPearlStudyScreen({
                           </div>
                           <div className="pearl-card-row-actions catalog-card-action">
                             {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
-                            <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={() => requestCardDelete(card, 'catalog-list')} aria-label="Kartı sil" title="Kartı sil">
-                              <Icon name="Trash2" />
-                            </button>
+                            <span className="pearl-delete-anchor">
+                              <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={() => requestCardDelete(card, 'catalog-list')} aria-label="Kartı sil" title="Kartı sil">
+                                <Icon name="Trash2" />
+                              </button>
+                              {renderInlineDeleteConfirm(card, 'catalog-list')}
+                            </span>
                             <button type="button" className="btn btn-icon quiet catalog-remove-action" onClick={() => removeCardFromCatalog(card.id)} aria-label="Kartı katalogdan çıkar" title="Katalogdan çıkar">
                               <Icon name="X" />
                             </button>
@@ -1105,9 +1135,12 @@ function TusPearlStudyScreen({
                           ) : (
                             <button type="button" className="btn btn-secondary compact catalog-add-action" onClick={() => addCardToCatalog(card.id)}>Kataloğa ekle</button>
                           )}
-                          <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={() => requestCardDelete(card, 'library-list')} aria-label="Kartı sil" title="Kartı sil">
-                            <Icon name="Trash2" />
-                          </button>
+                          <span className="pearl-delete-anchor">
+                            <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={() => requestCardDelete(card, 'library-list')} aria-label="Kartı sil" title="Kartı sil">
+                              <Icon name="Trash2" />
+                            </button>
+                            {renderInlineDeleteConfirm(card, 'library-list')}
+                          </span>
                         </div>
                       </article>
                     ))}
@@ -1314,10 +1347,13 @@ function TusPearlStudyScreen({
                       <Icon name="Notes" size={15} />
                       <span><strong>Kartı Düzenle</strong></span>
                     </button>
-                    <button type="button" onClick={() => requestCardDelete(activeCard, 'study-tools')}>
-                      <Icon name="Trash2" size={15} />
-                      <span><strong>Kartı Sil</strong></span>
-                    </button>
+                    <span className="pearl-delete-anchor pearl-delete-anchor-tools">
+                      <button type="button" onClick={() => requestCardDelete(activeCard, 'study-tools')}>
+                        <Icon name="Trash2" size={15} />
+                        <span><strong>Kartı Sil</strong></span>
+                      </button>
+                      {renderInlineDeleteConfirm(activeCard, 'study-tools')}
+                    </span>
                   </>
                 ) : activeCard ? (
                   <>
@@ -1325,10 +1361,13 @@ function TusPearlStudyScreen({
                       <Icon name="User" size={15} />
                       <span><strong>Kendi Kartıma Kopyala</strong></span>
                     </button>
-                    <button type="button" onClick={() => requestCardDelete(activeCard, 'study-tools')}>
-                      <Icon name="Trash2" size={15} />
-                      <span><strong>Kartı Sil</strong></span>
-                    </button>
+                    <span className="pearl-delete-anchor pearl-delete-anchor-tools">
+                      <button type="button" onClick={() => requestCardDelete(activeCard, 'study-tools')}>
+                        <Icon name="Trash2" size={15} />
+                        <span><strong>Kartı Sil</strong></span>
+                      </button>
+                      {renderInlineDeleteConfirm(activeCard, 'study-tools')}
+                    </span>
                   </>
                 ) : null}
               </div>
@@ -1336,32 +1375,6 @@ function TusPearlStudyScreen({
           </aside>
         </div>
       )}
-
-      {confirmDeleteState.open && confirmDeleteState.card ? (
-        <div className="pearl-confirm-overlay" role="presentation" onClick={closeDeleteConfirm}>
-          <div className="pearl-confirm-dialog card-surface" role="alertdialog" aria-modal="true" aria-labelledby="pearl-delete-title" aria-describedby="pearl-delete-description" onClick={(event) => event.stopPropagation()}>
-            <div className="pearl-confirm-dialog-head">
-              <span className="pearl-confirm-icon" aria-hidden="true"><Icon name="Trash2" size={18} /></span>
-              <div>
-                <h3 id="pearl-delete-title">Kartı sil</h3>
-                <p id="pearl-delete-description">
-                  {confirmDeleteState.card.source === 'user'
-                    ? 'Bu kişisel kart kalıcı olarak silinecek ve kayıtlı olduğu kataloglardan da kaldırılacak.'
-                    : 'Bu sistem kartı senin görünümünden kaldırılacak; kataloglardan ve çalışma listelerinden de çıkarılacak.'}
-                </p>
-              </div>
-            </div>
-            <div className="pearl-confirm-card-preview">
-              <span className="catalog-card-branch">{getBranchName(confirmDeleteState.card.branchId)}</span>
-              <strong><GlossaryText text={confirmDeleteState.card.front} enabled revealMode="preAnswer" maxTerms={2} /></strong>
-            </div>
-            <div className="pearl-confirm-actions">
-              <button type="button" className="btn btn-secondary compact" onClick={closeDeleteConfirm}>Vazgeç</button>
-              <button type="button" className="btn btn-primary compact pearl-danger-button" onClick={() => deleteCard(confirmDeleteState.card)}>Sil</button>
-            </div>
-          </div>
-        </div>
-      ) : null}
 
       <TusPearlCardEditor
         open={editorState.open}

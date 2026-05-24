@@ -17478,3 +17478,193 @@ html[data-theme='dark'] .pearl-editor-secondary-actions,
     width: 100%;
   }
 }
+
+/* ========================================================================== 
+   V322 — Inline delete confirmation anchored to the clicked delete button
+   ========================================================================== */
+.pearl-delete-anchor {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  isolation: isolate !important;
+}
+
+.pearl-delete-anchor-tools {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button {
+  width: 100% !important;
+  min-height: 56px !important;
+  border: 1px solid var(--ki-border, rgba(15, 118, 110, 0.12)) !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, 0.78) !important;
+  color: var(--ki-text, #0f172a) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+  padding: 12px 14px !important;
+  text-align: left !important;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.035) !important;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button:hover {
+  border-color: rgba(220, 38, 38, 0.22) !important;
+  background: rgba(254, 242, 242, 0.92) !important;
+  color: #991b1b !important;
+}
+
+.pearl-inline-delete-popover {
+  position: absolute !important;
+  right: 0 !important;
+  top: calc(100% + 10px) !important;
+  z-index: 2200 !important;
+  width: min(340px, calc(100vw - 32px)) !important;
+  padding: 14px !important;
+  display: grid !important;
+  gap: 10px !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(220, 38, 38, 0.16) !important;
+  background: rgba(255, 255, 255, 0.985) !important;
+  color: var(--ki-text, #0f172a) !important;
+  box-shadow:
+    0 24px 56px rgba(15, 23, 42, 0.18),
+    0 8px 22px rgba(15, 23, 42, 0.08) !important;
+  transform-origin: top right !important;
+  animation: pearlInlineConfirmIn 140ms ease-out both !important;
+}
+
+.pearl-inline-delete-popover::before {
+  content: '' !important;
+  position: absolute !important;
+  right: 15px !important;
+  top: -7px !important;
+  width: 13px !important;
+  height: 13px !important;
+  transform: rotate(45deg) !important;
+  border-left: 1px solid rgba(220, 38, 38, 0.12) !important;
+  border-top: 1px solid rgba(220, 38, 38, 0.12) !important;
+  background: rgba(255, 255, 255, 0.985) !important;
+}
+
+.pearl-inline-delete-copy {
+  display: grid !important;
+  gap: 3px !important;
+  min-width: 0 !important;
+}
+
+.pearl-inline-delete-copy strong {
+  font-size: 0.98rem !important;
+  line-height: 1.25 !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--ki-text, #0f172a) !important;
+}
+
+.pearl-inline-delete-copy span {
+  font-size: 0.83rem !important;
+  line-height: 1.45 !important;
+  color: var(--ki-text-muted, #64748b) !important;
+}
+
+.pearl-inline-delete-preview {
+  max-height: 62px !important;
+  overflow: hidden !important;
+  padding: 9px 10px !important;
+  border-radius: 13px !important;
+  border: 1px solid rgba(226, 232, 240, 0.95) !important;
+  background: rgba(248, 250, 252, 0.92) !important;
+  color: var(--ki-text, #0f172a) !important;
+  font-size: 0.82rem !important;
+  line-height: 1.45 !important;
+}
+
+.pearl-inline-delete-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 8px !important;
+}
+
+.pearl-inline-delete-actions .btn {
+  min-height: 34px !important;
+  padding: 7px 13px !important;
+  border-radius: 12px !important;
+  font-size: 0.84rem !important;
+}
+
+@keyframes pearlInlineConfirmIn {
+  from { opacity: 0; transform: translateY(-4px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+[data-theme='dark'] .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button,
+.app-shell[data-theme='dark'] .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button {
+  border-color: rgba(94, 234, 212, 0.12) !important;
+  background: rgba(15, 23, 42, 0.72) !important;
+  color: #e5edf7 !important;
+}
+
+[data-theme='dark'] .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button:hover,
+.app-shell[data-theme='dark'] .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button:hover {
+  border-color: rgba(248, 113, 113, 0.26) !important;
+  background: rgba(69, 10, 10, 0.38) !important;
+  color: #fecaca !important;
+}
+
+[data-theme='dark'] .pearl-inline-delete-popover,
+.app-shell[data-theme='dark'] .pearl-inline-delete-popover {
+  border-color: rgba(248, 113, 113, 0.20) !important;
+  background: rgba(15, 23, 42, 0.985) !important;
+  color: #e5edf7 !important;
+  box-shadow:
+    0 24px 56px rgba(0, 0, 0, 0.45),
+    0 8px 22px rgba(0, 0, 0, 0.22) !important;
+}
+
+[data-theme='dark'] .pearl-inline-delete-popover::before,
+.app-shell[data-theme='dark'] .pearl-inline-delete-popover::before {
+  border-color: rgba(248, 113, 113, 0.18) !important;
+  background: rgba(15, 23, 42, 0.985) !important;
+}
+
+[data-theme='dark'] .pearl-inline-delete-copy strong,
+.app-shell[data-theme='dark'] .pearl-inline-delete-copy strong,
+[data-theme='dark'] .pearl-inline-delete-preview,
+.app-shell[data-theme='dark'] .pearl-inline-delete-preview {
+  color: #e5edf7 !important;
+}
+
+[data-theme='dark'] .pearl-inline-delete-copy span,
+.app-shell[data-theme='dark'] .pearl-inline-delete-copy span {
+  color: #94a3b8 !important;
+}
+
+[data-theme='dark'] .pearl-inline-delete-preview,
+.app-shell[data-theme='dark'] .pearl-inline-delete-preview {
+  border-color: rgba(94, 234, 212, 0.10) !important;
+  background: rgba(2, 6, 23, 0.42) !important;
+}
+
+@media (max-width: 700px) {
+  .pearl-inline-delete-popover {
+    right: -4px !important;
+    width: min(310px, calc(100vw - 24px)) !important;
+  }
+
+  .pearl-card-row-actions.catalog-card-action .pearl-inline-delete-popover {
+    right: 0 !important;
+  }
+
+  .pearl-inline-delete-actions {
+    justify-content: stretch !important;
+  }
+
+  .pearl-inline-delete-actions .btn {
+    flex: 1 1 0 !important;
+  }
+}
