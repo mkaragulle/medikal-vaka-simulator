@@ -17741,48 +17741,87 @@ html[data-theme='dark'] .pearl-editor-secondary-actions,
 }
 
 /* ========================================================================== 
-   V325 — Show the full add-from-all-cards library without the 4-row clamp
+   V326 — Restore scroll inside "Tüm kartlardan ekle" library list
+   Reason: delete popover is portal-based now, so the list itself must remain scrollable.
    ========================================================================== */
 .catalog-card-library .tus-pearl-catalog-card-list.addable,
 .tus-pearl-catalog-card-list.addable {
-  max-height: none !important;
-  height: auto !important;
-  overflow: visible !important;
-  contain: none !important;
-  transform: none !important;
+  max-height: 360px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  scrollbar-gutter: stable !important;
+  overscroll-behavior: contain !important;
+  -webkit-overflow-scrolling: touch !important;
+  padding-right: 6px !important;
 }
 
-.catalog-card-library .tus-pearl-library-card.catalog-card-row,
-.catalog-card-library .tus-pearl-catalog-card-list.addable .tus-pearl-library-card.catalog-card-row {
-  content-visibility: auto !important;
-  contain-intrinsic-size: 88px !important;
-  contain: layout paint style !important;
+.catalog-card-library .tus-pearl-catalog-card-list.addable::-webkit-scrollbar,
+.tus-pearl-catalog-card-list.addable::-webkit-scrollbar {
+  width: 8px !important;
 }
 
-.catalog-card-library .catalog-library-head,
-.catalog-card-library .tus-pearl-catalog-section-head.catalog-library-head {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 12px !important;
+.catalog-card-library .tus-pearl-catalog-card-list.addable::-webkit-scrollbar-track,
+.tus-pearl-catalog-card-list.addable::-webkit-scrollbar-track {
+  background: transparent !important;
 }
 
-.catalog-card-library .catalog-library-head span {
-  color: var(--ki-text-muted, #64748b) !important;
-  font-size: 0.82rem !important;
-  font-weight: 750 !important;
-  white-space: nowrap !important;
+.catalog-card-library .tus-pearl-catalog-card-list.addable::-webkit-scrollbar-thumb,
+.tus-pearl-catalog-card-list.addable::-webkit-scrollbar-thumb {
+  border-radius: 999px !important;
+  background: rgba(15, 118, 110, 0.18) !important;
 }
 
-@media (max-width: 720px) {
-  .catalog-card-library .catalog-library-head,
-  .catalog-card-library .tus-pearl-catalog-section-head.catalog-library-head {
-    align-items: flex-start !important;
-    flex-direction: column !important;
-    gap: 4px !important;
-  }
+.catalog-card-library .tus-pearl-catalog-card-list.addable::-webkit-scrollbar-thumb:hover,
+.tus-pearl-catalog-card-list.addable::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 118, 110, 0.30) !important;
+}
 
-  .catalog-card-library .catalog-library-head span {
-    white-space: normal !important;
-  }
+[data-theme='dark'] .catalog-card-library .tus-pearl-catalog-card-list.addable::-webkit-scrollbar-thumb,
+[data-theme='dark'] .tus-pearl-catalog-card-list.addable::-webkit-scrollbar-thumb,
+.app-shell[data-theme='dark'] .catalog-card-library .tus-pearl-catalog-card-list.addable::-webkit-scrollbar-thumb,
+.app-shell[data-theme='dark'] .tus-pearl-catalog-card-list.addable::-webkit-scrollbar-thumb {
+  background: rgba(94, 234, 212, 0.18) !important;
+}
+
+[data-theme='dark'] .catalog-card-library .tus-pearl-catalog-card-list.addable::-webkit-scrollbar-thumb:hover,
+[data-theme='dark'] .tus-pearl-catalog-card-list.addable::-webkit-scrollbar-thumb:hover,
+.app-shell[data-theme='dark'] .catalog-card-library .tus-pearl-catalog-card-list.addable::-webkit-scrollbar-thumb:hover,
+.app-shell[data-theme='dark'] .tus-pearl-catalog-card-list.addable::-webkit-scrollbar-thumb:hover {
+  background: rgba(94, 234, 212, 0.30) !important;
+}
+
+/* ==========================================================
+   V327 — delete confirmation preview content height fix
+   ========================================================== */
+.pearl-inline-delete-preview {
+  max-height: min(180px, 42vh) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 12px 13px !important;
+  display: block !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  line-height: 1.5 !important;
+}
+
+.pearl-inline-delete-preview > * {
+  display: block !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+.pearl-inline-delete-preview::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pearl-inline-delete-preview::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.45);
+  border-radius: 999px;
+}
+
+[data-theme='dark'] .pearl-inline-delete-preview,
+.app-shell[data-theme='dark'] .pearl-inline-delete-preview {
+  scrollbar-color: rgba(148, 163, 184, 0.45) transparent;
 }

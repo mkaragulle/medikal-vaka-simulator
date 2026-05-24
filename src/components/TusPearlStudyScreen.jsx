@@ -1157,9 +1157,8 @@ function TusPearlStudyScreen({
                 </div>
 
                 <div id="catalog-card-library" className="tus-pearl-catalog-card-section catalog-card-library">
-                  <div className="tus-pearl-catalog-section-head catalog-library-head">
+                  <div className="tus-pearl-catalog-section-head">
                     <strong>Tüm kartlardan ekle</strong>
-                    <span>{searchableCards.length} kart listeleniyor</span>
                   </div>
                   <div className="pearl-library-toolbar">
                     <input className="tus-pearl-library-search" value={librarySearch} onChange={(event) => setLibrarySearch(event.target.value)} placeholder="Kart ara: sinir, farmakoloji, tuzak..." />
