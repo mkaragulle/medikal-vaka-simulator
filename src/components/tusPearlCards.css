@@ -17739,3 +17739,50 @@ html[data-theme='dark'] .pearl-editor-secondary-actions,
   transform: none !important;
   transform-origin: top right !important;
 }
+
+/* ========================================================================== 
+   V325 — Show the full add-from-all-cards library without the 4-row clamp
+   ========================================================================== */
+.catalog-card-library .tus-pearl-catalog-card-list.addable,
+.tus-pearl-catalog-card-list.addable {
+  max-height: none !important;
+  height: auto !important;
+  overflow: visible !important;
+  contain: none !important;
+  transform: none !important;
+}
+
+.catalog-card-library .tus-pearl-library-card.catalog-card-row,
+.catalog-card-library .tus-pearl-catalog-card-list.addable .tus-pearl-library-card.catalog-card-row {
+  content-visibility: auto !important;
+  contain-intrinsic-size: 88px !important;
+  contain: layout paint style !important;
+}
+
+.catalog-card-library .catalog-library-head,
+.catalog-card-library .tus-pearl-catalog-section-head.catalog-library-head {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+}
+
+.catalog-card-library .catalog-library-head span {
+  color: var(--ki-text-muted, #64748b) !important;
+  font-size: 0.82rem !important;
+  font-weight: 750 !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 720px) {
+  .catalog-card-library .catalog-library-head,
+  .catalog-card-library .tus-pearl-catalog-section-head.catalog-library-head {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+
+  .catalog-card-library .catalog-library-head span {
+    white-space: normal !important;
+  }
+}
