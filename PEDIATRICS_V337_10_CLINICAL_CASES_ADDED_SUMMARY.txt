@@ -1,0 +1,26 @@
+KlinikIQ V337 - Çocuk Sağlığı ve Hastalıkları Klinik Branş Ek Güncellemesi
+====================================================================
+
+Eklenen kayıt sayısı: 10
+Hedef yer: Klinik Branş > Çocuk Sağlığı ve Hastalıkları
+caseType: standard
+TUS Spot Olgular değişikliği: 0
+
+Neden TUS Spot yerine klinik branş?
+Bu kayıtlar hasta öyküsü, fizik muayene/vital bulgu ve objektif veri/tetkik alanları içerdiği için kompakt TUS Spot formatından çok standart klinik vaka formatına uygundur.
+
+Duplication sonucu:
+- Yüklenen 10 kayıttan yüksek tekrar riski taşıyan 6 kayıt birebir eklenmedi.
+- Bu kayıtların yerine aynı kalite standardında, pediatri klinik branşına uygun ve tekrar riski düşük yeni vakalar eklendi.
+
+Eklenen başlıklar:
+- İnfantta hışıltı ve beslenememe
+- Merdiven çıkmada zorlanma
+- Ateş sırasında kısa nöbet
+- Tekrarlayan ateşli idrar yolu enfeksiyonu
+- Küçük çocukta tek diz şişliği
+- Karında kitle ve kilo kaybı
+- Üst solunum yolu enfeksiyonu sonrası topallama
+- Düzenli tekrarlayan ateş atakları
+- Sarılık ve dalak büyüklüğü
+- Diz ağrısıyla gelen adölesan
