@@ -18003,3 +18003,68 @@ html[data-theme='dark'] .pearl-editor-secondary-actions,
     min-width: 0 !important;
   }
 }
+
+/* ==========================================================
+   V329 — library toolbar source dropdown / new card spacing fix
+   ========================================================== */
+.catalog-card-library .pearl-library-toolbar {
+  display: grid !important;
+  grid-template-columns: minmax(320px, 1fr) 280px max-content !important;
+  gap: 12px !important;
+  align-items: center !important;
+}
+
+.catalog-card-library .pearl-library-toolbar .tus-pearl-library-search {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.catalog-card-library .pearl-library-toolbar .pearl-library-source-select {
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 280px !important;
+  justify-self: stretch !important;
+}
+
+.catalog-card-library .pearl-library-toolbar .pearl-library-source-trigger {
+  min-height: 56px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.catalog-card-library .pearl-library-toolbar .btn.btn-primary.compact {
+  position: relative !important;
+  z-index: 1 !important;
+  justify-self: end !important;
+  min-height: 56px !important;
+  white-space: nowrap !important;
+  flex: 0 0 auto !important;
+}
+
+@media (max-width: 980px) {
+  .catalog-card-library .pearl-library-toolbar {
+    grid-template-columns: minmax(0, 1fr) max-content !important;
+  }
+
+  .catalog-card-library .pearl-library-toolbar .tus-pearl-library-search {
+    grid-column: 1 / -1 !important;
+  }
+
+  .catalog-card-library .pearl-library-toolbar .pearl-library-source-select {
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .catalog-card-library .pearl-library-toolbar {
+    grid-template-columns: 1fr !important;
+  }
+
+  .catalog-card-library .pearl-library-toolbar .pearl-library-source-select,
+  .catalog-card-library .pearl-library-toolbar .btn.btn-primary.compact {
+    width: 100% !important;
+    max-width: none !important;
+    justify-self: stretch !important;
+  }
+}
