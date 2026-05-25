@@ -6,13 +6,13 @@ const STYLE_ID = 'ki-custom-scrollbars-v367-style';
 const ROOT_ATTR = 'data-ki-custom-scrollbars-v367-root';
 const TRACK_ATTR = 'data-ki-custom-scrollbar-v367-track';
 const THUMB_ATTR = 'data-ki-custom-scrollbar-v367-thumb';
-const MAX_TRACKED_ELEMENTS = 48;
+const MAX_TRACKED_ELEMENTS = 56;
 const TRACK_SIZE = 6;
 const THUMB_SIZE = 3.5;
 const MIN_THUMB = 24;
 const EDGE_INSET = 5;
 const TOP_LAYER_RECT_CACHE_MS = 160;
-const POINTER_ACTIVITY_THROTTLE_MS = 320;
+const POINTER_ACTIVITY_THROTTLE_MS = 240;
 
 
 const TOP_LAYER_SELECTOR = [
@@ -83,7 +83,6 @@ const SCROLLABLE_CANDIDATE_SELECTOR = [
   '[aria-modal="true"]',
   'main',
   'aside',
-  'section',
   'pre',
   'textarea',
 ].join(', ');
@@ -170,9 +169,10 @@ function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
 
-function setStyleValue(element, propertyName, value) {
-  if (!element || element.style[propertyName] === value) return;
-  element.style[propertyName] = value;
+
+function setStyleIfChanged(element, property, value) {
+  if (!element || element.style[property] === value) return;
+  element.style[property] = value;
 }
 
 function getDocumentScrollHeight() {
@@ -485,11 +485,11 @@ html.${DRAGGING_CLASS} * {
         rect.top > window.innerHeight ||
         rect.left > window.innerWidth
       ) {
-        setStyleValue(track, 'display', 'none');
+        setStyleIfChanged(track, 'display', 'none');
         return;
       }
 
-      setStyleValue(track, 'display', 'block');
+      setStyleIfChanged(track, 'display', 'block');
       const isWindowTarget = target === window;
 
       if (isVertical) {
@@ -505,14 +505,14 @@ html.${DRAGGING_CLASS} * {
         const usable = Math.max(1, trackHeight - thumbHeight);
         const thumbTop = (metrics.scrollTop / maxScroll) * usable;
 
-        setStyleValue(track, 'transform', `translate3d(${trackLeft}px, ${visibleTop}px, 0)`);
-        setStyleValue(track, 'width', `${TRACK_SIZE}px`);
-        setStyleValue(track, 'height', `${trackHeight}px`);
-        setStyleValue(thumb, 'transform', `translate3d(0, ${thumbTop}px, 0)`);
-        setStyleValue(thumb, 'left', '1.25px');
-        setStyleValue(thumb, 'top', '0px');
-        setStyleValue(thumb, 'width', `${THUMB_SIZE}px`);
-        setStyleValue(thumb, 'height', `${thumbHeight}px`);
+        setStyleIfChanged(track, 'transform', `translate3d(${trackLeft}px, ${visibleTop}px, 0)`);
+        setStyleIfChanged(track, 'width', `${TRACK_SIZE}px`);
+        setStyleIfChanged(track, 'height', `${trackHeight}px`);
+        setStyleIfChanged(thumb, 'transform', `translate3d(0, ${thumbTop}px, 0)`);
+        setStyleIfChanged(thumb, 'left', '1.25px');
+        setStyleIfChanged(thumb, 'top', '0px');
+        setStyleIfChanged(thumb, 'width', `${THUMB_SIZE}px`);
+        setStyleIfChanged(thumb, 'height', `${thumbHeight}px`);
         entry.trackStart = visibleTop;
         entry.trackLength = trackHeight;
         entry.thumbLength = thumbHeight;
@@ -537,14 +537,14 @@ html.${DRAGGING_CLASS} * {
         const usable = Math.max(1, trackWidth - thumbWidth);
         const thumbLeft = (metrics.scrollLeft / maxScroll) * usable;
 
-        setStyleValue(track, 'transform', `translate3d(${visibleLeft}px, ${trackTop}px, 0)`);
-        setStyleValue(track, 'width', `${trackWidth}px`);
-        setStyleValue(track, 'height', `${TRACK_SIZE}px`);
-        setStyleValue(thumb, 'transform', `translate3d(${thumbLeft}px, 0, 0)`);
-        setStyleValue(thumb, 'left', '0px');
-        setStyleValue(thumb, 'top', '1.25px');
-        setStyleValue(thumb, 'width', `${thumbWidth}px`);
-        setStyleValue(thumb, 'height', `${THUMB_SIZE}px`);
+        setStyleIfChanged(track, 'transform', `translate3d(${visibleLeft}px, ${trackTop}px, 0)`);
+        setStyleIfChanged(track, 'width', `${trackWidth}px`);
+        setStyleIfChanged(track, 'height', `${TRACK_SIZE}px`);
+        setStyleIfChanged(thumb, 'transform', `translate3d(${thumbLeft}px, 0, 0)`);
+        setStyleIfChanged(thumb, 'left', '0px');
+        setStyleIfChanged(thumb, 'top', '1.25px');
+        setStyleIfChanged(thumb, 'width', `${thumbWidth}px`);
+        setStyleIfChanged(thumb, 'height', `${THUMB_SIZE}px`);
         entry.trackStart = visibleLeft;
         entry.trackLength = trackWidth;
         entry.thumbLength = thumbWidth;
@@ -559,7 +559,7 @@ html.${DRAGGING_CLASS} * {
       }
 
       if (!entry.isTopLayer && isCoveredByTopLayer(entry.visualRect, target)) {
-        setStyleValue(track, 'display', 'none');
+        setStyleIfChanged(track, 'display', 'none');
         return;
       }
 
@@ -805,7 +805,7 @@ html.${DRAGGING_CLASS} * {
       childList: true,
       subtree: true,
       attributes: true,
-      attributeFilter: ['style', 'open', 'aria-expanded', 'hidden'],
+      attributeFilter: ['class', 'style', 'data-theme', 'open', 'aria-expanded', 'hidden'],
     });
 
     const themeObserver = new MutationObserver(() => requestUpdate());
@@ -829,8 +829,10 @@ html.${DRAGGING_CLASS} * {
     window.addEventListener('resize', onResize, { passive: true });
     window.addEventListener('storage', onStorage, { passive: true });
     window.addEventListener('pointermove', onPointerActivity, { passive: true });
-    window.addEventListener('focus', () => scheduleScan(0), { passive: true });
-    window.addEventListener('pageshow', () => scheduleScan(0), { passive: true });
+    const handleFocus = () => scheduleScan(0);
+    const handlePageShow = () => scheduleScan(0);
+    window.addEventListener('focus', handleFocus, { passive: true });
+    window.addEventListener('pageshow', handlePageShow, { passive: true });
     document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true });
 
     scan();
@@ -850,6 +852,8 @@ html.${DRAGGING_CLASS} * {
       window.removeEventListener('resize', onResize);
       window.removeEventListener('storage', onStorage);
       window.removeEventListener('pointermove', onPointerActivity);
+      window.removeEventListener('focus', handleFocus);
+      window.removeEventListener('pageshow', handlePageShow);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       clearEntries();
       roots.forEach((node) => node.remove());

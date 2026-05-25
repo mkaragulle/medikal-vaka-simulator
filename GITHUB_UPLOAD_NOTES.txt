@@ -1,13 +1,21 @@
-KlinikIQ V373 GitHub yükleme notları
+GitHub upload notes
 
-Bu paket GitHub’a kaynak kod olarak yüklenmeye uygun hazırlanmıştır.
+This package is prepared to be safe for GitHub upload:
 
-Yüklenmemesi gereken klasör/dosyalar:
-- node_modules/
-- dist/
-- .vite/
-- .vercel/
-- .env veya .env.local
-- zip/log/cache dosyaları
+- node_modules is excluded.
+- dist/build output is excluded.
+- .git folder is excluded from the zip.
+- .vite, .vercel, .cache, .turbo, logs, env files, and nested zip files are ignored.
+- package-lock.json was not generated during the validation install.
+- No new dependency was added.
 
-Bu zip içinde node_modules ve dist bırakılmamıştır. `npm install` ve `npm run build` testleri lokal çalışma klasöründe alınmalı; GitHub’a yalnızca kaynak proje dosyaları commit edilmelidir.
+Recommended upload method:
+1. Extract this zip locally.
+2. Copy the project files into your repository folder.
+3. Run `npm install` locally or let Vercel install dependencies.
+4. Run `npm run build` before pushing if you want to verify locally.
+5. Commit only source/project files, not node_modules or dist.
+
+Expected Vercel/GitHub behavior:
+- Build should pass using the existing package.json.
+- Large Vite chunk warnings may appear; they are expected because case and glossary data are intentionally preserved.

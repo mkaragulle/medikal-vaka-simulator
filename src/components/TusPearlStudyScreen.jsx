@@ -34,6 +34,25 @@ const LIBRARY_SOURCE_OPTIONS = [
 const CATALOG_LIBRARY_INITIAL_LIMIT = 48;
 const CATALOG_LIBRARY_LOAD_STEP = 48;
 
+const PEARL_LIBRARY_SEARCH_TEXT_CACHE = new WeakMap();
+
+function getPearlLibrarySearchText(card = {}) {
+  if (!card || typeof card !== 'object') return '';
+  const cached = PEARL_LIBRARY_SEARCH_TEXT_CACHE.get(card);
+  if (cached) return cached;
+  const text = [
+    card.front,
+    card.back,
+    card.subject,
+    card.topic,
+    card.source,
+    ...(card.keywords || []),
+    ...(card.tags || []),
+  ].join(' ').toLocaleLowerCase('tr');
+  PEARL_LIBRARY_SEARCH_TEXT_CACHE.set(card, text);
+  return text;
+}
+
 function CatalogCardQuestionText({ text }) {
   return <span>{text}</span>;
 }
@@ -700,27 +719,21 @@ function TusPearlStudyScreen({
   ), [activeCatalog, cardById]);
 
   const deferredLibrarySearch = useDeferredValue(librarySearch);
-  const librarySearchIndex = useMemo(() => allCards.map((card) => ({
-    card,
-    searchText: [card.front, card.back, card.subject, card.topic, card.source, ...(card.keywords || []), ...(card.tags || [])]
-      .join(' ')
-      .toLocaleLowerCase('tr'),
-  })), [allCards]);
+  const libraryQuery = deferredLibrarySearch.trim().toLocaleLowerCase('tr');
+  const sourceFilteredLibraryCards = useMemo(() => allCards.filter((card) => {
+    if (sourceLibraryFilter === 'user' && card.source !== 'user') return false;
+    if (sourceLibraryFilter === 'system' && card.source === 'user') return false;
+    return true;
+  }), [allCards, sourceLibraryFilter]);
 
   const searchableCards = useMemo(() => {
-    const query = deferredLibrarySearch.trim().toLocaleLowerCase('tr');
-    const pool = librarySearchIndex.filter(({ card }) => {
-      if (sourceLibraryFilter === 'user' && card.source !== 'user') return false;
-      if (sourceLibraryFilter === 'system' && card.source === 'user') return false;
-      return true;
-    });
-    if (!query) return pool.map(({ card }) => card);
-    return pool.filter(({ searchText }) => searchText.includes(query)).map(({ card }) => card);
-  }, [deferredLibrarySearch, librarySearchIndex, sourceLibraryFilter]);
+    if (!libraryQuery) return sourceFilteredLibraryCards;
+    return sourceFilteredLibraryCards.filter((card) => getPearlLibrarySearchText(card).includes(libraryQuery));
+  }, [libraryQuery, sourceFilteredLibraryCards]);
 
   useEffect(() => {
     setCatalogLibraryVisibleCount(CATALOG_LIBRARY_INITIAL_LIMIT);
-  }, [deferredLibrarySearch, sourceLibraryFilter, activeCatalogId, viewMode]);
+  }, [libraryQuery, sourceLibraryFilter, activeCatalogId, viewMode]);
 
   const visibleSearchableCards = useMemo(() => (
     searchableCards.slice(0, catalogLibraryVisibleCount)

@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import { lazy, Suspense, startTransition, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import './index.css';
 import './styles/klinikiq-system.css';
 import './styles/klinikiq-refine.css';
@@ -385,59 +385,6 @@ function filterCasesBySearch(caseItems = [], query = '') {
     .map((item) => item.clinicalCase);
 }
 
-function buildCaseSearchIndex(caseItems = []) {
-  return caseItems.map((clinicalCase, index) => ({
-    clinicalCase,
-    index,
-    titleText: normalizeSearchText(getCaseSearchTitle(clinicalCase)),
-    keywordText: normalizeSearchText([
-      clinicalCase.keywords,
-      clinicalCase.searchKeywords,
-      clinicalCase.tags,
-      clinicalCase.learningTarget,
-      clinicalCase.clinicalFocus,
-      clinicalCase.relatedBranch,
-      clinicalCase.branchName,
-    ].flat(Infinity).filter(Boolean).join(' ')),
-    questionText: normalizeSearchText([
-      clinicalCase.question,
-      clinicalCase.stem,
-      clinicalCase.narrativeStem,
-      clinicalCase.diagnosis?.question,
-    ].filter(Boolean).join(' ')),
-    fullText: normalizeSearchText(collectCaseSearchText(clinicalCase).join(' ')),
-  }));
-}
-
-function getIndexedCaseSearchScore(entry = {}, normalizedQuery = '') {
-  if (!normalizedQuery) return 1;
-  const tokens = normalizedQuery.split(' ').filter((token) => token.length > 1);
-  if (!tokens.length) return 1;
-  if (!entry.fullText || !tokens.every((token) => entry.fullText.includes(token))) return 0;
-
-  let score = 10;
-  if (entry.titleText.includes(normalizedQuery)) score += 90;
-  if (entry.questionText.includes(normalizedQuery)) score += 70;
-  if (entry.keywordText.includes(normalizedQuery)) score += 60;
-  tokens.forEach((token) => {
-    if (entry.titleText.includes(token)) score += 18;
-    if (entry.keywordText.includes(token)) score += 14;
-    if (entry.questionText.includes(token)) score += 12;
-  });
-  return score;
-}
-
-function filterCaseSearchIndex(caseSearchIndex = [], query = '') {
-  const normalizedQuery = normalizeSearchText(query);
-  if (!normalizedQuery) return caseSearchIndex.map((entry) => entry.clinicalCase);
-
-  return caseSearchIndex
-    .map((entry) => ({ ...entry, score: getIndexedCaseSearchScore(entry, normalizedQuery) }))
-    .filter((entry) => entry.score > 0)
-    .sort((a, b) => (b.score - a.score) || (a.index - b.index))
-    .map((entry) => entry.clinicalCase);
-}
-
 function normalizeBranchDifficulty(value = '') {
   const normalized = String(value || '').toLocaleLowerCase('tr');
   if (normalized.includes('acil') || normalized.includes('urgent')) return 'Acil';
@@ -577,28 +524,12 @@ function App() {
 
   const activeBranchCasePool = filteredBranchCases.length ? filteredBranchCases : branchCases;
 
-  const deferredBottomCaseSearchQuery = useDeferredValue(bottomCaseSearchQuery);
-  const normalizedDeferredBottomCaseSearchQuery = useMemo(
-    () => normalizeSearchText(deferredBottomCaseSearchQuery),
-    [deferredBottomCaseSearchQuery],
-  );
-  const activeBranchCaseIdSet = useMemo(
-    () => new Set(activeBranchCasePool.map((clinicalCase) => clinicalCase.id)),
-    [activeBranchCasePool],
-  );
-  const branchCaseSearchIndex = useMemo(
-    () => (normalizedDeferredBottomCaseSearchQuery ? buildCaseSearchIndex(activeBranchCasePool) : []),
-    [activeBranchCasePool, normalizedDeferredBottomCaseSearchQuery],
-  );
-
   const searchedBranchCasePool = useMemo(
-    () => (normalizedDeferredBottomCaseSearchQuery
-      ? filterCaseSearchIndex(branchCaseSearchIndex, normalizedDeferredBottomCaseSearchQuery)
-      : activeBranchCasePool),
-    [activeBranchCasePool, branchCaseSearchIndex, normalizedDeferredBottomCaseSearchQuery],
+    () => filterCasesBySearch(activeBranchCasePool, bottomCaseSearchQuery),
+    [activeBranchCasePool, bottomCaseSearchQuery],
   );
 
-  const hasBottomCaseSearch = useMemo(() => Boolean(normalizeSearchText(bottomCaseSearchQuery)), [bottomCaseSearchQuery]);
+  const hasBottomCaseSearch = Boolean(normalizeSearchText(bottomCaseSearchQuery));
 
   const selectedCase = useMemo(() => {
     if (examState?.active) {
@@ -609,9 +540,9 @@ function App() {
     if (!selectedCaseId) return activeBranchCasePool[0] ?? null;
     if (!accessibleCaseIds.has(selectedCaseId)) return activeBranchCasePool[0] ?? null;
     const candidate = accessibleCaseIndex.byId.get(selectedCaseId);
-    if (candidate && activeBranchCaseIdSet.has(candidate.id)) return candidate;
+    if (candidate && activeBranchCasePool.some((clinicalCase) => clinicalCase.id === candidate.id)) return candidate;
     return activeBranchCasePool[0] ?? null;
-  }, [selectedCaseId, activeBranchCasePool, activeBranchCaseIdSet, examState, accessibleCaseIds, accessibleCases, accessibleCaseIndex]);
+  }, [selectedCaseId, activeBranchCasePool, examState, accessibleCaseIds, accessibleCases, accessibleCaseIndex]);
 
   const persistCurrentUser = (patch) => {
     setCurrentUser((current) => {
@@ -1183,60 +1114,63 @@ function App() {
     const existingExamAnswer = examState?.active ? examState.answers?.[clinicalCase.id] : null;
     if (existingExamAnswer) return existingExamAnswer.attemptResult;
 
-    markCaseSolved(clinicalCase.id);
     const scored = scoreAttempt(clinicalCase.difficulty, isCorrect, sessionStats.streak);
 
-    if (!isCorrect) {
-      addWrongAnswer(clinicalCase, selected);
-    }
+    startTransition(() => {
+      markCaseSolved(clinicalCase.id);
 
-    setSessionStats((current) => {
-      const attempts = current.attempts + 1;
-      const correct = current.correct + (isCorrect ? 1 : 0);
-      const score = current.score + scored.earnedPoints;
-      const streak = scored.nextStreak;
-      const bestStreak = Math.max(current.bestStreak, streak);
-      const accuracy = calculateAccuracy(correct, attempts);
-      const trend = [
-        ...(Array.isArray(current.trend) ? current.trend : []),
-        {
+      if (!isCorrect) {
+        addWrongAnswer(clinicalCase, selected);
+      }
+
+      setSessionStats((current) => {
+        const attempts = current.attempts + 1;
+        const correct = current.correct + (isCorrect ? 1 : 0);
+        const score = current.score + scored.earnedPoints;
+        const streak = scored.nextStreak;
+        const bestStreak = Math.max(current.bestStreak, streak);
+        const accuracy = calculateAccuracy(correct, attempts);
+        const trend = [
+          ...(Array.isArray(current.trend) ? current.trend : []),
+          {
+            attempts,
+            correct,
+            score,
+            streak,
+            bestStreak,
+            accuracy,
+            earnedPoints: scored.earnedPoints,
+            isCorrect,
+            timestamp: Date.now(),
+          },
+        ].slice(-12);
+
+        return {
           attempts,
           correct,
           score,
           streak,
           bestStreak,
           accuracy,
-          earnedPoints: scored.earnedPoints,
-          isCorrect,
-          timestamp: Date.now(),
-        },
-      ].slice(-12);
+          trend,
+        };
+      });
 
-      return {
-        attempts,
-        correct,
-        score,
-        streak,
-        bestStreak,
-        accuracy,
-        trend,
-      };
-    });
-
-    if (examState?.active) {
-      setExamState((current) => ({
-        ...current,
-        answers: {
-          ...current.answers,
-          [clinicalCase.id]: {
-            caseId: clinicalCase.id,
-            selected,
-            isCorrect,
-            attemptResult: scored,
+      if (examState?.active) {
+        setExamState((current) => ({
+          ...current,
+          answers: {
+            ...current.answers,
+            [clinicalCase.id]: {
+              caseId: clinicalCase.id,
+              selected,
+              isCorrect,
+              attemptResult: scored,
+            },
           },
-        },
-      }));
-    }
+        }));
+      }
+    });
 
     return scored;
   }, [addWrongAnswer, examState, markCaseSolved, sessionStats.streak]);

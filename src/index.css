@@ -51356,48 +51356,10 @@ html.ki-performance-mode body {
   -webkit-font-smoothing: antialiased;
 }
 
-html.ki-performance-mode.ki-is-scrolling :is(
-  .card-surface,
-  .branch-card,
-  .case-card,
-  .case-list-item,
-  .answer-option,
-  .option-card,
-  .btn,
-  .question-panel,
-  .clinical-data-card,
-  .requested-test-card,
-  .inline-order-result,
-  .tus-pearl-library-card,
-  .pearl-study-card,
-  .pearl-study-stage,
-  .summary-detail-card,
-  .patient-summary-card,
-  .top-shell-nav,
-  .global-topbar-v55,
-  .floating-glossary-tooltip,
-  .smart-glossary-popover
-),
-html.ki-performance-mode.ki-is-resizing :is(
-  .card-surface,
-  .branch-card,
-  .case-card,
-  .case-list-item,
-  .answer-option,
-  .option-card,
-  .btn,
-  .question-panel,
-  .clinical-data-card,
-  .requested-test-card,
-  .inline-order-result,
-  .tus-pearl-library-card,
-  .pearl-study-card,
-  .pearl-study-stage,
-  .summary-detail-card,
-  .patient-summary-card,
-  .top-shell-nav,
-  .global-topbar-v55
-) {
+html.ki-performance-mode.ki-is-scrolling :is(.card-surface, .branch-card, .case-card, .case-list-item, .answer-option, .option-card, .requested-test-card, .inline-order-result, .tus-pearl-library-card, .tus-pearl-card, .question-panel, .summary-card, .wrong-answer-card, .clinical-data-card, .visual-first-help-card, .btn, button),
+html.ki-performance-mode.ki-is-scrolling :is(.card-surface, .branch-card, .case-card, .case-list-item, .answer-option, .option-card, .requested-test-card, .inline-order-result, .tus-pearl-library-card, .tus-pearl-card, .question-panel, .summary-card, .wrong-answer-card, .clinical-data-card, .visual-first-help-card, .btn, button)::before,
+html.ki-performance-mode.ki-is-scrolling :is(.card-surface, .branch-card, .case-card, .case-list-item, .answer-option, .option-card, .requested-test-card, .inline-order-result, .tus-pearl-library-card, .tus-pearl-card, .question-panel, .summary-card, .wrong-answer-card, .clinical-data-card, .visual-first-help-card, .btn, button)::after,
+html.ki-performance-mode.ki-is-resizing :is(.card-surface, .branch-card, .case-card, .case-list-item, .answer-option, .option-card, .requested-test-card, .inline-order-result, .tus-pearl-library-card, .tus-pearl-card, .question-panel, .summary-card, .wrong-answer-card, .clinical-data-card, .visual-first-help-card, .btn, button) {
   transition-duration: 0ms !important;
   animation-play-state: paused !important;
 }
@@ -51523,11 +51485,12 @@ html.ki-performance-mode .premium-cursor--text {
   opacity: 0 !important;
 }
 
-html.ki-performance-mode [style*="filter"],
 html.ki-performance-mode .nav-brand-mark-pulse,
 html.ki-performance-mode .glow,
 html.ki-performance-mode .pulse,
-html.ki-performance-mode .shimmer {
+html.ki-performance-mode .shimmer,
+html.ki-performance-mode .brand-orb,
+html.ki-performance-mode .ambient-orb {
   filter: none !important;
 }
 
