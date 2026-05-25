@@ -87,26 +87,32 @@ function injectNativeCursorStyle() {
   const style = document.createElement('style');
   style.id = NATIVE_CURSOR_STYLE_ID;
   style.textContent = `
+/* V348: keep the native OS cursor visible. The premium cursor is only a lightweight visual companion. */
 html.ki-premium-cursor-on,
 html.ki-premium-cursor-on body {
-  cursor: none !important;
+  cursor: auto !important;
 }
-html.ki-premium-cursor-on a,
-html.ki-premium-cursor-on button,
+html.ki-premium-cursor-on a[href],
+html.ki-premium-cursor-on button:not(:disabled),
 html.ki-premium-cursor-on [role='button'],
 html.ki-premium-cursor-on [tabindex]:not([tabindex='-1']),
 html.ki-premium-cursor-on .btn,
 html.ki-premium-cursor-on .case-card,
 html.ki-premium-cursor-on .branch-card,
 html.ki-premium-cursor-on .option-card,
+html.ki-premium-cursor-on .visual-help-toggle,
+html.ki-premium-cursor-on .premium-visual-help-toggle,
+html.ki-premium-cursor-on .result-image-link,
+html.ki-premium-cursor-on [data-cursor='interactive'] {
+  cursor: pointer !important;
+}
 html.ki-premium-cursor-on .glossary-term,
 html.ki-premium-cursor-on .smart-glossary-term,
 html.ki-premium-cursor-on .glossary-word,
 html.ki-premium-cursor-on .nested-glossary-term,
 html.ki-premium-cursor-on [data-glossary-entry-id],
-html.ki-premium-cursor-on [data-cursor='glossary'],
-html.ki-premium-cursor-on [data-cursor='interactive'] {
-  cursor: none !important;
+html.ki-premium-cursor-on [data-cursor='glossary'] {
+  cursor: help !important;
 }
 html.ki-premium-cursor-on input,
 html.ki-premium-cursor-on textarea,
@@ -115,17 +121,16 @@ html.ki-premium-cursor-on [contenteditable='true'],
 html.ki-premium-cursor-on [contenteditable=''] {
   cursor: text !important;
 }
-@media (max-width: 767px), (pointer: coarse) {
-  html.ki-premium-cursor-on,
-  html.ki-premium-cursor-on body,
-  html.ki-premium-cursor-on a,
-  html.ki-premium-cursor-on button,
-  html.ki-premium-cursor-on [role='button'],
-  html.ki-premium-cursor-on .glossary-term,
-  html.ki-premium-cursor-on .smart-glossary-term,
-  html.ki-premium-cursor-on [data-glossary-entry-id] {
-    cursor: auto !important;
-  }
+html.ki-premium-cursor-on button:disabled,
+html.ki-premium-cursor-on [aria-disabled='true'],
+html.ki-premium-cursor-on .is-disabled {
+  cursor: not-allowed !important;
+}
+html.ki-premium-cursor-on .loading,
+html.ki-premium-cursor-on .is-loading,
+html.ki-premium-cursor-on [aria-busy='true'],
+html.ki-premium-cursor-on [data-loading='true'] {
+  cursor: wait !important;
 }
 `;
   document.head.appendChild(style);

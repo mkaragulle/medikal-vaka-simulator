@@ -51122,15 +51122,14 @@ body:not(.klinikiq-auth-lock) .exam-active-shell.timed-exam-shell .tus-spot-bank
   }
 }
 
-/* V346 — Premium KlinikIQ Cursor System / Design + Performance Fix
-   - No React state updates on mousemove
-   - No duplicate pointer/mouse listeners
-   - Native cursor is force-hidden on glossary/interactive targets
-   - Minimal medical-lens design, no heavy backdrop-filter
+/* V348 — Premium cursor companion fix
+   - Native OS cursor stays visible everywhere
+   - Premium cursor remains a lightweight visual companion
+   - No cursor:none rules, so no disappearing native pointer
 */
 html.ki-premium-cursor-on,
 html.ki-premium-cursor-on body {
-  cursor: none !important;
+  cursor: auto !important;
 }
 
 html.ki-premium-cursor-on input,
@@ -51141,14 +51140,34 @@ html.ki-premium-cursor-on [contenteditable=''] {
   cursor: text !important;
 }
 
+html.ki-premium-cursor-on a[href],
+html.ki-premium-cursor-on button:not(:disabled),
+html.ki-premium-cursor-on [role='button'],
+html.ki-premium-cursor-on .btn,
+html.ki-premium-cursor-on .case-card,
+html.ki-premium-cursor-on .branch-card,
+html.ki-premium-cursor-on .option-card,
+html.ki-premium-cursor-on .visual-help-toggle,
+html.ki-premium-cursor-on .premium-visual-help-toggle,
+html.ki-premium-cursor-on .result-image-link,
+html.ki-premium-cursor-on [data-cursor='interactive'] {
+  cursor: pointer !important;
+}
+
 html.ki-premium-cursor-on .glossary-term,
 html.ki-premium-cursor-on .smart-glossary-term,
 html.ki-premium-cursor-on .glossary-word,
 html.ki-premium-cursor-on .nested-glossary-term,
 html.ki-premium-cursor-on [data-glossary-entry-id],
-html.ki-premium-cursor-on [data-cursor='glossary'],
-html.ki-premium-cursor-on [data-cursor='interactive'] {
-  cursor: none !important;
+html.ki-premium-cursor-on [data-cursor='glossary'] {
+  cursor: help !important;
+}
+
+html.ki-premium-cursor-on .loading,
+html.ki-premium-cursor-on .is-loading,
+html.ki-premium-cursor-on [aria-busy='true'],
+html.ki-premium-cursor-on [data-loading='true'] {
+  cursor: wait !important;
 }
 
 .premium-cursor {
@@ -51580,4 +51599,43 @@ html.ki-performance-mode .shimmer {
     transition: none !important;
     scroll-behavior: auto !important;
   }
+}
+
+
+/* V348 native cursor safety override: keep browser/OS cursor visible while retaining the premium cursor companion. */
+html.ki-premium-cursor-on,
+html.ki-premium-cursor-on body {
+  cursor: auto !important;
+}
+html.ki-premium-cursor-on a[href],
+html.ki-premium-cursor-on button:not(:disabled),
+html.ki-premium-cursor-on [role='button'],
+html.ki-premium-cursor-on [tabindex]:not([tabindex='-1']),
+html.ki-premium-cursor-on .btn,
+html.ki-premium-cursor-on .case-card,
+html.ki-premium-cursor-on .branch-card,
+html.ki-premium-cursor-on .option-card,
+html.ki-premium-cursor-on [data-cursor='interactive'] {
+  cursor: pointer !important;
+}
+html.ki-premium-cursor-on .glossary-term,
+html.ki-premium-cursor-on .smart-glossary-term,
+html.ki-premium-cursor-on .glossary-word,
+html.ki-premium-cursor-on .nested-glossary-term,
+html.ki-premium-cursor-on [data-glossary-entry-id],
+html.ki-premium-cursor-on [data-cursor='glossary'] {
+  cursor: help !important;
+}
+html.ki-premium-cursor-on input,
+html.ki-premium-cursor-on textarea,
+html.ki-premium-cursor-on select,
+html.ki-premium-cursor-on [contenteditable='true'],
+html.ki-premium-cursor-on [contenteditable=''] {
+  cursor: text !important;
+}
+html.ki-premium-cursor-on .loading,
+html.ki-premium-cursor-on .is-loading,
+html.ki-premium-cursor-on [aria-busy='true'],
+html.ki-premium-cursor-on [data-loading='true'] {
+  cursor: wait !important;
 }
