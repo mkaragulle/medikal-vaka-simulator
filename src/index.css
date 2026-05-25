@@ -51122,190 +51122,194 @@ body:not(.klinikiq-auth-lock) .exam-active-shell.timed-exam-shell .tus-spot-bank
   }
 }
 
-/* V344 — Premium KlinikIQ Cursor System */
-@media (pointer: fine) and (hover: hover) {
-  html.premium-cursor-enabled,
-  html.premium-cursor-enabled body,
-  html.premium-cursor-enabled a,
-  html.premium-cursor-enabled button,
-  html.premium-cursor-enabled [role='button'],
-  html.premium-cursor-enabled .btn,
-  html.premium-cursor-enabled .case-card,
-  html.premium-cursor-enabled .branch-card,
-  html.premium-cursor-enabled .option-card,
-  html.premium-cursor-enabled .glossary-term,
-  html.premium-cursor-enabled .smart-glossary-term {
-    cursor: none !important;
-  }
-
-  html.premium-cursor-enabled input,
-  html.premium-cursor-enabled textarea,
-  html.premium-cursor-enabled select,
-  html.premium-cursor-enabled [contenteditable='true'],
-  html.premium-cursor-enabled [contenteditable=''] {
-    cursor: text !important;
-  }
-
-  .premium-cursor {
-    --premium-cursor-x: -100px;
-    --premium-cursor-y: -100px;
-    --premium-cursor-size: 28px;
-    --premium-cursor-ring-color: rgba(13, 148, 136, 0.72);
-    --premium-cursor-dot-color: rgba(15, 118, 110, 0.95);
-    --premium-cursor-glow: rgba(45, 212, 191, 0.16);
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: var(--premium-cursor-size);
-    height: var(--premium-cursor-size);
-    transform: translate3d(calc(var(--premium-cursor-x) - 50%), calc(var(--premium-cursor-y) - 50%), 0);
-    z-index: 2147483647;
-    pointer-events: none;
-    opacity: 0;
-    mix-blend-mode: normal;
-    transition:
-      opacity 140ms ease,
-      width 180ms cubic-bezier(0.22, 1, 0.36, 1),
-      height 180ms cubic-bezier(0.22, 1, 0.36, 1),
-      filter 180ms ease;
-    will-change: transform, width, height, opacity;
-  }
-
-  .premium-cursor.is-visible {
-    opacity: 1;
-  }
-
-  .premium-cursor-ring,
-  .premium-cursor-dot,
-  .premium-cursor-info,
-  .premium-cursor-loader {
-    position: absolute;
-    inset: 0;
-    display: block;
-  }
-
-  .premium-cursor-ring {
-    border: 1.25px solid var(--premium-cursor-ring-color);
-    border-radius: 999px;
-    background:
-      radial-gradient(circle at center, rgba(255, 255, 255, 0.08), transparent 58%),
-      rgba(240, 253, 250, 0.06);
-    box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.22) inset,
-      0 10px 28px var(--premium-cursor-glow);
-    backdrop-filter: blur(2px);
-  }
-
-  .premium-cursor-dot {
-    inset: 50%;
-    width: 4px;
-    height: 4px;
-    margin: -2px 0 0 -2px;
-    border-radius: 999px;
-    background: var(--premium-cursor-dot-color);
-    box-shadow: 0 0 10px rgba(20, 184, 166, 0.42);
-  }
-
-  .premium-cursor-info {
-    left: 50%;
-    top: 50%;
-    width: 13px;
-    height: 13px;
-    margin: -6.5px 0 0 -6.5px;
-    border-radius: 999px;
-    display: grid;
-    place-items: center;
-    font-size: 9px;
-    font-weight: 800;
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    color: #0f766e;
-    background: rgba(240, 253, 250, 0.96);
-    border: 1px solid rgba(20, 184, 166, 0.36);
-    opacity: 0;
-    transform: scale(0.72);
-    transition: opacity 150ms ease, transform 150ms ease;
-  }
-
-  .premium-cursor-loader {
-    border-radius: 999px;
-    opacity: 0;
-    transform: rotate(0deg);
-    background:
-      conic-gradient(from 0deg, rgba(20, 184, 166, 0), rgba(20, 184, 166, 0.92), rgba(20, 184, 166, 0));
-    mask: radial-gradient(circle, transparent 56%, #000 58%);
-    -webkit-mask: radial-gradient(circle, transparent 56%, #000 58%);
-  }
-
-  .premium-cursor--interactive {
-    --premium-cursor-size: 38px;
-    --premium-cursor-ring-color: rgba(20, 184, 166, 0.84);
-    --premium-cursor-glow: rgba(20, 184, 166, 0.24);
-    filter: drop-shadow(0 0 12px rgba(20, 184, 166, 0.14));
-  }
-
-  .premium-cursor--interactive .premium-cursor-dot {
-    width: 5px;
-    height: 5px;
-    margin: -2.5px 0 0 -2.5px;
-  }
-
-  .premium-cursor--glossary {
-    --premium-cursor-size: 36px;
-    --premium-cursor-ring-color: rgba(13, 148, 136, 0.92);
-    --premium-cursor-glow: rgba(13, 148, 136, 0.28);
-  }
-
-  .premium-cursor--glossary .premium-cursor-dot {
-    opacity: 0;
-  }
-
-  .premium-cursor--glossary .premium-cursor-info {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  .premium-cursor--loading {
-    --premium-cursor-size: 34px;
-    --premium-cursor-ring-color: rgba(8, 145, 178, 0.72);
-    --premium-cursor-dot-color: rgba(8, 145, 178, 0.95);
-    --premium-cursor-glow: rgba(8, 145, 178, 0.20);
-  }
-
-  .premium-cursor--loading .premium-cursor-loader {
-    opacity: 1;
-    animation: premium-cursor-spin 840ms linear infinite;
-  }
-
-  .premium-cursor--text {
-    opacity: 0 !important;
-  }
-
-  html.premium-cursor-pressed .premium-cursor {
-    --premium-cursor-size: 24px;
-    filter: saturate(1.2) brightness(0.95);
-  }
-
-  html[data-theme='dark'] .premium-cursor,
-  [data-theme='dark'] .premium-cursor {
-    --premium-cursor-ring-color: rgba(94, 234, 212, 0.72);
-    --premium-cursor-dot-color: rgba(153, 246, 228, 0.96);
-    --premium-cursor-glow: rgba(45, 212, 191, 0.22);
-  }
-
-  html[data-theme='dark'] .premium-cursor-info,
-  [data-theme='dark'] .premium-cursor-info {
-    color: #ccfbf1;
-    background: rgba(15, 23, 42, 0.94);
-    border-color: rgba(94, 234, 212, 0.42);
-  }
-
-  @keyframes premium-cursor-spin {
-    to { transform: rotate(360deg); }
-  }
+/* V345 — Premium KlinikIQ Cursor System / Robust Activation Fix */
+html.premium-cursor-enabled,
+html.premium-cursor-enabled body,
+html.premium-cursor-enabled body *:not(input):not(textarea):not(select):not([contenteditable='true']):not([contenteditable='']) {
+  cursor: none !important;
 }
 
-@media (prefers-reduced-motion: reduce), (pointer: coarse), (hover: none) {
+html.premium-cursor-enabled input,
+html.premium-cursor-enabled textarea,
+html.premium-cursor-enabled select,
+html.premium-cursor-enabled [contenteditable='true'],
+html.premium-cursor-enabled [contenteditable=''] {
+  cursor: text !important;
+}
+
+.premium-cursor {
+  --premium-cursor-x: -120px;
+  --premium-cursor-y: -120px;
+  --premium-cursor-size: 30px;
+  --premium-cursor-ring-color: rgba(13, 148, 136, 0.82);
+  --premium-cursor-dot-color: rgba(15, 118, 110, 0.98);
+  --premium-cursor-glow: rgba(45, 212, 191, 0.18);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--premium-cursor-size);
+  height: var(--premium-cursor-size);
+  transform: translate3d(calc(var(--premium-cursor-x) - 50%), calc(var(--premium-cursor-y) - 50%), 0);
+  z-index: 2147483647;
+  pointer-events: none;
+  opacity: 0;
+  isolation: isolate;
+  transition:
+    opacity 120ms ease,
+    width 160ms cubic-bezier(0.22, 1, 0.36, 1),
+    height 160ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 160ms ease;
+  will-change: transform, width, height, opacity;
+}
+
+.premium-cursor.is-visible {
+  opacity: 1;
+}
+
+.premium-cursor-ring,
+.premium-cursor-dot,
+.premium-cursor-info,
+.premium-cursor-loader {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.premium-cursor-ring {
+  border: 1.35px solid var(--premium-cursor-ring-color);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.10), transparent 58%),
+    rgba(240, 253, 250, 0.08);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.32) inset,
+    0 10px 30px var(--premium-cursor-glow),
+    0 0 18px rgba(20, 184, 166, 0.10);
+  backdrop-filter: blur(2px);
+}
+
+.premium-cursor-dot {
+  inset: 50%;
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+  border-radius: 999px;
+  background: var(--premium-cursor-dot-color);
+  box-shadow: 0 0 10px rgba(20, 184, 166, 0.52);
+}
+
+.premium-cursor-info {
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 9px;
+  font-weight: 850;
+  line-height: 1;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #0f766e;
+  background: rgba(240, 253, 250, 0.98);
+  border: 1px solid rgba(20, 184, 166, 0.42);
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 140ms ease, transform 140ms ease;
+}
+
+.premium-cursor-loader {
+  border-radius: 999px;
+  opacity: 0;
+  transform: rotate(0deg);
+  background:
+    conic-gradient(from 0deg, rgba(20, 184, 166, 0), rgba(20, 184, 166, 0.95), rgba(20, 184, 166, 0));
+  mask: radial-gradient(circle, transparent 56%, #000 58%);
+  -webkit-mask: radial-gradient(circle, transparent 56%, #000 58%);
+}
+
+.premium-cursor--interactive {
+  --premium-cursor-size: 40px;
+  --premium-cursor-ring-color: rgba(20, 184, 166, 0.92);
+  --premium-cursor-glow: rgba(20, 184, 166, 0.28);
+  filter: drop-shadow(0 0 14px rgba(20, 184, 166, 0.18));
+}
+
+.premium-cursor--interactive .premium-cursor-dot {
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+}
+
+.premium-cursor--glossary {
+  --premium-cursor-size: 38px;
+  --premium-cursor-ring-color: rgba(13, 148, 136, 0.96);
+  --premium-cursor-glow: rgba(13, 148, 136, 0.30);
+}
+
+.premium-cursor--glossary .premium-cursor-dot {
+  opacity: 0;
+}
+
+.premium-cursor--glossary .premium-cursor-info {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.premium-cursor--loading {
+  --premium-cursor-size: 36px;
+  --premium-cursor-ring-color: rgba(8, 145, 178, 0.82);
+  --premium-cursor-dot-color: rgba(8, 145, 178, 0.98);
+  --premium-cursor-glow: rgba(8, 145, 178, 0.22);
+}
+
+.premium-cursor--loading .premium-cursor-loader {
+  opacity: 1;
+  animation: premium-cursor-spin 840ms linear infinite;
+}
+
+.premium-cursor--text {
+  opacity: 0 !important;
+}
+
+html.premium-cursor-pressed .premium-cursor {
+  --premium-cursor-size: 24px;
+  filter: saturate(1.22) brightness(0.96);
+}
+
+html[data-theme='dark'] .premium-cursor,
+[data-theme='dark'] .premium-cursor {
+  --premium-cursor-ring-color: rgba(94, 234, 212, 0.84);
+  --premium-cursor-dot-color: rgba(153, 246, 228, 0.98);
+  --premium-cursor-glow: rgba(45, 212, 191, 0.25);
+}
+
+html[data-theme='dark'] .premium-cursor-info,
+[data-theme='dark'] .premium-cursor-info {
+  color: #ccfbf1;
+  background: rgba(15, 23, 42, 0.96);
+  border-color: rgba(94, 234, 212, 0.48);
+}
+
+@keyframes premium-cursor-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 767px) {
   .premium-cursor {
     display: none !important;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-cursor,
+  .premium-cursor-info {
+    transition: none !important;
+  }
+
+  .premium-cursor--loading .premium-cursor-loader {
+    animation-duration: 1.8s;
+  }
+}
+

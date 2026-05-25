@@ -12,13 +12,15 @@ const TEXT_TARGET_SELECTOR = [
 const GLOSSARY_TARGET_SELECTOR = [
   '.glossary-term',
   '.smart-glossary-term',
+  '.glossary-word',
+  '.nested-glossary-term',
   '[data-glossary-entry-id]',
   '[data-cursor="glossary"]',
 ].join(', ');
 
 const INTERACTIVE_TARGET_SELECTOR = [
   'a[href]',
-  'button',
+  'button:not(:disabled)',
   '[role="button"]',
   '[tabindex]:not([tabindex="-1"])',
   '.btn',
@@ -27,6 +29,7 @@ const INTERACTIVE_TARGET_SELECTOR = [
   '.option-card',
   '.visual-help-toggle',
   '.premium-visual-help-toggle',
+  '.result-image-link',
   '[data-cursor="interactive"]',
 ].join(', ');
 
@@ -43,13 +46,23 @@ const LOADING_TARGET_SELECTOR = [
   '.ai-generation-loading',
 ].join(', ');
 
+function matchesMedia(query) {
+  if (typeof window === 'undefined' || !window.matchMedia) return false;
+  try {
+    return window.matchMedia(query).matches;
+  } catch {
+    return false;
+  }
+}
+
 function canUsePremiumCursor() {
   if (typeof window === 'undefined') return false;
-  if (!window.matchMedia) return true;
-  const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
-  const hoverCapable = window.matchMedia('(hover: hover)').matches;
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  return hasFinePointer && hoverCapable && !reducedMotion;
+
+  const hasFinePointer = matchesMedia('(any-pointer: fine)') || matchesMedia('(pointer: fine)');
+  const hasHover = matchesMedia('(any-hover: hover)') || matchesMedia('(hover: hover)');
+  const looksLikeDesktop = window.innerWidth >= 768 && !/Mobi|Android|iPhone|iPad|iPod/i.test(window.navigator?.userAgent || '');
+
+  return (hasFinePointer && hasHover) || looksLikeDesktop;
 }
 
 function resolveCursorMode(target) {
@@ -65,7 +78,8 @@ function resolveCursorMode(target) {
 export default function PremiumCursor() {
   const cursorRef = useRef(null);
   const rafRef = useRef(null);
-  const lastPointRef = useRef({ x: -100, y: -100 });
+  const lastPointRef = useRef({ x: -120, y: -120 });
+  const lastModeRef = useRef('default');
   const [enabled, setEnabled] = useState(false);
   const [visible, setVisible] = useState(false);
   const [mode, setMode] = useState('default');
@@ -74,20 +88,22 @@ export default function PremiumCursor() {
     const updateCapability = () => setEnabled(canUsePremiumCursor());
     updateCapability();
 
-    const mediaQueries = [
-      window.matchMedia?.('(pointer: fine)'),
-      window.matchMedia?.('(hover: hover)'),
-      window.matchMedia?.('(prefers-reduced-motion: reduce)'),
-    ].filter(Boolean);
+    const queries = ['(any-pointer: fine)', '(pointer: fine)', '(any-hover: hover)', '(hover: hover)'];
+    const mediaQueries = queries.map((query) => window.matchMedia?.(query)).filter(Boolean);
 
     mediaQueries.forEach((query) => query.addEventListener?.('change', updateCapability));
-    return () => mediaQueries.forEach((query) => query.removeEventListener?.('change', updateCapability));
+    window.addEventListener('resize', updateCapability, { passive: true });
+
+    return () => {
+      mediaQueries.forEach((query) => query.removeEventListener?.('change', updateCapability));
+      window.removeEventListener('resize', updateCapability);
+    };
   }, []);
 
   useEffect(() => {
     const root = document.documentElement;
     if (!enabled) {
-      root.classList.remove('premium-cursor-enabled');
+      root.classList.remove('premium-cursor-enabled', 'premium-cursor-pressed');
       setVisible(false);
       return undefined;
     }
@@ -108,38 +124,42 @@ export default function PremiumCursor() {
       rafRef.current = window.requestAnimationFrame(moveCursor);
     };
 
-    const handlePointerMove = (event) => {
-      if (event.pointerType && event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
+    const handleMove = (event) => {
+      if ('pointerType' in event && event.pointerType && event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
       lastPointRef.current = { x: event.clientX, y: event.clientY };
       setVisible(true);
-      setMode(resolveCursorMode(event.target));
+      const nextMode = resolveCursorMode(event.target);
+      if (lastModeRef.current !== nextMode) {
+        lastModeRef.current = nextMode;
+        setMode(nextMode);
+      }
       scheduleMove();
     };
 
-    const handlePointerDown = () => {
-      document.documentElement.classList.add('premium-cursor-pressed');
-    };
+    const handleDown = () => root.classList.add('premium-cursor-pressed');
+    const handleUp = () => root.classList.remove('premium-cursor-pressed');
+    const handleLeave = () => setVisible(false);
+    const handleEnter = () => setVisible(true);
 
-    const handlePointerUp = () => {
-      document.documentElement.classList.remove('premium-cursor-pressed');
-    };
-
-    const handleMouseLeave = () => setVisible(false);
-    const handleMouseEnter = () => setVisible(true);
-
-    window.addEventListener('pointermove', handlePointerMove, { passive: true });
-    window.addEventListener('pointerdown', handlePointerDown, { passive: true });
-    window.addEventListener('pointerup', handlePointerUp, { passive: true });
-    document.addEventListener('mouseleave', handleMouseLeave);
-    document.addEventListener('mouseenter', handleMouseEnter);
+    window.addEventListener('pointermove', handleMove, { passive: true });
+    window.addEventListener('mousemove', handleMove, { passive: true });
+    window.addEventListener('pointerdown', handleDown, { passive: true });
+    window.addEventListener('mousedown', handleDown, { passive: true });
+    window.addEventListener('pointerup', handleUp, { passive: true });
+    window.addEventListener('mouseup', handleUp, { passive: true });
+    document.addEventListener('mouseleave', handleLeave);
+    document.addEventListener('mouseenter', handleEnter);
 
     return () => {
       root.classList.remove('premium-cursor-enabled', 'premium-cursor-pressed');
-      window.removeEventListener('pointermove', handlePointerMove);
-      window.removeEventListener('pointerdown', handlePointerDown);
-      window.removeEventListener('pointerup', handlePointerUp);
-      document.removeEventListener('mouseleave', handleMouseLeave);
-      document.removeEventListener('mouseenter', handleMouseEnter);
+      window.removeEventListener('pointermove', handleMove);
+      window.removeEventListener('mousemove', handleMove);
+      window.removeEventListener('pointerdown', handleDown);
+      window.removeEventListener('mousedown', handleDown);
+      window.removeEventListener('pointerup', handleUp);
+      window.removeEventListener('mouseup', handleUp);
+      document.removeEventListener('mouseleave', handleLeave);
+      document.removeEventListener('mouseenter', handleEnter);
       if (rafRef.current) window.cancelAnimationFrame(rafRef.current);
     };
   }, [enabled]);
