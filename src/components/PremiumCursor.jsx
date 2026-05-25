@@ -39,9 +39,9 @@ const TEXT_SELECTOR = [
   '.bottom-case-search input',
 ].join(', ');
 
-const ROOT_CLASS = 'ki-pointer-v363-on';
-const STYLE_ID = 'ki-pointer-v363-runtime-style';
-const ROOT_ATTR = 'data-ki-pointer-v363-root';
+const ROOT_CLASS = 'ki-pointer-v364-on';
+const STYLE_ID = 'ki-pointer-v364-runtime-style';
+const ROOT_ATTR = 'data-ki-pointer-v364-root';
 const TRANSPARENT_CURSOR = 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'1\' height=\'1\' viewBox=\'0 0 1 1\'%3E%3C/svg%3E") 0 0, none';
 
 const LEGACY_SELECTORS = [
@@ -70,6 +70,7 @@ const LEGACY_SELECTORS = [
   '[data-ki-pointer-v360-root]',
   '[data-ki-pointer-v361-root]',
   '[data-ki-pointer-v362-root]',
+  '[data-ki-pointer-v363-root]',
 ].join(', ');
 
 const LEGACY_STYLE_IDS = [
@@ -81,6 +82,7 @@ const LEGACY_STYLE_IDS = [
   'ki-pointer-v360-runtime-style',
   'ki-pointer-v361-runtime-style',
   'ki-pointer-v362-runtime-style',
+  'ki-pointer-v363-runtime-style',
   'ki-simple-cursor-runtime-style-v354',
   'klinikiq-minimal-premium-cursor-style-v353',
   'klinikiq-unified-premium-cursor-runtime-style-v352',
@@ -100,6 +102,7 @@ const LEGACY_ROOT_CLASSES = [
   'ki-pointer-v360-on',
   'ki-pointer-v361-on',
   'ki-pointer-v362-on',
+  'ki-pointer-v363-on',
   'ki-simple-cursor-active',
   'ki-simple-cursor-pressed',
   'ki-minimal-cursor-active',
@@ -247,9 +250,7 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
   opacity: 1 !important;
 }
 
-[${ROOT_ATTR}="true"].is-text,
-[${ROOT_ATTR}="true"].is-scrollbar,
-[${ROOT_ATTR}="true"].is-scrollbar-dragging {
+[${ROOT_ATTR}="true"].is-text {
   opacity: 0 !important;
 }
 
@@ -288,7 +289,8 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
 [data-ki-pointer-v359-root],
 [data-ki-pointer-v360-root],
 [data-ki-pointer-v361-root],
-[data-ki-pointer-v362-root] {
+[data-ki-pointer-v362-root],
+[data-ki-pointer-v363-root] {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
@@ -381,10 +383,10 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
 
     const setVisibilityForMode = () => {
       root.classList.toggle('is-text', isText);
-      root.classList.toggle('is-scrollbar', isOverScrollbar);
-      root.classList.toggle('is-scrollbar-dragging', isScrollbarDragging);
+      root.classList.toggle('is-scrollbar', false);
+      root.classList.toggle('is-scrollbar-dragging', false);
 
-      if (isText || isOverScrollbar || isScrollbarDragging) {
+      if (isText) {
         root.classList.remove('is-visible');
       } else if (started) {
         root.classList.add('is-visible');
@@ -459,7 +461,8 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
       targetY = event.clientY;
       activate();
 
-      isOverScrollbar = isScrollbarDragging || isScrollbarHit(event);
+      isOverScrollbar = false;
+      isScrollbarDragging = false;
       updateMode(event.target);
     };
 
@@ -504,9 +507,9 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
     const down = (event) => {
       if (event?.pointerType && event.pointerType !== 'mouse') return;
 
-      isScrollbarDragging = isScrollbarHit(event);
-      isOverScrollbar = isScrollbarDragging;
-      isPressed = !isScrollbarDragging;
+      isScrollbarDragging = false;
+      isOverScrollbar = false;
+      isPressed = true;
       setPointerVisual();
     };
 
