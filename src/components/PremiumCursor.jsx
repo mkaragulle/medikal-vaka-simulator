@@ -14,7 +14,9 @@ const GLOSSARY_TARGET_SELECTOR = [
   '.smart-glossary-term',
   '.glossary-word',
   '.nested-glossary-term',
+  '.smart-glossary-term--drilldown',
   '[data-glossary-entry-id]',
+  '[data-glossary-entry-term]',
   '[data-cursor="glossary"]',
 ].join(', ');
 
@@ -34,6 +36,8 @@ const INTERACTIVE_TARGET_SELECTOR = [
   '.visual-help-toggle',
   '.premium-visual-help-toggle',
   '.result-image-link',
+  '.smart-glossary-back',
+  '.smart-glossary-breadcrumb-link',
   '[data-cursor="interactive"]',
 ].join(', ');
 
@@ -50,8 +54,28 @@ const LOADING_TARGET_SELECTOR = [
   '.ai-generation-loading',
 ].join(', ');
 
-const STYLE_ID = 'klinikiq-premium-cursor-runtime-style-v350';
-const CURSOR_ID = 'klinikiq-premium-cursor-body-portal-v350';
+const LEGACY_STYLE_IDS = [
+  'klinikiq-premium-cursor-runtime-style-v351',
+  'klinikiq-premium-cursor-runtime-style-v350',
+  'klinikiq-premium-cursor-runtime-style-v349',
+  'klinikiq-premium-cursor-runtime-style-v348',
+  'klinikiq-premium-cursor-runtime-style',
+];
+
+const LEGACY_CURSOR_IDS = [
+  'klinikiq-premium-cursor-body-portal-v351',
+  'klinikiq-premium-cursor-body-portal-v350',
+  'klinikiq-premium-cursor-body-portal-v349',
+  'klinikiq-premium-cursor',
+];
+
+const STYLE_ID = 'klinikiq-unified-premium-cursor-runtime-style-v352';
+const CURSOR_ID = 'klinikiq-unified-premium-cursor-v352';
+
+function cleanupLegacyCursorArtifacts() {
+  LEGACY_STYLE_IDS.forEach((id) => document.getElementById(id)?.remove());
+  LEGACY_CURSOR_IDS.forEach((id) => document.getElementById(id)?.remove());
+}
 
 function injectCursorStyle() {
   let style = document.getElementById(STYLE_ID);
@@ -62,207 +86,285 @@ function injectCursorStyle() {
   }
 
   style.textContent = `
-html.ki-cursor-v350-enabled,
-html.ki-cursor-v350-enabled body,
-html.ki-cursor-v350-enabled *:not(input):not(textarea):not(select):not([contenteditable='true']):not([contenteditable='']) {
+html.ki-unified-cursor-active,
+html.ki-unified-cursor-active body {
   cursor: none !important;
 }
 
-html.ki-cursor-v350-enabled input,
-html.ki-cursor-v350-enabled textarea,
-html.ki-cursor-v350-enabled select,
-html.ki-cursor-v350-enabled [contenteditable='true'],
-html.ki-cursor-v350-enabled [contenteditable=''] {
+html.ki-unified-cursor-active body *,
+html.ki-unified-cursor-active body *::before,
+html.ki-unified-cursor-active body *::after {
+  cursor: none !important;
+}
+
+html.ki-unified-cursor-active body :is(input, textarea, select, [contenteditable='true'], [contenteditable='']),
+html.ki-unified-cursor-active body :is(input, textarea, select, [contenteditable='true'], [contenteditable='']) *,
+html.ki-unified-cursor-active body .bottom-case-search input {
   cursor: text !important;
 }
 
-.ki-body-cursor-v350 {
-  --cursor-size: 28px;
-  --cursor-ring: rgba(20, 184, 166, .96);
-  --cursor-core: rgba(15, 118, 110, .98);
-  --cursor-aura: rgba(20, 184, 166, .15);
-  --cursor-edge: rgba(255, 255, 255, .58);
-  --cursor-shadow: rgba(15, 118, 110, .22);
+html.ki-unified-cursor-active body :is(
+  .glossary-term,
+  .smart-glossary-term,
+  .glossary-word,
+  .nested-glossary-term,
+  .smart-glossary-term--drilldown,
+  .glossary-tooltip,
+  .floating-glossary-tooltip,
+  .smart-glossary-popover,
+  .smart-glossary-card,
+  [data-glossary-entry-id],
+  [data-glossary-entry-term],
+  [data-cursor='glossary'],
+  [data-glossary-tooltip-owner]
+),
+html.ki-unified-cursor-active body :is(
+  .glossary-term,
+  .smart-glossary-term,
+  .glossary-word,
+  .nested-glossary-term,
+  .smart-glossary-term--drilldown,
+  .glossary-tooltip,
+  .floating-glossary-tooltip,
+  .smart-glossary-popover,
+  .smart-glossary-card,
+  [data-glossary-entry-id],
+  [data-glossary-entry-term],
+  [data-cursor='glossary'],
+  [data-glossary-tooltip-owner]
+) * {
+  cursor: none !important;
+}
+
+.ki-cursor,
+.premium-cursor.ki-cursor,
+.ki-cursor-v351,
+.ki-cursor-v350,
+.premium-cursor:not(.ki-unified-cursor-v352) {
+  display: none !important;
+}
+
+.ki-unified-cursor-v352 {
+  --ki-cursor-size: 23px;
+  --ki-cursor-core: rgba(15, 118, 110, .98);
+  --ki-cursor-ring: rgba(20, 184, 166, .90);
+  --ki-cursor-glass: rgba(240, 253, 250, .46);
+  --ki-cursor-glass-2: rgba(20, 184, 166, .08);
+  --ki-cursor-aura: rgba(20, 184, 166, .15);
+  --ki-cursor-shadow: rgba(15, 118, 110, .18);
 
   position: fixed;
   left: 0;
   top: 0;
   z-index: 2147483647;
-  width: var(--cursor-size);
-  height: var(--cursor-size);
+  width: var(--ki-cursor-size);
+  height: var(--ki-cursor-size);
   pointer-events: none;
   opacity: 0;
-  transform: translate3d(-120px, -120px, 0) translate3d(-50%, -50%, 0);
-  transition: opacity 90ms ease, width 110ms ease, height 110ms ease;
+  transform: translate3d(-140px, -140px, 0) translate3d(-50%, -50%, 0);
+  transition:
+    opacity 90ms ease,
+    width 120ms cubic-bezier(.2, .9, .2, 1),
+    height 120ms cubic-bezier(.2, .9, .2, 1);
   contain: layout paint style;
-  will-change: transform, opacity;
+  will-change: transform, opacity, width, height;
   isolation: isolate;
 }
 
-.ki-body-cursor-v350.is-visible {
-  opacity: 1;
-}
+.ki-unified-cursor-v352.is-visible { opacity: 1; }
+.ki-unified-cursor-v352.is-hidden { opacity: 0; }
+.ki-unified-cursor-v352.is-text { opacity: 0 !important; }
 
-.ki-body-cursor-v350.is-hidden {
-  opacity: 0;
-}
-
-.ki-body-cursor-v350 > span {
+.ki-unified-cursor-v352 > span {
   position: absolute;
   pointer-events: none;
 }
 
-.ki-body-cursor-v350 .cursor-aura {
+.ki-unified-cursor-v352__aura {
   inset: -9px;
   border-radius: 999px;
-  background: radial-gradient(circle, var(--cursor-aura) 0%, transparent 68%);
-  opacity: .76;
+  background: radial-gradient(circle, var(--ki-cursor-aura) 0%, transparent 68%);
+  opacity: .72;
+  transform: scale(.98);
+  transition: opacity 120ms ease, transform 120ms ease;
 }
 
-.ki-body-cursor-v350 .cursor-ring {
+.ki-unified-cursor-v352__glass {
   inset: 0;
   border-radius: 999px;
-  border: 1.4px solid var(--cursor-ring);
   background:
-    radial-gradient(circle at 34% 26%, rgba(255,255,255,.46), transparent 22%),
-    radial-gradient(circle, rgba(255,255,255,.06), transparent 64%);
+    radial-gradient(circle at 34% 24%, rgba(255, 255, 255, .64) 0 9%, transparent 32%),
+    linear-gradient(135deg, var(--ki-cursor-glass), var(--ki-cursor-glass-2));
   box-shadow:
-    0 0 0 1px var(--cursor-edge) inset,
-    0 0 12px var(--cursor-shadow);
+    0 0 0 1px rgba(255, 255, 255, .52) inset,
+    0 0 0 1px rgba(20, 184, 166, .30),
+    0 7px 18px var(--ki-cursor-shadow);
+  opacity: .98;
+  transition: border-radius 120ms cubic-bezier(.2, .9, .2, 1), box-shadow 120ms ease, background 120ms ease;
 }
 
-.ki-body-cursor-v350 .cursor-core {
+.ki-unified-cursor-v352__ring {
+  inset: -1px;
+  border-radius: 999px;
+  background: conic-gradient(
+    from 230deg,
+    transparent 0 24deg,
+    var(--ki-cursor-ring) 24deg 132deg,
+    transparent 132deg 176deg,
+    rgba(255,255,255,.70) 176deg 196deg,
+    transparent 196deg 250deg,
+    var(--ki-cursor-ring) 250deg 338deg,
+    transparent 338deg 360deg
+  );
+  -webkit-mask: radial-gradient(circle, transparent 56%, #000 59%);
+  mask: radial-gradient(circle, transparent 56%, #000 59%);
+  opacity: .86;
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.ki-unified-cursor-v352__dot {
   left: 50%;
   top: 50%;
   width: 4.5px;
   height: 4.5px;
   margin: -2.25px 0 0 -2.25px;
   border-radius: 999px;
-  background: var(--cursor-core);
-  box-shadow: 0 0 8px rgba(20, 184, 166, .45);
-  transition: transform 110ms ease, opacity 110ms ease;
+  background: var(--ki-cursor-core);
+  box-shadow: 0 0 9px rgba(20, 184, 166, .42);
+  transition: opacity 100ms ease, transform 120ms ease, width 120ms ease, height 120ms ease, margin 120ms ease;
 }
 
-.ki-body-cursor-v350 .cursor-notch {
+.ki-unified-cursor-v352__shine {
   left: 50%;
   top: 50%;
-  background: var(--cursor-ring);
+  width: 7px;
+  height: 1.5px;
+  margin: -8px 0 0 2px;
   border-radius: 999px;
-  opacity: .44;
-  transform: translate(-50%, -50%);
-  transition: opacity 110ms ease;
+  background: rgba(255,255,255,.76);
+  transform: rotate(-34deg);
+  opacity: .68;
+  transition: opacity 100ms ease, transform 120ms ease;
 }
 
-.ki-body-cursor-v350 .cursor-notch-v {
-  width: 1px;
-  height: 13px;
-}
-
-.ki-body-cursor-v350 .cursor-notch-h {
-  width: 13px;
-  height: 1px;
-}
-
-.ki-body-cursor-v350 .cursor-info {
-  left: 50%;
-  top: 50%;
-  width: 16px;
-  height: 16px;
-  margin: -8px 0 0 -8px;
+.ki-unified-cursor-v352__badge {
+  right: -4px;
+  bottom: -4px;
+  width: 15px;
+  height: 15px;
   display: grid;
   place-items: center;
   border-radius: 999px;
   color: #0f766e;
   background: rgba(240, 253, 250, .98);
-  border: 1px solid rgba(20, 184, 166, .46);
-  font: 850 9px/1 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  border: 1px solid rgba(20, 184, 166, .44);
+  box-shadow: 0 8px 16px rgba(15, 118, 110, .18);
+  font: 860 8.5px/1 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: -.01em;
   opacity: 0;
-  transform: scale(.72);
-  transition: opacity 110ms ease, transform 110ms ease;
+  transform: translate3d(-2px, 2px, 0) scale(.70);
+  transition: opacity 120ms ease, transform 120ms cubic-bezier(.2, .9, .2, 1);
 }
 
-.ki-body-cursor-v350 .cursor-spinner {
+.ki-unified-cursor-v352__loader {
   inset: -2px;
   border-radius: 999px;
   opacity: 0;
-  background: conic-gradient(from 0deg, transparent 0 38%, rgba(14, 165, 233, .96) 51%, transparent 70% 100%);
-  mask: radial-gradient(circle, transparent 57%, #000 60%);
-  -webkit-mask: radial-gradient(circle, transparent 57%, #000 60%);
+  background: conic-gradient(from 0deg, transparent 0 42%, rgba(14, 165, 233, .95) 55%, transparent 74% 100%);
+  -webkit-mask: radial-gradient(circle, transparent 58%, #000 61%);
+  mask: radial-gradient(circle, transparent 58%, #000 61%);
 }
 
-.ki-body-cursor-v350.mode-interactive {
-  --cursor-size: 35px;
-  --cursor-ring: rgba(20, 184, 166, 1);
-  --cursor-aura: rgba(20, 184, 166, .22);
+.ki-unified-cursor-v352.mode-interactive {
+  --ki-cursor-size: 33px;
+  --ki-cursor-aura: rgba(20, 184, 166, .21);
+  --ki-cursor-shadow: rgba(15, 118, 110, .22);
 }
 
-.ki-body-cursor-v350.mode-interactive .cursor-notch {
-  opacity: .62;
+.ki-unified-cursor-v352.mode-interactive .ki-unified-cursor-v352__glass {
+  border-radius: 13px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, .55) inset,
+    0 0 0 1px rgba(20, 184, 166, .38),
+    0 9px 22px var(--ki-cursor-shadow);
 }
 
-.ki-body-cursor-v350.mode-interactive .cursor-core {
-  transform: scale(1.18);
+.ki-unified-cursor-v352.mode-interactive .ki-unified-cursor-v352__ring {
+  opacity: .96;
+  transform: rotate(22deg);
 }
 
-.ki-body-cursor-v350.mode-glossary {
-  --cursor-size: 34px;
-  --cursor-ring: rgba(13, 148, 136, 1);
-  --cursor-aura: rgba(13, 148, 136, .24);
+.ki-unified-cursor-v352.mode-interactive .ki-unified-cursor-v352__dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
 }
 
-.ki-body-cursor-v350.mode-glossary .cursor-core,
-.ki-body-cursor-v350.mode-glossary .cursor-notch {
+.ki-unified-cursor-v352.mode-glossary {
+  --ki-cursor-size: 31px;
+  --ki-cursor-ring: rgba(45, 212, 191, .96);
+  --ki-cursor-core: rgba(15, 118, 110, .98);
+  --ki-cursor-aura: rgba(45, 212, 191, .20);
+}
+
+.ki-unified-cursor-v352.mode-glossary .ki-unified-cursor-v352__dot {
   opacity: 0;
+  transform: scale(.30);
 }
 
-.ki-body-cursor-v350.mode-glossary .cursor-info {
+.ki-unified-cursor-v352.mode-glossary .ki-unified-cursor-v352__badge {
   opacity: 1;
-  transform: scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
-.ki-body-cursor-v350.mode-loading {
-  --cursor-size: 34px;
-  --cursor-ring: rgba(14, 165, 233, .96);
-  --cursor-core: rgba(14, 165, 233, .98);
-  --cursor-aura: rgba(14, 165, 233, .18);
+.ki-unified-cursor-v352.mode-loading {
+  --ki-cursor-size: 32px;
+  --ki-cursor-ring: rgba(14, 165, 233, .95);
+  --ki-cursor-core: rgba(14, 165, 233, .98);
+  --ki-cursor-aura: rgba(14, 165, 233, .18);
 }
 
-.ki-body-cursor-v350.mode-loading .cursor-spinner {
+.ki-unified-cursor-v352.mode-loading .ki-unified-cursor-v352__ring { opacity: .30; }
+.ki-unified-cursor-v352.mode-loading .ki-unified-cursor-v352__loader {
   opacity: 1;
-  animation: ki-cursor-v350-spin 820ms linear infinite;
+  animation: ki-unified-cursor-v352-spin 760ms linear infinite;
 }
 
-.ki-body-cursor-v350.mode-text {
-  opacity: 0 !important;
+html.ki-unified-cursor-pressed .ki-unified-cursor-v352 {
+  --ki-cursor-size: 18px;
 }
 
-html.ki-cursor-v350-pressed .ki-body-cursor-v350 {
-  --cursor-size: 23px;
+html[data-theme='dark'] .ki-unified-cursor-v352,
+[data-theme='dark'] .ki-unified-cursor-v352 {
+  --ki-cursor-core: rgba(153, 246, 228, .98);
+  --ki-cursor-ring: rgba(94, 234, 212, .92);
+  --ki-cursor-glass: rgba(15, 23, 42, .42);
+  --ki-cursor-glass-2: rgba(45, 212, 191, .07);
+  --ki-cursor-aura: rgba(45, 212, 191, .19);
+  --ki-cursor-shadow: rgba(45, 212, 191, .19);
 }
 
-html[data-theme='dark'] .ki-body-cursor-v350,
-[data-theme='dark'] .ki-body-cursor-v350 {
-  --cursor-ring: rgba(94, 234, 212, .96);
-  --cursor-core: #99f6e4;
-  --cursor-aura: rgba(45, 212, 191, .20);
-  --cursor-edge: rgba(255, 255, 255, .18);
-  --cursor-shadow: rgba(45, 212, 191, .22);
-}
-
-html[data-theme='dark'] .ki-body-cursor-v350 .cursor-info,
-[data-theme='dark'] .ki-body-cursor-v350 .cursor-info {
+html[data-theme='dark'] .ki-unified-cursor-v352__badge,
+[data-theme='dark'] .ki-unified-cursor-v352__badge {
   color: #ccfbf1;
   background: rgba(15, 23, 42, .96);
-  border-color: rgba(94, 234, 212, .46);
+  border-color: rgba(94, 234, 212, .42);
 }
 
-@keyframes ki-cursor-v350-spin {
-  to { transform: rotate(360deg); }
-}
+@keyframes ki-unified-cursor-v352-spin { to { transform: rotate(360deg); } }
 
 @media (max-width: 767px) {
-  .ki-body-cursor-v350 {
-    display: none !important;
+  .ki-unified-cursor-v352 { display: none !important; }
+  html.ki-unified-cursor-active,
+  html.ki-unified-cursor-active body,
+  html.ki-unified-cursor-active body * { cursor: auto !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ki-unified-cursor-v352,
+  .ki-unified-cursor-v352 * {
+    transition: none !important;
+    animation-duration: 1ms !important;
   }
 }
 `;
@@ -281,48 +383,61 @@ function closestMode(target) {
   return 'default';
 }
 
-function isTouchPointer(event) {
-  return event?.pointerType === 'touch';
+function isTouchLikeEvent(event) {
+  return event?.pointerType === 'touch' || event?.pointerType === 'pen';
 }
 
 export default function PremiumCursor() {
   useEffect(() => {
     if (typeof window === 'undefined' || typeof document === 'undefined') return undefined;
 
+    cleanupLegacyCursorArtifacts();
     injectCursorStyle();
 
     const root = document.documentElement;
-    const previousNode = document.getElementById(CURSOR_ID);
-    if (previousNode) previousNode.remove();
+    root.classList.remove(
+      'ki-premium-cursor-on',
+      'ki-premium-cursor-pressed',
+      'ki-cursor-v350-enabled',
+      'ki-cursor-v350-pressed',
+      'ki-cursor-v351-active',
+      'ki-cursor-v351-pressed',
+      'ki-unified-cursor-active',
+      'ki-unified-cursor-pressed',
+    );
+
+    document.getElementById(CURSOR_ID)?.remove();
 
     const node = document.createElement('div');
     node.id = CURSOR_ID;
-    node.className = 'ki-body-cursor-v350 is-hidden mode-default';
+    node.className = 'ki-unified-cursor-v352 is-hidden mode-default';
+    node.dataset.mode = 'default';
     node.setAttribute('aria-hidden', 'true');
     node.innerHTML = `
-      <span class="cursor-aura"></span>
-      <span class="cursor-ring"></span>
-      <span class="cursor-notch cursor-notch-v"></span>
-      <span class="cursor-notch cursor-notch-h"></span>
-      <span class="cursor-core"></span>
-      <span class="cursor-info">i</span>
-      <span class="cursor-spinner"></span>
+      <span class="ki-unified-cursor-v352__aura"></span>
+      <span class="ki-unified-cursor-v352__glass"></span>
+      <span class="ki-unified-cursor-v352__ring"></span>
+      <span class="ki-unified-cursor-v352__dot"></span>
+      <span class="ki-unified-cursor-v352__shine"></span>
+      <span class="ki-unified-cursor-v352__badge">i</span>
+      <span class="ki-unified-cursor-v352__loader"></span>
     `;
     document.body.appendChild(node);
 
     let enabled = false;
     let visible = false;
     let raf = 0;
+    let x = -140;
+    let y = -140;
+    let lastTransform = '';
     let mode = 'default';
     let lastTarget = null;
-    let lastTransform = '';
-    let x = -120;
-    let y = -120;
+    let lastElementFromPointAt = 0;
 
     const enable = () => {
       if (enabled) return;
       enabled = true;
-      root.classList.add('ki-cursor-v350-enabled');
+      root.classList.add('ki-unified-cursor-active');
     };
 
     const setVisible = (nextVisible) => {
@@ -335,14 +450,30 @@ export default function PremiumCursor() {
     const setMode = (nextMode) => {
       if (mode === nextMode) return;
       node.classList.remove(`mode-${mode}`);
+      node.classList.toggle('is-text', nextMode === 'text');
       mode = nextMode;
       node.classList.add(`mode-${mode}`);
       node.dataset.mode = mode;
     };
 
+    const updateModeFromTarget = (target) => {
+      if (target === lastTarget) return;
+      lastTarget = target;
+      setMode(closestMode(target));
+    };
+
+    const updateModeFromPoint = () => {
+      const now = performance.now();
+      if (now - lastElementFromPointAt < 80) return;
+      lastElementFromPointAt = now;
+      const el = document.elementFromPoint(x, y);
+      if (el && el !== node && !node.contains(el)) updateModeFromTarget(el);
+    };
+
     const render = () => {
       raf = 0;
       if (!enabled) return;
+      updateModeFromPoint();
       const transform = `translate3d(${x}px, ${y}px, 0) translate3d(-50%, -50%, 0)`;
       if (transform !== lastTransform) {
         lastTransform = transform;
@@ -355,14 +486,8 @@ export default function PremiumCursor() {
       raf = window.requestAnimationFrame(render);
     };
 
-    const updateModeFromTarget = (target) => {
-      if (target === lastTarget) return;
-      lastTarget = target;
-      setMode(closestMode(target));
-    };
-
     const handleMove = (event) => {
-      if (isTouchPointer(event)) return;
+      if (isTouchLikeEvent(event)) return;
       enable();
       x = event.clientX;
       y = event.clientY;
@@ -372,46 +497,47 @@ export default function PremiumCursor() {
     };
 
     const handleOver = (event) => {
-      if (!enabled || isTouchPointer(event)) return;
-      updateModeFromTarget(event.target);
-    };
-
-    const handleDown = (event) => {
-      if (isTouchPointer(event)) return;
-      root.classList.add('ki-cursor-v350-pressed');
-    };
-
-    const handleUp = () => root.classList.remove('ki-cursor-v350-pressed');
-    const handleLeave = () => setVisible(false);
-    const handleEnter = (event) => {
-      if (isTouchPointer(event)) return;
+      if (isTouchLikeEvent(event)) return;
       enable();
+      updateModeFromTarget(event.target);
       setVisible(true);
     };
 
+    const handleDown = (event) => {
+      if (isTouchLikeEvent(event)) return;
+      root.classList.add('ki-unified-cursor-pressed');
+    };
+
+    const handleUp = () => root.classList.remove('ki-unified-cursor-pressed');
+    const handleLeave = () => setVisible(false);
+
     window.addEventListener('mousemove', handleMove, { passive: true });
-    window.addEventListener('pointermove', handleMove, { passive: true });
-    document.addEventListener('mouseover', handleOver, { passive: true });
-    document.addEventListener('pointerover', handleOver, { passive: true });
+    window.addEventListener('mouseover', handleOver, { passive: true, capture: true });
     window.addEventListener('mousedown', handleDown, { passive: true });
-    window.addEventListener('pointerdown', handleDown, { passive: true });
     window.addEventListener('mouseup', handleUp, { passive: true });
-    window.addEventListener('pointerup', handleUp, { passive: true });
-    document.addEventListener('mouseenter', handleEnter, { passive: true });
+
+    if ('PointerEvent' in window) {
+      window.addEventListener('pointermove', handleMove, { passive: true });
+      window.addEventListener('pointerover', handleOver, { passive: true, capture: true });
+      window.addEventListener('pointerdown', handleDown, { passive: true });
+      window.addEventListener('pointerup', handleUp, { passive: true });
+    }
+
     document.addEventListener('mouseleave', handleLeave, { passive: true });
     window.addEventListener('blur', handleLeave);
 
     return () => {
-      root.classList.remove('ki-cursor-v350-enabled', 'ki-cursor-v350-pressed');
+      root.classList.remove('ki-unified-cursor-active', 'ki-unified-cursor-pressed');
       window.removeEventListener('mousemove', handleMove);
-      window.removeEventListener('pointermove', handleMove);
-      document.removeEventListener('mouseover', handleOver);
-      document.removeEventListener('pointerover', handleOver);
+      window.removeEventListener('mouseover', handleOver, true);
       window.removeEventListener('mousedown', handleDown);
-      window.removeEventListener('pointerdown', handleDown);
       window.removeEventListener('mouseup', handleUp);
-      window.removeEventListener('pointerup', handleUp);
-      document.removeEventListener('mouseenter', handleEnter);
+      if ('PointerEvent' in window) {
+        window.removeEventListener('pointermove', handleMove);
+        window.removeEventListener('pointerover', handleOver, true);
+        window.removeEventListener('pointerdown', handleDown);
+        window.removeEventListener('pointerup', handleUp);
+      }
       document.removeEventListener('mouseleave', handleLeave);
       window.removeEventListener('blur', handleLeave);
       if (raf) window.cancelAnimationFrame(raf);

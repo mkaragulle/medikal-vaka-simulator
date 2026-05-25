@@ -51500,3 +51500,57 @@ html.ki-performance-mode .shimmer {
     scroll-behavior: auto !important;
   }
 }
+
+/* V352 — Unified premium cursor consistency patch
+   Keeps the same cursor design across normal UI, nested glossary/toolbox popovers,
+   floating portals and regular cards. Native cursor is hidden globally once the
+   premium cursor is active; text-entry fields remain usable. */
+html.ki-unified-cursor-active body *,
+html.ki-unified-cursor-active body *::before,
+html.ki-unified-cursor-active body *::after {
+  cursor: none !important;
+}
+
+html.ki-unified-cursor-active body :is(input, textarea, select, [contenteditable='true'], [contenteditable='']) {
+  cursor: text !important;
+}
+
+html.ki-unified-cursor-active body :is(
+  .glossary-term,
+  .smart-glossary-term,
+  .glossary-word,
+  .nested-glossary-term,
+  .smart-glossary-term--drilldown,
+  .glossary-tooltip,
+  .floating-glossary-tooltip,
+  .smart-glossary-popover,
+  .smart-glossary-card,
+  [data-glossary-entry-id],
+  [data-glossary-entry-term],
+  [data-cursor='glossary'],
+  [data-glossary-tooltip-owner]
+),
+html.ki-unified-cursor-active body :is(
+  .glossary-term,
+  .smart-glossary-term,
+  .glossary-word,
+  .nested-glossary-term,
+  .smart-glossary-term--drilldown,
+  .glossary-tooltip,
+  .floating-glossary-tooltip,
+  .smart-glossary-popover,
+  .smart-glossary-card,
+  [data-glossary-entry-id],
+  [data-glossary-entry-term],
+  [data-cursor='glossary'],
+  [data-glossary-tooltip-owner]
+) * {
+  cursor: none !important;
+}
+
+.ki-cursor:not(.ki-unified-cursor-v352),
+.premium-cursor:not(.ki-unified-cursor-v352),
+.ki-cursor-v351:not(.ki-unified-cursor-v352),
+.ki-cursor-v350:not(.ki-unified-cursor-v352) {
+  display: none !important;
+}
