@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 const TEXT_TARGET_SELECTOR = [
   'input',
@@ -50,22 +50,225 @@ const LOADING_TARGET_SELECTOR = [
   '.ai-generation-loading',
 ].join(', ');
 
-const STYLE_ID = 'klinikiq-premium-cursor-runtime-style-v349';
+const STYLE_ID = 'klinikiq-premium-cursor-runtime-style-v350';
+const CURSOR_ID = 'klinikiq-premium-cursor-body-portal-v350';
 
-function isTouchOnlyDevice() {
-  if (typeof window === 'undefined') return true;
-  const ua = window.navigator?.userAgent || '';
-  const mobileUA = /Mobi|Android|iPhone|iPad|iPod/i.test(ua);
-  const coarseOnly = window.matchMedia?.('(pointer: coarse)')?.matches && !window.matchMedia?.('(any-pointer: fine)')?.matches;
-  return mobileUA || coarseOnly || window.innerWidth < 768;
+function injectCursorStyle() {
+  let style = document.getElementById(STYLE_ID);
+  if (!style) {
+    style = document.createElement('style');
+    style.id = STYLE_ID;
+    document.head.appendChild(style);
+  }
+
+  style.textContent = `
+html.ki-cursor-v350-enabled,
+html.ki-cursor-v350-enabled body,
+html.ki-cursor-v350-enabled *:not(input):not(textarea):not(select):not([contenteditable='true']):not([contenteditable='']) {
+  cursor: none !important;
 }
 
-function prefersReducedMotion() {
-  if (typeof window === 'undefined') return false;
-  return Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches);
+html.ki-cursor-v350-enabled input,
+html.ki-cursor-v350-enabled textarea,
+html.ki-cursor-v350-enabled select,
+html.ki-cursor-v350-enabled [contenteditable='true'],
+html.ki-cursor-v350-enabled [contenteditable=''] {
+  cursor: text !important;
 }
 
-function getCursorMode(target) {
+.ki-body-cursor-v350 {
+  --cursor-size: 28px;
+  --cursor-ring: rgba(20, 184, 166, .96);
+  --cursor-core: rgba(15, 118, 110, .98);
+  --cursor-aura: rgba(20, 184, 166, .15);
+  --cursor-edge: rgba(255, 255, 255, .58);
+  --cursor-shadow: rgba(15, 118, 110, .22);
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2147483647;
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(-120px, -120px, 0) translate3d(-50%, -50%, 0);
+  transition: opacity 90ms ease, width 110ms ease, height 110ms ease;
+  contain: layout paint style;
+  will-change: transform, opacity;
+  isolation: isolate;
+}
+
+.ki-body-cursor-v350.is-visible {
+  opacity: 1;
+}
+
+.ki-body-cursor-v350.is-hidden {
+  opacity: 0;
+}
+
+.ki-body-cursor-v350 > span {
+  position: absolute;
+  pointer-events: none;
+}
+
+.ki-body-cursor-v350 .cursor-aura {
+  inset: -9px;
+  border-radius: 999px;
+  background: radial-gradient(circle, var(--cursor-aura) 0%, transparent 68%);
+  opacity: .76;
+}
+
+.ki-body-cursor-v350 .cursor-ring {
+  inset: 0;
+  border-radius: 999px;
+  border: 1.4px solid var(--cursor-ring);
+  background:
+    radial-gradient(circle at 34% 26%, rgba(255,255,255,.46), transparent 22%),
+    radial-gradient(circle, rgba(255,255,255,.06), transparent 64%);
+  box-shadow:
+    0 0 0 1px var(--cursor-edge) inset,
+    0 0 12px var(--cursor-shadow);
+}
+
+.ki-body-cursor-v350 .cursor-core {
+  left: 50%;
+  top: 50%;
+  width: 4.5px;
+  height: 4.5px;
+  margin: -2.25px 0 0 -2.25px;
+  border-radius: 999px;
+  background: var(--cursor-core);
+  box-shadow: 0 0 8px rgba(20, 184, 166, .45);
+  transition: transform 110ms ease, opacity 110ms ease;
+}
+
+.ki-body-cursor-v350 .cursor-notch {
+  left: 50%;
+  top: 50%;
+  background: var(--cursor-ring);
+  border-radius: 999px;
+  opacity: .44;
+  transform: translate(-50%, -50%);
+  transition: opacity 110ms ease;
+}
+
+.ki-body-cursor-v350 .cursor-notch-v {
+  width: 1px;
+  height: 13px;
+}
+
+.ki-body-cursor-v350 .cursor-notch-h {
+  width: 13px;
+  height: 1px;
+}
+
+.ki-body-cursor-v350 .cursor-info {
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #0f766e;
+  background: rgba(240, 253, 250, .98);
+  border: 1px solid rgba(20, 184, 166, .46);
+  font: 850 9px/1 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  opacity: 0;
+  transform: scale(.72);
+  transition: opacity 110ms ease, transform 110ms ease;
+}
+
+.ki-body-cursor-v350 .cursor-spinner {
+  inset: -2px;
+  border-radius: 999px;
+  opacity: 0;
+  background: conic-gradient(from 0deg, transparent 0 38%, rgba(14, 165, 233, .96) 51%, transparent 70% 100%);
+  mask: radial-gradient(circle, transparent 57%, #000 60%);
+  -webkit-mask: radial-gradient(circle, transparent 57%, #000 60%);
+}
+
+.ki-body-cursor-v350.mode-interactive {
+  --cursor-size: 35px;
+  --cursor-ring: rgba(20, 184, 166, 1);
+  --cursor-aura: rgba(20, 184, 166, .22);
+}
+
+.ki-body-cursor-v350.mode-interactive .cursor-notch {
+  opacity: .62;
+}
+
+.ki-body-cursor-v350.mode-interactive .cursor-core {
+  transform: scale(1.18);
+}
+
+.ki-body-cursor-v350.mode-glossary {
+  --cursor-size: 34px;
+  --cursor-ring: rgba(13, 148, 136, 1);
+  --cursor-aura: rgba(13, 148, 136, .24);
+}
+
+.ki-body-cursor-v350.mode-glossary .cursor-core,
+.ki-body-cursor-v350.mode-glossary .cursor-notch {
+  opacity: 0;
+}
+
+.ki-body-cursor-v350.mode-glossary .cursor-info {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ki-body-cursor-v350.mode-loading {
+  --cursor-size: 34px;
+  --cursor-ring: rgba(14, 165, 233, .96);
+  --cursor-core: rgba(14, 165, 233, .98);
+  --cursor-aura: rgba(14, 165, 233, .18);
+}
+
+.ki-body-cursor-v350.mode-loading .cursor-spinner {
+  opacity: 1;
+  animation: ki-cursor-v350-spin 820ms linear infinite;
+}
+
+.ki-body-cursor-v350.mode-text {
+  opacity: 0 !important;
+}
+
+html.ki-cursor-v350-pressed .ki-body-cursor-v350 {
+  --cursor-size: 23px;
+}
+
+html[data-theme='dark'] .ki-body-cursor-v350,
+[data-theme='dark'] .ki-body-cursor-v350 {
+  --cursor-ring: rgba(94, 234, 212, .96);
+  --cursor-core: #99f6e4;
+  --cursor-aura: rgba(45, 212, 191, .20);
+  --cursor-edge: rgba(255, 255, 255, .18);
+  --cursor-shadow: rgba(45, 212, 191, .22);
+}
+
+html[data-theme='dark'] .ki-body-cursor-v350 .cursor-info,
+[data-theme='dark'] .ki-body-cursor-v350 .cursor-info {
+  color: #ccfbf1;
+  background: rgba(15, 23, 42, .96);
+  border-color: rgba(94, 234, 212, .46);
+}
+
+@keyframes ki-cursor-v350-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 767px) {
+  .ki-body-cursor-v350 {
+    display: none !important;
+  }
+}
+`;
+}
+
+function closestMode(target) {
   if (!target || !(target instanceof Element)) return 'default';
   const root = document.documentElement;
   const body = document.body;
@@ -78,183 +281,143 @@ function getCursorMode(target) {
   return 'default';
 }
 
-function injectCursorRuntimeStyle() {
-  if (typeof document === 'undefined') return;
-  let style = document.getElementById(STYLE_ID);
-  if (!style) {
-    style = document.createElement('style');
-    style.id = STYLE_ID;
-    document.head.appendChild(style);
-  }
-
-  style.textContent = `
-html.ki-premium-cursor-on,
-html.ki-premium-cursor-on body,
-html.ki-premium-cursor-on *:not(input):not(textarea):not(select):not([contenteditable='true']):not([contenteditable='']) {
-  cursor: none !important;
-}
-html.ki-premium-cursor-on input,
-html.ki-premium-cursor-on textarea,
-html.ki-premium-cursor-on select,
-html.ki-premium-cursor-on [contenteditable='true'],
-html.ki-premium-cursor-on [contenteditable=''] {
-  cursor: text !important;
-}
-@media (max-width: 767px), (pointer: coarse) and (not (any-pointer: fine)) {
-  html.ki-premium-cursor-on,
-  html.ki-premium-cursor-on body,
-  html.ki-premium-cursor-on * {
-    cursor: auto !important;
-  }
-}
-`;
-}
-
-function setMode(node, previousMode, nextMode) {
-  if (!node || previousMode === nextMode) return previousMode;
-  node.classList.remove(`ki-cursor--${previousMode}`, `premium-cursor--${previousMode}`);
-  node.classList.add(`ki-cursor--${nextMode}`, `premium-cursor--${nextMode}`);
-  node.dataset.mode = nextMode;
-  return nextMode;
+function isTouchPointer(event) {
+  return event?.pointerType === 'touch';
 }
 
 export default function PremiumCursor() {
-  const cursorRef = useRef(null);
-  const rafRef = useRef(0);
-  const pointRef = useRef({ x: -100, y: -100 });
-  const modeRef = useRef('default');
-  const lastTargetRef = useRef(null);
-  const lastTransformRef = useRef('');
-  const enabledRef = useRef(false);
-  const visibleRef = useRef(false);
-
   useEffect(() => {
     if (typeof window === 'undefined' || typeof document === 'undefined') return undefined;
 
+    injectCursorStyle();
+
     const root = document.documentElement;
-    const node = cursorRef.current;
-    if (!node) return undefined;
+    const previousNode = document.getElementById(CURSOR_ID);
+    if (previousNode) previousNode.remove();
+
+    const node = document.createElement('div');
+    node.id = CURSOR_ID;
+    node.className = 'ki-body-cursor-v350 is-hidden mode-default';
+    node.setAttribute('aria-hidden', 'true');
+    node.innerHTML = `
+      <span class="cursor-aura"></span>
+      <span class="cursor-ring"></span>
+      <span class="cursor-notch cursor-notch-v"></span>
+      <span class="cursor-notch cursor-notch-h"></span>
+      <span class="cursor-core"></span>
+      <span class="cursor-info">i</span>
+      <span class="cursor-spinner"></span>
+    `;
+    document.body.appendChild(node);
+
+    let enabled = false;
+    let visible = false;
+    let raf = 0;
+    let mode = 'default';
+    let lastTarget = null;
+    let lastTransform = '';
+    let x = -120;
+    let y = -120;
 
     const enable = () => {
-      if (enabledRef.current || isTouchOnlyDevice() || prefersReducedMotion()) return false;
-      enabledRef.current = true;
-      injectCursorRuntimeStyle();
-      root.classList.add('ki-premium-cursor-on', 'premium-cursor-enabled');
-      node.classList.add('ki-cursor--default', 'premium-cursor--default');
-      node.dataset.mode = 'default';
-      return true;
+      if (enabled) return;
+      enabled = true;
+      root.classList.add('ki-cursor-v350-enabled');
     };
 
-    const disable = () => {
-      enabledRef.current = false;
-      visibleRef.current = false;
-      root.classList.remove(
-        'ki-premium-cursor-on',
-        'premium-cursor-enabled',
-        'ki-premium-cursor-pressed',
-        'premium-cursor-pressed',
-      );
-      node.classList.remove('is-visible');
+    const setVisible = (nextVisible) => {
+      if (visible === nextVisible) return;
+      visible = nextVisible;
+      node.classList.toggle('is-visible', nextVisible);
+      node.classList.toggle('is-hidden', !nextVisible);
+    };
+
+    const setMode = (nextMode) => {
+      if (mode === nextMode) return;
+      node.classList.remove(`mode-${mode}`);
+      mode = nextMode;
+      node.classList.add(`mode-${mode}`);
+      node.dataset.mode = mode;
     };
 
     const render = () => {
-      rafRef.current = 0;
-      if (!enabledRef.current) return;
-      const { x, y } = pointRef.current;
-      const nextTransform = `translate3d(${x}px, ${y}px, 0) translate3d(-50%, -50%, 0)`;
-      if (nextTransform !== lastTransformRef.current) {
-        lastTransformRef.current = nextTransform;
-        node.style.transform = nextTransform;
+      raf = 0;
+      if (!enabled) return;
+      const transform = `translate3d(${x}px, ${y}px, 0) translate3d(-50%, -50%, 0)`;
+      if (transform !== lastTransform) {
+        lastTransform = transform;
+        node.style.transform = transform;
       }
     };
 
     const requestRender = () => {
-      if (rafRef.current) return;
-      rafRef.current = window.requestAnimationFrame(render);
+      if (raf) return;
+      raf = window.requestAnimationFrame(render);
     };
 
-    const show = () => {
-      if (!enabledRef.current || visibleRef.current) return;
-      visibleRef.current = true;
-      node.classList.add('is-visible');
-    };
-
-    const hide = () => {
-      if (!visibleRef.current) return;
-      visibleRef.current = false;
-      node.classList.remove('is-visible');
-    };
-
-    const updateMode = (target) => {
-      if (!enabledRef.current || target === lastTargetRef.current) return;
-      lastTargetRef.current = target;
-      modeRef.current = setMode(node, modeRef.current, getCursorMode(target));
+    const updateModeFromTarget = (target) => {
+      if (target === lastTarget) return;
+      lastTarget = target;
+      setMode(closestMode(target));
     };
 
     const handleMove = (event) => {
-      const pointerType = event.pointerType;
-      if (pointerType && pointerType !== 'mouse' && pointerType !== 'pen') return;
-      if (!enable()) {
-        if (!enabledRef.current) return;
-      }
-      pointRef.current.x = event.clientX;
-      pointRef.current.y = event.clientY;
-      updateMode(event.target);
-      show();
+      if (isTouchPointer(event)) return;
+      enable();
+      x = event.clientX;
+      y = event.clientY;
+      updateModeFromTarget(event.target);
+      setVisible(true);
       requestRender();
     };
 
-    const handleOver = (event) => updateMode(event.target);
-    const handleFocus = (event) => updateMode(event.target);
-    const handleDown = () => root.classList.add('ki-premium-cursor-pressed', 'premium-cursor-pressed');
-    const handleUp = () => root.classList.remove('ki-premium-cursor-pressed', 'premium-cursor-pressed');
-    const handleLeave = hide;
-    const handleResize = () => {
-      if (isTouchOnlyDevice() || prefersReducedMotion()) disable();
+    const handleOver = (event) => {
+      if (!enabled || isTouchPointer(event)) return;
+      updateModeFromTarget(event.target);
     };
 
-    // Register both pointer and mouse events. Some browsers/environments expose
-    // PointerEvent but still behave more reliably with mousemove for custom cursors.
-    window.addEventListener('pointermove', handleMove, { passive: true });
+    const handleDown = (event) => {
+      if (isTouchPointer(event)) return;
+      root.classList.add('ki-cursor-v350-pressed');
+    };
+
+    const handleUp = () => root.classList.remove('ki-cursor-v350-pressed');
+    const handleLeave = () => setVisible(false);
+    const handleEnter = (event) => {
+      if (isTouchPointer(event)) return;
+      enable();
+      setVisible(true);
+    };
+
     window.addEventListener('mousemove', handleMove, { passive: true });
-    window.addEventListener('pointerdown', handleDown, { passive: true });
-    window.addEventListener('mousedown', handleDown, { passive: true });
-    window.addEventListener('pointerup', handleUp, { passive: true });
-    window.addEventListener('mouseup', handleUp, { passive: true });
-    document.addEventListener('pointerover', handleOver, { passive: true });
+    window.addEventListener('pointermove', handleMove, { passive: true });
     document.addEventListener('mouseover', handleOver, { passive: true });
-    document.addEventListener('focusin', handleFocus);
-    document.addEventListener('mouseleave', handleLeave);
-    window.addEventListener('blur', hide);
-    window.addEventListener('resize', handleResize, { passive: true });
+    document.addEventListener('pointerover', handleOver, { passive: true });
+    window.addEventListener('mousedown', handleDown, { passive: true });
+    window.addEventListener('pointerdown', handleDown, { passive: true });
+    window.addEventListener('mouseup', handleUp, { passive: true });
+    window.addEventListener('pointerup', handleUp, { passive: true });
+    document.addEventListener('mouseenter', handleEnter, { passive: true });
+    document.addEventListener('mouseleave', handleLeave, { passive: true });
+    window.addEventListener('blur', handleLeave);
 
     return () => {
-      disable();
-      window.removeEventListener('pointermove', handleMove);
+      root.classList.remove('ki-cursor-v350-enabled', 'ki-cursor-v350-pressed');
       window.removeEventListener('mousemove', handleMove);
-      window.removeEventListener('pointerdown', handleDown);
-      window.removeEventListener('mousedown', handleDown);
-      window.removeEventListener('pointerup', handleUp);
-      window.removeEventListener('mouseup', handleUp);
-      document.removeEventListener('pointerover', handleOver);
+      window.removeEventListener('pointermove', handleMove);
       document.removeEventListener('mouseover', handleOver);
-      document.removeEventListener('focusin', handleFocus);
+      document.removeEventListener('pointerover', handleOver);
+      window.removeEventListener('mousedown', handleDown);
+      window.removeEventListener('pointerdown', handleDown);
+      window.removeEventListener('mouseup', handleUp);
+      window.removeEventListener('pointerup', handleUp);
+      document.removeEventListener('mouseenter', handleEnter);
       document.removeEventListener('mouseleave', handleLeave);
-      window.removeEventListener('blur', hide);
-      window.removeEventListener('resize', handleResize);
-      if (rafRef.current) window.cancelAnimationFrame(rafRef.current);
+      window.removeEventListener('blur', handleLeave);
+      if (raf) window.cancelAnimationFrame(raf);
+      node.remove();
     };
   }, []);
 
-  return (
-    <div ref={cursorRef} className="premium-cursor ki-cursor" aria-hidden="true">
-      <span className="ki-cursor-aura" />
-      <span className="ki-cursor-ring" />
-      <span className="ki-cursor-cross ki-cursor-cross--v" />
-      <span className="ki-cursor-cross ki-cursor-cross--h" />
-      <span className="ki-cursor-core" />
-      <span className="ki-cursor-info">i</span>
-      <span className="ki-cursor-spinner" />
-    </div>
-  );
+  return null;
 }
