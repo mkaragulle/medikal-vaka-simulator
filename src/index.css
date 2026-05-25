@@ -51606,3 +51606,42 @@ html.ki-unified-cursor-active body :is(
 .ki-simple-cursor-dot {
   background: rgba(13, 148, 136, 0.96) !important;
 }
+
+/* V355 — Cursor visibility hard fix
+   New cursor root intentionally avoids old cursor class names, so legacy CSS cannot hide it. */
+html.ki-pointer-v355-on,
+html.ki-pointer-v355-on body,
+html.ki-pointer-v355-on body *:not(input):not(textarea):not(select):not([contenteditable='true']):not([contenteditable='']):not(.cm-editor):not(.monaco-editor) {
+  cursor: none !important;
+}
+
+html.ki-pointer-v355-on input,
+html.ki-pointer-v355-on textarea,
+html.ki-pointer-v355-on select,
+html.ki-pointer-v355-on [contenteditable='true'],
+html.ki-pointer-v355-on [contenteditable=''],
+html.ki-pointer-v355-on .cm-editor,
+html.ki-pointer-v355-on .monaco-editor {
+  cursor: text !important;
+}
+
+[data-ki-pointer-v355-root='true'] {
+  display: block !important;
+  visibility: visible !important;
+  pointer-events: none !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+[data-ki-pointer-v355-root='true'] svg,
+[data-ki-pointer-v355-root='true'] circle {
+  display: block !important;
+  visibility: visible !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
