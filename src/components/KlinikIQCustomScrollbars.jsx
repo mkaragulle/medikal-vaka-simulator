@@ -1,25 +1,98 @@
 import { useEffect } from 'react';
 
-const ROOT_CLASS = 'ki-custom-scrollbars-v365-on';
-const DRAGGING_CLASS = 'ki-custom-scrollbar-v365-dragging';
-const STYLE_ID = 'ki-custom-scrollbars-v365-style';
-const ROOT_ATTR = 'data-ki-custom-scrollbars-v365-root';
-const TRACK_ATTR = 'data-ki-custom-scrollbar-v365-track';
-const THUMB_ATTR = 'data-ki-custom-scrollbar-v365-thumb';
+const ROOT_CLASS = 'ki-custom-scrollbars-v366-on';
+const DRAGGING_CLASS = 'ki-custom-scrollbar-v366-dragging';
+const STYLE_ID = 'ki-custom-scrollbars-v366-style';
+const ROOT_ATTR = 'data-ki-custom-scrollbars-v366-root';
+const TRACK_ATTR = 'data-ki-custom-scrollbar-v366-track';
+const THUMB_ATTR = 'data-ki-custom-scrollbar-v366-thumb';
 const MAX_TRACKED_ELEMENTS = 72;
 const TRACK_SIZE = 8;
 const THUMB_SIZE = 6;
 const MIN_THUMB = 26;
 const EDGE_INSET = 4;
 
+const TOP_LAYER_SELECTOR = [
+  '#klinikiq-tooltip-layer',
+  '.floating-glossary-tooltip',
+  '.glossary-tooltip',
+  '.smart-glossary-tooltip',
+  '.smart-glossary-popover',
+  '.nested-glossary-tooltip',
+  '.tooltip',
+  '.toolbox',
+  '.popover',
+  '.dropdown-menu',
+  '.modal',
+  '.drawer',
+  '.dialog',
+  '[role="dialog"]',
+  '[aria-modal="true"]',
+  '[data-radix-popper-content-wrapper]',
+  '[data-floating-ui-portal]',
+].join(', ');
+
+function isTopLayerTarget(target) {
+  if (!isHTMLElement(target)) return false;
+  return Boolean(target.closest(TOP_LAYER_SELECTOR));
+}
+
+const TOP_LAYER_OCCLUSION_SELECTOR = [
+  '#klinikiq-tooltip-layer .floating-glossary-tooltip',
+  '.floating-glossary-tooltip',
+  '.glossary-tooltip.floating-glossary-tooltip',
+  '.smart-glossary-tooltip',
+  '.smart-glossary-popover',
+  '.nested-glossary-tooltip',
+  '[role="dialog"]',
+  '[aria-modal="true"]',
+  '.modal',
+  '.drawer',
+  '.popover',
+  '.dropdown-menu',
+  '.toolbox',
+].join(', ');
+
+function rectsOverlap(a, b) {
+  if (!a || !b) return false;
+  return a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
+}
+
+function isVisibleTopLayerElement(element) {
+  if (!(element instanceof HTMLElement)) return false;
+  if (element.closest(`[${ROOT_ATTR}]`)) return false;
+  const style = window.getComputedStyle(element);
+  if (!style || style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') return false;
+  const rect = element.getBoundingClientRect();
+  if (rect.width < 8 || rect.height < 8) return false;
+  if (rect.bottom < 0 || rect.right < 0 || rect.top > window.innerHeight || rect.left > window.innerWidth) return false;
+  return true;
+}
+
+function isCoveredByTopLayer(trackRect, target) {
+  if (!trackRect) return false;
+  if (target !== window && isTopLayerTarget(target)) return false;
+  const topLayers = document.querySelectorAll(TOP_LAYER_OCCLUSION_SELECTOR);
+  for (const layer of topLayers) {
+    if (!isVisibleTopLayerElement(layer)) continue;
+    if (target instanceof HTMLElement && layer.contains(target)) continue;
+    const layerRect = layer.getBoundingClientRect();
+    if (rectsOverlap(trackRect, layerRect)) return true;
+  }
+  return false;
+}
+
 const LEGACY_STYLE_IDS = [
   'ki-custom-scrollbars-v364-style',
   'ki-custom-scrollbars-v365-style',
+  'ki-custom-scrollbars-v366-style',
 ];
 
 const LEGACY_ROOT_SELECTORS = [
   '[data-ki-custom-scrollbars-v364-root="true"]',
   '[data-ki-custom-scrollbars-v365-root="true"]',
+  '[data-ki-custom-scrollbars-v366-root]',
+  '[data-ki-custom-scrollbars-v366-root="true"]',
 ].join(', ');
 
 const LEGACY_CLASSES = [
@@ -27,6 +100,8 @@ const LEGACY_CLASSES = [
   'ki-custom-scrollbar-v364-dragging',
   'ki-custom-scrollbars-v365-on',
   'ki-custom-scrollbar-v365-dragging',
+  'ki-custom-scrollbars-v366-on',
+  'ki-custom-scrollbar-v366-dragging',
 ];
 
 function isHTMLElement(value) {
@@ -80,7 +155,7 @@ function resolveIsDarkTheme() {
 
 function canScrollElement(element, axis) {
   if (!isHTMLElement(element)) return false;
-  if (element.closest(`[${ROOT_ATTR}="true"]`)) return false;
+  if (element.closest(`[${ROOT_ATTR}]`)) return false;
   if (element === document.body || element === document.documentElement) return false;
 
   const style = window.getComputedStyle(element);
@@ -148,12 +223,12 @@ function createScrollbarNode(axis) {
   const track = document.createElement('div');
   track.setAttribute(TRACK_ATTR, axis);
   track.setAttribute('data-cursor', 'interactive');
-  track.className = `ki-custom-scrollbar-v365-track ki-custom-scrollbar-v365-track-${axis}`;
+  track.className = `ki-custom-scrollbar-v366-track ki-custom-scrollbar-v366-track-${axis}`;
 
   const thumb = document.createElement('div');
   thumb.setAttribute(THUMB_ATTR, axis);
   thumb.setAttribute('data-cursor', 'interactive');
-  thumb.className = `ki-custom-scrollbar-v365-thumb ki-custom-scrollbar-v365-thumb-${axis}`;
+  thumb.className = `ki-custom-scrollbar-v366-thumb ki-custom-scrollbar-v366-thumb-${axis}`;
 
   track.appendChild(thumb);
   return { track, thumb };
@@ -186,10 +261,9 @@ html.${ROOT_CLASS} *::-webkit-scrollbar {
   background: transparent !important;
 }
 
-[${ROOT_ATTR}="true"] {
+[${ROOT_ATTR}] {
   position: fixed !important;
   inset: 0 !important;
-  z-index: 2147483646 !important;
   pointer-events: none !important;
   contain: layout style paint;
   color-scheme: light dark;
@@ -198,13 +272,21 @@ html.${ROOT_CLASS} *::-webkit-scrollbar {
   --ki-scrollbar-track-active: rgba(13, 148, 136, 0.08);
 }
 
-[${ROOT_ATTR}="true"].is-dark {
+[${ROOT_ATTR}="base"] {
+  z-index: 1200 !important;
+}
+
+[${ROOT_ATTR}="overlay"] {
+  z-index: 2147483625 !important;
+}
+
+[${ROOT_ATTR}].is-dark {
   --ki-scrollbar-thumb-idle: rgba(94, 234, 212, 0.36);
   --ki-scrollbar-thumb-active: rgba(153, 246, 228, 0.78);
   --ki-scrollbar-track-active: rgba(94, 234, 212, 0.10);
 }
 
-.ki-custom-scrollbar-v365-track {
+.ki-custom-scrollbar-v366-track {
   position: fixed !important;
   pointer-events: auto !important;
   border-radius: 999px !important;
@@ -217,23 +299,23 @@ html.${ROOT_CLASS} *::-webkit-scrollbar {
   will-change: transform, width, height;
 }
 
-.ki-custom-scrollbar-v365-track:hover,
-.ki-custom-scrollbar-v365-track.is-active,
-.ki-custom-scrollbar-v365-track.is-dragging {
+.ki-custom-scrollbar-v366-track:hover,
+.ki-custom-scrollbar-v366-track.is-active,
+.ki-custom-scrollbar-v366-track.is-dragging {
   background: var(--ki-scrollbar-track-active) !important;
 }
 
-.ki-custom-scrollbar-v365-track-y {
+.ki-custom-scrollbar-v366-track-y {
   width: ${TRACK_SIZE}px !important;
   min-height: 28px !important;
 }
 
-.ki-custom-scrollbar-v365-track-x {
+.ki-custom-scrollbar-v366-track-x {
   height: ${TRACK_SIZE}px !important;
   min-width: 28px !important;
 }
 
-.ki-custom-scrollbar-v365-thumb {
+.ki-custom-scrollbar-v366-thumb {
   position: absolute !important;
   border-radius: 999px !important;
   background: var(--ki-scrollbar-thumb-idle) !important;
@@ -243,19 +325,19 @@ html.${ROOT_CLASS} *::-webkit-scrollbar {
   will-change: transform, width, height;
 }
 
-.ki-custom-scrollbar-v365-track:hover .ki-custom-scrollbar-v365-thumb,
-.ki-custom-scrollbar-v365-track.is-active .ki-custom-scrollbar-v365-thumb,
-.ki-custom-scrollbar-v365-track.is-dragging .ki-custom-scrollbar-v365-thumb {
+.ki-custom-scrollbar-v366-track:hover .ki-custom-scrollbar-v366-thumb,
+.ki-custom-scrollbar-v366-track.is-active .ki-custom-scrollbar-v366-thumb,
+.ki-custom-scrollbar-v366-track.is-dragging .ki-custom-scrollbar-v366-thumb {
   background: var(--ki-scrollbar-thumb-active) !important;
 }
 
-.ki-custom-scrollbar-v365-thumb-y {
+.ki-custom-scrollbar-v366-thumb-y {
   left: 1px !important;
   width: ${THUMB_SIZE}px !important;
   min-height: ${MIN_THUMB}px !important;
 }
 
-.ki-custom-scrollbar-v365-thumb-x {
+.ki-custom-scrollbar-v366-thumb-x {
   top: 1px !important;
   height: ${THUMB_SIZE}px !important;
   min-width: ${MIN_THUMB}px !important;
@@ -269,11 +351,20 @@ html.${DRAGGING_CLASS} * {
 `;
     document.head.appendChild(style);
 
-    const root = document.createElement('div');
-    root.setAttribute(ROOT_ATTR, 'true');
-    root.setAttribute('aria-hidden', 'true');
-    document.body.appendChild(root);
+    const baseRoot = document.createElement('div');
+    baseRoot.setAttribute(ROOT_ATTR, 'base');
+    baseRoot.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(baseRoot);
+
+    const overlayRoot = document.createElement('div');
+    overlayRoot.setAttribute(ROOT_ATTR, 'overlay');
+    overlayRoot.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(overlayRoot);
+
+    const roots = [baseRoot, overlayRoot];
     document.documentElement.classList.add(ROOT_CLASS);
+
+    const resolveRootForTarget = (target) => (target !== window && isTopLayerTarget(target) ? overlayRoot : baseRoot);
 
     const entries = [];
     const scanTimeouts = new Set();
@@ -291,7 +382,8 @@ html.${DRAGGING_CLASS} * {
       if (rafId) return;
       rafId = window.requestAnimationFrame(() => {
         rafId = 0;
-        root.classList.toggle('is-dark', resolveIsDarkTheme());
+        const isDark = resolveIsDarkTheme();
+        roots.forEach((node) => node.classList.toggle('is-dark', isDark));
         const active = Date.now() < activeUntil;
         for (const entry of entries) updateEntry(entry, active);
       });
@@ -346,6 +438,14 @@ html.${DRAGGING_CLASS} * {
         entry.trackStart = visibleTop;
         entry.trackLength = trackHeight;
         entry.thumbLength = thumbHeight;
+        entry.visualRect = {
+          left: trackLeft,
+          right: trackLeft + TRACK_SIZE,
+          top: visibleTop,
+          bottom: visibleTop + trackHeight,
+          width: TRACK_SIZE,
+          height: trackHeight,
+        };
       } else {
         const visibleLeft = isWindowTarget ? EDGE_INSET : clamp(rect.left + EDGE_INSET, EDGE_INSET, window.innerWidth - EDGE_INSET);
         const visibleRight = isWindowTarget
@@ -370,6 +470,19 @@ html.${DRAGGING_CLASS} * {
         entry.trackStart = visibleLeft;
         entry.trackLength = trackWidth;
         entry.thumbLength = thumbWidth;
+        entry.visualRect = {
+          left: visibleLeft,
+          right: visibleLeft + trackWidth,
+          top: trackTop,
+          bottom: trackTop + TRACK_SIZE,
+          width: trackWidth,
+          height: TRACK_SIZE,
+        };
+      }
+
+      if (!entry.isTopLayer && isCoveredByTopLayer(entry.visualRect, target)) {
+        track.style.display = 'none';
+        return;
       }
 
       track.classList.toggle('is-active', forceActive || track.matches(':hover') || track.classList.contains('is-dragging'));
@@ -384,7 +497,8 @@ html.${DRAGGING_CLASS} * {
 
     const createEntry = (target, axis) => {
       const { track, thumb } = createScrollbarNode(axis);
-      root.appendChild(track);
+      const hostRoot = resolveRootForTarget(target);
+      hostRoot.appendChild(track);
       const entry = {
         target,
         axis,
@@ -394,6 +508,8 @@ html.${DRAGGING_CLASS} * {
         trackLength: 0,
         thumbLength: 0,
         cleanup: null,
+        isTopLayer: target !== window && isTopLayerTarget(target),
+        visualRect: null,
       };
 
       const onScroll = () => {
@@ -441,7 +557,7 @@ html.${DRAGGING_CLASS} * {
       let tracked = 0;
       for (const element of candidates) {
         if (!isHTMLElement(element)) continue;
-        if (element.closest(`[${ROOT_ATTR}="true"]`)) continue;
+        if (element.closest(`[${ROOT_ATTR}]`)) continue;
         if (!isVisibleEnough(element)) continue;
 
         const hasY = canScrollElement(element, 'y');
@@ -571,7 +687,7 @@ html.${DRAGGING_CLASS} * {
       if (isDragging) return;
       const onlyScrollbarInternalChanges = mutations.every((mutation) => {
         const target = mutation.target;
-        return target instanceof Element && target.closest(`[${ROOT_ATTR}="true"]`);
+        return target instanceof Element && target.closest(`[${ROOT_ATTR}]`);
       });
       if (!onlyScrollbarInternalChanges) scheduleScan(80);
     });
@@ -626,7 +742,7 @@ html.${DRAGGING_CLASS} * {
       window.removeEventListener('pointermove', onPointerActivity);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       clearEntries();
-      root.remove();
+      roots.forEach((node) => node.remove());
       style.remove();
       document.documentElement.classList.remove(ROOT_CLASS, DRAGGING_CLASS);
     };
