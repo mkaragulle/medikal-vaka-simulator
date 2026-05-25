@@ -1,0 +1,9 @@
+KlinikIQ V356 Cursor Comet Orbit Summary
+
+- PremiumCursor güncellendi.
+- Mevcut sade teal halka + merkez nokta tasarımı korundu.
+- Dış halkada dönen beyaz bir comet/orbit noktası eklendi.
+- Çok hafif iki aşamalı kuyruk efekti eklendi.
+- Interactive hover durumunda orbit biraz hızlanır.
+- Press durumunda orbit biraz daha canlılaşır.
+- Eski cursor temizliği ve performans optimizasyonu korunur.

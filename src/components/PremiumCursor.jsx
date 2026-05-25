@@ -39,9 +39,9 @@ const TEXT_SELECTOR = [
   '.bottom-case-search input',
 ].join(', ');
 
-const ROOT_CLASS = 'ki-pointer-v355-on';
-const STYLE_ID = 'ki-pointer-v355-runtime-style';
-const ROOT_ATTR = 'data-ki-pointer-v355-root';
+const ROOT_CLASS = 'ki-pointer-v358-on';
+const STYLE_ID = 'ki-pointer-v358-runtime-style';
+const ROOT_ATTR = 'data-ki-pointer-v358-root';
 
 const LEGACY_SELECTORS = [
   '.ki-cursor',
@@ -61,9 +61,15 @@ const LEGACY_SELECTORS = [
   '[data-klinq-cursor-root]',
   '[data-cursor-root]',
   '[data-ki-simple-cursor-root]',
+  '[data-ki-pointer-v355-root]',
+  '[data-ki-pointer-v356-root]',
+  '[data-ki-pointer-v357-root]',
 ].join(', ');
 
 const LEGACY_STYLE_IDS = [
+  'ki-pointer-v355-runtime-style',
+  'ki-pointer-v356-runtime-style',
+  'ki-pointer-v357-runtime-style',
   'ki-simple-cursor-runtime-style-v354',
   'klinikiq-minimal-premium-cursor-style-v353',
   'klinikiq-unified-premium-cursor-runtime-style-v352',
@@ -75,6 +81,9 @@ const LEGACY_STYLE_IDS = [
 ];
 
 const LEGACY_ROOT_CLASSES = [
+  'ki-pointer-v355-on',
+  'ki-pointer-v356-on',
+  'ki-pointer-v357-on',
   'ki-simple-cursor-active',
   'ki-simple-cursor-pressed',
   'ki-minimal-cursor-active',
@@ -164,6 +173,31 @@ html.${ROOT_CLASS} .monaco-editor {
   filter: none !important;
 }
 
+[${ROOT_ATTR}="true"] [data-ki-pointer-orbit="true"] {
+  transform-origin: 17px 17px;
+  animation: kiPointerOrbitV356 3.2s linear infinite;
+  will-change: transform;
+}
+
+[${ROOT_ATTR}="true"].is-interactive [data-ki-pointer-orbit="true"] {
+  animation-duration: 2.4s;
+}
+
+[${ROOT_ATTR}="true"].is-pressed [data-ki-pointer-orbit="true"] {
+  animation-duration: 1.95s;
+}
+
+@keyframes kiPointerOrbitV356 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [${ROOT_ATTR}="true"] [data-ki-pointer-orbit="true"] {
+    animation-duration: 9s;
+  }
+}
+
 .premium-cursor,
 .premium-cursor-root,
 .clinical-cursor-root,
@@ -180,7 +214,10 @@ html.${ROOT_CLASS} .monaco-editor {
 [data-klinq-old-cursor-root],
 [data-klinq-cursor-root],
 [data-cursor-root],
-[data-ki-simple-cursor-root] {
+[data-ki-simple-cursor-root],
+[data-ki-pointer-v355-root],
+[data-ki-pointer-v356-root],
+[data-ki-pointer-v357-root] {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
@@ -219,6 +256,11 @@ html.${ROOT_CLASS} .monaco-editor {
     root.innerHTML = `
 <svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true" focusable="false" style="display:block;width:34px;height:34px;overflow:visible;background:transparent;border:0;box-shadow:none;filter:none;">
   <circle data-ki-pointer-ring="true" cx="17" cy="17" r="8.25" fill="none" stroke="rgba(13,148,136,0.94)" stroke-width="1.65" vector-effect="non-scaling-stroke"></circle>
+  <g data-ki-pointer-orbit="true">
+    <circle data-ki-pointer-tail-2="true" cx="13.95" cy="9.25" r="0.58" fill="rgba(255,255,255,0.18)"></circle>
+    <circle data-ki-pointer-tail-1="true" cx="15.15" cy="8.1" r="0.74" fill="rgba(255,255,255,0.42)"></circle>
+    <circle data-ki-pointer-comet="true" cx="17" cy="7.2" r="1.1" fill="rgba(255,255,255,0.96)"></circle>
+  </g>
   <circle data-ki-pointer-dot="true" cx="17" cy="17" r="2.25" fill="rgba(13,148,136,0.98)"></circle>
 </svg>`;
 
@@ -226,6 +268,9 @@ html.${ROOT_CLASS} .monaco-editor {
 
     const ring = root.querySelector('[data-ki-pointer-ring="true"]');
     const dot = root.querySelector('[data-ki-pointer-dot="true"]');
+    const comet = root.querySelector('[data-ki-pointer-comet="true"]');
+    const tail1 = root.querySelector('[data-ki-pointer-tail-1="true"]');
+    const tail2 = root.querySelector('[data-ki-pointer-tail-2="true"]');
 
     let currentX = -80;
     let currentY = -80;
@@ -235,31 +280,96 @@ html.${ROOT_CLASS} .monaco-editor {
     let started = false;
     let isInteractive = false;
     let isText = false;
+    let isPressed = false;
+    let isDarkTheme = false;
+
+    const lightPalette = {
+      ring: 'rgba(13,148,136,0.94)',
+      ringInteractive: 'rgba(15,118,110,0.98)',
+      dot: 'rgba(13,148,136,0.98)',
+      dotInteractive: 'rgba(15,118,110,0.98)',
+      comet: 'rgba(255,255,255,0.96)',
+      cometInteractive: 'rgba(255,255,255,1)',
+      tail1: 'rgba(255,255,255,0.42)',
+      tail1Interactive: 'rgba(255,255,255,0.54)',
+      tail2: 'rgba(255,255,255,0.18)',
+      tail2Interactive: 'rgba(255,255,255,0.22)',
+    };
+
+    const darkPalette = {
+      ring: 'rgba(94,234,212,0.96)',
+      ringInteractive: 'rgba(153,246,228,1)',
+      dot: 'rgba(45,212,191,0.98)',
+      dotInteractive: 'rgba(153,246,228,1)',
+      comet: 'rgba(248,250,252,0.98)',
+      cometInteractive: 'rgba(255,255,255,1)',
+      tail1: 'rgba(248,250,252,0.52)',
+      tail1Interactive: 'rgba(255,255,255,0.66)',
+      tail2: 'rgba(248,250,252,0.22)',
+      tail2Interactive: 'rgba(255,255,255,0.30)',
+    };
+
+    const resolveIsDarkTheme = () => {
+      const htmlTheme = document.documentElement?.dataset?.theme;
+      const bodyTheme = document.body?.dataset?.theme;
+      const shellTheme = document.querySelector('.app-shell')?.getAttribute('data-theme');
+      const storedTheme = (() => {
+        try {
+          return window.localStorage?.getItem('klinikiq-theme-v1');
+        } catch {
+          return null;
+        }
+      })();
+
+      if ([htmlTheme, bodyTheme, shellTheme, storedTheme].some((value) => String(value).toLowerCase() === 'dark')) return true;
+      if ([htmlTheme, bodyTheme, shellTheme, storedTheme].some((value) => String(value).toLowerCase() === 'light')) return false;
+      return Boolean(window.matchMedia?.('(prefers-color-scheme: dark)')?.matches);
+    };
 
     const setPointerVisual = () => {
-      if (!ring || !dot) return;
+      if (!ring || !dot || !comet || !tail1 || !tail2) return;
+
+      isDarkTheme = resolveIsDarkTheme();
+      const palette = isDarkTheme ? darkPalette : lightPalette;
 
       root.classList.toggle('is-text', isText);
+      root.classList.toggle('is-interactive', isInteractive && !isText);
+      root.classList.toggle('is-pressed', isPressed && !isText);
+      root.classList.toggle('is-dark-theme', isDarkTheme);
 
       if (isText) {
         ring.setAttribute('r', '8.25');
         ring.setAttribute('stroke-width', '1.65');
+        ring.setAttribute('stroke', palette.ring);
         dot.setAttribute('r', '2.25');
+        dot.setAttribute('fill', palette.dot);
+        comet.setAttribute('r', '1.1');
+        comet.setAttribute('fill', palette.comet);
+        tail1.setAttribute('fill', palette.tail1);
+        tail2.setAttribute('fill', palette.tail2);
         return;
       }
 
       if (isInteractive) {
-        ring.setAttribute('r', '10.75');
+        ring.setAttribute('r', isPressed ? '10.0' : '10.75');
         ring.setAttribute('stroke-width', '1.75');
-        ring.setAttribute('stroke', 'rgba(15,118,110,0.98)');
-        dot.setAttribute('r', '1.9');
-        dot.setAttribute('fill', 'rgba(15,118,110,0.98)');
+        ring.setAttribute('stroke', palette.ringInteractive);
+        dot.setAttribute('r', isPressed ? '1.75' : '1.9');
+        dot.setAttribute('fill', palette.dotInteractive);
+        comet.setAttribute('r', '1.18');
+        comet.setAttribute('fill', palette.cometInteractive);
+        tail1.setAttribute('fill', palette.tail1Interactive);
+        tail2.setAttribute('fill', palette.tail2Interactive);
       } else {
-        ring.setAttribute('r', '8.25');
+        ring.setAttribute('r', isPressed ? '7.5' : '8.25');
         ring.setAttribute('stroke-width', '1.65');
-        ring.setAttribute('stroke', 'rgba(13,148,136,0.94)');
-        dot.setAttribute('r', '2.25');
-        dot.setAttribute('fill', 'rgba(13,148,136,0.98)');
+        ring.setAttribute('stroke', palette.ring);
+        dot.setAttribute('r', isPressed ? '1.9' : '2.25');
+        dot.setAttribute('fill', palette.dot);
+        comet.setAttribute('r', '1.1');
+        comet.setAttribute('fill', palette.comet);
+        tail1.setAttribute('fill', palette.tail1);
+        tail2.setAttribute('fill', palette.tail2);
       }
     };
 
@@ -300,34 +410,99 @@ html.${ROOT_CLASS} .monaco-editor {
       root.classList.remove('is-visible');
     };
 
+    const recoverCursor = () => {
+      if (!document.body.contains(root)) {
+        document.body.appendChild(root);
+      }
+
+      if (!started) return;
+
+      document.documentElement.classList.add(ROOT_CLASS);
+      setPointerVisual();
+
+      if (!isText) {
+        root.classList.add('is-visible');
+      }
+
+      if (!frameId) {
+        frameId = window.requestAnimationFrame(render);
+      }
+    };
+
     const show = () => {
-      if (started && !isText) root.classList.add('is-visible');
+      recoverCursor();
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') {
+        hide();
+        return;
+      }
+
+      window.setTimeout(recoverCursor, 0);
+      window.setTimeout(recoverCursor, 120);
+    };
+
+    const handlePageShow = () => {
+      window.setTimeout(recoverCursor, 0);
+      window.setTimeout(recoverCursor, 120);
     };
 
     const down = () => {
-      if (ring) ring.setAttribute('r', isInteractive ? '9.5' : '7.25');
-      if (dot) dot.setAttribute('r', '1.75');
+      isPressed = true;
+      setPointerVisual();
     };
 
-    const up = () => setPointerVisual();
+    const up = () => {
+      isPressed = false;
+      setPointerVisual();
+    };
+
+    const handleThemeChange = () => {
+      setPointerVisual();
+    };
+
+    const themeObserver = new MutationObserver(handleThemeChange);
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+    if (document.body) {
+      themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+    }
+
+    const appShell = document.querySelector('.app-shell');
+    if (appShell) {
+      themeObserver.observe(appShell, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+    }
+
+    window.addEventListener('storage', handleThemeChange, { passive: true });
 
     window.addEventListener('pointermove', move, { passive: true });
     window.addEventListener('mousemove', move, { passive: true });
+    window.addEventListener('mouseover', move, { passive: true });
     window.addEventListener('pointerdown', down, { passive: true });
     window.addEventListener('pointerup', up, { passive: true });
+    window.addEventListener('focus', show, { passive: true });
+    window.addEventListener('pageshow', handlePageShow, { passive: true });
     window.addEventListener('blur', hide, { passive: true });
     window.addEventListener('mouseleave', hide, { passive: true });
     window.addEventListener('mouseenter', show, { passive: true });
+    document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true });
 
     return () => {
       window.cancelAnimationFrame(frameId);
+      frameId = 0;
       window.removeEventListener('pointermove', move);
       window.removeEventListener('mousemove', move);
+      window.removeEventListener('mouseover', move);
       window.removeEventListener('pointerdown', down);
       window.removeEventListener('pointerup', up);
+      window.removeEventListener('focus', show);
+      window.removeEventListener('pageshow', handlePageShow);
       window.removeEventListener('blur', hide);
       window.removeEventListener('mouseleave', hide);
       window.removeEventListener('mouseenter', show);
+      window.removeEventListener('storage', handleThemeChange);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      themeObserver.disconnect();
       document.documentElement.classList.remove(ROOT_CLASS);
       root.remove();
       style.remove();
