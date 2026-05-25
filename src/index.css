@@ -51759,3 +51759,43 @@ html.ki-is-resizing .branch-card,
 html.ki-is-resizing .question-panel {
   transition: none !important;
 }
+
+/* ==========================================================
+   V375 — Immediate scrollbar visibility for “Diğer olgular”
+   ========================================================== */
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser,
+.bottom-case-browser {
+  content-visibility: visible !important;
+  contain-intrinsic-size: auto !important;
+  contain: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list,
+.bottom-case-browser .horizontal-case-list {
+  content-visibility: visible !important;
+  contain: layout !important;
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  scrollbar-gutter: stable !important;
+  scrollbar-width: thin !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list::-webkit-scrollbar,
+.bottom-case-browser .horizontal-case-list::-webkit-scrollbar {
+  height: 9px !important;
+  display: block !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-track,
+.bottom-case-browser .horizontal-case-list::-webkit-scrollbar-track {
+  border-radius: 999px !important;
+  background: transparent !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-thumb,
+.bottom-case-browser .horizontal-case-list::-webkit-scrollbar-thumb {
+  border-radius: 999px !important;
+  border: 3px solid transparent !important;
+  background: color-mix(in srgb, var(--border-strong) 38%, transparent) !important;
+  background-clip: content-box !important;
+}

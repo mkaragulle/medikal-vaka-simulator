@@ -59,6 +59,7 @@ const TOP_LAYER_OCCLUSION_SELECTOR = [
 const SCROLLABLE_CANDIDATE_SELECTOR = [
   '[data-scroll-container]',
   '[data-scrollable="true"]',
+  '[data-scrollbar-immediate="true"]',
   '.app-shell',
   '.page-shell',
   '.qbank-shell',
@@ -215,8 +216,16 @@ function resolveIsDarkTheme() {
   return Boolean(window.matchMedia?.('(prefers-color-scheme: dark)')?.matches);
 }
 
+function prefersNativeCaseBrowserScrollbar(element) {
+  return Boolean(
+    isHTMLElement(element)
+    && element.matches?.('.bottom-case-browser .horizontal-case-list')
+  );
+}
+
 function canScrollElement(element, axis) {
   if (!isHTMLElement(element)) return false;
+  if (prefersNativeCaseBrowserScrollbar(element)) return false;
   if (element.closest(`[${ROOT_ATTR}]`)) return false;
   if (element === document.body || element === document.documentElement) return false;
 
@@ -336,6 +345,34 @@ html.${ROOT_CLASS} *::-webkit-scrollbar {
   height: 0 !important;
   display: none !important;
   background: transparent !important;
+}
+
+/* Immediate native fallback for the bottom “Diğer olgular” row.
+   The fixed custom scrollbar layer catches up in the same layout cycle, but this
+   prevents the row from looking scrollbar-free during first render. */
+html.${ROOT_CLASS} .bottom-case-browser .horizontal-case-list {
+  scrollbar-width: thin !important;
+  -ms-overflow-style: auto !important;
+}
+
+html.${ROOT_CLASS} .bottom-case-browser .horizontal-case-list::-webkit-scrollbar {
+  height: 9px !important;
+  width: 9px !important;
+  display: block !important;
+  background: transparent !important;
+}
+
+html.${ROOT_CLASS} .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-track {
+  background: transparent !important;
+  border-radius: 999px !important;
+}
+
+html.${ROOT_CLASS} .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-thumb {
+  min-width: 32px !important;
+  border-radius: 999px !important;
+  border: 3px solid transparent !important;
+  background: color-mix(in srgb, var(--border-strong, #0f766e) 36%, transparent) !important;
+  background-clip: content-box !important;
 }
 
 [${ROOT_ATTR}] {
@@ -759,6 +796,10 @@ html.${DRAGGING_CLASS} * {
       scheduleScan(80);
     };
     const onStorage = () => requestUpdate();
+    const onImmediateScrollbarRescan = () => {
+      resetTopLayerRectCache();
+      scheduleScan(0);
+    };
     const onPointerActivity = () => {
       if (document.visibilityState === 'hidden') return;
       const now = window.performance?.now?.() || Date.now();
@@ -779,11 +820,24 @@ html.${DRAGGING_CLASS} * {
         if (target instanceof Element && target.closest(`[${ROOT_ATTR}]`)) continue;
 
         if (mutation.type === 'childList') {
-          const touchedTopLayer = [...mutation.addedNodes, ...mutation.removedNodes].some((node) => (
+          const touchedNodes = [...mutation.addedNodes, ...mutation.removedNodes];
+          const touchedTopLayer = touchedNodes.some((node) => (
             node instanceof Element && (node.matches?.(TOP_LAYER_SELECTOR) || node.querySelector?.(TOP_LAYER_SELECTOR))
+          ));
+          const touchedImmediateScrollbar = touchedNodes.some((node) => (
+            node instanceof Element
+            && (
+              node.matches?.('[data-scrollbar-immediate="true"], .bottom-case-browser, .horizontal-case-list')
+              || node.querySelector?.('[data-scrollbar-immediate="true"], .bottom-case-browser, .horizontal-case-list')
+            )
           ));
           shouldScan = true;
           shouldResetTopLayerCache = shouldResetTopLayerCache || touchedTopLayer;
+          if (touchedImmediateScrollbar) {
+            if (shouldResetTopLayerCache) resetTopLayerRectCache();
+            scheduleScan(0);
+            return;
+          }
           break;
         }
 
@@ -828,6 +882,7 @@ html.${DRAGGING_CLASS} * {
     window.addEventListener('scroll', onWindowScroll, { passive: true });
     window.addEventListener('resize', onResize, { passive: true });
     window.addEventListener('storage', onStorage, { passive: true });
+    window.addEventListener('klinikiq:scrollbars-rescan', onImmediateScrollbarRescan, { passive: true });
     window.addEventListener('pointermove', onPointerActivity, { passive: true });
     const handleFocus = () => scheduleScan(0);
     const handlePageShow = () => scheduleScan(0);
@@ -851,6 +906,7 @@ html.${DRAGGING_CLASS} * {
       window.removeEventListener('scroll', onWindowScroll);
       window.removeEventListener('resize', onResize);
       window.removeEventListener('storage', onStorage);
+      window.removeEventListener('klinikiq:scrollbars-rescan', onImmediateScrollbarRescan);
       window.removeEventListener('pointermove', onPointerActivity);
       window.removeEventListener('focus', handleFocus);
       window.removeEventListener('pageshow', handlePageShow);

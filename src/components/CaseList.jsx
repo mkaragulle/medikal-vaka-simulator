@@ -94,8 +94,29 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
     return () => window.cancelAnimationFrame(frameId);
   }, [horizontalResetKey, layout]);
 
+  useLayoutEffect(() => {
+    if (layout !== 'horizontal') return undefined;
+    const listNode = listRef.current;
+    if (!listNode) return undefined;
+
+    // The custom scrollbar layer scans lazily for performance.
+    // Horizontal case rows must request a synchronous rescan after layout so the
+    // “Diğer olgular” scrollbar is present on first paint, not after pointer/idle activity.
+    window.dispatchEvent(new CustomEvent('klinikiq:scrollbars-rescan'));
+    const frameId = window.requestAnimationFrame(() => {
+      window.dispatchEvent(new CustomEvent('klinikiq:scrollbars-rescan'));
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
+  }, [horizontalResetKey, layout]);
+
   return (
-    <div ref={listRef} className={layout === 'horizontal' ? 'case-list horizontal-case-list' : 'case-list'} aria-label="Olgu listesi">
+    <div
+      ref={listRef}
+      className={layout === 'horizontal' ? 'case-list horizontal-case-list' : 'case-list'}
+      data-scrollbar-immediate={layout === 'horizontal' ? 'true' : undefined}
+      aria-label="Olgu listesi"
+    >
       {cases.map((clinicalCase) => (
         <CaseListItem
           key={clinicalCase.id}

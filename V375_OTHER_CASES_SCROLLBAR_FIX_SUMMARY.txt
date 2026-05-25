@@ -1,0 +1,23 @@
+KlinikIQ V375 — “Diğer olgular” scrollbar immediate visibility fix
+
+Problem:
+- “Diğer olgular” horizontal case row sometimes appeared without a scrollbar at first render.
+- The scrollbar appeared only after delayed custom-scrollbar rescans, pointer activity, route/layout mutation, or later paint cycles.
+
+Root causes:
+- The global custom scrollbar system hides native scrollbars until its fixed overlay track is created.
+- The horizontal CaseList was rendered after the initial global custom-scrollbar scan in some route/layout states.
+- Performance CSS applied content-visibility/contain to the bottom case browser, which could postpone layout metrics needed by the custom scrollbar scanner.
+
+Changes:
+- Added data-scrollbar-immediate="true" to horizontal CaseList rows.
+- CaseList now dispatches klinikiq:scrollbars-rescan immediately after horizontal row layout and again on the next animation frame.
+- KlinikIQCustomScrollbars now listens to klinikiq:scrollbars-rescan and performs an immediate scan.
+- MutationObserver now detects bottom-case-browser / horizontal-case-list insertions and scans with 0 ms delay.
+- Added a native scrollbar fallback exception for .bottom-case-browser .horizontal-case-list so the row never looks scrollbar-free during first paint.
+- Disabled delayed content-visibility behavior for .bottom-case-browser while preserving the horizontal list size/layout.
+
+Preserved:
+- Custom scrollbar system remains active globally.
+- Custom cursor behavior remains unchanged.
+- Case content, answer keys, feedback, medical data, scoring, and routing were not changed.
