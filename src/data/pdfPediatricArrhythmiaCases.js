@@ -1,3 +1,6 @@
+import { attachClinicalVisualsToCases } from '../utils/clinicalVisuals.js';
+import { clinicalVisualManifest } from './clinicalVisualManifest.js';
+
 // Pediatric arrhythmia cases transformed from the uploaded PDF.
 // The content is deliberately paraphrased and structured for KlinikIQ's interactive case schema.
 
@@ -3067,4 +3070,4 @@ function makeCase(definition, index) {
   };
 }
 
-export const pediatricArrhythmiaPdfCases = definitions.map(makeCase);
+export const pediatricArrhythmiaPdfCases = attachClinicalVisualsToCases(definitions.map(makeCase), clinicalVisualManifest);

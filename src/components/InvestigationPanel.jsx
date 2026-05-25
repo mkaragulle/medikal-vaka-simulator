@@ -591,13 +591,13 @@ function ResultImages({ images = [], glossaryEnabled = true, glossaryRevealMode 
       {images.map((image) => (
         <figure key={`${image.title}-${image.imageUrl}`} className="ordered-image-card inline-result-image-card">
           <div className="ordered-image-frame inline-result-image-frame">
-            <img src={image.imageUrl} alt={image.alt || image.title} loading="lazy" />
-            <a href={image.imageUrl} target="_blank" rel="noreferrer" aria-label="Görseli yeni sekmede aç">
+            <img src={image.thumbnailUrl || image.imageUrl} alt={image.alt || image.title || 'Tetkik görseli'} loading="lazy" decoding="async" />
+            <a href={image.imageUrl || image.thumbnailUrl} target="_blank" rel="noreferrer" aria-label="Görseli yeni sekmede aç">
               <Icon name="Search" size={16} />
             </a>
           </div>
           <figcaption>
-            <strong><GlossaryText text={image.title} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></strong>
+            <strong><GlossaryText text={image.title || image.parameter || 'Tetkik görseli'} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></strong>
           </figcaption>
         </figure>
       ))}

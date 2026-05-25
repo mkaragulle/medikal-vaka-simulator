@@ -1,5 +1,6 @@
 import { neutralModalityTitle, stripDiagnosticLeakage, toSentence } from './displayText.js';
 import { sanitizePreAnswerText } from './answerLeakageGate.js';
+import { visualMatchesInvestigation } from './clinicalVisuals.js';
 
 export const priorityMeta = {
   essential: {
@@ -331,18 +332,13 @@ function sanitizeSummary(text = '', clinicalCase) {
 
 function attachImages(item, clinicalCase) {
   const images = clinicalCase.images || [];
-  return images.filter((image) => {
-    if (!image) return false;
-    if (item.imageIds?.includes(image.id)) return true;
-    if (item.type && image.modality === item.type) return true;
-    if (item.type === 'ecg' && image.modality === 'ecg') return true;
-    if (item.type === 'endoscopy' && image.modality === 'endoscopy') return true;
-    if (item.type === 'xray' && image.modality === 'xray') return true;
-    if (item.type === 'ct' && image.modality === 'ct') return true;
-    if (item.type === 'mri' && image.modality === 'mri') return true;
-    if (item.type === 'ultrasound' && image.modality === 'ultrasound') return true;
-    return false;
-  });
+  if (!images.length) return [];
+
+  const explicitImageIds = new Set(item.imageIds || []);
+  const explicitlyLinkedImages = images.filter((image) => image && explicitImageIds.has(image.id));
+  if (explicitlyLinkedImages.length) return explicitlyLinkedImages;
+
+  return images.filter((image) => visualMatchesInvestigation(image, item));
 }
 
 function caseContext(clinicalCase = {}) {

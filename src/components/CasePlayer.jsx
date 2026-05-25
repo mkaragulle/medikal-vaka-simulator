@@ -545,6 +545,30 @@ function getStickyOffset() {
   return topNavHeight + sectionNavHeight + 28;
 }
 
+
+function ClinicalExamVisuals({ images = [], glossaryEnabled = true, glossaryRevealMode = 'preAnswer' }) {
+  const clinicalImages = (images || []).filter((image) => image?.modality === 'clinical' && (image.thumbnailUrl || image.imageUrl));
+  if (!clinicalImages.length) return null;
+
+  return (
+    <div className="ordered-image-grid inline-result-image-grid clinical-exam-image-grid" aria-label="Fizik muayene görselleri">
+      {clinicalImages.map((image) => (
+        <figure key={`${image.id || image.title}-${image.imageUrl || image.thumbnailUrl}`} className="ordered-image-card inline-result-image-card clinical-exam-image-card">
+          <div className="ordered-image-frame inline-result-image-frame">
+            <img src={image.thumbnailUrl || image.imageUrl} alt={image.alt || image.title || 'Fizik muayene görseli'} loading="lazy" decoding="async" />
+            <a href={image.imageUrl || image.thumbnailUrl} target="_blank" rel="noreferrer" aria-label="Görseli yeni sekmede aç">
+              <Icon name="Search" size={16} />
+            </a>
+          </div>
+          <figcaption>
+            <strong><GlossaryText text={image.title || image.parameter || 'Fizik muayene görseli'} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></strong>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  );
+}
+
 function CasePlayer({
   clinicalCase,
   branch,
@@ -866,6 +890,7 @@ function CasePlayer({
                         <ul className="clean-list dense scientific-finding-list">
                           {clinicalCase.exam.map((finding) => <li key={finding}><GlossaryText text={expandExamFinding(finding)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></li>)}
                         </ul>
+                        <ClinicalExamVisuals images={clinicalCase.images || []} glossaryEnabled={caseGlossaryEnabled} glossaryRevealMode={caseGlossaryRevealMode} />
                       </div>
                     </AccordionItem>
                   </div>
