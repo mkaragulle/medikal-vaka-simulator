@@ -6,12 +6,15 @@ const STYLE_ID = 'ki-custom-scrollbars-v367-style';
 const ROOT_ATTR = 'data-ki-custom-scrollbars-v367-root';
 const TRACK_ATTR = 'data-ki-custom-scrollbar-v367-track';
 const THUMB_ATTR = 'data-ki-custom-scrollbar-v367-thumb';
-const MAX_TRACKED_ELEMENTS = 32;
+const MAX_TRACKED_ELEMENTS = 72;
 const TRACK_SIZE = 6;
 const THUMB_SIZE = 3.5;
 const MIN_THUMB = 24;
 const EDGE_INSET = 5;
-const TOP_LAYER_RECT_CACHE_MS = 180;
+const TOP_LAYER_RECT_CACHE_MS = 90;
+const POINTER_ACTIVITY_THROTTLE_MS = 120;
+
+
 const TOP_LAYER_SELECTOR = [
   '#klinikiq-tooltip-layer',
   '.floating-glossary-tooltip',
@@ -51,33 +54,6 @@ const TOP_LAYER_OCCLUSION_SELECTOR = [
   '.popover',
   '.dropdown-menu',
   '.toolbox',
-].join(', ');
-
-const SCROLL_CONTAINER_CANDIDATE_SELECTOR = [
-  '[data-scroll-container]',
-  '[data-scroll-area]',
-  '.app-shell',
-  '.page-shell',
-  '.qbank-shell',
-  '.qbank-content-stack',
-  '.clinical-case',
-  '.case-list',
-  '.horizontal-case-list',
-  '.wrong-answers-list',
-  '.tus-pearl-catalog-card-list',
-  '.tus-pearl-library-grid',
-  '.tus-pearl-study-shell',
-  '.pearl-card-list',
-  '.study-review-hub',
-  '.modal',
-  '.drawer',
-  '.popover',
-  '.dropdown-menu',
-  '[role="dialog"]',
-  '[aria-modal="true"]',
-  'main',
-  'aside',
-  'section',
 ].join(', ');
 
 function rectsOverlap(a, b) {
@@ -422,7 +398,7 @@ html.${DRAGGING_CLASS} * {
     let activeUntil = 0;
     let isDragging = false;
     let resizeObserver = null;
-    let cachedIsDarkTheme = resolveIsDarkTheme();
+    let nextPointerActivityAt = 0;
 
     const markActive = (duration = 1200) => {
       activeUntil = Date.now() + duration;
@@ -432,7 +408,7 @@ html.${DRAGGING_CLASS} * {
       if (rafId) return;
       rafId = window.requestAnimationFrame(() => {
         rafId = 0;
-        const isDark = cachedIsDarkTheme;
+        const isDark = resolveIsDarkTheme();
         roots.forEach((node) => node.classList.toggle('is-dark', isDark));
         const active = Date.now() < activeUntil;
         for (const entry of entries) updateEntry(entry, active);
@@ -576,6 +552,7 @@ html.${DRAGGING_CLASS} * {
 
       track.addEventListener('pointerdown', onPointerDown, { passive: false });
       track.addEventListener('pointerenter', onEnterOrMove, { passive: true });
+      track.addEventListener('pointermove', onEnterOrMove, { passive: true });
 
       if (target === window) window.addEventListener('scroll', onScroll, { passive: true });
       else target.addEventListener('scroll', onScroll, { passive: true });
@@ -583,6 +560,7 @@ html.${DRAGGING_CLASS} * {
       entry.cleanup = () => {
         track.removeEventListener('pointerdown', onPointerDown);
         track.removeEventListener('pointerenter', onEnterOrMove);
+        track.removeEventListener('pointermove', onEnterOrMove);
         if (target === window) window.removeEventListener('scroll', onScroll);
         else target.removeEventListener('scroll', onScroll);
         track.remove();
@@ -602,7 +580,7 @@ html.${DRAGGING_CLASS} * {
       if (docCanScrollY) createEntry(window, 'y');
       if (docCanScrollX) createEntry(window, 'x');
 
-      const candidates = Array.from(new Set(document.querySelectorAll(SCROLL_CONTAINER_CANDIDATE_SELECTOR)));
+      const candidates = Array.from(document.querySelectorAll('body *'));
       let tracked = 0;
       for (const element of candidates) {
         if (!isHTMLElement(element)) continue;
@@ -726,15 +704,15 @@ html.${DRAGGING_CLASS} * {
 
     const onResize = () => {
       resetTopLayerRectCache();
-      scheduleScan(180);
+      scheduleScan(80);
     };
-    const onStorage = () => {
-      cachedIsDarkTheme = resolveIsDarkTheme();
-      requestUpdate();
-    };
-    const onPointerIntent = () => {
-      if (!entries.length) scheduleScan(160);
-      markActive(420);
+    const onStorage = () => requestUpdate();
+    const onPointerActivity = () => {
+      const now = window.performance?.now?.() || Date.now();
+      if (now < nextPointerActivityAt) return;
+      nextPointerActivityAt = now + POINTER_ACTIVITY_THROTTLE_MS;
+      if (!entries.length) scheduleScan(90);
+      markActive(500);
       requestUpdate();
     };
 
@@ -773,18 +751,16 @@ html.${DRAGGING_CLASS} * {
     mutationObserver.observe(document.body, {
       childList: true,
       subtree: true,
+      attributes: true,
+      attributeFilter: ['class', 'style', 'data-theme', 'open', 'aria-expanded', 'hidden'],
     });
 
-    const themeObserver = new MutationObserver(() => {
-      cachedIsDarkTheme = resolveIsDarkTheme();
-      requestUpdate();
-      scheduleScan(180);
-    });
+    const themeObserver = new MutationObserver(() => requestUpdate());
     themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
     themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme', 'class'] });
 
     if ('ResizeObserver' in window) {
-      resizeObserver = new ResizeObserver(() => scheduleScan(180));
+      resizeObserver = new ResizeObserver(() => scheduleScan(60));
       resizeObserver.observe(document.documentElement);
       resizeObserver.observe(document.body);
     }
@@ -799,7 +775,7 @@ html.${DRAGGING_CLASS} * {
     window.addEventListener('scroll', onWindowScroll, { passive: true });
     window.addEventListener('resize', onResize, { passive: true });
     window.addEventListener('storage', onStorage, { passive: true });
-    window.addEventListener('pointerdown', onPointerIntent, { passive: true, capture: true });
+    window.addEventListener('pointermove', onPointerActivity, { passive: true });
     window.addEventListener('focus', () => scheduleScan(0), { passive: true });
     window.addEventListener('pageshow', () => scheduleScan(0), { passive: true });
     document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true });
@@ -820,7 +796,7 @@ html.${DRAGGING_CLASS} * {
       window.removeEventListener('scroll', onWindowScroll);
       window.removeEventListener('resize', onResize);
       window.removeEventListener('storage', onStorage);
-      window.removeEventListener('pointerdown', onPointerIntent, true);
+      window.removeEventListener('pointermove', onPointerActivity);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       clearEntries();
       roots.forEach((node) => node.remove());
