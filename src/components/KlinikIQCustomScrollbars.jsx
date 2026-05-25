@@ -216,11 +216,11 @@ function resolveIsDarkTheme() {
   return Boolean(window.matchMedia?.('(prefers-color-scheme: dark)')?.matches);
 }
 
-function prefersNativeCaseBrowserScrollbar(element) {
-  return Boolean(
-    isHTMLElement(element)
-    && element.matches?.('.bottom-case-browser .horizontal-case-list')
-  );
+function prefersNativeCaseBrowserScrollbar() {
+  // V376: The bottom "Diğer olgular" row must use the same custom scrollbar
+  // layer as the rest of the app. Returning false keeps it inside the scanner
+  // and prevents native/custom scrollbar desynchronization.
+  return false;
 }
 
 function canScrollElement(element, axis) {
@@ -347,32 +347,22 @@ html.${ROOT_CLASS} *::-webkit-scrollbar {
   background: transparent !important;
 }
 
-/* Immediate native fallback for the bottom “Diğer olgular” row.
-   The fixed custom scrollbar layer catches up in the same layout cycle, but this
-   prevents the row from looking scrollbar-free during first render. */
+/* V376: The bottom “Diğer olgular” row now uses only the fixed custom
+   scrollbar layer. Native scrollbars are hidden here as everywhere else so
+   dragging cannot desync native and custom thumbs. */
 html.${ROOT_CLASS} .bottom-case-browser .horizontal-case-list {
-  scrollbar-width: thin !important;
-  -ms-overflow-style: auto !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
-html.${ROOT_CLASS} .bottom-case-browser .horizontal-case-list::-webkit-scrollbar {
-  height: 9px !important;
-  width: 9px !important;
-  display: block !important;
+html.${ROOT_CLASS} .bottom-case-browser .horizontal-case-list::-webkit-scrollbar,
+html.${ROOT_CLASS} .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-track,
+html.${ROOT_CLASS} .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-thumb,
+html.${ROOT_CLASS} .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-corner {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
   background: transparent !important;
-}
-
-html.${ROOT_CLASS} .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-track {
-  background: transparent !important;
-  border-radius: 999px !important;
-}
-
-html.${ROOT_CLASS} .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-thumb {
-  min-width: 32px !important;
-  border-radius: 999px !important;
-  border: 3px solid transparent !important;
-  background: color-mix(in srgb, var(--border-strong, #0f766e) 36%, transparent) !important;
-  background-clip: content-box !important;
 }
 
 [${ROOT_ATTR}] {

@@ -51799,3 +51799,28 @@ body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-
   background: color-mix(in srgb, var(--border-strong) 38%, transparent) !important;
   background-clip: content-box !important;
 }
+
+/* ==========================================================
+   V376 — Diğer olgular scrollbar custom-layer consistency
+   ========================================================== */
+html.ki-custom-scrollbars-v367-on body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list,
+html.ki-custom-scrollbars-v367-on .bottom-case-browser .horizontal-case-list {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+}
+
+html.ki-custom-scrollbars-v367-on body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list::-webkit-scrollbar,
+html.ki-custom-scrollbars-v367-on body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-track,
+html.ki-custom-scrollbars-v367-on body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-thumb,
+html.ki-custom-scrollbars-v367-on body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-corner,
+html.ki-custom-scrollbars-v367-on .bottom-case-browser .horizontal-case-list::-webkit-scrollbar,
+html.ki-custom-scrollbars-v367-on .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-track,
+html.ki-custom-scrollbars-v367-on .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-thumb,
+html.ki-custom-scrollbars-v367-on .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-corner {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+  background: transparent !important;
+}
