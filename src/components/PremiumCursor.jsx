@@ -119,67 +119,6 @@ function isElement(value) {
   return value instanceof Element;
 }
 
-function isScrollableElement(element, axis) {
-  if (!(element instanceof HTMLElement)) return false;
-  const style = window.getComputedStyle(element);
-  const overflow = axis === 'y' ? style.overflowY : style.overflowX;
-  const canScroll = axis === 'y' ? element.scrollHeight > element.clientHeight : element.scrollWidth > element.clientWidth;
-  return canScroll && /auto|scroll|overlay/i.test(overflow || '');
-}
-
-function getScrollbarHit(element, clientX, clientY) {
-  if (!(element instanceof HTMLElement)) return false;
-  if (element === document.body || element === document.documentElement) return false;
-
-  const rect = element.getBoundingClientRect();
-  if (clientX < rect.left || clientX > rect.right || clientY < rect.top || clientY > rect.bottom) return false;
-
-  const style = window.getComputedStyle(element);
-  const borderRight = Number.parseFloat(style.borderRightWidth || '0') || 0;
-  const borderBottom = Number.parseFloat(style.borderBottomWidth || '0') || 0;
-  const borderLeft = Number.parseFloat(style.borderLeftWidth || '0') || 0;
-  const borderTop = Number.parseFloat(style.borderTopWidth || '0') || 0;
-
-  const verticalScrollbarWidth = Math.max(0, element.offsetWidth - element.clientWidth - borderLeft - borderRight);
-  const horizontalScrollbarHeight = Math.max(0, element.offsetHeight - element.clientHeight - borderTop - borderBottom);
-
-  const hasVerticalScrollbar = isScrollableElement(element, 'y') && verticalScrollbarWidth >= 4;
-  const hasHorizontalScrollbar = isScrollableElement(element, 'x') && horizontalScrollbarHeight >= 4;
-
-  const verticalHit = hasVerticalScrollbar && clientX >= rect.right - verticalScrollbarWidth - 2;
-  const horizontalHit = hasHorizontalScrollbar && clientY >= rect.bottom - horizontalScrollbarHeight - 2;
-
-  return verticalHit || horizontalHit;
-}
-
-function isViewportScrollbarHit(clientX, clientY) {
-  const doc = document.documentElement;
-  const viewportVerticalScrollbarWidth = Math.max(0, window.innerWidth - doc.clientWidth);
-  const viewportHorizontalScrollbarHeight = Math.max(0, window.innerHeight - doc.clientHeight);
-
-  const verticalHit = viewportVerticalScrollbarWidth >= 4 && clientX >= doc.clientWidth - 2;
-  const horizontalHit = viewportHorizontalScrollbarHeight >= 4 && clientY >= doc.clientHeight - 2;
-
-  return verticalHit || horizontalHit;
-}
-
-function isScrollbarHit(event) {
-  if (!event || typeof event.clientX !== 'number' || typeof event.clientY !== 'number') return false;
-  if (isViewportScrollbarHit(event.clientX, event.clientY)) return true;
-
-  const path = typeof event.composedPath === 'function' ? event.composedPath() : [];
-  for (const node of path) {
-    if (getScrollbarHit(node, event.clientX, event.clientY)) return true;
-  }
-
-  let node = isElement(event.target) ? event.target : null;
-  while (node && node !== document.body && node !== document.documentElement) {
-    if (getScrollbarHit(node, event.clientX, event.clientY)) return true;
-    node = node.parentElement;
-  }
-
-  return false;
-}
 
 export default function PremiumCursor() {
   useEffect(() => {
@@ -195,8 +134,7 @@ export default function PremiumCursor() {
     style.id = STYLE_ID;
     style.textContent = `
 html.${ROOT_CLASS},
-html.${ROOT_CLASS} body,
-html.${ROOT_CLASS} body *:not(input):not(textarea):not(select):not([contenteditable="true"]):not([contenteditable=""]):not(.cm-editor):not(.monaco-editor) {
+html.${ROOT_CLASS} body {
   cursor: ${TRANSPARENT_CURSOR} !important;
 }
 
@@ -210,15 +148,8 @@ html.${ROOT_CLASS} .monaco-editor {
   cursor: text !important;
 }
 
-html.${ROOT_CLASS} *::-webkit-scrollbar,
-html.${ROOT_CLASS} *::-webkit-scrollbar-thumb,
-html.${ROOT_CLASS} *::-webkit-scrollbar-track,
-html.${ROOT_CLASS} *::-webkit-scrollbar-corner,
-html.${ROOT_CLASS} body::-webkit-scrollbar,
-html.${ROOT_CLASS} body::-webkit-scrollbar-thumb,
-html.${ROOT_CLASS} body::-webkit-scrollbar-track,
-html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
-  cursor: ${TRANSPARENT_CURSOR} !important;
+html.${ROOT_CLASS} * {
+  cursor: inherit;
 }
 
 [${ROOT_ATTR}="true"] {
@@ -249,8 +180,10 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
   opacity: 1 !important;
 }
 
-[${ROOT_ATTR}="true"].is-text {
+[${ROOT_ATTR}="true"].is-text,
+[${ROOT_ATTR}="true"].is-suspended {
   opacity: 0 !important;
+  transition: none !important;
 }
 
 [${ROOT_ATTR}="true"] svg {
@@ -352,6 +285,9 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
     let isOverScrollbar = false;
     let isScrollbarDragging = false;
     let lastModeTarget = null;
+    let isSuspended = false;
+    let suspendTimer = 0;
+    let lastSuspendAt = 0;
 
     const lightPalette = {
       ring: 'rgba(13,148,136,0.94)',
@@ -389,7 +325,7 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
       root.classList.toggle('is-scrollbar', false);
       root.classList.toggle('is-scrollbar-dragging', false);
 
-      if (isText) {
+      if (isText || isSuspended) {
         root.classList.remove('is-visible');
       } else if (started) {
         root.classList.add('is-visible');
@@ -487,11 +423,37 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
       ensureRender();
     };
 
+    const resumeAfterSuspension = () => {
+      suspendTimer = 0;
+      isSuspended = false;
+      root.classList.remove('is-suspended');
+      if (!started || document.visibilityState === 'hidden') return;
+      setVisibilityForMode();
+      ensureRender();
+    };
+
+    const suspendCursor = (duration = 120) => {
+      const now = window.performance?.now?.() || Date.now();
+      if (!isSuspended || now - lastSuspendAt > 64) {
+        isSuspended = true;
+        lastSuspendAt = now;
+        root.classList.add('is-suspended');
+        root.classList.remove('is-visible');
+        stopRender();
+      }
+      if (suspendTimer) window.clearTimeout(suspendTimer);
+      suspendTimer = window.setTimeout(resumeAfterSuspension, duration);
+    };
+
     const move = (event) => {
       if (event.pointerType && event.pointerType !== 'mouse') return;
       targetX = event.clientX;
       targetY = event.clientY;
       pendingModeTarget = event.target;
+      if (isSuspended) {
+        started = true;
+        return;
+      }
       activate();
     };
 
@@ -554,20 +516,24 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
     };
 
     const themeObserver = new MutationObserver(handleThemeChange);
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
     if (document.body) {
-      themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+      themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
     }
 
     const appShell = document.querySelector('.app-shell');
     if (appShell) {
-      themeObserver.observe(appShell, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+      themeObserver.observe(appShell, { attributes: true, attributeFilter: ['data-theme'] });
     }
 
     const capturePassive = { passive: true, capture: true };
+    const handleScrollSuspend = () => suspendCursor(110);
+    const handleResizeSuspend = () => suspendCursor(180);
 
     window.addEventListener('storage', handleThemeChange, { passive: true });
     window.addEventListener('pointermove', move, { passive: true });
+    window.addEventListener('scroll', handleScrollSuspend, { passive: true, capture: true });
+    window.addEventListener('resize', handleResizeSuspend, { passive: true });
     window.addEventListener('pointerdown', down, capturePassive);
     window.addEventListener('pointerup', up, capturePassive);
     window.addEventListener('pointercancel', up, capturePassive);
@@ -582,7 +548,10 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
     return () => {
       window.cancelAnimationFrame(frameId);
       frameId = 0;
+      if (suspendTimer) window.clearTimeout(suspendTimer);
       window.removeEventListener('pointermove', move);
+      window.removeEventListener('scroll', handleScrollSuspend, true);
+      window.removeEventListener('resize', handleResizeSuspend);
       window.removeEventListener('pointerdown', down, capturePassive);
       window.removeEventListener('pointerup', up, capturePassive);
       window.removeEventListener('pointercancel', up, capturePassive);

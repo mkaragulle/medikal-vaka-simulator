@@ -6,12 +6,14 @@ const STYLE_ID = 'ki-custom-scrollbars-v367-style';
 const ROOT_ATTR = 'data-ki-custom-scrollbars-v367-root';
 const TRACK_ATTR = 'data-ki-custom-scrollbar-v367-track';
 const THUMB_ATTR = 'data-ki-custom-scrollbar-v367-thumb';
-const MAX_TRACKED_ELEMENTS = 32;
+const MAX_TRACKED_ELEMENTS = 24;
 const TRACK_SIZE = 6;
 const THUMB_SIZE = 3.5;
 const MIN_THUMB = 24;
 const EDGE_INSET = 5;
-const TOP_LAYER_RECT_CACHE_MS = 180;
+const TOP_LAYER_RECT_CACHE_MS = 220;
+const MIN_SCAN_INTERVAL_MS = 260;
+const DEFAULT_SCAN_DELAY_MS = 220;
 const TOP_LAYER_SELECTOR = [
   '#klinikiq-tooltip-layer',
   '.floating-glossary-tooltip',
@@ -419,6 +421,7 @@ html.${DRAGGING_CLASS} * {
     const scanTimeouts = new Set();
     let rafId = 0;
     let scanTimer = 0;
+    let lastScanAt = 0;
     let activeUntil = 0;
     let isDragging = false;
     let resizeObserver = null;
@@ -594,6 +597,7 @@ html.${DRAGGING_CLASS} * {
 
     const scan = () => {
       if (isDragging) return;
+      lastScanAt = window.performance?.now?.() || Date.now();
       resetTopLayerRectCache();
       clearEntries();
 
@@ -623,10 +627,16 @@ html.${DRAGGING_CLASS} * {
       requestUpdate();
     };
 
-    const scheduleScan = (delay = 120) => {
+    const scheduleScan = (delay = DEFAULT_SCAN_DELAY_MS) => {
       if (isDragging) return;
       window.clearTimeout(scanTimer);
-      scanTimer = window.setTimeout(scan, delay);
+      const now = window.performance?.now?.() || Date.now();
+      const elapsed = now - lastScanAt;
+      const safeDelay = Math.max(delay, elapsed < MIN_SCAN_INTERVAL_MS ? MIN_SCAN_INTERVAL_MS - elapsed : 0);
+      scanTimer = window.setTimeout(() => {
+        scanTimer = 0;
+        scan();
+      }, safeDelay);
     };
 
     const scheduleOneShotScan = (delay) => {
@@ -719,11 +729,6 @@ html.${DRAGGING_CLASS} * {
       window.addEventListener('pointercancel', handleUp, { passive: true, capture: true });
     };
 
-    const onWindowScroll = () => {
-      markActive(700);
-      requestUpdate();
-    };
-
     const onResize = () => {
       resetTopLayerRectCache();
       scheduleScan(180);
@@ -738,6 +743,15 @@ html.${DRAGGING_CLASS} * {
       requestUpdate();
     };
 
+    const isScanRelevantNode = (node) => {
+      if (!(node instanceof Element)) return false;
+      if (node.closest?.(`[${ROOT_ATTR}]`)) return false;
+      return Boolean(
+        node.matches?.(`${TOP_LAYER_SELECTOR}, ${SCROLL_CONTAINER_CANDIDATE_SELECTOR}`)
+        || node.querySelector?.(`${TOP_LAYER_SELECTOR}, ${SCROLL_CONTAINER_CANDIDATE_SELECTOR}`)
+      );
+    };
+
     const mutationObserver = new MutationObserver((mutations) => {
       if (isDragging) return;
       let shouldScan = false;
@@ -748,17 +762,23 @@ html.${DRAGGING_CLASS} * {
         if (target instanceof Element && target.closest(`[${ROOT_ATTR}]`)) continue;
 
         if (mutation.type === 'childList') {
-          const touchedTopLayer = [...mutation.addedNodes, ...mutation.removedNodes].some((node) => (
+          const changedNodes = [...mutation.addedNodes, ...mutation.removedNodes];
+          const parentMayScroll = target instanceof Element && Boolean(target.closest?.(SCROLL_CONTAINER_CANDIDATE_SELECTOR));
+          const touchedRelevantNode = changedNodes.some(isScanRelevantNode);
+          const touchedTopLayer = changedNodes.some((node) => (
             node instanceof Element && (node.matches?.(TOP_LAYER_SELECTOR) || node.querySelector?.(TOP_LAYER_SELECTOR))
           ));
-          shouldScan = true;
-          shouldResetTopLayerCache = shouldResetTopLayerCache || touchedTopLayer;
-          break;
+
+          if (touchedRelevantNode || touchedTopLayer || parentMayScroll) {
+            shouldScan = true;
+            shouldResetTopLayerCache = shouldResetTopLayerCache || touchedTopLayer;
+            break;
+          }
         }
 
         if (mutation.type === 'attributes' && target instanceof Element) {
           const affectsTopLayer = target.matches?.(TOP_LAYER_SELECTOR) || target.closest?.(TOP_LAYER_SELECTOR);
-          const affectsScrollableShell = target.matches?.('[data-scroll-container], .modal, .drawer, .popover, .dropdown-menu, .tus-pearl-catalog-card-list, .qbank-content-stack, .clinical-case, .page-shell, .app-shell');
+          const affectsScrollableShell = target.matches?.('[data-scroll-container], [data-scroll-area], .modal, .drawer, .popover, .dropdown-menu, .tus-pearl-catalog-card-list, .qbank-content-stack, .clinical-case, .page-shell, .app-shell');
           if (affectsTopLayer || affectsScrollableShell) {
             shouldScan = true;
             shouldResetTopLayerCache = shouldResetTopLayerCache || Boolean(affectsTopLayer);
@@ -768,7 +788,7 @@ html.${DRAGGING_CLASS} * {
       }
 
       if (shouldResetTopLayerCache) resetTopLayerRectCache();
-      if (shouldScan) scheduleScan(140);
+      if (shouldScan) scheduleScan(240);
     });
     mutationObserver.observe(document.body, {
       childList: true,
@@ -780,8 +800,8 @@ html.${DRAGGING_CLASS} * {
       requestUpdate();
       scheduleScan(180);
     });
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
-    themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
 
     if ('ResizeObserver' in window) {
       resizeObserver = new ResizeObserver(() => scheduleScan(180));
@@ -796,7 +816,6 @@ html.${DRAGGING_CLASS} * {
       }
     };
 
-    window.addEventListener('scroll', onWindowScroll, { passive: true });
     window.addEventListener('resize', onResize, { passive: true });
     window.addEventListener('storage', onStorage, { passive: true });
     window.addEventListener('pointerdown', onPointerIntent, { passive: true, capture: true });
@@ -805,8 +824,7 @@ html.${DRAGGING_CLASS} * {
     document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true });
 
     scan();
-    scheduleOneShotScan(120);
-    scheduleOneShotScan(420);
+    scheduleOneShotScan(360);
     scheduleOneShotScan(1200);
 
     return () => {
@@ -817,7 +835,6 @@ html.${DRAGGING_CLASS} * {
       mutationObserver.disconnect();
       themeObserver.disconnect();
       resizeObserver?.disconnect?.();
-      window.removeEventListener('scroll', onWindowScroll);
       window.removeEventListener('resize', onResize);
       window.removeEventListener('storage', onStorage);
       window.removeEventListener('pointerdown', onPointerIntent, true);

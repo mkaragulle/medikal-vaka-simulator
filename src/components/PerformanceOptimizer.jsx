@@ -40,22 +40,38 @@ export default function PerformanceOptimizer() {
       resizeTimer = window.setTimeout(clearResizeState, RESIZE_IDLE_DELAY);
     };
 
-    const markNavigationStart = () => {
+    let transitionTimer = 0;
+    const markNavigationStart = (duration = 220) => {
       root.classList.add('ki-route-transitioning');
-      window.setTimeout(() => root.classList.remove('ki-route-transitioning'), 260);
+      if (transitionTimer) window.clearTimeout(transitionTimer);
+      transitionTimer = window.setTimeout(() => {
+        transitionTimer = 0;
+        root.classList.remove('ki-route-transitioning');
+      }, duration);
+    };
+
+    const markUIInteraction = (event) => {
+      const target = event?.target;
+      if (!(target instanceof Element)) return;
+      if (!target.closest('button, a[href], [role="button"], .branch-card, .case-list-item, .answer-option, .option-card, .tus-pearl-library-card, .catalog-card-row, .modal, .popover, .dropdown-menu')) return;
+      markNavigationStart(180);
     };
 
     window.addEventListener('scroll', markScrolling, { passive: true, capture: true });
     window.addEventListener('resize', markResizing, { passive: true });
     window.addEventListener('orientationchange', markResizing, { passive: true });
-    window.addEventListener('popstate', markNavigationStart, { passive: true });
+    const handlePopState = () => markNavigationStart(260);
+    window.addEventListener('popstate', handlePopState, { passive: true });
+    window.addEventListener('pointerdown', markUIInteraction, { passive: true, capture: true });
 
     return () => {
       root.classList.remove('ki-performance-mode', 'ki-is-scrolling', 'ki-is-resizing', 'ki-route-transitioning');
       window.removeEventListener('scroll', markScrolling, true);
       window.removeEventListener('resize', markResizing);
       window.removeEventListener('orientationchange', markResizing);
-      window.removeEventListener('popstate', markNavigationStart);
+      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('pointerdown', markUIInteraction, true);
+      if (transitionTimer) window.clearTimeout(transitionTimer);
       if (scrollTimer) window.clearTimeout(scrollTimer);
       if (resizeTimer) window.clearTimeout(resizeTimer);
     };

@@ -447,6 +447,30 @@ function RouteFallback({ label = 'Arayüz hazırlanıyor…' }) {
   );
 }
 
+function scheduleIdleTask(callback, timeout = 2200) {
+  if (typeof window === 'undefined') return () => {};
+  if (typeof window.requestIdleCallback === 'function') {
+    const id = window.requestIdleCallback(callback, { timeout });
+    return () => window.cancelIdleCallback?.(id);
+  }
+  const id = window.setTimeout(callback, Math.min(timeout, 900));
+  return () => window.clearTimeout(id);
+}
+
+let lazyScreenPreloadStarted = false;
+function preloadLazyScreens() {
+  if (lazyScreenPreloadStarted || typeof window === 'undefined') return;
+  lazyScreenPreloadStarted = true;
+  Promise.allSettled([
+    import('./components/CasePlayer.jsx'),
+    import('./components/TusPearlStudyScreen.jsx'),
+    import('./components/StudyReviewHub.jsx'),
+    import('./components/KomiteModeWorkspace.jsx'),
+    import('./components/ExamResults.jsx'),
+    import('./components/AIGeneratedQuestionView.jsx'),
+  ]).catch(() => {});
+}
+
 function App() {
   const [currentUser, setCurrentUser] = useState(() => sanitizeUser(loadCurrentUser()));
   const [selectedBranchId, setSelectedBranchId] = useState(null);
@@ -476,6 +500,11 @@ function App() {
   const aiQuestionTimer = useRef(null);
   const latestAIQuestionRequestId = useRef(0);
   const isDemoUser = isDemoAccount(currentUser);
+
+  useEffect(() => {
+    if (!currentUser) return undefined;
+    return scheduleIdleTask(preloadLazyScreens, 2600);
+  }, [currentUser]);
 
   function clearAIQuestionTimer() {
     latestAIQuestionRequestId.current += 1;

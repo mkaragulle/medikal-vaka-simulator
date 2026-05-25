@@ -47175,14 +47175,13 @@ html[data-theme="dark"] .case-list-item.is-solved-case,
   to { transform: rotate(360deg); }
 }
 
-/* Keep premium look but avoid expensive continuous glow/blur on large grids. */
+/* Keep premium look but avoid unnecessary permanent GPU layers on large grids. */
 .branch-card,
 .case-list-item,
 .card-surface,
 .tus-pearl-hub-panel,
 .tus-pearl-focus-card {
   will-change: auto;
-  transform: translateZ(0);
 }
 
 .branch-card:not(.is-launching) .branch-launch-wave,
@@ -47203,8 +47202,7 @@ html[data-theme="dark"] .case-list-item.is-solved-case,
 .branch-grid,
 .study-review-hub,
 .tus-pearl-study-shell {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 720px;
+  contain: layout paint;
 }
 
 .horizontal-case-list {
@@ -51356,8 +51354,48 @@ html.ki-performance-mode body {
   -webkit-font-smoothing: antialiased;
 }
 
-html.ki-performance-mode.ki-is-scrolling *,
-html.ki-performance-mode.ki-is-resizing * {
+html.ki-performance-mode.ki-is-scrolling :is(
+  .top-shell-nav,
+  .global-topbar-v55,
+  .card-surface,
+  .branch-card,
+  .case-list-item,
+  .answer-option,
+  .option-card,
+  .requested-test-card,
+  .inline-order-result,
+  .tus-pearl-library-card,
+  .catalog-card-row,
+  .question-panel,
+  .summary-card,
+  .wrong-answer-card,
+  .glossary-tooltip,
+  .floating-glossary-tooltip,
+  .smart-glossary-popover,
+  .btn,
+  button
+),
+html.ki-performance-mode.ki-is-resizing :is(
+  .top-shell-nav,
+  .global-topbar-v55,
+  .card-surface,
+  .branch-card,
+  .case-list-item,
+  .answer-option,
+  .option-card,
+  .requested-test-card,
+  .inline-order-result,
+  .tus-pearl-library-card,
+  .catalog-card-row,
+  .question-panel,
+  .summary-card,
+  .wrong-answer-card,
+  .glossary-tooltip,
+  .floating-glossary-tooltip,
+  .smart-glossary-popover,
+  .btn,
+  button
+) {
   transition-duration: 0ms !important;
   animation-play-state: paused !important;
 }
@@ -51397,13 +51435,11 @@ html.ki-performance-mode .visual-first-help-card {
 }
 
 @supports (content-visibility: auto) {
-  html.ki-performance-mode .branch-card,
   html.ki-performance-mode .case-list-item,
   html.ki-performance-mode .requested-test-card,
   html.ki-performance-mode .inline-order-result,
   html.ki-performance-mode .wrong-answer-card,
-  html.ki-performance-mode .tus-pearl-card,
-  html.ki-performance-mode .visual-first-help-card {
+  html.ki-performance-mode .tus-pearl-card {
     content-visibility: auto;
     contain-intrinsic-size: 180px;
   }
@@ -51658,11 +51694,7 @@ html.ki-performance-mode .patient-summary-grid {
 
 @supports (content-visibility: auto) {
   html.ki-performance-mode .tus-pearl-library-card.catalog-card-row,
-  html.ki-performance-mode .summary-detail-card,
-  html.ki-performance-mode .answer-option,
-  html.ki-performance-mode .patient-summary-story-block,
-  html.ki-performance-mode .clinical-data-card,
-  html.ki-performance-mode .question-panel {
+  html.ki-performance-mode .patient-summary-story-block {
     content-visibility: auto;
     contain-intrinsic-size: 96px;
   }
@@ -51707,42 +51739,45 @@ html.ki-performance-mode.ki-is-scrolling .ai-compact-dropdown-menu-floating {
   -webkit-backdrop-filter: none !important;
 }
 
-/* ===== V372 deep smoothness pass: cursor/scroll/list micro-lag guardrails ===== */
+/* ===== V373 refined smoothness pass: fewer layers, less delayed rendering, lighter pointer work ===== */
 html.ki-performance-mode :is(
-  .case-list-item,
-  .branch-card,
-  .answer-option,
-  .option-card,
-  .requested-test-card,
-  .inline-order-result,
-  .tus-pearl-library-card,
-  .catalog-card-row,
-  .summary-detail-card,
-  .clinical-data-card,
-  .patient-summary-card,
-  .question-panel,
-  .mode-card
+  .tus-pearl-catalog-card-list,
+  .tus-pearl-catalog-card-list.addable,
+  .tus-pearl-library-grid,
+  .pearl-card-list,
+  .case-list,
+  .horizontal-case-list,
+  .wrong-answers-list,
+  .qbank-content-stack,
+  .patient-summary-grid
 ) {
-  backface-visibility: hidden;
-  transform: translateZ(0);
   contain: layout paint style;
 }
 
 @supports (content-visibility: auto) {
   html.ki-performance-mode :is(
+    .tus-pearl-library-card.catalog-card-row,
     .case-list-item,
-    .branch-card,
-    .tus-pearl-library-card,
-    .catalog-card-row,
     .requested-test-card,
-    .inline-order-result,
-    .summary-detail-card,
-    .clinical-data-card,
-    .patient-summary-card
+    .inline-order-result
   ) {
     content-visibility: auto;
     contain-intrinsic-size: 112px;
   }
+}
+
+/* Avoid forcing every interactive card into its own GPU layer. Too many translateZ layers can
+   create the exact mouse/scroll stutter we are trying to remove. Keep containment, not layer spam. */
+html.ki-performance-mode :is(
+  .case-list-item,
+  .tus-pearl-library-card.catalog-card-row,
+  .requested-test-card,
+  .inline-order-result,
+  .summary-detail-card,
+  .clinical-data-card,
+  .patient-summary-card
+) {
+  contain: layout paint style;
 }
 
 html.ki-performance-mode.ki-is-scrolling :is(
@@ -51780,8 +51815,8 @@ html.ki-performance-mode.ki-route-transitioning :is(
   button
 ) {
   transition-property: color, background-color, border-color, opacity !important;
-  transition-duration: 80ms !important;
-  animation: none !important;
+  transition-duration: 60ms !important;
+  animation-play-state: paused !important;
 }
 
 html.ki-performance-mode.ki-is-scrolling :is(
@@ -51797,7 +51832,7 @@ html.ki-performance-mode.ki-is-scrolling :is(
   .btn:hover,
   button:hover
 ) {
-  transform: translateZ(0) !important;
+  transform: none !important;
   box-shadow: none !important;
   filter: none !important;
 }
@@ -51816,18 +51851,29 @@ html.ki-performance-mode.ki-is-scrolling :is(
   .ai-compact-dropdown-menu-floating,
   .floating-glossary-tooltip,
   .smart-glossary-popover
+),
+html.ki-performance-mode.ki-route-transitioning :is(
+  .top-shell-nav,
+  .global-topbar-v55,
+  .glass-panel,
+  .card-surface,
+  .modal,
+  .drawer,
+  .popover,
+  .dropdown-menu
 ) {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   filter: none !important;
 }
 
-html.ki-performance-mode.ki-is-scrolling [data-ki-pointer-v364-root='true'] {
+html.ki-performance-mode.ki-is-scrolling [data-ki-pointer-v364-root='true'],
+html.ki-performance-mode.ki-is-resizing [data-ki-pointer-v364-root='true'],
+html.ki-performance-mode.ki-route-transitioning [data-ki-pointer-v364-root='true'] {
   transition: none !important;
 }
 
-/* V372: continuous decorative animations are paused by default in performance mode.
-   They resume on hover/launch so the premium identity remains, but idle CPU/GPU work drops. */
+/* Continuous decorative animations stay paused while idle; hover/launch restores the premium feel. */
 html.ki-performance-mode :is(
   .branch-animated-icon *,
   .branch-icon-ambient,
