@@ -1,4 +1,4 @@
-import { memo, useCallback, useLayoutEffect, useMemo, useRef } from 'react';
+import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react';
 import { getDifficultyMeta } from '../utils/scoring.js';
 import { Icon } from './ui.jsx';
 
@@ -89,13 +89,31 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
     listNode.scrollLeft = 0;
     const frameId = window.requestAnimationFrame(() => {
       if (listRef.current) listRef.current.scrollLeft = 0;
+      window.dispatchEvent(new CustomEvent('klinikiq:scrollbars:refresh', { detail: { source: 'case-list-layout' } }));
     });
 
     return () => window.cancelAnimationFrame(frameId);
   }, [horizontalResetKey, layout]);
 
+  useEffect(() => {
+    if (layout !== 'horizontal' || typeof window === 'undefined') return undefined;
+
+    window.dispatchEvent(new CustomEvent('klinikiq:scrollbars:refresh', { detail: { source: 'case-list-mounted' } }));
+    const timeoutId = window.setTimeout(() => {
+      window.dispatchEvent(new CustomEvent('klinikiq:scrollbars:refresh', { detail: { source: 'case-list-settled' } }));
+    }, 80);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [horizontalResetKey, layout]);
+
   return (
-    <div ref={listRef} className={layout === 'horizontal' ? 'case-list horizontal-case-list' : 'case-list'} aria-label="Olgu listesi">
+    <div
+      ref={listRef}
+      className={layout === 'horizontal' ? 'case-list horizontal-case-list' : 'case-list'}
+      data-scroll-container={layout === 'horizontal' ? 'true' : undefined}
+      data-scrollable={layout === 'horizontal' ? 'true' : undefined}
+      aria-label="Olgu listesi"
+    >
       {cases.map((clinicalCase) => (
         <CaseListItem
           key={clinicalCase.id}

@@ -769,6 +769,13 @@ html.${DRAGGING_CLASS} * {
       if (entries.length) requestUpdate();
     };
 
+    const onScrollbarRefreshRequest = () => {
+      if (document.visibilityState === 'hidden') return;
+      resetTopLayerRectCache();
+      scheduleScan(0);
+      scheduleOneShotScan(90);
+    };
+
     const mutationObserver = new MutationObserver((mutations) => {
       if (isDragging) return;
       let shouldScan = false;
@@ -829,6 +836,7 @@ html.${DRAGGING_CLASS} * {
     window.addEventListener('resize', onResize, { passive: true });
     window.addEventListener('storage', onStorage, { passive: true });
     window.addEventListener('pointermove', onPointerActivity, { passive: true });
+    window.addEventListener('klinikiq:scrollbars:refresh', onScrollbarRefreshRequest, { passive: true });
     const handleFocus = () => scheduleScan(0);
     const handlePageShow = () => scheduleScan(0);
     window.addEventListener('focus', handleFocus, { passive: true });
@@ -852,6 +860,7 @@ html.${DRAGGING_CLASS} * {
       window.removeEventListener('resize', onResize);
       window.removeEventListener('storage', onStorage);
       window.removeEventListener('pointermove', onPointerActivity);
+      window.removeEventListener('klinikiq:scrollbars:refresh', onScrollbarRefreshRequest);
       window.removeEventListener('focus', handleFocus);
       window.removeEventListener('pageshow', handlePageShow);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
