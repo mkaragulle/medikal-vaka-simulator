@@ -43,6 +43,8 @@ const ROOT_CLASS = 'ki-pointer-v364-on';
 const STYLE_ID = 'ki-pointer-v364-runtime-style';
 const ROOT_ATTR = 'data-ki-pointer-v364-root';
 const TRANSPARENT_CURSOR = 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'1\' height=\'1\' viewBox=\'0 0 1 1\'%3E%3C/svg%3E") 0 0, none';
+const CURSOR_SETTLE_EPSILON = 0.28;
+
 
 const LEGACY_SELECTORS = [
   '.ki-cursor',
@@ -347,8 +349,10 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
     let isText = false;
     let isPressed = false;
     let isDarkTheme = false;
+    let cachedIsDarkTheme = false;
     let isOverScrollbar = false;
     let isScrollbarDragging = false;
+    let lastModeTarget = null;
 
     const lightPalette = {
       ring: 'rgba(13,148,136,0.94)',
@@ -393,10 +397,12 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
       }
     };
 
+    cachedIsDarkTheme = resolveIsDarkTheme();
+
     const setPointerVisual = () => {
       if (!ring || !dot) return;
 
-      isDarkTheme = resolveIsDarkTheme();
+      isDarkTheme = cachedIsDarkTheme;
       const palette = isDarkTheme ? darkPalette : lightPalette;
 
       root.classList.toggle('is-interactive', isInteractive && !isText && !isOverScrollbar && !isScrollbarDragging);
@@ -432,27 +438,56 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
 
     const updateMode = (target) => {
       if (!isElement(target)) return;
-      isText = Boolean(target.closest(TEXT_SELECTOR));
-      isInteractive = !isText && Boolean(target.closest(INTERACTIVE_SELECTOR));
+      if (target === lastModeTarget) return;
+      lastModeTarget = target;
+
+      const nextIsText = Boolean(target.closest(TEXT_SELECTOR));
+      const nextIsInteractive = !nextIsText && Boolean(target.closest(INTERACTIVE_SELECTOR));
+      if (nextIsText === isText && nextIsInteractive === isInteractive) return;
+
+      isText = nextIsText;
+      isInteractive = nextIsInteractive;
       setPointerVisual();
+    };
+
+    const stopRender = () => {
+      if (!frameId) return;
+      window.cancelAnimationFrame(frameId);
+      frameId = 0;
     };
 
     const render = () => {
       currentX += (targetX - currentX) * 0.46;
       currentY += (targetY - currentY) * 0.46;
+      const settled = Math.abs(targetX - currentX) < CURSOR_SETTLE_EPSILON && Math.abs(targetY - currentY) < CURSOR_SETTLE_EPSILON;
+      if (settled) {
+        currentX = targetX;
+        currentY = targetY;
+      }
       root.style.transform = `translate3d(${currentX - 17}px, ${currentY - 17}px, 0)`;
+
+      if (settled && !isPressed) {
+        frameId = 0;
+        return;
+      }
+      frameId = window.requestAnimationFrame(render);
+    };
+
+    const ensureRender = () => {
+      if (frameId || document.visibilityState === 'hidden') return;
       frameId = window.requestAnimationFrame(render);
     };
 
     const activate = () => {
-      if (started) return;
-      started = true;
-      currentX = targetX;
-      currentY = targetY;
-      root.style.transform = `translate3d(${currentX - 17}px, ${currentY - 17}px, 0)`;
-      document.documentElement.classList.add(ROOT_CLASS);
-      setVisibilityForMode();
-      frameId = window.requestAnimationFrame(render);
+      if (!started) {
+        started = true;
+        currentX = targetX;
+        currentY = targetY;
+        root.style.transform = `translate3d(${currentX - 17}px, ${currentY - 17}px, 0)`;
+        document.documentElement.classList.add(ROOT_CLASS);
+        setVisibilityForMode();
+      }
+      ensureRender();
     };
 
     const move = (event) => {
@@ -464,10 +499,12 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
       isOverScrollbar = false;
       isScrollbarDragging = false;
       updateMode(event.target);
+      ensureRender();
     };
 
     const hide = () => {
       root.classList.remove('is-visible');
+      stopRender();
     };
 
     const recoverCursor = () => {
@@ -480,9 +517,7 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
       document.documentElement.classList.add(ROOT_CLASS);
       setPointerVisual();
 
-      if (!frameId) {
-        frameId = window.requestAnimationFrame(render);
-      }
+      ensureRender();
     };
 
     const show = () => {
@@ -521,6 +556,7 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
     };
 
     const handleThemeChange = () => {
+      cachedIsDarkTheme = resolveIsDarkTheme();
       setPointerVisual();
     };
 
@@ -539,12 +575,8 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
 
     window.addEventListener('storage', handleThemeChange, { passive: true });
     window.addEventListener('pointermove', move, { passive: true });
-    window.addEventListener('mousemove', move, { passive: true });
-    window.addEventListener('mouseover', move, { passive: true });
     window.addEventListener('pointerdown', down, capturePassive);
-    window.addEventListener('mousedown', down, capturePassive);
     window.addEventListener('pointerup', up, capturePassive);
-    window.addEventListener('mouseup', up, capturePassive);
     window.addEventListener('pointercancel', up, capturePassive);
     window.addEventListener('dragend', up, capturePassive);
     window.addEventListener('focus', show, { passive: true });
@@ -558,12 +590,8 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
       window.cancelAnimationFrame(frameId);
       frameId = 0;
       window.removeEventListener('pointermove', move);
-      window.removeEventListener('mousemove', move);
-      window.removeEventListener('mouseover', move);
       window.removeEventListener('pointerdown', down, capturePassive);
-      window.removeEventListener('mousedown', down, capturePassive);
       window.removeEventListener('pointerup', up, capturePassive);
-      window.removeEventListener('mouseup', up, capturePassive);
       window.removeEventListener('pointercancel', up, capturePassive);
       window.removeEventListener('dragend', up, capturePassive);
       window.removeEventListener('focus', show);

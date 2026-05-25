@@ -116,11 +116,71 @@ export function loadPearlState() {
   return normalizePearlState(safeParse(window.localStorage.getItem(PEARL_STORAGE_KEY), defaultPearlState));
 }
 
+let pendingPearlStoragePayload = null;
+let pendingPearlStorageTimer = 0;
+let pendingPearlStorageIdleId = 0;
+let pearlStorageFlushListenersAttached = false;
+
+function writePearlStoragePayload(payload) {
+  if (typeof window === 'undefined' || !payload) return;
+  try {
+    window.localStorage.setItem(PEARL_STORAGE_KEY, payload);
+  } catch {
+    // Storage can be unavailable in private mode or quota-limited contexts.
+  }
+}
+
+export function flushPearlStateSave() {
+  if (typeof window === 'undefined') return;
+  if (pendingPearlStorageIdleId && typeof window.cancelIdleCallback === 'function') {
+    window.cancelIdleCallback(pendingPearlStorageIdleId);
+  }
+  if (pendingPearlStorageTimer) window.clearTimeout(pendingPearlStorageTimer);
+  pendingPearlStorageIdleId = 0;
+  pendingPearlStorageTimer = 0;
+  const payload = pendingPearlStoragePayload;
+  pendingPearlStoragePayload = null;
+  writePearlStoragePayload(payload);
+}
+
+function ensurePearlStorageFlushListeners() {
+  if (typeof window === 'undefined' || pearlStorageFlushListenersAttached) return;
+  pearlStorageFlushListenersAttached = true;
+  window.addEventListener('pagehide', flushPearlStateSave, { capture: true });
+  window.addEventListener('beforeunload', flushPearlStateSave, { capture: true });
+  if (typeof document !== 'undefined') {
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') flushPearlStateSave();
+    }, { capture: true });
+  }
+}
+
+function schedulePearlStatePersist(normalized) {
+  if (typeof window === 'undefined') return;
+  ensurePearlStorageFlushListeners();
+  pendingPearlStoragePayload = JSON.stringify(normalized);
+
+  if (pendingPearlStorageIdleId && typeof window.cancelIdleCallback === 'function') {
+    window.cancelIdleCallback(pendingPearlStorageIdleId);
+  }
+  if (pendingPearlStorageTimer) window.clearTimeout(pendingPearlStorageTimer);
+
+  if (typeof window.requestIdleCallback === 'function') {
+    pendingPearlStorageIdleId = window.requestIdleCallback(() => {
+      pendingPearlStorageIdleId = 0;
+      flushPearlStateSave();
+    }, { timeout: 900 });
+  } else {
+    pendingPearlStorageTimer = window.setTimeout(() => {
+      pendingPearlStorageTimer = 0;
+      flushPearlStateSave();
+    }, 90);
+  }
+}
+
 export function savePearlState(state) {
   const normalized = normalizePearlState(state);
-  if (typeof window !== 'undefined') {
-    window.localStorage.setItem(PEARL_STORAGE_KEY, JSON.stringify(normalized));
-  }
+  schedulePearlStatePersist(normalized);
   return normalized;
 }
 

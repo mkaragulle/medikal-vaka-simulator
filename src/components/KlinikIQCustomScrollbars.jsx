@@ -11,6 +11,9 @@ const TRACK_SIZE = 6;
 const THUMB_SIZE = 3.5;
 const MIN_THUMB = 24;
 const EDGE_INSET = 5;
+const TOP_LAYER_RECT_CACHE_MS = 90;
+const POINTER_ACTIVITY_THROTTLE_MS = 120;
+
 
 const TOP_LAYER_SELECTOR = [
   '#klinikiq-tooltip-layer',
@@ -69,15 +72,32 @@ function isVisibleTopLayerElement(element) {
   return true;
 }
 
+let cachedTopLayerRects = [];
+let cachedTopLayerRectsAt = 0;
+
+function getVisibleTopLayerRects() {
+  const now = window.performance?.now?.() || Date.now();
+  if (now - cachedTopLayerRectsAt < TOP_LAYER_RECT_CACHE_MS) return cachedTopLayerRects;
+
+  cachedTopLayerRectsAt = now;
+  cachedTopLayerRects = Array.from(document.querySelectorAll(TOP_LAYER_OCCLUSION_SELECTOR))
+    .filter(isVisibleTopLayerElement)
+    .map((layer) => ({ layer, rect: layer.getBoundingClientRect() }));
+  return cachedTopLayerRects;
+}
+
+function resetTopLayerRectCache() {
+  cachedTopLayerRectsAt = 0;
+  cachedTopLayerRects = [];
+}
+
 function isCoveredByTopLayer(trackRect, target) {
   if (!trackRect) return false;
   if (target !== window && isTopLayerTarget(target)) return false;
-  const topLayers = document.querySelectorAll(TOP_LAYER_OCCLUSION_SELECTOR);
-  for (const layer of topLayers) {
-    if (!isVisibleTopLayerElement(layer)) continue;
+  const topLayers = getVisibleTopLayerRects();
+  for (const { layer, rect } of topLayers) {
     if (target instanceof HTMLElement && layer.contains(target)) continue;
-    const layerRect = layer.getBoundingClientRect();
-    if (rectsOverlap(trackRect, layerRect)) return true;
+    if (rectsOverlap(trackRect, rect)) return true;
   }
   return false;
 }
@@ -378,6 +398,7 @@ html.${DRAGGING_CLASS} * {
     let activeUntil = 0;
     let isDragging = false;
     let resizeObserver = null;
+    let nextPointerActivityAt = 0;
 
     const markActive = (duration = 1200) => {
       activeUntil = Date.now() + duration;
@@ -551,6 +572,7 @@ html.${DRAGGING_CLASS} * {
 
     const scan = () => {
       if (isDragging) return;
+      resetTopLayerRectCache();
       clearEntries();
 
       const docCanScrollY = getDocumentScrollHeight() > window.innerHeight + 2;
@@ -579,7 +601,7 @@ html.${DRAGGING_CLASS} * {
       requestUpdate();
     };
 
-    const scheduleScan = (delay = 60) => {
+    const scheduleScan = (delay = 120) => {
       if (isDragging) return;
       window.clearTimeout(scanTimer);
       scanTimer = window.setTimeout(scan, delay);
@@ -680,21 +702,51 @@ html.${DRAGGING_CLASS} * {
       requestUpdate();
     };
 
-    const onResize = () => scheduleScan(40);
+    const onResize = () => {
+      resetTopLayerRectCache();
+      scheduleScan(80);
+    };
     const onStorage = () => requestUpdate();
     const onPointerActivity = () => {
-      if (!entries.length) scheduleScan(0);
+      const now = window.performance?.now?.() || Date.now();
+      if (now < nextPointerActivityAt) return;
+      nextPointerActivityAt = now + POINTER_ACTIVITY_THROTTLE_MS;
+      if (!entries.length) scheduleScan(90);
       markActive(500);
       requestUpdate();
     };
 
     const mutationObserver = new MutationObserver((mutations) => {
       if (isDragging) return;
-      const onlyScrollbarInternalChanges = mutations.every((mutation) => {
+      let shouldScan = false;
+      let shouldResetTopLayerCache = false;
+
+      for (const mutation of mutations) {
         const target = mutation.target;
-        return target instanceof Element && target.closest(`[${ROOT_ATTR}]`);
-      });
-      if (!onlyScrollbarInternalChanges) scheduleScan(80);
+        if (target instanceof Element && target.closest(`[${ROOT_ATTR}]`)) continue;
+
+        if (mutation.type === 'childList') {
+          const touchedTopLayer = [...mutation.addedNodes, ...mutation.removedNodes].some((node) => (
+            node instanceof Element && (node.matches?.(TOP_LAYER_SELECTOR) || node.querySelector?.(TOP_LAYER_SELECTOR))
+          ));
+          shouldScan = true;
+          shouldResetTopLayerCache = shouldResetTopLayerCache || touchedTopLayer;
+          break;
+        }
+
+        if (mutation.type === 'attributes' && target instanceof Element) {
+          const affectsTopLayer = target.matches?.(TOP_LAYER_SELECTOR) || target.closest?.(TOP_LAYER_SELECTOR);
+          const affectsScrollableShell = target.matches?.('[data-scroll-container], .modal, .drawer, .popover, .dropdown-menu, .tus-pearl-catalog-card-list, .qbank-content-stack, .clinical-case, .page-shell, .app-shell');
+          if (affectsTopLayer || affectsScrollableShell) {
+            shouldScan = true;
+            shouldResetTopLayerCache = shouldResetTopLayerCache || Boolean(affectsTopLayer);
+            break;
+          }
+        }
+      }
+
+      if (shouldResetTopLayerCache) resetTopLayerRectCache();
+      if (shouldScan) scheduleScan(140);
     });
     mutationObserver.observe(document.body, {
       childList: true,
@@ -729,9 +781,9 @@ html.${DRAGGING_CLASS} * {
     document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true });
 
     scan();
-    scheduleOneShotScan(50);
-    scheduleOneShotScan(240);
-    scheduleOneShotScan(900);
+    scheduleOneShotScan(120);
+    scheduleOneShotScan(420);
+    scheduleOneShotScan(1200);
 
     return () => {
       window.cancelAnimationFrame(rafId);

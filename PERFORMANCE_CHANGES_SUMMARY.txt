@@ -1,0 +1,69 @@
+KlinikIQ V370 Performance / Smoothness Patch Summary
+
+Changed files:
+- src/components/PremiumCursor.jsx
+- src/components/KlinikIQCustomScrollbars.jsx
+- src/components/DiagnosisQuiz.jsx
+- src/components/TusPearlStudyScreen.jsx
+- src/utils/pearlCardStorage.js
+- src/index.css
+- PERFORMANCE_AUDIT_REPORT.md
+- PERFORMANCE_CHANGES_SUMMARY.txt
+
+1) PremiumCursor.jsx
+- Removed duplicate mouse event listeners where pointer events already cover the same behavior.
+- Kept custom cursor design and behavior intact.
+- Added target caching so closest()/selector checks are not repeated when the pointer remains over the same element.
+- Cached the resolved dark/light theme instead of resolving theme/localStorage on every pointer move.
+- Changed the cursor RAF loop so it stops after the cursor visually settles and restarts only when needed.
+- Stops the cursor RAF loop when the cursor is hidden or the document is hidden.
+
+2) KlinikIQCustomScrollbars.jsx
+- Kept custom scrollbar behavior and premium thin/matte style intact.
+- Added a short cache for top-layer/modal/tooltip rects so occlusion checks do not query and measure all overlay elements every update.
+- Throttled global pointer activity updates to reduce pointermove pressure.
+- Made MutationObserver scanning more selective: child list changes still trigger scans, but attribute changes only trigger scans for likely scrollable shells or top-layer elements.
+- Increased default scan debounce to reduce repeated full DOM scans during active UI changes.
+- Reset overlay rect cache on scan/resize so modal/dropdown overlap behavior remains correct.
+
+3) DiagnosisQuiz.jsx
+- Optimized answer option render props.
+- Each AnswerOption now receives boolean `isSelected` and `isCorrectOption` instead of the entire selected value and correct answer string.
+- Result: when the user selects an option, unchanged options are less likely to re-render unnecessarily, reducing lag in option marking.
+- Question/answer content, correct answers, feedback logic and glossary behavior were not changed.
+
+4) TusPearlStudyScreen.jsx
+- Added a static branch ID -> branch name Map to avoid repeated branch array scans in catalog/library rows.
+- Converted active catalog membership checks to Set-based lookup in the main filtering path.
+- Kept the V370 48-card visible limit and “Daha fazla göster” behavior.
+- Throttled library source dropdown positioning with requestAnimationFrame during scroll/resize.
+- Catalog card texts remain plain/memoized; GlossaryText was not reintroduced into heavy catalog rows.
+
+5) pearlCardStorage.js
+- Replaced immediate synchronous localStorage writes with idle/debounced persistence.
+- UI state still updates immediately with normalized data.
+- Pending data is flushed on pagehide, beforeunload and visibility hidden to reduce data-loss risk.
+- This reduces main-thread blocking during card/catalog operations.
+
+6) index.css
+- Added V370 scroll/interaction guardrails under `html.ki-performance-mode`.
+- Added containment to frequently updated grids/lists.
+- Added content-visibility for catalog rows, summary cards, answer options and major panels where safe.
+- During active scrolling/route transitions, heavy box-shadow/filter/backdrop-filter/hover transform costs are reduced.
+- Normal premium design is preserved outside active scroll/transition states.
+
+Preserved intentionally:
+- TUS/KOMİTE mode behavior
+- TUS Spot Olgular content
+- Vaka/soru/feedback/correct answer data
+- Glossary data and nested glossary system
+- Custom cursor
+- Custom scrollbar
+- Dark/light mode visual identity
+- Catalog, card, popup and delete-confirm flows
+- V370 48-card library visible-limit logic
+
+Validation performed:
+- TypeScript transpile syntax check passed for all modified JSX/JS files.
+- node --check passed for modified pure JS-compatible files via temporary .mjs copies.
+- npm install was attempted but timed out in the sandbox before dependencies were installed; therefore npm run build could not be executed here. Run `npm install` and `npm run build` locally or in Vercel CI.

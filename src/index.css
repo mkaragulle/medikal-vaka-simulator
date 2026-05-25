@@ -51645,3 +51645,64 @@ html.ki-pointer-v355-on .monaco-editor {
   box-shadow: none !important;
   filter: none !important;
 }
+
+/* ===== V370 performance/lag polish: scroll and interaction cost guardrails ===== */
+html.ki-performance-mode .option-grid,
+html.ki-performance-mode .tus-pearl-catalog-card-list,
+html.ki-performance-mode .tus-pearl-catalog-card-list.addable,
+html.ki-performance-mode .pearl-library-toolbar,
+html.ki-performance-mode .qbank-content-stack,
+html.ki-performance-mode .patient-summary-grid {
+  contain: layout paint style;
+}
+
+@supports (content-visibility: auto) {
+  html.ki-performance-mode .tus-pearl-library-card.catalog-card-row,
+  html.ki-performance-mode .summary-detail-card,
+  html.ki-performance-mode .answer-option,
+  html.ki-performance-mode .patient-summary-story-block,
+  html.ki-performance-mode .clinical-data-card,
+  html.ki-performance-mode .question-panel {
+    content-visibility: auto;
+    contain-intrinsic-size: 96px;
+  }
+}
+
+html.ki-performance-mode.ki-is-scrolling .card-surface,
+html.ki-performance-mode.ki-is-scrolling .branch-card,
+html.ki-performance-mode.ki-is-scrolling .case-list-item,
+html.ki-performance-mode.ki-is-scrolling .answer-option,
+html.ki-performance-mode.ki-is-scrolling .option-card,
+html.ki-performance-mode.ki-is-scrolling .requested-test-card,
+html.ki-performance-mode.ki-is-scrolling .inline-order-result,
+html.ki-performance-mode.ki-is-scrolling .tus-pearl-library-card.catalog-card-row,
+html.ki-performance-mode.ki-is-scrolling .summary-detail-card,
+html.ki-performance-mode.ki-is-scrolling .patient-summary-card,
+html.ki-performance-mode.ki-is-scrolling .question-panel {
+  box-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html.ki-performance-mode.ki-is-scrolling .tus-pearl-library-card.catalog-card-row:hover,
+html.ki-performance-mode.ki-is-scrolling .answer-option:hover,
+html.ki-performance-mode.ki-is-scrolling .branch-card:hover,
+html.ki-performance-mode.ki-is-scrolling .case-list-item:hover,
+html.ki-performance-mode.ki-is-scrolling .btn:hover,
+html.ki-performance-mode.ki-route-transitioning .branch-card,
+html.ki-performance-mode.ki-route-transitioning .case-list-item,
+html.ki-performance-mode.ki-route-transitioning .answer-option,
+html.ki-performance-mode.ki-route-transitioning .tus-pearl-library-card.catalog-card-row {
+  transform: none !important;
+  transition-duration: 0ms !important;
+}
+
+html.ki-performance-mode.ki-is-scrolling .top-shell-nav,
+html.ki-performance-mode.ki-is-scrolling .global-topbar-v55,
+html.ki-performance-mode.ki-is-scrolling .pearl-library-source-menu,
+html.ki-performance-mode.ki-is-scrolling .pearl-min-dropdown-menu,
+html.ki-performance-mode.ki-is-scrolling .ai-compact-dropdown-menu-floating {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}

@@ -23,6 +23,7 @@ import TusPearlCardEditor from './TusPearlCardEditor.jsx';
 import './tusPearlCards.css';
 
 const SYSTEM_PEARL_CARDS = TUS_PEARL_CARDS.map((card) => ({ ...card, source: 'system' }));
+const BRANCH_NAME_BY_ID = new Map(branches.map((branch) => [branch.id, branch.shortName || branch.name || 'TUS']));
 
 const LIBRARY_SOURCE_OPTIONS = [
   { value: 'all', label: 'Tüm kaynaklar' },
@@ -89,14 +90,22 @@ function LibrarySourceDropdown({ value, onChange }) {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') setOpen(false);
     };
-    const handleViewportChange = () => updateMenuPosition();
+    let frameId = 0;
+    const handleViewportChange = () => {
+      if (frameId) return;
+      frameId = window.requestAnimationFrame(() => {
+        frameId = 0;
+        updateMenuPosition();
+      });
+    };
 
     window.addEventListener('pointerdown', handlePointerDown);
     window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('resize', handleViewportChange);
-    window.addEventListener('scroll', handleViewportChange, true);
+    window.addEventListener('resize', handleViewportChange, { passive: true });
+    window.addEventListener('scroll', handleViewportChange, { passive: true, capture: true });
 
     return () => {
+      if (frameId) window.cancelAnimationFrame(frameId);
       window.removeEventListener('pointerdown', handlePointerDown);
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('resize', handleViewportChange);
@@ -179,15 +188,14 @@ function cardMatchesFilter(card, filter, stateSets, activeCatalog) {
   if (filter === 'review') return stateSets.reviewSet.has(card.id);
   if (filter === 'known') return stateSets.knownSet.has(card.id);
   if (filter === 'past') return card.appearedYears?.length || card.isPastQuestionDerived;
-  if (filter === 'catalog') return activeCatalog?.cardIds?.includes(card.id);
+  if (filter === 'catalog') return stateSets.catalogSet?.has(card.id);
   if (filter === 'user') return card.source === 'user';
   if (filter === 'system') return card.source !== 'user';
   return true;
 }
 
 function getBranchName(branchId) {
-  const branch = branches.find((item) => item.id === branchId);
-  return branch?.shortName || branch?.name || 'TUS';
+  return BRANCH_NAME_BY_ID.get(branchId) || 'TUS';
 }
 
 function makeDeckKey(filter, branchFilter, activeCatalogId) {
@@ -576,7 +584,8 @@ function TusPearlStudyScreen({
     () => pearlState.customCatalogs.find((catalog) => catalog.id === activeCatalogId) || null,
     [activeCatalogId, pearlState.customCatalogs],
   );
-  const stateSets = useMemo(() => ({ favoriteSet, wrongSet, knownSet, reviewSet }), [favoriteSet, knownSet, reviewSet, wrongSet]);
+  const activeCatalogCardIdSet = useMemo(() => new Set(activeCatalog?.cardIds || []), [activeCatalog?.cardIds]);
+  const stateSets = useMemo(() => ({ favoriteSet, wrongSet, knownSet, reviewSet, catalogSet: activeCatalogCardIdSet }), [activeCatalogCardIdSet, favoriteSet, knownSet, reviewSet, wrongSet]);
   const branchOptions = useMemo(() => branches.filter((branch) => TUS_PEARL_CARD_STATS.byBranch[branch.id] || allCards.some((card) => card.branchId === branch.id)), [allCards]);
 
   const filteredCards = useMemo(() => allCards.filter((card) => {
@@ -645,7 +654,6 @@ function TusPearlStudyScreen({
   const catalogCards = useMemo(() => (
     (activeCatalog?.cardIds || []).map((id) => cardById.get(id)).filter(Boolean)
   ), [activeCatalog, cardById]);
-  const activeCatalogCardIdSet = useMemo(() => new Set(activeCatalog?.cardIds || []), [activeCatalog?.cardIds]);
 
   const deferredLibrarySearch = useDeferredValue(librarySearch);
   const librarySearchIndex = useMemo(() => allCards.map((card) => ({

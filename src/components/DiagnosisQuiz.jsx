@@ -84,9 +84,7 @@ function parseOptionFlow(text = '') {
   return segments;
 }
 
-const AnswerOption = memo(function AnswerOption({ option, index, selected, submitted, correctAnswer, onSelect, glossaryEnabled = true, revealMode = 'preAnswer' }) {
-  const isSelected = selected === option;
-  const isCorrectOption = option === correctAnswer;
+const AnswerOption = memo(function AnswerOption({ option, index, isSelected, submitted, isCorrectOption, onSelect, glossaryEnabled = true, revealMode = 'preAnswer' }) {
   const flowSegments = useMemo(() => parseOptionFlow(option), [option]);
   const isFlowOption = Array.isArray(flowSegments) && flowSegments.length > 0;
   const stateClass = submitted
@@ -293,9 +291,9 @@ function DiagnosisQuiz({
             key={option}
             option={option}
             index={index}
-            selected={selected}
+            isSelected={selected === option}
             submitted={submitted}
-            correctAnswer={clinicalCase.diagnosis.correct}
+            isCorrectOption={option === clinicalCase.diagnosis.correct}
             onSelect={setSelected}
             glossaryEnabled={glossaryEnabled}
             revealMode={glossaryRevealMode}
