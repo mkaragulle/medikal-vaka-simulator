@@ -1,70 +1,69 @@
-KlinikIQ V373 Performance / Smoothness Changes
+KlinikIQ V370 Performance / Smoothness Patch Summary
 
 Changed files:
 - src/components/PremiumCursor.jsx
 - src/components/KlinikIQCustomScrollbars.jsx
-- src/components/PerformanceOptimizer.jsx
 - src/components/DiagnosisQuiz.jsx
-- src/components/GlossaryTooltip.jsx
 - src/components/TusPearlStudyScreen.jsx
+- src/utils/pearlCardStorage.js
 - src/index.css
 - PERFORMANCE_AUDIT_REPORT.md
 - PERFORMANCE_CHANGES_SUMMARY.txt
 
-1) Global observer lag reduced
-- PremiumCursor no longer observes html/body class changes for theme detection.
-- KlinikIQCustomScrollbars no longer observes html/body class changes for theme detection.
-- Theme observers now track data-theme only, while storage events still refresh theme when needed.
-- This prevents normal scroll-state classes such as ki-is-scrolling and route-transitioning from waking cursor/scrollbar theme logic.
+1) PremiumCursor.jsx
+- Removed duplicate mouse event listeners where pointer events already cover the same behavior.
+- Kept custom cursor design and behavior intact.
+- Added target caching so closest()/selector checks are not repeated when the pointer remains over the same element.
+- Cached the resolved dark/light theme instead of resolving theme/localStorage on every pointer move.
+- Changed the cursor RAF loop so it stops after the cursor visually settles and restarts only when needed.
+- Stops the cursor RAF loop when the cursor is hidden or the document is hidden.
 
-2) Custom scrollbar cost reduced
-- Top-layer occlusion rect cache was extended from 180 ms to 420 ms.
-- Theme changes now only request a visual update instead of scheduling a full scrollbar scan.
-- Existing custom scrollbar behavior, drag behavior, modal/dropdown/tooltip layering and subtle style are preserved.
+2) KlinikIQCustomScrollbars.jsx
+- Kept custom scrollbar behavior and premium thin/matte style intact.
+- Added a short cache for top-layer/modal/tooltip rects so occlusion checks do not query and measure all overlay elements every update.
+- Throttled global pointer activity updates to reduce pointermove pressure.
+- Made MutationObserver scanning more selective: child list changes still trigger scans, but attribute changes only trigger scans for likely scrollable shells or top-layer elements.
+- Increased default scan debounce to reduce repeated full DOM scans during active UI changes.
+- Reset overlay rect cache on scan/resize so modal/dropdown overlap behavior remains correct.
 
-3) Scroll-state class churn reduced
-- PerformanceOptimizer now tracks whether scrolling is already active.
-- It avoids repeatedly clearing/recreating the scroll-idle timeout on every scroll tick.
-- The scroll performance class remains active slightly longer but mutates the DOM less frequently, which reduces micro-stutter.
+3) DiagnosisQuiz.jsx
+- Optimized answer option render props.
+- Each AnswerOption now receives boolean `isSelected` and `isCorrectOption` instead of the entire selected value and correct answer string.
+- Result: when the user selects an option, unchanged options are less likely to re-render unnecessarily, reducing lag in option marking.
+- Question/answer content, correct answers, feedback logic and glossary behavior were not changed.
 
-4) Answer submit / feedback mount smoothed
-- DiagnosisQuiz now marks the answer as submitted immediately, but mounts the heavy detailed feedback panel on the next animation frame inside a transition.
-- A lightweight “Yanıt işleniyor” placeholder is shown only during that tiny handoff.
-- Correct/wrong logic, exam-mode behavior, feedback text and scientific content are preserved.
+4) TusPearlStudyScreen.jsx
+- Added a static branch ID -> branch name Map to avoid repeated branch array scans in catalog/library rows.
+- Converted active catalog membership checks to Set-based lookup in the main filtering path.
+- Kept the V370 48-card visible limit and “Daha fazla göster” behavior.
+- Throttled library source dropdown positioning with requestAnimationFrame during scroll/resize.
+- Catalog card texts remain plain/memoized; GlossaryText was not reintroduced into heavy catalog rows.
 
-5) Glossary re-render pressure reduced
-- GlossaryText now uses a custom memo comparator instead of shallow default memoization.
-- Text, reveal mode, maxTerms, branch, nesting and array-like glossary parameters are compared by semantic signature.
-- Glossary parsing cache is still preserved; glossary content and nested glossary behavior are not removed.
+5) pearlCardStorage.js
+- Replaced immediate synchronous localStorage writes with idle/debounced persistence.
+- UI state still updates immediately with normalized data.
+- Pending data is flushed on pagehide, beforeunload and visibility hidden to reduce data-loss risk.
+- This reduces main-thread blocking during card/catalog operations.
 
-6) Catalog/library list row rendering improved
-- Catalog row and addable library row markup were extracted into memoized row components.
-- Row-level edit/add/remove/delete handlers are stabilized through row-local callbacks and parent callback wrappers.
-- V370/V372 48-card visible limit, search reset, source filter, “Daha fazla göster”, delete popover and catalog membership Set logic are preserved.
+6) index.css
+- Added V370 scroll/interaction guardrails under `html.ki-performance-mode`.
+- Added containment to frequently updated grids/lists.
+- Added content-visibility for catalog rows, summary cards, answer options and major panels where safe.
+- During active scrolling/route transitions, heavy box-shadow/filter/backdrop-filter/hover transform costs are reduced.
+- Normal premium design is preserved outside active scroll/transition states.
 
-7) CSS scroll smoothness polish
-- Added V373 guardrails to reduce layer churn during scrolling.
-- Dense list rows and answer/branch cards no longer keep unnecessary will-change promotion while idle/scrolling.
-- During active scroll, card-row transforms are suppressed to avoid GPU layer churn.
-- Tooltip/delete/source dropdown transition properties remain transform/opacity-based and short.
-- Glossary hover visual effects are only softened during active scrolling; glossary interaction itself remains enabled.
+Preserved intentionally:
+- TUS/KOMİTE mode behavior
+- TUS Spot Olgular content
+- Vaka/soru/feedback/correct answer data
+- Glossary data and nested glossary system
+- Custom cursor
+- Custom scrollbar
+- Dark/light mode visual identity
+- Catalog, card, popup and delete-confirm flows
+- V370 48-card library visible-limit logic
 
-8) Explicitly preserved behavior
-- Medical/TUS case data, correct answers, feedback, explanations, glossary entries and scientific text were not changed.
-- TUS mode and KOMİTE mode remain intact.
-- Custom cursor remains enabled.
-- Custom scrollbar remains enabled.
-- Glossary tooltip, hover delay, click/nested glossary behavior remain intact.
-- Dark/light mode styling is preserved.
-- Kataloglarım, Tüm kartlardan ekle, search/filter, more loading, delete confirmation and card editor flows are preserved.
-
-Validation:
-- npm install --no-audit --no-fund: successful.
-- npm run build: successful.
-- Build completed with expected large chunk warnings for case-bank and glossary chunks; no syntax/import/build failure remained.
-
-Expected user-facing result:
-- Less scroll-related cursor/scrollbar micro-stutter.
-- Faster-feeling answer selection and feedback opening.
-- Smoother Kataloglarım / Tüm kartlardan ekle browsing.
-- Lower chance of popup/dropdown/cursor/scrollbar layers waking expensive measurement paths during normal navigation.
+Validation performed:
+- TypeScript transpile syntax check passed for all modified JSX/JS files.
+- node --check passed for modified pure JS-compatible files via temporary .mjs copies.
+- npm install was attempted but timed out in the sandbox before dependencies were installed; therefore npm run build could not be executed here. Run `npm install` and `npm run build` locally or in Vercel CI.

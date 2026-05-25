@@ -11,7 +11,7 @@ const TRACK_SIZE = 6;
 const THUMB_SIZE = 3.5;
 const MIN_THUMB = 24;
 const EDGE_INSET = 5;
-const TOP_LAYER_RECT_CACHE_MS = 420;
+const TOP_LAYER_RECT_CACHE_MS = 180;
 const TOP_LAYER_SELECTOR = [
   '#klinikiq-tooltip-layer',
   '.floating-glossary-tooltip',
@@ -778,12 +778,10 @@ html.${DRAGGING_CLASS} * {
     const themeObserver = new MutationObserver(() => {
       cachedIsDarkTheme = resolveIsDarkTheme();
       requestUpdate();
+      scheduleScan(180);
     });
-    // Theme is reflected through data-theme. Do not observe class changes here:
-    // scroll/resize/route performance flags are html classes and should not
-    // force custom scrollbar rescans or theme recalculation.
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-    themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+    themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme', 'class'] });
 
     if ('ResizeObserver' in window) {
       resizeObserver = new ResizeObserver(() => scheduleScan(180));

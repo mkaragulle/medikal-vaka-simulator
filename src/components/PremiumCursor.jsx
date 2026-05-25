@@ -554,17 +554,14 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
     };
 
     const themeObserver = new MutationObserver(handleThemeChange);
-    // Theme changes are driven by data-theme and storage. Observing the class
-    // attribute caused the cursor to re-evaluate theme on every scroll because
-    // PerformanceOptimizer toggles html.ki-is-scrolling / ki-route-transitioning.
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
     if (document.body) {
-      themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+      themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme', 'class'] });
     }
 
     const appShell = document.querySelector('.app-shell');
     if (appShell) {
-      themeObserver.observe(appShell, { attributes: true, attributeFilter: ['data-theme'] });
+      themeObserver.observe(appShell, { attributes: true, attributeFilter: ['data-theme', 'class'] });
     }
 
     const capturePassive = { passive: true, capture: true };

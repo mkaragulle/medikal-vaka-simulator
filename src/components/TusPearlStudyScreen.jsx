@@ -40,61 +40,6 @@ function CatalogCardQuestionText({ text }) {
 
 const MemoCatalogCardQuestionText = memo(CatalogCardQuestionText);
 
-
-const CatalogCardRow = memo(function CatalogCardRow({ card, branchName, activeCatalogId, onEditCard, onRequestDelete, onRemoveCard }) {
-  const handleEdit = useCallback(() => onEditCard(card), [card, onEditCard]);
-  const handleDelete = useCallback((event) => onRequestDelete(card, 'catalog-list', event), [card, onRequestDelete]);
-  const handleRemove = useCallback(() => onRemoveCard(card.id), [card.id, onRemoveCard]);
-
-  return (
-    <article className="tus-pearl-library-card in-catalog catalog-card-row">
-      <div className="catalog-card-content">
-        <span className="catalog-card-branch">{branchName}</span>
-        <strong className="catalog-card-question"><MemoCatalogCardQuestionText text={card.front} /></strong>
-      </div>
-      <div className="pearl-card-row-actions catalog-card-action">
-        {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={handleEdit}>Düzenle</button> : null}
-        <span className="pearl-delete-anchor">
-          <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={handleDelete} aria-label="Kartı sil" title="Kartı sil">
-            <Icon name="Trash2" />
-          </button>
-        </span>
-        <button type="button" className="btn btn-icon quiet catalog-remove-action" onClick={handleRemove} aria-label="Kartı katalogdan çıkar" title="Katalogdan çıkar" disabled={!activeCatalogId}>
-          <Icon name="X" />
-        </button>
-      </div>
-    </article>
-  );
-});
-
-const AddableCatalogCardRow = memo(function AddableCatalogCardRow({ card, branchName, isInCatalog, activeCatalogId, onEditCard, onRequestDelete, onAddCard }) {
-  const handleEdit = useCallback(() => onEditCard(card), [card, onEditCard]);
-  const handleDelete = useCallback((event) => onRequestDelete(card, 'library-list', event), [card, onRequestDelete]);
-  const handleAdd = useCallback(() => onAddCard(card.id), [card.id, onAddCard]);
-
-  return (
-    <article className="tus-pearl-library-card catalog-card-row">
-      <div className="catalog-card-content">
-        <span className="catalog-card-branch">{branchName}</span>
-        <strong className="catalog-card-question"><MemoCatalogCardQuestionText text={card.front} /></strong>
-      </div>
-      <div className="pearl-card-row-actions catalog-card-action">
-        {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={handleEdit}>Düzenle</button> : null}
-        {isInCatalog ? (
-          <button type="button" className="btn btn-secondary compact catalog-added-action" disabled>Eklendi</button>
-        ) : (
-          <button type="button" className="btn btn-secondary compact catalog-add-action" onClick={handleAdd} disabled={!activeCatalogId}>Kataloğa ekle</button>
-        )}
-        <span className="pearl-delete-anchor">
-          <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={handleDelete} aria-label="Kartı sil" title="Kartı sil">
-            <Icon name="Trash2" />
-          </button>
-        </span>
-      </div>
-    </article>
-  );
-});
-
 function LibrarySourceDropdown({ value, onChange }) {
   const [open, setOpen] = useState(false);
   const [menuStyle, setMenuStyle] = useState(null);
@@ -1164,22 +1109,6 @@ function TusPearlStudyScreen({
     moveCard(delta < 0 ? 1 : -1);
   }
 
-  const handleEditCatalogCard = useCallback((card) => {
-    openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalogId });
-  }, [activeCatalogId]);
-
-  const handleAddCatalogCard = useCallback((cardId) => {
-    addCardToCatalog(cardId, activeCatalogId);
-  }, [activeCatalogId]);
-
-  const handleRemoveCatalogCard = useCallback((cardId) => {
-    removeCardFromCatalog(cardId, activeCatalogId);
-  }, [activeCatalogId]);
-
-  const handleRequestCatalogCardDelete = useCallback((card, context, event) => {
-    requestCardDelete(card, context, event);
-  }, []);
-
   const branchMenuPortal = branchMenuOpen ? createPortal(
     <div
       ref={branchMenuRef}
@@ -1343,15 +1272,24 @@ function TusPearlStudyScreen({
                   {catalogCards.length ? (
                     <div className="tus-pearl-catalog-card-list">
                       {catalogCards.map((card) => (
-                        <CatalogCardRow
-                          key={card.id}
-                          card={card}
-                          branchName={getBranchName(card.branchId)}
-                          activeCatalogId={activeCatalog.id}
-                          onEditCard={handleEditCatalogCard}
-                          onRequestDelete={handleRequestCatalogCardDelete}
-                          onRemoveCard={handleRemoveCatalogCard}
-                        />
+                        <article key={card.id} className="tus-pearl-library-card in-catalog catalog-card-row">
+                          <div className="catalog-card-content">
+                            <span className="catalog-card-branch">{getBranchName(card.branchId)}</span>
+                            <strong className="catalog-card-question"><MemoCatalogCardQuestionText text={card.front} /></strong>
+                          </div>
+                          <div className="pearl-card-row-actions catalog-card-action">
+                            {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
+                            <span className="pearl-delete-anchor">
+                              <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={(event) => requestCardDelete(card, 'catalog-list', event)} aria-label="Kartı sil" title="Kartı sil">
+                                <Icon name="Trash2" />
+                              </button>
+                              {renderInlineDeleteConfirm(card, 'catalog-list')}
+                            </span>
+                            <button type="button" className="btn btn-icon quiet catalog-remove-action" onClick={() => removeCardFromCatalog(card.id)} aria-label="Kartı katalogdan çıkar" title="Katalogdan çıkar">
+                              <Icon name="X" />
+                            </button>
+                          </div>
+                        </article>
                       ))}
                     </div>
                   ) : (
@@ -1379,16 +1317,26 @@ function TusPearlStudyScreen({
                   </div>
                   <div className="tus-pearl-catalog-card-list addable">
                     {visibleSearchableCards.map((card) => (
-                      <AddableCatalogCardRow
-                        key={card.id}
-                        card={card}
-                        branchName={getBranchName(card.branchId)}
-                        isInCatalog={activeCatalogCardIdSet.has(card.id)}
-                        activeCatalogId={activeCatalog.id}
-                        onEditCard={handleEditCatalogCard}
-                        onRequestDelete={handleRequestCatalogCardDelete}
-                        onAddCard={handleAddCatalogCard}
-                      />
+                      <article key={card.id} className="tus-pearl-library-card catalog-card-row">
+                        <div className="catalog-card-content">
+                          <span className="catalog-card-branch">{getBranchName(card.branchId)}</span>
+                          <strong className="catalog-card-question"><MemoCatalogCardQuestionText text={card.front} /></strong>
+                        </div>
+                        <div className="pearl-card-row-actions catalog-card-action">
+                          {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
+                          {activeCatalogCardIdSet.has(card.id) ? (
+                            <button type="button" className="btn btn-secondary compact catalog-added-action" disabled>Eklendi</button>
+                          ) : (
+                            <button type="button" className="btn btn-secondary compact catalog-add-action" onClick={() => addCardToCatalog(card.id)}>Kataloğa ekle</button>
+                          )}
+                          <span className="pearl-delete-anchor">
+                            <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={(event) => requestCardDelete(card, 'library-list', event)} aria-label="Kartı sil" title="Kartı sil">
+                              <Icon name="Trash2" />
+                            </button>
+                            {renderInlineDeleteConfirm(card, 'library-list')}
+                          </span>
+                        </div>
+                      </article>
                     ))}
                     {hasMoreLibraryCards ? (
                       <div className="catalog-library-load-more">
