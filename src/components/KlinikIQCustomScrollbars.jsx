@@ -13,7 +13,6 @@ const MIN_THUMB = 24;
 const EDGE_INSET = 5;
 const TOP_LAYER_RECT_CACHE_MS = 160;
 const POINTER_ACTIVITY_THROTTLE_MS = 240;
-const NATIVE_SCROLLBAR_SELECTOR = '[data-native-scrollbar]';
 
 
 const TOP_LAYER_SELECTOR = [
@@ -219,7 +218,6 @@ function resolveIsDarkTheme() {
 function canScrollElement(element, axis) {
   if (!isHTMLElement(element)) return false;
   if (element.closest(`[${ROOT_ATTR}]`)) return false;
-  if (element.matches?.(NATIVE_SCROLLBAR_SELECTOR)) return false;
   if (element === document.body || element === document.documentElement) return false;
 
   const style = window.getComputedStyle(element);
@@ -252,11 +250,7 @@ function getLikelyScrollableCandidates() {
     activeNode = activeNode.parentElement;
   }
 
-  return Array.from(candidates).sort((a, b) => {
-    const aPriority = a.matches?.('.bottom-case-browser .horizontal-case-list, .horizontal-case-list') ? -1 : 0;
-    const bPriority = b.matches?.('.bottom-case-browser .horizontal-case-list, .horizontal-case-list') ? -1 : 0;
-    return aPriority - bPriority;
-  });
+  return Array.from(candidates);
 }
 
 function getTargetMetrics(target) {
@@ -342,53 +336,6 @@ html.${ROOT_CLASS} *::-webkit-scrollbar {
   height: 0 !important;
   display: none !important;
   background: transparent !important;
-}
-
-html.${ROOT_CLASS} ${NATIVE_SCROLLBAR_SELECTOR} {
-  scrollbar-width: thin !important;
-  scrollbar-color: rgba(15, 118, 110, 0.34) transparent !important;
-  -ms-overflow-style: auto !important;
-}
-
-html.${ROOT_CLASS} ${NATIVE_SCROLLBAR_SELECTOR}::-webkit-scrollbar {
-  display: block !important;
-  width: 8px !important;
-  height: 8px !important;
-  background: transparent !important;
-}
-
-html.${ROOT_CLASS} ${NATIVE_SCROLLBAR_SELECTOR}::-webkit-scrollbar-track {
-  display: block !important;
-  background: transparent !important;
-  border-radius: 999px !important;
-}
-
-html.${ROOT_CLASS} ${NATIVE_SCROLLBAR_SELECTOR}::-webkit-scrollbar-thumb {
-  display: block !important;
-  min-width: 36px !important;
-  min-height: 36px !important;
-  border: 2px solid transparent !important;
-  border-radius: 999px !important;
-  background: rgba(15, 118, 110, 0.30) !important;
-  background-clip: padding-box !important;
-}
-
-html.${ROOT_CLASS} ${NATIVE_SCROLLBAR_SELECTOR}::-webkit-scrollbar-thumb:hover {
-  background: rgba(15, 118, 110, 0.44) !important;
-  background-clip: padding-box !important;
-}
-
-html.${ROOT_CLASS} [data-theme="dark"] ${NATIVE_SCROLLBAR_SELECTOR},
-html.${ROOT_CLASS} body[data-theme="dark"] ${NATIVE_SCROLLBAR_SELECTOR},
-html.${ROOT_CLASS} .app-shell[data-theme="dark"] ${NATIVE_SCROLLBAR_SELECTOR} {
-  scrollbar-color: rgba(153, 246, 228, 0.34) transparent !important;
-}
-
-html.${ROOT_CLASS} [data-theme="dark"] ${NATIVE_SCROLLBAR_SELECTOR}::-webkit-scrollbar-thumb,
-html.${ROOT_CLASS} body[data-theme="dark"] ${NATIVE_SCROLLBAR_SELECTOR}::-webkit-scrollbar-thumb,
-html.${ROOT_CLASS} .app-shell[data-theme="dark"] ${NATIVE_SCROLLBAR_SELECTOR}::-webkit-scrollbar-thumb {
-  background: rgba(153, 246, 228, 0.28) !important;
-  background-clip: padding-box !important;
 }
 
 [${ROOT_ATTR}] {
@@ -884,14 +831,8 @@ html.${DRAGGING_CLASS} * {
     window.addEventListener('pointermove', onPointerActivity, { passive: true });
     const handleFocus = () => scheduleScan(0);
     const handlePageShow = () => scheduleScan(0);
-    const handleManualRefresh = () => {
-      resetTopLayerRectCache();
-      scheduleScan(0);
-      scheduleOneShotScan(80);
-    };
     window.addEventListener('focus', handleFocus, { passive: true });
     window.addEventListener('pageshow', handlePageShow, { passive: true });
-    window.addEventListener('klinikiq:scrollbars-refresh', handleManualRefresh, { passive: true });
     document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true });
 
     scan();
@@ -913,7 +854,6 @@ html.${DRAGGING_CLASS} * {
       window.removeEventListener('pointermove', onPointerActivity);
       window.removeEventListener('focus', handleFocus);
       window.removeEventListener('pageshow', handlePageShow);
-      window.removeEventListener('klinikiq:scrollbars-refresh', handleManualRefresh);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       clearEntries();
       roots.forEach((node) => node.remove());

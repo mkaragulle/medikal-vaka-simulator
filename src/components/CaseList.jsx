@@ -74,44 +74,28 @@ function getSolvedCount(cases = [], solvedCaseIds = new Set()) {
 
 function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', solvedCaseIds = new Set() }) {
   const listRef = useRef(null);
-  const isHorizontal = layout === 'horizontal';
   const horizontalResetKey = useMemo(() => {
-    if (!isHorizontal) return '';
+    if (layout !== 'horizontal') return '';
     const firstId = cases[0]?.id || '';
     const lastId = cases[cases.length - 1]?.id || '';
     return `${cases.length}:${firstId}:${lastId}:${getSolvedCount(cases, solvedCaseIds)}`;
-  }, [cases, isHorizontal, solvedCaseIds]);
+  }, [cases, layout, solvedCaseIds]);
 
   useLayoutEffect(() => {
-    if (!isHorizontal) return undefined;
+    if (layout !== 'horizontal') return undefined;
     const listNode = listRef.current;
     if (!listNode) return undefined;
 
-    const requestScrollbarRefresh = () => {
-      window.dispatchEvent(new CustomEvent('klinikiq:scrollbars-refresh', {
-        detail: { source: 'case-list-horizontal' },
-      }));
-    };
-
     listNode.scrollLeft = 0;
-    requestScrollbarRefresh();
-
     const frameId = window.requestAnimationFrame(() => {
       if (listRef.current) listRef.current.scrollLeft = 0;
-      requestScrollbarRefresh();
     });
 
     return () => window.cancelAnimationFrame(frameId);
-  }, [horizontalResetKey, isHorizontal]);
+  }, [horizontalResetKey, layout]);
 
   return (
-    <div
-      ref={listRef}
-      className={isHorizontal ? 'case-list horizontal-case-list' : 'case-list'}
-      aria-label="Olgu listesi"
-      data-scroll-container={isHorizontal ? 'true' : undefined}
-      data-native-scrollbar={isHorizontal ? 'horizontal' : undefined}
-    >
+    <div ref={listRef} className={layout === 'horizontal' ? 'case-list horizontal-case-list' : 'case-list'} aria-label="Olgu listesi">
       {cases.map((clinicalCase) => (
         <CaseListItem
           key={clinicalCase.id}
