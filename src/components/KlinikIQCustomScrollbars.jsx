@@ -13,6 +13,7 @@ const MIN_THUMB = 24;
 const EDGE_INSET = 5;
 const TOP_LAYER_RECT_CACHE_MS = 160;
 const POINTER_ACTIVITY_THROTTLE_MS = 240;
+const SCROLLBAR_REFRESH_EVENT = 'klinikiq:scrollbars-refresh';
 
 
 const TOP_LAYER_SELECTOR = [
@@ -54,6 +55,12 @@ const TOP_LAYER_OCCLUSION_SELECTOR = [
   '.popover',
   '.dropdown-menu',
   '.toolbox',
+].join(', ');
+
+const PRIORITY_SCROLLABLE_CANDIDATE_SELECTOR = [
+  '[data-ki-scroll-priority]',
+  '.bottom-case-browser .horizontal-case-list',
+  '.horizontal-case-list[data-scrollable="true"]',
 ].join(', ');
 
 const SCROLLABLE_CANDIDATE_SELECTOR = [
@@ -240,6 +247,11 @@ function isVisibleEnough(element) {
 
 function getLikelyScrollableCandidates() {
   const candidates = new Set();
+
+  document.querySelectorAll(PRIORITY_SCROLLABLE_CANDIDATE_SELECTOR).forEach((node) => {
+    if (isHTMLElement(node)) candidates.add(node);
+  });
+
   document.querySelectorAll(SCROLLABLE_CANDIDATE_SELECTOR).forEach((node) => {
     if (isHTMLElement(node)) candidates.add(node);
   });
@@ -667,6 +679,15 @@ html.${DRAGGING_CLASS} * {
       scanTimeouts.add(timeoutId);
     };
 
+    const forceScrollbarRefresh = () => {
+      if (isDragging) return;
+      window.clearTimeout(scanTimer);
+      resetTopLayerRectCache();
+      scan();
+      scheduleOneShotScan(70);
+      scheduleOneShotScan(180);
+    };
+
     const startDrag = (entry, event) => {
       event.preventDefault();
       event.stopPropagation();
@@ -769,11 +790,9 @@ html.${DRAGGING_CLASS} * {
       if (entries.length) requestUpdate();
     };
 
-    const onScrollbarRefreshRequest = () => {
-      if (document.visibilityState === 'hidden') return;
-      resetTopLayerRectCache();
-      scheduleScan(0);
-      scheduleOneShotScan(90);
+    const onExplicitScrollbarRefresh = () => {
+      markActive(1100);
+      forceScrollbarRefresh();
     };
 
     const mutationObserver = new MutationObserver((mutations) => {
@@ -796,7 +815,7 @@ html.${DRAGGING_CLASS} * {
 
         if (mutation.type === 'attributes' && target instanceof Element) {
           const affectsTopLayer = target.matches?.(TOP_LAYER_SELECTOR) || target.closest?.(TOP_LAYER_SELECTOR);
-          const affectsScrollableShell = target.matches?.('[data-scroll-container], .modal, .drawer, .popover, .dropdown-menu, .tus-pearl-catalog-card-list, .qbank-content-stack, .clinical-case, .page-shell, .app-shell');
+          const affectsScrollableShell = target.matches?.('[data-scroll-container], [data-ki-scroll-priority], .horizontal-case-list, .modal, .drawer, .popover, .dropdown-menu, .tus-pearl-catalog-card-list, .qbank-content-stack, .clinical-case, .page-shell, .app-shell');
           if (affectsTopLayer || affectsScrollableShell) {
             shouldScan = true;
             shouldResetTopLayerCache = shouldResetTopLayerCache || Boolean(affectsTopLayer);
@@ -836,7 +855,7 @@ html.${DRAGGING_CLASS} * {
     window.addEventListener('resize', onResize, { passive: true });
     window.addEventListener('storage', onStorage, { passive: true });
     window.addEventListener('pointermove', onPointerActivity, { passive: true });
-    window.addEventListener('klinikiq:scrollbars:refresh', onScrollbarRefreshRequest, { passive: true });
+    window.addEventListener(SCROLLBAR_REFRESH_EVENT, onExplicitScrollbarRefresh, { passive: true });
     const handleFocus = () => scheduleScan(0);
     const handlePageShow = () => scheduleScan(0);
     window.addEventListener('focus', handleFocus, { passive: true });
@@ -860,7 +879,7 @@ html.${DRAGGING_CLASS} * {
       window.removeEventListener('resize', onResize);
       window.removeEventListener('storage', onStorage);
       window.removeEventListener('pointermove', onPointerActivity);
-      window.removeEventListener('klinikiq:scrollbars:refresh', onScrollbarRefreshRequest);
+      window.removeEventListener(SCROLLBAR_REFRESH_EVENT, onExplicitScrollbarRefresh);
       window.removeEventListener('focus', handleFocus);
       window.removeEventListener('pageshow', handlePageShow);
       document.removeEventListener('visibilitychange', handleVisibilityChange);

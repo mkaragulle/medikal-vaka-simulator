@@ -1,27 +1,37 @@
-KlinikIQ V375 - Diğer Olgular Scrollbar Fast Refresh Patch
+KlinikIQ V375 — Diğer Olgular Scrollbar Fast Refresh
 
 Changed files:
-1. src/components/CaseList.jsx
-   - Added a lightweight refresh signal for horizontal case lists.
-   - When the "Diğer olgular" horizontal list mounts or its visible case set changes, it now dispatches `klinikiq:scrollbars:refresh`.
-   - The signal is sent once immediately after layout and once shortly after layout settles, so the custom scrollbar can appear without waiting for the generic MutationObserver debounce.
-   - Added `data-scroll-container="true"` and `data-scrollable="true"` only for horizontal lists to make the target explicit for the custom scrollbar scanner.
-   - Existing 48-card/list behavior, solved state, selected state, title rendering, and case data were not changed.
+- src/components/CaseList.jsx
+- src/components/KlinikIQCustomScrollbars.jsx
 
-2. src/components/KlinikIQCustomScrollbars.jsx
-   - Added a listener for the targeted `klinikiq:scrollbars:refresh` event.
-   - The listener performs an immediate scan plus a short follow-up scan for layout-settling cases.
-   - Existing custom scrollbar design, z-index behavior, drag behavior, top-layer occlusion checks, debounce logic, and V374 optimizations were preserved.
+What changed:
+1. CaseList.jsx
+   - Horizontal case lists now receive explicit scroll metadata:
+     data-scroll-container="true"
+     data-scrollable="true"
+     data-ki-scroll-priority="other-cases"
+   - The horizontal list dispatches `klinikiq:scrollbars-refresh` immediately after mount.
+   - A second refresh is dispatched in the next requestAnimationFrame after layout settles.
+   - A short 80 ms settle refresh is dispatched to catch late card width/layout changes.
+   - This only applies to horizontal lists, especially the “Diğer olgular” browser.
 
-Preserved intentionally:
-- Medical/TUS cases and answers were not edited.
-- Glossary content and glossary tooltip behavior were not removed.
+2. KlinikIQCustomScrollbars.jsx
+   - Added a dedicated `SCROLLBAR_REFRESH_EVENT` listener.
+   - Added priority candidate discovery for `[data-ki-scroll-priority]`, `.bottom-case-browser .horizontal-case-list`, and horizontal lists marked as scrollable.
+   - Explicit refresh now clears the pending delayed scan, resets top-layer cache, scans immediately, and follows with two short settle scans.
+   - MutationObserver attribute matching now recognizes priority/horizontal scroll containers.
+
+Preserved behavior:
+- Custom scrollbar was not removed.
 - Custom cursor was not removed.
-- Custom scrollbar was not replaced by native scrollbar.
-- Dark/light theme styling was not changed.
-- No heavy refactor was introduced.
-- No node_modules, dist, cache, .git, .vite, .vercel, or nested zip is included in the final package.
+- Glossary behavior was not changed.
+- TUS/KOMİTE flows were not changed.
+- Medical cases, answers, feedback, glossary content and scientific data were not changed.
+- Existing V374 performance optimizations were preserved.
 
-Expected effect:
-- The custom scrollbar in the "Diğer olgular" horizontal browser should appear much faster after opening a case, changing branch filters, or searching within other cases.
-- General page performance should remain the same because this refresh is scoped to horizontal case-list lifecycle changes.
+Build test:
+- `npm run build` completed successfully.
+- Vite large chunk warnings remain expected because case/glossary data were not shortened or removed.
+
+GitHub safety:
+- Final zip excludes node_modules, dist, .git, cache, logs and nested zip files.

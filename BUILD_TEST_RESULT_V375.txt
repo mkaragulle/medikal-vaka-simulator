@@ -1,14 +1,12 @@
-KlinikIQ V375 build test
+KlinikIQ V375 build test result
 
-Commands executed:
-1. npm install --prefer-offline --no-audit --no-fund --progress=false --loglevel=warn
-2. npm run build
+Command:
+npm run build
 
 Result:
-- npm install completed successfully.
-- Vite production build completed successfully.
-- No syntax/import/build-breaking error was found.
+SUCCESS
 
-Known non-blocking warning:
-- Vite still reports large chunks for case-bank and GlossaryTooltip.
-- This is expected because medical case and glossary data were intentionally preserved and not shortened.
+Notes:
+- Vite build completed successfully.
+- Large chunk warnings for case-bank and GlossaryTooltip are expected because clinical/glossary data were not removed or shortened.
+- node_modules and dist are excluded from the final GitHub-safe zip.
