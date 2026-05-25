@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useMemo, useState } from 'react';
+import { memo, startTransition, useCallback, useEffect, useMemo, useState } from 'react';
 import { shuffleArray } from '../utils/randomize.js';
 import { getDifficultyMeta } from '../utils/scoring.js';
 import { Icon, IconBadge } from './ui.jsx';
@@ -225,8 +225,10 @@ function DiagnosisQuiz({
 
   const handleSubmit = useCallback(() => {
     if (!selected || submitted) return;
-    onSubmitAnswer?.({ clinicalCase, selected, isCorrect });
-    setSubmitted(true);
+    startTransition(() => {
+      onSubmitAnswer?.({ clinicalCase, selected, isCorrect });
+      setSubmitted(true);
+    });
   }, [clinicalCase, isCorrect, onSubmitAnswer, selected, submitted]);
 
   return (
