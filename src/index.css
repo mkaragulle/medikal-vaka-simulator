@@ -51706,3 +51706,202 @@ html.ki-performance-mode.ki-is-scrolling .ai-compact-dropdown-menu-floating {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 }
+
+/* ===== V372 deep smoothness pass: cursor/scroll/list micro-lag guardrails ===== */
+html.ki-performance-mode :is(
+  .case-list-item,
+  .branch-card,
+  .answer-option,
+  .option-card,
+  .requested-test-card,
+  .inline-order-result,
+  .tus-pearl-library-card,
+  .catalog-card-row,
+  .summary-detail-card,
+  .clinical-data-card,
+  .patient-summary-card,
+  .question-panel,
+  .mode-card
+) {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  contain: layout paint style;
+}
+
+@supports (content-visibility: auto) {
+  html.ki-performance-mode :is(
+    .case-list-item,
+    .branch-card,
+    .tus-pearl-library-card,
+    .catalog-card-row,
+    .requested-test-card,
+    .inline-order-result,
+    .summary-detail-card,
+    .clinical-data-card,
+    .patient-summary-card
+  ) {
+    content-visibility: auto;
+    contain-intrinsic-size: 112px;
+  }
+}
+
+html.ki-performance-mode.ki-is-scrolling :is(
+  .case-list-item,
+  .branch-card,
+  .answer-option,
+  .option-card,
+  .requested-test-card,
+  .inline-order-result,
+  .tus-pearl-library-card,
+  .catalog-card-row,
+  .summary-detail-card,
+  .clinical-data-card,
+  .patient-summary-card,
+  .question-panel,
+  .mode-card,
+  .btn,
+  button
+),
+html.ki-performance-mode.ki-route-transitioning :is(
+  .case-list-item,
+  .branch-card,
+  .answer-option,
+  .option-card,
+  .requested-test-card,
+  .inline-order-result,
+  .tus-pearl-library-card,
+  .catalog-card-row,
+  .summary-detail-card,
+  .clinical-data-card,
+  .patient-summary-card,
+  .question-panel,
+  .mode-card,
+  .btn,
+  button
+) {
+  transition-property: color, background-color, border-color, opacity !important;
+  transition-duration: 80ms !important;
+  animation: none !important;
+}
+
+html.ki-performance-mode.ki-is-scrolling :is(
+  .case-list-item:hover,
+  .branch-card:hover,
+  .answer-option:hover,
+  .option-card:hover,
+  .requested-test-card:hover,
+  .inline-order-result:hover,
+  .tus-pearl-library-card:hover,
+  .catalog-card-row:hover,
+  .mode-card:hover,
+  .btn:hover,
+  button:hover
+) {
+  transform: translateZ(0) !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+html.ki-performance-mode.ki-is-scrolling :is(
+  .top-shell-nav,
+  .global-topbar-v55,
+  .glass-panel,
+  .card-surface,
+  .modal,
+  .drawer,
+  .popover,
+  .dropdown-menu,
+  .pearl-library-source-menu,
+  .pearl-min-dropdown-menu,
+  .ai-compact-dropdown-menu-floating,
+  .floating-glossary-tooltip,
+  .smart-glossary-popover
+) {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+}
+
+html.ki-performance-mode.ki-is-scrolling [data-ki-pointer-v364-root='true'] {
+  transition: none !important;
+}
+
+/* V372: continuous decorative animations are paused by default in performance mode.
+   They resume on hover/launch so the premium identity remains, but idle CPU/GPU work drops. */
+html.ki-performance-mode :is(
+  .branch-animated-icon *,
+  .branch-icon-ambient,
+  .branch-card:not(.is-launching) .branch-launch-wave,
+  .auth-orbit-node,
+  .auth-orbit-icon,
+  .auth-ambient-orb,
+  .klinikiq-auth-orbit,
+  .klinikiq-auth-orbit *,
+  .hero-orbit,
+  .hero-orbit *,
+  .shimmer,
+  .pulse
+) {
+  animation-play-state: paused !important;
+}
+
+html.ki-performance-mode :is(
+  .branch-card:hover .branch-animated-icon *,
+  .branch-card.is-launching .branch-animated-icon *,
+  .branch-card.is-launching .branch-launch-wave,
+  .auth-panel:hover .auth-orbit-node,
+  .auth-panel:hover .auth-orbit-icon,
+  .auth-panel:hover .auth-ambient-orb
+) {
+  animation-play-state: running !important;
+}
+
+/* ===== V373 surgical smoothness pass: reduce scroll-triggered layer churn ===== */
+html.ki-performance-mode :is(
+  .case-list-item,
+  .tus-pearl-library-card,
+  .catalog-card-row,
+  .answer-option,
+  .branch-card,
+  .option-card,
+  .mode-card
+):not(:hover):not(.active):not(.selected):not(.correct):not(.wrong):not(.is-launching) {
+  will-change: auto !important;
+}
+
+html.ki-performance-mode.ki-is-scrolling :is(
+  .case-list-item,
+  .tus-pearl-library-card,
+  .catalog-card-row,
+  .answer-option,
+  .branch-card,
+  .option-card,
+  .mode-card
+) {
+  transform: none !important;
+  will-change: auto !important;
+}
+
+html.ki-performance-mode.ki-is-scrolling :is(
+  .floating-glossary-tooltip,
+  .smart-glossary-popover,
+  .pearl-inline-delete-popover,
+  .pearl-library-source-menu,
+  .pearl-study-branch-menu-portal
+) {
+  transition-property: opacity, transform !important;
+  transition-duration: 90ms !important;
+}
+
+html.ki-performance-mode.ki-is-scrolling :is(
+  .glossary-term,
+  .smart-glossary-term,
+  .nested-glossary-term
+):hover {
+  transform: none !important;
+  filter: none !important;
+}
+
+.feedback-preparing {
+  contain: layout paint style;
+}
