@@ -39,9 +39,10 @@ const TEXT_SELECTOR = [
   '.bottom-case-search input',
 ].join(', ');
 
-const ROOT_CLASS = 'ki-pointer-v362-on';
-const STYLE_ID = 'ki-pointer-v362-runtime-style';
-const ROOT_ATTR = 'data-ki-pointer-v362-root';
+const ROOT_CLASS = 'ki-pointer-v363-on';
+const STYLE_ID = 'ki-pointer-v363-runtime-style';
+const ROOT_ATTR = 'data-ki-pointer-v363-root';
+const TRANSPARENT_CURSOR = 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'1\' height=\'1\' viewBox=\'0 0 1 1\'%3E%3C/svg%3E") 0 0, none';
 
 const LEGACY_SELECTORS = [
   '.ki-cursor',
@@ -68,6 +69,7 @@ const LEGACY_SELECTORS = [
   '[data-ki-pointer-v359-root]',
   '[data-ki-pointer-v360-root]',
   '[data-ki-pointer-v361-root]',
+  '[data-ki-pointer-v362-root]',
 ].join(', ');
 
 const LEGACY_STYLE_IDS = [
@@ -78,6 +80,7 @@ const LEGACY_STYLE_IDS = [
   'ki-pointer-v359-runtime-style',
   'ki-pointer-v360-runtime-style',
   'ki-pointer-v361-runtime-style',
+  'ki-pointer-v362-runtime-style',
   'ki-simple-cursor-runtime-style-v354',
   'klinikiq-minimal-premium-cursor-style-v353',
   'klinikiq-unified-premium-cursor-runtime-style-v352',
@@ -96,6 +99,7 @@ const LEGACY_ROOT_CLASSES = [
   'ki-pointer-v359-on',
   'ki-pointer-v360-on',
   'ki-pointer-v361-on',
+  'ki-pointer-v362-on',
   'ki-simple-cursor-active',
   'ki-simple-cursor-pressed',
   'ki-minimal-cursor-active',
@@ -111,6 +115,68 @@ const LEGACY_ROOT_CLASSES = [
 
 function isElement(value) {
   return value instanceof Element;
+}
+
+function isScrollableElement(element, axis) {
+  if (!(element instanceof HTMLElement)) return false;
+  const style = window.getComputedStyle(element);
+  const overflow = axis === 'y' ? style.overflowY : style.overflowX;
+  const canScroll = axis === 'y' ? element.scrollHeight > element.clientHeight : element.scrollWidth > element.clientWidth;
+  return canScroll && /auto|scroll|overlay/i.test(overflow || '');
+}
+
+function getScrollbarHit(element, clientX, clientY) {
+  if (!(element instanceof HTMLElement)) return false;
+  if (element === document.body || element === document.documentElement) return false;
+
+  const rect = element.getBoundingClientRect();
+  if (clientX < rect.left || clientX > rect.right || clientY < rect.top || clientY > rect.bottom) return false;
+
+  const style = window.getComputedStyle(element);
+  const borderRight = Number.parseFloat(style.borderRightWidth || '0') || 0;
+  const borderBottom = Number.parseFloat(style.borderBottomWidth || '0') || 0;
+  const borderLeft = Number.parseFloat(style.borderLeftWidth || '0') || 0;
+  const borderTop = Number.parseFloat(style.borderTopWidth || '0') || 0;
+
+  const verticalScrollbarWidth = Math.max(0, element.offsetWidth - element.clientWidth - borderLeft - borderRight);
+  const horizontalScrollbarHeight = Math.max(0, element.offsetHeight - element.clientHeight - borderTop - borderBottom);
+
+  const hasVerticalScrollbar = isScrollableElement(element, 'y') && verticalScrollbarWidth >= 4;
+  const hasHorizontalScrollbar = isScrollableElement(element, 'x') && horizontalScrollbarHeight >= 4;
+
+  const verticalHit = hasVerticalScrollbar && clientX >= rect.right - verticalScrollbarWidth - 2;
+  const horizontalHit = hasHorizontalScrollbar && clientY >= rect.bottom - horizontalScrollbarHeight - 2;
+
+  return verticalHit || horizontalHit;
+}
+
+function isViewportScrollbarHit(clientX, clientY) {
+  const doc = document.documentElement;
+  const viewportVerticalScrollbarWidth = Math.max(0, window.innerWidth - doc.clientWidth);
+  const viewportHorizontalScrollbarHeight = Math.max(0, window.innerHeight - doc.clientHeight);
+
+  const verticalHit = viewportVerticalScrollbarWidth >= 4 && clientX >= doc.clientWidth - 2;
+  const horizontalHit = viewportHorizontalScrollbarHeight >= 4 && clientY >= doc.clientHeight - 2;
+
+  return verticalHit || horizontalHit;
+}
+
+function isScrollbarHit(event) {
+  if (!event || typeof event.clientX !== 'number' || typeof event.clientY !== 'number') return false;
+  if (isViewportScrollbarHit(event.clientX, event.clientY)) return true;
+
+  const path = typeof event.composedPath === 'function' ? event.composedPath() : [];
+  for (const node of path) {
+    if (getScrollbarHit(node, event.clientX, event.clientY)) return true;
+  }
+
+  let node = isElement(event.target) ? event.target : null;
+  while (node && node !== document.body && node !== document.documentElement) {
+    if (getScrollbarHit(node, event.clientX, event.clientY)) return true;
+    node = node.parentElement;
+  }
+
+  return false;
 }
 
 export default function PremiumCursor() {
@@ -129,7 +195,7 @@ export default function PremiumCursor() {
 html.${ROOT_CLASS},
 html.${ROOT_CLASS} body,
 html.${ROOT_CLASS} body *:not(input):not(textarea):not(select):not([contenteditable="true"]):not([contenteditable=""]):not(.cm-editor):not(.monaco-editor) {
-  cursor: none !important;
+  cursor: ${TRANSPARENT_CURSOR} !important;
 }
 
 html.${ROOT_CLASS} input,
@@ -140,6 +206,17 @@ html.${ROOT_CLASS} [contenteditable=""],
 html.${ROOT_CLASS} .cm-editor,
 html.${ROOT_CLASS} .monaco-editor {
   cursor: text !important;
+}
+
+html.${ROOT_CLASS} *::-webkit-scrollbar,
+html.${ROOT_CLASS} *::-webkit-scrollbar-thumb,
+html.${ROOT_CLASS} *::-webkit-scrollbar-track,
+html.${ROOT_CLASS} *::-webkit-scrollbar-corner,
+html.${ROOT_CLASS} body::-webkit-scrollbar,
+html.${ROOT_CLASS} body::-webkit-scrollbar-thumb,
+html.${ROOT_CLASS} body::-webkit-scrollbar-track,
+html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
+  cursor: ${TRANSPARENT_CURSOR} !important;
 }
 
 [${ROOT_ATTR}="true"] {
@@ -154,7 +231,7 @@ html.${ROOT_CLASS} .monaco-editor {
   visibility: visible !important;
   opacity: 0;
   transform: translate3d(-80px, -80px, 0);
-  transition: opacity 90ms ease;
+  transition: opacity 70ms ease;
   contain: strict;
   background: transparent !important;
   border: 0 !important;
@@ -170,24 +247,10 @@ html.${ROOT_CLASS} .monaco-editor {
   opacity: 1 !important;
 }
 
-[${ROOT_ATTR}="true"].is-text {
+[${ROOT_ATTR}="true"].is-text,
+[${ROOT_ATTR}="true"].is-scrollbar,
+[${ROOT_ATTR}="true"].is-scrollbar-dragging {
   opacity: 0 !important;
-}
-
-html.${ROOT_CLASS} *::-webkit-scrollbar,
-html.${ROOT_CLASS} *::-webkit-scrollbar-thumb,
-html.${ROOT_CLASS} *::-webkit-scrollbar-track,
-html.${ROOT_CLASS} *::-webkit-scrollbar-corner,
-html.${ROOT_CLASS} body::-webkit-scrollbar,
-html.${ROOT_CLASS} body::-webkit-scrollbar-thumb,
-html.${ROOT_CLASS} body::-webkit-scrollbar-track,
-html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
-  cursor: none !important;
-}
-
-html.${ROOT_CLASS},
-html.${ROOT_CLASS} body {
-  cursor: none !important;
 }
 
 [${ROOT_ATTR}="true"] svg {
@@ -224,7 +287,8 @@ html.${ROOT_CLASS} body {
 [data-ki-pointer-v358-root],
 [data-ki-pointer-v359-root],
 [data-ki-pointer-v360-root],
-[data-ki-pointer-v361-root] {
+[data-ki-pointer-v361-root],
+[data-ki-pointer-v362-root] {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
@@ -248,7 +312,7 @@ html.${ROOT_CLASS} body {
       'visibility:visible',
       'opacity:0',
       'transform:translate3d(-80px,-80px,0)',
-      'transition:opacity 90ms ease',
+      'transition:opacity 70ms ease',
       'contain:strict',
       'background:transparent',
       'border:0',
@@ -281,6 +345,8 @@ html.${ROOT_CLASS} body {
     let isText = false;
     let isPressed = false;
     let isDarkTheme = false;
+    let isOverScrollbar = false;
+    let isScrollbarDragging = false;
 
     const lightPalette = {
       ring: 'rgba(13,148,136,0.94)',
@@ -313,7 +379,17 @@ html.${ROOT_CLASS} body {
       return Boolean(window.matchMedia?.('(prefers-color-scheme: dark)')?.matches);
     };
 
+    const setVisibilityForMode = () => {
+      root.classList.toggle('is-text', isText);
+      root.classList.toggle('is-scrollbar', isOverScrollbar);
+      root.classList.toggle('is-scrollbar-dragging', isScrollbarDragging);
 
+      if (isText || isOverScrollbar || isScrollbarDragging) {
+        root.classList.remove('is-visible');
+      } else if (started) {
+        root.classList.add('is-visible');
+      }
+    };
 
     const setPointerVisual = () => {
       if (!ring || !dot) return;
@@ -321,17 +397,17 @@ html.${ROOT_CLASS} body {
       isDarkTheme = resolveIsDarkTheme();
       const palette = isDarkTheme ? darkPalette : lightPalette;
 
-      root.classList.toggle('is-text', isText);
-      root.classList.toggle('is-interactive', isInteractive && !isText);
-      root.classList.toggle('is-pressed', isPressed && !isText);
+      root.classList.toggle('is-interactive', isInteractive && !isText && !isOverScrollbar && !isScrollbarDragging);
+      root.classList.toggle('is-pressed', isPressed && !isText && !isOverScrollbar && !isScrollbarDragging);
       root.classList.toggle('is-dark-theme', isDarkTheme);
 
-      if (isText) {
+      if (isText || isOverScrollbar || isScrollbarDragging) {
         ring.setAttribute('r', '8.25');
         ring.setAttribute('stroke-width', '1.65');
         ring.setAttribute('stroke', palette.ring);
         dot.setAttribute('r', '2.25');
         dot.setAttribute('fill', palette.dot);
+        setVisibilityForMode();
         return;
       }
 
@@ -348,6 +424,8 @@ html.${ROOT_CLASS} body {
         dot.setAttribute('r', isPressed ? '1.9' : '2.25');
         dot.setAttribute('fill', palette.dot);
       }
+
+      setVisibilityForMode();
     };
 
     const updateMode = (target) => {
@@ -370,8 +448,8 @@ html.${ROOT_CLASS} body {
       currentX = targetX;
       currentY = targetY;
       root.style.transform = `translate3d(${currentX - 17}px, ${currentY - 17}px, 0)`;
-      root.classList.add('is-visible');
       document.documentElement.classList.add(ROOT_CLASS);
+      setVisibilityForMode();
       frameId = window.requestAnimationFrame(render);
     };
 
@@ -380,11 +458,9 @@ html.${ROOT_CLASS} body {
       targetX = event.clientX;
       targetY = event.clientY;
       activate();
-      updateMode(event.target);
 
-      if (!isText) {
-        root.classList.add('is-visible');
-      }
+      isOverScrollbar = isScrollbarDragging || isScrollbarHit(event);
+      updateMode(event.target);
     };
 
     const hide = () => {
@@ -400,10 +476,6 @@ html.${ROOT_CLASS} body {
 
       document.documentElement.classList.add(ROOT_CLASS);
       setPointerVisual();
-
-      if (!isText) {
-        root.classList.add('is-visible');
-      }
 
       if (!frameId) {
         frameId = window.requestAnimationFrame(render);
@@ -429,13 +501,19 @@ html.${ROOT_CLASS} body {
       window.setTimeout(recoverCursor, 120);
     };
 
-    const down = () => {
-      isPressed = true;
+    const down = (event) => {
+      if (event?.pointerType && event.pointerType !== 'mouse') return;
+
+      isScrollbarDragging = isScrollbarHit(event);
+      isOverScrollbar = isScrollbarDragging;
+      isPressed = !isScrollbarDragging;
       setPointerVisual();
     };
 
     const up = () => {
       isPressed = false;
+      isScrollbarDragging = false;
+      isOverScrollbar = false;
       setPointerVisual();
     };
 
@@ -454,13 +532,18 @@ html.${ROOT_CLASS} body {
       themeObserver.observe(appShell, { attributes: true, attributeFilter: ['data-theme', 'class'] });
     }
 
-    window.addEventListener('storage', handleThemeChange, { passive: true });
+    const capturePassive = { passive: true, capture: true };
 
+    window.addEventListener('storage', handleThemeChange, { passive: true });
     window.addEventListener('pointermove', move, { passive: true });
     window.addEventListener('mousemove', move, { passive: true });
     window.addEventListener('mouseover', move, { passive: true });
-    window.addEventListener('pointerdown', down, { passive: true });
-    window.addEventListener('pointerup', up, { passive: true });
+    window.addEventListener('pointerdown', down, capturePassive);
+    window.addEventListener('mousedown', down, capturePassive);
+    window.addEventListener('pointerup', up, capturePassive);
+    window.addEventListener('mouseup', up, capturePassive);
+    window.addEventListener('pointercancel', up, capturePassive);
+    window.addEventListener('dragend', up, capturePassive);
     window.addEventListener('focus', show, { passive: true });
     window.addEventListener('pageshow', handlePageShow, { passive: true });
     window.addEventListener('blur', hide, { passive: true });
@@ -474,8 +557,12 @@ html.${ROOT_CLASS} body {
       window.removeEventListener('pointermove', move);
       window.removeEventListener('mousemove', move);
       window.removeEventListener('mouseover', move);
-      window.removeEventListener('pointerdown', down);
-      window.removeEventListener('pointerup', up);
+      window.removeEventListener('pointerdown', down, capturePassive);
+      window.removeEventListener('mousedown', down, capturePassive);
+      window.removeEventListener('pointerup', up, capturePassive);
+      window.removeEventListener('mouseup', up, capturePassive);
+      window.removeEventListener('pointercancel', up, capturePassive);
+      window.removeEventListener('dragend', up, capturePassive);
       window.removeEventListener('focus', show);
       window.removeEventListener('pageshow', handlePageShow);
       window.removeEventListener('blur', hide);
