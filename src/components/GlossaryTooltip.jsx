@@ -1146,6 +1146,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
       data-reveal-mode={GLOSSARY_EXPLANATION_MODE}
       data-glossary-entry-id={resolvedEntry?.id || ''}
       data-glossary-entry-term={visibleTermLabel}
+      data-cursor="glossary"
       data-nesting-level={nestingLevel}
       data-glossary-context-mode={contextMode}
       data-hover-open-delay={getGlossaryHoverOpenDelay(nestingLevel)}

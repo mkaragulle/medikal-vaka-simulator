@@ -130,18 +130,65 @@ function addUnit(value = '', std = null) {
   if (std.parameter === 'Lökosit') { const n = parseNumber(text); if (/^\d{1,2}(?:\.\d)?$/.test(text) && n !== null) return n % 1 ? `${String(n).replace('.', '.')}00/mm³` : `${n}.000/mm³`; }
   if (std.parameter === 'Trombosit') { const n = parseNumber(text); if (/^\d{1,3}$/.test(text) && n !== null && n < 1000) return `${n}.000/mm³`; }
   if ((std.parameter === 'Nötrofil' || std.parameter === 'Transferrin satürasyonu') && /^\d{1,2}$/.test(text)) return `%${text}`;
-  const unitEquivalent = (std.unit === '/mm³' && /\/(?:µL|mm³)/i.test(text)) || (std.unit === 'ng/L' && /ng\/mL/i.test(text));
+  const unitEquivalent = (std.unit === '/mm³' && /\/(?:µL|mm³)/i.test(text)) || (std.unit === 'ng/L' && /ng\/mL/i.test(text)) || (std.unit === 'mEq/L' && /mmol\/L/i.test(text)) || (std.unit === 'mmol/L' && /mEq\/L/i.test(text));
   if (!unitEquivalent && !new RegExp(std.unit.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i').test(text) && /\d/.test(text)) return `${text} ${std.unit}`.trim();
   return text;
 }
 function qualitativeReference(parameter = '') { if (/kültür|kultur|üreme/i.test(parameter)) return 'Üreme olmamalı'; if (/anti-|hbsag|hiv|vdrl|rpr|pcr|antijen|antikor|seroloji|coombs|nitrit|keton|protein|kan/i.test(parameter)) return 'Negatif'; if (/yayma|mikroskopi/i.test(parameter)) return 'Patolojik bulgu saptanmamalı'; return ''; }
+
+function hasExplicitLabMeasurement(text = '') {
+  const source = normalizeLabText(text || '');
+  return /\d/.test(source) && /(?:mg\/dL|mg\/L|g\/dL|mmol\/L|mEq\/L|ng\/mL|ng\/L|pg\/mL|µIU\/mL|mIU\/mL|U\/L|IU\/L|mmHg|\/mm³|\/mm3|\/µL|%|µmol\/L|mm\/saat|sn|cmH₂O|cmH2O|mIU\/mL|IU\/mL|fL|pg|titre|titer|^\s*[<>≤≥]?\s*\d)/i.test(source);
+}
+function isQualitativeLabPlaceholder(text = '') {
+  const value = strip(text || '');
+  return !value
+    || /^(belirgin\s+)?(yuksek|dusuk|artmis|azalmis|pozitif|negatif|anormal|normal|kritik)(?:\s+saptandi|\s+bulgu|\s+izlendi|\s+bulundu)?\.?$/i.test(value)
+    || /^(hafif|orta|agir|ciddi)\s+(yuksek|dusuk|artmis|azalmis)\.?$/i.test(value);
+}
+function isGenericLabNote(text = '') {
+  const value = strip(text || '');
+  return !value || /^(anormal\s+bulgu|normal\s+bulgu|bulgu|bilgi|objektif\s+sonuc)\.?$/i.test(value);
+}
+function splitMisplacedReferencePayload(reference = '') {
+  const raw = normalizeLabText(reference || '').replace(/\s+/g, ' ').trim();
+  if (!raw) return null;
+
+  const explicitRefMatch = raw.match(/^(.+?)(?:\s*[;,|]\s*)?(?:Referans|Ref\.?|Normal(?:\s+aralık)?|Beklenen)\s*[:：]\s*(.+)$/iu);
+  if (explicitRefMatch) {
+    const misplacedValue = explicitRefMatch[1].replace(/[;,|]\s*$/, '').trim();
+    const realReference = explicitRefMatch[2].trim();
+    if (hasExplicitLabMeasurement(misplacedValue) && realReference) {
+      return { misplacedValue, realReference };
+    }
+  }
+
+  const semicolonParts = raw.split(/\s*[;|]\s*/).map((part) => part.trim()).filter(Boolean);
+  if (semicolonParts.length >= 2 && hasExplicitLabMeasurement(semicolonParts[0])) {
+    const possibleReference = semicolonParts.slice(1).join('; ').replace(/^(?:Referans|Ref\.?|Normal(?:\s+aralık)?|Beklenen)\s*[:：]\s*/iu, '').trim();
+    if (possibleReference) return { misplacedValue: semicolonParts[0], realReference: possibleReference };
+  }
+
+  return null;
+}
+
 export function normalizeLabResultRow(row = {}, context = {}) {
   const r = Array.isArray(row) ? { parameter: row[0], value: row[1], reference: row[2], note: row[3] } : { parameter: row.parameter, value: row.value, reference: row.reference, note: row.note || row.interpretation };
   let parameter = normalizeLabText(r.parameter || ''), value = normalizeLabText(r.value || ''), reference = normalizeLabText(r.reference || ''), note = normalizeLabText(r.note || '');
   if (!parameter && !value && !reference && !note) return { parameter, value, reference, note };
+
+  const misplacedReferencePayload = splitMisplacedReferencePayload(reference);
+  if (misplacedReferencePayload && (!hasExplicitLabMeasurement(value) || isQualitativeLabPlaceholder(value))) {
+    if (value && (isGenericLabNote(note) || !note)) note = value;
+    value = misplacedReferencePayload.misplacedValue;
+    reference = misplacedReferencePayload.realReference;
+  } else if (misplacedReferencePayload) {
+    reference = misplacedReferencePayload.realReference;
+  }
+
   const std = findLabStandard(parameter || context.label || context.summary || '');
   if (std) { parameter = parameter || std.parameter; const placeholder = !value || /^(yuksek|hafif yuksek|sinirda|dusuk|hafif dusuk|artmis|azalmis)$/i.test(strip(value)); if (placeholder) value = chooseDefault(std, value || note || context.summary || ''); value = addUnit(value, std); if (!reference || reference === '—' || /yaşa göre değişir/i.test(reference)) reference = std.reference;
-    if (reference && std.unit && /\d/.test(reference)) { const refEquivalent = (std.unit === '/mm³' && /\/(?:µL|mm³)/i.test(reference)) || (std.unit === 'ng/L' && /ng\/mL/i.test(reference)); if (!refEquivalent && !new RegExp(std.unit.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i').test(reference)) reference = `${reference} ${std.unit}`; }
+    if (reference && std.unit && /\d/.test(reference)) { const refEquivalent = (std.unit === '/mm³' && /\/(?:µL|mm³)/i.test(reference)) || (std.unit === 'ng/L' && /ng\/mL/i.test(reference)) || (std.unit === 'mEq/L' && /mmol\/L/i.test(reference)) || (std.unit === 'mmol/L' && /mEq\/L/i.test(reference)); if (!refEquivalent && !new RegExp(std.unit.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i').test(reference)) reference = `${reference} ${std.unit}`; }
     note = inferLabStatus(value, reference, note || value); }
   else { value = normalizeLabUnit(value); reference = normalizeLabUnit(reference) || qualitativeReference(parameter) || reference; note = inferLabStatus(value, reference, note); }
   return { parameter, value, reference, note };
