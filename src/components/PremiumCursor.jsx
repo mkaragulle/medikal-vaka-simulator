@@ -39,9 +39,9 @@ const TEXT_SELECTOR = [
   '.bottom-case-search input',
 ].join(', ');
 
-const ROOT_CLASS = 'ki-pointer-v360-on';
-const STYLE_ID = 'ki-pointer-v360-runtime-style';
-const ROOT_ATTR = 'data-ki-pointer-v360-root';
+const ROOT_CLASS = 'ki-pointer-v362-on';
+const STYLE_ID = 'ki-pointer-v362-runtime-style';
+const ROOT_ATTR = 'data-ki-pointer-v362-root';
 
 const LEGACY_SELECTORS = [
   '.ki-cursor',
@@ -66,6 +66,8 @@ const LEGACY_SELECTORS = [
   '[data-ki-pointer-v357-root]',
   '[data-ki-pointer-v358-root]',
   '[data-ki-pointer-v359-root]',
+  '[data-ki-pointer-v360-root]',
+  '[data-ki-pointer-v361-root]',
 ].join(', ');
 
 const LEGACY_STYLE_IDS = [
@@ -74,6 +76,8 @@ const LEGACY_STYLE_IDS = [
   'ki-pointer-v357-runtime-style',
   'ki-pointer-v358-runtime-style',
   'ki-pointer-v359-runtime-style',
+  'ki-pointer-v360-runtime-style',
+  'ki-pointer-v361-runtime-style',
   'ki-simple-cursor-runtime-style-v354',
   'klinikiq-minimal-premium-cursor-style-v353',
   'klinikiq-unified-premium-cursor-runtime-style-v352',
@@ -90,6 +94,8 @@ const LEGACY_ROOT_CLASSES = [
   'ki-pointer-v357-on',
   'ki-pointer-v358-on',
   'ki-pointer-v359-on',
+  'ki-pointer-v360-on',
+  'ki-pointer-v361-on',
   'ki-simple-cursor-active',
   'ki-simple-cursor-pressed',
   'ki-minimal-cursor-active',
@@ -164,9 +170,24 @@ html.${ROOT_CLASS} .monaco-editor {
   opacity: 1 !important;
 }
 
-[${ROOT_ATTR}="true"].is-text,
-[${ROOT_ATTR}="true"].is-scrollbar {
+[${ROOT_ATTR}="true"].is-text {
   opacity: 0 !important;
+}
+
+html.${ROOT_CLASS} *::-webkit-scrollbar,
+html.${ROOT_CLASS} *::-webkit-scrollbar-thumb,
+html.${ROOT_CLASS} *::-webkit-scrollbar-track,
+html.${ROOT_CLASS} *::-webkit-scrollbar-corner,
+html.${ROOT_CLASS} body::-webkit-scrollbar,
+html.${ROOT_CLASS} body::-webkit-scrollbar-thumb,
+html.${ROOT_CLASS} body::-webkit-scrollbar-track,
+html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
+  cursor: none !important;
+}
+
+html.${ROOT_CLASS},
+html.${ROOT_CLASS} body {
+  cursor: none !important;
 }
 
 [${ROOT_ATTR}="true"] svg {
@@ -201,7 +222,9 @@ html.${ROOT_CLASS} .monaco-editor {
 [data-ki-pointer-v356-root],
 [data-ki-pointer-v357-root],
 [data-ki-pointer-v358-root],
-[data-ki-pointer-v359-root] {
+[data-ki-pointer-v359-root],
+[data-ki-pointer-v360-root],
+[data-ki-pointer-v361-root] {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
@@ -256,7 +279,6 @@ html.${ROOT_CLASS} .monaco-editor {
     let started = false;
     let isInteractive = false;
     let isText = false;
-    let isScrollbar = false;
     let isPressed = false;
     let isDarkTheme = false;
 
@@ -292,62 +314,6 @@ html.${ROOT_CLASS} .monaco-editor {
     };
 
 
-    const getScrollableAncestors = (node) => {
-      const ancestors = [];
-      let current = isElement(node) ? node : null;
-
-      while (current && current !== document.documentElement) {
-        ancestors.push(current);
-        current = current.parentElement;
-      }
-
-      return ancestors;
-    };
-
-    const isScrollableElement = (element) => {
-      if (!element) return false;
-      const styles = window.getComputedStyle(element);
-      const overflowY = styles.overflowY;
-      const overflowX = styles.overflowX;
-      const canScrollY = /(auto|scroll|overlay)/.test(overflowY) && element.scrollHeight > element.clientHeight;
-      const canScrollX = /(auto|scroll|overlay)/.test(overflowX) && element.scrollWidth > element.clientWidth;
-      return canScrollY || canScrollX;
-    };
-
-    const isInsideScrollbarZone = (event) => {
-      const x = event.clientX;
-      const y = event.clientY;
-      const doc = document.documentElement;
-
-      // Browser/native viewport scrollbar is outside normal DOM cursor styling.
-      // If custom cursor stays visible there, Windows/native cursor and custom cursor appear together.
-      const viewportVerticalScrollbarWidth = Math.max(0, window.innerWidth - doc.clientWidth);
-      const viewportHorizontalScrollbarHeight = Math.max(0, window.innerHeight - doc.clientHeight);
-
-      if (viewportVerticalScrollbarWidth > 0 && x >= doc.clientWidth - Math.max(2, viewportVerticalScrollbarWidth)) return true;
-      if (viewportHorizontalScrollbarHeight > 0 && y >= doc.clientHeight - Math.max(2, viewportHorizontalScrollbarHeight)) return true;
-
-      const ancestors = getScrollableAncestors(event.target);
-
-      for (const element of ancestors) {
-        if (!isScrollableElement(element)) continue;
-
-        const rect = element.getBoundingClientRect();
-        if (x < rect.left || x > rect.right || y < rect.top || y > rect.bottom) continue;
-
-        const verticalScrollbarWidth = Math.max(0, element.offsetWidth - element.clientWidth);
-        const horizontalScrollbarHeight = Math.max(0, element.offsetHeight - element.clientHeight);
-
-        const styles = window.getComputedStyle(element);
-        const hasVerticalScrollbar = /(auto|scroll|overlay)/.test(styles.overflowY) && element.scrollHeight > element.clientHeight && verticalScrollbarWidth > 0;
-        const hasHorizontalScrollbar = /(auto|scroll|overlay)/.test(styles.overflowX) && element.scrollWidth > element.clientWidth && horizontalScrollbarHeight > 0;
-
-        if (hasVerticalScrollbar && x >= rect.right - verticalScrollbarWidth - 2 && x <= rect.right) return true;
-        if (hasHorizontalScrollbar && y >= rect.bottom - horizontalScrollbarHeight - 2 && y <= rect.bottom) return true;
-      }
-
-      return false;
-    };
 
     const setPointerVisual = () => {
       if (!ring || !dot) return;
@@ -356,9 +322,8 @@ html.${ROOT_CLASS} .monaco-editor {
       const palette = isDarkTheme ? darkPalette : lightPalette;
 
       root.classList.toggle('is-text', isText);
-      root.classList.toggle('is-scrollbar', isScrollbar);
-      root.classList.toggle('is-interactive', isInteractive && !isText && !isScrollbar);
-      root.classList.toggle('is-pressed', isPressed && !isText && !isScrollbar);
+      root.classList.toggle('is-interactive', isInteractive && !isText);
+      root.classList.toggle('is-pressed', isPressed && !isText);
       root.classList.toggle('is-dark-theme', isDarkTheme);
 
       if (isText) {
@@ -385,11 +350,10 @@ html.${ROOT_CLASS} .monaco-editor {
       }
     };
 
-    const updateMode = (target, event) => {
+    const updateMode = (target) => {
       if (!isElement(target)) return;
-      isScrollbar = event ? isInsideScrollbarZone(event) : false;
-      isText = !isScrollbar && Boolean(target.closest(TEXT_SELECTOR));
-      isInteractive = !isScrollbar && !isText && Boolean(target.closest(INTERACTIVE_SELECTOR));
+      isText = Boolean(target.closest(TEXT_SELECTOR));
+      isInteractive = !isText && Boolean(target.closest(INTERACTIVE_SELECTOR));
       setPointerVisual();
     };
 
@@ -416,11 +380,9 @@ html.${ROOT_CLASS} .monaco-editor {
       targetX = event.clientX;
       targetY = event.clientY;
       activate();
-      updateMode(event.target, event);
+      updateMode(event.target);
 
-      if (isScrollbar) {
-        root.classList.remove('is-visible');
-      } else if (!isText) {
+      if (!isText) {
         root.classList.add('is-visible');
       }
     };
@@ -439,7 +401,7 @@ html.${ROOT_CLASS} .monaco-editor {
       document.documentElement.classList.add(ROOT_CLASS);
       setPointerVisual();
 
-      if (!isText && !isScrollbar) {
+      if (!isText) {
         root.classList.add('is-visible');
       }
 
