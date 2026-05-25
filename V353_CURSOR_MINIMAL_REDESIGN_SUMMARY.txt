@@ -1,0 +1,18 @@
+KlinikIQ V353 — Cursor Minimal Redesign
+
+Problem:
+- V352 cursor tasarımı lens/glass efekti nedeniyle küçük bir kutu/body parçası gibi görünüyordu.
+- Interactive/glossary durumlarında border-radius değişimi cursor'ı karemsi gösteriyordu.
+
+Çözüm:
+- PremiumCursor.jsx sıfırdan minimal sisteme çekildi.
+- Artık cursor yalnızca ince halka + mikro merkez noktadan oluşuyor.
+- Background, glass layer, shine, badge ve kare/box hissi veren tüm katmanlar kaldırıldı.
+- Glossary ve interactive modlarda aynı görsel dil korunuyor; sadece halka boyutu/tonu hafif değişiyor.
+- Loading modunda küçük minimal dönen arc var.
+- Native cursor gizleme sistemi nested glossary/toolbox/popover alanlarında korunuyor.
+- React state kullanılmadan requestAnimationFrame + transform ile çalışmaya devam ediyor.
+
+Güncellenen dosyalar:
+- src/components/PremiumCursor.jsx
+- src/index.css

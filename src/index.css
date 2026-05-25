@@ -51554,3 +51554,22 @@ html.ki-unified-cursor-active body :is(
 .ki-cursor-v350:not(.ki-unified-cursor-v352) {
   display: none !important;
 }
+
+/* V353 — minimal cursor cleanup fallback
+   Prevents legacy cursor shells from creating boxed/glass artifacts. Runtime
+   styles in PremiumCursor.jsx are authoritative; this fallback only protects
+   first paint and cached CSS edge cases. */
+.ki-unified-cursor-v352,
+.ki-cursor-v351,
+.ki-cursor-v350,
+.ki-cursor:not(.ki-minimal-premium-cursor-v353),
+.premium-cursor:not(.ki-minimal-premium-cursor-v353) {
+  display: none !important;
+}
+
+.ki-minimal-premium-cursor-v353 {
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
