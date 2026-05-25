@@ -187,10 +187,6 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
       {
         "sourceFilePath": "src/data/cases.js",
         "text": "“evde…”, “taburcu…”, “tedavisiz beklemek”, “diş macunu”, “bül patlatma”, “sıvıyı kesmek” gibi bariz veya bilimsel olmayan çeldiriciler kaldırıldı. - Bunların yerine klinikte gerçekten düşünülebilecek ama vaka hedefi için eksik/yanlış kalan seçenekler yazıldı. - Seçenek karşılaştırmaları aynı yeni seçenek metinlerine göre yeniden bağlamlandırıldı. - Sıcak su yanığı vakasında çeldiriciler yanık bakımın"
-      },
-      {
-        "sourceFilePath": "src/data/cases.js",
-        "text": "cursor bilgi moduna geçer ve küçük “i” işareti gösterir. - Loading/aria-busy/loading class içeren alanlarda minimal dönen progress halkası görünür. - Input, textarea, select ve contenteditable alanlarda özel cursor gizlenir; klasik text cursor korunur. - Mobil/tablet, hover desteklemeyen cihazlar ve prefers-reduced-motion kullanıcılarında özel cursor otomatik kapalıdır. - Cursor pointer-events:none i"
       }
     ],
     "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",

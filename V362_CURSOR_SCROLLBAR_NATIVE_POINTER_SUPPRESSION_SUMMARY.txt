@@ -1,7 +1,0 @@
-KlinikIQ V362 Cursor Scrollbar Native Pointer Suppression Summary
-
-- V360/V361 davranışındaki scrollbar alanına gelince custom cursor gizleme mantığı kaldırıldı.
-- Custom cursor scrollbar üzerinde de görünür kalacak şekilde ayarlandı.
-- WebKit/Chromium scrollbar pseudo-elementlerine cursor:none runtime CSS patch eklendi.
-- İç scrollable kutular, nested toolbox, modal ve ana sayfa scrollbar alanlarında Windows/native cursor görünümüne geri düşme azaltıldı.
-- Light/dark mode cursor renk ayrımı, sekmeye dönünce cursor recovery fix'i, sade halka + merkez nokta tasarımı ve input/text alanlarında klasik text cursor korunur.

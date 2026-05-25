@@ -455,7 +455,7 @@ function computeFloatingPosition(referenceEl, floatingEl, nestingLevel = 0) {
 
   // Nested cards read better when they open laterally if there is room. This
   // also prevents nested glossary previews in the Hap Bilgi screen from being
-  // pushed below the viewport while keeping the flashcard area scrollbar-free.
+  // pushed below the viewport while keeping the flashcard area layout stable.
   if (Number(nestingLevel || 0) > 0) {
     const spaceRight = viewport.width - reference.right - TOOLTIP_GAP - VIEWPORT_PADDING;
     const spaceLeft = reference.left - TOOLTIP_GAP - VIEWPORT_PADDING;
@@ -1155,7 +1155,6 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
       data-reveal-mode={GLOSSARY_EXPLANATION_MODE}
       data-glossary-entry-id={resolvedEntry?.id || ''}
       data-glossary-entry-term={visibleTermLabel}
-      data-cursor="glossary"
       data-nesting-level={nestingLevel}
       data-glossary-context-mode={contextMode}
       data-hover-open-delay={getGlossaryHoverOpenDelay(nestingLevel)}

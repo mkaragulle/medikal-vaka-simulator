@@ -645,24 +645,14 @@ tr:last-child td { border-bottom: 0; }
   --scroll-track: color-mix(in srgb, var(--surface-2) 64%, transparent);
 }
 * {
-  scrollbar-width: thin;
-  scrollbar-color: var(--scroll-thumb) transparent;
+  
+  
 }
-*::-webkit-scrollbar { width: 8px; height: 8px; }
-*::-webkit-scrollbar-track { background: transparent; border-radius: 999px; }
-*::-webkit-scrollbar-thumb {
-  min-height: 44px;
-  border-radius: 999px;
-  border: 2px solid transparent;
-  background-clip: padding-box;
-  background-color: var(--scroll-thumb);
-}
-*::-webkit-scrollbar-thumb:hover { background-color: var(--scroll-thumb-hover); }
-body::-webkit-scrollbar-track, .table-wrap::-webkit-scrollbar-track,
-.qbank-side-column::-webkit-scrollbar-track, .sidebar-layout::-webkit-scrollbar-track,
-.tools-panel::-webkit-scrollbar-track, .question-panel::-webkit-scrollbar-track, textarea::-webkit-scrollbar-track {
-  background: var(--scroll-track);
-}
+
+
+
+
+
 
 /* Header/action group tuning */
 .top-shell-nav { grid-template-columns: minmax(190px, 1fr) auto minmax(230px, 1fr); }
@@ -814,7 +804,7 @@ body::-webkit-scrollbar-track, .table-wrap::-webkit-scrollbar-track,
   border-radius: 14px;
   border: 1px solid var(--border-subtle);
   background: var(--surface-1);
-  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+  
 }
 .lab-table { min-width: 680px; table-layout: fixed; }
 .lab-table th:nth-child(1), .lab-table td:nth-child(1) { width: 23%; }
@@ -940,30 +930,21 @@ th, td { vertical-align: top; overflow-wrap: break-word; word-break: normal; }
   word-break: normal;
 }
 
-/* Premium scrollbars: body + every nested scroll area */
+
 * {
-  scrollbar-width: thin;
-  scrollbar-color: color-mix(in srgb, var(--text-muted) 38%, transparent) transparent;
+  
+  
 }
-::-webkit-scrollbar { width: 9px; height: 9px; }
-::-webkit-scrollbar-track { background: transparent; border-radius: 999px; }
-::-webkit-scrollbar-thumb {
-  background: color-mix(in srgb, var(--text-muted) 34%, transparent);
-  border-radius: 999px;
-  border: 2px solid transparent;
-  background-clip: padding-box;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: color-mix(in srgb, var(--accent) 44%, var(--text-muted) 26%);
-  border: 2px solid transparent;
-  background-clip: padding-box;
-}
-::-webkit-scrollbar-corner { background: transparent; }
+
+
+
+
+
 [data-theme="light"] * {
-  scrollbar-color: rgba(100,116,139,.34) transparent;
+  
 }
-[data-theme="light"] ::-webkit-scrollbar-thumb { background: rgba(100,116,139,.34); border: 2px solid transparent; background-clip: padding-box; }
-[data-theme="light"] ::-webkit-scrollbar-thumb:hover { background: rgba(15,118,110,.42); border: 2px solid transparent; background-clip: padding-box; }
+
+
 
 /* Header: one compact action group */
 .top-shell-nav {
@@ -1355,13 +1336,13 @@ th, td { vertical-align: top; overflow-wrap: break-word; word-break: normal; }
   font-size: 13px;
 }
 
-/* Lab table + horizontal scrollbar */
+
 .table-wrap,
 .lab-table-wrap {
   overflow: auto;
   max-width: 100%;
   border-radius: 14px;
-  scrollbar-gutter: stable;
+  
 }
 .lab-table {
   width: 100%;
@@ -1505,7 +1486,7 @@ th, td { vertical-align: top; overflow-wrap: break-word; word-break: normal; }
   padding: 16px;
   max-height: calc(100vh - 118px);
   overflow: auto;
-  scrollbar-gutter: stable;
+  
 }
 .tools-panel-head {
   display: flex;
@@ -1615,7 +1596,7 @@ th, td { vertical-align: top; overflow-wrap: break-word; word-break: normal; }
 .qbank-side-column {
   top: 88px;
   max-height: calc(100vh - 102px);
-  scrollbar-gutter: stable;
+  
 }
 .qbank-shell {
   gap: 18px;
@@ -1957,7 +1938,7 @@ th, td { vertical-align: top; overflow-wrap: break-word; word-break: normal; }
   font-size: 13px;
   background: transparent;
 }
-.case-list { scrollbar-gutter: stable; }
+.case-list {  }
 .case-list-item {
   min-height: auto;
   padding: 13px;
@@ -3065,12 +3046,10 @@ th, td { vertical-align: top; overflow-wrap: break-word; word-break: normal; }
     top: 80px;
     display: flex;
     overflow-x: auto;
-    scrollbar-width: none;
+    
   }
 
-  .case-section-nav::-webkit-scrollbar {
-    display: none;
-  }
+  
 
   .section-nav-btn {
     flex: 0 0 auto;
@@ -3596,14 +3575,9 @@ th, td { vertical-align: top; overflow-wrap: break-word; word-break: normal; }
   min-height: 176px !important;
 }
 
-.horizontal-case-list::-webkit-scrollbar {
-  height: 10px;
-}
 
-.horizontal-case-list::-webkit-scrollbar-thumb {
-  background: color-mix(in srgb, var(--border-strong) 84%, transparent);
-  border-radius: 999px;
-}
+
+
 
 @media (max-width: 1280px) {
   .compact-home-dashboard {
@@ -3824,12 +3798,10 @@ th, td { vertical-align: top; overflow-wrap: break-word; word-break: normal; }
   max-height: none !important;
   overflow: visible !important;
   padding-right: 0 !important;
-  scrollbar-width: none;
+  
 }
 
-.professional-right-column::-webkit-scrollbar {
-  display: none !important;
-}
+
 
 .right-workspace-shell {
   display: grid;
@@ -3954,8 +3926,8 @@ th, td { vertical-align: top; overflow-wrap: break-word; word-break: normal; }
 }
 
 .horizontal-case-list {
-  scrollbar-width: thin;
-  scrollbar-color: color-mix(in srgb, var(--accent) 35%, transparent) transparent;
+  
+  
 }
 
 .horizontal-case-card {
@@ -4651,7 +4623,7 @@ th, td { vertical-align: top; overflow-wrap: break-word; word-break: normal; }
 
 .spoiler-disclosure summary::-webkit-details-marker { display: none; }
 .spoiler-disclosure summary::before {
-  content: '▸';
+  content: "▸";
   margin-right: 8px;
   color: var(--accent);
   transition: transform 160ms var(--ease-standard);
@@ -6007,8 +5979,8 @@ html[data-theme="dark"] .card-surface {
 
 /* Right panel: shorter study mode, clean exam mode */
 .professional-right-column {
-  scrollbar-width: thin;
-  scrollbar-color: color-mix(in srgb, var(--text-muted) 25%, transparent) transparent;
+  
+  
 }
 
 .right-workspace-shell {
@@ -6016,7 +5988,7 @@ html[data-theme="dark"] .card-surface {
   gap: 12px;
   max-height: calc(100vh - 112px);
   overflow: auto;
-  scrollbar-width: thin;
+  
 }
 
 .tools-state-grid {
@@ -6264,7 +6236,7 @@ html[data-theme="dark"] .card-surface {
   .case-section-nav {
     overflow-x: auto;
     grid-template-columns: repeat(4, max-content);
-    scrollbar-width: none;
+    
   }
 
   .section-nav-btn {
@@ -6283,7 +6255,7 @@ html[data-theme="dark"] .card-surface {
 
   .lab-table-wrap {
     overflow-x: auto;
-    scrollbar-width: thin;
+    
   }
 
   .lab-table {
@@ -6774,7 +6746,7 @@ html[data-theme="dark"] .card-surface {
 }
 
 .investigation-order-head h2::after {
-  content: '';
+  content: "";
 }
 
 .investigation-option-card .order-inline-feedback {
@@ -7047,7 +7019,7 @@ html[data-theme="dark"] .card-surface {
 
 .evidence-chain-box li::before,
 .comparison-point-list li::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: .68em;
@@ -9877,9 +9849,9 @@ html[data-theme="dark"] .card-surface {
   .case-section-nav {
     display: flex !important;
     overflow-x: auto !important;
-    scrollbar-width: none !important;
+    
   }
-  .case-section-nav::-webkit-scrollbar { display: none !important; }
+  
   .section-nav-btn {
     flex: 1 0 112px !important;
   }
@@ -11105,7 +11077,7 @@ html[data-theme="dark"] .card-surface {
 }
 
 .inline-order-result.requested-result-panel::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 35px;
   top: 14px;
@@ -11269,9 +11241,9 @@ html[data-theme="dark"] .card-surface {
   top: 86px;
   z-index: 20;
   overflow-x: auto;
-  scrollbar-width: none;
+  
 }
-.case-section-nav.professional-section-nav::-webkit-scrollbar { display: none; }
+
 .section-nav-btn {
   display: inline-flex;
   align-items: center;
@@ -11448,11 +11420,11 @@ html[data-theme="dark"] .card-surface {
   gap: 7px;
   overflow-x: auto;
   overflow-y: hidden;
-  scrollbar-width: none;
+  
   -webkit-overflow-scrolling: touch;
   white-space: nowrap;
 }
-.case-section-nav.professional-section-nav::-webkit-scrollbar { display: none; }
+
 .case-section-nav .section-nav-btn {
   flex: 0 0 auto;
   min-width: max-content;
@@ -11886,10 +11858,10 @@ html[data-theme="dark"] .card-surface {
     gap: 5px !important;
     padding: 5px !important;
     overflow-x: auto !important;
-    scrollbar-width: none !important;
+    
     -webkit-overflow-scrolling: touch !important;
   }
-  .case-section-nav::-webkit-scrollbar { display: none !important; }
+  
   .case-section-nav .section-nav-btn,
   .case-section-nav.professional-section-nav .section-nav-btn {
     min-height: 38px !important;
@@ -13259,13 +13231,11 @@ h3 .glossary-term,
     border-radius: 20px !important;
     overflow-x: auto !important;
     overflow-y: visible !important;
-    scrollbar-width: none !important;
+    
     grid-template-columns: repeat(4, minmax(72px, 1fr)) !important;
   }
 
-  .case-section-nav.card-surface.professional-section-nav::-webkit-scrollbar,
-  .case-section-nav.professional-section-nav::-webkit-scrollbar,
-  .case-section-nav::-webkit-scrollbar { display: none !important; }
+  
 
   .case-section-nav .section-nav-btn,
   .case-section-nav.professional-section-nav .section-nav-btn {
@@ -15274,7 +15244,7 @@ html[data-theme="dark"] .professional-patient-summary-card .summary-risk-chip-ro
 
 .professional-vitals-grid .vital-card::before,
 .vitals-grid .vital-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0 auto auto 0;
   width: 100%;
@@ -16223,7 +16193,7 @@ html[data-theme="dark"] .vitals-grid .vital-card .vital-note,
 }
 
 .bottom-case-browser .horizontal-case-list .case-list-item .difficulty-badge::before {
-  content: '';
+  content: "";
   width: 7px;
   height: 7px;
   border-radius: 999px;
@@ -16780,7 +16750,7 @@ html[data-theme="dark"] :where(.icon-badge, .nav-brand-mark, .btn-icon, .button-
 
 .branch-route-hero::before,
 .branch-route-hero::after {
-  content: '';
+  content: "";
   position: absolute;
   border-radius: 999px;
   pointer-events: none;
@@ -16852,7 +16822,7 @@ html[data-theme="dark"] :where(.icon-badge, .nav-brand-mark, .btn-icon, .button-
 
 .branch-route-orb::before,
 .branch-route-orb::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 10px;
   border-radius: 28px;
@@ -16966,7 +16936,7 @@ html[data-theme="dark"] :where(.icon-badge, .nav-brand-mark, .btn-icon, .button-
 
 .sparkle-dot::before,
 .sparkle-dot::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
@@ -17915,14 +17885,11 @@ html[data-theme="dark"] .branch-route-orb,
   padding: 0 0 1px !important;
   overflow-x: auto !important;
   overflow-y: hidden !important;
-  scrollbar-width: none !important;
+  
   grid-template-columns: none !important;
 }
 
-.expert-insight-card.safe-expert-card .expert-evidence-list::-webkit-scrollbar,
-.safe-expert-card.expert-insight-card .expert-evidence-list::-webkit-scrollbar {
-  display: none !important;
-}
+
 
 .expert-insight-card.safe-expert-card .expert-evidence-list em,
 .safe-expert-card.expert-insight-card .expert-evidence-list em,
@@ -18359,7 +18326,7 @@ html[data-theme="dark"] .branch-route-orb,
 .branch-card .icon-badge { position: relative; overflow: visible; transform-origin: center; will-change: transform, filter; }
 .branch-card .icon-badge svg { transform-origin: center; will-change: transform, filter; }
 .branch-card.is-launching .icon-badge::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: -7px;
   border-radius: inherit;
@@ -18380,18 +18347,18 @@ html[data-theme="dark"] .branch-route-orb,
 .branch-card.is-launching[data-branch="infectious-diseases"] .icon-badge svg { animation: branch-shield-pop 420ms cubic-bezier(.22,1,.36,1) 1 both; }
 .branch-card.is-launching[data-branch="infectious-diseases"] .icon-badge::after { animation: branch-shield-ring 420ms cubic-bezier(.22,1,.36,1) 1 both; }
 .branch-card.is-launching[data-branch="orthopedics"] .icon-badge svg { animation: branch-bone-settle 420ms cubic-bezier(.22,1,.36,1) 1 both; }
-@keyframes branch-cardio-pulse { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)} 18%{transform:scale(1.24);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 24%,transparent))} 34%{transform:scale(.94)} 52%{transform:scale(1.14);filter:drop-shadow(0 0 5px color-mix(in srgb,currentColor 16%,transparent))} 74%{transform:scale(1)} }
-@keyframes branch-internal-sway { 0%,100%{transform:rotate(0deg) translateY(0)} 25%{transform:rotate(-8deg) translateY(-1px)} 52%{transform:rotate(7deg) translateY(0)} 76%{transform:rotate(-2deg)} }
-@keyframes branch-neuro-glow { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)} 36%{transform:scale(1.12);filter:drop-shadow(0 0 10px color-mix(in srgb,currentColor 32%,transparent))} 66%{transform:scale(.99);filter:drop-shadow(0 0 4px color-mix(in srgb,currentColor 18%,transparent))} }
-@keyframes branch-peds-bounce { 0%,100%{transform:translateY(0) scale(1)} 24%{transform:translateY(-5px) scale(1.04)} 48%{transform:translateY(1px) scale(.98)} 72%{transform:translateY(-2px) scale(1.01)} }
-@keyframes branch-surgery-slice { 0%,100%{transform:translateX(0) rotate(0deg)} 22%{transform:translateX(3px) rotate(-13deg)} 44%{transform:translateX(-2px) rotate(8deg)} 70%{transform:translateX(0) rotate(-3deg)} }
-@keyframes branch-lung-breathe { 0%,100%{transform:scale(1)} 36%{transform:scale(1.16)} 70%{transform:scale(.98)} }
-@keyframes branch-shield-pop { 0%,100%{transform:scale(1)} 24%{transform:scale(1.18)} 50%{transform:scale(.94)} 74%{transform:scale(1.04)} }
-@keyframes branch-bone-settle { 0%,100%{transform:rotate(0deg) scale(1)} 24%{transform:rotate(-8deg) scale(1.06)} 50%{transform:rotate(6deg) scale(.98)} 76%{transform:rotate(-2deg) scale(1.01)} }
-@keyframes branch-icon-ring-once { 0%{opacity:0;transform:scale(.78)} 24%{opacity:.22;transform:scale(1)} 100%{opacity:0;transform:scale(1.36)} }
-@keyframes branch-shield-ring { 0%{opacity:0;transform:scale(.74)} 30%{opacity:.28;transform:scale(1.04)} 100%{opacity:0;transform:scale(1.42)} }
-@keyframes branch-progress-flash { 0%,100%{filter:brightness(1)} 45%{filter:brightness(1.35)} }
-@keyframes branch-arrow-nudge { 0%,100%{transform:translateX(0);opacity:1} 45%{transform:translateX(4px);opacity:.9} }
+@keyframes branch-cardio-pulse { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent);} 18%{transform:scale(1.24);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 24%,transparent));} 34%{transform:scale(.94);} 52%{transform:scale(1.14);filter:drop-shadow(0 0 5px color-mix(in srgb,currentColor 16%,transparent));} 74%{transform:scale(1);} }
+@keyframes branch-internal-sway { 0%,100%{transform:rotate(0deg) translateY(0);} 25%{transform:rotate(-8deg) translateY(-1px);} 52%{transform:rotate(7deg) translateY(0);} 76%{transform:rotate(-2deg);} }
+@keyframes branch-neuro-glow { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent);} 36%{transform:scale(1.12);filter:drop-shadow(0 0 10px color-mix(in srgb,currentColor 32%,transparent));} 66%{transform:scale(.99);filter:drop-shadow(0 0 4px color-mix(in srgb,currentColor 18%,transparent));} }
+@keyframes branch-peds-bounce { 0%,100%{transform:translateY(0) scale(1);} 24%{transform:translateY(-5px) scale(1.04);} 48%{transform:translateY(1px) scale(.98);} 72%{transform:translateY(-2px) scale(1.01);} }
+@keyframes branch-surgery-slice { 0%,100%{transform:translateX(0) rotate(0deg);} 22%{transform:translateX(3px) rotate(-13deg);} 44%{transform:translateX(-2px) rotate(8deg);} 70%{transform:translateX(0) rotate(-3deg);} }
+@keyframes branch-lung-breathe { 0%,100%{transform:scale(1);} 36%{transform:scale(1.16);} 70%{transform:scale(.98);} }
+@keyframes branch-shield-pop { 0%,100%{transform:scale(1);} 24%{transform:scale(1.18);} 50%{transform:scale(.94);} 74%{transform:scale(1.04);} }
+@keyframes branch-bone-settle { 0%,100%{transform:rotate(0deg) scale(1);} 24%{transform:rotate(-8deg) scale(1.06);} 50%{transform:rotate(6deg) scale(.98);} 76%{transform:rotate(-2deg) scale(1.01);} }
+@keyframes branch-icon-ring-once { 0%{opacity:0;transform:scale(.78);} 24%{opacity:.22;transform:scale(1);} 100%{opacity:0;transform:scale(1.36);} }
+@keyframes branch-shield-ring { 0%{opacity:0;transform:scale(.74);} 30%{opacity:.28;transform:scale(1.04);} 100%{opacity:0;transform:scale(1.42);} }
+@keyframes branch-progress-flash { 0%,100%{filter:brightness(1);} 45%{filter:brightness(1.35);} }
+@keyframes branch-arrow-nudge { 0%,100%{transform:translateX(0);opacity:1;} 45%{transform:translateX(4px);opacity:.9;} }
 @media (prefers-reduced-motion: reduce) {
   .branch-card.is-launching .icon-badge,
   .branch-card.is-launching .icon-badge svg,
@@ -18452,7 +18419,7 @@ html[data-theme="dark"] .branch-route-orb,
 
 .branch-card.is-launching .branch-card-head .icon-badge::before,
 .branch-card.is-launching .branch-card-head .icon-badge::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: -8px;
   z-index: -1;
@@ -18479,35 +18446,35 @@ html[data-theme="dark"] .branch-route-orb,
   animation-fill-mode: both !important;
 }
 
-.branch-card.is-launching[data-branch='cardiovascular'] .branch-card-head .icon-badge svg {
+.branch-card.is-launching[data-branch="cardiovascular"] .branch-card-head .icon-badge svg {
   animation-name: branchLaunchCardioPulse !important;
 }
 
-.branch-card.is-launching[data-branch='internal-medicine'] .branch-card-head .icon-badge svg {
+.branch-card.is-launching[data-branch="internal-medicine"] .branch-card-head .icon-badge svg {
   animation-name: branchLaunchSway !important;
 }
 
-.branch-card.is-launching[data-branch='neurology'] .branch-card-head .icon-badge svg {
+.branch-card.is-launching[data-branch="neurology"] .branch-card-head .icon-badge svg {
   animation-name: branchLaunchNeuroGlow !important;
 }
 
-.branch-card.is-launching[data-branch='pediatrics'] .branch-card-head .icon-badge svg {
+.branch-card.is-launching[data-branch="pediatrics"] .branch-card-head .icon-badge svg {
   animation-name: branchLaunchPedsBounce !important;
 }
 
-.branch-card.is-launching[data-branch='general-surgery'] .branch-card-head .icon-badge svg {
+.branch-card.is-launching[data-branch="general-surgery"] .branch-card-head .icon-badge svg {
   animation-name: branchLaunchSurgerySlice !important;
 }
 
-.branch-card.is-launching[data-branch='pulmonology'] .branch-card-head .icon-badge svg {
+.branch-card.is-launching[data-branch="pulmonology"] .branch-card-head .icon-badge svg {
   animation-name: branchLaunchLungBreathe !important;
 }
 
-.branch-card.is-launching[data-branch='infectious-diseases'] .branch-card-head .icon-badge svg {
+.branch-card.is-launching[data-branch="infectious-diseases"] .branch-card-head .icon-badge svg {
   animation-name: branchLaunchShieldPop !important;
 }
 
-.branch-card.is-launching[data-branch='orthopedics'] .branch-card-head .icon-badge svg {
+.branch-card.is-launching[data-branch="orthopedics"] .branch-card-head .icon-badge svg {
   animation-name: branchLaunchBoneTilt !important;
 }
 
@@ -18669,7 +18636,7 @@ html[data-theme="dark"] .branch-route-orb,
   overflow: hidden;
 }
 .auth-brand-panel::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: auto -18% -35% auto;
   width: 420px;
@@ -18996,7 +18963,7 @@ html[data-theme="dark"] .branch-route-orb,
 
 .auth-divider::before,
 .auth-divider::after {
-  content: '';
+  content: "";
   height: 1px;
   background: color-mix(in srgb, var(--border-subtle) 84%, transparent);
 }
@@ -19979,7 +19946,7 @@ html[data-theme="dark"] .google-g-blue {
 }
 .auth-minimal-divider::before,
 .auth-minimal-divider::after {
-  content: '';
+  content: "";
   height: 1px;
   background: #e5eef0;
 }
@@ -21218,12 +21185,10 @@ body.klinikiq-auth-lock .auth-minimal-card {
 body.klinikiq-auth-lock .auth-minimal-card {
   overflow-y: auto !important;
   overscroll-behavior: contain;
-  scrollbar-width: none;
+  
 }
 
-body.klinikiq-auth-lock .auth-minimal-card::-webkit-scrollbar {
-  display: none;
-}
+
 
 /* The auth theme switch now uses the exact same core component as the navbar,
    but with a locked square frame so the icon never sits off-center. */
@@ -22178,7 +22143,7 @@ body.klinikiq-auth-lock .auth-minimal-feature-card {
 }
 
 body.klinikiq-auth-lock .auth-minimal-feature-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0 auto 0 0;
   width: 3px;
@@ -23278,7 +23243,7 @@ body.klinikiq-auth-lock .kq-orbit-dots {
 
 body.klinikiq-auth-lock .kq-orbit-dots::before,
 body.klinikiq-auth-lock .kq-orbit-dots::after {
-  content: '';
+  content: "";
   position: absolute;
   border-radius: 999px;
   background: color-mix(in srgb, var(--accent) 82%, white 18%);
@@ -25611,16 +25576,10 @@ body.klinikiq-auth-lock,
 body.klinikiq-auth-lock html,
 body.klinikiq-auth-lock #root,
 body.klinikiq-auth-lock .app-shell:has(.auth-minimal-shell) {
-  scrollbar-width: none !important;
+  
 }
 
-body.klinikiq-auth-lock::-webkit-scrollbar,
-body.klinikiq-auth-lock .app-shell:has(.auth-minimal-shell)::-webkit-scrollbar,
-body.klinikiq-auth-lock .auth-minimal-card::-webkit-scrollbar {
-  width: 0 !important;
-  height: 0 !important;
-  display: none !important;
-}
+
 
 @media (min-width: 1121px) {
   html.klinikiq-auth-lock,
@@ -25937,7 +25896,7 @@ body.klinikiq-auth-lock .auth-minimal-brand-v4 {
 }
 
 body.klinikiq-auth-lock .auth-minimal-brand-v4::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
@@ -26005,7 +25964,7 @@ body.klinikiq-auth-lock .auth-hero-illustration-v4 {
 }
 
 body.klinikiq-auth-lock .auth-hero-illustration-v4::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 50% auto auto 50%;
   width: min(92%, 390px);
@@ -28844,7 +28803,7 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-wrong-chip strong,
     min-height: 0 !important;
     overflow: hidden !important;
     padding-right: 0 !important;
-    scrollbar-width: auto !important;
+    
   }
 
   body:not(.klinikiq-auth-lock) .professional-right-column .right-workspace-shell {
@@ -28856,7 +28815,7 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-wrong-chip strong,
     overscroll-behavior: contain !important;
     -webkit-overflow-scrolling: touch;
     touch-action: pan-y;
-    scrollbar-gutter: stable both-edges;
+    
     scroll-behavior: smooth;
   }
 
@@ -28869,29 +28828,13 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-wrong-chip strong,
     overflow: visible !important;
   }
 
-  body:not(.klinikiq-auth-lock) .professional-right-column .right-workspace-shell::-webkit-scrollbar {
-    width: 10px !important;
-    height: 10px !important;
-    display: block !important;
-  }
+  
 
-  body:not(.klinikiq-auth-lock) .professional-right-column .right-workspace-shell::-webkit-scrollbar-track {
-    background: transparent !important;
-    border-radius: 999px !important;
-  }
+  
 
-  body:not(.klinikiq-auth-lock) .professional-right-column .right-workspace-shell::-webkit-scrollbar-thumb {
-    min-height: 44px !important;
-    border: 3px solid transparent !important;
-    border-radius: 999px !important;
-    background: color-mix(in srgb, var(--text-muted) 34%, transparent) !important;
-    background-clip: padding-box !important;
-  }
+  
 
-  body:not(.klinikiq-auth-lock) .professional-right-column .right-workspace-shell::-webkit-scrollbar-thumb:hover {
-    background: color-mix(in srgb, var(--accent) 42%, transparent) !important;
-    background-clip: padding-box !important;
-  }
+  
 }
 
 @media (min-width: 1181px) and (max-width: 1320px) {
@@ -28914,7 +28857,7 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-wrong-chip strong,
     height: auto !important;
     max-height: none !important;
     overflow: visible !important;
-    scrollbar-gutter: auto !important;
+    
   }
 }
 
@@ -28938,7 +28881,7 @@ body:not(.klinikiq-auth-lock) .right-workspace-shell.card-surface {
   overscroll-behavior-y: contain !important;
   -webkit-overflow-scrolling: touch !important;
   touch-action: pan-y !important;
-  scrollbar-gutter: stable !important;
+  
   scroll-padding-bottom: 28px !important;
 }
 
@@ -28993,7 +28936,7 @@ body:not(.klinikiq-auth-lock) .right-workspace-shell.card-surface {
     height: auto !important;
     max-height: none !important;
     overflow: visible !important;
-    scrollbar-gutter: auto !important;
+    
   }
 }
 
@@ -29946,79 +29889,79 @@ html[data-theme="dark"] .tus-spot-olgular-question-callout,
 .minor-tile.tile-three { bottom: 18px; left: 18px; animation-delay: 280ms; }
 .minor-tile.tile-four { bottom: 18px; right: 18px; animation-delay: 420ms; }
 
-@keyframes cardSpotFlash { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)} 42%{transform:scale(1.08) rotate(-4deg);filter:drop-shadow(0 0 9px color-mix(in srgb,currentColor 26%,transparent))} 62%{transform:scale(.98) rotate(2deg)} }
-@keyframes cardAnatomyAssemble { 0%,100%{transform:translateY(0)} 42%{transform:translateY(-2px)} 58%{transform:translateY(1px)} }
-@keyframes cardPhysiologyWave { 0%,100%{transform:scale(1)} 24%{transform:scale(1.12)} 38%{transform:scale(.97)} 54%{transform:scale(1.08)} 74%{transform:scale(1)} }
-@keyframes cardCellDivide { 0%,100%{transform:scale(1) rotate(0)} 46%{transform:scale(1.06) rotate(3deg)} 66%{transform:scale(.98) rotate(-2deg)} }
-@keyframes cardFlaskSway { 0%,100%{transform:rotate(0deg) translateY(0)} 30%{transform:rotate(-6deg) translateY(-1px)} 58%{transform:rotate(5deg) translateY(0)} 78%{transform:rotate(-2deg)} }
-@keyframes cardMicrobePulse { 0%,100%{transform:scale(1) rotate(0)} 48%{transform:scale(1.08) rotate(5deg)} 72%{transform:scale(.99) rotate(-2deg)} }
-@keyframes cardPathologyFocus { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)} 48%{transform:scale(1.05);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 24%,transparent))} }
-@keyframes cardPharmaPulse { 0%,100%{transform:scale(1) rotate(0)} 42%{transform:scale(1.08) rotate(-4deg)} 64%{transform:scale(.98) rotate(2deg)} }
-@keyframes cardInternalBreathe { 0%,100%{transform:scale(1)} 50%{transform:scale(1.09)} }
-@keyframes cardPedsWarmBounce { 0%,100%{transform:translateY(0) scale(1)} 42%{transform:translateY(-3px) scale(1.05)} 68%{transform:translateY(1px) scale(.99)} }
-@keyframes cardSurgeryGlint { 0%,100%{transform:translateX(0) rotate(0)} 44%{transform:translateX(2px) rotate(-7deg)} 64%{transform:translateX(-1px) rotate(3deg)} }
-@keyframes cardObgynProtect { 0%,100%{transform:scale(1)} 50%{transform:scale(1.075)} }
-@keyframes cardMinorTiles { 0%,100%{transform:scale(1)} 48%{transform:scale(1.06) rotate(2deg)} 68%{transform:scale(.99) rotate(-1deg)} }
+@keyframes cardSpotFlash { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent);} 42%{transform:scale(1.08) rotate(-4deg);filter:drop-shadow(0 0 9px color-mix(in srgb,currentColor 26%,transparent));} 62%{transform:scale(.98) rotate(2deg);} }
+@keyframes cardAnatomyAssemble { 0%,100%{transform:translateY(0);} 42%{transform:translateY(-2px);} 58%{transform:translateY(1px);} }
+@keyframes cardPhysiologyWave { 0%,100%{transform:scale(1);} 24%{transform:scale(1.12);} 38%{transform:scale(.97);} 54%{transform:scale(1.08);} 74%{transform:scale(1);} }
+@keyframes cardCellDivide { 0%,100%{transform:scale(1) rotate(0);} 46%{transform:scale(1.06) rotate(3deg);} 66%{transform:scale(.98) rotate(-2deg);} }
+@keyframes cardFlaskSway { 0%,100%{transform:rotate(0deg) translateY(0);} 30%{transform:rotate(-6deg) translateY(-1px);} 58%{transform:rotate(5deg) translateY(0);} 78%{transform:rotate(-2deg);} }
+@keyframes cardMicrobePulse { 0%,100%{transform:scale(1) rotate(0);} 48%{transform:scale(1.08) rotate(5deg);} 72%{transform:scale(.99) rotate(-2deg);} }
+@keyframes cardPathologyFocus { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent);} 48%{transform:scale(1.05);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 24%,transparent));} }
+@keyframes cardPharmaPulse { 0%,100%{transform:scale(1) rotate(0);} 42%{transform:scale(1.08) rotate(-4deg);} 64%{transform:scale(.98) rotate(2deg);} }
+@keyframes cardInternalBreathe { 0%,100%{transform:scale(1);} 50%{transform:scale(1.09);} }
+@keyframes cardPedsWarmBounce { 0%,100%{transform:translateY(0) scale(1);} 42%{transform:translateY(-3px) scale(1.05);} 68%{transform:translateY(1px) scale(.99);} }
+@keyframes cardSurgeryGlint { 0%,100%{transform:translateX(0) rotate(0);} 44%{transform:translateX(2px) rotate(-7deg);} 64%{transform:translateX(-1px) rotate(3deg);} }
+@keyframes cardObgynProtect { 0%,100%{transform:scale(1);} 50%{transform:scale(1.075);} }
+@keyframes cardMinorTiles { 0%,100%{transform:scale(1);} 48%{transform:scale(1.06) rotate(2deg);} 68%{transform:scale(.99) rotate(-1deg);} }
 
-@keyframes launchSpotSpark { 0%,100%{transform:scale(1) rotate(0)} 18%{transform:scale(1.26) rotate(-8deg)} 38%{transform:scale(.92) rotate(4deg)} 58%{transform:scale(1.14) rotate(-2deg)} }
-@keyframes launchAnatomyBuild { 0%,100%{transform:translateY(0) scale(1)} 20%{transform:translateY(-3px) scale(1.12)} 45%{transform:translateY(2px) scale(.95)} 70%{transform:translateY(0) scale(1.04)} }
-@keyframes launchPhysiologyPulse { 0%,100%{transform:scale(1)} 14%{transform:scale(1.32)} 31%{transform:scale(.88)} 49%{transform:scale(1.18)} 68%{transform:scale(.98)} }
-@keyframes launchCellDivide { 0%,100%{transform:scale(1) rotate(0)} 25%{transform:scale(1.20) rotate(6deg)} 48%{transform:scale(.93) rotate(-5deg)} 72%{transform:scale(1.06)} }
-@keyframes launchFlaskReact { 0%,100%{transform:rotate(0deg) translateY(0)} 18%{transform:rotate(-12deg) translateY(-2px)} 42%{transform:rotate(10deg) translateY(1px)} 66%{transform:rotate(-4deg) translateY(0)} }
-@keyframes launchMicrobeBloom { 0%,100%{transform:scale(1) rotate(0)} 22%{transform:scale(1.23) rotate(8deg)} 48%{transform:scale(.92) rotate(-5deg)} 72%{transform:scale(1.06)} }
-@keyframes launchPathologyFocus { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)} 35%{transform:scale(1.18);filter:drop-shadow(0 0 12px color-mix(in srgb,currentColor 36%,transparent))} 65%{transform:scale(.97)} }
-@keyframes launchPharmaDose { 0%,100%{transform:scale(1) rotate(0)} 24%{transform:scale(1.18) rotate(-7deg)} 48%{transform:scale(.92) rotate(5deg)} 72%{transform:scale(1.04)} }
-@keyframes launchInternalPulse { 0%,100%{transform:scale(1)} 18%{transform:scale(1.22)} 43%{transform:scale(.94)} 67%{transform:scale(1.08)} }
-@keyframes launchPedsBounce { 0%,100%{transform:translateY(0) scale(1)} 22%{transform:translateY(-8px) scale(1.08)} 48%{transform:translateY(2px) scale(.96)} 72%{transform:translateY(-2px) scale(1.02)} }
-@keyframes launchSurgeryPrecision { 0%,100%{transform:translateX(0) rotate(0)} 20%{transform:translateX(5px) rotate(-15deg)} 46%{transform:translateX(-3px) rotate(8deg)} 68%{transform:translateX(1px) rotate(-3deg)} }
-@keyframes launchObgynHalo { 0%,100%{transform:scale(1)} 25%{transform:scale(1.18)} 50%{transform:scale(.94)} 74%{transform:scale(1.06)} }
-@keyframes launchMinorAssemble { 0%,100%{transform:scale(1) rotate(0)} 25%{transform:scale(1.17) rotate(4deg)} 50%{transform:scale(.94) rotate(-4deg)} 75%{transform:scale(1.05)} }
+@keyframes launchSpotSpark { 0%,100%{transform:scale(1) rotate(0);} 18%{transform:scale(1.26) rotate(-8deg);} 38%{transform:scale(.92) rotate(4deg);} 58%{transform:scale(1.14) rotate(-2deg);} }
+@keyframes launchAnatomyBuild { 0%,100%{transform:translateY(0) scale(1);} 20%{transform:translateY(-3px) scale(1.12);} 45%{transform:translateY(2px) scale(.95);} 70%{transform:translateY(0) scale(1.04);} }
+@keyframes launchPhysiologyPulse { 0%,100%{transform:scale(1);} 14%{transform:scale(1.32);} 31%{transform:scale(.88);} 49%{transform:scale(1.18);} 68%{transform:scale(.98);} }
+@keyframes launchCellDivide { 0%,100%{transform:scale(1) rotate(0);} 25%{transform:scale(1.20) rotate(6deg);} 48%{transform:scale(.93) rotate(-5deg);} 72%{transform:scale(1.06);} }
+@keyframes launchFlaskReact { 0%,100%{transform:rotate(0deg) translateY(0);} 18%{transform:rotate(-12deg) translateY(-2px);} 42%{transform:rotate(10deg) translateY(1px);} 66%{transform:rotate(-4deg) translateY(0);} }
+@keyframes launchMicrobeBloom { 0%,100%{transform:scale(1) rotate(0);} 22%{transform:scale(1.23) rotate(8deg);} 48%{transform:scale(.92) rotate(-5deg);} 72%{transform:scale(1.06);} }
+@keyframes launchPathologyFocus { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent);} 35%{transform:scale(1.18);filter:drop-shadow(0 0 12px color-mix(in srgb,currentColor 36%,transparent));} 65%{transform:scale(.97);} }
+@keyframes launchPharmaDose { 0%,100%{transform:scale(1) rotate(0);} 24%{transform:scale(1.18) rotate(-7deg);} 48%{transform:scale(.92) rotate(5deg);} 72%{transform:scale(1.04);} }
+@keyframes launchInternalPulse { 0%,100%{transform:scale(1);} 18%{transform:scale(1.22);} 43%{transform:scale(.94);} 67%{transform:scale(1.08);} }
+@keyframes launchPedsBounce { 0%,100%{transform:translateY(0) scale(1);} 22%{transform:translateY(-8px) scale(1.08);} 48%{transform:translateY(2px) scale(.96);} 72%{transform:translateY(-2px) scale(1.02);} }
+@keyframes launchSurgeryPrecision { 0%,100%{transform:translateX(0) rotate(0);} 20%{transform:translateX(5px) rotate(-15deg);} 46%{transform:translateX(-3px) rotate(8deg);} 68%{transform:translateX(1px) rotate(-3deg);} }
+@keyframes launchObgynHalo { 0%,100%{transform:scale(1);} 25%{transform:scale(1.18);} 50%{transform:scale(.94);} 74%{transform:scale(1.06);} }
+@keyframes launchMinorAssemble { 0%,100%{transform:scale(1) rotate(0);} 25%{transform:scale(1.17) rotate(4deg);} 50%{transform:scale(.94) rotate(-4deg);} 75%{transform:scale(1.05);} }
 
 @keyframes branchPremiumOrbit { to { transform: rotate(360deg); } }
 @keyframes branchPremiumDotOrbit { from { transform: rotate(0deg) translateX(-50%); } to { transform: rotate(360deg) translateX(-50%); } }
-@keyframes branchPremiumRingExpand { 0%{transform:scale(.74);opacity:0} 28%{opacity:.58} 100%{transform:scale(1.22);opacity:0} }
-@keyframes branchPremiumGlowBreath { 0%,100%{transform:scale(.92);opacity:.42} 50%{transform:scale(1.12);opacity:.82} }
-@keyframes branchPremiumOrbFloat { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-3px) scale(1.025)} }
-@keyframes routeCoreBreath { 0%,100%{transform:scale(.9);opacity:.32} 50%{transform:scale(1.12);opacity:.66} }
-@keyframes routeIconShineSweep { 0%,35%{transform:translateX(-145%);opacity:0} 52%{opacity:.75} 78%,100%{transform:translateX(145%);opacity:0} }
-@keyframes routeSpotSpark { 0%,100%{transform:scale(1) rotate(0)} 18%{transform:scale(1.18) rotate(-7deg)} 36%{transform:scale(.96) rotate(3deg)} 56%{transform:scale(1.09) rotate(-2deg)} }
-@keyframes routeAnatomyAssemble { 0%,100%{transform:translateY(0) scale(1)} 35%{transform:translateY(-3px) scale(1.05)} 58%{transform:translateY(1px) scale(.98)} }
-@keyframes routePhysiologyBeat { 0%,100%{transform:scale(1)} 16%{transform:scale(1.18)} 31%{transform:scale(.95)} 48%{transform:scale(1.11)} 70%{transform:scale(1)} }
-@keyframes routeCellMorph { 0%,100%{transform:scale(1) rotate(0)} 45%{transform:scale(1.08) rotate(4deg)} 68%{transform:scale(.98) rotate(-2deg)} }
-@keyframes routeFlaskSway { 0%,100%{transform:rotate(0deg) translateY(0)} 28%{transform:rotate(-8deg) translateY(-2px)} 56%{transform:rotate(7deg) translateY(1px)} 78%{transform:rotate(-2deg)} }
-@keyframes routeMicrobePulse { 0%,100%{transform:scale(1) rotate(0)} 45%{transform:scale(1.09) rotate(6deg)} 70%{transform:scale(.98) rotate(-3deg)} }
-@keyframes routePathologyFocus { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 8px color-mix(in srgb,var(--route-accent) 22%,transparent))} 50%{transform:scale(1.065);filter:drop-shadow(0 0 18px color-mix(in srgb,var(--route-accent) 38%,transparent))} }
-@keyframes routePharmaDose { 0%,100%{transform:scale(1) rotate(0)} 42%{transform:scale(1.08) rotate(-5deg)} 66%{transform:scale(.98) rotate(2deg)} }
-@keyframes routeInternalBreathe { 0%,100%{transform:scale(1)} 50%{transform:scale(1.13)} }
-@keyframes routePedsBounce { 0%,100%{transform:translateY(0) scale(1)} 38%{transform:translateY(-7px) scale(1.05)} 64%{transform:translateY(1px) scale(.98)} }
-@keyframes routeSurgeryPrecision { 0%,100%{transform:translateX(0) rotate(0)} 35%{transform:translateX(6px) rotate(-12deg)} 62%{transform:translateX(-2px) rotate(6deg)} }
-@keyframes routeObgynProtect { 0%,100%{transform:scale(1)} 50%{transform:scale(1.09)} }
-@keyframes routeMinorAssemble { 0%,100%{transform:scale(1) rotate(0)} 50%{transform:scale(1.07) rotate(2deg)} 70%{transform:scale(.99) rotate(-1deg)} }
-@keyframes spotRaySweep { 0%,100%{opacity:0;transform:translate(-50%,-50%) rotate(var(--ray-rot,20deg)) scaleX(.2)} 38%{opacity:.85;transform:translate(-50%,-50%) rotate(var(--ray-rot,20deg)) scaleX(1)} }
-@keyframes sparklePop { 0%,100%{opacity:0;transform:scale(.6) rotate(0)} 42%{opacity:.9;transform:scale(1.28) rotate(45deg)} }
-@keyframes anatomySegmentSlide { 0%,100%{opacity:.22;transform:translateX(-5px)} 50%{opacity:.8;transform:translateX(5px)} }
-@keyframes anatomyDotPulse { 0%,100%{opacity:.35;transform:scale(.9)} 50%{opacity:.95;transform:scale(1.22)} }
-@keyframes physiologyWaveExpand { 0%{opacity:0;transform:translate(-50%,-50%) scale(.72)} 28%{opacity:.78} 100%{opacity:0;transform:translate(-50%,-50%) scale(1.42)} }
-@keyframes physiologyDotTravel { 0%{opacity:0;transform:translateX(0) scale(.7)} 22%{opacity:1} 78%{opacity:.8} 100%{opacity:0;transform:translateX(64px) scale(1.05)} }
-@keyframes cellOrbitBreathe { 0%,100%{transform:scale(.92) rotate(0);opacity:.22} 50%{transform:scale(1.08) rotate(16deg);opacity:.58} }
-@keyframes cellSeedDivide { 0%,100%{transform:scale(.82);opacity:.38} 46%{transform:scale(1.28);opacity:.96} }
-@keyframes routeFlaskBubble { 0%{opacity:0;transform:translateY(8px) scale(.6)} 34%{opacity:.82} 100%{opacity:0;transform:translateY(-35px) scale(1)} }
-@keyframes routeFlaskLiquid { 0%,100%{opacity:.34;transform:translateX(-50%) scaleX(.78)} 50%{opacity:.86;transform:translateX(-50%) scaleX(1.12)} }
-@keyframes microbeParticleOrbit { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-@keyframes microbeHaloPulse { 0%{opacity:0;transform:scale(.72)} 30%{opacity:.54} 100%{opacity:0;transform:scale(1.32)} }
-@keyframes pathologyFocusSweep { 0%,100%{opacity:0;transform:scale(.86)} 44%{opacity:.68;transform:scale(1.03)} }
-@keyframes pathologyCellBlink { 0%,100%{opacity:.22;transform:scale(.82)} 48%{opacity:.92;transform:scale(1.22)} }
-@keyframes pharmaRingPulse { 0%{opacity:0;transform:scale(.74)} 30%{opacity:.62} 100%{opacity:0;transform:scale(1.34)} }
-@keyframes pharmaDoseSweep { 0%,100%{opacity:0;transform:rotate(-45deg) translateX(-16px) scaleX(.4)} 45%{opacity:.85;transform:rotate(-45deg) translateX(10px) scaleX(1)} }
-@keyframes internalBreathWave { 0%{opacity:0;transform:translate(-50%,-50%) scale(.76)} 28%{opacity:.6} 100%{opacity:0;transform:translate(-50%,-50%) scale(1.34)} }
-@keyframes internalHeartDot { 0%,100%{transform:scale(.8);opacity:.34} 23%{transform:scale(1.45);opacity:.95} 40%{transform:scale(.9);opacity:.55} 58%{transform:scale(1.2);opacity:.8} }
-@keyframes pedsAuraPulse { 0%{opacity:0;transform:scale(.76)} 30%{opacity:.52} 100%{opacity:0;transform:scale(1.3)} }
-@keyframes pedsSparkle { 0%,100%{opacity:0;transform:scale(.6) rotate(0)} 42%{opacity:.9;transform:scale(1.22) rotate(45deg)} }
-@keyframes surgeryCleanCut { 0%,100%{opacity:0;transform:translate(-50%,-50%) rotate(-37deg) scaleX(.16)} 34%{opacity:.88;transform:translate(-50%,-50%) rotate(-37deg) scaleX(1)} 62%{opacity:.22} }
-@keyframes surgeryGlint { 0%,100%{opacity:0;transform:scale(.6) rotate(0)} 44%{opacity:.9;transform:scale(1.2) rotate(45deg)} }
-@keyframes obgynHaloPulse { 0%{opacity:0;transform:scale(.74)} 32%{opacity:.56} 100%{opacity:0;transform:scale(1.32)} }
-@keyframes obgynCoreGlow { 0%,100%{opacity:.28;transform:scale(.8)} 50%{opacity:.86;transform:scale(1.25)} }
-@keyframes minorTileAssemble { 0%,100%{opacity:.28;transform:translateY(0) scale(.9)} 48%{opacity:.9;transform:translateY(-3px) scale(1.1)} }
+@keyframes branchPremiumRingExpand { 0%{transform:scale(.74);opacity:0;} 28%{opacity:.58;} 100%{transform:scale(1.22);opacity:0;} }
+@keyframes branchPremiumGlowBreath { 0%,100%{transform:scale(.92);opacity:.42;} 50%{transform:scale(1.12);opacity:.82;} }
+@keyframes branchPremiumOrbFloat { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-3px) scale(1.025);} }
+@keyframes routeCoreBreath { 0%,100%{transform:scale(.9);opacity:.32;} 50%{transform:scale(1.12);opacity:.66;} }
+@keyframes routeIconShineSweep { 0%,35%{transform:translateX(-145%);opacity:0;} 52%{opacity:.75;} 78%,100%{transform:translateX(145%);opacity:0;} }
+@keyframes routeSpotSpark { 0%,100%{transform:scale(1) rotate(0);} 18%{transform:scale(1.18) rotate(-7deg);} 36%{transform:scale(.96) rotate(3deg);} 56%{transform:scale(1.09) rotate(-2deg);} }
+@keyframes routeAnatomyAssemble { 0%,100%{transform:translateY(0) scale(1);} 35%{transform:translateY(-3px) scale(1.05);} 58%{transform:translateY(1px) scale(.98);} }
+@keyframes routePhysiologyBeat { 0%,100%{transform:scale(1);} 16%{transform:scale(1.18);} 31%{transform:scale(.95);} 48%{transform:scale(1.11);} 70%{transform:scale(1);} }
+@keyframes routeCellMorph { 0%,100%{transform:scale(1) rotate(0);} 45%{transform:scale(1.08) rotate(4deg);} 68%{transform:scale(.98) rotate(-2deg);} }
+@keyframes routeFlaskSway { 0%,100%{transform:rotate(0deg) translateY(0);} 28%{transform:rotate(-8deg) translateY(-2px);} 56%{transform:rotate(7deg) translateY(1px);} 78%{transform:rotate(-2deg);} }
+@keyframes routeMicrobePulse { 0%,100%{transform:scale(1) rotate(0);} 45%{transform:scale(1.09) rotate(6deg);} 70%{transform:scale(.98) rotate(-3deg);} }
+@keyframes routePathologyFocus { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 8px color-mix(in srgb,var(--route-accent) 22%,transparent));} 50%{transform:scale(1.065);filter:drop-shadow(0 0 18px color-mix(in srgb,var(--route-accent) 38%,transparent));} }
+@keyframes routePharmaDose { 0%,100%{transform:scale(1) rotate(0);} 42%{transform:scale(1.08) rotate(-5deg);} 66%{transform:scale(.98) rotate(2deg);} }
+@keyframes routeInternalBreathe { 0%,100%{transform:scale(1);} 50%{transform:scale(1.13);} }
+@keyframes routePedsBounce { 0%,100%{transform:translateY(0) scale(1);} 38%{transform:translateY(-7px) scale(1.05);} 64%{transform:translateY(1px) scale(.98);} }
+@keyframes routeSurgeryPrecision { 0%,100%{transform:translateX(0) rotate(0);} 35%{transform:translateX(6px) rotate(-12deg);} 62%{transform:translateX(-2px) rotate(6deg);} }
+@keyframes routeObgynProtect { 0%,100%{transform:scale(1);} 50%{transform:scale(1.09);} }
+@keyframes routeMinorAssemble { 0%,100%{transform:scale(1) rotate(0);} 50%{transform:scale(1.07) rotate(2deg);} 70%{transform:scale(.99) rotate(-1deg);} }
+@keyframes spotRaySweep { 0%,100%{opacity:0;transform:translate(-50%,-50%) rotate(var(--ray-rot,20deg)) scaleX(.2);} 38%{opacity:.85;transform:translate(-50%,-50%) rotate(var(--ray-rot,20deg)) scaleX(1);} }
+@keyframes sparklePop { 0%,100%{opacity:0;transform:scale(.6) rotate(0);} 42%{opacity:.9;transform:scale(1.28) rotate(45deg);} }
+@keyframes anatomySegmentSlide { 0%,100%{opacity:.22;transform:translateX(-5px);} 50%{opacity:.8;transform:translateX(5px);} }
+@keyframes anatomyDotPulse { 0%,100%{opacity:.35;transform:scale(.9);} 50%{opacity:.95;transform:scale(1.22);} }
+@keyframes physiologyWaveExpand { 0%{opacity:0;transform:translate(-50%,-50%) scale(.72);} 28%{opacity:.78;} 100%{opacity:0;transform:translate(-50%,-50%) scale(1.42);} }
+@keyframes physiologyDotTravel { 0%{opacity:0;transform:translateX(0) scale(.7);} 22%{opacity:1;} 78%{opacity:.8;} 100%{opacity:0;transform:translateX(64px) scale(1.05);} }
+@keyframes cellOrbitBreathe { 0%,100%{transform:scale(.92) rotate(0);opacity:.22;} 50%{transform:scale(1.08) rotate(16deg);opacity:.58;} }
+@keyframes cellSeedDivide { 0%,100%{transform:scale(.82);opacity:.38;} 46%{transform:scale(1.28);opacity:.96;} }
+@keyframes routeFlaskBubble { 0%{opacity:0;transform:translateY(8px) scale(.6);} 34%{opacity:.82;} 100%{opacity:0;transform:translateY(-35px) scale(1);} }
+@keyframes routeFlaskLiquid { 0%,100%{opacity:.34;transform:translateX(-50%) scaleX(.78);} 50%{opacity:.86;transform:translateX(-50%) scaleX(1.12);} }
+@keyframes microbeParticleOrbit { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+@keyframes microbeHaloPulse { 0%{opacity:0;transform:scale(.72);} 30%{opacity:.54;} 100%{opacity:0;transform:scale(1.32);} }
+@keyframes pathologyFocusSweep { 0%,100%{opacity:0;transform:scale(.86);} 44%{opacity:.68;transform:scale(1.03);} }
+@keyframes pathologyCellBlink { 0%,100%{opacity:.22;transform:scale(.82);} 48%{opacity:.92;transform:scale(1.22);} }
+@keyframes pharmaRingPulse { 0%{opacity:0;transform:scale(.74);} 30%{opacity:.62;} 100%{opacity:0;transform:scale(1.34);} }
+@keyframes pharmaDoseSweep { 0%,100%{opacity:0;transform:rotate(-45deg) translateX(-16px) scaleX(.4);} 45%{opacity:.85;transform:rotate(-45deg) translateX(10px) scaleX(1);} }
+@keyframes internalBreathWave { 0%{opacity:0;transform:translate(-50%,-50%) scale(.76);} 28%{opacity:.6;} 100%{opacity:0;transform:translate(-50%,-50%) scale(1.34);} }
+@keyframes internalHeartDot { 0%,100%{transform:scale(.8);opacity:.34;} 23%{transform:scale(1.45);opacity:.95;} 40%{transform:scale(.9);opacity:.55;} 58%{transform:scale(1.2);opacity:.8;} }
+@keyframes pedsAuraPulse { 0%{opacity:0;transform:scale(.76);} 30%{opacity:.52;} 100%{opacity:0;transform:scale(1.3);} }
+@keyframes pedsSparkle { 0%,100%{opacity:0;transform:scale(.6) rotate(0);} 42%{opacity:.9;transform:scale(1.22) rotate(45deg);} }
+@keyframes surgeryCleanCut { 0%,100%{opacity:0;transform:translate(-50%,-50%) rotate(-37deg) scaleX(.16);} 34%{opacity:.88;transform:translate(-50%,-50%) rotate(-37deg) scaleX(1);} 62%{opacity:.22;} }
+@keyframes surgeryGlint { 0%,100%{opacity:0;transform:scale(.6) rotate(0);} 44%{opacity:.9;transform:scale(1.2) rotate(45deg);} }
+@keyframes obgynHaloPulse { 0%{opacity:0;transform:scale(.74);} 32%{opacity:.56;} 100%{opacity:0;transform:scale(1.32);} }
+@keyframes obgynCoreGlow { 0%,100%{opacity:.28;transform:scale(.8);} 50%{opacity:.86;transform:scale(1.25);} }
+@keyframes minorTileAssemble { 0%,100%{opacity:.28;transform:translateY(0) scale(.9);} 48%{opacity:.9;transform:translateY(-3px) scale(1.1);} }
 
 html[data-theme="dark"] .branch-card[data-branch] .branch-card-head .icon-badge,
 .app-shell[data-theme="dark"] .branch-card[data-branch] .branch-card-head .icon-badge {
@@ -30080,7 +30023,7 @@ html[data-theme="dark"] .branch-card[data-branch] .branch-card-head .icon-badge,
 }
 
 .branch-card:is([data-branch="tus-spot-olgular"], [data-branch="medical-microbiology"], [data-branch="medical-pharmacology"], [data-branch="pediatrics"]) .branch-card-head .branch-icon-badge::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 7px;
   z-index: -1;
@@ -30178,32 +30121,32 @@ html[data-theme="dark"] .branch-card[data-branch] .branch-card-head .icon-badge,
 .branch-transition-visual[data-branch="medical-pharmacology"] .pharma-ring { border-radius: 30px !important; }
 .branch-transition-visual[data-branch="pediatrics"] .peds-aura { border-radius: 28px !important; }
 
-@keyframes kqCardSpotStarPulse { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)} 42%{transform:scale(1.055);filter:drop-shadow(0 0 7px color-mix(in srgb,currentColor 28%,transparent))} 68%{transform:scale(.992)} }
-@keyframes kqCardSparkPop { 0%,72%,100%{opacity:.42;transform:scale(.76) rotate(0deg)} 38%{opacity:1;transform:scale(1.16) rotate(45deg)} }
-@keyframes kqCardMicrobeBreath { 0%,100%{transform:scale(1)} 48%{transform:scale(1.052)} 72%{transform:scale(.992)} }
-@keyframes kqCardMicrobeSpikes { 0%,100%{opacity:.58;transform:rotate(0deg)} 50%{opacity:.92;transform:rotate(3deg)} }
-@keyframes kqCardMicrobeDot { 0%,100%{opacity:.32;transform:scale(.84)} 46%{opacity:.9;transform:scale(1.18)} }
-@keyframes kqCardPharmaSwing { 0%,100%{transform:rotate(0deg)} 42%{transform:rotate(-3.2deg) translateY(-.4px)} 67%{transform:rotate(1.5deg) translateY(.2px)} }
-@keyframes kqCardPharmaEffect { 0%,100%{opacity:.42;transform:scale(.96)} 48%{opacity:.95;transform:scale(1.025)} }
-@keyframes kqCardPedsBreath { 0%,100%{transform:translateY(0) scale(1)} 48%{transform:translateY(-.9px) scale(1.035)} 72%{transform:translateY(.25px) scale(.996)} }
-@keyframes kqCardPedsStar { 0%,72%,100%{opacity:.46;transform:scale(.78) rotate(0deg)} 42%{opacity:1;transform:scale(1.16) rotate(45deg)} }
-@keyframes kqLaunchSpotStar { 0%,100%{transform:scale(1) rotate(0deg)} 24%{transform:scale(1.16) rotate(-4deg)} 52%{transform:scale(.95) rotate(2deg)} 76%{transform:scale(1.055) rotate(-1deg)} }
-@keyframes kqLaunchSparkPop { 0%{opacity:0;transform:scale(.52) rotate(0deg)} 42%{opacity:1;transform:scale(1.28) rotate(45deg)} 100%{opacity:.78;transform:scale(1) rotate(0deg)} }
-@keyframes kqLaunchMicrobeBloom { 0%,100%{transform:scale(1) rotate(0deg)} 24%{transform:scale(1.13) rotate(4deg)} 52%{transform:scale(.95) rotate(-2deg)} 76%{transform:scale(1.04)} }
-@keyframes kqLaunchMicrobeSpikes { 0%,100%{opacity:.72;transform:rotate(0deg)} 36%{opacity:1;transform:rotate(8deg)} 70%{opacity:.65;transform:rotate(-3deg)} }
-@keyframes kqLaunchPharmaSwing { 0%,100%{transform:rotate(0deg) scale(1)} 24%{transform:rotate(-6deg) scale(1.08)} 50%{transform:rotate(3deg) scale(.96)} 74%{transform:rotate(-1deg) scale(1.025)} }
-@keyframes kqLaunchPharmaEffect { 0%,100%{opacity:.48;transform:scale(.96)} 42%{opacity:1;transform:scale(1.13)} }
-@keyframes kqLaunchPedsBreath { 0%,100%{transform:translateY(0) scale(1)} 26%{transform:translateY(-2px) scale(1.075)} 54%{transform:translateY(.7px) scale(.972)} 76%{transform:translateY(-.6px) scale(1.02)} }
-@keyframes kqLaunchPedsStar { 0%{opacity:0;transform:scale(.5) rotate(0deg)} 46%{opacity:1;transform:scale(1.28) rotate(45deg)} 100%{opacity:.82;transform:scale(1) rotate(0deg)} }
-@keyframes kqRouteSpotStar { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 8px color-mix(in srgb,var(--route-accent) 24%,transparent))} 34%{transform:scale(1.085);filter:drop-shadow(0 0 18px color-mix(in srgb,var(--route-accent) 42%,transparent))} 62%{transform:scale(.982)} }
-@keyframes kqRouteSparkPop { 0%,100%{opacity:.28;transform:scale(.62) rotate(0deg)} 44%{opacity:1;transform:scale(1.24) rotate(45deg)} }
-@keyframes kqRouteMicrobeCore { 0%,100%{transform:scale(1) rotate(0deg)} 48%{transform:scale(1.07) rotate(3deg)} 72%{transform:scale(.99) rotate(-1.5deg)} }
-@keyframes kqRouteMicrobeSpikes { 0%,100%{opacity:.58;transform:rotate(0deg)} 50%{opacity:.98;transform:rotate(7deg)} }
-@keyframes kqRouteMicrobeDot { 0%,100%{opacity:.32;transform:scale(.78)} 42%{opacity:.96;transform:scale(1.28)} }
-@keyframes kqRoutePharmaSwing { 0%,100%{transform:rotate(0deg)} 42%{transform:rotate(-5deg) translateY(-.8px)} 66%{transform:rotate(2.3deg) translateY(.2px)} }
-@keyframes kqRoutePharmaEffect { 0%,100%{opacity:.32;transform:scale(.92)} 44%{opacity:.95;transform:scale(1.1)} }
-@keyframes kqRoutePedsBreath { 0%,100%{transform:translateY(0) scale(1)} 48%{transform:translateY(-2.4px) scale(1.055)} 72%{transform:translateY(.5px) scale(.99)} }
-@keyframes kqRoutePedsStar { 0%,100%{opacity:.24;transform:scale(.62) rotate(0deg)} 42%{opacity:1;transform:scale(1.25) rotate(45deg)} }
+@keyframes kqCardSpotStarPulse { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent);} 42%{transform:scale(1.055);filter:drop-shadow(0 0 7px color-mix(in srgb,currentColor 28%,transparent));} 68%{transform:scale(.992);} }
+@keyframes kqCardSparkPop { 0%,72%,100%{opacity:.42;transform:scale(.76) rotate(0deg);} 38%{opacity:1;transform:scale(1.16) rotate(45deg);} }
+@keyframes kqCardMicrobeBreath { 0%,100%{transform:scale(1);} 48%{transform:scale(1.052);} 72%{transform:scale(.992);} }
+@keyframes kqCardMicrobeSpikes { 0%,100%{opacity:.58;transform:rotate(0deg);} 50%{opacity:.92;transform:rotate(3deg);} }
+@keyframes kqCardMicrobeDot { 0%,100%{opacity:.32;transform:scale(.84);} 46%{opacity:.9;transform:scale(1.18);} }
+@keyframes kqCardPharmaSwing { 0%,100%{transform:rotate(0deg);} 42%{transform:rotate(-3.2deg) translateY(-.4px);} 67%{transform:rotate(1.5deg) translateY(.2px);} }
+@keyframes kqCardPharmaEffect { 0%,100%{opacity:.42;transform:scale(.96);} 48%{opacity:.95;transform:scale(1.025);} }
+@keyframes kqCardPedsBreath { 0%,100%{transform:translateY(0) scale(1);} 48%{transform:translateY(-.9px) scale(1.035);} 72%{transform:translateY(.25px) scale(.996);} }
+@keyframes kqCardPedsStar { 0%,72%,100%{opacity:.46;transform:scale(.78) rotate(0deg);} 42%{opacity:1;transform:scale(1.16) rotate(45deg);} }
+@keyframes kqLaunchSpotStar { 0%,100%{transform:scale(1) rotate(0deg);} 24%{transform:scale(1.16) rotate(-4deg);} 52%{transform:scale(.95) rotate(2deg);} 76%{transform:scale(1.055) rotate(-1deg);} }
+@keyframes kqLaunchSparkPop { 0%{opacity:0;transform:scale(.52) rotate(0deg);} 42%{opacity:1;transform:scale(1.28) rotate(45deg);} 100%{opacity:.78;transform:scale(1) rotate(0deg);} }
+@keyframes kqLaunchMicrobeBloom { 0%,100%{transform:scale(1) rotate(0deg);} 24%{transform:scale(1.13) rotate(4deg);} 52%{transform:scale(.95) rotate(-2deg);} 76%{transform:scale(1.04);} }
+@keyframes kqLaunchMicrobeSpikes { 0%,100%{opacity:.72;transform:rotate(0deg);} 36%{opacity:1;transform:rotate(8deg);} 70%{opacity:.65;transform:rotate(-3deg);} }
+@keyframes kqLaunchPharmaSwing { 0%,100%{transform:rotate(0deg) scale(1);} 24%{transform:rotate(-6deg) scale(1.08);} 50%{transform:rotate(3deg) scale(.96);} 74%{transform:rotate(-1deg) scale(1.025);} }
+@keyframes kqLaunchPharmaEffect { 0%,100%{opacity:.48;transform:scale(.96);} 42%{opacity:1;transform:scale(1.13);} }
+@keyframes kqLaunchPedsBreath { 0%,100%{transform:translateY(0) scale(1);} 26%{transform:translateY(-2px) scale(1.075);} 54%{transform:translateY(.7px) scale(.972);} 76%{transform:translateY(-.6px) scale(1.02);} }
+@keyframes kqLaunchPedsStar { 0%{opacity:0;transform:scale(.5) rotate(0deg);} 46%{opacity:1;transform:scale(1.28) rotate(45deg);} 100%{opacity:.82;transform:scale(1) rotate(0deg);} }
+@keyframes kqRouteSpotStar { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 8px color-mix(in srgb,var(--route-accent) 24%,transparent));} 34%{transform:scale(1.085);filter:drop-shadow(0 0 18px color-mix(in srgb,var(--route-accent) 42%,transparent));} 62%{transform:scale(.982);} }
+@keyframes kqRouteSparkPop { 0%,100%{opacity:.28;transform:scale(.62) rotate(0deg);} 44%{opacity:1;transform:scale(1.24) rotate(45deg);} }
+@keyframes kqRouteMicrobeCore { 0%,100%{transform:scale(1) rotate(0deg);} 48%{transform:scale(1.07) rotate(3deg);} 72%{transform:scale(.99) rotate(-1.5deg);} }
+@keyframes kqRouteMicrobeSpikes { 0%,100%{opacity:.58;transform:rotate(0deg);} 50%{opacity:.98;transform:rotate(7deg);} }
+@keyframes kqRouteMicrobeDot { 0%,100%{opacity:.32;transform:scale(.78);} 42%{opacity:.96;transform:scale(1.28);} }
+@keyframes kqRoutePharmaSwing { 0%,100%{transform:rotate(0deg);} 42%{transform:rotate(-5deg) translateY(-.8px);} 66%{transform:rotate(2.3deg) translateY(.2px);} }
+@keyframes kqRoutePharmaEffect { 0%,100%{opacity:.32;transform:scale(.92);} 44%{opacity:.95;transform:scale(1.1);} }
+@keyframes kqRoutePedsBreath { 0%,100%{transform:translateY(0) scale(1);} 48%{transform:translateY(-2.4px) scale(1.055);} 72%{transform:translateY(.5px) scale(.99);} }
+@keyframes kqRoutePedsStar { 0%,100%{opacity:.24;transform:scale(.62) rotate(0deg);} 42%{opacity:1;transform:scale(1.25) rotate(45deg);} }
 
 @media (prefers-reduced-motion: reduce) {
   .branch-icon-glyph .spot-star-main,
@@ -32170,7 +32113,7 @@ html[data-theme="dark"] .ai-fallback-notice,
 }
 
 .option-comparison-item .comparison-point-list li::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: .62em;
@@ -32628,7 +32571,7 @@ body:not(.klinikiq-auth-lock) .home-metric-card strong {
 .answer-feedback-panel-pro .comparison-point-list li::before,
 .answer-feedback-panel .comparison-point-list li::before,
 .option-comparison-item .comparison-point-list li::before {
-  content: '' !important;
+  content: "" !important;
   position: static !important;
   grid-column: 1 !important;
   grid-row: 1 !important;
@@ -33657,7 +33600,7 @@ html[data-theme="dark"] .qualitative-result-finding,
 }
 
 .ai-spot-narrative-card::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: auto 24px 0 24px;
   height: 1px;
@@ -34111,7 +34054,7 @@ html[data-theme="dark"] .ai-spot-answer-shell .tus-spot-olgular-question-callout
 
 .ai-spot-unified-panel,
 .ai-spot-unified-panel * {
-  scrollbar-gutter: auto;
+  
 }
 
 .ai-spot-narrative-card.is-embedded {
@@ -34141,7 +34084,7 @@ html[data-theme="dark"] .ai-spot-answer-shell .tus-spot-olgular-question-callout
 }
 
 .ai-spot-answer-flow::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0 0 auto 0;
   height: 1px;
@@ -35867,7 +35810,7 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-actions-v8.home-acti
   position: relative;
 }
 .komite-hero::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -20% -10% auto 45%;
   height: 230px;
@@ -36395,52 +36338,52 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-actions-v8.home-acti
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 }
-html[data-theme='dark'] .product-mode-switch,
-html[data-theme='dark'] .komite-nav-chip,
-html[data-theme='dark'] .komite-dashboard-card,
-html[data-theme='dark'] .komite-latest-material,
-html[data-theme='dark'] .komite-hero-stats span,
-html[data-theme='dark'] .komite-start-form input,
-html[data-theme='dark'] .komite-start-form select,
-html[data-theme='dark'] .komite-start-form textarea,
-html[data-theme='dark'] .komite-lesson-hero,
-html[data-theme='dark'] .komite-lesson-section,
-html[data-theme='dark'] .komite-objectives,
-html[data-theme='dark'] .komite-summary-grid > div,
-html[data-theme='dark'] .komite-question-card,
-html[data-theme='dark'] .komite-figure-card,
-html[data-theme='dark'] .komite-review-grid section,
-html[data-theme='dark'] .komite-flashcard-head,
-html[data-theme='dark'] .komite-flashcard,
-html[data-theme='dark'] .komite-tree-class,
-html[data-theme='dark'] .komite-tree-file {
+html[data-theme="dark"] .product-mode-switch,
+html[data-theme="dark"] .komite-nav-chip,
+html[data-theme="dark"] .komite-dashboard-card,
+html[data-theme="dark"] .komite-latest-material,
+html[data-theme="dark"] .komite-hero-stats span,
+html[data-theme="dark"] .komite-start-form input,
+html[data-theme="dark"] .komite-start-form select,
+html[data-theme="dark"] .komite-start-form textarea,
+html[data-theme="dark"] .komite-lesson-hero,
+html[data-theme="dark"] .komite-lesson-section,
+html[data-theme="dark"] .komite-objectives,
+html[data-theme="dark"] .komite-summary-grid > div,
+html[data-theme="dark"] .komite-question-card,
+html[data-theme="dark"] .komite-figure-card,
+html[data-theme="dark"] .komite-review-grid section,
+html[data-theme="dark"] .komite-flashcard-head,
+html[data-theme="dark"] .komite-flashcard,
+html[data-theme="dark"] .komite-tree-class,
+html[data-theme="dark"] .komite-tree-file {
   background: rgba(15, 23, 42, 0.72);
   border-color: rgba(148, 163, 184, 0.16);
 }
-html[data-theme='dark'] .komite-hero h1,
-html[data-theme='dark'] .komite-dashboard-card strong,
-html[data-theme='dark'] .komite-section-head h2,
-html[data-theme='dark'] .komite-workspace-header h2,
-html[data-theme='dark'] .komite-lesson-hero h2,
-html[data-theme='dark'] .komite-lesson-section h3,
-html[data-theme='dark'] .komite-question-card h3,
-html[data-theme='dark'] .komite-figure-card h3,
-html[data-theme='dark'] .komite-flashcard strong,
-html[data-theme='dark'] .komite-review-grid section h3,
-html[data-theme='dark'] .komite-tree-file {
+html[data-theme="dark"] .komite-hero h1,
+html[data-theme="dark"] .komite-dashboard-card strong,
+html[data-theme="dark"] .komite-section-head h2,
+html[data-theme="dark"] .komite-workspace-header h2,
+html[data-theme="dark"] .komite-lesson-hero h2,
+html[data-theme="dark"] .komite-lesson-section h3,
+html[data-theme="dark"] .komite-question-card h3,
+html[data-theme="dark"] .komite-figure-card h3,
+html[data-theme="dark"] .komite-flashcard strong,
+html[data-theme="dark"] .komite-review-grid section h3,
+html[data-theme="dark"] .komite-tree-file {
   color: #f8fafc;
 }
-html[data-theme='dark'] .komite-hero p,
-html[data-theme='dark'] .komite-dashboard-card p,
-html[data-theme='dark'] .komite-dashboard-card small,
-html[data-theme='dark'] .komite-section-head p,
-html[data-theme='dark'] .komite-workspace-header p,
-html[data-theme='dark'] .komite-lesson-section p,
-html[data-theme='dark'] .komite-objectives li,
-html[data-theme='dark'] .komite-summary-grid li,
-html[data-theme='dark'] .komite-question-stem,
-html[data-theme='dark'] .komite-flashcard p,
-html[data-theme='dark'] .komite-flashcard small {
+html[data-theme="dark"] .komite-hero p,
+html[data-theme="dark"] .komite-dashboard-card p,
+html[data-theme="dark"] .komite-dashboard-card small,
+html[data-theme="dark"] .komite-section-head p,
+html[data-theme="dark"] .komite-workspace-header p,
+html[data-theme="dark"] .komite-lesson-section p,
+html[data-theme="dark"] .komite-objectives li,
+html[data-theme="dark"] .komite-summary-grid li,
+html[data-theme="dark"] .komite-question-stem,
+html[data-theme="dark"] .komite-flashcard p,
+html[data-theme="dark"] .komite-flashcard small {
   color: #cbd5e1;
 }
 @media (max-width: 1050px) {
@@ -36960,7 +36903,7 @@ body:not(.klinikiq-auth-lock) .nav-logout-btn {
   border-color: rgba(20,184,166,.68);
   background: rgba(204,251,241,.38);
 }
-.komite-file-drop input[type='file'] {
+.komite-file-drop input[type="file"] {
   position: absolute;
   inline-size: 1px;
   block-size: 1px;
@@ -37496,22 +37439,22 @@ body:not(.klinikiq-auth-lock) .app-shell {
 .komite-objectives-pro li {
   margin: 0.45rem 0;
 }
-html[data-theme='dark'] .komite-lesson-hero-pro,
-html[data-theme='dark'] .komite-sidebar-card,
-html[data-theme='dark'] .komite-big-picture-section {
+html[data-theme="dark"] .komite-lesson-hero-pro,
+html[data-theme="dark"] .komite-sidebar-card,
+html[data-theme="dark"] .komite-big-picture-section {
   background: rgba(15, 23, 42, 0.72);
   border-color: rgba(148, 163, 184, 0.18);
 }
-html[data-theme='dark'] .komite-lesson-hero-metrics span,
-html[data-theme='dark'] .komite-note-grid-pro > div {
+html[data-theme="dark"] .komite-lesson-hero-metrics span,
+html[data-theme="dark"] .komite-note-grid-pro > div {
   background: rgba(15, 23, 42, 0.62);
   border-color: rgba(148, 163, 184, 0.16);
 }
-html[data-theme='dark'] .komite-sidebar-card a,
-html[data-theme='dark'] .komite-lesson-hero-metrics span { color: #cbd5e1; }
-html[data-theme='dark'] .komite-sidebar-card strong,
-html[data-theme='dark'] .komite-lesson-hero-metrics strong,
-html[data-theme='dark'] .komite-note-grid-pro strong { color: #f8fafc; }
+html[data-theme="dark"] .komite-sidebar-card a,
+html[data-theme="dark"] .komite-lesson-hero-metrics span { color: #cbd5e1; }
+html[data-theme="dark"] .komite-sidebar-card strong,
+html[data-theme="dark"] .komite-lesson-hero-metrics strong,
+html[data-theme="dark"] .komite-note-grid-pro strong { color: #f8fafc; }
 @media (max-width: 980px) {
   .komite-lesson-hero-pro,
   .komite-lesson-pro-layout,
@@ -37674,16 +37617,16 @@ html[data-theme='dark'] .komite-note-grid-pro strong { color: #f8fafc; }
     gap: 0.4rem;
   }
 }
-html[data-theme='dark'] .komite-lesson-hero-pro {
+html[data-theme="dark"] .komite-lesson-hero-pro {
   background: rgba(15, 23, 42, 0.78);
   border-color: rgba(148, 163, 184, 0.18);
 }
-html[data-theme='dark'] .komite-lesson-hero-pro p,
-html[data-theme='dark'] .komite-note-line p,
-html[data-theme='dark'] .komite-flow-line li { color: #cbd5e1; }
-html[data-theme='dark'] .komite-note-line,
-html[data-theme='dark'] .komite-note-lines,
-html[data-theme='dark'] .komite-summary-lines > div { border-color: rgba(148, 163, 184, 0.16); }
+html[data-theme="dark"] .komite-lesson-hero-pro p,
+html[data-theme="dark"] .komite-note-line p,
+html[data-theme="dark"] .komite-flow-line li { color: #cbd5e1; }
+html[data-theme="dark"] .komite-note-line,
+html[data-theme="dark"] .komite-note-lines,
+html[data-theme="dark"] .komite-summary-lines > div { border-color: rgba(148, 163, 184, 0.16); }
 
 /* KOMITE workspace simplification + reliable quick navigation offset */
 .komite-workspace-header-clean {
@@ -37739,7 +37682,7 @@ html[data-theme='dark'] .komite-summary-lines > div { border-color: rgba(148, 16
   top: 96px;
   max-height: calc(100vh - 124px);
   overflow: auto;
-  scrollbar-width: thin;
+  
 }
 .komite-sidebar-card a {
   font-size: 0.93rem;
@@ -37775,12 +37718,12 @@ html[data-theme='dark'] .komite-summary-lines > div { border-color: rgba(148, 16
     scroll-margin-top: 88px;
   }
 }
-html[data-theme='dark'] .komite-back-link {
+html[data-theme="dark"] .komite-back-link {
   background: rgba(15, 23, 42, 0.72);
   border-color: rgba(148, 163, 184, 0.18);
   color: #cbd5e1;
 }
-html[data-theme='dark'] .komite-back-link:hover {
+html[data-theme="dark"] .komite-back-link:hover {
   background: rgba(20, 184, 166, 0.16);
   color: #99f6e4;
 }
@@ -37940,7 +37883,7 @@ html[data-theme='dark'] .komite-back-link:hover {
   .komite-tabbar {
     grid-template-columns: repeat(5, minmax(128px, 1fr)) !important;
     overflow-x: auto !important;
-    scrollbar-width: thin;
+    
   }
   .komite-tabbar button {
     white-space: nowrap !important;
@@ -37962,32 +37905,32 @@ html[data-theme='dark'] .komite-back-link:hover {
     margin-top: 0.35rem !important;
   }
 }
-html[data-theme='dark'] .komite-workspace-header-clean {
+html[data-theme="dark"] .komite-workspace-header-clean {
   border-bottom-color: rgba(148, 163, 184, 0.16) !important;
 }
-html[data-theme='dark'] .komite-tabbar {
+html[data-theme="dark"] .komite-tabbar {
   background: rgba(15, 23, 42, 0.78) !important;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
 }
-html[data-theme='dark'] .komite-tabbar button {
+html[data-theme="dark"] .komite-tabbar button {
   color: #94a3b8 !important;
 }
-html[data-theme='dark'] .komite-tabbar button.active {
+html[data-theme="dark"] .komite-tabbar button.active {
   color: #f8fafc !important;
   background: rgba(30, 41, 59, 0.96) !important;
 }
-html[data-theme='dark'] .komite-lesson-brief-card {
+html[data-theme="dark"] .komite-lesson-brief-card {
   background: linear-gradient(135deg, rgba(15, 23, 42, 0.84), rgba(19, 78, 74, 0.34)) !important;
   border-color: rgba(148, 163, 184, 0.16) !important;
 }
-html[data-theme='dark'] .komite-lesson-brief-card p,
-html[data-theme='dark'] .komite-context-line p,
-html[data-theme='dark'] .komite-context-line ul,
-html[data-theme='dark'] .komite-context-line li {
+html[data-theme="dark"] .komite-lesson-brief-card p,
+html[data-theme="dark"] .komite-context-line p,
+html[data-theme="dark"] .komite-context-line ul,
+html[data-theme="dark"] .komite-context-line li {
   color: #cbd5e1 !important;
 }
-html[data-theme='dark'] .komite-context-lines,
-html[data-theme='dark'] .komite-context-line {
+html[data-theme="dark"] .komite-context-lines,
+html[data-theme="dark"] .komite-context-line {
   border-color: rgba(148, 163, 184, 0.16) !important;
 }
 
@@ -38122,16 +38065,16 @@ html[data-theme='dark'] .komite-context-line {
     min-width: 40px;
   }
 }
-html[data-theme='dark'] .komite-lesson-view-pro {
+html[data-theme="dark"] .komite-lesson-view-pro {
   --komite-copy: #cbd5e1;
   --komite-copy-strong: #f8fafc;
   --komite-muted-copy: #94a3b8;
 }
-html[data-theme='dark'] .komite-objectives-pro,
-html[data-theme='dark'] .komite-big-picture-section,
-html[data-theme='dark'] .komite-lesson-section-pro,
-html[data-theme='dark'] .komite-summary-grid-pro > div,
-html[data-theme='dark'] .komite-sidebar-card {
+html[data-theme="dark"] .komite-objectives-pro,
+html[data-theme="dark"] .komite-big-picture-section,
+html[data-theme="dark"] .komite-lesson-section-pro,
+html[data-theme="dark"] .komite-summary-grid-pro > div,
+html[data-theme="dark"] .komite-sidebar-card {
   background: rgba(15, 23, 42, 0.74) !important;
   border-color: rgba(148, 163, 184, 0.16) !important;
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18) !important;
@@ -38549,32 +38492,32 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .performance-next-action-c
   }
 }
 
-html[data-theme='dark'] .komite-hero {
+html[data-theme="dark"] .komite-hero {
   background:
     radial-gradient(circle at top right, rgba(45, 212, 191, 0.12), transparent 40%),
     linear-gradient(180deg, rgba(15,23,42,0.92), rgba(15,23,42,0.88));
 }
 
-html[data-theme='dark'] .komite-hero p,
-html[data-theme='dark'] .komite-dashboard-card p {
+html[data-theme="dark"] .komite-hero p,
+html[data-theme="dark"] .komite-dashboard-card p {
   color: #94a3b8;
 }
 
-html[data-theme='dark'] .komite-dashboard-card {
+html[data-theme="dark"] .komite-dashboard-card {
   background: linear-gradient(180deg, rgba(15,23,42,0.92), rgba(15,23,42,0.88));
   border-color: rgba(148, 163, 184, 0.12);
   box-shadow: none;
 }
 
-html[data-theme='dark'] .komite-dashboard-card.primary {
+html[data-theme="dark"] .komite-dashboard-card.primary {
   background: linear-gradient(180deg, rgba(15, 23, 42, 0.95), rgba(17, 94, 89, 0.28));
 }
 
-html[data-theme='dark'] .komite-card-icon {
+html[data-theme="dark"] .komite-card-icon {
   background: linear-gradient(135deg, rgba(15, 118, 110, 0.24), rgba(15, 23, 42, 0.9));
 }
 
-html[data-theme='dark'] .komite-card-action {
+html[data-theme="dark"] .komite-card-action {
   background: rgba(15, 118, 110, 0.16);
   border-color: rgba(45, 212, 191, 0.14);
 }
@@ -41000,7 +40943,7 @@ body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60 {
 }
 
 body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60::before {
-  content: '' !important;
+  content: "" !important;
   position: absolute !important;
   inset: 0 !important;
   pointer-events: none !important;
@@ -41012,7 +40955,7 @@ body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60::before {
 }
 
 body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60::after {
-  content: '' !important;
+  content: "" !important;
   position: absolute !important;
   width: 170px !important;
   height: 170px !important;
@@ -41240,7 +41183,7 @@ body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 {
 }
 
 body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60::after {
-  content: '' !important;
+  content: "" !important;
   position: absolute !important;
   inset: auto 20px 16px auto !important;
   width: 120px !important;
@@ -41405,28 +41348,28 @@ body:not(.klinikiq-auth-lock) .komite-card-action.komite-card-action-v60 {
   }
 }
 
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60 {
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60 {
   border-color: rgba(45, 212, 191, 0.18) !important;
   background:
     radial-gradient(circle at 82% 18%, rgba(45, 212, 191, 0.14), transparent 34%),
     linear-gradient(135deg, rgba(9, 20, 27, 0.98), rgba(11, 37, 37, 0.94)) !important;
 }
 
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60 h1,
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 strong,
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-flow-list-v60 strong {
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60 h1,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 strong,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-flow-list-v60 strong {
   color: #f8fafc !important;
 }
 
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60 p,
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 p,
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-flow-list-v60 em {
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60 p,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 p,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-flow-list-v60 em {
   color: #b6c4d2 !important;
 }
 
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60,
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-hero-panel-v60,
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-flow-list-v60 span {
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-hero-panel-v60,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-flow-list-v60 span {
   border-color: rgba(45, 212, 191, 0.14) !important;
   background: rgba(15, 23, 42, 0.74) !important;
 }
@@ -41527,7 +41470,7 @@ body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60.komite-hero-unified-v
 }
 
 body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60.komite-hero-unified-v62::before {
-  content: '' !important;
+  content: "" !important;
   position: absolute !important;
   inset: 0 !important;
   pointer-events: none !important;
@@ -41540,7 +41483,7 @@ body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60.komite-hero-unified-v
 }
 
 body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60.komite-hero-unified-v62::after {
-  content: '' !important;
+  content: "" !important;
   position: absolute !important;
   left: 6px !important;
   bottom: 54px !important;
@@ -41796,23 +41739,23 @@ body:not(.klinikiq-auth-lock) .komite-actions-v62 .btn > svg:last-child {
   }
 }
 
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60.komite-hero-unified-v62,
-.app-shell[data-theme='dark'] .komite-hero.komite-hero-v60.komite-hero-unified-v62,
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-action-panel-v62,
-.app-shell[data-theme='dark'] .komite-action-panel-v62 {
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60.komite-hero-unified-v62,
+.app-shell[data-theme="dark"] .komite-hero.komite-hero-v60.komite-hero-unified-v62,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-action-panel-v62,
+.app-shell[data-theme="dark"] .komite-action-panel-v62 {
   background: rgba(15, 23, 42, 0.78) !important;
   border-color: rgba(45,212,191,0.14) !important;
   color: #f8fafc !important;
 }
 
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60.komite-hero-unified-v62 h1,
-.app-shell[data-theme='dark'] .komite-hero.komite-hero-v60.komite-hero-unified-v62 h1,
-.app-shell[data-theme='dark'] .komite-hero-tags-v60 span strong {
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60.komite-hero-unified-v62 h1,
+.app-shell[data-theme="dark"] .komite-hero.komite-hero-v60.komite-hero-unified-v62 h1,
+.app-shell[data-theme="dark"] .komite-hero-tags-v60 span strong {
   color: #f8fafc !important;
 }
 
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60.komite-hero-unified-v62 p,
-.app-shell[data-theme='dark'] .komite-hero.komite-hero-v60.komite-hero-unified-v62 p {
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60.komite-hero-unified-v62 p,
+.app-shell[data-theme="dark"] .komite-hero.komite-hero-v60.komite-hero-unified-v62 p {
   color: #cbd5e1 !important;
 }
 
@@ -42648,24 +42591,24 @@ body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60::
   }
 }
 
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .home-hero-proof-row-v10.tus-hero-proof-redesign span,
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .home-action-panel-v10.tus-action-panel-redesign,
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 {
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-hero-proof-row-v10.tus-hero-proof-redesign span,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-action-panel-v10.tus-action-panel-redesign,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 {
   border-color: rgba(94, 234, 212, 0.14) !important;
   background: linear-gradient(145deg, rgba(15, 23, 42, 0.88), rgba(8, 18, 28, 0.82)) !important;
 }
 
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60.primary {
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60.primary {
   background:
     radial-gradient(circle at 0% 0%, rgba(20, 184, 166, 0.18), transparent 34%),
     linear-gradient(145deg, rgba(15, 23, 42, 0.94), rgba(10, 38, 38, 0.84)) !important;
 }
 
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 strong {
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 strong {
   color: #f8fafc !important;
 }
 
-html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 p {
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 p {
   color: #b6c4d2 !important;
 }
 
@@ -42927,45 +42870,45 @@ html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card.kom
   padding-inline: 1.1rem;
 }
 
-html[data-theme='dark'] .komite-upload-redesign {
+html[data-theme="dark"] .komite-upload-redesign {
   background: linear-gradient(180deg, rgba(15,23,42,.92), rgba(15,23,42,.88));
 }
-html[data-theme='dark'] .komite-upload-hero-copy h2 { color: #f8fafc; }
-html[data-theme='dark'] .komite-upload-hero-copy p,
-html[data-theme='dark'] .komite-upload-muted,
-html[data-theme='dark'] .komite-file-drop-copy p { color: #cbd5e1; }
-html[data-theme='dark'] .komite-field-card,
-html[data-theme='dark'] .komite-notes-panel,
-html[data-theme='dark'] .komite-selected-file {
+html[data-theme="dark"] .komite-upload-hero-copy h2 { color: #f8fafc; }
+html[data-theme="dark"] .komite-upload-hero-copy p,
+html[data-theme="dark"] .komite-upload-muted,
+html[data-theme="dark"] .komite-file-drop-copy p { color: #cbd5e1; }
+html[data-theme="dark"] .komite-field-card,
+html[data-theme="dark"] .komite-notes-panel,
+html[data-theme="dark"] .komite-selected-file {
   background: rgba(15, 23, 42, .72);
   border-color: rgba(148,163,184,.18);
 }
-html[data-theme='dark'] .komite-field-card > span,
-html[data-theme='dark'] .komite-notes-panel > span,
-html[data-theme='dark'] .komite-file-drop-copy strong { color: #f8fafc; }
-html[data-theme='dark'] .komite-field-card input,
-html[data-theme='dark'] .komite-field-card select,
-html[data-theme='dark'] .komite-notes-panel textarea {
+html[data-theme="dark"] .komite-field-card > span,
+html[data-theme="dark"] .komite-notes-panel > span,
+html[data-theme="dark"] .komite-file-drop-copy strong { color: #f8fafc; }
+html[data-theme="dark"] .komite-field-card input,
+html[data-theme="dark"] .komite-field-card select,
+html[data-theme="dark"] .komite-notes-panel textarea {
   background: rgba(15,23,42,.9);
   color: #f8fafc;
   box-shadow: inset 0 0 0 1px rgba(148,163,184,.22);
 }
-html[data-theme='dark'] .komite-file-drop.komite-file-drop-redesign {
+html[data-theme="dark"] .komite-file-drop.komite-file-drop-redesign {
   background: linear-gradient(135deg, rgba(15, 23, 42, .72), rgba(15, 23, 42, .92));
   border-color: rgba(45, 212, 191, .35);
 }
-html[data-theme='dark'] .komite-file-drop-icon {
+html[data-theme="dark"] .komite-file-drop-icon {
   background: rgba(15,23,42,.88);
   border-color: rgba(45,212,191,.14);
 }
 
-html[data-theme='dark'] .komite-file-drop-note {
+html[data-theme="dark"] .komite-file-drop-note {
   background: linear-gradient(135deg, rgba(15,23,42,.92), rgba(20,83,75,.40));
   border-color: rgba(45,212,191,.16);
   color: #cbd5e1;
 }
 
-html[data-theme='dark'] .komite-file-drop-note-icon {
+html[data-theme="dark"] .komite-file-drop-note-icon {
   color: #5eead4;
   background: rgba(45,212,191,.12);
 }
@@ -43229,7 +43172,7 @@ html[data-theme='dark'] .komite-file-drop-note-icon {
   max-height: min(320px, 48vh) !important;
   overflow-y: auto !important;
   overflow-x: hidden !important;
-  scrollbar-width: thin;
+  
 }
 
 .ai-practice-actions-pro .ai-compact-dropdown-option {
@@ -43372,7 +43315,7 @@ html[data-theme="dark"] .ai-practice-actions-pro .ai-compact-dropdown-option.act
   overflow-y: auto !important;
   overflow-x: hidden !important;
   overscroll-behavior: contain !important;
-  scrollbar-width: thin !important;
+  
 }
 
 .ai-compact-dropdown-menu-floating .ai-compact-dropdown-option {
@@ -45618,30 +45561,30 @@ html[data-theme="dark"] .ai-generation-countdown.ai-generation-countdown-live,
   color: #0f766e;
 }
 
-html[data-theme='dark'] .komite-upload-redesign .komite-custom-select-trigger {
+html[data-theme="dark"] .komite-upload-redesign .komite-custom-select-trigger {
   color: #f8fafc;
   background: linear-gradient(180deg, rgba(15,23,42,.92), rgba(15,23,42,.84));
   box-shadow: inset 0 0 0 1px rgba(148,163,184,.22), 0 1px 0 rgba(255,255,255,.04);
 }
 
-html[data-theme='dark'] .komite-upload-redesign .komite-custom-select-trigger:hover,
-html[data-theme='dark'] .komite-upload-redesign .komite-custom-select-field.open .komite-custom-select-trigger {
+html[data-theme="dark"] .komite-upload-redesign .komite-custom-select-trigger:hover,
+html[data-theme="dark"] .komite-upload-redesign .komite-custom-select-field.open .komite-custom-select-trigger {
   background: linear-gradient(180deg, rgba(15,23,42,.98), rgba(20,83,83,.46));
   box-shadow: inset 0 0 0 1.5px rgba(45,212,191,.42), 0 0 0 4px rgba(45,212,191,.10);
 }
 
-html[data-theme='dark'] .komite-upload-redesign .komite-custom-select-menu {
+html[data-theme="dark"] .komite-upload-redesign .komite-custom-select-menu {
   background: linear-gradient(180deg, rgba(15,23,42,.98), rgba(15,23,42,.94));
   border-color: rgba(45,212,191,.24);
   box-shadow: 0 28px 56px rgba(0,0,0,.34), 0 1px 0 rgba(255,255,255,.05) inset;
 }
 
-html[data-theme='dark'] .komite-upload-redesign .komite-custom-select-option {
+html[data-theme="dark"] .komite-upload-redesign .komite-custom-select-option {
   color: #e2e8f0;
 }
 
-html[data-theme='dark'] .komite-upload-redesign .komite-custom-select-option:hover,
-html[data-theme='dark'] .komite-upload-redesign .komite-custom-select-option.active {
+html[data-theme="dark"] .komite-upload-redesign .komite-custom-select-option:hover,
+html[data-theme="dark"] .komite-upload-redesign .komite-custom-select-option.active {
   color: #5eead4;
   border-color: rgba(45,212,191,.24);
   background: rgba(45,212,191,.08);
@@ -45923,29 +45866,29 @@ html[data-theme='dark'] .komite-upload-redesign .komite-custom-select-option.act
   border-color: rgba(244, 63, 94, .22);
 }
 
-html[data-theme='dark'] .komite-library-toolbar,
-html[data-theme='dark'] .komite-material-library .komite-tree-class,
-html[data-theme='dark'] .komite-material-library .komite-tree-course,
-html[data-theme='dark'] .komite-material-library .komite-tree-file,
-html[data-theme='dark'] .komite-tree-course.open .komite-tree-course-trigger,
-html[data-theme='dark'] .komite-tree-course-trigger:hover,
-html[data-theme='dark'] .komite-tree-class.open .komite-tree-class-trigger,
-html[data-theme='dark'] .komite-tree-class-trigger:hover {
+html[data-theme="dark"] .komite-library-toolbar,
+html[data-theme="dark"] .komite-material-library .komite-tree-class,
+html[data-theme="dark"] .komite-material-library .komite-tree-course,
+html[data-theme="dark"] .komite-material-library .komite-tree-file,
+html[data-theme="dark"] .komite-tree-course.open .komite-tree-course-trigger,
+html[data-theme="dark"] .komite-tree-course-trigger:hover,
+html[data-theme="dark"] .komite-tree-class.open .komite-tree-class-trigger,
+html[data-theme="dark"] .komite-tree-class-trigger:hover {
   background: rgba(15, 23, 42, .72) !important;
   border-color: rgba(148, 163, 184, .16) !important;
 }
 
-html[data-theme='dark'] .komite-tree-class-copy strong,
-html[data-theme='dark'] .komite-tree-course-copy strong,
-html[data-theme='dark'] .komite-tree-file-copy strong,
-html[data-theme='dark'] .komite-tree-class-trigger,
-html[data-theme='dark'] .komite-tree-course-trigger {
+html[data-theme="dark"] .komite-tree-class-copy strong,
+html[data-theme="dark"] .komite-tree-course-copy strong,
+html[data-theme="dark"] .komite-tree-file-copy strong,
+html[data-theme="dark"] .komite-tree-class-trigger,
+html[data-theme="dark"] .komite-tree-course-trigger {
   color: #f8fafc;
 }
 
-html[data-theme='dark'] .komite-tree-class-copy em,
-html[data-theme='dark'] .komite-tree-course-copy em,
-html[data-theme='dark'] .komite-tree-file-copy em {
+html[data-theme="dark"] .komite-tree-class-copy em,
+html[data-theme="dark"] .komite-tree-course-copy em,
+html[data-theme="dark"] .komite-tree-file-copy em {
   color: #94a3b8;
 }
 
@@ -46098,11 +46041,11 @@ html[data-theme='dark'] .komite-tree-file-copy em {
   }
 }
 
-html[data-theme='dark'] .komite-material-library .komite-tree-committee-list {
+html[data-theme="dark"] .komite-material-library .komite-tree-committee-list {
   border-left-color: rgba(45, 212, 191, .22);
 }
 
-html[data-theme='dark'] .komite-material-library .komite-tree-files {
+html[data-theme="dark"] .komite-material-library .komite-tree-files {
   border-left-color: rgba(148, 163, 184, .18);
 }
 
@@ -46309,35 +46252,35 @@ html[data-theme='dark'] .komite-material-library .komite-tree-files {
   white-space: nowrap;
 }
 
-html[data-theme='dark'] .komite-card-class,
-html[data-theme='dark'] .komite-card-course,
-html[data-theme='dark'] .komite-card-deck-row,
-html[data-theme='dark'] .komite-card-course.open .komite-card-course-trigger,
-html[data-theme='dark'] .komite-card-course-trigger:hover,
-html[data-theme='dark'] .komite-card-class.open .komite-card-class-trigger,
-html[data-theme='dark'] .komite-card-class-trigger:hover {
+html[data-theme="dark"] .komite-card-class,
+html[data-theme="dark"] .komite-card-course,
+html[data-theme="dark"] .komite-card-deck-row,
+html[data-theme="dark"] .komite-card-course.open .komite-card-course-trigger,
+html[data-theme="dark"] .komite-card-course-trigger:hover,
+html[data-theme="dark"] .komite-card-class.open .komite-card-class-trigger,
+html[data-theme="dark"] .komite-card-class-trigger:hover {
   background: rgba(15, 23, 42, .72);
   border-color: rgba(148, 163, 184, .16);
 }
 
-html[data-theme='dark'] .komite-card-class-copy strong,
-html[data-theme='dark'] .komite-card-course-copy strong,
-html[data-theme='dark'] .komite-card-deck-copy strong,
-html[data-theme='dark'] .komite-card-class-trigger,
-html[data-theme='dark'] .komite-card-course-trigger,
-html[data-theme='dark'] .komite-card-deck-row {
+html[data-theme="dark"] .komite-card-class-copy strong,
+html[data-theme="dark"] .komite-card-course-copy strong,
+html[data-theme="dark"] .komite-card-deck-copy strong,
+html[data-theme="dark"] .komite-card-class-trigger,
+html[data-theme="dark"] .komite-card-course-trigger,
+html[data-theme="dark"] .komite-card-deck-row {
   color: #f8fafc;
 }
 
-html[data-theme='dark'] .komite-card-deck-copy em {
+html[data-theme="dark"] .komite-card-deck-copy em {
   color: #94a3b8;
 }
 
-html[data-theme='dark'] .komite-card-committee-list {
+html[data-theme="dark"] .komite-card-committee-list {
   border-left-color: rgba(45, 212, 191, .22);
 }
 
-html[data-theme='dark'] .komite-card-decks {
+html[data-theme="dark"] .komite-card-decks {
   border-left-color: rgba(148, 163, 184, .18);
 }
 
@@ -46668,32 +46611,32 @@ html[data-theme='dark'] .komite-card-decks {
   white-space: nowrap;
 }
 
-html[data-theme='dark'] .komite-review-hero,
-html[data-theme='dark'] .komite-review-summary-strip span,
-html[data-theme='dark'] .komite-review-grid-v141 .komite-review-panel,
-html[data-theme='dark'] .komite-review-grid-v141 .komite-review-item,
-html[data-theme='dark'] .komite-review-empty,
-html[data-theme='dark'] .komite-review-scope {
+html[data-theme="dark"] .komite-review-hero,
+html[data-theme="dark"] .komite-review-summary-strip span,
+html[data-theme="dark"] .komite-review-grid-v141 .komite-review-panel,
+html[data-theme="dark"] .komite-review-grid-v141 .komite-review-item,
+html[data-theme="dark"] .komite-review-empty,
+html[data-theme="dark"] .komite-review-scope {
   background: rgba(15, 23, 42, .72) !important;
   border-color: rgba(148, 163, 184, .16) !important;
 }
 
-html[data-theme='dark'] .komite-review-hero-copy strong,
-html[data-theme='dark'] .komite-review-panel-title strong,
-html[data-theme='dark'] .komite-review-item-copy strong,
-html[data-theme='dark'] .komite-review-scope button.active {
+html[data-theme="dark"] .komite-review-hero-copy strong,
+html[data-theme="dark"] .komite-review-panel-title strong,
+html[data-theme="dark"] .komite-review-item-copy strong,
+html[data-theme="dark"] .komite-review-scope button.active {
   color: #f8fafc;
 }
 
-html[data-theme='dark'] .komite-review-hero-copy p,
-html[data-theme='dark'] .komite-review-panel-title small,
-html[data-theme='dark'] .komite-review-item-copy em,
-html[data-theme='dark'] .komite-review-item-copy small,
-html[data-theme='dark'] .komite-review-empty {
+html[data-theme="dark"] .komite-review-hero-copy p,
+html[data-theme="dark"] .komite-review-panel-title small,
+html[data-theme="dark"] .komite-review-item-copy em,
+html[data-theme="dark"] .komite-review-item-copy small,
+html[data-theme="dark"] .komite-review-empty {
   color: #cbd5e1;
 }
 
-html[data-theme='dark'] .komite-review-scope button.active {
+html[data-theme="dark"] .komite-review-scope button.active {
   background: rgba(30, 41, 59, .9);
 }
 
@@ -46935,12 +46878,10 @@ html[data-theme="dark"] .branch-difficulty-filter,
   .branch-difficulty-filter {
     max-width: 100%;
     overflow-x: auto;
-    scrollbar-width: none;
+    
   }
 
-  .branch-difficulty-filter::-webkit-scrollbar {
-    display: none;
-  }
+  
 }
 
 /* --------------------------------------------------------------------------
@@ -46973,7 +46914,7 @@ html[data-theme="dark"] .branch-difficulty-filter,
 }
 
 :where(.difficulty-tag-pill, .branch-difficulty-filter .difficulty-filter-pill)::before {
-  content: '' !important;
+  content: "" !important;
   display: inline-block !important;
   width: 10px !important;
   height: 10px !important;
@@ -47516,7 +47457,7 @@ body:not(.klinikiq-auth-lock) .case-page-shell .horizontal-case-list {
   overflow-y: visible !important;
   padding-bottom: 24px !important;
   margin-bottom: -4px !important;
-  scrollbar-gutter: stable !important;
+  
 }
 
 body:not(.klinikiq-auth-lock) .case-page-shell .horizontal-case-card,
@@ -47524,14 +47465,9 @@ body:not(.klinikiq-auth-lock) .case-page-shell .horizontal-case-list .case-list-
   min-height: 182px !important;
 }
 
-body:not(.klinikiq-auth-lock) .case-page-shell .horizontal-case-list::-webkit-scrollbar {
-  height: 9px !important;
-}
 
-body:not(.klinikiq-auth-lock) .case-page-shell .horizontal-case-list::-webkit-scrollbar-track {
-  margin-inline: 2px !important;
-  border-radius: 999px !important;
-}
+
+
 
 
 /* V210 — show one more item in wrong answers panel without increasing visual clutter */
@@ -47789,76 +47725,76 @@ body:not(.klinikiq-auth-lock) .wrong-answers-panel .wrong-answer-more-row {
   .route-icon-minor-rotations .minor-connector { animation: kqRouteStrokeFlow 1.45s ease-in-out infinite; }
 }
 
-@keyframes branchAnimatedBadgeEnter { 0%,100%{transform:translateY(-2px) scale(1.035)} 22%{transform:translateY(-4px) scale(1.13)} 48%{transform:translateY(-1px) scale(.985)} 72%{transform:translateY(-2px) scale(1.055)} }
-@keyframes branchAnimatedRingStrong { 0%{opacity:0;transform:scale(.72)} 24%{opacity:.32;transform:scale(1)} 100%{opacity:0;transform:scale(1.58)} }
-@keyframes branchAnimatedRingSoft { 0%,18%{opacity:0;transform:scale(.8)} 42%{opacity:.18;transform:scale(1.22)} 100%{opacity:0;transform:scale(1.88)} }
-@keyframes branchAnimatedCoreGlow { 0%{opacity:.36;transform:scale(.9)} 36%{opacity:.82;transform:scale(1.18)} 100%{opacity:.32;transform:scale(1.02)} }
-@keyframes kqHoverAnatomyClarify { 0%,100%{opacity:1} 45%{opacity:.68} }
-@keyframes kqHoverHeartBeat { 0%,100%{transform:scale(1)} 30%{transform:scale(1.06)} 52%{transform:scale(.99)} 72%{transform:scale(1.035)} }
-@keyframes kqHoverDotPulse { 0%,100%{opacity:.55;transform:scale(.85)} 48%{opacity:1;transform:scale(1.18)} }
-@keyframes kqHoverFlaskSway { 0%,100%{transform:rotate(0)} 42%{transform:rotate(-2.2deg)} 70%{transform:rotate(1.4deg)} }
-@keyframes kqHoverBubbleFloat { 0%,100%{opacity:.54;transform:translateY(0) scale(.9)} 52%{opacity:1;transform:translateY(-1.8px) scale(1.08)} }
-@keyframes kqHoverColonyPulse { 0%,100%{opacity:.68;transform:scale(.92)} 50%{opacity:1;transform:scale(1.18)} }
-@keyframes kqHoverTissueFocus { 0%,100%{transform:scale(1);opacity:.92} 48%{transform:scale(1.055);opacity:1} }
-@keyframes kqHoverPharmaSway { 0%,100%{transform:rotate(0)} 48%{transform:rotate(-2.4deg) translateY(-.4px)} 72%{transform:rotate(1.2deg)} }
-@keyframes kqHoverInternalBreath { 0%,100%{transform:scale(1)} 50%{transform:scale(1.055)} }
-@keyframes kqHoverPedsWarmth { 0%,100%{transform:translateY(0) scale(1)} 48%{transform:translateY(-.9px) scale(1.028)} }
-@keyframes kqHoverGlint { 0%,65%,100%{opacity:.18;transform:scale(.6) rotate(0)} 38%{opacity:1;transform:scale(1.18) rotate(42deg)} }
-@keyframes kqHoverObgynHeart { 0%,100%{transform:scale(1);opacity:.72} 44%{transform:scale(1.18);opacity:1} }
-@keyframes kqHoverMinorTile { 0%,100%{transform:scale(1)} 45%{transform:scale(1.055)} }
+@keyframes branchAnimatedBadgeEnter { 0%,100%{transform:translateY(-2px) scale(1.035);} 22%{transform:translateY(-4px) scale(1.13);} 48%{transform:translateY(-1px) scale(.985);} 72%{transform:translateY(-2px) scale(1.055);} }
+@keyframes branchAnimatedRingStrong { 0%{opacity:0;transform:scale(.72);} 24%{opacity:.32;transform:scale(1);} 100%{opacity:0;transform:scale(1.58);} }
+@keyframes branchAnimatedRingSoft { 0%,18%{opacity:0;transform:scale(.8);} 42%{opacity:.18;transform:scale(1.22);} 100%{opacity:0;transform:scale(1.88);} }
+@keyframes branchAnimatedCoreGlow { 0%{opacity:.36;transform:scale(.9);} 36%{opacity:.82;transform:scale(1.18);} 100%{opacity:.32;transform:scale(1.02);} }
+@keyframes kqHoverAnatomyClarify { 0%,100%{opacity:1;} 45%{opacity:.68;} }
+@keyframes kqHoverHeartBeat { 0%,100%{transform:scale(1);} 30%{transform:scale(1.06);} 52%{transform:scale(.99);} 72%{transform:scale(1.035);} }
+@keyframes kqHoverDotPulse { 0%,100%{opacity:.55;transform:scale(.85);} 48%{opacity:1;transform:scale(1.18);} }
+@keyframes kqHoverFlaskSway { 0%,100%{transform:rotate(0);} 42%{transform:rotate(-2.2deg);} 70%{transform:rotate(1.4deg);} }
+@keyframes kqHoverBubbleFloat { 0%,100%{opacity:.54;transform:translateY(0) scale(.9);} 52%{opacity:1;transform:translateY(-1.8px) scale(1.08);} }
+@keyframes kqHoverColonyPulse { 0%,100%{opacity:.68;transform:scale(.92);} 50%{opacity:1;transform:scale(1.18);} }
+@keyframes kqHoverTissueFocus { 0%,100%{transform:scale(1);opacity:.92;} 48%{transform:scale(1.055);opacity:1;} }
+@keyframes kqHoverPharmaSway { 0%,100%{transform:rotate(0);} 48%{transform:rotate(-2.4deg) translateY(-.4px);} 72%{transform:rotate(1.2deg);} }
+@keyframes kqHoverInternalBreath { 0%,100%{transform:scale(1);} 50%{transform:scale(1.055);} }
+@keyframes kqHoverPedsWarmth { 0%,100%{transform:translateY(0) scale(1);} 48%{transform:translateY(-.9px) scale(1.028);} }
+@keyframes kqHoverGlint { 0%,65%,100%{opacity:.18;transform:scale(.6) rotate(0);} 38%{opacity:1;transform:scale(1.18) rotate(42deg);} }
+@keyframes kqHoverObgynHeart { 0%,100%{transform:scale(1);opacity:.72;} 44%{transform:scale(1.18);opacity:1;} }
+@keyframes kqHoverMinorTile { 0%,100%{transform:scale(1);} 45%{transform:scale(1.055);} }
 
-@keyframes kqLaunchAnatomyBuild { 0%{opacity:.62;transform:scale(.94)} 30%{opacity:1;transform:scale(1.08)} 100%{opacity:1;transform:scale(1)} }
-@keyframes kqLaunchScanLine { 0%{opacity:0;stroke-dashoffset:16;transform:translateX(-7px)} 22%{opacity:1} 76%{opacity:.95;stroke-dashoffset:0;transform:translateX(7px)} 100%{opacity:0;transform:translateX(10px)} }
-@keyframes kqLaunchParticlePop { 0%{opacity:0;transform:scale(.4)} 36%{opacity:1;transform:scale(1.2)} 100%{opacity:0;transform:scale(.82)} }
-@keyframes kqLaunchHeartPulse { 0%,100%{transform:scale(1)} 22%{transform:scale(1.18)} 44%{transform:scale(.94)} 70%{transform:scale(1.08)} }
-@keyframes kqLaunchStrokeDraw { 0%{stroke-dashoffset:42;opacity:.25} 44%{opacity:1} 100%{stroke-dashoffset:0;opacity:1} }
-@keyframes kqLaunchPulseRing { 0%{opacity:0;transform:scale(.62)} 28%{opacity:.36} 100%{opacity:0;transform:scale(1.5)} }
-@keyframes kqLaunchCellDivide { 0%,100%{transform:rotate(0) scale(1)} 30%{transform:rotate(8deg) scale(1.06)} 58%{transform:rotate(-4deg) scale(.96)} }
-@keyframes kqLaunchCellDot { 0%{opacity:.42;transform:scale(.65) translate(0,0)} 42%{opacity:1;transform:scale(1.25) translate(1px,-1px)} 100%{opacity:.74;transform:scale(1) translate(0,0)} }
-@keyframes kqLaunchCellOrbit { 0%,100%{transform:rotate(0);opacity:.7} 52%{transform:rotate(12deg);opacity:1} }
-@keyframes kqLaunchFlaskReact { 0%,100%{transform:rotate(0) translateY(0)} 20%{transform:rotate(-6deg) translateY(-.5px)} 44%{transform:rotate(5deg)} 68%{transform:rotate(-2deg)} }
-@keyframes kqLaunchLiquidWave { 0%,100%{transform:translateY(0) scaleX(1)} 45%{transform:translateY(-.8px) scaleX(1.04)} 70%{transform:translateY(.5px) scaleX(.98)} }
-@keyframes kqLaunchBubbleOne { 0%{opacity:0;transform:translateY(0) scale(.45)} 28%{opacity:1} 100%{opacity:0;transform:translateY(-8px) translateX(-1px) scale(1.1)} }
-@keyframes kqLaunchBubbleTwo { 0%{opacity:0;transform:translateY(0) scale(.45)} 28%{opacity:1} 100%{opacity:0;transform:translateY(-10px) translateX(1px) scale(1.12)} }
-@keyframes kqLaunchBubbleThree { 0%{opacity:0;transform:translateY(0) scale(.45)} 28%{opacity:1} 100%{opacity:0;transform:translateY(-7px) scale(1.05)} }
-@keyframes kqLaunchPetriGlow { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)} 46%{transform:scale(1.07);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 30%,transparent))} }
-@keyframes kqLaunchColonyBloom { 0%{transform:scale(.62);opacity:.45} 42%{transform:scale(1.28);opacity:1} 100%{transform:scale(1);opacity:.85} }
-@keyframes kqLaunchMicroOrbit { 0%{transform:rotate(0);opacity:.18} 46%{opacity:1} 100%{transform:rotate(92deg);opacity:.38} }
-@keyframes kqLaunchTissueStain { 0%{transform:scale(.82);opacity:.5} 45%{transform:scale(1.14);opacity:1} 100%{transform:scale(1);opacity:.95} }
-@keyframes kqLaunchPharmaDissolve { 0%,100%{transform:rotate(0) scale(1)} 24%{transform:rotate(-6deg) scale(1.08)} 52%{transform:rotate(3deg) scale(.96)} }
-@keyframes kqLaunchReceptorPulse { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)} 50%{transform:scale(1.18);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 34%,transparent))} }
-@keyframes kqLaunchDoseOne { 0%{opacity:0;transform:translate(0,0) scale(.4)} 28%{opacity:1} 100%{opacity:0;transform:translate(8px,4px) scale(1)} }
-@keyframes kqLaunchDoseTwo { 0%{opacity:0;transform:translate(0,0) scale(.4)} 28%{opacity:1} 100%{opacity:0;transform:translate(7px,5px) scale(1)} }
-@keyframes kqLaunchDoseThree { 0%{opacity:0;transform:translate(0,0) scale(.4)} 28%{opacity:1} 100%{opacity:0;transform:translate(6px,6px) scale(1)} }
-@keyframes kqLaunchInternalGlow { 0%,100%{transform:scale(1)} 42%{transform:scale(1.07);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 28%,transparent))} }
-@keyframes kqLaunchPedsBounce { 0%,100%{transform:translateY(0) scale(1)} 24%{transform:translateY(-2px) scale(1.1)} 50%{transform:translateY(1px) scale(.97)} 75%{transform:translateY(-.5px) scale(1.03)} }
-@keyframes kqLaunchSparklePop { 0%{opacity:0;transform:scale(.42) rotate(0)} 44%{opacity:1;transform:scale(1.28) rotate(45deg)} 100%{opacity:.55;transform:scale(.88) rotate(0)} }
-@keyframes kqLaunchScalpelSwipe { 0%,100%{transform:translateX(0) rotate(0)} 24%{transform:translateX(3px) rotate(-7deg)} 48%{transform:translateX(-2px) rotate(4deg)} 72%{transform:translateX(1px) rotate(-1deg)} }
-@keyframes kqLaunchIncisionDraw { 0%{stroke-dashoffset:42;opacity:0} 28%{opacity:.9} 100%{stroke-dashoffset:0;opacity:.9} }
-@keyframes kqLaunchGlintPop { 0%{opacity:0;transform:scale(.4) rotate(0)} 42%{opacity:1;transform:scale(1.25) rotate(45deg)} 100%{opacity:.34;transform:scale(.75) rotate(0)} }
-@keyframes kqLaunchObgynHeart { 0%,100%{transform:scale(1);opacity:.75} 34%{transform:scale(1.25);opacity:1} 58%{transform:scale(.94)} }
-@keyframes kqLaunchObgynRing { 0%{opacity:0;transform:scale(.7) rotate(0)} 30%{opacity:.36} 100%{opacity:0;transform:scale(1.36) rotate(38deg)} }
-@keyframes kqLaunchObgynOutline { 0%,100%{filter:drop-shadow(0 0 0 transparent)} 48%{filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 28%,transparent))} }
-@keyframes kqLaunchMinorTiles { 0%,100%{transform:translate(0,0) scale(1)} 38%{transform:translate(var(--minor-x, 0), var(--minor-y, 0)) scale(1.08)} 65%{transform:translate(0,0) scale(.98)} }
+@keyframes kqLaunchAnatomyBuild { 0%{opacity:.62;transform:scale(.94);} 30%{opacity:1;transform:scale(1.08);} 100%{opacity:1;transform:scale(1);} }
+@keyframes kqLaunchScanLine { 0%{opacity:0;stroke-dashoffset:16;transform:translateX(-7px);} 22%{opacity:1;} 76%{opacity:.95;stroke-dashoffset:0;transform:translateX(7px);} 100%{opacity:0;transform:translateX(10px);} }
+@keyframes kqLaunchParticlePop { 0%{opacity:0;transform:scale(.4);} 36%{opacity:1;transform:scale(1.2);} 100%{opacity:0;transform:scale(.82);} }
+@keyframes kqLaunchHeartPulse { 0%,100%{transform:scale(1);} 22%{transform:scale(1.18);} 44%{transform:scale(.94);} 70%{transform:scale(1.08);} }
+@keyframes kqLaunchStrokeDraw { 0%{stroke-dashoffset:42;opacity:.25;} 44%{opacity:1;} 100%{stroke-dashoffset:0;opacity:1;} }
+@keyframes kqLaunchPulseRing { 0%{opacity:0;transform:scale(.62);} 28%{opacity:.36;} 100%{opacity:0;transform:scale(1.5);} }
+@keyframes kqLaunchCellDivide { 0%,100%{transform:rotate(0) scale(1);} 30%{transform:rotate(8deg) scale(1.06);} 58%{transform:rotate(-4deg) scale(.96);} }
+@keyframes kqLaunchCellDot { 0%{opacity:.42;transform:scale(.65) translate(0,0);} 42%{opacity:1;transform:scale(1.25) translate(1px,-1px);} 100%{opacity:.74;transform:scale(1) translate(0,0);} }
+@keyframes kqLaunchCellOrbit { 0%,100%{transform:rotate(0);opacity:.7;} 52%{transform:rotate(12deg);opacity:1;} }
+@keyframes kqLaunchFlaskReact { 0%,100%{transform:rotate(0) translateY(0);} 20%{transform:rotate(-6deg) translateY(-.5px);} 44%{transform:rotate(5deg);} 68%{transform:rotate(-2deg);} }
+@keyframes kqLaunchLiquidWave { 0%,100%{transform:translateY(0) scaleX(1);} 45%{transform:translateY(-.8px) scaleX(1.04);} 70%{transform:translateY(.5px) scaleX(.98);} }
+@keyframes kqLaunchBubbleOne { 0%{opacity:0;transform:translateY(0) scale(.45);} 28%{opacity:1;} 100%{opacity:0;transform:translateY(-8px) translateX(-1px) scale(1.1);} }
+@keyframes kqLaunchBubbleTwo { 0%{opacity:0;transform:translateY(0) scale(.45);} 28%{opacity:1;} 100%{opacity:0;transform:translateY(-10px) translateX(1px) scale(1.12);} }
+@keyframes kqLaunchBubbleThree { 0%{opacity:0;transform:translateY(0) scale(.45);} 28%{opacity:1;} 100%{opacity:0;transform:translateY(-7px) scale(1.05);} }
+@keyframes kqLaunchPetriGlow { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent);} 46%{transform:scale(1.07);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 30%,transparent));} }
+@keyframes kqLaunchColonyBloom { 0%{transform:scale(.62);opacity:.45;} 42%{transform:scale(1.28);opacity:1;} 100%{transform:scale(1);opacity:.85;} }
+@keyframes kqLaunchMicroOrbit { 0%{transform:rotate(0);opacity:.18;} 46%{opacity:1;} 100%{transform:rotate(92deg);opacity:.38;} }
+@keyframes kqLaunchTissueStain { 0%{transform:scale(.82);opacity:.5;} 45%{transform:scale(1.14);opacity:1;} 100%{transform:scale(1);opacity:.95;} }
+@keyframes kqLaunchPharmaDissolve { 0%,100%{transform:rotate(0) scale(1);} 24%{transform:rotate(-6deg) scale(1.08);} 52%{transform:rotate(3deg) scale(.96);} }
+@keyframes kqLaunchReceptorPulse { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent);} 50%{transform:scale(1.18);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 34%,transparent));} }
+@keyframes kqLaunchDoseOne { 0%{opacity:0;transform:translate(0,0) scale(.4);} 28%{opacity:1;} 100%{opacity:0;transform:translate(8px,4px) scale(1);} }
+@keyframes kqLaunchDoseTwo { 0%{opacity:0;transform:translate(0,0) scale(.4);} 28%{opacity:1;} 100%{opacity:0;transform:translate(7px,5px) scale(1);} }
+@keyframes kqLaunchDoseThree { 0%{opacity:0;transform:translate(0,0) scale(.4);} 28%{opacity:1;} 100%{opacity:0;transform:translate(6px,6px) scale(1);} }
+@keyframes kqLaunchInternalGlow { 0%,100%{transform:scale(1);} 42%{transform:scale(1.07);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 28%,transparent));} }
+@keyframes kqLaunchPedsBounce { 0%,100%{transform:translateY(0) scale(1);} 24%{transform:translateY(-2px) scale(1.1);} 50%{transform:translateY(1px) scale(.97);} 75%{transform:translateY(-.5px) scale(1.03);} }
+@keyframes kqLaunchSparklePop { 0%{opacity:0;transform:scale(.42) rotate(0);} 44%{opacity:1;transform:scale(1.28) rotate(45deg);} 100%{opacity:.55;transform:scale(.88) rotate(0);} }
+@keyframes kqLaunchScalpelSwipe { 0%,100%{transform:translateX(0) rotate(0);} 24%{transform:translateX(3px) rotate(-7deg);} 48%{transform:translateX(-2px) rotate(4deg);} 72%{transform:translateX(1px) rotate(-1deg);} }
+@keyframes kqLaunchIncisionDraw { 0%{stroke-dashoffset:42;opacity:0;} 28%{opacity:.9;} 100%{stroke-dashoffset:0;opacity:.9;} }
+@keyframes kqLaunchGlintPop { 0%{opacity:0;transform:scale(.4) rotate(0);} 42%{opacity:1;transform:scale(1.25) rotate(45deg);} 100%{opacity:.34;transform:scale(.75) rotate(0);} }
+@keyframes kqLaunchObgynHeart { 0%,100%{transform:scale(1);opacity:.75;} 34%{transform:scale(1.25);opacity:1;} 58%{transform:scale(.94);} }
+@keyframes kqLaunchObgynRing { 0%{opacity:0;transform:scale(.7) rotate(0);} 30%{opacity:.36;} 100%{opacity:0;transform:scale(1.36) rotate(38deg);} }
+@keyframes kqLaunchObgynOutline { 0%,100%{filter:drop-shadow(0 0 0 transparent);} 48%{filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 28%,transparent));} }
+@keyframes kqLaunchMinorTiles { 0%,100%{transform:translate(0,0) scale(1);} 38%{transform:translate(var(--minor-x, 0), var(--minor-y, 0)) scale(1.08);} 65%{transform:translate(0,0) scale(.98);} }
 .branch-card.is-launching[data-branch="minor-rotations"] .tile-one { --minor-x: -1.5px; --minor-y: -1.5px; }
 .branch-card.is-launching[data-branch="minor-rotations"] .tile-two { --minor-x: 1.5px; --minor-y: -1.5px; }
 .branch-card.is-launching[data-branch="minor-rotations"] .tile-three { --minor-x: -1.5px; --minor-y: 1.5px; }
 .branch-card.is-launching[data-branch="minor-rotations"] .tile-four { --minor-x: 1.5px; --minor-y: 1.5px; }
 
-@keyframes kqRouteScan { 0%,100%{opacity:0;stroke-dashoffset:16;transform:translateX(-8px)} 45%{opacity:1;stroke-dashoffset:0;transform:translateX(8px)} }
-@keyframes kqRouteHeartBeat { 0%,100%{transform:scale(1)} 32%{transform:scale(1.11)} 52%{transform:scale(.98)} 70%{transform:scale(1.04)} }
-@keyframes kqRouteStrokeFlow { 0%{stroke-dashoffset:42;opacity:.42} 55%{opacity:1} 100%{stroke-dashoffset:0;opacity:.78} }
-@keyframes kqRouteCellDrift { 0%,100%{transform:rotate(0) scale(1)} 48%{transform:rotate(6deg) scale(1.04)} }
-@keyframes kqRouteFlaskSway { 0%,100%{transform:rotate(0)} 42%{transform:rotate(-4deg)} 70%{transform:rotate(2.5deg)} }
-@keyframes kqRouteBubbleFloat { 0%,100%{opacity:.18;transform:translateY(0) scale(.72)} 50%{opacity:1;transform:translateY(-7px) scale(1.1)} }
-@keyframes kqRouteMicroOrbit { from{transform:rotate(0)} to{transform:rotate(360deg)} }
-@keyframes kqRoutePharmaSway { 0%,100%{transform:rotate(0)} 48%{transform:rotate(-5deg) translateY(-.5px)} 72%{transform:rotate(2deg)} }
-@keyframes kqRouteReceptorPulse { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)} 48%{transform:scale(1.15);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 36%,transparent))} }
-@keyframes kqRoutePedsBounce { 0%,100%{transform:translateY(0) scale(1)} 48%{transform:translateY(-1.8px) scale(1.045)} 72%{transform:translateY(.5px) scale(.99)} }
-@keyframes kqRouteSparkle { 0%,100%{opacity:.18;transform:scale(.62) rotate(0)} 44%{opacity:1;transform:scale(1.22) rotate(45deg)} }
-@keyframes kqRouteSurgeryPrecision { 0%,100%{transform:translateX(0) rotate(0)} 45%{transform:translateX(3px) rotate(-5deg)} 72%{transform:translateX(-1px) rotate(2deg)} }
-@keyframes kqRouteObgynRing { 0%,100%{opacity:0;transform:scale(.78) rotate(0)} 45%{opacity:.35;transform:scale(1.1) rotate(28deg)} }
-@keyframes kqRouteMinorTiles { 0%,100%{transform:scale(1)} 45%{transform:scale(1.08)} 70%{transform:scale(.99)} }
+@keyframes kqRouteScan { 0%,100%{opacity:0;stroke-dashoffset:16;transform:translateX(-8px);} 45%{opacity:1;stroke-dashoffset:0;transform:translateX(8px);} }
+@keyframes kqRouteHeartBeat { 0%,100%{transform:scale(1);} 32%{transform:scale(1.11);} 52%{transform:scale(.98);} 70%{transform:scale(1.04);} }
+@keyframes kqRouteStrokeFlow { 0%{stroke-dashoffset:42;opacity:.42;} 55%{opacity:1;} 100%{stroke-dashoffset:0;opacity:.78;} }
+@keyframes kqRouteCellDrift { 0%,100%{transform:rotate(0) scale(1);} 48%{transform:rotate(6deg) scale(1.04);} }
+@keyframes kqRouteFlaskSway { 0%,100%{transform:rotate(0);} 42%{transform:rotate(-4deg);} 70%{transform:rotate(2.5deg);} }
+@keyframes kqRouteBubbleFloat { 0%,100%{opacity:.18;transform:translateY(0) scale(.72);} 50%{opacity:1;transform:translateY(-7px) scale(1.1);} }
+@keyframes kqRouteMicroOrbit { from{transform:rotate(0);} to{transform:rotate(360deg);} }
+@keyframes kqRoutePharmaSway { 0%,100%{transform:rotate(0);} 48%{transform:rotate(-5deg) translateY(-.5px);} 72%{transform:rotate(2deg);} }
+@keyframes kqRouteReceptorPulse { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent);} 48%{transform:scale(1.15);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 36%,transparent));} }
+@keyframes kqRoutePedsBounce { 0%,100%{transform:translateY(0) scale(1);} 48%{transform:translateY(-1.8px) scale(1.045);} 72%{transform:translateY(.5px) scale(.99);} }
+@keyframes kqRouteSparkle { 0%,100%{opacity:.18;transform:scale(.62) rotate(0);} 44%{opacity:1;transform:scale(1.22) rotate(45deg);} }
+@keyframes kqRouteSurgeryPrecision { 0%,100%{transform:translateX(0) rotate(0);} 45%{transform:translateX(3px) rotate(-5deg);} 72%{transform:translateX(-1px) rotate(2deg);} }
+@keyframes kqRouteObgynRing { 0%,100%{opacity:0;transform:scale(.78) rotate(0);} 45%{opacity:.35;transform:scale(1.1) rotate(28deg);} }
+@keyframes kqRouteMinorTiles { 0%,100%{transform:scale(1);} 45%{transform:scale(1.08);} 70%{transform:scale(.99);} }
 
 .branch-transition-visual[data-branch] .branch-icon-glyph,
 .branch-transition-visual[data-branch] .branch-animated-svg {
@@ -49493,7 +49429,7 @@ html[data-theme="dark"] .tus-spot-bank-main .option-grid > .answer-option:hover:
 }
 
 .bottom-case-search::after {
-  content: '' !important;
+  content: "" !important;
   position: absolute !important;
   inset: 0 !important;
   border-radius: inherit !important;
@@ -49759,25 +49695,15 @@ html[data-theme="dark"] .bottom-case-browser-tools .bottom-case-browser-count,
 
 #klinikiq-tooltip-layer .smart-glossary-popover .smart-glossary-card,
 .smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip .smart-glossary-card {
-  scrollbar-width: thin;
-  scrollbar-color: color-mix(in srgb, #0f766e 28%, transparent) transparent;
+  
+  
 }
 
-#klinikiq-tooltip-layer .smart-glossary-popover .smart-glossary-card::-webkit-scrollbar,
-.smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip .smart-glossary-card::-webkit-scrollbar {
-  width: 6px;
-}
 
-#klinikiq-tooltip-layer .smart-glossary-popover .smart-glossary-card::-webkit-scrollbar-track,
-.smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip .smart-glossary-card::-webkit-scrollbar-track {
-  background: transparent;
-}
 
-#klinikiq-tooltip-layer .smart-glossary-popover .smart-glossary-card::-webkit-scrollbar-thumb,
-.smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip .smart-glossary-card::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: color-mix(in srgb, #0f766e 26%, transparent);
-}
+
+
+
 
 #klinikiq-tooltip-layer .smart-glossary-popover::after,
 .smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip::after {
@@ -50244,34 +50170,34 @@ html[data-theme="dark"] .bottom-case-browser-tools .bottom-case-browser-count,
   }
 }
 
-[data-theme='dark'] #klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover,
-[data-theme='dark'] .glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover {
+[data-theme="dark"] #klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover,
+[data-theme="dark"] .glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover {
   background: #0f172a !important;
   color: #e5e7eb !important;
   border-color: rgba(148, 163, 184, .24) !important;
   box-shadow: 0 18px 48px rgba(0, 0, 0, .42), 0 2px 8px rgba(0, 0, 0, .25) !important;
 }
 
-[data-theme='dark'] #klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover::after,
-[data-theme='dark'] .glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover::after {
+[data-theme="dark"] #klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover::after,
+[data-theme="dark"] .glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover::after {
   background: #0f172a !important;
   border-color: rgba(148, 163, 184, .24) !important;
 }
 
-[data-theme='dark'] .smart-glossary-title { color: #f8fafc !important; }
-[data-theme='dark'] .smart-glossary-secondary-name,
-[data-theme='dark'] .smart-glossary-definition { color: #cbd5e1 !important; }
-[data-theme='dark'] .smart-glossary-row,
-[data-theme='dark'] .smart-glossary-safe-note,
-[data-theme='dark'] .smart-glossary-links span,
-[data-theme='dark'] .smart-glossary-arrow {
+[data-theme="dark"] .smart-glossary-title { color: #f8fafc !important; }
+[data-theme="dark"] .smart-glossary-secondary-name,
+[data-theme="dark"] .smart-glossary-definition { color: #cbd5e1 !important; }
+[data-theme="dark"] .smart-glossary-row,
+[data-theme="dark"] .smart-glossary-safe-note,
+[data-theme="dark"] .smart-glossary-links span,
+[data-theme="dark"] .smart-glossary-arrow {
   background: rgba(15, 23, 42, .96) !important;
   border-color: rgba(148, 163, 184, .20) !important;
 }
-[data-theme='dark'] .smart-glossary-row span,
-[data-theme='dark'] .smart-glossary-detail-block span { color: #cbd5e1 !important; }
-[data-theme='dark'] .smart-glossary-row b,
-[data-theme='dark'] .smart-glossary-detail-block b { color: #f8fafc !important; }
+[data-theme="dark"] .smart-glossary-row span,
+[data-theme="dark"] .smart-glossary-detail-block span { color: #cbd5e1 !important; }
+[data-theme="dark"] .smart-glossary-row b,
+[data-theme="dark"] .smart-glossary-detail-block b { color: #f8fafc !important; }
 
 
 /* =========================================================
@@ -50804,7 +50730,7 @@ html[data-theme="dark"] .bottom-case-browser-tools .bottom-case-browser-count,
   max-height: min(var(--tooltip-max-height, 720px), calc(100vh - 24px)) !important;
   overflow-y: auto !important;
   overflow-x: hidden !important;
-  scrollbar-gutter: auto !important;
+  
 }
 
 .smart-glossary-card.smart-glossary-card--stacked-popover .smart-glossary-definition,
@@ -51120,221 +51046,65 @@ body:not(.klinikiq-auth-lock) .exam-active-shell.timed-exam-shell .tus-spot-bank
   }
 }
 
-/* V349 — KlinikIQ Premium Cursor / Reliable Activation Reset
-   The cursor is now always mounted and activates on the first real desktop
-   mouse movement. No React state is updated during pointer movement. */
-html.ki-premium-cursor-on,
-html.ki-premium-cursor-on body {
-  cursor: none !important;
-}
 
-html.ki-premium-cursor-on input,
-html.ki-premium-cursor-on textarea,
-html.ki-premium-cursor-on select,
-html.ki-premium-cursor-on [contenteditable='true'],
-html.ki-premium-cursor-on [contenteditable=''] {
-  cursor: text !important;
-}
 
-.ki-cursor,
-.premium-cursor.ki-cursor {
-  --ki-cursor-size: 30px;
-  --ki-cursor-ring: rgba(20, 184, 166, .92);
-  --ki-cursor-core: #0f766e;
-  --ki-cursor-aura: rgba(20, 184, 166, .16);
-  --ki-cursor-shadow: rgba(15, 118, 110, .18);
 
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 2147483647;
-  width: var(--ki-cursor-size);
-  height: var(--ki-cursor-size);
-  opacity: 0;
-  pointer-events: none;
-  contain: layout paint style;
-  will-change: transform, opacity;
-  transform: translate3d(-100px, -100px, 0);
-  transition: opacity 90ms ease, width 105ms ease, height 105ms ease;
-  mix-blend-mode: normal;
-}
 
-.ki-cursor.is-visible {
-  opacity: 1;
-}
 
-.ki-cursor > span {
-  position: absolute;
-  pointer-events: none;
-}
 
-.ki-cursor-aura {
-  inset: -8px;
-  border-radius: 999px;
-  background: radial-gradient(circle, var(--ki-cursor-aura) 0%, transparent 67%);
-  opacity: .78;
-  transform: translateZ(0);
-}
 
-.ki-cursor-ring {
-  inset: 0;
-  border-radius: 999px;
-  border: 1.5px solid var(--ki-cursor-ring);
-  background:
-    radial-gradient(circle at 36% 28%, rgba(255, 255, 255, .40), transparent 22%),
-    radial-gradient(circle, rgba(255, 255, 255, .07), transparent 62%);
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, .16) inset,
-    0 0 11px var(--ki-cursor-shadow);
-}
 
-.ki-cursor-core {
-  left: 50%;
-  top: 50%;
-  width: 5px;
-  height: 5px;
-  margin: -2.5px 0 0 -2.5px;
-  border-radius: 999px;
-  background: var(--ki-cursor-core);
-  box-shadow: 0 0 7px rgba(20, 184, 166, .46);
-  transition: opacity 100ms ease, transform 100ms ease;
-}
 
-.ki-cursor-cross {
-  left: 50%;
-  top: 50%;
-  background: var(--ki-cursor-ring);
-  border-radius: 999px;
-  opacity: .36;
-  transform: translate(-50%, -50%);
-  transition: opacity 100ms ease;
-}
 
-.ki-cursor-cross--v {
-  width: 1px;
-  height: 15px;
-}
 
-.ki-cursor-cross--h {
-  width: 15px;
-  height: 1px;
-}
 
-.ki-cursor-info {
-  left: 50%;
-  top: 50%;
-  width: 16px;
-  height: 16px;
-  margin: -8px 0 0 -8px;
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
-  color: #0f766e;
-  background: rgba(240, 253, 250, .98);
-  border: 1px solid rgba(20, 184, 166, .42);
-  font: 800 9px/1 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  opacity: 0;
-  transform: scale(.78);
-  transition: opacity 100ms ease, transform 100ms ease;
-}
 
-.ki-cursor-spinner {
-  inset: -2px;
-  border-radius: 999px;
-  opacity: 0;
-  background: conic-gradient(from 0deg, transparent 0 36%, rgba(14, 165, 233, .95) 49%, transparent 68% 100%);
-  mask: radial-gradient(circle, transparent 57%, #000 60%);
-  -webkit-mask: radial-gradient(circle, transparent 57%, #000 60%);
-}
 
-.ki-cursor--interactive {
-  --ki-cursor-size: 36px;
-  --ki-cursor-ring: rgba(20, 184, 166, 1);
-  --ki-cursor-aura: rgba(20, 184, 166, .22);
-}
 
-.ki-cursor--interactive .ki-cursor-cross {
-  opacity: .58;
-}
 
-.ki-cursor--interactive .ki-cursor-core {
-  transform: scale(1.16);
-}
 
-.ki-cursor--glossary {
-  --ki-cursor-size: 34px;
-  --ki-cursor-ring: rgba(13, 148, 136, 1);
-  --ki-cursor-aura: rgba(13, 148, 136, .24);
-}
 
-.ki-cursor--glossary .ki-cursor-core,
-.ki-cursor--glossary .ki-cursor-cross {
-  opacity: 0;
-}
 
-.ki-cursor--glossary .ki-cursor-info {
-  opacity: 1;
-  transform: scale(1);
-}
 
-.ki-cursor--loading {
-  --ki-cursor-size: 34px;
-  --ki-cursor-ring: rgba(14, 165, 233, .96);
-  --ki-cursor-core: rgba(14, 165, 233, .98);
-  --ki-cursor-aura: rgba(14, 165, 233, .20);
-}
 
-.ki-cursor--loading .ki-cursor-spinner {
-  opacity: 1;
-  animation: ki-cursor-spin-v349 820ms linear infinite;
-}
 
-.ki-cursor--text {
-  opacity: 0 !important;
-}
 
-html.ki-premium-cursor-pressed .ki-cursor {
-  --ki-cursor-size: 24px;
-}
 
-html[data-theme='dark'] .ki-cursor,
-[data-theme='dark'] .ki-cursor {
-  --ki-cursor-ring: rgba(94, 234, 212, .92);
-  --ki-cursor-core: #99f6e4;
-  --ki-cursor-aura: rgba(45, 212, 191, .20);
-  --ki-cursor-shadow: rgba(45, 212, 191, .20);
-}
 
-html[data-theme='dark'] .ki-cursor-info,
-[data-theme='dark'] .ki-cursor-info {
-  color: #ccfbf1;
-  background: rgba(15, 23, 42, .96);
-  border-color: rgba(94, 234, 212, .46);
-}
 
-@keyframes ki-cursor-spin-v349 {
-  to { transform: rotate(360deg); }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 767px), (pointer: coarse) and (not (any-pointer: fine)) {
-  .ki-cursor {
-    display: none !important;
-  }
+  
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ki-cursor,
-  .ki-cursor-aura,
-  .ki-cursor-ring,
-  .ki-cursor-core,
-  .ki-cursor-cross,
-  .ki-cursor-info {
-    transition: none !important;
-  }
+  
 
-  .ki-cursor--loading .ki-cursor-spinner {
-    animation-duration: 1.6s;
-  }
+  
 }
 
 
@@ -51500,24 +51270,13 @@ html.ki-performance-mode [data-glossary-entry-id] {
   transition: background-color 90ms ease, color 90ms ease, border-color 90ms ease !important;
 }
 
-html.ki-performance-mode .ki-cursor,
-html.ki-performance-mode .premium-cursor.ki-cursor {
-  mix-blend-mode: normal;
-  contain: layout paint style;
-}
 
-html.ki-performance-mode .ki-cursor-aura {
-  opacity: .42;
-}
 
-html.ki-performance-mode .ki-cursor-ring {
-  box-shadow: 0 0 0 1px rgba(255,255,255,.10) inset;
-}
 
-html.ki-performance-mode .ki-cursor--text,
-html.ki-performance-mode .premium-cursor--text {
-  opacity: 0 !important;
-}
+
+
+
+
 
 html.ki-performance-mode [style*="filter"],
 html.ki-performance-mode .nav-brand-mark-pulse,
@@ -51537,150 +51296,35 @@ html.ki-performance-mode .shimmer {
   }
 }
 
-/* V352 — Unified premium cursor consistency patch
-   Keeps the same cursor design across normal UI, nested glossary/toolbox popovers,
-   floating portals and regular cards. Native cursor is hidden globally once the
-   premium cursor is active; text-entry fields remain usable. */
-html.ki-unified-cursor-active body *,
-html.ki-unified-cursor-active body *::before,
-html.ki-unified-cursor-active body *::after {
-  cursor: none !important;
-}
 
-html.ki-unified-cursor-active body :is(input, textarea, select, [contenteditable='true'], [contenteditable='']) {
-  cursor: text !important;
-}
 
-html.ki-unified-cursor-active body :is(
-  .glossary-term,
-  .smart-glossary-term,
-  .glossary-word,
-  .nested-glossary-term,
-  .smart-glossary-term--drilldown,
-  .glossary-tooltip,
-  .floating-glossary-tooltip,
-  .smart-glossary-popover,
-  .smart-glossary-card,
-  [data-glossary-entry-id],
-  [data-glossary-entry-term],
-  [data-cursor='glossary'],
-  [data-glossary-tooltip-owner]
-),
-html.ki-unified-cursor-active body :is(
-  .glossary-term,
-  .smart-glossary-term,
-  .glossary-word,
-  .nested-glossary-term,
-  .smart-glossary-term--drilldown,
-  .glossary-tooltip,
-  .floating-glossary-tooltip,
-  .smart-glossary-popover,
-  .smart-glossary-card,
-  [data-glossary-entry-id],
-  [data-glossary-entry-term],
-  [data-cursor='glossary'],
-  [data-glossary-tooltip-owner]
-) * {
-  cursor: none !important;
-}
 
-.ki-cursor:not(.ki-unified-cursor-v352),
-.premium-cursor:not(.ki-unified-cursor-v352),
-.ki-cursor-v351:not(.ki-unified-cursor-v352),
-.ki-cursor-v350:not(.ki-unified-cursor-v352) {
-  display: none !important;
-}
 
-/* V353 — minimal cursor cleanup fallback
-   Prevents legacy cursor shells from creating boxed/glass artifacts. Runtime
-   styles in PremiumCursor.jsx are authoritative; this fallback only protects
-   first paint and cached CSS edge cases. */
-.ki-unified-cursor-v352,
-.ki-cursor-v351,
-.ki-cursor-v350,
-.ki-cursor:not(.ki-minimal-premium-cursor-v353),
-.premium-cursor:not(.ki-minimal-premium-cursor-v353) {
-  display: none !important;
-}
 
-.ki-minimal-premium-cursor-v353 {
-  background: transparent !important;
-  border: 0 !important;
-  outline: 0 !important;
-  box-shadow: none !important;
-}
 
-/* V354 SIMPLE CURSOR FULL RESET — old cursor designs removed/neutralized */
-.premium-cursor,
-.premium-cursor-root,
-.clinical-cursor-root,
-.klinq-cursor-root,
-.cursor-lens,
-.cursor-orb,
-.cursor-ring,
-[data-klinq-old-cursor-root] {
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
 
-.ki-simple-cursor-root,
-.ki-simple-cursor-root *,
-.ki-simple-cursor-root::before,
-.ki-simple-cursor-root::after,
-.ki-simple-cursor-root *::before,
-.ki-simple-cursor-root *::after {
-  background: transparent !important;
-  box-shadow: none !important;
-  filter: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  outline: none !important;
-}
 
-.ki-simple-cursor-dot {
-  background: rgba(13, 148, 136, 0.96) !important;
-}
 
-/* V355 — Cursor visibility hard fix
-   New cursor root intentionally avoids old cursor class names, so legacy CSS cannot hide it. */
-html.ki-pointer-v355-on,
-html.ki-pointer-v355-on body,
-html.ki-pointer-v355-on body *:not(input):not(textarea):not(select):not([contenteditable='true']):not([contenteditable='']):not(.cm-editor):not(.monaco-editor) {
-  cursor: none !important;
-}
 
-html.ki-pointer-v355-on input,
-html.ki-pointer-v355-on textarea,
-html.ki-pointer-v355-on select,
-html.ki-pointer-v355-on [contenteditable='true'],
-html.ki-pointer-v355-on [contenteditable=''],
-html.ki-pointer-v355-on .cm-editor,
-html.ki-pointer-v355-on .monaco-editor {
-  cursor: text !important;
-}
 
-[data-ki-pointer-v355-root='true'] {
-  display: block !important;
-  visibility: visible !important;
-  pointer-events: none !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  filter: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
 
-[data-ki-pointer-v355-root='true'] svg,
-[data-ki-pointer-v355-root='true'] circle {
-  display: block !important;
-  visibility: visible !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  filter: none !important;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ===== V370 performance/lag polish: scroll and interaction cost guardrails ===== */
 html.ki-performance-mode .option-grid,
@@ -51867,11 +51511,7 @@ html.ki-performance-mode.ki-route-transitioning :is(
   filter: none !important;
 }
 
-html.ki-performance-mode.ki-is-scrolling [data-ki-pointer-v364-root='true'],
-html.ki-performance-mode.ki-is-resizing [data-ki-pointer-v364-root='true'],
-html.ki-performance-mode.ki-route-transitioning [data-ki-pointer-v364-root='true'] {
-  transition: none !important;
-}
+
 
 /* Continuous decorative animations stay paused while idle; hover/launch restores the premium feel. */
 html.ki-performance-mode :is(

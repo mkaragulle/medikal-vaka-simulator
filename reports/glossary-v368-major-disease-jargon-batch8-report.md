@@ -10,7 +10,7 @@
 - Dropped low-signal aliases and aliases with over-highlight risk.
 - Kept P2 entries at lower matching priority; broad P2 one-word entries received context guards.
 - Rewrote generic placeholder-style definitions into more clinical, mechanism-oriented explanations where needed.
-- Preserved functionality: no React state, case logic, hover-delay, nested tooltip, scrollbar or UI behavior was changed.
+- Preserved functionality: no React state, case logic, hover-delay, nested tooltip or UI behavior was changed.
 
 ## Accepted terms
 - Febril nötropeni (P0, Hastalık / onkoloji acil)

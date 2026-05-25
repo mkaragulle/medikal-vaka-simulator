@@ -1,0 +1,53 @@
+KlinikIQ V374 — Custom Cursor & Custom Scrollbar Removal Summary
+
+Goal:
+Remove the custom cursor and custom scrollbar systems completely because the remaining user-reported lag was still felt during mouse movement, scrolling, popup opening, screen transitions and option selection.
+
+Removed from runtime:
+- src/components/PremiumCursor.jsx
+- src/components/KlinikIQCustomScrollbars.jsx
+
+App.jsx changes:
+- Removed PremiumCursor import.
+- Removed KlinikIQCustomScrollbars import.
+- Removed both components from the login shell.
+- Removed both components from the main authenticated app shell.
+
+CSS cleanup:
+- Removed old custom cursor selector blocks.
+- Removed custom pointer activation selectors.
+- Removed custom scrollbar pseudo-element rules.
+- Removed scrollbar-width and scrollbar-color customizations.
+- Removed stale cursor/scrollbar compatibility CSS.
+
+Glossary compatibility cleanup:
+- Removed data-cursor="glossary" because it was only needed by the custom cursor system.
+- Glossary hover, click and nested tooltip behavior remain intact.
+
+Preserved:
+- TUS mode.
+- KOMİTE mode.
+- TUS Spot Olgular.
+- Kataloglarım / Hap Bilgi flows.
+- Glossary tooltip content and behavior.
+- Medical/TUS question data, correct answers and feedbacks.
+- Dark/light mode.
+- Existing design identity except for returning cursor and scrollbars to native browser behavior.
+
+Verification:
+- No active source references remain for PremiumCursor, KlinikIQCustomScrollbars, custom cursor classes or custom scrollbar classes.
+- ESBuild parse/bundle syntax check passed for src/main.jsx with app dependencies externalized.
+- Full npm build was not completed because npm install timed out in the sandbox; run npm install and npm run build locally or in Vercel.
+
+Recommended local check:
+npm install
+npm run build
+npm run dev
+
+Manual UX checks:
+1. Move mouse across home cards, case cards and branch cards.
+2. Scroll long case pages and Hap Bilgi lists.
+3. Open/close glossary tooltip, dropdowns and modals.
+4. Select an option in a case.
+5. Open Kataloglarım > Tüm kartlardan ekle.
+6. Test dark and light mode.
