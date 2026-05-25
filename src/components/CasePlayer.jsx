@@ -691,6 +691,8 @@ function CasePlayer({
 
   useEffect(() => {
     let frame = 0;
+    let lastUpdateAt = 0;
+    const SCROLL_SPY_THROTTLE_MS = 96;
 
     const setActiveSectionIfChanged = (id) => {
       if (!id || activeSectionRef.current === id) return;
@@ -732,7 +734,19 @@ function CasePlayer({
 
     const requestUpdate = () => {
       if (frame) return;
-      frame = window.requestAnimationFrame(updateActiveSection);
+      const now = window.performance?.now?.() || Date.now();
+      if (now - lastUpdateAt < SCROLL_SPY_THROTTLE_MS) {
+        frame = window.setTimeout(() => {
+          frame = 0;
+          lastUpdateAt = window.performance?.now?.() || Date.now();
+          updateActiveSection();
+        }, SCROLL_SPY_THROTTLE_MS);
+        return;
+      }
+      frame = window.requestAnimationFrame(() => {
+        lastUpdateAt = window.performance?.now?.() || Date.now();
+        updateActiveSection();
+      });
     };
 
     requestUpdate();
@@ -740,7 +754,10 @@ function CasePlayer({
     window.addEventListener('resize', requestUpdate);
 
     return () => {
-      if (frame) window.cancelAnimationFrame(frame);
+      if (frame) {
+        window.cancelAnimationFrame?.(frame);
+        window.clearTimeout?.(frame);
+      }
       window.removeEventListener('scroll', requestUpdate);
       window.removeEventListener('resize', requestUpdate);
     };

@@ -51129,8 +51129,7 @@ body:not(.klinikiq-auth-lock) .exam-active-shell.timed-exam-shell .tus-spot-bank
    - Minimal medical-lens design, no heavy backdrop-filter
 */
 html.ki-premium-cursor-on,
-html.ki-premium-cursor-on body,
-html.ki-premium-cursor-on body *:not(input):not(textarea):not(select):not([contenteditable='true']):not([contenteditable='']) {
+html.ki-premium-cursor-on body {
   cursor: none !important;
 }
 
@@ -51403,3 +51402,182 @@ html[data-theme='dark'] .premium-cursor-info,
   }
 }
 
+
+
+/* ===== V347 global smoothness/performance pack ===== */
+html.ki-performance-mode {
+  scroll-behavior: auto !important;
+  --duration-fast: 90ms;
+  --duration-normal: 130ms;
+  --duration-slow: 180ms;
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, .055);
+  --shadow-hover: 0 8px 18px rgba(15, 23, 42, .075);
+  --shadow-elevated: 0 12px 28px rgba(15, 23, 42, .10);
+}
+
+html.ki-performance-mode body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html.ki-performance-mode.ki-is-scrolling *,
+html.ki-performance-mode.ki-is-resizing * {
+  transition-duration: 0ms !important;
+  animation-play-state: paused !important;
+}
+
+html.ki-performance-mode.ki-is-scrolling .premium-cursor,
+html.ki-performance-mode.ki-is-scrolling .glossary-tooltip,
+html.ki-performance-mode.ki-is-scrolling .floating-glossary-tooltip,
+html.ki-performance-mode.ki-is-scrolling .smart-glossary-popover {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+html.ki-performance-mode .app-shell,
+html.ki-performance-mode .qbank-shell,
+html.ki-performance-mode .page-shell,
+html.ki-performance-mode .clinical-case,
+html.ki-performance-mode .home-dashboard-grid {
+  animation: none !important;
+}
+
+html.ki-performance-mode .card-surface,
+html.ki-performance-mode .branch-card,
+html.ki-performance-mode .case-list-item,
+html.ki-performance-mode .requested-test-card,
+html.ki-performance-mode .inline-order-result,
+html.ki-performance-mode .answer-option,
+html.ki-performance-mode .option-card,
+html.ki-performance-mode .study-card,
+html.ki-performance-mode .tools-panel,
+html.ki-performance-mode .question-panel,
+html.ki-performance-mode .summary-card,
+html.ki-performance-mode .wrong-answer-card,
+html.ki-performance-mode .custom-card-modal,
+html.ki-performance-mode .glossary-tooltip,
+html.ki-performance-mode .smart-glossary-card,
+html.ki-performance-mode .visual-first-help-card {
+  contain: layout paint style;
+}
+
+@supports (content-visibility: auto) {
+  html.ki-performance-mode .branch-card,
+  html.ki-performance-mode .case-list-item,
+  html.ki-performance-mode .requested-test-card,
+  html.ki-performance-mode .inline-order-result,
+  html.ki-performance-mode .wrong-answer-card,
+  html.ki-performance-mode .tus-pearl-card,
+  html.ki-performance-mode .visual-first-help-card {
+    content-visibility: auto;
+    contain-intrinsic-size: 180px;
+  }
+}
+
+html.ki-performance-mode .top-shell-nav,
+html.ki-performance-mode .global-topbar-v55,
+html.ki-performance-mode .media-zoom,
+html.ki-performance-mode .glossary-tooltip,
+html.ki-performance-mode .floating-glossary-tooltip,
+html.ki-performance-mode .smart-glossary-popover,
+html.ki-performance-mode .ai-compact-dropdown-menu-floating,
+html.ki-performance-mode .pearl-min-dropdown-menu {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html.ki-performance-mode .branch-card:hover,
+html.ki-performance-mode .case-list-item:hover,
+html.ki-performance-mode .answer-option:hover,
+html.ki-performance-mode .option-card:hover,
+html.ki-performance-mode .mode-card:hover,
+html.ki-performance-mode .btn:hover,
+html.ki-performance-mode button:hover {
+  transform: none !important;
+}
+
+html.ki-performance-mode .branch-card,
+html.ki-performance-mode .case-list-item,
+html.ki-performance-mode .answer-option,
+html.ki-performance-mode .requested-test-card,
+html.ki-performance-mode .inline-order-result,
+html.ki-performance-mode .card-surface {
+  box-shadow: var(--shadow-card) !important;
+}
+
+html.ki-performance-mode .branch-card:hover,
+html.ki-performance-mode .case-list-item:hover,
+html.ki-performance-mode .answer-option:hover,
+html.ki-performance-mode .requested-test-card:hover,
+html.ki-performance-mode .inline-order-result:hover,
+html.ki-performance-mode .card-surface:hover {
+  box-shadow: var(--shadow-hover) !important;
+}
+
+html.ki-performance-mode img,
+html.ki-performance-mode video,
+html.ki-performance-mode canvas,
+html.ki-performance-mode .result-image,
+html.ki-performance-mode .clinical-visual-image {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+html.ki-performance-mode .glossary-term,
+html.ki-performance-mode .smart-glossary-term,
+html.ki-performance-mode [data-glossary-entry-id] {
+  transition: background-color 90ms ease, color 90ms ease, border-color 90ms ease !important;
+}
+
+html.ki-performance-mode .premium-cursor {
+  width: 24px;
+  height: 24px;
+  mix-blend-mode: normal;
+  contain: layout paint style;
+}
+
+html.ki-performance-mode .premium-cursor-aura {
+  display: none !important;
+}
+
+html.ki-performance-mode .premium-cursor-ring {
+  border: 1px solid color-mix(in srgb, var(--accent, #14b8a6) 72%, rgba(255,255,255,.38));
+  box-shadow: 0 0 0 1px rgba(255,255,255,.10) inset, 0 0 10px color-mix(in srgb, var(--accent, #14b8a6) 18%, transparent);
+}
+
+html.ki-performance-mode .premium-cursor-core {
+  width: 4px;
+  height: 4px;
+}
+
+html.ki-performance-mode .premium-cursor--interactive {
+  width: 30px;
+  height: 30px;
+}
+
+html.ki-performance-mode .premium-cursor--glossary {
+  width: 32px;
+  height: 32px;
+}
+
+html.ki-performance-mode .premium-cursor--text {
+  opacity: 0 !important;
+}
+
+html.ki-performance-mode [style*="filter"],
+html.ki-performance-mode .nav-brand-mark-pulse,
+html.ki-performance-mode .glow,
+html.ki-performance-mode .pulse,
+html.ki-performance-mode .shimmer {
+  filter: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.ki-performance-mode *,
+  html.ki-performance-mode *::before,
+  html.ki-performance-mode *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

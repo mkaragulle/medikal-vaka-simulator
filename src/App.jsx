@@ -9,6 +9,7 @@ import WrongAnswersFullPage from './components/WrongAnswersFullPage.jsx';
 import HomeCommandCenter from './components/HomeCommandCenter.jsx';
 import AuthPanel from './components/AuthPanel.jsx';
 import PremiumCursor from './components/PremiumCursor.jsx';
+import PerformanceOptimizer from './components/PerformanceOptimizer.jsx';
 import { Icon, BrandMark, ThemeToggle, BranchTransitionVisual, branchIconById } from './components/ui.jsx';
 import { branches } from './data/branches.js';
 import { cases, getCaseById } from './data/cases.js';
@@ -1442,6 +1443,7 @@ function App() {
   if (!currentUser) {
     return (
       <main className="app-shell premium-shell" data-theme={theme}>
+        <PerformanceOptimizer />
         <PremiumCursor />
         <AuthPanel
           onLogin={handleLogin}
@@ -1457,6 +1459,7 @@ function App() {
 
   return (
     <main className="app-shell premium-shell" data-theme={theme}>
+      <PerformanceOptimizer />
       <PremiumCursor />
       <nav className="top-shell-nav global-topbar-v55" aria-label="KlinikIQ üst gezinme">
         <button className="nav-brand nav-brand-icon-only global-nav-brand-v55" type="button" onClick={resetExamToHome} aria-label="KlinikIQ ana ekrana dön" title="KlinikIQ">

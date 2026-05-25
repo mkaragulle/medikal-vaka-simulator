@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import {
   getGlossaryAliasVariants,
@@ -573,8 +573,16 @@ function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFlo
   useEffect(() => {
     if (!open || typeof document === 'undefined') return undefined;
 
-    const handleScroll = () => updatePosition();
-    const handleResize = () => updatePosition();
+    let viewportFrame = 0;
+    const schedulePositionUpdate = () => {
+      if (viewportFrame) return;
+      viewportFrame = window.requestAnimationFrame(() => {
+        viewportFrame = 0;
+        updatePosition();
+      });
+    };
+    const handleScroll = () => onRequestClose?.();
+    const handleResize = () => schedulePositionUpdate();
     const handlePointerDown = (event) => {
       const referenceEl = triggerRef.current;
       const floatingEl = tooltipRef.current;
@@ -598,6 +606,7 @@ function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFlo
       window.removeEventListener('scroll', handleScroll, true);
       document.removeEventListener('pointerdown', handlePointerDown, true);
       document.removeEventListener('keydown', handleKey);
+      if (viewportFrame) window.cancelAnimationFrame(viewportFrame);
     };
   }, [open, onRequestClose, triggerRef, updatePosition]);
 
@@ -1272,4 +1281,5 @@ function GlossaryText({
   );
 }
 
-export default GlossaryText;
+const MemoizedGlossaryText = memo(GlossaryText);
+export default MemoizedGlossaryText;

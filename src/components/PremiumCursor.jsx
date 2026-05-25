@@ -59,19 +59,19 @@ function matchesMedia(query) {
 
 function canUsePremiumCursor() {
   if (typeof window === 'undefined') return false;
-
   const ua = window.navigator?.userAgent || '';
   const isMobileUA = /Mobi|Android|iPhone|iPad|iPod/i.test(ua);
+  const reducedMotion = matchesMedia('(prefers-reduced-motion: reduce)');
   const hasFinePointer = matchesMedia('(any-pointer: fine)') || matchesMedia('(pointer: fine)');
   const hasHover = matchesMedia('(any-hover: hover)') || matchesMedia('(hover: hover)');
   const looksLikeDesktop = window.innerWidth >= 900 && !isMobileUA;
-
-  return (hasFinePointer && hasHover) || looksLikeDesktop;
+  return !reducedMotion && ((hasFinePointer && hasHover) || looksLikeDesktop);
 }
 
-function closestMode(target) {
+function resolveMode(target) {
   if (!target || !(target instanceof Element)) return 'default';
-  if (document.body?.classList.contains('cursor-loading')) return 'loading';
+  const body = document.body;
+  if (body?.classList.contains('cursor-loading')) return 'loading';
   if (target.closest(TEXT_TARGET_SELECTOR)) return 'text';
   if (target.closest(GLOSSARY_TARGET_SELECTOR)) return 'glossary';
   if (target.closest(LOADING_TARGET_SELECTOR)) return 'loading';
@@ -87,31 +87,43 @@ function injectNativeCursorStyle() {
   const style = document.createElement('style');
   style.id = NATIVE_CURSOR_STYLE_ID;
   style.textContent = `
-html.ki-premium-cursor-on.ki-premium-cursor-on,
-html.ki-premium-cursor-on.ki-premium-cursor-on body,
-html.ki-premium-cursor-on.ki-premium-cursor-on body *:not(input):not(textarea):not(select):not([contenteditable='true']):not([contenteditable='']) {
+html.ki-premium-cursor-on,
+html.ki-premium-cursor-on body {
   cursor: none !important;
 }
-html.ki-premium-cursor-on.ki-premium-cursor-on .glossary-term,
-html.ki-premium-cursor-on.ki-premium-cursor-on .smart-glossary-term,
-html.ki-premium-cursor-on.ki-premium-cursor-on .glossary-word,
-html.ki-premium-cursor-on.ki-premium-cursor-on .nested-glossary-term,
-html.ki-premium-cursor-on.ki-premium-cursor-on [data-glossary-entry-id],
-html.ki-premium-cursor-on.ki-premium-cursor-on [data-cursor='glossary'],
-html.ki-premium-cursor-on.ki-premium-cursor-on [data-cursor='interactive'] {
+html.ki-premium-cursor-on a,
+html.ki-premium-cursor-on button,
+html.ki-premium-cursor-on [role='button'],
+html.ki-premium-cursor-on [tabindex]:not([tabindex='-1']),
+html.ki-premium-cursor-on .btn,
+html.ki-premium-cursor-on .case-card,
+html.ki-premium-cursor-on .branch-card,
+html.ki-premium-cursor-on .option-card,
+html.ki-premium-cursor-on .glossary-term,
+html.ki-premium-cursor-on .smart-glossary-term,
+html.ki-premium-cursor-on .glossary-word,
+html.ki-premium-cursor-on .nested-glossary-term,
+html.ki-premium-cursor-on [data-glossary-entry-id],
+html.ki-premium-cursor-on [data-cursor='glossary'],
+html.ki-premium-cursor-on [data-cursor='interactive'] {
   cursor: none !important;
 }
-html.ki-premium-cursor-on.ki-premium-cursor-on input,
-html.ki-premium-cursor-on.ki-premium-cursor-on textarea,
-html.ki-premium-cursor-on.ki-premium-cursor-on select,
-html.ki-premium-cursor-on.ki-premium-cursor-on [contenteditable='true'],
-html.ki-premium-cursor-on.ki-premium-cursor-on [contenteditable=''] {
+html.ki-premium-cursor-on input,
+html.ki-premium-cursor-on textarea,
+html.ki-premium-cursor-on select,
+html.ki-premium-cursor-on [contenteditable='true'],
+html.ki-premium-cursor-on [contenteditable=''] {
   cursor: text !important;
 }
 @media (max-width: 767px), (pointer: coarse) {
-  html.ki-premium-cursor-on.ki-premium-cursor-on,
-  html.ki-premium-cursor-on.ki-premium-cursor-on body,
-  html.ki-premium-cursor-on.ki-premium-cursor-on body * {
+  html.ki-premium-cursor-on,
+  html.ki-premium-cursor-on body,
+  html.ki-premium-cursor-on a,
+  html.ki-premium-cursor-on button,
+  html.ki-premium-cursor-on [role='button'],
+  html.ki-premium-cursor-on .glossary-term,
+  html.ki-premium-cursor-on .smart-glossary-term,
+  html.ki-premium-cursor-on [data-glossary-entry-id] {
     cursor: auto !important;
   }
 }
@@ -130,20 +142,20 @@ function setModeClass(node, previousMode, nextMode) {
 
 export default function PremiumCursor() {
   const cursorRef = useRef(null);
-  const rafRef = useRef(null);
+  const rafRef = useRef(0);
   const pointRef = useRef({ x: -160, y: -160 });
-  const targetRef = useRef(null);
   const modeRef = useRef('default');
+  const targetRef = useRef(null);
   const visibleRef = useRef(false);
+  const lastTransformRef = useRef('');
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
     const updateCapability = () => setEnabled(canUsePremiumCursor());
     updateCapability();
 
-    const queries = ['(any-pointer: fine)', '(pointer: fine)', '(any-hover: hover)', '(hover: hover)'];
+    const queries = ['(any-pointer: fine)', '(pointer: fine)', '(any-hover: hover)', '(hover: hover)', '(prefers-reduced-motion: reduce)'];
     const mediaQueries = queries.map((query) => window.matchMedia?.(query)).filter(Boolean);
-
     mediaQueries.forEach((query) => query.addEventListener?.('change', updateCapability));
     window.addEventListener('resize', updateCapability, { passive: true });
 
@@ -156,7 +168,6 @@ export default function PremiumCursor() {
   useEffect(() => {
     const root = document.documentElement;
     const node = cursorRef.current;
-
     if (!enabled || !node) {
       root.classList.remove('ki-premium-cursor-on', 'premium-cursor-enabled', 'ki-premium-cursor-pressed', 'premium-cursor-pressed');
       return undefined;
@@ -168,15 +179,15 @@ export default function PremiumCursor() {
     node.setAttribute('data-mode', 'default');
 
     const renderCursor = () => {
-      rafRef.current = null;
+      rafRef.current = 0;
       const cursor = cursorRef.current;
       if (!cursor) return;
-
       const { x, y } = pointRef.current;
-      cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate3d(-50%, -50%, 0)`;
-
-      const nextMode = closestMode(targetRef.current);
-      modeRef.current = setModeClass(cursor, modeRef.current, nextMode);
+      const nextTransform = `translate3d(${x}px, ${y}px, 0) translate3d(-50%, -50%, 0)`;
+      if (lastTransformRef.current !== nextTransform) {
+        lastTransformRef.current = nextTransform;
+        cursor.style.transform = nextTransform;
+      }
     };
 
     const requestRender = () => {
@@ -185,7 +196,7 @@ export default function PremiumCursor() {
     };
 
     const showCursor = () => {
-      if (visibleRef.current) return;
+      if (visibleRef.current || document.documentElement.classList.contains('ki-is-scrolling')) return;
       visibleRef.current = true;
       cursorRef.current?.classList.add('is-visible');
     };
@@ -200,13 +211,18 @@ export default function PremiumCursor() {
       if ('pointerType' in event && event.pointerType && event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
       pointRef.current.x = event.clientX;
       pointRef.current.y = event.clientY;
-      targetRef.current = event.target;
+      if (event.target !== targetRef.current) {
+        targetRef.current = event.target;
+        const nextMode = document.documentElement.classList.contains('ki-is-scrolling') ? 'default' : resolveMode(event.target);
+        modeRef.current = setModeClass(cursorRef.current, modeRef.current, nextMode);
+      }
       showCursor();
       requestRender();
     };
 
     const handleDown = () => root.classList.add('ki-premium-cursor-pressed', 'premium-cursor-pressed');
     const handleUp = () => root.classList.remove('ki-premium-cursor-pressed', 'premium-cursor-pressed');
+    const handleScrollStart = () => hideCursor();
 
     const moveEvent = window.PointerEvent ? 'pointermove' : 'mousemove';
     const downEvent = window.PointerEvent ? 'pointerdown' : 'mousedown';
@@ -215,6 +231,7 @@ export default function PremiumCursor() {
     window.addEventListener(moveEvent, handleMove, { passive: true });
     window.addEventListener(downEvent, handleDown, { passive: true });
     window.addEventListener(upEvent, handleUp, { passive: true });
+    window.addEventListener('scroll', handleScrollStart, { passive: true, capture: true });
     document.addEventListener('mouseleave', hideCursor);
     document.addEventListener('mouseenter', showCursor);
     window.addEventListener('blur', hideCursor);
@@ -224,6 +241,7 @@ export default function PremiumCursor() {
       window.removeEventListener(moveEvent, handleMove);
       window.removeEventListener(downEvent, handleDown);
       window.removeEventListener(upEvent, handleUp);
+      window.removeEventListener('scroll', handleScrollStart, true);
       document.removeEventListener('mouseleave', hideCursor);
       document.removeEventListener('mouseenter', showCursor);
       window.removeEventListener('blur', hideCursor);
@@ -238,8 +256,6 @@ export default function PremiumCursor() {
       <span className="premium-cursor-aura" />
       <span className="premium-cursor-ring" />
       <span className="premium-cursor-core" />
-      <span className="premium-cursor-cross premium-cursor-cross--x" />
-      <span className="premium-cursor-cross premium-cursor-cross--y" />
       <span className="premium-cursor-info">i</span>
       <span className="premium-cursor-loader" />
     </div>
