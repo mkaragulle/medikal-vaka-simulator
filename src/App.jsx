@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { lazy, Suspense, useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import './index.css';
 import './styles/klinikiq-system.css';
 import './styles/klinikiq-refine.css';
@@ -287,6 +287,38 @@ function compactText(value = '', limit = 150) {
 }
 
 
+
+const CASE_SEARCH_META_CACHE = new WeakMap();
+
+function getCaseSearchMeta(clinicalCase = {}) {
+  if (!clinicalCase || typeof clinicalCase !== 'object') {
+    return { titleText: '', keywordText: '', questionText: '', fullText: '' };
+  }
+  const cached = CASE_SEARCH_META_CACHE.get(clinicalCase);
+  if (cached) return cached;
+
+  const titleText = normalizeSearchText(getCaseSearchTitle(clinicalCase));
+  const keywordText = normalizeSearchText([
+    clinicalCase.keywords,
+    clinicalCase.searchKeywords,
+    clinicalCase.tags,
+    clinicalCase.learningTarget,
+    clinicalCase.clinicalFocus,
+    clinicalCase.relatedBranch,
+    clinicalCase.branchName,
+  ].flat(Infinity).filter(Boolean).join(' '));
+  const questionText = normalizeSearchText([
+    clinicalCase.question,
+    clinicalCase.stem,
+    clinicalCase.narrativeStem,
+    clinicalCase.diagnosis?.question,
+  ].filter(Boolean).join(' '));
+  const fullText = normalizeSearchText(collectCaseSearchText(clinicalCase).join(' '));
+  const meta = { titleText, keywordText, questionText, fullText };
+  CASE_SEARCH_META_CACHE.set(clinicalCase, meta);
+  return meta;
+}
+
 function normalizeSearchText(value = '') {
   return String(value || '')
     .toLocaleLowerCase('tr')
@@ -346,18 +378,7 @@ function getCaseSearchScore(clinicalCase = {}, rawQuery = '') {
   const tokens = query.split(' ').filter((token) => token.length > 1);
   if (!tokens.length) return 1;
 
-  const titleText = normalizeSearchText(getCaseSearchTitle(clinicalCase));
-  const keywordText = normalizeSearchText([
-    clinicalCase.keywords,
-    clinicalCase.searchKeywords,
-    clinicalCase.tags,
-    clinicalCase.learningTarget,
-    clinicalCase.clinicalFocus,
-    clinicalCase.relatedBranch,
-    clinicalCase.branchName,
-  ].flat(Infinity).filter(Boolean).join(' '));
-  const questionText = normalizeSearchText([clinicalCase.question, clinicalCase.stem, clinicalCase.narrativeStem, clinicalCase.diagnosis?.question].filter(Boolean).join(' '));
-  const fullText = normalizeSearchText(collectCaseSearchText(clinicalCase).join(' '));
+  const { titleText, keywordText, questionText, fullText } = getCaseSearchMeta(clinicalCase);
 
   if (!fullText) return 0;
   if (!tokens.every((token) => fullText.includes(token))) return 0;
@@ -476,6 +497,7 @@ function App() {
   const aiQuestionTimer = useRef(null);
   const latestAIQuestionRequestId = useRef(0);
   const isDemoUser = isDemoAccount(currentUser);
+  const deferredBottomCaseSearchQuery = useDeferredValue(bottomCaseSearchQuery);
 
   function clearAIQuestionTimer() {
     latestAIQuestionRequestId.current += 1;
@@ -523,13 +545,14 @@ function App() {
   );
 
   const activeBranchCasePool = filteredBranchCases.length ? filteredBranchCases : branchCases;
+  const activeBranchCaseIdSet = useMemo(() => new Set(activeBranchCasePool.map((clinicalCase) => clinicalCase.id)), [activeBranchCasePool]);
 
   const searchedBranchCasePool = useMemo(
-    () => filterCasesBySearch(activeBranchCasePool, bottomCaseSearchQuery),
-    [activeBranchCasePool, bottomCaseSearchQuery],
+    () => filterCasesBySearch(activeBranchCasePool, deferredBottomCaseSearchQuery),
+    [activeBranchCasePool, deferredBottomCaseSearchQuery],
   );
 
-  const hasBottomCaseSearch = Boolean(normalizeSearchText(bottomCaseSearchQuery));
+  const hasBottomCaseSearch = Boolean(normalizeSearchText(deferredBottomCaseSearchQuery));
 
   const selectedCase = useMemo(() => {
     if (examState?.active) {
@@ -540,9 +563,9 @@ function App() {
     if (!selectedCaseId) return activeBranchCasePool[0] ?? null;
     if (!accessibleCaseIds.has(selectedCaseId)) return activeBranchCasePool[0] ?? null;
     const candidate = accessibleCaseIndex.byId.get(selectedCaseId);
-    if (candidate && activeBranchCasePool.some((clinicalCase) => clinicalCase.id === candidate.id)) return candidate;
+    if (candidate && activeBranchCaseIdSet.has(candidate.id)) return candidate;
     return activeBranchCasePool[0] ?? null;
-  }, [selectedCaseId, activeBranchCasePool, examState, accessibleCaseIds, accessibleCases, accessibleCaseIndex]);
+  }, [selectedCaseId, activeBranchCasePool, activeBranchCaseIdSet, examState, accessibleCaseIds, accessibleCases, accessibleCaseIndex]);
 
   const persistCurrentUser = (patch) => {
     setCurrentUser((current) => {
@@ -926,10 +949,10 @@ function App() {
       setSelectedCaseId(null);
       return;
     }
-    if (!activeBranchCasePool.some((clinicalCase) => clinicalCase.id === selectedCaseId)) {
+    if (!activeBranchCaseIdSet.has(selectedCaseId)) {
       setSelectedCaseId(activeBranchCasePool[0]?.id ?? null);
     }
-  }, [selectedBranchId, activeBranchCasePool, selectedCaseId, visibleBranches]);
+  }, [selectedBranchId, activeBranchCasePool, activeBranchCaseIdSet, selectedCaseId, visibleBranches]);
 
   useEffect(() => {
     if (!examState?.active) return undefined;

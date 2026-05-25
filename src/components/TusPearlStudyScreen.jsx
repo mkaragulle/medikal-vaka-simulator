@@ -630,20 +630,44 @@ function TusPearlStudyScreen({
   );
   const activeCatalogCardIdSet = useMemo(() => new Set(activeCatalog?.cardIds || []), [activeCatalog?.cardIds]);
   const stateSets = useMemo(() => ({ favoriteSet, wrongSet, knownSet, reviewSet, catalogSet: activeCatalogCardIdSet }), [activeCatalogCardIdSet, favoriteSet, knownSet, reviewSet, wrongSet]);
-  const branchOptions = useMemo(() => branches.filter((branch) => TUS_PEARL_CARD_STATS.byBranch[branch.id] || allCards.some((card) => card.branchId === branch.id)), [allCards]);
+  const allCardsBranchIdSet = useMemo(() => new Set(allCards.map((card) => card.branchId).filter(Boolean)), [allCards]);
+  const branchOptions = useMemo(() => branches.filter((branch) => TUS_PEARL_CARD_STATS.byBranch[branch.id] || allCardsBranchIdSet.has(branch.id)), [allCardsBranchIdSet]);
 
   const filteredCards = useMemo(() => allCards.filter((card) => {
     if (branchFilter !== 'all' && card.branchId !== branchFilter) return false;
     return cardMatchesFilter(card, filter, stateSets, activeCatalog);
   }), [activeCatalog, allCards, branchFilter, filter, stateSets]);
 
+  const filteredCardIdSet = useMemo(() => new Set(filteredCards.map((card) => card.id)), [filteredCards]);
+
+  const filteredCardsSignature = useMemo(() => {
+    if (!filteredCards.length) return `0:${filter}:${branchFilter}:${activeCatalogId}`;
+    const first = filteredCards[0]?.id || '';
+    const middle = filteredCards[Math.floor(filteredCards.length / 2)]?.id || '';
+    const last = filteredCards[filteredCards.length - 1]?.id || '';
+    return [
+      filteredCards.length,
+      first,
+      middle,
+      last,
+      filter,
+      branchFilter,
+      activeCatalogId,
+      allCards.length,
+      favoriteSet.size,
+      wrongSet.size,
+      knownSet.size,
+      reviewSet.size,
+      activeCatalogCardIdSet.size,
+    ].join(':');
+  }, [activeCatalogCardIdSet.size, activeCatalogId, allCards.length, branchFilter, favoriteSet.size, filter, filteredCards, knownSet.size, reviewSet.size, wrongSet.size]);
+
   const sessionCards = useMemo(() => {
     const ids = studySession?.cardIds || [];
-    const filteredIdSet = new Set(filteredCards.map((card) => card.id));
-    const mapped = ids.map((id) => cardById.get(id)).filter((card) => card && filteredIdSet.has(card.id));
+    const mapped = ids.map((id) => cardById.get(id)).filter((card) => card && filteredCardIdSet.has(card.id));
     if (mapped.length) return mapped;
     return filteredCards;
-  }, [cardById, filteredCards, studySession]);
+  }, [cardById, filteredCardIdSet, filteredCards, studySession]);
 
   const activeCard = sessionCards[currentIndex] || null;
   const progress = sessionCards.length ? Math.round(((currentIndex + 1) / sessionCards.length) * 100) : 0;
@@ -651,7 +675,7 @@ function TusPearlStudyScreen({
   const isWrong = activeCard ? wrongSet.has(activeCard.id) : false;
   const isKnown = activeCard ? knownSet.has(activeCard.id) : false;
   const isReview = activeCard ? reviewSet.has(activeCard.id) : false;
-  const isInCatalog = Boolean(activeCard && activeCatalog?.cardIds?.includes(activeCard.id));
+  const isInCatalog = Boolean(activeCard && activeCatalogCardIdSet.has(activeCard.id));
   const cardCatalogs = useMemo(() => pearlState.customCatalogs.filter((catalog) => activeCard && catalog.cardIds?.includes(activeCard.id)), [activeCard, pearlState.customCatalogs]);
   const isInAnyCatalog = cardCatalogs.length > 0;
   const modeLabel = resolveModeLabel(filter, branchFilter, activeCatalog);
@@ -768,11 +792,10 @@ function TusPearlStudyScreen({
   }, [activeCatalog?.description, activeCatalog?.id, activeCatalog?.name]);
 
   useEffect(() => {
-    const signature = [filter, branchFilter, activeCatalogId, filteredCards.map((card) => card.id).join('|')].join('::');
-    if (viewMode !== 'study' || lastDeckSignature.current === signature) return;
-    lastDeckSignature.current = signature;
+    if (viewMode !== 'study' || lastDeckSignature.current === filteredCardsSignature) return;
+    lastDeckSignature.current = filteredCardsSignature;
     rebuildStudySession(filteredCards);
-  }, [activeCatalogId, branchFilter, filter, filteredCards, rebuildStudySession, viewMode]);
+  }, [filteredCards, filteredCardsSignature, rebuildStudySession, viewMode]);
 
   useEffect(() => {
     if (!sessionCards.length) return;

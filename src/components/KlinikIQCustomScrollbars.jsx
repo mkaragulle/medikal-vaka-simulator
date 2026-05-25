@@ -6,13 +6,13 @@ const STYLE_ID = 'ki-custom-scrollbars-v367-style';
 const ROOT_ATTR = 'data-ki-custom-scrollbars-v367-root';
 const TRACK_ATTR = 'data-ki-custom-scrollbar-v367-track';
 const THUMB_ATTR = 'data-ki-custom-scrollbar-v367-thumb';
-const MAX_TRACKED_ELEMENTS = 56;
+const MAX_TRACKED_ELEMENTS = 48;
 const TRACK_SIZE = 6;
 const THUMB_SIZE = 3.5;
 const MIN_THUMB = 24;
 const EDGE_INSET = 5;
-const TOP_LAYER_RECT_CACHE_MS = 160;
-const POINTER_ACTIVITY_THROTTLE_MS = 240;
+const TOP_LAYER_RECT_CACHE_MS = 220;
+const POINTER_ACTIVITY_THROTTLE_MS = 320;
 
 
 const TOP_LAYER_SELECTOR = [
@@ -794,13 +794,16 @@ html.${DRAGGING_CLASS} * {
       }
 
       if (shouldResetTopLayerCache) resetTopLayerRectCache();
-      if (shouldScan) scheduleScan(220);
+      if (shouldScan) scheduleScan(260);
     });
     mutationObserver.observe(document.body, {
       childList: true,
       subtree: true,
       attributes: true,
-      attributeFilter: ['class', 'style', 'data-theme', 'open', 'aria-expanded', 'hidden'],
+      // Avoid observing high-frequency class/style changes across the entire React tree.
+      // Structural changes, open/hidden toggles and ResizeObserver/scroll events are enough
+      // to keep the custom tracks accurate without adding mutation pressure during scroll.
+      attributeFilter: ['open', 'aria-expanded', 'hidden', 'data-scrollable', 'data-scroll-container'],
     });
 
     const themeObserver = new MutationObserver(() => requestUpdate());
