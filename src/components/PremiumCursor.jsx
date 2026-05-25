@@ -1,70 +1,62 @@
 import { useEffect } from 'react';
 
-const TEXT_TARGET_SELECTOR = [
-  'input',
-  'textarea',
-  'select',
-  '[contenteditable="true"]',
-  '[contenteditable=""]',
-  '.bottom-case-search input',
-].join(', ');
-
-const GLOSSARY_TARGET_SELECTOR = [
+const INTERACTIVE_SELECTOR = [
+  'a[href]',
+  'button:not(:disabled)',
+  '[role="button"]',
+  '[data-cursor]',
+  '[data-clickable="true"]',
+  '[tabindex]:not([tabindex="-1"])',
+  'summary',
   '.glossary-term',
   '.smart-glossary-term',
   '.glossary-word',
   '.nested-glossary-term',
   '.smart-glossary-term--drilldown',
-  '.glossary-tooltip',
-  '.floating-glossary-tooltip',
-  '.smart-glossary-popover',
-  '.smart-glossary-card',
   '[data-glossary-entry-id]',
   '[data-glossary-entry-term]',
-  '[data-cursor="glossary"]',
-  '[data-glossary-tooltip-owner]',
-].join(', ');
-
-const INTERACTIVE_TARGET_SELECTOR = [
-  'a[href]',
-  'button:not(:disabled)',
-  '[role="button"]',
-  '[tabindex]:not([tabindex="-1"])',
-  'summary',
-  '.btn',
   '.case-card',
   '.branch-card',
   '.option-card',
   '.answer-option',
   '.requested-test-card',
   '.inline-order-result',
+  '.result-image-link',
   '.visual-help-toggle',
   '.premium-visual-help-toggle',
-  '.result-image-link',
   '.smart-glossary-back',
   '.smart-glossary-breadcrumb-link',
-  '[data-cursor="interactive"]',
 ].join(', ');
 
-const LOADING_TARGET_SELECTOR = [
-  '[aria-busy="true"]',
-  '[data-loading="true"]',
-  '.loading',
-  '.is-loading',
-  '.ai-loading',
-  '.route-fallback',
-  '.spinner',
-  '.loading-spinner',
-  '.loading-state',
-  '.ai-generation-loading',
+const TEXT_SELECTOR = [
+  'input',
+  'textarea',
+  'select',
+  '[contenteditable="true"]',
+  '[contenteditable=""]',
+  '.cm-editor',
+  '.monaco-editor',
+  '.bottom-case-search input',
 ].join(', ');
 
-const ROOT_CLASS = 'ki-minimal-cursor-active';
-const PRESSED_CLASS = 'ki-minimal-cursor-pressed';
-const STYLE_ID = 'klinikiq-minimal-premium-cursor-style-v353';
-const CURSOR_ID = 'klinikiq-minimal-premium-cursor-v353';
+const ROOT_CLASS = 'ki-simple-cursor-active';
+const STYLE_ID = 'ki-simple-cursor-runtime-style-v354';
+
+const LEGACY_SELECTORS = [
+  '.premium-cursor',
+  '.premium-cursor-root',
+  '.clinical-cursor-root',
+  '.klinq-cursor-root',
+  '.cursor-lens',
+  '.cursor-orb',
+  '.cursor-ring',
+  '[data-klinq-old-cursor-root]',
+  '[data-klinq-cursor-root]:not([data-ki-simple-cursor-root])',
+  '[data-cursor-root]:not([data-ki-simple-cursor-root])',
+].join(', ');
 
 const LEGACY_STYLE_IDS = [
+  'klinikiq-minimal-premium-cursor-style-v353',
   'klinikiq-unified-premium-cursor-runtime-style-v352',
   'klinikiq-premium-cursor-runtime-style-v351',
   'klinikiq-premium-cursor-runtime-style-v350',
@@ -74,376 +66,228 @@ const LEGACY_STYLE_IDS = [
 ];
 
 const LEGACY_ROOT_CLASSES = [
+  'ki-minimal-cursor-active',
+  'ki-minimal-cursor-pressed',
   'ki-unified-cursor-active',
   'ki-unified-cursor-pressed',
   'ki-premium-cursor-on',
   'ki-premium-cursor-pressed',
-  'ki-cursor-v350-enabled',
-  'ki-cursor-v350-pressed',
-  'ki-cursor-v351-active',
-  'ki-cursor-v351-pressed',
+  'premium-cursor-active',
+  'premium-cursor-enabled',
+  'custom-cursor-active',
 ];
-
-function cleanupOldCursorArtifacts() {
-  LEGACY_STYLE_IDS.forEach((id) => document.getElementById(id)?.remove());
-  document.querySelectorAll([
-    '#klinikiq-unified-premium-cursor-v352',
-    '#klinikiq-premium-cursor-body-portal-v351',
-    '#klinikiq-premium-cursor-body-portal-v350',
-    '#klinikiq-premium-cursor-body-portal-v349',
-    '#klinikiq-premium-cursor',
-    '.ki-unified-cursor-v352',
-    '.ki-cursor-v351',
-    '.ki-cursor-v350',
-    '.ki-cursor',
-  ].join(',')).forEach((node) => node.remove());
-}
-
-function injectCursorStyles() {
-  let style = document.getElementById(STYLE_ID);
-  if (!style) {
-    style = document.createElement('style');
-    style.id = STYLE_ID;
-    document.head.appendChild(style);
-  }
-
-  style.textContent = `
-html.${ROOT_CLASS},
-html.${ROOT_CLASS} body,
-html.${ROOT_CLASS} body *,
-html.${ROOT_CLASS} body *::before,
-html.${ROOT_CLASS} body *::after {
-  cursor: none !important;
-}
-
-html.${ROOT_CLASS} body :is(input, textarea, select, [contenteditable='true'], [contenteditable='']),
-html.${ROOT_CLASS} body :is(input, textarea, select, [contenteditable='true'], [contenteditable='']) *,
-html.${ROOT_CLASS} body .bottom-case-search input {
-  cursor: text !important;
-}
-
-html.${ROOT_CLASS} body :is(
-  .glossary-term,
-  .smart-glossary-term,
-  .glossary-word,
-  .nested-glossary-term,
-  .smart-glossary-term--drilldown,
-  .glossary-tooltip,
-  .floating-glossary-tooltip,
-  .smart-glossary-popover,
-  .smart-glossary-card,
-  [data-glossary-entry-id],
-  [data-glossary-entry-term],
-  [data-cursor='glossary'],
-  [data-glossary-tooltip-owner]
-),
-html.${ROOT_CLASS} body :is(
-  .glossary-term,
-  .smart-glossary-term,
-  .glossary-word,
-  .nested-glossary-term,
-  .smart-glossary-term--drilldown,
-  .glossary-tooltip,
-  .floating-glossary-tooltip,
-  .smart-glossary-popover,
-  .smart-glossary-card,
-  [data-glossary-entry-id],
-  [data-glossary-entry-term],
-  [data-cursor='glossary'],
-  [data-glossary-tooltip-owner]
-) * {
-  cursor: none !important;
-}
-
-.ki-minimal-premium-cursor-v353 {
-  --ki-cursor-size: 14px;
-  --ki-cursor-ring: rgba(13, 148, 136, .78);
-  --ki-cursor-dot: rgba(15, 118, 110, .95);
-  --ki-cursor-soft: rgba(20, 184, 166, .18);
-
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 2147483647;
-  width: var(--ki-cursor-size);
-  height: var(--ki-cursor-size);
-  pointer-events: none;
-  opacity: 0;
-  transform: translate3d(-120px, -120px, 0) translate3d(-50%, -50%, 0);
-  transition:
-    opacity 80ms ease,
-    width 110ms cubic-bezier(.2, .9, .2, 1),
-    height 110ms cubic-bezier(.2, .9, .2, 1);
-  contain: layout paint style;
-  will-change: transform, width, height, opacity;
-  isolation: isolate;
-  background: transparent !important;
-  box-shadow: none !important;
-  border: 0 !important;
-  outline: 0 !important;
-}
-
-.ki-minimal-premium-cursor-v353.is-visible { opacity: 1; }
-.ki-minimal-premium-cursor-v353.is-hidden,
-.ki-minimal-premium-cursor-v353.mode-text { opacity: 0 !important; }
-
-.ki-minimal-premium-cursor-v353 > span {
-  position: absolute;
-  pointer-events: none;
-  background: transparent;
-  box-sizing: border-box;
-}
-
-.ki-minimal-premium-cursor-v353__ring {
-  inset: 0;
-  border-radius: 999px;
-  border: 1.35px solid var(--ki-cursor-ring);
-  background: transparent !important;
-  box-shadow: 0 0 0 1px rgba(255,255,255,.26) inset, 0 0 10px var(--ki-cursor-soft);
-  transition: border-color 100ms ease, box-shadow 100ms ease, opacity 100ms ease;
-}
-
-.ki-minimal-premium-cursor-v353__dot {
-  left: 50%;
-  top: 50%;
-  width: 3px;
-  height: 3px;
-  margin: -1.5px 0 0 -1.5px;
-  border-radius: 999px;
-  background: var(--ki-cursor-dot);
-  box-shadow: 0 0 7px rgba(20,184,166,.38);
-  transition: transform 100ms ease, opacity 100ms ease;
-}
-
-.ki-minimal-premium-cursor-v353__arc {
-  inset: -2px;
-  border-radius: 999px;
-  border: 1.35px solid transparent;
-  border-top-color: rgba(14, 165, 233, .95);
-  border-right-color: rgba(14, 165, 233, .46);
-  opacity: 0;
-}
-
-.ki-minimal-premium-cursor-v353.mode-interactive {
-  --ki-cursor-size: 20px;
-  --ki-cursor-ring: rgba(13, 148, 136, .92);
-  --ki-cursor-soft: rgba(20, 184, 166, .24);
-}
-
-.ki-minimal-premium-cursor-v353.mode-interactive .ki-minimal-premium-cursor-v353__dot {
-  transform: scale(.86);
-}
-
-.ki-minimal-premium-cursor-v353.mode-glossary {
-  --ki-cursor-size: 18px;
-  --ki-cursor-ring: rgba(20, 184, 166, .96);
-  --ki-cursor-dot: rgba(13, 148, 136, .98);
-  --ki-cursor-soft: rgba(20, 184, 166, .22);
-}
-
-.ki-minimal-premium-cursor-v353.mode-loading {
-  --ki-cursor-size: 20px;
-  --ki-cursor-ring: rgba(14, 165, 233, .62);
-  --ki-cursor-dot: rgba(14, 165, 233, .95);
-}
-
-.ki-minimal-premium-cursor-v353.mode-loading .ki-minimal-premium-cursor-v353__arc {
-  opacity: 1;
-  animation: ki-minimal-cursor-spin-v353 760ms linear infinite;
-}
-
-html.${PRESSED_CLASS} .ki-minimal-premium-cursor-v353 {
-  --ki-cursor-size: 11px;
-}
-
-html[data-theme='dark'] .ki-minimal-premium-cursor-v353,
-[data-theme='dark'] .ki-minimal-premium-cursor-v353 {
-  --ki-cursor-ring: rgba(94, 234, 212, .88);
-  --ki-cursor-dot: rgba(204, 251, 241, .96);
-  --ki-cursor-soft: rgba(45, 212, 191, .20);
-}
-
-@keyframes ki-minimal-cursor-spin-v353 { to { transform: rotate(360deg); } }
-
-@media (max-width: 767px), (pointer: coarse) and (not (any-pointer: fine)) {
-  .ki-minimal-premium-cursor-v353 { display: none !important; }
-  html.${ROOT_CLASS},
-  html.${ROOT_CLASS} body,
-  html.${ROOT_CLASS} body * { cursor: auto !important; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ki-minimal-premium-cursor-v353,
-  .ki-minimal-premium-cursor-v353 * {
-    transition: none !important;
-    animation-duration: 1.4s !important;
-  }
-}
-`;
-}
-
-function modeFromTarget(target) {
-  if (!target || !(target instanceof Element)) return 'default';
-  const root = document.documentElement;
-  const body = document.body;
-
-  if (body?.classList.contains('cursor-loading') || root.classList.contains('cursor-loading')) return 'loading';
-  if (target.closest(TEXT_TARGET_SELECTOR)) return 'text';
-  if (target.closest(GLOSSARY_TARGET_SELECTOR)) return 'glossary';
-  if (target.closest(LOADING_TARGET_SELECTOR)) return 'loading';
-  if (target.closest(INTERACTIVE_TARGET_SELECTOR)) return 'interactive';
-  return 'default';
-}
-
-function isTouchLike(event) {
-  return event?.pointerType === 'touch' || event?.pointerType === 'pen';
-}
 
 export default function PremiumCursor() {
   useEffect(() => {
     if (typeof window === 'undefined' || typeof document === 'undefined') return undefined;
 
-    cleanupOldCursorArtifacts();
-    injectCursorStyles();
+    const hasFinePointer =
+      window.matchMedia?.('(any-pointer: fine)')?.matches ||
+      window.matchMedia?.('(pointer: fine)')?.matches ||
+      !window.matchMedia?.('(any-pointer: coarse)')?.matches;
 
-    const root = document.documentElement;
-    LEGACY_ROOT_CLASSES.forEach((className) => root.classList.remove(className));
-    root.classList.remove(ROOT_CLASS, PRESSED_CLASS);
+    if (!hasFinePointer) return undefined;
 
-    document.getElementById(CURSOR_ID)?.remove();
+    LEGACY_STYLE_IDS.forEach((id) => document.getElementById(id)?.remove());
+    document.querySelectorAll(LEGACY_SELECTORS).forEach((node) => node.remove());
+    document.documentElement.classList.remove(...LEGACY_ROOT_CLASSES);
+    document.getElementById(STYLE_ID)?.remove();
+    document.querySelectorAll('[data-ki-simple-cursor-root="true"]').forEach((node) => node.remove());
 
-    const cursor = document.createElement('div');
-    cursor.id = CURSOR_ID;
-    cursor.className = 'ki-minimal-premium-cursor-v353 is-hidden mode-default';
-    cursor.setAttribute('aria-hidden', 'true');
-    cursor.innerHTML = `
-      <span class="ki-minimal-premium-cursor-v353__ring"></span>
-      <span class="ki-minimal-premium-cursor-v353__dot"></span>
-      <span class="ki-minimal-premium-cursor-v353__arc"></span>
-    `;
-    document.body.appendChild(cursor);
+    const style = document.createElement('style');
+    style.id = STYLE_ID;
+    style.textContent = `
+@media (pointer: fine), (any-pointer: fine) {
+  html.${ROOT_CLASS},
+  html.${ROOT_CLASS} body,
+  html.${ROOT_CLASS} body *:not(input):not(textarea):not(select):not([contenteditable="true"]):not([contenteditable=""]):not(.cm-editor):not(.monaco-editor) {
+    cursor: none !important;
+  }
 
-    let enabled = false;
-    let visible = false;
-    let raf = 0;
-    let x = -120;
-    let y = -120;
-    let lastTransform = '';
-    let mode = 'default';
-    let lastTarget = null;
-    let lastPointCheck = 0;
+  html.${ROOT_CLASS} input,
+  html.${ROOT_CLASS} textarea,
+  html.${ROOT_CLASS} select,
+  html.${ROOT_CLASS} [contenteditable="true"],
+  html.${ROOT_CLASS} [contenteditable=""],
+  html.${ROOT_CLASS} .cm-editor,
+  html.${ROOT_CLASS} .monaco-editor {
+    cursor: text !important;
+  }
+}
 
-    const enable = () => {
-      if (enabled) return;
-      enabled = true;
-      root.classList.add(ROOT_CLASS);
-    };
+.ki-simple-cursor-root {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  z-index: 2147483647 !important;
+  pointer-events: none !important;
+  opacity: 0;
+  transform: translate3d(-9999px, -9999px, 0);
+  transition: opacity 110ms ease;
+  contain: layout style paint;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  mix-blend-mode: normal !important;
+}
 
-    const setVisible = (next) => {
-      if (visible === next) return;
-      visible = next;
-      cursor.classList.toggle('is-visible', next);
-      cursor.classList.toggle('is-hidden', !next);
-    };
+.ki-simple-cursor-root.is-visible {
+  opacity: 1;
+}
 
-    const setMode = (next) => {
-      if (mode === next) return;
-      cursor.classList.remove(`mode-${mode}`);
-      mode = next;
-      cursor.classList.add(`mode-${mode}`);
-      cursor.dataset.mode = mode;
+.ki-simple-cursor-root.is-text {
+  opacity: 0;
+}
+
+.ki-simple-cursor-root,
+.ki-simple-cursor-root *,
+.ki-simple-cursor-root::before,
+.ki-simple-cursor-root::after,
+.ki-simple-cursor-root *::before,
+.ki-simple-cursor-root *::after {
+  background-clip: padding-box !important;
+  box-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.ki-simple-cursor-ring {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 16px !important;
+  height: 16px !important;
+  border: 1.35px solid rgba(13, 148, 136, 0.88) !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 120ms ease, border-color 120ms ease, opacity 120ms ease;
+  will-change: transform;
+}
+
+.ki-simple-cursor-dot {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 3.5px !important;
+  height: 3.5px !important;
+  border-radius: 999px !important;
+  background: rgba(13, 148, 136, 0.96) !important;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 120ms ease, opacity 120ms ease;
+  will-change: transform;
+}
+
+.ki-simple-cursor-root.is-interactive .ki-simple-cursor-ring {
+  transform: translate(-50%, -50%) scale(1.28);
+  border-color: rgba(15, 118, 110, 0.96) !important;
+}
+
+.ki-simple-cursor-root.is-interactive .ki-simple-cursor-dot {
+  transform: translate(-50%, -50%) scale(0.85);
+}
+
+.premium-cursor,
+.premium-cursor-root,
+.clinical-cursor-root,
+.klinq-cursor-root,
+.cursor-lens,
+.cursor-orb,
+.cursor-ring,
+[data-klinq-old-cursor-root] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+`;
+    document.head.appendChild(style);
+
+    const root = document.createElement('div');
+    root.className = 'ki-simple-cursor-root';
+    root.setAttribute('aria-hidden', 'true');
+    root.setAttribute('data-ki-simple-cursor-root', 'true');
+
+    const ring = document.createElement('div');
+    ring.className = 'ki-simple-cursor-ring';
+
+    const dot = document.createElement('div');
+    dot.className = 'ki-simple-cursor-dot';
+
+    root.appendChild(ring);
+    root.appendChild(dot);
+    document.body.appendChild(root);
+
+    let currentX = -9999;
+    let currentY = -9999;
+    let targetX = -9999;
+    let targetY = -9999;
+    let frameId = 0;
+    let started = false;
+
+    const render = () => {
+      currentX += (targetX - currentX) * 0.38;
+      currentY += (targetY - currentY) * 0.38;
+      root.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+      frameId = window.requestAnimationFrame(render);
     };
 
     const updateMode = (target) => {
-      if (target === lastTarget) return;
-      lastTarget = target;
-      setMode(modeFromTarget(target));
+      if (!(target instanceof Element)) return;
+      const isText = Boolean(target.closest(TEXT_SELECTOR));
+      const isInteractive = Boolean(target.closest(INTERACTIVE_SELECTOR));
+      root.classList.toggle('is-text', isText);
+      root.classList.toggle('is-interactive', isInteractive && !isText);
     };
 
-    const updateModeFromPoint = () => {
-      const now = performance.now();
-      if (now - lastPointCheck < 90) return;
-      lastPointCheck = now;
-      const underPointer = document.elementFromPoint(x, y);
-      if (underPointer && underPointer !== cursor && !cursor.contains(underPointer)) updateMode(underPointer);
-    };
+    const move = (event) => {
+      if (event.pointerType && event.pointerType !== 'mouse') return;
 
-    const paint = () => {
-      raf = 0;
-      if (!enabled) return;
-      updateModeFromPoint();
-      const nextTransform = `translate3d(${x}px, ${y}px, 0) translate3d(-50%, -50%, 0)`;
-      if (nextTransform !== lastTransform) {
-        lastTransform = nextTransform;
-        cursor.style.transform = nextTransform;
+      targetX = event.clientX;
+      targetY = event.clientY;
+
+      if (!started) {
+        started = true;
+        currentX = targetX;
+        currentY = targetY;
+        root.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+        root.classList.add('is-visible');
+        document.documentElement.classList.add(ROOT_CLASS);
+        frameId = window.requestAnimationFrame(render);
       }
-    };
 
-    const schedulePaint = () => {
-      if (raf) return;
-      raf = window.requestAnimationFrame(paint);
-    };
-
-    const handleMove = (event) => {
-      if (isTouchLike(event)) return;
-      enable();
-      x = event.clientX;
-      y = event.clientY;
       updateMode(event.target);
-      setVisible(true);
-      schedulePaint();
     };
 
-    const handleOver = (event) => {
-      if (isTouchLike(event)) return;
-      enable();
-      updateMode(event.target);
-      setVisible(true);
+    const fallbackMouseMove = (event) => {
+      if ('PointerEvent' in window) return;
+      move(event);
     };
 
-    const handleDown = (event) => {
-      if (isTouchLike(event)) return;
-      root.classList.add(PRESSED_CLASS);
+    const hide = () => root.classList.remove('is-visible');
+    const show = () => {
+      if (started) root.classList.add('is-visible');
     };
 
-    const handleUp = () => root.classList.remove(PRESSED_CLASS);
-    const handleLeave = () => setVisible(false);
-
-    window.addEventListener('mousemove', handleMove, { passive: true });
-    window.addEventListener('mouseover', handleOver, { passive: true, capture: true });
-    window.addEventListener('mousedown', handleDown, { passive: true });
-    window.addEventListener('mouseup', handleUp, { passive: true });
-    window.addEventListener('blur', handleLeave, { passive: true });
-    document.addEventListener('mouseleave', handleLeave, { passive: true });
-
-    if ('PointerEvent' in window) {
-      window.addEventListener('pointermove', handleMove, { passive: true });
-      window.addEventListener('pointerover', handleOver, { passive: true, capture: true });
-      window.addEventListener('pointerdown', handleDown, { passive: true });
-      window.addEventListener('pointerup', handleUp, { passive: true });
-      window.addEventListener('pointercancel', handleUp, { passive: true });
-    }
+    window.addEventListener('pointermove', move, { passive: true });
+    window.addEventListener('mousemove', fallbackMouseMove, { passive: true });
+    window.addEventListener('mouseleave', hide, { passive: true });
+    window.addEventListener('mouseenter', show, { passive: true });
 
     return () => {
-      if (raf) window.cancelAnimationFrame(raf);
-      window.removeEventListener('mousemove', handleMove);
-      window.removeEventListener('mouseover', handleOver, { capture: true });
-      window.removeEventListener('mousedown', handleDown);
-      window.removeEventListener('mouseup', handleUp);
-      window.removeEventListener('blur', handleLeave);
-      document.removeEventListener('mouseleave', handleLeave);
-
-      if ('PointerEvent' in window) {
-        window.removeEventListener('pointermove', handleMove);
-        window.removeEventListener('pointerover', handleOver, { capture: true });
-        window.removeEventListener('pointerdown', handleDown);
-        window.removeEventListener('pointerup', handleUp);
-        window.removeEventListener('pointercancel', handleUp);
-      }
-
-      cursor.remove();
-      document.getElementById(STYLE_ID)?.remove();
-      root.classList.remove(ROOT_CLASS, PRESSED_CLASS);
+      window.cancelAnimationFrame(frameId);
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('mousemove', fallbackMouseMove);
+      window.removeEventListener('mouseleave', hide);
+      window.removeEventListener('mouseenter', show);
+      document.documentElement.classList.remove(ROOT_CLASS);
+      root.remove();
+      style.remove();
     };
   }, []);
 

@@ -1,0 +1,16 @@
+KlinikIQ V354 — Simple Cursor Full Reset
+
+Bu sürümde önceki tüm cursor tasarım katmanları sökülüp sıfırdan sade bir sistem kuruldu.
+
+Yapılanlar:
+- PremiumCursor.jsx tamamen yeniden yazıldı.
+- Kutu/background/glass/backdrop/blur/shine/label gibi tüm cursor tasarım katmanları kaldırıldı.
+- Yeni cursor yalnızca ince teal halka + küçük merkez noktadan oluşur.
+- Eski cursor DOM node'ları ve eski runtime style tag'leri component mount sırasında temizlenir.
+- index.css sonuna eski cursor class'larını etkisizleştiren final reset bloğu eklendi.
+- Mouse takibi React state kullanmaz; requestAnimationFrame + transform kullanır.
+- Interactive alanlarda cursor yalnızca hafif büyür, ekstra rozet veya kutu göstermez.
+- Input/textarea/select/contenteditable alanlarında native text cursor korunur.
+
+Not:
+Deploy sonrası tarayıcı cache'i için Ctrl + Shift + R ile hard refresh önerilir.

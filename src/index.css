@@ -51573,3 +51573,36 @@ html.ki-unified-cursor-active body :is(
   outline: 0 !important;
   box-shadow: none !important;
 }
+
+/* V354 SIMPLE CURSOR FULL RESET — old cursor designs removed/neutralized */
+.premium-cursor,
+.premium-cursor-root,
+.clinical-cursor-root,
+.klinq-cursor-root,
+.cursor-lens,
+.cursor-orb,
+.cursor-ring,
+[data-klinq-old-cursor-root] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.ki-simple-cursor-root,
+.ki-simple-cursor-root *,
+.ki-simple-cursor-root::before,
+.ki-simple-cursor-root::after,
+.ki-simple-cursor-root *::before,
+.ki-simple-cursor-root *::after {
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  outline: none !important;
+}
+
+.ki-simple-cursor-dot {
+  background: rgba(13, 148, 136, 0.96) !important;
+}
