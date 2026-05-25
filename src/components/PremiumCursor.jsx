@@ -39,9 +39,9 @@ const TEXT_SELECTOR = [
   '.bottom-case-search input',
 ].join(', ');
 
-const ROOT_CLASS = 'ki-pointer-v358-on';
-const STYLE_ID = 'ki-pointer-v358-runtime-style';
-const ROOT_ATTR = 'data-ki-pointer-v358-root';
+const ROOT_CLASS = 'ki-pointer-v360-on';
+const STYLE_ID = 'ki-pointer-v360-runtime-style';
+const ROOT_ATTR = 'data-ki-pointer-v360-root';
 
 const LEGACY_SELECTORS = [
   '.ki-cursor',
@@ -64,12 +64,16 @@ const LEGACY_SELECTORS = [
   '[data-ki-pointer-v355-root]',
   '[data-ki-pointer-v356-root]',
   '[data-ki-pointer-v357-root]',
+  '[data-ki-pointer-v358-root]',
+  '[data-ki-pointer-v359-root]',
 ].join(', ');
 
 const LEGACY_STYLE_IDS = [
   'ki-pointer-v355-runtime-style',
   'ki-pointer-v356-runtime-style',
   'ki-pointer-v357-runtime-style',
+  'ki-pointer-v358-runtime-style',
+  'ki-pointer-v359-runtime-style',
   'ki-simple-cursor-runtime-style-v354',
   'klinikiq-minimal-premium-cursor-style-v353',
   'klinikiq-unified-premium-cursor-runtime-style-v352',
@@ -84,6 +88,8 @@ const LEGACY_ROOT_CLASSES = [
   'ki-pointer-v355-on',
   'ki-pointer-v356-on',
   'ki-pointer-v357-on',
+  'ki-pointer-v358-on',
+  'ki-pointer-v359-on',
   'ki-simple-cursor-active',
   'ki-simple-cursor-pressed',
   'ki-minimal-cursor-active',
@@ -158,7 +164,8 @@ html.${ROOT_CLASS} .monaco-editor {
   opacity: 1 !important;
 }
 
-[${ROOT_ATTR}="true"].is-text {
+[${ROOT_ATTR}="true"].is-text,
+[${ROOT_ATTR}="true"].is-scrollbar {
   opacity: 0 !important;
 }
 
@@ -171,31 +178,6 @@ html.${ROOT_CLASS} .monaco-editor {
   border: 0 !important;
   box-shadow: none !important;
   filter: none !important;
-}
-
-[${ROOT_ATTR}="true"] [data-ki-pointer-orbit="true"] {
-  transform-origin: 17px 17px;
-  animation: kiPointerOrbitV356 3.2s linear infinite;
-  will-change: transform;
-}
-
-[${ROOT_ATTR}="true"].is-interactive [data-ki-pointer-orbit="true"] {
-  animation-duration: 2.4s;
-}
-
-[${ROOT_ATTR}="true"].is-pressed [data-ki-pointer-orbit="true"] {
-  animation-duration: 1.95s;
-}
-
-@keyframes kiPointerOrbitV356 {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  [${ROOT_ATTR}="true"] [data-ki-pointer-orbit="true"] {
-    animation-duration: 9s;
-  }
 }
 
 .premium-cursor,
@@ -217,7 +199,9 @@ html.${ROOT_CLASS} .monaco-editor {
 [data-ki-simple-cursor-root],
 [data-ki-pointer-v355-root],
 [data-ki-pointer-v356-root],
-[data-ki-pointer-v357-root] {
+[data-ki-pointer-v357-root],
+[data-ki-pointer-v358-root],
+[data-ki-pointer-v359-root] {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
@@ -256,11 +240,6 @@ html.${ROOT_CLASS} .monaco-editor {
     root.innerHTML = `
 <svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true" focusable="false" style="display:block;width:34px;height:34px;overflow:visible;background:transparent;border:0;box-shadow:none;filter:none;">
   <circle data-ki-pointer-ring="true" cx="17" cy="17" r="8.25" fill="none" stroke="rgba(13,148,136,0.94)" stroke-width="1.65" vector-effect="non-scaling-stroke"></circle>
-  <g data-ki-pointer-orbit="true">
-    <circle data-ki-pointer-tail-2="true" cx="13.95" cy="9.25" r="0.58" fill="rgba(255,255,255,0.18)"></circle>
-    <circle data-ki-pointer-tail-1="true" cx="15.15" cy="8.1" r="0.74" fill="rgba(255,255,255,0.42)"></circle>
-    <circle data-ki-pointer-comet="true" cx="17" cy="7.2" r="1.1" fill="rgba(255,255,255,0.96)"></circle>
-  </g>
   <circle data-ki-pointer-dot="true" cx="17" cy="17" r="2.25" fill="rgba(13,148,136,0.98)"></circle>
 </svg>`;
 
@@ -268,9 +247,6 @@ html.${ROOT_CLASS} .monaco-editor {
 
     const ring = root.querySelector('[data-ki-pointer-ring="true"]');
     const dot = root.querySelector('[data-ki-pointer-dot="true"]');
-    const comet = root.querySelector('[data-ki-pointer-comet="true"]');
-    const tail1 = root.querySelector('[data-ki-pointer-tail-1="true"]');
-    const tail2 = root.querySelector('[data-ki-pointer-tail-2="true"]');
 
     let currentX = -80;
     let currentY = -80;
@@ -280,6 +256,7 @@ html.${ROOT_CLASS} .monaco-editor {
     let started = false;
     let isInteractive = false;
     let isText = false;
+    let isScrollbar = false;
     let isPressed = false;
     let isDarkTheme = false;
 
@@ -288,12 +265,6 @@ html.${ROOT_CLASS} .monaco-editor {
       ringInteractive: 'rgba(15,118,110,0.98)',
       dot: 'rgba(13,148,136,0.98)',
       dotInteractive: 'rgba(15,118,110,0.98)',
-      comet: 'rgba(255,255,255,0.96)',
-      cometInteractive: 'rgba(255,255,255,1)',
-      tail1: 'rgba(255,255,255,0.42)',
-      tail1Interactive: 'rgba(255,255,255,0.54)',
-      tail2: 'rgba(255,255,255,0.18)',
-      tail2Interactive: 'rgba(255,255,255,0.22)',
     };
 
     const darkPalette = {
@@ -301,12 +272,6 @@ html.${ROOT_CLASS} .monaco-editor {
       ringInteractive: 'rgba(153,246,228,1)',
       dot: 'rgba(45,212,191,0.98)',
       dotInteractive: 'rgba(153,246,228,1)',
-      comet: 'rgba(248,250,252,0.98)',
-      cometInteractive: 'rgba(255,255,255,1)',
-      tail1: 'rgba(248,250,252,0.52)',
-      tail1Interactive: 'rgba(255,255,255,0.66)',
-      tail2: 'rgba(248,250,252,0.22)',
-      tail2Interactive: 'rgba(255,255,255,0.30)',
     };
 
     const resolveIsDarkTheme = () => {
@@ -326,15 +291,74 @@ html.${ROOT_CLASS} .monaco-editor {
       return Boolean(window.matchMedia?.('(prefers-color-scheme: dark)')?.matches);
     };
 
+
+    const getScrollableAncestors = (node) => {
+      const ancestors = [];
+      let current = isElement(node) ? node : null;
+
+      while (current && current !== document.documentElement) {
+        ancestors.push(current);
+        current = current.parentElement;
+      }
+
+      return ancestors;
+    };
+
+    const isScrollableElement = (element) => {
+      if (!element) return false;
+      const styles = window.getComputedStyle(element);
+      const overflowY = styles.overflowY;
+      const overflowX = styles.overflowX;
+      const canScrollY = /(auto|scroll|overlay)/.test(overflowY) && element.scrollHeight > element.clientHeight;
+      const canScrollX = /(auto|scroll|overlay)/.test(overflowX) && element.scrollWidth > element.clientWidth;
+      return canScrollY || canScrollX;
+    };
+
+    const isInsideScrollbarZone = (event) => {
+      const x = event.clientX;
+      const y = event.clientY;
+      const doc = document.documentElement;
+
+      // Browser/native viewport scrollbar is outside normal DOM cursor styling.
+      // If custom cursor stays visible there, Windows/native cursor and custom cursor appear together.
+      const viewportVerticalScrollbarWidth = Math.max(0, window.innerWidth - doc.clientWidth);
+      const viewportHorizontalScrollbarHeight = Math.max(0, window.innerHeight - doc.clientHeight);
+
+      if (viewportVerticalScrollbarWidth > 0 && x >= doc.clientWidth - Math.max(2, viewportVerticalScrollbarWidth)) return true;
+      if (viewportHorizontalScrollbarHeight > 0 && y >= doc.clientHeight - Math.max(2, viewportHorizontalScrollbarHeight)) return true;
+
+      const ancestors = getScrollableAncestors(event.target);
+
+      for (const element of ancestors) {
+        if (!isScrollableElement(element)) continue;
+
+        const rect = element.getBoundingClientRect();
+        if (x < rect.left || x > rect.right || y < rect.top || y > rect.bottom) continue;
+
+        const verticalScrollbarWidth = Math.max(0, element.offsetWidth - element.clientWidth);
+        const horizontalScrollbarHeight = Math.max(0, element.offsetHeight - element.clientHeight);
+
+        const styles = window.getComputedStyle(element);
+        const hasVerticalScrollbar = /(auto|scroll|overlay)/.test(styles.overflowY) && element.scrollHeight > element.clientHeight && verticalScrollbarWidth > 0;
+        const hasHorizontalScrollbar = /(auto|scroll|overlay)/.test(styles.overflowX) && element.scrollWidth > element.clientWidth && horizontalScrollbarHeight > 0;
+
+        if (hasVerticalScrollbar && x >= rect.right - verticalScrollbarWidth - 2 && x <= rect.right) return true;
+        if (hasHorizontalScrollbar && y >= rect.bottom - horizontalScrollbarHeight - 2 && y <= rect.bottom) return true;
+      }
+
+      return false;
+    };
+
     const setPointerVisual = () => {
-      if (!ring || !dot || !comet || !tail1 || !tail2) return;
+      if (!ring || !dot) return;
 
       isDarkTheme = resolveIsDarkTheme();
       const palette = isDarkTheme ? darkPalette : lightPalette;
 
       root.classList.toggle('is-text', isText);
-      root.classList.toggle('is-interactive', isInteractive && !isText);
-      root.classList.toggle('is-pressed', isPressed && !isText);
+      root.classList.toggle('is-scrollbar', isScrollbar);
+      root.classList.toggle('is-interactive', isInteractive && !isText && !isScrollbar);
+      root.classList.toggle('is-pressed', isPressed && !isText && !isScrollbar);
       root.classList.toggle('is-dark-theme', isDarkTheme);
 
       if (isText) {
@@ -343,10 +367,6 @@ html.${ROOT_CLASS} .monaco-editor {
         ring.setAttribute('stroke', palette.ring);
         dot.setAttribute('r', '2.25');
         dot.setAttribute('fill', palette.dot);
-        comet.setAttribute('r', '1.1');
-        comet.setAttribute('fill', palette.comet);
-        tail1.setAttribute('fill', palette.tail1);
-        tail2.setAttribute('fill', palette.tail2);
         return;
       }
 
@@ -356,27 +376,20 @@ html.${ROOT_CLASS} .monaco-editor {
         ring.setAttribute('stroke', palette.ringInteractive);
         dot.setAttribute('r', isPressed ? '1.75' : '1.9');
         dot.setAttribute('fill', palette.dotInteractive);
-        comet.setAttribute('r', '1.18');
-        comet.setAttribute('fill', palette.cometInteractive);
-        tail1.setAttribute('fill', palette.tail1Interactive);
-        tail2.setAttribute('fill', palette.tail2Interactive);
       } else {
         ring.setAttribute('r', isPressed ? '7.5' : '8.25');
         ring.setAttribute('stroke-width', '1.65');
         ring.setAttribute('stroke', palette.ring);
         dot.setAttribute('r', isPressed ? '1.9' : '2.25');
         dot.setAttribute('fill', palette.dot);
-        comet.setAttribute('r', '1.1');
-        comet.setAttribute('fill', palette.comet);
-        tail1.setAttribute('fill', palette.tail1);
-        tail2.setAttribute('fill', palette.tail2);
       }
     };
 
-    const updateMode = (target) => {
+    const updateMode = (target, event) => {
       if (!isElement(target)) return;
-      isText = Boolean(target.closest(TEXT_SELECTOR));
-      isInteractive = !isText && Boolean(target.closest(INTERACTIVE_SELECTOR));
+      isScrollbar = event ? isInsideScrollbarZone(event) : false;
+      isText = !isScrollbar && Boolean(target.closest(TEXT_SELECTOR));
+      isInteractive = !isScrollbar && !isText && Boolean(target.closest(INTERACTIVE_SELECTOR));
       setPointerVisual();
     };
 
@@ -403,7 +416,13 @@ html.${ROOT_CLASS} .monaco-editor {
       targetX = event.clientX;
       targetY = event.clientY;
       activate();
-      updateMode(event.target);
+      updateMode(event.target, event);
+
+      if (isScrollbar) {
+        root.classList.remove('is-visible');
+      } else if (!isText) {
+        root.classList.add('is-visible');
+      }
     };
 
     const hide = () => {
@@ -420,7 +439,7 @@ html.${ROOT_CLASS} .monaco-editor {
       document.documentElement.classList.add(ROOT_CLASS);
       setPointerVisual();
 
-      if (!isText) {
+      if (!isText && !isScrollbar) {
         root.classList.add('is-visible');
       }
 

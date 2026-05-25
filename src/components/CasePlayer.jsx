@@ -606,6 +606,80 @@ function ClinicalVisualHelpGate({ open, onToggle }) {
   );
 }
 
+
+const CLINICAL_VISUAL_FINDING_KEYWORDS = [
+  'dökünt', 'purpur', 'peteşi', 'peteşiy', 'ekimoz', 'hematom', 'morarma',
+  'eritem', 'kızarıklık', 'makül', 'papül', 'vezikül', 'bül', 'püstül',
+  'ülser', 'erozyon', 'skuam', 'deskuam', 'plak', 'nodül', 'krust', 'kabuk',
+  'nekroz', 'gangren', 'lezyon', 'ürtiker', 'eksantem', 'enantem',
+  'telenjiektazi', 'hiperpigment', 'hipopigment', 'pigment', 'siyanoz',
+  'ikter', 'sarılık', 'solukluk', 'ödem', 'şişlik', 'deformite', 'asimetri',
+  'basmakla solmayan', 'blanching', 'non-blanching', 'palpabl purpura',
+  'deride', 'ciltte', 'mukozada'
+];
+
+const CLINICAL_VISUAL_FALSE_POSITIVE_KEYWORDS = [
+  'letarjik', 'bilinç', 'oryantasyon', 'koopere', 'ajite', 'konfüze',
+  'ense sertliği', 'kernig', 'brudzinski', 'meningeal', 'fokal nörolojik',
+  'motor', 'duyu', 'refleks', 'oskültasyon', 'ral', 'ronküs', 'wheezing',
+  'üfürüm', 's1', 's2', 'batın', 'defans', 'rebound', 'hassasiyet',
+  'hepatomegali', 'splenomegali', 'kostovertebral', 'nabız', 'tansiyon',
+  'takipne', 'dispne', 'stridor', 'tonsil', 'farenks', 'lenfadenopati'
+];
+
+function normalizeClinicalExamFindingText(value) {
+  return String(value || '')
+    .toLocaleLowerCase('tr-TR')
+    .replace(/ı/g, 'i')
+    .replace(/İ/g, 'i')
+    .replace(/ğ/g, 'g')
+    .replace(/ü/g, 'u')
+    .replace(/ş/g, 's')
+    .replace(/ö/g, 'o')
+    .replace(/ç/g, 'c');
+}
+
+function findingIncludesAny(text, keywords) {
+  const normalized = normalizeClinicalExamFindingText(text);
+  return keywords.some((keyword) => normalized.includes(normalizeClinicalExamFindingText(keyword)));
+}
+
+function isClinicalVisualExamFinding(finding) {
+  const text = String(finding || '').trim();
+  if (!text) return false;
+
+  const hasVisualSignal = findingIncludesAny(text, CLINICAL_VISUAL_FINDING_KEYWORDS);
+  if (!hasVisualSignal) return false;
+
+  const hasFalsePositiveOnly = findingIncludesAny(text, CLINICAL_VISUAL_FALSE_POSITIVE_KEYWORDS)
+    && !findingIncludesAny(text, [
+      'dökünt', 'purpur', 'peteşi', 'ekimoz', 'eritem', 'makül', 'papül', 'vezikül',
+      'bül', 'püstül', 'ülser', 'skuam', 'plak', 'lezyon', 'basmakla solmayan',
+      'siyanoz', 'ikter', 'sarılık', 'ödem', 'şişlik', 'deformite', 'morarma'
+    ]);
+
+  return !hasFalsePositiveOnly;
+}
+
+function splitClinicalExamFindingsForVisualGate(examFindings = [], hasClinicalVisuals = false) {
+  const cleaned = Array.isArray(examFindings)
+    ? examFindings.map((finding) => String(finding || '').trim()).filter(Boolean)
+    : [];
+
+  if (!hasClinicalVisuals) {
+    return { visible: cleaned, visualGated: [] };
+  }
+
+  return cleaned.reduce((acc, finding) => {
+    if (isClinicalVisualExamFinding(finding)) {
+      acc.visualGated.push(finding);
+    } else {
+      acc.visible.push(finding);
+    }
+    return acc;
+  }, { visible: [], visualGated: [] });
+}
+
 function CasePlayer({
   clinicalCase,
   branch,
@@ -634,6 +708,12 @@ function CasePlayer({
   const caseGlossaryEnabled = !hardMode;
   const hasExamData = Array.isArray(clinicalCase.exam) && clinicalCase.exam.some((finding) => String(finding || '').trim());
   const hasClinicalExamVisuals = (clinicalCase.images || []).some((image) => image?.modality === 'clinical' && (image.thumbnailUrl || image.imageUrl));
+  const clinicalExamVisualGate = useMemo(
+    () => splitClinicalExamFindingsForVisualGate(clinicalCase.exam, hasClinicalExamVisuals),
+    [clinicalCase.exam, hasClinicalExamVisuals]
+  );
+  const hasVisualGatedClinicalExamFindings = clinicalExamVisualGate.visualGated.length > 0;
+  const hasImmediatelyVisibleClinicalExamFindings = clinicalExamVisualGate.visible.length > 0;
   const hasVitalData = vitalEntries.length > 0;
   const showExamPanel = !isSpotCase || hasExamData || hasVitalData || hasClinicalExamVisuals;
   const hasInvestigationOrders = investigationOrders.length > 0;
@@ -953,16 +1033,32 @@ function CasePlayer({
                               images={clinicalCase.images || []}
                               glossaryEnabled={caseGlossaryEnabled}
                               glossaryRevealMode={caseGlossaryRevealMode}
-                              revealCaption={showClinicalExamHelp}
+                              revealCaption={showClinicalExamHelp || !hasVisualGatedClinicalExamFindings}
                             />
-                            <ClinicalVisualHelpGate open={showClinicalExamHelp} onToggle={() => setShowClinicalExamHelp((current) => !current)} />
+                            {hasVisualGatedClinicalExamFindings ? (
+                              <ClinicalVisualHelpGate open={showClinicalExamHelp} onToggle={() => setShowClinicalExamHelp((current) => !current)} />
+                            ) : null}
                           </>
                         ) : null}
-                        {hasExamData && (!hasClinicalExamVisuals || showClinicalExamHelp) ? (
-                          <div className={hasClinicalExamVisuals ? 'visual-scientific-interpretation revealed clinical-exam-interpretation' : ''}>
-                            {hasClinicalExamVisuals ? <span className="visual-interpretation-heading"><Icon name="Notes" size={13} /> Bilimsel muayene yorumu</span> : null}
+                        {hasExamData && (!hasClinicalExamVisuals || hasImmediatelyVisibleClinicalExamFindings) ? (
+                          <div className={hasClinicalExamVisuals ? 'clinical-exam-visible-findings' : ''}>
+                            {hasClinicalExamVisuals && hasVisualGatedClinicalExamFindings ? (
+                              <span className="visual-interpretation-heading always-visible-exam-heading"><Icon name="Stethoscope" size={13} /> Görsel dışı fizik muayene bulguları</span>
+                            ) : null}
                             <ul className="clean-list dense scientific-finding-list">
-                              {clinicalCase.exam.map((finding) => <li key={finding}><GlossaryText text={expandExamFinding(finding)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></li>)}
+                              {(hasClinicalExamVisuals ? clinicalExamVisualGate.visible : clinicalCase.exam).map((finding) => (
+                                <li key={finding}><GlossaryText text={expandExamFinding(finding)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></li>
+                              ))}
+                            </ul>
+                          </div>
+                        ) : null}
+                        {hasClinicalExamVisuals && hasVisualGatedClinicalExamFindings && showClinicalExamHelp ? (
+                          <div className="visual-scientific-interpretation revealed clinical-exam-interpretation">
+                            <span className="visual-interpretation-heading"><Icon name="Notes" size={13} /> Görsel ile ilişkili muayene yorumu</span>
+                            <ul className="clean-list dense scientific-finding-list">
+                              {clinicalExamVisualGate.visualGated.map((finding) => (
+                                <li key={finding}><GlossaryText text={expandExamFinding(finding)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></li>
+                              ))}
                             </ul>
                           </div>
                         ) : null}
