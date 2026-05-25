@@ -16,11 +16,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Acil elektrolit bozukluğu",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/001_001-hiperkalemi-ekg.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/001_001-hiperkalemi-ekg_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/001_001-hiperkalemi-ekg.webp",
     "fileName": "001_001-hiperkalemi-ekg.webp",
-    "thumbnailFileName": "001_001-hiperkalemi-ekg_thumb.webp",
+    "thumbnailFileName": "001_001-hiperkalemi-ekg.webp",
     "alt": "Elektrokardiyografi - Sivri T dalgaları ve QRS komplekslerinde genişleme izleniyor.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-002",
@@ -39,11 +40,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ateşli döküntülü çocuk",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/002_002-gram-negatif-diplokok-gram-boyama.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/002_002-gram-negatif-diplokok-gram-boyama_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/002_002-gram-negatif-diplokok-gram-boyama.webp",
     "fileName": "002_002-gram-negatif-diplokok-gram-boyama.webp",
-    "thumbnailFileName": "002_002-gram-negatif-diplokok-gram-boyama_thumb.webp",
+    "thumbnailFileName": "002_002-gram-negatif-diplokok-gram-boyama.webp",
     "alt": "Beyin omurilik sıvısı Gram boyama - Nötrofiller içinde gram-negatif diplokoklar görüldü.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-003",
@@ -62,11 +64,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Gebelikte akut karın",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/003_003-pelvik-serbest-sivi-transvajinal-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/003_003-pelvik-serbest-sivi-transvajinal-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/003_003-pelvik-serbest-sivi-transvajinal-ultrasonografi.webp",
     "fileName": "003_003-pelvik-serbest-sivi-transvajinal-ultrasonografi.webp",
-    "thumbnailFileName": "003_003-pelvik-serbest-sivi-transvajinal-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "003_003-pelvik-serbest-sivi-transvajinal-ultrasonografi.webp",
     "alt": "Transvajinal ultrasonografi - Uterin kavitede gebelik kesesi izlenmedi; pelviste serbest sıvı mevcuttur.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-004",
@@ -85,11 +88,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Sağ alt kadran ağrısı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/004_004-akut-apandisit-abdominal-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/004_004-akut-apandisit-abdominal-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/004_004-akut-apandisit-abdominal-ultrasonografi.webp",
     "fileName": "004_004-akut-apandisit-abdominal-ultrasonografi.webp",
-    "thumbnailFileName": "004_004-akut-apandisit-abdominal-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "004_004-akut-apandisit-abdominal-ultrasonografi.webp",
     "alt": "Abdominal ultrasonografi - Sağ alt kadranda komprese olmayan, çapı 8 mm ölçülen kör sonlanan tübüler yapı izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-005",
@@ -108,11 +112,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Kronik malabsorpsiyon tablosu",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/005_005-villus-atrofisi-duodenum-histopatoloji.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/005_005-villus-atrofisi-duodenum-histopatoloji_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/005_005-villus-atrofisi-duodenum-histopatoloji.webp",
     "fileName": "005_005-villus-atrofisi-duodenum-histopatoloji.webp",
-    "thumbnailFileName": "005_005-villus-atrofisi-duodenum-histopatoloji_thumb.webp",
+    "thumbnailFileName": "005_005-villus-atrofisi-duodenum-histopatoloji.webp",
     "alt": "Duodenum biyopsisi - Histolojik değerlendirme planlandı.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-006",
@@ -131,11 +136,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Omuz travması sonrası güç kaybı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/006_006-humerus-cerrahi-boyun-kirigi-direkt-grafi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/006_006-humerus-cerrahi-boyun-kirigi-direkt-grafi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/006_006-humerus-cerrahi-boyun-kirigi-direkt-grafi.webp",
     "fileName": "006_006-humerus-cerrahi-boyun-kirigi-direkt-grafi.webp",
-    "thumbnailFileName": "006_006-humerus-cerrahi-boyun-kirigi-direkt-grafi_thumb.webp",
+    "thumbnailFileName": "006_006-humerus-cerrahi-boyun-kirigi-direkt-grafi.webp",
     "alt": "Sağ omuz direkt grafisi - Humerus cerrahi boyun bölgesinde kırık hattı izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-007",
@@ -154,11 +160,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Beslenme sonrası kusan bebek",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/007_007-hipertrofik-pilor-stenozu-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/007_007-hipertrofik-pilor-stenozu-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/007_007-hipertrofik-pilor-stenozu-ultrasonografi.webp",
     "fileName": "007_007-hipertrofik-pilor-stenozu-ultrasonografi.webp",
-    "thumbnailFileName": "007_007-hipertrofik-pilor-stenozu-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "007_007-hipertrofik-pilor-stenozu-ultrasonografi.webp",
     "alt": "Abdominal ultrasonografi - Pilor kasında belirgin kalınlaşma ve kanal uzunluğunda artış izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-008",
@@ -177,11 +184,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Purpura ve nörolojik bulgular",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/008_008-sistositler-periferik-yayma.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/008_008-sistositler-periferik-yayma_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/008_008-sistositler-periferik-yayma.webp",
     "fileName": "008_008-sistositler-periferik-yayma.webp",
-    "thumbnailFileName": "008_008-sistositler-periferik-yayma_thumb.webp",
+    "thumbnailFileName": "008_008-sistositler-periferik-yayma.webp",
     "alt": "Periferik yayma - Şistositler görüldü.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-009",
@@ -200,11 +208,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Hemoptizi ve hematüri birlikteliği",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/009_009-eritrosit-silendirleri-idrar-mikroskopisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/009_009-eritrosit-silendirleri-idrar-mikroskopisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/009_009-eritrosit-silendirleri-idrar-mikroskopisi.webp",
     "fileName": "009_009-eritrosit-silendirleri-idrar-mikroskopisi.webp",
-    "thumbnailFileName": "009_009-eritrosit-silendirleri-idrar-mikroskopisi_thumb.webp",
+    "thumbnailFileName": "009_009-eritrosit-silendirleri-idrar-mikroskopisi.webp",
     "alt": "İdrar mikroskopisi - Eritrosit silendirleri görüldü.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-010",
@@ -223,11 +232,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Hemoptizi ve hematüri birlikteliği",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/010_010-lineer-igg-birikimi-immunfloresan.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/010_010-lineer-igg-birikimi-immunfloresan_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/010_010-lineer-igg-birikimi-immunfloresan.webp",
     "fileName": "010_010-lineer-igg-birikimi-immunfloresan.webp",
-    "thumbnailFileName": "010_010-lineer-igg-birikimi-immunfloresan_thumb.webp",
+    "thumbnailFileName": "010_010-lineer-igg-birikimi-immunfloresan.webp",
     "alt": "Böbrek biyopsisi immünfloresan inceleme - Glomerüler bazal membran boyunca lineer IgG birikimi izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-011",
@@ -246,11 +256,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ateş ve yeni üfürüm",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/011_011-gram-pozitif-kok-kumeleri-gram-boyama.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/011_011-gram-pozitif-kok-kumeleri-gram-boyama_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/011_011-gram-pozitif-kok-kumeleri-gram-boyama.webp",
     "fileName": "011_011-gram-pozitif-kok-kumeleri-gram-boyama.webp",
-    "thumbnailFileName": "011_011-gram-pozitif-kok-kumeleri-gram-boyama_thumb.webp",
+    "thumbnailFileName": "011_011-gram-pozitif-kok-kumeleri-gram-boyama.webp",
     "alt": "Kan kültürü Gram boyama - Gram-pozitif kok kümeleri görüldü.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-012",
@@ -269,11 +280,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ateş ve yeni üfürüm",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/012_012-trikuspit-vejetasyon-ekokardiyografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/012_012-trikuspit-vejetasyon-ekokardiyografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/012_012-trikuspit-vejetasyon-ekokardiyografi.webp",
     "fileName": "012_012-trikuspit-vejetasyon-ekokardiyografi.webp",
-    "thumbnailFileName": "012_012-trikuspit-vejetasyon-ekokardiyografi_thumb.webp",
+    "thumbnailFileName": "012_012-trikuspit-vejetasyon-ekokardiyografi.webp",
     "alt": "Transtorasik ekokardiyografi - Triküspit kapakta hareketli vejetasyon izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-013",
@@ -292,11 +304,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ateş ve yeni üfürüm",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/013_013-septik-pulmoner-emboli-toraks-bt.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/013_013-septik-pulmoner-emboli-toraks-bt_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/013_013-septik-pulmoner-emboli-toraks-bt.webp",
     "fileName": "013_013-septik-pulmoner-emboli-toraks-bt.webp",
-    "thumbnailFileName": "013_013-septik-pulmoner-emboli-toraks-bt_thumb.webp",
+    "thumbnailFileName": "013_013-septik-pulmoner-emboli-toraks-bt.webp",
     "alt": "Toraks bilgisayarlı tomografisi - Her iki akciğerde periferik nodüler ve kaviter lezyonlar izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-014",
@@ -315,11 +328,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Bradikardi ve hipotansiyon",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/014_014-sinus-bradikardisi-ekg.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/014_014-sinus-bradikardisi-ekg_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/014_014-sinus-bradikardisi-ekg.webp",
     "fileName": "014_014-sinus-bradikardisi-ekg.webp",
-    "thumbnailFileName": "014_014-sinus-bradikardisi-ekg_thumb.webp",
+    "thumbnailFileName": "014_014-sinus-bradikardisi-ekg.webp",
     "alt": "Elektrokardiyografi - Sinüs bradikardisi izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-015",
@@ -338,11 +352,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Göğüs ağrısı ve hipotansiyon",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/015_015-inferior-stemi-sag-ventrikul-tutulumu-ekg.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/015_015-inferior-stemi-sag-ventrikul-tutulumu-ekg_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/015_015-inferior-stemi-sag-ventrikul-tutulumu-ekg.webp",
     "fileName": "015_015-inferior-stemi-sag-ventrikul-tutulumu-ekg.webp",
-    "thumbnailFileName": "015_015-inferior-stemi-sag-ventrikul-tutulumu-ekg_thumb.webp",
+    "thumbnailFileName": "015_015-inferior-stemi-sag-ventrikul-tutulumu-ekg.webp",
     "alt": "Elektrokardiyografi - DII, DIII ve aVF derivasyonlarında ST elevasyonu; sağ prekordiyal V4R derivasyonunda ST elevasyonu izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-016",
@@ -361,11 +376,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Gebelikte kanama sonrası değerlendirme",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/016_016-fetal-kalp-aktivitesi-obstetrik-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/016_016-fetal-kalp-aktivitesi-obstetrik-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/016_016-fetal-kalp-aktivitesi-obstetrik-ultrasonografi.webp",
     "fileName": "016_016-fetal-kalp-aktivitesi-obstetrik-ultrasonografi.webp",
-    "thumbnailFileName": "016_016-fetal-kalp-aktivitesi-obstetrik-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "016_016-fetal-kalp-aktivitesi-obstetrik-ultrasonografi.webp",
     "alt": "Obstetrik ultrasonografi - Fetal kalp aktivitesi mevcut, plasentada belirgin ayrılma bulgusu izlenmedi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-017",
@@ -384,11 +400,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "İshal sonrası böbrek yetmezliği",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/017_017-yaygin-sistositler-periferik-yayma.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/017_017-yaygin-sistositler-periferik-yayma_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/017_017-yaygin-sistositler-periferik-yayma.webp",
     "fileName": "017_017-yaygin-sistositler-periferik-yayma.webp",
-    "thumbnailFileName": "017_017-yaygin-sistositler-periferik-yayma_thumb.webp",
+    "thumbnailFileName": "017_017-yaygin-sistositler-periferik-yayma.webp",
     "alt": "Periferik yayma - Şistositler görüldü.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-018",
@@ -407,11 +424,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ateş ve yeni üfürüm",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/018_018-sag-kalp-vejetasyonu-ekokardiyografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/018_018-sag-kalp-vejetasyonu-ekokardiyografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/018_018-sag-kalp-vejetasyonu-ekokardiyografi.webp",
     "fileName": "018_018-sag-kalp-vejetasyonu-ekokardiyografi.webp",
-    "thumbnailFileName": "018_018-sag-kalp-vejetasyonu-ekokardiyografi_thumb.webp",
+    "thumbnailFileName": "018_018-sag-kalp-vejetasyonu-ekokardiyografi.webp",
     "alt": "Transtorasik ekokardiyografi - Triküspit kapakta hareketli vejetasyon izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-019",
@@ -430,11 +448,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ateş ve yeni üfürüm",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/019_019-periferik-noduler-infiltrasyon-toraks-bt.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/019_019-periferik-noduler-infiltrasyon-toraks-bt_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/019_019-periferik-noduler-infiltrasyon-toraks-bt.webp",
     "fileName": "019_019-periferik-noduler-infiltrasyon-toraks-bt.webp",
-    "thumbnailFileName": "019_019-periferik-noduler-infiltrasyon-toraks-bt_thumb.webp",
+    "thumbnailFileName": "019_019-periferik-noduler-infiltrasyon-toraks-bt.webp",
     "alt": "Toraks bilgisayarlı tomografi - Periferik yerleşimli çoklu nodüler infiltrasyonlar izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-020",
@@ -453,11 +472,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Pelvik cerrahide riskli yapı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/020_020-intramural-miyomlar-pelvik-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/020_020-intramural-miyomlar-pelvik-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/020_020-intramural-miyomlar-pelvik-ultrasonografi.webp",
     "fileName": "020_020-intramural-miyomlar-pelvik-ultrasonografi.webp",
-    "thumbnailFileName": "020_020-intramural-miyomlar-pelvik-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "020_020-intramural-miyomlar-pelvik-ultrasonografi.webp",
     "alt": "Pelvik ultrasonografi - Uterus içinde çoklu intramural miyom nodülleri izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-021",
@@ -476,11 +496,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Trombositopeni ve nörolojik bulgu",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/021_021-yaygin-sistositler-periferik-yayma.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/021_021-yaygin-sistositler-periferik-yayma_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/021_021-yaygin-sistositler-periferik-yayma.webp",
     "fileName": "021_021-yaygin-sistositler-periferik-yayma.webp",
-    "thumbnailFileName": "021_021-yaygin-sistositler-periferik-yayma_thumb.webp",
+    "thumbnailFileName": "021_021-yaygin-sistositler-periferik-yayma.webp",
     "alt": "Periferik yayma - Yaygın şistositler izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-022",
@@ -499,11 +520,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Prematüre bebekte solunum sıkıntısı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/022_022-premature-rds-akciger-grafisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/022_022-premature-rds-akciger-grafisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/022_022-premature-rds-akciger-grafisi.webp",
     "fileName": "022_022-premature-rds-akciger-grafisi.webp",
-    "thumbnailFileName": "022_022-premature-rds-akciger-grafisi_thumb.webp",
+    "thumbnailFileName": "022_022-premature-rds-akciger-grafisi.webp",
     "alt": "Akciğer grafisi - Bilateral retikülogranüler görünüm ve hava bronkogramları izleniyor.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-023",
@@ -522,11 +544,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Uzamış ateş ve üfürüm",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/023_023-mitral-vejetasyon-ekokardiyografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/023_023-mitral-vejetasyon-ekokardiyografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/023_023-mitral-vejetasyon-ekokardiyografi.webp",
     "fileName": "023_023-mitral-vejetasyon-ekokardiyografi.webp",
-    "thumbnailFileName": "023_023-mitral-vejetasyon-ekokardiyografi_thumb.webp",
+    "thumbnailFileName": "023_023-mitral-vejetasyon-ekokardiyografi.webp",
     "alt": "Transtorasik ekokardiyografi - Mitral kapak üzerinde hareketli vejetasyon izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-024",
@@ -545,11 +568,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ateş ve sağ üst kadran ağrısı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/024_024-dilate-koledok-ve-distal-tas-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/024_024-dilate-koledok-ve-distal-tas-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/024_024-dilate-koledok-ve-distal-tas-ultrasonografi.webp",
     "fileName": "024_024-dilate-koledok-ve-distal-tas-ultrasonografi.webp",
-    "thumbnailFileName": "024_024-dilate-koledok-ve-distal-tas-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "024_024-dilate-koledok-ve-distal-tas-ultrasonografi.webp",
     "alt": "Abdominal ultrasonografi - Koledok dilate izleniyor ve distal koledokta taş ile uyumlu ekojen odak görülüyor.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-025",
@@ -568,11 +592,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Hemoliz ve nörolojik bulgular",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/025_025-sistositler-periferik-yayma.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/025_025-sistositler-periferik-yayma_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/025_025-sistositler-periferik-yayma.webp",
     "fileName": "025_025-sistositler-periferik-yayma.webp",
-    "thumbnailFileName": "025_025-sistositler-periferik-yayma_thumb.webp",
+    "thumbnailFileName": "025_025-sistositler-periferik-yayma.webp",
     "alt": "Periferik yayma - Şistositler izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-026",
@@ -591,11 +616,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Kolik yan ağrısı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/026_026-kalsiyum-oksalat-kristalleri-idrar-mikroskopisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/026_026-kalsiyum-oksalat-kristalleri-idrar-mikroskopisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/026_026-kalsiyum-oksalat-kristalleri-idrar-mikroskopisi.webp",
     "fileName": "026_026-kalsiyum-oksalat-kristalleri-idrar-mikroskopisi.webp",
-    "thumbnailFileName": "026_026-kalsiyum-oksalat-kristalleri-idrar-mikroskopisi_thumb.webp",
+    "thumbnailFileName": "026_026-kalsiyum-oksalat-kristalleri-idrar-mikroskopisi.webp",
     "alt": "İdrar mikroskopisi - Zarf şeklinde kristaller izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-027",
@@ -614,11 +640,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Kolik yan ağrısı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/027_027-sag-distal-ureter-tasi-kontrastsiz-bt.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/027_027-sag-distal-ureter-tasi-kontrastsiz-bt_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/027_027-sag-distal-ureter-tasi-kontrastsiz-bt.webp",
     "fileName": "027_027-sag-distal-ureter-tasi-kontrastsiz-bt.webp",
-    "thumbnailFileName": "027_027-sag-distal-ureter-tasi-kontrastsiz-bt_thumb.webp",
+    "thumbnailFileName": "027_027-sag-distal-ureter-tasi-kontrastsiz-bt.webp",
     "alt": "Kontrastsız üriner sistem bilgisayarlı tomografi - Sağ distal üreterde 5 mm taş izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-028",
@@ -637,11 +664,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Akut göğüs ağrısı ve hipotansiyon",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/028_028-inferior-stemi-ve-v4r-tutulumu-ekg.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/028_028-inferior-stemi-ve-v4r-tutulumu-ekg_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/028_028-inferior-stemi-ve-v4r-tutulumu-ekg.webp",
     "fileName": "028_028-inferior-stemi-ve-v4r-tutulumu-ekg.webp",
-    "thumbnailFileName": "028_028-inferior-stemi-ve-v4r-tutulumu-ekg_thumb.webp",
+    "thumbnailFileName": "028_028-inferior-stemi-ve-v4r-tutulumu-ekg.webp",
     "alt": "Elektrokardiyografi - DII, DIII ve aVF derivasyonlarında ST elevasyonu; V4R derivasyonunda ST elevasyonu izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-029",
@@ -660,11 +688,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Yenidoğanda santral siyanoz",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/029_029-tetraloji-fallot-ekokardiyografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/029_029-tetraloji-fallot-ekokardiyografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/029_029-tetraloji-fallot-ekokardiyografi.webp",
     "fileName": "029_029-tetraloji-fallot-ekokardiyografi.webp",
-    "thumbnailFileName": "029_029-tetraloji-fallot-ekokardiyografi_thumb.webp",
+    "thumbnailFileName": "029_029-tetraloji-fallot-ekokardiyografi.webp",
     "alt": "Ekokardiyografi - Ventriküler septal defekt, sağ ventrikül çıkış yolu darlığı, aortun septum üzerinde yerleşimi ve sağ ventrikül hipertrofisi izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-030",
@@ -683,11 +712,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Yenidoğanda oküler ve nörolojik bulgular",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/030_030-ventrikulomegali-ve-intrakraniyal-kalsifikasyon-kranial-ultrason.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/030_030-ventrikulomegali-ve-intrakraniyal-kalsifikasyon-kranial-ultrason_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/030_030-ventrikulomegali-ve-intrakraniyal-kalsifikasyon-kranial-ultrason.webp",
     "fileName": "030_030-ventrikulomegali-ve-intrakraniyal-kalsifikasyon-kranial-ultrason.webp",
-    "thumbnailFileName": "030_030-ventrikulomegali-ve-intrakraniyal-kalsifikasyon-kranial-ultrason_thumb.webp",
+    "thumbnailFileName": "030_030-ventrikulomegali-ve-intrakraniyal-kalsifikasyon-kranial-ultrason.webp",
     "alt": "Kranial ultrasonografi - Ventriküler genişleme ve yaygın intrakraniyal kalsifik odaklar izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-031",
@@ -706,11 +736,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ağrısız hematüri ve renal kitle",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/031_031-sag-renal-kortikal-kitle-abdominal-bt.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/031_031-sag-renal-kortikal-kitle-abdominal-bt_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/031_031-sag-renal-kortikal-kitle-abdominal-bt.webp",
     "fileName": "031_031-sag-renal-kortikal-kitle-abdominal-bt.webp",
-    "thumbnailFileName": "031_031-sag-renal-kortikal-kitle-abdominal-bt_thumb.webp",
+    "thumbnailFileName": "031_031-sag-renal-kortikal-kitle-abdominal-bt.webp",
     "alt": "Abdominal bilgisayarlı tomografi - Sağ böbrek korteksinde solid, heterojen kontrastlanan kitle izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-032",
@@ -729,11 +760,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ağrısız hematüri ve renal kitle",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/032_032-clear-cell-rcc-histopatoloji.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/032_032-clear-cell-rcc-histopatoloji_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/032_032-clear-cell-rcc-histopatoloji.webp",
     "fileName": "032_032-clear-cell-rcc-histopatoloji.webp",
-    "thumbnailFileName": "032_032-clear-cell-rcc-histopatoloji_thumb.webp",
+    "thumbnailFileName": "032_032-clear-cell-rcc-histopatoloji.webp",
     "alt": "Biyopsi histopatolojisi - İnce damar ağı ile ayrılan yuvalar halinde dizilmiş, berrak sitoplazmalı tümör hücreleri izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-033",
@@ -752,11 +784,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Yeni başlayan kuru öksürük",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/033_033-normal-akciger-grafisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/033_033-normal-akciger-grafisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/033_033-normal-akciger-grafisi.webp",
     "fileName": "033_033-normal-akciger-grafisi.webp",
-    "thumbnailFileName": "033_033-normal-akciger-grafisi_thumb.webp",
+    "thumbnailFileName": "033_033-normal-akciger-grafisi.webp",
     "alt": "Akciğer grafisi - Akut infiltrasyon veya kitle lezyonu izlenmedi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-034",
@@ -775,11 +808,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ateş ve sarılıkla başvuran hasta",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/034_034-dilate-koledok-ve-distal-tas-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/034_034-dilate-koledok-ve-distal-tas-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/034_034-dilate-koledok-ve-distal-tas-ultrasonografi.webp",
     "fileName": "034_034-dilate-koledok-ve-distal-tas-ultrasonografi.webp",
-    "thumbnailFileName": "034_034-dilate-koledok-ve-distal-tas-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "034_034-dilate-koledok-ve-distal-tas-ultrasonografi.webp",
     "alt": "Abdominal ultrasonografi - Koledok çapı artmış ve distal koledokta taş ile uyumlu ekojen odak izlenmiştir.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-035",
@@ -798,11 +832,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ağız yaraları ve gevşek büller",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/035_035-suprabazal-akantoliz-deri-biyopsisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/035_035-suprabazal-akantoliz-deri-biyopsisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/035_035-suprabazal-akantoliz-deri-biyopsisi.webp",
     "fileName": "035_035-suprabazal-akantoliz-deri-biyopsisi.webp",
-    "thumbnailFileName": "035_035-suprabazal-akantoliz-deri-biyopsisi_thumb.webp",
+    "thumbnailFileName": "035_035-suprabazal-akantoliz-deri-biyopsisi.webp",
     "alt": "Deri biyopsisi - Suprabazal akantoliz ve intraepidermal bül oluşumu izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-036",
@@ -821,11 +856,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ağız yaraları ve gevşek büller",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/036_036-hucreler-arasi-igg-birikimi-direkt-immunfloresan.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/036_036-hucreler-arasi-igg-birikimi-direkt-immunfloresan_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/036_036-hucreler-arasi-igg-birikimi-direkt-immunfloresan.webp",
     "fileName": "036_036-hucreler-arasi-igg-birikimi-direkt-immunfloresan.webp",
-    "thumbnailFileName": "036_036-hucreler-arasi-igg-birikimi-direkt-immunfloresan_thumb.webp",
+    "thumbnailFileName": "036_036-hucreler-arasi-igg-birikimi-direkt-immunfloresan.webp",
     "alt": "Direkt immünfloresan inceleme - Epidermiste hücreler arası ağ şeklinde IgG birikimi saptandı.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-037",
@@ -844,11 +880,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Trombositopeni ve nörolojik bulgu",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/037_037-sistositler-periferik-yayma.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/037_037-sistositler-periferik-yayma_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/037_037-sistositler-periferik-yayma.webp",
     "fileName": "037_037-sistositler-periferik-yayma.webp",
-    "thumbnailFileName": "037_037-sistositler-periferik-yayma_thumb.webp",
+    "thumbnailFileName": "037_037-sistositler-periferik-yayma.webp",
     "alt": "Periferik yayma - Şistositler izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-038",
@@ -867,11 +904,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Erişkinde nefrotik tablo",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/038_038-subepitelyal-elektron-dens-birikim-em.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/038_038-subepitelyal-elektron-dens-birikim-em_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/038_038-subepitelyal-elektron-dens-birikim-em.webp",
     "fileName": "038_038-subepitelyal-elektron-dens-birikim-em.webp",
-    "thumbnailFileName": "038_038-subepitelyal-elektron-dens-birikim-em_thumb.webp",
+    "thumbnailFileName": "038_038-subepitelyal-elektron-dens-birikim-em.webp",
     "alt": "Böbrek biyopsisi elektron mikroskopisi - Glomerüler bazal membran boyunca subepitelyal elektron-dens immün kompleks birikimleri izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-039",
@@ -890,11 +928,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Kronik dispne ve hava hapsi",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/039_039-amfizematik-hiperinflasyon-toraks-bt.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/039_039-amfizematik-hiperinflasyon-toraks-bt_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/039_039-amfizematik-hiperinflasyon-toraks-bt.webp",
     "fileName": "039_039-amfizematik-hiperinflasyon-toraks-bt.webp",
-    "thumbnailFileName": "039_039-amfizematik-hiperinflasyon-toraks-bt_thumb.webp",
+    "thumbnailFileName": "039_039-amfizematik-hiperinflasyon-toraks-bt.webp",
     "alt": "Toraks bilgisayarlı tomografi - Bilateral hiperinflasyon ve alveoler duvar destrüksiyonu ile uyumlu alanlar izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-040",
@@ -913,11 +952,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Çocukta ağrısız alt gastrointestinal kanama",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/040_040-meckel-sintigrafisi-ektopik-gastrik-mukoza.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/040_040-meckel-sintigrafisi-ektopik-gastrik-mukoza_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/040_040-meckel-sintigrafisi-ektopik-gastrik-mukoza.webp",
     "fileName": "040_040-meckel-sintigrafisi-ektopik-gastrik-mukoza.webp",
-    "thumbnailFileName": "040_040-meckel-sintigrafisi-ektopik-gastrik-mukoza_thumb.webp",
+    "thumbnailFileName": "040_040-meckel-sintigrafisi-ektopik-gastrik-mukoza.webp",
     "alt": "Teknesyum-99m perteknetat sintigrafisi - Sağ alt kadranda ektopik gastrik mukoza ile uyumlu fokal tutulum izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-041",
@@ -936,11 +976,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Servikal lenf nodu ile saptanan tiroid nodülü",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/041_041-tiroid-mikrokalsifikasyonlu-hipoekoik-nodul-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/041_041-tiroid-mikrokalsifikasyonlu-hipoekoik-nodul-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/041_041-tiroid-mikrokalsifikasyonlu-hipoekoik-nodul-ultrasonografi.webp",
     "fileName": "041_041-tiroid-mikrokalsifikasyonlu-hipoekoik-nodul-ultrasonografi.webp",
-    "thumbnailFileName": "041_041-tiroid-mikrokalsifikasyonlu-hipoekoik-nodul-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "041_041-tiroid-mikrokalsifikasyonlu-hipoekoik-nodul-ultrasonografi.webp",
     "alt": "Tiroid ultrasonografisi - Mikrokalsifikasyonlar içeren hipoekoik solid nodül izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-042",
@@ -959,11 +1000,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Servikal lenf nodu ile saptanan tiroid nodülü",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/042_042-papiller-tiroid-karsinomu-iia-sitoloji.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/042_042-papiller-tiroid-karsinomu-iia-sitoloji_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/042_042-papiller-tiroid-karsinomu-iia-sitoloji.webp",
     "fileName": "042_042-papiller-tiroid-karsinomu-iia-sitoloji.webp",
-    "thumbnailFileName": "042_042-papiller-tiroid-karsinomu-iia-sitoloji_thumb.webp",
+    "thumbnailFileName": "042_042-papiller-tiroid-karsinomu-iia-sitoloji.webp",
     "alt": "İnce iğne aspirasyon sitolojisi - Nükleer oluklanma, psödoinklüzyonlar ve psammoma cisimcikleri ile uyumlu hücre grupları görüldü.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-043",
@@ -982,11 +1024,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Hiperürisemi ve davranışsal bulgular",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/043_043-urat-kristalleri-idrar-mikroskopisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/043_043-urat-kristalleri-idrar-mikroskopisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/043_043-urat-kristalleri-idrar-mikroskopisi.webp",
     "fileName": "043_043-urat-kristalleri-idrar-mikroskopisi.webp",
-    "thumbnailFileName": "043_043-urat-kristalleri-idrar-mikroskopisi_thumb.webp",
+    "thumbnailFileName": "043_043-urat-kristalleri-idrar-mikroskopisi.webp",
     "alt": "İdrar mikroskopisi - Ürat kristalleri izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-044",
@@ -1005,11 +1048,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Antikoagülan tedavi sırasında yeni tromboz",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/044_044-popliteal-ven-akut-trombus-doppler-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/044_044-popliteal-ven-akut-trombus-doppler-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/044_044-popliteal-ven-akut-trombus-doppler-ultrasonografi.webp",
     "fileName": "044_044-popliteal-ven-akut-trombus-doppler-ultrasonografi.webp",
-    "thumbnailFileName": "044_044-popliteal-ven-akut-trombus-doppler-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "044_044-popliteal-ven-akut-trombus-doppler-ultrasonografi.webp",
     "alt": "Alt ekstremite venöz Doppler ultrasonografi - Sol popliteal vende akut trombüs izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-045",
@@ -1028,11 +1072,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Yenidoğanda hipokalsemik nöbet",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/045_045-konotrunkal-kalp-anomalisi-ekokardiyografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/045_045-konotrunkal-kalp-anomalisi-ekokardiyografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/045_045-konotrunkal-kalp-anomalisi-ekokardiyografi.webp",
     "fileName": "045_045-konotrunkal-kalp-anomalisi-ekokardiyografi.webp",
-    "thumbnailFileName": "045_045-konotrunkal-kalp-anomalisi-ekokardiyografi_thumb.webp",
+    "thumbnailFileName": "045_045-konotrunkal-kalp-anomalisi-ekokardiyografi.webp",
     "alt": "Ekokardiyografi - Konotrunkal kalp anomalisi ile uyumlu yapısal defekt izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-046",
@@ -1051,11 +1096,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Yenidoğanda mekonyum çıkaramama",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/046_046-hirschsprung-gecis-zonu-kontrastli-kolon-grafisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/046_046-hirschsprung-gecis-zonu-kontrastli-kolon-grafisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/046_046-hirschsprung-gecis-zonu-kontrastli-kolon-grafisi.webp",
     "fileName": "046_046-hirschsprung-gecis-zonu-kontrastli-kolon-grafisi.webp",
-    "thumbnailFileName": "046_046-hirschsprung-gecis-zonu-kontrastli-kolon-grafisi_thumb.webp",
+    "thumbnailFileName": "046_046-hirschsprung-gecis-zonu-kontrastli-kolon-grafisi.webp",
     "alt": "Kontrastlı kolon grafisi - Distal rektosigmoid segmentte daralma ve proksimal kolonda belirgin genişleme izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-047",
@@ -1074,11 +1120,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Yenidoğanda mekonyum çıkaramama",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/047_047-aganglionozis-rektal-biyopsi-histopatoloji.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/047_047-aganglionozis-rektal-biyopsi-histopatoloji_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/047_047-aganglionozis-rektal-biyopsi-histopatoloji.webp",
     "fileName": "047_047-aganglionozis-rektal-biyopsi-histopatoloji.webp",
-    "thumbnailFileName": "047_047-aganglionozis-rektal-biyopsi-histopatoloji_thumb.webp",
+    "thumbnailFileName": "047_047-aganglionozis-rektal-biyopsi-histopatoloji.webp",
     "alt": "Rektal biyopsi - Submukozal ve miyenterik pleksuslarda ganglion hücreleri izlenmedi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-048",
@@ -1097,11 +1144,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Beslenmeyle artan solunum sıkıntısı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/048_048-ozofagus-atrezisi-trakeoofageal-fistul-direkt-grafi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/048_048-ozofagus-atrezisi-trakeoofageal-fistul-direkt-grafi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/048_048-ozofagus-atrezisi-trakeoofageal-fistul-direkt-grafi.webp",
     "fileName": "048_048-ozofagus-atrezisi-trakeoofageal-fistul-direkt-grafi.webp",
-    "thumbnailFileName": "048_048-ozofagus-atrezisi-trakeoofageal-fistul-direkt-grafi_thumb.webp",
+    "thumbnailFileName": "048_048-ozofagus-atrezisi-trakeoofageal-fistul-direkt-grafi.webp",
     "alt": "Direkt grafi - Nazogastrik sondanın proksimal özofagusta kıvrıldığı ve batında gaz bulunduğu izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-049",
@@ -1120,11 +1168,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Atipik pnömoni ve hiponatremi",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/049_049-sag-alt-lob-pnomoni-akciger-grafisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/049_049-sag-alt-lob-pnomoni-akciger-grafisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/049_049-sag-alt-lob-pnomoni-akciger-grafisi.webp",
     "fileName": "049_049-sag-alt-lob-pnomoni-akciger-grafisi.webp",
-    "thumbnailFileName": "049_049-sag-alt-lob-pnomoni-akciger-grafisi_thumb.webp",
+    "thumbnailFileName": "049_049-sag-alt-lob-pnomoni-akciger-grafisi.webp",
     "alt": "Akciğer grafisi - Sağ alt lobda yamalı infiltrasyon izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-050",
@@ -1143,11 +1192,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ateş ve yaygın lenfadenopati",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/050_050-atipik-lenfositler-periferik-yayma.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/050_050-atipik-lenfositler-periferik-yayma_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/050_050-atipik-lenfositler-periferik-yayma.webp",
     "fileName": "050_050-atipik-lenfositler-periferik-yayma.webp",
-    "thumbnailFileName": "050_050-atipik-lenfositler-periferik-yayma_thumb.webp",
+    "thumbnailFileName": "050_050-atipik-lenfositler-periferik-yayma.webp",
     "alt": "Periferik yayma - Atipik lenfositler izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-051",
@@ -1166,11 +1216,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Sigara öyküsü olan hastada hiponatremi",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/051_051-santral-akciger-kitlesi-toraks-bt.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/051_051-santral-akciger-kitlesi-toraks-bt_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/051_051-santral-akciger-kitlesi-toraks-bt.webp",
     "fileName": "051_051-santral-akciger-kitlesi-toraks-bt.webp",
-    "thumbnailFileName": "051_051-santral-akciger-kitlesi-toraks-bt_thumb.webp",
+    "thumbnailFileName": "051_051-santral-akciger-kitlesi-toraks-bt.webp",
     "alt": "Toraks bilgisayarlı tomografi - Sağ hiler bölgede santral yerleşimli kitle ve mediastinal lenfadenopatiler izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-052",
@@ -1189,11 +1240,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Sigara öyküsü olan hastada hiponatremi",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/052_052-kucuk-mavi-hucreli-tumor-histopatoloji.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/052_052-kucuk-mavi-hucreli-tumor-histopatoloji_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/052_052-kucuk-mavi-hucreli-tumor-histopatoloji.webp",
     "fileName": "052_052-kucuk-mavi-hucreli-tumor-histopatoloji.webp",
-    "thumbnailFileName": "052_052-kucuk-mavi-hucreli-tumor-histopatoloji_thumb.webp",
+    "thumbnailFileName": "052_052-kucuk-mavi-hucreli-tumor-histopatoloji.webp",
     "alt": "Biyopsi histopatolojisi - Dar sitoplazmalı küçük mavi hücreler, nükleer molding ve yaygın nekroz izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-053",
@@ -1212,11 +1264,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Yaşlı hastada mekanik obstrüksiyon",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/053_053-gallstone-ileus-abdominal-bt.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/053_053-gallstone-ileus-abdominal-bt_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/053_053-gallstone-ileus-abdominal-bt.webp",
     "fileName": "053_053-gallstone-ileus-abdominal-bt.webp",
-    "thumbnailFileName": "053_053-gallstone-ileus-abdominal-bt_thumb.webp",
+    "thumbnailFileName": "053_053-gallstone-ileus-abdominal-bt.webp",
     "alt": "Abdominal bilgisayarlı tomografi - İnce bağırsakta obstrüksiyon, safra yollarında hava ve distal ileumda ektopik kalsifiye taş ile uyumlu görünüm izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-054",
@@ -1235,11 +1288,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Yenidoğanda sürekli üfürüm",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/054_054-patent-duktus-arteriozus-ekokardiyografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/054_054-patent-duktus-arteriozus-ekokardiyografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/054_054-patent-duktus-arteriozus-ekokardiyografi.webp",
     "fileName": "054_054-patent-duktus-arteriozus-ekokardiyografi.webp",
-    "thumbnailFileName": "054_054-patent-duktus-arteriozus-ekokardiyografi_thumb.webp",
+    "thumbnailFileName": "054_054-patent-duktus-arteriozus-ekokardiyografi.webp",
     "alt": "Ekokardiyografi - Aort ile pulmoner arter arasında devam eden damar açıklığı ve soldan sağa şant izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-055",
@@ -1258,11 +1312,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Yenidoğanda safralı kusma",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/055_055-intestinal-malrotasyon-ust-gis-kontrastli-grafi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/055_055-intestinal-malrotasyon-ust-gis-kontrastli-grafi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/055_055-intestinal-malrotasyon-ust-gis-kontrastli-grafi.webp",
     "fileName": "055_055-intestinal-malrotasyon-ust-gis-kontrastli-grafi.webp",
-    "thumbnailFileName": "055_055-intestinal-malrotasyon-ust-gis-kontrastli-grafi_thumb.webp",
+    "thumbnailFileName": "055_055-intestinal-malrotasyon-ust-gis-kontrastli-grafi.webp",
     "alt": "Üst gastrointestinal kontrastlı grafi - Duodenojejunal bileşkenin normal yerinde olmadığı ve tirbuşon benzeri görünüm izlendiği bildirildi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-056",
@@ -1281,11 +1336,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Travma sonrası karın hassasiyeti",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/056_056-fast-pozitif-serbest-sivi-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/056_056-fast-pozitif-serbest-sivi-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/056_056-fast-pozitif-serbest-sivi-ultrasonografi.webp",
     "fileName": "056_056-fast-pozitif-serbest-sivi-ultrasonografi.webp",
-    "thumbnailFileName": "056_056-fast-pozitif-serbest-sivi-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "056_056-fast-pozitif-serbest-sivi-ultrasonografi.webp",
     "alt": "FAST ultrasonografi - Morrison boşluğu ve pelviste serbest sıvı izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-057",
@@ -1304,11 +1360,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Sağ üst kadran ağrısı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/057_057-akut-kolesistit-abdominal-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/057_057-akut-kolesistit-abdominal-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/057_057-akut-kolesistit-abdominal-ultrasonografi.webp",
     "fileName": "057_057-akut-kolesistit-abdominal-ultrasonografi.webp",
-    "thumbnailFileName": "057_057-akut-kolesistit-abdominal-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "057_057-akut-kolesistit-abdominal-ultrasonografi.webp",
     "alt": "Abdominal ultrasonografi - Safra kesesinde taş, duvar kalınlaşması ve perikolesistik sıvı izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-058",
@@ -1327,11 +1384,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ağrısız servikal lenfadenopati",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/058_058-reed-sternberg-hucresi-lenf-nodu-histopatoloji.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/058_058-reed-sternberg-hucresi-lenf-nodu-histopatoloji_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/058_058-reed-sternberg-hucresi-lenf-nodu-histopatoloji.webp",
     "fileName": "058_058-reed-sternberg-hucresi-lenf-nodu-histopatoloji.webp",
-    "thumbnailFileName": "058_058-reed-sternberg-hucresi-lenf-nodu-histopatoloji_thumb.webp",
+    "thumbnailFileName": "058_058-reed-sternberg-hucresi-lenf-nodu-histopatoloji.webp",
     "alt": "Eksizyonel lenf nodu biyopsisi - Karışık inflamatuvar zemin içinde büyük, iki çekirdekli, belirgin nükleollü hücreler izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-059",
@@ -1350,11 +1408,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Egzersizde bölgesel kan akımı artışı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/059_059-aktif-hiperemi-doppler-akim-olcumu.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/059_059-aktif-hiperemi-doppler-akim-olcumu_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/059_059-aktif-hiperemi-doppler-akim-olcumu.webp",
     "fileName": "059_059-aktif-hiperemi-doppler-akim-olcumu.webp",
-    "thumbnailFileName": "059_059-aktif-hiperemi-doppler-akim-olcumu_thumb.webp",
+    "thumbnailFileName": "059_059-aktif-hiperemi-doppler-akim-olcumu.webp",
     "alt": "Doppler akım ölçümü - Egzersiz yapan ön kolda kan akımı belirgin artmış saptandı.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-060",
@@ -1373,11 +1432,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Diş işlemi sonrası subakut ateş",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/060_060-mitral-vejetasyon-ekokardiyografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/060_060-mitral-vejetasyon-ekokardiyografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/060_060-mitral-vejetasyon-ekokardiyografi.webp",
     "fileName": "060_060-mitral-vejetasyon-ekokardiyografi.webp",
-    "thumbnailFileName": "060_060-mitral-vejetasyon-ekokardiyografi_thumb.webp",
+    "thumbnailFileName": "060_060-mitral-vejetasyon-ekokardiyografi.webp",
     "alt": "Ekokardiyografi - Mitral kapak üzerinde hareketli vejetasyon izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-061",
@@ -1396,11 +1456,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Kasık altında ağrılı şişlik",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/061_061-femoral-herni-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/061_061-femoral-herni-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/061_061-femoral-herni-ultrasonografi.webp",
     "fileName": "061_061-femoral-herni-ultrasonografi.webp",
-    "thumbnailFileName": "061_061-femoral-herni-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "061_061-femoral-herni-ultrasonografi.webp",
     "alt": "Yüzeyel yumuşak doku ultrasonografisi - Femoral kanal düzeyinde barsak ansı içeren herni kesesi izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-062",
@@ -1419,11 +1480,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Lateral boyun kitlesi",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/062_062-brankial-yarik-kisti-boyun-ultrasonografisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/062_062-brankial-yarik-kisti-boyun-ultrasonografisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/062_062-brankial-yarik-kisti-boyun-ultrasonografisi.webp",
     "fileName": "062_062-brankial-yarik-kisti-boyun-ultrasonografisi.webp",
-    "thumbnailFileName": "062_062-brankial-yarik-kisti-boyun-ultrasonografisi_thumb.webp",
+    "thumbnailFileName": "062_062-brankial-yarik-kisti-boyun-ultrasonografisi.webp",
     "alt": "Boyun ultrasonografisi - Sternokleidomastoid kas ön kenarı komşuluğunda ince duvarlı kistik lezyon izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-063",
@@ -1442,11 +1504,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Prenatal taramada yüksek alfa-fetoprotein",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/063_063-spina-bifida-aperta-fetal-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/063_063-spina-bifida-aperta-fetal-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/063_063-spina-bifida-aperta-fetal-ultrasonografi.webp",
     "fileName": "063_063-spina-bifida-aperta-fetal-ultrasonografi.webp",
-    "thumbnailFileName": "063_063-spina-bifida-aperta-fetal-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "063_063-spina-bifida-aperta-fetal-ultrasonografi.webp",
     "alt": "Ayrıntılı fetal ultrasonografi - Lumbosakral bölgede açık vertebral ark defekti ve meningeal keselenme izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-064",
@@ -1465,11 +1528,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Boğaz enfeksiyonu sonrası koyu idrar",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/064_064-subepitelyal-hump-em.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/064_064-subepitelyal-hump-em_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/064_064-subepitelyal-hump-em.webp",
     "fileName": "064_064-subepitelyal-hump-em.webp",
-    "thumbnailFileName": "064_064-subepitelyal-hump-em_thumb.webp",
+    "thumbnailFileName": "064_064-subepitelyal-hump-em.webp",
     "alt": "Böbrek biyopsisi elektron mikroskopisi - Subepitelyal hump benzeri immün kompleks birikimleri izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-065",
@@ -1488,11 +1552,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Gebelikte aşırı bulantı ve kanama",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/065_065-komplet-mol-transvajinal-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/065_065-komplet-mol-transvajinal-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/065_065-komplet-mol-transvajinal-ultrasonografi.webp",
     "fileName": "065_065-komplet-mol-transvajinal-ultrasonografi.webp",
-    "thumbnailFileName": "065_065-komplet-mol-transvajinal-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "065_065-komplet-mol-transvajinal-ultrasonografi.webp",
     "alt": "Transvajinal ultrasonografi - Uterin kavitede embriyo izlenmedi; çok sayıda kistik boşluk içeren heterojen görünüm izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-066",
@@ -1511,11 +1576,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Aralıklı karın ağrısı ve kanlı dışkı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/066_066-intussusepsiyon-abdominal-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/066_066-intussusepsiyon-abdominal-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/066_066-intussusepsiyon-abdominal-ultrasonografi.webp",
     "fileName": "066_066-intussusepsiyon-abdominal-ultrasonografi.webp",
-    "thumbnailFileName": "066_066-intussusepsiyon-abdominal-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "066_066-intussusepsiyon-abdominal-ultrasonografi.webp",
     "alt": "Abdominal ultrasonografi - Sağ üst kadranda hedef işareti görünümü izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-067",
@@ -1534,11 +1600,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Görme değişikliği ve aritmi",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/067_067-digoksin-toksisitesi-ekg.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/067_067-digoksin-toksisitesi-ekg_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/067_067-digoksin-toksisitesi-ekg.webp",
     "fileName": "067_067-digoksin-toksisitesi-ekg.webp",
-    "thumbnailFileName": "067_067-digoksin-toksisitesi-ekg_thumb.webp",
+    "thumbnailFileName": "067_067-digoksin-toksisitesi-ekg.webp",
     "alt": "Elektrokardiyografi - Yavaş ventrikül yanıtlı düzensiz ritim ve ventriküler ektopiler izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-068",
@@ -1557,11 +1624,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Kronik inflamasyon sonrası proteinüri",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/068_068-amiloidoz-bobrek-biyopsisi-histopatoloji.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/068_068-amiloidoz-bobrek-biyopsisi-histopatoloji_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/068_068-amiloidoz-bobrek-biyopsisi-histopatoloji.webp",
     "fileName": "068_068-amiloidoz-bobrek-biyopsisi-histopatoloji.webp",
-    "thumbnailFileName": "068_068-amiloidoz-bobrek-biyopsisi-histopatoloji_thumb.webp",
+    "thumbnailFileName": "068_068-amiloidoz-bobrek-biyopsisi-histopatoloji.webp",
     "alt": "Böbrek biyopsisi - Glomerüllerde amorf eozinofilik ekstrasellüler birikim izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-069",
@@ -1580,11 +1648,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Göğüs ağrısı sonrası ani kötüleşme",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/069_069-anterior-stemi-ekg.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/069_069-anterior-stemi-ekg_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/069_069-anterior-stemi-ekg.webp",
     "fileName": "069_069-anterior-stemi-ekg.webp",
-    "thumbnailFileName": "069_069-anterior-stemi-ekg_thumb.webp",
+    "thumbnailFileName": "069_069-anterior-stemi-ekg.webp",
     "alt": "Elektrokardiyografi - Anterior derivasyonlarda ST elevasyonu izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-070",
@@ -1603,11 +1672,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "İlaç sonrası koyu idrar ve sarılık",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/070_070-g6pd-eksikligi-periferik-yayma.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/070_070-g6pd-eksikligi-periferik-yayma_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/070_070-g6pd-eksikligi-periferik-yayma.webp",
     "fileName": "070_070-g6pd-eksikligi-periferik-yayma.webp",
-    "thumbnailFileName": "070_070-g6pd-eksikligi-periferik-yayma_thumb.webp",
+    "thumbnailFileName": "070_070-g6pd-eksikligi-periferik-yayma.webp",
     "alt": "Periferik yayma - Isırık hücreleri ve Heinz cisimcikleri izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-071",
@@ -1626,11 +1696,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Kamp sonrası kötü kokulu ishal",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/071_071-giardia-trofozoitleri-diski-mikroskopisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/071_071-giardia-trofozoitleri-diski-mikroskopisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/071_071-giardia-trofozoitleri-diski-mikroskopisi.webp",
     "fileName": "071_071-giardia-trofozoitleri-diski-mikroskopisi.webp",
-    "thumbnailFileName": "071_071-giardia-trofozoitleri-diski-mikroskopisi_thumb.webp",
+    "thumbnailFileName": "071_071-giardia-trofozoitleri-diski-mikroskopisi.webp",
     "alt": "Dışkı mikroskopisi - Armut şekilli, iki çekirdekli trofozoitlerle uyumlu yapılar görüldü.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-072",
@@ -1649,11 +1720,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Antikoagülan sonrası uyluk güçsüzlüğü",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/072_072-sol-iliopsoas-retroperitoneal-hematom-bt.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/072_072-sol-iliopsoas-retroperitoneal-hematom-bt_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/072_072-sol-iliopsoas-retroperitoneal-hematom-bt.webp",
     "fileName": "072_072-sol-iliopsoas-retroperitoneal-hematom-bt.webp",
-    "thumbnailFileName": "072_072-sol-iliopsoas-retroperitoneal-hematom-bt_thumb.webp",
+    "thumbnailFileName": "072_072-sol-iliopsoas-retroperitoneal-hematom-bt.webp",
     "alt": "Abdominopelvik bilgisayarlı tomografi - Sol iliopsoas kası içinde retroperitoneal hematom izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-073",
@@ -1672,11 +1744,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Yenidoğanda ağır solunum sıkıntısı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/073_073-konjenital-diyafragma-hernisi-torakoabdominal-grafi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/073_073-konjenital-diyafragma-hernisi-torakoabdominal-grafi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/073_073-konjenital-diyafragma-hernisi-torakoabdominal-grafi.webp",
     "fileName": "073_073-konjenital-diyafragma-hernisi-torakoabdominal-grafi.webp",
-    "thumbnailFileName": "073_073-konjenital-diyafragma-hernisi-torakoabdominal-grafi_thumb.webp",
+    "thumbnailFileName": "073_073-konjenital-diyafragma-hernisi-torakoabdominal-grafi.webp",
     "alt": "Torakoabdominal grafi - Sol hemitoraksta barsak gazları ve mediastinal sağa itilme izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-074",
@@ -1695,11 +1768,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ani bacak ağrısı ve soğukluk",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/074_074-akut-arteriyel-tikaniklik-doppler-degerlendirme.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/074_074-akut-arteriyel-tikaniklik-doppler-degerlendirme_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/074_074-akut-arteriyel-tikaniklik-doppler-degerlendirme.webp",
     "fileName": "074_074-akut-arteriyel-tikaniklik-doppler-degerlendirme.webp",
-    "thumbnailFileName": "074_074-akut-arteriyel-tikaniklik-doppler-degerlendirme_thumb.webp",
+    "thumbnailFileName": "074_074-akut-arteriyel-tikaniklik-doppler-degerlendirme.webp",
     "alt": "El Doppler değerlendirmesi - Sağ ayakta arteriyel akım sinyali alınamadı.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-075",
@@ -1718,11 +1792,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Dışkılama alışkanlığında değişiklik",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/075_075-sigmoid-ulserovejetan-kitle-kolonoskopi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/075_075-sigmoid-ulserovejetan-kitle-kolonoskopi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/075_075-sigmoid-ulserovejetan-kitle-kolonoskopi.webp",
     "fileName": "075_075-sigmoid-ulserovejetan-kitle-kolonoskopi.webp",
-    "thumbnailFileName": "075_075-sigmoid-ulserovejetan-kitle-kolonoskopi_thumb.webp",
+    "thumbnailFileName": "075_075-sigmoid-ulserovejetan-kitle-kolonoskopi.webp",
     "alt": "Kolonoskopi - Sigmoid kolonda lümeni daraltan halka şeklinde ülserovejetan kitle izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-076",
@@ -1741,11 +1816,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Dışkılama alışkanlığında değişiklik",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/076_076-invaziv-glanduler-tumor-kolon-biyopsi-histopatoloji.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/076_076-invaziv-glanduler-tumor-kolon-biyopsi-histopatoloji_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/076_076-invaziv-glanduler-tumor-kolon-biyopsi-histopatoloji.webp",
     "fileName": "076_076-invaziv-glanduler-tumor-kolon-biyopsi-histopatoloji.webp",
-    "thumbnailFileName": "076_076-invaziv-glanduler-tumor-kolon-biyopsi-histopatoloji_thumb.webp",
+    "thumbnailFileName": "076_076-invaziv-glanduler-tumor-kolon-biyopsi-histopatoloji.webp",
     "alt": "Biyopsi histopatolojisi - Atipik gland yapıları oluşturan invaziv tümör izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-077",
@@ -1764,11 +1840,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Genç erişkinde atipik pnömoni",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/077_077-bilateral-yamali-interstisyel-infiltrasyon-akciger-grafisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/077_077-bilateral-yamali-interstisyel-infiltrasyon-akciger-grafisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/077_077-bilateral-yamali-interstisyel-infiltrasyon-akciger-grafisi.webp",
     "fileName": "077_077-bilateral-yamali-interstisyel-infiltrasyon-akciger-grafisi.webp",
-    "thumbnailFileName": "077_077-bilateral-yamali-interstisyel-infiltrasyon-akciger-grafisi_thumb.webp",
+    "thumbnailFileName": "077_077-bilateral-yamali-interstisyel-infiltrasyon-akciger-grafisi.webp",
     "alt": "Akciğer grafisi - Bilateral yamalı interstisyel infiltrasyon izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-078",
@@ -1787,11 +1864,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Efor dispnesi ve periferik ödem",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/078_078-dusuk-ef-ekokardiyografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/078_078-dusuk-ef-ekokardiyografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/078_078-dusuk-ef-ekokardiyografi.webp",
     "fileName": "078_078-dusuk-ef-ekokardiyografi.webp",
-    "thumbnailFileName": "078_078-dusuk-ef-ekokardiyografi_thumb.webp",
+    "thumbnailFileName": "078_078-dusuk-ef-ekokardiyografi.webp",
     "alt": "Ekokardiyografi - Sol ventrikül ejeksiyon fraksiyonu düşük saptandı.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-079",
@@ -1810,11 +1888,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Postmenopozal vajinal kanama",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/079_079-endometrium-kalinligi-artisi-transvajinal-usg.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/079_079-endometrium-kalinligi-artisi-transvajinal-usg_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/079_079-endometrium-kalinligi-artisi-transvajinal-usg.webp",
     "fileName": "079_079-endometrium-kalinligi-artisi-transvajinal-usg.webp",
-    "thumbnailFileName": "079_079-endometrium-kalinligi-artisi-transvajinal-usg_thumb.webp",
+    "thumbnailFileName": "079_079-endometrium-kalinligi-artisi-transvajinal-usg.webp",
     "alt": "Transvajinal ultrasonografi - Endometrium kalınlığı artmış saptandı.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-080",
@@ -1833,11 +1912,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Postmenopozal vajinal kanama",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/080_080-endometrioid-adenokarsinom-histopatoloji.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/080_080-endometrioid-adenokarsinom-histopatoloji_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/080_080-endometrioid-adenokarsinom-histopatoloji.webp",
     "fileName": "080_080-endometrioid-adenokarsinom-histopatoloji.webp",
-    "thumbnailFileName": "080_080-endometrioid-adenokarsinom-histopatoloji_thumb.webp",
+    "thumbnailFileName": "080_080-endometrioid-adenokarsinom-histopatoloji.webp",
     "alt": "Endometrial biyopsi - Atipik glandüler proliferasyon ve invazyon gösteren endometrioid tip adenokarsinom izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-081",
@@ -1856,11 +1936,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Yaşlı hastada menenjit",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/081_081-listeria-kisa-gram-pozitif-basil-bos-gram-boyama.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/081_081-listeria-kisa-gram-pozitif-basil-bos-gram-boyama_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/081_081-listeria-kisa-gram-pozitif-basil-bos-gram-boyama.webp",
     "fileName": "081_081-listeria-kisa-gram-pozitif-basil-bos-gram-boyama.webp",
-    "thumbnailFileName": "081_081-listeria-kisa-gram-pozitif-basil-bos-gram-boyama_thumb.webp",
+    "thumbnailFileName": "081_081-listeria-kisa-gram-pozitif-basil-bos-gram-boyama.webp",
     "alt": "Beyin omurilik sıvısı Gram boyama - Kısa gram-pozitif basil yapıları görüldü.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-082",
@@ -1879,11 +1960,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Skrotumda ele gelmeyen testis",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/082_082-inguinal-kanalda-testis-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/082_082-inguinal-kanalda-testis-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/082_082-inguinal-kanalda-testis-ultrasonografi.webp",
     "fileName": "082_082-inguinal-kanalda-testis-ultrasonografi.webp",
-    "thumbnailFileName": "082_082-inguinal-kanalda-testis-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "082_082-inguinal-kanalda-testis-ultrasonografi.webp",
     "alt": "İnguinoskrotal ultrasonografi - Sağ testis inguinal kanal düzeyinde izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-083",
@@ -1902,11 +1984,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Kanlı ishal sonrası oligüri",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/083_083-hus-sistositler-periferik-yayma.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/083_083-hus-sistositler-periferik-yayma_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/083_083-hus-sistositler-periferik-yayma.webp",
     "fileName": "083_083-hus-sistositler-periferik-yayma.webp",
-    "thumbnailFileName": "083_083-hus-sistositler-periferik-yayma_thumb.webp",
+    "thumbnailFileName": "083_083-hus-sistositler-periferik-yayma.webp",
     "alt": "Periferik yayma - Şistositler izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-084",
@@ -1925,11 +2008,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ani başlayan tek taraflı hışıltı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/084_084-tek-tarafli-hava-hapsi-akciger-grafisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/084_084-tek-tarafli-hava-hapsi-akciger-grafisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/084_084-tek-tarafli-hava-hapsi-akciger-grafisi.webp",
     "fileName": "084_084-tek-tarafli-hava-hapsi-akciger-grafisi.webp",
-    "thumbnailFileName": "084_084-tek-tarafli-hava-hapsi-akciger-grafisi_thumb.webp",
+    "thumbnailFileName": "084_084-tek-tarafli-hava-hapsi-akciger-grafisi.webp",
     "alt": "Akciğer grafisi - Sağ akciğerde hava hapsi ve mediastende hafif sola itilme izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-085",
@@ -1948,11 +2032,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Tablet alımı sonrası kusma ve metabolik asidoz",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/085_085-radyoopak-tabletler-abdominal-grafi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/085_085-radyoopak-tabletler-abdominal-grafi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/085_085-radyoopak-tabletler-abdominal-grafi.webp",
     "fileName": "085_085-radyoopak-tabletler-abdominal-grafi.webp",
-    "thumbnailFileName": "085_085-radyoopak-tabletler-abdominal-grafi_thumb.webp",
+    "thumbnailFileName": "085_085-radyoopak-tabletler-abdominal-grafi.webp",
     "alt": "Abdominal grafi - Mide bölgesinde çok sayıda radyoopak tablet görünümü izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-086",
@@ -1971,11 +2056,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ani başlayan çarpıntı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/086_086-supraventrikuler-tasikardi-ekg.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/086_086-supraventrikuler-tasikardi-ekg_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/086_086-supraventrikuler-tasikardi-ekg.webp",
     "fileName": "086_086-supraventrikuler-tasikardi-ekg.webp",
-    "thumbnailFileName": "086_086-supraventrikuler-tasikardi-ekg_thumb.webp",
+    "thumbnailFileName": "086_086-supraventrikuler-tasikardi-ekg.webp",
     "alt": "Elektrokardiyografi - Dar QRS kompleksli, düzenli taşikardi izlendi; P dalgaları seçilemedi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-087",
@@ -1994,11 +2080,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Kafa travması sonrası yeniden bilinç kaybı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/087_087-epidural-hematom-kraniyal-bt.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/087_087-epidural-hematom-kraniyal-bt_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/087_087-epidural-hematom-kraniyal-bt.webp",
     "fileName": "087_087-epidural-hematom-kraniyal-bt.webp",
-    "thumbnailFileName": "087_087-epidural-hematom-kraniyal-bt_thumb.webp",
+    "thumbnailFileName": "087_087-epidural-hematom-kraniyal-bt.webp",
     "alt": "Acil kraniyal bilgisayarlı tomografi - Temporal bölgede bikonveks hiperdens ekstraaksiyel kanama ve orta hat şifti izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-088",
@@ -2017,11 +2104,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Kulak ağrısı sonrası kulak arkasında şişlik",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/088_088-akut-mastoidit-temporal-kemik-bt.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/088_088-akut-mastoidit-temporal-kemik-bt_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/088_088-akut-mastoidit-temporal-kemik-bt.webp",
     "fileName": "088_088-akut-mastoidit-temporal-kemik-bt.webp",
-    "thumbnailFileName": "088_088-akut-mastoidit-temporal-kemik-bt_thumb.webp",
+    "thumbnailFileName": "088_088-akut-mastoidit-temporal-kemik-bt.webp",
     "alt": "Temporal kemik bilgisayarlı tomografi - Sağ mastoid hava hücrelerinde opasifikasyon ve kortikal incelme izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-089",
@@ -2040,11 +2128,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Böbrek hastasında kas güçsüzlüğü",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/089_089-hiperkalemi-sivri-t-qrs-genislemesi-ekg.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/089_089-hiperkalemi-sivri-t-qrs-genislemesi-ekg_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/089_089-hiperkalemi-sivri-t-qrs-genislemesi-ekg.webp",
     "fileName": "089_089-hiperkalemi-sivri-t-qrs-genislemesi-ekg.webp",
-    "thumbnailFileName": "089_089-hiperkalemi-sivri-t-qrs-genislemesi-ekg_thumb.webp",
+    "thumbnailFileName": "089_089-hiperkalemi-sivri-t-qrs-genislemesi-ekg.webp",
     "alt": "Elektrokardiyografi - Sivri T dalgaları ve QRS genişlemesi izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-090",
@@ -2063,11 +2152,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "İlaç alımı sonrası bilinç değişikliği",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/090_090-sodyum-kanal-blokaji-qrs-genislemesi-ekg.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/090_090-sodyum-kanal-blokaji-qrs-genislemesi-ekg_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/090_090-sodyum-kanal-blokaji-qrs-genislemesi-ekg.webp",
     "fileName": "090_090-sodyum-kanal-blokaji-qrs-genislemesi-ekg.webp",
-    "thumbnailFileName": "090_090-sodyum-kanal-blokaji-qrs-genislemesi-ekg_thumb.webp",
+    "thumbnailFileName": "090_090-sodyum-kanal-blokaji-qrs-genislemesi-ekg.webp",
     "alt": "Elektrokardiyografi - Sinüs taşikardisi ve QRS genişlemesi izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-091",
@@ -2086,11 +2176,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Fışkırır tarzda kusma",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/091_091-hipertrofik-pilor-stenozu-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/091_091-hipertrofik-pilor-stenozu-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/091_091-hipertrofik-pilor-stenozu-ultrasonografi.webp",
     "fileName": "091_091-hipertrofik-pilor-stenozu-ultrasonografi.webp",
-    "thumbnailFileName": "091_091-hipertrofik-pilor-stenozu-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "091_091-hipertrofik-pilor-stenozu-ultrasonografi.webp",
     "alt": "Abdominal ultrasonografi - Pilor kas kalınlığı ve kanal uzunluğu artmış saptandı.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-092",
@@ -2109,11 +2200,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Sağ alt kadran ağrısı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/092_092-akut-apandisit-abdominal-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/092_092-akut-apandisit-abdominal-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/092_092-akut-apandisit-abdominal-ultrasonografi.webp",
     "fileName": "092_092-akut-apandisit-abdominal-ultrasonografi.webp",
-    "thumbnailFileName": "092_092-akut-apandisit-abdominal-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "092_092-akut-apandisit-abdominal-ultrasonografi.webp",
     "alt": "Abdominal ultrasonografi - Kompresyona gelmeyen, çapı artmış apendiks ve çevresel yağlı doku inflamasyonu izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-093",
@@ -2132,11 +2224,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Gaz yağı içme sonrası öksürük",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/093_093-aspirasyon-pnomonitisi-sag-alt-zon-akciger-grafisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/093_093-aspirasyon-pnomonitisi-sag-alt-zon-akciger-grafisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/093_093-aspirasyon-pnomonitisi-sag-alt-zon-akciger-grafisi.webp",
     "fileName": "093_093-aspirasyon-pnomonitisi-sag-alt-zon-akciger-grafisi.webp",
-    "thumbnailFileName": "093_093-aspirasyon-pnomonitisi-sag-alt-zon-akciger-grafisi_thumb.webp",
+    "thumbnailFileName": "093_093-aspirasyon-pnomonitisi-sag-alt-zon-akciger-grafisi.webp",
     "alt": "Akciğer grafisi - Sağ alt zonda hafif infiltratif görünüm izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-094",
@@ -2155,11 +2248,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Havuzdan çıkarılma sonrası öksürük",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/094_094-bilateral-perihiler-infiltratif-dansite-akciger-grafisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/094_094-bilateral-perihiler-infiltratif-dansite-akciger-grafisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/094_094-bilateral-perihiler-infiltratif-dansite-akciger-grafisi.webp",
     "fileName": "094_094-bilateral-perihiler-infiltratif-dansite-akciger-grafisi.webp",
-    "thumbnailFileName": "094_094-bilateral-perihiler-infiltratif-dansite-akciger-grafisi_thumb.webp",
+    "thumbnailFileName": "094_094-bilateral-perihiler-infiltratif-dansite-akciger-grafisi.webp",
     "alt": "Akciğer grafisi - Bilateral perihiler hafif infiltratif dansiteler izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-095",
@@ -2178,11 +2272,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Omuz travması sonrası abdüksiyon güçlüğü",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/095_095-humerus-cerrahi-boyun-kirigi-omuz-grafisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/095_095-humerus-cerrahi-boyun-kirigi-omuz-grafisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/095_095-humerus-cerrahi-boyun-kirigi-omuz-grafisi.webp",
     "fileName": "095_095-humerus-cerrahi-boyun-kirigi-omuz-grafisi.webp",
-    "thumbnailFileName": "095_095-humerus-cerrahi-boyun-kirigi-omuz-grafisi_thumb.webp",
+    "thumbnailFileName": "095_095-humerus-cerrahi-boyun-kirigi-omuz-grafisi.webp",
     "alt": "Omuz grafisi - Humerus cerrahi boyun düzeyinde kırık izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-096",
@@ -2201,11 +2296,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Yüz enfeksiyonu sonrası çift görme",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/096_096-kavernoz-sinus-trombozu-mrv.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/096_096-kavernoz-sinus-trombozu-mrv_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/096_096-kavernoz-sinus-trombozu-mrv.webp",
     "fileName": "096_096-kavernoz-sinus-trombozu-mrv.webp",
-    "thumbnailFileName": "096_096-kavernoz-sinus-trombozu-mrv_thumb.webp",
+    "thumbnailFileName": "096_096-kavernoz-sinus-trombozu-mrv.webp",
     "alt": "Kontrastlı kraniyal manyetik rezonans venografi - Sağ kavernöz sinüs düzeyinde trombozla uyumlu dolum defekti izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-097",
@@ -2224,11 +2320,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Erişkinde belirgin proteinüri",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/097_097-subepitelyal-immun-kompleks-birikimi-em.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/097_097-subepitelyal-immun-kompleks-birikimi-em_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/097_097-subepitelyal-immun-kompleks-birikimi-em.webp",
     "fileName": "097_097-subepitelyal-immun-kompleks-birikimi-em.webp",
-    "thumbnailFileName": "097_097-subepitelyal-immun-kompleks-birikimi-em_thumb.webp",
+    "thumbnailFileName": "097_097-subepitelyal-immun-kompleks-birikimi-em.webp",
     "alt": "Böbrek biyopsisi elektron mikroskopisi - Glomerüler bazal membran boyunca subepitelyal immün kompleks birikimleri izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-098",
@@ -2247,11 +2344,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Antihipertansif sonrası kuru öksürük",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/098_098-normal-akciger-grafisi-patolojik-infiltrasyon-yok.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/098_098-normal-akciger-grafisi-patolojik-infiltrasyon-yok_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/098_098-normal-akciger-grafisi-patolojik-infiltrasyon-yok.webp",
     "fileName": "098_098-normal-akciger-grafisi-patolojik-infiltrasyon-yok.webp",
-    "thumbnailFileName": "098_098-normal-akciger-grafisi-patolojik-infiltrasyon-yok_thumb.webp",
+    "thumbnailFileName": "098_098-normal-akciger-grafisi-patolojik-infiltrasyon-yok.webp",
     "alt": "Akciğer grafisi - Patolojik infiltrasyon izlenmedi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-099",
@@ -2270,11 +2368,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Yenidoğanda mekonyum çıkaramama",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/099_099-hirschsprung-kontrastli-kolon-grafisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/099_099-hirschsprung-kontrastli-kolon-grafisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/099_099-hirschsprung-kontrastli-kolon-grafisi.webp",
     "fileName": "099_099-hirschsprung-kontrastli-kolon-grafisi.webp",
-    "thumbnailFileName": "099_099-hirschsprung-kontrastli-kolon-grafisi_thumb.webp",
+    "thumbnailFileName": "099_099-hirschsprung-kontrastli-kolon-grafisi.webp",
     "alt": "Kontrastlı kolon grafisi - Distal dar segment ve proksimal dilatasyon izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-100",
@@ -2293,11 +2392,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Yenidoğanda mekonyum çıkaramama",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/100_100-aganglionik-rektal-biyopsi-histopatoloji.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/100_100-aganglionik-rektal-biyopsi-histopatoloji_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/100_100-aganglionik-rektal-biyopsi-histopatoloji.webp",
     "fileName": "100_100-aganglionik-rektal-biyopsi-histopatoloji.webp",
-    "thumbnailFileName": "100_100-aganglionik-rektal-biyopsi-histopatoloji_thumb.webp",
+    "thumbnailFileName": "100_100-aganglionik-rektal-biyopsi-histopatoloji.webp",
     "alt": "Rektal biyopsi - Submukozal ve myenterik pleksuslarda ganglion hücreleri izlenmedi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-101",
@@ -2316,11 +2416,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Kasık şişliği ve kusma",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/101_101-mekanik-barsak-obstruksiyonu-direkt-karin-grafisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/101_101-mekanik-barsak-obstruksiyonu-direkt-karin-grafisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/101_101-mekanik-barsak-obstruksiyonu-direkt-karin-grafisi.webp",
     "fileName": "101_101-mekanik-barsak-obstruksiyonu-direkt-karin-grafisi.webp",
-    "thumbnailFileName": "101_101-mekanik-barsak-obstruksiyonu-direkt-karin-grafisi_thumb.webp",
+    "thumbnailFileName": "101_101-mekanik-barsak-obstruksiyonu-direkt-karin-grafisi.webp",
     "alt": "Ayakta direkt karın grafisi - İnce barsak düzeyinde hava-sıvı seviyeleri izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-102",
@@ -2339,11 +2440,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Erken gebelikte karın ağrısı ve bayılma",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/102_102-rupture-ektopik-gebelik-transvajinal-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/102_102-rupture-ektopik-gebelik-transvajinal-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/102_102-rupture-ektopik-gebelik-transvajinal-ultrasonografi.webp",
     "fileName": "102_102-rupture-ektopik-gebelik-transvajinal-ultrasonografi.webp",
-    "thumbnailFileName": "102_102-rupture-ektopik-gebelik-transvajinal-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "102_102-rupture-ektopik-gebelik-transvajinal-ultrasonografi.webp",
     "alt": "Transvajinal ultrasonografi - Uterin kavitede gebelik kesesi izlenmedi; sağ adneksiyel bölgede heterojen kitle ve batında serbest sıvı görüldü.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-103",
@@ -2362,11 +2464,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Sağ üst kadran ağrısı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/103_103-akut-kolesistit-abdominal-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/103_103-akut-kolesistit-abdominal-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/103_103-akut-kolesistit-abdominal-ultrasonografi.webp",
     "fileName": "103_103-akut-kolesistit-abdominal-ultrasonografi.webp",
-    "thumbnailFileName": "103_103-akut-kolesistit-abdominal-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "103_103-akut-kolesistit-abdominal-ultrasonografi.webp",
     "alt": "Abdominal ultrasonografi - Safra kesesinde taş, duvar kalınlaşması ve perikolesistik sıvı izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-104",
@@ -2385,11 +2488,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Nazal biyopsi ve epitel tipi",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/104_104-respiratuvar-epitel-nazal-mukoza-histopatoloji.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/104_104-respiratuvar-epitel-nazal-mukoza-histopatoloji_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/104_104-respiratuvar-epitel-nazal-mukoza-histopatoloji.webp",
     "fileName": "104_104-respiratuvar-epitel-nazal-mukoza-histopatoloji.webp",
-    "thumbnailFileName": "104_104-respiratuvar-epitel-nazal-mukoza-histopatoloji_thumb.webp",
+    "thumbnailFileName": "104_104-respiratuvar-epitel-nazal-mukoza-histopatoloji.webp",
     "alt": "Nazal mukoza biyopsisi - Yalancı çok katlı silli prizmatik epitel ve goblet hücreleri izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-105",
@@ -2408,11 +2512,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Laparoskopik kolesistektomi sırasında anatomik alan",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/105_105-safra-kesesi-taslari-preoperatif-abdominal-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/105_105-safra-kesesi-taslari-preoperatif-abdominal-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/105_105-safra-kesesi-taslari-preoperatif-abdominal-ultrasonografi.webp",
     "fileName": "105_105-safra-kesesi-taslari-preoperatif-abdominal-ultrasonografi.webp",
-    "thumbnailFileName": "105_105-safra-kesesi-taslari-preoperatif-abdominal-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "105_105-safra-kesesi-taslari-preoperatif-abdominal-ultrasonografi.webp",
     "alt": "Preoperatif abdominal ultrasonografi - Safra kesesi içinde multipl taş izlendi; koledok dilatasyonu saptanmadı.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-106",
@@ -2431,11 +2536,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Kol üzerine düşme sonrası el bileği düşüklüğü",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/106_106-humerus-orta-saft-kirigi-direkt-grafi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/106_106-humerus-orta-saft-kirigi-direkt-grafi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/106_106-humerus-orta-saft-kirigi-direkt-grafi.webp",
     "fileName": "106_106-humerus-orta-saft-kirigi-direkt-grafi.webp",
-    "thumbnailFileName": "106_106-humerus-orta-saft-kirigi-direkt-grafi_thumb.webp",
+    "thumbnailFileName": "106_106-humerus-orta-saft-kirigi-direkt-grafi.webp",
     "alt": "Humerus grafisi - Humerus orta şaft düzeyinde kırık izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-107",
@@ -2454,11 +2560,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Diz dış yan travması sonrası düşük ayak",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/107_107-fibula-boynu-travmasi-diz-grafisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/107_107-fibula-boynu-travmasi-diz-grafisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/107_107-fibula-boynu-travmasi-diz-grafisi.webp",
     "fileName": "107_107-fibula-boynu-travmasi-diz-grafisi.webp",
-    "thumbnailFileName": "107_107-fibula-boynu-travmasi-diz-grafisi_thumb.webp",
+    "thumbnailFileName": "107_107-fibula-boynu-travmasi-diz-grafisi.webp",
     "alt": "Diz grafisi - Fibula boynu çevresinde travmatik hassasiyetle uyumlu bulgular izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-108",
@@ -2477,11 +2584,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Ağrısız alt gastrointestinal kanama",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/108_108-meckel-divertikulu-sintigrafi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/108_108-meckel-divertikulu-sintigrafi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/108_108-meckel-divertikulu-sintigrafi.webp",
     "fileName": "108_108-meckel-divertikulu-sintigrafi.webp",
-    "thumbnailFileName": "108_108-meckel-divertikulu-sintigrafi_thumb.webp",
+    "thumbnailFileName": "108_108-meckel-divertikulu-sintigrafi.webp",
     "alt": "Teknesyum-99m perteknetat sintigrafisi - Sağ alt kadranda ektopik gastrik mukoza ile uyumlu tutulum izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-109",
@@ -2500,11 +2608,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Prematüre bebekte solunum sıkıntısı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/109_109-yenidogan-respiratuvar-distres-sendromu-akciger-grafisi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/109_109-yenidogan-respiratuvar-distres-sendromu-akciger-grafisi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/109_109-yenidogan-respiratuvar-distres-sendromu-akciger-grafisi.webp",
     "fileName": "109_109-yenidogan-respiratuvar-distres-sendromu-akciger-grafisi.webp",
-    "thumbnailFileName": "109_109-yenidogan-respiratuvar-distres-sendromu-akciger-grafisi_thumb.webp",
+    "thumbnailFileName": "109_109-yenidogan-respiratuvar-distres-sendromu-akciger-grafisi.webp",
     "alt": "Akciğer grafisi - Bilateral retikülogranüler görünüm ve hava bronkogramları izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-110",
@@ -2523,11 +2632,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Epigastrik ağrı ve üreaz pozitifliği",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/110_110-duodenal-ulser-endoskopi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/110_110-duodenal-ulser-endoskopi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/110_110-duodenal-ulser-endoskopi.webp",
     "fileName": "110_110-duodenal-ulser-endoskopi.webp",
-    "thumbnailFileName": "110_110-duodenal-ulser-endoskopi_thumb.webp",
+    "thumbnailFileName": "110_110-duodenal-ulser-endoskopi.webp",
     "alt": "Üst gastrointestinal endoskopi - Duodenum bulbusta ülser izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-111",
@@ -2546,11 +2656,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Transplant sonrası görme bulanıklığı",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/111_111-cmv-baykus-gozu-inkluzonlari-sitoloji.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/111_111-cmv-baykus-gozu-inkluzonlari-sitoloji_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/111_111-cmv-baykus-gozu-inkluzonlari-sitoloji.webp",
     "fileName": "111_111-cmv-baykus-gozu-inkluzonlari-sitoloji.webp",
-    "thumbnailFileName": "111_111-cmv-baykus-gozu-inkluzonlari-sitoloji_thumb.webp",
+    "thumbnailFileName": "111_111-cmv-baykus-gozu-inkluzonlari-sitoloji.webp",
     "alt": "Doku sitolojisi - İntranükleer inklüzyonlu, baykuş gözü görünümünde hücreler izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-112",
@@ -2569,11 +2680,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Kronik öksürük ve granülom",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/112_112-kazeifiye-granulom-histopatoloji.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/112_112-kazeifiye-granulom-histopatoloji_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/112_112-kazeifiye-granulom-histopatoloji.webp",
     "fileName": "112_112-kazeifiye-granulom-histopatoloji.webp",
-    "thumbnailFileName": "112_112-kazeifiye-granulom-histopatoloji_thumb.webp",
+    "thumbnailFileName": "112_112-kazeifiye-granulom-histopatoloji.webp",
     "alt": "Biyopsi histopatolojisi - Merkezinde kazeöz nekroz bulunan epiteloid histiyosit ve dev hücrelerden oluşan granülomlar izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-113",
@@ -2592,11 +2704,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Uzun süreli reflü sonrası biyopsi bulgusu",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/113_113-barrett-ozofagus-endoskopi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/113_113-barrett-ozofagus-endoskopi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/113_113-barrett-ozofagus-endoskopi.webp",
     "fileName": "113_113-barrett-ozofagus-endoskopi.webp",
-    "thumbnailFileName": "113_113-barrett-ozofagus-endoskopi_thumb.webp",
+    "thumbnailFileName": "113_113-barrett-ozofagus-endoskopi.webp",
     "alt": "Üst gastrointestinal endoskopi - Distal özofagusta somon renkli mukozal alanlar izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-114",
@@ -2615,11 +2728,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Uzun süreli reflü sonrası biyopsi bulgusu",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/114_114-barrett-ozofagus-intestinal-metaplazi-histopatoloji.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/114_114-barrett-ozofagus-intestinal-metaplazi-histopatoloji_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/114_114-barrett-ozofagus-intestinal-metaplazi-histopatoloji.webp",
     "fileName": "114_114-barrett-ozofagus-intestinal-metaplazi-histopatoloji.webp",
-    "thumbnailFileName": "114_114-barrett-ozofagus-intestinal-metaplazi-histopatoloji_thumb.webp",
+    "thumbnailFileName": "114_114-barrett-ozofagus-intestinal-metaplazi-histopatoloji.webp",
     "alt": "Özofagus biyopsisi - Goblet hücreleri içeren intestinal tip kolumnar metaplazi izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-115",
@@ -2638,11 +2752,12 @@ export const clinicalVisualManifest = [
     "sourceCaseTitle": "Tiroid nodülünde sitoloji bulgusu",
     "source": "Ana vaka havuzu / src/data/cases.js",
     "imageUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/115_115-tiroid-hipoekoik-nodul-mikrokalsifikasyon-ultrasonografi.webp",
-    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/115_115-tiroid-hipoekoik-nodul-mikrokalsifikasyon-ultrasonografi_thumb.webp",
+    "thumbnailUrl": "https://iukbtlkzxictqsds.public.blob.vercel-storage.com/115_115-tiroid-hipoekoik-nodul-mikrokalsifikasyon-ultrasonografi.webp",
     "fileName": "115_115-tiroid-hipoekoik-nodul-mikrokalsifikasyon-ultrasonografi.webp",
-    "thumbnailFileName": "115_115-tiroid-hipoekoik-nodul-mikrokalsifikasyon-ultrasonografi_thumb.webp",
+    "thumbnailFileName": "115_115-tiroid-hipoekoik-nodul-mikrokalsifikasyon-ultrasonografi.webp",
     "alt": "Tiroid ultrasonografisi - Mikrokalsifikasyon içeren hipoekoik nodül izlendi.",
-    "qualityStatus": "vercel-blob-ready"
+    "qualityStatus": "vercel-blob-ready",
+    "thumbnailStatus": "normal-webp-used-after-thumb-removal"
   },
   {
     "id": "visual-116",

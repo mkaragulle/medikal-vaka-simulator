@@ -546,25 +546,62 @@ function getStickyOffset() {
 }
 
 
-function ClinicalExamVisuals({ images = [], glossaryEnabled = true, glossaryRevealMode = 'preAnswer' }) {
+function ClinicalExamVisuals({ images = [], glossaryEnabled = true, glossaryRevealMode = 'preAnswer', revealCaption = true }) {
   const clinicalImages = (images || []).filter((image) => image?.modality === 'clinical' && (image.thumbnailUrl || image.imageUrl));
   if (!clinicalImages.length) return null;
 
   return (
     <div className="ordered-image-grid inline-result-image-grid clinical-exam-image-grid" aria-label="Fizik muayene görselleri">
-      {clinicalImages.map((image) => (
-        <figure key={`${image.id || image.title}-${image.imageUrl || image.thumbnailUrl}`} className="ordered-image-card inline-result-image-card clinical-exam-image-card">
-          <div className="ordered-image-frame inline-result-image-frame">
-            <img src={image.thumbnailUrl || image.imageUrl} alt={image.alt || image.title || 'Fizik muayene görseli'} loading="lazy" decoding="async" />
-            <a href={image.imageUrl || image.thumbnailUrl} target="_blank" rel="noreferrer" aria-label="Görseli yeni sekmede aç">
-              <Icon name="Search" size={16} />
-            </a>
-          </div>
-          <figcaption>
-            <strong><GlossaryText text={image.title || image.parameter || 'Fizik muayene görseli'} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></strong>
-          </figcaption>
-        </figure>
-      ))}
+      {clinicalImages.map((image) => {
+        const captionText = revealCaption
+          ? (image.title || image.parameter || 'Fizik muayene görseli')
+          : 'Fizik muayene görseli';
+
+        return (
+          <figure key={`${image.id || image.title}-${image.imageUrl || image.thumbnailUrl}`} className="ordered-image-card inline-result-image-card clinical-exam-image-card">
+            <div className="ordered-image-frame inline-result-image-frame">
+              <img
+                src={image.thumbnailUrl || image.imageUrl}
+                alt={image.alt || image.title || 'Fizik muayene görseli'}
+                loading="lazy"
+                decoding="async"
+                onError={(event) => {
+                  if (image.imageUrl && event.currentTarget.src !== image.imageUrl) {
+                    event.currentTarget.src = image.imageUrl;
+                  }
+                }}
+              />
+              <a href={image.imageUrl || image.thumbnailUrl} target="_blank" rel="noreferrer" aria-label="Görseli yeni sekmede aç">
+                <Icon name="Search" size={16} />
+              </a>
+            </div>
+            <figcaption>
+              <strong><GlossaryText text={captionText} enabled={glossaryEnabled && revealCaption} revealMode={glossaryRevealMode} maxTerms={5} /></strong>
+              {!revealCaption ? <span>Önce görsel muayene bulgusunu kendin yorumla.</span> : null}
+            </figcaption>
+          </figure>
+        );
+      })}
+    </div>
+  );
+}
+
+function ClinicalVisualHelpGate({ open, onToggle }) {
+  return (
+    <div className="visual-interpretation-gate clinical-visual-gate">
+      <div className="visual-interpretation-copy">
+        <strong>Önce fizik muayene görselini değerlendir</strong>
+        <p>Lezyonun dağılımı, rengi, sınırı, morfolojisi ve eşlik eden muayene ipuçlarını kendin yorumladıktan sonra sistem yorumunu açabilirsin.</p>
+      </div>
+      <button
+        type="button"
+        className={`visual-help-button ${open ? 'active' : ''}`.trim()}
+        onClick={onToggle}
+        aria-expanded={open}
+      >
+        <Icon name={open ? 'EyeOff' : 'Sparkles'} size={15} />
+        {open ? 'Yorumu Gizle' : 'Yardım Al'}
+      </button>
     </div>
   );
 }
@@ -596,8 +633,9 @@ function CasePlayer({
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const caseGlossaryEnabled = !hardMode;
   const hasExamData = Array.isArray(clinicalCase.exam) && clinicalCase.exam.some((finding) => String(finding || '').trim());
+  const hasClinicalExamVisuals = (clinicalCase.images || []).some((image) => image?.modality === 'clinical' && (image.thumbnailUrl || image.imageUrl));
   const hasVitalData = vitalEntries.length > 0;
-  const showExamPanel = !isSpotCase || hasExamData || hasVitalData;
+  const showExamPanel = !isSpotCase || hasExamData || hasVitalData || hasClinicalExamVisuals;
   const hasInvestigationOrders = investigationOrders.length > 0;
   const showInvestigationPanel = hasInvestigationOrders;
   const hasExplicitManagementSteps = Array.isArray(clinicalCase.managementSequence?.steps)
@@ -617,6 +655,11 @@ function CasePlayer({
     : `${branch.shortName ?? branch.name} • ${toDisplayPhrase(clinicalCase.setting)}`), [branch.name, branch.shortName, clinicalCase.setting, clinicalCase.spotCategory, isSpotCase]);
   const [orderedInvestigationIds, setOrderedInvestigationIds] = useState([]);
   const [locallyAnsweredCaseId, setLocallyAnsweredCaseId] = useState(null);
+  const [showClinicalExamHelp, setShowClinicalExamHelp] = useState(false);
+  useEffect(() => {
+    setShowClinicalExamHelp(false);
+  }, [clinicalCase.id]);
+
   const isStrictExamMode = Boolean(examMeta?.active && !tutorMode);
   const caseHasAnsweredState = isSolved || locallyAnsweredCaseId === clinicalCase.id || Boolean(examMeta?.answers?.[clinicalCase.id]);
   const caseGlossaryRevealMode = caseHasAnsweredState && !isStrictExamMode ? 'postAnswer' : 'preAnswer';
@@ -879,7 +922,7 @@ function CasePlayer({
                   </div>
                 ) : null}
 
-                {hasExamData ? (
+                {hasExamData || hasClinicalExamVisuals ? (
                   <div className="qbank-accordion-stack">
                     <AccordionItem
                       defaultOpen
@@ -887,10 +930,25 @@ function CasePlayer({
                       title="Fizik muayene"
                     >
                       <div className="detail-block exam-finding-block">
-                        <ul className="clean-list dense scientific-finding-list">
-                          {clinicalCase.exam.map((finding) => <li key={finding}><GlossaryText text={expandExamFinding(finding)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></li>)}
-                        </ul>
-                        <ClinicalExamVisuals images={clinicalCase.images || []} glossaryEnabled={caseGlossaryEnabled} glossaryRevealMode={caseGlossaryRevealMode} />
+                        {hasClinicalExamVisuals ? (
+                          <>
+                            <ClinicalExamVisuals
+                              images={clinicalCase.images || []}
+                              glossaryEnabled={caseGlossaryEnabled}
+                              glossaryRevealMode={caseGlossaryRevealMode}
+                              revealCaption={showClinicalExamHelp}
+                            />
+                            <ClinicalVisualHelpGate open={showClinicalExamHelp} onToggle={() => setShowClinicalExamHelp((current) => !current)} />
+                          </>
+                        ) : null}
+                        {hasExamData && (!hasClinicalExamVisuals || showClinicalExamHelp) ? (
+                          <div className={hasClinicalExamVisuals ? 'visual-scientific-interpretation revealed clinical-exam-interpretation' : ''}>
+                            {hasClinicalExamVisuals ? <span className="visual-interpretation-heading"><Icon name="Notes" size={13} /> Bilimsel muayene yorumu</span> : null}
+                            <ul className="clean-list dense scientific-finding-list">
+                              {clinicalCase.exam.map((finding) => <li key={finding}><GlossaryText text={expandExamFinding(finding)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></li>)}
+                            </ul>
+                          </div>
+                        ) : null}
                       </div>
                     </AccordionItem>
                   </div>

@@ -584,23 +584,60 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
   );
 }
 
-function ResultImages({ images = [], glossaryEnabled = true, glossaryRevealMode = 'preAnswer' }) {
+function ResultImages({ images = [], glossaryEnabled = true, glossaryRevealMode = 'preAnswer', revealCaption = true }) {
   if (!images.length) return null;
   return (
     <div className="ordered-image-grid inline-result-image-grid">
-      {images.map((image) => (
-        <figure key={`${image.title}-${image.imageUrl}`} className="ordered-image-card inline-result-image-card">
-          <div className="ordered-image-frame inline-result-image-frame">
-            <img src={image.thumbnailUrl || image.imageUrl} alt={image.alt || image.title || 'Tetkik görseli'} loading="lazy" decoding="async" />
-            <a href={image.imageUrl || image.thumbnailUrl} target="_blank" rel="noreferrer" aria-label="Görseli yeni sekmede aç">
-              <Icon name="Search" size={16} />
-            </a>
-          </div>
-          <figcaption>
-            <strong><GlossaryText text={image.title || image.parameter || 'Tetkik görseli'} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></strong>
-          </figcaption>
-        </figure>
-      ))}
+      {images.map((image) => {
+        const captionText = revealCaption
+          ? (image.title || image.parameter || 'Tetkik görseli')
+          : (image.genericTitle || 'Tetkik görseli');
+
+        return (
+          <figure key={`${image.title}-${image.imageUrl}`} className="ordered-image-card inline-result-image-card">
+            <div className="ordered-image-frame inline-result-image-frame">
+              <img
+                src={image.thumbnailUrl || image.imageUrl}
+                alt={image.alt || image.title || 'Tetkik görseli'}
+                loading="lazy"
+                decoding="async"
+                onError={(event) => {
+                  if (image.imageUrl && event.currentTarget.src !== image.imageUrl) {
+                    event.currentTarget.src = image.imageUrl;
+                  }
+                }}
+              />
+              <a href={image.imageUrl || image.thumbnailUrl} target="_blank" rel="noreferrer" aria-label="Görseli yeni sekmede aç">
+                <Icon name="Search" size={16} />
+              </a>
+            </div>
+            <figcaption>
+              <strong><GlossaryText text={captionText} enabled={glossaryEnabled && revealCaption} revealMode={glossaryRevealMode} maxTerms={5} /></strong>
+              {!revealCaption ? <span>Önce görsel bulguları kendin yorumla.</span> : null}
+            </figcaption>
+          </figure>
+        );
+      })}
+    </div>
+  );
+}
+
+function VisualHelpGate({ open, onToggle, compact = false }) {
+  return (
+    <div className={`visual-interpretation-gate ${compact ? 'compact' : ''}`.trim()}>
+      <div className="visual-interpretation-copy">
+        <strong>Önce görseli kendin yorumla</strong>
+        <p>Bu bulguda eğitim amacıyla yorum ilk aşamada gizlendi. Görseldeki patern, dağılım ve anatomik ipuçlarını değerlendirdikten sonra sistem yorumunu açabilirsin.</p>
+      </div>
+      <button
+        type="button"
+        className={`visual-help-button ${open ? 'active' : ''}`.trim()}
+        onClick={onToggle}
+        aria-expanded={open}
+      >
+        <Icon name={open ? 'EyeOff' : 'Sparkles'} size={15} />
+        {open ? 'Yorumu Gizle' : 'Yardım Al'}
+      </button>
     </div>
   );
 }
@@ -626,19 +663,41 @@ function InlineOrderResult({ item, mode, hardMode = false, glossaryRevealMode = 
   const hasImages = Boolean(result.images?.length);
   const hasSummary = Boolean(result.summary && result.format !== 'empty');
   const shouldShowSummary = hasSummary && (!hasRows || !summaryDuplicatesStructuredRows(result.summary, result.rows));
+  const [showVisualHelp, setShowVisualHelp] = useState(false);
+  const visualFirstMode = hasImages;
+  const revealScientificInterpretation = !visualFirstMode || showVisualHelp;
+
+  useEffect(() => {
+    setShowVisualHelp(false);
+  }, [item.id]);
 
   return (
     <div className="inline-order-result requested-result-panel" role="region" aria-label={`${item.label} sonucu`}>
       <div className="inline-result-block requested-result-primary">
         <div className="inline-result-title-row">
-          <span className="inline-result-label"><Icon name="Notes" size={13} /> Sonuç</span>
+          <span className="inline-result-label"><Icon name={visualFirstMode ? 'Image' : 'Notes'} size={13} /> {visualFirstMode ? 'Görsel' : 'Sonuç'}</span>
         </div>
-        {hasRows ? <ResultTable rows={result.rows} hardMode={hardMode} glossaryEnabled={mode !== 'exam' && !hardMode} itemType={item.type} glossaryRevealMode={glossaryRevealMode} /> : null}
-        {hasImages ? <ResultImages images={result.images} glossaryEnabled={mode !== 'exam' && !hardMode} glossaryRevealMode={glossaryRevealMode} /> : null}
-        {shouldShowSummary ? (
-          <div className={`ordered-result-comment ${hasRows || hasImages ? 'after-objective-data' : 'standalone'}`}>
-            {(hasRows || hasImages) ? <span>Kısa yorum</span> : null}
-            <p className="ordered-result-summary inline-result-summary"><GlossaryText text={result.summary} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={5} /></p>
+        {hasImages ? (
+          <>
+            <ResultImages
+              images={result.images}
+              glossaryEnabled={mode !== 'exam' && !hardMode}
+              glossaryRevealMode={glossaryRevealMode}
+              revealCaption={showVisualHelp}
+            />
+            <VisualHelpGate open={showVisualHelp} onToggle={() => setShowVisualHelp((current) => !current)} />
+          </>
+        ) : null}
+        {revealScientificInterpretation && (hasRows || shouldShowSummary) ? (
+          <div className={`visual-scientific-interpretation ${visualFirstMode ? 'revealed' : ''}`.trim()}>
+            {visualFirstMode ? <span className="visual-interpretation-heading"><Icon name="Notes" size={13} /> Bilimsel yorum</span> : null}
+            {hasRows ? <ResultTable rows={result.rows} hardMode={hardMode} glossaryEnabled={mode !== 'exam' && !hardMode} itemType={item.type} glossaryRevealMode={glossaryRevealMode} /> : null}
+            {shouldShowSummary ? (
+              <div className={`ordered-result-comment ${hasRows || hasImages ? 'after-objective-data' : 'standalone'}`}>
+                {(hasRows || hasImages) ? <span>Kısa yorum</span> : null}
+                <p className="ordered-result-summary inline-result-summary"><GlossaryText text={result.summary} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={5} /></p>
+              </div>
+            ) : null}
           </div>
         ) : null}
         {!hasSummary && !hasRows && !hasImages ? (

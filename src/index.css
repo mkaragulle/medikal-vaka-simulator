@@ -51013,3 +51013,111 @@ body:not(.klinikiq-auth-lock) .exam-active-shell.timed-exam-shell .tus-spot-bank
     max-width: 100% !important;
   }
 }
+
+/* V342 visual-first interpretation gate for image-based findings */
+.visual-interpretation-gate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 12px 13px;
+  border-radius: 15px;
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border-subtle));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 8%, transparent), color-mix(in srgb, var(--surface-1) 92%, transparent));
+}
+
+.visual-interpretation-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.visual-interpretation-copy strong {
+  color: var(--text-primary);
+  font-size: 13.2px;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.visual-interpretation-copy p {
+  margin: 0;
+  max-width: 76ch;
+  color: var(--text-secondary);
+  font-size: 12.8px;
+  line-height: 1.52;
+}
+
+.visual-help-button {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  color: var(--text-primary);
+  background: color-mix(in srgb, var(--surface-1) 88%, transparent);
+  font-size: 12.2px;
+  font-weight: 850;
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--shadow-color, #000) 10%, transparent);
+  transition: transform .18s var(--ease-standard), border-color .18s var(--ease-standard), background .18s var(--ease-standard);
+}
+
+.visual-help-button:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--accent) 48%, transparent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface-1));
+}
+
+.visual-help-button.active {
+  color: var(--accent-strong, var(--accent));
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface-1));
+}
+
+.visual-scientific-interpretation {
+  display: grid;
+  gap: 9px;
+}
+
+.visual-scientific-interpretation.revealed {
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 15px;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 82%, transparent);
+  background: color-mix(in srgb, var(--surface-1) 82%, transparent);
+  animation: visual-interpretation-reveal-v342 .22s var(--ease-standard) both;
+}
+
+.visual-interpretation-heading {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 10.8px;
+  font-weight: 850;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+.clinical-exam-interpretation .scientific-finding-list {
+  margin-top: 2px;
+}
+
+@keyframes visual-interpretation-reveal-v342 {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 720px) {
+  .visual-interpretation-gate {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .visual-help-button {
+    width: 100%;
+  }
+}
