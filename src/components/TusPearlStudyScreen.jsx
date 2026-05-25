@@ -30,6 +30,15 @@ const LIBRARY_SOURCE_OPTIONS = [
   { value: 'user', label: 'Kendi kartlarım' },
 ];
 
+const CATALOG_LIBRARY_INITIAL_LIMIT = 48;
+const CATALOG_LIBRARY_LOAD_STEP = 48;
+
+function CatalogCardQuestionText({ text }) {
+  return <span>{text}</span>;
+}
+
+const MemoCatalogCardQuestionText = memo(CatalogCardQuestionText);
+
 function LibrarySourceDropdown({ value, onChange }) {
   const [open, setOpen] = useState(false);
   const [menuStyle, setMenuStyle] = useState(null);
@@ -541,6 +550,7 @@ function TusPearlStudyScreen({
   const [renameValue, setRenameValue] = useState('');
   const [librarySearch, setLibrarySearch] = useState('');
   const [sourceLibraryFilter, setSourceLibraryFilter] = useState('all');
+  const [catalogLibraryVisibleCount, setCatalogLibraryVisibleCount] = useState(CATALOG_LIBRARY_INITIAL_LIMIT);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [motion, setMotion] = useState('idle');
@@ -635,6 +645,7 @@ function TusPearlStudyScreen({
   const catalogCards = useMemo(() => (
     (activeCatalog?.cardIds || []).map((id) => cardById.get(id)).filter(Boolean)
   ), [activeCatalog, cardById]);
+  const activeCatalogCardIdSet = useMemo(() => new Set(activeCatalog?.cardIds || []), [activeCatalog?.cardIds]);
 
   const deferredLibrarySearch = useDeferredValue(librarySearch);
   const librarySearchIndex = useMemo(() => allCards.map((card) => ({
@@ -654,6 +665,16 @@ function TusPearlStudyScreen({
     if (!query) return pool.map(({ card }) => card);
     return pool.filter(({ searchText }) => searchText.includes(query)).map(({ card }) => card);
   }, [deferredLibrarySearch, librarySearchIndex, sourceLibraryFilter]);
+
+  useEffect(() => {
+    setCatalogLibraryVisibleCount(CATALOG_LIBRARY_INITIAL_LIMIT);
+  }, [deferredLibrarySearch, sourceLibraryFilter, activeCatalogId, viewMode]);
+
+  const visibleSearchableCards = useMemo(() => (
+    searchableCards.slice(0, catalogLibraryVisibleCount)
+  ), [catalogLibraryVisibleCount, searchableCards]);
+
+  const hasMoreLibraryCards = visibleSearchableCards.length < searchableCards.length;
 
   function commitState(updater) {
     setPearlState((current) => savePearlState(updater(current || defaultPearlState)));
@@ -1246,7 +1267,7 @@ function TusPearlStudyScreen({
                         <article key={card.id} className="tus-pearl-library-card in-catalog catalog-card-row">
                           <div className="catalog-card-content">
                             <span className="catalog-card-branch">{getBranchName(card.branchId)}</span>
-                            <strong className="catalog-card-question"><GlossaryText text={card.front} enabled revealMode="preAnswer" maxTerms={2} /></strong>
+                            <strong className="catalog-card-question"><MemoCatalogCardQuestionText text={card.front} /></strong>
                           </div>
                           <div className="pearl-card-row-actions catalog-card-action">
                             {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
@@ -1279,6 +1300,7 @@ function TusPearlStudyScreen({
                 <div id="catalog-card-library" className="tus-pearl-catalog-card-section catalog-card-library">
                   <div className="tus-pearl-catalog-section-head">
                     <strong>Tüm kartlardan ekle</strong>
+                    <span>{searchableCards.length} uygun kart</span>
                   </div>
                   <div className="pearl-library-toolbar">
                     <input className="tus-pearl-library-search" value={librarySearch} onChange={(event) => setLibrarySearch(event.target.value)} placeholder="Kart ara: sinir, farmakoloji, tuzak..." />
@@ -1286,15 +1308,15 @@ function TusPearlStudyScreen({
                     <button type="button" className="btn btn-primary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalog.id })}>Yeni kart</button>
                   </div>
                   <div className="tus-pearl-catalog-card-list addable">
-                    {searchableCards.map((card) => (
+                    {visibleSearchableCards.map((card) => (
                       <article key={card.id} className="tus-pearl-library-card catalog-card-row">
                         <div className="catalog-card-content">
                           <span className="catalog-card-branch">{getBranchName(card.branchId)}</span>
-                          <strong className="catalog-card-question"><GlossaryText text={card.front} enabled revealMode="preAnswer" maxTerms={2} /></strong>
+                          <strong className="catalog-card-question"><MemoCatalogCardQuestionText text={card.front} /></strong>
                         </div>
                         <div className="pearl-card-row-actions catalog-card-action">
                           {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
-                          {activeCatalog?.cardIds?.includes(card.id) ? (
+                          {activeCatalogCardIdSet.has(card.id) ? (
                             <button type="button" className="btn btn-secondary compact catalog-added-action" disabled>Eklendi</button>
                           ) : (
                             <button type="button" className="btn btn-secondary compact catalog-add-action" onClick={() => addCardToCatalog(card.id)}>Kataloğa ekle</button>
@@ -1308,6 +1330,27 @@ function TusPearlStudyScreen({
                         </div>
                       </article>
                     ))}
+                    {hasMoreLibraryCards ? (
+                      <div className="catalog-library-load-more">
+                        <span>{visibleSearchableCards.length} / {searchableCards.length} kart gösteriliyor</span>
+                        <button
+                          type="button"
+                          className="btn btn-secondary compact"
+                          onClick={() => setCatalogLibraryVisibleCount((count) => Math.min(count + CATALOG_LIBRARY_LOAD_STEP, searchableCards.length))}
+                        >
+                          Daha fazla göster
+                        </button>
+                      </div>
+                    ) : searchableCards.length ? (
+                      <div className="catalog-library-load-more is-complete">
+                        <span>{searchableCards.length} kartın tamamı gösteriliyor</span>
+                      </div>
+                    ) : (
+                      <div className="catalog-library-empty-result">
+                        <Icon name="Search" size={18} />
+                        <span>Bu aramada kart bulunamadı.</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </>

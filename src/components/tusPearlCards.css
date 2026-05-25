@@ -18068,3 +18068,79 @@ html[data-theme='dark'] .pearl-editor-secondary-actions,
     justify-self: stretch !important;
   }
 }
+
+/* ==========================================================================
+   V370 — Kataloglarım all-card library performance and cursor layering fix
+   ========================================================================== */
+.catalog-card-library .tus-pearl-catalog-section-head span {
+  color: var(--ki-text-muted, #64748b) !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.catalog-card-library .catalog-card-question span {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+}
+
+.catalog-library-load-more,
+.catalog-library-empty-result {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  min-height: 66px !important;
+  margin: 6px 0 2px !important;
+  padding: 12px !important;
+  border: 1px dashed rgba(13, 148, 136, 0.16) !important;
+  border-radius: 18px !important;
+  background: rgba(240, 253, 250, 0.58) !important;
+  color: var(--ki-text-muted, #64748b) !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+}
+
+.catalog-library-load-more.is-complete {
+  min-height: 44px !important;
+  opacity: 0.78 !important;
+  background: rgba(248, 250, 252, 0.68) !important;
+}
+
+.catalog-library-load-more .btn {
+  min-height: 36px !important;
+  padding: 0 14px !important;
+}
+
+[data-theme='dark'] .catalog-card-library .tus-pearl-catalog-section-head span,
+.app-shell[data-theme='dark'] .catalog-card-library .tus-pearl-catalog-section-head span {
+  color: rgba(148, 163, 184, 0.92) !important;
+}
+
+[data-theme='dark'] .catalog-library-load-more,
+[data-theme='dark'] .catalog-library-empty-result,
+.app-shell[data-theme='dark'] .catalog-library-load-more,
+.app-shell[data-theme='dark'] .catalog-library-empty-result {
+  border-color: rgba(94, 234, 212, 0.14) !important;
+  background: rgba(15, 23, 42, 0.62) !important;
+  color: rgba(203, 213, 225, 0.86) !important;
+}
+
+[data-theme='dark'] .catalog-library-load-more.is-complete,
+.app-shell[data-theme='dark'] .catalog-library-load-more.is-complete {
+  background: rgba(15, 23, 42, 0.44) !important;
+}
+
+/* The delete confirmation portal must stay above cards/modals but below the global custom cursor. */
+.pearl-inline-delete-popover.pearl-inline-delete-popover-portal {
+  z-index: 2147483000 !important;
+}
+
+/* The source dropdown also stays below the cursor so the cursor never appears trapped under it. */
+.pearl-library-source-menu {
+  z-index: 2147483000 !important;
+}
