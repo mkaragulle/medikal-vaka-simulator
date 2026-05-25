@@ -288,7 +288,7 @@ function deactivateGlossaryTerm(id, nestingLevel) {
 
 const MATCHER_CACHE = new WeakMap();
 const SPLIT_CACHE = new Map();
-const MAX_SPLIT_CACHE_SIZE = 900;
+const MAX_SPLIT_CACHE_SIZE = 600;
 
 function rememberSplitCache(key, value) {
   SPLIT_CACHE.set(key, value);
@@ -562,9 +562,11 @@ function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFlo
     if (!open || !portalRoot) return undefined;
     setIsPositioned(false);
     updatePosition();
-    const frameId = window.requestAnimationFrame(updatePosition);
+    const frameOne = window.requestAnimationFrame(updatePosition);
+    const frameTwo = window.requestAnimationFrame(updatePosition);
     return () => {
-      window.cancelAnimationFrame(frameId);
+      window.cancelAnimationFrame(frameOne);
+      window.cancelAnimationFrame(frameTwo);
     };
   }, [children, open, portalRoot, updatePosition]);
 

@@ -1,54 +1,54 @@
-KlinikIQ V373 Ek Smoothness / Lag Optimizasyonu Özeti
+KlinikIQ V373 Ek Performans / GitHub-Safe Optimizasyon Özeti
 
 Değiştirilen dosyalar:
-1. src/App.jsx
-2. src/components/CaseList.jsx
-3. src/components/TusPearlStudyScreen.jsx
-4. src/components/GlossaryTooltip.jsx
-5. src/components/KlinikIQCustomScrollbars.jsx
-6. PERFORMANCE_AUDIT_REPORT_V373.md
-7. PERFORMANCE_CHANGES_SUMMARY_V373.txt
+- src/App.jsx
+- src/components/DiagnosisQuiz.jsx
+- src/components/PremiumCursor.jsx
+- src/components/KlinikIQCustomScrollbars.jsx
+- src/index.css
+- .gitignore
+- package-lock.json eklendi
+- GITHUB_UPLOAD_NOTES.txt eklendi
+- PERFORMANCE_AUDIT_REPORT_V373.md eklendi
+- PERFORMANCE_CHANGES_SUMMARY_V373.txt eklendi
+- BUILD_TEST_RESULT_V373.txt eklendi
 
-Ek render optimizasyonları:
-- CaseListItem artık selectedCaseId yerine sadece kendi selected boolean değerini alıyor.
-- Vaka kartları arasında geçişte tüm yatay listenin re-render baskısı azaltıldı; yalnızca eski/yeni seçili kartın görsel durumu değişir.
-- App.jsx içinde aktif branch vaka üyelik kontrolü için memoized Set eklendi.
-- selectedCase ve branch geçerlilik kontrollerinde .some() yerine Set.has() kullanıldı.
+1) Scroll CSS optimizasyonu
+- Scroll/resize sırasında tüm DOM'u hedefleyen `*` selector kaldırıldı.
+- Bunun yerine yalnızca pahalı kart, buton, panel, tooltip, topbar ve Hap Bilgi elemanlarını hedefleyen `:is(...)` selector listesi kullanıldı.
+- Böylece scroll sırasında global style recalculation maliyeti azaltıldı.
 
-Arama performansı:
-- Vaka arama için WeakMap tabanlı CASE_SEARCH_META_CACHE eklendi.
-- Her vaka objesinin normalize edilmiş title/keyword/question/fullText alanları bir kez hesaplanır.
-- Alt vaka arama inputu useDeferredValue ile düşük öncelikli filtrelemeye alındı.
-- Kullanıcı yazarken input tepkisi daha hızlı kalır; ağır recursive collect/normalize işlemleri tekrar tekrar yapılmaz.
+2) Alt olgu araması optimizasyonu
+- `useDeferredValue` App seviyesine eklendi.
+- Alt olgu arama metni deferred hale getirildi.
+- Recursive vaka search index artık yalnızca gerçekten arama sorgusu varsa oluşturuluyor.
+- Boş aramada branch case pool doğrudan kullanılıyor; normal vaka gezintisinde gereksiz full-text index maliyeti yok.
+- Seçili vakanın aktif havuzda olup olmadığı artık `.some()` yerine memoized `Set` ile kontrol ediliyor.
 
-Hap Bilgi / Katalog performansı:
-- filteredCards.map(id).join('|') ile tüm liste imzası üretme kaldırıldı.
-- filteredCardsSignature daha hafif uzunluk/ilk/orta/son id + filtre/set boyutu mantığına çekildi.
-- filteredCardIdSet ayrı memoize edildi; sessionCards içinde tekrar tekrar Set oluşturma azaltıldı.
-- branchOptions hesaplamasında branches x allCards.some döngüsü yerine allCardsBranchIdSet kullanıldı.
-- aktif kart katalog üyeliği activeCatalog.cardIds.includes yerine activeCatalogCardIdSet.has ile kontrol ediliyor.
+3) Yanıt işaretleme akıcılığı
+- Normal çalışma modunda feedback görünümü önce local olarak açılıyor.
+- App seviyesindeki stats/solved/wrong-answer güncellemesi bir sonraki macrotask'a bırakılıyor.
+- Exam/strict modda yanıt kaydı senkron korunmuştur; sınav akışı bozulmamıştır.
 
-Glossary optimizasyonları:
-- Tooltip açılışında aynı frame içinde çalışan çift requestAnimationFrame konumlandırma çağrısı teke indirildi.
-- Glossary split cache limiti 600'den 900'e çıkarıldı.
-- Tooltip, nested glossary ve pre/post answer davranışları korunmuştur.
+4) Custom cursor optimizasyonu
+- Kullanılmayan native scrollbar hit-test fonksiyonları temizlendi.
+- Custom scrollbar üstünde olup olmama kontrolü hedef element değişmediği sürece cache'leniyor.
+- Pointermove sırasında tekrar eden `closest()` maliyeti azaltıldı.
+- Cursor tasarımı, text input davranışı ve scrollbar drag davranışı korunmuştur.
 
-Custom scrollbar optimizasyonları:
-- MAX_TRACKED_ELEMENTS 48'e indirildi.
-- Top-layer rect cache 220ms'ye çıkarıldı.
-- Pointer activity throttle 320ms'ye çıkarıldı.
-- MutationObserver artık body altında yüksek frekanslı class/style değişimlerini izlemiyor.
-- Observer open/hidden/aria-expanded/data-scrollable/data-scroll-container ve childList değişimlerini takip etmeye devam eder.
-- Drag, overlay, modal/dropdown occlusion ve scrollbar görünümü korunmuştur.
+5) Custom scrollbar optimizasyonu
+- Takip edilen maksimum scrollable element sayısı 56'dan 48'e indirildi.
+- Pointer activity throttle 240ms'den 320ms'ye çıkarıldı.
+- Tekrarlayan inline style yazımları `setStyleValue` ile yalnızca değer değiştiğinde uygulanır hale getirildi.
+- MutationObserver attribute filter sadeleştirildi; `class` ve `data-theme` attribute gözlemi ana observer'dan çıkarıldı. Theme için ayrı observer zaten korunuyor.
+- Scrollbar görünümü, drag davranışı ve overlay/top-layer mantığı korunmuştur.
 
-Test:
-- npm install --no-audit --no-fund: başarılı.
-- npm run build: başarılı.
-- Build uyarısı: case-bank ve GlossaryTooltip chunkları hâlâ büyük; veri ve glossary içerikleri bilinçli olarak değiştirilmediği için beklenen durumdur.
+6) GitHub-safe paketleme
+- `.gitignore` genişletildi: zip, log, cache, coverage, tsbuildinfo gibi yerel/generate dosyalar dışarıda bırakılır.
+- `GITHUB_UPLOAD_NOTES.txt` eklendi.
+- Final zip hazırlanırken `node_modules`, `dist`, `.vite`, `.vercel`, cache ve log dosyaları dışarıda bırakıldı.
 
-Bilinçli olarak korunmuştur:
-- Tıbbi içerikler, vaka verileri, doğru cevaplar ve feedbackler.
-- Glossary tooltip sistemi ve nested glossary davranışı.
-- Custom cursor ve custom scrollbar.
-- Premium dark/light tasarım.
-- TUS/KOMİTE/Hap Bilgi/Kataloglarım ana işlevleri.
+Build testi:
+- `npm ci --prefer-offline --no-audit --no-fund --progress=false` başarılı.
+- `npm run build` başarılı.
+- Vite büyük chunk uyarısı devam ediyor; bu beklenen bir uyarıdır çünkü case-bank ve glossary içerikleri bilinçli olarak korunmuştur.

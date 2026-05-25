@@ -11,7 +11,7 @@ const TRACK_SIZE = 6;
 const THUMB_SIZE = 3.5;
 const MIN_THUMB = 24;
 const EDGE_INSET = 5;
-const TOP_LAYER_RECT_CACHE_MS = 220;
+const TOP_LAYER_RECT_CACHE_MS = 160;
 const POINTER_ACTIVITY_THROTTLE_MS = 320;
 
 
@@ -168,6 +168,11 @@ function isHTMLElement(value) {
 function clamp(value, min, max) {
   if (max < min) return min;
   return Math.min(max, Math.max(min, value));
+}
+
+function setStyleValue(element, propertyName, value) {
+  if (!element || element.style[propertyName] === value) return;
+  element.style[propertyName] = value;
 }
 
 function getDocumentScrollHeight() {
@@ -480,11 +485,11 @@ html.${DRAGGING_CLASS} * {
         rect.top > window.innerHeight ||
         rect.left > window.innerWidth
       ) {
-        track.style.display = 'none';
+        setStyleValue(track, 'display', 'none');
         return;
       }
 
-      track.style.display = 'block';
+      setStyleValue(track, 'display', 'block');
       const isWindowTarget = target === window;
 
       if (isVertical) {
@@ -500,14 +505,14 @@ html.${DRAGGING_CLASS} * {
         const usable = Math.max(1, trackHeight - thumbHeight);
         const thumbTop = (metrics.scrollTop / maxScroll) * usable;
 
-        track.style.transform = `translate3d(${trackLeft}px, ${visibleTop}px, 0)`;
-        track.style.width = `${TRACK_SIZE}px`;
-        track.style.height = `${trackHeight}px`;
-        thumb.style.transform = `translate3d(0, ${thumbTop}px, 0)`;
-        thumb.style.left = '1.25px';
-        thumb.style.top = '0px';
-        thumb.style.width = `${THUMB_SIZE}px`;
-        thumb.style.height = `${thumbHeight}px`;
+        setStyleValue(track, 'transform', `translate3d(${trackLeft}px, ${visibleTop}px, 0)`);
+        setStyleValue(track, 'width', `${TRACK_SIZE}px`);
+        setStyleValue(track, 'height', `${trackHeight}px`);
+        setStyleValue(thumb, 'transform', `translate3d(0, ${thumbTop}px, 0)`);
+        setStyleValue(thumb, 'left', '1.25px');
+        setStyleValue(thumb, 'top', '0px');
+        setStyleValue(thumb, 'width', `${THUMB_SIZE}px`);
+        setStyleValue(thumb, 'height', `${thumbHeight}px`);
         entry.trackStart = visibleTop;
         entry.trackLength = trackHeight;
         entry.thumbLength = thumbHeight;
@@ -532,14 +537,14 @@ html.${DRAGGING_CLASS} * {
         const usable = Math.max(1, trackWidth - thumbWidth);
         const thumbLeft = (metrics.scrollLeft / maxScroll) * usable;
 
-        track.style.transform = `translate3d(${visibleLeft}px, ${trackTop}px, 0)`;
-        track.style.width = `${trackWidth}px`;
-        track.style.height = `${TRACK_SIZE}px`;
-        thumb.style.transform = `translate3d(${thumbLeft}px, 0, 0)`;
-        thumb.style.left = '0px';
-        thumb.style.top = '1.25px';
-        thumb.style.width = `${thumbWidth}px`;
-        thumb.style.height = `${THUMB_SIZE}px`;
+        setStyleValue(track, 'transform', `translate3d(${visibleLeft}px, ${trackTop}px, 0)`);
+        setStyleValue(track, 'width', `${trackWidth}px`);
+        setStyleValue(track, 'height', `${TRACK_SIZE}px`);
+        setStyleValue(thumb, 'transform', `translate3d(${thumbLeft}px, 0, 0)`);
+        setStyleValue(thumb, 'left', '0px');
+        setStyleValue(thumb, 'top', '1.25px');
+        setStyleValue(thumb, 'width', `${thumbWidth}px`);
+        setStyleValue(thumb, 'height', `${THUMB_SIZE}px`);
         entry.trackStart = visibleLeft;
         entry.trackLength = trackWidth;
         entry.thumbLength = thumbWidth;
@@ -554,7 +559,7 @@ html.${DRAGGING_CLASS} * {
       }
 
       if (!entry.isTopLayer && isCoveredByTopLayer(entry.visualRect, target)) {
-        track.style.display = 'none';
+        setStyleValue(track, 'display', 'none');
         return;
       }
 
@@ -794,16 +799,13 @@ html.${DRAGGING_CLASS} * {
       }
 
       if (shouldResetTopLayerCache) resetTopLayerRectCache();
-      if (shouldScan) scheduleScan(260);
+      if (shouldScan) scheduleScan(220);
     });
     mutationObserver.observe(document.body, {
       childList: true,
       subtree: true,
       attributes: true,
-      // Avoid observing high-frequency class/style changes across the entire React tree.
-      // Structural changes, open/hidden toggles and ResizeObserver/scroll events are enough
-      // to keep the custom tracks accurate without adding mutation pressure during scroll.
-      attributeFilter: ['open', 'aria-expanded', 'hidden', 'data-scrollable', 'data-scroll-container'],
+      attributeFilter: ['style', 'open', 'aria-expanded', 'hidden'],
     });
 
     const themeObserver = new MutationObserver(() => requestUpdate());

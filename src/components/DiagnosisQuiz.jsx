@@ -225,9 +225,18 @@ function DiagnosisQuiz({
 
   const handleSubmit = useCallback(() => {
     if (!selected || submitted) return;
-    onSubmitAnswer?.({ clinicalCase, selected, isCorrect });
+    const payload = { clinicalCase, selected, isCorrect };
     setSubmitted(true);
-  }, [clinicalCase, isCorrect, onSubmitAnswer, selected, submitted]);
+
+    if (isStrictExam) {
+      onSubmitAnswer?.(payload);
+      return;
+    }
+
+    window.setTimeout(() => {
+      onSubmitAnswer?.(payload);
+    }, 0);
+  }, [clinicalCase, isCorrect, isStrictExam, onSubmitAnswer, selected, submitted]);
 
   return (
     <section className="question-panel diagnostic-decision-panel" id="case-quiz" aria-label="Klinik karar sorusu">

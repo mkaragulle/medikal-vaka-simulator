@@ -1,0 +1,13 @@
+KlinikIQ V373 GitHub yükleme notları
+
+Bu paket GitHub’a kaynak kod olarak yüklenmeye uygun hazırlanmıştır.
+
+Yüklenmemesi gereken klasör/dosyalar:
+- node_modules/
+- dist/
+- .vite/
+- .vercel/
+- .env veya .env.local
+- zip/log/cache dosyaları
+
+Bu zip içinde node_modules ve dist bırakılmamıştır. `npm install` ve `npm run build` testleri lokal çalışma klasöründe alınmalı; GitHub’a yalnızca kaynak proje dosyaları commit edilmelidir.

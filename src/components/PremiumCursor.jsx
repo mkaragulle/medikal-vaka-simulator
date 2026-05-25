@@ -129,67 +129,6 @@ function isElement(value) {
   return value instanceof Element;
 }
 
-function isScrollableElement(element, axis) {
-  if (!(element instanceof HTMLElement)) return false;
-  const style = window.getComputedStyle(element);
-  const overflow = axis === 'y' ? style.overflowY : style.overflowX;
-  const canScroll = axis === 'y' ? element.scrollHeight > element.clientHeight : element.scrollWidth > element.clientWidth;
-  return canScroll && /auto|scroll|overlay/i.test(overflow || '');
-}
-
-function getScrollbarHit(element, clientX, clientY) {
-  if (!(element instanceof HTMLElement)) return false;
-  if (element === document.body || element === document.documentElement) return false;
-
-  const rect = element.getBoundingClientRect();
-  if (clientX < rect.left || clientX > rect.right || clientY < rect.top || clientY > rect.bottom) return false;
-
-  const style = window.getComputedStyle(element);
-  const borderRight = Number.parseFloat(style.borderRightWidth || '0') || 0;
-  const borderBottom = Number.parseFloat(style.borderBottomWidth || '0') || 0;
-  const borderLeft = Number.parseFloat(style.borderLeftWidth || '0') || 0;
-  const borderTop = Number.parseFloat(style.borderTopWidth || '0') || 0;
-
-  const verticalScrollbarWidth = Math.max(0, element.offsetWidth - element.clientWidth - borderLeft - borderRight);
-  const horizontalScrollbarHeight = Math.max(0, element.offsetHeight - element.clientHeight - borderTop - borderBottom);
-
-  const hasVerticalScrollbar = isScrollableElement(element, 'y') && verticalScrollbarWidth >= 4;
-  const hasHorizontalScrollbar = isScrollableElement(element, 'x') && horizontalScrollbarHeight >= 4;
-
-  const verticalHit = hasVerticalScrollbar && clientX >= rect.right - verticalScrollbarWidth - 2;
-  const horizontalHit = hasHorizontalScrollbar && clientY >= rect.bottom - horizontalScrollbarHeight - 2;
-
-  return verticalHit || horizontalHit;
-}
-
-function isViewportScrollbarHit(clientX, clientY) {
-  const doc = document.documentElement;
-  const viewportVerticalScrollbarWidth = Math.max(0, window.innerWidth - doc.clientWidth);
-  const viewportHorizontalScrollbarHeight = Math.max(0, window.innerHeight - doc.clientHeight);
-
-  const verticalHit = viewportVerticalScrollbarWidth >= 4 && clientX >= doc.clientWidth - 2;
-  const horizontalHit = viewportHorizontalScrollbarHeight >= 4 && clientY >= doc.clientHeight - 2;
-
-  return verticalHit || horizontalHit;
-}
-
-function isScrollbarHit(event) {
-  if (!event || typeof event.clientX !== 'number' || typeof event.clientY !== 'number') return false;
-  if (isViewportScrollbarHit(event.clientX, event.clientY)) return true;
-
-  const path = typeof event.composedPath === 'function' ? event.composedPath() : [];
-  for (const node of path) {
-    if (getScrollbarHit(node, event.clientX, event.clientY)) return true;
-  }
-
-  let node = isElement(event.target) ? event.target : null;
-  while (node && node !== document.body && node !== document.documentElement) {
-    if (getScrollbarHit(node, event.clientX, event.clientY)) return true;
-    node = node.parentElement;
-  }
-
-  return false;
-}
 
 export default function PremiumCursor() {
   useEffect(() => {
@@ -360,6 +299,8 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
     let isOverScrollbar = false;
     let isScrollbarDragging = false;
     let lastModeTarget = null;
+    let lastScrollbarTarget = null;
+    let cachedOverScrollbarTarget = false;
 
     const lightPalette = {
       ring: 'rgba(13,148,136,0.94)',
@@ -503,7 +444,11 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
       targetY = event.clientY;
       activate();
 
-      const nextOverScrollbar = isElement(event.target) && Boolean(event.target.closest(CUSTOM_SCROLLBAR_SELECTOR));
+      if (event.target !== lastScrollbarTarget) {
+        lastScrollbarTarget = event.target;
+        cachedOverScrollbarTarget = isElement(event.target) && Boolean(event.target.closest(CUSTOM_SCROLLBAR_SELECTOR));
+      }
+      const nextOverScrollbar = cachedOverScrollbarTarget;
       const nextScrollbarDragging = document.documentElement.classList.contains('ki-custom-scrollbar-v367-dragging');
       if (nextOverScrollbar !== isOverScrollbar || nextScrollbarDragging !== isScrollbarDragging) {
         isOverScrollbar = nextOverScrollbar;

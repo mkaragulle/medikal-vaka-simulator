@@ -287,38 +287,6 @@ function compactText(value = '', limit = 150) {
 }
 
 
-
-const CASE_SEARCH_META_CACHE = new WeakMap();
-
-function getCaseSearchMeta(clinicalCase = {}) {
-  if (!clinicalCase || typeof clinicalCase !== 'object') {
-    return { titleText: '', keywordText: '', questionText: '', fullText: '' };
-  }
-  const cached = CASE_SEARCH_META_CACHE.get(clinicalCase);
-  if (cached) return cached;
-
-  const titleText = normalizeSearchText(getCaseSearchTitle(clinicalCase));
-  const keywordText = normalizeSearchText([
-    clinicalCase.keywords,
-    clinicalCase.searchKeywords,
-    clinicalCase.tags,
-    clinicalCase.learningTarget,
-    clinicalCase.clinicalFocus,
-    clinicalCase.relatedBranch,
-    clinicalCase.branchName,
-  ].flat(Infinity).filter(Boolean).join(' '));
-  const questionText = normalizeSearchText([
-    clinicalCase.question,
-    clinicalCase.stem,
-    clinicalCase.narrativeStem,
-    clinicalCase.diagnosis?.question,
-  ].filter(Boolean).join(' '));
-  const fullText = normalizeSearchText(collectCaseSearchText(clinicalCase).join(' '));
-  const meta = { titleText, keywordText, questionText, fullText };
-  CASE_SEARCH_META_CACHE.set(clinicalCase, meta);
-  return meta;
-}
-
 function normalizeSearchText(value = '') {
   return String(value || '')
     .toLocaleLowerCase('tr')
@@ -378,7 +346,18 @@ function getCaseSearchScore(clinicalCase = {}, rawQuery = '') {
   const tokens = query.split(' ').filter((token) => token.length > 1);
   if (!tokens.length) return 1;
 
-  const { titleText, keywordText, questionText, fullText } = getCaseSearchMeta(clinicalCase);
+  const titleText = normalizeSearchText(getCaseSearchTitle(clinicalCase));
+  const keywordText = normalizeSearchText([
+    clinicalCase.keywords,
+    clinicalCase.searchKeywords,
+    clinicalCase.tags,
+    clinicalCase.learningTarget,
+    clinicalCase.clinicalFocus,
+    clinicalCase.relatedBranch,
+    clinicalCase.branchName,
+  ].flat(Infinity).filter(Boolean).join(' '));
+  const questionText = normalizeSearchText([clinicalCase.question, clinicalCase.stem, clinicalCase.narrativeStem, clinicalCase.diagnosis?.question].filter(Boolean).join(' '));
+  const fullText = normalizeSearchText(collectCaseSearchText(clinicalCase).join(' '));
 
   if (!fullText) return 0;
   if (!tokens.every((token) => fullText.includes(token))) return 0;
@@ -404,6 +383,59 @@ function filterCasesBySearch(caseItems = [], query = '') {
     .filter((item) => item.score > 0)
     .sort((a, b) => (b.score - a.score) || (a.index - b.index))
     .map((item) => item.clinicalCase);
+}
+
+function buildCaseSearchIndex(caseItems = []) {
+  return caseItems.map((clinicalCase, index) => ({
+    clinicalCase,
+    index,
+    titleText: normalizeSearchText(getCaseSearchTitle(clinicalCase)),
+    keywordText: normalizeSearchText([
+      clinicalCase.keywords,
+      clinicalCase.searchKeywords,
+      clinicalCase.tags,
+      clinicalCase.learningTarget,
+      clinicalCase.clinicalFocus,
+      clinicalCase.relatedBranch,
+      clinicalCase.branchName,
+    ].flat(Infinity).filter(Boolean).join(' ')),
+    questionText: normalizeSearchText([
+      clinicalCase.question,
+      clinicalCase.stem,
+      clinicalCase.narrativeStem,
+      clinicalCase.diagnosis?.question,
+    ].filter(Boolean).join(' ')),
+    fullText: normalizeSearchText(collectCaseSearchText(clinicalCase).join(' ')),
+  }));
+}
+
+function getIndexedCaseSearchScore(entry = {}, normalizedQuery = '') {
+  if (!normalizedQuery) return 1;
+  const tokens = normalizedQuery.split(' ').filter((token) => token.length > 1);
+  if (!tokens.length) return 1;
+  if (!entry.fullText || !tokens.every((token) => entry.fullText.includes(token))) return 0;
+
+  let score = 10;
+  if (entry.titleText.includes(normalizedQuery)) score += 90;
+  if (entry.questionText.includes(normalizedQuery)) score += 70;
+  if (entry.keywordText.includes(normalizedQuery)) score += 60;
+  tokens.forEach((token) => {
+    if (entry.titleText.includes(token)) score += 18;
+    if (entry.keywordText.includes(token)) score += 14;
+    if (entry.questionText.includes(token)) score += 12;
+  });
+  return score;
+}
+
+function filterCaseSearchIndex(caseSearchIndex = [], query = '') {
+  const normalizedQuery = normalizeSearchText(query);
+  if (!normalizedQuery) return caseSearchIndex.map((entry) => entry.clinicalCase);
+
+  return caseSearchIndex
+    .map((entry) => ({ ...entry, score: getIndexedCaseSearchScore(entry, normalizedQuery) }))
+    .filter((entry) => entry.score > 0)
+    .sort((a, b) => (b.score - a.score) || (a.index - b.index))
+    .map((entry) => entry.clinicalCase);
 }
 
 function normalizeBranchDifficulty(value = '') {
@@ -497,7 +529,6 @@ function App() {
   const aiQuestionTimer = useRef(null);
   const latestAIQuestionRequestId = useRef(0);
   const isDemoUser = isDemoAccount(currentUser);
-  const deferredBottomCaseSearchQuery = useDeferredValue(bottomCaseSearchQuery);
 
   function clearAIQuestionTimer() {
     latestAIQuestionRequestId.current += 1;
@@ -545,14 +576,29 @@ function App() {
   );
 
   const activeBranchCasePool = filteredBranchCases.length ? filteredBranchCases : branchCases;
-  const activeBranchCaseIdSet = useMemo(() => new Set(activeBranchCasePool.map((clinicalCase) => clinicalCase.id)), [activeBranchCasePool]);
 
-  const searchedBranchCasePool = useMemo(
-    () => filterCasesBySearch(activeBranchCasePool, deferredBottomCaseSearchQuery),
-    [activeBranchCasePool, deferredBottomCaseSearchQuery],
+  const deferredBottomCaseSearchQuery = useDeferredValue(bottomCaseSearchQuery);
+  const normalizedDeferredBottomCaseSearchQuery = useMemo(
+    () => normalizeSearchText(deferredBottomCaseSearchQuery),
+    [deferredBottomCaseSearchQuery],
+  );
+  const activeBranchCaseIdSet = useMemo(
+    () => new Set(activeBranchCasePool.map((clinicalCase) => clinicalCase.id)),
+    [activeBranchCasePool],
+  );
+  const branchCaseSearchIndex = useMemo(
+    () => (normalizedDeferredBottomCaseSearchQuery ? buildCaseSearchIndex(activeBranchCasePool) : []),
+    [activeBranchCasePool, normalizedDeferredBottomCaseSearchQuery],
   );
 
-  const hasBottomCaseSearch = Boolean(normalizeSearchText(deferredBottomCaseSearchQuery));
+  const searchedBranchCasePool = useMemo(
+    () => (normalizedDeferredBottomCaseSearchQuery
+      ? filterCaseSearchIndex(branchCaseSearchIndex, normalizedDeferredBottomCaseSearchQuery)
+      : activeBranchCasePool),
+    [activeBranchCasePool, branchCaseSearchIndex, normalizedDeferredBottomCaseSearchQuery],
+  );
+
+  const hasBottomCaseSearch = useMemo(() => Boolean(normalizeSearchText(bottomCaseSearchQuery)), [bottomCaseSearchQuery]);
 
   const selectedCase = useMemo(() => {
     if (examState?.active) {
@@ -949,10 +995,10 @@ function App() {
       setSelectedCaseId(null);
       return;
     }
-    if (!activeBranchCaseIdSet.has(selectedCaseId)) {
+    if (!activeBranchCasePool.some((clinicalCase) => clinicalCase.id === selectedCaseId)) {
       setSelectedCaseId(activeBranchCasePool[0]?.id ?? null);
     }
-  }, [selectedBranchId, activeBranchCasePool, activeBranchCaseIdSet, selectedCaseId, visibleBranches]);
+  }, [selectedBranchId, activeBranchCasePool, selectedCaseId, visibleBranches]);
 
   useEffect(() => {
     if (!examState?.active) return undefined;

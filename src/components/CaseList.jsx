@@ -33,7 +33,7 @@ function getCaseListTitle(clinicalCase) {
   return 'TUS spot olgu';
 }
 
-const CaseListItem = memo(function CaseListItem({ clinicalCase, selected, solved, layout, onSelectCase }) {
+const CaseListItem = memo(function CaseListItem({ clinicalCase, selectedCaseId, solved, layout, onSelectCase }) {
   const difficultyMeta = getDifficultyMeta(clinicalCase.difficulty);
   const difficultyLabel = solved ? `${difficultyMeta.label}-Çözüldü` : difficultyMeta.label;
   const caseListTitle = getCaseListTitle(clinicalCase);
@@ -44,11 +44,11 @@ const CaseListItem = memo(function CaseListItem({ clinicalCase, selected, solved
       type="button"
       className={[
         layout === 'horizontal' ? 'case-list-item horizontal-case-card' : 'case-list-item',
-        selected ? 'active' : '',
+        clinicalCase.id === selectedCaseId ? 'active' : '',
         solved ? 'is-solved-case' : '',
       ].filter(Boolean).join(' ')}
       onClick={handleSelect}
-      aria-current={selected ? 'true' : undefined}
+      aria-current={clinicalCase.id === selectedCaseId ? 'true' : undefined}
     >
       <div className="case-list-topline">
         <small className="case-list-meta-text">{difficultyMeta.points} puan</small>
@@ -100,7 +100,7 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
         <CaseListItem
           key={clinicalCase.id}
           clinicalCase={clinicalCase}
-          selected={clinicalCase.id === selectedCaseId}
+          selectedCaseId={selectedCaseId}
           solved={isSolvedCase(solvedCaseIds, clinicalCase.id)}
           layout={layout}
           onSelectCase={onSelectCase}
