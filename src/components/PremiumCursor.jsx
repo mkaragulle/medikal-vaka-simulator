@@ -514,7 +514,7 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
       targetY = event.clientY;
       activate();
 
-      const nextOverScrollbar = resolveCustomScrollbarHover(event.target);
+      const nextOverScrollbar = resolveCustomScrollbarHover(event.target) || isScrollbarHit(event);
       const nextScrollbarDragging = document.documentElement.classList.contains('ki-custom-scrollbar-v367-dragging');
       if (nextOverScrollbar !== isOverScrollbar || nextScrollbarDragging !== isScrollbarDragging) {
         isOverScrollbar = nextOverScrollbar;
@@ -565,7 +565,7 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
     const down = (event) => {
       if (event?.pointerType && event.pointerType !== 'mouse') return;
 
-      isOverScrollbar = resolveCustomScrollbarHover(event?.target);
+      isOverScrollbar = resolveCustomScrollbarHover(event?.target) || isScrollbarHit(event);
       isScrollbarDragging = document.documentElement.classList.contains('ki-custom-scrollbar-v367-dragging');
       isPressed = true;
       setPointerVisual();

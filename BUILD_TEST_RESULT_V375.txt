@@ -1,12 +1,23 @@
-KlinikIQ V375 build test result
+Build/test result for KlinikIQ V375 Other Cases Scrollbar Instant Fix
 
-Command:
-npm run build
+Modified files:
+- src/components/CaseList.jsx
+- src/components/KlinikIQCustomScrollbars.jsx
+- src/components/PremiumCursor.jsx
+- src/index.css
 
-Result:
-SUCCESS
+Validation performed in sandbox:
+- TypeScript parser syntax check passed for:
+  - src/components/CaseList.jsx
+  - src/components/KlinikIQCustomScrollbars.jsx
+  - src/components/PremiumCursor.jsx
+  - src/App.jsx
 
-Notes:
-- Vite build completed successfully.
-- Large chunk warnings for case-bank and GlossaryTooltip are expected because clinical/glossary data were not removed or shortened.
-- node_modules and dist are excluded from the final GitHub-safe zip.
+Full Vite production build:
+- Not completed in this sandbox because node_modules are intentionally excluded from the uploaded GitHub-safe zip, Vite was not installed, and npm install timed out in the sandbox environment.
+- The source-level JSX/JS syntax of all modified components was checked successfully.
+
+Recommended local verification after unzip:
+1. npm install --prefer-offline --no-audit --no-fund --progress=false --package-lock=false
+2. npm run build
+3. Open a clinical branch case, scroll to "Diğer olgular", switch/search cases, and verify the horizontal scrollbar appears immediately.

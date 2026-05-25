@@ -1,0 +1,28 @@
+KlinikIQ V375 — "Diğer olgular" scrollbar instant-load fix
+
+Problem:
+- "Diğer olgular" horizontal case rail sometimes showed its scrollbar late.
+- The project globally hides native scrollbars and draws custom overlay scrollbars after DOM scans.
+- The bottom case rail was also affected by deferred layout rules such as content-visibility:auto, so its scroll metrics could become available later than the visible UI.
+
+Changes:
+1. src/components/CaseList.jsx
+   - Horizontal CaseList now marks the rail with data-native-scrollbar="horizontal" and data-scroll-container="true".
+   - On horizontal list mount/update, the component resets scrollLeft and dispatches klinikiq:scrollbars-refresh immediately and again on the next animation frame.
+
+2. src/components/KlinikIQCustomScrollbars.jsx
+   - Added a data-native-scrollbar escape hatch so targeted elements can keep a lightweight native scrollbar even while global custom scrollbars are active.
+   - Custom overlay scrollbar scanning now skips data-native-scrollbar elements to prevent duplicate overlay/native scrollbars.
+   - Added a manual refresh event listener for klinikiq:scrollbars-refresh.
+   - Prioritized horizontal case lists in candidate ordering for safer refresh behavior in future list variants.
+
+3. src/components/PremiumCursor.jsx
+   - Native scrollbar gutter hits are now detected by the cursor layer, preventing the custom cursor from treating scrollbar dragging like normal card interaction.
+
+4. src/index.css
+   - Disabled deferred content-visibility only for the "Diğer olgular" browser/list/cards.
+   - Forced the bottom horizontal rail to use an immediately visible, thin, theme-compatible native horizontal scrollbar.
+   - Preserved the existing premium styling and scroll performance guardrails elsewhere.
+
+Scope:
+- TUS/Komite prompts, question data, AI routes, Firebase/auth, glossary data, branch cases, answer logic, and scoring logic were not changed.

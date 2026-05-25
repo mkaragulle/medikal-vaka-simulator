@@ -2,13 +2,6 @@ import { memo, useCallback, useLayoutEffect, useMemo, useRef } from 'react';
 import { getDifficultyMeta } from '../utils/scoring.js';
 import { Icon } from './ui.jsx';
 
-const SCROLLBAR_REFRESH_EVENT = 'klinikiq:scrollbars-refresh';
-
-function requestScrollbarRefresh(target, reason = 'case-list') {
-  if (typeof window === 'undefined' || !target) return;
-  window.dispatchEvent(new CustomEvent(SCROLLBAR_REFRESH_EVENT, { detail: { target, reason } }));
-}
-
 function isSolvedCase(solvedCaseIds, caseId) {
   if (!caseId || !solvedCaseIds) return false;
   if (solvedCaseIds instanceof Set) return solvedCaseIds.has(caseId);
@@ -81,39 +74,35 @@ function getSolvedCount(cases = [], solvedCaseIds = new Set()) {
 
 function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', solvedCaseIds = new Set() }) {
   const listRef = useRef(null);
+  const isHorizontal = layout === 'horizontal';
   const horizontalResetKey = useMemo(() => {
-    if (layout !== 'horizontal') return '';
+    if (!isHorizontal) return '';
     const firstId = cases[0]?.id || '';
     const lastId = cases[cases.length - 1]?.id || '';
     return `${cases.length}:${firstId}:${lastId}:${getSolvedCount(cases, solvedCaseIds)}`;
-  }, [cases, layout, solvedCaseIds]);
+  }, [cases, isHorizontal, solvedCaseIds]);
 
   useLayoutEffect(() => {
-    if (layout !== 'horizontal') return undefined;
+    if (!isHorizontal) return undefined;
     const listNode = listRef.current;
     if (!listNode) return undefined;
 
+    const requestScrollbarRefresh = () => {
+      window.dispatchEvent(new CustomEvent('klinikiq:scrollbars-refresh', {
+        detail: { source: 'case-list-horizontal' },
+      }));
+    };
+
     listNode.scrollLeft = 0;
-    requestScrollbarRefresh(listNode, 'horizontal-case-list-mounted');
+    requestScrollbarRefresh();
 
     const frameId = window.requestAnimationFrame(() => {
-      const currentList = listRef.current;
-      if (!currentList) return;
-      currentList.scrollLeft = 0;
-      requestScrollbarRefresh(currentList, 'horizontal-case-list-after-layout');
+      if (listRef.current) listRef.current.scrollLeft = 0;
+      requestScrollbarRefresh();
     });
 
-    const settleTimer = window.setTimeout(() => {
-      if (listRef.current) requestScrollbarRefresh(listRef.current, 'horizontal-case-list-settled');
-    }, 80);
-
-    return () => {
-      window.cancelAnimationFrame(frameId);
-      window.clearTimeout(settleTimer);
-    };
-  }, [horizontalResetKey, layout]);
-
-  const isHorizontal = layout === 'horizontal';
+    return () => window.cancelAnimationFrame(frameId);
+  }, [horizontalResetKey, isHorizontal]);
 
   return (
     <div
@@ -121,8 +110,7 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
       className={isHorizontal ? 'case-list horizontal-case-list' : 'case-list'}
       aria-label="Olgu listesi"
       data-scroll-container={isHorizontal ? 'true' : undefined}
-      data-scrollable={isHorizontal ? 'true' : undefined}
-      data-ki-scroll-priority={isHorizontal ? 'other-cases' : undefined}
+      data-native-scrollbar={isHorizontal ? 'horizontal' : undefined}
     >
       {cases.map((clinicalCase) => (
         <CaseListItem
