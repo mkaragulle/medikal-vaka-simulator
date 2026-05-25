@@ -46,6 +46,8 @@ const LOADING_TARGET_SELECTOR = [
   '.ai-generation-loading',
 ].join(', ');
 
+const NATIVE_CURSOR_STYLE_ID = 'klinikiq-premium-cursor-native-hide';
+
 function matchesMedia(query) {
   if (typeof window === 'undefined' || !window.matchMedia) return false;
   try {
@@ -58,14 +60,16 @@ function matchesMedia(query) {
 function canUsePremiumCursor() {
   if (typeof window === 'undefined') return false;
 
+  const ua = window.navigator?.userAgent || '';
+  const isMobileUA = /Mobi|Android|iPhone|iPad|iPod/i.test(ua);
   const hasFinePointer = matchesMedia('(any-pointer: fine)') || matchesMedia('(pointer: fine)');
   const hasHover = matchesMedia('(any-hover: hover)') || matchesMedia('(hover: hover)');
-  const looksLikeDesktop = window.innerWidth >= 768 && !/Mobi|Android|iPhone|iPad|iPod/i.test(window.navigator?.userAgent || '');
+  const looksLikeDesktop = window.innerWidth >= 900 && !isMobileUA;
 
   return (hasFinePointer && hasHover) || looksLikeDesktop;
 }
 
-function resolveCursorMode(target) {
+function closestMode(target) {
   if (!target || !(target instanceof Element)) return 'default';
   if (document.body?.classList.contains('cursor-loading')) return 'loading';
   if (target.closest(TEXT_TARGET_SELECTOR)) return 'text';
@@ -75,14 +79,63 @@ function resolveCursorMode(target) {
   return 'default';
 }
 
+function injectNativeCursorStyle() {
+  if (typeof document === 'undefined') return null;
+  const existing = document.getElementById(NATIVE_CURSOR_STYLE_ID);
+  if (existing) return existing;
+
+  const style = document.createElement('style');
+  style.id = NATIVE_CURSOR_STYLE_ID;
+  style.textContent = `
+html.ki-premium-cursor-on.ki-premium-cursor-on,
+html.ki-premium-cursor-on.ki-premium-cursor-on body,
+html.ki-premium-cursor-on.ki-premium-cursor-on body *:not(input):not(textarea):not(select):not([contenteditable='true']):not([contenteditable='']) {
+  cursor: none !important;
+}
+html.ki-premium-cursor-on.ki-premium-cursor-on .glossary-term,
+html.ki-premium-cursor-on.ki-premium-cursor-on .smart-glossary-term,
+html.ki-premium-cursor-on.ki-premium-cursor-on .glossary-word,
+html.ki-premium-cursor-on.ki-premium-cursor-on .nested-glossary-term,
+html.ki-premium-cursor-on.ki-premium-cursor-on [data-glossary-entry-id],
+html.ki-premium-cursor-on.ki-premium-cursor-on [data-cursor='glossary'],
+html.ki-premium-cursor-on.ki-premium-cursor-on [data-cursor='interactive'] {
+  cursor: none !important;
+}
+html.ki-premium-cursor-on.ki-premium-cursor-on input,
+html.ki-premium-cursor-on.ki-premium-cursor-on textarea,
+html.ki-premium-cursor-on.ki-premium-cursor-on select,
+html.ki-premium-cursor-on.ki-premium-cursor-on [contenteditable='true'],
+html.ki-premium-cursor-on.ki-premium-cursor-on [contenteditable=''] {
+  cursor: text !important;
+}
+@media (max-width: 767px), (pointer: coarse) {
+  html.ki-premium-cursor-on.ki-premium-cursor-on,
+  html.ki-premium-cursor-on.ki-premium-cursor-on body,
+  html.ki-premium-cursor-on.ki-premium-cursor-on body * {
+    cursor: auto !important;
+  }
+}
+`;
+  document.head.appendChild(style);
+  return style;
+}
+
+function setModeClass(node, previousMode, nextMode) {
+  if (!node || previousMode === nextMode) return previousMode;
+  node.classList.remove(`premium-cursor--${previousMode}`);
+  node.classList.add(`premium-cursor--${nextMode}`);
+  node.setAttribute('data-mode', nextMode);
+  return nextMode;
+}
+
 export default function PremiumCursor() {
   const cursorRef = useRef(null);
   const rafRef = useRef(null);
-  const lastPointRef = useRef({ x: -120, y: -120 });
-  const lastModeRef = useRef('default');
+  const pointRef = useRef({ x: -160, y: -160 });
+  const targetRef = useRef(null);
+  const modeRef = useRef('default');
+  const visibleRef = useRef(false);
   const [enabled, setEnabled] = useState(false);
-  const [visible, setVisible] = useState(false);
-  const [mode, setMode] = useState('default');
 
   useEffect(() => {
     const updateCapability = () => setEnabled(canUsePremiumCursor());
@@ -102,64 +155,78 @@ export default function PremiumCursor() {
 
   useEffect(() => {
     const root = document.documentElement;
-    if (!enabled) {
-      root.classList.remove('premium-cursor-enabled', 'premium-cursor-pressed');
-      setVisible(false);
+    const node = cursorRef.current;
+
+    if (!enabled || !node) {
+      root.classList.remove('ki-premium-cursor-on', 'premium-cursor-enabled', 'ki-premium-cursor-pressed', 'premium-cursor-pressed');
       return undefined;
     }
 
-    root.classList.add('premium-cursor-enabled');
+    injectNativeCursorStyle();
+    root.classList.add('ki-premium-cursor-on', 'premium-cursor-enabled');
+    node.classList.add('premium-cursor--default');
+    node.setAttribute('data-mode', 'default');
 
-    const moveCursor = () => {
+    const renderCursor = () => {
       rafRef.current = null;
-      const node = cursorRef.current;
-      if (!node) return;
-      const { x, y } = lastPointRef.current;
-      node.style.setProperty('--premium-cursor-x', `${x}px`);
-      node.style.setProperty('--premium-cursor-y', `${y}px`);
+      const cursor = cursorRef.current;
+      if (!cursor) return;
+
+      const { x, y } = pointRef.current;
+      cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate3d(-50%, -50%, 0)`;
+
+      const nextMode = closestMode(targetRef.current);
+      modeRef.current = setModeClass(cursor, modeRef.current, nextMode);
     };
 
-    const scheduleMove = () => {
+    const requestRender = () => {
       if (rafRef.current) return;
-      rafRef.current = window.requestAnimationFrame(moveCursor);
+      rafRef.current = window.requestAnimationFrame(renderCursor);
+    };
+
+    const showCursor = () => {
+      if (visibleRef.current) return;
+      visibleRef.current = true;
+      cursorRef.current?.classList.add('is-visible');
+    };
+
+    const hideCursor = () => {
+      if (!visibleRef.current) return;
+      visibleRef.current = false;
+      cursorRef.current?.classList.remove('is-visible');
     };
 
     const handleMove = (event) => {
       if ('pointerType' in event && event.pointerType && event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
-      lastPointRef.current = { x: event.clientX, y: event.clientY };
-      setVisible(true);
-      const nextMode = resolveCursorMode(event.target);
-      if (lastModeRef.current !== nextMode) {
-        lastModeRef.current = nextMode;
-        setMode(nextMode);
-      }
-      scheduleMove();
+      pointRef.current.x = event.clientX;
+      pointRef.current.y = event.clientY;
+      targetRef.current = event.target;
+      showCursor();
+      requestRender();
     };
 
-    const handleDown = () => root.classList.add('premium-cursor-pressed');
-    const handleUp = () => root.classList.remove('premium-cursor-pressed');
-    const handleLeave = () => setVisible(false);
-    const handleEnter = () => setVisible(true);
+    const handleDown = () => root.classList.add('ki-premium-cursor-pressed', 'premium-cursor-pressed');
+    const handleUp = () => root.classList.remove('ki-premium-cursor-pressed', 'premium-cursor-pressed');
 
-    window.addEventListener('pointermove', handleMove, { passive: true });
-    window.addEventListener('mousemove', handleMove, { passive: true });
-    window.addEventListener('pointerdown', handleDown, { passive: true });
-    window.addEventListener('mousedown', handleDown, { passive: true });
-    window.addEventListener('pointerup', handleUp, { passive: true });
-    window.addEventListener('mouseup', handleUp, { passive: true });
-    document.addEventListener('mouseleave', handleLeave);
-    document.addEventListener('mouseenter', handleEnter);
+    const moveEvent = window.PointerEvent ? 'pointermove' : 'mousemove';
+    const downEvent = window.PointerEvent ? 'pointerdown' : 'mousedown';
+    const upEvent = window.PointerEvent ? 'pointerup' : 'mouseup';
+
+    window.addEventListener(moveEvent, handleMove, { passive: true });
+    window.addEventListener(downEvent, handleDown, { passive: true });
+    window.addEventListener(upEvent, handleUp, { passive: true });
+    document.addEventListener('mouseleave', hideCursor);
+    document.addEventListener('mouseenter', showCursor);
+    window.addEventListener('blur', hideCursor);
 
     return () => {
-      root.classList.remove('premium-cursor-enabled', 'premium-cursor-pressed');
-      window.removeEventListener('pointermove', handleMove);
-      window.removeEventListener('mousemove', handleMove);
-      window.removeEventListener('pointerdown', handleDown);
-      window.removeEventListener('mousedown', handleDown);
-      window.removeEventListener('pointerup', handleUp);
-      window.removeEventListener('mouseup', handleUp);
-      document.removeEventListener('mouseleave', handleLeave);
-      document.removeEventListener('mouseenter', handleEnter);
+      root.classList.remove('ki-premium-cursor-on', 'premium-cursor-enabled', 'ki-premium-cursor-pressed', 'premium-cursor-pressed');
+      window.removeEventListener(moveEvent, handleMove);
+      window.removeEventListener(downEvent, handleDown);
+      window.removeEventListener(upEvent, handleUp);
+      document.removeEventListener('mouseleave', hideCursor);
+      document.removeEventListener('mouseenter', showCursor);
+      window.removeEventListener('blur', hideCursor);
       if (rafRef.current) window.cancelAnimationFrame(rafRef.current);
     };
   }, [enabled]);
@@ -167,13 +234,12 @@ export default function PremiumCursor() {
   if (!enabled) return null;
 
   return (
-    <div
-      ref={cursorRef}
-      className={['premium-cursor', `premium-cursor--${mode}`, visible ? 'is-visible' : ''].filter(Boolean).join(' ')}
-      aria-hidden="true"
-    >
+    <div ref={cursorRef} className="premium-cursor" aria-hidden="true">
+      <span className="premium-cursor-aura" />
       <span className="premium-cursor-ring" />
-      <span className="premium-cursor-dot" />
+      <span className="premium-cursor-core" />
+      <span className="premium-cursor-cross premium-cursor-cross--x" />
+      <span className="premium-cursor-cross premium-cursor-cross--y" />
       <span className="premium-cursor-info">i</span>
       <span className="premium-cursor-loader" />
     </div>
