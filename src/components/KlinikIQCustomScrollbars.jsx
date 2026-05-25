@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
 
-const ROOT_CLASS = 'ki-custom-scrollbars-v366-on';
-const DRAGGING_CLASS = 'ki-custom-scrollbar-v366-dragging';
-const STYLE_ID = 'ki-custom-scrollbars-v366-style';
-const ROOT_ATTR = 'data-ki-custom-scrollbars-v366-root';
-const TRACK_ATTR = 'data-ki-custom-scrollbar-v366-track';
-const THUMB_ATTR = 'data-ki-custom-scrollbar-v366-thumb';
+const ROOT_CLASS = 'ki-custom-scrollbars-v367-on';
+const DRAGGING_CLASS = 'ki-custom-scrollbar-v367-dragging';
+const STYLE_ID = 'ki-custom-scrollbars-v367-style';
+const ROOT_ATTR = 'data-ki-custom-scrollbars-v367-root';
+const TRACK_ATTR = 'data-ki-custom-scrollbar-v367-track';
+const THUMB_ATTR = 'data-ki-custom-scrollbar-v367-thumb';
 const MAX_TRACKED_ELEMENTS = 72;
-const TRACK_SIZE = 8;
-const THUMB_SIZE = 6;
-const MIN_THUMB = 26;
-const EDGE_INSET = 4;
+const TRACK_SIZE = 6;
+const THUMB_SIZE = 3.5;
+const MIN_THUMB = 24;
+const EDGE_INSET = 5;
 
 const TOP_LAYER_SELECTOR = [
   '#klinikiq-tooltip-layer',
@@ -86,6 +86,7 @@ const LEGACY_STYLE_IDS = [
   'ki-custom-scrollbars-v364-style',
   'ki-custom-scrollbars-v365-style',
   'ki-custom-scrollbars-v366-style',
+  'ki-custom-scrollbars-v367-style',
 ];
 
 const LEGACY_ROOT_SELECTORS = [
@@ -93,6 +94,8 @@ const LEGACY_ROOT_SELECTORS = [
   '[data-ki-custom-scrollbars-v365-root="true"]',
   '[data-ki-custom-scrollbars-v366-root]',
   '[data-ki-custom-scrollbars-v366-root="true"]',
+  '[data-ki-custom-scrollbars-v367-root]',
+  '[data-ki-custom-scrollbars-v367-root="true"]',
 ].join(', ');
 
 const LEGACY_CLASSES = [
@@ -102,6 +105,8 @@ const LEGACY_CLASSES = [
   'ki-custom-scrollbar-v365-dragging',
   'ki-custom-scrollbars-v366-on',
   'ki-custom-scrollbar-v366-dragging',
+  'ki-custom-scrollbars-v367-on',
+  'ki-custom-scrollbar-v367-dragging',
 ];
 
 function isHTMLElement(value) {
@@ -223,12 +228,12 @@ function createScrollbarNode(axis) {
   const track = document.createElement('div');
   track.setAttribute(TRACK_ATTR, axis);
   track.setAttribute('data-cursor', 'interactive');
-  track.className = `ki-custom-scrollbar-v366-track ki-custom-scrollbar-v366-track-${axis}`;
+  track.className = `ki-custom-scrollbar-v367-track ki-custom-scrollbar-v367-track-${axis}`;
 
   const thumb = document.createElement('div');
   thumb.setAttribute(THUMB_ATTR, axis);
   thumb.setAttribute('data-cursor', 'interactive');
-  thumb.className = `ki-custom-scrollbar-v366-thumb ki-custom-scrollbar-v366-thumb-${axis}`;
+  thumb.className = `ki-custom-scrollbar-v367-thumb ki-custom-scrollbar-v367-thumb-${axis}`;
 
   track.appendChild(thumb);
   return { track, thumb };
@@ -267,9 +272,9 @@ html.${ROOT_CLASS} *::-webkit-scrollbar {
   pointer-events: none !important;
   contain: layout style paint;
   color-scheme: light dark;
-  --ki-scrollbar-thumb-idle: rgba(13, 148, 136, 0.34);
-  --ki-scrollbar-thumb-active: rgba(13, 148, 136, 0.72);
-  --ki-scrollbar-track-active: rgba(13, 148, 136, 0.08);
+  --ki-scrollbar-thumb-idle: rgba(15, 118, 110, 0.20);
+  --ki-scrollbar-thumb-active: rgba(15, 118, 110, 0.44);
+  --ki-scrollbar-track-active: rgba(15, 118, 110, 0.035);
 }
 
 [${ROOT_ATTR}="base"] {
@@ -281,12 +286,12 @@ html.${ROOT_CLASS} *::-webkit-scrollbar {
 }
 
 [${ROOT_ATTR}].is-dark {
-  --ki-scrollbar-thumb-idle: rgba(94, 234, 212, 0.36);
-  --ki-scrollbar-thumb-active: rgba(153, 246, 228, 0.78);
-  --ki-scrollbar-track-active: rgba(94, 234, 212, 0.10);
+  --ki-scrollbar-thumb-idle: rgba(125, 211, 200, 0.24);
+  --ki-scrollbar-thumb-active: rgba(153, 246, 228, 0.50);
+  --ki-scrollbar-track-active: rgba(125, 211, 200, 0.045);
 }
 
-.ki-custom-scrollbar-v366-track {
+.ki-custom-scrollbar-v367-track {
   position: fixed !important;
   pointer-events: auto !important;
   border-radius: 999px !important;
@@ -295,50 +300,50 @@ html.${ROOT_CLASS} *::-webkit-scrollbar {
   user-select: none !important;
   touch-action: none !important;
   cursor: none !important;
-  transition: background-color 80ms linear;
+  transition: background-color 90ms linear, opacity 90ms linear;
   will-change: transform, width, height;
 }
 
-.ki-custom-scrollbar-v366-track:hover,
-.ki-custom-scrollbar-v366-track.is-active,
-.ki-custom-scrollbar-v366-track.is-dragging {
+.ki-custom-scrollbar-v367-track:hover,
+.ki-custom-scrollbar-v367-track.is-active,
+.ki-custom-scrollbar-v367-track.is-dragging {
   background: var(--ki-scrollbar-track-active) !important;
 }
 
-.ki-custom-scrollbar-v366-track-y {
+.ki-custom-scrollbar-v367-track-y {
   width: ${TRACK_SIZE}px !important;
   min-height: 28px !important;
 }
 
-.ki-custom-scrollbar-v366-track-x {
+.ki-custom-scrollbar-v367-track-x {
   height: ${TRACK_SIZE}px !important;
   min-width: 28px !important;
 }
 
-.ki-custom-scrollbar-v366-thumb {
+.ki-custom-scrollbar-v367-thumb {
   position: absolute !important;
   border-radius: 999px !important;
   background: var(--ki-scrollbar-thumb-idle) !important;
   box-shadow: none !important;
   cursor: none !important;
-  transition: background-color 80ms linear;
+  transition: background-color 90ms linear, opacity 90ms linear;
   will-change: transform, width, height;
 }
 
-.ki-custom-scrollbar-v366-track:hover .ki-custom-scrollbar-v366-thumb,
-.ki-custom-scrollbar-v366-track.is-active .ki-custom-scrollbar-v366-thumb,
-.ki-custom-scrollbar-v366-track.is-dragging .ki-custom-scrollbar-v366-thumb {
+.ki-custom-scrollbar-v367-track:hover .ki-custom-scrollbar-v367-thumb,
+.ki-custom-scrollbar-v367-track.is-active .ki-custom-scrollbar-v367-thumb,
+.ki-custom-scrollbar-v367-track.is-dragging .ki-custom-scrollbar-v367-thumb {
   background: var(--ki-scrollbar-thumb-active) !important;
 }
 
-.ki-custom-scrollbar-v366-thumb-y {
-  left: 1px !important;
+.ki-custom-scrollbar-v367-thumb-y {
+  left: 1.25px !important;
   width: ${THUMB_SIZE}px !important;
   min-height: ${MIN_THUMB}px !important;
 }
 
-.ki-custom-scrollbar-v366-thumb-x {
-  top: 1px !important;
+.ki-custom-scrollbar-v367-thumb-x {
+  top: 1.25px !important;
   height: ${THUMB_SIZE}px !important;
   min-width: ${MIN_THUMB}px !important;
 }
@@ -431,7 +436,7 @@ html.${DRAGGING_CLASS} * {
         track.style.width = `${TRACK_SIZE}px`;
         track.style.height = `${trackHeight}px`;
         thumb.style.transform = `translate3d(0, ${thumbTop}px, 0)`;
-        thumb.style.left = '1px';
+        thumb.style.left = '1.25px';
         thumb.style.top = '0px';
         thumb.style.width = `${THUMB_SIZE}px`;
         thumb.style.height = `${thumbHeight}px`;
@@ -464,7 +469,7 @@ html.${DRAGGING_CLASS} * {
         track.style.height = `${TRACK_SIZE}px`;
         thumb.style.transform = `translate3d(${thumbLeft}px, 0, 0)`;
         thumb.style.left = '0px';
-        thumb.style.top = '1px';
+        thumb.style.top = '1.25px';
         thumb.style.width = `${thumbWidth}px`;
         thumb.style.height = `${THUMB_SIZE}px`;
         entry.trackStart = visibleLeft;
