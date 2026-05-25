@@ -51122,14 +51122,13 @@ body:not(.klinikiq-auth-lock) .exam-active-shell.timed-exam-shell .tus-spot-bank
   }
 }
 
-/* V348 — Premium cursor companion fix
-   - Native OS cursor stays visible everywhere
-   - Premium cursor remains a lightweight visual companion
-   - No cursor:none rules, so no disappearing native pointer
-*/
+/* V348 — Premium KlinikIQ Cursor System / Clean Redesign
+   A lighter “clinical precision lens” cursor. The DOM is moved only via
+   requestAnimationFrame in PremiumCursor.jsx; no React state updates happen
+   during pointer movement. */
 html.ki-premium-cursor-on,
 html.ki-premium-cursor-on body {
-  cursor: auto !important;
+  cursor: none !important;
 }
 
 html.ki-premium-cursor-on input,
@@ -51140,121 +51139,61 @@ html.ki-premium-cursor-on [contenteditable=''] {
   cursor: text !important;
 }
 
-html.ki-premium-cursor-on a[href],
-html.ki-premium-cursor-on button:not(:disabled),
-html.ki-premium-cursor-on [role='button'],
-html.ki-premium-cursor-on .btn,
-html.ki-premium-cursor-on .case-card,
-html.ki-premium-cursor-on .branch-card,
-html.ki-premium-cursor-on .option-card,
-html.ki-premium-cursor-on .visual-help-toggle,
-html.ki-premium-cursor-on .premium-visual-help-toggle,
-html.ki-premium-cursor-on .result-image-link,
-html.ki-premium-cursor-on [data-cursor='interactive'] {
-  cursor: pointer !important;
-}
+.ki-cursor,
+.premium-cursor.ki-cursor {
+  --ki-cursor-size: 25px;
+  --ki-cursor-accent: #14b8a6;
+  --ki-cursor-accent-2: #0ea5e9;
+  --ki-cursor-core: #0f766e;
+  --ki-cursor-ring: rgba(20, 184, 166, .74);
+  --ki-cursor-glow: rgba(20, 184, 166, .18);
 
-html.ki-premium-cursor-on .glossary-term,
-html.ki-premium-cursor-on .smart-glossary-term,
-html.ki-premium-cursor-on .glossary-word,
-html.ki-premium-cursor-on .nested-glossary-term,
-html.ki-premium-cursor-on [data-glossary-entry-id],
-html.ki-premium-cursor-on [data-cursor='glossary'] {
-  cursor: help !important;
-}
-
-html.ki-premium-cursor-on .loading,
-html.ki-premium-cursor-on .is-loading,
-html.ki-premium-cursor-on [aria-busy='true'],
-html.ki-premium-cursor-on [data-loading='true'] {
-  cursor: wait !important;
-}
-
-.premium-cursor {
-  --ki-cursor-size: 26px;
-  --ki-cursor-ring: rgba(15, 118, 110, 0.86);
-  --ki-cursor-core: rgba(13, 148, 136, 0.96);
-  --ki-cursor-soft: rgba(45, 212, 191, 0.18);
-  --ki-cursor-bg: rgba(240, 253, 250, 0.22);
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 2147483647;
   width: var(--ki-cursor-size);
   height: var(--ki-cursor-size);
-  transform: translate3d(-160px, -160px, 0) translate3d(-50%, -50%, 0);
-  z-index: 2147483647;
-  pointer-events: none;
   opacity: 0;
-  contain: layout style paint;
-  isolation: isolate;
-  transition:
-    opacity 90ms ease,
-    width 150ms cubic-bezier(0.22, 1, 0.36, 1),
-    height 150ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  contain: layout paint style;
   will-change: transform, opacity;
+  transition: opacity 110ms ease, width 130ms ease, height 130ms ease;
+  mix-blend-mode: normal;
 }
 
-.premium-cursor.is-visible {
+.ki-cursor.is-visible {
   opacity: 1;
 }
 
-.premium-cursor-aura,
-.premium-cursor-ring,
-.premium-cursor-core,
-.premium-cursor-cross,
-.premium-cursor-info,
-.premium-cursor-loader {
+.ki-cursor > span {
   position: absolute;
-  display: block;
   pointer-events: none;
 }
 
-.premium-cursor-aura {
-  inset: -5px;
+.ki-cursor-glow {
+  inset: -7px;
   border-radius: 999px;
-  background: radial-gradient(circle, var(--ki-cursor-soft), transparent 62%);
-  opacity: .78;
-  transform: scale(.72);
-  transition: transform 150ms ease, opacity 150ms ease;
+  background: radial-gradient(circle, var(--ki-cursor-glow) 0%, transparent 68%);
+  opacity: .62;
+  transform: scale(.88);
+  transition: opacity 130ms ease, transform 130ms ease;
 }
 
-.premium-cursor-ring {
+.ki-cursor-lens {
   inset: 0;
   border-radius: 999px;
   border: 1.4px solid var(--ki-cursor-ring);
   background:
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, .24), transparent 54%),
-    var(--ki-cursor-bg);
+    radial-gradient(circle at 35% 28%, rgba(255, 255, 255, .36), transparent 24%),
+    radial-gradient(circle, rgba(255, 255, 255, .06), transparent 64%);
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, .26) inset,
-    0 0 18px rgba(20, 184, 166, .16);
+    0 0 0 1px rgba(255, 255, 255, .16) inset,
+    0 0 10px rgba(20, 184, 166, .10);
+  transition: border-color 130ms ease, box-shadow 130ms ease, background 130ms ease;
 }
 
-.premium-cursor-ring::before,
-.premium-cursor-ring::after {
-  content: '';
-  position: absolute;
-  width: 5px;
-  height: 1.4px;
-  border-radius: 99px;
-  background: var(--ki-cursor-ring);
-  opacity: 0;
-  transition: opacity 120ms ease, transform 120ms ease;
-}
-
-.premium-cursor-ring::before {
-  right: -3px;
-  top: 50%;
-  transform: translateY(-50%) scaleX(.6);
-}
-
-.premium-cursor-ring::after {
-  left: -3px;
-  top: 50%;
-  transform: translateY(-50%) scaleX(.6);
-}
-
-.premium-cursor-core {
+.ki-cursor-dot {
   left: 50%;
   top: 50%;
   width: 4px;
@@ -51262,161 +51201,194 @@ html.ki-premium-cursor-on [data-loading='true'] {
   margin: -2px 0 0 -2px;
   border-radius: 999px;
   background: var(--ki-cursor-core);
-  box-shadow: 0 0 10px rgba(20, 184, 166, .42);
-  transition: transform 140ms ease, opacity 120ms ease, width 140ms ease, height 140ms ease, margin 140ms ease;
+  box-shadow: 0 0 8px rgba(20, 184, 166, .36);
+  transition: opacity 120ms ease, transform 130ms ease, width 130ms ease, height 130ms ease, margin 130ms ease;
 }
 
-.premium-cursor-cross {
-  left: 50%;
-  top: 50%;
+.ki-cursor-notch {
   background: var(--ki-cursor-ring);
   border-radius: 999px;
   opacity: 0;
-  transform: translate(-50%, -50%) scale(.6);
-  transition: opacity 120ms ease, transform 120ms ease;
+  transition: opacity 120ms ease, transform 130ms ease;
 }
 
-.premium-cursor-cross--x {
-  width: 10px;
-  height: 1px;
+.ki-cursor-notch--top,
+.ki-cursor-notch--bottom {
+  left: 50%;
+  width: 1.5px;
+  height: 5px;
+  margin-left: -.75px;
 }
 
-.premium-cursor-cross--y {
-  width: 1px;
-  height: 10px;
+.ki-cursor-notch--top {
+  top: -1px;
+  transform: translateY(-2px);
 }
 
-.premium-cursor-info {
+.ki-cursor-notch--bottom {
+  bottom: -1px;
+  transform: translateY(2px);
+}
+
+.ki-cursor-notch--left,
+.ki-cursor-notch--right {
+  top: 50%;
+  width: 5px;
+  height: 1.5px;
+  margin-top: -.75px;
+}
+
+.ki-cursor-notch--left {
+  left: -1px;
+  transform: translateX(-2px);
+}
+
+.ki-cursor-notch--right {
+  right: -1px;
+  transform: translateX(2px);
+}
+
+.ki-cursor-info {
   left: 50%;
   top: 50%;
   width: 15px;
   height: 15px;
   margin: -7.5px 0 0 -7.5px;
-  border-radius: 999px;
   display: grid;
   place-items: center;
+  border-radius: 999px;
   color: #0f766e;
   background: rgba(240, 253, 250, .98);
-  border: 1px solid rgba(20, 184, 166, .42);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 9.5px;
-  font-weight: 900;
-  line-height: 1;
+  border: 1px solid rgba(20, 184, 166, .38);
+  font: 800 9px/1 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   opacity: 0;
-  transform: scale(.68);
-  transition: opacity 130ms ease, transform 130ms ease;
+  transform: scale(.72);
+  transition: opacity 120ms ease, transform 120ms ease;
 }
 
-.premium-cursor-loader {
+.ki-cursor-spinner {
   inset: -2px;
   border-radius: 999px;
   opacity: 0;
-  background: conic-gradient(from 0deg, transparent, rgba(8, 145, 178, .98), transparent 72%);
-  mask: radial-gradient(circle, transparent 56%, #000 58%);
-  -webkit-mask: radial-gradient(circle, transparent 56%, #000 58%);
+  background: conic-gradient(from 0deg, transparent 0 35%, rgba(14, 165, 233, .95) 48%, transparent 68% 100%);
+  mask: radial-gradient(circle, transparent 58%, #000 60%);
+  -webkit-mask: radial-gradient(circle, transparent 58%, #000 60%);
 }
 
-.premium-cursor--interactive {
-  --ki-cursor-size: 36px;
-  --ki-cursor-ring: rgba(20, 184, 166, .96);
-  --ki-cursor-core: rgba(15, 118, 110, 1);
-  --ki-cursor-soft: rgba(20, 184, 166, .24);
+.ki-cursor--interactive {
+  --ki-cursor-size: 31px;
+  --ki-cursor-ring: rgba(20, 184, 166, .98);
+  --ki-cursor-glow: rgba(20, 184, 166, .22);
 }
 
-.premium-cursor--interactive .premium-cursor-aura {
-  transform: scale(1);
-  opacity: .94;
+.ki-cursor--interactive .ki-cursor-glow {
+  opacity: .82;
+  transform: scale(1.03);
 }
 
-.premium-cursor--interactive .premium-cursor-ring::before,
-.premium-cursor--interactive .premium-cursor-ring::after {
-  opacity: .85;
-  transform: translateY(-50%) scaleX(1);
+.ki-cursor--interactive .ki-cursor-notch {
+  opacity: .68;
+  transform: translate(0, 0);
 }
 
-.premium-cursor--interactive .premium-cursor-core {
+.ki-cursor--interactive .ki-cursor-dot {
   width: 5px;
   height: 5px;
   margin: -2.5px 0 0 -2.5px;
 }
 
-.premium-cursor--glossary {
-  --ki-cursor-size: 34px;
+.ki-cursor--glossary {
+  --ki-cursor-size: 32px;
   --ki-cursor-ring: rgba(13, 148, 136, .98);
-  --ki-cursor-soft: rgba(13, 148, 136, .24);
-  --ki-cursor-bg: rgba(236, 253, 245, .30);
+  --ki-cursor-glow: rgba(13, 148, 136, .22);
 }
 
-.premium-cursor--glossary .premium-cursor-core {
+.ki-cursor--glossary .ki-cursor-lens {
+  border-style: solid;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, .16) inset,
+    0 0 12px rgba(13, 148, 136, .16);
+}
+
+.ki-cursor--glossary .ki-cursor-dot {
   opacity: 0;
-  transform: scale(.55);
+  transform: scale(.45);
 }
 
-.premium-cursor--glossary .premium-cursor-cross {
-  opacity: .32;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.premium-cursor--glossary .premium-cursor-info {
+.ki-cursor--glossary .ki-cursor-info {
   opacity: 1;
   transform: scale(1);
 }
 
-.premium-cursor--loading {
-  --ki-cursor-size: 36px;
-  --ki-cursor-ring: rgba(8, 145, 178, .90);
-  --ki-cursor-core: rgba(8, 145, 178, .98);
-  --ki-cursor-soft: rgba(8, 145, 178, .20);
+.ki-cursor--glossary .ki-cursor-notch {
+  opacity: .45;
+  transform: translate(0, 0);
 }
 
-.premium-cursor--loading .premium-cursor-loader {
+.ki-cursor--loading {
+  --ki-cursor-size: 32px;
+  --ki-cursor-ring: rgba(14, 165, 233, .88);
+  --ki-cursor-core: rgba(14, 165, 233, .98);
+  --ki-cursor-glow: rgba(14, 165, 233, .20);
+}
+
+.ki-cursor--loading .ki-cursor-spinner {
   opacity: 1;
-  animation: premium-cursor-spin-v346 880ms linear infinite;
+  animation: ki-cursor-spin-v348 900ms linear infinite;
 }
 
-.premium-cursor--text {
+.ki-cursor--text {
   opacity: 0 !important;
 }
 
-html.ki-premium-cursor-pressed .premium-cursor {
-  --ki-cursor-size: 22px;
+html.ki-premium-cursor-pressed .ki-cursor {
+  --ki-cursor-size: 21px;
 }
 
-html[data-theme='dark'] .premium-cursor,
-[data-theme='dark'] .premium-cursor {
-  --ki-cursor-ring: rgba(94, 234, 212, .88);
-  --ki-cursor-core: rgba(153, 246, 228, .98);
-  --ki-cursor-soft: rgba(45, 212, 191, .25);
-  --ki-cursor-bg: rgba(15, 23, 42, .26);
+html[data-theme='dark'] .ki-cursor,
+[data-theme='dark'] .ki-cursor {
+  --ki-cursor-accent: #5eead4;
+  --ki-cursor-accent-2: #38bdf8;
+  --ki-cursor-core: #99f6e4;
+  --ki-cursor-ring: rgba(94, 234, 212, .82);
+  --ki-cursor-glow: rgba(45, 212, 191, .20);
 }
 
-html[data-theme='dark'] .premium-cursor-info,
-[data-theme='dark'] .premium-cursor-info {
+html[data-theme='dark'] .ki-cursor-lens,
+[data-theme='dark'] .ki-cursor-lens {
+  background:
+    radial-gradient(circle at 35% 28%, rgba(255, 255, 255, .16), transparent 24%),
+    radial-gradient(circle, rgba(15, 23, 42, .20), transparent 64%);
+}
+
+html[data-theme='dark'] .ki-cursor-info,
+[data-theme='dark'] .ki-cursor-info {
   color: #ccfbf1;
-  background: rgba(15, 23, 42, .98);
-  border-color: rgba(94, 234, 212, .48);
+  background: rgba(15, 23, 42, .96);
+  border-color: rgba(94, 234, 212, .46);
 }
 
-@keyframes premium-cursor-spin-v346 {
+@keyframes ki-cursor-spin-v348 {
   to { transform: rotate(360deg); }
 }
 
-@media (max-width: 767px), (pointer: coarse) {
-  .premium-cursor {
+@media (max-width: 767px), (pointer: coarse) and (not (any-pointer: fine)) {
+  .ki-cursor {
     display: none !important;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .premium-cursor,
-  .premium-cursor-aura,
-  .premium-cursor-core,
-  .premium-cursor-cross,
-  .premium-cursor-info {
+  .ki-cursor,
+  .ki-cursor-glow,
+  .ki-cursor-lens,
+  .ki-cursor-dot,
+  .ki-cursor-notch,
+  .ki-cursor-info {
     transition: none !important;
   }
 
-  .premium-cursor--loading .premium-cursor-loader {
+  .ki-cursor--loading .ki-cursor-spinner {
     animation-duration: 1.8s;
   }
 }
@@ -51548,37 +51520,21 @@ html.ki-performance-mode [data-glossary-entry-id] {
   transition: background-color 90ms ease, color 90ms ease, border-color 90ms ease !important;
 }
 
-html.ki-performance-mode .premium-cursor {
-  width: 24px;
-  height: 24px;
+html.ki-performance-mode .ki-cursor,
+html.ki-performance-mode .premium-cursor.ki-cursor {
   mix-blend-mode: normal;
   contain: layout paint style;
 }
 
-html.ki-performance-mode .premium-cursor-aura {
-  display: none !important;
+html.ki-performance-mode .ki-cursor-glow {
+  opacity: .36;
 }
 
-html.ki-performance-mode .premium-cursor-ring {
-  border: 1px solid color-mix(in srgb, var(--accent, #14b8a6) 72%, rgba(255,255,255,.38));
-  box-shadow: 0 0 0 1px rgba(255,255,255,.10) inset, 0 0 10px color-mix(in srgb, var(--accent, #14b8a6) 18%, transparent);
+html.ki-performance-mode .ki-cursor-lens {
+  box-shadow: 0 0 0 1px rgba(255,255,255,.10) inset;
 }
 
-html.ki-performance-mode .premium-cursor-core {
-  width: 4px;
-  height: 4px;
-}
-
-html.ki-performance-mode .premium-cursor--interactive {
-  width: 30px;
-  height: 30px;
-}
-
-html.ki-performance-mode .premium-cursor--glossary {
-  width: 32px;
-  height: 32px;
-}
-
+html.ki-performance-mode .ki-cursor--text,
 html.ki-performance-mode .premium-cursor--text {
   opacity: 0 !important;
 }
@@ -51599,43 +51555,4 @@ html.ki-performance-mode .shimmer {
     transition: none !important;
     scroll-behavior: auto !important;
   }
-}
-
-
-/* V348 native cursor safety override: keep browser/OS cursor visible while retaining the premium cursor companion. */
-html.ki-premium-cursor-on,
-html.ki-premium-cursor-on body {
-  cursor: auto !important;
-}
-html.ki-premium-cursor-on a[href],
-html.ki-premium-cursor-on button:not(:disabled),
-html.ki-premium-cursor-on [role='button'],
-html.ki-premium-cursor-on [tabindex]:not([tabindex='-1']),
-html.ki-premium-cursor-on .btn,
-html.ki-premium-cursor-on .case-card,
-html.ki-premium-cursor-on .branch-card,
-html.ki-premium-cursor-on .option-card,
-html.ki-premium-cursor-on [data-cursor='interactive'] {
-  cursor: pointer !important;
-}
-html.ki-premium-cursor-on .glossary-term,
-html.ki-premium-cursor-on .smart-glossary-term,
-html.ki-premium-cursor-on .glossary-word,
-html.ki-premium-cursor-on .nested-glossary-term,
-html.ki-premium-cursor-on [data-glossary-entry-id],
-html.ki-premium-cursor-on [data-cursor='glossary'] {
-  cursor: help !important;
-}
-html.ki-premium-cursor-on input,
-html.ki-premium-cursor-on textarea,
-html.ki-premium-cursor-on select,
-html.ki-premium-cursor-on [contenteditable='true'],
-html.ki-premium-cursor-on [contenteditable=''] {
-  cursor: text !important;
-}
-html.ki-premium-cursor-on .loading,
-html.ki-premium-cursor-on .is-loading,
-html.ki-premium-cursor-on [aria-busy='true'],
-html.ki-premium-cursor-on [data-loading='true'] {
-  cursor: wait !important;
 }
