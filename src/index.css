@@ -51356,44 +51356,8 @@ html.ki-performance-mode body {
   -webkit-font-smoothing: antialiased;
 }
 
-html.ki-performance-mode.ki-is-scrolling :is(
-  .card-surface,
-  .branch-card,
-  .case-list-item,
-  .answer-option,
-  .option-card,
-  .requested-test-card,
-  .inline-order-result,
-  .tus-pearl-library-card,
-  .catalog-card-row,
-  .summary-detail-card,
-  .clinical-data-card,
-  .patient-summary-card,
-  .question-panel,
-  .mode-card,
-  .btn,
-  button,
-  [role='button']
-),
-html.ki-performance-mode.ki-is-resizing :is(
-  .card-surface,
-  .branch-card,
-  .case-list-item,
-  .answer-option,
-  .option-card,
-  .requested-test-card,
-  .inline-order-result,
-  .tus-pearl-library-card,
-  .catalog-card-row,
-  .summary-detail-card,
-  .clinical-data-card,
-  .patient-summary-card,
-  .question-panel,
-  .mode-card,
-  .btn,
-  button,
-  [role='button']
-) {
+html.ki-performance-mode.ki-is-scrolling *,
+html.ki-performance-mode.ki-is-resizing * {
   transition-duration: 0ms !important;
   animation-play-state: paused !important;
 }
@@ -51892,86 +51856,52 @@ html.ki-performance-mode :is(
   animation-play-state: running !important;
 }
 
-
-/* ===== V373 final smoothness patch: targeted scroll/overlay cost reductions ===== */
+/* ===== V373 surgical smoothness pass: reduce scroll-triggered layer churn ===== */
 html.ki-performance-mode :is(
-  .tus-pearl-catalog-card-list,
-  .tus-pearl-catalog-card-list.addable,
-  .pearl-study-row-list-v97,
-  .wrong-answers-list,
-  .case-list,
-  .horizontal-case-list,
-  .option-grid
-) {
-  contain: layout paint style;
-}
-
-@supports (content-visibility: auto) {
-  html.ki-performance-mode :is(
-    .tus-pearl-library-card.catalog-card-row,
-    .wrong-answer-card,
-    .case-list-item,
-    .requested-test-card,
-    .inline-order-result
-  ) {
-    content-visibility: auto;
-    contain-intrinsic-size: 104px;
-  }
+  .case-list-item,
+  .tus-pearl-library-card,
+  .catalog-card-row,
+  .answer-option,
+  .branch-card,
+  .option-card,
+  .mode-card
+):not(:hover):not(.active):not(.selected):not(.correct):not(.wrong):not(.is-launching) {
+  will-change: auto !important;
 }
 
 html.ki-performance-mode.ki-is-scrolling :is(
-  .pearl-inline-delete-popover,
-  .pearl-study-more-panel,
-  .pearl-library-source-menu,
-  .pearl-study-branch-menu,
-  .pearl-min-dropdown-menu,
-  .ai-compact-dropdown-menu-floating,
+  .case-list-item,
+  .tus-pearl-library-card,
+  .catalog-card-row,
+  .answer-option,
+  .branch-card,
+  .option-card,
+  .mode-card
+) {
+  transform: none !important;
+  will-change: auto !important;
+}
+
+html.ki-performance-mode.ki-is-scrolling :is(
   .floating-glossary-tooltip,
-  .smart-glossary-popover
+  .smart-glossary-popover,
+  .pearl-inline-delete-popover,
+  .pearl-library-source-menu,
+  .pearl-study-branch-menu-portal
 ) {
   transition-property: opacity, transform !important;
-  transition-duration: 70ms !important;
-  box-shadow: 0 1px 3px color-mix(in srgb, #020617 14%, transparent) !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+  transition-duration: 90ms !important;
 }
 
 html.ki-performance-mode.ki-is-scrolling :is(
-  .answer-option,
-  .tus-pearl-library-card.catalog-card-row,
-  .case-list-item,
-  .branch-card,
-  .mode-card,
-  .btn,
-  button
-)::before,
-html.ki-performance-mode.ki-is-scrolling :is(
-  .answer-option,
-  .tus-pearl-library-card.catalog-card-row,
-  .case-list-item,
-  .branch-card,
-  .mode-card,
-  .btn,
-  button
-)::after {
-  animation: none !important;
-  transition-duration: 0ms !important;
-}
-
-html.ki-performance-mode.ki-is-scrolling .glossary-term,
-html.ki-performance-mode.ki-is-scrolling .smart-glossary-term {
-  text-decoration-thickness: 1px;
-  box-shadow: none !important;
-}
-
-html.ki-performance-mode.ki-route-transitioning :is(
-  .app-shell,
-  .page-shell,
-  .qbank-shell,
-  .tus-pearl-study-shell,
-  .clinical-case
-) {
+  .glossary-term,
+  .smart-glossary-term,
+  .nested-glossary-term
+):hover {
+  transform: none !important;
   filter: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+}
+
+.feedback-preparing {
+  contain: layout paint style;
 }

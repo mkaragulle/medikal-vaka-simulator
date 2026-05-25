@@ -1,0 +1,2493 @@
+{
+  "summary": {
+    "standardCasesAudited": 400,
+    "tusSpotCasesUntouched": 210,
+    "clinicalBranchCountsPreserved": {
+      "minor-rotations": 28,
+      "internal-medicine": 26,
+      "pediatrics": 88,
+      "obstetrics-gynecology": 28,
+      "general-surgery": 27,
+      "medical-pharmacology": 28,
+      "medical-pathology": 28,
+      "anatomy": 29,
+      "medical-biochemistry": 30,
+      "physiology": 30,
+      "histology-embryology": 28,
+      "medical-microbiology": 30,
+      "tus-spot-olgular": 210
+    },
+    "flaggedOptionsBefore": 197,
+    "optionsRefined": 155,
+    "flaggedOptionsAfter": 65,
+    "casesChanged": 102,
+    "casesJsSyntaxParse": "pending-node-import",
+    "scope": "Only caseType=standard clinical branch cases were edited; ai-spot / tus-spot-olgular records were not modified.",
+    "optionsRefinedPass2": 66,
+    "optionsRefinedTotal": 222,
+    "flaggedWrongOptionsAfterPass2": 1,
+    "optionsRefinedPass3": 1,
+    "flaggedWrongOptionsAfterPass3": 0,
+    "finalVersion": "V338_CLINICAL_BRANCH_OPTION_QUALITY_REFINEMENT",
+    "casesChangedTotal": 113,
+    "remainingFlaggedWrongOptionsFinal": 0,
+    "casesJsSyntaxImport": "passed",
+    "tusSpotDeepEqualityVsUploadedV337": "passed",
+    "pediatricsCountPreserved": 88,
+    "tusSpotCountPreserved": 210,
+    "clinicalStandardCountPreserved": 400
+  },
+  "changedOptions": [
+    {
+      "caseId": "v163-new-001-akut-sistemik-reaksiyon",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Akut sistemik reaksiyon",
+      "oldOption": "Nebülize salbutamol ve gözlem yapılması",
+      "newOption": "Nebülize salbutamol ve klinik izlem planlanması",
+      "correctAnswerText": "İntramüsküler adrenalin uygulanması"
+    },
+    {
+      "caseId": "v164-new-016-akut-skrotal-agri",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Akut skrotal ağrı",
+      "oldOption": "İdrar kültürü sonucunun beklenmesi",
+      "newOption": "İdrar kültürü sonucuna göre tedavi planlanması",
+      "correctAnswerText": "Acil cerrahi eksplorasyon ve detorsiyon yapılması"
+    },
+    {
+      "caseId": "v164-new-016-akut-skrotal-agri",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Akut skrotal ağrı",
+      "oldOption": "Nonsteroid antiinflamatuvar tedaviyle gözlem yapılması",
+      "newOption": "Nonsteroid antiinflamatuvar tedaviyle klinik izlem planlanması",
+      "correctAnswerText": "Acil cerrahi eksplorasyon ve detorsiyon yapılması"
+    },
+    {
+      "caseId": "v164-new-017-yeni-baslayan-temporal-bas-agrisi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "title": "Yeni başlayan temporal baş ağrısı",
+      "oldOption": "Temporal arter biyopsisi sonucunu beklemek",
+      "newOption": "Temporal arter biyopsisi sonucuna göre tedavi planlamak",
+      "correctAnswerText": "Yüksek doz sistemik kortikosteroid başlamak"
+    },
+    {
+      "caseId": "v164-new-017-yeni-baslayan-temporal-bas-agrisi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "title": "Yeni başlayan temporal baş ağrısı",
+      "oldOption": "Sadece nonsteroid antiinflamatuvar tedavi vermek",
+      "newOption": "nonsteroid antiinflamatuvar tedavi vermek",
+      "correctAnswerText": "Yüksek doz sistemik kortikosteroid başlamak"
+    },
+    {
+      "caseId": "v164-new-020-antibiyotik-sonrasi-ishal",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "title": "Antibiyotik sonrası ishal",
+      "oldOption": "Sadece probiyotik ile izlem yapılması",
+      "newOption": "probiyotik ile izlem yapılması",
+      "correctAnswerText": "Oral vankomisin tedavisi başlanması"
+    },
+    {
+      "caseId": "v165-new-021-aclik-ve-kusma-sonrasi-metabolik-bozulma",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "title": "Açlık ve kusma sonrası metabolik bozulma",
+      "oldOption": "Sadece subkütan hızlı etkili insülin uygulamak",
+      "newOption": "subkütan hızlı etkili insülin uygulamak",
+      "correctAnswerText": "İzotonik sıvı ve potasyum replasmanı başlamak, insülini potasyum düzelene kadar ertelemek"
+    },
+    {
+      "caseId": "v165-new-021-aclik-ve-kusma-sonrasi-metabolik-bozulma",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "title": "Açlık ve kusma sonrası metabolik bozulma",
+      "oldOption": "Oral sıvı ve antiemetik tedaviyle gözlem yapmak",
+      "newOption": "Oral sıvı ve antiemetik tedaviyle klinik izlem planlamak",
+      "correctAnswerText": "İzotonik sıvı ve potasyum replasmanı başlamak, insülini potasyum düzelene kadar ertelemek"
+    },
+    {
+      "caseId": "v165-new-023-dogum-sonrasi-aktif-kanama",
+      "branchId": "obstetrics-gynecology",
+      "caseType": "standard",
+      "title": "Doğum sonrası aktif kanama",
+      "oldOption": "Sadece eritrosit süspansiyonu transfüzyonu yapılması",
+      "newOption": "eritrosit süspansiyonu transfüzyonu yapılması",
+      "correctAnswerText": "Uterin masaj ve intravenöz oksitosin uygulaması"
+    },
+    {
+      "caseId": "v165-new-025-yukselen-gucsuzluk-tablosu",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Yükselen güçsüzlük tablosu",
+      "oldOption": "Uzun süreli antibiyotik profilaksisi",
+      "newOption": "Kontrol tedavisi olarak antibiyotik profilaksisi",
+      "correctAnswerText": "İntravenöz immünoglobulin"
+    },
+    {
+      "caseId": "v165-new-030-hipotansiyon-ve-elektrolit-bozuklugu",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "title": "Hipotansiyon ve elektrolit bozukluğu",
+      "oldOption": "Sadece oral tuz tabletleri ve ayaktan takip",
+      "newOption": "oral tuz tabletleri ve ayaktan takip",
+      "correctAnswerText": "İntravenöz hidrokortizon ve izotonik sıvı replasmanı"
+    },
+    {
+      "caseId": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Ateş ve inspiratuvar solunum sıkıntısı",
+      "oldOption": "Boğaz kültürü alınması için çocuğun yatırılarak bekletilmesi",
+      "newOption": "Boğaz kültürü alınması için çocuğun yatırılarak izlem planlanması",
+      "correctAnswerText": "Kontrollü koşullarda hava yolunun güvence altına alınması"
+    },
+    {
+      "caseId": "v167-new-046-gebelikte-hipertansif-tablo",
+      "branchId": "obstetrics-gynecology",
+      "caseType": "standard",
+      "title": "Gebelikte hipertansif tablo",
+      "oldOption": "Sadece oral antihipertansif başlanarak gebeliğin 40. haftaya kadar sürdürülmesi",
+      "newOption": "oral antihipertansif başlanarak gebeliğin 40. haftaya kadar sürdürülmesi",
+      "correctAnswerText": "Magnezyum sülfat ve kan basıncı kontrolü sonrası doğumun gerçekleştirilmesi"
+    },
+    {
+      "caseId": "v167-new-046-gebelikte-hipertansif-tablo",
+      "branchId": "obstetrics-gynecology",
+      "caseType": "standard",
+      "title": "Gebelikte hipertansif tablo",
+      "oldOption": "Yalnızca fetal akciğer maturasyonu için steroid verilip taburcu edilmesi",
+      "newOption": "Yalnızca fetal akciğer maturasyonu için steroid verilerek ayaktan izlem planlanması",
+      "correctAnswerText": "Magnezyum sülfat ve kan basıncı kontrolü sonrası doğumun gerçekleştirilmesi"
+    },
+    {
+      "caseId": "v167-new-047-ates-ve-sag-ust-kadran-agrisi",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Ateş ve sağ üst kadran ağrısı",
+      "oldOption": "Sadece analjezik tedaviyle izlem",
+      "newOption": "analjezik tedaviyle izlem",
+      "correctAnswerText": "Endoskopik retrograd kolanjiyopankreatografi ile safra yolu drenajı"
+    },
+    {
+      "caseId": "v168-new-059-ates-ve-sarilikla-basvuran-hasta",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Ateş ve sarılıkla başvuran hasta",
+      "oldOption": "Sadece analjezik tedavi ve gözlem",
+      "newOption": "analjezik tedavi ve klinik izlem",
+      "correctAnswerText": "Endoskopik retrograd kolanjiyopankreatografi ile biliyer drenaj"
+    },
+    {
+      "caseId": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Uzamış ateş ve mukokutanöz bulgular",
+      "oldOption": "Sadece parasetamol ile ateş kontrolü",
+      "newOption": "Antipiretik tedaviyle klinik izlemi sürdürmek",
+      "correctAnswerText": "İntravenöz immün globulin ve aspirin"
+    },
+    {
+      "caseId": "v169-new-062-gebelikte-hipertansiyon-ve-norolojik-yakinma",
+      "branchId": "obstetrics-gynecology",
+      "caseType": "standard",
+      "title": "Gebelikte hipertansiyon ve nörolojik yakınma",
+      "oldOption": "Diazepamın uzun süreli oral kullanımı",
+      "newOption": "Oral benzodiazepinle uzun süreli nöbet profilaksisi planlamak",
+      "correctAnswerText": "Magnezyum sülfat"
+    },
+    {
+      "caseId": "v169-new-063-trombositopeni-ve-norolojik-bulgu",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "title": "Trombositopeni ve nörolojik bulgu",
+      "oldOption": "Sadece intravenöz sıvı tedavisi",
+      "newOption": "intravenöz sıvı tedavisi",
+      "correctAnswerText": "Acil plazma değişimi"
+    },
+    {
+      "caseId": "v169-new-070-ani-goz-agrisi-ve-gorme-bulanikligi",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Ani göz ağrısı ve görme bulanıklığı",
+      "oldOption": "Sadece oral antihistaminik verilmesi",
+      "newOption": "oral antihistaminik verilmesi",
+      "correctAnswerText": "Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması"
+    },
+    {
+      "caseId": "v174-new-093-travma-sonrasi-karin-hassasiyeti",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Travma sonrası karın hassasiyeti",
+      "oldOption": "Kontrastlı abdominal bilgisayarlı tomografi için bekletilmesi",
+      "newOption": "Kontrastlı abdominal bilgisayarlı tomografi için izlem planlanması",
+      "correctAnswerText": "Acil eksploratif laparotomi yapılması"
+    },
+    {
+      "caseId": "v174-new-093-travma-sonrasi-karin-hassasiyeti",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Travma sonrası karın hassasiyeti",
+      "oldOption": "Sadece seri fizik muayene ile izlenmesi",
+      "newOption": "seri fizik muayene ile izlenmesi",
+      "correctAnswerText": "Acil eksploratif laparotomi yapılması"
+    },
+    {
+      "caseId": "v175-new-107-yumusak-doku-enfeksiyonunda-hizla-kotulesme",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Yumuşak doku enfeksiyonunda hızla kötüleşme",
+      "oldOption": "Sadece oral antibiyotikle ayaktan izlem",
+      "newOption": "oral antibiyotikle ayaktan izlem",
+      "correctAnswerText": "Acil cerrahi eksplorasyon ve geniş debridman"
+    },
+    {
+      "caseId": "v175-new-107-yumusak-doku-enfeksiyonunda-hizla-kotulesme",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Yumuşak doku enfeksiyonunda hızla kötüleşme",
+      "oldOption": "Kesin tanı için biyopsi sonucunun beklenmesi",
+      "newOption": "Kesin tanı için biyopsi sonucuna göre tedavi planlanması",
+      "correctAnswerText": "Acil cerrahi eksplorasyon ve geniş debridman"
+    },
+    {
+      "caseId": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Aralıklı karın ağrısı ve kanlı dışkı",
+      "oldOption": "Sadece oral rehidratasyon ve taburculuk",
+      "newOption": "oral rehidratasyon ve taburculuk",
+      "correctAnswerText": "Pnömatik veya hidrostatik enema ile redüksiyon"
+    },
+    {
+      "caseId": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Aralıklı karın ağrısı ve kanlı dışkı",
+      "oldOption": "Uzun süreli proton pompa inhibitörü tedavisi",
+      "newOption": "Kontrol tedavisi olarak proton pompa inhibitörü tedavisi",
+      "correctAnswerText": "Pnömatik veya hidrostatik enema ile redüksiyon"
+    },
+    {
+      "caseId": "v176-new-113-antikoagulan-kullanirken-ciddi-kanama",
+      "branchId": "medical-pharmacology",
+      "caseType": "standard",
+      "title": "Antikoagülan kullanırken ciddi kanama",
+      "oldOption": "Sadece düşük doz oral K vitamini verilmesi ve ayaktan izlem",
+      "newOption": "düşük doz oral K vitamini verilmesi ve ayaktan izlem",
+      "correctAnswerText": "İntravenöz K vitamini ve dört faktörlü protrombin kompleks konsantresi verilmesi"
+    },
+    {
+      "caseId": "v177-new-121-dogum-sonrasi-ates-ve-uterin-hassasiyet",
+      "branchId": "obstetrics-gynecology",
+      "caseType": "standard",
+      "title": "Doğum sonrası ateş ve uterin hassasiyet",
+      "oldOption": "Sadece oral parasetamol ve taburculuk",
+      "newOption": "oral parasetamol ve taburculuk",
+      "correctAnswerText": "İntravenöz klindamisin ve gentamisin"
+    },
+    {
+      "caseId": "v177-new-127-ani-bacak-agrisi-ve-sogukluk",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Ani bacak ağrısı ve soğukluk",
+      "oldOption": "Sadece varis çorabı verilmesi",
+      "newOption": "varis çorabı verilmesi",
+      "correctAnswerText": "Acil sistemik heparinizasyon ve revaskülarizasyon için damar cerrahisi girişimi"
+    },
+    {
+      "caseId": "v177-new-127-ani-bacak-agrisi-ve-sogukluk",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Ani bacak ağrısı ve soğukluk",
+      "oldOption": "Sadece antibiyotik başlanması",
+      "newOption": "antibiyotik başlanması",
+      "correctAnswerText": "Acil sistemik heparinizasyon ve revaskülarizasyon için damar cerrahisi girişimi"
+    },
+    {
+      "caseId": "v178-new-138-kanli-ishal-sonrasi-oliguri",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Kanlı ishal sonrası oligüri",
+      "oldOption": "Sadece oral demir tedavisi",
+      "newOption": "oral demir tedavisi",
+      "correctAnswerText": "Sıvı-elektrolit dengesi, kan basıncı kontrolü ve gerekirse diyalizi içeren destek tedavisi"
+    },
+    {
+      "caseId": "v179-new-141-besin-sonrasi-akut-reaksiyon",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Besin sonrası akut reaksiyon",
+      "oldOption": "Nebülize salbutamol verilerek gözlem yapılması",
+      "newOption": "Nebülize salbutamol verilerek klinik izlem planlanması",
+      "correctAnswerText": "İntramüsküler adrenalin uygulanması"
+    },
+    {
+      "caseId": "v179-new-142-uzayan-nobet",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Uzayan nöbet",
+      "oldOption": "Uzun süreli oral valproat tedavisine başlanması",
+      "newOption": "Kontrol tedavisi olarak oral valproat tedavisine başlanması",
+      "correctAnswerText": "İntravenöz veya intranazal benzodiazepin uygulanması"
+    },
+    {
+      "caseId": "v179-new-142-uzayan-nobet",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Uzayan nöbet",
+      "oldOption": "Sadece ateş düşürücü verilerek nöbetin izlenmesi",
+      "newOption": "ateş düşürücü verilerek nöbetin izlenmesi",
+      "correctAnswerText": "İntravenöz veya intranazal benzodiazepin uygulanması"
+    },
+    {
+      "caseId": "v179-new-143-hiperglisemi-ve-kusma",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Hiperglisemi ve kusma",
+      "oldOption": "Sadece subkutan hızlı etkili insülin uygulanıp izlem yapılması",
+      "newOption": "subkutan hızlı etkili insülin uygulanıp izlem yapılması",
+      "correctAnswerText": "İzotonik sıvı replasmanı başlanması ve düşük potasyum düzeltilmeden insülinin ertelenmesi"
+    },
+    {
+      "caseId": "v179-new-144-hisilti-ve-solunum-sikintisi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Hışıltı ve solunum sıkıntısı",
+      "oldOption": "Sadece oral antihistaminik ve taburculuk",
+      "newOption": "oral antihistaminik ve taburculuk",
+      "correctAnswerText": "Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid"
+    },
+    {
+      "caseId": "v179-new-145-havlar-tarzda-oksuruk-ve-stridor",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Havlar tarzda öksürük ve stridor",
+      "oldOption": "Sadece oral antibiyotik başlanması",
+      "newOption": "oral antibiyotik başlanması",
+      "correctAnswerText": "Deksametazon ve nebulize adrenalin uygulanması"
+    },
+    {
+      "caseId": "v179-new-147-ates-ve-dolasim-bozuklugu",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Ateş ve dolaşım bozukluğu",
+      "oldOption": "Sadece ateş düşürücü verilerek gözlem yapılması",
+      "newOption": "ateş düşürücü verilerek klinik izlem planlanması",
+      "correctAnswerText": "Oksijen, damar yolu, izotonik sıvı bolusları, erken geniş spektrumlu antibiyotik ve yanıt yoksa vazopressör"
+    },
+    {
+      "caseId": "v179-new-148-ani-baslayan-tek-tarafli-hisilti",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Ani başlayan tek taraflı hışıltı",
+      "oldOption": "Uzun süreli inhale steroid başlanması",
+      "newOption": "Kontrol tedavisi olarak inhale steroid başlanması",
+      "correctAnswerText": "Rijit bronkoskopi ile yabancı cismin çıkarılması"
+    },
+    {
+      "caseId": "v179-new-148-ani-baslayan-tek-tarafli-hisilti",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Ani başlayan tek taraflı hışıltı",
+      "oldOption": "Sadece oral antibiyotik ve poliklinik kontrolü",
+      "newOption": "oral antibiyotik ve poliklinik kontrolü",
+      "correctAnswerText": "Rijit bronkoskopi ile yabancı cismin çıkarılması"
+    },
+    {
+      "caseId": "v179-new-148-ani-baslayan-tek-tarafli-hisilti",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Ani başlayan tek taraflı hışıltı",
+      "oldOption": "Evde öksürük şurubu ile izlem",
+      "newOption": "Antitussif semptomatik tedaviyle ayaktan izlem planlamak",
+      "correctAnswerText": "Rijit bronkoskopi ile yabancı cismin çıkarılması"
+    },
+    {
+      "caseId": "v179-new-150-yenidoganda-direncli-siyanoz",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Yenidoğanda dirençli siyanoz",
+      "oldOption": "Sadece oral beslenmenin artırılması",
+      "newOption": "oral beslenmenin artırılması",
+      "correctAnswerText": "Prostaglandin E1 infüzyonu"
+    },
+    {
+      "caseId": "v180-new-151-kemoterapi-sonrasi-ates",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Kemoterapi sonrası ateş",
+      "oldOption": "Sadece oral amoksisilin-klavulanat ile taburculuk",
+      "newOption": "oral amoksisilin-klavulanat ile taburculuk",
+      "correctAnswerText": "Antipseudomonal etkili intravenöz geniş spektrumlu antibiyotik başlanması"
+    },
+    {
+      "caseId": "v180-new-153-ates-ve-ense-sertligi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Ateş ve ense sertliği",
+      "oldOption": "Sadece oral ateş düşürücü verip eve göndermek",
+      "newOption": "oral ateş düşürücü verip eve göndermek",
+      "correctAnswerText": "Kan kültürü alıp ampirik intravenöz antibiyotiği hemen başlamak"
+    },
+    {
+      "caseId": "v180-new-153-ates-ve-ense-sertligi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Ateş ve ense sertliği",
+      "oldOption": "Antibiyotik yerine sadece antiviral tedavi başlamak",
+      "newOption": "Antibiyotik yerine antiviral tedavi başlamak",
+      "correctAnswerText": "Kan kültürü alıp ampirik intravenöz antibiyotiği hemen başlamak"
+    },
+    {
+      "caseId": "v180-new-154-aclik-sonrasi-nobet",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Açlık sonrası nöbet",
+      "oldOption": "Sadece ateş düşürücü verilmesi",
+      "newOption": "ateş düşürücü verilmesi",
+      "correctAnswerText": "İntravenöz dekstroz bolusu uygulanması"
+    },
+    {
+      "caseId": "v180-new-155-sicak-ortamda-bilinc-degisikligi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Sıcak ortamda bilinç değişikliği",
+      "oldOption": "Sadece oral sıvı verilerek gölgede bekletme",
+      "newOption": "oral sıvı verilerek gölgede bekletme",
+      "correctAnswerText": "Hızlı aktif soğutma ve eş zamanlı destek tedavisi"
+    },
+    {
+      "caseId": "v180-new-157-yenidoganda-kasilma-ve-jitteriness",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Yenidoğanda kasılma ve jitteriness",
+      "oldOption": "Sadece oral D vitamini başlanıp eve gönderilmesi",
+      "newOption": "oral D vitamini başlanıp eve gönderilmesi",
+      "correctAnswerText": "Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi"
+    },
+    {
+      "caseId": "v180-new-158-bas-agrisi-ve-yuksek-tansiyon",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Baş ağrısı ve yüksek tansiyon",
+      "oldOption": "Sadece ağrı kesici verilerek taburculuk",
+      "newOption": "ağrı kesici verilerek taburculuk",
+      "correctAnswerText": "Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi"
+    },
+    {
+      "caseId": "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Kulak ağrısı sonrası kulak arkasında şişlik",
+      "oldOption": "Sadece ağrı kesici verilerek taburculuk",
+      "newOption": "ağrı kesici verilerek taburculuk",
+      "correctAnswerText": "Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi"
+    },
+    {
+      "caseId": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Yenidoğanda beslenme bozulması ve hipotermi",
+      "oldOption": "Sadece oral beslenmenin artırılması ve eve gönderilmesi",
+      "newOption": "oral beslenmenin artırılması ve eve gönderilmesi",
+      "correctAnswerText": "Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi"
+    },
+    {
+      "caseId": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Yenidoğanda beslenme bozulması ve hipotermi",
+      "oldOption": "Sadece fototerapi başlanması",
+      "newOption": "fototerapi başlanması",
+      "correctAnswerText": "Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi"
+    },
+    {
+      "caseId": "v181-new-162-yenidoganda-kusma-ve-sok",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Yenidoğanda kusma ve şok",
+      "oldOption": "Sadece oral tuz desteği verilerek taburculuk",
+      "newOption": "oral tuz desteği verilerek taburculuk",
+      "correctAnswerText": "İzotonik sıvı, dekstroz ve stres doz hidrokortizon başlanması"
+    },
+    {
+      "caseId": "v181-new-163-bobrek-hastasinda-kas-gucsuzlugu",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Böbrek hastasında kas güçsüzlüğü",
+      "oldOption": "Sadece potasyum kısıtlı diyet önerilmesi",
+      "newOption": "potasyum kısıtlı diyet önerilmesi",
+      "correctAnswerText": "İntravenöz kalsiyum glukonat verilmesi"
+    },
+    {
+      "caseId": "v181-new-164-ilac-alimi-sonrasi-bilinc-degisikligi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "İlaç alımı sonrası bilinç değişikliği",
+      "oldOption": "Sadece oral aktif kömür verilerek taburculuk",
+      "newOption": "oral aktif kömür verilerek taburculuk",
+      "correctAnswerText": "İntravenöz sodyum bikarbonat verilmesi"
+    },
+    {
+      "caseId": "v181-new-165-kulak-cinlamasi-ve-hiperventilasyon",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Kulak çınlaması ve hiperventilasyon",
+      "oldOption": "Sadece oral sıvı verilerek taburcu edilmesi",
+      "newOption": "oral sıvı verilerek taburcu edilmesi",
+      "correctAnswerText": "İntravenöz sodyum bikarbonat ile serum ve idrar alkalinizasyonu"
+    },
+    {
+      "caseId": "v181-new-166-ani-baslayan-skrotal-agri",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Ani başlayan skrotal ağrı",
+      "oldOption": "Ağrı kesici verilerek evde izlem",
+      "newOption": "Ağrı kesici verilerek ayaktan klinik izlem",
+      "correctAnswerText": "Acil ürolojik eksplorasyon ve detorsiyon planlanması"
+    },
+    {
+      "caseId": "v181-new-166-ani-baslayan-skrotal-agri",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Ani başlayan skrotal ağrı",
+      "oldOption": "Sadece idrar kültürü sonucunun beklenmesi",
+      "newOption": "idrar kültürü sonucuna göre tedavi planlanması",
+      "correctAnswerText": "Acil ürolojik eksplorasyon ve detorsiyon planlanması"
+    },
+    {
+      "caseId": "v181-new-167-fiskirir-tarzda-kusma",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Fışkırır tarzda kusma",
+      "oldOption": "Antiemetik verilerek evde izlem",
+      "newOption": "Antiemetik verilerek ayaktan klinik izlem",
+      "correctAnswerText": "Sıvı-elektrolit bozukluğunun düzeltilmesi"
+    },
+    {
+      "caseId": "v181-new-169-su-alimi-sonrasi-nobet",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Su alımı sonrası nöbet",
+      "oldOption": "Sadece serbest su verilmesine devam edilmesi",
+      "newOption": "serbest su verilmesine devam edilmesi",
+      "correctAnswerText": "Hipertonik salin bolusu verilmesi"
+    },
+    {
+      "caseId": "v182-new-171-travma-sonrasi-ani-solunum-bozulmasi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Travma sonrası ani solunum bozulması",
+      "oldOption": "Sadece yüksek akımlı oksijenle gözlem yapılması",
+      "newOption": "yüksek akımlı oksijenle klinik izlem planlanması",
+      "correctAnswerText": "Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi"
+    },
+    {
+      "caseId": "v182-new-172-pestisid-temasi-sonrasi-sekresyon-artisi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Pestisid teması sonrası sekresyon artışı",
+      "oldOption": "Sadece oral antihistaminik verilmesi",
+      "newOption": "oral antihistaminik verilmesi",
+      "correctAnswerText": "Atropin ve pralidoksim verilmesi"
+    },
+    {
+      "caseId": "v182-new-174-gaz-yagi-icme-sonrasi-oksuruk",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Gaz yağı içme sonrası öksürük",
+      "oldOption": "Semptomlara rağmen evde izlem önerilmesi",
+      "newOption": "Semptomlara rağmen ayaktan klinik izlem önerilmesi",
+      "correctAnswerText": "Oksijen ve solunum desteğiyle izlem; kusturma ve gastrik lavajdan kaçınma"
+    },
+    {
+      "caseId": "v182-new-175-orak-hucreli-cocukta-ani-solukluk",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Orak hücreli çocukta ani solukluk",
+      "oldOption": "Sadece oral demir tedavisi",
+      "newOption": "oral demir tedavisi",
+      "correctAnswerText": "Acil eritrosit süspansiyonu transfüzyonu ve dolaşım desteği"
+    },
+    {
+      "caseId": "v182-new-176-aglama-sonrasi-morarma-atagi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Ağlama sonrası morarma atağı",
+      "oldOption": "Sadece oral antibiyotik vermek",
+      "newOption": "oral antibiyotik vermek",
+      "correctAnswerText": "Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek"
+    },
+    {
+      "caseId": "v182-new-177-sicak-su-yanigi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Sıcak su yanığı",
+      "oldOption": "Yanık alanına diş macunu sürmeye devam etmek",
+      "newOption": "Yanık alanını soğutma ve steril örtüleme sonrası yalnız ayaktan pansumanla izlemek",
+      "correctAnswerText": "Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak"
+    },
+    {
+      "caseId": "v182-new-177-sicak-su-yanigi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Sıcak su yanığı",
+      "oldOption": "Geniş yanığa rağmen sadece oral sıvı önerip taburcu etmek",
+      "newOption": "Analjezi ve oral hidrasyonla yakın ayaktan izlem planlamak",
+      "correctAnswerText": "Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak"
+    },
+    {
+      "caseId": "v182-new-177-sicak-su-yanigi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Sıcak su yanığı",
+      "oldOption": "Bülleri evde patlatmasını önermek",
+      "newOption": "Bülleri erken dönemde geniş şekilde debride edip primer kapama planlamak",
+      "correctAnswerText": "Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak"
+    },
+    {
+      "caseId": "v182-new-177-sicak-su-yanigi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Sıcak su yanığı",
+      "oldOption": "Sıvı tedavisini tamamen kesmek",
+      "newOption": "Profilaktik sistemik antibiyotik başlamak ve sıvı resüsitasyonunu klinik izleme bırakmak",
+      "correctAnswerText": "Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak"
+    },
+    {
+      "caseId": "v182-new-178-havuzdan-cikarilma-sonrasi-oksuruk",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Havuzdan çıkarılma sonrası öksürük",
+      "oldOption": "Sadece öksürük şurubu vermek",
+      "newOption": "öksürük şurubu vermek",
+      "correctAnswerText": "Oksijen desteği ve solunum durumuna göre yakın izlem"
+    },
+    {
+      "caseId": "v182-new-179-dka-tedavisi-sirasinda-bilinc-kotulesmesi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "DKA tedavisi sırasında bilinç kötüleşmesi",
+      "oldOption": "Sadece ateş düşürücü verilmesi",
+      "newOption": "ateş düşürücü verilmesi",
+      "correctAnswerText": "Hipertonik salin veya mannitol tedavisi başlanması"
+    },
+    {
+      "caseId": "v182-new-180-alci-sonrasi-artan-ekstremite-agrisi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Alçı sonrası artan ekstremite ağrısı",
+      "oldOption": "Analjezik dozunu artırıp evde izlem",
+      "newOption": "Analjezik dozunu artırıp ayaktan klinik izlem",
+      "correctAnswerText": "Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı"
+    },
+    {
+      "caseId": "v182-new-180-alci-sonrasi-artan-ekstremite-agrisi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Alçı sonrası artan ekstremite ağrısı",
+      "oldOption": "Sadece oral antibiyotik başlanması",
+      "newOption": "oral antibiyotik başlanması",
+      "correctAnswerText": "Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı"
+    },
+    {
+      "caseId": "v183-new-190-kasik-sisligi-ve-kusma",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Kasık şişliği ve kusma",
+      "oldOption": "Sadece laksatif tedavi başlamak",
+      "newOption": "laksatif tedavi başlamak",
+      "correctAnswerText": "Acil cerrahi değerlendirme ve operatif onarım"
+    },
+    {
+      "caseId": "v184-new-191-erken-gebelikte-karin-agrisi-ve-bayilma",
+      "branchId": "obstetrics-gynecology",
+      "caseType": "standard",
+      "title": "Erken gebelikte karın ağrısı ve bayılma",
+      "oldOption": "Beta-hCG değerinin 48 saat sonra tekrarına kadar beklemek",
+      "newOption": "Beta-hCG değerinin 48 saat sonra tekrarına kadar izlem planlamak",
+      "correctAnswerText": "Acil cerrahi eksplorasyon ve hemodinamik resüsitasyon"
+    },
+    {
+      "caseId": "v184-new-191-erken-gebelikte-karin-agrisi-ve-bayilma",
+      "branchId": "obstetrics-gynecology",
+      "caseType": "standard",
+      "title": "Erken gebelikte karın ağrısı ve bayılma",
+      "oldOption": "Sadece oral analjezik vererek taburcu etmek",
+      "newOption": "oral analjezik vererek taburcu etmek",
+      "correctAnswerText": "Acil cerrahi eksplorasyon ve hemodinamik resüsitasyon"
+    },
+    {
+      "caseId": "v184-new-196-duygudurum-ilaci-sonrasi-tremor-ve-konfuzyon",
+      "branchId": "medical-pharmacology",
+      "caseType": "standard",
+      "title": "Duygudurum ilacı sonrası tremor ve konfüzyon",
+      "oldOption": "Sadece oral aktif kömür vermek",
+      "newOption": "oral aktif kömür vermek",
+      "correctAnswerText": "Lityumu kesmek, izotonik sıvı vermek ve ciddi nörolojik toksisite nedeniyle hemodiyalizi değerlendirmek"
+    },
+    {
+      "caseId": "v185-new-222-ani-sirt-agrisi-ve-hipotansiyon",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Ani sırt ağrısı ve hipotansiyon",
+      "oldOption": "Sadece oral antihipertansif verilmesi",
+      "newOption": "oral antihipertansif verilmesi",
+      "correctAnswerText": "Hemodinamik resüsitasyonla eş zamanlı acil damar cerrahisi onarımı"
+    },
+    {
+      "caseId": "v185-new-223-ates-sarilik-ve-sag-ust-kadran-agrisi",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Ateş, sarılık ve sağ üst kadran ağrısı",
+      "oldOption": "Sadece oral analjezik ve taburculuk",
+      "newOption": "oral analjezik ve taburculuk",
+      "correctAnswerText": "Acil ERCP ile biliyer drenaj"
+    },
+    {
+      "caseId": "v185-new-224-ani-epigastrik-agri-ve-tahta-karin",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Ani epigastrik ağrı ve tahta karın",
+      "oldOption": "Sadece oral antiasit verilmesi",
+      "newOption": "oral antiasit verilmesi",
+      "correctAnswerText": "Acil cerrahi değerlendirme, resüsitasyon ve perforasyon onarımı"
+    },
+    {
+      "caseId": "v185-new-227-ani-pelvik-agri-ve-over-kisti",
+      "branchId": "obstetrics-gynecology",
+      "caseType": "standard",
+      "title": "Ani pelvik ağrı ve over kisti",
+      "oldOption": "Sadece oral analjezik ve poliklinik kontrolü",
+      "newOption": "oral analjezik ve poliklinik kontrolü",
+      "correctAnswerText": "Acil laparoskopik değerlendirme ve detorsiyon"
+    },
+    {
+      "caseId": "v185-new-230-atesli-agrili-diz-sisligi",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Ateşli ağrılı diz şişliği",
+      "oldOption": "Sadece nonsteroid antiinflamatuvar verip taburcu etmek",
+      "newOption": "nonsteroid antiinflamatuvar vererek ayaktan izlem planlamak",
+      "correctAnswerText": "Acil artrosentez yapıp sinovyal sıvı analizi-kültürü almak ve ampirik antibiyotik başlamak"
+    },
+    {
+      "caseId": "v185-new-230-atesli-agrili-diz-sisligi",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Ateşli ağrılı diz şişliği",
+      "oldOption": "Elektif manyetik rezonans randevusu beklemek",
+      "newOption": "Elektif manyetik rezonans randevusu izlem planlamak",
+      "correctAnswerText": "Acil artrosentez yapıp sinovyal sıvı analizi-kültürü almak ve ampirik antibiyotik başlamak"
+    },
+    {
+      "caseId": "v185-new-230-atesli-agrili-diz-sisligi",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Ateşli ağrılı diz şişliği",
+      "oldOption": "Sadece gut diyeti önermek",
+      "newOption": "gut diyeti önermek",
+      "correctAnswerText": "Acil artrosentez yapıp sinovyal sıvı analizi-kültürü almak ve ampirik antibiyotik başlamak"
+    },
+    {
+      "caseId": "v186-new-232-gebelikte-nobet-ve-hipertansiyon",
+      "branchId": "obstetrics-gynecology",
+      "caseType": "standard",
+      "title": "Gebelikte nöbet ve hipertansiyon",
+      "oldOption": "Diazepam ile uzun süreli idame tedavisi",
+      "newOption": "Diazepam ile kontrol tedavisi olarak idame tedavisi",
+      "correctAnswerText": "Magnezyum sülfat verilmesi"
+    },
+    {
+      "caseId": "v187-new-255-yasli-hastada-yeni-bas-agrisi",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Yaşlı hastada yeni baş ağrısı",
+      "oldOption": "Sadece parasetamol verip poliklinik kontrolü önermek",
+      "newOption": "parasetamol verip poliklinik kontrolü önermek",
+      "correctAnswerText": "Temporal arter biyopsisi sonucunu beklemeden yüksek doz kortikosteroid başlamak"
+    },
+    {
+      "caseId": "v187-new-255-yasli-hastada-yeni-bas-agrisi",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Yaşlı hastada yeni baş ağrısı",
+      "oldOption": "Antibiyotik başlanıp kültür sonucu beklemek",
+      "newOption": "Antibiyotik başlanıp kültür sonucu izlem planlamak",
+      "correctAnswerText": "Temporal arter biyopsisi sonucunu beklemeden yüksek doz kortikosteroid başlamak"
+    },
+    {
+      "caseId": "v188-new-268-epigastrik-agri-ve-lipaz-yuksekligi",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Epigastrik ağrı ve lipaz yüksekliği",
+      "oldOption": "Sadece oral antiasit verilerek taburculuk",
+      "newOption": "oral antiasit verilerek taburculuk",
+      "correctAnswerText": "İntravenöz sıvı, analjezi, oral alımın düzenlenmesi ve yakın klinik izlem"
+    },
+    {
+      "caseId": "v188-new-269-dogum-sonrasi-yogun-kanama",
+      "branchId": "obstetrics-gynecology",
+      "caseType": "standard",
+      "title": "Doğum sonrası yoğun kanama",
+      "oldOption": "Sadece oral demir verilerek taburculuk",
+      "newOption": "oral demir verilerek taburculuk",
+      "correctAnswerText": "Uterin masaj ve oksitosin uygulanması"
+    },
+    {
+      "caseId": "v188-new-270-goz-cevresinde-sislik-ve-agri",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Göz çevresinde şişlik ve ağrı",
+      "oldOption": "Sadece oral antihistaminik verilmesi",
+      "newOption": "oral antihistaminik verilmesi",
+      "correctAnswerText": "Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi"
+    },
+    {
+      "caseId": "v188-new-270-goz-cevresinde-sislik-ve-agri",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Göz çevresinde şişlik ve ağrı",
+      "oldOption": "Sadece topikal antibiyotikli damla kullanılması",
+      "newOption": "topikal antibiyotikli damla kullanılması",
+      "correctAnswerText": "Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi"
+    },
+    {
+      "caseId": "v189-new-290-heparin-sonrasi-trombosit-dususu-ve-bacak-agrisi",
+      "branchId": "medical-pharmacology",
+      "caseType": "standard",
+      "title": "Heparin sonrası trombosit düşüşü ve bacak ağrısı",
+      "oldOption": "Sadece trombosit transfüzyonu yapıp heparine devam etmek",
+      "newOption": "trombosit transfüzyonu yapıp heparine devam etmek",
+      "correctAnswerText": "Heparini kesip heparin dışı antikoagülan başlamak"
+    },
+    {
+      "caseId": "v189-new-292-cilt-enfeksiyonunda-orantisiz-agri",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Cilt enfeksiyonunda orantısız ağrı",
+      "oldOption": "Sadece oral antibiyotikle ayaktan izlem",
+      "newOption": "oral antibiyotikle ayaktan izlem",
+      "correctAnswerText": "Geniş spektrumlu antibiyotik ve acil cerrahi debridman"
+    },
+    {
+      "caseId": "v189-new-292-cilt-enfeksiyonunda-orantisiz-agri",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Cilt enfeksiyonunda orantısız ağrı",
+      "oldOption": "Yalnızca elektif manyetik rezonans randevusu beklemek",
+      "newOption": "Yalnızca elektif manyetik rezonans randevusu izlem planlamak",
+      "correctAnswerText": "Geniş spektrumlu antibiyotik ve acil cerrahi debridman"
+    },
+    {
+      "caseId": "v189-new-293-karin-sisligi-ve-gaz-cikaramama",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Karın şişliği ve gaz çıkaramama",
+      "oldOption": "Sadece laksatif vererek taburculuk",
+      "newOption": "laksatif vererek taburculuk",
+      "correctAnswerText": "Fleksibl sigmoidoskopi ile endoskopik detorsiyon"
+    },
+    {
+      "caseId": "v189-new-293-karin-sisligi-ve-gaz-cikaramama",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Karın şişliği ve gaz çıkaramama",
+      "oldOption": "Oral antibiyotik ve evde izlem",
+      "newOption": "Oral antibiyotik ve ayaktan klinik izlem",
+      "correctAnswerText": "Fleksibl sigmoidoskopi ile endoskopik detorsiyon"
+    },
+    {
+      "caseId": "v189-new-293-karin-sisligi-ve-gaz-cikaramama",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Karın şişliği ve gaz çıkaramama",
+      "oldOption": "Kolonoskopi olmadan uzun süre beklemek",
+      "newOption": "Kolonoskopi olmadan uzun süre izlem planlamak",
+      "correctAnswerText": "Fleksibl sigmoidoskopi ile endoskopik detorsiyon"
+    },
+    {
+      "caseId": "v189-new-294-supheli-tiroid-nodulu",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Şüpheli tiroid nodülü",
+      "oldOption": "Sadece yıllık takip ve hiçbir işlem yapmama",
+      "newOption": "yıllık takip ve hiçbir işlem yapmama",
+      "correctAnswerText": "Ultrason eşliğinde ince iğne aspirasyon biyopsisi"
+    },
+    {
+      "caseId": "v189-new-298-enfeksiyon-sonrasi-gucsuzluk",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Enfeksiyon sonrası güçsüzlük",
+      "oldOption": "Sadece oral ağrı kesici",
+      "newOption": "oral ağrı kesici",
+      "correctAnswerText": "İntravenöz immünglobulin"
+    },
+    {
+      "caseId": "v189-new-298-enfeksiyon-sonrasi-gucsuzluk",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Enfeksiyon sonrası güçsüzlük",
+      "oldOption": "Uzun süreli levodopa",
+      "newOption": "Kontrol tedavisi olarak levodopa",
+      "correctAnswerText": "İntravenöz immünglobulin"
+    },
+    {
+      "caseId": "v189-new-299-diyabetik-hastada-siddetli-kulak-agrisi",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Diyabetik hastada şiddetli kulak ağrısı",
+      "oldOption": "Sadece kulak kiri temizliği ve taburculuk",
+      "newOption": "kulak kiri temizliği ve taburculuk",
+      "correctAnswerText": "Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi"
+    },
+    {
+      "caseId": "v189-new-299-diyabetik-hastada-siddetli-kulak-agrisi",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Diyabetik hastada şiddetli kulak ağrısı",
+      "oldOption": "Oral antihistaminik ve evde izlem",
+      "newOption": "Oral antihistaminik ve ayaktan klinik izlem",
+      "correctAnswerText": "Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi"
+    },
+    {
+      "caseId": "v189-new-300-el-uzerine-dusme-sonrasi-bilek-agrisi",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "El üzerine düşme sonrası bilek ağrısı",
+      "oldOption": "Sadece antibiyotik başlamak",
+      "newOption": "antibiyotik başlamak",
+      "correctAnswerText": "Skafoid kırığı gibi kabul edip başparmak destekli immobilizasyon ve kontrol görüntüleme planlamak"
+    },
+    {
+      "caseId": "v192-new-301-halsizlik-ve-direncli-hipotansiyon",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "title": "Halsizlik ve dirençli hipotansiyon",
+      "oldOption": "Sadece oral tuz tabletleriyle taburculuk",
+      "newOption": "oral tuz tabletleriyle taburculuk",
+      "correctAnswerText": "İntravenöz hidrokortizon ve izotonik sıvı tedavisi"
+    },
+    {
+      "caseId": "v192-new-302-yasli-hastada-bilinc-bulanikligi-ve-hiperglisemi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "title": "Yaşlı hastada bilinç bulanıklığı ve hiperglisemi",
+      "oldOption": "Sadece subkutan kısa etkili insülin verip taburcu etmek",
+      "newOption": "subkutan kısa etkili insülin vererek ayaktan izlem planlamak",
+      "correctAnswerText": "İzotonik sıvı resüsitasyonu başlamak"
+    },
+    {
+      "caseId": "v192-new-303-kabizlik-poliuri-ve-konfuzyon",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "title": "Kabızlık, poliüri ve konfüzyon",
+      "oldOption": "Sadece oral sıvı önerip taburcu etmek",
+      "newOption": "Oral hidrasyon ve yakın ayaktan izlem planlamak",
+      "correctAnswerText": "İzotonik sıvı resüsitasyonu ve ardından intravenöz bisfosfonat tedavisi"
+    },
+    {
+      "caseId": "v194-new-324-antibiyotik-infuzyonu-sirasinda-kizarma",
+      "branchId": "medical-pharmacology",
+      "caseType": "standard",
+      "title": "Antibiyotik infüzyonu sırasında kızarma",
+      "oldOption": "Sadece insülin infüzyonu başlamak",
+      "newOption": "insülin infüzyonu başlamak",
+      "correctAnswerText": "İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek"
+    },
+    {
+      "caseId": "v194-new-325-antipsikotik-sonrasi-ates-ve-bogaz-agrisi",
+      "branchId": "medical-pharmacology",
+      "caseType": "standard",
+      "title": "Antipsikotik sonrası ateş ve boğaz ağrısı",
+      "oldOption": "Sadece parasetamol verip tedaviye aynen devam etmek",
+      "newOption": "parasetamol verip tedaviye aynen devam etmek",
+      "correctAnswerText": "Clozapine tedavisini kesmek ve enfeksiyon-nötropeni yönetimi başlatmak"
+    },
+    {
+      "caseId": "v194-new-333-alinda-vezikuler-dokuntu-ve-goz-agrisi",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Alında veziküler döküntü ve göz ağrısı",
+      "oldOption": "Sadece topikal nemlendirici krem ve evde izlem",
+      "newOption": "topikal nemlendirici krem ve ayaktan klinik izlem",
+      "correctAnswerText": "Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi"
+    },
+    {
+      "caseId": "v194-new-333-alinda-vezikuler-dokuntu-ve-goz-agrisi",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Alında veziküler döküntü ve göz ağrısı",
+      "oldOption": "Alerji testi sonucu beklemek",
+      "newOption": "Alerji testi sonucu izlem planlamak",
+      "correctAnswerText": "Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi"
+    },
+    {
+      "caseId": "v195-new-355-kusma-sonrasi-gogus-agrisi",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Kusma sonrası göğüs ağrısı",
+      "oldOption": "Sadece oral antiasit vererek taburcu etmek",
+      "newOption": "oral antiasit vererek taburcu etmek",
+      "correctAnswerText": "Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek"
+    },
+    {
+      "caseId": "v195-new-355-kusma-sonrasi-gogus-agrisi",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Kusma sonrası göğüs ağrısı",
+      "oldOption": "Sadece inhaler bronkodilatör vermek",
+      "newOption": "inhaler bronkodilatör vermek",
+      "correctAnswerText": "Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek"
+    },
+    {
+      "caseId": "v195-new-357-erken-evre-meme-kitlesi",
+      "branchId": "general-surgery",
+      "caseType": "standard",
+      "title": "Erken evre meme kitlesi",
+      "oldOption": "Sadece serum tümör belirteciyle evrelemek",
+      "newOption": "serum tümör belirteciyle evrelemek",
+      "correctAnswerText": "Sentinel lenf nodu biyopsisi"
+    },
+    {
+      "caseId": "v195-new-358-alt-karin-agrisi-ve-servikal-hassasiyet",
+      "branchId": "obstetrics-gynecology",
+      "caseType": "standard",
+      "title": "Alt karın ağrısı ve servikal hassasiyet",
+      "oldOption": "Kültür sonucu çıkana kadar tedavisiz beklemek",
+      "newOption": "Mikrobiyolojik sonuçlara göre tedaviyi planlayarak klinik izlem yapmak",
+      "correctAnswerText": "Pelvik inflamatuvar hastalık için ampirik geniş kapsamlı antibiyotik tedavisi başlamak"
+    },
+    {
+      "caseId": "v195-new-358-alt-karin-agrisi-ve-servikal-hassasiyet",
+      "branchId": "obstetrics-gynecology",
+      "caseType": "standard",
+      "title": "Alt karın ağrısı ve servikal hassasiyet",
+      "oldOption": "Sadece antifungal vajinal krem vermek",
+      "newOption": "Topikal antifungal tedaviyle ayaktan izlem planlamak",
+      "correctAnswerText": "Pelvik inflamatuvar hastalık için ampirik geniş kapsamlı antibiyotik tedavisi başlamak"
+    },
+    {
+      "caseId": "v195-new-358-alt-karin-agrisi-ve-servikal-hassasiyet",
+      "branchId": "obstetrics-gynecology",
+      "caseType": "standard",
+      "title": "Alt karın ağrısı ve servikal hassasiyet",
+      "oldOption": "Sadece ağrı kesici verip taburcu etmek",
+      "newOption": "ağrı kesici vererek ayaktan izlem planlamak",
+      "correctAnswerText": "Pelvik inflamatuvar hastalık için ampirik geniş kapsamlı antibiyotik tedavisi başlamak"
+    },
+    {
+      "caseId": "v195-new-359-menopoz-sonrasi-vajinal-kanama",
+      "branchId": "obstetrics-gynecology",
+      "caseType": "standard",
+      "title": "Menopoz sonrası vajinal kanama",
+      "oldOption": "Sadece yıllık kontrol önerilmesi",
+      "newOption": "yıllık kontrol önerilmesi",
+      "correctAnswerText": "Endometrial biyopsi yapılması"
+    },
+    {
+      "caseId": "v195-new-363-alci-sonrasi-artan-bacak-agrisi",
+      "branchId": "minor-rotations",
+      "caseType": "standard",
+      "title": "Alçı sonrası artan bacak ağrısı",
+      "oldOption": "Sadece daha güçlü oral analjezik verip evde izlemek",
+      "newOption": "daha güçlü oral analjezik verip ayaktan klinik izlem planlamak",
+      "correctAnswerText": "Alçıyı gevşetmek ve acil fasyotomi için ortopedik cerrahi hazırlık yapmak"
+    },
+    {
+      "caseId": "v196-new-364-yemek-sonrasi-ani-solunum-sikintisi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Yemek sonrası ani solunum sıkıntısı",
+      "oldOption": "Sadece oral antihistaminik vermek",
+      "newOption": "Antihistaminik temelli semptomatik tedaviyle yetinmek",
+      "correctAnswerText": "İntramüsküler adrenalin uygulamak"
+    },
+    {
+      "caseId": "v196-new-364-yemek-sonrasi-ani-solunum-sikintisi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Yemek sonrası ani solunum sıkıntısı",
+      "oldOption": "Cilt döküntüsü gerileyene kadar tedavisiz gözlemek",
+      "newOption": "Cilt döküntüsü gerileyene kadar tedavisiz klinik izlemek",
+      "correctAnswerText": "İntramüsküler adrenalin uygulamak"
+    },
+    {
+      "caseId": "v196-new-365-uzamis-jeneralize-nobet",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Uzamış jeneralize nöbet",
+      "oldOption": "Sadece parasetamol verip nöbetin bitmesini beklemek",
+      "newOption": "Antipiretik tedaviyle nöbet kontrolünü izlemek",
+      "correctAnswerText": "Uygun yoldan benzodiazepin vermek"
+    },
+    {
+      "caseId": "v196-new-365-uzamis-jeneralize-nobet",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Uzamış jeneralize nöbet",
+      "oldOption": "Antibiyotik kültür sonucunu beklemek",
+      "newOption": "Kültür sonucuna göre antimikrobiyal tedavi planlamak",
+      "correctAnswerText": "Uygun yoldan benzodiazepin vermek"
+    },
+    {
+      "caseId": "v196-new-366-havlar-tarzda-oksuruk-ve-cekilme",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Havlar tarzda öksürük ve çekilme",
+      "oldOption": "Sadece oral sıvı önerip taburcu etmek",
+      "newOption": "Oral hidrasyon ve yakın ayaktan izlem planlamak",
+      "correctAnswerText": "Nebül adrenalin ve sistemik deksametazon uygulamak"
+    },
+    {
+      "caseId": "v196-new-366-havlar-tarzda-oksuruk-ve-cekilme",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Havlar tarzda öksürük ve çekilme",
+      "oldOption": "Boğaz kültürü sonucu çıkana kadar tedavisiz beklemek",
+      "newOption": "Boğaz kültürü sonucuna göre klinik izlem ve tedavi planlamak",
+      "correctAnswerText": "Nebül adrenalin ve sistemik deksametazon uygulamak"
+    },
+    {
+      "caseId": "v196-new-366-havlar-tarzda-oksuruk-ve-cekilme",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Havlar tarzda öksürük ve çekilme",
+      "oldOption": "Uzun süreli antitüberküloz tedavi başlamak",
+      "newOption": "Antitüberküloz tedaviyi ampirik başlangıç yaklaşımı olarak kullanmak",
+      "correctAnswerText": "Nebül adrenalin ve sistemik deksametazon uygulamak"
+    },
+    {
+      "caseId": "v196-new-367-yutamama-ve-tripod-pozisyonu",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Yutamama ve tripod pozisyonu",
+      "oldOption": "Oral antibiyotik verip evde izlemek",
+      "newOption": "Oral antibiyotik verip ayaktan klinik izlem planlamak",
+      "correctAnswerText": "Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak"
+    },
+    {
+      "caseId": "v196-new-367-yutamama-ve-tripod-pozisyonu",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Yutamama ve tripod pozisyonu",
+      "oldOption": "Ateş düşürücü verip beklemek",
+      "newOption": "Antipiretik tedaviyle klinik izlemi sürdürmek",
+      "correctAnswerText": "Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak"
+    },
+    {
+      "caseId": "v196-new-368-ishal-sonrasi-dolasim-bozuklugu",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "İshal sonrası dolaşım bozukluğu",
+      "oldOption": "Sadece probiyotik vermek",
+      "newOption": "Probiyotik ve oral hidrasyonla destek tedavisi planlamak",
+      "correctAnswerText": "İntravenöz veya intraosseöz izotonik kristalloid bolusu vermek"
+    },
+    {
+      "caseId": "v196-new-370-bobrek-yetmezliginde-ritim-riski",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Böbrek yetmezliğinde ritim riski",
+      "oldOption": "Sadece reçine tedavisi verip taburcu etmek",
+      "newOption": "reçine tedavisi vererek ayaktan izlem planlamak",
+      "correctAnswerText": "İntravenöz kalsiyum glukonat uygulamak"
+    },
+    {
+      "caseId": "v196-new-371-konusamama-ve-hisilti",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Konuşamama ve hışıltı",
+      "oldOption": "Sadece oral antihistaminik vermek",
+      "newOption": "Antihistaminik temelli semptomatik tedaviyle yetinmek",
+      "correctAnswerText": "Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak"
+    },
+    {
+      "caseId": "v196-new-371-konusamama-ve-hisilti",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Konuşamama ve hışıltı",
+      "oldOption": "Egzersiz yaptırarak hava yollarını açmak",
+      "newOption": "Solunum egzersiziyle semptom kontrolü sağlamaya çalışmak",
+      "correctAnswerText": "Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak"
+    },
+    {
+      "caseId": "v196-new-371-konusamama-ve-hisilti",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Konuşamama ve hışıltı",
+      "oldOption": "Antibiyotik kültür sonucunu beklemek",
+      "newOption": "Kültür sonucuna göre antimikrobiyal tedavi planlamak",
+      "correctAnswerText": "Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak"
+    },
+    {
+      "caseId": "v196-new-371-konusamama-ve-hisilti",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Konuşamama ve hışıltı",
+      "oldOption": "Oda havasında gözlemlemek",
+      "newOption": "Oda havasında klinik izlemlemek",
+      "correctAnswerText": "Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak"
+    },
+    {
+      "caseId": "v196-new-372-yenidoganda-titreme-ve-emme-zayifligi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Yenidoğanda titreme ve emme zayıflığı",
+      "oldOption": "Sadece su vermek",
+      "newOption": "su vermek",
+      "correctAnswerText": "İntravenöz dekstroz tedavisi başlamak"
+    },
+    {
+      "caseId": "v196-new-372-yenidoganda-titreme-ve-emme-zayifligi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Yenidoğanda titreme ve emme zayıflığı",
+      "oldOption": "Beslenmeyi tamamen kesmek",
+      "newOption": "Beslenmeyi geçici olarak kısıtlayıp klinik izlem planlamak",
+      "correctAnswerText": "İntravenöz dekstroz tedavisi başlamak"
+    },
+    {
+      "caseId": "v196-new-374-ates-ve-ense-sertligi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Ateş ve ense sertliği",
+      "oldOption": "Antibiyotik başlamadan birkaç gün gözlemek",
+      "newOption": "Klinik stabiliteyi izleyip antibiyotik kararını ertelemek",
+      "correctAnswerText": "Kan kültürü alıp ampirik intravenöz antibiyotik tedavisini geciktirmeden başlamak"
+    },
+    {
+      "caseId": "v196-new-374-ates-ve-ense-sertligi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Ateş ve ense sertliği",
+      "oldOption": "Sadece oral ağrı kesici verip taburcu etmek",
+      "newOption": "Analjezik tedavi vererek ayaktan izlem planlamak",
+      "correctAnswerText": "Kan kültürü alıp ampirik intravenöz antibiyotik tedavisini geciktirmeden başlamak"
+    },
+    {
+      "caseId": "v196-new-374-ates-ve-ense-sertligi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Ateş ve ense sertliği",
+      "oldOption": "Sadece antihistaminik tedavi vermek",
+      "newOption": "Antihistaminik temelli semptomatik tedaviyle yetinmek",
+      "correctAnswerText": "Kan kültürü alıp ampirik intravenöz antibiyotik tedavisini geciktirmeden başlamak"
+    },
+    {
+      "caseId": "v196-new-375-tablet-alimi-sonrasi-kusma-ve-sok",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Tablet alımı sonrası kusma ve şok",
+      "oldOption": "Sadece süt içirmek",
+      "newOption": "Oral sıvı alımıyla gastrointestinal dekontaminasyona güvenmek",
+      "correctAnswerText": "Deferoksamin tedavisi uygulamak"
+    },
+    {
+      "caseId": "v196-new-376-kuruyemis-sonrasi-tek-tarafli-hisilti",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Kuruyemiş sonrası tek taraflı hışıltı",
+      "oldOption": "Sadece oral öksürük şurubu",
+      "newOption": "oral öksürük şurubu",
+      "correctAnswerText": "Rijid bronkoskopi"
+    },
+    {
+      "caseId": "v196-new-376-kuruyemis-sonrasi-tek-tarafli-hisilti",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Kuruyemiş sonrası tek taraflı hışıltı",
+      "oldOption": "Uzun süreli astım tedavisi başlamak",
+      "newOption": "Kontrol tedavisi olarak astım tedavisi başlamak",
+      "correctAnswerText": "Rijid bronkoskopi"
+    },
+    {
+      "caseId": "v196-new-376-kuruyemis-sonrasi-tek-tarafli-hisilti",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Kuruyemiş sonrası tek taraflı hışıltı",
+      "oldOption": "Evde gözlem",
+      "newOption": "Evde klinik izlem",
+      "correctAnswerText": "Rijid bronkoskopi"
+    },
+    {
+      "caseId": "v196-new-377-ates-ve-tek-dizde-sislik",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Ateş ve tek dizde şişlik",
+      "oldOption": "Sadece istirahat ve poliklinik kontrolü önermek",
+      "newOption": "İstirahat ve erken poliklinik kontrolüyle izlem planlamak",
+      "correctAnswerText": "Eklem aspirasyonu alıp ampirik intravenöz antibiyotik başlamak"
+    },
+    {
+      "caseId": "v196-new-377-ates-ve-tek-dizde-sislik",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Ateş ve tek dizde şişlik",
+      "oldOption": "Sadece topikal krem uygulamak",
+      "newOption": "Lokal topikal tedaviyle klinik izlem planlamak",
+      "correctAnswerText": "Eklem aspirasyonu alıp ampirik intravenöz antibiyotik başlamak"
+    },
+    {
+      "caseId": "v196-new-378-yenidoganda-emme-azalmasi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Yenidoğanda emme azalması",
+      "oldOption": "Sadece anne sütü miktarını artırmayı önermek",
+      "newOption": "Beslenme desteği ve yakın klinik izlem planlamak",
+      "correctAnswerText": "Kan kültürü alıp ampirik intravenöz antibiyotik ve destek tedavisi başlamak"
+    },
+    {
+      "caseId": "v196-new-378-yenidoganda-emme-azalmasi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Yenidoğanda emme azalması",
+      "oldOption": "Evde vücut sıcaklığı takibiyle izlemek",
+      "newOption": "Ayaktan sıcaklık takibi ve yakın klinik izlem planlamak",
+      "correctAnswerText": "Kan kültürü alıp ampirik intravenöz antibiyotik ve destek tedavisi başlamak"
+    },
+    {
+      "caseId": "v196-new-378-yenidoganda-emme-azalmasi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Yenidoğanda emme azalması",
+      "oldOption": "Aşı uygulayıp taburcu etmek",
+      "newOption": "Aşı değerlendirmesi sonrası ayaktan izlem planlamak",
+      "correctAnswerText": "Kan kültürü alıp ampirik intravenöz antibiyotik ve destek tedavisi başlamak"
+    },
+    {
+      "caseId": "v196-new-382-bes-gunu-asan-ates",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Beş günü aşan ateş",
+      "oldOption": "Sadece ateş düşürücüyle evde izlem",
+      "newOption": "Antipiretik tedavi ve ayaktan klinik izlem planlamak",
+      "correctAnswerText": "İntravenöz immünglobulin ve aspirin tedavisi"
+    },
+    {
+      "caseId": "v196-new-382-bes-gunu-asan-ates",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Beş günü aşan ateş",
+      "oldOption": "Uzun süreli oral antifungal tedavi",
+      "newOption": "Antifungal tedaviyle mukokutanöz bulguları izlemek",
+      "correctAnswerText": "İntravenöz immünglobulin ve aspirin tedavisi"
+    },
+    {
+      "caseId": "v196-new-382-bes-gunu-asan-ates",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Beş günü aşan ateş",
+      "oldOption": "Sadece antihistaminik tedavi",
+      "newOption": "antihistaminik tedavi",
+      "correctAnswerText": "İntravenöz immünglobulin ve aspirin tedavisi"
+    },
+    {
+      "caseId": "v196-new-389-aksamlari-artan-aglama",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Akşamları artan ağlama",
+      "oldOption": "Beslenmeyi tamamen kesmek",
+      "newOption": "Beslenmeyi geçici olarak kısıtlayıp klinik izlem planlamak",
+      "correctAnswerText": "Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri"
+    },
+    {
+      "caseId": "v196-new-389-aksamlari-artan-aglama",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "Akşamları artan ağlama",
+      "oldOption": "Uzun süreli sedatif tedavi başlamak",
+      "newOption": "Kontrol tedavisi olarak sedatif tedavi başlamak",
+      "correctAnswerText": "Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri"
+    },
+    {
+      "caseId": "v337-peds-clinical-unique-001-infantta-hisilti-ve-beslenememe",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "İnfantta hışıltı ve beslenememe",
+      "oldOption": "Uzun süreli inhale kortikosteroid başlamak",
+      "newOption": "İnhale kortikosteroidi kontrol tedavisi olarak başlamak",
+      "correctAnswerText": "Oksijen desteği, nazal aspirasyon ve hidrasyonun sağlanması"
+    },
+    {
+      "caseId": "v337-peds-clinical-unique-001-infantta-hisilti-ve-beslenememe",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "İnfantta hışıltı ve beslenememe",
+      "oldOption": "Her hastaya yüksek doz sistemik steroid vermek",
+      "newOption": "Sistemik kortikosteroidi rutin başlangıç tedavisi olarak kullanmak",
+      "correctAnswerText": "Oksijen desteği, nazal aspirasyon ve hidrasyonun sağlanması"
+    },
+    {
+      "caseId": "v337-peds-clinical-unique-001-infantta-hisilti-ve-beslenememe",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "title": "İnfantta hışıltı ve beslenememe",
+      "oldOption": "Sadece öksürük şurubu verip taburcu etmek",
+      "newOption": "Antitussif semptomatik tedaviyle ayaktan izlem planlamak",
+      "correctAnswerText": "Oksijen desteği, nazal aspirasyon ve hidrasyonun sağlanması"
+    }
+  ],
+  "remainingFlaggedOptions": [
+    {
+      "caseId": "v166-new-031-gebelikte-kanama-sonrasi-degerlendirme",
+      "branchId": "obstetrics-gynecology",
+      "title": "Gebelikte kanama sonrası değerlendirme",
+      "option": "İndirekt Coombs testi pozitifleşene kadar tedavisiz izlenmesi"
+    },
+    {
+      "caseId": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi",
+      "branchId": "pediatrics",
+      "title": "Ateş ve inspiratuvar solunum sıkıntısı",
+      "option": "Nebülize salbutamol verilerek taburculuk planlanması"
+    },
+    {
+      "caseId": "v168-new-058-hiperglisemi-ve-asidotik-solunum",
+      "branchId": "internal-medicine",
+      "title": "Hiperglisemi ve asidotik solunum",
+      "option": "Subkutan hızlı etkili insülin uygulanıp taburcu edilmesi"
+    },
+    {
+      "caseId": "v169-new-062-gebelikte-hipertansiyon-ve-norolojik-yakinma",
+      "branchId": "obstetrics-gynecology",
+      "title": "Gebelikte hipertansiyon ve nörolojik yakınma",
+      "option": "Oral benzodiazepinle uzun süreli nöbet profilaksisi planlamak"
+    },
+    {
+      "caseId": "v172-new-077-antikoagulan-tedavi-sirasinda-yeni-tromboz",
+      "branchId": "medical-pharmacology",
+      "title": "Antikoagülan tedavi sırasında yeni tromboz",
+      "option": "Trombosit transfüzyonu yapılıp antikoagülasyonun tamamen kesilmesi"
+    },
+    {
+      "caseId": "v174-new-093-travma-sonrasi-karin-hassasiyeti",
+      "branchId": "general-surgery",
+      "title": "Travma sonrası karın hassasiyeti",
+      "option": "Ayaktan analjezik verilerek taburcu edilmesi"
+    },
+    {
+      "caseId": "v174-new-100-gebeligin-gec-doneminde-agrisiz-kanama",
+      "branchId": "obstetrics-gynecology",
+      "title": "Gebeliğin geç döneminde ağrısız kanama",
+      "option": "Ayaktan izlem için taburculuk verilmesi"
+    },
+    {
+      "caseId": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski",
+      "branchId": "pediatrics",
+      "title": "Aralıklı karın ağrısı ve kanlı dışkı",
+      "option": "oral rehidratasyon ve taburculuk"
+    },
+    {
+      "caseId": "v177-new-121-dogum-sonrasi-ates-ve-uterin-hassasiyet",
+      "branchId": "obstetrics-gynecology",
+      "title": "Doğum sonrası ateş ve uterin hassasiyet",
+      "option": "oral parasetamol ve taburculuk"
+    },
+    {
+      "caseId": "v178-new-137-epigastrik-agri-ve-kusma",
+      "branchId": "general-surgery",
+      "title": "Epigastrik ağrı ve kusma",
+      "option": "Ayaktan oral analjezikle taburculuk"
+    },
+    {
+      "caseId": "v178-new-139-erken-gebelik-haftasinda-su-gelisi",
+      "branchId": "obstetrics-gynecology",
+      "title": "Erken gebelik haftasında su gelişi",
+      "option": "Ayaktan izlem için antibiyotiksiz taburculuk"
+    },
+    {
+      "caseId": "v179-new-141-besin-sonrasi-akut-reaksiyon",
+      "branchId": "pediatrics",
+      "title": "Besin sonrası akut reaksiyon",
+      "option": "İntravenöz kortikosteroid başlanıp yanıt beklenmesi"
+    },
+    {
+      "caseId": "v179-new-142-uzayan-nobet",
+      "branchId": "pediatrics",
+      "title": "Uzayan nöbet",
+      "option": "Oral levetirasetam reçete edilip taburcu edilmesi"
+    },
+    {
+      "caseId": "v179-new-143-hiperglisemi-ve-kusma",
+      "branchId": "pediatrics",
+      "title": "Hiperglisemi ve kusma",
+      "option": "Oral sıvı ve evde glukoz takibi önerilmesi"
+    },
+    {
+      "caseId": "v179-new-144-hisilti-ve-solunum-sikintisi",
+      "branchId": "pediatrics",
+      "title": "Hışıltı ve solunum sıkıntısı",
+      "option": "oral antihistaminik ve taburculuk"
+    },
+    {
+      "caseId": "v179-new-145-havlar-tarzda-oksuruk-ve-stridor",
+      "branchId": "pediatrics",
+      "title": "Havlar tarzda öksürük ve stridor",
+      "option": "Boğaz kültürü sonucu beklenene kadar tedavisiz izlem"
+    },
+    {
+      "caseId": "v179-new-146-ates-ve-salya-akmasi",
+      "branchId": "pediatrics",
+      "title": "Ateş ve salya akması",
+      "option": "Nebülize salbutamol verilerek taburculuk"
+    },
+    {
+      "caseId": "v179-new-150-yenidoganda-direncli-siyanoz",
+      "branchId": "pediatrics",
+      "title": "Yenidoğanda dirençli siyanoz",
+      "option": "Yüksek doz diüretik ve taburculuk"
+    },
+    {
+      "caseId": "v180-new-151-kemoterapi-sonrasi-ates",
+      "branchId": "pediatrics",
+      "title": "Kemoterapi sonrası ateş",
+      "option": "Ateş düşürücü verilerek kültür sonucu beklenmesi"
+    },
+    {
+      "caseId": "v180-new-151-kemoterapi-sonrasi-ates",
+      "branchId": "pediatrics",
+      "title": "Kemoterapi sonrası ateş",
+      "option": "oral amoksisilin-klavulanat ile taburculuk"
+    },
+    {
+      "caseId": "v180-new-154-aclik-sonrasi-nobet",
+      "branchId": "pediatrics",
+      "title": "Açlık sonrası nöbet",
+      "option": "Oral şekerli sıvı içirilip beklenmesi"
+    },
+    {
+      "caseId": "v180-new-154-aclik-sonrasi-nobet",
+      "branchId": "pediatrics",
+      "title": "Açlık sonrası nöbet",
+      "option": "Antiepileptik idame tedavisi başlanıp taburculuk"
+    },
+    {
+      "caseId": "v180-new-155-sicak-ortamda-bilinc-degisikligi",
+      "branchId": "pediatrics",
+      "title": "Sıcak ortamda bilinç değişikliği",
+      "option": "oral sıvı verilerek gölgede bekletme"
+    },
+    {
+      "caseId": "v180-new-155-sicak-ortamda-bilinc-degisikligi",
+      "branchId": "pediatrics",
+      "title": "Sıcak ortamda bilinç değişikliği",
+      "option": "Ateş düşürücü verip taburcu etme"
+    },
+    {
+      "caseId": "v180-new-155-sicak-ortamda-bilinc-degisikligi",
+      "branchId": "pediatrics",
+      "title": "Sıcak ortamda bilinç değişikliği",
+      "option": "Antibiyotik başlanıp kültür sonucu bekleme"
+    },
+    {
+      "caseId": "v180-new-158-bas-agrisi-ve-yuksek-tansiyon",
+      "branchId": "pediatrics",
+      "title": "Baş ağrısı ve yüksek tansiyon",
+      "option": "ağrı kesici verilerek taburculuk"
+    },
+    {
+      "caseId": "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik",
+      "branchId": "pediatrics",
+      "title": "Kulak ağrısı sonrası kulak arkasında şişlik",
+      "option": "ağrı kesici verilerek taburculuk"
+    },
+    {
+      "caseId": "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik",
+      "branchId": "pediatrics",
+      "title": "Kulak ağrısı sonrası kulak arkasında şişlik",
+      "option": "Hiçbir görüntüleme veya tedavi olmadan beklenmesi"
+    },
+    {
+      "caseId": "v180-new-160-kapali-ortam-sonrasi-bas-agrisi",
+      "branchId": "pediatrics",
+      "title": "Kapalı ortam sonrası baş ağrısı",
+      "option": "Pulse oksimetre normal olduğu için taburcu edilmesi"
+    },
+    {
+      "caseId": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi",
+      "branchId": "pediatrics",
+      "title": "Yenidoğanda beslenme bozulması ve hipotermi",
+      "option": "Antibiyotik için kan kültürü sonucu kesinleşene kadar beklenmesi"
+    },
+    {
+      "caseId": "v181-new-162-yenidoganda-kusma-ve-sok",
+      "branchId": "pediatrics",
+      "title": "Yenidoğanda kusma ve şok",
+      "option": "oral tuz desteği verilerek taburculuk"
+    },
+    {
+      "caseId": "v181-new-162-yenidoganda-kusma-ve-sok",
+      "branchId": "pediatrics",
+      "title": "Yenidoğanda kusma ve şok",
+      "option": "Elektif genetik test sonucu beklenmesi"
+    },
+    {
+      "caseId": "v181-new-163-bobrek-hastasinda-kas-gucsuzlugu",
+      "branchId": "pediatrics",
+      "title": "Böbrek hastasında kas güçsüzlüğü",
+      "option": "Kayeksalat etkisi beklenerek monitörsüz izlem"
+    },
+    {
+      "caseId": "v181-new-164-ilac-alimi-sonrasi-bilinc-degisikligi",
+      "branchId": "pediatrics",
+      "title": "İlaç alımı sonrası bilinç değişikliği",
+      "option": "oral aktif kömür verilerek taburculuk"
+    },
+    {
+      "caseId": "v181-new-165-kulak-cinlamasi-ve-hiperventilasyon",
+      "branchId": "pediatrics",
+      "title": "Kulak çınlaması ve hiperventilasyon",
+      "option": "oral sıvı verilerek taburcu edilmesi"
+    },
+    {
+      "caseId": "v181-new-167-fiskirir-tarzda-kusma",
+      "branchId": "pediatrics",
+      "title": "Fışkırır tarzda kusma",
+      "option": "Antibiyotik tedavisiyle taburculuk"
+    },
+    {
+      "caseId": "v181-new-169-su-alimi-sonrasi-nobet",
+      "branchId": "pediatrics",
+      "title": "Su alımı sonrası nöbet",
+      "option": "Furosemid verilerek taburcu edilmesi"
+    },
+    {
+      "caseId": "v182-new-171-travma-sonrasi-ani-solunum-bozulmasi",
+      "branchId": "pediatrics",
+      "title": "Travma sonrası ani solunum bozulması",
+      "option": "Oral antibiyotik başlanıp taburcu edilmesi"
+    },
+    {
+      "caseId": "v182-new-173-temizlik-maddesi-icme-sonrasi-agiz-yanigi",
+      "branchId": "pediatrics",
+      "title": "Temizlik maddesi içme sonrası ağız yanığı",
+      "option": "Semptom olduğu halde hemen taburcu etmek"
+    },
+    {
+      "caseId": "v182-new-175-orak-hucreli-cocukta-ani-solukluk",
+      "branchId": "pediatrics",
+      "title": "Orak hücreli çocukta ani solukluk",
+      "option": "Antibiyotik verilmeden taburcu edilmesi"
+    },
+    {
+      "caseId": "v182-new-176-aglama-sonrasi-morarma-atagi",
+      "branchId": "pediatrics",
+      "title": "Ağlama sonrası morarma atağı",
+      "option": "Acil taburculuk ve poliklinik kontrolü"
+    },
+    {
+      "caseId": "v182-new-178-havuzdan-cikarilma-sonrasi-oksuruk",
+      "branchId": "pediatrics",
+      "title": "Havuzdan çıkarılma sonrası öksürük",
+      "option": "Semptomlara rağmen hemen taburcu etmek"
+    },
+    {
+      "caseId": "v182-new-178-havuzdan-cikarilma-sonrasi-oksuruk",
+      "branchId": "pediatrics",
+      "title": "Havuzdan çıkarılma sonrası öksürük",
+      "option": "öksürük şurubu vermek"
+    },
+    {
+      "caseId": "v182-new-179-dka-tedavisi-sirasinda-bilinc-kotulesmesi",
+      "branchId": "pediatrics",
+      "title": "DKA tedavisi sırasında bilinç kötüleşmesi",
+      "option": "Taburculuk planlanması"
+    },
+    {
+      "caseId": "v183-new-190-kasik-sisligi-ve-kusma",
+      "branchId": "general-surgery",
+      "title": "Kasık şişliği ve kusma",
+      "option": "Herni bağı kullanarak taburcu etmek"
+    },
+    {
+      "caseId": "v184-new-191-erken-gebelikte-karin-agrisi-ve-bayilma",
+      "branchId": "obstetrics-gynecology",
+      "title": "Erken gebelikte karın ağrısı ve bayılma",
+      "option": "oral analjezik vererek taburcu etmek"
+    },
+    {
+      "caseId": "v185-new-222-ani-sirt-agrisi-ve-hipotansiyon",
+      "branchId": "general-surgery",
+      "title": "Ani sırt ağrısı ve hipotansiyon",
+      "option": "Ağrı kesici sonrası taburculuk"
+    },
+    {
+      "caseId": "v185-new-223-ates-sarilik-ve-sag-ust-kadran-agrisi",
+      "branchId": "general-surgery",
+      "title": "Ateş, sarılık ve sağ üst kadran ağrısı",
+      "option": "oral analjezik ve taburculuk"
+    },
+    {
+      "caseId": "v186-new-231-gebeligin-son-doneminde-agrisiz-kanama",
+      "branchId": "obstetrics-gynecology",
+      "title": "Gebeliğin son döneminde ağrısız kanama",
+      "option": "Ağrısız olduğu için hastayı hemen taburcu etmek"
+    },
+    {
+      "caseId": "v187-new-255-yasli-hastada-yeni-bas-agrisi",
+      "branchId": "minor-rotations",
+      "title": "Yaşlı hastada yeni baş ağrısı",
+      "option": "Temporal arter biyopsisi sonucunu beklemeden yüksek doz kortikosteroid başlamak"
+    },
+    {
+      "caseId": "v188-new-268-epigastrik-agri-ve-lipaz-yuksekligi",
+      "branchId": "general-surgery",
+      "title": "Epigastrik ağrı ve lipaz yüksekliği",
+      "option": "oral antiasit verilerek taburculuk"
+    },
+    {
+      "caseId": "v188-new-269-dogum-sonrasi-yogun-kanama",
+      "branchId": "obstetrics-gynecology",
+      "title": "Doğum sonrası yoğun kanama",
+      "option": "oral demir verilerek taburculuk"
+    },
+    {
+      "caseId": "v188-new-270-goz-cevresinde-sislik-ve-agri",
+      "branchId": "minor-rotations",
+      "title": "Göz çevresinde şişlik ve ağrı",
+      "option": "Evde soğuk kompres ve kontrol önerilmesi"
+    },
+    {
+      "caseId": "v188-new-270-goz-cevresinde-sislik-ve-agri",
+      "branchId": "minor-rotations",
+      "title": "Göz çevresinde şişlik ve ağrı",
+      "option": "Alerji testi sonucu beklenmesi"
+    },
+    {
+      "caseId": "v189-new-290-heparin-sonrasi-trombosit-dususu-ve-bacak-agrisi",
+      "branchId": "medical-pharmacology",
+      "title": "Heparin sonrası trombosit düşüşü ve bacak ağrısı",
+      "option": "Antikoagülasyonu tamamen kesip izlemek"
+    },
+    {
+      "caseId": "v189-new-293-karin-sisligi-ve-gaz-cikaramama",
+      "branchId": "general-surgery",
+      "title": "Karın şişliği ve gaz çıkaramama",
+      "option": "laksatif vererek taburculuk"
+    },
+    {
+      "caseId": "v189-new-296-erken-membran-rupturu",
+      "branchId": "obstetrics-gynecology",
+      "title": "Erken membran rüptürü",
+      "option": "Ateş olmadığı için taburculuk ve kontrolsüz izlem"
+    },
+    {
+      "caseId": "v189-new-299-diyabetik-hastada-siddetli-kulak-agrisi",
+      "branchId": "minor-rotations",
+      "title": "Diyabetik hastada şiddetli kulak ağrısı",
+      "option": "kulak kiri temizliği ve taburculuk"
+    },
+    {
+      "caseId": "v189-new-300-el-uzerine-dusme-sonrasi-bilek-agrisi",
+      "branchId": "minor-rotations",
+      "title": "El üzerine düşme sonrası bilek ağrısı",
+      "option": "Grafi normal olduğu için hiçbir tedavi vermeden taburcu etmek"
+    },
+    {
+      "caseId": "v192-new-301-halsizlik-ve-direncli-hipotansiyon",
+      "branchId": "internal-medicine",
+      "title": "Halsizlik ve dirençli hipotansiyon",
+      "option": "oral tuz tabletleriyle taburculuk"
+    },
+    {
+      "caseId": "v194-new-333-alinda-vezikuler-dokuntu-ve-goz-agrisi",
+      "branchId": "minor-rotations",
+      "title": "Alında veziküler döküntü ve göz ağrısı",
+      "option": "Göz muayenesi gerekmeden taburculuk"
+    },
+    {
+      "caseId": "v195-new-355-kusma-sonrasi-gogus-agrisi",
+      "branchId": "general-surgery",
+      "title": "Kusma sonrası göğüs ağrısı",
+      "option": "oral antiasit vererek taburcu etmek"
+    },
+    {
+      "caseId": "v196-new-364-yemek-sonrasi-ani-solunum-sikintisi",
+      "branchId": "pediatrics",
+      "title": "Yemek sonrası ani solunum sıkıntısı",
+      "option": "Cilt döküntüsü gerileyene kadar tedavisiz klinik izlemek"
+    },
+    {
+      "caseId": "v196-new-376-kuruyemis-sonrasi-tek-tarafli-hisilti",
+      "branchId": "pediatrics",
+      "title": "Kuruyemiş sonrası tek taraflı hışıltı",
+      "option": "oral öksürük şurubu"
+    },
+    {
+      "caseId": "v196-new-376-kuruyemis-sonrasi-tek-tarafli-hisilti",
+      "branchId": "pediatrics",
+      "title": "Kuruyemiş sonrası tek taraflı hışıltı",
+      "option": "Evde klinik izlem"
+    }
+  ],
+  "changedOptionsPass2": [
+    {
+      "caseId": "v166-new-031-gebelikte-kanama-sonrasi-degerlendirme",
+      "branchId": "obstetrics-gynecology",
+      "title": "Gebelikte kanama sonrası değerlendirme",
+      "oldOption": "İndirekt Coombs testi pozitifleşene kadar tedavisiz izlenmesi",
+      "newOption": "İndirekt Coombs sonucuna göre profilaksi kararını ertelemek",
+      "correctAnswerText": "Anti-D immünoglobulin uygulanması"
+    },
+    {
+      "caseId": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi",
+      "branchId": "pediatrics",
+      "title": "Ateş ve inspiratuvar solunum sıkıntısı",
+      "oldOption": "Nebülize salbutamol verilerek taburculuk planlanması",
+      "newOption": "Nebülize bronkodilatör yanıtına göre ayaktan izlem planlamak",
+      "correctAnswerText": "Kontrollü koşullarda hava yolunun güvence altına alınması"
+    },
+    {
+      "caseId": "v168-new-058-hiperglisemi-ve-asidotik-solunum",
+      "branchId": "internal-medicine",
+      "title": "Hiperglisemi ve asidotik solunum",
+      "oldOption": "Subkutan hızlı etkili insülin uygulanıp taburcu edilmesi",
+      "newOption": "Subkutan hızlı etkili insülinle ayaktan glisemik izlem planlamak",
+      "correctAnswerText": "İzotonik salin ile intravenöz sıvı replasmanı başlanması"
+    },
+    {
+      "caseId": "v169-new-062-gebelikte-hipertansiyon-ve-norolojik-yakinma",
+      "branchId": "obstetrics-gynecology",
+      "title": "Gebelikte hipertansiyon ve nörolojik yakınma",
+      "oldOption": "Oral benzodiazepinle uzun süreli nöbet profilaksisi planlamak",
+      "newOption": "Oral benzodiazepinle kontrol tedavisi olarak nöbet profilaksisi planlamak",
+      "correctAnswerText": "Magnezyum sülfat"
+    },
+    {
+      "caseId": "v172-new-077-antikoagulan-tedavi-sirasinda-yeni-tromboz",
+      "branchId": "medical-pharmacology",
+      "title": "Antikoagülan tedavi sırasında yeni tromboz",
+      "oldOption": "Trombosit transfüzyonu yapılıp antikoagülasyonun tamamen kesilmesi",
+      "newOption": "Trombosit transfüzyonu sonrası antikoagülasyonu keserek izlem planlamak",
+      "correctAnswerText": "Heparinin kesilip argatroban gibi non-heparin antikoagülan başlanması"
+    },
+    {
+      "caseId": "v174-new-093-travma-sonrasi-karin-hassasiyeti",
+      "branchId": "general-surgery",
+      "title": "Travma sonrası karın hassasiyeti",
+      "oldOption": "Ayaktan analjezik verilerek taburcu edilmesi",
+      "newOption": "Ayaktan analjezik tedavi ve yakın kontrol planlamak",
+      "correctAnswerText": "Acil eksploratif laparotomi yapılması"
+    },
+    {
+      "caseId": "v174-new-100-gebeligin-gec-doneminde-agrisiz-kanama",
+      "branchId": "obstetrics-gynecology",
+      "title": "Gebeliğin geç döneminde ağrısız kanama",
+      "oldOption": "Ayaktan izlem için taburculuk verilmesi",
+      "newOption": "Ayaktan yakın izlem ve planlı kontrol önermek",
+      "correctAnswerText": "Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi"
+    },
+    {
+      "caseId": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski",
+      "branchId": "pediatrics",
+      "title": "Aralıklı karın ağrısı ve kanlı dışkı",
+      "oldOption": "oral rehidratasyon ve taburculuk",
+      "newOption": "Oral rehidratasyon ve yakın ayaktan izlem",
+      "correctAnswerText": "Pnömatik veya hidrostatik enema ile redüksiyon"
+    },
+    {
+      "caseId": "v177-new-121-dogum-sonrasi-ates-ve-uterin-hassasiyet",
+      "branchId": "obstetrics-gynecology",
+      "title": "Doğum sonrası ateş ve uterin hassasiyet",
+      "oldOption": "oral parasetamol ve taburculuk",
+      "newOption": "Oral antipiretik-analjezik tedaviyle ayaktan izlem",
+      "correctAnswerText": "İntravenöz klindamisin ve gentamisin"
+    },
+    {
+      "caseId": "v178-new-137-epigastrik-agri-ve-kusma",
+      "branchId": "general-surgery",
+      "title": "Epigastrik ağrı ve kusma",
+      "oldOption": "Ayaktan oral analjezikle taburculuk",
+      "newOption": "Ayaktan oral analjezik tedavi ve yakın kontrol",
+      "correctAnswerText": "Agresif intravenöz sıvı replasmanı, analjezi ve yakın klinik izlem"
+    },
+    {
+      "caseId": "v178-new-139-erken-gebelik-haftasinda-su-gelisi",
+      "branchId": "obstetrics-gynecology",
+      "title": "Erken gebelik haftasında su gelişi",
+      "oldOption": "Ayaktan izlem için antibiyotiksiz taburculuk",
+      "newOption": "Antibiyotiksiz ayaktan yakın izlem planlamak",
+      "correctAnswerText": "Kortikosteroid, latensi antibiyotiği ve yakın maternal-fetal izlem"
+    },
+    {
+      "caseId": "v179-new-141-besin-sonrasi-akut-reaksiyon",
+      "branchId": "pediatrics",
+      "title": "Besin sonrası akut reaksiyon",
+      "oldOption": "İntravenöz kortikosteroid başlanıp yanıt beklenmesi",
+      "newOption": "İntravenöz kortikosteroid yanıtına göre tedavi planlamak",
+      "correctAnswerText": "İntramüsküler adrenalin uygulanması"
+    },
+    {
+      "caseId": "v179-new-142-uzayan-nobet",
+      "branchId": "pediatrics",
+      "title": "Uzayan nöbet",
+      "oldOption": "Oral levetirasetam reçete edilip taburcu edilmesi",
+      "newOption": "Oral antiepileptik reçetesiyle ayaktan izlem planlamak",
+      "correctAnswerText": "İntravenöz veya intranazal benzodiazepin uygulanması"
+    },
+    {
+      "caseId": "v179-new-143-hiperglisemi-ve-kusma",
+      "branchId": "pediatrics",
+      "title": "Hiperglisemi ve kusma",
+      "oldOption": "Oral sıvı ve evde glukoz takibi önerilmesi",
+      "newOption": "Oral sıvı desteği ve ayaktan glukoz izlemi planlamak",
+      "correctAnswerText": "İzotonik sıvı replasmanı başlanması ve düşük potasyum düzeltilmeden insülinin ertelenmesi"
+    },
+    {
+      "caseId": "v179-new-144-hisilti-ve-solunum-sikintisi",
+      "branchId": "pediatrics",
+      "title": "Hışıltı ve solunum sıkıntısı",
+      "oldOption": "oral antihistaminik ve taburculuk",
+      "newOption": "Oral antihistaminik tedavi ve ayaktan izlem",
+      "correctAnswerText": "Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid"
+    },
+    {
+      "caseId": "v179-new-145-havlar-tarzda-oksuruk-ve-stridor",
+      "branchId": "pediatrics",
+      "title": "Havlar tarzda öksürük ve stridor",
+      "oldOption": "Boğaz kültürü sonucu beklenene kadar tedavisiz izlem",
+      "newOption": "Boğaz kültürü sonucuna göre klinik izlem ve tedavi planlamak",
+      "correctAnswerText": "Deksametazon ve nebulize adrenalin uygulanması"
+    },
+    {
+      "caseId": "v179-new-146-ates-ve-salya-akmasi",
+      "branchId": "pediatrics",
+      "title": "Ateş ve salya akması",
+      "oldOption": "Nebülize salbutamol verilerek taburculuk",
+      "newOption": "Nebülize salbutamol verilerek ayaktan izlem planlanması",
+      "correctAnswerText": "Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması"
+    },
+    {
+      "caseId": "v179-new-150-yenidoganda-direncli-siyanoz",
+      "branchId": "pediatrics",
+      "title": "Yenidoğanda dirençli siyanoz",
+      "oldOption": "Yüksek doz diüretik ve taburculuk",
+      "newOption": "Yüksek doz diüretik tedaviyle ayaktan izlem planlamak",
+      "correctAnswerText": "Prostaglandin E1 infüzyonu"
+    },
+    {
+      "caseId": "v180-new-151-kemoterapi-sonrasi-ates",
+      "branchId": "pediatrics",
+      "title": "Kemoterapi sonrası ateş",
+      "oldOption": "Ateş düşürücü verilerek kültür sonucu beklenmesi",
+      "newOption": "Antipiretik tedaviyle kültür sonucuna göre izlem planlamak",
+      "correctAnswerText": "Antipseudomonal etkili intravenöz geniş spektrumlu antibiyotik başlanması"
+    },
+    {
+      "caseId": "v180-new-151-kemoterapi-sonrasi-ates",
+      "branchId": "pediatrics",
+      "title": "Kemoterapi sonrası ateş",
+      "oldOption": "oral amoksisilin-klavulanat ile taburculuk",
+      "newOption": "Oral amoksisilin-klavulanat ile ayaktan izlem planlamak",
+      "correctAnswerText": "Antipseudomonal etkili intravenöz geniş spektrumlu antibiyotik başlanması"
+    },
+    {
+      "caseId": "v180-new-154-aclik-sonrasi-nobet",
+      "branchId": "pediatrics",
+      "title": "Açlık sonrası nöbet",
+      "oldOption": "Oral şekerli sıvı içirilip beklenmesi",
+      "newOption": "Oral karbonhidrat vererek klinik yanıtı izlemek",
+      "correctAnswerText": "İntravenöz dekstroz bolusu uygulanması"
+    },
+    {
+      "caseId": "v180-new-154-aclik-sonrasi-nobet",
+      "branchId": "pediatrics",
+      "title": "Açlık sonrası nöbet",
+      "oldOption": "Antiepileptik idame tedavisi başlanıp taburculuk",
+      "newOption": "Antiepileptik idame tedavisiyle ayaktan izlem planlamak",
+      "correctAnswerText": "İntravenöz dekstroz bolusu uygulanması"
+    },
+    {
+      "caseId": "v180-new-155-sicak-ortamda-bilinc-degisikligi",
+      "branchId": "pediatrics",
+      "title": "Sıcak ortamda bilinç değişikliği",
+      "oldOption": "oral sıvı verilerek gölgede bekletme",
+      "newOption": "Oral sıvı ve gölgede soğutmayla klinik izlem",
+      "correctAnswerText": "Hızlı aktif soğutma ve eş zamanlı destek tedavisi"
+    },
+    {
+      "caseId": "v180-new-155-sicak-ortamda-bilinc-degisikligi",
+      "branchId": "pediatrics",
+      "title": "Sıcak ortamda bilinç değişikliği",
+      "oldOption": "Ateş düşürücü verip taburcu etme",
+      "newOption": "Antipiretik tedaviyle ayaktan izlem planlama",
+      "correctAnswerText": "Hızlı aktif soğutma ve eş zamanlı destek tedavisi"
+    },
+    {
+      "caseId": "v180-new-155-sicak-ortamda-bilinc-degisikligi",
+      "branchId": "pediatrics",
+      "title": "Sıcak ortamda bilinç değişikliği",
+      "oldOption": "Antibiyotik başlanıp kültür sonucu bekleme",
+      "newOption": "Antibiyotik başlanıp kültür sonucuna göre izlem planlama",
+      "correctAnswerText": "Hızlı aktif soğutma ve eş zamanlı destek tedavisi"
+    },
+    {
+      "caseId": "v180-new-158-bas-agrisi-ve-yuksek-tansiyon",
+      "branchId": "pediatrics",
+      "title": "Baş ağrısı ve yüksek tansiyon",
+      "oldOption": "ağrı kesici verilerek taburculuk",
+      "newOption": "Analjezik tedaviyle ayaktan izlem planlamak",
+      "correctAnswerText": "Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi"
+    },
+    {
+      "caseId": "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik",
+      "branchId": "pediatrics",
+      "title": "Kulak ağrısı sonrası kulak arkasında şişlik",
+      "oldOption": "ağrı kesici verilerek taburculuk",
+      "newOption": "Analjezik tedaviyle ayaktan izlem planlamak",
+      "correctAnswerText": "Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi"
+    },
+    {
+      "caseId": "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik",
+      "branchId": "pediatrics",
+      "title": "Kulak ağrısı sonrası kulak arkasında şişlik",
+      "oldOption": "Hiçbir görüntüleme veya tedavi olmadan beklenmesi",
+      "newOption": "İleri görüntüleme yapmadan klinik izlem planlamak",
+      "correctAnswerText": "Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi"
+    },
+    {
+      "caseId": "v180-new-160-kapali-ortam-sonrasi-bas-agrisi",
+      "branchId": "pediatrics",
+      "title": "Kapalı ortam sonrası baş ağrısı",
+      "oldOption": "Pulse oksimetre normal olduğu için taburcu edilmesi",
+      "newOption": "Pulse oksimetre normal olduğu için ayaktan izlem planlanması",
+      "correctAnswerText": "Yüksek akımlı yüzde yüz oksijen verilmesi"
+    },
+    {
+      "caseId": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi",
+      "branchId": "pediatrics",
+      "title": "Yenidoğanda beslenme bozulması ve hipotermi",
+      "oldOption": "Antibiyotik için kan kültürü sonucu kesinleşene kadar beklenmesi",
+      "newOption": "Kan kültürü sonucuna göre antibiyotik kararını ertelemek",
+      "correctAnswerText": "Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi"
+    },
+    {
+      "caseId": "v181-new-162-yenidoganda-kusma-ve-sok",
+      "branchId": "pediatrics",
+      "title": "Yenidoğanda kusma ve şok",
+      "oldOption": "oral tuz desteği verilerek taburculuk",
+      "newOption": "Oral tuz desteğiyle ayaktan izlem planlamak",
+      "correctAnswerText": "İzotonik sıvı, dekstroz ve stres doz hidrokortizon başlanması"
+    },
+    {
+      "caseId": "v181-new-162-yenidoganda-kusma-ve-sok",
+      "branchId": "pediatrics",
+      "title": "Yenidoğanda kusma ve şok",
+      "oldOption": "Elektif genetik test sonucu beklenmesi",
+      "newOption": "Elektif genetik test sonucuna göre klinik izlem planlamak",
+      "correctAnswerText": "İzotonik sıvı, dekstroz ve stres doz hidrokortizon başlanması"
+    },
+    {
+      "caseId": "v181-new-163-bobrek-hastasinda-kas-gucsuzlugu",
+      "branchId": "pediatrics",
+      "title": "Böbrek hastasında kas güçsüzlüğü",
+      "oldOption": "Kayeksalat etkisi beklenerek monitörsüz izlem",
+      "newOption": "Reçine tedavisiyle monitörsüz klinik izlem planlamak",
+      "correctAnswerText": "İntravenöz kalsiyum glukonat verilmesi"
+    },
+    {
+      "caseId": "v181-new-164-ilac-alimi-sonrasi-bilinc-degisikligi",
+      "branchId": "pediatrics",
+      "title": "İlaç alımı sonrası bilinç değişikliği",
+      "oldOption": "oral aktif kömür verilerek taburculuk",
+      "newOption": "Oral aktif kömür sonrası ayaktan izlem planlamak",
+      "correctAnswerText": "İntravenöz sodyum bikarbonat verilmesi"
+    },
+    {
+      "caseId": "v181-new-165-kulak-cinlamasi-ve-hiperventilasyon",
+      "branchId": "pediatrics",
+      "title": "Kulak çınlaması ve hiperventilasyon",
+      "oldOption": "oral sıvı verilerek taburcu edilmesi",
+      "newOption": "Oral sıvı desteğiyle ayaktan izlem planlamak",
+      "correctAnswerText": "İntravenöz sodyum bikarbonat ile serum ve idrar alkalinizasyonu"
+    },
+    {
+      "caseId": "v181-new-167-fiskirir-tarzda-kusma",
+      "branchId": "pediatrics",
+      "title": "Fışkırır tarzda kusma",
+      "oldOption": "Antibiyotik tedavisiyle taburculuk",
+      "newOption": "Antibiyotik tedavisiyle ayaktan izlem planlamak",
+      "correctAnswerText": "Sıvı-elektrolit bozukluğunun düzeltilmesi"
+    },
+    {
+      "caseId": "v181-new-169-su-alimi-sonrasi-nobet",
+      "branchId": "pediatrics",
+      "title": "Su alımı sonrası nöbet",
+      "oldOption": "Furosemid verilerek taburcu edilmesi",
+      "newOption": "Furosemid verilerek ayaktan izlem planlamak",
+      "correctAnswerText": "Hipertonik salin bolusu verilmesi"
+    },
+    {
+      "caseId": "v182-new-171-travma-sonrasi-ani-solunum-bozulmasi",
+      "branchId": "pediatrics",
+      "title": "Travma sonrası ani solunum bozulması",
+      "oldOption": "Oral antibiyotik başlanıp taburcu edilmesi",
+      "newOption": "Oral antibiyotik başlanarak ayaktan izlem planlamak",
+      "correctAnswerText": "Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi"
+    },
+    {
+      "caseId": "v182-new-173-temizlik-maddesi-icme-sonrasi-agiz-yanigi",
+      "branchId": "pediatrics",
+      "title": "Temizlik maddesi içme sonrası ağız yanığı",
+      "oldOption": "Semptom olduğu halde hemen taburcu etmek",
+      "newOption": "Semptomlara rağmen ayaktan izlem planlamak",
+      "correctAnswerText": "Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek"
+    },
+    {
+      "caseId": "v182-new-175-orak-hucreli-cocukta-ani-solukluk",
+      "branchId": "pediatrics",
+      "title": "Orak hücreli çocukta ani solukluk",
+      "oldOption": "Antibiyotik verilmeden taburcu edilmesi",
+      "newOption": "Antibiyotiksiz ayaktan izlem planlamak",
+      "correctAnswerText": "Acil eritrosit süspansiyonu transfüzyonu ve dolaşım desteği"
+    },
+    {
+      "caseId": "v182-new-176-aglama-sonrasi-morarma-atagi",
+      "branchId": "pediatrics",
+      "title": "Ağlama sonrası morarma atağı",
+      "oldOption": "Acil taburculuk ve poliklinik kontrolü",
+      "newOption": "Acil servisten ayaktan kontrol planlamak",
+      "correctAnswerText": "Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek"
+    },
+    {
+      "caseId": "v182-new-178-havuzdan-cikarilma-sonrasi-oksuruk",
+      "branchId": "pediatrics",
+      "title": "Havuzdan çıkarılma sonrası öksürük",
+      "oldOption": "Semptomlara rağmen hemen taburcu etmek",
+      "newOption": "Semptomlara rağmen ayaktan izlem planlamak",
+      "correctAnswerText": "Oksijen desteği ve solunum durumuna göre yakın izlem"
+    },
+    {
+      "caseId": "v182-new-178-havuzdan-cikarilma-sonrasi-oksuruk",
+      "branchId": "pediatrics",
+      "title": "Havuzdan çıkarılma sonrası öksürük",
+      "oldOption": "öksürük şurubu vermek",
+      "newOption": "Antitussif semptomatik tedavi vermek",
+      "correctAnswerText": "Oksijen desteği ve solunum durumuna göre yakın izlem"
+    },
+    {
+      "caseId": "v182-new-179-dka-tedavisi-sirasinda-bilinc-kotulesmesi",
+      "branchId": "pediatrics",
+      "title": "DKA tedavisi sırasında bilinç kötüleşmesi",
+      "oldOption": "Taburculuk planlanması",
+      "newOption": "Ayaktan izlem planlanması",
+      "correctAnswerText": "Hipertonik salin veya mannitol tedavisi başlanması"
+    },
+    {
+      "caseId": "v183-new-190-kasik-sisligi-ve-kusma",
+      "branchId": "general-surgery",
+      "title": "Kasık şişliği ve kusma",
+      "oldOption": "Herni bağı kullanarak taburcu etmek",
+      "newOption": "Herni bağı ile ayaktan izlem planlamak",
+      "correctAnswerText": "Acil cerrahi değerlendirme ve operatif onarım"
+    },
+    {
+      "caseId": "v184-new-191-erken-gebelikte-karin-agrisi-ve-bayilma",
+      "branchId": "obstetrics-gynecology",
+      "title": "Erken gebelikte karın ağrısı ve bayılma",
+      "oldOption": "oral analjezik vererek taburcu etmek",
+      "newOption": "Oral analjezikle ayaktan izlem planlamak",
+      "correctAnswerText": "Acil cerrahi eksplorasyon ve hemodinamik resüsitasyon"
+    },
+    {
+      "caseId": "v185-new-222-ani-sirt-agrisi-ve-hipotansiyon",
+      "branchId": "general-surgery",
+      "title": "Ani sırt ağrısı ve hipotansiyon",
+      "oldOption": "Ağrı kesici sonrası taburculuk",
+      "newOption": "Analjezik tedavi sonrası ayaktan izlem",
+      "correctAnswerText": "Hemodinamik resüsitasyonla eş zamanlı acil damar cerrahisi onarımı"
+    },
+    {
+      "caseId": "v185-new-223-ates-sarilik-ve-sag-ust-kadran-agrisi",
+      "branchId": "general-surgery",
+      "title": "Ateş, sarılık ve sağ üst kadran ağrısı",
+      "oldOption": "oral analjezik ve taburculuk",
+      "newOption": "Oral analjezik tedavi ve ayaktan izlem",
+      "correctAnswerText": "Acil ERCP ile biliyer drenaj"
+    },
+    {
+      "caseId": "v186-new-231-gebeligin-son-doneminde-agrisiz-kanama",
+      "branchId": "obstetrics-gynecology",
+      "title": "Gebeliğin son döneminde ağrısız kanama",
+      "oldOption": "Ağrısız olduğu için hastayı hemen taburcu etmek",
+      "newOption": "Ağrısız kanama nedeniyle ayaktan izlem planlamak",
+      "correctAnswerText": "Ultrasonografi ile plasenta yerleşimini değerlendirmek ve dijital muayeneden kaçınmak"
+    },
+    {
+      "caseId": "v188-new-268-epigastrik-agri-ve-lipaz-yuksekligi",
+      "branchId": "general-surgery",
+      "title": "Epigastrik ağrı ve lipaz yüksekliği",
+      "oldOption": "oral antiasit verilerek taburculuk",
+      "newOption": "Oral antiasit tedavisiyle ayaktan izlem",
+      "correctAnswerText": "İntravenöz sıvı, analjezi, oral alımın düzenlenmesi ve yakın klinik izlem"
+    },
+    {
+      "caseId": "v188-new-269-dogum-sonrasi-yogun-kanama",
+      "branchId": "obstetrics-gynecology",
+      "title": "Doğum sonrası yoğun kanama",
+      "oldOption": "oral demir verilerek taburculuk",
+      "newOption": "Oral demir tedavisiyle ayaktan izlem",
+      "correctAnswerText": "Uterin masaj ve oksitosin uygulanması"
+    },
+    {
+      "caseId": "v188-new-270-goz-cevresinde-sislik-ve-agri",
+      "branchId": "minor-rotations",
+      "title": "Göz çevresinde şişlik ve ağrı",
+      "oldOption": "Evde soğuk kompres ve kontrol önerilmesi",
+      "newOption": "Soğuk kompres ve ayaktan yakın kontrol önermek",
+      "correctAnswerText": "Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi"
+    },
+    {
+      "caseId": "v188-new-270-goz-cevresinde-sislik-ve-agri",
+      "branchId": "minor-rotations",
+      "title": "Göz çevresinde şişlik ve ağrı",
+      "oldOption": "Alerji testi sonucu beklenmesi",
+      "newOption": "Alerji testi sonucuna göre klinik izlem planlamak",
+      "correctAnswerText": "Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi"
+    },
+    {
+      "caseId": "v189-new-290-heparin-sonrasi-trombosit-dususu-ve-bacak-agrisi",
+      "branchId": "medical-pharmacology",
+      "title": "Heparin sonrası trombosit düşüşü ve bacak ağrısı",
+      "oldOption": "Antikoagülasyonu tamamen kesip izlemek",
+      "newOption": "Antikoagülasyonu keserek klinik izlem planlamak",
+      "correctAnswerText": "Heparini kesip heparin dışı antikoagülan başlamak"
+    },
+    {
+      "caseId": "v189-new-293-karin-sisligi-ve-gaz-cikaramama",
+      "branchId": "general-surgery",
+      "title": "Karın şişliği ve gaz çıkaramama",
+      "oldOption": "laksatif vererek taburculuk",
+      "newOption": "Laksatif tedaviyle ayaktan izlem",
+      "correctAnswerText": "Fleksibl sigmoidoskopi ile endoskopik detorsiyon"
+    },
+    {
+      "caseId": "v189-new-294-supheli-tiroid-nodulu",
+      "branchId": "general-surgery",
+      "title": "Şüpheli tiroid nodülü",
+      "oldOption": "yıllık takip ve hiçbir işlem yapmama",
+      "newOption": "yıllık takip ve ileri işlem yapmama",
+      "correctAnswerText": "Ultrason eşliğinde ince iğne aspirasyon biyopsisi"
+    },
+    {
+      "caseId": "v189-new-296-erken-membran-rupturu",
+      "branchId": "obstetrics-gynecology",
+      "title": "Erken membran rüptürü",
+      "oldOption": "Ateş olmadığı için taburculuk ve kontrolsüz izlem",
+      "newOption": "Ateş olmadığı için ayaktan izlem planlamak",
+      "correctAnswerText": "Yatış, antenatal kortikosteroid, antibiyotik ve yakın izlem"
+    },
+    {
+      "caseId": "v189-new-299-diyabetik-hastada-siddetli-kulak-agrisi",
+      "branchId": "minor-rotations",
+      "title": "Diyabetik hastada şiddetli kulak ağrısı",
+      "oldOption": "kulak kiri temizliği ve taburculuk",
+      "newOption": "Kulak yolu temizliği sonrası ayaktan izlem",
+      "correctAnswerText": "Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi"
+    },
+    {
+      "caseId": "v189-new-300-el-uzerine-dusme-sonrasi-bilek-agrisi",
+      "branchId": "minor-rotations",
+      "title": "El üzerine düşme sonrası bilek ağrısı",
+      "oldOption": "Grafi normal olduğu için hiçbir tedavi vermeden taburcu etmek",
+      "newOption": "Grafi normal olduğu için ileri tedavisiz ayaktan izlem planlamak",
+      "correctAnswerText": "Skafoid kırığı gibi kabul edip başparmak destekli immobilizasyon ve kontrol görüntüleme planlamak"
+    },
+    {
+      "caseId": "v192-new-301-halsizlik-ve-direncli-hipotansiyon",
+      "branchId": "internal-medicine",
+      "title": "Halsizlik ve dirençli hipotansiyon",
+      "oldOption": "oral tuz tabletleriyle taburculuk",
+      "newOption": "Oral tuz desteğiyle ayaktan izlem",
+      "correctAnswerText": "İntravenöz hidrokortizon ve izotonik sıvı tedavisi"
+    },
+    {
+      "caseId": "v194-new-333-alinda-vezikuler-dokuntu-ve-goz-agrisi",
+      "branchId": "minor-rotations",
+      "title": "Alında veziküler döküntü ve göz ağrısı",
+      "oldOption": "Göz muayenesi gerekmeden taburculuk",
+      "newOption": "Göz muayenesi olmadan ayaktan izlem",
+      "correctAnswerText": "Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi"
+    },
+    {
+      "caseId": "v195-new-355-kusma-sonrasi-gogus-agrisi",
+      "branchId": "general-surgery",
+      "title": "Kusma sonrası göğüs ağrısı",
+      "oldOption": "oral antiasit vererek taburcu etmek",
+      "newOption": "Oral antiasit tedavisiyle ayaktan izlem planlamak",
+      "correctAnswerText": "Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek"
+    },
+    {
+      "caseId": "v195-new-357-erken-evre-meme-kitlesi",
+      "branchId": "general-surgery",
+      "title": "Erken evre meme kitlesi",
+      "oldOption": "Aksillaya hiçbir değerlendirme yapmamak",
+      "newOption": "Aksillaya ileri değerlendirme yapmamak",
+      "correctAnswerText": "Sentinel lenf nodu biyopsisi"
+    },
+    {
+      "caseId": "v196-new-364-yemek-sonrasi-ani-solunum-sikintisi",
+      "branchId": "pediatrics",
+      "title": "Yemek sonrası ani solunum sıkıntısı",
+      "oldOption": "Cilt döküntüsü gerileyene kadar tedavisiz klinik izlemek",
+      "newOption": "Cilt bulgularının seyrine göre klinik izlem planlamak",
+      "correctAnswerText": "İntramüsküler adrenalin uygulamak"
+    },
+    {
+      "caseId": "v196-new-376-kuruyemis-sonrasi-tek-tarafli-hisilti",
+      "branchId": "pediatrics",
+      "title": "Kuruyemiş sonrası tek taraflı hışıltı",
+      "oldOption": "oral öksürük şurubu",
+      "newOption": "Antitussif semptomatik tedavi",
+      "correctAnswerText": "Rijid bronkoskopi"
+    },
+    {
+      "caseId": "v196-new-376-kuruyemis-sonrasi-tek-tarafli-hisilti",
+      "branchId": "pediatrics",
+      "title": "Kuruyemiş sonrası tek taraflı hışıltı",
+      "oldOption": "Evde klinik izlem",
+      "newOption": "Ayaktan klinik izlem",
+      "correctAnswerText": "Rijid bronkoskopi"
+    }
+  ],
+  "remainingFlaggedWrongOptionsAfterPass2": [
+    {
+      "caseId": "v189-new-300-el-uzerine-dusme-sonrasi-bilek-agrisi",
+      "branchId": "minor-rotations",
+      "title": "El üzerine düşme sonrası bilek ağrısı",
+      "option": "Grafi normal olduğu için ileri tedavisiz ayaktan izlem planlamak"
+    }
+  ],
+  "changedOptionsPass3": [
+    {
+      "caseId": "v189-new-300-el-uzerine-dusme-sonrasi-bilek-agrisi",
+      "branchId": "minor-rotations",
+      "title": "El üzerine düşme sonrası bilek ağrısı",
+      "oldOption": "Grafi normal olduğu için ileri tedavisiz ayaktan izlem planlamak",
+      "newOption": "Koruyucu immobilizasyon olmadan ayaktan izlem planlamak"
+    }
+  ],
+  "remainingFlaggedWrongOptionsAfterPass3": [],
+  "changedCaseIdsTotal": [
+    "v163-new-001-akut-sistemik-reaksiyon",
+    "v164-new-016-akut-skrotal-agri",
+    "v164-new-017-yeni-baslayan-temporal-bas-agrisi",
+    "v164-new-020-antibiyotik-sonrasi-ishal",
+    "v165-new-021-aclik-ve-kusma-sonrasi-metabolik-bozulma",
+    "v165-new-023-dogum-sonrasi-aktif-kanama",
+    "v165-new-025-yukselen-gucsuzluk-tablosu",
+    "v165-new-030-hipotansiyon-ve-elektrolit-bozuklugu",
+    "v166-new-031-gebelikte-kanama-sonrasi-degerlendirme",
+    "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi",
+    "v167-new-046-gebelikte-hipertansif-tablo",
+    "v167-new-047-ates-ve-sag-ust-kadran-agrisi",
+    "v168-new-058-hiperglisemi-ve-asidotik-solunum",
+    "v168-new-059-ates-ve-sarilikla-basvuran-hasta",
+    "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular",
+    "v169-new-062-gebelikte-hipertansiyon-ve-norolojik-yakinma",
+    "v169-new-063-trombositopeni-ve-norolojik-bulgu",
+    "v169-new-070-ani-goz-agrisi-ve-gorme-bulanikligi",
+    "v172-new-077-antikoagulan-tedavi-sirasinda-yeni-tromboz",
+    "v174-new-093-travma-sonrasi-karin-hassasiyeti",
+    "v174-new-100-gebeligin-gec-doneminde-agrisiz-kanama",
+    "v175-new-107-yumusak-doku-enfeksiyonunda-hizla-kotulesme",
+    "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski",
+    "v176-new-113-antikoagulan-kullanirken-ciddi-kanama",
+    "v177-new-121-dogum-sonrasi-ates-ve-uterin-hassasiyet",
+    "v177-new-127-ani-bacak-agrisi-ve-sogukluk",
+    "v178-new-137-epigastrik-agri-ve-kusma",
+    "v178-new-138-kanli-ishal-sonrasi-oliguri",
+    "v178-new-139-erken-gebelik-haftasinda-su-gelisi",
+    "v179-new-141-besin-sonrasi-akut-reaksiyon",
+    "v179-new-142-uzayan-nobet",
+    "v179-new-143-hiperglisemi-ve-kusma",
+    "v179-new-144-hisilti-ve-solunum-sikintisi",
+    "v179-new-145-havlar-tarzda-oksuruk-ve-stridor",
+    "v179-new-146-ates-ve-salya-akmasi",
+    "v179-new-147-ates-ve-dolasim-bozuklugu",
+    "v179-new-148-ani-baslayan-tek-tarafli-hisilti",
+    "v179-new-150-yenidoganda-direncli-siyanoz",
+    "v180-new-151-kemoterapi-sonrasi-ates",
+    "v180-new-153-ates-ve-ense-sertligi",
+    "v180-new-154-aclik-sonrasi-nobet",
+    "v180-new-155-sicak-ortamda-bilinc-degisikligi",
+    "v180-new-157-yenidoganda-kasilma-ve-jitteriness",
+    "v180-new-158-bas-agrisi-ve-yuksek-tansiyon",
+    "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik",
+    "v180-new-160-kapali-ortam-sonrasi-bas-agrisi",
+    "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi",
+    "v181-new-162-yenidoganda-kusma-ve-sok",
+    "v181-new-163-bobrek-hastasinda-kas-gucsuzlugu",
+    "v181-new-164-ilac-alimi-sonrasi-bilinc-degisikligi",
+    "v181-new-165-kulak-cinlamasi-ve-hiperventilasyon",
+    "v181-new-166-ani-baslayan-skrotal-agri",
+    "v181-new-167-fiskirir-tarzda-kusma",
+    "v181-new-169-su-alimi-sonrasi-nobet",
+    "v182-new-171-travma-sonrasi-ani-solunum-bozulmasi",
+    "v182-new-172-pestisid-temasi-sonrasi-sekresyon-artisi",
+    "v182-new-173-temizlik-maddesi-icme-sonrasi-agiz-yanigi",
+    "v182-new-174-gaz-yagi-icme-sonrasi-oksuruk",
+    "v182-new-175-orak-hucreli-cocukta-ani-solukluk",
+    "v182-new-176-aglama-sonrasi-morarma-atagi",
+    "v182-new-177-sicak-su-yanigi",
+    "v182-new-178-havuzdan-cikarilma-sonrasi-oksuruk",
+    "v182-new-179-dka-tedavisi-sirasinda-bilinc-kotulesmesi",
+    "v182-new-180-alci-sonrasi-artan-ekstremite-agrisi",
+    "v183-new-190-kasik-sisligi-ve-kusma",
+    "v184-new-191-erken-gebelikte-karin-agrisi-ve-bayilma",
+    "v184-new-196-duygudurum-ilaci-sonrasi-tremor-ve-konfuzyon",
+    "v185-new-222-ani-sirt-agrisi-ve-hipotansiyon",
+    "v185-new-223-ates-sarilik-ve-sag-ust-kadran-agrisi",
+    "v185-new-224-ani-epigastrik-agri-ve-tahta-karin",
+    "v185-new-227-ani-pelvik-agri-ve-over-kisti",
+    "v185-new-230-atesli-agrili-diz-sisligi",
+    "v186-new-231-gebeligin-son-doneminde-agrisiz-kanama",
+    "v186-new-232-gebelikte-nobet-ve-hipertansiyon",
+    "v187-new-255-yasli-hastada-yeni-bas-agrisi",
+    "v188-new-268-epigastrik-agri-ve-lipaz-yuksekligi",
+    "v188-new-269-dogum-sonrasi-yogun-kanama",
+    "v188-new-270-goz-cevresinde-sislik-ve-agri",
+    "v189-new-290-heparin-sonrasi-trombosit-dususu-ve-bacak-agrisi",
+    "v189-new-292-cilt-enfeksiyonunda-orantisiz-agri",
+    "v189-new-293-karin-sisligi-ve-gaz-cikaramama",
+    "v189-new-294-supheli-tiroid-nodulu",
+    "v189-new-296-erken-membran-rupturu",
+    "v189-new-298-enfeksiyon-sonrasi-gucsuzluk",
+    "v189-new-299-diyabetik-hastada-siddetli-kulak-agrisi",
+    "v189-new-300-el-uzerine-dusme-sonrasi-bilek-agrisi",
+    "v192-new-301-halsizlik-ve-direncli-hipotansiyon",
+    "v192-new-302-yasli-hastada-bilinc-bulanikligi-ve-hiperglisemi",
+    "v192-new-303-kabizlik-poliuri-ve-konfuzyon",
+    "v194-new-324-antibiyotik-infuzyonu-sirasinda-kizarma",
+    "v194-new-325-antipsikotik-sonrasi-ates-ve-bogaz-agrisi",
+    "v194-new-333-alinda-vezikuler-dokuntu-ve-goz-agrisi",
+    "v195-new-355-kusma-sonrasi-gogus-agrisi",
+    "v195-new-357-erken-evre-meme-kitlesi",
+    "v195-new-358-alt-karin-agrisi-ve-servikal-hassasiyet",
+    "v195-new-359-menopoz-sonrasi-vajinal-kanama",
+    "v195-new-363-alci-sonrasi-artan-bacak-agrisi",
+    "v196-new-364-yemek-sonrasi-ani-solunum-sikintisi",
+    "v196-new-365-uzamis-jeneralize-nobet",
+    "v196-new-366-havlar-tarzda-oksuruk-ve-cekilme",
+    "v196-new-367-yutamama-ve-tripod-pozisyonu",
+    "v196-new-368-ishal-sonrasi-dolasim-bozuklugu",
+    "v196-new-370-bobrek-yetmezliginde-ritim-riski",
+    "v196-new-371-konusamama-ve-hisilti",
+    "v196-new-372-yenidoganda-titreme-ve-emme-zayifligi",
+    "v196-new-374-ates-ve-ense-sertligi",
+    "v196-new-375-tablet-alimi-sonrasi-kusma-ve-sok",
+    "v196-new-376-kuruyemis-sonrasi-tek-tarafli-hisilti",
+    "v196-new-377-ates-ve-tek-dizde-sislik",
+    "v196-new-378-yenidoganda-emme-azalmasi",
+    "v196-new-382-bes-gunu-asan-ates",
+    "v196-new-389-aksamlari-artan-aglama",
+    "v337-peds-clinical-unique-001-infantta-hisilti-ve-beslenememe"
+  ],
+  "remainingFlaggedWrongOptionsFinal": []
+}

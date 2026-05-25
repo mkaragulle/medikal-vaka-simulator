@@ -1,0 +1,7 @@
+KlinikIQ V357 Cursor Tab Return Visibility Fix
+
+- Sekmeler arasında geçiş sonrası cursor’ın kaybolması hedeflendi.
+- PremiumCursor V357 class/style isimlerine taşındı; V356/V355 kalıntıları temizleniyor.
+- visibilitychange, pageshow, focus ve mouseover recovery eklendi.
+- Sayfaya geri dönüldüğünde cursor root tekrar body içine bağlanıyor, html cursor class tekrar ekleniyor ve son pozisyonda görünür hale geliyor.
+- Mevcut comet/orbit tasarımı ve performans mantığı korundu.

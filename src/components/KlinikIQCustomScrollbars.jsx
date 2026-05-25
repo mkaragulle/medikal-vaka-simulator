@@ -11,8 +11,7 @@ const TRACK_SIZE = 6;
 const THUMB_SIZE = 3.5;
 const MIN_THUMB = 24;
 const EDGE_INSET = 5;
-const TOP_LAYER_RECT_CACHE_MS = 180;
-const SCAN_MIN_INTERVAL_MS = 160;
+const TOP_LAYER_RECT_CACHE_MS = 420;
 const TOP_LAYER_SELECTOR = [
   '#klinikiq-tooltip-layer',
   '.floating-glossary-tooltip',
@@ -422,7 +421,6 @@ html.${DRAGGING_CLASS} * {
     let scanTimer = 0;
     let activeUntil = 0;
     let isDragging = false;
-    let lastScanAt = 0;
     let resizeObserver = null;
     let cachedIsDarkTheme = resolveIsDarkTheme();
 
@@ -595,8 +593,7 @@ html.${DRAGGING_CLASS} * {
     };
 
     const scan = () => {
-      if (isDragging || document.visibilityState === 'hidden') return;
-      lastScanAt = Date.now();
+      if (isDragging) return;
       resetTopLayerRectCache();
       clearEntries();
 
@@ -627,11 +624,9 @@ html.${DRAGGING_CLASS} * {
     };
 
     const scheduleScan = (delay = 120) => {
-      if (isDragging || document.visibilityState === 'hidden') return;
-      const elapsed = Date.now() - lastScanAt;
-      const nextDelay = Math.max(delay, elapsed < SCAN_MIN_INTERVAL_MS ? SCAN_MIN_INTERVAL_MS - elapsed : 0);
+      if (isDragging) return;
       window.clearTimeout(scanTimer);
-      scanTimer = window.setTimeout(scan, nextDelay);
+      scanTimer = window.setTimeout(scan, delay);
     };
 
     const scheduleOneShotScan = (delay) => {
@@ -744,28 +739,21 @@ html.${DRAGGING_CLASS} * {
     };
 
     const mutationObserver = new MutationObserver((mutations) => {
-      if (isDragging || document.visibilityState === 'hidden') return;
+      if (isDragging) return;
       let shouldScan = false;
       let shouldResetTopLayerCache = false;
-      let scanDelay = 260;
 
       for (const mutation of mutations) {
         const target = mutation.target;
         if (target instanceof Element && target.closest(`[${ROOT_ATTR}]`)) continue;
 
         if (mutation.type === 'childList') {
-          const changedElements = [...mutation.addedNodes, ...mutation.removedNodes].filter((node) => node instanceof Element);
-          if (!changedElements.length) continue;
-          const touchedTopLayer = changedElements.some((node) => node.matches?.(TOP_LAYER_SELECTOR) || node.querySelector?.(TOP_LAYER_SELECTOR));
-          const touchedScrollableCandidate = changedElements.some((node) => (
-            node.matches?.(SCROLL_CONTAINER_CANDIDATE_SELECTOR)
-            || node.querySelector?.(SCROLL_CONTAINER_CANDIDATE_SELECTOR)
+          const touchedTopLayer = [...mutation.addedNodes, ...mutation.removedNodes].some((node) => (
+            node instanceof Element && (node.matches?.(TOP_LAYER_SELECTOR) || node.querySelector?.(TOP_LAYER_SELECTOR))
           ));
           shouldScan = true;
           shouldResetTopLayerCache = shouldResetTopLayerCache || touchedTopLayer;
-          scanDelay = Math.min(scanDelay, touchedTopLayer ? 80 : touchedScrollableCandidate ? 150 : 280);
-          if (touchedTopLayer || touchedScrollableCandidate) break;
-          continue;
+          break;
         }
 
         if (mutation.type === 'attributes' && target instanceof Element) {
@@ -774,29 +762,28 @@ html.${DRAGGING_CLASS} * {
           if (affectsTopLayer || affectsScrollableShell) {
             shouldScan = true;
             shouldResetTopLayerCache = shouldResetTopLayerCache || Boolean(affectsTopLayer);
-            scanDelay = Math.min(scanDelay, affectsTopLayer ? 80 : 180);
             break;
           }
         }
       }
 
       if (shouldResetTopLayerCache) resetTopLayerRectCache();
-      if (shouldScan) scheduleScan(scanDelay);
+      if (shouldScan) scheduleScan(140);
     });
     mutationObserver.observe(document.body, {
       childList: true,
       subtree: true,
-      attributes: true,
-      attributeFilter: ['class', 'style', 'open', 'aria-hidden', 'data-state'],
     });
 
     const themeObserver = new MutationObserver(() => {
       cachedIsDarkTheme = resolveIsDarkTheme();
       requestUpdate();
-      scheduleScan(180);
     });
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
-    themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+    // Theme is reflected through data-theme. Do not observe class changes here:
+    // scroll/resize/route performance flags are html classes and should not
+    // force custom scrollbar rescans or theme recalculation.
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
 
     if ('ResizeObserver' in window) {
       resizeObserver = new ResizeObserver(() => scheduleScan(180));

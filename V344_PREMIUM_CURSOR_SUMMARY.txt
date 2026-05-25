@@ -1,0 +1,17 @@
+KlinikIQ V344 — Premium Cursor Sistemi
+
+Eklenen/düzenlenen dosyalar:
+- src/components/PremiumCursor.jsx
+- src/App.jsx
+- src/components/GlossaryTooltip.jsx
+- src/index.css
+
+Davranış:
+- Masaüstü/fine pointer cihazlarda özel premium cursor aktif olur.
+- Normal durumda ince mint/teal halka ve küçük merkez nokta görünür.
+- Button, kart, link ve tıklanabilir alanlarda halka hafif büyür ve glow artar.
+- Glossary word üzerine gelince cursor bilgi moduna geçer ve küçük “i” işareti gösterir.
+- Loading/aria-busy/loading class içeren alanlarda minimal dönen progress halkası görünür.
+- Input, textarea, select ve contenteditable alanlarda özel cursor gizlenir; klasik text cursor korunur.
+- Mobil/tablet, hover desteklemeyen cihazlar ve prefers-reduced-motion kullanıcılarında özel cursor otomatik kapalıdır.
+- Cursor pointer-events:none ile çalışır, tıklamaları veya tooltip davranışını engellemez.

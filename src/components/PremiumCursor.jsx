@@ -184,8 +184,6 @@ function isScrollbarHit(event) {
 export default function PremiumCursor() {
   useEffect(() => {
     if (typeof window === 'undefined' || typeof document === 'undefined') return undefined;
-    const hasFinePointer = window.matchMedia?.('(any-pointer: fine)')?.matches ?? true;
-    if (!hasFinePointer) return undefined;
 
     LEGACY_STYLE_IDS.forEach((id) => document.getElementById(id)?.remove());
     document.querySelectorAll(LEGACY_SELECTORS).forEach((node) => node.remove());
@@ -354,9 +352,6 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
     let isOverScrollbar = false;
     let isScrollbarDragging = false;
     let lastModeTarget = null;
-    let lastPointerTarget = null;
-    let lastClientX = -1;
-    let lastClientY = -1;
 
     const lightPalette = {
       ring: 'rgba(13,148,136,0.94)',
@@ -469,6 +464,8 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
       if (pendingModeTarget) {
         const nextTarget = pendingModeTarget;
         pendingModeTarget = null;
+        isOverScrollbar = false;
+        isScrollbarDragging = false;
         updateMode(nextTarget);
       }
     };
@@ -492,25 +489,9 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
 
     const move = (event) => {
       if (event.pointerType && event.pointerType !== 'mouse') return;
-      if (document.visibilityState === 'hidden') return;
-      const nextX = event.clientX;
-      const nextY = event.clientY;
-      const nextTarget = event.target;
-      const dragActive = document.documentElement.classList.contains('ki-custom-scrollbar-v367-dragging');
-      if (dragActive !== isScrollbarDragging) {
-        isScrollbarDragging = dragActive;
-        isOverScrollbar = dragActive;
-        setPointerVisual();
-      }
-      if (nextX === lastClientX && nextY === lastClientY && nextTarget === lastPointerTarget) return;
-      lastClientX = nextX;
-      lastClientY = nextY;
-      targetX = nextX;
-      targetY = nextY;
-      if (nextTarget !== lastPointerTarget) {
-        lastPointerTarget = nextTarget;
-        pendingModeTarget = nextTarget;
-      }
+      targetX = event.clientX;
+      targetY = event.clientY;
+      pendingModeTarget = event.target;
       activate();
     };
 
@@ -573,14 +554,17 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
     };
 
     const themeObserver = new MutationObserver(handleThemeChange);
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+    // Theme changes are driven by data-theme and storage. Observing the class
+    // attribute caused the cursor to re-evaluate theme on every scroll because
+    // PerformanceOptimizer toggles html.ki-is-scrolling / ki-route-transitioning.
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
     if (document.body) {
-      themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+      themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
     }
 
     const appShell = document.querySelector('.app-shell');
     if (appShell) {
-      themeObserver.observe(appShell, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+      themeObserver.observe(appShell, { attributes: true, attributeFilter: ['data-theme'] });
     }
 
     const capturePassive = { passive: true, capture: true };

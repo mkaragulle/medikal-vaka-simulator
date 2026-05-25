@@ -1,0 +1,19 @@
+V348 — Cursor sıfırdan yeniden tasarım ve performans korumalı entegrasyon
+
+Değişiklikler:
+- src/components/PremiumCursor.jsx sıfırdan yeniden yazıldı.
+- Eski aura/cross tabanlı cursor yerine daha sade “clinical precision lens” tasarımı eklendi.
+- Mouse hareketinde React state kullanılmıyor; pozisyon yalnızca ref + requestAnimationFrame ile güncelleniyor.
+- Mode değişimi pointerover/focusin + hedef değiştiğinde yapılır; her frame DOM sorgusu yapılmaz.
+- Glossary hover için özel bilgi modu korundu.
+- Loading modu için minimal progress halkası korundu.
+- Text input, textarea, select ve contenteditable alanlarda klasik text cursor korunur.
+- Eski + yeni imlecin aynı anda görünmesini engellemek için native cursor suppression daha güçlü hale getirildi.
+- PerformanceOptimizer.jsx bozulmadı; mevcut scroll/resize optimizasyonları korunur.
+- src/index.css içindeki eski V346 cursor bloğu temizlenip V348 cursor bloğu eklendi.
+- V347 global performance bloğundaki eski cursor child selector’ları yeni cursor sınıflarıyla uyumlu hale getirildi.
+
+Test notu:
+- Desktop’ta özel cursor görünür.
+- Mobil/touch cihazlarda özel cursor kapalı kalır.
+- Reduced-motion açık cihazlarda hareketler azaltılır.

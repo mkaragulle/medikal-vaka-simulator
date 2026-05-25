@@ -1237,7 +1237,7 @@ function GlossaryText({
     if (!enabled) return [];
     if (termsMode === 'only' && Array.isArray(extraTerms)) return extraTerms;
     return getGlossaryTerms(extraTerms, { branchId });
-  }, [enabled, extraTermsKey, branchId, termsMode, extraTerms]);
+  }, [enabled, extraTermsKey, branchId, termsMode]);
   const effectiveMaxTerms = maxTerms ?? DEFAULT_MAX_TERMS_PER_TEXT;
   const sourceText = String(text || '');
   const effectiveContextMode = contextMode || (nestingLevel > 0 ? 'tooltip-body' : (revealMode === 'preAnswer' ? 'case-pre-answer' : 'case-post-answer'));
@@ -1282,33 +1282,43 @@ function GlossaryText({
 }
 
 
-function makeGlossaryArraySignature(value = []) {
+function getGlossaryPropArraySignature(value) {
   if (!Array.isArray(value) || !value.length) return '';
   return value.map((item) => {
-    if (item && typeof item === 'object') return `${item.id || ''}:${item.term || item.canonicalTerm || item.displayTerm || ''}:${item.aliases?.length || 0}`;
+    if (item && typeof item === 'object') {
+      return [
+        item.id || '',
+        item.term || '',
+        item.canonicalTerm || '',
+        item.displayTerm || '',
+        Array.isArray(item.aliases) ? item.aliases.length : 0,
+      ].join(':');
+    }
     return normalizeGlossaryText(item);
   }).join('|');
 }
 
-function areGlossaryTextPropsEqual(prev = {}, next = {}) {
-  return String(prev.text || '') === String(next.text || '')
-    && Boolean(prev.enabled ?? true) === Boolean(next.enabled ?? true)
-    && String(prev.branchId || '') === String(next.branchId || '')
-    && String(prev.revealMode || 'postAnswer') === String(next.revealMode || 'postAnswer')
-    && (prev.maxTerms ?? DEFAULT_MAX_TERMS_PER_TEXT) === (next.maxTerms ?? DEFAULT_MAX_TERMS_PER_TEXT)
-    && Number(prev.nestingLevel || 0) === Number(next.nestingLevel || 0)
-    && String(prev.contextMode || '') === String(next.contextMode || '')
-    && String(prev.termsMode || 'augment') === String(next.termsMode || 'augment')
-    && Number(prev.currentDepth || 0) === Number(next.currentDepth || 0)
-    && Number(prev.maxNestedDepth ?? TOOLTIP_BODY_MAX_NESTED_DEPTH) === Number(next.maxNestedDepth ?? TOOLTIP_BODY_MAX_NESTED_DEPTH)
-    && Boolean(prev.enableNestedGlossary) === Boolean(next.enableNestedGlossary)
-    && String(prev.navigationMode || 'popover') === String(next.navigationMode || 'popover')
-    && prev.onTermNavigate === next.onTermNavigate
-    && makeGlossaryArraySignature(prev.terms) === makeGlossaryArraySignature(next.terms)
-    && makeGlossaryArraySignature(prev.excludedTermKeys) === makeGlossaryArraySignature(next.excludedTermKeys)
-    && makeGlossaryArraySignature(prev.visitedEntryIds) === makeGlossaryArraySignature(next.visitedEntryIds)
-    && makeGlossaryArraySignature(prev.blockedNestedEntryIds) === makeGlossaryArraySignature(next.blockedNestedEntryIds)
-    && makeGlossaryArraySignature(prev.allowedNestedEntryIds) === makeGlossaryArraySignature(next.allowedNestedEntryIds);
+function areGlossaryTextPropsEqual(previous, next) {
+  if (previous.text !== next.text) return false;
+  if (previous.enabled !== next.enabled) return false;
+  if (previous.branchId !== next.branchId) return false;
+  if (previous.revealMode !== next.revealMode) return false;
+  if (previous.maxTerms !== next.maxTerms) return false;
+  if (previous.nestingLevel !== next.nestingLevel) return false;
+  if (previous.contextMode !== next.contextMode) return false;
+  if (previous.maxNestedDepth !== next.maxNestedDepth) return false;
+  if (previous.currentDepth !== next.currentDepth) return false;
+  if (previous.enableNestedGlossary !== next.enableNestedGlossary) return false;
+  if (previous.termsMode !== next.termsMode) return false;
+  if (previous.strictEntryBinding !== next.strictEntryBinding) return false;
+  if (previous.navigationMode !== next.navigationMode) return false;
+  if (previous.onTermNavigate !== next.onTermNavigate) return false;
+  if (getGlossaryPropArraySignature(previous.terms) !== getGlossaryPropArraySignature(next.terms)) return false;
+  if (getGlossaryPropArraySignature(previous.excludedTermKeys) !== getGlossaryPropArraySignature(next.excludedTermKeys)) return false;
+  if (getGlossaryPropArraySignature(previous.visitedEntryIds) !== getGlossaryPropArraySignature(next.visitedEntryIds)) return false;
+  if (getGlossaryPropArraySignature(previous.allowedNestedEntryIds) !== getGlossaryPropArraySignature(next.allowedNestedEntryIds)) return false;
+  if (getGlossaryPropArraySignature(previous.blockedNestedEntryIds) !== getGlossaryPropArraySignature(next.blockedNestedEntryIds)) return false;
+  return true;
 }
 
 const MemoizedGlossaryText = memo(GlossaryText, areGlossaryTextPropsEqual);

@@ -2,8 +2,6 @@ import { useEffect } from 'react';
 
 const SCROLL_IDLE_DELAY = 140;
 const RESIZE_IDLE_DELAY = 220;
-const INTERACTION_IDLE_DELAY = 180;
-const ROUTE_HINT_SELECTOR = 'button, a[href], [role="button"], [data-route-transition], .branch-card, .case-list-item, .tus-pearl-library-card, .answer-option';
 
 export default function PerformanceOptimizer() {
   useEffect(() => {
@@ -15,21 +13,35 @@ export default function PerformanceOptimizer() {
     let scrollTimer = 0;
     let resizeTimer = 0;
     let lastScrollMark = 0;
-    let interactionTimer = 0;
+    let lastScrollTimerRefresh = 0;
+    let isScrolling = false;
 
     const clearScrollState = () => {
       scrollTimer = 0;
+      lastScrollTimerRefresh = 0;
+      if (!isScrolling) return;
+      isScrolling = false;
       root.classList.remove('ki-is-scrolling');
     };
 
     const markScrolling = () => {
       const now = window.performance?.now?.() || Date.now();
-      if (now - lastScrollMark > 48) {
+      if (!isScrolling) {
+        isScrolling = true;
         lastScrollMark = now;
         root.classList.add('ki-is-scrolling');
+      } else if (now - lastScrollMark > 96) {
+        lastScrollMark = now;
       }
-      if (scrollTimer) window.clearTimeout(scrollTimer);
-      scrollTimer = window.setTimeout(clearScrollState, SCROLL_IDLE_DELAY);
+
+      // Avoid clearing/recreating a timeout for every scroll tick. Keeping the
+      // performance class a few extra milliseconds is cheaper than repeated
+      // timer churn and mutation work while the user is actively scrolling.
+      if (now - lastScrollTimerRefresh > 84) {
+        lastScrollTimerRefresh = now;
+        if (scrollTimer) window.clearTimeout(scrollTimer);
+        scrollTimer = window.setTimeout(clearScrollState, SCROLL_IDLE_DELAY + 70);
+      }
     };
 
     const clearResizeState = () => {
@@ -43,28 +55,15 @@ export default function PerformanceOptimizer() {
       resizeTimer = window.setTimeout(clearResizeState, RESIZE_IDLE_DELAY);
     };
 
-    const clearInteractionState = () => {
-      interactionTimer = 0;
-      root.classList.remove('ki-route-transitioning');
-    };
-
     const markNavigationStart = () => {
       root.classList.add('ki-route-transitioning');
-      if (interactionTimer) window.clearTimeout(interactionTimer);
-      interactionTimer = window.setTimeout(clearInteractionState, INTERACTION_IDLE_DELAY);
-    };
-
-    const markInteractivePointerIntent = (event) => {
-      const target = event.target;
-      if (!target?.closest?.(ROUTE_HINT_SELECTOR)) return;
-      markNavigationStart();
+      window.setTimeout(() => root.classList.remove('ki-route-transitioning'), 260);
     };
 
     window.addEventListener('scroll', markScrolling, { passive: true, capture: true });
     window.addEventListener('resize', markResizing, { passive: true });
     window.addEventListener('orientationchange', markResizing, { passive: true });
     window.addEventListener('popstate', markNavigationStart, { passive: true });
-    window.addEventListener('pointerdown', markInteractivePointerIntent, { passive: true, capture: true });
 
     return () => {
       root.classList.remove('ki-performance-mode', 'ki-is-scrolling', 'ki-is-resizing', 'ki-route-transitioning');
@@ -72,10 +71,8 @@ export default function PerformanceOptimizer() {
       window.removeEventListener('resize', markResizing);
       window.removeEventListener('orientationchange', markResizing);
       window.removeEventListener('popstate', markNavigationStart);
-      window.removeEventListener('pointerdown', markInteractivePointerIntent, true);
       if (scrollTimer) window.clearTimeout(scrollTimer);
       if (resizeTimer) window.clearTimeout(resizeTimer);
-      if (interactionTimer) window.clearTimeout(interactionTimer);
     };
   }, []);
 
