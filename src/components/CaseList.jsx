@@ -9,6 +9,7 @@ function isSolvedCase(solvedCaseIds, caseId) {
   return false;
 }
 
+
 function cleanDisplayText(value) {
   return typeof value === 'string' ? value.trim() : '';
 }
@@ -32,15 +33,11 @@ function getCaseListTitle(clinicalCase) {
   return 'TUS spot olgu';
 }
 
-const CaseListItem = memo(function CaseListItem({ clinicalCase, selectedCaseId, solvedCaseIds, layout, onSelectCase }) {
+const CaseListItem = memo(function CaseListItem({ clinicalCase, selectedCaseId, solved, layout, onSelectCase }) {
   const difficultyMeta = getDifficultyMeta(clinicalCase.difficulty);
-  const solved = isSolvedCase(solvedCaseIds, clinicalCase.id);
   const difficultyLabel = solved ? `${difficultyMeta.label}-Çözüldü` : difficultyMeta.label;
   const caseListTitle = getCaseListTitle(clinicalCase);
-
-  const handleClick = useCallback(() => {
-    onSelectCase(clinicalCase.id);
-  }, [clinicalCase.id, onSelectCase]);
+  const handleSelect = useCallback(() => onSelectCase(clinicalCase.id), [clinicalCase.id, onSelectCase]);
 
   return (
     <button
@@ -50,14 +47,14 @@ const CaseListItem = memo(function CaseListItem({ clinicalCase, selectedCaseId, 
         clinicalCase.id === selectedCaseId ? 'active' : '',
         solved ? 'is-solved-case' : '',
       ].filter(Boolean).join(' ')}
-      onClick={handleClick}
+      onClick={handleSelect}
       aria-current={clinicalCase.id === selectedCaseId ? 'true' : undefined}
     >
       <div className="case-list-topline">
         <small className="case-list-meta-text">{difficultyMeta.points} puan</small>
         <small className={`difficulty-badge difficulty-tag-pill ${difficultyMeta.tone} ${solved ? 'is-solved' : ''}`}>{difficultyLabel}</small>
       </div>
-      <strong>{caseListTitle}</strong>
+      <strong className="case-list-title-plain">{caseListTitle}</strong>
       <span className="case-list-footer" aria-hidden="true">
         <span>{solved ? 'Çözüldü · tekrar aç' : 'Olguyu aç'}</span>
         <Icon name={solved ? 'CheckCircle' : 'ArrowRight'} />
@@ -66,11 +63,22 @@ const CaseListItem = memo(function CaseListItem({ clinicalCase, selectedCaseId, 
   );
 });
 
+function getSolvedCount(cases = [], solvedCaseIds = new Set()) {
+  if (!cases.length || !solvedCaseIds) return 0;
+  let solvedCount = 0;
+  for (const clinicalCase of cases) {
+    if (isSolvedCase(solvedCaseIds, clinicalCase.id)) solvedCount += 1;
+  }
+  return solvedCount;
+}
+
 function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', solvedCaseIds = new Set() }) {
   const listRef = useRef(null);
   const horizontalResetKey = useMemo(() => {
     if (layout !== 'horizontal') return '';
-    return `${cases.length}:${cases[0]?.id || ''}:${cases.at(-1)?.id || ''}:${solvedCaseIds instanceof Set ? solvedCaseIds.size : Array.isArray(solvedCaseIds) ? solvedCaseIds.length : 0}`;
+    const firstId = cases[0]?.id || '';
+    const lastId = cases[cases.length - 1]?.id || '';
+    return `${cases.length}:${firstId}:${lastId}:${getSolvedCount(cases, solvedCaseIds)}`;
   }, [cases, layout, solvedCaseIds]);
 
   useLayoutEffect(() => {
@@ -93,7 +101,7 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
           key={clinicalCase.id}
           clinicalCase={clinicalCase}
           selectedCaseId={selectedCaseId}
-          solvedCaseIds={solvedCaseIds}
+          solved={isSolvedCase(solvedCaseIds, clinicalCase.id)}
           layout={layout}
           onSelectCase={onSelectCase}
         />

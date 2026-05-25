@@ -6,12 +6,15 @@ const STYLE_ID = 'ki-custom-scrollbars-v367-style';
 const ROOT_ATTR = 'data-ki-custom-scrollbars-v367-root';
 const TRACK_ATTR = 'data-ki-custom-scrollbar-v367-track';
 const THUMB_ATTR = 'data-ki-custom-scrollbar-v367-thumb';
-const MAX_TRACKED_ELEMENTS = 32;
+const MAX_TRACKED_ELEMENTS = 56;
 const TRACK_SIZE = 6;
 const THUMB_SIZE = 3.5;
 const MIN_THUMB = 24;
 const EDGE_INSET = 5;
-const TOP_LAYER_RECT_CACHE_MS = 420;
+const TOP_LAYER_RECT_CACHE_MS = 160;
+const POINTER_ACTIVITY_THROTTLE_MS = 240;
+
+
 const TOP_LAYER_SELECTOR = [
   '#klinikiq-tooltip-layer',
   '.floating-glossary-tooltip',
@@ -53,22 +56,25 @@ const TOP_LAYER_OCCLUSION_SELECTOR = [
   '.toolbox',
 ].join(', ');
 
-const SCROLL_CONTAINER_CANDIDATE_SELECTOR = [
+const SCROLLABLE_CANDIDATE_SELECTOR = [
   '[data-scroll-container]',
-  '[data-scroll-area]',
+  '[data-scrollable="true"]',
   '.app-shell',
   '.page-shell',
   '.qbank-shell',
   '.qbank-content-stack',
-  '.clinical-case',
+  '.right-workspace-shell',
   '.case-list',
   '.horizontal-case-list',
-  '.wrong-answers-list',
-  '.tus-pearl-catalog-card-list',
-  '.tus-pearl-library-grid',
   '.tus-pearl-study-shell',
-  '.pearl-card-list',
-  '.study-review-hub',
+  '.pearl-study-workspace-v92',
+  '.tus-pearl-catalog-card-list',
+  '.pearl-study-catalog-list',
+  '.pearl-library-source-menu',
+  '.pearl-study-branch-menu',
+  '.pearl-study-more-panel',
+  '.komite-mode-workspace',
+  '.komite-upload-list',
   '.modal',
   '.drawer',
   '.popover',
@@ -78,6 +84,8 @@ const SCROLL_CONTAINER_CANDIDATE_SELECTOR = [
   'main',
   'aside',
   'section',
+  'pre',
+  'textarea',
 ].join(', ');
 
 function rectsOverlap(a, b) {
@@ -223,6 +231,21 @@ function isVisibleEnough(element) {
   if (rect.bottom < 0 || rect.right < 0) return false;
   if (rect.top > window.innerHeight || rect.left > window.innerWidth) return false;
   return true;
+}
+
+function getLikelyScrollableCandidates() {
+  const candidates = new Set();
+  document.querySelectorAll(SCROLLABLE_CANDIDATE_SELECTOR).forEach((node) => {
+    if (isHTMLElement(node)) candidates.add(node);
+  });
+
+  let activeNode = document.activeElement;
+  while (isHTMLElement(activeNode) && activeNode !== document.body && activeNode !== document.documentElement) {
+    candidates.add(activeNode);
+    activeNode = activeNode.parentElement;
+  }
+
+  return Array.from(candidates);
 }
 
 function getTargetMetrics(target) {
@@ -422,7 +445,7 @@ html.${DRAGGING_CLASS} * {
     let activeUntil = 0;
     let isDragging = false;
     let resizeObserver = null;
-    let cachedIsDarkTheme = resolveIsDarkTheme();
+    let nextPointerActivityAt = 0;
 
     const markActive = (duration = 1200) => {
       activeUntil = Date.now() + duration;
@@ -432,7 +455,7 @@ html.${DRAGGING_CLASS} * {
       if (rafId) return;
       rafId = window.requestAnimationFrame(() => {
         rafId = 0;
-        const isDark = cachedIsDarkTheme;
+        const isDark = resolveIsDarkTheme();
         roots.forEach((node) => node.classList.toggle('is-dark', isDark));
         const active = Date.now() < activeUntil;
         for (const entry of entries) updateEntry(entry, active);
@@ -576,6 +599,7 @@ html.${DRAGGING_CLASS} * {
 
       track.addEventListener('pointerdown', onPointerDown, { passive: false });
       track.addEventListener('pointerenter', onEnterOrMove, { passive: true });
+      track.addEventListener('pointermove', onEnterOrMove, { passive: true });
 
       if (target === window) window.addEventListener('scroll', onScroll, { passive: true });
       else target.addEventListener('scroll', onScroll, { passive: true });
@@ -583,6 +607,7 @@ html.${DRAGGING_CLASS} * {
       entry.cleanup = () => {
         track.removeEventListener('pointerdown', onPointerDown);
         track.removeEventListener('pointerenter', onEnterOrMove);
+        track.removeEventListener('pointermove', onEnterOrMove);
         if (target === window) window.removeEventListener('scroll', onScroll);
         else target.removeEventListener('scroll', onScroll);
         track.remove();
@@ -602,7 +627,7 @@ html.${DRAGGING_CLASS} * {
       if (docCanScrollY) createEntry(window, 'y');
       if (docCanScrollX) createEntry(window, 'x');
 
-      const candidates = Array.from(new Set(document.querySelectorAll(SCROLL_CONTAINER_CANDIDATE_SELECTOR)));
+      const candidates = getLikelyScrollableCandidates();
       let tracked = 0;
       for (const element of candidates) {
         if (!isHTMLElement(element)) continue;
@@ -726,16 +751,17 @@ html.${DRAGGING_CLASS} * {
 
     const onResize = () => {
       resetTopLayerRectCache();
-      scheduleScan(180);
+      scheduleScan(80);
     };
-    const onStorage = () => {
-      cachedIsDarkTheme = resolveIsDarkTheme();
-      requestUpdate();
-    };
-    const onPointerIntent = () => {
-      if (!entries.length) scheduleScan(160);
+    const onStorage = () => requestUpdate();
+    const onPointerActivity = () => {
+      if (document.visibilityState === 'hidden') return;
+      const now = window.performance?.now?.() || Date.now();
+      if (now < nextPointerActivityAt) return;
+      nextPointerActivityAt = now + POINTER_ACTIVITY_THROTTLE_MS;
+      if (!entries.length) scheduleScan(120);
       markActive(420);
-      requestUpdate();
+      if (entries.length) requestUpdate();
     };
 
     const mutationObserver = new MutationObserver((mutations) => {
@@ -768,25 +794,21 @@ html.${DRAGGING_CLASS} * {
       }
 
       if (shouldResetTopLayerCache) resetTopLayerRectCache();
-      if (shouldScan) scheduleScan(140);
+      if (shouldScan) scheduleScan(220);
     });
     mutationObserver.observe(document.body, {
       childList: true,
       subtree: true,
+      attributes: true,
+      attributeFilter: ['class', 'style', 'data-theme', 'open', 'aria-expanded', 'hidden'],
     });
 
-    const themeObserver = new MutationObserver(() => {
-      cachedIsDarkTheme = resolveIsDarkTheme();
-      requestUpdate();
-    });
-    // Theme is reflected through data-theme. Do not observe class changes here:
-    // scroll/resize/route performance flags are html classes and should not
-    // force custom scrollbar rescans or theme recalculation.
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-    themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+    const themeObserver = new MutationObserver(() => requestUpdate());
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+    themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme', 'class'] });
 
     if ('ResizeObserver' in window) {
-      resizeObserver = new ResizeObserver(() => scheduleScan(180));
+      resizeObserver = new ResizeObserver(() => scheduleScan(60));
       resizeObserver.observe(document.documentElement);
       resizeObserver.observe(document.body);
     }
@@ -801,7 +823,7 @@ html.${DRAGGING_CLASS} * {
     window.addEventListener('scroll', onWindowScroll, { passive: true });
     window.addEventListener('resize', onResize, { passive: true });
     window.addEventListener('storage', onStorage, { passive: true });
-    window.addEventListener('pointerdown', onPointerIntent, { passive: true, capture: true });
+    window.addEventListener('pointermove', onPointerActivity, { passive: true });
     window.addEventListener('focus', () => scheduleScan(0), { passive: true });
     window.addEventListener('pageshow', () => scheduleScan(0), { passive: true });
     document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true });
@@ -822,7 +844,7 @@ html.${DRAGGING_CLASS} * {
       window.removeEventListener('scroll', onWindowScroll);
       window.removeEventListener('resize', onResize);
       window.removeEventListener('storage', onStorage);
-      window.removeEventListener('pointerdown', onPointerIntent, true);
+      window.removeEventListener('pointermove', onPointerActivity);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       clearEntries();
       roots.forEach((node) => node.remove());

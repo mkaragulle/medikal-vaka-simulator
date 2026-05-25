@@ -39,10 +39,20 @@ const TEXT_SELECTOR = [
   '.bottom-case-search input',
 ].join(', ');
 
+const CUSTOM_SCROLLBAR_SELECTOR = [
+  '[data-ki-custom-scrollbar-v367-track]',
+  '[data-ki-custom-scrollbar-v367-thumb]',
+  '.ki-custom-scrollbar-v367-track',
+  '.ki-custom-scrollbar-v367-thumb',
+].join(', ');
+
 const ROOT_CLASS = 'ki-pointer-v364-on';
 const STYLE_ID = 'ki-pointer-v364-runtime-style';
 const ROOT_ATTR = 'data-ki-pointer-v364-root';
 const TRANSPARENT_CURSOR = 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'1\' height=\'1\' viewBox=\'0 0 1 1\'%3E%3C/svg%3E") 0 0, none';
+const CURSOR_SETTLE_EPSILON = 0.28;
+
+
 const LEGACY_SELECTORS = [
   '.ki-cursor',
   '.ki-cursor-v350',
@@ -323,7 +333,6 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
       'backdrop-filter:none',
       '-webkit-backdrop-filter:none',
       'mix-blend-mode:normal',
-      'will-change:transform,opacity',
     ].join(';');
 
     root.innerHTML = `
@@ -342,7 +351,6 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
     let targetX = -80;
     let targetY = -80;
     let frameId = 0;
-    let pendingModeTarget = null;
     let started = false;
     let isInteractive = false;
     let isText = false;
@@ -455,24 +463,26 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
       frameId = 0;
     };
 
-    const applyPointerFrame = () => {
-      frameId = 0;
-      currentX = targetX;
-      currentY = targetY;
+    const render = () => {
+      currentX += (targetX - currentX) * 0.46;
+      currentY += (targetY - currentY) * 0.46;
+      const settled = Math.abs(targetX - currentX) < CURSOR_SETTLE_EPSILON && Math.abs(targetY - currentY) < CURSOR_SETTLE_EPSILON;
+      if (settled) {
+        currentX = targetX;
+        currentY = targetY;
+      }
       root.style.transform = `translate3d(${currentX - 17}px, ${currentY - 17}px, 0)`;
 
-      if (pendingModeTarget) {
-        const nextTarget = pendingModeTarget;
-        pendingModeTarget = null;
-        isOverScrollbar = false;
-        isScrollbarDragging = false;
-        updateMode(nextTarget);
+      if (settled && !isPressed) {
+        frameId = 0;
+        return;
       }
+      frameId = window.requestAnimationFrame(render);
     };
 
     const ensureRender = () => {
       if (frameId || document.visibilityState === 'hidden') return;
-      frameId = window.requestAnimationFrame(applyPointerFrame);
+      frameId = window.requestAnimationFrame(render);
     };
 
     const activate = () => {
@@ -491,8 +501,17 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
       if (event.pointerType && event.pointerType !== 'mouse') return;
       targetX = event.clientX;
       targetY = event.clientY;
-      pendingModeTarget = event.target;
       activate();
+
+      const nextOverScrollbar = isElement(event.target) && Boolean(event.target.closest(CUSTOM_SCROLLBAR_SELECTOR));
+      const nextScrollbarDragging = document.documentElement.classList.contains('ki-custom-scrollbar-v367-dragging');
+      if (nextOverScrollbar !== isOverScrollbar || nextScrollbarDragging !== isScrollbarDragging) {
+        isOverScrollbar = nextOverScrollbar;
+        isScrollbarDragging = nextScrollbarDragging;
+        setPointerVisual();
+      }
+      updateMode(event.target);
+      ensureRender();
     };
 
     const hide = () => {
@@ -535,8 +554,8 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
     const down = (event) => {
       if (event?.pointerType && event.pointerType !== 'mouse') return;
 
-      isScrollbarDragging = false;
-      isOverScrollbar = false;
+      isOverScrollbar = isElement(event?.target) && Boolean(event.target.closest(CUSTOM_SCROLLBAR_SELECTOR));
+      isScrollbarDragging = document.documentElement.classList.contains('ki-custom-scrollbar-v367-dragging');
       isPressed = true;
       setPointerVisual();
     };
@@ -554,17 +573,14 @@ html.${ROOT_CLASS} body::-webkit-scrollbar-corner {
     };
 
     const themeObserver = new MutationObserver(handleThemeChange);
-    // Theme changes are driven by data-theme and storage. Observing the class
-    // attribute caused the cursor to re-evaluate theme on every scroll because
-    // PerformanceOptimizer toggles html.ki-is-scrolling / ki-route-transitioning.
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
     if (document.body) {
-      themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+      themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme', 'class'] });
     }
 
     const appShell = document.querySelector('.app-shell');
     if (appShell) {
-      themeObserver.observe(appShell, { attributes: true, attributeFilter: ['data-theme'] });
+      themeObserver.observe(appShell, { attributes: true, attributeFilter: ['data-theme', 'class'] });
     }
 
     const capturePassive = { passive: true, capture: true };

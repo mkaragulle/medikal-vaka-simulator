@@ -1,11 +1,5 @@
 const PREFIX = 'klinikiq:';
 
-const memoryValues = new Map();
-const pendingWrites = new Map();
-let pendingFlushTimer = 0;
-let pendingIdleFlushId = 0;
-let flushListenersAttached = false;
-
 function key(name) {
   return `${PREFIX}${name}`;
 }
@@ -18,90 +12,97 @@ function safeParse(raw, fallback) {
   }
 }
 
-function persistPendingWrites() {
-  if (typeof window === 'undefined') return;
-  if (pendingIdleFlushId && typeof window.cancelIdleCallback === 'function') {
-    window.cancelIdleCallback(pendingIdleFlushId);
-  }
-  if (pendingFlushTimer) window.clearTimeout(pendingFlushTimer);
-  pendingIdleFlushId = 0;
-  pendingFlushTimer = 0;
+const pendingWrites = new Map();
+let flushListenersAttached = false;
 
-  if (!pendingWrites.size) return;
-  const writes = Array.from(pendingWrites.entries());
-  pendingWrites.clear();
-
-  writes.forEach(([storageKey, value]) => {
-    try {
-      window.localStorage.setItem(storageKey, JSON.stringify(value));
-    } catch {
-      // Private browsing/quota failures should never break UI interaction.
-    }
-  });
+function canUseStorage() {
+  return typeof window !== 'undefined' && typeof window.localStorage !== 'undefined';
 }
 
-function ensureFlushListeners() {
-  if (typeof window === 'undefined' || flushListenersAttached) return;
+function writePayload(storageKey, payload) {
+  if (!canUseStorage()) return;
+  try {
+    window.localStorage.setItem(storageKey, payload);
+  } catch {
+    // Storage can be unavailable in private mode or quota-limited contexts.
+  }
+}
+
+function attachFlushListeners() {
+  if (!canUseStorage() || flushListenersAttached) return;
   flushListenersAttached = true;
-  window.addEventListener('pagehide', persistPendingWrites, { capture: true });
-  window.addEventListener('beforeunload', persistPendingWrites, { capture: true });
-  if (typeof document !== 'undefined') {
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'hidden') persistPendingWrites();
-    }, { capture: true });
-  }
-}
-
-function schedulePersist() {
-  if (typeof window === 'undefined') return;
-  ensureFlushListeners();
-
-  if (pendingIdleFlushId && typeof window.cancelIdleCallback === 'function') {
-    window.cancelIdleCallback(pendingIdleFlushId);
-  }
-  if (pendingFlushTimer) window.clearTimeout(pendingFlushTimer);
-
-  if (typeof window.requestIdleCallback === 'function') {
-    pendingIdleFlushId = window.requestIdleCallback(() => {
-      pendingIdleFlushId = 0;
-      persistPendingWrites();
-    }, { timeout: 1200 });
-  } else {
-    pendingFlushTimer = window.setTimeout(() => {
-      pendingFlushTimer = 0;
-      persistPendingWrites();
-    }, 120);
-  }
+  const flush = () => localBackend.flushDeferredWrites();
+  window.addEventListener('pagehide', flush, { capture: true });
+  window.addEventListener('beforeunload', flush, { capture: true });
+  document?.addEventListener?.('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') flush();
+  }, { capture: true });
 }
 
 export const localBackend = {
   read(name, fallback) {
-    if (typeof window === 'undefined') return fallback;
+    if (!canUseStorage()) return fallback;
     const storageKey = key(name);
-    if (memoryValues.has(storageKey)) return memoryValues.get(storageKey);
-    const parsed = safeParse(window.localStorage.getItem(storageKey), fallback);
-    memoryValues.set(storageKey, parsed);
-    return parsed;
+    const pending = pendingWrites.get(storageKey);
+    return safeParse(pending?.payload ?? window.localStorage.getItem(storageKey), fallback);
   },
 
   write(name, value) {
-    if (typeof window === 'undefined') return;
+    if (!canUseStorage()) return;
     const storageKey = key(name);
-    memoryValues.set(storageKey, value);
-    pendingWrites.set(storageKey, value);
-    schedulePersist();
+    const pending = pendingWrites.get(storageKey);
+    if (pending?.timer) window.clearTimeout(pending.timer);
+    if (pending?.idleId && typeof window.cancelIdleCallback === 'function') window.cancelIdleCallback(pending.idleId);
+    pendingWrites.delete(storageKey);
+    writePayload(storageKey, JSON.stringify(value));
+  },
+
+  writeDeferred(name, value, { delay = 90, timeout = 900 } = {}) {
+    if (!canUseStorage()) return;
+    attachFlushListeners();
+    const storageKey = key(name);
+    const previous = pendingWrites.get(storageKey);
+    if (previous?.timer) window.clearTimeout(previous.timer);
+    if (previous?.idleId && typeof window.cancelIdleCallback === 'function') window.cancelIdleCallback(previous.idleId);
+
+    const payload = JSON.stringify(value);
+    const flushOne = () => {
+      const current = pendingWrites.get(storageKey);
+      if (!current) return;
+      if (current.timer) window.clearTimeout(current.timer);
+      if (current.idleId && typeof window.cancelIdleCallback === 'function') window.cancelIdleCallback(current.idleId);
+      pendingWrites.delete(storageKey);
+      writePayload(storageKey, current.payload);
+    };
+
+    const next = { payload, timer: 0, idleId: 0 };
+    pendingWrites.set(storageKey, next);
+
+    if (typeof window.requestIdleCallback === 'function') {
+      next.idleId = window.requestIdleCallback(flushOne, { timeout });
+    } else {
+      next.timer = window.setTimeout(flushOne, delay);
+    }
+  },
+
+  flushDeferredWrites() {
+    if (!canUseStorage()) return;
+    for (const [storageKey, pending] of pendingWrites.entries()) {
+      if (pending.timer) window.clearTimeout(pending.timer);
+      if (pending.idleId && typeof window.cancelIdleCallback === 'function') window.cancelIdleCallback(pending.idleId);
+      writePayload(storageKey, pending.payload);
+      pendingWrites.delete(storageKey);
+    }
   },
 
   remove(name) {
-    if (typeof window === 'undefined') return;
+    if (!canUseStorage()) return;
     const storageKey = key(name);
-    memoryValues.delete(storageKey);
+    const pending = pendingWrites.get(storageKey);
+    if (pending?.timer) window.clearTimeout(pending.timer);
+    if (pending?.idleId && typeof window.cancelIdleCallback === 'function') window.cancelIdleCallback(pending.idleId);
     pendingWrites.delete(storageKey);
     window.localStorage.removeItem(storageKey);
-  },
-
-  flush() {
-    persistPendingWrites();
   },
 
   readNote(caseId) {
@@ -109,7 +110,7 @@ export const localBackend = {
   },
 
   writeNote(caseId, note) {
-    this.write(`notes:${caseId}`, note);
+    this.writeDeferred(`notes:${caseId}`, note, { delay: 120, timeout: 700 });
   },
 
   readExamHistory() {
@@ -117,7 +118,7 @@ export const localBackend = {
   },
 
   writeExamHistory(history) {
-    this.write('exam-history', history);
+    this.writeDeferred('exam-history', history);
   },
 
   readSessionStats(fallback) {
@@ -125,7 +126,7 @@ export const localBackend = {
   },
 
   writeSessionStats(stats) {
-    this.write('session-stats', stats);
+    this.writeDeferred('session-stats', stats);
   },
 
   readTheme() {

@@ -1,4 +1,4 @@
-import { memo, startTransition, useCallback, useEffect, useMemo, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { shuffleArray } from '../utils/randomize.js';
 import { getDifficultyMeta } from '../utils/scoring.js';
 import { Icon, IconBadge } from './ui.jsx';
@@ -172,7 +172,6 @@ function DiagnosisQuiz({
 }) {
   const [selected, setSelected] = useState(existingAnswer?.selected ?? null);
   const [submitted, setSubmitted] = useState(Boolean(existingAnswer));
-  const [feedbackReady, setFeedbackReady] = useState(Boolean(existingAnswer));
 
   const options = useMemo(
     () => buildOptions(
@@ -184,10 +183,8 @@ function DiagnosisQuiz({
   );
 
   useEffect(() => {
-    const hasExistingAnswer = Boolean(existingAnswer);
     setSelected(existingAnswer?.selected ?? null);
-    setSubmitted(hasExistingAnswer);
-    setFeedbackReady(hasExistingAnswer);
+    setSubmitted(Boolean(existingAnswer));
   }, [clinicalCase.id, existingAnswer]);
 
   const difficultyMeta = getDifficultyMeta(clinicalCase.difficulty);
@@ -228,23 +225,8 @@ function DiagnosisQuiz({
 
   const handleSubmit = useCallback(() => {
     if (!selected || submitted) return;
-
+    onSubmitAnswer?.({ clinicalCase, selected, isCorrect });
     setSubmitted(true);
-    setFeedbackReady(false);
-
-    startTransition(() => {
-      onSubmitAnswer?.({ clinicalCase, selected, isCorrect });
-    });
-
-    const scheduleFeedback = () => {
-      startTransition(() => setFeedbackReady(true));
-    };
-
-    if (typeof window !== 'undefined' && typeof window.requestAnimationFrame === 'function') {
-      window.requestAnimationFrame(scheduleFeedback);
-    } else {
-      scheduleFeedback();
-    }
   }, [clinicalCase, isCorrect, onSubmitAnswer, selected, submitted]);
 
   return (
@@ -359,7 +341,7 @@ function DiagnosisQuiz({
               )}
             </div>
           </div>
-        ) : feedbackReady ? (
+        ) : (
           <AnswerFeedbackPanel
             clinicalCase={clinicalCase}
             selected={selected}
@@ -378,16 +360,6 @@ function DiagnosisQuiz({
               </div>
             ) : null}
           </AnswerFeedbackPanel>
-        ) : (
-          <div className="feedback feedback-preparing" aria-live="polite">
-            <div className="feedback-header">
-              <IconBadge icon="CheckCircle" tone="blue" size="sm" />
-              <div>
-                <span className="feedback-badge neutral">Yanıt işleniyor</span>
-                <p className="feedback-answer">Geri bildirim hazırlanıyor.</p>
-              </div>
-            </div>
-          </div>
         )
       ) : null}
     </section>

@@ -1,32 +1,48 @@
-# KlinikIQ V373 Performance Audit Report
+# KlinikIQ V372 Performance Audit Report
 
-## Audit scope
-The project was unpacked and inspected around the interaction paths that can create the strongest perceived lag: global cursor/scrollbar layers, scroll-state CSS flags, glossary parsing, answer submission/feedback rendering, and the `Kataloglarım > Tüm kartlardan ekle` card list. Medical/TUS data, answers, feedback content, glossary entries, case bank content, KOMİTE/TUS behavior and visual identity were not modified.
+## Kapsam
+Bu performans geçişinde proje zipi açıldı, React + Vite kaynakları incelendi ve özellikle kullanıcı tarafından belirtilen mikro donma alanları hedeflendi: vaka listesi, seçenek/feedback etkileşimi, Kataloglarım > Tüm kartlardan ekle, glossary tooltip katmanı, premium cursor, custom scrollbar, popup/dropdown konumlandırmaları, storage yazımları ve scroll sırasında ağır CSS efektleri.
 
-## Key findings
+## Tespit edilen darboğazlar
 
-1. **Scroll class changes were indirectly waking global observers.** `PerformanceOptimizer` toggles `html.ki-is-scrolling` and `html.ki-route-transitioning` during normal scrolling/navigation. Both `PremiumCursor.jsx` and `KlinikIQCustomScrollbars.jsx` were observing `class` changes on `documentElement/body`, so every scroll-state class mutation could trigger theme recalculation, visual refresh, and in the scrollbar case a scan scheduling path.
+### 1. Büyük statik dosyalar ve başlangıç yükü
+- `src/data/cases.js` yaklaşık 6.6 MB; Vite tarafında `case-bank` chunk olarak ayrılıyor ancak `App.jsx` içinde statik import edildiği için uygulama akışının ana veri bağımlılığı hâlinde kalıyor.
+- `src/components/GlossaryTooltip.jsx` + glossary indexleri büyük bir chunk oluşturuyor. Build çıktısında glossary chunk hâlâ en büyük runtime parçalarından biri.
+- `src/index.css` yaklaşık 1.6 MB, `src/components/tusPearlCards.css` yaklaşık 0.5 MB. Scroll sırasında box-shadow, blur/backdrop-filter, transition ve animasyon maliyeti hissedilebilir.
 
-2. **Custom scrollbar top-layer measurement was still relatively frequent.** The scrollbar overlay correctly avoids modal/tooltip overlap, but top-layer rect caching was short enough that repeated scroll/update frames could re-query and re-measure floating layers more often than necessary.
+### 2. Vaka listesi render maliyeti
+- `CaseList.jsx` içinde her vaka kartı başlığında `GlossaryText` çalışıyordu. Yatay vaka listelerinde sık geçiş ve selected/solved state değişimlerinde gereksiz glossary parse/render maliyeti üretiyordu.
+- Yatay liste reset anahtarı tüm vaka listesini `id:solved` stringine dönüştürüyordu. Büyük listelerde her renderda gereksiz map/join maliyeti oluşuyordu.
 
-3. **Scroll-state timer churn could still occur on high-frequency scroll events.** The performance mode scroll listener was clearing and recreating a timer on each scroll event. This is small individually, but contributes to micro-stutter when combined with cursor, scrollbar, tooltip and dense CSS work.
+### 3. Hap Bilgi / Kataloglarım liste maliyeti
+- `TusPearlStudyScreen.jsx` içinde katalogdaki kartlar ve “Tüm kartlardan ekle” satırları inline JSX ile render ediliyordu.
+- Her renderda satır içi callbackler yeniden oluşuyordu; bu durum özellikle arama, filtre, visible count ve catalog membership değişimlerinde satırların gereksiz tekrar render edilmesine yol açıyordu.
+- V371’deki 48 görünür kart limiti doğru yönde bir iyileştirmeydi; bu limit korunmalıydı.
 
-4. **Answer submission still mounted heavy feedback immediately.** Even with `startTransition`, submitting an answer could synchronously move into heavy feedback UI, where glossary text and educational blocks are rendered together.
+### 4. Custom scrollbar DOM tarama/ölçüm maliyeti
+- `KlinikIQCustomScrollbars.jsx` genel DOM üzerinde `body *` taraması yapıyordu. MutationObserver tetiklerinde bu tarama ve ardından `getBoundingClientRect` / overflow kontrolleri pahalı hâle gelebiliyordu.
+- Top-layer occlusion kontrolü zaten cache’lenmişti ancak cache süresi kısa olduğu için yoğun popup/tooltip/scroll senaryosunda tekrar ölçüm yapabiliyordu.
+- Pointer activity scrollbar güncellemeleri çok sık tetiklenebiliyordu.
 
-5. **GlossaryText memoization was shallow.** Many caller props are arrays or generated references. React's default `memo` comparator could still re-render glossary text even when the actual text and semantic glossary parameters did not change.
+### 5. Premium cursor hareket maliyeti
+- Cursor animasyonu transform tabanlı ve RAF duraklatmalıydı; bu iyi korunmuş. Ancak scrollbar üzerinde dolaşırken cursor state’i daha açık ve ucuz şekilde yönetilebilirdi.
+- Layout ölçümü gerektiren native scrollbar hit-test fonksiyonları dosyada duruyordu; aktif pointer path artık custom scrollbar target sınıfları üzerinden daha ucuz yönetilmeli.
 
-6. **Catalog card rows were inline in the large catalog/library lists.** V372 already limited visible library cards to 48, but row markup and handlers were still created inline inside the main `TusPearlStudyScreen` render. This made the large list more sensitive to unrelated parent state changes.
+### 6. Storage yazımları
+- Hap Bilgi storage tarafında debounced/idle persist zaten mevcuttu.
+- `localBackend.write` bazı App-level state değişimlerinde doğrudan localStorage yazıyordu. Büyük stats/history/solved arrays etkileşim sırasında ana thread’i kısa süre kilitleyebilir.
 
-7. **Some V372 CSS layer-promotion rules could become counterproductive in dense lists.** `translateZ(0)`/layer-promotion helps some animations but can hurt smoothness when many card rows are visible. Dense list rows benefit more from containment and fewer promoted layers while scrolling.
+### 7. Popup/dropdown konumlandırma
+- Katalog/branş menüsü gibi popup pozisyon güncellemeleri scroll/resize sırasında doğrudan tetiklenebiliyordu. RAF ile gruplanması daha güvenli.
 
-## Bundle/build observations
+## Build sonucu
+- `npm install --no-audit --no-fund`: başarılı.
+- `npm run build`: başarılı.
+- Build uyarısı: `case-bank` ve `GlossaryTooltip` chunkları hâlâ büyük. Bu beklenen bir uyarıdır; veri/glossary içeriği bilinçli olarak silinmedi veya kısaltılmadı.
 
-- `src/data/cases.js` remains the largest static data file; content was not changed.
-- `GlossaryTooltip` remains a large split chunk because it imports the glossary system; content was not reduced or removed.
-- Existing manual chunking in `vite.config.js` is preserved.
-- `npm install --no-audit --no-fund` completed successfully.
-- `npm run build` completed successfully. Vite still reports large chunk warnings for the glossary and case-bank chunks, which is expected from the current data architecture and was not treated as a breaking build error.
-
-## Risk control
-
-This pass intentionally avoids deleting custom cursor/custom scrollbar/glossary systems. The changes focus on reducing unnecessary observer wakeups, batching scroll state work, delaying heavy feedback by one animation frame, memoizing stable glossary renders, and memoizing catalog rows. TUS/KOMİTE content, answers, explanations, branch logic, glossary entries and case data were left untouched.
+## Bilinçli olarak dokunulmayan alanlar
+- Tıbbi vaka verileri, doğru cevaplar, seçenekler, feedbackler ve glossary data içerikleri değiştirilmedi.
+- Glossary sistemi kapatılmadı.
+- Premium cursor ve custom scrollbar korunarak optimize edildi.
+- TUS/KOMİTE modlarının ana akışı ve UI kimliği korunmaya çalışıldı.
+- Büyük data lazy-loading refactoru bu geçişte zorlanmadı; çünkü App-level vaka seçimi ve demo/solved index akışına yüksek kırılma riski taşıyordu.

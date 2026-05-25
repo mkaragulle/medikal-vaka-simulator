@@ -553,7 +553,7 @@ function App() {
       const nextUser = sanitizeUser({ ...users[userIndex], ...patch });
       const nextUsers = [...users];
       nextUsers[userIndex] = nextUser;
-      saveUsers(nextUsers);
+      localBackend.writeDeferred(USERS_STORAGE_KEY, nextUsers);
       localBackend.write(CURRENT_USER_STORAGE_KEY, nextUser.id);
       return nextUser;
     });
@@ -575,25 +575,25 @@ function App() {
   }, [wrongAnswers, currentUser?.id]);
 
   useEffect(() => {
-    localBackend.write(SOLVED_CASES_STORAGE_KEY, solvedCaseIds);
+    localBackend.writeDeferred(SOLVED_CASES_STORAGE_KEY, solvedCaseIds);
     if (!currentUser?.id) return;
     persistCurrentUser({ solvedCaseIds });
   }, [solvedCaseIds, currentUser?.id]);
 
   useEffect(() => {
-    localBackend.write(AI_PRACTICE_STATS_STORAGE_KEY, aiPracticeStats);
+    localBackend.writeDeferred(AI_PRACTICE_STATS_STORAGE_KEY, aiPracticeStats);
   }, [aiPracticeStats]);
 
   useEffect(() => {
-    localBackend.write(AI_BRANCH_FILTER_STORAGE_KEY, aiBranchFilter);
+    localBackend.writeDeferred(AI_BRANCH_FILTER_STORAGE_KEY, aiBranchFilter);
   }, [aiBranchFilter]);
 
   useEffect(() => {
-    localBackend.write(AI_DIFFICULTY_STORAGE_KEY, aiDifficulty);
+    localBackend.writeDeferred(AI_DIFFICULTY_STORAGE_KEY, aiDifficulty);
   }, [aiDifficulty]);
 
   useEffect(() => {
-    localBackend.write(PRODUCT_MODE_STORAGE_KEY, productMode);
+    localBackend.writeDeferred(PRODUCT_MODE_STORAGE_KEY, productMode);
   }, [productMode]);
 
   const handleRegister = ({ name, email, password, confirmPassword }) => {
@@ -869,7 +869,7 @@ function App() {
 
   useEffect(() => {
     if (currentUser?.id) return;
-    localBackend.write(STATS_STORAGE_KEY, sessionStats);
+    localBackend.writeDeferred(STATS_STORAGE_KEY, sessionStats);
   }, [sessionStats, currentUser?.id]);
 
   useEffect(() => {
@@ -912,7 +912,7 @@ function App() {
 
   useEffect(() => {
     if (currentUser?.id) return;
-    localBackend.write(EXAM_HISTORY_STORAGE_KEY, examHistory);
+    localBackend.writeDeferred(EXAM_HISTORY_STORAGE_KEY, examHistory);
   }, [examHistory, currentUser?.id]);
 
   useEffect(() => {

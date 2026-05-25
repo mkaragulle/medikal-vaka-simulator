@@ -18144,3 +18144,30 @@ html[data-theme='dark'] .pearl-editor-secondary-actions,
 .pearl-library-source-menu {
   z-index: 2147483000 !important;
 }
+
+/* ===== V372 Hap Bilgi/Katalog smoothness pass ===== */
+.tus-pearl-library-card.catalog-card-row {
+  content-visibility: auto;
+  contain-intrinsic-size: 86px;
+}
+
+html.ki-is-scrolling .tus-pearl-library-card,
+html.ki-is-scrolling .pearl-study-card,
+html.ki-is-scrolling .pearl-study-stage,
+html.ki-is-scrolling .pearl-inline-delete-popover,
+html.ki-route-transitioning .tus-pearl-library-card,
+html.ki-route-transitioning .pearl-study-card {
+  transition-duration: 80ms !important;
+  animation-duration: 80ms !important;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html.ki-is-scrolling .tus-pearl-library-card:hover,
+html.ki-is-scrolling .pearl-study-card:hover,
+html.ki-is-scrolling .catalog-add-action:hover,
+html.ki-is-scrolling .catalog-edit-action:hover,
+html.ki-is-scrolling .catalog-delete-action:hover {
+  transform: none !important;
+}

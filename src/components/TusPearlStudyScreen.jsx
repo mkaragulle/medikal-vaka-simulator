@@ -40,56 +40,45 @@ function CatalogCardQuestionText({ text }) {
 
 const MemoCatalogCardQuestionText = memo(CatalogCardQuestionText);
 
-
-const CatalogCardRow = memo(function CatalogCardRow({ card, branchName, activeCatalogId, onEditCard, onRequestDelete, onRemoveCard }) {
-  const handleEdit = useCallback(() => onEditCard(card), [card, onEditCard]);
-  const handleDelete = useCallback((event) => onRequestDelete(card, 'catalog-list', event), [card, onRequestDelete]);
-  const handleRemove = useCallback(() => onRemoveCard(card.id), [card.id, onRemoveCard]);
+const CatalogCardRow = memo(function CatalogCardRow({
+  card,
+  activeCatalogId = '',
+  inCatalog = false,
+  showRemove = false,
+  canAdd = false,
+  onAdd,
+  onRemove,
+  onEdit,
+  onRequestDelete,
+}) {
+  const handleAdd = useCallback(() => onAdd?.(card.id), [card.id, onAdd]);
+  const handleRemove = useCallback(() => onRemove?.(card.id), [card.id, onRemove]);
+  const handleEdit = useCallback(() => onEdit?.(card, activeCatalogId), [activeCatalogId, card, onEdit]);
+  const handleDelete = useCallback((event) => onRequestDelete?.(card, inCatalog ? 'catalog-list' : 'library-list', event), [card, inCatalog, onRequestDelete]);
 
   return (
-    <article className="tus-pearl-library-card in-catalog catalog-card-row">
+    <article className={`tus-pearl-library-card catalog-card-row ${inCatalog ? 'in-catalog' : ''}`.trim()}>
       <div className="catalog-card-content">
-        <span className="catalog-card-branch">{branchName}</span>
+        <span className="catalog-card-branch">{getBranchName(card.branchId)}</span>
         <strong className="catalog-card-question"><MemoCatalogCardQuestionText text={card.front} /></strong>
       </div>
       <div className="pearl-card-row-actions catalog-card-action">
         {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={handleEdit}>Düzenle</button> : null}
-        <span className="pearl-delete-anchor">
-          <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={handleDelete} aria-label="Kartı sil" title="Kartı sil">
-            <Icon name="Trash2" />
-          </button>
-        </span>
-        <button type="button" className="btn btn-icon quiet catalog-remove-action" onClick={handleRemove} aria-label="Kartı katalogdan çıkar" title="Katalogdan çıkar" disabled={!activeCatalogId}>
-          <Icon name="X" />
-        </button>
-      </div>
-    </article>
-  );
-});
-
-const AddableCatalogCardRow = memo(function AddableCatalogCardRow({ card, branchName, isInCatalog, activeCatalogId, onEditCard, onRequestDelete, onAddCard }) {
-  const handleEdit = useCallback(() => onEditCard(card), [card, onEditCard]);
-  const handleDelete = useCallback((event) => onRequestDelete(card, 'library-list', event), [card, onRequestDelete]);
-  const handleAdd = useCallback(() => onAddCard(card.id), [card.id, onAddCard]);
-
-  return (
-    <article className="tus-pearl-library-card catalog-card-row">
-      <div className="catalog-card-content">
-        <span className="catalog-card-branch">{branchName}</span>
-        <strong className="catalog-card-question"><MemoCatalogCardQuestionText text={card.front} /></strong>
-      </div>
-      <div className="pearl-card-row-actions catalog-card-action">
-        {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={handleEdit}>Düzenle</button> : null}
-        {isInCatalog ? (
+        {canAdd ? (
+          <button type="button" className="btn btn-secondary compact catalog-add-action" onClick={handleAdd}>Kataloğa ekle</button>
+        ) : !showRemove ? (
           <button type="button" className="btn btn-secondary compact catalog-added-action" disabled>Eklendi</button>
-        ) : (
-          <button type="button" className="btn btn-secondary compact catalog-add-action" onClick={handleAdd} disabled={!activeCatalogId}>Kataloğa ekle</button>
-        )}
+        ) : null}
         <span className="pearl-delete-anchor">
           <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={handleDelete} aria-label="Kartı sil" title="Kartı sil">
             <Icon name="Trash2" />
           </button>
         </span>
+        {showRemove ? (
+          <button type="button" className="btn btn-icon quiet catalog-remove-action" onClick={handleRemove} aria-label="Kartı katalogdan çıkar" title="Katalogdan çıkar">
+            <Icon name="X" />
+          </button>
+        ) : null}
       </div>
     </article>
   );
@@ -739,9 +728,9 @@ function TusPearlStudyScreen({
 
   const hasMoreLibraryCards = visibleSearchableCards.length < searchableCards.length;
 
-  function commitState(updater) {
+  const commitState = useCallback((updater) => {
     setPearlState((current) => savePearlState(updater(current || defaultPearlState)));
-  }
+  }, []);
 
   const rebuildStudySession = useCallback((cards = filteredCards) => {
     const deckKey = makeDeckKey(filter, branchFilter, activeCatalogId);
@@ -767,7 +756,7 @@ function TusPearlStudyScreen({
       recentStudyStarts: rememberStudyStart(current.recentStudyStarts, deckKey, deck.cardIds),
       customCatalogs: filter === 'catalog' ? markCatalogStudied(current.customCatalogs, activeCatalogId) : current.customCatalogs,
     }));
-  }, [activeCatalogId, branchFilter, favoriteSet, filter, filteredCards, knownSet, pearlState.recentStudyStarts, reviewSet, wrongSet]);
+  }, [activeCatalogId, branchFilter, commitState, favoriteSet, filter, filteredCards, knownSet, pearlState.recentStudyStarts, reviewSet, wrongSet]);
 
   useEffect(() => {
     if (!activeCatalogId && pearlState.customCatalogs.length) setActiveCatalogId(pearlState.customCatalogs[0].id);
@@ -839,6 +828,7 @@ function TusPearlStudyScreen({
 
   useEffect(() => {
     if (!branchMenuOpen) return undefined;
+    let repositionFrame = 0;
     const handlePointerDown = (event) => {
       const target = event.target;
       if (branchMenuTriggerRef.current?.contains(target) || branchMenuRef.current?.contains(target)) return;
@@ -850,12 +840,19 @@ function TusPearlStudyScreen({
         branchMenuTriggerRef.current?.focus();
       }
     };
-    const handleReposition = () => updateBranchMenuPosition();
+    const handleReposition = () => {
+      if (repositionFrame) return;
+      repositionFrame = window.requestAnimationFrame(() => {
+        repositionFrame = 0;
+        updateBranchMenuPosition();
+      });
+    };
     document.addEventListener('pointerdown', handlePointerDown, true);
     document.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('resize', handleReposition);
-    window.addEventListener('scroll', handleReposition, true);
+    window.addEventListener('resize', handleReposition, { passive: true });
+    window.addEventListener('scroll', handleReposition, { passive: true, capture: true });
     return () => {
+      if (repositionFrame) window.cancelAnimationFrame(repositionFrame);
       document.removeEventListener('pointerdown', handlePointerDown, true);
       document.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('resize', handleReposition);
@@ -1152,6 +1149,22 @@ function TusPearlStudyScreen({
     lastDeckSignature.current = '';
   }
 
+  const handleCatalogRowEdit = useCallback((card, defaultCatalogId = activeCatalogId) => {
+    openEditor({ mode: 'edit', card, defaultCatalogId });
+  }, [activeCatalogId]);
+
+  const handleCatalogRowAdd = useCallback((cardId) => {
+    addCardToCatalog(cardId);
+  }, [activeCatalogId]);
+
+  const handleCatalogRowRemove = useCallback((cardId) => {
+    removeCardFromCatalog(cardId);
+  }, [activeCatalogId]);
+
+  const handleCatalogRowDelete = useCallback((card, context, event) => {
+    requestCardDelete(card, context, event);
+  }, []);
+
   function handlePointerDown(event) {
     pointerStartX.current = event.clientX;
   }
@@ -1163,22 +1176,6 @@ function TusPearlStudyScreen({
     if (Math.abs(delta) < 64) return;
     moveCard(delta < 0 ? 1 : -1);
   }
-
-  const handleEditCatalogCard = useCallback((card) => {
-    openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalogId });
-  }, [activeCatalogId]);
-
-  const handleAddCatalogCard = useCallback((cardId) => {
-    addCardToCatalog(cardId, activeCatalogId);
-  }, [activeCatalogId]);
-
-  const handleRemoveCatalogCard = useCallback((cardId) => {
-    removeCardFromCatalog(cardId, activeCatalogId);
-  }, [activeCatalogId]);
-
-  const handleRequestCatalogCardDelete = useCallback((card, context, event) => {
-    requestCardDelete(card, context, event);
-  }, []);
 
   const branchMenuPortal = branchMenuOpen ? createPortal(
     <div
@@ -1346,11 +1343,12 @@ function TusPearlStudyScreen({
                         <CatalogCardRow
                           key={card.id}
                           card={card}
-                          branchName={getBranchName(card.branchId)}
                           activeCatalogId={activeCatalog.id}
-                          onEditCard={handleEditCatalogCard}
-                          onRequestDelete={handleRequestCatalogCardDelete}
-                          onRemoveCard={handleRemoveCatalogCard}
+                          inCatalog
+                          showRemove
+                          onRemove={handleCatalogRowRemove}
+                          onEdit={handleCatalogRowEdit}
+                          onRequestDelete={handleCatalogRowDelete}
                         />
                       ))}
                     </div>
@@ -1378,18 +1376,21 @@ function TusPearlStudyScreen({
                     <button type="button" className="btn btn-primary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalog.id })}>Yeni kart</button>
                   </div>
                   <div className="tus-pearl-catalog-card-list addable">
-                    {visibleSearchableCards.map((card) => (
-                      <AddableCatalogCardRow
-                        key={card.id}
-                        card={card}
-                        branchName={getBranchName(card.branchId)}
-                        isInCatalog={activeCatalogCardIdSet.has(card.id)}
-                        activeCatalogId={activeCatalog.id}
-                        onEditCard={handleEditCatalogCard}
-                        onRequestDelete={handleRequestCatalogCardDelete}
-                        onAddCard={handleAddCatalogCard}
-                      />
-                    ))}
+                    {visibleSearchableCards.map((card) => {
+                      const alreadyAdded = activeCatalogCardIdSet.has(card.id);
+                      return (
+                        <CatalogCardRow
+                          key={card.id}
+                          card={card}
+                          activeCatalogId={activeCatalog.id}
+                          inCatalog={alreadyAdded}
+                          canAdd={!alreadyAdded}
+                          onAdd={handleCatalogRowAdd}
+                          onEdit={handleCatalogRowEdit}
+                          onRequestDelete={handleCatalogRowDelete}
+                        />
+                      );
+                    })}
                     {hasMoreLibraryCards ? (
                       <div className="catalog-library-load-more">
                         <span>{visibleSearchableCards.length} / {searchableCards.length} kart gösteriliyor</span>
