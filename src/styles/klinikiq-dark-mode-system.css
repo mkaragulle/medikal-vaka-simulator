@@ -157,13 +157,18 @@ html[data-theme="dark"] ::selection {
 }
 
 html[data-theme="dark"] * {
-  
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
 }
 
-
-
-
-
+html[data-theme="dark"] *::-webkit-scrollbar { width: 10px; height: 10px; }
+html[data-theme="dark"] *::-webkit-scrollbar-track { background: var(--scroll-track); }
+html[data-theme="dark"] *::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border: 2px solid transparent;
+  background-clip: content-box;
+  border-radius: 999px;
+}
+html[data-theme="dark"] *::-webkit-scrollbar-thumb:hover { background: var(--scroll-thumb-hover); background-clip: content-box; }
 
 /* Typography and text hierarchy ------------------------------------------ */
 .app-shell[data-theme="dark"] :where(h1, h2, h3, h4, h5, h6, strong, .answer-title, .case-title-copy strong, .tus-hero-title-redesign, .home-brand-title-v10) {

@@ -8,6 +8,8 @@ import CaseList from './components/CaseList.jsx';
 import WrongAnswersFullPage from './components/WrongAnswersFullPage.jsx';
 import HomeCommandCenter from './components/HomeCommandCenter.jsx';
 import AuthPanel from './components/AuthPanel.jsx';
+import PremiumCursor from './components/PremiumCursor.jsx';
+import KlinikIQCustomScrollbars from './components/KlinikIQCustomScrollbars.jsx';
 import PerformanceOptimizer from './components/PerformanceOptimizer.jsx';
 import { Icon, BrandMark, ThemeToggle, BranchTransitionVisual, branchIconById } from './components/ui.jsx';
 import { branches } from './data/branches.js';
@@ -445,30 +447,6 @@ function RouteFallback({ label = 'Arayüz hazırlanıyor…' }) {
   );
 }
 
-function scheduleIdleTask(callback, timeout = 2200) {
-  if (typeof window === 'undefined') return () => {};
-  if (typeof window.requestIdleCallback === 'function') {
-    const id = window.requestIdleCallback(callback, { timeout });
-    return () => window.cancelIdleCallback?.(id);
-  }
-  const id = window.setTimeout(callback, Math.min(timeout, 900));
-  return () => window.clearTimeout(id);
-}
-
-let lazyScreenPreloadStarted = false;
-function preloadLazyScreens() {
-  if (lazyScreenPreloadStarted || typeof window === 'undefined') return;
-  lazyScreenPreloadStarted = true;
-  Promise.allSettled([
-    import('./components/CasePlayer.jsx'),
-    import('./components/TusPearlStudyScreen.jsx'),
-    import('./components/StudyReviewHub.jsx'),
-    import('./components/KomiteModeWorkspace.jsx'),
-    import('./components/ExamResults.jsx'),
-    import('./components/AIGeneratedQuestionView.jsx'),
-  ]).catch(() => {});
-}
-
 function App() {
   const [currentUser, setCurrentUser] = useState(() => sanitizeUser(loadCurrentUser()));
   const [selectedBranchId, setSelectedBranchId] = useState(null);
@@ -498,11 +476,6 @@ function App() {
   const aiQuestionTimer = useRef(null);
   const latestAIQuestionRequestId = useRef(0);
   const isDemoUser = isDemoAccount(currentUser);
-
-  useEffect(() => {
-    if (!currentUser) return undefined;
-    return scheduleIdleTask(preloadLazyScreens, 2600);
-  }, [currentUser]);
 
   function clearAIQuestionTimer() {
     latestAIQuestionRequestId.current += 1;
@@ -1472,6 +1445,8 @@ function App() {
     return (
       <main className="app-shell premium-shell" data-theme={theme}>
         <PerformanceOptimizer />
+        <PremiumCursor />
+        <KlinikIQCustomScrollbars />
         <AuthPanel
           onLogin={handleLogin}
           onRegister={handleRegister}
@@ -1487,6 +1462,8 @@ function App() {
   return (
     <main className="app-shell premium-shell" data-theme={theme}>
       <PerformanceOptimizer />
+      <PremiumCursor />
+      <KlinikIQCustomScrollbars />
       <nav className="top-shell-nav global-topbar-v55" aria-label="KlinikIQ üst gezinme">
         <button className="nav-brand nav-brand-icon-only global-nav-brand-v55" type="button" onClick={resetExamToHome} aria-label="KlinikIQ ana ekrana dön" title="KlinikIQ">
           <span className="nav-brand-mark nav-brand-mark-pulse" aria-hidden="true"><BrandMark title="" /></span>

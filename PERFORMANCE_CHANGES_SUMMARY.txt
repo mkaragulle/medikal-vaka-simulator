@@ -1,0 +1,73 @@
+KlinikIQ V373 Performance / Smoothness Changes Summary
+
+1) Modified files
+- src/components/TusPearlStudyScreen.jsx
+- src/components/GlossaryTooltip.jsx
+- src/components/PremiumCursor.jsx
+- src/components/KlinikIQCustomScrollbars.jsx
+- src/components/PerformanceOptimizer.jsx
+- src/index.css
+- PERFORMANCE_AUDIT_REPORT.md
+- PERFORMANCE_CHANGES_SUMMARY.txt
+
+2) React render optimizations
+- Kataloglarım > Katalogdaki kartlar rows were extracted into a memoized CatalogCardRow component.
+- Kataloglarım > Tüm kartlardan ekle rows were extracted into a memoized AddableCatalogCardRow component.
+- The existing plain text approach for catalog rows was preserved; GlossaryText was not reintroduced into heavy list rows.
+- Frequently passed handlers such as catalog card add/remove/edit/delete flows were stabilized with useCallback where this reduces row re-render pressure.
+- The V370 48-card visible limit and load-more behavior were preserved.
+- Search/filter visible-count reset behavior was preserved.
+
+3) Pop-up / dropdown positioning
+- Pearl study more menu positioning was RAF-throttled during scroll/resize.
+- Pearl catalog menu positioning was RAF-throttled during scroll/resize.
+- Branch selector menu positioning was RAF-throttled during scroll/resize.
+- Existing portal-based delete confirmation behavior was preserved so confirmation popups stay above UI layers and do not collide with the custom cursor layer.
+
+4) Glossary performance
+- GlossaryText export now uses a custom memo comparator.
+- Equivalent glossary array props are compared by compact signatures, reducing avoidable re-renders when parent components recreate arrays with identical values.
+- Existing glossary split/cache logic, hover intent, click behavior and nested glossary behavior were preserved.
+- Glossary content and terminology data were not changed.
+
+5) Custom cursor optimization
+- PremiumCursor was preserved.
+- Fine-pointer detection prevents unnecessary custom cursor work on non-fine pointer devices.
+- Duplicate pointer frames with the same target and coordinates are ignored.
+- Target classification work is skipped when the pointer remains on the same element.
+- Scrollbar drag state is cached so cursor state remains stable while dragging custom scrollbars.
+- Cursor updates remain transform/opacity-oriented and avoid layout measurement.
+
+6) Custom scrollbar optimization
+- KlinikIQCustomScrollbars was preserved.
+- MutationObserver scanning is now more selective and paced.
+- Full scans are skipped while dragging and while the document is hidden.
+- Scan scheduling now has a minimum interval to prevent DOM mutation bursts from repeatedly triggering expensive work.
+- Mutation changes coming from the custom scrollbar DOM itself are ignored.
+- Top-layer cache invalidation is more targeted.
+- Existing subtle premium scrollbar appearance and z-index intent were preserved.
+
+7) CSS performance / scroll smoothness
+- Broad global scroll-performance selectors were replaced with targeted selector groups to reduce style recalculation cost.
+- Added a V373 targeted smoothness patch for common card/list/option rows using containment and content-visibility where safe.
+- During active scrolling, expensive box-shadow, backdrop-filter and non-essential pseudo-element animations are reduced only temporarily.
+- Normal premium appearance is preserved when the page is not scrolling/resizing/transitioning.
+- The patch targets common KlinikIQ surfaces instead of globally flattening the entire UI.
+
+8) PerformanceOptimizer updates
+- Added short-lived interaction/route-transition hints for buttons, links, case rows, answer options and pearl cards.
+- These hints allow CSS to temporarily reduce costly visual effects during the exact interaction window.
+- Cleanup removes timers/listeners safely.
+
+9) Conscious non-changes
+- Medical/TUS data, case data, correct answers, feedback text, glossary entries and scientific content were not modified.
+- Custom cursor was not removed.
+- Custom scrollbar was not removed.
+- Glossary system was not disabled.
+- Dark/light theme palettes were not intentionally changed.
+- Large case/glossary data lazy-loading was not force-refactored because that could risk breaking existing TUS/KOMİTE behavior.
+
+10) Build result
+- npm install succeeded.
+- npm run build succeeded.
+- Vite large chunk warnings remain for large data/glossary/pdf-worker chunks. They are warnings, not runtime/build failures.

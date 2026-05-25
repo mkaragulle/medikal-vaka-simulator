@@ -40,6 +40,57 @@ function CatalogCardQuestionText({ text }) {
 
 const MemoCatalogCardQuestionText = memo(CatalogCardQuestionText);
 
+
+const CatalogCardRow = memo(function CatalogCardRow({ card, branchName, catalogId, onEdit, onDeleteRequest, onRemove }) {
+  return (
+    <article className="tus-pearl-library-card in-catalog catalog-card-row">
+      <div className="catalog-card-content">
+        <span className="catalog-card-branch">{branchName}</span>
+        <strong className="catalog-card-question"><MemoCatalogCardQuestionText text={card.front} /></strong>
+      </div>
+      <div className="pearl-card-row-actions catalog-card-action">
+        {card.source === 'user' ? (
+          <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={() => onEdit(card, catalogId)}>Düzenle</button>
+        ) : null}
+        <span className="pearl-delete-anchor">
+          <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={(event) => onDeleteRequest(card, 'catalog-list', event)} aria-label="Kartı sil" title="Kartı sil">
+            <Icon name="Trash2" />
+          </button>
+        </span>
+        <button type="button" className="btn btn-icon quiet catalog-remove-action" onClick={() => onRemove(card.id, catalogId)} aria-label="Kartı katalogdan çıkar" title="Katalogdan çıkar">
+          <Icon name="X" />
+        </button>
+      </div>
+    </article>
+  );
+});
+
+const AddableCatalogCardRow = memo(function AddableCatalogCardRow({ card, branchName, catalogId, isAdded, onEdit, onDeleteRequest, onAdd }) {
+  return (
+    <article className="tus-pearl-library-card catalog-card-row">
+      <div className="catalog-card-content">
+        <span className="catalog-card-branch">{branchName}</span>
+        <strong className="catalog-card-question"><MemoCatalogCardQuestionText text={card.front} /></strong>
+      </div>
+      <div className="pearl-card-row-actions catalog-card-action">
+        {card.source === 'user' ? (
+          <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={() => onEdit(card, catalogId)}>Düzenle</button>
+        ) : null}
+        {isAdded ? (
+          <button type="button" className="btn btn-secondary compact catalog-added-action" disabled>Eklendi</button>
+        ) : (
+          <button type="button" className="btn btn-secondary compact catalog-add-action" onClick={() => onAdd(card.id, catalogId)}>Kataloğa ekle</button>
+        )}
+        <span className="pearl-delete-anchor">
+          <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={(event) => onDeleteRequest(card, 'library-list', event)} aria-label="Kartı sil" title="Kartı sil">
+            <Icon name="Trash2" />
+          </button>
+        </span>
+      </div>
+    </article>
+  );
+});
+
 function LibrarySourceDropdown({ value, onChange }) {
   const [open, setOpen] = useState(false);
   const [menuStyle, setMenuStyle] = useState(null);
@@ -262,6 +313,25 @@ function getMoreMenuPosition(triggerNode, options = {}) {
   return { placement: 'popover', top, left, width };
 }
 
+
+function scheduleRafWork(ref, callback) {
+  if (typeof window === 'undefined') {
+    callback?.();
+    return;
+  }
+  if (ref.current) return;
+  ref.current = window.requestAnimationFrame(() => {
+    ref.current = 0;
+    callback?.();
+  });
+}
+
+function cancelRafWork(ref) {
+  if (typeof window === 'undefined' || !ref.current) return;
+  window.cancelAnimationFrame(ref.current);
+  ref.current = 0;
+}
+
 function getMoreMenuItemTitle(item) {
   if (item?.id === 'known') return 'Bildiğim Kartlar';
   if (item?.id === 'user') return 'Kendi Oluşturduğum Kartlarım';
@@ -289,6 +359,7 @@ function PearlStudyMoreMenu({
   const [position, setPosition] = useState({ placement: 'popover', top: 0, left: 0, width: 280 });
   const triggerRef = useRef(null);
   const menuRef = useRef(null);
+  const repositionFrameRef = useRef(0);
 
   const updatePosition = useCallback(() => {
     setPosition(getMoreMenuPosition(triggerRef.current, { align: 'start', width: 264, estimatedHeight: 156, preferBelow: true }));
@@ -327,7 +398,7 @@ function PearlStudyMoreMenu({
         triggerRef.current?.focus();
       }
     };
-    const handleReposition = () => updatePosition();
+    const handleReposition = () => scheduleRafWork(repositionFrameRef, updatePosition);
 
     document.addEventListener('pointerdown', handlePointerDown, true);
     document.addEventListener('keydown', handleKeyDown);
@@ -338,6 +409,7 @@ function PearlStudyMoreMenu({
       document.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('resize', handleReposition);
       window.removeEventListener('scroll', handleReposition, true);
+      cancelRafWork(repositionFrameRef);
     };
   }, [open, updatePosition]);
 
@@ -407,6 +479,7 @@ function PearlStudyCatalogsMenu({
   const [position, setPosition] = useState({ placement: 'popover', top: 0, left: 0, width: 300 });
   const triggerRef = useRef(null);
   const menuRef = useRef(null);
+  const repositionFrameRef = useRef(0);
 
   const updatePosition = useCallback(() => {
     setPosition(getMoreMenuPosition(triggerRef.current, {
@@ -450,7 +523,7 @@ function PearlStudyCatalogsMenu({
         triggerRef.current?.focus();
       }
     };
-    const handleReposition = () => updatePosition();
+    const handleReposition = () => scheduleRafWork(repositionFrameRef, updatePosition);
 
     document.addEventListener('pointerdown', handlePointerDown, true);
     document.addEventListener('keydown', handleKeyDown);
@@ -461,6 +534,7 @@ function PearlStudyCatalogsMenu({
       document.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('resize', handleReposition);
       window.removeEventListener('scroll', handleReposition, true);
+      cancelRafWork(repositionFrameRef);
     };
   }, [open, updatePosition]);
 
@@ -572,6 +646,7 @@ function TusPearlStudyScreen({
   const lastDeckSignature = useRef('');
   const branchMenuTriggerRef = useRef(null);
   const branchMenuRef = useRef(null);
+  const branchMenuRepositionFrameRef = useRef(0);
 
   const hiddenSet = useMemo(() => toSet(pearlState.hiddenPearlCardIds), [pearlState.hiddenPearlCardIds]);
   const allCards = useMemo(() => ([...SYSTEM_PEARL_CARDS, ...(pearlState.userPearlCards || [])].filter((card) => !hiddenSet.has(card.id))), [hiddenSet, pearlState.userPearlCards]);
@@ -684,9 +759,9 @@ function TusPearlStudyScreen({
 
   const hasMoreLibraryCards = visibleSearchableCards.length < searchableCards.length;
 
-  function commitState(updater) {
+  const commitState = useCallback((updater) => {
     setPearlState((current) => savePearlState(updater(current || defaultPearlState)));
-  }
+  }, []);
 
   const rebuildStudySession = useCallback((cards = filteredCards) => {
     const deckKey = makeDeckKey(filter, branchFilter, activeCatalogId);
@@ -712,7 +787,7 @@ function TusPearlStudyScreen({
       recentStudyStarts: rememberStudyStart(current.recentStudyStarts, deckKey, deck.cardIds),
       customCatalogs: filter === 'catalog' ? markCatalogStudied(current.customCatalogs, activeCatalogId) : current.customCatalogs,
     }));
-  }, [activeCatalogId, branchFilter, favoriteSet, filter, filteredCards, knownSet, pearlState.recentStudyStarts, reviewSet, wrongSet]);
+  }, [activeCatalogId, branchFilter, commitState, favoriteSet, filter, filteredCards, knownSet, pearlState.recentStudyStarts, reviewSet, wrongSet]);
 
   useEffect(() => {
     if (!activeCatalogId && pearlState.customCatalogs.length) setActiveCatalogId(pearlState.customCatalogs[0].id);
@@ -795,7 +870,7 @@ function TusPearlStudyScreen({
         branchMenuTriggerRef.current?.focus();
       }
     };
-    const handleReposition = () => updateBranchMenuPosition();
+    const handleReposition = () => scheduleRafWork(branchMenuRepositionFrameRef, updateBranchMenuPosition);
     document.addEventListener('pointerdown', handlePointerDown, true);
     document.addEventListener('keydown', handleKeyDown);
     window.addEventListener('resize', handleReposition);
@@ -805,6 +880,7 @@ function TusPearlStudyScreen({
       document.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('resize', handleReposition);
       window.removeEventListener('scroll', handleReposition, true);
+      cancelRafWork(branchMenuRepositionFrameRef);
     };
   }, [branchMenuOpen, updateBranchMenuPosition]);
 
@@ -877,7 +953,7 @@ function TusPearlStudyScreen({
     if (!fallback) setFilter('all');
   }
 
-  function addCardToCatalog(cardId, catalogId = activeCatalogId) {
+  const addCardToCatalog = useCallback((cardId, catalogId = activeCatalogId) => {
     if (!cardId || !catalogId) return;
     commitState((current) => ({
       ...current,
@@ -888,9 +964,9 @@ function TusPearlStudyScreen({
         card.id === cardId ? { ...card, catalogIds: addId(card.catalogIds, catalogId), updatedAt: new Date().toISOString() } : card
       )),
     }));
-  }
+  }, [activeCatalogId, commitState]);
 
-  function removeCardFromCatalog(cardId, catalogId = activeCatalogId) {
+  const removeCardFromCatalog = useCallback((cardId, catalogId = activeCatalogId) => {
     if (!cardId || !catalogId) return;
     commitState((current) => ({
       ...current,
@@ -901,7 +977,7 @@ function TusPearlStudyScreen({
         card.id === cardId ? { ...card, catalogIds: removeId(card.catalogIds, catalogId), updatedAt: new Date().toISOString() } : card
       )),
     }));
-  }
+  }, [activeCatalogId, commitState]);
 
   function toggleCatalogMembership() {
     if (!activeCard) return;
@@ -970,13 +1046,13 @@ function TusPearlStudyScreen({
     lastDeckSignature.current = '';
   }
 
-  function openEditor({ mode = 'create', card = null, defaultCatalogId = activeCatalogId || '' } = {}) {
+  const openEditor = useCallback(({ mode = 'create', card = null, defaultCatalogId = activeCatalogId || '' } = {}) => {
     setEditorState({ open: true, mode, card, defaultCatalogId });
-  }
+  }, [activeCatalogId]);
 
-  function closeEditor() {
+  const closeEditor = useCallback(() => {
     setEditorState({ open: false, mode: 'create', card: null, defaultCatalogId: '' });
-  }
+  }, []);
 
   function resolveDeletePopoverPosition(event) {
     if (typeof window === 'undefined') return null;
@@ -1002,7 +1078,7 @@ function TusPearlStudyScreen({
     };
   }
 
-  function requestCardDelete(card, context = 'library', event = null) {
+  const requestCardDelete = useCallback((card, context = 'library', event = null) => {
     if (!card) return;
     event?.stopPropagation?.();
     const position = resolveDeletePopoverPosition(event);
@@ -1013,7 +1089,7 @@ function TusPearlStudyScreen({
         ? { open: false, card: null, context: 'library', position: null }
         : { open: true, card, context, position };
     });
-  }
+  }, []);
 
   function closeDeleteConfirm() {
     setConfirmDeleteState({ open: false, card: null, context: 'library', position: null });
@@ -1096,6 +1172,11 @@ function TusPearlStudyScreen({
     setCatalogMenuOpen(false);
     lastDeckSignature.current = '';
   }
+
+
+  const openCatalogCardEditor = useCallback((card, catalogId = activeCatalogId) => {
+    openEditor({ mode: 'edit', card, defaultCatalogId: catalogId || activeCatalogId });
+  }, [activeCatalogId, openEditor]);
 
   function handlePointerDown(event) {
     pointerStartX.current = event.clientX;
@@ -1272,24 +1353,15 @@ function TusPearlStudyScreen({
                   {catalogCards.length ? (
                     <div className="tus-pearl-catalog-card-list">
                       {catalogCards.map((card) => (
-                        <article key={card.id} className="tus-pearl-library-card in-catalog catalog-card-row">
-                          <div className="catalog-card-content">
-                            <span className="catalog-card-branch">{getBranchName(card.branchId)}</span>
-                            <strong className="catalog-card-question"><MemoCatalogCardQuestionText text={card.front} /></strong>
-                          </div>
-                          <div className="pearl-card-row-actions catalog-card-action">
-                            {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
-                            <span className="pearl-delete-anchor">
-                              <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={(event) => requestCardDelete(card, 'catalog-list', event)} aria-label="Kartı sil" title="Kartı sil">
-                                <Icon name="Trash2" />
-                              </button>
-                              {renderInlineDeleteConfirm(card, 'catalog-list')}
-                            </span>
-                            <button type="button" className="btn btn-icon quiet catalog-remove-action" onClick={() => removeCardFromCatalog(card.id)} aria-label="Kartı katalogdan çıkar" title="Katalogdan çıkar">
-                              <Icon name="X" />
-                            </button>
-                          </div>
-                        </article>
+                        <CatalogCardRow
+                          key={card.id}
+                          card={card}
+                          branchName={getBranchName(card.branchId)}
+                          catalogId={activeCatalog.id}
+                          onEdit={openCatalogCardEditor}
+                          onDeleteRequest={requestCardDelete}
+                          onRemove={removeCardFromCatalog}
+                        />
                       ))}
                     </div>
                   ) : (
@@ -1317,26 +1389,16 @@ function TusPearlStudyScreen({
                   </div>
                   <div className="tus-pearl-catalog-card-list addable">
                     {visibleSearchableCards.map((card) => (
-                      <article key={card.id} className="tus-pearl-library-card catalog-card-row">
-                        <div className="catalog-card-content">
-                          <span className="catalog-card-branch">{getBranchName(card.branchId)}</span>
-                          <strong className="catalog-card-question"><MemoCatalogCardQuestionText text={card.front} /></strong>
-                        </div>
-                        <div className="pearl-card-row-actions catalog-card-action">
-                          {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
-                          {activeCatalogCardIdSet.has(card.id) ? (
-                            <button type="button" className="btn btn-secondary compact catalog-added-action" disabled>Eklendi</button>
-                          ) : (
-                            <button type="button" className="btn btn-secondary compact catalog-add-action" onClick={() => addCardToCatalog(card.id)}>Kataloğa ekle</button>
-                          )}
-                          <span className="pearl-delete-anchor">
-                            <button type="button" className="btn btn-icon quiet catalog-delete-action" onClick={(event) => requestCardDelete(card, 'library-list', event)} aria-label="Kartı sil" title="Kartı sil">
-                              <Icon name="Trash2" />
-                            </button>
-                            {renderInlineDeleteConfirm(card, 'library-list')}
-                          </span>
-                        </div>
-                      </article>
+                      <AddableCatalogCardRow
+                        key={card.id}
+                        card={card}
+                        branchName={getBranchName(card.branchId)}
+                        catalogId={activeCatalog.id}
+                        isAdded={activeCatalogCardIdSet.has(card.id)}
+                        onEdit={openCatalogCardEditor}
+                        onDeleteRequest={requestCardDelete}
+                        onAdd={addCardToCatalog}
+                      />
                     ))}
                     {hasMoreLibraryCards ? (
                       <div className="catalog-library-load-more">

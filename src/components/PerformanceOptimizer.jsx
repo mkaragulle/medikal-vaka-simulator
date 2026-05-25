@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 
 const SCROLL_IDLE_DELAY = 140;
 const RESIZE_IDLE_DELAY = 220;
+const INTERACTION_IDLE_DELAY = 180;
+const ROUTE_HINT_SELECTOR = 'button, a[href], [role="button"], [data-route-transition], .branch-card, .case-list-item, .tus-pearl-library-card, .answer-option';
 
 export default function PerformanceOptimizer() {
   useEffect(() => {
@@ -13,6 +15,7 @@ export default function PerformanceOptimizer() {
     let scrollTimer = 0;
     let resizeTimer = 0;
     let lastScrollMark = 0;
+    let interactionTimer = 0;
 
     const clearScrollState = () => {
       scrollTimer = 0;
@@ -40,40 +43,39 @@ export default function PerformanceOptimizer() {
       resizeTimer = window.setTimeout(clearResizeState, RESIZE_IDLE_DELAY);
     };
 
-    let transitionTimer = 0;
-    const markNavigationStart = (duration = 220) => {
-      root.classList.add('ki-route-transitioning');
-      if (transitionTimer) window.clearTimeout(transitionTimer);
-      transitionTimer = window.setTimeout(() => {
-        transitionTimer = 0;
-        root.classList.remove('ki-route-transitioning');
-      }, duration);
+    const clearInteractionState = () => {
+      interactionTimer = 0;
+      root.classList.remove('ki-route-transitioning');
     };
 
-    const markUIInteraction = (event) => {
-      const target = event?.target;
-      if (!(target instanceof Element)) return;
-      if (!target.closest('button, a[href], [role="button"], .branch-card, .case-list-item, .answer-option, .option-card, .tus-pearl-library-card, .catalog-card-row, .modal, .popover, .dropdown-menu')) return;
-      markNavigationStart(180);
+    const markNavigationStart = () => {
+      root.classList.add('ki-route-transitioning');
+      if (interactionTimer) window.clearTimeout(interactionTimer);
+      interactionTimer = window.setTimeout(clearInteractionState, INTERACTION_IDLE_DELAY);
+    };
+
+    const markInteractivePointerIntent = (event) => {
+      const target = event.target;
+      if (!target?.closest?.(ROUTE_HINT_SELECTOR)) return;
+      markNavigationStart();
     };
 
     window.addEventListener('scroll', markScrolling, { passive: true, capture: true });
     window.addEventListener('resize', markResizing, { passive: true });
     window.addEventListener('orientationchange', markResizing, { passive: true });
-    const handlePopState = () => markNavigationStart(260);
-    window.addEventListener('popstate', handlePopState, { passive: true });
-    window.addEventListener('pointerdown', markUIInteraction, { passive: true, capture: true });
+    window.addEventListener('popstate', markNavigationStart, { passive: true });
+    window.addEventListener('pointerdown', markInteractivePointerIntent, { passive: true, capture: true });
 
     return () => {
       root.classList.remove('ki-performance-mode', 'ki-is-scrolling', 'ki-is-resizing', 'ki-route-transitioning');
       window.removeEventListener('scroll', markScrolling, true);
       window.removeEventListener('resize', markResizing);
       window.removeEventListener('orientationchange', markResizing);
-      window.removeEventListener('popstate', handlePopState);
-      window.removeEventListener('pointerdown', markUIInteraction, true);
-      if (transitionTimer) window.clearTimeout(transitionTimer);
+      window.removeEventListener('popstate', markNavigationStart);
+      window.removeEventListener('pointerdown', markInteractivePointerIntent, true);
       if (scrollTimer) window.clearTimeout(scrollTimer);
       if (resizeTimer) window.clearTimeout(resizeTimer);
+      if (interactionTimer) window.clearTimeout(interactionTimer);
     };
   }, []);
 

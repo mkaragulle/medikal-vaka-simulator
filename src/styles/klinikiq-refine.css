@@ -596,7 +596,7 @@ body:not(.klinikiq-auth-lock) .klinikiq-theme-toggle[data-theme-state="light"] .
   line-height: 1.1 !important;
 }
 
-.summary-risk-chip-row em:nth-child(n/**/+5) {
+.summary-risk-chip-row em:nth-child(n+5) {
   display: none !important;
 }
 
@@ -786,9 +786,9 @@ body:not(.klinikiq-auth-lock) .klinikiq-theme-toggle[data-theme-state="light"] .
     overflow-x: auto !important;
     overflow-y: hidden !important;
     padding-bottom: 2px !important;
-    
+    scrollbar-width: none !important;
   }
-  
+  body:not(.klinikiq-auth-lock) .nav-actions::-webkit-scrollbar { display: none !important; }
 
   body:not(.klinikiq-auth-lock) .nav-user-chip {
     flex: 0 0 148px !important;
@@ -843,9 +843,9 @@ body:not(.klinikiq-auth-lock) .klinikiq-theme-toggle[data-theme-state="light"] .
     display: grid !important;
     grid-template-columns: repeat(4, minmax(68px, 1fr)) !important;
     overflow-x: auto !important;
-    
+    scrollbar-width: none !important;
   }
-  
+  .case-section-nav::-webkit-scrollbar { display: none !important; }
 
   .case-section-nav .section-nav-btn,
   .case-section-nav.professional-section-nav .section-nav-btn {
@@ -884,7 +884,7 @@ body:not(.klinikiq-auth-lock) .right-workspace-shell.card-surface {
   overscroll-behavior-y: contain !important;
   -webkit-overflow-scrolling: touch !important;
   touch-action: pan-y !important;
-  
+  scrollbar-gutter: stable !important;
   scroll-padding-bottom: 28px !important;
 }
 
@@ -939,17 +939,35 @@ body:not(.klinikiq-auth-lock) .right-workspace-shell.card-surface {
     height: auto !important;
     max-height: none !important;
     overflow: visible !important;
-    
+    scrollbar-gutter: auto !important;
   }
 }
 
+body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell::-webkit-scrollbar,
+body:not(.klinikiq-auth-lock) .qbank-side-column.professional-right-column > .right-workspace-shell::-webkit-scrollbar {
+  width: 10px !important;
+  display: block !important;
+}
 
+body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell::-webkit-scrollbar-track,
+body:not(.klinikiq-auth-lock) .qbank-side-column.professional-right-column > .right-workspace-shell::-webkit-scrollbar-track {
+  background: transparent !important;
+}
 
+body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell::-webkit-scrollbar-thumb,
+body:not(.klinikiq-auth-lock) .qbank-side-column.professional-right-column > .right-workspace-shell::-webkit-scrollbar-thumb {
+  min-height: 46px !important;
+  border: 3px solid transparent !important;
+  border-radius: 999px !important;
+  background: color-mix(in srgb, var(--text-muted) 36%, transparent) !important;
+  background-clip: padding-box !important;
+}
 
-
-
-
-
+body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell::-webkit-scrollbar-thumb:hover,
+body:not(.klinikiq-auth-lock) .qbank-side-column.professional-right-column > .right-workspace-shell::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--accent) 46%, transparent) !important;
+  background-clip: padding-box !important;
+}
 
 /* =========================================================
    V103 — Final premium topbar geometry + auth-matched theme button
@@ -1225,11 +1243,13 @@ body:not(.klinikiq-auth-lock) .app-shell[data-theme="dark"] .nav-actions .nav-th
     justify-content: flex-start !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
-    
+    scrollbar-width: none !important;
     padding-bottom: 2px !important;
   }
 
-  
+  body:not(.klinikiq-auth-lock) .nav-actions::-webkit-scrollbar {
+    display: none !important;
+  }
 
   body:not(.klinikiq-auth-lock) .nav-user-chip {
     flex: 0 0 150px !important;
@@ -1791,7 +1811,7 @@ html[data-theme="dark"] .diagnostic-decision-panel .answer-option.wrong {
 }
 
 .summary-clinical-mini-list.refined-summary-bullet-list li::before {
-  content: "" !important;
+  content: '' !important;
   position: absolute !important;
   left: 0 !important;
   top: .62em !important;
@@ -1851,7 +1871,7 @@ html[data-theme="dark"] .diagnostic-decision-panel .answer-option.wrong {
 }
 
 .patient-summary-story-block.unified-history-block .stem-sentence + .stem-sentence::before {
-  content: " " !important;
+  content: ' ' !important;
 }
 
 .patient-summary-story-block.unified-history-block .stem-sentence.highlighted {
@@ -2198,7 +2218,7 @@ html[data-theme="dark"] .patient-summary-focus-strip.refined-focus-callout.unifi
 }
 
 .patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list.refined-summary-bullet-list li::before {
-  content: "" !important;
+  content: '' !important;
   position: absolute !important;
   left: 0 !important;
   top: .72em !important;
@@ -2284,7 +2304,7 @@ html[data-theme="dark"] .patient-summary-focus-strip.refined-focus-callout.unifi
 }
 
 .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .stem-sentence + .stem-sentence::before {
-  content: " " !important;
+  content: ' ' !important;
 }
 
 .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .stem-sentence.highlighted {
@@ -3059,7 +3079,7 @@ body:not(.klinikiq-auth-lock) .home-hero-premium-v10 {
 }
 
 body:not(.klinikiq-auth-lock) .home-hero-premium-v10::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 1px;
   z-index: 0;
@@ -3597,9 +3617,19 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-mode-v10,
   border-color: rgba(148, 163, 184, .18) !important;
 }
 
-
+/* --------------------------------------------------------------------------
+   V115 — Stable case viewport layout / first render equals final render
+   --------------------------------------------------------------------------
+   The case page previously inherited several competing page-shell and qbank
+   width rules, then received a temporary branch-route-reveal class during the
+   branch transition. On wide screens this could make the first rendered case
+   frame look wider than the final settled layout. This layer fixes the case
+   viewport geometry with one deterministic shell width, one deterministic
+   qbank grid, stable scrollbar gutter, and no transform/width animation on the
+   case layout itself.
+   -------------------------------------------------------------------------- */
 html:not(.klinikiq-auth-lock) {
-  
+  scrollbar-gutter: stable;
 }
 
 body:not(.klinikiq-auth-lock) {

@@ -455,7 +455,7 @@ function computeFloatingPosition(referenceEl, floatingEl, nestingLevel = 0) {
 
   // Nested cards read better when they open laterally if there is room. This
   // also prevents nested glossary previews in the Hap Bilgi screen from being
-  // pushed below the viewport while keeping the flashcard area layout stable.
+  // pushed below the viewport while keeping the flashcard area scrollbar-free.
   if (Number(nestingLevel || 0) > 0) {
     const spaceRight = viewport.width - reference.right - TOOLTIP_GAP - VIEWPORT_PADDING;
     const spaceLeft = reference.left - TOOLTIP_GAP - VIEWPORT_PADDING;
@@ -1155,6 +1155,7 @@ export function GlossaryTerm({ children, entry = null, definition = '', revealMo
       data-reveal-mode={GLOSSARY_EXPLANATION_MODE}
       data-glossary-entry-id={resolvedEntry?.id || ''}
       data-glossary-entry-term={visibleTermLabel}
+      data-cursor="glossary"
       data-nesting-level={nestingLevel}
       data-glossary-context-mode={contextMode}
       data-hover-open-delay={getGlossaryHoverOpenDelay(nestingLevel)}
@@ -1280,5 +1281,35 @@ function GlossaryText({
   );
 }
 
-const MemoizedGlossaryText = memo(GlossaryText);
+
+function makeGlossaryArraySignature(value = []) {
+  if (!Array.isArray(value) || !value.length) return '';
+  return value.map((item) => {
+    if (item && typeof item === 'object') return `${item.id || ''}:${item.term || item.canonicalTerm || item.displayTerm || ''}:${item.aliases?.length || 0}`;
+    return normalizeGlossaryText(item);
+  }).join('|');
+}
+
+function areGlossaryTextPropsEqual(prev = {}, next = {}) {
+  return String(prev.text || '') === String(next.text || '')
+    && Boolean(prev.enabled ?? true) === Boolean(next.enabled ?? true)
+    && String(prev.branchId || '') === String(next.branchId || '')
+    && String(prev.revealMode || 'postAnswer') === String(next.revealMode || 'postAnswer')
+    && (prev.maxTerms ?? DEFAULT_MAX_TERMS_PER_TEXT) === (next.maxTerms ?? DEFAULT_MAX_TERMS_PER_TEXT)
+    && Number(prev.nestingLevel || 0) === Number(next.nestingLevel || 0)
+    && String(prev.contextMode || '') === String(next.contextMode || '')
+    && String(prev.termsMode || 'augment') === String(next.termsMode || 'augment')
+    && Number(prev.currentDepth || 0) === Number(next.currentDepth || 0)
+    && Number(prev.maxNestedDepth ?? TOOLTIP_BODY_MAX_NESTED_DEPTH) === Number(next.maxNestedDepth ?? TOOLTIP_BODY_MAX_NESTED_DEPTH)
+    && Boolean(prev.enableNestedGlossary) === Boolean(next.enableNestedGlossary)
+    && String(prev.navigationMode || 'popover') === String(next.navigationMode || 'popover')
+    && prev.onTermNavigate === next.onTermNavigate
+    && makeGlossaryArraySignature(prev.terms) === makeGlossaryArraySignature(next.terms)
+    && makeGlossaryArraySignature(prev.excludedTermKeys) === makeGlossaryArraySignature(next.excludedTermKeys)
+    && makeGlossaryArraySignature(prev.visitedEntryIds) === makeGlossaryArraySignature(next.visitedEntryIds)
+    && makeGlossaryArraySignature(prev.blockedNestedEntryIds) === makeGlossaryArraySignature(next.blockedNestedEntryIds)
+    && makeGlossaryArraySignature(prev.allowedNestedEntryIds) === makeGlossaryArraySignature(next.allowedNestedEntryIds);
+}
+
+const MemoizedGlossaryText = memo(GlossaryText, areGlossaryTextPropsEqual);
 export default MemoizedGlossaryText;
