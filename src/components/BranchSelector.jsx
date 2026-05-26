@@ -78,7 +78,7 @@ function BranchSelector({ branches, cases, onSelectBranch, launchingBranchId = n
   const standardBranches = useMemo(() => branches.filter((branch) => branch.id !== TUS_SPOT_BRANCH_ID), [branches]);
 
   return (
-    <section className="section-block branches-section" id="branches">
+    <section className="section-block branches-section" id="branches-panel">
       <div className="section-title-row stacked">
         <div>
           <h2>Klinik branş seç</h2>

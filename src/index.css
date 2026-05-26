@@ -52070,3 +52070,200 @@ html.ki-performance-mode :is(
 ) {
   transition-property: background-color, border-color, color, opacity, transform !important;
 }
+
+/* ========================================================================== 
+   V380 — Main TUS home smoothness pass
+   --------------------------------------------------------------------------
+   Heavy home sections (Kişisel tekrar + Klinik branş seç) are now mounted just
+   before use and painted with stable, low-cost surfaces. This prevents the main
+   KlinikIQ TUS dashboard from freezing when the user scrolls into large data
+   regions.
+   ========================================================================== */
+.deferred-home-section {
+  width: 100%;
+  contain: layout paint style;
+  content-visibility: visible;
+  scroll-margin-top: 96px;
+}
+
+.deferred-home-section-placeholder {
+  min-height: inherit;
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  padding: 28px;
+  border-radius: 26px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(248,250,252,0.70));
+  color: var(--text-muted, #64748b);
+  box-shadow: none !important;
+}
+
+.deferred-home-section-placeholder strong {
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+
+.branch-selector-deferred-shell,
+.study-review-anchor.deferred-home-section {
+  max-width: 1580px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.branch-selector-deferred-shell .branches-section,
+.study-review-anchor .study-review-hub {
+  contain: layout paint style;
+  content-visibility: visible !important;
+}
+
+/* Disable always-running branch icon animations on the main dashboard. Launch
+   feedback remains available through the is-launching state, but idle cards no
+   longer keep repainting while the user scrolls. */
+html.ki-performance-mode .branches-section .branch-card:not(.is-launching) :is(
+  .branch-animated-icon,
+  .branch-animated-svg,
+  .branch-icon-ambient,
+  .icon-badge,
+  .icon-badge::before,
+  .icon-badge::after,
+  .icon-badge svg,
+  .branch-svg-main,
+  .branch-svg-secondary,
+  .branch-svg-detail,
+  .branch-svg-particles,
+  .branch-svg-scan,
+  .physiology-ring,
+  .obgyn-protect-ring
+) {
+  animation: none !important;
+  transition-duration: 90ms !important;
+  filter: none !important;
+  will-change: auto !important;
+}
+
+html.ki-performance-mode .branches-section .branch-card:not(.is-launching) .branch-icon-ambient,
+html.ki-performance-mode .branches-section .branch-card:not(.is-launching) .branch-launch-wave {
+  display: none !important;
+}
+
+html.ki-performance-mode .branches-section .branch-card[data-branch] .branch-card-head .icon-badge,
+html.ki-performance-mode .branches-section .branch-card[data-branch]:hover .branch-card-head .icon-badge,
+html.ki-performance-mode .branches-section .branch-card[data-branch]:focus-visible .branch-card-head .icon-badge {
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+html.ki-performance-mode .branches-section .branch-card {
+  transform: translateZ(0);
+  contain: layout paint style;
+  will-change: auto !important;
+}
+
+html.ki-performance-mode .branches-section .branch-card:hover {
+  transform: none !important;
+}
+
+/* The main review widgets should not trigger expensive hover/blur/shadow work
+   while entering the viewport. */
+html.ki-performance-mode .study-review-hub :is(
+  .wrong-answers-panel,
+  .tus-pearl-hub-panel,
+  .wrong-answer-card,
+  .tus-pearl-action-grid button,
+  .tus-pearl-repeat-list button,
+  .tus-pearl-own-card-mini,
+  .pearl-bridge-callout,
+  .tus-pearl-hub-stats span
+) {
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  contain: layout paint style;
+}
+
+html.ki-performance-mode .study-review-hub :is(
+  .wrong-answer-card,
+  .tus-pearl-action-grid button,
+  .tus-pearl-repeat-list button,
+  .tus-pearl-own-card-mini,
+  .pearl-bridge-callout
+) {
+  transition-property: background-color, border-color, color, opacity !important;
+  transition-duration: 100ms !important;
+}
+
+html.ki-performance-mode .study-review-hub :is(
+  .wrong-answer-card:hover,
+  .tus-pearl-action-grid button:hover,
+  .tus-pearl-repeat-list button:hover
+) {
+  transform: none !important;
+}
+
+.pearl-hub-skeleton {
+  min-height: 420px;
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  padding: 22px !important;
+  box-shadow: none !important;
+}
+
+.pearl-hub-skeleton-line,
+.pearl-hub-skeleton-grid span {
+  display: block;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(148,163,184,0.12), rgba(20,184,166,0.12), rgba(148,163,184,0.12));
+  background-size: 220% 100%;
+  animation: pearlHubSkeletonPulse 1.8s ease-in-out infinite;
+}
+
+.pearl-hub-skeleton-line {
+  width: 46%;
+  height: 14px;
+}
+
+.pearl-hub-skeleton-line.wide {
+  width: 68%;
+  height: 18px;
+}
+
+.pearl-hub-skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.pearl-hub-skeleton-grid span {
+  height: 64px;
+  border-radius: 18px;
+}
+
+@keyframes pearlHubSkeletonPulse {
+  0%, 100% { background-position: 0% 50%; opacity: .74; }
+  50% { background-position: 100% 50%; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pearl-hub-skeleton-line,
+  .pearl-hub-skeleton-grid span {
+    animation: none !important;
+  }
+}
+
+[data-theme="dark"] .deferred-home-section-placeholder,
+.app-shell[data-theme="dark"] .deferred-home-section-placeholder {
+  border-color: rgba(94, 234, 212, 0.12);
+  background: linear-gradient(180deg, rgba(15,23,42,0.72), rgba(15,23,42,0.60));
+  color: rgba(203, 213, 225, 0.88);
+}
+
+[data-theme="dark"] .pearl-hub-skeleton-line,
+[data-theme="dark"] .pearl-hub-skeleton-grid span,
+.app-shell[data-theme="dark"] .pearl-hub-skeleton-line,
+.app-shell[data-theme="dark"] .pearl-hub-skeleton-grid span {
+  background: linear-gradient(90deg, rgba(51,65,85,0.45), rgba(20,184,166,0.16), rgba(51,65,85,0.45));
+  background-size: 220% 100%;
+}

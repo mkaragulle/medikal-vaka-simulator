@@ -447,6 +447,80 @@ function RouteFallback({ label = 'Arayüz hazırlanıyor…' }) {
   );
 }
 
+function DeferredHomeSection({
+  id,
+  className = '',
+  children,
+  minHeight = 420,
+  idleDelay = 700,
+  label = 'Bölüm hazırlanıyor…',
+}) {
+  const [ready, setReady] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    if (ready || typeof window === 'undefined') return undefined;
+
+    let cancelled = false;
+    let observer = null;
+    let delayTimer = 0;
+    let idleId = 0;
+
+    const reveal = () => {
+      if (cancelled) return;
+      startTransition(() => setReady(true));
+    };
+
+    if ('IntersectionObserver' in window && sectionRef.current) {
+      observer = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) reveal();
+      }, { root: null, rootMargin: '1200px 0px 1200px 0px', threshold: 0.01 });
+      observer.observe(sectionRef.current);
+    }
+
+    delayTimer = window.setTimeout(() => {
+      if (cancelled || ready) return;
+      if ('requestIdleCallback' in window) {
+        idleId = window.requestIdleCallback(reveal, { timeout: 1800 });
+        return;
+      }
+      reveal();
+    }, idleDelay);
+
+    return () => {
+      cancelled = true;
+      observer?.disconnect?.();
+      window.clearTimeout(delayTimer);
+      if (idleId && 'cancelIdleCallback' in window) window.cancelIdleCallback(idleId);
+    };
+  }, [idleDelay, ready]);
+
+  useEffect(() => {
+    if (!ready || typeof window === 'undefined') return undefined;
+    const rafId = window.requestAnimationFrame(() => {
+      window.dispatchEvent(new CustomEvent('klinikiq:scrollbars-rescan'));
+    });
+    return () => window.cancelAnimationFrame(rafId);
+  }, [ready]);
+
+  return (
+    <section
+      id={id}
+      ref={sectionRef}
+      className={[className, 'deferred-home-section', ready ? 'is-ready' : 'is-pending'].filter(Boolean).join(' ')}
+      style={ready ? undefined : { minHeight }}
+      data-main-deferred-section={id || 'section'}
+    >
+      {ready ? children : (
+        <div className="deferred-home-section-placeholder card-surface" role="status" aria-live="polite">
+          <span className="route-fallback-spinner" aria-hidden="true" />
+          <strong>{label}</strong>
+        </div>
+      )}
+    </section>
+  );
+}
+
 function App() {
   const [currentUser, setCurrentUser] = useState(() => sanitizeUser(loadCurrentUser()));
   const [selectedBranchId, setSelectedBranchId] = useState(null);
@@ -1828,7 +1902,13 @@ function App() {
             totalBranches={visibleBranches.length}
             examCount={examHistory.length}
           />
-          <section id="wrong-answers-section" className="study-review-anchor section-anchor" aria-label="Yanlışlar ve hap bilgi tekrar merkezi">
+          <DeferredHomeSection
+            id="wrong-answers-section"
+            className="study-review-anchor section-anchor"
+            minHeight={620}
+            idleDelay={520}
+            label="Kişisel tekrar hazırlanıyor…"
+          >
             <Suspense fallback={<RouteFallback label="Tekrar merkezi hazırlanıyor…" />}>
               <StudyReviewHub
                 wrongAnswers={visibleWrongAnswers}
@@ -1839,14 +1919,22 @@ function App() {
                 onOpenAllWrongAnswers={openAllWrongAnswers}
               />
             </Suspense>
-          </section>
-          <BranchSelector
-            branches={visibleBranches}
-            cases={accessibleCases}
-            onSelectBranch={handleSelectBranch}
-            launchingBranchId={branchRouteTransition?.phase === 'selecting' ? branchRouteTransition.branchId : null}
-            isTransitioning={Boolean(branchRouteTransition?.active)}
-          />
+          </DeferredHomeSection>
+          <DeferredHomeSection
+            id="branches"
+            className="branch-selector branch-selector-deferred-shell"
+            minHeight={940}
+            idleDelay={1050}
+            label="Klinik branşlar hazırlanıyor…"
+          >
+            <BranchSelector
+              branches={visibleBranches}
+              cases={accessibleCases}
+              onSelectBranch={handleSelectBranch}
+              launchingBranchId={branchRouteTransition?.phase === 'selecting' ? branchRouteTransition.branchId : null}
+              isTransitioning={Boolean(branchRouteTransition?.active)}
+            />
+          </DeferredHomeSection>
         </section>
       )}
     </main>
