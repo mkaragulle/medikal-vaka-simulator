@@ -18288,3 +18288,18 @@ html.ki-is-scrolling .catalog-card-virtual-row > .tus-pearl-library-card.catalog
 html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.catalog-card-row {
   box-shadow: none !important;
 }
+
+/* V389 — Kişisel tekrar micro-performance cleanup */
+.study-review-anchor .tus-pearl-hub-panel,
+.study-review-anchor .wrong-answers-panel,
+.study-review-anchor .tus-pearl-repeat-center,
+.study-review-anchor .tus-pearl-own-card-mini {
+  contain: layout paint style;
+}
+
+.study-review-anchor .tus-pearl-hub-ambient,
+.study-review-anchor .pearl-bridge-callout::before,
+.study-review-anchor .pearl-bridge-callout::after {
+  animation: none !important;
+  pointer-events: none !important;
+}

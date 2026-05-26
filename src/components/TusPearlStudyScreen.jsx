@@ -174,20 +174,7 @@ const VirtualCatalogCardList = memo(function VirtualCatalogCardList({
     };
   }, [updateViewport]);
 
-  useEffect(() => {
-    const listNode = listRef.current;
-    if (!listNode || typeof window === 'undefined') return undefined;
-    const dispatchRescan = () => window.dispatchEvent(new CustomEvent('klinikiq:scrollbars-rescan', {
-      detail: { source: 'tus-pearl-catalog-library', target: listNode },
-    }));
-    dispatchRescan();
-    const frameId = window.requestAnimationFrame(dispatchRescan);
-    const idleId = window.setTimeout(dispatchRescan, 180);
-    return () => {
-      window.cancelAnimationFrame(frameId);
-      window.clearTimeout(idleId);
-    };
-  }, [cards.length, viewport.clientHeight, resetKey]);
+  // V389: no custom scrollbar rescan is needed after global invisible-scrollbar cleanup.
 
   if (!cards.length) {
     return (

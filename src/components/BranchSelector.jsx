@@ -3,12 +3,14 @@ import { IconBadge, Icon, branchIconById, branchToneById } from './ui.jsx';
 import { BranchAnimatedIcon } from './BranchAnimatedIcon.jsx';
 import { TUS_SPOT_BRANCH_ID } from '../data/branches.js';
 
-function BranchCard({ branch, branchStats, isLaunching, isLocked, onLaunchBranch, index = 0, variant = 'grid' }) {
+function BranchCard({ branch, branchStats, isLaunching, isLocked, onLaunchBranch, onPreloadBranch, index = 0, variant = 'grid' }) {
   const isSpotBranch = branch.id === TUS_SPOT_BRANCH_ID;
   const priorityCases = branchStats?.priorityCases ?? 0;
   const progress = Math.min(100, 28 + priorityCases * 14);
   const tone = branchToneById[branch.id] ?? 'accent';
   const isFeatured = variant === 'featured';
+
+  const preloadBranch = useCallback(() => onPreloadBranch?.(branch.id), [branch.id, onPreloadBranch]);
 
   return (
     <button
@@ -21,6 +23,8 @@ function BranchCard({ branch, branchStats, isLaunching, isLocked, onLaunchBranch
       ].filter(Boolean).join(' ')}
       data-branch={branch.id}
       data-launch-state={isLaunching ? 'launching' : 'idle'}
+      onPointerEnter={preloadBranch}
+      onFocus={preloadBranch}
       onClick={() => onLaunchBranch(branch.id)}
       aria-label={`${branch.name} alanını aç`}
       aria-busy={isLaunching ? 'true' : 'false'}
@@ -53,7 +57,7 @@ function BranchCard({ branch, branchStats, isLaunching, isLocked, onLaunchBranch
 
 const MemoizedBranchCard = memo(BranchCard);
 
-function BranchSelector({ branches, cases, onSelectBranch, launchingBranchId = null, isTransitioning = false }) {
+function BranchSelector({ branches, cases, onSelectBranch, onPreloadBranch, launchingBranchId = null, isTransitioning = false }) {
   const branchStatsById = useMemo(() => {
     const stats = new Map();
 
@@ -95,6 +99,7 @@ function BranchSelector({ branches, cases, onSelectBranch, launchingBranchId = n
             isLaunching={launchingBranchId === spotBranch.id}
             isLocked={isTransitioning}
             onLaunchBranch={handleLaunchBranch}
+            onPreloadBranch={onPreloadBranch}
             index={0}
             variant="featured"
           />
@@ -110,6 +115,7 @@ function BranchSelector({ branches, cases, onSelectBranch, launchingBranchId = n
             isLaunching={launchingBranchId === branch.id}
             isLocked={isTransitioning}
             onLaunchBranch={handleLaunchBranch}
+            onPreloadBranch={onPreloadBranch}
             index={index + 1}
           />
         ))}

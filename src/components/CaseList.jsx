@@ -173,24 +173,8 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
     };
   }, [layout, updateHorizontalViewport]);
 
-  useEffect(() => {
-    if (layout !== 'horizontal') return undefined;
-    const listNode = listRef.current;
-    if (!listNode) return undefined;
-
-    const dispatchRescan = () => window.dispatchEvent(new CustomEvent('klinikiq:scrollbars-rescan', {
-      detail: { source: 'horizontal-case-list', target: listNode },
-    }));
-
-    dispatchRescan();
-    const frameId = window.requestAnimationFrame(dispatchRescan);
-    const idleId = window.setTimeout(dispatchRescan, 180);
-
-    return () => {
-      window.cancelAnimationFrame(frameId);
-      window.clearTimeout(idleId);
-    };
-  }, [cases.length, horizontalViewport.clientWidth, layout]);
+  // V389: custom scrollbar layers are disabled globally, so this list no longer
+  // dispatches expensive scrollbar rescan events during horizontal scroll.
 
   if (layout === 'horizontal') {
     const totalWidth = cases.length

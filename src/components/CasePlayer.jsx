@@ -380,11 +380,11 @@ function summaryRowKind(label = '') {
 
 function summaryIconName(kind = '') {
   const normalized = String(kind || '').toLocaleLowerCase('tr');
-  if (normalized.includes('profile')) return 'User';
-  if (normalized.includes('presentation')) return 'AlertTriangle';
-  if (normalized.includes('risk')) return 'Shield';
-  if (normalized.includes('clues')) return 'ClipboardList';
-  return 'Notes';
+  if (normalized.includes('profile')) return 'UserPlus';
+  if (normalized.includes('presentation')) return 'HeartPulse';
+  if (normalized.includes('risk')) return 'ShieldCheck';
+  if (normalized.includes('clues')) return 'Target';
+  return 'BookOpen';
 }
 
 function splitProfileText(value = '') {
@@ -940,7 +940,7 @@ function CasePlayer({
                   {/* Hasta özeti, referans görseldeki tek, premium ve okunabilir klinik çerçeve tasarımına göre yeniden düzenlendi. */}
                   <header className="patient-summary-head compact-summary-head premium-summary-head">
                     <span className="patient-summary-main-icon" aria-hidden="true">
-                      <Icon name="ClipboardList" size={29} strokeWidth={1.95} />
+                      <Icon name="Stethoscope" size={28} strokeWidth={1.95} />
                     </span>
                     <div className="patient-summary-head-copy">
                       <strong>Olgu sunumu</strong>
@@ -978,7 +978,7 @@ function CasePlayer({
 
                   <section className="patient-summary-story-block unified-history-block" aria-label="Hasta öyküsü">
                     <span className="summary-wide-icon summary-wide-icon--history" aria-hidden="true">
-                      <Icon name="Notes" size={28} strokeWidth={1.92} />
+                      <Icon name="BookOpen" size={27} strokeWidth={1.9} />
                     </span>
                     <div className="summary-wide-content">
                       <div className="summary-story-label">
