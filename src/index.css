@@ -52267,3 +52267,622 @@ html.ki-performance-mode .study-review-hub :is(
   background: linear-gradient(90deg, rgba(51,65,85,0.45), rgba(20,184,166,0.16), rgba(51,65,85,0.45));
   background-size: 220% 100%;
 }
+
+/* ========================================================================== 
+   V381 — Global redesign for “Diğer olgular” / horizontal case rail
+   --------------------------------------------------------------------------
+   Rebuilds the bottom case browser into a lighter, flatter, aligned rail.
+   Keeps virtualization/custom scrollbar behaviour but replaces the old bulky
+   card look with compact row cards and a cleaner toolbar.
+   ========================================================================== */
+.case-rail-browser.bottom-case-browser,
+body:not(.klinikiq-auth-lock) .case-page-shell .case-rail-browser.bottom-case-browser {
+  overflow: hidden !important;
+  contain: layout style !important;
+  content-visibility: visible !important;
+  display: grid !important;
+  gap: 14px !important;
+  padding: 18px !important;
+  border-radius: 28px !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 88%, var(--primary-300) 12%) !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 94%, white 6%), color-mix(in srgb, var(--surface-2) 86%, white 14%)) !important;
+  box-shadow: none !important;
+}
+
+.case-rail-browser-head.bottom-case-browser-head {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: end !important;
+  gap: 16px !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.case-rail-browser-title {
+  min-width: 0 !important;
+  display: grid !important;
+  gap: 3px !important;
+}
+
+.case-rail-browser-title > span {
+  width: fit-content !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 24px !important;
+  padding: 0 9px !important;
+  border-radius: 999px !important;
+  color: var(--primary-800) !important;
+  background: color-mix(in srgb, var(--primary-50) 72%, white 28%) !important;
+  border: 1px solid color-mix(in srgb, var(--primary-200) 58%, transparent) !important;
+  font-size: 0.72rem !important;
+  font-weight: 820 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.case-rail-browser-title h3,
+.bottom-case-browser-head .case-rail-browser-title h3 {
+  margin: 0 !important;
+  color: var(--text-primary) !important;
+  font-size: clamp(1.1rem, 1.35vw, 1.28rem) !important;
+  line-height: 1.08 !important;
+  font-weight: 860 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.case-rail-browser-title p,
+.bottom-case-browser-head .case-rail-browser-title p {
+  margin: 0 !important;
+  color: var(--text-secondary) !important;
+  font-size: 0.88rem !important;
+  line-height: 1.45 !important;
+  font-weight: 560 !important;
+}
+
+.case-rail-browser .bottom-case-browser-tools {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  min-width: 0 !important;
+}
+
+.case-rail-browser .bottom-case-search {
+  width: clamp(230px, 22vw, 320px) !important;
+  min-height: 40px !important;
+  grid-template-columns: 30px minmax(0, 1fr) 28px !important;
+  padding: 3px 6px !important;
+  border-radius: 16px !important;
+  background: color-mix(in srgb, var(--surface-1) 92%, white 8%) !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 88%, var(--primary-200) 12%) !important;
+  box-shadow: none !important;
+}
+
+.case-rail-browser .bottom-case-search::after {
+  display: none !important;
+}
+
+.case-rail-browser .bottom-case-search:hover,
+.case-rail-browser .bottom-case-search:focus-within {
+  transform: none !important;
+  background: color-mix(in srgb, var(--surface-1) 96%, var(--primary-50) 4%) !important;
+  border-color: color-mix(in srgb, var(--primary-400) 38%, var(--border-subtle)) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-100) 42%, transparent) !important;
+}
+
+.case-rail-browser .bottom-case-search-icon {
+  width: 26px !important;
+  height: 26px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--text-secondary) !important;
+}
+
+.case-rail-browser .bottom-case-search input {
+  height: 30px !important;
+  padding: 0 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 650 !important;
+}
+
+.case-rail-browser .bottom-case-search-clear {
+  width: 26px !important;
+  height: 26px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.case-rail-browser .bottom-case-browser-count,
+.case-rail-browser .bottom-case-browser-tools .bottom-case-browser-count {
+  min-height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 13px !important;
+  border-radius: 16px !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 88%, var(--primary-200) 12%) !important;
+  background: color-mix(in srgb, var(--surface-1) 90%, white 10%) !important;
+  box-shadow: none !important;
+  color: var(--text-secondary) !important;
+  font-size: 0.86rem !important;
+  font-weight: 780 !important;
+  white-space: nowrap !important;
+}
+
+.case-rail-browser .horizontal-case-list.horizontal-case-list-virtualized,
+body:not(.klinikiq-auth-lock) .case-page-shell .case-rail-browser .horizontal-case-list.horizontal-case-list-virtualized {
+  display: block !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  min-height: 126px !important;
+  margin: 0 !important;
+  padding: 2px 0 14px !important;
+  contain: layout paint style !important;
+  scrollbar-gutter: stable !important;
+}
+
+.case-rail-browser .horizontal-case-virtual-track {
+  min-height: 108px !important;
+  display: flex !important;
+  align-items: stretch !important;
+  gap: 12px !important;
+  contain: layout paint style !important;
+}
+
+.case-rail-browser .horizontal-case-list-virtualized .horizontal-case-card,
+.case-rail-browser .horizontal-case-list .case-rail-card {
+  flex: 0 0 292px !important;
+  width: 292px !important;
+  max-width: 292px !important;
+  min-height: 104px !important;
+  height: 104px !important;
+  display: grid !important;
+  grid-template-columns: 10px minmax(0, 1fr) auto !important;
+  align-items: stretch !important;
+  gap: 12px !important;
+  padding: 13px !important;
+  border-radius: 20px !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 88%, transparent) !important;
+  background: color-mix(in srgb, var(--surface-1) 96%, white 4%) !important;
+  box-shadow: none !important;
+  text-align: left !important;
+  transform: none !important;
+  transition: border-color 0.16s ease, background-color 0.16s ease !important;
+  contain: layout paint style !important;
+  content-visibility: visible !important;
+  overflow: hidden !important;
+}
+
+.case-rail-browser .horizontal-case-list .case-rail-card:hover,
+.case-rail-browser .horizontal-case-list .case-rail-card:focus-visible {
+  transform: none !important;
+  border-color: color-mix(in srgb, var(--primary-400) 42%, var(--border-subtle)) !important;
+  background: color-mix(in srgb, var(--surface-1) 90%, var(--primary-50) 10%) !important;
+}
+
+.case-rail-browser .horizontal-case-list .case-rail-card.active {
+  border-color: color-mix(in srgb, var(--primary-500) 58%, var(--border-subtle)) !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--primary-50) 30%, var(--surface-1) 70%), var(--surface-1)) !important;
+}
+
+.case-rail-browser .horizontal-case-list .case-rail-card.is-solved-case {
+  opacity: 0.84 !important;
+  background: color-mix(in srgb, var(--surface-2) 78%, var(--surface-1) 22%) !important;
+}
+
+.case-rail-browser .case-rail-status-dot {
+  width: 8px !important;
+  min-height: 100% !important;
+  border-radius: 999px !important;
+  align-self: stretch !important;
+  background: color-mix(in srgb, var(--primary-400) 72%, var(--border-subtle) 28%) !important;
+}
+
+.case-rail-browser .case-rail-card.active .case-rail-status-dot {
+  background: var(--primary-600) !important;
+}
+
+.case-rail-browser .case-rail-card.is-solved-case .case-rail-status-dot {
+  background: color-mix(in srgb, #22c55e 68%, var(--border-subtle) 32%) !important;
+}
+
+.case-rail-browser .case-rail-main {
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-rows: auto minmax(0, 1fr) !important;
+  gap: 8px !important;
+  align-content: start !important;
+}
+
+.case-rail-browser .case-rail-kicker {
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  color: var(--text-muted) !important;
+  font-size: 0.74rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.005em !important;
+  text-transform: uppercase !important;
+}
+
+.case-rail-browser .case-rail-kicker span + span::before {
+  content: '' !important;
+  display: inline-block !important;
+  width: 4px !important;
+  height: 4px !important;
+  margin-right: 7px !important;
+  border-radius: 999px !important;
+  background: color-mix(in srgb, var(--text-muted) 48%, transparent) !important;
+  vertical-align: middle !important;
+}
+
+.case-rail-browser .case-list-title-plain.case-rail-title {
+  min-width: 0 !important;
+  color: var(--text-primary) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.34 !important;
+  font-weight: 780 !important;
+  letter-spacing: -0.018em !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  overflow-wrap: break-word !important;
+}
+
+.case-rail-browser .case-rail-side {
+  min-width: 76px !important;
+  display: grid !important;
+  justify-items: end !important;
+  align-content: space-between !important;
+  gap: 8px !important;
+}
+
+.case-rail-browser .case-rail-side .difficulty-badge,
+.case-rail-browser .horizontal-case-list .case-rail-card .difficulty-badge {
+  min-height: 26px !important;
+  max-width: 92px !important;
+  padding: 0 9px !important;
+  border-radius: 999px !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 80%, transparent) !important;
+  background: color-mix(in srgb, var(--surface-2) 84%, white 16%) !important;
+  color: var(--text-secondary) !important;
+  box-shadow: none !important;
+  font-size: 0.72rem !important;
+  line-height: 1 !important;
+  font-weight: 820 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.case-rail-browser .case-rail-side .difficulty-badge::before,
+.case-rail-browser .horizontal-case-list .case-rail-card .difficulty-badge::before {
+  display: none !important;
+  content: none !important;
+}
+
+.case-rail-browser .case-rail-card.is-solved-case .difficulty-badge {
+  color: color-mix(in srgb, #16a34a 72%, var(--text-primary) 28%) !important;
+  background: color-mix(in srgb, #dcfce7 56%, var(--surface-1) 44%) !important;
+  border-color: color-mix(in srgb, #86efac 48%, transparent) !important;
+}
+
+.case-rail-browser .case-rail-open {
+  color: var(--primary-700) !important;
+  font-size: 0.78rem !important;
+  font-weight: 850 !important;
+  line-height: 1 !important;
+}
+
+.case-rail-browser .horizontal-case-list .case-list-topline,
+.case-rail-browser .horizontal-case-list .case-list-footer,
+.case-rail-browser .horizontal-case-list .case-list-meta-text {
+  display: none !important;
+}
+
+.case-rail-browser .bottom-case-search-empty {
+  min-height: 112px !important;
+  border-radius: 20px !important;
+  background: color-mix(in srgb, var(--surface-2) 72%, transparent) !important;
+  box-shadow: none !important;
+}
+
+html[data-theme="dark"] .case-rail-browser.bottom-case-browser,
+.app-shell[data-theme="dark"] .case-rail-browser.bottom-case-browser {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(9, 18, 30, 0.94)) !important;
+  border-color: rgba(94, 234, 212, 0.12) !important;
+}
+
+html[data-theme="dark"] .case-rail-browser-title > span,
+.app-shell[data-theme="dark"] .case-rail-browser-title > span {
+  color: #99f6e4 !important;
+  background: rgba(20, 184, 166, 0.10) !important;
+  border-color: rgba(45, 212, 191, 0.16) !important;
+}
+
+html[data-theme="dark"] .case-rail-browser .bottom-case-search,
+.app-shell[data-theme="dark"] .case-rail-browser .bottom-case-search,
+html[data-theme="dark"] .case-rail-browser .bottom-case-browser-count,
+.app-shell[data-theme="dark"] .case-rail-browser .bottom-case-browser-count {
+  background: rgba(15, 23, 42, 0.82) !important;
+  border-color: rgba(94, 234, 212, 0.12) !important;
+  box-shadow: none !important;
+}
+
+html[data-theme="dark"] .case-rail-browser .horizontal-case-list .case-rail-card,
+.app-shell[data-theme="dark"] .case-rail-browser .horizontal-case-list .case-rail-card {
+  background: rgba(15, 23, 42, 0.76) !important;
+  border-color: rgba(94, 234, 212, 0.10) !important;
+}
+
+html[data-theme="dark"] .case-rail-browser .horizontal-case-list .case-rail-card:hover,
+.app-shell[data-theme="dark"] .case-rail-browser .horizontal-case-list .case-rail-card:hover,
+html[data-theme="dark"] .case-rail-browser .horizontal-case-list .case-rail-card:focus-visible,
+.app-shell[data-theme="dark"] .case-rail-browser .horizontal-case-list .case-rail-card:focus-visible {
+  background: rgba(20, 38, 52, 0.88) !important;
+  border-color: rgba(45, 212, 191, 0.22) !important;
+}
+
+html[data-theme="dark"] .case-rail-browser .horizontal-case-list .case-rail-card.active,
+.app-shell[data-theme="dark"] .case-rail-browser .horizontal-case-list .case-rail-card.active {
+  background: linear-gradient(180deg, rgba(20, 184, 166, 0.12), rgba(15, 23, 42, 0.82)) !important;
+  border-color: rgba(45, 212, 191, 0.34) !important;
+}
+
+html[data-theme="dark"] .case-rail-browser .case-rail-side .difficulty-badge,
+.app-shell[data-theme="dark"] .case-rail-browser .case-rail-side .difficulty-badge {
+  background: rgba(30, 41, 59, 0.74) !important;
+  border-color: rgba(94, 234, 212, 0.10) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .case-rail-browser .case-rail-card.is-solved-case .difficulty-badge,
+.app-shell[data-theme="dark"] .case-rail-browser .case-rail-card.is-solved-case .difficulty-badge {
+  background: rgba(34, 197, 94, 0.12) !important;
+  border-color: rgba(34, 197, 94, 0.18) !important;
+  color: #86efac !important;
+}
+
+html[data-theme="dark"] .case-rail-browser .case-rail-open,
+.app-shell[data-theme="dark"] .case-rail-browser .case-rail-open {
+  color: #5eead4 !important;
+}
+
+@media (max-width: 900px) {
+  .case-rail-browser-head.bottom-case-browser-head {
+    grid-template-columns: 1fr !important;
+    align-items: stretch !important;
+  }
+
+  .case-rail-browser .bottom-case-browser-tools {
+    justify-content: stretch !important;
+    width: 100% !important;
+  }
+
+  .case-rail-browser .bottom-case-search {
+    flex: 1 1 auto !important;
+    width: auto !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .case-rail-browser.bottom-case-browser {
+    padding: 14px !important;
+    border-radius: 22px !important;
+  }
+
+  .case-rail-browser .bottom-case-browser-tools {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    gap: 8px !important;
+  }
+
+  .case-rail-browser .bottom-case-search {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .case-rail-browser .horizontal-case-list-virtualized .horizontal-case-card,
+  .case-rail-browser .horizontal-case-list .case-rail-card {
+    flex-basis: 292px !important;
+    width: 292px !important;
+    max-width: 292px !important;
+  }
+}
+
+/* ========================================================================== 
+   V382 — Persistent no-shadow polish for TUS/Komite high-traffic surfaces
+   --------------------------------------------------------------------------
+   Some UI islands still had independent hard-coded shadows/glows, so the
+   previous scroll-stability pass did not catch them. These overrides remove
+   the remaining box-shadow flicker from the exact areas reported by the user:
+   case section nav, question stem panels, difficulty chips, TUS hero actions,
+   and Komite dashboard cards. Visual separation is kept via borders/surfaces.
+   ========================================================================== */
+:root,
+html[data-theme='light'],
+html[data-theme='dark'],
+.app-shell,
+.app-shell[data-theme='light'],
+.app-shell[data-theme='dark'] {
+  --shadow-card: none !important;
+  --shadow-hover: none !important;
+  --shadow-elevated: none !important;
+}
+
+body:not(.klinikiq-auth-lock) :is(
+  .case-section-nav,
+  .case-section-nav.card-surface,
+  .case-section-nav.professional-section-nav,
+  .case-section-nav .section-nav-btn,
+  .case-section-nav .section-nav-btn.active,
+  .case-section-nav .section-nav-btn[aria-current='page'],
+  .question-panel,
+  .question-panel.diagnostic-decision-panel,
+  .diagnostic-decision-panel,
+  .tus-spot-olgular-question-callout,
+  .ai-spot-inline-question-stem,
+  .branch-difficulty-filter,
+  .difficulty-filter-pill,
+  .difficulty-filter-pill.active,
+  .home-hero-v8,
+  .home-hero-premium-v10,
+  .tus-hero-redesign,
+  .home-action-panel-v10,
+  .tus-action-panel-redesign,
+  .home-hero-proof-row-v10 span,
+  .tus-hero-proof-redesign span,
+  .tus-primary-action-redesign,
+  .tus-secondary-action-redesign,
+  .tus-ai-action-redesign,
+  .home-mode-v8 button,
+  .home-mode-v8 button.active,
+  .home-metric-card,
+  .komite-page-shell .home-hero-v8,
+  .komite-page-shell .tus-hero-redesign,
+  .komite-dashboard-card,
+  .komite-dashboard-card.primary,
+  .komite-start-flow,
+  .komite-upload-redesign,
+  .komite-material-library,
+  .komite-card-library,
+  .komite-review-hero,
+  .komite-review-hero-clean,
+  .komite-question-card,
+  .komite-flashcard,
+  .komite-sidebar-card,
+  .komite-lesson-hero,
+  .komite-figure-card
+),
+body:not(.klinikiq-auth-lock) :is(
+  .case-section-nav,
+  .case-section-nav.card-surface,
+  .case-section-nav.professional-section-nav,
+  .case-section-nav .section-nav-btn,
+  .question-panel,
+  .question-panel.diagnostic-decision-panel,
+  .diagnostic-decision-panel,
+  .tus-spot-olgular-question-callout,
+  .ai-spot-inline-question-stem,
+  .branch-difficulty-filter,
+  .difficulty-filter-pill,
+  .home-hero-v8,
+  .home-hero-premium-v10,
+  .tus-hero-redesign,
+  .home-action-panel-v10,
+  .tus-action-panel-redesign,
+  .home-hero-proof-row-v10 span,
+  .tus-hero-proof-redesign span,
+  .komite-dashboard-card,
+  .komite-start-flow,
+  .komite-upload-redesign,
+  .komite-material-library,
+  .komite-card-library,
+  .komite-review-hero
+)::before,
+body:not(.klinikiq-auth-lock) :is(
+  .case-section-nav,
+  .case-section-nav.card-surface,
+  .case-section-nav.professional-section-nav,
+  .case-section-nav .section-nav-btn,
+  .question-panel,
+  .question-panel.diagnostic-decision-panel,
+  .diagnostic-decision-panel,
+  .tus-spot-olgular-question-callout,
+  .ai-spot-inline-question-stem,
+  .branch-difficulty-filter,
+  .difficulty-filter-pill,
+  .home-hero-v8,
+  .home-hero-premium-v10,
+  .tus-hero-redesign,
+  .home-action-panel-v10,
+  .tus-action-panel-redesign,
+  .home-hero-proof-row-v10 span,
+  .tus-hero-proof-redesign span,
+  .komite-dashboard-card,
+  .komite-start-flow,
+  .komite-upload-redesign,
+  .komite-material-library,
+  .komite-card-library,
+  .komite-review-hero
+)::after {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+body:not(.klinikiq-auth-lock) :is(
+  .case-section-nav,
+  .case-section-nav .section-nav-btn,
+  .question-panel,
+  .diagnostic-decision-panel,
+  .tus-spot-olgular-question-callout,
+  .ai-spot-inline-question-stem,
+  .difficulty-filter-pill,
+  .home-hero-v8,
+  .tus-hero-redesign,
+  .home-action-panel-v10,
+  .home-hero-proof-row-v10 span,
+  .komite-dashboard-card,
+  .komite-start-flow,
+  .komite-upload-redesign,
+  .komite-review-hero
+) {
+  transition-property: background-color, border-color, color, opacity, transform !important;
+}
+
+html.ki-is-scrolling body:not(.klinikiq-auth-lock) :is(
+  .case-section-nav,
+  .case-section-nav .section-nav-btn,
+  .question-panel,
+  .diagnostic-decision-panel,
+  .tus-spot-olgular-question-callout,
+  .ai-spot-inline-question-stem,
+  .difficulty-filter-pill,
+  .home-hero-v8,
+  .tus-hero-redesign,
+  .home-action-panel-v10,
+  .home-hero-proof-row-v10 span,
+  .komite-dashboard-card,
+  .komite-start-flow,
+  .komite-upload-redesign,
+  .komite-review-hero
+),
+html.ki-performance-mode.ki-is-scrolling body:not(.klinikiq-auth-lock) :is(
+  .case-section-nav,
+  .case-section-nav .section-nav-btn,
+  .question-panel,
+  .diagnostic-decision-panel,
+  .tus-spot-olgular-question-callout,
+  .ai-spot-inline-question-stem,
+  .difficulty-filter-pill,
+  .home-hero-v8,
+  .tus-hero-redesign,
+  .home-action-panel-v10,
+  .home-hero-proof-row-v10 span,
+  .komite-dashboard-card,
+  .komite-start-flow,
+  .komite-upload-redesign,
+  .komite-review-hero
+) {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* Keep selected states visible without glow: use border/background only. */
+body:not(.klinikiq-auth-lock) :is(
+  .case-section-nav .section-nav-btn.active,
+  .case-section-nav .section-nav-btn[aria-current='page'],
+  .difficulty-filter-pill.active,
+  .home-mode-v8 button.active
+) {
+  box-shadow: none !important;
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--border-subtle)) !important;
+}

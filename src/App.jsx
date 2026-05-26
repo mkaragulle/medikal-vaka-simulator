@@ -1839,10 +1839,12 @@ function App() {
               </Suspense>
             </div>
 
-            <section className="bottom-case-browser card-surface">
-              <div className="bottom-case-browser-head">
-                <div>
+            <section className="bottom-case-browser case-rail-browser card-surface">
+              <div className="bottom-case-browser-head case-rail-browser-head">
+                <div className="case-rail-browser-title">
+                  <span>Olgu gezgini</span>
                   <h3>Diğer olgular</h3>
+                  <p>Aynı branştaki vakalar arasında hızlı geçiş yap.</p>
                 </div>
                 <div className="bottom-case-browser-tools">
                   <div className={`bottom-case-search ${bottomCaseSearchQuery ? 'has-value' : ''}`.trim()} role="search">

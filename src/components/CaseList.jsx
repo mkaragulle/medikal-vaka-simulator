@@ -2,10 +2,10 @@ import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useStat
 import { getDifficultyMeta } from '../utils/scoring.js';
 import { Icon } from './ui.jsx';
 
-const HORIZONTAL_CARD_WIDTH = 330;
-const HORIZONTAL_CARD_GAP = 16;
+const HORIZONTAL_CARD_WIDTH = 292;
+const HORIZONTAL_CARD_GAP = 12;
 const HORIZONTAL_CARD_STEP = HORIZONTAL_CARD_WIDTH + HORIZONTAL_CARD_GAP;
-const HORIZONTAL_OVERSCAN = 4;
+const HORIZONTAL_OVERSCAN = 6;
 
 function isSolvedCase(solvedCaseIds, caseId) {
   if (!caseId || !solvedCaseIds) return false;
@@ -38,22 +38,53 @@ function getCaseListTitle(clinicalCase) {
   return 'TUS spot olgu';
 }
 
-const CaseListItem = memo(function CaseListItem({ clinicalCase, selectedCaseId, solved, layout, onSelectCase }) {
+const CaseListItem = memo(function CaseListItem({ clinicalCase, selectedCaseId, solved, layout, onSelectCase, caseIndex }) {
   const difficultyMeta = getDifficultyMeta(clinicalCase.difficulty);
   const difficultyLabel = solved ? `${difficultyMeta.label}-Çözüldü` : difficultyMeta.label;
+  const railDifficultyLabel = solved ? 'Çözüldü' : difficultyMeta.label;
   const caseListTitle = getCaseListTitle(clinicalCase);
+  const isActive = clinicalCase.id === selectedCaseId;
   const handleSelect = useCallback(() => onSelectCase(clinicalCase.id), [clinicalCase.id, onSelectCase]);
+
+  if (layout === 'horizontal') {
+    return (
+      <button
+        type="button"
+        className={[
+          'case-list-item horizontal-case-card case-rail-card',
+          isActive ? 'active' : '',
+          solved ? 'is-solved-case' : '',
+        ].filter(Boolean).join(' ')}
+        onClick={handleSelect}
+        aria-current={isActive ? 'true' : undefined}
+        aria-label={`${caseListTitle} olgusunu aç`}
+      >
+        <span className="case-rail-status-dot" aria-hidden="true" />
+        <span className="case-rail-main">
+          <span className="case-rail-kicker">
+            <span>{Number.isFinite(caseIndex) ? `Olgu ${caseIndex + 1}` : 'Olgu'}</span>
+            <span>{difficultyMeta.points} puan</span>
+          </span>
+          <strong className="case-list-title-plain case-rail-title">{caseListTitle}</strong>
+        </span>
+        <span className="case-rail-side" aria-hidden="true">
+          <small className={`difficulty-badge difficulty-tag-pill ${difficultyMeta.tone} ${solved ? 'is-solved' : ''}`}>{railDifficultyLabel}</small>
+          <span className="case-rail-open">{solved ? 'Tekrar' : 'Aç'}</span>
+        </span>
+      </button>
+    );
+  }
 
   return (
     <button
       type="button"
       className={[
-        layout === 'horizontal' ? 'case-list-item horizontal-case-card' : 'case-list-item',
-        clinicalCase.id === selectedCaseId ? 'active' : '',
+        'case-list-item',
+        isActive ? 'active' : '',
         solved ? 'is-solved-case' : '',
       ].filter(Boolean).join(' ')}
       onClick={handleSelect}
-      aria-current={clinicalCase.id === selectedCaseId ? 'true' : undefined}
+      aria-current={isActive ? 'true' : undefined}
     >
       <div className="case-list-topline">
         <small className="case-list-meta-text">{difficultyMeta.points} puan</small>
@@ -200,13 +231,14 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
           style={{ width: `${Math.max(totalWidth, horizontalViewport.clientWidth || 0)}px` }}
         >
           {leftSpacerWidth > 0 ? <span className="horizontal-case-virtual-spacer" style={{ flexBasis: `${leftSpacerWidth}px` }} aria-hidden="true" /> : null}
-          {visibleCases.map((clinicalCase) => (
+          {visibleCases.map((clinicalCase, visibleIndex) => (
             <CaseListItem
               key={clinicalCase.id}
               clinicalCase={clinicalCase}
               selectedCaseId={selectedCaseId}
               solved={isSolvedCase(solvedCaseIds, clinicalCase.id)}
               layout={layout}
+              caseIndex={startIndex + visibleIndex}
               onSelectCase={onSelectCase}
             />
           ))}
@@ -222,13 +254,14 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
       className="case-list"
       aria-label="Olgu listesi"
     >
-      {cases.map((clinicalCase) => (
+      {cases.map((clinicalCase, caseIndex) => (
         <CaseListItem
           key={clinicalCase.id}
           clinicalCase={clinicalCase}
           selectedCaseId={selectedCaseId}
           solved={isSolvedCase(solvedCaseIds, clinicalCase.id)}
           layout={layout}
+          caseIndex={caseIndex}
           onSelectCase={onSelectCase}
         />
       ))}
