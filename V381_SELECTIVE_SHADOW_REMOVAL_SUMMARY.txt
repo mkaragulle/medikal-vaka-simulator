@@ -1,0 +1,36 @@
+KlinikIQ V381 — Selective Shadow Removal Summary
+
+Amaç:
+Scrollbar/scroll hareketi sırasında bazı kart gölgelerinin kaybolup sayfa sabitlenince tekrar görünmesi nedeniyle, yalnızca kullanıcı tarafından işaretlenen UI bölgelerindeki box-shadow/filter etkileri kaldırıldı.
+
+Değiştirilen dosya:
+- src/index.css
+
+Kapsanan alanlar:
+1. Öykü / Muayene / Tetkik klinik akış barı
+   - .case-section-nav
+   - .section-nav-btn active/hover/focus durumları
+
+2. Soru kökü / yanıt seçenekleri çevresindeki soru kutuları
+   - .question-panel.diagnostic-decision-panel
+   - .right-workspace-shell .question-panel
+   - .tus-spot-olgular-question-callout
+   - .ai-spot-answer-flow .ai-spot-inline-question-stem
+   - soru başlığı yanındaki küçük noktanın glow shadow efekti
+
+3. Zorluk filtresi tagları
+   - .branch-difficulty-filter
+   - .difficulty-filter-pill
+   - Tümü / Kolay / Orta / Zor / Acil active/hover durumları
+
+4. TUS ana hero kutusu
+   - .tus-hero-redesign
+   - hero içindeki proof chipleri, action panel ve butonların shadow etkileri
+
+5. Komite ana hero ve komite dashboard kutuları
+   - Komite hero container
+   - .komite-dashboard-card / .komite-dashboard-card-v60
+   - ilgili hover/primary/icon/action shadow etkileri
+
+Not:
+Geniş global shadow sistemine dokunulmadı; sadece sorun olarak belirtilen alanlarda en sona eklenen yüksek öncelikli CSS override ile gölge geri gelmeyecek şekilde kapatıldı.

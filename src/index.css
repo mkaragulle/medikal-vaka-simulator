@@ -52268,337 +52268,384 @@ html.ki-performance-mode .study-review-hub :is(
   background-size: 220% 100%;
 }
 
-/* ========================================================================== 
-   V384 — Definitive stable no-shadow surfaces for question/home/komite UI
-   --------------------------------------------------------------------------
-   Some legacy scroll-performance rules were still changing box-shadow while
-   the page was scrolling. These targeted surfaces now use stable border-based
-   separation only, so the visual outline does not disappear/reappear during
-   scroll and repaint cost stays low.
-   ========================================================================== */
-html.ki-performance-mode {
-  --shadow-card: none !important;
-  --shadow-hover: none !important;
-  --shadow-elevated: none !important;
-}
-
-:where(
-  .case-section-nav,
-  .case-section-nav.card-surface,
-  .case-section-nav.professional-section-nav,
-  .professional-section-nav,
-  .section-nav-btn,
-  .section-nav-btn.active,
-  .question-panel,
-  .question-panel.card-surface,
-  .diagnostic-decision-panel,
-  .question-panel-head,
-  .diagnostic-head,
-  .question-score-chip,
-  .compact-meta-pill,
-  .single-score-chip,
-  .branch-header-v8,
-  .branch-difficulty-filter,
-  .difficulty-filter-pill,
-  .difficulty-filter-pill.active,
-  .home-hero-v8,
-  .home-hero-premium-v10,
-  .tus-hero-redesign,
-  .home-action-panel-v10,
-  .tus-action-panel-redesign,
-  .tus-hero-kicker,
-  .home-hero-proof-row-v10 span,
-  .home-actions-v8 .btn,
-  .home-actions-v10 .btn,
-  .tus-actions-redesign .btn,
-  .tus-primary-action-redesign,
-  .tus-secondary-action-redesign,
-  .tus-ai-action-redesign,
-  .komite-dashboard-card,
-  .komite-dashboard-card-v60,
-  .komite-dashboard-card.primary,
-  .komite-card-icon,
-  .komite-card-icon-v60,
-  .komite-card-action,
-  .komite-card-action-v60,
-  .komite-workspace.card-surface,
-  .komite-subpage.card-surface,
-  .komite-start-flow.card-surface,
-  .deferred-home-section-placeholder,
-  .card-surface.question-panel,
-  .card-surface.tus-hero-redesign
-),
-:where(
-  .case-section-nav,
-  .case-section-nav.card-surface,
-  .case-section-nav.professional-section-nav,
-  .professional-section-nav,
-  .section-nav-btn,
-  .section-nav-btn.active,
-  .question-panel,
-  .question-panel.card-surface,
-  .diagnostic-decision-panel,
-  .question-panel-head,
-  .diagnostic-head,
-  .question-score-chip,
-  .compact-meta-pill,
-  .single-score-chip,
-  .branch-header-v8,
-  .branch-difficulty-filter,
-  .difficulty-filter-pill,
-  .difficulty-filter-pill.active,
-  .home-hero-v8,
-  .home-hero-premium-v10,
-  .tus-hero-redesign,
-  .home-action-panel-v10,
-  .tus-action-panel-redesign,
-  .tus-hero-kicker,
-  .home-hero-proof-row-v10 span,
-  .home-actions-v8 .btn,
-  .home-actions-v10 .btn,
-  .tus-actions-redesign .btn,
-  .tus-primary-action-redesign,
-  .tus-secondary-action-redesign,
-  .tus-ai-action-redesign,
-  .komite-dashboard-card,
-  .komite-dashboard-card-v60,
-  .komite-dashboard-card.primary,
-  .komite-card-icon,
-  .komite-card-icon-v60,
-  .komite-card-action,
-  .komite-card-action-v60,
-  .komite-workspace.card-surface,
-  .komite-subpage.card-surface,
-  .komite-start-flow.card-surface,
-  .deferred-home-section-placeholder,
-  .card-surface.question-panel,
-  .card-surface.tus-hero-redesign
-)::before,
-:where(
-  .case-section-nav,
-  .case-section-nav.card-surface,
-  .case-section-nav.professional-section-nav,
-  .professional-section-nav,
-  .section-nav-btn,
-  .section-nav-btn.active,
-  .question-panel,
-  .question-panel.card-surface,
-  .diagnostic-decision-panel,
-  .question-panel-head,
-  .diagnostic-head,
-  .question-score-chip,
-  .compact-meta-pill,
-  .single-score-chip,
-  .branch-header-v8,
-  .branch-difficulty-filter,
-  .difficulty-filter-pill,
-  .difficulty-filter-pill.active,
-  .home-hero-v8,
-  .home-hero-premium-v10,
-  .tus-hero-redesign,
-  .home-action-panel-v10,
-  .tus-action-panel-redesign,
-  .tus-hero-kicker,
-  .home-hero-proof-row-v10 span,
-  .home-actions-v8 .btn,
-  .home-actions-v10 .btn,
-  .tus-actions-redesign .btn,
-  .tus-primary-action-redesign,
-  .tus-secondary-action-redesign,
-  .tus-ai-action-redesign,
-  .komite-dashboard-card,
-  .komite-dashboard-card-v60,
-  .komite-dashboard-card.primary,
-  .komite-card-icon,
-  .komite-card-icon-v60,
-  .komite-card-action,
-  .komite-card-action-v60,
-  .komite-workspace.card-surface,
-  .komite-subpage.card-surface,
-  .komite-start-flow.card-surface,
-  .deferred-home-section-placeholder,
-  .card-surface.question-panel,
-  .card-surface.tus-hero-redesign
-)::after {
+/* =========================================================
+   KLINIKIQ V381 — Selective shadow removal for scrollbar flicker targets
+   Removes the intermittent box-shadow glow only from the UI areas reported
+   by the user: clinical flow tabs, question stem panels, branch difficulty
+   filter pills, TUS/Komite hero containers and Komite dashboard cards.
+   ========================================================= */
+body:not(.klinikiq-auth-lock) .case-section-nav.card-surface.professional-section-nav,
+body:not(.klinikiq-auth-lock) .case-section-nav.professional-section-nav,
+body:not(.klinikiq-auth-lock) .case-section-nav,
+body:not(.klinikiq-auth-lock) .case-section-nav .section-nav-btn,
+body:not(.klinikiq-auth-lock) .case-section-nav.professional-section-nav .section-nav-btn,
+body:not(.klinikiq-auth-lock) .case-section-nav .section-nav-btn:hover,
+body:not(.klinikiq-auth-lock) .case-section-nav.professional-section-nav .section-nav-btn:hover,
+body:not(.klinikiq-auth-lock) .case-section-nav .section-nav-btn.active,
+body:not(.klinikiq-auth-lock) .case-section-nav.professional-section-nav .section-nav-btn.active,
+body:not(.klinikiq-auth-lock) .case-section-nav .section-nav-btn[aria-current="page"],
+body:not(.klinikiq-auth-lock) .case-section-nav.professional-section-nav .section-nav-btn[aria-current="page"],
+body:not(.klinikiq-auth-lock) .case-section-nav .section-nav-btn:focus-visible,
+body:not(.klinikiq-auth-lock) .case-section-nav.professional-section-nav .section-nav-btn:focus-visible {
   box-shadow: none !important;
   filter: none !important;
 }
 
-html.ki-is-scrolling :where(
-  .case-section-nav,
-  .case-section-nav.card-surface,
-  .case-section-nav.professional-section-nav,
-  .professional-section-nav,
-  .section-nav-btn,
-  .section-nav-btn.active,
-  .question-panel,
-  .question-panel.card-surface,
-  .diagnostic-decision-panel,
-  .question-panel-head,
-  .diagnostic-head,
-  .question-score-chip,
-  .compact-meta-pill,
-  .single-score-chip,
-  .branch-header-v8,
-  .branch-difficulty-filter,
-  .difficulty-filter-pill,
-  .difficulty-filter-pill.active,
-  .home-hero-v8,
-  .home-hero-premium-v10,
-  .tus-hero-redesign,
-  .home-action-panel-v10,
-  .tus-action-panel-redesign,
-  .tus-hero-kicker,
-  .home-hero-proof-row-v10 span,
-  .home-actions-v8 .btn,
-  .home-actions-v10 .btn,
-  .tus-actions-redesign .btn,
-  .tus-primary-action-redesign,
-  .tus-secondary-action-redesign,
-  .tus-ai-action-redesign,
-  .komite-dashboard-card,
-  .komite-dashboard-card-v60,
-  .komite-dashboard-card.primary,
-  .komite-card-icon,
-  .komite-card-icon-v60,
-  .komite-card-action,
-  .komite-card-action-v60,
-  .komite-workspace.card-surface,
-  .komite-subpage.card-surface,
-  .komite-start-flow.card-surface,
-  .deferred-home-section-placeholder,
-  .card-surface.question-panel,
-  .card-surface.tus-hero-redesign
-),
-html.ki-performance-mode.ki-is-scrolling :where(
-  .case-section-nav,
-  .case-section-nav.card-surface,
-  .case-section-nav.professional-section-nav,
-  .professional-section-nav,
-  .section-nav-btn,
-  .section-nav-btn.active,
-  .question-panel,
-  .question-panel.card-surface,
-  .diagnostic-decision-panel,
-  .question-panel-head,
-  .diagnostic-head,
-  .question-score-chip,
-  .compact-meta-pill,
-  .single-score-chip,
-  .branch-header-v8,
-  .branch-difficulty-filter,
-  .difficulty-filter-pill,
-  .difficulty-filter-pill.active,
-  .home-hero-v8,
-  .home-hero-premium-v10,
-  .tus-hero-redesign,
-  .home-action-panel-v10,
-  .tus-action-panel-redesign,
-  .tus-hero-kicker,
-  .home-hero-proof-row-v10 span,
-  .home-actions-v8 .btn,
-  .home-actions-v10 .btn,
-  .tus-actions-redesign .btn,
-  .tus-primary-action-redesign,
-  .tus-secondary-action-redesign,
-  .tus-ai-action-redesign,
-  .komite-dashboard-card,
-  .komite-dashboard-card-v60,
-  .komite-dashboard-card.primary,
-  .komite-card-icon,
-  .komite-card-icon-v60,
-  .komite-card-action,
-  .komite-card-action-v60,
-  .komite-workspace.card-surface,
-  .komite-subpage.card-surface,
-  .komite-start-flow.card-surface,
-  .deferred-home-section-placeholder,
-  .card-surface.question-panel,
-  .card-surface.tus-hero-redesign
-),
-html.ki-route-transitioning :where(
-  .case-section-nav,
-  .question-panel,
-  .branch-header-v8,
-  .difficulty-filter-pill,
-  .home-hero-v8,
-  .tus-hero-redesign,
-  .komite-dashboard-card
-) {
+body:not(.klinikiq-auth-lock) .right-workspace-shell .question-panel,
+body:not(.klinikiq-auth-lock) .right-workspace-shell .diagnostic-decision-panel,
+body:not(.klinikiq-auth-lock) .question-panel.diagnostic-decision-panel,
+body:not(.klinikiq-auth-lock) .diagnostic-decision-panel.question-panel,
+body:not(.klinikiq-auth-lock) .tus-spot-olgular-question-callout,
+body:not(.klinikiq-auth-lock) .ai-spot-answer-flow .ai-spot-inline-question-stem,
+body:not(.klinikiq-auth-lock) .ai-spot-answer-flow .question-panel.diagnostic-decision-panel,
+body:not(.klinikiq-auth-lock) .ai-spot-unified-panel .question-panel,
+body:not(.klinikiq-auth-lock) .ai-spot-unified-panel .diagnostic-decision-panel {
   box-shadow: none !important;
   filter: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
 }
 
-/* Keep visual separation stable with border/background only. */
-.case-section-nav.card-surface.professional-section-nav,
-.professional-section-nav,
-.question-panel.diagnostic-decision-panel,
-.branch-header-v8,
-.home-hero-v8.home-hero-premium-v10.tus-hero-redesign,
-.home-action-panel-v10.tus-action-panel-redesign,
-.komite-dashboard-card,
-.komite-dashboard-card-v60 {
-  border-color: rgba(148, 163, 184, 0.18) !important;
-  outline: 0 !important;
-}
-
-.section-nav-btn.active,
-.difficulty-filter-pill.active,
-.home-mode-v8 button.active,
-.home-mode-v10 button.active {
+body:not(.klinikiq-auth-lock) .clinical-case[data-case-type="spot"] .diagnostic-decision-panel .question-panel-head h2::after {
   box-shadow: none !important;
-  border-color: color-mix(in srgb, var(--accent, #14b8a6) 32%, rgba(148, 163, 184, 0.18)) !important;
-  background: color-mix(in srgb, var(--accent, #14b8a6) 9%, var(--surface-1, #fff)) !important;
 }
 
-.difficulty-filter-pill,
-.section-nav-btn,
-.tus-hero-kicker,
-.home-hero-proof-row-v10 span,
-.komite-card-icon,
-.komite-card-action {
-  transition-property: background-color, border-color, color, opacity !important;
-  transform: none !important;
-}
-
-.home-hero-v8.home-hero-premium-v10.tus-hero-redesign,
-.komite-dashboard-card,
-.question-panel.diagnostic-decision-panel,
-.case-section-nav.card-surface.professional-section-nav,
-.branch-header-v8 {
-  transition-property: background-color, border-color, color, opacity !important;
-  transform: none !important;
-}
-
-.home-hero-v8.home-hero-premium-v10.tus-hero-redesign:hover,
-.komite-dashboard-card:hover,
-.question-panel.diagnostic-decision-panel:hover,
-.case-section-nav.card-surface.professional-section-nav:hover,
-.branch-header-v8:hover,
-.difficulty-filter-pill:hover,
-.section-nav-btn:hover {
+body:not(.klinikiq-auth-lock) .branch-difficulty-filter,
+body:not(.klinikiq-auth-lock) .branch-difficulty-filter button,
+body:not(.klinikiq-auth-lock) .branch-difficulty-filter button:hover:not(:disabled),
+body:not(.klinikiq-auth-lock) .branch-difficulty-filter button.active,
+body:not(.klinikiq-auth-lock) .branch-difficulty-filter .difficulty-filter-pill,
+body:not(.klinikiq-auth-lock) .branch-difficulty-filter .difficulty-filter-pill:hover:not(:disabled),
+body:not(.klinikiq-auth-lock) .branch-difficulty-filter .difficulty-filter-pill.active,
+body:not(.klinikiq-auth-lock) .branch-difficulty-filter .difficulty-filter-pill::before,
+body:not(.klinikiq-auth-lock) .branch-difficulty-filter .difficulty-all,
+body:not(.klinikiq-auth-lock) .branch-difficulty-filter .difficulty-all::before {
   box-shadow: none !important;
-  transform: none !important;
+  filter: none !important;
 }
 
-[data-theme='dark'] .case-section-nav.card-surface.professional-section-nav,
-[data-theme='dark'] .professional-section-nav,
-[data-theme='dark'] .question-panel.diagnostic-decision-panel,
-[data-theme='dark'] .branch-header-v8,
-[data-theme='dark'] .home-hero-v8.home-hero-premium-v10.tus-hero-redesign,
-[data-theme='dark'] .home-action-panel-v10.tus-action-panel-redesign,
-[data-theme='dark'] .komite-dashboard-card,
-[data-theme='dark'] .komite-dashboard-card-v60,
-.app-shell[data-theme='dark'] .case-section-nav.card-surface.professional-section-nav,
-.app-shell[data-theme='dark'] .professional-section-nav,
+body:not(.klinikiq-auth-lock) .tus-hero-redesign,
+body:not(.klinikiq-auth-lock) .home-hero-v8.home-hero-premium-v10.tus-hero-redesign,
+body:not(.klinikiq-auth-lock) .komite-page-shell > .home-hero-v8.home-hero-premium-v10.tus-hero-redesign,
+body:not(.klinikiq-auth-lock) .komite-page-shell > .tus-hero-redesign:first-child {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-hero-proof-redesign span,
+body:not(.klinikiq-auth-lock) .home-hero-proof-row-v10.tus-hero-proof-redesign span,
+body:not(.klinikiq-auth-lock) .tus-action-panel-redesign,
+body:not(.klinikiq-auth-lock) .home-action-panel-v10.tus-action-panel-redesign,
+body:not(.klinikiq-auth-lock) .tus-actions-redesign .btn,
+body:not(.klinikiq-auth-lock) .tus-actions-redesign .btn:hover,
+body:not(.klinikiq-auth-lock) .tus-primary-action-redesign,
+body:not(.klinikiq-auth-lock) .tus-secondary-action-redesign,
+body:not(.klinikiq-auth-lock) .tus-ai-action-redesign,
+body:not(.klinikiq-auth-lock) .tus-action-icon,
+body:not(.klinikiq-auth-lock) .tus-mode-redesign,
+body:not(.klinikiq-auth-lock) .tus-mode-redesign button,
+body:not(.klinikiq-auth-lock) .tus-mode-redesign button.active {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-dashboard-card,
+body:not(.klinikiq-auth-lock) .komite-dashboard-card:hover,
+body:not(.klinikiq-auth-lock) .komite-dashboard-card.primary,
+body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60,
+body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60:hover,
+body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60.primary,
+body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60::after,
+body:not(.klinikiq-auth-lock) .komite-card-icon,
+body:not(.klinikiq-auth-lock) .komite-card-icon.komite-card-icon-v60,
+body:not(.klinikiq-auth-lock) .komite-card-action,
+body:not(.klinikiq-auth-lock) .komite-card-action.komite-card-action-v60 {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .case-section-nav,
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .case-section-nav .section-nav-btn,
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .question-panel.diagnostic-decision-panel,
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .ai-spot-answer-flow .ai-spot-inline-question-stem,
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .branch-difficulty-filter,
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .branch-difficulty-filter .difficulty-filter-pill,
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .tus-hero-redesign,
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .home-action-panel-v10.tus-action-panel-redesign,
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .home-hero-proof-row-v10.tus-hero-proof-redesign span,
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card,
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60,
+.app-shell[data-theme='dark'] .case-section-nav,
+.app-shell[data-theme='dark'] .case-section-nav .section-nav-btn,
 .app-shell[data-theme='dark'] .question-panel.diagnostic-decision-panel,
-.app-shell[data-theme='dark'] .branch-header-v8,
-.app-shell[data-theme='dark'] .home-hero-v8.home-hero-premium-v10.tus-hero-redesign,
+.app-shell[data-theme='dark'] .ai-spot-answer-flow .ai-spot-inline-question-stem,
+.app-shell[data-theme='dark'] .branch-difficulty-filter,
+.app-shell[data-theme='dark'] .branch-difficulty-filter .difficulty-filter-pill,
+.app-shell[data-theme='dark'] .tus-hero-redesign,
 .app-shell[data-theme='dark'] .home-action-panel-v10.tus-action-panel-redesign,
+.app-shell[data-theme='dark'] .home-hero-proof-row-v10.tus-hero-proof-redesign span,
 .app-shell[data-theme='dark'] .komite-dashboard-card,
-.app-shell[data-theme='dark'] .komite-dashboard-card-v60 {
+.app-shell[data-theme='dark'] .komite-dashboard-card.komite-dashboard-card-v60 {
   box-shadow: none !important;
-  border-color: rgba(94, 234, 212, 0.13) !important;
+  filter: none !important;
+}
+
+/* ========================================================================== 
+   KLINIKIQ V382 — “Diğer olgular” rail redesign + border/overlay stabilization
+   --------------------------------------------------------------------------
+   Fixes the reported visual issue where horizontal case cards seemed to have
+   an extra invisible/magic frame and card borders disappeared on hover/scroll.
+   The rail now has a dedicated scrollbar gutter, no hover lift, no paint
+   containment on cards, and stable border-only interaction states.
+   ========================================================================== */
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser,
+.bottom-case-browser {
+  position: relative !important;
+  isolation: isolate !important;
+  display: grid !important;
+  gap: 18px !important;
+  padding: 22px !important;
+  border-radius: 28px !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 82%, rgba(20, 184, 166, 0.18) 18%) !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 94%, #f8fffd 6%), color-mix(in srgb, var(--surface-1) 88%, #f1fdfa 12%)) !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  contain: none !important;
+  content-visibility: visible !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser::before,
+.bottom-case-browser::before,
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser::after,
+.bottom-case-browser::after {
+  content: none !important;
+  display: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.bottom-case-browser-head {
+  align-items: center !important;
+  padding-bottom: 2px !important;
+}
+
+.bottom-case-browser-head h3 {
+  font-size: clamp(1.02rem, 1.15vw, 1.18rem) !important;
+  letter-spacing: -0.025em !important;
+  color: var(--text-primary) !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list,
+.bottom-case-browser .horizontal-case-list,
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list.horizontal-case-list-virtualized,
+.bottom-case-browser .horizontal-case-list.horizontal-case-list-virtualized {
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 2px 2px 24px 2px !important;
+  border-radius: 22px !important;
+  border: 0 !important;
+  background: transparent !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-gutter: stable !important;
+  contain: none !important;
+  content-visibility: visible !important;
+  scroll-snap-type: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+.bottom-case-browser .horizontal-case-virtual-track {
+  min-height: 170px !important;
+  display: flex !important;
+  align-items: stretch !important;
+  gap: 14px !important;
+  padding: 0 !important;
+  contain: none !important;
+  content-visibility: visible !important;
+}
+
+.bottom-case-browser .horizontal-case-list-virtualized .horizontal-case-card,
+.bottom-case-browser .horizontal-case-list .horizontal-case-card,
+.bottom-case-browser .horizontal-case-list .case-list-item {
+  position: relative !important;
+  isolation: isolate !important;
+  flex: 0 0 330px !important;
+  width: 330px !important;
+  max-width: 330px !important;
+  min-height: 166px !important;
+  padding: 16px !important;
+  border-radius: 20px !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 88%, rgba(15, 118, 110, 0.18) 12%) !important;
+  outline: 1px solid transparent !important;
+  outline-offset: -1px !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 96%, white 4%), color-mix(in srgb, var(--surface-2) 86%, var(--surface-1) 14%)) !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+  overflow: hidden !important;
+  contain: none !important;
+  content-visibility: visible !important;
+  backface-visibility: hidden !important;
+  scroll-snap-align: none !important;
+  transition:
+    border-color 130ms ease,
+    outline-color 130ms ease,
+    background-color 130ms ease,
+    color 130ms ease !important;
+}
+
+.bottom-case-browser .horizontal-case-list-virtualized .horizontal-case-card::before,
+.bottom-case-browser .horizontal-case-list-virtualized .horizontal-case-card::after,
+.bottom-case-browser .horizontal-case-list .horizontal-case-card::before,
+.bottom-case-browser .horizontal-case-list .horizontal-case-card::after,
+.bottom-case-browser .horizontal-case-list .case-list-item::before,
+.bottom-case-browser .horizontal-case-list .case-list-item::after {
+  content: none !important;
+  display: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.bottom-case-browser .horizontal-case-list-virtualized .horizontal-case-card:hover,
+.bottom-case-browser .horizontal-case-list-virtualized .horizontal-case-card:focus-visible,
+.bottom-case-browser .horizontal-case-list .horizontal-case-card:hover,
+.bottom-case-browser .horizontal-case-list .horizontal-case-card:focus-visible,
+.bottom-case-browser .horizontal-case-list .case-list-item:hover,
+.bottom-case-browser .horizontal-case-list .case-list-item:focus-visible {
+  border-color: color-mix(in srgb, var(--accent) 34%, var(--border-subtle) 66%) !important;
+  outline-color: color-mix(in srgb, var(--accent) 22%, transparent) !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-2) 94%, rgba(20,184,166,0.06) 6%), color-mix(in srgb, var(--surface-1) 88%, rgba(20,184,166,0.05) 12%)) !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+.bottom-case-browser .horizontal-case-list-virtualized .horizontal-case-card.active,
+.bottom-case-browser .horizontal-case-list .horizontal-case-card.active,
+.bottom-case-browser .horizontal-case-list .case-list-item.active {
+  border-color: color-mix(in srgb, var(--accent) 54%, var(--border-subtle) 46%) !important;
+  outline-color: color-mix(in srgb, var(--accent) 32%, transparent) !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 9%, var(--surface-1) 91%), color-mix(in srgb, var(--accent) 5%, var(--surface-2) 95%)) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.bottom-case-browser .horizontal-case-list .case-list-topline {
+  min-height: 32px !important;
+}
+
+.bottom-case-browser .horizontal-case-list .case-list-title-plain {
+  font-size: 0.96rem !important;
+  line-height: 1.36 !important;
+  letter-spacing: -0.018em !important;
+  color: var(--text-primary) !important;
+}
+
+.bottom-case-browser .horizontal-case-list .case-list-footer {
+  margin-top: auto !important;
+  min-height: 28px !important;
+  padding-top: 6px !important;
+  border-top: 1px solid color-mix(in srgb, var(--border-subtle) 68%, transparent) !important;
+  color: color-mix(in srgb, var(--accent) 76%, var(--text-secondary) 24%) !important;
+}
+
+.bottom-case-browser .horizontal-case-list .case-list-footer svg {
+  width: 17px !important;
+  height: 17px !important;
+}
+
+.bottom-case-browser .horizontal-case-list .case-list-item .difficulty-badge,
+.bottom-case-browser .horizontal-case-list .case-list-item .difficulty-tag-pill,
+.bottom-case-browser .horizontal-case-list .case-list-item .difficulty-badge.is-solved {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.bottom-case-browser .horizontal-case-list .case-list-item .difficulty-badge::before,
+.bottom-case-browser .horizontal-case-list .case-list-item .difficulty-tag-pill::before {
+  box-shadow: none !important;
+}
+
+html.ki-is-scrolling .bottom-case-browser .horizontal-case-list-virtualized .horizontal-case-card,
+html.ki-is-scrolling .bottom-case-browser .horizontal-case-list .case-list-item,
+html.ki-performance-mode.ki-is-scrolling .bottom-case-browser .horizontal-case-list-virtualized .horizontal-case-card,
+html.ki-performance-mode.ki-is-scrolling .bottom-case-browser .horizontal-case-list .case-list-item,
+html.ki-route-transitioning .bottom-case-browser .horizontal-case-list-virtualized .horizontal-case-card,
+html.ki-route-transitioning .bottom-case-browser .horizontal-case-list .case-list-item {
+  border-color: color-mix(in srgb, var(--border-subtle) 88%, rgba(15, 118, 110, 0.18) 12%) !important;
+  outline-color: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+  transition-duration: 0ms !important;
+}
+
+html.ki-custom-scrollbars-v367-on [data-ki-custom-scrollbar-target='bottom-case-browser-x'].ki-custom-scrollbar-v367-track,
+html.ki-custom-scrollbars-v367-on [data-ki-custom-scrollbar-target='bottom-case-browser-x'].ki-custom-scrollbar-v367-track:hover,
+html.ki-custom-scrollbars-v367-on [data-ki-custom-scrollbar-target='bottom-case-browser-x'].ki-custom-scrollbar-v367-track.is-active,
+html.ki-custom-scrollbars-v367-on [data-ki-custom-scrollbar-target='bottom-case-browser-x'].ki-custom-scrollbar-v367-track.is-dragging {
+  height: 5px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.ki-custom-scrollbars-v367-on [data-ki-custom-scrollbar-target='bottom-case-browser-x'] .ki-custom-scrollbar-v367-thumb,
+html.ki-custom-scrollbars-v367-on [data-ki-custom-scrollbar-target='bottom-case-browser-x'] .ki-custom-scrollbar-v367-thumb-x {
+  top: 1px !important;
+  height: 3px !important;
+  background: color-mix(in srgb, var(--accent) 30%, transparent) !important;
+  box-shadow: none !important;
+}
+
+html.ki-custom-scrollbars-v367-on [data-ki-custom-scrollbar-target='bottom-case-browser-x']:hover .ki-custom-scrollbar-v367-thumb,
+html.ki-custom-scrollbars-v367-on [data-ki-custom-scrollbar-target='bottom-case-browser-x'].is-active .ki-custom-scrollbar-v367-thumb,
+html.ki-custom-scrollbars-v367-on [data-ki-custom-scrollbar-target='bottom-case-browser-x'].is-dragging .ki-custom-scrollbar-v367-thumb {
+  background: color-mix(in srgb, var(--accent) 48%, transparent) !important;
+}
+
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser,
+html[data-theme='dark'] .bottom-case-browser,
+.app-shell[data-theme='dark'] .bottom-case-browser {
+  border-color: color-mix(in srgb, var(--border-subtle) 72%, rgba(94, 234, 212, 0.14) 28%) !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 88%, rgba(15,23,42,0.82) 12%), color-mix(in srgb, var(--surface-2) 78%, rgba(2,8,23,0.68) 22%)) !important;
+  box-shadow: none !important;
+}
+
+html[data-theme='dark'] .bottom-case-browser .horizontal-case-list-virtualized .horizontal-case-card,
+html[data-theme='dark'] .bottom-case-browser .horizontal-case-list .case-list-item,
+.app-shell[data-theme='dark'] .bottom-case-browser .horizontal-case-list-virtualized .horizontal-case-card,
+.app-shell[data-theme='dark'] .bottom-case-browser .horizontal-case-list .case-list-item {
+  border-color: color-mix(in srgb, var(--border-subtle) 78%, rgba(94, 234, 212, 0.12) 22%) !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 84%, rgba(255,255,255,0.035) 16%), color-mix(in srgb, var(--surface-2) 82%, rgba(15,23,42,0.44) 18%)) !important;
+  box-shadow: none !important;
+}
+
+html[data-theme='dark'] .bottom-case-browser .horizontal-case-list-virtualized .horizontal-case-card:hover,
+html[data-theme='dark'] .bottom-case-browser .horizontal-case-list .case-list-item:hover,
+.app-shell[data-theme='dark'] .bottom-case-browser .horizontal-case-list-virtualized .horizontal-case-card:hover,
+.app-shell[data-theme='dark'] .bottom-case-browser .horizontal-case-list .case-list-item:hover {
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border-subtle) 58%) !important;
+  outline-color: color-mix(in srgb, var(--accent) 26%, transparent) !important;
+}
+
+@media (max-width: 640px) {
+  .bottom-case-browser {
+    padding: 18px !important;
+    border-radius: 24px !important;
+  }
+
+  .bottom-case-browser .horizontal-case-list-virtualized .horizontal-case-card,
+  .bottom-case-browser .horizontal-case-list .horizontal-case-card,
+  .bottom-case-browser .horizontal-case-list .case-list-item {
+    flex-basis: 290px !important;
+    width: 290px !important;
+    max-width: 290px !important;
+  }
 }

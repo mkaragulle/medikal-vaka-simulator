@@ -172,6 +172,15 @@ const LEGACY_CLASSES = [
   'ki-custom-scrollbar-v367-dragging',
 ];
 
+
+function isBottomCaseBrowserHorizontalTarget(target) {
+  return Boolean(
+    target instanceof HTMLElement
+    && target.classList.contains('horizontal-case-list')
+    && target.closest('.bottom-case-browser')
+  );
+}
+
 function isHTMLElement(value) {
   return value instanceof HTMLElement;
 }
@@ -568,9 +577,14 @@ html.${DRAGGING_CLASS} * {
           ? window.innerWidth - EDGE_INSET
           : clamp(rect.right - EDGE_INSET, EDGE_INSET, window.innerWidth - EDGE_INSET);
         const trackWidth = Math.max(28, visibleRight - visibleLeft);
+        const bottomCaseBrowserTarget = isBottomCaseBrowserHorizontalTarget(target);
         const trackTop = isWindowTarget
           ? window.innerHeight - TRACK_SIZE - 2
-          : clamp(rect.bottom - TRACK_SIZE - 1, EDGE_INSET, window.innerHeight - TRACK_SIZE - 2);
+          : clamp(
+            rect.bottom - (bottomCaseBrowserTarget ? TRACK_SIZE + 5 : TRACK_SIZE + 1),
+            EDGE_INSET,
+            window.innerHeight - TRACK_SIZE - 2,
+          );
         const thumbWidth = clamp((metrics.clientWidth / metrics.scrollWidth) * trackWidth, MIN_THUMB, trackWidth);
         const usable = Math.max(1, trackWidth - thumbWidth);
         const thumbLeft = (metrics.scrollLeft / maxScroll) * usable;
@@ -613,6 +627,9 @@ html.${DRAGGING_CLASS} * {
 
     const createEntry = (target, axis) => {
       const { track, thumb } = createScrollbarNode(axis);
+      if (axis === 'x' && isBottomCaseBrowserHorizontalTarget(target)) {
+        track.setAttribute('data-ki-custom-scrollbar-target', 'bottom-case-browser-x');
+      }
       const hostRoot = resolveRootForTarget(target);
       hostRoot.appendChild(track);
       const entry = {
