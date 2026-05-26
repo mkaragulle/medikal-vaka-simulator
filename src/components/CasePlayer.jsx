@@ -380,8 +380,8 @@ function summaryRowKind(label = '') {
 
 function summaryIconName(kind = '') {
   const normalized = String(kind || '').toLocaleLowerCase('tr');
-  if (normalized.includes('profile')) return 'UserPlus';
-  if (normalized.includes('presentation')) return 'HeartPulse';
+  if (normalized.includes('profile')) return 'User';
+  if (normalized.includes('presentation')) return 'ClipboardList';
   if (normalized.includes('risk')) return 'ShieldCheck';
   if (normalized.includes('clues')) return 'Target';
   return 'BookOpen';
@@ -978,7 +978,7 @@ function CasePlayer({
 
                   <section className="patient-summary-story-block unified-history-block" aria-label="Hasta öyküsü">
                     <span className="summary-wide-icon summary-wide-icon--history" aria-hidden="true">
-                      <Icon name="BookOpen" size={27} strokeWidth={1.9} />
+                      <Icon name="Notes" size={27} strokeWidth={1.9} />
                     </span>
                     <div className="summary-wide-content">
                       <div className="summary-story-label">

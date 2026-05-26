@@ -1051,6 +1051,25 @@ function TusTipCard({ pearl, glossaryEnabled = true, minimal = false }) {
   );
 }
 
+
+function shouldShowEvidenceTitle(title = '') {
+  const normalized = String(title)
+    .trim()
+    .replace(/[.:;]+$/u, '')
+    .toLocaleLowerCase('tr-TR');
+
+  if (!normalized) return false;
+  return !new Set([
+    'klinik ipucu',
+    'ipucu',
+    'bulgu',
+    'kanıt',
+    'kanıt noktası',
+    'olgu ipucu',
+    'klinik bulgu',
+  ]).has(normalized);
+}
+
 function EvidenceChainCard({ evidenceChain, glossaryEnabled = true, minimal = false }) {
   if (!evidenceChain.length) return null;
   return (
@@ -1067,7 +1086,7 @@ function EvidenceChainCard({ evidenceChain, glossaryEnabled = true, minimal = fa
           <li key={`${item.title}-${item.text}-${index}`}>
             <b>{index + 1}</b>
             <div className="evidence-chain-copy">
-              {!minimal && item.title ? <strong><GlossaryText text={item.title} enabled={glossaryEnabled} /></strong> : null}
+              {!minimal && shouldShowEvidenceTitle(item.title) ? <strong><GlossaryText text={item.title} enabled={glossaryEnabled} /></strong> : null}
               <p><GlossaryText text={ensureSentence(item.text)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p>
             </div>
           </li>
@@ -1187,7 +1206,7 @@ function AnswerFeedbackPanel({
   }
 
   return (
-    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro`} aria-live="polite">
+    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro answer-feedback-panel-v393`} aria-live="polite">
       <div className="answer-feedback-grid answer-feedback-grid-pro">
         <ReasoningCard reasoningText={reasoningText} isCorrect={isCorrect} glossaryEnabled={glossaryEnabled} />
         <ExamNoteFeedback signal={examSignal} glossaryEnabled={glossaryEnabled} />
