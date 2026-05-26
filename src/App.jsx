@@ -1839,7 +1839,7 @@ function App() {
               </Suspense>
             </div>
 
-            <section className="bottom-case-browser case-rail-browser card-surface">
+            <section className="bottom-case-browser case-rail-browser card-surface" aria-label="Diğer olgular">
               <div className="bottom-case-browser-head case-rail-browser-head">
                 <div className="case-rail-browser-title">
                   <h3>Diğer olgular</h3>

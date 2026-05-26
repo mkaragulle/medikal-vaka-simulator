@@ -228,15 +228,15 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
           style={{ width: `${Math.max(totalWidth, horizontalViewport.clientWidth || 0)}px` }}
         >
           {leftSpacerWidth > 0 ? <span className="horizontal-case-virtual-spacer" style={{ flexBasis: `${leftSpacerWidth}px` }} aria-hidden="true" /> : null}
-          {visibleCases.map((clinicalCase, visibleIndex) => (
+          {visibleCases.map((clinicalCase, visibleOffset) => (
             <CaseListItem
               key={clinicalCase.id}
               clinicalCase={clinicalCase}
               selectedCaseId={selectedCaseId}
               solved={isSolvedCase(solvedCaseIds, clinicalCase.id)}
               layout={layout}
-              caseIndex={startIndex + visibleIndex}
               onSelectCase={onSelectCase}
+              caseIndex={startIndex + visibleOffset}
             />
           ))}
           {rightSpacerWidth > 0 ? <span className="horizontal-case-virtual-spacer" style={{ flexBasis: `${rightSpacerWidth}px` }} aria-hidden="true" /> : null}
@@ -258,8 +258,8 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
           selectedCaseId={selectedCaseId}
           solved={isSolvedCase(solvedCaseIds, clinicalCase.id)}
           layout={layout}
-          caseIndex={caseIndex}
           onSelectCase={onSelectCase}
+          caseIndex={caseIndex}
         />
       ))}
     </div>
