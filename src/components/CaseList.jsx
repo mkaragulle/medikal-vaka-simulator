@@ -2,8 +2,8 @@ import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useStat
 import { getDifficultyMeta } from '../utils/scoring.js';
 import { Icon } from './ui.jsx';
 
-const HORIZONTAL_CARD_WIDTH = 292;
-const HORIZONTAL_CARD_GAP = 12;
+const HORIZONTAL_CARD_WIDTH = 268;
+const HORIZONTAL_CARD_GAP = 10;
 const HORIZONTAL_CARD_STEP = HORIZONTAL_CARD_WIDTH + HORIZONTAL_CARD_GAP;
 const HORIZONTAL_OVERSCAN = 6;
 
@@ -41,17 +41,18 @@ function getCaseListTitle(clinicalCase) {
 const CaseListItem = memo(function CaseListItem({ clinicalCase, selectedCaseId, solved, layout, onSelectCase, caseIndex }) {
   const difficultyMeta = getDifficultyMeta(clinicalCase.difficulty);
   const difficultyLabel = solved ? `${difficultyMeta.label}-Çözüldü` : difficultyMeta.label;
-  const railDifficultyLabel = solved ? 'Çözüldü' : difficultyMeta.label;
   const caseListTitle = getCaseListTitle(clinicalCase);
   const isActive = clinicalCase.id === selectedCaseId;
   const handleSelect = useCallback(() => onSelectCase(clinicalCase.id), [clinicalCase.id, onSelectCase]);
 
   if (layout === 'horizontal') {
+    const statusText = isActive ? 'Açık' : solved ? 'Çözüldü' : `${difficultyMeta.points} puan`;
+
     return (
       <button
         type="button"
         className={[
-          'case-list-item horizontal-case-card case-rail-card',
+          'case-list-item horizontal-case-card case-rail-card case-rail-card-minimal',
           isActive ? 'active' : '',
           solved ? 'is-solved-case' : '',
         ].filter(Boolean).join(' ')}
@@ -63,13 +64,9 @@ const CaseListItem = memo(function CaseListItem({ clinicalCase, selectedCaseId, 
         <span className="case-rail-main">
           <span className="case-rail-kicker">
             <span>{Number.isFinite(caseIndex) ? `Olgu ${caseIndex + 1}` : 'Olgu'}</span>
-            <span>{difficultyMeta.points} puan</span>
+            <span>{statusText}</span>
           </span>
           <strong className="case-list-title-plain case-rail-title">{caseListTitle}</strong>
-        </span>
-        <span className="case-rail-side" aria-hidden="true">
-          <small className={`difficulty-badge difficulty-tag-pill ${difficultyMeta.tone} ${solved ? 'is-solved' : ''}`}>{railDifficultyLabel}</small>
-          <span className="case-rail-open">{solved ? 'Tekrar' : 'Aç'}</span>
         </span>
       </button>
     );
