@@ -1,0 +1,12 @@
+V396 — Hap Bilgi Çalış sağ kolon görünürlük ve eş yükseklik düzeltmesi
+
+Yapılanlar:
+- Hap Bilgi Çalış ekranında sol flashcard kolonu ve sağ kontrol kolonunun desktop görünümde aynı yüksekliğe stretch edilmesi sağlandı.
+- Önceki V134 override'ında sağ paneli fit-content/align-start yapan kural, yeni son override ile height:100% ve align-self:stretch olarak düzeltildi.
+- Sağ paneldeki Kart Araçları bölümü flex/grid mantığıyla kalan yüksekliği akıllıca kullanacak hale getirildi.
+- Kartı Sil butonunun pearl-delete-anchor wrapper içinde olduğu için diğer araç butonlarından farklı yükseklikte kalması düzeltildi.
+- Kısa ekranlerde sağ paneldeki buton yükseklikleri, paddingler, başlık boşlukları ve ikon ölçüleri kontrollü şekilde sıkılaştırıldı.
+- Çok kısa viewportlarda içerik kırpılmasın diye sayfa scroll fallback'i bırakıldı; global görünmez scrollbar davranışı korunur.
+
+Değişen dosya:
+- src/components/tusPearlCards.css
