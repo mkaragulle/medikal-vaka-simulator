@@ -236,11 +236,12 @@ function resolveIsDarkTheme() {
   return Boolean(window.matchMedia?.('(prefers-color-scheme: dark)')?.matches);
 }
 
-function prefersNativeCaseBrowserScrollbar() {
-  // V376: The bottom "Diğer olgular" row must use the same custom scrollbar
-  // layer as the rest of the app. Returning false keeps it inside the scanner
-  // and prevents native/custom scrollbar desynchronization.
-  return false;
+function prefersNativeCaseBrowserScrollbar(element) {
+  // V384: the bottom "Diğer olgular" row intentionally has no visible
+  // custom scrollbar layer. The element remains natively scrollable, but the
+  // scanner must not create a fixed overlay track for it; that overlay was the
+  // source of the extra/magic frame crossing the case cards.
+  return isBottomCaseBrowserHorizontalTarget(element);
 }
 
 function canScrollElement(element, axis) {

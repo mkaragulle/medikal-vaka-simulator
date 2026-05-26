@@ -112,6 +112,29 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
     });
   }, [layout, updateHorizontalViewport]);
 
+  const handleHorizontalWheel = useCallback((event) => {
+    if (layout !== 'horizontal') return;
+    const listNode = listRef.current;
+    if (!listNode) return;
+
+    const maxScrollLeft = listNode.scrollWidth - listNode.clientWidth;
+    if (maxScrollLeft <= 1) return;
+
+    const rawDeltaX = Number(event.deltaX) || 0;
+    const rawDeltaY = Number(event.deltaY) || 0;
+    const horizontalDelta = Math.abs(rawDeltaX) > Math.abs(rawDeltaY) ? rawDeltaX : rawDeltaY;
+    if (!horizontalDelta) return;
+
+    const currentLeft = listNode.scrollLeft || 0;
+    const atStart = currentLeft <= 1;
+    const atEnd = currentLeft >= maxScrollLeft - 1;
+    if ((horizontalDelta < 0 && atStart) || (horizontalDelta > 0 && atEnd)) return;
+
+    event.preventDefault();
+    listNode.scrollLeft = Math.min(maxScrollLeft, Math.max(0, currentLeft + horizontalDelta));
+    updateHorizontalViewport();
+  }, [layout, updateHorizontalViewport]);
+
   useLayoutEffect(() => {
     if (layout !== 'horizontal') return undefined;
     const listNode = listRef.current;
@@ -194,6 +217,7 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
         data-ki-light-scrollbar="true"
         aria-label="Olgu listesi"
         onScroll={handleHorizontalScroll}
+        onWheel={handleHorizontalWheel}
       >
         <div
           className="horizontal-case-virtual-track"
