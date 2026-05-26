@@ -54467,3 +54467,158 @@ html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card .patient
     height: 16px !important;
   }
 }
+
+/* ==========================================================================
+   V395 — Patient intro history alignment fix
+   --------------------------------------------------------------------------
+   The history row uses a separate wide-block markup. In some breakpoints its
+   icon kept older absolute/flex positioning rules, so the HASTA ÖYKÜSÜ title
+   could start too close to, or visually overlap, the icon. This hard override
+   makes profile, presentation and history rows use the same stable two-column
+   layout without adding tags/chips or changing the clinical content.
+   ========================================================================== */
+.case-page-shell .patient-summary-card .summary-detail-card,
+.case-page-shell .patient-summary-card .patient-summary-story-block.unified-history-block,
+.clinical-case.qbank-case .patient-summary-card .summary-detail-card,
+.clinical-case.qbank-case .patient-summary-card .patient-summary-story-block.unified-history-block {
+  display: grid !important;
+  grid-template-columns: 44px minmax(0, 1fr) !important;
+  column-gap: 18px !important;
+  row-gap: 0 !important;
+  align-items: start !important;
+  padding: 15px 18px !important;
+  min-height: 72px !important;
+  overflow: visible !important;
+  contain: none !important;
+  content-visibility: visible !important;
+  transform: none !important;
+  clip-path: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+.case-page-shell .patient-summary-card .patient-summary-story-block.unified-history-block,
+.clinical-case.qbank-case .patient-summary-card .patient-summary-story-block.unified-history-block {
+  margin-top: 10px !important;
+}
+
+.case-page-shell .patient-summary-card .summary-detail-icon,
+.case-page-shell .patient-summary-card .summary-wide-icon,
+.clinical-case.qbank-case .patient-summary-card .summary-detail-icon,
+.clinical-case.qbank-case .patient-summary-card .summary-wide-icon {
+  position: static !important;
+  inset: auto !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  grid-column: 1 !important;
+  grid-row: 1 / span 2 !important;
+  justify-self: start !important;
+  align-self: start !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  max-width: 44px !important;
+  max-height: 44px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  border-radius: 15px !important;
+  flex: 0 0 44px !important;
+  transform: none !important;
+  translate: none !important;
+}
+
+.case-page-shell .patient-summary-card .summary-detail-icon svg,
+.case-page-shell .patient-summary-card .summary-wide-icon svg,
+.clinical-case.qbank-case .patient-summary-card .summary-detail-icon svg,
+.clinical-case.qbank-case .patient-summary-card .summary-wide-icon svg {
+  width: 19px !important;
+  height: 19px !important;
+  min-width: 19px !important;
+  min-height: 19px !important;
+  margin: 0 !important;
+  position: static !important;
+  transform: none !important;
+}
+
+.case-page-shell .patient-summary-card .summary-detail-copy,
+.case-page-shell .patient-summary-card .summary-wide-content,
+.clinical-case.qbank-case .patient-summary-card .summary-detail-copy,
+.clinical-case.qbank-case .patient-summary-card .summary-wide-content {
+  position: static !important;
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  align-self: start !important;
+  transform: none !important;
+  overflow: visible !important;
+}
+
+.case-page-shell .patient-summary-card .summary-story-label,
+.case-page-shell .patient-summary-card .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card .summary-story-label,
+.clinical-case.qbank-case .patient-summary-card .summary-detail-label {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 0 6px 0 !important;
+  padding: 0 !important;
+  line-height: 1.16 !important;
+  text-align: left !important;
+  white-space: normal !important;
+  overflow: visible !important;
+}
+
+.case-page-shell .patient-summary-card .summary-story-label span,
+.case-page-shell .patient-summary-card .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card .summary-story-label span,
+.clinical-case.qbank-case .patient-summary-card .summary-detail-label {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.16 !important;
+}
+
+.case-page-shell .patient-summary-card .summary-story-text,
+.case-page-shell .patient-summary-card .summary-detail-card p,
+.case-page-shell .patient-summary-card .summary-profile-copy,
+.clinical-case.qbank-case .patient-summary-card .summary-story-text,
+.clinical-case.qbank-case .patient-summary-card .summary-detail-card p,
+.clinical-case.qbank-case .patient-summary-card .summary-profile-copy {
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 560px) {
+  .case-page-shell .patient-summary-card .summary-detail-card,
+  .case-page-shell .patient-summary-card .patient-summary-story-block.unified-history-block,
+  .clinical-case.qbank-case .patient-summary-card .summary-detail-card,
+  .clinical-case.qbank-case .patient-summary-card .patient-summary-story-block.unified-history-block {
+    grid-template-columns: 40px minmax(0, 1fr) !important;
+    column-gap: 14px !important;
+    padding: 13px 14px !important;
+  }
+
+  .case-page-shell .patient-summary-card .summary-detail-icon,
+  .case-page-shell .patient-summary-card .summary-wide-icon,
+  .clinical-case.qbank-case .patient-summary-card .summary-detail-icon,
+  .clinical-case.qbank-case .patient-summary-card .summary-wide-icon {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
+    border-radius: 14px !important;
+  }
+}
