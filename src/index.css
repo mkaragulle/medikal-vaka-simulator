@@ -53164,3 +53164,126 @@ aside,
   scrollbar-color: transparent transparent !important;
   scrollbar-gutter: auto !important;
 }
+
+/* ========================================================================== 
+   KLINIKIQ V387 — No waiting screens + stable clinical summary cards
+   --------------------------------------------------------------------------
+   Removes visible intermediate loading placeholders/route overlays and keeps
+   the clinical presentation cards (PROFİL / BAŞVURU / HASTA ÖYKÜSÜ) visually
+   stable during scroll, route changes and hover states.
+   ========================================================================== */
+.route-fallback,
+.deferred-home-section-placeholder,
+.branch-route-overlay,
+.pearl-hub-skeleton {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.deferred-home-section,
+.case-route-transition,
+.case-page-shell .case-route-transition,
+.exam-active-shell .case-route-transition,
+.study-review-hub,
+.branch-selector-deferred-shell,
+.branch-grid,
+.tus-pearl-study-shell {
+  content-visibility: visible !important;
+  contain: none !important;
+  contain-intrinsic-size: auto !important;
+  animation: none !important;
+  transition-property: background-color, border-color, color, opacity !important;
+  transition-duration: 120ms !important;
+}
+
+html.ki-is-scrolling,
+html.ki-is-resizing,
+html.ki-route-transitioning {
+  scroll-behavior: auto !important;
+}
+
+html.ki-is-scrolling .patient-summary-card,
+html.ki-route-transitioning .patient-summary-card,
+html.ki-is-scrolling .summary-detail-card,
+html.ki-route-transitioning .summary-detail-card,
+html.ki-is-scrolling .patient-summary-story-block,
+html.ki-route-transitioning .patient-summary-story-block {
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transform: none !important;
+}
+
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card,
+.case-page-shell .patient-summary-card.premium-reference-summary-card,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: visible !important;
+  contain: none !important;
+  content-visibility: visible !important;
+  clip-path: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .structured-patient-summary-grid.unified-summary-grid,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .structured-patient-summary-grid.unified-summary-grid {
+  overflow: visible !important;
+  contain: none !important;
+  content-visibility: visible !important;
+}
+
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card,
+.case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-card,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block.unified-history-block,
+.case-page-shell .patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block.unified-history-block,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block {
+  position: relative !important;
+  z-index: 1 !important;
+  isolation: isolate !important;
+  overflow: visible !important;
+  contain: none !important;
+  content-visibility: visible !important;
+  transform: none !important;
+  translate: none !important;
+  clip-path: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 76%, var(--accent) 24%) !important;
+  background: color-mix(in srgb, var(--surface-1) 92%, var(--accent) 8%) !important;
+  background-clip: padding-box !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card:hover,
+.case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-card:hover,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card:hover,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card:hover,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block.unified-history-block:hover,
+.case-page-shell .patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block:hover,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block.unified-history-block:hover,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block:hover {
+  border-color: color-mix(in srgb, var(--border-subtle) 62%, var(--accent) 38%) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+html[data-theme='dark'] .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card,
+html[data-theme='dark'] .case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-card,
+html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card,
+html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card,
+html[data-theme='dark'] .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block.unified-history-block,
+html[data-theme='dark'] .case-page-shell .patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block,
+html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block.unified-history-block,
+html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block {
+  border-color: color-mix(in srgb, var(--border-subtle) 70%, var(--accent) 30%) !important;
+  background: color-mix(in srgb, var(--surface-1) 88%, var(--accent) 12%) !important;
+}

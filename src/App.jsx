@@ -11,7 +11,7 @@ import AuthPanel from './components/AuthPanel.jsx';
 import PremiumCursor from './components/PremiumCursor.jsx';
 import KlinikIQCustomScrollbars from './components/KlinikIQCustomScrollbars.jsx';
 import PerformanceOptimizer from './components/PerformanceOptimizer.jsx';
-import { Icon, BrandMark, ThemeToggle, BranchTransitionVisual, branchIconById } from './components/ui.jsx';
+import { Icon, BrandMark, ThemeToggle } from './components/ui.jsx';
 import { branches } from './data/branches.js';
 import { cases, getCaseById } from './data/cases.js';
 import { scoreAttempt, calculateAccuracy } from './utils/scoring.js';
@@ -34,8 +34,6 @@ const THEME_STORAGE_KEY = 'klinikiq-theme-v1';
 const AI_PRACTICE_STATS_STORAGE_KEY = 'klinikiq-ai-practice-stats-v1';
 const AI_BRANCH_FILTER_STORAGE_KEY = 'klinikiq-ai-branch-filter-v1';
 const AI_DIFFICULTY_STORAGE_KEY = 'klinikiq-ai-difficulty-v1';
-const BRANCH_TRANSITION_MS = 560;
-const BRANCH_TRANSITION_FADE_MS = 150;
 const USERS_STORAGE_KEY = 'klinikiq-auth-users-v1';
 const CURRENT_USER_STORAGE_KEY = 'klinikiq-auth-current-user-v1';
 const PRODUCT_MODE_STORAGE_KEY = 'klinikiq-product-mode-v1';
@@ -438,85 +436,22 @@ function buildAIWrongTitle(clinicalCase = {}) {
 
 
 
-function RouteFallback({ label = 'Arayüz hazırlanıyor…' }) {
-  return (
-    <section className="route-fallback card-surface" role="status" aria-live="polite">
-      <span className="route-fallback-spinner" aria-hidden="true" />
-      <strong>{label}</strong>
-    </section>
-  );
+function RouteFallback() {
+  return null;
 }
 
 function DeferredHomeSection({
   id,
   className = '',
   children,
-  minHeight = 420,
-  idleDelay = 700,
-  label = 'Bölüm hazırlanıyor…',
 }) {
-  const [ready, setReady] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    if (ready || typeof window === 'undefined') return undefined;
-
-    let cancelled = false;
-    let observer = null;
-    let delayTimer = 0;
-    let idleId = 0;
-
-    const reveal = () => {
-      if (cancelled) return;
-      startTransition(() => setReady(true));
-    };
-
-    if ('IntersectionObserver' in window && sectionRef.current) {
-      observer = new IntersectionObserver((entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) reveal();
-      }, { root: null, rootMargin: '1200px 0px 1200px 0px', threshold: 0.01 });
-      observer.observe(sectionRef.current);
-    }
-
-    delayTimer = window.setTimeout(() => {
-      if (cancelled || ready) return;
-      if ('requestIdleCallback' in window) {
-        idleId = window.requestIdleCallback(reveal, { timeout: 1800 });
-        return;
-      }
-      reveal();
-    }, idleDelay);
-
-    return () => {
-      cancelled = true;
-      observer?.disconnect?.();
-      window.clearTimeout(delayTimer);
-      if (idleId && 'cancelIdleCallback' in window) window.cancelIdleCallback(idleId);
-    };
-  }, [idleDelay, ready]);
-
-  useEffect(() => {
-    if (!ready || typeof window === 'undefined') return undefined;
-    const rafId = window.requestAnimationFrame(() => {
-      window.dispatchEvent(new CustomEvent('klinikiq:scrollbars-rescan'));
-    });
-    return () => window.cancelAnimationFrame(rafId);
-  }, [ready]);
-
   return (
     <section
       id={id}
-      ref={sectionRef}
-      className={[className, 'deferred-home-section', ready ? 'is-ready' : 'is-pending'].filter(Boolean).join(' ')}
-      style={ready ? undefined : { minHeight }}
+      className={[className, 'deferred-home-section', 'is-ready'].filter(Boolean).join(' ')}
       data-main-deferred-section={id || 'section'}
     >
-      {ready ? children : (
-        <div className="deferred-home-section-placeholder card-surface" role="status" aria-live="polite">
-          <span className="route-fallback-spinner" aria-hidden="true" />
-          <strong>{label}</strong>
-        </div>
-      )}
+      {children}
     </section>
   );
 }
@@ -1121,33 +1056,14 @@ function App() {
     const rawBranchPool = accessibleCaseIndex.byBranchId.get(branchId) ?? [];
     const branchPool = sortCasesBySolvedStatus(rawBranchPool, solvedCaseIdSet);
     if (!branchPool.length) return;
-    const branchMeta = resolveBranchById(branchId);
 
     clearBranchRouteTimers();
-    setBranchRouteTransition({
-      active: true,
-      phase: 'selecting',
-      branchId,
-      iconName: branchIconById[branchId] ?? 'Activity',
-      title: branchMeta?.name ?? branchMeta?.shortName ?? 'Klinik branş',
-      subtitle: branchMeta?.transitionTagline ?? branchMeta?.description ?? '',
-      caseCount: branchPool.length,
-    });
-
-    const selectTimer = window.setTimeout(() => {
-      setBranchDifficultyFilter('all');
-      setSelectedBranchId(branchId);
-      setSelectedCaseId(branchPool[0]?.id ?? null);
-      setIsCaseSidebarOpen(true);
-      scrollToTopSmart({ smooth: false });
-      setBranchRouteTransition((current) => current ? { ...current, phase: 'reveal' } : null);
-    }, BRANCH_TRANSITION_MS);
-
-    const finishTimer = window.setTimeout(() => {
-      setBranchRouteTransition(null);
-    }, BRANCH_TRANSITION_MS + BRANCH_TRANSITION_FADE_MS);
-
-    branchRouteTimers.current = [selectTimer, finishTimer];
+    setBranchRouteTransition(null);
+    setBranchDifficultyFilter('all');
+    setSelectedBranchId(branchId);
+    setSelectedCaseId(branchPool[0]?.id ?? null);
+    setIsCaseSidebarOpen(true);
+    scrollToTopSmart({ smooth: false });
   }, [accessibleCaseIndex, clearBranchRouteTimers, closePearlStudy, isDemoUser, solvedCaseIdSet, visibleBranches]);
 
   const handleSelectCase = useCallback((caseId) => {
@@ -1657,33 +1573,9 @@ function App() {
         </div>
       </nav>
 
-      {branchRouteTransition?.active ? (
-        <div className={`branch-route-overlay ${branchRouteTransition.phase} branch-route-${branchRouteTransition.branchId || 'default'}`.trim()} aria-hidden="true">
-          <div className="branch-route-stage">
-            <div
-              className={`branch-route-hero route-icon-${branchRouteTransition.branchId || 'default'}`.trim()}
-              data-branch={branchRouteTransition.branchId || 'default'}
-            >
-              <span className="branch-route-ring ring-one" />
-              <span className="branch-route-ring ring-two" />
-              <span className="branch-route-glow" />
-              <span className="branch-route-orb">
-                <BranchTransitionVisual
-                  branchId={branchRouteTransition.branchId || 'default'}
-                  iconName={branchRouteTransition.iconName || 'Activity'}
-                />
-              </span>
-            </div>
-            <div className="branch-route-copy solo">
-              <strong>{branchRouteTransition.title}</strong>
-              {branchRouteTransition.subtitle ? <span>{branchRouteTransition.subtitle}</span> : null}
-            </div>
-          </div>
-        </div>
-      ) : null}
 
       {productMode === 'komite' ? (
-        <Suspense fallback={<RouteFallback label="Komite arayüzü hazırlanıyor…" />}>
+        <Suspense fallback={null}>
           <KomiteModeWorkspace currentUser={currentUser} />
         </Suspense>
       ) : wrongAnswersPageOpen ? (
@@ -1695,7 +1587,7 @@ function App() {
           onClearAll={clearWrongAnswers}
         />
       ) : pearlStudyState.active ? (
-        <Suspense fallback={<RouteFallback label="Hap kart arayüzü hazırlanıyor…" />}>
+        <Suspense fallback={null}>
           <TusPearlStudyScreen
             initialFilter={pearlStudyState.filter}
             initialBranchFilter={pearlStudyState.branchFilter}
@@ -1704,7 +1596,7 @@ function App() {
           />
         </Suspense>
       ) : aiPracticeState.active ? (
-        <Suspense fallback={<RouteFallback label="AI soru arayüzü hazırlanıyor…" />}>
+        <Suspense fallback={null}>
           <AIGeneratedQuestionView
           question={aiPracticeState.question}
           loading={aiPracticeState.loading}
@@ -1727,7 +1619,7 @@ function App() {
           />
         </Suspense>
       ) : examState?.result ? (
-        <Suspense fallback={<RouteFallback label="Sonuç ekranı hazırlanıyor…" />}>
+        <Suspense fallback={null}>
           <ExamResults
           result={examState.result}
           onRestart={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')}
@@ -1748,7 +1640,7 @@ function App() {
           </section>
 
           <div className="case-route-transition timed-exam-layout" data-case-id={selectedCase.id}>
-            <Suspense fallback={<RouteFallback label="Vaka ekranı hazırlanıyor…" />}>
+            <Suspense fallback={null}>
               <CasePlayer
                 clinicalCase={selectedCase}
                 branch={resolveBranchById(selectedCase.branchId)}
@@ -1824,7 +1716,7 @@ function App() {
             </section>
 
             <div className="case-route-transition" data-case-id={selectedCase.id}>
-              <Suspense fallback={<RouteFallback label="Vaka ekranı hazırlanıyor…" />}>
+              <Suspense fallback={null}>
                 <CasePlayer
                   clinicalCase={selectedCase}
                   branch={selectedBranch}
@@ -1907,9 +1799,8 @@ function App() {
             className="study-review-anchor section-anchor"
             minHeight={620}
             idleDelay={520}
-            label="Kişisel tekrar hazırlanıyor…"
           >
-            <Suspense fallback={<RouteFallback label="Tekrar merkezi hazırlanıyor…" />}>
+            <Suspense fallback={null}>
               <StudyReviewHub
                 wrongAnswers={visibleWrongAnswers}
                 onOpenCase={openWrongCase}
@@ -1925,14 +1816,13 @@ function App() {
             className="branch-selector branch-selector-deferred-shell"
             minHeight={940}
             idleDelay={1050}
-            label="Klinik branşlar hazırlanıyor…"
           >
             <BranchSelector
               branches={visibleBranches}
               cases={accessibleCases}
               onSelectBranch={handleSelectBranch}
-              launchingBranchId={branchRouteTransition?.phase === 'selecting' ? branchRouteTransition.branchId : null}
-              isTransitioning={Boolean(branchRouteTransition?.active)}
+              launchingBranchId={null}
+              isTransitioning={false}
             />
           </DeferredHomeSection>
         </section>

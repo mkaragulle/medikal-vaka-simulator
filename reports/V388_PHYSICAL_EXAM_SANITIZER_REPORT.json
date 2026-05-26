@@ -1,0 +1,660 @@
+{
+  "version": "V388",
+  "purpose": "Physical examination content sanitizer for broken temperature fragments and vital-only exam bullets.",
+  "totalCases": 620,
+  "changedCases": 45,
+  "removedOrRewrittenExamLines": 40,
+  "residualBrokenTemperatureFragments": [],
+  "changed": [
+    {
+      "id": "v172-new-071-cocukta-agrisiz-alt-gastrointestinal-kanama",
+      "title": "Çocukta ağrısız alt gastrointestinal kanama",
+      "before": [
+        "Çocuk genel durumu iyi, hafif soluk görünümdedir.",
+        "Batın yumuşaktır, defans ve rebound yoktur.",
+        "Perianal bölgede fissür izlenmez.",
+        "8°C’dir."
+      ],
+      "after": [
+        "Çocuk genel durumu iyi, hafif soluk görünümdedir.",
+        "Batın yumuşaktır, defans ve rebound yoktur.",
+        "Perianal bölgede fissür izlenmez."
+      ]
+    },
+    {
+      "id": "v172-new-073-kirli-yara-sonrasi-kas-spazmlari",
+      "title": "Kirli yara sonrası kas spazmları",
+      "before": [
+        "Hasta uyanık ve ajitedir.",
+        "Trismus, risus sardonicus görünümü ve uyarıyla artan yaygın kas spazmları izlenir.",
+        "8°C."
+      ],
+      "after": [
+        "Hasta uyanık ve ajitedir.",
+        "Trismus, risus sardonicus görünümü ve uyarıyla artan yaygın kas spazmları izlenir."
+      ]
+    },
+    {
+      "id": "v172-new-078-yenidoganda-hipokalsemik-nobet",
+      "title": "Yenidoğanda hipokalsemik nöbet",
+      "before": [
+        "Bebek irritabl görünümdedir.",
+        "Perioral seğirme ve karpopedal spazm izlenir.",
+        "Sternum sol kenarında sistolik üfürüm duyulur.",
+        "7°C."
+      ],
+      "after": [
+        "Bebek irritabl görünümdedir.",
+        "Perioral seğirme ve karpopedal spazm izlenir.",
+        "Sternum sol kenarında sistolik üfürüm duyulur."
+      ]
+    },
+    {
+      "id": "v172-new-079-yanik-yarasinda-kotulesen-enfeksiyon",
+      "title": "Yanık yarasında kötüleşen enfeksiyon",
+      "before": [
+        "Yanık alanında mavimsi-yeşil renkli akıntı ve çevresinde hassasiyet vardır.",
+        "Hasta toksik görünümlüdür.",
+        "0°C."
+      ],
+      "after": [
+        "Yanık alanında mavimsi-yeşil renkli akıntı ve çevresinde hassasiyet vardır.",
+        "Hasta toksik görünümlüdür."
+      ]
+    },
+    {
+      "id": "v173-new-081-yenidoganda-mekonyum-cikaramama",
+      "title": "Yenidoğanda mekonyum çıkaramama",
+      "before": [
+        "Bebek huzursuz ve batını belirgin distandü görünümdedir.",
+        "Rektal tuşe sonrası gaz ve az miktarda dışkı çıkışı olduğu gözlenir.",
+        "Vücut sıcaklığı 36.9°C, kalp hızı 154/dk, solunum sayısı 42/dk’dır."
+      ],
+      "after": [
+        "Bebek huzursuz ve batını belirgin distandü görünümdedir.",
+        "Rektal tuşe sonrası gaz ve az miktarda dışkı çıkışı olduğu gözlenir."
+      ]
+    },
+    {
+      "id": "v173-new-082-beslenmeyle-artan-solunum-sikintisi",
+      "title": "Beslenmeyle artan solunum sıkıntısı",
+      "before": [
+        "Bebekte ağız ve burunda köpüklü sekresyonlar vardır.",
+        "Beslenme denemesiyle öksürük ve oksijen satürasyonunda düşme izlenir.",
+        "Batın hafif distandüdür.",
+        "Kalp hızı 148/dk, solunum sayısı 54/dk’dır."
+      ],
+      "after": [
+        "Bebekte ağız ve burunda köpüklü sekresyonlar vardır.",
+        "Beslenme denemesiyle öksürük ve oksijen satürasyonunda düşme izlenir.",
+        "Batın hafif distandüdür."
+      ]
+    },
+    {
+      "id": "v173-new-083-atipik-pnomoni-ve-hiponatremi",
+      "title": "Atipik pnömoni ve hiponatremi",
+      "before": [
+        "Hasta toksik ve takipneik görünümdedir.",
+        "Sağ alt akciğer alanında inspiratuvar ral duyulur.",
+        "Vücut sıcaklığı 39.4°C, nabız 112/dk, solunum sayısı 28/dk, oksijen satürasyonu %91’dir."
+      ],
+      "after": [
+        "Hasta toksik ve takipneik görünümdedir.",
+        "Sağ alt akciğer alanında inspiratuvar ral duyulur."
+      ]
+    },
+    {
+      "id": "v173-new-084-ates-ve-yaygin-lenfadenopati",
+      "title": "Ateş ve yaygın lenfadenopati",
+      "before": [
+        "Tonsiller belirgin büyümüş ve eksüdatiftir.",
+        "Posterior servikal lenf nodları bilateral büyümüştür.",
+        "Dalak ucu palpabl olarak hissedilir.",
+        "Vücut sıcaklığı 38.7°C, nabız 96/dk’dır."
+      ],
+      "after": [
+        "Tonsiller belirgin büyümüş ve eksüdatiftir.",
+        "Posterior servikal lenf nodları bilateral büyümüştür.",
+        "Dalak ucu palpabl olarak hissedilir."
+      ]
+    },
+    {
+      "id": "v173-new-085-sigara-oykusu-olan-hastada-hiponatremi",
+      "title": "Sigara öyküsü olan hastada hiponatremi",
+      "before": [
+        "Hasta zayıf ve halsiz görünümdedir.",
+        "Sağ supraklaviküler bölgede sert lenf nodu palpe edilir.",
+        "Mukozalar nemlidir, belirgin periferik ödem yoktur.",
+        "Kan basıncı 118/74 mmHg, nabız 90/dk’dır."
+      ],
+      "after": [
+        "Hasta zayıf ve halsiz görünümdedir.",
+        "Sağ supraklaviküler bölgede sert lenf nodu palpe edilir.",
+        "Mukozalar nemlidir, belirgin periferik ödem yoktur."
+      ]
+    },
+    {
+      "id": "v173-new-086-yasli-hastada-mekanik-obstruksiyon",
+      "title": "Yaşlı hastada mekanik obstrüksiyon",
+      "before": [
+        "Batın distandüdür ve barsak sesleri yüksek tınlıdır.",
+        "Yaygın hassasiyet vardır ancak belirgin defans yoktur.",
+        "Kan basıncı 112/70 mmHg, nabız 104/dk, vücut sıcaklığı 37.4°C’dir."
+      ],
+      "after": [
+        "Batın distandüdür ve barsak sesleri yüksek tınlıdır.",
+        "Yaygın hassasiyet vardır ancak belirgin defans yoktur."
+      ]
+    },
+    {
+      "id": "v173-new-087-kapali-ortamda-bas-agrisi-ve-bilinc-bulanikligi",
+      "title": "Kapalı ortamda baş ağrısı ve bilinç bulanıklığı",
+      "before": [
+        "Hasta uykuya eğilimli ancak uyandırılabilir durumdadır.",
+        "Cilt rengi normal görünümdedir.",
+        "Akciğer sesleri doğaldır.",
+        "Kan basıncı 124/76 mmHg, nabız 106/dk, solunum sayısı 22/dk, pulse oksimetre satürasyonu %98’dir."
+      ],
+      "after": [
+        "Hasta uykuya eğilimli ancak uyandırılabilir durumdadır.",
+        "Cilt rengi normal görünümdedir.",
+        "Akciğer sesleri doğaldır."
+      ]
+    },
+    {
+      "id": "v173-new-088-norolojik-bulgular-ve-laktik-asidoz",
+      "title": "Nörolojik bulgular ve laktik asidoz",
+      "before": [
+        "Bebek hipotoniktir ve çevreyle ilgisi azalmıştır.",
+        "Karaciğer belirgin büyümemiştir.",
+        "Solunum sayısı 38/dk, kalp hızı 136/dk’dır."
+      ],
+      "after": [
+        "Bebek hipotoniktir ve çevreyle ilgisi azalmıştır.",
+        "Karaciğer belirgin büyümemiştir."
+      ]
+    },
+    {
+      "id": "v173-new-090-solunum-depresyonu-ve-miyozis",
+      "title": "Solunum depresyonu ve miyozis",
+      "before": [
+        "Hasta somnolandır ve ağrılı uyaranla uyanmaktadır.",
+        "Pupiller bilateral belirgin miyotiktir.",
+        "Solunum sayısı 7/dk, oksijen satürasyonu oda havasında %84, nabız 58/dk, kan basıncı 98/62 mmHg’dir."
+      ],
+      "after": [
+        "Hasta somnolandır ve ağrılı uyaranla uyanmaktadır.",
+        "Pupiller bilateral belirgin miyotiktir."
+      ]
+    },
+    {
+      "id": "v175-new-104-paroksismal-oksuruk-nobetleri",
+      "title": "Paroksismal öksürük nöbetleri",
+      "before": [
+        "Bebek öksürük nöbeti dışında uyanık ve hafif huzursuzdur.",
+        "Nöbet sırasında ardışık öksürükler ve kısa süreli siyanoz izlenir.",
+        "2°C"
+      ],
+      "after": [
+        "Bebek öksürük nöbeti dışında uyanık ve hafif huzursuzdur.",
+        "Nöbet sırasında ardışık öksürükler ve kısa süreli siyanoz izlenir."
+      ]
+    },
+    {
+      "id": "v175-new-105-bogaz-enfeksiyonu-sonrasi-koyu-idrar",
+      "title": "Boğaz enfeksiyonu sonrası koyu idrar",
+      "before": [
+        "Periorbital ödem mevcuttur.",
+        "Akciğer oskültasyonunda belirgin ral yoktur.",
+        "9°C’dir"
+      ],
+      "after": [
+        "Periorbital ödem mevcuttur.",
+        "Akciğer oskültasyonunda belirgin ral yoktur."
+      ]
+    },
+    {
+      "id": "v175-new-106-sutle-beslenme-sonrasi-yenidogan-sariligi",
+      "title": "Sütle beslenme sonrası yenidoğan sarılığı",
+      "before": [
+        "Bebek letarjik ve ikterik görünümdedir.",
+        "Karaciğer kot altında 4 cm palpe edilir.",
+        "Göz muayenesinde lens opasitesi şüphesi belirtilmiştir.",
+        "1°C"
+      ],
+      "after": [
+        "Bebek letarjik ve ikterik görünümdedir.",
+        "Karaciğer kot altında 4 cm palpe edilir.",
+        "Göz muayenesinde lens opasitesi şüphesi belirtilmiştir."
+      ]
+    },
+    {
+      "id": "v175-new-107-yumusak-doku-enfeksiyonunda-hizla-kotulesme",
+      "title": "Yumuşak doku enfeksiyonunda hızla kötüleşme",
+      "before": [
+        "Hasta toksik görünümlüdür.",
+        "Sağ bacakta yaygın eritem, ödem, morumsu renk değişikliği ve palpasyonla krepitasyon vardır.",
+        "Ağrı cilt bulgularına göre orantısız şiddettedir.",
+        "3°C’dir"
+      ],
+      "after": [
+        "Hasta toksik görünümlüdür.",
+        "Sağ bacakta yaygın eritem, ödem, morumsu renk değişikliği ve palpasyonla krepitasyon vardır.",
+        "Ağrı cilt bulgularına göre orantısız şiddettedir."
+      ]
+    },
+    {
+      "id": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski",
+      "title": "Aralıklı karın ağrısı ve kanlı dışkı",
+      "before": [
+        "Bebek huzursuzdur ve ağrı nöbetleri sırasında bacaklarını karnına çekmektedir.",
+        "Sağ üst kadranda sosis şeklinde kitle palpe edilir; sağ alt kadran nispeten boş hissedilir.",
+        "Hafif dehidratasyon bulguları vardır.",
+        "4°C’dir"
+      ],
+      "after": [
+        "Bebek huzursuzdur ve ağrı nöbetleri sırasında bacaklarını karnına çekmektedir.",
+        "Sağ üst kadranda sosis şeklinde kitle palpe edilir; sağ alt kadran nispeten boş hissedilir.",
+        "Hafif dehidratasyon bulguları vardır."
+      ]
+    },
+    {
+      "id": "v187-new-244-hormonal-uretim-bolgesinin-belirlenmesi",
+      "title": "Hormonal üretim bölgesinin belirlenmesi",
+      "before": [
+        "Kan basıncı 158/94 mmHg’dir.",
+        "Hafif kas güçsüzlüğü vardır.",
+        "Cushingoid görünüm izlenmez."
+      ],
+      "after": [
+        "Hafif kas güçsüzlüğü vardır.",
+        "Cushingoid görünüm izlenmez."
+      ]
+    },
+    {
+      "id": "v187-new-245-hipertansiyon-ve-hipokalemi",
+      "title": "Hipertansiyon ve hipokalemi",
+      "before": [
+        "Kan basıncı 164/98 mmHg’dir.",
+        "Hafif proksimal kas güçsüzlüğü vardır.",
+        "Ödem belirgin değildir."
+      ],
+      "after": [
+        "Hafif proksimal kas güçsüzlüğü vardır.",
+        "Ödem belirgin değildir."
+      ]
+    },
+    {
+      "id": "v187-new-246-egzersizde-oksijen-dusuklugu",
+      "title": "Egzersizde oksijen düşüklüğü",
+      "before": [
+        "Alt zonlarda ince inspiratuvar raller duyulur.",
+        "Egzersizle satürasyon %84’e düşmektedir."
+      ],
+      "after": [
+        "Alt zonlarda ince inspiratuvar raller duyulur.",
+        "Egzersizle satürasyon %84'e düşmektedir."
+      ]
+    },
+    {
+      "id": "v187-new-251-boyunda-agrisiz-lenf-nodu",
+      "title": "Boyunda ağrısız lenf nodu",
+      "before": [
+        "Sol servikal bölgede lastik kıvamında, ağrısız lenf nodu palpe edilir.",
+        "Hepatosplenomegali belirgin değildir.",
+        "Vücut sıcaklığı 37.8°C’dir."
+      ],
+      "after": [
+        "Sol servikal bölgede lastik kıvamında, ağrısız lenf nodu palpe edilir.",
+        "Hepatosplenomegali belirgin değildir."
+      ]
+    },
+    {
+      "id": "v187-new-252-kalp-ilaci-sonrasi-bulanti-ve-gorme-bozuklugu",
+      "title": "Kalp ilacı sonrası bulantı ve görme bozukluğu",
+      "before": [
+        "Hasta halsizdir.",
+        "Nabız düzensiz ve 48/dk’dır.",
+        "Kan basıncı 104/62 mmHg’dir.",
+        "Görme yakınmasını sarımsı görme olarak tarifler."
+      ],
+      "after": [
+        "Hasta halsizdir.",
+        "Nabız düzensiz ve 48/dk'dır.",
+        "Görme yakınmasını sarımsı görme olarak tarifler."
+      ]
+    },
+    {
+      "id": "v187-new-255-yasli-hastada-yeni-bas-agrisi",
+      "title": "Yaşlı hastada yeni baş ağrısı",
+      "before": [
+        "Sağ temporal arter hassas ve kalınlaşmış palpe edilir.",
+        "Görme keskinliği sağ gözde hafif azalmıştır.",
+        "Vücut sıcaklığı 37.6°C’dir."
+      ],
+      "after": [
+        "Sağ temporal arter hassas ve kalınlaşmış palpe edilir.",
+        "Görme keskinliği sağ gözde hafif azalmıştır."
+      ]
+    },
+    {
+      "id": "v188-new-261-yenidoganda-siyanoz-ve-tek-buyuk-damar-cikisi",
+      "title": "Yenidoğanda siyanoz ve tek büyük damar çıkışı",
+      "before": [
+        "Santral siyanoz vardır.",
+        "Sternum sol kenarında sistolik üfürüm duyulur.",
+        "Oksijen satürasyonu %82’dir.",
+        "Femoral nabızlar alınmaktadır."
+      ],
+      "after": [
+        "Santral siyanoz vardır.",
+        "Sternum sol kenarında sistolik üfürüm duyulur.",
+        "Femoral nabızlar alınmaktadır."
+      ]
+    },
+    {
+      "id": "v189-new-286-kronik-inflamasyon-sonrasi-proteinuri",
+      "title": "Kronik inflamasyon sonrası proteinüri",
+      "before": [
+        "Bilateral pretibial ödem vardır.",
+        "Kan basıncı 136/82 mmHg’dir.",
+        "Eklem deformiteleri izlenir."
+      ],
+      "after": [
+        "Bilateral pretibial ödem vardır.",
+        "Eklem deformiteleri izlenir."
+      ]
+    },
+    {
+      "id": "v189-new-298-enfeksiyon-sonrasi-gucsuzluk",
+      "title": "Enfeksiyon sonrası güçsüzlük",
+      "before": [
+        "Alt ekstremitelerde simetrik güç kaybı vardır.",
+        "Derin tendon refleksleri alınamaz.",
+        "Duyu kaybı hafiftir.",
+        "Solunum sayısı 22/dk’dır."
+      ],
+      "after": [
+        "Alt ekstremitelerde simetrik güç kaybı vardır.",
+        "Derin tendon refleksleri alınamaz.",
+        "Duyu kaybı hafiftir."
+      ]
+    },
+    {
+      "id": "v189-new-299-diyabetik-hastada-siddetli-kulak-agrisi",
+      "title": "Diyabetik hastada şiddetli kulak ağrısı",
+      "before": [
+        "Sağ dış kulak yolunda granülasyon dokusu ve kötü kokulu akıntı vardır.",
+        "Tragus hassasiyeti belirgindir.",
+        "Sağ fasiyal hareketlerde hafif zayıflık izlenir.",
+        "Vücut sıcaklığı 38.0°C’dir."
+      ],
+      "after": [
+        "Sağ dış kulak yolunda granülasyon dokusu ve kötü kokulu akıntı vardır.",
+        "Tragus hassasiyeti belirgindir.",
+        "Sağ fasiyal hareketlerde hafif zayıflık izlenir."
+      ]
+    },
+    {
+      "id": "v195-new-348-seyahat-sonrasi-periyodik-ates",
+      "title": "Seyahat sonrası periyodik ateş",
+      "before": [
+        "Muayene sırasında ateşi 39.1°C’dir.",
+        "Hafif splenomegali vardır.",
+        "Skleralarda hafif ikter izlenir."
+      ],
+      "after": [
+        "Muayene sırasında ateşi 39.1°C'dir.",
+        "Hafif splenomegali vardır.",
+        "Skleralarda hafif ikter izlenir."
+      ]
+    },
+    {
+      "id": "v196-new-365-uzamis-jeneralize-nobet",
+      "title": "Uzamış jeneralize nöbet",
+      "before": [
+        "Çocuğun bilinci kapalıdır ve jeneralize tonik-klonik aktivite devam etmektedir.",
+        "Hava yolu pozisyonla desteklenmiş, oksijen verilmiştir.",
+        "Kapiller glukoz 102 mg/dL’dir."
+      ],
+      "after": [
+        "Çocuğun bilinci kapalıdır ve jeneralize tonik-klonik aktivite devam etmektedir.",
+        "Hava yolu pozisyonla desteklenmiş, oksijen verilmiştir.",
+        "Kapiller glukoz 102 mg/dL'dir."
+      ]
+    },
+    {
+      "id": "v337-peds-clinical-unique-001-infantta-hisilti-ve-beslenememe",
+      "title": "İnfantta hışıltı ve beslenememe",
+      "before": [
+        "Bebek takipneiktir ve subkostal çekilmeleri vardır.",
+        "Yaygın ince raller ve hışıltı duyulur.",
+        "Burun kanadı solunumu belirgindir.",
+        "Oksijen satürasyonu oda havasında %89, solunum sayısı 62/dk, vücut sıcaklığı 37.8°C’dir."
+      ],
+      "after": [
+        "Bebek takipneiktir ve subkostal çekilmeleri vardır.",
+        "Yaygın ince raller ve hışıltı duyulur.",
+        "Burun kanadı solunumu belirgindir."
+      ]
+    },
+    {
+      "id": "v337-peds-clinical-unique-003-ates-sirasinda-kisa-nobet",
+      "title": "Ateş sırasında kısa nöbet",
+      "before": [
+        "Çocuk acilde uyanık ve yaşına uygun etkileşim kurmaktadır.",
+        "Ense sertliği yoktur.",
+        "Fokal nörolojik defisit saptanmaz.",
+        "Vücut sıcaklığı 38.9°C, kulak muayenesinde hafif viral üst solunum yolu bulguları vardır."
+      ],
+      "after": [
+        "Çocuk acilde uyanık ve yaşına uygun etkileşim kurmaktadır.",
+        "Ense sertliği yoktur.",
+        "Fokal nörolojik defisit saptanmaz.",
+        "Kulak muayenesinde hafif viral üst solunum yolu bulguları vardır."
+      ]
+    },
+    {
+      "id": "v337-peds-clinical-unique-004-tekrarlayan-atesli-idrar-yolu-enfeksiyonu",
+      "title": "Tekrarlayan ateşli idrar yolu enfeksiyonu",
+      "before": [
+        "Çocuk hafif halsizdir.",
+        "Suprapubik hassasiyet ve sağ kostovertebral açı hassasiyeti vardır.",
+        "Vücut sıcaklığı 38.9°C, kan basıncı yaşına göre normaldir.",
+        "Genital muayenede lokal irritasyon dışında belirgin anomali saptanmaz."
+      ],
+      "after": [
+        "Çocuk hafif halsizdir.",
+        "Suprapubik hassasiyet ve sağ kostovertebral açı hassasiyeti vardır.",
+        "Genital muayenede lokal irritasyon dışında belirgin anomali saptanmaz."
+      ]
+    },
+    {
+      "id": "v337-peds-clinical-unique-005-kucuk-cocukta-tek-diz-sisligi",
+      "title": "Küçük çocukta tek diz şişliği",
+      "before": [
+        "Sağ dizde efüzyon, hafif sıcaklık artışı ve hareket açıklığında kısıtlılık vardır.",
+        "Diğer eklemlerde belirgin artrit saptanmaz.",
+        "Çocuk genel olarak iyi görünmektedir.",
+        "Vücut sıcaklığı 36.8°C, kan basıncı yaşına göre normaldir."
+      ],
+      "after": [
+        "Sağ dizde efüzyon, hafif sıcaklık artışı ve hareket açıklığında kısıtlılık vardır.",
+        "Diğer eklemlerde belirgin artrit saptanmaz.",
+        "Çocuk genel olarak iyi görünmektedir."
+      ]
+    },
+    {
+      "id": "v337-peds-clinical-unique-006-karinda-kitle-ve-kilo-kaybi",
+      "title": "Karında kitle ve kilo kaybı",
+      "before": [
+        "Çocuk zayıf ve huzursuz görünmektedir.",
+        "Batında orta hattı geçen, düzensiz ve sert kitle palpe edilir.",
+        "Hafif periorbital morluk benzeri renk değişikliği vardır.",
+        "Kan basıncı 118/76 mmHg ile yaşına göre yüksek sınıra yakındır, nabız 126/dk’dır."
+      ],
+      "after": [
+        "Çocuk zayıf ve huzursuz görünmektedir.",
+        "Batında orta hattı geçen, düzensiz ve sert kitle palpe edilir.",
+        "Hafif periorbital morluk benzeri renk değişikliği vardır."
+      ]
+    },
+    {
+      "id": "v337-peds-clinical-unique-007-ust-solunum-yolu-enfeksiyonu-sonrasi-topal",
+      "title": "Üst solunum yolu enfeksiyonu sonrası topallama",
+      "before": [
+        "Çocuk genel durumu iyi ve afebrildir.",
+        "Sağ kalça iç rotasyonunda hafif ağrı vardır ancak pasif hareketler çok şiddetli ağrılı değildir.",
+        "Diz ve ayak bileği muayenesi doğaldır.",
+        "Vücut sıcaklığı 36.9°C, nabız 92/dk’dır."
+      ],
+      "after": [
+        "Çocuk genel durumu iyi ve afebrildir.",
+        "Sağ kalça iç rotasyonunda hafif ağrı vardır ancak pasif hareketler çok şiddetli ağrılı değildir.",
+        "Diz ve ayak bileği muayenesi doğaldır."
+      ]
+    },
+    {
+      "id": "v337-peds-clinical-unique-008-duzenli-tekrarlayan-ates-ataklari",
+      "title": "Düzenli tekrarlayan ateş atakları",
+      "before": [
+        "Atak sırasında çocuk ateşli ancak toksik değildir.",
+        "Tonsiller eritemlidir, ağız mukozasında aftöz ülserler vardır ve bilateral servikal lenf nodları hassastır.",
+        "Karaciğer-dalak büyüklüğü yoktur.",
+        "Vücut sıcaklığı 39.2°C, kan basıncı normaldir."
+      ],
+      "after": [
+        "Atak sırasında çocuk ateşli ancak toksik değildir.",
+        "Tonsiller eritemlidir, ağız mukozasında aftöz ülserler vardır ve bilateral servikal lenf nodları hassastır.",
+        "Karaciğer-dalak büyüklüğü yoktur."
+      ]
+    },
+    {
+      "id": "v337-peds-clinical-unique-009-sarilik-ve-dalak-buyuklugu",
+      "title": "Sarılık ve dalak büyüklüğü",
+      "before": [
+        "Çocuk hafif soluk ve subikteriktir.",
+        "Dalak kot altında 3 cm palpe edilir.",
+        "Karaciğer hafif ele gelir.",
+        "Peteşi veya ekimoz yoktur.",
+        "Vücut sıcaklığı normal, nabız 96/dk’dır."
+      ],
+      "after": [
+        "Çocuk hafif soluk ve subikteriktir.",
+        "Dalak kot altında 3 cm palpe edilir.",
+        "Karaciğer hafif ele gelir.",
+        "Peteşi veya ekimoz yoktur."
+      ]
+    },
+    {
+      "id": "v337-peds-clinical-unique-010-diz-agrisiyla-gelen-adolesan",
+      "title": "Diz ağrısıyla gelen adölesan",
+      "before": [
+        "Çocuk obez görünümdedir ve antalgik yürür.",
+        "Sağ kalçada iç rotasyon kısıtlıdır; kalça fleksiyonu sırasında uyluk dış rotasyona gitmektedir.",
+        "Diz muayenesinde belirgin efüzyon yoktur.",
+        "Vücut sıcaklığı normaldir."
+      ],
+      "after": [
+        "Çocuk obez görünümdedir ve antalgik yürür.",
+        "Sağ kalçada iç rotasyon kısıtlıdır; kalça fleksiyonu sırasında uyluk dış rotasyona gitmektedir.",
+        "Diz muayenesinde belirgin efüzyon yoktur."
+      ]
+    },
+    {
+      "id": "v339-peds-001-yenidoganda-kusma-ve-dolasim-bozuklugu",
+      "title": "Yenidoğanda kusma ve dolaşım bozukluğu",
+      "before": [
+        "Bebek letarjik ve belirgin dehidrate görünmektedir.",
+        "Kapiller dolum 4 saniyedir, periferik nabızları zayıftır.",
+        "Dış genital yapıda klitoromegali ve posterior labial füzyon izlenir.",
+        "Kan basıncı 62/36 mmHg, nabız 178/dk ve vücut sıcaklığı 36.2°C’dir."
+      ],
+      "after": [
+        "Bebek letarjik ve belirgin dehidrate görünmektedir.",
+        "Kapiller dolum 4 saniyedir, periferik nabızları zayıftır.",
+        "Dış genital yapıda klitoromegali ve posterior labial füzyon izlenir."
+      ]
+    },
+    {
+      "id": "v339-peds-002-biloz-kusma-ve-batin-hassasiyeti",
+      "title": "Bilöz kusma ve batın hassasiyeti",
+      "before": [
+        "Bebek huzursuz ve soluk görünmektedir.",
+        "Batın hafif distandü ve hassastır; belirgin peritonit bulgusu henüz yoktur.",
+        "Kapiller dolum 3 saniyedir.",
+        "Nabız 166/dk, kan basıncı 72/42 mmHg ve oksijen satürasyonu %96’dır."
+      ],
+      "after": [
+        "Bebek huzursuz ve soluk görünmektedir.",
+        "Batın hafif distandü ve hassastır; belirgin peritonit bulgusu henüz yoktur.",
+        "Kapiller dolum 3 saniyedir."
+      ]
+    },
+    {
+      "id": "v339-peds-003-premature-bebekte-batin-distansiyonu",
+      "title": "Prematüre bebekte batın distansiyonu",
+      "before": [
+        "Bebek letarjik ve soluk görünmektedir.",
+        "Batın belirgin distandü ve hassastır; bağırsak sesleri azalmıştır.",
+        "Vücut sıcaklığı 36.1°C, nabız 172/dk ve kapiller dolum 4 saniyedir."
+      ],
+      "after": [
+        "Bebek letarjik ve soluk görünmektedir.",
+        "Batın belirgin distandü ve hassastır; bağırsak sesleri azalmıştır.",
+        "Kapiller dolum 4 saniyedir."
+      ]
+    },
+    {
+      "id": "v339-peds-004-grip-sonrasi-kusma-ve-bilinc-degisikligi",
+      "title": "Grip sonrası kusma ve bilinç değişikliği",
+      "before": [
+        "Çocuk letarjik ve irritabldır.",
+        "Ense sertliği belirgin değildir.",
+        "Karaciğer hafif büyümüş palpe edilir.",
+        "Sarılık belirgin değildir.",
+        "Kan basıncı 104/66 mmHg, nabız 118/dk’dır."
+      ],
+      "after": [
+        "Çocuk letarjik ve irritabldır.",
+        "Ense sertliği belirgin değildir.",
+        "Karaciğer hafif büyümüş palpe edilir.",
+        "Sarılık belirgin değildir."
+      ]
+    },
+    {
+      "id": "v339-peds-005-viral-enfeksiyon-sonrasi-morarma",
+      "title": "Viral enfeksiyon sonrası morarma",
+      "before": [
+        "Çocuk iyi görünümlüdür.",
+        "Alt ekstremitelerde peteşi ve ekimozlar vardır.",
+        "Lenfadenopati, hepatomegali ve splenomegali saptanmaz.",
+        "Nörolojik muayenesi doğaldır.",
+        "Vücut sıcaklığı 36.8°C’dir."
+      ],
+      "after": [
+        "Çocuk iyi görünümlüdür.",
+        "Alt ekstremitelerde peteşi ve ekimozlar vardır.",
+        "Lenfadenopati, hepatomegali ve splenomegali saptanmaz.",
+        "Nörolojik muayenesi doğaldır."
+      ]
+    },
+    {
+      "id": "v339-peds-006-bebekte-tekrarlayan-agir-enfeksiyon",
+      "title": "Bebekte tekrarlayan ağır enfeksiyon",
+      "before": [
+        "Bebek zayıf ve gelişme geriliği olan görünümde, oral kandidiyazisi belirgindir.",
+        "Akciğerlerde yaygın ince raller duyulur.",
+        "Lenf nodları belirgin palpe edilmez, tonsiller küçük görünür.",
+        "Vücut sıcaklığı 38.0°C’dir."
+      ],
+      "after": [
+        "Bebek zayıf ve gelişme geriliği olan görünümde, oral kandidiyazisi belirgindir.",
+        "Akciğerlerde yaygın ince raller duyulur.",
+        "Lenf nodları belirgin palpe edilmez, tonsiller küçük görünür."
+      ]
+    }
+  ],
+  "sourceDataAlsoRewritten": true,
+  "finalRawCaseBrokenTemperatureFragments": 0
+}

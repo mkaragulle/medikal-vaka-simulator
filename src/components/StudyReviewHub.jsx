@@ -1,46 +1,9 @@
-import { lazy, memo, Suspense, useEffect, useState } from 'react';
+import { memo } from 'react';
 import WrongAnswersPanel from './WrongAnswersPanel.jsx';
+import TusPearlHubPanel from './TusPearlHubPanel.jsx';
 import './tusPearlCards.css';
 
-const TusPearlHubPanel = lazy(() => import('./TusPearlHubPanel.jsx'));
-
-function scheduleIdleWork(callback, delay = 420) {
-  if (typeof window === 'undefined') return () => {};
-  let idleId = 0;
-  const timerId = window.setTimeout(() => {
-    if ('requestIdleCallback' in window) {
-      idleId = window.requestIdleCallback(callback, { timeout: 1400 });
-      return;
-    }
-    callback();
-  }, delay);
-
-  return () => {
-    window.clearTimeout(timerId);
-    if (idleId && 'cancelIdleCallback' in window) window.cancelIdleCallback(idleId);
-  };
-}
-
-function PearlHubSkeleton() {
-  return (
-    <section className="tus-pearl-hub-panel card-surface pearl-hub-skeleton" aria-label="Hap Bilgi Kartları hazırlanıyor">
-      <div className="pearl-hub-skeleton-line wide" />
-      <div className="pearl-hub-skeleton-line" />
-      <div className="pearl-hub-skeleton-grid">
-        <span />
-        <span />
-        <span />
-        <span />
-      </div>
-    </section>
-  );
-}
-
 function StudyReviewHub({ wrongAnswers = [], onOpenCase, onRemoveCase, onClearAll, onOpenPearlStudy, onOpenAllWrongAnswers }) {
-  const [pearlHubReady, setPearlHubReady] = useState(false);
-
-  useEffect(() => scheduleIdleWork(() => setPearlHubReady(true), 520), []);
-
   return (
     <section className="study-review-hub" aria-label="Yanlışlar ve hap bilgi çalışma paneli">
       <div className="study-review-hub-intro">
@@ -58,13 +21,7 @@ function StudyReviewHub({ wrongAnswers = [], onOpenCase, onRemoveCase, onClearAl
           onOpenPearlStudy={onOpenPearlStudy}
           onOpenAllWrongAnswers={onOpenAllWrongAnswers}
         />
-        {pearlHubReady ? (
-          <Suspense fallback={<PearlHubSkeleton />}>
-            <TusPearlHubPanel wrongAnswers={wrongAnswers} onOpenStudy={onOpenPearlStudy} />
-          </Suspense>
-        ) : (
-          <PearlHubSkeleton />
-        )}
+        <TusPearlHubPanel wrongAnswers={wrongAnswers} onOpenStudy={onOpenPearlStudy} />
       </div>
     </section>
   );

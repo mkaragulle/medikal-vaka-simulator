@@ -13,6 +13,7 @@ import {
   toSentence,
 } from '../utils/displayText.js';
 import { getDifficultyMeta } from '../utils/scoring.js';
+import { sanitizeClinicalExamFindings } from '../utils/clinicalExamSanitizer.js';
 import { buildInvestigationOrders } from '../utils/investigationOrders.js';
 import { formatAppearedYears, resolveExamSignal } from '../utils/examMeta.js';
 import './tusPearlCards.css';
@@ -705,17 +706,18 @@ function CasePlayer({
   const displayFocus = useMemo(() => buildNonRevealingFocus(clinicalCase), [clinicalCase]);
   const difficultyMeta = useMemo(() => getDifficultyMeta(clinicalCase.difficulty), [clinicalCase.difficulty]);
   const difficultyLabel = isSolved ? `${difficultyMeta.label}-Çözüldü` : difficultyMeta.label;
+  const sanitizedExamFindings = useMemo(() => sanitizeClinicalExamFindings(clinicalCase.exam, clinicalCase.vitals), [clinicalCase.exam, clinicalCase.vitals]);
   const patientSummary = useMemo(() => buildPatientSummary(clinicalCase), [clinicalCase]);
   const caseExamSignal = useMemo(() => resolveExamSignal(clinicalCase), [clinicalCase]);
   const vitalEntries = useMemo(() => buildDerivedVitalEntries(clinicalCase.vitals), [clinicalCase.vitals]);
   const investigationOrders = useMemo(() => buildInvestigationOrders(clinicalCase), [clinicalCase]);
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const caseGlossaryEnabled = !hardMode;
-  const hasExamData = Array.isArray(clinicalCase.exam) && clinicalCase.exam.some((finding) => String(finding || '').trim());
+  const hasExamData = sanitizedExamFindings.some((finding) => String(finding || '').trim());
   const hasClinicalExamVisuals = (clinicalCase.images || []).some((image) => image?.modality === 'clinical' && (image.thumbnailUrl || image.imageUrl));
   const clinicalExamVisualGate = useMemo(
-    () => splitClinicalExamFindingsForVisualGate(clinicalCase.exam, hasClinicalExamVisuals),
-    [clinicalCase.exam, hasClinicalExamVisuals]
+    () => splitClinicalExamFindingsForVisualGate(sanitizedExamFindings, hasClinicalExamVisuals),
+    [sanitizedExamFindings, hasClinicalExamVisuals]
   );
   const hasVisualGatedClinicalExamFindings = clinicalExamVisualGate.visualGated.length > 0;
   const hasImmediatelyVisibleClinicalExamFindings = clinicalExamVisualGate.visible.length > 0;
@@ -1051,7 +1053,7 @@ function CasePlayer({
                               <span className="visual-interpretation-heading always-visible-exam-heading"><Icon name="Stethoscope" size={13} /> Görsel dışı fizik muayene bulguları</span>
                             ) : null}
                             <ul className="clean-list dense scientific-finding-list">
-                              {(hasClinicalExamVisuals ? clinicalExamVisualGate.visible : clinicalCase.exam).map((finding) => (
+                              {(hasClinicalExamVisuals ? clinicalExamVisualGate.visible : sanitizedExamFindings).map((finding) => (
                                 <li key={finding}><GlossaryText text={expandExamFinding(finding)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></li>
                               ))}
                             </ul>
