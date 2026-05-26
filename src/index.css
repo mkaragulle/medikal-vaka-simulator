@@ -52974,3 +52974,193 @@ html[data-theme='dark'] .bottom-case-browser .bottom-case-search:focus-within,
     width: 100% !important;
   }
 }
+
+/* ========================================================================== 
+   KLINIKIQ V385 — Case workspace bottom visibility + tighter bottom rail gap
+   --------------------------------------------------------------------------
+   The V384 safety gap solved overlap but made the case workspace look detached
+   from “Diğer olgular”. This pass keeps the lower borders of the Objective
+   Data / Tetkik and right question columns paint-safe while pulling the rail
+   closer without reintroducing overlap.
+   ========================================================================== */
+body:not(.klinikiq-auth-lock) .case-page-shell .case-route-transition,
+.case-page-shell .case-route-transition {
+  display: flow-root !important;
+  position: relative !important;
+  z-index: 3 !important;
+  margin-bottom: clamp(10px, 1vw, 16px) !important;
+  padding-bottom: 2px !important;
+  overflow: visible !important;
+  contain: none !important;
+  content-visibility: visible !important;
+  isolation: isolate !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .clinical-case.qbank-case,
+.case-page-shell .clinical-case.qbank-case,
+body:not(.klinikiq-auth-lock) .case-page-shell .professional-qbank-shell,
+.case-page-shell .professional-qbank-shell,
+body:not(.klinikiq-auth-lock) .case-page-shell .qbank-shell,
+.case-page-shell .qbank-shell,
+body:not(.klinikiq-auth-lock) .case-page-shell .qbank-main-column,
+.case-page-shell .qbank-main-column,
+body:not(.klinikiq-auth-lock) .case-page-shell .qbank-content-stack,
+.case-page-shell .qbank-content-stack,
+body:not(.klinikiq-auth-lock) .case-page-shell .professional-content-stack,
+.case-page-shell .professional-content-stack {
+  overflow: visible !important;
+  contain: none !important;
+  content-visibility: visible !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .clinical-data-card,
+.case-page-shell .clinical-data-card,
+body:not(.klinikiq-auth-lock) .case-page-shell .investigation-section,
+.case-page-shell .investigation-section,
+body:not(.klinikiq-auth-lock) .case-page-shell .requested-test-card,
+.case-page-shell .requested-test-card,
+body:not(.klinikiq-auth-lock) .case-page-shell .inline-order-result,
+.case-page-shell .inline-order-result,
+body:not(.klinikiq-auth-lock) .case-page-shell .ordered-result-card,
+.case-page-shell .ordered-result-card,
+body:not(.klinikiq-auth-lock) .case-page-shell .right-workspace-shell,
+.case-page-shell .right-workspace-shell,
+body:not(.klinikiq-auth-lock) .case-page-shell .diagnostic-decision-panel,
+.case-page-shell .diagnostic-decision-panel {
+  contain: none !important;
+  content-visibility: visible !important;
+  clip-path: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .professional-qbank-shell,
+.case-page-shell .professional-qbank-shell,
+body:not(.klinikiq-auth-lock) .case-page-shell .qbank-shell,
+.case-page-shell .qbank-shell {
+  padding-bottom: 4px !important;
+  margin-bottom: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser,
+.case-page-shell .bottom-case-browser,
+.bottom-case-browser {
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: 0 !important;
+  padding-top: clamp(18px, 1.35vw, 24px) !important;
+  transform: translateZ(0) !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser::before,
+.case-page-shell .bottom-case-browser::before,
+.bottom-case-browser::before {
+  content: none !important;
+  display: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser-head,
+.case-page-shell .bottom-case-browser-head,
+.bottom-case-browser .bottom-case-browser-head {
+  margin-bottom: clamp(12px, 1vw, 16px) !important;
+}
+
+@media (max-width: 560px) {
+  body:not(.klinikiq-auth-lock) .case-page-shell .case-route-transition,
+  .case-page-shell .case-route-transition {
+    margin-bottom: 12px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser,
+  .case-page-shell .bottom-case-browser,
+  .bottom-case-browser {
+    padding-top: 18px !important;
+  }
+}
+
+
+/* ========================================================================== 
+   KLINIKIQ V386 — Global invisible scrollbar mode
+   --------------------------------------------------------------------------
+   All native scrollbar visuals are hidden project-wide while keeping native
+   scrolling functional through mouse wheel, trackpad, touch, keyboard and
+   programmatic scroll. Legacy/custom scrollbar overlay nodes are also forced
+   invisible so they cannot create extra rails, ghost boxes or pointer layers.
+   ========================================================================== */
+html,
+body,
+*,
+*::before,
+*::after {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  scrollbar-color: transparent transparent !important;
+  scrollbar-gutter: auto !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+  background: transparent !important;
+}
+
+html::-webkit-scrollbar-track,
+html::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-corner,
+body::-webkit-scrollbar-track,
+body::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-corner,
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-corner {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+[data-ki-custom-scrollbars-v364-root],
+[data-ki-custom-scrollbars-v365-root],
+[data-ki-custom-scrollbars-v366-root],
+[data-ki-custom-scrollbars-v367-root],
+[data-ki-custom-scrollbar-v367-track],
+[data-ki-custom-scrollbar-v367-thumb],
+.ki-custom-scrollbar-v367-track,
+.ki-custom-scrollbar-v367-thumb {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.horizontal-case-list,
+.case-list,
+.sidebar-layout,
+.qbank-side-column,
+.right-workspace-shell,
+.table-wrap,
+textarea,
+main,
+aside,
+.modal,
+.drawer,
+.popover,
+.dropdown-menu,
+[role='dialog'],
+[aria-modal='true'],
+[data-scroll-container],
+[data-scrollable='true'] {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  scrollbar-color: transparent transparent !important;
+  scrollbar-gutter: auto !important;
+}
