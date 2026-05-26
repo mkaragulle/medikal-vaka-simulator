@@ -51867,3 +51867,206 @@ html.ki-custom-scrollbars-v367-on .bottom-case-browser .horizontal-case-list::-w
     max-width: 290px !important;
   }
 }
+
+/* ========================================================================== 
+   V379 — Stable no-shadow UI during scrolling
+   --------------------------------------------------------------------------
+   Previous performance passes changed card shadows while the user was scrolling.
+   That created a visible flicker: shadows disappeared while dragging the custom
+   scrollbar and returned after scroll idle. KlinikIQ now uses borders/surfaces
+   instead of runtime shadow changes for high-data screens.
+   ========================================================================== */
+html.ki-performance-mode {
+  --shadow-card: none !important;
+  --shadow-hover: none !important;
+  --shadow-elevated: none !important;
+}
+
+html.ki-performance-mode :is(
+  .card-surface,
+  .branch-card,
+  .case-card,
+  .case-list-item,
+  .horizontal-case-card,
+  .answer-option,
+  .option-card,
+  .requested-test-card,
+  .inline-order-result,
+  .clinical-data-card,
+  .visual-first-help-card,
+  .question-panel,
+  .summary-card,
+  .wrong-answer-card,
+  .study-card,
+  .tools-panel,
+  .tus-pearl-card,
+  .tus-pearl-library-card,
+  .pearl-study-card,
+  .pearl-study-stage,
+  .catalog-card-row,
+  .flashcard,
+  .btn,
+  button
+),
+html.ki-performance-mode :is(
+  .card-surface,
+  .branch-card,
+  .case-card,
+  .case-list-item,
+  .horizontal-case-card,
+  .answer-option,
+  .option-card,
+  .requested-test-card,
+  .inline-order-result,
+  .clinical-data-card,
+  .visual-first-help-card,
+  .question-panel,
+  .summary-card,
+  .wrong-answer-card,
+  .study-card,
+  .tools-panel,
+  .tus-pearl-card,
+  .tus-pearl-library-card,
+  .pearl-study-card,
+  .pearl-study-stage,
+  .catalog-card-row,
+  .flashcard,
+  .btn,
+  button
+)::before,
+html.ki-performance-mode :is(
+  .card-surface,
+  .branch-card,
+  .case-card,
+  .case-list-item,
+  .horizontal-case-card,
+  .answer-option,
+  .option-card,
+  .requested-test-card,
+  .inline-order-result,
+  .clinical-data-card,
+  .visual-first-help-card,
+  .question-panel,
+  .summary-card,
+  .wrong-answer-card,
+  .study-card,
+  .tools-panel,
+  .tus-pearl-card,
+  .tus-pearl-library-card,
+  .pearl-study-card,
+  .pearl-study-stage,
+  .catalog-card-row,
+  .flashcard,
+  .btn,
+  button
+)::after {
+  box-shadow: none !important;
+}
+
+html.ki-performance-mode :is(
+  .card-surface,
+  .branch-card,
+  .case-card,
+  .case-list-item,
+  .horizontal-case-card,
+  .answer-option,
+  .option-card,
+  .requested-test-card,
+  .inline-order-result,
+  .clinical-data-card,
+  .visual-first-help-card,
+  .question-panel,
+  .summary-card,
+  .wrong-answer-card,
+  .study-card,
+  .tools-panel,
+  .tus-pearl-card,
+  .tus-pearl-library-card,
+  .pearl-study-card,
+  .pearl-study-stage,
+  .catalog-card-row,
+  .flashcard,
+  .btn,
+  button
+):hover,
+html.ki-performance-mode.ki-is-scrolling :is(
+  .card-surface,
+  .branch-card,
+  .case-card,
+  .case-list-item,
+  .horizontal-case-card,
+  .answer-option,
+  .option-card,
+  .requested-test-card,
+  .inline-order-result,
+  .clinical-data-card,
+  .visual-first-help-card,
+  .question-panel,
+  .summary-card,
+  .wrong-answer-card,
+  .study-card,
+  .tools-panel,
+  .tus-pearl-card,
+  .tus-pearl-library-card,
+  .pearl-study-card,
+  .pearl-study-stage,
+  .catalog-card-row,
+  .flashcard,
+  .btn,
+  button
+),
+html.ki-performance-mode.ki-route-transitioning :is(
+  .card-surface,
+  .branch-card,
+  .case-card,
+  .case-list-item,
+  .horizontal-case-card,
+  .answer-option,
+  .option-card,
+  .requested-test-card,
+  .inline-order-result,
+  .clinical-data-card,
+  .visual-first-help-card,
+  .question-panel,
+  .summary-card,
+  .wrong-answer-card,
+  .study-card,
+  .tools-panel,
+  .tus-pearl-card,
+  .tus-pearl-library-card,
+  .pearl-study-card,
+  .pearl-study-stage,
+  .catalog-card-row,
+  .flashcard,
+  .btn,
+  button
+) {
+  box-shadow: none !important;
+}
+
+html.ki-performance-mode :is(
+  .card-surface,
+  .branch-card,
+  .case-card,
+  .case-list-item,
+  .horizontal-case-card,
+  .answer-option,
+  .option-card,
+  .requested-test-card,
+  .inline-order-result,
+  .clinical-data-card,
+  .visual-first-help-card,
+  .question-panel,
+  .summary-card,
+  .wrong-answer-card,
+  .study-card,
+  .tools-panel,
+  .tus-pearl-card,
+  .tus-pearl-library-card,
+  .pearl-study-card,
+  .pearl-study-stage,
+  .catalog-card-row,
+  .flashcard
+) {
+  transition-property: background-color, border-color, color, opacity, transform !important;
+}

@@ -18245,3 +18245,46 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
     max-height: min(360px, 62vh) !important;
   }
 }
+
+/* ========================================================================== 
+   V379 — Hap Kartlar stable no-shadow scrolling polish
+   ========================================================================== */
+html.ki-performance-mode .tus-pearl-library-card,
+html.ki-performance-mode .tus-pearl-library-card:hover,
+html.ki-performance-mode .tus-pearl-card,
+html.ki-performance-mode .tus-pearl-card:hover,
+html.ki-performance-mode .pearl-study-card,
+html.ki-performance-mode .pearl-study-card:hover,
+html.ki-performance-mode .pearl-study-stage,
+html.ki-performance-mode .pearl-study-stage:hover,
+html.ki-performance-mode .catalog-card-row,
+html.ki-performance-mode .catalog-card-row:hover,
+html.ki-performance-mode .catalog-card-virtual-row > .tus-pearl-library-card.catalog-card-row,
+html.ki-performance-mode.ki-is-scrolling .tus-pearl-library-card,
+html.ki-performance-mode.ki-is-scrolling .pearl-study-card,
+html.ki-performance-mode.ki-is-scrolling .pearl-study-stage,
+html.ki-performance-mode.ki-is-scrolling .catalog-card-virtual-row > .tus-pearl-library-card.catalog-card-row,
+html.ki-performance-mode.ki-route-transitioning .tus-pearl-library-card,
+html.ki-performance-mode.ki-route-transitioning .pearl-study-card,
+html.ki-performance-mode.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.catalog-card-row {
+  box-shadow: none !important;
+}
+
+html.ki-performance-mode .tus-pearl-library-card,
+html.ki-performance-mode .tus-pearl-card,
+html.ki-performance-mode .pearl-study-card,
+html.ki-performance-mode .pearl-study-stage,
+html.ki-performance-mode .catalog-card-row {
+  transition-property: background-color, border-color, color, opacity, transform !important;
+}
+
+html.ki-is-scrolling .tus-pearl-library-card,
+html.ki-is-scrolling .pearl-study-card,
+html.ki-is-scrolling .pearl-study-stage,
+html.ki-is-scrolling .pearl-inline-delete-popover,
+html.ki-route-transitioning .tus-pearl-library-card,
+html.ki-route-transitioning .pearl-study-card,
+html.ki-is-scrolling .catalog-card-virtual-row > .tus-pearl-library-card.catalog-card-row,
+html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.catalog-card-row {
+  box-shadow: none !important;
+}
