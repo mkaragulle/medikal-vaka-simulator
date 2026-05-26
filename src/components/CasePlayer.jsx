@@ -139,13 +139,18 @@ function buildDerivedVitalEntries(vitals = {}) {
     .filter((key) => normalizedVitals[key] !== undefined && String(normalizedVitals[key] || '').trim())
     .map((key) => [key, normalizedVitals[key]]);
 
-  const shockIndex = calculateShockIndex(normalizedVitals.Nabız, normalizedVitals.TA);
-  if (shockIndex) {
-    orderedBase.push(['Şok indeksi', `${shockIndex.formatted} ${shockIndex.note}`]);
+  const explicitShockIndex = normalizedVitals['Şok indeksi'];
+  if (explicitShockIndex && String(explicitShockIndex || '').trim()) {
+    orderedBase.push(['Şok indeksi', explicitShockIndex]);
+  } else {
+    const shockIndex = calculateShockIndex(normalizedVitals.Nabız, normalizedVitals.TA);
+    if (shockIndex) {
+      orderedBase.push(['Şok indeksi', `${shockIndex.formatted} ${shockIndex.note}`]);
+    }
   }
 
   const extraEntries = Object.entries(normalizedVitals)
-    .filter(([key, value]) => !['TA', 'Nabız', 'Solunum', 'SpO2', 'Ateş'].includes(key) && String(value || '').trim())
+    .filter(([key, value]) => !['TA', 'Nabız', 'Solunum', 'SpO2', 'Ateş', 'Şok indeksi'].includes(key) && String(value || '').trim())
     .map(([key, value]) => [key, sanitizeMeasurementText(value)]);
   return [...orderedBase, ...extraEntries];
 }
