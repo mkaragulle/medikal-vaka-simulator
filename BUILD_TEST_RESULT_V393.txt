@@ -1,4 +1,0 @@
-V393 build test: PASSED
-Command: npm run build
-Result: Vite production build completed successfully.
-Note: Existing large chunk warnings remain; they are warnings, not build errors.
