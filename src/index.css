@@ -53800,3 +53800,45 @@ html,
 html:focus-within {
   scroll-behavior: auto !important;
 }
+
+/* ==========================================================
+   V392 — Objektif Veri / Tetkik açılış akıcılığı
+   Tasarım korunur; açılış sırasında pahalı animasyon/scroll/reflow yükü azaltılır.
+   ========================================================== */
+html,
+body,
+.clinical-case,
+.qbank-content-stack,
+.section-anchor,
+.smart-investigation-order-section {
+  scroll-behavior: auto !important;
+}
+
+.smart-investigation-order-section,
+.refined-investigation-order-section,
+.investigation-order-section {
+  content-visibility: visible !important;
+}
+
+.smart-investigation-order-section .order-card-shell.requested-test-card,
+.smart-investigation-order-section .inline-order-result.requested-result-panel {
+  contain: layout style !important;
+  will-change: auto !important;
+}
+
+.smart-investigation-order-section .inline-order-result.requested-result-panel,
+.smart-investigation-order-section .inline-order-result {
+  animation: none !important;
+}
+
+.smart-investigation-order-section .order-card-shell.requested-test-card,
+.smart-investigation-order-section .smart-order-card.requested-test-card-head.investigation-option-card,
+.smart-investigation-order-section .neutral-order-card.requested-test-card-head.investigation-option-card,
+.smart-investigation-order-section .order-status-chip,
+.smart-investigation-order-section .order-expand-control {
+  transform: none !important;
+  transition-property: border-color, background-color, color, box-shadow !important;
+  transition-duration: 80ms !important;
+  transition-timing-function: var(--ease-standard) !important;
+}
+

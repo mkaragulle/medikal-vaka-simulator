@@ -870,7 +870,7 @@ function CasePlayer({
 
     const absoluteTop = target.getBoundingClientRect().top + window.scrollY;
     const offset = getStickyOffset();
-    window.scrollTo({ top: Math.max(absoluteTop - offset, 0), behavior: 'smooth' });
+    window.scrollTo({ top: Math.max(absoluteTop - offset, 0), behavior: 'auto' });
   }, [sectionRefs]);
 
   const handleOrderInvestigation = useCallback((id) => {

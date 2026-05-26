@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useMemo, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Icon, IconBadge } from './ui.jsx';
 import GlossaryText from './GlossaryTooltip.jsx';
 import { sanitizeMeasurementText } from '../utils/clinicalFormatters.js';
@@ -469,13 +469,19 @@ function ResultFindingList({ rows = [], glossaryEnabled = true, glossaryRevealMo
   );
 }
 
+const MemoizedResultFindingList = memo(ResultFindingList, (prev, next) => (
+  prev.rows === next.rows
+  && prev.glossaryEnabled === next.glossaryEnabled
+  && prev.glossaryRevealMode === next.glossaryRevealMode
+));
+
 function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, itemType = '', glossaryRevealMode = 'preAnswer' }) {
   if (!rows.length) return null;
 
   const normalizedRows = expandCompositeResultRows(rows);
 
   if (!shouldRenderParameterTable(rows, itemType)) {
-    return <ResultFindingList rows={rows} glossaryEnabled={glossaryEnabled} glossaryRevealMode={glossaryRevealMode} />;
+    return <MemoizedResultFindingList rows={rows} glossaryEnabled={glossaryEnabled} glossaryRevealMode={glossaryRevealMode} />;
   }
 
   const tableVariant = getResultTableVariant(rows, itemType, hardMode);
@@ -590,6 +596,14 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
   );
 }
 
+const MemoizedResultTable = memo(ResultTable, (prev, next) => (
+  prev.rows === next.rows
+  && prev.hardMode === next.hardMode
+  && prev.glossaryEnabled === next.glossaryEnabled
+  && prev.itemType === next.itemType
+  && prev.glossaryRevealMode === next.glossaryRevealMode
+));
+
 function ResultImages({ images = [], glossaryEnabled = true, glossaryRevealMode = 'preAnswer', revealCaption = true }) {
   if (!images.length) return null;
   return (
@@ -697,7 +711,7 @@ function InlineOrderResult({ item, mode, hardMode = false, glossaryRevealMode = 
         {revealScientificInterpretation && (hasRows || shouldShowSummary) ? (
           <div className={`visual-scientific-interpretation ${visualFirstMode ? 'revealed' : ''}`.trim()}>
             {visualFirstMode ? <span className="visual-interpretation-heading"><Icon name="Notes" size={13} /> Bilimsel yorum</span> : null}
-            {hasRows ? <ResultTable rows={result.rows} hardMode={hardMode} glossaryEnabled={mode !== 'exam' && !hardMode} itemType={item.type} glossaryRevealMode={glossaryRevealMode} /> : null}
+            {hasRows ? <MemoizedResultTable rows={result.rows} hardMode={hardMode} glossaryEnabled={mode !== 'exam' && !hardMode} itemType={item.type} glossaryRevealMode={glossaryRevealMode} /> : null}
             {shouldShowSummary ? (
               <div className={`ordered-result-comment ${hasRows || hasImages ? 'after-objective-data' : 'standalone'}`}>
                 {(hasRows || hasImages) ? <span>Kısa yorum</span> : null}
@@ -729,8 +743,8 @@ function OrderCard({ item, selected, expanded, onToggle, mode, hardMode = false,
       >
         <IconBadge icon={investigationIconByType[item.type] || 'Search'} tone={selected ? 'success' : 'blue'} size="sm" />
         <span className="investigation-option-copy smart-order-copy requested-test-copy">
-          <strong><GlossaryText text={item.title || item.label} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={5} /></strong>
-          <span className="order-card-subline neutral-order-subline"><em><GlossaryText text={subtype} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={5} /></em></span>
+          <strong>{item.title || item.label}</strong>
+          <span className="order-card-subline neutral-order-subline"><em>{subtype}</em></span>
         </span>
         <span className="smart-order-actions requested-test-actions">
           <span className={`investigation-option-state smart-order-state order-status-chip ${selected ? 'requested' : 'idle'}`}>
@@ -744,29 +758,45 @@ function OrderCard({ item, selected, expanded, onToggle, mode, hardMode = false,
         </span>
       </button>
 
-      {selected && expanded ? <InlineOrderResult item={item} mode={mode} hardMode={hardMode} glossaryRevealMode={glossaryRevealMode} /> : null}
+      {selected && expanded ? <MemoizedInlineOrderResult item={item} mode={mode} hardMode={hardMode} glossaryRevealMode={glossaryRevealMode} /> : null}
     </article>
   );
 }
 
-function OrderCategorySection({ group, orderedInvestigationIds, openResultIds, onToggleOrder, mode, hardMode = false, glossaryRevealMode = 'preAnswer' }) {
+const MemoizedInlineOrderResult = memo(InlineOrderResult, (prev, next) => (
+  prev.item === next.item
+  && prev.mode === next.mode
+  && prev.hardMode === next.hardMode
+  && prev.glossaryRevealMode === next.glossaryRevealMode
+));
+
+const MemoizedOrderCard = memo(OrderCard, (prev, next) => (
+  prev.item === next.item
+  && prev.selected === next.selected
+  && prev.expanded === next.expanded
+  && prev.mode === next.mode
+  && prev.hardMode === next.hardMode
+  && prev.glossaryRevealMode === next.glossaryRevealMode
+));
+
+function OrderCategorySection({ group, selectedOrderSet, openResultSet, onToggleOrder, mode, hardMode = false, glossaryRevealMode = 'preAnswer' }) {
   return (
     <section className="order-category-section smart-order-category-section" aria-labelledby={`order-category-${group.id}`}>
       <header className="order-category-head smart-order-category-head">
         <div>
-          <h3 id={`order-category-${group.id}`}><GlossaryText text={group.meta.label} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={5} /></h3>
-          {group.meta.description ? <p><GlossaryText text={group.meta.description} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={5} /></p> : null}
+          <h3 id={`order-category-${group.id}`}>{group.meta.label}</h3>
+          {group.meta.description ? <p>{group.meta.description}</p> : null}
         </div>
       </header>
       <div className="order-category-grid smart-order-category-grid">
         {group.items.map((item) => {
-          const selected = orderedInvestigationIds.includes(item.id);
+          const selected = selectedOrderSet.has(item.id);
           return (
-            <OrderCard
+            <MemoizedOrderCard
               key={item.id}
               item={item}
               selected={selected}
-              expanded={openResultIds.includes(item.id)}
+              expanded={openResultSet.has(item.id)}
               onToggle={onToggleOrder}
               mode={mode}
               hardMode={hardMode}
@@ -782,8 +812,14 @@ function OrderCategorySection({ group, orderedInvestigationIds, openResultIds, o
 function DiagnosticOrdersPanel({ orders, orderedInvestigationIds, onOrderInvestigation, mode, hardMode = false, glossaryRevealMode = 'preAnswer' }) {
   const groups = useMemo(() => groupOrdersByCategory(orders), [orders]);
   const [openResultIds, setOpenResultIds] = useState([]);
+  const selectedIdsRef = useRef(orderedInvestigationIds);
+  const orderSignature = useMemo(() => orders.map((item) => item.id).join('|'), [orders]);
+  const selectedOrderSet = useMemo(() => new Set(orderedInvestigationIds), [orderedInvestigationIds]);
+  const openResultSet = useMemo(() => new Set(openResultIds), [openResultIds]);
 
-  const orderSignature = orders.map((item) => item.id).join('|');
+  useEffect(() => {
+    selectedIdsRef.current = orderedInvestigationIds;
+  }, [orderedInvestigationIds]);
 
   useEffect(() => {
     setOpenResultIds([]);
@@ -794,7 +830,7 @@ function DiagnosticOrdersPanel({ orders, orderedInvestigationIds, onOrderInvesti
   }, [orderedInvestigationIds.length]);
 
   const handleToggleOrder = useCallback((item) => {
-    const alreadySelected = orderedInvestigationIds.includes(item.id);
+    const alreadySelected = selectedIdsRef.current.includes(item.id);
 
     if (!alreadySelected) {
       onOrderInvestigation?.(item.id);
@@ -807,7 +843,7 @@ function DiagnosticOrdersPanel({ orders, orderedInvestigationIds, onOrderInvesti
         ? current.filter((id) => id !== item.id)
         : [...current, item.id]
     ));
-  }, [onOrderInvestigation, orderedInvestigationIds]);
+  }, [onOrderInvestigation]);
 
   return (
     <div className="diagnostic-orders-panel smart-diagnostic-orders-panel" aria-label="İstenebilir tetkikler">
@@ -815,8 +851,8 @@ function DiagnosticOrdersPanel({ orders, orderedInvestigationIds, onOrderInvesti
         <OrderCategorySection
           key={group.id}
           group={group}
-          orderedInvestigationIds={orderedInvestigationIds}
-          openResultIds={openResultIds}
+          selectedOrderSet={selectedOrderSet}
+          openResultSet={openResultSet}
           onToggleOrder={handleToggleOrder}
           mode={mode}
           hardMode={hardMode}
