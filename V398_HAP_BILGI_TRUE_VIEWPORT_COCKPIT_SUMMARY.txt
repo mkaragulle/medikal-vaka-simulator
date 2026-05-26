@@ -1,8 +1,0 @@
-V398 — Hap Bilgi true viewport cockpit fix
-
-- Right control panel no longer restores scroll on desktop study screen.
-- Left flashcard column and right control column are forced to the same viewport-filling workspace height.
-- The flashcard area now uses the remaining vertical space intelligently while keeping the decision dock visible.
-- Right panel rows are compressed with viewport-aware clamp values instead of overflow scrolling.
-- Kart Araçları uses equal-height implicit grid rows so Favori/Katalog/Kendi Kart/Kopyala/Kartı Sil all stay visible in the same panel.
-- The visual scrollbar remains globally invisible and the Hap Bilgi right panel does not need scroll to reveal Kartı Sil on normal desktop/laptop heights.
