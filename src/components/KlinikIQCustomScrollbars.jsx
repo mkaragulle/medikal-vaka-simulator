@@ -6,13 +6,13 @@ const STYLE_ID = 'ki-custom-scrollbars-v367-style';
 const ROOT_ATTR = 'data-ki-custom-scrollbars-v367-root';
 const TRACK_ATTR = 'data-ki-custom-scrollbar-v367-track';
 const THUMB_ATTR = 'data-ki-custom-scrollbar-v367-thumb';
-const MAX_TRACKED_ELEMENTS = 56;
+const MAX_TRACKED_ELEMENTS = 32;
 const TRACK_SIZE = 6;
 const THUMB_SIZE = 3.5;
 const MIN_THUMB = 24;
 const EDGE_INSET = 5;
-const TOP_LAYER_RECT_CACHE_MS = 160;
-const POINTER_ACTIVITY_THROTTLE_MS = 240;
+const TOP_LAYER_RECT_CACHE_MS = 260;
+const POINTER_ACTIVITY_THROTTLE_MS = 360;
 
 
 const TOP_LAYER_SELECTOR = [
@@ -86,6 +86,17 @@ const SCROLLABLE_CANDIDATE_SELECTOR = [
   'aside',
   'pre',
   'textarea',
+].join(', ');
+
+const HIGH_DATA_MUTATION_SELECTOR = [
+  '.bottom-case-browser',
+  '.horizontal-case-list',
+  '.requested-result-panel',
+  '.inline-order-result',
+  '.diagnostic-orders-panel',
+  '.smart-diagnostic-orders-panel',
+  '.ordered-result-table-wrap',
+  '.table-wrap',
 ].join(', ');
 
 function rectsOverlap(a, b) {
@@ -817,17 +828,33 @@ html.${DRAGGING_CLASS} * {
           const touchedImmediateScrollbar = touchedNodes.some((node) => (
             node instanceof Element
             && (
-              node.matches?.('[data-scrollbar-immediate="true"], .bottom-case-browser, .horizontal-case-list')
-              || node.querySelector?.('[data-scrollbar-immediate="true"], .bottom-case-browser, .horizontal-case-list')
+              node.matches?.('[data-scrollbar-immediate="true"], .horizontal-case-list')
+              || node.querySelector?.('[data-scrollbar-immediate="true"], .horizontal-case-list')
             )
           ));
-          shouldScan = true;
+          const targetIsHighData = target instanceof Element && Boolean(target.closest?.(HIGH_DATA_MUTATION_SELECTOR));
+          const touchedHighData = targetIsHighData || touchedNodes.some((node) => (
+            node instanceof Element
+            && (
+              node.matches?.(HIGH_DATA_MUTATION_SELECTOR)
+              || node.querySelector?.(HIGH_DATA_MUTATION_SELECTOR)
+            )
+          ));
+
           shouldResetTopLayerCache = shouldResetTopLayerCache || touchedTopLayer;
+
           if (touchedImmediateScrollbar) {
             if (shouldResetTopLayerCache) resetTopLayerRectCache();
-            scheduleScan(0);
+            scheduleScan(40);
             return;
           }
+
+          if (touchedHighData && !touchedTopLayer) {
+            requestUpdate();
+            return;
+          }
+
+          shouldScan = true;
           break;
         }
 
@@ -857,7 +884,10 @@ html.${DRAGGING_CLASS} * {
     themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-theme', 'class'] });
 
     if ('ResizeObserver' in window) {
-      resizeObserver = new ResizeObserver(() => scheduleScan(60));
+      resizeObserver = new ResizeObserver(() => {
+        resetTopLayerRectCache();
+        requestUpdate();
+      });
       resizeObserver.observe(document.documentElement);
       resizeObserver.observe(document.body);
     }
@@ -881,9 +911,7 @@ html.${DRAGGING_CLASS} * {
     document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true });
 
     scan();
-    scheduleOneShotScan(120);
-    scheduleOneShotScan(420);
-    scheduleOneShotScan(1200);
+    scheduleOneShotScan(260);
 
     return () => {
       window.cancelAnimationFrame(rafId);

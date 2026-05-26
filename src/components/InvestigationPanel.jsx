@@ -363,6 +363,12 @@ function expandCompositeResultRows(rows = []) {
 const PARAMETER_TABLE_TYPES = new Set(['lab', 'urine', 'culture', 'toxicology']);
 const QUALITATIVE_RESULT_TYPES = new Set(['ecg', 'xray', 'ct', 'mri', 'ultrasound', 'imaging', 'microscopy', 'pathology', 'endoscopy', 'clinical', 'neurophysiology', 'nuclear']);
 
+
+function DenseResultText({ text = '' }) {
+  return <>{String(text || '')}</>;
+}
+
+
 function isGenericQualitativeReference(reference = '') {
   const normalized = normalizeClinicalText(reference);
   return !normalized || normalized === '—' || /normalde beklenmeyen patern|objektif bulgu|klinik olarak/.test(normalized);
@@ -446,13 +452,13 @@ function ResultFindingList({ rows = [], glossaryEnabled = true, glossaryRevealMo
           <div key={`${parameter || 'bulgu'}-${index}`} className={`qualitative-result-finding ${status.tone}`}>
             <div className="qualitative-result-marker" aria-hidden="true" />
             <div className="qualitative-result-copy">
-              <span className="qualitative-result-label"><GlossaryText text={String(parameter || 'Bulgular')} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></span>
-              <p><GlossaryText text={String(value || 'Objektif bulgu saptanmadı.')} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></p>
+              <span className="qualitative-result-label"><DenseResultText text={String(parameter || 'Bulgular')} /></span>
+              <p><DenseResultText text={String(value || 'Objektif bulgu saptanmadı.')} /></p>
               {showReference || showNote ? (
                 <span className="qualitative-result-meta">
-                  {showReference ? <GlossaryText text={`Beklenen: ${reference}`} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /> : null}
+                  {showReference ? <DenseResultText text={`Beklenen: ${reference}`} /> : null}
                   {showReference && showNote ? ' · ' : ''}
-                  {showNote ? <GlossaryText text={String(note)} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /> : null}
+                  {showNote ? <DenseResultText text={String(note)} /> : null}
                 </span>
               ) : null}
             </div>
@@ -492,12 +498,12 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
                 <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
                   <td>
                     <div className="lab-parameter-cell">
-                      <strong><GlossaryText text={String(parameter || '')} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></strong>
+                      <strong><DenseResultText text={String(parameter || '')} /></strong>
                     </div>
                   </td>
                   <td>
-                    <span className="lab-value-text long-result-text"><GlossaryText text={String(value || '')} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></span>
-                    {secondary ? <span className="lab-cell-subnote"><GlossaryText text={String(secondary)} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></span> : null}
+                    <span className="lab-value-text long-result-text"><DenseResultText text={String(value || '')} /></span>
+                    {secondary ? <span className="lab-cell-subnote"><DenseResultText text={String(secondary)} /></span> : null}
                   </td>
                 </tr>
               );
@@ -527,14 +533,14 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
                 <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
                   <td>
                     <div className="lab-parameter-cell">
-                      <strong><GlossaryText text={String(parameter || '')} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></strong>
+                      <strong><DenseResultText text={String(parameter || '')} /></strong>
                     </div>
                   </td>
                   <td>
-                    <span className="lab-value-text long-result-text"><GlossaryText text={String(value || '')} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></span>
-                    {secondary ? <span className="lab-cell-subnote"><GlossaryText text={String(secondary)} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></span> : null}
+                    <span className="lab-value-text long-result-text"><DenseResultText text={String(value || '')} /></span>
+                    {secondary ? <span className="lab-cell-subnote"><DenseResultText text={String(secondary)} /></span> : null}
                   </td>
-                  <td><span className="lab-reference-text long-reference-text"><GlossaryText text={String(reference || '—')} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></span></td>
+                  <td><span className="lab-reference-text long-reference-text"><DenseResultText text={String(reference || '—')} /></span></td>
                 </tr>
               );
             })}
@@ -563,16 +569,16 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
               <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
                 <td>
                   <div className="lab-parameter-cell">
-                    <strong><GlossaryText text={String(parameter || '')} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></strong>
+                    <strong><DenseResultText text={String(parameter || '')} /></strong>
                   </div>
                 </td>
                 <td>
-                  <span className="lab-value-text"><GlossaryText text={String(value || '')} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></span>
+                  <span className="lab-value-text"><DenseResultText text={String(value || '')} /></span>
                 </td>
-                <td><span className="lab-reference-text"><GlossaryText text={String(reference || '—')} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} /></span></td>
+                <td><span className="lab-reference-text"><DenseResultText text={String(reference || '—')} /></span></td>
                 <td>
                   <span className={`lab-status-pill ${tone}`}>
-                    <GlossaryText text={String(status.label || '—')} enabled={glossaryEnabled} revealMode={glossaryRevealMode} maxTerms={5} />
+                    <DenseResultText text={String(status.label || '—')} />
                   </span>
                 </td>
               </tr>

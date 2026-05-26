@@ -18171,3 +18171,77 @@ html.ki-is-scrolling .catalog-edit-action:hover,
 html.ki-is-scrolling .catalog-delete-action:hover {
   transform: none !important;
 }
+
+/* ========================================================================== 
+   V378 — Virtualized Hap Kart catalog/all-cards library for high-data smoothness
+   ========================================================================== */
+.tus-pearl-catalog-card-list.virtualized-catalog-card-list,
+.tus-pearl-catalog-card-list.addable.virtualized-catalog-card-list,
+.catalog-card-library .tus-pearl-catalog-card-list.addable.virtualized-catalog-card-list {
+  display: block !important;
+  position: relative !important;
+  max-height: 360px !important;
+  min-height: min(360px, 58vh) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 0 6px 0 0 !important;
+  scrollbar-gutter: stable !important;
+  overscroll-behavior: contain !important;
+  -webkit-overflow-scrolling: touch !important;
+  contain: layout paint style !important;
+}
+
+.tus-pearl-catalog-card-list.addable.virtualized-catalog-card-list,
+.catalog-card-library .tus-pearl-catalog-card-list.addable.virtualized-catalog-card-list {
+  max-height: 360px !important;
+}
+
+.catalog-card-virtual-track {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 100% !important;
+  contain: layout paint style !important;
+}
+
+.catalog-card-virtual-row {
+  position: absolute !important;
+  inset-inline: 0 0 !important;
+  top: 0 !important;
+  min-height: 96px !important;
+  height: 96px !important;
+  will-change: transform !important;
+  contain: layout paint style !important;
+}
+
+.catalog-card-virtual-row > .tus-pearl-library-card.catalog-card-row {
+  min-height: 96px !important;
+  height: 96px !important;
+  box-sizing: border-box !important;
+  content-visibility: visible !important;
+  contain: layout paint style !important;
+}
+
+.tus-pearl-catalog-card-list.virtualized-catalog-card-list .catalog-card-question,
+.tus-pearl-catalog-card-list.virtualized-catalog-card-list .catalog-card-question span {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+html.ki-is-scrolling .catalog-card-virtual-row > .tus-pearl-library-card.catalog-card-row,
+html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.catalog-card-row {
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transition-duration: 60ms !important;
+}
+
+@media (max-width: 760px) {
+  .tus-pearl-catalog-card-list.virtualized-catalog-card-list,
+  .tus-pearl-catalog-card-list.addable.virtualized-catalog-card-list,
+  .catalog-card-library .tus-pearl-catalog-card-list.addable.virtualized-catalog-card-list {
+    min-height: min(360px, 62vh) !important;
+    max-height: min(360px, 62vh) !important;
+  }
+}

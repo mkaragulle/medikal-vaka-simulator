@@ -51824,3 +51824,46 @@ html.ki-custom-scrollbars-v367-on .bottom-case-browser .horizontal-case-list::-w
   display: none !important;
   background: transparent !important;
 }
+
+/* ==========================================================
+   V377 — high-data case rail virtualization / smoothness fix
+   ========================================================== */
+.horizontal-case-list.horizontal-case-list-virtualized {
+  display: block !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding-bottom: 8px !important;
+  scroll-snap-type: none !important;
+  contain: layout paint style !important;
+  content-visibility: visible !important;
+}
+
+.horizontal-case-virtual-track {
+  min-height: 176px;
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  contain: layout paint style;
+}
+
+.horizontal-case-virtual-spacer {
+  flex: 0 0 auto;
+  min-width: 0;
+  pointer-events: none;
+}
+
+.horizontal-case-list-virtualized .horizontal-case-card {
+  flex: 0 0 330px !important;
+  width: 330px !important;
+  max-width: 330px !important;
+  scroll-snap-align: none !important;
+  contain: layout paint style;
+}
+
+@media (max-width: 640px) {
+  .horizontal-case-list-virtualized .horizontal-case-card {
+    flex-basis: 290px !important;
+    width: 290px !important;
+    max-width: 290px !important;
+  }
+}
