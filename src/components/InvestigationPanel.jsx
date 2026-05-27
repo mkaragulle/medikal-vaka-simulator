@@ -726,7 +726,7 @@ function InlineOrderResult({ item, mode, hardMode = false, glossaryRevealMode = 
             {shouldShowSummary ? (
               <div className={`ordered-result-comment ${hasRows || hasImages ? 'after-objective-data' : 'standalone'}`}>
                 {(hasRows || hasImages) ? <span>Kısa yorum</span> : null}
-                <p className="ordered-result-summary inline-result-summary"><GlossaryText text={result.summary} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={5} /></p>
+                <p className="ordered-result-summary inline-result-summary"><GlossaryText text={sanitizeMeasurementText(result.summary)} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={5} /></p>
               </div>
             ) : null}
           </div>
