@@ -1,0 +1,42 @@
+KlinikIQ Strict QC Refinement Technical Report
+Date: 27 Mayıs 2026
+
+Changed files:
+- src/data/cases.js
+- reports/KlinikIQ_GENERAL_CASES_STRICT_QC_REFINEMENT_DATA.json
+- reports/KlinikIQ_GENERAL_CASES_SECTION_COVERAGE_REPORT_STRICT_QC.json
+- reports/KlinikIQ_GENERAL_CASES_STRICT_QC_CHANGELOG.json
+- reports/KlinikIQ_GENERAL_CASES_STRICT_QC_REFINED_REPORT.pdf
+- reports/KlinikIQ_GENERAL_CASES_STRICT_QC_REFINED_QC_REPORT.pdf
+
+Untouched scope:
+- TUS Spot Olgular semantic data unchanged.
+- Hap Bilgi cards unchanged.
+- Glossary files unchanged.
+- Komite mode, API routes, env variables and component architecture unchanged.
+
+Validation summary:
+- scannedStandardCases: 410
+- updatedStandardCases: 410
+- idChanged: False
+- orderChanged: False
+- vitalStandardized: 289
+- physicalExamImproved: 74
+- objectiveDataImproved: 0
+- optionTextRewrites: 75
+- feedbackRewrites: 2050
+- rationaleCorePearlImproved: 410
+- summaryRewrites: 410
+- rationaleRewrites: 410
+- coreRewrites: 410
+- questionPolish: 0
+- scientificConcernCount: 0
+- validationPassed: True
+- sectionBypassed: False
+- templateFeedbackRemaining: 0
+- genericRationaleRemaining: 0
+- weakFeedbackRemaining: 0
+
+Build/test status:
+- node import ./src/data/cases.js: PASS (620 raw cases / 620 hydrated cases).
+- npm run build: NOT COMPLETED because node_modules/vite is not present in the uploaded ZIP environment. No source syntax/import error was detected before this dependency-level stop.
