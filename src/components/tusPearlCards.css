@@ -18731,3 +18731,23 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
     min-height: 38px !important;
   }
 }
+
+/* ========================================================================== 
+   V398 — Hap Bilgi study micro-height polish
+   Adds a small amount of usable vertical space after the V397 viewport-fit fix.
+   The columns stay equal-height and the delete row remains visible at 100% zoom,
+   but the left/right enclosing capsules now use the tiny remaining bottom gap.
+   ========================================================================== */
+@media (min-width: 981px) {
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) {
+    --pearl-study-usable-h-v397: clamp(510px, calc(100dvh - 218px), 656px);
+    padding-bottom: 8px !important;
+  }
+}
+
+@media (min-width: 981px) and (max-height: 820px) {
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) {
+    --pearl-study-usable-h-v397: clamp(484px, calc(100dvh - 206px), 616px);
+    padding-bottom: 6px !important;
+  }
+}
