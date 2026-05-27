@@ -18303,3 +18303,116 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
   animation: none !important;
   pointer-events: none !important;
 }
+
+/* ========================================================================== 
+   V396 — Hap Bilgi study equal-height column alignment
+   Goal: left study stage (flashcard + karar butonları + ileri/geri) and
+   right control cockpit (Tekrar Araçları / Oturum / Kart Araçları) use the
+   same viewport-backed column height. This intentionally overrides the older
+   fit-content right-panel rule that made the right column shorter.
+   ========================================================================== */
+@media (min-width: 981px) {
+  .pearl-study-workspace-v92:has(.pearl-study-control-panel-v93) {
+    align-items: stretch !important;
+  }
+
+  .pearl-study-left-v92:has(.pearl-study-answer-dock-v93),
+  .pearl-study-right-v92.pearl-study-control-panel-v93,
+  .pearl-study-control-panel-v93 {
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    align-self: stretch !important;
+    box-sizing: border-box !important;
+  }
+
+  .pearl-study-right-v92.pearl-study-control-panel-v93,
+  .pearl-study-control-panel-v93 {
+    display: grid !important;
+    grid-template-rows: auto auto minmax(0, 1fr) !important;
+    gap: clamp(7px, 0.9dvh, 10px) !important;
+    overflow: visible !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-tools-section-v93 {
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: clamp(6px, 0.75dvh, 8px) !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    width: 100% !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button {
+    height: 100% !important;
+    min-height: 42px !important;
+    max-height: 58px !important;
+    box-sizing: border-box !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button,
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-more-trigger,
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-reshuffle-button {
+    min-height: 42px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (min-width: 981px) and (max-height: 820px) {
+  .pearl-study-right-v92.pearl-study-control-panel-v93,
+  .pearl-study-control-panel-v93 {
+    gap: 6px !important;
+    padding: 8px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-control-section-v93 {
+    padding: 7px !important;
+  }
+
+  .pearl-study-section-title-v93 {
+    margin-bottom: 5px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button {
+    min-height: 38px !important;
+    max-height: 50px !important;
+  }
+}
+
+@media (min-width: 981px) {
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button {
+    display: grid !important;
+    grid-template-columns: 32px minmax(0, 1fr) !important;
+    align-items: center !important;
+    justify-content: initial !important;
+    gap: 10px !important;
+    padding: 8px 10px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button > svg {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 8px !important;
+    border-radius: 12px !important;
+    background: rgba(220, 38, 38, 0.08) !important;
+    color: #b91c1c !important;
+  }
+}
