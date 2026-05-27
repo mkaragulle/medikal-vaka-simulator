@@ -42,41 +42,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Akut sistemik reaksiyon tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu İntramüsküler adrenalin uygulanması kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntramüsküler adrenalin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntramüsküler adrenalin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Akut sistemik reaksiyon tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu İntramüsküler adrenalin uygulanması kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntramüsküler adrenalin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntramüsküler adrenalin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 80/45 mmHg; Nabız: 128/dk; Solunum: 28/dk; SpO₂: %91; Ateş: 36.7 °C; Şok indeksi: 1,60 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 80/45 mmHg; Nabız: 128/dk; Solunum: 28/dk; SpO₂: %91; Ateş: 36.7 °C; Şok indeksi: 1,60 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 80/45 mmHg; Nabız: 128/dk; Solunum: 28/dk; SpO₂: %91; Ateş: 36.7 °C; Şok indeksi: 1,60 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntramüsküler adrenalin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntramüsküler adrenalin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntramüsküler adrenalin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntramüsküler adrenalin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntramüsküler adrenalin uygulanması yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntramüsküler adrenalin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -5074,41 +5074,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Akut skrotal ağrı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Acil cerrahi eksplorasyon ve detorsiyon yapılması kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil cerrahi eksplorasyon ve detorsiyon yapılması yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil cerrahi eksplorasyon ve detorsiyon yapılması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Akut skrotal ağrı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Acil cerrahi eksplorasyon ve detorsiyon yapılması kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil cerrahi eksplorasyon ve detorsiyon yapılması yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil cerrahi eksplorasyon ve detorsiyon yapılması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 104/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 36.8 °C; Şok indeksi: 0,88.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 104/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 36.8 °C; Şok indeksi: 0,88.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 118/74 mmHg; Nabız: 104/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 36.8 °C; Şok indeksi: 0,88.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil cerrahi eksplorasyon ve detorsiyon yapılması yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil cerrahi eksplorasyon ve detorsiyon yapılması yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil cerrahi eksplorasyon ve detorsiyon yapılması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil cerrahi eksplorasyon ve detorsiyon yapılması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil cerrahi eksplorasyon ve detorsiyon yapılması yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil cerrahi eksplorasyon ve detorsiyon yapılması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -7800,41 +7800,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Ateş ve yeni üfürüm tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Staphylococcus aureus kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Staphylococcus aureus yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Staphylococcus aureus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Ateş ve yeni üfürüm tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Staphylococcus aureus kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Staphylococcus aureus yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Staphylococcus aureus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 105/65 mmHg; Nabız: 124/dk; Solunum: 28/dk; SpO₂: %91; Ateş: 39.2 °C; Şok indeksi: 1,18 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 105/65 mmHg; Nabız: 124/dk; Solunum: 28/dk; SpO₂: %91; Ateş: 39.2 °C; Şok indeksi: 1,18 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 105/65 mmHg; Nabız: 124/dk; Solunum: 28/dk; SpO₂: %91; Ateş: 39.2 °C; Şok indeksi: 1,18 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Staphylococcus aureus yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Staphylococcus aureus yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Staphylococcus aureus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Staphylococcus aureus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Staphylococcus aureus yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Staphylococcus aureus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-4",
@@ -11610,41 +11610,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Ateş ve inspiratuvar solunum sıkıntısı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Kontrollü koşullarda hava yolunun güvence altına alınması kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kontrollü koşullarda hava yolunun güvence altına alınması yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kontrollü koşullarda hava yolunun güvence altına alınması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Ateş ve inspiratuvar solunum sıkıntısı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Kontrollü koşullarda hava yolunun güvence altına alınması kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kontrollü koşullarda hava yolunun güvence altına alınması yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kontrollü koşullarda hava yolunun güvence altına alınması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 152/dk; Solunum: 34/dk; SpO₂: %92; Ateş: 39.2 °C; Şok indeksi: 1,52 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 152/dk; Solunum: 34/dk; SpO₂: %92; Ateş: 39.2 °C; Şok indeksi: 1,52 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 100/64 mmHg; Nabız: 152/dk; Solunum: 34/dk; SpO₂: %92; Ateş: 39.2 °C; Şok indeksi: 1,52 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kontrollü koşullarda hava yolunun güvence altına alınması yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kontrollü koşullarda hava yolunun güvence altına alınması yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kontrollü koşullarda hava yolunun güvence altına alınması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kontrollü koşullarda hava yolunun güvence altına alınması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kontrollü koşullarda hava yolunun güvence altına alınması yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kontrollü koşullarda hava yolunun güvence altına alınması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-1",
@@ -11947,41 +11947,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Ateş ve yeni üfürüm tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Staphylococcus aureus kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Staphylococcus aureus yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Staphylococcus aureus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Ateş ve yeni üfürüm tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Staphylococcus aureus kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Staphylococcus aureus yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Staphylococcus aureus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 105/66 mmHg; Nabız: 116/dk; Solunum: 28/dk; SpO₂: %91; Ateş: 38.8 °C; Şok indeksi: 1,10 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 105/66 mmHg; Nabız: 116/dk; Solunum: 28/dk; SpO₂: %91; Ateş: 38.8 °C; Şok indeksi: 1,10 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 105/66 mmHg; Nabız: 116/dk; Solunum: 28/dk; SpO₂: %91; Ateş: 38.8 °C; Şok indeksi: 1,10 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Staphylococcus aureus yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Staphylococcus aureus yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Staphylococcus aureus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Staphylococcus aureus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Staphylococcus aureus yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Staphylococcus aureus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "kardiyak-biyobelirtecler-4",
@@ -15153,41 +15153,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Yavaş ilerleyen hareket bozukluğu tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Substantia nigra pars compacta dopaminerjik nöronlarında kayıp kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Substantia nigra pars compacta dopaminerjik nöronlarında kayıp yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Substantia nigra pars compacta dopaminerjik nöronlarında kayıp yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Yavaş ilerleyen hareket bozukluğu tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Substantia nigra pars compacta dopaminerjik nöronlarında kayıp kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Substantia nigra pars compacta dopaminerjik nöronlarında kayıp yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Substantia nigra pars compacta dopaminerjik nöronlarında kayıp yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Substantia nigra pars compacta dopaminerjik nöronlarında kayıp yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Substantia nigra pars compacta dopaminerjik nöronlarında kayıp yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Substantia nigra pars compacta dopaminerjik nöronlarında kayıp yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Substantia nigra pars compacta dopaminerjik nöronlarında kayıp yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Substantia nigra pars compacta dopaminerjik nöronlarında kayıp yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Substantia nigra pars compacta dopaminerjik nöronlarında kayıp yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "i-leri-dogrulama-oncesi-temel-laboratuvar-1",
@@ -17207,41 +17207,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Omuz hareketinde postoperatif güçlük tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus thoracicus longus kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus thoracicus longus yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus thoracicus longus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Hedefe yönelik nörolojik/nörovasküler muayene",
           "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Omuz hareketinde postoperatif güçlük tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus thoracicus longus kararının klinik zeminini oluşturur.",
-          "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus thoracicus longus yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus thoracicus longus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus thoracicus longus yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus thoracicus longus yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus thoracicus longus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus thoracicus longus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus thoracicus longus yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus thoracicus longus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -18787,41 +18787,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Ağrısız hematüri ve renal kitle tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Clear cell renal cell carcinoma kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Clear cell renal cell carcinoma yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Clear cell renal cell carcinoma yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Ağrısız hematüri ve renal kitle tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Clear cell renal cell carcinoma kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Clear cell renal cell carcinoma yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Clear cell renal cell carcinoma yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 150/88 mmHg; Nabız: 84/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 36.6 °C; Şok indeksi: 0,56.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 150/88 mmHg; Nabız: 84/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 36.6 °C; Şok indeksi: 0,56.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 150/88 mmHg; Nabız: 84/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 36.6 °C; Şok indeksi: 0,56.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Clear cell renal cell carcinoma yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Clear cell renal cell carcinoma yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Clear cell renal cell carcinoma yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Clear cell renal cell carcinoma yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Clear cell renal cell carcinoma yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Clear cell renal cell carcinoma yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "temel-biyokimya-ve-elektrolitler-3",
@@ -20445,41 +20445,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Ağız yaraları ve gevşek büller tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Desmoglein 3 kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Desmoglein 3 yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Desmoglein 3 yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Ağız yaraları ve gevşek büller tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Desmoglein 3 kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Desmoglein 3 yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Desmoglein 3 yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Desmoglein 3 yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Desmoglein 3 yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Desmoglein 3 yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Desmoglein 3 yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Desmoglein 3 yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Desmoglein 3 yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "i-leri-dogrulama-oncesi-temel-laboratuvar-3",
@@ -22922,41 +22922,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Kalça cerrahisi sonrası yürüme bozukluğu tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus gluteus superior kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus gluteus superior yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus gluteus superior yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Hedefe yönelik nörolojik/nörovasküler muayene",
           "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Kalça cerrahisi sonrası yürüme bozukluğu tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus gluteus superior kararının klinik zeminini oluşturur.",
-          "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus gluteus superior yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus gluteus superior yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus gluteus superior yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus gluteus superior yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus gluteus superior yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus gluteus superior yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus gluteus superior yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus gluteus superior yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -23825,41 +23825,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Hedefe yönelik muayene",
         "summary": "Göz içi basıncı ölçümü, Ani göz ağrısı ve görme bulanıklığı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Göz içi basıncı ölçümü sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Göz içi basıncı ölçümü",
           "summary": "Göz içi basıncı ölçümü, Ani göz ağrısı ve görme bulanıklığı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması kararının klinik zeminini oluşturur.",
-          "interpretation": "Göz içi basıncı ölçümü sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "54 mmHg.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "54 mmHg.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "54 mmHg.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Göz içi basıncı ölçümü sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Göz içi basıncı ölçümü sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Göz içi basıncı ölçümü sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -24767,25 +24767,25 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Lokal yara muayenesi",
         "summary": "Yara değerlendirmesi, Kirli yara sonrası kas spazmları tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu İnhibitör internöronlardan gama-aminobütirik asit ve glisin salınımının engellenmesi kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Yara değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İnhibitör internöronlardan gama-aminobütirik asit ve glisin salınımının engellenmesi yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İnhibitör internöronlardan gama-aminobütirik asit ve glisin salınımının engellenmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Yara değerlendirmesi",
           "summary": "Yara değerlendirmesi, Kirli yara sonrası kas spazmları tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu İnhibitör internöronlardan gama-aminobütirik asit ve glisin salınımının engellenmesi kararının klinik zeminini oluşturur.",
-          "interpretation": "Yara değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İnhibitör internöronlardan gama-aminobütirik asit ve glisin salınımının engellenmesi yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İnhibitör internöronlardan gama-aminobütirik asit ve glisin salınımının engellenmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
               "Lokal klinik bulgu",
               "Ayak tabanında kirli, derin ve kenarları düzensiz iyileşen yara izlendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
               "Lokal klinik bulgu",
               "Ayak tabanında kirli, derin ve kenarları düzensiz iyileşen yara izlendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
@@ -24793,15 +24793,15 @@ export const rawCases = [
           [
             "Lokal klinik bulgu",
             "Ayak tabanında kirli, derin ve kenarları düzensiz iyileşen yara izlendi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Yara değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İnhibitör internöronlardan gama-aminobütirik asit ve glisin salınımının engellenmesi yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Yara değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İnhibitör internöronlardan gama-aminobütirik asit ve glisin salınımının engellenmesi yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İnhibitör internöronlardan gama-aminobütirik asit ve glisin salınımının engellenmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İnhibitör internöronlardan gama-aminobütirik asit ve glisin salınımının engellenmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Yara değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İnhibitör internöronlardan gama-aminobütirik asit ve glisin salınımının engellenmesi yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İnhibitör internöronlardan gama-aminobütirik asit ve glisin salınımının engellenmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -27576,27 +27576,27 @@ export const rawCases = [
           "interpretation": "AST/ALT hepatoselüler hasarı, ALP/GGT kolestatik paterni, bilirubin ise safra akımı veya hemoliz ilişkisini gösterir. Paternin klinik ağrı, sarılık, ateş ve görüntüleme ile birleşmesi tanısal değeri belirler.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Sonda üst mediasten düzeyinde ilerlemeyip kıvrıldı.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Sonda üst mediasten düzeyinde ilerlemeyip kıvrıldı.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Sonda üst mediasten düzeyinde ilerlemeyip kıvrıldı.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
         "postAnswerExplanation": "AST/ALT hepatoselüler hasarı, ALP/GGT kolestatik paterni, bilirubin ise safra akımı veya hemoliz ilişkisini gösterir. Paternin klinik ağrı, sarılık, ateş ve görüntüleme ile birleşmesi tanısal değeri belirler.",
@@ -29149,41 +29149,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Yaşlı hastada mekanik obstrüksiyon tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Safra taşı ileusu kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Safra taşı ileusu yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Safra taşı ileusu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Yaşlı hastada mekanik obstrüksiyon tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Safra taşı ileusu kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Safra taşı ileusu yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Safra taşı ileusu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 112/70 mmHg; Nabız: 104/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 37.4 °C; Şok indeksi: 0,93 (sınırda yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 112/70 mmHg; Nabız: 104/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 37.4 °C; Şok indeksi: 0,93 (sınırda yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 112/70 mmHg; Nabız: 104/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 37.4 °C; Şok indeksi: 0,93 (sınırda yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Safra taşı ileusu yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Safra taşı ileusu yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Safra taşı ileusu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Safra taşı ileusu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Safra taşı ileusu yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Safra taşı ileusu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "temel-biyokimya-ve-elektrolitler-2",
@@ -32326,41 +32326,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Ağrısız servikal lenfadenopati tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Reed-Sternberg hücresi kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Reed-Sternberg hücresi yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Reed-Sternberg hücresi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Ağrısız servikal lenfadenopati tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Reed-Sternberg hücresi kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Reed-Sternberg hücresi yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Reed-Sternberg hücresi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 88/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 37.8 °C; Şok indeksi: 0,75.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 88/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 37.8 °C; Şok indeksi: 0,75.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 118/74 mmHg; Nabız: 88/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 37.8 °C; Şok indeksi: 0,75.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Reed-Sternberg hücresi yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Reed-Sternberg hücresi yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Reed-Sternberg hücresi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Reed-Sternberg hücresi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Reed-Sternberg hücresi yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Reed-Sternberg hücresi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-3",
@@ -33465,41 +33465,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Gebeliğin geç döneminde ağrısız kanama tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Gebeliğin geç döneminde ağrısız kanama tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/72 mmHg; Nabız: 96/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.7 °C; Şok indeksi: 0,81.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/72 mmHg; Nabız: 96/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.7 °C; Şok indeksi: 0,81.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 118/72 mmHg; Nabız: 96/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.7 °C; Şok indeksi: 0,81.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-1",
@@ -36599,41 +36599,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Tiroid ameliyatı sonrası ses değişikliği tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus laryngeus recurrens kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus laryngeus recurrens yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus laryngeus recurrens yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Hedefe yönelik nörolojik/nörovasküler muayene",
           "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Tiroid ameliyatı sonrası ses değişikliği tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus laryngeus recurrens kararının klinik zeminini oluşturur.",
-          "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus laryngeus recurrens yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus laryngeus recurrens yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus laryngeus recurrens yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus laryngeus recurrens yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus laryngeus recurrens yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus laryngeus recurrens yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus laryngeus recurrens yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus laryngeus recurrens yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -39867,41 +39867,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Kamp sonrası kötü kokulu ishal tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Giardia lamblia kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Giardia lamblia yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Giardia lamblia yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Kamp sonrası kötü kokulu ishal tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Giardia lamblia kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Giardia lamblia yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Giardia lamblia yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 84/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 36.8 °C; Şok indeksi: 0,71.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 84/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 36.8 °C; Şok indeksi: 0,71.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 118/74 mmHg; Nabız: 84/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 36.8 °C; Şok indeksi: 0,71.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Giardia lamblia yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Giardia lamblia yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Giardia lamblia yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Giardia lamblia yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Giardia lamblia yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Giardia lamblia yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "tam-idrar-analizi-3",
@@ -40300,41 +40300,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Dışkılama sonrası anal ağrı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Akut anal fissür kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Akut anal fissür yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Akut anal fissür yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Dışkılama sonrası anal ağrı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Akut anal fissür kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Akut anal fissür yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Akut anal fissür yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Akut anal fissür yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Akut anal fissür yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Akut anal fissür yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Akut anal fissür yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Akut anal fissür yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Akut anal fissür yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-1",
@@ -40991,41 +40991,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Doğumda omuz takılması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu McRoberts manevrası ve suprapubik bası kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve McRoberts manevrası ve suprapubik bası yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, McRoberts manevrası ve suprapubik bası yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Doğumda omuz takılması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu McRoberts manevrası ve suprapubik bası kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve McRoberts manevrası ve suprapubik bası yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, McRoberts manevrası ve suprapubik bası yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve McRoberts manevrası ve suprapubik bası yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve McRoberts manevrası ve suprapubik bası yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, McRoberts manevrası ve suprapubik bası yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, McRoberts manevrası ve suprapubik bası yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve McRoberts manevrası ve suprapubik bası yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, McRoberts manevrası ve suprapubik bası yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-1",
@@ -41301,41 +41301,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Antikoagülan sonrası uyluk güçsüzlüğü tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus femoralis kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus femoralis yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus femoralis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Antikoagülan sonrası uyluk güçsüzlüğü tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus femoralis kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus femoralis yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus femoralis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 104/66 mmHg; Nabız: 102/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 36.7 °C; Şok indeksi: 0,98 (sınırda yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 104/66 mmHg; Nabız: 102/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 36.7 °C; Şok indeksi: 0,98 (sınırda yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 104/66 mmHg; Nabız: 102/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 36.7 °C; Şok indeksi: 0,98 (sınırda yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus femoralis yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus femoralis yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus femoralis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus femoralis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus femoralis yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus femoralis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "abdominopelvik-bilgisayarli-tomografi-1",
@@ -41572,41 +41572,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Parotis ameliyatı sonrası yüz asimetrisi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus facialis kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus facialis yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus facialis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Hedefe yönelik nörolojik/nörovasküler muayene",
           "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Parotis ameliyatı sonrası yüz asimetrisi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus facialis kararının klinik zeminini oluşturur.",
-          "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus facialis yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus facialis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus facialis yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus facialis yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus facialis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus facialis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus facialis yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus facialis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -47706,41 +47706,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Besin sonrası akut reaksiyon tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu İntramüsküler adrenalin uygulanması kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntramüsküler adrenalin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntramüsküler adrenalin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Besin sonrası akut reaksiyon tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu İntramüsküler adrenalin uygulanması kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntramüsküler adrenalin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntramüsküler adrenalin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 78/44 mmHg; Nabız: 142/dk; Solunum: 32/dk; SpO₂: %90; Ateş: 36.7 °C; Şok indeksi: 1,82 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 78/44 mmHg; Nabız: 142/dk; Solunum: 32/dk; SpO₂: %90; Ateş: 36.7 °C; Şok indeksi: 1,82 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 78/44 mmHg; Nabız: 142/dk; Solunum: 32/dk; SpO₂: %90; Ateş: 36.7 °C; Şok indeksi: 1,82 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntramüsküler adrenalin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntramüsküler adrenalin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntramüsküler adrenalin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntramüsküler adrenalin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntramüsküler adrenalin uygulanması yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntramüsküler adrenalin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -48696,41 +48696,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Hışıltı ve solunum sıkıntısı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Hışıltı ve solunum sıkıntısı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 82/48 mmHg; Nabız: 138/dk; Solunum: 36/dk; SpO₂: %88; Ateş: 38.3 °C; Şok indeksi: 1,68 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 82/48 mmHg; Nabız: 138/dk; Solunum: 36/dk; SpO₂: %88; Ateş: 38.3 °C; Şok indeksi: 1,68 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 82/48 mmHg; Nabız: 138/dk; Solunum: 36/dk; SpO₂: %88; Ateş: 38.3 °C; Şok indeksi: 1,68 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -48929,41 +48929,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Havlar tarzda öksürük ve stridor tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Deksametazon ve nebulize adrenalin uygulanması kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Deksametazon ve nebulize adrenalin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Deksametazon ve nebulize adrenalin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Havlar tarzda öksürük ve stridor tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Deksametazon ve nebulize adrenalin uygulanması kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Deksametazon ve nebulize adrenalin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Deksametazon ve nebulize adrenalin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 102/dk; Solunum: 34/dk; SpO₂: %93; Ateş: 37.8 °C; Şok indeksi: 1,02 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 102/dk; Solunum: 34/dk; SpO₂: %93; Ateş: 37.8 °C; Şok indeksi: 1,02 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 100/64 mmHg; Nabız: 102/dk; Solunum: 34/dk; SpO₂: %93; Ateş: 37.8 °C; Şok indeksi: 1,02 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Deksametazon ve nebulize adrenalin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Deksametazon ve nebulize adrenalin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Deksametazon ve nebulize adrenalin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Deksametazon ve nebulize adrenalin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Deksametazon ve nebulize adrenalin uygulanması yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Deksametazon ve nebulize adrenalin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -49162,41 +49162,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Ateş ve salya akması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Ateş ve salya akması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 152/dk; Solunum: 28/dk; SpO₂: %91; Ateş: 39.5 °C; Şok indeksi: 1,52 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 152/dk; Solunum: 28/dk; SpO₂: %91; Ateş: 39.5 °C; Şok indeksi: 1,52 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 100/64 mmHg; Nabız: 152/dk; Solunum: 28/dk; SpO₂: %91; Ateş: 39.5 °C; Şok indeksi: 1,52 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-1",
@@ -52362,41 +52362,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Kafa travması sonrası yeniden bilinç kaybı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Epidural hematom kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Epidural hematom yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Epidural hematom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Kafa travması sonrası yeniden bilinç kaybı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Epidural hematom kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Epidural hematom yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Epidural hematom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 142/84 mmHg; Nabız: 58/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.8 °C; Şok indeksi: 0,41.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 142/84 mmHg; Nabız: 58/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.8 °C; Şok indeksi: 0,41.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 142/84 mmHg; Nabız: 58/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.8 °C; Şok indeksi: 0,41.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Epidural hematom yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Epidural hematom yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Epidural hematom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Epidural hematom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Epidural hematom yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Epidural hematom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "kapiller-kan-glukozu-2",
@@ -53280,41 +53280,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Kulak ağrısı sonrası kulak arkasında şişlik tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Kulak ağrısı sonrası kulak arkasında şişlik tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 122/dk; Solunum: 22/dk; SpO₂: %98; Ateş: 38.8 °C; Şok indeksi: 1,22 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 122/dk; Solunum: 22/dk; SpO₂: %98; Ateş: 38.8 °C; Şok indeksi: 1,22 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 100/64 mmHg; Nabız: 122/dk; Solunum: 22/dk; SpO₂: %98; Ateş: 38.8 °C; Şok indeksi: 1,22 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-2",
@@ -55538,41 +55538,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Ani başlayan skrotal ağrı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Acil ürolojik eksplorasyon ve detorsiyon planlanması kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil ürolojik eksplorasyon ve detorsiyon planlanması yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil ürolojik eksplorasyon ve detorsiyon planlanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Ani başlayan skrotal ağrı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Acil ürolojik eksplorasyon ve detorsiyon planlanması kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil ürolojik eksplorasyon ve detorsiyon planlanması yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil ürolojik eksplorasyon ve detorsiyon planlanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 104/dk; Solunum: 22/dk; SpO₂: %98; Ateş: 36.9 °C; Şok indeksi: 1,04 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 104/dk; Solunum: 22/dk; SpO₂: %98; Ateş: 36.9 °C; Şok indeksi: 1,04 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 100/64 mmHg; Nabız: 104/dk; Solunum: 22/dk; SpO₂: %98; Ateş: 36.9 °C; Şok indeksi: 1,04 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil ürolojik eksplorasyon ve detorsiyon planlanması yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil ürolojik eksplorasyon ve detorsiyon planlanması yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil ürolojik eksplorasyon ve detorsiyon planlanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil ürolojik eksplorasyon ve detorsiyon planlanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil ürolojik eksplorasyon ve detorsiyon planlanması yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil ürolojik eksplorasyon ve detorsiyon planlanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-1",
@@ -57192,41 +57192,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Travma sonrası ani solunum bozulması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Travma sonrası ani solunum bozulması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 72/44 mmHg; Nabız: 162/dk; Solunum: 28/dk; SpO₂: %82; Ateş: 36.8 °C; Şok indeksi: 2,25 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 72/44 mmHg; Nabız: 162/dk; Solunum: 28/dk; SpO₂: %82; Ateş: 36.8 °C; Şok indeksi: 2,25 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 72/44 mmHg; Nabız: 162/dk; Solunum: 28/dk; SpO₂: %82; Ateş: 36.8 °C; Şok indeksi: 2,25 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -57780,41 +57780,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Temizlik maddesi içme sonrası ağız yanığı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Temizlik maddesi içme sonrası ağız yanığı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 118/dk; Solunum: 28/dk; SpO₂: %98; Ateş: 36.9 °C; Şok indeksi: 1,18 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 118/dk; Solunum: 28/dk; SpO₂: %98; Ateş: 36.9 °C; Şok indeksi: 1,18 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 100/64 mmHg; Nabız: 118/dk; Solunum: 28/dk; SpO₂: %98; Ateş: 36.9 °C; Şok indeksi: 1,18 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-1",
@@ -58961,41 +58961,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Ağlama sonrası morarma atağı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Ağlama sonrası morarma atağı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 86/54 mmHg; Nabız: 168/dk; Solunum: 28/dk; SpO₂: %68; Ateş: 36.8 °C; Şok indeksi: 1,95 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 86/54 mmHg; Nabız: 168/dk; Solunum: 28/dk; SpO₂: %68; Ateş: 36.8 °C; Şok indeksi: 1,95 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 86/54 mmHg; Nabız: 168/dk; Solunum: 28/dk; SpO₂: %68; Ateş: 36.8 °C; Şok indeksi: 1,95 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -59193,41 +59193,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Yanık yüzdesi klinik değerlendirmesi, Sıcak su yanığı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Yanık yüzdesi klinik değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Yanık yüzdesi klinik değerlendirmesi",
           "summary": "Yanık yüzdesi klinik değerlendirmesi, Sıcak su yanığı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak kararının klinik zeminini oluşturur.",
-          "interpretation": "Yanık yüzdesi klinik değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "18 %.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "18 %.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "18 %.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Yanık yüzdesi klinik değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Yanık yüzdesi klinik değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Yanık yüzdesi klinik değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -60153,41 +60153,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Alçı sonrası artan ekstremite ağrısı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Alçı sonrası artan ekstremite ağrısı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 118/dk; Solunum: 22/dk; SpO₂: %98; Ateş: 36.8 °C; Şok indeksi: 1,18 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 118/dk; Solunum: 22/dk; SpO₂: %98; Ateş: 36.8 °C; Şok indeksi: 1,18 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 100/64 mmHg; Nabız: 118/dk; Solunum: 22/dk; SpO₂: %98; Ateş: 36.8 °C; Şok indeksi: 1,18 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-1",
@@ -60691,41 +60691,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Yüz enfeksiyonu sonrası çift görme tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Abdusens siniri kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Abdusens siniri yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Abdusens siniri yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Yüz enfeksiyonu sonrası çift görme tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Abdusens siniri kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Abdusens siniri yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Abdusens siniri yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 108/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.6 °C; Şok indeksi: 0,92 (sınırda yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 108/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.6 °C; Şok indeksi: 0,92 (sınırda yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 118/74 mmHg; Nabız: 108/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.6 °C; Şok indeksi: 0,92 (sınırda yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Abdusens siniri yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Abdusens siniri yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Abdusens siniri yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Abdusens siniri yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Abdusens siniri yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Abdusens siniri yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "kontrastli-kraniyal-manyetik-rezonans-venografi-1",
@@ -61168,15 +61168,15 @@ export const rawCases = [
     "title": "Glomerüler filtrasyonun lokal kontrolü",
     "difficulty": "Zor",
     "clinicalFocus": "Glomerüler filtrasyonun lokal kontrolü bağlamında mekanizma yorumu için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Değerlendirilen mekanizma renal otoregülasyondur ve Makula densaya ulaşan sodyum klorür yükü artmıştır. ipuçlarını kullanarak Afferent arteriyol vazokonstriksiyonu ile glomerüler filtrasyon hızının azaltılması seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "learningTarget": "Distal tübüle ulaşan NaCl yükü arttığında makula densa yanıtını ve tubuloglomerüler geri bildirimin afferent arteriyol üzerinden GFRyi nasıl azalttığını açıklayabilme.",
     "demographics": "24 yaşında sağlıklı kadın gönüllü",
     "setting": "Klinik değerlendirme",
     "chiefComplaint": "Gönüllüde distal tübüle ulaşan sodyum klorür yükü arttığında glomerüler filtrasyon hızındaki lokal düzenleme tartışılıyor.",
-    "stem": "Bilinen böbrek hastalığı, hipertansiyon veya ilaç kullanımı yoktur. Çalışma fizyolojik mekanizmayı değerlendirmek için simülasyon verileri üzerinden yapılmaktadır.",
+    "stem": "Bilinen böbrek hastalığı, hipertansiyon veya ilaç kullanımı yoktur. Değerlendirme, tubuloglomerüler geri bildirimin distal tübüle ulaşan NaCl yüküne nasıl yanıt verdiğini açıklamaya yöneliktir.",
     "patientIntro": {
       "profile": "24 yaşında sağlıklı kadın gönüllü, fizyoloji laboratuvarında renal otoregülasyon çalışması kapsamında değerlendiriliyor.",
       "presentation": "Gönüllüde distal tübüle ulaşan sodyum klorür yükü arttığında glomerüler filtrasyon hızındaki lokal düzenleme tartışılıyor.",
-      "historySummary": "Bilinen böbrek hastalığı, hipertansiyon veya ilaç kullanımı yoktur. Çalışma fizyolojik mekanizmayı değerlendirmek için simülasyon verileri üzerinden yapılmaktadır."
+      "historySummary": "Bilinen böbrek hastalığı, hipertansiyon veya ilaç kullanımı yoktur. Değerlendirme, tubuloglomerüler geri bildirimin distal tübüle ulaşan NaCl yüküne nasıl yanıt verdiğini açıklamaya yöneliktir."
     },
     "vitals": {
       "Kan basıncı": "112/70 mmHg",
@@ -61270,47 +61270,47 @@ export const rawCases = [
       },
       {
         "id": "simulasyon-bulgusu-1",
-        "label": "Simülasyon bulgusu",
-        "title": "Simülasyon bulgusu",
-        "type": "clinical",
+        "label": "Tubuloglomerüler geri bildirim",
+        "title": "Tubuloglomerüler geri bildirim",
+        "type": "functionalTest",
         "priority": "essential",
-        "subtype": "Klinik değerlendirme",
-        "summary": "Simülasyon bulgusu, Glomerüler filtrasyonun lokal kontrolü tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Afferent arteriyol vazokonstriksiyonu ile glomerüler filtrasyon hızının azaltılması kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Simülasyon bulgusu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Afferent arteriyol vazokonstriksiyonu ile glomerüler filtrasyon hızının azaltılması yönündeki karar mantığını kurmasına yardım eder.",
+        "subtype": "Fizyolojik mekanizma",
+        "summary": "Tubuloglomerüler geri bildirim, distal tübüle ulaşan NaCl yükündeki artışı makula densa üzerinden algılayarak glomerüler filtrasyon hızını ayarlayan lokal renal mekanizmadır.",
+        "clinicalMeaning": "Makula densanın yüksek NaCl yükü algılaması ATP/adenozin aracılı sinyalizasyonu artırır. Bu yanıt afferent arteriyol vazokonstriksiyonunu güçlendirir, glomerüler kapiller basıncı düşürür ve GFRyi azaltarak distal tübüle gelen solüt yükünü dengelemeye çalışır.",
         "result": {
-          "title": "Simülasyon bulgusu",
-          "summary": "Simülasyon bulgusu, Glomerüler filtrasyonun lokal kontrolü tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Afferent arteriyol vazokonstriksiyonu ile glomerüler filtrasyon hızının azaltılması kararının klinik zeminini oluşturur.",
-          "interpretation": "Simülasyon bulgusu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Afferent arteriyol vazokonstriksiyonu ile glomerüler filtrasyon hızının azaltılması yönündeki karar mantığını kurmasına yardım eder.",
+          "title": "Tubuloglomerüler geri bildirim",
+          "summary": "Tubuloglomerüler geri bildirim, distal tübüle ulaşan NaCl yükündeki artışı makula densa üzerinden algılayarak glomerüler filtrasyon hızını ayarlayan lokal renal mekanizmadır.",
+          "interpretation": "Makula densanın yüksek NaCl yükü algılaması ATP/adenozin aracılı sinyalizasyonu artırır. Bu yanıt afferent arteriyol vazokonstriksiyonunu güçlendirir, glomerüler kapiller basıncı düşürür ve GFRyi azaltarak distal tübüle gelen solüt yükünü dengelemeye çalışır.",
           "values": [
             [
-              "Klinik bulgu",
-              "Makula densaya ulaşan sodyum klorür miktarı artmış olarak modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Makula densa yanıtı",
+              "Makula densanın distal tübülde yüksek NaCl yükü algılaması beklenir.",
+              "Beklenen fizyolojik yön",
+              "Afferent arteriyol tonusu artar; GFR azaltılmaya çalışılır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
-              "Makula densaya ulaşan sodyum klorür miktarı artmış olarak modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Makula densa yanıtı",
+              "Makula densanın distal tübülde yüksek NaCl yükü algılaması beklenir.",
+              "Beklenen fizyolojik yön",
+              "Afferent arteriyol tonusu artar; GFR azaltılmaya çalışılır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
-            "Makula densaya ulaşan sodyum klorür miktarı artmış olarak modellendi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Makula densa yanıtı",
+            "Makula densanın distal tübülde yüksek NaCl yükü algılaması beklenir.",
+            "Beklenen fizyolojik yön",
+            "Afferent arteriyol tonusu artar; GFR azaltılmaya çalışılır."
           ]
         ],
-        "postAnswerExplanation": "Simülasyon bulgusu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Afferent arteriyol vazokonstriksiyonu ile glomerüler filtrasyon hızının azaltılması yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Simülasyon bulgusu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Afferent arteriyol vazokonstriksiyonu ile glomerüler filtrasyon hızının azaltılması yönündeki karar mantığını kurmasına yardım eder.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Simülasyon bulgusu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Afferent arteriyol vazokonstriksiyonu ile glomerüler filtrasyon hızının azaltılması yönündeki karar mantığını kurmasına yardım eder."
+        "postAnswerExplanation": "Makula densanın yüksek NaCl yükü algılaması ATP/adenozin aracılı sinyalizasyonu artırır. Bu yanıt afferent arteriyol vazokonstriksiyonunu güçlendirir, glomerüler kapiller basıncı düşürür ve GFRyi azaltarak distal tübüle gelen solüt yükünü dengelemeye çalışır.",
+        "interpretation": "Makula densanın yüksek NaCl yükü algılaması ATP/adenozin aracılı sinyalizasyonu artırır. Bu yanıt afferent arteriyol vazokonstriksiyonunu güçlendirir, glomerüler kapiller basıncı düşürür ve GFRyi azaltarak distal tübüle gelen solüt yükünü dengelemeye çalışır.",
+        "category": "functional",
+        "testTypeCategory": "functional",
+        "explanationAfterAnswer": "Makula densanın yüksek NaCl yükü algılaması ATP/adenozin aracılı sinyalizasyonu artırır. Bu yanıt afferent arteriyol vazokonstriksiyonunu güçlendirir, glomerüler kapiller basıncı düşürür ve GFRyi azaltarak distal tübüle gelen solüt yükünü dengelemeye çalışır."
       },
       {
         "id": "tam-idrar-analizi-2",
@@ -63966,41 +63966,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Hedefe yönelik muayene",
         "summary": "Göz içi basıncı ölçümü, Ani göz ağrısı ve görme bulanıklığı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Akut açı kapanması glokomu kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Göz içi basıncı ölçümü sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Akut açı kapanması glokomu yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Akut açı kapanması glokomu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Göz içi basıncı ölçümü",
           "summary": "Göz içi basıncı ölçümü, Ani göz ağrısı ve görme bulanıklığı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Akut açı kapanması glokomu kararının klinik zeminini oluşturur.",
-          "interpretation": "Göz içi basıncı ölçümü sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Akut açı kapanması glokomu yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Akut açı kapanması glokomu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "54 mmHg.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "54 mmHg.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "54 mmHg.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Göz içi basıncı ölçümü sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Akut açı kapanması glokomu yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Göz içi basıncı ölçümü sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Akut açı kapanması glokomu yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Akut açı kapanması glokomu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Akut açı kapanması glokomu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Göz içi basıncı ölçümü sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Akut açı kapanması glokomu yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Akut açı kapanması glokomu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -64198,41 +64198,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Kirli yara sonrası çene kilitlenmesi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Clostridium tetani kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Clostridium tetani yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Clostridium tetani yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Kirli yara sonrası çene kilitlenmesi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Clostridium tetani kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Clostridium tetani yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Clostridium tetani yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 146/90 mmHg; Nabız: 118/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 37.8 °C; Şok indeksi: 0,81.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 146/90 mmHg; Nabız: 118/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 37.8 °C; Şok indeksi: 0,81.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 146/90 mmHg; Nabız: 118/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 37.8 °C; Şok indeksi: 0,81.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Clostridium tetani yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Clostridium tetani yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Clostridium tetani yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Clostridium tetani yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Clostridium tetani yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Clostridium tetani yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-1",
@@ -64865,41 +64865,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Nazal biyopsi ve epitel tipi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Respiratuvar epitel kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Respiratuvar epitel yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Respiratuvar epitel yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Nazal biyopsi ve epitel tipi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Respiratuvar epitel kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Respiratuvar epitel yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Respiratuvar epitel yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Respiratuvar epitel yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Respiratuvar epitel yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Respiratuvar epitel yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Respiratuvar epitel yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Respiratuvar epitel yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Respiratuvar epitel yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "i-leri-dogrulama-oncesi-temel-laboratuvar-2",
@@ -65532,41 +65532,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Apendektomi materyalinde inflamasyon tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Apendiks duvarında transmural nötrofil infiltrasyonu kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Apendiks duvarında transmural nötrofil infiltrasyonu yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Apendiks duvarında transmural nötrofil infiltrasyonu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Apendektomi materyalinde inflamasyon tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Apendiks duvarında transmural nötrofil infiltrasyonu kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Apendiks duvarında transmural nötrofil infiltrasyonu yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Apendiks duvarında transmural nötrofil infiltrasyonu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Apendiks duvarında transmural nötrofil infiltrasyonu yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Apendiks duvarında transmural nötrofil infiltrasyonu yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Apendiks duvarında transmural nötrofil infiltrasyonu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Apendiks duvarında transmural nötrofil infiltrasyonu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Apendiks duvarında transmural nötrofil infiltrasyonu yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Apendiks duvarında transmural nötrofil infiltrasyonu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "i-leri-dogrulama-oncesi-temel-laboratuvar-2",
@@ -66286,7 +66286,7 @@ export const rawCases = [
     "title": "Egzersizde oksijen bırakılması",
     "difficulty": "Kolay",
     "clinicalFocus": "Egzersizde oksijen bırakılması bağlamında mekanizma yorumu için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir. ipuçlarını kullanarak Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "learningTarget": "Yoğun egzersizde aktif kas dokusunda CO2, H+ ve sıcaklık artışının Bohr etkisiyle hemoglobin-oksijen eğrisini sağa kaydırdığını açıklayabilme.",
     "demographics": "22 yaşında sağlıklı erkek gönüllü",
     "setting": "Klinik değerlendirme",
     "chiefComplaint": "Gönüllüde yoğun egzersiz sırasında iskelet kasına oksijen bırakılmasını artıran faktörler tartışılıyor.",
@@ -66304,47 +66304,47 @@ export const rawCases = [
     "investigations": [
       {
         "id": "fizyolojik-simulasyon-1",
-        "label": "Fizyolojik simülasyon",
-        "title": "Fizyolojik simülasyon",
-        "type": "clinical",
+        "label": "Bohr etkisi ve oksijen bırakılması",
+        "title": "Bohr etkisi ve oksijen bırakılması",
+        "type": "functionalTest",
         "priority": "essential",
-        "subtype": "Klinik değerlendirme",
-        "summary": "Fizyolojik simülasyon, Egzersizde oksijen bırakılması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönündeki karar mantığını kurmasına yardım eder.",
+        "subtype": "Fizyolojik mekanizma",
+        "summary": "Bohr etkisi, aktif dokuda CO2, H+ ve sıcaklık artışıyla hemoglobinin oksijene afinitesinin azalmasını ve oksijenin dokuya daha kolay bırakılmasını açıklar.",
+        "clinicalMeaning": "Yoğun egzersiz sırasında aktif kas dokusunda karbondioksit üretimi, H+ yoğunluğu ve sıcaklık artar. Bu değişiklikler hemoglobin-oksijen disosiasyon eğrisini sağa kaydırır; böylece hemoglobin oksijeni daha kolay bırakır ve çalışan kasın oksijenlenmesi desteklenir.",
         "result": {
-          "title": "Fizyolojik simülasyon",
-          "summary": "Fizyolojik simülasyon, Egzersizde oksijen bırakılması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar kararının klinik zeminini oluşturur.",
-          "interpretation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönündeki karar mantığını kurmasına yardım eder.",
+          "title": "Bohr etkisi ve oksijen bırakılması",
+          "summary": "Bohr etkisi, aktif dokuda CO2, H+ ve sıcaklık artışıyla hemoglobinin oksijene afinitesinin azalmasını ve oksijenin dokuya daha kolay bırakılmasını açıklar.",
+          "interpretation": "Yoğun egzersiz sırasında aktif kas dokusunda karbondioksit üretimi, H+ yoğunluğu ve sıcaklık artar. Bu değişiklikler hemoglobin-oksijen disosiasyon eğrisini sağa kaydırır; böylece hemoglobin oksijeni daha kolay bırakır ve çalışan kasın oksijenlenmesi desteklenir.",
           "values": [
             [
-              "Klinik bulgu",
-              "Aktif kas dokusunda karbondioksit, hidrojen iyonu ve sıcaklık artışı modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Aktif kas dokusu yanıtı",
+              "Aktif kas dokusunda CO2, H+ ve sıcaklık artışı beklenir.",
+              "Beklenen fizyolojik yön",
+              "Hemoglobin-oksijen eğrisi sağa kayar; dokuya oksijen bırakılması artar."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
-              "Aktif kas dokusunda karbondioksit, hidrojen iyonu ve sıcaklık artışı modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Aktif kas dokusu yanıtı",
+              "Aktif kas dokusunda CO2, H+ ve sıcaklık artışı beklenir.",
+              "Beklenen fizyolojik yön",
+              "Hemoglobin-oksijen eğrisi sağa kayar; dokuya oksijen bırakılması artar."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
-            "Aktif kas dokusunda karbondioksit, hidrojen iyonu ve sıcaklık artışı modellendi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Aktif kas dokusu yanıtı",
+            "Aktif kas dokusunda CO2, H+ ve sıcaklık artışı beklenir.",
+            "Beklenen fizyolojik yön",
+            "Hemoglobin-oksijen eğrisi sağa kayar; dokuya oksijen bırakılması artar."
           ]
         ],
-        "postAnswerExplanation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönündeki karar mantığını kurmasına yardım eder.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönündeki karar mantığını kurmasına yardım eder."
+        "postAnswerExplanation": "Yoğun egzersiz sırasında aktif kas dokusunda karbondioksit üretimi, H+ yoğunluğu ve sıcaklık artar. Bu değişiklikler hemoglobin-oksijen disosiasyon eğrisini sağa kaydırır; böylece hemoglobin oksijeni daha kolay bırakır ve çalışan kasın oksijenlenmesi desteklenir.",
+        "interpretation": "Yoğun egzersiz sırasında aktif kas dokusunda karbondioksit üretimi, H+ yoğunluğu ve sıcaklık artar. Bu değişiklikler hemoglobin-oksijen disosiasyon eğrisini sağa kaydırır; böylece hemoglobin oksijeni daha kolay bırakır ve çalışan kasın oksijenlenmesi desteklenir.",
+        "category": "functional",
+        "testTypeCategory": "functional",
+        "explanationAfterAnswer": "Yoğun egzersiz sırasında aktif kas dokusunda karbondioksit üretimi, H+ yoğunluğu ve sıcaklık artar. Bu değişiklikler hemoglobin-oksijen disosiasyon eğrisini sağa kaydırır; böylece hemoglobin oksijeni daha kolay bırakır ve çalışan kasın oksijenlenmesi desteklenir."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -66366,28 +66366,28 @@ export const rawCases = [
         "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar"
       ],
       "question": "Bu değişikliklerin hemoglobin-oksijen disosiasyon eğrisine ve doku oksijenlenmesine etkisi aşağıdakilerden hangisidir?",
-      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir; aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir ile birlikte değerlendirildiğinde Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneği klinik örüntüyle en tutarlı yanıttır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir; aktif dokuda karbondioksit ve hidrojen iyonu artışı beklenir ile birlikte değerlendirildiğinde Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneği klinik örüntüyle en tutarlı yanıttır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "Sınavda Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ipucunu Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir ile birlikte görürsen Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
+          "text": "Sınavda Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ipucunu Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir ile birlikte görürsen Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
         }
       ],
       "optionComparison": {
-        "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar": "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar, vakadaki Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Sıcaklık artışı hemoglobinin oksijen afinitesini azaltan faktörlerden biridir kararı güçlendiren ek ipucudur. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-        "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar": "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Eğri sağa kayar ve oksijen bırakılması azalır": "Eğri sağa kayar ve oksijen bırakılması azalır destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez": "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar": "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar": "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar, vakadaki Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Sıcaklık artışı hemoglobinin oksijen afinitesini azaltan faktörlerden biridir kararı güçlendiren ek ipucudur. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+        "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar": "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Eğri sağa kayar ve oksijen bırakılması azalır": "Eğri sağa kayar ve oksijen bırakılması azalır destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez": "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar": "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       },
       "answerFeedback": {
-        "summary": "Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir. birlikte okunduğunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı klinik olarak öne çıkar.",
-        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir; aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir ile birlikte değerlendirildiğinde Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneği klinik örüntüyle en tutarlı yanıttır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
-        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir; aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir ile birlikte değerlendirildiğinde Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneği klinik örüntüyle en tutarlı yanıttır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "summary": "Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir. birlikte okunduğunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı klinik olarak öne çıkar.",
+        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir; aktif dokuda karbondioksit ve hidrojen iyonu artışı beklenir ile birlikte değerlendirildiğinde Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneği klinik örüntüyle en tutarlı yanıttır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir; aktif dokuda karbondioksit ve hidrojen iyonu artışı beklenir ile birlikte değerlendirildiğinde Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneği klinik örüntüyle en tutarlı yanıttır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
         "correctOptionFeedback": "Eğrinin sağa kayması hemoglobinin oksijene afinitesini azaltır ve aktif dokulara oksijen bırakılmasını artırır.",
         "keyClues": [
           "Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir.",
-          "Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir.",
+          "Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir.",
           "Sıcaklık artışı hemoglobinin oksijen afinitesini azaltan faktörlerden biridir."
         ],
         "evidenceChain": [
@@ -66397,7 +66397,7 @@ export const rawCases = [
             "source": "case"
           },
           {
-            "text": "Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir.",
+            "text": "Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir.",
             "weight": "high",
             "source": "case"
           },
@@ -66407,7 +66407,7 @@ export const rawCases = [
             "source": "case"
           }
         ],
-        "examPearl": "Sınavda Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ipucunu Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir ile birlikte görürsen Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+        "examPearl": "Sınavda Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ipucunu Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir ile birlikte görürsen Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
         "pearls": [
           {
             "label": "Sınav notu",
@@ -66421,24 +66421,24 @@ export const rawCases = [
           }
         ],
         "optionComparison": {
-          "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar": "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar, vakadaki Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Sıcaklık artışı hemoglobinin oksijen afinitesini azaltan faktörlerden biridir kararı güçlendiren ek ipucudur. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-          "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar": "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Eğri sağa kayar ve oksijen bırakılması azalır": "Eğri sağa kayar ve oksijen bırakılması azalır destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez": "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar": "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar": "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar, vakadaki Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Sıcaklık artışı hemoglobinin oksijen afinitesini azaltan faktörlerden biridir kararı güçlendiren ek ipucudur. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+          "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar": "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Eğri sağa kayar ve oksijen bırakılması azalır": "Eğri sağa kayar ve oksijen bırakılması azalır destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez": "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar": "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
         "whyWrong": {
-          "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar": "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Eğri sağa kayar ve oksijen bırakılması azalır": "Eğri sağa kayar ve oksijen bırakılması azalır destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez": "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar": "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar": "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Eğri sağa kayar ve oksijen bırakılması azalır": "Eğri sağa kayar ve oksijen bırakılması azalır destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez": "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar": "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
         "managementSteps": [],
         "management": [],
         "learningOutcome": "Hemoglobin-oksijen disosiasyon eğrisinde sağa kaymayı doku oksijen sunumuyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir. Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneğini diğerlerinden ayırır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir."
+        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir. Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneğini diğerlerinden ayırır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir."
       },
-      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir; aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir ile birlikte değerlendirildiğinde Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneği klinik örüntüyle en tutarlı yanıttır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir; aktif dokuda karbondioksit ve hidrojen iyonu artışı beklenir ile birlikte değerlendirildiğinde Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneği klinik örüntüyle en tutarlı yanıttır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "evidenceChain": [
         {
           "title": "Klinik ipucu",
@@ -66448,7 +66448,7 @@ export const rawCases = [
         },
         {
           "title": "Klinik ipucu",
-          "text": "Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir.",
+          "text": "Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir.",
           "weight": "high",
           "source": "case"
         },
@@ -66459,25 +66459,25 @@ export const rawCases = [
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir. Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneğini diğerlerinden ayırır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-      "examPearl": "Sınavda Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ipucunu Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir ile birlikte görürsen Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir. Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneğini diğerlerinden ayırır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+      "examPearl": "Sınavda Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ipucunu Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir ile birlikte görürsen Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
       "whyWrong": {
-        "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar": "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Eğri sağa kayar ve oksijen bırakılması azalır": "Eğri sağa kayar ve oksijen bırakılması azalır destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez": "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar": "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar": "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Eğri sağa kayar ve oksijen bırakılması azalır": "Eğri sağa kayar ve oksijen bırakılması azalır destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez": "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar": "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       }
     },
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir. Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneğini diğerlerinden ayırır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir. Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneğini diğerlerinden ayırır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
     "examPearl": "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar için sınav ayırıcı nokta, “Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir” ipucunu ikinci destekleyici bulguyla birlikte yorumlamaktır.",
-    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir; aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir ile birlikte değerlendirildiğinde Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneği klinik örüntüyle en tutarlı yanıttır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir; aktif dokuda karbondioksit ve hidrojen iyonu artışı beklenir ile birlikte değerlendirildiğinde Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar seçeneği klinik örüntüyle en tutarlı yanıttır. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
     "optionComparison": {
-      "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar": "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar, vakadaki Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Sıcaklık artışı hemoglobinin oksijen afinitesini azaltan faktörlerden biridir kararı güçlendiren ek ipucudur. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-      "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar": "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Eğri sağa kayar ve oksijen bırakılması azalır": "Eğri sağa kayar ve oksijen bırakılması azalır destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez": "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar": "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar": "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar, vakadaki Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Sıcaklık artışı hemoglobinin oksijen afinitesini azaltan faktörlerden biridir kararı güçlendiren ek ipucudur. Egzersizde oksijen bırakılması olgusunda Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+      "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar": "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Eğri sağa kayar ve oksijen bırakılması azalır": "Eğri sağa kayar ve oksijen bırakılması azalır destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez": "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar": "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     },
     "evidenceChain": [
       {
@@ -66486,7 +66486,7 @@ export const rawCases = [
         "source": "case"
       },
       {
-        "text": "Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir.",
+        "text": "Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir.",
         "weight": "high",
         "source": "case"
       },
@@ -66497,10 +66497,10 @@ export const rawCases = [
       }
     ],
     "whyWrong": {
-      "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar": "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Eğri sağa kayar ve oksijen bırakılması azalır": "Eğri sağa kayar ve oksijen bırakılması azalır destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez": "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar": "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit ve hidrojen iyonu artışı modellenmiştir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar": "Eğri sola kayar ve hemoglobinin oksijeni bırakması artar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Eğri sağa kayar ve oksijen bırakılması azalır": "Eğri sağa kayar ve oksijen bırakılması azalır destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez": "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar": "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar destekleyici tedavi başlığında düşünülebilir; ancak bu vakada Değerlendirme yoğun egzersiz sırasında aktif iskelet kasına yöneliktir ve Aktif dokuda karbondioksit, hidrojen iyonu ve sıcaklık artışı beklenir bulguları Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     }
   },
   {
@@ -67212,41 +67212,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Kasık ameliyatı sonrası uyuşma tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus ilioinguinalis kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus ilioinguinalis yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus ilioinguinalis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Hedefe yönelik nörolojik/nörovasküler muayene",
           "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Kasık ameliyatı sonrası uyuşma tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus ilioinguinalis kararının klinik zeminini oluşturur.",
-          "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus ilioinguinalis yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus ilioinguinalis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus ilioinguinalis yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus ilioinguinalis yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus ilioinguinalis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus ilioinguinalis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus ilioinguinalis yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus ilioinguinalis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -68089,14 +68089,14 @@ export const rawCases = [
     "title": "Ani kan basıncı yükselmesi",
     "difficulty": "Kolay",
     "clinicalFocus": "Ani kan basıncı yükselmesi bağlamında mekanizma yorumu için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır. ipuçlarını kullanarak Parasempatik aktivite artışı ve kalp hızında azalma seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "learningTarget": "Karotis sinüs basıncındaki akut artışın baroreseptör ateşlemesini artırarak parasempatik aktiviteyi ve refleks bradikardiyi nasıl oluşturduğunu açıklayabilme.",
     "demographics": "45 yaşında sağlıklı gönüllü",
     "setting": "Klinik değerlendirme",
-    "chiefComplaint": "Deneysel simülasyonda arter basıncı kısa süreli yükseldiğinde beklenen otonom yanıt tartışılıyor.",
+    "chiefComplaint": "Arter basıncı kısa süreli yükseldiğinde beklenen otonom yanıt tartışılıyor.",
     "stem": "Bilinen kardiyovasküler hastalığı ve düzenli ilaç kullanımı yoktur. Değerlendirme fizyolojik refleks mekanizmayı öğretmek amacıyla yapılmaktadır.",
     "patientIntro": {
       "profile": "45 yaşında sağlıklı gönüllü, fizyoloji laboratuvarında barorefleks yanıtı açısından değerlendiriliyor.",
-      "presentation": "Deneysel simülasyonda arter basıncı kısa süreli yükseldiğinde beklenen otonom yanıt tartışılıyor.",
+      "presentation": "Arter basıncı kısa süreli yükseldiğinde beklenen otonom yanıt tartışılıyor.",
       "historySummary": "Bilinen kardiyovasküler hastalığı ve düzenli ilaç kullanımı yoktur. Değerlendirme fizyolojik refleks mekanizmayı öğretmek amacıyla yapılmaktadır."
     },
     "vitals": {
@@ -68113,47 +68113,47 @@ export const rawCases = [
     "investigations": [
       {
         "id": "simulasyon-bulgusu-1",
-        "label": "Simülasyon bulgusu",
-        "title": "Simülasyon bulgusu",
-        "type": "clinical",
+        "label": "Baroreseptör refleks yanıtı",
+        "title": "Baroreseptör refleks yanıtı",
+        "type": "functionalTest",
         "priority": "essential",
-        "subtype": "Klinik değerlendirme",
-        "summary": "Simülasyon bulgusu, Ani kan basıncı yükselmesi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Parasempatik aktivite artışı ve kalp hızında azalma kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Simülasyon bulgusu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Parasempatik aktivite artışı ve kalp hızında azalma yönündeki karar mantığını kurmasına yardım eder.",
+        "subtype": "Fizyolojik refleks",
+        "summary": "Baroreseptör refleks, arter basıncındaki akut artışı karotis sinüsü üzerinden algılayarak parasempatik aktiviteyi artırır ve kalp hızını düşürür.",
+        "clinicalMeaning": "Karotis sinüs geriliminin artması baroreseptör ateşleme sıklığını yükseltir. Bu bilgi beyin sapında otonom merkezlere iletilir; vagal tonus artarken sempatik çıkış baskılanır, böylece kalp hızı ve periferik direnç azaltılarak basınç dengelenir.",
         "result": {
-          "title": "Simülasyon bulgusu",
-          "summary": "Simülasyon bulgusu, Ani kan basıncı yükselmesi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Parasempatik aktivite artışı ve kalp hızında azalma kararının klinik zeminini oluşturur.",
-          "interpretation": "Simülasyon bulgusu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Parasempatik aktivite artışı ve kalp hızında azalma yönündeki karar mantığını kurmasına yardım eder.",
+          "title": "Baroreseptör refleks yanıtı",
+          "summary": "Baroreseptör refleks, arter basıncındaki akut artışı karotis sinüsü üzerinden algılayarak parasempatik aktiviteyi artırır ve kalp hızını düşürür.",
+          "interpretation": "Karotis sinüs geriliminin artması baroreseptör ateşleme sıklığını yükseltir. Bu bilgi beyin sapında otonom merkezlere iletilir; vagal tonus artarken sempatik çıkış baskılanır, böylece kalp hızı ve periferik direnç azaltılarak basınç dengelenir.",
           "values": [
             [
-              "Klinik bulgu",
-              "Karotis sinüs basıncı akut olarak artırıldı.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Karotis sinüs yanıtı",
+              "Karotis sinüs basıncındaki akut artış baroreseptör ateşleme sıklığını artırır.",
+              "Beklenen refleks yanıt",
+              "Parasempatik aktivite artar, sempatik çıkış azalır ve kalp hızı düşer."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
-              "Karotis sinüs basıncı akut olarak artırıldı.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Karotis sinüs yanıtı",
+              "Karotis sinüs basıncındaki akut artış baroreseptör ateşleme sıklığını artırır.",
+              "Beklenen refleks yanıt",
+              "Parasempatik aktivite artar, sempatik çıkış azalır ve kalp hızı düşer."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
-            "Karotis sinüs basıncı akut olarak artırıldı.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Karotis sinüs yanıtı",
+            "Karotis sinüs basıncındaki akut artış baroreseptör ateşleme sıklığını artırır.",
+            "Beklenen refleks yanıt",
+            "Parasempatik aktivite artar, sempatik çıkış azalır ve kalp hızı düşer."
           ]
         ],
-        "postAnswerExplanation": "Simülasyon bulgusu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Parasempatik aktivite artışı ve kalp hızında azalma yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Simülasyon bulgusu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Parasempatik aktivite artışı ve kalp hızında azalma yönündeki karar mantığını kurmasına yardım eder.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Simülasyon bulgusu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Parasempatik aktivite artışı ve kalp hızında azalma yönündeki karar mantığını kurmasına yardım eder."
+        "postAnswerExplanation": "Karotis sinüs geriliminin artması baroreseptör ateşleme sıklığını yükseltir. Bu bilgi beyin sapında otonom merkezlere iletilir; vagal tonus artarken sempatik çıkış baskılanır, böylece kalp hızı ve periferik direnç azaltılarak basınç dengelenir.",
+        "interpretation": "Karotis sinüs geriliminin artması baroreseptör ateşleme sıklığını yükseltir. Bu bilgi beyin sapında otonom merkezlere iletilir; vagal tonus artarken sempatik çıkış baskılanır, böylece kalp hızı ve periferik direnç azaltılarak basınç dengelenir.",
+        "category": "functional",
+        "testTypeCategory": "functional",
+        "explanationAfterAnswer": "Karotis sinüs geriliminin artması baroreseptör ateşleme sıklığını yükseltir. Bu bilgi beyin sapında otonom merkezlere iletilir; vagal tonus artarken sempatik çıkış baskılanır, böylece kalp hızı ve periferik direnç azaltılarak basınç dengelenir."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -68175,33 +68175,33 @@ export const rawCases = [
         "Aldosteron salınımında ani artışla bradikardi oluşması"
       ],
       "question": "Karotis sinüs basıncı akut arttığında beklenen refleks yanıt aşağıdakilerden hangisidir?",
-      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda karotis sinüs basıncı akut artırılmıştır; bu durum baroreseptör ateşlemesini artırır ile birlikte değerlendirildiğinde Parasempatik aktivite artışı ve kalp hızında azalma seçeneği klinik örüntüyle en tutarlı yanıttır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır; bu durum baroreseptör ateşlemesini artırır ile birlikte değerlendirildiğinde Parasempatik aktivite artışı ve kalp hızında azalma seçeneği klinik örüntüyle en tutarlı yanıttır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "Sınavda Simülasyonda karotis sinüs basıncı akut artırılmıştır ipucunu Bu durum baroreseptör ateşlemesini artırır ile birlikte görürsen Parasempatik aktivite artışı ve kalp hızında azalma yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
+          "text": "Sınavda Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ipucunu Bu durum baroreseptör ateşlemesini artırır ile birlikte görürsen Parasempatik aktivite artışı ve kalp hızında azalma yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
         }
       ],
       "optionComparison": {
-        "Parasempatik aktivite artışı ve kalp hızında azalma": "Parasempatik aktivite artışı ve kalp hızında azalma, vakadaki Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Yanıt kısa süreli otonom refleks düzenlemeye yöneliktir kararı güçlendiren ek ipucudur. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-        "Sempatik aktivite artışı ve kalp hızında artma": "Sempatik aktivite artışı ve kalp hızında artma mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Vagal tonus azalması ve taşikardi": "Vagal tonus azalması ve taşikardi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Renin salınımında ani artışla hipertansiyonun sürdürülmesi": "Renin salınımında ani artışla hipertansiyonun sürdürülmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Aldosteron salınımında ani artışla bradikardi oluşması": "Aldosteron salınımında ani artışla bradikardi oluşması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "Parasempatik aktivite artışı ve kalp hızında azalma": "Parasempatik aktivite artışı ve kalp hızında azalma, vakadaki Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Yanıt kısa süreli otonom refleks düzenlemeye yöneliktir kararı güçlendiren ek ipucudur. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+        "Sempatik aktivite artışı ve kalp hızında artma": "Sempatik aktivite artışı ve kalp hızında artma mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Vagal tonus azalması ve taşikardi": "Vagal tonus azalması ve taşikardi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Renin salınımında ani artışla hipertansiyonun sürdürülmesi": "Renin salınımında ani artışla hipertansiyonun sürdürülmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Aldosteron salınımında ani artışla bradikardi oluşması": "Aldosteron salınımında ani artışla bradikardi oluşması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       },
       "answerFeedback": {
-        "summary": "Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır. birlikte okunduğunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı klinik olarak öne çıkar.",
-        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda karotis sinüs basıncı akut artırılmıştır; bu durum baroreseptör ateşlemesini artırır ile birlikte değerlendirildiğinde Parasempatik aktivite artışı ve kalp hızında azalma seçeneği klinik örüntüyle en tutarlı yanıttır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
-        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda karotis sinüs basıncı akut artırılmıştır; bu durum baroreseptör ateşlemesini artırır ile birlikte değerlendirildiğinde Parasempatik aktivite artışı ve kalp hızında azalma seçeneği klinik örüntüyle en tutarlı yanıttır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "summary": "Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır. birlikte okunduğunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı klinik olarak öne çıkar.",
+        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır; bu durum baroreseptör ateşlemesini artırır ile birlikte değerlendirildiğinde Parasempatik aktivite artışı ve kalp hızında azalma seçeneği klinik örüntüyle en tutarlı yanıttır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır; bu durum baroreseptör ateşlemesini artırır ile birlikte değerlendirildiğinde Parasempatik aktivite artışı ve kalp hızında azalma seçeneği klinik örüntüyle en tutarlı yanıttır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
         "correctOptionFeedback": "Parasempatik aktivite artışı ve kalp hızında azalma yüksek baroreseptör ateşlemesine verilen doğru refleks yanıttır.",
         "keyClues": [
-          "Simülasyonda karotis sinüs basıncı akut artırılmıştır.",
+          "Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır.",
           "Bu durum baroreseptör ateşlemesini artırır.",
           "Yanıt kısa süreli otonom refleks düzenlemeye yöneliktir."
         ],
         "evidenceChain": [
           {
-            "text": "Simülasyonda karotis sinüs basıncı akut artırılmıştır.",
+            "text": "Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır.",
             "weight": "high",
             "source": "case"
           },
@@ -68216,7 +68216,7 @@ export const rawCases = [
             "source": "case"
           }
         ],
-        "examPearl": "Sınavda Simülasyonda karotis sinüs basıncı akut artırılmıştır ipucunu Bu durum baroreseptör ateşlemesini artırır ile birlikte görürsen Parasempatik aktivite artışı ve kalp hızında azalma yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+        "examPearl": "Sınavda Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ipucunu Bu durum baroreseptör ateşlemesini artırır ile birlikte görürsen Parasempatik aktivite artışı ve kalp hızında azalma yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
         "pearls": [
           {
             "label": "Sınav notu",
@@ -68230,28 +68230,28 @@ export const rawCases = [
           }
         ],
         "optionComparison": {
-          "Parasempatik aktivite artışı ve kalp hızında azalma": "Parasempatik aktivite artışı ve kalp hızında azalma, vakadaki Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Yanıt kısa süreli otonom refleks düzenlemeye yöneliktir kararı güçlendiren ek ipucudur. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-          "Sempatik aktivite artışı ve kalp hızında artma": "Sempatik aktivite artışı ve kalp hızında artma mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Vagal tonus azalması ve taşikardi": "Vagal tonus azalması ve taşikardi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Renin salınımında ani artışla hipertansiyonun sürdürülmesi": "Renin salınımında ani artışla hipertansiyonun sürdürülmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Aldosteron salınımında ani artışla bradikardi oluşması": "Aldosteron salınımında ani artışla bradikardi oluşması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "Parasempatik aktivite artışı ve kalp hızında azalma": "Parasempatik aktivite artışı ve kalp hızında azalma, vakadaki Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Yanıt kısa süreli otonom refleks düzenlemeye yöneliktir kararı güçlendiren ek ipucudur. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+          "Sempatik aktivite artışı ve kalp hızında artma": "Sempatik aktivite artışı ve kalp hızında artma mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Vagal tonus azalması ve taşikardi": "Vagal tonus azalması ve taşikardi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Renin salınımında ani artışla hipertansiyonun sürdürülmesi": "Renin salınımında ani artışla hipertansiyonun sürdürülmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Aldosteron salınımında ani artışla bradikardi oluşması": "Aldosteron salınımında ani artışla bradikardi oluşması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
         "whyWrong": {
-          "Sempatik aktivite artışı ve kalp hızında artma": "Sempatik aktivite artışı ve kalp hızında artma mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Vagal tonus azalması ve taşikardi": "Vagal tonus azalması ve taşikardi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Renin salınımında ani artışla hipertansiyonun sürdürülmesi": "Renin salınımında ani artışla hipertansiyonun sürdürülmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Aldosteron salınımında ani artışla bradikardi oluşması": "Aldosteron salınımında ani artışla bradikardi oluşması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "Sempatik aktivite artışı ve kalp hızında artma": "Sempatik aktivite artışı ve kalp hızında artma mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Vagal tonus azalması ve taşikardi": "Vagal tonus azalması ve taşikardi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Renin salınımında ani artışla hipertansiyonun sürdürülmesi": "Renin salınımında ani artışla hipertansiyonun sürdürülmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Aldosteron salınımında ani artışla bradikardi oluşması": "Aldosteron salınımında ani artışla bradikardi oluşması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
         "managementSteps": [],
         "management": [],
         "learningOutcome": "Baroreseptör refleksinde ani hipertansiyona verilen kalp hızı yanıtını açıklayabilme",
-        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır. Parasempatik aktivite artışı ve kalp hızında azalma seçeneğini diğerlerinden ayırır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir."
+        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır. Parasempatik aktivite artışı ve kalp hızında azalma seçeneğini diğerlerinden ayırır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir."
       },
-      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda karotis sinüs basıncı akut artırılmıştır; bu durum baroreseptör ateşlemesini artırır ile birlikte değerlendirildiğinde Parasempatik aktivite artışı ve kalp hızında azalma seçeneği klinik örüntüyle en tutarlı yanıttır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır; bu durum baroreseptör ateşlemesini artırır ile birlikte değerlendirildiğinde Parasempatik aktivite artışı ve kalp hızında azalma seçeneği klinik örüntüyle en tutarlı yanıttır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "evidenceChain": [
         {
           "title": "Klinik ipucu",
-          "text": "Simülasyonda karotis sinüs basıncı akut artırılmıştır.",
+          "text": "Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır.",
           "weight": "high",
           "source": "case"
         },
@@ -68268,29 +68268,29 @@ export const rawCases = [
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır. Parasempatik aktivite artışı ve kalp hızında azalma seçeneğini diğerlerinden ayırır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-      "examPearl": "Sınavda Simülasyonda karotis sinüs basıncı akut artırılmıştır ipucunu Bu durum baroreseptör ateşlemesini artırır ile birlikte görürsen Parasempatik aktivite artışı ve kalp hızında azalma yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır. Parasempatik aktivite artışı ve kalp hızında azalma seçeneğini diğerlerinden ayırır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+      "examPearl": "Sınavda Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ipucunu Bu durum baroreseptör ateşlemesini artırır ile birlikte görürsen Parasempatik aktivite artışı ve kalp hızında azalma yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
       "whyWrong": {
-        "Sempatik aktivite artışı ve kalp hızında artma": "Sempatik aktivite artışı ve kalp hızında artma mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Vagal tonus azalması ve taşikardi": "Vagal tonus azalması ve taşikardi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Renin salınımında ani artışla hipertansiyonun sürdürülmesi": "Renin salınımında ani artışla hipertansiyonun sürdürülmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Aldosteron salınımında ani artışla bradikardi oluşması": "Aldosteron salınımında ani artışla bradikardi oluşması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "Sempatik aktivite artışı ve kalp hızında artma": "Sempatik aktivite artışı ve kalp hızında artma mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Vagal tonus azalması ve taşikardi": "Vagal tonus azalması ve taşikardi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Renin salınımında ani artışla hipertansiyonun sürdürülmesi": "Renin salınımında ani artışla hipertansiyonun sürdürülmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Aldosteron salınımında ani artışla bradikardi oluşması": "Aldosteron salınımında ani artışla bradikardi oluşması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       }
     },
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır. Parasempatik aktivite artışı ve kalp hızında azalma seçeneğini diğerlerinden ayırır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-    "examPearl": "Parasempatik aktivite artışı ve kalp hızında azalma için sınav ayırıcı nokta “Simülasyonda karotis sinüs basıncı akut artırılmıştır” ipucudur; Farmakolojik yorumda klinik bulgu, hedef reseptör/enzim etkisi ve beklenen toksisite paterni birlikte değerlendirilmelidir.",
-    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda karotis sinüs basıncı akut artırılmıştır; bu durum baroreseptör ateşlemesini artırır ile birlikte değerlendirildiğinde Parasempatik aktivite artışı ve kalp hızında azalma seçeneği klinik örüntüyle en tutarlı yanıttır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır. Parasempatik aktivite artışı ve kalp hızında azalma seçeneğini diğerlerinden ayırır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+    "examPearl": "Parasempatik aktivite artışı ve kalp hızında azalma için sınav ayırıcı nokta “Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır” ipucudur; Farmakolojik yorumda klinik bulgu, hedef reseptör/enzim etkisi ve beklenen toksisite paterni birlikte değerlendirilmelidir.",
+    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır; bu durum baroreseptör ateşlemesini artırır ile birlikte değerlendirildiğinde Parasempatik aktivite artışı ve kalp hızında azalma seçeneği klinik örüntüyle en tutarlı yanıttır. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
     "optionComparison": {
-      "Parasempatik aktivite artışı ve kalp hızında azalma": "Parasempatik aktivite artışı ve kalp hızında azalma, vakadaki Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Yanıt kısa süreli otonom refleks düzenlemeye yöneliktir kararı güçlendiren ek ipucudur. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-      "Sempatik aktivite artışı ve kalp hızında artma": "Sempatik aktivite artışı ve kalp hızında artma mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Vagal tonus azalması ve taşikardi": "Vagal tonus azalması ve taşikardi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Renin salınımında ani artışla hipertansiyonun sürdürülmesi": "Renin salınımında ani artışla hipertansiyonun sürdürülmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Aldosteron salınımında ani artışla bradikardi oluşması": "Aldosteron salınımında ani artışla bradikardi oluşması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "Parasempatik aktivite artışı ve kalp hızında azalma": "Parasempatik aktivite artışı ve kalp hızında azalma, vakadaki Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Yanıt kısa süreli otonom refleks düzenlemeye yöneliktir kararı güçlendiren ek ipucudur. Ani kan basıncı yükselmesi olgusunda Parasempatik aktivite artışı ve kalp hızında azalma yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+      "Sempatik aktivite artışı ve kalp hızında artma": "Sempatik aktivite artışı ve kalp hızında artma mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Vagal tonus azalması ve taşikardi": "Vagal tonus azalması ve taşikardi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Renin salınımında ani artışla hipertansiyonun sürdürülmesi": "Renin salınımında ani artışla hipertansiyonun sürdürülmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Aldosteron salınımında ani artışla bradikardi oluşması": "Aldosteron salınımında ani artışla bradikardi oluşması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     },
     "evidenceChain": [
       {
-        "text": "Simülasyonda karotis sinüs basıncı akut artırılmıştır.",
+        "text": "Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır.",
         "weight": "high",
         "source": "case"
       },
@@ -68306,10 +68306,10 @@ export const rawCases = [
       }
     ],
     "whyWrong": {
-      "Sempatik aktivite artışı ve kalp hızında artma": "Sempatik aktivite artışı ve kalp hızında artma mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Vagal tonus azalması ve taşikardi": "Vagal tonus azalması ve taşikardi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Renin salınımında ani artışla hipertansiyonun sürdürülmesi": "Renin salınımında ani artışla hipertansiyonun sürdürülmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Aldosteron salınımında ani artışla bradikardi oluşması": "Aldosteron salınımında ani artışla bradikardi oluşması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda karotis sinüs basıncı akut artırılmıştır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "Sempatik aktivite artışı ve kalp hızında artma": "Sempatik aktivite artışı ve kalp hızında artma mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Vagal tonus azalması ve taşikardi": "Vagal tonus azalması ve taşikardi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Renin salınımında ani artışla hipertansiyonun sürdürülmesi": "Renin salınımında ani artışla hipertansiyonun sürdürülmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Aldosteron salınımında ani artışla bradikardi oluşması": "Aldosteron salınımında ani artışla bradikardi oluşması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Karotis sinüs basıncının akut artışı baroreseptör ateşlemesini artırır ve Bu durum baroreseptör ateşlemesini artırır bulguları Parasempatik aktivite artışı ve kalp hızında azalma yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     }
   },
   {
@@ -70133,41 +70133,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Hayvan ısırığı sonrası hidrofobi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Rabies virus kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Rabies virus yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Rabies virus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Hayvan ısırığı sonrası hidrofobi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Rabies virus kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Rabies virus yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Rabies virus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 122/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.1 °C; Şok indeksi: 1,03 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 122/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.1 °C; Şok indeksi: 1,03 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 118/74 mmHg; Nabız: 122/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.1 °C; Şok indeksi: 1,03 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Rabies virus yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Rabies virus yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Rabies virus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Rabies virus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Rabies virus yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Rabies virus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-2",
@@ -70917,41 +70917,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Transplant sonrası görme bulanıklığı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Cytomegalovirus kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Cytomegalovirus yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Cytomegalovirus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Transplant sonrası görme bulanıklığı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Cytomegalovirus kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Cytomegalovirus yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Cytomegalovirus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 88/54 mmHg; Nabız: 122/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 38.0 °C; Şok indeksi: 1,39 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 88/54 mmHg; Nabız: 122/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 38.0 °C; Şok indeksi: 1,39 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 88/54 mmHg; Nabız: 122/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 38.0 °C; Şok indeksi: 1,39 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Cytomegalovirus yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Cytomegalovirus yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Cytomegalovirus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Cytomegalovirus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Cytomegalovirus yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Cytomegalovirus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "tam-idrar-analizi-3",
@@ -71707,41 +71707,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Uzun süreli reflü sonrası biyopsi bulgusu tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Özofagus adenokarsinomu kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Özofagus adenokarsinomu yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Özofagus adenokarsinomu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Uzun süreli reflü sonrası biyopsi bulgusu tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Özofagus adenokarsinomu kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Özofagus adenokarsinomu yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Özofagus adenokarsinomu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Özofagus adenokarsinomu yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Özofagus adenokarsinomu yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Özofagus adenokarsinomu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Özofagus adenokarsinomu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Özofagus adenokarsinomu yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Özofagus adenokarsinomu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "i-leri-dogrulama-oncesi-temel-laboratuvar-3",
@@ -72527,41 +72527,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Tansiyon ilacı sonrası hışıltı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Bronş düz kasındaki beta-2 reseptör blokajı kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Bronş düz kasındaki beta-2 reseptör blokajı yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Bronş düz kasındaki beta-2 reseptör blokajı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Tansiyon ilacı sonrası hışıltı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Bronş düz kasındaki beta-2 reseptör blokajı kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Bronş düz kasındaki beta-2 reseptör blokajı yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Bronş düz kasındaki beta-2 reseptör blokajı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 158/94 mmHg; Nabız: 88/dk; Solunum: 26/dk; SpO₂: %93; Ateş: 36.7 °C; Şok indeksi: 0,56.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 158/94 mmHg; Nabız: 88/dk; Solunum: 26/dk; SpO₂: %93; Ateş: 36.7 °C; Şok indeksi: 0,56.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 158/94 mmHg; Nabız: 88/dk; Solunum: 26/dk; SpO₂: %93; Ateş: 36.7 °C; Şok indeksi: 0,56.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Bronş düz kasındaki beta-2 reseptör blokajı yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Bronş düz kasındaki beta-2 reseptör blokajı yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Bronş düz kasındaki beta-2 reseptör blokajı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Bronş düz kasındaki beta-2 reseptör blokajı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Bronş düz kasındaki beta-2 reseptör blokajı yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Bronş düz kasındaki beta-2 reseptör blokajı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "arter-kan-gazi-laktat-1",
@@ -73264,41 +73264,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Stent sonrası ikili antiagregan tedavi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Trombosit P2Y12 ADP reseptörünü inhibe etmek kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Trombosit P2Y12 ADP reseptörünü inhibe etmek yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Trombosit P2Y12 ADP reseptörünü inhibe etmek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Stent sonrası ikili antiagregan tedavi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Trombosit P2Y12 ADP reseptörünü inhibe etmek kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Trombosit P2Y12 ADP reseptörünü inhibe etmek yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Trombosit P2Y12 ADP reseptörünü inhibe etmek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 126/78 mmHg; Nabız: 74/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.7 °C; Şok indeksi: 0,59.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 126/78 mmHg; Nabız: 74/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.7 °C; Şok indeksi: 0,59.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 126/78 mmHg; Nabız: 74/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.7 °C; Şok indeksi: 0,59.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Trombosit P2Y12 ADP reseptörünü inhibe etmek yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Trombosit P2Y12 ADP reseptörünü inhibe etmek yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Trombosit P2Y12 ADP reseptörünü inhibe etmek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Trombosit P2Y12 ADP reseptörünü inhibe etmek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Trombosit P2Y12 ADP reseptörünü inhibe etmek yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Trombosit P2Y12 ADP reseptörünü inhibe etmek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-1",
@@ -75945,41 +75945,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Ani konuşma bozukluğu ve kol güçsüzlüğü tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Kontrastsız beyin bilgisayarlı tomografisi kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kontrastsız beyin bilgisayarlı tomografisi yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kontrastsız beyin bilgisayarlı tomografisi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Ani konuşma bozukluğu ve kol güçsüzlüğü tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Kontrastsız beyin bilgisayarlı tomografisi kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kontrastsız beyin bilgisayarlı tomografisi yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kontrastsız beyin bilgisayarlı tomografisi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 164/92 mmHg; Nabız: 88/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.7 °C; Şok indeksi: 0,54.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 164/92 mmHg; Nabız: 88/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.7 °C; Şok indeksi: 0,54.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 164/92 mmHg; Nabız: 88/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.7 °C; Şok indeksi: 0,54.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kontrastsız beyin bilgisayarlı tomografisi yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kontrastsız beyin bilgisayarlı tomografisi yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kontrastsız beyin bilgisayarlı tomografisi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kontrastsız beyin bilgisayarlı tomografisi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kontrastsız beyin bilgisayarlı tomografisi yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kontrastsız beyin bilgisayarlı tomografisi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "kapiller-kan-glukozu-1",
@@ -76262,41 +76262,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Antidepresan sonrası ajitasyon ve klonus tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Serotonin sendromu kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Serotonin sendromu yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Serotonin sendromu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Antidepresan sonrası ajitasyon ve klonus tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Serotonin sendromu kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Serotonin sendromu yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Serotonin sendromu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 154/92 mmHg; Nabız: 126/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.5 °C; Şok indeksi: 0,82.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 154/92 mmHg; Nabız: 126/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.5 °C; Şok indeksi: 0,82.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 154/92 mmHg; Nabız: 126/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.5 °C; Şok indeksi: 0,82.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Serotonin sendromu yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Serotonin sendromu yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Serotonin sendromu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Serotonin sendromu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Serotonin sendromu yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Serotonin sendromu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -77507,41 +77507,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Hedefe yönelik muayene",
         "summary": "Dilate fundus muayenesi, Ani görme alanı kaybı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Retina dekolmanı kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Dilate fundus muayenesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Retina dekolmanı yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Retina dekolmanı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Dilate fundus muayenesi",
           "summary": "Dilate fundus muayenesi, Ani görme alanı kaybı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Retina dekolmanı kararının klinik zeminini oluşturur.",
-          "interpretation": "Dilate fundus muayenesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Retina dekolmanı yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Retina dekolmanı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Periferik retinada yırtık ve elevasyonla uyumlu alan izlendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Periferik retinada yırtık ve elevasyonla uyumlu alan izlendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Periferik retinada yırtık ve elevasyonla uyumlu alan izlendi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Dilate fundus muayenesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Retina dekolmanı yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Dilate fundus muayenesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Retina dekolmanı yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Retina dekolmanı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Retina dekolmanı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Dilate fundus muayenesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Retina dekolmanı yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Retina dekolmanı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -77734,41 +77734,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Sosyal çekilme ve duygulanım azalması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Negatif psikotik belirtiler kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Negatif psikotik belirtiler yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Negatif psikotik belirtiler yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Sosyal çekilme ve duygulanım azalması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Negatif psikotik belirtiler kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Negatif psikotik belirtiler yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Negatif psikotik belirtiler yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Negatif psikotik belirtiler yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Negatif psikotik belirtiler yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Negatif psikotik belirtiler yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Negatif psikotik belirtiler yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Negatif psikotik belirtiler yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Negatif psikotik belirtiler yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -78356,41 +78356,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Derin yumuşak doku kitlesi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu İyi diferansiye liposarkom kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İyi diferansiye liposarkom yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İyi diferansiye liposarkom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Derin yumuşak doku kitlesi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu İyi diferansiye liposarkom kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İyi diferansiye liposarkom yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İyi diferansiye liposarkom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İyi diferansiye liposarkom yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İyi diferansiye liposarkom yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İyi diferansiye liposarkom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İyi diferansiye liposarkom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İyi diferansiye liposarkom yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İyi diferansiye liposarkom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-3",
@@ -78753,41 +78753,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Göğüs ağrısında dil altı ilaç tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Venodilatasyonla preloadu azaltarak miyokard oksijen ihtiyacını düşürmesi kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Venodilatasyonla preloadu azaltarak miyokard oksijen ihtiyacını düşürmesi yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Venodilatasyonla preloadu azaltarak miyokard oksijen ihtiyacını düşürmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Göğüs ağrısında dil altı ilaç tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Venodilatasyonla preloadu azaltarak miyokard oksijen ihtiyacını düşürmesi kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Venodilatasyonla preloadu azaltarak miyokard oksijen ihtiyacını düşürmesi yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Venodilatasyonla preloadu azaltarak miyokard oksijen ihtiyacını düşürmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 122/76 mmHg; Nabız: 78/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 36.7 °C; Şok indeksi: 0,64.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 122/76 mmHg; Nabız: 78/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 36.7 °C; Şok indeksi: 0,64.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 122/76 mmHg; Nabız: 78/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 36.7 °C; Şok indeksi: 0,64.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Venodilatasyonla preloadu azaltarak miyokard oksijen ihtiyacını düşürmesi yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Venodilatasyonla preloadu azaltarak miyokard oksijen ihtiyacını düşürmesi yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Venodilatasyonla preloadu azaltarak miyokard oksijen ihtiyacını düşürmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Venodilatasyonla preloadu azaltarak miyokard oksijen ihtiyacını düşürmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Venodilatasyonla preloadu azaltarak miyokard oksijen ihtiyacını düşürmesi yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Venodilatasyonla preloadu azaltarak miyokard oksijen ihtiyacını düşürmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "kardiyak-biyobelirtecler-1",
@@ -79400,41 +79400,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Dışkılama sırasında şiddetli ağrı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Anal fissür kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Anal fissür yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Anal fissür yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Dışkılama sırasında şiddetli ağrı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Anal fissür kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Anal fissür yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Anal fissür yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Anal fissür yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Anal fissür yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Anal fissür yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Anal fissür yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Anal fissür yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Anal fissür yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "gebelik-testi-serum-beta-hcg-1",
@@ -79722,15 +79722,15 @@ export const rawCases = [
     "title": "Renal perfüzyon azalmasına yanıt",
     "difficulty": "Zor",
     "clinicalFocus": "Renal perfüzyon azalmasına yanıt bağlamında mekanizma yorumu için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir. ipuçlarını kullanarak Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "learningTarget": "Renal perfüzyon basıncı azaldığında RAAS aktivasyonunun anjiyotensin II aracılığıyla efferent arteriyol tonusunu artırıp GFRyi nasıl desteklediğini açıklayabilme.",
     "demographics": "40 yaşında sağlıklı gönüllü",
     "setting": "Klinik değerlendirme",
     "chiefComplaint": "Gönüllüde renal perfüzyon basıncı azaldığında anjiyotensin II aracılı glomerüler filtrasyon yanıtı tartışılıyor.",
-    "stem": "Bilinen böbrek hastalığı veya antihipertansif ilaç kullanımı yoktur. Değerlendirme deneysel fizyoloji simülasyonu üzerinden yapılmaktadır.",
+    "stem": "Bilinen böbrek hastalığı veya antihipertansif ilaç kullanımı yoktur. Değerlendirme renal perfüzyon azalmasına verilen hemodinamik ve hormonal yanıtı anlamaya yöneliktir.",
     "patientIntro": {
       "profile": "40 yaşında sağlıklı gönüllü, fizyoloji laboratuvarında renal hemodinamik yanıt açısından değerlendiriliyor.",
       "presentation": "Gönüllüde renal perfüzyon basıncı azaldığında anjiyotensin II aracılı glomerüler filtrasyon yanıtı tartışılıyor.",
-      "historySummary": "Bilinen böbrek hastalığı veya antihipertansif ilaç kullanımı yoktur. Değerlendirme deneysel fizyoloji simülasyonu üzerinden yapılmaktadır."
+      "historySummary": "Bilinen böbrek hastalığı veya antihipertansif ilaç kullanımı yoktur. Değerlendirme renal perfüzyon azalmasına verilen hemodinamik ve hormonal yanıtı anlamaya yöneliktir."
     },
     "vitals": {
       "Kan basıncı": "118/72 mmHg",
@@ -79746,47 +79746,47 @@ export const rawCases = [
     "investigations": [
       {
         "id": "fizyolojik-simulasyon-1",
-        "label": "Fizyolojik simülasyon",
-        "title": "Fizyolojik simülasyon",
-        "type": "clinical",
+        "label": "RAAS ve efferent arteriyol yanıtı",
+        "title": "RAAS ve efferent arteriyol yanıtı",
+        "type": "functionalTest",
         "priority": "essential",
-        "subtype": "Klinik değerlendirme",
-        "summary": "Fizyolojik simülasyon, Renal perfüzyon azalmasına yanıt tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönündeki karar mantığını kurmasına yardım eder.",
+        "subtype": "Renal hemodinamik mekanizma",
+        "summary": "Renal perfüzyon azaldığında RAAS aktivasyonu efferent arteriyol tonusunu artırarak glomerüler kapiller basıncı ve GFRyi korumaya çalışır.",
+        "clinicalMeaning": "Perfüzyon basıncındaki azalma juxtaglomerüler hücrelerden renin salınımını artırır ve anjiyotensin II düzeyini yükseltir. Orta düzey anjiyotensin II öncelikle efferent arteriyolde vazokonstriksiyon oluşturarak glomerüler kapiller basıncı destekler; bu etki azalmış perfüzyona rağmen filtrasyonun sürdürülmesine yardım eder.",
         "result": {
-          "title": "Fizyolojik simülasyon",
-          "summary": "Fizyolojik simülasyon, Renal perfüzyon azalmasına yanıt tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi kararının klinik zeminini oluşturur.",
-          "interpretation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönündeki karar mantığını kurmasına yardım eder.",
+          "title": "RAAS ve efferent arteriyol yanıtı",
+          "summary": "Renal perfüzyon azaldığında RAAS aktivasyonu efferent arteriyol tonusunu artırarak glomerüler kapiller basıncı ve GFRyi korumaya çalışır.",
+          "interpretation": "Perfüzyon basıncındaki azalma juxtaglomerüler hücrelerden renin salınımını artırır ve anjiyotensin II düzeyini yükseltir. Orta düzey anjiyotensin II öncelikle efferent arteriyolde vazokonstriksiyon oluşturarak glomerüler kapiller basıncı destekler; bu etki azalmış perfüzyona rağmen filtrasyonun sürdürülmesine yardım eder.",
           "values": [
             [
-              "Klinik bulgu",
-              "Renal perfüzyon basıncında azalma ve anjiyotensin II düzeyinde artış modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Anjiyotensin II yanıtı",
+              "Renal perfüzyon basıncı azaldığında renin-anjiyotensin sistemi aktive olur ve anjiyotensin II artışı beklenir.",
+              "Beklenen kompansatuvar yanıt",
+              "Orta düzey anjiyotensin II efferent arteriyol vazokonstriksiyonu ile GFRyi destekler."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
-              "Renal perfüzyon basıncında azalma ve anjiyotensin II düzeyinde artış modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Anjiyotensin II yanıtı",
+              "Renal perfüzyon basıncı azaldığında renin-anjiyotensin sistemi aktive olur ve anjiyotensin II artışı beklenir.",
+              "Beklenen kompansatuvar yanıt",
+              "Orta düzey anjiyotensin II efferent arteriyol vazokonstriksiyonu ile GFRyi destekler."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
-            "Renal perfüzyon basıncında azalma ve anjiyotensin II düzeyinde artış modellendi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Anjiyotensin II yanıtı",
+            "Renal perfüzyon basıncı azaldığında renin-anjiyotensin sistemi aktive olur ve anjiyotensin II artışı beklenir.",
+            "Beklenen kompansatuvar yanıt",
+            "Orta düzey anjiyotensin II efferent arteriyol vazokonstriksiyonu ile GFRyi destekler."
           ]
         ],
-        "postAnswerExplanation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönündeki karar mantığını kurmasına yardım eder.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönündeki karar mantığını kurmasına yardım eder."
+        "postAnswerExplanation": "Perfüzyon basıncındaki azalma juxtaglomerüler hücrelerden renin salınımını artırır ve anjiyotensin II düzeyini yükseltir. Orta düzey anjiyotensin II öncelikle efferent arteriyolde vazokonstriksiyon oluşturarak glomerüler kapiller basıncı destekler; bu etki azalmış perfüzyona rağmen filtrasyonun sürdürülmesine yardım eder.",
+        "interpretation": "Perfüzyon basıncındaki azalma juxtaglomerüler hücrelerden renin salınımını artırır ve anjiyotensin II düzeyini yükseltir. Orta düzey anjiyotensin II öncelikle efferent arteriyolde vazokonstriksiyon oluşturarak glomerüler kapiller basıncı destekler; bu etki azalmış perfüzyona rağmen filtrasyonun sürdürülmesine yardım eder.",
+        "category": "functional",
+        "testTypeCategory": "functional",
+        "explanationAfterAnswer": "Perfüzyon basıncındaki azalma juxtaglomerüler hücrelerden renin salınımını artırır ve anjiyotensin II düzeyini yükseltir. Orta düzey anjiyotensin II öncelikle efferent arteriyolde vazokonstriksiyon oluşturarak glomerüler kapiller basıncı destekler; bu etki azalmış perfüzyona rağmen filtrasyonun sürdürülmesine yardım eder."
       },
       {
         "id": "tam-idrar-analizi-2",
@@ -79885,38 +79885,38 @@ export const rawCases = [
         "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması"
       ],
       "question": "Orta düzey anjiyotensin II artışının glomerüler filtrasyon hızını korumaya yardım eden temel etkisi aşağıdakilerden hangisidir?",
-      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda renal perfüzyon basıncı azaltılmıştır; anjiyotensin II düzeyinde artış modellenmiştir ile birlikte değerlendirildiğinde Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneği klinik örüntüyle en tutarlı yanıttır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır; anjiyotensin II düzeyinde artış modellenmiştir ile birlikte değerlendirildiğinde Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneği klinik örüntüyle en tutarlı yanıttır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "Sınavda Simülasyonda renal perfüzyon basıncı azaltılmıştır ipucunu Anjiyotensin II düzeyinde artış modellenmiştir ile birlikte görürsen Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
+          "text": "Sınavda Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ipucunu Anjiyotensin II düzeyinde artış beklenir ile birlikte görürsen Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
         }
       ],
       "optionComparison": {
-        "Afferent arteriyolü tamamen kapatması": "Afferent arteriyolü tamamen kapatması anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi": "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi, vakadaki Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru glomerüler filtrasyon hızının hemodinamik korunmasını sorgulamaktadır kararı güçlendiren ek ipucudur. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-        "Bowman kapsülü hidrostatik basıncını artırması": "Bowman kapsülü hidrostatik basıncını artırması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Proksimal tübülde glukoz sekresyonunu başlatması": "Proksimal tübülde glukoz sekresyonunu başlatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması": "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "Afferent arteriyolü tamamen kapatması": "Afferent arteriyolü tamamen kapatması anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi": "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi, vakadaki Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru glomerüler filtrasyon hızının hemodinamik korunmasını sorgulamaktadır kararı güçlendiren ek ipucudur. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+        "Bowman kapsülü hidrostatik basıncını artırması": "Bowman kapsülü hidrostatik basıncını artırması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Proksimal tübülde glukoz sekresyonunu başlatması": "Proksimal tübülde glukoz sekresyonunu başlatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması": "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       },
       "answerFeedback": {
-        "summary": "Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir. birlikte okunduğunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı klinik olarak öne çıkar.",
-        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda renal perfüzyon basıncı azaltılmıştır; anjiyotensin II düzeyinde artış modellenmiştir ile birlikte değerlendirildiğinde Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneği klinik örüntüyle en tutarlı yanıttır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
-        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda renal perfüzyon basıncı azaltılmıştır; anjiyotensin II düzeyinde artış modellenmiştir ile birlikte değerlendirildiğinde Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneği klinik örüntüyle en tutarlı yanıttır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "summary": "Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir. birlikte okunduğunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı klinik olarak öne çıkar.",
+        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır; anjiyotensin II düzeyinde artış modellenmiştir ile birlikte değerlendirildiğinde Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneği klinik örüntüyle en tutarlı yanıttır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır; anjiyotensin II düzeyinde artış modellenmiştir ile birlikte değerlendirildiğinde Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneği klinik örüntüyle en tutarlı yanıttır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
         "correctOptionFeedback": "Efferent arteriyolde vazokonstriksiyon glomerüler kapiller basıncı destekleyerek düşük perfüzyonda GFR’nin korunmasına yardım eder.",
         "keyClues": [
-          "Simülasyonda renal perfüzyon basıncı azaltılmıştır.",
-          "Anjiyotensin II düzeyinde artış modellenmiştir.",
+          "Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır.",
+          "Anjiyotensin II düzeyinde artış beklenir.",
           "Soru glomerüler filtrasyon hızının hemodinamik korunmasını sorgulamaktadır."
         ],
         "evidenceChain": [
           {
-            "text": "Simülasyonda renal perfüzyon basıncı azaltılmıştır.",
+            "text": "Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Anjiyotensin II düzeyinde artış modellenmiştir.",
+            "text": "Anjiyotensin II düzeyinde artış beklenir.",
             "weight": "high",
             "source": "case"
           },
@@ -79926,7 +79926,7 @@ export const rawCases = [
             "source": "case"
           }
         ],
-        "examPearl": "Sınavda Simülasyonda renal perfüzyon basıncı azaltılmıştır ipucunu Anjiyotensin II düzeyinde artış modellenmiştir ile birlikte görürsen Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+        "examPearl": "Sınavda Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ipucunu Anjiyotensin II düzeyinde artış beklenir ile birlikte görürsen Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
         "pearls": [
           {
             "label": "Sınav notu",
@@ -79940,34 +79940,34 @@ export const rawCases = [
           }
         ],
         "optionComparison": {
-          "Afferent arteriyolü tamamen kapatması": "Afferent arteriyolü tamamen kapatması anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi": "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi, vakadaki Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru glomerüler filtrasyon hızının hemodinamik korunmasını sorgulamaktadır kararı güçlendiren ek ipucudur. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-          "Bowman kapsülü hidrostatik basıncını artırması": "Bowman kapsülü hidrostatik basıncını artırması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Proksimal tübülde glukoz sekresyonunu başlatması": "Proksimal tübülde glukoz sekresyonunu başlatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması": "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "Afferent arteriyolü tamamen kapatması": "Afferent arteriyolü tamamen kapatması anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi": "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi, vakadaki Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru glomerüler filtrasyon hızının hemodinamik korunmasını sorgulamaktadır kararı güçlendiren ek ipucudur. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+          "Bowman kapsülü hidrostatik basıncını artırması": "Bowman kapsülü hidrostatik basıncını artırması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Proksimal tübülde glukoz sekresyonunu başlatması": "Proksimal tübülde glukoz sekresyonunu başlatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması": "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
         "whyWrong": {
-          "Afferent arteriyolü tamamen kapatması": "Afferent arteriyolü tamamen kapatması anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Bowman kapsülü hidrostatik basıncını artırması": "Bowman kapsülü hidrostatik basıncını artırması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Proksimal tübülde glukoz sekresyonunu başlatması": "Proksimal tübülde glukoz sekresyonunu başlatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması": "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "Afferent arteriyolü tamamen kapatması": "Afferent arteriyolü tamamen kapatması anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Bowman kapsülü hidrostatik basıncını artırması": "Bowman kapsülü hidrostatik basıncını artırması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Proksimal tübülde glukoz sekresyonunu başlatması": "Proksimal tübülde glukoz sekresyonunu başlatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması": "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
         "managementSteps": [],
         "management": [],
         "learningOutcome": "Renin-anjiyotensin-aldosteron sisteminde efferent arteriyol tonusunun GFR üzerindeki etkisini açıklayabilme",
-        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir. Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneğini diğerlerinden ayırır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir."
+        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir. Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneğini diğerlerinden ayırır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir."
       },
-      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda renal perfüzyon basıncı azaltılmıştır; anjiyotensin II düzeyinde artış modellenmiştir ile birlikte değerlendirildiğinde Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneği klinik örüntüyle en tutarlı yanıttır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır; anjiyotensin II düzeyinde artış modellenmiştir ile birlikte değerlendirildiğinde Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneği klinik örüntüyle en tutarlı yanıttır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "evidenceChain": [
         {
           "title": "Klinik ipucu",
-          "text": "Simülasyonda renal perfüzyon basıncı azaltılmıştır.",
+          "text": "Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır.",
           "weight": "high",
           "source": "case"
         },
         {
           "title": "Klinik ipucu",
-          "text": "Anjiyotensin II düzeyinde artış modellenmiştir.",
+          "text": "Anjiyotensin II düzeyinde artış beklenir.",
           "weight": "high",
           "source": "case"
         },
@@ -79978,34 +79978,34 @@ export const rawCases = [
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir. Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneğini diğerlerinden ayırır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-      "examPearl": "Sınavda Simülasyonda renal perfüzyon basıncı azaltılmıştır ipucunu Anjiyotensin II düzeyinde artış modellenmiştir ile birlikte görürsen Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir. Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneğini diğerlerinden ayırır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+      "examPearl": "Sınavda Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ipucunu Anjiyotensin II düzeyinde artış beklenir ile birlikte görürsen Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
       "whyWrong": {
-        "Afferent arteriyolü tamamen kapatması": "Afferent arteriyolü tamamen kapatması anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Bowman kapsülü hidrostatik basıncını artırması": "Bowman kapsülü hidrostatik basıncını artırması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Proksimal tübülde glukoz sekresyonunu başlatması": "Proksimal tübülde glukoz sekresyonunu başlatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması": "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "Afferent arteriyolü tamamen kapatması": "Afferent arteriyolü tamamen kapatması anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Bowman kapsülü hidrostatik basıncını artırması": "Bowman kapsülü hidrostatik basıncını artırması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Proksimal tübülde glukoz sekresyonunu başlatması": "Proksimal tübülde glukoz sekresyonunu başlatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması": "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       }
     },
     "difficultyTag": "Zor",
-    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir. Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneğini diğerlerinden ayırır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-    "examPearl": "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi için sınav ayırıcı nokta “Simülasyonda renal perfüzyon basıncı azaltılmıştır” ipucudur; Farmakolojik yorumda klinik bulgu, hedef reseptör/enzim etkisi ve beklenen toksisite paterni birlikte değerlendirilmelidir.",
-    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda renal perfüzyon basıncı azaltılmıştır; anjiyotensin II düzeyinde artış modellenmiştir ile birlikte değerlendirildiğinde Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneği klinik örüntüyle en tutarlı yanıttır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir. Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneğini diğerlerinden ayırır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+    "examPearl": "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi için sınav ayırıcı nokta “Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır” ipucudur; Farmakolojik yorumda klinik bulgu, hedef reseptör/enzim etkisi ve beklenen toksisite paterni birlikte değerlendirilmelidir.",
+    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır; anjiyotensin II düzeyinde artış modellenmiştir ile birlikte değerlendirildiğinde Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi seçeneği klinik örüntüyle en tutarlı yanıttır. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
     "optionComparison": {
-      "Afferent arteriyolü tamamen kapatması": "Afferent arteriyolü tamamen kapatması anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi": "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi, vakadaki Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru glomerüler filtrasyon hızının hemodinamik korunmasını sorgulamaktadır kararı güçlendiren ek ipucudur. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-      "Bowman kapsülü hidrostatik basıncını artırması": "Bowman kapsülü hidrostatik basıncını artırması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Proksimal tübülde glukoz sekresyonunu başlatması": "Proksimal tübülde glukoz sekresyonunu başlatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması": "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "Afferent arteriyolü tamamen kapatması": "Afferent arteriyolü tamamen kapatması anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi": "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi, vakadaki Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru glomerüler filtrasyon hızının hemodinamik korunmasını sorgulamaktadır kararı güçlendiren ek ipucudur. Renal perfüzyon azalmasına yanıt olgusunda Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+      "Bowman kapsülü hidrostatik basıncını artırması": "Bowman kapsülü hidrostatik basıncını artırması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Proksimal tübülde glukoz sekresyonunu başlatması": "Proksimal tübülde glukoz sekresyonunu başlatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması": "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     },
     "evidenceChain": [
       {
-        "text": "Simülasyonda renal perfüzyon basıncı azaltılmıştır.",
+        "text": "Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Anjiyotensin II düzeyinde artış modellenmiştir.",
+        "text": "Anjiyotensin II düzeyinde artış beklenir.",
         "weight": "high",
         "source": "case"
       },
@@ -80016,10 +80016,10 @@ export const rawCases = [
       }
     ],
     "whyWrong": {
-      "Afferent arteriyolü tamamen kapatması": "Afferent arteriyolü tamamen kapatması anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Bowman kapsülü hidrostatik basıncını artırması": "Bowman kapsülü hidrostatik basıncını artırması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Proksimal tübülde glukoz sekresyonunu başlatması": "Proksimal tübülde glukoz sekresyonunu başlatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması": "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda renal perfüzyon basıncı azaltılmıştır ve Anjiyotensin II düzeyinde artış modellenmiştir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "Afferent arteriyolü tamamen kapatması": "Afferent arteriyolü tamamen kapatması anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Bowman kapsülü hidrostatik basıncını artırması": "Bowman kapsülü hidrostatik basıncını artırması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Proksimal tübülde glukoz sekresyonunu başlatması": "Proksimal tübülde glukoz sekresyonunu başlatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması": "Toplayıcı kanalda sodyum geri emilimini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Renal perfüzyon basıncının azalması renin-anjiyotensin sistemini uyarır ve Anjiyotensin II düzeyinde artış beklenir bulguları Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     }
   },
   {
@@ -80056,41 +80056,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Gece artan el uyuşması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus medianus kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus medianus yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus medianus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Hedefe yönelik nörolojik/nörovasküler muayene",
           "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Gece artan el uyuşması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus medianus kararının klinik zeminini oluşturur.",
-          "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus medianus yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus medianus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus medianus yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus medianus yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus medianus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus medianus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus medianus yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus medianus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -80270,41 +80270,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Tiroid ameliyatı sonrası ses kısıklığı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus laryngeus recurrens kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus laryngeus recurrens yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus laryngeus recurrens yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Hedefe yönelik nörolojik/nörovasküler muayene",
           "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Tiroid ameliyatı sonrası ses kısıklığı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus laryngeus recurrens kararının klinik zeminini oluşturur.",
-          "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus laryngeus recurrens yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus laryngeus recurrens yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus laryngeus recurrens yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus laryngeus recurrens yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus laryngeus recurrens yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus laryngeus recurrens yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus laryngeus recurrens yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus laryngeus recurrens yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -80483,41 +80483,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Yenidoğanda lumbosakral kese tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Kaudal nöropor kapanma kusuru kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kaudal nöropor kapanma kusuru yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kaudal nöropor kapanma kusuru yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Yenidoğanda lumbosakral kese tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Kaudal nöropor kapanma kusuru kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kaudal nöropor kapanma kusuru yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kaudal nöropor kapanma kusuru yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kaudal nöropor kapanma kusuru yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kaudal nöropor kapanma kusuru yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kaudal nöropor kapanma kusuru yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kaudal nöropor kapanma kusuru yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kaudal nöropor kapanma kusuru yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kaudal nöropor kapanma kusuru yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "gebelik-testi-serum-beta-hcg-2",
@@ -82998,41 +82998,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Boyunda ağrısız lenf nodu tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Hodgkin lenfoma kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hodgkin lenfoma yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Hodgkin lenfoma yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Boyunda ağrısız lenf nodu tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Hodgkin lenfoma kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hodgkin lenfoma yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Hodgkin lenfoma yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 108/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 37.8 °C; Şok indeksi: 0,92 (sınırda yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 108/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 37.8 °C; Şok indeksi: 0,92 (sınırda yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 118/74 mmHg; Nabız: 108/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 37.8 °C; Şok indeksi: 0,92 (sınırda yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hodgkin lenfoma yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hodgkin lenfoma yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Hodgkin lenfoma yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Hodgkin lenfoma yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hodgkin lenfoma yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Hodgkin lenfoma yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-2",
@@ -84119,41 +84119,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Baş doğduktan sonra omuzların takılması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu McRoberts manevrası ve suprapubik bası kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve McRoberts manevrası ve suprapubik bası yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, McRoberts manevrası ve suprapubik bası yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Baş doğduktan sonra omuzların takılması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu McRoberts manevrası ve suprapubik bası kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve McRoberts manevrası ve suprapubik bası yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, McRoberts manevrası ve suprapubik bası yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve McRoberts manevrası ve suprapubik bası yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve McRoberts manevrası ve suprapubik bası yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, McRoberts manevrası ve suprapubik bası yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, McRoberts manevrası ve suprapubik bası yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve McRoberts manevrası ve suprapubik bası yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, McRoberts manevrası ve suprapubik bası yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -84810,41 +84810,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Parotis kitlesi ameliyatı sonrası yüz asimetrisi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus facialis kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus facialis yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus facialis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Hedefe yönelik nörolojik/nörovasküler muayene",
           "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Parotis kitlesi ameliyatı sonrası yüz asimetrisi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus facialis kararının klinik zeminini oluşturur.",
-          "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus facialis yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus facialis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus facialis yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus facialis yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus facialis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus facialis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus facialis yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus facialis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -85030,41 +85030,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Akciğer embolisinde oksijen düşüklüğü tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Ventilasyon-perfüzyon uyumsuzluğu kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ventilasyon-perfüzyon uyumsuzluğu yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ventilasyon-perfüzyon uyumsuzluğu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Akciğer embolisinde oksijen düşüklüğü tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Ventilasyon-perfüzyon uyumsuzluğu kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ventilasyon-perfüzyon uyumsuzluğu yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ventilasyon-perfüzyon uyumsuzluğu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 118/dk; Solunum: 30/dk; SpO₂: %88; Ateş: 36.7 °C; Şok indeksi: 1,00 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 118/dk; Solunum: 30/dk; SpO₂: %88; Ateş: 36.7 °C; Şok indeksi: 1,00 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 118/74 mmHg; Nabız: 118/dk; Solunum: 30/dk; SpO₂: %88; Ateş: 36.7 °C; Şok indeksi: 1,00 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ventilasyon-perfüzyon uyumsuzluğu yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ventilasyon-perfüzyon uyumsuzluğu yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ventilasyon-perfüzyon uyumsuzluğu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ventilasyon-perfüzyon uyumsuzluğu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ventilasyon-perfüzyon uyumsuzluğu yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ventilasyon-perfüzyon uyumsuzluğu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "kardiyak-biyobelirtecler-2",
@@ -85365,7 +85365,7 @@ export const rawCases = [
     "title": "Otonom reseptör yanıtı",
     "difficulty": "Zor",
     "clinicalFocus": "Otonom reseptör yanıtı bağlamında mekanizma yorumu için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır. ipuçlarını kullanarak Asetilkolin ve norepinefrin seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "learningTarget": "Tipik sempatik yolakta preganglionik nöronun ganglionda asetilkolin, damar düz kasına giden postganglionik nöronun ise çoğunlukla norepinefrin kullandığını açıklayabilme.",
     "demographics": "25 yaşında sağlıklı gönüllü",
     "setting": "fizyoloji laboratuvarında otonom sinir sistemi yanıtları açısından değerlendiriliyor",
     "chiefComplaint": "Gönüllüde sempatik sinir sistemi aktivasyonu sırasında ganglion ve hedef organ düzeyindeki nörotransmitterler tartışılıyor.",
@@ -85389,47 +85389,47 @@ export const rawCases = [
     "investigations": [
       {
         "id": "fizyolojik-simulasyon-1",
-        "label": "Fizyolojik simülasyon",
-        "title": "Fizyolojik simülasyon",
-        "type": "clinical",
+        "label": "Sempatik nörotransmitter aktarımı",
+        "title": "Sempatik nörotransmitter aktarımı",
+        "type": "functionalTest",
         "priority": "essential",
-        "subtype": "Klinik değerlendirme",
-        "summary": "Fizyolojik simülasyon, Otonom reseptör yanıtı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Asetilkolin ve norepinefrin kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Asetilkolin ve norepinefrin yönündeki karar mantığını kurmasına yardım eder.",
+        "subtype": "Otonom sinaptik mekanizma",
+        "summary": "Sempatik yolakta preganglionik nöronlar ganglion düzeyinde asetilkolin kullanır; damar düz kasına giden postganglionik liflerde temel nörotransmitter çoğunlukla norepinefrindir.",
+        "clinicalMeaning": "Otonom sinir sisteminde tipik sempatik preganglionik nöron gangliondaki nikotinik reseptörleri asetilkolinle uyarır. Damar düz kasına uzanan postganglionik sempatik nöron ise çoğunlukla norepinefrin salgılar ve adrenerjik reseptörler üzerinden yanıt oluşturur.",
         "result": {
-          "title": "Fizyolojik simülasyon",
-          "summary": "Fizyolojik simülasyon, Otonom reseptör yanıtı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Asetilkolin ve norepinefrin kararının klinik zeminini oluşturur.",
-          "interpretation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Asetilkolin ve norepinefrin yönündeki karar mantığını kurmasına yardım eder.",
+          "title": "Sempatik nörotransmitter aktarımı",
+          "summary": "Sempatik yolakta preganglionik nöronlar ganglion düzeyinde asetilkolin kullanır; damar düz kasına giden postganglionik liflerde temel nörotransmitter çoğunlukla norepinefrindir.",
+          "interpretation": "Otonom sinir sisteminde tipik sempatik preganglionik nöron gangliondaki nikotinik reseptörleri asetilkolinle uyarır. Damar düz kasına uzanan postganglionik sempatik nöron ise çoğunlukla norepinefrin salgılar ve adrenerjik reseptörler üzerinden yanıt oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
-              "Sempatik preganglionik nöron ve damar düz kasına giden postganglionik nöron aktivasyonu modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Preganglionik-postganglionik iletim",
+              "Tipik sempatik yolakta preganglionik nöron ganglionda asetilkolin, damar düz kasına giden postganglionik nöron çoğunlukla norepinefrin kullanır.",
+              "Beklenen otonom yolak",
+              "Preganglionik iletim nikotinik reseptörler, hedef organ etkisi çoğunlukla adrenerjik reseptörler üzerinden gerçekleşir."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
-              "Sempatik preganglionik nöron ve damar düz kasına giden postganglionik nöron aktivasyonu modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Preganglionik-postganglionik iletim",
+              "Tipik sempatik yolakta preganglionik nöron ganglionda asetilkolin, damar düz kasına giden postganglionik nöron çoğunlukla norepinefrin kullanır.",
+              "Beklenen otonom yolak",
+              "Preganglionik iletim nikotinik reseptörler, hedef organ etkisi çoğunlukla adrenerjik reseptörler üzerinden gerçekleşir."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
-            "Sempatik preganglionik nöron ve damar düz kasına giden postganglionik nöron aktivasyonu modellendi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Preganglionik-postganglionik iletim",
+            "Tipik sempatik yolakta preganglionik nöron ganglionda asetilkolin, damar düz kasına giden postganglionik nöron çoğunlukla norepinefrin kullanır.",
+            "Beklenen otonom yolak",
+            "Preganglionik iletim nikotinik reseptörler, hedef organ etkisi çoğunlukla adrenerjik reseptörler üzerinden gerçekleşir."
           ]
         ],
-        "postAnswerExplanation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Asetilkolin ve norepinefrin yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Asetilkolin ve norepinefrin yönündeki karar mantığını kurmasına yardım eder.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Asetilkolin ve norepinefrin yönündeki karar mantığını kurmasına yardım eder."
+        "postAnswerExplanation": "Otonom sinir sisteminde tipik sempatik preganglionik nöron gangliondaki nikotinik reseptörleri asetilkolinle uyarır. Damar düz kasına uzanan postganglionik sempatik nöron ise çoğunlukla norepinefrin salgılar ve adrenerjik reseptörler üzerinden yanıt oluşturur.",
+        "interpretation": "Otonom sinir sisteminde tipik sempatik preganglionik nöron gangliondaki nikotinik reseptörleri asetilkolinle uyarır. Damar düz kasına uzanan postganglionik sempatik nöron ise çoğunlukla norepinefrin salgılar ve adrenerjik reseptörler üzerinden yanıt oluşturur.",
+        "category": "functional",
+        "testTypeCategory": "functional",
+        "explanationAfterAnswer": "Otonom sinir sisteminde tipik sempatik preganglionik nöron gangliondaki nikotinik reseptörleri asetilkolinle uyarır. Damar düz kasına uzanan postganglionik sempatik nöron ise çoğunlukla norepinefrin salgılar ve adrenerjik reseptörler üzerinden yanıt oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -85451,31 +85451,31 @@ export const rawCases = [
         "Histamin ve bradikinin"
       ],
       "question": "Damar düz kasını innerve eden tipik sempatik yolakta preganglionik ve postganglionik nöronların ana nörotransmitterleri sırasıyla aşağıdakilerden hangisidir?",
-      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir; soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte değerlendirildiğinde Asetilkolin ve norepinefrin seçeneği klinik örüntüyle en tutarlı yanıttır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirme sempatik ganglion ve damar düz kası hedefini içermektedir; soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte değerlendirildiğinde Asetilkolin ve norepinefrin seçeneği klinik örüntüyle en tutarlı yanıttır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "Sınavda Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ipucunu Soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte görürsen Asetilkolin ve norepinefrin yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
+          "text": "Sınavda Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ipucunu Soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte görürsen Asetilkolin ve norepinefrin yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
         }
       ],
       "optionComparison": {
-        "Asetilkolin ve norepinefrin": "Asetilkolin ve norepinefrin, vakadaki Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Hedef organ damar düz kasıdır kararı güçlendiren ek ipucudur.",
-        "Norepinefrin ve asetilkolin": "Norepinefrin ve asetilkolin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Dopamin ve serotonin": "Dopamin ve serotonin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "GABA ve glutamat": "GABA ve glutamat mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Histamin ve bradikinin": "Histamin ve bradikinin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "Asetilkolin ve norepinefrin": "Asetilkolin ve norepinefrin, vakadaki Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Hedef organ damar düz kasıdır kararı güçlendiren ek ipucudur.",
+        "Norepinefrin ve asetilkolin": "Norepinefrin ve asetilkolin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Dopamin ve serotonin": "Dopamin ve serotonin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "GABA ve glutamat": "GABA ve glutamat mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Histamin ve bradikinin": "Histamin ve bradikinin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       },
       "answerFeedback": {
-        "summary": "Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır. birlikte okunduğunda Asetilkolin ve norepinefrin yanıtı klinik olarak öne çıkar.",
+        "summary": "Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır. birlikte okunduğunda Asetilkolin ve norepinefrin yanıtı klinik olarak öne çıkar.",
         "keyClues": [
-          "Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir.",
+          "Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir.",
           "Soru tipik sempatik preganglionik nöronu sorgulamaktadır.",
           "Hedef organ damar düz kasıdır."
         ],
-        "examPearl": "Sınavda Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ipucunu Soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte görürsen Asetilkolin ve norepinefrin yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+        "examPearl": "Sınavda Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ipucunu Soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte görürsen Asetilkolin ve norepinefrin yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
         "evidenceChain": [
           {
-            "text": "Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir.",
+            "text": "Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir.",
             "weight": "high",
             "source": "case"
           },
@@ -85491,30 +85491,30 @@ export const rawCases = [
           }
         ],
         "optionComparison": {
-          "Asetilkolin ve norepinefrin": "Asetilkolin ve norepinefrin, vakadaki Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Hedef organ damar düz kasıdır kararı güçlendiren ek ipucudur.",
-          "Norepinefrin ve asetilkolin": "Norepinefrin ve asetilkolin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Dopamin ve serotonin": "Dopamin ve serotonin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "GABA ve glutamat": "GABA ve glutamat mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Histamin ve bradikinin": "Histamin ve bradikinin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "Asetilkolin ve norepinefrin": "Asetilkolin ve norepinefrin, vakadaki Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Hedef organ damar düz kasıdır kararı güçlendiren ek ipucudur.",
+          "Norepinefrin ve asetilkolin": "Norepinefrin ve asetilkolin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Dopamin ve serotonin": "Dopamin ve serotonin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "GABA ve glutamat": "GABA ve glutamat mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Histamin ve bradikinin": "Histamin ve bradikinin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
-        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir; soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte değerlendirildiğinde Asetilkolin ve norepinefrin seçeneği klinik örüntüyle en tutarlı yanıttır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
-        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir; soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte değerlendirildiğinde Asetilkolin ve norepinefrin seçeneği klinik örüntüyle en tutarlı yanıttır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirme sempatik ganglion ve damar düz kası hedefini içermektedir; soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte değerlendirildiğinde Asetilkolin ve norepinefrin seçeneği klinik örüntüyle en tutarlı yanıttır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirme sempatik ganglion ve damar düz kası hedefini içermektedir; soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte değerlendirildiğinde Asetilkolin ve norepinefrin seçeneği klinik örüntüyle en tutarlı yanıttır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
         "whyWrong": {
-          "Norepinefrin ve asetilkolin": "Norepinefrin ve asetilkolin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Dopamin ve serotonin": "Dopamin ve serotonin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "GABA ve glutamat": "GABA ve glutamat mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Histamin ve bradikinin": "Histamin ve bradikinin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "Norepinefrin ve asetilkolin": "Norepinefrin ve asetilkolin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Dopamin ve serotonin": "Dopamin ve serotonin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "GABA ve glutamat": "GABA ve glutamat mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Histamin ve bradikinin": "Histamin ve bradikinin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
         "managementSteps": [],
         "management": [],
         "learningOutcome": "Otonom sinir sisteminde sempatik preganglionik ve postganglionik nörotransmitter farkını açıklayabilme",
-        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır. Asetilkolin ve norepinefrin seçeneğini diğerlerinden ayırır."
+        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır. Asetilkolin ve norepinefrin seçeneğini diğerlerinden ayırır."
       },
-      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir; soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte değerlendirildiğinde Asetilkolin ve norepinefrin seçeneği klinik örüntüyle en tutarlı yanıttır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirme sempatik ganglion ve damar düz kası hedefini içermektedir; soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte değerlendirildiğinde Asetilkolin ve norepinefrin seçeneği klinik örüntüyle en tutarlı yanıttır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "evidenceChain": [
         {
           "title": "Klinik ipucu",
-          "text": "Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir.",
+          "text": "Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir.",
           "weight": "high",
           "source": "case"
         },
@@ -85531,19 +85531,19 @@ export const rawCases = [
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır. Asetilkolin ve norepinefrin seçeneğini diğerlerinden ayırır.",
-      "examPearl": "Sınavda Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ipucunu Soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte görürsen Asetilkolin ve norepinefrin yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır. Asetilkolin ve norepinefrin seçeneğini diğerlerinden ayırır.",
+      "examPearl": "Sınavda Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ipucunu Soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte görürsen Asetilkolin ve norepinefrin yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
       "whyWrong": {
-        "Norepinefrin ve asetilkolin": "Norepinefrin ve asetilkolin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Dopamin ve serotonin": "Dopamin ve serotonin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "GABA ve glutamat": "GABA ve glutamat mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Histamin ve bradikinin": "Histamin ve bradikinin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "Norepinefrin ve asetilkolin": "Norepinefrin ve asetilkolin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Dopamin ve serotonin": "Dopamin ve serotonin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "GABA ve glutamat": "GABA ve glutamat mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Histamin ve bradikinin": "Histamin ve bradikinin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       }
     },
-    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir; soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte değerlendirildiğinde Asetilkolin ve norepinefrin seçeneği klinik örüntüyle en tutarlı yanıttır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirme sempatik ganglion ve damar düz kası hedefini içermektedir; soru tipik sempatik preganglionik nöronu sorgulamaktadır ile birlikte değerlendirildiğinde Asetilkolin ve norepinefrin seçeneği klinik örüntüyle en tutarlı yanıttır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
     "evidenceChain": [
       {
-        "text": "Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir.",
+        "text": "Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir.",
         "weight": "high",
         "source": "case"
       },
@@ -85559,20 +85559,20 @@ export const rawCases = [
       }
     ],
     "difficultyTag": "Zor",
-    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır. Asetilkolin ve norepinefrin seçeneğini diğerlerinden ayırır.",
-    "examPearl": "Asetilkolin ve norepinefrin için sınav ayırıcı nokta “Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir” ipucudur; Farmakolojik yorumda klinik bulgu, hedef reseptör/enzim etkisi ve beklenen toksisite paterni birlikte değerlendirilmelidir.",
+    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır. Asetilkolin ve norepinefrin seçeneğini diğerlerinden ayırır.",
+    "examPearl": "Asetilkolin ve norepinefrin için sınav ayırıcı nokta “Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir” ipucudur; Farmakolojik yorumda klinik bulgu, hedef reseptör/enzim etkisi ve beklenen toksisite paterni birlikte değerlendirilmelidir.",
     "optionComparison": {
-      "Asetilkolin ve norepinefrin": "Asetilkolin ve norepinefrin, vakadaki Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Hedef organ damar düz kasıdır kararı güçlendiren ek ipucudur.",
-      "Norepinefrin ve asetilkolin": "Norepinefrin ve asetilkolin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Dopamin ve serotonin": "Dopamin ve serotonin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "GABA ve glutamat": "GABA ve glutamat mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Histamin ve bradikinin": "Histamin ve bradikinin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "Asetilkolin ve norepinefrin": "Asetilkolin ve norepinefrin, vakadaki Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Hedef organ damar düz kasıdır kararı güçlendiren ek ipucudur.",
+      "Norepinefrin ve asetilkolin": "Norepinefrin ve asetilkolin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Dopamin ve serotonin": "Dopamin ve serotonin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "GABA ve glutamat": "GABA ve glutamat mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Histamin ve bradikinin": "Histamin ve bradikinin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     },
     "whyWrong": {
-      "Norepinefrin ve asetilkolin": "Norepinefrin ve asetilkolin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Dopamin ve serotonin": "Dopamin ve serotonin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "GABA ve glutamat": "GABA ve glutamat mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Histamin ve bradikinin": "Histamin ve bradikinin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon sempatik ganglion ve damar düz kası hedefini içermektedir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "Norepinefrin ve asetilkolin": "Norepinefrin ve asetilkolin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Dopamin ve serotonin": "Dopamin ve serotonin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "GABA ve glutamat": "GABA ve glutamat mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Histamin ve bradikinin": "Histamin ve bradikinin mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Sempatik yolak ganglion ve damar düz kası düzeyinde değerlendirilir ve Soru tipik sempatik preganglionik nöronu sorgulamaktadır bulguları Asetilkolin ve norepinefrin yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     }
   },
   {
@@ -85607,41 +85607,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Karaciğerde fagositik hücre tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Kupffer hücresi kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kupffer hücresi yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kupffer hücresi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Karaciğerde fagositik hücre tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Kupffer hücresi kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kupffer hücresi yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kupffer hücresi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kupffer hücresi yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kupffer hücresi yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kupffer hücresi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kupffer hücresi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kupffer hücresi yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kupffer hücresi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "i-leri-dogrulama-oncesi-temel-laboratuvar-2",
@@ -86686,41 +86686,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Ateş ve peteşiyal döküntü tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Neisseria meningitidis kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Neisseria meningitidis yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Neisseria meningitidis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Ateş ve peteşiyal döküntü tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Neisseria meningitidis kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Neisseria meningitidis yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Neisseria meningitidis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 86/48 mmHg; Nabız: 132/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 39.4 °C; Şok indeksi: 1,53 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 86/48 mmHg; Nabız: 132/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 39.4 °C; Şok indeksi: 1,53 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 86/48 mmHg; Nabız: 132/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 39.4 °C; Şok indeksi: 1,53 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Neisseria meningitidis yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Neisseria meningitidis yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Neisseria meningitidis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Neisseria meningitidis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Neisseria meningitidis yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Neisseria meningitidis yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-2",
@@ -88198,41 +88198,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Doğum sonrası yoğun kanama tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Uterin masaj ve oksitosin uygulanması kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Uterin masaj ve oksitosin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Uterin masaj ve oksitosin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Doğum sonrası yoğun kanama tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Uterin masaj ve oksitosin uygulanması kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Uterin masaj ve oksitosin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Uterin masaj ve oksitosin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 94/58 mmHg; Nabız: 118/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.7 °C; Şok indeksi: 1,26 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 94/58 mmHg; Nabız: 118/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.7 °C; Şok indeksi: 1,26 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 94/58 mmHg; Nabız: 118/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.7 °C; Şok indeksi: 1,26 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Uterin masaj ve oksitosin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Uterin masaj ve oksitosin uygulanması yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Uterin masaj ve oksitosin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Uterin masaj ve oksitosin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Uterin masaj ve oksitosin uygulanması yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Uterin masaj ve oksitosin uygulanması yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -88417,41 +88417,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Göz çevresinde şişlik ve ağrı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Göz çevresinde şişlik ve ağrı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 122/dk; Solunum: 22/dk; SpO₂: %98; Ateş: 38.9 °C; Şok indeksi: 1,22 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 122/dk; Solunum: 22/dk; SpO₂: %98; Ateş: 38.9 °C; Şok indeksi: 1,22 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 100/64 mmHg; Nabız: 122/dk; Solunum: 22/dk; SpO₂: %98; Ateş: 38.9 °C; Şok indeksi: 1,22 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-2",
@@ -88751,41 +88751,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Kalça enjeksiyonu sonrası yürüme bozukluğu tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus gluteus superior kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus gluteus superior yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus gluteus superior yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Hedefe yönelik nörolojik/nörovasküler muayene",
           "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Kalça enjeksiyonu sonrası yürüme bozukluğu tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus gluteus superior kararının klinik zeminini oluşturur.",
-          "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus gluteus superior yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus gluteus superior yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus gluteus superior yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus gluteus superior yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus gluteus superior yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus gluteus superior yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus gluteus superior yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus gluteus superior yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -88971,41 +88971,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Temporal travma sonrası bilinç kötüleşmesi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Arteria meningea media kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Arteria meningea media yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Arteria meningea media yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Temporal travma sonrası bilinç kötüleşmesi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Arteria meningea media kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Arteria meningea media yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Arteria meningea media yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 146/86 mmHg; Nabız: 58/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.7 °C; Şok indeksi: 0,40.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 146/86 mmHg; Nabız: 58/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.7 °C; Şok indeksi: 0,40.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 146/86 mmHg; Nabız: 58/dk; Solunum: 24/dk; SpO₂: %96; Ateş: 36.7 °C; Şok indeksi: 0,40.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Arteria meningea media yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Arteria meningea media yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Arteria meningea media yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Arteria meningea media yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Arteria meningea media yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Arteria meningea media yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "kraniyal-bilgisayarli-tomografi-1",
@@ -89227,41 +89227,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Duvara itme sırasında kürek kemiği belirginleşmesi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus thoracicus longus kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus thoracicus longus yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus thoracicus longus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Hedefe yönelik nörolojik/nörovasküler muayene",
           "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Duvara itme sırasında kürek kemiği belirginleşmesi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus thoracicus longus kararının klinik zeminini oluşturur.",
-          "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus thoracicus longus yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus thoracicus longus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus thoracicus longus yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus thoracicus longus yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus thoracicus longus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus thoracicus longus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus thoracicus longus yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus thoracicus longus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -89738,7 +89738,7 @@ export const rawCases = [
     "title": "Su kısıtlamasında idrar yoğunlaşması",
     "difficulty": "Zor",
     "clinicalFocus": "Su kısıtlamasında idrar yoğunlaşması bağlamında mekanizma yorumu için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Su kısıtlaması plazma osmolalitesini artırmıştır ve Antidiüretik hormon salınımı yükselmiştir. ipuçlarını kullanarak Toplayıcı kanal principal hücre apikal membranına aquaporin-2 kanallarının yerleşimini artırması seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "learningTarget": "Su kısıtlamasında plazma osmolalitesi ve ADH artışının toplayıcı kanalda aquaporin-2 yerleşimini artırarak idrarı yoğunlaştırdığını açıklayabilme.",
     "demographics": "29 yaşında sağlıklı kadın gönüllü",
     "setting": "fizyoloji laboratuvarında değerlendiriliyor",
     "chiefComplaint": "Gönüllüde su kısıtlaması sonrası idrarın nasıl yoğunlaştırıldığı tartışılıyor.",
@@ -89762,47 +89762,47 @@ export const rawCases = [
     "investigations": [
       {
         "id": "su-kisitlama-simulasyonu-1",
-        "label": "Su kısıtlama simülasyonu",
-        "title": "Su kısıtlama simülasyonu",
-        "type": "lab",
+        "label": "ADH ve aquaporin-2 yanıtı",
+        "title": "ADH ve aquaporin-2 yanıtı",
+        "type": "functionalTest",
         "priority": "essential",
-        "subtype": "Laboratuvar",
-        "summary": "Su kısıtlama simülasyonu, Su kısıtlamasında idrar yoğunlaşması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Toplayıcı kanal principal hücre apikal membranına aquaporin-2 kanallarının yerleşimini artırması kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Su kısıtlama simülasyonu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Toplayıcı kanal principal hücre apikal membranına aquaporin-2 kanallarının yerleşimini artırması yönündeki karar mantığını kurmasına yardım eder.",
+        "subtype": "Su dengesi mekanizması",
+        "summary": "Su kısıtlaması plazma osmolalitesini artırarak ADH salınımını uyarır; ADH, toplayıcı kanal principal hücrelerinde aquaporin-2 kanallarının apikal membrana yerleşmesini artırır.",
+        "clinicalMeaning": "Plazma osmolalitesi yükseldiğinde hipotalamik osmoreseptörler ADH salınımını artırır. ADH, V2 reseptörleri üzerinden cAMP/PKA yolunu aktive eder ve aquaporin-2 kanallarını apikal membrana taşır; bu sayede su geri emilimi artar ve idrar yoğunlaşır.",
         "result": {
-          "title": "Su kısıtlama simülasyonu",
-          "summary": "Su kısıtlama simülasyonu, Su kısıtlamasında idrar yoğunlaşması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Toplayıcı kanal principal hücre apikal membranına aquaporin-2 kanallarının yerleşimini artırması kararının klinik zeminini oluşturur.",
-          "interpretation": "Su kısıtlama simülasyonu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Toplayıcı kanal principal hücre apikal membranına aquaporin-2 kanallarının yerleşimini artırması yönündeki karar mantığını kurmasına yardım eder.",
+          "title": "ADH ve aquaporin-2 yanıtı",
+          "summary": "Su kısıtlaması plazma osmolalitesini artırarak ADH salınımını uyarır; ADH, toplayıcı kanal principal hücrelerinde aquaporin-2 kanallarının apikal membrana yerleşmesini artırır.",
+          "interpretation": "Plazma osmolalitesi yükseldiğinde hipotalamik osmoreseptörler ADH salınımını artırır. ADH, V2 reseptörleri üzerinden cAMP/PKA yolunu aktive eder ve aquaporin-2 kanallarını apikal membrana taşır; bu sayede su geri emilimi artar ve idrar yoğunlaşır.",
           "values": [
             [
-              "Su kısıtlama simülasyonu",
-              "Plazma osmolalitesi artmış ve antidiüretik hormon salınımı yükselmiş olarak modellendi.",
-              "—",
-              "Yüksek"
+              "ADH aracılı idrar yoğunlaştırma",
+              "Su kısıtlaması plazma osmolalitesini artırır; ADH salınımı yükselir ve toplayıcı kanal principal hücrelerinde aquaporin-2 apikal membrana yerleşir.",
+              "Beklenen fizyolojik yanıt",
+              "Su geri emilimi artar ve idrar daha yoğun hale gelir."
             ]
           ],
           "rows": [
             [
-              "Su kısıtlama simülasyonu",
-              "Plazma osmolalitesi artmış ve antidiüretik hormon salınımı yükselmiş olarak modellendi.",
-              "—",
-              "Yüksek"
+              "ADH aracılı idrar yoğunlaştırma",
+              "Su kısıtlaması plazma osmolalitesini artırır; ADH salınımı yükselir ve toplayıcı kanal principal hücrelerinde aquaporin-2 apikal membrana yerleşir.",
+              "Beklenen fizyolojik yanıt",
+              "Su geri emilimi artar ve idrar daha yoğun hale gelir."
             ]
           ]
         },
         "rows": [
           [
-            "Su kısıtlama simülasyonu",
-            "Plazma osmolalitesi artmış ve antidiüretik hormon salınımı yükselmiş olarak modellendi.",
-            "—",
-            "Yüksek"
+            "ADH aracılı idrar yoğunlaştırma",
+            "Su kısıtlaması plazma osmolalitesini artırır; ADH salınımı yükselir ve toplayıcı kanal principal hücrelerinde aquaporin-2 apikal membrana yerleşir.",
+            "Beklenen fizyolojik yanıt",
+            "Su geri emilimi artar ve idrar daha yoğun hale gelir."
           ]
         ],
-        "postAnswerExplanation": "Su kısıtlama simülasyonu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Toplayıcı kanal principal hücre apikal membranına aquaporin-2 kanallarının yerleşimini artırması yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Su kısıtlama simülasyonu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Toplayıcı kanal principal hücre apikal membranına aquaporin-2 kanallarının yerleşimini artırması yönündeki karar mantığını kurmasına yardım eder.",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Su kısıtlama simülasyonu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Toplayıcı kanal principal hücre apikal membranına aquaporin-2 kanallarının yerleşimini artırması yönündeki karar mantığını kurmasına yardım eder."
+        "postAnswerExplanation": "Plazma osmolalitesi yükseldiğinde hipotalamik osmoreseptörler ADH salınımını artırır. ADH, V2 reseptörleri üzerinden cAMP/PKA yolunu aktive eder ve aquaporin-2 kanallarını apikal membrana taşır; bu sayede su geri emilimi artar ve idrar yoğunlaşır.",
+        "interpretation": "Plazma osmolalitesi yükseldiğinde hipotalamik osmoreseptörler ADH salınımını artırır. ADH, V2 reseptörleri üzerinden cAMP/PKA yolunu aktive eder ve aquaporin-2 kanallarını apikal membrana taşır; bu sayede su geri emilimi artar ve idrar yoğunlaşır.",
+        "category": "functional",
+        "testTypeCategory": "functional",
+        "explanationAfterAnswer": "Plazma osmolalitesi yükseldiğinde hipotalamik osmoreseptörler ADH salınımını artırır. ADH, V2 reseptörleri üzerinden cAMP/PKA yolunu aktive eder ve aquaporin-2 kanallarını apikal membrana taşır; bu sayede su geri emilimi artar ve idrar yoğunlaşır."
       },
       {
         "id": "tam-idrar-analizi-2",
@@ -90033,7 +90033,7 @@ export const rawCases = [
     "title": "Sıvı yüklenmesine kardiyak yanıt",
     "difficulty": "Kolay",
     "clinicalFocus": "Sıvı yüklenmesine kardiyak yanıt bağlamında mekanizma yorumu için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir. ipuçlarını kullanarak Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "learningTarget": "Venöz dönüş ve end-diyastolik hacim arttığında Frank-Starling mekanizmasıyla miyokard lif uzunluğunun ve atım hacminin nasıl arttığını açıklayabilme.",
     "demographics": "33 yaşında sağlıklı gönüllü",
     "setting": "kardiyovasküler fizyoloji laboratuvarında değerlendiriliyor",
     "chiefComplaint": "Gönüllüde venöz dönüş arttığında kalbin atım hacminde beklenen değişiklik tartışılıyor.",
@@ -90057,47 +90057,47 @@ export const rawCases = [
     "investigations": [
       {
         "id": "hemodinamik-simulasyon-1",
-        "label": "Hemodinamik simülasyon",
-        "title": "Hemodinamik simülasyon",
-        "type": "clinical",
+        "label": "Frank-Starling mekanizması",
+        "title": "Frank-Starling mekanizması",
+        "type": "functionalTest",
         "priority": "essential",
-        "subtype": "Klinik değerlendirme",
-        "summary": "Hemodinamik simülasyon, Sıvı yüklenmesine kardiyak yanıt tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Hemodinamik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönündeki karar mantığını kurmasına yardım eder.",
+        "subtype": "Kardiyak hemodinamik mekanizma",
+        "summary": "Frank-Starling mekanizması, venöz dönüş ve end-diyastolik hacim arttığında miyokard lif uzunluğunun artmasıyla daha güçlü kasılma ve daha yüksek atım hacmi oluşmasını açıklar.",
+        "clinicalMeaning": "Normal kalpte preload artışı ventrikül doluşunu ve miyokard lif uzunluğunu artırır. Sarkomerlerin optimum uzunluğa yaklaşması aktin-miyozin etkileşimini güçlendirir; bu nedenle kasılma gücü ve atım hacmi artar.",
         "result": {
-          "title": "Hemodinamik simülasyon",
-          "summary": "Hemodinamik simülasyon, Sıvı yüklenmesine kardiyak yanıt tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması kararının klinik zeminini oluşturur.",
-          "interpretation": "Hemodinamik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönündeki karar mantığını kurmasına yardım eder.",
+          "title": "Frank-Starling mekanizması",
+          "summary": "Frank-Starling mekanizması, venöz dönüş ve end-diyastolik hacim arttığında miyokard lif uzunluğunun artmasıyla daha güçlü kasılma ve daha yüksek atım hacmi oluşmasını açıklar.",
+          "interpretation": "Normal kalpte preload artışı ventrikül doluşunu ve miyokard lif uzunluğunu artırır. Sarkomerlerin optimum uzunluğa yaklaşması aktin-miyozin etkileşimini güçlendirir; bu nedenle kasılma gücü ve atım hacmi artar.",
           "values": [
             [
-              "Klinik bulgu",
-              "Venöz dönüş ve diyastol sonu hacim artmış olarak modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Preload-atım hacmi ilişkisi",
+              "Venöz dönüş artışı end-diyastolik hacmi ve miyokard lif uzunluğunu artırır.",
+              "Beklenen fizyolojik yanıt",
+              "Sarkomer uzunluğu optimum aralığa yaklaşır; kasılma gücü ve atım hacmi artar."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
-              "Venöz dönüş ve diyastol sonu hacim artmış olarak modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Preload-atım hacmi ilişkisi",
+              "Venöz dönüş artışı end-diyastolik hacmi ve miyokard lif uzunluğunu artırır.",
+              "Beklenen fizyolojik yanıt",
+              "Sarkomer uzunluğu optimum aralığa yaklaşır; kasılma gücü ve atım hacmi artar."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
-            "Venöz dönüş ve diyastol sonu hacim artmış olarak modellendi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Preload-atım hacmi ilişkisi",
+            "Venöz dönüş artışı end-diyastolik hacmi ve miyokard lif uzunluğunu artırır.",
+            "Beklenen fizyolojik yanıt",
+            "Sarkomer uzunluğu optimum aralığa yaklaşır; kasılma gücü ve atım hacmi artar."
           ]
         ],
-        "postAnswerExplanation": "Hemodinamik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Hemodinamik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönündeki karar mantığını kurmasına yardım eder.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Hemodinamik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönündeki karar mantığını kurmasına yardım eder."
+        "postAnswerExplanation": "Normal kalpte preload artışı ventrikül doluşunu ve miyokard lif uzunluğunu artırır. Sarkomerlerin optimum uzunluğa yaklaşması aktin-miyozin etkileşimini güçlendirir; bu nedenle kasılma gücü ve atım hacmi artar.",
+        "interpretation": "Normal kalpte preload artışı ventrikül doluşunu ve miyokard lif uzunluğunu artırır. Sarkomerlerin optimum uzunluğa yaklaşması aktin-miyozin etkileşimini güçlendirir; bu nedenle kasılma gücü ve atım hacmi artar.",
+        "category": "functional",
+        "testTypeCategory": "functional",
+        "explanationAfterAnswer": "Normal kalpte preload artışı ventrikül doluşunu ve miyokard lif uzunluğunu artırır. Sarkomerlerin optimum uzunluğa yaklaşması aktin-miyozin etkileşimini güçlendirir; bu nedenle kasılma gücü ve atım hacmi artar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -90119,31 +90119,31 @@ export const rawCases = [
         "Koroner kan akımını sıfıra düşürmesi"
       ],
       "question": "Normal kalpte venöz dönüş artışı atım hacmini hangi mekanizmayla artırır?",
-      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda venöz dönüş artmıştır; diyastol sonu hacim yükselmiştir ile birlikte değerlendirildiğinde Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneği klinik örüntüyle en tutarlı yanıttır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede venöz dönüş artmıştır; diyastol sonu hacim yükselmiştir ile birlikte değerlendirildiğinde Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneği klinik örüntüyle en tutarlı yanıttır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "Sınavda Simülasyonda venöz dönüş artmıştır ipucunu Diyastol sonu hacim yükselmiştir ile birlikte görürsen Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
+          "text": "Sınavda Venöz dönüş artışı end-diyastolik hacmi yükseltir ipucunu Diyastol sonu hacim yükselmiştir ile birlikte görürsen Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
         }
       ],
       "optionComparison": {
-        "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması": "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması, vakadaki Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirilen kalp normal fizyolojik yanıt göstermektedir kararı güçlendiren ek ipucudur. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir.",
-        "Aksiyon potansiyelini tamamen durdurması": "Aksiyon potansiyelini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Kalsiyum salınımını geri dönüşümsüz engellemesi": "Kalsiyum salınımını geri dönüşümsüz engellemesi tedavi algoritmasında doğru bağlamda yer alabilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Kalp kapaklarını kalıcı olarak kapatması": "Kalp kapaklarını kalıcı olarak kapatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Koroner kan akımını sıfıra düşürmesi": "Koroner kan akımını sıfıra düşürmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması": "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması, vakadaki Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirilen kalp normal fizyolojik yanıt göstermektedir kararı güçlendiren ek ipucudur. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir.",
+        "Aksiyon potansiyelini tamamen durdurması": "Aksiyon potansiyelini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Kalsiyum salınımını geri dönüşümsüz engellemesi": "Kalsiyum salınımını geri dönüşümsüz engellemesi tedavi algoritmasında doğru bağlamda yer alabilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Kalp kapaklarını kalıcı olarak kapatması": "Kalp kapaklarını kalıcı olarak kapatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Koroner kan akımını sıfıra düşürmesi": "Koroner kan akımını sıfıra düşürmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       },
       "answerFeedback": {
-        "summary": "Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir. birlikte okunduğunda Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yanıtı klinik olarak öne çıkar.",
+        "summary": "Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir. birlikte okunduğunda Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yanıtı klinik olarak öne çıkar.",
         "keyClues": [
-          "Simülasyonda venöz dönüş artmıştır.",
+          "Venöz dönüş artışı end-diyastolik hacmi yükseltir.",
           "Diyastol sonu hacim yükselmiştir.",
           "Değerlendirilen kalp normal fizyolojik yanıt göstermektedir."
         ],
-        "examPearl": "Sınavda Simülasyonda venöz dönüş artmıştır ipucunu Diyastol sonu hacim yükselmiştir ile birlikte görürsen Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+        "examPearl": "Sınavda Venöz dönüş artışı end-diyastolik hacmi yükseltir ipucunu Diyastol sonu hacim yükselmiştir ile birlikte görürsen Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
         "evidenceChain": [
           {
-            "text": "Simülasyonda venöz dönüş artmıştır.",
+            "text": "Venöz dönüş artışı end-diyastolik hacmi yükseltir.",
             "weight": "high",
             "source": "case"
           },
@@ -90159,30 +90159,30 @@ export const rawCases = [
           }
         ],
         "optionComparison": {
-          "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması": "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması, vakadaki Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirilen kalp normal fizyolojik yanıt göstermektedir kararı güçlendiren ek ipucudur. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir.",
-          "Aksiyon potansiyelini tamamen durdurması": "Aksiyon potansiyelini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Kalsiyum salınımını geri dönüşümsüz engellemesi": "Kalsiyum salınımını geri dönüşümsüz engellemesi tedavi algoritmasında doğru bağlamda yer alabilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Kalp kapaklarını kalıcı olarak kapatması": "Kalp kapaklarını kalıcı olarak kapatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Koroner kan akımını sıfıra düşürmesi": "Koroner kan akımını sıfıra düşürmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması": "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması, vakadaki Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirilen kalp normal fizyolojik yanıt göstermektedir kararı güçlendiren ek ipucudur. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir.",
+          "Aksiyon potansiyelini tamamen durdurması": "Aksiyon potansiyelini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Kalsiyum salınımını geri dönüşümsüz engellemesi": "Kalsiyum salınımını geri dönüşümsüz engellemesi tedavi algoritmasında doğru bağlamda yer alabilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Kalp kapaklarını kalıcı olarak kapatması": "Kalp kapaklarını kalıcı olarak kapatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Koroner kan akımını sıfıra düşürmesi": "Koroner kan akımını sıfıra düşürmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
-        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda venöz dönüş artmıştır; diyastol sonu hacim yükselmiştir ile birlikte değerlendirildiğinde Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneği klinik örüntüyle en tutarlı yanıttır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
-        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda venöz dönüş artmıştır; diyastol sonu hacim yükselmiştir ile birlikte değerlendirildiğinde Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneği klinik örüntüyle en tutarlı yanıttır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede venöz dönüş artmıştır; diyastol sonu hacim yükselmiştir ile birlikte değerlendirildiğinde Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneği klinik örüntüyle en tutarlı yanıttır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede venöz dönüş artmıştır; diyastol sonu hacim yükselmiştir ile birlikte değerlendirildiğinde Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneği klinik örüntüyle en tutarlı yanıttır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
         "whyWrong": {
-          "Aksiyon potansiyelini tamamen durdurması": "Aksiyon potansiyelini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Kalsiyum salınımını geri dönüşümsüz engellemesi": "Kalsiyum salınımını geri dönüşümsüz engellemesi tedavi algoritmasında doğru bağlamda yer alabilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Kalp kapaklarını kalıcı olarak kapatması": "Kalp kapaklarını kalıcı olarak kapatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Koroner kan akımını sıfıra düşürmesi": "Koroner kan akımını sıfıra düşürmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "Aksiyon potansiyelini tamamen durdurması": "Aksiyon potansiyelini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Kalsiyum salınımını geri dönüşümsüz engellemesi": "Kalsiyum salınımını geri dönüşümsüz engellemesi tedavi algoritmasında doğru bağlamda yer alabilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Kalp kapaklarını kalıcı olarak kapatması": "Kalp kapaklarını kalıcı olarak kapatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Koroner kan akımını sıfıra düşürmesi": "Koroner kan akımını sıfıra düşürmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
         "managementSteps": [],
         "management": [],
         "learningOutcome": "Frank-Starling mekanizmasında venöz dönüş artışının atım hacmine etkisini açıklayabilme",
-        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir. Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneğini diğerlerinden ayırır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir."
+        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir. Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneğini diğerlerinden ayırır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir."
       },
-      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda venöz dönüş artmıştır; diyastol sonu hacim yükselmiştir ile birlikte değerlendirildiğinde Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneği klinik örüntüyle en tutarlı yanıttır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede venöz dönüş artmıştır; diyastol sonu hacim yükselmiştir ile birlikte değerlendirildiğinde Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneği klinik örüntüyle en tutarlı yanıttır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "evidenceChain": [
         {
           "title": "Klinik ipucu",
-          "text": "Simülasyonda venöz dönüş artmıştır.",
+          "text": "Venöz dönüş artışı end-diyastolik hacmi yükseltir.",
           "weight": "high",
           "source": "case"
         },
@@ -90199,19 +90199,19 @@ export const rawCases = [
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir. Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneğini diğerlerinden ayırır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir.",
-      "examPearl": "Sınavda Simülasyonda venöz dönüş artmıştır ipucunu Diyastol sonu hacim yükselmiştir ile birlikte görürsen Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir. Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneğini diğerlerinden ayırır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir.",
+      "examPearl": "Sınavda Venöz dönüş artışı end-diyastolik hacmi yükseltir ipucunu Diyastol sonu hacim yükselmiştir ile birlikte görürsen Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
       "whyWrong": {
-        "Aksiyon potansiyelini tamamen durdurması": "Aksiyon potansiyelini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Kalsiyum salınımını geri dönüşümsüz engellemesi": "Kalsiyum salınımını geri dönüşümsüz engellemesi tedavi algoritmasında doğru bağlamda yer alabilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Kalp kapaklarını kalıcı olarak kapatması": "Kalp kapaklarını kalıcı olarak kapatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Koroner kan akımını sıfıra düşürmesi": "Koroner kan akımını sıfıra düşürmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "Aksiyon potansiyelini tamamen durdurması": "Aksiyon potansiyelini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Kalsiyum salınımını geri dönüşümsüz engellemesi": "Kalsiyum salınımını geri dönüşümsüz engellemesi tedavi algoritmasında doğru bağlamda yer alabilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Kalp kapaklarını kalıcı olarak kapatması": "Kalp kapaklarını kalıcı olarak kapatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Koroner kan akımını sıfıra düşürmesi": "Koroner kan akımını sıfıra düşürmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       }
     },
-    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda venöz dönüş artmıştır; diyastol sonu hacim yükselmiştir ile birlikte değerlendirildiğinde Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneği klinik örüntüyle en tutarlı yanıttır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede venöz dönüş artmıştır; diyastol sonu hacim yükselmiştir ile birlikte değerlendirildiğinde Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneği klinik örüntüyle en tutarlı yanıttır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
     "evidenceChain": [
       {
-        "text": "Simülasyonda venöz dönüş artmıştır.",
+        "text": "Venöz dönüş artışı end-diyastolik hacmi yükseltir.",
         "weight": "high",
         "source": "case"
       },
@@ -90227,20 +90227,20 @@ export const rawCases = [
       }
     ],
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir. Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneğini diğerlerinden ayırır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir.",
-    "examPearl": "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması için sınav ayırıcı nokta “Simülasyonda venöz dönüş artmıştır” ipucudur; Koroner perfüzyon azalması kardiyomiyosit hasarına yol açar.",
+    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir. Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması seçeneğini diğerlerinden ayırır. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir.",
+    "examPearl": "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması için sınav ayırıcı nokta “Venöz dönüş artışı end-diyastolik hacmi yükseltir” ipucudur; Koroner perfüzyon azalması kardiyomiyosit hasarına yol açar.",
     "optionComparison": {
-      "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması": "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması, vakadaki Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirilen kalp normal fizyolojik yanıt göstermektedir kararı güçlendiren ek ipucudur. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir.",
-      "Aksiyon potansiyelini tamamen durdurması": "Aksiyon potansiyelini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Kalsiyum salınımını geri dönüşümsüz engellemesi": "Kalsiyum salınımını geri dönüşümsüz engellemesi tedavi algoritmasında doğru bağlamda yer alabilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Kalp kapaklarını kalıcı olarak kapatması": "Kalp kapaklarını kalıcı olarak kapatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Koroner kan akımını sıfıra düşürmesi": "Koroner kan akımını sıfıra düşürmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması": "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması, vakadaki Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirilen kalp normal fizyolojik yanıt göstermektedir kararı güçlendiren ek ipucudur. Frank-Starling mekanizmasında diyastol sonu hacim artışı sarkomer gerilimini artırarak belirli sınıra kadar atım hacmini yükseltir.",
+      "Aksiyon potansiyelini tamamen durdurması": "Aksiyon potansiyelini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Kalsiyum salınımını geri dönüşümsüz engellemesi": "Kalsiyum salınımını geri dönüşümsüz engellemesi tedavi algoritmasında doğru bağlamda yer alabilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Kalp kapaklarını kalıcı olarak kapatması": "Kalp kapaklarını kalıcı olarak kapatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Koroner kan akımını sıfıra düşürmesi": "Koroner kan akımını sıfıra düşürmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     },
     "whyWrong": {
-      "Aksiyon potansiyelini tamamen durdurması": "Aksiyon potansiyelini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Kalsiyum salınımını geri dönüşümsüz engellemesi": "Kalsiyum salınımını geri dönüşümsüz engellemesi tedavi algoritmasında doğru bağlamda yer alabilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Kalp kapaklarını kalıcı olarak kapatması": "Kalp kapaklarını kalıcı olarak kapatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Koroner kan akımını sıfıra düşürmesi": "Koroner kan akımını sıfıra düşürmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda venöz dönüş artmıştır ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "Aksiyon potansiyelini tamamen durdurması": "Aksiyon potansiyelini tamamen durdurması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Kalsiyum salınımını geri dönüşümsüz engellemesi": "Kalsiyum salınımını geri dönüşümsüz engellemesi tedavi algoritmasında doğru bağlamda yer alabilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Kalp kapaklarını kalıcı olarak kapatması": "Kalp kapaklarını kalıcı olarak kapatması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Koroner kan akımını sıfıra düşürmesi": "Koroner kan akımını sıfıra düşürmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Venöz dönüş artışı end-diyastolik hacmi yükseltir ve Diyastol sonu hacim yükselmiştir bulguları Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     }
   },
   {
@@ -90488,41 +90488,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Emilim yüzeyinin histolojik temeli tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Mikrovillus kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Mikrovillus yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Mikrovillus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Emilim yüzeyinin histolojik temeli tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Mikrovillus kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Mikrovillus yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Mikrovillus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Mikrovillus yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Mikrovillus yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Mikrovillus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Mikrovillus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Mikrovillus yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Mikrovillus yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "i-leri-dogrulama-oncesi-temel-laboratuvar-2",
@@ -91588,41 +91588,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Klinik değerlendirme",
         "summary": "Beslenme öyküsü değerlendirmesi, Çiğ yumurta tüketimi sonrası dermatit tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Karboksilazlar kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Beslenme öyküsü değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Karboksilazlar yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Karboksilazlar yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Beslenme öyküsü değerlendirmesi",
           "summary": "Beslenme öyküsü değerlendirmesi, Çiğ yumurta tüketimi sonrası dermatit tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Karboksilazlar kararının klinik zeminini oluşturur.",
-          "interpretation": "Beslenme öyküsü değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Karboksilazlar yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Karboksilazlar yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Uzun süreli çiğ yumurta akı tüketimi saptandı.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Uzun süreli çiğ yumurta akı tüketimi saptandı.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Uzun süreli çiğ yumurta akı tüketimi saptandı.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Beslenme öyküsü değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Karboksilazlar yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Beslenme öyküsü değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Karboksilazlar yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Karboksilazlar yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Karboksilazlar yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Beslenme öyküsü değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Karboksilazlar yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Karboksilazlar yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -93087,41 +93087,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Uzun süren gastrit sonrası metaplazi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu İntestinal tip mide adenokarsinomu kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntestinal tip mide adenokarsinomu yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntestinal tip mide adenokarsinomu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Uzun süren gastrit sonrası metaplazi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu İntestinal tip mide adenokarsinomu kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntestinal tip mide adenokarsinomu yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntestinal tip mide adenokarsinomu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntestinal tip mide adenokarsinomu yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntestinal tip mide adenokarsinomu yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntestinal tip mide adenokarsinomu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntestinal tip mide adenokarsinomu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntestinal tip mide adenokarsinomu yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntestinal tip mide adenokarsinomu yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-2",
@@ -96963,41 +96963,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Diyabetik hastada şiddetli kulak ağrısı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Diyabetik hastada şiddetli kulak ağrısı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 84/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.0 °C; Şok indeksi: 0,71.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 84/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.0 °C; Şok indeksi: 0,71.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 118/74 mmHg; Nabız: 84/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.0 °C; Şok indeksi: 0,71.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "temporal-kemik-bilgisayarli-tomografi-1",
@@ -99398,41 +99398,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Doğum analjezisi sonrası perineal uyuşma tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Spina ischiadica kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Spina ischiadica yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Spina ischiadica yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Hedefe yönelik nörolojik/nörovasküler muayene",
           "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Doğum analjezisi sonrası perineal uyuşma tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Spina ischiadica kararının klinik zeminini oluşturur.",
-          "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Spina ischiadica yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Spina ischiadica yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Spina ischiadica yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Spina ischiadica yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Spina ischiadica yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Spina ischiadica yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Spina ischiadica yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Spina ischiadica yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -100101,7 +100101,7 @@ export const rawCases = [
     "title": "Karbondioksit taşınması mekanizması",
     "difficulty": "Orta",
     "clinicalFocus": "Karbondioksit taşınması mekanizması bağlamında mekanizma yorumu için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır. ipuçlarını kullanarak Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "learningTarget": "Pulmoner kapillerde hemoglobin oksijenlenmesinin Haldane etkisiyle CO2 ve H+ bağlanmasını azaltarak karbondioksit atılımını nasıl kolaylaştırdığını açıklayabilme.",
     "demographics": "24 yaşında sağlıklı gönüllü",
     "setting": "Klinik değerlendirme",
     "chiefComplaint": "Gönüllüde akciğer kapillerinde hemoglobinin oksijenlenmesiyle karbondioksit taşınmasının nasıl değiştiği tartışılıyor.",
@@ -100125,47 +100125,47 @@ export const rawCases = [
     "investigations": [
       {
         "id": "fizyolojik-simulasyon-1",
-        "label": "Fizyolojik simülasyon",
-        "title": "Fizyolojik simülasyon",
-        "type": "clinical",
+        "label": "Haldane etkisi",
+        "title": "Haldane etkisi",
+        "type": "functionalTest",
         "priority": "essential",
-        "subtype": "Klinik değerlendirme",
-        "summary": "Fizyolojik simülasyon, Karbondioksit taşınması mekanizması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönündeki karar mantığını kurmasına yardım eder.",
+        "subtype": "Gaz taşınması mekanizması",
+        "summary": "Haldane etkisi, akciğer kapillerlerinde hemoglobinin oksijenlenmesiyle hemoglobinin CO2 ve H+ taşıma eğiliminin azalmasını ve CO2 atılımının kolaylaşmasını açıklar.",
+        "clinicalMeaning": "Hemoglobin akciğerde oksijenle yüklendiğinde karbondioksit ve hidrojen iyonlarına afinitesi azalır. Bu durum karbaminohemoglobinden CO2 ayrılmasını ve bikarbonat tampon sisteminden CO2 oluşumunu kolaylaştırır; sonuçta CO2 alveollere daha etkili verilir.",
         "result": {
-          "title": "Fizyolojik simülasyon",
-          "summary": "Fizyolojik simülasyon, Karbondioksit taşınması mekanizması tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak kararının klinik zeminini oluşturur.",
-          "interpretation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönündeki karar mantığını kurmasına yardım eder.",
+          "title": "Haldane etkisi",
+          "summary": "Haldane etkisi, akciğer kapillerlerinde hemoglobinin oksijenlenmesiyle hemoglobinin CO2 ve H+ taşıma eğiliminin azalmasını ve CO2 atılımının kolaylaşmasını açıklar.",
+          "interpretation": "Hemoglobin akciğerde oksijenle yüklendiğinde karbondioksit ve hidrojen iyonlarına afinitesi azalır. Bu durum karbaminohemoglobinden CO2 ayrılmasını ve bikarbonat tampon sisteminden CO2 oluşumunu kolaylaştırır; sonuçta CO2 alveollere daha etkili verilir.",
           "values": [
             [
-              "Klinik bulgu",
-              "Pulmoner kapillerde hemoglobin oksijen satürasyonu artmış olarak modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Pulmoner kapiller yanıt",
+              "Pulmoner kapillerde hemoglobin oksijenlendiğinde karbondioksit ve H+ bağlama eğilimi azalır.",
+              "Beklenen fizyolojik yön",
+              "CO2 dokudan akciğere taşındıktan sonra alveole geçişi kolaylaşır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
-              "Pulmoner kapillerde hemoglobin oksijen satürasyonu artmış olarak modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Pulmoner kapiller yanıt",
+              "Pulmoner kapillerde hemoglobin oksijenlendiğinde karbondioksit ve H+ bağlama eğilimi azalır.",
+              "Beklenen fizyolojik yön",
+              "CO2 dokudan akciğere taşındıktan sonra alveole geçişi kolaylaşır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
-            "Pulmoner kapillerde hemoglobin oksijen satürasyonu artmış olarak modellendi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Pulmoner kapiller yanıt",
+            "Pulmoner kapillerde hemoglobin oksijenlendiğinde karbondioksit ve H+ bağlama eğilimi azalır.",
+            "Beklenen fizyolojik yön",
+            "CO2 dokudan akciğere taşındıktan sonra alveole geçişi kolaylaşır."
           ]
         ],
-        "postAnswerExplanation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönündeki karar mantığını kurmasına yardım eder.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönündeki karar mantığını kurmasına yardım eder."
+        "postAnswerExplanation": "Hemoglobin akciğerde oksijenle yüklendiğinde karbondioksit ve hidrojen iyonlarına afinitesi azalır. Bu durum karbaminohemoglobinden CO2 ayrılmasını ve bikarbonat tampon sisteminden CO2 oluşumunu kolaylaştırır; sonuçta CO2 alveollere daha etkili verilir.",
+        "interpretation": "Hemoglobin akciğerde oksijenle yüklendiğinde karbondioksit ve hidrojen iyonlarına afinitesi azalır. Bu durum karbaminohemoglobinden CO2 ayrılmasını ve bikarbonat tampon sisteminden CO2 oluşumunu kolaylaştırır; sonuçta CO2 alveollere daha etkili verilir.",
+        "category": "functional",
+        "testTypeCategory": "functional",
+        "explanationAfterAnswer": "Hemoglobin akciğerde oksijenle yüklendiğinde karbondioksit ve hidrojen iyonlarına afinitesi azalır. Bu durum karbaminohemoglobinden CO2 ayrılmasını ve bikarbonat tampon sisteminden CO2 oluşumunu kolaylaştırır; sonuçta CO2 alveollere daha etkili verilir."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -100187,33 +100187,33 @@ export const rawCases = [
         "Eritrosit membranını karbondioksite geçirimsiz hale getirerek"
       ],
       "question": "Akciğerde hemoglobinin oksijenlenmesi karbondioksit atılımını hangi mekanizmayla kolaylaştırır?",
-      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyon pulmoner kapillerde gerçekleşmektedir; hemoglobin oksijen satürasyonu artmıştır ile birlikte değerlendirildiğinde Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneği klinik örüntüyle en tutarlı yanıttır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirme pulmoner kapillerde gerçekleşmektedir; hemoglobin oksijen satürasyonu artmıştır ile birlikte değerlendirildiğinde Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneği klinik örüntüyle en tutarlı yanıttır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "Sınavda Simülasyon pulmoner kapillerde gerçekleşmektedir ipucunu Hemoglobin oksijen satürasyonu artmıştır ile birlikte görürsen Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
+          "text": "Sınavda Mekanizma pulmoner kapiller düzeyde değerlendirilir ipucunu Hemoglobin oksijen satürasyonu artmıştır ile birlikte görürsen Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
         }
       ],
       "optionComparison": {
-        "Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak": "Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak, vakadaki Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru karbondioksit atılımının kolaylaşmasını sorgulamaktadır kararı güçlendiren ek ipucudur. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir.",
-        "Alveoler ventilasyonu tamamen durdurarak": "Alveoler ventilasyonu tamamen durdurarak anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Karbondioksiti irreversibl olarak hemoglobine bağlayarak": "Karbondioksiti irreversibl olarak hemoglobine bağlayarak mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Bikarbonat oluşumunu kalıcı olarak engelleyerek": "Bikarbonat oluşumunu kalıcı olarak engelleyerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Eritrosit membranını karbondioksite geçirimsiz hale getirerek": "Eritrosit membranını karbondioksite geçirimsiz hale getirerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak": "Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak, vakadaki Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru karbondioksit atılımının kolaylaşmasını sorgulamaktadır kararı güçlendiren ek ipucudur. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir.",
+        "Alveoler ventilasyonu tamamen durdurarak": "Alveoler ventilasyonu tamamen durdurarak anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Karbondioksiti irreversibl olarak hemoglobine bağlayarak": "Karbondioksiti irreversibl olarak hemoglobine bağlayarak mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Bikarbonat oluşumunu kalıcı olarak engelleyerek": "Bikarbonat oluşumunu kalıcı olarak engelleyerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Eritrosit membranını karbondioksite geçirimsiz hale getirerek": "Eritrosit membranını karbondioksite geçirimsiz hale getirerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       },
       "answerFeedback": {
-        "summary": "Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır. birlikte okunduğunda Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yanıtı klinik olarak öne çıkar.",
-        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyon pulmoner kapillerde gerçekleşmektedir; hemoglobin oksijen satürasyonu artmıştır ile birlikte değerlendirildiğinde Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneği klinik örüntüyle en tutarlı yanıttır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
-        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyon pulmoner kapillerde gerçekleşmektedir; hemoglobin oksijen satürasyonu artmıştır ile birlikte değerlendirildiğinde Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneği klinik örüntüyle en tutarlı yanıttır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "summary": "Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır. birlikte okunduğunda Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yanıtı klinik olarak öne çıkar.",
+        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirme pulmoner kapillerde gerçekleşmektedir; hemoglobin oksijen satürasyonu artmıştır ile birlikte değerlendirildiğinde Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneği klinik örüntüyle en tutarlı yanıttır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirme pulmoner kapillerde gerçekleşmektedir; hemoglobin oksijen satürasyonu artmıştır ile birlikte değerlendirildiğinde Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneği klinik örüntüyle en tutarlı yanıttır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
         "correctOptionFeedback": "Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesinin azalması Haldane etkisinin temel mekanizmasıdır.",
         "keyClues": [
-          "Simülasyon pulmoner kapillerde gerçekleşmektedir.",
+          "Mekanizma pulmoner kapiller düzeyde değerlendirilir.",
           "Hemoglobin oksijen satürasyonu artmıştır.",
           "Soru karbondioksit atılımının kolaylaşmasını sorgulamaktadır."
         ],
         "evidenceChain": [
           {
-            "text": "Simülasyon pulmoner kapillerde gerçekleşmektedir.",
+            "text": "Mekanizma pulmoner kapiller düzeyde değerlendirilir.",
             "weight": "high",
             "source": "case"
           },
@@ -100228,7 +100228,7 @@ export const rawCases = [
             "source": "case"
           }
         ],
-        "examPearl": "Sınavda Simülasyon pulmoner kapillerde gerçekleşmektedir ipucunu Hemoglobin oksijen satürasyonu artmıştır ile birlikte görürsen Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+        "examPearl": "Sınavda Mekanizma pulmoner kapiller düzeyde değerlendirilir ipucunu Hemoglobin oksijen satürasyonu artmıştır ile birlikte görürsen Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
         "pearls": [
           {
             "label": "Sınav notu",
@@ -100242,28 +100242,28 @@ export const rawCases = [
           }
         ],
         "optionComparison": {
-          "Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak": "Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak, vakadaki Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru karbondioksit atılımının kolaylaşmasını sorgulamaktadır kararı güçlendiren ek ipucudur. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir.",
-          "Alveoler ventilasyonu tamamen durdurarak": "Alveoler ventilasyonu tamamen durdurarak anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Karbondioksiti irreversibl olarak hemoglobine bağlayarak": "Karbondioksiti irreversibl olarak hemoglobine bağlayarak mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Bikarbonat oluşumunu kalıcı olarak engelleyerek": "Bikarbonat oluşumunu kalıcı olarak engelleyerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Eritrosit membranını karbondioksite geçirimsiz hale getirerek": "Eritrosit membranını karbondioksite geçirimsiz hale getirerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak": "Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak, vakadaki Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru karbondioksit atılımının kolaylaşmasını sorgulamaktadır kararı güçlendiren ek ipucudur. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir.",
+          "Alveoler ventilasyonu tamamen durdurarak": "Alveoler ventilasyonu tamamen durdurarak anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Karbondioksiti irreversibl olarak hemoglobine bağlayarak": "Karbondioksiti irreversibl olarak hemoglobine bağlayarak mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Bikarbonat oluşumunu kalıcı olarak engelleyerek": "Bikarbonat oluşumunu kalıcı olarak engelleyerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Eritrosit membranını karbondioksite geçirimsiz hale getirerek": "Eritrosit membranını karbondioksite geçirimsiz hale getirerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
         "whyWrong": {
-          "Alveoler ventilasyonu tamamen durdurarak": "Alveoler ventilasyonu tamamen durdurarak anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Karbondioksiti irreversibl olarak hemoglobine bağlayarak": "Karbondioksiti irreversibl olarak hemoglobine bağlayarak mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Bikarbonat oluşumunu kalıcı olarak engelleyerek": "Bikarbonat oluşumunu kalıcı olarak engelleyerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Eritrosit membranını karbondioksite geçirimsiz hale getirerek": "Eritrosit membranını karbondioksite geçirimsiz hale getirerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "Alveoler ventilasyonu tamamen durdurarak": "Alveoler ventilasyonu tamamen durdurarak anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Karbondioksiti irreversibl olarak hemoglobine bağlayarak": "Karbondioksiti irreversibl olarak hemoglobine bağlayarak mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Bikarbonat oluşumunu kalıcı olarak engelleyerek": "Bikarbonat oluşumunu kalıcı olarak engelleyerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Eritrosit membranını karbondioksite geçirimsiz hale getirerek": "Eritrosit membranını karbondioksite geçirimsiz hale getirerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
         "managementSteps": [],
         "management": [],
         "learningOutcome": "Haldane etkisini akciğerde oksijenlenmenin karbondioksit taşınmasına etkisiyle açıklayabilme",
-        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır. Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneğini diğerlerinden ayırır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir."
+        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır. Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneğini diğerlerinden ayırır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir."
       },
-      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyon pulmoner kapillerde gerçekleşmektedir; hemoglobin oksijen satürasyonu artmıştır ile birlikte değerlendirildiğinde Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneği klinik örüntüyle en tutarlı yanıttır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirme pulmoner kapillerde gerçekleşmektedir; hemoglobin oksijen satürasyonu artmıştır ile birlikte değerlendirildiğinde Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneği klinik örüntüyle en tutarlı yanıttır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "evidenceChain": [
         {
           "title": "Klinik ipucu",
-          "text": "Simülasyon pulmoner kapillerde gerçekleşmektedir.",
+          "text": "Mekanizma pulmoner kapiller düzeyde değerlendirilir.",
           "weight": "high",
           "source": "case"
         },
@@ -100280,29 +100280,29 @@ export const rawCases = [
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır. Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneğini diğerlerinden ayırır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir.",
-      "examPearl": "Sınavda Simülasyon pulmoner kapillerde gerçekleşmektedir ipucunu Hemoglobin oksijen satürasyonu artmıştır ile birlikte görürsen Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır. Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneğini diğerlerinden ayırır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir.",
+      "examPearl": "Sınavda Mekanizma pulmoner kapiller düzeyde değerlendirilir ipucunu Hemoglobin oksijen satürasyonu artmıştır ile birlikte görürsen Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
       "whyWrong": {
-        "Alveoler ventilasyonu tamamen durdurarak": "Alveoler ventilasyonu tamamen durdurarak anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Karbondioksiti irreversibl olarak hemoglobine bağlayarak": "Karbondioksiti irreversibl olarak hemoglobine bağlayarak mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Bikarbonat oluşumunu kalıcı olarak engelleyerek": "Bikarbonat oluşumunu kalıcı olarak engelleyerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Eritrosit membranını karbondioksite geçirimsiz hale getirerek": "Eritrosit membranını karbondioksite geçirimsiz hale getirerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "Alveoler ventilasyonu tamamen durdurarak": "Alveoler ventilasyonu tamamen durdurarak anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Karbondioksiti irreversibl olarak hemoglobine bağlayarak": "Karbondioksiti irreversibl olarak hemoglobine bağlayarak mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Bikarbonat oluşumunu kalıcı olarak engelleyerek": "Bikarbonat oluşumunu kalıcı olarak engelleyerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Eritrosit membranını karbondioksite geçirimsiz hale getirerek": "Eritrosit membranını karbondioksite geçirimsiz hale getirerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       }
     },
     "difficultyTag": "Orta",
-    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır. Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneğini diğerlerinden ayırır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir.",
-    "examPearl": "Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak için sınav ayırıcı nokta, “Simülasyon pulmoner kapillerde gerçekleşmektedir” ipucunu ikinci destekleyici bulguyla birlikte yorumlamaktır.",
-    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyon pulmoner kapillerde gerçekleşmektedir; hemoglobin oksijen satürasyonu artmıştır ile birlikte değerlendirildiğinde Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneği klinik örüntüyle en tutarlı yanıttır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır. Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneğini diğerlerinden ayırır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir.",
+    "examPearl": "Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak için sınav ayırıcı nokta, “Mekanizma pulmoner kapiller düzeyde değerlendirilir” ipucunu ikinci destekleyici bulguyla birlikte yorumlamaktır.",
+    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirme pulmoner kapillerde gerçekleşmektedir; hemoglobin oksijen satürasyonu artmıştır ile birlikte değerlendirildiğinde Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak seçeneği klinik örüntüyle en tutarlı yanıttır. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
     "optionComparison": {
-      "Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak": "Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak, vakadaki Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru karbondioksit atılımının kolaylaşmasını sorgulamaktadır kararı güçlendiren ek ipucudur. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir.",
-      "Alveoler ventilasyonu tamamen durdurarak": "Alveoler ventilasyonu tamamen durdurarak anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Karbondioksiti irreversibl olarak hemoglobine bağlayarak": "Karbondioksiti irreversibl olarak hemoglobine bağlayarak mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Bikarbonat oluşumunu kalıcı olarak engelleyerek": "Bikarbonat oluşumunu kalıcı olarak engelleyerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Eritrosit membranını karbondioksite geçirimsiz hale getirerek": "Eritrosit membranını karbondioksite geçirimsiz hale getirerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak": "Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak, vakadaki Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru karbondioksit atılımının kolaylaşmasını sorgulamaktadır kararı güçlendiren ek ipucudur. Eritrosit yıkımı veya üretim kusuru hemoglobin düşüklüğünün paternini belirler; retikülosit yanıtı kemik iliği kompansasyonunu gösterir.",
+      "Alveoler ventilasyonu tamamen durdurarak": "Alveoler ventilasyonu tamamen durdurarak anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Karbondioksiti irreversibl olarak hemoglobine bağlayarak": "Karbondioksiti irreversibl olarak hemoglobine bağlayarak mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Bikarbonat oluşumunu kalıcı olarak engelleyerek": "Bikarbonat oluşumunu kalıcı olarak engelleyerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Eritrosit membranını karbondioksite geçirimsiz hale getirerek": "Eritrosit membranını karbondioksite geçirimsiz hale getirerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     },
     "evidenceChain": [
       {
-        "text": "Simülasyon pulmoner kapillerde gerçekleşmektedir.",
+        "text": "Mekanizma pulmoner kapiller düzeyde değerlendirilir.",
         "weight": "high",
         "source": "case"
       },
@@ -100318,10 +100318,10 @@ export const rawCases = [
       }
     ],
     "whyWrong": {
-      "Alveoler ventilasyonu tamamen durdurarak": "Alveoler ventilasyonu tamamen durdurarak anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Karbondioksiti irreversibl olarak hemoglobine bağlayarak": "Karbondioksiti irreversibl olarak hemoglobine bağlayarak mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Bikarbonat oluşumunu kalıcı olarak engelleyerek": "Bikarbonat oluşumunu kalıcı olarak engelleyerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Eritrosit membranını karbondioksite geçirimsiz hale getirerek": "Eritrosit membranını karbondioksite geçirimsiz hale getirerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyon pulmoner kapillerde gerçekleşmektedir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "Alveoler ventilasyonu tamamen durdurarak": "Alveoler ventilasyonu tamamen durdurarak anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Karbondioksiti irreversibl olarak hemoglobine bağlayarak": "Karbondioksiti irreversibl olarak hemoglobine bağlayarak mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Bikarbonat oluşumunu kalıcı olarak engelleyerek": "Bikarbonat oluşumunu kalıcı olarak engelleyerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Eritrosit membranını karbondioksite geçirimsiz hale getirerek": "Eritrosit membranını karbondioksite geçirimsiz hale getirerek mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mekanizma pulmoner kapiller düzeyde değerlendirilir ve Hemoglobin oksijen satürasyonu artmıştır bulguları Hemoglobinin karbondioksit ve hidrojen iyonlarına afinitesini azaltarak yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     }
   },
   {
@@ -100332,7 +100332,7 @@ export const rawCases = [
     "title": "Böbrek plazma akımı ölçümü",
     "difficulty": "Zor",
     "clinicalFocus": "Böbrek plazma akımı ölçümü bağlamında laboratuvar yorumu için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir. ipuçlarını kullanarak Para-aminohippurat seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "learningTarget": "Efektif renal plazma akımını tahmin eden maddenin hem filtre edilip hem de proksimal tübülden yoğun sekrete edilmesi gerektiğini ve bunun para-aminohippuratla ilişkisini açıklayabilme.",
     "demographics": "30 yaşında sağlıklı gönüllü",
     "setting": "Klinik değerlendirme",
     "chiefComplaint": "Gönüllüde renal plazma akımının hangi madde klirensiyle tahmin edilebileceği tartışılıyor.",
@@ -100356,47 +100356,47 @@ export const rawCases = [
     "investigations": [
       {
         "id": "klirens-simulasyonu-1",
-        "label": "Klirens simülasyonu",
-        "title": "Klirens simülasyonu",
-        "type": "clinical",
+        "label": "Para-aminohippurat klirens prensibi",
+        "title": "Para-aminohippurat klirens prensibi",
+        "type": "functionalTest",
         "priority": "essential",
-        "subtype": "Klinik değerlendirme",
-        "summary": "Klirens simülasyonu, Böbrek plazma akımı ölçümü tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Para-aminohippurat kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Klirens simülasyonu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Para-aminohippurat yönündeki karar mantığını kurmasına yardım eder.",
+        "subtype": "Renal klirens değerlendirmesi",
+        "summary": "Para-aminohippurat, düşük plazma düzeylerinde glomerüler filtrasyona ek olarak proksimal tübülden yoğun sekrete edildiği için efektif renal plazma akımının tahmininde kullanılır.",
+        "clinicalMeaning": "Efektif renal plazma akımını tahmin etmek için maddenin böbrekten tek geçişte büyük oranda temizlenmesi gerekir. Para-aminohippurat hem filtre edilir hem de proksimal tübül tarafından sekrete edilir; bu nedenle klirensi renal plazma akımına yaklaşır.",
         "result": {
-          "title": "Klirens simülasyonu",
-          "summary": "Klirens simülasyonu, Böbrek plazma akımı ölçümü tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Para-aminohippurat kararının klinik zeminini oluşturur.",
-          "interpretation": "Klirens simülasyonu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Para-aminohippurat yönündeki karar mantığını kurmasına yardım eder.",
+          "title": "Para-aminohippurat klirens prensibi",
+          "summary": "Para-aminohippurat, düşük plazma düzeylerinde glomerüler filtrasyona ek olarak proksimal tübülden yoğun sekrete edildiği için efektif renal plazma akımının tahmininde kullanılır.",
+          "interpretation": "Efektif renal plazma akımını tahmin etmek için maddenin böbrekten tek geçişte büyük oranda temizlenmesi gerekir. Para-aminohippurat hem filtre edilir hem de proksimal tübül tarafından sekrete edilir; bu nedenle klirensi renal plazma akımına yaklaşır.",
           "values": [
             [
-              "Klinik bulgu",
-              "Düşük plazma düzeyinde filtre edilen ve proksimal tübülden yoğun sekrete edilen bir madde modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Renal plazma akımı belirteci",
+              "Düşük plazma düzeyinde hem glomerülden filtre edilen hem de proksimal tübülden yoğun sekrete edilen madde efektif renal plazma akımını tahmin eder.",
+              "Beklenen klirens özelliği",
+              "Bu özellik para-aminohippuratın efektif renal plazma akımı için kullanılmasını açıklar."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
-              "Düşük plazma düzeyinde filtre edilen ve proksimal tübülden yoğun sekrete edilen bir madde modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Renal plazma akımı belirteci",
+              "Düşük plazma düzeyinde hem glomerülden filtre edilen hem de proksimal tübülden yoğun sekrete edilen madde efektif renal plazma akımını tahmin eder.",
+              "Beklenen klirens özelliği",
+              "Bu özellik para-aminohippuratın efektif renal plazma akımı için kullanılmasını açıklar."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
-            "Düşük plazma düzeyinde filtre edilen ve proksimal tübülden yoğun sekrete edilen bir madde modellendi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Renal plazma akımı belirteci",
+            "Düşük plazma düzeyinde hem glomerülden filtre edilen hem de proksimal tübülden yoğun sekrete edilen madde efektif renal plazma akımını tahmin eder.",
+            "Beklenen klirens özelliği",
+            "Bu özellik para-aminohippuratın efektif renal plazma akımı için kullanılmasını açıklar."
           ]
         ],
-        "postAnswerExplanation": "Klirens simülasyonu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Para-aminohippurat yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Klirens simülasyonu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Para-aminohippurat yönündeki karar mantığını kurmasına yardım eder.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Klirens simülasyonu sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Para-aminohippurat yönündeki karar mantığını kurmasına yardım eder."
+        "postAnswerExplanation": "Efektif renal plazma akımını tahmin etmek için maddenin böbrekten tek geçişte büyük oranda temizlenmesi gerekir. Para-aminohippurat hem filtre edilir hem de proksimal tübül tarafından sekrete edilir; bu nedenle klirensi renal plazma akımına yaklaşır.",
+        "interpretation": "Efektif renal plazma akımını tahmin etmek için maddenin böbrekten tek geçişte büyük oranda temizlenmesi gerekir. Para-aminohippurat hem filtre edilir hem de proksimal tübül tarafından sekrete edilir; bu nedenle klirensi renal plazma akımına yaklaşır.",
+        "category": "functional",
+        "testTypeCategory": "functional",
+        "explanationAfterAnswer": "Efektif renal plazma akımını tahmin etmek için maddenin böbrekten tek geçişte büyük oranda temizlenmesi gerekir. Para-aminohippurat hem filtre edilir hem de proksimal tübül tarafından sekrete edilir; bu nedenle klirensi renal plazma akımına yaklaşır."
       },
       {
         "id": "tam-idrar-analizi-2",
@@ -100495,33 +100495,33 @@ export const rawCases = [
         "Albumin"
       ],
       "question": "Bu özelliklere sahip ve efektif renal plazma akımını tahmin etmek için kullanılan madde aşağıdakilerden hangisidir?",
-      "explanation": "Bu olguda temel karar laboratuvar yorumu üzerinden kurulmalıdır; simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir; amaç renal plazma akımını tahmin etmektir ile birlikte değerlendirildiğinde Para-aminohippurat seçeneği klinik örüntüyle en tutarlı yanıttır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "explanation": "Bu olguda temel karar laboratuvar yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede madde hem filtre edilmekte hem de yoğun sekrete edilmektedir; amaç renal plazma akımını tahmin etmektir ile birlikte değerlendirildiğinde Para-aminohippurat seçeneği klinik örüntüyle en tutarlı yanıttır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "Sınavda Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ipucunu Amaç renal plazma akımını tahmin etmektir ile birlikte görürsen Para-aminohippurat yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
+          "text": "Sınavda İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ipucunu Amaç renal plazma akımını tahmin etmektir ile birlikte görürsen Para-aminohippurat yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
         }
       ],
       "optionComparison": {
-        "İnülin": "İnülin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-        "Para-aminohippurat": "Para-aminohippurat, vakadaki Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirme düşük plazma düzeyindeki klirens üzerinden yapılmaktadır kararı güçlendiren ek ipucudur. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir.",
-        "Glukoz": "Glukoz aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-        "Üre": "Üre aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-        "Albumin": "Albumin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir."
+        "İnülin": "İnülin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+        "Para-aminohippurat": "Para-aminohippurat, vakadaki İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirme düşük plazma düzeyindeki klirens üzerinden yapılmaktadır kararı güçlendiren ek ipucudur. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir.",
+        "Glukoz": "Glukoz aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+        "Üre": "Üre aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+        "Albumin": "Albumin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir."
       },
       "answerFeedback": {
-        "summary": "Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir. birlikte okunduğunda Para-aminohippurat yanıtı klinik olarak öne çıkar.",
-        "whyCorrect": "Bu olguda temel karar laboratuvar yorumu üzerinden kurulmalıdır; simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir; amaç renal plazma akımını tahmin etmektir ile birlikte değerlendirildiğinde Para-aminohippurat seçeneği klinik örüntüyle en tutarlı yanıttır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
-        "rationale": "Bu olguda temel karar laboratuvar yorumu üzerinden kurulmalıdır; simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir; amaç renal plazma akımını tahmin etmektir ile birlikte değerlendirildiğinde Para-aminohippurat seçeneği klinik örüntüyle en tutarlı yanıttır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "summary": "İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir. birlikte okunduğunda Para-aminohippurat yanıtı klinik olarak öne çıkar.",
+        "whyCorrect": "Bu olguda temel karar laboratuvar yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede madde hem filtre edilmekte hem de yoğun sekrete edilmektedir; amaç renal plazma akımını tahmin etmektir ile birlikte değerlendirildiğinde Para-aminohippurat seçeneği klinik örüntüyle en tutarlı yanıttır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "rationale": "Bu olguda temel karar laboratuvar yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede madde hem filtre edilmekte hem de yoğun sekrete edilmektedir; amaç renal plazma akımını tahmin etmektir ile birlikte değerlendirildiğinde Para-aminohippurat seçeneği klinik örüntüyle en tutarlı yanıttır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
         "correctOptionFeedback": "Para-aminohippurat proksimal tübüler sekresyonla büyük ölçüde temizlendiği için efektif renal plazma akımını tahmin eder.",
         "keyClues": [
-          "Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir.",
+          "İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir.",
           "Amaç renal plazma akımını tahmin etmektir.",
           "Değerlendirme düşük plazma düzeyindeki klirens üzerinden yapılmaktadır."
         ],
         "evidenceChain": [
           {
-            "text": "Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir.",
+            "text": "İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir.",
             "weight": "high",
             "source": "case"
           },
@@ -100536,7 +100536,7 @@ export const rawCases = [
             "source": "case"
           }
         ],
-        "examPearl": "Sınavda Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ipucunu Amaç renal plazma akımını tahmin etmektir ile birlikte görürsen Para-aminohippurat yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+        "examPearl": "Sınavda İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ipucunu Amaç renal plazma akımını tahmin etmektir ile birlikte görürsen Para-aminohippurat yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
         "pearls": [
           {
             "label": "Sınav notu",
@@ -100550,28 +100550,28 @@ export const rawCases = [
           }
         ],
         "optionComparison": {
-          "İnülin": "İnülin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-          "Para-aminohippurat": "Para-aminohippurat, vakadaki Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirme düşük plazma düzeyindeki klirens üzerinden yapılmaktadır kararı güçlendiren ek ipucudur. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir.",
-          "Glukoz": "Glukoz aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-          "Üre": "Üre aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-          "Albumin": "Albumin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir."
+          "İnülin": "İnülin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+          "Para-aminohippurat": "Para-aminohippurat, vakadaki İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirme düşük plazma düzeyindeki klirens üzerinden yapılmaktadır kararı güçlendiren ek ipucudur. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir.",
+          "Glukoz": "Glukoz aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+          "Üre": "Üre aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+          "Albumin": "Albumin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir."
         },
         "whyWrong": {
-          "İnülin": "İnülin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-          "Glukoz": "Glukoz aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-          "Üre": "Üre aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-          "Albumin": "Albumin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir."
+          "İnülin": "İnülin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+          "Glukoz": "Glukoz aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+          "Üre": "Üre aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+          "Albumin": "Albumin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir."
         },
         "managementSteps": [],
         "management": [],
         "learningOutcome": "Renal plazma akımının PAH klirensiyle neden tahmin edildiğini açıklayabilme",
-        "coreKnowledge": "Benzer olgularda laboratuvar yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir. Para-aminohippurat seçeneğini diğerlerinden ayırır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir."
+        "coreKnowledge": "Benzer olgularda laboratuvar yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir. Para-aminohippurat seçeneğini diğerlerinden ayırır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir."
       },
-      "whyCorrect": "Bu olguda temel karar laboratuvar yorumu üzerinden kurulmalıdır; simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir; amaç renal plazma akımını tahmin etmektir ile birlikte değerlendirildiğinde Para-aminohippurat seçeneği klinik örüntüyle en tutarlı yanıttır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "whyCorrect": "Bu olguda temel karar laboratuvar yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede madde hem filtre edilmekte hem de yoğun sekrete edilmektedir; amaç renal plazma akımını tahmin etmektir ile birlikte değerlendirildiğinde Para-aminohippurat seçeneği klinik örüntüyle en tutarlı yanıttır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "evidenceChain": [
         {
           "title": "Klinik ipucu",
-          "text": "Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir.",
+          "text": "İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir.",
           "weight": "high",
           "source": "case"
         },
@@ -100588,29 +100588,29 @@ export const rawCases = [
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer olgularda laboratuvar yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir. Para-aminohippurat seçeneğini diğerlerinden ayırır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir.",
-      "examPearl": "Sınavda Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ipucunu Amaç renal plazma akımını tahmin etmektir ile birlikte görürsen Para-aminohippurat yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+      "coreKnowledge": "Benzer olgularda laboratuvar yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir. Para-aminohippurat seçeneğini diğerlerinden ayırır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir.",
+      "examPearl": "Sınavda İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ipucunu Amaç renal plazma akımını tahmin etmektir ile birlikte görürsen Para-aminohippurat yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
       "whyWrong": {
-        "İnülin": "İnülin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-        "Glukoz": "Glukoz aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-        "Üre": "Üre aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-        "Albumin": "Albumin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir."
+        "İnülin": "İnülin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+        "Glukoz": "Glukoz aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+        "Üre": "Üre aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+        "Albumin": "Albumin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir."
       }
     },
     "difficultyTag": "Zor",
-    "coreKnowledge": "Benzer olgularda laboratuvar yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir. Para-aminohippurat seçeneğini diğerlerinden ayırır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir.",
-    "examPearl": "Para-aminohippurat için sınav ayırıcı nokta, “Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir” ipucunu ikinci destekleyici bulguyla birlikte yorumlamaktır.",
-    "whyCorrect": "Bu olguda temel karar laboratuvar yorumu üzerinden kurulmalıdır; simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir; amaç renal plazma akımını tahmin etmektir ile birlikte değerlendirildiğinde Para-aminohippurat seçeneği klinik örüntüyle en tutarlı yanıttır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+    "coreKnowledge": "Benzer olgularda laboratuvar yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir. Para-aminohippurat seçeneğini diğerlerinden ayırır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir.",
+    "examPearl": "Para-aminohippurat için sınav ayırıcı nokta, “İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir” ipucunu ikinci destekleyici bulguyla birlikte yorumlamaktır.",
+    "whyCorrect": "Bu olguda temel karar laboratuvar yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede madde hem filtre edilmekte hem de yoğun sekrete edilmektedir; amaç renal plazma akımını tahmin etmektir ile birlikte değerlendirildiğinde Para-aminohippurat seçeneği klinik örüntüyle en tutarlı yanıttır. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
     "optionComparison": {
-      "İnülin": "İnülin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-      "Para-aminohippurat": "Para-aminohippurat, vakadaki Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirme düşük plazma düzeyindeki klirens üzerinden yapılmaktadır kararı güçlendiren ek ipucudur. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir.",
-      "Glukoz": "Glukoz aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-      "Üre": "Üre aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-      "Albumin": "Albumin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir."
+      "İnülin": "İnülin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+      "Para-aminohippurat": "Para-aminohippurat, vakadaki İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirme düşük plazma düzeyindeki klirens üzerinden yapılmaktadır kararı güçlendiren ek ipucudur. Böbrek plazma akımı ölçümü olgusunda Para-aminohippurat yanıtı, öykü, muayene ve objektif verilerin aynı lab_interpretation basamağında birleşmesiyle gerekçelenir.",
+      "Glukoz": "Glukoz aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+      "Üre": "Üre aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+      "Albumin": "Albumin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir."
     },
     "evidenceChain": [
       {
-        "text": "Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir.",
+        "text": "İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir.",
         "weight": "high",
         "source": "case"
       },
@@ -100626,10 +100626,10 @@ export const rawCases = [
       }
     ],
     "whyWrong": {
-      "İnülin": "İnülin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-      "Glukoz": "Glukoz aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-      "Üre": "Üre aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
-      "Albumin": "Albumin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada Simülasyonda madde hem filtre edilmekte hem de yoğun sekrete edilmektedir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir."
+      "İnülin": "İnülin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+      "Glukoz": "Glukoz aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+      "Üre": "Üre aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir.",
+      "Albumin": "Albumin aynı klinik başlıkta ayırıcı seçenek olarak değerlendirilebilir; ancak bu vakada İlgili madde hem glomerülden filtre edilir hem de proksimal tübülden yoğun sekrete edilir ve Amaç renal plazma akımını tahmin etmektir bulguları Para-aminohippurat yönünde daha seçicidir. Bu ayrım, seçeneklerin aynı kategoride görünmesine rağmen klinik bağlamın yanıtı daralttığını gösterir."
     }
   },
   {
@@ -100664,41 +100664,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Klinik değerlendirme",
         "summary": "Fizyoloji değerlendirmesi, Mide asit salgısının son basamağı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu H/K ATPaz kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Fizyoloji değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve H/K ATPaz yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, H/K ATPaz yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Fizyoloji değerlendirmesi",
           "summary": "Fizyoloji değerlendirmesi, Mide asit salgısının son basamağı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu H/K ATPaz kararının klinik zeminini oluşturur.",
-          "interpretation": "Fizyoloji değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve H/K ATPaz yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, H/K ATPaz yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Parietal hücre apikal membranındaki proton pompası hedef mekanizma olarak incelendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Parietal hücre apikal membranındaki proton pompası hedef mekanizma olarak incelendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Parietal hücre apikal membranındaki proton pompası hedef mekanizma olarak incelendi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Fizyoloji değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve H/K ATPaz yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Fizyoloji değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve H/K ATPaz yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, H/K ATPaz yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, H/K ATPaz yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Fizyoloji değerlendirmesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve H/K ATPaz yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, H/K ATPaz yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -101237,41 +101237,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Testis biyopsisinde destek hücresi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Kan-testis bariyerini oluşturmak ve gelişen germ hücrelerini desteklemek kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kan-testis bariyerini oluşturmak ve gelişen germ hücrelerini desteklemek yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kan-testis bariyerini oluşturmak ve gelişen germ hücrelerini desteklemek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Testis biyopsisinde destek hücresi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Kan-testis bariyerini oluşturmak ve gelişen germ hücrelerini desteklemek kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kan-testis bariyerini oluşturmak ve gelişen germ hücrelerini desteklemek yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kan-testis bariyerini oluşturmak ve gelişen germ hücrelerini desteklemek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kan-testis bariyerini oluşturmak ve gelişen germ hücrelerini desteklemek yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kan-testis bariyerini oluşturmak ve gelişen germ hücrelerini desteklemek yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kan-testis bariyerini oluşturmak ve gelişen germ hücrelerini desteklemek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kan-testis bariyerini oluşturmak ve gelişen germ hücrelerini desteklemek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Kan-testis bariyerini oluşturmak ve gelişen germ hücrelerini desteklemek yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Kan-testis bariyerini oluşturmak ve gelişen germ hücrelerini desteklemek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "i-leri-dogrulama-oncesi-temel-laboratuvar-2",
@@ -103965,41 +103965,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Kanlı ishal ve rektumdan başlayan tutulum tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Ülseratif kolit kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ülseratif kolit yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ülseratif kolit yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Kanlı ishal ve rektumdan başlayan tutulum tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Ülseratif kolit kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ülseratif kolit yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ülseratif kolit yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ülseratif kolit yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ülseratif kolit yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ülseratif kolit yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ülseratif kolit yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ülseratif kolit yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ülseratif kolit yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-3",
@@ -104986,41 +104986,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Antibiyotik infüzyonu sırasında kızarma tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Antibiyotik infüzyonu sırasında kızarma tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 108/68 mmHg; Nabız: 108/dk; Solunum: 16/dk; SpO₂: %97; Ateş: 38.3 °C; Şok indeksi: 1,00 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 108/68 mmHg; Nabız: 108/dk; Solunum: 16/dk; SpO₂: %97; Ateş: 38.3 °C; Şok indeksi: 1,00 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 108/68 mmHg; Nabız: 108/dk; Solunum: 16/dk; SpO₂: %97; Ateş: 38.3 °C; Şok indeksi: 1,00 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-1",
@@ -107955,41 +107955,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Alında veziküler döküntü ve göz ağrısı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Alında veziküler döküntü ve göz ağrısı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -108412,41 +108412,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Sinüs enfeksiyonu sonrası çift görme tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Abdusens siniri kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Abdusens siniri yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Abdusens siniri yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Sinüs enfeksiyonu sonrası çift görme tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Abdusens siniri kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Abdusens siniri yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Abdusens siniri yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 108/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.4 °C; Şok indeksi: 0,92 (sınırda yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 108/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.4 °C; Şok indeksi: 0,92 (sınırda yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 118/74 mmHg; Nabız: 108/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.4 °C; Şok indeksi: 0,92 (sınırda yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Abdusens siniri yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Abdusens siniri yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Abdusens siniri yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Abdusens siniri yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Abdusens siniri yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Abdusens siniri yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "kontrastli-kraniyal-manyetik-rezonans-goruntuleme-1",
@@ -108907,41 +108907,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Pelvik lenf nodu diseksiyonu sonrası bacak güçsüzlüğü tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus obturatorius kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus obturatorius yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus obturatorius yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Hedefe yönelik nörolojik/nörovasküler muayene",
           "summary": "Hedefe yönelik nörolojik/nörovasküler muayene, Pelvik lenf nodu diseksiyonu sonrası bacak güçsüzlüğü tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nervus obturatorius kararının klinik zeminini oluşturur.",
-          "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus obturatorius yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus obturatorius yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Klinik senaryoda tariflenen güçsüzlük/duyu kusuru anatomik dağılımla kaydedildi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus obturatorius yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus obturatorius yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus obturatorius yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus obturatorius yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Hedefe yönelik nörolojik/nörovasküler muayene sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nervus obturatorius yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nervus obturatorius yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -109108,7 +109108,7 @@ export const rawCases = [
     "difficulty": "Orta",
     "difficultyTag": "Orta",
     "clinicalFocus": "Renal tübüler akım azalmasına yanıt bağlamında mekanizma yorumu için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır. ipuçlarını kullanarak Juxtaglomerüler hücrelerden renin salınımının artması seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "learningTarget": "Makula densaya ulaşan NaCl yükü azaldığında juxtaglomerüler hücrelerden renin salınımının artmasını ve RAAS aktivasyonunun amacını açıklayabilme.",
     "demographics": "34 yaşında sağlıklı gönüllü",
     "setting": "Klinik değerlendirme",
     "chiefComplaint": "Gönüllüde distal tübüle ulaşan sodyum klorür miktarı azaldığında juxtaglomerüler yanıtın ne olacağı tartışılıyor.",
@@ -109132,47 +109132,47 @@ export const rawCases = [
     "investigations": [
       {
         "id": "fizyolojik-simulasyon-1",
-        "label": "Fizyolojik simülasyon",
-        "title": "Fizyolojik simülasyon",
-        "type": "clinical",
+        "label": "Makula densa-renin yanıtı",
+        "title": "Makula densa-renin yanıtı",
+        "type": "functionalTest",
         "priority": "essential",
-        "subtype": "Klinik değerlendirme",
-        "summary": "Fizyolojik simülasyon, Renal tübüler akım azalmasına yanıt tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Juxtaglomerüler hücrelerden renin salınımının artması kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Juxtaglomerüler hücrelerden renin salınımının artması yönündeki karar mantığını kurmasına yardım eder.",
+        "subtype": "Tubuloglomerüler geri bildirim",
+        "summary": "Makula densaya ulaşan NaCl yükü azaldığında juxtaglomerüler aparatta renin salınımını artıran yanıt gelişir ve RAAS aktivasyonu desteklenir.",
+        "clinicalMeaning": "Makula densa distal tübüldeki NaCl yükünü böbrek perfüzyonu ve filtrasyonun dolaylı göstergesi olarak algılar. NaCl yükü azaldığında juxtaglomerüler hücrelerden renin salınımı artar; RAAS aktivasyonu efferent arteriyol tonusu ve sodyum-su tutulumu üzerinden dolaşımı destekler.",
         "result": {
-          "title": "Fizyolojik simülasyon",
-          "summary": "Fizyolojik simülasyon, Renal tübüler akım azalmasına yanıt tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Juxtaglomerüler hücrelerden renin salınımının artması kararının klinik zeminini oluşturur.",
-          "interpretation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Juxtaglomerüler hücrelerden renin salınımının artması yönündeki karar mantığını kurmasına yardım eder.",
+          "title": "Makula densa-renin yanıtı",
+          "summary": "Makula densaya ulaşan NaCl yükü azaldığında juxtaglomerüler aparatta renin salınımını artıran yanıt gelişir ve RAAS aktivasyonu desteklenir.",
+          "interpretation": "Makula densa distal tübüldeki NaCl yükünü böbrek perfüzyonu ve filtrasyonun dolaylı göstergesi olarak algılar. NaCl yükü azaldığında juxtaglomerüler hücrelerden renin salınımı artar; RAAS aktivasyonu efferent arteriyol tonusu ve sodyum-su tutulumu üzerinden dolaşımı destekler.",
           "values": [
             [
-              "Klinik bulgu",
-              "Makula densaya ulaşan sodyum klorür miktarı azalmış olarak modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Düşük NaCl yükü yanıtı",
+              "Makula densaya ulaşan NaCl yükünün azalması juxtaglomerüler hücrelerden renin salınımını artıran sinyal oluşturur.",
+              "Beklenen fizyolojik yön",
+              "RAAS aktivasyonu desteklenir; efektif dolaşım hacmi ve glomerüler perfüzyon korunmaya çalışılır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
-              "Makula densaya ulaşan sodyum klorür miktarı azalmış olarak modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Düşük NaCl yükü yanıtı",
+              "Makula densaya ulaşan NaCl yükünün azalması juxtaglomerüler hücrelerden renin salınımını artıran sinyal oluşturur.",
+              "Beklenen fizyolojik yön",
+              "RAAS aktivasyonu desteklenir; efektif dolaşım hacmi ve glomerüler perfüzyon korunmaya çalışılır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
-            "Makula densaya ulaşan sodyum klorür miktarı azalmış olarak modellendi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Düşük NaCl yükü yanıtı",
+            "Makula densaya ulaşan NaCl yükünün azalması juxtaglomerüler hücrelerden renin salınımını artıran sinyal oluşturur.",
+            "Beklenen fizyolojik yön",
+            "RAAS aktivasyonu desteklenir; efektif dolaşım hacmi ve glomerüler perfüzyon korunmaya çalışılır."
           ]
         ],
-        "postAnswerExplanation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Juxtaglomerüler hücrelerden renin salınımının artması yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Juxtaglomerüler hücrelerden renin salınımının artması yönündeki karar mantığını kurmasına yardım eder.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Juxtaglomerüler hücrelerden renin salınımının artması yönündeki karar mantığını kurmasına yardım eder."
+        "postAnswerExplanation": "Makula densa distal tübüldeki NaCl yükünü böbrek perfüzyonu ve filtrasyonun dolaylı göstergesi olarak algılar. NaCl yükü azaldığında juxtaglomerüler hücrelerden renin salınımı artar; RAAS aktivasyonu efferent arteriyol tonusu ve sodyum-su tutulumu üzerinden dolaşımı destekler.",
+        "interpretation": "Makula densa distal tübüldeki NaCl yükünü böbrek perfüzyonu ve filtrasyonun dolaylı göstergesi olarak algılar. NaCl yükü azaldığında juxtaglomerüler hücrelerden renin salınımı artar; RAAS aktivasyonu efferent arteriyol tonusu ve sodyum-su tutulumu üzerinden dolaşımı destekler.",
+        "category": "functional",
+        "testTypeCategory": "functional",
+        "explanationAfterAnswer": "Makula densa distal tübüldeki NaCl yükünü böbrek perfüzyonu ve filtrasyonun dolaylı göstergesi olarak algılar. NaCl yükü azaldığında juxtaglomerüler hücrelerden renin salınımı artar; RAAS aktivasyonu efferent arteriyol tonusu ve sodyum-su tutulumu üzerinden dolaşımı destekler."
       },
       {
         "id": "tam-idrar-analizi-2",
@@ -109271,33 +109271,33 @@ export const rawCases = [
         "Eritropoietin salınımının akut olarak baskılanması"
       ],
       "question": "Bu durumda beklenen temel yanıt aşağıdakilerden hangisidir?",
-      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır; soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte değerlendirildiğinde Juxtaglomerüler hücrelerden renin salınımının artması seçeneği klinik örüntüyle en tutarlı yanıttır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede makula densaya ulaşan sodyum klorür azaltılmıştır; soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte değerlendirildiğinde Juxtaglomerüler hücrelerden renin salınımının artması seçeneği klinik örüntüyle en tutarlı yanıttır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "Sınavda Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ipucunu Soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte görürsen Juxtaglomerüler hücrelerden renin salınımının artması yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
+          "text": "Sınavda Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ipucunu Soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte görürsen Juxtaglomerüler hücrelerden renin salınımının artması yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
         }
       ],
       "optionComparison": {
-        "Juxtaglomerüler hücrelerden renin salınımının artması": "Juxtaglomerüler hücrelerden renin salınımının artması, vakadaki Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirme tubuloglomerüler geri bildirim bağlamındadır kararı güçlendiren ek ipucudur. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-        "Aldosteron salınımının kalıcı olarak sıfırlanması": "Aldosteron salınımının kalıcı olarak sıfırlanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Antidiüretik hormon reseptörlerinin tamamen yıkılması": "Antidiüretik hormon reseptörlerinin tamamen yıkılması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Glomerüler filtrasyonun irreversibl durması": "Glomerüler filtrasyonun irreversibl durması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Eritropoietin salınımının akut olarak baskılanması": "Eritropoietin salınımının akut olarak baskılanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "Juxtaglomerüler hücrelerden renin salınımının artması": "Juxtaglomerüler hücrelerden renin salınımının artması, vakadaki Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirme tubuloglomerüler geri bildirim bağlamındadır kararı güçlendiren ek ipucudur. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+        "Aldosteron salınımının kalıcı olarak sıfırlanması": "Aldosteron salınımının kalıcı olarak sıfırlanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Antidiüretik hormon reseptörlerinin tamamen yıkılması": "Antidiüretik hormon reseptörlerinin tamamen yıkılması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Glomerüler filtrasyonun irreversibl durması": "Glomerüler filtrasyonun irreversibl durması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Eritropoietin salınımının akut olarak baskılanması": "Eritropoietin salınımının akut olarak baskılanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       },
       "answerFeedback": {
-        "summary": "Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır. birlikte okunduğunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı klinik olarak öne çıkar.",
-        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır; soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte değerlendirildiğinde Juxtaglomerüler hücrelerden renin salınımının artması seçeneği klinik örüntüyle en tutarlı yanıttır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
-        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır; soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte değerlendirildiğinde Juxtaglomerüler hücrelerden renin salınımının artması seçeneği klinik örüntüyle en tutarlı yanıttır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "summary": "Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır. birlikte okunduğunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı klinik olarak öne çıkar.",
+        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede makula densaya ulaşan sodyum klorür azaltılmıştır; soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte değerlendirildiğinde Juxtaglomerüler hücrelerden renin salınımının artması seçeneği klinik örüntüyle en tutarlı yanıttır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede makula densaya ulaşan sodyum klorür azaltılmıştır; soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte değerlendirildiğinde Juxtaglomerüler hücrelerden renin salınımının artması seçeneği klinik örüntüyle en tutarlı yanıttır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
         "correctOptionFeedback": "Juxtaglomerüler hücrelerden renin salınımının artması düşük makula densa sodyum klorür sinyaline verilen doğru yanıttır.",
         "keyClues": [
-          "Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır.",
+          "Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır.",
           "Soru juxtaglomerüler aparat yanıtını sorgulamaktadır.",
           "Değerlendirme tubuloglomerüler geri bildirim bağlamındadır."
         ],
         "evidenceChain": [
           {
-            "text": "Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır.",
+            "text": "Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır.",
             "weight": "high",
             "source": "case"
           },
@@ -109312,7 +109312,7 @@ export const rawCases = [
             "source": "case"
           }
         ],
-        "examPearl": "Sınavda Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ipucunu Soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte görürsen Juxtaglomerüler hücrelerden renin salınımının artması yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+        "examPearl": "Sınavda Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ipucunu Soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte görürsen Juxtaglomerüler hücrelerden renin salınımının artması yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
         "pearls": [
           {
             "label": "Sınav notu",
@@ -109326,28 +109326,28 @@ export const rawCases = [
           }
         ],
         "optionComparison": {
-          "Juxtaglomerüler hücrelerden renin salınımının artması": "Juxtaglomerüler hücrelerden renin salınımının artması, vakadaki Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirme tubuloglomerüler geri bildirim bağlamındadır kararı güçlendiren ek ipucudur. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-          "Aldosteron salınımının kalıcı olarak sıfırlanması": "Aldosteron salınımının kalıcı olarak sıfırlanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Antidiüretik hormon reseptörlerinin tamamen yıkılması": "Antidiüretik hormon reseptörlerinin tamamen yıkılması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Glomerüler filtrasyonun irreversibl durması": "Glomerüler filtrasyonun irreversibl durması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Eritropoietin salınımının akut olarak baskılanması": "Eritropoietin salınımının akut olarak baskılanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "Juxtaglomerüler hücrelerden renin salınımının artması": "Juxtaglomerüler hücrelerden renin salınımının artması, vakadaki Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirme tubuloglomerüler geri bildirim bağlamındadır kararı güçlendiren ek ipucudur. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+          "Aldosteron salınımının kalıcı olarak sıfırlanması": "Aldosteron salınımının kalıcı olarak sıfırlanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Antidiüretik hormon reseptörlerinin tamamen yıkılması": "Antidiüretik hormon reseptörlerinin tamamen yıkılması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Glomerüler filtrasyonun irreversibl durması": "Glomerüler filtrasyonun irreversibl durması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Eritropoietin salınımının akut olarak baskılanması": "Eritropoietin salınımının akut olarak baskılanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
         "whyWrong": {
-          "Aldosteron salınımının kalıcı olarak sıfırlanması": "Aldosteron salınımının kalıcı olarak sıfırlanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Antidiüretik hormon reseptörlerinin tamamen yıkılması": "Antidiüretik hormon reseptörlerinin tamamen yıkılması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Glomerüler filtrasyonun irreversibl durması": "Glomerüler filtrasyonun irreversibl durması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Eritropoietin salınımının akut olarak baskılanması": "Eritropoietin salınımının akut olarak baskılanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "Aldosteron salınımının kalıcı olarak sıfırlanması": "Aldosteron salınımının kalıcı olarak sıfırlanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Antidiüretik hormon reseptörlerinin tamamen yıkılması": "Antidiüretik hormon reseptörlerinin tamamen yıkılması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Glomerüler filtrasyonun irreversibl durması": "Glomerüler filtrasyonun irreversibl durması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Eritropoietin salınımının akut olarak baskılanması": "Eritropoietin salınımının akut olarak baskılanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
         "managementSteps": [],
         "management": [],
         "learningOutcome": "Makula densanın düşük sodyum klorür algısına renin salınımı yanıtını açıklayabilme",
-        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır. Juxtaglomerüler hücrelerden renin salınımının artması seçeneğini diğerlerinden ayırır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir."
+        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır. Juxtaglomerüler hücrelerden renin salınımının artması seçeneğini diğerlerinden ayırır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir."
       },
-      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır; soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte değerlendirildiğinde Juxtaglomerüler hücrelerden renin salınımının artması seçeneği klinik örüntüyle en tutarlı yanıttır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede makula densaya ulaşan sodyum klorür azaltılmıştır; soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte değerlendirildiğinde Juxtaglomerüler hücrelerden renin salınımının artması seçeneği klinik örüntüyle en tutarlı yanıttır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "evidenceChain": [
         {
           "title": "Objektif veri",
-          "text": "Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır.",
+          "text": "Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır.",
           "weight": "high",
           "source": "case"
         },
@@ -109364,28 +109364,28 @@ export const rawCases = [
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır. Juxtaglomerüler hücrelerden renin salınımının artması seçeneğini diğerlerinden ayırır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-      "examPearl": "Sınavda Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ipucunu Soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte görürsen Juxtaglomerüler hücrelerden renin salınımının artması yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır. Juxtaglomerüler hücrelerden renin salınımının artması seçeneğini diğerlerinden ayırır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+      "examPearl": "Sınavda Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ipucunu Soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte görürsen Juxtaglomerüler hücrelerden renin salınımının artması yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
       "whyWrong": {
-        "Aldosteron salınımının kalıcı olarak sıfırlanması": "Aldosteron salınımının kalıcı olarak sıfırlanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Antidiüretik hormon reseptörlerinin tamamen yıkılması": "Antidiüretik hormon reseptörlerinin tamamen yıkılması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Glomerüler filtrasyonun irreversibl durması": "Glomerüler filtrasyonun irreversibl durması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Eritropoietin salınımının akut olarak baskılanması": "Eritropoietin salınımının akut olarak baskılanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "Aldosteron salınımının kalıcı olarak sıfırlanması": "Aldosteron salınımının kalıcı olarak sıfırlanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Antidiüretik hormon reseptörlerinin tamamen yıkılması": "Antidiüretik hormon reseptörlerinin tamamen yıkılması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Glomerüler filtrasyonun irreversibl durması": "Glomerüler filtrasyonun irreversibl durması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Eritropoietin salınımının akut olarak baskılanması": "Eritropoietin salınımının akut olarak baskılanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       }
     },
-    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır. Juxtaglomerüler hücrelerden renin salınımının artması seçeneğini diğerlerinden ayırır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-    "examPearl": "Juxtaglomerüler hücrelerden renin salınımının artması için sınav ayırıcı nokta, “Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır” ipucunu ikinci destekleyici bulguyla birlikte yorumlamaktır.",
-    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır; soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte değerlendirildiğinde Juxtaglomerüler hücrelerden renin salınımının artması seçeneği klinik örüntüyle en tutarlı yanıttır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır. Juxtaglomerüler hücrelerden renin salınımının artması seçeneğini diğerlerinden ayırır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+    "examPearl": "Juxtaglomerüler hücrelerden renin salınımının artması için sınav ayırıcı nokta, “Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır” ipucunu ikinci destekleyici bulguyla birlikte yorumlamaktır.",
+    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede makula densaya ulaşan sodyum klorür azaltılmıştır; soru juxtaglomerüler aparat yanıtını sorgulamaktadır ile birlikte değerlendirildiğinde Juxtaglomerüler hücrelerden renin salınımının artması seçeneği klinik örüntüyle en tutarlı yanıttır. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
     "optionComparison": {
-      "Juxtaglomerüler hücrelerden renin salınımının artması": "Juxtaglomerüler hücrelerden renin salınımının artması, vakadaki Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirme tubuloglomerüler geri bildirim bağlamındadır kararı güçlendiren ek ipucudur. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
-      "Aldosteron salınımının kalıcı olarak sıfırlanması": "Aldosteron salınımının kalıcı olarak sıfırlanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Antidiüretik hormon reseptörlerinin tamamen yıkılması": "Antidiüretik hormon reseptörlerinin tamamen yıkılması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Glomerüler filtrasyonun irreversibl durması": "Glomerüler filtrasyonun irreversibl durması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Eritropoietin salınımının akut olarak baskılanması": "Eritropoietin salınımının akut olarak baskılanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "Juxtaglomerüler hücrelerden renin salınımının artması": "Juxtaglomerüler hücrelerden renin salınımının artması, vakadaki Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Değerlendirme tubuloglomerüler geri bildirim bağlamındadır kararı güçlendiren ek ipucudur. Renal tübüler akım azalmasına yanıt olgusunda Juxtaglomerüler hücrelerden renin salınımının artması yanıtı, öykü, muayene ve objektif verilerin aynı mechanism basamağında birleşmesiyle gerekçelenir.",
+      "Aldosteron salınımının kalıcı olarak sıfırlanması": "Aldosteron salınımının kalıcı olarak sıfırlanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Antidiüretik hormon reseptörlerinin tamamen yıkılması": "Antidiüretik hormon reseptörlerinin tamamen yıkılması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Glomerüler filtrasyonun irreversibl durması": "Glomerüler filtrasyonun irreversibl durması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Eritropoietin salınımının akut olarak baskılanması": "Eritropoietin salınımının akut olarak baskılanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     },
     "evidenceChain": [
       {
-        "text": "Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır.",
+        "text": "Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır.",
         "weight": "high",
         "source": "case"
       },
@@ -109401,10 +109401,10 @@ export const rawCases = [
       }
     ],
     "whyWrong": {
-      "Aldosteron salınımının kalıcı olarak sıfırlanması": "Aldosteron salınımının kalıcı olarak sıfırlanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Antidiüretik hormon reseptörlerinin tamamen yıkılması": "Antidiüretik hormon reseptörlerinin tamamen yıkılması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Glomerüler filtrasyonun irreversibl durması": "Glomerüler filtrasyonun irreversibl durması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Eritropoietin salınımının akut olarak baskılanması": "Eritropoietin salınımının akut olarak baskılanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda makula densaya ulaşan sodyum klorür azaltılmıştır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "Aldosteron salınımının kalıcı olarak sıfırlanması": "Aldosteron salınımının kalıcı olarak sıfırlanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Antidiüretik hormon reseptörlerinin tamamen yıkılması": "Antidiüretik hormon reseptörlerinin tamamen yıkılması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Glomerüler filtrasyonun irreversibl durması": "Glomerüler filtrasyonun irreversibl durması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Eritropoietin salınımının akut olarak baskılanması": "Eritropoietin salınımının akut olarak baskılanması mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Makula densaya ulaşan sodyum klorür yükünün azalması juxtaglomerüler yanıtı uyarır ve Soru juxtaglomerüler aparat yanıtını sorgulamaktadır bulguları Juxtaglomerüler hücrelerden renin salınımının artması yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     }
   },
   {
@@ -109773,7 +109773,7 @@ export const rawCases = [
     "difficulty": "Orta",
     "difficultyTag": "Orta",
     "clinicalFocus": "Mesane boşaltma refleksi bağlamında mekanizma yorumu için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir. ipuçlarını kullanarak S2-S4 parasempatik lifleri seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "learningTarget": "Mesane doluluğu arttığında miksiyon refleksinin S2-S4 sakral parasempatik lifleri üzerinden detrusor kasılmasını nasıl başlattığını açıklayabilme.",
     "demographics": "45 yaşında erkek gönüllü",
     "setting": "Klinik değerlendirme",
     "chiefComplaint": "Gönüllüde mesane dolduğunda işeme refleksini başlatan otonom yolak tartışılıyor.",
@@ -109791,47 +109791,47 @@ export const rawCases = [
     "investigations": [
       {
         "id": "fizyolojik-simulasyon-1",
-        "label": "Fizyolojik simülasyon",
-        "title": "Fizyolojik simülasyon",
-        "type": "clinical",
+        "label": "Miksiyon refleksi ve sakral parasempatik çıkış",
+        "title": "Miksiyon refleksi ve sakral parasempatik çıkış",
+        "type": "functionalTest",
         "priority": "essential",
-        "subtype": "Klinik değerlendirme",
-        "summary": "Fizyolojik simülasyon, Mesane boşaltma refleksi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu S2-S4 parasempatik lifleri kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve S2-S4 parasempatik lifleri yönündeki karar mantığını kurmasına yardım eder.",
+        "subtype": "Otonom refleks mekanizması",
+        "summary": "Miksiyon refleksinde mesane doluluğu sakral merkezler üzerinden S2-S4 parasempatik çıkışı artırır; bu yanıt detrusor kasılmasını sağlar.",
+        "clinicalMeaning": "Mesane duvarındaki gerilme afferent sinyallerle sakral omurilik merkezlerine iletilir. Efferent parasempatik lifler S2-S4 düzeyinden çıkar, pelvik sinirler üzerinden detrusor kasını kasar ve iç sfinkter gevşemesine katkı sağlar; bu nedenle doğru yolak S2-S4 parasempatik lifleridir.",
         "result": {
-          "title": "Fizyolojik simülasyon",
-          "summary": "Fizyolojik simülasyon, Mesane boşaltma refleksi tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu S2-S4 parasempatik lifleri kararının klinik zeminini oluşturur.",
-          "interpretation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve S2-S4 parasempatik lifleri yönündeki karar mantığını kurmasına yardım eder.",
+          "title": "Miksiyon refleksi ve sakral parasempatik çıkış",
+          "summary": "Miksiyon refleksinde mesane doluluğu sakral merkezler üzerinden S2-S4 parasempatik çıkışı artırır; bu yanıt detrusor kasılmasını sağlar.",
+          "interpretation": "Mesane duvarındaki gerilme afferent sinyallerle sakral omurilik merkezlerine iletilir. Efferent parasempatik lifler S2-S4 düzeyinden çıkar, pelvik sinirler üzerinden detrusor kasını kasar ve iç sfinkter gevşemesine katkı sağlar; bu nedenle doğru yolak S2-S4 parasempatik lifleridir.",
           "values": [
             [
-              "Klinik bulgu",
-              "Mesane doluluğu artmış ve sakral parasempatik çıkış aktive edilmiş olarak modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Detrusor efferent yolu",
+              "Mesane doluluğu arttığında S2-S4 sakral parasempatik lifler üzerinden detrusor kasılması başlatılır.",
+              "Beklenen nörofizyolojik yanıt",
+              "Parasempatik çıkış detrusor kasını kasar ve miksiyonu kolaylaştırır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
-              "Mesane doluluğu artmış ve sakral parasempatik çıkış aktive edilmiş olarak modellendi.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Detrusor efferent yolu",
+              "Mesane doluluğu arttığında S2-S4 sakral parasempatik lifler üzerinden detrusor kasılması başlatılır.",
+              "Beklenen nörofizyolojik yanıt",
+              "Parasempatik çıkış detrusor kasını kasar ve miksiyonu kolaylaştırır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
-            "Mesane doluluğu artmış ve sakral parasempatik çıkış aktive edilmiş olarak modellendi.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Detrusor efferent yolu",
+            "Mesane doluluğu arttığında S2-S4 sakral parasempatik lifler üzerinden detrusor kasılması başlatılır.",
+            "Beklenen nörofizyolojik yanıt",
+            "Parasempatik çıkış detrusor kasını kasar ve miksiyonu kolaylaştırır."
           ]
         ],
-        "postAnswerExplanation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve S2-S4 parasempatik lifleri yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve S2-S4 parasempatik lifleri yönündeki karar mantığını kurmasına yardım eder.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Fizyolojik simülasyon sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve S2-S4 parasempatik lifleri yönündeki karar mantığını kurmasına yardım eder."
+        "postAnswerExplanation": "Mesane duvarındaki gerilme afferent sinyallerle sakral omurilik merkezlerine iletilir. Efferent parasempatik lifler S2-S4 düzeyinden çıkar, pelvik sinirler üzerinden detrusor kasını kasar ve iç sfinkter gevşemesine katkı sağlar; bu nedenle doğru yolak S2-S4 parasempatik lifleridir.",
+        "interpretation": "Mesane duvarındaki gerilme afferent sinyallerle sakral omurilik merkezlerine iletilir. Efferent parasempatik lifler S2-S4 düzeyinden çıkar, pelvik sinirler üzerinden detrusor kasını kasar ve iç sfinkter gevşemesine katkı sağlar; bu nedenle doğru yolak S2-S4 parasempatik lifleridir.",
+        "category": "functional",
+        "testTypeCategory": "functional",
+        "explanationAfterAnswer": "Mesane duvarındaki gerilme afferent sinyallerle sakral omurilik merkezlerine iletilir. Efferent parasempatik lifler S2-S4 düzeyinden çıkar, pelvik sinirler üzerinden detrusor kasını kasar ve iç sfinkter gevşemesine katkı sağlar; bu nedenle doğru yolak S2-S4 parasempatik lifleridir."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -109853,33 +109853,33 @@ export const rawCases = [
         "Somatik pudendal liflerin detrusoru gevşetmesi"
       ],
       "question": "Miksiyon sırasında detrusor kasının kasılmasını sağlayan temel efferent yolak aşağıdakilerden hangisidir?",
-      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda mesane doluluğu artırılmıştır; sakral parasempatik çıkış aktive edilmiştir ile birlikte değerlendirildiğinde S2-S4 parasempatik lifleri seçeneği klinik örüntüyle en tutarlı yanıttır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "explanation": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede mesane doluluğu artırılmıştır; sakral parasempatik çıkış aktive edilmiştir ile birlikte değerlendirildiğinde S2-S4 parasempatik lifleri seçeneği klinik örüntüyle en tutarlı yanıttır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "Sınavda Simülasyonda mesane doluluğu artırılmıştır ipucunu Sakral parasempatik çıkış aktive edilmiştir ile birlikte görürsen S2-S4 parasempatik lifleri yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
+          "text": "Sınavda Mesane doluluğunun artması miksiyon refleksini başlatır ipucunu Sakral parasempatik çıkış aktive edilmiştir ile birlikte görürsen S2-S4 parasempatik lifleri yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır."
         }
       ],
       "optionComparison": {
-        "S2-S4 parasempatik lifleri": "S2-S4 parasempatik lifleri, vakadaki Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru detrusor kasılmasının efferent yolunu sorgulamaktadır kararı güçlendiren ek ipucudur. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır.",
-        "T1-T4 sempatik lifleri": "T1-T4 sempatik lifleri mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Nervus phrenicus": "Nervus phrenicus anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Nervus accessorius": "Nervus accessorius anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Somatik pudendal liflerin detrusoru gevşetmesi": "Somatik pudendal liflerin detrusoru gevşetmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "S2-S4 parasempatik lifleri": "S2-S4 parasempatik lifleri, vakadaki Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru detrusor kasılmasının efferent yolunu sorgulamaktadır kararı güçlendiren ek ipucudur. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır.",
+        "T1-T4 sempatik lifleri": "T1-T4 sempatik lifleri mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Nervus phrenicus": "Nervus phrenicus anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Nervus accessorius": "Nervus accessorius anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Somatik pudendal liflerin detrusoru gevşetmesi": "Somatik pudendal liflerin detrusoru gevşetmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       },
       "answerFeedback": {
-        "summary": "Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir. birlikte okunduğunda S2-S4 parasempatik lifleri yanıtı klinik olarak öne çıkar.",
-        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda mesane doluluğu artırılmıştır; sakral parasempatik çıkış aktive edilmiştir ile birlikte değerlendirildiğinde S2-S4 parasempatik lifleri seçeneği klinik örüntüyle en tutarlı yanıttır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
-        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda mesane doluluğu artırılmıştır; sakral parasempatik çıkış aktive edilmiştir ile birlikte değerlendirildiğinde S2-S4 parasempatik lifleri seçeneği klinik örüntüyle en tutarlı yanıttır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "summary": "Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir. birlikte okunduğunda S2-S4 parasempatik lifleri yanıtı klinik olarak öne çıkar.",
+        "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede mesane doluluğu artırılmıştır; sakral parasempatik çıkış aktive edilmiştir ile birlikte değerlendirildiğinde S2-S4 parasempatik lifleri seçeneği klinik örüntüyle en tutarlı yanıttır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+        "rationale": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede mesane doluluğu artırılmıştır; sakral parasempatik çıkış aktive edilmiştir ile birlikte değerlendirildiğinde S2-S4 parasempatik lifleri seçeneği klinik örüntüyle en tutarlı yanıttır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
         "correctOptionFeedback": "S2-S4 parasempatik lifleri detrusor kontraksiyonunu sağlayarak miksiyonu başlatan temel efferent yoldur.",
         "keyClues": [
-          "Simülasyonda mesane doluluğu artırılmıştır.",
+          "Mesane doluluğunun artması miksiyon refleksini başlatır.",
           "Sakral parasempatik çıkış aktive edilmiştir.",
           "Soru detrusor kasılmasının efferent yolunu sorgulamaktadır."
         ],
         "evidenceChain": [
           {
-            "text": "Simülasyonda mesane doluluğu artırılmıştır.",
+            "text": "Mesane doluluğunun artması miksiyon refleksini başlatır.",
             "weight": "high",
             "source": "case"
           },
@@ -109894,7 +109894,7 @@ export const rawCases = [
             "source": "case"
           }
         ],
-        "examPearl": "Sınavda Simülasyonda mesane doluluğu artırılmıştır ipucunu Sakral parasempatik çıkış aktive edilmiştir ile birlikte görürsen S2-S4 parasempatik lifleri yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+        "examPearl": "Sınavda Mesane doluluğunun artması miksiyon refleksini başlatır ipucunu Sakral parasempatik çıkış aktive edilmiştir ile birlikte görürsen S2-S4 parasempatik lifleri yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
         "pearls": [
           {
             "label": "Sınav notu",
@@ -109908,28 +109908,28 @@ export const rawCases = [
           }
         ],
         "optionComparison": {
-          "S2-S4 parasempatik lifleri": "S2-S4 parasempatik lifleri, vakadaki Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru detrusor kasılmasının efferent yolunu sorgulamaktadır kararı güçlendiren ek ipucudur. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır.",
-          "T1-T4 sempatik lifleri": "T1-T4 sempatik lifleri mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Nervus phrenicus": "Nervus phrenicus anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Nervus accessorius": "Nervus accessorius anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Somatik pudendal liflerin detrusoru gevşetmesi": "Somatik pudendal liflerin detrusoru gevşetmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "S2-S4 parasempatik lifleri": "S2-S4 parasempatik lifleri, vakadaki Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru detrusor kasılmasının efferent yolunu sorgulamaktadır kararı güçlendiren ek ipucudur. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır.",
+          "T1-T4 sempatik lifleri": "T1-T4 sempatik lifleri mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Nervus phrenicus": "Nervus phrenicus anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Nervus accessorius": "Nervus accessorius anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Somatik pudendal liflerin detrusoru gevşetmesi": "Somatik pudendal liflerin detrusoru gevşetmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
         "whyWrong": {
-          "T1-T4 sempatik lifleri": "T1-T4 sempatik lifleri mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Nervus phrenicus": "Nervus phrenicus anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Nervus accessorius": "Nervus accessorius anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-          "Somatik pudendal liflerin detrusoru gevşetmesi": "Somatik pudendal liflerin detrusoru gevşetmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+          "T1-T4 sempatik lifleri": "T1-T4 sempatik lifleri mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Nervus phrenicus": "Nervus phrenicus anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Nervus accessorius": "Nervus accessorius anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+          "Somatik pudendal liflerin detrusoru gevşetmesi": "Somatik pudendal liflerin detrusoru gevşetmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
         },
         "managementSteps": [],
         "management": [],
         "learningOutcome": "Miksiyon refleksinde parasempatik S2-S4 liflerinin detrusor kontraksiyonunu sağlamasını açıklayabilme",
-        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir. S2-S4 parasempatik lifleri seçeneğini diğerlerinden ayırır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır."
+        "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir. S2-S4 parasempatik lifleri seçeneğini diğerlerinden ayırır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır."
       },
-      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda mesane doluluğu artırılmıştır; sakral parasempatik çıkış aktive edilmiştir ile birlikte değerlendirildiğinde S2-S4 parasempatik lifleri seçeneği klinik örüntüyle en tutarlı yanıttır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+      "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede mesane doluluğu artırılmıştır; sakral parasempatik çıkış aktive edilmiştir ile birlikte değerlendirildiğinde S2-S4 parasempatik lifleri seçeneği klinik örüntüyle en tutarlı yanıttır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
       "evidenceChain": [
         {
           "title": "Klinik ipucu",
-          "text": "Simülasyonda mesane doluluğu artırılmıştır.",
+          "text": "Mesane doluluğunun artması miksiyon refleksini başlatır.",
           "weight": "high",
           "source": "case"
         },
@@ -109946,28 +109946,28 @@ export const rawCases = [
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir. S2-S4 parasempatik lifleri seçeneğini diğerlerinden ayırır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır.",
-      "examPearl": "Sınavda Simülasyonda mesane doluluğu artırılmıştır ipucunu Sakral parasempatik çıkış aktive edilmiştir ile birlikte görürsen S2-S4 parasempatik lifleri yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
+      "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir. S2-S4 parasempatik lifleri seçeneğini diğerlerinden ayırır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır.",
+      "examPearl": "Sınavda Mesane doluluğunun artması miksiyon refleksini başlatır ipucunu Sakral parasempatik çıkış aktive edilmiştir ile birlikte görürsen S2-S4 parasempatik lifleri yönünde düşün; temel ayrım mekanizma ve klinik önceliğin aynı çizgide olmasıdır.",
       "whyWrong": {
-        "T1-T4 sempatik lifleri": "T1-T4 sempatik lifleri mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Nervus phrenicus": "Nervus phrenicus anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Nervus accessorius": "Nervus accessorius anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-        "Somatik pudendal liflerin detrusoru gevşetmesi": "Somatik pudendal liflerin detrusoru gevşetmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+        "T1-T4 sempatik lifleri": "T1-T4 sempatik lifleri mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Nervus phrenicus": "Nervus phrenicus anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Nervus accessorius": "Nervus accessorius anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+        "Somatik pudendal liflerin detrusoru gevşetmesi": "Somatik pudendal liflerin detrusoru gevşetmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
       }
     },
-    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir. S2-S4 parasempatik lifleri seçeneğini diğerlerinden ayırır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır.",
-    "examPearl": "S2-S4 parasempatik lifleri için sınav ayırıcı nokta, “Simülasyonda mesane doluluğu artırılmıştır” ipucunu ikinci destekleyici bulguyla birlikte yorumlamaktır.",
-    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; simülasyonda mesane doluluğu artırılmıştır; sakral parasempatik çıkış aktive edilmiştir ile birlikte değerlendirildiğinde S2-S4 parasempatik lifleri seçeneği klinik örüntüyle en tutarlı yanıttır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
+    "coreKnowledge": "Benzer olgularda mekanizma yorumu kararı, tek bir anahtar kelimeye değil öykü, muayene, vital bulgu ve objektif verinin aynı klinik hatta birleşmesine dayandırılmalıdır. Bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir. S2-S4 parasempatik lifleri seçeneğini diğerlerinden ayırır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır.",
+    "examPearl": "S2-S4 parasempatik lifleri için sınav ayırıcı nokta, “Mesane doluluğunun artması miksiyon refleksini başlatır” ipucunu ikinci destekleyici bulguyla birlikte yorumlamaktır.",
+    "whyCorrect": "Bu olguda temel karar mekanizma yorumu üzerinden kurulmalıdır; fizyolojik değerlendirmede mesane doluluğu artırılmıştır; sakral parasempatik çıkış aktive edilmiştir ile birlikte değerlendirildiğinde S2-S4 parasempatik lifleri seçeneği klinik örüntüyle en tutarlı yanıttır. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır. En yakın çeldiriciler, bu bulguların zamanlama, şiddet veya klinik dağılımını aynı bütünlükte açıklayamadığı için geri planda kalır.",
     "optionComparison": {
-      "S2-S4 parasempatik lifleri": "S2-S4 parasempatik lifleri, vakadaki Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru detrusor kasılmasının efferent yolunu sorgulamaktadır kararı güçlendiren ek ipucudur. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır.",
-      "T1-T4 sempatik lifleri": "T1-T4 sempatik lifleri mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Nervus phrenicus": "Nervus phrenicus anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Nervus accessorius": "Nervus accessorius anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Somatik pudendal liflerin detrusoru gevşetmesi": "Somatik pudendal liflerin detrusoru gevşetmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "S2-S4 parasempatik lifleri": "S2-S4 parasempatik lifleri, vakadaki Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları aynı klinik hatta birleştirdiği için en uygun yanıttır. Soru detrusor kasılmasının efferent yolunu sorgulamaktadır kararı güçlendiren ek ipucudur. Bulgu-yapı ilişkisi kas fonksiyonu, duyu alanı ve sinirin anatomik seyri birlikte okunarak kurulmalıdır.",
+      "T1-T4 sempatik lifleri": "T1-T4 sempatik lifleri mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Nervus phrenicus": "Nervus phrenicus anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Nervus accessorius": "Nervus accessorius anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Somatik pudendal liflerin detrusoru gevşetmesi": "Somatik pudendal liflerin detrusoru gevşetmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     },
     "evidenceChain": [
       {
-        "text": "Simülasyonda mesane doluluğu artırılmıştır.",
+        "text": "Mesane doluluğunun artması miksiyon refleksini başlatır.",
         "weight": "high",
         "source": "case"
       },
@@ -109983,10 +109983,10 @@ export const rawCases = [
       }
     ],
     "whyWrong": {
-      "T1-T4 sempatik lifleri": "T1-T4 sempatik lifleri mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Nervus phrenicus": "Nervus phrenicus anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Nervus accessorius": "Nervus accessorius anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
-      "Somatik pudendal liflerin detrusoru gevşetmesi": "Somatik pudendal liflerin detrusoru gevşetmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Simülasyonda mesane doluluğu artırılmıştır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
+      "T1-T4 sempatik lifleri": "T1-T4 sempatik lifleri mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Nervus phrenicus": "Nervus phrenicus anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Nervus accessorius": "Nervus accessorius anatomik lokalizasyon açısından önemli olabilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır.",
+      "Somatik pudendal liflerin detrusoru gevşetmesi": "Somatik pudendal liflerin detrusoru gevşetmesi mekanizma düzeyinde olası bir açıklama gibi görünebilir; ancak bu vakada Mesane doluluğunun artması miksiyon refleksini başlatır ve Sakral parasempatik çıkış aktive edilmiştir bulguları S2-S4 parasempatik lifleri yönünde daha seçicidir. Mekanizma seçimi, izole terime değil bulguların neden-sonuç ilişkisine dayanmalıdır."
     }
   },
   {
@@ -114555,41 +114555,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Kusma sonrası göğüs ağrısı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Kusma sonrası göğüs ağrısı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 122/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.1 °C; Şok indeksi: 1,03 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 118/74 mmHg; Nabız: 122/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.1 °C; Şok indeksi: 1,03 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 118/74 mmHg; Nabız: 122/dk; Solunum: 16/dk; SpO₂: %98; Ateş: 38.1 °C; Şok indeksi: 1,03 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-2",
@@ -116921,41 +116921,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Ani yüz felci tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Periferik fasiyal paralizi kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Periferik fasiyal paralizi yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Periferik fasiyal paralizi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Ani yüz felci tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Periferik fasiyal paralizi kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Periferik fasiyal paralizi yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Periferik fasiyal paralizi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Periferik fasiyal paralizi yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Periferik fasiyal paralizi yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Periferik fasiyal paralizi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Periferik fasiyal paralizi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Periferik fasiyal paralizi yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Periferik fasiyal paralizi yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "kapiller-kan-glukozu-1",
@@ -117232,41 +117232,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Hedefe yönelik muayene",
         "summary": "Odyometri, Tekrarlayan vertigo ve kulakta dolgunluk tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Meniere hastalığı kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Odyometri sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Meniere hastalığı yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Meniere hastalığı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Odyometri",
           "summary": "Odyometri, Tekrarlayan vertigo ve kulakta dolgunluk tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Meniere hastalığı kararının klinik zeminini oluşturur.",
-          "interpretation": "Odyometri sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Meniere hastalığı yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Meniere hastalığı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Sol kulakta düşük frekanslarda sensörinöral işitme kaybı saptandı.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Sol kulakta düşük frekanslarda sensörinöral işitme kaybı saptandı.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Sol kulakta düşük frekanslarda sensörinöral işitme kaybı saptandı.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Odyometri sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Meniere hastalığı yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Odyometri sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Meniere hastalığı yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Meniere hastalığı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Meniere hastalığı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Odyometri sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Meniere hastalığı yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Meniere hastalığı yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "kontrastsiz-beyin-bt-2",
@@ -117734,41 +117734,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Yemek sonrası ani solunum sıkıntısı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu İntramüsküler adrenalin uygulamak kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntramüsküler adrenalin uygulamak yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntramüsküler adrenalin uygulamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Yemek sonrası ani solunum sıkıntısı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu İntramüsküler adrenalin uygulamak kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntramüsküler adrenalin uygulamak yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntramüsküler adrenalin uygulamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 76/42 mmHg; Nabız: 154/dk; Solunum: 34/dk; SpO₂: %89; Ateş: 36.7 °C; Şok indeksi: 2,03 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 76/42 mmHg; Nabız: 154/dk; Solunum: 34/dk; SpO₂: %89; Ateş: 36.7 °C; Şok indeksi: 2,03 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 76/42 mmHg; Nabız: 154/dk; Solunum: 34/dk; SpO₂: %89; Ateş: 36.7 °C; Şok indeksi: 2,03 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntramüsküler adrenalin uygulamak yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntramüsküler adrenalin uygulamak yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntramüsküler adrenalin uygulamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntramüsküler adrenalin uygulamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve İntramüsküler adrenalin uygulamak yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, İntramüsküler adrenalin uygulamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -117967,41 +117967,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Uzamış jeneralize nöbet tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Uygun yoldan benzodiazepin vermek kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Uygun yoldan benzodiazepin vermek yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Uygun yoldan benzodiazepin vermek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Uzamış jeneralize nöbet tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Uygun yoldan benzodiazepin vermek kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Uygun yoldan benzodiazepin vermek yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Uygun yoldan benzodiazepin vermek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 146/dk; Solunum: 22/dk; SpO₂: %96; Ateş: 38.7 °C; Şok indeksi: 1,46 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 146/dk; Solunum: 22/dk; SpO₂: %96; Ateş: 38.7 °C; Şok indeksi: 1,46 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 100/64 mmHg; Nabız: 146/dk; Solunum: 22/dk; SpO₂: %96; Ateş: 38.7 °C; Şok indeksi: 1,46 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Uygun yoldan benzodiazepin vermek yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Uygun yoldan benzodiazepin vermek yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Uygun yoldan benzodiazepin vermek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Uygun yoldan benzodiazepin vermek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Uygun yoldan benzodiazepin vermek yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Uygun yoldan benzodiazepin vermek yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -118200,41 +118200,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Havlar tarzda öksürük ve çekilme tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nebül adrenalin ve sistemik deksametazon uygulamak kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nebül adrenalin ve sistemik deksametazon uygulamak yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nebül adrenalin ve sistemik deksametazon uygulamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Havlar tarzda öksürük ve çekilme tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Nebül adrenalin ve sistemik deksametazon uygulamak kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nebül adrenalin ve sistemik deksametazon uygulamak yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nebül adrenalin ve sistemik deksametazon uygulamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 102/dk; Solunum: 36/dk; SpO₂: %93; Ateş: 37.9 °C; Şok indeksi: 1,02 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 102/dk; Solunum: 36/dk; SpO₂: %93; Ateş: 37.9 °C; Şok indeksi: 1,02 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 100/64 mmHg; Nabız: 102/dk; Solunum: 36/dk; SpO₂: %93; Ateş: 37.9 °C; Şok indeksi: 1,02 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nebül adrenalin ve sistemik deksametazon uygulamak yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nebül adrenalin ve sistemik deksametazon uygulamak yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nebül adrenalin ve sistemik deksametazon uygulamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nebül adrenalin ve sistemik deksametazon uygulamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Nebül adrenalin ve sistemik deksametazon uygulamak yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Nebül adrenalin ve sistemik deksametazon uygulamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -118432,41 +118432,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Yutamama ve tripod pozisyonu tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Yutamama ve tripod pozisyonu tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 150/dk; Solunum: 28/dk; SpO₂: %91; Ateş: 39.6 °C; Şok indeksi: 1,50 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 100/64 mmHg; Nabız: 150/dk; Solunum: 28/dk; SpO₂: %91; Ateş: 39.6 °C; Şok indeksi: 1,50 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 100/64 mmHg; Nabız: 150/dk; Solunum: 28/dk; SpO₂: %91; Ateş: 39.6 °C; Şok indeksi: 1,50 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-1",
@@ -119856,41 +119856,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Konuşamama ve hışıltı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Konuşamama ve hışıltı tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 82/48 mmHg; Nabız: 148/dk; Solunum: 38/dk; SpO₂: %87; Ateş: 36.7 °C; Şok indeksi: 1,80 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Kan basıncı: 82/48 mmHg; Nabız: 148/dk; Solunum: 38/dk; SpO₂: %87; Ateş: 36.7 °C; Şok indeksi: 1,80 (yüksek).",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Kan basıncı: 82/48 mmHg; Nabız: 148/dk; Solunum: 38/dk; SpO₂: %87; Ateş: 36.7 °C; Şok indeksi: 1,80 (yüksek).",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-1",
@@ -126515,41 +126515,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Akşamları artan ağlama tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Akşamları artan ağlama tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "temel-biyokimya-ve-elektrolitler-1",
@@ -176949,41 +176949,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Temel klinik değerlendirme",
         "summary": "Temel klinik değerlendirme, Fotoğrafta beyaz pupilla tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Retinoblastom kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Retinoblastom yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Retinoblastom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Temel klinik değerlendirme",
           "summary": "Temel klinik değerlendirme, Fotoğrafta beyaz pupilla tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Retinoblastom kararının klinik zeminini oluşturur.",
-          "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Retinoblastom yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Retinoblastom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Vital bulgular klinik bağlama göre değerlendirilir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Vital bulgular klinik bağlama göre değerlendirilir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
-        "postAnswerExplanation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Retinoblastom yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Retinoblastom yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Retinoblastom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Retinoblastom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Temel klinik değerlendirme sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Retinoblastom yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Retinoblastom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-3",
@@ -177114,41 +177114,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Hedefe yönelik muayene",
         "summary": "Dilate fundus muayenesi, Fotoğrafta beyaz pupilla tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Retinoblastom kararının klinik zeminini oluşturur.",
-        "clinicalMeaning": "Dilate fundus muayenesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Retinoblastom yönündeki karar mantığını kurmasına yardım eder.",
+        "clinicalMeaning": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Retinoblastom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "result": {
           "title": "Dilate fundus muayenesi",
           "summary": "Dilate fundus muayenesi, Fotoğrafta beyaz pupilla tablosunda hastanın stabilitesini ve anatomik/fonksiyonel odağı gösterir; bu bulgu Retinoblastom kararının klinik zeminini oluşturur.",
-          "interpretation": "Dilate fundus muayenesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Retinoblastom yönündeki karar mantığını kurmasına yardım eder.",
+          "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Retinoblastom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
           "values": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Dilate fundus muayenesi sonucu, ilgili parametrenin vaka bağlamındaki klinik yönünü ve şiddetini gösterir; tek başına değil öykü, muayene ve diğer objektif verilerle birlikte yorumlanmalıdır. sonucu, vaka bulgularıyla birlikte tanı, şiddet veya yönetim kararına klinik katkı sağlar., Fotoğrafta beyaz pupilla olgusunda Retinoblastom yanıtı, öykü, muayene ve objektif verilerin aynı diagnosis basamağında birleşmesiyle gerekçelenir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ],
           "rows": [
             [
-              "Klinik bulgu",
+              "Klinik veri özeti",
               "Dilate fundus muayenesi sonucu, ilgili parametrenin vaka bağlamındaki klinik yönünü ve şiddetini gösterir; tek başına değil öykü, muayene ve diğer objektif verilerle birlikte yorumlanmalıdır. sonucu, vaka bulgularıyla birlikte tanı, şiddet veya yönetim kararına klinik katkı sağlar., Fotoğrafta beyaz pupilla olgusunda Retinoblastom yanıtı, öykü, muayene ve objektif verilerin aynı diagnosis basamağında birleşmesiyle gerekçelenir.",
-              "Klinik değerlendirme",
-              "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+              "Referans aralığı yok",
+              "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
             ]
           ]
         },
-        "postAnswerExplanation": "Dilate fundus muayenesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Retinoblastom yönündeki karar mantığını kurmasına yardım eder.",
-        "interpretation": "Dilate fundus muayenesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Retinoblastom yönündeki karar mantığını kurmasına yardım eder.",
+        "postAnswerExplanation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Retinoblastom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
+        "interpretation": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Retinoblastom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur.",
         "rows": [
           [
-            "Klinik bulgu",
+            "Klinik veri özeti",
             "Dilate fundus muayenesi sonucu, ilgili parametrenin vaka bağlamındaki klinik yönünü ve şiddetini gösterir; tek başına değil öykü, muayene ve diğer objektif verilerle birlikte yorumlanmalıdır. sonucu, vaka bulgularıyla birlikte tanı, şiddet veya yönetim kararına klinik katkı sağlar., Fotoğrafta beyaz pupilla olgusunda Retinoblastom yanıtı, öykü, muayene ve objektif verilerin aynı diagnosis basamağında birleşmesiyle gerekçelenir.",
-            "Klinik değerlendirme",
-            "Laboratuvar sonucu değil; fizik muayene ve öykü ile birlikte klinik riski belirler."
+            "Referans aralığı yok",
+            "Öykü, muayene ve vaka bağlamıyla birlikte yorumlanır."
           ]
         ],
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Dilate fundus muayenesi sonucu kan testi değildir; yatak başında görülen risk, lokalizasyon ve fonksiyon kaybını öyküyle birleştirir. Bu olguda klinik bulgu, öğrencinin laboratuvar beklemeden aciliyet düzeyini ve Retinoblastom yönündeki karar mantığını kurmasına yardım eder."
+        "explanationAfterAnswer": "Bu değerlendirme, öykü, fizik muayene ve vital bulguları birlikte ele alarak klinik önceliği netleştirir. Bulgular, Retinoblastom yönündeki karar mantığını destekleyen vaka-özel klinik çerçeveyi oluşturur."
       },
       {
         "id": "orbital-manyetik-rezonans-goruntuleme-2",
