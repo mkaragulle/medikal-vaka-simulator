@@ -18882,3 +18882,69 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
     --pearl-study-panel-session-v399: clamp(37px, calc(var(--pearl-study-panel-row-v399) - 1px), 41px);
   }
 }
+
+/* ========================================================================== 
+   V400 — Hap Bilgi study column stretch + button height refinement
+   Slightly extends the equal-height left/right column capsules downward and
+   redistributes that added vertical room into the right panel button rows, so
+   the expanded area is filled by controls instead of becoming empty tail space.
+   ========================================================================== */
+@media (min-width: 981px) {
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) {
+    --pearl-study-usable-h-v397: clamp(530px, calc(100dvh - 198px), 680px);
+    --pearl-study-panel-row-v399: clamp(43px, calc((var(--pearl-study-usable-h-v397) - 242px) / 9), 50px);
+    --pearl-study-panel-session-v399: clamp(42px, calc(var(--pearl-study-panel-row-v399) - 2px), 48px);
+    padding-bottom: 6px !important;
+  }
+
+  .pearl-study-right-v92.pearl-study-control-panel-v93 {
+    gap: 8px !important;
+    padding: 10px 10px 11px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-control-section-v93 {
+    padding: 8px 8px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 {
+    gap: 7px !important;
+  }
+
+  .pearl-study-row-list-v97.pearl-study-tabs > button,
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button {
+    height: var(--pearl-study-panel-row-v399) !important;
+    min-height: var(--pearl-study-panel-row-v399) !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-more-trigger,
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-reshuffle-button,
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-catalogs-trigger {
+    height: var(--pearl-study-panel-session-v399) !important;
+    min-height: var(--pearl-study-panel-session-v399) !important;
+  }
+}
+
+@media (min-width: 981px) and (max-height: 820px) {
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) {
+    --pearl-study-usable-h-v397: clamp(498px, calc(100dvh - 194px), 632px);
+    --pearl-study-panel-row-v399: clamp(39px, calc((var(--pearl-study-usable-h-v397) - 234px) / 9), 44px);
+    --pearl-study-panel-session-v399: clamp(38px, calc(var(--pearl-study-panel-row-v399) - 1px), 43px);
+    padding-bottom: 5px !important;
+  }
+
+  .pearl-study-right-v92.pearl-study-control-panel-v93 {
+    gap: 6px !important;
+    padding: 8px 9px 9px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 {
+    gap: 5px !important;
+  }
+}
