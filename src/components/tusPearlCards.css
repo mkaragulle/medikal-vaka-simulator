@@ -19510,3 +19510,118 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
     --pearl-control-icon-pad: 7px;
   }
 }
+
+/* ==========================================================================
+   V404 — Hap Bilgi Çalış right-panel label centering polish
+   Fixes the remaining label drift inside the right-column buttons. Earlier
+   overrides changed the row height correctly, but the label span inherited a
+   column flex-direction and flex-start distribution, which could leave text
+   visually high/low inside taller button boxes. This block centers the text
+   vertically while keeping the icon and count badge aligned to the same axis.
+   ========================================================================== */
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-row-list-v97.pearl-study-tabs > button,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button {
+  display: grid !important;
+  align-items: center !important;
+  align-content: center !important;
+  justify-items: stretch !important;
+  box-sizing: border-box !important;
+  line-height: 1 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  overflow: hidden !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-row-list-v97.pearl-study-tabs > button > svg,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button > svg,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button > svg,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button > svg,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button > svg {
+  align-self: center !important;
+  justify-self: center !important;
+  display: block !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  flex-shrink: 0 !important;
+  transform: none !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-row-list-v97.pearl-study-tabs > button > span,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button > span,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button > span,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button > span,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button > span {
+  align-self: stretch !important;
+  justify-self: stretch !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  line-height: 1 !important;
+  overflow: hidden !important;
+  transform: none !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-row-list-v97.pearl-study-tabs > button strong,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button strong,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button strong,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button strong,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button strong {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.12 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  transform: none !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-row-list-v97.pearl-study-tabs > button > em,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button > em {
+  align-self: center !important;
+  justify-self: end !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  transform: none !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-catalogs-trigger,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-reshuffle-button,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-more-trigger {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  overflow: hidden !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-catalogs-trigger > span,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-reshuffle-button > span,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-more-trigger > span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100% !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}

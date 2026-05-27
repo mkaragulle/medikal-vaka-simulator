@@ -1,0 +1,12 @@
+V404 — Hap Bilgi Çalış sağ panel buton metin hizalama düzeltmesi
+
+Düzenlenen dosya:
+- src/components/tusPearlCards.css
+
+Yapılanlar:
+- Tekrar Araçları butonlarındaki Tüm Kartları Gör / Favorilerim / Zorlandıklarım / Tekrar Edeceklerim metinleri dikey merkeze alındı.
+- Kart Araçları butonlarındaki Favoriye Ekle / Kataloğa Ekle / Kendi Kartını Oluştur / Kendi Kartıma Kopyala / Kartı Sil metinleri dikey merkeze alındı.
+- Önceki yükseklik düzeltmelerinden kalan flex-direction + justify-content çakışması giderildi.
+- İkon, metin ve sayaç badge aynı orta eksene bağlandı.
+- Oturum alanındaki Kataloglarım / Yeni sıra / Diğer butonları da aynı dikey hizalama mantığına alındı.
+- JS/component logic değiştirilmedi; yalnızca CSS override eklendi.
