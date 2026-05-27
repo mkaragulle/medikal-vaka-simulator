@@ -358,7 +358,7 @@ function normalizeId(value = '') {
 function sanitizeSummary(text = '', clinicalCase) {
   const safe = sanitizePreAnswerText(text, clinicalCase, { strict: true, field: 'investigation.result.summary' })
     || stripDiagnosticLeakage(text, clinicalCase);
-  return toSentence(safe || 'Objektif veri sınırlıdır.');
+  return toSentence(safe || '');
 }
 
 function hasOwnVisualReference(item = {}) {
@@ -868,10 +868,10 @@ export function buildInvestigationReview(orders = [], orderedIds = []) {
 
 export function getOrderFeedback(item) {
   const priority = normalizePriority(item.priority);
-  if (priority === 'essential') return `${item.label || item.title || 'Bu tetkik'} bu olguda karar verdirici objektif veri grubundadır; sonucu semptom, muayene ve vital bulgularla birlikte okumak gerekir.`;
+  if (priority === 'essential') return `${item.label || item.title || 'Bu tetkik'} bu olguda karar verdirici objektif veri sağlar; sonucu vaka öyküsü ve muayene bulgularıyla birlikte yorumlanmalıdır.`;
   if (priority === 'useful') return `${item.label || item.title || 'Bu tetkik'} ayırıcı tanı veya şiddet değerlendirmesine katkı sağlar; tek başına değil vaka bağlamıyla yorumlanmalıdır.`;
   if (priority === 'situational') return `${item.label || item.title || 'Bu tetkik'} seçilmiş koşullarda değer kazanır; ilk karar için önce daha doğrudan veriler tamamlanmalıdır.`;
   if (priority === 'lowPriority') return 'Bu istem mevcut ilk değerlendirme aşamasında sınırlı katkı sağlar.';
   if (priority === 'inappropriateEarly') return 'Bu istem ileri aşamada düşünülebilir; önce temel klinik veriler tamamlanmalıdır.';
-  return 'Sonuç ek klinik bilgi verir.';
+  return '';
 }

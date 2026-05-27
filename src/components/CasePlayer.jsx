@@ -36,7 +36,7 @@ const SECTION_NAV_ITEMS = [
 const vitalLabels = {
   TA: 'Kan basıncı',
   Nabız: 'Nabız',
-  Solunum: 'Solunum',
+  Solunum: 'Solunum sayısı',
   SpO2: 'SpO₂',
   Ateş: 'Ateş',
   'Şok indeksi': 'Şok indeksi',

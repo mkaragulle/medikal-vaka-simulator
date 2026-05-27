@@ -213,7 +213,7 @@ export function formatVitalMeasurement(label = '', value = '') {
   }
 
   if (normalizedLabel === 'SpO2') {
-    const match = raw.match(/^%?\s*(\d+(?:\.\d+)?)(?:\s*%)?(?:\s+(.+))?$/i);
+    const match = raw.match(/^%?\s*(\d+(?:\.\d+)?)(?:\s*%)?(?:[,\s]+(.+))?$/i);
     if (match) {
       return { primary: `%${match[1]}`, unit: '', note: match[2] || '', formatted: `%${match[1]}${match[2] ? ` ${match[2]}` : ''}` };
     }
@@ -227,16 +227,42 @@ export function formatVitalMeasurement(label = '', value = '') {
   return { primary: raw, unit: '', note: '', formatted: raw };
 }
 
+function canonicalVitalKey(key = '') {
+  const normalized = String(key || '')
+    .toLocaleLowerCase('tr')
+    .replace(/ı/g, 'i')
+    .replace(/İ/g, 'i')
+    .replace(/ğ/g, 'g')
+    .replace(/ü/g, 'u')
+    .replace(/ş/g, 's')
+    .replace(/ö/g, 'o')
+    .replace(/ç/g, 'c')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+  if (/^(ta|kan basinci|tansiyon|blood pressure)$/.test(normalized)) return 'TA';
+  if (/^(nabiz|pulse|heart rate|kalp hizi)$/.test(normalized)) return 'Nabız';
+  if (/^(solunum|solunum sayisi|rr|respiratory rate|respiratory)$/.test(normalized)) return 'Solunum';
+  if (/^(spo2|spo 2|oksijen saturasyonu|oksijen sat)$/.test(normalized)) return 'SpO2';
+  if (/^(ates|temperature|temp)$/.test(normalized)) return 'Ateş';
+  if (/^(sok indeksi|shock index|shockindex)$/.test(normalized)) return 'Şok indeksi';
+  return key;
+}
+
 export function sanitizeVitalsObject(vitals = {}) {
-  return Object.fromEntries(Object.entries(vitals || {}).map(([key, value]) => {
+  const normalizedEntries = Object.entries(vitals || {}).map(([rawKey, value]) => [canonicalVitalKey(rawKey), value]);
+  const output = {};
+  normalizedEntries.forEach(([key, value]) => {
     if (key === 'TA') {
       const display = formatVitalMeasurement('TA', value);
-      return [key, display.formatted === '—' ? sanitizeMeasurementText(value) : display.formatted];
+      output[key] = display.formatted === '—' ? sanitizeMeasurementText(value) : display.formatted;
+      return;
     }
-    if (key === 'Nabız' || key === 'Solunum' || key === 'Ateş' || key === 'SpO2') {
+    if (key === 'Nabız' || key === 'Solunum' || key === 'Ateş' || key === 'SpO2' || key === 'Şok indeksi') {
       const display = formatVitalMeasurement(key, value);
-      return [key, display.formatted === '—' ? sanitizeMeasurementText(value) : display.formatted];
+      output[key] = display.formatted === '—' ? sanitizeMeasurementText(value) : display.formatted;
+      return;
     }
-    return [key, sanitizeMeasurementText(value)];
-  }));
+    output[key] = sanitizeMeasurementText(value);
+  });
+  return output;
 }

@@ -356,7 +356,7 @@ function evaluateSemanticStatus(row = {}) {
   if (/\bpozitif\b|\bsaptandi\b|\bvar\b/.test(noteText)) return { tone: 'danger', label: note || 'Anormal' };
   if (/\bnegatif\b|\bsaptanmadi\b|\byok\b/.test(noteText)) return { tone: 'success', label: note || 'Normal' };
 
-  return { tone: 'neutral', label: note || 'Bilgi' };
+  return { tone: 'neutral', label: note || '—' };
 }
 
 function normalizeResultRow(row) {
@@ -576,7 +576,7 @@ function ResultFindingList({ rows = [], glossaryEnabled = true, glossaryRevealMo
       {normalizedRows.map(({ parameter, value, reference, note }, index) => {
         const status = evaluateSemanticStatus({ parameter, value, reference, note });
         const showReference = reference && !isGenericQualitativeReference(reference) && rowHasQuantitativeSignal({ parameter, value, reference, note });
-        const showNote = note && !/klinik olarak anlamli|objektif sonuc/i.test(String(note));
+        const showNote = note && !/klinik olarak anlamli|objektif sonuc|klinik veri özeti|referans aralığı yok|vital bulgular klinik bağlama|laboratuvar verisidir|ilk yönetim kararını/i.test(String(note));
 
         return (
           <div key={`${parameter || 'bulgu'}-${index}`} className={`qualitative-result-finding ${status.tone}`}>
@@ -629,7 +629,7 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
           <tbody>
             {normalizedRows.map(({ parameter, value, reference, note }, index) => {
               const { tone } = evaluateSemanticStatus({ parameter, value, reference, note });
-              const secondary = note && !/klinik olarak anlamli|objektif sonuc|yorum gerektirir/i.test(String(note)) ? note : '';
+              const secondary = note && !/klinik olarak anlamli|objektif sonuc|yorum gerektirir|klinik veri özeti|referans aralığı yok|vital bulgular klinik bağlama|laboratuvar verisidir|ilk yönetim kararını/i.test(String(note)) ? note : '';
               return (
                 <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
                   <td>
@@ -664,7 +664,7 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
           <tbody>
             {normalizedRows.map(({ parameter, value, reference, note }, index) => {
               const { tone } = evaluateSemanticStatus({ parameter, value, reference, note });
-              const secondary = note && !/klinik olarak anlamli|objektif sonuc|yorum gerektirir/i.test(String(note)) ? note : '';
+              const secondary = note && !/klinik olarak anlamli|objektif sonuc|yorum gerektirir|klinik veri özeti|referans aralığı yok|vital bulgular klinik bağlama|laboratuvar verisidir|ilk yönetim kararını/i.test(String(note)) ? note : '';
               return (
                 <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
                   <td>
@@ -798,6 +798,15 @@ function normalizeForDuplicateCheck(text = '') {
 
 
 const EMPTY_SHORT_COMMENT_PATTERNS = [
+  /bağlamında/iu,
+  /ilk yönetim kararını/iu,
+  /laboratuvar verisidir/iu,
+  /vital bulgular klinik bağlama göre değerlendirilir/iu,
+  /klinik veri özeti/iu,
+  /referans aralığı yok/iu,
+  /hasta güvenliği açısından netleştirir/iu,
+  /tanısal olasılığı ve yönetim önceliğini netleştirir/iu,
+  /temel klinik değerlendirme/iu,
   /ile birlikte yorumlandığında/i,
   /gerektiğini gösterir/i,
   /klinik yorumu destekleyen objektif/i,
