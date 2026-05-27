@@ -18751,3 +18751,134 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
     padding-bottom: 6px !important;
   }
 }
+
+/* ========================================================================== 
+   V399 — Hap Bilgi right-panel density fill polish
+   Keeps the V398 equal-height viewport fit, but distributes the newly gained
+   vertical room into the actual right-column controls instead of leaving an
+   empty tail under the last "Kartı Sil" action.
+   ========================================================================== */
+@media (min-width: 981px) {
+  .pearl-study-right-v92.pearl-study-control-panel-v93 {
+    justify-content: flex-start !important;
+    gap: 7px !important;
+    padding: 9px 10px 10px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-control-section-v93 {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    padding: 8px 8px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 {
+    gap: 6px !important;
+  }
+
+  .pearl-study-row-list-v97.pearl-study-tabs > button,
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button {
+    height: 46px !important;
+    min-height: 46px !important;
+    padding-block: 6px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button {
+    height: 46px !important;
+    min-height: 46px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button {
+    padding-block: 6px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-more-trigger,
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-reshuffle-button,
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-catalogs-trigger {
+    height: 44px !important;
+    min-height: 44px !important;
+  }
+
+  .pearl-study-row-list-v97.pearl-study-tabs > button > svg,
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button > svg,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button > svg,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button > svg,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button > svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+@media (min-width: 981px) and (max-height: 820px) {
+  .pearl-study-right-v92.pearl-study-control-panel-v93 {
+    gap: 6px !important;
+    padding: 8px 9px 9px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-control-section-v93 {
+    padding: 7px 7px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 {
+    gap: 5px !important;
+  }
+
+  .pearl-study-row-list-v97.pearl-study-tabs > button,
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button {
+    height: 39px !important;
+    min-height: 39px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-more-trigger,
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-reshuffle-button,
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-catalogs-trigger {
+    height: 39px !important;
+    min-height: 39px !important;
+  }
+}
+
+/* V399.1 — responsive row height guard: fills available space without clipping on shorter desktops. */
+@media (min-width: 981px) {
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) {
+    --pearl-study-panel-row-v399: clamp(40px, calc((var(--pearl-study-usable-h-v397) - 242px) / 9), 46px);
+    --pearl-study-panel-session-v399: clamp(40px, calc(var(--pearl-study-panel-row-v399) - 2px), 44px);
+  }
+
+  .pearl-study-row-list-v97.pearl-study-tabs > button,
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-delete-anchor-tools > button {
+    height: var(--pearl-study-panel-row-v399) !important;
+    min-height: var(--pearl-study-panel-row-v399) !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-more-trigger,
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-reshuffle-button,
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-catalogs-trigger {
+    height: var(--pearl-study-panel-session-v399) !important;
+    min-height: var(--pearl-study-panel-session-v399) !important;
+  }
+}
+
+@media (min-width: 981px) and (max-height: 820px) {
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) {
+    --pearl-study-panel-row-v399: clamp(37px, calc((var(--pearl-study-usable-h-v397) - 238px) / 9), 42px);
+    --pearl-study-panel-session-v399: clamp(37px, calc(var(--pearl-study-panel-row-v399) - 1px), 41px);
+  }
+}
