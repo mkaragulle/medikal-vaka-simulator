@@ -586,42 +586,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "clinicalMeaning": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-          "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       },
       {
         "id": "beyin-omurilik-sivisi-gram-boyama-2",
@@ -638,27 +638,27 @@ export const rawCases = [
           "interpretation": "BOS’ta nötrofiller içinde gram-negatif diplokok görülmesi, akut pürülan menenjit tablosunda Neisseria meningitidis etkenini doğrudan öne çıkarır.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Beyin omurilik sıvısı Gram boyama",
               "Nötrofiller içinde gram-negatif diplokoklar görüldü.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Negatif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Beyin omurilik sıvısı Gram boyama",
               "Nötrofiller içinde gram-negatif diplokoklar görüldü.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Negatif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Beyin omurilik sıvısı Gram boyama",
             "Nötrofiller içinde gram-negatif diplokoklar görüldü.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Negatif"
           ]
         ],
         "postAnswerExplanation": "BOS’ta nötrofiller içinde gram-negatif diplokok görülmesi, akut pürülan menenjit tablosunda Neisseria meningitidis etkenini doğrudan öne çıkarır.",
@@ -4366,42 +4366,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "clinicalMeaning": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-          "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       },
       {
         "id": "periferik-yayma-2",
@@ -4624,12 +4624,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Anne indirekt Coombs testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Anne indirekt Coombs testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "Negatif Coombs testi immün aracılı hemolizi desteklemez; anemi/hemoliz değerlendirmesi diğer laboratuvar bulgularıyla sürdürülür.",
+        "clinicalMeaning": "Negatif Coombs testi immün aracılı hemolizi desteklemez; anemi/hemoliz değerlendirmesi diğer laboratuvar bulgularıyla sürdürülür.",
         "result": {
           "title": "Anne indirekt Coombs testi",
-          "summary": "Anne indirekt Coombs testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Anne indirekt Coombs testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "Negatif Coombs testi immün aracılı hemolizi desteklemez; anemi/hemoliz değerlendirmesi diğer laboratuvar bulgularıyla sürdürülür.",
+          "interpretation": "Negatif Coombs testi immün aracılı hemolizi desteklemez; anemi/hemoliz değerlendirmesi diğer laboratuvar bulgularıyla sürdürülür.",
           "values": [
             [
               "Anne indirekt Coombs testi",
@@ -4655,11 +4655,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Anne indirekt Coombs testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Anne indirekt Coombs testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "Negatif Coombs testi immün aracılı hemolizi desteklemez; anemi/hemoliz değerlendirmesi diğer laboratuvar bulgularıyla sürdürülür.",
+        "interpretation": "Negatif Coombs testi immün aracılı hemolizi desteklemez; anemi/hemoliz değerlendirmesi diğer laboratuvar bulgularıyla sürdürülür.",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Anne indirekt Coombs testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": "Negatif Coombs testi immün aracılı hemolizi desteklemez; anemi/hemoliz değerlendirmesi diğer laboratuvar bulgularıyla sürdürülür."
       },
       {
         "id": "anne-kan-grubu-1",
@@ -4668,12 +4668,12 @@ export const rawCases = [
         "type": "bloodBank",
         "priority": "essential",
         "subtype": "Kan bankası",
-        "summary": "Anne kan grubu sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Anne kan grubu sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Anne kan grubu",
-          "summary": "Anne kan grubu sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Anne kan grubu sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Anne kan grubu",
@@ -4699,11 +4699,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Anne kan grubu sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Anne kan grubu sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "bloodBank",
         "testTypeCategory": "bloodBank",
-        "explanationAfterAnswer": "Anne kan grubu sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "gebelik-testi-serum-beta-hcg-4",
@@ -4833,12 +4833,12 @@ export const rawCases = [
         "type": "bloodBank",
         "priority": "essential",
         "subtype": "Kan bankası",
-        "summary": "Yenidoğan kan grubu sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Yenidoğan kan grubu sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Yenidoğan kan grubu",
-          "summary": "Yenidoğan kan grubu sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Yenidoğan kan grubu sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Yenidoğan kan grubu",
@@ -4864,11 +4864,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Yenidoğan kan grubu sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Yenidoğan kan grubu sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "bloodBank",
         "testTypeCategory": "bloodBank",
-        "explanationAfterAnswer": "Yenidoğan kan grubu sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -5646,42 +5646,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       },
       {
         "id": "bobrek-biyopsisi-immunfloresan-inceleme-3",
@@ -5734,12 +5734,12 @@ export const rawCases = [
         "type": "urine",
         "priority": "essential",
         "subtype": "İdrar mikroskopisi",
-        "summary": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "İdrar mikroskopisi",
-          "summary": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "İdrar mikroskopisi",
@@ -5765,11 +5765,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "urine",
         "testTypeCategory": "urine",
-        "explanationAfterAnswer": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -6453,27 +6453,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Dışkıda toksin testi",
               "Toksin pozitif bulundu.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Dışkıda toksin testi",
               "Toksin pozitif bulundu.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Dışkıda toksin testi",
             "Toksin pozitif bulundu.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -7048,12 +7048,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Direkt antiglobulin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Direkt antiglobulin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Direkt antiglobulin testi",
-          "summary": "Direkt antiglobulin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Direkt antiglobulin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Direkt antiglobulin testi",
@@ -7079,11 +7079,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Direkt antiglobulin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Direkt antiglobulin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Direkt antiglobulin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "direkt-bilirubin-2",
@@ -7514,12 +7514,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Tahmini kan kaybı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Tahmini kan kaybı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Tahmini kan kaybı",
-          "summary": "Tahmini kan kaybı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Tahmini kan kaybı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Tahmini kan kaybı",
@@ -7545,11 +7545,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Tahmini kan kaybı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Tahmini kan kaybı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Tahmini kan kaybı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -7944,27 +7944,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Kan kültürü",
               "Gram-pozitif kok kümeleri görüldü.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Kan kültürü",
               "Gram-pozitif kok kümeleri görüldü.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Kan kültürü",
             "Gram-pozitif kok kümeleri görüldü.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -8152,12 +8152,12 @@ export const rawCases = [
         "type": "fluidAnalysis",
         "priority": "essential",
         "subtype": "BOS / vücut sıvısı analizi",
-        "summary": "Beyin omurilik sıvısı analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Beyin omurilik sıvısı analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein birlikteliği bakteriyel menenjit lehine güçlü bir paterndir.",
+        "clinicalMeaning": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein birlikteliği bakteriyel menenjit lehine güçlü bir paterndir.",
         "result": {
           "title": "Beyin omurilik sıvısı analizi",
-          "summary": "Beyin omurilik sıvısı analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Beyin omurilik sıvısı analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein birlikteliği bakteriyel menenjit lehine güçlü bir paterndir.",
+          "interpretation": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein birlikteliği bakteriyel menenjit lehine güçlü bir paterndir.",
           "values": [
             [
               "Örnek analizi",
@@ -8183,11 +8183,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Beyin omurilik sıvısı analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Beyin omurilik sıvısı analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein birlikteliği bakteriyel menenjit lehine güçlü bir paterndir.",
+        "interpretation": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein birlikteliği bakteriyel menenjit lehine güçlü bir paterndir.",
         "category": "fluidAnalysis",
         "testTypeCategory": "fluidAnalysis",
-        "explanationAfterAnswer": "Beyin omurilik sıvısı analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein birlikteliği bakteriyel menenjit lehine güçlü bir paterndir."
       },
       {
         "id": "zorlu-vital-kapasite-olcumu-2",
@@ -8802,42 +8802,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -10057,12 +10057,12 @@ export const rawCases = [
         "type": "bloodBank",
         "priority": "essential",
         "subtype": "Kan bankası",
-        "summary": "Kan grubu sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Kan grubu sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Kan grubu",
-          "summary": "Kan grubu sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Kan grubu sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Kan grubu",
@@ -10088,11 +10088,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Kan grubu sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Kan grubu sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "bloodBank",
         "testTypeCategory": "bloodBank",
-        "explanationAfterAnswer": "Kan grubu sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "indirekt-coombs-testi-2",
@@ -10101,12 +10101,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "İndirekt Coombs testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "İndirekt Coombs testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "Negatif Coombs testi immün aracılı hemolizi desteklemez; anemi/hemoliz değerlendirmesi diğer laboratuvar bulgularıyla sürdürülür.",
+        "clinicalMeaning": "Negatif Coombs testi immün aracılı hemolizi desteklemez; anemi/hemoliz değerlendirmesi diğer laboratuvar bulgularıyla sürdürülür.",
         "result": {
           "title": "İndirekt Coombs testi",
-          "summary": "İndirekt Coombs testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "İndirekt Coombs testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "Negatif Coombs testi immün aracılı hemolizi desteklemez; anemi/hemoliz değerlendirmesi diğer laboratuvar bulgularıyla sürdürülür.",
+          "interpretation": "Negatif Coombs testi immün aracılı hemolizi desteklemez; anemi/hemoliz değerlendirmesi diğer laboratuvar bulgularıyla sürdürülür.",
           "values": [
             [
               "İndirekt Coombs testi",
@@ -10132,11 +10132,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "İndirekt Coombs testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "İndirekt Coombs testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "Negatif Coombs testi immün aracılı hemolizi desteklemez; anemi/hemoliz değerlendirmesi diğer laboratuvar bulgularıyla sürdürülür.",
+        "interpretation": "Negatif Coombs testi immün aracılı hemolizi desteklemez; anemi/hemoliz değerlendirmesi diğer laboratuvar bulgularıyla sürdürülür.",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "İndirekt Coombs testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": "Negatif Coombs testi immün aracılı hemolizi desteklemez; anemi/hemoliz değerlendirmesi diğer laboratuvar bulgularıyla sürdürülür."
       },
       {
         "id": "tam-idrar-analizi-4",
@@ -11033,42 +11033,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -11250,12 +11250,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Tekrarlayan sinir uyarım testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Tekrarlayan sinir uyarım testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "Tekrarlayan sinir uyarımında dekremental yanıt, nöromüsküler kavşak iletim kusurunu ve miyastenik paterni destekler.",
+        "clinicalMeaning": "Tekrarlayan sinir uyarımında dekremental yanıt, nöromüsküler kavşak iletim kusurunu ve miyastenik paterni destekler.",
         "result": {
           "title": "Tekrarlayan sinir uyarım testi",
-          "summary": "Tekrarlayan sinir uyarım testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Tekrarlayan sinir uyarım testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "Tekrarlayan sinir uyarımında dekremental yanıt, nöromüsküler kavşak iletim kusurunu ve miyastenik paterni destekler.",
+          "interpretation": "Tekrarlayan sinir uyarımında dekremental yanıt, nöromüsküler kavşak iletim kusurunu ve miyastenik paterni destekler.",
           "values": [
             [
               "Tekrarlayan sinir uyarım testi",
@@ -11281,11 +11281,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Tekrarlayan sinir uyarım testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Tekrarlayan sinir uyarım testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "Tekrarlayan sinir uyarımında dekremental yanıt, nöromüsküler kavşak iletim kusurunu ve miyastenik paterni destekler.",
+        "interpretation": "Tekrarlayan sinir uyarımında dekremental yanıt, nöromüsküler kavşak iletim kusurunu ve miyastenik paterni destekler.",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Tekrarlayan sinir uyarım testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": "Tekrarlayan sinir uyarımında dekremental yanıt, nöromüsküler kavşak iletim kusurunu ve miyastenik paterni destekler."
       },
       {
         "id": "asetilkolin-reseptor-antikoru-2",
@@ -11294,12 +11294,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Asetilkolin reseptör antikoru sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Asetilkolin reseptör antikoru sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "Asetilkolin reseptör antikoru pozitifliği, dalgalanan kas güçsüzlüğüyle birlikte miyastenia gravis tanısını destekler.",
+        "clinicalMeaning": "Asetilkolin reseptör antikoru pozitifliği, dalgalanan kas güçsüzlüğüyle birlikte miyastenia gravis tanısını destekler.",
         "result": {
           "title": "Asetilkolin reseptör antikoru",
-          "summary": "Asetilkolin reseptör antikoru sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Asetilkolin reseptör antikoru sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "Asetilkolin reseptör antikoru pozitifliği, dalgalanan kas güçsüzlüğüyle birlikte miyastenia gravis tanısını destekler.",
+          "interpretation": "Asetilkolin reseptör antikoru pozitifliği, dalgalanan kas güçsüzlüğüyle birlikte miyastenia gravis tanısını destekler.",
           "values": [
             [
               "Asetilkolin reseptör antikoru",
@@ -11325,11 +11325,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Asetilkolin reseptör antikoru sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Asetilkolin reseptör antikoru sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "Asetilkolin reseptör antikoru pozitifliği, dalgalanan kas güçsüzlüğüyle birlikte miyastenia gravis tanısını destekler.",
+        "interpretation": "Asetilkolin reseptör antikoru pozitifliği, dalgalanan kas güçsüzlüğüyle birlikte miyastenia gravis tanısını destekler.",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Asetilkolin reseptör antikoru sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": "Asetilkolin reseptör antikoru pozitifliği, dalgalanan kas güçsüzlüğüyle birlikte miyastenia gravis tanısını destekler."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -11914,27 +11914,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Kan kültürü",
               "Gram-pozitif kok kümeleri üredi.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Kan kültürü",
               "Gram-pozitif kok kümeleri üredi.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Kan kültürü",
             "Gram-pozitif kok kümeleri üredi.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -12848,12 +12848,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Koagülasyon testleri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Koagülasyon testleri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Koagülasyon testleri",
-          "summary": "Koagülasyon testleri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Koagülasyon testleri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Koagülasyon testleri",
@@ -12879,11 +12879,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Koagülasyon testleri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Koagülasyon testleri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Koagülasyon testleri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "tam-kan-sayimi-1",
@@ -13660,12 +13660,12 @@ export const rawCases = [
         "type": "bloodGas",
         "priority": "essential",
         "subtype": "Kan gazı ve asit-baz değerlendirmesi",
-        "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Arter kan gazı",
-          "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Arter kan gazı",
@@ -13691,11 +13691,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "respiratory",
         "testTypeCategory": "respiratory",
-        "explanationAfterAnswer": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "hemogram-ve-temel-inflamasyon-paneli-2",
@@ -14727,27 +14727,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Kan kültürü",
               "Viridans grup streptokok üredi.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Üreme var"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Kan kültürü",
               "Viridans grup streptokok üredi.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Üreme var"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Kan kültürü",
             "Viridans grup streptokok üredi.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Üreme var"
           ]
         ],
         "postAnswerExplanation": "",
@@ -16388,12 +16388,12 @@ export const rawCases = [
         "type": "urine",
         "priority": "essential",
         "subtype": "İdrar tetkikleri",
-        "summary": "Tam idrar tahlili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Tam idrar tahlili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
+        "clinicalMeaning": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
         "result": {
           "title": "Tam idrar tahlili",
-          "summary": "Tam idrar tahlili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Tam idrar tahlili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
+          "interpretation": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
           "values": [
             [
               "Tam idrar tahlili",
@@ -16419,11 +16419,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Tam idrar tahlili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Tam idrar tahlili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
+        "interpretation": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
         "category": "urine",
         "testTypeCategory": "urine",
-        "explanationAfterAnswer": "Tam idrar tahlili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür."
       },
       {
         "id": "kontrastsiz-uriner-sistem-bilgisayarli-tomografi-3",
@@ -16476,12 +16476,12 @@ export const rawCases = [
         "type": "urine",
         "priority": "essential",
         "subtype": "İdrar mikroskopisi",
-        "summary": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "İdrar mikroskopisi",
-          "summary": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "İdrar mikroskopisi",
@@ -16507,11 +16507,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "urine",
         "testTypeCategory": "urine",
-        "explanationAfterAnswer": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -18331,27 +18331,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Serolojik değerlendirme",
               "Yenidoğanda özgül IgM pozitifliği saptandı.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Serolojik değerlendirme",
               "Yenidoğanda özgül IgM pozitifliği saptandı.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Serolojik değerlendirme",
             "Yenidoğanda özgül IgM pozitifliği saptandı.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -21667,27 +21667,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Dışkıda toksin testi",
               "Toksin A/B pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Dışkıda toksin testi",
               "Toksin A/B pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Dışkıda toksin testi",
             "Toksin A/B pozitif.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -24051,12 +24051,12 @@ export const rawCases = [
         "type": "bloodGas",
         "priority": "essential",
         "subtype": "Kan gazı ve asit-baz değerlendirmesi",
-        "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "clinicalMeaning": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "result": {
           "title": "Arter kan gazı",
-          "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+          "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
           "values": [
             [
               "Arter kan gazı",
@@ -24082,11 +24082,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "category": "respiratory",
         "testTypeCategory": "respiratory",
-        "explanationAfterAnswer": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler."
       },
       {
         "id": "plazma-aldosteron-renin-orani-3",
@@ -24095,12 +24095,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Plazma aldosteron/renin oranı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Plazma aldosteron/renin oranı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Plazma aldosteron/renin oranı",
-          "summary": "Plazma aldosteron/renin oranı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Plazma aldosteron/renin oranı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Plazma aldosteron/renin oranı",
@@ -24126,12 +24126,12 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Plazma aldosteron/renin oranı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Plazma aldosteron/renin oranı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "valueAssumption": "Eksik sayısal değer, vakanın mevcut tanı/yönetim hedefiyle uyumlu gerçekçi eğitim verisi olarak tamamlandı.",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Plazma aldosteron/renin oranı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "serum-potasyum-1",
@@ -25437,12 +25437,12 @@ export const rawCases = [
         "type": "urine",
         "priority": "essential",
         "subtype": "İdrar mikroskopisi",
-        "summary": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "İdrar mikroskopisi",
-          "summary": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "İdrar mikroskopisi",
@@ -25468,11 +25468,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "urine",
         "testTypeCategory": "urine",
-        "explanationAfterAnswer": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -26223,26 +26223,26 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Kültür görünümü",
               "Mavi-yeşil pigment oluşturan koloniler izlendi.",
-              "Örnek/etken ilişkisi",
+              "—",
               ""
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Kültür görünümü",
               "Mavi-yeşil pigment oluşturan koloniler izlendi.",
-              "Örnek/etken ilişkisi",
+              "—",
               ""
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Kültür görünümü",
             "Mavi-yeşil pigment oluşturan koloniler izlendi.",
-            "Örnek/etken ilişkisi",
+            "—",
             ""
           ]
         ],
@@ -26267,27 +26267,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Derin yara kültürü",
               "Oksidaz pozitif, non-laktoz fermenter gram-negatif basil üredi.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Negatif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Derin yara kültürü",
               "Oksidaz pozitif, non-laktoz fermenter gram-negatif basil üredi.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Negatif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Derin yara kültürü",
             "Oksidaz pozitif, non-laktoz fermenter gram-negatif basil üredi.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Negatif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -26474,12 +26474,12 @@ export const rawCases = [
         "type": "bloodGas",
         "priority": "essential",
         "subtype": "Kan gazı ve asit-baz değerlendirmesi",
-        "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "clinicalMeaning": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "result": {
           "title": "Arter kan gazı",
-          "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+          "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
           "values": [
             [
               "Arter kan gazı",
@@ -26505,11 +26505,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "category": "respiratory",
         "testTypeCategory": "respiratory",
-        "explanationAfterAnswer": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -27785,42 +27785,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -28064,12 +28064,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Heterofil antikor testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Heterofil antikor testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Heterofil antikor testi",
-          "summary": "Heterofil antikor testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Heterofil antikor testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Heterofil antikor testi",
@@ -28095,11 +28095,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Heterofil antikor testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Heterofil antikor testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Heterofil antikor testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "periferik-yayma-2",
@@ -29208,12 +29208,12 @@ export const rawCases = [
         "type": "bloodGas",
         "priority": "essential",
         "subtype": "Kan gazı ve asit-baz değerlendirmesi",
-        "summary": "Arter kan gazı ko-oksimetri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Arter kan gazı ko-oksimetri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Arter kan gazı ko-oksimetri",
-          "summary": "Arter kan gazı ko-oksimetri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Arter kan gazı ko-oksimetri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Arter kan gazı ko-oksimetri",
@@ -29239,11 +29239,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Arter kan gazı ko-oksimetri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Arter kan gazı ko-oksimetri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "respiratory",
         "testTypeCategory": "respiratory",
-        "explanationAfterAnswer": "Arter kan gazı ko-oksimetri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "serum-laktat-2",
@@ -29817,12 +29817,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Sinir iletim çalışması sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Sinir iletim çalışması sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Sinir iletim çalışması",
-          "summary": "Sinir iletim çalışması sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Sinir iletim çalışması sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Sinir iletim çalışması",
@@ -29848,11 +29848,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Sinir iletim çalışması sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Sinir iletim çalışması sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Sinir iletim çalışması sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -31615,12 +31615,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Açil-karnitin profili",
-          "summary": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Açil-karnitin profili",
@@ -31646,11 +31646,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "kan-glukozu-1",
@@ -32056,12 +32056,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "İmmünohistokimya sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "İmmünohistokimya sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "İmmünohistokimya",
-          "summary": "İmmünohistokimya sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "İmmünohistokimya sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "İmmünohistokimya",
@@ -32087,11 +32087,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "İmmünohistokimya sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "İmmünohistokimya sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "İmmünohistokimya sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -32572,27 +32572,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Kan kültürü",
               "Uzamış inkübasyon sonrası zor üreyen gram-negatif kokobasil üredi.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Negatif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Kan kültürü",
               "Uzamış inkübasyon sonrası zor üreyen gram-negatif kokobasil üredi.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Negatif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Kan kültürü",
             "Uzamış inkübasyon sonrası zor üreyen gram-negatif kokobasil üredi.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Negatif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -34574,27 +34574,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Nazofarengeal PCR",
               "Bordetella pertussis için pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Nazofarengeal PCR",
               "Bordetella pertussis için pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Nazofarengeal PCR",
             "Bordetella pertussis için pozitif.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -34885,12 +34885,12 @@ export const rawCases = [
         "type": "urine",
         "priority": "essential",
         "subtype": "İdrar tetkikleri",
-        "summary": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
+        "clinicalMeaning": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
         "result": {
           "title": "İdrar analizi",
-          "summary": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
+          "interpretation": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
           "values": [
             [
               "İdrar analizi",
@@ -34916,11 +34916,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
+        "interpretation": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
         "category": "urine",
         "testTypeCategory": "urine",
-        "explanationAfterAnswer": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür."
       },
       {
         "id": "bobrek-biyopsisi-elektron-mikroskopisi-4",
@@ -35247,12 +35247,12 @@ export const rawCases = [
         "type": "urine",
         "priority": "essential",
         "subtype": "İdrar tetkikleri",
-        "summary": "İdrarda indirgen madde sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "İdrarda indirgen madde sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "İdrarda indirgen madde",
-          "summary": "İdrarda indirgen madde sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "İdrarda indirgen madde sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "İdrarda indirgen madde",
@@ -35278,11 +35278,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "İdrarda indirgen madde sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "İdrarda indirgen madde sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "urine",
         "testTypeCategory": "urine",
-        "explanationAfterAnswer": "İdrarda indirgen madde sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "abdominal-ultrasonografi-4",
@@ -38726,12 +38726,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Plazma amino asit analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Plazma amino asit analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Plazma amino asit analizi",
-          "summary": "Plazma amino asit analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Plazma amino asit analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Plazma amino asit analizi",
@@ -38757,11 +38757,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Plazma amino asit analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Plazma amino asit analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Plazma amino asit analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "idrar-organik-asit-analizi-2",
@@ -39490,27 +39490,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Dışkı antijen testi",
               "Giardia antijeni pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Dışkı antijen testi",
               "Giardia antijeni pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Dışkı antijen testi",
             "Giardia antijeni pozitif.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -41146,12 +41146,12 @@ export const rawCases = [
         "type": "urine",
         "priority": "essential",
         "subtype": "İdrar tetkikleri",
-        "summary": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
+        "clinicalMeaning": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
         "result": {
           "title": "İdrar analizi",
-          "summary": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
+          "interpretation": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
           "values": [
             [
               "İdrar analizi",
@@ -41177,11 +41177,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
+        "interpretation": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
         "category": "urine",
         "testTypeCategory": "urine",
-        "explanationAfterAnswer": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür."
       },
       {
         "id": "abdominal-ultrasonografi-3",
@@ -41231,42 +41231,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "clinicalMeaning": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-          "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -42959,12 +42959,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Soğuk aglütinin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Soğuk aglütinin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Soğuk aglütinin testi",
-          "summary": "Soğuk aglütinin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Soğuk aglütinin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Soğuk aglütinin testi",
@@ -42990,11 +42990,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Soğuk aglütinin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Soğuk aglütinin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Soğuk aglütinin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "arter-kan-gazi-laktat-3",
@@ -43083,12 +43083,12 @@ export const rawCases = [
         "type": "xray",
         "priority": "essential",
         "subtype": "Direkt/kontrastlı grafi",
-        "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "clinicalMeaning": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "clinicalMeaning": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "result": {
           "title": "Akciğer grafisi",
-          "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-          "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+          "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+          "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
           "values": [
             [
               "Görüntüleme bulgusu",
@@ -43114,11 +43114,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "postAnswerExplanation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır."
+        "explanationAfterAnswer": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler."
       },
       {
         "id": "kultur-ornekleri-3",
@@ -43127,42 +43127,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -44730,42 +44730,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "clinicalMeaning": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-          "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       },
       {
         "id": "kontrastsiz-beyin-bt-3",
@@ -44826,27 +44826,27 @@ export const rawCases = [
           "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Beyin omurilik sıvısı Gram boyama",
               "Kısa gram-pozitif basil yapıları görüldü.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Beyin omurilik sıvısı Gram boyama",
               "Kısa gram-pozitif basil yapıları görüldü.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Beyin omurilik sıvısı Gram boyama",
             "Kısa gram-pozitif basil yapıları görüldü.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
@@ -46654,26 +46654,26 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Beyin omurilik sıvısı mürekkep preparatı",
               "Kalın kapsüllü maya hücreleri izlendi.",
-              "Örnek/etken ilişkisi",
+              "—",
               ""
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Beyin omurilik sıvısı mürekkep preparatı",
               "Kalın kapsüllü maya hücreleri izlendi.",
-              "Örnek/etken ilişkisi",
+              "—",
               ""
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Beyin omurilik sıvısı mürekkep preparatı",
             "Kalın kapsüllü maya hücreleri izlendi.",
-            "Örnek/etken ilişkisi",
+            "—",
             ""
           ]
         ],
@@ -46742,27 +46742,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Beyin omurilik sıvısı kriptokok antijeni",
               "Pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Beyin omurilik sıvısı kriptokok antijeni",
               "Pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Beyin omurilik sıvısı kriptokok antijeni",
             "Pozitif.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -47318,42 +47318,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -48728,42 +48728,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -49117,12 +49117,12 @@ export const rawCases = [
         "type": "xray",
         "priority": "essential",
         "subtype": "Direkt/kontrastlı grafi",
-        "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "clinicalMeaning": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "clinicalMeaning": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "result": {
           "title": "Akciğer grafisi",
-          "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-          "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+          "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+          "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
           "values": [
             [
               "Görüntüleme bulgusu",
@@ -49148,11 +49148,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "postAnswerExplanation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır."
+        "explanationAfterAnswer": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -49481,12 +49481,12 @@ export const rawCases = [
         "type": "bloodGas",
         "priority": "essential",
         "subtype": "Kan gazı ve asit-baz değerlendirmesi",
-        "summary": "Venöz kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Venöz kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "clinicalMeaning": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "result": {
           "title": "Venöz kan gazı",
-          "summary": "Venöz kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Venöz kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+          "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
           "values": [
             [
               "Venöz kan gazı",
@@ -49512,11 +49512,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Venöz kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Venöz kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "category": "respiratory",
         "testTypeCategory": "respiratory",
-        "explanationAfterAnswer": "Venöz kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler."
       },
       {
         "id": "tam-idrar-analizi-4",
@@ -50157,42 +50157,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Hipotansiyon, laktat artışı ve enfeksiyon odağı doku hipoperfüzyonunu gösterir; sıvı resüsitasyonu ve erken antibiyotik yönetimin merkezindedir.",
-        "clinicalMeaning": "Hipotansiyon, laktat artışı ve enfeksiyon odağı doku hipoperfüzyonunu gösterir; sıvı resüsitasyonu ve erken antibiyotik yönetimin merkezindedir.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Hipotansiyon, laktat artışı ve enfeksiyon odağı doku hipoperfüzyonunu gösterir; sıvı resüsitasyonu ve erken antibiyotik yönetimin merkezindedir.",
-          "interpretation": "Hipotansiyon, laktat artışı ve enfeksiyon odağı doku hipoperfüzyonunu gösterir; sıvı resüsitasyonu ve erken antibiyotik yönetimin merkezindedir.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Hipotansiyon, laktat artışı ve enfeksiyon odağı doku hipoperfüzyonunu gösterir; sıvı resüsitasyonu ve erken antibiyotik yönetimin merkezindedir.",
-        "interpretation": "Hipotansiyon, laktat artışı ve enfeksiyon odağı doku hipoperfüzyonunu gösterir; sıvı resüsitasyonu ve erken antibiyotik yönetimin merkezindedir.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Hipotansiyon, laktat artışı ve enfeksiyon odağı doku hipoperfüzyonunu gösterir; sıvı resüsitasyonu ve erken antibiyotik yönetimin merkezindedir."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -50789,42 +50789,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "clinicalMeaning": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-          "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -51851,42 +51851,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -52128,12 +52128,12 @@ export const rawCases = [
         "type": "urine",
         "priority": "essential",
         "subtype": "İdrar tetkikleri",
-        "summary": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
+        "clinicalMeaning": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
         "result": {
           "title": "İdrar analizi",
-          "summary": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
+          "interpretation": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
           "values": [
             [
               "İdrar analizi",
@@ -52159,11 +52159,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
+        "interpretation": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
         "category": "urine",
         "testTypeCategory": "urine",
-        "explanationAfterAnswer": "İdrar analizi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -52438,42 +52438,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       },
       {
         "id": "temporal-kemik-bilgisayarli-tomografi-1",
@@ -52715,12 +52715,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Ko-oksimetri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Ko-oksimetri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Ko-oksimetri",
-          "summary": "Ko-oksimetri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Ko-oksimetri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Ko-oksimetri",
@@ -52746,11 +52746,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Ko-oksimetri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Ko-oksimetri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Ko-oksimetri sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "serum-laktat-2",
@@ -52804,42 +52804,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -54298,12 +54298,12 @@ export const rawCases = [
         "type": "bloodGas",
         "priority": "essential",
         "subtype": "Kan gazı ve asit-baz değerlendirmesi",
-        "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "clinicalMeaning": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "result": {
           "title": "Arter kan gazı",
-          "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+          "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
           "values": [
             [
               "Arter kan gazı",
@@ -54329,11 +54329,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "category": "respiratory",
         "testTypeCategory": "respiratory",
-        "explanationAfterAnswer": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler."
       },
       {
         "id": "serum-salisilat-duzeyi-2",
@@ -54652,42 +54652,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -54928,12 +54928,12 @@ export const rawCases = [
         "type": "bloodGas",
         "priority": "essential",
         "subtype": "Kan gazı ve asit-baz değerlendirmesi",
-        "summary": "Venöz kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Venöz kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "clinicalMeaning": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "result": {
           "title": "Venöz kan gazı",
-          "summary": "Venöz kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Venöz kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+          "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
           "values": [
             [
               "Venöz kan gazı",
@@ -54959,11 +54959,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Venöz kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Venöz kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "category": "respiratory",
         "testTypeCategory": "respiratory",
-        "explanationAfterAnswer": "Venöz kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler."
       },
       {
         "id": "tam-idrar-analizi-4",
@@ -55281,12 +55281,12 @@ export const rawCases = [
         "type": "bloodGas",
         "priority": "essential",
         "subtype": "Kan gazı ve asit-baz değerlendirmesi",
-        "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "clinicalMeaning": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "result": {
           "title": "Arter kan gazı",
-          "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+          "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
           "values": [
             [
               "Arter kan gazı",
@@ -55312,11 +55312,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "category": "respiratory",
         "testTypeCategory": "respiratory",
-        "explanationAfterAnswer": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler."
       },
       {
         "id": "serum-kreatin-kinaz-2",
@@ -57194,12 +57194,12 @@ export const rawCases = [
         "type": "xray",
         "priority": "essential",
         "subtype": "Direkt/kontrastlı grafi",
-        "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "clinicalMeaning": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "clinicalMeaning": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "result": {
           "title": "Akciğer grafisi",
-          "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-          "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+          "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+          "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
           "values": [
             [
               "Görüntüleme bulgusu",
@@ -57225,11 +57225,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "postAnswerExplanation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır."
+        "explanationAfterAnswer": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -58316,12 +58316,12 @@ export const rawCases = [
         "type": "xray",
         "priority": "essential",
         "subtype": "Direkt/kontrastlı grafi",
-        "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "clinicalMeaning": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "clinicalMeaning": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "result": {
           "title": "Akciğer grafisi",
-          "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-          "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+          "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+          "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
           "values": [
             [
               "Görüntüleme bulgusu",
@@ -58347,11 +58347,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "postAnswerExplanation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır."
+        "explanationAfterAnswer": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -59700,12 +59700,12 @@ export const rawCases = [
         "type": "bloodGas",
         "priority": "essential",
         "subtype": "Kan gazı ve asit-baz değerlendirmesi",
-        "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "clinicalMeaning": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "result": {
           "title": "Arter kan gazı",
-          "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+          "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
           "values": [
             [
               "Arter kan gazı",
@@ -59731,11 +59731,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "category": "respiratory",
         "testTypeCategory": "respiratory",
-        "explanationAfterAnswer": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -63021,41 +63021,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
         "summary": "",
-        "clinicalMeaning": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
           "summary": "",
-          "interpretation": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Kontaminasyon riski olan derin yaradan örnek alındı; ilk değerlendirme sonucu bekleniyor.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Kontaminasyon riski olan derin yaradan örnek alındı; ilk değerlendirme sonucu bekleniyor.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Kontaminasyon riski olan derin yaradan örnek alındı; ilk değerlendirme sonucu bekleniyor.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "",
-        "interpretation": "",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": ""
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -66509,12 +66509,12 @@ export const rawCases = [
         "type": "bloodGas",
         "priority": "essential",
         "subtype": "Kan gazı ve asit-baz değerlendirmesi",
-        "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "clinicalMeaning": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "result": {
           "title": "Arter kan gazı",
-          "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+          "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
           "values": [
             [
               "Arter kan gazı",
@@ -66540,11 +66540,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "category": "respiratory",
         "testTypeCategory": "respiratory",
-        "explanationAfterAnswer": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -67708,12 +67708,12 @@ export const rawCases = [
         "type": "xray",
         "priority": "essential",
         "subtype": "Direkt/kontrastlı grafi",
-        "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "clinicalMeaning": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "clinicalMeaning": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "result": {
           "title": "Akciğer grafisi",
-          "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-          "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+          "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+          "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
           "values": [
             [
               "Görüntüleme bulgusu",
@@ -67739,11 +67739,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "postAnswerExplanation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır."
+        "explanationAfterAnswer": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -67940,12 +67940,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Açil-karnitin profili",
-          "summary": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Açil-karnitin profili",
@@ -67971,11 +67971,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "kan-glukozu-1",
@@ -68850,42 +68850,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       },
       {
         "id": "noropatolojik-degerlendirme-1",
@@ -69135,27 +69135,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Üre nefes testi",
               "Pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Üre nefes testi",
               "Pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Üre nefes testi",
             "Pozitif.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -69605,27 +69605,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Plazma viral PCR",
               "Cytomegalovirus DNA pozitif ve yüksek düzeyde saptandı.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Plazma viral PCR",
               "Cytomegalovirus DNA pozitif ve yüksek düzeyde saptandı.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Plazma viral PCR",
             "Cytomegalovirus DNA pozitif ve yüksek düzeyde saptandı.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -73059,12 +73059,12 @@ export const rawCases = [
         "type": "xray",
         "priority": "essential",
         "subtype": "Direkt/kontrastlı grafi",
-        "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "clinicalMeaning": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "clinicalMeaning": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "result": {
           "title": "Ayakta akciğer grafisi",
-          "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-          "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+          "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+          "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
           "values": [
             [
               "Görüntüleme bulgusu",
@@ -73090,11 +73090,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "postAnswerExplanation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır."
+        "explanationAfterAnswer": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -76467,27 +76467,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Nazofarengeal PCR",
               "Bordetella pertussis pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Nazofarengeal PCR",
               "Bordetella pertussis pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Nazofarengeal PCR",
             "Bordetella pertussis pozitif.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -76768,12 +76768,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Manyetik rezonans görüntüleme sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Manyetik rezonans görüntüleme sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Manyetik rezonans görüntüleme",
-          "summary": "Manyetik rezonans görüntüleme sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Manyetik rezonans görüntüleme sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Manyetik rezonans görüntüleme",
@@ -76799,11 +76799,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Manyetik rezonans görüntüleme sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Manyetik rezonans görüntüleme sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Manyetik rezonans görüntüleme sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "biyopsi-histopatolojisi-2",
@@ -79226,12 +79226,12 @@ export const rawCases = [
         "type": "bloodGas",
         "priority": "essential",
         "subtype": "Kan gazı ve asit-baz değerlendirmesi",
-        "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "clinicalMeaning": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "result": {
           "title": "Arter kan gazı",
-          "summary": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+          "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
           "values": [
             [
               "Arter kan gazı",
@@ -79257,11 +79257,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
+        "interpretation": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler.",
         "category": "respiratory",
         "testTypeCategory": "respiratory",
-        "explanationAfterAnswer": "Arter kan gazı sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": "pH, bikarbonat ve laktat değerleri asit-baz bozukluğunun tipini ve stabilizasyon gereksinimini belirler."
       },
       {
         "id": "plazma-renin-aktivitesi-3",
@@ -79270,12 +79270,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Plazma renin aktivitesi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Plazma renin aktivitesi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Plazma renin aktivitesi",
-          "summary": "Plazma renin aktivitesi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Plazma renin aktivitesi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Plazma renin aktivitesi",
@@ -79301,11 +79301,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Plazma renin aktivitesi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Plazma renin aktivitesi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Plazma renin aktivitesi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "serum-potasyum-1",
@@ -80289,27 +80289,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Dışkıda toksin testi",
               "Clostridioides difficile toksin A/B pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Dışkıda toksin testi",
               "Clostridioides difficile toksin A/B pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Dışkıda toksin testi",
             "Clostridioides difficile toksin A/B pozitif.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -80751,12 +80751,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Parvovirus B19 IgM sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Parvovirus B19 IgM sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Parvovirus B19 IgM",
-          "summary": "Parvovirus B19 IgM sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Parvovirus B19 IgM sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Parvovirus B19 IgM",
@@ -80782,11 +80782,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Parvovirus B19 IgM sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Parvovirus B19 IgM sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Parvovirus B19 IgM sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "retikulosit-sayisi-2",
@@ -80880,42 +80880,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -82357,12 +82357,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "C-reaktif protein sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "C-reaktif protein sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "C-reaktif protein",
-          "summary": "C-reaktif protein sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "C-reaktif protein sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "C-reaktif protein",
@@ -82388,12 +82388,12 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "C-reaktif protein sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "C-reaktif protein sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "valueAssumption": "Eksik sayısal değer, vakanın mevcut tanı/yönetim hedefiyle uyumlu gerçekçi eğitim verisi olarak tamamlandı.",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "C-reaktif protein sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "eritrosit-sedimentasyon-hizi-1",
@@ -84065,12 +84065,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Eritrosit enzim değerlendirmesi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Eritrosit enzim değerlendirmesi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Eritrosit enzim değerlendirmesi",
-          "summary": "Eritrosit enzim değerlendirmesi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Eritrosit enzim değerlendirmesi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Eritrosit enzim değerlendirmesi",
@@ -84096,11 +84096,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Eritrosit enzim değerlendirmesi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Eritrosit enzim değerlendirmesi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Eritrosit enzim değerlendirmesi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "abdominal-ultrasonografi-2",
@@ -84668,42 +84668,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "clinicalMeaning": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-          "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       },
       {
         "id": "beyin-omurilik-sivisi-gram-boyama-1",
@@ -84720,27 +84720,27 @@ export const rawCases = [
           "interpretation": "BOS’ta nötrofiller içinde gram-negatif diplokok görülmesi, akut pürülan menenjit tablosunda Neisseria meningitidis etkenini doğrudan öne çıkarır.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Beyin omurilik sıvısı Gram boyama",
               "Nötrofiller içinde gram-negatif diplokoklar izlendi.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Negatif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Beyin omurilik sıvısı Gram boyama",
               "Nötrofiller içinde gram-negatif diplokoklar izlendi.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Negatif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Beyin omurilik sıvısı Gram boyama",
             "Nötrofiller içinde gram-negatif diplokoklar izlendi.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Negatif"
           ]
         ],
         "postAnswerExplanation": "BOS’ta nötrofiller içinde gram-negatif diplokok görülmesi, akut pürülan menenjit tablosunda Neisseria meningitidis etkenini doğrudan öne çıkarır.",
@@ -85015,27 +85015,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Derin yara kültürü",
               "Oksidaz pozitif, nonfermentatif gram-negatif basil üredi.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Negatif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Derin yara kültürü",
               "Oksidaz pozitif, nonfermentatif gram-negatif basil üredi.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Negatif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Derin yara kültürü",
             "Oksidaz pozitif, nonfermentatif gram-negatif basil üredi.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Negatif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -85578,12 +85578,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "INR sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "INR sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "INR",
-          "summary": "INR sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "INR sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "INR",
@@ -85609,12 +85609,12 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "INR sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "INR sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "valueAssumption": "Eksik sayısal değer, vakanın mevcut tanı/yönetim hedefiyle uyumlu gerçekçi eğitim verisi olarak tamamlandı.",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "INR sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -89842,27 +89842,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Germ tüp testi",
               "Pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Germ tüp testi",
               "Pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Germ tüp testi",
             "Pozitif.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -89886,26 +89886,26 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "KOH incelemesi",
               "Tomurcuklanan maya hücreleri ve psödohif yapıları izlendi.",
-              "Örnek/etken ilişkisi",
+              "—",
               ""
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "KOH incelemesi",
               "Tomurcuklanan maya hücreleri ve psödohif yapıları izlendi.",
-              "Örnek/etken ilişkisi",
+              "—",
               ""
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "KOH incelemesi",
             "Tomurcuklanan maya hücreleri ve psödohif yapıları izlendi.",
-            "Örnek/etken ilişkisi",
+            "—",
             ""
           ]
         ],
@@ -89922,42 +89922,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -90219,12 +90219,12 @@ export const rawCases = [
         "type": "urine",
         "priority": "essential",
         "subtype": "İdrar tetkikleri",
-        "summary": "İdrar nükleik asit amplifikasyon testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "İdrar nükleik asit amplifikasyon testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "İdrar nükleik asit amplifikasyon testi",
-          "summary": "İdrar nükleik asit amplifikasyon testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "İdrar nükleik asit amplifikasyon testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "İdrar nükleik asit amplifikasyon testi",
@@ -90250,11 +90250,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "İdrar nükleik asit amplifikasyon testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "İdrar nükleik asit amplifikasyon testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "urine",
         "testTypeCategory": "urine",
-        "explanationAfterAnswer": "İdrar nükleik asit amplifikasyon testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "kultur-ornekleri-2",
@@ -90263,42 +90263,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -93014,12 +93014,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "TSH sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "TSH sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "TSH",
-          "summary": "TSH sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "TSH sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "TSH",
@@ -93045,12 +93045,12 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "TSH sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "TSH sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "valueAssumption": "Eksik sayısal değer, vakanın mevcut tanı/yönetim hedefiyle uyumlu gerçekçi eğitim verisi olarak tamamlandı.",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "TSH sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "tiroid-ultrasonografisi-1",
@@ -93620,12 +93620,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Nitrazin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir. Membran rüptürü 31.",
-        "clinicalMeaning": "Nitrazin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir. Membran rüptürü 31.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Nitrazin testi",
-          "summary": "Nitrazin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir. Membran rüptürü 31.",
-          "interpretation": "Nitrazin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir. Membran rüptürü 31.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Nitrazin testi",
@@ -93651,11 +93651,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Nitrazin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir. Membran rüptürü 31.",
-        "interpretation": "Nitrazin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir. Membran rüptürü 31.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Nitrazin testi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir. Membran rüptürü 31."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "tam-idrar-analizi-2",
@@ -95886,12 +95886,12 @@ export const rawCases = [
         "type": "xray",
         "priority": "essential",
         "subtype": "Direkt/kontrastlı grafi",
-        "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "clinicalMeaning": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "clinicalMeaning": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "result": {
           "title": "Akciğer grafisi",
-          "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-          "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+          "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+          "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
           "values": [
             [
               "Görüntüleme bulgusu",
@@ -95917,11 +95917,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "postAnswerExplanation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır."
+        "explanationAfterAnswer": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -96727,12 +96727,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Anti-GBM antikoru sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Anti-GBM antikoru sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Anti-GBM antikoru",
-          "summary": "Anti-GBM antikoru sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Anti-GBM antikoru sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Anti-GBM antikoru",
@@ -96758,11 +96758,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Anti-GBM antikoru sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Anti-GBM antikoru sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Anti-GBM antikoru sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "idrar-mikroskopisi-2",
@@ -96771,12 +96771,12 @@ export const rawCases = [
         "type": "urine",
         "priority": "essential",
         "subtype": "İdrar mikroskopisi",
-        "summary": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "İdrar mikroskopisi",
-          "summary": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "İdrar mikroskopisi",
@@ -96802,11 +96802,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "urine",
         "testTypeCategory": "urine",
-        "explanationAfterAnswer": "İdrar mikroskopisi sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -97424,12 +97424,12 @@ export const rawCases = [
         "type": "fluidAnalysis",
         "priority": "essential",
         "subtype": "BOS / vücut sıvısı analizi",
-        "summary": "Dren sıvısı trigliserid düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Dren sıvısı trigliserid düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Dren sıvısı trigliserid düzeyi",
-          "summary": "Dren sıvısı trigliserid düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Dren sıvısı trigliserid düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Örnek analizi",
@@ -97455,11 +97455,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Dren sıvısı trigliserid düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Dren sıvısı trigliserid düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "fluidAnalysis",
         "testTypeCategory": "fluidAnalysis",
-        "explanationAfterAnswer": "Dren sıvısı trigliserid düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "akciger-grafisi-2",
@@ -97468,12 +97468,12 @@ export const rawCases = [
         "type": "xray",
         "priority": "essential",
         "subtype": "Direkt/kontrastlı grafi",
-        "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "clinicalMeaning": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "clinicalMeaning": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "result": {
           "title": "Akciğer grafisi",
-          "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-          "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+          "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+          "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
           "values": [
             [
               "Görüntüleme bulgusu",
@@ -97499,11 +97499,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "postAnswerExplanation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır."
+        "explanationAfterAnswer": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -100304,27 +100304,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Mikroskobik aglütinasyon testi",
               "Leptospira için pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Mikroskobik aglütinasyon testi",
               "Leptospira için pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Mikroskobik aglütinasyon testi",
             "Leptospira için pozitif.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -100469,42 +100469,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -100858,12 +100858,12 @@ export const rawCases = [
         "type": "xray",
         "priority": "essential",
         "subtype": "Direkt/kontrastlı grafi",
-        "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "clinicalMeaning": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "clinicalMeaning": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "result": {
           "title": "Akciğer grafisi",
-          "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-          "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+          "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+          "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
           "values": [
             [
               "Görüntüleme bulgusu",
@@ -100889,11 +100889,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "postAnswerExplanation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır."
+        "explanationAfterAnswer": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler."
       },
       {
         "id": "kultur-ornekleri-3",
@@ -100903,41 +100903,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
         "summary": "",
-        "clinicalMeaning": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
           "summary": "",
-          "interpretation": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Kontaminasyon riski olan derin yaradan örnek alındı; ilk değerlendirme sonucu bekleniyor.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Kontaminasyon riski olan derin yaradan örnek alındı; ilk değerlendirme sonucu bekleniyor.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Kontaminasyon riski olan derin yaradan örnek alındı; ilk değerlendirme sonucu bekleniyor.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "",
-        "interpretation": "",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": ""
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       },
       {
         "id": "balgam-sitolojisi-2",
@@ -100954,26 +100954,26 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Balgam sitolojisi",
               "Makrofajlar içinde küçük oval maya formları izlendi.",
-              "Örnek/etken ilişkisi",
+              "—",
               ""
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Balgam sitolojisi",
               "Makrofajlar içinde küçük oval maya formları izlendi.",
-              "Örnek/etken ilişkisi",
+              "—",
               ""
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Balgam sitolojisi",
             "Makrofajlar içinde küçük oval maya formları izlendi.",
-            "Örnek/etken ilişkisi",
+            "—",
             ""
           ]
         ],
@@ -101308,27 +101308,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Serolojik test",
               "Echinococcus için pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Serolojik test",
               "Echinococcus için pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Serolojik test",
             "Echinococcus için pozitif.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -103722,12 +103722,12 @@ export const rawCases = [
         "type": "urine",
         "priority": "useful",
         "subtype": "İdrar tetkikleri",
-        "summary": "Tam idrar analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Tam idrar analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Tam idrar analizi",
-          "summary": "Tam idrar analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Tam idrar analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Eritrosit",
@@ -103789,8 +103789,8 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Tam idrar analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Tam idrar analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "postAnswerExplanation": "",
+        "interpretation": ""
       },
       {
         "id": "abdominal-ultrasonografi-3",
@@ -104870,12 +104870,12 @@ export const rawCases = [
         "type": "urine",
         "priority": "useful",
         "subtype": "İdrar tetkikleri",
-        "summary": "Tam idrar analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Tam idrar analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Tam idrar analizi",
-          "summary": "Tam idrar analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Tam idrar analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Eritrosit",
@@ -104937,8 +104937,8 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Tam idrar analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Tam idrar analizi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "postAnswerExplanation": "",
+        "interpretation": ""
       },
       {
         "id": "renkli-doppler-ultrasonografi-2",
@@ -105221,12 +105221,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Asetilkolin reseptör antikoru sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Asetilkolin reseptör antikoru sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "Asetilkolin reseptör antikoru pozitifliği, dalgalanan kas güçsüzlüğüyle birlikte miyastenia gravis tanısını destekler.",
+        "clinicalMeaning": "Asetilkolin reseptör antikoru pozitifliği, dalgalanan kas güçsüzlüğüyle birlikte miyastenia gravis tanısını destekler.",
         "result": {
           "title": "Asetilkolin reseptör antikoru",
-          "summary": "Asetilkolin reseptör antikoru sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Asetilkolin reseptör antikoru sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "Asetilkolin reseptör antikoru pozitifliği, dalgalanan kas güçsüzlüğüyle birlikte miyastenia gravis tanısını destekler.",
+          "interpretation": "Asetilkolin reseptör antikoru pozitifliği, dalgalanan kas güçsüzlüğüyle birlikte miyastenia gravis tanısını destekler.",
           "values": [
             [
               "Asetilkolin reseptör antikoru",
@@ -105252,11 +105252,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Asetilkolin reseptör antikoru sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Asetilkolin reseptör antikoru sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "Asetilkolin reseptör antikoru pozitifliği, dalgalanan kas güçsüzlüğüyle birlikte miyastenia gravis tanısını destekler.",
+        "interpretation": "Asetilkolin reseptör antikoru pozitifliği, dalgalanan kas güçsüzlüğüyle birlikte miyastenia gravis tanısını destekler.",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Asetilkolin reseptör antikoru sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": "Asetilkolin reseptör antikoru pozitifliği, dalgalanan kas güçsüzlüğüyle birlikte miyastenia gravis tanısını destekler."
       },
       {
         "id": "kontrastsiz-beyin-bt-2",
@@ -105686,12 +105686,12 @@ export const rawCases = [
         "type": "toxicology",
         "priority": "essential",
         "subtype": "Toksikoloji",
-        "summary": "Toksikoloji taraması sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Toksikoloji taraması sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Toksikoloji taraması",
-          "summary": "Toksikoloji taraması sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Toksikoloji taraması sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Toksikoloji taraması",
@@ -105717,8 +105717,8 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Toksikoloji taraması sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Toksikoloji taraması sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "postAnswerExplanation": "",
+        "interpretation": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -107757,12 +107757,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Genetik analiz sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Genetik analiz sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Genetik analiz",
-          "summary": "Genetik analiz sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Genetik analiz sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Genetik analiz",
@@ -107788,11 +107788,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Genetik analiz sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Genetik analiz sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Genetik analiz sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -108588,12 +108588,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Açil-karnitin profili",
-          "summary": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Açil-karnitin profili",
@@ -108619,11 +108619,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Açil-karnitin profili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "kan-gazi-1",
@@ -108916,27 +108916,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Standart tüp aglütinasyon testi",
               "Brucella için pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Standart tüp aglütinasyon testi",
               "Brucella için pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Standart tüp aglütinasyon testi",
             "Brucella için pozitif.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -108960,27 +108960,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Kan kültürü",
               "Küçük gram-negatif kokobasil üremesi bildirildi.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Negatif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Kan kültürü",
               "Küçük gram-negatif kokobasil üremesi bildirildi.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Negatif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Kan kültürü",
             "Küçük gram-negatif kokobasil üremesi bildirildi.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Negatif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -109192,26 +109192,26 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Balgam modifiye aside dirençli boyama",
               "Zayıf aside dirençli dallanan filamentli bakteriler izlendi.",
-              "Örnek/etken ilişkisi",
+              "—",
               ""
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Balgam modifiye aside dirençli boyama",
               "Zayıf aside dirençli dallanan filamentli bakteriler izlendi.",
-              "Örnek/etken ilişkisi",
+              "—",
               ""
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Balgam modifiye aside dirençli boyama",
             "Zayıf aside dirençli dallanan filamentli bakteriler izlendi.",
-            "Örnek/etken ilişkisi",
+            "—",
             ""
           ]
         ],
@@ -109429,12 +109429,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Kraniyal manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Kraniyal manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Kraniyal manyetik rezonans görüntüleme",
-          "summary": "Kraniyal manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Kraniyal manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Kraniyal manyetik rezonans görüntüleme",
@@ -109460,11 +109460,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Kraniyal manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Kraniyal manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Kraniyal manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -109706,42 +109706,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       },
       {
         "id": "kalin-damla-ve-ince-yayma-1",
@@ -109750,12 +109750,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Kalın damla ve ince yayma sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Kalın damla ve ince yayma sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Kalın damla ve ince yayma",
-          "summary": "Kalın damla ve ince yayma sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Kalın damla ve ince yayma sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Kalın damla ve ince yayma",
@@ -109781,11 +109781,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Kalın damla ve ince yayma sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Kalın damla ve ince yayma sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Kalın damla ve ince yayma sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -110355,27 +110355,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "HPV DNA testi",
               "Yüksek riskli HPV pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "HPV DNA testi",
               "Yüksek riskli HPV pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "HPV DNA testi",
             "Yüksek riskli HPV pozitif.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -113241,12 +113241,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Servikal NAAT sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Servikal NAAT sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Servikal NAAT",
-          "summary": "Servikal NAAT sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Servikal NAAT sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Servikal NAAT",
@@ -113272,11 +113272,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Servikal NAAT sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Servikal NAAT sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Servikal NAAT sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "tam-idrar-analizi-3",
@@ -118378,42 +118378,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "clinicalMeaning": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-          "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -118742,12 +118742,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Serum demir düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Serum demir düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Serum demir düzeyi",
-          "summary": "Serum demir düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Serum demir düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Serum demir düzeyi",
@@ -118773,11 +118773,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Serum demir düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Serum demir düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Serum demir düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "tam-idrar-analizi-4",
@@ -119208,12 +119208,12 @@ export const rawCases = [
         "type": "xray",
         "priority": "essential",
         "subtype": "Direkt/kontrastlı grafi",
-        "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "clinicalMeaning": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "clinicalMeaning": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "result": {
           "title": "Akciğer grafisi",
-          "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-          "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+          "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+          "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
           "values": [
             [
               "Görüntüleme bulgusu",
@@ -119239,11 +119239,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "postAnswerExplanation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır."
+        "explanationAfterAnswer": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -119529,42 +119529,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -119849,42 +119849,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -120654,42 +120654,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -120931,12 +120931,12 @@ export const rawCases = [
         "type": "urine",
         "priority": "essential",
         "subtype": "İdrar tetkikleri",
-        "summary": "İdrar tahlili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "İdrar tahlili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
+        "clinicalMeaning": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
         "result": {
           "title": "İdrar tahlili",
-          "summary": "İdrar tahlili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "İdrar tahlili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
+          "interpretation": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
           "values": [
             [
               "İdrar tahlili",
@@ -120962,11 +120962,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "İdrar tahlili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "İdrar tahlili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
+        "interpretation": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür.",
         "category": "urine",
         "testTypeCategory": "urine",
-        "explanationAfterAnswer": "İdrar tahlili sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": "İdrarda eritrosit artışı, yan ağrısı veya kolik ağrı ile birlikte üriner taş ya da kanama odağını düşündürür."
       },
       {
         "id": "abdominal-ultrasonografi-3",
@@ -121016,42 +121016,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "clinicalMeaning": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-          "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -122138,12 +122138,12 @@ export const rawCases = [
         "type": "xray",
         "priority": "useful",
         "subtype": "Direkt/kontrastlı grafi",
-        "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "clinicalMeaning": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "clinicalMeaning": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "result": {
           "title": "Akciğer grafisi",
-          "summary": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-          "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+          "summary": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+          "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
           "values": [
             [
               "Görüntüleme bulgusu",
@@ -122169,11 +122169,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
-        "interpretation": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır.",
+        "postAnswerExplanation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
+        "interpretation": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Lober konsolidasyon, ateş ve solunum bulgularıyla birleştiğinde bakteriyel pnömoni odağını somutlaştırır."
+        "explanationAfterAnswer": "Akciğer grafisindeki lober konsolidasyon, ateş ve solunum bulgularıyla birlikte bakteriyel pnömoniyi destekler."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -122416,12 +122416,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Gama-glutamil transferaz sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Gama-glutamil transferaz sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Gama-glutamil transferaz",
-          "summary": "Gama-glutamil transferaz sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Gama-glutamil transferaz sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Gama-glutamil transferaz",
@@ -122447,12 +122447,12 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Gama-glutamil transferaz sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Gama-glutamil transferaz sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "valueAssumption": "Eksik sayısal değer, vakanın mevcut tanı/yönetim hedefiyle uyumlu gerçekçi eğitim verisi olarak tamamlandı.",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Gama-glutamil transferaz sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "hepatobiliyer-sintigrafi-3",
@@ -123186,27 +123186,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Nazofarengeal PCR",
               "Bordetella pertussis pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Nazofarengeal PCR",
               "Bordetella pertussis pozitif.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Pozitif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Nazofarengeal PCR",
             "Bordetella pertussis pozitif.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Pozitif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -123499,42 +123499,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       },
       {
         "id": "periferik-yayma-3",
@@ -124275,12 +124275,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Total IgA sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Total IgA sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Total IgA",
-          "summary": "Total IgA sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Total IgA sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Total IgA",
@@ -124306,11 +124306,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Total IgA sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Total IgA sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Total IgA sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "tam-idrar-analizi-4",
@@ -125019,12 +125019,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Genetik analiz sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Genetik analiz sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Genetik analiz",
-          "summary": "Genetik analiz sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Genetik analiz sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Genetik analiz",
@@ -125050,11 +125050,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Genetik analiz sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Genetik analiz sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Genetik analiz sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "kreatin-kinaz-1",
@@ -125695,12 +125695,12 @@ export const rawCases = [
         "type": "urine",
         "priority": "essential",
         "subtype": "İdrar tetkikleri",
-        "summary": "İdrar kültürü sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "İdrar kültürü sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "İdrar kültürü",
-          "summary": "İdrar kültürü sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "İdrar kültürü sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "İdrar kültürü",
@@ -125726,11 +125726,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "İdrar kültürü sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "İdrar kültürü sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "urine",
         "testTypeCategory": "urine",
-        "explanationAfterAnswer": "İdrar kültürü sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "renal-ultrasonografi-2",
@@ -126016,12 +126016,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Antinükleer antikor sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Antinükleer antikor sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Antinükleer antikor",
-          "summary": "Antinükleer antikor sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Antinükleer antikor sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Antinükleer antikor",
@@ -126047,11 +126047,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "Antinükleer antikor sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Antinükleer antikor sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Antinükleer antikor sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -126337,42 +126337,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -126570,12 +126570,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "C-reaktif protein sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "C-reaktif protein sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "C-reaktif protein",
-          "summary": "C-reaktif protein sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "C-reaktif protein sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "C-reaktif protein",
@@ -126601,11 +126601,11 @@ export const rawCases = [
             ""
           ]
         ],
-        "postAnswerExplanation": "C-reaktif protein sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "C-reaktif protein sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "C-reaktif protein sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       },
       {
         "id": "kalca-ultrasonografisi-2",
@@ -126658,42 +126658,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -126943,27 +126943,27 @@ export const rawCases = [
           "interpretation": "",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
+              "Boğaz kültürü",
               "A grubu beta-hemolitik streptokok üremesi saptanmadı.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Negatif"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
+              "Boğaz kültürü",
               "A grubu beta-hemolitik streptokok üremesi saptanmadı.",
-              "Örnek/etken ilişkisi",
-              ""
+              "—",
+              "Negatif"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
+            "Boğaz kültürü",
             "A grubu beta-hemolitik streptokok üremesi saptanmadı.",
-            "Örnek/etken ilişkisi",
-            ""
+            "—",
+            "Negatif"
           ]
         ],
         "postAnswerExplanation": "",
@@ -127730,41 +127730,41 @@ export const rawCases = [
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
         "summary": "",
-        "clinicalMeaning": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
           "summary": "",
-          "interpretation": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Kontaminasyon riski olan derin yaradan örnek alındı; ilk değerlendirme sonucu bekleniyor.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Kontaminasyon riski olan derin yaradan örnek alındı; ilk değerlendirme sonucu bekleniyor.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Kontaminasyon riski olan derin yaradan örnek alındı; ilk değerlendirme sonucu bekleniyor.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "",
-        "interpretation": "",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": ""
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       },
       {
         "id": "pelvis-grafisi-1",
@@ -171984,42 +171984,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kritik potasyum yüksekliğinin EKG’de ileti bozukluğu oluşturması aritmi riskini acilleştirir; ilk hedef potasyumu düşürmekten önce miyokard membranını kalsiyumla stabilize etmektir.",
-        "clinicalMeaning": "Kritik potasyum yüksekliğinin EKG’de ileti bozukluğu oluşturması aritmi riskini acilleştirir; ilk hedef potasyumu düşürmekten önce miyokard membranını kalsiyumla stabilize etmektir.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kritik potasyum yüksekliğinin EKG’de ileti bozukluğu oluşturması aritmi riskini acilleştirir; ilk hedef potasyumu düşürmekten önce miyokard membranını kalsiyumla stabilize etmektir.",
-          "interpretation": "Kritik potasyum yüksekliğinin EKG’de ileti bozukluğu oluşturması aritmi riskini acilleştirir; ilk hedef potasyumu düşürmekten önce miyokard membranını kalsiyumla stabilize etmektir.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kritik potasyum yüksekliğinin EKG’de ileti bozukluğu oluşturması aritmi riskini acilleştirir; ilk hedef potasyumu düşürmekten önce miyokard membranını kalsiyumla stabilize etmektir.",
-        "interpretation": "Kritik potasyum yüksekliğinin EKG’de ileti bozukluğu oluşturması aritmi riskini acilleştirir; ilk hedef potasyumu düşürmekten önce miyokard membranını kalsiyumla stabilize etmektir.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kritik potasyum yüksekliğinin EKG’de ileti bozukluğu oluşturması aritmi riskini acilleştirir; ilk hedef potasyumu düşürmekten önce miyokard membranını kalsiyumla stabilize etmektir."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -173207,42 +173207,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "clinicalMeaning": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-          "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -173610,42 +173610,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "clinicalMeaning": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-          "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
-        "interpretation": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Ateş, ense sertliği ve bilinç değişikliğine eşlik eden inflamatuvar BOS/kan bulguları bakteriyel menenjit olasılığını güçlendirir; antibiyotik kararı kültür sonucunu beklememelidir."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -173968,42 +173968,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -174272,42 +174272,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       },
       {
         "id": "dilate-fundus-muayenesi-1",
@@ -174360,12 +174360,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Orbital manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Orbital manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Orbital manyetik rezonans görüntüleme",
-          "summary": "Orbital manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Orbital manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Orbital manyetik rezonans görüntüleme",
@@ -174383,8 +174383,8 @@ export const rawCases = [
             ]
           ]
         },
-        "postAnswerExplanation": "Orbital manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Orbital manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "rows": [
           [
             "Orbital manyetik rezonans görüntüleme",
@@ -174395,7 +174395,7 @@ export const rawCases = [
         ],
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Orbital manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -174675,42 +174675,42 @@ export const rawCases = [
         "type": "microbiology",
         "priority": "essential",
         "subtype": "Mikrobiyoloji",
-        "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "clinicalMeaning": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "summary": "",
+        "clinicalMeaning": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "result": {
           "title": "Kültür örnekleri",
-          "summary": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-          "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+          "summary": "",
+          "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
           "values": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ],
           "rows": [
             [
-              "Mikrobiyolojik sonuç",
-              "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-              "Örnek/etken ilişkisi",
-              ""
+              "Kültür istemi",
+              "Henüz raporlanmadı",
+              "—",
+              "Sonuç bekleniyor"
             ]
           ]
         },
         "rows": [
           [
-            "Mikrobiyolojik sonuç",
-            "Antibiyotik öncesi iki set kan kültürü alındı; ilk saat içinde sonuç beklenmez.",
-            "Örnek/etken ilişkisi",
-            ""
+            "Kültür istemi",
+            "Henüz raporlanmadı",
+            "—",
+            "Sonuç bekleniyor"
           ]
         ],
-        "postAnswerExplanation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
-        "interpretation": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar.",
+        "postAnswerExplanation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
+        "interpretation": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar.",
         "category": "microbiology",
         "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kültürün erken dönemde sonuç vermemesi tedavi kararını erteletmez; örnekleme hedefe yönelik tedavi için güvence sağlar."
+        "explanationAfterAnswer": "Kültür sonucu hedefe yönelik antibiyotik seçimini sağlar; ancak acil enfeksiyon şüphesinde ilk yönetim klinik şiddet, enfeksiyon odağı ve güvenli ampirik yaklaşıma göre başlar."
       },
       {
         "id": "kas-manyetik-rezonans-goruntuleme-3",
@@ -174719,12 +174719,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Kas manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "clinicalMeaning": "Kas manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Kas manyetik rezonans görüntüleme",
-          "summary": "Kas manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-          "interpretation": "Kas manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Kas manyetik rezonans görüntüleme",
@@ -174742,8 +174742,8 @@ export const rawCases = [
             ]
           ]
         },
-        "postAnswerExplanation": "Kas manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
-        "interpretation": "Kas manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "rows": [
           [
             "Kas manyetik rezonans görüntüleme",
@@ -174754,7 +174754,7 @@ export const rawCases = [
         ],
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Kas manyetik rezonans görüntüleme sonucu anormal bulgunun klinik odağı somutlaştırdığını gösterir."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -174991,12 +174991,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "Tirozin düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "Tirozin düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "Tirozin düzeyi",
-          "summary": "Tirozin düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "Tirozin düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "Tirozin düzeyi",
@@ -175014,8 +175014,8 @@ export const rawCases = [
             ]
           ]
         },
-        "postAnswerExplanation": "Tirozin düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "Tirozin düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "rows": [
           [
             "Tirozin düzeyi",
@@ -175026,7 +175026,7 @@ export const rawCases = [
         ],
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Tirozin düzeyi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -175350,12 +175350,12 @@ export const rawCases = [
         "type": "lab",
         "priority": "essential",
         "subtype": "Laboratuvar",
-        "summary": "GnRH uyarı testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "clinicalMeaning": "GnRH uyarı testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "summary": "",
+        "clinicalMeaning": "",
         "result": {
           "title": "GnRH uyarı testi",
-          "summary": "GnRH uyarı testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-          "interpretation": "GnRH uyarı testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+          "summary": "",
+          "interpretation": "",
           "values": [
             [
               "GnRH uyarı testi",
@@ -175373,8 +175373,8 @@ export const rawCases = [
             ]
           ]
         },
-        "postAnswerExplanation": "GnRH uyarı testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
-        "interpretation": "GnRH uyarı testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar.",
+        "postAnswerExplanation": "",
+        "interpretation": "",
         "rows": [
           [
             "GnRH uyarı testi",
@@ -175385,7 +175385,7 @@ export const rawCases = [
         ],
         "category": "laboratory",
         "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "GnRH uyarı testi sonucu sonucun vaka tablosunda tek başına karar verdirici olmadığını, diğer bulgularla birlikte anlam kazandığını açıklar."
+        "explanationAfterAnswer": ""
       }
     ],
     "useSyntheticInvestigationBank": false,

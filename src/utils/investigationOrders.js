@@ -7,13 +7,13 @@ export const priorityMeta = {
     label: 'Güçlü veri',
     tone: 'success',
     scoreImpact: 4,
-    feedback: 'Bu istem ilk karar basamağını doğrudan etkileyen kritik veriyi sağlar.',
+    feedback: 'Bu istem, olguda tanı veya acil yönetim açısından kritik objektif veri sağlar.',
   },
   useful: {
     label: 'Yardımcı veri',
     tone: 'blue',
     scoreImpact: 2,
-    feedback: 'Bu istem ayırıcı tanıyı daraltır veya risk sınıflamasına destek verir.',
+    feedback: 'Bu istem, ayırıcı tanı veya risk sınıflaması için ek objektif veri sağlar.',
   },
   situational: {
     label: 'Durumsal',
@@ -25,7 +25,7 @@ export const priorityMeta = {
     label: 'Sınırlı katkı',
     tone: 'slate',
     scoreImpact: -1,
-    feedback: 'Bu istemde ilk karar basamağını değiştiren ek patoloji saptanmadı.',
+    feedback: 'Bu istemde acil yaklaşımı değiştirecek ek patoloji saptanmadı.',
   },
   inappropriateEarly: {
     label: 'Erken',
@@ -37,13 +37,13 @@ export const priorityMeta = {
     label: 'Sınırlı katkı',
     tone: 'slate',
     scoreImpact: -1,
-    feedback: 'Bu istemde ilk karar basamağını değiştiren ek patoloji saptanmadı.',
+    feedback: 'Bu istemde acil yaklaşımı değiştirecek ek patoloji saptanmadı.',
   },
   harmfulDelay: {
     label: 'Erken',
     tone: 'warning',
     scoreImpact: -2,
-    feedback: 'Önce stabilizasyon ve karar verdirici temel veriler tamamlanmalıdır; bu istem erken aşamada önceliği düşürür.',
+    feedback: 'Önce stabilizasyon ve temel güvenlik verileri tamamlanmalıdır; bu istem erken aşamada önceliği düşürür.',
   },
 };
 
@@ -575,13 +575,13 @@ function syntheticSummaryFor(item, clinicalCase) {
     return 'Ultrasonografide hedef organda acil karar sürecini değiştiren belirgin patoloji saptanmaz.';
   }
   if (category === 'culture') return /ateş|sepsis|pnömoni|enfeksiyon/.test(context)
-    ? 'Kültür örnekleri alındı; erken değerlendirmede üreme sonucu beklenmektedir.'
-    : 'Kültür örneğinde ilk değerlendirmede üreme bilgisi yoktur.';
+    ? 'Kültür örnekleri alındı; etken ve antibiyotik duyarlılığı henüz raporlanmadı.'
+    : 'Kültür örneğinde etken henüz raporlanmadı.';
   if (category === 'urine') return 'Tam idrar analizinde lökosit esteraz ve nitrit negatif; belirgin hematüri saptanmaz.';
   if (category === 'pregnancy') return 'β-hCG sonucu negatif olarak raporlanır.';
   if (category === 'biochemistry') return 'Kreatinin ve elektrolit değerleri klinik stabilizasyonu değiştirecek belirgin bozukluk göstermez.';
   if (category === 'pathology') return 'Mikroskopik incelemede örneklenen materyale ait objektif hücresel bulgular raporlanır; kesin yorum histopatolojik rapora bırakılır.';
-  return 'Bu istemde acil karar sürecini değiştiren belirgin ek objektif bulgu saptanmaz.';
+  return 'Bu istemde acil yaklaşımı değiştirecek belirgin ek objektif bulgu saptanmaz.';
 }
 
 function orderPurposeFor(item, clinicalCase = {}) {
@@ -657,17 +657,17 @@ function clinicalMeaningFor(item, clinicalCase = {}) {
     return 'Ultrasonografi; sıvı, taş, duvar kalınlığı, kitle veya vasküler akım bulgularını objektif olarak gösterir.';
   }
 
-  if (priority === 'lowPriority') return 'Bu istem mevcut tabloda ilk karar basamağını genellikle değiştirmez.';
+  if (priority === 'lowPriority') return 'Bu istem mevcut tabloda acil yönetimi değiştirecek yeni veri sağlamaz.';
   if (priority === 'situational') return 'Klinik koşullar değişirse değer kazanabilir; rutin ilk basamak istemi değildir.';
   return '';
 }
 
 function postAnswerExplanationFor(item) {
   const priority = normalizePriority(item.priority);
-  if (priority === 'essential') return 'Bu istem ilk değerlendirmede tanısal karar veya acil yönetim açısından yüksek değer taşır.';
+  if (priority === 'essential') return 'Bu istem tanı veya acil yönetim açısından yüksek değer taşır.';
   if (priority === 'useful') return 'Bu istem ayırıcı tanıya veya risk sınıflamasına yardımcı olur.';
   if (priority === 'situational') return 'Bu istem ileri değerlendirme veya seçilmiş klinik koşullarda anlamlıdır.';
-  if (priority === 'lowPriority') return 'Bu istem mevcut tabloda ilk karar basamağını değiştirme olasılığı düşük bir incelemedir.';
+  if (priority === 'lowPriority') return 'Bu istemin mevcut tabloda acil yaklaşımı değiştirme olasılığı düşüktür.';
   return 'Bu istem ileri aşamada veya farklı klinik koşullarda düşünülebilir.';
 }
 
@@ -682,11 +682,11 @@ function neutralRowNote(note = '', parameter = '', value = '', reference = '') {
     if (/bekleniyor|sonuç bekleniyor|takip/.test(valueText)) return 'Takip edilecek';
     const valueShowsAbsence = /saptanmadı|izlenmedi|görülmedi|üreme olmadı|üreme saptanmadı|yok/.test(valueText) || (/\bnegatif\b/.test(valueText) && !/\bgram negatif\b/.test(valueText));
     if (valueShowsAbsence) return 'Negatif';
-    if (/pozitif|saptandı|izlendi|görüldü|üreme|diplokok|kok|basil|konsolidasyon|elevasyon|depresyon|defekt|flap|anevrizma|vejetasyon|kitle|kalınlaşma|birikim|eozinofil/.test(valueText)) return 'Anormal bulgu';
+    if (/pozitif|saptandı|izlendi|görüldü|üreme|diplokok|kok|basil|konsolidasyon|elevasyon|depresyon|defekt|flap|anevrizma|vejetasyon|kitle|kalınlaşma|birikim|eozinofil/.test(valueText)) return 'Patolojik';
   }
 
   if (/belirgin yüksek|çok yüksek|yüksek|artmış|uzamış/.test(text)) return 'Yüksek';
-  if (/pozitif|anormal|klinik olarak anlamlı|pürülan/.test(text)) return 'Anormal bulgu';
+  if (/pozitif|anormal|klinik olarak anlamlı|pürülan/.test(text)) return 'Patolojik';
   if (/düşük|azalmış/.test(text)) return 'Düşük';
   if (/negatif/.test(text)) return 'Negatif';
   if (/normal|referans|uygun/.test(text)) return 'Referans içinde';
@@ -711,7 +711,7 @@ function neutralRowNote(note = '', parameter = '', value = '', reference = '') {
   }
 
   if (/izlenmedi|saptanmadı|patoloji yok|üreme olmadı|üreme saptanmadı/.test(combined) || (/\bnegatif\b/.test(combined) && !/\bgram negatif\b/.test(combined))) return 'Negatif';
-  if (/pozitif|saptandı|izlendi|görüldü|uyumlu|destekler|elevasyon|depresyon|konsolidasyon|defekt|yüksek|düşük|diplokok|basil|kitle|kalınlaşma/.test(combined)) return 'Anormal bulgu';
+  if (/pozitif|saptandı|izlendi|görüldü|uyumlu|destekler|elevasyon|depresyon|konsolidasyon|defekt|yüksek|düşük|diplokok|basil|kitle|kalınlaşma/.test(combined)) return 'Patolojik';
   return '';
 }
 
@@ -720,7 +720,14 @@ function sanitizeRows(rows = []) {
     const [parameter, value, reference, note] = Array.isArray(row)
       ? row
       : [row.parameter, row.value, row.reference, row.note || row.interpretation];
-    return [parameter, value, reference || '—', neutralRowNote(note, parameter, value, reference)];
+    const normalizedReference = String(reference || '').toLocaleLowerCase('tr');
+    const cleanReference = /^(bilgi|anormal bulgu|örnek\/etken ilişkisi|referans aralığı yok|klinik değerlendirme)$/iu.test(String(reference || '').trim())
+      ? '—'
+      : (reference || '—');
+    const cleanNote = /^(bilgi|anormal bulgu|örnek\/etken ilişkisi|referans aralığı yok|klinik değerlendirme)$/iu.test(String(note || '').trim())
+      ? ''
+      : note;
+    return [parameter, value, cleanReference, neutralRowNote(cleanNote, parameter, value, cleanReference)];
   });
 }
 
@@ -868,10 +875,11 @@ export function buildInvestigationReview(orders = [], orderedIds = []) {
 
 export function getOrderFeedback(item) {
   const priority = normalizePriority(item.priority);
-  if (priority === 'essential') return `${item.label || item.title || 'Bu tetkik'} bu olguda karar verdirici objektif veri sağlar; sonucu vaka öyküsü ve muayene bulgularıyla birlikte yorumlanmalıdır.`;
-  if (priority === 'useful') return `${item.label || item.title || 'Bu tetkik'} ayırıcı tanı veya şiddet değerlendirmesine katkı sağlar; tek başına değil vaka bağlamıyla yorumlanmalıdır.`;
-  if (priority === 'situational') return `${item.label || item.title || 'Bu tetkik'} seçilmiş koşullarda değer kazanır; ilk karar için önce daha doğrudan veriler tamamlanmalıdır.`;
-  if (priority === 'lowPriority') return 'Bu istem mevcut ilk değerlendirme aşamasında sınırlı katkı sağlar.';
+  if (priority === 'essential') return `${item.label || item.title || 'Bu tetkik'} bu olguda tanı, risk veya acil yönetim açısından yüksek değerli objektif veri sağlar.`;
+  if (priority === 'useful') return `${item.label || item.title || 'Bu tetkik'} ayırıcı tanı, şiddet değerlendirmesi veya tedavi güvenliği için ek veri sağlar.`;
+  if (priority === 'situational') return `${item.label || item.title || 'Bu tetkik'} yalnızca seçilmiş koşullarda katkı sağlar; önce daha doğrudan klinik veriler tamamlanmalıdır.`;
+  if (priority === 'lowPriority') return 'Bu istem mevcut ilk değerlendirme aşamasında ek klinik katkı sağlamaz.';
   if (priority === 'inappropriateEarly') return 'Bu istem ileri aşamada düşünülebilir; önce temel klinik veriler tamamlanmalıdır.';
   return '';
 }
+

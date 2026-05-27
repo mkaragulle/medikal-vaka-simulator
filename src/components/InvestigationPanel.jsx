@@ -68,6 +68,12 @@ const REDUNDANT_ORDER_SUBTITLE_LABELS = new Set([
   'objektif veri',
   'tetkik',
   'kan gazı',
+  'kan gazı ve asit-baz değerlendirmesi',
+  'kan gazı / metabolik ölçüm',
+  'osmolalite / elektrolit',
+  'renal klirens ölçümü',
+  'basınç ölçümü',
+  'ürodinami',
   'kan bankası',
   'kan hazırlığı',
   'kültür',
@@ -80,22 +86,24 @@ const REDUNDANT_ORDER_SUBTITLE_LABELS = new Set([
   'yatak başı testler',
   'metabolik değerlendirme',
   'ürogenital değerlendirme',
+  'serum biyokimyası',
+  'hematolojik parametreler',
+  'toraks görüntüleme bulguları',
+  'doku düzeyinde histopatolojik inceleme',
+  'örnek türüne göre mikrobiyolojik etken değerlendirmesi',
+  'fizyolojik kapasite, basınç ve izlem ölçümleri',
+  'yara derinliği, kontaminasyon ve enfeksiyon riski',
+  'tetkik sonucu',
+  'klinik veri özeti',
 ]);
 
-const SEMANTIC_ORDER_SUBTITLE_PATTERNS = [
-  /asit[- ]?baz/i,
-  /osmolalite/i,
-  /elektrolit/i,
-  /renal klirens/i,
-  /basınç ölçümü/i,
-  /metabolik ölçüm/i,
-  /vokal kord/i,
-  /histopatolojik inceleme/i,
-  /doku düzeyinde/i,
-  /örnek türüne göre/i,
-  /yara derinliği/i,
-  /kontaminasyon/i,
-  /enfeksiyon riski/i,
+const REDUNDANT_ORDER_SUBTITLE_PATTERNS = [
+  /^kan\s+gaz[ıi]\s*(?:ve|\/)\s*(?:asit[- ]?baz|metabolik ölçüm)/iu,
+  /^(?:osmolalite\s*\/\s*elektrolit|renal klirens ölçümü|basınç ölçümü|ürodinami)$/iu,
+  /^(?:serum biyokimyası|hematolojik parametreler|toraks görüntüleme bulguları)$/iu,
+  /^(?:doku düzeyinde histopatolojik inceleme|örnek türüne göre mikrobiyolojik etken değerlendirmesi)$/iu,
+  /^(?:fizyolojik kapasite, basınç ve izlem ölçümleri|yara derinliği, kontaminasyon ve enfeksiyon riski)$/iu,
+  /^(?:tetkik sonucu|klinik veri özeti|objektif veri)$/iu,
 ];
 
 function normalizeOrderSubtitleText(value = '') {
@@ -115,17 +123,10 @@ function normalizeOrderSubtitleText(value = '') {
     .trim();
 }
 
-function isClinicallyMeaningfulOrderSubtitle(subtitle = '') {
-  const raw = String(subtitle || '').trim();
-  if (!raw) return false;
-  return SEMANTIC_ORDER_SUBTITLE_PATTERNS.some((pattern) => pattern.test(raw));
-}
 
 function shouldHideOrderSubtitle(item = {}, subtitle = '') {
   const raw = String(subtitle || '').trim();
   if (!raw) return true;
-
-  if (isClinicallyMeaningfulOrderSubtitle(raw)) return false;
 
   const normalizedSubtitle = normalizeOrderSubtitleText(raw);
   const categoryMeta = getOrderCategoryMeta(item.testTypeCategory || item.category || 'other');
@@ -143,7 +144,8 @@ function shouldHideOrderSubtitle(item = {}, subtitle = '') {
     .filter(Boolean);
 
   if (comparisonValues.includes(normalizedSubtitle)) return true;
-  if (REDUNDANT_ORDER_SUBTITLE_LABELS.has(raw.toLocaleLowerCase('tr'))) return true;
+  if (REDUNDANT_ORDER_SUBTITLE_LABELS.has(raw.toLocaleLowerCase('tr')) || REDUNDANT_ORDER_SUBTITLE_LABELS.has(normalizedSubtitle)) return true;
+  if (REDUNDANT_ORDER_SUBTITLE_PATTERNS.some((pattern) => pattern.test(raw))) return true;
 
   const wordCount = raw.split(/\s+/).filter(Boolean).length;
   const looksLikeShortTypeLabel = wordCount <= 3 && /(tetkik|test|panel|laboratuvar|görüntüleme|grafi|bt|mr|ekg|ultrasonografi|mikrobiyoloji|patoloji|klinik|muayene|değerlendirme|kültür|hcg|idrar|kan gazı|bankası|izlem)/iu.test(raw);
@@ -501,7 +503,14 @@ function DenseResultText({ text = '' }) {
 
 function isGenericQualitativeReference(reference = '') {
   const normalized = normalizeClinicalText(reference);
-  return !normalized || normalized === '—' || /normalde beklenmeyen patern|objektif bulgu|klinik olarak/.test(normalized);
+  return !normalized || normalized === '—' || /normalde beklenmeyen patern|objektif bulgu|klinik olarak|ornek etken iliskisi|bilgi|referans araligi yok|karar verdirici degil/.test(normalized);
+}
+
+
+function isGenericResultNote(note = '') {
+  const normalized = normalizeClinicalText(note);
+  if (!normalized) return true;
+  return /klinik olarak anlamli|objektif sonuc|yorum gerektirir|klinik veri özeti|klinik veri ozeti|referans araligi yok|vital bulgular klinik baglama|laboratuvar verisidir|ilk yonetim kararini|ornek etken iliskisi|bilgi|anormal bulgu|tek basina karar verdirici|diger bulgularla birlikte anlam kazan|tani(?:sal)? akil yurutmeyi guclendir|klinik odagi somutlastir|somutlastirdigini gosterir/.test(normalized);
 }
 
 function rowHasQuantitativeSignal(row = {}) {
@@ -576,7 +585,7 @@ function ResultFindingList({ rows = [], glossaryEnabled = true, glossaryRevealMo
       {normalizedRows.map(({ parameter, value, reference, note }, index) => {
         const status = evaluateSemanticStatus({ parameter, value, reference, note });
         const showReference = reference && !isGenericQualitativeReference(reference) && rowHasQuantitativeSignal({ parameter, value, reference, note });
-        const showNote = note && !/klinik olarak anlamli|objektif sonuc|klinik veri özeti|referans aralığı yok|vital bulgular klinik bağlama|laboratuvar verisidir|ilk yönetim kararını/i.test(String(note));
+        const showNote = note && !isGenericResultNote(note);
 
         return (
           <div key={`${parameter || 'bulgu'}-${index}`} className={`qualitative-result-finding ${status.tone}`}>
@@ -629,7 +638,7 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
           <tbody>
             {normalizedRows.map(({ parameter, value, reference, note }, index) => {
               const { tone } = evaluateSemanticStatus({ parameter, value, reference, note });
-              const secondary = note && !/klinik olarak anlamli|objektif sonuc|yorum gerektirir|klinik veri özeti|referans aralığı yok|vital bulgular klinik bağlama|laboratuvar verisidir|ilk yönetim kararını/i.test(String(note)) ? note : '';
+              const secondary = note && !isGenericResultNote(note) ? note : '';
               return (
                 <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
                   <td>
@@ -664,7 +673,7 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
           <tbody>
             {normalizedRows.map(({ parameter, value, reference, note }, index) => {
               const { tone } = evaluateSemanticStatus({ parameter, value, reference, note });
-              const secondary = note && !/klinik olarak anlamli|objektif sonuc|yorum gerektirir|klinik veri özeti|referans aralığı yok|vital bulgular klinik bağlama|laboratuvar verisidir|ilk yönetim kararını/i.test(String(note)) ? note : '';
+              const secondary = note && !isGenericResultNote(note) ? note : '';
               return (
                 <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
                   <td>
@@ -814,7 +823,14 @@ const EMPTY_SHORT_COMMENT_PATTERNS = [
   /objektif verilerden biridir/i,
   /ilgili klinik yorum için destekleyici veri sağlar/i,
   /klinik yorumu vaka verisiyle ilişkilendirir/i,
-  /^\s*(bilgi|anormal bulgu|klinikle uyumludur|tanıyı destekler)\.?\s*$/i,
+  /klinik odağı(?:nı)? somutlaştır/iu,
+  /somutlaştırdığını gösterir/iu,
+  /tek başına karar verdirici/iu,
+  /diğer bulgularla birlikte anlam kazan/iu,
+  /tanısal akıl yürütmeyi güçlendir/iu,
+  /sonucun vaka tablosunda/iu,
+  /örnek\/etken ilişkisi/iu,
+  /^\s*(bilgi|anormal bulgu|klinikle uyumludur|tanıyı destekler|karar verdirici değildir)\.?\s*$/i,
 ];
 
 function isMeaningfulShortComment(text = '') {
@@ -953,7 +969,6 @@ function OrderCategorySection({ group, selectedOrderSet, openResultSet, onToggle
       <header className="order-category-head smart-order-category-head">
         <div>
           <h3 id={`order-category-${group.id}`}>{group.meta.label}</h3>
-          {group.meta.description ? <p>{group.meta.description}</p> : null}
         </div>
       </header>
       <div className="order-category-grid smart-order-category-grid">
