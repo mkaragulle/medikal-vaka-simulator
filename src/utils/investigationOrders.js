@@ -139,7 +139,7 @@ export const orderCategoryMeta = {
   },
   functional: {
     label: 'Fonksiyonel testler',
-    description: 'Fizyolojik kapasite, basınç ve izlem ölçümleri.',
+    description: 'Spirometri, efor testi, EEG/EMG, odyometri, ürodinami, fetal izlem ve ölçülebilir basınç testleri.',
   },
   urine: {
     label: 'İdrar tetkikleri',
@@ -392,6 +392,20 @@ function attachImages(item, clinicalCase) {
 
 function caseContext(clinicalCase = {}) {
   return `${clinicalCase.title || ''} ${clinicalCase.clinicalFocus || ''} ${clinicalCase.chiefComplaint || ''} ${clinicalCase.stem || ''} ${(clinicalCase.exam || []).join(' ')}`.toLocaleLowerCase('tr');
+}
+
+
+const REAL_FUNCTIONAL_TEST_PATTERN = /(solunum fonksiyon|spirometri|vital kapasite|difüzyon kapasitesi|dlco|efor testi|egzersiz testi|emg|eeg|odyometri|ürodinami|urodinami|tilt testi|kardiyotokografi|nst|fetal kalp|kompartman basıncı|hiperoksi|klirens ölçümü|para-aminohippurat klirens)/i;
+const NON_CLINICAL_MECHANISM_PATTERN = /(simülasyon|simulasyon|modelleme|modellendi|fizyolojik mekanizma|patofizyolojik mekanizma|beklenen fizyolojik yön|beklenen refleks yanıt|makula densa yanıtı|tubuloglomerüler geri bildirim|bohr etkisi|haldane etkisi|frank-starling mekanizması|raas ve efferent|baroreseptör refleks yanıtı|sempatik nörotransmitter aktarımı|adh ve aquaporin|miksiyon refleksi ve sakral parasempatik çıkış)/i;
+
+function isNonClinicalMechanismInvestigation(item = {}) {
+  const type = String(item.type || '').toLocaleLowerCase('tr');
+  const text = `${item.id || ''} ${item.label || ''} ${item.title || ''} ${item.subtype || ''} ${item.summary || ''}`.toLocaleLowerCase('tr');
+  if (item.orderable === false) return true;
+  if (['mechanism', 'physiology', 'simulation'].includes(type)) return true;
+  if (NON_CLINICAL_MECHANISM_PATTERN.test(text)) return true;
+  if (type === 'functionaltest' && /mekanizma|refleks|yanıtı|yolağı|bohr|haldane|starling|raas|makula|tubuloglomer|aquaporin|nörotransmitter/.test(text) && !REAL_FUNCTIONAL_TEST_PATTERN.test(text)) return true;
+  return false;
 }
 
 function findRows(clinicalCase = {}, patterns = []) {
@@ -710,14 +724,6 @@ function sanitizeRows(rows = []) {
   });
 }
 
-
-function isNonClinicalMechanismInvestigation(item = {}) {
-  const visibleText = `${item.label || ''} ${item.title || ''} ${item.type || ''} ${item.subtype || ''} ${item.category || ''} ${item.testTypeCategory || ''} ${item.summary || ''}`.toLocaleLowerCase('tr');
-  const realMeasurementPattern = /(solunum fonksiyon|spirometri|zorlu vital kapasite|fetal kalp|kardiyotokografi|nst|hiperoksi|difüzyon kapasitesi|kompartman basıncı|ürodinami|urodinami|pah klirensi|klirens hesaplaması|su kısıtlama testi|idrar osmolalitesi|egzersiz sonrası kan gazı|kan basıncı ve nabız|renal fonksiyon|idrar sodyumu|arter kan gazı|ekokardiyografik|periferik dolaşım muayenesi)/;
-  const mechanismPattern = /(fizyolojik mekanizma|patofizyolojik mekanizma|gaz taşınması mekanizması|otonom sinaptik mekanizma|kardiyak hemodinamik mekanizma|renal hemodinamik mekanizma|su dengesi mekanizması|otonom refleks mekanizması|tubuloglomerüler geri bildirim|makula densa|bohr etkisi|haldane etkisi|frank-starling|baroreseptör|raas aktivasyonu|modellendi|modelleme|simülasyon bulgusu|beklenen fizyolojik yön)/;
-  return mechanismPattern.test(visibleText) && !realMeasurementPattern.test(visibleText);
-}
-
 function normalizeInvestigation(item, clinicalCase, index = 0) {
   const id = item.id || normalizeId(item.label || `istem-${index + 1}`);
   const type = item.type || 'clinical';
@@ -805,8 +811,7 @@ export function buildInvestigationOrders(clinicalCase = {}) {
       : [];
 
   const caseItems = explicitSource
-    .filter((item) => item && item.type !== 'management' && item.orderable !== false)
-    .filter((item) => !isNonClinicalMechanismInvestigation(item))
+    .filter((item) => item && item.type !== 'management' && item.orderable !== false && !isNonClinicalMechanismInvestigation(item))
     .map((item, index) => normalizeInvestigation(item, clinicalCase, index));
 
   // KlinikIQ vaka verileri artık tetkik kararını vaka özelinde taşır. Bu nedenle
