@@ -51,6 +51,11 @@ export const typeLabels = {
   ecg: 'EKG',
   echo: 'Ekokardiyografi',
   lab: 'Laboratuvar',
+  bloodGas: 'Kan gazı',
+  fluidAnalysis: 'BOS / sıvı analizi',
+  bloodBank: 'Kan bankası',
+  microbiology: 'Mikrobiyoloji',
+  functionalTest: 'Fonksiyonel test',
   xray: 'Direkt grafi',
   ct: 'BT',
   mri: 'MR',
@@ -70,6 +75,11 @@ export const investigationIconByType = {
   ecg: 'Activity',
   echo: 'Activity',
   lab: 'FlaskConical',
+  bloodGas: 'Activity',
+  fluidAnalysis: 'Droplets',
+  bloodBank: 'HeartPulse',
+  microbiology: 'FlaskConical',
+  functionalTest: 'Activity',
   xray: 'Image',
   ct: 'Image',
   mri: 'Image',
@@ -95,6 +105,10 @@ export const orderCategoryMeta = {
     label: 'Kardiyak değerlendirme',
     description: 'Ritim ve kardiyak incelemeler.',
   },
+  clinicalAssessment: {
+    label: 'Klinik değerlendirme',
+    description: 'Fizik muayene, lokal bulgu ve hedefe yönelik klinik gözlemler.',
+  },
   laboratory: {
     label: 'Laboratuvar',
     description: 'Kan örneği sonuçları.',
@@ -118,6 +132,14 @@ export const orderCategoryMeta = {
   microbiology: {
     label: 'Mikrobiyoloji',
     description: 'Etken saptamaya yönelik sonuçlar.',
+  },
+  fluidAnalysis: {
+    label: 'BOS / sıvı analizi',
+    description: 'BOS, dren, dışkı ve vücut sıvısı örneklerine özgü sonuçlar.',
+  },
+  functional: {
+    label: 'Fonksiyonel testler',
+    description: 'Fizyolojik kapasite, basınç ve izlem ölçümleri.',
   },
   urine: {
     label: 'İdrar tetkikleri',
@@ -159,25 +181,32 @@ export function getOrderCategoryMeta(category = 'other') {
 
 function inferOrderCategory(item = {}, clinicalCase = {}) {
   const type = item.type || '';
-  const text = `${item.id || ''} ${item.label || ''} ${type}`.toLocaleLowerCase('tr');
+  const text = `${item.id || ''} ${item.label || ''} ${item.title || ''} ${type} ${item.subtype || ''}`.toLocaleLowerCase('tr');
   const canonical = canonicalCategory(item);
 
-  if (/(parmak ucu|glukoz)/.test(text) || canonical === 'glucose') return 'bedside';
+  if (type === 'clinical' || type === 'physicalExam' || type === 'woundAssessment' || /(yara değerlendirmesi|yanık yüzdesi|fizik muayene|klinik değerlendirme|lokal bulgu|fundus muayenesi|göz içi basıncı|odyometri)/.test(text)) return 'clinicalAssessment';
+  if (type === 'bloodGas' || canonical === 'abg' || /(kan gazı|arter kan gazı|venöz kan gazı|paco2|hco)/.test(text)) return 'respiratory';
+  if (/(parmak ucu|kapiller kan glukozu|yatak başı kan glukozu)/.test(text)) return 'bedside';
   if (type === 'ecg' || type === 'echo' || /(ekg|ecg|ekokardiyografi|eko)/.test(text)) return 'cardiac';
-  if (canonical === 'crossmatch' || /(kan grubu|cross|transfüzyon|eritrosit süspansiyonu)/.test(text)) return 'bloodBank';
-  if (type === 'pathology' || canonical === 'pathology' || /(biyopsi|sitoloji|histopatoloji|periferik yayma)/.test(text)) return 'pathology';
-  if (/(gebelik testi|beta-hcg|hcg|üriner sistem|ürogenital)/.test(text)) return 'urogenital';
-  if (type === 'toxicology' || canonical === 'toxicology' || /(toksikoloji|zehir|etanol|benzodiazepin|parasetamol)/.test(text)) return 'toxicology';
+  if (type === 'bloodBank' || canonical === 'crossmatch' || /(kan grubu|cross|transfüzyon|eritrosit süspansiyonu)/.test(text)) return 'bloodBank';
+  if (type === 'functionalTest') {
+    if (/(solunum fonksiyon|vital kapasite|difüzyon kapasitesi|hiperoksi)/.test(text)) return 'respiratory';
+    if (/(fetal kalp|nst|kardiyotokografi)/.test(text)) return 'urogenital';
+    return 'functional';
+  }
+  if (type === 'pathology' || canonical === 'pathology' || /(biyopsi|sitoloji|histopatoloji|periferik yayma|elektron mikroskopisi|immünfloresan|immunfloresan)/.test(text)) return 'pathology';
+  if (type === 'microbiology' || type === 'culture' || canonical === 'culture' || /(kültür|mikrobiyoloji|gram boyama|pcr|antijen|seroloji|koh|aside dirençli|toksin testi|üre nefes|hpv dna)/.test(text)) return 'microbiology';
   if (type === 'urine' || canonical === 'urine') return 'urine';
+  if (type === 'fluidAnalysis' || /(^|\s)(bos)(\s|$)|beyin omurilik sıvısı|lomber ponksiyon|dren sıvısı|dışkı|gaita|plevral|sinovyal/.test(text)) return 'fluidAnalysis';
+  if (/(gebelik testi|beta-hcg|hcg|üriner sistem|ürogenital|transvajinal servikal uzunluk)/.test(text)) return 'urogenital';
+  if (type === 'toxicology' || canonical === 'toxicology' || /(toksikoloji|zehir|etanol|benzodiazepin|parasetamol|digoksin|kolinesteraz|ilaç düzeyi)/.test(text)) return 'toxicology';
+  if (type === 'endoscopy' || canonical === 'endoscopy' || /(endoskopi|kolonoskopi|bronkoskopi|laringoskopi)/.test(text)) return 'gastrointestinal';
+  if (['ct', 'mri', 'ultrasound', 'xray', 'nuclear', 'imaging'].includes(type) || ['xray', 'ctpa', 'cta', 'brain-ct', 'ct', 'mri', 'ultrasound'].includes(canonical) || /(grafi|radyografi|bt|tomografi|mr\b|mri|ultrason|usg|doppler|sintigrafi)/.test(text)) return 'imaging';
   if (/(glukoz|elektrolit|keton|metabolik)/.test(text)) return 'metabolic';
-  if (type === 'culture' || canonical === 'culture' || /(kültür|mikrobiyoloji|mikroskopi)/.test(text)) return 'microbiology';
-  if (type === 'endoscopy' || canonical === 'endoscopy' || /(ponksiyon|biyopsi|kateterizasyon)/.test(text)) return 'invasive';
-  if (['lab', 'clinical', 'neurophysiology'].includes(type) || ['cbc', 'coagulation', 'liver', 'troponin', 'electrolytes', 'biochemistry', 'abg', 'd-dimer', 'inflammation', 'lactate'].includes(canonical)) return 'laboratory';
-  if (['ct', 'mri', 'ultrasound', 'xray', 'nuclear'].includes(type) || ['xray', 'ctpa', 'cta', 'brain-ct', 'ct', 'mri', 'ultrasound'].includes(canonical)) return 'imaging';
-  if (/(kan gazı|solunum|pulmoner)/.test(text)) return 'respiratory';
+  if (['lab'].includes(type) || ['cbc', 'coagulation', 'liver', 'troponin', 'electrolytes', 'biochemistry', 'd-dimer', 'inflammation', 'lactate'].includes(canonical)) return 'laboratory';
+  if (type === 'neurophysiology') return 'neurologic';
   return 'other';
 }
-
 
 const genericOrderBank = [
   { id: 'cbc-screen', label: 'Hemogram', type: 'lab', priority: 'useful', synthetic: true },

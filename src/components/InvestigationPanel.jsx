@@ -13,13 +13,16 @@ import {
 const CATEGORY_ORDER = [
   'bedside',
   'cardiac',
+  'clinicalAssessment',
   'laboratory',
   'imaging',
   'respiratory',
   'neurologic',
   'gastrointestinal',
   'microbiology',
+  'fluidAnalysis',
   'pathology',
+  'functional',
   'urogenital',
   'urine',
   'metabolic',
@@ -360,8 +363,8 @@ function expandCompositeResultRows(rows = []) {
   return rows.flatMap((row) => splitCompositeResultRow(row));
 }
 
-const PARAMETER_TABLE_TYPES = new Set(['lab', 'urine', 'culture', 'toxicology']);
-const QUALITATIVE_RESULT_TYPES = new Set(['ecg', 'xray', 'ct', 'mri', 'ultrasound', 'imaging', 'microscopy', 'pathology', 'endoscopy', 'clinical', 'neurophysiology', 'nuclear']);
+const PARAMETER_TABLE_TYPES = new Set(['lab', 'bloodGas', 'urine', 'culture', 'toxicology', 'bloodBank']);
+const QUALITATIVE_RESULT_TYPES = new Set(['ecg', 'xray', 'ct', 'mri', 'ultrasound', 'imaging', 'microscopy', 'pathology', 'endoscopy', 'clinical', 'physicalExam', 'woundAssessment', 'microbiology', 'fluidAnalysis', 'functionalTest', 'neurophysiology', 'nuclear']);
 
 
 function DenseResultText({ text = '' }) {
@@ -681,7 +684,7 @@ function summaryDuplicatesStructuredRows(summary = '', rows = []) {
 
 function isVisualResultItem(item = {}) {
   const text = `${item.id || ''} ${item.label || ''} ${item.title || ''} ${item.type || ''} ${item.subtype || ''}`.toLocaleLowerCase('tr');
-  if (['xray', 'ct', 'mri', 'ultrasound', 'ecg', 'echo', 'endoscopy', 'microscopy', 'pathology', 'clinical', 'neurophysiology', 'nuclear'].includes(item.type)) return true;
+  if (['xray', 'ct', 'mri', 'ultrasound', 'ecg', 'echo', 'endoscopy', 'microscopy', 'pathology', 'clinical', 'physicalExam', 'woundAssessment', 'microbiology', 'fluidAnalysis', 'functionalTest', 'neurophysiology', 'nuclear'].includes(item.type)) return true;
   return /(grafi|radyografi|röntgen|xray|bt|ct|tomografi|mr\b|mri|ultrason|usg|ekokardiyografi|eko\b|doppler|ekg|elektrokardiyografi|eeg|endoskopi|kolonoskopi|bronkoskopi|fundoskopi|dermatoskopi|biyopsi|patoloji|histopatoloji|mikroskopi|periferik yayma|gram boyama|immünfloresan|immunfloresan|klinik fotoğraf|lezyon fotoğrafı|görsel)/.test(text);
 }
 
