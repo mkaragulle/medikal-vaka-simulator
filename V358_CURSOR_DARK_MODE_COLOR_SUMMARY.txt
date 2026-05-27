@@ -1,9 +1,0 @@
-KlinikIQ V358 Cursor Dark Mode Color Summary
-
-- V357 tab return fix baz alındı.
-- Cursor artık light/dark tema durumunu otomatik algılar.
-- Light mode: mevcut sade teal renk korunur.
-- Dark mode: daha parlak ama sade mint/cyan tonuna geçer.
-- Dış halka, merkez nokta, comet noktası ve kuyruk opacity değerleri dark mode için ayrı ayarlandı.
-- Tema değişimi anlık algılanır: html/body/app-shell data-theme ve localStorage izlenir.
-- Sekmeler arası dönüş ve cursor recovery mantığı korunur.

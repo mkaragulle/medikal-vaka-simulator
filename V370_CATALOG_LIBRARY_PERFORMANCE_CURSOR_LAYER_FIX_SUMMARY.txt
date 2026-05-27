@@ -1,9 +1,0 @@
-KlinikIQ V370 — Kataloglarım Library Performance + Cursor Layer Fix
-
-- Kataloglarım > Tüm kartlardan ekle alanında tüm kartların aynı anda render edilmesi engellendi.
-- İlk etapta 48 kart gösterilir; ihtiyaç oldukça "Daha fazla göster" ile 48'er kart eklenir.
-- Arama veya kaynak filtresi değiştiğinde görünen kart sayısı otomatik olarak ilk limite döner.
-- Library ve katalog liste satırlarında ağır GlossaryText render'ı kaldırıldı; soru metni sade, hızlı ve iki satır clamp ile gösterilir.
-- Aktif katalog üyelik kontrolü Set üzerinden yapılır; her satırda includes taraması azaltıldı.
-- Kart silme "Emin misin?" pop-up'ının custom cursor üstüne çıkması engellendi; pop-up z-index'i cursor altında tutuldu.
-- V369'daki TUS Spot answer dağılım fix'i, V367 custom scrollbar stili, cursor ve görsel/fizik muayene düzeltmeleri korunur.
