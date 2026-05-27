@@ -710,6 +710,14 @@ function sanitizeRows(rows = []) {
   });
 }
 
+
+function isNonClinicalMechanismInvestigation(item = {}) {
+  const visibleText = `${item.label || ''} ${item.title || ''} ${item.type || ''} ${item.subtype || ''} ${item.category || ''} ${item.testTypeCategory || ''} ${item.summary || ''}`.toLocaleLowerCase('tr');
+  const realMeasurementPattern = /(solunum fonksiyon|spirometri|zorlu vital kapasite|fetal kalp|kardiyotokografi|nst|hiperoksi|difüzyon kapasitesi|kompartman basıncı|ürodinami|urodinami|pah klirensi|klirens hesaplaması|su kısıtlama testi|idrar osmolalitesi|egzersiz sonrası kan gazı|kan basıncı ve nabız|renal fonksiyon|idrar sodyumu|arter kan gazı|ekokardiyografik|periferik dolaşım muayenesi)/;
+  const mechanismPattern = /(fizyolojik mekanizma|patofizyolojik mekanizma|gaz taşınması mekanizması|otonom sinaptik mekanizma|kardiyak hemodinamik mekanizma|renal hemodinamik mekanizma|su dengesi mekanizması|otonom refleks mekanizması|tubuloglomerüler geri bildirim|makula densa|bohr etkisi|haldane etkisi|frank-starling|baroreseptör|raas aktivasyonu|modellendi|modelleme|simülasyon bulgusu|beklenen fizyolojik yön)/;
+  return mechanismPattern.test(visibleText) && !realMeasurementPattern.test(visibleText);
+}
+
 function normalizeInvestigation(item, clinicalCase, index = 0) {
   const id = item.id || normalizeId(item.label || `istem-${index + 1}`);
   const type = item.type || 'clinical';
@@ -798,6 +806,7 @@ export function buildInvestigationOrders(clinicalCase = {}) {
 
   const caseItems = explicitSource
     .filter((item) => item && item.type !== 'management' && item.orderable !== false)
+    .filter((item) => !isNonClinicalMechanismInvestigation(item))
     .map((item, index) => normalizeInvestigation(item, clinicalCase, index));
 
   // KlinikIQ vaka verileri artık tetkik kararını vaka özelinde taşır. Bu nedenle
