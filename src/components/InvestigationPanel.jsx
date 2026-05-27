@@ -796,6 +796,26 @@ function normalizeForDuplicateCheck(text = '') {
   return normalizeClinicalText(text).replace(/[^a-z0-9ığüşöçİĞÜŞÖÇ]+/gi, ' ').trim();
 }
 
+
+const EMPTY_SHORT_COMMENT_PATTERNS = [
+  /ile birlikte yorumlandığında/i,
+  /gerektiğini gösterir/i,
+  /klinik yorumu destekleyen objektif/i,
+  /klinik değerlendirmeyi destekleyen objektif/i,
+  /objektif verilerden biridir/i,
+  /ilgili klinik yorum için destekleyici veri sağlar/i,
+  /klinik yorumu vaka verisiyle ilişkilendirir/i,
+  /^\s*(bilgi|anormal bulgu|klinikle uyumludur|tanıyı destekler)\.?\s*$/i,
+];
+
+function isMeaningfulShortComment(text = '') {
+  const cleanText = String(text || '').replace(/\s+/g, ' ').trim();
+  if (!cleanText) return false;
+  if (EMPTY_SHORT_COMMENT_PATTERNS.some((pattern) => pattern.test(cleanText))) return false;
+  if (cleanText.length < 24 && !/[.;]/.test(cleanText)) return false;
+  return true;
+}
+
 function summaryDuplicatesStructuredRows(summary = '', rows = []) {
   const summaryText = normalizeForDuplicateCheck(summary);
   if (!summaryText || !rows.length) return false;
@@ -819,8 +839,9 @@ function InlineOrderResult({ item, mode, hardMode = false, glossaryRevealMode = 
   const result = item.result || {};
   const hasRows = Boolean(result.rows?.length);
   const hasImages = Boolean(result.images?.length) && isVisualResultItem(item);
-  const hasSummary = Boolean(result.summary && result.format !== 'empty');
-  const shouldShowSummary = hasSummary && (!hasRows || !summaryDuplicatesStructuredRows(result.summary, result.rows));
+  const summaryText = sanitizeMeasurementText(result.summary || '').trim();
+  const hasSummary = Boolean(summaryText && result.format !== 'empty' && isMeaningfulShortComment(summaryText));
+  const shouldShowSummary = hasSummary && (!hasRows || !summaryDuplicatesStructuredRows(summaryText, result.rows));
   const [showVisualHelp, setShowVisualHelp] = useState(false);
   const visualFirstMode = hasImages;
   const revealScientificInterpretation = !visualFirstMode || showVisualHelp;
@@ -853,7 +874,7 @@ function InlineOrderResult({ item, mode, hardMode = false, glossaryRevealMode = 
             {shouldShowSummary ? (
               <div className={`ordered-result-comment ${hasRows || hasImages ? 'after-objective-data' : 'standalone'}`}>
                 {(hasRows || hasImages) ? <span>Kısa yorum</span> : null}
-                <p className="ordered-result-summary inline-result-summary"><GlossaryText text={sanitizeMeasurementText(result.summary)} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={5} /></p>
+                <p className="ordered-result-summary inline-result-summary"><GlossaryText text={summaryText} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={5} /></p>
               </div>
             ) : null}
           </div>

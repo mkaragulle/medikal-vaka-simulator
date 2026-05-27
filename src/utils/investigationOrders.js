@@ -748,20 +748,20 @@ function normalizeInvestigation(item, clinicalCase, index = 0) {
     source: 'case',
     resultType: item.rows?.length ? 'table' : images.length ? 'image' : 'text',
     purpose: item.purpose || orderPurposeFor({ ...item, label, type, priority }, clinicalCase),
-    clinicalMeaning: item.clinicalMeaning || item.result?.interpretation || clinicalMeaningFor({ ...item, label, type, priority }, clinicalCase),
+    clinicalMeaning: item.clinicalMeaning || item.result?.interpretation || '',
     result: {
       format: item.rows?.length ? 'table' : images.length ? 'image' : 'text',
       title: item.result?.title || item.label || label,
-      summary: item.summary ? sanitizeSummary(item.summary, clinicalCase) : syntheticSummaryFor(item, clinicalCase),
-      interpretation: item.clinicalMeaning || item.result?.interpretation || clinicalMeaningFor({ ...item, label, type, priority }, clinicalCase),
+      summary: item.summary ? sanitizeSummary(item.summary, clinicalCase) : '',
+      interpretation: item.clinicalMeaning || item.result?.interpretation || '',
       rows: sanitizeRows(item.result?.values || item.rows || syntheticRowsFor(item, clinicalCase)),
       images,
       caption: item.result?.caption || '',
     },
     inlineFeedback: item.inlineFeedback || getOrderFeedback({ ...item, priority }),
-    rationale: item.rationale || item.explanationAfterAnswer || item.postAnswerExplanation || postAnswerExplanationFor({ ...item, priority }),
-    postAnswerExplanation: item.postAnswerExplanation || item.findings?.[0] || postAnswerExplanationFor({ ...item, priority }),
-    explanationAfterAnswer: item.explanationAfterAnswer || item.postAnswerExplanation || item.findings?.[0] || postAnswerExplanationFor({ ...item, priority }),
+    rationale: item.rationale || item.explanationAfterAnswer || item.postAnswerExplanation || '',
+    postAnswerExplanation: item.postAnswerExplanation || item.findings?.[0] || '',
+    explanationAfterAnswer: item.explanationAfterAnswer || item.postAnswerExplanation || item.findings?.[0] || '',
   };
 }
 
@@ -787,19 +787,19 @@ function normalizeSynthetic(item, clinicalCase, index = 0) {
     source: 'suggested',
     resultType: rows.length ? 'table' : images.length ? 'image' : 'text',
     purpose: item.purpose || orderPurposeFor({ ...item, priority }, clinicalCase),
-    clinicalMeaning: item.clinicalMeaning || clinicalMeaningFor({ ...item, priority }, clinicalCase),
+    clinicalMeaning: item.clinicalMeaning || '',
     result: {
       format: rows.length ? 'table' : images.length ? 'image' : 'text',
       title: item.label,
-      summary: syntheticSummaryFor(item, clinicalCase),
-      interpretation: item.clinicalMeaning || clinicalMeaningFor({ ...item, priority }, clinicalCase),
+      summary: '',
+      interpretation: item.clinicalMeaning || '',
       rows: sanitizeRows(rows),
       images,
     },
     inlineFeedback: item.inlineFeedback || getOrderFeedback({ ...item, priority }),
-    rationale: item.rationale || item.explanationAfterAnswer || item.postAnswerExplanation || postAnswerExplanationFor({ ...item, priority }),
-    postAnswerExplanation: item.postAnswerExplanation || postAnswerExplanationFor({ ...item, priority }),
-    explanationAfterAnswer: item.explanationAfterAnswer || item.postAnswerExplanation || postAnswerExplanationFor({ ...item, priority }),
+    rationale: item.rationale || item.explanationAfterAnswer || item.postAnswerExplanation || '',
+    postAnswerExplanation: item.postAnswerExplanation || '',
+    explanationAfterAnswer: item.explanationAfterAnswer || '',
   };
 }
 
