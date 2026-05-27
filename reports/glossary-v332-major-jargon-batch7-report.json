@@ -1,0 +1,427 @@
+{
+  "version": "V332",
+  "sourceZip": "KlinikIQ_V331_OBJECTIVE_DATA_LAB_ROW_SPLIT_FIX(2).zip",
+  "sourceCandidateFile": "glossary-v331-major-disease-jargon-gap-batch7(1).json",
+  "sourceCandidateCount": 125,
+  "acceptedNewEntries": 72,
+  "skippedOrMerged": 53,
+  "skippedBreakdown": {
+    "already_exists_or_alias_collision": 53
+  },
+  "acceptedTerms": [
+    "Ensefalit",
+    "HBV",
+    "Hipotiroidi",
+    "Atipik pnömoni",
+    "Aspirin",
+    "Protamin sülfat",
+    "Endoskopi",
+    "Levotiroksin",
+    "Oksitosin",
+    "Streptococcus pneumoniae",
+    "Aktif kömür",
+    "Haemophilus influenzae",
+    "Candida albicans",
+    "Peptik ülser hastalığı",
+    "Tiroid nodülü",
+    "HPV",
+    "Klopidogrel",
+    "Legionella pneumophila",
+    "Toxoplasma gondii",
+    "Neisseria meningitidis",
+    "HCV",
+    "Over kanseri",
+    "Miyokardit",
+    "Glukagon",
+    "Pelvik inflamatuar hastalık",
+    "EHEC",
+    "ETEC",
+    "Metimazol",
+    "Migren",
+    "HAV",
+    "Neisseria gonorrhoeae",
+    "Norepinefrin",
+    "Epilepsi",
+    "Albuminüri",
+    "Sferosit",
+    "Anti-TPO",
+    "CHA2DS2-VASc",
+    "Aspergillus fumigatus",
+    "Gestasyonel diyabet",
+    "Haptoglobin düşüklüğü",
+    "Epididimit",
+    "HSV",
+    "Klebsiella pneumoniae",
+    "Kızamık",
+    "Hipernatremi",
+    "FeNa",
+    "Akciğer kanseri",
+    "Kalsiyum kanal blokeri",
+    "Serviks kanseri",
+    "Wolff-Parkinson-White sendromu",
+    "Akut perikardit",
+    "BUN/kreatinin oranı",
+    "Propiltiyourasil",
+    "Suçiçeği",
+    "Alzheimer hastalığı",
+    "HbA1c",
+    "Influenza",
+    "Piyelonefrit",
+    "Prostat kanseri",
+    "Atriyal flutter",
+    "PPD",
+    "APGAR skoru",
+    "Hemofili A",
+    "VZV",
+    "Üre döngüsü defekti",
+    "Bishop skoru",
+    "RPR",
+    "Transözofageal ekokardiyografi",
+    "VDRL",
+    "Mitral yetmezlik",
+    "Nefrolitiazis",
+    "Trastuzumab"
+  ],
+  "skippedTerms": [
+    {
+      "term": "Hipoglisemi",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "hipoglisemi",
+      "matchedNorm": "hipoglisemi"
+    },
+    {
+      "term": "Tansiyon pnömotoraks",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Tansiyon pnömotoraks",
+      "matchedNorm": "tansiyon pnomotoraks"
+    },
+    {
+      "term": "Testis torsiyonu",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Testis torsiyonu",
+      "matchedNorm": "testis torsiyonu"
+    },
+    {
+      "term": "İnvajinasyon",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "İnvajinasyon",
+      "matchedNorm": "invajinasyon"
+    },
+    {
+      "term": "Ventriküler taşikardi",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Ventriküler Taşikardi",
+      "matchedNorm": "ventrikuler tasikardi"
+    },
+    {
+      "term": "Plasenta dekolmanı",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Ablatio plasenta",
+      "matchedNorm": "plasenta dekolmani"
+    },
+    {
+      "term": "Guillain-Barré sendromu",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Guillain-Barré sendromu",
+      "matchedNorm": "guillain-barre sendromu"
+    },
+    {
+      "term": "Pnömoni",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Bakteriyel pnömoni",
+      "matchedNorm": "pnomoni"
+    },
+    {
+      "term": "Hiperglisemi",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Hiperglisemi",
+      "matchedNorm": "hiperglisemi"
+    },
+    {
+      "term": "Astım",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Astım",
+      "matchedNorm": "astim"
+    },
+    {
+      "term": "Medüller tiroid karsinomu",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Medüller tiroid karsinomu",
+      "matchedNorm": "meduller tiroid karsinomu"
+    },
+    {
+      "term": "Pnömotoraks",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Pnömotoraks",
+      "matchedNorm": "pnomotoraks"
+    },
+    {
+      "term": "Magnezyum sülfat",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Magnezyum sülfat",
+      "matchedNorm": "magnezyum sulfat"
+    },
+    {
+      "term": "HIV",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "HIV",
+      "matchedNorm": "hiv"
+    },
+    {
+      "term": "Meckel divertikülü",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Meckel divertikülü",
+      "matchedNorm": "meckel divertikulu"
+    },
+    {
+      "term": "G6PD eksikliği",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "G6PD eksikliği",
+      "matchedNorm": "g6pd eksikligi"
+    },
+    {
+      "term": "Akut böbrek hasarı",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "akut böbrek hasarı",
+      "matchedNorm": "akut bobrek hasari"
+    },
+    {
+      "term": "Schistosit",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Şistosit",
+      "matchedNorm": "sistosit"
+    },
+    {
+      "term": "Minimal değişiklik hastalığı",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Minimal değişiklik hastalığı",
+      "matchedNorm": "minimal degisiklik hastaligi"
+    },
+    {
+      "term": "Romatizmal ateş",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Akut romatizmal ateş",
+      "matchedNorm": "akut romatizmal ates"
+    },
+    {
+      "term": "Fenilketonüri",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Fenilketonüri",
+      "matchedNorm": "fenilketonuri"
+    },
+    {
+      "term": "Membranöz nefropati",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Membranöz nefropati",
+      "matchedNorm": "membranoz nefropati"
+    },
+    {
+      "term": "ACE inhibitörü",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "ACE inhibitörü",
+      "matchedNorm": "ace inhibitoru"
+    },
+    {
+      "term": "Lomber ponksiyon",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Lomber ponksiyon",
+      "matchedNorm": "lomber ponksiyon"
+    },
+    {
+      "term": "Demir eksikliği anemisi",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Demir eksikliği anemisi",
+      "matchedNorm": "demir eksikligi anemisi"
+    },
+    {
+      "term": "Renal tübüler asidoz",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Renal tübüler asidoz",
+      "matchedNorm": "renal tubuler asidoz"
+    },
+    {
+      "term": "Çölyak hastalığı",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Çölyak hastalığı",
+      "matchedNorm": "colyak hastaligi"
+    },
+    {
+      "term": "Ketonüri",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Ketonüri",
+      "matchedNorm": "ketonuri"
+    },
+    {
+      "term": "Retikülositoz",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Retikülositoz",
+      "matchedNorm": "retikulositoz"
+    },
+    {
+      "term": "Aplastik anemi",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Kemik iliği yetmezliği",
+      "matchedNorm": "kemik iligi yetmezligi"
+    },
+    {
+      "term": "Ventriküler septal defekt",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "VSD",
+      "matchedNorm": "ventrikuler septal defekt"
+    },
+    {
+      "term": "Akçaağaç şurubu idrar hastalığı",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Akçaağaç şurubu idrar hastalığı",
+      "matchedNorm": "akcaagac surubu idrar hastaligi"
+    },
+    {
+      "term": "Sjögren sendromu",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Sjögren sendromu",
+      "matchedNorm": "sjogren sendromu"
+    },
+    {
+      "term": "Kawasaki hastalığı",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Kawasaki hastalığı",
+      "matchedNorm": "kawasaki hastaligi"
+    },
+    {
+      "term": "İndirekt Coombs testi",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "İndirekt Coombs testi",
+      "matchedNorm": "indirekt coombs testi"
+    },
+    {
+      "term": "Hirschsprung hastalığı",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Hirschsprung hastalığı",
+      "matchedNorm": "hirschsprung hastaligi"
+    },
+    {
+      "term": "İleus",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "İleus",
+      "matchedNorm": "ileus"
+    },
+    {
+      "term": "Parkinson hastalığı",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Parkinson hastalığı",
+      "matchedNorm": "parkinson hastaligi"
+    },
+    {
+      "term": "Kronik böbrek hastalığı",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Kronik böbrek hastalığı",
+      "matchedNorm": "kronik bobrek hastaligi"
+    },
+    {
+      "term": "Plevral efüzyon",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "plevral efüzyon",
+      "matchedNorm": "plevral efuzyon"
+    },
+    {
+      "term": "Sistemik skleroz",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Sistemik skleroz",
+      "matchedNorm": "sistemik skleroz"
+    },
+    {
+      "term": "Bilier atrezi",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Biliyer atrezi",
+      "matchedNorm": "biliyer atrezi"
+    },
+    {
+      "term": "Kostovertebral açı hassasiyeti",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Kostovertebral açı hassasiyeti",
+      "matchedNorm": "kostovertebral aci hassasiyeti"
+    },
+    {
+      "term": "Akut lenfoblastik lösemi",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Akut lenfoblastik lösemi",
+      "matchedNorm": "akut lenfoblastik losemi"
+    },
+    {
+      "term": "Graves hastalığı",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Graves hastalığı",
+      "matchedNorm": "graves hastaligi"
+    },
+    {
+      "term": "İnfektif endokardit",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "İnfektif endokardit",
+      "matchedNorm": "infektif endokardit"
+    },
+    {
+      "term": "Patent duktus arteriyozus",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Patent duktus arteriozus",
+      "matchedNorm": "pda"
+    },
+    {
+      "term": "PCI",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "primer PCI",
+      "matchedNorm": "pci"
+    },
+    {
+      "term": "Uzun QT sendromu",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "QT uzaması",
+      "matchedNorm": "long qt"
+    },
+    {
+      "term": "McBurney noktası",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "McBurney noktası",
+      "matchedNorm": "mcburney noktasi"
+    },
+    {
+      "term": "Behçet hastalığı",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Behçet hastalığı",
+      "matchedNorm": "behcet hastaligi"
+    },
+    {
+      "term": "Wells skoru",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "Wells skoru",
+      "matchedNorm": "wells skoru"
+    },
+    {
+      "term": "LDH yüksekliği",
+      "reason": "already_exists_or_alias_collision",
+      "matched": "LDH yüksekliği",
+      "matchedNorm": "ldh yuksekligi"
+    }
+  ],
+  "validation": {
+    "normalizedTotalBefore": 2136,
+    "normalizedTotalAfter": 2208,
+    "missingAcceptedTerms": [],
+    "auditCritical": 0,
+    "auditHigh": 0,
+    "nodeImportValidation": "passed",
+    "npmBuild": "not_run_no_node_modules_vite_unavailable"
+  },
+  "changedFiles": [
+    "src/data/tusGlossaryV332MajorJargonBatch7Index.js",
+    "src/utils/glossary.js",
+    "reports/glossary-v332-major-jargon-batch7-report.md",
+    "reports/glossary-v332-major-jargon-batch7-report.json"
+  ],
+  "qualityNotes": [
+    "Exact term and alias collisions against V331 active glossary were skipped.",
+    "Short acronym terms keep case-sensitive display metadata.",
+    "A generic alias was dropped from Oksitosin: uterotonik.",
+    "Pre-answer definitions were kept safe and diagnostic pearls were placed after-answer fields.",
+    "Glossary matching, hover delay, nested tooltip behavior and question/card logic were not changed."
+  ]
+}

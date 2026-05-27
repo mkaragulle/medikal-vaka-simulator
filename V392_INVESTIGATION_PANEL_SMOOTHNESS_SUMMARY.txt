@@ -1,0 +1,28 @@
+KlinikIQ V392 — Objektif Veri / Tetkik Açılış Akıcılığı
+
+Hedef:
+- Objektif Veri / Tetkik bölümüne geçerken ve tetkik kartı açarken oluşan mikro takılmayı azaltmak.
+- Tasarımı değiştirmeden render, glossary parsing, smooth-scroll ve animasyon kaynaklı yükleri düşürmek.
+
+Değişiklikler:
+1. CasePlayer.jsx
+- Öykü / Muayene / Tetkik bölüm navigasyonunda smooth scroll yerine anlık scroll davranışı kullanıldı.
+- Tetkik sekmesine basıldığında uzun smooth-scroll animasyonunun tetiklediği scroll-spy ve layout hesapları azaltıldı.
+
+2. InvestigationPanel.jsx
+- Tetkik kart listesinde kategori başlığı, açıklama, test adı ve alt tip için pahalı GlossaryText parsing kaldırıldı; metin aynı kaldı.
+- Açılan sonuç/yorum alanlarında glossary desteği korunmuştur.
+- OrderCard ve InlineOrderResult memoize edildi.
+- Seçili/açık tetkik kontrolleri Set tabanlı hale getirildi.
+- Kart seçimi sırasında tüm tetkik kartlarının gereksiz re-render yükü azaltıldı.
+- ResultTable ve ResultFindingList memoize edildi.
+- Stable handler/ref yapısı ile tıklama sonrası stale state riski azaltıldı.
+
+3. index.css
+- Objektif Veri / Tetkik alanındaki açılış animasyonu devre dışı bırakıldı.
+- Tetkik alanında scroll davranışı auto yapıldı.
+- Tetkik kartı ve inline sonuç alanlarında layout/style containment eklenerek panel içi reflow etkisi azaltıldı.
+- Hover/focus tasarımı korunarak transition süresi kısaltıldı.
+
+Not:
+- Görsel tasarım, metinler, vaka verileri ve tetkik sonuçları değiştirilmemiştir.

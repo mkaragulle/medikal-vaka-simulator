@@ -57,14 +57,6 @@ export function normalizeClinicalUnit(unit = '') {
 
 export function sanitizeMeasurementText(text = '') {
   let value = normalizeDecimalSpacing(text)
-    .replace(/g\/g\s*mg\/dL/gi, 'g/g')
-    .replace(/mg\/mg/gi, 'g/g')
-    .replace(/\/HPF\s*fL/gi, '/HPF')
-    .replace(/\/HPF\/mm[³3]/gi, '/HPF')
-    .replace(/mOsm\/kg\s*mmol\/L/gi, 'mOsm/kg')
-    .replace(/ng\/L\s*mg\/dL/gi, 'ng/L')
-    .replace(/pg\/mL\s*ng\/mL/gi, 'pg/mL')
-    .replace(/mmHg\s*mmol\/L/gi, 'mmHg')
     .replace(/\bPH\b/g, 'pH')
     .replace(/\bSpO2\b/g, 'SpO₂')
     .replace(/\bHCO3-\b/g, 'HCO₃⁻')

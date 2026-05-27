@@ -1,0 +1,9 @@
+KlinikIQ V360 Cursor Scrollbar Duplicate Pointer Fix
+
+- Windows/native scrollbar üzerine gelindiğinde custom cursor artık gizlenir.
+- Böylece scrollbar alanında hem KlinikIQ imleci hem de Windows standart imleci aynı anda görünmez.
+- Viewport scrollbar ve iç scrollable container scrollbar alanları için algılama eklendi.
+- Light/dark mode cursor renk ayrımı korundu.
+- Sekmeler arası geçişte cursor kaybolmama fix'i korundu.
+- Dönen beyaz nokta/kuyruk efekti kaldırılmış sade cursor tasarımı korundu.
+- Input/textarea/select alanlarında klasik text cursor davranışı korundu.

@@ -1,0 +1,40 @@
+KlinikIQ V389 — Büyük Veri Alanları Akıcılık Optimizasyonu
+
+Hedef:
+- Tasarımı değiştirmeden Kişisel tekrar ve Klinik branş seç çevresindeki takılma, mouse mikro-donması ve büyük veri render yükünü azaltmak.
+
+Yapılan teknik değişiklikler:
+1. PremiumCursor.jsx no-op cleanup component haline getirildi.
+   - Eski custom cursor node/style/class temizleniyor.
+   - Global pointermove + requestAnimationFrame render döngüsü kaldırıldı.
+   - Native cursor geri bırakıldı.
+
+2. KlinikIQCustomScrollbars.jsx sadeleştirildi.
+   - Görünmez scrollbar CSS korunuyor.
+   - Eski custom scrollbar node/style/class temizleniyor.
+   - Tüm body subtree üzerinde çalışan MutationObserver kaldırıldı.
+
+3. Custom scrollbar rescan eventleri kaldırıldı.
+   - CaseList yatay olgu listesi artık klinikiq:scrollbars-rescan dispatch etmiyor.
+   - TusPearlStudyScreen katalog sanal listesi artık scrollbar rescan dispatch etmiyor.
+
+4. Diğer olgular search performansı iyileştirildi.
+   - Ağır recursive case search text oluşturma WeakMap cache içine alındı.
+   - Arama useDeferredValue ile düşük öncelikli hesaplanıyor; typing/render blokajı azalır.
+
+5. Ana sayfadaki ağır bölümler kontrollü mount ediliyor.
+   - DeferredHomeSection yeniden aktif edildi; loader/ara ekran yok.
+   - IntersectionObserver + requestIdleCallback ile Kişisel tekrar ve Klinik branş seç bölümleri görünmeden önce/idle zamanda hazırlanıyor.
+   - Gözle görünen “hazırlanıyor” ekranı eklenmedi.
+
+6. Kişisel tekrar sayım fonksiyonları optimize edildi.
+   - Hap kart sayımları 5 ayrı filter turu yerine tek pass ile hesaplanıyor.
+
+7. CSS performans cilası eklendi.
+   - Büyük home sectionlar için content-visibility/contain uygulanarak viewport dışı paint maliyeti azaltıldı.
+   - Ağır branch grid sürekli SVG animasyonları durduruldu; ikonlar aynı tasarımda statik kalır.
+   - Dekoratif ambient animasyonlar durduruldu.
+
+Build testi:
+- npm run build başarılı tamamlandı.
+- Sadece mevcut büyük chunk uyarıları var; hata değil.

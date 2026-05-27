@@ -1,0 +1,9 @@
+KlinikIQ V359 Cursor Comet Removed Summary
+
+- V358 baz alındı.
+- Beyaz dönen nokta tamamen kaldırıldı.
+- Kuyruk efekti tamamen kaldırıldı.
+- Cursor sade halka + merkez nokta formuna geri döndürüldü.
+- Light/dark mode renk ayrımı korundu.
+- Sekmeler arası geçişte cursor kaybolmama recovery mantığı korundu.
+- Eski V355/V356/V357/V358 cursor kalıntılarını temizleme mantığı korundu.

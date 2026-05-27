@@ -1,0 +1,17 @@
+V345 — Premium Cursor Activation Fix
+
+Problem:
+Önceki versiyonda custom cursor bazı masaüstü/touch destekli cihazlarda hiç aktif olmuyordu. Ana sebep pointer/hover media query kontrolünün fazla katı olması ve CSS tarafında (pointer: coarse)/(hover: none) durumunda cursor sisteminin tamamen gizlenmesiydi.
+
+Yapılan düzeltmeler:
+1. PremiumCursor.jsx içinde pointer kontrolü any-pointer/any-hover ve desktop fallback ile güçlendirildi.
+2. prefers-reduced-motion artık sistemi tamamen kapatmıyor; sadece animasyonları sadeleştiriyor.
+3. mousemove fallback eklendi; sadece pointermove'a bağımlılık kaldırıldı.
+4. CSS artık sadece sıkı @media bloğu içinde çalışmıyor; root class aktifse custom cursor görünür.
+5. Native cursor tüm body elemanlarında gizleniyor, input/textarea/select/contenteditable alanlarında klasik text cursor korunuyor.
+6. Glossary, interactive ve loading modları aynı kaldı ama görünürlük daha belirgin hale getirildi.
+
+Test notu:
+- Desktop tarayıcıda mouse hareketinden sonra html elementine premium-cursor-enabled class'ı eklenir.
+- DOM içinde .premium-cursor görünür.
+- Glossary üzerine gelince i modu, buton/kartlarda büyüyen halka modu, loading alanlarında spinner modu çalışır.

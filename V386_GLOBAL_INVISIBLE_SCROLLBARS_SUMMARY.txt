@@ -1,0 +1,23 @@
+KlinikIQ V386 — Global Invisible Scrollbars
+
+Scope:
+- Project-wide scrollbar visual removal while preserving scroll behavior.
+
+Changes:
+1. Reworked src/components/KlinikIQCustomScrollbars.jsx into a lightweight cleanup/no-op component.
+   - It no longer creates fixed custom scrollbar tracks or draggable overlay thumbs.
+   - It removes legacy v364/v365/v366/v367 scrollbar layers and classes if they appear.
+   - It injects a global hidden-scrollbar style at runtime as a safety layer.
+
+2. Added a V386 override block to src/index.css.
+   - Hides WebKit scrollbars with width/height 0 and display none.
+   - Hides Firefox scrollbars with scrollbar-width: none.
+   - Clears scrollbar-color and scrollbar-gutter so no visual rail/gutter remains.
+   - Forces legacy custom scrollbar track/thumb nodes invisible and non-interactive.
+
+Behavior preserved:
+- Vertical and horizontal scroll still work through wheel, trackpad, touch, keyboard, and programmatic scroll.
+- The existing horizontal wheel handler for “Diğer olgular” remains unchanged.
+
+Note:
+- Because scrollbars are visually removed, users cannot drag a visible scrollbar thumb. Scrolling remains functional through normal input methods.

@@ -13,16 +13,13 @@ import {
 const CATEGORY_ORDER = [
   'bedside',
   'cardiac',
-  'clinicalAssessment',
   'laboratory',
   'imaging',
   'respiratory',
   'neurologic',
   'gastrointestinal',
   'microbiology',
-  'fluidAnalysis',
   'pathology',
-  'functional',
   'urogenital',
   'urine',
   'metabolic',
@@ -363,8 +360,8 @@ function expandCompositeResultRows(rows = []) {
   return rows.flatMap((row) => splitCompositeResultRow(row));
 }
 
-const PARAMETER_TABLE_TYPES = new Set(['lab', 'bloodGas', 'urine', 'culture', 'toxicology', 'bloodBank']);
-const QUALITATIVE_RESULT_TYPES = new Set(['ecg', 'xray', 'ct', 'mri', 'ultrasound', 'imaging', 'microscopy', 'pathology', 'endoscopy', 'clinical', 'physicalExam', 'woundAssessment', 'microbiology', 'fluidAnalysis', 'functionalTest', 'neurophysiology', 'nuclear']);
+const PARAMETER_TABLE_TYPES = new Set(['lab', 'urine', 'culture', 'toxicology']);
+const QUALITATIVE_RESULT_TYPES = new Set(['ecg', 'xray', 'ct', 'mri', 'ultrasound', 'imaging', 'microscopy', 'pathology', 'endoscopy', 'clinical', 'neurophysiology', 'nuclear']);
 
 
 function DenseResultText({ text = '' }) {
@@ -650,7 +647,7 @@ function VisualHelpGate({ open, onToggle, compact = false }) {
     <div className={`visual-interpretation-gate ${compact ? 'compact' : ''}`.trim()}>
       <div className="visual-interpretation-copy">
         <strong>Önce görseli kendin yorumla</strong>
-        <p>Önce anatomik lokalizasyonu, dağılımı, yoğunluk/sinyal değişikliğini ve vaka bulgularıyla ilişkisini değerlendir. Takıldığında Yardım Al ile bu görsele özel bilimsel yorumu açabilirsin.</p>
+        <p>Bu bulguda eğitim amacıyla yorum ilk aşamada gizlendi. Görseldeki patern, dağılım ve anatomik ipuçlarını değerlendirdikten sonra sistem yorumunu açabilirsin.</p>
       </div>
       <button
         type="button"
@@ -680,18 +677,10 @@ function summaryDuplicatesStructuredRows(summary = '', rows = []) {
   });
 }
 
-
-
-function isVisualResultItem(item = {}) {
-  const text = `${item.id || ''} ${item.label || ''} ${item.title || ''} ${item.type || ''} ${item.subtype || ''}`.toLocaleLowerCase('tr');
-  if (['xray', 'ct', 'mri', 'ultrasound', 'ecg', 'echo', 'endoscopy', 'microscopy', 'pathology', 'clinical', 'physicalExam', 'woundAssessment', 'microbiology', 'fluidAnalysis', 'functionalTest', 'neurophysiology', 'nuclear'].includes(item.type)) return true;
-  return /(grafi|radyografi|röntgen|xray|bt|ct|tomografi|mr\b|mri|ultrason|usg|ekokardiyografi|eko\b|doppler|ekg|elektrokardiyografi|eeg|endoskopi|kolonoskopi|bronkoskopi|fundoskopi|dermatoskopi|biyopsi|patoloji|histopatoloji|mikroskopi|periferik yayma|gram boyama|immünfloresan|immunfloresan|klinik fotoğraf|lezyon fotoğrafı|görsel)/.test(text);
-}
-
 function InlineOrderResult({ item, mode, hardMode = false, glossaryRevealMode = 'preAnswer' }) {
   const result = item.result || {};
   const hasRows = Boolean(result.rows?.length);
-  const hasImages = Boolean(result.images?.length) && isVisualResultItem(item);
+  const hasImages = Boolean(result.images?.length);
   const hasSummary = Boolean(result.summary && result.format !== 'empty');
   const shouldShowSummary = hasSummary && (!hasRows || !summaryDuplicatesStructuredRows(result.summary, result.rows));
   const [showVisualHelp, setShowVisualHelp] = useState(false);
@@ -726,7 +715,7 @@ function InlineOrderResult({ item, mode, hardMode = false, glossaryRevealMode = 
             {shouldShowSummary ? (
               <div className={`ordered-result-comment ${hasRows || hasImages ? 'after-objective-data' : 'standalone'}`}>
                 {(hasRows || hasImages) ? <span>Kısa yorum</span> : null}
-                <p className="ordered-result-summary inline-result-summary"><GlossaryText text={sanitizeMeasurementText(result.summary)} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={5} /></p>
+                <p className="ordered-result-summary inline-result-summary"><GlossaryText text={result.summary} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={5} /></p>
               </div>
             ) : null}
           </div>

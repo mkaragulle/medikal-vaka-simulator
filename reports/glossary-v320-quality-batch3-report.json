@@ -1,0 +1,456 @@
+{
+  "title": "KlinikIQ V320 Quality-Preserved Glossary Batch 3 Import Report",
+  "sourceFile": "glossary-v317-quality-preserved-batch3(1).json",
+  "sourceMetadata": {
+    "title": "KlinikIQ Glossary Quality-Preserved Additional Candidate Audit - V317 Batch 3",
+    "generatedAt": "2026-05-24T00:01:13",
+    "projectZip": "KlinikIQ_V317_OPTIONAL_BUTTON_ROOT_SIZE_FIX(1).zip",
+    "scanRoot": "/mnt/data/work_v317",
+    "scannedFiles": 112,
+    "activeGlossaryExactTermAliasCount": 4103,
+    "previousReportedExactTermCount": 368,
+    "selectedQualityPreservedCandidates": 69,
+    "P0": 12,
+    "P1": 53,
+    "P2": 4,
+    "changedFilesVsV311": [
+      {
+        "changeType": "changed",
+        "filePath": "src/components/TusPearlCardEditor.jsx"
+      },
+      {
+        "changeType": "changed",
+        "filePath": "src/components/tusPearlCards.css"
+      }
+    ],
+    "methodNote": "V317 clinical data files are effectively unchanged from V311; candidates were selected from missing exact active glossary entries found in relatedTerms/safeNestedTerms, candidate-audit context, and high-yield educational text phrases. Generic UI words and low-teaching standalone words were rejected."
+  },
+  "totalCandidates": 69,
+  "acceptedCount": 68,
+  "skippedCount": 1,
+  "acceptedTerms": [
+    {
+      "term": "Vasa previa",
+      "priority": "P0",
+      "category": "Kadın doğum / obstetrik acil",
+      "answerLeakRisk": "high"
+    },
+    {
+      "term": "Akut fetal kan kaybı",
+      "priority": "P1",
+      "category": "Kadın doğum / fetal acil",
+      "answerLeakRisk": "medium"
+    },
+    {
+      "term": "Acil doğum",
+      "priority": "P1",
+      "category": "Kadın doğum / acil karar",
+      "answerLeakRisk": "medium"
+    },
+    {
+      "term": "Üçüncü trimester kanama",
+      "priority": "P1",
+      "category": "Kadın doğum / obstetrik kanama",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Geç deselerasyon",
+      "priority": "P1",
+      "category": "Kadın doğum / fetal monitörizasyon",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Uteroplasental perfüzyon",
+      "priority": "P1",
+      "category": "Kadın doğum / fizyoloji",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Diskriminatuvar zon",
+      "priority": "P0",
+      "category": "Kadın doğum / erken gebelik",
+      "answerLeakRisk": "medium"
+    },
+    {
+      "term": "Seri β-hCG",
+      "priority": "P1",
+      "category": "Kadın doğum / erken gebelik",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Rüptüre ektopik gebelik",
+      "priority": "P0",
+      "category": "Kadın doğum / acil",
+      "answerLeakRisk": "medium"
+    },
+    {
+      "term": "Streak gonad",
+      "priority": "P1",
+      "category": "Endokrinoloji / gelişimsel gonad",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Turtle sign",
+      "priority": "P1",
+      "category": "Kadın doğum / doğum acili",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Fundal bası",
+      "priority": "P1",
+      "category": "Kadın doğum / doğum manevrası",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Vagal manevra",
+      "priority": "P1",
+      "category": "Kardiyoloji / ritim yönetimi",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Senkronize kardiyoversiyon",
+      "priority": "P0",
+      "category": "Kardiyoloji / acil ritim yönetimi",
+      "answerLeakRisk": "medium"
+    },
+    {
+      "term": "U dalgası",
+      "priority": "P1",
+      "category": "Kardiyoloji / EKG",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "PR uzaması",
+      "priority": "P1",
+      "category": "Kardiyoloji / EKG",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Geniş QRS taşikardi",
+      "priority": "P0",
+      "category": "Kardiyoloji / acil ritim",
+      "answerLeakRisk": "medium"
+    },
+    {
+      "term": "Yüksek V/Q ve alveoler ölü boşluk artışı",
+      "priority": "P1",
+      "category": "Göğüs hastalıkları / fizyoloji",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Tüp torakostomi",
+      "priority": "P0",
+      "category": "Göğüs cerrahisi / acil girişim",
+      "answerLeakRisk": "medium"
+    },
+    {
+      "term": "Mediastinal kayma",
+      "priority": "P1",
+      "category": "Göğüs hastalıkları / görüntüleme",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Plevral boşluk",
+      "priority": "P2",
+      "category": "Anatomi / solunum sistemi",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Plevral basınç",
+      "priority": "P2",
+      "category": "Solunum fizyolojisi",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Hava-sıvı seviyesi",
+      "priority": "P1",
+      "category": "Görüntüleme / radyoloji",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Kuş gagası görünümü",
+      "priority": "P1",
+      "category": "Gastroenteroloji / radyoloji",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Serum protein elektroforezi",
+      "priority": "P1",
+      "category": "Hematoloji / laboratuvar",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "CRAB bulguları",
+      "priority": "P1",
+      "category": "Hematoloji / plazma hücre hastalıkları",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "B semptomları",
+      "priority": "P1",
+      "category": "Hematoloji / lenfoma",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "PTHrP",
+      "priority": "P1",
+      "category": "Endokrinoloji / paraneoplastik mekanizma",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Paraneoplastik sendrom",
+      "priority": "P1",
+      "category": "Onkoloji / sistemik etki",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Topoizomeraz IV",
+      "priority": "P1",
+      "category": "Mikrobiyoloji / antibiyotik hedefi",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "50S ribozomal alt birim",
+      "priority": "P1",
+      "category": "Mikrobiyoloji / antibiyotik hedefi",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Folinik asit",
+      "priority": "P1",
+      "category": "Farmakoloji / antidot-destek",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Folat metabolizması",
+      "priority": "P1",
+      "category": "Biyokimya / tek karbon metabolizması",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Vitamin K epoksit redüktaz inhibisyonu",
+      "priority": "P1",
+      "category": "Farmakoloji / antikoagülan mekanizma",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Statin toksisitesi",
+      "priority": "P1",
+      "category": "Farmakoloji / yan etki",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Rabdomiyoliz",
+      "priority": "P1",
+      "category": "Dahiliye / kas yıkımı",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Ter klorürü",
+      "priority": "P1",
+      "category": "Pediatri / tanısal test",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Kistik fibrozis",
+      "priority": "P1",
+      "category": "Pediatri / genetik hastalık",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Anti-düz kas antikoru",
+      "priority": "P1",
+      "category": "Hepatoloji / otoimmün belirteç",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "IgG yüksekliği",
+      "priority": "P1",
+      "category": "Hepatoloji / immünoloji laboratuvarı",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "HBV DNA",
+      "priority": "P1",
+      "category": "Enfeksiyon hastalıkları / viroloji",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Viral yük",
+      "priority": "P1",
+      "category": "Enfeksiyon hastalıkları / viroloji",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Mikolik asit",
+      "priority": "P1",
+      "category": "Mikrobiyoloji / bakteri hücre duvarı",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Rölatif bradikardi",
+      "priority": "P1",
+      "category": "Enfeksiyon hastalıkları / vital bulgu",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Salmonella Typhi",
+      "priority": "P1",
+      "category": "Mikrobiyoloji / bakteriyel etken",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Staphylococcus epidermidis",
+      "priority": "P1",
+      "category": "Mikrobiyoloji / fırsatçı etken",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Nekrotizan fasiit",
+      "priority": "P0",
+      "category": "Acil / enfeksiyon",
+      "answerLeakRisk": "medium"
+    },
+    {
+      "term": "Kolinerjik toksidrom",
+      "priority": "P0",
+      "category": "Toksikoloji / otonom sendrom",
+      "answerLeakRisk": "medium"
+    },
+    {
+      "term": "TCA toksisitesi",
+      "priority": "P0",
+      "category": "Toksikoloji / kardiyotoksisite",
+      "answerLeakRisk": "medium"
+    },
+    {
+      "term": "Opioid toksisitesi",
+      "priority": "P0",
+      "category": "Toksikoloji / solunum depresyonu",
+      "answerLeakRisk": "medium"
+    },
+    {
+      "term": "Toksik alkol",
+      "priority": "P1",
+      "category": "Toksikoloji / metabolik asidoz",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Akut faz reaktanı",
+      "priority": "P2",
+      "category": "İmmünoloji / inflamasyon laboratuvarı",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "p değeri",
+      "priority": "P1",
+      "category": "Biyoistatistik / epidemiyoloji",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Test gücü",
+      "priority": "P1",
+      "category": "Biyoistatistik / epidemiyoloji",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Kohort çalışması",
+      "priority": "P1",
+      "category": "Epidemiyoloji / çalışma tasarımı",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Düşük NNT",
+      "priority": "P1",
+      "category": "Epidemiyoloji / klinik etki",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Orotik asidüri",
+      "priority": "P1",
+      "category": "Biyokimya / üre döngüsü-pirimidin",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Hiperamonyemi + yüksek idrar orotik asit",
+      "priority": "P0",
+      "category": "Biyokimya / üre döngüsü",
+      "answerLeakRisk": "medium"
+    },
+    {
+      "term": "Cystathionine beta-synthase eksikliği",
+      "priority": "P1",
+      "category": "Biyokimya / aminoasit metabolizması",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Homosistein yüksekliği + lens subluksasyonu",
+      "priority": "P1",
+      "category": "Biyokimya / klinik patern",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "17-hidroksiprogesteron yüksekliği",
+      "priority": "P1",
+      "category": "Endokrinoloji / adrenal steroidogenez",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Nöral tüp kökenli gliya",
+      "priority": "P2",
+      "category": "Embriyoloji / nöroanatomi",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Kavernöz sinüs lateral duvar anatomisi",
+      "priority": "P1",
+      "category": "Anatomi / nöroanatomi",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Endometrioma",
+      "priority": "P1",
+      "category": "Kadın doğum / jinekolojik kist",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "PALM-COEIN sınıflaması",
+      "priority": "P1",
+      "category": "Kadın doğum / anormal uterin kanama",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Perfore peptik ülser",
+      "priority": "P0",
+      "category": "Genel cerrahi / akut batın",
+      "answerLeakRisk": "medium"
+    },
+    {
+      "term": "Zenker divertikülü",
+      "priority": "P1",
+      "category": "Gastroenteroloji / özofagus",
+      "answerLeakRisk": "low"
+    },
+    {
+      "term": "Disfaji + halitozis + regürjitasyon",
+      "priority": "P1",
+      "category": "Gastroenteroloji / klinik patern",
+      "answerLeakRisk": "low"
+    }
+  ],
+  "skippedCandidates": [
+    {
+      "term": "Çini mürekkebi",
+      "reason": "already-present-exact-or-alias",
+      "matchingNormalizedAliases": [
+        "india ink"
+      ],
+      "recommendation": "addNewEntry"
+    }
+  ],
+  "qualityPolicy": {
+    "duplicateFilter": "Candidate term and aliases were normalized and compared against V319 active terms/aliases.",
+    "answerLeakControl": "Medium/high answer-leak entries received neutral preAnswerSafeDefinition while detailed clues were kept post-answer.",
+    "manualLogic": "Curated addAsSafeNestedTerm candidates were accepted as entries when exact-missing and educationally useful for nested glossary continuity."
+  }
+}

@@ -1,0 +1,13 @@
+V402 — Hap Bilgi Çalış top-bar unified alignment
+
+Updated file:
+- src/components/tusPearlCards.css
+
+What changed:
+- Re-centered the Hap Bilgi Çalış header/top bar as one aligned system.
+- Return button, return icon, return text, title, branch picker and progress capsule now share the same 42px optical control height.
+- Removed older translateY offsets that made some header labels look higher/lower than others.
+- Repaired the "Tekrar merkezine dön" button internal icon/text alignment.
+- Added scoped mobile fallback to prevent old transforms from reappearing on narrow layouts.
+
+No React logic or data files were changed.

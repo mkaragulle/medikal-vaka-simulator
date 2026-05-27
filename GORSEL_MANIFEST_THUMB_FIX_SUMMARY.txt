@@ -1,0 +1,18 @@
+KlinikIQ V341 — Görsel Manifest Normal WebP Düzeltmesi
+
+Yapılan değişiklikler:
+1. src/data/clinicalVisualManifest.js içinde 001–115 görseller için thumbnailUrl, imageUrl ile aynı normal .webp URL’ye eşitlendi.
+2. thumbnailFileName alanı da normal fileName ile eşitlendi.
+3. Manifest içinde _thumb.webp referansı bırakılmadı.
+4. src/components/InvestigationPanel.jsx içine görsel yüklenemezse imageUrl’ye düşen onError fallback eklendi.
+5. src/components/CasePlayer.jsx içindeki fizik muayene görselleri için de aynı onError fallback eklendi.
+
+Sonuç:
+- Vercel Blob’dan sildiğin _thumb.webp dosyaları artık kırık görsel oluşturmaz.
+- KlinikIQ görselleri normal yüksek kaliteli .webp URL’leriyle gösterir.
+- İleride herhangi bir thumbnail URL bozulursa component otomatik imageUrl’ye döner.
+
+Kontrol:
+- clinicalVisualManifest.js import testi geçti.
+- Manifest toplam görsel sayısı: 280
+- _thumb.webp referansı: 0

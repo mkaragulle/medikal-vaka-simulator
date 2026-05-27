@@ -1,0 +1,367 @@
+{
+  "version": "v339",
+  "task": "Add 10 generated pediatric clinical-branch standard cases after quality and duplication checks",
+  "sourceQuestionFile": "klinik_iq_10_cocuk_sagligi_super_kalite_yeni_set_2(1).txt",
+  "projectInputZip": "KlinikIQ_V338_CLINICAL_BRANCH_OPTION_QUALITY_REFINED (1).zip",
+  "counts": {
+    "beforeTotalCases": 610,
+    "afterTotalCases": 620,
+    "addedCases": 10,
+    "pediatricsBefore": 88,
+    "pediatricsAfter": 98,
+    "tusSpotBefore": 210,
+    "tusSpotAfter": 210,
+    "pediatricsStandardBefore": 88,
+    "pediatricsStandardAfter": 98,
+    "tusSpotAiSpotBefore": 210,
+    "tusSpotAiSpotAfter": 210
+  },
+  "qualityFixesBeforeInsert": [
+    "Hard duplicate detected and blocked: original duktus-dependent cyanotic newborn/PGE1 case matched an existing pediatrics standard case.",
+    "That duplicate was replaced with a new adrenal-crisis pediatric emergency case.",
+    "Correct answers were redistributed; generated source had all correct answers at A.",
+    "Weak or overly obvious distractors were replaced with clinically plausible same-category alternatives.",
+    "OptionComparison feedback was rewritten to match revised options."
+  ],
+  "correctAnswerDistributionAfterFix": {
+    "B": 1,
+    "D": 4,
+    "C": 3,
+    "E": 2
+  },
+  "addedCases": [
+    {
+      "id": "v339-peds-001-yenidoganda-kusma-ve-dolasim-bozuklugu",
+      "title": "Yenidoğanda kusma ve dolaşım bozukluğu",
+      "difficulty": "Acil",
+      "relatedBranch": "Pediatri / Neonatoloji",
+      "answerTarget": "first_step",
+      "correct": "İntravenöz hidrokortizon başlamak",
+      "optionCount": 5,
+      "evidenceCount": 3
+    },
+    {
+      "id": "v339-peds-002-biloz-kusma-ve-batin-hassasiyeti",
+      "title": "Bilöz kusma ve batın hassasiyeti",
+      "difficulty": "Acil",
+      "relatedBranch": "Pediatri / Neonatoloji",
+      "answerTarget": "first_step",
+      "correct": "Acil çocuk cerrahisi değerlendirmesi ve volvulus-iskemiye yönelik hazırlık yapmak",
+      "optionCount": 5,
+      "evidenceCount": 3
+    },
+    {
+      "id": "v339-peds-003-premature-bebekte-batin-distansiyonu",
+      "title": "Prematüre bebekte batın distansiyonu",
+      "difficulty": "Acil",
+      "relatedBranch": "Pediatri / Neonatoloji",
+      "answerTarget": "treatment",
+      "correct": "Enteral beslenmeyi kesmek, nazogastrik dekompresyon yapmak, geniş spektrumlu intravenöz antibiyotik ve cerrahi izlem başlatmak",
+      "optionCount": 5,
+      "evidenceCount": 3
+    },
+    {
+      "id": "v339-peds-004-grip-sonrasi-kusma-ve-bilinc-degisikligi",
+      "title": "Grip sonrası kusma ve bilinç değişikliği",
+      "difficulty": "Zor",
+      "relatedBranch": "Pediatri / Metabolizma",
+      "answerTarget": "diagnosis",
+      "correct": "Reye sendromu",
+      "optionCount": 5,
+      "evidenceCount": 3
+    },
+    {
+      "id": "v339-peds-005-viral-enfeksiyon-sonrasi-morarma",
+      "title": "Viral enfeksiyon sonrası morarma",
+      "difficulty": "Orta",
+      "relatedBranch": "Pediatri / Hematoloji",
+      "answerTarget": "diagnosis",
+      "correct": "İmmün trombositopeni",
+      "optionCount": 5,
+      "evidenceCount": 3
+    },
+    {
+      "id": "v339-peds-006-bebekte-tekrarlayan-agir-enfeksiyon",
+      "title": "Bebekte tekrarlayan ağır enfeksiyon",
+      "difficulty": "Zor",
+      "relatedBranch": "Pediatri / İmmünoloji",
+      "answerTarget": "diagnosis",
+      "correct": "Ağır kombine immün yetmezlik",
+      "optionCount": 5,
+      "evidenceCount": 3
+    },
+    {
+      "id": "v339-peds-007-fotografta-beyaz-pupilla",
+      "title": "Fotoğrafta beyaz pupilla",
+      "difficulty": "Zor",
+      "relatedBranch": "Pediatri / Göz Hastalıkları",
+      "answerTarget": "diagnosis",
+      "correct": "Retinoblastom",
+      "optionCount": 5,
+      "evidenceCount": 3
+    },
+    {
+      "id": "v339-peds-008-kas-gucsuzlugu-ve-goz-cevresinde-mor-dokuntu",
+      "title": "Kas güçsüzlüğü ve göz çevresinde mor döküntü",
+      "difficulty": "Zor",
+      "relatedBranch": "Pediatri / Romatoloji",
+      "answerTarget": "diagnosis",
+      "correct": "Juvenil dermatomiyozit",
+      "optionCount": 5,
+      "evidenceCount": 3
+    },
+    {
+      "id": "v339-peds-009-yenidogan-taramasinda-metabolik-risk",
+      "title": "Yenidoğan taramasında metabolik risk",
+      "difficulty": "Orta",
+      "relatedBranch": "Pediatri / Neonatoloji",
+      "answerTarget": "mechanism",
+      "correct": "Fenilalanin hidroksilaz aktivitesinde azalma",
+      "optionCount": 5,
+      "evidenceCount": 3
+    },
+    {
+      "id": "v339-peds-010-erken-meme-gelisimi",
+      "title": "Erken meme gelişimi",
+      "difficulty": "Zor",
+      "relatedBranch": "Pediatri / Endokrinoloji",
+      "answerTarget": "diagnosis",
+      "correct": "Santral puberte prekoks",
+      "optionCount": 5,
+      "evidenceCount": 3
+    }
+  ],
+  "duplicationCheck": {
+    "hardDuplicatesFoundAfterReplacement": 0,
+    "method": "Title, learningTarget and combined topic-string similarity against all existing cases; hard block for high-similarity pediatrics standard duplicates and very-high global duplicates.",
+    "potentialMatchesForAudit": [
+      {
+        "newId": "v339-peds-001-yenidoganda-kusma-ve-dolasim-bozuklugu",
+        "title": "Yenidoğanda kusma ve dolaşım bozukluğu",
+        "potentialMatches": [
+          {
+            "existingId": "v181-new-162-yenidoganda-kusma-ve-sok",
+            "branchId": "pediatrics",
+            "caseType": "standard",
+            "title": "Yenidoğanda kusma ve şok",
+            "learningTarget": "Konjenital adrenal hiperplaziye bağlı tuz kaybettiren adrenal krizde ilk tedaviyi seçebilme",
+            "score": 0.742
+          },
+          {
+            "existingId": "v179-new-147-ates-ve-dolasim-bozuklugu",
+            "branchId": "pediatrics",
+            "caseType": "standard",
+            "title": "Ateş ve dolaşım bozukluğu",
+            "learningTarget": "Çocukta septik şokta ilk saat yönetimini seçebilme",
+            "score": 0.73
+          },
+          {
+            "existingId": "v168-new-055-yenidoganda-okuler-ve-norolojik-bulgular",
+            "branchId": "medical-microbiology",
+            "caseType": "standard",
+            "title": "Yenidoğanda oküler ve nörolojik bulgular",
+            "learningTarget": "Konjenital enfeksiyon triadını etken mikroorganizmayla ilişkilendirebilme",
+            "score": 0.692
+          },
+          {
+            "existingId": "v192-new-301-halsizlik-ve-direncli-hipotansiyon",
+            "branchId": "internal-medicine",
+            "caseType": "standard",
+            "title": "Halsizlik ve dirençli hipotansiyon",
+            "learningTarget": "Addison krizinde hiponatremi, hiperkalemi ve hipotansiyonla acil hidrokortizon tedavisini seçebilme",
+            "score": 0.676
+          },
+          {
+            "existingId": "v196-new-383-yenidoganda-kusma-ve-ambigus-genital-yapi",
+            "branchId": "pediatrics",
+            "caseType": "standard",
+            "title": "Yenidoğanda kusma ve ambigus genital yapı",
+            "learningTarget": "Klasik 21-hidroksilaz eksikliğini tuz kaybı, virilizasyon ve yüksek 17-hidroksiprogesteronla tanıyabilme",
+            "score": 0.633
+          }
+        ]
+      },
+      {
+        "newId": "v339-peds-002-biloz-kusma-ve-batin-hassasiyeti",
+        "title": "Bilöz kusma ve batın hassasiyeti",
+        "potentialMatches": []
+      },
+      {
+        "newId": "v339-peds-003-premature-bebekte-batin-distansiyonu",
+        "title": "Prematüre bebekte batın distansiyonu",
+        "potentialMatches": [
+          {
+            "existingId": "v185-new-230-atesli-agrili-diz-sisligi",
+            "branchId": "minor-rotations",
+            "caseType": "standard",
+            "title": "Ateşli ağrılı diz şişliği",
+            "learningTarget": "Septik artritte akut monoartrit bulgularıyla eklem aspirasyonu ve antibiyotik yaklaşımını seçebilme",
+            "score": 0.639
+          }
+        ]
+      },
+      {
+        "newId": "v339-peds-004-grip-sonrasi-kusma-ve-bilinc-degisikligi",
+        "title": "Grip sonrası kusma ve bilinç değişikliği",
+        "potentialMatches": [
+          {
+            "existingId": "v185-new-210-aclik-sonrasi-bilinc-degisikligi",
+            "branchId": "medical-biochemistry",
+            "caseType": "standard",
+            "title": "Açlık sonrası bilinç değişikliği",
+            "learningTarget": "MCAD eksikliğinde açlık sonrası hipoketotik hipoglisemi mekanizmasını tanıyabilme",
+            "score": 0.778
+          },
+          {
+            "existingId": "v181-new-164-ilac-alimi-sonrasi-bilinc-degisikligi",
+            "branchId": "pediatrics",
+            "caseType": "standard",
+            "title": "İlaç alımı sonrası bilinç değişikliği",
+            "learningTarget": "Trisiklik antidepresan zehirlenmesinde QRS genişlemesi varsa sodyum bikarbonat tedavisini seçebilme",
+            "score": 0.727
+          },
+          {
+            "existingId": "v180-new-155-sicak-ortamda-bilinc-degisikligi",
+            "branchId": "pediatrics",
+            "caseType": "standard",
+            "title": "Sıcak ortamda bilinç değişikliği",
+            "learningTarget": "Pediatrik sıcak çarpmasında hızlı soğutmanın önceliğini seçebilme",
+            "score": 0.667
+          },
+          {
+            "existingId": "v165-new-028-boyun-cerrahisi-sonrasi-ses-degisikligi",
+            "branchId": "anatomy",
+            "caseType": "standard",
+            "title": "Boyun cerrahisi sonrası ses değişikliği",
+            "learningTarget": "Tiroidektomi sonrası ses kısıklığında hasarlanan siniri belirleyebilme",
+            "score": 0.633
+          },
+          {
+            "existingId": "v175-new-109-tiroid-ameliyati-sonrasi-ses-degisikligi",
+            "branchId": "anatomy",
+            "caseType": "standard",
+            "title": "Tiroid ameliyatı sonrası ses değişikliği",
+            "learningTarget": "Tiroid cerrahisi sonrası ses kısıklığını rekürren laringeal sinir hasarıyla ilişkilendirebilme",
+            "score": 0.625
+          }
+        ]
+      },
+      {
+        "newId": "v339-peds-005-viral-enfeksiyon-sonrasi-morarma",
+        "title": "Viral enfeksiyon sonrası morarma",
+        "potentialMatches": [
+          {
+            "existingId": "v175-new-105-bogaz-enfeksiyonu-sonrasi-koyu-idrar",
+            "branchId": "medical-pathology",
+            "caseType": "standard",
+            "title": "Boğaz enfeksiyonu sonrası koyu idrar",
+            "learningTarget": "Poststreptokoksik glomerülonefritte nefritik sendrom ve immün kompleks paternini tanıyabilme",
+            "score": 0.735
+          },
+          {
+            "existingId": "v195-new-335-sinus-enfeksiyonu-sonrasi-cift-gorme",
+            "branchId": "anatomy",
+            "caseType": "standard",
+            "title": "Sinüs enfeksiyonu sonrası çift görme",
+            "learningTarget": "Cavernous sinus içinde nervus abducens tutulumunu lateral rektus paralizisiyle ilişkilendirebilme",
+            "score": 0.706
+          },
+          {
+            "existingId": "v183-new-182-yuz-enfeksiyonu-sonrasi-cift-gorme",
+            "branchId": "anatomy",
+            "caseType": "standard",
+            "title": "Yüz enfeksiyonu sonrası çift görme",
+            "learningTarget": "Kavernöz sinüs patolojisinde nervus abducens etkilenimini göz hareketi bulgusuyla ilişkilendirebilme",
+            "score": 0.697
+          },
+          {
+            "existingId": "v337-peds-clinical-unique-007-ust-solunum-yolu-enfeksiyonu-sonrasi-topal",
+            "branchId": "pediatrics",
+            "caseType": "standard",
+            "title": "Üst solunum yolu enfeksiyonu sonrası topallama",
+            "learningTarget": "Geçici sinoviti kalça ağrısı, iyi genel durum ve düşük inflamatuvar belirteçlerle septik artritten ayırt edebilme",
+            "score": 0.641
+          },
+          {
+            "existingId": "v189-new-298-enfeksiyon-sonrasi-gucsuzluk",
+            "branchId": "minor-rotations",
+            "caseType": "standard",
+            "title": "Enfeksiyon sonrası güçsüzlük",
+            "learningTarget": "Guillain-Barré sendromunda çıkan simetrik güçsüzlük ve arefleksiyle IVIG tedavisini seçebilme",
+            "score": 0.633
+          }
+        ]
+      },
+      {
+        "newId": "v339-peds-006-bebekte-tekrarlayan-agir-enfeksiyon",
+        "title": "Bebekte tekrarlayan ağır enfeksiyon",
+        "potentialMatches": [
+          {
+            "existingId": "v337-peds-clinical-unique-004-tekrarlayan-atesli-idrar-yolu-enfeksiyonu",
+            "branchId": "pediatrics",
+            "caseType": "standard",
+            "title": "Tekrarlayan ateşli idrar yolu enfeksiyonu",
+            "learningTarget": "Vezikoüreteral reflüye bağlı tekrarlayan febril İYE’de görüntüleme ve renal skar riskini yorumlayabilme",
+            "score": 0.684
+          }
+        ]
+      },
+      {
+        "newId": "v339-peds-007-fotografta-beyaz-pupilla",
+        "title": "Fotoğrafta beyaz pupilla",
+        "potentialMatches": []
+      },
+      {
+        "newId": "v339-peds-008-kas-gucsuzlugu-ve-goz-cevresinde-mor-dokuntu",
+        "title": "Kas güçsüzlüğü ve göz çevresinde mor döküntü",
+        "potentialMatches": []
+      },
+      {
+        "newId": "v339-peds-009-yenidogan-taramasinda-metabolik-risk",
+        "title": "Yenidoğan taramasında metabolik risk",
+        "potentialMatches": [
+          {
+            "existingId": "v185-new-211-bebekte-gelisim-geriligi-ve-kuf-kokusu",
+            "branchId": "medical-biochemistry",
+            "caseType": "standard",
+            "title": "Bebekte gelişim geriliği ve küf kokusu",
+            "learningTarget": "Fenilketonüride fenilalanin hidroksilaz defektini klinik bulgularla ilişkilendirebilme",
+            "score": 0.759
+          },
+          {
+            "existingId": "v196-new-379-yenidogan-taramasinda-tiroid-bozuklugu",
+            "branchId": "pediatrics",
+            "caseType": "standard",
+            "title": "Yenidoğan taramasında tiroid bozukluğu",
+            "learningTarget": "Konjenital hipotiroidiyi düşük serbest T4 ve yüksek TSH ile tanıyıp erken tedavinin önemini açıklayabilme",
+            "score": 0.703
+          }
+        ]
+      },
+      {
+        "newId": "v339-peds-010-erken-meme-gelisimi",
+        "title": "Erken meme gelişimi",
+        "potentialMatches": [
+          {
+            "existingId": "v195-new-357-erken-evre-meme-kitlesi",
+            "branchId": "general-surgery",
+            "caseType": "standard",
+            "title": "Erken evre meme kitlesi",
+            "learningTarget": "Meme kanserinde sentinel lenf nodu biyopsisinin aksiller evrelemedeki yerini seçebilme",
+            "score": 0.667
+          }
+        ]
+      }
+    ]
+  },
+  "validation": {
+    "schemaKeysPresent": true,
+    "allCasesPediatricsStandard": true,
+    "allHaveFiveUniqueOptions": true,
+    "allHaveThreeEvidenceItems": true,
+    "feedbackLengthGatePassed": true,
+    "weakDistractorPhraseGatePassed": true,
+    "casesJsJsonRoundtripPassed": true,
+    "tusSpotPreserved": true
+  }
+}

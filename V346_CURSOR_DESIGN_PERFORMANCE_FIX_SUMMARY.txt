@@ -1,0 +1,26 @@
+KlinikIQ V346 — Premium Cursor Tasarım + Lag Fix Özeti
+
+Bu sürümde V345 cursor sistemi yeniden düzenlendi.
+
+Ana problemler:
+1. Glossary word üzerinde bazen native eski imleç ile özel cursor aynı anda görünüyordu.
+2. Cursor tasarımı yeterince premium/rafine görünmüyordu.
+3. Mouse hareketinde React state güncellemeleri ve çift pointer/mouse listener kullanımı lag/takılma yaratabiliyordu.
+
+Yapılan düzeltmeler:
+- PremiumCursor.jsx yeniden yazıldı.
+- Mouse hareketinde artık React state güncellenmiyor.
+- Cursor pozisyonu doğrudan DOM ref + requestAnimationFrame ile güncelleniyor.
+- pointermove ve mousemove aynı anda dinlenmiyor; destek varsa yalnızca pointermove kullanılıyor.
+- Native browser cursor glossary ve interactive alanlarda runtime-injected güçlü CSS ile gizleniyor.
+- Glossary word üzerinde eski imleç + yeni imleç çakışması hedeflenerek çözüldü.
+- Backdrop-filter ve gereksiz ağır filter efektleri kaldırıldı.
+- Daha sade/premium “medikal lens” tasarımı eklendi.
+- Glossary modunda küçük bilgi rozeti ve hafif crosshair efekti eklendi.
+- Loading modunda minimal progress halkası korundu.
+- Input/textarea/select alanlarında klasik text cursor korunuyor.
+- Mobil/touch cihazlarda özel cursor kapalı kalıyor.
+
+Güncellenen dosyalar:
+- src/components/PremiumCursor.jsx
+- src/index.css

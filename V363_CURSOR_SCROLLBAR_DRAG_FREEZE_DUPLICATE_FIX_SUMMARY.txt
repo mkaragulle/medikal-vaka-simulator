@@ -1,0 +1,13 @@
+KlinikIQ V363 Cursor Scrollbar Drag + Duplicate Pointer Fix
+
+Bu sürüm V362 üzerine hazırlanmıştır.
+
+Düzeltmeler:
+- Scrollbar üzerine gelindiğinde çift imleç görüntüsünü engellemek için custom cursor scrollbar bölgesinde geçici olarak gizlenir.
+- Ana sayfa scrollbarı, iç kutu scrollbarları, modal/toolbox/nested scroll alanları için scrollbar hit-test eklendi.
+- Scrollbarı tutup sürüklerken custom cursor artık ilk tıklanan noktada donmuş gibi kalmaz; drag süresince gizlenir ve bırakınca normal alanda tekrar çalışır.
+- pointerdown/mousedown ve pointerup/mouseup capture listenerları eklendi.
+- Light/dark mode renk ayrımı, sekmeden geri dönüş recovery fix’i ve sade halka + nokta tasarımı korunmuştur.
+
+Not:
+Tarayıcı/Windows native scrollbar alanı OS seviyesinde standart cursor gösterebildiği için en güvenilir çözüm, scrollbar etkileşimi sırasında KlinikIQ custom cursorı bilinçli olarak gizleyip çift görüntüyü ve donmayı önlemektir.

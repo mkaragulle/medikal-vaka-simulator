@@ -1,0 +1,163 @@
+# V368 Major Disease + Foundation Jargon Batch 8 Quality Report
+- Source candidates: **138**
+- Accepted new entries: **126**
+- Skipped / merged: **12**
+- Accepted priority counts: `{'P0': 3, 'P1': 108, 'P2': 15}`
+
+## Quality actions
+- Compared every candidate canonical term and suggested alias against the active V367 normalized glossary term/alias set.
+- Removed duplicate/existing exact or alias candidates.
+- Dropped low-signal aliases and aliases with over-highlight risk.
+- Kept P2 entries at lower matching priority; broad P2 one-word entries received context guards.
+- Rewrote generic placeholder-style definitions into more clinical, mechanism-oriented explanations where needed.
+- Preserved functionality: no React state, case logic, hover-delay, nested tooltip, scrollbar or UI behavior was changed.
+
+## Accepted terms
+- Febril nötropeni (P0, Hastalık / onkoloji acil)
+- Nekrotizan yumuşak doku enfeksiyonu (P0, Hastalık / cerrahi-enfeksiyon acil)
+- Toksik epidermal nekroliz (P0, Hastalık / dermatoloji acil)
+- AV nodal reentrant taşikardi (P1, Hastalık / aritmi)
+- Akalazya (P1, Hastalık / özofagus motilite)
+- Alkolik hepatit (P1, Hastalık / hepatoloji)
+- Amyotrofik lateral skleroz (P1, Hastalık / nöroloji)
+- Antikolinerjik toksidrom (P1, Hastalık / toksikoloji)
+- Açık pnömotoraks (P1, Hastalık / travma acil)
+- Benzodiazepin toksisitesi (P1, Hastalık / toksikoloji)
+- Beta bloker toksisitesi (P1, Hastalık / toksikoloji)
+- Bruselloz (P1, Hastalık / enfeksiyon)
+- Budd-Chiari sendromu (P1, Hastalık / hepatoloji-vasküler)
+- Büyük arter transpozisyonu (P1, Hastalık / konjenital kalp)
+- Dermatomiyozit (P1, Hastalık / romatoloji)
+- Diyabetik ayak enfeksiyonu (P1, Hastalık / endokrin-enfeksiyon)
+- Endometrium kanseri (P1, Hastalık / jinekolojik onkoloji)
+- Eozinofilik granülomatoz polianjiit (P1, Hastalık / vaskülit)
+- Epidural hematom (P1, Hastalık / nöroşirürji acil)
+- Geçici iskemik atak (P1, Hastalık / nöroloji-vasküler)
+- HACEK grubu (P1, Mikrobiyoloji / endokardit etkenleri)
+- Heinz cisimciği (P1, Mikroskopi / hematoloji)
+- Hızlı ilerleyen glomerülonefrit (P1, Hastalık / nefroloji)
+- Kabakulak (P1, Hastalık / enfeksiyon-pediatri)
+- Kalsiyum kanal blokeri toksisitesi (P1, Hastalık / toksikoloji)
+- Karbonmonoksit zehirlenmesi (P1, Hastalık / toksikoloji acil)
+- Kolanjiyokarsinom (P1, Hastalık / onkoloji-hepatobiliyer)
+- Kolera (P1, Hastalık / enfeksiyon)
+- Komplike idrar yolu enfeksiyonu (P1, Hastalık / enfeksiyon-üroloji)
+- Koryoamniyonit (P1, Hastalık / obstetri-enfeksiyon)
+- Kriptopjenik organize pnömoni (P1, Hastalık / pulmonoloji)
+- Kronik lenfositik lösemi (P1, Hastalık / hematoloji-onkoloji)
+- Küme baş ağrısı (P1, Hastalık / nöroloji)
+- Küçük hücreli akciğer kanseri (P1, Hastalık / onkoloji-pulmonoloji)
+- Kızamıkçık (P1, Hastalık / enfeksiyon-pediatri)
+- Kızıl (P1, Hastalık / enfeksiyon-pediatri)
+- Lyme hastalığı (P1, Hastalık / enfeksiyon)
+- McCune-Albright sendromu (P1, Hastalık / endokrin genetik)
+- Melanom (P1, Hastalık / dermatoloji-onkoloji)
+- Methemoglobinemi (P1, Hastalık / toksikoloji-hematoloji)
+- Miyelofibrozis (P1, Hastalık / miyeloproliferatif)
+- Mobitz tip I AV blok (P1, EKG / aritmi jargonu)
+- Mobitz tip II AV blok (P1, EKG / aritmi jargonu)
+- Monoklonal gammopati (P1, Hastalık / hematoloji)
+- Muddy brown granular cast (P1, Laboratuvar / idrar mikroskopisi)
+- Nörojenik şok (P1, Hastalık / şok)
+- Obstrüktif uyku apnesi (P1, Hastalık / pulmonoloji)
+- Paroksismal supraventriküler taşikardi (P1, Hastalık / aritmi)
+- Periferik puberte prekoks (P1, Hastalık / pediatrik endokrinoloji)
+- Poliarteritis nodosa (P1, Hastalık / vaskülit)
+- Polimiyalji romatika (P1, Hastalık / romatoloji)
+- Polimiyozit (P1, Hastalık / romatoloji)
+- Pulmoner kontüzyon (P1, Hastalık / travma)
+- Renal arter stenozu (P1, Hastalık / nefrovasküler)
+- Restriktif kardiyomiyopati (P1, Hastalık / kardiyoloji)
+- Safra taşı ileusu (P1, Hastalık / gastrointestinal acil)
+- Santral puberte prekoks (P1, Hastalık / pediatrik endokrinoloji)
+- Servikal yetmezlik (P1, Hastalık / obstetri)
+- Sifiliz (P1, Hastalık / enfeksiyon-CYBH)
+- Sigmoid volvulus (P1, Hastalık / gastrointestinal acil)
+- Skuamöz hücreli karsinom (P1, Hastalık / onkoloji)
+- Strüvit taşı (P1, Hastalık / taş hastalığı)
+- Tam AV blok (P1, EKG / aritmi jargonu)
+- Trunkus arteriozus (P1, Hastalık / konjenital kalp)
+- Tuboovaryan apse (P1, Hastalık / jinekolojik enfeksiyon)
+- Uterin atoni (P1, Hastalık / obstetri acil)
+- Uterin leiomyom (P1, Hastalık / jinekoloji)
+- Ürosepsis (P1, Hastalık / enfeksiyon-acil)
+- İskemik kolit (P1, Hastalık / gastrointestinal vasküler)
+- Şankroid (P1, Hastalık / enfeksiyon-CYBH)
+- Şizofreni (P1, Hastalık / psikiyatri)
+- Adrenal incidentaloma (P1, TUS jargonu / endokrin)
+- Akut gastrik volvulus (P1, Hastalık / gastrointestinal acil)
+- Ampiyem (P1, Hastalık / plevra enfeksiyonu)
+- Aort travması (P1, Hastalık / travma-vasküler)
+- Bazal hücreli karsinom (P1, Hastalık / dermatoloji-onkoloji)
+- Bazofilik noktalanma (P1, Mikroskopi / hematoloji)
+- Bence Jones proteini (P1, Laboratuvar / hematoloji)
+- Brugada sendromu (P1, Hastalık / aritmi-genetik)
+- Campylobacter enteriti (P1, Hastalık / enfeksiyon)
+- Dermatitis herpetiformis (P1, Hastalık / dermatoloji-gastroenteroloji)
+- Dilate kardiyomiyopati (P1, Hastalık / kardiyoloji)
+- Elektriksel alternans (P1, EKG / fizik muayene)
+- Erken doğum eylemi (P1, Hastalık / obstetri)
+- Hepatorenal sendrom (P1, Hastalık / hepatoloji-nefroloji)
+- Hipopituitarizm (P1, Hastalık / endokrinoloji)
+- Howell-Jolly cisimciği (P1, Mikroskopi / hematoloji)
+- Lenfogranüloma venereum (P1, Hastalık / enfeksiyon-CYBH)
+- Light kriterleri (P1, TUS jargonu / plevral sıvı)
+- Listerioz (P1, Hastalık / enfeksiyon)
+- Lökosit silendiri (P1, Laboratuvar / idrar mikroskopisi)
+- MEN2A (P1, Hastalık / endokrin genetik)
+- MEN2B (P1, Hastalık / endokrin genetik)
+- Mallory-Weiss yırtığı (P1, Hastalık / gastrointestinal kanama)
+- Mezenter ven trombozu (P1, Hastalık / vasküler gastrointestinal)
+- Non-alkolik steatohepatit (P1, Hastalık / hepatoloji-metabolik)
+- Polikistik böbrek hastalığı (P1, Hastalık / genetik-nefroloji)
+- Postpartum tiroidit (P1, Hastalık / endokrinoloji)
+- Postrenal obstrüksiyon (P1, Hastalık / nefroloji-üroloji)
+- Psöriatik artrit (P1, Hastalık / romatoloji)
+- Reaktif artrit (P1, Hastalık / romatoloji)
+- Rouleaux formasyonu (P1, Mikroskopi / hematoloji)
+- Sempatomimetik toksidrom (P1, Hastalık / toksikoloji)
+- Siyanür zehirlenmesi (P1, Hastalık / toksikoloji acil)
+- Tirotoksik periyodik paralizi (P1, Hastalık / endokrin-acil)
+- Triküspit yetmezliği (P1, Hastalık / kapak hastalığı)
+- Çekal volvulus (P1, Hastalık / gastrointestinal acil)
+- İdrar silendiri (P1, Laboratuvar / idrar mikroskopisi)
+- İnce bazal membran hastalığı (P1, Hastalık / nefroloji)
+- İzovalerik asidemi (P1, Hastalık / organik asidemi)
+- Şigelloz (P1, Hastalık / enfeksiyon)
+- Akut sinüzit (P2, Hastalık / KBB-enfeksiyon)
+- Anal fissür (P2, Hastalık / proktoloji)
+- Atipik bakteri (P2, Mikrobiyoloji / klinik jargon)
+- Eksüda (P2, Laboratuvar / plevral sıvı)
+- Erisipel (P2, Hastalık / dermatoloji-enfeksiyon)
+- Gastroözofageal reflü hastalığı (P2, Hastalık / gastrointestinal)
+- Hedef hücre (P2, Mikroskopi / hematoloji)
+- Hemoroid (P2, Hastalık / proktoloji)
+- Kalsiyum oksalat taşı (P2, Hastalık / taş hastalığı)
+- Panik bozukluk (P2, Hastalık / psikiyatri)
+- Prematür adrenarş (P2, Hastalık / pediatrik endokrinoloji)
+- Prematür telarş (P2, Hastalık / pediatrik endokrinoloji)
+- Roseola infantum (P2, Hastalık / enfeksiyon-pediatri)
+- Yaygın anksiyete bozukluğu (P2, Hastalık / psikiyatri)
+- İrritabl bağırsak sendromu (P2, Hastalık / fonksiyonel gastrointestinal)
+
+## Skipped / merged terms
+- Akut piyelonefrit — duplicate/existing exact or alias
+- Atrial flutter — duplicate/existing exact or alias
+- Eritema nodosum — duplicate/existing exact or alias
+- Hepatosellüler karsinom — duplicate/existing exact or alias
+- Homocistinüri — duplicate/existing exact or alias
+- MEN1 — duplicate/existing exact or alias
+- Ovaryan hiperstimülasyon sendromu — duplicate/existing exact or alias
+- Parvovirüs B19 enfeksiyonu — duplicate/existing exact or alias
+- Propiyonik asidemi — duplicate/existing exact or alias
+- Subdural hematom — duplicate/existing exact or alias
+- Yersinia enterokoliti — duplicate/existing exact or alias
+- Özofagus varis kanaması — duplicate/existing exact or alias
+
+## Validation
+- V368 layer import count: **126**
+- Total glossary entries after integration: **2334**
+- Missing accepted terms: **0**
+- V368 audit severity: `{"critical":0,"high":0,"medium":77,"low":170}`
+- Global audit severity: `{"critical":0,"high":0,"medium":798,"low":1306}`
+- Build check: not run because node_modules/Vite are not present in the uploaded zip environment; Node ESM import and glossary integration passed.

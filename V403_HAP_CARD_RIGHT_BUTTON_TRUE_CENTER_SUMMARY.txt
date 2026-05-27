@@ -1,0 +1,22 @@
+V403 — Hap Bilgi Çalış Sağ Panel Buton Dikey Hizalama Düzeltmesi
+
+Düzenlenen dosya:
+- src/components/tusPearlCards.css
+
+Amaç:
+- Hap Bilgi Çalış ekranında sağ paneldeki Tekrar Araçları ve Kart Araçları butonlarında ikon, metin ve sayaçların yükseklik içinde tam ortalanmasını sağlamak.
+- Bazı satırlarda görülen metin/ikon kırpılması, baseline kayması ve yarım görünme sorunlarını gidermek.
+
+Yapılan düzeltmeler:
+- Sağ panel butonları için tek ve tutarlı bir row box model tanımlandı.
+- Tüm Kartları Gör, Favorilerim, Zorlandıklarım, Tekrar Edeceklerim satırlarında ikon/metin/sayaç aynı dikey merkeze alındı.
+- Favoriye Ekle, Kataloğa Ekle, Kendi Kartını Oluştur, Kendi Kartıma Kopyala ve Kartı Sil satırları aynı hizalama sistemine alındı.
+- Kartı Sil butonu ayrıca pearl-delete-anchor-tools kapsayıcısı üzerinden hedeflendi; önceki genel selectorların dışında kalması engellendi.
+- SVG ikonlara sabit kutu, box-sizing, padding ve center alignment verildi.
+- Metin span/strong yapıları height:100% + flex align-items:center ile dikey merkezlendi.
+- Sayaç badge'leri em için de line-height ve align-self resetlendi.
+- 860px ve 780px altı ekran yüksekliklerinde güvenli responsive row height değişkenleri bırakıldı.
+
+Not:
+- React/JS logic değiştirilmedi.
+- Veri dosyalarına dokunulmadı.
