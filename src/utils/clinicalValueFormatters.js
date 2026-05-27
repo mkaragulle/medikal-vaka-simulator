@@ -49,6 +49,7 @@ const LAB_STANDARDS = [
   ['Serum beta-hCG',['beta-hcg','β-hcg','serum beta-hcg'],'mIU/mL','Negatif veya <5 mIU/mL','2.400 mIU/mL','','<5 mIU/mL',''],
   ['HbA1c',['hba1c','hbA1c'],'%','<%5.7','%8.1','','%5.3',''],
   ['Proteinüri',['proteinüri','proteinuri'],'mg/gün','<150 mg/gün','1.800 mg/gün','','<150 mg/gün',''],
+  ['İdrar protein/kreatinin oranı',['idrar protein/kreatinin oranı','protein/kreatinin oranı','protein kreatinin oranı','upcr'],'g/g','<0.2 g/g','5.2 g/g','','0.1 g/g','Protein/kreatinin oranı proteinüri derecesini spot idrarda kantitatif olarak gösterir.'],
   ['BOS lökosit',['bos lökosit','bos lokosit'],'/mm³','0–5/mm³','850/mm³','','0–5/mm³',''],
   ['BOS protein',['bos protein'],'mg/dL','15–45 mg/dL','180 mg/dL','','32 mg/dL',''],
   ['BOS glukoz',['bos glukoz'],'mg/dL','45–80 mg/dL','','28 mg/dL','60 mg/dL',''],
@@ -89,6 +90,7 @@ export function findLabStandard(parameter = '') {
 
 export function normalizeLabUnit(text = '') {
   return String(text || '').replace(/μ/g, 'µ').replace(/uL/g, 'µL').replace(/uIU/g, 'µIU')
+    .replace(/g\/g\s*mg\/dL/gi, 'g/g').replace(/mg\/mg/gi, 'g/g').replace(/\/HPF\s*fL/gi, '/HPF').replace(/\/HPF\/mm[³3]/gi, '/HPF').replace(/mOsm\/kg\s*mmol\/L/gi, 'mOsm/kg').replace(/ng\/L\s*mg\/dL/gi, 'ng/L').replace(/pg\/mL\s*ng\/mL/gi, 'pg/mL').replace(/mmHg\s*mmol\/L/gi, 'mmHg')
     .replace(/mg\s*ve\s*dL/giu, 'mg/dL').replace(/µmol\s+veya\s+L/giu, 'µmol/L').replace(/µSv\s+veya\s+saat/giu, 'µSv/saat')
     .replace(/\bveya\s+(dL|L|mL|saat|HPF|dk|mm³|mm3|µL|uL)\b/giu, '/$1')
     .replace(/\/uL/gi, '/µL').replace(/\/µL\/mm³|\/uL\/mm³|\/µL\/mm3|\/mm³\/µL/gi, '/mm³').replace(/ng\/mL\s+ng\/L/gi, 'ng/mL').replace(/\/mm3/gi, '/mm³')
@@ -105,7 +107,7 @@ export function normalizeLabText(text = '') {
     .replace(/(\d)\s+veya\s+(HPF|saat|dL|L|mL|mm³|mm3|µL|uL)\b/giu, (_, n, u) => `${n}/${normalizeLabUnit(u)}`)
     .replace(/(\d)\s*[-–—]\s*(\d)\s+veya\s+(HPF|saat|dL|L|mL|mm³|mm3|µL|uL)\b/giu, (_, a, b, u) => `${a}–${b}/${normalizeLabUnit(u)}`)
     .replace(/(\d)\s*[-–—]\s*(\d)/g, '$1–$2')
-    .replace(/\b(\d+)\.\s+(?=[A-Za-zÇĞİÖŞÜçğıöşüµ%])/g, '$1 ')
+    // Decimal-safe: do not treat a period next to measurements as a sentence boundary.
     .replace(/\s+/g, ' ').trim();
 }
 function parseNumber(value = '') { const m = String(value || '').replace(',', '.').match(/-?\d+(?:\.\d+)?/); if (!m) return null; const token = /^\d{1,3}(?:\.\d{3})+(?:\.\d+)?$/.test(m[0]) ? m[0].replace(/\./g, '') : m[0]; const n = Number.parseFloat(token); return Number.isFinite(n) ? n : null; }

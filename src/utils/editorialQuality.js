@@ -58,7 +58,7 @@ function stripRepeatedSentences(text = '') {
 }
 
 function capitalizeAfterSentenceBoundary(text = '') {
-  return String(text || '').replace(/(^|[.!?]\s+)([a-zçğıöşü])/gu, (_, prefix, letter) => `${prefix}${letter.toLocaleUpperCase('tr')}`);
+  return String(text || '').replace(/(^|[.!?]\s+)([a-zçğıöşü])/gu, (_, prefix, letter) => `${prefix}${letter.toLocaleUpperCase('tr-TR')}`);
 }
 
 function fixMedicalTypos(text = '') {

@@ -671,6 +671,27 @@ function difficultyLabel(value = '') {
   return 'Orta';
 }
 
+
+const TURKISH_TERM_LOCALE = 'tr-TR';
+const KNOWN_TOOLTIP_ACRONYMS = new Map([
+  ['ekg', 'EKG'], ['eeg', 'EEG'], ['emg', 'EMG'], ['bt', 'BT'], ['mr', 'MR'], ['usg', 'USG'],
+  ['aks', 'AKS'], ['stemi', 'STEMI'], ['nstemi', 'NSTEMI'], ['dka', 'DKA'], ['hhs', 'HHS'],
+  ['dvt', 'DVT'], ['pe', 'PE'], ['ards', 'ARDS'], ['koah', 'KOAH'], ['sle', 'SLE'], ['siadh', 'SIADH'],
+  ['gfr', 'GFR'], ['fena', 'FENa'], ['bnp', 'BNP'], ['nt-probnp', 'NT-proBNP'], ['crp', 'CRP'],
+  ['aso', 'ASO'], ['ana', 'ANA'], ['anca', 'ANCA'], ['rf', 'RF'], ['hba1c', 'HbA1c'],
+]);
+
+function formatGlossaryTooltipTitle(term = '') {
+  const value = String(term || '').replace(/\s+/g, ' ').trim();
+  if (!value) return '';
+  const normalizedKey = value.toLocaleLowerCase(TURKISH_TERM_LOCALE);
+  if (KNOWN_TOOLTIP_ACRONYMS.has(normalizedKey)) return KNOWN_TOOLTIP_ACRONYMS.get(normalizedKey);
+  if (/^(?:pH|eGFR|p\d+|gp\d+|v[A-Z]{2,}|cAMP|mTOR|aPTT|hCG|miRNA|siRNA|mRNA|NT-proBNP|HbA1c|PaO₂|PaCO₂|HCO₃⁻|SpO₂)\b/u.test(value)) return value;
+  if (/^[A-ZÇĞİÖŞÜ0-9./+-]{2,}(?:\b|$)/u.test(value)) return value;
+  if (/^anti-/u.test(value)) return `Anti-${value.slice(5)}`;
+  return value.charAt(0).toLocaleUpperCase(TURKISH_TERM_LOCALE) + value.slice(1);
+}
+
 function getEntryKeys(entry = {}) {
   return Array.from(new Set([
     entry.id,
@@ -887,7 +908,7 @@ function GlossaryBreadcrumb({ path = [], onBack, onJump }) {
       </button>
       <span className="smart-glossary-breadcrumb-list">
         {path.map((item, index) => {
-          const label = item?.displayTerm || item?.canonicalTerm || item?.term || 'Kavram';
+          const label = formatGlossaryTooltipTitle(item?.displayTerm || item?.canonicalTerm || item?.term || 'Kavram');
           const isLast = index === path.length - 1;
           return (
             <span className="smart-glossary-breadcrumb-item" key={`${item?.id || label}-${index}`}>
@@ -940,7 +961,8 @@ function GlossaryCard({
   const rawRelevance = currentEntry.clinicalRelevance || currentEntry.clinicalContext || '';
   const rawMechanism = currentEntry.mechanism || '';
   const relatedTerms = asList(currentEntry.relatedTerms).slice(0, 3);
-  const cardTitle = currentEntry.displayTerm || currentEntry.canonicalTerm || currentEntry.term || '';
+  const rawCardTitle = currentEntry.displayTerm || currentEntry.canonicalTerm || currentEntry.term || '';
+  const cardTitle = formatGlossaryTooltipTitle(rawCardTitle);
   const secondaryName = currentEntry.abbreviation || currentEntry.EnglishName || currentEntry.LatinName || '';
 
   const pathEntryIds = useMemo(() => {
@@ -1011,7 +1033,7 @@ function GlossaryCard({
       <span className="smart-glossary-header">
         <span className="smart-glossary-title-wrap">
           <strong className="smart-glossary-title">{cardTitle}</strong>
-          {secondaryName && secondaryName !== cardTitle ? <small className="smart-glossary-secondary-name">{secondaryName}</small> : null}
+          {secondaryName && secondaryName !== rawCardTitle && secondaryName !== cardTitle ? <small className="smart-glossary-secondary-name">{secondaryName}</small> : null}
         </span>
         <span className="smart-glossary-header-actions" aria-hidden="true" />
       </span>

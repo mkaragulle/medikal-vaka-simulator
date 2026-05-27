@@ -85,7 +85,7 @@ function polishPearlMedicalTerminology(value = '') {
 }
 
 function capitalizeTerminologyLead(value = '') {
-  return String(value || '').replace(/^(ortak|interkostobrakiyal|okulomotor|abdusens|aksiller|tibial|büyük|küçük|posterior|intravenöz|kızarma)\b/u, (match) => match.charAt(0).toLocaleUpperCase('tr') + match.slice(1));
+  return String(value || '').replace(/^(ortak|interkostobrakiyal|okulomotor|abdusens|aksiller|tibial|büyük|küçük|posterior|intravenöz|kızarma)\b/u, (match) => match.charAt(0).toLocaleUpperCase('tr-TR') + match.slice(1));
 }
 
 function normalizeText(value = '') {
@@ -111,7 +111,7 @@ function normalizeForCompare(value = '') {
 function titleCaseLabel(value = '') {
   const text = normalizeText(value);
   if (!text) return '';
-  return text.charAt(0).toLocaleUpperCase('tr') + text.slice(1);
+  return text.charAt(0).toLocaleUpperCase('tr-TR') + text.slice(1);
 }
 
 function addPeriod(value = '') {

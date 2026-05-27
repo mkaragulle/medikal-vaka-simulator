@@ -13,13 +13,16 @@ import {
 const CATEGORY_ORDER = [
   'bedside',
   'cardiac',
+  'clinicalAssessment',
   'laboratory',
   'imaging',
   'respiratory',
   'neurologic',
   'gastrointestinal',
   'microbiology',
+  'fluidAnalysis',
   'pathology',
+  'functional',
   'urogenital',
   'urine',
   'metabolic',
@@ -27,6 +30,133 @@ const CATEGORY_ORDER = [
   'bloodBank',
   'other',
 ];
+
+
+const REDUNDANT_ORDER_SUBTITLE_LABELS = new Set([
+  'idrar tetkikleri',
+  'idrar tetkiki',
+  'idrar',
+  'idrar mikroskopisi',
+  'laboratuvar',
+  'kan örneği sonuçları',
+  'görüntüleme',
+  'direkt grafi',
+  'direkt/kontrastlı grafi',
+  'bt',
+  'mr',
+  'ultrasonografi',
+  'nükleer tıp görüntüleme',
+  'klinik değerlendirme',
+  'temel klinik değerlendirme',
+  'girişimsel klinik değerlendirme',
+  'klinik gözlem',
+  'hedefe yönelik muayene',
+  'lokal yara muayenesi',
+  'fizik muayene',
+  'mikrobiyoloji',
+  'patoloji',
+  'patoloji / histopatoloji',
+  'mikroskopi',
+  'kardiyak değerlendirme',
+  'ritim ve kardiyak incelemeler',
+  'ekg',
+  'ekokardiyografi',
+  'fonksiyonel testler',
+  'fonksiyonel solunum testi',
+  'solunum değerlendirmesi',
+  'nörolojik değerlendirme',
+  'objektif veri',
+  'tetkik',
+  'kan gazı',
+  'kan bankası',
+  'kan hazırlığı',
+  'kültür',
+  'toksikoloji',
+  'endoskopik değerlendirme',
+  'gebelik / beta-hcg',
+  'bos / sıvı analizi',
+  'bos / vücut sıvısı analizi',
+  'fetal izlem',
+  'yatak başı testler',
+  'metabolik değerlendirme',
+  'ürogenital değerlendirme',
+]);
+
+const SEMANTIC_ORDER_SUBTITLE_PATTERNS = [
+  /asit[- ]?baz/i,
+  /osmolalite/i,
+  /elektrolit/i,
+  /renal klirens/i,
+  /basınç ölçümü/i,
+  /metabolik ölçüm/i,
+  /vokal kord/i,
+  /histopatolojik inceleme/i,
+  /doku düzeyinde/i,
+  /örnek türüne göre/i,
+  /yara derinliği/i,
+  /kontaminasyon/i,
+  /enfeksiyon riski/i,
+];
+
+function normalizeOrderSubtitleText(value = '') {
+  return String(value || '')
+    .toLocaleLowerCase('tr')
+    .replace(/ı/g, 'i')
+    .replace(/İ/g, 'i')
+    .replace(/ğ/g, 'g')
+    .replace(/ü/g, 'u')
+    .replace(/ş/g, 's')
+    .replace(/ö/g, 'o')
+    .replace(/ç/g, 'c')
+    .replace(/â/g, 'a')
+    .replace(/î/g, 'i')
+    .replace(/û/g, 'u')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
+function isClinicallyMeaningfulOrderSubtitle(subtitle = '') {
+  const raw = String(subtitle || '').trim();
+  if (!raw) return false;
+  return SEMANTIC_ORDER_SUBTITLE_PATTERNS.some((pattern) => pattern.test(raw));
+}
+
+function shouldHideOrderSubtitle(item = {}, subtitle = '') {
+  const raw = String(subtitle || '').trim();
+  if (!raw) return true;
+
+  if (isClinicallyMeaningfulOrderSubtitle(raw)) return false;
+
+  const normalizedSubtitle = normalizeOrderSubtitleText(raw);
+  const categoryMeta = getOrderCategoryMeta(item.testTypeCategory || item.category || 'other');
+  const comparisonValues = [
+    item.title,
+    item.label,
+    item.type,
+    item.category,
+    item.testTypeCategory,
+    typeLabels[item.type],
+    categoryMeta.label,
+    categoryMeta.description,
+  ]
+    .map(normalizeOrderSubtitleText)
+    .filter(Boolean);
+
+  if (comparisonValues.includes(normalizedSubtitle)) return true;
+  if (REDUNDANT_ORDER_SUBTITLE_LABELS.has(raw.toLocaleLowerCase('tr'))) return true;
+
+  const wordCount = raw.split(/\s+/).filter(Boolean).length;
+  const looksLikeShortTypeLabel = wordCount <= 3 && /(tetkik|test|panel|laboratuvar|görüntüleme|grafi|bt|mr|ekg|ultrasonografi|mikrobiyoloji|patoloji|klinik|muayene|değerlendirme|kültür|hcg|idrar|kan gazı|bankası|izlem)/iu.test(raw);
+  if (looksLikeShortTypeLabel) return true;
+
+  const overlapsCategory = wordCount <= 3 && comparisonValues.some((value) => value.includes(normalizedSubtitle) || normalizedSubtitle.includes(value));
+  return overlapsCategory;
+}
+
+function getOrderCardSubtitle(item = {}) {
+  const subtitle = item.subtype || typeLabels[item.type] || '';
+  return shouldHideOrderSubtitle(item, subtitle) ? '' : subtitle;
+}
 
 function groupOrdersByCategory(orders = []) {
   const groups = [];
@@ -360,8 +490,8 @@ function expandCompositeResultRows(rows = []) {
   return rows.flatMap((row) => splitCompositeResultRow(row));
 }
 
-const PARAMETER_TABLE_TYPES = new Set(['lab', 'urine', 'culture', 'toxicology']);
-const QUALITATIVE_RESULT_TYPES = new Set(['ecg', 'xray', 'ct', 'mri', 'ultrasound', 'imaging', 'microscopy', 'pathology', 'endoscopy', 'clinical', 'neurophysiology', 'nuclear']);
+const PARAMETER_TABLE_TYPES = new Set(['lab', 'bloodGas', 'urine', 'culture', 'toxicology', 'bloodBank']);
+const QUALITATIVE_RESULT_TYPES = new Set(['ecg', 'xray', 'ct', 'mri', 'ultrasound', 'imaging', 'microscopy', 'pathology', 'endoscopy', 'clinical', 'physicalExam', 'woundAssessment', 'microbiology', 'fluidAnalysis', 'functionalTest', 'neurophysiology', 'nuclear']);
 
 
 function DenseResultText({ text = '' }) {
@@ -647,7 +777,7 @@ function VisualHelpGate({ open, onToggle, compact = false }) {
     <div className={`visual-interpretation-gate ${compact ? 'compact' : ''}`.trim()}>
       <div className="visual-interpretation-copy">
         <strong>Önce görseli kendin yorumla</strong>
-        <p>Bu bulguda eğitim amacıyla yorum ilk aşamada gizlendi. Görseldeki patern, dağılım ve anatomik ipuçlarını değerlendirdikten sonra sistem yorumunu açabilirsin.</p>
+        <p>Önce anatomik lokalizasyonu, dağılımı, yoğunluk/sinyal değişikliğini ve vaka bulgularıyla ilişkisini değerlendir. Takıldığında Yardım Al ile bu görsele özel bilimsel yorumu açabilirsin.</p>
       </div>
       <button
         type="button"
@@ -677,10 +807,18 @@ function summaryDuplicatesStructuredRows(summary = '', rows = []) {
   });
 }
 
+
+
+function isVisualResultItem(item = {}) {
+  const text = `${item.id || ''} ${item.label || ''} ${item.title || ''} ${item.type || ''} ${item.subtype || ''}`.toLocaleLowerCase('tr');
+  if (['xray', 'ct', 'mri', 'ultrasound', 'ecg', 'echo', 'endoscopy', 'microscopy', 'pathology', 'clinical', 'physicalExam', 'woundAssessment', 'microbiology', 'fluidAnalysis', 'functionalTest', 'neurophysiology', 'nuclear'].includes(item.type)) return true;
+  return /(grafi|radyografi|röntgen|xray|bt|ct|tomografi|mr\b|mri|ultrason|usg|ekokardiyografi|eko\b|doppler|ekg|elektrokardiyografi|eeg|endoskopi|kolonoskopi|bronkoskopi|fundoskopi|dermatoskopi|biyopsi|patoloji|histopatoloji|mikroskopi|periferik yayma|gram boyama|immünfloresan|immunfloresan|klinik fotoğraf|lezyon fotoğrafı|görsel)/.test(text);
+}
+
 function InlineOrderResult({ item, mode, hardMode = false, glossaryRevealMode = 'preAnswer' }) {
   const result = item.result || {};
   const hasRows = Boolean(result.rows?.length);
-  const hasImages = Boolean(result.images?.length);
+  const hasImages = Boolean(result.images?.length) && isVisualResultItem(item);
   const hasSummary = Boolean(result.summary && result.format !== 'empty');
   const shouldShowSummary = hasSummary && (!hasRows || !summaryDuplicatesStructuredRows(result.summary, result.rows));
   const [showVisualHelp, setShowVisualHelp] = useState(false);
@@ -715,7 +853,7 @@ function InlineOrderResult({ item, mode, hardMode = false, glossaryRevealMode = 
             {shouldShowSummary ? (
               <div className={`ordered-result-comment ${hasRows || hasImages ? 'after-objective-data' : 'standalone'}`}>
                 {(hasRows || hasImages) ? <span>Kısa yorum</span> : null}
-                <p className="ordered-result-summary inline-result-summary"><GlossaryText text={result.summary} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={5} /></p>
+                <p className="ordered-result-summary inline-result-summary"><GlossaryText text={sanitizeMeasurementText(result.summary)} enabled={mode !== 'exam' && !hardMode} revealMode={glossaryRevealMode} maxTerms={5} /></p>
               </div>
             ) : null}
           </div>
@@ -730,7 +868,7 @@ function InlineOrderResult({ item, mode, hardMode = false, glossaryRevealMode = 
 }
 
 function OrderCard({ item, selected, expanded, onToggle, mode, hardMode = false, glossaryRevealMode = 'preAnswer' }) {
-  const subtype = item.subtype || typeLabels[item.type] || 'Tetkik';
+  const subtitle = getOrderCardSubtitle(item);
   return (
     <article className={`order-card-shell requested-test-card ${selected ? 'selected requested' : ''} ${expanded ? 'expanded' : ''}`.trim()}>
       <button
@@ -744,7 +882,7 @@ function OrderCard({ item, selected, expanded, onToggle, mode, hardMode = false,
         <IconBadge icon={investigationIconByType[item.type] || 'Search'} tone={selected ? 'success' : 'blue'} size="sm" />
         <span className="investigation-option-copy smart-order-copy requested-test-copy">
           <strong>{item.title || item.label}</strong>
-          <span className="order-card-subline neutral-order-subline"><em>{subtype}</em></span>
+          {subtitle ? <span className="order-card-subline neutral-order-subline"><em>{subtitle}</em></span> : null}
         </span>
         <span className="smart-order-actions requested-test-actions">
           <span className={`investigation-option-state smart-order-state order-status-chip ${selected ? 'requested' : 'idle'}`}>

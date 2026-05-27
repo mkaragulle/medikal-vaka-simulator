@@ -49,7 +49,13 @@ export const priorityMeta = {
 
 export const typeLabels = {
   ecg: 'EKG',
+  echo: 'Ekokardiyografi',
   lab: 'Laboratuvar',
+  bloodGas: 'Kan gazı',
+  fluidAnalysis: 'BOS / sıvı analizi',
+  bloodBank: 'Kan bankası',
+  microbiology: 'Mikrobiyoloji',
+  functionalTest: 'Fonksiyonel test',
   xray: 'Direkt grafi',
   ct: 'BT',
   mri: 'MR',
@@ -67,7 +73,13 @@ export const typeLabels = {
 
 export const investigationIconByType = {
   ecg: 'Activity',
+  echo: 'Activity',
   lab: 'FlaskConical',
+  bloodGas: 'Activity',
+  fluidAnalysis: 'Droplets',
+  bloodBank: 'HeartPulse',
+  microbiology: 'FlaskConical',
+  functionalTest: 'Activity',
   xray: 'Image',
   ct: 'Image',
   mri: 'Image',
@@ -93,6 +105,10 @@ export const orderCategoryMeta = {
     label: 'Kardiyak değerlendirme',
     description: 'Ritim ve kardiyak incelemeler.',
   },
+  clinicalAssessment: {
+    label: 'Klinik değerlendirme',
+    description: 'Fizik muayene, lokal bulgu ve hedefe yönelik klinik gözlemler.',
+  },
   laboratory: {
     label: 'Laboratuvar',
     description: 'Kan örneği sonuçları.',
@@ -116,6 +132,14 @@ export const orderCategoryMeta = {
   microbiology: {
     label: 'Mikrobiyoloji',
     description: 'Etken saptamaya yönelik sonuçlar.',
+  },
+  fluidAnalysis: {
+    label: 'BOS / sıvı analizi',
+    description: 'BOS, dren, dışkı ve vücut sıvısı örneklerine özgü sonuçlar.',
+  },
+  functional: {
+    label: 'Fonksiyonel testler',
+    description: 'Spirometri, efor testi, EEG/EMG, odyometri, ürodinami, fetal izlem ve ölçülebilir basınç testleri.',
   },
   urine: {
     label: 'İdrar tetkikleri',
@@ -157,25 +181,32 @@ export function getOrderCategoryMeta(category = 'other') {
 
 function inferOrderCategory(item = {}, clinicalCase = {}) {
   const type = item.type || '';
-  const text = `${item.id || ''} ${item.label || ''} ${type}`.toLocaleLowerCase('tr');
+  const text = `${item.id || ''} ${item.label || ''} ${item.title || ''} ${type} ${item.subtype || ''}`.toLocaleLowerCase('tr');
   const canonical = canonicalCategory(item);
 
-  if (/(parmak ucu|glukoz)/.test(text) || canonical === 'glucose') return 'bedside';
-  if (type === 'ecg' || /(ekg|ecg|ekokardiyografi|eko)/.test(text)) return 'cardiac';
-  if (canonical === 'crossmatch' || /(kan grubu|cross|transfüzyon|eritrosit süspansiyonu)/.test(text)) return 'bloodBank';
-  if (type === 'pathology' || canonical === 'pathology' || /(biyopsi|sitoloji|histopatoloji|periferik yayma)/.test(text)) return 'pathology';
-  if (/(gebelik testi|beta-hcg|hcg|üriner sistem|ürogenital)/.test(text)) return 'urogenital';
-  if (type === 'toxicology' || canonical === 'toxicology' || /(toksikoloji|zehir|etanol|benzodiazepin|parasetamol)/.test(text)) return 'toxicology';
+  if (type === 'clinical' || type === 'physicalExam' || type === 'woundAssessment' || /(yara değerlendirmesi|yanık yüzdesi|fizik muayene|klinik değerlendirme|lokal bulgu|fundus muayenesi|göz içi basıncı|odyometri)/.test(text)) return 'clinicalAssessment';
+  if (type === 'bloodGas' || canonical === 'abg' || /(kan gazı|arter kan gazı|venöz kan gazı|paco2|hco)/.test(text)) return 'respiratory';
+  if (/(parmak ucu|kapiller kan glukozu|yatak başı kan glukozu)/.test(text)) return 'bedside';
+  if (type === 'ecg' || type === 'echo' || /(ekg|ecg|ekokardiyografi|eko)/.test(text)) return 'cardiac';
+  if (type === 'bloodBank' || canonical === 'crossmatch' || /(kan grubu|cross|transfüzyon|eritrosit süspansiyonu)/.test(text)) return 'bloodBank';
+  if (type === 'functionalTest') {
+    if (/(solunum fonksiyon|vital kapasite|difüzyon kapasitesi|hiperoksi)/.test(text)) return 'respiratory';
+    if (/(fetal kalp|nst|kardiyotokografi)/.test(text)) return 'urogenital';
+    return 'functional';
+  }
+  if (type === 'pathology' || canonical === 'pathology' || /(biyopsi|sitoloji|histopatoloji|periferik yayma|elektron mikroskopisi|immünfloresan|immunfloresan)/.test(text)) return 'pathology';
+  if (type === 'microbiology' || type === 'culture' || canonical === 'culture' || /(kültür|mikrobiyoloji|gram boyama|pcr|antijen|seroloji|koh|aside dirençli|toksin testi|üre nefes|hpv dna)/.test(text)) return 'microbiology';
   if (type === 'urine' || canonical === 'urine') return 'urine';
+  if (type === 'fluidAnalysis' || /(^|\s)(bos)(\s|$)|beyin omurilik sıvısı|lomber ponksiyon|dren sıvısı|dışkı|gaita|plevral|sinovyal/.test(text)) return 'fluidAnalysis';
+  if (/(gebelik testi|beta-hcg|hcg|üriner sistem|ürogenital|transvajinal servikal uzunluk)/.test(text)) return 'urogenital';
+  if (type === 'toxicology' || canonical === 'toxicology' || /(toksikoloji|zehir|etanol|benzodiazepin|parasetamol|digoksin|kolinesteraz|ilaç düzeyi)/.test(text)) return 'toxicology';
+  if (type === 'endoscopy' || canonical === 'endoscopy' || /(endoskopi|kolonoskopi|bronkoskopi|laringoskopi)/.test(text)) return 'gastrointestinal';
+  if (['ct', 'mri', 'ultrasound', 'xray', 'nuclear', 'imaging'].includes(type) || ['xray', 'ctpa', 'cta', 'brain-ct', 'ct', 'mri', 'ultrasound'].includes(canonical) || /(grafi|radyografi|bt|tomografi|mr\b|mri|ultrason|usg|doppler|sintigrafi)/.test(text)) return 'imaging';
   if (/(glukoz|elektrolit|keton|metabolik)/.test(text)) return 'metabolic';
-  if (type === 'culture' || canonical === 'culture' || /(kültür|mikrobiyoloji|mikroskopi)/.test(text)) return 'microbiology';
-  if (type === 'endoscopy' || canonical === 'endoscopy' || /(ponksiyon|biyopsi|kateterizasyon)/.test(text)) return 'invasive';
-  if (['lab', 'clinical', 'neurophysiology'].includes(type) || ['cbc', 'coagulation', 'liver', 'troponin', 'electrolytes', 'biochemistry', 'abg', 'd-dimer', 'inflammation', 'lactate'].includes(canonical)) return 'laboratory';
-  if (['ct', 'mri', 'ultrasound', 'xray', 'nuclear'].includes(type) || ['xray', 'ctpa', 'cta', 'brain-ct', 'ct', 'mri', 'ultrasound'].includes(canonical)) return 'imaging';
-  if (/(kan gazı|solunum|pulmoner)/.test(text)) return 'respiratory';
+  if (['lab'].includes(type) || ['cbc', 'coagulation', 'liver', 'troponin', 'electrolytes', 'biochemistry', 'd-dimer', 'inflammation', 'lactate'].includes(canonical)) return 'laboratory';
+  if (type === 'neurophysiology') return 'neurologic';
   return 'other';
 }
-
 
 const genericOrderBank = [
   { id: 'cbc-screen', label: 'Hemogram', type: 'lab', priority: 'useful', synthetic: true },
@@ -330,19 +361,51 @@ function sanitizeSummary(text = '', clinicalCase) {
   return toSentence(safe || 'Objektif veri sınırlıdır.');
 }
 
+function hasOwnVisualReference(item = {}) {
+  return Boolean(
+    (Array.isArray(item.imageIds) && item.imageIds.length) ||
+    item.imageUrl ||
+    item.thumbnailUrl ||
+    (Array.isArray(item.result?.images) && item.result.images.length)
+  );
+}
+
+function isVisualInvestigationItem(item = {}) {
+  const text = `${item.id || ''} ${item.label || ''} ${item.title || ''} ${item.type || ''} ${item.subtype || ''}`.toLocaleLowerCase('tr');
+  if (['xray', 'ct', 'mri', 'ultrasound', 'ecg', 'echo', 'endoscopy', 'microscopy', 'pathology', 'clinical', 'neurophysiology', 'nuclear'].includes(item.type)) return true;
+  if (/(grafi|radyografi|röntgen|xray|bt|ct|tomografi|mr\b|mri|ultrason|usg|ekokardiyografi|eko\b|doppler|ekg|elektrokardiyografi|eeg|endoskopi|kolonoskopi|bronkoskopi|fundoskopi|dermatoskopi|biyopsi|patoloji|histopatoloji|mikroskopi|periferik yayma|gram boyama|immünfloresan|immunfloresan|klinik fotoğraf|lezyon fotoğrafı|görsel)/.test(text)) return true;
+  return false;
+}
+
 function attachImages(item, clinicalCase) {
   const images = clinicalCase.images || [];
   if (!images.length) return [];
+  if (!isVisualInvestigationItem(item) && !hasOwnVisualReference(item)) return [];
 
   const explicitImageIds = new Set(item.imageIds || []);
   const explicitlyLinkedImages = images.filter((image) => image && explicitImageIds.has(image.id));
   if (explicitlyLinkedImages.length) return explicitlyLinkedImages;
 
+  if (!isVisualInvestigationItem(item)) return [];
   return images.filter((image) => visualMatchesInvestigation(image, item));
 }
 
 function caseContext(clinicalCase = {}) {
   return `${clinicalCase.title || ''} ${clinicalCase.clinicalFocus || ''} ${clinicalCase.chiefComplaint || ''} ${clinicalCase.stem || ''} ${(clinicalCase.exam || []).join(' ')}`.toLocaleLowerCase('tr');
+}
+
+
+const REAL_FUNCTIONAL_TEST_PATTERN = /(solunum fonksiyon|spirometri|vital kapasite|difüzyon kapasitesi|dlco|efor testi|egzersiz testi|emg|eeg|odyometri|ürodinami|urodinami|tilt testi|kardiyotokografi|nst|fetal kalp|kompartman basıncı|hiperoksi|klirens ölçümü|para-aminohippurat klirens)/i;
+const NON_CLINICAL_MECHANISM_PATTERN = /(simülasyon|simulasyon|modelleme|modellendi|fizyolojik mekanizma|patofizyolojik mekanizma|beklenen fizyolojik yön|beklenen refleks yanıt|makula densa yanıtı|tubuloglomerüler geri bildirim|bohr etkisi|haldane etkisi|frank-starling mekanizması|raas ve efferent|baroreseptör refleks yanıtı|sempatik nörotransmitter aktarımı|adh ve aquaporin|miksiyon refleksi ve sakral parasempatik çıkış)/i;
+
+function isNonClinicalMechanismInvestigation(item = {}) {
+  const type = String(item.type || '').toLocaleLowerCase('tr');
+  const text = `${item.id || ''} ${item.label || ''} ${item.title || ''} ${item.subtype || ''} ${item.summary || ''}`.toLocaleLowerCase('tr');
+  if (item.orderable === false) return true;
+  if (['mechanism', 'physiology', 'simulation'].includes(type)) return true;
+  if (NON_CLINICAL_MECHANISM_PATTERN.test(text)) return true;
+  if (type === 'functionaltest' && /mekanizma|refleks|yanıtı|yolağı|bohr|haldane|starling|raas|makula|tubuloglomer|aquaporin|nörotransmitter/.test(text) && !REAL_FUNCTIONAL_TEST_PATTERN.test(text)) return true;
+  return false;
 }
 
 function findRows(clinicalCase = {}, patterns = []) {
@@ -364,6 +427,7 @@ function hasActualCategory(item, caseItems = []) {
 function canonicalCategory(item = {}) {
   const text = `${item.id || ''} ${item.label || ''} ${item.type || ''}`.toLocaleLowerCase('tr');
   if (/(ecg|ekg)/.test(text)) return 'ecg';
+  if (/(ekokardiyografi|eko)/.test(text)) return 'echo';
   if (/(troponin|ck-mb|marker|biyobelirteç)/.test(text)) return 'troponin';
   if (/(cbc|hemogram|tam kan|trombosit|hb|lökosit)/.test(text)) return 'cbc';
   if (/(koag|inr|pt|aptt)/.test(text)) return 'coagulation';
@@ -474,6 +538,7 @@ function syntheticSummaryFor(item, clinicalCase) {
     if (/hematemez|melena|siroz|portal/.test(context)) return 'Endoskopide distal özofagusta genişlemiş venöz yapılar ve aktif sızıntı odağı izlenir.';
     return 'Endoskopide acil girişim gerektiren aktif kanama odağı izlenmez.';
   }
+  if (category === 'echo') return 'Ekokardiyografide kardiyak yapı, kapak ve sistolik fonksiyon bulguları değerlendirilir.';
   if (category === 'ecg') {
     if (/göğüs|retrosternal|st elevasyon|iskemi|koroner/.test(context)) return 'V2–V5 derivasyonlarında ST segment elevasyonu; inferior derivasyonlarda karşılıklı ST depresyonu izlenir.';
     if (/aort|diseksiyon/.test(context)) return 'Sinüs taşikardisi izlenir; akut ST elevasyonu saptanmaz.';
@@ -523,6 +588,7 @@ function orderPurposeFor(item, clinicalCase = {}) {
   const category = canonicalCategory(item);
   const context = caseContext(clinicalCase);
 
+  if (category === 'echo') return 'Kardiyak yapı ve fonksiyon değerlendirmesi.';
   if (category === 'ecg') return 'Ritim ve ST segment değerlendirmesi.';
   if (category === 'troponin') return 'Miyokart hasarı biyobelirteci.';
   if (category === 'brain-ct') return 'Akut kraniyal görüntüleme.';
@@ -559,6 +625,7 @@ function clinicalMeaningFor(item, clinicalCase = {}) {
   const context = caseContext(clinicalCase);
   const priority = normalizePriority(item.priority);
 
+  if (category === 'echo') return 'Ejeksiyon fraksiyonu, kapak ve duvar hareketi bulguları kalp yetmezliği veya yapısal kardiyak hastalık değerlendirmesine katkı sağlar.';
   if (category === 'ecg') return 'ST segmenti ve ritim bulguları acil reperfüzyon veya kardiyak monitörizasyon kararını belirler.';
   if (category === 'troponin') return 'Biyobelirteç yüksekliği miyokart hasarını destekler; ancak STEMI şüphesinde EKG kararını geciktirmemelidir.';
   if (category === 'brain-ct') return 'Kanama dışlandığında reperfüzyon uygunluğu ve damar görüntüleme ihtiyacı daha net değerlendirilir.';
@@ -744,7 +811,7 @@ export function buildInvestigationOrders(clinicalCase = {}) {
       : [];
 
   const caseItems = explicitSource
-    .filter((item) => item && item.type !== 'management' && item.orderable !== false)
+    .filter((item) => item && item.type !== 'management' && item.orderable !== false && !isNonClinicalMechanismInvestigation(item))
     .map((item, index) => normalizeInvestigation(item, clinicalCase, index));
 
   // KlinikIQ vaka verileri artık tetkik kararını vaka özelinde taşır. Bu nedenle
@@ -801,9 +868,9 @@ export function buildInvestigationReview(orders = [], orderedIds = []) {
 
 export function getOrderFeedback(item) {
   const priority = normalizePriority(item.priority);
-  if (priority === 'essential') return 'Bu istem mevcut tabloda yüksek tanısal değer taşır.';
-  if (priority === 'useful') return 'Sonuç ayırıcı tanıyı daraltır.';
-  if (priority === 'situational') return 'Sonuç seçilmiş hastalarda ek bilgi verir.';
+  if (priority === 'essential') return `${item.label || item.title || 'Bu tetkik'} bu olguda karar verdirici objektif veri grubundadır; sonucu semptom, muayene ve vital bulgularla birlikte okumak gerekir.`;
+  if (priority === 'useful') return `${item.label || item.title || 'Bu tetkik'} ayırıcı tanı veya şiddet değerlendirmesine katkı sağlar; tek başına değil vaka bağlamıyla yorumlanmalıdır.`;
+  if (priority === 'situational') return `${item.label || item.title || 'Bu tetkik'} seçilmiş koşullarda değer kazanır; ilk karar için önce daha doğrudan veriler tamamlanmalıdır.`;
   if (priority === 'lowPriority') return 'Bu istem mevcut ilk değerlendirme aşamasında sınırlı katkı sağlar.';
   if (priority === 'inappropriateEarly') return 'Bu istem ileri aşamada düşünülebilir; önce temel klinik veriler tamamlanmalıdır.';
   return 'Sonuç ek klinik bilgi verir.';

@@ -71,7 +71,7 @@ export function neutralModalityTitle(modality = '', fallback = 'Tetkik materyali
 
 export function capitalizeFirst(text = '') {
   if (!text) return '';
-  return text.charAt(0).toLocaleUpperCase('tr') + text.slice(1);
+  return text.charAt(0).toLocaleUpperCase('tr-TR') + text.slice(1);
 }
 
 export function normalizeInlineText(text = '') {
@@ -144,7 +144,7 @@ export function buildAcademicFocusSentence(clinicalCase) {
   if (!cleaned) {
     return 'Bu olguda amaç, klinik verileri sistematik biçimde birleştirerek en olası tanıya ulaşmaktır.';
   }
-  const lowered = cleaned.charAt(0).toLocaleLowerCase('tr') + cleaned.slice(1);
+  const lowered = cleaned.charAt(0).toLocaleLowerCase('tr-TR') + cleaned.slice(1);
   return `Bu olguda odak, ${lowered} üzerine sistematik klinik yorum yapmaktır.`;
 }
 

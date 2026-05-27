@@ -260,7 +260,7 @@ function trimTrailingPunctuation(value = '') {
 function capitalizeSentence(value = '') {
   const text = normalizeText(value);
   if (!text) return '';
-  return text.charAt(0).toLocaleUpperCase('tr') + text.slice(1);
+  return text.charAt(0).toLocaleUpperCase('tr-TR') + text.slice(1);
 }
 
 function ensureSentence(value = '') {

@@ -285,7 +285,7 @@ function normalizePatientSummaryText(value = '') {
     });
   }
 
-  text = text.replace(/(^|[.!?]\s+)([a-zçğıöşü])/g, (match, prefix, letter) => `${prefix}${letter.toLocaleUpperCase('tr')}`);
+  text = text.replace(/(^|[.!?]\s+)([a-zçğıöşü])/g, (match, prefix, letter) => `${prefix}${letter.toLocaleUpperCase('tr-TR')}`);
   return text;
 }
 
