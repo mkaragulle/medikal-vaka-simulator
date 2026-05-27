@@ -221,6 +221,14 @@ function resetSupportPairPattern() {
   SUPPORT_PAIR_PATTERN.lastIndex = 0;
 }
 
+
+function splitDecimalAwareValue(value = '') {
+  return String(value || '')
+    .split(/(?<!\d)[.;](?!\d)/u)
+    .map((part) => part.trim())
+    .filter(Boolean);
+}
+
 function splitCompoundCompactItem(item = {}) {
   if (!item?.label || !item?.value) return [];
   const label = normalizeDataLabel(item.label);
@@ -229,7 +237,7 @@ function splitCompoundCompactItem(item = {}) {
 
   const extracted = [];
   let match;
-  const pairSource = value.replace(/[.。]/g, ';');
+  const pairSource = value.replace(/(?<!\d)[.。](?!\d)/g, ';');
   resetSupportPairPattern();
   while ((match = SUPPORT_PAIR_PATTERN.exec(pairSource))) {
     const pairLabel = normalizeDataLabel(match[1]);
@@ -251,7 +259,7 @@ function splitCompoundCompactItem(item = {}) {
   }
   SUPPORT_STATUS_PAIR_PATTERN.lastIndex = 0;
 
-  const primaryValue = normalizeDataValue(value.split(/[.;]/u)[0]);
+  const primaryValue = normalizeDataValue(splitDecimalAwareValue(value)[0] || value);
   const hasEmbeddedPairs = extracted.length > 0;
   resetSupportPairPattern();
   const valueHasPair = SUPPORT_PAIR_PATTERN.test(value);

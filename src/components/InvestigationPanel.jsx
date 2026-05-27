@@ -503,7 +503,7 @@ function DenseResultText({ text = '' }) {
 
 function isGenericQualitativeReference(reference = '') {
   const normalized = normalizeClinicalText(reference);
-  return !normalized || normalized === '—' || /normalde beklenmeyen patern|objektif bulgu|klinik olarak|ornek etken iliskisi|bilgi|referans araligi yok|karar verdirici degil/.test(normalized);
+  return !normalized || normalized === '—' || /normalde beklenmeyen patern|objektif bulgu|klinik olarak|ornek etken iliskisi|bilgi|referans araligi yok|karar verdirici degil|klinik baglama gore degerlendirilir|seri olcum|ultrason ile yorumlanir|sonuc.*gosterir|metabolik yolakta/.test(normalized);
 }
 
 
@@ -831,6 +831,9 @@ const EMPTY_SHORT_COMMENT_PATTERNS = [
   /sonucun vaka tablosunda/iu,
   /örnek\/etken ilişkisi/iu,
   /^\s*(bilgi|anormal bulgu|klinikle uyumludur|tanıyı destekler|karar verdirici değildir)\.?\s*$/i,
+  /sonucu\s+(?:patolojik\s+)?(?:yükseklik|düşüklük|anemi varlığını|aktif inflamasyonu|böbrek fonksiyon bozulmasını).*gösterir/iu,
+  /metabolik\s+yolakta\s+birikim\s+paternini\s+gösterir/iu,
+  /akut\s+olasılığını\s+artırır/iu,
 ];
 
 function isMeaningfulShortComment(text = '') {

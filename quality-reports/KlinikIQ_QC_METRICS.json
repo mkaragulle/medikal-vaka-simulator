@@ -1,0 +1,28 @@
+{
+  "metrics": {
+    "casesScanned": 620,
+    "casesWithInvestigations": 382,
+    "investigationCardsScanned": 1121,
+    "tableRowsScanned": 1599,
+    "shortCommentsScanned": 7521,
+    "referenceCommentErrorsFixed": 74,
+    "resultReferenceDuplicateOrColumnShiftFixed": 176,
+    "columnShiftFixed": 0,
+    "sentenceTruncationsFixed": 2,
+    "lowercaseReferenceOrCommentSentenceFixed": 46,
+    "genericShortComments": 197,
+    "hiddenUnnecessaryShortComments": 310,
+    "rewrittenShortComments": 908,
+    "panelCommentsCreatedOrMerged": 117,
+    "metabolicBiochemicalCommentsRewritten": 82,
+    "specialContextCommentsRewritten": 541,
+    "parsingHelperFixed": true,
+    "renderShortCommentGuardFixed": true,
+    "pdfExportFixed": "not-found: separate project PDF/export module was not present; shared cleaned data/UI render guards were updated.",
+    "scientificConcernCount": 0,
+    "idChanged": false,
+    "tusSpotTouched": false,
+    "buildStatus": "failed: vite not found; npm install timed out twice in sandbox. Node syntax/import checks passed."
+  },
+  "scientificConcerns": []
+}
