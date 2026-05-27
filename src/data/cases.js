@@ -2499,29 +2499,30 @@ export const rawCases = [
     "relatedBranch": "Anatomi / Ortopedi",
     "title": "Omuz travması sonrası güç kaybı",
     "difficulty": "Kolay",
-    "clinicalFocus": "Omuz travması sonrası güç kaybı bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir ve omuz abduksiyonunda belirgin güçsüzlük vardır. Bu ipuçlarını kullanarak Nervus axillaris seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Omuz travması sonrası güç kaybı olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus axillaris yanıtına ulaşma.",
+    "learningTarget": "Humerus cerrahi boyun travmasında deltoid fonksiyon kaybını axillary sinir anatomisiyle ilişkilendirebilme.",
     "demographics": "56 yaşında kadın hasta",
     "setting": "Ortopedi acili",
-    "chiefComplaint": "Hasta, sağ omuz ağrısı ve kolunu yana kaldıramama şikâyetiyle başvuruyor.",
-    "stem": "Merdivenden düşerken sağ omzu üzerine çarptığını, travmadan sonra kolunu özellikle gövdeden uzaklaştırmakta zorlandığını belirtiyor. Daha önce aynı omuzdan cerrahi geçirmemiştir.",
+    "chiefComplaint": "Hasta, merdivenden düşme sonrası sağ omuz ağrısı ve kolunu yana kaldırmada belirgin güçlük nedeniyle başvuruyor.",
+    "stem": "Düşerken sağ omzunun üzerine çarptığını, travmadan hemen sonra kolunu gövdeden uzaklaştırmakta zorlandığını belirtiyor. El bileğini ve parmaklarını hareket ettirebildiğini, daha önce aynı omuzdan cerrahi geçirmediğini ifade ediyor.",
     "patientIntro": {
-      "profile": "56 yaşında kadın hasta, düşme sonrası ortopedi acilinde değerlendiriliyor.",
-      "presentation": "Hasta, sağ omuz ağrısı ve kolunu yana kaldıramama şikâyetiyle başvuruyor.",
-      "historySummary": "Merdivenden düşerken sağ omzu üzerine çarptığını, travmadan sonra kolunu özellikle gövdeden uzaklaştırmakta zorlandığını belirtiyor. Daha önce aynı omuzdan cerrahi geçirmemiştir."
+      "profile": "56 yaşında kadın hasta, ortopedi acilinda değerlendiriliyor.",
+      "presentation": "Hasta, merdivenden düşme sonrası sağ omuz ağrısı ve kolunu yana kaldırmada belirgin güçlük nedeniyle başvuruyor.",
+      "historySummary": "Düşerken sağ omzunun üzerine çarptığını, travmadan hemen sonra kolunu gövdeden uzaklaştırmakta zorlandığını belirtiyor. El bileğini ve parmaklarını hareket ettirebildiğini, daha önce aynı omuzdan cerrahi geçirmediğini ifade ediyor."
     },
     "vitals": {
-      "TA": "118/74 mmHg",
-      "Nabız": "104/dk",
+      "TA": "124/78 mmHg",
+      "Nabız": "96/dk",
       "Solunum": "18/dk",
       "SpO2": "%98, oda havasında",
       "Ateş": "36.8 °C",
-      "Şok indeksi": "0.88 normal"
+      "Şok indeksi": "0.77 normal"
     },
     "exam": [
-      "Sağ omuzda şişlik, hassasiyet ve hareket kısıtlılığı vardır.",
-      "Omuz abduksiyonunda belirgin güçsüzlük izlenir.",
-      "Deltoid bölge üzerindeki cilt duyusu azalmıştır."
+      "Sağ omuzda şişlik, hassasiyet ve aktif hareket kısıtlılığı vardır.",
+      "Omuz abdüksiyonu özellikle 15 dereceden sonra belirgin zayıftır.",
+      "Deltoid bölge üzerindeki lateral üst kol derisinde duyu azalması saptanır.",
+      "El bileği ve parmak ekstansiyonu korunmuştur."
     ],
     "investigations": [
       {
@@ -2530,43 +2531,43 @@ export const rawCases = [
         "title": "Sağ omuz direkt grafisi",
         "type": "xray",
         "priority": "essential",
-        "subtype": "Direkt/kontrastlı grafi",
-        "summary": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-        "clinicalMeaning": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+        "subtype": "Direkt grafi",
+        "summary": "Sağ omuz AP grafisinde humerus cerrahi boyun bölgesinde kırık hattı izlenir; bu düzey quadrangular space ve nervus axillaris komşuluğu nedeniyle deltoid fonksiyonunun özellikle değerlendirilmesini gerektirir.",
+        "clinicalMeaning": "Humerus cerrahi boyun kırığı, nervus axillaris ve posterior circumflex humeral damarların geçtiği anatomik bölgeye yakındır; deltoid güçsüzlüğü ve lateral omuz duyusu bu nedenle anlamlıdır.",
         "result": {
           "title": "Sağ omuz direkt grafisi",
-          "summary": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-          "interpretation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+          "summary": "Sağ omuz AP grafisinde humerus cerrahi boyun bölgesinde kırık hattı izlenir; bu düzey quadrangular space ve nervus axillaris komşuluğu nedeniyle deltoid fonksiyonunun özellikle değerlendirilmesini gerektirir.",
+          "interpretation": "Humerus cerrahi boyun kırığı, nervus axillaris ve posterior circumflex humeral damarların geçtiği anatomik bölgeye yakındır; deltoid güçsüzlüğü ve lateral omuz duyusu bu nedenle anlamlıdır.",
           "values": [
             [
-              "Görüntüleme bulgusu",
+              "Sağ omuz direkt grafisi",
               "Humerus cerrahi boyun bölgesinde kırık hattı izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Humerus cerrahi boyun kırığı, nervus axillaris ve posterior circumflex humeral damarların geçtiği anatomik bölgeye yakındır; deltoid güçsüzlüğü ve lateral omuz duyusu bu nedenle anlamlıdır."
             ]
           ],
           "rows": [
             [
-              "Görüntüleme bulgusu",
+              "Sağ omuz direkt grafisi",
               "Humerus cerrahi boyun bölgesinde kırık hattı izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Humerus cerrahi boyun kırığı, nervus axillaris ve posterior circumflex humeral damarların geçtiği anatomik bölgeye yakındır; deltoid güçsüzlüğü ve lateral omuz duyusu bu nedenle anlamlıdır."
             ]
           ]
         },
         "rows": [
           [
-            "Görüntüleme bulgusu",
+            "Sağ omuz direkt grafisi",
             "Humerus cerrahi boyun bölgesinde kırık hattı izlendi.",
-            "Modaliteye özgü bulgu",
-            ""
+            "Anatomik yorum",
+            "Humerus cerrahi boyun kırığı, nervus axillaris ve posterior circumflex humeral damarların geçtiği anatomik bölgeye yakındır; deltoid güçsüzlüğü ve lateral omuz duyusu bu nedenle anlamlıdır."
           ]
         ],
-        "postAnswerExplanation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-        "interpretation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+        "postAnswerExplanation": "Humerus cerrahi boyun kırığı, nervus axillaris ve posterior circumflex humeral damarların geçtiği anatomik bölgeye yakındır; deltoid güçsüzlüğü ve lateral omuz duyusu bu nedenle anlamlıdır.",
+        "interpretation": "Humerus cerrahi boyun kırığı, nervus axillaris ve posterior circumflex humeral damarların geçtiği anatomik bölgeye yakındır; deltoid güçsüzlüğü ve lateral omuz duyusu bu nedenle anlamlıdır.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir."
+        "explanationAfterAnswer": "Humerus cerrahi boyun kırığı, nervus axillaris ve posterior circumflex humeral damarların geçtiği anatomik bölgeye yakındır; deltoid güçsüzlüğü ve lateral omuz duyusu bu nedenle anlamlıdır."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -2574,138 +2575,155 @@ export const rawCases = [
       "enabled": false
     },
     "hideExamSignal": true,
-    "question": "Bu hastada hasarlanma riski en yüksek sinir aşağıdakilerden hangisidir?",
+    "question": "Bu hastada omuz abdüksiyon kaybı ve deltoid bölge duyu azalmasını en doğrudan açıklayan sinir hasarı hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Nervus axillaris",
       "options": [
-        "Nervus musculocutaneus",
-        "Nervus medianus",
-        "Nervus radialis",
         "Nervus axillaris",
-        "Nervus ulnaris"
+        "Nervus suprascapularis",
+        "Nervus radialis",
+        "Nervus musculocutaneus",
+        "Nervus thoracicus longus"
       ],
-      "question": "Bu hastada hasarlanma riski en yüksek sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus axillaris, vakadaki bulgularla en uyumlu tanıdır. Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir Omuz abduksiyonunda belirgin güçsüzlük vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Bu hastada omuz abdüksiyon kaybı ve deltoid bölge duyu azalmasını en doğrudan açıklayan sinir hasarı hangisidir?",
+      "explanation": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir + omuz abduksiyonunda belirgin güçsüzlük vardır; bu birliktelik Nervus axillaris yanıtını öne çıkarır."
+          "text": "Humerus cerrahi boyun travması + 15 dereceden sonra abdüksiyon zayıflığı + deltoid rozet alanında duyu azalması birlikte nervus axillaris hasarını düşündürür."
         }
       ],
       "answerFeedback": {
-        "summary": "Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir Omuz abduksiyonunda belirgin güçsüzlük vardır. Bu bulgular tanısal karar açısından Nervus axillaris yanıtını destekler.",
+        "summary": "Bu olguda karar, düşme sonrası humerus cerrahi boyun bölgesinde kırık hattı izlenmesi nervus axillarisin komşu seyrini riskli hale getirir. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler.",
         "keyClues": [
-          "Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir.",
-          "Omuz abduksiyonunda belirgin güçsüzlük vardır.",
-          "Deltoid bölge üzerinde cilt duyusu azalmıştır."
+          "Düşme sonrası humerus cerrahi boyun bölgesinde kırık hattı izlenmesi nervus axillarisin komşu seyrini riskli hale getirir.",
+          "Omuz abdüksiyonunun 15 dereceden sonra zayıflaması deltoid kas fonksiyon kaybını gösterir.",
+          "Lateral üst kol/deltoid rozet alanında duyu azalması nervus axillarisin kutanöz dalı ile uyumludur."
         ],
-        "examPearl": "İpucu: Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir + omuz abduksiyonunda belirgin güçsüzlük vardır; bu birliktelik Nervus axillaris yanıtını öne çıkarır.",
         "evidenceChain": [
           {
-            "text": "Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir.",
+            "text": "Düşme sonrası humerus cerrahi boyun bölgesinde kırık hattı izlenmesi nervus axillarisin komşu seyrini riskli hale getirir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Omuz abduksiyonunda belirgin güçsüzlük vardır.",
+            "text": "Omuz abdüksiyonunun 15 dereceden sonra zayıflaması deltoid kas fonksiyon kaybını gösterir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Deltoid bölge üzerinde cilt duyusu azalmıştır.",
+            "text": "Lateral üst kol/deltoid rozet alanında duyu azalması nervus axillarisin kutanöz dalı ile uyumludur.",
             "weight": "medium",
             "source": "case"
           }
         ],
+        "examPearl": "Humerus cerrahi boyun travması + 15 dereceden sonra abdüksiyon zayıflığı + deltoid rozet alanında duyu azalması birlikte nervus axillaris hasarını düşündürür.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Humerus cerrahi boyun travması + 15 dereceden sonra abdüksiyon zayıflığı + deltoid rozet alanında duyu azalması birlikte nervus axillaris hasarını düşündürür."
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "label": "Klinik anatomi",
+            "text": "Nervus axillaris, humerus cerrahi boynu ve quadrangular space komşuluğu nedeniyle cerrahi boyun kırığı veya anterior omuz çıkığında risk altındadır; deltoid ve teres minor kasları ile lateral omuz derisi bu sinirin temel klinik ipuçlarıdır."
+          }
+        ],
         "optionComparison": {
-          "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-          "Nervus medianus": "Nervus medianus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-          "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-          "Nervus axillaris": "Nervus axillaris, olgunun ana tanısal örüntüsünü karşılar. Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir Omuz abduksiyonunda belirgin güçsüzlük vardır. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler."
+          "Nervus axillaris": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler.",
+          "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyonunun başlangıcı ve dış rotasyon etkilenir. Deltoid rozet alanı duyusu bu sinire ait olmadığı için bu olgudaki duyu bulgusunu açıklamaz.",
+          "Nervus radialis": "Nervus radialis humerus spiral oluğuyla ilişkilidir ve el bileği-parmak ekstansiyon kaybı ile birinci dorsal aralık duyusunda azalma beklenir. Bu hastada el bileği ekstansiyonu korunmuş, ana kayıp deltoid-abdüksiyon eksenindedir.",
+          "Nervus musculocutaneus": "Nervus musculocutaneus ön kol fleksör kompartmanını ve ön kol lateral duyusunu etkiler. Dirsek fleksiyonu veya ön kol lateral duyusu ön planda olmadığı için cerrahi boyun travmasındaki bulguları açıklamaz.",
+          "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder; lezyonunda skapula kanatlanması ve kolu baş üzerine kaldırmada güçlük beklenir. Deltoid bölge duyusu ve cerrahi boyun komşuluğu nervus axillaris lehinedir."
         },
-        "rationale": "Nervus axillaris, vakadaki bulgularla en uyumlu tanıdır. Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir Omuz abduksiyonunda belirgin güçsüzlük vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "whyCorrect": "Nervus axillaris, vakadaki bulgularla en uyumlu tanıdır. Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir Omuz abduksiyonunda belirgin güçsüzlük vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+        "whyWrong": {
+          "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyonunun başlangıcı ve dış rotasyon etkilenir. Deltoid rozet alanı duyusu bu sinire ait olmadığı için bu olgudaki duyu bulgusunu açıklamaz.",
+          "Nervus radialis": "Nervus radialis humerus spiral oluğuyla ilişkilidir ve el bileği-parmak ekstansiyon kaybı ile birinci dorsal aralık duyusunda azalma beklenir. Bu hastada el bileği ekstansiyonu korunmuş, ana kayıp deltoid-abdüksiyon eksenindedir.",
+          "Nervus musculocutaneus": "Nervus musculocutaneus ön kol fleksör kompartmanını ve ön kol lateral duyusunu etkiler. Dirsek fleksiyonu veya ön kol lateral duyusu ön planda olmadığı için cerrahi boyun travmasındaki bulguları açıklamaz.",
+          "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder; lezyonunda skapula kanatlanması ve kolu baş üzerine kaldırmada güçlük beklenir. Deltoid bölge duyusu ve cerrahi boyun komşuluğu nervus axillaris lehinedir."
+        },
         "managementSteps": [],
         "management": [],
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus axillaris yanıtını destekler.",
-        "whyWrong": {
-          "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-          "Nervus medianus": "Nervus medianus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-          "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-          "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler."
-        }
+        "learningOutcome": "Humerus cerrahi boyun travmasında deltoid fonksiyon kaybını axillary sinir anatomisiyle ilişkilendirebilme.",
+        "coreKnowledge": "Nervus axillaris, humerus cerrahi boynu ve quadrangular space komşuluğu nedeniyle cerrahi boyun kırığı veya anterior omuz çıkığında risk altındadır; deltoid ve teres minor kasları ile lateral omuz derisi bu sinirin temel klinik ipuçlarıdır."
       },
-      "whyCorrect": "Nervus axillaris, vakadaki bulgularla en uyumlu tanıdır. Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir Omuz abduksiyonunda belirgin güçsüzlük vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "text": "Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Düşme sonrası humerus cerrahi boyun bölgesinde kırık hattı izlenmesi nervus axillarisin komşu seyrini riskli hale getirir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "text": "Omuz abduksiyonunda belirgin güçsüzlük vardır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Omuz abdüksiyonunun 15 dereceden sonra zayıflaması deltoid kas fonksiyon kaybını gösterir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "text": "Deltoid bölge üzerinde cilt duyusu azalmıştır.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Lateral üst kol/deltoid rozet alanında duyu azalması nervus axillarisin kutanöz dalı ile uyumludur.",
+          "weight": "medium",
           "source": "case"
         }
       ],
       "optionComparison": {
-        "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-        "Nervus medianus": "Nervus medianus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-        "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-        "Nervus axillaris": "Nervus axillaris, olgunun ana tanısal örüntüsünü karşılar. Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir Omuz abduksiyonunda belirgin güçsüzlük vardır. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler."
+        "Nervus axillaris": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler.",
+        "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyonunun başlangıcı ve dış rotasyon etkilenir. Deltoid rozet alanı duyusu bu sinire ait olmadığı için bu olgudaki duyu bulgusunu açıklamaz.",
+        "Nervus radialis": "Nervus radialis humerus spiral oluğuyla ilişkilidir ve el bileği-parmak ekstansiyon kaybı ile birinci dorsal aralık duyusunda azalma beklenir. Bu hastada el bileği ekstansiyonu korunmuş, ana kayıp deltoid-abdüksiyon eksenindedir.",
+        "Nervus musculocutaneus": "Nervus musculocutaneus ön kol fleksör kompartmanını ve ön kol lateral duyusunu etkiler. Dirsek fleksiyonu veya ön kol lateral duyusu ön planda olmadığı için cerrahi boyun travmasındaki bulguları açıklamaz.",
+        "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder; lezyonunda skapula kanatlanması ve kolu baş üzerine kaldırmada güçlük beklenir. Deltoid bölge duyusu ve cerrahi boyun komşuluğu nervus axillaris lehinedir."
       },
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus axillaris yanıtını destekler.",
-      "examPearl": "İpucu: Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir + omuz abduksiyonunda belirgin güçsüzlük vardır; bu birliktelik Nervus axillaris yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus axillaris, humerus cerrahi boynu ve quadrangular space komşuluğu nedeniyle cerrahi boyun kırığı veya anterior omuz çıkığında risk altındadır; deltoid ve teres minor kasları ile lateral omuz derisi bu sinirin temel klinik ipuçlarıdır.",
+      "examPearl": "Humerus cerrahi boyun travması + 15 dereceden sonra abdüksiyon zayıflığı + deltoid rozet alanında duyu azalması birlikte nervus axillaris hasarını düşündürür.",
       "whyWrong": {
-        "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-        "Nervus medianus": "Nervus medianus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-        "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-        "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler."
+        "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyonunun başlangıcı ve dış rotasyon etkilenir. Deltoid rozet alanı duyusu bu sinire ait olmadığı için bu olgudaki duyu bulgusunu açıklamaz.",
+        "Nervus radialis": "Nervus radialis humerus spiral oluğuyla ilişkilidir ve el bileği-parmak ekstansiyon kaybı ile birinci dorsal aralık duyusunda azalma beklenir. Bu hastada el bileği ekstansiyonu korunmuş, ana kayıp deltoid-abdüksiyon eksenindedir.",
+        "Nervus musculocutaneus": "Nervus musculocutaneus ön kol fleksör kompartmanını ve ön kol lateral duyusunu etkiler. Dirsek fleksiyonu veya ön kol lateral duyusu ön planda olmadığı için cerrahi boyun travmasındaki bulguları açıklamaz.",
+        "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder; lezyonunda skapula kanatlanması ve kolu baş üzerine kaldırmada güçlük beklenir. Deltoid bölge duyusu ve cerrahi boyun komşuluğu nervus axillaris lehinedir."
       }
     },
     "shuffleOptions": false,
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus axillaris yanıtını destekler.",
-    "examPearl": "İpucu: Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir + omuz abduksiyonunda belirgin güçsüzlük vardır; bu birliktelik Nervus axillaris yanıtını öne çıkarır.",
-    "whyCorrect": "Nervus axillaris, vakadaki bulgularla en uyumlu tanıdır. Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir Omuz abduksiyonunda belirgin güçsüzlük vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "Nervus axillaris, humerus cerrahi boynu ve quadrangular space komşuluğu nedeniyle cerrahi boyun kırığı veya anterior omuz çıkığında risk altındadır; deltoid ve teres minor kasları ile lateral omuz derisi bu sinirin temel klinik ipuçlarıdır.",
+    "examPearl": "Humerus cerrahi boyun travması + 15 dereceden sonra abdüksiyon zayıflığı + deltoid rozet alanında duyu azalması birlikte nervus axillaris hasarını düşündürür.",
+    "whyCorrect": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-      "Nervus medianus": "Nervus medianus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-      "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-      "Nervus axillaris": "Nervus axillaris, olgunun ana tanısal örüntüsünü karşılar. Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir Omuz abduksiyonunda belirgin güçsüzlük vardır. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler."
+      "Nervus axillaris": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler.",
+      "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyonunun başlangıcı ve dış rotasyon etkilenir. Deltoid rozet alanı duyusu bu sinire ait olmadığı için bu olgudaki duyu bulgusunu açıklamaz.",
+      "Nervus radialis": "Nervus radialis humerus spiral oluğuyla ilişkilidir ve el bileği-parmak ekstansiyon kaybı ile birinci dorsal aralık duyusunda azalma beklenir. Bu hastada el bileği ekstansiyonu korunmuş, ana kayıp deltoid-abdüksiyon eksenindedir.",
+      "Nervus musculocutaneus": "Nervus musculocutaneus ön kol fleksör kompartmanını ve ön kol lateral duyusunu etkiler. Dirsek fleksiyonu veya ön kol lateral duyusu ön planda olmadığı için cerrahi boyun travmasındaki bulguları açıklamaz.",
+      "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder; lezyonunda skapula kanatlanması ve kolu baş üzerine kaldırmada güçlük beklenir. Deltoid bölge duyusu ve cerrahi boyun komşuluğu nervus axillaris lehinedir."
     },
     "evidenceChain": [
       {
-        "text": "Direkt grafide humerus cerrahi boyun kırığı gösterilmiştir.",
+        "text": "Düşme sonrası humerus cerrahi boyun bölgesinde kırık hattı izlenmesi nervus axillarisin komşu seyrini riskli hale getirir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Omuz abduksiyonunda belirgin güçsüzlük vardır.",
+        "text": "Omuz abdüksiyonunun 15 dereceden sonra zayıflaması deltoid kas fonksiyon kaybını gösterir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Deltoid bölge üzerinde cilt duyusu azalmıştır.",
+        "text": "Lateral üst kol/deltoid rozet alanında duyu azalması nervus axillarisin kutanöz dalı ile uyumludur.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-      "Nervus medianus": "Nervus medianus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-      "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler.",
-      "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler."
+      "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyonunun başlangıcı ve dış rotasyon etkilenir. Deltoid rozet alanı duyusu bu sinire ait olmadığı için bu olgudaki duyu bulgusunu açıklamaz.",
+      "Nervus radialis": "Nervus radialis humerus spiral oluğuyla ilişkilidir ve el bileği-parmak ekstansiyon kaybı ile birinci dorsal aralık duyusunda azalma beklenir. Bu hastada el bileği ekstansiyonu korunmuş, ana kayıp deltoid-abdüksiyon eksenindedir.",
+      "Nervus musculocutaneus": "Nervus musculocutaneus ön kol fleksör kompartmanını ve ön kol lateral duyusunu etkiler. Dirsek fleksiyonu veya ön kol lateral duyusu ön planda olmadığı için cerrahi boyun travmasındaki bulguları açıklamaz.",
+      "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder; lezyonunda skapula kanatlanması ve kolu baş üzerine kaldırmada güçlük beklenir. Deltoid bölge duyusu ve cerrahi boyun komşuluğu nervus axillaris lehinedir."
     }
   },
   {
@@ -9004,16 +9022,16 @@ export const rawCases = [
     "relatedBranch": "Anatomi / Genel Cerrahi",
     "title": "Boyun cerrahisi sonrası ses değişikliği",
     "difficulty": "Kolay",
-    "clinicalFocus": "Boyun cerrahisi sonrası ses değişikliği bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Ses kısıklığı ameliyat sonrası yeni başlamıştır ve cerrahi girişim tiroid bezi çevresinde yapılmıştır. Bu ipuçlarını kullanarak Nervus laryngeus recurrens seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Boyun cerrahisi sonrası ses değişikliği olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus laryngeus recurrens yanıtına ulaşma.",
+    "learningTarget": "Tiroid cerrahisi komplikasyonlarında larenks sinirlerini fonksiyonel bulgularla ayırt edebilme.",
     "demographics": "46 yaşında kadın hasta",
-    "setting": "Servis",
-    "chiefComplaint": "Hasta, ameliyat sonrası belirgin ses kısıklığı ve konuşurken çabuk yorulma nedeniyle değerlendiriliyor.",
-    "stem": "Multinodüler guatr nedeniyle total tiroidektomi yapıldığı, ameliyattan önce ses kısıklığı olmadığı öğreniliyor. Yutma güçlüğü veya ağız köşesinde kayma tariflemiyor.",
+    "setting": "Endokrin cerrahi servisi",
+    "chiefComplaint": "Hasta, total tiroidektomi sonrası yeni gelişen ses kısıklığı ve konuşurken çabuk yorulma nedeniyle değerlendiriliyor.",
+    "stem": "Multinodüler guatr nedeniyle yapılan total tiroidektomiden önce ses problemi olmadığını, ameliyattan sonra sesinin nefesli ve zayıf çıktığını belirtiyor. Yutma sırasında belirgin aspirasyon, dilde kayma veya ağız köşesinde düşme tariflemiyor.",
     "patientIntro": {
-      "profile": "46 yaşında kadın hasta, tiroidektomi sonrası serviste değerlendiriliyor.",
-      "presentation": "Hasta, ameliyat sonrası belirgin ses kısıklığı ve konuşurken çabuk yorulma nedeniyle değerlendiriliyor.",
-      "historySummary": "Multinodüler guatr nedeniyle total tiroidektomi yapıldığı, ameliyattan önce ses kısıklığı olmadığı öğreniliyor. Yutma güçlüğü veya ağız köşesinde kayma tariflemiyor."
+      "profile": "46 yaşında kadın hasta, endokrin cerrahi servisinde değerlendiriliyor.",
+      "presentation": "Hasta, total tiroidektomi sonrası yeni gelişen ses kısıklığı ve konuşurken çabuk yorulma nedeniyle değerlendiriliyor.",
+      "historySummary": "Multinodüler guatr nedeniyle yapılan total tiroidektomiden önce ses problemi olmadığını, ameliyattan sonra sesinin nefesli ve zayıf çıktığını belirtiyor. Yutma sırasında belirgin aspirasyon, dilde kayma veya ağız köşesinde düşme tariflemiyor."
     },
     "vitals": {
       "TA": "118/76 mmHg",
@@ -9024,10 +9042,10 @@ export const rawCases = [
       "Şok indeksi": "0.66 normal"
     },
     "exam": [
-      "Hasta konuşurken sesi kısık ve nefesli duyulmaktadır.",
-      "Ağız içi muayenede uvula orta hatta izlenir.",
-      "Dil hareketleri simetriktir.",
-      "Hemodinamik instabilite düşündüren belirgin klinik bulgu yoktur."
+      "Hasta konuşurken sesi kısık ve nefeslidir.",
+      "Fleksibl laringoskopide tek taraflı vokal kord hareketinde belirgin azalma izlenir.",
+      "Dil hareketleri simetriktir ve uvula orta hattadır.",
+      "Omuz elevasyonu ve baş çevirme gücü korunmuştur."
     ],
     "investigations": [
       {
@@ -9037,42 +9055,42 @@ export const rawCases = [
         "type": "endoscopy",
         "priority": "essential",
         "subtype": "Endoskopik değerlendirme",
-        "summary": "Fleksibl laringoskopi sonucundaki anormallik, olgudaki klinik örüntüyle birlikte Nervus laryngeus recurrens olasılığını destekler; karar tek parametreyle değil eşlik eden muayene ve objektif verilerle verilmelidir.",
-        "clinicalMeaning": "Fleksibl laringoskopi sonucundaki anormallik, olgudaki klinik örüntüyle birlikte Nervus laryngeus recurrens olasılığını destekler; karar tek parametreyle değil eşlik eden muayene ve objektif verilerle verilmelidir.",
+        "summary": "Fleksibl laringoskopide tek taraflı vokal kord hareketinde belirgin azalma izlenmesi, tiroid cerrahisi sonrası nervus laryngeus recurrens etkilenimini destekler. Dil ve yumuşak damak hareketlerinin korunması hipoglossal veya glossopharyngeal lezyondan uzaklaştırır.",
+        "clinicalMeaning": "Vokal kord hareket kusuru, cricothyroideus dışındaki intrinsik larenks kaslarının motor innervasyonunu taşıyan nervus laryngeus recurrens ile ilişkilidir.",
         "result": {
           "title": "Fleksibl laringoskopi",
-          "summary": "Fleksibl laringoskopi sonucundaki anormallik, olgudaki klinik örüntüyle birlikte Nervus laryngeus recurrens olasılığını destekler; karar tek parametreyle değil eşlik eden muayene ve objektif verilerle verilmelidir.",
-          "interpretation": "Fleksibl laringoskopi sonucundaki anormallik, olgudaki klinik örüntüyle birlikte Nervus laryngeus recurrens olasılığını destekler; karar tek parametreyle değil eşlik eden muayene ve objektif verilerle verilmelidir.",
+          "summary": "Fleksibl laringoskopide tek taraflı vokal kord hareketinde belirgin azalma izlenmesi, tiroid cerrahisi sonrası nervus laryngeus recurrens etkilenimini destekler. Dil ve yumuşak damak hareketlerinin korunması hipoglossal veya glossopharyngeal lezyondan uzaklaştırır.",
+          "interpretation": "Vokal kord hareket kusuru, cricothyroideus dışındaki intrinsik larenks kaslarının motor innervasyonunu taşıyan nervus laryngeus recurrens ile ilişkilidir.",
           "values": [
             [
-              "Görüntüleme bulgusu",
+              "Fleksibl laringoskopi",
               "Tek taraflı vokal kord hareketinde belirgin azalma izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Vokal kord hareket kusuru, cricothyroideus dışındaki intrinsik larenks kaslarının motor innervasyonunu taşıyan nervus laryngeus recurrens ile ilişkilidir."
             ]
           ],
           "rows": [
             [
-              "Görüntüleme bulgusu",
+              "Fleksibl laringoskopi",
               "Tek taraflı vokal kord hareketinde belirgin azalma izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Vokal kord hareket kusuru, cricothyroideus dışındaki intrinsik larenks kaslarının motor innervasyonunu taşıyan nervus laryngeus recurrens ile ilişkilidir."
             ]
           ]
         },
         "rows": [
           [
-            "Görüntüleme bulgusu",
+            "Fleksibl laringoskopi",
             "Tek taraflı vokal kord hareketinde belirgin azalma izlendi.",
-            "Modaliteye özgü bulgu",
-            ""
+            "Anatomik yorum",
+            "Vokal kord hareket kusuru, cricothyroideus dışındaki intrinsik larenks kaslarının motor innervasyonunu taşıyan nervus laryngeus recurrens ile ilişkilidir."
           ]
         ],
-        "postAnswerExplanation": "Fleksibl laringoskopi sonucundaki anormallik, olgudaki klinik örüntüyle birlikte Nervus laryngeus recurrens olasılığını destekler; karar tek parametreyle değil eşlik eden muayene ve objektif verilerle verilmelidir.",
-        "interpretation": "Fleksibl laringoskopi sonucundaki anormallik, olgudaki klinik örüntüyle birlikte Nervus laryngeus recurrens olasılığını destekler; karar tek parametreyle değil eşlik eden muayene ve objektif verilerle verilmelidir.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Fleksibl laringoskopi sonucundaki anormallik, olgudaki klinik örüntüyle birlikte Nervus laryngeus recurrens olasılığını destekler; karar tek parametreyle değil eşlik eden muayene ve objektif verilerle verilmelidir."
+        "postAnswerExplanation": "Vokal kord hareket kusuru, cricothyroideus dışındaki intrinsik larenks kaslarının motor innervasyonunu taşıyan nervus laryngeus recurrens ile ilişkilidir.",
+        "interpretation": "Vokal kord hareket kusuru, cricothyroideus dışındaki intrinsik larenks kaslarının motor innervasyonunu taşıyan nervus laryngeus recurrens ile ilişkilidir.",
+        "category": "endoscopy",
+        "testTypeCategory": "endoscopy",
+        "explanationAfterAnswer": "Vokal kord hareket kusuru, cricothyroideus dışındaki intrinsik larenks kaslarının motor innervasyonunu taşıyan nervus laryngeus recurrens ile ilişkilidir."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -9080,138 +9098,155 @@ export const rawCases = [
       "enabled": false
     },
     "hideExamSignal": true,
-    "question": "Bu hastada hasarlanması en olası sinir aşağıdakilerden hangisidir?",
+    "question": "Tiroid cerrahisi sonrası yeni başlayan ses kısıklığı ve vokal kord hareket azalmasını en iyi açıklayan sinir hasarı hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Nervus laryngeus recurrens",
       "options": [
+        "Nervus laryngeus recurrens",
+        "Nervus laryngeus superior - ramus externus",
         "Nervus hypoglossus",
         "Nervus glossopharyngeus",
-        "Nervus laryngeus recurrens",
-        "Ramus marginalis mandibulae nervi facialis",
         "Nervus accessorius"
       ],
-      "question": "Bu hastada hasarlanması en olası sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus laryngeus recurrens, vakadaki bulgularla en uyumlu tanıdır. Ses kısıklığı ameliyat sonrası yeni başlamıştır Cerrahi girişim tiroid bezi çevresinde yapılmıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Tiroid cerrahisi sonrası yeni başlayan ses kısıklığı ve vokal kord hareket azalmasını en iyi açıklayan sinir hasarı hangisidir?",
+      "explanation": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Ses kısıklığı ameliyat sonrası yeni başlamıştır + cerrahi girişim tiroid bezi çevresinde yapılmıştır; bu birliktelik Nervus laryngeus recurrens yanıtını öne çıkarır."
+          "text": "Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir."
         }
       ],
       "answerFeedback": {
-        "summary": "Ses kısıklığı ameliyat sonrası yeni başlamıştır Cerrahi girişim tiroid bezi çevresinde yapılmıştır. Bu bulgular tanısal karar açısından Nervus laryngeus recurrens yanıtını destekler.",
+        "summary": "Bu olguda karar, tiroid cerrahisi, trakeoözofageal olukta tiroide komşu seyreden nervus laryngeus recurrensi riskli hale getirir. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur.",
         "keyClues": [
-          "Ses kısıklığı ameliyat sonrası yeni başlamıştır.",
-          "Cerrahi girişim tiroid bezi çevresinde yapılmıştır.",
-          "Laringoskopide tek taraflı vokal kord hareketinde azalma izlenmiştir."
+          "Tiroid cerrahisi, trakeoözofageal olukta tiroide komşu seyreden nervus laryngeus recurrensi riskli hale getirir.",
+          "Ameliyat sonrası yeni başlayan nefesli ses ve ses kısıklığı vokal kord adduksiyon/abduksiyon fonksiyonunun bozulduğunu gösterir.",
+          "Laringoskopide tek taraflı vokal kord hareket azalması intrinsik larenks kaslarını innerve eden recurrent laryngeal sinir etkilenimini destekler."
         ],
-        "examPearl": "İpucu: Ses kısıklığı ameliyat sonrası yeni başlamıştır + cerrahi girişim tiroid bezi çevresinde yapılmıştır; bu birliktelik Nervus laryngeus recurrens yanıtını öne çıkarır.",
         "evidenceChain": [
           {
-            "text": "Ses kısıklığı ameliyat sonrası yeni başlamıştır.",
+            "text": "Tiroid cerrahisi, trakeoözofageal olukta tiroide komşu seyreden nervus laryngeus recurrensi riskli hale getirir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Cerrahi girişim tiroid bezi çevresinde yapılmıştır.",
+            "text": "Ameliyat sonrası yeni başlayan nefesli ses ve ses kısıklığı vokal kord adduksiyon/abduksiyon fonksiyonunun bozulduğunu gösterir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Laringoskopide tek taraflı vokal kord hareketinde azalma izlenmiştir.",
+            "text": "Laringoskopide tek taraflı vokal kord hareket azalması intrinsik larenks kaslarını innerve eden recurrent laryngeal sinir etkilenimini destekler.",
             "weight": "medium",
             "source": "case"
           }
         ],
+        "examPearl": "Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir."
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "label": "Klinik anatomi",
+            "text": "Nervus laryngeus recurrens trakeoözofageal olukta tiroide yakın seyreder ve intrinsik larenks kaslarının çoğunu innerve eder; lezyonu vokal kord paralizisi, nefesli ses ve ses kısıklığı yapar."
+          }
+        ],
         "optionComparison": {
-          "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, olgunun ana tanısal örüntüsünü karşılar. Ses kısıklığı ameliyat sonrası yeni başlamıştır Cerrahi girişim tiroid bezi çevresinde yapılmıştır. Bulgular aynı tanı etrafında birleşir.",
-          "Ramus marginalis mandibulae nervi facialis": "Ramus marginalis mandibulae nervi facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+          "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur.",
+          "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+          "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+          "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+          "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
         },
-        "rationale": "Nervus laryngeus recurrens, vakadaki bulgularla en uyumlu tanıdır. Ses kısıklığı ameliyat sonrası yeni başlamıştır Cerrahi girişim tiroid bezi çevresinde yapılmıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "whyCorrect": "Nervus laryngeus recurrens, vakadaki bulgularla en uyumlu tanıdır. Ses kısıklığı ameliyat sonrası yeni başlamıştır Cerrahi girişim tiroid bezi çevresinde yapılmıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+        "whyWrong": {
+          "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+          "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+          "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+          "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
+        },
         "managementSteps": [],
         "management": [],
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus laryngeus recurrens yanıtını destekler.",
-        "whyWrong": {
-          "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Ramus marginalis mandibulae nervi facialis": "Ramus marginalis mandibulae nervi facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
-        }
+        "learningOutcome": "Tiroid cerrahisi komplikasyonlarında larenks sinirlerini fonksiyonel bulgularla ayırt edebilme.",
+        "coreKnowledge": "Nervus laryngeus recurrens trakeoözofageal olukta tiroide yakın seyreder ve intrinsik larenks kaslarının çoğunu innerve eder; lezyonu vokal kord paralizisi, nefesli ses ve ses kısıklığı yapar."
       },
-      "whyCorrect": "Nervus laryngeus recurrens, vakadaki bulgularla en uyumlu tanıdır. Ses kısıklığı ameliyat sonrası yeni başlamıştır Cerrahi girişim tiroid bezi çevresinde yapılmıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "text": "Ses kısıklığı ameliyat sonrası yeni başlamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Tiroid cerrahisi, trakeoözofageal olukta tiroide komşu seyreden nervus laryngeus recurrensi riskli hale getirir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "text": "Cerrahi girişim tiroid bezi çevresinde yapılmıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ameliyat sonrası yeni başlayan nefesli ses ve ses kısıklığı vokal kord adduksiyon/abduksiyon fonksiyonunun bozulduğunu gösterir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "text": "Laringoskopide tek taraflı vokal kord hareketinde azalma izlenmiştir.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Laringoskopide tek taraflı vokal kord hareket azalması intrinsik larenks kaslarını innerve eden recurrent laryngeal sinir etkilenimini destekler.",
+          "weight": "medium",
           "source": "case"
         }
       ],
       "optionComparison": {
-        "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, olgunun ana tanısal örüntüsünü karşılar. Ses kısıklığı ameliyat sonrası yeni başlamıştır Cerrahi girişim tiroid bezi çevresinde yapılmıştır. Bulgular aynı tanı etrafında birleşir.",
-        "Ramus marginalis mandibulae nervi facialis": "Ramus marginalis mandibulae nervi facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+        "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur.",
+        "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+        "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+        "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+        "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
       },
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus laryngeus recurrens yanıtını destekler.",
-      "examPearl": "İpucu: Ses kısıklığı ameliyat sonrası yeni başlamıştır + cerrahi girişim tiroid bezi çevresinde yapılmıştır; bu birliktelik Nervus laryngeus recurrens yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus laryngeus recurrens trakeoözofageal olukta tiroide yakın seyreder ve intrinsik larenks kaslarının çoğunu innerve eder; lezyonu vokal kord paralizisi, nefesli ses ve ses kısıklığı yapar.",
+      "examPearl": "Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir.",
       "whyWrong": {
-        "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Ramus marginalis mandibulae nervi facialis": "Ramus marginalis mandibulae nervi facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+        "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+        "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+        "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+        "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
       }
     },
     "shuffleOptions": false,
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus laryngeus recurrens yanıtını destekler.",
-    "examPearl": "İpucu: Ses kısıklığı ameliyat sonrası yeni başlamıştır + cerrahi girişim tiroid bezi çevresinde yapılmıştır; bu birliktelik Nervus laryngeus recurrens yanıtını öne çıkarır.",
-    "whyCorrect": "Nervus laryngeus recurrens, vakadaki bulgularla en uyumlu tanıdır. Ses kısıklığı ameliyat sonrası yeni başlamıştır Cerrahi girişim tiroid bezi çevresinde yapılmıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "Nervus laryngeus recurrens trakeoözofageal olukta tiroide yakın seyreder ve intrinsik larenks kaslarının çoğunu innerve eder; lezyonu vokal kord paralizisi, nefesli ses ve ses kısıklığı yapar.",
+    "examPearl": "Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir.",
+    "whyCorrect": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, olgunun ana tanısal örüntüsünü karşılar. Ses kısıklığı ameliyat sonrası yeni başlamıştır Cerrahi girişim tiroid bezi çevresinde yapılmıştır. Bulgular aynı tanı etrafında birleşir.",
-      "Ramus marginalis mandibulae nervi facialis": "Ramus marginalis mandibulae nervi facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+      "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur.",
+      "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+      "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+      "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+      "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
     },
     "evidenceChain": [
       {
-        "text": "Ses kısıklığı ameliyat sonrası yeni başlamıştır.",
+        "text": "Tiroid cerrahisi, trakeoözofageal olukta tiroide komşu seyreden nervus laryngeus recurrensi riskli hale getirir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Cerrahi girişim tiroid bezi çevresinde yapılmıştır.",
+        "text": "Ameliyat sonrası yeni başlayan nefesli ses ve ses kısıklığı vokal kord adduksiyon/abduksiyon fonksiyonunun bozulduğunu gösterir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Laringoskopide tek taraflı vokal kord hareketinde azalma izlenmiştir.",
+        "text": "Laringoskopide tek taraflı vokal kord hareket azalması intrinsik larenks kaslarını innerve eden recurrent laryngeal sinir etkilenimini destekler.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Ramus marginalis mandibulae nervi facialis": "Ramus marginalis mandibulae nervi facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+      "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+      "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+      "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+      "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
     }
   },
   {
@@ -12203,29 +12238,29 @@ export const rawCases = [
     "relatedBranch": "Anatomi / Kadın Hastalıkları ve doğum",
     "title": "Pelvik cerrahide riskli yapı",
     "difficulty": "Orta",
-    "clinicalFocus": "Pelvik cerrahide riskli yapı bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "ya histerektomi planlanmaktadır ve cerrahide uterin arter ligasyonu gerekecektir. Bu ipuçlarını kullanarak Üreter seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Pelvik cerrahide riskli yapı olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Üreter yanıtına ulaşma.",
+    "learningTarget": "Pelvik cerrahide uterin arter-üreter komşuluğunu klinik güvenlik açısından yorumlayabilme.",
     "demographics": "48 yaşında kadın hasta",
-    "setting": "Klinik değerlendirme",
-    "chiefComplaint": "Hasta, uzun süredir devam eden yoğun adet kanaması ve pelvik bası hissi nedeniyle kadın doğum polikliniğine başvuruyor.",
-    "stem": "Son bir yılda adet kanamalarının arttığını, kansızlık nedeniyle demir tedavisi kullandığını ve doğurganlığını tamamladığını belirtiyor. Daha önce pelvik cerrahi geçirmemiştir.",
+    "setting": "Kadın doğum polikliniği",
+    "chiefComplaint": "Hasta, uzun süredir devam eden yoğun adet kanaması ve pelvik bası hissi nedeniyle cerrahi planlama amacıyla değerlendiriliyor.",
+    "stem": "Son bir yılda kanamalarının arttığını, demir eksikliği nedeniyle tedavi aldığını ve doğurganlığını tamamladığını belirtiyor. Görüntüleme sonrası semptomatik miyomlar nedeniyle histerektomi planlanıyor.",
     "patientIntro": {
-      "profile": "48 yaşında kadın hasta, semptomatik miyom nedeniyle elektif histerektomi planıyla değerlendiriliyor.",
-      "presentation": "Hasta, uzun süredir devam eden yoğun adet kanaması ve pelvik bası hissi nedeniyle kadın doğum polikliniğine başvuruyor.",
-      "historySummary": "Son bir yılda adet kanamalarının arttığını, kansızlık nedeniyle demir tedavisi kullandığını ve doğurganlığını tamamladığını belirtiyor. Daha önce pelvik cerrahi geçirmemiştir."
+      "profile": "48 yaşında kadın hasta, kadın doğum polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, uzun süredir devam eden yoğun adet kanaması ve pelvik bası hissi nedeniyle cerrahi planlama amacıyla değerlendiriliyor.",
+      "historySummary": "Son bir yılda kanamalarının arttığını, demir eksikliği nedeniyle tedavi aldığını ve doğurganlığını tamamladığını belirtiyor. Görüntüleme sonrası semptomatik miyomlar nedeniyle histerektomi planlanıyor."
     },
     "vitals": {
-      "TA": "88/56 mmHg",
-      "Nabız": "126/dk",
-      "Solunum": "24/dk",
-      "SpO2": "%96, oda havasında",
+      "TA": "118/76 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98, oda havasında",
       "Ateş": "36.6 °C",
-      "Şok indeksi": "1.43 yüksek"
+      "Şok indeksi": "0.66 normal"
     },
     "exam": [
-      "Genel görünümü stabil; akut toksik görünüm veya belirgin solunum sıkıntısı izlenmez.",
-      "Bimanuel muayenede uterus iri ve düzensiz konturlu palpe edilir.",
-      "Hemodinamik instabilite düşündüren belirgin klinik bulgu yoktur."
+      "Genel durumu iyi ve hemodinamik olarak stabildir.",
+      "Bimanuel muayenede uterus iri, hareketli ve düzensiz konturlu palpe edilir.",
+      "Adneksiyal hassasiyet veya akut batın bulgusu yoktur."
     ],
     "investigations": [
       {
@@ -12235,42 +12270,42 @@ export const rawCases = [
         "type": "ultrasound",
         "priority": "essential",
         "subtype": "Ultrasonografi",
-        "summary": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
-        "clinicalMeaning": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
+        "summary": "Pelvik ultrasonografide uterus içinde çoklu intramural miyom nodülleri izlenmesi, histerektomi planlanan semptomatik uterin patolojiyi destekler. Cerrahi sırasında uterin arter bağlanırken altından geçen üreterin korunması gerekir.",
+        "clinicalMeaning": "Miyom nedeniyle planlanan histerektomide kritik anatomi uterin arter-üreter çaprazlaşmasıdır; üreterin arterin altında seyretmesi yaralanma riskini açıklar.",
         "result": {
           "title": "Pelvik ultrasonografi",
-          "summary": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
-          "interpretation": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
+          "summary": "Pelvik ultrasonografide uterus içinde çoklu intramural miyom nodülleri izlenmesi, histerektomi planlanan semptomatik uterin patolojiyi destekler. Cerrahi sırasında uterin arter bağlanırken altından geçen üreterin korunması gerekir.",
+          "interpretation": "Miyom nedeniyle planlanan histerektomide kritik anatomi uterin arter-üreter çaprazlaşmasıdır; üreterin arterin altında seyretmesi yaralanma riskini açıklar.",
           "values": [
             [
-              "Görüntüleme bulgusu",
+              "Pelvik ultrasonografi",
               "Uterus içinde çoklu intramural miyom nodülleri izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Miyom nedeniyle planlanan histerektomide kritik anatomi uterin arter-üreter çaprazlaşmasıdır; üreterin arterin altında seyretmesi yaralanma riskini açıklar."
             ]
           ],
           "rows": [
             [
-              "Görüntüleme bulgusu",
+              "Pelvik ultrasonografi",
               "Uterus içinde çoklu intramural miyom nodülleri izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Miyom nedeniyle planlanan histerektomide kritik anatomi uterin arter-üreter çaprazlaşmasıdır; üreterin arterin altında seyretmesi yaralanma riskini açıklar."
             ]
           ]
         },
         "rows": [
           [
-            "Görüntüleme bulgusu",
+            "Pelvik ultrasonografi",
             "Uterus içinde çoklu intramural miyom nodülleri izlendi.",
-            "Modaliteye özgü bulgu",
-            ""
+            "Anatomik yorum",
+            "Miyom nedeniyle planlanan histerektomide kritik anatomi uterin arter-üreter çaprazlaşmasıdır; üreterin arterin altında seyretmesi yaralanma riskini açıklar."
           ]
         ],
-        "postAnswerExplanation": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
-        "interpretation": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
+        "postAnswerExplanation": "Miyom nedeniyle planlanan histerektomide kritik anatomi uterin arter-üreter çaprazlaşmasıdır; üreterin arterin altında seyretmesi yaralanma riskini açıklar.",
+        "interpretation": "Miyom nedeniyle planlanan histerektomide kritik anatomi uterin arter-üreter çaprazlaşmasıdır; üreterin arterin altında seyretmesi yaralanma riskini açıklar.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır."
+        "explanationAfterAnswer": "Miyom nedeniyle planlanan histerektomide kritik anatomi uterin arter-üreter çaprazlaşmasıdır; üreterin arterin altında seyretmesi yaralanma riskini açıklar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -12278,7 +12313,7 @@ export const rawCases = [
       "enabled": false
     },
     "hideExamSignal": true,
-    "question": "Histerektomi sırasında uterin arter ligasyonu yapılırken yaralanma riski nedeniyle özellikle korunması gereken yapı aşağıdakilerden hangisidir?",
+    "question": "Uterin arter ligasyonu sırasında arterin yakınından geçtiği için özellikle korunması gereken yapı hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
@@ -12288,128 +12323,145 @@ export const rawCases = [
         "Nervus obturatorius",
         "Arteria ovarica",
         "Ligamentum teres uteri",
-        "Ductus deferens"
+        "Arteria iliaca interna"
       ],
-      "question": "Histerektomi sırasında uterin arter ligasyonu yapılırken yaralanma riski nedeniyle özellikle korunması gereken yapı aşağıdakilerden hangisidir?",
-      "explanation": "Üreter, vakadaki bulgularla en uyumlu tanıdır. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Uterin arter ligasyonu sırasında arterin yakınından geçtiği için özellikle korunması gereken yapı hangisidir?",
+      "explanation": "Üreter, uterin arterin servikse yakın bölümünde arterin altından geçer. Bu nedenle histerektomi sırasında uterin arter bağlanırken üreterin tanınması ve korunması gerekir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Hastaya histerektomi planlanmaktadır + cerrahide uterin arter ligasyonu gerekecektir; bu birliktelik Üreter yanıtını öne çıkarır."
+          "text": "Uterin arter üstten, üreter alttan geçer: histerektomide kritik TUS ipucu “water under the bridge” ilişkisidir."
         }
       ],
       "answerFeedback": {
-        "summary": "Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bu bulgular tanısal karar açısından Üreter yanıtını destekler.",
+        "summary": "Bu olguda karar, histerektomi sırasında uterin arterin servikse yakın ligasyonu gerekir. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Üreter, uterin arterin servikse yakın bölümünde arterin altından geçer. Bu nedenle histerektomi sırasında uterin arter bağlanırken üreterin tanınması ve korunması gerekir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Üreter, uterin arterin servikse yakın bölümünde arterin altından geçer. Bu nedenle histerektomi sırasında uterin arter bağlanırken üreterin tanınması ve korunması gerekir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Üreter, uterin arterin servikse yakın bölümünde arterin altından geçer. Bu nedenle histerektomi sırasında uterin arter bağlanırken üreterin tanınması ve korunması gerekir.",
         "keyClues": [
-          "Hastaya histerektomi planlanmaktadır.",
-          "Cerrahide uterin arter ligasyonu gerekecektir.",
-          "Risk, serviks lateralindeki pelvik anatomik komşulukla klinik eksene uyar."
+          "Histerektomi sırasında uterin arterin servikse yakın ligasyonu gerekir.",
+          "Üreter, uterin arterin altından geçerek mesaneye yöneldiği için ligasyon sahasında anatomik risk altındadır.",
+          "Pelvik ultrasonografide çoklu intramural miyomların gösterilmesi cerrahi bağlamı ve uterin arter-üreter komşuluğunu klinik olarak anlamlı kılar."
         ],
-        "examPearl": "İpucu: Hastaya histerektomi planlanmaktadır + cerrahide uterin arter ligasyonu gerekecektir; bu birliktelik Üreter yanıtını öne çıkarır.",
         "evidenceChain": [
           {
-            "text": "Hastaya histerektomi planlanmaktadır.",
+            "text": "Histerektomi sırasında uterin arterin servikse yakın ligasyonu gerekir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Cerrahide uterin arter ligasyonu gerekecektir.",
+            "text": "Üreter, uterin arterin altından geçerek mesaneye yöneldiği için ligasyon sahasında anatomik risk altındadır.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Risk, serviks lateralindeki pelvik anatomik komşulukla klinik eksene uyar.",
+            "text": "Pelvik ultrasonografide çoklu intramural miyomların gösterilmesi cerrahi bağlamı ve uterin arter-üreter komşuluğunu klinik olarak anlamlı kılar.",
             "weight": "medium",
             "source": "case"
           }
         ],
+        "examPearl": "Uterin arter üstten, üreter alttan geçer: histerektomide kritik TUS ipucu “water under the bridge” ilişkisidir.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Uterin arter üstten, üreter alttan geçer: histerektomide kritik TUS ipucu “water under the bridge” ilişkisidir."
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "label": "Klinik anatomi",
+            "text": "Üreter, pelviste uterin arterin altından geçer; histerektomide “water under the bridge” ilişkisi nedeniyle uterin arter ligasyonu sırasında yaralanma riski taşır."
+          }
+        ],
         "optionComparison": {
-          "Üreter": "Üreter, olgunun ana tanısal örüntüsünü karşılar. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus obturatorius": "Nervus obturatorius, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-          "Arteria ovarica": "Arteria ovarica, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-          "Ligamentum teres uteri": "Ligamentum teres uteri, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-          "Ductus deferens": "Ductus deferens, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır."
+          "Üreter": "Üreter, uterin arterin servikse yakın bölümünde arterin altından geçer. Bu nedenle histerektomi sırasında uterin arter bağlanırken üreterin tanınması ve korunması gerekir.",
+          "Nervus obturatorius": "Nervus obturatorius pelvik yan duvarda obturator kanal yönünde seyreder ve uyluk adduksiyonu ile medial uyluk duyusuyla ilişkilidir. Uterin arterin hemen altından geçen klasik riskli yapı değildir.",
+          "Arteria ovarica": "Arteria ovarica overlerin damarını sağlar ve infundibulopelvik ligament içinde seyreder. Uterin arter ligasyonu sırasında “altından geçen” yapı olarak beklenmez.",
+          "Ligamentum teres uteri": "Ligamentum teres uteri inguinal kanal üzerinden labium majusa uzanan destek yapısıdır. Uterin arter ligasyonunda esas yaralanma riski üreter komşuluğudur.",
+          "Arteria iliaca interna": "Arteria iliaca interna pelvisin ana arteriyel kaynağıdır ve uterin arterin proksimal kaynağıdır. Ancak cerrahi ligasyon noktasında korunması gereken klasik çaprazlaşan yapı üreterdir."
         },
-        "rationale": "Üreter, vakadaki bulgularla en uyumlu tanıdır. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "whyCorrect": "Üreter, vakadaki bulgularla en uyumlu tanıdır. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+        "whyWrong": {
+          "Nervus obturatorius": "Nervus obturatorius pelvik yan duvarda obturator kanal yönünde seyreder ve uyluk adduksiyonu ile medial uyluk duyusuyla ilişkilidir. Uterin arterin hemen altından geçen klasik riskli yapı değildir.",
+          "Arteria ovarica": "Arteria ovarica overlerin damarını sağlar ve infundibulopelvik ligament içinde seyreder. Uterin arter ligasyonu sırasında “altından geçen” yapı olarak beklenmez.",
+          "Ligamentum teres uteri": "Ligamentum teres uteri inguinal kanal üzerinden labium majusa uzanan destek yapısıdır. Uterin arter ligasyonunda esas yaralanma riski üreter komşuluğudur.",
+          "Arteria iliaca interna": "Arteria iliaca interna pelvisin ana arteriyel kaynağıdır ve uterin arterin proksimal kaynağıdır. Ancak cerrahi ligasyon noktasında korunması gereken klasik çaprazlaşan yapı üreterdir."
+        },
         "managementSteps": [],
         "management": [],
-        "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bu örüntü Üreter yanıtını destekler.",
-        "whyWrong": {
-          "Nervus obturatorius": "Nervus obturatorius, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-          "Arteria ovarica": "Arteria ovarica, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-          "Ligamentum teres uteri": "Ligamentum teres uteri, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-          "Ductus deferens": "Ductus deferens, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır."
-        }
+        "learningOutcome": "Pelvik cerrahide uterin arter-üreter komşuluğunu klinik güvenlik açısından yorumlayabilme.",
+        "coreKnowledge": "Üreter, pelviste uterin arterin altından geçer; histerektomide “water under the bridge” ilişkisi nedeniyle uterin arter ligasyonu sırasında yaralanma riski taşır."
       },
-      "whyCorrect": "Üreter, vakadaki bulgularla en uyumlu tanıdır. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Üreter, uterin arterin servikse yakın bölümünde arterin altından geçer. Bu nedenle histerektomi sırasında uterin arter bağlanırken üreterin tanınması ve korunması gerekir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "text": "Hastaya histerektomi planlanmaktadır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Histerektomi sırasında uterin arterin servikse yakın ligasyonu gerekir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "text": "Cerrahide uterin arter ligasyonu gerekecektir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Üreter, uterin arterin altından geçerek mesaneye yöneldiği için ligasyon sahasında anatomik risk altındadır.",
           "weight": "high",
           "source": "case"
         },
         {
-          "text": "Risk, serviks lateralindeki pelvik anatomik komşulukla klinik eksene uyar.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Pelvik ultrasonografide çoklu intramural miyomların gösterilmesi cerrahi bağlamı ve uterin arter-üreter komşuluğunu klinik olarak anlamlı kılar.",
+          "weight": "medium",
           "source": "case"
         }
       ],
       "optionComparison": {
-        "Üreter": "Üreter, olgunun ana tanısal örüntüsünü karşılar. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus obturatorius": "Nervus obturatorius, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-        "Arteria ovarica": "Arteria ovarica, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-        "Ligamentum teres uteri": "Ligamentum teres uteri, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-        "Ductus deferens": "Ductus deferens, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır."
+        "Üreter": "Üreter, uterin arterin servikse yakın bölümünde arterin altından geçer. Bu nedenle histerektomi sırasında uterin arter bağlanırken üreterin tanınması ve korunması gerekir.",
+        "Nervus obturatorius": "Nervus obturatorius pelvik yan duvarda obturator kanal yönünde seyreder ve uyluk adduksiyonu ile medial uyluk duyusuyla ilişkilidir. Uterin arterin hemen altından geçen klasik riskli yapı değildir.",
+        "Arteria ovarica": "Arteria ovarica overlerin damarını sağlar ve infundibulopelvik ligament içinde seyreder. Uterin arter ligasyonu sırasında “altından geçen” yapı olarak beklenmez.",
+        "Ligamentum teres uteri": "Ligamentum teres uteri inguinal kanal üzerinden labium majusa uzanan destek yapısıdır. Uterin arter ligasyonunda esas yaralanma riski üreter komşuluğudur.",
+        "Arteria iliaca interna": "Arteria iliaca interna pelvisin ana arteriyel kaynağıdır ve uterin arterin proksimal kaynağıdır. Ancak cerrahi ligasyon noktasında korunması gereken klasik çaprazlaşan yapı üreterdir."
       },
-      "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bu örüntü Üreter yanıtını destekler.",
-      "examPearl": "İpucu: Hastaya histerektomi planlanmaktadır + cerrahide uterin arter ligasyonu gerekecektir; bu birliktelik Üreter yanıtını öne çıkarır.",
+      "coreKnowledge": "Üreter, pelviste uterin arterin altından geçer; histerektomide “water under the bridge” ilişkisi nedeniyle uterin arter ligasyonu sırasında yaralanma riski taşır.",
+      "examPearl": "Uterin arter üstten, üreter alttan geçer: histerektomide kritik TUS ipucu “water under the bridge” ilişkisidir.",
       "whyWrong": {
-        "Nervus obturatorius": "Nervus obturatorius, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-        "Arteria ovarica": "Arteria ovarica, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-        "Ligamentum teres uteri": "Ligamentum teres uteri, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-        "Ductus deferens": "Ductus deferens, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır."
+        "Nervus obturatorius": "Nervus obturatorius pelvik yan duvarda obturator kanal yönünde seyreder ve uyluk adduksiyonu ile medial uyluk duyusuyla ilişkilidir. Uterin arterin hemen altından geçen klasik riskli yapı değildir.",
+        "Arteria ovarica": "Arteria ovarica overlerin damarını sağlar ve infundibulopelvik ligament içinde seyreder. Uterin arter ligasyonu sırasında “altından geçen” yapı olarak beklenmez.",
+        "Ligamentum teres uteri": "Ligamentum teres uteri inguinal kanal üzerinden labium majusa uzanan destek yapısıdır. Uterin arter ligasyonunda esas yaralanma riski üreter komşuluğudur.",
+        "Arteria iliaca interna": "Arteria iliaca interna pelvisin ana arteriyel kaynağıdır ve uterin arterin proksimal kaynağıdır. Ancak cerrahi ligasyon noktasında korunması gereken klasik çaprazlaşan yapı üreterdir."
       }
     },
     "shuffleOptions": false,
     "difficultyTag": "Orta",
-    "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bu örüntü Üreter yanıtını destekler.",
-    "examPearl": "İpucu: Hastaya histerektomi planlanmaktadır + cerrahide uterin arter ligasyonu gerekecektir; bu birliktelik Üreter yanıtını öne çıkarır.",
-    "whyCorrect": "Üreter, vakadaki bulgularla en uyumlu tanıdır. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "Üreter, pelviste uterin arterin altından geçer; histerektomide “water under the bridge” ilişkisi nedeniyle uterin arter ligasyonu sırasında yaralanma riski taşır.",
+    "examPearl": "Uterin arter üstten, üreter alttan geçer: histerektomide kritik TUS ipucu “water under the bridge” ilişkisidir.",
+    "whyCorrect": "Üreter, uterin arterin servikse yakın bölümünde arterin altından geçer. Bu nedenle histerektomi sırasında uterin arter bağlanırken üreterin tanınması ve korunması gerekir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Üreter": "Üreter, olgunun ana tanısal örüntüsünü karşılar. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus obturatorius": "Nervus obturatorius, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-      "Arteria ovarica": "Arteria ovarica, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-      "Ligamentum teres uteri": "Ligamentum teres uteri, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-      "Ductus deferens": "Ductus deferens, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır."
+      "Üreter": "Üreter, uterin arterin servikse yakın bölümünde arterin altından geçer. Bu nedenle histerektomi sırasında uterin arter bağlanırken üreterin tanınması ve korunması gerekir.",
+      "Nervus obturatorius": "Nervus obturatorius pelvik yan duvarda obturator kanal yönünde seyreder ve uyluk adduksiyonu ile medial uyluk duyusuyla ilişkilidir. Uterin arterin hemen altından geçen klasik riskli yapı değildir.",
+      "Arteria ovarica": "Arteria ovarica overlerin damarını sağlar ve infundibulopelvik ligament içinde seyreder. Uterin arter ligasyonu sırasında “altından geçen” yapı olarak beklenmez.",
+      "Ligamentum teres uteri": "Ligamentum teres uteri inguinal kanal üzerinden labium majusa uzanan destek yapısıdır. Uterin arter ligasyonunda esas yaralanma riski üreter komşuluğudur.",
+      "Arteria iliaca interna": "Arteria iliaca interna pelvisin ana arteriyel kaynağıdır ve uterin arterin proksimal kaynağıdır. Ancak cerrahi ligasyon noktasında korunması gereken klasik çaprazlaşan yapı üreterdir."
     },
     "evidenceChain": [
       {
-        "text": "Hastaya histerektomi planlanmaktadır.",
+        "text": "Histerektomi sırasında uterin arterin servikse yakın ligasyonu gerekir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Cerrahide uterin arter ligasyonu gerekecektir.",
+        "text": "Üreter, uterin arterin altından geçerek mesaneye yöneldiği için ligasyon sahasında anatomik risk altındadır.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Risk, serviks lateralindeki pelvik anatomik komşulukla klinik eksene uyar.",
+        "text": "Pelvik ultrasonografide çoklu intramural miyomların gösterilmesi cerrahi bağlamı ve uterin arter-üreter komşuluğunu klinik olarak anlamlı kılar.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Nervus obturatorius": "Nervus obturatorius, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-      "Arteria ovarica": "Arteria ovarica, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-      "Ligamentum teres uteri": "Ligamentum teres uteri, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır.",
-      "Ductus deferens": "Ductus deferens, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Hastaya histerektomi planlanmaktadır Cerrahide uterin arter ligasyonu gerekecektir. Bulgular Üreter ile daha tutarlıdır."
+      "Nervus obturatorius": "Nervus obturatorius pelvik yan duvarda obturator kanal yönünde seyreder ve uyluk adduksiyonu ile medial uyluk duyusuyla ilişkilidir. Uterin arterin hemen altından geçen klasik riskli yapı değildir.",
+      "Arteria ovarica": "Arteria ovarica overlerin damarını sağlar ve infundibulopelvik ligament içinde seyreder. Uterin arter ligasyonu sırasında “altından geçen” yapı olarak beklenmez.",
+      "Ligamentum teres uteri": "Ligamentum teres uteri inguinal kanal üzerinden labium majusa uzanan destek yapısıdır. Uterin arter ligasyonunda esas yaralanma riski üreter komşuluğudur.",
+      "Arteria iliaca interna": "Arteria iliaca interna pelvisin ana arteriyel kaynağıdır ve uterin arterin proksimal kaynağıdır. Ancak cerrahi ligasyon noktasında korunması gereken klasik çaprazlaşan yapı üreterdir."
     }
   },
   {
@@ -16995,16 +17047,16 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Omuz hareketinde postoperatif güçlük",
     "difficulty": "Kolay",
-    "clinicalFocus": "Omuz hareketinde postoperatif güçlük bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır ve duvara bastırma sırasında skapulanın medial kenarı posteriora çıkıntı yapmaktadır. Bu ipuçlarını kullanarak Nervus thoracicus longus seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Omuz hareketinde postoperatif güçlük olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus thoracicus longus yanıtına ulaşma.",
+    "learningTarget": "Skapula kanatlanmasını serratus anterior ve uzun torasik sinir anatomisiyle ilişkilendirebilme.",
     "demographics": "48 yaşında kadın hasta",
-    "setting": "Klinik değerlendirme",
-    "chiefComplaint": "Hasta, ameliyat sonrası sağ kolunu yukarı kaldırmakta zorlanma ve omuz çevresinde güçsüzlük nedeniyle başvuruyor.",
-    "stem": "Yaklaşık iki hafta önce sağ meme kitlesi nedeniyle aksiller lenf nodu diseksiyonu içeren cerrahi geçirdiğini belirtiyor. Travma öyküsü yoktur ve şikâyetlerinin ameliyat sonrasında başladığını ifade ediyor.",
+    "setting": "Genel cerrahi sonrası kontrol",
+    "chiefComplaint": "Hasta, aksiller cerrahi sonrası sağ kolunu baş üzerine kaldırmakta zorlanma ve omuz çevresinde güçsüzlük nedeniyle başvuruyor.",
+    "stem": "İki hafta önce sağ meme kitlesi nedeniyle aksiller lenf nodu diseksiyonu içeren operasyon geçirdiğini, şikâyetlerinin cerrahiden sonra başladığını belirtiyor. Travma veya boyun ağrısı tariflemiyor.",
     "patientIntro": {
-      "profile": "48 yaşında kadın hasta, meme cerrahisi sonrası kontrol muayenesinde değerlendiriliyor.",
-      "presentation": "Hasta, ameliyat sonrası sağ kolunu yukarı kaldırmakta zorlanma ve omuz çevresinde güçsüzlük nedeniyle başvuruyor.",
-      "historySummary": "Yaklaşık iki hafta önce sağ meme kitlesi nedeniyle aksiller lenf nodu diseksiyonu içeren cerrahi geçirdiğini belirtiyor. Travma öyküsü yoktur ve şikâyetlerinin ameliyat sonrasında başladığını ifade ediyor."
+      "profile": "48 yaşında kadın hasta, genel cerrahi sonrası kontrolnda değerlendiriliyor.",
+      "presentation": "Hasta, aksiller cerrahi sonrası sağ kolunu baş üzerine kaldırmakta zorlanma ve omuz çevresinde güçsüzlük nedeniyle başvuruyor.",
+      "historySummary": "İki hafta önce sağ meme kitlesi nedeniyle aksiller lenf nodu diseksiyonu içeren operasyon geçirdiğini, şikâyetlerinin cerrahiden sonra başladığını belirtiyor. Travma veya boyun ağrısı tariflemiyor."
     },
     "vitals": {
       "TA": "118/76 mmHg",
@@ -17015,10 +17067,9 @@ export const rawCases = [
       "Şok indeksi": "0.66 normal"
     },
     "exam": [
-      "Sağ omuzda aktif elevasyon kısıtlıdır.",
-      "Hasta ellerini duvara bastırdığında sağ skapulanın medial kenarı belirgin şekilde posteriora doğru çıkıntı yapmaktadır.",
-      "Distal motor ve duyu muayenesi büyük ölçüde korunmuştur.",
-      "Hemodinamik instabilite düşündüren belirgin klinik bulgu yoktur."
+      "Sağ omuz aktif elevasyonu kısıtlıdır.",
+      "Hasta ellerini duvara bastırdığında sağ skapulanın medial kenarı belirgin şekilde posteriora doğru kanatlanır.",
+      "El bileği, parmak hareketleri ve distal duyu muayenesi korunmuştur."
     ],
     "investigations": [],
     "useSyntheticInvestigationBank": false,
@@ -17026,138 +17077,155 @@ export const rawCases = [
       "enabled": false
     },
     "hideExamSignal": true,
-    "question": "Bu hastada hasarlanma olasılığı en yüksek sinir aşağıdakilerden hangisidir?",
+    "question": "Duvara itme sırasında skapulanın medial kenarının belirginleşmesini en iyi açıklayan sinir hasarı hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Nervus thoracicus longus",
       "options": [
-        "Nervus thoracodorsalis",
-        "Nervus intercostobrachialis",
         "Nervus thoracicus longus",
+        "Nervus thoracodorsalis",
+        "Nervus dorsalis scapulae",
         "Nervus suprascapularis",
         "Nervus axillaris"
       ],
-      "question": "Bu hastada hasarlanma olasılığı en yüksek sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus thoracicus longus, bu olguda en uygun yanıttır. Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır.",
+      "question": "Duvara itme sırasında skapulanın medial kenarının belirginleşmesini en iyi açıklayan sinir hasarı hangisidir?",
+      "explanation": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır + duvara bastırma sırasında skapulanın medial kenarı posteriora çıkıntı yapmaktadır; bu birliktelik Nervus thoracicus longus yanıtını öne çıkarır."
+          "text": "Duvara itme testiyle belirginleşen medial skapula kanatlanması, serratus anterior ve nervus thoracicus longus lezyonunun klasik bulgusudur."
         }
       ],
       "answerFeedback": {
-        "summary": "Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır Duvara bastırma sırasında skapulanın medial kenarı posteriora çıkıntı yapmaktadır. Bu bulgular tanısal karar açısından Nervus thoracicus longus yanıtını destekler.",
+        "summary": "Bu olguda karar, yakınmalar aksiller lenf nodu diseksiyonu sonrasında başlamıştır; uzun torasik sinir aksilla duvarında yüzeyel seyreder. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir.",
         "keyClues": [
-          "Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır.",
-          "Duvara bastırma sırasında skapulanın medial kenarı posteriora çıkıntı yapmaktadır.",
-          "Kol elevasyonunda güçlük skapulanın toraks duvarına sabitlenememesiyle uyumludur."
+          "Yakınmalar aksiller lenf nodu diseksiyonu sonrasında başlamıştır; uzun torasik sinir aksilla duvarında yüzeyel seyreder.",
+          "Duvara itme sırasında skapulanın medial kenarının kanatlanması serratus anterior fonksiyon kaybını gösterir.",
+          "Distal motor-duyu bulgularının korunması lezyonu brakiyal pleksusun terminal dallarından çok nervus thoracicus longusa lokalize eder."
         ],
-        "examPearl": "İpucu: Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır + duvara bastırma sırasında skapulanın medial kenarı posteriora çıkıntı yapmaktadır; bu birliktelik Nervus thoracicus longus yanıtını öne çıkarır.",
         "evidenceChain": [
           {
-            "text": "Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır.",
+            "text": "Yakınmalar aksiller lenf nodu diseksiyonu sonrasında başlamıştır; uzun torasik sinir aksilla duvarında yüzeyel seyreder.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Duvara bastırma sırasında skapulanın medial kenarı posteriora çıkıntı yapmaktadır.",
+            "text": "Duvara itme sırasında skapulanın medial kenarının kanatlanması serratus anterior fonksiyon kaybını gösterir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Kol elevasyonunda güçlük skapulanın toraks duvarına sabitlenememesiyle uyumludur.",
+            "text": "Distal motor-duyu bulgularının korunması lezyonu brakiyal pleksusun terminal dallarından çok nervus thoracicus longusa lokalize eder.",
             "weight": "medium",
             "source": "case"
           }
         ],
+        "examPearl": "Duvara itme testiyle belirginleşen medial skapula kanatlanması, serratus anterior ve nervus thoracicus longus lezyonunun klasik bulgusudur.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Duvara itme testiyle belirginleşen medial skapula kanatlanması, serratus anterior ve nervus thoracicus longus lezyonunun klasik bulgusudur."
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "label": "Klinik anatomi",
+            "text": "Nervus thoracicus longus, m. serratus anterioru innerve eder; serratus anterior paralizisi skapulanın toraks duvarına sabitlenmesini bozar ve medial kenarda kanatlanma yapar."
+          }
+        ],
         "optionComparison": {
-          "Nervus thoracodorsalis": "Nervus thoracodorsalis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-          "Nervus intercostobrachialis": "Nervus intercostobrachialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-          "Nervus thoracicus longus": "Nervus thoracicus longus, olgunun ana tanısal örüntüsünü karşılar. Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır Duvara bastırma sırasında skapulanın medial kenarı posteriora çıkıntı yapmaktadır. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus suprascapularis": "Nervus suprascapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-          "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler."
+          "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir.",
+          "Nervus thoracodorsalis": "Nervus thoracodorsalis m. latissimus dorsiyi innerve eder; omuz adduksiyon, ekstansiyon ve iç rotasyonunda önemlidir. Skapulanın medial kanatlanması bu sinirin tipik bulgusu değildir.",
+          "Nervus dorsalis scapulae": "Nervus dorsalis scapulae rhomboid kasları ve levator scapulaeyi innerve eder; lezyonda skapular retraksiyon zayıflar. Duvara itmede belirgin medial kanatlanmanın ana nedeni serratus anterior paralizisidir.",
+          "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyon başlangıcı ve dış rotasyon etkilenir. Serratus anterior fonksiyonu ve duvar itme bulgusu bu sinirle açıklanmaz.",
+          "Nervus axillaris": "Nervus axillaris deltoid ve teres minorla ilişkilidir; omuz abdüksiyon kaybı ve lateral omuz duyusu azalması yapar. Skapula kanatlanması ve aksiller yüzeyel seyir nervus thoracicus longusu düşündürür."
         },
-        "rationale": "Nervus thoracicus longus, bu olguda en uygun yanıttır. Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır.",
-        "whyCorrect": "Nervus thoracicus longus, bu olguda en uygun yanıttır. Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır.",
+        "whyWrong": {
+          "Nervus thoracodorsalis": "Nervus thoracodorsalis m. latissimus dorsiyi innerve eder; omuz adduksiyon, ekstansiyon ve iç rotasyonunda önemlidir. Skapulanın medial kanatlanması bu sinirin tipik bulgusu değildir.",
+          "Nervus dorsalis scapulae": "Nervus dorsalis scapulae rhomboid kasları ve levator scapulaeyi innerve eder; lezyonda skapular retraksiyon zayıflar. Duvara itmede belirgin medial kanatlanmanın ana nedeni serratus anterior paralizisidir.",
+          "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyon başlangıcı ve dış rotasyon etkilenir. Serratus anterior fonksiyonu ve duvar itme bulgusu bu sinirle açıklanmaz.",
+          "Nervus axillaris": "Nervus axillaris deltoid ve teres minorla ilişkilidir; omuz abdüksiyon kaybı ve lateral omuz duyusu azalması yapar. Skapula kanatlanması ve aksiller yüzeyel seyir nervus thoracicus longusu düşündürür."
+        },
         "managementSteps": [],
         "management": [],
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus thoracicus longus yanıtını destekler.",
-        "whyWrong": {
-          "Nervus thoracodorsalis": "Nervus thoracodorsalis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-          "Nervus intercostobrachialis": "Nervus intercostobrachialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-          "Nervus suprascapularis": "Nervus suprascapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-          "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler."
-        }
+        "learningOutcome": "Skapula kanatlanmasını serratus anterior ve uzun torasik sinir anatomisiyle ilişkilendirebilme.",
+        "coreKnowledge": "Nervus thoracicus longus, m. serratus anterioru innerve eder; serratus anterior paralizisi skapulanın toraks duvarına sabitlenmesini bozar ve medial kenarda kanatlanma yapar."
       },
-      "whyCorrect": "Nervus thoracicus longus, bu olguda en uygun yanıttır. Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır.",
+      "whyCorrect": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "text": "Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Yakınmalar aksiller lenf nodu diseksiyonu sonrasında başlamıştır; uzun torasik sinir aksilla duvarında yüzeyel seyreder.",
           "weight": "high",
           "source": "case"
         },
         {
-          "text": "Duvara bastırma sırasında skapulanın medial kenarı posteriora çıkıntı yapmaktadır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Duvara itme sırasında skapulanın medial kenarının kanatlanması serratus anterior fonksiyon kaybını gösterir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "text": "Kol elevasyonunda güçlük skapulanın toraks duvarına sabitlenememesiyle uyumludur.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Distal motor-duyu bulgularının korunması lezyonu brakiyal pleksusun terminal dallarından çok nervus thoracicus longusa lokalize eder.",
+          "weight": "medium",
           "source": "case"
         }
       ],
       "optionComparison": {
-        "Nervus thoracodorsalis": "Nervus thoracodorsalis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-        "Nervus intercostobrachialis": "Nervus intercostobrachialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-        "Nervus thoracicus longus": "Nervus thoracicus longus, olgunun ana tanısal örüntüsünü karşılar. Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır Duvara bastırma sırasında skapulanın medial kenarı posteriora çıkıntı yapmaktadır. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus suprascapularis": "Nervus suprascapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-        "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler."
+        "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir.",
+        "Nervus thoracodorsalis": "Nervus thoracodorsalis m. latissimus dorsiyi innerve eder; omuz adduksiyon, ekstansiyon ve iç rotasyonunda önemlidir. Skapulanın medial kanatlanması bu sinirin tipik bulgusu değildir.",
+        "Nervus dorsalis scapulae": "Nervus dorsalis scapulae rhomboid kasları ve levator scapulaeyi innerve eder; lezyonda skapular retraksiyon zayıflar. Duvara itmede belirgin medial kanatlanmanın ana nedeni serratus anterior paralizisidir.",
+        "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyon başlangıcı ve dış rotasyon etkilenir. Serratus anterior fonksiyonu ve duvar itme bulgusu bu sinirle açıklanmaz.",
+        "Nervus axillaris": "Nervus axillaris deltoid ve teres minorla ilişkilidir; omuz abdüksiyon kaybı ve lateral omuz duyusu azalması yapar. Skapula kanatlanması ve aksiller yüzeyel seyir nervus thoracicus longusu düşündürür."
       },
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus thoracicus longus yanıtını destekler.",
-      "examPearl": "İpucu: Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır + duvara bastırma sırasında skapulanın medial kenarı posteriora çıkıntı yapmaktadır; bu birliktelik Nervus thoracicus longus yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus thoracicus longus, m. serratus anterioru innerve eder; serratus anterior paralizisi skapulanın toraks duvarına sabitlenmesini bozar ve medial kenarda kanatlanma yapar.",
+      "examPearl": "Duvara itme testiyle belirginleşen medial skapula kanatlanması, serratus anterior ve nervus thoracicus longus lezyonunun klasik bulgusudur.",
       "whyWrong": {
-        "Nervus thoracodorsalis": "Nervus thoracodorsalis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-        "Nervus intercostobrachialis": "Nervus intercostobrachialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-        "Nervus suprascapularis": "Nervus suprascapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-        "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler."
+        "Nervus thoracodorsalis": "Nervus thoracodorsalis m. latissimus dorsiyi innerve eder; omuz adduksiyon, ekstansiyon ve iç rotasyonunda önemlidir. Skapulanın medial kanatlanması bu sinirin tipik bulgusu değildir.",
+        "Nervus dorsalis scapulae": "Nervus dorsalis scapulae rhomboid kasları ve levator scapulaeyi innerve eder; lezyonda skapular retraksiyon zayıflar. Duvara itmede belirgin medial kanatlanmanın ana nedeni serratus anterior paralizisidir.",
+        "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyon başlangıcı ve dış rotasyon etkilenir. Serratus anterior fonksiyonu ve duvar itme bulgusu bu sinirle açıklanmaz.",
+        "Nervus axillaris": "Nervus axillaris deltoid ve teres minorla ilişkilidir; omuz abdüksiyon kaybı ve lateral omuz duyusu azalması yapar. Skapula kanatlanması ve aksiller yüzeyel seyir nervus thoracicus longusu düşündürür."
       }
     },
     "shuffleOptions": false,
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus thoracicus longus yanıtını destekler.",
-    "examPearl": "İpucu: Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır + duvara bastırma sırasında skapulanın medial kenarı posteriora çıkıntı yapmaktadır; bu birliktelik Nervus thoracicus longus yanıtını öne çıkarır.",
-    "whyCorrect": "Nervus thoracicus longus, bu olguda en uygun yanıttır. Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır.",
+    "coreKnowledge": "Nervus thoracicus longus, m. serratus anterioru innerve eder; serratus anterior paralizisi skapulanın toraks duvarına sabitlenmesini bozar ve medial kenarda kanatlanma yapar.",
+    "examPearl": "Duvara itme testiyle belirginleşen medial skapula kanatlanması, serratus anterior ve nervus thoracicus longus lezyonunun klasik bulgusudur.",
+    "whyCorrect": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Nervus thoracodorsalis": "Nervus thoracodorsalis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-      "Nervus intercostobrachialis": "Nervus intercostobrachialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-      "Nervus thoracicus longus": "Nervus thoracicus longus, olgunun ana tanısal örüntüsünü karşılar. Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır Duvara bastırma sırasında skapulanın medial kenarı posteriora çıkıntı yapmaktadır. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus suprascapularis": "Nervus suprascapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-      "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler."
+      "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir.",
+      "Nervus thoracodorsalis": "Nervus thoracodorsalis m. latissimus dorsiyi innerve eder; omuz adduksiyon, ekstansiyon ve iç rotasyonunda önemlidir. Skapulanın medial kanatlanması bu sinirin tipik bulgusu değildir.",
+      "Nervus dorsalis scapulae": "Nervus dorsalis scapulae rhomboid kasları ve levator scapulaeyi innerve eder; lezyonda skapular retraksiyon zayıflar. Duvara itmede belirgin medial kanatlanmanın ana nedeni serratus anterior paralizisidir.",
+      "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyon başlangıcı ve dış rotasyon etkilenir. Serratus anterior fonksiyonu ve duvar itme bulgusu bu sinirle açıklanmaz.",
+      "Nervus axillaris": "Nervus axillaris deltoid ve teres minorla ilişkilidir; omuz abdüksiyon kaybı ve lateral omuz duyusu azalması yapar. Skapula kanatlanması ve aksiller yüzeyel seyir nervus thoracicus longusu düşündürür."
     },
     "evidenceChain": [
       {
-        "text": "Şikâyetler aksiller lenf nodu diseksiyonu sonrası başlamıştır.",
+        "text": "Yakınmalar aksiller lenf nodu diseksiyonu sonrasında başlamıştır; uzun torasik sinir aksilla duvarında yüzeyel seyreder.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Duvara bastırma sırasında skapulanın medial kenarı posteriora çıkıntı yapmaktadır.",
+        "text": "Duvara itme sırasında skapulanın medial kenarının kanatlanması serratus anterior fonksiyon kaybını gösterir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Kol elevasyonunda güçlük skapulanın toraks duvarına sabitlenememesiyle uyumludur.",
+        "text": "Distal motor-duyu bulgularının korunması lezyonu brakiyal pleksusun terminal dallarından çok nervus thoracicus longusa lokalize eder.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Nervus thoracodorsalis": "Nervus thoracodorsalis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-      "Nervus intercostobrachialis": "Nervus intercostobrachialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-      "Nervus suprascapularis": "Nervus suprascapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-      "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler."
+      "Nervus thoracodorsalis": "Nervus thoracodorsalis m. latissimus dorsiyi innerve eder; omuz adduksiyon, ekstansiyon ve iç rotasyonunda önemlidir. Skapulanın medial kanatlanması bu sinirin tipik bulgusu değildir.",
+      "Nervus dorsalis scapulae": "Nervus dorsalis scapulae rhomboid kasları ve levator scapulaeyi innerve eder; lezyonda skapular retraksiyon zayıflar. Duvara itmede belirgin medial kanatlanmanın ana nedeni serratus anterior paralizisidir.",
+      "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyon başlangıcı ve dış rotasyon etkilenir. Serratus anterior fonksiyonu ve duvar itme bulgusu bu sinirle açıklanmaz.",
+      "Nervus axillaris": "Nervus axillaris deltoid ve teres minorla ilişkilidir; omuz abdüksiyon kaybı ve lateral omuz duyusu azalması yapar. Skapula kanatlanması ve aksiller yüzeyel seyir nervus thoracicus longusu düşündürür."
     }
   },
   {
@@ -22603,16 +22671,16 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Kalça cerrahisi sonrası yürüme bozukluğu",
     "difficulty": "Kolay",
-    "clinicalFocus": "Kalça cerrahisi sonrası yürüme bozukluğu bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir ve sağ kalça abduksiyon gücü azalmıştır. Bu ipuçlarını kullanarak Nervus gluteus superior seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Kalça cerrahisi sonrası yürüme bozukluğu olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus gluteus superior yanıtına ulaşma.",
+    "learningTarget": "Trendelenburg yürüyüşünü kalça abdüktörleri ve superior gluteal sinir anatomisiyle açıklayabilme.",
     "demographics": "64 yaşında kadın hasta",
-    "setting": "Klinik değerlendirme",
-    "chiefComplaint": "Hasta, yürürken pelvisinin dengesizleşmesi ve merdiven çıkmada zorlanma nedeniyle değerlendiriliyor.",
-    "stem": "Üç hafta önce sağ total kalça protezi ameliyatı geçirdiğini, ameliyattan sonra sağ bacak üzerine basarken gövdesini dengelemek zorunda kaldığını belirtiyor. Travma veya yeni düşme öyküsü yoktur.",
+    "setting": "Ortopedi kontrolü",
+    "chiefComplaint": "Hasta, total kalça protezi sonrası yürürken pelvis dengesizliği ve merdiven çıkmada zorlanma nedeniyle değerlendiriliyor.",
+    "stem": "Üç hafta önce sağ total kalça protezi ameliyatı geçirdiğini, ameliyattan sonra sağ bacak üzerine basarken gövdesini dengelemek zorunda kaldığını belirtiyor. Yeni düşme, bel ağrısı veya ayakta güçsüzlük tariflemiyor.",
     "patientIntro": {
-      "profile": "64 yaşında kadın hasta, kalça protezi ameliyatı sonrası fizik tedavi değerlendirmesinde görülüyor.",
-      "presentation": "Hasta, yürürken pelvisinin dengesizleşmesi ve merdiven çıkmada zorlanma nedeniyle değerlendiriliyor.",
-      "historySummary": "Üç hafta önce sağ total kalça protezi ameliyatı geçirdiğini, ameliyattan sonra sağ bacak üzerine basarken gövdesini dengelemek zorunda kaldığını belirtiyor. Travma veya yeni düşme öyküsü yoktur."
+      "profile": "64 yaşında kadın hasta, ortopedi kontrolünda değerlendiriliyor.",
+      "presentation": "Hasta, total kalça protezi sonrası yürürken pelvis dengesizliği ve merdiven çıkmada zorlanma nedeniyle değerlendiriliyor.",
+      "historySummary": "Üç hafta önce sağ total kalça protezi ameliyatı geçirdiğini, ameliyattan sonra sağ bacak üzerine basarken gövdesini dengelemek zorunda kaldığını belirtiyor. Yeni düşme, bel ağrısı veya ayakta güçsüzlük tariflemiyor."
     },
     "vitals": {
       "TA": "118/76 mmHg",
@@ -22623,10 +22691,9 @@ export const rawCases = [
       "Şok indeksi": "0.66 normal"
     },
     "exam": [
-      "Hasta sağ bacağı üzerinde tek ayak durduğunda sol pelvis aşağı düşmektedir.",
-      "Sağ kalça abduksiyon gücü azalmıştır.",
-      "Uyluk ön ve arka kas gücü belirgin korunmuştur.",
-      "Hemodinamik instabilite düşündüren belirgin klinik bulgu yoktur."
+      "Hasta sağ bacağı üzerinde tek ayak durduğunda sol pelvis aşağı düşer.",
+      "Sağ kalça abdüksiyon gücü azalmıştır.",
+      "Diz ekstansiyonu, ayak bileği dorsifleksiyonu ve uyluk adduksiyonu korunmuştur."
     ],
     "investigations": [],
     "useSyntheticInvestigationBank": false,
@@ -22634,7 +22701,7 @@ export const rawCases = [
       "enabled": false
     },
     "hideExamSignal": true,
-    "question": "Bu hastada hasarlanma olasılığı en yüksek sinir aşağıdakilerden hangisidir?",
+    "question": "Tek ayak üzerinde dururken karşı pelvisin düşmesini en iyi açıklayan sinir hasarı hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
@@ -22646,126 +22713,143 @@ export const rawCases = [
         "Nervus femoralis",
         "Nervus ischiadicus"
       ],
-      "question": "Bu hastada hasarlanma olasılığı en yüksek sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus gluteus superior, vakadaki bulgularla en uyumlu tanıdır. Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir Sağ kalça abduksiyon gücü azalmıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Tek ayak üzerinde dururken karşı pelvisin düşmesini en iyi açıklayan sinir hasarı hangisidir?",
+      "explanation": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir + sağ kalça abduksiyon gücü azalmıştır; bu birliktelik Nervus gluteus superior yanıtını öne çıkarır."
+          "text": "Trendelenburg pozitifliği, destek bacağındaki gluteus medius/minimus zayıflığını ve nervus gluteus superior etkilenimini gösterir."
         }
       ],
       "answerFeedback": {
-        "summary": "Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir Sağ kalça abduksiyon gücü azalmıştır. Bu bulgular tanısal karar açısından Nervus gluteus superior yanıtını destekler.",
+        "summary": "Bu olguda karar, kalça cerrahisi sonrası başlayan Trendelenburg paterni gluteal bölge sinir yaralanmasını düşündürür. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur.",
         "keyClues": [
-          "Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir.",
-          "Sağ kalça abduksiyon gücü azalmıştır.",
-          "Yakın zamanda kalça cerrahisi geçirilmiş olması bölgesel sinir hasarı riskini artırır."
+          "Kalça cerrahisi sonrası başlayan Trendelenburg paterni gluteal bölge sinir yaralanmasını düşündürür.",
+          "Sağ bacak üzerinde dururken karşı pelvisin düşmesi sağ gluteus medius/minimus zayıflığını gösterir.",
+          "Kalça abdüksiyon kaybı, bu kasları innerve eden nervus gluteus superior etkilenimiyle açıklanır."
         ],
-        "examPearl": "İpucu: Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir + sağ kalça abduksiyon gücü azalmıştır; bu birliktelik Nervus gluteus superior yanıtını öne çıkarır.",
         "evidenceChain": [
           {
-            "text": "Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir.",
+            "text": "Kalça cerrahisi sonrası başlayan Trendelenburg paterni gluteal bölge sinir yaralanmasını düşündürür.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Sağ kalça abduksiyon gücü azalmıştır.",
+            "text": "Sağ bacak üzerinde dururken karşı pelvisin düşmesi sağ gluteus medius/minimus zayıflığını gösterir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Yakın zamanda kalça cerrahisi geçirilmiş olması bölgesel sinir hasarı riskini artırır.",
+            "text": "Kalça abdüksiyon kaybı, bu kasları innerve eden nervus gluteus superior etkilenimiyle açıklanır.",
             "weight": "medium",
             "source": "case"
           }
         ],
+        "examPearl": "Trendelenburg pozitifliği, destek bacağındaki gluteus medius/minimus zayıflığını ve nervus gluteus superior etkilenimini gösterir.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Trendelenburg pozitifliği, destek bacağındaki gluteus medius/minimus zayıflığını ve nervus gluteus superior etkilenimini gösterir."
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "label": "Klinik anatomi",
+            "text": "Nervus gluteus superior; m. gluteus medius, m. gluteus minimus ve tensor fasciae lataeyi innerve eder. Bu kasların zayıflığında Trendelenburg bulgusu gelişir."
+          }
+        ],
         "optionComparison": {
-          "Nervus gluteus superior": "Nervus gluteus superior, olgunun ana tanısal örüntüsünü karşılar. Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir Sağ kalça abduksiyon gücü azalmıştır. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-          "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-          "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-          "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler."
+          "Nervus gluteus superior": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur.",
+          "Nervus gluteus inferior": "Nervus gluteus inferior m. gluteus maximusu innerve eder; lezyonunda kalça ekstansiyonu ve merdiven çıkma zayıflar. Trendelenburg bulgusunda temel sorun abdüktör kaslar ve nervus gluteus superiordur.",
+          "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Uyluk adduksiyon kaybı beklenirdi; karşı pelvis düşmesi bu sinirin ana bulgusu değildir.",
+          "Nervus femoralis": "Nervus femoralis kalça fleksiyonu ve diz ekstansiyonu ile patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu kalça abdüktör yetmezliğine odaklanmıştır.",
+          "Nervus ischiadicus": "Nervus ischiadicus hamstringler ve bacak-ayak sinirlerinin kaynağıdır; diz fleksiyonu ve ayak hareketlerinde kayıp beklenir. İzole Trendelenburg bulgusu superior gluteal sinirle açıklanır."
         },
-        "rationale": "Nervus gluteus superior, vakadaki bulgularla en uyumlu tanıdır. Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir Sağ kalça abduksiyon gücü azalmıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "whyCorrect": "Nervus gluteus superior, vakadaki bulgularla en uyumlu tanıdır. Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir Sağ kalça abduksiyon gücü azalmıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+        "whyWrong": {
+          "Nervus gluteus inferior": "Nervus gluteus inferior m. gluteus maximusu innerve eder; lezyonunda kalça ekstansiyonu ve merdiven çıkma zayıflar. Trendelenburg bulgusunda temel sorun abdüktör kaslar ve nervus gluteus superiordur.",
+          "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Uyluk adduksiyon kaybı beklenirdi; karşı pelvis düşmesi bu sinirin ana bulgusu değildir.",
+          "Nervus femoralis": "Nervus femoralis kalça fleksiyonu ve diz ekstansiyonu ile patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu kalça abdüktör yetmezliğine odaklanmıştır.",
+          "Nervus ischiadicus": "Nervus ischiadicus hamstringler ve bacak-ayak sinirlerinin kaynağıdır; diz fleksiyonu ve ayak hareketlerinde kayıp beklenir. İzole Trendelenburg bulgusu superior gluteal sinirle açıklanır."
+        },
         "managementSteps": [],
         "management": [],
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus gluteus superior yanıtını destekler.",
-        "whyWrong": {
-          "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-          "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-          "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-          "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler."
-        }
+        "learningOutcome": "Trendelenburg yürüyüşünü kalça abdüktörleri ve superior gluteal sinir anatomisiyle açıklayabilme.",
+        "coreKnowledge": "Nervus gluteus superior; m. gluteus medius, m. gluteus minimus ve tensor fasciae lataeyi innerve eder. Bu kasların zayıflığında Trendelenburg bulgusu gelişir."
       },
-      "whyCorrect": "Nervus gluteus superior, vakadaki bulgularla en uyumlu tanıdır. Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir Sağ kalça abduksiyon gücü azalmıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "text": "Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Kalça cerrahisi sonrası başlayan Trendelenburg paterni gluteal bölge sinir yaralanmasını düşündürür.",
           "weight": "high",
           "source": "case"
         },
         {
-          "text": "Sağ kalça abduksiyon gücü azalmıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Sağ bacak üzerinde dururken karşı pelvisin düşmesi sağ gluteus medius/minimus zayıflığını gösterir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "text": "Yakın zamanda kalça cerrahisi geçirilmiş olması bölgesel sinir hasarı riskini artırır.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Kalça abdüksiyon kaybı, bu kasları innerve eden nervus gluteus superior etkilenimiyle açıklanır.",
+          "weight": "medium",
           "source": "case"
         }
       ],
       "optionComparison": {
-        "Nervus gluteus superior": "Nervus gluteus superior, olgunun ana tanısal örüntüsünü karşılar. Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir Sağ kalça abduksiyon gücü azalmıştır. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-        "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-        "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-        "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler."
+        "Nervus gluteus superior": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur.",
+        "Nervus gluteus inferior": "Nervus gluteus inferior m. gluteus maximusu innerve eder; lezyonunda kalça ekstansiyonu ve merdiven çıkma zayıflar. Trendelenburg bulgusunda temel sorun abdüktör kaslar ve nervus gluteus superiordur.",
+        "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Uyluk adduksiyon kaybı beklenirdi; karşı pelvis düşmesi bu sinirin ana bulgusu değildir.",
+        "Nervus femoralis": "Nervus femoralis kalça fleksiyonu ve diz ekstansiyonu ile patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu kalça abdüktör yetmezliğine odaklanmıştır.",
+        "Nervus ischiadicus": "Nervus ischiadicus hamstringler ve bacak-ayak sinirlerinin kaynağıdır; diz fleksiyonu ve ayak hareketlerinde kayıp beklenir. İzole Trendelenburg bulgusu superior gluteal sinirle açıklanır."
       },
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus gluteus superior yanıtını destekler.",
-      "examPearl": "İpucu: Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir + sağ kalça abduksiyon gücü azalmıştır; bu birliktelik Nervus gluteus superior yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus gluteus superior; m. gluteus medius, m. gluteus minimus ve tensor fasciae lataeyi innerve eder. Bu kasların zayıflığında Trendelenburg bulgusu gelişir.",
+      "examPearl": "Trendelenburg pozitifliği, destek bacağındaki gluteus medius/minimus zayıflığını ve nervus gluteus superior etkilenimini gösterir.",
       "whyWrong": {
-        "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-        "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-        "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-        "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler."
+        "Nervus gluteus inferior": "Nervus gluteus inferior m. gluteus maximusu innerve eder; lezyonunda kalça ekstansiyonu ve merdiven çıkma zayıflar. Trendelenburg bulgusunda temel sorun abdüktör kaslar ve nervus gluteus superiordur.",
+        "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Uyluk adduksiyon kaybı beklenirdi; karşı pelvis düşmesi bu sinirin ana bulgusu değildir.",
+        "Nervus femoralis": "Nervus femoralis kalça fleksiyonu ve diz ekstansiyonu ile patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu kalça abdüktör yetmezliğine odaklanmıştır.",
+        "Nervus ischiadicus": "Nervus ischiadicus hamstringler ve bacak-ayak sinirlerinin kaynağıdır; diz fleksiyonu ve ayak hareketlerinde kayıp beklenir. İzole Trendelenburg bulgusu superior gluteal sinirle açıklanır."
       }
     },
     "shuffleOptions": false,
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus gluteus superior yanıtını destekler.",
-    "examPearl": "İpucu: Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir + sağ kalça abduksiyon gücü azalmıştır; bu birliktelik Nervus gluteus superior yanıtını öne çıkarır.",
-    "whyCorrect": "Nervus gluteus superior, vakadaki bulgularla en uyumlu tanıdır. Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir Sağ kalça abduksiyon gücü azalmıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "Nervus gluteus superior; m. gluteus medius, m. gluteus minimus ve tensor fasciae lataeyi innerve eder. Bu kasların zayıflığında Trendelenburg bulgusu gelişir.",
+    "examPearl": "Trendelenburg pozitifliği, destek bacağındaki gluteus medius/minimus zayıflığını ve nervus gluteus superior etkilenimini gösterir.",
+    "whyCorrect": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Nervus gluteus superior": "Nervus gluteus superior, olgunun ana tanısal örüntüsünü karşılar. Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir Sağ kalça abduksiyon gücü azalmıştır. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-      "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-      "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-      "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler."
+      "Nervus gluteus superior": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur.",
+      "Nervus gluteus inferior": "Nervus gluteus inferior m. gluteus maximusu innerve eder; lezyonunda kalça ekstansiyonu ve merdiven çıkma zayıflar. Trendelenburg bulgusunda temel sorun abdüktör kaslar ve nervus gluteus superiordur.",
+      "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Uyluk adduksiyon kaybı beklenirdi; karşı pelvis düşmesi bu sinirin ana bulgusu değildir.",
+      "Nervus femoralis": "Nervus femoralis kalça fleksiyonu ve diz ekstansiyonu ile patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu kalça abdüktör yetmezliğine odaklanmıştır.",
+      "Nervus ischiadicus": "Nervus ischiadicus hamstringler ve bacak-ayak sinirlerinin kaynağıdır; diz fleksiyonu ve ayak hareketlerinde kayıp beklenir. İzole Trendelenburg bulgusu superior gluteal sinirle açıklanır."
     },
     "evidenceChain": [
       {
-        "text": "Sağ bacak üzerinde dururken karşı pelvis aşağı düşmektedir.",
+        "text": "Kalça cerrahisi sonrası başlayan Trendelenburg paterni gluteal bölge sinir yaralanmasını düşündürür.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Sağ kalça abduksiyon gücü azalmıştır.",
+        "text": "Sağ bacak üzerinde dururken karşı pelvisin düşmesi sağ gluteus medius/minimus zayıflığını gösterir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Yakın zamanda kalça cerrahisi geçirilmiş olması bölgesel sinir hasarı riskini artırır.",
+        "text": "Kalça abdüksiyon kaybı, bu kasları innerve eden nervus gluteus superior etkilenimiyle açıklanır.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-      "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-      "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-      "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler."
+      "Nervus gluteus inferior": "Nervus gluteus inferior m. gluteus maximusu innerve eder; lezyonunda kalça ekstansiyonu ve merdiven çıkma zayıflar. Trendelenburg bulgusunda temel sorun abdüktör kaslar ve nervus gluteus superiordur.",
+      "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Uyluk adduksiyon kaybı beklenirdi; karşı pelvis düşmesi bu sinirin ana bulgusu değildir.",
+      "Nervus femoralis": "Nervus femoralis kalça fleksiyonu ve diz ekstansiyonu ile patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu kalça abdüktör yetmezliğine odaklanmıştır.",
+      "Nervus ischiadicus": "Nervus ischiadicus hamstringler ve bacak-ayak sinirlerinin kaynağıdır; diz fleksiyonu ve ayak hareketlerinde kayıp beklenir. İzole Trendelenburg bulgusu superior gluteal sinirle açıklanır."
     }
   },
   {
@@ -29823,21 +29907,16 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Gece artan el uyuşması",
     "difficulty": "Kolay",
-    "clinicalFocus": "Gece artan el uyuşması bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır ve tenar atrofi ve başparmak opozisyon güçsüzlüğü vardır. Bu ipuçlarını kullanarak Nervus medianus seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Gece artan el uyuşması olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus medianus yanıtına ulaşma.",
+    "learningTarget": "Karpal tünel sendromunu median sinirin motor-duyu dağılımı ve palmar kutanöz dal ayrımıyla çözebilme.",
     "demographics": "46 yaşında kadın hasta",
-    "setting": "Nöroloji polikliniğinde",
-    "chiefComplaint": "Hasta, sağ elde gece artan uyuşma ve kavrama güçlüğü nedeniyle başvuruyor.",
-    "stem": "Yakınmalarının özellikle gece ve uzun süre bilgisayar kullandıktan sonra arttığını, başparmak, işaret parmağı ve orta parmakta karıncalanma hissettiğini belirtiyor. Boyun ağrısı veya travma öyküsü yoktur.",
+    "setting": "Nöroloji polikliniği",
+    "chiefComplaint": "Hasta, sağ elde gece artan uyuşma, karıncalanma ve kavrama güçlüğü nedeniyle başvuruyor.",
+    "stem": "Yakınmalarının özellikle gece ve uzun süre bilgisayar kullandıktan sonra arttığını, başparmak, işaret parmağı ve orta parmakta karıncalanma hissettiğini belirtiyor. Boyun ağrısı, dirsek travması veya beşinci parmakta baskın uyuşma tariflemiyor.",
     "patientIntro": {
       "profile": "46 yaşında kadın hasta, nöroloji polikliniğinde değerlendiriliyor.",
-      "presentation": "Hasta, sağ elde gece artan uyuşma ve kavrama güçlüğü nedeniyle başvuruyor.",
-      "historySummary": "Yakınmalarının özellikle gece ve uzun süre bilgisayar kullandıktan sonra arttığını, başparmak, işaret parmağı ve orta parmakta karıncalanma hissettiğini belirtiyor. Boyun ağrısı veya travma öyküsü yoktur.",
-      "distinctiveClues": [
-        "Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır.",
-        "Tenar atrofi ve başparmak opozisyon güçsüzlüğü vardır.",
-        "Sinir iletim çalışması el bileği düzeyinde median sinir etkilenmesini göstermiştir."
-      ]
+      "presentation": "Hasta, sağ elde gece artan uyuşma, karıncalanma ve kavrama güçlüğü nedeniyle başvuruyor.",
+      "historySummary": "Yakınmalarının özellikle gece ve uzun süre bilgisayar kullandıktan sonra arttığını, başparmak, işaret parmağı ve orta parmakta karıncalanma hissettiğini belirtiyor. Boyun ağrısı, dirsek travması veya beşinci parmakta baskın uyuşma tariflemiyor."
     },
     "vitals": {
       "TA": "118/76 mmHg",
@@ -29851,36 +29930,36 @@ export const rawCases = [
       "Sağ elde tenar bölgede hafif atrofi ve başparmak opozisyonunda güçsüzlük vardır.",
       "Başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısında duyu azalması izlenir.",
       "Avuç içi tenar deri duyusu belirgin korunmuştur.",
-      "Tinel testi el bileğinde pozitiftir."
+      "Tinel testi el bileği düzeyinde pozitiftir."
     ],
     "investigations": [
       {
         "id": "sinir-iletim-calismasi-1",
         "label": "Sinir iletim çalışması",
         "title": "Sinir iletim çalışması",
-        "type": "lab",
+        "type": "neurophysiology",
         "priority": "essential",
-        "subtype": "Laboratuvar",
-        "summary": "Sinir iletim çalışması sonucundaki anormallik, olgudaki klinik örüntüyle birlikte Nervus medianus olasılığını destekler; karar tek parametreyle değil eşlik eden muayene ve objektif verilerle verilmelidir.",
-        "clinicalMeaning": "Sinir iletim çalışması sonucundaki anormallik, olgudaki klinik örüntüyle birlikte Nervus medianus olasılığını destekler; karar tek parametreyle değil eşlik eden muayene ve objektif verilerle verilmelidir.",
+        "subtype": "Elektrofizyolojik değerlendirme",
+        "summary": "Sinir iletim çalışmasında el bileği düzeyinde median sinir duyusal ve motor iletiminde yavaşlama saptanması, karpal tünelde basıyı objektifleştirir. Bulgular tenar zayıflık ve ilk üç buçuk parmak duyusu azalmasıyla birlikte yorumlanmalıdır.",
+        "clinicalMeaning": "Median sinirin karpal tünel içindeki yavaşlaması, palmar kutanöz dalın korunmasıyla birlikte lezyon düzeyini anatomik olarak el bileğine lokalize eder.",
         "result": {
           "title": "Sinir iletim çalışması",
-          "summary": "Sinir iletim çalışması sonucundaki anormallik, olgudaki klinik örüntüyle birlikte Nervus medianus olasılığını destekler; karar tek parametreyle değil eşlik eden muayene ve objektif verilerle verilmelidir.",
-          "interpretation": "Sinir iletim çalışması sonucundaki anormallik, olgudaki klinik örüntüyle birlikte Nervus medianus olasılığını destekler; karar tek parametreyle değil eşlik eden muayene ve objektif verilerle verilmelidir.",
+          "summary": "Sinir iletim çalışmasında el bileği düzeyinde median sinir duyusal ve motor iletiminde yavaşlama saptanması, karpal tünelde basıyı objektifleştirir. Bulgular tenar zayıflık ve ilk üç buçuk parmak duyusu azalmasıyla birlikte yorumlanmalıdır.",
+          "interpretation": "Median sinirin karpal tünel içindeki yavaşlaması, palmar kutanöz dalın korunmasıyla birlikte lezyon düzeyini anatomik olarak el bileğine lokalize eder.",
           "values": [
             [
               "Sinir iletim çalışması",
               "El bileği düzeyinde median sinir duyusal ve motor iletiminde yavaşlama saptandı.",
-              "—",
-              ""
+              "Anatomik yorum",
+              "Median sinirin karpal tünel içindeki yavaşlaması, palmar kutanöz dalın korunmasıyla birlikte lezyon düzeyini anatomik olarak el bileğine lokalize eder."
             ]
           ],
           "rows": [
             [
               "Sinir iletim çalışması",
               "El bileği düzeyinde median sinir duyusal ve motor iletiminde yavaşlama saptandı.",
-              "—",
-              ""
+              "Anatomik yorum",
+              "Median sinirin karpal tünel içindeki yavaşlaması, palmar kutanöz dalın korunmasıyla birlikte lezyon düzeyini anatomik olarak el bileğine lokalize eder."
             ]
           ]
         },
@@ -29888,15 +29967,15 @@ export const rawCases = [
           [
             "Sinir iletim çalışması",
             "El bileği düzeyinde median sinir duyusal ve motor iletiminde yavaşlama saptandı.",
-            "—",
-            ""
+            "Anatomik yorum",
+            "Median sinirin karpal tünel içindeki yavaşlaması, palmar kutanöz dalın korunmasıyla birlikte lezyon düzeyini anatomik olarak el bileğine lokalize eder."
           ]
         ],
-        "postAnswerExplanation": "Sinir iletim çalışması sonucundaki anormallik, olgudaki klinik örüntüyle birlikte Nervus medianus olasılığını destekler; karar tek parametreyle değil eşlik eden muayene ve objektif verilerle verilmelidir.",
-        "interpretation": "Sinir iletim çalışması sonucundaki anormallik, olgudaki klinik örüntüyle birlikte Nervus medianus olasılığını destekler; karar tek parametreyle değil eşlik eden muayene ve objektif verilerle verilmelidir.",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Sinir iletim çalışması sonucundaki anormallik, olgudaki klinik örüntüyle birlikte Nervus medianus olasılığını destekler; karar tek parametreyle değil eşlik eden muayene ve objektif verilerle verilmelidir."
+        "postAnswerExplanation": "Median sinirin karpal tünel içindeki yavaşlaması, palmar kutanöz dalın korunmasıyla birlikte lezyon düzeyini anatomik olarak el bileğine lokalize eder.",
+        "interpretation": "Median sinirin karpal tünel içindeki yavaşlaması, palmar kutanöz dalın korunmasıyla birlikte lezyon düzeyini anatomik olarak el bileğine lokalize eder.",
+        "category": "diagnostic",
+        "testTypeCategory": "diagnostic",
+        "explanationAfterAnswer": "Median sinirin karpal tünel içindeki yavaşlaması, palmar kutanöz dalın korunmasıyla birlikte lezyon düzeyini anatomik olarak el bileğine lokalize eder."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -29904,155 +29983,155 @@ export const rawCases = [
       "enabled": false
     },
     "hideExamSignal": true,
-    "question": "Bu hastada bası altında kalan yapı aşağıdakilerden hangisidir?",
+    "question": "Gece artan parestezi, tenar zayıflık ve karpal tünel düzeyindeki iletim yavaşlamasını açıklayan yapı hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Nervus medianus",
       "options": [
-        "Nervus ulnaris",
-        "Nervus radialis",
         "Nervus medianus",
-        "Nervus musculocutaneus",
-        "Nervus axillaris"
+        "Nervus ulnaris",
+        "Nervus radialis superficialis",
+        "Nervus interosseus anterior",
+        "Ramus palmaris nervi mediani"
       ],
-      "question": "Bu hastada bası altında kalan yapı aşağıdakilerden hangisidir?",
-      "explanation": "Nervus medianus, bu olguda en uygun yanıttır. Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır.",
+      "question": "Gece artan parestezi, tenar zayıflık ve karpal tünel düzeyindeki iletim yavaşlamasını açıklayan yapı hangisidir?",
+      "explanation": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır + tenar atrofi ve başparmak opozisyon güçsüzlüğü vardır; bu birliktelik Nervus medianus yanıtını öne çıkarır."
+          "text": "Karpal tünelde median sinir tutulur; avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini hatırlatır."
         }
       ],
       "optionComparison": {
-        "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-        "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-        "Nervus medianus": "Nervus medianus, olgunun ana tanısal örüntüsünü karşılar. Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır Tenar atrofi ve başparmak opozisyon güçsüzlüğü vardır. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-        "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler."
+        "Nervus medianus": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler.",
+        "Nervus ulnaris": "Nervus ulnaris Guyon kanalı veya kubital tünelde basıya uğrayabilir; dördüncü-beşinci parmak duyusu ve interosseöz kaslar etkilenir. İlk üç parmak ve tenar opozisyon ağırlıklı bulgu median sinire uyar.",
+        "Nervus radialis superficialis": "Nervus radialis superficialis el sırtının radial duyusuyla ilişkilidir ve motor tenar kas kaybı yapmaz. Gece artan karpal tünel tipi paresteziyi açıklamaz.",
+        "Nervus interosseus anterior": "Nervus interosseus anterior median sinirin motor dalıdır; pronator quadratus, flexor pollicis longus ve lateral FDP etkilenir, duyu kaybı yapmaz. Bu vakadaki parmak duyusu azalması ana sinir basısını gösterir.",
+        "Ramus palmaris nervi mediani": "Median sinirin palmar kutanöz dalı karpal tünelin dışından geçer ve tenar avuç içi duyusunu taşır. Bu dalın korunması, basının karpal tüneldeki ana median sinirde olduğunu destekler; kendisi bası altında kalan ana yapı değildir."
       },
       "answerFeedback": {
-        "summary": "Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır Tenar atrofi ve başparmak opozisyon güçsüzlüğü vardır. Bu bulgular tanısal karar açısından Nervus medianus yanıtını destekler.",
-        "whyCorrect": "Nervus medianus, bu olguda en uygun yanıttır. Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır.",
-        "rationale": "Nervus medianus, bu olguda en uygun yanıttır. Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır.",
-        "correctOptionFeedback": "Nervus medianus karpal tünelde bası altında kalır ve radial üç buçuk parmak duyusu ile tenar motor fonksiyon kaybını açıklar.",
+        "summary": "Bu olguda karar, gece artan ilk üç buçuk parmak parestezisi karpal tünel düzeyinde median sinir basısını düşündürür. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler.",
         "keyClues": [
-          "Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır.",
-          "Tenar atrofi ve başparmak opozisyon güçsüzlüğü vardır.",
-          "Sinir iletim çalışması el bileği düzeyinde median sinir etkilenmesini göstermiştir."
+          "Gece artan ilk üç buçuk parmak parestezisi karpal tünel düzeyinde median sinir basısını düşündürür.",
+          "Tenar atrofi ve başparmak opozisyon zayıflığı median sinirin motor dal etkilenimini gösterir.",
+          "Avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini ve basının karpal tünelde olduğunu destekler."
         ],
         "evidenceChain": [
           {
-            "text": "Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır.",
+            "text": "Gece artan ilk üç buçuk parmak parestezisi karpal tünel düzeyinde median sinir basısını düşündürür.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Tenar atrofi ve başparmak opozisyon güçsüzlüğü vardır.",
+            "text": "Tenar atrofi ve başparmak opozisyon zayıflığı median sinirin motor dal etkilenimini gösterir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Sinir iletim çalışması el bileği düzeyinde median sinir etkilenmesini göstermiştir.",
+            "text": "Avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini ve basının karpal tünelde olduğunu destekler.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır + tenar atrofi ve başparmak opozisyon güçsüzlüğü vardır; bu birliktelik Nervus medianus yanıtını öne çıkarır.",
+        "examPearl": "Karpal tünelde median sinir tutulur; avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini hatırlatır.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Karpal tünel sendromunda nervus medianus etkilenir; palmar kutanöz dal tünel dışında seyrettiği için tenar deri duyusu korunabilir."
+            "text": "Karpal tünelde median sinir tutulur; avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini hatırlatır."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "Karpal tünel sendromunda nervus medianus etkilenir; palmar kutanöz dal tünel dışında seyrettiği için tenar deri duyusu korunabilir."
+            "label": "Klinik anatomi",
+            "text": "Karpal tünelden nervus medianus ve fleksör tendonlar geçer; median sinir basısında ilk üç buçuk parmakta parestezi, tenar zayıflık ve opozisyon kaybı gelişir. Palmar kutanöz dal tünelden geçmediği için tenar avuç içi duyusu korunabilir."
           }
         ],
         "optionComparison": {
-          "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-          "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-          "Nervus medianus": "Nervus medianus, olgunun ana tanısal örüntüsünü karşılar. Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır Tenar atrofi ve başparmak opozisyon güçsüzlüğü vardır. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-          "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler."
+          "Nervus medianus": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler.",
+          "Nervus ulnaris": "Nervus ulnaris Guyon kanalı veya kubital tünelde basıya uğrayabilir; dördüncü-beşinci parmak duyusu ve interosseöz kaslar etkilenir. İlk üç parmak ve tenar opozisyon ağırlıklı bulgu median sinire uyar.",
+          "Nervus radialis superficialis": "Nervus radialis superficialis el sırtının radial duyusuyla ilişkilidir ve motor tenar kas kaybı yapmaz. Gece artan karpal tünel tipi paresteziyi açıklamaz.",
+          "Nervus interosseus anterior": "Nervus interosseus anterior median sinirin motor dalıdır; pronator quadratus, flexor pollicis longus ve lateral FDP etkilenir, duyu kaybı yapmaz. Bu vakadaki parmak duyusu azalması ana sinir basısını gösterir.",
+          "Ramus palmaris nervi mediani": "Median sinirin palmar kutanöz dalı karpal tünelin dışından geçer ve tenar avuç içi duyusunu taşır. Bu dalın korunması, basının karpal tüneldeki ana median sinirde olduğunu destekler; kendisi bası altında kalan ana yapı değildir."
         },
         "whyWrong": {
-          "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-          "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-          "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-          "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler."
+          "Nervus ulnaris": "Nervus ulnaris Guyon kanalı veya kubital tünelde basıya uğrayabilir; dördüncü-beşinci parmak duyusu ve interosseöz kaslar etkilenir. İlk üç parmak ve tenar opozisyon ağırlıklı bulgu median sinire uyar.",
+          "Nervus radialis superficialis": "Nervus radialis superficialis el sırtının radial duyusuyla ilişkilidir ve motor tenar kas kaybı yapmaz. Gece artan karpal tünel tipi paresteziyi açıklamaz.",
+          "Nervus interosseus anterior": "Nervus interosseus anterior median sinirin motor dalıdır; pronator quadratus, flexor pollicis longus ve lateral FDP etkilenir, duyu kaybı yapmaz. Bu vakadaki parmak duyusu azalması ana sinir basısını gösterir.",
+          "Ramus palmaris nervi mediani": "Median sinirin palmar kutanöz dalı karpal tünelin dışından geçer ve tenar avuç içi duyusunu taşır. Bu dalın korunması, basının karpal tüneldeki ana median sinirde olduğunu destekler; kendisi bası altında kalan ana yapı değildir."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Karpal tünel sendromunda median sinir basısını duyusal ve motor bulgularla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus medianus yanıtını destekler."
+        "learningOutcome": "Karpal tünel sendromunu median sinirin motor-duyu dağılımı ve palmar kutanöz dal ayrımıyla çözebilme.",
+        "coreKnowledge": "Karpal tünelden nervus medianus ve fleksör tendonlar geçer; median sinir basısında ilk üç buçuk parmakta parestezi, tenar zayıflık ve opozisyon kaybı gelişir. Palmar kutanöz dal tünelden geçmediği için tenar avuç içi duyusu korunabilir."
       },
-      "whyCorrect": "Nervus medianus, bu olguda en uygun yanıttır. Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır.",
+      "whyCorrect": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Gece artan ilk üç buçuk parmak parestezisi karpal tünel düzeyinde median sinir basısını düşündürür.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Muayene bulgusu",
-          "text": "Tenar atrofi ve başparmak opozisyon güçsüzlüğü vardır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Tenar atrofi ve başparmak opozisyon zayıflığı median sinirin motor dal etkilenimini gösterir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Sinir iletim çalışması el bileği düzeyinde median sinir etkilenmesini göstermiştir.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini ve basının karpal tünelde olduğunu destekler.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus medianus yanıtını destekler.",
-      "examPearl": "İpucu: Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır + tenar atrofi ve başparmak opozisyon güçsüzlüğü vardır; bu birliktelik Nervus medianus yanıtını öne çıkarır.",
+      "coreKnowledge": "Karpal tünelden nervus medianus ve fleksör tendonlar geçer; median sinir basısında ilk üç buçuk parmakta parestezi, tenar zayıflık ve opozisyon kaybı gelişir. Palmar kutanöz dal tünelden geçmediği için tenar avuç içi duyusu korunabilir.",
+      "examPearl": "Karpal tünelde median sinir tutulur; avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini hatırlatır.",
       "whyWrong": {
-        "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-        "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-        "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-        "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler."
+        "Nervus ulnaris": "Nervus ulnaris Guyon kanalı veya kubital tünelde basıya uğrayabilir; dördüncü-beşinci parmak duyusu ve interosseöz kaslar etkilenir. İlk üç parmak ve tenar opozisyon ağırlıklı bulgu median sinire uyar.",
+        "Nervus radialis superficialis": "Nervus radialis superficialis el sırtının radial duyusuyla ilişkilidir ve motor tenar kas kaybı yapmaz. Gece artan karpal tünel tipi paresteziyi açıklamaz.",
+        "Nervus interosseus anterior": "Nervus interosseus anterior median sinirin motor dalıdır; pronator quadratus, flexor pollicis longus ve lateral FDP etkilenir, duyu kaybı yapmaz. Bu vakadaki parmak duyusu azalması ana sinir basısını gösterir.",
+        "Ramus palmaris nervi mediani": "Median sinirin palmar kutanöz dalı karpal tünelin dışından geçer ve tenar avuç içi duyusunu taşır. Bu dalın korunması, basının karpal tüneldeki ana median sinirde olduğunu destekler; kendisi bası altında kalan ana yapı değildir."
       }
     },
     "shuffleOptions": false,
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus medianus yanıtını destekler.",
-    "examPearl": "İpucu: Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır + tenar atrofi ve başparmak opozisyon güçsüzlüğü vardır; bu birliktelik Nervus medianus yanıtını öne çıkarır.",
-    "whyCorrect": "Nervus medianus, bu olguda en uygun yanıttır. Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır.",
+    "coreKnowledge": "Karpal tünelden nervus medianus ve fleksör tendonlar geçer; median sinir basısında ilk üç buçuk parmakta parestezi, tenar zayıflık ve opozisyon kaybı gelişir. Palmar kutanöz dal tünelden geçmediği için tenar avuç içi duyusu korunabilir.",
+    "examPearl": "Karpal tünelde median sinir tutulur; avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini hatırlatır.",
+    "whyCorrect": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-      "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-      "Nervus medianus": "Nervus medianus, olgunun ana tanısal örüntüsünü karşılar. Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır Tenar atrofi ve başparmak opozisyon güçsüzlüğü vardır. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-      "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler."
+      "Nervus medianus": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler.",
+      "Nervus ulnaris": "Nervus ulnaris Guyon kanalı veya kubital tünelde basıya uğrayabilir; dördüncü-beşinci parmak duyusu ve interosseöz kaslar etkilenir. İlk üç parmak ve tenar opozisyon ağırlıklı bulgu median sinire uyar.",
+      "Nervus radialis superficialis": "Nervus radialis superficialis el sırtının radial duyusuyla ilişkilidir ve motor tenar kas kaybı yapmaz. Gece artan karpal tünel tipi paresteziyi açıklamaz.",
+      "Nervus interosseus anterior": "Nervus interosseus anterior median sinirin motor dalıdır; pronator quadratus, flexor pollicis longus ve lateral FDP etkilenir, duyu kaybı yapmaz. Bu vakadaki parmak duyusu azalması ana sinir basısını gösterir.",
+      "Ramus palmaris nervi mediani": "Median sinirin palmar kutanöz dalı karpal tünelin dışından geçer ve tenar avuç içi duyusunu taşır. Bu dalın korunması, basının karpal tüneldeki ana median sinirde olduğunu destekler; kendisi bası altında kalan ana yapı değildir."
     },
     "evidenceChain": [
       {
-        "text": "Uyuşma başparmak, işaret parmağı, orta parmak ve yüzük parmağının radial yarısındadır.",
+        "text": "Gece artan ilk üç buçuk parmak parestezisi karpal tünel düzeyinde median sinir basısını düşündürür.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Tenar atrofi ve başparmak opozisyon güçsüzlüğü vardır.",
+        "text": "Tenar atrofi ve başparmak opozisyon zayıflığı median sinirin motor dal etkilenimini gösterir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Sinir iletim çalışması el bileği düzeyinde median sinir etkilenmesini göstermiştir.",
+        "text": "Avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini ve basının karpal tünelde olduğunu destekler.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-      "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-      "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-      "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler."
+      "Nervus ulnaris": "Nervus ulnaris Guyon kanalı veya kubital tünelde basıya uğrayabilir; dördüncü-beşinci parmak duyusu ve interosseöz kaslar etkilenir. İlk üç parmak ve tenar opozisyon ağırlıklı bulgu median sinire uyar.",
+      "Nervus radialis superficialis": "Nervus radialis superficialis el sırtının radial duyusuyla ilişkilidir ve motor tenar kas kaybı yapmaz. Gece artan karpal tünel tipi paresteziyi açıklamaz.",
+      "Nervus interosseus anterior": "Nervus interosseus anterior median sinirin motor dalıdır; pronator quadratus, flexor pollicis longus ve lateral FDP etkilenir, duyu kaybı yapmaz. Bu vakadaki parmak duyusu azalması ana sinir basısını gösterir.",
+      "Ramus palmaris nervi mediani": "Median sinirin palmar kutanöz dalı karpal tünelin dışından geçer ve tenar avuç içi duyusunu taşır. Bu dalın korunması, basının karpal tüneldeki ana median sinirde olduğunu destekler; kendisi bası altında kalan ana yapı değildir."
     }
   },
   {
@@ -32812,28 +32891,29 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Kasık altında ağrılı şişlik",
     "difficulty": "Kolay",
-    "clinicalFocus": "Kasık altında ağrılı şişlik bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Kitle inguinal ligamentin altında yerleşmiştir ve pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır. Bu ipuçlarını kullanarak Femoral ven seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Kasık altında ağrılı şişlik olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Femoral ven yanıtına ulaşma.",
+    "learningTarget": "Femoral kanal sınırlarını ve femoral herni anatomisini klinik muayene bulgusuyla ilişkilendirebilme.",
     "demographics": "72 yaşında kadın hasta",
-    "setting": "Klinik değerlendirme",
-    "chiefComplaint": "Hasta, sağ kasık altında ağrılı şişlik ve bulantı nedeniyle acile başvuruyor.",
-    "stem": "Şişliğin daha önce ara ara küçüldüğünü ancak son 8 saattir kaybolmadığını ve giderek ağrılı hale geldiğini belirtiyor. Çok doğum yapmış olduğu öğreniliyor.",
+    "setting": "Acil servis",
+    "chiefComplaint": "Hasta, sağ kasık altında ağrılı ve kaybolmayan şişlik ile bulantı nedeniyle acile başvuruyor.",
+    "stem": "Şişliğin daha önce zaman zaman küçüldüğünü ancak son 8 saattir redükte olmadığını ve giderek ağrılı hale geldiğini belirtiyor. Çok doğum yapmış olduğu ve benzer şişliklerin ayakta belirginleştiği öğreniliyor.",
     "patientIntro": {
-      "profile": "72 yaşında kadın hasta, genel cerrahi acilinde değerlendiriliyor.",
-      "presentation": "Hasta, sağ kasık altında ağrılı şişlik ve bulantı nedeniyle acile başvuruyor.",
-      "historySummary": "Şişliğin daha önce ara ara küçüldüğünü ancak son 8 saattir kaybolmadığını ve giderek ağrılı hale geldiğini belirtiyor. Çok doğum yapmış olduğu öğreniliyor."
+      "profile": "72 yaşında kadın hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, sağ kasık altında ağrılı ve kaybolmayan şişlik ile bulantı nedeniyle acile başvuruyor.",
+      "historySummary": "Şişliğin daha önce zaman zaman küçüldüğünü ancak son 8 saattir redükte olmadığını ve giderek ağrılı hale geldiğini belirtiyor. Çok doğum yapmış olduğu ve benzer şişliklerin ayakta belirginleştiği öğreniliyor."
     },
     "vitals": {
-      "TA": "118/74 mmHg",
-      "Nabız": "108/dk",
-      "Solunum": "16/dk",
+      "TA": "132/78 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "18/dk",
       "SpO2": "%98, oda havasında",
-      "Ateş": "37.7 °C",
-      "Şok indeksi": "0.92 sınırda"
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "0.79 normal"
     },
     "exam": [
       "Sağ inguinal ligamentin altında, pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen kitle palpe edilir.",
-      "Batında hafif distansiyon vardır."
+      "Kitle öksürmekle belirginleşir; batında hafif distansiyon vardır.",
+      "Femoral nabız palpabl olup distal perfüzyon korunmuştur."
     ],
     "investigations": [
       {
@@ -32843,42 +32923,42 @@ export const rawCases = [
         "type": "ultrasound",
         "priority": "essential",
         "subtype": "Ultrasonografi",
-        "summary": "Yüzeyel yumuşak doku ultrasonografisi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Femoral ven olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır.",
-        "clinicalMeaning": "Yüzeyel yumuşak doku ultrasonografisi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Femoral ven olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır.",
+        "summary": "Yüzeyel ultrasonografide femoral kanal düzeyinde barsak ansı içeren herni kesesi izlenmesi, kitlenin inguinal ligamentin altındaki femoral geçişten kaynaklandığını destekler. Femoral kanalın lateral komşusu femoral vendir.",
+        "clinicalMeaning": "Femoral kanalın medial yerleşimi ve femoral venle yakın ilişkisi, femoral hernilerde strangülasyon ve venöz bası riskini anatomik olarak açıklar.",
         "result": {
           "title": "Yüzeyel yumuşak doku ultrasonografisi",
-          "summary": "Yüzeyel yumuşak doku ultrasonografisi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Femoral ven olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır.",
-          "interpretation": "Yüzeyel yumuşak doku ultrasonografisi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Femoral ven olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır.",
+          "summary": "Yüzeyel ultrasonografide femoral kanal düzeyinde barsak ansı içeren herni kesesi izlenmesi, kitlenin inguinal ligamentin altındaki femoral geçişten kaynaklandığını destekler. Femoral kanalın lateral komşusu femoral vendir.",
+          "interpretation": "Femoral kanalın medial yerleşimi ve femoral venle yakın ilişkisi, femoral hernilerde strangülasyon ve venöz bası riskini anatomik olarak açıklar.",
           "values": [
             [
-              "Görüntüleme bulgusu",
+              "Yüzeyel yumuşak doku ultrasonografisi",
               "Femoral kanal düzeyinde barsak ansı içeren herni kesesi izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Femoral kanalın medial yerleşimi ve femoral venle yakın ilişkisi, femoral hernilerde strangülasyon ve venöz bası riskini anatomik olarak açıklar."
             ]
           ],
           "rows": [
             [
-              "Görüntüleme bulgusu",
+              "Yüzeyel yumuşak doku ultrasonografisi",
               "Femoral kanal düzeyinde barsak ansı içeren herni kesesi izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Femoral kanalın medial yerleşimi ve femoral venle yakın ilişkisi, femoral hernilerde strangülasyon ve venöz bası riskini anatomik olarak açıklar."
             ]
           ]
         },
         "rows": [
           [
-            "Görüntüleme bulgusu",
+            "Yüzeyel yumuşak doku ultrasonografisi",
             "Femoral kanal düzeyinde barsak ansı içeren herni kesesi izlendi.",
-            "Modaliteye özgü bulgu",
-            ""
+            "Anatomik yorum",
+            "Femoral kanalın medial yerleşimi ve femoral venle yakın ilişkisi, femoral hernilerde strangülasyon ve venöz bası riskini anatomik olarak açıklar."
           ]
         ],
-        "postAnswerExplanation": "Yüzeyel yumuşak doku ultrasonografisi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Femoral ven olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır.",
-        "interpretation": "Yüzeyel yumuşak doku ultrasonografisi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Femoral ven olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır.",
+        "postAnswerExplanation": "Femoral kanalın medial yerleşimi ve femoral venle yakın ilişkisi, femoral hernilerde strangülasyon ve venöz bası riskini anatomik olarak açıklar.",
+        "interpretation": "Femoral kanalın medial yerleşimi ve femoral venle yakın ilişkisi, femoral hernilerde strangülasyon ve venöz bası riskini anatomik olarak açıklar.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Yüzeyel yumuşak doku ultrasonografisi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Femoral ven olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır."
+        "explanationAfterAnswer": "Femoral kanalın medial yerleşimi ve femoral venle yakın ilişkisi, femoral hernilerde strangülasyon ve venöz bası riskini anatomik olarak açıklar."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -32887,154 +32967,154 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu herni tipinde kesenin geçtiği femoral kanalın lateral komşuluğu aşağıdakilerden hangisidir?",
+    "question": "Femoral herni kesesinin geçtiği femoral kanalın lateral komşuluğu hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Femoral ven",
       "options": [
         "Femoral ven",
-        "Femoral arter",
         "Laküner ligament",
         "İnguinal ligament",
-        "Pektineal ligament"
+        "Pektineal ligament",
+        "Femoral arter"
       ],
-      "question": "Bu herni tipinde kesenin geçtiği femoral kanalın lateral komşuluğu aşağıdakilerden hangisidir?",
-      "explanation": "Femoral ven, vakadaki bulgularla en uyumlu tanıdır. Kitle inguinal ligamentin altında yerleşmiştir Pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Femoral herni kesesinin geçtiği femoral kanalın lateral komşuluğu hangisidir?",
+      "explanation": "Femoral ven femoral kanalın hemen lateral komşusudur. İnguinal ligament altında, pubik tüberkül lateralindeki redükte edilemeyen kitle femoral herniyi düşündürür ve kanal anatomisinde lateral yapı femoral vendir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Kitle inguinal ligamentin altında yerleşmiştir + pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır; bu birliktelik Femoral ven yanıtını öne çıkarır."
+          "text": "Femoral kanalın lateral komşusu femoral vendir; femoral herniler bu nedenle ven kompresyonu ve strangülasyon riski taşır."
         }
       ],
       "optionComparison": {
-        "Femoral ven": "Femoral ven, olgunun ana tanısal örüntüsünü karşılar. Kitle inguinal ligamentin altında yerleşmiştir Pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır. Bulgular aynı tanı etrafında birleşir.",
-        "Femoral arter": "Femoral arter, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-        "Laküner ligament": "Laküner ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-        "İnguinal ligament": "İnguinal ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-        "Pektineal ligament": "Pektineal ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler."
+        "Femoral ven": "Femoral ven femoral kanalın hemen lateral komşusudur. İnguinal ligament altında, pubik tüberkül lateralindeki redükte edilemeyen kitle femoral herniyi düşündürür ve kanal anatomisinde lateral yapı femoral vendir.",
+        "Laküner ligament": "Laküner ligament femoral kanalın medial sınırını oluşturur. Bu nedenle herni kesesinin lateral komşusu değil, medial komşuluğudur.",
+        "İnguinal ligament": "İnguinal ligament femoral kanalın anterior/üst sınırıyla ilişkilidir. Lateral komşuluk sorulduğunda femoral ven seçilmelidir.",
+        "Pektineal ligament": "Pektineal ligament ve pektineus fasiyası femoral kanalın posterior sınırını oluşturur. Lateral sınır veya komşu yapı femoral vendir.",
+        "Femoral arter": "Femoral arter femoral venin lateralindedir; NAVEL diziliminde kanal en medialde, ven kanalın lateralindedir. Kanalın doğrudan lateral komşusu arter değil vendir."
       },
       "answerFeedback": {
-        "summary": "Kitle inguinal ligamentin altında yerleşmiştir Pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır. Bu bulgular tanısal karar açısından Femoral ven yanıtını destekler.",
-        "whyCorrect": "Femoral ven, vakadaki bulgularla en uyumlu tanıdır. Kitle inguinal ligamentin altında yerleşmiştir Pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "rationale": "Femoral ven, vakadaki bulgularla en uyumlu tanıdır. Kitle inguinal ligamentin altında yerleşmiştir Pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "correctOptionFeedback": "Femoral ven femoral kanalın lateral komşusudur ve femoral herni anatomisinin ayırt edilmesinde temel yapıdır.",
+        "summary": "Bu olguda karar, i̇nguinal ligamentin altında ve pubik tüberkül lateralindeki kitle femoral herni lokalizasyonunu düşündürür. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Femoral ven femoral kanalın hemen lateral komşusudur. İnguinal ligament altında, pubik tüberkül lateralindeki redükte edilemeyen kitle femoral herniyi düşündürür ve kanal anatomisinde lateral yapı femoral vendir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Femoral ven femoral kanalın hemen lateral komşusudur. İnguinal ligament altında, pubik tüberkül lateralindeki redükte edilemeyen kitle femoral herniyi düşündürür ve kanal anatomisinde lateral yapı femoral vendir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Femoral ven femoral kanalın hemen lateral komşusudur. İnguinal ligament altında, pubik tüberkül lateralindeki redükte edilemeyen kitle femoral herniyi düşündürür ve kanal anatomisinde lateral yapı femoral vendir.",
         "keyClues": [
-          "Kitle inguinal ligamentin altında yerleşmiştir.",
-          "Pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır.",
-          "Ultrasonografide femoral kanal düzeyinde barsak ansı içeren herni kesesi gösterilmiştir."
+          "İnguinal ligamentin altında ve pubik tüberkül lateralindeki kitle femoral herni lokalizasyonunu düşündürür.",
+          "Ultrasonografide femoral kanal düzeyinde barsak ansı içeren herni kesesinin gösterilmesi anatomik geçiş yerini doğrular.",
+          "Femoral kanalın lateralinde femoral ven bulunduğu için sorulan doğrudan komşu yapı femoral vendir."
         ],
         "evidenceChain": [
           {
-            "text": "Kitle inguinal ligamentin altında yerleşmiştir.",
+            "text": "İnguinal ligamentin altında ve pubik tüberkül lateralindeki kitle femoral herni lokalizasyonunu düşündürür.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır.",
+            "text": "Ultrasonografide femoral kanal düzeyinde barsak ansı içeren herni kesesinin gösterilmesi anatomik geçiş yerini doğrular.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Ultrasonografide femoral kanal düzeyinde barsak ansı içeren herni kesesi gösterilmiştir.",
+            "text": "Femoral kanalın lateralinde femoral ven bulunduğu için sorulan doğrudan komşu yapı femoral vendir.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Kitle inguinal ligamentin altında yerleşmiştir + pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır; bu birliktelik Femoral ven yanıtını öne çıkarır.",
+        "examPearl": "Femoral kanalın lateral komşusu femoral vendir; femoral herniler bu nedenle ven kompresyonu ve strangülasyon riski taşır.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Femoral herni inguinal ligamentin altında çıkar ve femoral kanalın lateral komşusu femoral vendir."
+            "text": "Femoral kanalın lateral komşusu femoral vendir; femoral herniler bu nedenle ven kompresyonu ve strangülasyon riski taşır."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "Femoral herni inguinal ligamentin altında çıkar ve femoral kanalın lateral komşusu femoral vendir."
+            "label": "Klinik anatomi",
+            "text": "Femoral kanal femoral kılıfın en medial bölümüdür; lateralinde femoral ven, medialinde laküner ligament, anteriorunda inguinal ligament, posteriorunda pektineal ligament bulunur."
           }
         ],
         "optionComparison": {
-          "Femoral ven": "Femoral ven, olgunun ana tanısal örüntüsünü karşılar. Kitle inguinal ligamentin altında yerleşmiştir Pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır. Bulgular aynı tanı etrafında birleşir.",
-          "Femoral arter": "Femoral arter, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-          "Laküner ligament": "Laküner ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-          "İnguinal ligament": "İnguinal ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-          "Pektineal ligament": "Pektineal ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler."
+          "Femoral ven": "Femoral ven femoral kanalın hemen lateral komşusudur. İnguinal ligament altında, pubik tüberkül lateralindeki redükte edilemeyen kitle femoral herniyi düşündürür ve kanal anatomisinde lateral yapı femoral vendir.",
+          "Laküner ligament": "Laküner ligament femoral kanalın medial sınırını oluşturur. Bu nedenle herni kesesinin lateral komşusu değil, medial komşuluğudur.",
+          "İnguinal ligament": "İnguinal ligament femoral kanalın anterior/üst sınırıyla ilişkilidir. Lateral komşuluk sorulduğunda femoral ven seçilmelidir.",
+          "Pektineal ligament": "Pektineal ligament ve pektineus fasiyası femoral kanalın posterior sınırını oluşturur. Lateral sınır veya komşu yapı femoral vendir.",
+          "Femoral arter": "Femoral arter femoral venin lateralindedir; NAVEL diziliminde kanal en medialde, ven kanalın lateralindedir. Kanalın doğrudan lateral komşusu arter değil vendir."
         },
         "whyWrong": {
-          "Femoral arter": "Femoral arter, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-          "Laküner ligament": "Laküner ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-          "İnguinal ligament": "İnguinal ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-          "Pektineal ligament": "Pektineal ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler."
+          "Laküner ligament": "Laküner ligament femoral kanalın medial sınırını oluşturur. Bu nedenle herni kesesinin lateral komşusu değil, medial komşuluğudur.",
+          "İnguinal ligament": "İnguinal ligament femoral kanalın anterior/üst sınırıyla ilişkilidir. Lateral komşuluk sorulduğunda femoral ven seçilmelidir.",
+          "Pektineal ligament": "Pektineal ligament ve pektineus fasiyası femoral kanalın posterior sınırını oluşturur. Lateral sınır veya komşu yapı femoral vendir.",
+          "Femoral arter": "Femoral arter femoral venin lateralindedir; NAVEL diziliminde kanal en medialde, ven kanalın lateralindedir. Kanalın doğrudan lateral komşusu arter değil vendir."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Femoral herninin anatomik sınırlarını ve strangülasyon riskini ayırt edebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Femoral ven yanıtını destekler."
+        "learningOutcome": "Femoral kanal sınırlarını ve femoral herni anatomisini klinik muayene bulgusuyla ilişkilendirebilme.",
+        "coreKnowledge": "Femoral kanal femoral kılıfın en medial bölümüdür; lateralinde femoral ven, medialinde laküner ligament, anteriorunda inguinal ligament, posteriorunda pektineal ligament bulunur."
       },
-      "whyCorrect": "Femoral ven, vakadaki bulgularla en uyumlu tanıdır. Kitle inguinal ligamentin altında yerleşmiştir Pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Femoral ven femoral kanalın hemen lateral komşusudur. İnguinal ligament altında, pubik tüberkül lateralindeki redükte edilemeyen kitle femoral herniyi düşündürür ve kanal anatomisinde lateral yapı femoral vendir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Kitle inguinal ligamentin altında yerleşmiştir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "İnguinal ligamentin altında ve pubik tüberkül lateralindeki kitle femoral herni lokalizasyonunu düşündürür.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Muayene bulgusu",
-          "text": "Pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ultrasonografide femoral kanal düzeyinde barsak ansı içeren herni kesesinin gösterilmesi anatomik geçiş yerini doğrular.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Objektif veri",
-          "text": "Ultrasonografide femoral kanal düzeyinde barsak ansı içeren herni kesesi gösterilmiştir.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Femoral kanalın lateralinde femoral ven bulunduğu için sorulan doğrudan komşu yapı femoral vendir.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Femoral ven yanıtını destekler.",
-      "examPearl": "İpucu: Kitle inguinal ligamentin altında yerleşmiştir + pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır; bu birliktelik Femoral ven yanıtını öne çıkarır.",
+      "coreKnowledge": "Femoral kanal femoral kılıfın en medial bölümüdür; lateralinde femoral ven, medialinde laküner ligament, anteriorunda inguinal ligament, posteriorunda pektineal ligament bulunur.",
+      "examPearl": "Femoral kanalın lateral komşusu femoral vendir; femoral herniler bu nedenle ven kompresyonu ve strangülasyon riski taşır.",
       "whyWrong": {
-        "Femoral arter": "Femoral arter, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-        "Laküner ligament": "Laküner ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-        "İnguinal ligament": "İnguinal ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-        "Pektineal ligament": "Pektineal ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler."
+        "Laküner ligament": "Laküner ligament femoral kanalın medial sınırını oluşturur. Bu nedenle herni kesesinin lateral komşusu değil, medial komşuluğudur.",
+        "İnguinal ligament": "İnguinal ligament femoral kanalın anterior/üst sınırıyla ilişkilidir. Lateral komşuluk sorulduğunda femoral ven seçilmelidir.",
+        "Pektineal ligament": "Pektineal ligament ve pektineus fasiyası femoral kanalın posterior sınırını oluşturur. Lateral sınır veya komşu yapı femoral vendir.",
+        "Femoral arter": "Femoral arter femoral venin lateralindedir; NAVEL diziliminde kanal en medialde, ven kanalın lateralindedir. Kanalın doğrudan lateral komşusu arter değil vendir."
       }
     },
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Femoral ven yanıtını destekler.",
-    "examPearl": "İpucu: Kitle inguinal ligamentin altında yerleşmiştir + pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır; bu birliktelik Femoral ven yanıtını öne çıkarır.",
-    "whyCorrect": "Femoral ven, vakadaki bulgularla en uyumlu tanıdır. Kitle inguinal ligamentin altında yerleşmiştir Pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "Femoral kanal femoral kılıfın en medial bölümüdür; lateralinde femoral ven, medialinde laküner ligament, anteriorunda inguinal ligament, posteriorunda pektineal ligament bulunur.",
+    "examPearl": "Femoral kanalın lateral komşusu femoral vendir; femoral herniler bu nedenle ven kompresyonu ve strangülasyon riski taşır.",
+    "whyCorrect": "Femoral ven femoral kanalın hemen lateral komşusudur. İnguinal ligament altında, pubik tüberkül lateralindeki redükte edilemeyen kitle femoral herniyi düşündürür ve kanal anatomisinde lateral yapı femoral vendir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Femoral ven": "Femoral ven, olgunun ana tanısal örüntüsünü karşılar. Kitle inguinal ligamentin altında yerleşmiştir Pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır. Bulgular aynı tanı etrafında birleşir.",
-      "Femoral arter": "Femoral arter, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-      "Laküner ligament": "Laküner ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-      "İnguinal ligament": "İnguinal ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-      "Pektineal ligament": "Pektineal ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler."
+      "Femoral ven": "Femoral ven femoral kanalın hemen lateral komşusudur. İnguinal ligament altında, pubik tüberkül lateralindeki redükte edilemeyen kitle femoral herniyi düşündürür ve kanal anatomisinde lateral yapı femoral vendir.",
+      "Laküner ligament": "Laküner ligament femoral kanalın medial sınırını oluşturur. Bu nedenle herni kesesinin lateral komşusu değil, medial komşuluğudur.",
+      "İnguinal ligament": "İnguinal ligament femoral kanalın anterior/üst sınırıyla ilişkilidir. Lateral komşuluk sorulduğunda femoral ven seçilmelidir.",
+      "Pektineal ligament": "Pektineal ligament ve pektineus fasiyası femoral kanalın posterior sınırını oluşturur. Lateral sınır veya komşu yapı femoral vendir.",
+      "Femoral arter": "Femoral arter femoral venin lateralindedir; NAVEL diziliminde kanal en medialde, ven kanalın lateralindedir. Kanalın doğrudan lateral komşusu arter değil vendir."
     },
     "evidenceChain": [
       {
-        "text": "Kitle inguinal ligamentin altında yerleşmiştir.",
+        "text": "İnguinal ligamentin altında ve pubik tüberkül lateralindeki kitle femoral herni lokalizasyonunu düşündürür.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Pubik tüberkülün lateralinde ağrılı ve redükte edilemeyen şişlik vardır.",
+        "text": "Ultrasonografide femoral kanal düzeyinde barsak ansı içeren herni kesesinin gösterilmesi anatomik geçiş yerini doğrular.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Ultrasonografide femoral kanal düzeyinde barsak ansı içeren herni kesesi gösterilmiştir.",
+        "text": "Femoral kanalın lateralinde femoral ven bulunduğu için sorulan doğrudan komşu yapı femoral vendir.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Femoral arter": "Femoral arter, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-      "Laküner ligament": "Laküner ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-      "İnguinal ligament": "İnguinal ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler.",
-      "Pektineal ligament": "Pektineal ligament, bu olguda en uygun yanıt değildir. Belirleyici bulgular Femoral ven yanıtını destekler."
+      "Laküner ligament": "Laküner ligament femoral kanalın medial sınırını oluşturur. Bu nedenle herni kesesinin lateral komşusu değil, medial komşuluğudur.",
+      "İnguinal ligament": "İnguinal ligament femoral kanalın anterior/üst sınırıyla ilişkilidir. Lateral komşuluk sorulduğunda femoral ven seçilmelidir.",
+      "Pektineal ligament": "Pektineal ligament ve pektineus fasiyası femoral kanalın posterior sınırını oluşturur. Lateral sınır veya komşu yapı femoral vendir.",
+      "Femoral arter": "Femoral arter femoral venin lateralindedir; NAVEL diziliminde kanal en medialde, ven kanalın lateralindedir. Kanalın doğrudan lateral komşusu arter değil vendir."
     }
   },
   {
@@ -36159,30 +36239,30 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Tiroid ameliyatı sonrası ses değişikliği",
     "difficulty": "Kolay",
-    "clinicalFocus": "Tiroid ameliyatı sonrası ses değişikliği bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Ses kısıklığı total tiroidektomi sonrası başlamıştır ve laringoskopide tek taraflı vokal kord hareket kısıtlılığı gösterilmiştir. Bu ipuçlarını kullanarak Nervus laryngeus recurrens seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Tiroid ameliyatı sonrası ses değişikliği olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus laryngeus recurrens yanıtına ulaşma.",
+    "learningTarget": "Tiroid cerrahisi komplikasyonlarında larenks sinirlerini fonksiyonel bulgularla ayırt edebilme.",
     "demographics": "45 yaşında kadın hasta",
-    "setting": "Total tiroidektomi sonrası cerrahi kontrolünde",
-    "chiefComplaint": "Hasta, ameliyattan sonra başlayan ses kısıklığı ve konuşurken çabuk yorulma nedeniyle başvuruyor.",
-    "stem": "Üç gün önce multinodüler guatr nedeniyle total tiroidektomi geçirdiğini, ameliyattan önce ses sorunu olmadığını belirtiyor. Nefes darlığı tariflemiyor.",
+    "setting": "Endokrin cerrahi kontrolü",
+    "chiefComplaint": "Hasta, total tiroidektomiden sonra başlayan ses kısıklığı ve uzun konuşunca sesinin yorulması nedeniyle başvuruyor.",
+    "stem": "Üç gün önce multinodüler guatr nedeniyle total tiroidektomi geçirdiğini, ameliyattan önce ses sorunu olmadığını belirtiyor. Nefes darlığı, belirgin yutma güçlüğü veya dil hareket bozukluğu tariflemiyor.",
     "patientIntro": {
-      "profile": "45 yaşında kadın hasta, total tiroidektomi sonrası cerrahi kontrolünde değerlendiriliyor.",
-      "presentation": "Hasta, ameliyattan sonra başlayan ses kısıklığı ve konuşurken çabuk yorulma nedeniyle başvuruyor.",
-      "historySummary": "Üç gün önce multinodüler guatr nedeniyle total tiroidektomi geçirdiğini, ameliyattan önce ses sorunu olmadığını belirtiyor. Nefes darlığı tariflemiyor."
+      "profile": "45 yaşında kadın hasta, endokrin cerrahi kontrolünda değerlendiriliyor.",
+      "presentation": "Hasta, total tiroidektomiden sonra başlayan ses kısıklığı ve uzun konuşunca sesinin yorulması nedeniyle başvuruyor.",
+      "historySummary": "Üç gün önce multinodüler guatr nedeniyle total tiroidektomi geçirdiğini, ameliyattan önce ses sorunu olmadığını belirtiyor. Nefes darlığı, belirgin yutma güçlüğü veya dil hareket bozukluğu tariflemiyor."
     },
     "vitals": {
-      "TA": "118/74 mmHg",
-      "Nabız": "112/dk",
-      "Solunum": "26/dk",
-      "SpO2": "%91, oda havasında",
-      "Ateş": "37.1 °C",
-      "Şok indeksi": "0.95 sınırda"
+      "TA": "118/76 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.6 °C",
+      "Şok indeksi": "0.66 normal"
     },
     "exam": [
       "Hasta konuşurken sesi kısık ve zayıftır.",
-      "Boyun insizyonu temizdir.",
-      "Solunum sıkıntısı yoktur.",
-      "Laringoskopide tek taraflı vokal kord hareket kısıtlılığı izlenmiştir."
+      "Boyun insizyonu temizdir ve solunum sıkıntısı yoktur.",
+      "Laringoskopide tek taraflı vokal kord hareket kısıtlılığı izlenmiştir.",
+      "Dil hareketleri ve omuz elevasyonu korunmuştur."
     ],
     "investigations": [],
     "useSyntheticInvestigationBank": false,
@@ -36191,151 +36271,154 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu hastada hasarlanma olasılığı en yüksek sinir aşağıdakilerden hangisidir?",
+    "question": "Tiroid cerrahisi sonrası yeni başlayan ses kısıklığı ve vokal kord hareket azalmasını en iyi açıklayan sinir hasarı hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Nervus laryngeus recurrens",
       "options": [
         "Nervus laryngeus recurrens",
+        "Nervus laryngeus superior - ramus externus",
         "Nervus hypoglossus",
         "Nervus glossopharyngeus",
-        "Nervus accessorius",
-        "Nervus phrenicus"
+        "Nervus accessorius"
       ],
-      "question": "Bu hastada hasarlanma olasılığı en yüksek sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus laryngeus recurrens, bu olguda en uygun yanıttır. Ses kısıklığı total tiroidektomi sonrası başlamıştır.",
+      "question": "Tiroid cerrahisi sonrası yeni başlayan ses kısıklığı ve vokal kord hareket azalmasını en iyi açıklayan sinir hasarı hangisidir?",
+      "explanation": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Ses kısıklığı total tiroidektomi sonrası başlamıştır + laringoskopide tek taraflı vokal kord hareket kısıtlılığı gösterilmiştir; bu birliktelik Nervus laryngeus recurrens yanıtını öne çıkarır."
+          "text": "Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir."
         }
       ],
       "optionComparison": {
-        "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, olgunun ana tanısal örüntüsünü karşılar. Ses kısıklığı total tiroidektomi sonrası başlamıştır Laringoskopide tek taraflı vokal kord hareket kısıtlılığı gösterilmiştir. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus phrenicus": "Nervus phrenicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+        "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur.",
+        "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+        "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+        "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+        "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
       },
       "answerFeedback": {
-        "summary": "Ses kısıklığı total tiroidektomi sonrası başlamıştır Laringoskopide tek taraflı vokal kord hareket kısıtlılığı gösterilmiştir. Bu bulgular tanısal karar açısından Nervus laryngeus recurrens yanıtını destekler.",
-        "whyCorrect": "Nervus laryngeus recurrens, bu olguda en uygun yanıttır. Ses kısıklığı total tiroidektomi sonrası başlamıştır.",
-        "rationale": "Nervus laryngeus recurrens, bu olguda en uygun yanıttır. Ses kısıklığı total tiroidektomi sonrası başlamıştır.",
-        "correctOptionFeedback": "Nervus laryngeus recurrens vokal kord hareketini sağlayan larinks kaslarını innerve ettiği için tiroidektomi sonrası ses kısıklığını en iyi açıklar.",
+        "summary": "Bu olguda karar, yakınmalar tiroid cerrahisinden hemen sonra başlamıştır; recurrent laryngeal sinir tiroide yakın seyreder. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur.",
         "keyClues": [
-          "Ses kısıklığı total tiroidektomi sonrası başlamıştır.",
-          "Laringoskopide tek taraflı vokal kord hareket kısıtlılığı gösterilmiştir.",
-          "Ameliyat öncesinde ses sorunu olmadığı belirtilmiştir."
+          "Yakınmalar tiroid cerrahisinden hemen sonra başlamıştır; recurrent laryngeal sinir tiroide yakın seyreder.",
+          "Ses kısıklığı ve konuşurken yorulma vokal kord motor fonksiyon bozukluğunu düşündürür.",
+          "Laringoskopide tek taraflı vokal kord hareket kısıtlılığı nervus laryngeus recurrens etkilenimini destekler."
         ],
         "evidenceChain": [
           {
-            "text": "Ses kısıklığı total tiroidektomi sonrası başlamıştır.",
+            "text": "Yakınmalar tiroid cerrahisinden hemen sonra başlamıştır; recurrent laryngeal sinir tiroide yakın seyreder.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Laringoskopide tek taraflı vokal kord hareket kısıtlılığı gösterilmiştir.",
+            "text": "Ses kısıklığı ve konuşurken yorulma vokal kord motor fonksiyon bozukluğunu düşündürür.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Ameliyat öncesinde ses sorunu olmadığı belirtilmiştir.",
+            "text": "Laringoskopide tek taraflı vokal kord hareket kısıtlılığı nervus laryngeus recurrens etkilenimini destekler.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Ses kısıklığı total tiroidektomi sonrası başlamıştır + laringoskopide tek taraflı vokal kord hareket kısıtlılığı gösterilmiştir; bu birliktelik Nervus laryngeus recurrens yanıtını öne çıkarır.",
+        "examPearl": "Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Tiroidektomi sonrası ses kısıklığında ilk akla gelmesi gereken yapı nervus laryngeus recurrenstir."
+            "text": "Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir."
           }
         ],
         "clinicalPearls": [
-          "Tiroidektomi sonrası ses kısıklığında ilk akla gelmesi gereken yapı nervus laryngeus recurrenstir."
+          {
+            "label": "Klinik anatomi",
+            "text": "Nervus laryngeus recurrens trakeoözofageal olukta tiroide yakın seyreder ve intrinsik larenks kaslarının çoğunu innerve eder; lezyonu vokal kord paralizisi, nefesli ses ve ses kısıklığı yapar."
+          }
         ],
         "optionComparison": {
-          "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, olgunun ana tanısal örüntüsünü karşılar. Ses kısıklığı total tiroidektomi sonrası başlamıştır Laringoskopide tek taraflı vokal kord hareket kısıtlılığı gösterilmiştir. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus phrenicus": "Nervus phrenicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+          "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur.",
+          "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+          "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+          "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+          "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
         },
         "whyWrong": {
-          "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus phrenicus": "Nervus phrenicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+          "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+          "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+          "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+          "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Tiroid cerrahisi sonrası ses kısıklığını rekürren laringeal sinir hasarıyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus laryngeus recurrens yanıtını destekler."
+        "learningOutcome": "Tiroid cerrahisi komplikasyonlarında larenks sinirlerini fonksiyonel bulgularla ayırt edebilme.",
+        "coreKnowledge": "Nervus laryngeus recurrens trakeoözofageal olukta tiroide yakın seyreder ve intrinsik larenks kaslarının çoğunu innerve eder; lezyonu vokal kord paralizisi, nefesli ses ve ses kısıklığı yapar."
       },
-      "whyCorrect": "Nervus laryngeus recurrens, bu olguda en uygun yanıttır. Ses kısıklığı total tiroidektomi sonrası başlamıştır.",
+      "whyCorrect": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Ses kısıklığı total tiroidektomi sonrası başlamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Yakınmalar tiroid cerrahisinden hemen sonra başlamıştır; recurrent laryngeal sinir tiroide yakın seyreder.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Muayene bulgusu",
-          "text": "Laringoskopide tek taraflı vokal kord hareket kısıtlılığı gösterilmiştir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ses kısıklığı ve konuşurken yorulma vokal kord motor fonksiyon bozukluğunu düşündürür.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Objektif veri",
-          "text": "Ameliyat öncesinde ses sorunu olmadığı belirtilmiştir.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Laringoskopide tek taraflı vokal kord hareket kısıtlılığı nervus laryngeus recurrens etkilenimini destekler.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus laryngeus recurrens yanıtını destekler.",
-      "examPearl": "İpucu: Ses kısıklığı total tiroidektomi sonrası başlamıştır + laringoskopide tek taraflı vokal kord hareket kısıtlılığı gösterilmiştir; bu birliktelik Nervus laryngeus recurrens yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus laryngeus recurrens trakeoözofageal olukta tiroide yakın seyreder ve intrinsik larenks kaslarının çoğunu innerve eder; lezyonu vokal kord paralizisi, nefesli ses ve ses kısıklığı yapar.",
+      "examPearl": "Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir.",
       "whyWrong": {
-        "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus phrenicus": "Nervus phrenicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+        "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+        "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+        "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+        "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
       }
     },
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus laryngeus recurrens yanıtını destekler.",
-    "examPearl": "İpucu: Ses kısıklığı total tiroidektomi sonrası başlamıştır + laringoskopide tek taraflı vokal kord hareket kısıtlılığı gösterilmiştir; bu birliktelik Nervus laryngeus recurrens yanıtını öne çıkarır.",
-    "whyCorrect": "Nervus laryngeus recurrens, bu olguda en uygun yanıttır. Ses kısıklığı total tiroidektomi sonrası başlamıştır.",
+    "coreKnowledge": "Nervus laryngeus recurrens trakeoözofageal olukta tiroide yakın seyreder ve intrinsik larenks kaslarının çoğunu innerve eder; lezyonu vokal kord paralizisi, nefesli ses ve ses kısıklığı yapar.",
+    "examPearl": "Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir.",
+    "whyCorrect": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, olgunun ana tanısal örüntüsünü karşılar. Ses kısıklığı total tiroidektomi sonrası başlamıştır Laringoskopide tek taraflı vokal kord hareket kısıtlılığı gösterilmiştir. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus phrenicus": "Nervus phrenicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+      "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur.",
+      "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+      "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+      "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+      "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
     },
     "evidenceChain": [
       {
-        "text": "Ses kısıklığı total tiroidektomi sonrası başlamıştır.",
+        "text": "Yakınmalar tiroid cerrahisinden hemen sonra başlamıştır; recurrent laryngeal sinir tiroide yakın seyreder.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Laringoskopide tek taraflı vokal kord hareket kısıtlılığı gösterilmiştir.",
+        "text": "Ses kısıklığı ve konuşurken yorulma vokal kord motor fonksiyon bozukluğunu düşündürür.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Ameliyat öncesinde ses sorunu olmadığı belirtilmiştir.",
+        "text": "Laringoskopide tek taraflı vokal kord hareket kısıtlılığı nervus laryngeus recurrens etkilenimini destekler.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus phrenicus": "Nervus phrenicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+      "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+      "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+      "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+      "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
     }
   },
   {
@@ -40707,29 +40790,30 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Antikoagülan sonrası uyluk güçsüzlüğü",
     "difficulty": "Kolay",
-    "clinicalFocus": "Antikoagülan sonrası uyluk güçsüzlüğü bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir ve kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır. Bu ipuçlarını kullanarak Nervus femoralis seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Antikoagülan sonrası uyluk güçsüzlüğü olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus femoralis yanıtına ulaşma.",
+    "learningTarget": "Retroperitoneal hematomda femoral sinir anatomisini motor, duyu ve refleks bulgularıyla ayırt edebilme.",
     "demographics": "69 yaşında erkek hasta",
     "setting": "Acil servis",
-    "chiefComplaint": "Hasta, sol kasık ağrısı ve bacağını düzleştirmede güçlük nedeniyle başvuruyor.",
-    "stem": "Atriyal fibrilasyon nedeniyle antikoagülan kullandığı ve son günlerde INR değerinin yüksek seyrettiği öğreniliyor. Travma öyküsü yoktur. Sol kasıkta ani ağrı sonrası yürüme güçlüğü başlamıştır.",
+    "chiefComplaint": "Hasta, antikoagülan kullanırken başlayan sol kasık ağrısı, uyluk ön yüzünde uyuşma ve bacağını düzleştirmede güçlük nedeniyle başvuruyor.",
+    "stem": "Atriyal fibrilasyon nedeniyle antikoagülan kullandığı ve son günlerde INR değerinin yüksek seyrettiği öğreniliyor. Travma öyküsü yoktur; sol kasıkta ani ağrıdan sonra yürüme ve merdiven çıkma belirgin zorlaşmıştır.",
     "patientIntro": {
-      "profile": "69 yaşında erkek hasta, acil serviste nörolojik defisit nedeniyle değerlendiriliyor.",
-      "presentation": "Hasta, sol kasık ağrısı ve bacağını düzleştirmede güçlük nedeniyle başvuruyor.",
-      "historySummary": "Atriyal fibrilasyon nedeniyle antikoagülan kullandığı ve son günlerde INR değerinin yüksek seyrettiği öğreniliyor. Travma öyküsü yoktur. Sol kasıkta ani ağrı sonrası yürüme güçlüğü başlamıştır."
+      "profile": "69 yaşında erkek hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, antikoagülan kullanırken başlayan sol kasık ağrısı, uyluk ön yüzünde uyuşma ve bacağını düzleştirmede güçlük nedeniyle başvuruyor.",
+      "historySummary": "Atriyal fibrilasyon nedeniyle antikoagülan kullandığı ve son günlerde INR değerinin yüksek seyrettiği öğreniliyor. Travma öyküsü yoktur; sol kasıkta ani ağrıdan sonra yürüme ve merdiven çıkma belirgin zorlaşmıştır."
     },
     "vitals": {
-      "TA": "104/66 mmHg",
+      "TA": "108/68 mmHg",
       "Nabız": "102/dk",
       "Solunum": "16/dk",
       "SpO2": "%98, oda havasında",
       "Ateş": "36.7 °C",
-      "Şok indeksi": "0.98 sınırda"
+      "Şok indeksi": "0.94 sınırda"
     },
     "exam": [
       "Sol kalça fleksiyonu ve diz ekstansiyonu belirgin zayıftır.",
-      "Patella refleksi azalmıştır.",
-      "Uyluk ön yüzü ve bacağın medial yüzünde duyu azalması vardır."
+      "Sol patella refleksi azalmıştır.",
+      "Uyluk ön yüzü ve bacağın medial yüzünde duyu azalması vardır.",
+      "Ayak bileği dorsifleksiyonu ve plantar fleksiyonu korunmuştur."
     ],
     "investigations": [
       {
@@ -40739,42 +40823,42 @@ export const rawCases = [
         "type": "ct",
         "priority": "essential",
         "subtype": "BT",
-        "summary": "Direkt grafide kırık hattının gösterilmesi, travma sonrası ağrı ve fonksiyon kaybının yapısal nedenini ortaya koyar.",
-        "clinicalMeaning": "Direkt grafide kırık hattının gösterilmesi, travma sonrası ağrı ve fonksiyon kaybının yapısal nedenini ortaya koyar.",
+        "summary": "Abdominopelvik BT’de sol iliopsoas kası içinde retroperitoneal hematom izlenmesi, femoral sinirin psoas-iliakus komşuluğunda basıya uğrayabileceğini gösterir. Motor, refleks ve duyu bulguları bu lokalizasyonla uyumludur.",
+        "clinicalMeaning": "İliopsoas hematomu femoral siniri inguinal ligament proksimalinde sıkıştırabilir; quadriceps zayıflığı ve patella refleksi azalması bu anatomik basının klinik sonucudur.",
         "result": {
           "title": "Abdominopelvik bilgisayarlı tomografi",
-          "summary": "Direkt grafide kırık hattının gösterilmesi, travma sonrası ağrı ve fonksiyon kaybının yapısal nedenini ortaya koyar.",
-          "interpretation": "Direkt grafide kırık hattının gösterilmesi, travma sonrası ağrı ve fonksiyon kaybının yapısal nedenini ortaya koyar.",
+          "summary": "Abdominopelvik BT’de sol iliopsoas kası içinde retroperitoneal hematom izlenmesi, femoral sinirin psoas-iliakus komşuluğunda basıya uğrayabileceğini gösterir. Motor, refleks ve duyu bulguları bu lokalizasyonla uyumludur.",
+          "interpretation": "İliopsoas hematomu femoral siniri inguinal ligament proksimalinde sıkıştırabilir; quadriceps zayıflığı ve patella refleksi azalması bu anatomik basının klinik sonucudur.",
           "values": [
             [
-              "Görüntüleme bulgusu",
+              "Abdominopelvik bilgisayarlı tomografi",
               "Sol iliopsoas kası içinde retroperitoneal hematom izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "İliopsoas hematomu femoral siniri inguinal ligament proksimalinde sıkıştırabilir; quadriceps zayıflığı ve patella refleksi azalması bu anatomik basının klinik sonucudur."
             ]
           ],
           "rows": [
             [
-              "Görüntüleme bulgusu",
+              "Abdominopelvik bilgisayarlı tomografi",
               "Sol iliopsoas kası içinde retroperitoneal hematom izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "İliopsoas hematomu femoral siniri inguinal ligament proksimalinde sıkıştırabilir; quadriceps zayıflığı ve patella refleksi azalması bu anatomik basının klinik sonucudur."
             ]
           ]
         },
         "rows": [
           [
-            "Görüntüleme bulgusu",
+            "Abdominopelvik bilgisayarlı tomografi",
             "Sol iliopsoas kası içinde retroperitoneal hematom izlendi.",
-            "Modaliteye özgü bulgu",
-            ""
+            "Anatomik yorum",
+            "İliopsoas hematomu femoral siniri inguinal ligament proksimalinde sıkıştırabilir; quadriceps zayıflığı ve patella refleksi azalması bu anatomik basının klinik sonucudur."
           ]
         ],
-        "postAnswerExplanation": "Direkt grafide kırık hattının gösterilmesi, travma sonrası ağrı ve fonksiyon kaybının yapısal nedenini ortaya koyar.",
-        "interpretation": "Direkt grafide kırık hattının gösterilmesi, travma sonrası ağrı ve fonksiyon kaybının yapısal nedenini ortaya koyar.",
+        "postAnswerExplanation": "İliopsoas hematomu femoral siniri inguinal ligament proksimalinde sıkıştırabilir; quadriceps zayıflığı ve patella refleksi azalması bu anatomik basının klinik sonucudur.",
+        "interpretation": "İliopsoas hematomu femoral siniri inguinal ligament proksimalinde sıkıştırabilir; quadriceps zayıflığı ve patella refleksi azalması bu anatomik basının klinik sonucudur.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Direkt grafide kırık hattının gösterilmesi, travma sonrası ağrı ve fonksiyon kaybının yapısal nedenini ortaya koyar."
+        "explanationAfterAnswer": "İliopsoas hematomu femoral siniri inguinal ligament proksimalinde sıkıştırabilir; quadriceps zayıflığı ve patella refleksi azalması bu anatomik basının klinik sonucudur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -40783,154 +40867,154 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu hastada bası altında kalması en olası sinir aşağıdakilerden hangisidir?",
+    "question": "İliopsoas hematomu sonrası diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybını hangi sinir basısı açıklar?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Nervus femoralis",
       "options": [
-        "Nervus obturatorius",
         "Nervus femoralis",
-        "Nervus ischiadicus",
-        "Nervus gluteus superior",
-        "Nervus pudendus"
+        "Nervus obturatorius",
+        "Nervus cutaneus femoris lateralis",
+        "Nervus genitofemoralis",
+        "Truncus lumbosacralis"
       ],
-      "question": "Bu hastada bası altında kalması en olası sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus femoralis, vakadaki bulgularla en uyumlu tanıdır. Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir Kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "İliopsoas hematomu sonrası diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybını hangi sinir basısı açıklar?",
+      "explanation": "Nervus femoralis iliopsoas komşuluğunda seyreder, quadriceps kasını ve patella refleksini etkiler. İliopsoas hematomu sonrası diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybı femoral sinir basısını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir + kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır; bu birliktelik Nervus femoralis yanıtını öne çıkarır."
+          "text": "İliopsoas hematomu + kalça fleksiyonu/diz ekstansiyonu zayıflığı + patella refleksi azalması femoral sinir basısı için klasik kombinasyondur."
         }
       ],
       "optionComparison": {
-        "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-        "Nervus femoralis": "Nervus femoralis, olgunun ana tanısal örüntüsünü karşılar. Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir Kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-        "Nervus gluteus superior": "Nervus gluteus superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-        "Nervus pudendus": "Nervus pudendus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler."
+        "Nervus femoralis": "Nervus femoralis iliopsoas komşuluğunda seyreder, quadriceps kasını ve patella refleksini etkiler. İliopsoas hematomu sonrası diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybı femoral sinir basısını gösterir.",
+        "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Diz ekstansiyonu ve patella refleksi kaybı obturator sinirden çok femoral sinire aittir.",
+        "Nervus cutaneus femoris lateralis": "Nervus cutaneus femoris lateralis yalnızca lateral uyluk duyusunu taşır; motor kayıp ve patella refleksi azalması yapmaz. Bu nedenle iliopsoas hematomundaki quadriceps bulgusunu açıklamaz.",
+        "Nervus genitofemoralis": "Nervus genitofemoralis genital bölge ve üst ön uyluk duyusuyla ilişkilidir. Diz ekstansiyonu güçsüzlüğü ve patella refleksi azalması bu sinirin lezyonunda beklenmez.",
+        "Truncus lumbosacralis": "Truncus lumbosacralis sakral pleksusa katkı verir ve gluteal-siyatik dağılımla ilişkilidir. İliopsoas içinde femoral sinire özgü quadriceps-refleks bulguları daha lokalize bir cevaptır."
       },
       "answerFeedback": {
-        "summary": "Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir Kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır. Bu bulgular tanısal karar açısından Nervus femoralis yanıtını destekler.",
-        "whyCorrect": "Nervus femoralis, vakadaki bulgularla en uyumlu tanıdır. Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir Kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "rationale": "Nervus femoralis, vakadaki bulgularla en uyumlu tanıdır. Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir Kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "correctOptionFeedback": "Nervus femoralis iliopsoas hematomu ile basıya uğrayabilir ve kalça fleksiyonu, diz ekstansiyonu ile patella refleksi bulgularını açıklar.",
+        "summary": "Bu olguda karar, antikoagülan kullanımı ve yüksek INR, iliopsoas içinde retroperitoneal hematom gelişimi için klinik bağlam oluşturur. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus femoralis iliopsoas komşuluğunda seyreder, quadriceps kasını ve patella refleksini etkiler. İliopsoas hematomu sonrası diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybı femoral sinir basısını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus femoralis iliopsoas komşuluğunda seyreder, quadriceps kasını ve patella refleksini etkiler. İliopsoas hematomu sonrası diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybı femoral sinir basısını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus femoralis iliopsoas komşuluğunda seyreder, quadriceps kasını ve patella refleksini etkiler. İliopsoas hematomu sonrası diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybı femoral sinir basısını gösterir.",
         "keyClues": [
-          "Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir.",
-          "Kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır.",
-          "Patella refleksi ile uyluk ön yüzü ve medial bacak duyusu azalmıştır."
+          "Antikoagülan kullanımı ve yüksek INR, iliopsoas içinde retroperitoneal hematom gelişimi için klinik bağlam oluşturur.",
+          "BT’de sol iliopsoas kası içinde hematom izlenmesi femoral sinirin geçtiği anatomik komşuluğu riskli hale getirir.",
+          "Diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybı nervus femoralis basısını gösterir."
         ],
         "evidenceChain": [
           {
-            "text": "Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir.",
+            "text": "Antikoagülan kullanımı ve yüksek INR, iliopsoas içinde retroperitoneal hematom gelişimi için klinik bağlam oluşturur.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır.",
+            "text": "BT’de sol iliopsoas kası içinde hematom izlenmesi femoral sinirin geçtiği anatomik komşuluğu riskli hale getirir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Patella refleksi ile uyluk ön yüzü ve medial bacak duyusu azalmıştır.",
+            "text": "Diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybı nervus femoralis basısını gösterir.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir + kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır; bu birliktelik Nervus femoralis yanıtını öne çıkarır.",
+        "examPearl": "İliopsoas hematomu + kalça fleksiyonu/diz ekstansiyonu zayıflığı + patella refleksi azalması femoral sinir basısı için klasik kombinasyondur.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Femoral sinir hasarında quadriceps güçsüzlüğü, patella refleksi azalması ve anterior uyluk-medial bacak duyu kaybı beklenir."
+            "text": "İliopsoas hematomu + kalça fleksiyonu/diz ekstansiyonu zayıflığı + patella refleksi azalması femoral sinir basısı için klasik kombinasyondur."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "Femoral sinir hasarında quadriceps güçsüzlüğü, patella refleksi azalması ve anterior uyluk-medial bacak duyu kaybı beklenir."
+            "label": "Klinik anatomi",
+            "text": "Nervus femoralis psoas major lateralinden çıkar, iliopsoas komşuluğundan geçer ve quadriceps ile patella refleksini taşır; retroperitoneal iliopsoas hematomu bu siniri basıya uğratabilir."
           }
         ],
         "optionComparison": {
-          "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-          "Nervus femoralis": "Nervus femoralis, olgunun ana tanısal örüntüsünü karşılar. Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir Kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-          "Nervus gluteus superior": "Nervus gluteus superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-          "Nervus pudendus": "Nervus pudendus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler."
+          "Nervus femoralis": "Nervus femoralis iliopsoas komşuluğunda seyreder, quadriceps kasını ve patella refleksini etkiler. İliopsoas hematomu sonrası diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybı femoral sinir basısını gösterir.",
+          "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Diz ekstansiyonu ve patella refleksi kaybı obturator sinirden çok femoral sinire aittir.",
+          "Nervus cutaneus femoris lateralis": "Nervus cutaneus femoris lateralis yalnızca lateral uyluk duyusunu taşır; motor kayıp ve patella refleksi azalması yapmaz. Bu nedenle iliopsoas hematomundaki quadriceps bulgusunu açıklamaz.",
+          "Nervus genitofemoralis": "Nervus genitofemoralis genital bölge ve üst ön uyluk duyusuyla ilişkilidir. Diz ekstansiyonu güçsüzlüğü ve patella refleksi azalması bu sinirin lezyonunda beklenmez.",
+          "Truncus lumbosacralis": "Truncus lumbosacralis sakral pleksusa katkı verir ve gluteal-siyatik dağılımla ilişkilidir. İliopsoas içinde femoral sinire özgü quadriceps-refleks bulguları daha lokalize bir cevaptır."
         },
         "whyWrong": {
-          "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-          "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-          "Nervus gluteus superior": "Nervus gluteus superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-          "Nervus pudendus": "Nervus pudendus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler."
+          "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Diz ekstansiyonu ve patella refleksi kaybı obturator sinirden çok femoral sinire aittir.",
+          "Nervus cutaneus femoris lateralis": "Nervus cutaneus femoris lateralis yalnızca lateral uyluk duyusunu taşır; motor kayıp ve patella refleksi azalması yapmaz. Bu nedenle iliopsoas hematomundaki quadriceps bulgusunu açıklamaz.",
+          "Nervus genitofemoralis": "Nervus genitofemoralis genital bölge ve üst ön uyluk duyusuyla ilişkilidir. Diz ekstansiyonu güçsüzlüğü ve patella refleksi azalması bu sinirin lezyonunda beklenmez.",
+          "Truncus lumbosacralis": "Truncus lumbosacralis sakral pleksusa katkı verir ve gluteal-siyatik dağılımla ilişkilidir. İliopsoas içinde femoral sinire özgü quadriceps-refleks bulguları daha lokalize bir cevaptır."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Retroperitoneal hematomda femoral sinir hasarını motor ve duyu bulgularıyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus femoralis yanıtını destekler."
+        "learningOutcome": "Retroperitoneal hematomda femoral sinir anatomisini motor, duyu ve refleks bulgularıyla ayırt edebilme.",
+        "coreKnowledge": "Nervus femoralis psoas major lateralinden çıkar, iliopsoas komşuluğundan geçer ve quadriceps ile patella refleksini taşır; retroperitoneal iliopsoas hematomu bu siniri basıya uğratabilir."
       },
-      "whyCorrect": "Nervus femoralis, vakadaki bulgularla en uyumlu tanıdır. Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir Kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Nervus femoralis iliopsoas komşuluğunda seyreder, quadriceps kasını ve patella refleksini etkiler. İliopsoas hematomu sonrası diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybı femoral sinir basısını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Antikoagülan kullanımı ve yüksek INR, iliopsoas içinde retroperitoneal hematom gelişimi için klinik bağlam oluşturur.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "BT’de sol iliopsoas kası içinde hematom izlenmesi femoral sinirin geçtiği anatomik komşuluğu riskli hale getirir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Muayene bulgusu",
-          "text": "Patella refleksi ile uyluk ön yüzü ve medial bacak duyusu azalmıştır.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybı nervus femoralis basısını gösterir.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus femoralis yanıtını destekler.",
-      "examPearl": "İpucu: Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir + kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır; bu birliktelik Nervus femoralis yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus femoralis psoas major lateralinden çıkar, iliopsoas komşuluğundan geçer ve quadriceps ile patella refleksini taşır; retroperitoneal iliopsoas hematomu bu siniri basıya uğratabilir.",
+      "examPearl": "İliopsoas hematomu + kalça fleksiyonu/diz ekstansiyonu zayıflığı + patella refleksi azalması femoral sinir basısı için klasik kombinasyondur.",
       "whyWrong": {
-        "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-        "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-        "Nervus gluteus superior": "Nervus gluteus superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-        "Nervus pudendus": "Nervus pudendus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler."
+        "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Diz ekstansiyonu ve patella refleksi kaybı obturator sinirden çok femoral sinire aittir.",
+        "Nervus cutaneus femoris lateralis": "Nervus cutaneus femoris lateralis yalnızca lateral uyluk duyusunu taşır; motor kayıp ve patella refleksi azalması yapmaz. Bu nedenle iliopsoas hematomundaki quadriceps bulgusunu açıklamaz.",
+        "Nervus genitofemoralis": "Nervus genitofemoralis genital bölge ve üst ön uyluk duyusuyla ilişkilidir. Diz ekstansiyonu güçsüzlüğü ve patella refleksi azalması bu sinirin lezyonunda beklenmez.",
+        "Truncus lumbosacralis": "Truncus lumbosacralis sakral pleksusa katkı verir ve gluteal-siyatik dağılımla ilişkilidir. İliopsoas içinde femoral sinire özgü quadriceps-refleks bulguları daha lokalize bir cevaptır."
       }
     },
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus femoralis yanıtını destekler.",
-    "examPearl": "İpucu: Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir + kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır; bu birliktelik Nervus femoralis yanıtını öne çıkarır.",
-    "whyCorrect": "Nervus femoralis, vakadaki bulgularla en uyumlu tanıdır. Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir Kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "Nervus femoralis psoas major lateralinden çıkar, iliopsoas komşuluğundan geçer ve quadriceps ile patella refleksini taşır; retroperitoneal iliopsoas hematomu bu siniri basıya uğratabilir.",
+    "examPearl": "İliopsoas hematomu + kalça fleksiyonu/diz ekstansiyonu zayıflığı + patella refleksi azalması femoral sinir basısı için klasik kombinasyondur.",
+    "whyCorrect": "Nervus femoralis iliopsoas komşuluğunda seyreder, quadriceps kasını ve patella refleksini etkiler. İliopsoas hematomu sonrası diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybı femoral sinir basısını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-      "Nervus femoralis": "Nervus femoralis, olgunun ana tanısal örüntüsünü karşılar. Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir Kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-      "Nervus gluteus superior": "Nervus gluteus superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-      "Nervus pudendus": "Nervus pudendus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler."
+      "Nervus femoralis": "Nervus femoralis iliopsoas komşuluğunda seyreder, quadriceps kasını ve patella refleksini etkiler. İliopsoas hematomu sonrası diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybı femoral sinir basısını gösterir.",
+      "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Diz ekstansiyonu ve patella refleksi kaybı obturator sinirden çok femoral sinire aittir.",
+      "Nervus cutaneus femoris lateralis": "Nervus cutaneus femoris lateralis yalnızca lateral uyluk duyusunu taşır; motor kayıp ve patella refleksi azalması yapmaz. Bu nedenle iliopsoas hematomundaki quadriceps bulgusunu açıklamaz.",
+      "Nervus genitofemoralis": "Nervus genitofemoralis genital bölge ve üst ön uyluk duyusuyla ilişkilidir. Diz ekstansiyonu güçsüzlüğü ve patella refleksi azalması bu sinirin lezyonunda beklenmez.",
+      "Truncus lumbosacralis": "Truncus lumbosacralis sakral pleksusa katkı verir ve gluteal-siyatik dağılımla ilişkilidir. İliopsoas içinde femoral sinire özgü quadriceps-refleks bulguları daha lokalize bir cevaptır."
     },
     "evidenceChain": [
       {
-        "text": "Antikoagülan kullanımı sonrası iliopsoas hematomu gelişmiştir.",
+        "text": "Antikoagülan kullanımı ve yüksek INR, iliopsoas içinde retroperitoneal hematom gelişimi için klinik bağlam oluşturur.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Kalça fleksiyonu ve diz ekstansiyonu zayıflamıştır.",
+        "text": "BT’de sol iliopsoas kası içinde hematom izlenmesi femoral sinirin geçtiği anatomik komşuluğu riskli hale getirir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Patella refleksi ile uyluk ön yüzü ve medial bacak duyusu azalmıştır.",
+        "text": "Diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybı nervus femoralis basısını gösterir.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-      "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-      "Nervus gluteus superior": "Nervus gluteus superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler.",
-      "Nervus pudendus": "Nervus pudendus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus femoralis yanıtını destekler."
+      "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Diz ekstansiyonu ve patella refleksi kaybı obturator sinirden çok femoral sinire aittir.",
+      "Nervus cutaneus femoris lateralis": "Nervus cutaneus femoris lateralis yalnızca lateral uyluk duyusunu taşır; motor kayıp ve patella refleksi azalması yapmaz. Bu nedenle iliopsoas hematomundaki quadriceps bulgusunu açıklamaz.",
+      "Nervus genitofemoralis": "Nervus genitofemoralis genital bölge ve üst ön uyluk duyusuyla ilişkilidir. Diz ekstansiyonu güçsüzlüğü ve patella refleksi azalması bu sinirin lezyonunda beklenmez.",
+      "Truncus lumbosacralis": "Truncus lumbosacralis sakral pleksusa katkı verir ve gluteal-siyatik dağılımla ilişkilidir. İliopsoas içinde femoral sinire özgü quadriceps-refleks bulguları daha lokalize bir cevaptır."
     }
   },
   {
@@ -40940,16 +41024,16 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Parotis ameliyatı sonrası yüz asimetrisi",
     "difficulty": "Zor",
-    "clinicalFocus": "Parotis ameliyatı sonrası yüz asimetrisi bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır ve alın kırıştırma, göz kapama ve ağız köşesi hareketleri aynı tarafta zayıflamıştır. Bu ipuçlarını kullanarak Nervus facialis seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Parotis ameliyatı sonrası yüz asimetrisi olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus facialis yanıtına ulaşma.",
+    "learningTarget": "Parotis cerrahisinde fasiyal sinir dallarını yüz mimik kaybı ile ilişkilendirebilme.",
     "demographics": "56 yaşında kadın hasta",
-    "setting": "Klinik değerlendirme",
-    "chiefComplaint": "Hasta, ameliyat sonrası yüzün sağ tarafında hareket kaybı ve ağız köşesinde düşme nedeniyle başvuruyor.",
-    "stem": "Bir hafta önce sağ parotis bezinden benign kitle eksizyonu yapıldığı öğreniliyor. Ameliyat öncesi yüz hareketlerinde sorun yoktur. İşitme kaybı veya dil hareket bozukluğu tariflemiyor.",
+    "setting": "Kulak burun boğaz kontrolü",
+    "chiefComplaint": "Hasta, sağ parotis cerrahisi sonrası yüzün sağ tarafında hareket kaybı ve ağız köşesinde düşme nedeniyle başvuruyor.",
+    "stem": "Bir hafta önce sağ parotis bezinden benign kitle eksizyonu yapıldığı öğreniliyor. Ameliyat öncesi yüz hareketleri simetriktir; işitme kaybı, dil hareket bozukluğu veya çiğneme güçlüğü tariflemiyor.",
     "patientIntro": {
-      "profile": "56 yaşında kadın hasta, parotis kitle eksizyonu sonrası kontrol muayenesinde değerlendiriliyor.",
-      "presentation": "Hasta, ameliyat sonrası yüzün sağ tarafında hareket kaybı ve ağız köşesinde düşme nedeniyle başvuruyor.",
-      "historySummary": "Bir hafta önce sağ parotis bezinden benign kitle eksizyonu yapıldığı öğreniliyor. Ameliyat öncesi yüz hareketlerinde sorun yoktur. İşitme kaybı veya dil hareket bozukluğu tariflemiyor."
+      "profile": "56 yaşında kadın hasta, kulak burun boğaz kontrolünda değerlendiriliyor.",
+      "presentation": "Hasta, sağ parotis cerrahisi sonrası yüzün sağ tarafında hareket kaybı ve ağız köşesinde düşme nedeniyle başvuruyor.",
+      "historySummary": "Bir hafta önce sağ parotis bezinden benign kitle eksizyonu yapıldığı öğreniliyor. Ameliyat öncesi yüz hareketleri simetriktir; işitme kaybı, dil hareket bozukluğu veya çiğneme güçlüğü tariflemiyor."
     },
     "vitals": {
       "TA": "118/76 mmHg",
@@ -40961,9 +41045,8 @@ export const rawCases = [
     },
     "exam": [
       "Sağ alın kırıştırma zayıf, sağ göz kapama yetersiz ve sağ ağız köşesi aşağı düşüktür.",
-      "Dil orta hatta çıkarılmaktadır.",
-      "Yumuşak damak hareketleri simetriktir.",
-      "Hemodinamik instabilite düşündüren belirgin klinik bulgu yoktur."
+      "Dil orta hatta çıkarılır ve çiğneme kuvveti korunmuştur.",
+      "Yumuşak damak hareketleri simetriktir."
     ],
     "investigations": [],
     "useSyntheticInvestigationBank": false,
@@ -40972,154 +41055,154 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu hastada hasarlanma olasılığı en yüksek sinir aşağıdakilerden hangisidir?",
+    "question": "Parotis cerrahisi sonrası alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin bozulmasını hangi sinir hasarı açıklar?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Nervus facialis",
       "options": [
-        "Nervus trigeminus",
         "Nervus facialis",
+        "Nervus trigeminus - n. mandibularis",
         "Nervus glossopharyngeus",
         "Nervus hypoglossus",
-        "Nervus vagus"
+        "Nervus accessorius"
       ],
-      "question": "Bu hastada hasarlanma olasılığı en yüksek sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus facialis, bu olguda en uygun yanıttır. Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır.",
+      "question": "Parotis cerrahisi sonrası alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin bozulmasını hangi sinir hasarı açıklar?",
+      "explanation": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır + alın kırıştırma, göz kapama ve ağız köşesi hareketleri aynı tarafta zayıflamıştır; bu birliktelik Nervus facialis yanıtını öne çıkarır."
+          "text": "Parotidektomi sonrası tüm yüz yarısında mimik kaybı, parotis içinden geçen nervus facialis dallarının etkilenmesini düşündürür."
         }
       ],
       "optionComparison": {
-        "Nervus trigeminus": "Nervus trigeminus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-        "Nervus facialis": "Nervus facialis, olgunun ana tanısal örüntüsünü karşılar. Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır Alın kırıştırma, göz kapama ve ağız köşesi hareketleri aynı tarafta zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-        "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-        "Nervus vagus": "Nervus vagus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler."
+        "Nervus facialis": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir.",
+        "Nervus trigeminus - n. mandibularis": "Trigeminal sinirin mandibular dalı çiğneme kaslarını ve yüz duyusunun bir bölümünü taşır. Çiğneme kuvvetinin korunması ve mimik kas kaybı fasiyal siniri öne çıkarır.",
+        "Nervus glossopharyngeus": "Nervus glossopharyngeus farinks duyusu, gag refleksi ve stylopharyngeus kasıyla ilişkilidir. Yüz mimik kaslarının motor innervasyonunu sağlamaz.",
+        "Nervus hypoglossus": "Nervus hypoglossus dil kaslarını innerve eder; lezyonda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil deviasyonunun olmaması ve mimik kaybı fasiyal sinire uyar.",
+        "Nervus accessorius": "Nervus accessorius trapezius ve sternocleidomastoideus kaslarını innerve eder. Omuz elevasyonu ya da baş çevirme zayıflığı olmadan yüz mimik kaybı bu sinirle açıklanmaz."
       },
       "answerFeedback": {
-        "summary": "Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır Alın kırıştırma, göz kapama ve ağız köşesi hareketleri aynı tarafta zayıflamıştır. Bu bulgular tanısal karar açısından Nervus facialis yanıtını destekler.",
-        "whyCorrect": "Nervus facialis, bu olguda en uygun yanıttır. Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır.",
-        "rationale": "Nervus facialis, bu olguda en uygun yanıttır. Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır.",
-        "correctOptionFeedback": "Nervus facialis parotis bezi içinde dallanır ve mimik kaslarını innerve ettiği için bu ameliyat sonrası yüz asimetrisini açıklar.",
+        "summary": "Bu olguda karar, parotis cerrahisi, bez içinde dallanan nervus facialisi anatomik olarak riskli hale getirir. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir.",
         "keyClues": [
-          "Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır.",
-          "Alın kırıştırma, göz kapama ve ağız köşesi hareketleri aynı tarafta zayıflamıştır.",
-          "Dil hareketi ve yumuşak damak hareketleri korunmuştur."
+          "Parotis cerrahisi, bez içinde dallanan nervus facialisi anatomik olarak riskli hale getirir.",
+          "Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması yüz mimik kaslarının motor kaybını gösterir.",
+          "Dil, çiğneme ve yumuşak damak fonksiyonlarının korunması hipoglossal, trigeminal ve glossopharyngeal sinirleri geri plana iter."
         ],
         "evidenceChain": [
           {
-            "text": "Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır.",
+            "text": "Parotis cerrahisi, bez içinde dallanan nervus facialisi anatomik olarak riskli hale getirir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Alın kırıştırma, göz kapama ve ağız köşesi hareketleri aynı tarafta zayıflamıştır.",
+            "text": "Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması yüz mimik kaslarının motor kaybını gösterir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Dil hareketi ve yumuşak damak hareketleri korunmuştur.",
+            "text": "Dil, çiğneme ve yumuşak damak fonksiyonlarının korunması hipoglossal, trigeminal ve glossopharyngeal sinirleri geri plana iter.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır + alın kırıştırma, göz kapama ve ağız köşesi hareketleri aynı tarafta zayıflamıştır; bu birliktelik Nervus facialis yanıtını öne çıkarır.",
+        "examPearl": "Parotidektomi sonrası tüm yüz yarısında mimik kaybı, parotis içinden geçen nervus facialis dallarının etkilenmesini düşündürür.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Parotis cerrahisinde risk altındaki temel sinir nervus facialis olup mimik kaslarını innerve eder."
+            "text": "Parotidektomi sonrası tüm yüz yarısında mimik kaybı, parotis içinden geçen nervus facialis dallarının etkilenmesini düşündürür."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "Parotis cerrahisinde risk altındaki temel sinir nervus facialis olup mimik kaslarını innerve eder."
+            "label": "Klinik anatomi",
+            "text": "Nervus facialis parotis bezi içinde dallanır ancak bezi innerve etmez; temporal, zigomatik, bukkal, marjinal mandibular ve servikal dalları yüz mimik kaslarını innerve eder."
           }
         ],
         "optionComparison": {
-          "Nervus trigeminus": "Nervus trigeminus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-          "Nervus facialis": "Nervus facialis, olgunun ana tanısal örüntüsünü karşılar. Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır Alın kırıştırma, göz kapama ve ağız köşesi hareketleri aynı tarafta zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-          "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-          "Nervus vagus": "Nervus vagus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler."
+          "Nervus facialis": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir.",
+          "Nervus trigeminus - n. mandibularis": "Trigeminal sinirin mandibular dalı çiğneme kaslarını ve yüz duyusunun bir bölümünü taşır. Çiğneme kuvvetinin korunması ve mimik kas kaybı fasiyal siniri öne çıkarır.",
+          "Nervus glossopharyngeus": "Nervus glossopharyngeus farinks duyusu, gag refleksi ve stylopharyngeus kasıyla ilişkilidir. Yüz mimik kaslarının motor innervasyonunu sağlamaz.",
+          "Nervus hypoglossus": "Nervus hypoglossus dil kaslarını innerve eder; lezyonda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil deviasyonunun olmaması ve mimik kaybı fasiyal sinire uyar.",
+          "Nervus accessorius": "Nervus accessorius trapezius ve sternocleidomastoideus kaslarını innerve eder. Omuz elevasyonu ya da baş çevirme zayıflığı olmadan yüz mimik kaybı bu sinirle açıklanmaz."
         },
         "whyWrong": {
-          "Nervus trigeminus": "Nervus trigeminus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-          "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-          "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-          "Nervus vagus": "Nervus vagus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler."
+          "Nervus trigeminus - n. mandibularis": "Trigeminal sinirin mandibular dalı çiğneme kaslarını ve yüz duyusunun bir bölümünü taşır. Çiğneme kuvvetinin korunması ve mimik kas kaybı fasiyal siniri öne çıkarır.",
+          "Nervus glossopharyngeus": "Nervus glossopharyngeus farinks duyusu, gag refleksi ve stylopharyngeus kasıyla ilişkilidir. Yüz mimik kaslarının motor innervasyonunu sağlamaz.",
+          "Nervus hypoglossus": "Nervus hypoglossus dil kaslarını innerve eder; lezyonda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil deviasyonunun olmaması ve mimik kaybı fasiyal sinire uyar.",
+          "Nervus accessorius": "Nervus accessorius trapezius ve sternocleidomastoideus kaslarını innerve eder. Omuz elevasyonu ya da baş çevirme zayıflığı olmadan yüz mimik kaybı bu sinirle açıklanmaz."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Parotis cerrahisinde fasiyal sinir hasarını mimik kası bulgularıyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus facialis yanıtını destekler."
+        "learningOutcome": "Parotis cerrahisinde fasiyal sinir dallarını yüz mimik kaybı ile ilişkilendirebilme.",
+        "coreKnowledge": "Nervus facialis parotis bezi içinde dallanır ancak bezi innerve etmez; temporal, zigomatik, bukkal, marjinal mandibular ve servikal dalları yüz mimik kaslarını innerve eder."
       },
-      "whyCorrect": "Nervus facialis, bu olguda en uygun yanıttır. Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır.",
+      "whyCorrect": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Parotis cerrahisi, bez içinde dallanan nervus facialisi anatomik olarak riskli hale getirir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Alın kırıştırma, göz kapama ve ağız köşesi hareketleri aynı tarafta zayıflamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması yüz mimik kaslarının motor kaybını gösterir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Dil hareketi ve yumuşak damak hareketleri korunmuştur.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Dil, çiğneme ve yumuşak damak fonksiyonlarının korunması hipoglossal, trigeminal ve glossopharyngeal sinirleri geri plana iter.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus facialis yanıtını destekler.",
-      "examPearl": "İpucu: Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır + alın kırıştırma, göz kapama ve ağız köşesi hareketleri aynı tarafta zayıflamıştır; bu birliktelik Nervus facialis yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus facialis parotis bezi içinde dallanır ancak bezi innerve etmez; temporal, zigomatik, bukkal, marjinal mandibular ve servikal dalları yüz mimik kaslarını innerve eder.",
+      "examPearl": "Parotidektomi sonrası tüm yüz yarısında mimik kaybı, parotis içinden geçen nervus facialis dallarının etkilenmesini düşündürür.",
       "whyWrong": {
-        "Nervus trigeminus": "Nervus trigeminus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-        "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-        "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-        "Nervus vagus": "Nervus vagus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler."
+        "Nervus trigeminus - n. mandibularis": "Trigeminal sinirin mandibular dalı çiğneme kaslarını ve yüz duyusunun bir bölümünü taşır. Çiğneme kuvvetinin korunması ve mimik kas kaybı fasiyal siniri öne çıkarır.",
+        "Nervus glossopharyngeus": "Nervus glossopharyngeus farinks duyusu, gag refleksi ve stylopharyngeus kasıyla ilişkilidir. Yüz mimik kaslarının motor innervasyonunu sağlamaz.",
+        "Nervus hypoglossus": "Nervus hypoglossus dil kaslarını innerve eder; lezyonda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil deviasyonunun olmaması ve mimik kaybı fasiyal sinire uyar.",
+        "Nervus accessorius": "Nervus accessorius trapezius ve sternocleidomastoideus kaslarını innerve eder. Omuz elevasyonu ya da baş çevirme zayıflığı olmadan yüz mimik kaybı bu sinirle açıklanmaz."
       }
     },
     "difficultyTag": "Zor",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus facialis yanıtını destekler.",
-    "examPearl": "İpucu: Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır + alın kırıştırma, göz kapama ve ağız köşesi hareketleri aynı tarafta zayıflamıştır; bu birliktelik Nervus facialis yanıtını öne çıkarır.",
-    "whyCorrect": "Nervus facialis, bu olguda en uygun yanıttır. Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır.",
+    "coreKnowledge": "Nervus facialis parotis bezi içinde dallanır ancak bezi innerve etmez; temporal, zigomatik, bukkal, marjinal mandibular ve servikal dalları yüz mimik kaslarını innerve eder.",
+    "examPearl": "Parotidektomi sonrası tüm yüz yarısında mimik kaybı, parotis içinden geçen nervus facialis dallarının etkilenmesini düşündürür.",
+    "whyCorrect": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Nervus trigeminus": "Nervus trigeminus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-      "Nervus facialis": "Nervus facialis, olgunun ana tanısal örüntüsünü karşılar. Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır Alın kırıştırma, göz kapama ve ağız köşesi hareketleri aynı tarafta zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-      "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-      "Nervus vagus": "Nervus vagus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler."
+      "Nervus facialis": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir.",
+      "Nervus trigeminus - n. mandibularis": "Trigeminal sinirin mandibular dalı çiğneme kaslarını ve yüz duyusunun bir bölümünü taşır. Çiğneme kuvvetinin korunması ve mimik kas kaybı fasiyal siniri öne çıkarır.",
+      "Nervus glossopharyngeus": "Nervus glossopharyngeus farinks duyusu, gag refleksi ve stylopharyngeus kasıyla ilişkilidir. Yüz mimik kaslarının motor innervasyonunu sağlamaz.",
+      "Nervus hypoglossus": "Nervus hypoglossus dil kaslarını innerve eder; lezyonda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil deviasyonunun olmaması ve mimik kaybı fasiyal sinire uyar.",
+      "Nervus accessorius": "Nervus accessorius trapezius ve sternocleidomastoideus kaslarını innerve eder. Omuz elevasyonu ya da baş çevirme zayıflığı olmadan yüz mimik kaybı bu sinirle açıklanmaz."
     },
     "evidenceChain": [
       {
-        "text": "Yüz hareket kaybı parotis cerrahisi sonrasında başlamıştır.",
+        "text": "Parotis cerrahisi, bez içinde dallanan nervus facialisi anatomik olarak riskli hale getirir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Alın kırıştırma, göz kapama ve ağız köşesi hareketleri aynı tarafta zayıflamıştır.",
+        "text": "Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması yüz mimik kaslarının motor kaybını gösterir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Dil hareketi ve yumuşak damak hareketleri korunmuştur.",
+        "text": "Dil, çiğneme ve yumuşak damak fonksiyonlarının korunması hipoglossal, trigeminal ve glossopharyngeal sinirleri geri plana iter.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Nervus trigeminus": "Nervus trigeminus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-      "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-      "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-      "Nervus vagus": "Nervus vagus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler."
+      "Nervus trigeminus - n. mandibularis": "Trigeminal sinirin mandibular dalı çiğneme kaslarını ve yüz duyusunun bir bölümünü taşır. Çiğneme kuvvetinin korunması ve mimik kas kaybı fasiyal siniri öne çıkarır.",
+      "Nervus glossopharyngeus": "Nervus glossopharyngeus farinks duyusu, gag refleksi ve stylopharyngeus kasıyla ilişkilidir. Yüz mimik kaslarının motor innervasyonunu sağlamaz.",
+      "Nervus hypoglossus": "Nervus hypoglossus dil kaslarını innerve eder; lezyonda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil deviasyonunun olmaması ve mimik kaybı fasiyal sinire uyar.",
+      "Nervus accessorius": "Nervus accessorius trapezius ve sternocleidomastoideus kaslarını innerve eder. Omuz elevasyonu ya da baş çevirme zayıflığı olmadan yüz mimik kaybı bu sinirle açıklanmaz."
     }
   },
   {
@@ -59294,28 +59377,28 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Omuz travması sonrası abdüksiyon güçlüğü",
     "difficulty": "Kolay",
-    "clinicalFocus": "Omuz travması sonrası abdüksiyon güçlüğü bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir ve omuz abdüksiyonu belirgin zayıflamıştır. Bu ipuçlarını kullanarak Nervus axillaris seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Omuz travması sonrası abdüksiyon güçlüğü olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus axillaris yanıtına ulaşma.",
+    "learningTarget": "Humerus cerrahi boyun travmasında deltoid fonksiyon kaybını axillary sinir anatomisiyle ilişkilendirebilme.",
     "demographics": "68 yaşında kadın hasta",
     "setting": "Acil servis",
-    "chiefComplaint": "Hasta, düşme sonrası sağ omuz ağrısı ve kolunu yana kaldırmada güçlük nedeniyle başvuruyor.",
-    "stem": "Evde düşerken sağ omzunun üzerine çarptığını, olaydan sonra omuz ağrısı ve kolunu aktif olarak yana kaldıramama geliştiğini belirtiyor. Daha önce omuz hareketlerinde belirgin kısıtlılık yoktur.",
+    "chiefComplaint": "Hasta, evde düşme sonrası sağ omuz ağrısı ve kolunu yana kaldırmada güçlük nedeniyle başvuruyor.",
+    "stem": "Sağ omzunun üzerine düştüğünü, olaydan sonra kolunu aktif olarak yana kaldıramadığını belirtiyor. El bileği ve parmak hareketlerinde belirgin kayıp olmadığını ifade ediyor.",
     "patientIntro": {
-      "profile": "68 yaşında kadın hasta, acil serviste ortopedi tarafından değerlendiriliyor.",
-      "presentation": "Hasta, düşme sonrası sağ omuz ağrısı ve kolunu yana kaldırmada güçlük nedeniyle başvuruyor.",
-      "historySummary": "Evde düşerken sağ omzunun üzerine çarptığını, olaydan sonra omuz ağrısı ve kolunu aktif olarak yana kaldıramama geliştiğini belirtiyor. Daha önce omuz hareketlerinde belirgin kısıtlılık yoktur."
+      "profile": "68 yaşında kadın hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, evde düşme sonrası sağ omuz ağrısı ve kolunu yana kaldırmada güçlük nedeniyle başvuruyor.",
+      "historySummary": "Sağ omzunun üzerine düştüğünü, olaydan sonra kolunu aktif olarak yana kaldıramadığını belirtiyor. El bileği ve parmak hareketlerinde belirgin kayıp olmadığını ifade ediyor."
     },
     "vitals": {
-      "TA": "118/74 mmHg",
-      "Nabız": "104/dk",
+      "TA": "124/78 mmHg",
+      "Nabız": "96/dk",
       "Solunum": "18/dk",
       "SpO2": "%98, oda havasında",
       "Ateş": "36.8 °C",
-      "Şok indeksi": "0.88 normal"
+      "Şok indeksi": "0.77 normal"
     },
     "exam": [
       "Sağ omuz çevresinde hassasiyet ve hareket kısıtlılığı vardır.",
-      "Omuz abdüksiyonunun özellikle 15 dereceden sonra belirgin zayıf olduğu izlenir.",
+      "Omuz abdüksiyonu özellikle 15 dereceden sonra belirgin zayıftır.",
       "Sağ omuz lateral üst kısmında duyu azalması saptanır.",
       "El bileği ve parmak ekstansiyonu korunmuştur."
     ],
@@ -59326,43 +59409,43 @@ export const rawCases = [
         "title": "Omuz grafisi",
         "type": "xray",
         "priority": "essential",
-        "subtype": "Direkt/kontrastlı grafi",
-        "summary": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-        "clinicalMeaning": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+        "subtype": "Direkt grafi",
+        "summary": "Omuz grafisinde humerus cerrahi boyun düzeyinde kırık izlenmesi, quadrangular space komşuluğundaki nervus axillarisin yaralanma riskini artırır. Görsel yorumda kırık düzeyi ile deltoid güçsüzlüğü birlikte değerlendirilmelidir.",
+        "clinicalMeaning": "Cerrahi boyun kırığı, deltoid kasını innerve eden ve lateral omuz duyusunu taşıyan nervus axillaris açısından kritik anatomik düzeydedir.",
         "result": {
           "title": "Omuz grafisi",
-          "summary": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-          "interpretation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+          "summary": "Omuz grafisinde humerus cerrahi boyun düzeyinde kırık izlenmesi, quadrangular space komşuluğundaki nervus axillarisin yaralanma riskini artırır. Görsel yorumda kırık düzeyi ile deltoid güçsüzlüğü birlikte değerlendirilmelidir.",
+          "interpretation": "Cerrahi boyun kırığı, deltoid kasını innerve eden ve lateral omuz duyusunu taşıyan nervus axillaris açısından kritik anatomik düzeydedir.",
           "values": [
             [
-              "Görüntüleme bulgusu",
+              "Omuz grafisi",
               "Humerus cerrahi boyun düzeyinde kırık izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Cerrahi boyun kırığı, deltoid kasını innerve eden ve lateral omuz duyusunu taşıyan nervus axillaris açısından kritik anatomik düzeydedir."
             ]
           ],
           "rows": [
             [
-              "Görüntüleme bulgusu",
+              "Omuz grafisi",
               "Humerus cerrahi boyun düzeyinde kırık izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Cerrahi boyun kırığı, deltoid kasını innerve eden ve lateral omuz duyusunu taşıyan nervus axillaris açısından kritik anatomik düzeydedir."
             ]
           ]
         },
         "rows": [
           [
-            "Görüntüleme bulgusu",
+            "Omuz grafisi",
             "Humerus cerrahi boyun düzeyinde kırık izlendi.",
-            "Modaliteye özgü bulgu",
-            ""
+            "Anatomik yorum",
+            "Cerrahi boyun kırığı, deltoid kasını innerve eden ve lateral omuz duyusunu taşıyan nervus axillaris açısından kritik anatomik düzeydedir."
           ]
         ],
-        "postAnswerExplanation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-        "interpretation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+        "postAnswerExplanation": "Cerrahi boyun kırığı, deltoid kasını innerve eden ve lateral omuz duyusunu taşıyan nervus axillaris açısından kritik anatomik düzeydedir.",
+        "interpretation": "Cerrahi boyun kırığı, deltoid kasını innerve eden ve lateral omuz duyusunu taşıyan nervus axillaris açısından kritik anatomik düzeydedir.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir."
+        "explanationAfterAnswer": "Cerrahi boyun kırığı, deltoid kasını innerve eden ve lateral omuz duyusunu taşıyan nervus axillaris açısından kritik anatomik düzeydedir."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -59371,154 +59454,154 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu hastada hasarlanma olasılığı en yüksek sinir aşağıdakilerden hangisidir?",
+    "question": "Bu hastada omuz abdüksiyon kaybı ve deltoid bölge duyu azalmasını en doğrudan açıklayan sinir hasarı hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Nervus axillaris",
       "options": [
         "Nervus axillaris",
+        "Nervus suprascapularis",
         "Nervus radialis",
-        "Nervus medianus",
-        "Nervus ulnaris",
-        "Nervus musculocutaneus"
+        "Nervus musculocutaneus",
+        "Nervus thoracicus longus"
       ],
-      "question": "Bu hastada hasarlanma olasılığı en yüksek sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus axillaris, vakadaki bulgularla en uyumlu tanıdır. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Bu hastada omuz abdüksiyon kaybı ve deltoid bölge duyu azalmasını en doğrudan açıklayan sinir hasarı hangisidir?",
+      "explanation": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir + omuz abdüksiyonu belirgin zayıflamıştır; bu birliktelik Nervus axillaris yanıtını öne çıkarır."
+          "text": "Humerus cerrahi boyun travması + 15 dereceden sonra abdüksiyon zayıflığı + deltoid rozet alanında duyu azalması birlikte nervus axillaris hasarını düşündürür."
         }
       ],
       "optionComparison": {
-        "Nervus axillaris": "Nervus axillaris, olgunun ana tanısal örüntüsünü karşılar. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus radialis": "Nervus radialis, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-        "Nervus medianus": "Nervus medianus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-        "Nervus ulnaris": "Nervus ulnaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-        "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler."
+        "Nervus axillaris": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler.",
+        "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyonunun başlangıcı ve dış rotasyon etkilenir. Deltoid rozet alanı duyusu bu sinire ait olmadığı için bu olgudaki duyu bulgusunu açıklamaz.",
+        "Nervus radialis": "Nervus radialis humerus spiral oluğuyla ilişkilidir ve el bileği-parmak ekstansiyon kaybı ile birinci dorsal aralık duyusunda azalma beklenir. Bu hastada el bileği ekstansiyonu korunmuş, ana kayıp deltoid-abdüksiyon eksenindedir.",
+        "Nervus musculocutaneus": "Nervus musculocutaneus ön kol fleksör kompartmanını ve ön kol lateral duyusunu etkiler. Dirsek fleksiyonu veya ön kol lateral duyusu ön planda olmadığı için cerrahi boyun travmasındaki bulguları açıklamaz.",
+        "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder; lezyonunda skapula kanatlanması ve kolu baş üzerine kaldırmada güçlük beklenir. Deltoid bölge duyusu ve cerrahi boyun komşuluğu nervus axillaris lehinedir."
       },
       "answerFeedback": {
-        "summary": "Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bu bulgular tanısal karar açısından Nervus axillaris yanıtını destekler.",
-        "whyCorrect": "Nervus axillaris, vakadaki bulgularla en uyumlu tanıdır. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "rationale": "Nervus axillaris, vakadaki bulgularla en uyumlu tanıdır. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "correctOptionFeedback": "Nervus axillaris humerus cerrahi boyun komşuluğunda seyreder ve deltoid güçsüzlüğü ile lateral omuz duyusu kaybını açıklar.",
+        "summary": "Bu olguda karar, omuz grafisinde humerus cerrahi boyun düzeyinde kırık izlenmesi nervus axillaris komşuluğunu riskli hale getirir. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler.",
         "keyClues": [
-          "Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir.",
-          "Omuz abdüksiyonu belirgin zayıflamıştır.",
-          "Omuz lateral üst kısmında duyu azalması saptanmıştır."
+          "Omuz grafisinde humerus cerrahi boyun düzeyinde kırık izlenmesi nervus axillaris komşuluğunu riskli hale getirir.",
+          "Abdüksiyonun 15 dereceden sonra zayıflaması deltoid kas fonksiyon kaybını gösterir.",
+          "Sağ lateral omuz duyusunun azalması nervus axillarisin superior lateral cutaneous brachial dalıyla uyumludur."
         ],
         "evidenceChain": [
           {
-            "text": "Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir.",
+            "text": "Omuz grafisinde humerus cerrahi boyun düzeyinde kırık izlenmesi nervus axillaris komşuluğunu riskli hale getirir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Omuz abdüksiyonu belirgin zayıflamıştır.",
+            "text": "Abdüksiyonun 15 dereceden sonra zayıflaması deltoid kas fonksiyon kaybını gösterir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Omuz lateral üst kısmında duyu azalması saptanmıştır.",
+            "text": "Sağ lateral omuz duyusunun azalması nervus axillarisin superior lateral cutaneous brachial dalıyla uyumludur.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir + omuz abdüksiyonu belirgin zayıflamıştır; bu birliktelik Nervus axillaris yanıtını öne çıkarır.",
+        "examPearl": "Humerus cerrahi boyun travması + 15 dereceden sonra abdüksiyon zayıflığı + deltoid rozet alanında duyu azalması birlikte nervus axillaris hasarını düşündürür.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Humerus cerrahi boyun kırığında nervus axillaris; humerus şaft kırığında nervus radialis düşünülür."
+            "text": "Humerus cerrahi boyun travması + 15 dereceden sonra abdüksiyon zayıflığı + deltoid rozet alanında duyu azalması birlikte nervus axillaris hasarını düşündürür."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "Humerus cerrahi boyun kırığında nervus axillaris; humerus şaft kırığında nervus radialis düşünülür."
+            "label": "Klinik anatomi",
+            "text": "Nervus axillaris, humerus cerrahi boynu ve quadrangular space komşuluğu nedeniyle cerrahi boyun kırığı veya anterior omuz çıkığında risk altındadır; deltoid ve teres minor kasları ile lateral omuz derisi bu sinirin temel klinik ipuçlarıdır."
           }
         ],
         "optionComparison": {
-          "Nervus axillaris": "Nervus axillaris, olgunun ana tanısal örüntüsünü karşılar. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus radialis": "Nervus radialis, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-          "Nervus medianus": "Nervus medianus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-          "Nervus ulnaris": "Nervus ulnaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-          "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler."
+          "Nervus axillaris": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler.",
+          "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyonunun başlangıcı ve dış rotasyon etkilenir. Deltoid rozet alanı duyusu bu sinire ait olmadığı için bu olgudaki duyu bulgusunu açıklamaz.",
+          "Nervus radialis": "Nervus radialis humerus spiral oluğuyla ilişkilidir ve el bileği-parmak ekstansiyon kaybı ile birinci dorsal aralık duyusunda azalma beklenir. Bu hastada el bileği ekstansiyonu korunmuş, ana kayıp deltoid-abdüksiyon eksenindedir.",
+          "Nervus musculocutaneus": "Nervus musculocutaneus ön kol fleksör kompartmanını ve ön kol lateral duyusunu etkiler. Dirsek fleksiyonu veya ön kol lateral duyusu ön planda olmadığı için cerrahi boyun travmasındaki bulguları açıklamaz.",
+          "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder; lezyonunda skapula kanatlanması ve kolu baş üzerine kaldırmada güçlük beklenir. Deltoid bölge duyusu ve cerrahi boyun komşuluğu nervus axillaris lehinedir."
         },
         "whyWrong": {
-          "Nervus radialis": "Nervus radialis, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-          "Nervus medianus": "Nervus medianus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-          "Nervus ulnaris": "Nervus ulnaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-          "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler."
+          "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyonunun başlangıcı ve dış rotasyon etkilenir. Deltoid rozet alanı duyusu bu sinire ait olmadığı için bu olgudaki duyu bulgusunu açıklamaz.",
+          "Nervus radialis": "Nervus radialis humerus spiral oluğuyla ilişkilidir ve el bileği-parmak ekstansiyon kaybı ile birinci dorsal aralık duyusunda azalma beklenir. Bu hastada el bileği ekstansiyonu korunmuş, ana kayıp deltoid-abdüksiyon eksenindedir.",
+          "Nervus musculocutaneus": "Nervus musculocutaneus ön kol fleksör kompartmanını ve ön kol lateral duyusunu etkiler. Dirsek fleksiyonu veya ön kol lateral duyusu ön planda olmadığı için cerrahi boyun travmasındaki bulguları açıklamaz.",
+          "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder; lezyonunda skapula kanatlanması ve kolu baş üzerine kaldırmada güçlük beklenir. Deltoid bölge duyusu ve cerrahi boyun komşuluğu nervus axillaris lehinedir."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Humerus cerrahi boyun kırığında nervus axillaris hasarını motor ve duyu bulgularıyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bu örüntü Nervus axillaris yanıtını destekler."
+        "learningOutcome": "Humerus cerrahi boyun travmasında deltoid fonksiyon kaybını axillary sinir anatomisiyle ilişkilendirebilme.",
+        "coreKnowledge": "Nervus axillaris, humerus cerrahi boynu ve quadrangular space komşuluğu nedeniyle cerrahi boyun kırığı veya anterior omuz çıkığında risk altındadır; deltoid ve teres minor kasları ile lateral omuz derisi bu sinirin temel klinik ipuçlarıdır."
       },
-      "whyCorrect": "Nervus axillaris, vakadaki bulgularla en uyumlu tanıdır. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Omuz grafisinde humerus cerrahi boyun düzeyinde kırık izlenmesi nervus axillaris komşuluğunu riskli hale getirir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Omuz abdüksiyonu belirgin zayıflamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Abdüksiyonun 15 dereceden sonra zayıflaması deltoid kas fonksiyon kaybını gösterir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Omuz lateral üst kısmında duyu azalması saptanmıştır.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Sağ lateral omuz duyusunun azalması nervus axillarisin superior lateral cutaneous brachial dalıyla uyumludur.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bu örüntü Nervus axillaris yanıtını destekler.",
-      "examPearl": "İpucu: Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir + omuz abdüksiyonu belirgin zayıflamıştır; bu birliktelik Nervus axillaris yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus axillaris, humerus cerrahi boynu ve quadrangular space komşuluğu nedeniyle cerrahi boyun kırığı veya anterior omuz çıkığında risk altındadır; deltoid ve teres minor kasları ile lateral omuz derisi bu sinirin temel klinik ipuçlarıdır.",
+      "examPearl": "Humerus cerrahi boyun travması + 15 dereceden sonra abdüksiyon zayıflığı + deltoid rozet alanında duyu azalması birlikte nervus axillaris hasarını düşündürür.",
       "whyWrong": {
-        "Nervus radialis": "Nervus radialis, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-        "Nervus medianus": "Nervus medianus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-        "Nervus ulnaris": "Nervus ulnaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-        "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler."
+        "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyonunun başlangıcı ve dış rotasyon etkilenir. Deltoid rozet alanı duyusu bu sinire ait olmadığı için bu olgudaki duyu bulgusunu açıklamaz.",
+        "Nervus radialis": "Nervus radialis humerus spiral oluğuyla ilişkilidir ve el bileği-parmak ekstansiyon kaybı ile birinci dorsal aralık duyusunda azalma beklenir. Bu hastada el bileği ekstansiyonu korunmuş, ana kayıp deltoid-abdüksiyon eksenindedir.",
+        "Nervus musculocutaneus": "Nervus musculocutaneus ön kol fleksör kompartmanını ve ön kol lateral duyusunu etkiler. Dirsek fleksiyonu veya ön kol lateral duyusu ön planda olmadığı için cerrahi boyun travmasındaki bulguları açıklamaz.",
+        "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder; lezyonunda skapula kanatlanması ve kolu baş üzerine kaldırmada güçlük beklenir. Deltoid bölge duyusu ve cerrahi boyun komşuluğu nervus axillaris lehinedir."
       }
     },
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bu örüntü Nervus axillaris yanıtını destekler.",
-    "examPearl": "İpucu: Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir + omuz abdüksiyonu belirgin zayıflamıştır; bu birliktelik Nervus axillaris yanıtını öne çıkarır.",
-    "whyCorrect": "Nervus axillaris, vakadaki bulgularla en uyumlu tanıdır. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "Nervus axillaris, humerus cerrahi boynu ve quadrangular space komşuluğu nedeniyle cerrahi boyun kırığı veya anterior omuz çıkığında risk altındadır; deltoid ve teres minor kasları ile lateral omuz derisi bu sinirin temel klinik ipuçlarıdır.",
+    "examPearl": "Humerus cerrahi boyun travması + 15 dereceden sonra abdüksiyon zayıflığı + deltoid rozet alanında duyu azalması birlikte nervus axillaris hasarını düşündürür.",
+    "whyCorrect": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Nervus axillaris": "Nervus axillaris, olgunun ana tanısal örüntüsünü karşılar. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus radialis": "Nervus radialis, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-      "Nervus medianus": "Nervus medianus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-      "Nervus ulnaris": "Nervus ulnaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-      "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler."
+      "Nervus axillaris": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler.",
+      "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyonunun başlangıcı ve dış rotasyon etkilenir. Deltoid rozet alanı duyusu bu sinire ait olmadığı için bu olgudaki duyu bulgusunu açıklamaz.",
+      "Nervus radialis": "Nervus radialis humerus spiral oluğuyla ilişkilidir ve el bileği-parmak ekstansiyon kaybı ile birinci dorsal aralık duyusunda azalma beklenir. Bu hastada el bileği ekstansiyonu korunmuş, ana kayıp deltoid-abdüksiyon eksenindedir.",
+      "Nervus musculocutaneus": "Nervus musculocutaneus ön kol fleksör kompartmanını ve ön kol lateral duyusunu etkiler. Dirsek fleksiyonu veya ön kol lateral duyusu ön planda olmadığı için cerrahi boyun travmasındaki bulguları açıklamaz.",
+      "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder; lezyonunda skapula kanatlanması ve kolu baş üzerine kaldırmada güçlük beklenir. Deltoid bölge duyusu ve cerrahi boyun komşuluğu nervus axillaris lehinedir."
     },
     "evidenceChain": [
       {
-        "text": "Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir.",
+        "text": "Omuz grafisinde humerus cerrahi boyun düzeyinde kırık izlenmesi nervus axillaris komşuluğunu riskli hale getirir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Omuz abdüksiyonu belirgin zayıflamıştır.",
+        "text": "Abdüksiyonun 15 dereceden sonra zayıflaması deltoid kas fonksiyon kaybını gösterir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Omuz lateral üst kısmında duyu azalması saptanmıştır.",
+        "text": "Sağ lateral omuz duyusunun azalması nervus axillarisin superior lateral cutaneous brachial dalıyla uyumludur.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Nervus radialis": "Nervus radialis, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-      "Nervus medianus": "Nervus medianus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-      "Nervus ulnaris": "Nervus ulnaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sonrası humerus cerrahi boyun kırığı gösterilmiştir Omuz abdüksiyonu belirgin zayıflamıştır. Bulgular Nervus axillaris ile daha tutarlıdır.",
-      "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus axillaris yanıtını destekler."
+      "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyonunun başlangıcı ve dış rotasyon etkilenir. Deltoid rozet alanı duyusu bu sinire ait olmadığı için bu olgudaki duyu bulgusunu açıklamaz.",
+      "Nervus radialis": "Nervus radialis humerus spiral oluğuyla ilişkilidir ve el bileği-parmak ekstansiyon kaybı ile birinci dorsal aralık duyusunda azalma beklenir. Bu hastada el bileği ekstansiyonu korunmuş, ana kayıp deltoid-abdüksiyon eksenindedir.",
+      "Nervus musculocutaneus": "Nervus musculocutaneus ön kol fleksör kompartmanını ve ön kol lateral duyusunu etkiler. Dirsek fleksiyonu veya ön kol lateral duyusu ön planda olmadığı için cerrahi boyun travmasındaki bulguları açıklamaz.",
+      "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder; lezyonunda skapula kanatlanması ve kolu baş üzerine kaldırmada güçlük beklenir. Deltoid bölge duyusu ve cerrahi boyun komşuluğu nervus axillaris lehinedir."
     }
   },
   {
@@ -59528,14 +59611,14 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Yüz enfeksiyonu sonrası çift görme",
     "difficulty": "Zor",
-    "clinicalFocus": "Yüz enfeksiyonu sonrası çift görme bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir ve çift görme sağa bakışta belirginleşmektedir. Bu ipuçlarını kullanarak Abdusens siniri seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Yüz enfeksiyonu sonrası çift görme olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Abdusens siniri yanıtına ulaşma.",
+    "learningTarget": "Kavernöz sinüs anatomisini kraniyal sinir fonksiyonları ve göz hareketi bulgularıyla ilişkilendirebilme.",
     "demographics": "34 yaşında erkek hasta",
     "setting": "Acil servis",
     "chiefComplaint": "Hasta, burun çevresindeki enfeksiyon sonrası başlayan ateş, baş ağrısı ve çift görme nedeniyle başvuruyor.",
     "stem": "Üç gün önce burun kenarında ağrılı sivilce benzeri lezyonu sıktığını, sonrasında ateş ve göz çevresinde ağrı geliştiğini belirtiyor. Çift görmenin özellikle sağa bakmaya çalışırken arttığını ifade ediyor.",
     "patientIntro": {
-      "profile": "34 yaşında erkek hasta, acil serviste nöroloji tarafından değerlendiriliyor.",
+      "profile": "34 yaşında erkek hasta, acil serviste değerlendiriliyor.",
       "presentation": "Hasta, burun çevresindeki enfeksiyon sonrası başlayan ateş, baş ağrısı ve çift görme nedeniyle başvuruyor.",
       "historySummary": "Üç gün önce burun kenarında ağrılı sivilce benzeri lezyonu sıktığını, sonrasında ateş ve göz çevresinde ağrı geliştiğini belirtiyor. Çift görmenin özellikle sağa bakmaya çalışırken arttığını ifade ediyor."
     },
@@ -59544,7 +59627,7 @@ export const rawCases = [
       "Nabız": "108/dk",
       "Solunum": "16/dk",
       "SpO2": "%98, oda havasında",
-      "Ateş": "38.6 °C",
+      "Ateş": "38.5 °C",
       "Şok indeksi": "0.92 sınırda"
     },
     "exam": [
@@ -59558,45 +59641,45 @@ export const rawCases = [
         "id": "kontrastli-kraniyal-manyetik-rezonans-venografi-1",
         "label": "Kontrastlı kraniyal manyetik rezonans venografi",
         "title": "Kontrastlı kraniyal manyetik rezonans venografi",
-        "type": "xray",
+        "type": "mri",
         "priority": "essential",
-        "subtype": "Direkt/kontrastlı grafi",
-        "summary": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
-        "clinicalMeaning": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
+        "subtype": "MR venografi",
+        "summary": "Kontrastlı kraniyal MR venografide sağ kavernöz sinüs düzeyinde kontrast dolum defekti izlenmesi venöz tromboz lehinedir. Bu lokalizasyon sinüs içinde seyreden n. abducens ile lateral duvardaki III, IV, V1 ve V2 liflerinin etkilenebileceği anatomik bölgedir.",
+        "clinicalMeaning": "Sağ kavernöz sinüs trombozu, sinüs içinde serbest seyreden n. abducensi etkileyerek ipsilateral m. rectus lateralis paralizisine ve lateral bakışta abduksiyon kaybına yol açabilir.",
         "result": {
           "title": "Kontrastlı kraniyal manyetik rezonans venografi",
-          "summary": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
-          "interpretation": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
+          "summary": "Kontrastlı kraniyal MR venografide sağ kavernöz sinüs düzeyinde kontrast dolum defekti izlenmesi venöz tromboz lehinedir. Bu lokalizasyon sinüs içinde seyreden n. abducens ile lateral duvardaki III, IV, V1 ve V2 liflerinin etkilenebileceği anatomik bölgedir.",
+          "interpretation": "Sağ kavernöz sinüs trombozu, sinüs içinde serbest seyreden n. abducensi etkileyerek ipsilateral m. rectus lateralis paralizisine ve lateral bakışta abduksiyon kaybına yol açabilir.",
           "values": [
             [
-              "Görüntüleme bulgusu",
+              "Kontrastlı kraniyal manyetik rezonans venografi",
               "Sağ kavernöz sinüs düzeyinde trombozla uyumlu dolum defekti izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Sağ kavernöz sinüs trombozu, sinüs içinde serbest seyreden n. abducensi etkileyerek ipsilateral m. rectus lateralis paralizisine ve lateral bakışta abduksiyon kaybına yol açabilir."
             ]
           ],
           "rows": [
             [
-              "Görüntüleme bulgusu",
+              "Kontrastlı kraniyal manyetik rezonans venografi",
               "Sağ kavernöz sinüs düzeyinde trombozla uyumlu dolum defekti izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Sağ kavernöz sinüs trombozu, sinüs içinde serbest seyreden n. abducensi etkileyerek ipsilateral m. rectus lateralis paralizisine ve lateral bakışta abduksiyon kaybına yol açabilir."
             ]
           ]
         },
         "rows": [
           [
-            "Görüntüleme bulgusu",
+            "Kontrastlı kraniyal manyetik rezonans venografi",
             "Sağ kavernöz sinüs düzeyinde trombozla uyumlu dolum defekti izlendi.",
-            "Modaliteye özgü bulgu",
-            ""
+            "Anatomik yorum",
+            "Sağ kavernöz sinüs trombozu, sinüs içinde serbest seyreden n. abducensi etkileyerek ipsilateral m. rectus lateralis paralizisine ve lateral bakışta abduksiyon kaybına yol açabilir."
           ]
         ],
-        "postAnswerExplanation": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
-        "interpretation": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
+        "postAnswerExplanation": "Sağ kavernöz sinüs trombozu, sinüs içinde serbest seyreden n. abducensi etkileyerek ipsilateral m. rectus lateralis paralizisine ve lateral bakışta abduksiyon kaybına yol açabilir.",
+        "interpretation": "Sağ kavernöz sinüs trombozu, sinüs içinde serbest seyreden n. abducensi etkileyerek ipsilateral m. rectus lateralis paralizisine ve lateral bakışta abduksiyon kaybına yol açabilir.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır."
+        "explanationAfterAnswer": "Sağ kavernöz sinüs trombozu, sinüs içinde serbest seyreden n. abducensi etkileyerek ipsilateral m. rectus lateralis paralizisine ve lateral bakışta abduksiyon kaybına yol açabilir."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -59605,7 +59688,7 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu hastada sağ gözün lateral bakış yapamamasını en iyi açıklayan sinir etkilenimi aşağıdakilerden hangisidir?",
+    "question": "Bu hastada sağ gözün lateral bakışta abduksiyon yapamamasını en doğrudan açıklayan kraniyal sinir etkilenimi hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
@@ -59614,145 +59697,145 @@ export const rawCases = [
         "Okulomotor sinir",
         "Troklear sinir",
         "Abdusens siniri",
-        "Optik sinir",
-        "Nervus facialis"
+        "N. ophthalmicus",
+        "N. maxillaris"
       ],
-      "question": "Bu hastada sağ gözün lateral bakış yapamamasını en iyi açıklayan sinir etkilenimi aşağıdakilerden hangisidir?",
-      "explanation": "Abdusens siniri, vakadaki bulgularla en uyumlu tanıdır. Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir Çift görme sağa bakışta belirginleşmektedir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Bu hastada sağ gözün lateral bakışta abduksiyon yapamamasını en doğrudan açıklayan kraniyal sinir etkilenimi hangisidir?",
+      "explanation": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir + çift görme sağa bakışta belirginleşmektedir; bu birliktelik Abdusens siniri yanıtını öne çıkarır."
+          "text": "Kavernöz sinüs tutulumu + lateral bakışta abduksiyon kaybı = n. abducens ve m. rectus lateralis etkilenimi."
         }
       ],
       "optionComparison": {
-        "Okulomotor sinir": "Okulomotor sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-        "Troklear sinir": "Troklear sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-        "Abdusens siniri": "Abdusens siniri, olgunun ana tanısal örüntüsünü karşılar. Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir Çift görme sağa bakışta belirginleşmektedir. Bulgular aynı tanı etrafında birleşir.",
-        "Optik sinir": "Optik sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-        "Nervus facialis": "Nervus facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler."
+        "Okulomotor sinir": "Okulomotor sinir m. rectus medialis, superior, inferior, m. obliquus inferior ve levator palpebrae superiorisi innerve eder. Lezyonunda pitoz, midriyazis ve “down and out” pozisyon beklenir; izole lateral bakış abduksiyon kaybı abducens sinirine daha özgüdür.",
+        "Troklear sinir": "Troklear sinir m. obliquus superioru innerve eder ve aşağı-içe bakışta önemlidir. Lezyonunda vertikal diplopi, özellikle merdiven inerken yakınma beklenir; lateral abduksiyon kaybını açıklamaz.",
+        "Abdusens siniri": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler.",
+        "N. ophthalmicus": "N. ophthalmicus trigeminal sinirin duyusal dalıdır; kornea, alın ve üst göz kapağı duyusunu taşır. V1 tutulumu kornea/alın duyusunu açıklayabilir, ancak lateral rectus paralizisine bağlı abduksiyon kaybını açıklamaz.",
+        "N. maxillaris": "N. maxillaris orta yüz, yanak ve üst dişlerin duyusunu taşır. Kavernöz sinüs lateral duvarıyla ilişkili olabilir ancak motor göz hareketi yaptırmaz."
       },
       "answerFeedback": {
-        "summary": "Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir Çift görme sağa bakışta belirginleşmektedir. Bu bulgular tanısal karar açısından Abdusens siniri yanıtını destekler.",
-        "whyCorrect": "Abdusens siniri, vakadaki bulgularla en uyumlu tanıdır. Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir Çift görme sağa bakışta belirginleşmektedir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "rationale": "Abdusens siniri, vakadaki bulgularla en uyumlu tanıdır. Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir Çift görme sağa bakışta belirginleşmektedir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "correctOptionFeedback": "Abdusens siniri musculus rectus lateralis kasını innerve ettiği için ipsilateral göz abduksiyon kaybını doğrudan açıklar.",
+        "summary": "Bu olguda karar, burun çevresindeki enfeksiyon sonrası ateş, baş ağrısı ve periorbital bulgular kavernöz sinüs tutulumu için klinik bağlam oluşturur. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler.",
         "keyClues": [
-          "Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir.",
-          "Çift görme sağa bakışta belirginleşmektedir.",
-          "Sağ göz lateral bakışta abduksiyon yapamamaktadır."
+          "Burun çevresindeki enfeksiyon sonrası ateş, baş ağrısı ve periorbital bulgular kavernöz sinüs tutulumu için klinik bağlam oluşturur.",
+          "MR venografide sağ kavernöz sinüste trombozla uyumlu dolum defekti izlenmesi anatomik lokalizasyonu destekler.",
+          "Sağ gözün lateral bakışta abduksiyon yapamaması m. rectus lateralis ve onu innerve eden n. abducens etkilenimini gösterir."
         ],
         "evidenceChain": [
           {
-            "text": "Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir.",
+            "text": "Burun çevresindeki enfeksiyon sonrası ateş, baş ağrısı ve periorbital bulgular kavernöz sinüs tutulumu için klinik bağlam oluşturur.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Çift görme sağa bakışta belirginleşmektedir.",
+            "text": "MR venografide sağ kavernöz sinüste trombozla uyumlu dolum defekti izlenmesi anatomik lokalizasyonu destekler.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Sağ göz lateral bakışta abduksiyon yapamamaktadır.",
+            "text": "Sağ gözün lateral bakışta abduksiyon yapamaması m. rectus lateralis ve onu innerve eden n. abducens etkilenimini gösterir.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir + çift görme sağa bakışta belirginleşmektedir; bu birliktelik Abdusens siniri yanıtını öne çıkarır.",
+        "examPearl": "Kavernöz sinüs tutulumu + lateral bakışta abduksiyon kaybı = n. abducens ve m. rectus lateralis etkilenimi.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Kavernöz sinüste nervus abducens serbest olarak sinüs içinden geçtiği için kolay etkilenebilir ve lateral bakış kaybı yapar."
+            "text": "Kavernöz sinüs tutulumu + lateral bakışta abduksiyon kaybı = n. abducens ve m. rectus lateralis etkilenimi."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "Kavernöz sinüste nervus abducens serbest olarak sinüs içinden geçtiği için kolay etkilenebilir ve lateral bakış kaybı yapar."
+            "label": "Klinik anatomi",
+            "text": "N. abducens, kavernöz sinüs içinde internal karotis artere yakın serbest seyreder ve m. rectus lateralis ile göz abduksiyonunu sağlar; kavernöz sinüs patolojilerinde horizontal diplopi ve ipsilateral abduksiyon kaybı yapabilir."
           }
         ],
         "optionComparison": {
-          "Okulomotor sinir": "Okulomotor sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-          "Troklear sinir": "Troklear sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-          "Abdusens siniri": "Abdusens siniri, olgunun ana tanısal örüntüsünü karşılar. Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir Çift görme sağa bakışta belirginleşmektedir. Bulgular aynı tanı etrafında birleşir.",
-          "Optik sinir": "Optik sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-          "Nervus facialis": "Nervus facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler."
+          "Okulomotor sinir": "Okulomotor sinir m. rectus medialis, superior, inferior, m. obliquus inferior ve levator palpebrae superiorisi innerve eder. Lezyonunda pitoz, midriyazis ve “down and out” pozisyon beklenir; izole lateral bakış abduksiyon kaybı abducens sinirine daha özgüdür.",
+          "Troklear sinir": "Troklear sinir m. obliquus superioru innerve eder ve aşağı-içe bakışta önemlidir. Lezyonunda vertikal diplopi, özellikle merdiven inerken yakınma beklenir; lateral abduksiyon kaybını açıklamaz.",
+          "Abdusens siniri": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler.",
+          "N. ophthalmicus": "N. ophthalmicus trigeminal sinirin duyusal dalıdır; kornea, alın ve üst göz kapağı duyusunu taşır. V1 tutulumu kornea/alın duyusunu açıklayabilir, ancak lateral rectus paralizisine bağlı abduksiyon kaybını açıklamaz.",
+          "N. maxillaris": "N. maxillaris orta yüz, yanak ve üst dişlerin duyusunu taşır. Kavernöz sinüs lateral duvarıyla ilişkili olabilir ancak motor göz hareketi yaptırmaz."
         },
         "whyWrong": {
-          "Okulomotor sinir": "Okulomotor sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-          "Troklear sinir": "Troklear sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-          "Optik sinir": "Optik sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-          "Nervus facialis": "Nervus facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler."
+          "Okulomotor sinir": "Okulomotor sinir m. rectus medialis, superior, inferior, m. obliquus inferior ve levator palpebrae superiorisi innerve eder. Lezyonunda pitoz, midriyazis ve “down and out” pozisyon beklenir; izole lateral bakış abduksiyon kaybı abducens sinirine daha özgüdür.",
+          "Troklear sinir": "Troklear sinir m. obliquus superioru innerve eder ve aşağı-içe bakışta önemlidir. Lezyonunda vertikal diplopi, özellikle merdiven inerken yakınma beklenir; lateral abduksiyon kaybını açıklamaz.",
+          "N. ophthalmicus": "N. ophthalmicus trigeminal sinirin duyusal dalıdır; kornea, alın ve üst göz kapağı duyusunu taşır. V1 tutulumu kornea/alın duyusunu açıklayabilir, ancak lateral rectus paralizisine bağlı abduksiyon kaybını açıklamaz.",
+          "N. maxillaris": "N. maxillaris orta yüz, yanak ve üst dişlerin duyusunu taşır. Kavernöz sinüs lateral duvarıyla ilişkili olabilir ancak motor göz hareketi yaptırmaz."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Kavernöz sinüs patolojisinde nervus abducens etkilenimini göz hareketi bulgusuyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Abdusens siniri yanıtını destekler."
+        "learningOutcome": "Kavernöz sinüs anatomisini kraniyal sinir fonksiyonları ve göz hareketi bulgularıyla ilişkilendirebilme.",
+        "coreKnowledge": "N. abducens, kavernöz sinüs içinde internal karotis artere yakın serbest seyreder ve m. rectus lateralis ile göz abduksiyonunu sağlar; kavernöz sinüs patolojilerinde horizontal diplopi ve ipsilateral abduksiyon kaybı yapabilir."
       },
-      "whyCorrect": "Abdusens siniri, vakadaki bulgularla en uyumlu tanıdır. Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir Çift görme sağa bakışta belirginleşmektedir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Burun çevresindeki enfeksiyon sonrası ateş, baş ağrısı ve periorbital bulgular kavernöz sinüs tutulumu için klinik bağlam oluşturur.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Çift görme sağa bakışta belirginleşmektedir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "MR venografide sağ kavernöz sinüste trombozla uyumlu dolum defekti izlenmesi anatomik lokalizasyonu destekler.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Sağ göz lateral bakışta abduksiyon yapamamaktadır.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Sağ gözün lateral bakışta abduksiyon yapamaması m. rectus lateralis ve onu innerve eden n. abducens etkilenimini gösterir.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Abdusens siniri yanıtını destekler.",
-      "examPearl": "İpucu: Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir + çift görme sağa bakışta belirginleşmektedir; bu birliktelik Abdusens siniri yanıtını öne çıkarır.",
+      "coreKnowledge": "N. abducens, kavernöz sinüs içinde internal karotis artere yakın serbest seyreder ve m. rectus lateralis ile göz abduksiyonunu sağlar; kavernöz sinüs patolojilerinde horizontal diplopi ve ipsilateral abduksiyon kaybı yapabilir.",
+      "examPearl": "Kavernöz sinüs tutulumu + lateral bakışta abduksiyon kaybı = n. abducens ve m. rectus lateralis etkilenimi.",
       "whyWrong": {
-        "Okulomotor sinir": "Okulomotor sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-        "Troklear sinir": "Troklear sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-        "Optik sinir": "Optik sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-        "Nervus facialis": "Nervus facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler."
+        "Okulomotor sinir": "Okulomotor sinir m. rectus medialis, superior, inferior, m. obliquus inferior ve levator palpebrae superiorisi innerve eder. Lezyonunda pitoz, midriyazis ve “down and out” pozisyon beklenir; izole lateral bakış abduksiyon kaybı abducens sinirine daha özgüdür.",
+        "Troklear sinir": "Troklear sinir m. obliquus superioru innerve eder ve aşağı-içe bakışta önemlidir. Lezyonunda vertikal diplopi, özellikle merdiven inerken yakınma beklenir; lateral abduksiyon kaybını açıklamaz.",
+        "N. ophthalmicus": "N. ophthalmicus trigeminal sinirin duyusal dalıdır; kornea, alın ve üst göz kapağı duyusunu taşır. V1 tutulumu kornea/alın duyusunu açıklayabilir, ancak lateral rectus paralizisine bağlı abduksiyon kaybını açıklamaz.",
+        "N. maxillaris": "N. maxillaris orta yüz, yanak ve üst dişlerin duyusunu taşır. Kavernöz sinüs lateral duvarıyla ilişkili olabilir ancak motor göz hareketi yaptırmaz."
       }
     },
     "difficultyTag": "Zor",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Abdusens siniri yanıtını destekler.",
-    "examPearl": "İpucu: Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir + çift görme sağa bakışta belirginleşmektedir; bu birliktelik Abdusens siniri yanıtını öne çıkarır.",
-    "whyCorrect": "Abdusens siniri, vakadaki bulgularla en uyumlu tanıdır. Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir Çift görme sağa bakışta belirginleşmektedir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "N. abducens, kavernöz sinüs içinde internal karotis artere yakın serbest seyreder ve m. rectus lateralis ile göz abduksiyonunu sağlar; kavernöz sinüs patolojilerinde horizontal diplopi ve ipsilateral abduksiyon kaybı yapabilir.",
+    "examPearl": "Kavernöz sinüs tutulumu + lateral bakışta abduksiyon kaybı = n. abducens ve m. rectus lateralis etkilenimi.",
+    "whyCorrect": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Okulomotor sinir": "Okulomotor sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-      "Troklear sinir": "Troklear sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-      "Abdusens siniri": "Abdusens siniri, olgunun ana tanısal örüntüsünü karşılar. Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir Çift görme sağa bakışta belirginleşmektedir. Bulgular aynı tanı etrafında birleşir.",
-      "Optik sinir": "Optik sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-      "Nervus facialis": "Nervus facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler."
+      "Okulomotor sinir": "Okulomotor sinir m. rectus medialis, superior, inferior, m. obliquus inferior ve levator palpebrae superiorisi innerve eder. Lezyonunda pitoz, midriyazis ve “down and out” pozisyon beklenir; izole lateral bakış abduksiyon kaybı abducens sinirine daha özgüdür.",
+      "Troklear sinir": "Troklear sinir m. obliquus superioru innerve eder ve aşağı-içe bakışta önemlidir. Lezyonunda vertikal diplopi, özellikle merdiven inerken yakınma beklenir; lateral abduksiyon kaybını açıklamaz.",
+      "Abdusens siniri": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler.",
+      "N. ophthalmicus": "N. ophthalmicus trigeminal sinirin duyusal dalıdır; kornea, alın ve üst göz kapağı duyusunu taşır. V1 tutulumu kornea/alın duyusunu açıklayabilir, ancak lateral rectus paralizisine bağlı abduksiyon kaybını açıklamaz.",
+      "N. maxillaris": "N. maxillaris orta yüz, yanak ve üst dişlerin duyusunu taşır. Kavernöz sinüs lateral duvarıyla ilişkili olabilir ancak motor göz hareketi yaptırmaz."
     },
     "evidenceChain": [
       {
-        "text": "Burun çevresi enfeksiyonu sonrası kavernöz sinüs trombozu gelişmiştir.",
+        "text": "Burun çevresindeki enfeksiyon sonrası ateş, baş ağrısı ve periorbital bulgular kavernöz sinüs tutulumu için klinik bağlam oluşturur.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Çift görme sağa bakışta belirginleşmektedir.",
+        "text": "MR venografide sağ kavernöz sinüste trombozla uyumlu dolum defekti izlenmesi anatomik lokalizasyonu destekler.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Sağ göz lateral bakışta abduksiyon yapamamaktadır.",
+        "text": "Sağ gözün lateral bakışta abduksiyon yapamaması m. rectus lateralis ve onu innerve eden n. abducens etkilenimini gösterir.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Okulomotor sinir": "Okulomotor sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-      "Troklear sinir": "Troklear sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-      "Optik sinir": "Optik sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-      "Nervus facialis": "Nervus facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler."
+      "Okulomotor sinir": "Okulomotor sinir m. rectus medialis, superior, inferior, m. obliquus inferior ve levator palpebrae superiorisi innerve eder. Lezyonunda pitoz, midriyazis ve “down and out” pozisyon beklenir; izole lateral bakış abduksiyon kaybı abducens sinirine daha özgüdür.",
+      "Troklear sinir": "Troklear sinir m. obliquus superioru innerve eder ve aşağı-içe bakışta önemlidir. Lezyonunda vertikal diplopi, özellikle merdiven inerken yakınma beklenir; lateral abduksiyon kaybını açıklamaz.",
+      "N. ophthalmicus": "N. ophthalmicus trigeminal sinirin duyusal dalıdır; kornea, alın ve üst göz kapağı duyusunu taşır. V1 tutulumu kornea/alın duyusunu açıklayabilir, ancak lateral rectus paralizisine bağlı abduksiyon kaybını açıklamaz.",
+      "N. maxillaris": "N. maxillaris orta yüz, yanak ve üst dişlerin duyusunu taşır. Kavernöz sinüs lateral duvarıyla ilişkili olabilir ancak motor göz hareketi yaptırmaz."
     }
   },
   {
@@ -65359,16 +65442,16 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Laparoskopik kolesistektomi sırasında anatomik alan",
     "difficulty": "Kolay",
-    "clinicalFocus": "Laparoskopik kolesistektomi sırasında anatomik alan bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Laparoskopik kolesistektomi sırasında anatomik alan olgusunda belirleyici öykü, muayene ve tetkik ipuçlarını ayıklayarak doğru klinik karar kararına ulaşma.",
+    "clinicalFocus": "Laparoskopik kolesistektomi sırasında anatomik alan olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtına ulaşma.",
+    "learningTarget": "Safra kesesi cerrahisinde hepatosistik üçgen sınırlarını ve güvenli diseksiyon mantığını açıklayabilme.",
     "demographics": "52 yaşında kadın hasta",
-    "setting": "Klinik değerlendirme",
-    "chiefComplaint": "Cerrahi sırasında safra kesesi boynu çevresindeki anatomik yapıların güvenli şekilde tanımlanması gerekmektedir.",
-    "stem": "Hasta, tekrarlayan yağlı yemek sonrası sağ üst kadran ağrıları nedeniyle elektif cerrahiye planlanmıştır. Daha önce üst batın cerrahisi geçirmemiştir.",
+    "setting": "Genel cerrahi preoperatif değerlendirme",
+    "chiefComplaint": "Hasta, tekrarlayan biliyer kolik atakları nedeniyle elektif laparoskopik kolesistektomi için değerlendiriliyor.",
+    "stem": "Yağlı yemeklerden sonra sağ üst kadranda ağrı atakları olduğunu, ateş veya sarılık gelişmediğini belirtiyor. Cerrahi ekip safra kesesi boynu çevresindeki yapıların güvenli diseksiyonla tanımlanmasını planlıyor.",
     "patientIntro": {
-      "profile": "52 yaşında kadın hasta, semptomatik kolelitiazis nedeniyle laparoskopik kolesistektomiye alınmıştır.",
-      "presentation": "Cerrahi sırasında safra kesesi boynu çevresindeki anatomik yapıların güvenli şekilde tanımlanması gerekmektedir.",
-      "historySummary": "Hasta, tekrarlayan yağlı yemek sonrası sağ üst kadran ağrıları nedeniyle elektif cerrahiye planlanmıştır. Daha önce üst batın cerrahisi geçirmemiştir."
+      "profile": "52 yaşında kadın hasta, genel cerrahi preoperatif değerlendirmenda değerlendiriliyor.",
+      "presentation": "Hasta, tekrarlayan biliyer kolik atakları nedeniyle elektif laparoskopik kolesistektomi için değerlendiriliyor.",
+      "historySummary": "Yağlı yemeklerden sonra sağ üst kadranda ağrı atakları olduğunu, ateş veya sarılık gelişmediğini belirtiyor. Cerrahi ekip safra kesesi boynu çevresindeki yapıların güvenli diseksiyonla tanımlanmasını planlıyor."
     },
     "vitals": {
       "TA": "118/76 mmHg",
@@ -65380,7 +65463,8 @@ export const rawCases = [
     },
     "exam": [
       "Operasyon öncesi vital bulguları stabildir.",
-      "Batın muayenesinde akut peritonit bulgusu yoktur."
+      "Sağ üst kadranda hafif hassasiyet vardır; akut peritonit bulgusu yoktur.",
+      "Sarılık veya kolanjit düşündüren klinik bulgu saptanmaz."
     ],
     "investigations": [
       {
@@ -65390,26 +65474,26 @@ export const rawCases = [
         "type": "ultrasound",
         "priority": "essential",
         "subtype": "Ultrasonografi",
-        "summary": "Preoperatif abdominal ultrasonografi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır.",
-        "clinicalMeaning": "Preoperatif abdominal ultrasonografi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır.",
+        "summary": "Preoperatif abdominal ultrasonografide safra kesesi içinde multipl taş izlenmesi ve koledok dilatasyonunun olmaması elektif kolesistektomi bağlamını destekler. Cerrahide odak, safra kesesi boynunda hepatosistik üçgen sınırlarının güvenli şekilde ortaya konmasıdır.",
+        "clinicalMeaning": "Ultrasonografi taş varlığını gösterir; sorunun anatomik hedefi ise kolesistektomi sırasında cystic duct, common hepatic duct ve karaciğer inferior kenarıyla sınırlanan hepatosistik üçgendir.",
         "result": {
           "title": "Preoperatif abdominal ultrasonografi",
-          "summary": "Preoperatif abdominal ultrasonografi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır.",
-          "interpretation": "Preoperatif abdominal ultrasonografi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır.",
+          "summary": "Preoperatif abdominal ultrasonografide safra kesesi içinde multipl taş izlenmesi ve koledok dilatasyonunun olmaması elektif kolesistektomi bağlamını destekler. Cerrahide odak, safra kesesi boynunda hepatosistik üçgen sınırlarının güvenli şekilde ortaya konmasıdır.",
+          "interpretation": "Ultrasonografi taş varlığını gösterir; sorunun anatomik hedefi ise kolesistektomi sırasında cystic duct, common hepatic duct ve karaciğer inferior kenarıyla sınırlanan hepatosistik üçgendir.",
           "values": [
             [
               "Preoperatif abdominal ultrasonografi",
               "Safra kesesi içinde multipl taş izlendi; koledok dilatasyonu saptanmadı.",
-              "—",
-              ""
+              "Anatomik yorum",
+              "Ultrasonografi taş varlığını gösterir; sorunun anatomik hedefi ise kolesistektomi sırasında cystic duct, common hepatic duct ve karaciğer inferior kenarıyla sınırlanan hepatosistik üçgendir."
             ]
           ],
           "rows": [
             [
               "Preoperatif abdominal ultrasonografi",
               "Safra kesesi içinde multipl taş izlendi; koledok dilatasyonu saptanmadı.",
-              "—",
-              ""
+              "Anatomik yorum",
+              "Ultrasonografi taş varlığını gösterir; sorunun anatomik hedefi ise kolesistektomi sırasında cystic duct, common hepatic duct ve karaciğer inferior kenarıyla sınırlanan hepatosistik üçgendir."
             ]
           ]
         },
@@ -65417,13 +65501,15 @@ export const rawCases = [
           [
             "Preoperatif abdominal ultrasonografi",
             "Safra kesesi içinde multipl taş izlendi; koledok dilatasyonu saptanmadı.",
-            "—",
-            ""
+            "Anatomik yorum",
+            "Ultrasonografi taş varlığını gösterir; sorunun anatomik hedefi ise kolesistektomi sırasında cystic duct, common hepatic duct ve karaciğer inferior kenarıyla sınırlanan hepatosistik üçgendir."
           ]
         ],
-        "postAnswerExplanation": "Preoperatif abdominal ultrasonografi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır.",
-        "interpretation": "Preoperatif abdominal ultrasonografi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır.",
-        "explanationAfterAnswer": "Preoperatif abdominal ultrasonografi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır."
+        "postAnswerExplanation": "Ultrasonografi taş varlığını gösterir; sorunun anatomik hedefi ise kolesistektomi sırasında cystic duct, common hepatic duct ve karaciğer inferior kenarıyla sınırlanan hepatosistik üçgendir.",
+        "interpretation": "Ultrasonografi taş varlığını gösterir; sorunun anatomik hedefi ise kolesistektomi sırasında cystic duct, common hepatic duct ve karaciğer inferior kenarıyla sınırlanan hepatosistik üçgendir.",
+        "explanationAfterAnswer": "Ultrasonografi taş varlığını gösterir; sorunun anatomik hedefi ise kolesistektomi sırasında cystic duct, common hepatic duct ve karaciğer inferior kenarıyla sınırlanan hepatosistik üçgendir.",
+        "category": "imaging",
+        "testTypeCategory": "imaging"
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -65432,7 +65518,7 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Laparoskopik kolesistektomide güvenli diseksiyon için tanımlanan Calot üçgeninin temel sınırları aşağıdakilerden hangisidir?",
+    "question": "Laparoskopik kolesistektomide güvenli diseksiyon için kullanılan hepatosistik/Calot üçgeninin temel sınırları hangileridir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
@@ -65440,146 +65526,146 @@ export const rawCases = [
       "options": [
         "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı",
         "Ductus choledochus, vena porta ve arteria hepatica communis",
+        "Ductus cysticus, arteria cystica ve ductus choledochus",
         "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı",
-        "Arteria mesenterica superior, vena splenica ve pankreas boynu",
         "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı"
       ],
-      "question": "Laparoskopik kolesistektomide güvenli diseksiyon için tanımlanan Calot üçgeninin temel sınırları aşağıdakilerden hangisidir?",
-      "explanation": "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı, bu olguda en uygun yanıttır. Hasta laparoskopik kolesistektomiye alınmıştır.",
+      "question": "Laparoskopik kolesistektomide güvenli diseksiyon için kullanılan hepatosistik/Calot üçgeninin temel sınırları hangileridir?",
+      "explanation": "Bu üç yapı modern cerrahi pratikte hepatosistik/Calot üçgeninin temel sınırlarını oluşturur. Safra kesesi boynu çevresinde güvenli diseksiyon bu sınırların doğru tanınmasına dayanır. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Hasta laparoskopik kolesistektomiye alınmıştır + diseksiyon safra kesesi boynu ve hepatobiliyer yapıların çevresinde yapılmaktadır; bu birliktelik Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını öne çıkarır."
+          "text": "Kolesistektomide güvenli görüş için cystic duct ve cystic artery kliplenmeden önce hepatosistik üçgenin sınırları netleştirilmelidir."
         }
       ],
       "optionComparison": {
-        "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı": "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı, vakadaki belirleyici bulgularla uyumludur. Hasta laparoskopik kolesistektomiye alınmıştır.",
-        "Ductus choledochus, vena porta ve arteria hepatica communis": "Ductus choledochus, vena porta ve arteria hepatica communis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-        "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı": "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-        "Arteria mesenterica superior, vena splenica ve pankreas boynu": "Arteria mesenterica superior, vena splenica ve pankreas boynu, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-        "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı": "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler."
+        "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı": "Bu üç yapı modern cerrahi pratikte hepatosistik/Calot üçgeninin temel sınırlarını oluşturur. Safra kesesi boynu çevresinde güvenli diseksiyon bu sınırların doğru tanınmasına dayanır.",
+        "Ductus choledochus, vena porta ve arteria hepatica communis": "Bu yapılar hepatoduodenal ligament ve porta hepatis düzeyinde önemlidir; ancak hepatosistik üçgenin temel sınırlarını oluşturmaz. Bu seçenek daha geniş portal triad ilişkisini çağrıştırır.",
+        "Ductus cysticus, arteria cystica ve ductus choledochus": "Arteria cystica bu üçgenin içinde aranabilen önemli yapıdır, sınır olarak modern tanımda yer almaz. Sınırlar cystic duct, common hepatic duct ve karaciğer inferior kenarıdır.",
+        "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı": "Bu yapılar üst gastrointestinal komşuluklarla ilişkilidir; safra kesesi boynu çevresindeki hepatosistik üçgeni tanımlamaz.",
+        "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı": "Bu yapılar ön karın duvarı-karaciğer peritoneal ilişkileriyle ilgilidir. Kolesistektomide güvenli diseksiyon alanı olan hepatosistik üçgenin sınırları değildir."
       },
       "answerFeedback": {
-        "summary": "Hasta laparoskopik kolesistektomiye alınmıştır Diseksiyon safra kesesi boynu ve hepatobiliyer yapıların çevresinde yapılmaktadır. Bu bulgular tanısal karar açısından Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-        "whyCorrect": "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı, bu olguda en uygun yanıttır. Hasta laparoskopik kolesistektomiye alınmıştır.",
-        "rationale": "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı, bu olguda en uygun yanıttır. Hasta laparoskopik kolesistektomiye alınmıştır.",
-        "correctOptionFeedback": "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı Calot üçgeninin modern cerrahi sınırlarını oluşturur.",
+        "summary": "Bu olguda karar, tekrarlayan biliyer kolik nedeniyle kolesistektomi planlanması safra kesesi boynu anatomisini klinik olarak önemli hale getirir. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Bu üç yapı modern cerrahi pratikte hepatosistik/Calot üçgeninin temel sınırlarını oluşturur. Safra kesesi boynu çevresinde güvenli diseksiyon bu sınırların doğru tanınmasına dayanır. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Bu üç yapı modern cerrahi pratikte hepatosistik/Calot üçgeninin temel sınırlarını oluşturur. Safra kesesi boynu çevresinde güvenli diseksiyon bu sınırların doğru tanınmasına dayanır. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Bu üç yapı modern cerrahi pratikte hepatosistik/Calot üçgeninin temel sınırlarını oluşturur. Safra kesesi boynu çevresinde güvenli diseksiyon bu sınırların doğru tanınmasına dayanır.",
         "keyClues": [
-          "Hasta laparoskopik kolesistektomiye alınmıştır.",
-          "Diseksiyon safra kesesi boynu ve hepatobiliyer yapıların çevresinde yapılmaktadır.",
-          "Cerrahi güvenlik için ductus cysticus ve ilişkili hepatik kanal anatomisinin tanımlanması gerekir."
+          "Tekrarlayan biliyer kolik nedeniyle kolesistektomi planlanması safra kesesi boynu anatomisini klinik olarak önemli hale getirir.",
+          "Ultrasonografide safra kesesi taşları izlenirken koledok dilatasyonu olmaması elektif güvenli diseksiyon bağlamını destekler.",
+          "Güvenli kolesistektomide hepatosistik üçgen ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarıyla tanımlanır."
         ],
         "evidenceChain": [
           {
-            "text": "Hasta laparoskopik kolesistektomiye alınmıştır.",
+            "text": "Tekrarlayan biliyer kolik nedeniyle kolesistektomi planlanması safra kesesi boynu anatomisini klinik olarak önemli hale getirir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Diseksiyon safra kesesi boynu ve hepatobiliyer yapıların çevresinde yapılmaktadır.",
+            "text": "Ultrasonografide safra kesesi taşları izlenirken koledok dilatasyonu olmaması elektif güvenli diseksiyon bağlamını destekler.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Cerrahi güvenlik için ductus cysticus ve ilişkili hepatik kanal anatomisinin tanımlanması gerekir.",
+            "text": "Güvenli kolesistektomide hepatosistik üçgen ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarıyla tanımlanır.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Hasta laparoskopik kolesistektomiye alınmıştır + diseksiyon safra kesesi boynu ve hepatobiliyer yapıların çevresinde yapılmaktadır; bu birliktelik Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını öne çıkarır.",
+        "examPearl": "Kolesistektomide güvenli görüş için cystic duct ve cystic artery kliplenmeden önce hepatosistik üçgenin sınırları netleştirilmelidir.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Calot üçgeni kolesistektomide arteria cystica ve ductus cysticusun güvenli tanımlanması için kritik alandır."
+            "text": "Kolesistektomide güvenli görüş için cystic duct ve cystic artery kliplenmeden önce hepatosistik üçgenin sınırları netleştirilmelidir."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "Calot üçgeni kolesistektomide arteria cystica ve ductus cysticusun güvenli tanımlanması için kritik alandır."
+            "label": "Klinik anatomi",
+            "text": "Modern cerrahi kullanımda hepatosistik üçgen; ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarıyla sınırlanır. Bu alanın doğru tanınması safra yolu yaralanmasını azaltır."
           }
         ],
         "optionComparison": {
-          "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı": "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı, vakadaki belirleyici bulgularla uyumludur. Hasta laparoskopik kolesistektomiye alınmıştır.",
-          "Ductus choledochus, vena porta ve arteria hepatica communis": "Ductus choledochus, vena porta ve arteria hepatica communis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-          "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı": "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-          "Arteria mesenterica superior, vena splenica ve pankreas boynu": "Arteria mesenterica superior, vena splenica ve pankreas boynu, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-          "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı": "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler."
+          "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı": "Bu üç yapı modern cerrahi pratikte hepatosistik/Calot üçgeninin temel sınırlarını oluşturur. Safra kesesi boynu çevresinde güvenli diseksiyon bu sınırların doğru tanınmasına dayanır.",
+          "Ductus choledochus, vena porta ve arteria hepatica communis": "Bu yapılar hepatoduodenal ligament ve porta hepatis düzeyinde önemlidir; ancak hepatosistik üçgenin temel sınırlarını oluşturmaz. Bu seçenek daha geniş portal triad ilişkisini çağrıştırır.",
+          "Ductus cysticus, arteria cystica ve ductus choledochus": "Arteria cystica bu üçgenin içinde aranabilen önemli yapıdır, sınır olarak modern tanımda yer almaz. Sınırlar cystic duct, common hepatic duct ve karaciğer inferior kenarıdır.",
+          "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı": "Bu yapılar üst gastrointestinal komşuluklarla ilişkilidir; safra kesesi boynu çevresindeki hepatosistik üçgeni tanımlamaz.",
+          "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı": "Bu yapılar ön karın duvarı-karaciğer peritoneal ilişkileriyle ilgilidir. Kolesistektomide güvenli diseksiyon alanı olan hepatosistik üçgenin sınırları değildir."
         },
         "whyWrong": {
-          "Ductus choledochus, vena porta ve arteria hepatica communis": "Ductus choledochus, vena porta ve arteria hepatica communis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-          "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı": "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-          "Arteria mesenterica superior, vena splenica ve pankreas boynu": "Arteria mesenterica superior, vena splenica ve pankreas boynu, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-          "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı": "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler."
+          "Ductus choledochus, vena porta ve arteria hepatica communis": "Bu yapılar hepatoduodenal ligament ve porta hepatis düzeyinde önemlidir; ancak hepatosistik üçgenin temel sınırlarını oluşturmaz. Bu seçenek daha geniş portal triad ilişkisini çağrıştırır.",
+          "Ductus cysticus, arteria cystica ve ductus choledochus": "Arteria cystica bu üçgenin içinde aranabilen önemli yapıdır, sınır olarak modern tanımda yer almaz. Sınırlar cystic duct, common hepatic duct ve karaciğer inferior kenarıdır.",
+          "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı": "Bu yapılar üst gastrointestinal komşuluklarla ilişkilidir; safra kesesi boynu çevresindeki hepatosistik üçgeni tanımlamaz.",
+          "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı": "Bu yapılar ön karın duvarı-karaciğer peritoneal ilişkileriyle ilgilidir. Kolesistektomide güvenli diseksiyon alanı olan hepatosistik üçgenin sınırları değildir."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Safra kesesi cerrahisinde ductus cysticus ve arteria cystica ilişkisini Calot üçgeni üzerinden açıklayabilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler."
+        "learningOutcome": "Safra kesesi cerrahisinde hepatosistik üçgen sınırlarını ve güvenli diseksiyon mantığını açıklayabilme.",
+        "coreKnowledge": "Modern cerrahi kullanımda hepatosistik üçgen; ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarıyla sınırlanır. Bu alanın doğru tanınması safra yolu yaralanmasını azaltır."
       },
-      "whyCorrect": "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı, bu olguda en uygun yanıttır. Hasta laparoskopik kolesistektomiye alınmıştır.",
+      "whyCorrect": "Bu üç yapı modern cerrahi pratikte hepatosistik/Calot üçgeninin temel sınırlarını oluşturur. Safra kesesi boynu çevresinde güvenli diseksiyon bu sınırların doğru tanınmasına dayanır. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Hasta laparoskopik kolesistektomiye alınmıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Tekrarlayan biliyer kolik nedeniyle kolesistektomi planlanması safra kesesi boynu anatomisini klinik olarak önemli hale getirir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Diseksiyon safra kesesi boynu ve hepatobiliyer yapıların çevresinde yapılmaktadır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ultrasonografide safra kesesi taşları izlenirken koledok dilatasyonu olmaması elektif güvenli diseksiyon bağlamını destekler.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Objektif veri",
-          "text": "Cerrahi güvenlik için ductus cysticus ve ilişkili hepatik kanal anatomisinin tanımlanması gerekir.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Güvenli kolesistektomide hepatosistik üçgen ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarıyla tanımlanır.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-      "examPearl": "İpucu: Hasta laparoskopik kolesistektomiye alınmıştır + diseksiyon safra kesesi boynu ve hepatobiliyer yapıların çevresinde yapılmaktadır; bu birliktelik Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını öne çıkarır.",
+      "coreKnowledge": "Modern cerrahi kullanımda hepatosistik üçgen; ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarıyla sınırlanır. Bu alanın doğru tanınması safra yolu yaralanmasını azaltır.",
+      "examPearl": "Kolesistektomide güvenli görüş için cystic duct ve cystic artery kliplenmeden önce hepatosistik üçgenin sınırları netleştirilmelidir.",
       "whyWrong": {
-        "Ductus choledochus, vena porta ve arteria hepatica communis": "Ductus choledochus, vena porta ve arteria hepatica communis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-        "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı": "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-        "Arteria mesenterica superior, vena splenica ve pankreas boynu": "Arteria mesenterica superior, vena splenica ve pankreas boynu, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-        "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı": "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler."
+        "Ductus choledochus, vena porta ve arteria hepatica communis": "Bu yapılar hepatoduodenal ligament ve porta hepatis düzeyinde önemlidir; ancak hepatosistik üçgenin temel sınırlarını oluşturmaz. Bu seçenek daha geniş portal triad ilişkisini çağrıştırır.",
+        "Ductus cysticus, arteria cystica ve ductus choledochus": "Arteria cystica bu üçgenin içinde aranabilen önemli yapıdır, sınır olarak modern tanımda yer almaz. Sınırlar cystic duct, common hepatic duct ve karaciğer inferior kenarıdır.",
+        "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı": "Bu yapılar üst gastrointestinal komşuluklarla ilişkilidir; safra kesesi boynu çevresindeki hepatosistik üçgeni tanımlamaz.",
+        "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı": "Bu yapılar ön karın duvarı-karaciğer peritoneal ilişkileriyle ilgilidir. Kolesistektomide güvenli diseksiyon alanı olan hepatosistik üçgenin sınırları değildir."
       }
     },
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-    "examPearl": "İpucu: Hasta laparoskopik kolesistektomiye alınmıştır + diseksiyon safra kesesi boynu ve hepatobiliyer yapıların çevresinde yapılmaktadır; bu birliktelik Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını öne çıkarır.",
-    "whyCorrect": "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı, bu olguda en uygun yanıttır. Hasta laparoskopik kolesistektomiye alınmıştır.",
+    "coreKnowledge": "Modern cerrahi kullanımda hepatosistik üçgen; ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarıyla sınırlanır. Bu alanın doğru tanınması safra yolu yaralanmasını azaltır.",
+    "examPearl": "Kolesistektomide güvenli görüş için cystic duct ve cystic artery kliplenmeden önce hepatosistik üçgenin sınırları netleştirilmelidir.",
+    "whyCorrect": "Bu üç yapı modern cerrahi pratikte hepatosistik/Calot üçgeninin temel sınırlarını oluşturur. Safra kesesi boynu çevresinde güvenli diseksiyon bu sınırların doğru tanınmasına dayanır. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı": "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı, vakadaki belirleyici bulgularla uyumludur. Hasta laparoskopik kolesistektomiye alınmıştır.",
-      "Ductus choledochus, vena porta ve arteria hepatica communis": "Ductus choledochus, vena porta ve arteria hepatica communis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-      "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı": "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-      "Arteria mesenterica superior, vena splenica ve pankreas boynu": "Arteria mesenterica superior, vena splenica ve pankreas boynu, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-      "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı": "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler."
+      "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı": "Bu üç yapı modern cerrahi pratikte hepatosistik/Calot üçgeninin temel sınırlarını oluşturur. Safra kesesi boynu çevresinde güvenli diseksiyon bu sınırların doğru tanınmasına dayanır.",
+      "Ductus choledochus, vena porta ve arteria hepatica communis": "Bu yapılar hepatoduodenal ligament ve porta hepatis düzeyinde önemlidir; ancak hepatosistik üçgenin temel sınırlarını oluşturmaz. Bu seçenek daha geniş portal triad ilişkisini çağrıştırır.",
+      "Ductus cysticus, arteria cystica ve ductus choledochus": "Arteria cystica bu üçgenin içinde aranabilen önemli yapıdır, sınır olarak modern tanımda yer almaz. Sınırlar cystic duct, common hepatic duct ve karaciğer inferior kenarıdır.",
+      "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı": "Bu yapılar üst gastrointestinal komşuluklarla ilişkilidir; safra kesesi boynu çevresindeki hepatosistik üçgeni tanımlamaz.",
+      "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı": "Bu yapılar ön karın duvarı-karaciğer peritoneal ilişkileriyle ilgilidir. Kolesistektomide güvenli diseksiyon alanı olan hepatosistik üçgenin sınırları değildir."
     },
     "evidenceChain": [
       {
-        "text": "Hasta laparoskopik kolesistektomiye alınmıştır.",
+        "text": "Tekrarlayan biliyer kolik nedeniyle kolesistektomi planlanması safra kesesi boynu anatomisini klinik olarak önemli hale getirir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Diseksiyon safra kesesi boynu ve hepatobiliyer yapıların çevresinde yapılmaktadır.",
+        "text": "Ultrasonografide safra kesesi taşları izlenirken koledok dilatasyonu olmaması elektif güvenli diseksiyon bağlamını destekler.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Cerrahi güvenlik için ductus cysticus ve ilişkili hepatik kanal anatomisinin tanımlanması gerekir.",
+        "text": "Güvenli kolesistektomide hepatosistik üçgen ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarıyla tanımlanır.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Ductus choledochus, vena porta ve arteria hepatica communis": "Ductus choledochus, vena porta ve arteria hepatica communis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-      "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı": "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-      "Arteria mesenterica superior, vena splenica ve pankreas boynu": "Arteria mesenterica superior, vena splenica ve pankreas boynu, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler.",
-      "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı": "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı yanıtını destekler."
+      "Ductus choledochus, vena porta ve arteria hepatica communis": "Bu yapılar hepatoduodenal ligament ve porta hepatis düzeyinde önemlidir; ancak hepatosistik üçgenin temel sınırlarını oluşturmaz. Bu seçenek daha geniş portal triad ilişkisini çağrıştırır.",
+      "Ductus cysticus, arteria cystica ve ductus choledochus": "Arteria cystica bu üçgenin içinde aranabilen önemli yapıdır, sınır olarak modern tanımda yer almaz. Sınırlar cystic duct, common hepatic duct ve karaciğer inferior kenarıdır.",
+      "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı": "Bu yapılar üst gastrointestinal komşuluklarla ilişkilidir; safra kesesi boynu çevresindeki hepatosistik üçgeni tanımlamaz.",
+      "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı": "Bu yapılar ön karın duvarı-karaciğer peritoneal ilişkileriyle ilgilidir. Kolesistektomide güvenli diseksiyon alanı olan hepatosistik üçgenin sınırları değildir."
     }
   },
   {
@@ -65589,30 +65675,30 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Kol üzerine düşme sonrası el bileği düşüklüğü",
     "difficulty": "Kolay",
-    "clinicalFocus": "Kol üzerine düşme sonrası el bileği düşüklüğü bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Kırık humerus orta şaft düzeyindedir ve El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bu ipuçlarını kullanarak Nervus radialis seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Kol üzerine düşme sonrası el bileği düşüklüğü olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus radialis yanıtına ulaşma.",
+    "learningTarget": "Humerus şaft kırığında radial sinir-spinal oluk ilişkisini motor ve duyu bulgularıyla açıklayabilme.",
     "demographics": "36 yaşında erkek hasta",
     "setting": "Acil servis",
     "chiefComplaint": "Hasta, düşme sonrası sağ kol ağrısı ve el bileğini kaldıramama nedeniyle başvuruyor.",
-    "stem": "Merdivenden düşerken sağ kolunun üzerine çarptığını, olaydan sonra el bileğini ve parmaklarını yukarı kaldıramadığını belirtiyor. Daha önce üst ekstremite nörolojik yakınması yoktur.",
+    "stem": "Merdivenden düşerken sağ kolunun orta kısmı üzerine çarptığını, olaydan sonra el bileğini ve parmaklarını yukarı kaldıramadığını belirtiyor. Daha önce üst ekstremite nörolojik yakınması yoktur.",
     "patientIntro": {
-      "profile": "36 yaşında erkek hasta, acil serviste ortopedi tarafından değerlendiriliyor.",
+      "profile": "36 yaşında erkek hasta, acil serviste değerlendiriliyor.",
       "presentation": "Hasta, düşme sonrası sağ kol ağrısı ve el bileğini kaldıramama nedeniyle başvuruyor.",
-      "historySummary": "Merdivenden düşerken sağ kolunun üzerine çarptığını, olaydan sonra el bileğini ve parmaklarını yukarı kaldıramadığını belirtiyor. Daha önce üst ekstremite nörolojik yakınması yoktur."
+      "historySummary": "Merdivenden düşerken sağ kolunun orta kısmı üzerine çarptığını, olaydan sonra el bileğini ve parmaklarını yukarı kaldıramadığını belirtiyor. Daha önce üst ekstremite nörolojik yakınması yoktur."
     },
     "vitals": {
-      "TA": "118/74 mmHg",
-      "Nabız": "104/dk",
+      "TA": "124/78 mmHg",
+      "Nabız": "96/dk",
       "Solunum": "18/dk",
       "SpO2": "%98, oda havasında",
       "Ateş": "36.8 °C",
-      "Şok indeksi": "0.88 normal"
+      "Şok indeksi": "0.77 normal"
     },
     "exam": [
       "Sağ kol orta kısmında hassasiyet ve deformite vardır.",
       "El bileği ve parmak ekstansiyonu belirgin zayıftır.",
       "El sırtında birinci dorsal aralıkta duyu azalması saptanır.",
-      "Parmak fleksiyonu korunmuştur."
+      "Parmak fleksiyonu ve başparmak opozisyonu korunmuştur."
     ],
     "investigations": [
       {
@@ -65621,43 +65707,43 @@ export const rawCases = [
         "title": "Humerus grafisi",
         "type": "xray",
         "priority": "essential",
-        "subtype": "Direkt/kontrastlı grafi",
-        "summary": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-        "clinicalMeaning": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+        "subtype": "Direkt grafi",
+        "summary": "Humerus grafisinde orta şaft düzeyinde kırık izlenmesi, spiral olukta seyreden nervus radialisin yaralanma riskini artırır. Görselde kırık düzeyi ile wrist drop bulgusu birlikte yorumlanmalıdır.",
+        "clinicalMeaning": "Humerus orta şaft kırığı radial sinirin kemikle yakın komşuluğu nedeniyle el bileği ekstansiyon kaybı ve birinci dorsal aralık duyu azalması yapabilir.",
         "result": {
           "title": "Humerus grafisi",
-          "summary": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-          "interpretation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+          "summary": "Humerus grafisinde orta şaft düzeyinde kırık izlenmesi, spiral olukta seyreden nervus radialisin yaralanma riskini artırır. Görselde kırık düzeyi ile wrist drop bulgusu birlikte yorumlanmalıdır.",
+          "interpretation": "Humerus orta şaft kırığı radial sinirin kemikle yakın komşuluğu nedeniyle el bileği ekstansiyon kaybı ve birinci dorsal aralık duyu azalması yapabilir.",
           "values": [
             [
-              "Görüntüleme bulgusu",
+              "Humerus grafisi",
               "Humerus orta şaft düzeyinde kırık izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Humerus orta şaft kırığı radial sinirin kemikle yakın komşuluğu nedeniyle el bileği ekstansiyon kaybı ve birinci dorsal aralık duyu azalması yapabilir."
             ]
           ],
           "rows": [
             [
-              "Görüntüleme bulgusu",
+              "Humerus grafisi",
               "Humerus orta şaft düzeyinde kırık izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Humerus orta şaft kırığı radial sinirin kemikle yakın komşuluğu nedeniyle el bileği ekstansiyon kaybı ve birinci dorsal aralık duyu azalması yapabilir."
             ]
           ]
         },
         "rows": [
           [
-            "Görüntüleme bulgusu",
+            "Humerus grafisi",
             "Humerus orta şaft düzeyinde kırık izlendi.",
-            "Modaliteye özgü bulgu",
-            ""
+            "Anatomik yorum",
+            "Humerus orta şaft kırığı radial sinirin kemikle yakın komşuluğu nedeniyle el bileği ekstansiyon kaybı ve birinci dorsal aralık duyu azalması yapabilir."
           ]
         ],
-        "postAnswerExplanation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-        "interpretation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+        "postAnswerExplanation": "Humerus orta şaft kırığı radial sinirin kemikle yakın komşuluğu nedeniyle el bileği ekstansiyon kaybı ve birinci dorsal aralık duyu azalması yapabilir.",
+        "interpretation": "Humerus orta şaft kırığı radial sinirin kemikle yakın komşuluğu nedeniyle el bileği ekstansiyon kaybı ve birinci dorsal aralık duyu azalması yapabilir.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir."
+        "explanationAfterAnswer": "Humerus orta şaft kırığı radial sinirin kemikle yakın komşuluğu nedeniyle el bileği ekstansiyon kaybı ve birinci dorsal aralık duyu azalması yapabilir."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -65666,7 +65752,7 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu hastada hasarlanma olasılığı en yüksek sinir aşağıdakilerden hangisidir?",
+    "question": "Humerus orta şaft kırığı sonrası el bileği-parmak ekstansiyon kaybını en iyi açıklayan sinir hasarı hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
@@ -65678,142 +65764,142 @@ export const rawCases = [
         "Nervus axillaris",
         "Nervus musculocutaneus"
       ],
-      "question": "Bu hastada hasarlanma olasılığı en yüksek sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus radialis, vakadaki bulgularla en uyumlu tanıdır. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Humerus orta şaft kırığı sonrası el bileği-parmak ekstansiyon kaybını en iyi açıklayan sinir hasarı hangisidir?",
+      "explanation": "Nervus radialis humerus spiral oluğuna komşu seyreder ve el bileği/parmak ekstansörlerini innerve eder. Humerus orta şaft kırığı sonrası wrist drop ve birinci dorsal aralık duyusu azalması radial sinir hasarını destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Kırık humerus orta şaft düzeyindedir + el bileği ve parmak ekstansiyonu belirgin zayıflamıştır; bu birliktelik Nervus radialis yanıtını öne çıkarır."
+          "text": "Humerus şaft kırığı + wrist drop + birinci dorsal aralık duyusu azalması nervus radialis hasarını düşündürür."
         }
       ],
       "optionComparison": {
-        "Nervus radialis": "Nervus radialis, olgunun ana tanısal örüntüsünü karşılar. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus medianus": "Nervus medianus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-        "Nervus ulnaris": "Nervus ulnaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-        "Nervus axillaris": "Nervus axillaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-        "Nervus musculocutaneus": "Nervus musculocutaneus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır."
+        "Nervus radialis": "Nervus radialis humerus spiral oluğuna komşu seyreder ve el bileği/parmak ekstansörlerini innerve eder. Humerus orta şaft kırığı sonrası wrist drop ve birinci dorsal aralık duyusu azalması radial sinir hasarını destekler.",
+        "Nervus medianus": "Nervus medianus ön kol fleksörleri, tenar kaslar ve ilk üç buçuk parmak duyusuyla ilişkilidir. El bileği ekstansiyon kaybı ve humerus spiral oluk komşuluğu median siniri düşündürmez.",
+        "Nervus ulnaris": "Nervus ulnaris medial epikondil ve Guyon kanalı düzeyinde risk altındadır; interosseöz kas zayıflığı ve ulnar parmak duyusu azalması beklenir. Wrist drop radial sinir bulgusudur.",
+        "Nervus axillaris": "Nervus axillaris humerus cerrahi boynu ve deltoid kasla ilişkilidir. Omuz abdüksiyon kaybı beklenir; el bileği-parmak ekstansiyon kaybı radial sinire aittir.",
+        "Nervus musculocutaneus": "Nervus musculocutaneus dirsek fleksiyonu ve ön kol lateral duyusuyla ilişkilidir. Humerus orta şaft kırığı sonrası wrist drop bulgusunu açıklamaz."
       },
       "answerFeedback": {
-        "summary": "Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bu bulgular tanısal karar açısından Nervus radialis yanıtını destekler.",
-        "whyCorrect": "Nervus radialis, vakadaki bulgularla en uyumlu tanıdır. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "rationale": "Nervus radialis, vakadaki bulgularla en uyumlu tanıdır. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "correctOptionFeedback": "Nervus radialis humerus spiral oluğunda seyreder ve el bileği-parmak ekstansiyonu ile birinci dorsal aralık duyusunu açıklar.",
+        "summary": "Bu olguda karar, humerus orta şaft kırığı radial sinirin spiral olukta seyrettiği anatomik düzeyi riskli hale getirir. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus radialis humerus spiral oluğuna komşu seyreder ve el bileği/parmak ekstansörlerini innerve eder. Humerus orta şaft kırığı sonrası wrist drop ve birinci dorsal aralık duyusu azalması radial sinir hasarını destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus radialis humerus spiral oluğuna komşu seyreder ve el bileği/parmak ekstansörlerini innerve eder. Humerus orta şaft kırığı sonrası wrist drop ve birinci dorsal aralık duyusu azalması radial sinir hasarını destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus radialis humerus spiral oluğuna komşu seyreder ve el bileği/parmak ekstansörlerini innerve eder. Humerus orta şaft kırığı sonrası wrist drop ve birinci dorsal aralık duyusu azalması radial sinir hasarını destekler.",
         "keyClues": [
-          "Kırık humerus orta şaft düzeyindedir.",
-          "El bileği ve parmak ekstansiyonu belirgin zayıflamıştır.",
-          "El sırtında birinci dorsal aralıkta duyu azalması vardır."
+          "Humerus orta şaft kırığı radial sinirin spiral olukta seyrettiği anatomik düzeyi riskli hale getirir.",
+          "El bileği ve parmak ekstansiyon kaybı posterior kompartman ekstansörlerinin motor innervasyonunu düşündürür.",
+          "Birinci dorsal aralık duyusunun azalması nervus radialisin yüzeyel duyu dalı ile uyumludur."
         ],
         "evidenceChain": [
           {
-            "text": "Kırık humerus orta şaft düzeyindedir.",
+            "text": "Humerus orta şaft kırığı radial sinirin spiral olukta seyrettiği anatomik düzeyi riskli hale getirir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "El bileği ve parmak ekstansiyonu belirgin zayıflamıştır.",
+            "text": "El bileği ve parmak ekstansiyon kaybı posterior kompartman ekstansörlerinin motor innervasyonunu düşündürür.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "El sırtında birinci dorsal aralıkta duyu azalması vardır.",
+            "text": "Birinci dorsal aralık duyusunun azalması nervus radialisin yüzeyel duyu dalı ile uyumludur.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Kırık humerus orta şaft düzeyindedir + el bileği ve parmak ekstansiyonu belirgin zayıflamıştır; bu birliktelik Nervus radialis yanıtını öne çıkarır.",
+        "examPearl": "Humerus şaft kırığı + wrist drop + birinci dorsal aralık duyusu azalması nervus radialis hasarını düşündürür.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Humerus şaft kırığında düşük el bulgusu nervus radialis hasarını düşündürür."
+            "text": "Humerus şaft kırığı + wrist drop + birinci dorsal aralık duyusu azalması nervus radialis hasarını düşündürür."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "Humerus şaft kırığında düşük el bulgusu nervus radialis hasarını düşündürür."
+            "label": "Klinik anatomi",
+            "text": "Nervus radialis humerus spiral oluğunda seyreder; humerus orta şaft kırığında el bileği ve parmak ekstansörleri ile birinci dorsal aralık duyusu etkilenebilir."
           }
         ],
         "optionComparison": {
-          "Nervus radialis": "Nervus radialis, olgunun ana tanısal örüntüsünü karşılar. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus medianus": "Nervus medianus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-          "Nervus ulnaris": "Nervus ulnaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-          "Nervus axillaris": "Nervus axillaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-          "Nervus musculocutaneus": "Nervus musculocutaneus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır."
+          "Nervus radialis": "Nervus radialis humerus spiral oluğuna komşu seyreder ve el bileği/parmak ekstansörlerini innerve eder. Humerus orta şaft kırığı sonrası wrist drop ve birinci dorsal aralık duyusu azalması radial sinir hasarını destekler.",
+          "Nervus medianus": "Nervus medianus ön kol fleksörleri, tenar kaslar ve ilk üç buçuk parmak duyusuyla ilişkilidir. El bileği ekstansiyon kaybı ve humerus spiral oluk komşuluğu median siniri düşündürmez.",
+          "Nervus ulnaris": "Nervus ulnaris medial epikondil ve Guyon kanalı düzeyinde risk altındadır; interosseöz kas zayıflığı ve ulnar parmak duyusu azalması beklenir. Wrist drop radial sinir bulgusudur.",
+          "Nervus axillaris": "Nervus axillaris humerus cerrahi boynu ve deltoid kasla ilişkilidir. Omuz abdüksiyon kaybı beklenir; el bileği-parmak ekstansiyon kaybı radial sinire aittir.",
+          "Nervus musculocutaneus": "Nervus musculocutaneus dirsek fleksiyonu ve ön kol lateral duyusuyla ilişkilidir. Humerus orta şaft kırığı sonrası wrist drop bulgusunu açıklamaz."
         },
         "whyWrong": {
-          "Nervus medianus": "Nervus medianus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-          "Nervus ulnaris": "Nervus ulnaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-          "Nervus axillaris": "Nervus axillaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-          "Nervus musculocutaneus": "Nervus musculocutaneus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır."
+          "Nervus medianus": "Nervus medianus ön kol fleksörleri, tenar kaslar ve ilk üç buçuk parmak duyusuyla ilişkilidir. El bileği ekstansiyon kaybı ve humerus spiral oluk komşuluğu median siniri düşündürmez.",
+          "Nervus ulnaris": "Nervus ulnaris medial epikondil ve Guyon kanalı düzeyinde risk altındadır; interosseöz kas zayıflığı ve ulnar parmak duyusu azalması beklenir. Wrist drop radial sinir bulgusudur.",
+          "Nervus axillaris": "Nervus axillaris humerus cerrahi boynu ve deltoid kasla ilişkilidir. Omuz abdüksiyon kaybı beklenir; el bileği-parmak ekstansiyon kaybı radial sinire aittir.",
+          "Nervus musculocutaneus": "Nervus musculocutaneus dirsek fleksiyonu ve ön kol lateral duyusuyla ilişkilidir. Humerus orta şaft kırığı sonrası wrist drop bulgusunu açıklamaz."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Humerus şaft kırığında nervus radialis hasarını düşük el bulgusuyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bu örüntü Nervus radialis yanıtını destekler."
+        "learningOutcome": "Humerus şaft kırığında radial sinir-spinal oluk ilişkisini motor ve duyu bulgularıyla açıklayabilme.",
+        "coreKnowledge": "Nervus radialis humerus spiral oluğunda seyreder; humerus orta şaft kırığında el bileği ve parmak ekstansörleri ile birinci dorsal aralık duyusu etkilenebilir."
       },
-      "whyCorrect": "Nervus radialis, vakadaki bulgularla en uyumlu tanıdır. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Nervus radialis humerus spiral oluğuna komşu seyreder ve el bileği/parmak ekstansörlerini innerve eder. Humerus orta şaft kırığı sonrası wrist drop ve birinci dorsal aralık duyusu azalması radial sinir hasarını destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Kırık humerus orta şaft düzeyindedir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Humerus orta şaft kırığı radial sinirin spiral olukta seyrettiği anatomik düzeyi riskli hale getirir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "El bileği ve parmak ekstansiyonu belirgin zayıflamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "El bileği ve parmak ekstansiyon kaybı posterior kompartman ekstansörlerinin motor innervasyonunu düşündürür.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "El sırtında birinci dorsal aralıkta duyu azalması vardır.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Birinci dorsal aralık duyusunun azalması nervus radialisin yüzeyel duyu dalı ile uyumludur.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bu örüntü Nervus radialis yanıtını destekler.",
-      "examPearl": "İpucu: Kırık humerus orta şaft düzeyindedir + el bileği ve parmak ekstansiyonu belirgin zayıflamıştır; bu birliktelik Nervus radialis yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus radialis humerus spiral oluğunda seyreder; humerus orta şaft kırığında el bileği ve parmak ekstansörleri ile birinci dorsal aralık duyusu etkilenebilir.",
+      "examPearl": "Humerus şaft kırığı + wrist drop + birinci dorsal aralık duyusu azalması nervus radialis hasarını düşündürür.",
       "whyWrong": {
-        "Nervus medianus": "Nervus medianus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-        "Nervus ulnaris": "Nervus ulnaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-        "Nervus axillaris": "Nervus axillaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-        "Nervus musculocutaneus": "Nervus musculocutaneus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır."
+        "Nervus medianus": "Nervus medianus ön kol fleksörleri, tenar kaslar ve ilk üç buçuk parmak duyusuyla ilişkilidir. El bileği ekstansiyon kaybı ve humerus spiral oluk komşuluğu median siniri düşündürmez.",
+        "Nervus ulnaris": "Nervus ulnaris medial epikondil ve Guyon kanalı düzeyinde risk altındadır; interosseöz kas zayıflığı ve ulnar parmak duyusu azalması beklenir. Wrist drop radial sinir bulgusudur.",
+        "Nervus axillaris": "Nervus axillaris humerus cerrahi boynu ve deltoid kasla ilişkilidir. Omuz abdüksiyon kaybı beklenir; el bileği-parmak ekstansiyon kaybı radial sinire aittir.",
+        "Nervus musculocutaneus": "Nervus musculocutaneus dirsek fleksiyonu ve ön kol lateral duyusuyla ilişkilidir. Humerus orta şaft kırığı sonrası wrist drop bulgusunu açıklamaz."
       }
     },
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bu örüntü Nervus radialis yanıtını destekler.",
-    "examPearl": "İpucu: Kırık humerus orta şaft düzeyindedir + el bileği ve parmak ekstansiyonu belirgin zayıflamıştır; bu birliktelik Nervus radialis yanıtını öne çıkarır.",
-    "whyCorrect": "Nervus radialis, vakadaki bulgularla en uyumlu tanıdır. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "Nervus radialis humerus spiral oluğunda seyreder; humerus orta şaft kırığında el bileği ve parmak ekstansörleri ile birinci dorsal aralık duyusu etkilenebilir.",
+    "examPearl": "Humerus şaft kırığı + wrist drop + birinci dorsal aralık duyusu azalması nervus radialis hasarını düşündürür.",
+    "whyCorrect": "Nervus radialis humerus spiral oluğuna komşu seyreder ve el bileği/parmak ekstansörlerini innerve eder. Humerus orta şaft kırığı sonrası wrist drop ve birinci dorsal aralık duyusu azalması radial sinir hasarını destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Nervus radialis": "Nervus radialis, olgunun ana tanısal örüntüsünü karşılar. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus medianus": "Nervus medianus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-      "Nervus ulnaris": "Nervus ulnaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-      "Nervus axillaris": "Nervus axillaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-      "Nervus musculocutaneus": "Nervus musculocutaneus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır."
+      "Nervus radialis": "Nervus radialis humerus spiral oluğuna komşu seyreder ve el bileği/parmak ekstansörlerini innerve eder. Humerus orta şaft kırığı sonrası wrist drop ve birinci dorsal aralık duyusu azalması radial sinir hasarını destekler.",
+      "Nervus medianus": "Nervus medianus ön kol fleksörleri, tenar kaslar ve ilk üç buçuk parmak duyusuyla ilişkilidir. El bileği ekstansiyon kaybı ve humerus spiral oluk komşuluğu median siniri düşündürmez.",
+      "Nervus ulnaris": "Nervus ulnaris medial epikondil ve Guyon kanalı düzeyinde risk altındadır; interosseöz kas zayıflığı ve ulnar parmak duyusu azalması beklenir. Wrist drop radial sinir bulgusudur.",
+      "Nervus axillaris": "Nervus axillaris humerus cerrahi boynu ve deltoid kasla ilişkilidir. Omuz abdüksiyon kaybı beklenir; el bileği-parmak ekstansiyon kaybı radial sinire aittir.",
+      "Nervus musculocutaneus": "Nervus musculocutaneus dirsek fleksiyonu ve ön kol lateral duyusuyla ilişkilidir. Humerus orta şaft kırığı sonrası wrist drop bulgusunu açıklamaz."
     },
     "evidenceChain": [
       {
-        "text": "Kırık humerus orta şaft düzeyindedir.",
+        "text": "Humerus orta şaft kırığı radial sinirin spiral olukta seyrettiği anatomik düzeyi riskli hale getirir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "El bileği ve parmak ekstansiyonu belirgin zayıflamıştır.",
+        "text": "El bileği ve parmak ekstansiyon kaybı posterior kompartman ekstansörlerinin motor innervasyonunu düşündürür.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "El sırtında birinci dorsal aralıkta duyu azalması vardır.",
+        "text": "Birinci dorsal aralık duyusunun azalması nervus radialisin yüzeyel duyu dalı ile uyumludur.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Nervus medianus": "Nervus medianus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-      "Nervus ulnaris": "Nervus ulnaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-      "Nervus axillaris": "Nervus axillaris, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır.",
-      "Nervus musculocutaneus": "Nervus musculocutaneus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Kırık humerus orta şaft düzeyindedir El bileği ve parmak ekstansiyonu belirgin zayıflamıştır. Bulgular Nervus radialis ile daha tutarlıdır."
+      "Nervus medianus": "Nervus medianus ön kol fleksörleri, tenar kaslar ve ilk üç buçuk parmak duyusuyla ilişkilidir. El bileği ekstansiyon kaybı ve humerus spiral oluk komşuluğu median siniri düşündürmez.",
+      "Nervus ulnaris": "Nervus ulnaris medial epikondil ve Guyon kanalı düzeyinde risk altındadır; interosseöz kas zayıflığı ve ulnar parmak duyusu azalması beklenir. Wrist drop radial sinir bulgusudur.",
+      "Nervus axillaris": "Nervus axillaris humerus cerrahi boynu ve deltoid kasla ilişkilidir. Omuz abdüksiyon kaybı beklenir; el bileği-parmak ekstansiyon kaybı radial sinire aittir.",
+      "Nervus musculocutaneus": "Nervus musculocutaneus dirsek fleksiyonu ve ön kol lateral duyusuyla ilişkilidir. Humerus orta şaft kırığı sonrası wrist drop bulgusunu açıklamaz."
     }
   },
   {
@@ -65823,30 +65909,30 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Diz dış yan travması sonrası düşük ayak",
     "difficulty": "Kolay",
-    "clinicalFocus": "Diz dış yan travması sonrası düşük ayak bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir ve ayak dorsifleksiyonu ve eversiyonu zayıflamıştır. Bu ipuçlarını kullanarak Nervus fibularis communis seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Diz dış yan travması sonrası düşük ayak olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus fibularis communis yanıtına ulaşma.",
+    "learningTarget": "Fibula boynu travmasında common fibular siniri dalları ve düşük ayak bulgusuyla ilişkilendirebilme.",
     "demographics": "27 yaşında erkek hasta",
     "setting": "Acil servis",
-    "chiefComplaint": "Hasta, dizin dış yanına darbe sonrası ayağını yukarı kaldıramama nedeniyle başvuruyor.",
-    "stem": "Futbol sırasında sağ dizinin dış yanına direkt darbe aldığını, ardından yürürken ayağının takıldığını ve ayak sırtında uyuşma hissettiğini belirtmektedir.",
+    "chiefComplaint": "Hasta, dizin dış yanına darbe sonrası ayağını yukarı kaldıramama ve yürürken ayağının takılması nedeniyle başvuruyor.",
+    "stem": "Futbol sırasında sağ dizinin dış yanına direkt darbe aldığını, ardından ayak sırtında uyuşma ve steppage yürüyüş geliştiğini belirtmektedir. Kalça veya bel ağrısı tariflemiyor.",
     "patientIntro": {
       "profile": "27 yaşında erkek hasta, acil serviste değerlendiriliyor.",
-      "presentation": "Hasta, dizin dış yanına darbe sonrası ayağını yukarı kaldıramama nedeniyle başvuruyor.",
-      "historySummary": "Futbol sırasında sağ dizinin dış yanına direkt darbe aldığını, ardından yürürken ayağının takıldığını ve ayak sırtında uyuşma hissettiğini belirtmektedir."
+      "presentation": "Hasta, dizin dış yanına darbe sonrası ayağını yukarı kaldıramama ve yürürken ayağının takılması nedeniyle başvuruyor.",
+      "historySummary": "Futbol sırasında sağ dizinin dış yanına direkt darbe aldığını, ardından ayak sırtında uyuşma ve steppage yürüyüş geliştiğini belirtmektedir. Kalça veya bel ağrısı tariflemiyor."
     },
     "vitals": {
-      "TA": "118/74 mmHg",
-      "Nabız": "104/dk",
+      "TA": "124/78 mmHg",
+      "Nabız": "96/dk",
       "Solunum": "18/dk",
       "SpO2": "%98, oda havasında",
       "Ateş": "36.8 °C",
-      "Şok indeksi": "0.88 normal"
+      "Şok indeksi": "0.77 normal"
     },
     "exam": [
       "Sağ ayakta dorsifleksiyon ve eversiyon zayıftır.",
       "Yürümede steppage paterni izlenir.",
       "Ayak sırtında duyu azalması vardır.",
-      "Plantar fleksiyon korunmuştur."
+      "Plantar fleksiyon ve aşil refleksi korunmuştur."
     ],
     "investigations": [
       {
@@ -65855,43 +65941,43 @@ export const rawCases = [
         "title": "Diz grafisi",
         "type": "xray",
         "priority": "essential",
-        "subtype": "Direkt/kontrastlı grafi",
-        "summary": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-        "clinicalMeaning": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+        "subtype": "Direkt grafi",
+        "summary": "Diz grafisinde fibula boynu çevresinde travmatik hassasiyetle uyumlu bulgular izlenmesi, bu bölgede yüzeyel dönen nervus fibularis communisin yaralanma riskini artırır. Görsel yorumda fibula boynu ile düşük ayak bulgusu birlikte düşünülmelidir.",
+        "clinicalMeaning": "Fibula boynu komşuluğu, common fibular sinirin en kırılgan anatomik noktalarından biridir; dorsifleksiyon-eversiyon kaybı bu düzeydeki lezyonu destekler.",
         "result": {
           "title": "Diz grafisi",
-          "summary": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-          "interpretation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+          "summary": "Diz grafisinde fibula boynu çevresinde travmatik hassasiyetle uyumlu bulgular izlenmesi, bu bölgede yüzeyel dönen nervus fibularis communisin yaralanma riskini artırır. Görsel yorumda fibula boynu ile düşük ayak bulgusu birlikte düşünülmelidir.",
+          "interpretation": "Fibula boynu komşuluğu, common fibular sinirin en kırılgan anatomik noktalarından biridir; dorsifleksiyon-eversiyon kaybı bu düzeydeki lezyonu destekler.",
           "values": [
             [
-              "Görüntüleme bulgusu",
+              "Diz grafisi",
               "Fibula boynu çevresinde travmatik hassasiyetle uyumlu bulgular izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Fibula boynu komşuluğu, common fibular sinirin en kırılgan anatomik noktalarından biridir; dorsifleksiyon-eversiyon kaybı bu düzeydeki lezyonu destekler."
             ]
           ],
           "rows": [
             [
-              "Görüntüleme bulgusu",
+              "Diz grafisi",
               "Fibula boynu çevresinde travmatik hassasiyetle uyumlu bulgular izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Fibula boynu komşuluğu, common fibular sinirin en kırılgan anatomik noktalarından biridir; dorsifleksiyon-eversiyon kaybı bu düzeydeki lezyonu destekler."
             ]
           ]
         },
         "rows": [
           [
-            "Görüntüleme bulgusu",
+            "Diz grafisi",
             "Fibula boynu çevresinde travmatik hassasiyetle uyumlu bulgular izlendi.",
-            "Modaliteye özgü bulgu",
-            ""
+            "Anatomik yorum",
+            "Fibula boynu komşuluğu, common fibular sinirin en kırılgan anatomik noktalarından biridir; dorsifleksiyon-eversiyon kaybı bu düzeydeki lezyonu destekler."
           ]
         ],
-        "postAnswerExplanation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-        "interpretation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+        "postAnswerExplanation": "Fibula boynu komşuluğu, common fibular sinirin en kırılgan anatomik noktalarından biridir; dorsifleksiyon-eversiyon kaybı bu düzeydeki lezyonu destekler.",
+        "interpretation": "Fibula boynu komşuluğu, common fibular sinirin en kırılgan anatomik noktalarından biridir; dorsifleksiyon-eversiyon kaybı bu düzeydeki lezyonu destekler.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir."
+        "explanationAfterAnswer": "Fibula boynu komşuluğu, common fibular sinirin en kırılgan anatomik noktalarından biridir; dorsifleksiyon-eversiyon kaybı bu düzeydeki lezyonu destekler."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -65900,154 +65986,154 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu hastada hasarlanma olasılığı en yüksek sinir aşağıdakilerden hangisidir?",
+    "question": "Fibula boynu çevresi travması sonrası düşük ayak, dorsifleksiyon-eversiyon zayıflığı ve ayak sırtı duyu kaybını hangi sinir hasarı açıklar?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Nervus fibularis communis",
       "options": [
-        "Nervus tibialis",
         "Nervus fibularis communis",
-        "Nervus femoralis",
-        "Nervus obturatorius",
-        "Nervus gluteus inferior"
+        "Nervus fibularis profundus",
+        "Nervus fibularis superficialis",
+        "Nervus tibialis",
+        "Nervus femoralis"
       ],
-      "question": "Bu hastada hasarlanma olasılığı en yüksek sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus fibularis communis, vakadaki bulgularla en uyumlu tanıdır. Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir Ayak dorsifleksiyonu ve eversiyonu zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Fibula boynu çevresi travması sonrası düşük ayak, dorsifleksiyon-eversiyon zayıflığı ve ayak sırtı duyu kaybını hangi sinir hasarı açıklar?",
+      "explanation": "Nervus fibularis communis fibula boynu çevresinde yüzeyel ve yaralanmaya açıktır. Hem dorsifleksiyon hem eversiyon zayıflığı ile ayak sırtı duyusu azalması ana gövde etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir + ayak dorsifleksiyonu ve eversiyonu zayıflamıştır; bu birliktelik Nervus fibularis communis yanıtını öne çıkarır."
+          "text": "Fibula boynu travması + düşük ayak + ayak sırtı duyusu azalması common fibular sinir hasarıdır."
         }
       ],
       "optionComparison": {
-        "Nervus tibialis": "Nervus tibialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-        "Nervus fibularis communis": "Nervus fibularis communis, olgunun ana tanısal örüntüsünü karşılar. Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir Ayak dorsifleksiyonu ve eversiyonu zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-        "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-        "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler."
+        "Nervus fibularis communis": "Nervus fibularis communis fibula boynu çevresinde yüzeyel ve yaralanmaya açıktır. Hem dorsifleksiyon hem eversiyon zayıflığı ile ayak sırtı duyusu azalması ana gövde etkilenimini gösterir.",
+        "Nervus fibularis profundus": "Derin fibular sinir dorsifleksiyon ve birinci web aralığı duyusuyla ilişkilidir. Ancak eversiyon zayıflığı ve geniş ayak sırtı duyusu azalması ortak fibular sinirin daha proksimal etkilenimini düşündürür.",
+        "Nervus fibularis superficialis": "Yüzeyel fibular sinir eversiyon ve ayak sırtı duyusuyla ilişkilidir, fakat dorsifleksiyon kaybını tek başına açıklamaz. Dorsifleksiyon ve eversiyonun birlikte bozulması common fibular sinire uyar.",
+        "Nervus tibialis": "Nervus tibialis plantar fleksiyon ve ayak tabanı duyusuyla ilişkilidir. Bu hastada plantar fleksiyon korunmuş, dorsifleksiyon/eversiyon kaybı ön plandadır.",
+        "Nervus femoralis": "Nervus femoralis diz ekstansiyonu ve patella refleksiyle ilişkilidir. Fibula boynu travması ve düşük ayak bulgusu femoral sinire ait değildir."
       },
       "answerFeedback": {
-        "summary": "Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir Ayak dorsifleksiyonu ve eversiyonu zayıflamıştır. Bu bulgular tanısal karar açısından Nervus fibularis communis yanıtını destekler.",
-        "whyCorrect": "Nervus fibularis communis, vakadaki bulgularla en uyumlu tanıdır. Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir Ayak dorsifleksiyonu ve eversiyonu zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "rationale": "Nervus fibularis communis, vakadaki bulgularla en uyumlu tanıdır. Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir Ayak dorsifleksiyonu ve eversiyonu zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "correctOptionFeedback": "Nervus fibularis communis fibula boynunda yüzeyel seyreder ve dorsifleksiyon-eversiyon kaybı ile düşük ayak yapar.",
+        "summary": "Bu olguda karar, dizin dış yanına travma ve fibula boynu çevresindeki hassasiyet common fibular sinirin yüzeyel seyrini riskli hale getirir. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus fibularis communis fibula boynu çevresinde yüzeyel ve yaralanmaya açıktır. Hem dorsifleksiyon hem eversiyon zayıflığı ile ayak sırtı duyusu azalması ana gövde etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus fibularis communis fibula boynu çevresinde yüzeyel ve yaralanmaya açıktır. Hem dorsifleksiyon hem eversiyon zayıflığı ile ayak sırtı duyusu azalması ana gövde etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus fibularis communis fibula boynu çevresinde yüzeyel ve yaralanmaya açıktır. Hem dorsifleksiyon hem eversiyon zayıflığı ile ayak sırtı duyusu azalması ana gövde etkilenimini gösterir.",
         "keyClues": [
-          "Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir.",
-          "Ayak dorsifleksiyonu ve eversiyonu zayıflamıştır.",
-          "Ayak sırtında duyu azalması vardır."
+          "Dizin dış yanına travma ve fibula boynu çevresindeki hassasiyet common fibular sinirin yüzeyel seyrini riskli hale getirir.",
+          "Dorsifleksiyon ve eversiyonun birlikte zayıflaması deep ve superficial fibular dalların ortak proksimal etkilenimini düşündürür.",
+          "Ayak sırtı duyusu azalırken plantar fleksiyonun korunması lezyonu nervus fibularis communise lokalize eder."
         ],
         "evidenceChain": [
           {
-            "text": "Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir.",
+            "text": "Dizin dış yanına travma ve fibula boynu çevresindeki hassasiyet common fibular sinirin yüzeyel seyrini riskli hale getirir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Ayak dorsifleksiyonu ve eversiyonu zayıflamıştır.",
+            "text": "Dorsifleksiyon ve eversiyonun birlikte zayıflaması deep ve superficial fibular dalların ortak proksimal etkilenimini düşündürür.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Ayak sırtında duyu azalması vardır.",
+            "text": "Ayak sırtı duyusu azalırken plantar fleksiyonun korunması lezyonu nervus fibularis communise lokalize eder.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir + ayak dorsifleksiyonu ve eversiyonu zayıflamıştır; bu birliktelik Nervus fibularis communis yanıtını öne çıkarır.",
+        "examPearl": "Fibula boynu travması + düşük ayak + ayak sırtı duyusu azalması common fibular sinir hasarıdır.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Fibula boynu travmasında düşük ayak en tipik olarak nervus fibularis communis hasarıyla klinik eksene uyar."
+            "text": "Fibula boynu travması + düşük ayak + ayak sırtı duyusu azalması common fibular sinir hasarıdır."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "Fibula boynu travmasında düşük ayak en tipik olarak nervus fibularis communis hasarıyla klinik eksene uyar."
+            "label": "Klinik anatomi",
+            "text": "Nervus fibularis communis fibula boynu çevresinde yüzeyel seyreder; derin ve yüzeyel dallarıyla dorsifleksiyon, eversiyon ve ayak sırtı duyusunu etkiler."
           }
         ],
         "optionComparison": {
-          "Nervus tibialis": "Nervus tibialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-          "Nervus fibularis communis": "Nervus fibularis communis, olgunun ana tanısal örüntüsünü karşılar. Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir Ayak dorsifleksiyonu ve eversiyonu zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-          "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-          "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler."
+          "Nervus fibularis communis": "Nervus fibularis communis fibula boynu çevresinde yüzeyel ve yaralanmaya açıktır. Hem dorsifleksiyon hem eversiyon zayıflığı ile ayak sırtı duyusu azalması ana gövde etkilenimini gösterir.",
+          "Nervus fibularis profundus": "Derin fibular sinir dorsifleksiyon ve birinci web aralığı duyusuyla ilişkilidir. Ancak eversiyon zayıflığı ve geniş ayak sırtı duyusu azalması ortak fibular sinirin daha proksimal etkilenimini düşündürür.",
+          "Nervus fibularis superficialis": "Yüzeyel fibular sinir eversiyon ve ayak sırtı duyusuyla ilişkilidir, fakat dorsifleksiyon kaybını tek başına açıklamaz. Dorsifleksiyon ve eversiyonun birlikte bozulması common fibular sinire uyar.",
+          "Nervus tibialis": "Nervus tibialis plantar fleksiyon ve ayak tabanı duyusuyla ilişkilidir. Bu hastada plantar fleksiyon korunmuş, dorsifleksiyon/eversiyon kaybı ön plandadır.",
+          "Nervus femoralis": "Nervus femoralis diz ekstansiyonu ve patella refleksiyle ilişkilidir. Fibula boynu travması ve düşük ayak bulgusu femoral sinire ait değildir."
         },
         "whyWrong": {
-          "Nervus tibialis": "Nervus tibialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-          "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-          "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-          "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler."
+          "Nervus fibularis profundus": "Derin fibular sinir dorsifleksiyon ve birinci web aralığı duyusuyla ilişkilidir. Ancak eversiyon zayıflığı ve geniş ayak sırtı duyusu azalması ortak fibular sinirin daha proksimal etkilenimini düşündürür.",
+          "Nervus fibularis superficialis": "Yüzeyel fibular sinir eversiyon ve ayak sırtı duyusuyla ilişkilidir, fakat dorsifleksiyon kaybını tek başına açıklamaz. Dorsifleksiyon ve eversiyonun birlikte bozulması common fibular sinire uyar.",
+          "Nervus tibialis": "Nervus tibialis plantar fleksiyon ve ayak tabanı duyusuyla ilişkilidir. Bu hastada plantar fleksiyon korunmuş, dorsifleksiyon/eversiyon kaybı ön plandadır.",
+          "Nervus femoralis": "Nervus femoralis diz ekstansiyonu ve patella refleksiyle ilişkilidir. Fibula boynu travması ve düşük ayak bulgusu femoral sinire ait değildir."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Fibula boynu travmasında nervus fibularis communis hasarını düşük ayak bulgusuyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus fibularis communis yanıtını destekler."
+        "learningOutcome": "Fibula boynu travmasında common fibular siniri dalları ve düşük ayak bulgusuyla ilişkilendirebilme.",
+        "coreKnowledge": "Nervus fibularis communis fibula boynu çevresinde yüzeyel seyreder; derin ve yüzeyel dallarıyla dorsifleksiyon, eversiyon ve ayak sırtı duyusunu etkiler."
       },
-      "whyCorrect": "Nervus fibularis communis, vakadaki bulgularla en uyumlu tanıdır. Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir Ayak dorsifleksiyonu ve eversiyonu zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Nervus fibularis communis fibula boynu çevresinde yüzeyel ve yaralanmaya açıktır. Hem dorsifleksiyon hem eversiyon zayıflığı ile ayak sırtı duyusu azalması ana gövde etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Dizin dış yanına travma ve fibula boynu çevresindeki hassasiyet common fibular sinirin yüzeyel seyrini riskli hale getirir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Ayak dorsifleksiyonu ve eversiyonu zayıflamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Dorsifleksiyon ve eversiyonun birlikte zayıflaması deep ve superficial fibular dalların ortak proksimal etkilenimini düşündürür.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Ayak sırtında duyu azalması vardır.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ayak sırtı duyusu azalırken plantar fleksiyonun korunması lezyonu nervus fibularis communise lokalize eder.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus fibularis communis yanıtını destekler.",
-      "examPearl": "İpucu: Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir + ayak dorsifleksiyonu ve eversiyonu zayıflamıştır; bu birliktelik Nervus fibularis communis yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus fibularis communis fibula boynu çevresinde yüzeyel seyreder; derin ve yüzeyel dallarıyla dorsifleksiyon, eversiyon ve ayak sırtı duyusunu etkiler.",
+      "examPearl": "Fibula boynu travması + düşük ayak + ayak sırtı duyusu azalması common fibular sinir hasarıdır.",
       "whyWrong": {
-        "Nervus tibialis": "Nervus tibialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-        "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-        "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-        "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler."
+        "Nervus fibularis profundus": "Derin fibular sinir dorsifleksiyon ve birinci web aralığı duyusuyla ilişkilidir. Ancak eversiyon zayıflığı ve geniş ayak sırtı duyusu azalması ortak fibular sinirin daha proksimal etkilenimini düşündürür.",
+        "Nervus fibularis superficialis": "Yüzeyel fibular sinir eversiyon ve ayak sırtı duyusuyla ilişkilidir, fakat dorsifleksiyon kaybını tek başına açıklamaz. Dorsifleksiyon ve eversiyonun birlikte bozulması common fibular sinire uyar.",
+        "Nervus tibialis": "Nervus tibialis plantar fleksiyon ve ayak tabanı duyusuyla ilişkilidir. Bu hastada plantar fleksiyon korunmuş, dorsifleksiyon/eversiyon kaybı ön plandadır.",
+        "Nervus femoralis": "Nervus femoralis diz ekstansiyonu ve patella refleksiyle ilişkilidir. Fibula boynu travması ve düşük ayak bulgusu femoral sinire ait değildir."
       }
     },
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus fibularis communis yanıtını destekler.",
-    "examPearl": "İpucu: Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir + ayak dorsifleksiyonu ve eversiyonu zayıflamıştır; bu birliktelik Nervus fibularis communis yanıtını öne çıkarır.",
-    "whyCorrect": "Nervus fibularis communis, vakadaki bulgularla en uyumlu tanıdır. Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir Ayak dorsifleksiyonu ve eversiyonu zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "Nervus fibularis communis fibula boynu çevresinde yüzeyel seyreder; derin ve yüzeyel dallarıyla dorsifleksiyon, eversiyon ve ayak sırtı duyusunu etkiler.",
+    "examPearl": "Fibula boynu travması + düşük ayak + ayak sırtı duyusu azalması common fibular sinir hasarıdır.",
+    "whyCorrect": "Nervus fibularis communis fibula boynu çevresinde yüzeyel ve yaralanmaya açıktır. Hem dorsifleksiyon hem eversiyon zayıflığı ile ayak sırtı duyusu azalması ana gövde etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Nervus tibialis": "Nervus tibialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-      "Nervus fibularis communis": "Nervus fibularis communis, olgunun ana tanısal örüntüsünü karşılar. Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir Ayak dorsifleksiyonu ve eversiyonu zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-      "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-      "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler."
+      "Nervus fibularis communis": "Nervus fibularis communis fibula boynu çevresinde yüzeyel ve yaralanmaya açıktır. Hem dorsifleksiyon hem eversiyon zayıflığı ile ayak sırtı duyusu azalması ana gövde etkilenimini gösterir.",
+      "Nervus fibularis profundus": "Derin fibular sinir dorsifleksiyon ve birinci web aralığı duyusuyla ilişkilidir. Ancak eversiyon zayıflığı ve geniş ayak sırtı duyusu azalması ortak fibular sinirin daha proksimal etkilenimini düşündürür.",
+      "Nervus fibularis superficialis": "Yüzeyel fibular sinir eversiyon ve ayak sırtı duyusuyla ilişkilidir, fakat dorsifleksiyon kaybını tek başına açıklamaz. Dorsifleksiyon ve eversiyonun birlikte bozulması common fibular sinire uyar.",
+      "Nervus tibialis": "Nervus tibialis plantar fleksiyon ve ayak tabanı duyusuyla ilişkilidir. Bu hastada plantar fleksiyon korunmuş, dorsifleksiyon/eversiyon kaybı ön plandadır.",
+      "Nervus femoralis": "Nervus femoralis diz ekstansiyonu ve patella refleksiyle ilişkilidir. Fibula boynu travması ve düşük ayak bulgusu femoral sinire ait değildir."
     },
     "evidenceChain": [
       {
-        "text": "Travma dizin dış yanında fibula boynu komşuluğunda gelişmiştir.",
+        "text": "Dizin dış yanına travma ve fibula boynu çevresindeki hassasiyet common fibular sinirin yüzeyel seyrini riskli hale getirir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Ayak dorsifleksiyonu ve eversiyonu zayıflamıştır.",
+        "text": "Dorsifleksiyon ve eversiyonun birlikte zayıflaması deep ve superficial fibular dalların ortak proksimal etkilenimini düşündürür.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Ayak sırtında duyu azalması vardır.",
+        "text": "Ayak sırtı duyusu azalırken plantar fleksiyonun korunması lezyonu nervus fibularis communise lokalize eder.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Nervus tibialis": "Nervus tibialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-      "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-      "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler.",
-      "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus fibularis communis yanıtını destekler."
+      "Nervus fibularis profundus": "Derin fibular sinir dorsifleksiyon ve birinci web aralığı duyusuyla ilişkilidir. Ancak eversiyon zayıflığı ve geniş ayak sırtı duyusu azalması ortak fibular sinirin daha proksimal etkilenimini düşündürür.",
+      "Nervus fibularis superficialis": "Yüzeyel fibular sinir eversiyon ve ayak sırtı duyusuyla ilişkilidir, fakat dorsifleksiyon kaybını tek başına açıklamaz. Dorsifleksiyon ve eversiyonun birlikte bozulması common fibular sinire uyar.",
+      "Nervus tibialis": "Nervus tibialis plantar fleksiyon ve ayak tabanı duyusuyla ilişkilidir. Bu hastada plantar fleksiyon korunmuş, dorsifleksiyon/eversiyon kaybı ön plandadır.",
+      "Nervus femoralis": "Nervus femoralis diz ekstansiyonu ve patella refleksiyle ilişkilidir. Fibula boynu travması ve düşük ayak bulgusu femoral sinire ait değildir."
     }
   },
   {
@@ -66057,16 +66143,16 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Kasık ameliyatı sonrası uyuşma",
     "difficulty": "Zor",
-    "clinicalFocus": "Kasık ameliyatı sonrası uyuşma bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır ve kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır. Bu ipuçlarını kullanarak Nervus ilioinguinalis seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Kasık ameliyatı sonrası uyuşma olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus ilioinguinalis yanıtına ulaşma.",
+    "learningTarget": "İnguinal kanal sinirlerini postoperatif duyu alanlarıyla ayırt edebilme.",
     "demographics": "48 yaşında erkek hasta",
-    "setting": "Klinik değerlendirme",
-    "chiefComplaint": "Hasta, inguinal herni ameliyatından sonra kasık ve skrotum üst kısmında uyuşma nedeniyle başvuruyor.",
-    "stem": "İki hafta önce sağ açık inguinal herni onarımı geçirdiğini, ameliyat sonrası ağrısının azaldığını ancak sağ kasık ve skrotum kökü çevresinde hissizlik fark ettiğini belirtmektedir.",
+    "setting": "Genel cerrahi kontrolü",
+    "chiefComplaint": "Hasta, açık inguinal herni onarımı sonrası sağ kasık ve skrotum üst kısmında uyuşma nedeniyle başvuruyor.",
+    "stem": "İki hafta önce sağ açık inguinal herni onarımı geçirdiğini, ameliyat sonrası ağrısının azaldığını ancak sağ kasık, penis kökü ve skrotum ön-üst kısmında hissizlik fark ettiğini belirtmektedir. Uylukta güçsüzlük tariflemez.",
     "patientIntro": {
-      "profile": "48 yaşında erkek hasta, genel cerrahi kontrolünde değerlendiriliyor.",
-      "presentation": "Hasta, inguinal herni ameliyatından sonra kasık ve skrotum üst kısmında uyuşma nedeniyle başvuruyor.",
-      "historySummary": "İki hafta önce sağ açık inguinal herni onarımı geçirdiğini, ameliyat sonrası ağrısının azaldığını ancak sağ kasık ve skrotum kökü çevresinde hissizlik fark ettiğini belirtmektedir."
+      "profile": "48 yaşında erkek hasta, genel cerrahi kontrolünda değerlendiriliyor.",
+      "presentation": "Hasta, açık inguinal herni onarımı sonrası sağ kasık ve skrotum üst kısmında uyuşma nedeniyle başvuruyor.",
+      "historySummary": "İki hafta önce sağ açık inguinal herni onarımı geçirdiğini, ameliyat sonrası ağrısının azaldığını ancak sağ kasık, penis kökü ve skrotum ön-üst kısmında hissizlik fark ettiğini belirtmektedir. Uylukta güçsüzlük tariflemez."
     },
     "vitals": {
       "TA": "118/76 mmHg",
@@ -66079,7 +66165,7 @@ export const rawCases = [
     "exam": [
       "Sağ inguinal insizyon iyileşmektedir.",
       "Sağ kasık bölgesi, penis kökü ve skrotum ön-üst kısmında hafif duyu azalması vardır.",
-      "Uyluk adduksiyonu ve diz ekstansiyonu korunmuştur."
+      "Uyluk adduksiyonu, diz ekstansiyonu ve perianal duyu korunmuştur."
     ],
     "investigations": [],
     "useSyntheticInvestigationBank": false,
@@ -66088,154 +66174,154 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu hastada etkilenmesi en olası sinir aşağıdakilerden hangisidir?",
+    "question": "Açık inguinal herni onarımı sonrası kasık ve skrotum ön-üst kısmındaki duyu azalmasını en iyi açıklayan sinir etkilenimi hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Nervus ilioinguinalis",
       "options": [
         "Nervus ilioinguinalis",
-        "Nervus obturatorius",
-        "Nervus femoralis",
-        "Nervus ischiadicus",
-        "Nervus pudendus"
+        "Nervus iliohypogastricus",
+        "Ramus genitalis nervi genitofemoralis",
+        "Nervus pudendus",
+        "Nervus obturatorius"
       ],
-      "question": "Bu hastada etkilenmesi en olası sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus ilioinguinalis, vakadaki bulgularla en uyumlu tanıdır. Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır Kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Açık inguinal herni onarımı sonrası kasık ve skrotum ön-üst kısmındaki duyu azalmasını en iyi açıklayan sinir etkilenimi hangisidir?",
+      "explanation": "Nervus ilioinguinalis inguinal kanal içinde seyreder ve skrotum ön-üst kısmı ile kasık bölgesi duyusunu taşır. Açık inguinal herni onarımı sonrası bu alandaki uyuşma bu sinirin etkilenimini destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır + kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır; bu birliktelik Nervus ilioinguinalis yanıtını öne çıkarır."
+          "text": "İnguinal kanal cerrahisi sonrası skrotum ön-üst kısmı ve kasık duyusu azalırsa nervus ilioinguinalis düşünülür."
         }
       ],
       "optionComparison": {
-        "Nervus ilioinguinalis": "Nervus ilioinguinalis, olgunun ana tanısal örüntüsünü karşılar. Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır Kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-        "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-        "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-        "Nervus pudendus": "Nervus pudendus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler."
+        "Nervus ilioinguinalis": "Nervus ilioinguinalis inguinal kanal içinde seyreder ve skrotum ön-üst kısmı ile kasık bölgesi duyusunu taşır. Açık inguinal herni onarımı sonrası bu alandaki uyuşma bu sinirin etkilenimini destekler.",
+        "Nervus iliohypogastricus": "Nervus iliohypogastricus suprapubik bölge ve alt karın duvarı duyusuyla ilişkilidir. Skrotum ön-üst kısmı ve inguinal kanal cerrahisi bulgusu ilioinguinal sinire daha uygundur.",
+        "Ramus genitalis nervi genitofemoralis": "Genitofemoral sinirin genital dalı kremaster refleksi ve skrotal duyunun bir bölümüne katkı verir. Ancak açık inguinal kanal cerrahisinde kasık-skrotum ön-üst duyusu için en klasik sinir ilioinguinalistir.",
+        "Nervus pudendus": "Nervus pudendus perine, dış anal sfinkter ve dış genital duyularıyla ilişkilidir; pudendal kanal ve spina ischiadica çevresinde önemlidir. İnguinal insizyon hattındaki ön skrotal uyuşmayı en iyi açıklamaz.",
+        "Nervus obturatorius": "Nervus obturatorius uyluk adduksiyonu ve medial uyluk duyusuyla ilişkilidir. Bu hastada adduksiyon korunmuş, duyu kaybı inguinal kanal dağılımındadır."
       },
       "answerFeedback": {
-        "summary": "Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır Kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır. Bu bulgular tanısal karar açısından Nervus ilioinguinalis yanıtını destekler.",
-        "whyCorrect": "Nervus ilioinguinalis, vakadaki bulgularla en uyumlu tanıdır. Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır Kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "rationale": "Nervus ilioinguinalis, vakadaki bulgularla en uyumlu tanıdır. Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır Kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "correctOptionFeedback": "Nervus ilioinguinalis inguinal kanal bölgesinden geçer ve anterior skrotal-kasık duyusunu sağladığı için bu tabloyu açıklar.",
+        "summary": "Bu olguda karar, uyuşmanın açık inguinal herni onarımı sonrası başlaması inguinal kanal içindeki sinirleri riskli hale getirir. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus ilioinguinalis inguinal kanal içinde seyreder ve skrotum ön-üst kısmı ile kasık bölgesi duyusunu taşır. Açık inguinal herni onarımı sonrası bu alandaki uyuşma bu sinirin etkilenimini destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus ilioinguinalis inguinal kanal içinde seyreder ve skrotum ön-üst kısmı ile kasık bölgesi duyusunu taşır. Açık inguinal herni onarımı sonrası bu alandaki uyuşma bu sinirin etkilenimini destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus ilioinguinalis inguinal kanal içinde seyreder ve skrotum ön-üst kısmı ile kasık bölgesi duyusunu taşır. Açık inguinal herni onarımı sonrası bu alandaki uyuşma bu sinirin etkilenimini destekler.",
         "keyClues": [
-          "Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır.",
-          "Kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır.",
-          "Uyluk adduksiyonu ve diz ekstansiyonu korunmuştur."
+          "Uyuşmanın açık inguinal herni onarımı sonrası başlaması inguinal kanal içindeki sinirleri riskli hale getirir.",
+          "Duyu kaybının kasık, penis kökü ve skrotum ön-üst kısmında olması nervus ilioinguinalis dağılımına uyar.",
+          "Uyluk adduksiyonu ve diz ekstansiyonunun korunması obturator ve femoral sinir lezyonlarını geri plana iter."
         ],
         "evidenceChain": [
           {
-            "text": "Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır.",
+            "text": "Uyuşmanın açık inguinal herni onarımı sonrası başlaması inguinal kanal içindeki sinirleri riskli hale getirir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır.",
+            "text": "Duyu kaybının kasık, penis kökü ve skrotum ön-üst kısmında olması nervus ilioinguinalis dağılımına uyar.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Uyluk adduksiyonu ve diz ekstansiyonu korunmuştur.",
+            "text": "Uyluk adduksiyonu ve diz ekstansiyonunun korunması obturator ve femoral sinir lezyonlarını geri plana iter.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır + kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır; bu birliktelik Nervus ilioinguinalis yanıtını öne çıkarır.",
+        "examPearl": "İnguinal kanal cerrahisi sonrası skrotum ön-üst kısmı ve kasık duyusu azalırsa nervus ilioinguinalis düşünülür.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "İnguinal kanal cerrahisinden sonra kasık ve anterior skrotal duyu kaybında nervus ilioinguinalis düşünülür."
+            "text": "İnguinal kanal cerrahisi sonrası skrotum ön-üst kısmı ve kasık duyusu azalırsa nervus ilioinguinalis düşünülür."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "İnguinal kanal cerrahisinden sonra kasık ve anterior skrotal duyu kaybında nervus ilioinguinalis düşünülür."
+            "label": "Klinik anatomi",
+            "text": "Nervus ilioinguinalis inguinal kanal içinde seyreder ve erkeklerde skrotum ön-üst kısmı ile penis kökü/inguinal bölge duyusunu taşır; açık herni onarımında risk altındadır."
           }
         ],
         "optionComparison": {
-          "Nervus ilioinguinalis": "Nervus ilioinguinalis, olgunun ana tanısal örüntüsünü karşılar. Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır Kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-          "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-          "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-          "Nervus pudendus": "Nervus pudendus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler."
+          "Nervus ilioinguinalis": "Nervus ilioinguinalis inguinal kanal içinde seyreder ve skrotum ön-üst kısmı ile kasık bölgesi duyusunu taşır. Açık inguinal herni onarımı sonrası bu alandaki uyuşma bu sinirin etkilenimini destekler.",
+          "Nervus iliohypogastricus": "Nervus iliohypogastricus suprapubik bölge ve alt karın duvarı duyusuyla ilişkilidir. Skrotum ön-üst kısmı ve inguinal kanal cerrahisi bulgusu ilioinguinal sinire daha uygundur.",
+          "Ramus genitalis nervi genitofemoralis": "Genitofemoral sinirin genital dalı kremaster refleksi ve skrotal duyunun bir bölümüne katkı verir. Ancak açık inguinal kanal cerrahisinde kasık-skrotum ön-üst duyusu için en klasik sinir ilioinguinalistir.",
+          "Nervus pudendus": "Nervus pudendus perine, dış anal sfinkter ve dış genital duyularıyla ilişkilidir; pudendal kanal ve spina ischiadica çevresinde önemlidir. İnguinal insizyon hattındaki ön skrotal uyuşmayı en iyi açıklamaz.",
+          "Nervus obturatorius": "Nervus obturatorius uyluk adduksiyonu ve medial uyluk duyusuyla ilişkilidir. Bu hastada adduksiyon korunmuş, duyu kaybı inguinal kanal dağılımındadır."
         },
         "whyWrong": {
-          "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-          "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-          "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-          "Nervus pudendus": "Nervus pudendus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler."
+          "Nervus iliohypogastricus": "Nervus iliohypogastricus suprapubik bölge ve alt karın duvarı duyusuyla ilişkilidir. Skrotum ön-üst kısmı ve inguinal kanal cerrahisi bulgusu ilioinguinal sinire daha uygundur.",
+          "Ramus genitalis nervi genitofemoralis": "Genitofemoral sinirin genital dalı kremaster refleksi ve skrotal duyunun bir bölümüne katkı verir. Ancak açık inguinal kanal cerrahisinde kasık-skrotum ön-üst duyusu için en klasik sinir ilioinguinalistir.",
+          "Nervus pudendus": "Nervus pudendus perine, dış anal sfinkter ve dış genital duyularıyla ilişkilidir; pudendal kanal ve spina ischiadica çevresinde önemlidir. İnguinal insizyon hattındaki ön skrotal uyuşmayı en iyi açıklamaz.",
+          "Nervus obturatorius": "Nervus obturatorius uyluk adduksiyonu ve medial uyluk duyusuyla ilişkilidir. Bu hastada adduksiyon korunmuş, duyu kaybı inguinal kanal dağılımındadır."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "İnguinal herni onarımı sonrası nervus ilioinguinalis hasarını duyu alanıyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus ilioinguinalis yanıtını destekler."
+        "learningOutcome": "İnguinal kanal sinirlerini postoperatif duyu alanlarıyla ayırt edebilme.",
+        "coreKnowledge": "Nervus ilioinguinalis inguinal kanal içinde seyreder ve erkeklerde skrotum ön-üst kısmı ile penis kökü/inguinal bölge duyusunu taşır; açık herni onarımında risk altındadır."
       },
-      "whyCorrect": "Nervus ilioinguinalis, vakadaki bulgularla en uyumlu tanıdır. Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır Kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Nervus ilioinguinalis inguinal kanal içinde seyreder ve skrotum ön-üst kısmı ile kasık bölgesi duyusunu taşır. Açık inguinal herni onarımı sonrası bu alandaki uyuşma bu sinirin etkilenimini destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Uyuşmanın açık inguinal herni onarımı sonrası başlaması inguinal kanal içindeki sinirleri riskli hale getirir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Duyu kaybının kasık, penis kökü ve skrotum ön-üst kısmında olması nervus ilioinguinalis dağılımına uyar.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Uyluk adduksiyonu ve diz ekstansiyonu korunmuştur.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Uyluk adduksiyonu ve diz ekstansiyonunun korunması obturator ve femoral sinir lezyonlarını geri plana iter.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus ilioinguinalis yanıtını destekler.",
-      "examPearl": "İpucu: Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır + kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır; bu birliktelik Nervus ilioinguinalis yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus ilioinguinalis inguinal kanal içinde seyreder ve erkeklerde skrotum ön-üst kısmı ile penis kökü/inguinal bölge duyusunu taşır; açık herni onarımında risk altındadır.",
+      "examPearl": "İnguinal kanal cerrahisi sonrası skrotum ön-üst kısmı ve kasık duyusu azalırsa nervus ilioinguinalis düşünülür.",
       "whyWrong": {
-        "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-        "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-        "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-        "Nervus pudendus": "Nervus pudendus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler."
+        "Nervus iliohypogastricus": "Nervus iliohypogastricus suprapubik bölge ve alt karın duvarı duyusuyla ilişkilidir. Skrotum ön-üst kısmı ve inguinal kanal cerrahisi bulgusu ilioinguinal sinire daha uygundur.",
+        "Ramus genitalis nervi genitofemoralis": "Genitofemoral sinirin genital dalı kremaster refleksi ve skrotal duyunun bir bölümüne katkı verir. Ancak açık inguinal kanal cerrahisinde kasık-skrotum ön-üst duyusu için en klasik sinir ilioinguinalistir.",
+        "Nervus pudendus": "Nervus pudendus perine, dış anal sfinkter ve dış genital duyularıyla ilişkilidir; pudendal kanal ve spina ischiadica çevresinde önemlidir. İnguinal insizyon hattındaki ön skrotal uyuşmayı en iyi açıklamaz.",
+        "Nervus obturatorius": "Nervus obturatorius uyluk adduksiyonu ve medial uyluk duyusuyla ilişkilidir. Bu hastada adduksiyon korunmuş, duyu kaybı inguinal kanal dağılımındadır."
       }
     },
     "difficultyTag": "Zor",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus ilioinguinalis yanıtını destekler.",
-    "examPearl": "İpucu: Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır + kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır; bu birliktelik Nervus ilioinguinalis yanıtını öne çıkarır.",
-    "whyCorrect": "Nervus ilioinguinalis, vakadaki bulgularla en uyumlu tanıdır. Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır Kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "Nervus ilioinguinalis inguinal kanal içinde seyreder ve erkeklerde skrotum ön-üst kısmı ile penis kökü/inguinal bölge duyusunu taşır; açık herni onarımında risk altındadır.",
+    "examPearl": "İnguinal kanal cerrahisi sonrası skrotum ön-üst kısmı ve kasık duyusu azalırsa nervus ilioinguinalis düşünülür.",
+    "whyCorrect": "Nervus ilioinguinalis inguinal kanal içinde seyreder ve skrotum ön-üst kısmı ile kasık bölgesi duyusunu taşır. Açık inguinal herni onarımı sonrası bu alandaki uyuşma bu sinirin etkilenimini destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Nervus ilioinguinalis": "Nervus ilioinguinalis, olgunun ana tanısal örüntüsünü karşılar. Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır Kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-      "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-      "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-      "Nervus pudendus": "Nervus pudendus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler."
+      "Nervus ilioinguinalis": "Nervus ilioinguinalis inguinal kanal içinde seyreder ve skrotum ön-üst kısmı ile kasık bölgesi duyusunu taşır. Açık inguinal herni onarımı sonrası bu alandaki uyuşma bu sinirin etkilenimini destekler.",
+      "Nervus iliohypogastricus": "Nervus iliohypogastricus suprapubik bölge ve alt karın duvarı duyusuyla ilişkilidir. Skrotum ön-üst kısmı ve inguinal kanal cerrahisi bulgusu ilioinguinal sinire daha uygundur.",
+      "Ramus genitalis nervi genitofemoralis": "Genitofemoral sinirin genital dalı kremaster refleksi ve skrotal duyunun bir bölümüne katkı verir. Ancak açık inguinal kanal cerrahisinde kasık-skrotum ön-üst duyusu için en klasik sinir ilioinguinalistir.",
+      "Nervus pudendus": "Nervus pudendus perine, dış anal sfinkter ve dış genital duyularıyla ilişkilidir; pudendal kanal ve spina ischiadica çevresinde önemlidir. İnguinal insizyon hattındaki ön skrotal uyuşmayı en iyi açıklamaz.",
+      "Nervus obturatorius": "Nervus obturatorius uyluk adduksiyonu ve medial uyluk duyusuyla ilişkilidir. Bu hastada adduksiyon korunmuş, duyu kaybı inguinal kanal dağılımındadır."
     },
     "evidenceChain": [
       {
-        "text": "Duyu kaybı açık inguinal herni onarımı sonrası başlamıştır.",
+        "text": "Uyuşmanın açık inguinal herni onarımı sonrası başlaması inguinal kanal içindeki sinirleri riskli hale getirir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Kasık bölgesi ve skrotum ön-üst kısmında his azalması vardır.",
+        "text": "Duyu kaybının kasık, penis kökü ve skrotum ön-üst kısmında olması nervus ilioinguinalis dağılımına uyar.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Uyluk adduksiyonu ve diz ekstansiyonu korunmuştur.",
+        "text": "Uyluk adduksiyonu ve diz ekstansiyonunun korunması obturator ve femoral sinir lezyonlarını geri plana iter.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-      "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-      "Nervus ischiadicus": "Nervus ischiadicus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler.",
-      "Nervus pudendus": "Nervus pudendus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus ilioinguinalis yanıtını destekler."
+      "Nervus iliohypogastricus": "Nervus iliohypogastricus suprapubik bölge ve alt karın duvarı duyusuyla ilişkilidir. Skrotum ön-üst kısmı ve inguinal kanal cerrahisi bulgusu ilioinguinal sinire daha uygundur.",
+      "Ramus genitalis nervi genitofemoralis": "Genitofemoral sinirin genital dalı kremaster refleksi ve skrotal duyunun bir bölümüne katkı verir. Ancak açık inguinal kanal cerrahisinde kasık-skrotum ön-üst duyusu için en klasik sinir ilioinguinalistir.",
+      "Nervus pudendus": "Nervus pudendus perine, dış anal sfinkter ve dış genital duyularıyla ilişkilidir; pudendal kanal ve spina ischiadica çevresinde önemlidir. İnguinal insizyon hattındaki ön skrotal uyuşmayı en iyi açıklamaz.",
+      "Nervus obturatorius": "Nervus obturatorius uyluk adduksiyonu ve medial uyluk duyusuyla ilişkilidir. Bu hastada adduksiyon korunmuş, duyu kaybı inguinal kanal dağılımındadır."
     }
   },
   {
@@ -78571,16 +78657,16 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Gece artan el uyuşması",
     "difficulty": "Kolay",
-    "clinicalFocus": "Gece artan el uyuşması bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Uyuşma ilk üç parmakta ve gece belirginleşmektedir ve tenar atrofi ve başparmak opozisyon zayıflığı vardır. Bu ipuçlarını kullanarak Nervus medianus seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Gece artan el uyuşması olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus medianus yanıtına ulaşma.",
+    "learningTarget": "Karpal tünel sendromunu median sinirin motor-duyu dağılımı ve palmar kutanöz dal ayrımıyla çözebilme.",
     "demographics": "46 yaşında kadın hasta",
-    "setting": "nöroloji polikliniğinde değerlendiriliyor",
-    "chiefComplaint": "Hasta, sağ elde gece artan uyuşma ve kavrama güçlüğü nedeniyle başvuruyor.",
-    "stem": "Yakınmalarının özellikle ilk üç parmakta belirgin olduğunu, gece uykudan uyandırdığını ve elini sallayınca kısmen azaldığını belirtmektedir. Uzun süre bilgisayar kullandığı öğreniliyor.",
+    "setting": "Nöroloji polikliniği",
+    "chiefComplaint": "Hasta, sağ elde gece uykudan uyandıran uyuşma ve kavrama güçlüğü nedeniyle başvuruyor.",
+    "stem": "Yakınmalarının özellikle ilk üç parmakta belirgin olduğunu, elini sallayınca kısmen azaldığını ve uzun süre bilgisayar kullandığında arttığını belirtmektedir. Beşinci parmakta belirgin uyuşma veya dirsek travması yoktur.",
     "patientIntro": {
       "profile": "46 yaşında kadın hasta, nöroloji polikliniğinde değerlendiriliyor.",
-      "presentation": "Hasta, sağ elde gece artan uyuşma ve kavrama güçlüğü nedeniyle başvuruyor.",
-      "historySummary": "Yakınmalarının özellikle ilk üç parmakta belirgin olduğunu, gece uykudan uyandırdığını ve elini sallayınca kısmen azaldığını belirtmektedir. Uzun süre bilgisayar kullandığı öğreniliyor."
+      "presentation": "Hasta, sağ elde gece uykudan uyandıran uyuşma ve kavrama güçlüğü nedeniyle başvuruyor.",
+      "historySummary": "Yakınmalarının özellikle ilk üç parmakta belirgin olduğunu, elini sallayınca kısmen azaldığını ve uzun süre bilgisayar kullandığında arttığını belirtmektedir. Beşinci parmakta belirgin uyuşma veya dirsek travması yoktur."
     },
     "vitals": {
       "TA": "118/76 mmHg",
@@ -78594,7 +78680,7 @@ export const rawCases = [
       "Sağ elde tenar bölgede hafif atrofi izlenir.",
       "Başparmak opozisyonu zayıftır.",
       "İlk üç parmak ve dördüncü parmağın radial yarısında duyu azalması vardır.",
-      "Tinel testi el bileğinde pozitiftir."
+      "Tinel testi el bileğinde pozitiftir; avuç içi tenar deri duyusu belirgin korunmuştur."
     ],
     "investigations": [],
     "useSyntheticInvestigationBank": false,
@@ -78603,7 +78689,7 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu hastada basıya uğrayan sinir aşağıdakilerden hangisidir?",
+    "question": "Gece artan parestezi, tenar zayıflık ve karpal tünel düzeyindeki iletim yavaşlamasını açıklayan yapı hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
@@ -78611,133 +78697,146 @@ export const rawCases = [
       "options": [
         "Nervus medianus",
         "Nervus ulnaris",
-        "Nervus radialis",
-        "Nervus musculocutaneus",
-        "Nervus axillaris"
+        "Nervus radialis superficialis",
+        "Nervus interosseus anterior",
+        "Ramus palmaris nervi mediani"
       ],
-      "question": "Bu hastada basıya uğrayan sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus medianus, vakadaki bulgularla en uyumlu tanıdır. Uyuşma ilk üç parmakta ve gece belirginleşmektedir Tenar atrofi ve başparmak opozisyon zayıflığı vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Gece artan parestezi, tenar zayıflık ve karpal tünel düzeyindeki iletim yavaşlamasını açıklayan yapı hangisidir?",
+      "explanation": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Uyuşma ilk üç parmakta ve gece belirginleşmektedir + tenar atrofi ve başparmak opozisyon zayıflığı vardır; bu birliktelik Nervus medianus yanıtını öne çıkarır."
+          "text": "Karpal tünelde median sinir tutulur; avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini hatırlatır."
         }
       ],
       "optionComparison": {
-        "Nervus medianus": "Nervus medianus, olgunun ana tanısal örüntüsünü karşılar. Uyuşma ilk üç parmakta ve gece belirginleşmektedir Tenar atrofi ve başparmak opozisyon zayıflığı vardır. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-        "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-        "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-        "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler."
+        "Nervus medianus": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler.",
+        "Nervus ulnaris": "Nervus ulnaris Guyon kanalı veya kubital tünelde basıya uğrayabilir; dördüncü-beşinci parmak duyusu ve interosseöz kaslar etkilenir. İlk üç parmak ve tenar opozisyon ağırlıklı bulgu median sinire uyar.",
+        "Nervus radialis superficialis": "Nervus radialis superficialis el sırtının radial duyusuyla ilişkilidir ve motor tenar kas kaybı yapmaz. Gece artan karpal tünel tipi paresteziyi açıklamaz.",
+        "Nervus interosseus anterior": "Nervus interosseus anterior median sinirin motor dalıdır; pronator quadratus, flexor pollicis longus ve lateral FDP etkilenir, duyu kaybı yapmaz. Bu vakadaki parmak duyusu azalması ana sinir basısını gösterir.",
+        "Ramus palmaris nervi mediani": "Median sinirin palmar kutanöz dalı karpal tünelin dışından geçer ve tenar avuç içi duyusunu taşır. Bu dalın korunması, basının karpal tüneldeki ana median sinirde olduğunu destekler; kendisi bası altında kalan ana yapı değildir."
       },
       "answerFeedback": {
-        "summary": "Uyuşma ilk üç parmakta ve gece belirginleşmektedir Tenar atrofi ve başparmak opozisyon zayıflığı vardır. Bu bulgular tanısal karar açısından Nervus medianus yanıtını destekler.",
+        "summary": "Bu olguda karar, gece uykudan uyandıran ilk üç parmak parestezisi karpal tünel sendromu için tipik klinik ipucudur. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler.",
         "keyClues": [
-          "Uyuşma ilk üç parmakta ve gece belirginleşmektedir.",
-          "Tenar atrofi ve başparmak opozisyon zayıflığı vardır.",
-          "Tinel testi el bileğinde pozitiftir."
+          "Gece uykudan uyandıran ilk üç parmak parestezisi karpal tünel sendromu için tipik klinik ipucudur.",
+          "Tenar atrofi ve başparmak opozisyon zayıflığı median sinirin motor dal etkilenimini gösterir.",
+          "Avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini destekler."
         ],
-        "examPearl": "İpucu: Uyuşma ilk üç parmakta ve gece belirginleşmektedir + tenar atrofi ve başparmak opozisyon zayıflığı vardır; bu birliktelik Nervus medianus yanıtını öne çıkarır.",
         "evidenceChain": [
           {
-            "text": "Uyuşma ilk üç parmakta ve gece belirginleşmektedir.",
+            "text": "Gece uykudan uyandıran ilk üç parmak parestezisi karpal tünel sendromu için tipik klinik ipucudur.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Tenar atrofi ve başparmak opozisyon zayıflığı vardır.",
+            "text": "Tenar atrofi ve başparmak opozisyon zayıflığı median sinirin motor dal etkilenimini gösterir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Tinel testi el bileğinde pozitiftir.",
+            "text": "Avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini destekler.",
             "weight": "medium",
             "source": "case"
           }
         ],
+        "examPearl": "Karpal tünelde median sinir tutulur; avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini hatırlatır.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Karpal tünelde median sinir tutulur; avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini hatırlatır."
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "label": "Klinik anatomi",
+            "text": "Karpal tünelden nervus medianus ve fleksör tendonlar geçer; median sinir basısında ilk üç buçuk parmakta parestezi, tenar zayıflık ve opozisyon kaybı gelişir. Palmar kutanöz dal tünelden geçmediği için tenar avuç içi duyusu korunabilir."
+          }
+        ],
         "optionComparison": {
-          "Nervus medianus": "Nervus medianus, olgunun ana tanısal örüntüsünü karşılar. Uyuşma ilk üç parmakta ve gece belirginleşmektedir Tenar atrofi ve başparmak opozisyon zayıflığı vardır. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-          "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-          "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-          "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler."
+          "Nervus medianus": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler.",
+          "Nervus ulnaris": "Nervus ulnaris Guyon kanalı veya kubital tünelde basıya uğrayabilir; dördüncü-beşinci parmak duyusu ve interosseöz kaslar etkilenir. İlk üç parmak ve tenar opozisyon ağırlıklı bulgu median sinire uyar.",
+          "Nervus radialis superficialis": "Nervus radialis superficialis el sırtının radial duyusuyla ilişkilidir ve motor tenar kas kaybı yapmaz. Gece artan karpal tünel tipi paresteziyi açıklamaz.",
+          "Nervus interosseus anterior": "Nervus interosseus anterior median sinirin motor dalıdır; pronator quadratus, flexor pollicis longus ve lateral FDP etkilenir, duyu kaybı yapmaz. Bu vakadaki parmak duyusu azalması ana sinir basısını gösterir.",
+          "Ramus palmaris nervi mediani": "Median sinirin palmar kutanöz dalı karpal tünelin dışından geçer ve tenar avuç içi duyusunu taşır. Bu dalın korunması, basının karpal tüneldeki ana median sinirde olduğunu destekler; kendisi bası altında kalan ana yapı değildir."
         },
-        "rationale": "Nervus medianus, vakadaki bulgularla en uyumlu tanıdır. Uyuşma ilk üç parmakta ve gece belirginleşmektedir Tenar atrofi ve başparmak opozisyon zayıflığı vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "whyCorrect": "Nervus medianus, vakadaki bulgularla en uyumlu tanıdır. Uyuşma ilk üç parmakta ve gece belirginleşmektedir Tenar atrofi ve başparmak opozisyon zayıflığı vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
         "whyWrong": {
-          "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-          "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-          "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-          "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler."
+          "Nervus ulnaris": "Nervus ulnaris Guyon kanalı veya kubital tünelde basıya uğrayabilir; dördüncü-beşinci parmak duyusu ve interosseöz kaslar etkilenir. İlk üç parmak ve tenar opozisyon ağırlıklı bulgu median sinire uyar.",
+          "Nervus radialis superficialis": "Nervus radialis superficialis el sırtının radial duyusuyla ilişkilidir ve motor tenar kas kaybı yapmaz. Gece artan karpal tünel tipi paresteziyi açıklamaz.",
+          "Nervus interosseus anterior": "Nervus interosseus anterior median sinirin motor dalıdır; pronator quadratus, flexor pollicis longus ve lateral FDP etkilenir, duyu kaybı yapmaz. Bu vakadaki parmak duyusu azalması ana sinir basısını gösterir.",
+          "Ramus palmaris nervi mediani": "Median sinirin palmar kutanöz dalı karpal tünelin dışından geçer ve tenar avuç içi duyusunu taşır. Bu dalın korunması, basının karpal tüneldeki ana median sinirde olduğunu destekler; kendisi bası altında kalan ana yapı değildir."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Karpal tünel sendromunda nervus medianus basısını motor ve duyu bulgularıyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus medianus yanıtını destekler."
+        "learningOutcome": "Karpal tünel sendromunu median sinirin motor-duyu dağılımı ve palmar kutanöz dal ayrımıyla çözebilme.",
+        "coreKnowledge": "Karpal tünelden nervus medianus ve fleksör tendonlar geçer; median sinir basısında ilk üç buçuk parmakta parestezi, tenar zayıflık ve opozisyon kaybı gelişir. Palmar kutanöz dal tünelden geçmediği için tenar avuç içi duyusu korunabilir."
       },
-      "whyCorrect": "Nervus medianus, vakadaki bulgularla en uyumlu tanıdır. Uyuşma ilk üç parmakta ve gece belirginleşmektedir Tenar atrofi ve başparmak opozisyon zayıflığı vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Uyuşma ilk üç parmakta ve gece belirginleşmektedir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Gece uykudan uyandıran ilk üç parmak parestezisi karpal tünel sendromu için tipik klinik ipucudur.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Tenar atrofi ve başparmak opozisyon zayıflığı vardır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Tenar atrofi ve başparmak opozisyon zayıflığı median sinirin motor dal etkilenimini gösterir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Tinel testi el bileğinde pozitiftir.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini destekler.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus medianus yanıtını destekler.",
-      "examPearl": "İpucu: Uyuşma ilk üç parmakta ve gece belirginleşmektedir + tenar atrofi ve başparmak opozisyon zayıflığı vardır; bu birliktelik Nervus medianus yanıtını öne çıkarır.",
+      "coreKnowledge": "Karpal tünelden nervus medianus ve fleksör tendonlar geçer; median sinir basısında ilk üç buçuk parmakta parestezi, tenar zayıflık ve opozisyon kaybı gelişir. Palmar kutanöz dal tünelden geçmediği için tenar avuç içi duyusu korunabilir.",
+      "examPearl": "Karpal tünelde median sinir tutulur; avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini hatırlatır.",
       "whyWrong": {
-        "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-        "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-        "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-        "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler."
+        "Nervus ulnaris": "Nervus ulnaris Guyon kanalı veya kubital tünelde basıya uğrayabilir; dördüncü-beşinci parmak duyusu ve interosseöz kaslar etkilenir. İlk üç parmak ve tenar opozisyon ağırlıklı bulgu median sinire uyar.",
+        "Nervus radialis superficialis": "Nervus radialis superficialis el sırtının radial duyusuyla ilişkilidir ve motor tenar kas kaybı yapmaz. Gece artan karpal tünel tipi paresteziyi açıklamaz.",
+        "Nervus interosseus anterior": "Nervus interosseus anterior median sinirin motor dalıdır; pronator quadratus, flexor pollicis longus ve lateral FDP etkilenir, duyu kaybı yapmaz. Bu vakadaki parmak duyusu azalması ana sinir basısını gösterir.",
+        "Ramus palmaris nervi mediani": "Median sinirin palmar kutanöz dalı karpal tünelin dışından geçer ve tenar avuç içi duyusunu taşır. Bu dalın korunması, basının karpal tüneldeki ana median sinirde olduğunu destekler; kendisi bası altında kalan ana yapı değildir."
       }
     },
-    "whyCorrect": "Nervus medianus, vakadaki bulgularla en uyumlu tanıdır. Uyuşma ilk üç parmakta ve gece belirginleşmektedir Tenar atrofi ve başparmak opozisyon zayıflığı vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "whyCorrect": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "evidenceChain": [
       {
-        "text": "Uyuşma ilk üç parmakta ve gece belirginleşmektedir.",
+        "text": "Gece uykudan uyandıran ilk üç parmak parestezisi karpal tünel sendromu için tipik klinik ipucudur.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Tenar atrofi ve başparmak opozisyon zayıflığı vardır.",
+        "text": "Tenar atrofi ve başparmak opozisyon zayıflığı median sinirin motor dal etkilenimini gösterir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Tinel testi el bileğinde pozitiftir.",
+        "text": "Avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini destekler.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus medianus yanıtını destekler.",
-    "examPearl": "İpucu: Uyuşma ilk üç parmakta ve gece belirginleşmektedir + tenar atrofi ve başparmak opozisyon zayıflığı vardır; bu birliktelik Nervus medianus yanıtını öne çıkarır.",
+    "coreKnowledge": "Karpal tünelden nervus medianus ve fleksör tendonlar geçer; median sinir basısında ilk üç buçuk parmakta parestezi, tenar zayıflık ve opozisyon kaybı gelişir. Palmar kutanöz dal tünelden geçmediği için tenar avuç içi duyusu korunabilir.",
+    "examPearl": "Karpal tünelde median sinir tutulur; avuç içi tenar deri duyusunun korunması palmar kutanöz dalın tünel dışından geçtiğini hatırlatır.",
     "optionComparison": {
-      "Nervus medianus": "Nervus medianus, olgunun ana tanısal örüntüsünü karşılar. Uyuşma ilk üç parmakta ve gece belirginleşmektedir Tenar atrofi ve başparmak opozisyon zayıflığı vardır. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-      "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-      "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-      "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler."
+      "Nervus medianus": "Nervus medianus karpal tünelden geçer; tenar kasların çoğunu ve ilk üç buçuk parmağın duyusunu etkiler. Gece artan parestezi, başparmak opozisyon zayıflığı ve el bileği düzeyinde iletim yavaşlaması median sinir basısını destekler.",
+      "Nervus ulnaris": "Nervus ulnaris Guyon kanalı veya kubital tünelde basıya uğrayabilir; dördüncü-beşinci parmak duyusu ve interosseöz kaslar etkilenir. İlk üç parmak ve tenar opozisyon ağırlıklı bulgu median sinire uyar.",
+      "Nervus radialis superficialis": "Nervus radialis superficialis el sırtının radial duyusuyla ilişkilidir ve motor tenar kas kaybı yapmaz. Gece artan karpal tünel tipi paresteziyi açıklamaz.",
+      "Nervus interosseus anterior": "Nervus interosseus anterior median sinirin motor dalıdır; pronator quadratus, flexor pollicis longus ve lateral FDP etkilenir, duyu kaybı yapmaz. Bu vakadaki parmak duyusu azalması ana sinir basısını gösterir.",
+      "Ramus palmaris nervi mediani": "Median sinirin palmar kutanöz dalı karpal tünelin dışından geçer ve tenar avuç içi duyusunu taşır. Bu dalın korunması, basının karpal tüneldeki ana median sinirde olduğunu destekler; kendisi bası altında kalan ana yapı değildir."
     },
     "whyWrong": {
-      "Nervus ulnaris": "Nervus ulnaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-      "Nervus radialis": "Nervus radialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-      "Nervus musculocutaneus": "Nervus musculocutaneus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler.",
-      "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus medianus yanıtını destekler."
+      "Nervus ulnaris": "Nervus ulnaris Guyon kanalı veya kubital tünelde basıya uğrayabilir; dördüncü-beşinci parmak duyusu ve interosseöz kaslar etkilenir. İlk üç parmak ve tenar opozisyon ağırlıklı bulgu median sinire uyar.",
+      "Nervus radialis superficialis": "Nervus radialis superficialis el sırtının radial duyusuyla ilişkilidir ve motor tenar kas kaybı yapmaz. Gece artan karpal tünel tipi paresteziyi açıklamaz.",
+      "Nervus interosseus anterior": "Nervus interosseus anterior median sinirin motor dalıdır; pronator quadratus, flexor pollicis longus ve lateral FDP etkilenir, duyu kaybı yapmaz. Bu vakadaki parmak duyusu azalması ana sinir basısını gösterir.",
+      "Ramus palmaris nervi mediani": "Median sinirin palmar kutanöz dalı karpal tünelin dışından geçer ve tenar avuç içi duyusunu taşır. Bu dalın korunması, basının karpal tüneldeki ana median sinirde olduğunu destekler; kendisi bası altında kalan ana yapı değildir."
     }
   },
   {
@@ -78747,14 +78846,14 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Tiroid ameliyatı sonrası ses kısıklığı",
     "difficulty": "Zor",
-    "clinicalFocus": "Tiroid ameliyatı sonrası ses kısıklığı bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Ses kısıklığı total tiroidektomi sonrası başlamıştır ve laringoskopide sağ vokal kord hareketi azalmıştır. Bu ipuçlarını kullanarak Nervus laryngeus recurrens seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Tiroid ameliyatı sonrası ses kısıklığı olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus laryngeus recurrens yanıtına ulaşma.",
+    "learningTarget": "Tiroid cerrahisi komplikasyonlarında larenks sinirlerini fonksiyonel bulgularla ayırt edebilme.",
     "demographics": "52 yaşında kadın hasta",
-    "setting": "endokrin cerrahi kontrolünde değerlendiriliyor",
+    "setting": "Endokrin cerrahi kontrolü",
     "chiefComplaint": "Hasta, tiroid ameliyatı sonrası başlayan ses kısıklığı ve çabuk yorulan ses nedeniyle başvuruyor.",
     "stem": "Multinodüler guatr nedeniyle total tiroidektomi geçirdiği öğreniliyor. Ameliyat sonrası yutma sırasında belirgin aspirasyon tariflemiyor ancak konuşurken sesinin kısık ve zayıf çıktığını belirtmektedir.",
     "patientIntro": {
-      "profile": "52 yaşında kadın hasta, endokrin cerrahi kontrolünde değerlendiriliyor.",
+      "profile": "52 yaşında kadın hasta, endokrin cerrahi kontrolünda değerlendiriliyor.",
       "presentation": "Hasta, tiroid ameliyatı sonrası başlayan ses kısıklığı ve çabuk yorulan ses nedeniyle başvuruyor.",
       "historySummary": "Multinodüler guatr nedeniyle total tiroidektomi geçirdiği öğreniliyor. Ameliyat sonrası yutma sırasında belirgin aspirasyon tariflemiyor ancak konuşurken sesinin kısık ve zayıf çıktığını belirtmektedir."
     },
@@ -78768,9 +78867,9 @@ export const rawCases = [
     },
     "exam": [
       "Ses kalitesi boğuk ve kısıktır.",
+      "Laringoskopide sağ vokal kord hareketinin azaldığı bildirilmiştir.",
       "Dil hareketleri simetriktir ve belirgin deviasyon yoktur.",
-      "Omuz elevasyonu korunmuştur.",
-      "Laringoskopide sağ vokal kord hareketinin azaldığı bildirilmiştir."
+      "Omuz elevasyonu korunmuştur."
     ],
     "investigations": [],
     "useSyntheticInvestigationBank": false,
@@ -78779,141 +78878,154 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu hastadaki bulguları en iyi açıklayan sinir hasarı aşağıdakilerden hangisidir?",
+    "question": "Tiroid cerrahisi sonrası yeni başlayan ses kısıklığı ve vokal kord hareket azalmasını en iyi açıklayan sinir hasarı hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Nervus laryngeus recurrens",
       "options": [
-        "Nervus hypoglossus",
         "Nervus laryngeus recurrens",
-        "Nervus accessorius",
+        "Nervus laryngeus superior - ramus externus",
+        "Nervus hypoglossus",
         "Nervus glossopharyngeus",
-        "Nervus facialis"
+        "Nervus accessorius"
       ],
-      "question": "Bu hastadaki bulguları en iyi açıklayan sinir hasarı aşağıdakilerden hangisidir?",
-      "explanation": "Nervus laryngeus recurrens, vakadaki bulgularla en uyumlu tanıdır. Ses kısıklığı total tiroidektomi sonrası başlamıştır Laringoskopide sağ vokal kord hareketi azalmıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Tiroid cerrahisi sonrası yeni başlayan ses kısıklığı ve vokal kord hareket azalmasını en iyi açıklayan sinir hasarı hangisidir?",
+      "explanation": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Ses kısıklığı total tiroidektomi sonrası başlamıştır + laringoskopide sağ vokal kord hareketi azalmıştır; bu birliktelik Nervus laryngeus recurrens yanıtını öne çıkarır."
+          "text": "Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir."
         }
       ],
       "optionComparison": {
-        "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, olgunun ana tanısal örüntüsünü karşılar. Ses kısıklığı total tiroidektomi sonrası başlamıştır Laringoskopide sağ vokal kord hareketi azalmıştır. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus facialis": "Nervus facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+        "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur.",
+        "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+        "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+        "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+        "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
       },
       "answerFeedback": {
-        "summary": "Ses kısıklığı total tiroidektomi sonrası başlamıştır Laringoskopide sağ vokal kord hareketi azalmıştır. Bu bulgular tanısal karar açısından Nervus laryngeus recurrens yanıtını destekler.",
+        "summary": "Bu olguda karar, tiroid ameliyatı sonrası başlayan ses kısıklığı recurrent laryngeal sinirin tiroide komşu cerrahi seyrini düşündürür. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur.",
         "keyClues": [
-          "Ses kısıklığı total tiroidektomi sonrası başlamıştır.",
-          "Laringoskopide sağ vokal kord hareketi azalmıştır.",
-          "Dil hareketi ve omuz elevasyonu korunmuştur."
+          "Tiroid ameliyatı sonrası başlayan ses kısıklığı recurrent laryngeal sinirin tiroide komşu cerrahi seyrini düşündürür.",
+          "Laringoskopide sağ vokal kord hareket azalması intrinsik larenks kaslarının motor kaybını gösterir.",
+          "Dil deviasyonu ve omuz elevasyon kaybının olmaması hypoglossal ve accessory sinir hasarını dışlamaya yardım eder."
         ],
-        "examPearl": "İpucu: Ses kısıklığı total tiroidektomi sonrası başlamıştır + laringoskopide sağ vokal kord hareketi azalmıştır; bu birliktelik Nervus laryngeus recurrens yanıtını öne çıkarır.",
         "evidenceChain": [
           {
-            "text": "Ses kısıklığı total tiroidektomi sonrası başlamıştır.",
+            "text": "Tiroid ameliyatı sonrası başlayan ses kısıklığı recurrent laryngeal sinirin tiroide komşu cerrahi seyrini düşündürür.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Laringoskopide sağ vokal kord hareketi azalmıştır.",
+            "text": "Laringoskopide sağ vokal kord hareket azalması intrinsik larenks kaslarının motor kaybını gösterir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Dil hareketi ve omuz elevasyonu korunmuştur.",
+            "text": "Dil deviasyonu ve omuz elevasyon kaybının olmaması hypoglossal ve accessory sinir hasarını dışlamaya yardım eder.",
             "weight": "medium",
             "source": "case"
           }
         ],
+        "examPearl": "Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir."
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "label": "Klinik anatomi",
+            "text": "Nervus laryngeus recurrens trakeoözofageal olukta tiroide yakın seyreder ve intrinsik larenks kaslarının çoğunu innerve eder; lezyonu vokal kord paralizisi, nefesli ses ve ses kısıklığı yapar."
+          }
+        ],
         "optionComparison": {
-          "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, olgunun ana tanısal örüntüsünü karşılar. Ses kısıklığı total tiroidektomi sonrası başlamıştır Laringoskopide sağ vokal kord hareketi azalmıştır. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus facialis": "Nervus facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+          "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur.",
+          "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+          "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+          "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+          "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
         },
-        "rationale": "Nervus laryngeus recurrens, vakadaki bulgularla en uyumlu tanıdır. Ses kısıklığı total tiroidektomi sonrası başlamıştır Laringoskopide sağ vokal kord hareketi azalmıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "whyCorrect": "Nervus laryngeus recurrens, vakadaki bulgularla en uyumlu tanıdır. Ses kısıklığı total tiroidektomi sonrası başlamıştır Laringoskopide sağ vokal kord hareketi azalmıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
         "whyWrong": {
-          "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-          "Nervus facialis": "Nervus facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+          "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+          "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+          "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+          "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Tiroid cerrahisi sonrası nervus laryngeus recurrens hasarını ses kısıklığıyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus laryngeus recurrens yanıtını destekler."
+        "learningOutcome": "Tiroid cerrahisi komplikasyonlarında larenks sinirlerini fonksiyonel bulgularla ayırt edebilme.",
+        "coreKnowledge": "Nervus laryngeus recurrens trakeoözofageal olukta tiroide yakın seyreder ve intrinsik larenks kaslarının çoğunu innerve eder; lezyonu vokal kord paralizisi, nefesli ses ve ses kısıklığı yapar."
       },
-      "whyCorrect": "Nervus laryngeus recurrens, vakadaki bulgularla en uyumlu tanıdır. Ses kısıklığı total tiroidektomi sonrası başlamıştır Laringoskopide sağ vokal kord hareketi azalmıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Ses kısıklığı total tiroidektomi sonrası başlamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Tiroid ameliyatı sonrası başlayan ses kısıklığı recurrent laryngeal sinirin tiroide komşu cerrahi seyrini düşündürür.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Laringoskopide sağ vokal kord hareketi azalmıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Laringoskopide sağ vokal kord hareket azalması intrinsik larenks kaslarının motor kaybını gösterir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Dil hareketi ve omuz elevasyonu korunmuştur.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Dil deviasyonu ve omuz elevasyon kaybının olmaması hypoglossal ve accessory sinir hasarını dışlamaya yardım eder.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus laryngeus recurrens yanıtını destekler.",
-      "examPearl": "İpucu: Ses kısıklığı total tiroidektomi sonrası başlamıştır + laringoskopide sağ vokal kord hareketi azalmıştır; bu birliktelik Nervus laryngeus recurrens yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus laryngeus recurrens trakeoözofageal olukta tiroide yakın seyreder ve intrinsik larenks kaslarının çoğunu innerve eder; lezyonu vokal kord paralizisi, nefesli ses ve ses kısıklığı yapar.",
+      "examPearl": "Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir.",
       "whyWrong": {
-        "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-        "Nervus facialis": "Nervus facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+        "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+        "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+        "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+        "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
       }
     },
-    "whyCorrect": "Nervus laryngeus recurrens, vakadaki bulgularla en uyumlu tanıdır. Ses kısıklığı total tiroidektomi sonrası başlamıştır Laringoskopide sağ vokal kord hareketi azalmıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "whyCorrect": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "evidenceChain": [
       {
-        "text": "Ses kısıklığı total tiroidektomi sonrası başlamıştır.",
+        "text": "Tiroid ameliyatı sonrası başlayan ses kısıklığı recurrent laryngeal sinirin tiroide komşu cerrahi seyrini düşündürür.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Laringoskopide sağ vokal kord hareketi azalmıştır.",
+        "text": "Laringoskopide sağ vokal kord hareket azalması intrinsik larenks kaslarının motor kaybını gösterir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Dil hareketi ve omuz elevasyonu korunmuştur.",
+        "text": "Dil deviasyonu ve omuz elevasyon kaybının olmaması hypoglossal ve accessory sinir hasarını dışlamaya yardım eder.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "difficultyTag": "Zor",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus laryngeus recurrens yanıtını destekler.",
-    "examPearl": "İpucu: Ses kısıklığı total tiroidektomi sonrası başlamıştır + laringoskopide sağ vokal kord hareketi azalmıştır; bu birliktelik Nervus laryngeus recurrens yanıtını öne çıkarır.",
+    "coreKnowledge": "Nervus laryngeus recurrens trakeoözofageal olukta tiroide yakın seyreder ve intrinsik larenks kaslarının çoğunu innerve eder; lezyonu vokal kord paralizisi, nefesli ses ve ses kısıklığı yapar.",
+    "examPearl": "Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir.",
     "optionComparison": {
-      "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, olgunun ana tanısal örüntüsünü karşılar. Ses kısıklığı total tiroidektomi sonrası başlamıştır Laringoskopide sağ vokal kord hareketi azalmıştır. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus facialis": "Nervus facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+      "Nervus laryngeus recurrens": "Nervus laryngeus recurrens, cricothyroideus dışındaki intrinsik larenks kaslarını innerve eder. Ameliyat sonrası nefesli ses, ses kısıklığı ve tek taraflı vokal kord hareket azalması bu sinirin hasarıyla doğrudan uyumludur.",
+      "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+      "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+      "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+      "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
     },
     "whyWrong": {
-      "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler.",
-      "Nervus facialis": "Nervus facialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus laryngeus recurrens yanıtını destekler."
+      "Nervus laryngeus superior - ramus externus": "Nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur. Bu vakada ana bulgu vokal kord hareket kısıtlılığı olduğu için recurrent laryngeal sinir daha uygundur.",
+      "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonunda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil hareketlerinin simetrik olması bu seçeneği geri plana iter.",
+      "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür.",
+      "Nervus accessorius": "Nervus accessorius sternocleidomastoideus ve trapezius kaslarını innerve eder; omuz düşüklüğü ve baş çevirme güçlüğü yapar. Ses kısıklığı ve vokal kord hareket azalması bu sinirin tipik bulgusu değildir."
     }
   },
   {
@@ -82931,29 +83043,29 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Kalça travması sonrası yürüyememe",
     "difficulty": "Kolay",
-    "clinicalFocus": "Kalça travması sonrası yürüyememe bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Kırık femur boynunda ve intrakapsüler yerleşimdedir ve kırık deplasedir ve femur başı kanlanmasını bozma riski taşır. Bu ipuçlarını kullanarak Arteria circumflexa femoris medialis seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Kalça travması sonrası yürüyememe olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Arteria circumflexa femoris medialis yanıtına ulaşma.",
+    "learningTarget": "Femur boynu kırığını femur başı retinaküler kanlanması ve avasküler nekroz riskiyle ilişkilendirebilme.",
     "demographics": "72 yaşında kadın hasta",
-    "setting": "acil serviste ortopedi tarafından değerlendiriliyor",
+    "setting": "Ortopedi acili",
     "chiefComplaint": "Hasta, evde düşme sonrası sağ kalça ağrısı ve üzerine basamama nedeniyle başvuruyor.",
-    "stem": "Düşerken sağ kalçasının üzerine çarptığını, olaydan sonra ayağa kalkamadığını ve sağ kasık bölgesinde şiddetli ağrı hissettiğini belirtmektedir. Osteoporoz öyküsü vardır.",
+    "stem": "Sağ kalçasının üzerine düştüğünü, olaydan sonra ayağa kalkamadığını ve kasık bölgesinde şiddetli ağrı hissettiğini belirtmektedir. Osteoporoz öyküsü vardır.",
     "patientIntro": {
-      "profile": "72 yaşında kadın hasta, acil serviste ortopedi tarafından değerlendiriliyor.",
+      "profile": "72 yaşında kadın hasta, ortopedi acilinda değerlendiriliyor.",
       "presentation": "Hasta, evde düşme sonrası sağ kalça ağrısı ve üzerine basamama nedeniyle başvuruyor.",
-      "historySummary": "Düşerken sağ kalçasının üzerine çarptığını, olaydan sonra ayağa kalkamadığını ve sağ kasık bölgesinde şiddetli ağrı hissettiğini belirtmektedir. Osteoporoz öyküsü vardır."
+      "historySummary": "Sağ kalçasının üzerine düştüğünü, olaydan sonra ayağa kalkamadığını ve kasık bölgesinde şiddetli ağrı hissettiğini belirtmektedir. Osteoporoz öyküsü vardır."
     },
     "vitals": {
-      "TA": "88/56 mmHg",
-      "Nabız": "126/dk",
-      "Solunum": "24/dk",
-      "SpO2": "%96, oda havasında",
-      "Ateş": "36.6 °C",
-      "Şok indeksi": "1.43 yüksek"
+      "TA": "132/78 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "18/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "0.79 normal"
     },
     "exam": [
-      "Sağ alt ekstremite dış rotasyonda ve kısalmış görünmektedir.",
-      "Sağ kalça hareketleri ağrılıdır.",
-      "Distal nabızlar alınmaktadır ve ayak bileği hareketleri korunmuştur."
+      "Sağ alt ekstremite dış rotasyonda ve hafif kısalmış görünmektedir.",
+      "Sağ kalça hareketleri belirgin ağrılıdır.",
+      "Distal nabızlar alınır; ayak bileği dorsifleksiyon ve plantar fleksiyonu korunmuştur."
     ],
     "investigations": [
       {
@@ -82962,43 +83074,43 @@ export const rawCases = [
         "title": "Pelvis ve kalça grafisi",
         "type": "xray",
         "priority": "essential",
-        "subtype": "Direkt/kontrastlı grafi",
-        "summary": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-        "clinicalMeaning": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+        "subtype": "Direkt grafi",
+        "summary": "Pelvis ve kalça grafisinde sağ femur boynunda deplase intrakapsüler kırık izlenmesi, femur başı retinaküler damarlarının hasar riski açısından kritiktir. Görselde kırık hattının kapsül içi yerleşimi AVN riskini belirler.",
+        "clinicalMeaning": "İntrakapsüler femur boynu kırığı, medial circumflex femoral arterin retinaküler dallarını zedeleyerek femur başı avasküler nekrozuna yol açabilir.",
         "result": {
           "title": "Pelvis ve kalça grafisi",
-          "summary": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-          "interpretation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+          "summary": "Pelvis ve kalça grafisinde sağ femur boynunda deplase intrakapsüler kırık izlenmesi, femur başı retinaküler damarlarının hasar riski açısından kritiktir. Görselde kırık hattının kapsül içi yerleşimi AVN riskini belirler.",
+          "interpretation": "İntrakapsüler femur boynu kırığı, medial circumflex femoral arterin retinaküler dallarını zedeleyerek femur başı avasküler nekrozuna yol açabilir.",
           "values": [
             [
-              "Görüntüleme bulgusu",
+              "Pelvis ve kalça grafisi",
               "Sağ femur boynunda deplase intrakapsüler kırık izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "İntrakapsüler femur boynu kırığı, medial circumflex femoral arterin retinaküler dallarını zedeleyerek femur başı avasküler nekrozuna yol açabilir."
             ]
           ],
           "rows": [
             [
-              "Görüntüleme bulgusu",
+              "Pelvis ve kalça grafisi",
               "Sağ femur boynunda deplase intrakapsüler kırık izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "İntrakapsüler femur boynu kırığı, medial circumflex femoral arterin retinaküler dallarını zedeleyerek femur başı avasküler nekrozuna yol açabilir."
             ]
           ]
         },
         "rows": [
           [
-            "Görüntüleme bulgusu",
+            "Pelvis ve kalça grafisi",
             "Sağ femur boynunda deplase intrakapsüler kırık izlendi.",
-            "Modaliteye özgü bulgu",
-            ""
+            "Anatomik yorum",
+            "İntrakapsüler femur boynu kırığı, medial circumflex femoral arterin retinaküler dallarını zedeleyerek femur başı avasküler nekrozuna yol açabilir."
           ]
         ],
-        "postAnswerExplanation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-        "interpretation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+        "postAnswerExplanation": "İntrakapsüler femur boynu kırığı, medial circumflex femoral arterin retinaküler dallarını zedeleyerek femur başı avasküler nekrozuna yol açabilir.",
+        "interpretation": "İntrakapsüler femur boynu kırığı, medial circumflex femoral arterin retinaküler dallarını zedeleyerek femur başı avasküler nekrozuna yol açabilir.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir."
+        "explanationAfterAnswer": "İntrakapsüler femur boynu kırığı, medial circumflex femoral arterin retinaküler dallarını zedeleyerek femur başı avasküler nekrozuna yol açabilir."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -83007,141 +83119,154 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu kırıkta femur başı avasküler nekrozu açısından en kritik arter aşağıdakilerden hangisidir?",
+    "question": "Deplase intrakapsüler femur boynu kırığında femur başı avasküler nekrozu açısından en kritik damar hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Arteria circumflexa femoris medialis",
       "options": [
         "Arteria circumflexa femoris medialis",
+        "Arteria circumflexa femoris lateralis",
         "Arteria obturatoria",
-        "Arteria glutea superior",
-        "Arteria pudenda interna",
-        "Arteria tibialis anterior"
+        "Arteria glutea inferior",
+        "Arteria femoralis profunda"
       ],
-      "question": "Bu kırıkta femur başı avasküler nekrozu açısından en kritik arter aşağıdakilerden hangisidir?",
-      "explanation": "Arteria circumflexa femoris medialis, bu olguda en uygun yanıttır. Kırık femur boynunda ve intrakapsüler yerleşimdedir.",
+      "question": "Deplase intrakapsüler femur boynu kırığında femur başı avasküler nekrozu açısından en kritik damar hangisidir?",
+      "explanation": "Arteria circumflexa femoris medialisin retinaküler dalları erişkinde femur başının temel kan kaynağıdır. Deplase intrakapsüler femur boynu kırığında bu dallar hasarlanarak avasküler nekroz riski oluşturur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Kırık femur boynunda ve intrakapsüler yerleşimdedir + kırık deplasedir ve femur başı kanlanmasını bozma riski taşır; bu birliktelik Arteria circumflexa femoris medialis yanıtını öne çıkarır."
+          "text": "Erişkinde femur başı kanlanmasının ana kaynağı medial circumflex femoral arterdir; deplase femur boynu kırığı AVN riski taşır."
         }
       ],
       "optionComparison": {
-        "Arteria circumflexa femoris medialis": "Arteria circumflexa femoris medialis, olgunun ana tanısal örüntüsünü karşılar. Kırık femur boynunda ve intrakapsüler yerleşimdedir Kırık deplasedir ve femur başı kanlanmasını bozma riski taşır. Bulgular aynı tanı etrafında birleşir.",
-        "Arteria obturatoria": "Arteria obturatoria, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-        "Arteria glutea superior": "Arteria glutea superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-        "Arteria pudenda interna": "Arteria pudenda interna, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-        "Arteria tibialis anterior": "Arteria tibialis anterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler."
+        "Arteria circumflexa femoris medialis": "Arteria circumflexa femoris medialisin retinaküler dalları erişkinde femur başının temel kan kaynağıdır. Deplase intrakapsüler femur boynu kırığında bu dallar hasarlanarak avasküler nekroz riski oluşturur.",
+        "Arteria circumflexa femoris lateralis": "Lateral circumflex femoral arter daha çok uyluk lateral/anterior bölgesi ve trokanterik anastomozlarla ilişkilidir. Femur başının kritik retinaküler kanlanmasında medial dal daha belirleyicidir.",
+        "Arteria obturatoria": "Arteria obturatoria acetabular dal aracılığıyla ligamentum capitis femoris içinde küçük katkı sağlayabilir. Erişkinde femur başı için ana kaynak değildir.",
+        "Arteria glutea inferior": "Arteria glutea inferior gluteal bölge ve posterior uyluk komşuluklarıyla ilişkilidir. Femur başı AVN riskini belirleyen ana damar değildir.",
+        "Arteria femoralis profunda": "Arteria femoralis profunda uyluğun ana derin arteridir ve circumflex dalları verir. Ancak sorulan doğrudan kritik dal medial circumflex femoral arterdir."
       },
       "answerFeedback": {
-        "summary": "Kırık femur boynunda ve intrakapsüler yerleşimdedir Kırık deplasedir ve femur başı kanlanmasını bozma riski taşır. Bu bulgular tanısal karar açısından Arteria circumflexa femoris medialis yanıtını destekler.",
+        "summary": "Bu olguda karar, düşme sonrası sağ femur boynunda deplase intrakapsüler kırık izlenmesi femur başı retinaküler damarlarını riskli hale getirir. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Arteria circumflexa femoris medialisin retinaküler dalları erişkinde femur başının temel kan kaynağıdır. Deplase intrakapsüler femur boynu kırığında bu dallar hasarlanarak avasküler nekroz riski oluşturur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Arteria circumflexa femoris medialisin retinaküler dalları erişkinde femur başının temel kan kaynağıdır. Deplase intrakapsüler femur boynu kırığında bu dallar hasarlanarak avasküler nekroz riski oluşturur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Arteria circumflexa femoris medialisin retinaküler dalları erişkinde femur başının temel kan kaynağıdır. Deplase intrakapsüler femur boynu kırığında bu dallar hasarlanarak avasküler nekroz riski oluşturur.",
         "keyClues": [
-          "Kırık femur boynunda ve intrakapsüler yerleşimdedir.",
-          "Kırık deplasedir ve femur başı kanlanmasını bozma riski taşır.",
-          "Hasta kalça travması sonrası üzerine basamamaktadır."
+          "Düşme sonrası sağ femur boynunda deplase intrakapsüler kırık izlenmesi femur başı retinaküler damarlarını riskli hale getirir.",
+          "Femur başı avasküler nekrozu erişkinde özellikle medial circumflex femoral arterin retinaküler dallarının kesilmesiyle ilişkilidir.",
+          "Distal nabızların korunması ana femoral akımın değil femur başı özel kanlanmasının kritik olduğunu gösterir."
         ],
-        "examPearl": "İpucu: Kırık femur boynunda ve intrakapsüler yerleşimdedir + kırık deplasedir ve femur başı kanlanmasını bozma riski taşır; bu birliktelik Arteria circumflexa femoris medialis yanıtını öne çıkarır.",
         "evidenceChain": [
           {
-            "text": "Kırık femur boynunda ve intrakapsüler yerleşimdedir.",
+            "text": "Düşme sonrası sağ femur boynunda deplase intrakapsüler kırık izlenmesi femur başı retinaküler damarlarını riskli hale getirir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Kırık deplasedir ve femur başı kanlanmasını bozma riski taşır.",
+            "text": "Femur başı avasküler nekrozu erişkinde özellikle medial circumflex femoral arterin retinaküler dallarının kesilmesiyle ilişkilidir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Hasta kalça travması sonrası üzerine basamamaktadır.",
+            "text": "Distal nabızların korunması ana femoral akımın değil femur başı özel kanlanmasının kritik olduğunu gösterir.",
             "weight": "medium",
             "source": "case"
           }
         ],
+        "examPearl": "Erişkinde femur başı kanlanmasının ana kaynağı medial circumflex femoral arterdir; deplase femur boynu kırığı AVN riski taşır.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Erişkinde femur başı kanlanmasının ana kaynağı medial circumflex femoral arterdir; deplase femur boynu kırığı AVN riski taşır."
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "label": "Klinik anatomi",
+            "text": "Femur başının erişkindeki ana kanlanması medial circumflex femoral arterin retinaküler dallarıyla sağlanır; intrakapsüler femur boynu kırığında bu dallar zarar görebilir."
+          }
+        ],
         "optionComparison": {
-          "Arteria circumflexa femoris medialis": "Arteria circumflexa femoris medialis, olgunun ana tanısal örüntüsünü karşılar. Kırık femur boynunda ve intrakapsüler yerleşimdedir Kırık deplasedir ve femur başı kanlanmasını bozma riski taşır. Bulgular aynı tanı etrafında birleşir.",
-          "Arteria obturatoria": "Arteria obturatoria, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-          "Arteria glutea superior": "Arteria glutea superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-          "Arteria pudenda interna": "Arteria pudenda interna, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-          "Arteria tibialis anterior": "Arteria tibialis anterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler."
+          "Arteria circumflexa femoris medialis": "Arteria circumflexa femoris medialisin retinaküler dalları erişkinde femur başının temel kan kaynağıdır. Deplase intrakapsüler femur boynu kırığında bu dallar hasarlanarak avasküler nekroz riski oluşturur.",
+          "Arteria circumflexa femoris lateralis": "Lateral circumflex femoral arter daha çok uyluk lateral/anterior bölgesi ve trokanterik anastomozlarla ilişkilidir. Femur başının kritik retinaküler kanlanmasında medial dal daha belirleyicidir.",
+          "Arteria obturatoria": "Arteria obturatoria acetabular dal aracılığıyla ligamentum capitis femoris içinde küçük katkı sağlayabilir. Erişkinde femur başı için ana kaynak değildir.",
+          "Arteria glutea inferior": "Arteria glutea inferior gluteal bölge ve posterior uyluk komşuluklarıyla ilişkilidir. Femur başı AVN riskini belirleyen ana damar değildir.",
+          "Arteria femoralis profunda": "Arteria femoralis profunda uyluğun ana derin arteridir ve circumflex dalları verir. Ancak sorulan doğrudan kritik dal medial circumflex femoral arterdir."
         },
-        "rationale": "Arteria circumflexa femoris medialis, bu olguda en uygun yanıttır. Kırık femur boynunda ve intrakapsüler yerleşimdedir.",
-        "whyCorrect": "Arteria circumflexa femoris medialis, bu olguda en uygun yanıttır. Kırık femur boynunda ve intrakapsüler yerleşimdedir.",
         "whyWrong": {
-          "Arteria obturatoria": "Arteria obturatoria, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-          "Arteria glutea superior": "Arteria glutea superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-          "Arteria pudenda interna": "Arteria pudenda interna, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-          "Arteria tibialis anterior": "Arteria tibialis anterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler."
+          "Arteria circumflexa femoris lateralis": "Lateral circumflex femoral arter daha çok uyluk lateral/anterior bölgesi ve trokanterik anastomozlarla ilişkilidir. Femur başının kritik retinaküler kanlanmasında medial dal daha belirleyicidir.",
+          "Arteria obturatoria": "Arteria obturatoria acetabular dal aracılığıyla ligamentum capitis femoris içinde küçük katkı sağlayabilir. Erişkinde femur başı için ana kaynak değildir.",
+          "Arteria glutea inferior": "Arteria glutea inferior gluteal bölge ve posterior uyluk komşuluklarıyla ilişkilidir. Femur başı AVN riskini belirleyen ana damar değildir.",
+          "Arteria femoralis profunda": "Arteria femoralis profunda uyluğun ana derin arteridir ve circumflex dalları verir. Ancak sorulan doğrudan kritik dal medial circumflex femoral arterdir."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Femur boynu kırığında arteria circumflexa femoris medialis hasarını femur başı avasküler nekrozu riskiyle ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Arteria circumflexa femoris medialis yanıtını destekler."
+        "learningOutcome": "Femur boynu kırığını femur başı retinaküler kanlanması ve avasküler nekroz riskiyle ilişkilendirebilme.",
+        "coreKnowledge": "Femur başının erişkindeki ana kanlanması medial circumflex femoral arterin retinaküler dallarıyla sağlanır; intrakapsüler femur boynu kırığında bu dallar zarar görebilir."
       },
-      "whyCorrect": "Arteria circumflexa femoris medialis, bu olguda en uygun yanıttır. Kırık femur boynunda ve intrakapsüler yerleşimdedir.",
+      "whyCorrect": "Arteria circumflexa femoris medialisin retinaküler dalları erişkinde femur başının temel kan kaynağıdır. Deplase intrakapsüler femur boynu kırığında bu dallar hasarlanarak avasküler nekroz riski oluşturur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Kırık femur boynunda ve intrakapsüler yerleşimdedir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Düşme sonrası sağ femur boynunda deplase intrakapsüler kırık izlenmesi femur başı retinaküler damarlarını riskli hale getirir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Kırık deplasedir ve femur başı kanlanmasını bozma riski taşır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Femur başı avasküler nekrozu erişkinde özellikle medial circumflex femoral arterin retinaküler dallarının kesilmesiyle ilişkilidir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Hasta kalça travması sonrası üzerine basamamaktadır.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Distal nabızların korunması ana femoral akımın değil femur başı özel kanlanmasının kritik olduğunu gösterir.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Arteria circumflexa femoris medialis yanıtını destekler.",
-      "examPearl": "İpucu: Kırık femur boynunda ve intrakapsüler yerleşimdedir + kırık deplasedir ve femur başı kanlanmasını bozma riski taşır; bu birliktelik Arteria circumflexa femoris medialis yanıtını öne çıkarır.",
+      "coreKnowledge": "Femur başının erişkindeki ana kanlanması medial circumflex femoral arterin retinaküler dallarıyla sağlanır; intrakapsüler femur boynu kırığında bu dallar zarar görebilir.",
+      "examPearl": "Erişkinde femur başı kanlanmasının ana kaynağı medial circumflex femoral arterdir; deplase femur boynu kırığı AVN riski taşır.",
       "whyWrong": {
-        "Arteria obturatoria": "Arteria obturatoria, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-        "Arteria glutea superior": "Arteria glutea superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-        "Arteria pudenda interna": "Arteria pudenda interna, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-        "Arteria tibialis anterior": "Arteria tibialis anterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler."
+        "Arteria circumflexa femoris lateralis": "Lateral circumflex femoral arter daha çok uyluk lateral/anterior bölgesi ve trokanterik anastomozlarla ilişkilidir. Femur başının kritik retinaküler kanlanmasında medial dal daha belirleyicidir.",
+        "Arteria obturatoria": "Arteria obturatoria acetabular dal aracılığıyla ligamentum capitis femoris içinde küçük katkı sağlayabilir. Erişkinde femur başı için ana kaynak değildir.",
+        "Arteria glutea inferior": "Arteria glutea inferior gluteal bölge ve posterior uyluk komşuluklarıyla ilişkilidir. Femur başı AVN riskini belirleyen ana damar değildir.",
+        "Arteria femoralis profunda": "Arteria femoralis profunda uyluğun ana derin arteridir ve circumflex dalları verir. Ancak sorulan doğrudan kritik dal medial circumflex femoral arterdir."
       }
     },
-    "whyCorrect": "Arteria circumflexa femoris medialis, bu olguda en uygun yanıttır. Kırık femur boynunda ve intrakapsüler yerleşimdedir.",
+    "whyCorrect": "Arteria circumflexa femoris medialisin retinaküler dalları erişkinde femur başının temel kan kaynağıdır. Deplase intrakapsüler femur boynu kırığında bu dallar hasarlanarak avasküler nekroz riski oluşturur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "evidenceChain": [
       {
-        "text": "Kırık femur boynunda ve intrakapsüler yerleşimdedir.",
+        "text": "Düşme sonrası sağ femur boynunda deplase intrakapsüler kırık izlenmesi femur başı retinaküler damarlarını riskli hale getirir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Kırık deplasedir ve femur başı kanlanmasını bozma riski taşır.",
+        "text": "Femur başı avasküler nekrozu erişkinde özellikle medial circumflex femoral arterin retinaküler dallarının kesilmesiyle ilişkilidir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Hasta kalça travması sonrası üzerine basamamaktadır.",
+        "text": "Distal nabızların korunması ana femoral akımın değil femur başı özel kanlanmasının kritik olduğunu gösterir.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Arteria circumflexa femoris medialis yanıtını destekler.",
-    "examPearl": "İpucu: Kırık femur boynunda ve intrakapsüler yerleşimdedir + kırık deplasedir ve femur başı kanlanmasını bozma riski taşır; bu birliktelik Arteria circumflexa femoris medialis yanıtını öne çıkarır.",
+    "coreKnowledge": "Femur başının erişkindeki ana kanlanması medial circumflex femoral arterin retinaküler dallarıyla sağlanır; intrakapsüler femur boynu kırığında bu dallar zarar görebilir.",
+    "examPearl": "Erişkinde femur başı kanlanmasının ana kaynağı medial circumflex femoral arterdir; deplase femur boynu kırığı AVN riski taşır.",
     "optionComparison": {
-      "Arteria circumflexa femoris medialis": "Arteria circumflexa femoris medialis, olgunun ana tanısal örüntüsünü karşılar. Kırık femur boynunda ve intrakapsüler yerleşimdedir Kırık deplasedir ve femur başı kanlanmasını bozma riski taşır. Bulgular aynı tanı etrafında birleşir.",
-      "Arteria obturatoria": "Arteria obturatoria, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-      "Arteria glutea superior": "Arteria glutea superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-      "Arteria pudenda interna": "Arteria pudenda interna, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-      "Arteria tibialis anterior": "Arteria tibialis anterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler."
+      "Arteria circumflexa femoris medialis": "Arteria circumflexa femoris medialisin retinaküler dalları erişkinde femur başının temel kan kaynağıdır. Deplase intrakapsüler femur boynu kırığında bu dallar hasarlanarak avasküler nekroz riski oluşturur.",
+      "Arteria circumflexa femoris lateralis": "Lateral circumflex femoral arter daha çok uyluk lateral/anterior bölgesi ve trokanterik anastomozlarla ilişkilidir. Femur başının kritik retinaküler kanlanmasında medial dal daha belirleyicidir.",
+      "Arteria obturatoria": "Arteria obturatoria acetabular dal aracılığıyla ligamentum capitis femoris içinde küçük katkı sağlayabilir. Erişkinde femur başı için ana kaynak değildir.",
+      "Arteria glutea inferior": "Arteria glutea inferior gluteal bölge ve posterior uyluk komşuluklarıyla ilişkilidir. Femur başı AVN riskini belirleyen ana damar değildir.",
+      "Arteria femoralis profunda": "Arteria femoralis profunda uyluğun ana derin arteridir ve circumflex dalları verir. Ancak sorulan doğrudan kritik dal medial circumflex femoral arterdir."
     },
     "whyWrong": {
-      "Arteria obturatoria": "Arteria obturatoria, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-      "Arteria glutea superior": "Arteria glutea superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-      "Arteria pudenda interna": "Arteria pudenda interna, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler.",
-      "Arteria tibialis anterior": "Arteria tibialis anterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria circumflexa femoris medialis yanıtını destekler."
+      "Arteria circumflexa femoris lateralis": "Lateral circumflex femoral arter daha çok uyluk lateral/anterior bölgesi ve trokanterik anastomozlarla ilişkilidir. Femur başının kritik retinaküler kanlanmasında medial dal daha belirleyicidir.",
+      "Arteria obturatoria": "Arteria obturatoria acetabular dal aracılığıyla ligamentum capitis femoris içinde küçük katkı sağlayabilir. Erişkinde femur başı için ana kaynak değildir.",
+      "Arteria glutea inferior": "Arteria glutea inferior gluteal bölge ve posterior uyluk komşuluklarıyla ilişkilidir. Femur başı AVN riskini belirleyen ana damar değildir.",
+      "Arteria femoralis profunda": "Arteria femoralis profunda uyluğun ana derin arteridir ve circumflex dalları verir. Ancak sorulan doğrudan kritik dal medial circumflex femoral arterdir."
     }
   },
   {
@@ -83151,16 +83276,16 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Parotis kitlesi ameliyatı sonrası yüz asimetrisi",
     "difficulty": "Zor",
-    "clinicalFocus": "Parotis kitlesi ameliyatı sonrası yüz asimetrisi bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır ve göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır. Bu ipuçlarını kullanarak Nervus facialis seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Parotis kitlesi ameliyatı sonrası yüz asimetrisi olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus facialis yanıtına ulaşma.",
+    "learningTarget": "Parotis cerrahisinde fasiyal sinir dallarını yüz mimik kaybı ile ilişkilendirebilme.",
     "demographics": "58 yaşında erkek hasta",
-    "setting": "kulak burun boğaz polikliniğinde postoperatif kontrolde değerlendiriliyor",
-    "chiefComplaint": "Hasta, parotis bezi ameliyatı sonrası ağız köşesinde düşüklük ve gözünü tam kapatamama nedeniyle başvuruyor.",
-    "stem": "Sağ parotis kitlesi nedeniyle yüzeyel parotidektomi geçirdiği öğreniliyor. Ameliyat öncesi yüz hareketlerinde asimetri olmadığını belirtmektedir.",
+    "setting": "Kulak burun boğaz kontrolü",
+    "chiefComplaint": "Hasta, parotis kitlesi ameliyatı sonrası ağız köşesinde düşüklük ve gözünü tam kapatamama nedeniyle başvuruyor.",
+    "stem": "Sağ parotis kitlesi nedeniyle yüzeyel parotidektomi geçirdiği öğreniliyor. Ameliyat öncesi yüz hareketlerinde asimetri olmadığını, çiğneme veya dil hareketlerinde belirgin sorun yaşamadığını belirtmektedir.",
     "patientIntro": {
-      "profile": "58 yaşında erkek hasta, kulak burun boğaz polikliniğinde postoperatif kontrolde değerlendiriliyor.",
-      "presentation": "Hasta, parotis bezi ameliyatı sonrası ağız köşesinde düşüklük ve gözünü tam kapatamama nedeniyle başvuruyor.",
-      "historySummary": "Sağ parotis kitlesi nedeniyle yüzeyel parotidektomi geçirdiği öğreniliyor. Ameliyat öncesi yüz hareketlerinde asimetri olmadığını belirtmektedir."
+      "profile": "58 yaşında erkek hasta, kulak burun boğaz kontrolünda değerlendiriliyor.",
+      "presentation": "Hasta, parotis kitlesi ameliyatı sonrası ağız köşesinde düşüklük ve gözünü tam kapatamama nedeniyle başvuruyor.",
+      "historySummary": "Sağ parotis kitlesi nedeniyle yüzeyel parotidektomi geçirdiği öğreniliyor. Ameliyat öncesi yüz hareketlerinde asimetri olmadığını, çiğneme veya dil hareketlerinde belirgin sorun yaşamadığını belirtmektedir."
     },
     "vitals": {
       "TA": "118/76 mmHg",
@@ -83173,7 +83298,7 @@ export const rawCases = [
     "exam": [
       "Sağ göz kapanması zayıftır, sağ ağız köşesi aşağı sarkmıştır ve alın kırıştırma hareketi azalmıştır.",
       "Dil deviasyonu yoktur.",
-      "Çiğneme kuvveti korunmuştur."
+      "Çiğneme kuvveti ve yüz duyusu korunmuştur."
     ],
     "investigations": [],
     "useSyntheticInvestigationBank": false,
@@ -83182,141 +83307,154 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu hastada etkilenmesi en olası sinir aşağıdakilerden hangisidir?",
+    "question": "Parotis cerrahisi sonrası alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin bozulmasını hangi sinir hasarı açıklar?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Nervus facialis",
       "options": [
-        "Nervus trigeminus",
         "Nervus facialis",
+        "Nervus trigeminus - n. mandibularis",
         "Nervus glossopharyngeus",
         "Nervus hypoglossus",
         "Nervus accessorius"
       ],
-      "question": "Bu hastada etkilenmesi en olası sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus facialis, vakadaki bulgularla en uyumlu tanıdır. Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır Göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Parotis cerrahisi sonrası alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin bozulmasını hangi sinir hasarı açıklar?",
+      "explanation": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır + göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır; bu birliktelik Nervus facialis yanıtını öne çıkarır."
+          "text": "Parotidektomi sonrası tüm yüz yarısında mimik kaybı, parotis içinden geçen nervus facialis dallarının etkilenmesini düşündürür."
         }
       ],
       "optionComparison": {
-        "Nervus trigeminus": "Nervus trigeminus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-        "Nervus facialis": "Nervus facialis, olgunun ana tanısal örüntüsünü karşılar. Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır Göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-        "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-        "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler."
+        "Nervus facialis": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir.",
+        "Nervus trigeminus - n. mandibularis": "Trigeminal sinirin mandibular dalı çiğneme kaslarını ve yüz duyusunun bir bölümünü taşır. Çiğneme kuvvetinin korunması ve mimik kas kaybı fasiyal siniri öne çıkarır.",
+        "Nervus glossopharyngeus": "Nervus glossopharyngeus farinks duyusu, gag refleksi ve stylopharyngeus kasıyla ilişkilidir. Yüz mimik kaslarının motor innervasyonunu sağlamaz.",
+        "Nervus hypoglossus": "Nervus hypoglossus dil kaslarını innerve eder; lezyonda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil deviasyonunun olmaması ve mimik kaybı fasiyal sinire uyar.",
+        "Nervus accessorius": "Nervus accessorius trapezius ve sternocleidomastoideus kaslarını innerve eder. Omuz elevasyonu ya da baş çevirme zayıflığı olmadan yüz mimik kaybı bu sinirle açıklanmaz."
       },
       "answerFeedback": {
-        "summary": "Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır Göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır. Bu bulgular tanısal karar açısından Nervus facialis yanıtını destekler.",
+        "summary": "Bu olguda karar, parotidektomi sırasında parotis içinde dallanan nervus facialis cerrahi olarak risk altındadır. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir.",
         "keyClues": [
-          "Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır.",
-          "Göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır.",
-          "Dil hareketleri ve çiğneme kuvveti korunmuştur."
+          "Parotidektomi sırasında parotis içinde dallanan nervus facialis cerrahi olarak risk altındadır.",
+          "Göz kapama, alın kırıştırma ve ağız köşesi hareketlerinin birlikte zayıflaması mimik kaslarının motor kaybını gösterir.",
+          "Çiğneme kuvveti ve dil hareketlerinin korunması trigeminal mandibular ve hypoglossal sinir hasarından uzaklaştırır."
         ],
-        "examPearl": "İpucu: Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır + göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır; bu birliktelik Nervus facialis yanıtını öne çıkarır.",
         "evidenceChain": [
           {
-            "text": "Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır.",
+            "text": "Parotidektomi sırasında parotis içinde dallanan nervus facialis cerrahi olarak risk altındadır.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır.",
+            "text": "Göz kapama, alın kırıştırma ve ağız köşesi hareketlerinin birlikte zayıflaması mimik kaslarının motor kaybını gösterir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Dil hareketleri ve çiğneme kuvveti korunmuştur.",
+            "text": "Çiğneme kuvveti ve dil hareketlerinin korunması trigeminal mandibular ve hypoglossal sinir hasarından uzaklaştırır.",
             "weight": "medium",
             "source": "case"
           }
         ],
+        "examPearl": "Parotidektomi sonrası tüm yüz yarısında mimik kaybı, parotis içinden geçen nervus facialis dallarının etkilenmesini düşündürür.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Parotidektomi sonrası tüm yüz yarısında mimik kaybı, parotis içinden geçen nervus facialis dallarının etkilenmesini düşündürür."
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "label": "Klinik anatomi",
+            "text": "Nervus facialis parotis bezi içinde dallanır ancak bezi innerve etmez; temporal, zigomatik, bukkal, marjinal mandibular ve servikal dalları yüz mimik kaslarını innerve eder."
+          }
+        ],
         "optionComparison": {
-          "Nervus trigeminus": "Nervus trigeminus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-          "Nervus facialis": "Nervus facialis, olgunun ana tanısal örüntüsünü karşılar. Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır Göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-          "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-          "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler."
+          "Nervus facialis": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir.",
+          "Nervus trigeminus - n. mandibularis": "Trigeminal sinirin mandibular dalı çiğneme kaslarını ve yüz duyusunun bir bölümünü taşır. Çiğneme kuvvetinin korunması ve mimik kas kaybı fasiyal siniri öne çıkarır.",
+          "Nervus glossopharyngeus": "Nervus glossopharyngeus farinks duyusu, gag refleksi ve stylopharyngeus kasıyla ilişkilidir. Yüz mimik kaslarının motor innervasyonunu sağlamaz.",
+          "Nervus hypoglossus": "Nervus hypoglossus dil kaslarını innerve eder; lezyonda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil deviasyonunun olmaması ve mimik kaybı fasiyal sinire uyar.",
+          "Nervus accessorius": "Nervus accessorius trapezius ve sternocleidomastoideus kaslarını innerve eder. Omuz elevasyonu ya da baş çevirme zayıflığı olmadan yüz mimik kaybı bu sinirle açıklanmaz."
         },
-        "rationale": "Nervus facialis, vakadaki bulgularla en uyumlu tanıdır. Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır Göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "whyCorrect": "Nervus facialis, vakadaki bulgularla en uyumlu tanıdır. Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır Göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
         "whyWrong": {
-          "Nervus trigeminus": "Nervus trigeminus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-          "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-          "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-          "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler."
+          "Nervus trigeminus - n. mandibularis": "Trigeminal sinirin mandibular dalı çiğneme kaslarını ve yüz duyusunun bir bölümünü taşır. Çiğneme kuvvetinin korunması ve mimik kas kaybı fasiyal siniri öne çıkarır.",
+          "Nervus glossopharyngeus": "Nervus glossopharyngeus farinks duyusu, gag refleksi ve stylopharyngeus kasıyla ilişkilidir. Yüz mimik kaslarının motor innervasyonunu sağlamaz.",
+          "Nervus hypoglossus": "Nervus hypoglossus dil kaslarını innerve eder; lezyonda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil deviasyonunun olmaması ve mimik kaybı fasiyal sinire uyar.",
+          "Nervus accessorius": "Nervus accessorius trapezius ve sternocleidomastoideus kaslarını innerve eder. Omuz elevasyonu ya da baş çevirme zayıflığı olmadan yüz mimik kaybı bu sinirle açıklanmaz."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Parotis cerrahisinde nervus facialis dallarının hasarını mimik kas kaybıyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus facialis yanıtını destekler."
+        "learningOutcome": "Parotis cerrahisinde fasiyal sinir dallarını yüz mimik kaybı ile ilişkilendirebilme.",
+        "coreKnowledge": "Nervus facialis parotis bezi içinde dallanır ancak bezi innerve etmez; temporal, zigomatik, bukkal, marjinal mandibular ve servikal dalları yüz mimik kaslarını innerve eder."
       },
-      "whyCorrect": "Nervus facialis, vakadaki bulgularla en uyumlu tanıdır. Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır Göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Parotidektomi sırasında parotis içinde dallanan nervus facialis cerrahi olarak risk altındadır.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Göz kapama, alın kırıştırma ve ağız köşesi hareketlerinin birlikte zayıflaması mimik kaslarının motor kaybını gösterir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Dil hareketleri ve çiğneme kuvveti korunmuştur.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Çiğneme kuvveti ve dil hareketlerinin korunması trigeminal mandibular ve hypoglossal sinir hasarından uzaklaştırır.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus facialis yanıtını destekler.",
-      "examPearl": "İpucu: Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır + göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır; bu birliktelik Nervus facialis yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus facialis parotis bezi içinde dallanır ancak bezi innerve etmez; temporal, zigomatik, bukkal, marjinal mandibular ve servikal dalları yüz mimik kaslarını innerve eder.",
+      "examPearl": "Parotidektomi sonrası tüm yüz yarısında mimik kaybı, parotis içinden geçen nervus facialis dallarının etkilenmesini düşündürür.",
       "whyWrong": {
-        "Nervus trigeminus": "Nervus trigeminus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-        "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-        "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-        "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler."
+        "Nervus trigeminus - n. mandibularis": "Trigeminal sinirin mandibular dalı çiğneme kaslarını ve yüz duyusunun bir bölümünü taşır. Çiğneme kuvvetinin korunması ve mimik kas kaybı fasiyal siniri öne çıkarır.",
+        "Nervus glossopharyngeus": "Nervus glossopharyngeus farinks duyusu, gag refleksi ve stylopharyngeus kasıyla ilişkilidir. Yüz mimik kaslarının motor innervasyonunu sağlamaz.",
+        "Nervus hypoglossus": "Nervus hypoglossus dil kaslarını innerve eder; lezyonda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil deviasyonunun olmaması ve mimik kaybı fasiyal sinire uyar.",
+        "Nervus accessorius": "Nervus accessorius trapezius ve sternocleidomastoideus kaslarını innerve eder. Omuz elevasyonu ya da baş çevirme zayıflığı olmadan yüz mimik kaybı bu sinirle açıklanmaz."
       }
     },
-    "whyCorrect": "Nervus facialis, vakadaki bulgularla en uyumlu tanıdır. Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır Göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "whyCorrect": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "evidenceChain": [
       {
-        "text": "Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır.",
+        "text": "Parotidektomi sırasında parotis içinde dallanan nervus facialis cerrahi olarak risk altındadır.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır.",
+        "text": "Göz kapama, alın kırıştırma ve ağız köşesi hareketlerinin birlikte zayıflaması mimik kaslarının motor kaybını gösterir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Dil hareketleri ve çiğneme kuvveti korunmuştur.",
+        "text": "Çiğneme kuvveti ve dil hareketlerinin korunması trigeminal mandibular ve hypoglossal sinir hasarından uzaklaştırır.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "difficultyTag": "Zor",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus facialis yanıtını destekler.",
-    "examPearl": "İpucu: Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır + göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır; bu birliktelik Nervus facialis yanıtını öne çıkarır.",
+    "coreKnowledge": "Nervus facialis parotis bezi içinde dallanır ancak bezi innerve etmez; temporal, zigomatik, bukkal, marjinal mandibular ve servikal dalları yüz mimik kaslarını innerve eder.",
+    "examPearl": "Parotidektomi sonrası tüm yüz yarısında mimik kaybı, parotis içinden geçen nervus facialis dallarının etkilenmesini düşündürür.",
     "optionComparison": {
-      "Nervus trigeminus": "Nervus trigeminus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-      "Nervus facialis": "Nervus facialis, olgunun ana tanısal örüntüsünü karşılar. Yüz asimetrisi parotis cerrahisi sonrasında başlamıştır Göz kapatma, alın kırıştırma ve ağız köşesi hareketleri zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-      "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-      "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler."
+      "Nervus facialis": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir.",
+      "Nervus trigeminus - n. mandibularis": "Trigeminal sinirin mandibular dalı çiğneme kaslarını ve yüz duyusunun bir bölümünü taşır. Çiğneme kuvvetinin korunması ve mimik kas kaybı fasiyal siniri öne çıkarır.",
+      "Nervus glossopharyngeus": "Nervus glossopharyngeus farinks duyusu, gag refleksi ve stylopharyngeus kasıyla ilişkilidir. Yüz mimik kaslarının motor innervasyonunu sağlamaz.",
+      "Nervus hypoglossus": "Nervus hypoglossus dil kaslarını innerve eder; lezyonda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil deviasyonunun olmaması ve mimik kaybı fasiyal sinire uyar.",
+      "Nervus accessorius": "Nervus accessorius trapezius ve sternocleidomastoideus kaslarını innerve eder. Omuz elevasyonu ya da baş çevirme zayıflığı olmadan yüz mimik kaybı bu sinirle açıklanmaz."
     },
     "whyWrong": {
-      "Nervus trigeminus": "Nervus trigeminus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-      "Nervus glossopharyngeus": "Nervus glossopharyngeus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-      "Nervus hypoglossus": "Nervus hypoglossus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler.",
-      "Nervus accessorius": "Nervus accessorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus facialis yanıtını destekler."
+      "Nervus trigeminus - n. mandibularis": "Trigeminal sinirin mandibular dalı çiğneme kaslarını ve yüz duyusunun bir bölümünü taşır. Çiğneme kuvvetinin korunması ve mimik kas kaybı fasiyal siniri öne çıkarır.",
+      "Nervus glossopharyngeus": "Nervus glossopharyngeus farinks duyusu, gag refleksi ve stylopharyngeus kasıyla ilişkilidir. Yüz mimik kaslarının motor innervasyonunu sağlamaz.",
+      "Nervus hypoglossus": "Nervus hypoglossus dil kaslarını innerve eder; lezyonda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil deviasyonunun olmaması ve mimik kaybı fasiyal sinire uyar.",
+      "Nervus accessorius": "Nervus accessorius trapezius ve sternocleidomastoideus kaslarını innerve eder. Omuz elevasyonu ya da baş çevirme zayıflığı olmadan yüz mimik kaybı bu sinirle açıklanmaz."
     }
   },
   {
@@ -86891,16 +87029,16 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Kalça enjeksiyonu sonrası yürüme bozukluğu",
     "difficulty": "Kolay",
-    "clinicalFocus": "Kalça enjeksiyonu sonrası yürüme bozukluğu bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır ve sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir. Bu ipuçlarını kullanarak Nervus gluteus superior seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Kalça enjeksiyonu sonrası yürüme bozukluğu olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus gluteus superior yanıtına ulaşma.",
+    "learningTarget": "Trendelenburg yürüyüşünü kalça abdüktörleri ve superior gluteal sinir anatomisiyle açıklayabilme.",
     "demographics": "44 yaşında kadın hasta",
-    "setting": "nöroloji polikliniğinde değerlendiriliyor",
+    "setting": "Nöroloji polikliniği",
     "chiefComplaint": "Hasta, kalça bölgesine yapılan enjeksiyon sonrası gelişen topallama ve merdiven çıkmada zorlanma nedeniyle başvuruyor.",
-    "stem": "Yaklaşık iki hafta önce sağ gluteal bölgeye intramüsküler enjeksiyon yapıldığını, sonrasında yürürken pelvisinin karşı tarafa düştüğünü fark ettiğini belirtmektedir.",
+    "stem": "Yaklaşık iki hafta önce sağ gluteal bölgeye intramüsküler enjeksiyon yapıldığını, sonrasında yürürken pelvisinin karşı tarafa düştüğünü fark ettiğini belirtmektedir. Ayakta düşük ayak veya diz kilitlenmesi tariflemiyor.",
     "patientIntro": {
       "profile": "44 yaşında kadın hasta, nöroloji polikliniğinde değerlendiriliyor.",
       "presentation": "Hasta, kalça bölgesine yapılan enjeksiyon sonrası gelişen topallama ve merdiven çıkmada zorlanma nedeniyle başvuruyor.",
-      "historySummary": "Yaklaşık iki hafta önce sağ gluteal bölgeye intramüsküler enjeksiyon yapıldığını, sonrasında yürürken pelvisinin karşı tarafa düştüğünü fark ettiğini belirtmektedir."
+      "historySummary": "Yaklaşık iki hafta önce sağ gluteal bölgeye intramüsküler enjeksiyon yapıldığını, sonrasında yürürken pelvisinin karşı tarafa düştüğünü fark ettiğini belirtmektedir. Ayakta düşük ayak veya diz kilitlenmesi tariflemiyor."
     },
     "vitals": {
       "TA": "118/76 mmHg",
@@ -86922,7 +87060,7 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu hastada hasarlanması en olası sinir aşağıdakilerden hangisidir?",
+    "question": "Tek ayak üzerinde dururken karşı pelvisin düşmesini en iyi açıklayan sinir hasarı hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
@@ -86930,133 +87068,146 @@ export const rawCases = [
       "options": [
         "Nervus gluteus superior",
         "Nervus gluteus inferior",
-        "Nervus femoralis",
         "Nervus obturatorius",
-        "Nervus tibialis"
+        "Nervus femoralis",
+        "Nervus ischiadicus"
       ],
-      "question": "Bu hastada hasarlanması en olası sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus gluteus superior, vakadaki bulgularla en uyumlu tanıdır. Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır Sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Tek ayak üzerinde dururken karşı pelvisin düşmesini en iyi açıklayan sinir hasarı hangisidir?",
+      "explanation": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır + sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir; bu birliktelik Nervus gluteus superior yanıtını öne çıkarır."
+          "text": "Trendelenburg pozitifliği, destek bacağındaki gluteus medius/minimus zayıflığını ve nervus gluteus superior etkilenimini gösterir."
         }
       ],
       "optionComparison": {
-        "Nervus gluteus superior": "Nervus gluteus superior, olgunun ana tanısal örüntüsünü karşılar. Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır Sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-        "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-        "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-        "Nervus tibialis": "Nervus tibialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler."
+        "Nervus gluteus superior": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur.",
+        "Nervus gluteus inferior": "Nervus gluteus inferior m. gluteus maximusu innerve eder; lezyonunda kalça ekstansiyonu ve merdiven çıkma zayıflar. Trendelenburg bulgusunda temel sorun abdüktör kaslar ve nervus gluteus superiordur.",
+        "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Uyluk adduksiyon kaybı beklenirdi; karşı pelvis düşmesi bu sinirin ana bulgusu değildir.",
+        "Nervus femoralis": "Nervus femoralis kalça fleksiyonu ve diz ekstansiyonu ile patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu kalça abdüktör yetmezliğine odaklanmıştır.",
+        "Nervus ischiadicus": "Nervus ischiadicus hamstringler ve bacak-ayak sinirlerinin kaynağıdır; diz fleksiyonu ve ayak hareketlerinde kayıp beklenir. İzole Trendelenburg bulgusu superior gluteal sinirle açıklanır."
       },
       "answerFeedback": {
-        "summary": "Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır Sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir. Bu bulgular tanısal karar açısından Nervus gluteus superior yanıtını destekler.",
+        "summary": "Bu olguda karar, gluteal enjeksiyon sonrası başlayan topallama, gluteal bölgedeki sinir yaralanmasını düşündürür. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur.",
         "keyClues": [
-          "Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır.",
-          "Sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir.",
-          "Sağ kalça abdüksiyonu zayıflamıştır."
+          "Gluteal enjeksiyon sonrası başlayan topallama, gluteal bölgedeki sinir yaralanmasını düşündürür.",
+          "Sağ bacak üzerinde dururken karşı pelvisin düşmesi sağ kalça abdüktörlerinin zayıflığını gösterir.",
+          "Diz ekstansiyonu ve ayak dorsifleksiyonunun korunması femoral veya fibular sinirden çok nervus gluteus superior etkilenimini destekler."
         ],
-        "examPearl": "İpucu: Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır + sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir; bu birliktelik Nervus gluteus superior yanıtını öne çıkarır.",
         "evidenceChain": [
           {
-            "text": "Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır.",
+            "text": "Gluteal enjeksiyon sonrası başlayan topallama, gluteal bölgedeki sinir yaralanmasını düşündürür.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir.",
+            "text": "Sağ bacak üzerinde dururken karşı pelvisin düşmesi sağ kalça abdüktörlerinin zayıflığını gösterir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Sağ kalça abdüksiyonu zayıflamıştır.",
+            "text": "Diz ekstansiyonu ve ayak dorsifleksiyonunun korunması femoral veya fibular sinirden çok nervus gluteus superior etkilenimini destekler.",
             "weight": "medium",
             "source": "case"
           }
         ],
+        "examPearl": "Trendelenburg pozitifliği, destek bacağındaki gluteus medius/minimus zayıflığını ve nervus gluteus superior etkilenimini gösterir.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Trendelenburg pozitifliği, destek bacağındaki gluteus medius/minimus zayıflığını ve nervus gluteus superior etkilenimini gösterir."
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "label": "Klinik anatomi",
+            "text": "Nervus gluteus superior; m. gluteus medius, m. gluteus minimus ve tensor fasciae lataeyi innerve eder. Bu kasların zayıflığında Trendelenburg bulgusu gelişir."
+          }
+        ],
         "optionComparison": {
-          "Nervus gluteus superior": "Nervus gluteus superior, olgunun ana tanısal örüntüsünü karşılar. Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır Sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-          "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-          "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-          "Nervus tibialis": "Nervus tibialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler."
+          "Nervus gluteus superior": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur.",
+          "Nervus gluteus inferior": "Nervus gluteus inferior m. gluteus maximusu innerve eder; lezyonunda kalça ekstansiyonu ve merdiven çıkma zayıflar. Trendelenburg bulgusunda temel sorun abdüktör kaslar ve nervus gluteus superiordur.",
+          "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Uyluk adduksiyon kaybı beklenirdi; karşı pelvis düşmesi bu sinirin ana bulgusu değildir.",
+          "Nervus femoralis": "Nervus femoralis kalça fleksiyonu ve diz ekstansiyonu ile patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu kalça abdüktör yetmezliğine odaklanmıştır.",
+          "Nervus ischiadicus": "Nervus ischiadicus hamstringler ve bacak-ayak sinirlerinin kaynağıdır; diz fleksiyonu ve ayak hareketlerinde kayıp beklenir. İzole Trendelenburg bulgusu superior gluteal sinirle açıklanır."
         },
-        "rationale": "Nervus gluteus superior, vakadaki bulgularla en uyumlu tanıdır. Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır Sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "whyCorrect": "Nervus gluteus superior, vakadaki bulgularla en uyumlu tanıdır. Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır Sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
         "whyWrong": {
-          "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-          "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-          "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-          "Nervus tibialis": "Nervus tibialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler."
+          "Nervus gluteus inferior": "Nervus gluteus inferior m. gluteus maximusu innerve eder; lezyonunda kalça ekstansiyonu ve merdiven çıkma zayıflar. Trendelenburg bulgusunda temel sorun abdüktör kaslar ve nervus gluteus superiordur.",
+          "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Uyluk adduksiyon kaybı beklenirdi; karşı pelvis düşmesi bu sinirin ana bulgusu değildir.",
+          "Nervus femoralis": "Nervus femoralis kalça fleksiyonu ve diz ekstansiyonu ile patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu kalça abdüktör yetmezliğine odaklanmıştır.",
+          "Nervus ischiadicus": "Nervus ischiadicus hamstringler ve bacak-ayak sinirlerinin kaynağıdır; diz fleksiyonu ve ayak hareketlerinde kayıp beklenir. İzole Trendelenburg bulgusu superior gluteal sinirle açıklanır."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Nervus gluteus superior hasarını Trendelenburg bulgusuyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus gluteus superior yanıtını destekler."
+        "learningOutcome": "Trendelenburg yürüyüşünü kalça abdüktörleri ve superior gluteal sinir anatomisiyle açıklayabilme.",
+        "coreKnowledge": "Nervus gluteus superior; m. gluteus medius, m. gluteus minimus ve tensor fasciae lataeyi innerve eder. Bu kasların zayıflığında Trendelenburg bulgusu gelişir."
       },
-      "whyCorrect": "Nervus gluteus superior, vakadaki bulgularla en uyumlu tanıdır. Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır Sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Gluteal enjeksiyon sonrası başlayan topallama, gluteal bölgedeki sinir yaralanmasını düşündürür.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Sağ bacak üzerinde dururken karşı pelvisin düşmesi sağ kalça abdüktörlerinin zayıflığını gösterir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Sağ kalça abdüksiyonu zayıflamıştır.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Diz ekstansiyonu ve ayak dorsifleksiyonunun korunması femoral veya fibular sinirden çok nervus gluteus superior etkilenimini destekler.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus gluteus superior yanıtını destekler.",
-      "examPearl": "İpucu: Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır + sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir; bu birliktelik Nervus gluteus superior yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus gluteus superior; m. gluteus medius, m. gluteus minimus ve tensor fasciae lataeyi innerve eder. Bu kasların zayıflığında Trendelenburg bulgusu gelişir.",
+      "examPearl": "Trendelenburg pozitifliği, destek bacağındaki gluteus medius/minimus zayıflığını ve nervus gluteus superior etkilenimini gösterir.",
       "whyWrong": {
-        "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-        "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-        "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-        "Nervus tibialis": "Nervus tibialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler."
+        "Nervus gluteus inferior": "Nervus gluteus inferior m. gluteus maximusu innerve eder; lezyonunda kalça ekstansiyonu ve merdiven çıkma zayıflar. Trendelenburg bulgusunda temel sorun abdüktör kaslar ve nervus gluteus superiordur.",
+        "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Uyluk adduksiyon kaybı beklenirdi; karşı pelvis düşmesi bu sinirin ana bulgusu değildir.",
+        "Nervus femoralis": "Nervus femoralis kalça fleksiyonu ve diz ekstansiyonu ile patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu kalça abdüktör yetmezliğine odaklanmıştır.",
+        "Nervus ischiadicus": "Nervus ischiadicus hamstringler ve bacak-ayak sinirlerinin kaynağıdır; diz fleksiyonu ve ayak hareketlerinde kayıp beklenir. İzole Trendelenburg bulgusu superior gluteal sinirle açıklanır."
       }
     },
-    "whyCorrect": "Nervus gluteus superior, vakadaki bulgularla en uyumlu tanıdır. Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır Sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "whyCorrect": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "evidenceChain": [
       {
-        "text": "Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır.",
+        "text": "Gluteal enjeksiyon sonrası başlayan topallama, gluteal bölgedeki sinir yaralanmasını düşündürür.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir.",
+        "text": "Sağ bacak üzerinde dururken karşı pelvisin düşmesi sağ kalça abdüktörlerinin zayıflığını gösterir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Sağ kalça abdüksiyonu zayıflamıştır.",
+        "text": "Diz ekstansiyonu ve ayak dorsifleksiyonunun korunması femoral veya fibular sinirden çok nervus gluteus superior etkilenimini destekler.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus gluteus superior yanıtını destekler.",
-    "examPearl": "İpucu: Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır + sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir; bu birliktelik Nervus gluteus superior yanıtını öne çıkarır.",
+    "coreKnowledge": "Nervus gluteus superior; m. gluteus medius, m. gluteus minimus ve tensor fasciae lataeyi innerve eder. Bu kasların zayıflığında Trendelenburg bulgusu gelişir.",
+    "examPearl": "Trendelenburg pozitifliği, destek bacağındaki gluteus medius/minimus zayıflığını ve nervus gluteus superior etkilenimini gösterir.",
     "optionComparison": {
-      "Nervus gluteus superior": "Nervus gluteus superior, olgunun ana tanısal örüntüsünü karşılar. Yakınmalar gluteal bölge enjeksiyonu sonrasında başlamıştır Sağ bacak üzerinde durunca sol pelvis aşağı düşmektedir. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-      "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-      "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-      "Nervus tibialis": "Nervus tibialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler."
+      "Nervus gluteus superior": "Nervus gluteus superior gluteus medius ve minimusu innerve eder; bu kaslar tek ayak duruşunda karşı pelvisin düşmesini engeller. Destek bacağı tarafında abdüksiyon zayıflığı ve karşı pelvis düşmesi bu sinirin hasarıyla uyumludur.",
+      "Nervus gluteus inferior": "Nervus gluteus inferior m. gluteus maximusu innerve eder; lezyonunda kalça ekstansiyonu ve merdiven çıkma zayıflar. Trendelenburg bulgusunda temel sorun abdüktör kaslar ve nervus gluteus superiordur.",
+      "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Uyluk adduksiyon kaybı beklenirdi; karşı pelvis düşmesi bu sinirin ana bulgusu değildir.",
+      "Nervus femoralis": "Nervus femoralis kalça fleksiyonu ve diz ekstansiyonu ile patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu kalça abdüktör yetmezliğine odaklanmıştır.",
+      "Nervus ischiadicus": "Nervus ischiadicus hamstringler ve bacak-ayak sinirlerinin kaynağıdır; diz fleksiyonu ve ayak hareketlerinde kayıp beklenir. İzole Trendelenburg bulgusu superior gluteal sinirle açıklanır."
     },
     "whyWrong": {
-      "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-      "Nervus femoralis": "Nervus femoralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-      "Nervus obturatorius": "Nervus obturatorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler.",
-      "Nervus tibialis": "Nervus tibialis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus gluteus superior yanıtını destekler."
+      "Nervus gluteus inferior": "Nervus gluteus inferior m. gluteus maximusu innerve eder; lezyonunda kalça ekstansiyonu ve merdiven çıkma zayıflar. Trendelenburg bulgusunda temel sorun abdüktör kaslar ve nervus gluteus superiordur.",
+      "Nervus obturatorius": "Nervus obturatorius uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Uyluk adduksiyon kaybı beklenirdi; karşı pelvis düşmesi bu sinirin ana bulgusu değildir.",
+      "Nervus femoralis": "Nervus femoralis kalça fleksiyonu ve diz ekstansiyonu ile patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu kalça abdüktör yetmezliğine odaklanmıştır.",
+      "Nervus ischiadicus": "Nervus ischiadicus hamstringler ve bacak-ayak sinirlerinin kaynağıdır; diz fleksiyonu ve ayak hareketlerinde kayıp beklenir. İzole Trendelenburg bulgusu superior gluteal sinirle açıklanır."
     }
   },
   {
@@ -87066,16 +87217,16 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Temporal travma sonrası bilinç kötüleşmesi",
     "difficulty": "Acil",
-    "clinicalFocus": "Temporal travma sonrası bilinç kötüleşmesi bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Travma sağ temporal bölgeye alınmıştır ve kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bu ipuçlarını kullanarak Arteria meningea media seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Temporal travma sonrası bilinç kötüleşmesi olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Arteria meningea media yanıtına ulaşma.",
+    "learningTarget": "Epidural hematomu pterion, foramen spinosum ve middle meningeal arter anatomisiyle açıklayabilme.",
     "demographics": "23 yaşında erkek hasta",
-    "setting": "acil serviste travma ekibi tarafından değerlendiriliyor",
-    "chiefComplaint": "Hasta, başına darbe aldıktan sonra kısa süre düzelen ancak sonra kötüleşen bilinç durumu nedeniyle getiriliyor.",
-    "stem": "Futbol sırasında sağ temporal bölgeye darbe aldığı, kısa süre bilincini kaybettiği ve ardından konuşabildiği öğreniliyor. Bir saat sonra şiddetli baş ağrısı ve uykuya eğilim gelişmiştir.",
+    "setting": "Acil servis",
+    "chiefComplaint": "Hasta, sağ temporal bölgeye darbe sonrası kısa süre toparlayıp ardından bilinç durumu kötüleştiği için getiriliyor.",
+    "stem": "Futbol sırasında sağ temporal bölgeye darbe aldığı, kısa süre bilincini kaybettiği ve ardından konuşabildiği öğreniliyor. Bir saat sonra şiddetli baş ağrısı, kusma ve uykuya eğilim gelişmiştir.",
     "patientIntro": {
-      "profile": "23 yaşında erkek hasta, acil serviste travma ekibi tarafından değerlendiriliyor.",
-      "presentation": "Hasta, başına darbe aldıktan sonra kısa süre düzelen ancak sonra kötüleşen bilinç durumu nedeniyle getiriliyor.",
-      "historySummary": "Futbol sırasında sağ temporal bölgeye darbe aldığı, kısa süre bilincini kaybettiği ve ardından konuşabildiği öğreniliyor. Bir saat sonra şiddetli baş ağrısı ve uykuya eğilim gelişmiştir."
+      "profile": "23 yaşında erkek hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, sağ temporal bölgeye darbe sonrası kısa süre toparlayıp ardından bilinç durumu kötüleştiği için getiriliyor.",
+      "historySummary": "Futbol sırasında sağ temporal bölgeye darbe aldığı, kısa süre bilincini kaybettiği ve ardından konuşabildiği öğreniliyor. Bir saat sonra şiddetli baş ağrısı, kusma ve uykuya eğilim gelişmiştir."
     },
     "vitals": {
       "TA": "146/86 mmHg",
@@ -87086,9 +87237,10 @@ export const rawCases = [
       "Şok indeksi": "0.40 normal"
     },
     "exam": [
-      "Hasta somnolandır.",
-      "Sağ temporal bölgede hassasiyet vardır.",
-      "Sol pupil sağa göre hafif geniştir."
+      "Hasta somnolandır ve ağrılı uyaranla gözlerini açar.",
+      "Sağ temporal bölgede hassasiyet ve şişlik vardır.",
+      "Sağ pupil sola göre hafif geniştir.",
+      "Sol tarafta hafif motor yanıt azalması izlenir."
     ],
     "investigations": [
       {
@@ -87098,42 +87250,42 @@ export const rawCases = [
         "type": "ct",
         "priority": "essential",
         "subtype": "BT",
-        "summary": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
-        "clinicalMeaning": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
+        "summary": "Kraniyal BT’de sağ temporal bölgede bikonveks ekstraaksiyel hiperdens kanama izlenmesi epidural hematom lehinedir. Bu görünüm, pterion derininde seyreden arteria meningea media yırtılmasıyla klasik olarak ilişkilidir.",
+        "clinicalMeaning": "Bikonveks ekstraaksiyel kanama dura ile kemik arasında sınırlanır; temporal travma ve lucid interval ile birlikte arteria meningea media kaynaklı epidural hematomu düşündürür.",
         "result": {
           "title": "Kraniyal bilgisayarlı tomografi",
-          "summary": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
-          "interpretation": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
+          "summary": "Kraniyal BT’de sağ temporal bölgede bikonveks ekstraaksiyel hiperdens kanama izlenmesi epidural hematom lehinedir. Bu görünüm, pterion derininde seyreden arteria meningea media yırtılmasıyla klasik olarak ilişkilidir.",
+          "interpretation": "Bikonveks ekstraaksiyel kanama dura ile kemik arasında sınırlanır; temporal travma ve lucid interval ile birlikte arteria meningea media kaynaklı epidural hematomu düşündürür.",
           "values": [
             [
-              "Görüntüleme bulgusu",
+              "Kraniyal bilgisayarlı tomografi",
               "Sağ temporal bölgede bikonveks ekstraaksiyel hiperdens kanama izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Bikonveks ekstraaksiyel kanama dura ile kemik arasında sınırlanır; temporal travma ve lucid interval ile birlikte arteria meningea media kaynaklı epidural hematomu düşündürür."
             ]
           ],
           "rows": [
             [
-              "Görüntüleme bulgusu",
+              "Kraniyal bilgisayarlı tomografi",
               "Sağ temporal bölgede bikonveks ekstraaksiyel hiperdens kanama izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Bikonveks ekstraaksiyel kanama dura ile kemik arasında sınırlanır; temporal travma ve lucid interval ile birlikte arteria meningea media kaynaklı epidural hematomu düşündürür."
             ]
           ]
         },
         "rows": [
           [
-            "Görüntüleme bulgusu",
+            "Kraniyal bilgisayarlı tomografi",
             "Sağ temporal bölgede bikonveks ekstraaksiyel hiperdens kanama izlendi.",
-            "Modaliteye özgü bulgu",
-            ""
+            "Anatomik yorum",
+            "Bikonveks ekstraaksiyel kanama dura ile kemik arasında sınırlanır; temporal travma ve lucid interval ile birlikte arteria meningea media kaynaklı epidural hematomu düşündürür."
           ]
         ],
-        "postAnswerExplanation": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
-        "interpretation": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
+        "postAnswerExplanation": "Bikonveks ekstraaksiyel kanama dura ile kemik arasında sınırlanır; temporal travma ve lucid interval ile birlikte arteria meningea media kaynaklı epidural hematomu düşündürür.",
+        "interpretation": "Bikonveks ekstraaksiyel kanama dura ile kemik arasında sınırlanır; temporal travma ve lucid interval ile birlikte arteria meningea media kaynaklı epidural hematomu düşündürür.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır."
+        "explanationAfterAnswer": "Bikonveks ekstraaksiyel kanama dura ile kemik arasında sınırlanır; temporal travma ve lucid interval ile birlikte arteria meningea media kaynaklı epidural hematomu düşündürür."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -87142,141 +87294,154 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu kanamanın en olası kaynak damarı aşağıdakilerden hangisidir?",
+    "question": "Temporal kemik travması sonrası bikonveks epidural hematomun en olası kaynak damarı hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Arteria meningea media",
       "options": [
         "Arteria meningea media",
-        "Arteria cerebri anterior",
-        "Arteria cerebri posterior",
-        "Vena cerebri magna",
-        "Sinus sagittalis superior"
+        "Arteria meningea anterior",
+        "Arteria meningea posterior",
+        "Arteria temporalis superficialis",
+        "Arteria cerebri media"
       ],
-      "question": "Bu kanamanın en olası kaynak damarı aşağıdakilerden hangisidir?",
-      "explanation": "Arteria meningea media, vakadaki bulgularla en uyumlu tanıdır. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Temporal kemik travması sonrası bikonveks epidural hematomun en olası kaynak damarı hangisidir?",
+      "explanation": "Arteria meningea media pterion derininde dura ile kemik arasında seyreder ve epidural aralığa kanayabilir. Temporal travma, lucid interval ve bikonveks ekstraaksiyel hiperdens kanama bu damarı destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Travma sağ temporal bölgeye alınmıştır + kısa düzelme döneminden sonra bilinç kötüleşmiştir; bu birliktelik Arteria meningea media yanıtını öne çıkarır."
+          "text": "Temporal travma + lucid interval + bikonveks ekstraaksiyel kanama = arteria meningea media kaynaklı epidural hematom düşünülür."
         }
       ],
       "optionComparison": {
-        "Arteria meningea media": "Arteria meningea media, olgunun ana tanısal örüntüsünü karşılar. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bulgular aynı tanı etrafında birleşir.",
-        "Arteria cerebri anterior": "Arteria cerebri anterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler.",
-        "Arteria cerebri posterior": "Arteria cerebri posterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler.",
-        "Vena cerebri magna": "Vena cerebri magna, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bulgular Arteria meningea media ile daha tutarlıdır.",
-        "Sinus sagittalis superior": "Sinus sagittalis superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler."
+        "Arteria meningea media": "Arteria meningea media pterion derininde dura ile kemik arasında seyreder ve epidural aralığa kanayabilir. Temporal travma, lucid interval ve bikonveks ekstraaksiyel hiperdens kanama bu damarı destekler.",
+        "Arteria meningea anterior": "Anterior meningeal dallar ön kraniyal fossa dura beslenmesiyle ilişkilidir. Temporal pterion travması ve klasik epidural hematom kaynağı arteria meningea mediadır.",
+        "Arteria meningea posterior": "Posterior meningeal dallar arka kraniyal fossa dura beslenmesine katkı verir. Sağ temporal bikonveks hematom için beklenen klasik kaynak değildir.",
+        "Arteria temporalis superficialis": "Arteria temporalis superficialis skalpte yüzeyel seyreder; kesilerde dış kanama yapabilir. Epidural hematomun intrakraniyal klasik kaynağı değildir.",
+        "Arteria cerebri media": "Arteria cerebri media subaraknoid alanda beyin parankimiyle ilişkilidir; iskemik inme veya subaraknoid/intraserebral kanamalarla düşünülür. Epidural bikonveks kanama dura-kemik arası middle meningeal arter kanamasıdır."
       },
       "answerFeedback": {
-        "summary": "Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bu bulgular tanısal karar açısından Arteria meningea media yanıtını destekler.",
+        "summary": "Bu olguda karar, sağ temporal travma ve kısa düzelme döneminden sonra bilinç kötüleşmesi epidural hematom için klasik klinik bağlam oluşturur. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Arteria meningea media pterion derininde dura ile kemik arasında seyreder ve epidural aralığa kanayabilir. Temporal travma, lucid interval ve bikonveks ekstraaksiyel hiperdens kanama bu damarı destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Arteria meningea media pterion derininde dura ile kemik arasında seyreder ve epidural aralığa kanayabilir. Temporal travma, lucid interval ve bikonveks ekstraaksiyel hiperdens kanama bu damarı destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Arteria meningea media pterion derininde dura ile kemik arasında seyreder ve epidural aralığa kanayabilir. Temporal travma, lucid interval ve bikonveks ekstraaksiyel hiperdens kanama bu damarı destekler.",
         "keyClues": [
-          "Travma sağ temporal bölgeye alınmıştır.",
-          "Kısa düzelme döneminden sonra bilinç kötüleşmiştir.",
-          "BT’de bikonveks ekstraaksiyel kanama görülmüştür."
+          "Sağ temporal travma ve kısa düzelme döneminden sonra bilinç kötüleşmesi epidural hematom için klasik klinik bağlam oluşturur.",
+          "BT’de sağ temporal bölgede bikonveks ekstraaksiyel hiperdens kanama izlenmesi epidural yerleşimi destekler.",
+          "Pterion derininde seyreden arteria meningea media temporal travmada bu kanamanın en tipik kaynak damarıdır."
         ],
-        "examPearl": "İpucu: Travma sağ temporal bölgeye alınmıştır + kısa düzelme döneminden sonra bilinç kötüleşmiştir; bu birliktelik Arteria meningea media yanıtını öne çıkarır.",
         "evidenceChain": [
           {
-            "text": "Travma sağ temporal bölgeye alınmıştır.",
+            "text": "Sağ temporal travma ve kısa düzelme döneminden sonra bilinç kötüleşmesi epidural hematom için klasik klinik bağlam oluşturur.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Kısa düzelme döneminden sonra bilinç kötüleşmiştir.",
+            "text": "BT’de sağ temporal bölgede bikonveks ekstraaksiyel hiperdens kanama izlenmesi epidural yerleşimi destekler.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "BT’de bikonveks ekstraaksiyel kanama görülmüştür.",
+            "text": "Pterion derininde seyreden arteria meningea media temporal travmada bu kanamanın en tipik kaynak damarıdır.",
             "weight": "medium",
             "source": "case"
           }
         ],
+        "examPearl": "Temporal travma + lucid interval + bikonveks ekstraaksiyel kanama = arteria meningea media kaynaklı epidural hematom düşünülür.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Temporal travma + lucid interval + bikonveks ekstraaksiyel kanama = arteria meningea media kaynaklı epidural hematom düşünülür."
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "label": "Klinik anatomi",
+            "text": "Arteria meningea media, foramen spinosumdan kraniyuma girer ve pterion derininde seyreder; temporal kemik/pterion travmasında epidural hematomun klasik kaynağıdır."
+          }
+        ],
         "optionComparison": {
-          "Arteria meningea media": "Arteria meningea media, olgunun ana tanısal örüntüsünü karşılar. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bulgular aynı tanı etrafında birleşir.",
-          "Arteria cerebri anterior": "Arteria cerebri anterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler.",
-          "Arteria cerebri posterior": "Arteria cerebri posterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler.",
-          "Vena cerebri magna": "Vena cerebri magna, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bulgular Arteria meningea media ile daha tutarlıdır.",
-          "Sinus sagittalis superior": "Sinus sagittalis superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler."
+          "Arteria meningea media": "Arteria meningea media pterion derininde dura ile kemik arasında seyreder ve epidural aralığa kanayabilir. Temporal travma, lucid interval ve bikonveks ekstraaksiyel hiperdens kanama bu damarı destekler.",
+          "Arteria meningea anterior": "Anterior meningeal dallar ön kraniyal fossa dura beslenmesiyle ilişkilidir. Temporal pterion travması ve klasik epidural hematom kaynağı arteria meningea mediadır.",
+          "Arteria meningea posterior": "Posterior meningeal dallar arka kraniyal fossa dura beslenmesine katkı verir. Sağ temporal bikonveks hematom için beklenen klasik kaynak değildir.",
+          "Arteria temporalis superficialis": "Arteria temporalis superficialis skalpte yüzeyel seyreder; kesilerde dış kanama yapabilir. Epidural hematomun intrakraniyal klasik kaynağı değildir.",
+          "Arteria cerebri media": "Arteria cerebri media subaraknoid alanda beyin parankimiyle ilişkilidir; iskemik inme veya subaraknoid/intraserebral kanamalarla düşünülür. Epidural bikonveks kanama dura-kemik arası middle meningeal arter kanamasıdır."
         },
-        "rationale": "Arteria meningea media, vakadaki bulgularla en uyumlu tanıdır. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "whyCorrect": "Arteria meningea media, vakadaki bulgularla en uyumlu tanıdır. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
         "whyWrong": {
-          "Arteria cerebri anterior": "Arteria cerebri anterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler.",
-          "Arteria cerebri posterior": "Arteria cerebri posterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler.",
-          "Vena cerebri magna": "Vena cerebri magna, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bulgular Arteria meningea media ile daha tutarlıdır.",
-          "Sinus sagittalis superior": "Sinus sagittalis superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler."
+          "Arteria meningea anterior": "Anterior meningeal dallar ön kraniyal fossa dura beslenmesiyle ilişkilidir. Temporal pterion travması ve klasik epidural hematom kaynağı arteria meningea mediadır.",
+          "Arteria meningea posterior": "Posterior meningeal dallar arka kraniyal fossa dura beslenmesine katkı verir. Sağ temporal bikonveks hematom için beklenen klasik kaynak değildir.",
+          "Arteria temporalis superficialis": "Arteria temporalis superficialis skalpte yüzeyel seyreder; kesilerde dış kanama yapabilir. Epidural hematomun intrakraniyal klasik kaynağı değildir.",
+          "Arteria cerebri media": "Arteria cerebri media subaraknoid alanda beyin parankimiyle ilişkilidir; iskemik inme veya subaraknoid/intraserebral kanamalarla düşünülür. Epidural bikonveks kanama dura-kemik arası middle meningeal arter kanamasıdır."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Pterion kırığında arteria meningea media yaralanmasını epidural hematomla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bu örüntü Arteria meningea media yanıtını destekler."
+        "learningOutcome": "Epidural hematomu pterion, foramen spinosum ve middle meningeal arter anatomisiyle açıklayabilme.",
+        "coreKnowledge": "Arteria meningea media, foramen spinosumdan kraniyuma girer ve pterion derininde seyreder; temporal kemik/pterion travmasında epidural hematomun klasik kaynağıdır."
       },
-      "whyCorrect": "Arteria meningea media, vakadaki bulgularla en uyumlu tanıdır. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Arteria meningea media pterion derininde dura ile kemik arasında seyreder ve epidural aralığa kanayabilir. Temporal travma, lucid interval ve bikonveks ekstraaksiyel hiperdens kanama bu damarı destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Travma sağ temporal bölgeye alınmıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Sağ temporal travma ve kısa düzelme döneminden sonra bilinç kötüleşmesi epidural hematom için klasik klinik bağlam oluşturur.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Kısa düzelme döneminden sonra bilinç kötüleşmiştir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "BT’de sağ temporal bölgede bikonveks ekstraaksiyel hiperdens kanama izlenmesi epidural yerleşimi destekler.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "BT’de bikonveks ekstraaksiyel kanama görülmüştür.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Pterion derininde seyreden arteria meningea media temporal travmada bu kanamanın en tipik kaynak damarıdır.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bu örüntü Arteria meningea media yanıtını destekler.",
-      "examPearl": "İpucu: Travma sağ temporal bölgeye alınmıştır + kısa düzelme döneminden sonra bilinç kötüleşmiştir; bu birliktelik Arteria meningea media yanıtını öne çıkarır.",
+      "coreKnowledge": "Arteria meningea media, foramen spinosumdan kraniyuma girer ve pterion derininde seyreder; temporal kemik/pterion travmasında epidural hematomun klasik kaynağıdır.",
+      "examPearl": "Temporal travma + lucid interval + bikonveks ekstraaksiyel kanama = arteria meningea media kaynaklı epidural hematom düşünülür.",
       "whyWrong": {
-        "Arteria cerebri anterior": "Arteria cerebri anterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler.",
-        "Arteria cerebri posterior": "Arteria cerebri posterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler.",
-        "Vena cerebri magna": "Vena cerebri magna, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bulgular Arteria meningea media ile daha tutarlıdır.",
-        "Sinus sagittalis superior": "Sinus sagittalis superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler."
+        "Arteria meningea anterior": "Anterior meningeal dallar ön kraniyal fossa dura beslenmesiyle ilişkilidir. Temporal pterion travması ve klasik epidural hematom kaynağı arteria meningea mediadır.",
+        "Arteria meningea posterior": "Posterior meningeal dallar arka kraniyal fossa dura beslenmesine katkı verir. Sağ temporal bikonveks hematom için beklenen klasik kaynak değildir.",
+        "Arteria temporalis superficialis": "Arteria temporalis superficialis skalpte yüzeyel seyreder; kesilerde dış kanama yapabilir. Epidural hematomun intrakraniyal klasik kaynağı değildir.",
+        "Arteria cerebri media": "Arteria cerebri media subaraknoid alanda beyin parankimiyle ilişkilidir; iskemik inme veya subaraknoid/intraserebral kanamalarla düşünülür. Epidural bikonveks kanama dura-kemik arası middle meningeal arter kanamasıdır."
       }
     },
-    "whyCorrect": "Arteria meningea media, vakadaki bulgularla en uyumlu tanıdır. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "whyCorrect": "Arteria meningea media pterion derininde dura ile kemik arasında seyreder ve epidural aralığa kanayabilir. Temporal travma, lucid interval ve bikonveks ekstraaksiyel hiperdens kanama bu damarı destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "evidenceChain": [
       {
-        "text": "Travma sağ temporal bölgeye alınmıştır.",
+        "text": "Sağ temporal travma ve kısa düzelme döneminden sonra bilinç kötüleşmesi epidural hematom için klasik klinik bağlam oluşturur.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Kısa düzelme döneminden sonra bilinç kötüleşmiştir.",
+        "text": "BT’de sağ temporal bölgede bikonveks ekstraaksiyel hiperdens kanama izlenmesi epidural yerleşimi destekler.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "BT’de bikonveks ekstraaksiyel kanama görülmüştür.",
+        "text": "Pterion derininde seyreden arteria meningea media temporal travmada bu kanamanın en tipik kaynak damarıdır.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "difficultyTag": "Acil",
-    "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bu örüntü Arteria meningea media yanıtını destekler.",
-    "examPearl": "İpucu: Travma sağ temporal bölgeye alınmıştır + kısa düzelme döneminden sonra bilinç kötüleşmiştir; bu birliktelik Arteria meningea media yanıtını öne çıkarır.",
+    "coreKnowledge": "Arteria meningea media, foramen spinosumdan kraniyuma girer ve pterion derininde seyreder; temporal kemik/pterion travmasında epidural hematomun klasik kaynağıdır.",
+    "examPearl": "Temporal travma + lucid interval + bikonveks ekstraaksiyel kanama = arteria meningea media kaynaklı epidural hematom düşünülür.",
     "optionComparison": {
-      "Arteria meningea media": "Arteria meningea media, olgunun ana tanısal örüntüsünü karşılar. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bulgular aynı tanı etrafında birleşir.",
-      "Arteria cerebri anterior": "Arteria cerebri anterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler.",
-      "Arteria cerebri posterior": "Arteria cerebri posterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler.",
-      "Vena cerebri magna": "Vena cerebri magna, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bulgular Arteria meningea media ile daha tutarlıdır.",
-      "Sinus sagittalis superior": "Sinus sagittalis superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler."
+      "Arteria meningea media": "Arteria meningea media pterion derininde dura ile kemik arasında seyreder ve epidural aralığa kanayabilir. Temporal travma, lucid interval ve bikonveks ekstraaksiyel hiperdens kanama bu damarı destekler.",
+      "Arteria meningea anterior": "Anterior meningeal dallar ön kraniyal fossa dura beslenmesiyle ilişkilidir. Temporal pterion travması ve klasik epidural hematom kaynağı arteria meningea mediadır.",
+      "Arteria meningea posterior": "Posterior meningeal dallar arka kraniyal fossa dura beslenmesine katkı verir. Sağ temporal bikonveks hematom için beklenen klasik kaynak değildir.",
+      "Arteria temporalis superficialis": "Arteria temporalis superficialis skalpte yüzeyel seyreder; kesilerde dış kanama yapabilir. Epidural hematomun intrakraniyal klasik kaynağı değildir.",
+      "Arteria cerebri media": "Arteria cerebri media subaraknoid alanda beyin parankimiyle ilişkilidir; iskemik inme veya subaraknoid/intraserebral kanamalarla düşünülür. Epidural bikonveks kanama dura-kemik arası middle meningeal arter kanamasıdır."
     },
     "whyWrong": {
-      "Arteria cerebri anterior": "Arteria cerebri anterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler.",
-      "Arteria cerebri posterior": "Arteria cerebri posterior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler.",
-      "Vena cerebri magna": "Vena cerebri magna, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Travma sağ temporal bölgeye alınmıştır Kısa düzelme döneminden sonra bilinç kötüleşmiştir. Bulgular Arteria meningea media ile daha tutarlıdır.",
-      "Sinus sagittalis superior": "Sinus sagittalis superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Arteria meningea media yanıtını destekler."
+      "Arteria meningea anterior": "Anterior meningeal dallar ön kraniyal fossa dura beslenmesiyle ilişkilidir. Temporal pterion travması ve klasik epidural hematom kaynağı arteria meningea mediadır.",
+      "Arteria meningea posterior": "Posterior meningeal dallar arka kraniyal fossa dura beslenmesine katkı verir. Sağ temporal bikonveks hematom için beklenen klasik kaynak değildir.",
+      "Arteria temporalis superficialis": "Arteria temporalis superficialis skalpte yüzeyel seyreder; kesilerde dış kanama yapabilir. Epidural hematomun intrakraniyal klasik kaynağı değildir.",
+      "Arteria cerebri media": "Arteria cerebri media subaraknoid alanda beyin parankimiyle ilişkilidir; iskemik inme veya subaraknoid/intraserebral kanamalarla düşünülür. Epidural bikonveks kanama dura-kemik arası middle meningeal arter kanamasıdır."
     }
   },
   {
@@ -87286,28 +87451,29 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Duvara itme sırasında kürek kemiği belirginleşmesi",
     "difficulty": "Kolay",
-    "clinicalFocus": "Duvara itme sırasında kürek kemiği belirginleşmesi bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır ve duvara itme sırasında skapulanın medial kenarı kanatlanmaktadır. Bu ipuçlarını kullanarak Nervus thoracicus longus seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Duvara itme sırasında kürek kemiği belirginleşmesi olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus thoracicus longus yanıtına ulaşma.",
+    "learningTarget": "Skapula kanatlanmasını serratus anterior ve uzun torasik sinir anatomisiyle ilişkilendirebilme.",
     "demographics": "31 yaşında erkek hasta",
-    "setting": "fizik tedavi polikliniğinde değerlendiriliyor",
-    "chiefComplaint": "Hasta, koltuk altı bölgesine aldığı travma sonrası sağ omuz çevresinde güçsüzlük nedeniyle başvuruyor.",
-    "stem": "Dağcılık sırasında sırt çantasının omuz ve aksilla bölgesine uzun süre baskı yaptığını, sonrasında duvara iterken kürek kemiğinin dışarı çıktığını fark ettiğini belirtmektedir.",
+    "setting": "Fizik tedavi polikliniği",
+    "chiefComplaint": "Hasta, aksilla bölgesine uzun süreli baskı sonrası duvara iterken sağ kürek kemiğinin belirginleşmesi nedeniyle başvuruyor.",
+    "stem": "Dağcılık sırasında sırt çantasının omuz ve aksilla bölgesine uzun süre baskı yaptığını, sonrasında duvara iterken kürek kemiğinin dışarı çıktığını fark ettiğini belirtmektedir. Boyun ağrısı veya el uyuşması tariflemiyor.",
     "patientIntro": {
       "profile": "31 yaşında erkek hasta, fizik tedavi polikliniğinde değerlendiriliyor.",
-      "presentation": "Hasta, koltuk altı bölgesine aldığı travma sonrası sağ omuz çevresinde güçsüzlük nedeniyle başvuruyor.",
-      "historySummary": "Dağcılık sırasında sırt çantasının omuz ve aksilla bölgesine uzun süre baskı yaptığını, sonrasında duvara iterken kürek kemiğinin dışarı çıktığını fark ettiğini belirtmektedir."
+      "presentation": "Hasta, aksilla bölgesine uzun süreli baskı sonrası duvara iterken sağ kürek kemiğinin belirginleşmesi nedeniyle başvuruyor.",
+      "historySummary": "Dağcılık sırasında sırt çantasının omuz ve aksilla bölgesine uzun süre baskı yaptığını, sonrasında duvara iterken kürek kemiğinin dışarı çıktığını fark ettiğini belirtmektedir. Boyun ağrısı veya el uyuşması tariflemiyor."
     },
     "vitals": {
-      "TA": "88/56 mmHg",
-      "Nabız": "126/dk",
-      "Solunum": "24/dk",
-      "SpO2": "%96, oda havasında",
+      "TA": "118/76 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98, oda havasında",
       "Ateş": "36.6 °C",
-      "Şok indeksi": "1.43 yüksek"
+      "Şok indeksi": "0.66 normal"
     },
     "exam": [
-      "Hasta iki eliyle duvara ittiğinde sağ skapulanın medial kenarı belirgin şekilde kanatlanmaktadır.",
-      "Omuz abdüksiyonu başlangıçta mümkündür ancak kolu baş üzerine kaldırmada zorlanır."
+      "Hasta iki eliyle duvara ittiğinde sağ skapulanın medial kenarı belirgin şekilde kanatlanır.",
+      "Omuz abdüksiyonu başlangıçta mümkündür ancak kolu baş üzerine kaldırmada zorlanır.",
+      "Deltoid duyusu ve el bileği ekstansiyonu korunmuştur."
     ],
     "investigations": [],
     "useSyntheticInvestigationBank": false,
@@ -87316,141 +87482,154 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu hastada hasarlanması en olası sinir aşağıdakilerden hangisidir?",
+    "question": "Duvara itme sırasında skapulanın medial kenarının belirginleşmesini en iyi açıklayan sinir hasarı hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Nervus thoracicus longus",
       "options": [
         "Nervus thoracicus longus",
+        "Nervus thoracodorsalis",
         "Nervus dorsalis scapulae",
         "Nervus suprascapularis",
-        "Nervus axillaris",
-        "Nervus subscapularis"
+        "Nervus axillaris"
       ],
-      "question": "Bu hastada hasarlanması en olası sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus thoracicus longus, bu olguda en uygun yanıttır. Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır.",
+      "question": "Duvara itme sırasında skapulanın medial kenarının belirginleşmesini en iyi açıklayan sinir hasarı hangisidir?",
+      "explanation": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır + duvara itme sırasında skapulanın medial kenarı kanatlanmaktadır; bu birliktelik Nervus thoracicus longus yanıtını öne çıkarır."
+          "text": "Duvara itme testiyle belirginleşen medial skapula kanatlanması, serratus anterior ve nervus thoracicus longus lezyonunun klasik bulgusudur."
         }
       ],
       "optionComparison": {
-        "Nervus thoracicus longus": "Nervus thoracicus longus, olgunun ana tanısal örüntüsünü karşılar. Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır Duvara itme sırasında skapulanın medial kenarı kanatlanmaktadır. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus dorsalis scapulae": "Nervus dorsalis scapulae, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-        "Nervus suprascapularis": "Nervus suprascapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-        "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-        "Nervus subscapularis": "Nervus subscapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler."
+        "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir.",
+        "Nervus thoracodorsalis": "Nervus thoracodorsalis m. latissimus dorsiyi innerve eder; omuz adduksiyon, ekstansiyon ve iç rotasyonunda önemlidir. Skapulanın medial kanatlanması bu sinirin tipik bulgusu değildir.",
+        "Nervus dorsalis scapulae": "Nervus dorsalis scapulae rhomboid kasları ve levator scapulaeyi innerve eder; lezyonda skapular retraksiyon zayıflar. Duvara itmede belirgin medial kanatlanmanın ana nedeni serratus anterior paralizisidir.",
+        "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyon başlangıcı ve dış rotasyon etkilenir. Serratus anterior fonksiyonu ve duvar itme bulgusu bu sinirle açıklanmaz.",
+        "Nervus axillaris": "Nervus axillaris deltoid ve teres minorla ilişkilidir; omuz abdüksiyon kaybı ve lateral omuz duyusu azalması yapar. Skapula kanatlanması ve aksiller yüzeyel seyir nervus thoracicus longusu düşündürür."
       },
       "answerFeedback": {
-        "summary": "Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır Duvara itme sırasında skapulanın medial kenarı kanatlanmaktadır. Bu bulgular tanısal karar açısından Nervus thoracicus longus yanıtını destekler.",
+        "summary": "Bu olguda karar, aksilla bölgesine uzun süreli baskı, toraks duvarında yüzeyel seyreden nervus thoracicus longusu riskli hale getirir. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir.",
         "keyClues": [
-          "Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır.",
-          "Duvara itme sırasında skapulanın medial kenarı kanatlanmaktadır.",
-          "Kolu baş üzerine kaldırmada zorlanma vardır."
+          "Aksilla bölgesine uzun süreli baskı, toraks duvarında yüzeyel seyreden nervus thoracicus longusu riskli hale getirir.",
+          "Duvara itme sırasında skapula medial kenarının kanatlanması serratus anterior paralizisini gösterir.",
+          "Deltoid duyusu ve el bileği ekstansiyonunun korunması axillary veya radial sinir lezyonundan uzaklaştırır."
         ],
-        "examPearl": "İpucu: Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır + duvara itme sırasında skapulanın medial kenarı kanatlanmaktadır; bu birliktelik Nervus thoracicus longus yanıtını öne çıkarır.",
         "evidenceChain": [
           {
-            "text": "Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır.",
+            "text": "Aksilla bölgesine uzun süreli baskı, toraks duvarında yüzeyel seyreden nervus thoracicus longusu riskli hale getirir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Duvara itme sırasında skapulanın medial kenarı kanatlanmaktadır.",
+            "text": "Duvara itme sırasında skapula medial kenarının kanatlanması serratus anterior paralizisini gösterir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Kolu baş üzerine kaldırmada zorlanma vardır.",
+            "text": "Deltoid duyusu ve el bileği ekstansiyonunun korunması axillary veya radial sinir lezyonundan uzaklaştırır.",
             "weight": "medium",
             "source": "case"
           }
         ],
+        "examPearl": "Duvara itme testiyle belirginleşen medial skapula kanatlanması, serratus anterior ve nervus thoracicus longus lezyonunun klasik bulgusudur.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Duvara itme testiyle belirginleşen medial skapula kanatlanması, serratus anterior ve nervus thoracicus longus lezyonunun klasik bulgusudur."
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "label": "Klinik anatomi",
+            "text": "Nervus thoracicus longus, m. serratus anterioru innerve eder; serratus anterior paralizisi skapulanın toraks duvarına sabitlenmesini bozar ve medial kenarda kanatlanma yapar."
+          }
+        ],
         "optionComparison": {
-          "Nervus thoracicus longus": "Nervus thoracicus longus, olgunun ana tanısal örüntüsünü karşılar. Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır Duvara itme sırasında skapulanın medial kenarı kanatlanmaktadır. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus dorsalis scapulae": "Nervus dorsalis scapulae, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-          "Nervus suprascapularis": "Nervus suprascapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-          "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-          "Nervus subscapularis": "Nervus subscapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler."
+          "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir.",
+          "Nervus thoracodorsalis": "Nervus thoracodorsalis m. latissimus dorsiyi innerve eder; omuz adduksiyon, ekstansiyon ve iç rotasyonunda önemlidir. Skapulanın medial kanatlanması bu sinirin tipik bulgusu değildir.",
+          "Nervus dorsalis scapulae": "Nervus dorsalis scapulae rhomboid kasları ve levator scapulaeyi innerve eder; lezyonda skapular retraksiyon zayıflar. Duvara itmede belirgin medial kanatlanmanın ana nedeni serratus anterior paralizisidir.",
+          "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyon başlangıcı ve dış rotasyon etkilenir. Serratus anterior fonksiyonu ve duvar itme bulgusu bu sinirle açıklanmaz.",
+          "Nervus axillaris": "Nervus axillaris deltoid ve teres minorla ilişkilidir; omuz abdüksiyon kaybı ve lateral omuz duyusu azalması yapar. Skapula kanatlanması ve aksiller yüzeyel seyir nervus thoracicus longusu düşündürür."
         },
-        "rationale": "Nervus thoracicus longus, bu olguda en uygun yanıttır. Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır.",
-        "whyCorrect": "Nervus thoracicus longus, bu olguda en uygun yanıttır. Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır.",
         "whyWrong": {
-          "Nervus dorsalis scapulae": "Nervus dorsalis scapulae, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-          "Nervus suprascapularis": "Nervus suprascapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-          "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-          "Nervus subscapularis": "Nervus subscapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler."
+          "Nervus thoracodorsalis": "Nervus thoracodorsalis m. latissimus dorsiyi innerve eder; omuz adduksiyon, ekstansiyon ve iç rotasyonunda önemlidir. Skapulanın medial kanatlanması bu sinirin tipik bulgusu değildir.",
+          "Nervus dorsalis scapulae": "Nervus dorsalis scapulae rhomboid kasları ve levator scapulaeyi innerve eder; lezyonda skapular retraksiyon zayıflar. Duvara itmede belirgin medial kanatlanmanın ana nedeni serratus anterior paralizisidir.",
+          "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyon başlangıcı ve dış rotasyon etkilenir. Serratus anterior fonksiyonu ve duvar itme bulgusu bu sinirle açıklanmaz.",
+          "Nervus axillaris": "Nervus axillaris deltoid ve teres minorla ilişkilidir; omuz abdüksiyon kaybı ve lateral omuz duyusu azalması yapar. Skapula kanatlanması ve aksiller yüzeyel seyir nervus thoracicus longusu düşündürür."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Nervus thoracicus longus hasarını scapula alata bulgusuyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus thoracicus longus yanıtını destekler."
+        "learningOutcome": "Skapula kanatlanmasını serratus anterior ve uzun torasik sinir anatomisiyle ilişkilendirebilme.",
+        "coreKnowledge": "Nervus thoracicus longus, m. serratus anterioru innerve eder; serratus anterior paralizisi skapulanın toraks duvarına sabitlenmesini bozar ve medial kenarda kanatlanma yapar."
       },
-      "whyCorrect": "Nervus thoracicus longus, bu olguda en uygun yanıttır. Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır.",
+      "whyCorrect": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Aksilla bölgesine uzun süreli baskı, toraks duvarında yüzeyel seyreden nervus thoracicus longusu riskli hale getirir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Duvara itme sırasında skapulanın medial kenarı kanatlanmaktadır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Duvara itme sırasında skapula medial kenarının kanatlanması serratus anterior paralizisini gösterir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Kolu baş üzerine kaldırmada zorlanma vardır.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Deltoid duyusu ve el bileği ekstansiyonunun korunması axillary veya radial sinir lezyonundan uzaklaştırır.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus thoracicus longus yanıtını destekler.",
-      "examPearl": "İpucu: Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır + duvara itme sırasında skapulanın medial kenarı kanatlanmaktadır; bu birliktelik Nervus thoracicus longus yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus thoracicus longus, m. serratus anterioru innerve eder; serratus anterior paralizisi skapulanın toraks duvarına sabitlenmesini bozar ve medial kenarda kanatlanma yapar.",
+      "examPearl": "Duvara itme testiyle belirginleşen medial skapula kanatlanması, serratus anterior ve nervus thoracicus longus lezyonunun klasik bulgusudur.",
       "whyWrong": {
-        "Nervus dorsalis scapulae": "Nervus dorsalis scapulae, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-        "Nervus suprascapularis": "Nervus suprascapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-        "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-        "Nervus subscapularis": "Nervus subscapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler."
+        "Nervus thoracodorsalis": "Nervus thoracodorsalis m. latissimus dorsiyi innerve eder; omuz adduksiyon, ekstansiyon ve iç rotasyonunda önemlidir. Skapulanın medial kanatlanması bu sinirin tipik bulgusu değildir.",
+        "Nervus dorsalis scapulae": "Nervus dorsalis scapulae rhomboid kasları ve levator scapulaeyi innerve eder; lezyonda skapular retraksiyon zayıflar. Duvara itmede belirgin medial kanatlanmanın ana nedeni serratus anterior paralizisidir.",
+        "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyon başlangıcı ve dış rotasyon etkilenir. Serratus anterior fonksiyonu ve duvar itme bulgusu bu sinirle açıklanmaz.",
+        "Nervus axillaris": "Nervus axillaris deltoid ve teres minorla ilişkilidir; omuz abdüksiyon kaybı ve lateral omuz duyusu azalması yapar. Skapula kanatlanması ve aksiller yüzeyel seyir nervus thoracicus longusu düşündürür."
       }
     },
-    "whyCorrect": "Nervus thoracicus longus, bu olguda en uygun yanıttır. Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır.",
+    "whyCorrect": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "evidenceChain": [
       {
-        "text": "Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır.",
+        "text": "Aksilla bölgesine uzun süreli baskı, toraks duvarında yüzeyel seyreden nervus thoracicus longusu riskli hale getirir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Duvara itme sırasında skapulanın medial kenarı kanatlanmaktadır.",
+        "text": "Duvara itme sırasında skapula medial kenarının kanatlanması serratus anterior paralizisini gösterir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Kolu baş üzerine kaldırmada zorlanma vardır.",
+        "text": "Deltoid duyusu ve el bileği ekstansiyonunun korunması axillary veya radial sinir lezyonundan uzaklaştırır.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "difficultyTag": "Kolay",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Nervus thoracicus longus yanıtını destekler.",
-    "examPearl": "İpucu: Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır + duvara itme sırasında skapulanın medial kenarı kanatlanmaktadır; bu birliktelik Nervus thoracicus longus yanıtını öne çıkarır.",
+    "coreKnowledge": "Nervus thoracicus longus, m. serratus anterioru innerve eder; serratus anterior paralizisi skapulanın toraks duvarına sabitlenmesini bozar ve medial kenarda kanatlanma yapar.",
+    "examPearl": "Duvara itme testiyle belirginleşen medial skapula kanatlanması, serratus anterior ve nervus thoracicus longus lezyonunun klasik bulgusudur.",
     "optionComparison": {
-      "Nervus thoracicus longus": "Nervus thoracicus longus, olgunun ana tanısal örüntüsünü karşılar. Yakınmalar aksilla ve lateral toraks bölgesine bası sonrası başlamıştır Duvara itme sırasında skapulanın medial kenarı kanatlanmaktadır. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus dorsalis scapulae": "Nervus dorsalis scapulae, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-      "Nervus suprascapularis": "Nervus suprascapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-      "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-      "Nervus subscapularis": "Nervus subscapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler."
+      "Nervus thoracicus longus": "Nervus thoracicus longus m. serratus anterioru innerve eder. Serratus anterior zayıflığında skapula toraks duvarına sabitlenemez; duvara itme sırasında medial kenarın kanatlanması bu sinirin hasarını gösterir.",
+      "Nervus thoracodorsalis": "Nervus thoracodorsalis m. latissimus dorsiyi innerve eder; omuz adduksiyon, ekstansiyon ve iç rotasyonunda önemlidir. Skapulanın medial kanatlanması bu sinirin tipik bulgusu değildir.",
+      "Nervus dorsalis scapulae": "Nervus dorsalis scapulae rhomboid kasları ve levator scapulaeyi innerve eder; lezyonda skapular retraksiyon zayıflar. Duvara itmede belirgin medial kanatlanmanın ana nedeni serratus anterior paralizisidir.",
+      "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyon başlangıcı ve dış rotasyon etkilenir. Serratus anterior fonksiyonu ve duvar itme bulgusu bu sinirle açıklanmaz.",
+      "Nervus axillaris": "Nervus axillaris deltoid ve teres minorla ilişkilidir; omuz abdüksiyon kaybı ve lateral omuz duyusu azalması yapar. Skapula kanatlanması ve aksiller yüzeyel seyir nervus thoracicus longusu düşündürür."
     },
     "whyWrong": {
-      "Nervus dorsalis scapulae": "Nervus dorsalis scapulae, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-      "Nervus suprascapularis": "Nervus suprascapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-      "Nervus axillaris": "Nervus axillaris, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler.",
-      "Nervus subscapularis": "Nervus subscapularis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus thoracicus longus yanıtını destekler."
+      "Nervus thoracodorsalis": "Nervus thoracodorsalis m. latissimus dorsiyi innerve eder; omuz adduksiyon, ekstansiyon ve iç rotasyonunda önemlidir. Skapulanın medial kanatlanması bu sinirin tipik bulgusu değildir.",
+      "Nervus dorsalis scapulae": "Nervus dorsalis scapulae rhomboid kasları ve levator scapulaeyi innerve eder; lezyonda skapular retraksiyon zayıflar. Duvara itmede belirgin medial kanatlanmanın ana nedeni serratus anterior paralizisidir.",
+      "Nervus suprascapularis": "Nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyon başlangıcı ve dış rotasyon etkilenir. Serratus anterior fonksiyonu ve duvar itme bulgusu bu sinirle açıklanmaz.",
+      "Nervus axillaris": "Nervus axillaris deltoid ve teres minorla ilişkilidir; omuz abdüksiyon kaybı ve lateral omuz duyusu azalması yapar. Skapula kanatlanması ve aksiller yüzeyel seyir nervus thoracicus longusu düşündürür."
     }
   },
   {
@@ -97478,16 +97657,16 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Doğum analjezisi sonrası perineal uyuşma",
     "difficulty": "Zor",
-    "clinicalFocus": "Doğum analjezisi sonrası perineal uyuşma bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Blok doğum eyleminde perineal analjezi için uygulanmıştır ve perine ve dış genital bölgede geçici duyu azalması gelişmiştir. Bu ipuçlarını kullanarak Spina ischiadica seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Doğum analjezisi sonrası perineal uyuşma olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Spina ischiadica yanıtına ulaşma.",
+    "learningTarget": "Pudendal sinir bloğunu spina ischiadica ve perineal duyu anatomisiyle ilişkilendirebilme.",
     "demographics": "27 yaşında kadın hasta",
-    "setting": "Klinik değerlendirme",
-    "chiefComplaint": "Hasta, doğum eylemi sırasında perineal ağrının azalması ve geçici perineal uyuşma gelişmesi nedeniyle izleniyor.",
-    "stem": "Vajinal doğumun ikinci evresinde analjezi amacıyla transvajinal pudendal blok uygulandığı öğreniliyor. Uygulama sonrası kasık veya uylukta belirgin motor kayıp olmamıştır.",
+    "setting": "Doğumhane",
+    "chiefComplaint": "Hasta, doğum eyleminin ikinci evresinde uygulanan pudendal blok sonrası perineal ağrının azalması nedeniyle izleniyor.",
+    "stem": "Transvajinal pudendal blok uygulandığı, işlemden sonra perine ve dış genital bölgede geçici uyuşma geliştiği öğreniliyor. Uylukta belirgin motor kayıp veya alt ekstremite uyuşması olmamıştır.",
     "patientIntro": {
-      "profile": "27 yaşında kadın hasta, doğum sırasında uygulanan bölgesel blok sonrası değerlendiriliyor.",
-      "presentation": "Hasta, doğum eylemi sırasında perineal ağrının azalması ve geçici perineal uyuşma gelişmesi nedeniyle izleniyor.",
-      "historySummary": "Vajinal doğumun ikinci evresinde analjezi amacıyla transvajinal pudendal blok uygulandığı öğreniliyor. Uygulama sonrası kasık veya uylukta belirgin motor kayıp olmamıştır."
+      "profile": "27 yaşında kadın hasta, doğumhanede değerlendiriliyor.",
+      "presentation": "Hasta, doğum eyleminin ikinci evresinde uygulanan pudendal blok sonrası perineal ağrının azalması nedeniyle izleniyor.",
+      "historySummary": "Transvajinal pudendal blok uygulandığı, işlemden sonra perine ve dış genital bölgede geçici uyuşma geliştiği öğreniliyor. Uylukta belirgin motor kayıp veya alt ekstremite uyuşması olmamıştır."
     },
     "vitals": {
       "TA": "118/76 mmHg",
@@ -97509,154 +97688,154 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu blok sırasında hedeflenen sinirin en önemli anatomik işaret noktası aşağıdakilerden hangisidir?",
+    "question": "Transvajinal pudendal sinir bloğunda palpasyonla hedeflenen en önemli kemik işaret noktası hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Spina ischiadica",
       "options": [
-        "Spina iliaca anterior superior",
         "Spina ischiadica",
-        "Trochanter major",
+        "Tuber ischiadicum",
+        "Spina iliaca anterior superior",
         "Tuberculum pubicum",
-        "Caput fibulae"
+        "Os coccygis"
       ],
-      "question": "Bu blok sırasında hedeflenen sinirin en önemli anatomik işaret noktası aşağıdakilerden hangisidir?",
-      "explanation": "Spina ischiadica, vakadaki bulgularla en uyumlu tanıdır. Blok doğum eyleminde perineal analjezi için uygulanmıştır Perine ve dış genital bölgede geçici duyu azalması gelişmiştir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Transvajinal pudendal sinir bloğunda palpasyonla hedeflenen en önemli kemik işaret noktası hangisidir?",
+      "explanation": "Spina ischiadica pudendal sinirin sakrospinöz ligament komşuluğunda geçtiği düzey için palpasyon işaretidir. Doğumda perineal analjezi amacıyla yapılan pudendal blokta hedeflenen kritik landmark budur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Blok doğum eyleminde perineal analjezi için uygulanmıştır + perine ve dış genital bölgede geçici duyu azalması gelişmiştir; bu birliktelik Spina ischiadica yanıtını öne çıkarır."
+          "text": "Pudendal blokta hedef, spina ischiadica çevresindeki pudendal sinirdir; perineal analjezi bu anatomik komşulukla sağlanır."
         }
       ],
       "optionComparison": {
-        "Spina iliaca anterior superior": "Spina iliaca anterior superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-        "Spina ischiadica": "Spina ischiadica, olgunun ana tanısal örüntüsünü karşılar. Blok doğum eyleminde perineal analjezi için uygulanmıştır Perine ve dış genital bölgede geçici duyu azalması gelişmiştir. Bulgular aynı tanı etrafında birleşir.",
-        "Trochanter major": "Trochanter major, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-        "Tuberculum pubicum": "Tuberculum pubicum, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-        "Caput fibulae": "Caput fibulae, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler."
+        "Spina ischiadica": "Spina ischiadica pudendal sinirin sakrospinöz ligament komşuluğunda geçtiği düzey için palpasyon işaretidir. Doğumda perineal analjezi amacıyla yapılan pudendal blokta hedeflenen kritik landmark budur.",
+        "Tuber ischiadicum": "Tuber ischiadicum oturma kemiği çıkıntısıdır ve hamstring başlangıçlarıyla ilişkilidir. Pudendal sinir bloğunda temel palpasyon noktası spina ischiadicadır.",
+        "Spina iliaca anterior superior": "SIAS inguinal ligament, sartorius ve lateral femoral cutaneous sinir komşuluğu açısından önemlidir. Pudendal sinir ve perineal analjezi hedefiyle ilişkili ana landmark değildir.",
+        "Tuberculum pubicum": "Tuberculum pubicum inguinal kanal ve femoral herni anatomisinde önemlidir. Pudendal blok için hedef nokta pubik tüberkül değil spina ischiadicadır.",
+        "Os coccygis": "Koksiks pelvik taban ve anokoksigeal ligament ilişkilerinde önemlidir. Pudendal sinirin transvajinal blok hedefi için kullanılan ana kemik çıkıntı değildir."
       },
       "answerFeedback": {
-        "summary": "Blok doğum eyleminde perineal analjezi için uygulanmıştır Perine ve dış genital bölgede geçici duyu azalması gelişmiştir. Bu bulgular tanısal karar açısından Spina ischiadica yanıtını destekler.",
-        "whyCorrect": "Spina ischiadica, vakadaki bulgularla en uyumlu tanıdır. Blok doğum eyleminde perineal analjezi için uygulanmıştır Perine ve dış genital bölgede geçici duyu azalması gelişmiştir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "rationale": "Spina ischiadica, vakadaki bulgularla en uyumlu tanıdır. Blok doğum eyleminde perineal analjezi için uygulanmıştır Perine ve dış genital bölgede geçici duyu azalması gelişmiştir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "correctOptionFeedback": "Spina ischiadica nervus pudendusun geçtiği ligamentum sacrospinale komşuluğunda olduğu için pudendal blokta temel işaret noktasıdır.",
+        "summary": "Bu olguda karar, pudendal blok doğumda perineal analjezi sağlamak için pudendal siniri hedefler. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Spina ischiadica pudendal sinirin sakrospinöz ligament komşuluğunda geçtiği düzey için palpasyon işaretidir. Doğumda perineal analjezi amacıyla yapılan pudendal blokta hedeflenen kritik landmark budur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Spina ischiadica pudendal sinirin sakrospinöz ligament komşuluğunda geçtiği düzey için palpasyon işaretidir. Doğumda perineal analjezi amacıyla yapılan pudendal blokta hedeflenen kritik landmark budur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Spina ischiadica pudendal sinirin sakrospinöz ligament komşuluğunda geçtiği düzey için palpasyon işaretidir. Doğumda perineal analjezi amacıyla yapılan pudendal blokta hedeflenen kritik landmark budur.",
         "keyClues": [
-          "Blok doğum eyleminde perineal analjezi için uygulanmıştır.",
-          "Perine ve dış genital bölgede geçici duyu azalması gelişmiştir.",
-          "Uyluk motor fonksiyonları korunmuştur."
+          "Pudendal blok doğumda perineal analjezi sağlamak için pudendal siniri hedefler.",
+          "Perine ve dış genital bölgede geçici duyu azalması pudendal sinir dağılımıyla uyumludur.",
+          "Bu sinir spina ischiadica ve sakrospinöz ligament komşuluğundan geçtiği için transvajinal blokta ana landmark spina ischiadicadır."
         ],
         "evidenceChain": [
           {
-            "text": "Blok doğum eyleminde perineal analjezi için uygulanmıştır.",
+            "text": "Pudendal blok doğumda perineal analjezi sağlamak için pudendal siniri hedefler.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Perine ve dış genital bölgede geçici duyu azalması gelişmiştir.",
+            "text": "Perine ve dış genital bölgede geçici duyu azalması pudendal sinir dağılımıyla uyumludur.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Uyluk motor fonksiyonları korunmuştur.",
+            "text": "Bu sinir spina ischiadica ve sakrospinöz ligament komşuluğundan geçtiği için transvajinal blokta ana landmark spina ischiadicadır.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Blok doğum eyleminde perineal analjezi için uygulanmıştır + perine ve dış genital bölgede geçici duyu azalması gelişmiştir; bu birliktelik Spina ischiadica yanıtını öne çıkarır.",
+        "examPearl": "Pudendal blokta hedef, spina ischiadica çevresindeki pudendal sinirdir; perineal analjezi bu anatomik komşulukla sağlanır.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Pudendal blokta temel anatomik kılavuz spina ischiadica ve ligamentum sacrospinale komşuluğudur."
+            "text": "Pudendal blokta hedef, spina ischiadica çevresindeki pudendal sinirdir; perineal analjezi bu anatomik komşulukla sağlanır."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "Pudendal blokta temel anatomik kılavuz spina ischiadica ve ligamentum sacrospinale komşuluğudur."
+            "label": "Klinik anatomi",
+            "text": "Nervus pudendus, spina ischiadica ve ligamentum sacrospinale komşuluğundan geçerek pudendal kanala yönelir; transvajinal pudendal blokta spina ischiadica temel işaret noktasıdır."
           }
         ],
         "optionComparison": {
-          "Spina iliaca anterior superior": "Spina iliaca anterior superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-          "Spina ischiadica": "Spina ischiadica, olgunun ana tanısal örüntüsünü karşılar. Blok doğum eyleminde perineal analjezi için uygulanmıştır Perine ve dış genital bölgede geçici duyu azalması gelişmiştir. Bulgular aynı tanı etrafında birleşir.",
-          "Trochanter major": "Trochanter major, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-          "Tuberculum pubicum": "Tuberculum pubicum, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-          "Caput fibulae": "Caput fibulae, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler."
+          "Spina ischiadica": "Spina ischiadica pudendal sinirin sakrospinöz ligament komşuluğunda geçtiği düzey için palpasyon işaretidir. Doğumda perineal analjezi amacıyla yapılan pudendal blokta hedeflenen kritik landmark budur.",
+          "Tuber ischiadicum": "Tuber ischiadicum oturma kemiği çıkıntısıdır ve hamstring başlangıçlarıyla ilişkilidir. Pudendal sinir bloğunda temel palpasyon noktası spina ischiadicadır.",
+          "Spina iliaca anterior superior": "SIAS inguinal ligament, sartorius ve lateral femoral cutaneous sinir komşuluğu açısından önemlidir. Pudendal sinir ve perineal analjezi hedefiyle ilişkili ana landmark değildir.",
+          "Tuberculum pubicum": "Tuberculum pubicum inguinal kanal ve femoral herni anatomisinde önemlidir. Pudendal blok için hedef nokta pubik tüberkül değil spina ischiadicadır.",
+          "Os coccygis": "Koksiks pelvik taban ve anokoksigeal ligament ilişkilerinde önemlidir. Pudendal sinirin transvajinal blok hedefi için kullanılan ana kemik çıkıntı değildir."
         },
         "whyWrong": {
-          "Spina iliaca anterior superior": "Spina iliaca anterior superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-          "Trochanter major": "Trochanter major, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-          "Tuberculum pubicum": "Tuberculum pubicum, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-          "Caput fibulae": "Caput fibulae, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler."
+          "Tuber ischiadicum": "Tuber ischiadicum oturma kemiği çıkıntısıdır ve hamstring başlangıçlarıyla ilişkilidir. Pudendal sinir bloğunda temel palpasyon noktası spina ischiadicadır.",
+          "Spina iliaca anterior superior": "SIAS inguinal ligament, sartorius ve lateral femoral cutaneous sinir komşuluğu açısından önemlidir. Pudendal sinir ve perineal analjezi hedefiyle ilişkili ana landmark değildir.",
+          "Tuberculum pubicum": "Tuberculum pubicum inguinal kanal ve femoral herni anatomisinde önemlidir. Pudendal blok için hedef nokta pubik tüberkül değil spina ischiadicadır.",
+          "Os coccygis": "Koksiks pelvik taban ve anokoksigeal ligament ilişkilerinde önemlidir. Pudendal sinirin transvajinal blok hedefi için kullanılan ana kemik çıkıntı değildir."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Pudendal sinirin ischial spine komşuluğunu ve perineal duyu-motor etkilenimini klinik uygulamayla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Spina ischiadica yanıtını destekler."
+        "learningOutcome": "Pudendal sinir bloğunu spina ischiadica ve perineal duyu anatomisiyle ilişkilendirebilme.",
+        "coreKnowledge": "Nervus pudendus, spina ischiadica ve ligamentum sacrospinale komşuluğundan geçerek pudendal kanala yönelir; transvajinal pudendal blokta spina ischiadica temel işaret noktasıdır."
       },
-      "whyCorrect": "Spina ischiadica, vakadaki bulgularla en uyumlu tanıdır. Blok doğum eyleminde perineal analjezi için uygulanmıştır Perine ve dış genital bölgede geçici duyu azalması gelişmiştir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Spina ischiadica pudendal sinirin sakrospinöz ligament komşuluğunda geçtiği düzey için palpasyon işaretidir. Doğumda perineal analjezi amacıyla yapılan pudendal blokta hedeflenen kritik landmark budur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Blok doğum eyleminde perineal analjezi için uygulanmıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Pudendal blok doğumda perineal analjezi sağlamak için pudendal siniri hedefler.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Perine ve dış genital bölgede geçici duyu azalması gelişmiştir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Perine ve dış genital bölgede geçici duyu azalması pudendal sinir dağılımıyla uyumludur.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Uyluk motor fonksiyonları korunmuştur.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Bu sinir spina ischiadica ve sakrospinöz ligament komşuluğundan geçtiği için transvajinal blokta ana landmark spina ischiadicadır.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Spina ischiadica yanıtını destekler.",
-      "examPearl": "İpucu: Blok doğum eyleminde perineal analjezi için uygulanmıştır + perine ve dış genital bölgede geçici duyu azalması gelişmiştir; bu birliktelik Spina ischiadica yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus pudendus, spina ischiadica ve ligamentum sacrospinale komşuluğundan geçerek pudendal kanala yönelir; transvajinal pudendal blokta spina ischiadica temel işaret noktasıdır.",
+      "examPearl": "Pudendal blokta hedef, spina ischiadica çevresindeki pudendal sinirdir; perineal analjezi bu anatomik komşulukla sağlanır.",
       "whyWrong": {
-        "Spina iliaca anterior superior": "Spina iliaca anterior superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-        "Trochanter major": "Trochanter major, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-        "Tuberculum pubicum": "Tuberculum pubicum, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-        "Caput fibulae": "Caput fibulae, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler."
+        "Tuber ischiadicum": "Tuber ischiadicum oturma kemiği çıkıntısıdır ve hamstring başlangıçlarıyla ilişkilidir. Pudendal sinir bloğunda temel palpasyon noktası spina ischiadicadır.",
+        "Spina iliaca anterior superior": "SIAS inguinal ligament, sartorius ve lateral femoral cutaneous sinir komşuluğu açısından önemlidir. Pudendal sinir ve perineal analjezi hedefiyle ilişkili ana landmark değildir.",
+        "Tuberculum pubicum": "Tuberculum pubicum inguinal kanal ve femoral herni anatomisinde önemlidir. Pudendal blok için hedef nokta pubik tüberkül değil spina ischiadicadır.",
+        "Os coccygis": "Koksiks pelvik taban ve anokoksigeal ligament ilişkilerinde önemlidir. Pudendal sinirin transvajinal blok hedefi için kullanılan ana kemik çıkıntı değildir."
       }
     },
     "difficultyTag": "Zor",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Spina ischiadica yanıtını destekler.",
-    "examPearl": "İpucu: Blok doğum eyleminde perineal analjezi için uygulanmıştır + perine ve dış genital bölgede geçici duyu azalması gelişmiştir; bu birliktelik Spina ischiadica yanıtını öne çıkarır.",
-    "whyCorrect": "Spina ischiadica, vakadaki bulgularla en uyumlu tanıdır. Blok doğum eyleminde perineal analjezi için uygulanmıştır Perine ve dış genital bölgede geçici duyu azalması gelişmiştir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "Nervus pudendus, spina ischiadica ve ligamentum sacrospinale komşuluğundan geçerek pudendal kanala yönelir; transvajinal pudendal blokta spina ischiadica temel işaret noktasıdır.",
+    "examPearl": "Pudendal blokta hedef, spina ischiadica çevresindeki pudendal sinirdir; perineal analjezi bu anatomik komşulukla sağlanır.",
+    "whyCorrect": "Spina ischiadica pudendal sinirin sakrospinöz ligament komşuluğunda geçtiği düzey için palpasyon işaretidir. Doğumda perineal analjezi amacıyla yapılan pudendal blokta hedeflenen kritik landmark budur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Spina iliaca anterior superior": "Spina iliaca anterior superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-      "Spina ischiadica": "Spina ischiadica, olgunun ana tanısal örüntüsünü karşılar. Blok doğum eyleminde perineal analjezi için uygulanmıştır Perine ve dış genital bölgede geçici duyu azalması gelişmiştir. Bulgular aynı tanı etrafında birleşir.",
-      "Trochanter major": "Trochanter major, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-      "Tuberculum pubicum": "Tuberculum pubicum, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-      "Caput fibulae": "Caput fibulae, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler."
+      "Spina ischiadica": "Spina ischiadica pudendal sinirin sakrospinöz ligament komşuluğunda geçtiği düzey için palpasyon işaretidir. Doğumda perineal analjezi amacıyla yapılan pudendal blokta hedeflenen kritik landmark budur.",
+      "Tuber ischiadicum": "Tuber ischiadicum oturma kemiği çıkıntısıdır ve hamstring başlangıçlarıyla ilişkilidir. Pudendal sinir bloğunda temel palpasyon noktası spina ischiadicadır.",
+      "Spina iliaca anterior superior": "SIAS inguinal ligament, sartorius ve lateral femoral cutaneous sinir komşuluğu açısından önemlidir. Pudendal sinir ve perineal analjezi hedefiyle ilişkili ana landmark değildir.",
+      "Tuberculum pubicum": "Tuberculum pubicum inguinal kanal ve femoral herni anatomisinde önemlidir. Pudendal blok için hedef nokta pubik tüberkül değil spina ischiadicadır.",
+      "Os coccygis": "Koksiks pelvik taban ve anokoksigeal ligament ilişkilerinde önemlidir. Pudendal sinirin transvajinal blok hedefi için kullanılan ana kemik çıkıntı değildir."
     },
     "evidenceChain": [
       {
-        "text": "Blok doğum eyleminde perineal analjezi için uygulanmıştır.",
+        "text": "Pudendal blok doğumda perineal analjezi sağlamak için pudendal siniri hedefler.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Perine ve dış genital bölgede geçici duyu azalması gelişmiştir.",
+        "text": "Perine ve dış genital bölgede geçici duyu azalması pudendal sinir dağılımıyla uyumludur.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Uyluk motor fonksiyonları korunmuştur.",
+        "text": "Bu sinir spina ischiadica ve sakrospinöz ligament komşuluğundan geçtiği için transvajinal blokta ana landmark spina ischiadicadır.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Spina iliaca anterior superior": "Spina iliaca anterior superior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-      "Trochanter major": "Trochanter major, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-      "Tuberculum pubicum": "Tuberculum pubicum, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler.",
-      "Caput fibulae": "Caput fibulae, bu olguda en uygun yanıt değildir. Belirleyici bulgular Spina ischiadica yanıtını destekler."
+      "Tuber ischiadicum": "Tuber ischiadicum oturma kemiği çıkıntısıdır ve hamstring başlangıçlarıyla ilişkilidir. Pudendal sinir bloğunda temel palpasyon noktası spina ischiadicadır.",
+      "Spina iliaca anterior superior": "SIAS inguinal ligament, sartorius ve lateral femoral cutaneous sinir komşuluğu açısından önemlidir. Pudendal sinir ve perineal analjezi hedefiyle ilişkili ana landmark değildir.",
+      "Tuberculum pubicum": "Tuberculum pubicum inguinal kanal ve femoral herni anatomisinde önemlidir. Pudendal blok için hedef nokta pubik tüberkül değil spina ischiadicadır.",
+      "Os coccygis": "Koksiks pelvik taban ve anokoksigeal ligament ilişkilerinde önemlidir. Pudendal sinirin transvajinal blok hedefi için kullanılan ana kemik çıkıntı değildir."
     }
   },
   {
@@ -97666,16 +97845,16 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Testis kitlesinde lenf nodu değerlendirmesi",
     "difficulty": "Orta",
-    "clinicalFocus": "Testis kitlesinde lenf nodu değerlendirmesi bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Kitle testis parankimi içinde yerleşmiştir ve skrotal ciltte primer lezyon tariflenmemiştir. Bu ipuçlarını kullanarak Paraaortik lenf nodları seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Testis kitlesinde lenf nodu değerlendirmesi olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Paraaortik lenf nodları yanıtına ulaşma.",
+    "learningTarget": "Testis ve skrotum lenfatik drenajını embriyolojik köken farkıyla ayırt edebilme.",
     "demographics": "31 yaşında erkek hasta",
-    "setting": "Klinik değerlendirme",
+    "setting": "Üroloji polikliniği",
     "chiefComplaint": "Hasta, sağ testiste ağrısız sert kitle fark etmesi nedeniyle başvuruyor.",
-    "stem": "Kitlenin birkaç haftadır büyüdüğünü, travma veya enfeksiyon bulgusu olmadığını belirtmektedir. Skrotal ciltte belirgin lezyon yoktur.",
+    "stem": "Kitlenin birkaç haftadır büyüdüğünü, travma veya enfeksiyon bulgusu olmadığını belirtmektedir. Skrotal ciltte yara, ülser veya belirgin inflamasyon yoktur.",
     "patientIntro": {
       "profile": "31 yaşında erkek hasta, üroloji polikliniğinde değerlendiriliyor.",
       "presentation": "Hasta, sağ testiste ağrısız sert kitle fark etmesi nedeniyle başvuruyor.",
-      "historySummary": "Kitlenin birkaç haftadır büyüdüğünü, travma veya enfeksiyon bulgusu olmadığını belirtmektedir. Skrotal ciltte belirgin lezyon yoktur."
+      "historySummary": "Kitlenin birkaç haftadır büyüdüğünü, travma veya enfeksiyon bulgusu olmadığını belirtmektedir. Skrotal ciltte yara, ülser veya belirgin inflamasyon yoktur."
     },
     "vitals": {
       "TA": "118/76 mmHg",
@@ -97698,42 +97877,42 @@ export const rawCases = [
         "type": "ultrasound",
         "priority": "essential",
         "subtype": "Ultrasonografi",
-        "summary": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
-        "clinicalMeaning": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
+        "summary": "Skrotal ultrasonografide sağ testis içinde solid hipoekoik kitle izlenmesi, patolojinin skrotal deriden değil testis parankiminden kaynaklandığını destekler. Bu ayrım lenfatik yayılımın inguinal değil paraaortik nodlara olmasını açıklar.",
+        "clinicalMeaning": "Testis parankiminin lenfatik drenajı embriyolojik köken nedeniyle paraaortik/lomber nodlara gider; skrotal cilt lezyonu olsaydı yüzeyel inguinal nodlar öne çıkardı.",
         "result": {
           "title": "Skrotal ultrasonografi",
-          "summary": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
-          "interpretation": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
+          "summary": "Skrotal ultrasonografide sağ testis içinde solid hipoekoik kitle izlenmesi, patolojinin skrotal deriden değil testis parankiminden kaynaklandığını destekler. Bu ayrım lenfatik yayılımın inguinal değil paraaortik nodlara olmasını açıklar.",
+          "interpretation": "Testis parankiminin lenfatik drenajı embriyolojik köken nedeniyle paraaortik/lomber nodlara gider; skrotal cilt lezyonu olsaydı yüzeyel inguinal nodlar öne çıkardı.",
           "values": [
             [
-              "Görüntüleme bulgusu",
+              "Skrotal ultrasonografi",
               "Sağ testis içinde solid hipoekoik kitle izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Testis parankiminin lenfatik drenajı embriyolojik köken nedeniyle paraaortik/lomber nodlara gider; skrotal cilt lezyonu olsaydı yüzeyel inguinal nodlar öne çıkardı."
             ]
           ],
           "rows": [
             [
-              "Görüntüleme bulgusu",
+              "Skrotal ultrasonografi",
               "Sağ testis içinde solid hipoekoik kitle izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Testis parankiminin lenfatik drenajı embriyolojik köken nedeniyle paraaortik/lomber nodlara gider; skrotal cilt lezyonu olsaydı yüzeyel inguinal nodlar öne çıkardı."
             ]
           ]
         },
         "rows": [
           [
-            "Görüntüleme bulgusu",
+            "Skrotal ultrasonografi",
             "Sağ testis içinde solid hipoekoik kitle izlendi.",
-            "Modaliteye özgü bulgu",
-            ""
+            "Anatomik yorum",
+            "Testis parankiminin lenfatik drenajı embriyolojik köken nedeniyle paraaortik/lomber nodlara gider; skrotal cilt lezyonu olsaydı yüzeyel inguinal nodlar öne çıkardı."
           ]
         ],
-        "postAnswerExplanation": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
-        "interpretation": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
+        "postAnswerExplanation": "Testis parankiminin lenfatik drenajı embriyolojik köken nedeniyle paraaortik/lomber nodlara gider; skrotal cilt lezyonu olsaydı yüzeyel inguinal nodlar öne çıkardı.",
+        "interpretation": "Testis parankiminin lenfatik drenajı embriyolojik köken nedeniyle paraaortik/lomber nodlara gider; skrotal cilt lezyonu olsaydı yüzeyel inguinal nodlar öne çıkardı.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır."
+        "explanationAfterAnswer": "Testis parankiminin lenfatik drenajı embriyolojik köken nedeniyle paraaortik/lomber nodlara gider; skrotal cilt lezyonu olsaydı yüzeyel inguinal nodlar öne çıkardı."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -97742,154 +97921,154 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Testis tümöründe ilk lenfatik yayılımın en olası olduğu lenf nodu grubu aşağıdakilerden hangisidir?",
+    "question": "Testis parankiminden kaynaklanan tümörde ilk lenfatik yayılımın en olası olduğu lenf nodu grubu hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Paraaortik lenf nodları",
       "options": [
-        "Yüzeyel inguinal lenf nodları",
         "Paraaortik lenf nodları",
-        "Popliteal lenf nodları",
-        "Aksiller lenf nodları",
-        "Submandibular lenf nodları"
+        "Yüzeyel inguinal lenf nodları",
+        "Derin inguinal lenf nodları",
+        "Eksternal iliak lenf nodları",
+        "İnternal iliak lenf nodları"
       ],
-      "question": "Testis tümöründe ilk lenfatik yayılımın en olası olduğu lenf nodu grubu aşağıdakilerden hangisidir?",
-      "explanation": "Paraaortik lenf nodları, bu olguda öncelikli yaklaşımdır. Kitle testis parankimi içinde yerleşmiştir Skrotal ciltte primer lezyon tariflenmemiştir. Bu klinik tablo geciktirilmemesi gereken ilk müdahaleyi belirginleştirir.",
+      "question": "Testis parankiminden kaynaklanan tümörde ilk lenfatik yayılımın en olası olduğu lenf nodu grubu hangisidir?",
+      "explanation": "Testis parankimi embriyolojik kökeni nedeniyle lenfini paraaortik/lomber nodlara drene eder. Testis içinde solid kitle ve skrotal cilt lezyonu olmaması ilk yayılım için paraaortik nodları destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Kitle testis parankimi içinde yerleşmiştir + skrotal ciltte primer lezyon tariflenmemiştir; bu birliktelik Paraaortik lenf nodları yanıtını öne çıkarır."
+          "text": "Testis tümörü paraaortik lenf nodlarına, skrotal deri lezyonu yüzeyel inguinal lenf nodlarına yayılır."
         }
       ],
       "optionComparison": {
-        "Yüzeyel inguinal lenf nodları": "Yüzeyel inguinal lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-        "Paraaortik lenf nodları": "Paraaortik lenf nodları, acil önceliği doğru yakalar. Kitle testis parankimi içinde yerleşmiştir Skrotal ciltte primer lezyon tariflenmemiştir. Bu nedenle destekleyici veya gecikmiş seçeneklerden önce uygulanmalıdır.",
-        "Popliteal lenf nodları": "Popliteal lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-        "Aksiller lenf nodları": "Aksiller lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-        "Submandibular lenf nodları": "Submandibular lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler."
+        "Paraaortik lenf nodları": "Testis parankimi embriyolojik kökeni nedeniyle lenfini paraaortik/lomber nodlara drene eder. Testis içinde solid kitle ve skrotal cilt lezyonu olmaması ilk yayılım için paraaortik nodları destekler.",
+        "Yüzeyel inguinal lenf nodları": "Yüzeyel inguinal nodlar skrotal deri ve alt ekstremitenin yüzeyel drenajında önemlidir. Testis parankim tümörünün ilk lenfatik durağı genellikle paraaortik nodlardır.",
+        "Derin inguinal lenf nodları": "Derin inguinal nodlar glans penis/clitoris ve derin alt ekstremite drenajıyla ilişkilidir. Testis parankimi için primer ilk yayılım grubu değildir.",
+        "Eksternal iliak lenf nodları": "Eksternal iliak nodlar pelvis ve alt karın duvarı drenajıyla ilişkilidir. Testisin embriyolojik lenfatik yolu paraaortik nodlara gider.",
+        "İnternal iliak lenf nodları": "İnternal iliak nodlar pelvik organların çoğunun drenajında rol alır. Testis parankim kitlesinin ilk lenfatik yayılımı için paraaortik nodlar daha doğrudur."
       },
       "answerFeedback": {
-        "summary": "Kitle testis parankimi içinde yerleşmiştir Skrotal ciltte primer lezyon tariflenmemiştir. Bu bulgular ilk basamak yaklaşımı açısından Paraaortik lenf nodları yanıtını destekler.",
-        "whyCorrect": "Paraaortik lenf nodları, bu olguda öncelikli yaklaşımdır. Kitle testis parankimi içinde yerleşmiştir Skrotal ciltte primer lezyon tariflenmemiştir. Bu klinik tablo geciktirilmemesi gereken ilk müdahaleyi belirginleştirir.",
-        "rationale": "Paraaortik lenf nodları, bu olguda öncelikli yaklaşımdır. Kitle testis parankimi içinde yerleşmiştir Skrotal ciltte primer lezyon tariflenmemiştir. Bu klinik tablo geciktirilmemesi gereken ilk müdahaleyi belirginleştirir.",
-        "correctOptionFeedback": "Paraaortik lenf nodları testisin embriyolojik abdominal kökeni nedeniyle beklenen ilk lenfatik yayılım bölgesidir.",
+        "summary": "Bu olguda karar, kitle testis parankimi içinde yerleşmiştir; skrotal ciltte primer lezyon yoktur. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Testis parankimi embriyolojik kökeni nedeniyle lenfini paraaortik/lomber nodlara drene eder. Testis içinde solid kitle ve skrotal cilt lezyonu olmaması ilk yayılım için paraaortik nodları destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Testis parankimi embriyolojik kökeni nedeniyle lenfini paraaortik/lomber nodlara drene eder. Testis içinde solid kitle ve skrotal cilt lezyonu olmaması ilk yayılım için paraaortik nodları destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Testis parankimi embriyolojik kökeni nedeniyle lenfini paraaortik/lomber nodlara drene eder. Testis içinde solid kitle ve skrotal cilt lezyonu olmaması ilk yayılım için paraaortik nodları destekler.",
         "keyClues": [
-          "Kitle testis parankimi içinde yerleşmiştir.",
-          "Skrotal ciltte primer lezyon tariflenmemiştir.",
-          "Soru testis tümörünün lenfatik yayılımını sorgulamaktadır."
+          "Kitle testis parankimi içinde yerleşmiştir; skrotal ciltte primer lezyon yoktur.",
+          "Skrotal ultrasonografide sağ testis içinde solid hipoekoik kitle izlenmesi testis kaynaklı patolojiyi destekler.",
+          "Testisin embriyolojik kökenine bağlı lenfatik drenajı paraaortik/lomber lenf nodlarına yönelir."
         ],
         "evidenceChain": [
           {
-            "text": "Kitle testis parankimi içinde yerleşmiştir.",
+            "text": "Kitle testis parankimi içinde yerleşmiştir; skrotal ciltte primer lezyon yoktur.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Skrotal ciltte primer lezyon tariflenmemiştir.",
+            "text": "Skrotal ultrasonografide sağ testis içinde solid hipoekoik kitle izlenmesi testis kaynaklı patolojiyi destekler.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Soru testis tümörünün lenfatik yayılımını sorgulamaktadır.",
+            "text": "Testisin embriyolojik kökenine bağlı lenfatik drenajı paraaortik/lomber lenf nodlarına yönelir.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Kitle testis parankimi içinde yerleşmiştir + skrotal ciltte primer lezyon tariflenmemiştir; bu birliktelik Paraaortik lenf nodları yanıtını öne çıkarır.",
+        "examPearl": "Testis tümörü paraaortik lenf nodlarına, skrotal deri lezyonu yüzeyel inguinal lenf nodlarına yayılır.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Testis paraaortik lenf nodlarına, skrotal deri ise yüzeyel inguinal lenf nodlarına drene olur."
+            "text": "Testis tümörü paraaortik lenf nodlarına, skrotal deri lezyonu yüzeyel inguinal lenf nodlarına yayılır."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "Testis paraaortik lenf nodlarına, skrotal deri ise yüzeyel inguinal lenf nodlarına drene olur."
+            "label": "Klinik anatomi",
+            "text": "Testis embriyolojik olarak posterior abdominal duvardan geliştiği için lenfatik drenajı paraaortik/lomber lenf nodlarına gider; skrotal deri ise inguinal nodlara drene olur."
           }
         ],
         "optionComparison": {
-          "Yüzeyel inguinal lenf nodları": "Yüzeyel inguinal lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-          "Paraaortik lenf nodları": "Paraaortik lenf nodları, acil önceliği doğru yakalar. Kitle testis parankimi içinde yerleşmiştir Skrotal ciltte primer lezyon tariflenmemiştir. Bu nedenle destekleyici veya gecikmiş seçeneklerden önce uygulanmalıdır.",
-          "Popliteal lenf nodları": "Popliteal lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-          "Aksiller lenf nodları": "Aksiller lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-          "Submandibular lenf nodları": "Submandibular lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler."
+          "Paraaortik lenf nodları": "Testis parankimi embriyolojik kökeni nedeniyle lenfini paraaortik/lomber nodlara drene eder. Testis içinde solid kitle ve skrotal cilt lezyonu olmaması ilk yayılım için paraaortik nodları destekler.",
+          "Yüzeyel inguinal lenf nodları": "Yüzeyel inguinal nodlar skrotal deri ve alt ekstremitenin yüzeyel drenajında önemlidir. Testis parankim tümörünün ilk lenfatik durağı genellikle paraaortik nodlardır.",
+          "Derin inguinal lenf nodları": "Derin inguinal nodlar glans penis/clitoris ve derin alt ekstremite drenajıyla ilişkilidir. Testis parankimi için primer ilk yayılım grubu değildir.",
+          "Eksternal iliak lenf nodları": "Eksternal iliak nodlar pelvis ve alt karın duvarı drenajıyla ilişkilidir. Testisin embriyolojik lenfatik yolu paraaortik nodlara gider.",
+          "İnternal iliak lenf nodları": "İnternal iliak nodlar pelvik organların çoğunun drenajında rol alır. Testis parankim kitlesinin ilk lenfatik yayılımı için paraaortik nodlar daha doğrudur."
         },
         "whyWrong": {
-          "Yüzeyel inguinal lenf nodları": "Yüzeyel inguinal lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-          "Popliteal lenf nodları": "Popliteal lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-          "Aksiller lenf nodları": "Aksiller lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-          "Submandibular lenf nodları": "Submandibular lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler."
+          "Yüzeyel inguinal lenf nodları": "Yüzeyel inguinal nodlar skrotal deri ve alt ekstremitenin yüzeyel drenajında önemlidir. Testis parankim tümörünün ilk lenfatik durağı genellikle paraaortik nodlardır.",
+          "Derin inguinal lenf nodları": "Derin inguinal nodlar glans penis/clitoris ve derin alt ekstremite drenajıyla ilişkilidir. Testis parankimi için primer ilk yayılım grubu değildir.",
+          "Eksternal iliak lenf nodları": "Eksternal iliak nodlar pelvis ve alt karın duvarı drenajıyla ilişkilidir. Testisin embriyolojik lenfatik yolu paraaortik nodlara gider.",
+          "İnternal iliak lenf nodları": "İnternal iliak nodlar pelvik organların çoğunun drenajında rol alır. Testis parankim kitlesinin ilk lenfatik yayılımı için paraaortik nodlar daha doğrudur."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Testisin lenf drenajını embriyolojik iniş kökeniyle paraaortik lenf nodlarına bağlayabilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Paraaortik lenf nodları yanıtını destekler."
+        "learningOutcome": "Testis ve skrotum lenfatik drenajını embriyolojik köken farkıyla ayırt edebilme.",
+        "coreKnowledge": "Testis embriyolojik olarak posterior abdominal duvardan geliştiği için lenfatik drenajı paraaortik/lomber lenf nodlarına gider; skrotal deri ise inguinal nodlara drene olur."
       },
-      "whyCorrect": "Paraaortik lenf nodları, bu olguda öncelikli yaklaşımdır. Kitle testis parankimi içinde yerleşmiştir Skrotal ciltte primer lezyon tariflenmemiştir. Bu klinik tablo geciktirilmemesi gereken ilk müdahaleyi belirginleştirir.",
+      "whyCorrect": "Testis parankimi embriyolojik kökeni nedeniyle lenfini paraaortik/lomber nodlara drene eder. Testis içinde solid kitle ve skrotal cilt lezyonu olmaması ilk yayılım için paraaortik nodları destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Objektif veri",
-          "text": "Kitle testis parankimi içinde yerleşmiştir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Kitle testis parankimi içinde yerleşmiştir; skrotal ciltte primer lezyon yoktur.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Skrotal ciltte primer lezyon tariflenmemiştir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Skrotal ultrasonografide sağ testis içinde solid hipoekoik kitle izlenmesi testis kaynaklı patolojiyi destekler.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Objektif veri",
-          "text": "Soru testis tümörünün lenfatik yayılımını sorgulamaktadır.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Testisin embriyolojik kökenine bağlı lenfatik drenajı paraaortik/lomber lenf nodlarına yönelir.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Paraaortik lenf nodları yanıtını destekler.",
-      "examPearl": "İpucu: Kitle testis parankimi içinde yerleşmiştir + skrotal ciltte primer lezyon tariflenmemiştir; bu birliktelik Paraaortik lenf nodları yanıtını öne çıkarır.",
+      "coreKnowledge": "Testis embriyolojik olarak posterior abdominal duvardan geliştiği için lenfatik drenajı paraaortik/lomber lenf nodlarına gider; skrotal deri ise inguinal nodlara drene olur.",
+      "examPearl": "Testis tümörü paraaortik lenf nodlarına, skrotal deri lezyonu yüzeyel inguinal lenf nodlarına yayılır.",
       "whyWrong": {
-        "Yüzeyel inguinal lenf nodları": "Yüzeyel inguinal lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-        "Popliteal lenf nodları": "Popliteal lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-        "Aksiller lenf nodları": "Aksiller lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-        "Submandibular lenf nodları": "Submandibular lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler."
+        "Yüzeyel inguinal lenf nodları": "Yüzeyel inguinal nodlar skrotal deri ve alt ekstremitenin yüzeyel drenajında önemlidir. Testis parankim tümörünün ilk lenfatik durağı genellikle paraaortik nodlardır.",
+        "Derin inguinal lenf nodları": "Derin inguinal nodlar glans penis/clitoris ve derin alt ekstremite drenajıyla ilişkilidir. Testis parankimi için primer ilk yayılım grubu değildir.",
+        "Eksternal iliak lenf nodları": "Eksternal iliak nodlar pelvis ve alt karın duvarı drenajıyla ilişkilidir. Testisin embriyolojik lenfatik yolu paraaortik nodlara gider.",
+        "İnternal iliak lenf nodları": "İnternal iliak nodlar pelvik organların çoğunun drenajında rol alır. Testis parankim kitlesinin ilk lenfatik yayılımı için paraaortik nodlar daha doğrudur."
       }
     },
     "difficultyTag": "Orta",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Paraaortik lenf nodları yanıtını destekler.",
-    "examPearl": "İpucu: Kitle testis parankimi içinde yerleşmiştir + skrotal ciltte primer lezyon tariflenmemiştir; bu birliktelik Paraaortik lenf nodları yanıtını öne çıkarır.",
-    "whyCorrect": "Paraaortik lenf nodları, bu olguda öncelikli yaklaşımdır. Kitle testis parankimi içinde yerleşmiştir Skrotal ciltte primer lezyon tariflenmemiştir. Bu klinik tablo geciktirilmemesi gereken ilk müdahaleyi belirginleştirir.",
+    "coreKnowledge": "Testis embriyolojik olarak posterior abdominal duvardan geliştiği için lenfatik drenajı paraaortik/lomber lenf nodlarına gider; skrotal deri ise inguinal nodlara drene olur.",
+    "examPearl": "Testis tümörü paraaortik lenf nodlarına, skrotal deri lezyonu yüzeyel inguinal lenf nodlarına yayılır.",
+    "whyCorrect": "Testis parankimi embriyolojik kökeni nedeniyle lenfini paraaortik/lomber nodlara drene eder. Testis içinde solid kitle ve skrotal cilt lezyonu olmaması ilk yayılım için paraaortik nodları destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Yüzeyel inguinal lenf nodları": "Yüzeyel inguinal lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-      "Paraaortik lenf nodları": "Paraaortik lenf nodları, acil önceliği doğru yakalar. Kitle testis parankimi içinde yerleşmiştir Skrotal ciltte primer lezyon tariflenmemiştir. Bu nedenle destekleyici veya gecikmiş seçeneklerden önce uygulanmalıdır.",
-      "Popliteal lenf nodları": "Popliteal lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-      "Aksiller lenf nodları": "Aksiller lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-      "Submandibular lenf nodları": "Submandibular lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler."
+      "Paraaortik lenf nodları": "Testis parankimi embriyolojik kökeni nedeniyle lenfini paraaortik/lomber nodlara drene eder. Testis içinde solid kitle ve skrotal cilt lezyonu olmaması ilk yayılım için paraaortik nodları destekler.",
+      "Yüzeyel inguinal lenf nodları": "Yüzeyel inguinal nodlar skrotal deri ve alt ekstremitenin yüzeyel drenajında önemlidir. Testis parankim tümörünün ilk lenfatik durağı genellikle paraaortik nodlardır.",
+      "Derin inguinal lenf nodları": "Derin inguinal nodlar glans penis/clitoris ve derin alt ekstremite drenajıyla ilişkilidir. Testis parankimi için primer ilk yayılım grubu değildir.",
+      "Eksternal iliak lenf nodları": "Eksternal iliak nodlar pelvis ve alt karın duvarı drenajıyla ilişkilidir. Testisin embriyolojik lenfatik yolu paraaortik nodlara gider.",
+      "İnternal iliak lenf nodları": "İnternal iliak nodlar pelvik organların çoğunun drenajında rol alır. Testis parankim kitlesinin ilk lenfatik yayılımı için paraaortik nodlar daha doğrudur."
     },
     "evidenceChain": [
       {
-        "text": "Kitle testis parankimi içinde yerleşmiştir.",
+        "text": "Kitle testis parankimi içinde yerleşmiştir; skrotal ciltte primer lezyon yoktur.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Skrotal ciltte primer lezyon tariflenmemiştir.",
+        "text": "Skrotal ultrasonografide sağ testis içinde solid hipoekoik kitle izlenmesi testis kaynaklı patolojiyi destekler.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Soru testis tümörünün lenfatik yayılımını sorgulamaktadır.",
+        "text": "Testisin embriyolojik kökenine bağlı lenfatik drenajı paraaortik/lomber lenf nodlarına yönelir.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Yüzeyel inguinal lenf nodları": "Yüzeyel inguinal lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-      "Popliteal lenf nodları": "Popliteal lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-      "Aksiller lenf nodları": "Aksiller lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler.",
-      "Submandibular lenf nodları": "Submandibular lenf nodları, bu olguda en uygun yanıt değildir. Belirleyici bulgular Paraaortik lenf nodları yanıtını destekler."
+      "Yüzeyel inguinal lenf nodları": "Yüzeyel inguinal nodlar skrotal deri ve alt ekstremitenin yüzeyel drenajında önemlidir. Testis parankim tümörünün ilk lenfatik durağı genellikle paraaortik nodlardır.",
+      "Derin inguinal lenf nodları": "Derin inguinal nodlar glans penis/clitoris ve derin alt ekstremite drenajıyla ilişkilidir. Testis parankimi için primer ilk yayılım grubu değildir.",
+      "Eksternal iliak lenf nodları": "Eksternal iliak nodlar pelvis ve alt karın duvarı drenajıyla ilişkilidir. Testisin embriyolojik lenfatik yolu paraaortik nodlara gider.",
+      "İnternal iliak lenf nodları": "İnternal iliak nodlar pelvik organların çoğunun drenajında rol alır. Testis parankim kitlesinin ilk lenfatik yayılımı için paraaortik nodlar daha doğrudur."
     }
   },
   {
@@ -97899,28 +98078,29 @@ export const rawCases = [
     "relatedBranch": "Anatomi",
     "title": "Boyun cerrahisi sonrası süt görünümünde drenaj",
     "difficulty": "Zor",
-    "clinicalFocus": "Boyun cerrahisi sonrası süt görünümünde drenaj bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Cerrahi sol supraklaviküler bölgede yapılmıştır ve dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir. Bu ipuçlarını kullanarak Ductus thoracicus seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Boyun cerrahisi sonrası süt görünümünde drenaj olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Ductus thoracicus yanıtına ulaşma.",
+    "learningTarget": "Toraks kanalını sol venöz açı komşuluğu ve şilöz drenaj bulgusuyla ilişkilendirebilme.",
     "demographics": "55 yaşında kadın hasta",
-    "setting": "Servis",
+    "setting": "Cerrahi servis",
     "chiefComplaint": "Hasta, sol supraklaviküler diseksiyon sonrası dreninden süt renginde sıvı gelmesi nedeniyle izleniyor.",
-    "stem": "Metastatik lenf nodu nedeniyle sol alt boyun diseksiyonu yapıldığı öğreniliyor. Ameliyat sonrası özellikle enteral beslenme başlandıktan sonra drenaj miktarı artmıştır.",
+    "stem": "Metastatik lenf nodu nedeniyle sol alt boyun diseksiyonu yapıldığı öğreniliyor. Ameliyat sonrası enteral beslenme başlanınca drenaj miktarı artmış ve sıvı belirgin süt görünümü almıştır.",
     "patientIntro": {
-      "profile": "55 yaşında kadın hasta, boyun cerrahisi sonrası serviste değerlendiriliyor.",
+      "profile": "55 yaşında kadın hasta, cerrahi servisnda değerlendiriliyor.",
       "presentation": "Hasta, sol supraklaviküler diseksiyon sonrası dreninden süt renginde sıvı gelmesi nedeniyle izleniyor.",
-      "historySummary": "Metastatik lenf nodu nedeniyle sol alt boyun diseksiyonu yapıldığı öğreniliyor. Ameliyat sonrası özellikle enteral beslenme başlandıktan sonra drenaj miktarı artmıştır."
+      "historySummary": "Metastatik lenf nodu nedeniyle sol alt boyun diseksiyonu yapıldığı öğreniliyor. Ameliyat sonrası enteral beslenme başlanınca drenaj miktarı artmış ve sıvı belirgin süt görünümü almıştır."
     },
     "vitals": {
       "TA": "118/72 mmHg",
       "Nabız": "92/dk",
-      "Solunum": "28/dk",
-      "SpO2": "%91, oda havasında",
+      "Solunum": "20/dk",
+      "SpO2": "%96, oda havasında",
       "Ateş": "36.7 °C",
       "Şok indeksi": "0.78 normal"
     },
     "exam": [
       "Sol boyun dreninde süt görünümünde sıvı vardır.",
-      "Solunum sıkıntısı hafiftir."
+      "Sol supraklaviküler insizyon çevresinde belirgin hematom yoktur.",
+      "Sol hemitoraksta bazalde solunum sesleri hafif azalmıştır."
     ],
     "investigations": [
       {
@@ -97929,43 +98109,43 @@ export const rawCases = [
         "title": "Dren sıvısı trigliserid düzeyi",
         "type": "fluidAnalysis",
         "priority": "essential",
-        "subtype": "BOS / vücut sıvısı analizi",
-        "summary": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
-        "clinicalMeaning": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
+        "subtype": "Vücut sıvısı analizi",
+        "summary": "Dren sıvısında trigliserid düzeyinin yüksek saptanması, süt rengindeki sıvının şilöz lenf olduğunu destekler. Sol supraklaviküler cerrahi bağlamında bu bulgu ductus thoracicus yaralanmasıyla uyumludur.",
+        "clinicalMeaning": "Şilöz drenaj, intestinal lenfi taşıyan ductus thoracicusun sol venöz açıya yakın bölümünde yaralanması sonucu gelişir.",
         "result": {
           "title": "Dren sıvısı trigliserid düzeyi",
-          "summary": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
-          "interpretation": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
+          "summary": "Dren sıvısında trigliserid düzeyinin yüksek saptanması, süt rengindeki sıvının şilöz lenf olduğunu destekler. Sol supraklaviküler cerrahi bağlamında bu bulgu ductus thoracicus yaralanmasıyla uyumludur.",
+          "interpretation": "Şilöz drenaj, intestinal lenfi taşıyan ductus thoracicusun sol venöz açıya yakın bölümünde yaralanması sonucu gelişir.",
           "values": [
             [
-              "Örnek analizi",
-              "420 mg/dL.",
-              "BOS/sıvı/dışkı örneği",
-              ""
+              "Dren sıvısı trigliserid düzeyi",
+              "Trigliserid düzeyi 420 mg/dL saptandı.",
+              "Anatomik yorum",
+              "Şilöz drenaj, intestinal lenfi taşıyan ductus thoracicusun sol venöz açıya yakın bölümünde yaralanması sonucu gelişir."
             ]
           ],
           "rows": [
             [
-              "Örnek analizi",
-              "420 mg/dL.",
-              "BOS/sıvı/dışkı örneği",
-              ""
+              "Dren sıvısı trigliserid düzeyi",
+              "Trigliserid düzeyi 420 mg/dL saptandı.",
+              "Anatomik yorum",
+              "Şilöz drenaj, intestinal lenfi taşıyan ductus thoracicusun sol venöz açıya yakın bölümünde yaralanması sonucu gelişir."
             ]
           ]
         },
         "rows": [
           [
-            "Örnek analizi",
-            "420 mg/dL.",
-            "BOS/sıvı/dışkı örneği",
-            ""
+            "Dren sıvısı trigliserid düzeyi",
+            "Trigliserid düzeyi 420 mg/dL saptandı.",
+            "Anatomik yorum",
+            "Şilöz drenaj, intestinal lenfi taşıyan ductus thoracicusun sol venöz açıya yakın bölümünde yaralanması sonucu gelişir."
           ]
         ],
-        "postAnswerExplanation": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
-        "interpretation": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
-        "category": "fluidAnalysis",
-        "testTypeCategory": "fluidAnalysis",
-        "explanationAfterAnswer": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir."
+        "postAnswerExplanation": "Şilöz drenaj, intestinal lenfi taşıyan ductus thoracicusun sol venöz açıya yakın bölümünde yaralanması sonucu gelişir.",
+        "interpretation": "Şilöz drenaj, intestinal lenfi taşıyan ductus thoracicusun sol venöz açıya yakın bölümünde yaralanması sonucu gelişir.",
+        "category": "diagnostic",
+        "testTypeCategory": "diagnostic",
+        "explanationAfterAnswer": "Şilöz drenaj, intestinal lenfi taşıyan ductus thoracicusun sol venöz açıya yakın bölümünde yaralanması sonucu gelişir."
       },
       {
         "id": "akciger-grafisi-2",
@@ -97973,43 +98153,43 @@ export const rawCases = [
         "title": "Akciğer grafisi",
         "type": "xray",
         "priority": "essential",
-        "subtype": "Direkt/kontrastlı grafi",
-        "summary": "Akciğer görüntülemesinde konsolidasyonun ateş, öksürük ve solunum bulgularına eşlik etmesi pnömoni tanısını güçlendirir; dağılım ve klinik şiddet tedavi kararını etkiler.",
-        "clinicalMeaning": "Akciğer görüntülemesinde konsolidasyonun ateş, öksürük ve solunum bulgularına eşlik etmesi pnömoni tanısını güçlendirir; dağılım ve klinik şiddet tedavi kararını etkiler.",
+        "subtype": "Direkt grafi",
+        "summary": "Akciğer grafisinde sol plevral alanda sıvı artışı izlenmesi, sol boyun cerrahisi sonrası şilöz kaçağın torasik yansımasını düşündürür. Bu grafi dren sıvısı trigliseridi ve sol venöz açı anatomisiyle birlikte yorumlanmalıdır.",
+        "clinicalMeaning": "Sol plevral sıvı artışı, ductus thoracicus yaralanmasına bağlı şilotoraks gelişebileceğini gösteren destekleyici bulgudur.",
         "result": {
           "title": "Akciğer grafisi",
-          "summary": "Akciğer görüntülemesinde konsolidasyonun ateş, öksürük ve solunum bulgularına eşlik etmesi pnömoni tanısını güçlendirir; dağılım ve klinik şiddet tedavi kararını etkiler.",
-          "interpretation": "Akciğer görüntülemesinde konsolidasyonun ateş, öksürük ve solunum bulgularına eşlik etmesi pnömoni tanısını güçlendirir; dağılım ve klinik şiddet tedavi kararını etkiler.",
+          "summary": "Akciğer grafisinde sol plevral alanda sıvı artışı izlenmesi, sol boyun cerrahisi sonrası şilöz kaçağın torasik yansımasını düşündürür. Bu grafi dren sıvısı trigliseridi ve sol venöz açı anatomisiyle birlikte yorumlanmalıdır.",
+          "interpretation": "Sol plevral sıvı artışı, ductus thoracicus yaralanmasına bağlı şilotoraks gelişebileceğini gösteren destekleyici bulgudur.",
           "values": [
             [
-              "Görüntüleme bulgusu",
+              "Akciğer grafisi",
               "Sol plevral alanda sıvı artışı izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Sol plevral sıvı artışı, ductus thoracicus yaralanmasına bağlı şilotoraks gelişebileceğini gösteren destekleyici bulgudur."
             ]
           ],
           "rows": [
             [
-              "Görüntüleme bulgusu",
+              "Akciğer grafisi",
               "Sol plevral alanda sıvı artışı izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Sol plevral sıvı artışı, ductus thoracicus yaralanmasına bağlı şilotoraks gelişebileceğini gösteren destekleyici bulgudur."
             ]
           ]
         },
         "rows": [
           [
-            "Görüntüleme bulgusu",
+            "Akciğer grafisi",
             "Sol plevral alanda sıvı artışı izlendi.",
-            "Modaliteye özgü bulgu",
-            ""
+            "Anatomik yorum",
+            "Sol plevral sıvı artışı, ductus thoracicus yaralanmasına bağlı şilotoraks gelişebileceğini gösteren destekleyici bulgudur."
           ]
         ],
-        "postAnswerExplanation": "Akciğer görüntülemesinde konsolidasyonun ateş, öksürük ve solunum bulgularına eşlik etmesi pnömoni tanısını güçlendirir; dağılım ve klinik şiddet tedavi kararını etkiler.",
-        "interpretation": "Akciğer görüntülemesinde konsolidasyonun ateş, öksürük ve solunum bulgularına eşlik etmesi pnömoni tanısını güçlendirir; dağılım ve klinik şiddet tedavi kararını etkiler.",
+        "postAnswerExplanation": "Sol plevral sıvı artışı, ductus thoracicus yaralanmasına bağlı şilotoraks gelişebileceğini gösteren destekleyici bulgudur.",
+        "interpretation": "Sol plevral sıvı artışı, ductus thoracicus yaralanmasına bağlı şilotoraks gelişebileceğini gösteren destekleyici bulgudur.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Akciğer görüntülemesinde konsolidasyonun ateş, öksürük ve solunum bulgularına eşlik etmesi pnömoni tanısını güçlendirir; dağılım ve klinik şiddet tedavi kararını etkiler."
+        "explanationAfterAnswer": "Sol plevral sıvı artışı, ductus thoracicus yaralanmasına bağlı şilotoraks gelişebileceğini gösteren destekleyici bulgudur."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -98018,154 +98198,154 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu tabloda yaralanması en olası yapı aşağıdakilerden hangisidir?",
+    "question": "Sol supraklaviküler diseksiyon sonrası süt renginde, trigliseridden zengin drenaj en olası hangi yapının yaralanmasıyla açıklanır?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Ductus thoracicus",
       "options": [
         "Ductus thoracicus",
-        "Ductus cysticus",
-        "Ductus pancreaticus",
-        "Ureter dexter",
-        "Ductus deferens"
+        "Ductus lymphaticus dexter",
+        "Truncus jugularis sinister",
+        "Truncus subclavius sinister",
+        "Vena jugularis interna"
       ],
-      "question": "Bu tabloda yaralanması en olası yapı aşağıdakilerden hangisidir?",
-      "explanation": "Ductus thoracicus, vakadaki bulgularla en uyumlu tanıdır. Cerrahi sol supraklaviküler bölgede yapılmıştır Dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Sol supraklaviküler diseksiyon sonrası süt renginde, trigliseridden zengin drenaj en olası hangi yapının yaralanmasıyla açıklanır?",
+      "explanation": "Ductus thoracicus abdomen, pelvis, alt ekstremiteler ve sol üst vücut lenfini sol venöz açıya taşır. Sol supraklaviküler cerrahi sonrası süt görünümünde trigliseridden zengin drenaj bu yapının yaralanmasını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Cerrahi sol supraklaviküler bölgede yapılmıştır + dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir; bu birliktelik Ductus thoracicus yanıtını öne çıkarır."
+          "text": "Sol boyun diseksiyonu sonrası şilöz drenaj = ductus thoracicus yaralanmasıdır."
         }
       ],
       "optionComparison": {
-        "Ductus thoracicus": "Ductus thoracicus, olgunun ana tanısal örüntüsünü karşılar. Cerrahi sol supraklaviküler bölgede yapılmıştır Dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir. Bulgular aynı tanı etrafında birleşir.",
-        "Ductus cysticus": "Ductus cysticus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-        "Ductus pancreaticus": "Ductus pancreaticus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-        "Ureter dexter": "Ureter dexter, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-        "Ductus deferens": "Ductus deferens, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler."
+        "Ductus thoracicus": "Ductus thoracicus abdomen, pelvis, alt ekstremiteler ve sol üst vücut lenfini sol venöz açıya taşır. Sol supraklaviküler cerrahi sonrası süt görünümünde trigliseridden zengin drenaj bu yapının yaralanmasını gösterir.",
+        "Ductus lymphaticus dexter": "Ductus lymphaticus dexter sağ üst ekstremite, sağ toraks ve sağ baş-boyun lenfini sağ venöz açıya drene eder. Sol supraklaviküler diseksiyon ve şilöz drenaj için ductus thoracicus daha uygundur.",
+        "Truncus jugularis sinister": "Sol juguler lenfatik trunk baş-boyun lenfini taşır ancak ana şilöz drenajın klasik kaynağı değildir. Süt renginde yüksek trigliseridli drenaj thoracic duct yaralanmasını düşündürür.",
+        "Truncus subclavius sinister": "Sol subklavian trunk üst ekstremite lenfiyle ilişkilidir. Enteral beslenme sonrası artan süt renginde drenaj, intestinal şil taşıyan ductus thoracicusa daha spesifiktir.",
+        "Vena jugularis interna": "Vena jugularis interna venöz kan taşır; yaralanması kanama/hematom yapar. Süt görünümünde trigliseridden zengin drenaj lenfatik kanal yaralanmasıdır."
       },
       "answerFeedback": {
-        "summary": "Cerrahi sol supraklaviküler bölgede yapılmıştır Dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir. Bu bulgular tanısal karar açısından Ductus thoracicus yanıtını destekler.",
-        "whyCorrect": "Ductus thoracicus, vakadaki bulgularla en uyumlu tanıdır. Cerrahi sol supraklaviküler bölgede yapılmıştır Dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "rationale": "Ductus thoracicus, vakadaki bulgularla en uyumlu tanıdır. Cerrahi sol supraklaviküler bölgede yapılmıştır Dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "correctOptionFeedback": "Ductus thoracicus sol venöz açıya döküldüğü için sol alt boyun cerrahisi sonrası şilöz drenajın en olası kaynağıdır.",
+        "summary": "Bu olguda karar, cerrahi girişimin sol supraklaviküler bölgede yapılması ductus thoracicusun sol venöz açıya döküldüğü anatomik bölgeyi riskli hale getirir. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Ductus thoracicus abdomen, pelvis, alt ekstremiteler ve sol üst vücut lenfini sol venöz açıya taşır. Sol supraklaviküler cerrahi sonrası süt görünümünde trigliseridden zengin drenaj bu yapının yaralanmasını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Ductus thoracicus abdomen, pelvis, alt ekstremiteler ve sol üst vücut lenfini sol venöz açıya taşır. Sol supraklaviküler cerrahi sonrası süt görünümünde trigliseridden zengin drenaj bu yapının yaralanmasını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Ductus thoracicus abdomen, pelvis, alt ekstremiteler ve sol üst vücut lenfini sol venöz açıya taşır. Sol supraklaviküler cerrahi sonrası süt görünümünde trigliseridden zengin drenaj bu yapının yaralanmasını gösterir.",
         "keyClues": [
-          "Cerrahi sol supraklaviküler bölgede yapılmıştır.",
-          "Dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir.",
-          "Enteral beslenme sonrası drenaj miktarı artmıştır."
+          "Cerrahi girişimin sol supraklaviküler bölgede yapılması ductus thoracicusun sol venöz açıya döküldüğü anatomik bölgeyi riskli hale getirir.",
+          "Enteral beslenme sonrası artan süt renkli drenaj şilöz lenf kaçağını düşündürür.",
+          "Dren sıvısında trigliserid yüksekliği ve sol plevral sıvı artışı ductus thoracicus yaralanmasını destekler."
         ],
         "evidenceChain": [
           {
-            "text": "Cerrahi sol supraklaviküler bölgede yapılmıştır.",
+            "text": "Cerrahi girişimin sol supraklaviküler bölgede yapılması ductus thoracicusun sol venöz açıya döküldüğü anatomik bölgeyi riskli hale getirir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir.",
+            "text": "Enteral beslenme sonrası artan süt renkli drenaj şilöz lenf kaçağını düşündürür.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Enteral beslenme sonrası drenaj miktarı artmıştır.",
+            "text": "Dren sıvısında trigliserid yüksekliği ve sol plevral sıvı artışı ductus thoracicus yaralanmasını destekler.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Cerrahi sol supraklaviküler bölgede yapılmıştır + dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir; bu birliktelik Ductus thoracicus yanıtını öne çıkarır.",
+        "examPearl": "Sol boyun diseksiyonu sonrası şilöz drenaj = ductus thoracicus yaralanmasıdır.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Torasik kanal sol venöz açıya dökülür ve yaralanması şilöz kaçak oluşturur."
+            "text": "Sol boyun diseksiyonu sonrası şilöz drenaj = ductus thoracicus yaralanmasıdır."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "Torasik kanal sol venöz açıya dökülür ve yaralanması şilöz kaçak oluşturur."
+            "label": "Klinik anatomi",
+            "text": "Ductus thoracicus sol venöz açıya dökülür ve şilöz sıvı taşır; sol alt boyun/supraklaviküler cerrahilerde yaralanırsa süt görünümünde, trigliseridden zengin drenaj gelişebilir."
           }
         ],
         "optionComparison": {
-          "Ductus thoracicus": "Ductus thoracicus, olgunun ana tanısal örüntüsünü karşılar. Cerrahi sol supraklaviküler bölgede yapılmıştır Dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir. Bulgular aynı tanı etrafında birleşir.",
-          "Ductus cysticus": "Ductus cysticus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-          "Ductus pancreaticus": "Ductus pancreaticus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-          "Ureter dexter": "Ureter dexter, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-          "Ductus deferens": "Ductus deferens, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler."
+          "Ductus thoracicus": "Ductus thoracicus abdomen, pelvis, alt ekstremiteler ve sol üst vücut lenfini sol venöz açıya taşır. Sol supraklaviküler cerrahi sonrası süt görünümünde trigliseridden zengin drenaj bu yapının yaralanmasını gösterir.",
+          "Ductus lymphaticus dexter": "Ductus lymphaticus dexter sağ üst ekstremite, sağ toraks ve sağ baş-boyun lenfini sağ venöz açıya drene eder. Sol supraklaviküler diseksiyon ve şilöz drenaj için ductus thoracicus daha uygundur.",
+          "Truncus jugularis sinister": "Sol juguler lenfatik trunk baş-boyun lenfini taşır ancak ana şilöz drenajın klasik kaynağı değildir. Süt renginde yüksek trigliseridli drenaj thoracic duct yaralanmasını düşündürür.",
+          "Truncus subclavius sinister": "Sol subklavian trunk üst ekstremite lenfiyle ilişkilidir. Enteral beslenme sonrası artan süt renginde drenaj, intestinal şil taşıyan ductus thoracicusa daha spesifiktir.",
+          "Vena jugularis interna": "Vena jugularis interna venöz kan taşır; yaralanması kanama/hematom yapar. Süt görünümünde trigliseridden zengin drenaj lenfatik kanal yaralanmasıdır."
         },
         "whyWrong": {
-          "Ductus cysticus": "Ductus cysticus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-          "Ductus pancreaticus": "Ductus pancreaticus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-          "Ureter dexter": "Ureter dexter, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-          "Ductus deferens": "Ductus deferens, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler."
+          "Ductus lymphaticus dexter": "Ductus lymphaticus dexter sağ üst ekstremite, sağ toraks ve sağ baş-boyun lenfini sağ venöz açıya drene eder. Sol supraklaviküler diseksiyon ve şilöz drenaj için ductus thoracicus daha uygundur.",
+          "Truncus jugularis sinister": "Sol juguler lenfatik trunk baş-boyun lenfini taşır ancak ana şilöz drenajın klasik kaynağı değildir. Süt renginde yüksek trigliseridli drenaj thoracic duct yaralanmasını düşündürür.",
+          "Truncus subclavius sinister": "Sol subklavian trunk üst ekstremite lenfiyle ilişkilidir. Enteral beslenme sonrası artan süt renginde drenaj, intestinal şil taşıyan ductus thoracicusa daha spesifiktir.",
+          "Vena jugularis interna": "Vena jugularis interna venöz kan taşır; yaralanması kanama/hematom yapar. Süt görünümünde trigliseridden zengin drenaj lenfatik kanal yaralanmasıdır."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Torasik kanal yaralanmasını sol venöz açı ve şilotoraks gelişimiyle ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Ductus thoracicus yanıtını destekler."
+        "learningOutcome": "Toraks kanalını sol venöz açı komşuluğu ve şilöz drenaj bulgusuyla ilişkilendirebilme.",
+        "coreKnowledge": "Ductus thoracicus sol venöz açıya dökülür ve şilöz sıvı taşır; sol alt boyun/supraklaviküler cerrahilerde yaralanırsa süt görünümünde, trigliseridden zengin drenaj gelişebilir."
       },
-      "whyCorrect": "Ductus thoracicus, vakadaki bulgularla en uyumlu tanıdır. Cerrahi sol supraklaviküler bölgede yapılmıştır Dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Ductus thoracicus abdomen, pelvis, alt ekstremiteler ve sol üst vücut lenfini sol venöz açıya taşır. Sol supraklaviküler cerrahi sonrası süt görünümünde trigliseridden zengin drenaj bu yapının yaralanmasını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Cerrahi sol supraklaviküler bölgede yapılmıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Cerrahi girişimin sol supraklaviküler bölgede yapılması ductus thoracicusun sol venöz açıya döküldüğü anatomik bölgeyi riskli hale getirir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Enteral beslenme sonrası artan süt renkli drenaj şilöz lenf kaçağını düşündürür.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Enteral beslenme sonrası drenaj miktarı artmıştır.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Dren sıvısında trigliserid yüksekliği ve sol plevral sıvı artışı ductus thoracicus yaralanmasını destekler.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Ductus thoracicus yanıtını destekler.",
-      "examPearl": "İpucu: Cerrahi sol supraklaviküler bölgede yapılmıştır + dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir; bu birliktelik Ductus thoracicus yanıtını öne çıkarır.",
+      "coreKnowledge": "Ductus thoracicus sol venöz açıya dökülür ve şilöz sıvı taşır; sol alt boyun/supraklaviküler cerrahilerde yaralanırsa süt görünümünde, trigliseridden zengin drenaj gelişebilir.",
+      "examPearl": "Sol boyun diseksiyonu sonrası şilöz drenaj = ductus thoracicus yaralanmasıdır.",
       "whyWrong": {
-        "Ductus cysticus": "Ductus cysticus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-        "Ductus pancreaticus": "Ductus pancreaticus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-        "Ureter dexter": "Ureter dexter, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-        "Ductus deferens": "Ductus deferens, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler."
+        "Ductus lymphaticus dexter": "Ductus lymphaticus dexter sağ üst ekstremite, sağ toraks ve sağ baş-boyun lenfini sağ venöz açıya drene eder. Sol supraklaviküler diseksiyon ve şilöz drenaj için ductus thoracicus daha uygundur.",
+        "Truncus jugularis sinister": "Sol juguler lenfatik trunk baş-boyun lenfini taşır ancak ana şilöz drenajın klasik kaynağı değildir. Süt renginde yüksek trigliseridli drenaj thoracic duct yaralanmasını düşündürür.",
+        "Truncus subclavius sinister": "Sol subklavian trunk üst ekstremite lenfiyle ilişkilidir. Enteral beslenme sonrası artan süt renginde drenaj, intestinal şil taşıyan ductus thoracicusa daha spesifiktir.",
+        "Vena jugularis interna": "Vena jugularis interna venöz kan taşır; yaralanması kanama/hematom yapar. Süt görünümünde trigliseridden zengin drenaj lenfatik kanal yaralanmasıdır."
       }
     },
     "difficultyTag": "Zor",
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Ductus thoracicus yanıtını destekler.",
-    "examPearl": "İpucu: Cerrahi sol supraklaviküler bölgede yapılmıştır + dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir; bu birliktelik Ductus thoracicus yanıtını öne çıkarır.",
-    "whyCorrect": "Ductus thoracicus, vakadaki bulgularla en uyumlu tanıdır. Cerrahi sol supraklaviküler bölgede yapılmıştır Dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "Ductus thoracicus sol venöz açıya dökülür ve şilöz sıvı taşır; sol alt boyun/supraklaviküler cerrahilerde yaralanırsa süt görünümünde, trigliseridden zengin drenaj gelişebilir.",
+    "examPearl": "Sol boyun diseksiyonu sonrası şilöz drenaj = ductus thoracicus yaralanmasıdır.",
+    "whyCorrect": "Ductus thoracicus abdomen, pelvis, alt ekstremiteler ve sol üst vücut lenfini sol venöz açıya taşır. Sol supraklaviküler cerrahi sonrası süt görünümünde trigliseridden zengin drenaj bu yapının yaralanmasını gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Ductus thoracicus": "Ductus thoracicus, olgunun ana tanısal örüntüsünü karşılar. Cerrahi sol supraklaviküler bölgede yapılmıştır Dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir. Bulgular aynı tanı etrafında birleşir.",
-      "Ductus cysticus": "Ductus cysticus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-      "Ductus pancreaticus": "Ductus pancreaticus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-      "Ureter dexter": "Ureter dexter, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-      "Ductus deferens": "Ductus deferens, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler."
+      "Ductus thoracicus": "Ductus thoracicus abdomen, pelvis, alt ekstremiteler ve sol üst vücut lenfini sol venöz açıya taşır. Sol supraklaviküler cerrahi sonrası süt görünümünde trigliseridden zengin drenaj bu yapının yaralanmasını gösterir.",
+      "Ductus lymphaticus dexter": "Ductus lymphaticus dexter sağ üst ekstremite, sağ toraks ve sağ baş-boyun lenfini sağ venöz açıya drene eder. Sol supraklaviküler diseksiyon ve şilöz drenaj için ductus thoracicus daha uygundur.",
+      "Truncus jugularis sinister": "Sol juguler lenfatik trunk baş-boyun lenfini taşır ancak ana şilöz drenajın klasik kaynağı değildir. Süt renginde yüksek trigliseridli drenaj thoracic duct yaralanmasını düşündürür.",
+      "Truncus subclavius sinister": "Sol subklavian trunk üst ekstremite lenfiyle ilişkilidir. Enteral beslenme sonrası artan süt renginde drenaj, intestinal şil taşıyan ductus thoracicusa daha spesifiktir.",
+      "Vena jugularis interna": "Vena jugularis interna venöz kan taşır; yaralanması kanama/hematom yapar. Süt görünümünde trigliseridden zengin drenaj lenfatik kanal yaralanmasıdır."
     },
     "evidenceChain": [
       {
-        "text": "Cerrahi sol supraklaviküler bölgede yapılmıştır.",
+        "text": "Cerrahi girişimin sol supraklaviküler bölgede yapılması ductus thoracicusun sol venöz açıya döküldüğü anatomik bölgeyi riskli hale getirir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Dren sıvısı süt görünümündedir ve trigliserid düzeyi yüksektir.",
+        "text": "Enteral beslenme sonrası artan süt renkli drenaj şilöz lenf kaçağını düşündürür.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Enteral beslenme sonrası drenaj miktarı artmıştır.",
+        "text": "Dren sıvısında trigliserid yüksekliği ve sol plevral sıvı artışı ductus thoracicus yaralanmasını destekler.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Ductus cysticus": "Ductus cysticus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-      "Ductus pancreaticus": "Ductus pancreaticus, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-      "Ureter dexter": "Ureter dexter, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler.",
-      "Ductus deferens": "Ductus deferens, bu olguda en uygun yanıt değildir. Belirleyici bulgular Ductus thoracicus yanıtını destekler."
+      "Ductus lymphaticus dexter": "Ductus lymphaticus dexter sağ üst ekstremite, sağ toraks ve sağ baş-boyun lenfini sağ venöz açıya drene eder. Sol supraklaviküler diseksiyon ve şilöz drenaj için ductus thoracicus daha uygundur.",
+      "Truncus jugularis sinister": "Sol juguler lenfatik trunk baş-boyun lenfini taşır ancak ana şilöz drenajın klasik kaynağı değildir. Süt renginde yüksek trigliseridli drenaj thoracic duct yaralanmasını düşündürür.",
+      "Truncus subclavius sinister": "Sol subklavian trunk üst ekstremite lenfiyle ilişkilidir. Enteral beslenme sonrası artan süt renginde drenaj, intestinal şil taşıyan ductus thoracicusa daha spesifiktir.",
+      "Vena jugularis interna": "Vena jugularis interna venöz kan taşır; yaralanması kanama/hematom yapar. Süt görünümünde trigliseridden zengin drenaj lenfatik kanal yaralanmasıdır."
     }
   },
   {
@@ -106509,58 +106689,59 @@ export const rawCases = [
     "title": "Sinüs enfeksiyonu sonrası çift görme",
     "difficulty": "Acil",
     "difficultyTag": "Acil",
-    "clinicalFocus": "Sinüs enfeksiyonu sonrası çift görme bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "da kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır ve sağ göz abduksiyonu belirgin kısıtlıdır. Bu ipuçlarını kullanarak Abdusens siniri seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Sinüs enfeksiyonu sonrası çift görme olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Abdusens siniri yanıtına ulaşma.",
+    "learningTarget": "Kavernöz sinüs anatomisini kraniyal sinir fonksiyonları ve göz hareketi bulgularıyla ilişkilendirebilme.",
     "demographics": "39 yaşında erkek hasta",
     "setting": "Acil servis",
-    "chiefComplaint": "Hasta, yüz ağrısı ve ateşi takiben başlayan çift görme nedeniyle başvuruyor.",
-    "stem": "Son bir haftadır yüz orta hattında ağrı ve burun çevresinde enfeksiyon bulguları olduğu, son iki gündür sağa bakarken çift görmesinin belirginleştiği öğreniliyor. Travma öyküsü yoktur.",
+    "chiefComplaint": "Hasta, yüz orta hattı enfeksiyonu ve ateşi takiben başlayan çift görme nedeniyle başvuruyor.",
+    "stem": "Son bir haftadır burun çevresinde enfeksiyon bulguları ve yüz ağrısı olduğu, son iki gündür sağa bakarken çift görmesinin belirginleştiği öğreniliyor. Travma öyküsü yoktur.",
     "patientIntro": {
-      "profile": "39 yaşında erkek hasta, acil serviste nöroloji ve kulak burun boğaz tarafından değerlendiriliyor.",
-      "presentation": "Hasta, yüz ağrısı ve ateşi takiben başlayan çift görme nedeniyle başvuruyor.",
-      "historySummary": "Son bir haftadır yüz orta hattında ağrı ve burun çevresinde enfeksiyon bulguları olduğu, son iki gündür sağa bakarken çift görmesinin belirginleştiği öğreniliyor. Travma öyküsü yoktur."
+      "profile": "39 yaşında erkek hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, yüz orta hattı enfeksiyonu ve ateşi takiben başlayan çift görme nedeniyle başvuruyor.",
+      "historySummary": "Son bir haftadır burun çevresinde enfeksiyon bulguları ve yüz ağrısı olduğu, son iki gündür sağa bakarken çift görmesinin belirginleştiği öğreniliyor. Travma öyküsü yoktur."
     },
     "vitals": {
       "TA": "118/74 mmHg",
       "Nabız": "108/dk",
       "Solunum": "16/dk",
       "SpO2": "%98, oda havasında",
-      "Ateş": "38.4 °C",
+      "Ateş": "38.5 °C",
       "Şok indeksi": "0.92 sınırda"
     },
     "exam": [
       "Sağ göz abduksiyonu belirgin kısıtlıdır.",
       "Sağ periorbital ödem ve hafif proptoz vardır.",
-      "Kornea refleksi korunmuştur."
+      "Kornea refleksi korunmuştur.",
+      "Pitoz veya belirgin pupilla dilatasyonu yoktur."
     ],
     "investigations": [
       {
         "id": "kontrastli-kraniyal-manyetik-rezonans-goruntuleme-1",
         "label": "Kontrastlı kraniyal manyetik rezonans görüntüleme",
         "title": "Kontrastlı kraniyal manyetik rezonans görüntüleme",
-        "type": "lab",
+        "type": "mri",
         "priority": "essential",
-        "subtype": "Laboratuvar",
-        "summary": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
-        "clinicalMeaning": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
+        "subtype": "Kontrastlı MR",
+        "summary": "Kontrastlı kraniyal MR’da sağ kavernöz sinüs komşuluğunda inflamatuvar-trombotik değişiklikler izlenmesi, burun çevresi enfeksiyonunun venöz yollarla kavernöz sinüse yayılabileceğini destekler. Bu bölgedeki n. abducens tutulumu lateral bakış kaybını açıklar.",
+        "clinicalMeaning": "Kavernöz sinüs içinde serbest seyreden n. abducens, sinüs patolojilerinde erken etkilenebilir; sağ abduksiyon kısıtlılığı bu anatomik ilişkiyle açıklanır.",
         "result": {
           "title": "Kontrastlı kraniyal manyetik rezonans görüntüleme",
-          "summary": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
-          "interpretation": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
+          "summary": "Kontrastlı kraniyal MR’da sağ kavernöz sinüs komşuluğunda inflamatuvar-trombotik değişiklikler izlenmesi, burun çevresi enfeksiyonunun venöz yollarla kavernöz sinüse yayılabileceğini destekler. Bu bölgedeki n. abducens tutulumu lateral bakış kaybını açıklar.",
+          "interpretation": "Kavernöz sinüs içinde serbest seyreden n. abducens, sinüs patolojilerinde erken etkilenebilir; sağ abduksiyon kısıtlılığı bu anatomik ilişkiyle açıklanır.",
           "values": [
             [
               "Kontrastlı kraniyal manyetik rezonans görüntüleme",
               "Sağ kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler izlendi.",
-              "—",
-              ""
+              "Anatomik yorum",
+              "Kavernöz sinüs içinde serbest seyreden n. abducens, sinüs patolojilerinde erken etkilenebilir; sağ abduksiyon kısıtlılığı bu anatomik ilişkiyle açıklanır."
             ]
           ],
           "rows": [
             [
               "Kontrastlı kraniyal manyetik rezonans görüntüleme",
               "Sağ kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler izlendi.",
-              "—",
-              ""
+              "Anatomik yorum",
+              "Kavernöz sinüs içinde serbest seyreden n. abducens, sinüs patolojilerinde erken etkilenebilir; sağ abduksiyon kısıtlılığı bu anatomik ilişkiyle açıklanır."
             ]
           ]
         },
@@ -106568,15 +106749,15 @@ export const rawCases = [
           [
             "Kontrastlı kraniyal manyetik rezonans görüntüleme",
             "Sağ kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler izlendi.",
-            "—",
-            ""
+            "Anatomik yorum",
+            "Kavernöz sinüs içinde serbest seyreden n. abducens, sinüs patolojilerinde erken etkilenebilir; sağ abduksiyon kısıtlılığı bu anatomik ilişkiyle açıklanır."
           ]
         ],
-        "postAnswerExplanation": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
-        "interpretation": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik sendrom paternini gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır."
+        "postAnswerExplanation": "Kavernöz sinüs içinde serbest seyreden n. abducens, sinüs patolojilerinde erken etkilenebilir; sağ abduksiyon kısıtlılığı bu anatomik ilişkiyle açıklanır.",
+        "interpretation": "Kavernöz sinüs içinde serbest seyreden n. abducens, sinüs patolojilerinde erken etkilenebilir; sağ abduksiyon kısıtlılığı bu anatomik ilişkiyle açıklanır.",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "explanationAfterAnswer": "Kavernöz sinüs içinde serbest seyreden n. abducens, sinüs patolojilerinde erken etkilenebilir; sağ abduksiyon kısıtlılığı bu anatomik ilişkiyle açıklanır."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -106585,153 +106766,153 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu hastadaki göz hareket kusurunu en iyi açıklayan sinir aşağıdakilerden hangisidir?",
+    "question": "Bu hastada sağ gözün lateral bakışta abduksiyon yapamamasını en doğrudan açıklayan kraniyal sinir etkilenimi hangisidir?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
       "correct": "Abdusens siniri",
       "options": [
-        "Abdusens siniri",
-        "Troklear sinir",
         "Okulomotor sinir",
-        "Optik sinir",
-        "Nervus olfactorius"
+        "Troklear sinir",
+        "Abdusens siniri",
+        "N. ophthalmicus",
+        "N. maxillaris"
       ],
-      "question": "Bu hastadaki göz hareket kusurunu en iyi açıklayan sinir aşağıdakilerden hangisidir?",
-      "explanation": "Abdusens siniri, vakadaki bulgularla en uyumlu tanıdır. Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır Sağ göz abduksiyonu belirgin kısıtlıdır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Bu hastada sağ gözün lateral bakışta abduksiyon yapamamasını en doğrudan açıklayan kraniyal sinir etkilenimi hangisidir?",
+      "explanation": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır + sağ göz abduksiyonu belirgin kısıtlıdır; bu birliktelik Abdusens siniri yanıtını öne çıkarır."
+          "text": "Kavernöz sinüs tutulumu + lateral bakışta abduksiyon kaybı = n. abducens ve m. rectus lateralis etkilenimi."
         }
       ],
       "optionComparison": {
-        "Abdusens siniri": "Abdusens siniri, olgunun ana tanısal örüntüsünü karşılar. Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır Sağ göz abduksiyonu belirgin kısıtlıdır. Bulgular aynı tanı etrafında birleşir.",
-        "Troklear sinir": "Troklear sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-        "Okulomotor sinir": "Okulomotor sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-        "Optik sinir": "Optik sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-        "Nervus olfactorius": "Nervus olfactorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler."
+        "Okulomotor sinir": "Okulomotor sinir m. rectus medialis, superior, inferior, m. obliquus inferior ve levator palpebrae superiorisi innerve eder. Lezyonunda pitoz, midriyazis ve “down and out” pozisyon beklenir; izole lateral bakış abduksiyon kaybı abducens sinirine daha özgüdür.",
+        "Troklear sinir": "Troklear sinir m. obliquus superioru innerve eder ve aşağı-içe bakışta önemlidir. Lezyonunda vertikal diplopi, özellikle merdiven inerken yakınma beklenir; lateral abduksiyon kaybını açıklamaz.",
+        "Abdusens siniri": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler.",
+        "N. ophthalmicus": "N. ophthalmicus trigeminal sinirin duyusal dalıdır; kornea, alın ve üst göz kapağı duyusunu taşır. V1 tutulumu kornea/alın duyusunu açıklayabilir, ancak lateral rectus paralizisine bağlı abduksiyon kaybını açıklamaz.",
+        "N. maxillaris": "N. maxillaris orta yüz, yanak ve üst dişlerin duyusunu taşır. Kavernöz sinüs lateral duvarıyla ilişkili olabilir ancak motor göz hareketi yaptırmaz."
       },
       "answerFeedback": {
-        "summary": "Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır Sağ göz abduksiyonu belirgin kısıtlıdır. Bu bulgular tanısal karar açısından Abdusens siniri yanıtını destekler.",
-        "whyCorrect": "Abdusens siniri, vakadaki bulgularla en uyumlu tanıdır. Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır Sağ göz abduksiyonu belirgin kısıtlıdır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "rationale": "Abdusens siniri, vakadaki bulgularla en uyumlu tanıdır. Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır Sağ göz abduksiyonu belirgin kısıtlıdır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "correctOptionFeedback": "Abdusens siniri lateral rektus kasını innerve ettiği için abduksiyon kaybı ve horizontal diplopiyi açıklar.",
+        "summary": "Bu olguda karar, burun çevresi enfeksiyonu sonrası periorbital ödem ve proptoz kavernöz sinüs komşuluğunda enfeksiyöz-trombotik yayılımı düşündürür. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler.",
         "keyClues": [
-          "Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır.",
-          "Sağ göz abduksiyonu belirgin kısıtlıdır.",
-          "Çift görme özellikle sağa bakış sırasında belirginleşmektedir."
+          "Burun çevresi enfeksiyonu sonrası periorbital ödem ve proptoz kavernöz sinüs komşuluğunda enfeksiyöz-trombotik yayılımı düşündürür.",
+          "Kontrastlı kraniyal MR’da sağ kavernöz sinüs komşuluğunda inflamatuvar trombotik değişikliklerin izlenmesi lokalizasyonu destekler.",
+          "Sağ göz abduksiyonunun kısıtlanması m. rectus lateralis ve n. abducens etkilenimini gösterir."
         ],
         "evidenceChain": [
           {
-            "text": "Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır.",
+            "text": "Burun çevresi enfeksiyonu sonrası periorbital ödem ve proptoz kavernöz sinüs komşuluğunda enfeksiyöz-trombotik yayılımı düşündürür.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Sağ göz abduksiyonu belirgin kısıtlıdır.",
+            "text": "Kontrastlı kraniyal MR’da sağ kavernöz sinüs komşuluğunda inflamatuvar trombotik değişikliklerin izlenmesi lokalizasyonu destekler.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Çift görme özellikle sağa bakış sırasında belirginleşmektedir.",
+            "text": "Sağ göz abduksiyonunun kısıtlanması m. rectus lateralis ve n. abducens etkilenimini gösterir.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır + sağ göz abduksiyonu belirgin kısıtlıdır; bu birliktelik Abdusens siniri yanıtını öne çıkarır.",
+        "examPearl": "Kavernöz sinüs tutulumu + lateral bakışta abduksiyon kaybı = n. abducens ve m. rectus lateralis etkilenimi.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Kavernöz sinüs patolojilerinde nervus abducens sık etkilenir ve lateral rektus paralizisi yapar."
+            "text": "Kavernöz sinüs tutulumu + lateral bakışta abduksiyon kaybı = n. abducens ve m. rectus lateralis etkilenimi."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "Kavernöz sinüs patolojilerinde nervus abducens sık etkilenir ve lateral rektus paralizisi yapar."
+            "label": "Klinik anatomi",
+            "text": "N. abducens, kavernöz sinüs içinde internal karotis artere yakın serbest seyreder ve m. rectus lateralis ile göz abduksiyonunu sağlar; kavernöz sinüs patolojilerinde horizontal diplopi ve ipsilateral abduksiyon kaybı yapabilir."
           }
         ],
         "optionComparison": {
-          "Abdusens siniri": "Abdusens siniri, olgunun ana tanısal örüntüsünü karşılar. Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır Sağ göz abduksiyonu belirgin kısıtlıdır. Bulgular aynı tanı etrafında birleşir.",
-          "Troklear sinir": "Troklear sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-          "Okulomotor sinir": "Okulomotor sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-          "Optik sinir": "Optik sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-          "Nervus olfactorius": "Nervus olfactorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler."
+          "Okulomotor sinir": "Okulomotor sinir m. rectus medialis, superior, inferior, m. obliquus inferior ve levator palpebrae superiorisi innerve eder. Lezyonunda pitoz, midriyazis ve “down and out” pozisyon beklenir; izole lateral bakış abduksiyon kaybı abducens sinirine daha özgüdür.",
+          "Troklear sinir": "Troklear sinir m. obliquus superioru innerve eder ve aşağı-içe bakışta önemlidir. Lezyonunda vertikal diplopi, özellikle merdiven inerken yakınma beklenir; lateral abduksiyon kaybını açıklamaz.",
+          "Abdusens siniri": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler.",
+          "N. ophthalmicus": "N. ophthalmicus trigeminal sinirin duyusal dalıdır; kornea, alın ve üst göz kapağı duyusunu taşır. V1 tutulumu kornea/alın duyusunu açıklayabilir, ancak lateral rectus paralizisine bağlı abduksiyon kaybını açıklamaz.",
+          "N. maxillaris": "N. maxillaris orta yüz, yanak ve üst dişlerin duyusunu taşır. Kavernöz sinüs lateral duvarıyla ilişkili olabilir ancak motor göz hareketi yaptırmaz."
         },
         "whyWrong": {
-          "Troklear sinir": "Troklear sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-          "Okulomotor sinir": "Okulomotor sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-          "Optik sinir": "Optik sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-          "Nervus olfactorius": "Nervus olfactorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler."
+          "Okulomotor sinir": "Okulomotor sinir m. rectus medialis, superior, inferior, m. obliquus inferior ve levator palpebrae superiorisi innerve eder. Lezyonunda pitoz, midriyazis ve “down and out” pozisyon beklenir; izole lateral bakış abduksiyon kaybı abducens sinirine daha özgüdür.",
+          "Troklear sinir": "Troklear sinir m. obliquus superioru innerve eder ve aşağı-içe bakışta önemlidir. Lezyonunda vertikal diplopi, özellikle merdiven inerken yakınma beklenir; lateral abduksiyon kaybını açıklamaz.",
+          "N. ophthalmicus": "N. ophthalmicus trigeminal sinirin duyusal dalıdır; kornea, alın ve üst göz kapağı duyusunu taşır. V1 tutulumu kornea/alın duyusunu açıklayabilir, ancak lateral rectus paralizisine bağlı abduksiyon kaybını açıklamaz.",
+          "N. maxillaris": "N. maxillaris orta yüz, yanak ve üst dişlerin duyusunu taşır. Kavernöz sinüs lateral duvarıyla ilişkili olabilir ancak motor göz hareketi yaptırmaz."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Cavernous sinus içinde nervus abducens tutulumunu lateral rektus paralizisiyle ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Abdusens siniri yanıtını destekler."
+        "learningOutcome": "Kavernöz sinüs anatomisini kraniyal sinir fonksiyonları ve göz hareketi bulgularıyla ilişkilendirebilme.",
+        "coreKnowledge": "N. abducens, kavernöz sinüs içinde internal karotis artere yakın serbest seyreder ve m. rectus lateralis ile göz abduksiyonunu sağlar; kavernöz sinüs patolojilerinde horizontal diplopi ve ipsilateral abduksiyon kaybı yapabilir."
       },
-      "whyCorrect": "Abdusens siniri, vakadaki bulgularla en uyumlu tanıdır. Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır Sağ göz abduksiyonu belirgin kısıtlıdır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Burun çevresi enfeksiyonu sonrası periorbital ödem ve proptoz kavernöz sinüs komşuluğunda enfeksiyöz-trombotik yayılımı düşündürür.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Sağ göz abduksiyonu belirgin kısıtlıdır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Kontrastlı kraniyal MR’da sağ kavernöz sinüs komşuluğunda inflamatuvar trombotik değişikliklerin izlenmesi lokalizasyonu destekler.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Çift görme özellikle sağa bakış sırasında belirginleşmektedir.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Sağ göz abduksiyonunun kısıtlanması m. rectus lateralis ve n. abducens etkilenimini gösterir.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Abdusens siniri yanıtını destekler.",
-      "examPearl": "İpucu: Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır + sağ göz abduksiyonu belirgin kısıtlıdır; bu birliktelik Abdusens siniri yanıtını öne çıkarır.",
+      "coreKnowledge": "N. abducens, kavernöz sinüs içinde internal karotis artere yakın serbest seyreder ve m. rectus lateralis ile göz abduksiyonunu sağlar; kavernöz sinüs patolojilerinde horizontal diplopi ve ipsilateral abduksiyon kaybı yapabilir.",
+      "examPearl": "Kavernöz sinüs tutulumu + lateral bakışta abduksiyon kaybı = n. abducens ve m. rectus lateralis etkilenimi.",
       "whyWrong": {
-        "Troklear sinir": "Troklear sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-        "Okulomotor sinir": "Okulomotor sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-        "Optik sinir": "Optik sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-        "Nervus olfactorius": "Nervus olfactorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler."
+        "Okulomotor sinir": "Okulomotor sinir m. rectus medialis, superior, inferior, m. obliquus inferior ve levator palpebrae superiorisi innerve eder. Lezyonunda pitoz, midriyazis ve “down and out” pozisyon beklenir; izole lateral bakış abduksiyon kaybı abducens sinirine daha özgüdür.",
+        "Troklear sinir": "Troklear sinir m. obliquus superioru innerve eder ve aşağı-içe bakışta önemlidir. Lezyonunda vertikal diplopi, özellikle merdiven inerken yakınma beklenir; lateral abduksiyon kaybını açıklamaz.",
+        "N. ophthalmicus": "N. ophthalmicus trigeminal sinirin duyusal dalıdır; kornea, alın ve üst göz kapağı duyusunu taşır. V1 tutulumu kornea/alın duyusunu açıklayabilir, ancak lateral rectus paralizisine bağlı abduksiyon kaybını açıklamaz.",
+        "N. maxillaris": "N. maxillaris orta yüz, yanak ve üst dişlerin duyusunu taşır. Kavernöz sinüs lateral duvarıyla ilişkili olabilir ancak motor göz hareketi yaptırmaz."
       }
     },
-    "coreKnowledge": "Benzer sorularda karar, tek bulgudan çok öykü, muayene ve tetkiklerin birlikte oluşturduğu örüntüye dayanır. Bu örüntü Abdusens siniri yanıtını destekler.",
-    "examPearl": "İpucu: Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır + sağ göz abduksiyonu belirgin kısıtlıdır; bu birliktelik Abdusens siniri yanıtını öne çıkarır.",
-    "whyCorrect": "Abdusens siniri, vakadaki bulgularla en uyumlu tanıdır. Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır Sağ göz abduksiyonu belirgin kısıtlıdır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "N. abducens, kavernöz sinüs içinde internal karotis artere yakın serbest seyreder ve m. rectus lateralis ile göz abduksiyonunu sağlar; kavernöz sinüs patolojilerinde horizontal diplopi ve ipsilateral abduksiyon kaybı yapabilir.",
+    "examPearl": "Kavernöz sinüs tutulumu + lateral bakışta abduksiyon kaybı = n. abducens ve m. rectus lateralis etkilenimi.",
+    "whyCorrect": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Abdusens siniri": "Abdusens siniri, olgunun ana tanısal örüntüsünü karşılar. Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır Sağ göz abduksiyonu belirgin kısıtlıdır. Bulgular aynı tanı etrafında birleşir.",
-      "Troklear sinir": "Troklear sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-      "Okulomotor sinir": "Okulomotor sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-      "Optik sinir": "Optik sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-      "Nervus olfactorius": "Nervus olfactorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler."
+      "Okulomotor sinir": "Okulomotor sinir m. rectus medialis, superior, inferior, m. obliquus inferior ve levator palpebrae superiorisi innerve eder. Lezyonunda pitoz, midriyazis ve “down and out” pozisyon beklenir; izole lateral bakış abduksiyon kaybı abducens sinirine daha özgüdür.",
+      "Troklear sinir": "Troklear sinir m. obliquus superioru innerve eder ve aşağı-içe bakışta önemlidir. Lezyonunda vertikal diplopi, özellikle merdiven inerken yakınma beklenir; lateral abduksiyon kaybını açıklamaz.",
+      "Abdusens siniri": "Abdusens siniri m. rectus lateralisi innerve eder ve gözün abduksiyonunu sağlar. Sağ gözün sağa bakarken dışa hareket edememesi, sağ abducens siniri etkilenimini doğrudan destekler.",
+      "N. ophthalmicus": "N. ophthalmicus trigeminal sinirin duyusal dalıdır; kornea, alın ve üst göz kapağı duyusunu taşır. V1 tutulumu kornea/alın duyusunu açıklayabilir, ancak lateral rectus paralizisine bağlı abduksiyon kaybını açıklamaz.",
+      "N. maxillaris": "N. maxillaris orta yüz, yanak ve üst dişlerin duyusunu taşır. Kavernöz sinüs lateral duvarıyla ilişkili olabilir ancak motor göz hareketi yaptırmaz."
     },
     "evidenceChain": [
       {
-        "text": "Hastada kavernöz sinüs komşuluğunda inflamatuvar trombotik değişiklikler vardır.",
+        "text": "Burun çevresi enfeksiyonu sonrası periorbital ödem ve proptoz kavernöz sinüs komşuluğunda enfeksiyöz-trombotik yayılımı düşündürür.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Sağ göz abduksiyonu belirgin kısıtlıdır.",
+        "text": "Kontrastlı kraniyal MR’da sağ kavernöz sinüs komşuluğunda inflamatuvar trombotik değişikliklerin izlenmesi lokalizasyonu destekler.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Çift görme özellikle sağa bakış sırasında belirginleşmektedir.",
+        "text": "Sağ göz abduksiyonunun kısıtlanması m. rectus lateralis ve n. abducens etkilenimini gösterir.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Troklear sinir": "Troklear sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-      "Okulomotor sinir": "Okulomotor sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-      "Optik sinir": "Optik sinir, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler.",
-      "Nervus olfactorius": "Nervus olfactorius, bu olguda en uygun yanıt değildir. Belirleyici bulgular Abdusens siniri yanıtını destekler."
+      "Okulomotor sinir": "Okulomotor sinir m. rectus medialis, superior, inferior, m. obliquus inferior ve levator palpebrae superiorisi innerve eder. Lezyonunda pitoz, midriyazis ve “down and out” pozisyon beklenir; izole lateral bakış abduksiyon kaybı abducens sinirine daha özgüdür.",
+      "Troklear sinir": "Troklear sinir m. obliquus superioru innerve eder ve aşağı-içe bakışta önemlidir. Lezyonunda vertikal diplopi, özellikle merdiven inerken yakınma beklenir; lateral abduksiyon kaybını açıklamaz.",
+      "N. ophthalmicus": "N. ophthalmicus trigeminal sinirin duyusal dalıdır; kornea, alın ve üst göz kapağı duyusunu taşır. V1 tutulumu kornea/alın duyusunu açıklayabilir, ancak lateral rectus paralizisine bağlı abduksiyon kaybını açıklamaz.",
+      "N. maxillaris": "N. maxillaris orta yüz, yanak ve üst dişlerin duyusunu taşır. Kavernöz sinüs lateral duvarıyla ilişkili olabilir ancak motor göz hareketi yaptırmaz."
     }
   },
   {
@@ -106742,10 +106923,10 @@ export const rawCases = [
     "title": "Boyun kaburgası ve elde güçsüzlük",
     "difficulty": "Orta",
     "difficultyTag": "Orta",
-    "clinicalFocus": "Boyun kaburgası ve elde güçsüzlük bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Servikal grafide servikal kaburga saptanmıştır ve elde intrinsik kas zayıflığı ve atrofi vardır. Bu ipuçlarını kullanarak Alt trunkus seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Boyun kaburgası ve elde güçsüzlük olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Alt trunkus yanıtına ulaşma.",
+    "learningTarget": "Torasik çıkış sendromunda alt trunkus C8-T1 bulgularını pleksus anatomisiyle ayırt edebilme.",
     "demographics": "28 yaşında kadın hasta",
-    "setting": "Klinik değerlendirme",
+    "setting": "Nöroloji polikliniği",
     "chiefComplaint": "Hasta, sağ elde güçsüzlük ve ön kol iç yüzünde uyuşma nedeniyle başvuruyor.",
     "stem": "Yakınmalarının kolunu yukarı kaldırdığında arttığını, uzun süredir sağ omuz-boyun bölgesinde baskı hissi olduğunu belirtmektedir. Travma öyküsü yoktur.",
     "patientIntro": {
@@ -106763,7 +106944,8 @@ export const rawCases = [
     },
     "exam": [
       "Sağ elde intrinsik kaslarda hafif atrofi ve kavrama gücünde azalma vardır.",
-      "Ön kol medial yüzünde duyu azalması saptanır."
+      "Ön kol medial yüzünde duyu azalması saptanır.",
+      "Omuz abdüksiyonu ve dirsek fleksiyonu belirgin korunmuştur."
     ],
     "investigations": [
       {
@@ -106772,43 +106954,43 @@ export const rawCases = [
         "title": "Servikal grafi",
         "type": "xray",
         "priority": "essential",
-        "subtype": "Direkt/kontrastlı grafi",
-        "summary": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-        "clinicalMeaning": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+        "subtype": "Direkt grafi",
+        "summary": "Servikal grafide sağ tarafta servikal kaburga ile uyumlu kemik yapı izlenmesi, torasik çıkışta brakiyal pleksusun özellikle C8-T1 liflerini taşıyan alt trunkusunun basıya uğrayabileceğini gösterir.",
+        "clinicalMeaning": "Servikal kaburga, alt trunkus üzerinde mekanik bası oluşturarak el intrinsik kas zayıflığı ve medial ön kol duyusu azalmasına yol açabilir.",
         "result": {
           "title": "Servikal grafi",
-          "summary": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-          "interpretation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+          "summary": "Servikal grafide sağ tarafta servikal kaburga ile uyumlu kemik yapı izlenmesi, torasik çıkışta brakiyal pleksusun özellikle C8-T1 liflerini taşıyan alt trunkusunun basıya uğrayabileceğini gösterir.",
+          "interpretation": "Servikal kaburga, alt trunkus üzerinde mekanik bası oluşturarak el intrinsik kas zayıflığı ve medial ön kol duyusu azalmasına yol açabilir.",
           "values": [
             [
-              "Görüntüleme bulgusu",
+              "Servikal grafi",
               "Sağ tarafta servikal kaburga ile uyumlu kemik yapı izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Servikal kaburga, alt trunkus üzerinde mekanik bası oluşturarak el intrinsik kas zayıflığı ve medial ön kol duyusu azalmasına yol açabilir."
             ]
           ],
           "rows": [
             [
-              "Görüntüleme bulgusu",
+              "Servikal grafi",
               "Sağ tarafta servikal kaburga ile uyumlu kemik yapı izlendi.",
-              "Modaliteye özgü bulgu",
-              ""
+              "Anatomik yorum",
+              "Servikal kaburga, alt trunkus üzerinde mekanik bası oluşturarak el intrinsik kas zayıflığı ve medial ön kol duyusu azalmasına yol açabilir."
             ]
           ]
         },
         "rows": [
           [
-            "Görüntüleme bulgusu",
+            "Servikal grafi",
             "Sağ tarafta servikal kaburga ile uyumlu kemik yapı izlendi.",
-            "Modaliteye özgü bulgu",
-            ""
+            "Anatomik yorum",
+            "Servikal kaburga, alt trunkus üzerinde mekanik bası oluşturarak el intrinsik kas zayıflığı ve medial ön kol duyusu azalmasına yol açabilir."
           ]
         ],
-        "postAnswerExplanation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
-        "interpretation": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir.",
+        "postAnswerExplanation": "Servikal kaburga, alt trunkus üzerinde mekanik bası oluşturarak el intrinsik kas zayıflığı ve medial ön kol duyusu azalmasına yol açabilir.",
+        "interpretation": "Servikal kaburga, alt trunkus üzerinde mekanik bası oluşturarak el intrinsik kas zayıflığı ve medial ön kol duyusu azalmasına yol açabilir.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "AST/ALT yüksekliği hepatoselüler hasarı düşündürür; kolestatik patern açısından ALP, GGT, bilirubin ve klinik bulgularla birlikte değerlendirilmelidir."
+        "explanationAfterAnswer": "Servikal kaburga, alt trunkus üzerinde mekanik bası oluşturarak el intrinsik kas zayıflığı ve medial ön kol duyusu azalmasına yol açabilir."
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -106817,7 +106999,7 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu tabloda en çok etkilenen brakiyal pleksus bölümü aşağıdakilerden hangisidir?",
+    "question": "Servikal kaburga varlığında elde intrinsik kas zayıflığı ve ön kol medial duyu azalması en çok hangi brakiyal pleksus bölümünü düşündürür?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
@@ -106825,145 +107007,145 @@ export const rawCases = [
       "options": [
         "Alt trunkus",
         "Üst trunkus",
-        "Posterior kord",
-        "Lateral kord",
-        "Nervus phrenicus"
+        "Orta trunkus",
+        "Medial kord",
+        "Posterior kord"
       ],
-      "question": "Bu tabloda en çok etkilenen brakiyal pleksus bölümü aşağıdakilerden hangisidir?",
-      "explanation": "Alt trunkus, vakadaki bulgularla en uyumlu tanıdır. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Servikal kaburga varlığında elde intrinsik kas zayıflığı ve ön kol medial duyu azalması en çok hangi brakiyal pleksus bölümünü düşündürür?",
+      "explanation": "Alt trunkus C8-T1 liflerini taşır ve servikal kaburga ile torasik çıkışta basıya uğrayabilir. Elde intrinsik kas zayıflığı ile medial ön kol duyusu azalması bu düzeyi destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Servikal grafide servikal kaburga saptanmıştır + elde intrinsik kas zayıflığı ve atrofi vardır; bu birliktelik Alt trunkus yanıtını öne çıkarır."
+          "text": "Servikal kaburga + C8-T1 dağılımında el intrinsik kas atrofisi ve medial ön kol duyusu azalması alt trunkus basısıdır."
         }
       ],
       "optionComparison": {
-        "Alt trunkus": "Alt trunkus, olgunun ana tanısal örüntüsünü karşılar. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular aynı tanı etrafında birleşir.",
-        "Üst trunkus": "Üst trunkus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-        "Posterior kord": "Posterior kord, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-        "Lateral kord": "Lateral kord, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-        "Nervus phrenicus": "Nervus phrenicus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır."
+        "Alt trunkus": "Alt trunkus C8-T1 liflerini taşır ve servikal kaburga ile torasik çıkışta basıya uğrayabilir. Elde intrinsik kas zayıflığı ile medial ön kol duyusu azalması bu düzeyi destekler.",
+        "Üst trunkus": "Üst trunkus C5-C6 liflerini taşır; Erb-Duchenne tipi omuz abdüksiyon/dış rotasyon ve dirsek fleksiyon kaybı beklenir. El intrinsik kasları ve medial ön kol duyusu alt trunkusa daha uygundur.",
+        "Orta trunkus": "Orta trunkus C7 lifleriyle ilişkilidir ve izole el intrinsik kas atrofisi-medial ön kol duyusu paterni için en tipik düzey değildir. Servikal kaburga genellikle alt trunkusu sıkıştırır.",
+        "Medial kord": "Medial kord alt trunkustan lif alır ve ulnar/median katkılarıyla ilişkilidir; daha distal pleksus düzeyidir. Servikal kaburga düzeyindeki proksimal bası alt trunkus olarak lokalize edilir.",
+        "Posterior kord": "Posterior kord radial ve axillary sinirlerin kaynağıdır; ekstansör kompartman ve deltoid bulguları beklenir. Elde intrinsik kas ve medial ön kol duyusu alt trunkus dağılımıdır."
       },
       "answerFeedback": {
-        "summary": "Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bu bulgular tanısal karar açısından Alt trunkus yanıtını destekler.",
-        "whyCorrect": "Alt trunkus, vakadaki bulgularla en uyumlu tanıdır. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "rationale": "Alt trunkus, vakadaki bulgularla en uyumlu tanıdır. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "correctOptionFeedback": "Alt trunkus C8-T1 liflerini içerdiği için elde intrinsik kas zayıflığı ve medial ön kol duyu kaybını açıklar.",
+        "summary": "Bu olguda karar, servikal grafide sağ servikal kaburga izlenmesi torasik çıkış düzeyinde pleksus basısı için anatomik bağlam oluşturur. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Alt trunkus C8-T1 liflerini taşır ve servikal kaburga ile torasik çıkışta basıya uğrayabilir. Elde intrinsik kas zayıflığı ile medial ön kol duyusu azalması bu düzeyi destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Alt trunkus C8-T1 liflerini taşır ve servikal kaburga ile torasik çıkışta basıya uğrayabilir. Elde intrinsik kas zayıflığı ile medial ön kol duyusu azalması bu düzeyi destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Alt trunkus C8-T1 liflerini taşır ve servikal kaburga ile torasik çıkışta basıya uğrayabilir. Elde intrinsik kas zayıflığı ile medial ön kol duyusu azalması bu düzeyi destekler.",
         "keyClues": [
-          "Servikal grafide servikal kaburga saptanmıştır.",
-          "Elde intrinsik kas zayıflığı ve atrofi vardır.",
-          "Ön kol medial yüzünde duyu azalması izlenmiştir."
+          "Servikal grafide sağ servikal kaburga izlenmesi torasik çıkış düzeyinde pleksus basısı için anatomik bağlam oluşturur.",
+          "Elde intrinsik kas zayıflığı C8-T1 liflerinin motor etkilenimini düşündürür.",
+          "Ön kol medial yüzündeki duyu azalması alt trunkus dağılımıyla uyumludur."
         ],
         "evidenceChain": [
           {
-            "text": "Servikal grafide servikal kaburga saptanmıştır.",
+            "text": "Servikal grafide sağ servikal kaburga izlenmesi torasik çıkış düzeyinde pleksus basısı için anatomik bağlam oluşturur.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Elde intrinsik kas zayıflığı ve atrofi vardır.",
+            "text": "Elde intrinsik kas zayıflığı C8-T1 liflerinin motor etkilenimini düşündürür.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Ön kol medial yüzünde duyu azalması izlenmiştir.",
+            "text": "Ön kol medial yüzündeki duyu azalması alt trunkus dağılımıyla uyumludur.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Servikal grafide servikal kaburga saptanmıştır + elde intrinsik kas zayıflığı ve atrofi vardır; bu birliktelik Alt trunkus yanıtını öne çıkarır.",
+        "examPearl": "Servikal kaburga + C8-T1 dağılımında el intrinsik kas atrofisi ve medial ön kol duyusu azalması alt trunkus basısıdır.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Servikal kaburga torasik çıkışta C8-T1 alt trunkus basısı yapabilir."
+            "text": "Servikal kaburga + C8-T1 dağılımında el intrinsik kas atrofisi ve medial ön kol duyusu azalması alt trunkus basısıdır."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "Servikal kaburga torasik çıkışta C8-T1 alt trunkus basısı yapabilir."
+            "label": "Klinik anatomi",
+            "text": "Alt trunkus C8-T1 liflerini taşır; servikal kaburga veya torasik çıkış basısı özellikle alt trunkusu etkileyerek el intrinsik kas zayıflığı ve medial ön kol/elde duyu azalması yapabilir."
           }
         ],
         "optionComparison": {
-          "Alt trunkus": "Alt trunkus, olgunun ana tanısal örüntüsünü karşılar. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular aynı tanı etrafında birleşir.",
-          "Üst trunkus": "Üst trunkus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-          "Posterior kord": "Posterior kord, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-          "Lateral kord": "Lateral kord, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-          "Nervus phrenicus": "Nervus phrenicus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır."
+          "Alt trunkus": "Alt trunkus C8-T1 liflerini taşır ve servikal kaburga ile torasik çıkışta basıya uğrayabilir. Elde intrinsik kas zayıflığı ile medial ön kol duyusu azalması bu düzeyi destekler.",
+          "Üst trunkus": "Üst trunkus C5-C6 liflerini taşır; Erb-Duchenne tipi omuz abdüksiyon/dış rotasyon ve dirsek fleksiyon kaybı beklenir. El intrinsik kasları ve medial ön kol duyusu alt trunkusa daha uygundur.",
+          "Orta trunkus": "Orta trunkus C7 lifleriyle ilişkilidir ve izole el intrinsik kas atrofisi-medial ön kol duyusu paterni için en tipik düzey değildir. Servikal kaburga genellikle alt trunkusu sıkıştırır.",
+          "Medial kord": "Medial kord alt trunkustan lif alır ve ulnar/median katkılarıyla ilişkilidir; daha distal pleksus düzeyidir. Servikal kaburga düzeyindeki proksimal bası alt trunkus olarak lokalize edilir.",
+          "Posterior kord": "Posterior kord radial ve axillary sinirlerin kaynağıdır; ekstansör kompartman ve deltoid bulguları beklenir. Elde intrinsik kas ve medial ön kol duyusu alt trunkus dağılımıdır."
         },
         "whyWrong": {
-          "Üst trunkus": "Üst trunkus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-          "Posterior kord": "Posterior kord, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-          "Lateral kord": "Lateral kord, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-          "Nervus phrenicus": "Nervus phrenicus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır."
+          "Üst trunkus": "Üst trunkus C5-C6 liflerini taşır; Erb-Duchenne tipi omuz abdüksiyon/dış rotasyon ve dirsek fleksiyon kaybı beklenir. El intrinsik kasları ve medial ön kol duyusu alt trunkusa daha uygundur.",
+          "Orta trunkus": "Orta trunkus C7 lifleriyle ilişkilidir ve izole el intrinsik kas atrofisi-medial ön kol duyusu paterni için en tipik düzey değildir. Servikal kaburga genellikle alt trunkusu sıkıştırır.",
+          "Medial kord": "Medial kord alt trunkustan lif alır ve ulnar/median katkılarıyla ilişkilidir; daha distal pleksus düzeyidir. Servikal kaburga düzeyindeki proksimal bası alt trunkus olarak lokalize edilir.",
+          "Posterior kord": "Posterior kord radial ve axillary sinirlerin kaynağıdır; ekstansör kompartman ve deltoid bulguları beklenir. Elde intrinsik kas ve medial ön kol duyusu alt trunkus dağılımıdır."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Alt brakiyal pleksus trunkus tutulumunu elde intrinsik kas zayıflığı ve medial ön kol duyusuyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bu örüntü Alt trunkus yanıtını destekler."
+        "learningOutcome": "Torasik çıkış sendromunda alt trunkus C8-T1 bulgularını pleksus anatomisiyle ayırt edebilme.",
+        "coreKnowledge": "Alt trunkus C8-T1 liflerini taşır; servikal kaburga veya torasik çıkış basısı özellikle alt trunkusu etkileyerek el intrinsik kas zayıflığı ve medial ön kol/elde duyu azalması yapabilir."
       },
-      "whyCorrect": "Alt trunkus, vakadaki bulgularla en uyumlu tanıdır. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Alt trunkus C8-T1 liflerini taşır ve servikal kaburga ile torasik çıkışta basıya uğrayabilir. Elde intrinsik kas zayıflığı ile medial ön kol duyusu azalması bu düzeyi destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Objektif veri",
-          "text": "Servikal grafide servikal kaburga saptanmıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Servikal grafide sağ servikal kaburga izlenmesi torasik çıkış düzeyinde pleksus basısı için anatomik bağlam oluşturur.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Elde intrinsik kas zayıflığı ve atrofi vardır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Elde intrinsik kas zayıflığı C8-T1 liflerinin motor etkilenimini düşündürür.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Muayene bulgusu",
-          "text": "Ön kol medial yüzünde duyu azalması izlenmiştir.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ön kol medial yüzündeki duyu azalması alt trunkus dağılımıyla uyumludur.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bu örüntü Alt trunkus yanıtını destekler.",
-      "examPearl": "İpucu: Servikal grafide servikal kaburga saptanmıştır + elde intrinsik kas zayıflığı ve atrofi vardır; bu birliktelik Alt trunkus yanıtını öne çıkarır.",
+      "coreKnowledge": "Alt trunkus C8-T1 liflerini taşır; servikal kaburga veya torasik çıkış basısı özellikle alt trunkusu etkileyerek el intrinsik kas zayıflığı ve medial ön kol/elde duyu azalması yapabilir.",
+      "examPearl": "Servikal kaburga + C8-T1 dağılımında el intrinsik kas atrofisi ve medial ön kol duyusu azalması alt trunkus basısıdır.",
       "whyWrong": {
-        "Üst trunkus": "Üst trunkus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-        "Posterior kord": "Posterior kord, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-        "Lateral kord": "Lateral kord, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-        "Nervus phrenicus": "Nervus phrenicus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır."
+        "Üst trunkus": "Üst trunkus C5-C6 liflerini taşır; Erb-Duchenne tipi omuz abdüksiyon/dış rotasyon ve dirsek fleksiyon kaybı beklenir. El intrinsik kasları ve medial ön kol duyusu alt trunkusa daha uygundur.",
+        "Orta trunkus": "Orta trunkus C7 lifleriyle ilişkilidir ve izole el intrinsik kas atrofisi-medial ön kol duyusu paterni için en tipik düzey değildir. Servikal kaburga genellikle alt trunkusu sıkıştırır.",
+        "Medial kord": "Medial kord alt trunkustan lif alır ve ulnar/median katkılarıyla ilişkilidir; daha distal pleksus düzeyidir. Servikal kaburga düzeyindeki proksimal bası alt trunkus olarak lokalize edilir.",
+        "Posterior kord": "Posterior kord radial ve axillary sinirlerin kaynağıdır; ekstansör kompartman ve deltoid bulguları beklenir. Elde intrinsik kas ve medial ön kol duyusu alt trunkus dağılımıdır."
       }
     },
-    "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bu örüntü Alt trunkus yanıtını destekler.",
-    "examPearl": "İpucu: Servikal grafide servikal kaburga saptanmıştır + elde intrinsik kas zayıflığı ve atrofi vardır; bu birliktelik Alt trunkus yanıtını öne çıkarır.",
-    "whyCorrect": "Alt trunkus, vakadaki bulgularla en uyumlu tanıdır. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "Alt trunkus C8-T1 liflerini taşır; servikal kaburga veya torasik çıkış basısı özellikle alt trunkusu etkileyerek el intrinsik kas zayıflığı ve medial ön kol/elde duyu azalması yapabilir.",
+    "examPearl": "Servikal kaburga + C8-T1 dağılımında el intrinsik kas atrofisi ve medial ön kol duyusu azalması alt trunkus basısıdır.",
+    "whyCorrect": "Alt trunkus C8-T1 liflerini taşır ve servikal kaburga ile torasik çıkışta basıya uğrayabilir. Elde intrinsik kas zayıflığı ile medial ön kol duyusu azalması bu düzeyi destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Alt trunkus": "Alt trunkus, olgunun ana tanısal örüntüsünü karşılar. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular aynı tanı etrafında birleşir.",
-      "Üst trunkus": "Üst trunkus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-      "Posterior kord": "Posterior kord, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-      "Lateral kord": "Lateral kord, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-      "Nervus phrenicus": "Nervus phrenicus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır."
+      "Alt trunkus": "Alt trunkus C8-T1 liflerini taşır ve servikal kaburga ile torasik çıkışta basıya uğrayabilir. Elde intrinsik kas zayıflığı ile medial ön kol duyusu azalması bu düzeyi destekler.",
+      "Üst trunkus": "Üst trunkus C5-C6 liflerini taşır; Erb-Duchenne tipi omuz abdüksiyon/dış rotasyon ve dirsek fleksiyon kaybı beklenir. El intrinsik kasları ve medial ön kol duyusu alt trunkusa daha uygundur.",
+      "Orta trunkus": "Orta trunkus C7 lifleriyle ilişkilidir ve izole el intrinsik kas atrofisi-medial ön kol duyusu paterni için en tipik düzey değildir. Servikal kaburga genellikle alt trunkusu sıkıştırır.",
+      "Medial kord": "Medial kord alt trunkustan lif alır ve ulnar/median katkılarıyla ilişkilidir; daha distal pleksus düzeyidir. Servikal kaburga düzeyindeki proksimal bası alt trunkus olarak lokalize edilir.",
+      "Posterior kord": "Posterior kord radial ve axillary sinirlerin kaynağıdır; ekstansör kompartman ve deltoid bulguları beklenir. Elde intrinsik kas ve medial ön kol duyusu alt trunkus dağılımıdır."
     },
     "evidenceChain": [
       {
-        "text": "Servikal grafide servikal kaburga saptanmıştır.",
+        "text": "Servikal grafide sağ servikal kaburga izlenmesi torasik çıkış düzeyinde pleksus basısı için anatomik bağlam oluşturur.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Elde intrinsik kas zayıflığı ve atrofi vardır.",
+        "text": "Elde intrinsik kas zayıflığı C8-T1 liflerinin motor etkilenimini düşündürür.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Ön kol medial yüzünde duyu azalması izlenmiştir.",
+        "text": "Ön kol medial yüzündeki duyu azalması alt trunkus dağılımıyla uyumludur.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Üst trunkus": "Üst trunkus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-      "Posterior kord": "Posterior kord, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-      "Lateral kord": "Lateral kord, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır.",
-      "Nervus phrenicus": "Nervus phrenicus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Servikal grafide servikal kaburga saptanmıştır Elde intrinsik kas zayıflığı ve atrofi vardır. Bulgular Alt trunkus ile daha tutarlıdır."
+      "Üst trunkus": "Üst trunkus C5-C6 liflerini taşır; Erb-Duchenne tipi omuz abdüksiyon/dış rotasyon ve dirsek fleksiyon kaybı beklenir. El intrinsik kasları ve medial ön kol duyusu alt trunkusa daha uygundur.",
+      "Orta trunkus": "Orta trunkus C7 lifleriyle ilişkilidir ve izole el intrinsik kas atrofisi-medial ön kol duyusu paterni için en tipik düzey değildir. Servikal kaburga genellikle alt trunkusu sıkıştırır.",
+      "Medial kord": "Medial kord alt trunkustan lif alır ve ulnar/median katkılarıyla ilişkilidir; daha distal pleksus düzeyidir. Servikal kaburga düzeyindeki proksimal bası alt trunkus olarak lokalize edilir.",
+      "Posterior kord": "Posterior kord radial ve axillary sinirlerin kaynağıdır; ekstansör kompartman ve deltoid bulguları beklenir. Elde intrinsik kas ve medial ön kol duyusu alt trunkus dağılımıdır."
     }
   },
   {
@@ -106974,16 +107156,16 @@ export const rawCases = [
     "title": "Pelvik lenf nodu diseksiyonu sonrası bacak güçsüzlüğü",
     "difficulty": "Zor",
     "difficultyTag": "Zor",
-    "clinicalFocus": "Pelvik lenf nodu diseksiyonu sonrası bacak güçsüzlüğü bağlamında anatomik lokalizasyon için belirleyici öykü, muayene, vital bulgu ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır ve uyluk adduksiyonu zayıflamıştır. Bu ipuçlarını kullanarak Nervus obturatorius seçeneğine klinik akıl yürütmeyle ulaşabilme.",
+    "clinicalFocus": "Pelvik lenf nodu diseksiyonu sonrası bacak güçsüzlüğü olgusunda öykü, muayene ve tetkik ipuçlarını anatomik lokalizasyonla ilişkilendirerek Nervus obturatorius yanıtına ulaşma.",
+    "learningTarget": "Pelvik cerrahi sonrası obturator sinir lezyonunu motor-duyu dağılımıyla tanıyabilme.",
     "demographics": "60 yaşında kadın hasta",
-    "setting": "Klinik değerlendirme",
-    "chiefComplaint": "Hasta, ameliyat sonrasında bacaklarını birbirine yaklaştırmakta zorlanma ve uyluk iç yüzünde uyuşma nedeniyle başvuruyor.",
-    "stem": "Pelvik lenf nodu diseksiyonu yapılan operasyon sonrası yakınmaların başladığı öğreniliyor. Yürümede bacaklarını kapatırken zorlandığını belirtmektedir.",
+    "setting": "Jinekolojik onkoloji kontrolü",
+    "chiefComplaint": "Hasta, pelvik lenf nodu diseksiyonu sonrası bacaklarını birbirine yaklaştırmakta zorlanma ve uyluk iç yüzünde uyuşma nedeniyle başvuruyor.",
+    "stem": "Pelvik lenf nodu diseksiyonu yapılan operasyon sonrası yakınmaların başladığı öğreniliyor. Yürümede bacaklarını kapatırken zorlandığını, dizini düzleştirmede belirgin güç kaybı olmadığını belirtmektedir.",
     "patientIntro": {
-      "profile": "60 yaşında kadın hasta, jinekolojik onkoloji ameliyatı sonrası değerlendiriliyor.",
-      "presentation": "Hasta, ameliyat sonrasında bacaklarını birbirine yaklaştırmakta zorlanma ve uyluk iç yüzünde uyuşma nedeniyle başvuruyor.",
-      "historySummary": "Pelvik lenf nodu diseksiyonu yapılan operasyon sonrası yakınmaların başladığı öğreniliyor. Yürümede bacaklarını kapatırken zorlandığını belirtmektedir."
+      "profile": "60 yaşında kadın hasta, jinekolojik onkoloji kontrolünda değerlendiriliyor.",
+      "presentation": "Hasta, pelvik lenf nodu diseksiyonu sonrası bacaklarını birbirine yaklaştırmakta zorlanma ve uyluk iç yüzünde uyuşma nedeniyle başvuruyor.",
+      "historySummary": "Pelvik lenf nodu diseksiyonu yapılan operasyon sonrası yakınmaların başladığı öğreniliyor. Yürümede bacaklarını kapatırken zorlandığını, dizini düzleştirmede belirgin güç kaybı olmadığını belirtmektedir."
     },
     "vitals": {
       "TA": "118/76 mmHg",
@@ -106994,7 +107176,7 @@ export const rawCases = [
       "Şok indeksi": "0.66 normal"
     },
     "exam": [
-      "Sağ uyluk adduksiyonu zayıftır.",
+      "Sağ uyluk adduksiyonu belirgin zayıftır.",
       "Sağ uyluk medial yüzünde duyu azalması vardır.",
       "Diz ekstansiyonu ve kalça fleksiyonu korunmuştur."
     ],
@@ -107005,7 +107187,7 @@ export const rawCases = [
     },
     "hideExamSignal": true,
     "shuffleOptions": false,
-    "question": "Bu hastada hasarlanması en olası sinir aşağıdakilerden hangisidir?",
+    "question": "Pelvik lenf nodu diseksiyonu sonrası uyluk adduksiyon zayıflığı ve medial uyluk duyu azalmasını hangi sinir hasarı açıklar?",
     "questionType": "anatomy",
     "answerTarget": "anatomy",
     "diagnosis": {
@@ -107017,141 +107199,141 @@ export const rawCases = [
         "Nervus gluteus inferior",
         "Nervus cutaneus femoris lateralis"
       ],
-      "question": "Bu hastada hasarlanması en olası sinir aşağıdakilerden hangisidir?",
-      "explanation": "Nervus obturatorius, vakadaki bulgularla en uyumlu tanıdır. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "question": "Pelvik lenf nodu diseksiyonu sonrası uyluk adduksiyon zayıflığı ve medial uyluk duyu azalmasını hangi sinir hasarı açıklar?",
+      "explanation": "Nervus obturatorius obturator kanaldan geçer, uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Pelvik lenf nodu diseksiyonu sonrası adduksiyon zayıflığı ve medial uyluk duyusu azalması bu sinire uyar. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "İpucu: Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır + uyluk adduksiyonu zayıflamıştır; bu birliktelik Nervus obturatorius yanıtını öne çıkarır."
+          "text": "Pelvik cerrahi sonrası uyluk adduksiyonu zayıf ve medial uyluk duyusu azalmışsa nervus obturatorius düşünülür."
         }
       ],
       "optionComparison": {
-        "Nervus obturatorius": "Nervus obturatorius, olgunun ana tanısal örüntüsünü karşılar. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-        "Nervus femoralis": "Nervus femoralis, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular Nervus obturatorius ile daha tutarlıdır.",
-        "Nervus ischiadicus": "Nervus ischiadicus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular Nervus obturatorius ile daha tutarlıdır.",
-        "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus obturatorius yanıtını destekler.",
-        "Nervus cutaneus femoris lateralis": "Nervus cutaneus femoris lateralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus obturatorius yanıtını destekler."
+        "Nervus obturatorius": "Nervus obturatorius obturator kanaldan geçer, uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Pelvik lenf nodu diseksiyonu sonrası adduksiyon zayıflığı ve medial uyluk duyusu azalması bu sinire uyar.",
+        "Nervus femoralis": "Nervus femoralis kalça fleksiyonu, diz ekstansiyonu ve patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu adduktör gruba lokalizedir.",
+        "Nervus ischiadicus": "Nervus ischiadicus posterior uyluk, bacak ve ayak motor-duyu dağılımıyla ilişkilidir. İzole uyluk adduksiyonu kaybı ve medial uyluk duyusu obturator sinire daha uygundur.",
+        "Nervus gluteus inferior": "Nervus gluteus inferior gluteus maximusu innerve eder ve kalça ekstansiyonu ile ilişkilidir. Adduksiyon zayıflığı veya medial uyluk duyusu kaybı yapmaz.",
+        "Nervus cutaneus femoris lateralis": "Lateral femoral cutaneous sinir yalnızca lateral uyluk duyusunu taşır ve motor kayıp yapmaz. Medial uyluk duyusu ve adduksiyon kaybı obturator siniri gösterir."
       },
       "answerFeedback": {
-        "summary": "Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bu bulgular tanısal karar açısından Nervus obturatorius yanıtını destekler.",
-        "whyCorrect": "Nervus obturatorius, vakadaki bulgularla en uyumlu tanıdır. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "rationale": "Nervus obturatorius, vakadaki bulgularla en uyumlu tanıdır. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
-        "correctOptionFeedback": "Nervus obturatorius uyluk adduktorlarını ve medial uyluk duyusunu etkilediği için bu postoperatif tabloyu açıklar.",
+        "summary": "Bu olguda karar, yakınmaların pelvik lenf nodu diseksiyonu sonrası başlaması pelvik yan duvarda seyreden obturator siniri riskli hale getirir. ve anatomik fonksiyon kaybının birlikte yorumlanmasına dayanır.",
+        "whyCorrect": "Nervus obturatorius obturator kanaldan geçer, uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Pelvik lenf nodu diseksiyonu sonrası adduksiyon zayıflığı ve medial uyluk duyusu azalması bu sinire uyar. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "rationale": "Nervus obturatorius obturator kanaldan geçer, uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Pelvik lenf nodu diseksiyonu sonrası adduksiyon zayıflığı ve medial uyluk duyusu azalması bu sinire uyar. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
+        "correctOptionFeedback": "Nervus obturatorius obturator kanaldan geçer, uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Pelvik lenf nodu diseksiyonu sonrası adduksiyon zayıflığı ve medial uyluk duyusu azalması bu sinire uyar.",
         "keyClues": [
-          "Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır.",
-          "Uyluk adduksiyonu zayıflamıştır.",
-          "Uyluk medial yüzünde duyu azalması vardır."
+          "Yakınmaların pelvik lenf nodu diseksiyonu sonrası başlaması pelvik yan duvarda seyreden obturator siniri riskli hale getirir.",
+          "Uyluk adduksiyonunun zayıflaması adduktor kompartman motor innervasyonunun etkilendiğini gösterir.",
+          "Medial uyluk duyusu azalırken diz ekstansiyonunun korunması lezyonu nervus obturatoriusa lokalize eder."
         ],
         "evidenceChain": [
           {
-            "text": "Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır.",
+            "text": "Yakınmaların pelvik lenf nodu diseksiyonu sonrası başlaması pelvik yan duvarda seyreden obturator siniri riskli hale getirir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Uyluk adduksiyonu zayıflamıştır.",
+            "text": "Uyluk adduksiyonunun zayıflaması adduktor kompartman motor innervasyonunun etkilendiğini gösterir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Uyluk medial yüzünde duyu azalması vardır.",
+            "text": "Medial uyluk duyusu azalırken diz ekstansiyonunun korunması lezyonu nervus obturatoriusa lokalize eder.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "İpucu: Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır + uyluk adduksiyonu zayıflamıştır; bu birliktelik Nervus obturatorius yanıtını öne çıkarır.",
+        "examPearl": "Pelvik cerrahi sonrası uyluk adduksiyonu zayıf ve medial uyluk duyusu azalmışsa nervus obturatorius düşünülür.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Nervus obturatorius uyluk adduksiyonunun ana motor siniridir ve pelvik cerrahide risk altındadır."
+            "text": "Pelvik cerrahi sonrası uyluk adduksiyonu zayıf ve medial uyluk duyusu azalmışsa nervus obturatorius düşünülür."
           }
         ],
         "clinicalPearls": [
           {
-            "label": "Sınav notu",
-            "text": "Nervus obturatorius uyluk adduksiyonunun ana motor siniridir ve pelvik cerrahide risk altındadır."
+            "label": "Klinik anatomi",
+            "text": "Nervus obturatorius pelvik yan duvar boyunca obturator kanala ilerler; uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Pelvik lenf nodu diseksiyonunda risk altındadır."
           }
         ],
         "optionComparison": {
-          "Nervus obturatorius": "Nervus obturatorius, olgunun ana tanısal örüntüsünü karşılar. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-          "Nervus femoralis": "Nervus femoralis, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular Nervus obturatorius ile daha tutarlıdır.",
-          "Nervus ischiadicus": "Nervus ischiadicus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular Nervus obturatorius ile daha tutarlıdır.",
-          "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus obturatorius yanıtını destekler.",
-          "Nervus cutaneus femoris lateralis": "Nervus cutaneus femoris lateralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus obturatorius yanıtını destekler."
+          "Nervus obturatorius": "Nervus obturatorius obturator kanaldan geçer, uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Pelvik lenf nodu diseksiyonu sonrası adduksiyon zayıflığı ve medial uyluk duyusu azalması bu sinire uyar.",
+          "Nervus femoralis": "Nervus femoralis kalça fleksiyonu, diz ekstansiyonu ve patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu adduktör gruba lokalizedir.",
+          "Nervus ischiadicus": "Nervus ischiadicus posterior uyluk, bacak ve ayak motor-duyu dağılımıyla ilişkilidir. İzole uyluk adduksiyonu kaybı ve medial uyluk duyusu obturator sinire daha uygundur.",
+          "Nervus gluteus inferior": "Nervus gluteus inferior gluteus maximusu innerve eder ve kalça ekstansiyonu ile ilişkilidir. Adduksiyon zayıflığı veya medial uyluk duyusu kaybı yapmaz.",
+          "Nervus cutaneus femoris lateralis": "Lateral femoral cutaneous sinir yalnızca lateral uyluk duyusunu taşır ve motor kayıp yapmaz. Medial uyluk duyusu ve adduksiyon kaybı obturator siniri gösterir."
         },
         "whyWrong": {
-          "Nervus femoralis": "Nervus femoralis, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular Nervus obturatorius ile daha tutarlıdır.",
-          "Nervus ischiadicus": "Nervus ischiadicus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular Nervus obturatorius ile daha tutarlıdır.",
-          "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus obturatorius yanıtını destekler.",
-          "Nervus cutaneus femoris lateralis": "Nervus cutaneus femoris lateralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus obturatorius yanıtını destekler."
+          "Nervus femoralis": "Nervus femoralis kalça fleksiyonu, diz ekstansiyonu ve patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu adduktör gruba lokalizedir.",
+          "Nervus ischiadicus": "Nervus ischiadicus posterior uyluk, bacak ve ayak motor-duyu dağılımıyla ilişkilidir. İzole uyluk adduksiyonu kaybı ve medial uyluk duyusu obturator sinire daha uygundur.",
+          "Nervus gluteus inferior": "Nervus gluteus inferior gluteus maximusu innerve eder ve kalça ekstansiyonu ile ilişkilidir. Adduksiyon zayıflığı veya medial uyluk duyusu kaybı yapmaz.",
+          "Nervus cutaneus femoris lateralis": "Lateral femoral cutaneous sinir yalnızca lateral uyluk duyusunu taşır ve motor kayıp yapmaz. Medial uyluk duyusu ve adduksiyon kaybı obturator siniri gösterir."
         },
         "managementSteps": [],
         "management": [],
-        "learningOutcome": "Pelvik cerrahi sonrası nervus obturatorius hasarını uyluk adduksiyon kaybıyla ilişkilendirebilme",
-        "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bu örüntü Nervus obturatorius yanıtını destekler."
+        "learningOutcome": "Pelvik cerrahi sonrası obturator sinir lezyonunu motor-duyu dağılımıyla tanıyabilme.",
+        "coreKnowledge": "Nervus obturatorius pelvik yan duvar boyunca obturator kanala ilerler; uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Pelvik lenf nodu diseksiyonunda risk altındadır."
       },
-      "whyCorrect": "Nervus obturatorius, vakadaki bulgularla en uyumlu tanıdır. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+      "whyCorrect": "Nervus obturatorius obturator kanaldan geçer, uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Pelvik lenf nodu diseksiyonu sonrası adduksiyon zayıflığı ve medial uyluk duyusu azalması bu sinire uyar. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
       "evidenceChain": [
         {
-          "title": "Klinik ipucu",
-          "text": "Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Yakınmaların pelvik lenf nodu diseksiyonu sonrası başlaması pelvik yan duvarda seyreden obturator siniri riskli hale getirir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Uyluk adduksiyonu zayıflamıştır.",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Uyluk adduksiyonunun zayıflaması adduktor kompartman motor innervasyonunun etkilendiğini gösterir.",
           "weight": "high",
           "source": "case"
         },
         {
-          "title": "Klinik ipucu",
-          "text": "Uyluk medial yüzünde duyu azalması vardır.",
-          "weight": "high",
+          "title": "Klinik-anatomik ipucu",
+          "text": "Medial uyluk duyusu azalırken diz ekstansiyonunun korunması lezyonu nervus obturatoriusa lokalize eder.",
+          "weight": "medium",
           "source": "case"
         }
       ],
-      "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bu örüntü Nervus obturatorius yanıtını destekler.",
-      "examPearl": "İpucu: Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır + uyluk adduksiyonu zayıflamıştır; bu birliktelik Nervus obturatorius yanıtını öne çıkarır.",
+      "coreKnowledge": "Nervus obturatorius pelvik yan duvar boyunca obturator kanala ilerler; uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Pelvik lenf nodu diseksiyonunda risk altındadır.",
+      "examPearl": "Pelvik cerrahi sonrası uyluk adduksiyonu zayıf ve medial uyluk duyusu azalmışsa nervus obturatorius düşünülür.",
       "whyWrong": {
-        "Nervus femoralis": "Nervus femoralis, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular Nervus obturatorius ile daha tutarlıdır.",
-        "Nervus ischiadicus": "Nervus ischiadicus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular Nervus obturatorius ile daha tutarlıdır.",
-        "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus obturatorius yanıtını destekler.",
-        "Nervus cutaneus femoris lateralis": "Nervus cutaneus femoris lateralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus obturatorius yanıtını destekler."
+        "Nervus femoralis": "Nervus femoralis kalça fleksiyonu, diz ekstansiyonu ve patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu adduktör gruba lokalizedir.",
+        "Nervus ischiadicus": "Nervus ischiadicus posterior uyluk, bacak ve ayak motor-duyu dağılımıyla ilişkilidir. İzole uyluk adduksiyonu kaybı ve medial uyluk duyusu obturator sinire daha uygundur.",
+        "Nervus gluteus inferior": "Nervus gluteus inferior gluteus maximusu innerve eder ve kalça ekstansiyonu ile ilişkilidir. Adduksiyon zayıflığı veya medial uyluk duyusu kaybı yapmaz.",
+        "Nervus cutaneus femoris lateralis": "Lateral femoral cutaneous sinir yalnızca lateral uyluk duyusunu taşır ve motor kayıp yapmaz. Medial uyluk duyusu ve adduksiyon kaybı obturator siniri gösterir."
       }
     },
-    "coreKnowledge": "Benzer sorularda tanısal karar için tek bir bulguya değil, bulguların aynı klinik eksende birleşmesine bakılır. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bu örüntü Nervus obturatorius yanıtını destekler.",
-    "examPearl": "İpucu: Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır + uyluk adduksiyonu zayıflamıştır; bu birliktelik Nervus obturatorius yanıtını öne çıkarır.",
-    "whyCorrect": "Nervus obturatorius, vakadaki bulgularla en uyumlu tanıdır. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular aynı tanısal eksende birleştiği için çeldiriciler geri planda kalır.",
+    "coreKnowledge": "Nervus obturatorius pelvik yan duvar boyunca obturator kanala ilerler; uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Pelvik lenf nodu diseksiyonunda risk altındadır.",
+    "examPearl": "Pelvik cerrahi sonrası uyluk adduksiyonu zayıf ve medial uyluk duyusu azalmışsa nervus obturatorius düşünülür.",
+    "whyCorrect": "Nervus obturatorius obturator kanaldan geçer, uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Pelvik lenf nodu diseksiyonu sonrası adduksiyon zayıflığı ve medial uyluk duyusu azalması bu sinire uyar. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
     "optionComparison": {
-      "Nervus obturatorius": "Nervus obturatorius, olgunun ana tanısal örüntüsünü karşılar. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular aynı tanı etrafında birleşir.",
-      "Nervus femoralis": "Nervus femoralis, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular Nervus obturatorius ile daha tutarlıdır.",
-      "Nervus ischiadicus": "Nervus ischiadicus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular Nervus obturatorius ile daha tutarlıdır.",
-      "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus obturatorius yanıtını destekler.",
-      "Nervus cutaneus femoris lateralis": "Nervus cutaneus femoris lateralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus obturatorius yanıtını destekler."
+      "Nervus obturatorius": "Nervus obturatorius obturator kanaldan geçer, uyluk adduktörlerini ve medial uyluk duyusunu etkiler. Pelvik lenf nodu diseksiyonu sonrası adduksiyon zayıflığı ve medial uyluk duyusu azalması bu sinire uyar.",
+      "Nervus femoralis": "Nervus femoralis kalça fleksiyonu, diz ekstansiyonu ve patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu adduktör gruba lokalizedir.",
+      "Nervus ischiadicus": "Nervus ischiadicus posterior uyluk, bacak ve ayak motor-duyu dağılımıyla ilişkilidir. İzole uyluk adduksiyonu kaybı ve medial uyluk duyusu obturator sinire daha uygundur.",
+      "Nervus gluteus inferior": "Nervus gluteus inferior gluteus maximusu innerve eder ve kalça ekstansiyonu ile ilişkilidir. Adduksiyon zayıflığı veya medial uyluk duyusu kaybı yapmaz.",
+      "Nervus cutaneus femoris lateralis": "Lateral femoral cutaneous sinir yalnızca lateral uyluk duyusunu taşır ve motor kayıp yapmaz. Medial uyluk duyusu ve adduksiyon kaybı obturator siniri gösterir."
     },
     "evidenceChain": [
       {
-        "text": "Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır.",
+        "text": "Yakınmaların pelvik lenf nodu diseksiyonu sonrası başlaması pelvik yan duvarda seyreden obturator siniri riskli hale getirir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Uyluk adduksiyonu zayıflamıştır.",
+        "text": "Uyluk adduksiyonunun zayıflaması adduktor kompartman motor innervasyonunun etkilendiğini gösterir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Uyluk medial yüzünde duyu azalması vardır.",
+        "text": "Medial uyluk duyusu azalırken diz ekstansiyonunun korunması lezyonu nervus obturatoriusa lokalize eder.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Nervus femoralis": "Nervus femoralis, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular Nervus obturatorius ile daha tutarlıdır.",
-      "Nervus ischiadicus": "Nervus ischiadicus, ayırıcı tanıda akla gelebilir; ancak vakadaki belirleyici bulgular bu tanıyı ön plana çıkarmaz. Yakınmalar pelvik lenf nodu diseksiyonu sonrası başlamıştır Uyluk adduksiyonu zayıflamıştır. Bulgular Nervus obturatorius ile daha tutarlıdır.",
-      "Nervus gluteus inferior": "Nervus gluteus inferior, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus obturatorius yanıtını destekler.",
-      "Nervus cutaneus femoris lateralis": "Nervus cutaneus femoris lateralis, bu olguda en uygun yanıt değildir. Belirleyici bulgular Nervus obturatorius yanıtını destekler."
+      "Nervus femoralis": "Nervus femoralis kalça fleksiyonu, diz ekstansiyonu ve patella refleksiyle ilişkilidir. Bu hastada diz ekstansiyonu korunmuş, bulgu adduktör gruba lokalizedir.",
+      "Nervus ischiadicus": "Nervus ischiadicus posterior uyluk, bacak ve ayak motor-duyu dağılımıyla ilişkilidir. İzole uyluk adduksiyonu kaybı ve medial uyluk duyusu obturator sinire daha uygundur.",
+      "Nervus gluteus inferior": "Nervus gluteus inferior gluteus maximusu innerve eder ve kalça ekstansiyonu ile ilişkilidir. Adduksiyon zayıflığı veya medial uyluk duyusu kaybı yapmaz.",
+      "Nervus cutaneus femoris lateralis": "Lateral femoral cutaneous sinir yalnızca lateral uyluk duyusunu taşır ve motor kayıp yapmaz. Medial uyluk duyusu ve adduksiyon kaybı obturator siniri gösterir."
     }
   },
   {
