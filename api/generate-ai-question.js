@@ -4,6 +4,12 @@ import {
   buildUserPrompt,
   normalizeDifficulty,
 } from './tus-question-prompt.js';
+import {
+  buildPromptCacheFields,
+  stripPromptCacheFields,
+  isPromptCacheParamError,
+  logAIUsage,
+} from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v34-feedback-completeness-anatomy-guard';
@@ -644,7 +650,7 @@ function safeVerbosity(value = '') {
   return /^(low|medium|high)$/i.test(String(value || '')) ? String(value).toLowerCase() : 'medium';
 }
 
-async function callOpenAI(prompt) {
+async function callOpenAI(prompt, { branch = '', target = '' } = {}) {
   const apiKey = process.env.TUS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
   if (!apiKey) return null;
   const model = process.env.TUS_OPENAI_MODEL || process.env.OPENAI_MODEL || process.env.DEFAULT_GENERATOR_MODEL || 'gpt-4o-mini';
@@ -658,6 +664,9 @@ async function callOpenAI(prompt) {
   const verbosity = safeVerbosity(process.env.TUS_OPENAI_VERBOSITY || process.env.OPENAI_VERBOSITY || 'medium');
   const { signal, cancel } = createAbortSignal(timeoutMs);
   try {
+    const promptCacheFields = useResponses
+      ? buildPromptCacheFields({ scope: 'TUS', task: 'single-question', promptVersion: PROMPT_VERSION, sourceFingerprint: `${branch}:${target || 'auto'}` })
+      : {};
     const body = useResponses
       ? {
           model,
@@ -668,6 +677,7 @@ async function callOpenAI(prompt) {
           max_output_tokens: maxTokens,
           store: false,
           truncation: 'auto',
+          ...promptCacheFields,
         }
       : {
           model,
@@ -681,12 +691,24 @@ async function callOpenAI(prompt) {
     if (!useResponses && modelSupportsReasoningEffort(model)) {
       body.reasoning_effort = reasoningEffort;
     }
-    const response = await fetch(`${baseUrl}${useResponses ? '/responses' : '/chat/completions'}`, {
+    const url = `${baseUrl}${useResponses ? '/responses' : '/chat/completions'}`;
+    const postBody = async (bodyToSend) => fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
-      body: JSON.stringify(body),
+      body: JSON.stringify(bodyToSend),
       signal,
     });
+    let response = await postBody(body);
+    if (!response.ok) {
+      const errorText = await response.text();
+      if (useResponses && Object.keys(promptCacheFields).length && isPromptCacheParamError(errorText)) {
+        response = await postBody(stripPromptCacheFields(body));
+      } else {
+        const error = new Error(`OpenAI ${response.status}: ${errorText.slice(0, 500)}`);
+        error.status = response.status;
+        throw error;
+      }
+    }
     if (!response.ok) {
       const errorText = await response.text();
       const error = new Error(`OpenAI ${response.status}: ${errorText.slice(0, 500)}`);
@@ -695,12 +717,13 @@ async function callOpenAI(prompt) {
     }
     const data = await response.json();
     const text = useResponses ? extractResponsesText(data) : extractChatText(data);
+    logAIUsage({ scope: 'TUS', task: 'single-question', model: data.model || model, apiStyle: style, usage: data.usage || null, sourceFingerprint: `${branch}:${target || 'auto'}` });
     if (!String(text || '').trim()) {
       const reason = data?.incomplete_details?.reason || data?.status || 'empty_output';
       throw new Error(`OpenAI boş çıktı döndürdü (${reason}). Output token limitini artırın veya reasoning effort değerini low/none kullanın.`);
     }
     const question = parseModelJson(text);
-    return { question, model: data.model || model, mode: style };
+    return { question, model: data.model || model, mode: style, usage: data.usage || null };
   } finally {
     cancel();
   }
@@ -708,12 +731,13 @@ async function callOpenAI(prompt) {
 
 async function generateRemote({ branch, target, difficulty, recentQuestionSummaries, attempt, antiRepeatNonce }) {
   const prompt = buildPrompt({ branch, target, difficulty, recentQuestionSummaries, attempt, antiRepeatNonce });
-  const result = await callOpenAI(prompt);
+  const result = await callOpenAI(prompt, { branch, target });
   if (!result) throw new Error('OPENAI_API_KEY tanımlı değil; AI üretim yapılamadı.');
   const sanitized = sanitizeQuestion(result.question, branch, difficulty);
   sanitized.provider = 'openai';
   sanitized.openAIModel = result.model;
   sanitized.openAIMode = result.mode;
+  sanitized.openAIUsage = result.usage || null;
   sanitized.promptVersion = PROMPT_VERSION;
   sanitized.schemaVersion = SCHEMA_VERSION;
   const validation = validateQuestion(sanitized, recentQuestionSummaries);

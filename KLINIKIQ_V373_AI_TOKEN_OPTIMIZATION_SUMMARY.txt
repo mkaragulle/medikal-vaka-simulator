@@ -1,0 +1,70 @@
+KlinikIQ V373 — AI Token Optimization / Memory-Cache Layer Summary
+
+Amaç:
+- AI üretim kalitesini düşürmeden tekrar eden token kullanımını, gereksiz payload taşımayı ve aynı kaynak için tekrar OpenAI çağrılarını azaltmak.
+- Prompt kalite standartları korunmuştur; özellikle TUS feedback, evidenceChain, seçenek kalitesi ve KOMITE kaynak izolasyonu kuralları silinmemiştir.
+
+Yapılan ana değişiklikler:
+1) api/lib/ai-token-optimizer.js eklendi.
+   - sourceFingerprint tabanlı kısa süreli server-side output cache.
+   - Prompt cache alanları: prompt_cache_key ve prompt_cache_retention.
+   - OpenAI prompt-cache parametresi desteklenmezse otomatik olarak cache parametresiz retry.
+   - usage logging: input/output/cached/reasoning token bilgilerini prompt metni veya kullanıcı içeriği loglamadan console.info ile yazdırır.
+   - sourceTextFromMaterialPacket artık toplam kaynak karakter limitini gerçek anlamda aşmayacak şekilde paylaştırır.
+
+2) api/lib/komite-ai-common.js güncellendi.
+   - Responses API çağrılarına cache-friendly prompt_cache_key desteği eklendi.
+   - prompt-cache parametresi API tarafından reddedilirse otomatik güvenli fallback çalışır.
+   - callOpenAIJson ve callOpenAIText artık usage, apiStyle ve task metadata döndürebilir.
+
+3) KOMITE endpointleri optimize edildi.
+   - api/generate-lesson.js
+   - api/generate-material-questions.js
+   - api/generate-material-flashcards.js
+   - api/analyze-uploaded-material.js
+   Aynı sourceFingerprint + aynı task + aynı promptVersion için kısa süreli output cache kullanılır.
+   Aynı materyalde hızlı tekrar denemelerde yeniden OpenAI çağrısı yapılmadan cached çıktı döndürülür.
+
+4) Frontend payload azaltıldı.
+   - src/components/KomiteModeWorkspace.jsx içinde generation endpointlerine artık top-level sourceTextChunks gönderilmiyor.
+   - materialPacket korunuyor; endpointler aktif session doğrulamasını yine sourceManifest/sourceFingerprint ile yapıyor.
+   - Bu değişiklik Vercel request body/memory yükünü azaltır ve eski oturum karışma riskini artırmaz.
+
+5) TUS prompt yapısı cache-friendly hale getirildi.
+   - api/tus-question-prompt.js içinde static JSON contract ve kalite standardı system prompt tarafına taşındı.
+   - user prompt artık branch/difficulty/focus/recentCompact gibi değişken bilgileri taşır.
+   - Kalite standardı silinmedi; tekrar eden user-prompt talimatları azaltıldı.
+
+6) api/generate-ai-question.js güncellendi.
+   - gpt-5/Responses API için prompt_cache_key desteği eklendi.
+   - Prompt cache parametresi kabul edilmezse otomatik cache-parametresiz retry yapılır.
+   - Token usage bilgisi question metadata içine ve console usage loglarına alınır.
+
+Önerilen Vercel Environment Variables:
+OPENAI_API_KEY=...
+OPENAI_MODEL=gpt-5.5
+OPENAI_API_STYLE=responses
+OPENAI_REASONING_EFFORT=low
+OPENAI_VERBOSITY=medium
+OPENAI_PROMPT_CACHE_KEY=true
+OPENAI_PROMPT_CACHE_RETENTION=24h
+KLINIKIQ_AI_OUTPUT_CACHE=true
+KLINIKIQ_AI_OUTPUT_CACHE_TTL_MS=1800000
+KLINIKIQ_AI_USAGE_LOGS=true
+
+KOMITE için isteğe bağlı:
+KOMITE_OPENAI_MODEL=gpt-5.5
+KOMITE_OPENAI_API_STYLE=responses
+KOMITE_OPENAI_REASONING_EFFORT=low
+KOMITE_MAX_SOURCE_CHARS=16000
+KOMITE_QUESTIONS_MAX_SOURCE_CHARS=14000
+KOMITE_FLASHCARDS_MAX_SOURCE_CHARS=12000
+KOMITE_LESSON_MAX_OUTPUT_TOKENS=4800
+KOMITE_QUESTIONS_MAX_OUTPUT_TOKENS=4200
+KOMITE_FLASHCARDS_MAX_OUTPUT_TOKENS=3200
+
+Güvenlik notları:
+- Cache key kaynak fingerprint ve prompt version ile ayrılır; farklı materyaller birbirine karışmaz.
+- Output cache serverless instance bazlıdır; kalıcı veri tabanı yerine güvenli kısa süreli performans/cache katmanı olarak düşünülmelidir.
+- Prompt/cache parametreleri OpenAI tarafından reddedilirse sistem otomatik eski uyumlu çağrıya düşer.
+- AI kalite promptları kısaltılarak zayıflatılmadı; değişken tekrarlar azaltıldı ve static kurallar cache-friendly alana taşındı.

@@ -526,17 +526,6 @@ function computeFloatingPosition(referenceEl, floatingEl, nestingLevel = 0) {
   };
 }
 
-
-function areTooltipPositionsEqual(previous = {}, next = {}) {
-  return previous.placement === next.placement
-    && Math.abs((previous.left || 0) - (next.left || 0)) < 0.5
-    && Math.abs((previous.top || 0) - (next.top || 0)) < 0.5
-    && Math.abs((previous.arrowX || 0) - (next.arrowX || 0)) < 0.5
-    && Math.abs((previous.arrowY || 0) - (next.arrowY || 0)) < 0.5
-    && Math.abs((previous.maxWidth || 0) - (next.maxWidth || 0)) < 0.5
-    && Math.abs((previous.maxHeight || 0) - (next.maxHeight || 0)) < 0.5;
-}
-
 function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFloatingEnter, onFloatingLeave, revealMode, nestingLevel = 0 }) {
   const tooltipRef = useRef(null);
   const [portalRoot, setPortalRoot] = useState(null);
@@ -565,7 +554,7 @@ function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFlo
     const floatingEl = tooltipRef.current;
     if (!referenceEl || !floatingEl || typeof window === 'undefined') return;
     const nextPosition = computeFloatingPosition(referenceEl, floatingEl, nestingLevel);
-    setPosition((currentPosition) => (areTooltipPositionsEqual(currentPosition, nextPosition) ? currentPosition : nextPosition));
+    setPosition(nextPosition);
     setIsPositioned(true);
   }, [triggerRef, nestingLevel]);
 
@@ -1244,17 +1233,16 @@ function GlossaryText({
   const extraTermsKey = Array.isArray(extraTerms) && extraTerms.length
     ? extraTerms.map((term) => `${term?.id || ''}:${term?.term || ''}:${term?.aliases?.length || 0}`).join('|')
     : '';
+  const terms = useMemo(() => {
+    if (!enabled) return [];
+    if (termsMode === 'only' && Array.isArray(extraTerms)) return extraTerms;
+    return getGlossaryTerms(extraTerms, { branchId });
+  }, [enabled, extraTermsKey, branchId, termsMode, extraTerms]);
   const effectiveMaxTerms = maxTerms ?? DEFAULT_MAX_TERMS_PER_TEXT;
   const sourceText = String(text || '');
   const effectiveContextMode = contextMode || (nestingLevel > 0 ? 'tooltip-body' : (revealMode === 'preAnswer' ? 'case-pre-answer' : 'case-post-answer'));
   const isTooltipBodyMode = effectiveContextMode === 'tooltip-body' || effectiveContextMode === 'nested-tooltip-body';
   const nestedAllowed = !isTooltipBodyMode || (enableNestedGlossary && canGoDeeperInNestedGlossary(currentDepth, maxNestedDepth));
-  const shouldParseGlossary = enabled && nestedAllowed && effectiveMaxTerms > 0 && isLikelyGlossaryCandidateText(sourceText);
-  const terms = useMemo(() => {
-    if (!shouldParseGlossary) return [];
-    if (termsMode === 'only' && Array.isArray(extraTerms)) return extraTerms;
-    return getGlossaryTerms(extraTerms, { branchId });
-  }, [shouldParseGlossary, extraTermsKey, branchId, termsMode, extraTerms]);
   const effectiveExcludedTermKeys = useMemo(() => {
     const base = Array.isArray(excludedTermKeys) ? excludedTermKeys : [];
     const blocked = Array.isArray(blockedNestedEntryIds) ? blockedNestedEntryIds : [];
@@ -1262,8 +1250,8 @@ function GlossaryText({
     return [...base, ...blocked, ...visited];
   }, [excludedKey, blockedNestedEntryIds, visitedEntryIds]);
   const parts = useMemo(
-    () => splitByGlossary(sourceText, shouldParseGlossary ? terms : [], effectiveMaxTerms, effectiveExcludedTermKeys, effectiveContextMode),
-    [sourceText, shouldParseGlossary, terms, effectiveMaxTerms, effectiveExcludedTermKeys, effectiveContextMode],
+    () => splitByGlossary(sourceText, enabled && nestedAllowed ? terms : [], effectiveMaxTerms, effectiveExcludedTermKeys, effectiveContextMode),
+    [sourceText, enabled, nestedAllowed, terms, effectiveMaxTerms, effectiveExcludedTermKeys, effectiveContextMode],
   );
 
   if (!enabled) return <span className="glossary-text-flow">{sourceText}</span>;

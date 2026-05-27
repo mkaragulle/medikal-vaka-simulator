@@ -1,69 +1,66 @@
-KlinikIQ V374 GitHub-Safe Extra Optimization Summary
+KlinikIQ V372 Performance / Smoothness Changes Summary
 
-Changed files:
-- src/App.jsx
-- src/components/TusPearlStudyScreen.jsx
-- src/components/GlossaryTooltip.jsx
-- src/components/KlinikIQCustomScrollbars.jsx
-- src/components/PremiumCursor.jsx
-- src/services/localBackend.js
-- src/index.css
-- .gitignore
-- PERFORMANCE_AUDIT_REPORT.md
-- PERFORMANCE_CHANGES_SUMMARY.txt
-- BUILD_TEST_RESULT_V374.txt
-- GITHUB_UPLOAD_NOTES.txt
+Değiştirilen dosyalar:
+1. src/components/CaseList.jsx
+2. src/components/TusPearlStudyScreen.jsx
+3. src/components/KlinikIQCustomScrollbars.jsx
+4. src/components/PremiumCursor.jsx
+5. src/components/PerformanceOptimizer.jsx (mevcut sınıf sistemi korunarak CSS tarafında genişletildi; dosya içi davranış değiştirilmedi)
+6. src/services/localBackend.js
+7. src/index.css
+8. src/components/tusPearlCards.css
+9. PERFORMANCE_AUDIT_REPORT.md
+10. PERFORMANCE_CHANGES_SUMMARY.txt
 
-What changed:
+Render optimizasyonları:
+- CaseList satırları memoized CaseListItem bileşenine taşındı.
+- CaseList içinde liste başlıklarında GlossaryText kaldırıldı; düz metin kullanıldı. Esas eğitim/vaka/feedback metinlerindeki glossary davranışı korunmuştur.
+- Horizontal CaseList reset key artık tüm listeyi büyük string olarak map/join yapmıyor; length + first id + last id + solved count ile daha hafif hesaplanıyor.
+- TusPearlStudyScreen içinde katalog satırları memoized CatalogCardRow bileşenine taşındı.
+- Katalogdaki kartlar ve Tüm kartlardan ekle satırları için inline JSX ve inline callback üretimi azaltıldı.
+- Katalog görünür kart limiti 48 olarak korundu; daha fazla göster davranışı korunmuştur.
 
-1. Re-render / interaction priority reduced
-- Answer submission now returns the score immediately and moves App-level solved-case, wrong-answer, session-stat, and exam-state updates into React `startTransition`.
-- This keeps the local answer/feedback interaction more responsive while preserving existing scoring and history behavior.
+Liste performansı:
+- Tüm kartlardan ekle listesinde sade metin yaklaşımı korundu.
+- Katalog satırlarına content-visibility ve contain-intrinsic-size eklendi.
+- CaseList itemlarına content-visibility eklendi.
+- Aktif katalog membership kontrolünde mevcut Set kullanımı korundu.
 
-2. Catalog / large list rendering made lighter
-- `Tüm kartlardan ekle` no longer builds a full search index for every card when the search query is empty.
-- Source filtering is separated from query matching.
-- Search text is generated lazily only when the user actually types a search query.
-- Per-card search text is cached with `WeakMap`, so repeated searches do not repeatedly join/lowercase the same card fields.
-- The existing 48-card visible limit and “Daha fazla göster” behavior are preserved.
+Custom scrollbar optimizasyonları:
+- MAX_TRACKED_ELEMENTS 72’den 56’ya düşürüldü.
+- body * genel taraması yerine bilinen scrollable/container selector havuzu kullanıldı.
+- Scrollbar pointer activity throttle 120ms’den 240ms’ye çıkarıldı.
+- Top-layer rect cache süresi 90ms’den 160ms’ye çıkarıldı.
+- MutationObserver sonrası scan gecikmesi 140ms’den 220ms’ye alındı.
+- Drag sırasında tarama durdurma davranışı korundu.
+- Modal/dropdown/tooltip/top-layer occlusion kontrolü korunmuştur.
 
-3. Glossary setup cost reduced
-- `GlossaryText` now checks whether the source text is likely to contain glossary candidates before resolving the full glossary term pool.
-- Existing split cache, nested glossary behavior, hover/click intent, and glossary content are preserved.
-- Tooltip position updates now avoid redundant `setPosition` when computed coordinates are effectively unchanged.
+Premium cursor optimizasyonları:
+- Custom scrollbar targetları için ucuz closest tabanlı state kontrolü eklendi.
+- Scrollbar üzerinde cursor/pointer state daha kararlı hâle getirildi.
+- Cursor transform/opacity tabanlı çalışmaya devam eder.
+- Cursor kaldırılmadı; tasarım hissi korunmuştur.
 
-4. Custom cursor optimized
-- Custom cursor was not removed.
-- Repeated custom-scrollbar hover checks now cache the last pointer target before calling `closest()` again.
-- Cursor state for text inputs, custom scrollbar drag, and interactive elements is preserved.
+Storage optimizasyonları:
+- localBackend içine writeDeferred ve flushDeferredWrites eklendi.
+- Büyük/tekrarlayan stats, solved cases, exam history, product mode, AI stats/filter yazımları idle/debounce ile ertelenir.
+- pagehide, beforeunload ve visibilitychange sırasında pending yazımlar flush edilir.
+- Tema ve kritik login/register/current user işlemleri immediate write davranışını korur.
 
-5. Custom scrollbar optimized
-- Custom scrollbar was not removed.
-- Repeated inline style writes for track/thumb position and size now happen only when values actually change.
-- Generic `section` was removed from the scrollable candidate selector to reduce broad DOM scanning.
-- Anonymous focus/pageshow listeners were replaced with named handlers so cleanup is deterministic.
-- Existing z-index/top-layer handling, drag behavior, subtle styling, and native-scrollbar replacement are preserved.
+CSS performans optimizasyonları:
+- html.ki-is-scrolling, html.ki-is-resizing ve html.ki-route-transitioning aktifken ağır box-shadow/backdrop-filter/animation maliyeti geçici olarak azaltıldı.
+- Normal durumda premium görünüm korunur; efekt azaltma yalnızca scroll/resize/route geçişi sırasında devreye girer.
+- Katalog ve vaka satırlarında scroll sırasında hover transformları durduruldu.
 
-6. Storage write cost reduced
-- `writeDeferred()` now defers JSON serialization together with the actual localStorage write.
-- Reads still return pending in-memory values correctly before the deferred write is flushed.
-- Pagehide/beforeunload/hidden-tab flush behavior is preserved.
+Bilinçli korunan davranışlar:
+- TUS ve KOMİTE modları.
+- Tıbbi içerik, soru metinleri, cevaplar, option feedbackleri ve glossary data.
+- Glossary tooltip ve nested glossary sistemi.
+- Custom cursor ve custom scrollbar.
+- Dark/light mode renk sistemi.
+- V371’deki 48 kartlık görünür limit ve arama sonrası reset davranışı.
 
-7. CSS scroll-time cost reduced
-- Broad `html.ki-performance-mode.ki-is-scrolling *` and resize `*` selectors were replaced with targeted component selectors.
-- Costly `[style*="filter"]` selector was removed and replaced with explicit known glow/pulse/orb selectors.
-- Existing premium look remains in normal state; heavy effects are still reduced during scroll/resize/route transition.
-
-Preserved deliberately:
-- Medical/TUS/Komite content and answer keys.
-- Glossary data and nested glossary behavior.
-- Custom cursor and custom scrollbar.
-- Dark/light theme colors.
-- Premium UI identity.
-- TUS Spot Olgular, Kataloglarım, Hap Bilgi, KOMİTE and TUS workflows.
-- 48-card visible limit in catalog library.
-
-Build:
-- npm install completed successfully with package-lock disabled to avoid adding lockfile changes.
-- npm run build completed successfully.
-- Final zip excludes node_modules, dist, .git, .vite, .vercel, cache/log/build artifacts, and nested zip files.
+Test:
+- npm install --no-audit --no-fund: başarılı.
+- npm run build: başarılı.
+- Build uyarısı: case-bank ve GlossaryTooltip chunkları büyük; veri/glossary içeriği değiştirilmediği için beklenen uyarıdır.

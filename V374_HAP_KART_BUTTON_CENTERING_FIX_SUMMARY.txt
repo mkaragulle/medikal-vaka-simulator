@@ -1,0 +1,11 @@
+KlinikIQ V374 — Hap Kart Button Centering Fix
+
+- Fixed vertical text alignment in Hap Kart side-panel repeat-list buttons:
+  Tüm Kartları Gör, Favorilerim, Zorlandıklarım, Tekrar Edeceklerim.
+- Fixed vertical text alignment in Hap Kart tool buttons:
+  Favoriye Ekle, Kataloğa Ekle, Kendi Kartını Oluştur, Kendi Kartıma Kopyala, Kartı Sil.
+- Root cause: legacy inline-flex rules were still overriding/competing with newer grid-template-column rules.
+- Added final-scope CSS override at the end of src/components/tusPearlCards.css.
+- The fix uses real CSS grid for these buttons and centers svg, text span, strong labels, and count pills by height.
+- No React logic, data, AI, routing, or content changes were made.
+- npm run build completed successfully.

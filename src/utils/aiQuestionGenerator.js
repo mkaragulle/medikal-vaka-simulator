@@ -13,7 +13,6 @@ import {
 } from './aiQuestionHistory.js';
 import { validateAIQuestionCase } from './validateAIQuestion.js';
 import { sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
-import { sanitizeClinicalExamFindings } from './clinicalExamSanitizer.js';
 import { repairAIQuestionQuality, runAIQuestionQualityGate } from './aiQuestionQualityGate.js';
 import { validateQuestionDiversity } from './aiQuestionDiversity.js';
 import { repairAIGeneratedText, isPlaceholderInvestigationText, isForbiddenEditorialText } from './editorialQuality.js';
@@ -555,10 +554,6 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
     : (seed.investigations || []).map((item, index) => buildInvestigation(item, index, normalizedCorrectText)))
     .filter((item) => item && !isPlaceholderInvestigationText([item.label, item.summary, ...(item.findings || [])].join(' ')) && !isForbiddenEditorialText([item.label, item.summary, ...(item.findings || [])].join(' ')));
   const generatedVitals = sanitizeVitalsObject(Object.keys(seed.vitals || {}).length ? seed.vitals : buildBranchVitals(seed, profile));
-  const generatedExamFindings = sanitizeClinicalExamFindings(
-    Array.isArray(seed.exam) && seed.exam.length ? seed.exam : buildBranchExamDefaults(seed, profile),
-    generatedVitals,
-  ).map(sanitizeMeasurementText);
   const diagnosisOptions = options.map((option) => option.text);
   const optionSet = makeOptionSetSignature(options);
   const generationSignatureSeed = stableHash([
@@ -590,7 +585,9 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
     stem: sanitizeMeasurementText(stem),
     narrativeStem: sanitizeMeasurementText(stem),
     stemMode: 'narrative',
-    exam: generatedExamFindings,
+    exam: (Array.isArray(seed.exam) && seed.exam.length ? seed.exam : [
+      ...buildBranchExamDefaults(seed, profile),
+    ]).map(sanitizeMeasurementText),
     vitals: generatedVitals,
     investigations,
     question: sanitizeMeasurementText(questionPrompt),
@@ -598,7 +595,7 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
     clinicalFocus: sanitizeMeasurementText(seed.learningTarget),
     findings: {
       history: [sanitizeMeasurementText(stem)],
-      exam: generatedExamFindings,
+      exam: (Array.isArray(seed.exam) && seed.exam.length ? seed.exam : buildBranchExamDefaults(seed, profile)).map(sanitizeMeasurementText),
       vitals: generatedVitals,
       investigations,
     },

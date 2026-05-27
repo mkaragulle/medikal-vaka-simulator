@@ -1,3 +1,10 @@
+import {
+  buildPromptCacheFields,
+  stripPromptCacheFields,
+  isPromptCacheParamError,
+  logAIUsage,
+} from './ai-token-optimizer.js';
+
 export function sendJson(response, status, payload) {
   response.statusCode = status;
   response.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -220,7 +227,7 @@ function toResponsesTextFormat(jsonSchema = null) {
   };
 }
 
-function buildResponsesBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort, verbosity }) {
+function buildResponsesBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort, verbosity, promptCacheFields = {} }) {
   const body = {
     model,
     instructions: systemPrompt,
@@ -231,6 +238,7 @@ function buildResponsesBody({ model, systemPrompt, userPrompt, jsonSchema, effec
       verbosity: /^(low|medium|high)$/i.test(verbosity || '') ? verbosity.toLowerCase() : 'medium',
     },
     truncation: 'auto',
+    ...promptCacheFields,
   };
   if (supportsReasoningEffort(model) && reasoningEffort) {
     body.reasoning = { effort: normalizeReasoningEffort(reasoningEffort) };
@@ -254,7 +262,7 @@ function buildChatTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens
   return body;
 }
 
-function buildResponsesTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens, reasoningEffort, verbosity }) {
+function buildResponsesTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens, reasoningEffort, verbosity, promptCacheFields = {} }) {
   const body = {
     model,
     instructions: systemPrompt,
@@ -264,6 +272,7 @@ function buildResponsesTextBody({ model, systemPrompt, userPrompt, effectiveMaxT
       verbosity: /^(low|medium|high)$/i.test(verbosity || '') ? verbosity.toLowerCase() : 'medium',
     },
     truncation: 'auto',
+    ...promptCacheFields,
   };
   if (supportsReasoningEffort(model) && reasoningEffort) {
     body.reasoning = { effort: normalizeReasoningEffort(reasoningEffort) };
@@ -301,7 +310,7 @@ function parseOpenAIJsonOrThrow(text = '', data = {}) {
   throw error;
 }
 
-export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 2500, jsonSchema = null, scope = 'KOMITE' } = {}) {
+export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 2500, jsonSchema = null, scope = 'KOMITE', task = 'json', promptVersion = 'v1', sourceFingerprint = '' } = {}) {
   const envPrefix = String(scope || 'KOMITE').toUpperCase();
   const apiKey = firstEnv(`${envPrefix}_OPENAI_API_KEY`, 'OPENAI_API_KEY');
   if (!apiKey) {
@@ -331,15 +340,29 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
 
   try {
     const url = useResponses ? `${baseUrl}/responses` : `${baseUrl}/chat/completions`;
+    const promptCacheFields = useResponses ? buildPromptCacheFields({ scope: envPrefix, task, promptVersion, sourceFingerprint }) : {};
     const requestBody = useResponses
-      ? buildResponsesBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort, verbosity })
+      ? buildResponsesBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort, verbosity, promptCacheFields })
       : buildChatCompletionBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort });
-    const response = await fetch(url, {
+
+    const postBody = async (bodyToSend) => fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       signal: controller.signal,
-      body: JSON.stringify(requestBody),
+      body: JSON.stringify(bodyToSend),
     });
+
+    let response = await postBody(requestBody);
+    if (!response.ok) {
+      const details = await response.text();
+      if (useResponses && Object.keys(promptCacheFields).length && isPromptCacheParamError(details)) {
+        response = await postBody(stripPromptCacheFields(requestBody));
+      } else {
+        const error = new Error(`OpenAI ${response.status}: ${details.slice(0, 500)}`);
+        error.status = response.status;
+        throw error;
+      }
+    }
     if (!response.ok) {
       const details = await response.text();
       const error = new Error(`OpenAI ${response.status}: ${details.slice(0, 500)}`);
@@ -348,7 +371,9 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
     }
     const data = await response.json();
     const text = useResponses ? extractResponsesText(data) : (extractChatText(data) || extractResponsesText(data));
-    return { json: parseOpenAIJsonOrThrow(text, data), model: data.model || model, apiStyle: useResponses ? 'responses' : 'chat_completions' };
+    const apiStyle = useResponses ? 'responses' : 'chat_completions';
+    logAIUsage({ scope: envPrefix, task, model: data.model || model, apiStyle, usage: data.usage || null, sourceFingerprint });
+    return { json: parseOpenAIJsonOrThrow(text, data), model: data.model || model, apiStyle, usage: data.usage || null };
   } catch (error) {
     if (error?.name === 'AbortError' || /aborted/i.test(String(error?.message || ''))) {
       const timeoutError = new Error('AI yanıtı belirtilen süre içinde tamamlanamadı. Dosya metni korunuyor; daha hızlı bir KOMITE modeli seçin, KOMITE zaman aşımı değerini artırın veya çok büyük dosyada kaynak uzunluğu limitini düşürün.');
@@ -363,7 +388,7 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
 }
 
 
-export async function callOpenAIText({ systemPrompt, userPrompt, maxTokens = 3000, scope = 'KOMITE' } = {}) {
+export async function callOpenAIText({ systemPrompt, userPrompt, maxTokens = 3000, scope = 'KOMITE', task = 'text', promptVersion = 'v1', sourceFingerprint = '' } = {}) {
   const envPrefix = String(scope || 'KOMITE').toUpperCase();
   const apiKey = firstEnv(`${envPrefix}_OPENAI_API_KEY`, 'OPENAI_API_KEY');
   if (!apiKey) {
@@ -393,15 +418,29 @@ export async function callOpenAIText({ systemPrompt, userPrompt, maxTokens = 300
 
   try {
     const url = useResponses ? `${baseUrl}/responses` : `${baseUrl}/chat/completions`;
+    const promptCacheFields = useResponses ? buildPromptCacheFields({ scope: envPrefix, task, promptVersion, sourceFingerprint }) : {};
     const requestBody = useResponses
-      ? buildResponsesTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens, reasoningEffort, verbosity })
+      ? buildResponsesTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens, reasoningEffort, verbosity, promptCacheFields })
       : buildChatTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens, reasoningEffort });
-    const response = await fetch(url, {
+
+    const postBody = async (bodyToSend) => fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       signal: controller.signal,
-      body: JSON.stringify(requestBody),
+      body: JSON.stringify(bodyToSend),
     });
+
+    let response = await postBody(requestBody);
+    if (!response.ok) {
+      const details = await response.text();
+      if (useResponses && Object.keys(promptCacheFields).length && isPromptCacheParamError(details)) {
+        response = await postBody(stripPromptCacheFields(requestBody));
+      } else {
+        const error = new Error(`OpenAI ${response.status}: ${details.slice(0, 500)}`);
+        error.status = response.status;
+        throw error;
+      }
+    }
     if (!response.ok) {
       const details = await response.text();
       const error = new Error(`OpenAI ${response.status}: ${details.slice(0, 500)}`);
@@ -411,8 +450,10 @@ export async function callOpenAIText({ systemPrompt, userPrompt, maxTokens = 300
     const data = await response.json();
     const text = useResponses ? extractResponsesText(data) : (extractChatText(data) || extractResponsesText(data));
     const cleanText = String(text || '').trim();
+    const apiStyle = useResponses ? 'responses' : 'chat_completions';
+    logAIUsage({ scope: envPrefix, task, model: data.model || model, apiStyle, usage: data.usage || null, sourceFingerprint });
     if (cleanText) {
-      return { text: cleanText, model: data.model || model, apiStyle: useResponses ? 'responses' : 'chat_completions', usage: data.usage || null, status: data.status || '' };
+      return { text: cleanText, model: data.model || model, apiStyle, usage: data.usage || null, status: data.status || '' };
     }
     const error = new Error(describeIncompleteResponse(data));
     error.code = 'ai_empty_output';

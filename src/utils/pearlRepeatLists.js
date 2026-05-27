@@ -83,35 +83,22 @@ function toSet(ids = []) {
 }
 
 export function getPearlRepeatListCounts(state = {}, cards = []) {
+  const safeCards = Array.isArray(cards) ? cards.filter((card) => card?.id) : [];
   const favoriteSet = toSet(state.favoritePearlCardIds);
   const wrongSet = toSet(state.wrongPearlCardIds);
   const reviewSet = toSet(state.reviewPearlCardIds);
   const knownSet = toSet(state.knownPearlCardIds);
   const catalogs = Array.isArray(state.customCatalogs) ? state.customCatalogs : [];
 
-  const counts = {
-    all: 0,
-    favorites: 0,
-    wrong: 0,
-    review: 0,
-    known: 0,
-    user: 0,
+  return {
+    all: safeCards.length,
+    favorites: safeCards.filter((card) => favoriteSet.has(card.id)).length,
+    wrong: safeCards.filter((card) => wrongSet.has(card.id)).length,
+    review: safeCards.filter((card) => reviewSet.has(card.id)).length,
+    known: safeCards.filter((card) => knownSet.has(card.id)).length,
+    user: safeCards.filter((card) => card.source === 'user').length,
     catalogs: catalogs.length,
   };
-
-  if (!Array.isArray(cards)) return counts;
-
-  for (const card of cards) {
-    if (!card?.id) continue;
-    counts.all += 1;
-    if (favoriteSet.has(card.id)) counts.favorites += 1;
-    if (wrongSet.has(card.id)) counts.wrong += 1;
-    if (reviewSet.has(card.id)) counts.review += 1;
-    if (knownSet.has(card.id)) counts.known += 1;
-    if (card.source === 'user') counts.user += 1;
-  }
-
-  return counts;
 }
 
 export function buildPearlRepeatListItems(state = {}, cards = []) {

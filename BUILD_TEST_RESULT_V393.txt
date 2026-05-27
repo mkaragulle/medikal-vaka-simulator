@@ -1,4 +1,0 @@
-V393 build test result
-Command: npm run build
-Result: SUCCESS
-Notes: Build completed with existing large chunk warnings only; no compile errors.

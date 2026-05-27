@@ -3,16 +3,6 @@ dist/
 build/
 .vite/
 .vercel/
-.turbo/
-.cache/
-coverage/
 .env
-.env.*
-!.env.example
+.env.local
 .DS_Store
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-*.zip

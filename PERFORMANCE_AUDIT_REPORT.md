@@ -1,50 +1,48 @@
-# KlinikIQ Performance Audit Report — V374 GitHub-Safe Extra Optimization
+# KlinikIQ V372 Performance Audit Report
 
-## Scope
-This pass started from `KlinikIQ_V372_PERFORMANCE_SMOOTHNESS_LAG_OPTIMIZED(2).zip` and intentionally avoided medical/content changes. No clinical case data, answer keys, option feedback, glossary entries, TUS/Komite content, or scientific text was edited.
+## Kapsam
+Bu performans geçişinde proje zipi açıldı, React + Vite kaynakları incelendi ve özellikle kullanıcı tarafından belirtilen mikro donma alanları hedeflendi: vaka listesi, seçenek/feedback etkileşimi, Kataloglarım > Tüm kartlardan ekle, glossary tooltip katmanı, premium cursor, custom scrollbar, popup/dropdown konumlandırmaları, storage yazımları ve scroll sırasında ağır CSS efektleri.
 
-## Main bottlenecks observed
+## Tespit edilen darboğazlar
 
-1. **Catalog / “Tüm kartlardan ekle” search precomputation**
-   - The library screen prepared a full joined/lowercased search string for every Hap Bilgi card even when the search box was empty.
-   - This created unnecessary CPU work during catalog opening and filter changes.
+### 1. Büyük statik dosyalar ve başlangıç yükü
+- `src/data/cases.js` yaklaşık 6.6 MB; Vite tarafında `case-bank` chunk olarak ayrılıyor ancak `App.jsx` içinde statik import edildiği için uygulama akışının ana veri bağımlılığı hâlinde kalıyor.
+- `src/components/GlossaryTooltip.jsx` + glossary indexleri büyük bir chunk oluşturuyor. Build çıktısında glossary chunk hâlâ en büyük runtime parçalarından biri.
+- `src/index.css` yaklaşık 1.6 MB, `src/components/tusPearlCards.css` yaklaşık 0.5 MB. Scroll sırasında box-shadow, blur/backdrop-filter, transition ve animasyon maliyeti hissedilebilir.
 
-2. **Glossary text setup on low-value text blocks**
-   - `GlossaryText` already had split caching, but it still resolved the full glossary term pool before checking whether the actual text was a likely glossary candidate.
-   - Repeated short/plain labels could therefore pay unnecessary setup cost.
+### 2. Vaka listesi render maliyeti
+- `CaseList.jsx` içinde her vaka kartı başlığında `GlossaryText` çalışıyordu. Yatay vaka listelerinde sık geçiş ve selected/solved state değişimlerinde gereksiz glossary parse/render maliyeti üretiyordu.
+- Yatay liste reset anahtarı tüm vaka listesini `id:solved` stringine dönüştürüyordu. Büyük listelerde her renderda gereksiz map/join maliyeti oluşuyordu.
 
-3. **Tooltip positioning re-renders**
-   - Floating glossary tooltip positioning recalculated on open/resize frames and always called `setPosition`, even when the computed placement was effectively identical.
+### 3. Hap Bilgi / Kataloglarım liste maliyeti
+- `TusPearlStudyScreen.jsx` içinde katalogdaki kartlar ve “Tüm kartlardan ekle” satırları inline JSX ile render ediliyordu.
+- Her renderda satır içi callbackler yeniden oluşuyordu; bu durum özellikle arama, filtre, visible count ve catalog membership değişimlerinde satırların gereksiz tekrar render edilmesine yol açıyordu.
+- V371’deki 48 görünür kart limiti doğru yönde bir iyileştirmeydi; bu limit korunmalıydı.
 
-4. **Custom scrollbar style churn**
-   - The custom scrollbar correctly used RAF-based updates, but each update wrote the same inline style values repeatedly to tracks/thumbs.
-   - Candidate scanning still included generic `section`, increasing the number of DOM nodes considered on large screens.
+### 4. Custom scrollbar DOM tarama/ölçüm maliyeti
+- `KlinikIQCustomScrollbars.jsx` genel DOM üzerinde `body *` taraması yapıyordu. MutationObserver tetiklerinde bu tarama ve ardından `getBoundingClientRect` / overflow kontrolleri pahalı hâle gelebiliyordu.
+- Top-layer occlusion kontrolü zaten cache’lenmişti ancak cache süresi kısa olduğu için yoğun popup/tooltip/scroll senaryosunda tekrar ölçüm yapabiliyordu.
+- Pointer activity scrollbar güncellemeleri çok sık tetiklenebiliyordu.
 
-5. **Custom cursor target checks**
-   - Pointer movement repeatedly evaluated whether the pointer was over the custom scrollbar using `closest()` even when the DOM target had not changed.
+### 5. Premium cursor hareket maliyeti
+- Cursor animasyonu transform tabanlı ve RAF duraklatmalıydı; bu iyi korunmuş. Ancak scrollbar üzerinde dolaşırken cursor state’i daha açık ve ucuz şekilde yönetilebilirdi.
+- Layout ölçümü gerektiren native scrollbar hit-test fonksiyonları dosyada duruyordu; aktif pointer path artık custom scrollbar target sınıfları üzerinden daha ucuz yönetilmeli.
 
-6. **Global performance CSS selectors**
-   - The V347/V372 performance block still contained broad `*` selectors during scroll/resize and a costly `[style*="filter"]` selector.
-   - These can increase style recalculation cost exactly during the interactions where the UI should feel lightest.
+### 6. Storage yazımları
+- Hap Bilgi storage tarafında debounced/idle persist zaten mevcuttu.
+- `localBackend.write` bazı App-level state değişimlerinde doğrudan localStorage yazıyordu. Büyük stats/history/solved arrays etkileşim sırasında ana thread’i kısa süre kilitleyebilir.
 
-7. **Deferred storage still stringified synchronously**
-   - `localBackend.writeDeferred()` deferred the actual `localStorage.setItem`, but it still ran `JSON.stringify(value)` immediately during the user interaction.
+### 7. Popup/dropdown konumlandırma
+- Katalog/branş menüsü gibi popup pozisyon güncellemeleri scroll/resize sırasında doğrudan tetiklenebiliyordu. RAF ile gruplanması daha güvenli.
 
-8. **Answer submission priority**
-   - Answer feedback and global App-level stats/solved/wrong-answer updates happened in the same high-priority interaction path.
+## Build sonucu
+- `npm install --no-audit --no-fund`: başarılı.
+- `npm run build`: başarılı.
+- Build uyarısı: `case-bank` ve `GlossaryTooltip` chunkları hâlâ büyük. Bu beklenen bir uyarıdır; veri/glossary içeriği bilinçli olarak silinmedi veya kısaltılmadı.
 
-## Optimization strategy
-
-- Keep changes narrow, reversible, and GitHub-safe.
-- Prefer lazy computation and fewer writes over structural rewrites.
-- Keep custom cursor, custom scrollbar, glossary, premium UI, TUS mode, KOMİTE mode, and all data intact.
-- Avoid adding new dependencies.
-- Build-test after changes.
-
-## Build result
-
-`npm install --prefer-offline --no-audit --no-fund --progress=false --package-lock=false` completed successfully.
-
-`npm run build` completed successfully.
-
-Vite still reports large chunk warnings for `case-bank` and `GlossaryTooltip`. This is expected because the large case bank and glossary data were intentionally preserved and not shortened.
+## Bilinçli olarak dokunulmayan alanlar
+- Tıbbi vaka verileri, doğru cevaplar, seçenekler, feedbackler ve glossary data içerikleri değiştirilmedi.
+- Glossary sistemi kapatılmadı.
+- Premium cursor ve custom scrollbar korunarak optimize edildi.
+- TUS/KOMİTE modlarının ana akışı ve UI kimliği korunmaya çalışıldı.
+- Büyük data lazy-loading refactoru bu geçişte zorlanmadı; çünkü App-level vaka seçimi ve demo/solved index akışına yüksek kırılma riski taşıyordu.

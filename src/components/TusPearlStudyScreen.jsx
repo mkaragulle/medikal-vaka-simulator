@@ -31,29 +31,8 @@ const LIBRARY_SOURCE_OPTIONS = [
   { value: 'user', label: 'Kendi kartlarım' },
 ];
 
-const CATALOG_LIBRARY_VIRTUAL_ROW_HEIGHT = 96;
-const CATALOG_LIBRARY_VIRTUAL_ROW_GAP = 12;
-const CATALOG_LIBRARY_VIRTUAL_STEP = CATALOG_LIBRARY_VIRTUAL_ROW_HEIGHT + CATALOG_LIBRARY_VIRTUAL_ROW_GAP;
-const CATALOG_LIBRARY_VIRTUAL_OVERSCAN = 6;
-
-const PEARL_LIBRARY_SEARCH_TEXT_CACHE = new WeakMap();
-
-function getPearlLibrarySearchText(card = {}) {
-  if (!card || typeof card !== 'object') return '';
-  const cached = PEARL_LIBRARY_SEARCH_TEXT_CACHE.get(card);
-  if (cached) return cached;
-  const text = [
-    card.front,
-    card.back,
-    card.subject,
-    card.topic,
-    card.source,
-    ...(card.keywords || []),
-    ...(card.tags || []),
-  ].join(' ').toLocaleLowerCase('tr');
-  PEARL_LIBRARY_SEARCH_TEXT_CACHE.set(card, text);
-  return text;
-}
+const CATALOG_LIBRARY_INITIAL_LIMIT = 48;
+const CATALOG_LIBRARY_LOAD_STEP = 48;
 
 function CatalogCardQuestionText({ text }) {
   return <span>{text}</span>;
@@ -102,133 +81,6 @@ const CatalogCardRow = memo(function CatalogCardRow({
         ) : null}
       </div>
     </article>
-  );
-});
-
-
-const VirtualCatalogCardList = memo(function VirtualCatalogCardList({
-  cards = [],
-  activeCatalogId = '',
-  activeCatalogCardIdSet = new Set(),
-  variant = 'library',
-  resetKey = '',
-  onAdd,
-  onRemove,
-  onEdit,
-  onRequestDelete,
-  emptyResult = null,
-}) {
-  const listRef = useRef(null);
-  const scrollRafRef = useRef(0);
-  const [viewport, setViewport] = useState({ scrollTop: 0, clientHeight: 0 });
-
-  const updateViewport = useCallback(() => {
-    const listNode = listRef.current;
-    if (!listNode) return;
-    const next = {
-      scrollTop: listNode.scrollTop || 0,
-      clientHeight: listNode.clientHeight || 0,
-    };
-    setViewport((current) => {
-      if (Math.abs(current.scrollTop - next.scrollTop) < 2 && Math.abs(current.clientHeight - next.clientHeight) < 2) {
-        return current;
-      }
-      return next;
-    });
-  }, []);
-
-  const handleScroll = useCallback(() => {
-    if (scrollRafRef.current || typeof window === 'undefined') return;
-    scrollRafRef.current = window.requestAnimationFrame(() => {
-      scrollRafRef.current = 0;
-      updateViewport();
-    });
-  }, [updateViewport]);
-
-  useLayoutEffect(() => {
-    const listNode = listRef.current;
-    if (!listNode) return undefined;
-    listNode.scrollTop = 0;
-    updateViewport();
-    const frameId = window.requestAnimationFrame(updateViewport);
-    return () => window.cancelAnimationFrame(frameId);
-  }, [resetKey, updateViewport]);
-
-  useLayoutEffect(() => {
-    const listNode = listRef.current;
-    if (!listNode) return undefined;
-
-    updateViewport();
-    let resizeObserver = null;
-    if ('ResizeObserver' in window) {
-      resizeObserver = new ResizeObserver(() => updateViewport());
-      resizeObserver.observe(listNode);
-    }
-
-    return () => {
-      resizeObserver?.disconnect?.();
-      if (scrollRafRef.current) {
-        window.cancelAnimationFrame(scrollRafRef.current);
-        scrollRafRef.current = 0;
-      }
-    };
-  }, [updateViewport]);
-
-  // V389: no custom scrollbar rescan is needed after global invisible-scrollbar cleanup.
-
-  if (!cards.length) {
-    return (
-      <div className={`tus-pearl-catalog-card-list ${variant === 'library' ? 'addable' : ''}`.trim()} data-scrollbar-immediate="true">
-        {emptyResult}
-      </div>
-    );
-  }
-
-  const totalHeight = cards.length
-    ? (cards.length * CATALOG_LIBRARY_VIRTUAL_ROW_HEIGHT) + ((cards.length - 1) * CATALOG_LIBRARY_VIRTUAL_ROW_GAP)
-    : 0;
-  const startIndex = Math.max(0, Math.floor((viewport.scrollTop || 0) / CATALOG_LIBRARY_VIRTUAL_STEP) - CATALOG_LIBRARY_VIRTUAL_OVERSCAN);
-  const visibleCount = Math.max(
-    10,
-    Math.ceil((viewport.clientHeight || 360) / CATALOG_LIBRARY_VIRTUAL_STEP) + (CATALOG_LIBRARY_VIRTUAL_OVERSCAN * 2) + 2,
-  );
-  const endIndex = Math.min(cards.length, startIndex + visibleCount);
-  const visibleCards = cards.slice(startIndex, endIndex);
-
-  return (
-    <div
-      ref={listRef}
-      className={`tus-pearl-catalog-card-list ${variant === 'library' ? 'addable' : ''} virtualized-catalog-card-list`.trim()}
-      data-scrollbar-immediate="true"
-      data-ki-light-scrollbar="true"
-      onScroll={handleScroll}
-    >
-      <div className="catalog-card-virtual-track" style={{ height: `${totalHeight}px` }}>
-        {visibleCards.map((card, offset) => {
-          const index = startIndex + offset;
-          const alreadyAdded = activeCatalogCardIdSet.has(card.id);
-          return (
-            <div
-              key={card.id}
-              className="catalog-card-virtual-row"
-              style={{ transform: `translateY(${index * CATALOG_LIBRARY_VIRTUAL_STEP}px)` }}
-            >
-              <CatalogCardRow
-                card={card}
-                activeCatalogId={activeCatalogId}
-                inCatalog={variant === 'catalog' || alreadyAdded}
-                showRemove={variant === 'catalog'}
-                canAdd={variant === 'library' ? !alreadyAdded : false}
-                onAdd={onAdd}
-                onRemove={onRemove}
-                onEdit={onEdit}
-                onRequestDelete={onRequestDelete}
-              />
-            </div>
-          );
-        })}
-      </div>
-    </div>
   );
 });
 
@@ -750,6 +602,7 @@ function TusPearlStudyScreen({
   const [renameValue, setRenameValue] = useState('');
   const [librarySearch, setLibrarySearch] = useState('');
   const [sourceLibraryFilter, setSourceLibraryFilter] = useState('all');
+  const [catalogLibraryVisibleCount, setCatalogLibraryVisibleCount] = useState(CATALOG_LIBRARY_INITIAL_LIMIT);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [motion, setMotion] = useState('idle');
@@ -847,17 +700,33 @@ function TusPearlStudyScreen({
   ), [activeCatalog, cardById]);
 
   const deferredLibrarySearch = useDeferredValue(librarySearch);
-  const libraryQuery = deferredLibrarySearch.trim().toLocaleLowerCase('tr');
-  const sourceFilteredLibraryCards = useMemo(() => allCards.filter((card) => {
-    if (sourceLibraryFilter === 'user' && card.source !== 'user') return false;
-    if (sourceLibraryFilter === 'system' && card.source === 'user') return false;
-    return true;
-  }), [allCards, sourceLibraryFilter]);
+  const librarySearchIndex = useMemo(() => allCards.map((card) => ({
+    card,
+    searchText: [card.front, card.back, card.subject, card.topic, card.source, ...(card.keywords || []), ...(card.tags || [])]
+      .join(' ')
+      .toLocaleLowerCase('tr'),
+  })), [allCards]);
 
   const searchableCards = useMemo(() => {
-    if (!libraryQuery) return sourceFilteredLibraryCards;
-    return sourceFilteredLibraryCards.filter((card) => getPearlLibrarySearchText(card).includes(libraryQuery));
-  }, [libraryQuery, sourceFilteredLibraryCards]);
+    const query = deferredLibrarySearch.trim().toLocaleLowerCase('tr');
+    const pool = librarySearchIndex.filter(({ card }) => {
+      if (sourceLibraryFilter === 'user' && card.source !== 'user') return false;
+      if (sourceLibraryFilter === 'system' && card.source === 'user') return false;
+      return true;
+    });
+    if (!query) return pool.map(({ card }) => card);
+    return pool.filter(({ searchText }) => searchText.includes(query)).map(({ card }) => card);
+  }, [deferredLibrarySearch, librarySearchIndex, sourceLibraryFilter]);
+
+  useEffect(() => {
+    setCatalogLibraryVisibleCount(CATALOG_LIBRARY_INITIAL_LIMIT);
+  }, [deferredLibrarySearch, sourceLibraryFilter, activeCatalogId, viewMode]);
+
+  const visibleSearchableCards = useMemo(() => (
+    searchableCards.slice(0, catalogLibraryVisibleCount)
+  ), [catalogLibraryVisibleCount, searchableCards]);
+
+  const hasMoreLibraryCards = visibleSearchableCards.length < searchableCards.length;
 
   const commitState = useCallback((updater) => {
     setPearlState((current) => savePearlState(updater(current || defaultPearlState)));
@@ -1469,16 +1338,20 @@ function TusPearlStudyScreen({
                     <span>{catalogCards.length} kart</span>
                   </div>
                   {catalogCards.length ? (
-                    <VirtualCatalogCardList
-                      cards={catalogCards}
-                      activeCatalogId={activeCatalog.id}
-                      activeCatalogCardIdSet={activeCatalogCardIdSet}
-                      variant="catalog"
-                      resetKey={`catalog-${activeCatalog.id}-${catalogCards.length}`}
-                      onRemove={handleCatalogRowRemove}
-                      onEdit={handleCatalogRowEdit}
-                      onRequestDelete={handleCatalogRowDelete}
-                    />
+                    <div className="tus-pearl-catalog-card-list">
+                      {catalogCards.map((card) => (
+                        <CatalogCardRow
+                          key={card.id}
+                          card={card}
+                          activeCatalogId={activeCatalog.id}
+                          inCatalog
+                          showRemove
+                          onRemove={handleCatalogRowRemove}
+                          onEdit={handleCatalogRowEdit}
+                          onRequestDelete={handleCatalogRowDelete}
+                        />
+                      ))}
+                    </div>
                   ) : (
                     <div className="tus-pearl-study-empty compact actionable-empty">
                       <Icon name="LayeredCards" />
@@ -1502,22 +1375,44 @@ function TusPearlStudyScreen({
                     <LibrarySourceDropdown value={sourceLibraryFilter} onChange={setSourceLibraryFilter} />
                     <button type="button" className="btn btn-primary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalog.id })}>Yeni kart</button>
                   </div>
-                  <VirtualCatalogCardList
-                    cards={searchableCards}
-                    activeCatalogId={activeCatalog.id}
-                    activeCatalogCardIdSet={activeCatalogCardIdSet}
-                    variant="library"
-                    resetKey={`library-${activeCatalog.id}-${sourceLibraryFilter}-${libraryQuery}-${searchableCards.length}`}
-                    onAdd={handleCatalogRowAdd}
-                    onEdit={handleCatalogRowEdit}
-                    onRequestDelete={handleCatalogRowDelete}
-                    emptyResult={(
+                  <div className="tus-pearl-catalog-card-list addable">
+                    {visibleSearchableCards.map((card) => {
+                      const alreadyAdded = activeCatalogCardIdSet.has(card.id);
+                      return (
+                        <CatalogCardRow
+                          key={card.id}
+                          card={card}
+                          activeCatalogId={activeCatalog.id}
+                          inCatalog={alreadyAdded}
+                          canAdd={!alreadyAdded}
+                          onAdd={handleCatalogRowAdd}
+                          onEdit={handleCatalogRowEdit}
+                          onRequestDelete={handleCatalogRowDelete}
+                        />
+                      );
+                    })}
+                    {hasMoreLibraryCards ? (
+                      <div className="catalog-library-load-more">
+                        <span>{visibleSearchableCards.length} / {searchableCards.length} kart gösteriliyor</span>
+                        <button
+                          type="button"
+                          className="btn btn-secondary compact"
+                          onClick={() => setCatalogLibraryVisibleCount((count) => Math.min(count + CATALOG_LIBRARY_LOAD_STEP, searchableCards.length))}
+                        >
+                          Daha fazla göster
+                        </button>
+                      </div>
+                    ) : searchableCards.length ? (
+                      <div className="catalog-library-load-more is-complete">
+                        <span>{searchableCards.length} kartın tamamı gösteriliyor</span>
+                      </div>
+                    ) : (
                       <div className="catalog-library-empty-result">
                         <Icon name="Search" size={18} />
                         <span>Bu aramada kart bulunamadı.</span>
                       </div>
                     )}
-                  />
+                  </div>
                 </div>
               </>
             ) : (
