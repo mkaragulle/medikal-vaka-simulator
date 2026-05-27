@@ -1,0 +1,13 @@
+V397 Hap Bilgi study viewport-height correction
+
+Result:
+- Build could not be executed in this sandbox because node_modules is not present and npm run build cannot find vite.
+- CSS brace-balance check passed.
+
+Changed file:
+- src/components/tusPearlCards.css
+
+Main fix:
+- Desktop Hap Bilgi study workspace now uses a capped usable viewport height.
+- Left and right columns keep equal height, but the shared height no longer extends excessively below the first viewport.
+- Right-side Tekrar Araçları / Oturum / Kart Araçları rows are compacted at 100% zoom so Kartı Sil remains visible.
