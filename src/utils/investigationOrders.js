@@ -49,6 +49,7 @@ export const priorityMeta = {
 
 export const typeLabels = {
   ecg: 'EKG',
+  echo: 'Ekokardiyografi',
   lab: 'Laboratuvar',
   xray: 'Direkt grafi',
   ct: 'BT',
@@ -67,6 +68,7 @@ export const typeLabels = {
 
 export const investigationIconByType = {
   ecg: 'Activity',
+  echo: 'Activity',
   lab: 'FlaskConical',
   xray: 'Image',
   ct: 'Image',
@@ -161,7 +163,7 @@ function inferOrderCategory(item = {}, clinicalCase = {}) {
   const canonical = canonicalCategory(item);
 
   if (/(parmak ucu|glukoz)/.test(text) || canonical === 'glucose') return 'bedside';
-  if (type === 'ecg' || /(ekg|ecg|ekokardiyografi|eko)/.test(text)) return 'cardiac';
+  if (type === 'ecg' || type === 'echo' || /(ekg|ecg|ekokardiyografi|eko)/.test(text)) return 'cardiac';
   if (canonical === 'crossmatch' || /(kan grubu|cross|transfüzyon|eritrosit süspansiyonu)/.test(text)) return 'bloodBank';
   if (type === 'pathology' || canonical === 'pathology' || /(biyopsi|sitoloji|histopatoloji|periferik yayma)/.test(text)) return 'pathology';
   if (/(gebelik testi|beta-hcg|hcg|üriner sistem|ürogenital)/.test(text)) return 'urogenital';
@@ -330,14 +332,32 @@ function sanitizeSummary(text = '', clinicalCase) {
   return toSentence(safe || 'Objektif veri sınırlıdır.');
 }
 
+function hasOwnVisualReference(item = {}) {
+  return Boolean(
+    (Array.isArray(item.imageIds) && item.imageIds.length) ||
+    item.imageUrl ||
+    item.thumbnailUrl ||
+    (Array.isArray(item.result?.images) && item.result.images.length)
+  );
+}
+
+function isVisualInvestigationItem(item = {}) {
+  const text = `${item.id || ''} ${item.label || ''} ${item.title || ''} ${item.type || ''} ${item.subtype || ''}`.toLocaleLowerCase('tr');
+  if (['xray', 'ct', 'mri', 'ultrasound', 'ecg', 'echo', 'endoscopy', 'microscopy', 'pathology', 'clinical', 'neurophysiology', 'nuclear'].includes(item.type)) return true;
+  if (/(grafi|radyografi|röntgen|xray|bt|ct|tomografi|mr\b|mri|ultrason|usg|ekokardiyografi|eko\b|doppler|ekg|elektrokardiyografi|eeg|endoskopi|kolonoskopi|bronkoskopi|fundoskopi|dermatoskopi|biyopsi|patoloji|histopatoloji|mikroskopi|periferik yayma|gram boyama|immünfloresan|immunfloresan|klinik fotoğraf|lezyon fotoğrafı|görsel)/.test(text)) return true;
+  return false;
+}
+
 function attachImages(item, clinicalCase) {
   const images = clinicalCase.images || [];
   if (!images.length) return [];
+  if (!isVisualInvestigationItem(item) && !hasOwnVisualReference(item)) return [];
 
   const explicitImageIds = new Set(item.imageIds || []);
   const explicitlyLinkedImages = images.filter((image) => image && explicitImageIds.has(image.id));
   if (explicitlyLinkedImages.length) return explicitlyLinkedImages;
 
+  if (!isVisualInvestigationItem(item)) return [];
   return images.filter((image) => visualMatchesInvestigation(image, item));
 }
 
@@ -364,6 +384,7 @@ function hasActualCategory(item, caseItems = []) {
 function canonicalCategory(item = {}) {
   const text = `${item.id || ''} ${item.label || ''} ${item.type || ''}`.toLocaleLowerCase('tr');
   if (/(ecg|ekg)/.test(text)) return 'ecg';
+  if (/(ekokardiyografi|eko)/.test(text)) return 'echo';
   if (/(troponin|ck-mb|marker|biyobelirteç)/.test(text)) return 'troponin';
   if (/(cbc|hemogram|tam kan|trombosit|hb|lökosit)/.test(text)) return 'cbc';
   if (/(koag|inr|pt|aptt)/.test(text)) return 'coagulation';
@@ -474,6 +495,7 @@ function syntheticSummaryFor(item, clinicalCase) {
     if (/hematemez|melena|siroz|portal/.test(context)) return 'Endoskopide distal özofagusta genişlemiş venöz yapılar ve aktif sızıntı odağı izlenir.';
     return 'Endoskopide acil girişim gerektiren aktif kanama odağı izlenmez.';
   }
+  if (category === 'echo') return 'Ekokardiyografide kardiyak yapı, kapak ve sistolik fonksiyon bulguları değerlendirilir.';
   if (category === 'ecg') {
     if (/göğüs|retrosternal|st elevasyon|iskemi|koroner/.test(context)) return 'V2–V5 derivasyonlarında ST segment elevasyonu; inferior derivasyonlarda karşılıklı ST depresyonu izlenir.';
     if (/aort|diseksiyon/.test(context)) return 'Sinüs taşikardisi izlenir; akut ST elevasyonu saptanmaz.';
@@ -523,6 +545,7 @@ function orderPurposeFor(item, clinicalCase = {}) {
   const category = canonicalCategory(item);
   const context = caseContext(clinicalCase);
 
+  if (category === 'echo') return 'Kardiyak yapı ve fonksiyon değerlendirmesi.';
   if (category === 'ecg') return 'Ritim ve ST segment değerlendirmesi.';
   if (category === 'troponin') return 'Miyokart hasarı biyobelirteci.';
   if (category === 'brain-ct') return 'Akut kraniyal görüntüleme.';
@@ -559,6 +582,7 @@ function clinicalMeaningFor(item, clinicalCase = {}) {
   const context = caseContext(clinicalCase);
   const priority = normalizePriority(item.priority);
 
+  if (category === 'echo') return 'Ejeksiyon fraksiyonu, kapak ve duvar hareketi bulguları kalp yetmezliği veya yapısal kardiyak hastalık değerlendirmesine katkı sağlar.';
   if (category === 'ecg') return 'ST segmenti ve ritim bulguları acil reperfüzyon veya kardiyak monitörizasyon kararını belirler.';
   if (category === 'troponin') return 'Biyobelirteç yüksekliği miyokart hasarını destekler; ancak STEMI şüphesinde EKG kararını geciktirmemelidir.';
   if (category === 'brain-ct') return 'Kanama dışlandığında reperfüzyon uygunluğu ve damar görüntüleme ihtiyacı daha net değerlendirilir.';
@@ -801,9 +825,9 @@ export function buildInvestigationReview(orders = [], orderedIds = []) {
 
 export function getOrderFeedback(item) {
   const priority = normalizePriority(item.priority);
-  if (priority === 'essential') return 'Bu istem mevcut tabloda yüksek tanısal değer taşır.';
-  if (priority === 'useful') return 'Sonuç ayırıcı tanıyı daraltır.';
-  if (priority === 'situational') return 'Sonuç seçilmiş hastalarda ek bilgi verir.';
+  if (priority === 'essential') return `${item.label || item.title || 'Bu tetkik'} bu olguda karar verdirici objektif veri grubundadır; sonucu semptom, muayene ve vital bulgularla birlikte okumak gerekir.`;
+  if (priority === 'useful') return `${item.label || item.title || 'Bu tetkik'} ayırıcı tanı veya şiddet değerlendirmesine katkı sağlar; tek başına değil vaka bağlamıyla yorumlanmalıdır.`;
+  if (priority === 'situational') return `${item.label || item.title || 'Bu tetkik'} seçilmiş koşullarda değer kazanır; ilk karar için önce daha doğrudan veriler tamamlanmalıdır.`;
   if (priority === 'lowPriority') return 'Bu istem mevcut ilk değerlendirme aşamasında sınırlı katkı sağlar.';
   if (priority === 'inappropriateEarly') return 'Bu istem ileri aşamada düşünülebilir; önce temel klinik veriler tamamlanmalıdır.';
   return 'Sonuç ek klinik bilgi verir.';

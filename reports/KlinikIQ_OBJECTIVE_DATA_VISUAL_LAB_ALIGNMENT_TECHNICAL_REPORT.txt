@@ -1,0 +1,39 @@
+KlinikIQ Objective Data / Visual-Lab Alignment Technical Report
+Date: 2026-05-27
+
+Scope
+- Only standard/general clinical cases were processed.
+- TUS Spot / ai-spot cases were not edited.
+
+Files changed
+- src/data/cases.js
+  * 695 objective data / investigation cards normalized.
+  * Lab/numeric investigations received lab-specific summaries, scientific interpretation and row notes.
+  * Visual investigations were retyped where needed (xray, ct, mri, ultrasound, ecg, echo, microscopy, endoscopy, clinical).
+- src/utils/clinicalVisuals.js
+  * visualMatchesInvestigation now blocks lab-only investigations from matching case-level images.
+  * Matching now requires visual-compatible investigation type and strong label/visual match.
+- src/utils/investigationOrders.js
+  * attachImages now avoids global case image fallback for lab-only cards.
+  * echo type label/icon/category logic added.
+- src/components/InvestigationPanel.jsx
+  * Result image rendering is gated by isVisualResultItem(item).
+  * Lab cards with images from fallback no longer trigger visual-first/Yardim Al copy.
+
+Validation
+- General clinical cases scanned: 410
+- Objective/investigation cards scanned: 695
+- Visual cards validated: 209
+- Lab/numeric cards validated: 486
+- Wrong visual leaks before -> after: 45 -> 0
+- Weak short comments remaining: 0
+- Weak scientific comments remaining: 0
+- Case data import test: OK
+- npm run build: attempted; failed because vite executable is missing in node_modules in the provided zip.
+
+Build log summary
+- Command: npm run build
+- Result: vite: not found
+- Interpretation: dependency/environment issue, not a JS data import failure. node import of src/data/cases.js succeeded.
+
+No IDs, branch identifiers, case order or TUS Spot records were intentionally changed.
