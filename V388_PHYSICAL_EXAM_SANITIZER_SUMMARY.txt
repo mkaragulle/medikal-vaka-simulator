@@ -1,0 +1,12 @@
+KlinikIQ V388 - Fizik muayene saçma vital/ateş parçası temizliği
+
+Toplam vaka: 620
+Temizlenen/düzenlenen vaka: 45
+Fizik muayene listesinden kaldırılan vital/parça satır sayısı: 40
+Kalan kırık sıcaklık parçası: 0
+
+Uygulanan çözüm:
+- 8°C’dir., 7°C., 0°C. gibi kopmuş sıcaklık parçaları fizik muayene listesinden silinir.
+- Vaka vital gridinde zaten bulunan salt vital satırları fizik muayene bullet listesine tekrar düşmez.
+- Klinik muayene bilgisi taşıyan karma satırlarda vital başlangıcı temizlenip anlamlı muayene kısmı korunur.
+- Aynı koruma hem ana vaka havuzuna hem de AI/local fallback soru üretimine uygulanır.- Ana kaynak dosya src/data/cases.js de temizlenmiş veriyle yeniden yazıldı; sadece runtime filtreye bırakılmadı.

@@ -13,6 +13,7 @@ import {
   toSentence,
 } from '../utils/displayText.js';
 import { getDifficultyMeta } from '../utils/scoring.js';
+import { sanitizeClinicalExamFindings } from '../utils/clinicalExamSanitizer.js';
 import { buildInvestigationOrders } from '../utils/investigationOrders.js';
 import { formatAppearedYears, resolveExamSignal } from '../utils/examMeta.js';
 import './tusPearlCards.css';
@@ -139,13 +140,18 @@ function buildDerivedVitalEntries(vitals = {}) {
     .filter((key) => normalizedVitals[key] !== undefined && String(normalizedVitals[key] || '').trim())
     .map((key) => [key, normalizedVitals[key]]);
 
-  const shockIndex = calculateShockIndex(normalizedVitals.Nabız, normalizedVitals.TA);
-  if (shockIndex) {
-    orderedBase.push(['Şok indeksi', `${shockIndex.formatted} ${shockIndex.note}`]);
+  const explicitShockIndex = normalizedVitals['Şok indeksi'];
+  if (explicitShockIndex && String(explicitShockIndex || '').trim()) {
+    orderedBase.push(['Şok indeksi', explicitShockIndex]);
+  } else {
+    const shockIndex = calculateShockIndex(normalizedVitals.Nabız, normalizedVitals.TA);
+    if (shockIndex) {
+      orderedBase.push(['Şok indeksi', `${shockIndex.formatted} ${shockIndex.note}`]);
+    }
   }
 
   const extraEntries = Object.entries(normalizedVitals)
-    .filter(([key, value]) => !['TA', 'Nabız', 'Solunum', 'SpO2', 'Ateş'].includes(key) && String(value || '').trim())
+    .filter(([key, value]) => !['TA', 'Nabız', 'Solunum', 'SpO2', 'Ateş', 'Şok indeksi'].includes(key) && String(value || '').trim())
     .map(([key, value]) => [key, sanitizeMeasurementText(value)]);
   return [...orderedBase, ...extraEntries];
 }
@@ -375,10 +381,10 @@ function summaryRowKind(label = '') {
 function summaryIconName(kind = '') {
   const normalized = String(kind || '').toLocaleLowerCase('tr');
   if (normalized.includes('profile')) return 'User';
-  if (normalized.includes('presentation')) return 'AlertTriangle';
-  if (normalized.includes('risk')) return 'Shield';
-  if (normalized.includes('clues')) return 'ClipboardList';
-  return 'Notes';
+  if (normalized.includes('presentation')) return 'ClipboardList';
+  if (normalized.includes('risk')) return 'ShieldCheck';
+  if (normalized.includes('clues')) return 'Target';
+  return 'BookOpen';
 }
 
 function splitProfileText(value = '') {
@@ -700,17 +706,18 @@ function CasePlayer({
   const displayFocus = useMemo(() => buildNonRevealingFocus(clinicalCase), [clinicalCase]);
   const difficultyMeta = useMemo(() => getDifficultyMeta(clinicalCase.difficulty), [clinicalCase.difficulty]);
   const difficultyLabel = isSolved ? `${difficultyMeta.label}-Çözüldü` : difficultyMeta.label;
+  const sanitizedExamFindings = useMemo(() => sanitizeClinicalExamFindings(clinicalCase.exam, clinicalCase.vitals), [clinicalCase.exam, clinicalCase.vitals]);
   const patientSummary = useMemo(() => buildPatientSummary(clinicalCase), [clinicalCase]);
   const caseExamSignal = useMemo(() => resolveExamSignal(clinicalCase), [clinicalCase]);
   const vitalEntries = useMemo(() => buildDerivedVitalEntries(clinicalCase.vitals), [clinicalCase.vitals]);
   const investigationOrders = useMemo(() => buildInvestigationOrders(clinicalCase), [clinicalCase]);
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const caseGlossaryEnabled = !hardMode;
-  const hasExamData = Array.isArray(clinicalCase.exam) && clinicalCase.exam.some((finding) => String(finding || '').trim());
+  const hasExamData = sanitizedExamFindings.some((finding) => String(finding || '').trim());
   const hasClinicalExamVisuals = (clinicalCase.images || []).some((image) => image?.modality === 'clinical' && (image.thumbnailUrl || image.imageUrl));
   const clinicalExamVisualGate = useMemo(
-    () => splitClinicalExamFindingsForVisualGate(clinicalCase.exam, hasClinicalExamVisuals),
-    [clinicalCase.exam, hasClinicalExamVisuals]
+    () => splitClinicalExamFindingsForVisualGate(sanitizedExamFindings, hasClinicalExamVisuals),
+    [sanitizedExamFindings, hasClinicalExamVisuals]
   );
   const hasVisualGatedClinicalExamFindings = clinicalExamVisualGate.visualGated.length > 0;
   const hasImmediatelyVisibleClinicalExamFindings = clinicalExamVisualGate.visible.length > 0;
@@ -863,7 +870,7 @@ function CasePlayer({
 
     const absoluteTop = target.getBoundingClientRect().top + window.scrollY;
     const offset = getStickyOffset();
-    window.scrollTo({ top: Math.max(absoluteTop - offset, 0), behavior: 'smooth' });
+    window.scrollTo({ top: Math.max(absoluteTop - offset, 0), behavior: 'auto' });
   }, [sectionRefs]);
 
   const handleOrderInvestigation = useCallback((id) => {
@@ -933,7 +940,7 @@ function CasePlayer({
                   {/* Hasta özeti, referans görseldeki tek, premium ve okunabilir klinik çerçeve tasarımına göre yeniden düzenlendi. */}
                   <header className="patient-summary-head compact-summary-head premium-summary-head">
                     <span className="patient-summary-main-icon" aria-hidden="true">
-                      <Icon name="ClipboardList" size={29} strokeWidth={1.95} />
+                      <Icon name="Stethoscope" size={28} strokeWidth={1.95} />
                     </span>
                     <div className="patient-summary-head-copy">
                       <strong>Olgu sunumu</strong>
@@ -971,7 +978,7 @@ function CasePlayer({
 
                   <section className="patient-summary-story-block unified-history-block" aria-label="Hasta öyküsü">
                     <span className="summary-wide-icon summary-wide-icon--history" aria-hidden="true">
-                      <Icon name="Notes" size={28} strokeWidth={1.92} />
+                      <Icon name="Notes" size={27} strokeWidth={1.9} />
                     </span>
                     <div className="summary-wide-content">
                       <div className="summary-story-label">
@@ -1046,7 +1053,7 @@ function CasePlayer({
                               <span className="visual-interpretation-heading always-visible-exam-heading"><Icon name="Stethoscope" size={13} /> Görsel dışı fizik muayene bulguları</span>
                             ) : null}
                             <ul className="clean-list dense scientific-finding-list">
-                              {(hasClinicalExamVisuals ? clinicalExamVisualGate.visible : clinicalCase.exam).map((finding) => (
+                              {(hasClinicalExamVisuals ? clinicalExamVisualGate.visible : sanitizedExamFindings).map((finding) => (
                                 <li key={finding}><GlossaryText text={expandExamFinding(finding)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></li>
                               ))}
                             </ul>

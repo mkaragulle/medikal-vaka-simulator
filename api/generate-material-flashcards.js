@@ -1,9 +1,6 @@
 import { sendJson, parseJsonBody, callOpenAIJson, validateFlashcardsShape, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
-import { sourceTextFromMaterialPacket, getSourceFingerprintFromBody, buildGenerationCacheKey, getCachedGeneration, setCachedGeneration, logAIUsage } from './lib/ai-token-optimizer.js';
 import { GENERATE_FLASHCARDS_SYSTEM_PROMPT, buildGenerateFlashcardsPrompt } from './prompts/generateFlashcardsPrompt.js';
 
-
-const PROMPT_VERSION = 'komite-flashcards-v2-token-cache';
 
 const FLASHCARD_JSON_SCHEMA = {
   name: 'komite_flashcards_response',
@@ -53,6 +50,29 @@ function envNumber(name, fallback) {
   return Number.isFinite(value) && value > 0 ? value : fallback;
 }
 
+function compactTextWindow(text = '', maxChars = 12000) {
+  const clean = String(text || '').replace(/\s+/g, ' ').trim();
+  if (clean.length <= maxChars) return clean;
+  const part = Math.floor(maxChars / 3);
+  const start = clean.slice(0, part);
+  const middleStart = Math.max(0, Math.floor(clean.length / 2) - Math.floor(part / 2));
+  const middle = clean.slice(middleStart, middleStart + part);
+  const end = clean.slice(Math.max(0, clean.length - part));
+  return [start, middle, end].join('\n\n');
+}
+
+function sourceTextFromMaterialPacket(packet = {}, maxTotalChars = envNumber('KOMITE_FLASHCARDS_MAX_SOURCE_CHARS', 12000)) {
+  const files = Array.isArray(packet.files)
+    ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
+    : [];
+  if (!files.length) return '';
+  const perFile = Math.max(4000, Math.floor(maxTotalChars / files.length));
+  return files.map((file) => {
+    const text = String(file.cleanedExtractedText || file.text || '').trim();
+    return compactTextWindow(text, perFile);
+  }).join('\n\n').trim();
+}
+
 export default async function handler(request, response) {
   if (request.method !== 'POST') return sendJson(response, 405, { ok: false, error: 'Method not allowed' });
   let body;
@@ -60,23 +80,14 @@ export default async function handler(request, response) {
   try {
     const sourceCheck = verifyCurrentSourceManifest(body);
     if (!sourceCheck.ok) return sendJson(response, 409, { ok: false, error: 'Current source session validation failed', validation: sourceCheck });
-    const sourceFingerprint = getSourceFingerprintFromBody(body);
-    const currentSourceText = sourceTextFromMaterialPacket(body.materialPacket || {}, envNumber('KOMITE_FLASHCARDS_MAX_SOURCE_CHARS', 12000));
+    const currentSourceText = sourceTextFromMaterialPacket(body.materialPacket || {});
     if (!currentSourceText) return sendJson(response, 422, { ok: false, error: 'Current material packet has no readable text.' });
-    const cacheKey = buildGenerationCacheKey({ scope: 'KOMITE', task: 'flashcards', promptVersion: PROMPT_VERSION, model: process.env.KOMITE_OPENAI_MODEL || process.env.OPENAI_MODEL || '', sourceFingerprint, extra: currentSourceText.slice(0, 4000) });
-    const cached = getCachedGeneration(cacheKey);
-    if (cached) {
-      logAIUsage({ scope: 'KOMITE', task: 'flashcards', model: cached.model || '', apiStyle: cached.apiStyle || 'cache', sourceFingerprint, cacheHit: true });
-      return sendJson(response, 200, { ...cached, cached: true });
-    }
     const prompt = buildGenerateFlashcardsPrompt({ sourceTextChunks: currentSourceText });
-    const result = await callOpenAIJson({ systemPrompt: GENERATE_FLASHCARDS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: envNumber('KOMITE_FLASHCARDS_MAX_OUTPUT_TOKENS', 3200), jsonSchema: FLASHCARD_JSON_SCHEMA, scope: 'KOMITE', task: 'flashcards', promptVersion: PROMPT_VERSION, sourceFingerprint });
+    const result = await callOpenAIJson({ systemPrompt: GENERATE_FLASHCARDS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: envNumber('KOMITE_FLASHCARDS_MAX_OUTPUT_TOKENS', 3200), jsonSchema: FLASHCARD_JSON_SCHEMA, scope: 'KOMITE' });
     const deck = result.json.deck || result.json;
     const validation = validateFlashcardsShape(deck);
     const responseValidation = validation.ok ? validation : { ok: true, warnings: validation.errors || [], note: 'Non-blocking flashcard normalization warnings.' };
-    const payload = { ok: true, provider: 'openai', model: result.model, apiStyle: result.apiStyle, deck, validation: responseValidation, usage: result.usage || null };
-    setCachedGeneration(cacheKey, payload);
-    return sendJson(response, 200, payload);
+    return sendJson(response, 200, { ok: true, provider: 'openai', model: result.model, deck, validation: responseValidation });
   } catch (error) {
     return sendJson(response, error.code === 'missing_api_key' ? 501 : (error.status || 502), { ok: false, error: error.message });
   }

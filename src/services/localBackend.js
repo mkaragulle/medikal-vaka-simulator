@@ -44,6 +44,7 @@ export const localBackend = {
     if (!canUseStorage()) return fallback;
     const storageKey = key(name);
     const pending = pendingWrites.get(storageKey);
+    if (pending && Object.prototype.hasOwnProperty.call(pending, 'value')) return pending.value;
     return safeParse(pending?.payload ?? window.localStorage.getItem(storageKey), fallback);
   },
 
@@ -65,17 +66,16 @@ export const localBackend = {
     if (previous?.timer) window.clearTimeout(previous.timer);
     if (previous?.idleId && typeof window.cancelIdleCallback === 'function') window.cancelIdleCallback(previous.idleId);
 
-    const payload = JSON.stringify(value);
     const flushOne = () => {
       const current = pendingWrites.get(storageKey);
       if (!current) return;
       if (current.timer) window.clearTimeout(current.timer);
       if (current.idleId && typeof window.cancelIdleCallback === 'function') window.cancelIdleCallback(current.idleId);
       pendingWrites.delete(storageKey);
-      writePayload(storageKey, current.payload);
+      writePayload(storageKey, JSON.stringify(current.value));
     };
 
-    const next = { payload, timer: 0, idleId: 0 };
+    const next = { value, timer: 0, idleId: 0 };
     pendingWrites.set(storageKey, next);
 
     if (typeof window.requestIdleCallback === 'function') {
@@ -90,7 +90,7 @@ export const localBackend = {
     for (const [storageKey, pending] of pendingWrites.entries()) {
       if (pending.timer) window.clearTimeout(pending.timer);
       if (pending.idleId && typeof window.cancelIdleCallback === 'function') window.cancelIdleCallback(pending.idleId);
-      writePayload(storageKey, pending.payload);
+      writePayload(storageKey, JSON.stringify(pending.value));
       pendingWrites.delete(storageKey);
     }
   },

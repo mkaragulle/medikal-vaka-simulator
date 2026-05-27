@@ -1,0 +1,10 @@
+KlinikIQ V399 - Hap Bilgi Kart right-panel density fill polish
+
+Changed file:
+- src/components/tusPearlCards.css
+
+Purpose:
+- Preserves the V398 equal-height left/right column layout.
+- Uses the extra vertical room inside the right control panel by slightly increasing the heights/gaps of the right-column buttons and action rows.
+- Keeps the "Kartı Sil" row visible at 100% browser zoom while reducing the empty tail under the last action.
+- No React/JS logic or data files were changed.

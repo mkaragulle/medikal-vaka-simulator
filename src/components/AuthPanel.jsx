@@ -252,7 +252,7 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
           {!isRegister ? (
             <button className="auth-minimal-demo" type="button" onClick={handleDemoStart} disabled={demoBusy || busy || googleBusy}>
               <Icon name="Sparkles" />
-              <span>{demoBusy ? 'Demo hazırlanıyor...' : '5 vakalık demo ile başla'}</span>
+              <span>{demoBusy ? 'Demo açılıyor...' : '5 vakalık demo ile başla'}</span>
             </button>
           ) : null}
         </div>

@@ -1,10 +1,7 @@
 import { sendJson, parseJsonBody, callOpenAIText, validateLessonShape, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
-import { sourceTextFromMaterialPacket as optimizedSourceTextFromMaterialPacket, getSourceFingerprintFromBody, buildGenerationCacheKey, getCachedGeneration, setCachedGeneration, logAIUsage } from './lib/ai-token-optimizer.js';
 import { GENERATE_LESSON_SYSTEM_PROMPT, buildGenerateLessonPrompt } from './prompts/generateLessonPrompt.js';
 
 
-
-const PROMPT_VERSION = 'komite-lesson-v2-token-cache';
 
 function getPacketFiles(body = {}) {
   return Array.isArray(body.materialPacket?.files) ? body.materialPacket.files : [];
@@ -348,16 +345,8 @@ export default async function handler(request, response) {
     const sourceCheck = verifyCurrentSourceManifest(body);
     if (!sourceCheck.ok) return sendJson(response, 409, { ok: false, error: 'Current source session validation failed', validation: sourceCheck });
 
-    const sourceFingerprint = getSourceFingerprintFromBody(body);
-    const currentSourceText = optimizedSourceTextFromMaterialPacket(body.materialPacket || {}, envNumber('KOMITE_MAX_SOURCE_CHARS', 16000));
+    const currentSourceText = sourceTextFromMaterialPacket(body.materialPacket || {});
     if (!currentSourceText) return sendJson(response, 422, { ok: false, error: 'Current material packet has no readable text.' });
-
-    const cacheKey = buildGenerationCacheKey({ scope: 'KOMITE', task: 'lesson', promptVersion: PROMPT_VERSION, model: process.env.KOMITE_OPENAI_MODEL || process.env.OPENAI_MODEL || '', sourceFingerprint, extra: currentSourceText.slice(0, 4000) });
-    const cached = getCachedGeneration(cacheKey);
-    if (cached) {
-      logAIUsage({ scope: 'KOMITE', task: 'lesson', model: cached.model || '', apiStyle: cached.apiStyle || 'cache', sourceFingerprint, cacheHit: true });
-      return sendJson(response, 200, { ...cached, cached: true });
-    }
 
     const prompt = buildGenerateLessonPrompt({ sourceTextChunks: currentSourceText });
     const result = await callOpenAIText({
@@ -365,9 +354,6 @@ export default async function handler(request, response) {
       userPrompt: prompt,
       maxTokens: envNumber('KOMITE_LESSON_MAX_OUTPUT_TOKENS', 4800),
       scope: 'KOMITE',
-      task: 'lesson',
-      promptVersion: PROMPT_VERSION,
-      sourceFingerprint,
     });
 
     const lesson = buildLessonFromPlainText(result.text, body, currentSourceText);
@@ -376,9 +362,7 @@ export default async function handler(request, response) {
       ? validation
       : { ok: true, warnings: validation.errors || [], note: 'Non-blocking lesson normalization warnings.' };
 
-    const payload = { ok: true, provider: 'openai', model: result.model, apiStyle: result.apiStyle, lesson, validation: responseValidation, usage: result.usage || null };
-    setCachedGeneration(cacheKey, payload);
-    return sendJson(response, 200, payload);
+    return sendJson(response, 200, { ok: true, provider: 'openai', model: result.model, lesson, validation: responseValidation });
   } catch (error) {
     return sendJson(response, error.code === 'missing_api_key' ? 501 : (error.status || 502), { ok: false, error: error.message });
   }

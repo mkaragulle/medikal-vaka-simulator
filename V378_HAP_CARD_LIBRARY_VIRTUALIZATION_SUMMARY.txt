@@ -1,0 +1,19 @@
+KlinikIQ V378 — Hap Kartlar / Kataloglarım Tüm Kartlardan Ekle Smoothness Fix
+
+Yapılanlar:
+- Kataloglarım > Tüm kartlardan ekle listesindeki kart render akışı virtualized listeye çevrildi.
+- Artık tüm kart havuzu veya yüksek sayıda arama sonucu aynı anda DOM'a basılmıyor.
+- Scroll alanı aynı boyutta kaldı; kutu büyütülmedi.
+- Sadece görünen ve yakınındaki kartlar render ediliyor.
+- Katalogdaki kartlar listesi de aynı virtualized altyapıyı kullanacak şekilde rafine edildi.
+- Eski "Daha fazla göster" yaklaşımı kaldırıldı; kullanıcı scrollbar ile tüm kart havuzunda doğrudan gezebilir.
+- Custom scrollbar rescan event'i listeye özel ve hafif şekilde korunarak layer/scrollbar uyumu sağlandı.
+- Kart satırları sabit yükseklik ve iki satır soru clamp'i ile stabil hale getirildi.
+- Scroll sırasında gölge/backdrop/transition maliyeti daha da azaltıldı.
+
+Düzenlenen dosyalar:
+- src/components/TusPearlStudyScreen.jsx
+- src/components/tusPearlCards.css
+
+Not:
+- Build bu ortamda çalıştırılamadı çünkü zip içinde node_modules yok ve vite bulunmuyor.

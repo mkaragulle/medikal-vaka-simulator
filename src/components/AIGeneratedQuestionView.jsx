@@ -345,7 +345,7 @@ function AILoadingState({ progress }) {
       <div className="ai-generation-live-main">
         <span className="ai-generation-orb" aria-hidden="true"><Icon name="Sparkles" /></span>
         <div className="ai-generation-live-copy">
-          <h2>Yeni TUS spot sorusu hazırlanıyor...</h2>
+          <h2>Yeni TUS spot sorusu üretiliyor</h2>
           <p>{stage.title}</p>
           <div className="ai-generation-progress-track" aria-hidden="true">
             <span style={{ width: `${progressPercent}%` }} />

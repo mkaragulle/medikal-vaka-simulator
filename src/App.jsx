@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { lazy, Suspense, startTransition, useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import './index.css';
 import './styles/klinikiq-system.css';
 import './styles/klinikiq-refine.css';
@@ -11,7 +11,7 @@ import AuthPanel from './components/AuthPanel.jsx';
 import PremiumCursor from './components/PremiumCursor.jsx';
 import KlinikIQCustomScrollbars from './components/KlinikIQCustomScrollbars.jsx';
 import PerformanceOptimizer from './components/PerformanceOptimizer.jsx';
-import { Icon, BrandMark, ThemeToggle, BranchTransitionVisual, branchIconById } from './components/ui.jsx';
+import { Icon, BrandMark, ThemeToggle } from './components/ui.jsx';
 import { branches } from './data/branches.js';
 import { cases, getCaseById } from './data/cases.js';
 import { scoreAttempt, calculateAccuracy } from './utils/scoring.js';
@@ -21,12 +21,19 @@ import { createAIQuestion } from './services/aiQuestionService.js';
 import { listAIQuestionBranches } from './utils/aiQuestionGenerator.js';
 import { isGoogleAuthConfigured, signInWithGoogle } from './services/googleAuth.js';
 
-const CasePlayer = lazy(() => import('./components/CasePlayer.jsx'));
-const KomiteModeWorkspace = lazy(() => import('./components/KomiteModeWorkspace.jsx'));
-const StudyReviewHub = lazy(() => import('./components/StudyReviewHub.jsx'));
-const TusPearlStudyScreen = lazy(() => import('./components/TusPearlStudyScreen.jsx'));
-const ExamResults = lazy(() => import('./components/ExamResults.jsx'));
-const AIGeneratedQuestionView = lazy(() => import('./components/AIGeneratedQuestionView.jsx'));
+const loadCasePlayer = () => import('./components/CasePlayer.jsx');
+const loadKomiteModeWorkspace = () => import('./components/KomiteModeWorkspace.jsx');
+const loadStudyReviewHub = () => import('./components/StudyReviewHub.jsx');
+const loadTusPearlStudyScreen = () => import('./components/TusPearlStudyScreen.jsx');
+const loadExamResults = () => import('./components/ExamResults.jsx');
+const loadAIGeneratedQuestionView = () => import('./components/AIGeneratedQuestionView.jsx');
+
+const CasePlayer = lazy(loadCasePlayer);
+const KomiteModeWorkspace = lazy(loadKomiteModeWorkspace);
+const StudyReviewHub = lazy(loadStudyReviewHub);
+const TusPearlStudyScreen = lazy(loadTusPearlStudyScreen);
+const ExamResults = lazy(loadExamResults);
+const AIGeneratedQuestionView = lazy(loadAIGeneratedQuestionView);
 
 const STATS_STORAGE_KEY = 'klinikiq-session-stats-v2';
 const EXAM_HISTORY_STORAGE_KEY = 'klinikiq-exam-history-v2';
@@ -34,13 +41,22 @@ const THEME_STORAGE_KEY = 'klinikiq-theme-v1';
 const AI_PRACTICE_STATS_STORAGE_KEY = 'klinikiq-ai-practice-stats-v1';
 const AI_BRANCH_FILTER_STORAGE_KEY = 'klinikiq-ai-branch-filter-v1';
 const AI_DIFFICULTY_STORAGE_KEY = 'klinikiq-ai-difficulty-v1';
-const BRANCH_TRANSITION_MS = 560;
-const BRANCH_TRANSITION_FADE_MS = 150;
 const USERS_STORAGE_KEY = 'klinikiq-auth-users-v1';
 const CURRENT_USER_STORAGE_KEY = 'klinikiq-auth-current-user-v1';
 const PRODUCT_MODE_STORAGE_KEY = 'klinikiq-product-mode-v1';
 const SOLVED_CASES_STORAGE_KEY = 'klinikiq-solved-cases-v1';
 const BRANCH_DIFFICULTY_OPTIONS = ['Kolay', 'Orta', 'Zor', 'Acil'];
+
+
+function scheduleIdleWork(callback, timeout = 1200) {
+  if (typeof window === 'undefined') return () => {};
+  if ('requestIdleCallback' in window) {
+    const idleId = window.requestIdleCallback(callback, { timeout });
+    return () => window.cancelIdleCallback?.(idleId);
+  }
+  const timerId = window.setTimeout(callback, Math.min(timeout, 900));
+  return () => window.clearTimeout(timerId);
+}
 
 const DEMO_CASE_IDS = [
   'tus-spot-forensic-stab-wound-001',
@@ -303,6 +319,8 @@ function normalizeSearchText(value = '') {
     .trim();
 }
 
+const CASE_SEARCH_TEXT_CACHE = new WeakMap();
+
 function collectCaseSearchText(value, bucket = []) {
   if (value == null) return bucket;
   if (typeof value === 'string' || typeof value === 'number') {
@@ -339,12 +357,13 @@ function getCaseSearchTitle(clinicalCase = {}) {
   );
 }
 
-function getCaseSearchScore(clinicalCase = {}, rawQuery = '') {
-  const query = normalizeSearchText(rawQuery);
-  if (!query) return 1;
+function getCaseSearchIndex(clinicalCase = {}) {
+  if (!clinicalCase || typeof clinicalCase !== 'object') {
+    return { titleText: '', keywordText: '', questionText: '', fullText: '' };
+  }
 
-  const tokens = query.split(' ').filter((token) => token.length > 1);
-  if (!tokens.length) return 1;
+  const cached = CASE_SEARCH_TEXT_CACHE.get(clinicalCase);
+  if (cached) return cached;
 
   const titleText = normalizeSearchText(getCaseSearchTitle(clinicalCase));
   const keywordText = normalizeSearchText([
@@ -356,8 +375,26 @@ function getCaseSearchScore(clinicalCase = {}, rawQuery = '') {
     clinicalCase.relatedBranch,
     clinicalCase.branchName,
   ].flat(Infinity).filter(Boolean).join(' '));
-  const questionText = normalizeSearchText([clinicalCase.question, clinicalCase.stem, clinicalCase.narrativeStem, clinicalCase.diagnosis?.question].filter(Boolean).join(' '));
+  const questionText = normalizeSearchText([
+    clinicalCase.question,
+    clinicalCase.stem,
+    clinicalCase.narrativeStem,
+    clinicalCase.diagnosis?.question,
+  ].filter(Boolean).join(' '));
   const fullText = normalizeSearchText(collectCaseSearchText(clinicalCase).join(' '));
+  const index = { titleText, keywordText, questionText, fullText };
+  CASE_SEARCH_TEXT_CACHE.set(clinicalCase, index);
+  return index;
+}
+
+function getCaseSearchScore(clinicalCase = {}, rawQuery = '') {
+  const query = normalizeSearchText(rawQuery);
+  if (!query) return 1;
+
+  const tokens = query.split(' ').filter((token) => token.length > 1);
+  if (!tokens.length) return 1;
+
+  const { titleText, keywordText, questionText, fullText } = getCaseSearchIndex(clinicalCase);
 
   if (!fullText) return 0;
   if (!tokens.every((token) => fullText.includes(token))) return 0;
@@ -438,11 +475,24 @@ function buildAIWrongTitle(clinicalCase = {}) {
 
 
 
-function RouteFallback({ label = 'Arayüz hazırlanıyor…' }) {
+function RouteFallback() {
+  return null;
+}
+
+function DeferredHomeSection({
+  id,
+  className = '',
+  children,
+  minHeight = 0,
+}) {
   return (
-    <section className="route-fallback card-surface" role="status" aria-live="polite">
-      <span className="route-fallback-spinner" aria-hidden="true" />
-      <strong>{label}</strong>
+    <section
+      id={id}
+      className={[className, 'deferred-home-section', 'is-ready'].filter(Boolean).join(' ')}
+      data-main-deferred-section={id || 'section'}
+      style={minHeight ? { minHeight } : undefined}
+    >
+      {children}
     </section>
   );
 }
@@ -476,6 +526,23 @@ function App() {
   const aiQuestionTimer = useRef(null);
   const latestAIQuestionRequestId = useRef(0);
   const isDemoUser = isDemoAccount(currentUser);
+
+  useEffect(() => {
+    if (!currentUser) return undefined;
+
+    // V391: route screens are warmed immediately after login so clicking a branch,
+    // personal-review card, AI practice or exam result opens the target UI without
+    // an artificial blank/lazy wait. Heavy Komite assets still load on idle.
+    loadCasePlayer();
+    loadStudyReviewHub();
+    loadTusPearlStudyScreen();
+    loadExamResults();
+    loadAIGeneratedQuestionView();
+
+    return scheduleIdleWork(() => {
+      loadKomiteModeWorkspace();
+    }, 600);
+  }, [currentUser]);
 
   function clearAIQuestionTimer() {
     latestAIQuestionRequestId.current += 1;
@@ -524,12 +591,14 @@ function App() {
 
   const activeBranchCasePool = filteredBranchCases.length ? filteredBranchCases : branchCases;
 
+  const deferredBottomCaseSearchQuery = useDeferredValue(bottomCaseSearchQuery);
+
   const searchedBranchCasePool = useMemo(
-    () => filterCasesBySearch(activeBranchCasePool, bottomCaseSearchQuery),
-    [activeBranchCasePool, bottomCaseSearchQuery],
+    () => filterCasesBySearch(activeBranchCasePool, deferredBottomCaseSearchQuery),
+    [activeBranchCasePool, deferredBottomCaseSearchQuery],
   );
 
-  const hasBottomCaseSearch = Boolean(normalizeSearchText(bottomCaseSearchQuery));
+  const hasBottomCaseSearch = Boolean(normalizeSearchText(deferredBottomCaseSearchQuery));
 
   const selectedCase = useMemo(() => {
     if (examState?.active) {
@@ -741,24 +810,22 @@ function App() {
     activateUserSession(demoUser);
     closePearlStudy();
 
-    window.setTimeout(() => {
-      const demoPool = resolveDemoCases();
-      setMode('exam');
-      setIsCaseSidebarOpen(true);
-      setExamState({
-        active: true,
-        title: DEMO_EXAM_TITLE,
-        caseIds: demoPool.map((item) => item.id),
-        currentIndex: 0,
-        answers: {},
-        durationSeconds: demoPool.length * 90,
-        startedAt: Date.now(),
-      });
-      setSelectedBranchId(null);
-      setSelectedCaseId(null);
-      setAIPracticeState(defaultAIPracticeState);
-      scrollToTopSmart({ smooth: false });
-    }, 0);
+    const demoPool = resolveDemoCases();
+    setMode('exam');
+    setIsCaseSidebarOpen(true);
+    setExamState({
+      active: true,
+      title: DEMO_EXAM_TITLE,
+      caseIds: demoPool.map((item) => item.id),
+      currentIndex: 0,
+      answers: {},
+      durationSeconds: demoPool.length * 90,
+      startedAt: Date.now(),
+    });
+    setSelectedBranchId(null);
+    setSelectedCaseId(null);
+    setAIPracticeState(defaultAIPracticeState);
+    scrollToTopSmart({ smooth: false });
 
     return { ok: true, message: '5 vakalık demo başlatıldı.' };
   };
@@ -1027,10 +1094,10 @@ function App() {
 
   const closeAllWrongAnswers = useCallback(() => {
     setWrongAnswersPageOpen(false);
-    window.setTimeout(() => {
+    queueMicrotask(() => {
       const wrongPanel = document.getElementById('wrong-answers-section');
-      if (wrongPanel) wrongPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 40);
+      if (wrongPanel) wrongPanel.scrollIntoView({ behavior: 'auto', block: 'start' });
+    });
   }, []);
 
   const clearBranchRouteTimers = useCallback(() => {
@@ -1047,33 +1114,14 @@ function App() {
     const rawBranchPool = accessibleCaseIndex.byBranchId.get(branchId) ?? [];
     const branchPool = sortCasesBySolvedStatus(rawBranchPool, solvedCaseIdSet);
     if (!branchPool.length) return;
-    const branchMeta = resolveBranchById(branchId);
 
     clearBranchRouteTimers();
-    setBranchRouteTransition({
-      active: true,
-      phase: 'selecting',
-      branchId,
-      iconName: branchIconById[branchId] ?? 'Activity',
-      title: branchMeta?.name ?? branchMeta?.shortName ?? 'Klinik branş',
-      subtitle: branchMeta?.transitionTagline ?? branchMeta?.description ?? '',
-      caseCount: branchPool.length,
-    });
-
-    const selectTimer = window.setTimeout(() => {
-      setBranchDifficultyFilter('all');
-      setSelectedBranchId(branchId);
-      setSelectedCaseId(branchPool[0]?.id ?? null);
-      setIsCaseSidebarOpen(true);
-      scrollToTopSmart({ smooth: false });
-      setBranchRouteTransition((current) => current ? { ...current, phase: 'reveal' } : null);
-    }, BRANCH_TRANSITION_MS);
-
-    const finishTimer = window.setTimeout(() => {
-      setBranchRouteTransition(null);
-    }, BRANCH_TRANSITION_MS + BRANCH_TRANSITION_FADE_MS);
-
-    branchRouteTimers.current = [selectTimer, finishTimer];
+    setBranchRouteTransition(null);
+    setBranchDifficultyFilter('all');
+    setSelectedBranchId(branchId);
+    setSelectedCaseId(branchPool[0]?.id ?? null);
+    setIsCaseSidebarOpen(true);
+    scrollToTopSmart({ smooth: false });
   }, [accessibleCaseIndex, clearBranchRouteTimers, closePearlStudy, isDemoUser, solvedCaseIdSet, visibleBranches]);
 
   const handleSelectCase = useCallback((caseId) => {
@@ -1099,7 +1147,7 @@ function App() {
     }
     const normalizedFilter = nextFilter === 'all' ? 'all' : nextFilter;
     setBranchDifficultyFilter((current) => current === normalizedFilter ? 'all' : normalizedFilter);
-    window.setTimeout(() => scrollToTopSmart({ smooth: false }), 0);
+    scrollToTopSmart({ smooth: false });
   }, [branchDifficultyCounts]);
 
   const markCaseSolved = useCallback((caseId) => {
@@ -1114,60 +1162,63 @@ function App() {
     const existingExamAnswer = examState?.active ? examState.answers?.[clinicalCase.id] : null;
     if (existingExamAnswer) return existingExamAnswer.attemptResult;
 
-    markCaseSolved(clinicalCase.id);
     const scored = scoreAttempt(clinicalCase.difficulty, isCorrect, sessionStats.streak);
 
-    if (!isCorrect) {
-      addWrongAnswer(clinicalCase, selected);
-    }
+    startTransition(() => {
+      markCaseSolved(clinicalCase.id);
 
-    setSessionStats((current) => {
-      const attempts = current.attempts + 1;
-      const correct = current.correct + (isCorrect ? 1 : 0);
-      const score = current.score + scored.earnedPoints;
-      const streak = scored.nextStreak;
-      const bestStreak = Math.max(current.bestStreak, streak);
-      const accuracy = calculateAccuracy(correct, attempts);
-      const trend = [
-        ...(Array.isArray(current.trend) ? current.trend : []),
-        {
+      if (!isCorrect) {
+        addWrongAnswer(clinicalCase, selected);
+      }
+
+      setSessionStats((current) => {
+        const attempts = current.attempts + 1;
+        const correct = current.correct + (isCorrect ? 1 : 0);
+        const score = current.score + scored.earnedPoints;
+        const streak = scored.nextStreak;
+        const bestStreak = Math.max(current.bestStreak, streak);
+        const accuracy = calculateAccuracy(correct, attempts);
+        const trend = [
+          ...(Array.isArray(current.trend) ? current.trend : []),
+          {
+            attempts,
+            correct,
+            score,
+            streak,
+            bestStreak,
+            accuracy,
+            earnedPoints: scored.earnedPoints,
+            isCorrect,
+            timestamp: Date.now(),
+          },
+        ].slice(-12);
+
+        return {
           attempts,
           correct,
           score,
           streak,
           bestStreak,
           accuracy,
-          earnedPoints: scored.earnedPoints,
-          isCorrect,
-          timestamp: Date.now(),
-        },
-      ].slice(-12);
+          trend,
+        };
+      });
 
-      return {
-        attempts,
-        correct,
-        score,
-        streak,
-        bestStreak,
-        accuracy,
-        trend,
-      };
-    });
-
-    if (examState?.active) {
-      setExamState((current) => ({
-        ...current,
-        answers: {
-          ...current.answers,
-          [clinicalCase.id]: {
-            caseId: clinicalCase.id,
-            selected,
-            isCorrect,
-            attemptResult: scored,
+      if (examState?.active) {
+        setExamState((current) => ({
+          ...current,
+          answers: {
+            ...current.answers,
+            [clinicalCase.id]: {
+              caseId: clinicalCase.id,
+              selected,
+              isCorrect,
+              attemptResult: scored,
+            },
           },
-        },
-      }));
-    }
+        }));
+      }
+    });
 
     return scored;
   }, [addWrongAnswer, examState, markCaseSolved, sessionStats.streak]);
@@ -1188,7 +1239,7 @@ function App() {
       fallback: false,
     }));
 
-    aiQuestionTimer.current = window.setTimeout(async () => {
+    void (async () => {
       try {
         const result = await createAIQuestion({ previousQuestionId, branchFilter: branchFilterOverride, difficulty: difficultyOverride });
         if (latestAIQuestionRequestId.current !== requestId) return;
@@ -1215,7 +1266,7 @@ function App() {
       } finally {
         if (latestAIQuestionRequestId.current === requestId) aiQuestionTimer.current = null;
       }
-    }, 420);
+    })();
   }, [aiBranchFilter, aiDifficulty]);
 
   const handleStartAIPractice = useCallback(() => {
@@ -1323,6 +1374,7 @@ function App() {
     });
     setSelectedBranchId(null);
     setSelectedCaseId(null);
+    scrollToTopSmart({ smooth: false });
   }
 
   const goToNextExamCase = useCallback(() => {
@@ -1544,14 +1596,14 @@ function App() {
               closePearlStudy();
               setWrongAnswersPageOpen(false);
               setMode('study');
-              window.setTimeout(() => {
+              queueMicrotask(() => {
                 const wrongPanel = document.getElementById('wrong-answers-section');
                 if (wrongPanel) {
-                  wrongPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  wrongPanel.scrollIntoView({ behavior: 'auto', block: 'start' });
                 } else {
                   scrollToTopSmart({ smooth: false });
                 }
-              }, 80);
+              });
             }}
             aria-label="Yanlış çözülenler"
             title="Yanlış çözülenler"
@@ -1580,33 +1632,9 @@ function App() {
         </div>
       </nav>
 
-      {branchRouteTransition?.active ? (
-        <div className={`branch-route-overlay ${branchRouteTransition.phase} branch-route-${branchRouteTransition.branchId || 'default'}`.trim()} aria-hidden="true">
-          <div className="branch-route-stage">
-            <div
-              className={`branch-route-hero route-icon-${branchRouteTransition.branchId || 'default'}`.trim()}
-              data-branch={branchRouteTransition.branchId || 'default'}
-            >
-              <span className="branch-route-ring ring-one" />
-              <span className="branch-route-ring ring-two" />
-              <span className="branch-route-glow" />
-              <span className="branch-route-orb">
-                <BranchTransitionVisual
-                  branchId={branchRouteTransition.branchId || 'default'}
-                  iconName={branchRouteTransition.iconName || 'Activity'}
-                />
-              </span>
-            </div>
-            <div className="branch-route-copy solo">
-              <strong>{branchRouteTransition.title}</strong>
-              {branchRouteTransition.subtitle ? <span>{branchRouteTransition.subtitle}</span> : null}
-            </div>
-          </div>
-        </div>
-      ) : null}
 
       {productMode === 'komite' ? (
-        <Suspense fallback={<RouteFallback label="Komite arayüzü hazırlanıyor…" />}>
+        <Suspense fallback={null}>
           <KomiteModeWorkspace currentUser={currentUser} />
         </Suspense>
       ) : wrongAnswersPageOpen ? (
@@ -1618,7 +1646,7 @@ function App() {
           onClearAll={clearWrongAnswers}
         />
       ) : pearlStudyState.active ? (
-        <Suspense fallback={<RouteFallback label="Hap kart arayüzü hazırlanıyor…" />}>
+        <Suspense fallback={null}>
           <TusPearlStudyScreen
             initialFilter={pearlStudyState.filter}
             initialBranchFilter={pearlStudyState.branchFilter}
@@ -1627,7 +1655,7 @@ function App() {
           />
         </Suspense>
       ) : aiPracticeState.active ? (
-        <Suspense fallback={<RouteFallback label="AI soru arayüzü hazırlanıyor…" />}>
+        <Suspense fallback={null}>
           <AIGeneratedQuestionView
           question={aiPracticeState.question}
           loading={aiPracticeState.loading}
@@ -1650,7 +1678,7 @@ function App() {
           />
         </Suspense>
       ) : examState?.result ? (
-        <Suspense fallback={<RouteFallback label="Sonuç ekranı hazırlanıyor…" />}>
+        <Suspense fallback={null}>
           <ExamResults
           result={examState.result}
           onRestart={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')}
@@ -1671,7 +1699,7 @@ function App() {
           </section>
 
           <div className="case-route-transition timed-exam-layout" data-case-id={selectedCase.id}>
-            <Suspense fallback={<RouteFallback label="Vaka ekranı hazırlanıyor…" />}>
+            <Suspense fallback={null}>
               <CasePlayer
                 clinicalCase={selectedCase}
                 branch={resolveBranchById(selectedCase.branchId)}
@@ -1747,7 +1775,7 @@ function App() {
             </section>
 
             <div className="case-route-transition" data-case-id={selectedCase.id}>
-              <Suspense fallback={<RouteFallback label="Vaka ekranı hazırlanıyor…" />}>
+              <Suspense fallback={null}>
                 <CasePlayer
                   clinicalCase={selectedCase}
                   branch={selectedBranch}
@@ -1825,8 +1853,13 @@ function App() {
             totalBranches={visibleBranches.length}
             examCount={examHistory.length}
           />
-          <section id="wrong-answers-section" className="study-review-anchor section-anchor" aria-label="Yanlışlar ve hap bilgi tekrar merkezi">
-            <Suspense fallback={<RouteFallback label="Tekrar merkezi hazırlanıyor…" />}>
+          <DeferredHomeSection
+            id="wrong-answers-section"
+            className="study-review-anchor section-anchor"
+            minHeight={620}
+            idleDelay={520}
+          >
+            <Suspense fallback={null}>
               <StudyReviewHub
                 wrongAnswers={visibleWrongAnswers}
                 onOpenCase={openWrongCase}
@@ -1836,14 +1869,22 @@ function App() {
                 onOpenAllWrongAnswers={openAllWrongAnswers}
               />
             </Suspense>
-          </section>
-          <BranchSelector
-            branches={visibleBranches}
-            cases={accessibleCases}
-            onSelectBranch={handleSelectBranch}
-            launchingBranchId={branchRouteTransition?.phase === 'selecting' ? branchRouteTransition.branchId : null}
-            isTransitioning={Boolean(branchRouteTransition?.active)}
-          />
+          </DeferredHomeSection>
+          <DeferredHomeSection
+            id="branches"
+            className="branch-selector branch-selector-deferred-shell"
+            minHeight={940}
+            idleDelay={1050}
+          >
+            <BranchSelector
+              branches={visibleBranches}
+              cases={accessibleCases}
+              onSelectBranch={handleSelectBranch}
+              launchingBranchId={null}
+              isTransitioning={false}
+              onPreloadBranch={loadCasePlayer}
+            />
+          </DeferredHomeSection>
         </section>
       )}
     </main>

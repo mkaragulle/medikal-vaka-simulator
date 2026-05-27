@@ -1,6 +1,11 @@
-import { memo, useCallback, useLayoutEffect, useMemo, useRef } from 'react';
+import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { getDifficultyMeta } from '../utils/scoring.js';
 import { Icon } from './ui.jsx';
+
+const HORIZONTAL_CARD_WIDTH = 330;
+const HORIZONTAL_CARD_GAP = 16;
+const HORIZONTAL_CARD_STEP = HORIZONTAL_CARD_WIDTH + HORIZONTAL_CARD_GAP;
+const HORIZONTAL_OVERSCAN = 4;
 
 function isSolvedCase(solvedCaseIds, caseId) {
   if (!caseId || !solvedCaseIds) return false;
@@ -74,6 +79,8 @@ function getSolvedCount(cases = [], solvedCaseIds = new Set()) {
 
 function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', solvedCaseIds = new Set() }) {
   const listRef = useRef(null);
+  const scrollRafRef = useRef(0);
+  const [horizontalViewport, setHorizontalViewport] = useState({ scrollLeft: 0, clientWidth: 0 });
   const horizontalResetKey = useMemo(() => {
     if (layout !== 'horizontal') return '';
     const firstId = cases[0]?.id || '';
@@ -81,21 +88,148 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
     return `${cases.length}:${firstId}:${lastId}:${getSolvedCount(cases, solvedCaseIds)}`;
   }, [cases, layout, solvedCaseIds]);
 
+  const updateHorizontalViewport = useCallback(() => {
+    const listNode = listRef.current;
+    if (!listNode || layout !== 'horizontal') return;
+    setHorizontalViewport((current) => {
+      const next = {
+        scrollLeft: listNode.scrollLeft || 0,
+        clientWidth: listNode.clientWidth || 0,
+      };
+      if (Math.abs(current.scrollLeft - next.scrollLeft) < 2 && Math.abs(current.clientWidth - next.clientWidth) < 2) {
+        return current;
+      }
+      return next;
+    });
+  }, [layout]);
+
+  const handleHorizontalScroll = useCallback(() => {
+    if (layout !== 'horizontal') return;
+    if (scrollRafRef.current) return;
+    scrollRafRef.current = window.requestAnimationFrame(() => {
+      scrollRafRef.current = 0;
+      updateHorizontalViewport();
+    });
+  }, [layout, updateHorizontalViewport]);
+
+  const handleHorizontalWheel = useCallback((event) => {
+    if (layout !== 'horizontal') return;
+    const listNode = listRef.current;
+    if (!listNode) return;
+
+    const maxScrollLeft = listNode.scrollWidth - listNode.clientWidth;
+    if (maxScrollLeft <= 1) return;
+
+    const rawDeltaX = Number(event.deltaX) || 0;
+    const rawDeltaY = Number(event.deltaY) || 0;
+    const horizontalDelta = Math.abs(rawDeltaX) > Math.abs(rawDeltaY) ? rawDeltaX : rawDeltaY;
+    if (!horizontalDelta) return;
+
+    const currentLeft = listNode.scrollLeft || 0;
+    const atStart = currentLeft <= 1;
+    const atEnd = currentLeft >= maxScrollLeft - 1;
+    if ((horizontalDelta < 0 && atStart) || (horizontalDelta > 0 && atEnd)) return;
+
+    event.preventDefault();
+    listNode.scrollLeft = Math.min(maxScrollLeft, Math.max(0, currentLeft + horizontalDelta));
+    updateHorizontalViewport();
+  }, [layout, updateHorizontalViewport]);
+
   useLayoutEffect(() => {
     if (layout !== 'horizontal') return undefined;
     const listNode = listRef.current;
     if (!listNode) return undefined;
 
     listNode.scrollLeft = 0;
+    updateHorizontalViewport();
     const frameId = window.requestAnimationFrame(() => {
-      if (listRef.current) listRef.current.scrollLeft = 0;
+      if (listRef.current) {
+        listRef.current.scrollLeft = 0;
+        updateHorizontalViewport();
+      }
     });
 
     return () => window.cancelAnimationFrame(frameId);
-  }, [horizontalResetKey, layout]);
+  }, [horizontalResetKey, layout, updateHorizontalViewport]);
+
+  useLayoutEffect(() => {
+    if (layout !== 'horizontal') return undefined;
+    const listNode = listRef.current;
+    if (!listNode) return undefined;
+
+    updateHorizontalViewport();
+    let resizeObserver = null;
+    if ('ResizeObserver' in window) {
+      resizeObserver = new ResizeObserver(() => updateHorizontalViewport());
+      resizeObserver.observe(listNode);
+    }
+
+    return () => {
+      resizeObserver?.disconnect?.();
+      if (scrollRafRef.current) {
+        window.cancelAnimationFrame(scrollRafRef.current);
+        scrollRafRef.current = 0;
+      }
+    };
+  }, [layout, updateHorizontalViewport]);
+
+  // V389: custom scrollbar layers are disabled globally, so this list no longer
+  // dispatches expensive scrollbar rescan events during horizontal scroll.
+
+  if (layout === 'horizontal') {
+    const totalWidth = cases.length
+      ? (cases.length * HORIZONTAL_CARD_WIDTH) + ((cases.length - 1) * HORIZONTAL_CARD_GAP)
+      : 0;
+    const startIndex = Math.max(0, Math.floor((horizontalViewport.scrollLeft || 0) / HORIZONTAL_CARD_STEP) - HORIZONTAL_OVERSCAN);
+    const visibleCount = Math.max(
+      8,
+      Math.ceil((horizontalViewport.clientWidth || 1200) / HORIZONTAL_CARD_STEP) + (HORIZONTAL_OVERSCAN * 2) + 2,
+    );
+    const endIndex = Math.min(cases.length, startIndex + visibleCount);
+    const visibleCases = cases.slice(startIndex, endIndex);
+    const leftSpacerWidth = Math.max(0, startIndex * HORIZONTAL_CARD_STEP - (startIndex > 0 ? HORIZONTAL_CARD_GAP : 0));
+    const renderedWidth = visibleCases.length
+      ? (visibleCases.length * HORIZONTAL_CARD_WIDTH) + ((visibleCases.length - 1) * HORIZONTAL_CARD_GAP)
+      : 0;
+    const rightSpacerWidth = Math.max(0, totalWidth - leftSpacerWidth - renderedWidth - (visibleCases.length ? HORIZONTAL_CARD_GAP : 0));
+
+    return (
+      <div
+        ref={listRef}
+        className="case-list horizontal-case-list horizontal-case-list-virtualized"
+        data-scrollbar-immediate="true"
+        data-ki-light-scrollbar="true"
+        aria-label="Olgu listesi"
+        onScroll={handleHorizontalScroll}
+        onWheel={handleHorizontalWheel}
+      >
+        <div
+          className="horizontal-case-virtual-track"
+          style={{ width: `${Math.max(totalWidth, horizontalViewport.clientWidth || 0)}px` }}
+        >
+          {leftSpacerWidth > 0 ? <span className="horizontal-case-virtual-spacer" style={{ flexBasis: `${leftSpacerWidth}px` }} aria-hidden="true" /> : null}
+          {visibleCases.map((clinicalCase) => (
+            <CaseListItem
+              key={clinicalCase.id}
+              clinicalCase={clinicalCase}
+              selectedCaseId={selectedCaseId}
+              solved={isSolvedCase(solvedCaseIds, clinicalCase.id)}
+              layout={layout}
+              onSelectCase={onSelectCase}
+            />
+          ))}
+          {rightSpacerWidth > 0 ? <span className="horizontal-case-virtual-spacer" style={{ flexBasis: `${rightSpacerWidth}px` }} aria-hidden="true" /> : null}
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div ref={listRef} className={layout === 'horizontal' ? 'case-list horizontal-case-list' : 'case-list'} aria-label="Olgu listesi">
+    <div
+      ref={listRef}
+      className="case-list"
+      aria-label="Olgu listesi"
+    >
       {cases.map((clinicalCase) => (
         <CaseListItem
           key={clinicalCase.id}

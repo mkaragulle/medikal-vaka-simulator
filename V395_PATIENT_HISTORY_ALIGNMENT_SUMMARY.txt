@@ -1,0 +1,13 @@
+KlinikIQ V395 — Patient History Alignment Fix
+
+Scope:
+- Fixes visual misalignment in the PROFİL / BAŞVURU / HASTA ÖYKÜSÜ patient intro cards.
+- Specifically addresses the issue where the HASTA ÖYKÜSÜ title/text could appear too close to, or visually overlap with, the left icon.
+
+Changes:
+- Added a hard-scoped CSS override at the end of src/index.css.
+- Forced summary detail cards and the history block to use the same stable two-column grid.
+- Reset old absolute/flex/inset positioning that could remain on .summary-wide-icon.
+- Unified icon size, spacing, column behavior, and text alignment across all three intro cards.
+- No tags/chips were added.
+- No clinical content, data, or question logic was changed.

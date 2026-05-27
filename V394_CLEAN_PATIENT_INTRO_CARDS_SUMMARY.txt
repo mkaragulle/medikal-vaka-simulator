@@ -1,0 +1,25 @@
+KlinikIQ V394 - Clean Patient Intro Cards Fix
+
+Amaç:
+- Vaka arayüzündeki PROFİL / BAŞVURU / HASTA ÖYKÜSÜ kutularını daha sade, daha temiz ve görsel olarak daha stabil hale getirmek.
+- Yeni tag/chip eklemeden, yalnızca mevcut üç bilgi bloğunun tasarımını iyileştirmek.
+
+Değişiklikler:
+1. src/components/CasePlayer.jsx
+   - PROFİL ikonu User olarak sadeleştirildi.
+   - BAŞVURU ikonu ClipboardList olarak sadeleştirildi.
+   - HASTA ÖYKÜSÜ ikonu Notes olarak sadeleştirildi.
+   - Üç ikon aynı görsel dilde, çizgisel ve minimal olacak şekilde hizalandı.
+
+2. src/index.css
+   - V394 Clean clinical intro cards override eklendi.
+   - Olgu sunumu kartı sade arka plan + net border sistemine alındı.
+   - Ekstra parlama/gölge/gradient/pseudo-layer etkileri kapatıldı.
+   - Profil / Başvuru / Hasta öyküsü kutularında border kaybına yol açabilecek clip, mask, contain, transform ve pseudo-layer etkileri kapatıldı.
+   - Üç bölüm ikonu küçük, uyumlu, minimal ikon tile tasarımına çekildi.
+   - Yeni tag, chip veya ek bilgi bloğu eklenmedi.
+   - Dark mode için ayrı uyumlu border/background düzenlemesi yapıldı.
+
+Build:
+- npm run build başarılı.
+- Sadece mevcut büyük chunk uyarıları var; hata değil.

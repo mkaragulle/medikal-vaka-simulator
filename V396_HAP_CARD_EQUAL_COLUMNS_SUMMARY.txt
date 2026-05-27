@@ -1,0 +1,12 @@
+V396 — Hap Bilgi Kart arayüzü eşit kolon yüksekliği düzeltmesi
+
+Yapılan düzenleme:
+- src/components/tusPearlCards.css dosyasına V396 düzeltmesi eklendi.
+- Hap Bilgi Kart çalışma ekranında sol çalışma kolonu ile sağ kontrol paneli aynı grid yüksekliğine bağlandı.
+- Sağ panelde daha önce uygulanan height: fit-content / align-self: start davranışı override edildi.
+- Sağ panel artık Tekrar Araçları, Oturum ve Kart Araçları bölümlerini aynı viewport yüksekliği içinde dengeli dağıtıyor.
+- Kart Araçları bölümünde Favoriye Ekle, Kataloğa Ekle, Kendi Kartını Oluştur, Kendi Kartıma Kopyala/Kartı Düzenle ve Kartı Sil satırlarının görünür kalması için flex tabanlı yükseklik dağıtımı eklendi.
+- Mobil/tablet kırılımlara dokunulmadı; düzeltme desktop genişliklerinde çalışacak şekilde sınırlandı.
+
+Amaç:
+Sol kolonun hap kart + karar butonları + ileri/geri alanı ile sağ kolonun tekrar/kart araçları paneli görsel olarak aynı yüksekliğe oturmalı ve sağ panel kısa kalmamalıdır.
