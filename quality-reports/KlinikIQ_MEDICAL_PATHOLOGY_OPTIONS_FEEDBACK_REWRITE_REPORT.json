@@ -1,0 +1,760 @@
+{
+  "metrics": {
+    "scannedMedicalPathologyCases": 28,
+    "updatedMedicalPathologyCases": 28,
+    "leftColumnRewrittenCases": 28,
+    "objectiveDataFixedCases": 28,
+    "objectiveLayerEnhancedCases": 28,
+    "labImagingPathologySeparationFixedCases": 28,
+    "irrelevantGenericShortCommentsCleaned": 245,
+    "rewrittenShortComments": 70,
+    "removedOrHiddenUnnecessaryShortCommentRecords": 0,
+    "histopathologyExplanationStrengthenedCases": 26,
+    "ihcOrMolecularDataAddedOrEditedCases": 8,
+    "columnShiftReferenceStatusRowsFixed": 21,
+    "questionStemUpdatedCases": 28,
+    "optionSetStrengthenedCases": 28,
+    "changedOptionTexts": 9,
+    "optionFeedbackRewrittenCount": 140,
+    "clinicalScientificRationaleRewrittenCases": 28,
+    "evidenceChainRewrittenCases": 28,
+    "examPearlCoreKnowledgeStrengthenedCases": 28,
+    "scientificConcernCount": 0,
+    "correctAnswerLogicPreserved": true,
+    "idChanged": false,
+    "tusSpotCasesTouched": false,
+    "genericFeedbackBeforeCount": 54,
+    "genericFeedbackAfterCount": 0
+  },
+  "cases": [
+    {
+      "caseId": "v163-new-008-kronik-malabsorpsiyon-tablosu",
+      "title": "Kronik malabsorpsiyon tablosu",
+      "correctAnswer": "Villus atrofisi, kript hiperplazisi ve intraepitelyal lenfosit artışı",
+      "oldOptions": [
+        "Kript apseleri ve devamlı mukozal ülserasyon",
+        "Transmural granülomatöz inflamasyon",
+        "Villus atrofisi, kript hiperplazisi ve intraepitelyal lenfosit artışı",
+        "Submukozal vasküler ektazi ve hemosiderin birikimi",
+        "Pilorik gland metaplazisi ve Helicobacter benzeri organizmalar"
+      ],
+      "newOptions": [
+        "Kript apseleri ve devamlı mukozal ülserasyon",
+        "Transmural granülomatöz inflamasyon",
+        "Villus atrofisi, kript hiperplazisi ve intraepitelyal lenfosit artışı",
+        "Submukozal vasküler ektazi ve hemosiderin birikimi",
+        "Pilorik gland metaplazisi ve Helicobacter benzeri organizmalar"
+      ],
+      "optionFeedback": {
+        "Kript apseleri ve devamlı mukozal ülserasyon": "Kript apseleri ve rektumdan başlayan devamlı mukozal tutulum ülseratif koliti düşündürür. Bu vakada temel sorun gluten ilişkili malabsorpsiyon ve duodenal villus hasarıdır; kanlı ishal veya kolona sınırlı devamlı ülserasyon paterni verilmemiştir.",
+        "Transmural granülomatöz inflamasyon": "Transmural granülomlar Crohn hastalığında beklenir ve skip lezyon, fistül veya transmural tutulumla ilişkilidir. Bu hastada proksimal ince bağırsak emilim bozukluğu ve çölyak serolojisi ön plandadır.",
+        "Villus atrofisi, kript hiperplazisi ve intraepitelyal lenfosit artışı": "Bu bulgu çölyak hastalığının temel duodenal histopatoloji paternidir. Villus kaybı emilim yüzeyini azaltır; kript hiperplazisi rejenerasyonu, intraepitelyal lenfosit artışı ise gluten ilişkili immün epitel hasarını gösterir.",
+        "Submukozal vasküler ektazi ve hemosiderin birikimi": "Vasküler ektazi daha çok kronik gastrointestinal kanama yapan vasküler lezyonlarda düşünülür. Bu olguda tekrarlayan demir eksikliğinin nedeni kronik kanamadan çok duodenal emilim bozukluğu paternidir.",
+        "Pilorik gland metaplazisi ve Helicobacter benzeri organizmalar": "H. pylori ilişkili kronik gastritte antral inflamasyon ve organizmalar beklenir. Glutenle ilişkili şikâyetler, pozitif anti-tTG IgA ve duodenum hedefli biyopsi bu seçeneği değil çölyak hastalığını destekler."
+      }
+    },
+    {
+      "caseId": "v168-new-056-agrisiz-hematuri-ve-renal-kitle",
+      "title": "Ağrısız hematüri ve renal kortikal kitle",
+      "correctAnswer": "Berrak hücreli renal hücreli karsinom",
+      "oldOptions": [
+        "Ürotelyal karsinom",
+        "Clear cell renal cell carcinoma",
+        "Wilms tümörü",
+        "Renal onkositom",
+        "Anjiyomiyolipom"
+      ],
+      "newOptions": [
+        "Ürotelyal karsinom",
+        "Berrak hücreli renal hücreli karsinom",
+        "Wilms tümörü",
+        "Renal onkositom",
+        "Anjiyomiyolipom"
+      ],
+      "optionFeedback": {
+        "Ürotelyal karsinom": "Ürotelyal karsinom renal pelvis, üreter veya mesane ürotelyumundan gelişir ve papiller/ürotelyal morfoloji beklenir. Bu vakada kitle renal kortekstedir ve berrak sitoplazmalı hücrelerin vasküler ağla ayrılması RCC lehinedir.",
+        "Berrak hücreli renal hücreli karsinom": "Berrak hücreli RCC renal kortekste kontrastlanan solid kitle ve ağrısız hematüriyle tipikleşir. Berrak sitoplazmalı tümör hücrelerinin ince damar ağıyla ayrılması tanıyı morfolojik olarak destekler.",
+        "Wilms tümörü": "Wilms tümörü çocukluk çağının böbrek tümörüdür ve blastemal, epitelyal ve stromal komponentler içerebilir. Bu 62 yaşındaki hastada erişkin renal kortikal kitle ve berrak hücre morfolojisi Wilms tümörüyle uyumlu değildir.",
+        "Renal onkositom": "Renal onkositom benign özellikli, eozinofilik granüler sitoplazmalı onkositlerden oluşur ve santral skar gösterebilir. Bu vakadaki berrak hücreli morfoloji ve ağrısız hematüriyle solid kortikal kitle RCC lehinedir.",
+        "Anjiyomiyolipom": "Anjiyomiyolipom yağ, düz kas ve kalın duvarlı damar bileşenleri içeren benign mezenkimal tümördür; yağ içerikli lezyon ve tüberoskleroz ilişkisi beklenebilir. Bu olguda berrak epitelial tümör hücreleri ve kortikal kontrastlanan kitle ön plandadır."
+      }
+    },
+    {
+      "caseId": "v169-new-066-eriskinde-nefrotik-tablo",
+      "title": "Erişkinde nefrotik tablo",
+      "correctAnswer": "Glomerüler bazal membranda spike and dome görünümü",
+      "oldOptions": [
+        "Kresent oluşumu ve bowman aralığında fibrin birikimi",
+        "Glomerüler bazal membranda spike and dome görünümü",
+        "Mezangial IgA birikimine bağlı mezangial proliferasyon",
+        "Kongo kırmızısı ile elma yeşili çift kırılma",
+        "Nodüler glomerüloskleroz ve kimmelstiel-Wilson nodülleri"
+      ],
+      "newOptions": [
+        "Kresent oluşumu ve Bowman aralığında fibrin birikimi",
+        "Glomerüler bazal membranda spike and dome görünümü",
+        "Mezangial IgA birikimine bağlı mezangial proliferasyon",
+        "Kongo kırmızısı ile elma yeşili çift kırılma",
+        "Nodüler glomerüloskleroz ve Kimmelstiel-Wilson nodülleri"
+      ],
+      "optionFeedback": {
+        "Kresent oluşumu ve Bowman aralığında fibrin birikimi": "Kresentler hızlı ilerleyen glomerülonefritlerde görülür ve nefritik tablo, hızlı kreatinin artışı ve hematuri ile ilişkilidir. Bu vakada belirleyici patern nefrotik proteinüri ve subepitelyal immün kompleks birikimidir.",
+        "Glomerüler bazal membranda spike and dome görünümü": "Spike-and-dome görünümü membranöz nefropatinin klasik morfolojik bulgusudur. Subepitelyal immün kompleksler arasında yeni bazal membran materyali oluşması bu paterni açıklar.",
+        "Mezangial IgA birikimine bağlı mezangial proliferasyon": "Mezangial IgA birikimi IgA nefropatisinde beklenir ve genellikle üst solunum yolu enfeksiyonuyla eş zamanlı hematüri yapar. Bu olguda nefrotik proteinüri ve subepitelyal birikimler ön plandadır.",
+        "Kongo kırmızısı ile elma yeşili çift kırılma": "Bu bulgu amiloidozu gösterir ve kronik inflamasyon/plazma hücre diskrazisi bağlamında amorf ekstrasellüler birikim beklenir. Burada verilen subepitelyal immün kompleks paterni membranöz nefropatiye aittir.",
+        "Nodüler glomerüloskleroz ve Kimmelstiel-Wilson nodülleri": "Kimmelstiel-Wilson nodülleri diyabetik nefropatide beklenir. Diyabet öyküsü yoktur ve EM bulgusu subepitelyal immün kompleks birikimini göstermektedir."
+      }
+    },
+    {
+      "caseId": "v172-new-075-servikal-lenf-nodu-ile-saptanan-tiroid-nodulu",
+      "title": "Servikal lenf nodu ile saptanan tiroid nodülü",
+      "correctAnswer": "Orphan Annie eye nükleusları ve psammoma cisimcikleri",
+      "oldOptions": [
+        "Amiloid stromada kalsitonin üreten C hücre proliferasyonu",
+        "Kapsül ve damar invazyonu gösteren uniform folliküler hücreler",
+        "Anaplastik dev hücreler ve yaygın nekroz",
+        "Orphan Annie eye nükleusları ve psammoma cisimcikleri",
+        "Granülomatöz inflamasyon ve multinükleer dev hücreler"
+      ],
+      "newOptions": [
+        "Amiloid stromada kalsitonin üreten C hücre proliferasyonu",
+        "Kapsül ve damar invazyonu gösteren uniform folliküler hücreler",
+        "Anaplastik dev hücreler ve yaygın nekroz",
+        "Orphan Annie eye nükleusları ve psammoma cisimcikleri",
+        "Granülomatöz inflamasyon ve multinükleer dev hücreler"
+      ],
+      "optionFeedback": {
+        "Amiloid stromada kalsitonin üreten C hücre proliferasyonu": "Medüller tiroid karsinomu C hücrelerinden köken alır, kalsitonin üretir ve stromal amiloid birikimiyle ilişkilidir; papiller karsinomun nükleer yarık/psödoinklüzyon paternini açıklamaz.",
+        "Kapsül ve damar invazyonu gösteren uniform folliküler hücreler": "Folliküler neoplazilerde tanı kapsül veya damar invazyonuna dayanır; papiller karsinomdaki nükleer özellikler ve lenfatik yayılım paterni beklenmez.",
+        "Anaplastik dev hücreler ve yaygın nekroz": "Anaplastik tiroid karsinomu ileri yaşta hızlı büyüyen invaziv kitle, pleomorfik dev hücreler ve nekrozla seyreder; burada yavaş büyüyen nodül ve papiller nükleer bulgular vardır.",
+        "Orphan Annie eye nükleusları ve psammoma cisimcikleri": "Papiller tiroid karsinomu için karakteristik nükleer bulgular Orphan Annie eye görünümü, nükleer yarık ve psödoinklüzyondur; psammoma cisimcikleri mikrokalsifikasyonla korele olabilir.",
+        "Granülomatöz inflamasyon ve multinükleer dev hücreler": "Tiroiditlerde inflamatuvar zemin beklenir; mikrokalsifikasyon, psammoma cisimciği ve papiller nükleer özellikler malign papiller tümörü destekler."
+      }
+    },
+    {
+      "caseId": "v173-new-085-sigara-oykusu-olan-hastada-hiponatremi",
+      "title": "Sigara öyküsü olan hastada hiponatremi",
+      "correctAnswer": "Küçük hücreli akciğer karsinomu",
+      "oldOptions": [
+        "Adenokarsinom",
+        "Skuamöz hücreli karsinom",
+        "Küçük hücreli akciğer karsinomu",
+        "Mezotelyoma",
+        "Pulmoner hamartom"
+      ],
+      "newOptions": [
+        "Akciğer adenokarsinomu",
+        "Akciğer skuamöz hücreli karsinomu",
+        "Küçük hücreli akciğer karsinomu",
+        "Malign mezotelyoma",
+        "Pulmoner karsinoid tümör"
+      ],
+      "optionFeedback": {
+        "Akciğer adenokarsinomu": "Adenokarsinom genellikle periferik yerleşim, glandüler yapı/müsin üretimi ve bazı olgularda EGFR/ALK değişiklikleriyle ilişkilidir. Bu vakada santral-hiler kitle, SIADH ve nükleer molding gösteren küçük mavi hücreli morfoloji küçük hücreli karsinomu destekler.",
+        "Akciğer skuamöz hücreli karsinomu": "Skuamöz karsinom da sigara ilişkili ve santral olabilir; keratin incileri, interselüler köprüler ve PTHrP’ye bağlı hiperkalsemi daha tipiktir. Bu vakada SIADH ve küçük hücreli nöroendokrin morfoloji daha belirleyicidir.",
+        "Küçük hücreli akciğer karsinomu": "Küçük hücreli akciğer karsinomu sigara ilişkili, santral yerleşimli ve nöroendokrin özellikli agresif tümördür. Dar sitoplazmalı küçük hücreler, nükleer molding, nekroz, yüksek Ki-67 ve SIADH tanıyı destekler.",
+        "Malign mezotelyoma": "Mezotelyoma plevra kaynaklıdır, asbest maruziyeti ve diffüz plevral kalınlaşma/efüzyon beklenir. Santral hiler kitle, küçük mavi hücre morfolojisi ve SIADH paterni mezotelyoma için tipik değildir.",
+        "Pulmoner karsinoid tümör": "Pulmoner karsinoid nöroendokrin tümördür ancak daha düşük dereceli, organoid/trabeküler paternli ve daha yavaş seyirlidir. Yaygın nekroz, belirgin nükleer molding, yüksek mitoz ve SIADH küçük hücreli karsinom lehinedir."
+      }
+    },
+    {
+      "caseId": "v174-new-096-agrisiz-servikal-lenfadenopati",
+      "title": "Ağrısız servikal lenfadenopati",
+      "correctAnswer": "Reed-Sternberg hücresi",
+      "oldOptions": [
+        "Reed-Sternberg hücresi",
+        "Auer çubuğu içeren miyeloblast",
+        "Sézary hücresi",
+        "Touton dev hücresi",
+        "Langhans tipi dev hücre"
+      ],
+      "newOptions": [
+        "Reed-Sternberg hücresi",
+        "Auer çubuğu içeren miyeloblast",
+        "Sézary hücresi",
+        "Touton dev hücresi",
+        "Langhans tipi dev hücre"
+      ],
+      "optionFeedback": {
+        "Reed-Sternberg hücresi": "Reed-Sternberg hücresi klasik Hodgkin lenfomanın karakteristik hücresidir; iki çekirdekli “baykuş gözü” nükleollü görünüm ve CD15/CD30 pozitifliği tanıyı destekler.",
+        "Auer çubuğu içeren miyeloblast": "Auer çubukları akut miyeloid lösemide miyeloblast sitoplazmasında görülür. Bu vakada lenf nodu mimarisi, B semptomları ve Reed-Sternberg hücresi Hodgkin lenfomayı destekler.",
+        "Sézary hücresi": "Sézary hücreleri serebriform nükleuslu malign T hücrelerdir ve kutanöz T hücreli lenfoma/Sézary sendromunda beklenir. Servikal lenf nodunda CD15/CD30 pozitif Reed-Sternberg paterni farklıdır.",
+        "Touton dev hücresi": "Touton dev hücresi ksantomatöz lezyonlarda lipid yüklü histiyositlerle ilişkilidir. Hodgkin lenfomadaki büyük atipik hücre morfolojisini açıklamaz.",
+        "Langhans tipi dev hücre": "Langhans dev hücreleri granülomatöz inflamasyonda beklenir. Bu vakada kazeifiye granülom değil, karışık inflamatuvar zeminde Reed-Sternberg hücreleri vardır."
+      }
+    },
+    {
+      "caseId": "v175-new-105-bogaz-enfeksiyonu-sonrasi-koyu-idrar",
+      "title": "Boğaz enfeksiyonu sonrası koyu idrar",
+      "correctAnswer": "Subepitelyal hump benzeri immün kompleks birikimleri",
+      "oldOptions": [
+        "Lineer IgG birikimi",
+        "Subepitelyal hump benzeri immün kompleks birikimleri",
+        "Nodüler glomerüloskleroz",
+        "Mezangial IgA baskın birikimi",
+        "Villus atrofisi ve kript hiperplazisi"
+      ],
+      "newOptions": [
+        "Lineer IgG birikimi",
+        "Subepitelyal hump benzeri immün kompleks birikimleri",
+        "Nodüler glomerüloskleroz",
+        "Mezangial IgA baskın birikimi",
+        "Villus atrofisi ve kript hiperplazisi"
+      ],
+      "optionFeedback": {
+        "Lineer IgG birikimi": "Lineer IgG birikimi farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Subepitelyal hump benzeri immün kompleks birikimleri lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Subepitelyal hump benzeri immün kompleks birikimleri": "Subepitelyal hump benzeri immün kompleks birikimleri, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Poststreptokoksik glomerülonefritte nefritik tablo, ASO yüksekliği, kompleman tüketimi ve EM’de subepitelyal hump birikimleri birlikte beklenir.",
+        "Nodüler glomerüloskleroz": "Nodüler glomerüloskleroz farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Subepitelyal hump benzeri immün kompleks birikimleri lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Mezangial IgA baskın birikimi": "Mezangial IgA baskın birikimi farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Subepitelyal hump benzeri immün kompleks birikimleri lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Villus atrofisi ve kript hiperplazisi": "Villus atrofisi ve kript hiperplazisi farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Subepitelyal hump benzeri immün kompleks birikimleri lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v176-new-115-kronik-inflamasyon-sonrasi-proteinuri",
+      "title": "Kronik inflamasyon sonrası proteinüri",
+      "correctAnswer": "Kongo kırmızısı ile elma yeşili çift kırılma",
+      "oldOptions": [
+        "Kongo kırmızısı ile elma yeşili çift kırılma",
+        "Ziehl-Neelsen ile aside dirençli basil görülmesi",
+        "Prusya mavisi ile demir birikimi",
+        "PAS ile fungal hiflerin gösterilmesi",
+        "Gümüş boyası ile glomerüler bazal membranda spike görünümü"
+      ],
+      "newOptions": [
+        "Kongo kırmızısı ile elma yeşili çift kırılma",
+        "Ziehl-Neelsen ile aside dirençli basil görülmesi",
+        "Prusya mavisi ile demir birikimi",
+        "PAS ile fungal hiflerin gösterilmesi",
+        "Gümüş boyası ile glomerüler bazal membranda spike görünümü"
+      ],
+      "optionFeedback": {
+        "Kongo kırmızısı ile elma yeşili çift kırılma": "Kongo kırmızısı ile elma yeşili çift kırılma, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Kronik inflamasyon serum amiloid A artışı üzerinden AA amiloidoza yol açabilir; böbrekte amorf eozinofilik birikimler Kongo kırmızısı ile elma yeşili çift kırılma gösterir.",
+        "Ziehl-Neelsen ile aside dirençli basil görülmesi": "Ziehl-Neelsen ile aside dirençli basil görülmesi farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kongo kırmızısı ile elma yeşili çift kırılma lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Prusya mavisi ile demir birikimi": "Prusya mavisi ile demir birikimi farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kongo kırmızısı ile elma yeşili çift kırılma lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "PAS ile fungal hiflerin gösterilmesi": "PAS ile fungal hiflerin gösterilmesi farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kongo kırmızısı ile elma yeşili çift kırılma lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Gümüş boyası ile glomerüler bazal membranda spike görünümü": "Gümüş boyası ile glomerüler bazal membranda spike görünümü farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kongo kırmızısı ile elma yeşili çift kırılma lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v176-new-116-gogus-agrisi-sonrasi-ani-kotulesme",
+      "title": "Göğüs ağrısı sonrası ani kötüleşme",
+      "correctAnswer": "Koagülasyon nekrozu ve nötrofil infiltrasyonunun başlaması",
+      "oldOptions": [
+        "Koagülasyon nekrozu ve nötrofil infiltrasyonunun başlaması",
+        "Yoğun makrofaj infiltrasyonu ve yumuşak sarı nekrotik alan",
+        "Kollajen ağırlıklı yoğun skar dokusu",
+        "Reaktif inflamatuvar değişiklik",
+        "Granülomatöz inflamasyon ve kazeöz nekroz"
+      ],
+      "newOptions": [
+        "Koagülasyon nekrozu ve nötrofil infiltrasyonunun başlaması",
+        "Yoğun makrofaj infiltrasyonu ve yumuşak sarı nekrotik alan",
+        "Kollajen ağırlıklı yoğun skar dokusu",
+        "Reaktif inflamatuvar değişiklik",
+        "Granülomatöz inflamasyon ve kazeöz nekroz"
+      ],
+      "optionFeedback": {
+        "Koagülasyon nekrozu ve nötrofil infiltrasyonunun başlaması": "Koagülasyon nekrozu ve nötrofil infiltrasyonunun başlaması, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Miyokard enfarktüsünün ilk 24 saatinde koagülasyon nekrozu belirginleşir ve nötrofil infiltrasyonu başlar; makrofaj baskınlığı daha geç dönemdedir.",
+        "Yoğun makrofaj infiltrasyonu ve yumuşak sarı nekrotik alan": "Yoğun makrofaj infiltrasyonu ve yumuşak sarı nekrotik alan farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Koagülasyon nekrozu ve nötrofil infiltrasyonunun başlaması lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Kollajen ağırlıklı yoğun skar dokusu": "Kollajen ağırlıklı yoğun skar dokusu farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Koagülasyon nekrozu ve nötrofil infiltrasyonunun başlaması lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Reaktif inflamatuvar değişiklik": "Reaktif inflamatuvar değişiklik farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Koagülasyon nekrozu ve nötrofil infiltrasyonunun başlaması lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Granülomatöz inflamasyon ve kazeöz nekroz": "Granülomatöz inflamasyon ve kazeöz nekroz farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Koagülasyon nekrozu ve nötrofil infiltrasyonunun başlaması lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v177-new-129-diskilama-aliskanliginda-degisiklik",
+      "title": "Dışkılama alışkanlığında değişiklik",
+      "correctAnswer": "Kolorektal adenokarsinom",
+      "oldOptions": [
+        "Kolorektal adenokarsinom",
+        "İrritabl bağırsak sendromu",
+        "Akut enfeksiyöz gastroenterit",
+        "Hemoroidal hastalık",
+        "Çölyak hastalığı"
+      ],
+      "newOptions": [
+        "Kolorektal adenokarsinom",
+        "İrritabl bağırsak sendromu",
+        "Akut enfeksiyöz gastroenterit",
+        "Hemoroidal hastalık",
+        "Çölyak hastalığı"
+      ],
+      "optionFeedback": {
+        "Kolorektal adenokarsinom": "Kolorektal adenokarsinom, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Dışkılama alışkanlığında değişiklik, anemi, kilo kaybı ve kolonoskopide lümeni daraltan kitle kolorektal adenokarsinomu düşündürür; biyopside invaziv atipik gland yapıları tanıyı destekler.",
+        "İrritabl bağırsak sendromu": "İrritabl bağırsak sendromu farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kolorektal adenokarsinom lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Akut enfeksiyöz gastroenterit": "Akut enfeksiyöz gastroenterit farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kolorektal adenokarsinom lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Hemoroidal hastalık": "Hemoroidal hastalık farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kolorektal adenokarsinom lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Çölyak hastalığı": "Çölyak hastalığı farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kolorektal adenokarsinom lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v178-new-134-postmenopozal-vajinal-kanama",
+      "title": "Postmenopozal vajinal kanama",
+      "correctAnswer": "Endometrium adenokarsinomu",
+      "oldOptions": [
+        "Endometrium adenokarsinomu",
+        "Servikal skuamöz hücreli karsinom",
+        "Over disgerminomu",
+        "Vulvar lichen sclerosus",
+        "Gestasyonel trofoblastik hastalık"
+      ],
+      "newOptions": [
+        "Endometrium adenokarsinomu",
+        "Servikal skuamöz hücreli karsinom",
+        "Over disgerminomu",
+        "Vulvar lichen sclerosus",
+        "Gestasyonel trofoblastik hastalık"
+      ],
+      "optionFeedback": {
+        "Endometrium adenokarsinomu": "Endometrium adenokarsinomu, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Postmenopozal kanama ve karşılanmamış östrojen risk faktörleri endometrium adenokarsinomunu düşündürür; endometrial biyopside atipik invaziv glandüler proliferasyon tanıyı destekler.",
+        "Servikal skuamöz hücreli karsinom": "Servikal skuamöz hücreli karsinom farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Endometrium adenokarsinomu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Over disgerminomu": "Over disgerminomu farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Endometrium adenokarsinomu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Vulvar lichen sclerosus": "Vulvar lichen sclerosus farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Endometrium adenokarsinomu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Gestasyonel trofoblastik hastalık": "Gestasyonel trofoblastik hastalık farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Endometrium adenokarsinomu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v183-new-187-eriskinde-belirgin-proteinuri",
+      "title": "Erişkinde belirgin proteinüri",
+      "correctAnswer": "Glomerüler bazal membranda spike görünümü",
+      "oldOptions": [
+        "Glomerüler bazal membranda spike görünümü",
+        "Kazeifiye granülom oluşumu",
+        "Reaktif inflamatuvar değişiklik",
+        "Nodüler mezangial glomerüloskleroz",
+        "Subepitelyal hump birikimleri"
+      ],
+      "newOptions": [
+        "Glomerüler bazal membranda spike görünümü",
+        "Kazeifiye granülom oluşumu",
+        "Reaktif inflamatuvar değişiklik",
+        "Nodüler mezangial glomerüloskleroz",
+        "Subepitelyal hump birikimleri"
+      ],
+      "optionFeedback": {
+        "Glomerüler bazal membranda spike görünümü": "Bu seçenek membranöz nefropatinin doğru klinik-patolojik karşılığıdır: nefrotik proteinüri, bazal membran kalınlaşması, spike görünümü ve granüler kapiller duvar IgG-C3 birikimi beklenir.",
+        "Kazeifiye granülom oluşumu": "Bu seçenek membranöz nefropatinin tipik nefrotik sendrom, spike görünümü ve granüler IgG-C3 paternini açıklamaz.",
+        "Reaktif inflamatuvar değişiklik": "Bu seçenek membranöz nefropatinin tipik nefrotik sendrom, spike görünümü ve granüler IgG-C3 paternini açıklamaz.",
+        "Nodüler mezangial glomerüloskleroz": "Nodüler glomerüloskleroz diyabetik nefropatinin bulgusudur; diyabet öyküsü ve nodüler mezangial genişleme verilmemiştir.",
+        "Subepitelyal hump birikimleri": "Subepitelyal hump birikimleri poststreptokoksik glomerülonefritte nefritik tablo ve düşük komplemanla beklenir; burada membranöz nefropati paterni vardır."
+      }
+    },
+    {
+      "caseId": "v184-new-197-apendektomi-materyalinde-inflamasyon",
+      "title": "Apendektomi materyalinde inflamasyon",
+      "correctAnswer": "Apendiks duvarında transmural nötrofil infiltrasyonu",
+      "oldOptions": [
+        "Apendiks duvarında transmural nötrofil infiltrasyonu",
+        "Submukozada nonkazeifiye granülomlar",
+        "Goblet hücreli intestinal metaplazi",
+        "Kongo kırmızısı ile elma yeşili çift kırılma",
+        "Epidermiste akantoz ve hiperkeratoz"
+      ],
+      "newOptions": [
+        "Apendiks duvarında transmural nötrofil infiltrasyonu",
+        "Submukozada nonkazeifiye granülomlar",
+        "Goblet hücreli intestinal metaplazi",
+        "Kongo kırmızısı ile elma yeşili çift kırılma",
+        "Epidermiste akantoz ve hiperkeratoz"
+      ],
+      "optionFeedback": {
+        "Apendiks duvarında transmural nötrofil infiltrasyonu": "Apendiks duvarında transmural nötrofil infiltrasyonu, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Akut apandisit tanısı için lümendeki inflamasyondan çok muskularis propria dahil apendiks duvarında transmural nötrofil infiltrasyonu karakteristiktir.",
+        "Submukozada nonkazeifiye granülomlar": "Submukozada nonkazeifiye granülomlar farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Apendiks duvarında transmural nötrofil infiltrasyonu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Goblet hücreli intestinal metaplazi": "Goblet hücreli intestinal metaplazi farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Apendiks duvarında transmural nötrofil infiltrasyonu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Kongo kırmızısı ile elma yeşili çift kırılma": "Kongo kırmızısı ile elma yeşili çift kırılma farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Apendiks duvarında transmural nötrofil infiltrasyonu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Epidermiste akantoz ve hiperkeratoz": "Epidermiste akantoz ve hiperkeratoz farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Apendiks duvarında transmural nötrofil infiltrasyonu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v185-new-216-kronik-oksuruk-ve-granulom",
+      "title": "Kronik öksürük ve granülom",
+      "correctAnswer": "Kazeifiye granülomatöz inflamasyon",
+      "oldOptions": [
+        "Kazeifiye granülomatöz inflamasyon",
+        "Fibrinoid nekrozlu küçük damar vasküliti",
+        "Saf pürülan abse formasyonu",
+        "Amiloid birikimi",
+        "Displastik skuamöz epitel proliferasyonu"
+      ],
+      "newOptions": [
+        "Kazeifiye granülomatöz inflamasyon",
+        "Fibrinoid nekrozlu küçük damar vasküliti",
+        "Saf pürülan abse formasyonu",
+        "Amiloid birikimi",
+        "Displastik skuamöz epitel proliferasyonu"
+      ],
+      "optionFeedback": {
+        "Kazeifiye granülomatöz inflamasyon": "Kazeifiye granülomatöz inflamasyon, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Tüberkülozda üst lob kaviter lezyon ve merkezinde kazeöz nekroz bulunan epiteloid histiyositli granülomlar klasik kazeifiye granülomatöz inflamasyon paternini oluşturur.",
+        "Fibrinoid nekrozlu küçük damar vasküliti": "Fibrinoid nekrozlu küçük damar vasküliti farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kazeifiye granülomatöz inflamasyon lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Saf pürülan abse formasyonu": "Saf pürülan abse formasyonu farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kazeifiye granülomatöz inflamasyon lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Amiloid birikimi": "Amiloid birikimi farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kazeifiye granülomatöz inflamasyon lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Displastik skuamöz epitel proliferasyonu": "Displastik skuamöz epitel proliferasyonu farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kazeifiye granülomatöz inflamasyon lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v185-new-217-uzun-sureli-reflu-sonrasi-biyopsi-bulgusu",
+      "title": "Uzun süreli reflü sonrası biyopsi bulgusu",
+      "correctAnswer": "Özofagus adenokarsinomu",
+      "oldOptions": [
+        "Özofagus adenokarsinomu",
+        "Özofagus skuamöz hücreli karsinomu",
+        "Gastrik lenfoma",
+        "Kolon nöroendokrin tümörü",
+        "Hepatoselüler karsinom"
+      ],
+      "newOptions": [
+        "Özofagus adenokarsinomu",
+        "Özofagus skuamöz hücreli karsinomu",
+        "Gastrik lenfoma",
+        "Kolon nöroendokrin tümörü",
+        "Hepatoselüler karsinom"
+      ],
+      "optionFeedback": {
+        "Özofagus adenokarsinomu": "Özofagus adenokarsinomu, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Barrett özofagusu distal özofagusta intestinal metaplaziyle tanınır ve kronik GERD zemininde özofagus adenokarsinomu riskini artırır.",
+        "Özofagus skuamöz hücreli karsinomu": "Özofagus skuamöz hücreli karsinomu farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Özofagus adenokarsinomu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Gastrik lenfoma": "Gastrik lenfoma farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Özofagus adenokarsinomu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Kolon nöroendokrin tümörü": "Kolon nöroendokrin tümörü farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Özofagus adenokarsinomu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Hepatoselüler karsinom": "Hepatoselüler karsinom farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Özofagus adenokarsinomu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v185-new-218-tiroid-nodulunde-sitoloji-bulgusu",
+      "title": "Tiroid nodülünde sitoloji bulgusu",
+      "correctAnswer": "Papiller tiroid karsinomu",
+      "oldOptions": [
+        "Papiller tiroid karsinomu",
+        "Folliküler tiroid adenom",
+        "Medüller tiroid karsinomu",
+        "Anaplastik tiroid karsinomu",
+        "Hashimoto tiroiditi"
+      ],
+      "newOptions": [
+        "Papiller tiroid karsinomu",
+        "Folliküler tiroid adenom",
+        "Medüller tiroid karsinomu",
+        "Anaplastik tiroid karsinomu",
+        "Hashimoto tiroiditi"
+      ],
+      "optionFeedback": {
+        "Papiller tiroid karsinomu": "Papiller tiroid karsinomu için karakteristik nükleer bulgular Orphan Annie eye görünümü, nükleer yarık ve psödoinklüzyondur; psammoma cisimcikleri mikrokalsifikasyonla korele olabilir.",
+        "Folliküler tiroid adenom": "Folliküler neoplazilerde tanı kapsül veya damar invazyonuna dayanır; papiller karsinomdaki nükleer özellikler ve lenfatik yayılım paterni beklenmez.",
+        "Medüller tiroid karsinomu": "Medüller tiroid karsinomu C hücrelerinden köken alır, kalsitonin üretir ve stromal amiloid birikimiyle ilişkilidir; papiller karsinomun nükleer yarık/psödoinklüzyon paternini açıklamaz.",
+        "Anaplastik tiroid karsinomu": "Anaplastik tiroid karsinomu ileri yaşta hızlı büyüyen invaziv kitle, pleomorfik dev hücreler ve nekrozla seyreder; burada yavaş büyüyen nodül ve papiller nükleer bulgular vardır.",
+        "Hashimoto tiroiditi": "Tiroiditlerde inflamatuvar zemin beklenir; mikrokalsifikasyon, psammoma cisimciği ve papiller nükleer özellikler malign papiller tümörü destekler."
+      }
+    },
+    {
+      "caseId": "v186-new-236-derin-yumusak-doku-kitlesi",
+      "title": "Derin yumuşak doku kitlesi",
+      "correctAnswer": "İyi diferansiye liposarkom",
+      "oldOptions": [
+        "Lipom",
+        "Nodüler fasiit",
+        "İyi diferansiye liposarkom",
+        "Rabdomiyom",
+        "Ganglion kisti"
+      ],
+      "newOptions": [
+        "Lipom",
+        "Nodüler fasiit",
+        "İyi diferansiye liposarkom",
+        "Rabdomiyom",
+        "Ganglion kisti"
+      ],
+      "optionFeedback": {
+        "Lipom": "Lipom farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları İyi diferansiye liposarkom lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Nodüler fasiit": "Nodüler fasiit farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları İyi diferansiye liposarkom lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "İyi diferansiye liposarkom": "İyi diferansiye liposarkom, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Derin yerleşimli, büyük, kalın septalı yağ içerikli yumuşak doku kitlesinde atipik stromal hücreler ve lipoblastlar iyi diferansiye liposarkomu destekler.",
+        "Rabdomiyom": "Rabdomiyom farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları İyi diferansiye liposarkom lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Ganglion kisti": "Ganglion kisti farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları İyi diferansiye liposarkom lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      },
+      "histopathologyChanged": true
+    },
+    {
+      "caseId": "v187-new-251-boyunda-agrisiz-lenf-nodu",
+      "title": "Boyunda ağrısız lenf nodu",
+      "correctAnswer": "Hodgkin lenfoma",
+      "oldOptions": [
+        "Hodgkin lenfoma",
+        "Akut apandisit",
+        "Burkitt lenfoma",
+        "Multiple miyelom",
+        "Kronik miyeloid lösemi"
+      ],
+      "newOptions": [
+        "Hodgkin lenfoma",
+        "Reaktif lenfadenit",
+        "Burkitt lenfoma",
+        "Multipl miyelom",
+        "Kronik miyeloid lösemi"
+      ],
+      "optionFeedback": {
+        "Hodgkin lenfoma": "Hodgkin lenfoma, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Ağrısız lenfadenopati, B semptomları ve Reed-Sternberg hücreleri Hodgkin lenfomayı destekler; reaktif lenfadenit veya diğer hematolojik hastalıklar bu morfolojiyi açıklamaz.",
+        "Reaktif lenfadenit": "Reaktif lenfadenit farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Hodgkin lenfoma lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Burkitt lenfoma": "Burkitt lenfoma farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Hodgkin lenfoma lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Multipl miyelom": "Multipl miyelom farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Hodgkin lenfoma lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Kronik miyeloid lösemi": "Kronik miyeloid lösemi farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Hodgkin lenfoma lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v188-new-266-gogus-agrisi-sonrasi-miyokard-hasari",
+      "title": "Göğüs ağrısı sonrası miyokard hasarı",
+      "correctAnswer": "Koagülasyon nekrozu",
+      "oldOptions": [
+        "Koagülasyon nekrozu",
+        "Likefaksiyon nekrozu",
+        "Kazeifikasyon nekrozu",
+        "Yağ nekrozu",
+        "Fibrinoid nekroz"
+      ],
+      "newOptions": [
+        "Koagülasyon nekrozu",
+        "Likefaksiyon nekrozu",
+        "Kazeifikasyon nekrozu",
+        "Yağ nekrozu",
+        "Fibrinoid nekroz"
+      ],
+      "optionFeedback": {
+        "Koagülasyon nekrozu": "Koagülasyon nekrozu, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Miyokard enfarktüsü solid organ iskemisine bağlı koagülasyon nekrozu oluşturur; beyin iskemisindeki likefaksiyon veya tüberkülozdaki kazeifikasyon beklenmez.",
+        "Likefaksiyon nekrozu": "Likefaksiyon nekrozu farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Koagülasyon nekrozu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Kazeifikasyon nekrozu": "Kazeifikasyon nekrozu farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Koagülasyon nekrozu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Yağ nekrozu": "Yağ nekrozu farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Koagülasyon nekrozu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Fibrinoid nekroz": "Fibrinoid nekroz farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Koagülasyon nekrozu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v189-new-286-kronik-inflamasyon-sonrasi-proteinuri",
+      "title": "Kronik inflamasyon sonrası proteinüri",
+      "correctAnswer": "Kongo kırmızısı ile elma yeşili çift kırılma",
+      "oldOptions": [
+        "Kongo kırmızısı ile elma yeşili çift kırılma",
+        "Gram boyamada gram-negatif diplokok",
+        "Ziehl-Neelsen ile aside dirençli basil",
+        "PAS negatif tamamen boş glomerüller",
+        "Masson trikrom ile yalnız kalsifikasyon"
+      ],
+      "newOptions": [
+        "Kongo kırmızısı ile elma yeşili çift kırılma",
+        "Gram boyamada gram-negatif diplokok",
+        "Ziehl-Neelsen ile aside dirençli basil",
+        "PAS negatif tamamen boş glomerüller",
+        "Masson trikrom ile yalnız kalsifikasyon"
+      ],
+      "optionFeedback": {
+        "Kongo kırmızısı ile elma yeşili çift kırılma": "Kongo kırmızısı ile elma yeşili çift kırılma, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Kronik inflamasyon zemininde AA amiloid birikimi nefrotik proteinüri yapabilir; Kongo kırmızısı ile boyanıp polarize ışıkta elma yeşili çift kırılma gösterir.",
+        "Gram boyamada gram-negatif diplokok": "Gram boyamada gram-negatif diplokok farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kongo kırmızısı ile elma yeşili çift kırılma lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Ziehl-Neelsen ile aside dirençli basil": "Ziehl-Neelsen ile aside dirençli basil farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kongo kırmızısı ile elma yeşili çift kırılma lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "PAS negatif tamamen boş glomerüller": "PAS negatif tamamen boş glomerüller farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kongo kırmızısı ile elma yeşili çift kırılma lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Masson trikrom ile yalnız kalsifikasyon": "Masson trikrom ile yalnız kalsifikasyon farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Kongo kırmızısı ile elma yeşili çift kırılma lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v189-new-287-uzun-suren-gastrit-sonrasi-metaplazi",
+      "title": "Uzun süren gastrit sonrası metaplazi",
+      "correctAnswer": "İntestinal tip mide adenokarsinomu",
+      "oldOptions": [
+        "İntestinal tip mide adenokarsinomu",
+        "Hepatoselüler karsinom",
+        "Papiller tiroid karsinomu",
+        "Renal hücreli karsinom",
+        "Osteosarkom"
+      ],
+      "newOptions": [
+        "İntestinal tip mide adenokarsinomu",
+        "Hepatoselüler karsinom",
+        "Papiller tiroid karsinomu",
+        "Renal hücreli karsinom",
+        "Osteosarkom"
+      ],
+      "optionFeedback": {
+        "İntestinal tip mide adenokarsinomu": "İntestinal tip mide adenokarsinomu, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Kronik H. pylori gastriti atrofi ve intestinal metaplazi üzerinden intestinal tip mide adenokarsinomu gelişimine zemin hazırlar.",
+        "Hepatoselüler karsinom": "Hepatoselüler karsinom farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları İntestinal tip mide adenokarsinomu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Papiller tiroid karsinomu": "Papiller tiroid karsinomu farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları İntestinal tip mide adenokarsinomu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Renal hücreli karsinom": "Renal hücreli karsinom farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları İntestinal tip mide adenokarsinomu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Osteosarkom": "Osteosarkom farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları İntestinal tip mide adenokarsinomu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v189-new-288-sigara-icen-hastada-hiponatremi",
+      "title": "Sigara içen hastada hiponatremi",
+      "correctAnswer": "Ektopik antidiüretik hormon salgısı",
+      "oldOptions": [
+        "Ektopik antidiüretik hormon salgısı",
+        "Ektopik eritropoietin salgısı",
+        "Paratiroid hormon benzeri peptid salgısı",
+        "İnsülin reseptör blokajı",
+        "Aldosteron yıkımının artması"
+      ],
+      "newOptions": [
+        "Ektopik antidiüretik hormon salgısı",
+        "Ektopik eritropoietin salgısı",
+        "Paratiroid hormon benzeri peptid salgısı",
+        "İnsülin reseptör blokajı",
+        "Aldosteron yıkımının artması"
+      ],
+      "optionFeedback": {
+        "Ektopik antidiüretik hormon salgısı": "Ektopik antidiüretik hormon salgısı, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Küçük hücreli akciğer karsinomu ektopik ADH salgılayarak SIADH oluşturabilir; su tutulumu hipotonik hiponatremi, baş ağrısı ve konfüzyona yol açar.",
+        "Ektopik eritropoietin salgısı": "Ektopik eritropoietin salgısı farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Ektopik antidiüretik hormon salgısı lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Paratiroid hormon benzeri peptid salgısı": "Paratiroid hormon benzeri peptid salgısı farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Ektopik antidiüretik hormon salgısı lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "İnsülin reseptör blokajı": "İnsülin reseptör blokajı farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Ektopik antidiüretik hormon salgısı lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Aldosteron yıkımının artması": "Aldosteron yıkımının artması farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Ektopik antidiüretik hormon salgısı lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v194-new-321-kanli-ishal-ve-rektumdan-baslayan-tutulum",
+      "title": "Kanlı ishal ve rektumdan başlayan tutulum",
+      "correctAnswer": "Ülseratif kolit",
+      "oldOptions": [
+        "Ülseratif kolit",
+        "Crohn hastalığı",
+        "İskemik kolit",
+        "Pseudomembranöz kolit",
+        "İrritabl bağırsak sendromu"
+      ],
+      "newOptions": [
+        "Ülseratif kolit",
+        "Crohn hastalığı",
+        "İskemik kolit",
+        "Pseudomembranöz kolit",
+        "İrritabl bağırsak sendromu"
+      ],
+      "optionFeedback": {
+        "Ülseratif kolit": "Ülseratif kolit, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Ülseratif kolit rektumdan başlayıp proksimale kesintisiz uzanan mukozal inflamasyon yapar; kript apseleri ve kanlı mukuslu ishal tipiktir.",
+        "Crohn hastalığı": "Crohn hastalığı farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Ülseratif kolit lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "İskemik kolit": "İskemik kolit farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Ülseratif kolit lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Pseudomembranöz kolit": "Pseudomembranöz kolit farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Ülseratif kolit lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "İrritabl bağırsak sendromu": "İrritabl bağırsak sendromu farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Ülseratif kolit lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v194-new-322-farenjit-sonrasi-eklem-agrisi-ve-kardit",
+      "title": "Farenjit sonrası eklem ağrısı ve kardit",
+      "correctAnswer": "Aschoff cisimciği",
+      "oldOptions": [
+        "Aschoff cisimciği",
+        "Kazeifiye granülom",
+        "Psammoma cisimciği",
+        "Mallory-Denk cisimciği",
+        "Councilman cisimciği"
+      ],
+      "newOptions": [
+        "Aschoff cisimciği",
+        "Kazeifiye granülom",
+        "Psammoma cisimciği",
+        "Mallory-Denk cisimciği",
+        "Councilman cisimciği"
+      ],
+      "optionFeedback": {
+        "Aschoff cisimciği": "Aschoff cisimciği, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Akut romatizmal ateşte karditte Anitschkow hücreleri içeren Aschoff cisimcikleri görülür; mekanizma streptokok antijenlerine karşı çapraz reaksiyon gösteren immün yanıttır.",
+        "Kazeifiye granülom": "Kazeifiye granülom farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Aschoff cisimciği lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Psammoma cisimciği": "Psammoma cisimciği farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Aschoff cisimciği lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Mallory-Denk cisimciği": "Mallory-Denk cisimciği farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Aschoff cisimciği lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Councilman cisimciği": "Councilman cisimciği farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Aschoff cisimciği lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v194-new-323-ergende-diz-cevresinde-agrili-kitle",
+      "title": "Ergende diz çevresinde ağrılı kitle",
+      "correctAnswer": "Osteosarkom",
+      "oldOptions": [
+        "Osteosarkom",
+        "Ewing sarkomu",
+        "Osteoid osteom",
+        "Kondrosarkom",
+        "Multipl miyelom"
+      ],
+      "newOptions": [
+        "Osteosarkom",
+        "Ewing sarkomu",
+        "Osteoid osteom",
+        "Kondrosarkom",
+        "Multipl miyelom"
+      ],
+      "optionFeedback": {
+        "Osteosarkom": "Osteosarkom, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Ergenlerde metafizer yerleşimli agresif kemik lezyonu, sunburst periost reaksiyonu, Codman üçgeni ve malign osteoid üretimi osteosarkom için karakteristiktir.",
+        "Ewing sarkomu": "Ewing sarkomu farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Osteosarkom lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Osteoid osteom": "Osteoid osteom farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Osteosarkom lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Kondrosarkom": "Kondrosarkom farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Osteosarkom lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Multipl miyelom": "Multipl miyelom farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Osteosarkom lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v195-new-349-eriskinde-nefrotik-proteinuri",
+      "title": "Erişkinde nefrotik proteinüri",
+      "correctAnswer": "Membranöz nefropati",
+      "oldOptions": [
+        "Membranöz nefropati",
+        "Akut tübüler nekroz",
+        "Kresentik glomerülonefrit",
+        "Medüller sünger böbrek",
+        "Basit renal kist"
+      ],
+      "newOptions": [
+        "Membranöz nefropati",
+        "Akut tübüler nekroz",
+        "Kresentik glomerülonefrit",
+        "Medüller sünger böbrek",
+        "Basit renal kist"
+      ],
+      "optionFeedback": {
+        "Membranöz nefropati": "Bu seçenek membranöz nefropatinin doğru klinik-patolojik karşılığıdır: nefrotik proteinüri, bazal membran kalınlaşması, spike görünümü ve granüler kapiller duvar IgG-C3 birikimi beklenir.",
+        "Akut tübüler nekroz": "Akut tübüler nekroz tübüler epitel hasarı ve akut böbrek yetmezliğiyle seyreder; nefrotik düzey proteinüri ve spike görünümü beklenmez.",
+        "Kresentik glomerülonefrit": "Kresentik glomerülonefrit hızlı ilerleyen nefritik tablo ve Bowman aralığında proliferasyon/fibrin ile ilişkilidir; bu vakada nefrotik proteinüri ve spike görünümü vardır.",
+        "Medüller sünger böbrek": "Bu seçenek membranöz nefropatinin tipik nefrotik sendrom, spike görünümü ve granüler IgG-C3 paternini açıklamaz.",
+        "Basit renal kist": "Bu seçenek membranöz nefropatinin tipik nefrotik sendrom, spike görünümü ve granüler IgG-C3 paternini açıklamaz."
+      }
+    },
+    {
+      "caseId": "v195-new-350-anormal-servikal-tarama-sonucu",
+      "title": "Anormal servikal tarama sonucu",
+      "correctAnswer": "Koilositoz",
+      "oldOptions": [
+        "Koilositoz",
+        "Reed-Sternberg hücresi",
+        "Psammoma cisimciği",
+        "Auer çubuğu",
+        "Heinz cisimciği"
+      ],
+      "newOptions": [
+        "Koilositoz",
+        "Reed-Sternberg hücresi",
+        "Psammoma cisimciği",
+        "Auer çubuğu",
+        "Heinz cisimciği"
+      ],
+      "optionFeedback": {
+        "Koilositoz": "Koilositoz, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. HPV ilişkili skuamöz hücrelerde perinükleer halo, nükleer düzensizlik ve hiperkromazi koilositoz olarak adlandırılır; servikal intraepitelyal lezyonların temel sitopatik ipucudur.",
+        "Reed-Sternberg hücresi": "Reed-Sternberg hücresi farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Koilositoz lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Psammoma cisimciği": "Psammoma cisimciği farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Koilositoz lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Auer çubuğu": "Auer çubuğu farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Koilositoz lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Heinz cisimciği": "Heinz cisimciği farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Koilositoz lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    },
+    {
+      "caseId": "v195-new-351-postmenopozal-kanama-ve-over-kitlesi",
+      "title": "Postmenopozal kanama ve over kitlesi",
+      "correctAnswer": "Granüloza hücreli tümör",
+      "oldOptions": [
+        "Granüloza hücreli tümör",
+        "Disgerminom",
+        "Mature kistik teratom",
+        "Sertoli-Leydig hücreli tümör",
+        "Krukenberg tümörü"
+      ],
+      "newOptions": [
+        "Granüloza hücreli tümör",
+        "Disgerminom",
+        "Mature kistik teratom",
+        "Sertoli-Leydig hücreli tümör",
+        "Krukenberg tümörü"
+      ],
+      "optionFeedback": {
+        "Granüloza hücreli tümör": "Granüloza hücreli tümör, verilen klinik ve histopatolojik örüntüyü en iyi açıklar. Granüloza hücreli tümör östrojen üreten seks kord-stromal tümördür; postmenopozal kanama ve endometrial hiperplazi/kalınlaşma yapabilir. Call-Exner cisimcikleri ve kahve çekirdeği nükleuslar tanısaldır.",
+        "Disgerminom": "Disgerminom farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Granüloza hücreli tümör lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Mature kistik teratom": "Mature kistik teratom farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Granüloza hücreli tümör lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Sertoli-Leydig hücreli tümör": "Sertoli-Leydig hücreli tümör farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Granüloza hücreli tümör lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir.",
+        "Krukenberg tümörü": "Krukenberg tümörü farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları Granüloza hücreli tümör lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
+      }
+    }
+  ]
+}

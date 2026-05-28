@@ -1,0 +1,2990 @@
+[
+  {
+    "caseId": "v168-new-055-yenidoganda-okuler-ve-norolojik-bulgular",
+    "title": "Yenidoğanda oküler ve nörolojik bulgular",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 3,
+    "newInvestigations": [
+      {
+        "id": "micro-toxo-seroloji-pcr",
+        "label": "Konjenital enfeksiyon serolojisi ve PCR",
+        "title": "Konjenital enfeksiyon serolojisi ve PCR",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Seroloji / PCR",
+        "summary": "Yenidoğanda pozitif IgM/IgA ve PCR sonucu, transplasental T. gondii enfeksiyonunu destekler; maternal IgG tek başına tanı koydurmaz.",
+        "clinicalMeaning": "Yenidoğanda pozitif IgM/IgA ve PCR sonucu, transplasental T. gondii enfeksiyonunu destekler; maternal IgG tek başına tanı koydurmaz.",
+        "result": {
+          "title": "Konjenital enfeksiyon serolojisi ve PCR",
+          "summary": "Yenidoğanda pozitif IgM/IgA ve PCR sonucu, transplasental T. gondii enfeksiyonunu destekler; maternal IgG tek başına tanı koydurmaz.",
+          "interpretation": "Yenidoğanda pozitif IgM/IgA ve PCR sonucu, transplasental T. gondii enfeksiyonunu destekler; maternal IgG tek başına tanı koydurmaz.",
+          "values": [
+            [
+              "Örnek",
+              "Yenidoğan serum/BOS",
+              "Konjenital enfeksiyon değerlendirmesi",
+              "Uygun örnek"
+            ],
+            [
+              "Toxoplasma IgM/IgA",
+              "Pozitif",
+              "Negatif beklenir",
+              "Konjenital enfeksiyon lehine"
+            ],
+            [
+              "T. gondii PCR",
+              "Pozitif",
+              "Negatif beklenir",
+              "Etkeni destekler"
+            ]
+          ],
+          "rows": [
+            [
+              "Örnek",
+              "Yenidoğan serum/BOS",
+              "Konjenital enfeksiyon değerlendirmesi",
+              "Uygun örnek"
+            ],
+            [
+              "Toxoplasma IgM/IgA",
+              "Pozitif",
+              "Negatif beklenir",
+              "Konjenital enfeksiyon lehine"
+            ],
+            [
+              "T. gondii PCR",
+              "Pozitif",
+              "Negatif beklenir",
+              "Etkeni destekler"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Örnek",
+            "Yenidoğan serum/BOS",
+            "Konjenital enfeksiyon değerlendirmesi",
+            "Uygun örnek"
+          ],
+          [
+            "Toxoplasma IgM/IgA",
+            "Pozitif",
+            "Negatif beklenir",
+            "Konjenital enfeksiyon lehine"
+          ],
+          [
+            "T. gondii PCR",
+            "Pozitif",
+            "Negatif beklenir",
+            "Etkeni destekler"
+          ]
+        ],
+        "postAnswerExplanation": "Yenidoğanda pozitif IgM/IgA ve PCR sonucu, transplasental T. gondii enfeksiyonunu destekler; maternal IgG tek başına tanı koydurmaz.",
+        "interpretation": "Yenidoğanda pozitif IgM/IgA ve PCR sonucu, transplasental T. gondii enfeksiyonunu destekler; maternal IgG tek başına tanı koydurmaz.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Yenidoğanda pozitif IgM/IgA ve PCR sonucu, transplasental T. gondii enfeksiyonunu destekler; maternal IgG tek başına tanı koydurmaz."
+      },
+      {
+        "id": "clinical-toxo-goz",
+        "label": "Oftalmolojik değerlendirme",
+        "title": "Oftalmolojik değerlendirme",
+        "type": "clinical",
+        "priority": "essential",
+        "subtype": "Göz dibi muayenesi",
+        "summary": "Retinokoroidit, konjenital toksoplazmoz triadının en ayırt edici parçalarından biridir ve CMV/rubella gibi TORCH etkenlerinden ayrımda değer taşır.",
+        "clinicalMeaning": "Retinokoroidit, konjenital toksoplazmoz triadının en ayırt edici parçalarından biridir ve CMV/rubella gibi TORCH etkenlerinden ayrımda değer taşır.",
+        "result": {
+          "title": "Oftalmolojik değerlendirme",
+          "summary": "Retinokoroidit, konjenital toksoplazmoz triadının en ayırt edici parçalarından biridir ve CMV/rubella gibi TORCH etkenlerinden ayrımda değer taşır.",
+          "interpretation": "Retinokoroidit, konjenital toksoplazmoz triadının en ayırt edici parçalarından biridir ve CMV/rubella gibi TORCH etkenlerinden ayrımda değer taşır.",
+          "values": [
+            [
+              "Bulgular",
+              "Retinokoroidit odakları",
+              "Normal fundus beklenir",
+              "Tipik bulgu"
+            ]
+          ],
+          "rows": [
+            [
+              "Bulgular",
+              "Retinokoroidit odakları",
+              "Normal fundus beklenir",
+              "Tipik bulgu"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Bulgular",
+            "Retinokoroidit odakları",
+            "Normal fundus beklenir",
+            "Tipik bulgu"
+          ]
+        ],
+        "postAnswerExplanation": "Retinokoroidit, konjenital toksoplazmoz triadının en ayırt edici parçalarından biridir ve CMV/rubella gibi TORCH etkenlerinden ayrımda değer taşır.",
+        "interpretation": "Retinokoroidit, konjenital toksoplazmoz triadının en ayırt edici parçalarından biridir ve CMV/rubella gibi TORCH etkenlerinden ayrımda değer taşır.",
+        "category": "clinicalAssessment",
+        "testTypeCategory": "clinicalAssessment",
+        "explanationAfterAnswer": "Retinokoroidit, konjenital toksoplazmoz triadının en ayırt edici parçalarından biridir ve CMV/rubella gibi TORCH etkenlerinden ayrımda değer taşır."
+      },
+      {
+        "id": "imaging-toxo-kranial",
+        "label": "Kranial ultrasonografi",
+        "title": "Kranial ultrasonografi",
+        "type": "ultrasound",
+        "priority": "essential",
+        "subtype": "Kranial görüntüleme",
+        "summary": "Hidrosefali ile birlikte yaygın intrakraniyal kalsifikasyonlar, annedeki kedi/az pişmiş et maruziyetiyle birleşince T. gondii lehine güçlü bir patern oluşturur.",
+        "clinicalMeaning": "Hidrosefali ile birlikte yaygın intrakraniyal kalsifikasyonlar, annedeki kedi/az pişmiş et maruziyetiyle birleşince T. gondii lehine güçlü bir patern oluşturur.",
+        "result": {
+          "title": "Kranial ultrasonografi",
+          "summary": "Hidrosefali ile birlikte yaygın intrakraniyal kalsifikasyonlar, annedeki kedi/az pişmiş et maruziyetiyle birleşince T. gondii lehine güçlü bir patern oluşturur.",
+          "interpretation": "Hidrosefali ile birlikte yaygın intrakraniyal kalsifikasyonlar, annedeki kedi/az pişmiş et maruziyetiyle birleşince T. gondii lehine güçlü bir patern oluşturur.",
+          "values": [
+            [
+              "Görüntüleme",
+              "Hidrosefali ve yaygın intrakraniyal kalsifikasyonlar",
+              "Normal ventrikül ve parankim",
+              "Konjenital enfeksiyon lehine"
+            ]
+          ],
+          "rows": [
+            [
+              "Görüntüleme",
+              "Hidrosefali ve yaygın intrakraniyal kalsifikasyonlar",
+              "Normal ventrikül ve parankim",
+              "Konjenital enfeksiyon lehine"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Görüntüleme",
+            "Hidrosefali ve yaygın intrakraniyal kalsifikasyonlar",
+            "Normal ventrikül ve parankim",
+            "Konjenital enfeksiyon lehine"
+          ]
+        ],
+        "postAnswerExplanation": "Hidrosefali ile birlikte yaygın intrakraniyal kalsifikasyonlar, annedeki kedi/az pişmiş et maruziyetiyle birleşince T. gondii lehine güçlü bir patern oluşturur.",
+        "interpretation": "Hidrosefali ile birlikte yaygın intrakraniyal kalsifikasyonlar, annedeki kedi/az pişmiş et maruziyetiyle birleşince T. gondii lehine güçlü bir patern oluşturur.",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "explanationAfterAnswer": "Hidrosefali ile birlikte yaygın intrakraniyal kalsifikasyonlar, annedeki kedi/az pişmiş et maruziyetiyle birleşince T. gondii lehine güçlü bir patern oluşturur."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v169-new-064-antibiyotik-sonrasi-ishal",
+    "title": "Antibiyotik sonrası ishal",
+    "oldInvestigationCount": 4,
+    "newInvestigationCount": 2,
+    "newInvestigations": [
+      {
+        "id": "micro-cdiff-diski",
+        "label": "Dışkıda C. difficile toksin/NAAT paneli",
+        "title": "Dışkıda C. difficile toksin/NAAT paneli",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Toksin / NAAT",
+        "summary": "Antibiyotik sonrası sulu ishalde toksijenik C. difficile gösterimi, normal floradaki baskılanma sonrası gelişen toksin aracılı koliti destekler.",
+        "clinicalMeaning": "Antibiyotik sonrası sulu ishalde toksijenik C. difficile gösterimi, normal floradaki baskılanma sonrası gelişen toksin aracılı koliti destekler.",
+        "result": {
+          "title": "Dışkıda C. difficile toksin/NAAT paneli",
+          "summary": "Antibiyotik sonrası sulu ishalde toksijenik C. difficile gösterimi, normal floradaki baskılanma sonrası gelişen toksin aracılı koliti destekler.",
+          "interpretation": "Antibiyotik sonrası sulu ishalde toksijenik C. difficile gösterimi, normal floradaki baskılanma sonrası gelişen toksin aracılı koliti destekler.",
+          "values": [
+            [
+              "Örnek",
+              "Taze sulu dışkı",
+              "Forme dışkıda test önerilmez",
+              "Uygun"
+            ],
+            [
+              "Glutamat dehidrogenaz antijeni",
+              "Pozitif",
+              "Negatif beklenir",
+              "C. difficile varlığını destekler"
+            ],
+            [
+              "Toksin A/B EIA veya toksin geni NAAT",
+              "Pozitif",
+              "Negatif beklenir",
+              "Toksijenik suş lehine"
+            ]
+          ],
+          "rows": [
+            [
+              "Örnek",
+              "Taze sulu dışkı",
+              "Forme dışkıda test önerilmez",
+              "Uygun"
+            ],
+            [
+              "Glutamat dehidrogenaz antijeni",
+              "Pozitif",
+              "Negatif beklenir",
+              "C. difficile varlığını destekler"
+            ],
+            [
+              "Toksin A/B EIA veya toksin geni NAAT",
+              "Pozitif",
+              "Negatif beklenir",
+              "Toksijenik suş lehine"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Örnek",
+            "Taze sulu dışkı",
+            "Forme dışkıda test önerilmez",
+            "Uygun"
+          ],
+          [
+            "Glutamat dehidrogenaz antijeni",
+            "Pozitif",
+            "Negatif beklenir",
+            "C. difficile varlığını destekler"
+          ],
+          [
+            "Toksin A/B EIA veya toksin geni NAAT",
+            "Pozitif",
+            "Negatif beklenir",
+            "Toksijenik suş lehine"
+          ]
+        ],
+        "postAnswerExplanation": "Antibiyotik sonrası sulu ishalde toksijenik C. difficile gösterimi, normal floradaki baskılanma sonrası gelişen toksin aracılı koliti destekler.",
+        "interpretation": "Antibiyotik sonrası sulu ishalde toksijenik C. difficile gösterimi, normal floradaki baskılanma sonrası gelişen toksin aracılı koliti destekler.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Antibiyotik sonrası sulu ishalde toksijenik C. difficile gösterimi, normal floradaki baskılanma sonrası gelişen toksin aracılı koliti destekler."
+      },
+      {
+        "id": "endo-cdiff",
+        "label": "Kolon mukozası değerlendirmesi",
+        "title": "Kolon mukozası değerlendirmesi",
+        "type": "clinical",
+        "priority": "essential",
+        "subtype": "Endoskopik/klinik bulgu",
+        "summary": "Psödomembran varlığı toksin A/B aracılı mukozal hasarı destekler; tanı ve tedavi için dışkı toksin/NAAT sonucu klinikle birlikte yorumlanır.",
+        "clinicalMeaning": "Psödomembran varlığı toksin A/B aracılı mukozal hasarı destekler; tanı ve tedavi için dışkı toksin/NAAT sonucu klinikle birlikte yorumlanır.",
+        "result": {
+          "title": "Kolon mukozası değerlendirmesi",
+          "summary": "Psödomembran varlığı toksin A/B aracılı mukozal hasarı destekler; tanı ve tedavi için dışkı toksin/NAAT sonucu klinikle birlikte yorumlanır.",
+          "interpretation": "Psödomembran varlığı toksin A/B aracılı mukozal hasarı destekler; tanı ve tedavi için dışkı toksin/NAAT sonucu klinikle birlikte yorumlanır.",
+          "values": [
+            [
+              "Bulgular",
+              "Sarı-beyaz plak tarzı psödomembranlar",
+              "Normal mukoza",
+              "Psödomembranöz kolit lehine"
+            ]
+          ],
+          "rows": [
+            [
+              "Bulgular",
+              "Sarı-beyaz plak tarzı psödomembranlar",
+              "Normal mukoza",
+              "Psödomembranöz kolit lehine"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Bulgular",
+            "Sarı-beyaz plak tarzı psödomembranlar",
+            "Normal mukoza",
+            "Psödomembranöz kolit lehine"
+          ]
+        ],
+        "postAnswerExplanation": "Psödomembran varlığı toksin A/B aracılı mukozal hasarı destekler; tanı ve tedavi için dışkı toksin/NAAT sonucu klinikle birlikte yorumlanır.",
+        "interpretation": "Psödomembran varlığı toksin A/B aracılı mukozal hasarı destekler; tanı ve tedavi için dışkı toksin/NAAT sonucu klinikle birlikte yorumlanır.",
+        "category": "gastrointestinal",
+        "testTypeCategory": "gastrointestinal",
+        "explanationAfterAnswer": "Psödomembran varlığı toksin A/B aracılı mukozal hasarı destekler; tanı ve tedavi için dışkı toksin/NAAT sonucu klinikle birlikte yorumlanır."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v172-new-073-kirli-yara-sonrasi-kas-spazmlari",
+    "title": "Kirli yara sonrası kas spazmları",
+    "oldInvestigationCount": 1,
+    "newInvestigationCount": 3,
+    "newInvestigations": [
+      {
+        "id": "clinical-tetanoz-yara",
+        "label": "Kirli derin yara değerlendirmesi",
+        "title": "Kirli derin yara değerlendirmesi",
+        "type": "clinical",
+        "priority": "essential",
+        "subtype": "Lokal yara muayenesi",
+        "summary": "Toprakla kontamine derin penetran yara ve belirsiz aşı öyküsü, C. tetani sporlarının anaerobik yara ortamında tetanospazmin üretmesi için tipik risk zeminidir.",
+        "clinicalMeaning": "Toprakla kontamine derin penetran yara ve belirsiz aşı öyküsü, C. tetani sporlarının anaerobik yara ortamında tetanospazmin üretmesi için tipik risk zeminidir.",
+        "result": {
+          "title": "Kirli derin yara değerlendirmesi",
+          "summary": "Toprakla kontamine derin penetran yara ve belirsiz aşı öyküsü, C. tetani sporlarının anaerobik yara ortamında tetanospazmin üretmesi için tipik risk zeminidir.",
+          "interpretation": "Toprakla kontamine derin penetran yara ve belirsiz aşı öyküsü, C. tetani sporlarının anaerobik yara ortamında tetanospazmin üretmesi için tipik risk zeminidir.",
+          "values": [
+            [
+              "Lokal klinik bulgu",
+              "Ayak tabanında toprakla kontamine, derin ve düzensiz kenarlı iyileşmekte olan penetran yara",
+              "Sağlam/temiz doku",
+              "Riskli yara"
+            ]
+          ],
+          "rows": [
+            [
+              "Lokal klinik bulgu",
+              "Ayak tabanında toprakla kontamine, derin ve düzensiz kenarlı iyileşmekte olan penetran yara",
+              "Sağlam/temiz doku",
+              "Riskli yara"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Lokal klinik bulgu",
+            "Ayak tabanında toprakla kontamine, derin ve düzensiz kenarlı iyileşmekte olan penetran yara",
+            "Sağlam/temiz doku",
+            "Riskli yara"
+          ]
+        ],
+        "postAnswerExplanation": "Toprakla kontamine derin penetran yara ve belirsiz aşı öyküsü, C. tetani sporlarının anaerobik yara ortamında tetanospazmin üretmesi için tipik risk zeminidir.",
+        "interpretation": "Toprakla kontamine derin penetran yara ve belirsiz aşı öyküsü, C. tetani sporlarının anaerobik yara ortamında tetanospazmin üretmesi için tipik risk zeminidir.",
+        "category": "clinicalAssessment",
+        "testTypeCategory": "clinicalAssessment",
+        "explanationAfterAnswer": "Toprakla kontamine derin penetran yara ve belirsiz aşı öyküsü, C. tetani sporlarının anaerobik yara ortamında tetanospazmin üretmesi için tipik risk zeminidir."
+      },
+      {
+        "id": "clinical-tetanoz-noro",
+        "label": "Nöromüsküler klinik değerlendirme",
+        "title": "Nöromüsküler klinik değerlendirme",
+        "type": "clinical",
+        "priority": "essential",
+        "subtype": "Nörolojik değerlendirme",
+        "summary": "Bilinç açıkken uyarıyla artan rijid kas spazmları, santral inhibitör internöron blokajına bağlı tetanoz toksini etkisini düşündürür.",
+        "clinicalMeaning": "Bilinç açıkken uyarıyla artan rijid kas spazmları, santral inhibitör internöron blokajına bağlı tetanoz toksini etkisini düşündürür.",
+        "result": {
+          "title": "Nöromüsküler klinik değerlendirme",
+          "summary": "Bilinç açıkken uyarıyla artan rijid kas spazmları, santral inhibitör internöron blokajına bağlı tetanoz toksini etkisini düşündürür.",
+          "interpretation": "Bilinç açıkken uyarıyla artan rijid kas spazmları, santral inhibitör internöron blokajına bağlı tetanoz toksini etkisini düşündürür.",
+          "values": [
+            [
+              "Bulgular",
+              "Trismus, risus sardonicus ve uyarıyla artan yaygın kas spazmları; bilinç açık",
+              "Kas tonusu ve bilinç normal",
+              "Tetanoz paterni"
+            ]
+          ],
+          "rows": [
+            [
+              "Bulgular",
+              "Trismus, risus sardonicus ve uyarıyla artan yaygın kas spazmları; bilinç açık",
+              "Kas tonusu ve bilinç normal",
+              "Tetanoz paterni"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Bulgular",
+            "Trismus, risus sardonicus ve uyarıyla artan yaygın kas spazmları; bilinç açık",
+            "Kas tonusu ve bilinç normal",
+            "Tetanoz paterni"
+          ]
+        ],
+        "postAnswerExplanation": "Bilinç açıkken uyarıyla artan rijid kas spazmları, santral inhibitör internöron blokajına bağlı tetanoz toksini etkisini düşündürür.",
+        "interpretation": "Bilinç açıkken uyarıyla artan rijid kas spazmları, santral inhibitör internöron blokajına bağlı tetanoz toksini etkisini düşündürür.",
+        "category": "neurologic",
+        "testTypeCategory": "neurologic",
+        "explanationAfterAnswer": "Bilinç açıkken uyarıyla artan rijid kas spazmları, santral inhibitör internöron blokajına bağlı tetanoz toksini etkisini düşündürür."
+      },
+      {
+        "id": "micro-tetanoz-not",
+        "label": "Tetanozda mikrobiyolojik tanı notu",
+        "title": "Tetanozda mikrobiyolojik tanı notu",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Klinik tanı notu",
+        "summary": "Tetanozda tedavi kültür sonucunu beklememelidir; yara temizliği, insan tetanoz immünoglobulini, uygun antibiyotik ve aktif immünizasyon birlikte planlanır.",
+        "clinicalMeaning": "Tetanozda tedavi kültür sonucunu beklememelidir; yara temizliği, insan tetanoz immünoglobulini, uygun antibiyotik ve aktif immünizasyon birlikte planlanır.",
+        "result": {
+          "title": "Tetanozda mikrobiyolojik tanı notu",
+          "summary": "Tetanozda tedavi kültür sonucunu beklememelidir; yara temizliği, insan tetanoz immünoglobulini, uygun antibiyotik ve aktif immünizasyon birlikte planlanır.",
+          "interpretation": "Tetanozda tedavi kültür sonucunu beklememelidir; yara temizliği, insan tetanoz immünoglobulini, uygun antibiyotik ve aktif immünizasyon birlikte planlanır.",
+          "values": [
+            [
+              "Tanı yaklaşımı",
+              "Klinik tanı ön planda; yara kültürü negatifliği dışlatmaz",
+              "Kültür sonucu beklenerek tedavi ertelenmez",
+              "Acil yaklaşım gerekir"
+            ]
+          ],
+          "rows": [
+            [
+              "Tanı yaklaşımı",
+              "Klinik tanı ön planda; yara kültürü negatifliği dışlatmaz",
+              "Kültür sonucu beklenerek tedavi ertelenmez",
+              "Acil yaklaşım gerekir"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Tanı yaklaşımı",
+            "Klinik tanı ön planda; yara kültürü negatifliği dışlatmaz",
+            "Kültür sonucu beklenerek tedavi ertelenmez",
+            "Acil yaklaşım gerekir"
+          ]
+        ],
+        "postAnswerExplanation": "Tetanozda tedavi kültür sonucunu beklememelidir; yara temizliği, insan tetanoz immünoglobulini, uygun antibiyotik ve aktif immünizasyon birlikte planlanır.",
+        "interpretation": "Tetanozda tedavi kültür sonucunu beklememelidir; yara temizliği, insan tetanoz immünoglobulini, uygun antibiyotik ve aktif immünizasyon birlikte planlanır.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Tetanozda tedavi kültür sonucunu beklememelidir; yara temizliği, insan tetanoz immünoglobulini, uygun antibiyotik ve aktif immünizasyon birlikte planlanır."
+      }
+    ],
+    "cleanedGenericPhrases": [
+      "olasılığını destekler",
+      "karar tek parametreyle",
+      "klinik örüntüyle birlikte"
+    ]
+  },
+  {
+    "caseId": "v172-new-079-yanik-yarasinda-kotulesen-enfeksiyon",
+    "title": "Yanık yarasında kötüleşen enfeksiyon",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 2,
+    "newInvestigations": [
+      {
+        "id": "micro-pseudomonas-yara",
+        "label": "Yara sürüntüsü Gram boyama ve kültür",
+        "title": "Yara sürüntüsü Gram boyama ve kültür",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Gram boyama / kültür",
+        "summary": "Yanık yarasında nemli ortam, yeşil pigmentli akıntı ve oksidaz pozitif non-fermenter gram negatif basil P. aeruginosa enfeksiyonunu destekler.",
+        "clinicalMeaning": "Yanık yarasında nemli ortam, yeşil pigmentli akıntı ve oksidaz pozitif non-fermenter gram negatif basil P. aeruginosa enfeksiyonunu destekler.",
+        "result": {
+          "title": "Yara sürüntüsü Gram boyama ve kültür",
+          "summary": "Yanık yarasında nemli ortam, yeşil pigmentli akıntı ve oksidaz pozitif non-fermenter gram negatif basil P. aeruginosa enfeksiyonunu destekler.",
+          "interpretation": "Yanık yarasında nemli ortam, yeşil pigmentli akıntı ve oksidaz pozitif non-fermenter gram negatif basil P. aeruginosa enfeksiyonunu destekler.",
+          "values": [
+            [
+              "Gram boyama",
+              "Gram negatif çomaklar",
+              "Steril doku/negatif",
+              "Patojen lehine"
+            ],
+            [
+              "Kültür",
+              "Oksidaz pozitif, non-fermenter gram negatif basil; yeşil pigment",
+              "Üreme olmaması beklenir",
+              "Pseudomonas paterni"
+            ],
+            [
+              "Koku/pigment",
+              "Üzüm benzeri koku ve pyosiyanin-pyoverdin pigmenti",
+              "Yok",
+              "Destekleyici"
+            ]
+          ],
+          "rows": [
+            [
+              "Gram boyama",
+              "Gram negatif çomaklar",
+              "Steril doku/negatif",
+              "Patojen lehine"
+            ],
+            [
+              "Kültür",
+              "Oksidaz pozitif, non-fermenter gram negatif basil; yeşil pigment",
+              "Üreme olmaması beklenir",
+              "Pseudomonas paterni"
+            ],
+            [
+              "Koku/pigment",
+              "Üzüm benzeri koku ve pyosiyanin-pyoverdin pigmenti",
+              "Yok",
+              "Destekleyici"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Gram boyama",
+            "Gram negatif çomaklar",
+            "Steril doku/negatif",
+            "Patojen lehine"
+          ],
+          [
+            "Kültür",
+            "Oksidaz pozitif, non-fermenter gram negatif basil; yeşil pigment",
+            "Üreme olmaması beklenir",
+            "Pseudomonas paterni"
+          ],
+          [
+            "Koku/pigment",
+            "Üzüm benzeri koku ve pyosiyanin-pyoverdin pigmenti",
+            "Yok",
+            "Destekleyici"
+          ]
+        ],
+        "postAnswerExplanation": "Yanık yarasında nemli ortam, yeşil pigmentli akıntı ve oksidaz pozitif non-fermenter gram negatif basil P. aeruginosa enfeksiyonunu destekler.",
+        "interpretation": "Yanık yarasında nemli ortam, yeşil pigmentli akıntı ve oksidaz pozitif non-fermenter gram negatif basil P. aeruginosa enfeksiyonunu destekler.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Yanık yarasında nemli ortam, yeşil pigmentli akıntı ve oksidaz pozitif non-fermenter gram negatif basil P. aeruginosa enfeksiyonunu destekler."
+      },
+      {
+        "id": "micro-pseudo-toxin",
+        "label": "Virülans mekanizması notu",
+        "title": "Virülans mekanizması notu",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Toksin mekanizması",
+        "summary": "P. aeruginosa Exotoxin A, difteri toksinine benzer şekilde EF-2’yi ADP-ribozilleyerek protein sentezini durdurur ve nekrotizan doku hasarına katkı sağlar.",
+        "clinicalMeaning": "P. aeruginosa Exotoxin A, difteri toksinine benzer şekilde EF-2’yi ADP-ribozilleyerek protein sentezini durdurur ve nekrotizan doku hasarına katkı sağlar.",
+        "result": {
+          "title": "Virülans mekanizması notu",
+          "summary": "P. aeruginosa Exotoxin A, difteri toksinine benzer şekilde EF-2’yi ADP-ribozilleyerek protein sentezini durdurur ve nekrotizan doku hasarına katkı sağlar.",
+          "interpretation": "P. aeruginosa Exotoxin A, difteri toksinine benzer şekilde EF-2’yi ADP-ribozilleyerek protein sentezini durdurur ve nekrotizan doku hasarına katkı sağlar.",
+          "values": [
+            [
+              "Toksin",
+              "Exotoxin A",
+              "Yok",
+              "Doku hasarı riski"
+            ],
+            [
+              "Hücresel hedef",
+              "EF-2 ADP-ribozilasyonu",
+              "Protein sentezi normal",
+              "Protein sentezi inhibisyonu"
+            ]
+          ],
+          "rows": [
+            [
+              "Toksin",
+              "Exotoxin A",
+              "Yok",
+              "Doku hasarı riski"
+            ],
+            [
+              "Hücresel hedef",
+              "EF-2 ADP-ribozilasyonu",
+              "Protein sentezi normal",
+              "Protein sentezi inhibisyonu"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Toksin",
+            "Exotoxin A",
+            "Yok",
+            "Doku hasarı riski"
+          ],
+          [
+            "Hücresel hedef",
+            "EF-2 ADP-ribozilasyonu",
+            "Protein sentezi normal",
+            "Protein sentezi inhibisyonu"
+          ]
+        ],
+        "postAnswerExplanation": "P. aeruginosa Exotoxin A, difteri toksinine benzer şekilde EF-2’yi ADP-ribozilleyerek protein sentezini durdurur ve nekrotizan doku hasarına katkı sağlar.",
+        "interpretation": "P. aeruginosa Exotoxin A, difteri toksinine benzer şekilde EF-2’yi ADP-ribozilleyerek protein sentezini durdurur ve nekrotizan doku hasarına katkı sağlar.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "P. aeruginosa Exotoxin A, difteri toksinine benzer şekilde EF-2’yi ADP-ribozilleyerek protein sentezini durdurur ve nekrotizan doku hasarına katkı sağlar."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v173-new-083-atipik-pnomoni-ve-hiponatremi",
+    "title": "Atipik pnömoni ve hiponatremi",
+    "oldInvestigationCount": 5,
+    "newInvestigationCount": 2,
+    "newInvestigations": [
+      {
+        "id": "micro-legionella-antijen",
+        "label": "Legionella idrar antijen testi ve kültür",
+        "title": "Legionella idrar antijen testi ve kültür",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Antijen / kültür",
+        "summary": "Su sistemleriyle ilişkili atipik pnömonide idrar antijen pozitifliği Legionella pneumophila lehinedir; kültür için BCYE gibi özel besiyeri gerekir.",
+        "clinicalMeaning": "Su sistemleriyle ilişkili atipik pnömonide idrar antijen pozitifliği Legionella pneumophila lehinedir; kültür için BCYE gibi özel besiyeri gerekir.",
+        "result": {
+          "title": "Legionella idrar antijen testi ve kültür",
+          "summary": "Su sistemleriyle ilişkili atipik pnömonide idrar antijen pozitifliği Legionella pneumophila lehinedir; kültür için BCYE gibi özel besiyeri gerekir.",
+          "interpretation": "Su sistemleriyle ilişkili atipik pnömonide idrar antijen pozitifliği Legionella pneumophila lehinedir; kültür için BCYE gibi özel besiyeri gerekir.",
+          "values": [
+            [
+              "İdrar antijeni",
+              "Legionella pneumophila serogrup 1 pozitif",
+              "Negatif",
+              "Tanısal destek"
+            ],
+            [
+              "Balgam kültürü",
+              "BCYE agarda üreme beklenir",
+              "Standart kültürde üremeyebilir",
+              "Özel besiyeri gerekir"
+            ]
+          ],
+          "rows": [
+            [
+              "İdrar antijeni",
+              "Legionella pneumophila serogrup 1 pozitif",
+              "Negatif",
+              "Tanısal destek"
+            ],
+            [
+              "Balgam kültürü",
+              "BCYE agarda üreme beklenir",
+              "Standart kültürde üremeyebilir",
+              "Özel besiyeri gerekir"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "İdrar antijeni",
+            "Legionella pneumophila serogrup 1 pozitif",
+            "Negatif",
+            "Tanısal destek"
+          ],
+          [
+            "Balgam kültürü",
+            "BCYE agarda üreme beklenir",
+            "Standart kültürde üremeyebilir",
+            "Özel besiyeri gerekir"
+          ]
+        ],
+        "postAnswerExplanation": "Su sistemleriyle ilişkili atipik pnömonide idrar antijen pozitifliği Legionella pneumophila lehinedir; kültür için BCYE gibi özel besiyeri gerekir.",
+        "interpretation": "Su sistemleriyle ilişkili atipik pnömonide idrar antijen pozitifliği Legionella pneumophila lehinedir; kültür için BCYE gibi özel besiyeri gerekir.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Su sistemleriyle ilişkili atipik pnömonide idrar antijen pozitifliği Legionella pneumophila lehinedir; kültür için BCYE gibi özel besiyeri gerekir."
+      },
+      {
+        "id": "lab-legionella-sodyum",
+        "label": "Temel biyokimya",
+        "title": "Temel biyokimya",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Pnömoniye eşlik eden hiponatremi ve gastrointestinal/nörolojik bulgular Legionella paternini güçlendirir.",
+        "clinicalMeaning": "Pnömoniye eşlik eden hiponatremi ve gastrointestinal/nörolojik bulgular Legionella paternini güçlendirir.",
+        "result": {
+          "title": "Temel biyokimya",
+          "summary": "Pnömoniye eşlik eden hiponatremi ve gastrointestinal/nörolojik bulgular Legionella paternini güçlendirir.",
+          "interpretation": "Pnömoniye eşlik eden hiponatremi ve gastrointestinal/nörolojik bulgular Legionella paternini güçlendirir.",
+          "values": [
+            [
+              "Sodyum",
+              "126 mmol/L",
+              "135-145 mmol/L",
+              "Hiponatremi"
+            ],
+            [
+              "CRP",
+              "Yüksek",
+              "Düşük/normal",
+              "Enfeksiyon lehine"
+            ]
+          ],
+          "rows": [
+            [
+              "Sodyum",
+              "126 mmol/L",
+              "135-145 mmol/L",
+              "Hiponatremi"
+            ],
+            [
+              "CRP",
+              "Yüksek",
+              "Düşük/normal",
+              "Enfeksiyon lehine"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Sodyum",
+            "126 mmol/L",
+            "135-145 mmol/L",
+            "Hiponatremi"
+          ],
+          [
+            "CRP",
+            "Yüksek",
+            "Düşük/normal",
+            "Enfeksiyon lehine"
+          ]
+        ],
+        "postAnswerExplanation": "Pnömoniye eşlik eden hiponatremi ve gastrointestinal/nörolojik bulgular Legionella paternini güçlendirir.",
+        "interpretation": "Pnömoniye eşlik eden hiponatremi ve gastrointestinal/nörolojik bulgular Legionella paternini güçlendirir.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Pnömoniye eşlik eden hiponatremi ve gastrointestinal/nörolojik bulgular Legionella paternini güçlendirir."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v173-new-084-ates-ve-yaygin-lenfadenopati",
+    "title": "Ateş ve yaygın lenfadenopati",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-ebv-test",
+        "label": "EBV seroloji ve heterofil antikor",
+        "title": "EBV seroloji ve heterofil antikor",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Seroloji / yayma",
+        "summary": "Heterofil antikor ve VCA IgM pozitifliği, EBV enfeksiyöz mononükleozunu destekler; atipik lenfositler enfekte B hücrelerine karşı gelişen T hücre yanıtını yansıtır.",
+        "clinicalMeaning": "Heterofil antikor ve VCA IgM pozitifliği, EBV enfeksiyöz mononükleozunu destekler; atipik lenfositler enfekte B hücrelerine karşı gelişen T hücre yanıtını yansıtır.",
+        "result": {
+          "title": "EBV seroloji ve heterofil antikor",
+          "summary": "Heterofil antikor ve VCA IgM pozitifliği, EBV enfeksiyöz mononükleozunu destekler; atipik lenfositler enfekte B hücrelerine karşı gelişen T hücre yanıtını yansıtır.",
+          "interpretation": "Heterofil antikor ve VCA IgM pozitifliği, EBV enfeksiyöz mononükleozunu destekler; atipik lenfositler enfekte B hücrelerine karşı gelişen T hücre yanıtını yansıtır.",
+          "values": [
+            [
+              "Heterofil antikor",
+              "Pozitif",
+              "Negatif",
+              "EBV lehine"
+            ],
+            [
+              "VCA IgM",
+              "Pozitif",
+              "Negatif",
+              "Akut enfeksiyon"
+            ],
+            [
+              "Periferik yayma",
+              "Atipik lenfositler",
+              "Yok",
+              "Reaktif T hücre yanıtı"
+            ]
+          ],
+          "rows": [
+            [
+              "Heterofil antikor",
+              "Pozitif",
+              "Negatif",
+              "EBV lehine"
+            ],
+            [
+              "VCA IgM",
+              "Pozitif",
+              "Negatif",
+              "Akut enfeksiyon"
+            ],
+            [
+              "Periferik yayma",
+              "Atipik lenfositler",
+              "Yok",
+              "Reaktif T hücre yanıtı"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Heterofil antikor",
+            "Pozitif",
+            "Negatif",
+            "EBV lehine"
+          ],
+          [
+            "VCA IgM",
+            "Pozitif",
+            "Negatif",
+            "Akut enfeksiyon"
+          ],
+          [
+            "Periferik yayma",
+            "Atipik lenfositler",
+            "Yok",
+            "Reaktif T hücre yanıtı"
+          ]
+        ],
+        "postAnswerExplanation": "Heterofil antikor ve VCA IgM pozitifliği, EBV enfeksiyöz mononükleozunu destekler; atipik lenfositler enfekte B hücrelerine karşı gelişen T hücre yanıtını yansıtır.",
+        "interpretation": "Heterofil antikor ve VCA IgM pozitifliği, EBV enfeksiyöz mononükleozunu destekler; atipik lenfositler enfekte B hücrelerine karşı gelişen T hücre yanıtını yansıtır.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Heterofil antikor ve VCA IgM pozitifliği, EBV enfeksiyöz mononükleozunu destekler; atipik lenfositler enfekte B hücrelerine karşı gelişen T hücre yanıtını yansıtır."
+      }
+    ],
+    "cleanedGenericPhrases": [
+      "olasılığını destekler",
+      "karar tek parametreyle",
+      "klinik örüntüyle birlikte"
+    ]
+  },
+  {
+    "caseId": "v174-new-098-dis-islemi-sonrasi-subakut-ates",
+    "title": "Diş işlemi sonrası subakut ateş",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-hacek-kan-kultur",
+        "label": "Uzamış inkübasyonlu kan kültürü",
+        "title": "Uzamış inkübasyonlu kan kültürü",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Kan kültürü",
+        "summary": "Diş işlemi sonrası subakut endokarditte yavaş üreyen orofaringeal gram negatif kokobasiller HACEK grubunu düşündürür; erken negatif kültür tanıyı dışlamaz.",
+        "clinicalMeaning": "Diş işlemi sonrası subakut endokarditte yavaş üreyen orofaringeal gram negatif kokobasiller HACEK grubunu düşündürür; erken negatif kültür tanıyı dışlamaz.",
+        "result": {
+          "title": "Uzamış inkübasyonlu kan kültürü",
+          "summary": "Diş işlemi sonrası subakut endokarditte yavaş üreyen orofaringeal gram negatif kokobasiller HACEK grubunu düşündürür; erken negatif kültür tanıyı dışlamaz.",
+          "interpretation": "Diş işlemi sonrası subakut endokarditte yavaş üreyen orofaringeal gram negatif kokobasiller HACEK grubunu düşündürür; erken negatif kültür tanıyı dışlamaz.",
+          "values": [
+            [
+              "Örnek",
+              "Üç ayrı kan kültürü seti",
+              "Steril",
+              "Uygun"
+            ],
+            [
+              "Üreme",
+              "Yavaş üreyen gram negatif kokobasil",
+              "Üreme yok",
+              "HACEK lehine"
+            ],
+            [
+              "Klinik bağlam",
+              "Orofarenks florası ve diş işlemi",
+              "Yok",
+              "Kaynak uyumlu"
+            ]
+          ],
+          "rows": [
+            [
+              "Örnek",
+              "Üç ayrı kan kültürü seti",
+              "Steril",
+              "Uygun"
+            ],
+            [
+              "Üreme",
+              "Yavaş üreyen gram negatif kokobasil",
+              "Üreme yok",
+              "HACEK lehine"
+            ],
+            [
+              "Klinik bağlam",
+              "Orofarenks florası ve diş işlemi",
+              "Yok",
+              "Kaynak uyumlu"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Örnek",
+            "Üç ayrı kan kültürü seti",
+            "Steril",
+            "Uygun"
+          ],
+          [
+            "Üreme",
+            "Yavaş üreyen gram negatif kokobasil",
+            "Üreme yok",
+            "HACEK lehine"
+          ],
+          [
+            "Klinik bağlam",
+            "Orofarenks florası ve diş işlemi",
+            "Yok",
+            "Kaynak uyumlu"
+          ]
+        ],
+        "postAnswerExplanation": "Diş işlemi sonrası subakut endokarditte yavaş üreyen orofaringeal gram negatif kokobasiller HACEK grubunu düşündürür; erken negatif kültür tanıyı dışlamaz.",
+        "interpretation": "Diş işlemi sonrası subakut endokarditte yavaş üreyen orofaringeal gram negatif kokobasiller HACEK grubunu düşündürür; erken negatif kültür tanıyı dışlamaz.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Diş işlemi sonrası subakut endokarditte yavaş üreyen orofaringeal gram negatif kokobasiller HACEK grubunu düşündürür; erken negatif kültür tanıyı dışlamaz."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v175-new-104-paroksismal-oksuruk-nobetleri",
+    "title": "Paroksismal öksürük nöbetleri",
+    "oldInvestigationCount": 4,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-pertussis-pcr",
+        "label": "Nazofarengeal sürüntü PCR/kültür",
+        "title": "Nazofarengeal sürüntü PCR/kültür",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "PCR / kültür",
+        "summary": "Paroksismal öksürükte nazofarengeal PCR en hızlı doğrulama sağlar; lenfositoz pertussis toksininin lenfosit trafiğini bozmasıyla ilişkilidir.",
+        "clinicalMeaning": "Paroksismal öksürükte nazofarengeal PCR en hızlı doğrulama sağlar; lenfositoz pertussis toksininin lenfosit trafiğini bozmasıyla ilişkilidir.",
+        "result": {
+          "title": "Nazofarengeal sürüntü PCR/kültür",
+          "summary": "Paroksismal öksürükte nazofarengeal PCR en hızlı doğrulama sağlar; lenfositoz pertussis toksininin lenfosit trafiğini bozmasıyla ilişkilidir.",
+          "interpretation": "Paroksismal öksürükte nazofarengeal PCR en hızlı doğrulama sağlar; lenfositoz pertussis toksininin lenfosit trafiğini bozmasıyla ilişkilidir.",
+          "values": [
+            [
+              "Örnek",
+              "Nazofarengeal sürüntü",
+              "Uygun örnek gerekir",
+              "Uygun"
+            ],
+            [
+              "PCR",
+              "Bordetella pertussis pozitif",
+              "Negatif",
+              "Etken lehine"
+            ],
+            [
+              "Hemogram",
+              "Lenfositoz",
+              "Yaşa göre normal",
+              "Pertussis toksini etkisi"
+            ]
+          ],
+          "rows": [
+            [
+              "Örnek",
+              "Nazofarengeal sürüntü",
+              "Uygun örnek gerekir",
+              "Uygun"
+            ],
+            [
+              "PCR",
+              "Bordetella pertussis pozitif",
+              "Negatif",
+              "Etken lehine"
+            ],
+            [
+              "Hemogram",
+              "Lenfositoz",
+              "Yaşa göre normal",
+              "Pertussis toksini etkisi"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Örnek",
+            "Nazofarengeal sürüntü",
+            "Uygun örnek gerekir",
+            "Uygun"
+          ],
+          [
+            "PCR",
+            "Bordetella pertussis pozitif",
+            "Negatif",
+            "Etken lehine"
+          ],
+          [
+            "Hemogram",
+            "Lenfositoz",
+            "Yaşa göre normal",
+            "Pertussis toksini etkisi"
+          ]
+        ],
+        "postAnswerExplanation": "Paroksismal öksürükte nazofarengeal PCR en hızlı doğrulama sağlar; lenfositoz pertussis toksininin lenfosit trafiğini bozmasıyla ilişkilidir.",
+        "interpretation": "Paroksismal öksürükte nazofarengeal PCR en hızlı doğrulama sağlar; lenfositoz pertussis toksininin lenfosit trafiğini bozmasıyla ilişkilidir.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Paroksismal öksürükte nazofarengeal PCR en hızlı doğrulama sağlar; lenfositoz pertussis toksininin lenfosit trafiğini bozmasıyla ilişkilidir."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v176-new-119-kamp-sonrasi-kotu-kokulu-ishal",
+    "title": "Kamp sonrası kötü kokulu ishal",
+    "oldInvestigationCount": 4,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-giardia-diski",
+        "label": "Dışkı antijen testi ve mikroskopi",
+        "title": "Dışkı antijen testi ve mikroskopi",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Antijen / mikroskopi",
+        "summary": "Kaynatılmamış tatlı su maruziyeti ve yağlı kötü kokulu ishal Giardia lamblia enfeksiyonunu düşündürür; antijen testi mikroskopiden daha duyarlı olabilir.",
+        "clinicalMeaning": "Kaynatılmamış tatlı su maruziyeti ve yağlı kötü kokulu ishal Giardia lamblia enfeksiyonunu düşündürür; antijen testi mikroskopiden daha duyarlı olabilir.",
+        "result": {
+          "title": "Dışkı antijen testi ve mikroskopi",
+          "summary": "Kaynatılmamış tatlı su maruziyeti ve yağlı kötü kokulu ishal Giardia lamblia enfeksiyonunu düşündürür; antijen testi mikroskopiden daha duyarlı olabilir.",
+          "interpretation": "Kaynatılmamış tatlı su maruziyeti ve yağlı kötü kokulu ishal Giardia lamblia enfeksiyonunu düşündürür; antijen testi mikroskopiden daha duyarlı olabilir.",
+          "values": [
+            [
+              "Dışkı antijeni",
+              "Giardia pozitif",
+              "Negatif",
+              "Etken lehine"
+            ],
+            [
+              "Mikroskopi",
+              "Kist/trofozoit görülebilir",
+              "Yok",
+              "Destekleyici"
+            ],
+            [
+              "Dışkı özelliği",
+              "Yağlı ve kötü kokulu",
+              "Forme dışkı",
+              "Malabsorpsiyon"
+            ]
+          ],
+          "rows": [
+            [
+              "Dışkı antijeni",
+              "Giardia pozitif",
+              "Negatif",
+              "Etken lehine"
+            ],
+            [
+              "Mikroskopi",
+              "Kist/trofozoit görülebilir",
+              "Yok",
+              "Destekleyici"
+            ],
+            [
+              "Dışkı özelliği",
+              "Yağlı ve kötü kokulu",
+              "Forme dışkı",
+              "Malabsorpsiyon"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Dışkı antijeni",
+            "Giardia pozitif",
+            "Negatif",
+            "Etken lehine"
+          ],
+          [
+            "Mikroskopi",
+            "Kist/trofozoit görülebilir",
+            "Yok",
+            "Destekleyici"
+          ],
+          [
+            "Dışkı özelliği",
+            "Yağlı ve kötü kokulu",
+            "Forme dışkı",
+            "Malabsorpsiyon"
+          ]
+        ],
+        "postAnswerExplanation": "Kaynatılmamış tatlı su maruziyeti ve yağlı kötü kokulu ishal Giardia lamblia enfeksiyonunu düşündürür; antijen testi mikroskopiden daha duyarlı olabilir.",
+        "interpretation": "Kaynatılmamış tatlı su maruziyeti ve yağlı kötü kokulu ishal Giardia lamblia enfeksiyonunu düşündürür; antijen testi mikroskopiden daha duyarlı olabilir.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Kaynatılmamış tatlı su maruziyeti ve yağlı kötü kokulu ishal Giardia lamblia enfeksiyonunu düşündürür; antijen testi mikroskopiden daha duyarlı olabilir."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v177-new-130-genc-eriskinde-atipik-pnomoni",
+    "title": "Genç erişkinde atipik pnömoni",
+    "oldInvestigationCount": 4,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-mycoplasma-pcr",
+        "label": "Solunum örneği PCR ve seroloji",
+        "title": "Solunum örneği PCR ve seroloji",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "PCR / seroloji",
+        "summary": "Mycoplasma hücre duvarı olmadığı için Gram boyamada iyi görülmez ve beta-laktamlara doğal dirençlidir; yurt ortamında atipik pnömoni paternini açıklar.",
+        "clinicalMeaning": "Mycoplasma hücre duvarı olmadığı için Gram boyamada iyi görülmez ve beta-laktamlara doğal dirençlidir; yurt ortamında atipik pnömoni paternini açıklar.",
+        "result": {
+          "title": "Solunum örneği PCR ve seroloji",
+          "summary": "Mycoplasma hücre duvarı olmadığı için Gram boyamada iyi görülmez ve beta-laktamlara doğal dirençlidir; yurt ortamında atipik pnömoni paternini açıklar.",
+          "interpretation": "Mycoplasma hücre duvarı olmadığı için Gram boyamada iyi görülmez ve beta-laktamlara doğal dirençlidir; yurt ortamında atipik pnömoni paternini açıklar.",
+          "values": [
+            [
+              "PCR",
+              "Mycoplasma pneumoniae pozitif",
+              "Negatif",
+              "Etken lehine"
+            ],
+            [
+              "Soğuk aglütinin",
+              "Pozitif olabilir",
+              "Negatif",
+              "Destekleyici"
+            ],
+            [
+              "Gram boyama",
+              "Belirgin bakteri görülmez",
+              "Patojen saptanmaması beklenebilir",
+              "Hücre duvarı yok"
+            ]
+          ],
+          "rows": [
+            [
+              "PCR",
+              "Mycoplasma pneumoniae pozitif",
+              "Negatif",
+              "Etken lehine"
+            ],
+            [
+              "Soğuk aglütinin",
+              "Pozitif olabilir",
+              "Negatif",
+              "Destekleyici"
+            ],
+            [
+              "Gram boyama",
+              "Belirgin bakteri görülmez",
+              "Patojen saptanmaması beklenebilir",
+              "Hücre duvarı yok"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "PCR",
+            "Mycoplasma pneumoniae pozitif",
+            "Negatif",
+            "Etken lehine"
+          ],
+          [
+            "Soğuk aglütinin",
+            "Pozitif olabilir",
+            "Negatif",
+            "Destekleyici"
+          ],
+          [
+            "Gram boyama",
+            "Belirgin bakteri görülmez",
+            "Patojen saptanmaması beklenebilir",
+            "Hücre duvarı yok"
+          ]
+        ],
+        "postAnswerExplanation": "Mycoplasma hücre duvarı olmadığı için Gram boyamada iyi görülmez ve beta-laktamlara doğal dirençlidir; yurt ortamında atipik pnömoni paternini açıklar.",
+        "interpretation": "Mycoplasma hücre duvarı olmadığı için Gram boyamada iyi görülmez ve beta-laktamlara doğal dirençlidir; yurt ortamında atipik pnömoni paternini açıklar.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Mycoplasma hücre duvarı olmadığı için Gram boyamada iyi görülmez ve beta-laktamlara doğal dirençlidir; yurt ortamında atipik pnömoni paternini açıklar."
+      }
+    ],
+    "cleanedGenericPhrases": [
+      "olasılığını destekler",
+      "karar tek parametreyle",
+      "klinik örüntüyle birlikte"
+    ]
+  },
+  {
+    "caseId": "v178-new-135-yasli-hastada-menenjit",
+    "title": "Yaşlı hastada menenjit",
+    "oldInvestigationCount": 4,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-listeria-bos",
+        "label": "BOS Gram boyama ve kültür",
+        "title": "BOS Gram boyama ve kültür",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "BOS / kültür",
+        "summary": "Yaşlı veya gebede menenjitte kısa gram pozitif basil görülmesi Listeria monocytogenes için kritik ipucudur; ampirik tedavide ampisilin kapsanmalıdır.",
+        "clinicalMeaning": "Yaşlı veya gebede menenjitte kısa gram pozitif basil görülmesi Listeria monocytogenes için kritik ipucudur; ampirik tedavide ampisilin kapsanmalıdır.",
+        "result": {
+          "title": "BOS Gram boyama ve kültür",
+          "summary": "Yaşlı veya gebede menenjitte kısa gram pozitif basil görülmesi Listeria monocytogenes için kritik ipucudur; ampirik tedavide ampisilin kapsanmalıdır.",
+          "interpretation": "Yaşlı veya gebede menenjitte kısa gram pozitif basil görülmesi Listeria monocytogenes için kritik ipucudur; ampirik tedavide ampisilin kapsanmalıdır.",
+          "values": [
+            [
+              "BOS hücre",
+              "Nötrofil ağırlıklı pleositoz",
+              "Normal",
+              "Bakteriyel menenjit"
+            ],
+            [
+              "Gram boyama",
+              "Kısa gram pozitif basiller",
+              "Mikroorganizma yok",
+              "Listeria lehine"
+            ],
+            [
+              "Kültür",
+              "Dar beta-hemolizli, tumbling motility gösteren basil",
+              "Üreme yok",
+              "Destekleyici"
+            ]
+          ],
+          "rows": [
+            [
+              "BOS hücre",
+              "Nötrofil ağırlıklı pleositoz",
+              "Normal",
+              "Bakteriyel menenjit"
+            ],
+            [
+              "Gram boyama",
+              "Kısa gram pozitif basiller",
+              "Mikroorganizma yok",
+              "Listeria lehine"
+            ],
+            [
+              "Kültür",
+              "Dar beta-hemolizli, tumbling motility gösteren basil",
+              "Üreme yok",
+              "Destekleyici"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "BOS hücre",
+            "Nötrofil ağırlıklı pleositoz",
+            "Normal",
+            "Bakteriyel menenjit"
+          ],
+          [
+            "Gram boyama",
+            "Kısa gram pozitif basiller",
+            "Mikroorganizma yok",
+            "Listeria lehine"
+          ],
+          [
+            "Kültür",
+            "Dar beta-hemolizli, tumbling motility gösteren basil",
+            "Üreme yok",
+            "Destekleyici"
+          ]
+        ],
+        "postAnswerExplanation": "Yaşlı veya gebede menenjitte kısa gram pozitif basil görülmesi Listeria monocytogenes için kritik ipucudur; ampirik tedavide ampisilin kapsanmalıdır.",
+        "interpretation": "Yaşlı veya gebede menenjitte kısa gram pozitif basil görülmesi Listeria monocytogenes için kritik ipucudur; ampirik tedavide ampisilin kapsanmalıdır.",
+        "category": "fluidAnalysis",
+        "testTypeCategory": "fluidAnalysis",
+        "explanationAfterAnswer": "Yaşlı veya gebede menenjitte kısa gram pozitif basil görülmesi Listeria monocytogenes için kritik ipucudur; ampirik tedavide ampisilin kapsanmalıdır."
+      }
+    ],
+    "cleanedGenericPhrases": [
+      "olasılığını destekler"
+    ]
+  },
+  {
+    "caseId": "v178-new-140-immunsuprese-hastada-subakut-menenjit",
+    "title": "İmmünsüprese hastada subakut menenjit",
+    "oldInvestigationCount": 4,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-crypto-bos",
+        "label": "BOS kriptokok antijeni ve mikroskopi",
+        "title": "BOS kriptokok antijeni ve mikroskopi",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "BOS antijen / mikroskopi",
+        "summary": "İmmünsüprese hastada subakut menenjit, yüksek açılış basıncı ve kriptokok antijen pozitifliği Cryptococcus neoformans enfeksiyonunu destekler.",
+        "clinicalMeaning": "İmmünsüprese hastada subakut menenjit, yüksek açılış basıncı ve kriptokok antijen pozitifliği Cryptococcus neoformans enfeksiyonunu destekler.",
+        "result": {
+          "title": "BOS kriptokok antijeni ve mikroskopi",
+          "summary": "İmmünsüprese hastada subakut menenjit, yüksek açılış basıncı ve kriptokok antijen pozitifliği Cryptococcus neoformans enfeksiyonunu destekler.",
+          "interpretation": "İmmünsüprese hastada subakut menenjit, yüksek açılış basıncı ve kriptokok antijen pozitifliği Cryptococcus neoformans enfeksiyonunu destekler.",
+          "values": [
+            [
+              "Açılış basıncı",
+              "Yüksek",
+              "Normal",
+              "Artmış ICP"
+            ],
+            [
+              "Kriptokok antijeni",
+              "Pozitif",
+              "Negatif",
+              "Tanısal"
+            ],
+            [
+              "India ink",
+              "Kapsüllü maya hücreleri",
+              "Yok",
+              "Cryptococcus lehine"
+            ]
+          ],
+          "rows": [
+            [
+              "Açılış basıncı",
+              "Yüksek",
+              "Normal",
+              "Artmış ICP"
+            ],
+            [
+              "Kriptokok antijeni",
+              "Pozitif",
+              "Negatif",
+              "Tanısal"
+            ],
+            [
+              "India ink",
+              "Kapsüllü maya hücreleri",
+              "Yok",
+              "Cryptococcus lehine"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Açılış basıncı",
+            "Yüksek",
+            "Normal",
+            "Artmış ICP"
+          ],
+          [
+            "Kriptokok antijeni",
+            "Pozitif",
+            "Negatif",
+            "Tanısal"
+          ],
+          [
+            "India ink",
+            "Kapsüllü maya hücreleri",
+            "Yok",
+            "Cryptococcus lehine"
+          ]
+        ],
+        "postAnswerExplanation": "İmmünsüprese hastada subakut menenjit, yüksek açılış basıncı ve kriptokok antijen pozitifliği Cryptococcus neoformans enfeksiyonunu destekler.",
+        "interpretation": "İmmünsüprese hastada subakut menenjit, yüksek açılış basıncı ve kriptokok antijen pozitifliği Cryptococcus neoformans enfeksiyonunu destekler.",
+        "category": "fluidAnalysis",
+        "testTypeCategory": "fluidAnalysis",
+        "explanationAfterAnswer": "İmmünsüprese hastada subakut menenjit, yüksek açılış basıncı ve kriptokok antijen pozitifliği Cryptococcus neoformans enfeksiyonunu destekler."
+      }
+    ],
+    "cleanedGenericPhrases": [
+      "olasılığını destekler"
+    ]
+  },
+  {
+    "caseId": "v184-new-193-kirli-yara-sonrasi-cene-kilitlenmesi",
+    "title": "Kirli yara sonrası çene kilitlenmesi",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-tetani-clinical",
+        "label": "Tetanoz klinik-mikrobiyolojik değerlendirme",
+        "title": "Tetanoz klinik-mikrobiyolojik değerlendirme",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Klinik tanı",
+        "summary": "Toprakla kontamine anaerobik yara ortamı C. tetani sporlarının germinasyonu ve tetanospazmin üretimi için uygun zemin oluşturur.",
+        "clinicalMeaning": "Toprakla kontamine anaerobik yara ortamı C. tetani sporlarının germinasyonu ve tetanospazmin üretimi için uygun zemin oluşturur.",
+        "result": {
+          "title": "Tetanoz klinik-mikrobiyolojik değerlendirme",
+          "summary": "Toprakla kontamine anaerobik yara ortamı C. tetani sporlarının germinasyonu ve tetanospazmin üretimi için uygun zemin oluşturur.",
+          "interpretation": "Toprakla kontamine anaerobik yara ortamı C. tetani sporlarının germinasyonu ve tetanospazmin üretimi için uygun zemin oluşturur.",
+          "values": [
+            [
+              "Maruziyet",
+              "Toprakla kontamine derin penetran yara",
+              "Temiz yara",
+              "C. tetani riski"
+            ],
+            [
+              "Aşı durumu",
+              "Rapel belirsiz",
+              "Tam aşılı",
+              "Risk artmış"
+            ],
+            [
+              "Tanı yaklaşımı",
+              "Klinik tanı; kültür negatifliği dışlatmaz",
+              "Kültür beklenmez",
+              "Acil tedavi"
+            ]
+          ],
+          "rows": [
+            [
+              "Maruziyet",
+              "Toprakla kontamine derin penetran yara",
+              "Temiz yara",
+              "C. tetani riski"
+            ],
+            [
+              "Aşı durumu",
+              "Rapel belirsiz",
+              "Tam aşılı",
+              "Risk artmış"
+            ],
+            [
+              "Tanı yaklaşımı",
+              "Klinik tanı; kültür negatifliği dışlatmaz",
+              "Kültür beklenmez",
+              "Acil tedavi"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Maruziyet",
+            "Toprakla kontamine derin penetran yara",
+            "Temiz yara",
+            "C. tetani riski"
+          ],
+          [
+            "Aşı durumu",
+            "Rapel belirsiz",
+            "Tam aşılı",
+            "Risk artmış"
+          ],
+          [
+            "Tanı yaklaşımı",
+            "Klinik tanı; kültür negatifliği dışlatmaz",
+            "Kültür beklenmez",
+            "Acil tedavi"
+          ]
+        ],
+        "postAnswerExplanation": "Toprakla kontamine anaerobik yara ortamı C. tetani sporlarının germinasyonu ve tetanospazmin üretimi için uygun zemin oluşturur.",
+        "interpretation": "Toprakla kontamine anaerobik yara ortamı C. tetani sporlarının germinasyonu ve tetanospazmin üretimi için uygun zemin oluşturur.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Toprakla kontamine anaerobik yara ortamı C. tetani sporlarının germinasyonu ve tetanospazmin üretimi için uygun zemin oluşturur."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v185-new-213-hayvan-isirigi-sonrasi-hidrofobi",
+    "title": "Hayvan ısırığı sonrası hidrofobi",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-rabies-tani",
+        "label": "Kuduz tanı ve profilaksi değerlendirmesi",
+        "title": "Kuduz tanı ve profilaksi değerlendirmesi",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "PCR / profilaksi",
+        "summary": "Kuduzda klinik belirtiler başladıktan sonra prognoz çok kötüdür; ısırık sonrası yara temizliği, aşı ve immünoglobulin profilaksisi kritik önemdedir.",
+        "clinicalMeaning": "Kuduzda klinik belirtiler başladıktan sonra prognoz çok kötüdür; ısırık sonrası yara temizliği, aşı ve immünoglobulin profilaksisi kritik önemdedir.",
+        "result": {
+          "title": "Kuduz tanı ve profilaksi değerlendirmesi",
+          "summary": "Kuduzda klinik belirtiler başladıktan sonra prognoz çok kötüdür; ısırık sonrası yara temizliği, aşı ve immünoglobulin profilaksisi kritik önemdedir.",
+          "interpretation": "Kuduzda klinik belirtiler başladıktan sonra prognoz çok kötüdür; ısırık sonrası yara temizliği, aşı ve immünoglobulin profilaksisi kritik önemdedir.",
+          "values": [
+            [
+              "Maruziyet",
+              "Aşısız sahipsiz köpek ısırığı",
+              "Maruziyet yok",
+              "Yüksek risk"
+            ],
+            [
+              "Tanı testi",
+              "Ense deri biyopsisi/RT-PCR veya antijen testi planlanır",
+              "Negatif beklenir",
+              "Klinikle birlikte"
+            ],
+            [
+              "Profilaksi durumu",
+              "PEP uygulanmamış",
+              "Aşı + RIG gerekir",
+              "Ağır risk"
+            ]
+          ],
+          "rows": [
+            [
+              "Maruziyet",
+              "Aşısız sahipsiz köpek ısırığı",
+              "Maruziyet yok",
+              "Yüksek risk"
+            ],
+            [
+              "Tanı testi",
+              "Ense deri biyopsisi/RT-PCR veya antijen testi planlanır",
+              "Negatif beklenir",
+              "Klinikle birlikte"
+            ],
+            [
+              "Profilaksi durumu",
+              "PEP uygulanmamış",
+              "Aşı + RIG gerekir",
+              "Ağır risk"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Maruziyet",
+            "Aşısız sahipsiz köpek ısırığı",
+            "Maruziyet yok",
+            "Yüksek risk"
+          ],
+          [
+            "Tanı testi",
+            "Ense deri biyopsisi/RT-PCR veya antijen testi planlanır",
+            "Negatif beklenir",
+            "Klinikle birlikte"
+          ],
+          [
+            "Profilaksi durumu",
+            "PEP uygulanmamış",
+            "Aşı + RIG gerekir",
+            "Ağır risk"
+          ]
+        ],
+        "postAnswerExplanation": "Kuduzda klinik belirtiler başladıktan sonra prognoz çok kötüdür; ısırık sonrası yara temizliği, aşı ve immünoglobulin profilaksisi kritik önemdedir.",
+        "interpretation": "Kuduzda klinik belirtiler başladıktan sonra prognoz çok kötüdür; ısırık sonrası yara temizliği, aşı ve immünoglobulin profilaksisi kritik önemdedir.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Kuduzda klinik belirtiler başladıktan sonra prognoz çok kötüdür; ısırık sonrası yara temizliği, aşı ve immünoglobulin profilaksisi kritik önemdedir."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v185-new-214-epigastrik-agri-ve-ureaz-pozitifligi",
+    "title": "Epigastrik ağrı ve üreaz pozitifliği",
+    "oldInvestigationCount": 4,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-hpylori-ureaz",
+        "label": "Gastrik biyopsi hızlı üreaz testi",
+        "title": "Gastrik biyopsi hızlı üreaz testi",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Üreaz / biyopsi",
+        "summary": "H. pylori güçlü üreaz aktivitesiyle mide asidini lokal olarak nötralize eder; antral gastrit ve duodenal ülser bağlamında hızlı üreaz pozitifliği tanıyı destekler.",
+        "clinicalMeaning": "H. pylori güçlü üreaz aktivitesiyle mide asidini lokal olarak nötralize eder; antral gastrit ve duodenal ülser bağlamında hızlı üreaz pozitifliği tanıyı destekler.",
+        "result": {
+          "title": "Gastrik biyopsi hızlı üreaz testi",
+          "summary": "H. pylori güçlü üreaz aktivitesiyle mide asidini lokal olarak nötralize eder; antral gastrit ve duodenal ülser bağlamında hızlı üreaz pozitifliği tanıyı destekler.",
+          "interpretation": "H. pylori güçlü üreaz aktivitesiyle mide asidini lokal olarak nötralize eder; antral gastrit ve duodenal ülser bağlamında hızlı üreaz pozitifliği tanıyı destekler.",
+          "values": [
+            [
+              "Örnek",
+              "Antral biyopsi",
+              "Uygun örnek",
+              "Uygun"
+            ],
+            [
+              "Hızlı üreaz testi",
+              "Pozitif",
+              "Negatif",
+              "H. pylori lehine"
+            ],
+            [
+              "Histoloji",
+              "Mukus tabakasında kıvrımlı gram negatif basiller",
+              "Yok",
+              "Destekleyici"
+            ]
+          ],
+          "rows": [
+            [
+              "Örnek",
+              "Antral biyopsi",
+              "Uygun örnek",
+              "Uygun"
+            ],
+            [
+              "Hızlı üreaz testi",
+              "Pozitif",
+              "Negatif",
+              "H. pylori lehine"
+            ],
+            [
+              "Histoloji",
+              "Mukus tabakasında kıvrımlı gram negatif basiller",
+              "Yok",
+              "Destekleyici"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Örnek",
+            "Antral biyopsi",
+            "Uygun örnek",
+            "Uygun"
+          ],
+          [
+            "Hızlı üreaz testi",
+            "Pozitif",
+            "Negatif",
+            "H. pylori lehine"
+          ],
+          [
+            "Histoloji",
+            "Mukus tabakasında kıvrımlı gram negatif basiller",
+            "Yok",
+            "Destekleyici"
+          ]
+        ],
+        "postAnswerExplanation": "H. pylori güçlü üreaz aktivitesiyle mide asidini lokal olarak nötralize eder; antral gastrit ve duodenal ülser bağlamında hızlı üreaz pozitifliği tanıyı destekler.",
+        "interpretation": "H. pylori güçlü üreaz aktivitesiyle mide asidini lokal olarak nötralize eder; antral gastrit ve duodenal ülser bağlamında hızlı üreaz pozitifliği tanıyı destekler.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "H. pylori güçlü üreaz aktivitesiyle mide asidini lokal olarak nötralize eder; antral gastrit ve duodenal ülser bağlamında hızlı üreaz pozitifliği tanıyı destekler."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v185-new-215-transplant-sonrasi-gorme-bulanikligi",
+    "title": "Transplant sonrası görme bulanıklığı",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-cmv-pcr",
+        "label": "CMV PCR ve oftalmolojik değerlendirme",
+        "title": "CMV PCR ve oftalmolojik değerlendirme",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "PCR / göz muayenesi",
+        "summary": "Transplant immünsüpresyonunda yüksek CMV DNA ve hemorajik retinit, CMV reaktivasyonunu destekler.",
+        "clinicalMeaning": "Transplant immünsüpresyonunda yüksek CMV DNA ve hemorajik retinit, CMV reaktivasyonunu destekler.",
+        "result": {
+          "title": "CMV PCR ve oftalmolojik değerlendirme",
+          "summary": "Transplant immünsüpresyonunda yüksek CMV DNA ve hemorajik retinit, CMV reaktivasyonunu destekler.",
+          "interpretation": "Transplant immünsüpresyonunda yüksek CMV DNA ve hemorajik retinit, CMV reaktivasyonunu destekler.",
+          "values": [
+            [
+              "Kan CMV DNA",
+              "Yüksek viral yük",
+              "Negatif/düşük",
+              "Reaktivasyon lehine"
+            ],
+            [
+              "Retina bulgusu",
+              "Hemorajik nekrotizan retinit",
+              "Normal retina",
+              "CMV retiniti"
+            ],
+            [
+              "Histoloji notu",
+              "Baykuş gözü inklüzyonu görülebilir",
+              "Yok",
+              "Klasik ipucu"
+            ]
+          ],
+          "rows": [
+            [
+              "Kan CMV DNA",
+              "Yüksek viral yük",
+              "Negatif/düşük",
+              "Reaktivasyon lehine"
+            ],
+            [
+              "Retina bulgusu",
+              "Hemorajik nekrotizan retinit",
+              "Normal retina",
+              "CMV retiniti"
+            ],
+            [
+              "Histoloji notu",
+              "Baykuş gözü inklüzyonu görülebilir",
+              "Yok",
+              "Klasik ipucu"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kan CMV DNA",
+            "Yüksek viral yük",
+            "Negatif/düşük",
+            "Reaktivasyon lehine"
+          ],
+          [
+            "Retina bulgusu",
+            "Hemorajik nekrotizan retinit",
+            "Normal retina",
+            "CMV retiniti"
+          ],
+          [
+            "Histoloji notu",
+            "Baykuş gözü inklüzyonu görülebilir",
+            "Yok",
+            "Klasik ipucu"
+          ]
+        ],
+        "postAnswerExplanation": "Transplant immünsüpresyonunda yüksek CMV DNA ve hemorajik retinit, CMV reaktivasyonunu destekler.",
+        "interpretation": "Transplant immünsüpresyonunda yüksek CMV DNA ve hemorajik retinit, CMV reaktivasyonunu destekler.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Transplant immünsüpresyonunda yüksek CMV DNA ve hemorajik retinit, CMV reaktivasyonunu destekler."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v186-new-235-uzayan-bogulur-tarzda-oksuruk",
+    "title": "Uzayan boğulur tarzda öksürük",
+    "oldInvestigationCount": 4,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-pertussis-infant",
+        "label": "Nazofarengeal PCR ve hemogram",
+        "title": "Nazofarengeal PCR ve hemogram",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "PCR / hemogram",
+        "summary": "Süt çocuklarında boğmaca ateşsiz veya hafif ateşli seyreder; paroksismal öksürük, apne/siyanoz ve lenfositoz B. pertussis için tipiktir.",
+        "clinicalMeaning": "Süt çocuklarında boğmaca ateşsiz veya hafif ateşli seyreder; paroksismal öksürük, apne/siyanoz ve lenfositoz B. pertussis için tipiktir.",
+        "result": {
+          "title": "Nazofarengeal PCR ve hemogram",
+          "summary": "Süt çocuklarında boğmaca ateşsiz veya hafif ateşli seyreder; paroksismal öksürük, apne/siyanoz ve lenfositoz B. pertussis için tipiktir.",
+          "interpretation": "Süt çocuklarında boğmaca ateşsiz veya hafif ateşli seyreder; paroksismal öksürük, apne/siyanoz ve lenfositoz B. pertussis için tipiktir.",
+          "values": [
+            [
+              "PCR",
+              "Bordetella pertussis pozitif",
+              "Negatif",
+              "Etken lehine"
+            ],
+            [
+              "Lökosit formülü",
+              "Belirgin lenfositoz",
+              "Yaşa göre normal",
+              "Pertussis toksini etkisi"
+            ],
+            [
+              "Akciğer grafisi",
+              "Belirgin lober konsolidasyon yok",
+              "Normal/atipik",
+              "Pnömoni dışı patern"
+            ]
+          ],
+          "rows": [
+            [
+              "PCR",
+              "Bordetella pertussis pozitif",
+              "Negatif",
+              "Etken lehine"
+            ],
+            [
+              "Lökosit formülü",
+              "Belirgin lenfositoz",
+              "Yaşa göre normal",
+              "Pertussis toksini etkisi"
+            ],
+            [
+              "Akciğer grafisi",
+              "Belirgin lober konsolidasyon yok",
+              "Normal/atipik",
+              "Pnömoni dışı patern"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "PCR",
+            "Bordetella pertussis pozitif",
+            "Negatif",
+            "Etken lehine"
+          ],
+          [
+            "Lökosit formülü",
+            "Belirgin lenfositoz",
+            "Yaşa göre normal",
+            "Pertussis toksini etkisi"
+          ],
+          [
+            "Akciğer grafisi",
+            "Belirgin lober konsolidasyon yok",
+            "Normal/atipik",
+            "Pnömoni dışı patern"
+          ]
+        ],
+        "postAnswerExplanation": "Süt çocuklarında boğmaca ateşsiz veya hafif ateşli seyreder; paroksismal öksürük, apne/siyanoz ve lenfositoz B. pertussis için tipiktir.",
+        "interpretation": "Süt çocuklarında boğmaca ateşsiz veya hafif ateşli seyreder; paroksismal öksürük, apne/siyanoz ve lenfositoz B. pertussis için tipiktir.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Süt çocuklarında boğmaca ateşsiz veya hafif ateşli seyreder; paroksismal öksürük, apne/siyanoz ve lenfositoz B. pertussis için tipiktir."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v187-new-249-antibiyotik-sonrasi-sulu-ishal",
+    "title": "Antibiyotik sonrası sulu ishal",
+    "oldInvestigationCount": 5,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-cdiff-klinda",
+        "label": "C. difficile toksin testi",
+        "title": "C. difficile toksin testi",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Toksin testi",
+        "summary": "Klindamisin sonrası sulu ishalde toksin A/B pozitifliği C. difficile kolitini gösterir; kolonizasyon ile hastalık ayrımı klinikle yapılmalıdır.",
+        "clinicalMeaning": "Klindamisin sonrası sulu ishalde toksin A/B pozitifliği C. difficile kolitini gösterir; kolonizasyon ile hastalık ayrımı klinikle yapılmalıdır.",
+        "result": {
+          "title": "C. difficile toksin testi",
+          "summary": "Klindamisin sonrası sulu ishalde toksin A/B pozitifliği C. difficile kolitini gösterir; kolonizasyon ile hastalık ayrımı klinikle yapılmalıdır.",
+          "interpretation": "Klindamisin sonrası sulu ishalde toksin A/B pozitifliği C. difficile kolitini gösterir; kolonizasyon ile hastalık ayrımı klinikle yapılmalıdır.",
+          "values": [
+            [
+              "Örnek",
+              "Sulu dışkı",
+              "Forme dışkı test edilmez",
+              "Uygun"
+            ],
+            [
+              "Toksin A/B",
+              "Pozitif",
+              "Negatif",
+              "Toksijenik enfeksiyon"
+            ],
+            [
+              "Lökosit",
+              "Yüksek",
+              "Normal",
+              "İnflamatuvar yanıt"
+            ]
+          ],
+          "rows": [
+            [
+              "Örnek",
+              "Sulu dışkı",
+              "Forme dışkı test edilmez",
+              "Uygun"
+            ],
+            [
+              "Toksin A/B",
+              "Pozitif",
+              "Negatif",
+              "Toksijenik enfeksiyon"
+            ],
+            [
+              "Lökosit",
+              "Yüksek",
+              "Normal",
+              "İnflamatuvar yanıt"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Örnek",
+            "Sulu dışkı",
+            "Forme dışkı test edilmez",
+            "Uygun"
+          ],
+          [
+            "Toksin A/B",
+            "Pozitif",
+            "Negatif",
+            "Toksijenik enfeksiyon"
+          ],
+          [
+            "Lökosit",
+            "Yüksek",
+            "Normal",
+            "İnflamatuvar yanıt"
+          ]
+        ],
+        "postAnswerExplanation": "Klindamisin sonrası sulu ishalde toksin A/B pozitifliği C. difficile kolitini gösterir; kolonizasyon ile hastalık ayrımı klinikle yapılmalıdır.",
+        "interpretation": "Klindamisin sonrası sulu ishalde toksin A/B pozitifliği C. difficile kolitini gösterir; kolonizasyon ile hastalık ayrımı klinikle yapılmalıdır.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Klindamisin sonrası sulu ishalde toksin A/B pozitifliği C. difficile kolitini gösterir; kolonizasyon ile hastalık ayrımı klinikle yapılmalıdır."
+      }
+    ],
+    "cleanedGenericPhrases": [
+      "olasılığını destekler",
+      "karar tek parametreyle",
+      "klinik örüntüyle birlikte"
+    ]
+  },
+  {
+    "caseId": "v187-new-250-hemolitik-hastada-ani-anemi",
+    "title": "Hemolitik hastada ani anemi",
+    "oldInvestigationCount": 5,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-parvo-seroloji",
+        "label": "Parvovirus B19 seroloji/PCR ve retikülosit",
+        "title": "Parvovirus B19 seroloji/PCR ve retikülosit",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Seroloji / PCR",
+        "summary": "Parvovirus B19 eritroid öncüllerde P antijenini hedefler; kronik hemolizli hastada retikülositopenik aplastik kriz yapar.",
+        "clinicalMeaning": "Parvovirus B19 eritroid öncüllerde P antijenini hedefler; kronik hemolizli hastada retikülositopenik aplastik kriz yapar.",
+        "result": {
+          "title": "Parvovirus B19 seroloji/PCR ve retikülosit",
+          "summary": "Parvovirus B19 eritroid öncüllerde P antijenini hedefler; kronik hemolizli hastada retikülositopenik aplastik kriz yapar.",
+          "interpretation": "Parvovirus B19 eritroid öncüllerde P antijenini hedefler; kronik hemolizli hastada retikülositopenik aplastik kriz yapar.",
+          "values": [
+            [
+              "Hemoglobin",
+              "Belirgin düşük",
+              "Hastanın bazaline yakın",
+              "Aplastik kriz"
+            ],
+            [
+              "Retikülosit",
+              "Düşük",
+              "Hemolizde yüksek beklenir",
+              "Eritropoez baskılanmış"
+            ],
+            [
+              "Parvovirus B19 IgM/PCR",
+              "Pozitif",
+              "Negatif",
+              "Akut enfeksiyon"
+            ]
+          ],
+          "rows": [
+            [
+              "Hemoglobin",
+              "Belirgin düşük",
+              "Hastanın bazaline yakın",
+              "Aplastik kriz"
+            ],
+            [
+              "Retikülosit",
+              "Düşük",
+              "Hemolizde yüksek beklenir",
+              "Eritropoez baskılanmış"
+            ],
+            [
+              "Parvovirus B19 IgM/PCR",
+              "Pozitif",
+              "Negatif",
+              "Akut enfeksiyon"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Hemoglobin",
+            "Belirgin düşük",
+            "Hastanın bazaline yakın",
+            "Aplastik kriz"
+          ],
+          [
+            "Retikülosit",
+            "Düşük",
+            "Hemolizde yüksek beklenir",
+            "Eritropoez baskılanmış"
+          ],
+          [
+            "Parvovirus B19 IgM/PCR",
+            "Pozitif",
+            "Negatif",
+            "Akut enfeksiyon"
+          ]
+        ],
+        "postAnswerExplanation": "Parvovirus B19 eritroid öncüllerde P antijenini hedefler; kronik hemolizli hastada retikülositopenik aplastik kriz yapar.",
+        "interpretation": "Parvovirus B19 eritroid öncüllerde P antijenini hedefler; kronik hemolizli hastada retikülositopenik aplastik kriz yapar.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Parvovirus B19 eritroid öncüllerde P antijenini hedefler; kronik hemolizli hastada retikülositopenik aplastik kriz yapar."
+      }
+    ],
+    "cleanedGenericPhrases": [
+      "olasılığını destekler",
+      "karar tek parametreyle",
+      "klinik örüntüyle birlikte"
+    ]
+  },
+  {
+    "caseId": "v188-new-264-ates-ve-petesiyal-dokuntu",
+    "title": "Ateş ve peteşiyal döküntü",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-meningokok-bos",
+        "label": "BOS Gram boyama/kültür ve kan kültürü",
+        "title": "BOS Gram boyama/kültür ve kan kültürü",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "BOS / kültür / PCR",
+        "summary": "Peteşiyal döküntülü akut menenjit ve BOS’ta gram negatif diplokok görülmesi N. meningitidis tanısını destekler; yakın temaslı profilaksisi gerekir.",
+        "clinicalMeaning": "Peteşiyal döküntülü akut menenjit ve BOS’ta gram negatif diplokok görülmesi N. meningitidis tanısını destekler; yakın temaslı profilaksisi gerekir.",
+        "result": {
+          "title": "BOS Gram boyama/kültür ve kan kültürü",
+          "summary": "Peteşiyal döküntülü akut menenjit ve BOS’ta gram negatif diplokok görülmesi N. meningitidis tanısını destekler; yakın temaslı profilaksisi gerekir.",
+          "interpretation": "Peteşiyal döküntülü akut menenjit ve BOS’ta gram negatif diplokok görülmesi N. meningitidis tanısını destekler; yakın temaslı profilaksisi gerekir.",
+          "values": [
+            [
+              "BOS",
+              "Nötrofilik pleositoz, düşük glukoz",
+              "Normal",
+              "Bakteriyel menenjit"
+            ],
+            [
+              "Gram boyama",
+              "Gram negatif diplokoklar",
+              "Mikroorganizma yok",
+              "Meningokok lehine"
+            ],
+            [
+              "Kan kültürü/PCR",
+              "Neisseria meningitidis pozitif",
+              "Negatif",
+              "Meningokoksemi"
+            ]
+          ],
+          "rows": [
+            [
+              "BOS",
+              "Nötrofilik pleositoz, düşük glukoz",
+              "Normal",
+              "Bakteriyel menenjit"
+            ],
+            [
+              "Gram boyama",
+              "Gram negatif diplokoklar",
+              "Mikroorganizma yok",
+              "Meningokok lehine"
+            ],
+            [
+              "Kan kültürü/PCR",
+              "Neisseria meningitidis pozitif",
+              "Negatif",
+              "Meningokoksemi"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "BOS",
+            "Nötrofilik pleositoz, düşük glukoz",
+            "Normal",
+            "Bakteriyel menenjit"
+          ],
+          [
+            "Gram boyama",
+            "Gram negatif diplokoklar",
+            "Mikroorganizma yok",
+            "Meningokok lehine"
+          ],
+          [
+            "Kan kültürü/PCR",
+            "Neisseria meningitidis pozitif",
+            "Negatif",
+            "Meningokoksemi"
+          ]
+        ],
+        "postAnswerExplanation": "Peteşiyal döküntülü akut menenjit ve BOS’ta gram negatif diplokok görülmesi N. meningitidis tanısını destekler; yakın temaslı profilaksisi gerekir.",
+        "interpretation": "Peteşiyal döküntülü akut menenjit ve BOS’ta gram negatif diplokok görülmesi N. meningitidis tanısını destekler; yakın temaslı profilaksisi gerekir.",
+        "category": "fluidAnalysis",
+        "testTypeCategory": "fluidAnalysis",
+        "explanationAfterAnswer": "Peteşiyal döküntülü akut menenjit ve BOS’ta gram negatif diplokok görülmesi N. meningitidis tanısını destekler; yakın temaslı profilaksisi gerekir."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v188-new-265-yanik-yarasinda-kotu-kokulu-akinti",
+    "title": "Yanık yarasında kötü kokulu akıntı",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-pseudo-agent",
+        "label": "Yara kültürü ve temel tanımlama",
+        "title": "Yara kültürü ve temel tanımlama",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Kültür",
+        "summary": "Yanık yarasında yeşil-mavi pigmentli, oksidaz pozitif non-fermenter gram negatif basil Pseudomonas aeruginosa için tipiktir.",
+        "clinicalMeaning": "Yanık yarasında yeşil-mavi pigmentli, oksidaz pozitif non-fermenter gram negatif basil Pseudomonas aeruginosa için tipiktir.",
+        "result": {
+          "title": "Yara kültürü ve temel tanımlama",
+          "summary": "Yanık yarasında yeşil-mavi pigmentli, oksidaz pozitif non-fermenter gram negatif basil Pseudomonas aeruginosa için tipiktir.",
+          "interpretation": "Yanık yarasında yeşil-mavi pigmentli, oksidaz pozitif non-fermenter gram negatif basil Pseudomonas aeruginosa için tipiktir.",
+          "values": [
+            [
+              "Gram boyama",
+              "Gram negatif çomaklar",
+              "Yok",
+              "Patojen lehine"
+            ],
+            [
+              "Kültür",
+              "Oksidaz pozitif non-fermenter basil",
+              "Üreme yok",
+              "Pseudomonas lehine"
+            ],
+            [
+              "Pigment",
+              "Pyosiyanin/pyoverdin ile yeşil-mavi renk",
+              "Yok",
+              "Destekleyici"
+            ]
+          ],
+          "rows": [
+            [
+              "Gram boyama",
+              "Gram negatif çomaklar",
+              "Yok",
+              "Patojen lehine"
+            ],
+            [
+              "Kültür",
+              "Oksidaz pozitif non-fermenter basil",
+              "Üreme yok",
+              "Pseudomonas lehine"
+            ],
+            [
+              "Pigment",
+              "Pyosiyanin/pyoverdin ile yeşil-mavi renk",
+              "Yok",
+              "Destekleyici"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Gram boyama",
+            "Gram negatif çomaklar",
+            "Yok",
+            "Patojen lehine"
+          ],
+          [
+            "Kültür",
+            "Oksidaz pozitif non-fermenter basil",
+            "Üreme yok",
+            "Pseudomonas lehine"
+          ],
+          [
+            "Pigment",
+            "Pyosiyanin/pyoverdin ile yeşil-mavi renk",
+            "Yok",
+            "Destekleyici"
+          ]
+        ],
+        "postAnswerExplanation": "Yanık yarasında yeşil-mavi pigmentli, oksidaz pozitif non-fermenter gram negatif basil Pseudomonas aeruginosa için tipiktir.",
+        "interpretation": "Yanık yarasında yeşil-mavi pigmentli, oksidaz pozitif non-fermenter gram negatif basil Pseudomonas aeruginosa için tipiktir.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Yanık yarasında yeşil-mavi pigmentli, oksidaz pozitif non-fermenter gram negatif basil Pseudomonas aeruginosa için tipiktir."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v189-new-283-otel-konaklamasi-sonrasi-pnomoni",
+    "title": "Otel konaklaması sonrası pnömoni",
+    "oldInvestigationCount": 4,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-legionella-hotel",
+        "label": "Legionella idrar antijeni",
+        "title": "Legionella idrar antijeni",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Antijen",
+        "summary": "Otel su sistemi sonrası pnömoni, ishal ve hiponatremi Legionella için klasik ipucu kombinasyonudur.",
+        "clinicalMeaning": "Otel su sistemi sonrası pnömoni, ishal ve hiponatremi Legionella için klasik ipucu kombinasyonudur.",
+        "result": {
+          "title": "Legionella idrar antijeni",
+          "summary": "Otel su sistemi sonrası pnömoni, ishal ve hiponatremi Legionella için klasik ipucu kombinasyonudur.",
+          "interpretation": "Otel su sistemi sonrası pnömoni, ishal ve hiponatremi Legionella için klasik ipucu kombinasyonudur.",
+          "values": [
+            [
+              "İdrar antijeni",
+              "Pozitif",
+              "Negatif",
+              "L. pneumophila lehine"
+            ],
+            [
+              "Sodyum",
+              "124 mmol/L",
+              "135-145 mmol/L",
+              "Hiponatremi"
+            ],
+            [
+              "Kültür gereksinimi",
+              "BCYE besiyeri",
+              "Standart besiyeri yetersiz",
+              "Özel besiyeri"
+            ]
+          ],
+          "rows": [
+            [
+              "İdrar antijeni",
+              "Pozitif",
+              "Negatif",
+              "L. pneumophila lehine"
+            ],
+            [
+              "Sodyum",
+              "124 mmol/L",
+              "135-145 mmol/L",
+              "Hiponatremi"
+            ],
+            [
+              "Kültür gereksinimi",
+              "BCYE besiyeri",
+              "Standart besiyeri yetersiz",
+              "Özel besiyeri"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "İdrar antijeni",
+            "Pozitif",
+            "Negatif",
+            "L. pneumophila lehine"
+          ],
+          [
+            "Sodyum",
+            "124 mmol/L",
+            "135-145 mmol/L",
+            "Hiponatremi"
+          ],
+          [
+            "Kültür gereksinimi",
+            "BCYE besiyeri",
+            "Standart besiyeri yetersiz",
+            "Özel besiyeri"
+          ]
+        ],
+        "postAnswerExplanation": "Otel su sistemi sonrası pnömoni, ishal ve hiponatremi Legionella için klasik ipucu kombinasyonudur.",
+        "interpretation": "Otel su sistemi sonrası pnömoni, ishal ve hiponatremi Legionella için klasik ipucu kombinasyonudur.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Otel su sistemi sonrası pnömoni, ishal ve hiponatremi Legionella için klasik ipucu kombinasyonudur."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v189-new-284-antibiyotik-sonrasi-oral-plaklar",
+    "title": "Antibiyotik sonrası oral plaklar",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-candida-koh",
+        "label": "Oral lezyon KOH/mikroskopi",
+        "title": "Oral lezyon KOH/mikroskopi",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "KOH",
+        "summary": "Antibiyotik ve steroid kullanımı normal florayı/yerel immüniteyi bozarak Candida albicans overgrowth’una zemin hazırlar; psödohifler invazyon potansiyelini destekler.",
+        "clinicalMeaning": "Antibiyotik ve steroid kullanımı normal florayı/yerel immüniteyi bozarak Candida albicans overgrowth’una zemin hazırlar; psödohifler invazyon potansiyelini destekler.",
+        "result": {
+          "title": "Oral lezyon KOH/mikroskopi",
+          "summary": "Antibiyotik ve steroid kullanımı normal florayı/yerel immüniteyi bozarak Candida albicans overgrowth’una zemin hazırlar; psödohifler invazyon potansiyelini destekler.",
+          "interpretation": "Antibiyotik ve steroid kullanımı normal florayı/yerel immüniteyi bozarak Candida albicans overgrowth’una zemin hazırlar; psödohifler invazyon potansiyelini destekler.",
+          "values": [
+            [
+              "KOH preparatı",
+              "Tomurcuklanan maya ve psödohifler",
+              "Yok",
+              "Candida lehine"
+            ],
+            [
+              "Kültür",
+              "Candida albicans üreyebilir",
+              "Üreme yok",
+              "Destekleyici"
+            ],
+            [
+              "Klinik risk",
+              "Antibiyotik/steroid/diyabet",
+              "Yok",
+              "Fırsatçı zemin"
+            ]
+          ],
+          "rows": [
+            [
+              "KOH preparatı",
+              "Tomurcuklanan maya ve psödohifler",
+              "Yok",
+              "Candida lehine"
+            ],
+            [
+              "Kültür",
+              "Candida albicans üreyebilir",
+              "Üreme yok",
+              "Destekleyici"
+            ],
+            [
+              "Klinik risk",
+              "Antibiyotik/steroid/diyabet",
+              "Yok",
+              "Fırsatçı zemin"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "KOH preparatı",
+            "Tomurcuklanan maya ve psödohifler",
+            "Yok",
+            "Candida lehine"
+          ],
+          [
+            "Kültür",
+            "Candida albicans üreyebilir",
+            "Üreme yok",
+            "Destekleyici"
+          ],
+          [
+            "Klinik risk",
+            "Antibiyotik/steroid/diyabet",
+            "Yok",
+            "Fırsatçı zemin"
+          ]
+        ],
+        "postAnswerExplanation": "Antibiyotik ve steroid kullanımı normal florayı/yerel immüniteyi bozarak Candida albicans overgrowth’una zemin hazırlar; psödohifler invazyon potansiyelini destekler.",
+        "interpretation": "Antibiyotik ve steroid kullanımı normal florayı/yerel immüniteyi bozarak Candida albicans overgrowth’una zemin hazırlar; psödohifler invazyon potansiyelini destekler.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Antibiyotik ve steroid kullanımı normal florayı/yerel immüniteyi bozarak Candida albicans overgrowth’una zemin hazırlar; psödohifler invazyon potansiyelini destekler."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v189-new-285-akintisiz-dizuri-ve-uretrit",
+    "title": "Akıntısız dizüri ve üretrit",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-chlamydia-naat",
+        "label": "İlk akım idrar NAAT",
+        "title": "İlk akım idrar NAAT",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "NAAT",
+        "summary": "Akıntısız veya hafif akıntılı nongonokokal üretritte NAAT, Chlamydia trachomatis tanısı için temel testtir.",
+        "clinicalMeaning": "Akıntısız veya hafif akıntılı nongonokokal üretritte NAAT, Chlamydia trachomatis tanısı için temel testtir.",
+        "result": {
+          "title": "İlk akım idrar NAAT",
+          "summary": "Akıntısız veya hafif akıntılı nongonokokal üretritte NAAT, Chlamydia trachomatis tanısı için temel testtir.",
+          "interpretation": "Akıntısız veya hafif akıntılı nongonokokal üretritte NAAT, Chlamydia trachomatis tanısı için temel testtir.",
+          "values": [
+            [
+              "Örnek",
+              "İlk akım idrar/üretral sürüntü",
+              "Uygun örnek",
+              "Uygun"
+            ],
+            [
+              "Chlamydia NAAT",
+              "Pozitif",
+              "Negatif",
+              "Etken lehine"
+            ],
+            [
+              "Gram boyama",
+              "İntrasellüler gram negatif diplokok görülmedi",
+              "Görülmemesi beklenir",
+              "Gonore zayıf"
+            ]
+          ],
+          "rows": [
+            [
+              "Örnek",
+              "İlk akım idrar/üretral sürüntü",
+              "Uygun örnek",
+              "Uygun"
+            ],
+            [
+              "Chlamydia NAAT",
+              "Pozitif",
+              "Negatif",
+              "Etken lehine"
+            ],
+            [
+              "Gram boyama",
+              "İntrasellüler gram negatif diplokok görülmedi",
+              "Görülmemesi beklenir",
+              "Gonore zayıf"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Örnek",
+            "İlk akım idrar/üretral sürüntü",
+            "Uygun örnek",
+            "Uygun"
+          ],
+          [
+            "Chlamydia NAAT",
+            "Pozitif",
+            "Negatif",
+            "Etken lehine"
+          ],
+          [
+            "Gram boyama",
+            "İntrasellüler gram negatif diplokok görülmedi",
+            "Görülmemesi beklenir",
+            "Gonore zayıf"
+          ]
+        ],
+        "postAnswerExplanation": "Akıntısız veya hafif akıntılı nongonokokal üretritte NAAT, Chlamydia trachomatis tanısı için temel testtir.",
+        "interpretation": "Akıntısız veya hafif akıntılı nongonokokal üretritte NAAT, Chlamydia trachomatis tanısı için temel testtir.",
+        "category": "urogenital",
+        "testTypeCategory": "urogenital",
+        "explanationAfterAnswer": "Akıntısız veya hafif akıntılı nongonokokal üretritte NAAT, Chlamydia trachomatis tanısı için temel testtir."
+      }
+    ],
+    "cleanedGenericPhrases": [
+      "olasılığını destekler",
+      "karar tek parametreyle",
+      "klinik örüntüyle birlikte"
+    ]
+  },
+  {
+    "caseId": "v194-new-318-sel-sonrasi-ates-ve-sarilik",
+    "title": "Sel sonrası ateş ve sarılık",
+    "oldInvestigationCount": 5,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-lepto-seroloji",
+        "label": "Leptospira seroloji/PCR ve organ fonksiyonları",
+        "title": "Leptospira seroloji/PCR ve organ fonksiyonları",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Seroloji / PCR",
+        "summary": "Sel suyu ve kemirgen idrarı maruziyeti sonrası ateş, sarılık, böbrek hasarı ve konjonktival suffüzyon Leptospira interrogans enfeksiyonunu destekler.",
+        "clinicalMeaning": "Sel suyu ve kemirgen idrarı maruziyeti sonrası ateş, sarılık, böbrek hasarı ve konjonktival suffüzyon Leptospira interrogans enfeksiyonunu destekler.",
+        "result": {
+          "title": "Leptospira seroloji/PCR ve organ fonksiyonları",
+          "summary": "Sel suyu ve kemirgen idrarı maruziyeti sonrası ateş, sarılık, böbrek hasarı ve konjonktival suffüzyon Leptospira interrogans enfeksiyonunu destekler.",
+          "interpretation": "Sel suyu ve kemirgen idrarı maruziyeti sonrası ateş, sarılık, böbrek hasarı ve konjonktival suffüzyon Leptospira interrogans enfeksiyonunu destekler.",
+          "values": [
+            [
+              "Maruziyet",
+              "Sel/kemirgen idrarıyla kontamine su",
+              "Yok",
+              "Yüksek risk"
+            ],
+            [
+              "Leptospira PCR/IgM",
+              "Pozitif",
+              "Negatif",
+              "Etken lehine"
+            ],
+            [
+              "Kreatinin/bilirubin",
+              "Yüksek",
+              "Normal",
+              "Weil hastalığı paterninde"
+            ]
+          ],
+          "rows": [
+            [
+              "Maruziyet",
+              "Sel/kemirgen idrarıyla kontamine su",
+              "Yok",
+              "Yüksek risk"
+            ],
+            [
+              "Leptospira PCR/IgM",
+              "Pozitif",
+              "Negatif",
+              "Etken lehine"
+            ],
+            [
+              "Kreatinin/bilirubin",
+              "Yüksek",
+              "Normal",
+              "Weil hastalığı paterninde"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Maruziyet",
+            "Sel/kemirgen idrarıyla kontamine su",
+            "Yok",
+            "Yüksek risk"
+          ],
+          [
+            "Leptospira PCR/IgM",
+            "Pozitif",
+            "Negatif",
+            "Etken lehine"
+          ],
+          [
+            "Kreatinin/bilirubin",
+            "Yüksek",
+            "Normal",
+            "Weil hastalığı paterninde"
+          ]
+        ],
+        "postAnswerExplanation": "Sel suyu ve kemirgen idrarı maruziyeti sonrası ateş, sarılık, böbrek hasarı ve konjonktival suffüzyon Leptospira interrogans enfeksiyonunu destekler.",
+        "interpretation": "Sel suyu ve kemirgen idrarı maruziyeti sonrası ateş, sarılık, böbrek hasarı ve konjonktival suffüzyon Leptospira interrogans enfeksiyonunu destekler.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Sel suyu ve kemirgen idrarı maruziyeti sonrası ateş, sarılık, böbrek hasarı ve konjonktival suffüzyon Leptospira interrogans enfeksiyonunu destekler."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v194-new-319-magara-gezisi-sonrasi-ates-ve-oksuruk",
+    "title": "Mağara gezisi sonrası ateş ve öksürük",
+    "oldInvestigationCount": 5,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-histo-antijen",
+        "label": "Histoplasma antijen testi ve mikroskopi",
+        "title": "Histoplasma antijen testi ve mikroskopi",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Antijen / mikroskopi",
+        "summary": "Mağara veya kuş/yarasa dışkısı maruziyeti sonrası makrofaj içi küçük mayalar Histoplasma capsulatum enfeksiyonunu düşündürür.",
+        "clinicalMeaning": "Mağara veya kuş/yarasa dışkısı maruziyeti sonrası makrofaj içi küçük mayalar Histoplasma capsulatum enfeksiyonunu düşündürür.",
+        "result": {
+          "title": "Histoplasma antijen testi ve mikroskopi",
+          "summary": "Mağara veya kuş/yarasa dışkısı maruziyeti sonrası makrofaj içi küçük mayalar Histoplasma capsulatum enfeksiyonunu düşündürür.",
+          "interpretation": "Mağara veya kuş/yarasa dışkısı maruziyeti sonrası makrofaj içi küçük mayalar Histoplasma capsulatum enfeksiyonunu düşündürür.",
+          "values": [
+            [
+              "Maruziyet",
+              "Yarasa/kuş dışkılı mağara tozu",
+              "Yok",
+              "Tipik kaynak"
+            ],
+            [
+              "İdrar/serum antijeni",
+              "Pozitif",
+              "Negatif",
+              "Histoplasma lehine"
+            ],
+            [
+              "Mikroskopi",
+              "Makrofaj içinde küçük oval mayalar",
+              "Yok",
+              "Destekleyici"
+            ]
+          ],
+          "rows": [
+            [
+              "Maruziyet",
+              "Yarasa/kuş dışkılı mağara tozu",
+              "Yok",
+              "Tipik kaynak"
+            ],
+            [
+              "İdrar/serum antijeni",
+              "Pozitif",
+              "Negatif",
+              "Histoplasma lehine"
+            ],
+            [
+              "Mikroskopi",
+              "Makrofaj içinde küçük oval mayalar",
+              "Yok",
+              "Destekleyici"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Maruziyet",
+            "Yarasa/kuş dışkılı mağara tozu",
+            "Yok",
+            "Tipik kaynak"
+          ],
+          [
+            "İdrar/serum antijeni",
+            "Pozitif",
+            "Negatif",
+            "Histoplasma lehine"
+          ],
+          [
+            "Mikroskopi",
+            "Makrofaj içinde küçük oval mayalar",
+            "Yok",
+            "Destekleyici"
+          ]
+        ],
+        "postAnswerExplanation": "Mağara veya kuş/yarasa dışkısı maruziyeti sonrası makrofaj içi küçük mayalar Histoplasma capsulatum enfeksiyonunu düşündürür.",
+        "interpretation": "Mağara veya kuş/yarasa dışkısı maruziyeti sonrası makrofaj içi küçük mayalar Histoplasma capsulatum enfeksiyonunu düşündürür.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Mağara veya kuş/yarasa dışkısı maruziyeti sonrası makrofaj içi küçük mayalar Histoplasma capsulatum enfeksiyonunu düşündürür."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v194-new-320-karacigerde-kistik-lezyon",
+    "title": "Karaciğerde kistik lezyon",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-echinococcus-goruntu",
+        "label": "Kist hidatik görüntüleme ve seroloji",
+        "title": "Kist hidatik görüntüleme ve seroloji",
+        "type": "imaging",
+        "priority": "essential",
+        "subtype": "Görüntüleme / seroloji",
+        "summary": "Köpek-koyun döngüsüyle temas ve karaciğerde kız veziküllü kist, Echinococcus granulosus hidatik kistini destekler; kistin kontrolsüz ponksiyonu anafilaksi riski taşır.",
+        "clinicalMeaning": "Köpek-koyun döngüsüyle temas ve karaciğerde kız veziküllü kist, Echinococcus granulosus hidatik kistini destekler; kistin kontrolsüz ponksiyonu anafilaksi riski taşır.",
+        "result": {
+          "title": "Kist hidatik görüntüleme ve seroloji",
+          "summary": "Köpek-koyun döngüsüyle temas ve karaciğerde kız veziküllü kist, Echinococcus granulosus hidatik kistini destekler; kistin kontrolsüz ponksiyonu anafilaksi riski taşır.",
+          "interpretation": "Köpek-koyun döngüsüyle temas ve karaciğerde kız veziküllü kist, Echinococcus granulosus hidatik kistini destekler; kistin kontrolsüz ponksiyonu anafilaksi riski taşır.",
+          "values": [
+            [
+              "Ultrason/BT",
+              "Karaciğerde septalı kist ve kız veziküller",
+              "Solid lezyon yok",
+              "Hidatik kist lehine"
+            ],
+            [
+              "Seroloji",
+              "Echinococcus IgG pozitif",
+              "Negatif",
+              "Destekleyici"
+            ],
+            [
+              "Risk",
+              "Köpek-koyun döngüsü teması",
+              "Yok",
+              "Tipik bulaş"
+            ]
+          ],
+          "rows": [
+            [
+              "Ultrason/BT",
+              "Karaciğerde septalı kist ve kız veziküller",
+              "Solid lezyon yok",
+              "Hidatik kist lehine"
+            ],
+            [
+              "Seroloji",
+              "Echinococcus IgG pozitif",
+              "Negatif",
+              "Destekleyici"
+            ],
+            [
+              "Risk",
+              "Köpek-koyun döngüsü teması",
+              "Yok",
+              "Tipik bulaş"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Ultrason/BT",
+            "Karaciğerde septalı kist ve kız veziküller",
+            "Solid lezyon yok",
+            "Hidatik kist lehine"
+          ],
+          [
+            "Seroloji",
+            "Echinococcus IgG pozitif",
+            "Negatif",
+            "Destekleyici"
+          ],
+          [
+            "Risk",
+            "Köpek-koyun döngüsü teması",
+            "Yok",
+            "Tipik bulaş"
+          ]
+        ],
+        "postAnswerExplanation": "Köpek-koyun döngüsüyle temas ve karaciğerde kız veziküllü kist, Echinococcus granulosus hidatik kistini destekler; kistin kontrolsüz ponksiyonu anafilaksi riski taşır.",
+        "interpretation": "Köpek-koyun döngüsüyle temas ve karaciğerde kız veziküllü kist, Echinococcus granulosus hidatik kistini destekler; kistin kontrolsüz ponksiyonu anafilaksi riski taşır.",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "explanationAfterAnswer": "Köpek-koyun döngüsüyle temas ve karaciğerde kız veziküllü kist, Echinococcus granulosus hidatik kistini destekler; kistin kontrolsüz ponksiyonu anafilaksi riski taşır."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v195-new-346-dalgali-ates-ve-bel-agrisi",
+    "title": "Dalgalı ateş ve bel ağrısı",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-brucella-seroloji",
+        "label": "Brucella seroloji ve kültür",
+        "title": "Brucella seroloji ve kültür",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Seroloji / kültür",
+        "summary": "Pastörize edilmemiş süt ürünü, dalgalı ateş ve osteoartiküler ağrı Brucella melitensis enfeksiyonunu destekler; kültür laboratuvar güvenliği açısından dikkat gerektirir.",
+        "clinicalMeaning": "Pastörize edilmemiş süt ürünü, dalgalı ateş ve osteoartiküler ağrı Brucella melitensis enfeksiyonunu destekler; kültür laboratuvar güvenliği açısından dikkat gerektirir.",
+        "result": {
+          "title": "Brucella seroloji ve kültür",
+          "summary": "Pastörize edilmemiş süt ürünü, dalgalı ateş ve osteoartiküler ağrı Brucella melitensis enfeksiyonunu destekler; kültür laboratuvar güvenliği açısından dikkat gerektirir.",
+          "interpretation": "Pastörize edilmemiş süt ürünü, dalgalı ateş ve osteoartiküler ağrı Brucella melitensis enfeksiyonunu destekler; kültür laboratuvar güvenliği açısından dikkat gerektirir.",
+          "values": [
+            [
+              "Rose Bengal/STA",
+              "Pozitif titre",
+              "Negatif",
+              "Bruselloz lehine"
+            ],
+            [
+              "Kan kültürü",
+              "Yavaş üreyen küçük gram negatif kokobasil",
+              "Üreme yok",
+              "Destekleyici"
+            ],
+            [
+              "Maruziyet",
+              "Pastörize edilmemiş süt ürünü",
+              "Yok",
+              "Tipik kaynak"
+            ]
+          ],
+          "rows": [
+            [
+              "Rose Bengal/STA",
+              "Pozitif titre",
+              "Negatif",
+              "Bruselloz lehine"
+            ],
+            [
+              "Kan kültürü",
+              "Yavaş üreyen küçük gram negatif kokobasil",
+              "Üreme yok",
+              "Destekleyici"
+            ],
+            [
+              "Maruziyet",
+              "Pastörize edilmemiş süt ürünü",
+              "Yok",
+              "Tipik kaynak"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Rose Bengal/STA",
+            "Pozitif titre",
+            "Negatif",
+            "Bruselloz lehine"
+          ],
+          [
+            "Kan kültürü",
+            "Yavaş üreyen küçük gram negatif kokobasil",
+            "Üreme yok",
+            "Destekleyici"
+          ],
+          [
+            "Maruziyet",
+            "Pastörize edilmemiş süt ürünü",
+            "Yok",
+            "Tipik kaynak"
+          ]
+        ],
+        "postAnswerExplanation": "Pastörize edilmemiş süt ürünü, dalgalı ateş ve osteoartiküler ağrı Brucella melitensis enfeksiyonunu destekler; kültür laboratuvar güvenliği açısından dikkat gerektirir.",
+        "interpretation": "Pastörize edilmemiş süt ürünü, dalgalı ateş ve osteoartiküler ağrı Brucella melitensis enfeksiyonunu destekler; kültür laboratuvar güvenliği açısından dikkat gerektirir.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Pastörize edilmemiş süt ürünü, dalgalı ateş ve osteoartiküler ağrı Brucella melitensis enfeksiyonunu destekler; kültür laboratuvar güvenliği açısından dikkat gerektirir."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v195-new-347-akciger-ve-beyin-lezyonlari",
+    "title": "Akciğer ve beyin lezyonları",
+    "oldInvestigationCount": 5,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-nocardia-boyama",
+        "label": "Balgam/apse örneği boyama ve kültür",
+        "title": "Balgam/apse örneği boyama ve kültür",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Boyama / kültür",
+        "summary": "İmmünsüprese hastada akciğerden beyne yayılan, zayıf aside dirençli dallanan aerobik filamentöz bakteri Nocardia asteroides kompleksini düşündürür.",
+        "clinicalMeaning": "İmmünsüprese hastada akciğerden beyne yayılan, zayıf aside dirençli dallanan aerobik filamentöz bakteri Nocardia asteroides kompleksini düşündürür.",
+        "result": {
+          "title": "Balgam/apse örneği boyama ve kültür",
+          "summary": "İmmünsüprese hastada akciğerden beyne yayılan, zayıf aside dirençli dallanan aerobik filamentöz bakteri Nocardia asteroides kompleksini düşündürür.",
+          "interpretation": "İmmünsüprese hastada akciğerden beyne yayılan, zayıf aside dirençli dallanan aerobik filamentöz bakteri Nocardia asteroides kompleksini düşündürür.",
+          "values": [
+            [
+              "Gram boyama",
+              "Dallanan filamentöz gram pozitif yapılar",
+              "Yok",
+              "Nocardia/Actinomyces ayrımı"
+            ],
+            [
+              "Modifiye aside direnç",
+              "Zayıf pozitif",
+              "Negatif",
+              "Nocardia lehine"
+            ],
+            [
+              "Kültür",
+              "Aerobik büyüme",
+              "Anaerobik büyüme beklenmez",
+              "Destekleyici"
+            ]
+          ],
+          "rows": [
+            [
+              "Gram boyama",
+              "Dallanan filamentöz gram pozitif yapılar",
+              "Yok",
+              "Nocardia/Actinomyces ayrımı"
+            ],
+            [
+              "Modifiye aside direnç",
+              "Zayıf pozitif",
+              "Negatif",
+              "Nocardia lehine"
+            ],
+            [
+              "Kültür",
+              "Aerobik büyüme",
+              "Anaerobik büyüme beklenmez",
+              "Destekleyici"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Gram boyama",
+            "Dallanan filamentöz gram pozitif yapılar",
+            "Yok",
+            "Nocardia/Actinomyces ayrımı"
+          ],
+          [
+            "Modifiye aside direnç",
+            "Zayıf pozitif",
+            "Negatif",
+            "Nocardia lehine"
+          ],
+          [
+            "Kültür",
+            "Aerobik büyüme",
+            "Anaerobik büyüme beklenmez",
+            "Destekleyici"
+          ]
+        ],
+        "postAnswerExplanation": "İmmünsüprese hastada akciğerden beyne yayılan, zayıf aside dirençli dallanan aerobik filamentöz bakteri Nocardia asteroides kompleksini düşündürür.",
+        "interpretation": "İmmünsüprese hastada akciğerden beyne yayılan, zayıf aside dirençli dallanan aerobik filamentöz bakteri Nocardia asteroides kompleksini düşündürür.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "İmmünsüprese hastada akciğerden beyne yayılan, zayıf aside dirençli dallanan aerobik filamentöz bakteri Nocardia asteroides kompleksini düşündürür."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  },
+  {
+    "caseId": "v195-new-348-seyahat-sonrasi-periyodik-ates",
+    "title": "Seyahat sonrası periyodik ateş",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 1,
+    "newInvestigations": [
+      {
+        "id": "micro-plasmodium-yayma",
+        "label": "Kalın damla ve ince yayma",
+        "title": "Kalın damla ve ince yayma",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "Mikroskopi",
+        "summary": "Seyahat sonrası periyodik ateşte kalın damla tarama, ince yayma tür ve parazitemi değerlendirmesi için kullanılır; sonuç negatifse klinik şüphede tekrar örnek gerekebilir.",
+        "clinicalMeaning": "Seyahat sonrası periyodik ateşte kalın damla tarama, ince yayma tür ve parazitemi değerlendirmesi için kullanılır; sonuç negatifse klinik şüphede tekrar örnek gerekebilir.",
+        "result": {
+          "title": "Kalın damla ve ince yayma",
+          "summary": "Seyahat sonrası periyodik ateşte kalın damla tarama, ince yayma tür ve parazitemi değerlendirmesi için kullanılır; sonuç negatifse klinik şüphede tekrar örnek gerekebilir.",
+          "interpretation": "Seyahat sonrası periyodik ateşte kalın damla tarama, ince yayma tür ve parazitemi değerlendirmesi için kullanılır; sonuç negatifse klinik şüphede tekrar örnek gerekebilir.",
+          "values": [
+            [
+              "Kalın damla",
+              "Plasmodium parazitleri görüldü",
+              "Negatif",
+              "Sıtma lehine"
+            ],
+            [
+              "İnce yayma",
+              "Tür/parazitemi değerlendirilir",
+              "Negatif",
+              "Tedavi için gerekli"
+            ],
+            [
+              "Hemogram",
+              "Anemi ve trombositopeni",
+              "Normal",
+              "Hemoliz/sekestrasyon"
+            ]
+          ],
+          "rows": [
+            [
+              "Kalın damla",
+              "Plasmodium parazitleri görüldü",
+              "Negatif",
+              "Sıtma lehine"
+            ],
+            [
+              "İnce yayma",
+              "Tür/parazitemi değerlendirilir",
+              "Negatif",
+              "Tedavi için gerekli"
+            ],
+            [
+              "Hemogram",
+              "Anemi ve trombositopeni",
+              "Normal",
+              "Hemoliz/sekestrasyon"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kalın damla",
+            "Plasmodium parazitleri görüldü",
+            "Negatif",
+            "Sıtma lehine"
+          ],
+          [
+            "İnce yayma",
+            "Tür/parazitemi değerlendirilir",
+            "Negatif",
+            "Tedavi için gerekli"
+          ],
+          [
+            "Hemogram",
+            "Anemi ve trombositopeni",
+            "Normal",
+            "Hemoliz/sekestrasyon"
+          ]
+        ],
+        "postAnswerExplanation": "Seyahat sonrası periyodik ateşte kalın damla tarama, ince yayma tür ve parazitemi değerlendirmesi için kullanılır; sonuç negatifse klinik şüphede tekrar örnek gerekebilir.",
+        "interpretation": "Seyahat sonrası periyodik ateşte kalın damla tarama, ince yayma tür ve parazitemi değerlendirmesi için kullanılır; sonuç negatifse klinik şüphede tekrar örnek gerekebilir.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "explanationAfterAnswer": "Seyahat sonrası periyodik ateşte kalın damla tarama, ince yayma tür ve parazitemi değerlendirmesi için kullanılır; sonuç negatifse klinik şüphede tekrar örnek gerekebilir."
+      }
+    ],
+    "cleanedGenericPhrases": []
+  }
+]

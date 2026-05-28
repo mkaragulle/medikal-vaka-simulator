@@ -1,0 +1,272 @@
+[
+  {
+    "caseId": "v168-new-055-yenidoganda-okuler-ve-norolojik-bulgular",
+    "title": "Yenidoğanda oküler ve nörolojik bulgular",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "T. gondii kedilerin kesin konak olduğu, doku kistleri ve ookistlerle bulaşabilen zorunlu hücre içi protozoondur; konjenital enfeksiyon göz ve santral sinir sistemini belirgin etkiler.",
+    "examPearl": "Konjenital toksoplazmozda retinokoroidit, hidrosefali ve intrakraniyal kalsifikasyon triadı yüksek getirili ipucudur; maternal IgG tek başına tanı koydurmaz.",
+    "pathogenOrMechanism": "Toxoplasma gondii",
+    "mechanisticRationale": "Gebelikte kedi dışkısı veya az pişmiş etle alınan T. gondii ookistleri/takizoitleri transplasental geçebilir. Yenidoğanda retinokoroidit, hidrosefali ve intrakraniyal kalsifikasyon birlikteliği konjenital toksoplazmoz için klasik paterndir; pozitif yenidoğan IgM/IgA veya PCR maternal antikor geçişinden bağımsız aktif enfeksiyonu destekler."
+  },
+  {
+    "caseId": "v169-new-064-antibiyotik-sonrasi-ishal",
+    "title": "Antibiyotik sonrası ishal",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "C. difficile spor oluşturan anaerob bir basildir; antibiyotik sonrası flora baskılanınca toksin A/B üretimiyle kolit oluşturur.",
+    "examPearl": "Antibiyotik sonrası psödomembranöz kolitte ana mekanizma C. difficile toksin A/B aracılı kolon mukozası hasarıdır; tanı forme dışkıyla değil sulu dışkı örneğiyle araştırılır.",
+    "pathogenOrMechanism": "Clostridioides difficile",
+    "mechanisticRationale": "Geniş spektrumlu antibiyotikler bağırsak florasını baskılayarak C. difficile kolonizasyonu ve toksin üretimi için zemin hazırlar. Toksin A enterotoksin etkisiyle inflamasyon ve sekresyonu, toksin B ise sitoskeletal hasarı artırır; sonuç sulu ishal ve psödomembranöz kolittir."
+  },
+  {
+    "caseId": "v172-new-073-kirli-yara-sonrasi-kas-spazmlari",
+    "title": "Kirli yara sonrası kas spazmları",
+    "learningTarget": "toxin_mechanism",
+    "coreKnowledge": "C. tetani gram pozitif, sporlu, zorunlu anaerob basildir; patogenezde belirleyici toksin tetanospazmindir.",
+    "examPearl": "Tetanoz toksini santral inhibitör internöronlarda GABA ve glisin salınımını engeller ve spastik paralizi yapar; botulinum toksini periferik asetilkolin salınımını engeller ve flask paralizi yapar.",
+    "pathogenOrMechanism": "İnhibitör internöronlarda GABA ve glisin salınımının engellenmesi",
+    "mechanisticRationale": "Kirli, derin ve aşı öyküsü belirsiz yara sonrası gelişen trismus, risus sardonicus ve uyarıyla artan kas spazmları tetanozu düşündürür. C. tetani tetanospazmin toksini periferik sinir uçlarından alınarak retrograd taşınır ve inhibitör internöronlarda SNARE proteinlerini hedefleyerek GABA ile glisin salınımını engeller; motor nöronlar üzerindeki fren kalktığı için rijidite ve ağrılı spazmlar gelişir."
+  },
+  {
+    "caseId": "v172-new-079-yanik-yarasinda-kotulesen-enfeksiyon",
+    "title": "Yanık yarasında kötüleşen enfeksiyon",
+    "learningTarget": "toxin_mechanism",
+    "coreKnowledge": "P. aeruginosa oksidaz pozitif, non-fermenter gram negatif basildir; yanık, ventilatör ve nemli hastane ortamlarıyla ilişkilidir.",
+    "examPearl": "Pseudomonas Exotoxin A ve difteri toksini EF-2’yi ADP-ribozilleyerek protein sentezini inhibe eder; kolera toksini ise adenilat siklaz-cAMP hattını artırır.",
+    "pathogenOrMechanism": "EF-2’yi ADP-ribozilleyerek protein sentezini inhibe etmesi",
+    "mechanisticRationale": "P. aeruginosa yanık yaralarında nemli ortamı ve doku hasarını fırsat bilerek invaziv enfeksiyon yapabilir. Exotoxin A, EF-2’yi ADP-ribozilleyerek translokasyon basamağını durdurur; protein sentezinin kesilmesi hücre ölümü ve doku nekrozuna katkı sağlar."
+  },
+  {
+    "caseId": "v173-new-083-atipik-pnomoni-ve-hiponatremi",
+    "title": "Atipik pnömoni ve hiponatremi",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Legionella hücre içi çoğalabilen gram negatif basildir; standart balgam kültüründe kolay üremez ve BCYE besiyeri gerekir.",
+    "examPearl": "Legionella pnömonisinde su sistemi maruziyeti + hiponatremi + gastrointestinal/nörolojik bulgular yüksek getirili kombinasyondur.",
+    "pathogenOrMechanism": "Legionella pneumophila",
+    "mechanisticRationale": "Legionella pneumophila su sistemleri, klima, jakuzi ve otel kaynaklı aerosollerle bulaşır. Atipik pnömoniye hiponatremi, ishal ve nörolojik belirtilerin eşlik etmesi bu etkeni güçlü biçimde destekler; idrar antijeni özellikle serogrup 1 için yararlıdır."
+  },
+  {
+    "caseId": "v173-new-084-ates-ve-yaygin-lenfadenopati",
+    "title": "Ateş ve yaygın lenfadenopati",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "EBV zarflı çift sarmallı DNA herpesvirüsüdür; mononükleoz dışında Burkitt lenfoma ve nazofarenks karsinomu ile de ilişkilidir.",
+    "examPearl": "EBV mononükleozunda CD21 aracılı B hücre enfeksiyonu, atipik lenfositler ve heterofil antikor pozitifliği birlikte beklenir.",
+    "pathogenOrMechanism": "Epstein-Barr virus",
+    "mechanisticRationale": "EBV, CD21 üzerinden B lenfositleri enfekte eder ve enfeksiyöz mononükleoz tablosuna yol açar. Posterior servikal lenfadenopati, eksüdatif farenjit, splenomegali, atipik lenfositler ve heterofil antikor pozitifliği tanıyı destekler."
+  },
+  {
+    "caseId": "v174-new-098-dis-islemi-sonrasi-subakut-ates",
+    "title": "Diş işlemi sonrası subakut ateş",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "HACEK: Haemophilus/Aggregatibacter/Cardiobacterium/Eikenella/Kingella; orofarenks florası ve kültür-negatif/subakut endokardit ilişkisi yüksek getiridir.",
+    "examPearl": "HACEK endokarditinde ilk kültürlerin erken negatif olması tanıyı dışlamaz; uzamış inkübasyon ve klinik bağlam önemlidir.",
+    "pathogenOrMechanism": "HACEK grubu mikroorganizmalar",
+    "mechanisticRationale": "HACEK grubu orofarenks florasında bulunan, yavaş üreyebilen gram negatif mikroorganizmalardan oluşur ve dental girişim sonrası subakut endokardit bağlamında klasik çeldirici/yanıttır. Kültürlerin geç pozitifleşmesi ve gram negatif kokobasil tanımı bu grubu destekler."
+  },
+  {
+    "caseId": "v175-new-104-paroksismal-oksuruk-nobetleri",
+    "title": "Paroksismal öksürük nöbetleri",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "B. pertussis küçük gram negatif kokobasildir; pertussis toksini Gi inhibisyonu üzerinden cAMP artışı ve lenfositozla ilişkilidir.",
+    "examPearl": "Boğmacada ateş çoğu kez belirgin değildir; paroksismal öksürük + whoop + posttussif kusma ve lenfositoz daha değerlidir.",
+    "pathogenOrMechanism": "Bordetella pertussis",
+    "mechanisticRationale": "B. pertussis siliyer solunum epitelini tutar; pertussis toksini Gi proteinini ADP-ribozilleyerek cAMP sinyalini artırır ve lenfositoz ile uzamış paroksismal öksürüğe katkı sağlar. Eksik aşı, whoop ve posttussif kusma tanıyı destekler."
+  },
+  {
+    "caseId": "v176-new-119-kamp-sonrasi-kotu-kokulu-ishal",
+    "title": "Kamp sonrası kötü kokulu ishal",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Giardia lamblia kamçılı protozoondur; kist formu bulaşıcı, trofozoit formu ince bağırsakta semptomdan sorumludur.",
+    "examPearl": "Kamp + dere suyu + kötü kokulu yağlı ishal denince Giardia düşün; Entamoeba daha çok kanlı dizanteri ve karaciğer apsesi yapar.",
+    "pathogenOrMechanism": "Giardia lamblia",
+    "mechanisticRationale": "Giardia lamblia tatlı su kaynaklı kistlerle bulaşır ve ince bağırsak mukozasına tutunarak yağ-malabsorpsiyonu, gaz, şişkinlik ve kötü kokulu ishal yapar. Kanlı dizanteri veya invazyon beklenmemesi Giardia lehinedir."
+  },
+  {
+    "caseId": "v177-new-130-genc-eriskinde-atipik-pnomoni",
+    "title": "Genç erişkinde atipik pnömoni",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Mycoplasma sterol içeren membranı ve P1 adeziniyle solunum epiteline tutunur; atipik pnömoninin klasik etkenidir.",
+    "examPearl": "Mycoplasma pneumoniae hücre duvarı içermez; bu yüzden beta-laktamlar etkisizdir ve Gram boyamada tipik bakteri beklenmez.",
+    "pathogenOrMechanism": "Mycoplasma pneumoniae",
+    "mechanisticRationale": "M. pneumoniae hücre duvarı olmayan bir bakteridir; okul/yurt gibi kalabalık ortamlarda atipik pnömoni yapar. Beta-laktama yanıtsızlık, Gram boyamada belirgin bakteri görülmemesi ve kuru öksürük bu etkeni destekler."
+  },
+  {
+    "caseId": "v178-new-135-yasli-hastada-menenjit",
+    "title": "Yaşlı hastada menenjit",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Listeria aktin polimerizasyonuyla hücreden hücreye yayılır; soğukta üreyebilmesi gıda kaynaklı bulaş açısından önemlidir.",
+    "examPearl": "Yaşlı/gebede menenjitte Listeria düşün; ampirik tedavide sefalosporin tek başına Listeria’yı kapsamaz, ampisilin gerekir.",
+    "pathogenOrMechanism": "Listeria monocytogenes",
+    "mechanisticRationale": "Listeria monocytogenes pastörize edilmemiş süt ürünleriyle bulaşabilen, hücre içinde yaşayabilen gram pozitif basildir. Yenidoğan, gebe, yaşlı ve immünsüprese hastalarda menenjit yapar; BOS’ta kısa gram pozitif basil görülmesi ayırıcıdır."
+  },
+  {
+    "caseId": "v178-new-140-immunsuprese-hastada-subakut-menenjit",
+    "title": "İmmünsüprese hastada subakut menenjit",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Cryptococcus neoformans üreaz pozitif, kapsüllü mayadır; güvercin dışkısı maruziyeti klasik kaynak bilgisidir.",
+    "examPearl": "Cryptococcus neoformans denince kapsül, India ink/kriptokok antijeni ve immünsüprese hastada subakut menenjit birlikte düşünülür.",
+    "pathogenOrMechanism": "Cryptococcus neoformans",
+    "mechanisticRationale": "Cryptococcus neoformans polisakkarit kapsüllü bir mayadır ve özellikle hücresel immünitesi baskılanmış hastalarda subakut menenjit yapar. BOS kriptokok antijeni, yüksek açılış basıncı ve India ink ile kapsüllü maya görünümü tanıyı destekler."
+  },
+  {
+    "caseId": "v184-new-193-kirli-yara-sonrasi-cene-kilitlenmesi",
+    "title": "Kirli yara sonrası çene kilitlenmesi",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Tetanoz tanısı kliniktir; yara kültürü negatifliği dışlatmaz ve tedavi kültür sonucunu beklememelidir.",
+    "examPearl": "C. tetani spastik paralizi yapar; C. botulinum ise periferik asetilkolin salınımını engelleyerek flask paralizi oluşturur.",
+    "pathogenOrMechanism": "Clostridium tetani",
+    "mechanisticRationale": "Clostridium tetani toprakta bulunan sporlu, zorunlu anaerob gram pozitif basildir. Kirli derin yara ve yetersiz immünizasyon sonrası tetanospazmin üretir; bu toksin inhibitör internöronlardan GABA/glisin salınımını engelleyerek spastik paralizi yapar."
+  },
+  {
+    "caseId": "v185-new-213-hayvan-isirigi-sonrasi-hidrofobi",
+    "title": "Hayvan ısırığı sonrası hidrofobi",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Rabies virus zarflı, negatif polariteli tek sarmallı RNA virüsüdür; Negri cisimcikleri klasik histolojik ipucudur.",
+    "examPearl": "Kuduzda klinik hastalık gelişmeden önce yara temizliği + aşı + rabies immünoglobulini hayat kurtarıcıdır; semptom başladıktan sonra mortalite çok yüksektir.",
+    "pathogenOrMechanism": "Rabies virus",
+    "mechanisticRationale": "Rabies virus ısırıkla kas dokusuna girer, periferik sinirlerden retrograd aksonal taşınmayla santral sinir sistemine ulaşır ve ensefalit tablosu oluşturur. Hidrofobi, aerofobi, hipersalivasyon ve ısırık yerinde parestezi kuduz için ayırt edicidir."
+  },
+  {
+    "caseId": "v185-new-214-epigastrik-agri-ve-ureaz-pozitifligi",
+    "title": "Epigastrik ağrı ve üreaz pozitifliği",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "H. pylori gastrit, peptik ülser, MALT lenfoma ve gastrik adenokarsinomla ilişkilidir.",
+    "examPearl": "H. pylori üreaz pozitiftir; tanıda üre nefes testi, dışkı antijeni veya biyopsi bazlı hızlı üreaz/histoloji kullanılabilir.",
+    "pathogenOrMechanism": "Helicobacter pylori",
+    "mechanisticRationale": "H. pylori kıvrımlı, mikroaerofilik gram negatif basildir ve üreaz aktivitesiyle mide mukozasında yaşamını sürdürür. Üreaz pozitifliği, antral gastrit ve duodenal ülser bu etken için tipiktir."
+  },
+  {
+    "caseId": "v185-new-215-transplant-sonrasi-gorme-bulanikligi",
+    "title": "Transplant sonrası görme bulanıklığı",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "CMV beta-herpesvirüstür; latent kalır ve T hücre immünitesi baskılandığında reaktive olabilir.",
+    "examPearl": "İmmünsüprese hastada retinit denince CMV; histolojide büyük hücre ve intranükleer “baykuş gözü” inklüzyonu yüksek getirili ipucudur.",
+    "pathogenOrMechanism": "Cytomegalovirus",
+    "mechanisticRationale": "CMV immünsüprese hastalarda reaktivasyonla retinit, kolit veya pnömoni yapabilir. Transplant alıcısında hemorajik nekrotizan retinit, yüksek CMV DNA düzeyi ve baykuş gözü inklüzyonu bilgisi CMV lehinedir."
+  },
+  {
+    "caseId": "v186-new-235-uzayan-bogulur-tarzda-oksuruk",
+    "title": "Uzayan boğulur tarzda öksürük",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "B. pertussis solunum epitelinde siliyer disfonksiyon ve toksin aracılı lenfositoz oluşturur.",
+    "examPearl": "Süt çocuklarında boğmaca apne ve siyanozla ağırlaşabilir; ateşin belirgin olmaması tanıyı dışlamaz.",
+    "pathogenOrMechanism": "Bordetella pertussis",
+    "mechanisticRationale": "B. pertussis özellikle aşısız/eksik aşılı bebeklerde ağır paroksismal öksürük ve apne yapabilir. Pertussis toksini lenfositoza katkı sağlar; nazofarengeal PCR tanıyı destekler."
+  },
+  {
+    "caseId": "v187-new-249-antibiyotik-sonrasi-sulu-ishal",
+    "title": "Antibiyotik sonrası sulu ishal",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "C. difficile sporlu anaerobdur; toksin A/B Rho GTPazlarını etkileyerek sitoskeletal hasar ve mukozal inflamasyon oluşturur.",
+    "examPearl": "C. difficile tanısında klinik olarak ishal yoksa test pozitifliği kolonizasyon olabilir; semptom ve toksin birlikte yorumlanır.",
+    "pathogenOrMechanism": "Clostridioides difficile",
+    "mechanisticRationale": "Clindamisin dahil geniş spektrumlu antibiyotikler C. difficile için klasik risk oluşturur. Toksin A/B pozitifliği ve sulu ishal, toksin aracılı kolit mekanizmasını destekler."
+  },
+  {
+    "caseId": "v187-new-250-hemolitik-hastada-ani-anemi",
+    "title": "Hemolitik hastada ani anemi",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Parvovirus B19 zarfsız tek sarmallı DNA virüsüdür; eritema infeksiyozum, aplastik kriz ve fetal hidrops ile ilişkilidir.",
+    "examPearl": "Hemolitik hastada ani anemi + retikülositopeni = Parvovirus B19 aplastik krizi; normal hemolizde retikülosit yüksek beklenir.",
+    "pathogenOrMechanism": "Parvovirus B19",
+    "mechanisticRationale": "Parvovirus B19 eritroid progenitörlerde P antijenine bağlanarak geçici eritropoez durması yapar. Kronik hemolizli hastalarda eritrosit yaşam süresi kısa olduğu için bu baskılanma ani aplastik krize yol açar."
+  },
+  {
+    "caseId": "v188-new-264-ates-ve-petesiyal-dokuntu",
+    "title": "Ateş ve peteşiyal döküntü",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "N. meningitidis kapsülü önemli virülans faktörüdür; aşılar kapsül polisakkaritlerine yöneliktir.",
+    "examPearl": "Meningokok menenjitte peteşi/purpura ve hızlı şok gelişimi yüksek getirili ipucudur; yakın temaslılara kemoprofilaksi gerekir.",
+    "pathogenOrMechanism": "Neisseria meningitidis",
+    "mechanisticRationale": "N. meningitidis kapsüllü, oksidaz pozitif gram negatif diplokoktur. Nazofarenks kolonizasyonundan invazyonla meningokoksemi ve menenjit yapabilir; peteşi/purpura ve şok riski endotoksin etkisiyle ilişkilidir."
+  },
+  {
+    "caseId": "v188-new-265-yanik-yarasinda-kotu-kokulu-akinti",
+    "title": "Yanık yarasında kötü kokulu akıntı",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "P. aeruginosa biyofilm, pigmentler, elastaz ve Exotoxin A gibi virülans faktörleriyle yanık ve hastane enfeksiyonlarında önemlidir.",
+    "examPearl": "Yanık yarası + yeşil pigment + üzüm benzeri koku = Pseudomonas aeruginosa düşün.",
+    "pathogenOrMechanism": "Pseudomonas aeruginosa",
+    "mechanisticRationale": "P. aeruginosa nemli hastane ortamlarını ve yanık dokusunu sever; pyosiyanin/pyoverdin pigmentleri yeşil-mavi akıntı oluşturabilir. Oksidaz pozitif non-fermenter gram negatif basil tanımı etkeni destekler."
+  },
+  {
+    "caseId": "v189-new-283-otel-konaklamasi-sonrasi-pnomoni",
+    "title": "Otel konaklaması sonrası pnömoni",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Legionella hücre içi yaşar; makrofajlarda fagolizozom füzyonunu engelleyerek çoğalabilir.",
+    "examPearl": "Legionella sorularında “otel/klima/jakuzi + pnömoni + hiponatremi/ishal” kombinasyonu çok yüksek getiridir.",
+    "pathogenOrMechanism": "Legionella pneumophila",
+    "mechanisticRationale": "Legionella otel su sistemleri ve aerosollerle bulaşır; atipik/ağır pnömoniye gastrointestinal ve nörolojik bulgular ile hiponatremi eşlik edebilir. İdrar antijeni tanıda hızlı destek sağlar."
+  },
+  {
+    "caseId": "v189-new-284-antibiyotik-sonrasi-oral-plaklar",
+    "title": "Antibiyotik sonrası oral plaklar",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Candida albicans germ tüp oluşturabilir; mukozal enfeksiyonlardan kandidemiye kadar geniş spektrumda hastalık yapar.",
+    "examPearl": "Oral pamukçukta kazınabilen plak + psödohif = Candida albicans; Cryptococcus kapsüllü maya olarak menenjitle hatırlanır.",
+    "pathogenOrMechanism": "Candida albicans",
+    "mechanisticRationale": "Candida albicans fırsatçı mayadır; antibiyotik, diyabet ve steroid kullanımı mukozal kandidiyazis riskini artırır. Kazınabilir plaklar, eritemli zemin ve KOH’da tomurcuklanan maya-psödohif görünümü tanıyı destekler."
+  },
+  {
+    "caseId": "v189-new-285-akintisiz-dizuri-ve-uretrit",
+    "title": "Akıntısız dizüri ve üretrit",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Chlamydia elementer cisim ve retiküler cisim döngüsüne sahip zorunlu hücre içi bakteridir.",
+    "examPearl": "Nongonokokal üretritte Chlamydia NAAT ile aranır; gonorede Gram boyamada nötrofiller içinde gram negatif diplokok görülebilir.",
+    "pathogenOrMechanism": "Chlamydia trachomatis",
+    "mechanisticRationale": "C. trachomatis zorunlu hücre içi bakteridir ve nongonokokal üretritin en önemli nedenlerinden biridir. Hafif/berrak akıntı, yoğun pürülan akıntının olmaması ve NAAT pozitifliği tanıyı destekler."
+  },
+  {
+    "caseId": "v194-new-318-sel-sonrasi-ates-ve-sarilik",
+    "title": "Sel sonrası ateş ve sarılık",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Leptospira ince spirokettir; enfekte hayvan idrarıyla kontamine su/çamur üzerinden bulaşır.",
+    "examPearl": "Sel sonrası sarılık + böbrek yetmezliği + konjonktival suffüzyon = Leptospira interrogans düşün.",
+    "pathogenOrMechanism": "Leptospira interrogans",
+    "mechanisticRationale": "Leptospira interrogans kemirgen idrarıyla kontamine su veya toprakla bulaşan spirokettir. Weil hastalığında ateş, konjonktival suffüzyon, sarılık, böbrek yetmezliği ve baldır ağrısı birlikte görülebilir."
+  },
+  {
+    "caseId": "v194-new-319-magara-gezisi-sonrasi-ates-ve-oksuruk",
+    "title": "Mağara gezisi sonrası ateş ve öksürük",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Histoplasma dimorfik mantardır; çevrede küf, dokuda maya formundadır ve hücresel immüniteyle kontrol edilir.",
+    "examPearl": "Histoplasma: Ohio/Mississippi vadisi, kuş-yarasa dışkısı, makrofaj içinde küçük mayalar; Blastomyces broad-based budding yapar.",
+    "pathogenOrMechanism": "Histoplasma capsulatum",
+    "mechanisticRationale": "Histoplasma capsulatum kuş/yarasa dışkısıyla zenginleşmiş toprakta bulunur; mikroconidia inhalasyonu sonrası makrofaj içinde çoğalan küçük mayalara dönüşür. Mağara maruziyeti ve antijen pozitifliği tanıyı destekler."
+  },
+  {
+    "caseId": "v194-new-320-karacigerde-kistik-lezyon",
+    "title": "Karaciğerde kistik lezyon",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Echinococcus granulosus larval formu hidatik kist oluşturur; erişkin parazit köpekte yaşar.",
+    "examPearl": "Hidatik kistte kontrolsüz aspirasyon rüptür ve anafilaksi riski taşır; köpek kesin konak, koyun ara konaktır.",
+    "pathogenOrMechanism": "Echinococcus granulosus",
+    "mechanisticRationale": "Echinococcus granulosus köpeklerin kesin konak, koyunların ara konak olduğu döngüyle bulaşır; insan ara konak gibi enfekte olup özellikle karaciğerde hidatik kist geliştirir. Kız veziküller ve köpek teması tanıyı destekler."
+  },
+  {
+    "caseId": "v195-new-346-dalgali-ates-ve-bel-agrisi",
+    "title": "Dalgalı ateş ve bel ağrısı",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Brucella fakültatif hücre içi gram negatif kokobasildir; laboratuvar bulaşı açısından dikkat gerektirir.",
+    "examPearl": "Brusellozda pastörize edilmemiş süt + dalgalı ateş + gece terlemesi + bel/sakroiliak ağrı yüksek getirili kombinasyondur.",
+    "pathogenOrMechanism": "Brucella melitensis",
+    "mechanisticRationale": "Brucella melitensis pastörize edilmemiş süt ürünleri veya hayvan temasıyla bulaşan fakültatif hücre içi gram negatif kokobasildir. Dalgalı ateş, gece terlemesi ve osteoartiküler tutulum bruselloz için tipiktir."
+  },
+  {
+    "caseId": "v195-new-347-akciger-ve-beyin-lezyonlari",
+    "title": "Akciğer ve beyin lezyonları",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Nocardia immünsüprese hastada akciğer-beyin apsesi yapabilir; tedavide TMP-SMX klasik bilgidir.",
+    "examPearl": "Nocardia aerobik ve zayıf aside dirençlidir; Actinomyces anaerobiktir ve aside dirençli değildir.",
+    "pathogenOrMechanism": "Nocardia asteroides kompleksi",
+    "mechanisticRationale": "Nocardia asteroides kompleksi toprak kaynaklı, aerobik, dallanan filamentöz gram pozitif ve zayıf aside dirençli bakteridir. İmmünsüpresyonda pulmoner enfeksiyondan beyin apsesine dissemine olabilir."
+  },
+  {
+    "caseId": "v195-new-348-seyahat-sonrasi-periyodik-ates",
+    "title": "Seyahat sonrası periyodik ateş",
+    "learningTarget": "pathogen",
+    "coreKnowledge": "Plasmodium eritrosit içi yaşam döngüsüyle hemoliz ve periyodik ateş yapar; P. falciparum ağır hastalık riski taşır.",
+    "examPearl": "Seyahat sonrası ateşte sıtma dışlanana kadar acildir; kalın damla duyarlı tarama, ince yayma tür ve parazitemi için kullanılır.",
+    "pathogenOrMechanism": "Plasmodium türleri",
+    "mechanisticRationale": "Plasmodium türleri Anopheles sivrisineğiyle bulaşır; eritrosit içi çoğalma dönemleri periyodik ateş atakları, hemoliz, anemi ve splenomegaliye yol açar. Kalın damla ve ince yayma tanıda temel mikroskobik yöntemlerdir."
+  }
+]

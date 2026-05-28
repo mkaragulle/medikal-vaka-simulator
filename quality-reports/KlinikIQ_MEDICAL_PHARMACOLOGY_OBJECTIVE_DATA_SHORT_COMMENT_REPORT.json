@@ -1,0 +1,4086 @@
+[
+  {
+    "caseId": "v163-new-007-kolinergik-bulgularla-zehirlenme",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 3,
+    "removedBannedCommentCount": 0,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-aChE-activity",
+        "label": "Plazma kolinesteraz aktivitesi",
+        "title": "Plazma kolinesteraz aktivitesi",
+        "type": "toxicology",
+        "priority": "essential",
+        "subtype": "Toksikoloji / ilaç düzeyi",
+        "summary": "İnsektisit maruziyetiyle birlikte düşük kolinesteraz aktivitesi organofosfatın asetilkolinesterazı inhibe ettiğini ve asetilkolin birikimine yol açtığını destekler.",
+        "clinicalMeaning": "İnsektisit maruziyetiyle birlikte düşük kolinesteraz aktivitesi organofosfatın asetilkolinesterazı inhibe ettiğini ve asetilkolin birikimine yol açtığını destekler.",
+        "result": {
+          "title": "Plazma kolinesteraz aktivitesi",
+          "summary": "İnsektisit maruziyetiyle birlikte düşük kolinesteraz aktivitesi organofosfatın asetilkolinesterazı inhibe ettiğini ve asetilkolin birikimine yol açtığını destekler.",
+          "interpretation": "İnsektisit maruziyetiyle birlikte düşük kolinesteraz aktivitesi organofosfatın asetilkolinesterazı inhibe ettiğini ve asetilkolin birikimine yol açtığını destekler.",
+          "values": [
+            [
+              "Kolinesteraz aktivitesi",
+              "Belirgin düşük",
+              "Laboratuvar referans aralığı",
+              "Düşük"
+            ]
+          ],
+          "rows": [
+            [
+              "Kolinesteraz aktivitesi",
+              "Belirgin düşük",
+              "Laboratuvar referans aralığı",
+              "Düşük"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kolinesteraz aktivitesi",
+            "Belirgin düşük",
+            "Laboratuvar referans aralığı",
+            "Düşük"
+          ]
+        ],
+        "postAnswerExplanation": "İnsektisit maruziyetiyle birlikte düşük kolinesteraz aktivitesi organofosfatın asetilkolinesterazı inhibe ettiğini ve asetilkolin birikimine yol açtığını destekler.",
+        "interpretation": "İnsektisit maruziyetiyle birlikte düşük kolinesteraz aktivitesi organofosfatın asetilkolinesterazı inhibe ettiğini ve asetilkolin birikimine yol açtığını destekler.",
+        "category": "toxicology",
+        "testTypeCategory": "toxicology",
+        "explanationAfterAnswer": "İnsektisit maruziyetiyle birlikte düşük kolinesteraz aktivitesi organofosfatın asetilkolinesterazı inhibe ettiğini ve asetilkolin birikimine yol açtığını destekler."
+      },
+      {
+        "id": "pharm-abg-organo",
+        "label": "Arter kan gazı / oksijenlenme",
+        "title": "Arter kan gazı / oksijenlenme",
+        "type": "bloodGas",
+        "priority": "essential",
+        "subtype": "Kan gazı / asit-baz",
+        "summary": "Bronkore ve bronkospazm oksijenlenmeyi bozabilir; solunum desteği antidotal tedaviyle eş zamanlı düşünülmelidir.",
+        "clinicalMeaning": "Bronkore ve bronkospazm oksijenlenmeyi bozabilir; solunum desteği antidotal tedaviyle eş zamanlı düşünülmelidir.",
+        "result": {
+          "title": "Arter kan gazı / oksijenlenme",
+          "summary": "Bronkore ve bronkospazm oksijenlenmeyi bozabilir; solunum desteği antidotal tedaviyle eş zamanlı düşünülmelidir.",
+          "interpretation": "Bronkore ve bronkospazm oksijenlenmeyi bozabilir; solunum desteği antidotal tedaviyle eş zamanlı düşünülmelidir.",
+          "values": [
+            [
+              "pH",
+              "7.31",
+              "7.35-7.45",
+              "Düşük"
+            ],
+            [
+              "PaCO2",
+              "49 mmHg",
+              "35-45 mmHg",
+              "Yüksek"
+            ],
+            [
+              "PaO2",
+              "58 mmHg",
+              "80-100 mmHg",
+              "Düşük"
+            ]
+          ],
+          "rows": [
+            [
+              "pH",
+              "7.31",
+              "7.35-7.45",
+              "Düşük"
+            ],
+            [
+              "PaCO2",
+              "49 mmHg",
+              "35-45 mmHg",
+              "Yüksek"
+            ],
+            [
+              "PaO2",
+              "58 mmHg",
+              "80-100 mmHg",
+              "Düşük"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "pH",
+            "7.31",
+            "7.35-7.45",
+            "Düşük"
+          ],
+          [
+            "PaCO2",
+            "49 mmHg",
+            "35-45 mmHg",
+            "Yüksek"
+          ],
+          [
+            "PaO2",
+            "58 mmHg",
+            "80-100 mmHg",
+            "Düşük"
+          ]
+        ],
+        "postAnswerExplanation": "Bronkore ve bronkospazm oksijenlenmeyi bozabilir; solunum desteği antidotal tedaviyle eş zamanlı düşünülmelidir.",
+        "interpretation": "Bronkore ve bronkospazm oksijenlenmeyi bozabilir; solunum desteği antidotal tedaviyle eş zamanlı düşünülmelidir.",
+        "category": "acid-base",
+        "testTypeCategory": "acid-base",
+        "explanationAfterAnswer": "Bronkore ve bronkospazm oksijenlenmeyi bozabilir; solunum desteği antidotal tedaviyle eş zamanlı düşünülmelidir."
+      },
+      {
+        "id": "pharm-clinical-secretions",
+        "label": "Toksidrom bulguları",
+        "title": "Toksidrom bulguları",
+        "type": "clinical",
+        "priority": "essential",
+        "subtype": "Klinik veri",
+        "summary": "Muskarinik ve nikotinik bulguların birlikte olması organofosfat toksisitesini antikolinerjik veya opioid toksidromundan ayırır.",
+        "clinicalMeaning": "Muskarinik ve nikotinik bulguların birlikte olması organofosfat toksisitesini antikolinerjik veya opioid toksidromundan ayırır.",
+        "result": {
+          "title": "Toksidrom bulguları",
+          "summary": "Muskarinik ve nikotinik bulguların birlikte olması organofosfat toksisitesini antikolinerjik veya opioid toksidromundan ayırır.",
+          "interpretation": "Muskarinik ve nikotinik bulguların birlikte olması organofosfat toksisitesini antikolinerjik veya opioid toksidromundan ayırır.",
+          "values": [
+            [
+              "Pupiller",
+              "Miyozis",
+              "Normal pupiller reaksiyon",
+              "Kolinerjik"
+            ],
+            [
+              "Sekresyon",
+              "Salivasyon ve bronkore artmış",
+              "Normal sekresyon",
+              "Kolinerjik"
+            ],
+            [
+              "Kas bulgusu",
+              "Fasikülasyon",
+              "Yok",
+              "Nikotinik bulgu"
+            ]
+          ],
+          "rows": [
+            [
+              "Pupiller",
+              "Miyozis",
+              "Normal pupiller reaksiyon",
+              "Kolinerjik"
+            ],
+            [
+              "Sekresyon",
+              "Salivasyon ve bronkore artmış",
+              "Normal sekresyon",
+              "Kolinerjik"
+            ],
+            [
+              "Kas bulgusu",
+              "Fasikülasyon",
+              "Yok",
+              "Nikotinik bulgu"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Pupiller",
+            "Miyozis",
+            "Normal pupiller reaksiyon",
+            "Kolinerjik"
+          ],
+          [
+            "Sekresyon",
+            "Salivasyon ve bronkore artmış",
+            "Normal sekresyon",
+            "Kolinerjik"
+          ],
+          [
+            "Kas bulgusu",
+            "Fasikülasyon",
+            "Yok",
+            "Nikotinik bulgu"
+          ]
+        ],
+        "postAnswerExplanation": "Muskarinik ve nikotinik bulguların birlikte olması organofosfat toksisitesini antikolinerjik veya opioid toksidromundan ayırır.",
+        "interpretation": "Muskarinik ve nikotinik bulguların birlikte olması organofosfat toksisitesini antikolinerjik veya opioid toksidromundan ayırır.",
+        "category": "clinical",
+        "testTypeCategory": "clinical",
+        "explanationAfterAnswer": "Muskarinik ve nikotinik bulguların birlikte olması organofosfat toksisitesini antikolinerjik veya opioid toksidromundan ayırır."
+      }
+    ]
+  },
+  {
+    "caseId": "v165-new-026-bradikardi-ve-hipotansiyon",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 3,
+    "removedBannedCommentCount": 0,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-glucose-bb",
+        "label": "Yatak başı kapiller glukoz",
+        "title": "Yatak başı kapiller glukoz",
+        "type": "bedside",
+        "priority": "essential",
+        "subtype": "Yatak başı testler",
+        "summary": "Hipoglisemi, nonselektif beta-2 blokajına bağlı glikojenoliz ve glukoneogenez yanıtının baskılanmasıyla beta-bloker toksisitesinde görülebilir.",
+        "clinicalMeaning": "Hipoglisemi, nonselektif beta-2 blokajına bağlı glikojenoliz ve glukoneogenez yanıtının baskılanmasıyla beta-bloker toksisitesinde görülebilir.",
+        "result": {
+          "title": "Yatak başı kapiller glukoz",
+          "summary": "Hipoglisemi, nonselektif beta-2 blokajına bağlı glikojenoliz ve glukoneogenez yanıtının baskılanmasıyla beta-bloker toksisitesinde görülebilir.",
+          "interpretation": "Hipoglisemi, nonselektif beta-2 blokajına bağlı glikojenoliz ve glukoneogenez yanıtının baskılanmasıyla beta-bloker toksisitesinde görülebilir.",
+          "values": [
+            [
+              "Kapiller kan glukozu",
+              "52 mg/dL",
+              "70-140 mg/dL",
+              "Düşük"
+            ]
+          ],
+          "rows": [
+            [
+              "Kapiller kan glukozu",
+              "52 mg/dL",
+              "70-140 mg/dL",
+              "Düşük"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kapiller kan glukozu",
+            "52 mg/dL",
+            "70-140 mg/dL",
+            "Düşük"
+          ]
+        ],
+        "postAnswerExplanation": "Hipoglisemi, nonselektif beta-2 blokajına bağlı glikojenoliz ve glukoneogenez yanıtının baskılanmasıyla beta-bloker toksisitesinde görülebilir.",
+        "interpretation": "Hipoglisemi, nonselektif beta-2 blokajına bağlı glikojenoliz ve glukoneogenez yanıtının baskılanmasıyla beta-bloker toksisitesinde görülebilir.",
+        "category": "bedside",
+        "testTypeCategory": "bedside",
+        "explanationAfterAnswer": "Hipoglisemi, nonselektif beta-2 blokajına bağlı glikojenoliz ve glukoneogenez yanıtının baskılanmasıyla beta-bloker toksisitesinde görülebilir."
+      },
+      {
+        "id": "pharm-ecg-bb",
+        "label": "Elektrokardiyografi",
+        "title": "Elektrokardiyografi",
+        "type": "ecg",
+        "priority": "essential",
+        "subtype": "EKG",
+        "summary": "Sinüs bradikardisi propranololün beta-1 blokajıyla SA düğüm hızını ve AV iletimi azaltmasına bağlıdır; QRS genişliği yoksa odak glukagonun cAMP artırıcı etkisidir.",
+        "clinicalMeaning": "Sinüs bradikardisi propranololün beta-1 blokajıyla SA düğüm hızını ve AV iletimi azaltmasına bağlıdır; QRS genişliği yoksa odak glukagonun cAMP artırıcı etkisidir.",
+        "result": {
+          "title": "Elektrokardiyografi",
+          "summary": "Sinüs bradikardisi propranololün beta-1 blokajıyla SA düğüm hızını ve AV iletimi azaltmasına bağlıdır; QRS genişliği yoksa odak glukagonun cAMP artırıcı etkisidir.",
+          "interpretation": "Sinüs bradikardisi propranololün beta-1 blokajıyla SA düğüm hızını ve AV iletimi azaltmasına bağlıdır; QRS genişliği yoksa odak glukagonun cAMP artırıcı etkisidir.",
+          "values": [
+            [
+              "Ritim",
+              "Sinüs bradikardisi",
+              "Sinüs ritmi",
+              "Bradikardi"
+            ],
+            [
+              "QRS süresi",
+              "Belirgin geniş değil",
+              "<120 ms",
+              "Referans içinde"
+            ]
+          ],
+          "rows": [
+            [
+              "Ritim",
+              "Sinüs bradikardisi",
+              "Sinüs ritmi",
+              "Bradikardi"
+            ],
+            [
+              "QRS süresi",
+              "Belirgin geniş değil",
+              "<120 ms",
+              "Referans içinde"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Ritim",
+            "Sinüs bradikardisi",
+            "Sinüs ritmi",
+            "Bradikardi"
+          ],
+          [
+            "QRS süresi",
+            "Belirgin geniş değil",
+            "<120 ms",
+            "Referans içinde"
+          ]
+        ],
+        "postAnswerExplanation": "Sinüs bradikardisi propranololün beta-1 blokajıyla SA düğüm hızını ve AV iletimi azaltmasına bağlıdır; QRS genişliği yoksa odak glukagonun cAMP artırıcı etkisidir.",
+        "interpretation": "Sinüs bradikardisi propranololün beta-1 blokajıyla SA düğüm hızını ve AV iletimi azaltmasına bağlıdır; QRS genişliği yoksa odak glukagonun cAMP artırıcı etkisidir.",
+        "category": "cardiac",
+        "testTypeCategory": "cardiac",
+        "explanationAfterAnswer": "Sinüs bradikardisi propranololün beta-1 blokajıyla SA düğüm hızını ve AV iletimi azaltmasına bağlıdır; QRS genişliği yoksa odak glukagonun cAMP artırıcı etkisidir."
+      },
+      {
+        "id": "pharm-electrolyte-bb",
+        "label": "Elektrolit ve perfüzyon paneli",
+        "title": "Elektrolit ve perfüzyon paneli",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Elektrolitlerin belirgin bozuk olmaması bradikardiyi primer elektrolit bozukluğuna değil ilaç etkisine bağlar; laktat hipoperfüzyon stresini destekler.",
+        "clinicalMeaning": "Elektrolitlerin belirgin bozuk olmaması bradikardiyi primer elektrolit bozukluğuna değil ilaç etkisine bağlar; laktat hipoperfüzyon stresini destekler.",
+        "result": {
+          "title": "Elektrolit ve perfüzyon paneli",
+          "summary": "Elektrolitlerin belirgin bozuk olmaması bradikardiyi primer elektrolit bozukluğuna değil ilaç etkisine bağlar; laktat hipoperfüzyon stresini destekler.",
+          "interpretation": "Elektrolitlerin belirgin bozuk olmaması bradikardiyi primer elektrolit bozukluğuna değil ilaç etkisine bağlar; laktat hipoperfüzyon stresini destekler.",
+          "values": [
+            [
+              "Potasyum",
+              "4.3 mmol/L",
+              "3.5-5.0 mmol/L",
+              "Referans içinde"
+            ],
+            [
+              "Kreatinin",
+              "0.9 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Referans içinde"
+            ],
+            [
+              "Laktat",
+              "2.8 mmol/L",
+              "<2.0 mmol/L",
+              "Hafif yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "Potasyum",
+              "4.3 mmol/L",
+              "3.5-5.0 mmol/L",
+              "Referans içinde"
+            ],
+            [
+              "Kreatinin",
+              "0.9 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Referans içinde"
+            ],
+            [
+              "Laktat",
+              "2.8 mmol/L",
+              "<2.0 mmol/L",
+              "Hafif yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Potasyum",
+            "4.3 mmol/L",
+            "3.5-5.0 mmol/L",
+            "Referans içinde"
+          ],
+          [
+            "Kreatinin",
+            "0.9 mg/dL",
+            "0.6-1.2 mg/dL",
+            "Referans içinde"
+          ],
+          [
+            "Laktat",
+            "2.8 mmol/L",
+            "<2.0 mmol/L",
+            "Hafif yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Elektrolitlerin belirgin bozuk olmaması bradikardiyi primer elektrolit bozukluğuna değil ilaç etkisine bağlar; laktat hipoperfüzyon stresini destekler.",
+        "interpretation": "Elektrolitlerin belirgin bozuk olmaması bradikardiyi primer elektrolit bozukluğuna değil ilaç etkisine bağlar; laktat hipoperfüzyon stresini destekler.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Elektrolitlerin belirgin bozuk olmaması bradikardiyi primer elektrolit bozukluğuna değil ilaç etkisine bağlar; laktat hipoperfüzyon stresini destekler."
+      }
+    ]
+  },
+  {
+    "caseId": "v166-new-038-gorme-yakinmasi-ve-metabolik-asidoz",
+    "oldInvestigationCount": 4,
+    "newInvestigationCount": 3,
+    "removedBannedCommentCount": 0,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-abg-methanol",
+        "label": "Arter kan gazı ve anyon açıklığı",
+        "title": "Arter kan gazı ve anyon açıklığı",
+        "type": "bloodGas",
+        "priority": "essential",
+        "subtype": "Kan gazı / asit-baz",
+        "summary": "Yüksek anyon açıklıklı metabolik asidoz, formik asit birikimiyle metanol toksisitesini destekler; bu tablo DKA şablonuyla açıklanmamalıdır.",
+        "clinicalMeaning": "Yüksek anyon açıklıklı metabolik asidoz, formik asit birikimiyle metanol toksisitesini destekler; bu tablo DKA şablonuyla açıklanmamalıdır.",
+        "result": {
+          "title": "Arter kan gazı ve anyon açıklığı",
+          "summary": "Yüksek anyon açıklıklı metabolik asidoz, formik asit birikimiyle metanol toksisitesini destekler; bu tablo DKA şablonuyla açıklanmamalıdır.",
+          "interpretation": "Yüksek anyon açıklıklı metabolik asidoz, formik asit birikimiyle metanol toksisitesini destekler; bu tablo DKA şablonuyla açıklanmamalıdır.",
+          "values": [
+            [
+              "pH",
+              "7.18",
+              "7.35-7.45",
+              "Düşük"
+            ],
+            [
+              "HCO3-",
+              "10 mmol/L",
+              "22-26 mmol/L",
+              "Düşük"
+            ],
+            [
+              "Anyon açıklığı",
+              "28 mmol/L",
+              "8-12 mmol/L",
+              "Yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "pH",
+              "7.18",
+              "7.35-7.45",
+              "Düşük"
+            ],
+            [
+              "HCO3-",
+              "10 mmol/L",
+              "22-26 mmol/L",
+              "Düşük"
+            ],
+            [
+              "Anyon açıklığı",
+              "28 mmol/L",
+              "8-12 mmol/L",
+              "Yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "pH",
+            "7.18",
+            "7.35-7.45",
+            "Düşük"
+          ],
+          [
+            "HCO3-",
+            "10 mmol/L",
+            "22-26 mmol/L",
+            "Düşük"
+          ],
+          [
+            "Anyon açıklığı",
+            "28 mmol/L",
+            "8-12 mmol/L",
+            "Yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Yüksek anyon açıklıklı metabolik asidoz, formik asit birikimiyle metanol toksisitesini destekler; bu tablo DKA şablonuyla açıklanmamalıdır.",
+        "interpretation": "Yüksek anyon açıklıklı metabolik asidoz, formik asit birikimiyle metanol toksisitesini destekler; bu tablo DKA şablonuyla açıklanmamalıdır.",
+        "category": "acid-base",
+        "testTypeCategory": "acid-base",
+        "explanationAfterAnswer": "Yüksek anyon açıklıklı metabolik asidoz, formik asit birikimiyle metanol toksisitesini destekler; bu tablo DKA şablonuyla açıklanmamalıdır."
+      },
+      {
+        "id": "pharm-osm-methanol",
+        "label": "Serum osmolar açıklık",
+        "title": "Serum osmolar açıklık",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Osmolar açıklığın yüksek olması toksik alkol varlığını destekler; zamanla metabolit birikimi anyon açıklığını artırır.",
+        "clinicalMeaning": "Osmolar açıklığın yüksek olması toksik alkol varlığını destekler; zamanla metabolit birikimi anyon açıklığını artırır.",
+        "result": {
+          "title": "Serum osmolar açıklık",
+          "summary": "Osmolar açıklığın yüksek olması toksik alkol varlığını destekler; zamanla metabolit birikimi anyon açıklığını artırır.",
+          "interpretation": "Osmolar açıklığın yüksek olması toksik alkol varlığını destekler; zamanla metabolit birikimi anyon açıklığını artırır.",
+          "values": [
+            [
+              "Osmolar açıklık",
+              "32 mOsm/kg",
+              "<10 mOsm/kg",
+              "Yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "Osmolar açıklık",
+              "32 mOsm/kg",
+              "<10 mOsm/kg",
+              "Yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Osmolar açıklık",
+            "32 mOsm/kg",
+            "<10 mOsm/kg",
+            "Yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Osmolar açıklığın yüksek olması toksik alkol varlığını destekler; zamanla metabolit birikimi anyon açıklığını artırır.",
+        "interpretation": "Osmolar açıklığın yüksek olması toksik alkol varlığını destekler; zamanla metabolit birikimi anyon açıklığını artırır.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Osmolar açıklığın yüksek olması toksik alkol varlığını destekler; zamanla metabolit birikimi anyon açıklığını artırır."
+      },
+      {
+        "id": "pharm-methanol-level",
+        "label": "Toksik alkol değerlendirmesi",
+        "title": "Toksik alkol değerlendirmesi",
+        "type": "toxicology",
+        "priority": "essential",
+        "subtype": "Toksikoloji / ilaç düzeyi",
+        "summary": "Görme bulgusu ve asidoz varlığında antidot tedavisi laboratuvar sonucu beklenmeden başlatılabilir.",
+        "clinicalMeaning": "Görme bulgusu ve asidoz varlığında antidot tedavisi laboratuvar sonucu beklenmeden başlatılabilir.",
+        "result": {
+          "title": "Toksik alkol değerlendirmesi",
+          "summary": "Görme bulgusu ve asidoz varlığında antidot tedavisi laboratuvar sonucu beklenmeden başlatılabilir.",
+          "interpretation": "Görme bulgusu ve asidoz varlığında antidot tedavisi laboratuvar sonucu beklenmeden başlatılabilir.",
+          "values": [
+            [
+              "Metanol düzeyi",
+              "Klinikle uyumlu yüksek",
+              "Saptanmamalı",
+              "Yüksek"
+            ],
+            [
+              "Etanol düzeyi",
+              "Düşük",
+              "Değişken",
+              "Tedaviyi geciktirmez"
+            ]
+          ],
+          "rows": [
+            [
+              "Metanol düzeyi",
+              "Klinikle uyumlu yüksek",
+              "Saptanmamalı",
+              "Yüksek"
+            ],
+            [
+              "Etanol düzeyi",
+              "Düşük",
+              "Değişken",
+              "Tedaviyi geciktirmez"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Metanol düzeyi",
+            "Klinikle uyumlu yüksek",
+            "Saptanmamalı",
+            "Yüksek"
+          ],
+          [
+            "Etanol düzeyi",
+            "Düşük",
+            "Değişken",
+            "Tedaviyi geciktirmez"
+          ]
+        ],
+        "postAnswerExplanation": "Görme bulgusu ve asidoz varlığında antidot tedavisi laboratuvar sonucu beklenmeden başlatılabilir.",
+        "interpretation": "Görme bulgusu ve asidoz varlığında antidot tedavisi laboratuvar sonucu beklenmeden başlatılabilir.",
+        "category": "toxicology",
+        "testTypeCategory": "toxicology",
+        "explanationAfterAnswer": "Görme bulgusu ve asidoz varlığında antidot tedavisi laboratuvar sonucu beklenmeden başlatılabilir."
+      }
+    ]
+  },
+  {
+    "caseId": "v168-new-057-yeni-baslayan-kuru-oksuruk",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 21,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-cough-inflam",
+        "label": "Hemogram ve inflamasyon göstergeleri",
+        "title": "Hemogram ve inflamasyon göstergeleri",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Enfeksiyon göstergelerinin normal olması öksürüğü pnömoni şablonundan uzaklaştırır; zaman ilişkisi ACE inhibitörü yan etkisini öne çıkarır.",
+        "clinicalMeaning": "Enfeksiyon göstergelerinin normal olması öksürüğü pnömoni şablonundan uzaklaştırır; zaman ilişkisi ACE inhibitörü yan etkisini öne çıkarır.",
+        "result": {
+          "title": "Hemogram ve inflamasyon göstergeleri",
+          "summary": "Enfeksiyon göstergelerinin normal olması öksürüğü pnömoni şablonundan uzaklaştırır; zaman ilişkisi ACE inhibitörü yan etkisini öne çıkarır.",
+          "interpretation": "Enfeksiyon göstergelerinin normal olması öksürüğü pnömoni şablonundan uzaklaştırır; zaman ilişkisi ACE inhibitörü yan etkisini öne çıkarır.",
+          "values": [
+            [
+              "Lökosit",
+              "7.400/mm3",
+              "4.000-10.000/mm3",
+              "Referans içinde"
+            ],
+            [
+              "CRP",
+              "2 mg/L",
+              "<5 mg/L",
+              "Referans içinde"
+            ]
+          ],
+          "rows": [
+            [
+              "Lökosit",
+              "7.400/mm3",
+              "4.000-10.000/mm3",
+              "Referans içinde"
+            ],
+            [
+              "CRP",
+              "2 mg/L",
+              "<5 mg/L",
+              "Referans içinde"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Lökosit",
+            "7.400/mm3",
+            "4.000-10.000/mm3",
+            "Referans içinde"
+          ],
+          [
+            "CRP",
+            "2 mg/L",
+            "<5 mg/L",
+            "Referans içinde"
+          ]
+        ],
+        "postAnswerExplanation": "Enfeksiyon göstergelerinin normal olması öksürüğü pnömoni şablonundan uzaklaştırır; zaman ilişkisi ACE inhibitörü yan etkisini öne çıkarır.",
+        "interpretation": "Enfeksiyon göstergelerinin normal olması öksürüğü pnömoni şablonundan uzaklaştırır; zaman ilişkisi ACE inhibitörü yan etkisini öne çıkarır.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Enfeksiyon göstergelerinin normal olması öksürüğü pnömoni şablonundan uzaklaştırır; zaman ilişkisi ACE inhibitörü yan etkisini öne çıkarır."
+      },
+      {
+        "id": "pharm-cough-xray",
+        "label": "Akciğer grafisi",
+        "title": "Akciğer grafisi",
+        "type": "xray",
+        "priority": "essential",
+        "subtype": "Görüntüleme",
+        "summary": "Normal akciğer grafisi ateşsiz ve balgamsız öksürükte enfeksiyon olasılığını azaltır; bradikinin aracılı irritatif öksürükle uyumludur.",
+        "clinicalMeaning": "Normal akciğer grafisi ateşsiz ve balgamsız öksürükte enfeksiyon olasılığını azaltır; bradikinin aracılı irritatif öksürükle uyumludur.",
+        "result": {
+          "title": "Akciğer grafisi",
+          "summary": "Normal akciğer grafisi ateşsiz ve balgamsız öksürükte enfeksiyon olasılığını azaltır; bradikinin aracılı irritatif öksürükle uyumludur.",
+          "interpretation": "Normal akciğer grafisi ateşsiz ve balgamsız öksürükte enfeksiyon olasılığını azaltır; bradikinin aracılı irritatif öksürükle uyumludur.",
+          "values": [
+            [
+              "Parankim",
+              "Konsolidasyon izlenmedi",
+              "Akciğer alanları açık",
+              "Normal"
+            ],
+            [
+              "Plevral efüzyon",
+              "Yok",
+              "Yok",
+              "Normal"
+            ]
+          ],
+          "rows": [
+            [
+              "Parankim",
+              "Konsolidasyon izlenmedi",
+              "Akciğer alanları açık",
+              "Normal"
+            ],
+            [
+              "Plevral efüzyon",
+              "Yok",
+              "Yok",
+              "Normal"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Parankim",
+            "Konsolidasyon izlenmedi",
+            "Akciğer alanları açık",
+            "Normal"
+          ],
+          [
+            "Plevral efüzyon",
+            "Yok",
+            "Yok",
+            "Normal"
+          ]
+        ],
+        "postAnswerExplanation": "Normal akciğer grafisi ateşsiz ve balgamsız öksürükte enfeksiyon olasılığını azaltır; bradikinin aracılı irritatif öksürükle uyumludur.",
+        "interpretation": "Normal akciğer grafisi ateşsiz ve balgamsız öksürükte enfeksiyon olasılığını azaltır; bradikinin aracılı irritatif öksürükle uyumludur.",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "explanationAfterAnswer": "Normal akciğer grafisi ateşsiz ve balgamsız öksürükte enfeksiyon olasılığını azaltır; bradikinin aracılı irritatif öksürükle uyumludur."
+      }
+    ]
+  },
+  {
+    "caseId": "v169-new-065-anestezi-sirasinda-ani-kriz",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 0,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-mh-abg",
+        "label": "Arter kan gazı ve metabolik stres",
+        "title": "Arter kan gazı ve metabolik stres",
+        "type": "bloodGas",
+        "priority": "essential",
+        "subtype": "Kan gazı / asit-baz",
+        "summary": "Kas metabolizmasının aşırı artması hiperkapni, laktat yüksekliği ve asidoz oluşturur; tablo anestezi tetikleyicisiyle malign hipertermiyi destekler.",
+        "clinicalMeaning": "Kas metabolizmasının aşırı artması hiperkapni, laktat yüksekliği ve asidoz oluşturur; tablo anestezi tetikleyicisiyle malign hipertermiyi destekler.",
+        "result": {
+          "title": "Arter kan gazı ve metabolik stres",
+          "summary": "Kas metabolizmasının aşırı artması hiperkapni, laktat yüksekliği ve asidoz oluşturur; tablo anestezi tetikleyicisiyle malign hipertermiyi destekler.",
+          "interpretation": "Kas metabolizmasının aşırı artması hiperkapni, laktat yüksekliği ve asidoz oluşturur; tablo anestezi tetikleyicisiyle malign hipertermiyi destekler.",
+          "values": [
+            [
+              "pH",
+              "7.21",
+              "7.35-7.45",
+              "Düşük"
+            ],
+            [
+              "PaCO2",
+              "58 mmHg",
+              "35-45 mmHg",
+              "Yüksek"
+            ],
+            [
+              "Laktat",
+              "5.6 mmol/L",
+              "<2.0 mmol/L",
+              "Yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "pH",
+              "7.21",
+              "7.35-7.45",
+              "Düşük"
+            ],
+            [
+              "PaCO2",
+              "58 mmHg",
+              "35-45 mmHg",
+              "Yüksek"
+            ],
+            [
+              "Laktat",
+              "5.6 mmol/L",
+              "<2.0 mmol/L",
+              "Yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "pH",
+            "7.21",
+            "7.35-7.45",
+            "Düşük"
+          ],
+          [
+            "PaCO2",
+            "58 mmHg",
+            "35-45 mmHg",
+            "Yüksek"
+          ],
+          [
+            "Laktat",
+            "5.6 mmol/L",
+            "<2.0 mmol/L",
+            "Yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Kas metabolizmasının aşırı artması hiperkapni, laktat yüksekliği ve asidoz oluşturur; tablo anestezi tetikleyicisiyle malign hipertermiyi destekler.",
+        "interpretation": "Kas metabolizmasının aşırı artması hiperkapni, laktat yüksekliği ve asidoz oluşturur; tablo anestezi tetikleyicisiyle malign hipertermiyi destekler.",
+        "category": "acid-base",
+        "testTypeCategory": "acid-base",
+        "explanationAfterAnswer": "Kas metabolizmasının aşırı artması hiperkapni, laktat yüksekliği ve asidoz oluşturur; tablo anestezi tetikleyicisiyle malign hipertermiyi destekler."
+      },
+      {
+        "id": "pharm-mh-ck",
+        "label": "Kas hasarı paneli",
+        "title": "Kas hasarı paneli",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Sürekli kas kontraksiyonu rabdomiyoliz ve hiperkalemiye yol açabilir; tedavi dantrolenle kalsiyum salınımını azaltmayı hedefler.",
+        "clinicalMeaning": "Sürekli kas kontraksiyonu rabdomiyoliz ve hiperkalemiye yol açabilir; tedavi dantrolenle kalsiyum salınımını azaltmayı hedefler.",
+        "result": {
+          "title": "Kas hasarı paneli",
+          "summary": "Sürekli kas kontraksiyonu rabdomiyoliz ve hiperkalemiye yol açabilir; tedavi dantrolenle kalsiyum salınımını azaltmayı hedefler.",
+          "interpretation": "Sürekli kas kontraksiyonu rabdomiyoliz ve hiperkalemiye yol açabilir; tedavi dantrolenle kalsiyum salınımını azaltmayı hedefler.",
+          "values": [
+            [
+              "Kreatin kinaz",
+              "12.400 U/L",
+              "<200 U/L",
+              "Çok yüksek"
+            ],
+            [
+              "Potasyum",
+              "5.8 mmol/L",
+              "3.5-5.0 mmol/L",
+              "Yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "Kreatin kinaz",
+              "12.400 U/L",
+              "<200 U/L",
+              "Çok yüksek"
+            ],
+            [
+              "Potasyum",
+              "5.8 mmol/L",
+              "3.5-5.0 mmol/L",
+              "Yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kreatin kinaz",
+            "12.400 U/L",
+            "<200 U/L",
+            "Çok yüksek"
+          ],
+          [
+            "Potasyum",
+            "5.8 mmol/L",
+            "3.5-5.0 mmol/L",
+            "Yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Sürekli kas kontraksiyonu rabdomiyoliz ve hiperkalemiye yol açabilir; tedavi dantrolenle kalsiyum salınımını azaltmayı hedefler.",
+        "interpretation": "Sürekli kas kontraksiyonu rabdomiyoliz ve hiperkalemiye yol açabilir; tedavi dantrolenle kalsiyum salınımını azaltmayı hedefler.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Sürekli kas kontraksiyonu rabdomiyoliz ve hiperkalemiye yol açabilir; tedavi dantrolenle kalsiyum salınımını azaltmayı hedefler."
+      }
+    ]
+  },
+  {
+    "caseId": "v172-new-077-antikoagulan-tedavi-sirasinda-yeni-tromboz",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 3,
+    "removedBannedCommentCount": 14,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-hit-platelet",
+        "label": "Trombosit sayısı",
+        "title": "Trombosit sayısı",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Heparin sonrası 5-10. günde trombosit sayısında belirgin düşüş, HIT için tipik zaman paternidir; tromboz riski kanama riskinden daha baskındır.",
+        "clinicalMeaning": "Heparin sonrası 5-10. günde trombosit sayısında belirgin düşüş, HIT için tipik zaman paternidir; tromboz riski kanama riskinden daha baskındır.",
+        "result": {
+          "title": "Trombosit sayısı",
+          "summary": "Heparin sonrası 5-10. günde trombosit sayısında belirgin düşüş, HIT için tipik zaman paternidir; tromboz riski kanama riskinden daha baskındır.",
+          "interpretation": "Heparin sonrası 5-10. günde trombosit sayısında belirgin düşüş, HIT için tipik zaman paternidir; tromboz riski kanama riskinden daha baskındır.",
+          "values": [
+            [
+              "Bazal trombosit",
+              "245.000/mm3",
+              "150.000-400.000/mm3",
+              "Başlangıç"
+            ],
+            [
+              "Güncel trombosit",
+              "92.000/mm3",
+              "150.000-400.000/mm3",
+              "Düşük"
+            ]
+          ],
+          "rows": [
+            [
+              "Bazal trombosit",
+              "245.000/mm3",
+              "150.000-400.000/mm3",
+              "Başlangıç"
+            ],
+            [
+              "Güncel trombosit",
+              "92.000/mm3",
+              "150.000-400.000/mm3",
+              "Düşük"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Bazal trombosit",
+            "245.000/mm3",
+            "150.000-400.000/mm3",
+            "Başlangıç"
+          ],
+          [
+            "Güncel trombosit",
+            "92.000/mm3",
+            "150.000-400.000/mm3",
+            "Düşük"
+          ]
+        ],
+        "postAnswerExplanation": "Heparin sonrası 5-10. günde trombosit sayısında belirgin düşüş, HIT için tipik zaman paternidir; tromboz riski kanama riskinden daha baskındır.",
+        "interpretation": "Heparin sonrası 5-10. günde trombosit sayısında belirgin düşüş, HIT için tipik zaman paternidir; tromboz riski kanama riskinden daha baskındır.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Heparin sonrası 5-10. günde trombosit sayısında belirgin düşüş, HIT için tipik zaman paternidir; tromboz riski kanama riskinden daha baskındır."
+      },
+      {
+        "id": "pharm-hit-doppler",
+        "label": "Alt ekstremite venöz Doppler ultrasonografi",
+        "title": "Alt ekstremite venöz Doppler ultrasonografi",
+        "type": "ultrasound",
+        "priority": "essential",
+        "subtype": "Görüntüleme",
+        "summary": "Trombositopeniye yeni venöz trombozun eşlik etmesi HIT’i destekler ve heparinin kesilip non-heparin antikoagülan başlanmasını gerektirir.",
+        "clinicalMeaning": "Trombositopeniye yeni venöz trombozun eşlik etmesi HIT’i destekler ve heparinin kesilip non-heparin antikoagülan başlanmasını gerektirir.",
+        "result": {
+          "title": "Alt ekstremite venöz Doppler ultrasonografi",
+          "summary": "Trombositopeniye yeni venöz trombozun eşlik etmesi HIT’i destekler ve heparinin kesilip non-heparin antikoagülan başlanmasını gerektirir.",
+          "interpretation": "Trombositopeniye yeni venöz trombozun eşlik etmesi HIT’i destekler ve heparinin kesilip non-heparin antikoagülan başlanmasını gerektirir.",
+          "values": [
+            [
+              "Derin venler",
+              "Popliteal vende akut trombüs",
+              "Açık venöz akım",
+              "Tromboz"
+            ]
+          ],
+          "rows": [
+            [
+              "Derin venler",
+              "Popliteal vende akut trombüs",
+              "Açık venöz akım",
+              "Tromboz"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Derin venler",
+            "Popliteal vende akut trombüs",
+            "Açık venöz akım",
+            "Tromboz"
+          ]
+        ],
+        "postAnswerExplanation": "Trombositopeniye yeni venöz trombozun eşlik etmesi HIT’i destekler ve heparinin kesilip non-heparin antikoagülan başlanmasını gerektirir.",
+        "interpretation": "Trombositopeniye yeni venöz trombozun eşlik etmesi HIT’i destekler ve heparinin kesilip non-heparin antikoagülan başlanmasını gerektirir.",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "explanationAfterAnswer": "Trombositopeniye yeni venöz trombozun eşlik etmesi HIT’i destekler ve heparinin kesilip non-heparin antikoagülan başlanmasını gerektirir."
+      },
+      {
+        "id": "pharm-hit-pf4",
+        "label": "PF4-heparin antikoru",
+        "title": "PF4-heparin antikoru",
+        "type": "toxicology",
+        "priority": "essential",
+        "subtype": "Toksikoloji / ilaç düzeyi",
+        "summary": "PF4-heparin kompleksine karşı antikorlar trombosit aktivasyonu ve paradoksal tromboza yol açar; tedavi trombosit vermek değil trombin oluşumunu non-heparin yolla baskılamaktır.",
+        "clinicalMeaning": "PF4-heparin kompleksine karşı antikorlar trombosit aktivasyonu ve paradoksal tromboza yol açar; tedavi trombosit vermek değil trombin oluşumunu non-heparin yolla baskılamaktır.",
+        "result": {
+          "title": "PF4-heparin antikoru",
+          "summary": "PF4-heparin kompleksine karşı antikorlar trombosit aktivasyonu ve paradoksal tromboza yol açar; tedavi trombosit vermek değil trombin oluşumunu non-heparin yolla baskılamaktır.",
+          "interpretation": "PF4-heparin kompleksine karşı antikorlar trombosit aktivasyonu ve paradoksal tromboza yol açar; tedavi trombosit vermek değil trombin oluşumunu non-heparin yolla baskılamaktır.",
+          "values": [
+            [
+              "PF4-heparin antikor testi",
+              "Pozitif",
+              "Negatif",
+              "Pozitif"
+            ]
+          ],
+          "rows": [
+            [
+              "PF4-heparin antikor testi",
+              "Pozitif",
+              "Negatif",
+              "Pozitif"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "PF4-heparin antikor testi",
+            "Pozitif",
+            "Negatif",
+            "Pozitif"
+          ]
+        ],
+        "postAnswerExplanation": "PF4-heparin kompleksine karşı antikorlar trombosit aktivasyonu ve paradoksal tromboza yol açar; tedavi trombosit vermek değil trombin oluşumunu non-heparin yolla baskılamaktır.",
+        "interpretation": "PF4-heparin kompleksine karşı antikorlar trombosit aktivasyonu ve paradoksal tromboza yol açar; tedavi trombosit vermek değil trombin oluşumunu non-heparin yolla baskılamaktır.",
+        "category": "toxicology",
+        "testTypeCategory": "toxicology",
+        "explanationAfterAnswer": "PF4-heparin kompleksine karşı antikorlar trombosit aktivasyonu ve paradoksal tromboza yol açar; tedavi trombosit vermek değil trombin oluşumunu non-heparin yolla baskılamaktır."
+      }
+    ]
+  },
+  {
+    "caseId": "v173-new-090-solunum-depresyonu-ve-miyozis",
+    "oldInvestigationCount": 1,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 0,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-opioid-glucose",
+        "label": "Yatak başı kapiller glukoz",
+        "title": "Yatak başı kapiller glukoz",
+        "type": "bedside",
+        "priority": "essential",
+        "subtype": "Yatak başı testler",
+        "summary": "Glukozun normal olması bilinç değişikliğini hipoglisemiden uzaklaştırır; miyozis ve solunum depresyonu opioid toksidromunu destekler.",
+        "clinicalMeaning": "Glukozun normal olması bilinç değişikliğini hipoglisemiden uzaklaştırır; miyozis ve solunum depresyonu opioid toksidromunu destekler.",
+        "result": {
+          "title": "Yatak başı kapiller glukoz",
+          "summary": "Glukozun normal olması bilinç değişikliğini hipoglisemiden uzaklaştırır; miyozis ve solunum depresyonu opioid toksidromunu destekler.",
+          "interpretation": "Glukozun normal olması bilinç değişikliğini hipoglisemiden uzaklaştırır; miyozis ve solunum depresyonu opioid toksidromunu destekler.",
+          "values": [
+            [
+              "Kapiller glukoz",
+              "96 mg/dL",
+              "70-140 mg/dL",
+              "Referans içinde"
+            ]
+          ],
+          "rows": [
+            [
+              "Kapiller glukoz",
+              "96 mg/dL",
+              "70-140 mg/dL",
+              "Referans içinde"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kapiller glukoz",
+            "96 mg/dL",
+            "70-140 mg/dL",
+            "Referans içinde"
+          ]
+        ],
+        "postAnswerExplanation": "Glukozun normal olması bilinç değişikliğini hipoglisemiden uzaklaştırır; miyozis ve solunum depresyonu opioid toksidromunu destekler.",
+        "interpretation": "Glukozun normal olması bilinç değişikliğini hipoglisemiden uzaklaştırır; miyozis ve solunum depresyonu opioid toksidromunu destekler.",
+        "category": "bedside",
+        "testTypeCategory": "bedside",
+        "explanationAfterAnswer": "Glukozun normal olması bilinç değişikliğini hipoglisemiden uzaklaştırır; miyozis ve solunum depresyonu opioid toksidromunu destekler."
+      },
+      {
+        "id": "pharm-opioid-abg",
+        "label": "Kan gazı / ventilasyon",
+        "title": "Kan gazı / ventilasyon",
+        "type": "bloodGas",
+        "priority": "essential",
+        "subtype": "Kan gazı / asit-baz",
+        "summary": "Hiperkapnik solunumsal asidoz opioidlerin beyin sapı solunum merkezini baskılamasıyla uyumludur; nalokson reseptör düzeyinde bu etkiyi geri çevirebilir.",
+        "clinicalMeaning": "Hiperkapnik solunumsal asidoz opioidlerin beyin sapı solunum merkezini baskılamasıyla uyumludur; nalokson reseptör düzeyinde bu etkiyi geri çevirebilir.",
+        "result": {
+          "title": "Kan gazı / ventilasyon",
+          "summary": "Hiperkapnik solunumsal asidoz opioidlerin beyin sapı solunum merkezini baskılamasıyla uyumludur; nalokson reseptör düzeyinde bu etkiyi geri çevirebilir.",
+          "interpretation": "Hiperkapnik solunumsal asidoz opioidlerin beyin sapı solunum merkezini baskılamasıyla uyumludur; nalokson reseptör düzeyinde bu etkiyi geri çevirebilir.",
+          "values": [
+            [
+              "pH",
+              "7.28",
+              "7.35-7.45",
+              "Düşük"
+            ],
+            [
+              "PaCO2",
+              "62 mmHg",
+              "35-45 mmHg",
+              "Yüksek"
+            ],
+            [
+              "PaO2",
+              "55 mmHg",
+              "80-100 mmHg",
+              "Düşük"
+            ]
+          ],
+          "rows": [
+            [
+              "pH",
+              "7.28",
+              "7.35-7.45",
+              "Düşük"
+            ],
+            [
+              "PaCO2",
+              "62 mmHg",
+              "35-45 mmHg",
+              "Yüksek"
+            ],
+            [
+              "PaO2",
+              "55 mmHg",
+              "80-100 mmHg",
+              "Düşük"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "pH",
+            "7.28",
+            "7.35-7.45",
+            "Düşük"
+          ],
+          [
+            "PaCO2",
+            "62 mmHg",
+            "35-45 mmHg",
+            "Yüksek"
+          ],
+          [
+            "PaO2",
+            "55 mmHg",
+            "80-100 mmHg",
+            "Düşük"
+          ]
+        ],
+        "postAnswerExplanation": "Hiperkapnik solunumsal asidoz opioidlerin beyin sapı solunum merkezini baskılamasıyla uyumludur; nalokson reseptör düzeyinde bu etkiyi geri çevirebilir.",
+        "interpretation": "Hiperkapnik solunumsal asidoz opioidlerin beyin sapı solunum merkezini baskılamasıyla uyumludur; nalokson reseptör düzeyinde bu etkiyi geri çevirebilir.",
+        "category": "acid-base",
+        "testTypeCategory": "acid-base",
+        "explanationAfterAnswer": "Hiperkapnik solunumsal asidoz opioidlerin beyin sapı solunum merkezini baskılamasıyla uyumludur; nalokson reseptör düzeyinde bu etkiyi geri çevirebilir."
+      }
+    ]
+  },
+  {
+    "caseId": "v176-new-113-antikoagulan-kullanirken-ciddi-kanama",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 0,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-warfarin-hb",
+        "label": "Hemoglobin",
+        "title": "Hemoglobin",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Melena ve hipotansiyonla birlikte düşük hemoglobin majör kanamayı destekler; sadece INR izlemek yeterli değildir.",
+        "clinicalMeaning": "Melena ve hipotansiyonla birlikte düşük hemoglobin majör kanamayı destekler; sadece INR izlemek yeterli değildir.",
+        "result": {
+          "title": "Hemoglobin",
+          "summary": "Melena ve hipotansiyonla birlikte düşük hemoglobin majör kanamayı destekler; sadece INR izlemek yeterli değildir.",
+          "interpretation": "Melena ve hipotansiyonla birlikte düşük hemoglobin majör kanamayı destekler; sadece INR izlemek yeterli değildir.",
+          "values": [
+            [
+              "Hemoglobin",
+              "7.6 g/dL",
+              "12-16 g/dL",
+              "Düşük"
+            ]
+          ],
+          "rows": [
+            [
+              "Hemoglobin",
+              "7.6 g/dL",
+              "12-16 g/dL",
+              "Düşük"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Hemoglobin",
+            "7.6 g/dL",
+            "12-16 g/dL",
+            "Düşük"
+          ]
+        ],
+        "postAnswerExplanation": "Melena ve hipotansiyonla birlikte düşük hemoglobin majör kanamayı destekler; sadece INR izlemek yeterli değildir.",
+        "interpretation": "Melena ve hipotansiyonla birlikte düşük hemoglobin majör kanamayı destekler; sadece INR izlemek yeterli değildir.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Melena ve hipotansiyonla birlikte düşük hemoglobin majör kanamayı destekler; sadece INR izlemek yeterli değildir."
+      },
+      {
+        "id": "pharm-warfarin-inr",
+        "label": "Koagülasyon paneli",
+        "title": "Koagülasyon paneli",
+        "type": "coagulation",
+        "priority": "essential",
+        "subtype": "Koagülasyon",
+        "summary": "Yüksek INR varfarin etkisinin aşırı olduğunu gösterir; majör kanamada hızlı faktör replasmanı ve K vitamini birlikte gerekir.",
+        "clinicalMeaning": "Yüksek INR varfarin etkisinin aşırı olduğunu gösterir; majör kanamada hızlı faktör replasmanı ve K vitamini birlikte gerekir.",
+        "result": {
+          "title": "Koagülasyon paneli",
+          "summary": "Yüksek INR varfarin etkisinin aşırı olduğunu gösterir; majör kanamada hızlı faktör replasmanı ve K vitamini birlikte gerekir.",
+          "interpretation": "Yüksek INR varfarin etkisinin aşırı olduğunu gösterir; majör kanamada hızlı faktör replasmanı ve K vitamini birlikte gerekir.",
+          "values": [
+            [
+              "INR",
+              "6.8",
+              "2.0-3.0 hedef aralık",
+              "Çok yüksek"
+            ],
+            [
+              "PT",
+              "Belirgin uzamış",
+              "Laboratuvar referansı",
+              "Uzamış"
+            ]
+          ],
+          "rows": [
+            [
+              "INR",
+              "6.8",
+              "2.0-3.0 hedef aralık",
+              "Çok yüksek"
+            ],
+            [
+              "PT",
+              "Belirgin uzamış",
+              "Laboratuvar referansı",
+              "Uzamış"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "INR",
+            "6.8",
+            "2.0-3.0 hedef aralık",
+            "Çok yüksek"
+          ],
+          [
+            "PT",
+            "Belirgin uzamış",
+            "Laboratuvar referansı",
+            "Uzamış"
+          ]
+        ],
+        "postAnswerExplanation": "Yüksek INR varfarin etkisinin aşırı olduğunu gösterir; majör kanamada hızlı faktör replasmanı ve K vitamini birlikte gerekir.",
+        "interpretation": "Yüksek INR varfarin etkisinin aşırı olduğunu gösterir; majör kanamada hızlı faktör replasmanı ve K vitamini birlikte gerekir.",
+        "category": "coagulation",
+        "testTypeCategory": "coagulation",
+        "explanationAfterAnswer": "Yüksek INR varfarin etkisinin aşırı olduğunu gösterir; majör kanamada hızlı faktör replasmanı ve K vitamini birlikte gerekir."
+      }
+    ]
+  },
+  {
+    "caseId": "v176-new-114-gorme-degisikligi-ve-aritmi",
+    "oldInvestigationCount": 5,
+    "newInvestigationCount": 3,
+    "removedBannedCommentCount": 7,
+    "hiddenEmptyOrGenericCommentCount": 7,
+    "newInvestigations": [
+      {
+        "id": "pharm-dig-level",
+        "label": "Serum digoksin düzeyi",
+        "title": "Serum digoksin düzeyi",
+        "type": "toxicology",
+        "priority": "essential",
+        "subtype": "Toksikoloji / ilaç düzeyi",
+        "summary": "Yüksek digoksin düzeyi bulantı, görme değişikliği ve aritmiyle birlikte digoksin toksisitesini destekler.",
+        "clinicalMeaning": "Yüksek digoksin düzeyi bulantı, görme değişikliği ve aritmiyle birlikte digoksin toksisitesini destekler.",
+        "result": {
+          "title": "Serum digoksin düzeyi",
+          "summary": "Yüksek digoksin düzeyi bulantı, görme değişikliği ve aritmiyle birlikte digoksin toksisitesini destekler.",
+          "interpretation": "Yüksek digoksin düzeyi bulantı, görme değişikliği ve aritmiyle birlikte digoksin toksisitesini destekler.",
+          "values": [
+            [
+              "Digoksin düzeyi",
+              "3.2 ng/mL",
+              "0.5-2.0 ng/mL",
+              "Yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "Digoksin düzeyi",
+              "3.2 ng/mL",
+              "0.5-2.0 ng/mL",
+              "Yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Digoksin düzeyi",
+            "3.2 ng/mL",
+            "0.5-2.0 ng/mL",
+            "Yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Yüksek digoksin düzeyi bulantı, görme değişikliği ve aritmiyle birlikte digoksin toksisitesini destekler.",
+        "interpretation": "Yüksek digoksin düzeyi bulantı, görme değişikliği ve aritmiyle birlikte digoksin toksisitesini destekler.",
+        "category": "toxicology",
+        "testTypeCategory": "toxicology",
+        "explanationAfterAnswer": "Yüksek digoksin düzeyi bulantı, görme değişikliği ve aritmiyle birlikte digoksin toksisitesini destekler."
+      },
+      {
+        "id": "pharm-dig-k",
+        "label": "Elektrolit paneli",
+        "title": "Elektrolit paneli",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Böbrek fonksiyon bozukluğu digoksin klirensini azaltır; hiperkalemi ciddi toksisite ve Na/K-ATPaz inhibisyonu açısından uyarıcıdır.",
+        "clinicalMeaning": "Böbrek fonksiyon bozukluğu digoksin klirensini azaltır; hiperkalemi ciddi toksisite ve Na/K-ATPaz inhibisyonu açısından uyarıcıdır.",
+        "result": {
+          "title": "Elektrolit paneli",
+          "summary": "Böbrek fonksiyon bozukluğu digoksin klirensini azaltır; hiperkalemi ciddi toksisite ve Na/K-ATPaz inhibisyonu açısından uyarıcıdır.",
+          "interpretation": "Böbrek fonksiyon bozukluğu digoksin klirensini azaltır; hiperkalemi ciddi toksisite ve Na/K-ATPaz inhibisyonu açısından uyarıcıdır.",
+          "values": [
+            [
+              "Potasyum",
+              "5.6 mmol/L",
+              "3.5-5.0 mmol/L",
+              "Yüksek"
+            ],
+            [
+              "Kreatinin",
+              "1.8 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "Potasyum",
+              "5.6 mmol/L",
+              "3.5-5.0 mmol/L",
+              "Yüksek"
+            ],
+            [
+              "Kreatinin",
+              "1.8 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Potasyum",
+            "5.6 mmol/L",
+            "3.5-5.0 mmol/L",
+            "Yüksek"
+          ],
+          [
+            "Kreatinin",
+            "1.8 mg/dL",
+            "0.6-1.2 mg/dL",
+            "Yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Böbrek fonksiyon bozukluğu digoksin klirensini azaltır; hiperkalemi ciddi toksisite ve Na/K-ATPaz inhibisyonu açısından uyarıcıdır.",
+        "interpretation": "Böbrek fonksiyon bozukluğu digoksin klirensini azaltır; hiperkalemi ciddi toksisite ve Na/K-ATPaz inhibisyonu açısından uyarıcıdır.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Böbrek fonksiyon bozukluğu digoksin klirensini azaltır; hiperkalemi ciddi toksisite ve Na/K-ATPaz inhibisyonu açısından uyarıcıdır."
+      },
+      {
+        "id": "pharm-dig-ecg",
+        "label": "Elektrokardiyografi",
+        "title": "Elektrokardiyografi",
+        "type": "ecg",
+        "priority": "essential",
+        "subtype": "EKG",
+        "summary": "Digoksin toksisitesi artmış vagal tonus ve doğrudan kardiyak etkiyle bradiaritmi veya çeşitli aritmiler oluşturabilir.",
+        "clinicalMeaning": "Digoksin toksisitesi artmış vagal tonus ve doğrudan kardiyak etkiyle bradiaritmi veya çeşitli aritmiler oluşturabilir.",
+        "result": {
+          "title": "Elektrokardiyografi",
+          "summary": "Digoksin toksisitesi artmış vagal tonus ve doğrudan kardiyak etkiyle bradiaritmi veya çeşitli aritmiler oluşturabilir.",
+          "interpretation": "Digoksin toksisitesi artmış vagal tonus ve doğrudan kardiyak etkiyle bradiaritmi veya çeşitli aritmiler oluşturabilir.",
+          "values": [
+            [
+              "Ritim",
+              "Yavaş ventrikül yanıtlı düzensiz ritim",
+              "Klinik bağlama göre",
+              "Aritmi"
+            ],
+            [
+              "İletim",
+              "AV iletim yavaşlaması",
+              "Normal PR/AV iletim",
+              "Bozuk"
+            ]
+          ],
+          "rows": [
+            [
+              "Ritim",
+              "Yavaş ventrikül yanıtlı düzensiz ritim",
+              "Klinik bağlama göre",
+              "Aritmi"
+            ],
+            [
+              "İletim",
+              "AV iletim yavaşlaması",
+              "Normal PR/AV iletim",
+              "Bozuk"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Ritim",
+            "Yavaş ventrikül yanıtlı düzensiz ritim",
+            "Klinik bağlama göre",
+            "Aritmi"
+          ],
+          [
+            "İletim",
+            "AV iletim yavaşlaması",
+            "Normal PR/AV iletim",
+            "Bozuk"
+          ]
+        ],
+        "postAnswerExplanation": "Digoksin toksisitesi artmış vagal tonus ve doğrudan kardiyak etkiyle bradiaritmi veya çeşitli aritmiler oluşturabilir.",
+        "interpretation": "Digoksin toksisitesi artmış vagal tonus ve doğrudan kardiyak etkiyle bradiaritmi veya çeşitli aritmiler oluşturabilir.",
+        "category": "cardiac",
+        "testTypeCategory": "cardiac",
+        "explanationAfterAnswer": "Digoksin toksisitesi artmış vagal tonus ve doğrudan kardiyak etkiyle bradiaritmi veya çeşitli aritmiler oluşturabilir."
+      }
+    ]
+  },
+  {
+    "caseId": "v177-new-128-analjezik-asiri-alimi",
+    "oldInvestigationCount": 4,
+    "newInvestigationCount": 3,
+    "removedBannedCommentCount": 14,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-apap-level",
+        "label": "Serum parasetamol düzeyi",
+        "title": "Serum parasetamol düzeyi",
+        "type": "toxicology",
+        "priority": "essential",
+        "subtype": "Toksikoloji / ilaç düzeyi",
+        "summary": "Alım zamanı bilinen hastada parasetamol düzeyi nomogramla yorumlanır; toksik aralıkta N-asetilsistein geciktirilmemelidir.",
+        "clinicalMeaning": "Alım zamanı bilinen hastada parasetamol düzeyi nomogramla yorumlanır; toksik aralıkta N-asetilsistein geciktirilmemelidir.",
+        "result": {
+          "title": "Serum parasetamol düzeyi",
+          "summary": "Alım zamanı bilinen hastada parasetamol düzeyi nomogramla yorumlanır; toksik aralıkta N-asetilsistein geciktirilmemelidir.",
+          "interpretation": "Alım zamanı bilinen hastada parasetamol düzeyi nomogramla yorumlanır; toksik aralıkta N-asetilsistein geciktirilmemelidir.",
+          "values": [
+            [
+              "Alım sonrası süre",
+              "6 saat",
+              "Nomogram için gerekli",
+              "Bilinen"
+            ],
+            [
+              "Parasetamol düzeyi",
+              "Toksik aralıkta",
+              "Rumack-Matthew nomogramına göre",
+              "Yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "Alım sonrası süre",
+              "6 saat",
+              "Nomogram için gerekli",
+              "Bilinen"
+            ],
+            [
+              "Parasetamol düzeyi",
+              "Toksik aralıkta",
+              "Rumack-Matthew nomogramına göre",
+              "Yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Alım sonrası süre",
+            "6 saat",
+            "Nomogram için gerekli",
+            "Bilinen"
+          ],
+          [
+            "Parasetamol düzeyi",
+            "Toksik aralıkta",
+            "Rumack-Matthew nomogramına göre",
+            "Yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Alım zamanı bilinen hastada parasetamol düzeyi nomogramla yorumlanır; toksik aralıkta N-asetilsistein geciktirilmemelidir.",
+        "interpretation": "Alım zamanı bilinen hastada parasetamol düzeyi nomogramla yorumlanır; toksik aralıkta N-asetilsistein geciktirilmemelidir.",
+        "category": "toxicology",
+        "testTypeCategory": "toxicology",
+        "explanationAfterAnswer": "Alım zamanı bilinen hastada parasetamol düzeyi nomogramla yorumlanır; toksik aralıkta N-asetilsistein geciktirilmemelidir."
+      },
+      {
+        "id": "pharm-apap-liver",
+        "label": "Karaciğer hasarı başlangıç paneli",
+        "title": "Karaciğer hasarı başlangıç paneli",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Erken dönemde transaminazlar hafif olabilir; antidot karaciğer yetmezliği gelişmesini beklemeden glutatyon rezervini desteklemek için verilir.",
+        "clinicalMeaning": "Erken dönemde transaminazlar hafif olabilir; antidot karaciğer yetmezliği gelişmesini beklemeden glutatyon rezervini desteklemek için verilir.",
+        "result": {
+          "title": "Karaciğer hasarı başlangıç paneli",
+          "summary": "Erken dönemde transaminazlar hafif olabilir; antidot karaciğer yetmezliği gelişmesini beklemeden glutatyon rezervini desteklemek için verilir.",
+          "interpretation": "Erken dönemde transaminazlar hafif olabilir; antidot karaciğer yetmezliği gelişmesini beklemeden glutatyon rezervini desteklemek için verilir.",
+          "values": [
+            [
+              "ALT",
+              "68 U/L",
+              "<35 U/L",
+              "Hafif yüksek"
+            ],
+            [
+              "AST",
+              "72 U/L",
+              "<35 U/L",
+              "Hafif yüksek"
+            ],
+            [
+              "INR",
+              "1.2",
+              "0.8-1.2",
+              "Sınırda"
+            ]
+          ],
+          "rows": [
+            [
+              "ALT",
+              "68 U/L",
+              "<35 U/L",
+              "Hafif yüksek"
+            ],
+            [
+              "AST",
+              "72 U/L",
+              "<35 U/L",
+              "Hafif yüksek"
+            ],
+            [
+              "INR",
+              "1.2",
+              "0.8-1.2",
+              "Sınırda"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "ALT",
+            "68 U/L",
+            "<35 U/L",
+            "Hafif yüksek"
+          ],
+          [
+            "AST",
+            "72 U/L",
+            "<35 U/L",
+            "Hafif yüksek"
+          ],
+          [
+            "INR",
+            "1.2",
+            "0.8-1.2",
+            "Sınırda"
+          ]
+        ],
+        "postAnswerExplanation": "Erken dönemde transaminazlar hafif olabilir; antidot karaciğer yetmezliği gelişmesini beklemeden glutatyon rezervini desteklemek için verilir.",
+        "interpretation": "Erken dönemde transaminazlar hafif olabilir; antidot karaciğer yetmezliği gelişmesini beklemeden glutatyon rezervini desteklemek için verilir.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Erken dönemde transaminazlar hafif olabilir; antidot karaciğer yetmezliği gelişmesini beklemeden glutatyon rezervini desteklemek için verilir."
+      },
+      {
+        "id": "pharm-apap-preg",
+        "label": "Gebelik testi",
+        "title": "Gebelik testi",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Doğurganlık çağındaki hastada gebelik durumu tedavi güvenliği açısından kaydedilir; bu sonuç parasetamol toksisitesinin nedeni değildir.",
+        "clinicalMeaning": "Doğurganlık çağındaki hastada gebelik durumu tedavi güvenliği açısından kaydedilir; bu sonuç parasetamol toksisitesinin nedeni değildir.",
+        "result": {
+          "title": "Gebelik testi",
+          "summary": "Doğurganlık çağındaki hastada gebelik durumu tedavi güvenliği açısından kaydedilir; bu sonuç parasetamol toksisitesinin nedeni değildir.",
+          "interpretation": "Doğurganlık çağındaki hastada gebelik durumu tedavi güvenliği açısından kaydedilir; bu sonuç parasetamol toksisitesinin nedeni değildir.",
+          "values": [
+            [
+              "Serum beta-hCG",
+              "Negatif",
+              "Negatif",
+              "Negatif"
+            ]
+          ],
+          "rows": [
+            [
+              "Serum beta-hCG",
+              "Negatif",
+              "Negatif",
+              "Negatif"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Serum beta-hCG",
+            "Negatif",
+            "Negatif",
+            "Negatif"
+          ]
+        ],
+        "postAnswerExplanation": "Doğurganlık çağındaki hastada gebelik durumu tedavi güvenliği açısından kaydedilir; bu sonuç parasetamol toksisitesinin nedeni değildir.",
+        "interpretation": "Doğurganlık çağındaki hastada gebelik durumu tedavi güvenliği açısından kaydedilir; bu sonuç parasetamol toksisitesinin nedeni değildir.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Doğurganlık çağındaki hastada gebelik durumu tedavi güvenliği açısından kaydedilir; bu sonuç parasetamol toksisitesinin nedeni değildir."
+      }
+    ]
+  },
+  {
+    "caseId": "v178-new-133-lipit-dusurucu-tedavi-sonrasi-kas-agrisi",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 7,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-statin-ck",
+        "label": "Kreatin kinaz ve idrar rengi",
+        "title": "Kreatin kinaz ve idrar rengi",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Çok yüksek CK ve koyu idrar statin ilişkili miyopati/rabdomiyolizi destekler.",
+        "clinicalMeaning": "Çok yüksek CK ve koyu idrar statin ilişkili miyopati/rabdomiyolizi destekler.",
+        "result": {
+          "title": "Kreatin kinaz ve idrar rengi",
+          "summary": "Çok yüksek CK ve koyu idrar statin ilişkili miyopati/rabdomiyolizi destekler.",
+          "interpretation": "Çok yüksek CK ve koyu idrar statin ilişkili miyopati/rabdomiyolizi destekler.",
+          "values": [
+            [
+              "Kreatin kinaz",
+              "9.800 U/L",
+              "<200 U/L",
+              "Çok yüksek"
+            ],
+            [
+              "İdrar rengi",
+              "Koyu çay rengi",
+              "Açık sarı",
+              "Miyoglobinüri şüphesi"
+            ]
+          ],
+          "rows": [
+            [
+              "Kreatin kinaz",
+              "9.800 U/L",
+              "<200 U/L",
+              "Çok yüksek"
+            ],
+            [
+              "İdrar rengi",
+              "Koyu çay rengi",
+              "Açık sarı",
+              "Miyoglobinüri şüphesi"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kreatin kinaz",
+            "9.800 U/L",
+            "<200 U/L",
+            "Çok yüksek"
+          ],
+          [
+            "İdrar rengi",
+            "Koyu çay rengi",
+            "Açık sarı",
+            "Miyoglobinüri şüphesi"
+          ]
+        ],
+        "postAnswerExplanation": "Çok yüksek CK ve koyu idrar statin ilişkili miyopati/rabdomiyolizi destekler.",
+        "interpretation": "Çok yüksek CK ve koyu idrar statin ilişkili miyopati/rabdomiyolizi destekler.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Çok yüksek CK ve koyu idrar statin ilişkili miyopati/rabdomiyolizi destekler."
+      },
+      {
+        "id": "pharm-statin-renal",
+        "label": "Böbrek fonksiyonu",
+        "title": "Böbrek fonksiyonu",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Rabdomiyoliz böbrek hasarı ve elektrolit bozukluğu yapabilir; etkileşen ilaç kesilmeli ve hidrasyon düşünülmelidir.",
+        "clinicalMeaning": "Rabdomiyoliz böbrek hasarı ve elektrolit bozukluğu yapabilir; etkileşen ilaç kesilmeli ve hidrasyon düşünülmelidir.",
+        "result": {
+          "title": "Böbrek fonksiyonu",
+          "summary": "Rabdomiyoliz böbrek hasarı ve elektrolit bozukluğu yapabilir; etkileşen ilaç kesilmeli ve hidrasyon düşünülmelidir.",
+          "interpretation": "Rabdomiyoliz böbrek hasarı ve elektrolit bozukluğu yapabilir; etkileşen ilaç kesilmeli ve hidrasyon düşünülmelidir.",
+          "values": [
+            [
+              "Kreatinin",
+              "1.5 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Yüksek"
+            ],
+            [
+              "Potasyum",
+              "5.2 mmol/L",
+              "3.5-5.0 mmol/L",
+              "Hafif yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "Kreatinin",
+              "1.5 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Yüksek"
+            ],
+            [
+              "Potasyum",
+              "5.2 mmol/L",
+              "3.5-5.0 mmol/L",
+              "Hafif yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kreatinin",
+            "1.5 mg/dL",
+            "0.6-1.2 mg/dL",
+            "Yüksek"
+          ],
+          [
+            "Potasyum",
+            "5.2 mmol/L",
+            "3.5-5.0 mmol/L",
+            "Hafif yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Rabdomiyoliz böbrek hasarı ve elektrolit bozukluğu yapabilir; etkileşen ilaç kesilmeli ve hidrasyon düşünülmelidir.",
+        "interpretation": "Rabdomiyoliz böbrek hasarı ve elektrolit bozukluğu yapabilir; etkileşen ilaç kesilmeli ve hidrasyon düşünülmelidir.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Rabdomiyoliz böbrek hasarı ve elektrolit bozukluğu yapabilir; etkileşen ilaç kesilmeli ve hidrasyon düşünülmelidir."
+      }
+    ]
+  },
+  {
+    "caseId": "v183-new-188-antihipertansif-sonrasi-kuru-oksuruk",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 14,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-cough-inflam",
+        "label": "Hemogram ve inflamasyon göstergeleri",
+        "title": "Hemogram ve inflamasyon göstergeleri",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Enfeksiyon göstergelerinin normal olması öksürüğü pnömoni şablonundan uzaklaştırır; zaman ilişkisi ACE inhibitörü yan etkisini öne çıkarır.",
+        "clinicalMeaning": "Enfeksiyon göstergelerinin normal olması öksürüğü pnömoni şablonundan uzaklaştırır; zaman ilişkisi ACE inhibitörü yan etkisini öne çıkarır.",
+        "result": {
+          "title": "Hemogram ve inflamasyon göstergeleri",
+          "summary": "Enfeksiyon göstergelerinin normal olması öksürüğü pnömoni şablonundan uzaklaştırır; zaman ilişkisi ACE inhibitörü yan etkisini öne çıkarır.",
+          "interpretation": "Enfeksiyon göstergelerinin normal olması öksürüğü pnömoni şablonundan uzaklaştırır; zaman ilişkisi ACE inhibitörü yan etkisini öne çıkarır.",
+          "values": [
+            [
+              "Lökosit",
+              "7.400/mm3",
+              "4.000-10.000/mm3",
+              "Referans içinde"
+            ],
+            [
+              "CRP",
+              "2 mg/L",
+              "<5 mg/L",
+              "Referans içinde"
+            ]
+          ],
+          "rows": [
+            [
+              "Lökosit",
+              "7.400/mm3",
+              "4.000-10.000/mm3",
+              "Referans içinde"
+            ],
+            [
+              "CRP",
+              "2 mg/L",
+              "<5 mg/L",
+              "Referans içinde"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Lökosit",
+            "7.400/mm3",
+            "4.000-10.000/mm3",
+            "Referans içinde"
+          ],
+          [
+            "CRP",
+            "2 mg/L",
+            "<5 mg/L",
+            "Referans içinde"
+          ]
+        ],
+        "postAnswerExplanation": "Enfeksiyon göstergelerinin normal olması öksürüğü pnömoni şablonundan uzaklaştırır; zaman ilişkisi ACE inhibitörü yan etkisini öne çıkarır.",
+        "interpretation": "Enfeksiyon göstergelerinin normal olması öksürüğü pnömoni şablonundan uzaklaştırır; zaman ilişkisi ACE inhibitörü yan etkisini öne çıkarır.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Enfeksiyon göstergelerinin normal olması öksürüğü pnömoni şablonundan uzaklaştırır; zaman ilişkisi ACE inhibitörü yan etkisini öne çıkarır."
+      },
+      {
+        "id": "pharm-cough-xray",
+        "label": "Akciğer grafisi",
+        "title": "Akciğer grafisi",
+        "type": "xray",
+        "priority": "essential",
+        "subtype": "Görüntüleme",
+        "summary": "Normal akciğer grafisi ateşsiz ve balgamsız öksürükte enfeksiyon olasılığını azaltır; bradikinin aracılı irritatif öksürükle uyumludur.",
+        "clinicalMeaning": "Normal akciğer grafisi ateşsiz ve balgamsız öksürükte enfeksiyon olasılığını azaltır; bradikinin aracılı irritatif öksürükle uyumludur.",
+        "result": {
+          "title": "Akciğer grafisi",
+          "summary": "Normal akciğer grafisi ateşsiz ve balgamsız öksürükte enfeksiyon olasılığını azaltır; bradikinin aracılı irritatif öksürükle uyumludur.",
+          "interpretation": "Normal akciğer grafisi ateşsiz ve balgamsız öksürükte enfeksiyon olasılığını azaltır; bradikinin aracılı irritatif öksürükle uyumludur.",
+          "values": [
+            [
+              "Parankim",
+              "Konsolidasyon izlenmedi",
+              "Akciğer alanları açık",
+              "Normal"
+            ],
+            [
+              "Plevral efüzyon",
+              "Yok",
+              "Yok",
+              "Normal"
+            ]
+          ],
+          "rows": [
+            [
+              "Parankim",
+              "Konsolidasyon izlenmedi",
+              "Akciğer alanları açık",
+              "Normal"
+            ],
+            [
+              "Plevral efüzyon",
+              "Yok",
+              "Yok",
+              "Normal"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Parankim",
+            "Konsolidasyon izlenmedi",
+            "Akciğer alanları açık",
+            "Normal"
+          ],
+          [
+            "Plevral efüzyon",
+            "Yok",
+            "Yok",
+            "Normal"
+          ]
+        ],
+        "postAnswerExplanation": "Normal akciğer grafisi ateşsiz ve balgamsız öksürükte enfeksiyon olasılığını azaltır; bradikinin aracılı irritatif öksürükle uyumludur.",
+        "interpretation": "Normal akciğer grafisi ateşsiz ve balgamsız öksürükte enfeksiyon olasılığını azaltır; bradikinin aracılı irritatif öksürükle uyumludur.",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "explanationAfterAnswer": "Normal akciğer grafisi ateşsiz ve balgamsız öksürükte enfeksiyon olasılığını azaltır; bradikinin aracılı irritatif öksürükle uyumludur."
+      }
+    ]
+  },
+  {
+    "caseId": "v184-new-196-duygudurum-ilaci-sonrasi-tremor-ve-konfuzyon",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 7,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-li-renal",
+        "label": "Böbrek fonksiyonu ve sıvı durumu",
+        "title": "Böbrek fonksiyonu ve sıvı durumu",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Sıvı kaybı ve böbrek fonksiyon bozulması lityumun renal eliminasyonunu azaltarak toksisiteyi ağırlaştırabilir.",
+        "clinicalMeaning": "Sıvı kaybı ve böbrek fonksiyon bozulması lityumun renal eliminasyonunu azaltarak toksisiteyi ağırlaştırabilir.",
+        "result": {
+          "title": "Böbrek fonksiyonu ve sıvı durumu",
+          "summary": "Sıvı kaybı ve böbrek fonksiyon bozulması lityumun renal eliminasyonunu azaltarak toksisiteyi ağırlaştırabilir.",
+          "interpretation": "Sıvı kaybı ve böbrek fonksiyon bozulması lityumun renal eliminasyonunu azaltarak toksisiteyi ağırlaştırabilir.",
+          "values": [
+            [
+              "Kreatinin",
+              "1.7 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Yüksek"
+            ],
+            [
+              "Sodyum",
+              "132 mmol/L",
+              "135-145 mmol/L",
+              "Düşük"
+            ]
+          ],
+          "rows": [
+            [
+              "Kreatinin",
+              "1.7 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Yüksek"
+            ],
+            [
+              "Sodyum",
+              "132 mmol/L",
+              "135-145 mmol/L",
+              "Düşük"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kreatinin",
+            "1.7 mg/dL",
+            "0.6-1.2 mg/dL",
+            "Yüksek"
+          ],
+          [
+            "Sodyum",
+            "132 mmol/L",
+            "135-145 mmol/L",
+            "Düşük"
+          ]
+        ],
+        "postAnswerExplanation": "Sıvı kaybı ve böbrek fonksiyon bozulması lityumun renal eliminasyonunu azaltarak toksisiteyi ağırlaştırabilir.",
+        "interpretation": "Sıvı kaybı ve böbrek fonksiyon bozulması lityumun renal eliminasyonunu azaltarak toksisiteyi ağırlaştırabilir.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Sıvı kaybı ve böbrek fonksiyon bozulması lityumun renal eliminasyonunu azaltarak toksisiteyi ağırlaştırabilir."
+      },
+      {
+        "id": "pharm-li-level",
+        "label": "Serum lityum düzeyi",
+        "title": "Serum lityum düzeyi",
+        "type": "toxicology",
+        "priority": "essential",
+        "subtype": "Toksikoloji / ilaç düzeyi",
+        "summary": "Lityum düzeyinin toksik aralıkta olması ve nörolojik bulguların eşlik etmesi ilacın kesilmesini, izotonik sıvıyı ve hemodiyaliz değerlendirmesini gerektirir.",
+        "clinicalMeaning": "Lityum düzeyinin toksik aralıkta olması ve nörolojik bulguların eşlik etmesi ilacın kesilmesini, izotonik sıvıyı ve hemodiyaliz değerlendirmesini gerektirir.",
+        "result": {
+          "title": "Serum lityum düzeyi",
+          "summary": "Lityum düzeyinin toksik aralıkta olması ve nörolojik bulguların eşlik etmesi ilacın kesilmesini, izotonik sıvıyı ve hemodiyaliz değerlendirmesini gerektirir.",
+          "interpretation": "Lityum düzeyinin toksik aralıkta olması ve nörolojik bulguların eşlik etmesi ilacın kesilmesini, izotonik sıvıyı ve hemodiyaliz değerlendirmesini gerektirir.",
+          "values": [
+            [
+              "Lityum düzeyi",
+              "3.1 mmol/L",
+              "0.6-1.2 mmol/L",
+              "Toksik"
+            ]
+          ],
+          "rows": [
+            [
+              "Lityum düzeyi",
+              "3.1 mmol/L",
+              "0.6-1.2 mmol/L",
+              "Toksik"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Lityum düzeyi",
+            "3.1 mmol/L",
+            "0.6-1.2 mmol/L",
+            "Toksik"
+          ]
+        ],
+        "postAnswerExplanation": "Lityum düzeyinin toksik aralıkta olması ve nörolojik bulguların eşlik etmesi ilacın kesilmesini, izotonik sıvıyı ve hemodiyaliz değerlendirmesini gerektirir.",
+        "interpretation": "Lityum düzeyinin toksik aralıkta olması ve nörolojik bulguların eşlik etmesi ilacın kesilmesini, izotonik sıvıyı ve hemodiyaliz değerlendirmesini gerektirir.",
+        "category": "toxicology",
+        "testTypeCategory": "toxicology",
+        "explanationAfterAnswer": "Lityum düzeyinin toksik aralıkta olması ve nörolojik bulguların eşlik etmesi ilacın kesilmesini, izotonik sıvıyı ve hemodiyaliz değerlendirmesini gerektirir."
+      }
+    ]
+  },
+  {
+    "caseId": "v185-new-219-tansiyon-ilaci-sonrasi-hisilti",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 7,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-bb-asthma-abg",
+        "label": "Kan gazı / oksijenlenme",
+        "title": "Kan gazı / oksijenlenme",
+        "type": "bloodGas",
+        "priority": "essential",
+        "subtype": "Kan gazı / asit-baz",
+        "summary": "Erken bronkospazmda hipoksemi görülebilir; CO2 normal veya düşük olabilir, yükselmesi yorulma açısından uyarıcıdır.",
+        "clinicalMeaning": "Erken bronkospazmda hipoksemi görülebilir; CO2 normal veya düşük olabilir, yükselmesi yorulma açısından uyarıcıdır.",
+        "result": {
+          "title": "Kan gazı / oksijenlenme",
+          "summary": "Erken bronkospazmda hipoksemi görülebilir; CO2 normal veya düşük olabilir, yükselmesi yorulma açısından uyarıcıdır.",
+          "interpretation": "Erken bronkospazmda hipoksemi görülebilir; CO2 normal veya düşük olabilir, yükselmesi yorulma açısından uyarıcıdır.",
+          "values": [
+            [
+              "PaO2",
+              "68 mmHg",
+              "80-100 mmHg",
+              "Düşük"
+            ],
+            [
+              "PaCO2",
+              "38 mmHg",
+              "35-45 mmHg",
+              "Referans içinde"
+            ]
+          ],
+          "rows": [
+            [
+              "PaO2",
+              "68 mmHg",
+              "80-100 mmHg",
+              "Düşük"
+            ],
+            [
+              "PaCO2",
+              "38 mmHg",
+              "35-45 mmHg",
+              "Referans içinde"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "PaO2",
+            "68 mmHg",
+            "80-100 mmHg",
+            "Düşük"
+          ],
+          [
+            "PaCO2",
+            "38 mmHg",
+            "35-45 mmHg",
+            "Referans içinde"
+          ]
+        ],
+        "postAnswerExplanation": "Erken bronkospazmda hipoksemi görülebilir; CO2 normal veya düşük olabilir, yükselmesi yorulma açısından uyarıcıdır.",
+        "interpretation": "Erken bronkospazmda hipoksemi görülebilir; CO2 normal veya düşük olabilir, yükselmesi yorulma açısından uyarıcıdır.",
+        "category": "acid-base",
+        "testTypeCategory": "acid-base",
+        "explanationAfterAnswer": "Erken bronkospazmda hipoksemi görülebilir; CO2 normal veya düşük olabilir, yükselmesi yorulma açısından uyarıcıdır."
+      },
+      {
+        "id": "pharm-bb-asthma-xray",
+        "label": "Akciğer grafisi",
+        "title": "Akciğer grafisi",
+        "type": "xray",
+        "priority": "essential",
+        "subtype": "Görüntüleme",
+        "summary": "Konsolidasyon olmaması enfeksiyon yerine bronş düz kası beta-2 blokajını destekler.",
+        "clinicalMeaning": "Konsolidasyon olmaması enfeksiyon yerine bronş düz kası beta-2 blokajını destekler.",
+        "result": {
+          "title": "Akciğer grafisi",
+          "summary": "Konsolidasyon olmaması enfeksiyon yerine bronş düz kası beta-2 blokajını destekler.",
+          "interpretation": "Konsolidasyon olmaması enfeksiyon yerine bronş düz kası beta-2 blokajını destekler.",
+          "values": [
+            [
+              "Konsolidasyon",
+              "İzlenmedi",
+              "Yok",
+              "Normal"
+            ],
+            [
+              "Hiperinflasyon",
+              "Hafif",
+              "Yok",
+              "Astım ile uyumlu"
+            ]
+          ],
+          "rows": [
+            [
+              "Konsolidasyon",
+              "İzlenmedi",
+              "Yok",
+              "Normal"
+            ],
+            [
+              "Hiperinflasyon",
+              "Hafif",
+              "Yok",
+              "Astım ile uyumlu"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Konsolidasyon",
+            "İzlenmedi",
+            "Yok",
+            "Normal"
+          ],
+          [
+            "Hiperinflasyon",
+            "Hafif",
+            "Yok",
+            "Astım ile uyumlu"
+          ]
+        ],
+        "postAnswerExplanation": "Konsolidasyon olmaması enfeksiyon yerine bronş düz kası beta-2 blokajını destekler.",
+        "interpretation": "Konsolidasyon olmaması enfeksiyon yerine bronş düz kası beta-2 blokajını destekler.",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "explanationAfterAnswer": "Konsolidasyon olmaması enfeksiyon yerine bronş düz kası beta-2 blokajını destekler."
+      }
+    ]
+  },
+  {
+    "caseId": "v185-new-220-tedavi-sonrasi-isitme-azalmasi",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 0,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-genta-renal",
+        "label": "Böbrek fonksiyonu",
+        "title": "Böbrek fonksiyonu",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Aminoglikozidler böbrekten atılır; renal fonksiyon azalması ototoksisite ve nefrotoksisite riskini artırır.",
+        "clinicalMeaning": "Aminoglikozidler böbrekten atılır; renal fonksiyon azalması ototoksisite ve nefrotoksisite riskini artırır.",
+        "result": {
+          "title": "Böbrek fonksiyonu",
+          "summary": "Aminoglikozidler böbrekten atılır; renal fonksiyon azalması ototoksisite ve nefrotoksisite riskini artırır.",
+          "interpretation": "Aminoglikozidler böbrekten atılır; renal fonksiyon azalması ototoksisite ve nefrotoksisite riskini artırır.",
+          "values": [
+            [
+              "Kreatinin",
+              "1.9 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Yüksek"
+            ],
+            [
+              "eGFR",
+              "38 mL/dk/1.73 m2",
+              ">60",
+              "Düşük"
+            ]
+          ],
+          "rows": [
+            [
+              "Kreatinin",
+              "1.9 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Yüksek"
+            ],
+            [
+              "eGFR",
+              "38 mL/dk/1.73 m2",
+              ">60",
+              "Düşük"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kreatinin",
+            "1.9 mg/dL",
+            "0.6-1.2 mg/dL",
+            "Yüksek"
+          ],
+          [
+            "eGFR",
+            "38 mL/dk/1.73 m2",
+            ">60",
+            "Düşük"
+          ]
+        ],
+        "postAnswerExplanation": "Aminoglikozidler böbrekten atılır; renal fonksiyon azalması ototoksisite ve nefrotoksisite riskini artırır.",
+        "interpretation": "Aminoglikozidler böbrekten atılır; renal fonksiyon azalması ototoksisite ve nefrotoksisite riskini artırır.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Aminoglikozidler böbrekten atılır; renal fonksiyon azalması ototoksisite ve nefrotoksisite riskini artırır."
+      },
+      {
+        "id": "pharm-genta-level",
+        "label": "Gentamisin düzeyi",
+        "title": "Gentamisin düzeyi",
+        "type": "toxicology",
+        "priority": "essential",
+        "subtype": "Toksikoloji / ilaç düzeyi",
+        "summary": "Yüksek çukur düzey dokuda birikim ve ototoksisite riskini destekler; doz aralığı böbrek fonksiyonuna göre ayarlanmalıdır.",
+        "clinicalMeaning": "Yüksek çukur düzey dokuda birikim ve ototoksisite riskini destekler; doz aralığı böbrek fonksiyonuna göre ayarlanmalıdır.",
+        "result": {
+          "title": "Gentamisin düzeyi",
+          "summary": "Yüksek çukur düzey dokuda birikim ve ototoksisite riskini destekler; doz aralığı böbrek fonksiyonuna göre ayarlanmalıdır.",
+          "interpretation": "Yüksek çukur düzey dokuda birikim ve ototoksisite riskini destekler; doz aralığı böbrek fonksiyonuna göre ayarlanmalıdır.",
+          "values": [
+            [
+              "Trough düzeyi",
+              "Yüksek",
+              "Terapötik aralık altında/uygun",
+              "Yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "Trough düzeyi",
+              "Yüksek",
+              "Terapötik aralık altında/uygun",
+              "Yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Trough düzeyi",
+            "Yüksek",
+            "Terapötik aralık altında/uygun",
+            "Yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Yüksek çukur düzey dokuda birikim ve ototoksisite riskini destekler; doz aralığı böbrek fonksiyonuna göre ayarlanmalıdır.",
+        "interpretation": "Yüksek çukur düzey dokuda birikim ve ototoksisite riskini destekler; doz aralığı böbrek fonksiyonuna göre ayarlanmalıdır.",
+        "category": "toxicology",
+        "testTypeCategory": "toxicology",
+        "explanationAfterAnswer": "Yüksek çukur düzey dokuda birikim ve ototoksisite riskini destekler; doz aralığı böbrek fonksiyonuna göre ayarlanmalıdır."
+      }
+    ]
+  },
+  {
+    "caseId": "v185-new-221-stent-sonrasi-ikili-antiagregan-tedavi",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 7,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-dapt-cbc",
+        "label": "Hemogram",
+        "title": "Hemogram",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "İkili antiagregan tedavide kanama güvenliği izlenir; normal hemogram aktif kanama olmadığını destekler.",
+        "clinicalMeaning": "İkili antiagregan tedavide kanama güvenliği izlenir; normal hemogram aktif kanama olmadığını destekler.",
+        "result": {
+          "title": "Hemogram",
+          "summary": "İkili antiagregan tedavide kanama güvenliği izlenir; normal hemogram aktif kanama olmadığını destekler.",
+          "interpretation": "İkili antiagregan tedavide kanama güvenliği izlenir; normal hemogram aktif kanama olmadığını destekler.",
+          "values": [
+            [
+              "Hemoglobin",
+              "14.1 g/dL",
+              "13-17 g/dL",
+              "Referans içinde"
+            ],
+            [
+              "Trombosit",
+              "238.000/mm3",
+              "150.000-400.000/mm3",
+              "Referans içinde"
+            ]
+          ],
+          "rows": [
+            [
+              "Hemoglobin",
+              "14.1 g/dL",
+              "13-17 g/dL",
+              "Referans içinde"
+            ],
+            [
+              "Trombosit",
+              "238.000/mm3",
+              "150.000-400.000/mm3",
+              "Referans içinde"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Hemoglobin",
+            "14.1 g/dL",
+            "13-17 g/dL",
+            "Referans içinde"
+          ],
+          [
+            "Trombosit",
+            "238.000/mm3",
+            "150.000-400.000/mm3",
+            "Referans içinde"
+          ]
+        ],
+        "postAnswerExplanation": "İkili antiagregan tedavide kanama güvenliği izlenir; normal hemogram aktif kanama olmadığını destekler.",
+        "interpretation": "İkili antiagregan tedavide kanama güvenliği izlenir; normal hemogram aktif kanama olmadığını destekler.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "İkili antiagregan tedavide kanama güvenliği izlenir; normal hemogram aktif kanama olmadığını destekler."
+      },
+      {
+        "id": "pharm-dapt-ecg",
+        "label": "12 derivasyon EKG",
+        "title": "12 derivasyon EKG",
+        "type": "ecg",
+        "priority": "essential",
+        "subtype": "EKG",
+        "summary": "Stabil EKG akut stent trombozu şüphesini azaltır; soru klopidogrelin trombosit reseptör hedefini ölçer.",
+        "clinicalMeaning": "Stabil EKG akut stent trombozu şüphesini azaltır; soru klopidogrelin trombosit reseptör hedefini ölçer.",
+        "result": {
+          "title": "12 derivasyon EKG",
+          "summary": "Stabil EKG akut stent trombozu şüphesini azaltır; soru klopidogrelin trombosit reseptör hedefini ölçer.",
+          "interpretation": "Stabil EKG akut stent trombozu şüphesini azaltır; soru klopidogrelin trombosit reseptör hedefini ölçer.",
+          "values": [
+            [
+              "ST segment",
+              "Yeni elevasyon yok",
+              "İzoelektrik",
+              "Akut iskemi yok"
+            ],
+            [
+              "Ritim",
+              "Sinüs ritmi",
+              "Sinüs ritmi",
+              "Normal"
+            ]
+          ],
+          "rows": [
+            [
+              "ST segment",
+              "Yeni elevasyon yok",
+              "İzoelektrik",
+              "Akut iskemi yok"
+            ],
+            [
+              "Ritim",
+              "Sinüs ritmi",
+              "Sinüs ritmi",
+              "Normal"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "ST segment",
+            "Yeni elevasyon yok",
+            "İzoelektrik",
+            "Akut iskemi yok"
+          ],
+          [
+            "Ritim",
+            "Sinüs ritmi",
+            "Sinüs ritmi",
+            "Normal"
+          ]
+        ],
+        "postAnswerExplanation": "Stabil EKG akut stent trombozu şüphesini azaltır; soru klopidogrelin trombosit reseptör hedefini ölçer.",
+        "interpretation": "Stabil EKG akut stent trombozu şüphesini azaltır; soru klopidogrelin trombosit reseptör hedefini ölçer.",
+        "category": "cardiac",
+        "testTypeCategory": "cardiac",
+        "explanationAfterAnswer": "Stabil EKG akut stent trombozu şüphesini azaltır; soru klopidogrelin trombosit reseptör hedefini ölçer."
+      }
+    ]
+  },
+  {
+    "caseId": "v186-new-237-gogus-agrisinda-dil-alti-ilac",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 0,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-ntg-ecg",
+        "label": "12 derivasyon EKG",
+        "title": "12 derivasyon EKG",
+        "type": "ecg",
+        "priority": "essential",
+        "subtype": "EKG",
+        "summary": "İstirahatte akut iskemi bulgusunun olmaması stabil angina bağlamını destekler; soru nitratların hemodinamik etkisini ölçer.",
+        "clinicalMeaning": "İstirahatte akut iskemi bulgusunun olmaması stabil angina bağlamını destekler; soru nitratların hemodinamik etkisini ölçer.",
+        "result": {
+          "title": "12 derivasyon EKG",
+          "summary": "İstirahatte akut iskemi bulgusunun olmaması stabil angina bağlamını destekler; soru nitratların hemodinamik etkisini ölçer.",
+          "interpretation": "İstirahatte akut iskemi bulgusunun olmaması stabil angina bağlamını destekler; soru nitratların hemodinamik etkisini ölçer.",
+          "values": [
+            [
+              "ST segment",
+              "İstirahatte elevasyon yok",
+              "İzoelektrik",
+              "Akut iskemi yok"
+            ],
+            [
+              "Ritim",
+              "Sinüs ritmi",
+              "Sinüs ritmi",
+              "Normal"
+            ]
+          ],
+          "rows": [
+            [
+              "ST segment",
+              "İstirahatte elevasyon yok",
+              "İzoelektrik",
+              "Akut iskemi yok"
+            ],
+            [
+              "Ritim",
+              "Sinüs ritmi",
+              "Sinüs ritmi",
+              "Normal"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "ST segment",
+            "İstirahatte elevasyon yok",
+            "İzoelektrik",
+            "Akut iskemi yok"
+          ],
+          [
+            "Ritim",
+            "Sinüs ritmi",
+            "Sinüs ritmi",
+            "Normal"
+          ]
+        ],
+        "postAnswerExplanation": "İstirahatte akut iskemi bulgusunun olmaması stabil angina bağlamını destekler; soru nitratların hemodinamik etkisini ölçer.",
+        "interpretation": "İstirahatte akut iskemi bulgusunun olmaması stabil angina bağlamını destekler; soru nitratların hemodinamik etkisini ölçer.",
+        "category": "cardiac",
+        "testTypeCategory": "cardiac",
+        "explanationAfterAnswer": "İstirahatte akut iskemi bulgusunun olmaması stabil angina bağlamını destekler; soru nitratların hemodinamik etkisini ölçer."
+      },
+      {
+        "id": "pharm-ntg-troponin",
+        "label": "Kardiyak biyobelirteç",
+        "title": "Kardiyak biyobelirteç",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Negatif troponin akut miyokart nekrozu yerine semptomatik antianginal mekanizma değerlendirmesini destekler.",
+        "clinicalMeaning": "Negatif troponin akut miyokart nekrozu yerine semptomatik antianginal mekanizma değerlendirmesini destekler.",
+        "result": {
+          "title": "Kardiyak biyobelirteç",
+          "summary": "Negatif troponin akut miyokart nekrozu yerine semptomatik antianginal mekanizma değerlendirmesini destekler.",
+          "interpretation": "Negatif troponin akut miyokart nekrozu yerine semptomatik antianginal mekanizma değerlendirmesini destekler.",
+          "values": [
+            [
+              "Troponin",
+              "Negatif",
+              "Negatif",
+              "Negatif"
+            ]
+          ],
+          "rows": [
+            [
+              "Troponin",
+              "Negatif",
+              "Negatif",
+              "Negatif"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Troponin",
+            "Negatif",
+            "Negatif",
+            "Negatif"
+          ]
+        ],
+        "postAnswerExplanation": "Negatif troponin akut miyokart nekrozu yerine semptomatik antianginal mekanizma değerlendirmesini destekler.",
+        "interpretation": "Negatif troponin akut miyokart nekrozu yerine semptomatik antianginal mekanizma değerlendirmesini destekler.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Negatif troponin akut miyokart nekrozu yerine semptomatik antianginal mekanizma değerlendirmesini destekler."
+      }
+    ]
+  },
+  {
+    "caseId": "v187-new-252-kalp-ilaci-sonrasi-bulanti-ve-gorme-bozuklugu",
+    "oldInvestigationCount": 5,
+    "newInvestigationCount": 3,
+    "removedBannedCommentCount": 0,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-dig-level",
+        "label": "Serum digoksin düzeyi",
+        "title": "Serum digoksin düzeyi",
+        "type": "toxicology",
+        "priority": "essential",
+        "subtype": "Toksikoloji / ilaç düzeyi",
+        "summary": "Yüksek digoksin düzeyi bulantı, görme değişikliği ve aritmiyle birlikte digoksin toksisitesini destekler.",
+        "clinicalMeaning": "Yüksek digoksin düzeyi bulantı, görme değişikliği ve aritmiyle birlikte digoksin toksisitesini destekler.",
+        "result": {
+          "title": "Serum digoksin düzeyi",
+          "summary": "Yüksek digoksin düzeyi bulantı, görme değişikliği ve aritmiyle birlikte digoksin toksisitesini destekler.",
+          "interpretation": "Yüksek digoksin düzeyi bulantı, görme değişikliği ve aritmiyle birlikte digoksin toksisitesini destekler.",
+          "values": [
+            [
+              "Digoksin düzeyi",
+              "3.2 ng/mL",
+              "0.5-2.0 ng/mL",
+              "Yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "Digoksin düzeyi",
+              "3.2 ng/mL",
+              "0.5-2.0 ng/mL",
+              "Yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Digoksin düzeyi",
+            "3.2 ng/mL",
+            "0.5-2.0 ng/mL",
+            "Yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Yüksek digoksin düzeyi bulantı, görme değişikliği ve aritmiyle birlikte digoksin toksisitesini destekler.",
+        "interpretation": "Yüksek digoksin düzeyi bulantı, görme değişikliği ve aritmiyle birlikte digoksin toksisitesini destekler.",
+        "category": "toxicology",
+        "testTypeCategory": "toxicology",
+        "explanationAfterAnswer": "Yüksek digoksin düzeyi bulantı, görme değişikliği ve aritmiyle birlikte digoksin toksisitesini destekler."
+      },
+      {
+        "id": "pharm-dig-k",
+        "label": "Elektrolit paneli",
+        "title": "Elektrolit paneli",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Böbrek fonksiyon bozukluğu digoksin klirensini azaltır; hiperkalemi ciddi toksisite ve Na/K-ATPaz inhibisyonu açısından uyarıcıdır.",
+        "clinicalMeaning": "Böbrek fonksiyon bozukluğu digoksin klirensini azaltır; hiperkalemi ciddi toksisite ve Na/K-ATPaz inhibisyonu açısından uyarıcıdır.",
+        "result": {
+          "title": "Elektrolit paneli",
+          "summary": "Böbrek fonksiyon bozukluğu digoksin klirensini azaltır; hiperkalemi ciddi toksisite ve Na/K-ATPaz inhibisyonu açısından uyarıcıdır.",
+          "interpretation": "Böbrek fonksiyon bozukluğu digoksin klirensini azaltır; hiperkalemi ciddi toksisite ve Na/K-ATPaz inhibisyonu açısından uyarıcıdır.",
+          "values": [
+            [
+              "Potasyum",
+              "5.6 mmol/L",
+              "3.5-5.0 mmol/L",
+              "Yüksek"
+            ],
+            [
+              "Kreatinin",
+              "1.8 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "Potasyum",
+              "5.6 mmol/L",
+              "3.5-5.0 mmol/L",
+              "Yüksek"
+            ],
+            [
+              "Kreatinin",
+              "1.8 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Potasyum",
+            "5.6 mmol/L",
+            "3.5-5.0 mmol/L",
+            "Yüksek"
+          ],
+          [
+            "Kreatinin",
+            "1.8 mg/dL",
+            "0.6-1.2 mg/dL",
+            "Yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Böbrek fonksiyon bozukluğu digoksin klirensini azaltır; hiperkalemi ciddi toksisite ve Na/K-ATPaz inhibisyonu açısından uyarıcıdır.",
+        "interpretation": "Böbrek fonksiyon bozukluğu digoksin klirensini azaltır; hiperkalemi ciddi toksisite ve Na/K-ATPaz inhibisyonu açısından uyarıcıdır.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Böbrek fonksiyon bozukluğu digoksin klirensini azaltır; hiperkalemi ciddi toksisite ve Na/K-ATPaz inhibisyonu açısından uyarıcıdır."
+      },
+      {
+        "id": "pharm-dig-ecg",
+        "label": "Elektrokardiyografi",
+        "title": "Elektrokardiyografi",
+        "type": "ecg",
+        "priority": "essential",
+        "subtype": "EKG",
+        "summary": "Digoksin toksisitesi artmış vagal tonus ve doğrudan kardiyak etkiyle bradiaritmi veya çeşitli aritmiler oluşturabilir.",
+        "clinicalMeaning": "Digoksin toksisitesi artmış vagal tonus ve doğrudan kardiyak etkiyle bradiaritmi veya çeşitli aritmiler oluşturabilir.",
+        "result": {
+          "title": "Elektrokardiyografi",
+          "summary": "Digoksin toksisitesi artmış vagal tonus ve doğrudan kardiyak etkiyle bradiaritmi veya çeşitli aritmiler oluşturabilir.",
+          "interpretation": "Digoksin toksisitesi artmış vagal tonus ve doğrudan kardiyak etkiyle bradiaritmi veya çeşitli aritmiler oluşturabilir.",
+          "values": [
+            [
+              "Ritim",
+              "Yavaş ventrikül yanıtlı düzensiz ritim",
+              "Klinik bağlama göre",
+              "Aritmi"
+            ],
+            [
+              "İletim",
+              "AV iletim yavaşlaması",
+              "Normal PR/AV iletim",
+              "Bozuk"
+            ]
+          ],
+          "rows": [
+            [
+              "Ritim",
+              "Yavaş ventrikül yanıtlı düzensiz ritim",
+              "Klinik bağlama göre",
+              "Aritmi"
+            ],
+            [
+              "İletim",
+              "AV iletim yavaşlaması",
+              "Normal PR/AV iletim",
+              "Bozuk"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Ritim",
+            "Yavaş ventrikül yanıtlı düzensiz ritim",
+            "Klinik bağlama göre",
+            "Aritmi"
+          ],
+          [
+            "İletim",
+            "AV iletim yavaşlaması",
+            "Normal PR/AV iletim",
+            "Bozuk"
+          ]
+        ],
+        "postAnswerExplanation": "Digoksin toksisitesi artmış vagal tonus ve doğrudan kardiyak etkiyle bradiaritmi veya çeşitli aritmiler oluşturabilir.",
+        "interpretation": "Digoksin toksisitesi artmış vagal tonus ve doğrudan kardiyak etkiyle bradiaritmi veya çeşitli aritmiler oluşturabilir.",
+        "category": "cardiac",
+        "testTypeCategory": "cardiac",
+        "explanationAfterAnswer": "Digoksin toksisitesi artmış vagal tonus ve doğrudan kardiyak etkiyle bradiaritmi veya çeşitli aritmiler oluşturabilir."
+      }
+    ]
+  },
+  {
+    "caseId": "v188-new-267-antikoagulan-kullanirken-ciddi-kanama",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 0,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-warfarin-hb",
+        "label": "Hemoglobin",
+        "title": "Hemoglobin",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Melena ve hipotansiyonla birlikte düşük hemoglobin majör kanamayı destekler; sadece INR izlemek yeterli değildir.",
+        "clinicalMeaning": "Melena ve hipotansiyonla birlikte düşük hemoglobin majör kanamayı destekler; sadece INR izlemek yeterli değildir.",
+        "result": {
+          "title": "Hemoglobin",
+          "summary": "Melena ve hipotansiyonla birlikte düşük hemoglobin majör kanamayı destekler; sadece INR izlemek yeterli değildir.",
+          "interpretation": "Melena ve hipotansiyonla birlikte düşük hemoglobin majör kanamayı destekler; sadece INR izlemek yeterli değildir.",
+          "values": [
+            [
+              "Hemoglobin",
+              "7.6 g/dL",
+              "12-16 g/dL",
+              "Düşük"
+            ]
+          ],
+          "rows": [
+            [
+              "Hemoglobin",
+              "7.6 g/dL",
+              "12-16 g/dL",
+              "Düşük"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Hemoglobin",
+            "7.6 g/dL",
+            "12-16 g/dL",
+            "Düşük"
+          ]
+        ],
+        "postAnswerExplanation": "Melena ve hipotansiyonla birlikte düşük hemoglobin majör kanamayı destekler; sadece INR izlemek yeterli değildir.",
+        "interpretation": "Melena ve hipotansiyonla birlikte düşük hemoglobin majör kanamayı destekler; sadece INR izlemek yeterli değildir.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Melena ve hipotansiyonla birlikte düşük hemoglobin majör kanamayı destekler; sadece INR izlemek yeterli değildir."
+      },
+      {
+        "id": "pharm-warfarin-inr",
+        "label": "Koagülasyon paneli",
+        "title": "Koagülasyon paneli",
+        "type": "coagulation",
+        "priority": "essential",
+        "subtype": "Koagülasyon",
+        "summary": "Yüksek INR varfarin etkisinin aşırı olduğunu gösterir; majör kanamada hızlı faktör replasmanı ve K vitamini birlikte gerekir.",
+        "clinicalMeaning": "Yüksek INR varfarin etkisinin aşırı olduğunu gösterir; majör kanamada hızlı faktör replasmanı ve K vitamini birlikte gerekir.",
+        "result": {
+          "title": "Koagülasyon paneli",
+          "summary": "Yüksek INR varfarin etkisinin aşırı olduğunu gösterir; majör kanamada hızlı faktör replasmanı ve K vitamini birlikte gerekir.",
+          "interpretation": "Yüksek INR varfarin etkisinin aşırı olduğunu gösterir; majör kanamada hızlı faktör replasmanı ve K vitamini birlikte gerekir.",
+          "values": [
+            [
+              "INR",
+              "6.8",
+              "2.0-3.0 hedef aralık",
+              "Çok yüksek"
+            ],
+            [
+              "PT",
+              "Belirgin uzamış",
+              "Laboratuvar referansı",
+              "Uzamış"
+            ]
+          ],
+          "rows": [
+            [
+              "INR",
+              "6.8",
+              "2.0-3.0 hedef aralık",
+              "Çok yüksek"
+            ],
+            [
+              "PT",
+              "Belirgin uzamış",
+              "Laboratuvar referansı",
+              "Uzamış"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "INR",
+            "6.8",
+            "2.0-3.0 hedef aralık",
+            "Çok yüksek"
+          ],
+          [
+            "PT",
+            "Belirgin uzamış",
+            "Laboratuvar referansı",
+            "Uzamış"
+          ]
+        ],
+        "postAnswerExplanation": "Yüksek INR varfarin etkisinin aşırı olduğunu gösterir; majör kanamada hızlı faktör replasmanı ve K vitamini birlikte gerekir.",
+        "interpretation": "Yüksek INR varfarin etkisinin aşırı olduğunu gösterir; majör kanamada hızlı faktör replasmanı ve K vitamini birlikte gerekir.",
+        "category": "coagulation",
+        "testTypeCategory": "coagulation",
+        "explanationAfterAnswer": "Yüksek INR varfarin etkisinin aşırı olduğunu gösterir; majör kanamada hızlı faktör replasmanı ve K vitamini birlikte gerekir."
+      }
+    ]
+  },
+  {
+    "caseId": "v189-new-289-agri-kesici-asiri-alimi",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 3,
+    "removedBannedCommentCount": 14,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-apap-level",
+        "label": "Serum parasetamol düzeyi",
+        "title": "Serum parasetamol düzeyi",
+        "type": "toxicology",
+        "priority": "essential",
+        "subtype": "Toksikoloji / ilaç düzeyi",
+        "summary": "Alım zamanı bilinen hastada parasetamol düzeyi nomogramla yorumlanır; toksik aralıkta N-asetilsistein geciktirilmemelidir.",
+        "clinicalMeaning": "Alım zamanı bilinen hastada parasetamol düzeyi nomogramla yorumlanır; toksik aralıkta N-asetilsistein geciktirilmemelidir.",
+        "result": {
+          "title": "Serum parasetamol düzeyi",
+          "summary": "Alım zamanı bilinen hastada parasetamol düzeyi nomogramla yorumlanır; toksik aralıkta N-asetilsistein geciktirilmemelidir.",
+          "interpretation": "Alım zamanı bilinen hastada parasetamol düzeyi nomogramla yorumlanır; toksik aralıkta N-asetilsistein geciktirilmemelidir.",
+          "values": [
+            [
+              "Alım sonrası süre",
+              "6 saat",
+              "Nomogram için gerekli",
+              "Bilinen"
+            ],
+            [
+              "Parasetamol düzeyi",
+              "Toksik aralıkta",
+              "Rumack-Matthew nomogramına göre",
+              "Yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "Alım sonrası süre",
+              "6 saat",
+              "Nomogram için gerekli",
+              "Bilinen"
+            ],
+            [
+              "Parasetamol düzeyi",
+              "Toksik aralıkta",
+              "Rumack-Matthew nomogramına göre",
+              "Yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Alım sonrası süre",
+            "6 saat",
+            "Nomogram için gerekli",
+            "Bilinen"
+          ],
+          [
+            "Parasetamol düzeyi",
+            "Toksik aralıkta",
+            "Rumack-Matthew nomogramına göre",
+            "Yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Alım zamanı bilinen hastada parasetamol düzeyi nomogramla yorumlanır; toksik aralıkta N-asetilsistein geciktirilmemelidir.",
+        "interpretation": "Alım zamanı bilinen hastada parasetamol düzeyi nomogramla yorumlanır; toksik aralıkta N-asetilsistein geciktirilmemelidir.",
+        "category": "toxicology",
+        "testTypeCategory": "toxicology",
+        "explanationAfterAnswer": "Alım zamanı bilinen hastada parasetamol düzeyi nomogramla yorumlanır; toksik aralıkta N-asetilsistein geciktirilmemelidir."
+      },
+      {
+        "id": "pharm-apap-liver",
+        "label": "Karaciğer hasarı başlangıç paneli",
+        "title": "Karaciğer hasarı başlangıç paneli",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Erken dönemde transaminazlar hafif olabilir; antidot karaciğer yetmezliği gelişmesini beklemeden glutatyon rezervini desteklemek için verilir.",
+        "clinicalMeaning": "Erken dönemde transaminazlar hafif olabilir; antidot karaciğer yetmezliği gelişmesini beklemeden glutatyon rezervini desteklemek için verilir.",
+        "result": {
+          "title": "Karaciğer hasarı başlangıç paneli",
+          "summary": "Erken dönemde transaminazlar hafif olabilir; antidot karaciğer yetmezliği gelişmesini beklemeden glutatyon rezervini desteklemek için verilir.",
+          "interpretation": "Erken dönemde transaminazlar hafif olabilir; antidot karaciğer yetmezliği gelişmesini beklemeden glutatyon rezervini desteklemek için verilir.",
+          "values": [
+            [
+              "ALT",
+              "68 U/L",
+              "<35 U/L",
+              "Hafif yüksek"
+            ],
+            [
+              "AST",
+              "72 U/L",
+              "<35 U/L",
+              "Hafif yüksek"
+            ],
+            [
+              "INR",
+              "1.2",
+              "0.8-1.2",
+              "Sınırda"
+            ]
+          ],
+          "rows": [
+            [
+              "ALT",
+              "68 U/L",
+              "<35 U/L",
+              "Hafif yüksek"
+            ],
+            [
+              "AST",
+              "72 U/L",
+              "<35 U/L",
+              "Hafif yüksek"
+            ],
+            [
+              "INR",
+              "1.2",
+              "0.8-1.2",
+              "Sınırda"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "ALT",
+            "68 U/L",
+            "<35 U/L",
+            "Hafif yüksek"
+          ],
+          [
+            "AST",
+            "72 U/L",
+            "<35 U/L",
+            "Hafif yüksek"
+          ],
+          [
+            "INR",
+            "1.2",
+            "0.8-1.2",
+            "Sınırda"
+          ]
+        ],
+        "postAnswerExplanation": "Erken dönemde transaminazlar hafif olabilir; antidot karaciğer yetmezliği gelişmesini beklemeden glutatyon rezervini desteklemek için verilir.",
+        "interpretation": "Erken dönemde transaminazlar hafif olabilir; antidot karaciğer yetmezliği gelişmesini beklemeden glutatyon rezervini desteklemek için verilir.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Erken dönemde transaminazlar hafif olabilir; antidot karaciğer yetmezliği gelişmesini beklemeden glutatyon rezervini desteklemek için verilir."
+      },
+      {
+        "id": "pharm-apap-preg",
+        "label": "Gebelik testi",
+        "title": "Gebelik testi",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Doğurganlık çağındaki hastada gebelik durumu tedavi güvenliği açısından kaydedilir; bu sonuç parasetamol toksisitesinin nedeni değildir.",
+        "clinicalMeaning": "Doğurganlık çağındaki hastada gebelik durumu tedavi güvenliği açısından kaydedilir; bu sonuç parasetamol toksisitesinin nedeni değildir.",
+        "result": {
+          "title": "Gebelik testi",
+          "summary": "Doğurganlık çağındaki hastada gebelik durumu tedavi güvenliği açısından kaydedilir; bu sonuç parasetamol toksisitesinin nedeni değildir.",
+          "interpretation": "Doğurganlık çağındaki hastada gebelik durumu tedavi güvenliği açısından kaydedilir; bu sonuç parasetamol toksisitesinin nedeni değildir.",
+          "values": [
+            [
+              "Serum beta-hCG",
+              "Negatif",
+              "Negatif",
+              "Negatif"
+            ]
+          ],
+          "rows": [
+            [
+              "Serum beta-hCG",
+              "Negatif",
+              "Negatif",
+              "Negatif"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Serum beta-hCG",
+            "Negatif",
+            "Negatif",
+            "Negatif"
+          ]
+        ],
+        "postAnswerExplanation": "Doğurganlık çağındaki hastada gebelik durumu tedavi güvenliği açısından kaydedilir; bu sonuç parasetamol toksisitesinin nedeni değildir.",
+        "interpretation": "Doğurganlık çağındaki hastada gebelik durumu tedavi güvenliği açısından kaydedilir; bu sonuç parasetamol toksisitesinin nedeni değildir.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Doğurganlık çağındaki hastada gebelik durumu tedavi güvenliği açısından kaydedilir; bu sonuç parasetamol toksisitesinin nedeni değildir."
+      }
+    ]
+  },
+  {
+    "caseId": "v189-new-290-heparin-sonrasi-trombosit-dususu-ve-bacak-agrisi",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 3,
+    "removedBannedCommentCount": 7,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-hit-platelet",
+        "label": "Trombosit sayısı",
+        "title": "Trombosit sayısı",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Heparin sonrası 5-10. günde trombosit sayısında belirgin düşüş, HIT için tipik zaman paternidir; tromboz riski kanama riskinden daha baskındır.",
+        "clinicalMeaning": "Heparin sonrası 5-10. günde trombosit sayısında belirgin düşüş, HIT için tipik zaman paternidir; tromboz riski kanama riskinden daha baskındır.",
+        "result": {
+          "title": "Trombosit sayısı",
+          "summary": "Heparin sonrası 5-10. günde trombosit sayısında belirgin düşüş, HIT için tipik zaman paternidir; tromboz riski kanama riskinden daha baskındır.",
+          "interpretation": "Heparin sonrası 5-10. günde trombosit sayısında belirgin düşüş, HIT için tipik zaman paternidir; tromboz riski kanama riskinden daha baskındır.",
+          "values": [
+            [
+              "Bazal trombosit",
+              "245.000/mm3",
+              "150.000-400.000/mm3",
+              "Başlangıç"
+            ],
+            [
+              "Güncel trombosit",
+              "92.000/mm3",
+              "150.000-400.000/mm3",
+              "Düşük"
+            ]
+          ],
+          "rows": [
+            [
+              "Bazal trombosit",
+              "245.000/mm3",
+              "150.000-400.000/mm3",
+              "Başlangıç"
+            ],
+            [
+              "Güncel trombosit",
+              "92.000/mm3",
+              "150.000-400.000/mm3",
+              "Düşük"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Bazal trombosit",
+            "245.000/mm3",
+            "150.000-400.000/mm3",
+            "Başlangıç"
+          ],
+          [
+            "Güncel trombosit",
+            "92.000/mm3",
+            "150.000-400.000/mm3",
+            "Düşük"
+          ]
+        ],
+        "postAnswerExplanation": "Heparin sonrası 5-10. günde trombosit sayısında belirgin düşüş, HIT için tipik zaman paternidir; tromboz riski kanama riskinden daha baskındır.",
+        "interpretation": "Heparin sonrası 5-10. günde trombosit sayısında belirgin düşüş, HIT için tipik zaman paternidir; tromboz riski kanama riskinden daha baskındır.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Heparin sonrası 5-10. günde trombosit sayısında belirgin düşüş, HIT için tipik zaman paternidir; tromboz riski kanama riskinden daha baskındır."
+      },
+      {
+        "id": "pharm-hit-doppler",
+        "label": "Alt ekstremite venöz Doppler ultrasonografi",
+        "title": "Alt ekstremite venöz Doppler ultrasonografi",
+        "type": "ultrasound",
+        "priority": "essential",
+        "subtype": "Görüntüleme",
+        "summary": "Trombositopeniye yeni venöz trombozun eşlik etmesi HIT’i destekler ve heparinin kesilip non-heparin antikoagülan başlanmasını gerektirir.",
+        "clinicalMeaning": "Trombositopeniye yeni venöz trombozun eşlik etmesi HIT’i destekler ve heparinin kesilip non-heparin antikoagülan başlanmasını gerektirir.",
+        "result": {
+          "title": "Alt ekstremite venöz Doppler ultrasonografi",
+          "summary": "Trombositopeniye yeni venöz trombozun eşlik etmesi HIT’i destekler ve heparinin kesilip non-heparin antikoagülan başlanmasını gerektirir.",
+          "interpretation": "Trombositopeniye yeni venöz trombozun eşlik etmesi HIT’i destekler ve heparinin kesilip non-heparin antikoagülan başlanmasını gerektirir.",
+          "values": [
+            [
+              "Derin venler",
+              "Popliteal vende akut trombüs",
+              "Açık venöz akım",
+              "Tromboz"
+            ]
+          ],
+          "rows": [
+            [
+              "Derin venler",
+              "Popliteal vende akut trombüs",
+              "Açık venöz akım",
+              "Tromboz"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Derin venler",
+            "Popliteal vende akut trombüs",
+            "Açık venöz akım",
+            "Tromboz"
+          ]
+        ],
+        "postAnswerExplanation": "Trombositopeniye yeni venöz trombozun eşlik etmesi HIT’i destekler ve heparinin kesilip non-heparin antikoagülan başlanmasını gerektirir.",
+        "interpretation": "Trombositopeniye yeni venöz trombozun eşlik etmesi HIT’i destekler ve heparinin kesilip non-heparin antikoagülan başlanmasını gerektirir.",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "explanationAfterAnswer": "Trombositopeniye yeni venöz trombozun eşlik etmesi HIT’i destekler ve heparinin kesilip non-heparin antikoagülan başlanmasını gerektirir."
+      },
+      {
+        "id": "pharm-hit-pf4",
+        "label": "PF4-heparin antikoru",
+        "title": "PF4-heparin antikoru",
+        "type": "toxicology",
+        "priority": "essential",
+        "subtype": "Toksikoloji / ilaç düzeyi",
+        "summary": "PF4-heparin kompleksine karşı antikorlar trombosit aktivasyonu ve paradoksal tromboza yol açar; tedavi trombosit vermek değil trombin oluşumunu non-heparin yolla baskılamaktır.",
+        "clinicalMeaning": "PF4-heparin kompleksine karşı antikorlar trombosit aktivasyonu ve paradoksal tromboza yol açar; tedavi trombosit vermek değil trombin oluşumunu non-heparin yolla baskılamaktır.",
+        "result": {
+          "title": "PF4-heparin antikoru",
+          "summary": "PF4-heparin kompleksine karşı antikorlar trombosit aktivasyonu ve paradoksal tromboza yol açar; tedavi trombosit vermek değil trombin oluşumunu non-heparin yolla baskılamaktır.",
+          "interpretation": "PF4-heparin kompleksine karşı antikorlar trombosit aktivasyonu ve paradoksal tromboza yol açar; tedavi trombosit vermek değil trombin oluşumunu non-heparin yolla baskılamaktır.",
+          "values": [
+            [
+              "PF4-heparin antikor testi",
+              "Pozitif",
+              "Negatif",
+              "Pozitif"
+            ]
+          ],
+          "rows": [
+            [
+              "PF4-heparin antikor testi",
+              "Pozitif",
+              "Negatif",
+              "Pozitif"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "PF4-heparin antikor testi",
+            "Pozitif",
+            "Negatif",
+            "Pozitif"
+          ]
+        ],
+        "postAnswerExplanation": "PF4-heparin kompleksine karşı antikorlar trombosit aktivasyonu ve paradoksal tromboza yol açar; tedavi trombosit vermek değil trombin oluşumunu non-heparin yolla baskılamaktır.",
+        "interpretation": "PF4-heparin kompleksine karşı antikorlar trombosit aktivasyonu ve paradoksal tromboza yol açar; tedavi trombosit vermek değil trombin oluşumunu non-heparin yolla baskılamaktır.",
+        "category": "toxicology",
+        "testTypeCategory": "toxicology",
+        "explanationAfterAnswer": "PF4-heparin kompleksine karşı antikorlar trombosit aktivasyonu ve paradoksal tromboza yol açar; tedavi trombosit vermek değil trombin oluşumunu non-heparin yolla baskılamaktır."
+      }
+    ]
+  },
+  {
+    "caseId": "v189-new-291-vagal-bradikardi-atagi",
+    "oldInvestigationCount": 1,
+    "newInvestigationCount": 1,
+    "removedBannedCommentCount": 0,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-atropine-ecg",
+        "label": "Elektrokardiyografi",
+        "title": "Elektrokardiyografi",
+        "type": "ecg",
+        "priority": "essential",
+        "subtype": "EKG",
+        "summary": "Dar QRS’li sinüs bradikardisi vagal tonus artışıyla uyumludur; elektrolit temelli eski yorum bu vaka için uygun değildir.",
+        "clinicalMeaning": "Dar QRS’li sinüs bradikardisi vagal tonus artışıyla uyumludur; elektrolit temelli eski yorum bu vaka için uygun değildir.",
+        "result": {
+          "title": "Elektrokardiyografi",
+          "summary": "Dar QRS’li sinüs bradikardisi vagal tonus artışıyla uyumludur; elektrolit temelli eski yorum bu vaka için uygun değildir.",
+          "interpretation": "Dar QRS’li sinüs bradikardisi vagal tonus artışıyla uyumludur; elektrolit temelli eski yorum bu vaka için uygun değildir.",
+          "values": [
+            [
+              "Ritim",
+              "Sinüs bradikardisi",
+              "Sinüs ritmi",
+              "Bradikardi"
+            ],
+            [
+              "QRS süresi",
+              "Dar",
+              "<120 ms",
+              "Referans içinde"
+            ],
+            [
+              "ST-T",
+              "Akut iskemi bulgusu yok",
+              "İzoelektrik",
+              "Akut iskemi yok"
+            ]
+          ],
+          "rows": [
+            [
+              "Ritim",
+              "Sinüs bradikardisi",
+              "Sinüs ritmi",
+              "Bradikardi"
+            ],
+            [
+              "QRS süresi",
+              "Dar",
+              "<120 ms",
+              "Referans içinde"
+            ],
+            [
+              "ST-T",
+              "Akut iskemi bulgusu yok",
+              "İzoelektrik",
+              "Akut iskemi yok"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Ritim",
+            "Sinüs bradikardisi",
+            "Sinüs ritmi",
+            "Bradikardi"
+          ],
+          [
+            "QRS süresi",
+            "Dar",
+            "<120 ms",
+            "Referans içinde"
+          ],
+          [
+            "ST-T",
+            "Akut iskemi bulgusu yok",
+            "İzoelektrik",
+            "Akut iskemi yok"
+          ]
+        ],
+        "postAnswerExplanation": "Dar QRS’li sinüs bradikardisi vagal tonus artışıyla uyumludur; elektrolit temelli eski yorum bu vaka için uygun değildir.",
+        "interpretation": "Dar QRS’li sinüs bradikardisi vagal tonus artışıyla uyumludur; elektrolit temelli eski yorum bu vaka için uygun değildir.",
+        "category": "cardiac",
+        "testTypeCategory": "cardiac",
+        "explanationAfterAnswer": "Dar QRS’li sinüs bradikardisi vagal tonus artışıyla uyumludur; elektrolit temelli eski yorum bu vaka için uygun değildir."
+      }
+    ]
+  },
+  {
+    "caseId": "v194-new-324-antibiyotik-infuzyonu-sirasinda-kizarma",
+    "oldInvestigationCount": 1,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 0,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-vanco-infusion",
+        "label": "İnfüzyon değerlendirmesi",
+        "title": "İnfüzyon değerlendirmesi",
+        "type": "clinical",
+        "priority": "essential",
+        "subtype": "Klinik veri",
+        "summary": "Vancomycin infüzyon reaksiyonu IgE aracılı anafilaksiden çok hızlı infüzyona bağlı histamin salınımıyla ilişkilidir.",
+        "clinicalMeaning": "Vancomycin infüzyon reaksiyonu IgE aracılı anafilaksiden çok hızlı infüzyona bağlı histamin salınımıyla ilişkilidir.",
+        "result": {
+          "title": "İnfüzyon değerlendirmesi",
+          "summary": "Vancomycin infüzyon reaksiyonu IgE aracılı anafilaksiden çok hızlı infüzyona bağlı histamin salınımıyla ilişkilidir.",
+          "interpretation": "Vancomycin infüzyon reaksiyonu IgE aracılı anafilaksiden çok hızlı infüzyona bağlı histamin salınımıyla ilişkilidir.",
+          "values": [
+            [
+              "İlaç",
+              "Vancomycin",
+              "Klinik endikasyona göre",
+              "Uygulamada"
+            ],
+            [
+              "İnfüzyon hızı",
+              "Hızlı verilmiş",
+              "Yavaş infüzyon önerilir",
+              "Riskli"
+            ]
+          ],
+          "rows": [
+            [
+              "İlaç",
+              "Vancomycin",
+              "Klinik endikasyona göre",
+              "Uygulamada"
+            ],
+            [
+              "İnfüzyon hızı",
+              "Hızlı verilmiş",
+              "Yavaş infüzyon önerilir",
+              "Riskli"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "İlaç",
+            "Vancomycin",
+            "Klinik endikasyona göre",
+            "Uygulamada"
+          ],
+          [
+            "İnfüzyon hızı",
+            "Hızlı verilmiş",
+            "Yavaş infüzyon önerilir",
+            "Riskli"
+          ]
+        ],
+        "postAnswerExplanation": "Vancomycin infüzyon reaksiyonu IgE aracılı anafilaksiden çok hızlı infüzyona bağlı histamin salınımıyla ilişkilidir.",
+        "interpretation": "Vancomycin infüzyon reaksiyonu IgE aracılı anafilaksiden çok hızlı infüzyona bağlı histamin salınımıyla ilişkilidir.",
+        "category": "clinical",
+        "testTypeCategory": "clinical",
+        "explanationAfterAnswer": "Vancomycin infüzyon reaksiyonu IgE aracılı anafilaksiden çok hızlı infüzyona bağlı histamin salınımıyla ilişkilidir."
+      },
+      {
+        "id": "pharm-vanco-cbc",
+        "label": "Enfeksiyon izlem paneli",
+        "title": "Enfeksiyon izlem paneli",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Bu panel antibiyotik endikasyonunu destekler; kızarıklığın mekanizması enfeksiyon değil infüzyon hızıyla ilişkili histamin salınımıdır.",
+        "clinicalMeaning": "Bu panel antibiyotik endikasyonunu destekler; kızarıklığın mekanizması enfeksiyon değil infüzyon hızıyla ilişkili histamin salınımıdır.",
+        "result": {
+          "title": "Enfeksiyon izlem paneli",
+          "summary": "Bu panel antibiyotik endikasyonunu destekler; kızarıklığın mekanizması enfeksiyon değil infüzyon hızıyla ilişkili histamin salınımıdır.",
+          "interpretation": "Bu panel antibiyotik endikasyonunu destekler; kızarıklığın mekanizması enfeksiyon değil infüzyon hızıyla ilişkili histamin salınımıdır.",
+          "values": [
+            [
+              "Lökosit",
+              "13.200/mm3",
+              "4.000-10.000/mm3",
+              "Yüksek"
+            ],
+            [
+              "CRP",
+              "68 mg/L",
+              "<5 mg/L",
+              "Yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "Lökosit",
+              "13.200/mm3",
+              "4.000-10.000/mm3",
+              "Yüksek"
+            ],
+            [
+              "CRP",
+              "68 mg/L",
+              "<5 mg/L",
+              "Yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Lökosit",
+            "13.200/mm3",
+            "4.000-10.000/mm3",
+            "Yüksek"
+          ],
+          [
+            "CRP",
+            "68 mg/L",
+            "<5 mg/L",
+            "Yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Bu panel antibiyotik endikasyonunu destekler; kızarıklığın mekanizması enfeksiyon değil infüzyon hızıyla ilişkili histamin salınımıdır.",
+        "interpretation": "Bu panel antibiyotik endikasyonunu destekler; kızarıklığın mekanizması enfeksiyon değil infüzyon hızıyla ilişkili histamin salınımıdır.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Bu panel antibiyotik endikasyonunu destekler; kızarıklığın mekanizması enfeksiyon değil infüzyon hızıyla ilişkili histamin salınımıdır."
+      }
+    ]
+  },
+  {
+    "caseId": "v194-new-325-antipsikotik-sonrasi-ates-ve-bogaz-agrisi",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 0,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-clozapine-anc",
+        "label": "Tam kan sayımı ve mutlak nötrofil sayısı",
+        "title": "Tam kan sayımı ve mutlak nötrofil sayısı",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Clozapine tedavisi sırasında ağır nötropeni/agranülositoz gelişmesi ilacın kesilmesini ve enfeksiyon yönetimini gerektirir.",
+        "clinicalMeaning": "Clozapine tedavisi sırasında ağır nötropeni/agranülositoz gelişmesi ilacın kesilmesini ve enfeksiyon yönetimini gerektirir.",
+        "result": {
+          "title": "Tam kan sayımı ve mutlak nötrofil sayısı",
+          "summary": "Clozapine tedavisi sırasında ağır nötropeni/agranülositoz gelişmesi ilacın kesilmesini ve enfeksiyon yönetimini gerektirir.",
+          "interpretation": "Clozapine tedavisi sırasında ağır nötropeni/agranülositoz gelişmesi ilacın kesilmesini ve enfeksiyon yönetimini gerektirir.",
+          "values": [
+            [
+              "Lökosit",
+              "1.800/mm3",
+              "4.000-10.000/mm3",
+              "Düşük"
+            ],
+            [
+              "Mutlak nötrofil sayısı",
+              "420/mm3",
+              ">1.500/mm3",
+              "Ağır nötropeni"
+            ]
+          ],
+          "rows": [
+            [
+              "Lökosit",
+              "1.800/mm3",
+              "4.000-10.000/mm3",
+              "Düşük"
+            ],
+            [
+              "Mutlak nötrofil sayısı",
+              "420/mm3",
+              ">1.500/mm3",
+              "Ağır nötropeni"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Lökosit",
+            "1.800/mm3",
+            "4.000-10.000/mm3",
+            "Düşük"
+          ],
+          [
+            "Mutlak nötrofil sayısı",
+            "420/mm3",
+            ">1.500/mm3",
+            "Ağır nötropeni"
+          ]
+        ],
+        "postAnswerExplanation": "Clozapine tedavisi sırasında ağır nötropeni/agranülositoz gelişmesi ilacın kesilmesini ve enfeksiyon yönetimini gerektirir.",
+        "interpretation": "Clozapine tedavisi sırasında ağır nötropeni/agranülositoz gelişmesi ilacın kesilmesini ve enfeksiyon yönetimini gerektirir.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Clozapine tedavisi sırasında ağır nötropeni/agranülositoz gelişmesi ilacın kesilmesini ve enfeksiyon yönetimini gerektirir."
+      },
+      {
+        "id": "pharm-clozapine-crp",
+        "label": "Enfeksiyon belirteci",
+        "title": "Enfeksiyon belirteci",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Ağır nötropeni varlığında ateş ve inflamasyon belirteci enfeksiyon riskini artırır; antibiyotik değerlendirmesi geciktirilmemelidir.",
+        "clinicalMeaning": "Ağır nötropeni varlığında ateş ve inflamasyon belirteci enfeksiyon riskini artırır; antibiyotik değerlendirmesi geciktirilmemelidir.",
+        "result": {
+          "title": "Enfeksiyon belirteci",
+          "summary": "Ağır nötropeni varlığında ateş ve inflamasyon belirteci enfeksiyon riskini artırır; antibiyotik değerlendirmesi geciktirilmemelidir.",
+          "interpretation": "Ağır nötropeni varlığında ateş ve inflamasyon belirteci enfeksiyon riskini artırır; antibiyotik değerlendirmesi geciktirilmemelidir.",
+          "values": [
+            [
+              "CRP",
+              "92 mg/L",
+              "<5 mg/L",
+              "Yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "CRP",
+              "92 mg/L",
+              "<5 mg/L",
+              "Yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "CRP",
+            "92 mg/L",
+            "<5 mg/L",
+            "Yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Ağır nötropeni varlığında ateş ve inflamasyon belirteci enfeksiyon riskini artırır; antibiyotik değerlendirmesi geciktirilmemelidir.",
+        "interpretation": "Ağır nötropeni varlığında ateş ve inflamasyon belirteci enfeksiyon riskini artırır; antibiyotik değerlendirmesi geciktirilmemelidir.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Ağır nötropeni varlığında ateş ve inflamasyon belirteci enfeksiyon riskini artırır; antibiyotik değerlendirmesi geciktirilmemelidir."
+      }
+    ]
+  },
+  {
+    "caseId": "v194-new-326-tekrarlayan-gut-ataklari",
+    "oldInvestigationCount": 1,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 7,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-gout-uric",
+        "label": "Serum ürik asit",
+        "title": "Serum ürik asit",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Yüksek serum ürik asit, tekrarlayan gut ataklarında ksantin oksidaz inhibitörüyle üretim azaltma hedefini destekler.",
+        "clinicalMeaning": "Yüksek serum ürik asit, tekrarlayan gut ataklarında ksantin oksidaz inhibitörüyle üretim azaltma hedefini destekler.",
+        "result": {
+          "title": "Serum ürik asit",
+          "summary": "Yüksek serum ürik asit, tekrarlayan gut ataklarında ksantin oksidaz inhibitörüyle üretim azaltma hedefini destekler.",
+          "interpretation": "Yüksek serum ürik asit, tekrarlayan gut ataklarında ksantin oksidaz inhibitörüyle üretim azaltma hedefini destekler.",
+          "values": [
+            [
+              "Ürik asit",
+              "9.4 mg/dL",
+              "3.5-7.2 mg/dL",
+              "Yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "Ürik asit",
+              "9.4 mg/dL",
+              "3.5-7.2 mg/dL",
+              "Yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Ürik asit",
+            "9.4 mg/dL",
+            "3.5-7.2 mg/dL",
+            "Yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Yüksek serum ürik asit, tekrarlayan gut ataklarında ksantin oksidaz inhibitörüyle üretim azaltma hedefini destekler.",
+        "interpretation": "Yüksek serum ürik asit, tekrarlayan gut ataklarında ksantin oksidaz inhibitörüyle üretim azaltma hedefini destekler.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Yüksek serum ürik asit, tekrarlayan gut ataklarında ksantin oksidaz inhibitörüyle üretim azaltma hedefini destekler."
+      },
+      {
+        "id": "pharm-gout-renal",
+        "label": "Böbrek fonksiyonu",
+        "title": "Böbrek fonksiyonu",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Böbrek fonksiyonu ürat düşürücü tedavi seçimi ve doz güvenliği için değerlendirilir; pediatrik purin metabolizması şablonu bu erişkin vaka için uygun değildir.",
+        "clinicalMeaning": "Böbrek fonksiyonu ürat düşürücü tedavi seçimi ve doz güvenliği için değerlendirilir; pediatrik purin metabolizması şablonu bu erişkin vaka için uygun değildir.",
+        "result": {
+          "title": "Böbrek fonksiyonu",
+          "summary": "Böbrek fonksiyonu ürat düşürücü tedavi seçimi ve doz güvenliği için değerlendirilir; pediatrik purin metabolizması şablonu bu erişkin vaka için uygun değildir.",
+          "interpretation": "Böbrek fonksiyonu ürat düşürücü tedavi seçimi ve doz güvenliği için değerlendirilir; pediatrik purin metabolizması şablonu bu erişkin vaka için uygun değildir.",
+          "values": [
+            [
+              "Kreatinin",
+              "1.0 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Referans içinde"
+            ]
+          ],
+          "rows": [
+            [
+              "Kreatinin",
+              "1.0 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Referans içinde"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kreatinin",
+            "1.0 mg/dL",
+            "0.6-1.2 mg/dL",
+            "Referans içinde"
+          ]
+        ],
+        "postAnswerExplanation": "Böbrek fonksiyonu ürat düşürücü tedavi seçimi ve doz güvenliği için değerlendirilir; pediatrik purin metabolizması şablonu bu erişkin vaka için uygun değildir.",
+        "interpretation": "Böbrek fonksiyonu ürat düşürücü tedavi seçimi ve doz güvenliği için değerlendirilir; pediatrik purin metabolizması şablonu bu erişkin vaka için uygun değildir.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Böbrek fonksiyonu ürat düşürücü tedavi seçimi ve doz güvenliği için değerlendirilir; pediatrik purin metabolizması şablonu bu erişkin vaka için uygun değildir."
+      }
+    ]
+  },
+  {
+    "caseId": "v195-new-352-tarim-ilaci-sonrasi-salivasyon-ve-bronkore",
+    "oldInvestigationCount": 3,
+    "newInvestigationCount": 3,
+    "removedBannedCommentCount": 7,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-op-ache",
+        "label": "Plazma kolinesteraz aktivitesi",
+        "title": "Plazma kolinesteraz aktivitesi",
+        "type": "toxicology",
+        "priority": "essential",
+        "subtype": "Toksikoloji / ilaç düzeyi",
+        "summary": "Düşük kolinesteraz aktivitesi organofosfatın asetilkolinesterazı inhibe ettiğini gösterir; atropin ve pralidoksim hedeflerini belirler.",
+        "clinicalMeaning": "Düşük kolinesteraz aktivitesi organofosfatın asetilkolinesterazı inhibe ettiğini gösterir; atropin ve pralidoksim hedeflerini belirler.",
+        "result": {
+          "title": "Plazma kolinesteraz aktivitesi",
+          "summary": "Düşük kolinesteraz aktivitesi organofosfatın asetilkolinesterazı inhibe ettiğini gösterir; atropin ve pralidoksim hedeflerini belirler.",
+          "interpretation": "Düşük kolinesteraz aktivitesi organofosfatın asetilkolinesterazı inhibe ettiğini gösterir; atropin ve pralidoksim hedeflerini belirler.",
+          "values": [
+            [
+              "Kolinesteraz aktivitesi",
+              "Belirgin düşük",
+              "Laboratuvar referans aralığı",
+              "Düşük"
+            ]
+          ],
+          "rows": [
+            [
+              "Kolinesteraz aktivitesi",
+              "Belirgin düşük",
+              "Laboratuvar referans aralığı",
+              "Düşük"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kolinesteraz aktivitesi",
+            "Belirgin düşük",
+            "Laboratuvar referans aralığı",
+            "Düşük"
+          ]
+        ],
+        "postAnswerExplanation": "Düşük kolinesteraz aktivitesi organofosfatın asetilkolinesterazı inhibe ettiğini gösterir; atropin ve pralidoksim hedeflerini belirler.",
+        "interpretation": "Düşük kolinesteraz aktivitesi organofosfatın asetilkolinesterazı inhibe ettiğini gösterir; atropin ve pralidoksim hedeflerini belirler.",
+        "category": "toxicology",
+        "testTypeCategory": "toxicology",
+        "explanationAfterAnswer": "Düşük kolinesteraz aktivitesi organofosfatın asetilkolinesterazı inhibe ettiğini gösterir; atropin ve pralidoksim hedeflerini belirler."
+      },
+      {
+        "id": "pharm-op-abg",
+        "label": "Arter kan gazı / oksijenlenme",
+        "title": "Arter kan gazı / oksijenlenme",
+        "type": "bloodGas",
+        "priority": "essential",
+        "subtype": "Kan gazı / asit-baz",
+        "summary": "Bronkore ve bronkospazm hipoventilasyon/hipoksemiye neden olabilir; solunum desteği antidotlarla birlikte yürütülür.",
+        "clinicalMeaning": "Bronkore ve bronkospazm hipoventilasyon/hipoksemiye neden olabilir; solunum desteği antidotlarla birlikte yürütülür.",
+        "result": {
+          "title": "Arter kan gazı / oksijenlenme",
+          "summary": "Bronkore ve bronkospazm hipoventilasyon/hipoksemiye neden olabilir; solunum desteği antidotlarla birlikte yürütülür.",
+          "interpretation": "Bronkore ve bronkospazm hipoventilasyon/hipoksemiye neden olabilir; solunum desteği antidotlarla birlikte yürütülür.",
+          "values": [
+            [
+              "pH",
+              "7.29",
+              "7.35-7.45",
+              "Düşük"
+            ],
+            [
+              "PaCO2",
+              "52 mmHg",
+              "35-45 mmHg",
+              "Yüksek"
+            ],
+            [
+              "PaO2",
+              "56 mmHg",
+              "80-100 mmHg",
+              "Düşük"
+            ]
+          ],
+          "rows": [
+            [
+              "pH",
+              "7.29",
+              "7.35-7.45",
+              "Düşük"
+            ],
+            [
+              "PaCO2",
+              "52 mmHg",
+              "35-45 mmHg",
+              "Yüksek"
+            ],
+            [
+              "PaO2",
+              "56 mmHg",
+              "80-100 mmHg",
+              "Düşük"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "pH",
+            "7.29",
+            "7.35-7.45",
+            "Düşük"
+          ],
+          [
+            "PaCO2",
+            "52 mmHg",
+            "35-45 mmHg",
+            "Yüksek"
+          ],
+          [
+            "PaO2",
+            "56 mmHg",
+            "80-100 mmHg",
+            "Düşük"
+          ]
+        ],
+        "postAnswerExplanation": "Bronkore ve bronkospazm hipoventilasyon/hipoksemiye neden olabilir; solunum desteği antidotlarla birlikte yürütülür.",
+        "interpretation": "Bronkore ve bronkospazm hipoventilasyon/hipoksemiye neden olabilir; solunum desteği antidotlarla birlikte yürütülür.",
+        "category": "acid-base",
+        "testTypeCategory": "acid-base",
+        "explanationAfterAnswer": "Bronkore ve bronkospazm hipoventilasyon/hipoksemiye neden olabilir; solunum desteği antidotlarla birlikte yürütülür."
+      },
+      {
+        "id": "pharm-op-lung",
+        "label": "Akciğer değerlendirmesi",
+        "title": "Akciğer değerlendirmesi",
+        "type": "clinical",
+        "priority": "essential",
+        "subtype": "Klinik veri",
+        "summary": "Akciğer bulgusu parankimal enfeksiyondan çok muskarinik aşırı uyarıma bağlı bronkoreyi gösterir.",
+        "clinicalMeaning": "Akciğer bulgusu parankimal enfeksiyondan çok muskarinik aşırı uyarıma bağlı bronkoreyi gösterir.",
+        "result": {
+          "title": "Akciğer değerlendirmesi",
+          "summary": "Akciğer bulgusu parankimal enfeksiyondan çok muskarinik aşırı uyarıma bağlı bronkoreyi gösterir.",
+          "interpretation": "Akciğer bulgusu parankimal enfeksiyondan çok muskarinik aşırı uyarıma bağlı bronkoreyi gösterir.",
+          "values": [
+            [
+              "Sekresyon",
+              "Bronkore belirgin",
+              "Normal sekresyon",
+              "Artmış"
+            ],
+            [
+              "Ral/krepitan",
+              "Sekresyon sesleri",
+              "Yok",
+              "Kolinerjik"
+            ]
+          ],
+          "rows": [
+            [
+              "Sekresyon",
+              "Bronkore belirgin",
+              "Normal sekresyon",
+              "Artmış"
+            ],
+            [
+              "Ral/krepitan",
+              "Sekresyon sesleri",
+              "Yok",
+              "Kolinerjik"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Sekresyon",
+            "Bronkore belirgin",
+            "Normal sekresyon",
+            "Artmış"
+          ],
+          [
+            "Ral/krepitan",
+            "Sekresyon sesleri",
+            "Yok",
+            "Kolinerjik"
+          ]
+        ],
+        "postAnswerExplanation": "Akciğer bulgusu parankimal enfeksiyondan çok muskarinik aşırı uyarıma bağlı bronkoreyi gösterir.",
+        "interpretation": "Akciğer bulgusu parankimal enfeksiyondan çok muskarinik aşırı uyarıma bağlı bronkoreyi gösterir.",
+        "category": "clinical",
+        "testTypeCategory": "clinical",
+        "explanationAfterAnswer": "Akciğer bulgusu parankimal enfeksiyondan çok muskarinik aşırı uyarıma bağlı bronkoreyi gösterir."
+      }
+    ]
+  },
+  {
+    "caseId": "v195-new-353-ldl-yuksekligi-icin-baslanan-ilac",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 7,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-statin-ldl",
+        "label": "Lipid paneli",
+        "title": "Lipid paneli",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Yüksek LDL statin tedavisinin ana hedefidir; mekanizma karaciğerde kolesterol sentezini azaltıp LDL reseptör ekspresyonunu artırmaktır.",
+        "clinicalMeaning": "Yüksek LDL statin tedavisinin ana hedefidir; mekanizma karaciğerde kolesterol sentezini azaltıp LDL reseptör ekspresyonunu artırmaktır.",
+        "result": {
+          "title": "Lipid paneli",
+          "summary": "Yüksek LDL statin tedavisinin ana hedefidir; mekanizma karaciğerde kolesterol sentezini azaltıp LDL reseptör ekspresyonunu artırmaktır.",
+          "interpretation": "Yüksek LDL statin tedavisinin ana hedefidir; mekanizma karaciğerde kolesterol sentezini azaltıp LDL reseptör ekspresyonunu artırmaktır.",
+          "values": [
+            [
+              "LDL kolesterol",
+              "182 mg/dL",
+              "Risk düzeyine göre hedeflenir",
+              "Yüksek"
+            ],
+            [
+              "Trigliserid",
+              "146 mg/dL",
+              "<150 mg/dL",
+              "Referans içinde"
+            ]
+          ],
+          "rows": [
+            [
+              "LDL kolesterol",
+              "182 mg/dL",
+              "Risk düzeyine göre hedeflenir",
+              "Yüksek"
+            ],
+            [
+              "Trigliserid",
+              "146 mg/dL",
+              "<150 mg/dL",
+              "Referans içinde"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "LDL kolesterol",
+            "182 mg/dL",
+            "Risk düzeyine göre hedeflenir",
+            "Yüksek"
+          ],
+          [
+            "Trigliserid",
+            "146 mg/dL",
+            "<150 mg/dL",
+            "Referans içinde"
+          ]
+        ],
+        "postAnswerExplanation": "Yüksek LDL statin tedavisinin ana hedefidir; mekanizma karaciğerde kolesterol sentezini azaltıp LDL reseptör ekspresyonunu artırmaktır.",
+        "interpretation": "Yüksek LDL statin tedavisinin ana hedefidir; mekanizma karaciğerde kolesterol sentezini azaltıp LDL reseptör ekspresyonunu artırmaktır.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Yüksek LDL statin tedavisinin ana hedefidir; mekanizma karaciğerde kolesterol sentezini azaltıp LDL reseptör ekspresyonunu artırmaktır."
+      },
+      {
+        "id": "pharm-statin-baseline",
+        "label": "Başlangıç güvenlik paneli",
+        "title": "Başlangıç güvenlik paneli",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Başlangıç karaciğer enzimi ve CK değerlendirmesi tedavi güvenliği için kaydedilir; akut inflamasyon yorumu bu vaka için uygun değildir.",
+        "clinicalMeaning": "Başlangıç karaciğer enzimi ve CK değerlendirmesi tedavi güvenliği için kaydedilir; akut inflamasyon yorumu bu vaka için uygun değildir.",
+        "result": {
+          "title": "Başlangıç güvenlik paneli",
+          "summary": "Başlangıç karaciğer enzimi ve CK değerlendirmesi tedavi güvenliği için kaydedilir; akut inflamasyon yorumu bu vaka için uygun değildir.",
+          "interpretation": "Başlangıç karaciğer enzimi ve CK değerlendirmesi tedavi güvenliği için kaydedilir; akut inflamasyon yorumu bu vaka için uygun değildir.",
+          "values": [
+            [
+              "ALT",
+              "28 U/L",
+              "<35 U/L",
+              "Referans içinde"
+            ],
+            [
+              "Kreatin kinaz",
+              "96 U/L",
+              "<200 U/L",
+              "Referans içinde"
+            ]
+          ],
+          "rows": [
+            [
+              "ALT",
+              "28 U/L",
+              "<35 U/L",
+              "Referans içinde"
+            ],
+            [
+              "Kreatin kinaz",
+              "96 U/L",
+              "<200 U/L",
+              "Referans içinde"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "ALT",
+            "28 U/L",
+            "<35 U/L",
+            "Referans içinde"
+          ],
+          [
+            "Kreatin kinaz",
+            "96 U/L",
+            "<200 U/L",
+            "Referans içinde"
+          ]
+        ],
+        "postAnswerExplanation": "Başlangıç karaciğer enzimi ve CK değerlendirmesi tedavi güvenliği için kaydedilir; akut inflamasyon yorumu bu vaka için uygun değildir.",
+        "interpretation": "Başlangıç karaciğer enzimi ve CK değerlendirmesi tedavi güvenliği için kaydedilir; akut inflamasyon yorumu bu vaka için uygun değildir.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Başlangıç karaciğer enzimi ve CK değerlendirmesi tedavi güvenliği için kaydedilir; akut inflamasyon yorumu bu vaka için uygun değildir."
+      }
+    ]
+  },
+  {
+    "caseId": "v195-new-354-kemoterapi-sonrasi-mukozit",
+    "oldInvestigationCount": 2,
+    "newInvestigationCount": 2,
+    "removedBannedCommentCount": 0,
+    "hiddenEmptyOrGenericCommentCount": 0,
+    "newInvestigations": [
+      {
+        "id": "pharm-mtx-cbc",
+        "label": "Tam kan sayımı",
+        "title": "Tam kan sayımı",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "Laboratuvar",
+        "summary": "Metotreksat hızlı bölünen hücreleri etkileyerek kemik iliği baskılanması ve mukozit oluşturabilir; bu bulgu enfeksiyon şablonu olarak yorumlanmamalıdır.",
+        "clinicalMeaning": "Metotreksat hızlı bölünen hücreleri etkileyerek kemik iliği baskılanması ve mukozit oluşturabilir; bu bulgu enfeksiyon şablonu olarak yorumlanmamalıdır.",
+        "result": {
+          "title": "Tam kan sayımı",
+          "summary": "Metotreksat hızlı bölünen hücreleri etkileyerek kemik iliği baskılanması ve mukozit oluşturabilir; bu bulgu enfeksiyon şablonu olarak yorumlanmamalıdır.",
+          "interpretation": "Metotreksat hızlı bölünen hücreleri etkileyerek kemik iliği baskılanması ve mukozit oluşturabilir; bu bulgu enfeksiyon şablonu olarak yorumlanmamalıdır.",
+          "values": [
+            [
+              "Lökosit",
+              "2.600/mm3",
+              "4.000-10.000/mm3",
+              "Düşük"
+            ],
+            [
+              "Trombosit",
+              "112.000/mm3",
+              "150.000-400.000/mm3",
+              "Düşük"
+            ]
+          ],
+          "rows": [
+            [
+              "Lökosit",
+              "2.600/mm3",
+              "4.000-10.000/mm3",
+              "Düşük"
+            ],
+            [
+              "Trombosit",
+              "112.000/mm3",
+              "150.000-400.000/mm3",
+              "Düşük"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Lökosit",
+            "2.600/mm3",
+            "4.000-10.000/mm3",
+            "Düşük"
+          ],
+          [
+            "Trombosit",
+            "112.000/mm3",
+            "150.000-400.000/mm3",
+            "Düşük"
+          ]
+        ],
+        "postAnswerExplanation": "Metotreksat hızlı bölünen hücreleri etkileyerek kemik iliği baskılanması ve mukozit oluşturabilir; bu bulgu enfeksiyon şablonu olarak yorumlanmamalıdır.",
+        "interpretation": "Metotreksat hızlı bölünen hücreleri etkileyerek kemik iliği baskılanması ve mukozit oluşturabilir; bu bulgu enfeksiyon şablonu olarak yorumlanmamalıdır.",
+        "category": "laboratory",
+        "testTypeCategory": "laboratory",
+        "explanationAfterAnswer": "Metotreksat hızlı bölünen hücreleri etkileyerek kemik iliği baskılanması ve mukozit oluşturabilir; bu bulgu enfeksiyon şablonu olarak yorumlanmamalıdır."
+      },
+      {
+        "id": "pharm-mtx-renal",
+        "label": "Metotreksat güvenlik izlemi",
+        "title": "Metotreksat güvenlik izlemi",
+        "type": "toxicology",
+        "priority": "essential",
+        "subtype": "Toksikoloji / ilaç düzeyi",
+        "summary": "Metotreksat böbrekten elimine edilir; yüksek düzey ve kreatinin artışı toksisite riskini artırır, lökovorin kurtarma ve hidrasyon/alkalinizasyon takibini gerektirir.",
+        "clinicalMeaning": "Metotreksat böbrekten elimine edilir; yüksek düzey ve kreatinin artışı toksisite riskini artırır, lökovorin kurtarma ve hidrasyon/alkalinizasyon takibini gerektirir.",
+        "result": {
+          "title": "Metotreksat güvenlik izlemi",
+          "summary": "Metotreksat böbrekten elimine edilir; yüksek düzey ve kreatinin artışı toksisite riskini artırır, lökovorin kurtarma ve hidrasyon/alkalinizasyon takibini gerektirir.",
+          "interpretation": "Metotreksat böbrekten elimine edilir; yüksek düzey ve kreatinin artışı toksisite riskini artırır, lökovorin kurtarma ve hidrasyon/alkalinizasyon takibini gerektirir.",
+          "values": [
+            [
+              "Metotreksat düzeyi",
+              "Beklenenden yüksek",
+              "Protokole göre düşmesi beklenir",
+              "Yüksek"
+            ],
+            [
+              "Kreatinin",
+              "1.4 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Yüksek"
+            ]
+          ],
+          "rows": [
+            [
+              "Metotreksat düzeyi",
+              "Beklenenden yüksek",
+              "Protokole göre düşmesi beklenir",
+              "Yüksek"
+            ],
+            [
+              "Kreatinin",
+              "1.4 mg/dL",
+              "0.6-1.2 mg/dL",
+              "Yüksek"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Metotreksat düzeyi",
+            "Beklenenden yüksek",
+            "Protokole göre düşmesi beklenir",
+            "Yüksek"
+          ],
+          [
+            "Kreatinin",
+            "1.4 mg/dL",
+            "0.6-1.2 mg/dL",
+            "Yüksek"
+          ]
+        ],
+        "postAnswerExplanation": "Metotreksat böbrekten elimine edilir; yüksek düzey ve kreatinin artışı toksisite riskini artırır, lökovorin kurtarma ve hidrasyon/alkalinizasyon takibini gerektirir.",
+        "interpretation": "Metotreksat böbrekten elimine edilir; yüksek düzey ve kreatinin artışı toksisite riskini artırır, lökovorin kurtarma ve hidrasyon/alkalinizasyon takibini gerektirir.",
+        "category": "toxicology",
+        "testTypeCategory": "toxicology",
+        "explanationAfterAnswer": "Metotreksat böbrekten elimine edilir; yüksek düzey ve kreatinin artışı toksisite riskini artırır, lökovorin kurtarma ve hidrasyon/alkalinizasyon takibini gerektirir."
+      }
+    ]
+  }
+]

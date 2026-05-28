@@ -1,0 +1,31 @@
+KlinikIQ Tıbbi Mikrobiyoloji Branşı Ultra Refinement Teknik Raporu
+
+Kapsam:
+- Yalnızca branchId=medical-microbiology ve caseType=standard olan, TUS Spot olmayan genel klinik vakalar işlendi.
+- Taranan vaka sayısı: 30
+- Güncellenen vaka sayısı: 30
+- TUS Spot Olgulara dokunuldu mu?: False
+
+Değiştirilen ana dosya:
+- src/data/cases.js
+
+Korunan alanlar:
+- Vaka ID'leri değiştirilmedi.
+- Vaka sırası değişmedi.
+- branchId, caseType ve relatedBranch alanları korundu.
+- Görsel asset/path alanları varsa korunacak şekilde vaka nesnesi yapısı muhafaza edildi.
+- Component mimarisi, API endpointleri, environment variable yapısı, glossary, hap bilgi kartları ve Komite modu değiştirilmedi.
+
+Uygulanan veri iyileştirmeleri:
+- PatientIntro/chiefComplaint/stem alanları gerçek klinik mikrobiyoloji bağlamına göre yeniden yazıldı.
+- Vitals ve fizik muayene bulguları vaka hedefiyle uyumlu hale getirildi.
+- investigations alanları klinik değerlendirme, mikrobiyoloji, laboratuvar ve görüntüleme katmanı ayrımı korunarak yeniden yapılandırıldı.
+- Generic kısa yorumlar temizlendi; yeni yorumlar etken, maruziyet, toksin/virülans veya tanı testi ilişkisini açıklayacak şekilde yazıldı.
+- Soru kökü, seçenekler, rationale, evidenceChain, optionComparison/whyWrong ve examPearl alanları yeniden yazıldı.
+
+Testler:
+- JS import/syntax testi: passed
+- Build testi: not run successfully: vite/node_modules unavailable in sandbox
+
+Not:
+- Sandbox içinde node_modules bulunmadığı ve vite komutu erişilebilir olmadığı için tam Vite build tamamlanamadı. Syntax/import testi başarıyla çalıştı.

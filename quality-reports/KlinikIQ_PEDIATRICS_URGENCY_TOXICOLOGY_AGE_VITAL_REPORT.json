@@ -1,0 +1,1668 @@
+[
+  {
+    "caseId": "v163-new-003-atesli-dokuntulu-cocuk",
+    "title": "Ateşli döküntülü çocuk",
+    "ageGroup": "Okul çağı",
+    "topic": "ateşli döküntülü çocuk",
+    "vitals": {
+      "TA": "75/40 mmHg",
+      "Nabız": "145/dk",
+      "Solunum": "30/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "39.5 °C",
+      "Şok indeksi": "1.93 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Neisseria meningitidis kararını destekler.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v164-new-012-beslenme-sonrasi-kusan-bebek",
+    "title": "Beslenme sonrası kusan bebek",
+    "ageGroup": "Süt çocuğu",
+    "topic": "hipertrofik pilor stenozu",
+    "vitals": {
+      "TA": "86/54 mmHg",
+      "Nabız": "154/dk",
+      "Solunum": "32/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "1.79 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pilor stenozunda kesin tedavi piloromiyotomidir; cerrahiden önce sıvı, klor ve potasyum düzeltilir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v165-new-022-erken-donemde-sarilik",
+    "title": "Erken dönemde sarılık",
+    "ageGroup": "Yenidoğan",
+    "topic": "erken dönemde sarılık",
+    "vitals": {
+      "TA": "70/45 mmHg",
+      "Nabız": "142/dk",
+      "Solunum": "44/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "2.03 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Maternal immünoglobulin G antikorlarının fetal eritrositleri hemolize uğratması kararını destekler.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v165-new-027-yuzde-sislik-ve-proteinuri",
+    "title": "Yüzde şişlik ve proteinüri",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "minimal değişiklik hastalığına bağlı nefrotik sendrom",
+    "vitals": {
+      "TA": "92/58 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.6 °C",
+      "Şok indeksi": "1.11 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Çocukluk çağı nefrotik sendromun en sık nedeni minimal değişiklik hastalığıdır; EM’de podosit ayaksı çıkıntı silinmesi beklenir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v166-new-032-ishal-sonrasi-bobrek-yetmezligi",
+    "title": "İshal sonrası böbrek yetmezliği",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "Shiga toksin ilişkili hemolitik üremik sendrom",
+    "vitals": {
+      "TA": "125/78 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "37.2 °C",
+      "Şok indeksi": "0.90 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Tipik HÜS’te temel yaklaşım destek tedavisi, sıvı-elektrolit dengesi, kan basıncı kontrolü ve gerekirse diyalizdir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi",
+    "title": "Ateş ve inspiratuvar solunum sıkıntısı",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "akut üst hava yolu obstrüksiyonu/epiglottit",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "152/dk",
+      "Solunum": "34/dk",
+      "SpO2": "%92, oda havasında",
+      "Ateş": "39.2 °C",
+      "Şok indeksi": "1.52 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Epiglottit kuşkusunda boğazı zorlayıcı muayene yapılmaz; kontrollü ortamda hava yolu güvenceye alınır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v167-new-043-premature-bebekte-solunum-sikintisi",
+    "title": "Prematüre bebekte solunum sıkıntısı",
+    "ageGroup": "Yenidoğan",
+    "topic": "prematüre respiratuvar distres sendromu",
+    "vitals": {
+      "TA": "62/38 mmHg",
+      "Nabız": "158/dk",
+      "Solunum": "72/dk",
+      "SpO2": "%86, oda havasında",
+      "Ateş": "36.5 °C",
+      "Şok indeksi": "2.55 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Prematüre RDS’nin temel nedeni surfaktan eksikliğine bağlı alveoler kollaps ve yüzey gerilimi artışıdır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular",
+    "title": "Uzamış ateş ve mukokutanöz bulgular",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "Kawasaki hastalığı",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "128/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "39.2 °C",
+      "Şok indeksi": "1.28 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Kawasaki hastalığında IVIG ve aspirin koroner arter komplikasyonu riskini azaltır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski",
+    "title": "Aralıklı karın ağrısı ve kanlı dışkı",
+    "ageGroup": "Süt çocuğu",
+    "topic": "invajinasyon",
+    "vitals": {
+      "TA": "88/54 mmHg",
+      "Nabız": "132/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "37.4 °C",
+      "Şok indeksi": "1.50 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "İnvajinasyonda peritonit/perforasyon yoksa pnömatik veya hidrostatik enema redüksiyon tercih edilir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v177-new-125-cocukta-purpura-ve-karin-agrisi",
+    "title": "Çocukta purpura ve karın ağrısı",
+    "ageGroup": "Okul çağı",
+    "topic": "IgA vasküliti",
+    "vitals": {
+      "TA": "104/66 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "38.3 °C",
+      "Şok indeksi": "0.98 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "IgA vaskülitinde palpabl purpura + karın ağrısı/artralji tanısal paterni oluşturur; renal izlem unutulmaz.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v178-new-138-kanli-ishal-sonrasi-oliguri",
+    "title": "Kanlı ishal sonrası oligüri",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "Shiga toksin ilişkili hemolitik üremik sendrom",
+    "vitals": {
+      "TA": "128/82 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "0.92 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Tipik HÜS’te temel yaklaşım destek tedavisi, sıvı-elektrolit dengesi, kan basıncı kontrolü ve gerekirse diyalizdir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v179-new-141-besin-sonrasi-akut-reaksiyon",
+    "title": "Besin sonrası akut reaksiyon",
+    "ageGroup": "Okul çağı",
+    "topic": "anafilaksi",
+    "vitals": {
+      "TA": "78/44 mmHg",
+      "Nabız": "142/dk",
+      "Solunum": "32/dk",
+      "SpO2": "%90, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "1.82 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Anafilakside ilk ve hayat kurtarıcı tedavi intramüsküler adrenalindir; antihistaminik ve steroidler adrenalin yerine geçmez.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v179-new-142-uzayan-nobet",
+    "title": "Uzayan nöbet",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "status epileptikus veya uzamış nöbet",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "150/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%91, oda havasında",
+      "Ateş": "39.1 °C",
+      "Şok indeksi": "1.50 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Uzamış nöbette ABC desteğiyle birlikte ilk ilaç benzodiazepindir; glukoz hızlıca kontrol edilir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v179-new-143-hiperglisemi-ve-kusma",
+    "title": "Hiperglisemi ve kusma",
+    "ageGroup": "Okul çağı",
+    "topic": "diyabetik ketoasidoz",
+    "vitals": {
+      "TA": "88/52 mmHg",
+      "Nabız": "138/dk",
+      "Solunum": "32/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "36.9 °C",
+      "Şok indeksi": "1.57 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "DKA’da sıvı resüsitasyonu ve potasyum güvenliği insülin tedavisinden önce değerlendirilir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v179-new-144-hisilti-ve-solunum-sikintisi",
+    "title": "Hışıltı ve solunum sıkıntısı",
+    "ageGroup": "Okul çağı",
+    "topic": "akut astım atağı",
+    "vitals": {
+      "TA": "82/48 mmHg",
+      "Nabız": "138/dk",
+      "Solunum": "36/dk",
+      "SpO2": "%88, oda havasında",
+      "Ateş": "38.3 °C",
+      "Şok indeksi": "1.68 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Ağır astım atağında oksijen, tekrarlayan SABA, ipratropium ve sistemik steroid birlikte düşünülür.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v179-new-145-havlar-tarzda-oksuruk-ve-stridor",
+    "title": "Havlar tarzda öksürük ve stridor",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "anafilaksi",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "34/dk",
+      "SpO2": "%93, oda havasında",
+      "Ateş": "37.8 °C",
+      "Şok indeksi": "1.02 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Anafilakside ilk ve hayat kurtarıcı tedavi intramüsküler adrenalindir; antihistaminik ve steroidler adrenalin yerine geçmez.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v179-new-146-ates-ve-salya-akmasi",
+    "title": "Ateş ve salya akması",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "akut üst hava yolu obstrüksiyonu/epiglottit",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "152/dk",
+      "Solunum": "28/dk",
+      "SpO2": "%91, oda havasında",
+      "Ateş": "39.5 °C",
+      "Şok indeksi": "1.52 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Epiglottit kuşkusunda boğazı zorlayıcı muayene yapılmaz; kontrollü ortamda hava yolu güvenceye alınır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v179-new-147-ates-ve-dolasim-bozuklugu",
+    "title": "Ateş ve dolaşım bozukluğu",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "pediatrik sepsis veya septik şok",
+    "vitals": {
+      "TA": "74/42 mmHg",
+      "Nabız": "168/dk",
+      "Solunum": "34/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "39.6 °C",
+      "Şok indeksi": "2.27 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatrik septik şokta oksijen, damar yolu, izotonik sıvı bolusları ve erken antibiyotik ilk saat içinde geciktirilmez.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v179-new-148-ani-baslayan-tek-tarafli-hisilti",
+    "title": "Ani başlayan tek taraflı hışıltı",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "akut astım atağı",
+    "vitals": {
+      "TA": "82/48 mmHg",
+      "Nabız": "128/dk",
+      "Solunum": "32/dk",
+      "SpO2": "%94, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "1.56 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Ağır astım atağında oksijen, tekrarlayan SABA, ipratropium ve sistemik steroid birlikte düşünülür.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v179-new-149-tablet-alimi-sonrasi-kusma-ve-metabolik-asidoz",
+    "title": "Tablet alımı sonrası kusma ve metabolik asidoz",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "ciddi akut demir zehirlenmesi",
+    "vitals": {
+      "TA": "82/48 mmHg",
+      "Nabız": "152/dk",
+      "Solunum": "34/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "36.9 °C",
+      "Şok indeksi": "1.85 - 3 yaş çocukta şok/perfüzyon bozukluğu açısından ciddi"
+    },
+    "urgencyOrTreatmentPriority": "Ciddi demir zehirlenmesinde semptom, şok, metabolik asidoz veya yüksek serum demiri varsa spesifik tedavi deferoksamindir; aktif kömür demiri etkin bağlamaz.",
+    "toxicologyFlag": true,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v179-new-150-yenidoganda-direncli-siyanoz",
+    "title": "Yenidoğanda dirençli siyanoz",
+    "ageGroup": "Yenidoğan",
+    "topic": "duktus bağımlı konjenital kalp hastalığı",
+    "vitals": {
+      "TA": "94/58 mmHg",
+      "Nabız": "166/dk",
+      "Solunum": "62/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "36.9 °C",
+      "Şok indeksi": "1.77 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Duktus bağımlı kardiyak lezyonda ekokardiyografi beklenirken PGE1 başlanır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v180-new-151-kemoterapi-sonrasi-ates",
+    "title": "Kemoterapi sonrası ateş",
+    "ageGroup": "Okul çağı",
+    "topic": "febril nötropeni",
+    "vitals": {
+      "TA": "96/58 mmHg",
+      "Nabız": "128/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "38.7 °C",
+      "Şok indeksi": "1.33 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Febril nötropenide kan kültürü sonrası antipseudomonal geniş spektrumlu IV antibiyotik ilk saat içinde başlanır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v180-new-152-ani-baslayan-carpinti",
+    "title": "Ani başlayan çarpıntı",
+    "ageGroup": "Okul çağı",
+    "topic": "stabil supraventriküler taşikardi",
+    "vitals": {
+      "TA": "108/68 mmHg",
+      "Nabız": "214/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%99, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "1.98 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Stabil dar kompleks SVT vagal manevraya yanıt vermezse hızlı IV adenozin uygulanır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v180-new-153-ates-ve-ense-sertligi",
+    "title": "Ateş ve ense sertliği",
+    "ageGroup": "Okul çağı",
+    "topic": "bakteriyel menenjit",
+    "vitals": {
+      "TA": "94/58 mmHg",
+      "Nabız": "132/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "39.3 °C",
+      "Şok indeksi": "1.40 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Menenjit şüphesinde LP gecikecekse kan kültürü alınıp ampirik antibiyotik hemen başlanır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v180-new-154-aclik-sonrasi-nobet",
+    "title": "Açlık sonrası nöbet",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "semptomatik hipoglisemi",
+    "vitals": {
+      "TA": "88/54 mmHg",
+      "Nabız": "132/dk",
+      "Solunum": "28/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "1.50 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Semptomatik hipoglisemide nörolojik hasarı önlemek için hızlı IV dekstroz verilir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v180-new-155-sicak-ortamda-bilinc-degisikligi",
+    "title": "Sıcak ortamda bilinç değişikliği",
+    "ageGroup": "Adolesan",
+    "topic": "trisiklik antidepresan/sodyum kanal blokeri toksisitesi",
+    "vitals": {
+      "TA": "92/56 mmHg",
+      "Nabız": "152/dk",
+      "Solunum": "30/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "40.8 °C",
+      "Şok indeksi": "1.65 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "TCA/sodyum kanal blokeri toksisitesinde geniş QRS varsa IV sodyum bikarbonat verilir.",
+    "toxicologyFlag": true,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v180-new-156-kafa-travmasi-sonrasi-yeniden-bilinc-kaybi",
+    "title": "Kafa travması sonrası yeniden bilinç kaybı",
+    "ageGroup": "Adolesan",
+    "topic": "kafa travması sonrası yeniden bilinç kaybı",
+    "vitals": {
+      "TA": "142/84 mmHg",
+      "Nabız": "58/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "0.41 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Epidural hematom kararını destekler.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v180-new-157-yenidoganda-kasilma-ve-jitteriness",
+    "title": "Yenidoğanda kasılma ve jitteriness",
+    "ageGroup": "Yenidoğan",
+    "topic": "semptomatik neonatal hipokalsemi",
+    "vitals": {
+      "TA": "70/45 mmHg",
+      "Nabız": "148/dk",
+      "Solunum": "52/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "2.11 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Semptomatik neonatal hipokalsemide kardiyak monitörizasyon altında IV kalsiyum glukonat verilir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v180-new-158-bas-agrisi-ve-yuksek-tansiyon",
+    "title": "Baş ağrısı ve yüksek tansiyon",
+    "ageGroup": "Adolesan",
+    "topic": "baş ağrısı ve yüksek tansiyon",
+    "vitals": {
+      "TA": "198/126 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "0.53 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi kararını destekler.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik",
+    "title": "Kulak ağrısı sonrası kulak arkasında şişlik",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "kulak ağrısı sonrası kulak arkasında şişlik",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "122/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "38.8 °C",
+      "Şok indeksi": "1.22 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi kararını destekler.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v180-new-160-kapali-ortam-sonrasi-bas-agrisi",
+    "title": "Kapalı ortam sonrası baş ağrısı",
+    "ageGroup": "Okul çağı",
+    "topic": "karbon monoksit zehirlenmesi",
+    "vitals": {
+      "TA": "106/64 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "28/dk",
+      "SpO2": "%99, oda havasında",
+      "Ateş": "38.3 °C",
+      "Şok indeksi": "1.11 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "CO zehirlenmesinde ilk tedavi yüksek akımlı %100 oksijendir; pulse oksimetre yanlış güven verebilir.",
+    "toxicologyFlag": true,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi",
+    "title": "Yenidoğanda beslenme bozulması ve hipotermi",
+    "ageGroup": "Yenidoğan",
+    "topic": "pediatrik sepsis veya septik şok",
+    "vitals": {
+      "TA": "58/34 mmHg",
+      "Nabız": "176/dk",
+      "Solunum": "62/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "35.8 °C",
+      "Şok indeksi": "3.03 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatrik septik şokta oksijen, damar yolu, izotonik sıvı bolusları ve erken antibiyotik ilk saat içinde geciktirilmez.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v181-new-162-yenidoganda-kusma-ve-sok",
+    "title": "Yenidoğanda kusma ve şok",
+    "ageGroup": "Yenidoğan",
+    "topic": "semptomatik hipoglisemi",
+    "vitals": {
+      "TA": "56/32 mmHg",
+      "Nabız": "182/dk",
+      "Solunum": "18/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "3.25 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Semptomatik hipoglisemide nörolojik hasarı önlemek için hızlı IV dekstroz verilir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v181-new-163-bobrek-hastasinda-kas-gucsuzlugu",
+    "title": "Böbrek hastasında kas güçsüzlüğü",
+    "ageGroup": "Adolesan",
+    "topic": "hiperkalemiye bağlı kardiyak risk",
+    "vitals": {
+      "TA": "138/86 mmHg",
+      "Nabız": "54/dk",
+      "Solunum": "20/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "0.39 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Hiperkalemide EKG değişikliği varsa ilk tedavi miyokardı stabilize eden IV kalsiyum glukonattır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v181-new-164-ilac-alimi-sonrasi-bilinc-degisikligi",
+    "title": "İlaç alımı sonrası bilinç değişikliği",
+    "ageGroup": "Adolesan",
+    "topic": "trisiklik antidepresan/sodyum kanal blokeri toksisitesi",
+    "vitals": {
+      "TA": "88/52 mmHg",
+      "Nabız": "146/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "1.66 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "TCA/sodyum kanal blokeri toksisitesinde geniş QRS varsa IV sodyum bikarbonat verilir.",
+    "toxicologyFlag": true,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v181-new-165-kulak-cinlamasi-ve-hiperventilasyon",
+    "title": "Kulak çınlaması ve hiperventilasyon",
+    "ageGroup": "Adolesan",
+    "topic": "trisiklik antidepresan/sodyum kanal blokeri toksisitesi",
+    "vitals": {
+      "TA": "112/68 mmHg",
+      "Nabız": "128/dk",
+      "Solunum": "34/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "38.2 °C",
+      "Şok indeksi": "1.14 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "TCA/sodyum kanal blokeri toksisitesinde geniş QRS varsa IV sodyum bikarbonat verilir.",
+    "toxicologyFlag": true,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v181-new-166-ani-baslayan-skrotal-agri",
+    "title": "Ani başlayan skrotal ağrı",
+    "ageGroup": "Adolesan",
+    "topic": "testis torsiyonu",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.9 °C",
+      "Şok indeksi": "1.04 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Testis torsiyonunda görüntüleme cerrahiyi geciktirmemeli; acil eksplorasyon gerekir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v181-new-167-fiskirir-tarzda-kusma",
+    "title": "Fışkırır tarzda kusma",
+    "ageGroup": "Süt çocuğu",
+    "topic": "hipertrofik pilor stenozu",
+    "vitals": {
+      "TA": "76/44 mmHg",
+      "Nabız": "154/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "2.03 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pilor stenozunda kesin tedavi piloromiyotomidir; cerrahiden önce sıvı, klor ve potasyum düzeltilir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v181-new-168-anestezi-sirasinda-ani-hipertermi",
+    "title": "Anestezi sırasında ani hipertermi",
+    "ageGroup": "Okul çağı",
+    "topic": "anestezi sırasında ani hipertermi",
+    "vitals": {
+      "TA": "94/58 mmHg",
+      "Nabız": "178/dk",
+      "Solunum": "30/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "40.5 °C",
+      "Şok indeksi": "1.89 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Dantrolen verilmesi ve tetikleyici anesteziklerin kesilmesi kararını destekler.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v181-new-169-su-alimi-sonrasi-nobet",
+    "title": "Su alımı sonrası nöbet",
+    "ageGroup": "Okul çağı",
+    "topic": "su alımı sonrası nöbet",
+    "vitals": {
+      "TA": "102/64 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "1.10 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Hipertonik salin bolusu verilmesi kararını destekler.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v181-new-170-sag-alt-kadran-agrisi",
+    "title": "Sağ alt kadran ağrısı",
+    "ageGroup": "Okul çağı",
+    "topic": "sağ alt kadran ağrısı",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "38.1 °C",
+      "Şok indeksi": "1.12 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Akut apandisit kararını destekler.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v182-new-171-travma-sonrasi-ani-solunum-bozulmasi",
+    "title": "Travma sonrası ani solunum bozulması",
+    "ageGroup": "Adolesan",
+    "topic": "travma sonrası ani solunum bozulması",
+    "vitals": {
+      "TA": "72/44 mmHg",
+      "Nabız": "162/dk",
+      "Solunum": "28/dk",
+      "SpO2": "%82, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "2.25 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi kararını destekler.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v182-new-172-pestisid-temasi-sonrasi-sekresyon-artisi",
+    "title": "Pestisid teması sonrası sekresyon artışı",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "organofosfat zehirlenmesi",
+    "vitals": {
+      "TA": "86/48 mmHg",
+      "Nabız": "58/dk",
+      "Solunum": "28/dk",
+      "SpO2": "%88, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "0.67 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Organofosfat zehirlenmesinde atropin muskarinik bulguları, pralidoksim nikotinik etkileri hedefler.",
+    "toxicologyFlag": true,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v182-new-173-temizlik-maddesi-icme-sonrasi-agiz-yanigi",
+    "title": "Temizlik maddesi içme sonrası ağız yanığı",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "akut üst hava yolu obstrüksiyonu/epiglottit",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "28/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.9 °C",
+      "Şok indeksi": "1.18 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Epiglottit kuşkusunda boğazı zorlayıcı muayene yapılmaz; kontrollü ortamda hava yolu güvenceye alınır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v182-new-174-gaz-yagi-icme-sonrasi-oksuruk",
+    "title": "Gaz yağı içme sonrası öksürük",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "hidrokarbon aspirasyon riski",
+    "vitals": {
+      "TA": "82/48 mmHg",
+      "Nabız": "128/dk",
+      "Solunum": "38/dk",
+      "SpO2": "%91, oda havasında",
+      "Ateş": "37.1 °C",
+      "Şok indeksi": "1.56 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Hidrokarbon alımında kusturma ve gastrik lavaj aspirasyon riskini artırır; solunum desteği ve izlem önceliklidir.",
+    "toxicologyFlag": true,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v182-new-175-orak-hucreli-cocukta-ani-solukluk",
+    "title": "Orak hücreli çocukta ani solukluk",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "orak hücre hastalığında akut sekestrasyon krizi",
+    "vitals": {
+      "TA": "78/46 mmHg",
+      "Nabız": "158/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "38.3 °C",
+      "Şok indeksi": "2.03 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Orak hücreli çocukta akut sekestrasyon hızlı hipovolemik şoka gidebilir; transfüzyon ve dolaşım desteği gerekir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v182-new-176-aglama-sonrasi-morarma-atagi",
+    "title": "Ağlama sonrası morarma atağı",
+    "ageGroup": "Süt çocuğu",
+    "topic": "Fallot tetralojisinde hipersiyanotik atak",
+    "vitals": {
+      "TA": "86/54 mmHg",
+      "Nabız": "168/dk",
+      "Solunum": "28/dk",
+      "SpO2": "%68, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "1.95 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Tet spell’de diz-göğüs pozisyonu, oksijen ve sakinleştirme pulmoner kan akımını artırır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v182-new-177-sicak-su-yanigi",
+    "title": "Sıcak su yanığı",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "pediatrik yanık ve sıvı kaybı riski",
+    "vitals": {
+      "TA": "92/58 mmHg",
+      "Nabız": "136/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "1.48 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Çocuk yanığında soğutma/temizleme, analjezi ve yüzey alanına göre IV izotonik sıvı planlanır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v182-new-178-havuzdan-cikarilma-sonrasi-oksuruk",
+    "title": "Havuzdan çıkarılma sonrası öksürük",
+    "ageGroup": "Okul çağı",
+    "topic": "suda boğulma sonrası solunum riski",
+    "vitals": {
+      "TA": "102/64 mmHg",
+      "Nabız": "128/dk",
+      "Solunum": "36/dk",
+      "SpO2": "%89, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "1.25 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Boğulma sonrası yaklaşım oksijen, solunum değerlendirmesi ve yakın izleme dayanır; rutin antibiyotik gerekmez.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v182-new-179-dka-tedavisi-sirasinda-bilinc-kotulesmesi",
+    "title": "DKA tedavisi sırasında bilinç kötüleşmesi",
+    "ageGroup": "Okul çağı",
+    "topic": "diyabetik ketoasidoz",
+    "vitals": {
+      "TA": "132/86 mmHg",
+      "Nabız": "62/dk",
+      "Solunum": "30/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "36.9 °C",
+      "Şok indeksi": "0.47 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "DKA’da sıvı resüsitasyonu ve potasyum güvenliği insülin tedavisinden önce değerlendirilir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v182-new-180-alci-sonrasi-artan-ekstremite-agrisi",
+    "title": "Alçı sonrası artan ekstremite ağrısı",
+    "ageGroup": "Okul çağı",
+    "topic": "kompartman sendromu",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "1.18 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Kompartman sendromunda alçı gevşetilir ve acil ortopedi değerlendirmesi/fasyotomi geciktirilmez.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-364-yemek-sonrasi-ani-solunum-sikintisi",
+    "title": "Yemek sonrası ani solunum sıkıntısı",
+    "ageGroup": "Okul çağı",
+    "topic": "anafilaksi",
+    "vitals": {
+      "TA": "76/42 mmHg",
+      "Nabız": "154/dk",
+      "Solunum": "34/dk",
+      "SpO2": "%89, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "2.03 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Anafilakside ilk ve hayat kurtarıcı tedavi intramüsküler adrenalindir; antihistaminik ve steroidler adrenalin yerine geçmez.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-365-uzamis-jeneralize-nobet",
+    "title": "Uzamış jeneralize nöbet",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "status epileptikus veya uzamış nöbet",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "146/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "38.7 °C",
+      "Şok indeksi": "1.46 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Uzamış nöbette ABC desteğiyle birlikte ilk ilaç benzodiazepindir; glukoz hızlıca kontrol edilir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-366-havlar-tarzda-oksuruk-ve-cekilme",
+    "title": "Havlar tarzda öksürük ve çekilme",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "anafilaksi",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "36/dk",
+      "SpO2": "%93, oda havasında",
+      "Ateş": "37.9 °C",
+      "Şok indeksi": "1.02 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Anafilakside ilk ve hayat kurtarıcı tedavi intramüsküler adrenalindir; antihistaminik ve steroidler adrenalin yerine geçmez.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-367-yutamama-ve-tripod-pozisyonu",
+    "title": "Yutamama ve tripod pozisyonu",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "akut üst hava yolu obstrüksiyonu/epiglottit",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "150/dk",
+      "Solunum": "28/dk",
+      "SpO2": "%91, oda havasında",
+      "Ateş": "39.6 °C",
+      "Şok indeksi": "1.50 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Epiglottit kuşkusunda boğazı zorlayıcı muayene yapılmaz; kontrollü ortamda hava yolu güvenceye alınır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-368-ishal-sonrasi-dolasim-bozuklugu",
+    "title": "İshal sonrası dolaşım bozukluğu",
+    "ageGroup": "Süt çocuğu",
+    "topic": "pediatrik sepsis veya septik şok",
+    "vitals": {
+      "TA": "70/38 mmHg",
+      "Nabız": "174/dk",
+      "Solunum": "34/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "2.49 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatrik septik şokta oksijen, damar yolu, izotonik sıvı bolusları ve erken antibiyotik ilk saat içinde geciktirilmez.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-369-kilo-kaybi-ve-derin-solunum",
+    "title": "Kilo kaybı ve derin solunum",
+    "ageGroup": "Okul çağı",
+    "topic": "diyabetik ketoasidoz",
+    "vitals": {
+      "TA": "88/54 mmHg",
+      "Nabız": "136/dk",
+      "Solunum": "32/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "36.9 °C",
+      "Şok indeksi": "1.55 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "DKA’da sıvı resüsitasyonu ve potasyum güvenliği insülin tedavisinden önce değerlendirilir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-370-bobrek-yetmezliginde-ritim-riski",
+    "title": "Böbrek yetmezliğinde ritim riski",
+    "ageGroup": "Adolesan",
+    "topic": "hiperkalemiye bağlı kardiyak risk",
+    "vitals": {
+      "TA": "94/58 mmHg",
+      "Nabız": "48/dk",
+      "Solunum": "28/dk",
+      "SpO2": "%91, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "0.51 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Hiperkalemide EKG değişikliği varsa ilk tedavi miyokardı stabilize eden IV kalsiyum glukonattır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-371-konusamama-ve-hisilti",
+    "title": "Konuşamama ve hışıltı",
+    "ageGroup": "Okul çağı",
+    "topic": "akut astım atağı",
+    "vitals": {
+      "TA": "82/48 mmHg",
+      "Nabız": "148/dk",
+      "Solunum": "38/dk",
+      "SpO2": "%87, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "1.80 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Ağır astım atağında oksijen, tekrarlayan SABA, ipratropium ve sistemik steroid birlikte düşünülür.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-372-yenidoganda-titreme-ve-emme-zayifligi",
+    "title": "Yenidoğanda titreme ve emme zayıflığı",
+    "ageGroup": "Yenidoğan",
+    "topic": "semptomatik hipoglisemi",
+    "vitals": {
+      "TA": "70/45 mmHg",
+      "Nabız": "162/dk",
+      "Solunum": "48/dk",
+      "SpO2": "%91, oda havasında",
+      "Ateş": "36.6 °C",
+      "Şok indeksi": "2.31 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Semptomatik hipoglisemide nörolojik hasarı önlemek için hızlı IV dekstroz verilir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-373-kanli-ishal-sonrasi-idrar-azalmasi",
+    "title": "Kanlı ishal sonrası idrar azalması",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "Shiga toksin ilişkili hemolitik üremik sendrom",
+    "vitals": {
+      "TA": "116/76 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "0.88 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Tipik HÜS’te temel yaklaşım destek tedavisi, sıvı-elektrolit dengesi, kan basıncı kontrolü ve gerekirse diyalizdir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-374-ates-ve-ense-sertligi",
+    "title": "Ateş ve ense sertliği",
+    "ageGroup": "Okul çağı",
+    "topic": "bakteriyel menenjit",
+    "vitals": {
+      "TA": "92/56 mmHg",
+      "Nabız": "136/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "39.4 °C",
+      "Şok indeksi": "1.48 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Menenjit şüphesinde LP gecikecekse kan kültürü alınıp ampirik antibiyotik hemen başlanır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-375-tablet-alimi-sonrasi-kusma-ve-sok",
+    "title": "Tablet alımı sonrası kusma ve şok",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "ciddi akut demir zehirlenmesi",
+    "vitals": {
+      "TA": "82/48 mmHg",
+      "Nabız": "152/dk",
+      "Solunum": "34/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "36.9 °C",
+      "Şok indeksi": "1.85 - 3 yaş çocukta şok/perfüzyon bozukluğu açısından ciddi"
+    },
+    "urgencyOrTreatmentPriority": "Ciddi demir zehirlenmesinde semptom, şok, metabolik asidoz veya yüksek serum demiri varsa spesifik tedavi deferoksamindir; aktif kömür demiri etkin bağlamaz.",
+    "toxicologyFlag": true,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-376-kuruyemis-sonrasi-tek-tarafli-hisilti",
+    "title": "Kuruyemiş sonrası tek taraflı hışıltı",
+    "ageGroup": "Süt çocuğu",
+    "topic": "akut astım atağı",
+    "vitals": {
+      "TA": "82/48 mmHg",
+      "Nabız": "128/dk",
+      "Solunum": "28/dk",
+      "SpO2": "%94, oda havasında",
+      "Ateş": "38.3 °C",
+      "Şok indeksi": "1.56 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Ağır astım atağında oksijen, tekrarlayan SABA, ipratropium ve sistemik steroid birlikte düşünülür.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-377-ates-ve-tek-dizde-sislik",
+    "title": "Ateş ve tek dizde şişlik",
+    "ageGroup": "Okul çağı",
+    "topic": "ateş ve tek dizde şişlik",
+    "vitals": {
+      "TA": "88/54 mmHg",
+      "Nabız": "132/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "39.1 °C",
+      "Şok indeksi": "1.50 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Eklem aspirasyonu alıp ampirik intravenöz antibiyotik başlamak kararını destekler.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-378-yenidoganda-emme-azalmasi",
+    "title": "Yenidoğanda emme azalması",
+    "ageGroup": "Yenidoğan",
+    "topic": "pediatrik sepsis veya septik şok",
+    "vitals": {
+      "TA": "88/54 mmHg",
+      "Nabız": "176/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "35.7 °C",
+      "Şok indeksi": "2.00 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatrik septik şokta oksijen, damar yolu, izotonik sıvı bolusları ve erken antibiyotik ilk saat içinde geciktirilmez.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-379-yenidogan-taramasinda-tiroid-bozuklugu",
+    "title": "Yenidoğan taramasında tiroid bozukluğu",
+    "ageGroup": "Yenidoğan",
+    "topic": "konjenital hipotiroidi",
+    "vitals": {
+      "TA": "70/45 mmHg",
+      "Nabız": "124/dk",
+      "Solunum": "52/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "1.77 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Konjenital hipotiroidide erken levotiroksin nörogelişimsel hasarı önler.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-380-periorbital-odem-ve-kopuklu-idrar",
+    "title": "Periorbital ödem ve köpüklü idrar",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "minimal değişiklik hastalığına bağlı nefrotik sendrom",
+    "vitals": {
+      "TA": "92/58 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "1.13 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Çocukluk çağı nefrotik sendromun en sık nedeni minimal değişiklik hastalığıdır; EM’de podosit ayaksı çıkıntı silinmesi beklenir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-381-purpura-ve-karin-agrisi",
+    "title": "Purpura ve karın ağrısı",
+    "ageGroup": "Okul çağı",
+    "topic": "IgA vasküliti",
+    "vitals": {
+      "TA": "88/56 mmHg",
+      "Nabız": "126/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "36.6 °C",
+      "Şok indeksi": "1.43 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "IgA vaskülitinde palpabl purpura + karın ağrısı/artralji tanısal paterni oluşturur; renal izlem unutulmaz.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-382-bes-gunu-asan-ates",
+    "title": "Beş günü aşan ateş",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "Kawasaki hastalığı",
+    "vitals": {
+      "TA": "118/74 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "18/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "0.88 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Kawasaki hastalığında IVIG ve aspirin koroner arter komplikasyonu riskini azaltır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-383-yenidoganda-kusma-ve-ambigus-genital-yapi",
+    "title": "Yenidoğanda kusma ve ambigus genital yapı",
+    "ageGroup": "Yenidoğan",
+    "topic": "yenidoğanda kusma ve ambigus genital yapı",
+    "vitals": {
+      "TA": "68/38 mmHg",
+      "Nabız": "172/dk",
+      "Solunum": "18/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "2.53 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka 21-hidroksilaz eksikliğine bağlı konjenital adrenal hiperplazi kararını destekler.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-384-tekrarlayan-oksuruk-ve-yagli-diski",
+    "title": "Tekrarlayan öksürük ve yağlı dışkı",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "kistik fibrozis",
+    "vitals": {
+      "TA": "92/58 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "1.13 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Kistik fibroziste CFTR bozukluğu koyu sekresyon, pankreas yetmezliği ve tekrarlayan enfeksiyon yapar.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-385-uzamis-sarilik-ve-acik-renk-diski",
+    "title": "Uzamış sarılık ve açık renk dışkı",
+    "ageGroup": "Süt çocuğu",
+    "topic": "biliyer atrezi",
+    "vitals": {
+      "TA": "92/58 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "1.13 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Uzamış sarılıkta direkt bilirubin yüksekliği ve akolik dışkı biliyer atrezi lehinedir; erken cerrahi değerlendirme gerekir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-386-gec-yurume-ve-bacak-egriligi",
+    "title": "Geç yürüme ve bacak eğriliği",
+    "ageGroup": "Süt çocuğu",
+    "topic": "D vitamini eksikliği raşitizmi",
+    "vitals": {
+      "TA": "92/58 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "1.13 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Raşitizmde mineralizasyon bozulur; D vitamini eksikliğinde ALP yüksekliği ve metafizer değişiklikler beklenir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-387-uzayan-oksuruk-nobetleri",
+    "title": "Uzayan öksürük nöbetleri",
+    "ageGroup": "Süt çocuğu",
+    "topic": "boğmaca",
+    "vitals": {
+      "TA": "92/58 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "1.13 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Boğmacada makrolid tedavisi bulaştırıcılığı azaltır; küçük bebekte apne riski yüksektir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-388-solukluk-morarma-ve-kemik-agrisi",
+    "title": "Solukluk, morarma ve kemik ağrısı",
+    "ageGroup": "Okul çağı",
+    "topic": "akut lenfoblastik lösemi",
+    "vitals": {
+      "TA": "88/56 mmHg",
+      "Nabız": "126/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "36.6 °C",
+      "Şok indeksi": "1.43 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "ALL çocukluk çağının en sık malignitesidir; kemik iliği yetmezliği bulguları tanıda belirleyicidir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-389-aksamlari-artan-aglama",
+    "title": "Akşamları artan ağlama",
+    "ageGroup": "Süt çocuğu",
+    "topic": "invajinasyon",
+    "vitals": {
+      "TA": "96/60 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "30/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "37.2 °C",
+      "Şok indeksi": "1.23 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "İnvajinasyonda peritonit/perforasyon yoksa pnömatik veya hidrostatik enema redüksiyon tercih edilir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v196-new-390-kilo-alamama-ve-kronik-ishal",
+    "title": "Kilo alamama ve kronik ishal",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "çölyak hastalığı",
+    "vitals": {
+      "TA": "92/58 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "1.13 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Çölyak taramasında total IgA düzeyi IgA eksikliğine bağlı yalancı negatifliği dışlamak için kontrol edilir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-001-infantta-hisilti-ve-beslenememe",
+    "title": "İnfantta hışıltı ve beslenememe",
+    "ageGroup": "Süt çocuğu",
+    "topic": "akut astım atağı",
+    "vitals": {
+      "TA": "82/48 mmHg",
+      "Nabız": "128/dk",
+      "Solunum": "62/dk",
+      "SpO2": "%89, oda havasında",
+      "Ateş": "37.8 °C",
+      "Şok indeksi": "1.56 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Ağır astım atağında oksijen, tekrarlayan SABA, ipratropium ve sistemik steroid birlikte düşünülür.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-002-merdiven-cikmada-zorlanma",
+    "title": "Merdiven çıkmada zorlanma",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "Duchenne musküler distrofisi",
+    "vitals": {
+      "TA": "92/58 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "1.13 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Duchenne X’e bağlı distrofin eksikliğine bağlıdır; proksimal güçsüzlük ve CK yüksekliği ipucudur.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-003-ates-sirasinda-kisa-nobet",
+    "title": "Ateş sırasında kısa nöbet",
+    "ageGroup": "Süt çocuğu",
+    "topic": "basit febril nöbet",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "38.9 °C",
+      "Şok indeksi": "1.02 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Basit febril nöbet kısa, jeneralize ve 24 saat içinde tekrarlamayan nöbettir; rutin antiepileptik gerekmez.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-004-tekrarlayan-atesli-idrar-yolu-enfeksiyonu",
+    "title": "Tekrarlayan ateşli idrar yolu enfeksiyonu",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "tekrarlayan febril İYE ve vezikoüreteral reflü riski",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "38.9 °C",
+      "Şok indeksi": "1.02 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Tekrarlayan febril İYE ve USG anomalisi varsa VUR değerlendirmesi için VCUG düşünülür.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-005-kucuk-cocukta-tek-diz-sisligi",
+    "title": "Küçük çocukta tek diz şişliği",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "juvenil idiyopatik artrit ilişkili üveit riski",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "1.02 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Oligoartiküler JIA’da asemptomatik anterior üveit olabilir; yarık lamba taraması gerekir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-006-karinda-kitle-ve-kilo-kaybi",
+    "title": "Karında kitle ve kilo kaybı",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "nöroblastom",
+    "vitals": {
+      "TA": "118/76 mmHg",
+      "Nabız": "126/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "38.3 °C",
+      "Şok indeksi": "1.07 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Nöroblastom adrenal medulla/sempatik zincir kökenlidir; VMA/HVA yüksekliği ayırt ettirir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-007-ust-solunum-yolu-enfeksiyonu-sonrasi-topal",
+    "title": "Üst solunum yolu enfeksiyonu sonrası topallama",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "geçici kalça sinoviti",
+    "vitals": {
+      "TA": "88/54 mmHg",
+      "Nabız": "92/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "36.9 °C",
+      "Şok indeksi": "1.05 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Geçici kalça sinoviti iyi görünümlü çocukta ÜSYE sonrası gelişir; septik artritten ateş/toksisite ve belirgin inflamasyonla ayrılır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-008-duzenli-tekrarlayan-ates-ataklari",
+    "title": "Düzenli tekrarlayan ateş atakları",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "PFAPA sendromu",
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "39.2 °C",
+      "Şok indeksi": "1.02 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "PFAPA’da çocuk ataklar arasında tamamen iyidir; enfeksiyon kanıtı olmadan periyodik patern tanıyı düşündürür.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-009-sarilik-ve-dalak-buyuklugu",
+    "title": "Sarılık ve dalak büyüklüğü",
+    "ageGroup": "Okul çağı",
+    "topic": "herediter sferositoz",
+    "vitals": {
+      "TA": "88/54 mmHg",
+      "Nabız": "96/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "38.3 °C",
+      "Şok indeksi": "1.09 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Herediter sferositoz membran iskeleti bozukluğudur; sferosit, splenomegali ve osmotik frajilite/EMA testi ipucudur.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-010-diz-agrisiyla-gelen-adolesan",
+    "title": "Diz ağrısıyla gelen adölesan",
+    "ageGroup": "Adolesan",
+    "topic": "slipped capital femoral epiphysis",
+    "vitals": {
+      "TA": "92/58 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "1.13 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "SCFE’de diz ağrısı kalçadan yansıyan ağrı olabilir; acil ortopedi değerlendirmesi gerekir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v339-peds-001-yenidoganda-kusma-ve-dolasim-bozuklugu",
+    "title": "Yenidoğanda kusma ve dolaşım bozukluğu",
+    "ageGroup": "Yenidoğan",
+    "topic": "pediatrik sepsis veya septik şok",
+    "vitals": {
+      "TA": "62/36 mmHg",
+      "Nabız": "178/dk",
+      "Solunum": "18/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "36.2 °C",
+      "Şok indeksi": "2.87 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Pediatrik septik şokta oksijen, damar yolu, izotonik sıvı bolusları ve erken antibiyotik ilk saat içinde geciktirilmez.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v339-peds-002-biloz-kusma-ve-batin-hassasiyeti",
+    "title": "Bilöz kusma ve batın hassasiyeti",
+    "ageGroup": "Yenidoğan",
+    "topic": "malrotasyon/volvulus şüphesi",
+    "vitals": {
+      "TA": "72/42 mmHg",
+      "Nabız": "166/dk",
+      "Solunum": "52/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "38.3 °C",
+      "Şok indeksi": "2.31 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Yenidoğanda bilöz kusma aksi kanıtlanana kadar cerrahi acildir; volvulus için çocuk cerrahisi geciktirilmez.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v339-peds-003-premature-bebekte-batin-distansiyonu",
+    "title": "Prematüre bebekte batın distansiyonu",
+    "ageGroup": "Yenidoğan",
+    "topic": "prematüre respiratuvar distres sendromu",
+    "vitals": {
+      "TA": "94/58 mmHg",
+      "Nabız": "172/dk",
+      "Solunum": "30/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "36.1 °C",
+      "Şok indeksi": "1.83 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Prematüre RDS’nin temel nedeni surfaktan eksikliğine bağlı alveoler kollaps ve yüzey gerilimi artışıdır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v339-peds-004-grip-sonrasi-kusma-ve-bilinc-degisikligi",
+    "title": "Grip sonrası kusma ve bilinç değişikliği",
+    "ageGroup": "Okul çağı",
+    "topic": "trisiklik antidepresan/sodyum kanal blokeri toksisitesi",
+    "vitals": {
+      "TA": "104/66 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "38.3 °C",
+      "Şok indeksi": "1.13 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "TCA/sodyum kanal blokeri toksisitesinde geniş QRS varsa IV sodyum bikarbonat verilir.",
+    "toxicologyFlag": true,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v339-peds-005-viral-enfeksiyon-sonrasi-morarma",
+    "title": "Viral enfeksiyon sonrası morarma",
+    "ageGroup": "Oyun çocuğu",
+    "topic": "immün trombositopeni",
+    "vitals": {
+      "TA": "88/54 mmHg",
+      "Nabız": "122/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "1.39 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "ITP’de izole trombositopeni beklenir; anemi/lökopeni veya blast varsa lösemi düşünülür.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v339-peds-006-bebekte-tekrarlayan-agir-enfeksiyon",
+    "title": "Bebekte tekrarlayan ağır enfeksiyon",
+    "ageGroup": "Süt çocuğu",
+    "topic": "çölyak hastalığı",
+    "vitals": {
+      "TA": "86/54 mmHg",
+      "Nabız": "132/dk",
+      "Solunum": "28/dk",
+      "SpO2": "%91, oda havasında",
+      "Ateş": "38.0 °C",
+      "Şok indeksi": "1.53 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Çölyak taramasında total IgA düzeyi IgA eksikliğine bağlı yalancı negatifliği dışlamak için kontrol edilir.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v339-peds-007-fotografta-beyaz-pupilla",
+    "title": "Fotoğrafta beyaz pupilla",
+    "ageGroup": "Süt çocuğu",
+    "topic": "retinoblastom",
+    "vitals": {
+      "TA": "104/68 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%95, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "1.00 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Lökokori retinoblastom açısından acil göz değerlendirmesi gerektirir; erken tanı hayat ve görme kurtarır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v339-peds-008-kas-gucsuzlugu-ve-goz-cevresinde-mor-dokuntu",
+    "title": "Kas güçsüzlüğü ve göz çevresinde mor döküntü",
+    "ageGroup": "Okul çağı",
+    "topic": "hiperkalemiye bağlı kardiyak risk",
+    "vitals": {
+      "TA": "92/58 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "1.13 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Hiperkalemide EKG değişikliği varsa ilk tedavi miyokardı stabilize eden IV kalsiyum glukonattır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v339-peds-009-yenidogan-taramasinda-metabolik-risk",
+    "title": "Yenidoğan taramasında metabolik risk",
+    "ageGroup": "Yenidoğan",
+    "topic": "fenilketonüri",
+    "vitals": {
+      "TA": "92/58 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "1.13 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "PKU’da erken düşük fenilalaninli diyet nörogelişimsel hasarı önler.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  },
+  {
+    "caseId": "v339-peds-010-erken-meme-gelisimi",
+    "title": "Erken meme gelişimi",
+    "ageGroup": "Okul çağı",
+    "topic": "santral puberte prekoks",
+    "vitals": {
+      "TA": "88/56 mmHg",
+      "Nabız": "126/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%96, oda havasında",
+      "Ateş": "36.6 °C",
+      "Şok indeksi": "1.43 pediatrik bağlamda yorumlanmalı"
+    },
+    "urgencyOrTreatmentPriority": "Santral puberte prekoks GnRH bağımlıdır; ilerleyici bulgu ve kemik yaşı ileriliği prematür telarştan ayırır.",
+    "toxicologyFlag": false,
+    "ageVitalAssessment": "Vital bulgular ve genel durum pediatrik yaş grubuna göre değerlendirilerek tedavi önceliğine bağlandı."
+  }
+]

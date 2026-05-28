@@ -1,0 +1,1866 @@
+{
+  "metrics": {
+    "scannedMedicalPathologyCases": 28,
+    "updatedMedicalPathologyCases": 28,
+    "leftColumnRewrittenCases": 28,
+    "objectiveDataFixedCases": 28,
+    "objectiveLayerEnhancedCases": 28,
+    "labImagingPathologySeparationFixedCases": 28,
+    "irrelevantGenericShortCommentsCleaned": 245,
+    "rewrittenShortComments": 70,
+    "removedOrHiddenUnnecessaryShortCommentRecords": 0,
+    "histopathologyExplanationStrengthenedCases": 26,
+    "ihcOrMolecularDataAddedOrEditedCases": 8,
+    "columnShiftReferenceStatusRowsFixed": 21,
+    "questionStemUpdatedCases": 28,
+    "optionSetStrengthenedCases": 28,
+    "changedOptionTexts": 9,
+    "optionFeedbackRewrittenCount": 140,
+    "clinicalScientificRationaleRewrittenCases": 28,
+    "evidenceChainRewrittenCases": 28,
+    "examPearlCoreKnowledgeStrengthenedCases": 28,
+    "scientificConcernCount": 0,
+    "correctAnswerLogicPreserved": true,
+    "idChanged": false,
+    "tusSpotCasesTouched": false,
+    "genericFeedbackBeforeCount": 54,
+    "genericFeedbackAfterCount": 0
+  },
+  "cases": [
+    {
+      "caseId": "v163-new-008-kronik-malabsorpsiyon-tablosu",
+      "title": "Kronik malabsorpsiyon tablosu",
+      "histologyInvestigations": [
+        {
+          "id": "duodenum-biopsy-celiac",
+          "label": "Duodenum biyopsisi",
+          "title": "Duodenum biyopsisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Patoloji / histopatoloji",
+          "summary": "Villus atrofisi emilim yüzeyini azaltır; kript hiperplazisi rejeneratif yanıtı, intraepitelyal lenfosit artışı ise gluten ilişkili immün epitel hasarını gösterir.",
+          "clinicalMeaning": "Villus atrofisi emilim yüzeyini azaltır; kript hiperplazisi rejeneratif yanıtı, intraepitelyal lenfosit artışı ise gluten ilişkili immün epitel hasarını gösterir.",
+          "result": {
+            "title": "Duodenum biyopsisi",
+            "summary": "Villus atrofisi emilim yüzeyini azaltır; kript hiperplazisi rejeneratif yanıtı, intraepitelyal lenfosit artışı ise gluten ilişkili immün epitel hasarını gösterir.",
+            "interpretation": "Villus atrofisi emilim yüzeyini azaltır; kript hiperplazisi rejeneratif yanıtı, intraepitelyal lenfosit artışı ise gluten ilişkili immün epitel hasarını gösterir.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Villuslarda küntleşme/atrofi, kript hiperplazisi ve intraepitelyal lenfosit artışı izlendi.",
+                "Çölyak hastalığı için karakteristik patern",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Villuslarda küntleşme/atrofi, kript hiperplazisi ve intraepitelyal lenfosit artışı izlendi.",
+                "Çölyak hastalığı için karakteristik patern",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Villuslarda küntleşme/atrofi, kript hiperplazisi ve intraepitelyal lenfosit artışı izlendi.",
+              "Çölyak hastalığı için karakteristik patern",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Villus atrofisi emilim yüzeyini azaltır; kript hiperplazisi rejeneratif yanıtı, intraepitelyal lenfosit artışı ise gluten ilişkili immün epitel hasarını gösterir.",
+          "interpretation": "Villus atrofisi emilim yüzeyini azaltır; kript hiperplazisi rejeneratif yanıtı, intraepitelyal lenfosit artışı ise gluten ilişkili immün epitel hasarını gösterir.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Villus atrofisi emilim yüzeyini azaltır; kript hiperplazisi rejeneratif yanıtı, intraepitelyal lenfosit artışı ise gluten ilişkili immün epitel hasarını gösterir."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Çölyak hastalığı HLA-DQ2/DQ8 yatkınlığı olan bireylerde gluten ilişkili T hücre aracılı mukozal hasar yapar; tanı seroloji ve duodenum biyopsisi uyumuyla güçlenir."
+    },
+    {
+      "caseId": "v168-new-056-agrisiz-hematuri-ve-renal-kitle",
+      "title": "Ağrısız hematüri ve renal kortikal kitle",
+      "histologyInvestigations": [
+        {
+          "id": "renal-biopsy-rcc",
+          "label": "Biyopsi histopatolojisi",
+          "title": "Biyopsi histopatolojisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Patoloji / histopatoloji",
+          "summary": "Berrak sitoplazma lipid ve glikojen içeriğine bağlıdır; zengin ince vasküler ağ berrak hücreli renal hücreli karsinomun klasik morfolojik ipucudur.",
+          "clinicalMeaning": "Berrak sitoplazma lipid ve glikojen içeriğine bağlıdır; zengin ince vasküler ağ berrak hücreli renal hücreli karsinomun klasik morfolojik ipucudur.",
+          "result": {
+            "title": "Biyopsi histopatolojisi",
+            "summary": "Berrak sitoplazma lipid ve glikojen içeriğine bağlıdır; zengin ince vasküler ağ berrak hücreli renal hücreli karsinomun klasik morfolojik ipucudur.",
+            "interpretation": "Berrak sitoplazma lipid ve glikojen içeriğine bağlıdır; zengin ince vasküler ağ berrak hücreli renal hücreli karsinomun klasik morfolojik ipucudur.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "İnce dallanan damar ağıyla ayrılan alveoler/nested dizilimli, berrak sitoplazmalı tümör hücreleri izlendi.",
+                "Berrak hücreli RCC için karakteristik morfoloji",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "İnce dallanan damar ağıyla ayrılan alveoler/nested dizilimli, berrak sitoplazmalı tümör hücreleri izlendi.",
+                "Berrak hücreli RCC için karakteristik morfoloji",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "İnce dallanan damar ağıyla ayrılan alveoler/nested dizilimli, berrak sitoplazmalı tümör hücreleri izlendi.",
+              "Berrak hücreli RCC için karakteristik morfoloji",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Berrak sitoplazma lipid ve glikojen içeriğine bağlıdır; zengin ince vasküler ağ berrak hücreli renal hücreli karsinomun klasik morfolojik ipucudur.",
+          "interpretation": "Berrak sitoplazma lipid ve glikojen içeriğine bağlıdır; zengin ince vasküler ağ berrak hücreli renal hücreli karsinomun klasik morfolojik ipucudur.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Berrak sitoplazma lipid ve glikojen içeriğine bağlıdır; zengin ince vasküler ağ berrak hücreli renal hücreli karsinomun klasik morfolojik ipucudur."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Berrak hücreli RCC çoğu kez VHL/HIF yolak bozukluğu ve artmış anjiyogenezle ilişkilidir; histolojide berrak sitoplazma ve yoğun kapiller ağ belirleyicidir."
+    },
+    {
+      "caseId": "v169-new-066-eriskinde-nefrotik-tablo",
+      "title": "Erişkinde nefrotik tablo",
+      "histologyInvestigations": [
+        {
+          "id": "biopsy-em-membranous-1",
+          "label": "Böbrek biyopsisi elektron mikroskopisi",
+          "title": "Böbrek biyopsisi elektron mikroskopisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Elektron mikroskopisi",
+          "summary": "Subepitelyal immün kompleksler ışık mikroskobunda/gümüş boyada spike-and-dome görünümünün morfolojik temelini oluşturur.",
+          "clinicalMeaning": "Subepitelyal immün kompleksler ışık mikroskobunda/gümüş boyada spike-and-dome görünümünün morfolojik temelini oluşturur.",
+          "result": {
+            "title": "Böbrek biyopsisi elektron mikroskopisi",
+            "summary": "Subepitelyal immün kompleksler ışık mikroskobunda/gümüş boyada spike-and-dome görünümünün morfolojik temelini oluşturur.",
+            "interpretation": "Subepitelyal immün kompleksler ışık mikroskobunda/gümüş boyada spike-and-dome görünümünün morfolojik temelini oluşturur.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Glomerüler bazal membran boyunca subepitelyal elektron-dens immün kompleks birikimleri izlendi.",
+                "Membranöz nefropati lehine",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Glomerüler bazal membran boyunca subepitelyal elektron-dens immün kompleks birikimleri izlendi.",
+                "Membranöz nefropati lehine",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Glomerüler bazal membran boyunca subepitelyal elektron-dens immün kompleks birikimleri izlendi.",
+              "Membranöz nefropati lehine",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Subepitelyal immün kompleksler ışık mikroskobunda/gümüş boyada spike-and-dome görünümünün morfolojik temelini oluşturur.",
+          "interpretation": "Subepitelyal immün kompleksler ışık mikroskobunda/gümüş boyada spike-and-dome görünümünün morfolojik temelini oluşturur.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Subepitelyal immün kompleksler ışık mikroskobunda/gümüş boyada spike-and-dome görünümünün morfolojik temelini oluşturur."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Membranöz nefropati podosit altındaki immün kompleks birikimleriyle filtrasyon bariyerini bozar; erişkin nefrotik sendromun önemli nedenlerindendir."
+    },
+    {
+      "caseId": "v172-new-075-servikal-lenf-nodu-ile-saptanan-tiroid-nodulu",
+      "title": "Servikal lenf nodu ile saptanan tiroid nodülü",
+      "histologyInvestigations": [
+        {
+          "id": "v172-new-075-servikal-lenf-nodu-ile-saptanan-tiroid-nodulu-fna",
+          "label": "İnce iğne aspirasyon sitolojisi",
+          "title": "İnce iğne aspirasyon sitolojisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Sitoloji",
+          "summary": "Papiller tiroid karsinomunda tanı çoğu kez hücresel mimariden çok nükleer özelliklere dayanır: Orphan Annie eye nükleusları, nükleer oluklar ve psödoinklüzyonlar ayırt edicidir.",
+          "clinicalMeaning": "Papiller tiroid karsinomunda tanı çoğu kez hücresel mimariden çok nükleer özelliklere dayanır: Orphan Annie eye nükleusları, nükleer oluklar ve psödoinklüzyonlar ayırt edicidir.",
+          "result": {
+            "title": "İnce iğne aspirasyon sitolojisi",
+            "summary": "Papiller tiroid karsinomunda tanı çoğu kez hücresel mimariden çok nükleer özelliklere dayanır: Orphan Annie eye nükleusları, nükleer oluklar ve psödoinklüzyonlar ayırt edicidir.",
+            "interpretation": "Papiller tiroid karsinomunda tanı çoğu kez hücresel mimariden çok nükleer özelliklere dayanır: Orphan Annie eye nükleusları, nükleer oluklar ve psödoinklüzyonlar ayırt edicidir.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Berrak nükleer görünüm, nükleer yarıklar, intranükleer psödoinklüzyonlar ve psammoma cisimcikleriyle uyumlu hücre grupları görüldü.",
+                "Papiller tiroid karsinomu için karakteristik",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Berrak nükleer görünüm, nükleer yarıklar, intranükleer psödoinklüzyonlar ve psammoma cisimcikleriyle uyumlu hücre grupları görüldü.",
+                "Papiller tiroid karsinomu için karakteristik",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Berrak nükleer görünüm, nükleer yarıklar, intranükleer psödoinklüzyonlar ve psammoma cisimcikleriyle uyumlu hücre grupları görüldü.",
+              "Papiller tiroid karsinomu için karakteristik",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Papiller tiroid karsinomunda tanı çoğu kez hücresel mimariden çok nükleer özelliklere dayanır: Orphan Annie eye nükleusları, nükleer oluklar ve psödoinklüzyonlar ayırt edicidir.",
+          "interpretation": "Papiller tiroid karsinomunda tanı çoğu kez hücresel mimariden çok nükleer özelliklere dayanır: Orphan Annie eye nükleusları, nükleer oluklar ve psödoinklüzyonlar ayırt edicidir.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Papiller tiroid karsinomunda tanı çoğu kez hücresel mimariden çok nükleer özelliklere dayanır: Orphan Annie eye nükleusları, nükleer oluklar ve psödoinklüzyonlar ayırt edicidir."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Papiller tiroid karsinomu en sık tiroid malignitesidir; lenfatik yayılım ve nükleer morfoloji tanıda kritik rol oynar."
+    },
+    {
+      "caseId": "v173-new-085-sigara-oykusu-olan-hastada-hiponatremi",
+      "title": "Sigara öyküsü olan hastada hiponatremi",
+      "histologyInvestigations": [
+        {
+          "id": "sclc-histo",
+          "label": "Biyopsi histopatolojisi",
+          "title": "Biyopsi histopatolojisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Patoloji / histopatoloji",
+          "summary": "Dar sitoplazmalı küçük hücreler, nükleer molding, yüksek mitoz ve yaygın nekroz küçük hücreli akciğer karsinomunun klasik mikroskobik paternidir.",
+          "clinicalMeaning": "Dar sitoplazmalı küçük hücreler, nükleer molding, yüksek mitoz ve yaygın nekroz küçük hücreli akciğer karsinomunun klasik mikroskobik paternidir.",
+          "result": {
+            "title": "Biyopsi histopatolojisi",
+            "summary": "Dar sitoplazmalı küçük hücreler, nükleer molding, yüksek mitoz ve yaygın nekroz küçük hücreli akciğer karsinomunun klasik mikroskobik paternidir.",
+            "interpretation": "Dar sitoplazmalı küçük hücreler, nükleer molding, yüksek mitoz ve yaygın nekroz küçük hücreli akciğer karsinomunun klasik mikroskobik paternidir.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Dar sitoplazmalı küçük mavi hücrelerden oluşan tümöral proliferasyon, nükleer molding, ince granüler kromatin, yüksek mitotik aktivite ve yaygın nekroz izlendi.",
+                "Küçük hücreli karsinom için karakteristik",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Dar sitoplazmalı küçük mavi hücrelerden oluşan tümöral proliferasyon, nükleer molding, ince granüler kromatin, yüksek mitotik aktivite ve yaygın nekroz izlendi.",
+                "Küçük hücreli karsinom için karakteristik",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Dar sitoplazmalı küçük mavi hücrelerden oluşan tümöral proliferasyon, nükleer molding, ince granüler kromatin, yüksek mitotik aktivite ve yaygın nekroz izlendi.",
+              "Küçük hücreli karsinom için karakteristik",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Dar sitoplazmalı küçük hücreler, nükleer molding, yüksek mitoz ve yaygın nekroz küçük hücreli akciğer karsinomunun klasik mikroskobik paternidir.",
+          "interpretation": "Dar sitoplazmalı küçük hücreler, nükleer molding, yüksek mitoz ve yaygın nekroz küçük hücreli akciğer karsinomunun klasik mikroskobik paternidir.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Dar sitoplazmalı küçük hücreler, nükleer molding, yüksek mitoz ve yaygın nekroz küçük hücreli akciğer karsinomunun klasik mikroskobik paternidir."
+        },
+        {
+          "id": "sclc-ihc",
+          "label": "İmmünohistokimya",
+          "title": "İmmünohistokimya",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "İmmünohistokimya",
+          "summary": "Nöroendokrin marker pozitifliği ve yüksek Ki-67, küçük hücreli karsinomun agresif nöroendokrin biyolojisini destekler.",
+          "clinicalMeaning": "Nöroendokrin marker pozitifliği ve yüksek Ki-67, küçük hücreli karsinomun agresif nöroendokrin biyolojisini destekler.",
+          "result": {
+            "title": "İmmünohistokimya",
+            "summary": "Nöroendokrin marker pozitifliği ve yüksek Ki-67, küçük hücreli karsinomun agresif nöroendokrin biyolojisini destekler.",
+            "interpretation": "Nöroendokrin marker pozitifliği ve yüksek Ki-67, küçük hücreli karsinomun agresif nöroendokrin biyolojisini destekler.",
+            "values": [
+              [
+                "Synaptophysin/CD56",
+                "Pozitif",
+                "Nöroendokrin diferansiyasyonu destekler",
+                "Pozitif"
+              ],
+              [
+                "Ki-67",
+                "Yüksek proliferasyon indeksi",
+                "Agresif tümör biyolojisiyle uyumlu",
+                "Yüksek"
+              ],
+              [
+                "TTF-1",
+                "Pozitif",
+                "Pulmoner kökeni destekleyebilir",
+                "Pozitif"
+              ]
+            ],
+            "rows": [
+              [
+                "Synaptophysin/CD56",
+                "Pozitif",
+                "Nöroendokrin diferansiyasyonu destekler",
+                "Pozitif"
+              ],
+              [
+                "Ki-67",
+                "Yüksek proliferasyon indeksi",
+                "Agresif tümör biyolojisiyle uyumlu",
+                "Yüksek"
+              ],
+              [
+                "TTF-1",
+                "Pozitif",
+                "Pulmoner kökeni destekleyebilir",
+                "Pozitif"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Synaptophysin/CD56",
+              "Pozitif",
+              "Nöroendokrin diferansiyasyonu destekler",
+              "Pozitif"
+            ],
+            [
+              "Ki-67",
+              "Yüksek proliferasyon indeksi",
+              "Agresif tümör biyolojisiyle uyumlu",
+              "Yüksek"
+            ],
+            [
+              "TTF-1",
+              "Pozitif",
+              "Pulmoner kökeni destekleyebilir",
+              "Pozitif"
+            ]
+          ],
+          "postAnswerExplanation": "Nöroendokrin marker pozitifliği ve yüksek Ki-67, küçük hücreli karsinomun agresif nöroendokrin biyolojisini destekler.",
+          "interpretation": "Nöroendokrin marker pozitifliği ve yüksek Ki-67, küçük hücreli karsinomun agresif nöroendokrin biyolojisini destekler.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Nöroendokrin marker pozitifliği ve yüksek Ki-67, küçük hücreli karsinomun agresif nöroendokrin biyolojisini destekler."
+        }
+      ],
+      "ihcOrMolecularChanged": true,
+      "mechanismNote": "Akciğer tümörlerinde lokalizasyon, sigara ilişkisi, paraneoplastik sendrom ve histolojik patern birlikte okunmalıdır."
+    },
+    {
+      "caseId": "v174-new-096-agrisiz-servikal-lenfadenopati",
+      "title": "Ağrısız servikal lenfadenopati",
+      "histologyInvestigations": [
+        {
+          "id": "hl-biopsy-1",
+          "label": "Eksizyonel lenf nodu biyopsisi",
+          "title": "Eksizyonel lenf nodu biyopsisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Patoloji / histopatoloji",
+          "summary": "Reed-Sternberg hücreleri reaktif inflamatuvar zemin içinde az sayıda bulunabilir; bu nedenle eksizyonel biyopsi mimari ve hücresel zemini değerlendirmek için önemlidir.",
+          "clinicalMeaning": "Reed-Sternberg hücreleri reaktif inflamatuvar zemin içinde az sayıda bulunabilir; bu nedenle eksizyonel biyopsi mimari ve hücresel zemini değerlendirmek için önemlidir.",
+          "result": {
+            "title": "Eksizyonel lenf nodu biyopsisi",
+            "summary": "Reed-Sternberg hücreleri reaktif inflamatuvar zemin içinde az sayıda bulunabilir; bu nedenle eksizyonel biyopsi mimari ve hücresel zemini değerlendirmek için önemlidir.",
+            "interpretation": "Reed-Sternberg hücreleri reaktif inflamatuvar zemin içinde az sayıda bulunabilir; bu nedenle eksizyonel biyopsi mimari ve hücresel zemini değerlendirmek için önemlidir.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Karışık inflamatuvar zemin içinde büyük, iki çekirdekli, belirgin nükleollü Reed-Sternberg hücreleri izlendi.",
+                "Klasik Hodgkin lenfoma lehine",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Karışık inflamatuvar zemin içinde büyük, iki çekirdekli, belirgin nükleollü Reed-Sternberg hücreleri izlendi.",
+                "Klasik Hodgkin lenfoma lehine",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Karışık inflamatuvar zemin içinde büyük, iki çekirdekli, belirgin nükleollü Reed-Sternberg hücreleri izlendi.",
+              "Klasik Hodgkin lenfoma lehine",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Reed-Sternberg hücreleri reaktif inflamatuvar zemin içinde az sayıda bulunabilir; bu nedenle eksizyonel biyopsi mimari ve hücresel zemini değerlendirmek için önemlidir.",
+          "interpretation": "Reed-Sternberg hücreleri reaktif inflamatuvar zemin içinde az sayıda bulunabilir; bu nedenle eksizyonel biyopsi mimari ve hücresel zemini değerlendirmek için önemlidir.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Reed-Sternberg hücreleri reaktif inflamatuvar zemin içinde az sayıda bulunabilir; bu nedenle eksizyonel biyopsi mimari ve hücresel zemini değerlendirmek için önemlidir."
+        },
+        {
+          "id": "hl-ihc-1",
+          "label": "İmmünohistokimya",
+          "title": "İmmünohistokimya",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "İmmünohistokimya",
+          "summary": "Klasik Hodgkin lenfomada Reed-Sternberg hücreleri genellikle CD15 ve CD30 pozitiftir; zayıf PAX5 ekspresyonu B hücre kökeniyle uyumludur.",
+          "clinicalMeaning": "Klasik Hodgkin lenfomada Reed-Sternberg hücreleri genellikle CD15 ve CD30 pozitiftir; zayıf PAX5 ekspresyonu B hücre kökeniyle uyumludur.",
+          "result": {
+            "title": "İmmünohistokimya",
+            "summary": "Klasik Hodgkin lenfomada Reed-Sternberg hücreleri genellikle CD15 ve CD30 pozitiftir; zayıf PAX5 ekspresyonu B hücre kökeniyle uyumludur.",
+            "interpretation": "Klasik Hodgkin lenfomada Reed-Sternberg hücreleri genellikle CD15 ve CD30 pozitiftir; zayıf PAX5 ekspresyonu B hücre kökeniyle uyumludur.",
+            "values": [
+              [
+                "CD15/CD30",
+                "Büyük atipik hücrelerde pozitif",
+                "Klasik Hodgkin lenfoma marker paterni",
+                "Pozitif"
+              ],
+              [
+                "PAX5",
+                "Zayıf pozitif",
+                "B hücre kökenini destekler",
+                "Zayıf pozitif"
+              ]
+            ],
+            "rows": [
+              [
+                "CD15/CD30",
+                "Büyük atipik hücrelerde pozitif",
+                "Klasik Hodgkin lenfoma marker paterni",
+                "Pozitif"
+              ],
+              [
+                "PAX5",
+                "Zayıf pozitif",
+                "B hücre kökenini destekler",
+                "Zayıf pozitif"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "CD15/CD30",
+              "Büyük atipik hücrelerde pozitif",
+              "Klasik Hodgkin lenfoma marker paterni",
+              "Pozitif"
+            ],
+            [
+              "PAX5",
+              "Zayıf pozitif",
+              "B hücre kökenini destekler",
+              "Zayıf pozitif"
+            ]
+          ],
+          "postAnswerExplanation": "Klasik Hodgkin lenfomada Reed-Sternberg hücreleri genellikle CD15 ve CD30 pozitiftir; zayıf PAX5 ekspresyonu B hücre kökeniyle uyumludur.",
+          "interpretation": "Klasik Hodgkin lenfomada Reed-Sternberg hücreleri genellikle CD15 ve CD30 pozitiftir; zayıf PAX5 ekspresyonu B hücre kökeniyle uyumludur.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Klasik Hodgkin lenfomada Reed-Sternberg hücreleri genellikle CD15 ve CD30 pozitiftir; zayıf PAX5 ekspresyonu B hücre kökeniyle uyumludur."
+        }
+      ],
+      "ihcOrMolecularChanged": true,
+      "mechanismNote": "Hodgkin lenfomada tümör hücreleri az, reaktif inflamatuvar zemin belirgindir; ayırıcı tanı hücre morfolojisi ve IHC ile yapılır."
+    },
+    {
+      "caseId": "v175-new-105-bogaz-enfeksiyonu-sonrasi-koyu-idrar",
+      "title": "Boğaz enfeksiyonu sonrası koyu idrar",
+      "histologyInvestigations": [
+        {
+          "id": "v175-new-105-bogaz-enfeksiyonu-sonrasi-koyu-idrar-em",
+          "label": "Böbrek biyopsisi elektron mikroskopisi",
+          "title": "Böbrek biyopsisi elektron mikroskopisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Elektron mikroskopisi",
+          "summary": "Hump şeklindeki subepitelyal birikimler poststreptokoksik glomerülonefritin klasik EM bulgusudur.",
+          "clinicalMeaning": "Hump şeklindeki subepitelyal birikimler poststreptokoksik glomerülonefritin klasik EM bulgusudur.",
+          "result": {
+            "title": "Böbrek biyopsisi elektron mikroskopisi",
+            "summary": "Hump şeklindeki subepitelyal birikimler poststreptokoksik glomerülonefritin klasik EM bulgusudur.",
+            "interpretation": "Hump şeklindeki subepitelyal birikimler poststreptokoksik glomerülonefritin klasik EM bulgusudur.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Subepitelyal hump benzeri elektron-dens immün kompleks birikimleri izlendi.",
+                "Poststreptokoksik GN için karakteristik",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Subepitelyal hump benzeri elektron-dens immün kompleks birikimleri izlendi.",
+                "Poststreptokoksik GN için karakteristik",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Subepitelyal hump benzeri elektron-dens immün kompleks birikimleri izlendi.",
+              "Poststreptokoksik GN için karakteristik",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Hump şeklindeki subepitelyal birikimler poststreptokoksik glomerülonefritin klasik EM bulgusudur.",
+          "interpretation": "Hump şeklindeki subepitelyal birikimler poststreptokoksik glomerülonefritin klasik EM bulgusudur.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Hump şeklindeki subepitelyal birikimler poststreptokoksik glomerülonefritin klasik EM bulgusudur."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "PSGN: çocukta enfeksiyondan 1-3 hafta sonra nefritik sendrom + düşük C3 + subepitelyal hump."
+    },
+    {
+      "caseId": "v176-new-115-kronik-inflamasyon-sonrasi-proteinuri",
+      "title": "Kronik inflamasyon sonrası proteinüri",
+      "histologyInvestigations": [
+        {
+          "id": "v176-new-115-kronik-inflamasyon-sonrasi-proteinuri-amyloid",
+          "label": "Böbrek biyopsisi özel boyama",
+          "title": "Böbrek biyopsisi özel boyama",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Histokimya",
+          "summary": "Kongo kırmızısı pozitifliği ve elma yeşili çift kırılma amiloid fibrillerinin beta-pleated sheet yapısına bağlıdır.",
+          "clinicalMeaning": "Kongo kırmızısı pozitifliği ve elma yeşili çift kırılma amiloid fibrillerinin beta-pleated sheet yapısına bağlıdır.",
+          "result": {
+            "title": "Böbrek biyopsisi özel boyama",
+            "summary": "Kongo kırmızısı pozitifliği ve elma yeşili çift kırılma amiloid fibrillerinin beta-pleated sheet yapısına bağlıdır.",
+            "interpretation": "Kongo kırmızısı pozitifliği ve elma yeşili çift kırılma amiloid fibrillerinin beta-pleated sheet yapısına bağlıdır.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Glomerüllerde amorf eozinofilik ekstrasellüler birikimler izlendi; Kongo kırmızısı ile polarize ışıkta elma yeşili çift kırılma gösterdi.",
+                "Amiloid için karakteristik",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Glomerüllerde amorf eozinofilik ekstrasellüler birikimler izlendi; Kongo kırmızısı ile polarize ışıkta elma yeşili çift kırılma gösterdi.",
+                "Amiloid için karakteristik",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Glomerüllerde amorf eozinofilik ekstrasellüler birikimler izlendi; Kongo kırmızısı ile polarize ışıkta elma yeşili çift kırılma gösterdi.",
+              "Amiloid için karakteristik",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Kongo kırmızısı pozitifliği ve elma yeşili çift kırılma amiloid fibrillerinin beta-pleated sheet yapısına bağlıdır.",
+          "interpretation": "Kongo kırmızısı pozitifliği ve elma yeşili çift kırılma amiloid fibrillerinin beta-pleated sheet yapısına bağlıdır.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Kongo kırmızısı pozitifliği ve elma yeşili çift kırılma amiloid fibrillerinin beta-pleated sheet yapısına bağlıdır."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Sekonder AA amiloidoz: kronik inflamasyon + nefrotik sendrom + Kongo kırmızısı/elma yeşili çift kırılma."
+    },
+    {
+      "caseId": "v176-new-116-gogus-agrisi-sonrasi-ani-kotulesme",
+      "title": "Göğüs ağrısı sonrası ani kötüleşme",
+      "histologyInvestigations": [],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Mİ zamanlama: 1 gün civarı koagülasyon nekrozu + nötrofil; 3-7 gün makrofaj; haftalar sonra skar."
+    },
+    {
+      "caseId": "v177-new-129-diskilama-aliskanliginda-degisiklik",
+      "title": "Dışkılama alışkanlığında değişiklik",
+      "histologyInvestigations": [
+        {
+          "id": "v177-new-129-diskilama-aliskanliginda-degisiklik-histo",
+          "label": "Biyopsi histopatolojisi",
+          "title": "Biyopsi histopatolojisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Patoloji / histopatoloji",
+          "summary": "İnvaziv atipik glandüler yapı ve desmoplazi kolorektal adenokarsinomun temel histolojik paternidir.",
+          "clinicalMeaning": "İnvaziv atipik glandüler yapı ve desmoplazi kolorektal adenokarsinomun temel histolojik paternidir.",
+          "result": {
+            "title": "Biyopsi histopatolojisi",
+            "summary": "İnvaziv atipik glandüler yapı ve desmoplazi kolorektal adenokarsinomun temel histolojik paternidir.",
+            "interpretation": "İnvaziv atipik glandüler yapı ve desmoplazi kolorektal adenokarsinomun temel histolojik paternidir.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Desmoplastik stromaya invaze, atipik gland yapıları oluşturan malign epitelial tümör izlendi.",
+                "Kolorektal adenokarsinom için karakteristik",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Desmoplastik stromaya invaze, atipik gland yapıları oluşturan malign epitelial tümör izlendi.",
+                "Kolorektal adenokarsinom için karakteristik",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Desmoplastik stromaya invaze, atipik gland yapıları oluşturan malign epitelial tümör izlendi.",
+              "Kolorektal adenokarsinom için karakteristik",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "İnvaziv atipik glandüler yapı ve desmoplazi kolorektal adenokarsinomun temel histolojik paternidir.",
+          "interpretation": "İnvaziv atipik glandüler yapı ve desmoplazi kolorektal adenokarsinomun temel histolojik paternidir.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "İnvaziv atipik glandüler yapı ve desmoplazi kolorektal adenokarsinomun temel histolojik paternidir."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Kolorektal adenokarsinomda alarm bulguları: dışkılama alışkanlığı değişikliği, kanama, kilo kaybı, anemi ve invaziv glandüler tümör."
+    },
+    {
+      "caseId": "v178-new-134-postmenopozal-vajinal-kanama",
+      "title": "Postmenopozal vajinal kanama",
+      "histologyInvestigations": [
+        {
+          "id": "v178-new-134-postmenopozal-vajinal-kanama-endobx",
+          "label": "Endometrial biyopsi",
+          "title": "Endometrial biyopsi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "",
+          "summary": "Atipik invaziv glandüler proliferasyon endometrioid tip endometrium adenokarsinomunun temel histopatolojik bulgusudur.",
+          "clinicalMeaning": "Atipik invaziv glandüler proliferasyon endometrioid tip endometrium adenokarsinomunun temel histopatolojik bulgusudur.",
+          "result": {
+            "title": "Endometrial biyopsi",
+            "summary": "Atipik invaziv glandüler proliferasyon endometrioid tip endometrium adenokarsinomunun temel histopatolojik bulgusudur.",
+            "interpretation": "Atipik invaziv glandüler proliferasyon endometrioid tip endometrium adenokarsinomunun temel histopatolojik bulgusudur.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Atipik, sırt sırta dizilmiş glandüler proliferasyon ve stromal invazyon gösteren endometrioid tip adenokarsinom izlendi.",
+                "Endometrium adenokarsinomu için tanısal",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Atipik, sırt sırta dizilmiş glandüler proliferasyon ve stromal invazyon gösteren endometrioid tip adenokarsinom izlendi.",
+                "Endometrium adenokarsinomu için tanısal",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Atipik, sırt sırta dizilmiş glandüler proliferasyon ve stromal invazyon gösteren endometrioid tip adenokarsinom izlendi.",
+              "Endometrium adenokarsinomu için tanısal",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Atipik invaziv glandüler proliferasyon endometrioid tip endometrium adenokarsinomunun temel histopatolojik bulgusudur.",
+          "interpretation": "Atipik invaziv glandüler proliferasyon endometrioid tip endometrium adenokarsinomunun temel histopatolojik bulgusudur.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Atipik invaziv glandüler proliferasyon endometrioid tip endometrium adenokarsinomunun temel histopatolojik bulgusudur."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Endometrium adenokarsinomu için yüksek getirili ipucu: postmenopozal kanama + obezite/DM/HT/nulliparite + kalın endometrium."
+    },
+    {
+      "caseId": "v183-new-187-eriskinde-belirgin-proteinuri",
+      "title": "Erişkinde belirgin proteinüri",
+      "histologyInvestigations": [
+        {
+          "id": "v183-new-187-eriskinde-belirgin-proteinuri-biopsy",
+          "label": "Böbrek biyopsisi",
+          "title": "Böbrek biyopsisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Patoloji / özel boyama",
+          "summary": "Subepitelyal immün komplekslerin çevresinde gelişen yeni bazal membran materyali spike görünümünü oluşturur.",
+          "clinicalMeaning": "Subepitelyal immün komplekslerin çevresinde gelişen yeni bazal membran materyali spike görünümünü oluşturur.",
+          "result": {
+            "title": "Böbrek biyopsisi",
+            "summary": "Subepitelyal immün komplekslerin çevresinde gelişen yeni bazal membran materyali spike görünümünü oluşturur.",
+            "interpretation": "Subepitelyal immün komplekslerin çevresinde gelişen yeni bazal membran materyali spike görünümünü oluşturur.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Glomerüler bazal membranda yaygın kalınlaşma ve gümüş boyada spike görünümü izlendi.",
+                "Membranöz nefropati için karakteristik",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Glomerüler bazal membranda yaygın kalınlaşma ve gümüş boyada spike görünümü izlendi.",
+                "Membranöz nefropati için karakteristik",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Glomerüler bazal membranda yaygın kalınlaşma ve gümüş boyada spike görünümü izlendi.",
+              "Membranöz nefropati için karakteristik",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Subepitelyal immün komplekslerin çevresinde gelişen yeni bazal membran materyali spike görünümünü oluşturur.",
+          "interpretation": "Subepitelyal immün komplekslerin çevresinde gelişen yeni bazal membran materyali spike görünümünü oluşturur.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Subepitelyal immün komplekslerin çevresinde gelişen yeni bazal membran materyali spike görünümünü oluşturur."
+        },
+        {
+          "id": "v183-new-187-eriskinde-belirgin-proteinuri-if",
+          "label": "İmmünfloresan",
+          "title": "İmmünfloresan",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "İmmünfloresan",
+          "summary": "Granüler kapiller duvar IgG-C3 birikimi membranöz nefropatiyi anti-GBM hastalığındaki lineer birikimden ayırır.",
+          "clinicalMeaning": "Granüler kapiller duvar IgG-C3 birikimi membranöz nefropatiyi anti-GBM hastalığındaki lineer birikimden ayırır.",
+          "result": {
+            "title": "İmmünfloresan",
+            "summary": "Granüler kapiller duvar IgG-C3 birikimi membranöz nefropatiyi anti-GBM hastalığındaki lineer birikimden ayırır.",
+            "interpretation": "Granüler kapiller duvar IgG-C3 birikimi membranöz nefropatiyi anti-GBM hastalığındaki lineer birikimden ayırır.",
+            "values": [
+              [
+                "İmmünfloresan bulgu",
+                "Kapiller duvar boyunca granüler IgG ve C3 birikimi izlendi.",
+                "İmmün kompleks aracılı membranöz patern",
+                "Pozitif"
+              ]
+            ],
+            "rows": [
+              [
+                "İmmünfloresan bulgu",
+                "Kapiller duvar boyunca granüler IgG ve C3 birikimi izlendi.",
+                "İmmün kompleks aracılı membranöz patern",
+                "Pozitif"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "İmmünfloresan bulgu",
+              "Kapiller duvar boyunca granüler IgG ve C3 birikimi izlendi.",
+              "İmmün kompleks aracılı membranöz patern",
+              "Pozitif"
+            ]
+          ],
+          "postAnswerExplanation": "Granüler kapiller duvar IgG-C3 birikimi membranöz nefropatiyi anti-GBM hastalığındaki lineer birikimden ayırır.",
+          "interpretation": "Granüler kapiller duvar IgG-C3 birikimi membranöz nefropatiyi anti-GBM hastalığındaki lineer birikimden ayırır.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Granüler kapiller duvar IgG-C3 birikimi membranöz nefropatiyi anti-GBM hastalığındaki lineer birikimden ayırır."
+        }
+      ],
+      "ihcOrMolecularChanged": true,
+      "mechanismNote": "Membranöz nefropatide antikor aracılı podosit hasarı proteinüriye yol açar; histoloji, IF ve EM bulgularının birlikte yorumlanması tanıyı güçlendirir."
+    },
+    {
+      "caseId": "v184-new-197-apendektomi-materyalinde-inflamasyon",
+      "title": "Apendektomi materyalinde inflamasyon",
+      "histologyInvestigations": [
+        {
+          "id": "v184-new-197-apendektomi-materyalinde-inflamasyon-appendix",
+          "label": "Apendiks histopatolojisi",
+          "title": "Apendiks histopatolojisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "",
+          "summary": "Akut apandisitte tanı için en kritik bulgu nötrofillerin muskularis propria dahil duvar katmanlarına ilerlemesidir.",
+          "clinicalMeaning": "Akut apandisitte tanı için en kritik bulgu nötrofillerin muskularis propria dahil duvar katmanlarına ilerlemesidir.",
+          "result": {
+            "title": "Apendiks histopatolojisi",
+            "summary": "Akut apandisitte tanı için en kritik bulgu nötrofillerin muskularis propria dahil duvar katmanlarına ilerlemesidir.",
+            "interpretation": "Akut apandisitte tanı için en kritik bulgu nötrofillerin muskularis propria dahil duvar katmanlarına ilerlemesidir.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Mukozadan serozaya uzanan transmural nötrofil infiltrasyonu, ödem ve fokal ülserasyon izlendi.",
+                "Akut apandisit için karakteristik",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Mukozadan serozaya uzanan transmural nötrofil infiltrasyonu, ödem ve fokal ülserasyon izlendi.",
+                "Akut apandisit için karakteristik",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Mukozadan serozaya uzanan transmural nötrofil infiltrasyonu, ödem ve fokal ülserasyon izlendi.",
+              "Akut apandisit için karakteristik",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Akut apandisitte tanı için en kritik bulgu nötrofillerin muskularis propria dahil duvar katmanlarına ilerlemesidir.",
+          "interpretation": "Akut apandisitte tanı için en kritik bulgu nötrofillerin muskularis propria dahil duvar katmanlarına ilerlemesidir.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Akut apandisitte tanı için en kritik bulgu nötrofillerin muskularis propria dahil duvar katmanlarına ilerlemesidir."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Akut apandisit histoloji anahtarı: apendiks duvarında transmural nötrofil infiltrasyonu."
+    },
+    {
+      "caseId": "v185-new-216-kronik-oksuruk-ve-granulom",
+      "title": "Kronik öksürük ve granülom",
+      "histologyInvestigations": [
+        {
+          "id": "v185-new-216-kronik-oksuruk-ve-granulom-tb-histo",
+          "label": "Biyopsi histopatolojisi",
+          "title": "Biyopsi histopatolojisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "",
+          "summary": "Kazeöz nekrozlu granülomlar tüberküloz gibi mikobakteriyel enfeksiyonlarda klasik patolojik paterndir.",
+          "clinicalMeaning": "Kazeöz nekrozlu granülomlar tüberküloz gibi mikobakteriyel enfeksiyonlarda klasik patolojik paterndir.",
+          "result": {
+            "title": "Biyopsi histopatolojisi",
+            "summary": "Kazeöz nekrozlu granülomlar tüberküloz gibi mikobakteriyel enfeksiyonlarda klasik patolojik paterndir.",
+            "interpretation": "Kazeöz nekrozlu granülomlar tüberküloz gibi mikobakteriyel enfeksiyonlarda klasik patolojik paterndir.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Merkezinde kazeöz nekroz bulunan epiteloid histiyositlerden ve Langhans tipi dev hücrelerden oluşan granülomlar izlendi.",
+                "Kazeifiye granülomatöz inflamasyon",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Merkezinde kazeöz nekroz bulunan epiteloid histiyositlerden ve Langhans tipi dev hücrelerden oluşan granülomlar izlendi.",
+                "Kazeifiye granülomatöz inflamasyon",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Merkezinde kazeöz nekroz bulunan epiteloid histiyositlerden ve Langhans tipi dev hücrelerden oluşan granülomlar izlendi.",
+              "Kazeifiye granülomatöz inflamasyon",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Kazeöz nekrozlu granülomlar tüberküloz gibi mikobakteriyel enfeksiyonlarda klasik patolojik paterndir.",
+          "interpretation": "Kazeöz nekrozlu granülomlar tüberküloz gibi mikobakteriyel enfeksiyonlarda klasik patolojik paterndir.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Kazeöz nekrozlu granülomlar tüberküloz gibi mikobakteriyel enfeksiyonlarda klasik patolojik paterndir."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Tüberküloz patoloji ipucu: üst lob kavite + kazeifiye granülom + epiteloid histiyosit/Langhans dev hücreleri."
+    },
+    {
+      "caseId": "v185-new-217-uzun-sureli-reflu-sonrasi-biyopsi-bulgusu",
+      "title": "Uzun süreli reflü sonrası biyopsi bulgusu",
+      "histologyInvestigations": [
+        {
+          "id": "v185-new-217-uzun-sureli-reflu-sonrasi-biyopsi-bulgusu-esophagus-bx",
+          "label": "Özofagus biyopsisi",
+          "title": "Özofagus biyopsisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "",
+          "summary": "Goblet hücreli intestinal metaplazi Barrett özofagusunun tanısal histolojik bulgusudur ve adenokarsinom riskini artırır.",
+          "clinicalMeaning": "Goblet hücreli intestinal metaplazi Barrett özofagusunun tanısal histolojik bulgusudur ve adenokarsinom riskini artırır.",
+          "result": {
+            "title": "Özofagus biyopsisi",
+            "summary": "Goblet hücreli intestinal metaplazi Barrett özofagusunun tanısal histolojik bulgusudur ve adenokarsinom riskini artırır.",
+            "interpretation": "Goblet hücreli intestinal metaplazi Barrett özofagusunun tanısal histolojik bulgusudur ve adenokarsinom riskini artırır.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Skuamöz epitelin yerini goblet hücreleri içeren intestinal tip kolumnar metaplazi aldı.",
+                "Barrett özofagusu için karakteristik",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Skuamöz epitelin yerini goblet hücreleri içeren intestinal tip kolumnar metaplazi aldı.",
+                "Barrett özofagusu için karakteristik",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Skuamöz epitelin yerini goblet hücreleri içeren intestinal tip kolumnar metaplazi aldı.",
+              "Barrett özofagusu için karakteristik",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Goblet hücreli intestinal metaplazi Barrett özofagusunun tanısal histolojik bulgusudur ve adenokarsinom riskini artırır.",
+          "interpretation": "Goblet hücreli intestinal metaplazi Barrett özofagusunun tanısal histolojik bulgusudur ve adenokarsinom riskini artırır.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Goblet hücreli intestinal metaplazi Barrett özofagusunun tanısal histolojik bulgusudur ve adenokarsinom riskini artırır."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Barrett özofagusu: distal özofagusta goblet hücreli intestinal metaplazi; artan kanser riski adenokarsinomdur."
+    },
+    {
+      "caseId": "v185-new-218-tiroid-nodulunde-sitoloji-bulgusu",
+      "title": "Tiroid nodülünde sitoloji bulgusu",
+      "histologyInvestigations": [
+        {
+          "id": "v185-new-218-tiroid-nodulunde-sitoloji-bulgusu-fna",
+          "label": "İnce iğne aspirasyon sitolojisi",
+          "title": "İnce iğne aspirasyon sitolojisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Sitoloji",
+          "summary": "Papiller tiroid karsinomunda tanı çoğu kez hücresel mimariden çok nükleer özelliklere dayanır: Orphan Annie eye nükleusları, nükleer oluklar ve psödoinklüzyonlar ayırt edicidir.",
+          "clinicalMeaning": "Papiller tiroid karsinomunda tanı çoğu kez hücresel mimariden çok nükleer özelliklere dayanır: Orphan Annie eye nükleusları, nükleer oluklar ve psödoinklüzyonlar ayırt edicidir.",
+          "result": {
+            "title": "İnce iğne aspirasyon sitolojisi",
+            "summary": "Papiller tiroid karsinomunda tanı çoğu kez hücresel mimariden çok nükleer özelliklere dayanır: Orphan Annie eye nükleusları, nükleer oluklar ve psödoinklüzyonlar ayırt edicidir.",
+            "interpretation": "Papiller tiroid karsinomunda tanı çoğu kez hücresel mimariden çok nükleer özelliklere dayanır: Orphan Annie eye nükleusları, nükleer oluklar ve psödoinklüzyonlar ayırt edicidir.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Berrak nükleer görünüm, nükleer yarıklar, intranükleer psödoinklüzyonlar ve psammoma cisimcikleriyle uyumlu hücre grupları görüldü.",
+                "Papiller tiroid karsinomu için karakteristik",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Berrak nükleer görünüm, nükleer yarıklar, intranükleer psödoinklüzyonlar ve psammoma cisimcikleriyle uyumlu hücre grupları görüldü.",
+                "Papiller tiroid karsinomu için karakteristik",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Berrak nükleer görünüm, nükleer yarıklar, intranükleer psödoinklüzyonlar ve psammoma cisimcikleriyle uyumlu hücre grupları görüldü.",
+              "Papiller tiroid karsinomu için karakteristik",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Papiller tiroid karsinomunda tanı çoğu kez hücresel mimariden çok nükleer özelliklere dayanır: Orphan Annie eye nükleusları, nükleer oluklar ve psödoinklüzyonlar ayırt edicidir.",
+          "interpretation": "Papiller tiroid karsinomunda tanı çoğu kez hücresel mimariden çok nükleer özelliklere dayanır: Orphan Annie eye nükleusları, nükleer oluklar ve psödoinklüzyonlar ayırt edicidir.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Papiller tiroid karsinomunda tanı çoğu kez hücresel mimariden çok nükleer özelliklere dayanır: Orphan Annie eye nükleusları, nükleer oluklar ve psödoinklüzyonlar ayırt edicidir."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Papiller tiroid karsinomu en sık tiroid malignitesidir; lenfatik yayılım ve nükleer morfoloji tanıda kritik rol oynar."
+    },
+    {
+      "caseId": "v186-new-236-derin-yumusak-doku-kitlesi",
+      "title": "Derin yumuşak doku kitlesi",
+      "histologyInvestigations": [
+        {
+          "id": "v186-new-236-derin-yumusak-doku-kitlesi-mri",
+          "label": "Manyetik rezonans görüntüleme",
+          "title": "Manyetik rezonans görüntüleme",
+          "type": "mri",
+          "priority": "essential",
+          "subtype": "MR",
+          "summary": "Derin yerleşim, büyük boyut, kalın septa ve nodüler solid alanlar basit lipomdan çok iyi diferansiye liposarkomu düşündürür.",
+          "clinicalMeaning": "Derin yerleşim, büyük boyut, kalın septa ve nodüler solid alanlar basit lipomdan çok iyi diferansiye liposarkomu düşündürür.",
+          "result": {
+            "title": "Manyetik rezonans görüntüleme",
+            "summary": "Derin yerleşim, büyük boyut, kalın septa ve nodüler solid alanlar basit lipomdan çok iyi diferansiye liposarkomu düşündürür.",
+            "interpretation": "Derin yerleşim, büyük boyut, kalın septa ve nodüler solid alanlar basit lipomdan çok iyi diferansiye liposarkomu düşündürür.",
+            "values": [
+              [
+                "Görüntüleme bulgusu",
+                "Derin yumuşak dokuda 12 cm, yağ içerikli, kalın septalı ve nodüler non-yağ komponentleri bulunan kitle izlendi.",
+                "Sarkom açısından şüpheli",
+                "Patolojik"
+              ]
+            ],
+            "rows": [
+              [
+                "Görüntüleme bulgusu",
+                "Derin yumuşak dokuda 12 cm, yağ içerikli, kalın septalı ve nodüler non-yağ komponentleri bulunan kitle izlendi.",
+                "Sarkom açısından şüpheli",
+                "Patolojik"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Görüntüleme bulgusu",
+              "Derin yumuşak dokuda 12 cm, yağ içerikli, kalın septalı ve nodüler non-yağ komponentleri bulunan kitle izlendi.",
+              "Sarkom açısından şüpheli",
+              "Patolojik"
+            ]
+          ],
+          "postAnswerExplanation": "Derin yerleşim, büyük boyut, kalın septa ve nodüler solid alanlar basit lipomdan çok iyi diferansiye liposarkomu düşündürür.",
+          "interpretation": "Derin yerleşim, büyük boyut, kalın septa ve nodüler solid alanlar basit lipomdan çok iyi diferansiye liposarkomu düşündürür.",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "explanationAfterAnswer": "Derin yerleşim, büyük boyut, kalın septa ve nodüler solid alanlar basit lipomdan çok iyi diferansiye liposarkomu düşündürür."
+        },
+        {
+          "id": "v186-new-236-derin-yumusak-doku-kitlesi-histo",
+          "label": "Biyopsi histopatolojisi",
+          "title": "Biyopsi histopatolojisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Patoloji / histopatoloji",
+          "summary": "Lipoblast ve atipik stromal hücre varlığı, benign lipomdan ayrımda kritik histopatolojik bulgudur.",
+          "clinicalMeaning": "Lipoblast ve atipik stromal hücre varlığı, benign lipomdan ayrımda kritik histopatolojik bulgudur.",
+          "result": {
+            "title": "Biyopsi histopatolojisi",
+            "summary": "Lipoblast ve atipik stromal hücre varlığı, benign lipomdan ayrımda kritik histopatolojik bulgudur.",
+            "interpretation": "Lipoblast ve atipik stromal hücre varlığı, benign lipomdan ayrımda kritik histopatolojik bulgudur.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Matür yağ dokusu içinde atipik hiperkromatik stromal hücreler ve vakuollü sitoplazmalı lipoblastlar izlendi.",
+                "İyi diferansiye liposarkom lehine",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Matür yağ dokusu içinde atipik hiperkromatik stromal hücreler ve vakuollü sitoplazmalı lipoblastlar izlendi.",
+                "İyi diferansiye liposarkom lehine",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Matür yağ dokusu içinde atipik hiperkromatik stromal hücreler ve vakuollü sitoplazmalı lipoblastlar izlendi.",
+              "İyi diferansiye liposarkom lehine",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Lipoblast ve atipik stromal hücre varlığı, benign lipomdan ayrımda kritik histopatolojik bulgudur.",
+          "interpretation": "Lipoblast ve atipik stromal hücre varlığı, benign lipomdan ayrımda kritik histopatolojik bulgudur.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Lipoblast ve atipik stromal hücre varlığı, benign lipomdan ayrımda kritik histopatolojik bulgudur."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Derin ve büyük yağ içerikli kitle + kalın septa + lipoblast/atipik stromal hücre liposarkom lehinedir; yüzeyel küçük lipomdan ayrılır.",
+      "histopathologyChanged": true
+    },
+    {
+      "caseId": "v187-new-251-boyunda-agrisiz-lenf-nodu",
+      "title": "Boyunda ağrısız lenf nodu",
+      "histologyInvestigations": [
+        {
+          "id": "v187-new-251-boyunda-agrisiz-lenf-nodu-hl2-bx",
+          "label": "Eksizyonel lenf nodu biyopsisi",
+          "title": "Eksizyonel lenf nodu biyopsisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "",
+          "summary": "Reed-Sternberg hücresi ve reaktif inflamatuvar zemin klasik Hodgkin lenfomanın ayırt edici mikroskobik paternidir.",
+          "clinicalMeaning": "Reed-Sternberg hücresi ve reaktif inflamatuvar zemin klasik Hodgkin lenfomanın ayırt edici mikroskobik paternidir.",
+          "result": {
+            "title": "Eksizyonel lenf nodu biyopsisi",
+            "summary": "Reed-Sternberg hücresi ve reaktif inflamatuvar zemin klasik Hodgkin lenfomanın ayırt edici mikroskobik paternidir.",
+            "interpretation": "Reed-Sternberg hücresi ve reaktif inflamatuvar zemin klasik Hodgkin lenfomanın ayırt edici mikroskobik paternidir.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Karışık inflamatuvar zemin içinde geniş eozinofilik sitoplazmalı, çift çekirdekli belirgin nükleollü Reed-Sternberg hücreleri izlendi.",
+                "Klasik Hodgkin lenfoma lehine",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Karışık inflamatuvar zemin içinde geniş eozinofilik sitoplazmalı, çift çekirdekli belirgin nükleollü Reed-Sternberg hücreleri izlendi.",
+                "Klasik Hodgkin lenfoma lehine",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Karışık inflamatuvar zemin içinde geniş eozinofilik sitoplazmalı, çift çekirdekli belirgin nükleollü Reed-Sternberg hücreleri izlendi.",
+              "Klasik Hodgkin lenfoma lehine",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Reed-Sternberg hücresi ve reaktif inflamatuvar zemin klasik Hodgkin lenfomanın ayırt edici mikroskobik paternidir.",
+          "interpretation": "Reed-Sternberg hücresi ve reaktif inflamatuvar zemin klasik Hodgkin lenfomanın ayırt edici mikroskobik paternidir.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Reed-Sternberg hücresi ve reaktif inflamatuvar zemin klasik Hodgkin lenfomanın ayırt edici mikroskobik paternidir."
+        },
+        {
+          "id": "v187-new-251-boyunda-agrisiz-lenf-nodu-hl2-ihc",
+          "label": "İmmünohistokimya",
+          "title": "İmmünohistokimya",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "",
+          "summary": "CD15 ve CD30 pozitifliği, uygun morfolojiyle birlikte klasik Hodgkin lenfomayı destekler.",
+          "clinicalMeaning": "CD15 ve CD30 pozitifliği, uygun morfolojiyle birlikte klasik Hodgkin lenfomayı destekler.",
+          "result": {
+            "title": "İmmünohistokimya",
+            "summary": "CD15 ve CD30 pozitifliği, uygun morfolojiyle birlikte klasik Hodgkin lenfomayı destekler.",
+            "interpretation": "CD15 ve CD30 pozitifliği, uygun morfolojiyle birlikte klasik Hodgkin lenfomayı destekler.",
+            "values": [
+              [
+                "CD15/CD30",
+                "Reed-Sternberg hücrelerinde pozitif",
+                "Klasik Hodgkin lenfoma marker paterni",
+                "Pozitif"
+              ]
+            ],
+            "rows": [
+              [
+                "CD15/CD30",
+                "Reed-Sternberg hücrelerinde pozitif",
+                "Klasik Hodgkin lenfoma marker paterni",
+                "Pozitif"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "CD15/CD30",
+              "Reed-Sternberg hücrelerinde pozitif",
+              "Klasik Hodgkin lenfoma marker paterni",
+              "Pozitif"
+            ]
+          ],
+          "postAnswerExplanation": "CD15 ve CD30 pozitifliği, uygun morfolojiyle birlikte klasik Hodgkin lenfomayı destekler.",
+          "interpretation": "CD15 ve CD30 pozitifliği, uygun morfolojiyle birlikte klasik Hodgkin lenfomayı destekler.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "CD15 ve CD30 pozitifliği, uygun morfolojiyle birlikte klasik Hodgkin lenfomayı destekler."
+        }
+      ],
+      "ihcOrMolecularChanged": true,
+      "mechanismNote": "Hodgkin lenfoma: ağrısız lenf nodu + B semptomları + Reed-Sternberg hücresi."
+    },
+    {
+      "caseId": "v188-new-266-gogus-agrisi-sonrasi-miyokard-hasari",
+      "title": "Göğüs ağrısı sonrası miyokard hasarı",
+      "histologyInvestigations": [],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Kalp, böbrek ve dalak infarktlarında temel patern koagülasyon nekrozudur; beyin istisna olarak likefaksiyon nekrozu yapar."
+    },
+    {
+      "caseId": "v189-new-286-kronik-inflamasyon-sonrasi-proteinuri",
+      "title": "Kronik inflamasyon sonrası proteinüri",
+      "histologyInvestigations": [
+        {
+          "id": "v189-new-286-kronik-inflamasyon-sonrasi-proteinuri-amyloid",
+          "label": "Böbrek biyopsisi özel boyama",
+          "title": "Böbrek biyopsisi özel boyama",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Histokimya",
+          "summary": "Kongo kırmızısı pozitifliği ve elma yeşili çift kırılma amiloid fibrillerinin beta-pleated sheet yapısına bağlıdır.",
+          "clinicalMeaning": "Kongo kırmızısı pozitifliği ve elma yeşili çift kırılma amiloid fibrillerinin beta-pleated sheet yapısına bağlıdır.",
+          "result": {
+            "title": "Böbrek biyopsisi özel boyama",
+            "summary": "Kongo kırmızısı pozitifliği ve elma yeşili çift kırılma amiloid fibrillerinin beta-pleated sheet yapısına bağlıdır.",
+            "interpretation": "Kongo kırmızısı pozitifliği ve elma yeşili çift kırılma amiloid fibrillerinin beta-pleated sheet yapısına bağlıdır.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Glomerüllerde amorf eozinofilik ekstrasellüler birikimler izlendi; Kongo kırmızısı ile polarize ışıkta elma yeşili çift kırılma gösterdi.",
+                "Amiloid için karakteristik",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Glomerüllerde amorf eozinofilik ekstrasellüler birikimler izlendi; Kongo kırmızısı ile polarize ışıkta elma yeşili çift kırılma gösterdi.",
+                "Amiloid için karakteristik",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Glomerüllerde amorf eozinofilik ekstrasellüler birikimler izlendi; Kongo kırmızısı ile polarize ışıkta elma yeşili çift kırılma gösterdi.",
+              "Amiloid için karakteristik",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Kongo kırmızısı pozitifliği ve elma yeşili çift kırılma amiloid fibrillerinin beta-pleated sheet yapısına bağlıdır.",
+          "interpretation": "Kongo kırmızısı pozitifliği ve elma yeşili çift kırılma amiloid fibrillerinin beta-pleated sheet yapısına bağlıdır.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Kongo kırmızısı pozitifliği ve elma yeşili çift kırılma amiloid fibrillerinin beta-pleated sheet yapısına bağlıdır."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "AA amiloidozda patoloji imzası Kongo kırmızısı pozitifliği ve elma yeşili çift kırılmadır."
+    },
+    {
+      "caseId": "v189-new-287-uzun-suren-gastrit-sonrasi-metaplazi",
+      "title": "Uzun süren gastrit sonrası metaplazi",
+      "histologyInvestigations": [
+        {
+          "id": "v189-new-287-uzun-suren-gastrit-sonrasi-metaplazi-gastric-histo",
+          "label": "Mide biyopsisi",
+          "title": "Mide biyopsisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "",
+          "summary": "H. pylori ilişkili kronik aktif gastrit, atrofi ve intestinal metaplazi intestinal tip mide adenokarsinomu için klasik prekanseröz sekansı oluşturur.",
+          "clinicalMeaning": "H. pylori ilişkili kronik aktif gastrit, atrofi ve intestinal metaplazi intestinal tip mide adenokarsinomu için klasik prekanseröz sekansı oluşturur.",
+          "result": {
+            "title": "Mide biyopsisi",
+            "summary": "H. pylori ilişkili kronik aktif gastrit, atrofi ve intestinal metaplazi intestinal tip mide adenokarsinomu için klasik prekanseröz sekansı oluşturur.",
+            "interpretation": "H. pylori ilişkili kronik aktif gastrit, atrofi ve intestinal metaplazi intestinal tip mide adenokarsinomu için klasik prekanseröz sekansı oluşturur.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Kronik aktif gastrit, glandüler atrofi ve goblet hücreli intestinal metaplazi izlendi; Helicobacter pylori ile uyumlu kıvrımlı bakteriyel yapılar görüldü.",
+                "Prekanseröz intestinal metaplazi zemini",
+                "Patolojik"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Kronik aktif gastrit, glandüler atrofi ve goblet hücreli intestinal metaplazi izlendi; Helicobacter pylori ile uyumlu kıvrımlı bakteriyel yapılar görüldü.",
+                "Prekanseröz intestinal metaplazi zemini",
+                "Patolojik"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Kronik aktif gastrit, glandüler atrofi ve goblet hücreli intestinal metaplazi izlendi; Helicobacter pylori ile uyumlu kıvrımlı bakteriyel yapılar görüldü.",
+              "Prekanseröz intestinal metaplazi zemini",
+              "Patolojik"
+            ]
+          ],
+          "postAnswerExplanation": "H. pylori ilişkili kronik aktif gastrit, atrofi ve intestinal metaplazi intestinal tip mide adenokarsinomu için klasik prekanseröz sekansı oluşturur.",
+          "interpretation": "H. pylori ilişkili kronik aktif gastrit, atrofi ve intestinal metaplazi intestinal tip mide adenokarsinomu için klasik prekanseröz sekansı oluşturur.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "H. pylori ilişkili kronik aktif gastrit, atrofi ve intestinal metaplazi intestinal tip mide adenokarsinomu için klasik prekanseröz sekansı oluşturur."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "H. pylori -> kronik aktif gastrit -> atrofi -> intestinal metaplazi -> displazi -> intestinal tip mide adenokarsinomu."
+    },
+    {
+      "caseId": "v189-new-288-sigara-icen-hastada-hiponatremi",
+      "title": "Sigara içen hastada hiponatremi",
+      "histologyInvestigations": [
+        {
+          "id": "v189-new-288-sigara-icen-hastada-hiponatremi-sclc2-bx",
+          "label": "Bronkoskopik biyopsi",
+          "title": "Bronkoskopik biyopsi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "",
+          "summary": "Küçük hücreli nöroendokrin tümörlerde ektopik ADH salgısı SIADH ve hiponatremi oluşturabilir.",
+          "clinicalMeaning": "Küçük hücreli nöroendokrin tümörlerde ektopik ADH salgısı SIADH ve hiponatremi oluşturabilir.",
+          "result": {
+            "title": "Bronkoskopik biyopsi",
+            "summary": "Küçük hücreli nöroendokrin tümörlerde ektopik ADH salgısı SIADH ve hiponatremi oluşturabilir.",
+            "interpretation": "Küçük hücreli nöroendokrin tümörlerde ektopik ADH salgısı SIADH ve hiponatremi oluşturabilir.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Dar sitoplazmalı küçük hiperkromatik hücreler, nükleer molding, yaygın nekroz ve yüksek mitotik aktivite gösteren nöroendokrin tümör izlendi.",
+                "Küçük hücreli akciğer karsinomu lehine",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Dar sitoplazmalı küçük hiperkromatik hücreler, nükleer molding, yaygın nekroz ve yüksek mitotik aktivite gösteren nöroendokrin tümör izlendi.",
+                "Küçük hücreli akciğer karsinomu lehine",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Dar sitoplazmalı küçük hiperkromatik hücreler, nükleer molding, yaygın nekroz ve yüksek mitotik aktivite gösteren nöroendokrin tümör izlendi.",
+              "Küçük hücreli akciğer karsinomu lehine",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Küçük hücreli nöroendokrin tümörlerde ektopik ADH salgısı SIADH ve hiponatremi oluşturabilir.",
+          "interpretation": "Küçük hücreli nöroendokrin tümörlerde ektopik ADH salgısı SIADH ve hiponatremi oluşturabilir.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Küçük hücreli nöroendokrin tümörlerde ektopik ADH salgısı SIADH ve hiponatremi oluşturabilir."
+        },
+        {
+          "id": "v189-new-288-sigara-icen-hastada-hiponatremi-sclc2-ihc",
+          "label": "İmmünohistokimya",
+          "title": "İmmünohistokimya",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "",
+          "summary": "Nöroendokrin marker pozitifliği ve yüksek Ki-67 küçük hücreli karsinom biyolojisini destekler.",
+          "clinicalMeaning": "Nöroendokrin marker pozitifliği ve yüksek Ki-67 küçük hücreli karsinom biyolojisini destekler.",
+          "result": {
+            "title": "İmmünohistokimya",
+            "summary": "Nöroendokrin marker pozitifliği ve yüksek Ki-67 küçük hücreli karsinom biyolojisini destekler.",
+            "interpretation": "Nöroendokrin marker pozitifliği ve yüksek Ki-67 küçük hücreli karsinom biyolojisini destekler.",
+            "values": [
+              [
+                "Synaptophysin/CD56",
+                "Pozitif",
+                "Nöroendokrin diferansiyasyon",
+                "Pozitif"
+              ],
+              [
+                "Ki-67",
+                "Çok yüksek",
+                "Agresif proliferasyon",
+                "Yüksek"
+              ]
+            ],
+            "rows": [
+              [
+                "Synaptophysin/CD56",
+                "Pozitif",
+                "Nöroendokrin diferansiyasyon",
+                "Pozitif"
+              ],
+              [
+                "Ki-67",
+                "Çok yüksek",
+                "Agresif proliferasyon",
+                "Yüksek"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Synaptophysin/CD56",
+              "Pozitif",
+              "Nöroendokrin diferansiyasyon",
+              "Pozitif"
+            ],
+            [
+              "Ki-67",
+              "Çok yüksek",
+              "Agresif proliferasyon",
+              "Yüksek"
+            ]
+          ],
+          "postAnswerExplanation": "Nöroendokrin marker pozitifliği ve yüksek Ki-67 küçük hücreli karsinom biyolojisini destekler.",
+          "interpretation": "Nöroendokrin marker pozitifliği ve yüksek Ki-67 küçük hücreli karsinom biyolojisini destekler.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Nöroendokrin marker pozitifliği ve yüksek Ki-67 küçük hücreli karsinom biyolojisini destekler."
+        }
+      ],
+      "ihcOrMolecularChanged": true,
+      "mechanismNote": "Küçük hücreli akciğer karsinomu: SIADH/ektopik ADH ve ektopik ACTH en klasik paraneoplastik ilişkiler arasındadır."
+    },
+    {
+      "caseId": "v194-new-321-kanli-ishal-ve-rektumdan-baslayan-tutulum",
+      "title": "Kanlı ishal ve rektumdan başlayan tutulum",
+      "histologyInvestigations": [
+        {
+          "id": "v194-new-321-kanli-ishal-ve-rektumdan-baslayan-tutulum-uc-histo",
+          "label": "Kolon biyopsisi",
+          "title": "Kolon biyopsisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "",
+          "summary": "Kript apseleri ve mukozaya sınırlı kronik aktif inflamasyon ülseratif kolit histolojisini destekler.",
+          "clinicalMeaning": "Kript apseleri ve mukozaya sınırlı kronik aktif inflamasyon ülseratif kolit histolojisini destekler.",
+          "result": {
+            "title": "Kolon biyopsisi",
+            "summary": "Kript apseleri ve mukozaya sınırlı kronik aktif inflamasyon ülseratif kolit histolojisini destekler.",
+            "interpretation": "Kript apseleri ve mukozaya sınırlı kronik aktif inflamasyon ülseratif kolit histolojisini destekler.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Mukozaya sınırlı kronik aktif inflamasyon, kript mimarisinde distorsiyon ve kript apseleri izlendi.",
+                "Ülseratif kolit lehine",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Mukozaya sınırlı kronik aktif inflamasyon, kript mimarisinde distorsiyon ve kript apseleri izlendi.",
+                "Ülseratif kolit lehine",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Mukozaya sınırlı kronik aktif inflamasyon, kript mimarisinde distorsiyon ve kript apseleri izlendi.",
+              "Ülseratif kolit lehine",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Kript apseleri ve mukozaya sınırlı kronik aktif inflamasyon ülseratif kolit histolojisini destekler.",
+          "interpretation": "Kript apseleri ve mukozaya sınırlı kronik aktif inflamasyon ülseratif kolit histolojisini destekler.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Kript apseleri ve mukozaya sınırlı kronik aktif inflamasyon ülseratif kolit histolojisini destekler."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Ülseratif kolit: rektumdan başlar, kesintisiz ve mukozal tutulum yapar; Crohn transmural ve skip lezyonludur."
+    },
+    {
+      "caseId": "v194-new-322-farenjit-sonrasi-eklem-agrisi-ve-kardit",
+      "title": "Farenjit sonrası eklem ağrısı ve kardit",
+      "histologyInvestigations": [
+        {
+          "id": "v194-new-322-farenjit-sonrasi-eklem-agrisi-ve-kardit-aschoff",
+          "label": "Endomiyokardiyal histoloji bilgisi",
+          "title": "Endomiyokardiyal histoloji bilgisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "",
+          "summary": "Aschoff cisimciği akut romatizmal karditin karakteristik histopatolojik lezyonudur; Anitschkow hücreleri tırtıklı/katerpil nükleuslarıyla tanınır.",
+          "clinicalMeaning": "Aschoff cisimciği akut romatizmal karditin karakteristik histopatolojik lezyonudur; Anitschkow hücreleri tırtıklı/katerpil nükleuslarıyla tanınır.",
+          "result": {
+            "title": "Endomiyokardiyal histoloji bilgisi",
+            "summary": "Aschoff cisimciği akut romatizmal karditin karakteristik histopatolojik lezyonudur; Anitschkow hücreleri tırtıklı/katerpil nükleuslarıyla tanınır.",
+            "interpretation": "Aschoff cisimciği akut romatizmal karditin karakteristik histopatolojik lezyonudur; Anitschkow hücreleri tırtıklı/katerpil nükleuslarıyla tanınır.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Fibrinoid nekroz odağı çevresinde lenfosit, plazma hücresi ve Anitschkow hücreleri içeren Aschoff cisimcikleri tanımlandı.",
+                "Akut romatizmal kardit için karakteristik",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Fibrinoid nekroz odağı çevresinde lenfosit, plazma hücresi ve Anitschkow hücreleri içeren Aschoff cisimcikleri tanımlandı.",
+                "Akut romatizmal kardit için karakteristik",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Fibrinoid nekroz odağı çevresinde lenfosit, plazma hücresi ve Anitschkow hücreleri içeren Aschoff cisimcikleri tanımlandı.",
+              "Akut romatizmal kardit için karakteristik",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Aschoff cisimciği akut romatizmal karditin karakteristik histopatolojik lezyonudur; Anitschkow hücreleri tırtıklı/katerpil nükleuslarıyla tanınır.",
+          "interpretation": "Aschoff cisimciği akut romatizmal karditin karakteristik histopatolojik lezyonudur; Anitschkow hücreleri tırtıklı/katerpil nükleuslarıyla tanınır.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Aschoff cisimciği akut romatizmal karditin karakteristik histopatolojik lezyonudur; Anitschkow hücreleri tırtıklı/katerpil nükleuslarıyla tanınır."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Akut romatizmal ateş karditi: Aschoff cisimciği + Anitschkow hücreleri."
+    },
+    {
+      "caseId": "v194-new-323-ergende-diz-cevresinde-agrili-kitle",
+      "title": "Ergende diz çevresinde ağrılı kitle",
+      "histologyInvestigations": [
+        {
+          "id": "v194-new-323-ergende-diz-cevresinde-agrili-kitle-osteo-histo",
+          "label": "Biyopsi histopatolojisi",
+          "title": "Biyopsi histopatolojisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "",
+          "summary": "Malign hücreler tarafından osteoid üretimi osteosarkom tanısının temel histopatolojik koşuludur.",
+          "clinicalMeaning": "Malign hücreler tarafından osteoid üretimi osteosarkom tanısının temel histopatolojik koşuludur.",
+          "result": {
+            "title": "Biyopsi histopatolojisi",
+            "summary": "Malign hücreler tarafından osteoid üretimi osteosarkom tanısının temel histopatolojik koşuludur.",
+            "interpretation": "Malign hücreler tarafından osteoid üretimi osteosarkom tanısının temel histopatolojik koşuludur.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Pleomorfik malign tümör hücreleri tarafından doğrudan üretilen düzensiz osteoid matriks izlendi.",
+                "Osteosarkom için tanısal",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Pleomorfik malign tümör hücreleri tarafından doğrudan üretilen düzensiz osteoid matriks izlendi.",
+                "Osteosarkom için tanısal",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Pleomorfik malign tümör hücreleri tarafından doğrudan üretilen düzensiz osteoid matriks izlendi.",
+              "Osteosarkom için tanısal",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Malign hücreler tarafından osteoid üretimi osteosarkom tanısının temel histopatolojik koşuludur.",
+          "interpretation": "Malign hücreler tarafından osteoid üretimi osteosarkom tanısının temel histopatolojik koşuludur.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Malign hücreler tarafından osteoid üretimi osteosarkom tanısının temel histopatolojik koşuludur."
+        }
+      ],
+      "ihcOrMolecularChanged": false,
+      "mechanismNote": "Osteosarkom tanı anahtarı malign osteoid üretimidir; ergen metafizi, diz çevresi ve sunburst/Codman bulguları tipiktir."
+    },
+    {
+      "caseId": "v195-new-349-eriskinde-nefrotik-proteinuri",
+      "title": "Erişkinde nefrotik proteinüri",
+      "histologyInvestigations": [
+        {
+          "id": "v195-new-349-eriskinde-nefrotik-proteinuri-biopsy",
+          "label": "Böbrek biyopsisi",
+          "title": "Böbrek biyopsisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Patoloji / özel boyama",
+          "summary": "Subepitelyal immün komplekslerin çevresinde gelişen yeni bazal membran materyali spike görünümünü oluşturur.",
+          "clinicalMeaning": "Subepitelyal immün komplekslerin çevresinde gelişen yeni bazal membran materyali spike görünümünü oluşturur.",
+          "result": {
+            "title": "Böbrek biyopsisi",
+            "summary": "Subepitelyal immün komplekslerin çevresinde gelişen yeni bazal membran materyali spike görünümünü oluşturur.",
+            "interpretation": "Subepitelyal immün komplekslerin çevresinde gelişen yeni bazal membran materyali spike görünümünü oluşturur.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Glomerüler bazal membranda yaygın kalınlaşma ve gümüş boyada spike görünümü izlendi.",
+                "Membranöz nefropati için karakteristik",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Glomerüler bazal membranda yaygın kalınlaşma ve gümüş boyada spike görünümü izlendi.",
+                "Membranöz nefropati için karakteristik",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Glomerüler bazal membranda yaygın kalınlaşma ve gümüş boyada spike görünümü izlendi.",
+              "Membranöz nefropati için karakteristik",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Subepitelyal immün komplekslerin çevresinde gelişen yeni bazal membran materyali spike görünümünü oluşturur.",
+          "interpretation": "Subepitelyal immün komplekslerin çevresinde gelişen yeni bazal membran materyali spike görünümünü oluşturur.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Subepitelyal immün komplekslerin çevresinde gelişen yeni bazal membran materyali spike görünümünü oluşturur."
+        },
+        {
+          "id": "v195-new-349-eriskinde-nefrotik-proteinuri-if",
+          "label": "İmmünfloresan",
+          "title": "İmmünfloresan",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "İmmünfloresan",
+          "summary": "Granüler kapiller duvar IgG-C3 birikimi membranöz nefropatiyi anti-GBM hastalığındaki lineer birikimden ayırır.",
+          "clinicalMeaning": "Granüler kapiller duvar IgG-C3 birikimi membranöz nefropatiyi anti-GBM hastalığındaki lineer birikimden ayırır.",
+          "result": {
+            "title": "İmmünfloresan",
+            "summary": "Granüler kapiller duvar IgG-C3 birikimi membranöz nefropatiyi anti-GBM hastalığındaki lineer birikimden ayırır.",
+            "interpretation": "Granüler kapiller duvar IgG-C3 birikimi membranöz nefropatiyi anti-GBM hastalığındaki lineer birikimden ayırır.",
+            "values": [
+              [
+                "İmmünfloresan bulgu",
+                "Kapiller duvar boyunca granüler IgG ve C3 birikimi izlendi.",
+                "İmmün kompleks aracılı membranöz patern",
+                "Pozitif"
+              ]
+            ],
+            "rows": [
+              [
+                "İmmünfloresan bulgu",
+                "Kapiller duvar boyunca granüler IgG ve C3 birikimi izlendi.",
+                "İmmün kompleks aracılı membranöz patern",
+                "Pozitif"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "İmmünfloresan bulgu",
+              "Kapiller duvar boyunca granüler IgG ve C3 birikimi izlendi.",
+              "İmmün kompleks aracılı membranöz patern",
+              "Pozitif"
+            ]
+          ],
+          "postAnswerExplanation": "Granüler kapiller duvar IgG-C3 birikimi membranöz nefropatiyi anti-GBM hastalığındaki lineer birikimden ayırır.",
+          "interpretation": "Granüler kapiller duvar IgG-C3 birikimi membranöz nefropatiyi anti-GBM hastalığındaki lineer birikimden ayırır.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Granüler kapiller duvar IgG-C3 birikimi membranöz nefropatiyi anti-GBM hastalığındaki lineer birikimden ayırır."
+        }
+      ],
+      "ihcOrMolecularChanged": true,
+      "mechanismNote": "Membranöz nefropatide antikor aracılı podosit hasarı proteinüriye yol açar; histoloji, IF ve EM bulgularının birlikte yorumlanması tanıyı güçlendirir."
+    },
+    {
+      "caseId": "v195-new-350-anormal-servikal-tarama-sonucu",
+      "title": "Anormal servikal tarama sonucu",
+      "histologyInvestigations": [
+        {
+          "id": "v195-new-350-anormal-servikal-tarama-sonucu-hpv",
+          "label": "HPV DNA testi",
+          "title": "HPV DNA testi",
+          "type": "molecular",
+          "priority": "essential",
+          "subtype": "Moleküler test",
+          "summary": "Yüksek riskli HPV pozitifliği, servikal skuamöz epitelde koilositik sitopatik değişiklik ve displazi riskini destekler.",
+          "clinicalMeaning": "Yüksek riskli HPV pozitifliği, servikal skuamöz epitelde koilositik sitopatik değişiklik ve displazi riskini destekler.",
+          "result": {
+            "title": "HPV DNA testi",
+            "summary": "Yüksek riskli HPV pozitifliği, servikal skuamöz epitelde koilositik sitopatik değişiklik ve displazi riskini destekler.",
+            "interpretation": "Yüksek riskli HPV pozitifliği, servikal skuamöz epitelde koilositik sitopatik değişiklik ve displazi riskini destekler.",
+            "values": [
+              [
+                "Yüksek riskli HPV DNA",
+                "Pozitif",
+                "Negatif beklenir",
+                "Pozitif"
+              ]
+            ],
+            "rows": [
+              [
+                "Yüksek riskli HPV DNA",
+                "Pozitif",
+                "Negatif beklenir",
+                "Pozitif"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Yüksek riskli HPV DNA",
+              "Pozitif",
+              "Negatif beklenir",
+              "Pozitif"
+            ]
+          ],
+          "postAnswerExplanation": "Yüksek riskli HPV pozitifliği, servikal skuamöz epitelde koilositik sitopatik değişiklik ve displazi riskini destekler.",
+          "interpretation": "Yüksek riskli HPV pozitifliği, servikal skuamöz epitelde koilositik sitopatik değişiklik ve displazi riskini destekler.",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "explanationAfterAnswer": "Yüksek riskli HPV pozitifliği, servikal skuamöz epitelde koilositik sitopatik değişiklik ve displazi riskini destekler."
+        },
+        {
+          "id": "v195-new-350-anormal-servikal-tarama-sonucu-pap",
+          "label": "Servikal sitoloji",
+          "title": "Servikal sitoloji",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "",
+          "summary": "Koilositoz HPV ilişkili sitopatik etkiyi gösterir; perinükleer halo tek başına değil nükleer atipiyle birlikte anlamlıdır.",
+          "clinicalMeaning": "Koilositoz HPV ilişkili sitopatik etkiyi gösterir; perinükleer halo tek başına değil nükleer atipiyle birlikte anlamlıdır.",
+          "result": {
+            "title": "Servikal sitoloji",
+            "summary": "Koilositoz HPV ilişkili sitopatik etkiyi gösterir; perinükleer halo tek başına değil nükleer atipiyle birlikte anlamlıdır.",
+            "interpretation": "Koilositoz HPV ilişkili sitopatik etkiyi gösterir; perinükleer halo tek başına değil nükleer atipiyle birlikte anlamlıdır.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Perinükleer halo, düzensiz hiperkromatik çekirdek ve nükleer kontur düzensizliği içeren skuamöz hücreler izlendi.",
+                "Koilositoz için karakteristik",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Perinükleer halo, düzensiz hiperkromatik çekirdek ve nükleer kontur düzensizliği içeren skuamöz hücreler izlendi.",
+                "Koilositoz için karakteristik",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Perinükleer halo, düzensiz hiperkromatik çekirdek ve nükleer kontur düzensizliği içeren skuamöz hücreler izlendi.",
+              "Koilositoz için karakteristik",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Koilositoz HPV ilişkili sitopatik etkiyi gösterir; perinükleer halo tek başına değil nükleer atipiyle birlikte anlamlıdır.",
+          "interpretation": "Koilositoz HPV ilişkili sitopatik etkiyi gösterir; perinükleer halo tek başına değil nükleer atipiyle birlikte anlamlıdır.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Koilositoz HPV ilişkili sitopatik etkiyi gösterir; perinükleer halo tek başına değil nükleer atipiyle birlikte anlamlıdır."
+        }
+      ],
+      "ihcOrMolecularChanged": true,
+      "mechanismNote": "Koilositoz HPV’nin servikal skuamöz epitelde oluşturduğu perinükleer halo + hiperkromatik düzensiz çekirdek paternidir."
+    },
+    {
+      "caseId": "v195-new-351-postmenopozal-kanama-ve-over-kitlesi",
+      "title": "Postmenopozal kanama ve over kitlesi",
+      "histologyInvestigations": [
+        {
+          "id": "v195-new-351-postmenopozal-kanama-ve-over-kitlesi-granulosa-histo",
+          "label": "Tümör histopatolojisi",
+          "title": "Tümör histopatolojisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "",
+          "summary": "Call-Exner cisimcikleri ve longitudinal nükleer oluklu kahve çekirdeği nükleuslar granüloza hücreli tümörün klasik morfolojik ipuçlarıdır.",
+          "clinicalMeaning": "Call-Exner cisimcikleri ve longitudinal nükleer oluklu kahve çekirdeği nükleuslar granüloza hücreli tümörün klasik morfolojik ipuçlarıdır.",
+          "result": {
+            "title": "Tümör histopatolojisi",
+            "summary": "Call-Exner cisimcikleri ve longitudinal nükleer oluklu kahve çekirdeği nükleuslar granüloza hücreli tümörün klasik morfolojik ipuçlarıdır.",
+            "interpretation": "Call-Exner cisimcikleri ve longitudinal nükleer oluklu kahve çekirdeği nükleuslar granüloza hücreli tümörün klasik morfolojik ipuçlarıdır.",
+            "values": [
+              [
+                "Mikroskobik bulgu",
+                "Kahve çekirdeği görünümlü nükleuslara sahip tümör hücreleri ve eozinofilik materyal içeren Call-Exner cisimcikleri izlendi.",
+                "Granüloza hücreli tümör için karakteristik",
+                "Tanısal"
+              ]
+            ],
+            "rows": [
+              [
+                "Mikroskobik bulgu",
+                "Kahve çekirdeği görünümlü nükleuslara sahip tümör hücreleri ve eozinofilik materyal içeren Call-Exner cisimcikleri izlendi.",
+                "Granüloza hücreli tümör için karakteristik",
+                "Tanısal"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Mikroskobik bulgu",
+              "Kahve çekirdeği görünümlü nükleuslara sahip tümör hücreleri ve eozinofilik materyal içeren Call-Exner cisimcikleri izlendi.",
+              "Granüloza hücreli tümör için karakteristik",
+              "Tanısal"
+            ]
+          ],
+          "postAnswerExplanation": "Call-Exner cisimcikleri ve longitudinal nükleer oluklu kahve çekirdeği nükleuslar granüloza hücreli tümörün klasik morfolojik ipuçlarıdır.",
+          "interpretation": "Call-Exner cisimcikleri ve longitudinal nükleer oluklu kahve çekirdeği nükleuslar granüloza hücreli tümörün klasik morfolojik ipuçlarıdır.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "Call-Exner cisimcikleri ve longitudinal nükleer oluklu kahve çekirdeği nükleuslar granüloza hücreli tümörün klasik morfolojik ipuçlarıdır."
+        },
+        {
+          "id": "v195-new-351-postmenopozal-kanama-ve-over-kitlesi-granulosa-ihc",
+          "label": "İmmünohistokimya",
+          "title": "İmmünohistokimya",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "",
+          "summary": "İnhibin ve calretinin pozitifliği, uygun morfolojiyle birlikte granüloza hücreli tümörü destekler.",
+          "clinicalMeaning": "İnhibin ve calretinin pozitifliği, uygun morfolojiyle birlikte granüloza hücreli tümörü destekler.",
+          "result": {
+            "title": "İmmünohistokimya",
+            "summary": "İnhibin ve calretinin pozitifliği, uygun morfolojiyle birlikte granüloza hücreli tümörü destekler.",
+            "interpretation": "İnhibin ve calretinin pozitifliği, uygun morfolojiyle birlikte granüloza hücreli tümörü destekler.",
+            "values": [
+              [
+                "İnhibin / calretinin",
+                "Pozitif",
+                "Seks kord-stromal diferansiyasyonu destekler",
+                "Pozitif"
+              ]
+            ],
+            "rows": [
+              [
+                "İnhibin / calretinin",
+                "Pozitif",
+                "Seks kord-stromal diferansiyasyonu destekler",
+                "Pozitif"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "İnhibin / calretinin",
+              "Pozitif",
+              "Seks kord-stromal diferansiyasyonu destekler",
+              "Pozitif"
+            ]
+          ],
+          "postAnswerExplanation": "İnhibin ve calretinin pozitifliği, uygun morfolojiyle birlikte granüloza hücreli tümörü destekler.",
+          "interpretation": "İnhibin ve calretinin pozitifliği, uygun morfolojiyle birlikte granüloza hücreli tümörü destekler.",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "explanationAfterAnswer": "İnhibin ve calretinin pozitifliği, uygun morfolojiyle birlikte granüloza hücreli tümörü destekler."
+        }
+      ],
+      "ihcOrMolecularChanged": true,
+      "mechanismNote": "Granüloza hücreli tümör: östrojen etkisi + postmenopozal kanama + Call-Exner cisimcikleri + kahve çekirdeği nükleus."
+    }
+  ]
+}

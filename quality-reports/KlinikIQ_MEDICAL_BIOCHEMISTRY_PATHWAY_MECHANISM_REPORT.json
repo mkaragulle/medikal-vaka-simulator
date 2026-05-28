@@ -1,0 +1,722 @@
+[
+  {
+    "caseId": "v163-new-010-aclikla-belirginlesen-metabolik-tablo",
+    "title": "Açlıkla belirginleşen metabolik tablo",
+    "learningTarget": "Açlık hipoglisemisi olan bebekte glukoz-6-fosfataz eksikliğine bağlı glikojenoliz/glukoneogenez son basamak blokajını laboratuvar paterniyle tanıma.",
+    "coreKnowledge": "Glukoz-6-fosfataz eksikliğinde glikojenoliz ve glukoneogenez çalışsa bile son ürün serbest glukoz olarak kana verilemez; bu nedenle açlık hipoglisemisi laktik asidoz, hiperürisemi ve hiperlipidemiyle birliktedir.",
+    "examPearl": "Açlık hipoglisemisi + hepatomegali + laktat/ürik asit/trigliserid yüksekliği von Gierke hastalığını düşündürür; Pompe veya Cori hastalığı aynı biyokimyasal üçlüyü tipik olarak vermez.",
+    "evidenceChain": [
+      {
+        "text": "Beslenme araları uzadığında gelişen terleme ve nöbet benzeri ataklar ağır açlık hipoglisemisini düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Belirgin hepatomegali, karaciğerde glikojen/yağ birikimiyle giden glikojen depo hastalığı paternini destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Hipoglisemiyle birlikte laktat, ürik asit ve trigliserid yüksekliği glukoz-6-fosfataz basamağında blok olduğunu gösterir.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v168-new-054-tromboz-egilimi-olan-ergen",
+    "title": "Tromboz eğilimi olan ergen",
+    "learningTarget": "Homosistein ve metiyonin birlikte yüksekliğinden transsülfürasyon basamağı blokajını ve CBS eksikliğini çıkarma.",
+    "coreKnowledge": "Homosistinüride CBS eksikliği B6 bağımlı transsülfürasyon basamağını bozar; homosistein ve metiyonin yükselirken sistein azalabilir.",
+    "examPearl": "Homosistinüride aşağı yönlü lens subluksasyonu ve tromboz eğilimi beklenir; Marfan sendromunda homosistein/metiyonin yüksekliği beklenmez.",
+    "evidenceChain": [
+      {
+        "text": "Travma veya belirgin provokasyon olmadan derin ven trombozu geçirilmesi, homosistein yüksekliğine bağlı endotel hasarı ve hiperkoagülabiliteyi düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Lensin aşağı-yana subluksasyonu ve uzun-ince vücut yapısı, Marfan benzeri görünümle karışabilen homosistinüri için klasik klinik ipuçlarıdır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Metiyonin ve total homosisteinin birlikte yüksek bulunması, homosisteinin sistatiyonine dönüşmesini sağlayan CBS basamağında blok olduğunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v169-new-069-protein-alimi-sonrasi-ensefalopati",
+    "title": "Protein alımı sonrası ensefalopati",
+    "learningTarget": "Yenidoğanda protein alımıyla belirginleşen hiperammonemide orotik asit ve sitrülin paternini kullanarak OTC eksikliğini tanıma.",
+    "coreKnowledge": "OTC eksikliği X’e bağlı geçebilir; CPS I’den ayıran ana ipucu idrar orotik asit yüksekliğidir.",
+    "examPearl": "Hiperammonemi + yüksek orotik asit + düşük sitrülin = OTC eksikliği; hiperammonemi + normal/düşük orotik asit = CPS I veya NAGS eksikliği düşün.",
+    "evidenceChain": [
+      {
+        "text": "Proteinli beslenme arttıkça kusma ve letarjinin gelişmesi, amino azot yükünü detoksifiye edemeyen üre döngüsü defektini düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Plazma amonyağının çok yüksek, BUN değerinin düşük olması amonyağın üreye çevrilemediğini gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Yüksek idrar orotik asit ve düşük sitrülin, karbamoil fosfatın ornitinle birleşemediği OTC basamağında blok olduğunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v172-new-076-hiperurisemi-ve-davranissal-bulgular",
+    "title": "Hiperürisemi ve davranışsal bulgular",
+    "learningTarget": "Hiperürisemi, ürat kristalleri ve kendine zarar verme davranışından HGPRT eksikliğine bağlı pürin kurtarma bozukluğunu tanıma.",
+    "coreKnowledge": "HGPRT eksikliği pürin kurtarma yolunu bozar; PRPP artışı de novo pürin sentezini ve ürik asit üretimini artırır.",
+    "examPearl": "Lesch-Nyhan: erkek çocuk + hiperürisemi + kendini ısırma + distoni/spastisite = HGPRT eksikliği.",
+    "evidenceChain": [
+      {
+        "text": "Dudak ve parmak ısırma davranışı Lesch-Nyhan sendromu için ayırt edici nörodavranışsal ipucudur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Turuncu-kum benzeri ürat kristalleri ve serum ürik asit yüksekliği pürin yıkımının arttığını gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "HGPRT aktivitesinin düşük olması hipoksantin ve guaninin kurtarılamadığını ve de novo pürin sentezinin arttığını destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v173-new-088-norolojik-bulgular-ve-laktik-asidoz",
+    "title": "Nörolojik bulgular ve laktik asidoz",
+    "learningTarget": "Laktat ve alanin yüksekliğiyle giden nörolojik tabloda pirüvatın asetil-KoA’ya girişini sağlayan PDH kompleks defektini tanıma.",
+    "coreKnowledge": "PDH kompleksi TPP, lipoat, FAD, NAD+ ve CoA kullanır; eksiklikte pirüvat laktat ve alanine yönelir.",
+    "examPearl": "Laktik asidoz + alanin yüksekliği + nörolojik bulgu, pirüvat metabolizması kusurunu düşündürür; PDH eksikliğinde karbonhidrat yükü tabloyu kötüleştirir.",
+    "evidenceChain": [
+      {
+        "text": "Karbonhidrattan zengin beslenme sonrası hızlı soluma ve huzursuzluğun artması glikolizden gelen pirüvat yükünün metabolize edilemediğini düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Serum laktat ve plazma alaninin birlikte yüksek olması pirüvatın alternatif ürünlere yöneldiğini gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Pirüvat dehidrogenaz kompleks aktivitesinin düşük bulunması pirüvat-asetil-KoA dönüşüm basamağındaki defekti destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v174-new-095-aclik-sonrasi-hipoglisemik-atak",
+    "title": "Açlık sonrası hipoglisemik atak",
+    "learningTarget": "Açlık/enfeksiyon sonrası hipoketotik hipoglisemi ve orta zincirli açilkarnitin artışından MCAD eksikliğini tanıma.",
+    "coreKnowledge": "MCAD eksikliğinde açlıkta yağ asitlerinden enerji ve keton üretimi yapılamaz; hipoketotik hipoglisemi tipiktir.",
+    "examPearl": "Hipoglisemi + düşük keton + orta zincirli açilkarnitin artışı = MCAD eksikliği; açlık ve enfeksiyon klasik tetikleyicidir.",
+    "evidenceChain": [
+      {
+        "text": "Beslenememe ve enfeksiyon sonrası bilinç değişikliği, yağ asidi oksidasyon kusurlarında katabolik stresle dekompansasyonu düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Hipoglisemiye rağmen serum ketonlarının düşük kalması ketogenez için gerekli asetil-KoA üretiminin yetersiz olduğunu gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Orta zincirli açilkarnitinlerin artması beta-oksidasyonun MCAD basamağında durduğunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v175-new-106-sutle-beslenme-sonrasi-yenidogan-sariligi",
+    "title": "Sütle beslenme sonrası yenidoğan sarılığı",
+    "learningTarget": "Süt/laktoz alımı sonrası kusma, sarılık ve galaktoz-1-fosfat birikiminden klasik galaktozemi-GALT eksikliğini tanıma.",
+    "coreKnowledge": "Klasik galaktozemide GALT eksikliği galaktoz-1-fosfat birikimine yol açar; tedavide laktoz/galaktoz kısıtlanır.",
+    "examPearl": "Süt sonrası kusma-sarılık + indirgen madde pozitifliği + galaktoz-1-fosfat yüksekliği = GALT eksikliği; galaktokinaz eksikliği daha çok katarakt yapar.",
+    "evidenceChain": [
+      {
+        "text": "Yakınmaların süt/laktoz içeren beslenmeden sonra başlaması galaktoz metabolizması bozukluğunu düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Eritrosit galaktoz-1-fosfat yüksekliği ve idrarda indirgen madde pozitifliği GALT basamağında blok olduğunu gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Direkt bilirubin ve transaminaz yüksekliği biriken galaktoz metabolitlerinin hepatik toksisitesini destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v176-new-117-yenidoganda-beslenme-bozulmasi-ve-ozel-idrar-kokusu",
+    "title": "Yenidoğanda beslenme bozulması ve özel idrar kokusu",
+    "learningTarget": "Tatlı kokulu idrar ve dallı zincirli aminoasit/ketoasit artışından MSUD-BCKDH kompleks eksikliğini tanıma.",
+    "coreKnowledge": "MSUD’de lösin nörotoksisitesi özellikle önemlidir; acil tedavi protein kısıtlaması ve toksik metabolitlerin azaltılmasına yöneliktir.",
+    "examPearl": "Yenidoğan + tatlı kokulu idrar + lösin/izolösin/valin yüksekliği = BCKDH kompleks eksikliği.",
+    "evidenceChain": [
+      {
+        "text": "Proteinli beslenme arttıkça letarji ve kusmanın belirginleşmesi aminoasit katabolizması defektini düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "İdrarda tatlımsı/akçaağaç şurubu kokusu MSUD için klasik klinik ipucudur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Lösin, izolösin, valin ve dallı zincirli ketoasitlerin artması BCKDH kompleks basamağında blok olduğunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v176-new-118-ilac-sonrasi-koyu-idrar-ve-sarilik",
+    "title": "İlaç sonrası koyu idrar ve sarılık",
+    "learningTarget": "Oksidatif stres sonrası hemolizde pentoz fosfat yolu-NADPH-glutatyon bağlantısını kurarak G6PD eksikliğini tanıma.",
+    "coreKnowledge": "Pentoz fosfat yolu eritrositte NADPH üretir; NADPH indirgenmiş glutatyonu yenileyerek hemoglobini oksidatif hasardan korur.",
+    "examPearl": "Oksidatif ilaç/bakla sonrası koyu idrar + Heinz cisimciği + ısırık hücresi = G6PD eksikliği.",
+    "evidenceChain": [
+      {
+        "text": "Hemolizin oksidatif ilaç ve bakla maruziyetinden sonra başlaması G6PD eksikliği için tipik tetikleyici paternidir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "İndirekt bilirubin yüksekliği, LDH artışı ve haptoglobin düşüklüğü akut hemolizi destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Heinz cisimcikleri ve ısırık hücreleri, eritrositte oksidatif hasarın glutatyon sistemiyle yeterince temizlenemediğini gösterir.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v178-new-132-yenidoganda-agir-hiperammonemi",
+    "title": "Yenidoğanda ağır hiperammonemi",
+    "learningTarget": "Ağır yenidoğan hiperammonemisinde düşük/normal orotik asit paterninden CPS I eksikliğini OTC eksikliğinden ayırma.",
+    "coreKnowledge": "CPS I eksikliği üre döngüsünün ilk mitokondriyal basamağını bozar; orotik asit artışı beklenmez.",
+    "examPearl": "CPS I ve OTC ikisi de ağır hiperammonemi yapar; orotik asit yüksekse OTC, normal/düşükse CPS I düşünülür.",
+    "evidenceChain": [
+      {
+        "text": "Proteinli beslenme arttıkça gelişen letarji ve kusma, yenidoğan üre döngüsü defekti için tipik bir tetiklenme paternidir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Plazma amonyağının çok yüksek ve BUN değerinin düşük olması amonyağın üre döngüsüne sokulamadığını gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "İdrar orotik asitinin artmaması, OTC’den farklı olarak karbamoil fosfat oluşum basamağında yani CPS I düzeyinde blok olduğunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v183-new-185-cocukta-hiperurisemi-ve-kendine-zarar-verme",
+    "title": "Çocukta hiperürisemi ve kendine zarar verme",
+    "learningTarget": "Hiperürisemi, ürat kristalleri ve kendine zarar verme davranışından HGPRT eksikliğine bağlı pürin kurtarma bozukluğunu tanıma.",
+    "coreKnowledge": "HGPRT eksikliği pürin kurtarma yolunu bozar; PRPP artışı de novo pürin sentezini ve ürik asit üretimini artırır.",
+    "examPearl": "Lesch-Nyhan: erkek çocuk + hiperürisemi + kendini ısırma + distoni/spastisite = HGPRT eksikliği.",
+    "evidenceChain": [
+      {
+        "text": "Dudak ve parmak ısırma davranışı Lesch-Nyhan sendromu için ayırt edici nörodavranışsal ipucudur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Turuncu-kum benzeri ürat kristalleri ve serum ürik asit yüksekliği pürin yıkımının arttığını gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "HGPRT aktivitesinin düşük olması hipoksantin ve guaninin kurtarılamadığını ve de novo pürin sentezinin arttığını destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v183-new-186-uzun-boy-ve-lens-subluksasyonu",
+    "title": "Uzun boy ve lens subluksasyonu",
+    "learningTarget": "Homosistein ve metiyonin birlikte yüksekliğinden transsülfürasyon basamağı blokajını ve CBS eksikliğini çıkarma.",
+    "coreKnowledge": "Homosistinüride CBS eksikliği B6 bağımlı transsülfürasyon basamağını bozar; homosistein ve metiyonin yükselirken sistein azalabilir.",
+    "examPearl": "Homosistinüride aşağı yönlü lens subluksasyonu ve tromboz eğilimi beklenir; Marfan sendromunda homosistein/metiyonin yüksekliği beklenmez.",
+    "evidenceChain": [
+      {
+        "text": "Travma veya belirgin provokasyon olmadan derin ven trombozu geçirilmesi, homosistein yüksekliğine bağlı endotel hasarı ve hiperkoagülabiliteyi düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Lensin aşağı-yana subluksasyonu ve uzun-ince vücut yapısı, Marfan benzeri görünümle karışabilen homosistinüri için klasik klinik ipuçlarıdır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Metiyonin ve total homosisteinin birlikte yüksek bulunması, homosisteinin sistatiyonine dönüşmesini sağlayan CBS basamağında blok olduğunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v184-new-198-aclikta-hipoglisemi-ve-hepatomegali",
+    "title": "Açlıkta hipoglisemi ve hepatomegali",
+    "learningTarget": "Açlık hipoglisemisi olan bebekte glukoz-6-fosfataz eksikliğine bağlı glikojenoliz/glukoneogenez son basamak blokajını laboratuvar paterniyle tanıma.",
+    "coreKnowledge": "Glukoz-6-fosfataz eksikliğinde glikojenoliz ve glukoneogenez çalışsa bile son ürün serbest glukoz olarak kana verilemez; bu nedenle açlık hipoglisemisi laktik asidoz, hiperürisemi ve hiperlipidemiyle birliktedir.",
+    "examPearl": "Açlık hipoglisemisi + hepatomegali + laktat/ürik asit/trigliserid yüksekliği von Gierke hastalığını düşündürür; Pompe veya Cori hastalığı aynı biyokimyasal üçlüyü tipik olarak vermez.",
+    "evidenceChain": [
+      {
+        "text": "Beslenme araları uzadığında gelişen terleme ve nöbet benzeri ataklar ağır açlık hipoglisemisini düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Belirgin hepatomegali, karaciğerde glikojen/yağ birikimiyle giden glikojen depo hastalığı paternini destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Hipoglisemiyle birlikte laktat, ürik asit ve trigliserid yüksekliği glukoz-6-fosfataz basamağında blok olduğunu gösterir.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v185-new-210-aclik-sonrasi-bilinc-degisikligi",
+    "title": "Açlık sonrası bilinç değişikliği",
+    "learningTarget": "Açlık/enfeksiyon sonrası hipoketotik hipoglisemi ve orta zincirli açilkarnitin artışından MCAD eksikliğini tanıma.",
+    "coreKnowledge": "MCAD eksikliğinde açlıkta yağ asitlerinden enerji ve keton üretimi yapılamaz; hipoketotik hipoglisemi tipiktir.",
+    "examPearl": "Hipoglisemi + düşük keton + orta zincirli açilkarnitin artışı = MCAD eksikliği; açlık ve enfeksiyon klasik tetikleyicidir.",
+    "evidenceChain": [
+      {
+        "text": "Beslenememe ve enfeksiyon sonrası bilinç değişikliği, yağ asidi oksidasyon kusurlarında katabolik stresle dekompansasyonu düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Hipoglisemiye rağmen serum ketonlarının düşük kalması ketogenez için gerekli asetil-KoA üretiminin yetersiz olduğunu gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Orta zincirli açilkarnitinlerin artması beta-oksidasyonun MCAD basamağında durduğunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v185-new-211-bebekte-gelisim-geriligi-ve-kuf-kokusu",
+    "title": "Bebekte gelişim geriliği ve küf kokusu",
+    "learningTarget": "Fenilalanin yüksekliği, düşük/normal tirozin ve nörolojik bulgulardan fenilalanin hidroksilaz eksikliğini tanıma.",
+    "coreKnowledge": "PKU’da fenilalanin kısıtlanır ve tirozin esansiyel hale gelebilir; BH4 eksikliği ayırıcı tanıda düşünülmelidir.",
+    "examPearl": "Fenilalanin yüksek + tirozin düşük + küf kokusu = PAH eksikliği; BH4 eksikliğinde nörotransmitter sentezi de bozulur.",
+    "evidenceChain": [
+      {
+        "text": "Yenidoğan taramasının yapılmamış olması ve gelişim geriliği, tedavi edilmemiş fenilketonüri olasılığını artırır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Küf benzeri idrar kokusu fenilketon metabolitlerinin birikimiyle ilişkilidir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Fenilalaninin yüksek, tirozinin düşük olması fenilalanin hidroksilaz basamağında blok olduğunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v185-new-212-koyu-idrar-ve-eklem-agrisi",
+    "title": "Koyu idrar ve eklem ağrısı",
+    "learningTarget": "Bekleyince koyulaşan idrar, okronoz ve homogentisik asit artışından alkaptonüriyi tanıma.",
+    "coreKnowledge": "Alkaptonüri tirozin katabolizması hastalığıdır; biriken homogentisik asit okronoz ve dejeneratif artrit yapar.",
+    "examPearl": "Koyulaşan idrar + okronoz + eklem/omurga ağrısı = homogentizat 1,2-dioksijenaz eksikliği.",
+    "evidenceChain": [
+      {
+        "text": "Çocukluktan beri idrarın bekleyince koyulaşması homogentisik asidin oksidasyonunu düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Sklera/kıkırdak pigmentasyonu ve eklem ağrıları okronotik pigment birikimiyle uyumludur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "İdrar organik asit analizinde homogentisik asidin yüksek bulunması ilgili tirozin katabolizması basamağında blok olduğunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v186-new-238-bakla-sonrasi-sarilik-ve-koyu-idrar",
+    "title": "Bakla sonrası sarılık ve koyu idrar",
+    "learningTarget": "Oksidatif stres sonrası hemolizde pentoz fosfat yolu-NADPH-glutatyon bağlantısını kurarak G6PD eksikliğini tanıma.",
+    "coreKnowledge": "Pentoz fosfat yolu eritrositte NADPH üretir; NADPH indirgenmiş glutatyonu yenileyerek hemoglobini oksidatif hasardan korur.",
+    "examPearl": "Oksidatif ilaç/bakla sonrası koyu idrar + Heinz cisimciği + ısırık hücresi = G6PD eksikliği.",
+    "evidenceChain": [
+      {
+        "text": "Hemolizin oksidatif ilaç ve bakla maruziyetinden sonra başlaması G6PD eksikliği için tipik tetikleyici paternidir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "İndirekt bilirubin yüksekliği, LDH artışı ve haptoglobin düşüklüğü akut hemolizi destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Heinz cisimcikleri ve ısırık hücreleri, eritrositte oksidatif hasarın glutatyon sistemiyle yeterince temizlenemediğini gösterir.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v187-new-247-aclikta-hipoglisemi-ve-kas-agrisi",
+    "title": "Açlıkta hipoglisemi ve kas ağrısı",
+    "learningTarget": "Açlık/uzun egzersiz sonrası kas ağrısı, CK yüksekliği, hipoketotik hipoglisemi ve uzun zincirli açilkarnitin paterninden karnitin taşıma sistemi bozukluğunu tanıma.",
+    "coreKnowledge": "Uzun zincirli yağ asitlerinin mitokondriye girişi karnitin şantına bağlıdır; kusurda hipoketotik hipoglisemi ve kas bulguları görülebilir.",
+    "examPearl": "Açlık/uzun egzersiz + kas ağrısı/koyu idrar + düşük keton = uzun zincirli yağ asidi taşıma veya oksidasyon kusuru düşün.",
+    "evidenceChain": [
+      {
+        "text": "Atakların açlık ve uzun süreli egzersizle tetiklenmesi yağ asidi oksidasyonuna bağımlı enerji döneminde bozulmayı düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Hipoglisemiye rağmen keton düzeyinin düşük olması asetil-KoA üretiminin yetersiz olduğunu gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "CK yüksekliği ve uzun zincirli açilkarnitin artışı uzun zincirli yağ asidi taşıma/oksidasyon kusurunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v187-new-248-yenidoganda-tatli-kokulu-idrar",
+    "title": "Yenidoğanda tatlı kokulu idrar",
+    "learningTarget": "Tatlı kokulu idrar ve dallı zincirli aminoasit/ketoasit artışından MSUD-BCKDH kompleks eksikliğini tanıma.",
+    "coreKnowledge": "MSUD’de lösin nörotoksisitesi özellikle önemlidir; acil tedavi protein kısıtlaması ve toksik metabolitlerin azaltılmasına yöneliktir.",
+    "examPearl": "Yenidoğan + tatlı kokulu idrar + lösin/izolösin/valin yüksekliği = BCKDH kompleks eksikliği.",
+    "evidenceChain": [
+      {
+        "text": "Proteinli beslenme arttıkça letarji ve kusmanın belirginleşmesi aminoasit katabolizması defektini düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "İdrarda tatlımsı/akçaağaç şurubu kokusu MSUD için klasik klinik ipucudur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Lösin, izolösin, valin ve dallı zincirli ketoasitlerin artması BCKDH kompleks basamağında blok olduğunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v188-new-262-oksidatif-stres-ve-eritrosit-korunmasi",
+    "title": "Oksidatif stres ve eritrosit korunması",
+    "learningTarget": "Eritrositte pentoz fosfat yolu NADPH üretimi ile indirgenmiş glutatyon yenilenmesi arasındaki mekanik bağlantıyı açıklama.",
+    "coreKnowledge": "Pentoz fosfat yolunun eritrositteki en kritik ürünü NADPH’dir; NADPH, indirgenmiş glutatyonu yenileyerek oksidatif hasarı sınırlar.",
+    "examPearl": "Eritrositte G6PD/NADPH sorularında ana mekanizma “indirgenmiş glutatyonu yenileme”dir.",
+    "evidenceChain": [
+      {
+        "text": "Oksidatif ilaç ve bakla sonrası hemoliz öyküsü eritrosit antioksidan savunma kusurunu düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "G6PD aktivitesi ve NADPH üretiminin azalması pentoz fosfat yolunun yetersiz çalıştığını gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "İndirgenmiş glutatyon düşüklüğü ve Heinz cisimcikleri NADPH-glutatyon bağlantısının bozulduğunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v188-new-263-erkek-bebekte-hiperammonemi",
+    "title": "Erkek bebekte hiperammonemi",
+    "learningTarget": "Yenidoğanda protein alımıyla belirginleşen hiperammonemide orotik asit ve sitrülin paternini kullanarak OTC eksikliğini tanıma.",
+    "coreKnowledge": "OTC eksikliği X’e bağlı geçebilir; CPS I’den ayıran ana ipucu idrar orotik asit yüksekliğidir.",
+    "examPearl": "Hiperammonemi + yüksek orotik asit + düşük sitrülin = OTC eksikliği; hiperammonemi + normal/düşük orotik asit = CPS I veya NAGS eksikliği düşün.",
+    "evidenceChain": [
+      {
+        "text": "Proteinli beslenme arttıkça kusma ve letarjinin gelişmesi, amino azot yükünü detoksifiye edemeyen üre döngüsü defektini düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Plazma amonyağının çok yüksek, BUN değerinin düşük olması amonyağın üreye çevrilemediğini gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Yüksek idrar orotik asit ve düşük sitrülin, karbamoil fosfatın ornitinle birleşemediği OTC basamağında blok olduğunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v189-new-280-karbonhidrat-sonrasi-laktik-asidoz",
+    "title": "Karbonhidrat sonrası laktik asidoz",
+    "learningTarget": "Laktat ve alanin yüksekliğiyle giden nörolojik tabloda pirüvatın asetil-KoA’ya girişini sağlayan PDH kompleks defektini tanıma.",
+    "coreKnowledge": "PDH kompleksi TPP, lipoat, FAD, NAD+ ve CoA kullanır; eksiklikte pirüvat laktat ve alanine yönelir.",
+    "examPearl": "Laktik asidoz + alanin yüksekliği + nörolojik bulgu, pirüvat metabolizması kusurunu düşündürür; PDH eksikliğinde karbonhidrat yükü tabloyu kötüleştirir.",
+    "evidenceChain": [
+      {
+        "text": "Karbonhidrattan zengin beslenme sonrası hızlı soluma ve huzursuzluğun artması glikolizden gelen pirüvat yükünün metabolize edilemediğini düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Serum laktat ve plazma alaninin birlikte yüksek olması pirüvatın alternatif ürünlere yöneldiğini gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Pirüvat dehidrogenaz kompleks aktivitesinin düşük bulunması pirüvat-asetil-KoA dönüşüm basamağındaki defekti destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v189-new-281-bebekte-gelisim-gerilemesi-ve-makula-bulgusu",
+    "title": "Bebekte gelişim gerilemesi ve makula bulgusu",
+    "learningTarget": "Gelişim gerilemesi, kiraz kırmızısı makula ve heksozaminidaz A düşüklüğünden Tay-Sachs hastalığında GM2 gangliozid birikimini tanıma.",
+    "coreKnowledge": "Tay-Sachs = Hexosaminidase A eksikliği = GM2 gangliozid birikimi; hepatosplenomegali tipik değildir.",
+    "examPearl": "Kiraz kırmızısı makula + nörodejenerasyon + hepatosplenomegali yokluğu Tay-Sachs lehinedir.",
+    "evidenceChain": [
+      {
+        "text": "Kazanılmış motor becerilerin kaybı ve sese aşırı irkilme ilerleyici nöronal depo hastalığını düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Kiraz kırmızısı makula lekesi gangliozid depo hastalıkları için önemli bir klinik ipucudur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Lökosit heksozaminidaz A aktivitesinin düşük olması GM2 gangliozid yıkımının bozulduğunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v189-new-282-cig-yumurta-tuketimi-sonrasi-dermatit",
+    "title": "Çiğ yumurta tüketimi sonrası dermatit",
+    "learningTarget": "Çiğ yumurta akı-avidin maruziyeti sonrası biotin eksikliğinde etkilenen karboksilaz reaksiyonlarını tanıma.",
+    "coreKnowledge": "Biotin karboksilazların kofaktörüdür; “CO2 ekleyen” reaksiyonlar biotinle ilişkilidir.",
+    "examPearl": "Çiğ yumurta akı avidin içerir; biotin eksikliğinde karboksilazlar etkilenir.",
+    "evidenceChain": [
+      {
+        "text": "Uzun süreli çiğ yumurta akı tüketimi avidin aracılığıyla biotin bağlanmasını ve emilim azalmasını düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Dermatit ve alopesi biotin eksikliğinin klasik klinik ipuçlarıdır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Laktat ve C3 propiyonilkarnitin artışı biotin bağımlı karboksilaz reaksiyonlarının etkilenebileceğini destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v194-new-315-meyve-puresi-sonrasi-kusma-ve-hipoglisemi",
+    "title": "Meyve püresi sonrası kusma ve hipoglisemi",
+    "learningTarget": "Fruktoz/sükroz alımı sonrası kusma, hipoglisemi ve karaciğer hasarından kalıtsal fruktoz intoleransı-Aldolaz B eksikliğini tanıma.",
+    "coreKnowledge": "Kalıtsal fruktoz intoleransı aldolaz B eksikliğidir; fruktoz-1-fosfat birikimi ATP/fosfat tuzaklanması yapar.",
+    "examPearl": "Fruktoz/sükroz sonrası kusma-hipoglisemi + hipofosfatemi = Aldolaz B eksikliği; fruktokinaz eksikliği benign fruktozüridir.",
+    "evidenceChain": [
+      {
+        "text": "Yakınmaların anne sütünden çok meyve püresi ve meyve suyuyla başlaması fruktoz metabolizması bozukluğunu düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Fruktoz sonrası hipoglisemi ve hipofosfatemi fruktoz-1-fosfatın fosfatı tuzakladığını gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Karaciğer enzim yüksekliği biriken fruktoz-1-fosfatın hepatotoksik etkisini destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v194-new-316-gunesle-artan-dokuntu-ve-ataksi",
+    "title": "Güneşle artan döküntü ve ataksi",
+    "learningTarget": "Fotosensitif dermatit, ataksi ve nötral aminoasidüriden Hartnup hastalığında nötral aminoasit taşıyıcı kusurunu tanıma.",
+    "coreKnowledge": "Hartnup hastalığı nötral aminoasit taşıyıcı kusurudur; triptofan kaybı niasin sentezini azaltarak pellagra benzeri bulgular yapabilir.",
+    "examPearl": "Fotosensitif dermatit + ataksi + nötral aminoasidüri = Hartnup hastalığı.",
+    "evidenceChain": [
+      {
+        "text": "Güneşle artan döküntü ve aralıklı ataksi pellagra benzeri niasin ilişkili klinik paterni düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "İdrarda nötral aminoasit atılımının artması seçici taşıyıcı kusurunu gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Dibazik aminoasitlerin normal olması bozukluğun spesifik olarak nötral aminoasit taşımasıyla ilişkili olduğunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v194-new-317-genc-hastada-karaciger-ve-hareket-bulgulari",
+    "title": "Genç hastada karaciğer ve hareket bulguları",
+    "learningTarget": "Karaciğer, nörolojik ve bakır metabolizması bulgularından Wilson hastalığında ATP7B defektini tanıma.",
+    "coreKnowledge": "Wilson hastalığında ATP7B defekti bakırın safraya atılımını ve serüloplazmine bağlanmasını bozar; bakır karaciğer, beyin ve korneada birikir.",
+    "examPearl": "Genç hasta + karaciğer bulgusu + hareket/psikiyatrik bulgu + düşük serüloplazmin = Wilson hastalığı/ATP7B.",
+    "evidenceChain": [
+      {
+        "text": "Genç yaşta karaciğer enzim yüksekliğiyle birlikte tremor ve davranış değişikliği bakır birikimine bağlı hepatonörolojik tabloyu düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Serüloplazmin düşüklüğü ve serbest/idrarda bakır yüksekliği Wilson hastalığının biyokimyasal paternidir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Ailede genç yaşta karaciğer hastalığı öyküsü otozomal resesif ATP7B bozukluğu olasılığını destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v195-new-343-erkek-cocukta-kendini-isirma-ve-urik-asit-yuksekligi",
+    "title": "Erkek çocukta kendini ısırma ve ürik asit yüksekliği",
+    "learningTarget": "Hiperürisemi, ürat kristalleri ve kendine zarar verme davranışından HGPRT eksikliğine bağlı pürin kurtarma bozukluğunu tanıma.",
+    "coreKnowledge": "HGPRT eksikliği pürin kurtarma yolunu bozar; PRPP artışı de novo pürin sentezini ve ürik asit üretimini artırır.",
+    "examPearl": "Lesch-Nyhan: erkek çocuk + hiperürisemi + kendini ısırma + distoni/spastisite = HGPRT eksikliği.",
+    "evidenceChain": [
+      {
+        "text": "Dudak ve parmak ısırma davranışı Lesch-Nyhan sendromu için ayırt edici nörodavranışsal ipucudur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Turuncu-kum benzeri ürat kristalleri ve serum ürik asit yüksekliği pürin yıkımının arttığını gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "HGPRT aktivitesinin düşük olması hipoksantin ve guaninin kurtarılamadığını ve de novo pürin sentezinin arttığını destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v195-new-344-makrositoz-ve-norolojik-yakinma",
+    "title": "Makrositoz ve nörolojik yakınma",
+    "learningTarget": "B12 eksikliğinde homosistein yüksekliğini methionine synthase/remetilasyon bozukluğuyla açıklama.",
+    "coreKnowledge": "B12 eksikliğinde homosistein yükselmesi methionine synthase azalmasına, metilmalonik asit yükselmesi methylmalonyl-CoA mutase azalmasına bağlıdır.",
+    "examPearl": "B12 eksikliği: makrositoz + nörolojik bulgu + homosistein ve metilmalonik asit yüksekliği; folat eksikliğinde MMA yükselmez.",
+    "evidenceChain": [
+      {
+        "text": "Uzun süre hayvansal gıda tüketmeme öyküsü B12 eksikliği için güçlü beslenme ipucudur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Makrositoz, dil bulgusu ve posterior kolon tipi nörolojik yakınmalar B12 eksikliğini destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Homosistein ve metilmalonik asitin birlikte yüksekliği B12’ye bağımlı iki reaksiyonun etkilendiğini gösterir.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  },
+  {
+    "caseId": "v195-new-345-yenidoganda-beslenme-sonrasi-asidoz",
+    "title": "Yenidoğanda beslenme sonrası asidoz",
+    "learningTarget": "Yenidoğanda protein sonrası anyon açıklıklı asidoz, ketozis, hiperammonemi ve C3 artışından propiyonil-KoA karboksilaz eksikliğini tanıma.",
+    "coreKnowledge": "Propiyonil-KoA karboksilaz biotin bağımlıdır; eksikliğinde propiyonik asidemi, C3 artışı, ketotik asidoz ve hiperammonemi görülür.",
+    "examPearl": "Organik asidemi: anyon açıklıklı metabolik asidoz + ketozis + hiperammonemi. C3 artışı propiyonik/metilmalonik asidemi ayrımını başlatır.",
+    "evidenceChain": [
+      {
+        "text": "Proteinli beslenme arttıkça kusma ve letarjinin gelişmesi aminoasit katabolizması kaynaklı organik asidemiyi düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Anyon açıklıklı metabolik asidoz, ketozis ve hiperammonemi organik asidemi paternini gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "C3 propiyonilkarnitin ve propiyonik asit türevlerinin artışı propiyonil-KoA karboksilaz basamağında blok olduğunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ]
+  }
+]

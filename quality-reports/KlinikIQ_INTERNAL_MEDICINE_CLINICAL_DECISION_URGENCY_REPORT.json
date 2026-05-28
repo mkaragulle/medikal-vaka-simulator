@@ -1,0 +1,340 @@
+[
+  {
+    "caseId": "v163-new-002-acil-elektrolit-bozuklugu",
+    "title": "Acil elektrolit bozukluğu",
+    "answerTarget": "first_step",
+    "questionType": "treatment",
+    "urgencyLogic": "Hiperkalemi + EKG değişikliği = ilk basamak IV kalsiyum; insülin-glukoz ve beta-agonist potasyumu düşürür ama kalsiyumun yerini tutmaz.",
+    "correctAnswer": "İntravenöz kalsiyum glukonat verilmesi",
+    "evidenceChain": [
+      "Kronik böbrek hastalığı ve ACE inhibitörü kullanımı potasyum atılımını azaltarak hiperkalemi riskini artırır.",
+      "Potasyumun 7.1 mmol/L olması ve EKG’de sivri T dalgaları/QRS genişleme eğilimi aritmi tehdidini gösterir.",
+      "EKG değişikliği olan hiperkalemide potasyumu düşürmeden önce miyokard membranı intravenöz kalsiyumla stabilize edilir."
+    ]
+  },
+  {
+    "caseId": "v164-new-011-aclik-ve-kusma-sonrasi-metabolik-bozulma",
+    "title": "Açlık ve kusma sonrası metabolik bozulma",
+    "answerTarget": "first_step",
+    "questionType": "treatment",
+    "urgencyLogic": "DKA’da ilk yaklaşım sıvı resüsitasyonudur; insülin başlanmadan önce potasyum mutlaka kontrol edilir, potasyum düşükse önce potasyum replasmanı yapılır.",
+    "correctAnswer": "İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak",
+    "evidenceChain": [
+      "Kusma, poliüri, kuru mukoza, hipotansiyon ve taşikardi belirgin hacim kaybını gösterir.",
+      "Hiperglisemi, keton pozitifliği ve yüksek anyon açıklıklı metabolik asidoz DKA paternini oluşturur.",
+      "Potasyum düzeyi insülin başlanmadan önce değerlendirilmelidir; ilk acil basamak dolaşımı izotonik sıvıyla düzeltmektir."
+    ]
+  },
+  {
+    "caseId": "v164-new-014-purpura-ve-norolojik-bulgular",
+    "title": "Purpura ve nörolojik bulgular",
+    "answerTarget": "treatment",
+    "questionType": "treatment",
+    "urgencyLogic": "TTP’de şistositli MAHA + ağır trombositopeni + nörolojik bulgu varsa pentadın tamamı ve ADAMTS13 sonucu beklenmeden plazma değişimi başlanır.",
+    "correctAnswer": "Acil terapötik plazma değişimi",
+    "evidenceChain": [
+      "Peteşi, ekimoz ve çok düşük trombosit sayısı ağır trombositopeniye bağlı kanama eğilimini gösterir.",
+      "Şistositler, yüksek LDH, düşük haptoglobin ve indirekt bilirubin artışı mikroanjiyopatik hemolitik anemi paternini destekler.",
+      "Dalgalanan bilinç bulanıklığı ve kreatinin yüksekliği trombotik mikroanjiyopatinin organ etkilenimi oluşturduğunu gösterir."
+    ]
+  },
+  {
+    "caseId": "v164-new-017-yeni-baslayan-temporal-bas-agrisi",
+    "title": "Yeni başlayan temporal baş ağrısı",
+    "answerTarget": "first_step",
+    "questionType": "treatment",
+    "urgencyLogic": "Dev hücreli arteritte görme semptomu varsa biyopsi beklenmez; yüksek doz kortikosteroid hemen başlanır.",
+    "correctAnswer": "Yüksek doz sistemik kortikosteroid başlamak",
+    "evidenceChain": [
+      "Yetmiş yaş üzerinde yeni başlangıçlı temporal baş ağrısı ve temporal arter hassasiyeti dev hücreli arterit için kırmızı bayraktır.",
+      "Çene klodikasyonu ve geçici görme bulanıklığı kraniyal arter iskemisini düşündürür.",
+      "ESR/CRP yüksekliği inflamatuvar vaskülit olasılığını destekler ve kalıcı görme kaybını önlemek için steroid acildir."
+    ]
+  },
+  {
+    "caseId": "v164-new-018-hemoptizi-ve-hematuri-birlikteligi",
+    "title": "Hemoptizi ve hematüri birlikteliği",
+    "answerTarget": "diagnosis",
+    "questionType": "diagnosis",
+    "urgencyLogic": "Anti-GBM hastalığı = akciğer hemorajisi + hızlı ilerleyen glomerülonefrit + anti-GBM/lineer IgG paterni.",
+    "correctAnswer": "Anti-GBM hastalığı",
+    "evidenceChain": [
+      "Hemoptizi, hipoksemi ve bilateral alveoler opasiteler alveoler hemoraji düşündürür.",
+      "Dismorfik eritrosit, eritrosit silendiri ve hızlı kreatinin artışı hızlı ilerleyen glomerülonefrit paternini gösterir.",
+      "Anti-GBM antikoru ve lineer IgG birikimi akciğer-böbrek sendromunda anti-GBM hastalığını destekler."
+    ]
+  },
+  {
+    "caseId": "v164-new-020-antibiyotik-sonrasi-ishal",
+    "title": "Antibiyotik sonrası ishal",
+    "answerTarget": "treatment",
+    "questionType": "treatment",
+    "urgencyLogic": "Antibiyotik sonrası sulu ishal + toksin pozitifliği C. difficile kolitidir; antimotilite tek başına verilmez, fulminan bulgu yoksa oral tedavi başlanır.",
+    "correctAnswer": "Oral vankomisin tedavisi başlanması",
+    "evidenceChain": [
+      "Geniş spektrumlu antibiyotik kullanımı ve hastane yatışı C. difficile için güçlü risk oluşturur.",
+      "Sulu ishal, ateş, lökositoz ve toksin A/B pozitifliği semptomatik C. difficile kolitini destekler.",
+      "Peritonit veya toksik megakolon bulgusu olmadığından ilk yaklaşım lümen içinde etkili oral tedavidir."
+    ]
+  },
+  {
+    "caseId": "v165-new-021-aclik-ve-kusma-sonrasi-metabolik-bozulma",
+    "title": "Açlık ve kusma sonrası metabolik bozulma",
+    "answerTarget": "first_step",
+    "questionType": "treatment",
+    "urgencyLogic": "DKA’da K+ <3.3 mmol/L ise önce potasyum verilir; insülin potasyum güvenli aralığa çıkana kadar ertelenir.",
+    "correctAnswer": "Potasyum replasmanı yapıp insülini potasyum güvenli aralığa çıkana kadar ertelemek",
+    "evidenceChain": [
+      "Hiperglisemi, keton pozitifliği ve yüksek anyon açıklıklı asidoz DKA paternini oluşturur.",
+      "Serum potasyumunun 2.9 mmol/L olması, toplam potasyum kaybının tedavi güvenliği açısından kritik olduğunu gösterir.",
+      "İnsülin potasyumu hücre içine kaydıracağından hipokalemi düzeltilmeden başlanması aritmi riskini artırır."
+    ]
+  },
+  {
+    "caseId": "v165-new-024-ates-ve-yeni-ufurum",
+    "title": "Ateş ve yeni üfürüm",
+    "answerTarget": "pathogen",
+    "questionType": "pathogen",
+    "urgencyLogic": "IVDU + triküspit endokardit + septik pulmoner emboli denince S. aureus önceliklidir.",
+    "correctAnswer": "Staphylococcus aureus",
+    "evidenceChain": [
+      "Damar içi madde kullanımı sağ taraf endokarditi için güçlü risk faktörüdür.",
+      "Triküspit odakta yeni üfürüm ve ekokardiyografide vejetasyon enfektif endokarditi destekler.",
+      "Septik pulmoner emboli ve akut toksik tablo Staphylococcus aureus olasılığını artırır."
+    ]
+  },
+  {
+    "caseId": "v165-new-029-gogus-agrisi-ve-hipotansiyon",
+    "title": "Göğüs ağrısı ve hipotansiyon",
+    "answerTarget": "treatment",
+    "questionType": "treatment",
+    "urgencyLogic": "İnferior MI + hipotansiyon + JVD + temiz akciğer = sağ ventrikül MI düşün; nitrat verme, preloadu koru.",
+    "correctAnswer": "Nitrogliserin",
+    "evidenceChain": [
+      "İnferior ST elevasyonu akut koroner oklüzyonu düşündürür.",
+      "Hipotansiyon, bradikardi, juguler venöz dolgunluk ve akciğerde ral olmaması sağ ventrikül tutulumunu destekler.",
+      "Sağ ventrikül infarktında nitrat preloadu azaltarak kardiyak outputu ve kan basıncını düşürebilir."
+    ]
+  },
+  {
+    "caseId": "v165-new-030-hipotansiyon-ve-elektrolit-bozuklugu",
+    "title": "Hipotansiyon ve elektrolit bozukluğu",
+    "answerTarget": "first_step",
+    "questionType": "treatment",
+    "urgencyLogic": "Adrenal kriz şüphesinde kortizol/ACTH sonucu beklenmez; hidrokortizon ve izotonik sıvı birlikte başlanır.",
+    "correctAnswer": "İntravenöz hidrokortizon ve izotonik sıvı replasmanı",
+    "evidenceChain": [
+      "Kilo kaybı, hiperpigmentasyon ve tuz isteği kronik primer adrenal yetmezlik zeminini düşündürür.",
+      "Hipotansiyon, hiponatremi, hiperkalemi ve hipoglisemi adrenal kriz paternini oluşturur.",
+      "Enfeksiyon veya kusma gibi stres durumları adrenal rezervi yetersiz hastada akut krizi tetikleyebilir."
+    ]
+  },
+  {
+    "caseId": "v166-new-033-hiperglisemik-acil-tablo",
+    "title": "Hiperglisemik acil tablo",
+    "answerTarget": "first_step",
+    "questionType": "treatment",
+    "urgencyLogic": "DKA’da ilk yaklaşım sıvı resüsitasyonudur; insülin başlanmadan önce potasyum mutlaka kontrol edilir, potasyum düşükse önce potasyum replasmanı yapılır.",
+    "correctAnswer": "İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak",
+    "evidenceChain": [
+      "Kusma, poliüri, kuru mukoza, hipotansiyon ve taşikardi belirgin hacim kaybını gösterir.",
+      "Hiperglisemi, keton pozitifliği ve yüksek anyon açıklıklı metabolik asidoz DKA paternini oluşturur.",
+      "Potasyum düzeyi insülin başlanmadan önce değerlendirilmelidir; ilk acil basamak dolaşımı izotonik sıvıyla düzeltmektir."
+    ]
+  },
+  {
+    "caseId": "v166-new-036-ates-ve-yeni-ufurum",
+    "title": "Ateş ve yeni üfürüm",
+    "answerTarget": "pathogen",
+    "questionType": "pathogen",
+    "urgencyLogic": "IVDU + triküspit endokardit + septik pulmoner emboli denince S. aureus önceliklidir.",
+    "correctAnswer": "Staphylococcus aureus",
+    "evidenceChain": [
+      "Damar içi madde kullanımı sağ taraf endokarditi için güçlü risk faktörüdür.",
+      "Triküspit odakta yeni üfürüm ve ekokardiyografide vejetasyon enfektif endokarditi destekler.",
+      "Septik pulmoner emboli ve akut toksik tablo Staphylococcus aureus olasılığını artırır."
+    ]
+  },
+  {
+    "caseId": "v166-new-039-trombositopeni-ve-norolojik-bulgu",
+    "title": "Trombositopeni ve nörolojik bulgu",
+    "answerTarget": "treatment",
+    "questionType": "treatment",
+    "urgencyLogic": "TTP’de şistositli MAHA + ağır trombositopeni + nörolojik bulgu varsa pentadın tamamı ve ADAMTS13 sonucu beklenmeden plazma değişimi başlanır.",
+    "correctAnswer": "Acil terapötik plazma değişimi",
+    "evidenceChain": [
+      "Peteşi, ekimoz ve çok düşük trombosit sayısı ağır trombositopeniye bağlı kanama eğilimini gösterir.",
+      "Şistositler, yüksek LDH, düşük haptoglobin ve indirekt bilirubin artışı mikroanjiyopatik hemolitik anemi paternini destekler.",
+      "Dalgalanan bilinç bulanıklığı ve kreatinin yüksekliği trombotik mikroanjiyopatinin organ etkilenimi oluşturduğunu gösterir."
+    ]
+  },
+  {
+    "caseId": "v166-new-040-kronik-halsizlik-ve-hipotansiyon",
+    "title": "Kronik halsizlik ve hipotansiyon",
+    "answerTarget": "diagnosis",
+    "questionType": "diagnosis",
+    "urgencyLogic": "Primer adrenal yetmezlikte ACTH yüksekliği hiperpigmentasyon yapar; aldosteron eksikliği hiperkalemiye yol açar.",
+    "correctAnswer": "Primer adrenal yetmezlik",
+    "evidenceChain": [
+      "Ortostatik yakınmalar, kilo kaybı, tuz isteği ve hiperpigmentasyon kronik primer adrenal yetmezliği düşündürür.",
+      "Düşük kortizol ile yüksek ACTH birlikteliği adrenal korteks düzeyinde yetmezliği gösterir.",
+      "Hiponatremi ve hiperkalemi mineralokortikoid eksikliğini destekleyerek sekonder adrenal yetmezliği geri plana iter."
+    ]
+  },
+  {
+    "caseId": "v167-new-042-asidoz-ve-hiperglisemi-tablosu",
+    "title": "Asidoz ve hiperglisemi tablosu",
+    "answerTarget": "first_step",
+    "questionType": "treatment",
+    "urgencyLogic": "DKA’da K+ <3.3 mmol/L ise önce potasyum verilir; insülin potasyum güvenli aralığa çıkana kadar ertelenir.",
+    "correctAnswer": "Potasyum replasmanı yapıp insülini potasyum güvenli aralığa çıkana kadar ertelemek",
+    "evidenceChain": [
+      "Hiperglisemi, keton pozitifliği ve yüksek anyon açıklıklı asidoz DKA paternini oluşturur.",
+      "Serum potasyumunun 3.0 mmol/L olması, toplam potasyum kaybının tedavi güvenliği açısından kritik olduğunu gösterir.",
+      "İnsülin potasyumu hücre içine kaydıracağından hipokalemi düzeltilmeden başlanması aritmi riskini artırır."
+    ]
+  },
+  {
+    "caseId": "v167-new-044-uzamis-ates-ve-ufurum",
+    "title": "Uzamış ateş ve üfürüm",
+    "answerTarget": "pathogen",
+    "questionType": "pathogen",
+    "urgencyLogic": "Diş işlemi + subakut doğal kapak endokarditi denince viridans streptokoklar akla gelir.",
+    "correctAnswer": "Streptococcus viridans",
+    "evidenceChain": [
+      "Diş çekimi sonrası subakut ateş ve gece terlemesi doğal kapak endokarditini düşündürür.",
+      "Mitral kapak hastalığı ve ekokardiyografide vejetasyon enfektif endokardit kanıtı sağlar.",
+      "Subakut seyir ve ağız florası ilişkisi Streptococcus viridans olasılığını öne çıkarır."
+    ]
+  },
+  {
+    "caseId": "v167-new-048-hemoliz-ve-norolojik-bulgular",
+    "title": "Hemoliz ve nörolojik bulgular",
+    "answerTarget": "diagnosis",
+    "questionType": "diagnosis",
+    "urgencyLogic": "TTP tanısında pentadın tamamını bekleme; MAHA + trombositopeni + nörolojik bulgu yeterli klinik alarmdır.",
+    "correctAnswer": "Trombotik trombositopenik purpura",
+    "evidenceChain": [
+      "Ağır trombositopeni peteşi ve mukozal kanama eğilimini açıklar.",
+      "Şistosit, LDH yüksekliği, düşük haptoglobin ve indirekt bilirubin artışı MAHA paternini oluşturur.",
+      "Nörolojik dalgalanma ve böbrek etkilenimi TTP’de mikrotrombotik organ hasarını düşündürür."
+    ]
+  },
+  {
+    "caseId": "v167-new-049-kolik-yan-agrisi",
+    "title": "Kolik yan ağrısı",
+    "answerTarget": "lab_interpretation",
+    "questionType": "lab_interpretation",
+    "urgencyLogic": "Kalsiyum oksalat kristali zarf şeklindedir; strüvit alkali idrar/enfeksiyon, sistin hekzagonal kristal, ürik asit asidik idrarla ilişkilidir.",
+    "correctAnswer": "Kalsiyum oksalat taşı",
+    "evidenceChain": [
+      "Kolik tarzda kasığa yayılan yan ağrısı ve mikroskobik hematüri renal taşı düşündürür.",
+      "Kontrastsız BT distal üreterde taş ve hafif hidroureteronefroz gösterir.",
+      "Zarf şeklindeki kristaller kalsiyum oksalat taşıyla uyumludur."
+    ]
+  },
+  {
+    "caseId": "v167-new-050-akut-gogus-agrisi-ve-hipotansiyon",
+    "title": "Akut göğüs ağrısı ve hipotansiyon",
+    "answerTarget": "treatment",
+    "questionType": "treatment",
+    "urgencyLogic": "İnferior MI + hipotansiyon + JVD + temiz akciğer = sağ ventrikül MI düşün; nitrat verme, preloadu koru.",
+    "correctAnswer": "Sağ ventrikül preloadunu azaltarak hipotansiyonu ağırlaştırması",
+    "evidenceChain": [
+      "İnferior ST elevasyonu akut koroner oklüzyonu düşündürür.",
+      "Hipotansiyon, bradikardi, juguler venöz dolgunluk ve akciğerde ral olmaması sağ ventrikül tutulumunu destekler.",
+      "Sağ ventrikül infarktında nitrat preloadu azaltarak kardiyak outputu ve kan basıncını düşürebilir."
+    ]
+  },
+  {
+    "caseId": "v168-new-058-hiperglisemi-ve-asidotik-solunum",
+    "title": "Hiperglisemi ve asidotik solunum",
+    "answerTarget": "first_step",
+    "questionType": "treatment",
+    "urgencyLogic": "DKA’da ilk yaklaşım sıvı resüsitasyonudur; insülin başlanmadan önce potasyum mutlaka kontrol edilir, potasyum düşükse önce potasyum replasmanı yapılır.",
+    "correctAnswer": "İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak",
+    "evidenceChain": [
+      "Kusma, poliüri, kuru mukoza, hipotansiyon ve taşikardi belirgin hacim kaybını gösterir.",
+      "Hiperglisemi, keton pozitifliği ve yüksek anyon açıklıklı metabolik asidoz DKA paternini oluşturur.",
+      "Potasyum düzeyi insülin başlanmadan önce değerlendirilmelidir; ilk acil basamak dolaşımı izotonik sıvıyla düzeltmektir."
+    ]
+  },
+  {
+    "caseId": "v169-new-063-trombositopeni-ve-norolojik-bulgu",
+    "title": "Trombositopeni ve nörolojik bulgu",
+    "answerTarget": "first_step",
+    "questionType": "treatment",
+    "urgencyLogic": "TTP’de şistositli MAHA + ağır trombositopeni + nörolojik bulgu varsa pentadın tamamı ve ADAMTS13 sonucu beklenmeden plazma değişimi başlanır.",
+    "correctAnswer": "Acil terapötik plazma değişimi",
+    "evidenceChain": [
+      "Peteşi, ekimoz ve çok düşük trombosit sayısı ağır trombositopeniye bağlı kanama eğilimini gösterir.",
+      "Şistositler, yüksek LDH, düşük haptoglobin ve indirekt bilirubin artışı mikroanjiyopatik hemolitik anemi paternini destekler.",
+      "Dalgalanan bilinç bulanıklığı ve kreatinin yüksekliği trombotik mikroanjiyopatinin organ etkilenimi oluşturduğunu gösterir."
+    ]
+  },
+  {
+    "caseId": "v192-new-301-halsizlik-ve-direncli-hipotansiyon",
+    "title": "Halsizlik ve dirençli hipotansiyon",
+    "answerTarget": "treatment",
+    "questionType": "treatment",
+    "urgencyLogic": "Adrenal kriz şüphesinde kortizol/ACTH sonucu beklenmez; hidrokortizon ve izotonik sıvı birlikte başlanır.",
+    "correctAnswer": "İntravenöz hidrokortizon ve izotonik sıvı replasmanı",
+    "evidenceChain": [
+      "Kilo kaybı, hiperpigmentasyon ve tuz isteği kronik primer adrenal yetmezlik zeminini düşündürür.",
+      "Hipotansiyon, hiponatremi, hiperkalemi ve hipoglisemi adrenal kriz paternini oluşturur.",
+      "Enfeksiyon veya kusma gibi stres durumları adrenal rezervi yetersiz hastada akut krizi tetikleyebilir."
+    ]
+  },
+  {
+    "caseId": "v192-new-302-yasli-hastada-bilinc-bulanikligi-ve-hiperglisemi",
+    "title": "Yaşlı hastada bilinç bulanıklığı ve hiperglisemi",
+    "answerTarget": "first_step",
+    "questionType": "treatment",
+    "urgencyLogic": "HHS’de ilk basamak sıvıdır; hiperosmolalite yavaş ve güvenli düzeltilir, insülin sıvı/potasyum değerlendirmesiyle düzenlenir.",
+    "correctAnswer": "İzotonik sıvı resüsitasyonu başlamak",
+    "evidenceChain": [
+      "Yaşlı tip 2 diyabetli hastada enfeksiyon sonrası bilinç bulanıklığı ve derin dehidratasyon gelişmiştir.",
+      "Serum glukozu ve efektif osmolalitenin çok yüksek olması HHS paternini destekler.",
+      "Minimal ketoz ve normal pH DKA’dan ayrımı sağlar; ilk tedavi hacim açığını izotonik sıvıyla düzeltmektir."
+    ]
+  },
+  {
+    "caseId": "v192-new-303-kabizlik-poliuri-ve-konfuzyon",
+    "title": "Kabızlık, poliüri ve konfüzyon",
+    "answerTarget": "treatment",
+    "questionType": "treatment",
+    "urgencyLogic": "Ağır semptomatik hiperkalsemide ilk adım izotonik sıvıdır; malignite ilişkili tabloda bisfosfonat kalıcı kontrol için eklenir.",
+    "correctAnswer": "İzotonik sıvı resüsitasyonu ve ardından intravenöz bisfosfonat tedavisi",
+    "evidenceChain": [
+      "Konfüzyon, kabızlık, poliüri ve dehidratasyon semptomatik ağır hiperkalsemiyi gösterir.",
+      "Düzeltilmiş kalsiyumun 14.6 mg/dL olması ve PTH’nin baskılanması PTH dışı hiperkalsemi lehinedir.",
+      "Kilo kaybı, sigara öyküsü, akciğer kitlesi ve PTHrP yüksekliği malignite ilişkili hiperkalsemiyi destekler."
+    ]
+  },
+  {
+    "caseId": "v192-new-304-halsizlik-ve-pika",
+    "title": "Halsizlik ve pika",
+    "answerTarget": "diagnosis",
+    "questionType": "diagnosis",
+    "urgencyLogic": "Düşük ferritin demir eksikliği için en güçlü ipucudur; B12 eksikliği makrositoz yapar, aplastik anemi pansitopeniyle gelir.",
+    "correctAnswer": "Demir eksikliği anemisi",
+    "evidenceChain": [
+      "Yoğun adet kanaması kronik demir kaybı için güçlü öykü oluşturur.",
+      "Pika, solukluk, mikrositoz ve hipokromi demir eksikliği anemisini düşündürür.",
+      "Düşük ferritin, düşük serum demiri, yüksek TDBK ve düşük transferrin satürasyonu tanıyı laboratuvar olarak destekler."
+    ]
+  },
+  {
+    "caseId": "v192-new-305-hemoptizi-ve-bobrek-yetmezligi",
+    "title": "Hemoptizi ve böbrek yetmezliği",
+    "answerTarget": "diagnosis",
+    "questionType": "diagnosis",
+    "urgencyLogic": "Anti-GBM hastalığı = akciğer hemorajisi + hızlı ilerleyen glomerülonefrit + anti-GBM/lineer IgG paterni.",
+    "correctAnswer": "Anti-GBM hastalığı",
+    "evidenceChain": [
+      "Hemoptizi, hipoksemi ve bilateral alveoler opasiteler alveoler hemoraji düşündürür.",
+      "Dismorfik eritrosit, eritrosit silendiri ve hızlı kreatinin artışı hızlı ilerleyen glomerülonefrit paternini gösterir.",
+      "Anti-GBM antikoru ve lineer IgG birikimi akciğer-böbrek sendromunda anti-GBM hastalığını destekler."
+    ]
+  }
+]

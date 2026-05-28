@@ -1,0 +1,583 @@
+[
+  {
+    "caseId": "v163-new-006-sag-alt-kadran-agrisi",
+    "removedInvestigationTitles": [
+      "Tam kan sayımı",
+      "Abdominal ultrasonografi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Hemogram ve inflamasyon paneli",
+      "Tam idrar analizi",
+      "Sağ alt kadran ultrasonografisi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "",
+      "Komprese olmayan, çapı artmış kör sonlanan tübüler yapı apendiks inflamasyonunu anatomik olarak gösterir; göç eden sağ alt kadran ağrısıyla birlikte akut apandisiti destekler."
+    ],
+    "newShortComments": [
+      "Lökositoz, nötrofili ve CRP yüksekliği lokal sağ alt kadran periton irritasyonuyla birleştiğinde akut apandisit olasılığını destekler.",
+      "Normal idrar bulguları üreter taşı veya üriner enfeksiyon olasılığını geri plana iter; ağrının göç etmesi ve periton bulgusu apandisit lehinedir.",
+      "Komprese olmayan genişlemiş apendiks, klinik göç eden ağrı ve lokal rebound ile birlikte akut apandisitin anatomik karşılığını gösterir."
+    ],
+    "rowReferenceStatusFixesEstimated": 4
+  },
+  {
+    "caseId": "v167-new-047-ates-ve-sag-ust-kadran-agrisi",
+    "removedInvestigationTitles": [
+      "Alkalen fosfataz",
+      "Gebelik testi / serum beta-hCG",
+      "Total bilirubin",
+      "Tam idrar analizi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Hemogram ve inflamasyon paneli",
+      "Karaciğer ve safra yolu paneli",
+      "Böbrek fonksiyonu ve laktat",
+      "Koagülasyon paneli",
+      "Abdominal ultrasonografi",
+      "Kan kültürü"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "",
+      "Beta-hCG düzeyi gebelikle uyumludur; erken gebelikte tek ölçüm tanı koydurmaz, seri artış paterni ve transvajinal ultrason bulguları ile birlikte yorumlanmalıdır.",
+      "",
+      "",
+      "Komprese olmayan, çapı artmış kör sonlanan tübüler yapı apendiks inflamasyonunu anatomik olarak gösterir; göç eden sağ alt kadran ağrısıyla birlikte akut apandisiti destekler."
+    ],
+    "newShortComments": [
+      "Lökositoz, nötrofili ve yüksek inflamasyon belirteçleri obstrükte safra yolunda enfeksiyon ve sepsis riskini destekler.",
+      "Direkt bilirubin, ALP ve GGT yüksekliği kolestatik obstrüksiyon paternini gösterir; ateş ve sağ üst kadran ağrısıyla birlikte akut kolanjiti destekler.",
+      "Laktat yüksekliği ve sınırda kreatinin, enfeksiyonun sistemik etkilenim oluşturduğunu ve kaynak kontrolünün geciktirilmemesi gerektiğini gösterir.",
+      "ERCP ve olası sfinkterotomi öncesi kanama riski değerlendirilir; belirgin koagülopati işlem planını etkileyebilir.",
+      "Dilate koledok ve distal koledok taşı, enfekte safra yolu obstrüksiyonunun anatomik kaynağını gösterir ve ERCP ile drenaj gereksinimini destekler.",
+      "Kolanjitte bakteriyemi görülebilir; kültür alınması uygundur ancak antibiyotik ve biliyer drenaj kültür sonucunu beklemek için geciktirilmemelidir."
+    ],
+    "rowReferenceStatusFixesEstimated": 5
+  },
+  {
+    "caseId": "v168-new-059-ates-ve-sarilikla-basvuran-hasta",
+    "removedInvestigationTitles": [
+      "Alkalen fosfataz",
+      "Gebelik testi / serum beta-hCG",
+      "Total bilirubin",
+      "Tam idrar analizi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Hemogram, inflamasyon ve sepsis paneli",
+      "Karaciğer ve safra yolu paneli",
+      "Organ etkilenimi ve girişim öncesi değerlendirme",
+      "Abdominal ultrasonografi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "",
+      "Beta-hCG düzeyi gebelikle uyumludur; erken gebelikte tek ölçüm tanı koydurmaz, seri artış paterni ve transvajinal ultrason bulguları ile birlikte yorumlanmalıdır.",
+      "",
+      "",
+      "Abdominal ultrasonografi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Endoskopik retrograd kolanjiyopankreatografi ile biliyer drenaj olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır."
+    ],
+    "newShortComments": [
+      "Yüksek inflamasyon belirteçleri ve laktat, biliyer enfeksiyonun sistemik dolaşımı etkilediğini ve acil kaynak kontrolü gerektirdiğini gösterir.",
+      "Direkt bilirubin ve kolestatik enzim yüksekliği, sarılığın hepatoselüler yıkımdan çok safra yolu tıkanıklığıyla ilişkili olduğunu gösterir.",
+      "Kreatinin ve INR artışı ağır kolanjitte organ disfonksiyonu riskini gösterir; resüsitasyonla birlikte drenaj planı yapılmalıdır.",
+      "Safra yolu dilatasyonu ve distal taş, sepsisin kaynağının mekanik biliyer obstrüksiyon olduğunu gösterir; drenaj geciktirilmemelidir."
+    ],
+    "rowReferenceStatusFixesEstimated": 5
+  },
+  {
+    "caseId": "v172-new-074-siddetli-karin-agrisi-ve-atriyal-fibrilasyon",
+    "removedInvestigationTitles": [
+      "Beyaz küre sayısı",
+      "Serum laktat",
+      "Tam idrar analizi",
+      "Abdominal ultrasonografi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Kan gazı ve laktat",
+      "Hemogram ve böbrek fonksiyonu"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "Abdominal ultrasonografi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Kontrastlı BT anjiyografi olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır."
+    ],
+    "newShortComments": [
+      "Metabolik asidoz ve laktat yüksekliği bağırsak hipoperfüzyonu/iskemi şüphesini güçlendirir; tanıyı kesinleştirmek için vasküler görüntüleme gerekir.",
+      "Lökositoz inflamatuvar/stres yanıtını gösterir; kontrastlı BT anjiyografi öncesi böbrek fonksiyonu ve koagülasyon değerlendirilir."
+    ],
+    "rowReferenceStatusFixesEstimated": 5
+  },
+  {
+    "caseId": "v173-new-086-yasli-hastada-mekanik-obstruksiyon",
+    "removedInvestigationTitles": [
+      "Temel biyokimya ve elektrolitler",
+      "Tam idrar analizi",
+      "Abdominal bilgisayarlı tomografi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Elektrolitler ve böbrek fonksiyonu",
+      "Hemogram ve laktat",
+      "Kontrastlı abdominal BT"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "",
+      "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır."
+    ],
+    "newShortComments": [
+      "Kusma ve üçüncü boşluğa sıvı kaybı hipovolemi-elektrolit bozukluğu oluşturur; obstrüksiyon yönetimi öncesi resüsitasyon gerekir.",
+      "Lökositoz stres/inflamasyonla uyumludur; normal laktat ve peritonit olmaması strangülasyon bulgusunun belirgin olmadığını gösterir, ancak mekanik obstrüksiyon devam eder.",
+      "BT’de mekanik obstrüksiyon, pnömobilia ve ektopik safra taşı birlikteliği safra taşı ileusunu gösterir."
+    ],
+    "rowReferenceStatusFixesEstimated": 7
+  },
+  {
+    "caseId": "v174-new-093-travma-sonrasi-karin-hassasiyeti",
+    "removedInvestigationTitles": [
+      "Kapiller kan glukozu",
+      "Tam idrar analizi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Hemogram, laktat ve transfüzyon hazırlığı",
+      "FAST ultrasonografi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "",
+      "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir."
+    ],
+    "newShortComments": [
+      "Anemi, laktat yüksekliği ve baz açığı hemorajik şokla uyumludur; resüsitasyon cerrahi kanama kontrolüyle eş zamanlı yürütülmelidir.",
+      "Hemodinamik instabil travma hastasında pozitif FAST intraperitoneal kanama lehinedir ve BT beklemeden acil laparotomi endikasyonu oluşturur."
+    ],
+    "rowReferenceStatusFixesEstimated": 4
+  },
+  {
+    "caseId": "v174-new-094-sag-ust-kadran-agrisi",
+    "removedInvestigationTitles": [
+      "Beyaz küre sayısı",
+      "Gebelik testi / serum beta-hCG",
+      "Tam idrar analizi",
+      "Abdominal ultrasonografi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Hemogram ve inflamasyon paneli",
+      "Karaciğer/safra yolu ve pankreas paneli",
+      "Sağ üst kadran ultrasonografisi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "Beta-hCG düzeyi gebelikle uyumludur; erken gebelikte tek ölçüm tanı koydurmaz, seri artış paterni ve transvajinal ultrason bulguları ile birlikte yorumlanmalıdır.",
+      "",
+      "Komprese olmayan, çapı artmış kör sonlanan tübüler yapı apendiks inflamasyonunu anatomik olarak gösterir; göç eden sağ alt kadran ağrısıyla birlikte akut apandisiti destekler."
+    ],
+    "newShortComments": [
+      "Lökositoz ve CRP yüksekliği uzamış sağ üst kadran ağrısı ve Murphy bulgusuyla birlikte safra kesesi inflamasyonunu destekler.",
+      "Bilirubin ve lipazın belirgin yüksek olmaması koledok taşı/kolanjit ve akut pankreatiti geri plana iter; odak safra kesesidir.",
+      "Taş, duvar kalınlaşması, perikolesistik sıvı ve sonografik Murphy bulgusu akut kolesistitin görüntüleme karşılığını oluşturur."
+    ],
+    "rowReferenceStatusFixesEstimated": 4
+  },
+  {
+    "caseId": "v175-new-107-yumusak-doku-enfeksiyonunda-hizla-kotulesme",
+    "removedInvestigationTitles": [
+      "Beyaz küre sayısı",
+      "Serum laktat"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Hemogram, metabolik panel ve laktat",
+      "Yumuşak doku grafisi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "",
+      "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik tabloyu gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır."
+    ],
+    "newShortComments": [
+      "Şiddetli inflamasyon, hiponatremi, böbrek etkilenimi ve laktat yüksekliği nekrotizan enfeksiyon/sepsis riskini destekler; tedavi görüntüleme veya kültürle geciktirilmemelidir.",
+      "Yumuşak dokuda gaz nekrotizan enfeksiyonu destekler; ancak klinik şüphe kuvvetliyse gaz görülmese de cerrahi eksplorasyon ertelenmez."
+    ],
+    "rowReferenceStatusFixesEstimated": 2
+  },
+  {
+    "caseId": "v176-new-120-diskilama-sonrasi-anal-agri",
+    "removedInvestigationTitles": [
+      "Hemogram ve temel inflamasyon paneli"
+    ],
+    "addedOrRewrittenInvestigationTitles": [],
+    "oldGenericOrWrongShortComments": [],
+    "newShortComments": [],
+    "rowReferenceStatusFixesEstimated": 3
+  },
+  {
+    "caseId": "v177-new-127-ani-bacak-agrisi-ve-sogukluk",
+    "removedInvestigationTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "El Doppler değerlendirmesi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Yatak başı arteriyel Doppler",
+      "Koagülasyon, böbrek fonksiyonu ve kas hasarı paneli"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
+      "El Doppler değerlendirmesi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Acil sistemik heparinizasyon ve revaskülarizasyon için damar cerrahisi girişimi olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır."
+    ],
+    "newShortComments": [
+      "Doppler akım kaybı akut arteriyel tıkanıklığı destekler; nörolojik defisit olduğundan revaskülarizasyon geciktirilmemelidir.",
+      "Yetersiz antikoagülasyon emboli riskini destekler; CK/laktat artışı iskemik kas etkilenimini gösterir."
+    ],
+    "rowReferenceStatusFixesEstimated": 4
+  },
+  {
+    "caseId": "v178-new-137-epigastrik-agri-ve-kusma",
+    "removedInvestigationTitles": [
+      "Hematokrit",
+      "Kan üre azotu",
+      "Serum lipaz",
+      "Tam idrar analizi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Pankreas enzimleri",
+      "Hemokonsantrasyon ve böbrek perfüzyonu",
+      "Abdominal ultrasonografi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "",
+      "",
+      "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır."
+    ],
+    "newShortComments": [
+      "Lipazın belirgin yüksekliği tipik epigastrik-sırta yayılan ağrı ile birlikte akut pankreatiti destekler.",
+      "BUN/kreatinin ve hemokonsantrasyon hipovolemiye işaret eder; erken intravenöz sıvı replasmanı klinik önceliktir.",
+      "USG biliyer etiyolojiyi araştırır; bu vakada taş/dilatasyon olmaması alkol ilişkili pankreatiti destekler, ancak başlangıç tedavisi destek tedavisidir."
+    ],
+    "rowReferenceStatusFixesEstimated": 6
+  },
+  {
+    "caseId": "v183-new-190-kasik-sisligi-ve-kusma",
+    "removedInvestigationTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Tam idrar analizi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Hemogram ve perfüzyon paneli",
+      "Ayakta direkt karın grafisi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir."
+    ],
+    "newShortComments": [
+      "Lökositoz ve laktat yüksekliği obstrüksiyon/iskemi riskini destekler; redükte edilemeyen ağrılı fıtıkta cerrahi karar geciktirilmemelidir.",
+      "Hava-sıvı seviyeleri fıtık kesesi nedeniyle gelişen mekanik ince barsak obstrüksiyonunu destekler."
+    ],
+    "rowReferenceStatusFixesEstimated": 6
+  },
+  {
+    "caseId": "v184-new-194-sag-ust-kadran-agrisi",
+    "removedInvestigationTitles": [
+      "Beyaz küre sayısı",
+      "Gebelik testi / serum beta-hCG",
+      "Abdominal ultrasonografi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Hemogram ve CRP",
+      "Bilirubin, karaciğer enzimleri ve lipaz",
+      "Sağ üst kadran ultrasonografisi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "Beta-hCG düzeyi gebelikle uyumludur; erken gebelikte tek ölçüm tanı koydurmaz, seri artış paterni ve transvajinal ultrason bulguları ile birlikte yorumlanmalıdır.",
+      "Komprese olmayan, çapı artmış kör sonlanan tübüler yapı apendiks inflamasyonunu anatomik olarak gösterir; göç eden sağ alt kadran ağrısıyla birlikte akut apandisiti destekler."
+    ],
+    "newShortComments": [
+      "Lökositoz ve CRP yüksekliği safra kesesi inflamasyonunu destekler; biliyer kolikten ayırmada ateş ve inflamasyon önemlidir.",
+      "Belirgin kolestaz veya lipaz yüksekliği olmaması koledok obstrüksiyonu/kolanjit ve pankreatiti geri plana iter.",
+      "Taşla birlikte duvar kalınlaşması ve perikolesistik sıvı akut kolesistit lehine görüntüleme bulgusudur."
+    ],
+    "rowReferenceStatusFixesEstimated": 2
+  },
+  {
+    "caseId": "v185-new-222-ani-sirt-agrisi-ve-hipotansiyon",
+    "removedInvestigationTitles": [
+      "İleri doğrulama öncesi temel laboratuvar",
+      "Tam idrar analizi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Hemogram, koagülasyon ve kan ürünü hazırlığı",
+      "Yatak başı abdominal ultrasonografi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
+      "",
+      "Yatak başı abdominal ultrasonografi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Hemodinamik resüsitasyonla eş zamanlı acil damar cerrahisi onarımı olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır."
+    ],
+    "newShortComments": [
+      "Anemi ve laktat yüksekliği hemorajik şokla uyumludur; resüsitasyon vasküler onarım hazırlığıyla eş zamanlı yapılmalıdır.",
+      "İnstabil hastada yatak başı USG geniş AAA’yı hızla gösterir; rüptür şüphesinde BT için gecikme oluşturulmamalıdır."
+    ],
+    "rowReferenceStatusFixesEstimated": 7
+  },
+  {
+    "caseId": "v185-new-223-ates-sarilik-ve-sag-ust-kadran-agrisi",
+    "removedInvestigationTitles": [
+      "Alkalen fosfataz",
+      "Gebelik testi / serum beta-hCG",
+      "Total bilirubin",
+      "Tam idrar analizi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Sepsis ve kolestaz paneli",
+      "Abdominal ultrasonografi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "",
+      "Pozitif beta-hCG gebelik olasılığını doğrular; ağrı, kanama, serbest sıvı veya adneksiyal bulgu eşlik ediyorsa ektopik gebelik açısından transvajinal ultrasonla birlikte değerlendirilmelidir.",
+      "",
+      "",
+      "Abdominal ultrasonografi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Acil ERCP ile biliyer drenaj olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır."
+    ],
+    "newShortComments": [
+      "Aynı panelde enfeksiyon, kolestaz ve hipoperfüzyon bulgularının birlikte olması ağır akut kolanjitte erken drenaj gereksinimini destekler.",
+      "Koledok taşı ve safra yolu dilatasyonu enfekte obstrüksiyonun anatomik nedenidir; kaynak kontrolü biliyer drenajdır."
+    ],
+    "rowReferenceStatusFixesEstimated": 5
+  },
+  {
+    "caseId": "v185-new-224-ani-epigastrik-agri-ve-tahta-karin",
+    "removedInvestigationTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Tam idrar analizi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Hemogram, laktat ve böbrek fonksiyonu",
+      "Ayakta akciğer grafisi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
+      "",
+      "Akciğer görüntülemesinde konsolidasyonun ateş, öksürük ve solunum bulgularına eşlik etmesi pnömoni tanısını güçlendirir; dağılım ve klinik şiddet tedavi kararını etkiler."
+    ],
+    "newShortComments": [
+      "Peritonit ve hipoperfüzyon bulguları perforasyona bağlı sistemik etkilenimi destekler; resüsitasyonla birlikte kaynak kontrolü gerekir.",
+      "Diyafram altında serbest hava, içi boş organ perforasyonunu ve acil cerrahi değerlendirme gereksinimini gösterir."
+    ],
+    "rowReferenceStatusFixesEstimated": 6
+  },
+  {
+    "caseId": "v186-new-239-diskilama-sirasinda-siddetli-agri",
+    "removedInvestigationTitles": [
+      "Gebelik testi / serum beta-hCG",
+      "Hemogram ve temel inflamasyon paneli"
+    ],
+    "addedOrRewrittenInvestigationTitles": [],
+    "oldGenericOrWrongShortComments": [
+      "Pozitif beta-hCG gebelik olasılığını doğrular; ağrı, kanama, serbest sıvı veya adneksiyal bulgu eşlik ediyorsa ektopik gebelik açısından transvajinal ultrasonla birlikte değerlendirilmelidir.",
+      ""
+    ],
+    "newShortComments": [],
+    "rowReferenceStatusFixesEstimated": 4
+  },
+  {
+    "caseId": "v187-new-253-siddetli-karin-agrisi-ve-hafif-muayene-bulgusu",
+    "removedInvestigationTitles": [
+      "Serum laktat",
+      "Tam idrar analizi",
+      "Abdominal ultrasonografi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Kan gazı ve laktat",
+      "Kontrastlı BT anjiyografi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "Abdominal ultrasonografi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Akut mezenter iskemi olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır."
+    ],
+    "newShortComments": [
+      "Laktat yüksekliği ve metabolik asidoz bağırsak hipoperfüzyonu/iskemi şüphesini güçlendirir.",
+      "BT anjiyografi vasküler tıkanıklığı ve barsak etkilenimini göstererek akut mezenter iskemi tanısını destekler."
+    ],
+    "rowReferenceStatusFixesEstimated": 4
+  },
+  {
+    "caseId": "v188-new-268-epigastrik-agri-ve-lipaz-yuksekligi",
+    "removedInvestigationTitles": [
+      "Serum lipaz"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Pankreas enzimleri",
+      "Biyokimya ve şiddet izlemi",
+      "Abdominal ultrasonografi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "Abdominal ultrasonografi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte İntravenöz sıvı, analjezi, oral alımın düzenlenmesi ve yakın klinik izlem olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır."
+    ],
+    "newShortComments": [
+      "Tipik ağrı ile birlikte lipazın belirgin yüksekliği akut pankreatit tanısını destekler.",
+      "Biyokimya sıvı gereksinimi ve komplikasyon izlemi için kullanılır; belirgin kolestaz yokluğu biliyer obstrüksiyonu geri plana iter.",
+      "USG biliyer neden açısından değerlendirme sağlar; bu vakada obstrüksiyon bulgusu olmadığından ERCP endikasyonu oluşmaz."
+    ],
+    "rowReferenceStatusFixesEstimated": 2
+  },
+  {
+    "caseId": "v189-new-292-cilt-enfeksiyonunda-orantisiz-agri",
+    "removedInvestigationTitles": [
+      "Serum laktat"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Sepsis ve doku hipoperfüzyon paneli",
+      "Yumuşak doku grafisi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik tabloyu gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
+      ""
+    ],
+    "newShortComments": [
+      "Şiddetli inflamasyon, hiponatremi ve laktat yüksekliği nekrotizan enfeksiyon/sepsis riskini destekler; cerrahi karar klinik şüpheyle verilmelidir.",
+      "Yumuşak dokuda gaz nekrotizan enfeksiyonu destekler; görüntüleme yokluğu klinik şüpheyi dışlamaz, fakat varlığı aciliyeti güçlendirir."
+    ],
+    "rowReferenceStatusFixesEstimated": 2
+  },
+  {
+    "caseId": "v189-new-293-karin-sisligi-ve-gaz-cikaramama",
+    "removedInvestigationTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Tam idrar analizi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Hemogram, elektrolit ve laktat",
+      "Ayakta direkt karın grafisi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
+      "Sistemik inflamasyon bulguları bakteriyel enfeksiyon olasılığını destekler; menenjit kararında belirleyici veri BOS hücre dağılımı, glukoz-protein paterni ve klinik bulgulardır."
+    ],
+    "newShortComments": [
+      "Normal laktat ve peritonit olmaması iskemik/perfore volvulus lehine güçlü kanıt olmadığını gösterir; endoskopik detorsiyon için uygun zemin oluşturur.",
+      "Kahve çekirdeği görünümü sigmoid volvulus için tipiktir; peritonit yoksa başlangıç tedavisi endoskopik detorsiyondur."
+    ],
+    "rowReferenceStatusFixesEstimated": 6
+  },
+  {
+    "caseId": "v189-new-294-supheli-tiroid-nodulu",
+    "removedInvestigationTitles": [
+      "Gebelik testi / serum beta-hCG",
+      "TSH"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Tiroid fonksiyon testi",
+      "Tiroid ultrasonografisi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "Beta-hCG düzeyi gebelikle uyumludur; erken gebelikte tek ölçüm tanı koydurmaz, seri artış paterni ve transvajinal ultrason bulguları ile birlikte yorumlanmalıdır.",
+      "",
+      "Tiroid ultrasonografisi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Ultrason eşliğinde ince iğne aspirasyon biyopsisi olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır."
+    ],
+    "newShortComments": [
+      "TSH normal olduğundan nodülün öncelikli değerlendirmesi ultrason risk sınıflaması ve biyopsi endikasyonudur; sintigrafi düşük TSH’da daha anlamlıdır.",
+      "Hipoekojenite, düzensiz sınır ve mikrokalsifikasyon malignite riskini artırır; bu boyuttaki yüksek şüpheli nodülde USG eşliğinde İİAB gerekir."
+    ],
+    "rowReferenceStatusFixesEstimated": 2
+  },
+  {
+    "caseId": "v194-new-327-yutma-sonrasi-agiza-gida-gelmesi",
+    "removedInvestigationTitles": [
+      "Hemogram ve temel inflamasyon paneli"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Baryumlu özofagus grafisi",
+      "Akciğer grafisi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "Akciğer görüntülemesinde konsolidasyonun ateş, öksürük ve solunum bulgularına eşlik etmesi pnömoni tanısını güçlendirir; dağılım ve klinik şiddet tedavi kararını etkiler.",
+      "Lökositoz ve CRP/prokalsitonin yüksekliği inflamatuvar yanıtı destekler; ateş, öksürük ve akciğer grafisindeki konsolidasyonla birlikte bakteriyel pnömoni lehine yorumlanır.",
+      ""
+    ],
+    "newShortComments": [
+      "Baryumlu grafide posterior faringoözofageal poş Zenker divertikülünü gösterir; endoskopi körlemesine yapılırsa perforasyon riski olabileceği için anatomi bilinmelidir.",
+      "Aspirasyon öyküsü önemlidir; bu grafide aktif pnömoni yoktur, ancak regürjitasyon aspirasyon riskini açıklar."
+    ],
+    "rowReferenceStatusFixesEstimated": 5
+  },
+  {
+    "caseId": "v194-new-328-agrisiz-sarilik-ve-kilo-kaybi",
+    "removedInvestigationTitles": [
+      "Total bilirubin",
+      "Tam idrar analizi",
+      "Abdominal BT"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Kolestaz ve karaciğer paneli",
+      "Abdominal ultrasonografi",
+      "Pankreas protokol kontrastlı BT",
+      "Tümör belirteci"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "",
+      "Abdominal ultrasonografi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Pankreas başı adenokarsinomu olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır.",
+      "AST/ALT yüksekliği kaşıntı ve safra asidi artışıyla birlikte gebelik kolestazını destekleyebilir; kolestatik patern ALP, GGT ve direkt bilirubinle birlikte değerlendirilmelidir."
+    ],
+    "newShortComments": [
+      "Direkt bilirubin, ALP ve GGT baskın yüksekliği ekstrahepatik obstrüktif sarılık paternini destekler.",
+      "Ağrısız distandü safra kesesi ve safra yolu dilatasyonu distal obstrüksiyonu düşündürür; malignite açısından ileri kesitsel görüntüleme gerekir.",
+      "Pankreas başındaki kitle distal koledok obstrüksiyonunu anatomik olarak açıklar ve pankreas başı adenokarsinomunu destekler.",
+      "CA 19-9 tanı koydurucu tek test değildir; obstrüktif sarılıkta yükselebilir, ancak görüntüleme bulgusuyla birlikte malignite şüphesini destekler."
+    ],
+    "rowReferenceStatusFixesEstimated": 5
+  },
+  {
+    "caseId": "v195-new-355-kusma-sonrasi-gogus-agrisi",
+    "removedInvestigationTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Toraks BT"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Hemogram ve inflamasyon paneli",
+      "12 derivasyon EKG",
+      "Kontrastlı toraks BT"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir."
+    ],
+    "newShortComments": [
+      "Lökositoz, CRP ve laktat artışı mediastinal kontaminasyon/sepsis riskini destekler; perforasyon tedavisi geciktirilmemelidir.",
+      "Göğüs ağrısında kardiyak ayırıcı güvenlik için değerlendirilmiştir; ancak kusma sonrası krepitasyon ve BT bulgusu özofagus perforasyonunu öne çıkarır.",
+      "BT’de mediastinal hava-sıvı ve plevral efüzyon özofagus perforasyonu/mediastinal kontaminasyonu gösterir."
+    ],
+    "rowReferenceStatusFixesEstimated": 5
+  },
+  {
+    "caseId": "v195-new-356-kasik-altinda-agrili-sislik",
+    "removedInvestigationTitles": [
+      "İleri doğrulama öncesi temel laboratuvar",
+      "Tam idrar analizi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Hemogram ve laktat",
+      "Kasık ultrasonografisi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
+      "Masif proteinüri, hipoalbüminemi ve ödem birlikte nefrotik tabloyu gösterir; altta yatan glomerüler bariyer hasarı doku bulgusuna göre sınıflandırılır.",
+      ""
+    ],
+    "newShortComments": [
+      "Hafif lökositoz ve laktat artışı inkarsere fıtıkta strangülasyon riskini değerlendirmeye yardımcı olur; tanıyı esas olarak muayene ve görüntüleme lokalizasyonu taşır.",
+      "Femoral kanal düzeyindeki barsak ansı içeren herni kesesi, ağrılı redükte edilemeyen kitleyle birlikte inkarsere femoral herniyi destekler."
+    ],
+    "rowReferenceStatusFixesEstimated": 7
+  },
+  {
+    "caseId": "v195-new-357-erken-evre-meme-kitlesi",
+    "removedInvestigationTitles": [
+      "Gebelik testi / serum beta-hCG",
+      "İleri doğrulama öncesi temel laboratuvar",
+      "Aksiller ultrasonografi"
+    ],
+    "addedOrRewrittenInvestigationTitles": [
+      "Meme görüntüleme",
+      "Kor biyopsi"
+    ],
+    "oldGenericOrWrongShortComments": [
+      "Beta-hCG düzeyi gebelikle uyumludur; erken gebelikte tek ölçüm tanı koydurmaz, seri artış paterni ve transvajinal ultrason bulguları ile birlikte yorumlanmalıdır.",
+      "",
+      "Aksiller ultrasonografi bulgusu, olgudaki öykü ve muayene ipuçlarıyla birlikte Sentinel lenf nodu biyopsisi olasılığını nesnelleştirir; sonuç tek başına değil klinik bağlamla yorumlanmalıdır."
+    ],
+    "newShortComments": [
+      "Küçük primer kitle ve patolojik aksiller nod olmaması erken evre, klinik nod negatif meme kanseri bağlamını oluşturur.",
+      "Kor biyopsi invaziv meme kanseri tanısını doğrular; aksiller evreleme yöntemi klinik nod durumuna göre seçilir."
+    ],
+    "rowReferenceStatusFixesEstimated": 6
+  }
+]

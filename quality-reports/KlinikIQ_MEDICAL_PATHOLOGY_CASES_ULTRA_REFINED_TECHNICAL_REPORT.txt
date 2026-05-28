@@ -1,0 +1,37 @@
+KlinikIQ Medical Pathology Ultra Refinement Technical Report
+
+Scope:
+- Edited only branchId=medical-pathology general clinical cases.
+- Excluded all TUS Spot Olgular records.
+- Preserved case IDs, case order, branch IDs, relatedBranch, caseType and visual URLs/assets.
+
+Changed files:
+- src/data/cases.js
+- src/data/clinicalVisualManifest.js
+- quality-reports/KlinikIQ_MEDICAL_PATHOLOGY_CASES_COVERAGE_REPORT.json
+- quality-reports/KlinikIQ_MEDICAL_PATHOLOGY_OPTIONS_FEEDBACK_REWRITE_REPORT.json
+- quality-reports/KlinikIQ_MEDICAL_PATHOLOGY_OBJECTIVE_DATA_SHORT_COMMENT_REPORT.json
+- quality-reports/KlinikIQ_MEDICAL_PATHOLOGY_HISTOLOGY_IHC_MECHANISM_REPORT.json
+- quality-reports/KlinikIQ_MEDICAL_PATHOLOGY_QC_METRICS.json
+
+Main operations:
+- Rewrote profile/presentation/history/exam layers for pathology-specific clinical realism.
+- Rebuilt objective data panels to separate laboratory, imaging, pathology, IHC, IF and molecular data.
+- Removed unrelated pneumonia, nephrotic syndrome, meningitis, stroke, pregnancy and generic copied short comments from pathology cases.
+- Strengthened histopathology, cytology, immunohistochemistry and molecular/pathway explanations where appropriate.
+- Rewrote question stems, options, rationales, evidence chains, exam pearls, core knowledge and option-level feedback.
+
+Safety/QC:
+- ID changed: false
+- TUS Spot touched: false
+- Scientific concerns: 0
+- Correct answer logic preserved: true
+
+Verification:
+- node --check src/data/cases.js: PASS
+- dynamic import src/data/cases.js: PASS (620 raw cases)
+- dynamic import src/data/clinicalVisualManifest.js: PASS (280 visuals)
+- targeted pathology bad-feedback grep: PASS (0)
+- targeted unrelated short-comment grep: PASS (0)
+- npm install: timed out in sandbox; node_modules not available
+- npm run build: NOT COMPLETED because vite executable was not installed in sandbox

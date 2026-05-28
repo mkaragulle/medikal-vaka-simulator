@@ -1,0 +1,226 @@
+[
+  {
+    "caseId": "v163-new-007-kolinergik-bulgularla-zehirlenme",
+    "title": "Kolinergik bulgularla zehirlenme",
+    "learningTarget": "Organofosfat toksisitesinde pralidoksimin asetilkolinesterazı reaktive etmesi",
+    "drugReceptorToxicityMechanism": "Organofosfatlar asetilkolinesterazı inhibe eder; yaşlanma gerçekleşmeden verilen pralidoksim enzimi yeniden işlevsel hale getirebilir.",
+    "clinicalMechanismExplanation": "Organofosfatlar asetilkolinesterazı fosforile ederek sinapsta asetilkolin birikimine, muskarinik sekresyon artışına ve nikotinik fasikülasyonlara neden olur. Pralidoksim, yaşlanma gelişmeden önce fosforillenmiş asetilkolinesterazı reaktive ederek özellikle nikotinik nöromüsküler bulguların düzelmesine katkı sağlar; atropin ise muskarinik reseptör blokajıyla sekresyon ve bronkoreyi kontrol eder.",
+    "examPearl": "Organofosfat zehirlenmesinde atropin muskarinik bulguları bloke eder; pralidoksim ise asetilkolinesterazı reaktive ederek özellikle nikotinik bulgular için mekanistik antidottur."
+  },
+  {
+    "caseId": "v165-new-026-bradikardi-ve-hipotansiyon",
+    "title": "Bradikardi ve hipotansiyon",
+    "learningTarget": "Propranolol intoksikasyonunda glukagonun beta reseptörden bağımsız cAMP artırması",
+    "drugReceptorToxicityMechanism": "Glukagonun antidotal değeri beta reseptör agonizması değil beta reseptörden bağımsız cAMP artışıdır.",
+    "clinicalMechanismExplanation": "Propranolol aşırı alımı beta-1 blokajı ile bradikardi, iletim yavaşlaması, negatif inotropi ve hipotansiyon oluşturur; beta-2 blokajı hipoglisemiye katkı sağlayabilir. Glukagon kalpte beta adrenerjik reseptörleri doğrudan uyarmadan kendi Gs bağlı reseptörü üzerinden adenilat siklazı aktive eder ve cAMP’yi artırır. Böylece beta reseptörleri bloke olsa bile inotropi ve kronotropi desteklenebilir.",
+    "examPearl": "Beta-bloker zehirlenmesinde glukagon beta reseptörü bypass ederek Gs-adenilat siklaz-cAMP yolunu aktive eder; atropin muskarinik blokaj yapar, sodyum bikarbonat ise QRS genişleten sodyum kanal blokajında düşünülür."
+  },
+  {
+    "caseId": "v166-new-038-gorme-yakinmasi-ve-metabolik-asidoz",
+    "title": "Görme yakınması ve metabolik asidoz",
+    "learningTarget": "Metanol zehirlenmesinde fomepizolün alkol dehidrogenazı inhibe etmesi",
+    "drugReceptorToxicityMechanism": "Toksik alkol sorularında antidot hedefi ana alkol değil, onun alkol dehidrogenazla toksik organik asitlere dönüşümüdür.",
+    "clinicalMechanismExplanation": "Metanol, alkol dehidrogenazla formaldehit ve formik aside metabolize olur; formik asit optik toksisite ve yüksek anyon açıklıklı metabolik asidozdan sorumludur. Fomepizol alkol dehidrogenazı inhibe ederek toksik metabolit oluşumunu durdurur ve metanolün daha güvenli eliminasyonuna zaman kazandırır.",
+    "examPearl": "Metanol ve etilen glikol zehirlenmelerinde fomepizol alkol dehidrogenazı inhibe eder; disülfiram asetaldehit dehidrogenazı inhibe eder ve bu mekanizma tedavi değildir."
+  },
+  {
+    "caseId": "v168-new-057-yeni-baslayan-kuru-oksuruk",
+    "title": "Yeni başlayan kuru öksürük",
+    "learningTarget": "ACE inhibitörüne bağlı bradikinin birikimi ve kuru öksürük",
+    "drugReceptorToxicityMechanism": "İlaç yan etkisi sorularında zaman ilişkisi ve negatif enfeksiyon/bronş obstrüksiyonu bulguları mekanizmayı belirler.",
+    "clinicalMechanismExplanation": "ACE, anjiyotensin I’i anjiyotensin II’ye dönüştürmenin yanında bradikinin yıkımına da katkı sağlar. ACE inhibitörleri bradikinin ve bazı prostaglandinlerin birikimine yol açarak ateşsiz, balgamsız, inatçı kuru öksürük oluşturabilir. Normal muayene ve akciğer grafisi enfeksiyondan çok ilaç yan etkisini destekler.",
+    "examPearl": "ACE inhibitörü kuru öksürüğünün ana nedeni bradikinin yıkımının azalmasıdır; ARB’ler bu yan etki açısından daha az risklidir çünkü ACE üzerinden bradikinin yıkımını engellemez."
+  },
+  {
+    "caseId": "v169-new-065-anestezi-sirasinda-ani-kriz",
+    "title": "Anestezi sırasında ani kriz",
+    "learningTarget": "Malign hipertermide dantrolenin ryanodin reseptörü üzerinden kalsiyum salınımını azaltması",
+    "drugReceptorToxicityMechanism": "Dantrolen iskelet kasında uyarılma-kasılma eşleşmesini azaltan antidottur; tetikleyici anestezikler kesilmelidir.",
+    "clinicalMechanismExplanation": "Malign hipertermi genellikle RYR1 ilişkili iskelet kası kalsiyum salınım bozukluğuyla gelişir. Uçucu anestezikler veya süksinilkolin sonrası sarkoplazmik retikulumdan aşırı kalsiyum salınır; kas rijiditesi, hiperkapni, hipertermi, asidoz ve rabdomiyoliz oluşur. Dantrolen ryanodin reseptörü aracılı kalsiyum salınımını azaltarak kas metabolizmasını ve ısı üretimini düşürür.",
+    "examPearl": "Malign hipertermide dantrolen sedatif değildir; RYR1/ryanodin reseptörü üzerinden sarkoplazmik retikulumdan kalsiyum salınımını azaltır."
+  },
+  {
+    "caseId": "v172-new-077-antikoagulan-tedavi-sirasinda-yeni-tromboz",
+    "title": "Antikoagülan tedavi sırasında yeni tromboz",
+    "learningTarget": "Heparin ilişkili trombositopenide PF4 antikoruna bağlı tromboz ve non-heparin antikoagülasyon",
+    "drugReceptorToxicityMechanism": "HIT mekanizması immün trombosit aktivasyonudur; trombosit sayısı düşük diye antikoagülasyonu kesmek hatalıdır.",
+    "clinicalMechanismExplanation": "HIT, heparin-PF4 kompleksine karşı gelişen IgG antikorlarının trombositleri aktive etmesiyle oluşur. Trombositopeniye rağmen paradoksal olarak venöz ve arteriyel tromboz riski yüksektir. Bu nedenle tüm heparin kaynakları kesilmeli ve argatroban gibi non-heparin antikoagülan başlanmalıdır.",
+    "examPearl": "HIT’te trombosit düşük olsa da klinik risk trombozdur; heparini kes, non-heparin antikoagülan başla, varfarini akut fazda tek başına verme."
+  },
+  {
+    "caseId": "v173-new-090-solunum-depresyonu-ve-miyozis",
+    "title": "Solunum depresyonu ve miyozis",
+    "learningTarget": "Opioid toksisitesinde naloksonun opioid reseptör antagonizması",
+    "drugReceptorToxicityMechanism": "Nalokson mü reseptör antagonisti olarak opioid etkisini reseptör düzeyinde tersine çevirir.",
+    "clinicalMechanismExplanation": "Opioidler mü opioid reseptörleri üzerinden beyin sapı solunum merkezinin karbondioksite yanıtını azaltır; miyozis ve bilinç baskılanması eşlik eder. Nalokson kompetitif opioid reseptör antagonisti olarak solunum depresyonunu hızla geri çevirebilir, ancak kısa etki süresi nedeniyle yeniden sedasyon açısından izlem gerekir.",
+    "examPearl": "Opioid zehirlenmesinde hayat kurtarıcı öncelik ventilasyon desteği ve naloksondur; flumazenil benzodiazepin toksisitesinde seçilmiş durumlarda kullanılır."
+  },
+  {
+    "caseId": "v176-new-113-antikoagulan-kullanirken-ciddi-kanama",
+    "title": "Antikoagülan kullanırken ciddi kanama",
+    "learningTarget": "Varfarin ilişkili majör kanamada PCC ve intravenöz K vitamini ile geri çevirme",
+    "drugReceptorToxicityMechanism": "Varfarin geri çevirme stratejisi kanama şiddetine göre belirlenir; majör kanamada beklemek yerine hızlı faktör replasmanı gerekir.",
+    "clinicalMechanismExplanation": "Warfarin vitamin K epoksit redüktazı inhibe ederek faktör II, VII, IX ve X aktivasyonunu azaltır. Majör kanamada dört faktörlü PCC bu faktörleri hızla yerine koyar; intravenöz K vitamini ise karaciğerde yeni faktör sentezini sürdürülebilir biçimde düzeltir.",
+    "examPearl": "Majör varfarin kanamasında PCC hızlı etki, intravenöz K vitamini kalıcı düzeltme sağlar; protamin heparin içindir."
+  },
+  {
+    "caseId": "v176-new-114-gorme-degisikligi-ve-aritmi",
+    "title": "Görme değişikliği ve aritmi",
+    "learningTarget": "Digoksin toksisitesinde immün Fab antikoruyla serbest digoksinin bağlanması",
+    "drugReceptorToxicityMechanism": "Digoksin Na/K-ATPazı inhibe eder; toksisitede Fab antikoru ilacı bağlayarak serbest fraksiyonu azaltır.",
+    "clinicalMechanismExplanation": "Digoksin Na/K-ATPaz inhibisyonu ile kardiyak hücre içi kalsiyumu artırır; terapötik aralığı dardır ve böbrek fonksiyon bozukluğu toksisite riskini artırır. Ciddi aritmi, yüksek düzey veya hiperkalemi varlığında digoksin immün Fab serbest digoksini bağlayarak etkisini geri çevirir.",
+    "examPearl": "Digoksin toksisitesinde spesifik antidot digoksin immün Fab’dır; görme değişikliği ve aritmi birlikte yüksek getirili ipucudur."
+  },
+  {
+    "caseId": "v177-new-128-analjezik-asiri-alimi",
+    "title": "Analjezik aşırı alımı",
+    "learningTarget": "Parasetamol toksisitesinde N-asetilsisteinin glutatyon yenilemesi",
+    "drugReceptorToxicityMechanism": "Parasetamol toksisite kararında erken dönemde klinik sakin olabilir; nomogram ve alım zamanı kritik veridir.",
+    "clinicalMechanismExplanation": "Parasetamolün küçük bir kısmı CYP2E1 ile toksik NAPQI metabolitine dönüşür; normalde glutatyonla detoksifiye edilir. Aşırı alımda glutatyon tükenir ve hepatoselüler hasar gelişir. N-asetilsistein glutatyon prekürsörü sağlayarak NAPQI detoksifikasyonunu artırır ve erken verildiğinde karaciğer hasarını azaltır.",
+    "examPearl": "Parasetamol zehirlenmesinde antidot N-asetilsisteindir; mekanizma glutatyon yenilenmesi ve NAPQI detoksifikasyonudur."
+  },
+  {
+    "caseId": "v178-new-133-lipit-dusurucu-tedavi-sonrasi-kas-agrisi",
+    "title": "Lipit düşürücü tedavi sonrası kas ağrısı",
+    "learningTarget": "Simvastatin-makrolid etkileşiminde CYP3A4 inhibisyonuna bağlı statin toksisitesi",
+    "drugReceptorToxicityMechanism": "Statin toksisitesinde CK ve böbrek fonksiyonu izlenir; mekanizma çoğu zaman artmış ilaç maruziyetidir.",
+    "clinicalMechanismExplanation": "Simvastatin büyük ölçüde CYP3A4 ile metabolize edilir. Makrolidlerin CYP3A4 inhibisyonu statin maruziyetini artırarak miyopati ve rabdomiyoliz riskini yükseltir. CK yüksekliği, kas ağrısı ve koyu idrar farmakokinetik etkileşim kaynaklı statin toksisitesini destekler.",
+    "examPearl": "Simvastatin + güçlü CYP3A4 inhibitörü birlikteliği rabdomiyoliz riskini artırır; bu farmakokinetik etkileşimdir."
+  },
+  {
+    "caseId": "v183-new-188-antihipertansif-sonrasi-kuru-oksuruk",
+    "title": "Antihipertansif sonrası kuru öksürük",
+    "learningTarget": "ACE inhibitörüne bağlı bradikinin birikimi ve kuru öksürük",
+    "drugReceptorToxicityMechanism": "İlaç yan etkisi sorularında zaman ilişkisi ve negatif enfeksiyon/bronş obstrüksiyonu bulguları mekanizmayı belirler.",
+    "clinicalMechanismExplanation": "ACE, anjiyotensin I’i anjiyotensin II’ye dönüştürmenin yanında bradikinin yıkımına da katkı sağlar. ACE inhibitörleri bradikinin ve bazı prostaglandinlerin birikimine yol açarak ateşsiz, balgamsız, inatçı kuru öksürük oluşturabilir. Normal muayene ve akciğer grafisi enfeksiyondan çok ilaç yan etkisini destekler.",
+    "examPearl": "ACE inhibitörü kuru öksürüğünün ana nedeni bradikinin yıkımının azalmasıdır; ARB’ler bu yan etki açısından daha az risklidir çünkü ACE üzerinden bradikinin yıkımını engellemez."
+  },
+  {
+    "caseId": "v184-new-196-duygudurum-ilaci-sonrasi-tremor-ve-konfuzyon",
+    "title": "Duygudurum ilacı sonrası tremor ve konfüzyon",
+    "learningTarget": "Lityum toksisitesinde dar terapötik indeks, renal eliminasyon ve hemodiyaliz değerlendirmesi",
+    "drugReceptorToxicityMechanism": "Lityum farmakokinetiğinde böbrek klirensi belirleyicidir; dehidratasyon ve NSAİİ toksisite riskini artırır.",
+    "clinicalMechanismExplanation": "Lityum dar terapötik indeksli, büyük ölçüde böbrekten atılan bir ilaçtır. Dehidratasyon ve NSAİİ kullanımı renal klirensi azaltarak düzeyi yükseltebilir. Ciddi nörolojik bulgu ve yüksek düzeyde ilaç kesilir, izotonik sıvı verilir ve hemodiyaliz değerlendirilir; aktif kömür lityumu iyi bağlamaz.",
+    "examPearl": "Lityum aktif kömüre iyi bağlanmaz; ciddi nörolojik toksisite veya çok yüksek düzeyde hemodiyaliz düşünülür."
+  },
+  {
+    "caseId": "v185-new-219-tansiyon-ilaci-sonrasi-hisilti",
+    "title": "Tansiyon ilacı sonrası hışıltı",
+    "learningTarget": "Nonselektif beta-blokerin beta-2 blokajıyla bronkokonstriksiyon yapması",
+    "drugReceptorToxicityMechanism": "Beta-2 reseptörü bronkodilatör Gs-cAMP sinyalini destekler; blokaj bronkokonstriksiyona yatkınlık yaratır.",
+    "clinicalMechanismExplanation": "Propranolol nonselektif beta-bloker olduğu için beta-1 yanında bronş düz kasındaki beta-2 reseptörleri de bloke eder. Beta-2 sinyali normalde bronkodilatasyon sağlar; blokaj astım hastasında bronkokonstriksiyon ve hışıltı oluşturabilir.",
+    "examPearl": "Astımlı hastada nonselektif beta-bloker bronkospazm yapabilir; mekanizma beta-2 blokajıdır, ACE inhibitörü öksürüğü ise bradikinin aracılıdır."
+  },
+  {
+    "caseId": "v185-new-220-tedavi-sonrasi-isitme-azalmasi",
+    "title": "Tedavi sonrası işitme azalması",
+    "learningTarget": "Gentamisinin 30S ribozomal alt birimde yanlış okumaya neden olması ve ototoksisite riski",
+    "drugReceptorToxicityMechanism": "Antibiyotik mekanizma sorularında sınıf, ribozomal hedef ve toksisite profili birlikte düşünülmelidir.",
+    "clinicalMechanismExplanation": "Gentamisin bir aminoglikoziddir ve bakteriyel 30S ribozomal alt birime bağlanarak mRNA’nın yanlış okunmasına ve anormal protein sentezine neden olur. Konsantrasyon bağımlı bakterisidal etki gösterir; böbrek yetmezliğinde birikim ototoksisite ve nefrotoksisite riskini artırır.",
+    "examPearl": "Aminoglikozidler 30S’e bağlanıp yanlış okumaya neden olur; ototoksisite ve nefrotoksisite düzey/renal fonksiyonla ilişkilidir."
+  },
+  {
+    "caseId": "v185-new-221-stent-sonrasi-ikili-antiagregan-tedavi",
+    "title": "Stent sonrası ikili antiagregan tedavi",
+    "learningTarget": "Klopidogrelin trombosit P2Y12 ADP reseptör inhibisyonu",
+    "drugReceptorToxicityMechanism": "P2Y12 inhibisyonu ADP sinyalini ve GPIIb/IIIa aktivasyonunu azaltır.",
+    "clinicalMechanismExplanation": "Klopidogrel aktif metabolitiyle trombosit P2Y12 ADP reseptörünü irreversibl olarak inhibe eder. ADP aracılı GPIIb/IIIa aktivasyonu azalır ve trombosit agregasyonu baskılanır. Stent sonrası aspirinle birlikte trombosit aracılı trombozu önlemek için kullanılır.",
+    "examPearl": "Klopidogrel P2Y12 ADP reseptörünü, aspirin ise COX-1’i inhibe eder; ikisi farklı basamaklardan trombosit aktivasyonunu azaltır."
+  },
+  {
+    "caseId": "v186-new-237-gogus-agrisinda-dil-alti-ilac",
+    "title": "Göğüs ağrısında dil altı ilaç",
+    "learningTarget": "Nitrogliserinin venodilatasyonla preload ve miyokard oksijen ihtiyacını azaltması",
+    "drugReceptorToxicityMechanism": "NO-cGMP yolu damar düz kasında gevşeme yapar; venöz etki preloadu azaltır.",
+    "clinicalMechanismExplanation": "Nitrogliserin nitrik oksit aracılığıyla cGMP artışı oluşturur ve özellikle venöz kapasite damarlarını dilate eder. Venodilatasyon venöz dönüşü ve preloadu azaltır; duvar gerilimi ve miyokard oksijen gereksinimi düşer. Bu etki stabil angina ağrısının hızlı azalmasını açıklar.",
+    "examPearl": "Nitratların temel antianginal etkisi venodilatasyonla preloadu azaltmaktır; PDE-5 inhibitörüyle birlikte ciddi hipotansiyon riski vardır."
+  },
+  {
+    "caseId": "v187-new-252-kalp-ilaci-sonrasi-bulanti-ve-gorme-bozuklugu",
+    "title": "Kalp ilacı sonrası bulantı ve görme bozukluğu",
+    "learningTarget": "Digoksin toksisitesinde spesifik antikor fragmanı kullanımı",
+    "drugReceptorToxicityMechanism": "Böbrek yetmezliği digoksin klirensini azaltır; dar terapötik indeksli ilaçlarda düzey ve klinik birlikte değerlendirilir.",
+    "clinicalMechanismExplanation": "Böbrek fonksiyonunun bozulması digoksin eliminasyonunu azaltarak serum düzeyini yükseltebilir. Digoksin toksisitesinde gastrointestinal yakınma, sarı-yeşil görme ve aritmi birlikte görülebilir; ciddi toksisitede digoksin spesifik Fab antikor fragmanı serbest digoksini bağlayarak etkisini azaltır.",
+    "examPearl": "Digoksin toksisitesinde Fab antikoru serbest ilacı bağlar; protamin heparin, vitamin K varfarin, flumazenil benzodiazepin içindir."
+  },
+  {
+    "caseId": "v188-new-267-antikoagulan-kullanirken-ciddi-kanama",
+    "title": "Antikoagülan kullanırken ciddi kanama",
+    "learningTarget": "Varfarin ilişkili ciddi kanamada vitamin K ve PCC",
+    "drugReceptorToxicityMechanism": "K vitaminine bağlı faktörlerin azalması varfarinin farmakodinamik temelidir; ciddi kanamada faktör replasmanı şarttır.",
+    "clinicalMechanismExplanation": "Varfarin, K vitaminine bağlı pıhtılaşma faktörlerinin gama-karboksilasyonunu azaltır. Ciddi kanamada PCC hızlı faktör replasmanı sağlar, vitamin K ise varfarin etkisini sürdürülebilir biçimde geri çevirir.",
+    "examPearl": "Varfarin kanaması vitamin K + PCC ile; heparin kanaması protaminle geri çevrilir."
+  },
+  {
+    "caseId": "v189-new-289-agri-kesici-asiri-alimi",
+    "title": "Ağrı kesici aşırı alımı",
+    "learningTarget": "Parasetamol aşırı alımında N-asetilsistein ile NAPQI detoksifikasyonu",
+    "drugReceptorToxicityMechanism": "N-asetilsistein antidot etkisini reseptör antagonizmasıyla değil hücresel detoksifikasyon kapasitesini artırarak gösterir.",
+    "clinicalMechanismExplanation": "Parasetamol aşırı alımında CYP aracılı NAPQI üretimi glutatyon depolarını tüketir. N-asetilsistein glutatyon sentezi için sistein sağlar ve toksik metabolitin detoksifikasyonunu artırır; bu nedenle karaciğer yetmezliği beklenmeden başlanmalıdır.",
+    "examPearl": "Parasetamolde erken normal görünüm yanıltıcıdır; N-asetilsistein NAPQI’yi glutatyon üzerinden etkisizleştirir."
+  },
+  {
+    "caseId": "v189-new-290-heparin-sonrasi-trombosit-dususu-ve-bacak-agrisi",
+    "title": "Heparin sonrası trombosit düşüşü ve bacak ağrısı",
+    "learningTarget": "Heparin ilişkili trombositopenide non-heparin antikoagülan kullanımı",
+    "drugReceptorToxicityMechanism": "PF4 antikorları trombositleri aktive eder; trombositopeni ile trombozun birlikteliği HIT için ayırıcıdır.",
+    "clinicalMechanismExplanation": "Heparin ilişkili trombositopeni, PF4-heparin kompleksine karşı antikorların trombosit aktivasyonu oluşturmasıyla gelişir. Bu nedenle trombosit sayısı düşerken tromboz riski artar. Tedavi heparini kesmek ve argatroban, bivalirudin veya fondaparinuks gibi heparin dışı antikoagülanla devam etmektir.",
+    "examPearl": "HIT’te doğru refleks trombosit vermek değil heparini kesip heparin dışı antikoagülan başlamaktır."
+  },
+  {
+    "caseId": "v189-new-291-vagal-bradikardi-atagi",
+    "title": "Vagal bradikardi atağı",
+    "learningTarget": "Atropinin kardiyak M2 muskarinik reseptör blokajıyla vagal bradikardiyi düzeltmesi",
+    "drugReceptorToxicityMechanism": "M2 reseptörleri kalpte vagal yavaşlatıcı etkiden sorumludur.",
+    "clinicalMechanismExplanation": "Vagus siniri SA ve AV düğümde M2 muskarinik reseptörler üzerinden Gi sinyalini artırarak cAMP’yi azaltır ve potasyum iletkenliğini artırır; kalp hızı yavaşlar. Atropin M2 reseptörleri kompetitif olarak bloke ederek vagal etkiyi azaltır ve sinüs hızını artırır.",
+    "examPearl": "Atropin M2 muskarinik reseptör antagonisti olarak vagal freni kaldırır; glukagon beta-bloker toksisitesinde beta reseptörü bypass eder."
+  },
+  {
+    "caseId": "v194-new-324-antibiyotik-infuzyonu-sirasinda-kizarma",
+    "title": "Antibiyotik infüzyonu sırasında kızarma",
+    "learningTarget": "Vancomycin infüzyon reaksiyonunda hız bağımlı histamin salınımı",
+    "drugReceptorToxicityMechanism": "İlaç reaksiyonlarında anafilaksi bulguları ile hız bağımlı infüzyon reaksiyonu ayrılmalıdır.",
+    "clinicalMechanismExplanation": "Vancomycin hızlı infüze edildiğinde mast hücrelerinden doğrudan histamin salınımı yaparak yüz-boyun kızarması, kaşıntı ve eritem oluşturabilir. Bu reaksiyon çoğu zaman hız bağımlıdır; infüzyonu durdurmak/yavaşlatmak ve gerekirse antihistaminik vermek uygundur.",
+    "examPearl": "Vancomycin flushing reaksiyonu doz alerjisi değil çoğunlukla hızlı infüzyona bağlı histamin salınımıdır; infüzyon yavaşlatılır."
+  },
+  {
+    "caseId": "v194-new-325-antipsikotik-sonrasi-ates-ve-bogaz-agrisi",
+    "title": "Antipsikotik sonrası ateş ve boğaz ağrısı",
+    "learningTarget": "Clozapine ilişkili agranülositozda ilacın kesilmesi ve enfeksiyon yönetimi",
+    "drugReceptorToxicityMechanism": "İlaç güvenliği sorularında laboratuvar eşikleri tedavi kararını belirler.",
+    "clinicalMechanismExplanation": "Clozapine nadir fakat ciddi agranülositoz yapabilir; bu nedenle düzenli ANC takibi gerekir. Ateş ve boğaz ağrısıyla birlikte ağır nötropeni saptandığında ilaç kesilmeli, enfeksiyon açısından değerlendirme ve uygun yönetim başlatılmalıdır.",
+    "examPearl": "Clozapine agranülositoz riski nedeniyle ANC takibi gerektirir; ateş + boğaz ağrısı + ağır nötropeni ilacı kesme nedenidir."
+  },
+  {
+    "caseId": "v194-new-326-tekrarlayan-gut-ataklari",
+    "title": "Tekrarlayan gut atakları",
+    "learningTarget": "Allopurinolün ksantin oksidaz inhibisyonuyla ürik asit üretimini azaltması",
+    "drugReceptorToxicityMechanism": "Ksantin oksidaz inhibitörleri purin yıkım yolunu hedefler; akut atakta NSAİİ/kolşisin ayrı düşünülür.",
+    "clinicalMechanismExplanation": "Allopurinol, hipoksantin ve ksantinin ürik aside dönüşümünü katalizleyen ksantin oksidazı inhibe eder. Böylece ürik asit üretimi azalır ve tekrarlayan gut ataklarının uzun dönem önlenmesinde kullanılır; akut atağın analjezik tedavisiyle karıştırılmamalıdır.",
+    "examPearl": "Allopurinol akut ağrı kesici değildir; ksantin oksidazı inhibe ederek ürik asit üretimini azaltır."
+  },
+  {
+    "caseId": "v195-new-352-tarim-ilaci-sonrasi-salivasyon-ve-bronkore",
+    "title": "Tarım ilacı sonrası salivasyon ve bronkore",
+    "learningTarget": "Organofosfat zehirlenmesinde atropin ve pralidoksim kombinasyonu",
+    "drugReceptorToxicityMechanism": "Kolinerjik kriz tedavisinde hava yolu/oksijen desteği ve antidotlar birlikte düşünülür.",
+    "clinicalMechanismExplanation": "Organofosfatlar asetilkolinesterazı inhibe ederek asetilkolin birikimi oluşturur. Atropin muskarinik reseptörleri bloke ederek bronkore, salivasyon ve bradikardi gibi muskarinik bulguları kontrol eder; pralidoksim yaşlanma öncesi asetilkolinesterazı reaktive ederek özellikle nikotinik bulgulara katkı sağlar.",
+    "examPearl": "Organofosfatta atropin muskarinik reseptörleri bloke eder, pralidoksim asetilkolinesterazı reaktive eder; iki hedef farklıdır."
+  },
+  {
+    "caseId": "v195-new-353-ldl-yuksekligi-icin-baslanan-ilac",
+    "title": "LDL yüksekliği için başlanan ilaç",
+    "learningTarget": "Statinlerin HMG-CoA redüktaz inhibisyonu ve LDL reseptör artışı",
+    "drugReceptorToxicityMechanism": "Statin etkisi yalnızca sentez azalması değil LDL reseptör aracılı klirens artışıdır.",
+    "clinicalMechanismExplanation": "Statinler karaciğerde kolesterol sentezinin hız kısıtlayıcı enzimi olan HMG-CoA redüktazı inhibe eder. Hücre içi kolesterol azalınca hepatosit LDL reseptör ekspresyonu artar ve plazmadan LDL temizlenmesi yükselir.",
+    "examPearl": "Statinler HMG-CoA redüktazı inhibe eder; LDL düşüşünün önemli kısmı hepatik LDL reseptör artışıyla olur."
+  },
+  {
+    "caseId": "v195-new-354-kemoterapi-sonrasi-mukozit",
+    "title": "Kemoterapi sonrası mukozit",
+    "learningTarget": "Metotreksatın dihidrofolat redüktaz inhibisyonu ve folat kurtarma mantığı",
+    "drugReceptorToxicityMechanism": "Antimetabolit toksisitesi en çok hızlı bölünen mukozal ve kemik iliği hücrelerinde belirginleşir.",
+    "clinicalMechanismExplanation": "Metotreksat dihidrofolat redüktazı inhibe ederek tetrahidrofolat oluşumunu azaltır. Bu durum timidilat ve purin sentezini bozarak DNA sentezini baskılar; hızlı bölünen mukozal ve hematopoietik hücreler etkilenir. Lökovorin kurtarma, folat havuzunu bypass ederek normal hücre toksisitesini azaltmayı hedefler.",
+    "examPearl": "Metotreksat DHFR inhibisyonuyla folat döngüsünü ve DNA sentezini baskılar; lökovorin kurtarma normal hücre toksisitesini azaltmak için verilir."
+  }
+]

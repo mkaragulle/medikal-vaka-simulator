@@ -1,0 +1,353 @@
+[
+  {
+    "caseId": "v163-new-006-sag-alt-kadran-agrisi",
+    "title": "Sağ alt kadran ağrısı",
+    "subfield": "Akut karın / genel cerrahi",
+    "decisionTarget": "diagnosis",
+    "correctAnswer": "Akut apandisit",
+    "priorityRule": "Sağ alt kadran ağrısı sorularında göç eden ağrı + McBurney/rebound + komprese olmayan geniş apendiks üçlüsü akut apandisiti güçlü biçimde destekler.",
+    "evidenceChain": [
+      "Ağrının periumbilikal bölgeden sağ alt kadrana göç etmesi apandisitin tipik visseral-somatik ağrı geçişini düşündürür.",
+      "McBurney hassasiyeti, lokal rebound ve defans sağ alt kadranda lokal periton irritasyonunu gösterir.",
+      "USG’de komprese olmayan 8 mm apendiks görülmesi inflamasyonun anatomik kanıtıdır."
+    ]
+  },
+  {
+    "caseId": "v167-new-047-ates-ve-sag-ust-kadran-agrisi",
+    "title": "Ateş ve sağ üst kadran ağrısı",
+    "subfield": "Hepatobiliyer / biliyer kaynak kontrolü",
+    "decisionTarget": "treatment",
+    "correctAnswer": "Endoskopik retrograd kolanjiyopankreatografi ile safra yolu drenajı",
+    "priorityRule": "Kolanjitte MRCP tanısal olabilir, kolesistektomi nüksü önler; fakat sepsis riski olan obstrükte safra yolunda acil karar ERCP ile drenajdır.",
+    "evidenceChain": [
+      "Ateş-titreme, sağ üst kadran ağrısı ve skleral ikter birlikteliği Charcot triadı ile akut kolanjiti düşündürür.",
+      "Direkt bilirubin, ALP ve GGT yüksekliği biliyer obstrüksiyonla uyumlu kolestatik laboratuvar paternini gösterir.",
+      "Ultrasonografide dilate koledok ve distal koledok taşı görülmesi, enfekte safra yolunda drenaj gerektiren mekanik tıkanıklığı ortaya koyar."
+    ]
+  },
+  {
+    "caseId": "v168-new-059-ates-ve-sarilikla-basvuran-hasta",
+    "title": "Ateş ve sarılıkla başvuran hasta",
+    "subfield": "Akut karın / genel cerrahi",
+    "decisionTarget": "treatment",
+    "correctAnswer": "Endoskopik retrograd kolanjiyopankreatografi ile biliyer drenaj",
+    "priorityRule": "Kolanjitte hipotansiyon veya konfüzyon varsa soru genellikle ağır kolanjit ve acil ERCP drenajı kararını sorgular; MRCP beklemek kaynak kontrolünü geciktirir.",
+    "evidenceChain": [
+      "Ateş, sağ üst kadran ağrısı ve sarılık akut kolanjitin temel klinik örüntüsünü oluşturur.",
+      "Hipotansiyon ve konfüzyon ağır kolanjit ve sepsis riski açısından acil drenaj gerektiren sistemik etkilenimi gösterir.",
+      "USG’de koledok dilatasyonu ve distal taş görülmesi enfekte obstrüksiyonun biliyer drenajla kontrol edilmesi gerektiğini gösterir."
+    ]
+  },
+  {
+    "caseId": "v172-new-074-siddetli-karin-agrisi-ve-atriyal-fibrilasyon",
+    "title": "Şiddetli karın ağrısı ve atriyal fibrilasyon",
+    "subfield": "Vasküler acil / genel cerrahi ilişkili",
+    "decisionTarget": "diagnostic_test",
+    "correctAnswer": "Kontrastlı BT anjiyografi",
+    "priorityRule": "“Pain out of proportion” + atriyal fibrilasyon + laktat/asidoz varsa kontrastlı BT anjiyografi düşün; peritonit gelişirse tanıyla birlikte acil cerrahi gündeme gelir.",
+    "evidenceChain": [
+      "Atriyal fibrilasyon ve düzensiz antikoagülan kullanımı embolik mezenter arter tıkanıklığı riskini artırır.",
+      "Ani başlayan, muayene bulgusuna göre orantısız şiddetli karın ağrısı akut mezenter iskemi için tipiktir.",
+      "Laktat yüksekliği ve metabolik asidoz bağırsak hipoperfüzyonu olasılığını destekler ve vasküler görüntüleme gerektirir."
+    ]
+  },
+  {
+    "caseId": "v173-new-086-yasli-hastada-mekanik-obstruksiyon",
+    "title": "Yaşlı hastada mekanik obstrüksiyon",
+    "subfield": "Akut karın / genel cerrahi",
+    "decisionTarget": "diagnosis",
+    "correctAnswer": "Safra taşı ileusu",
+    "priorityRule": "Yaşlı kadın + safra taşı öyküsü + ince barsak obstrüksiyonu + pnömobilia varsa safra taşı ileusunu düşün.",
+    "evidenceChain": [
+      "Yaşlı hastada safra taşı öyküsü ve mekanik obstrüksiyon bulguları birlikte bulunur.",
+      "BT’de dilate ince barsak ansları mekanik ileusu gösterir.",
+      "Pnömobilia ve ektopik safra taşı görülmesi kolesistoenterik fistül üzerinden gelişen safra taşı ileusunu destekler."
+    ]
+  },
+  {
+    "caseId": "v174-new-093-travma-sonrasi-karin-hassasiyeti",
+    "title": "Travma sonrası karın hassasiyeti",
+    "subfield": "Travma cerrahisi",
+    "decisionTarget": "first_step",
+    "correctAnswer": "Acil eksploratif laparotomi yapılması",
+    "priorityRule": "İnstabil + FAST pozitif = acil laparotomi; stabil + FAST/klinik şüphe = BT ile anatomik değerlendirme.",
+    "evidenceChain": [
+      "Künt karın travması sonrası hipotansiyon ve taşikardi hemorajik şok düşündürür.",
+      "FAST incelemede birden fazla alanda serbest sıvı görülmesi intraperitoneal kanama lehinedir.",
+      "İnstabil travma hastasında BT beklemek cerrahi kanama kontrolünü geciktirir."
+    ]
+  },
+  {
+    "caseId": "v174-new-094-sag-ust-kadran-agrisi",
+    "title": "Sağ üst kadran ağrısı",
+    "subfield": "Hepatobiliyer / biliyer kaynak kontrolü",
+    "decisionTarget": "diagnosis",
+    "correctAnswer": "Akut kolesistit",
+    "priorityRule": "Sağ üst kadran ağrısı + ateş + Murphy + USG’de taş/duvar kalınlaşması/perikolesistik sıvı = akut kolesistit.",
+    "evidenceChain": [
+      "Yağlı öğün sonrası başlayan ve saatlerce süren sağ üst kadran ağrısı safra kesesi kaynaklı inflamasyonu düşündürür.",
+      "Pozitif Murphy bulgusu safra kesesi inflamasyonuna lokalize muayene bulgusudur.",
+      "USG’de taş, duvar kalınlaşması ve perikolesistik sıvı akut kolesistitin anatomik kanıtını oluşturur."
+    ]
+  },
+  {
+    "caseId": "v175-new-107-yumusak-doku-enfeksiyonunda-hizla-kotulesme",
+    "title": "Yumuşak doku enfeksiyonunda hızla kötüleşme",
+    "subfield": "Cerrahi enfeksiyonlar",
+    "decisionTarget": "first_step",
+    "correctAnswer": "Acil cerrahi eksplorasyon ve geniş debridman",
+    "priorityRule": "Orantısız ağrı + hızlı yayılım + toksisite/krepitasyon varsa kültür veya görüntüleme beklenmeden acil debridman düşünülür.",
+    "evidenceChain": [
+      "Diyabet zemininde küçük kesi sonrası enfeksiyonun saatler içinde hızla ilerlemesi nekrotizan enfeksiyon riskini artırır.",
+      "Ağrının cilt bulgularına göre orantısız olması nekrotizan fasiit için kritik klinik ipucudur.",
+      "Krepitasyon, yumuşak dokuda gaz ve laktat yüksekliği acil cerrahi debridman gerektiren ağır doku enfeksiyonunu destekler."
+    ]
+  },
+  {
+    "caseId": "v176-new-120-diskilama-sonrasi-anal-agri",
+    "title": "Dışkılama sonrası anal ağrı",
+    "subfield": "Kolorektal / proktoloji",
+    "decisionTarget": "diagnosis",
+    "correctAnswer": "Akut anal fissür",
+    "priorityRule": "Dışkılama sırasında cam kesiği gibi ağrı + posterior orta hat lineer yırtık = anal fissür.",
+    "evidenceChain": [
+      "Sert dışkılama sonrası başlayan cam kesiği tarzı ağrı akut anal fissür için tipiktir.",
+      "Kanamanın az miktarda ve parlak kırmızı olması distal anorektal kaynakla uyumludur.",
+      "Posterior orta hatta yüzeyel lineer yırtık görülmesi tanıyı doğrudan destekler."
+    ]
+  },
+  {
+    "caseId": "v177-new-127-ani-bacak-agrisi-ve-sogukluk",
+    "title": "Ani bacak ağrısı ve soğukluk",
+    "subfield": "Vasküler acil / genel cerrahi ilişkili",
+    "decisionTarget": "first_step",
+    "correctAnswer": "Acil sistemik heparinizasyon ve revaskülarizasyon için damar cerrahisi girişimi",
+    "priorityRule": "6P: pain, pallor, pulselessness, poikilothermia, paresthesia, paralysis; parestezi/paralizi varsa ekstremite tehdit altındadır.",
+    "evidenceChain": [
+      "Atriyal fibrilasyon ve düzensiz antikoagülasyon embolik arter tıkanıklığı riskini artırır.",
+      "Ani ağrı, solukluk, soğukluk ve distal nabız kaybı akut ekstremite iskemisinin temel bulgularıdır.",
+      "Duyu ve motor kayıp ekstremitenin tehdit altında olduğunu ve acil revaskülarizasyon gerektiğini gösterir."
+    ]
+  },
+  {
+    "caseId": "v178-new-137-epigastrik-agri-ve-kusma",
+    "title": "Epigastrik ağrı ve kusma",
+    "subfield": "Pankreatobiliyer",
+    "decisionTarget": "first_step",
+    "correctAnswer": "Agresif intravenöz sıvı replasmanı, analjezi ve yakın klinik izlem",
+    "priorityRule": "Akut pankreatitte “hemen cerrahi” değil; erken sıvı ve analjezi. Biliyer obstrüksiyon/kolanjit varsa ERCP ayrı düşünülür.",
+    "evidenceChain": [
+      "Sırta yayılan epigastrik ağrı ve öne eğilmekle rahatlama akut pankreatit için tipiktir.",
+      "Serum lipazın belirgin yüksek olması tanıyı destekler.",
+      "BUN yüksekliği ve hemokonsantrasyon hipovolemi riskini gösterdiği için erken sıvı tedavisini öncelikli yapar."
+    ]
+  },
+  {
+    "caseId": "v183-new-190-kasik-sisligi-ve-kusma",
+    "title": "Kasık şişliği ve kusma",
+    "subfield": "Fıtık ve karın duvarı",
+    "decisionTarget": "first_step",
+    "correctAnswer": "Acil cerrahi değerlendirme ve operatif onarım",
+    "priorityRule": "Redükte edilemeyen ağrılı fıtık + kusma/gaz çıkaramama = strangülasyon riski; zorlayıcı redüksiyondan kaçın.",
+    "evidenceChain": [
+      "Ağrılı kasık kitlesinin artık redükte edilememesi inkarsere fıtığı gösterir.",
+      "Kusma, gaz çıkaramama ve distansiyon mekanik obstrüksiyon geliştiğini destekler.",
+      "Cilt eritemi, laktat yüksekliği ve taşikardi strangülasyon riskini düşündürür."
+    ]
+  },
+  {
+    "caseId": "v184-new-194-sag-ust-kadran-agrisi",
+    "title": "Sağ üst kadran ağrısı",
+    "subfield": "Hepatobiliyer / biliyer kaynak kontrolü",
+    "decisionTarget": "diagnosis",
+    "correctAnswer": "Akut kolesistit",
+    "priorityRule": "Murphy + taş + duvar kalınlaşması/perikolesistik sıvı = akut kolesistit; ikter ve koledok dilatasyonu varsa kolanjit/koledok taşı düşün.",
+    "evidenceChain": [
+      "Sağ üst kadran ağrısının uzaması ve sağ omuza yayılması safra kesesi kaynaklı inflamasyonu düşündürür.",
+      "Pozitif Murphy bulgusu safra kesesi inflamasyonu için lokalize muayene bulgusudur.",
+      "USG’de taş, duvar kalınlaşması ve perikolesistik sıvı akut kolesistiti destekler."
+    ]
+  },
+  {
+    "caseId": "v185-new-222-ani-sirt-agrisi-ve-hipotansiyon",
+    "title": "Ani sırt ağrısı ve hipotansiyon",
+    "subfield": "Vasküler acil / genel cerrahi ilişkili",
+    "decisionTarget": "first_step",
+    "correctAnswer": "Hemodinamik resüsitasyonla eş zamanlı acil damar cerrahisi onarımı",
+    "priorityRule": "Yaşlı erkek + sigara/HT + ani sırt-karın ağrısı + hipotansiyon + pulsatil kitle = rüptüre AAA; acil onarım.",
+    "evidenceChain": [
+      "Hipertansiyon ve sigara öyküsü AAA riskini artırır.",
+      "Ani sırta yayılan karın ağrısı, hipotansiyon ve soluk-terli görünüm rüptür/hemorajik şoku düşündürür.",
+      "Yatak başı USG’de 7.2 cm AAA görülmesi acil vasküler onarım gerektiren anatomik kaynağı gösterir."
+    ]
+  },
+  {
+    "caseId": "v185-new-223-ates-sarilik-ve-sag-ust-kadran-agrisi",
+    "title": "Ateş, sarılık ve sağ üst kadran ağrısı",
+    "subfield": "Hepatobiliyer / biliyer kaynak kontrolü",
+    "decisionTarget": "treatment",
+    "correctAnswer": "Acil ERCP ile biliyer drenaj",
+    "priorityRule": "Ağır kolanjit + koledok taşı = antibiyotik/sıvı + acil ERCP drenajı.",
+    "evidenceChain": [
+      "Ateş, sarılık ve sağ üst kadran ağrısı Charcot triadı ile akut kolanjiti düşündürür.",
+      "Hipotansiyon ve konfüzyona eğilim ağır enfeksiyon ve organ perfüzyon riski oluşturur.",
+      "USG’de koledok taşı ve dilatasyon kaynak kontrolü gerektiren mekanik biliyer obstrüksiyonu gösterir."
+    ]
+  },
+  {
+    "caseId": "v185-new-224-ani-epigastrik-agri-ve-tahta-karin",
+    "title": "Ani epigastrik ağrı ve tahta karın",
+    "subfield": "Akut karın / genel cerrahi",
+    "decisionTarget": "first_step",
+    "correctAnswer": "Acil cerrahi değerlendirme, resüsitasyon ve perforasyon onarımı",
+    "priorityRule": "Tahta karın ve subdiyafragmatik serbest hava = perforasyon; resüsitasyon + antibiyotik + acil cerrahi.",
+    "evidenceChain": [
+      "NSAİİ kullanımı ve dispepsi öyküsü peptik ülser zeminini destekler.",
+      "Ani başlayan ağrı ve tahta karın yaygın peritoniti gösterir.",
+      "Diyafram altında serbest hava içi boş organ perforasyonu için cerrahi kaynak kontrolü gerektiren bulgudur."
+    ]
+  },
+  {
+    "caseId": "v186-new-239-diskilama-sirasinda-siddetli-agri",
+    "title": "Dışkılama sırasında şiddetli ağrı",
+    "subfield": "Kolorektal / proktoloji",
+    "decisionTarget": "diagnosis",
+    "correctAnswer": "Anal fissür",
+    "priorityRule": "Cam kesiği tarzı dışkılama ağrısı ve posterior orta hat yırtık anal fissür için klasik ipucudur.",
+    "evidenceChain": [
+      "Ağrının dışkılama sırasında cam kesiği tarzında olması anal fissür için tipiktir.",
+      "Kabızlık sonrası az miktarda parlak kırmızı kanama distal anorektal yırtıkla uyumludur.",
+      "Posterior orta hatta lineer yırtık görülmesi tanıyı doğrudan destekler."
+    ]
+  },
+  {
+    "caseId": "v187-new-253-siddetli-karin-agrisi-ve-hafif-muayene-bulgusu",
+    "title": "Şiddetli karın ağrısı ve hafif muayene bulgusu",
+    "subfield": "Vasküler acil / genel cerrahi ilişkili",
+    "decisionTarget": "diagnosis",
+    "correctAnswer": "Akut mezenter iskemi",
+    "priorityRule": "Atrial fibrilasyon + pain out of proportion + laktat = akut mezenter iskemi düşün.",
+    "evidenceChain": [
+      "Atriyal fibrilasyon ve düzensiz antikoagülasyon embolik mezenter arter tıkanıklığı riskini artırır.",
+      "Karın ağrısının muayene bulgularına göre orantısız şiddette olması akut mezenter iskemi için tipiktir.",
+      "Laktat yüksekliği ve BT anjiyografide SMA dolum defekti bağırsak iskemisini destekler."
+    ]
+  },
+  {
+    "caseId": "v188-new-268-epigastrik-agri-ve-lipaz-yuksekligi",
+    "title": "Epigastrik ağrı ve lipaz yüksekliği",
+    "subfield": "Pankreatobiliyer",
+    "decisionTarget": "treatment",
+    "correctAnswer": "İntravenöz sıvı, analjezi, oral alımın düzenlenmesi ve yakın klinik izlem",
+    "priorityRule": "Pankreatitte “lipaz yüksek = pankreatektomi/antibiyotik” değildir; komplikasyon yoksa destek tedavisi.",
+    "evidenceChain": [
+      "Epigastrik ağrının sırta yayılması ve lipaz yüksekliği akut pankreatit tanısını destekler.",
+      "USG’de koledok dilatasyonu ve sarılık olmaması acil ERCP gerektiren biliyer obstrüksiyonu desteklemez.",
+      "Peritonit veya enfekte nekroz bulgusu olmadığı için başlangıç yaklaşımı destek tedavisidir."
+    ]
+  },
+  {
+    "caseId": "v189-new-292-cilt-enfeksiyonunda-orantisiz-agri",
+    "title": "Cilt enfeksiyonunda orantısız ağrı",
+    "subfield": "Cerrahi enfeksiyonlar",
+    "decisionTarget": "first_step",
+    "correctAnswer": "Geniş spektrumlu antibiyotik ve acil cerrahi debridman",
+    "priorityRule": "Orantısız ağrı ve toksisite varsa nekrotizan fasiit düşün; kaynak kontrolü acil debridmandır.",
+    "evidenceChain": [
+      "Diyabet zemininde küçük kesi sonrası enfeksiyon hızla ilerlemiştir.",
+      "Ağrının cilt bulgularına göre orantısız olması nekrotizan enfeksiyon için kritik ipucudur.",
+      "Krepitasyon, yumuşak dokuda gaz ve laktat yüksekliği acil debridman gerektiren ağır tabloyu destekler."
+    ]
+  },
+  {
+    "caseId": "v189-new-293-karin-sisligi-ve-gaz-cikaramama",
+    "title": "Karın şişliği ve gaz çıkaramama",
+    "subfield": "Kolorektal / proktoloji",
+    "decisionTarget": "treatment",
+    "correctAnswer": "Fleksibl sigmoidoskopi ile endoskopik detorsiyon",
+    "priorityRule": "Kahve çekirdeği + peritonit yok = fleksibl sigmoidoskopi ile detorsiyon.",
+    "evidenceChain": [
+      "Karın distansiyonu, kabızlık ve gaz çıkaramama distal kolon obstrüksiyonunu düşündürür.",
+      "Grafide kahve çekirdeği görünümü sigmoid volvulusu destekler.",
+      "Peritonit ve laktat yüksekliği olmaması başlangıçta endoskopik detorsiyonu uygun kılar."
+    ]
+  },
+  {
+    "caseId": "v189-new-294-supheli-tiroid-nodulu",
+    "title": "Şüpheli tiroid nodülü",
+    "subfield": "Endokrin cerrahisi",
+    "decisionTarget": "diagnostic_test",
+    "correctAnswer": "Ultrason eşliğinde ince iğne aspirasyon biyopsisi",
+    "priorityRule": "Normal TSH + yüksek şüpheli ≥1 cm nodül = USG eşliğinde İİAB.",
+    "evidenceChain": [
+      "Aile öyküsü ve çocuklukta radyasyon maruziyeti malignite riskini artırır.",
+      "USG’de hipoekojenite, düzensiz sınır ve mikrokalsifikasyon yüksek şüphe bulgularıdır.",
+      "TSH normal olduğundan düşük TSH’a yönelik sintigrafi yerine USG eşliğinde İİAB önceliklidir."
+    ]
+  },
+  {
+    "caseId": "v194-new-327-yutma-sonrasi-agiza-gida-gelmesi",
+    "title": "Yutma sonrası ağıza gıda gelmesi",
+    "subfield": "Üst gastrointestinal cerrahi",
+    "decisionTarget": "diagnosis",
+    "correctAnswer": "Zenker divertikülü",
+    "priorityRule": "Yaşlı hasta + halitozis + sindirilmemiş gıda regürjitasyonu + aspirasyon = Zenker divertikülü.",
+    "evidenceChain": [
+      "Sindirilmemiş gıdanın özellikle yatarken ağıza gelmesi divertikül içinde gıda birikimini düşündürür.",
+      "Halitozis ve tekrarlayan öksürük aspirasyon riskini destekler.",
+      "Baryumlu grafide hipofarenks posteriorunda sakküler poş görülmesi Zenker divertikülünün anatomik bulgusudur."
+    ]
+  },
+  {
+    "caseId": "v194-new-328-agrisiz-sarilik-ve-kilo-kaybi",
+    "title": "Ağrısız sarılık ve kilo kaybı",
+    "subfield": "Akut karın / genel cerrahi",
+    "decisionTarget": "diagnosis",
+    "correctAnswer": "Pankreas başı adenokarsinomu",
+    "priorityRule": "Ağrısız sarılık + kilo kaybı + pankreas başı kitlesi = pankreas başı adenokarsinomu.",
+    "evidenceChain": [
+      "Ağrısız sarılık, koyu idrar, akolik dışkı ve kilo kaybı malign distal biliyer obstrüksiyon düşündürür.",
+      "Direkt bilirubin, ALP ve GGT yüksekliği ekstrahepatik kolestaz paternini gösterir.",
+      "BT’de pankreas başında distal koledoku daraltan kitle görülmesi obstrüksiyonun anatomik nedenini ortaya koyar."
+    ]
+  },
+  {
+    "caseId": "v195-new-355-kusma-sonrasi-gogus-agrisi",
+    "title": "Kusma sonrası göğüs ağrısı",
+    "subfield": "Üst gastrointestinal cerrahi",
+    "decisionTarget": "first_step",
+    "correctAnswer": "Ağızdan alımı kesmek, geniş spektrumlu antibiyotik başlamak ve acil cerrahi/endoskopik onarım değerlendirmek",
+    "priorityRule": "Kusma sonrası göğüs ağrısı + subkutan amfizem = Boerhaave düşün; oral izlem değil acil perforasyon yönetimi.",
+    "evidenceChain": [
+      "Ağrının güçlü kusma ataklarından sonra başlaması Boerhaave sendromu için tipik tetikleyicidir.",
+      "Boyunda cilt altı krepitasyon özofagus perforasyonuna bağlı hava kaçağını düşündürür.",
+      "BT’de distal özofagus komşuluğunda ekstraluminal hava, mediastinal sıvı ve plevral efüzyon perforasyonu destekler."
+    ]
+  },
+  {
+    "caseId": "v195-new-356-kasik-altinda-agrili-sislik",
+    "title": "Kasık altında ağrılı şişlik",
+    "subfield": "Fıtık ve karın duvarı",
+    "decisionTarget": "diagnosis",
+    "correctAnswer": "İnkarsere femoral herni",
+    "priorityRule": "İnguinal ligament altındaki ağrılı redükte edilemeyen kitle özellikle yaşlı kadında femoral herni düşündürür.",
+    "evidenceChain": [
+      "Kitle inguinal ligamentin altında ve pubik tüberkülün lateral-inferiorunda yerleşmiştir.",
+      "Şişliğin hassas ve redükte edilemez olması inkarsere fıtık lehinedir.",
+      "USG’de femoral kanal düzeyinde barsak ansı içeren herni kesesi görülmesi femoral herni tanısını destekler."
+    ]
+  },
+  {
+    "caseId": "v195-new-357-erken-evre-meme-kitlesi",
+    "title": "Erken evre meme kitlesi",
+    "subfield": "Meme cerrahisi",
+    "decisionTarget": "diagnostic_test",
+    "correctAnswer": "Sentinel lenf nodu biyopsisi",
+    "priorityRule": "Erken evre invaziv meme kanseri + klinik nod negatif aksilla = sentinel lenf nodu biyopsisi.",
+    "evidenceChain": [
+      "Kor biyopsi invaziv duktal karsinomu doğrulamıştır.",
+      "Tümör küçük ve erken evre bağlamındadır.",
+      "Aksillada klinik ve ultrasonografik patolojik lenf nodu izlenmemesi sentinel lenf nodu biyopsisini uygun kılar."
+    ]
+  }
+]

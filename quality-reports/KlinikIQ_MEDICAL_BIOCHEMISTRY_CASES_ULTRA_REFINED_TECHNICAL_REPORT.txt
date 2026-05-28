@@ -1,0 +1,57 @@
+KlinikIQ Medical Biochemistry Cases Ultra Refined - Technical Report
+
+Scope
+- Updated only branchId='medical-biochemistry' and caseType='standard'.
+- Scanned standard medical-biochemistry cases: 30
+- Updated standard medical-biochemistry cases: 30
+- Verified TUS Spot medical-biochemistry records untouched: 18 records.
+
+Files changed
+- src/data/cases.js
+- quality-reports/KlinikIQ_MEDICAL_BIOCHEMISTRY_QC_METRICS.json
+- quality-reports/KlinikIQ_MEDICAL_BIOCHEMISTRY_CASES_COVERAGE_REPORT.json
+- quality-reports/KlinikIQ_MEDICAL_BIOCHEMISTRY_OPTIONS_FEEDBACK_REWRITE_REPORT.json
+- quality-reports/KlinikIQ_MEDICAL_BIOCHEMISTRY_OBJECTIVE_DATA_SHORT_COMMENT_REPORT.json
+- quality-reports/KlinikIQ_MEDICAL_BIOCHEMISTRY_PATHWAY_MECHANISM_REPORT.json
+
+Implementation notes
+- IDs, branchId, caseType, relatedBranch and ordering were preserved.
+- No component architecture, API endpoint, environment variable, Glossary, Hap Bilgi, Komite mode, or TUS Spot data was edited.
+- Existing free-text optionComparison/whyWrong/answerFeedback fields were used; no required schema field was added.
+- Investigation rows were normalized as Parametre | Sonuç | Referans | Durum.
+- Generic short comments and unrelated investigation cards from the target cases were replaced with mechanism-focused panel summaries.
+
+Validation
+- ES module import: passed: node ES module import succeeded; rawCases/cases count = 620/620; 30 standard medical-biochemistry cases and 18 untouched TUS Spot medical-biochemistry records verified.
+- Build/test: not completed: npm run build could not execute because node_modules/vite is not installed in the uploaded ZIP environment; ES module syntax/data integrity checks passed.
+- Forbidden generic feedback patterns in target cases: none found.
+- Scientific concerns: 0
+
+Metrics
+{
+  "scannedMedicalBiochemistryStandardCases": 30,
+  "updatedMedicalBiochemistryStandardCases": 30,
+  "rewrittenLeftColumnCases": 30,
+  "fixedObjectiveDataCases": 30,
+  "expandedInvestigationLayerCases": 30,
+  "hiddenOrRemovedIrrelevantInvestigationCases": 28,
+  "cleanedGenericShortCommentCases": 30,
+  "rewrittenShortCommentCases": 30,
+  "removedOrHiddenShortCommentRecords": 69,
+  "strengthenedLaboratoryPanelCases": 30,
+  "updatedQuestionStemCases": 30,
+  "strengthenedOptionSetCases": 30,
+  "changedOptionTextCount": 115,
+  "rewrittenOptionFeedbackCount": 150,
+  "rewrittenClinicalScientificRationaleCases": 30,
+  "rewrittenEvidenceChainCases": 30,
+  "strengthenedPearlCoreKnowledgeCases": 30,
+  "scientificConcernCount": 0,
+  "correctAnswerLogicPreserved": true,
+  "idChanges": false,
+  "tusSpotTouched": false,
+  "jsonJsSyntaxCheck": "passed: node ES module import succeeded; rawCases/cases count = 620/620; 30 standard medical-biochemistry cases and 18 untouched TUS Spot medical-biochemistry records verified.",
+  "buildTestStatus": "not completed: npm run build could not execute because node_modules/vite is not installed in the uploaded ZIP environment; ES module syntax/data integrity checks passed.",
+  "cleanedGenericShortCommentRecords": 69,
+  "rewrittenShortCommentRecords": 63
+}

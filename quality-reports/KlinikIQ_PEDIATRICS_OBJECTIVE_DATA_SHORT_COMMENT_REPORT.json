@@ -1,0 +1,1659 @@
+[
+  {
+    "caseId": "v163-new-003-atesli-dokuntulu-cocuk",
+    "title": "Ateşli döküntülü çocuk",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Beyin omurilik sıvısı Gram boyama",
+      "Tam kan sayımı"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 1,
+    "objectiveDataTitles": [
+      "Tam kan sayımı",
+      "Kültür örnekleri",
+      "Beyin omurilik sıvısı Gram boyama"
+    ]
+  },
+  {
+    "caseId": "v164-new-012-beslenme-sonrasi-kusan-bebek",
+    "title": "Beslenme sonrası kusan bebek",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Serum klor",
+      "Serum potasyum",
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 5,
+    "objectiveDataTitles": [
+      "Serum klor",
+      "Serum potasyum",
+      "Tam idrar analizi",
+      "Abdominal ultrasonografi"
+    ]
+  },
+  {
+    "caseId": "v165-new-022-erken-donemde-sarilik",
+    "title": "Erken dönemde sarılık",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Direkt bilirubin",
+      "Total bilirubin"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Direkt antiglobulin testi",
+      "Direkt bilirubin",
+      "Total bilirubin",
+      "Abdominal ultrasonografi"
+    ]
+  },
+  {
+    "caseId": "v165-new-027-yuzde-sislik-ve-proteinuri",
+    "title": "Yüzde şişlik ve proteinüri",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Kültür örnekleri",
+      "Serum albümin",
+      "İdrar protein/kreatinin oranı"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Kompleman C3",
+      "Serum albümin",
+      "İdrar protein/kreatinin oranı",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v166-new-032-ishal-sonrasi-bobrek-yetmezligi",
+    "title": "İshal sonrası böbrek yetmezliği",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Abdominal ultrasonografi",
+      "Periferik yayma",
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [
+      "Tam idrar analizi"
+    ],
+    "rowReferenceStatusFixes": 7,
+    "objectiveDataTitles": [
+      "Serum kreatinin",
+      "Tam kan sayımı",
+      "Tam idrar analizi",
+      "Abdominal ultrasonografi",
+      "Periferik yayma"
+    ]
+  },
+  {
+    "caseId": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi",
+    "title": "Ateş ve inspiratuvar solunum sıkıntısı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi",
+      "Hemogram ve temel inflamasyon paneli"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi",
+      "Hemogram ve temel inflamasyon paneli"
+    ],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Akciğer grafisi"
+    ]
+  },
+  {
+    "caseId": "v167-new-043-premature-bebekte-solunum-sikintisi",
+    "title": "Prematüre bebekte solunum sıkıntısı",
+    "removedInvestigations": [
+      "Gebelik testi / serum beta-hCG"
+    ],
+    "rewrittenShortComments": [
+      "Akciğer grafisi"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi"
+    ],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Akciğer grafisi"
+    ]
+  },
+  {
+    "caseId": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular",
+    "title": "Uzamış ateş ve mukokutanöz bulgular",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi",
+      "Arter kan gazı / laktat",
+      "C-reaktif protein",
+      "Tam kan sayımı"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi",
+      "Arter kan gazı / laktat"
+    ],
+    "rowReferenceStatusFixes": 6,
+    "objectiveDataTitles": [
+      "C-reaktif protein",
+      "Tam kan sayımı",
+      "Arter kan gazı / laktat",
+      "Akciğer grafisi"
+    ]
+  },
+  {
+    "caseId": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski",
+    "title": "Aralıklı karın ağrısı ve kanlı dışkı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 6,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Tam idrar analizi",
+      "Abdominal ultrasonografi"
+    ]
+  },
+  {
+    "caseId": "v177-new-125-cocukta-purpura-ve-karin-agrisi",
+    "title": "Çocukta purpura ve karın ağrısı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Abdominal ultrasonografi",
+      "Kültür örnekleri"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Trombosit sayısı",
+      "İdrar analizi",
+      "Abdominal ultrasonografi",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v178-new-138-kanli-ishal-sonrasi-oliguri",
+    "title": "Kanlı ishal sonrası oligüri",
+    "removedInvestigations": [
+      "Gebelik testi / serum beta-hCG"
+    ],
+    "rewrittenShortComments": [
+      "Abdominal ultrasonografi",
+      "Hemoglobin",
+      "Kreatinin",
+      "Periferik yayma",
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [
+      "Hemoglobin"
+    ],
+    "rowReferenceStatusFixes": 7,
+    "objectiveDataTitles": [
+      "Hemoglobin",
+      "Kreatinin",
+      "Trombosit sayısı",
+      "Tam idrar analizi",
+      "Abdominal ultrasonografi",
+      "Periferik yayma"
+    ]
+  },
+  {
+    "caseId": "v179-new-141-besin-sonrasi-akut-reaksiyon",
+    "title": "Besin sonrası akut reaksiyon",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 0,
+    "objectiveDataTitles": [
+      "Yatak başı pediatrik acil değerlendirme",
+      "Tedavi güvenliği ve izlem değerlendirmesi"
+    ]
+  },
+  {
+    "caseId": "v179-new-142-uzayan-nobet",
+    "title": "Uzayan nöbet",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Kapiller kan glukozu"
+    ],
+    "cleanedShortComments": [
+      "Hemogram ve temel inflamasyon paneli"
+    ],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Kapiller kan glukozu",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v179-new-143-hiperglisemi-ve-kusma",
+    "title": "Hiperglisemi ve kusma",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Serum glukoz",
+      "Serum potasyum",
+      "Venöz kan gazı",
+      "İdrar ketonu"
+    ],
+    "cleanedShortComments": [
+      "Serum glukoz"
+    ],
+    "rowReferenceStatusFixes": 5,
+    "objectiveDataTitles": [
+      "Serum glukoz",
+      "Serum potasyum",
+      "Venöz kan gazı",
+      "İdrar ketonu",
+      "Abdominal ultrasonografi"
+    ]
+  },
+  {
+    "caseId": "v179-new-144-hisilti-ve-solunum-sikintisi",
+    "title": "Hışıltı ve solunum sıkıntısı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 0,
+    "objectiveDataTitles": [
+      "Yatak başı pediatrik acil değerlendirme",
+      "Tedavi güvenliği ve izlem değerlendirmesi"
+    ]
+  },
+  {
+    "caseId": "v179-new-145-havlar-tarzda-oksuruk-ve-stridor",
+    "title": "Havlar tarzda öksürük ve stridor",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 0,
+    "objectiveDataTitles": [
+      "Yatak başı pediatrik acil değerlendirme",
+      "Tedavi güvenliği ve izlem değerlendirmesi"
+    ]
+  },
+  {
+    "caseId": "v179-new-146-ates-ve-salya-akmasi",
+    "title": "Ateş ve salya akması",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi",
+      "Hemogram ve temel inflamasyon paneli"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi",
+      "Hemogram ve temel inflamasyon paneli"
+    ],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Akciğer grafisi"
+    ]
+  },
+  {
+    "caseId": "v179-new-147-ates-ve-dolasim-bozuklugu",
+    "title": "Ateş ve dolaşım bozukluğu",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Beyaz küre sayısı"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "Beyaz küre sayısı",
+      "Serum laktat",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v179-new-148-ani-baslayan-tek-tarafli-hisilti",
+    "title": "Ani başlayan tek taraflı hışıltı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi"
+    ],
+    "rowReferenceStatusFixes": 7,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Arter kan gazı / laktat",
+      "Akciğer grafisi"
+    ]
+  },
+  {
+    "caseId": "v179-new-149-tablet-alimi-sonrasi-kusma-ve-metabolik-asidoz",
+    "title": "Tablet alımı sonrası kusma ve metabolik asidoz",
+    "removedInvestigations": [
+      "Gebelik testi / serum beta-hCG",
+      "Tam idrar analizi"
+    ],
+    "rewrittenShortComments": [
+      "Abdominal grafi",
+      "Glukoz, elektrolit ve böbrek fonksiyonu",
+      "Karaciğer fonksiyonları ve koagülasyon",
+      "Serum demir düzeyi",
+      "Venöz kan gazı",
+      "Venöz kan gazı ve metabolik panel",
+      "Yatak başı stabilizasyon değerlendirmesi"
+    ],
+    "cleanedShortComments": [
+      "Abdominal grafi",
+      "Venöz kan gazı",
+      "demir-vaka-dışı-kısa-yorumlar"
+    ],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Yatak başı stabilizasyon değerlendirmesi",
+      "Serum demir düzeyi",
+      "Venöz kan gazı ve metabolik panel",
+      "Glukoz, elektrolit ve böbrek fonksiyonu",
+      "Karaciğer fonksiyonları ve koagülasyon",
+      "Abdominal grafi"
+    ]
+  },
+  {
+    "caseId": "v179-new-150-yenidoganda-direncli-siyanoz",
+    "title": "Yenidoğanda dirençli siyanoz",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Hiperoksi testi",
+      "Kan gazı"
+    ],
+    "cleanedShortComments": [
+      "Hiperoksi testi"
+    ],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "Hiperoksi testi",
+      "Kan gazı"
+    ]
+  },
+  {
+    "caseId": "v180-new-151-kemoterapi-sonrasi-ates",
+    "title": "Kemoterapi sonrası ateş",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "C-reaktif protein",
+      "Mutlak nötrofil sayısı"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "C-reaktif protein",
+      "Mutlak nötrofil sayısı",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v180-new-152-ani-baslayan-carpinti",
+    "title": "Ani başlayan çarpıntı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Elektrokardiyografi"
+    ]
+  },
+  {
+    "caseId": "v180-new-153-ates-ve-ense-sertligi",
+    "title": "Ateş ve ense sertliği",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Kültür örnekleri"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "Beyaz küre sayısı",
+      "C-reaktif protein",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v180-new-154-aclik-sonrasi-nobet",
+    "title": "Açlık sonrası nöbet",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Kapiller kan glukozu"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 1,
+    "objectiveDataTitles": [
+      "Kapiller kan glukozu"
+    ]
+  },
+  {
+    "caseId": "v180-new-155-sicak-ortamda-bilinc-degisikligi",
+    "title": "Sıcak ortamda bilinç değişikliği",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Kreatin kinaz"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 1,
+    "objectiveDataTitles": [
+      "Kreatin kinaz"
+    ]
+  },
+  {
+    "caseId": "v180-new-156-kafa-travmasi-sonrasi-yeniden-bilinc-kaybi",
+    "title": "Kafa travması sonrası yeniden bilinç kaybı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "Kapiller kan glukozu",
+      "Acil kraniyal bilgisayarlı tomografi"
+    ]
+  },
+  {
+    "caseId": "v180-new-157-yenidoganda-kasilma-ve-jitteriness",
+    "title": "Yenidoğanda kasılma ve jitteriness",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Serum total kalsiyum"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "Kapiller kan glukozu",
+      "Serum total kalsiyum",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v180-new-158-bas-agrisi-ve-yuksek-tansiyon",
+    "title": "Baş ağrısı ve yüksek tansiyon",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Serum kreatinin",
+      "İdrar analizi"
+    ],
+    "cleanedShortComments": [
+      "Serum kreatinin"
+    ],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "Serum kreatinin",
+      "İdrar analizi"
+    ]
+  },
+  {
+    "caseId": "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik",
+    "title": "Kulak ağrısı sonrası kulak arkasında şişlik",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Temporal kemik bilgisayarlı tomografi"
+    ],
+    "cleanedShortComments": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Temporal kemik bilgisayarlı tomografi"
+    ],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Kültür örnekleri",
+      "Temporal kemik bilgisayarlı tomografi"
+    ]
+  },
+  {
+    "caseId": "v180-new-160-kapali-ortam-sonrasi-bas-agrisi",
+    "title": "Kapalı ortam sonrası baş ağrısı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Ko-oksimetri"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "Ko-oksimetri",
+      "Serum laktat",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi",
+    "title": "Yenidoğanda beslenme bozulması ve hipotermi",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "C-reaktif protein",
+      "Kapiller kan glukozu"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "C-reaktif protein",
+      "Kapiller kan glukozu"
+    ]
+  },
+  {
+    "caseId": "v181-new-162-yenidoganda-kusma-ve-sok",
+    "title": "Yenidoğanda kusma ve şok",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Kan glukozu",
+      "Serum potasyum",
+      "Serum sodyum"
+    ]
+  },
+  {
+    "caseId": "v181-new-163-bobrek-hastasinda-kas-gucsuzlugu",
+    "title": "Böbrek hastasında kas güçsüzlüğü",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Elektrokardiyografi",
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 5,
+    "objectiveDataTitles": [
+      "Serum potasyum",
+      "Tam idrar analizi",
+      "Elektrokardiyografi"
+    ]
+  },
+  {
+    "caseId": "v181-new-164-ilac-alimi-sonrasi-bilinc-degisikligi",
+    "title": "İlaç alımı sonrası bilinç değişikliği",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Kontrastsız beyin BT"
+    ],
+    "cleanedShortComments": [
+      "Kontrastsız beyin BT"
+    ],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Kapiller kan glukozu",
+      "Elektrokardiyografi",
+      "Kontrastsız beyin BT"
+    ]
+  },
+  {
+    "caseId": "v181-new-165-kulak-cinlamasi-ve-hiperventilasyon",
+    "title": "Kulak çınlaması ve hiperventilasyon",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Serum salisilat düzeyi"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "Arter kan gazı",
+      "Serum salisilat düzeyi"
+    ]
+  },
+  {
+    "caseId": "v181-new-166-ani-baslayan-skrotal-agri",
+    "title": "Ani başlayan skrotal ağrı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Hemogram ve temel inflamasyon paneli"
+    ],
+    "cleanedShortComments": [
+      "Hemogram ve temel inflamasyon paneli"
+    ],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v181-new-167-fiskirir-tarzda-kusma",
+    "title": "Fışkırır tarzda kusma",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Serum klor",
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [
+      "Tam idrar analizi"
+    ],
+    "rowReferenceStatusFixes": 5,
+    "objectiveDataTitles": [
+      "Serum klor",
+      "Venöz kan gazı",
+      "Tam idrar analizi",
+      "Abdominal ultrasonografi"
+    ]
+  },
+  {
+    "caseId": "v181-new-168-anestezi-sirasinda-ani-hipertermi",
+    "title": "Anestezi sırasında ani hipertermi",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Serum kreatin kinaz"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "Arter kan gazı",
+      "Serum kreatin kinaz"
+    ]
+  },
+  {
+    "caseId": "v181-new-169-su-alimi-sonrasi-nobet",
+    "title": "Su alımı sonrası nöbet",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Kapiller kan glukozu",
+      "Serum sodyum"
+    ],
+    "cleanedShortComments": [
+      "Kapiller kan glukozu"
+    ],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "Kapiller kan glukozu",
+      "Serum sodyum"
+    ]
+  },
+  {
+    "caseId": "v181-new-170-sag-alt-kadran-agrisi",
+    "title": "Sağ alt kadran ağrısı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Beyaz küre sayısı",
+      "Tam idrar analizi",
+      "Abdominal ultrasonografi"
+    ]
+  },
+  {
+    "caseId": "v182-new-171-travma-sonrasi-ani-solunum-bozulmasi",
+    "title": "Travma sonrası ani solunum bozulması",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 0,
+    "objectiveDataTitles": [
+      "Yatak başı pediatrik acil değerlendirme",
+      "Tedavi güvenliği ve izlem değerlendirmesi"
+    ]
+  },
+  {
+    "caseId": "v182-new-172-pestisid-temasi-sonrasi-sekresyon-artisi",
+    "title": "Pestisid teması sonrası sekresyon artışı",
+    "removedInvestigations": [
+      "Gebelik testi / serum beta-hCG"
+    ],
+    "rewrittenShortComments": [
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [
+      "Tam idrar analizi"
+    ],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Plazma kolinesteraz aktivitesi",
+      "Tam idrar analizi"
+    ]
+  },
+  {
+    "caseId": "v182-new-173-temizlik-maddesi-icme-sonrasi-agiz-yanigi",
+    "title": "Temizlik maddesi içme sonrası ağız yanığı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi"
+    ],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Akciğer grafisi"
+    ]
+  },
+  {
+    "caseId": "v182-new-174-gaz-yagi-icme-sonrasi-oksuruk",
+    "title": "Gaz yağı içme sonrası öksürük",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi"
+    ],
+    "rowReferenceStatusFixes": 7,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Arter kan gazı / laktat",
+      "Akciğer grafisi"
+    ]
+  },
+  {
+    "caseId": "v182-new-175-orak-hucreli-cocukta-ani-solukluk",
+    "title": "Orak hücreli çocukta ani solukluk",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Abdominal ultrasonografi",
+      "Hemoglobin"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 6,
+    "objectiveDataTitles": [
+      "Hemoglobin",
+      "Retikülosit sayısı",
+      "Trombosit sayısı",
+      "Tam idrar analizi",
+      "Abdominal ultrasonografi"
+    ]
+  },
+  {
+    "caseId": "v182-new-176-aglama-sonrasi-morarma-atagi",
+    "title": "Ağlama sonrası morarma atağı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 0,
+    "objectiveDataTitles": [
+      "Yatak başı pediatrik acil değerlendirme",
+      "Tedavi güvenliği ve izlem değerlendirmesi"
+    ]
+  },
+  {
+    "caseId": "v182-new-177-sicak-su-yanigi",
+    "title": "Sıcak su yanığı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 0,
+    "objectiveDataTitles": [
+      "Yatak başı pediatrik acil değerlendirme",
+      "Tedavi güvenliği ve izlem değerlendirmesi"
+    ]
+  },
+  {
+    "caseId": "v182-new-178-havuzdan-cikarilma-sonrasi-oksuruk",
+    "title": "Havuzdan çıkarılma sonrası öksürük",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi"
+    ],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Akciğer grafisi"
+    ]
+  },
+  {
+    "caseId": "v182-new-179-dka-tedavisi-sirasinda-bilinc-kotulesmesi",
+    "title": "DKA tedavisi sırasında bilinç kötüleşmesi",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Arter kan gazı / laktat",
+      "Serum glukoz",
+      "Serum sodyum",
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [
+      "Serum glukoz"
+    ],
+    "rowReferenceStatusFixes": 7,
+    "objectiveDataTitles": [
+      "Serum glukoz",
+      "Serum sodyum",
+      "Arter kan gazı / laktat",
+      "Tam idrar analizi"
+    ]
+  },
+  {
+    "caseId": "v182-new-180-alci-sonrasi-artan-ekstremite-agrisi",
+    "title": "Alçı sonrası artan ekstremite ağrısı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli"
+    ]
+  },
+  {
+    "caseId": "v196-new-364-yemek-sonrasi-ani-solunum-sikintisi",
+    "title": "Yemek sonrası ani solunum sıkıntısı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 0,
+    "objectiveDataTitles": [
+      "Yatak başı pediatrik acil değerlendirme",
+      "Tedavi güvenliği ve izlem değerlendirmesi"
+    ]
+  },
+  {
+    "caseId": "v196-new-365-uzamis-jeneralize-nobet",
+    "title": "Uzamış jeneralize nöbet",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 0,
+    "objectiveDataTitles": [
+      "Yatak başı pediatrik acil değerlendirme",
+      "Tedavi güvenliği ve izlem değerlendirmesi"
+    ]
+  },
+  {
+    "caseId": "v196-new-366-havlar-tarzda-oksuruk-ve-cekilme",
+    "title": "Havlar tarzda öksürük ve çekilme",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 0,
+    "objectiveDataTitles": [
+      "Yatak başı pediatrik acil değerlendirme",
+      "Tedavi güvenliği ve izlem değerlendirmesi"
+    ]
+  },
+  {
+    "caseId": "v196-new-367-yutamama-ve-tripod-pozisyonu",
+    "title": "Yutamama ve tripod pozisyonu",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi"
+    ],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Akciğer grafisi"
+    ]
+  },
+  {
+    "caseId": "v196-new-368-ishal-sonrasi-dolasim-bozuklugu",
+    "title": "İshal sonrası dolaşım bozukluğu",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 1,
+    "objectiveDataTitles": [
+      "Yatak başı kan glukozu"
+    ]
+  },
+  {
+    "caseId": "v196-new-369-kilo-kaybi-ve-derin-solunum",
+    "title": "Kilo kaybı ve derin solunum",
+    "removedInvestigations": [
+      "Gebelik testi / serum beta-hCG"
+    ],
+    "rewrittenShortComments": [
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 5,
+    "objectiveDataTitles": [
+      "Kan glukozu",
+      "Serum potasyum",
+      "Venöz kan gazı",
+      "Tam idrar analizi"
+    ]
+  },
+  {
+    "caseId": "v196-new-370-bobrek-yetmezliginde-ritim-riski",
+    "title": "Böbrek yetmezliğinde ritim riski",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi",
+      "Elektrokardiyografi",
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi"
+    ],
+    "rowReferenceStatusFixes": 6,
+    "objectiveDataTitles": [
+      "Serum potasyum",
+      "Tam idrar analizi",
+      "Elektrokardiyografi",
+      "Akciğer grafisi"
+    ]
+  },
+  {
+    "caseId": "v196-new-371-konusamama-ve-hisilti",
+    "title": "Konuşamama ve hışıltı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi"
+    ],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Akciğer grafisi"
+    ]
+  },
+  {
+    "caseId": "v196-new-372-yenidoganda-titreme-ve-emme-zayifligi",
+    "title": "Yenidoğanda titreme ve emme zayıflığı",
+    "removedInvestigations": [
+      "Gebelik testi / serum beta-hCG"
+    ],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Yatak başı kan glukozu"
+    ]
+  },
+  {
+    "caseId": "v196-new-373-kanli-ishal-sonrasi-idrar-azalmasi",
+    "title": "Kanlı ishal sonrası idrar azalması",
+    "removedInvestigations": [
+      "Gebelik testi / serum beta-hCG"
+    ],
+    "rewrittenShortComments": [
+      "Abdominal ultrasonografi",
+      "Hemoglobin",
+      "Periferik yayma",
+      "Serum kreatinin",
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [
+      "Hemoglobin"
+    ],
+    "rowReferenceStatusFixes": 7,
+    "objectiveDataTitles": [
+      "Hemoglobin",
+      "Serum kreatinin",
+      "Trombosit sayısı",
+      "Tam idrar analizi",
+      "Abdominal ultrasonografi",
+      "Periferik yayma"
+    ]
+  },
+  {
+    "caseId": "v196-new-374-ates-ve-ense-sertligi",
+    "title": "Ateş ve ense sertliği",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Kültür örnekleri"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "C-reaktif protein",
+      "Tam kan sayımı",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v196-new-375-tablet-alimi-sonrasi-kusma-ve-sok",
+    "title": "Tablet alımı sonrası kusma ve şok",
+    "removedInvestigations": [
+      "Gebelik testi / serum beta-hCG",
+      "Tam idrar analizi"
+    ],
+    "rewrittenShortComments": [
+      "Abdominal grafi",
+      "Glukoz, elektrolit ve böbrek fonksiyonu",
+      "Kan gazı",
+      "Karaciğer fonksiyonları ve koagülasyon",
+      "Serum demir düzeyi",
+      "Venöz kan gazı ve metabolik panel",
+      "Yatak başı stabilizasyon değerlendirmesi"
+    ],
+    "cleanedShortComments": [
+      "Abdominal grafi",
+      "demir-vaka-dışı-kısa-yorumlar"
+    ],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Yatak başı stabilizasyon değerlendirmesi",
+      "Serum demir düzeyi",
+      "Venöz kan gazı ve metabolik panel",
+      "Glukoz, elektrolit ve böbrek fonksiyonu",
+      "Karaciğer fonksiyonları ve koagülasyon",
+      "Abdominal grafi"
+    ]
+  },
+  {
+    "caseId": "v196-new-376-kuruyemis-sonrasi-tek-tarafli-hisilti",
+    "title": "Kuruyemiş sonrası tek taraflı hışıltı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi"
+    ],
+    "rowReferenceStatusFixes": 7,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Arter kan gazı / laktat",
+      "Akciğer grafisi"
+    ]
+  },
+  {
+    "caseId": "v196-new-377-ates-ve-tek-dizde-sislik",
+    "title": "Ateş ve tek dizde şişlik",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "C-reaktif protein"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "C-reaktif protein",
+      "Eklem ultrasonografisi",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v196-new-378-yenidoganda-emme-azalmasi",
+    "title": "Yenidoğanda emme azalması",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "C-reaktif protein",
+      "Tam kan sayımı"
+    ],
+    "cleanedShortComments": [
+      "Tam kan sayımı"
+    ],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "C-reaktif protein",
+      "Tam kan sayımı",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v196-new-379-yenidogan-taramasinda-tiroid-bozuklugu",
+    "title": "Yenidoğan taramasında tiroid bozukluğu",
+    "removedInvestigations": [
+      "Gebelik testi / serum beta-hCG"
+    ],
+    "rewrittenShortComments": [
+      "Serbest T4",
+      "TSH",
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [
+      "Tam idrar analizi"
+    ],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Serbest T4",
+      "TSH",
+      "Tam idrar analizi"
+    ]
+  },
+  {
+    "caseId": "v196-new-380-periorbital-odem-ve-kopuklu-idrar",
+    "title": "Periorbital ödem ve köpüklü idrar",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Abdominal ultrasonografi",
+      "Kültür örnekleri",
+      "Serum albümin",
+      "İdrar protein/kreatinin oranı"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Kompleman C3",
+      "Serum albümin",
+      "İdrar protein/kreatinin oranı",
+      "Abdominal ultrasonografi",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v196-new-381-purpura-ve-karin-agrisi",
+    "title": "Purpura ve karın ağrısı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Abdominal ultrasonografi",
+      "Kültür örnekleri"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Trombosit sayısı",
+      "İdrar tahlili",
+      "Abdominal ultrasonografi",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v196-new-382-bes-gunu-asan-ates",
+    "title": "Beş günü aşan ateş",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi",
+      "Arter kan gazı / laktat",
+      "C-reaktif protein",
+      "Ekokardiyografi"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi",
+      "Arter kan gazı / laktat"
+    ],
+    "rowReferenceStatusFixes": 6,
+    "objectiveDataTitles": [
+      "C-reaktif protein",
+      "Arter kan gazı / laktat",
+      "Akciğer grafisi",
+      "Ekokardiyografi"
+    ]
+  },
+  {
+    "caseId": "v196-new-383-yenidoganda-kusma-ve-ambigus-genital-yapi",
+    "title": "Yenidoğanda kusma ve ambigus genital yapı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "17-hidroksiprogesteron",
+      "Serum potasyum",
+      "Serum sodyum"
+    ]
+  },
+  {
+    "caseId": "v196-new-384-tekrarlayan-oksuruk-ve-yagli-diski",
+    "title": "Tekrarlayan öksürük ve yağlı dışkı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi",
+      "Dışkıda elastaz",
+      "Ter klorür testi"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi",
+      "Dışkıda elastaz"
+    ],
+    "rowReferenceStatusFixes": 6,
+    "objectiveDataTitles": [
+      "Dışkıda elastaz",
+      "Ter klorür testi",
+      "Arter kan gazı / laktat",
+      "Akciğer grafisi"
+    ]
+  },
+  {
+    "caseId": "v196-new-385-uzamis-sarilik-ve-acik-renk-diski",
+    "title": "Uzamış sarılık ve açık renk dışkı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Direkt bilirubin",
+      "Gama-glutamil transferaz"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Direkt bilirubin",
+      "Gama-glutamil transferaz",
+      "Hepatobiliyer sintigrafi",
+      "Abdominal ultrasonografi"
+    ]
+  },
+  {
+    "caseId": "v196-new-386-gec-yurume-ve-bacak-egriligi",
+    "title": "Geç yürüme ve bacak eğriliği",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "25-OH D vitamini",
+      "Alkalen fosfataz",
+      "Serum fosfor"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "25-OH D vitamini",
+      "Alkalen fosfataz",
+      "Serum fosfor"
+    ]
+  },
+  {
+    "caseId": "v196-new-387-uzayan-oksuruk-nobetleri",
+    "title": "Uzayan öksürük nöbetleri",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi"
+    ],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Akciğer grafisi",
+      "Nazofarengeal PCR"
+    ]
+  },
+  {
+    "caseId": "v196-new-388-solukluk-morarma-ve-kemik-agrisi",
+    "title": "Solukluk, morarma ve kemik ağrısı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Hemoglobin",
+      "Trombosit sayısı"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Hemoglobin",
+      "Trombosit sayısı",
+      "Kültür örnekleri",
+      "Periferik yayma"
+    ]
+  },
+  {
+    "caseId": "v196-new-389-aksamlari-artan-aglama",
+    "title": "Akşamları artan ağlama",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 6,
+    "objectiveDataTitles": [
+      "Temel biyokimya ve elektrolitler",
+      "Tam idrar analizi"
+    ]
+  },
+  {
+    "caseId": "v196-new-390-kilo-alamama-ve-kronik-ishal",
+    "title": "Kilo alamama ve kronik ishal",
+    "removedInvestigations": [
+      "Gebelik testi / serum beta-hCG"
+    ],
+    "rewrittenShortComments": [
+      "Anti-doku transglutaminaz IgA",
+      "Hemoglobin",
+      "Tam idrar analizi",
+      "Total IgA"
+    ],
+    "cleanedShortComments": [
+      "Anti-doku transglutaminaz IgA"
+    ],
+    "rowReferenceStatusFixes": 5,
+    "objectiveDataTitles": [
+      "Anti-doku transglutaminaz IgA",
+      "Hemoglobin",
+      "Total IgA",
+      "Tam idrar analizi"
+    ]
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-001-infantta-hisilti-ve-beslenememe",
+    "title": "İnfantta hışıltı ve beslenememe",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi"
+    ],
+    "rowReferenceStatusFixes": 8,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Arter kan gazı / laktat",
+      "Akciğer grafisi",
+      "Nazofarengeal viral panel"
+    ]
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-002-merdiven-cikmada-zorlanma",
+    "title": "Merdiven çıkmada zorlanma",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Kreatin kinaz"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "Genetik analiz",
+      "Kreatin kinaz"
+    ]
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-003-ates-sirasinda-kisa-nobet",
+    "title": "Ateş sırasında kısa nöbet",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Kan glukozu"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 5,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Kan glukozu",
+      "Kontrastsız beyin BT"
+    ]
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-004-tekrarlayan-atesli-idrar-yolu-enfeksiyonu",
+    "title": "Tekrarlayan ateşli idrar yolu enfeksiyonu",
+    "removedInvestigations": [
+      "Gebelik testi / serum beta-hCG"
+    ],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "İdrar kültürü",
+      "Renal ultrasonografi"
+    ]
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-005-kucuk-cocukta-tek-diz-sisligi",
+    "title": "Küçük çocukta tek diz şişliği",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "C-reaktif protein"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "C-reaktif protein",
+      "Antinükleer antikor"
+    ]
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-006-karinda-kitle-ve-kilo-kaybi",
+    "title": "Karında kitle ve kilo kaybı",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "İdrar katekolamin metabolitleri",
+      "Abdominal ultrasonografi",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-007-ust-solunum-yolu-enfeksiyonu-sonrasi-topal",
+    "title": "Üst solunum yolu enfeksiyonu sonrası topallama",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "C-reaktif protein"
+    ],
+    "cleanedShortComments": [
+      "C-reaktif protein"
+    ],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "C-reaktif protein",
+      "Kalça ultrasonografisi",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-008-duzenli-tekrarlayan-ates-ataklari",
+    "title": "Düzenli tekrarlayan ateş atakları",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Atak arası tam kan sayımı"
+    ],
+    "cleanedShortComments": [
+      "Atak arası tam kan sayımı"
+    ],
+    "rowReferenceStatusFixes": 1,
+    "objectiveDataTitles": [
+      "Atak arası tam kan sayımı",
+      "Boğaz kültürü"
+    ]
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-009-sarilik-ve-dalak-buyuklugu",
+    "title": "Sarılık ve dalak büyüklüğü",
+    "removedInvestigations": [
+      "Gebelik testi / serum beta-hCG"
+    ],
+    "rewrittenShortComments": [
+      "Hemoglobin",
+      "MCHC",
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 5,
+    "objectiveDataTitles": [
+      "Hemoglobin",
+      "MCHC",
+      "Tam idrar analizi",
+      "Abdominal ultrasonografi",
+      "Periferik yayma"
+    ]
+  },
+  {
+    "caseId": "v337-peds-clinical-unique-010-diz-agrisiyla-gelen-adolesan",
+    "title": "Diz ağrısıyla gelen adölesan",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Pelvis grafisi"
+    ],
+    "cleanedShortComments": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Pelvis grafisi"
+    ],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Kültür örnekleri",
+      "Pelvis grafisi"
+    ]
+  },
+  {
+    "caseId": "v339-peds-001-yenidoganda-kusma-ve-dolasim-bozuklugu",
+    "title": "Yenidoğanda kusma ve dolaşım bozukluğu",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "17-hidroksiprogesteron",
+      "Kan glukozu",
+      "Serum potasyum",
+      "Serum sodyum",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v339-peds-002-biloz-kusma-ve-batin-hassasiyeti",
+    "title": "Bilöz kusma ve batın hassasiyeti",
+    "removedInvestigations": [
+      "Gebelik testi / serum beta-hCG"
+    ],
+    "rewrittenShortComments": [
+      "Direkt batın grafisi",
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [
+      "Direkt batın grafisi",
+      "Tam idrar analizi"
+    ],
+    "rowReferenceStatusFixes": 4,
+    "objectiveDataTitles": [
+      "Üst gastrointestinal kontrast çalışma",
+      "Tam idrar analizi",
+      "Direkt batın grafisi"
+    ]
+  },
+  {
+    "caseId": "v339-peds-003-premature-bebekte-batin-distansiyonu",
+    "title": "Prematüre bebekte batın distansiyonu",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Direkt batın grafisi",
+      "Kan gazı",
+      "Tam idrar analizi"
+    ],
+    "cleanedShortComments": [
+      "Direkt batın grafisi",
+      "Tam idrar analizi"
+    ],
+    "rowReferenceStatusFixes": 6,
+    "objectiveDataTitles": [
+      "Kan gazı",
+      "Tam kan sayımı",
+      "Tam idrar analizi",
+      "Abdominal ultrasonografi",
+      "Direkt batın grafisi"
+    ]
+  },
+  {
+    "caseId": "v339-peds-004-grip-sonrasi-kusma-ve-bilinc-degisikligi",
+    "title": "Grip sonrası kusma ve bilinç değişikliği",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "AST/ALT",
+      "Bilirubin"
+    ],
+    "cleanedShortComments": [
+      "AST/ALT"
+    ],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "AST/ALT",
+      "Bilirubin",
+      "Serum amonyak",
+      "Abdominal ultrasonografi",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v339-peds-005-viral-enfeksiyon-sonrasi-morarma",
+    "title": "Viral enfeksiyon sonrası morarma",
+    "removedInvestigations": [
+      "Gebelik testi / serum beta-hCG"
+    ],
+    "rewrittenShortComments": [
+      "Hemoglobin",
+      "Kültür örnekleri"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Hemoglobin",
+      "Lökosit sayısı",
+      "Trombosit sayısı",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v339-peds-006-bebekte-tekrarlayan-agir-enfeksiyon",
+    "title": "Bebekte tekrarlayan ağır enfeksiyon",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Akciğer grafisi",
+      "Mutlak lenfosit sayısı"
+    ],
+    "cleanedShortComments": [
+      "Akciğer grafisi",
+      "Mutlak lenfosit sayısı"
+    ],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "Lenfosit alt grup analizi",
+      "Mutlak lenfosit sayısı",
+      "Akciğer grafisi",
+      "Kültür örnekleri"
+    ]
+  },
+  {
+    "caseId": "v339-peds-007-fotografta-beyaz-pupilla",
+    "title": "Fotoğrafta beyaz pupilla",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Dilate fundus muayenesi",
+      "Hemogram ve temel inflamasyon paneli"
+    ],
+    "cleanedShortComments": [
+      "Dilate fundus muayenesi",
+      "Hemogram ve temel inflamasyon paneli"
+    ],
+    "rowReferenceStatusFixes": 5,
+    "objectiveDataTitles": [
+      "Hemogram ve temel inflamasyon paneli",
+      "Kültür örnekleri",
+      "Dilate fundus muayenesi",
+      "Orbital manyetik rezonans görüntüleme"
+    ]
+  },
+  {
+    "caseId": "v339-peds-008-kas-gucsuzlugu-ve-goz-cevresinde-mor-dokuntu",
+    "title": "Kas güçsüzlüğü ve göz çevresinde mor döküntü",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Kas manyetik rezonans görüntüleme",
+      "Kreatin kinaz"
+    ],
+    "cleanedShortComments": [
+      "Kas manyetik rezonans görüntüleme"
+    ],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Aldolaz",
+      "Kreatin kinaz",
+      "Kültür örnekleri",
+      "Kas manyetik rezonans görüntüleme"
+    ]
+  },
+  {
+    "caseId": "v339-peds-009-yenidogan-taramasinda-metabolik-risk",
+    "title": "Yenidoğan taramasında metabolik risk",
+    "removedInvestigations": [],
+    "rewrittenShortComments": [
+      "Plazma fenilalanin düzeyi",
+      "Tirozin düzeyi"
+    ],
+    "cleanedShortComments": [],
+    "rowReferenceStatusFixes": 2,
+    "objectiveDataTitles": [
+      "Plazma fenilalanin düzeyi",
+      "Tirozin düzeyi"
+    ]
+  },
+  {
+    "caseId": "v339-peds-010-erken-meme-gelisimi",
+    "title": "Erken meme gelişimi",
+    "removedInvestigations": [
+      "Gebelik testi / serum beta-hCG"
+    ],
+    "rewrittenShortComments": [
+      "GnRH uyarı testi",
+      "Kemik yaşı grafisi"
+    ],
+    "cleanedShortComments": [
+      "Kemik yaşı grafisi"
+    ],
+    "rowReferenceStatusFixes": 3,
+    "objectiveDataTitles": [
+      "Kemik yaşı grafisi",
+      "Pelvik ultrasonografi",
+      "GnRH uyarı testi"
+    ]
+  }
+]
