@@ -51,6 +51,11 @@ export const typeLabels = {
   ecg: 'EKG',
   echo: 'Ekokardiyografi',
   lab: 'Laboratuvar',
+  clinical: 'Klinik değerlendirme',
+  physicalExam: 'Fizik muayene',
+  procedure: 'İşlem',
+  screening: 'Tarama',
+  genetics: 'Genetik değerlendirme',
   bloodGas: 'Kan gazı',
   fluidAnalysis: 'BOS / sıvı analizi',
   bloodBank: 'Kan bankası',
@@ -133,6 +138,10 @@ export const orderCategoryMeta = {
     label: 'Mikrobiyoloji',
     description: 'Etken saptamaya yönelik sonuçlar.',
   },
+  immunologySerology: {
+    label: 'İmmünoloji / seroloji',
+    description: 'Otoimmün ve hedefli serolojik değerlendirme sonuçları.',
+  },
   fluidAnalysis: {
     label: 'BOS / sıvı analizi',
     description: 'BOS, dren, dışkı ve vücut sıvısı örneklerine özgü sonuçlar.',
@@ -144,6 +153,10 @@ export const orderCategoryMeta = {
   urine: {
     label: 'İdrar tetkikleri',
     description: 'İdrar örneği sonuçları.',
+  },
+  prenatal: {
+    label: 'Prenatal tanı',
+    description: 'Gebelik haftası, prenatal tarama, fetal görüntüleme ve amniyotik sıvı sonuçları.',
   },
   urogenital: {
     label: 'Ürogenital değerlendirme',
@@ -182,6 +195,8 @@ export function getOrderCategoryMeta(category = 'other') {
 function inferOrderCategory(item = {}, clinicalCase = {}) {
   const type = item.type || '';
   const text = `${item.id || ''} ${item.label || ''} ${item.title || ''} ${type} ${item.subtype || ''}`.toLocaleLowerCase('tr');
+  const explicitCategory = item.testTypeCategory || item.category;
+  if (explicitCategory && orderCategoryMeta[explicitCategory]) return explicitCategory;
   const canonical = canonicalCategory(item);
 
   if (type === 'clinical' || type === 'physicalExam' || type === 'woundAssessment' || /(yara değerlendirmesi|yanık yüzdesi|fizik muayene|klinik değerlendirme|lokal bulgu|fundus muayenesi|göz içi basıncı|odyometri)/.test(text)) return 'clinicalAssessment';
@@ -399,6 +414,7 @@ const REAL_FUNCTIONAL_TEST_PATTERN = /(solunum fonksiyon|spirometri|vital kapasi
 const NON_CLINICAL_MECHANISM_PATTERN = /(simülasyon|simulasyon|modelleme|modellendi|fizyolojik mekanizma|patofizyolojik mekanizma|beklenen fizyolojik yön|beklenen refleks yanıt|makula densa yanıtı|tubuloglomerüler geri bildirim|bohr etkisi|haldane etkisi|frank-starling mekanizması|raas ve efferent|baroreseptör refleks yanıtı|sempatik nörotransmitter aktarımı|adh ve aquaporin|miksiyon refleksi ve sakral parasempatik çıkış)/i;
 
 function isNonClinicalMechanismInvestigation(item = {}) {
+  if (item.testValueLabel || item.educationalValue || item.clinicalPriorityLabel || item.scoreValue != null) return false;
   const type = String(item.type || '').toLocaleLowerCase('tr');
   const text = `${item.id || ''} ${item.label || ''} ${item.title || ''} ${item.subtype || ''} ${item.summary || ''}`.toLocaleLowerCase('tr');
   if (item.orderable === false) return true;
@@ -751,7 +767,14 @@ function normalizeInvestigation(item, clinicalCase, index = 0) {
     testTypeCategory,
     state: 'available',
     cost: item.cost ?? (priority === 'essential' ? 0 : priority === 'useful' ? 1 : 2),
-    scoreImpact: item.scoreImpact ?? getScoreImpact(priority),
+    scoreImpact: item.scoreImpact ?? item.scoreValue ?? getScoreImpact(priority),
+    scoreValue: item.scoreValue ?? item.scoreImpact ?? getScoreImpact(priority),
+    testValueLabel: item.testValueLabel || item.educationalValue || item.clinicalPriorityLabel || '',
+    educationalValue: item.educationalValue || item.testValueLabel || item.clinicalPriorityLabel || '',
+    clinicalPriorityLabel: item.clinicalPriorityLabel || item.testValueLabel || item.educationalValue || '',
+    clinicalFlowOrder: item.clinicalFlowOrder ?? item.flowOrder ?? item.orderRank ?? index + 1,
+    treatmentImpact: item.treatmentImpact || '',
+    emergencyValue: item.emergencyValue || '',
     source: 'case',
     resultType: item.rows?.length ? 'table' : images.length ? 'image' : 'text',
     purpose: item.purpose || orderPurposeFor({ ...item, label, type, priority }, clinicalCase),
@@ -790,7 +813,14 @@ function normalizeSynthetic(item, clinicalCase, index = 0) {
     testTypeCategory,
     state: 'available',
     cost: item.cost ?? (priority === 'lowPriority' ? 2 : 1),
-    scoreImpact: item.scoreImpact ?? getScoreImpact(priority),
+    scoreImpact: item.scoreImpact ?? item.scoreValue ?? getScoreImpact(priority),
+    scoreValue: item.scoreValue ?? item.scoreImpact ?? getScoreImpact(priority),
+    testValueLabel: item.testValueLabel || item.educationalValue || item.clinicalPriorityLabel || '',
+    educationalValue: item.educationalValue || item.testValueLabel || item.clinicalPriorityLabel || '',
+    clinicalPriorityLabel: item.clinicalPriorityLabel || item.testValueLabel || item.educationalValue || '',
+    clinicalFlowOrder: item.clinicalFlowOrder ?? item.flowOrder ?? item.orderRank ?? index + 1,
+    treatmentImpact: item.treatmentImpact || '',
+    emergencyValue: item.emergencyValue || '',
     source: 'suggested',
     resultType: rows.length ? 'table' : images.length ? 'image' : 'text',
     purpose: item.purpose || orderPurposeFor({ ...item, priority }, clinicalCase),
@@ -841,6 +871,10 @@ export function buildInvestigationOrders(clinicalCase = {}) {
     seen.add(labelKey);
     merged.push(item);
   });
+
+  if (clinicalCase.preserveInvestigationOrder === true) {
+    return merged.slice(0, 12);
+  }
 
   const essential = merged.filter((item) => item.priority === 'essential');
   const rest = merged.filter((item) => item.priority !== 'essential');

@@ -1,0 +1,50 @@
+{
+  "scannedGeneralClinicalCases": 410,
+  "clinicalScientificRationaleBoxesFound": 410,
+  "rewrittenClinicalScientificRationales": 410,
+  "targetFieldCounts": {
+    "diagnosis.answerFeedback.whyCorrect": 352,
+    "diagnosis.explanation": 58
+  },
+  "badTemplateInOriginalTargetField": 0,
+  "badTemplatePreviouslyReachableInWrongAnswerRationaleCases": 122,
+  "badTemplatePreviouslyReachableInWrongAnswerRationaleEntries": 2338,
+  "wrongOptionFocusedRationaleFixedByTargetRewriteOrRenderIsolation": 123,
+  "languageErrorAncakDaOrSimilarCleanedInTarget": 0,
+  "targetPatternCleanedCases": 122,
+  "brokenOrFragmentedTargetSentenceFixed": 0,
+  "unrelatedOrWeakTargetRationaleRewritten": 322,
+  "branchRewriteCounts": {
+    "Küçük Stajlar": 28,
+    "İç Hastalıkları": 26,
+    "Çocuk Sağlığı ve Hastalıkları": 98,
+    "Kadın Hastalıkları ve Doğum": 28,
+    "Genel Cerrahi": 27,
+    "Tıbbi Farmakoloji": 28,
+    "Tıbbi Patoloji": 28,
+    "Anatomi": 29,
+    "Tıbbi Biyokimya": 30,
+    "Fizyoloji": 30,
+    "Histoloji ve Embriyoloji": 28,
+    "Tıbbi Mikrobiyoloji": 30
+  },
+  "outOfScopeRightColumnFieldChanged": false,
+  "evidenceChainChanged": false,
+  "optionFeedbackChanged": false,
+  "whyWrongChanged": false,
+  "examPearlChanged": false,
+  "questionStemOptionsCorrectAnswerChanged": false,
+  "correctAnswerLogicPreserved": true,
+  "idChanged": false,
+  "jsonJsSyntaxCheck": "passed: src/data/cases.js imported successfully after rewrite",
+  "buildStatus": "not completed: npm install could not finish within sandbox timeout, so Vite build was not run; syntax/import checks passed",
+  "scientificConcernCount": 0,
+  "criticalWarnings": [
+    "diagnosis.answerFeedback.whyCorrect olmayan 58 genel vakada mevcut fallback target olan diagnosis.explanation güncellendi; yeni zorunlu field eklenmedi.",
+    "Yanlış cevap durumunda Klinik/Bilimsel Gerekçe kartına optionFeedback/whyWrong metinlerinin düşmesini engellemek için AnswerFeedbackPanel.jsx içinde tek satırlık render izolasyonu yapıldı; optionFeedback/whyWrong verileri prompt gereği değiştirilmedi."
+  ],
+  "scopeGuardCheck": "passed: rawCases differ only in target rationale fields",
+  "targetBadPatternAfterCount": 0,
+  "componentSyntaxCheck": "passed: AnswerFeedbackPanel.jsx parsed with TypeScript JSX parser",
+  "casesSyntaxCheck": "passed: src/data/cases.js imported and parsed successfully"
+}

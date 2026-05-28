@@ -1,0 +1,178 @@
+{
+  "generatedAt": "2026-05-28T20:16:17.201Z",
+  "scope": "Only histology-embryology standard cases with investigation layers were modified.",
+  "modifiedCaseIds": [
+    "v168-new-053-yenidoganda-santral-siyanoz",
+    "v172-new-071-cocukta-agrisiz-alt-gastrointestinal-kanama",
+    "v172-new-078-yenidoganda-hipokalsemik-nobet",
+    "v173-new-081-yenidoganda-mekonyum-cikaramama",
+    "v173-new-082-beslenmeyle-artan-solunum-sikintisi",
+    "v174-new-091-yenidoganda-surekli-ufurum",
+    "v174-new-092-yenidoganda-safrali-kusma",
+    "v175-new-101-lateral-boyun-kitlesi",
+    "v175-new-102-prenatal-taramada-yuksek-alfa-fetoprotein",
+    "v177-new-126-yenidoganda-agir-solunum-sikintisi",
+    "v178-new-136-skrotumda-ele-gelmeyen-testis",
+    "v183-new-189-yenidoganda-mekonyum-cikaramama",
+    "v184-new-195-nazal-biyopsi-ve-epitel-tipi",
+    "v185-new-207-agrisiz-alt-gastrointestinal-kanama",
+    "v185-new-208-yenidoganda-hipokalsemi-ve-enfeksiyon-egilimi",
+    "v185-new-209-premature-bebekte-solunum-sikintisi",
+    "v187-new-243-yenidoganda-lumbosakral-kese",
+    "v187-new-244-hormonal-uretim-bolgesinin-belirlenmesi",
+    "v188-new-260-karacigerde-fagositik-hucre",
+    "v188-new-261-yenidoganda-siyanoz-ve-tek-buyuk-damar-cikisi",
+    "v189-new-277-yenidoganda-surekli-ufurum",
+    "v189-new-278-emilim-yuzeyinin-histolojik-temeli",
+    "v189-new-279-yenidoganda-solunum-sikintisi-ve-barsak-sesleri",
+    "v194-new-312-dil-hareketiyle-yukselen-boyun-kitlesi",
+    "v194-new-313-testis-biyopsisinde-destek-hucresi",
+    "v194-new-314-erken-gebelikte-trofoblast-islevi",
+    "v195-new-341-katekolamin-salgilayan-hucre-kokeni",
+    "v195-new-342-tekrarlayan-kirik-ve-mavi-sklera"
+  ],
+  "untouchedHistologyEmbryologyIds": [],
+  "skippedNoInvestigationIds": [
+    "ai-spot-vakasiz-secki-021-noral-krest-kokenli-olmayan-hucre",
+    "ai-spot-vakasiz-secki-101",
+    "ai-spot-vakasiz-secki-120",
+    "ai-spot-vakasiz-secki-142",
+    "ai-spot-vakasiz-secki-156",
+    "ai-spot-vakasiz-secki-157",
+    "ai-spot-vakasiz-secki-172",
+    "ai-spot-vakasiz-secki-182",
+    "ai-spot-vakasiz-secki-192",
+    "ai-spot-vakasiz-secki-202",
+    "ai-spot-vakasiz-secki-212",
+    "ai-spot-vakasiz-secki-222"
+  ],
+  "investigationCounts": {
+    "v168-new-053-yenidoganda-santral-siyanoz": {
+      "before": 3,
+      "after": 4
+    },
+    "v172-new-071-cocukta-agrisiz-alt-gastrointestinal-kanama": {
+      "before": 3,
+      "after": 4
+    },
+    "v172-new-078-yenidoganda-hipokalsemik-nobet": {
+      "before": 3,
+      "after": 4
+    },
+    "v173-new-081-yenidoganda-mekonyum-cikaramama": {
+      "before": 3,
+      "after": 4
+    },
+    "v173-new-082-beslenmeyle-artan-solunum-sikintisi": {
+      "before": 4,
+      "after": 4
+    },
+    "v174-new-091-yenidoganda-surekli-ufurum": {
+      "before": 2,
+      "after": 4
+    },
+    "v174-new-092-yenidoganda-safrali-kusma": {
+      "before": 2,
+      "after": 4
+    },
+    "v175-new-101-lateral-boyun-kitlesi": {
+      "before": 1,
+      "after": 3
+    },
+    "v175-new-102-prenatal-taramada-yuksek-alfa-fetoprotein": {
+      "before": 3,
+      "after": 4
+    },
+    "v177-new-126-yenidoganda-agir-solunum-sikintisi": {
+      "before": 2,
+      "after": 4
+    },
+    "v178-new-136-skrotumda-ele-gelmeyen-testis": {
+      "before": 1,
+      "after": 2
+    },
+    "v183-new-189-yenidoganda-mekonyum-cikaramama": {
+      "before": 2,
+      "after": 4
+    },
+    "v184-new-195-nazal-biyopsi-ve-epitel-tipi": {
+      "before": 1,
+      "after": 2
+    },
+    "v185-new-207-agrisiz-alt-gastrointestinal-kanama": {
+      "before": 2,
+      "after": 3
+    },
+    "v185-new-208-yenidoganda-hipokalsemi-ve-enfeksiyon-egilimi": {
+      "before": 2,
+      "after": 4
+    },
+    "v185-new-209-premature-bebekte-solunum-sikintisi": {
+      "before": 2,
+      "after": 3
+    },
+    "v187-new-243-yenidoganda-lumbosakral-kese": {
+      "before": 2,
+      "after": 5
+    },
+    "v187-new-244-hormonal-uretim-bolgesinin-belirlenmesi": {
+      "before": 2,
+      "after": 3
+    },
+    "v188-new-260-karacigerde-fagositik-hucre": {
+      "before": 1,
+      "after": 2
+    },
+    "v188-new-261-yenidoganda-siyanoz-ve-tek-buyuk-damar-cikisi": {
+      "before": 2,
+      "after": 4
+    },
+    "v189-new-277-yenidoganda-surekli-ufurum": {
+      "before": 1,
+      "after": 3
+    },
+    "v189-new-278-emilim-yuzeyinin-histolojik-temeli": {
+      "before": 1,
+      "after": 2
+    },
+    "v189-new-279-yenidoganda-solunum-sikintisi-ve-barsak-sesleri": {
+      "before": 1,
+      "after": 3
+    },
+    "v194-new-312-dil-hareketiyle-yukselen-boyun-kitlesi": {
+      "before": 1,
+      "after": 3
+    },
+    "v194-new-313-testis-biyopsisinde-destek-hucresi": {
+      "before": 1,
+      "after": 2
+    },
+    "v194-new-314-erken-gebelikte-trofoblast-islevi": {
+      "before": 2,
+      "after": 4
+    },
+    "v195-new-341-katekolamin-salgilayan-hucre-kokeni": {
+      "before": 2,
+      "after": 4
+    },
+    "v195-new-342-tekrarlayan-kirik-ve-mavi-sklera": {
+      "before": 2,
+      "after": 4
+    }
+  },
+  "notes": [
+    "Prenatal AFP/AChE item is explicitly categorized as prenatal, not toxicology.",
+    "All modified investigation cards include short value tags and scoreValue/scoreImpact without changing answer options.",
+    "Trophoblast hCG source wording is corrected to Turkish “sinsityotrofoblast” in investigation feedback."
+  ],
+  "validation": {
+    "nodeImportCases": "passed",
+    "nodeImportInvestigationOrders": "passed",
+    "histologyEmbryologyClinicalCasesWithInvestigations": 28,
+    "modifiedClinicalCases": 28,
+    "amnioticAChECategory": "prenatal",
+    "missingTestValueLabels": 0,
+    "missingScoreValues": 0,
+    "build": "not_run_vite_missing_node_modules_in_uploaded_zip"
+  }
+}

@@ -1,0 +1,1008 @@
+{
+  "scope": "Only general clinical cases with branchId=physiology and relatedBranch=Fizyoloji. TUS Spot Olgular were intentionally untouched.",
+  "touchedCases": 30,
+  "missingEnhancementMap": [],
+  "originalPhysiologyInvestigationTotal": 46,
+  "finalPhysiologyInvestigationTotal": 91,
+  "netAddedInvestigations": 45,
+  "cases": [
+    {
+      "id": "v168-new-052-bilinc-bulanikligi-ve-hiponatremi",
+      "title": "Bilinç bulanıklığı ve hiponatremi",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "klinik-volum-ve-guvenlik-degerlendirmesi",
+          "title": "Klinik volüm ve güvenlik değerlendirmesi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "serum-elektrolit-ve-osmolalite-paneli",
+          "title": "Serum elektrolit ve osmolalite paneli",
+          "priority": "essential",
+          "tag": "İlk basamak test",
+          "scoreImpact": 3
+        },
+        {
+          "order": 3,
+          "id": "idrar-osmolalitesi-ve-sodyumu",
+          "title": "İdrar osmolalitesi ve sodyumu",
+          "priority": "essential",
+          "tag": "Kritik ipucu",
+          "scoreImpact": 4
+        },
+        {
+          "order": 4,
+          "id": "akciger-grafisi",
+          "title": "Akciğer grafisi",
+          "priority": "useful",
+          "tag": "Destekleyici veri",
+          "scoreImpact": 2
+        }
+      ]
+    },
+    {
+      "id": "v169-new-068-kronik-dispne-ve-hava-hapsi",
+      "title": "Kronik dispne ve hava hapsi",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "yatak-basi-solunum-degerlendirmesi",
+          "title": "Yatak başı solunum değerlendirmesi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "arter-kan-gazi",
+          "title": "Arter kan gazı",
+          "priority": "essential",
+          "tag": "Destekleyici veri",
+          "scoreImpact": 2
+        },
+        {
+          "order": 3,
+          "id": "solunum-fonksiyon-testi",
+          "title": "Solunum fonksiyon testi",
+          "priority": "essential",
+          "tag": "Hedefli test",
+          "scoreImpact": 4
+        },
+        {
+          "order": 4,
+          "id": "toraks-goruntuleme",
+          "title": "Toraks görüntüleme",
+          "priority": "useful",
+          "tag": "Destekleyici veri",
+          "scoreImpact": 2
+        }
+      ]
+    },
+    {
+      "id": "v172-new-072-direncli-hipertansiyon-ve-kas-gucsuzlugu",
+      "title": "Dirençli hipertansiyon ve kas güçsüzlüğü",
+      "beforeCount": 2,
+      "afterCount": 4,
+      "addedCount": 2,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "tekrarlayan-kan-basinci-ve-volum-degerlendirmesi",
+          "title": "Tekrarlayan kan basıncı ve volüm değerlendirmesi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "serum-elektrolit-ve-asit-baz-paneli",
+          "title": "Serum elektrolit ve asit-baz paneli",
+          "priority": "essential",
+          "tag": "İlk basamak test",
+          "scoreImpact": 3
+        },
+        {
+          "order": 3,
+          "id": "idrar-potasyum-atilimi",
+          "title": "İdrar potasyum atılımı",
+          "priority": "useful",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 3
+        },
+        {
+          "order": 4,
+          "id": "plazma-aldosteron-renin-orani",
+          "title": "Plazma aldosteron/renin oranı",
+          "priority": "essential",
+          "tag": "Doğrulayıcı test",
+          "scoreImpact": 5
+        }
+      ]
+    },
+    {
+      "id": "v172-new-080-kronik-karbondioksit-retansiyonu",
+      "title": "Kronik karbondioksit retansiyonu",
+      "beforeCount": 1,
+      "afterCount": 3,
+      "addedCount": 2,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "yatak-basi-solunum-degerlendirmesi",
+          "title": "Yatak başı solunum değerlendirmesi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "serum-bikarbonat-ve-elektrolit-paneli",
+          "title": "Serum bikarbonat ve elektrolit paneli",
+          "priority": "useful",
+          "tag": "Destekleyici veri",
+          "scoreImpact": 2
+        },
+        {
+          "order": 3,
+          "id": "arter-kan-gazi",
+          "title": "Arter kan gazı",
+          "priority": "essential",
+          "tag": "Kritik ipucu",
+          "scoreImpact": 4
+        }
+      ]
+    },
+    {
+      "id": "v173-new-087-kapali-ortamda-bas-agrisi-ve-bilinc-bulanikligi",
+      "title": "Kapalı ortamda baş ağrısı ve bilinç bulanıklığı",
+      "beforeCount": 2,
+      "afterCount": 4,
+      "addedCount": 2,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "pulse-oksimetri-ve-klinik-oksijenlenme",
+          "title": "Pulse oksimetri ve klinik oksijenlenme",
+          "priority": "useful",
+          "tag": "İlk basamak test",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "arter-kan-gazi-ve-ko-oksimetri",
+          "title": "Arter kan gazı ve ko-oksimetri",
+          "priority": "essential",
+          "tag": "Doğrulayıcı test",
+          "scoreImpact": 5
+        },
+        {
+          "order": 3,
+          "id": "serum-laktat",
+          "title": "Serum laktat",
+          "priority": "essential",
+          "tag": "Destekleyici veri",
+          "scoreImpact": 2
+        },
+        {
+          "order": 4,
+          "id": "ekg-ve-miyokard-stres-taramasi",
+          "title": "EKG ve miyokard stres taraması",
+          "priority": "situational",
+          "tag": "Komplikasyon taraması",
+          "scoreImpact": 1
+        }
+      ]
+    },
+    {
+      "id": "v174-new-097-egzersizde-bolgesel-kan-akimi-artisi",
+      "title": "Egzersizde bölgesel kan akımı artışı",
+      "beforeCount": 2,
+      "afterCount": 3,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "egzersiz-oncesi-sonrasi-hemodinamik-izlem",
+          "title": "Egzersiz öncesi/sonrası hemodinamik izlem",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "egzersiz-sonrasi-lokal-metabolik-panel",
+          "title": "Egzersiz sonrası lokal metabolik panel",
+          "priority": "essential",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 4
+        },
+        {
+          "order": 3,
+          "id": "doppler-akim-olcumu",
+          "title": "Doppler akım ölçümü",
+          "priority": "essential",
+          "tag": "Hedefli test",
+          "scoreImpact": 3
+        }
+      ]
+    },
+    {
+      "id": "v175-new-103-hipotansiyon-ve-hiperpigmentasyon",
+      "title": "Hipotansiyon ve hiperpigmentasyon",
+      "beforeCount": 1,
+      "afterCount": 4,
+      "addedCount": 3,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "ortostatik-vital-ve-hacim-degerlendirmesi",
+          "title": "Ortostatik vital ve hacim değerlendirmesi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "serum-elektrolit-ve-glukoz-paneli",
+          "title": "Serum elektrolit ve glukoz paneli",
+          "priority": "essential",
+          "tag": "İlk basamak test",
+          "scoreImpact": 3
+        },
+        {
+          "order": 3,
+          "id": "adrenal-aks-ve-elektrolit-paneli",
+          "title": "Adrenal aks ve elektrolit paneli",
+          "priority": "essential",
+          "tag": "Kritik ipucu",
+          "scoreImpact": 4
+        },
+        {
+          "order": 4,
+          "id": "acth-uyari-testi",
+          "title": "ACTH uyarı testi",
+          "priority": "situational",
+          "tag": "Doğrulayıcı test",
+          "scoreImpact": 4
+        }
+      ]
+    },
+    {
+      "id": "v176-new-111-akut-kan-kaybi-sonrasi-tasikardi",
+      "title": "Akut kan kaybı sonrası taşikardi",
+      "beforeCount": 1,
+      "afterCount": 3,
+      "addedCount": 2,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "yatak-basi-dolasim-ve-sok-indeksi",
+          "title": "Yatak başı dolaşım ve şok indeksi",
+          "priority": "essential",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 2
+        },
+        {
+          "order": 2,
+          "id": "hemodinamik-ve-hematoloji-paneli",
+          "title": "Hemodinamik ve hematoloji paneli",
+          "priority": "essential",
+          "tag": "İlk basamak test",
+          "scoreImpact": 3
+        },
+        {
+          "order": 3,
+          "id": "laktat-ve-perfuzyon-paneli",
+          "title": "Laktat ve perfüzyon paneli",
+          "priority": "useful",
+          "tag": "Destekleyici veri",
+          "scoreImpact": 2
+        }
+      ]
+    },
+    {
+      "id": "v176-new-112-asidozda-derin-hizli-solunum",
+      "title": "Asidozda derin hızlı solunum",
+      "beforeCount": 2,
+      "afterCount": 4,
+      "addedCount": 2,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "yatak-basi-solunum-ve-dehidratasyon-degerlendirmesi",
+          "title": "Yatak başı solunum ve dehidratasyon değerlendirmesi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "glukoz-ve-keton-paneli",
+          "title": "Glukoz ve keton paneli",
+          "priority": "essential",
+          "tag": "İlk basamak test",
+          "scoreImpact": 3
+        },
+        {
+          "order": 3,
+          "id": "elektrolit-ve-anyon-acigi-paneli",
+          "title": "Elektrolit ve anyon açığı paneli",
+          "priority": "essential",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 3
+        },
+        {
+          "order": 4,
+          "id": "kan-gazi-ve-metabolik-panel",
+          "title": "Kan gazı ve metabolik panel",
+          "priority": "essential",
+          "tag": "Doğrulayıcı test",
+          "scoreImpact": 5
+        }
+      ]
+    },
+    {
+      "id": "v178-new-131-efor-dispnesi-ve-periferik-odem",
+      "title": "Efor dispnesi ve periferik ödem",
+      "beforeCount": 2,
+      "afterCount": 4,
+      "addedCount": 2,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "volum-yuku-ve-konjesyon-degerlendirmesi",
+          "title": "Volüm yükü ve konjesyon değerlendirmesi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "bnp-ve-bobrek-fonksiyon-paneli",
+          "title": "BNP ve böbrek fonksiyon paneli",
+          "priority": "useful",
+          "tag": "Destekleyici veri",
+          "scoreImpact": 2
+        },
+        {
+          "order": 3,
+          "id": "kalp-yetmezligi-degerlendirme-paneli",
+          "title": "Kalp yetmezliği değerlendirme paneli",
+          "priority": "essential",
+          "tag": "Hedefli test",
+          "scoreImpact": 4
+        },
+        {
+          "order": 4,
+          "id": "akciger-grafisi",
+          "title": "Akciğer grafisi",
+          "priority": "useful",
+          "tag": "Destekleyici veri",
+          "scoreImpact": 2
+        }
+      ]
+    },
+    {
+      "id": "v183-new-183-yuksek-irtifada-hizli-soluma",
+      "title": "Yüksek irtifada hızlı soluma",
+      "beforeCount": 1,
+      "afterCount": 3,
+      "addedCount": 2,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "irtifa-oksijenlenme-ve-solunum-izlemi",
+          "title": "İrtifa oksijenlenme ve solunum izlemi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "arter-kan-gazi",
+          "title": "Arter kan gazı",
+          "priority": "essential",
+          "tag": "Kritik ipucu",
+          "scoreImpact": 4
+        },
+        {
+          "order": 3,
+          "id": "renal-kompanzasyon-ve-idrar-ph-paneli",
+          "title": "Renal kompanzasyon ve idrar pH paneli",
+          "priority": "situational",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 3
+        }
+      ]
+    },
+    {
+      "id": "v183-new-184-glomeruler-filtrasyonun-lokal-kontrolu",
+      "title": "Glomerüler filtrasyonun lokal kontrolü",
+      "beforeCount": 3,
+      "afterCount": 4,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "diuretik-ve-volum-baglami",
+          "title": "Diüretik ve volüm bağlamı",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "serum-elektrolitleri-ve-bobrek-fonksiyonu",
+          "title": "Serum elektrolitleri ve böbrek fonksiyonu",
+          "priority": "essential",
+          "tag": "İlk basamak test",
+          "scoreImpact": 2
+        },
+        {
+          "order": 3,
+          "id": "idrar-elektrolit-ve-osmolalite-paneli",
+          "title": "İdrar elektrolit ve osmolalite paneli",
+          "priority": "essential",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 4
+        },
+        {
+          "order": 4,
+          "id": "tam-idrar-analizi",
+          "title": "Tam idrar analizi",
+          "priority": "useful",
+          "tag": "Ayırıcı tanıya yardım eder",
+          "scoreImpact": 1
+        }
+      ]
+    },
+    {
+      "id": "v184-new-199-egzersizde-oksijen-birakilmasi",
+      "title": "Egzersizde oksijen bırakılması",
+      "beforeCount": 1,
+      "afterCount": 3,
+      "addedCount": 2,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "egzersiz-oksijenlenme-ve-isi-izlemi",
+          "title": "Egzersiz oksijenlenme ve ısı izlemi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "egzersiz-sonrasi-kan-gazi-ve-metabolit-paneli",
+          "title": "Egzersiz sonrası kan gazı ve metabolit paneli",
+          "priority": "essential",
+          "tag": "Kritik ipucu",
+          "scoreImpact": 4
+        },
+        {
+          "order": 3,
+          "id": "arteriyel-venoz-oksijen-farki",
+          "title": "Arteriyel-venöz oksijen farkı",
+          "priority": "essential",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 3
+        }
+      ]
+    },
+    {
+      "id": "v185-new-204-asiri-susama-ve-seyrek-idrar-yogunlasmasi",
+      "title": "Aşırı susama ve seyrek idrar yoğunlaşması",
+      "beforeCount": 2,
+      "afterCount": 3,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "yirmi-dort-saatlik-idrar-hacmi-ve-dansite",
+          "title": "24 saatlik idrar hacmi ve dansite",
+          "priority": "useful",
+          "tag": "İlk basamak test",
+          "scoreImpact": 2
+        },
+        {
+          "order": 2,
+          "id": "serum-ve-idrar-osmolalite-paneli",
+          "title": "Serum ve idrar osmolalite paneli",
+          "priority": "essential",
+          "tag": "Kritik ipucu",
+          "scoreImpact": 4
+        },
+        {
+          "order": 3,
+          "id": "desmopressin-yanit-testi",
+          "title": "Desmopressin yanıt testi",
+          "priority": "essential",
+          "tag": "Doğrulayıcı test",
+          "scoreImpact": 5
+        }
+      ]
+    },
+    {
+      "id": "v185-new-205-kronik-karbondioksit-retansiyonu",
+      "title": "Kronik karbondioksit retansiyonu",
+      "beforeCount": 1,
+      "afterCount": 3,
+      "addedCount": 2,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "yatak-basi-solunum-degerlendirmesi",
+          "title": "Yatak başı solunum değerlendirmesi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "serum-bikarbonat-ve-elektrolit-paneli",
+          "title": "Serum bikarbonat ve elektrolit paneli",
+          "priority": "useful",
+          "tag": "Destekleyici veri",
+          "scoreImpact": 2
+        },
+        {
+          "order": 3,
+          "id": "arter-kan-gazi",
+          "title": "Arter kan gazı",
+          "priority": "essential",
+          "tag": "Kritik ipucu",
+          "scoreImpact": 4
+        }
+      ]
+    },
+    {
+      "id": "v185-new-206-ani-kan-basinci-yukselmesi",
+      "title": "Ani kan basıncı yükselmesi",
+      "beforeCount": 1,
+      "afterCount": 2,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "istirahat-vital-ve-ritim-degerlendirmesi",
+          "title": "İstirahat vital ve ritim değerlendirmesi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "yatak-basi-hemodinamik-izlem",
+          "title": "Yatak başı hemodinamik izlem",
+          "priority": "essential",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 4
+        }
+      ]
+    },
+    {
+      "id": "v186-new-240-renal-perfuzyon-azalmasina-yanit",
+      "title": "Renal perfüzyon azalmasına yanıt",
+      "beforeCount": 1,
+      "afterCount": 3,
+      "addedCount": 2,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "hacim-kaybi-ve-perfuzyon-degerlendirmesi",
+          "title": "Hacim kaybı ve renal perfüzyon değerlendirmesi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "renal-perfuzyon-ve-idrar-paneli",
+          "title": "Renal perfüzyon ve idrar paneli",
+          "priority": "essential",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 4
+        },
+        {
+          "order": 3,
+          "id": "serum-kreatinin-ve-prerenal-indeksler",
+          "title": "Serum kreatinin ve prerenal indeksler",
+          "priority": "useful",
+          "tag": "Destekleyici veri",
+          "scoreImpact": 2
+        }
+      ]
+    },
+    {
+      "id": "v187-new-245-hipertansiyon-ve-hipokalemi",
+      "title": "Hipertansiyon ve hipokalemi",
+      "beforeCount": 1,
+      "afterCount": 3,
+      "addedCount": 2,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "tekrarlayan-kan-basinci-ve-volum-degerlendirmesi",
+          "title": "Tekrarlayan kan basıncı ve volüm değerlendirmesi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "aldosteron-etkisi-ve-asit-baz-paneli",
+          "title": "Aldosteron etkisi ve asit-baz paneli",
+          "priority": "essential",
+          "tag": "Kritik ipucu",
+          "scoreImpact": 4
+        },
+        {
+          "order": 3,
+          "id": "idrar-potasyum-atilimi",
+          "title": "İdrar potasyum atılımı",
+          "priority": "useful",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 3
+        }
+      ]
+    },
+    {
+      "id": "v187-new-246-egzersizde-oksijen-dusuklugu",
+      "title": "Egzersizde oksijen düşüklüğü",
+      "beforeCount": 2,
+      "afterCount": 3,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "egzersiz-oksijenlenme-tarama",
+          "title": "Egzersiz oksijenlenme taraması",
+          "priority": "useful",
+          "tag": "İlk basamak test",
+          "scoreImpact": 2
+        },
+        {
+          "order": 2,
+          "id": "difuzyon-ve-egzersiz-oksijenlenme-testi",
+          "title": "Difüzyon ve egzersiz oksijenlenme testi",
+          "priority": "essential",
+          "tag": "Hedefli test",
+          "scoreImpact": 4
+        },
+        {
+          "order": 3,
+          "id": "yuksek-cozunurluklu-toraks-bt",
+          "title": "Yüksek çözünürlüklü toraks BT",
+          "priority": "useful",
+          "tag": "İleri değerlendirme",
+          "scoreImpact": 2
+        }
+      ]
+    },
+    {
+      "id": "v188-new-258-akciger-embolisinde-oksijen-dusuklugu",
+      "title": "Akciğer embolisinde oksijen düşüklüğü",
+      "beforeCount": 2,
+      "afterCount": 3,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "akut-dispne-vital-ve-ekg-taramasi",
+          "title": "Akut dispne vital ve EKG taraması",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "arter-kan-gazi",
+          "title": "Arter kan gazı",
+          "priority": "essential",
+          "tag": "Kritik ipucu",
+          "scoreImpact": 4
+        },
+        {
+          "order": 3,
+          "id": "bt-pulmoner-anjiyografi",
+          "title": "BT pulmoner anjiyografi",
+          "priority": "essential",
+          "tag": "Doğrulayıcı test",
+          "scoreImpact": 5
+        }
+      ]
+    },
+    {
+      "id": "v188-new-259-otonom-reseptor-yaniti",
+      "title": "Otonom reseptör yanıtı",
+      "beforeCount": 1,
+      "afterCount": 2,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "istirahat-ve-soguk-uyari-vital-yaniti",
+          "title": "İstirahat ve soğuk uyarı vital yanıtı",
+          "priority": "essential",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 3
+        },
+        {
+          "order": 2,
+          "id": "sempatik-efektor-yanit-yorumu",
+          "title": "Sempatik efektör yanıt yorumu",
+          "priority": "useful",
+          "tag": "Hedefli test",
+          "scoreImpact": 3
+        }
+      ]
+    },
+    {
+      "id": "v189-new-274-kalp-yetmezliginde-bacak-odemi",
+      "title": "Kalp yetmezliğinde bacak ödemi",
+      "beforeCount": 1,
+      "afterCount": 3,
+      "addedCount": 2,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "odem-ve-venoz-basinc-degerlendirmesi",
+          "title": "Ödem ve venöz basınç değerlendirmesi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "albumin-ve-idrar-protein-taramasi",
+          "title": "Albumin ve idrar protein taraması",
+          "priority": "useful",
+          "tag": "Ayırıcı tanıya yardım eder",
+          "scoreImpact": 2
+        },
+        {
+          "order": 3,
+          "id": "kalp-yetmezligi-ve-onkotik-basinc-paneli",
+          "title": "Kalp yetmezliği ve onkotik basınç paneli",
+          "priority": "essential",
+          "tag": "Hedefli test",
+          "scoreImpact": 4
+        }
+      ]
+    },
+    {
+      "id": "v189-new-275-su-kisitlamasinda-idrar-yogunlasmasi",
+      "title": "Su kısıtlamasında idrar yoğunlaşması",
+      "beforeCount": 1,
+      "afterCount": 3,
+      "addedCount": 2,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "hidrasyon-ve-baslangic-idrar-paneli",
+          "title": "Hidrasyon ve başlangıç idrar paneli",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "serum-ve-idrar-osmolalite-paneli",
+          "title": "Serum ve idrar osmolalite paneli",
+          "priority": "essential",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 4
+        },
+        {
+          "order": 3,
+          "id": "copeptin-adh-yanit-yorumu",
+          "title": "Copeptin/ADH yanıt yorumu",
+          "priority": "situational",
+          "tag": "Gerektiğinde istenir",
+          "scoreImpact": 1
+        }
+      ]
+    },
+    {
+      "id": "v189-new-276-sivi-yuklenmesine-kardiyak-yanit",
+      "title": "Sıvı yüklenmesine kardiyak yanıt",
+      "beforeCount": 1,
+      "afterCount": 2,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "sivi-yukleme-oncesi-sonrasi-vital-izlem",
+          "title": "Sıvı yükleme öncesi/sonrası vital izlem",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "ekokardiyografik-hemodinamik-olcum",
+          "title": "Ekokardiyografik hemodinamik ölçüm",
+          "priority": "essential",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 4
+        }
+      ]
+    },
+    {
+      "id": "v194-new-309-karbondioksit-tasinmasi-mekanizmasi",
+      "title": "Karbondioksit taşınması mekanizması",
+      "beforeCount": 1,
+      "afterCount": 2,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "venoz-kan-gazi-ve-co2-icerigi",
+          "title": "Venöz kan gazı ve CO₂ içeriği",
+          "priority": "useful",
+          "tag": "İlk basamak test",
+          "scoreImpact": 2
+        },
+        {
+          "order": 2,
+          "id": "arteriyel-venoz-gaz-karsilastirmasi",
+          "title": "Arteriyel-venöz gaz karşılaştırması",
+          "priority": "essential",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 4
+        }
+      ]
+    },
+    {
+      "id": "v194-new-310-bobrek-plazma-akimi-olcumu",
+      "title": "Böbrek plazma akımı ölçümü",
+      "beforeCount": 1,
+      "afterCount": 2,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "temel-bobrek-fonksiyonu-ve-idrar-akimi",
+          "title": "Temel böbrek fonksiyonu ve idrar akımı",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "para-aminohippurat-klirens-olcumu",
+          "title": "Para-aminohippurat klirens ölçümü",
+          "priority": "essential",
+          "tag": "Doğrulayıcı test",
+          "scoreImpact": 5
+        }
+      ]
+    },
+    {
+      "id": "v194-new-311-mide-asit-salgisinin-son-basamagi",
+      "title": "Mide asit salgısının son basamağı",
+      "beforeCount": 1,
+      "afterCount": 2,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "gastrik-ph-ve-sekresyon-degerlendirmesi",
+          "title": "Gastrik pH ve sekresyon değerlendirmesi",
+          "priority": "useful",
+          "tag": "İlk basamak test",
+          "scoreImpact": 2
+        },
+        {
+          "order": 2,
+          "id": "mide-asidi-degerlendirmesi",
+          "title": "Mide asidi değerlendirmesi",
+          "priority": "essential",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 4
+        }
+      ]
+    },
+    {
+      "id": "v195-new-338-renal-tubuler-akim-azalmasina-yanit",
+      "title": "Renal tübüler akım azalmasına yanıt",
+      "beforeCount": 2,
+      "afterCount": 3,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "hacim-kaybi-ve-perfuzyon-degerlendirmesi",
+          "title": "Hacim kaybı ve renal perfüzyon değerlendirmesi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "idrar-elektrolit-ve-volum-paneli",
+          "title": "İdrar elektrolit ve volüm paneli",
+          "priority": "essential",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 4
+        },
+        {
+          "order": 3,
+          "id": "tam-idrar-analizi",
+          "title": "Tam idrar analizi",
+          "priority": "useful",
+          "tag": "Ayırıcı tanıya yardım eder",
+          "scoreImpact": 1
+        }
+      ]
+    },
+    {
+      "id": "v195-new-339-uzamis-ekspiryum-ve-hava-hapsi",
+      "title": "Uzamış ekspiryum ve hava hapsi",
+      "beforeCount": 2,
+      "afterCount": 3,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "yatak-basi-solunum-degerlendirmesi",
+          "title": "Yatak başı solunum değerlendirmesi",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "solunum-fonksiyon-testi",
+          "title": "Solunum fonksiyon testi",
+          "priority": "essential",
+          "tag": "Hedefli test",
+          "scoreImpact": 4
+        },
+        {
+          "order": 3,
+          "id": "akciger-grafisi",
+          "title": "Akciğer grafisi",
+          "priority": "useful",
+          "tag": "Destekleyici veri",
+          "scoreImpact": 2
+        }
+      ]
+    },
+    {
+      "id": "v195-new-340-mesane-bosaltma-refleksi",
+      "title": "Mesane boşaltma refleksi",
+      "beforeCount": 1,
+      "afterCount": 2,
+      "addedCount": 1,
+      "orderedInvestigations": [
+        {
+          "order": 1,
+          "id": "mesane-gunlugu-ve-reziduel-idrar",
+          "title": "Mesane günlüğü ve rezidüel idrar",
+          "priority": "useful",
+          "tag": "Temel değerlendirme",
+          "scoreImpact": 1
+        },
+        {
+          "order": 2,
+          "id": "urodinamik-degerlendirme",
+          "title": "Ürodinamik değerlendirme",
+          "priority": "essential",
+          "tag": "Mekanizma kurdurur",
+          "scoreImpact": 4
+        }
+      ]
+    }
+  ]
+}

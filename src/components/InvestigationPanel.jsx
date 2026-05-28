@@ -11,23 +11,26 @@ import {
 } from '../utils/investigationOrders.js';
 
 const CATEGORY_ORDER = [
+  'clinicalAssessment',
   'bedside',
   'cardiac',
-  'clinicalAssessment',
-  'laboratory',
-  'imaging',
   'respiratory',
-  'neurologic',
-  'gastrointestinal',
-  'microbiology',
-  'fluidAnalysis',
-  'pathology',
-  'functional',
-  'urogenital',
-  'urine',
   'metabolic',
+  'neurologic',
+  'prenatal',
+  'laboratory',
+  'urine',
+  'immunologySerology',
+  'microbiology',
+  'imaging',
+  'gastrointestinal',
+  'functional',
+  'fluidAnalysis',
+  'urogenital',
+  'pathology',
   'invasive',
   'bloodBank',
+  'toxicology',
   'other',
 ];
 
@@ -160,6 +163,20 @@ function getOrderCardSubtitle(item = {}) {
   return shouldHideOrderSubtitle(item, subtitle) ? '' : subtitle;
 }
 
+function getOrderValueTag(item = {}) {
+  const raw = item.testValueLabel || item.educationalValue || item.clinicalPriorityLabel || '';
+  const clean = String(raw || '').trim();
+  if (!clean) return 'İstendi';
+  return clean.length > 28 ? `${clean.slice(0, 25).trim()}…` : clean;
+}
+
+function getOrderScoreBadge(item = {}) {
+  if (!(item.testValueLabel || item.educationalValue || item.clinicalPriorityLabel)) return '';
+  const numericScore = Number(item.scoreImpact ?? item.scoreValue);
+  if (!Number.isFinite(numericScore) || numericScore <= 0) return '';
+  return `+${numericScore}`;
+}
+
 function groupOrdersByCategory(orders = []) {
   const groups = [];
   const byCategory = new Map();
@@ -176,6 +193,17 @@ function groupOrdersByCategory(orders = []) {
   });
 
   return groups.sort((a, b) => {
+    const flowOrderForGroup = (group) => {
+      const flowValues = group.items
+        .map((item) => Number(item.clinicalFlowOrder ?? item.flowOrder ?? item.orderRank))
+        .filter((value) => Number.isFinite(value));
+      return flowValues.length ? Math.min(...flowValues) : null;
+    };
+
+    const af = flowOrderForGroup(a);
+    const bf = flowOrderForGroup(b);
+    if (af !== null || bf !== null) return (af ?? 9999) - (bf ?? 9999);
+
     const ai = CATEGORY_ORDER.indexOf(a.id);
     const bi = CATEGORY_ORDER.indexOf(b.id);
     return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
@@ -918,6 +946,8 @@ function InlineOrderResult({ item, mode, hardMode = false, glossaryRevealMode = 
 
 function OrderCard({ item, selected, expanded, onToggle, mode, hardMode = false, glossaryRevealMode = 'preAnswer' }) {
   const subtitle = getOrderCardSubtitle(item);
+  const valueTag = getOrderValueTag(item);
+  const scoreBadge = getOrderScoreBadge(item);
   return (
     <article className={`order-card-shell requested-test-card ${selected ? 'selected requested' : ''} ${expanded ? 'expanded' : ''}`.trim()}>
       <button
@@ -935,7 +965,13 @@ function OrderCard({ item, selected, expanded, onToggle, mode, hardMode = false,
         </span>
         <span className="smart-order-actions requested-test-actions">
           <span className={`investigation-option-state smart-order-state order-status-chip ${selected ? 'requested' : 'idle'}`}>
-            {selected ? <><Icon name="CheckCircle" size={13} /> İstendi</> : 'İste'}
+            {selected ? (
+              <>
+                <Icon name="CheckCircle" size={13} />
+                <span>{valueTag}</span>
+                {scoreBadge ? <span className="order-score-mini">{scoreBadge}</span> : null}
+              </>
+            ) : 'İste'}
           </span>
           {selected ? (
             <span className="order-expand-control" aria-hidden="true">
