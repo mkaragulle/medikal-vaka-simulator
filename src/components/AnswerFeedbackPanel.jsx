@@ -1169,7 +1169,7 @@ function AnswerFeedbackPanel({
   const optionComparisons = buildOptionComparisons(clinicalCase, selectedDiagnosis, evidenceChain);
   const selectedComparison = optionComparisons.find((item) => item.option === selectedDiagnosis);
   const whyWrong = deriveWhyWrong(clinicalCase, selectedDiagnosis, selectedComparison);
-  const reasoningText = isCorrect ? whyCorrect : whyWrong;
+  const reasoningText = whyCorrect;
   const rawPearls = derivePearls(clinicalCase);
   const managementSteps = deriveManagementSteps(clinicalCase);
   const glossaryEnabled = !hardMode;
