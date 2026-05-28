@@ -128,8 +128,8 @@ export const rawCases = [
       "correct": "İntramüsküler adrenalin uygulanması",
       "options": [
         "İntravenöz antihistaminik uygulanması",
-        "İnhale kısa etkili beta-2 agonist verilmesi",
         "İntramüsküler adrenalin uygulanması",
+        "İnhale kısa etkili beta-2 agonist verilmesi",
         "İntravenöz kortikosteroid başlanması",
         "Yalnız oksijen ve intravenöz sıvı desteğiyle izlemek"
       ],
@@ -536,8 +536,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz kalsiyum glukonat verilmesi",
       "options": [
-        "İntravenöz kalsiyum glukonat verilmesi",
         "İntravenöz insülin ve glukoz verilmesi",
+        "İntravenöz kalsiyum glukonat verilmesi",
         "Nebülize salbutamol verilmesi",
         "Sodyum zirkonyum/potasyum bağlayıcı tedavi planlanması",
         "Acil hemodiyaliz hazırlığı yapılması"
@@ -846,9 +846,9 @@ export const rawCases = [
       "correct": "Neisseria meningitidis",
       "options": [
         "Streptococcus pneumoniae",
-        "Neisseria meningitidis",
         "Haemophilus influenzae tip b",
         "Listeria monocytogenes",
+        "Neisseria meningitidis",
         "Staphylococcus aureus"
       ],
       "question": "Bu klinik tabloya en olası neden olan mikroorganizma aşağıdakilerden hangisidir?",
@@ -1106,8 +1106,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil cerrahi eksplorasyon",
       "options": [
-        "Acil cerrahi eksplorasyon",
         "Tek doz metotreksat tedavisi",
+        "Acil cerrahi eksplorasyon",
         "Seri beta-hCG ve 48 saat sonra kontrol ultrasonografi",
         "Progesteron düzeyi ile gebelik canlılığı değerlendirmesi",
         "Geniş spektrumlu antibiyotikle PID tedavisi"
@@ -1327,8 +1327,8 @@ export const rawCases = [
       "correct": "Kontrastsız beyin bilgisayarlı tomografisi",
       "options": [
         "Beyin manyetik rezonans difüzyon görüntüleme",
-        "Kontrastsız beyin bilgisayarlı tomografisi",
         "Karotis Doppler ultrasonografi",
+        "Kontrastsız beyin bilgisayarlı tomografisi",
         "Elektroensefalografi",
         "Beyin pozitron emisyon tomografisi"
       ],
@@ -1735,8 +1735,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Akut apandisit",
       "options": [
-        "Akut apandisit",
         "Meckel divertiküliti",
+        "Akut apandisit",
         "Üreter taşı",
         "Akut gastroenterit",
         "Mezenter lenfadenit"
@@ -2113,8 +2113,8 @@ export const rawCases = [
       "correct": "Asetilkolinesteraz enzimini yeniden aktive etmesi",
       "options": [
         "Muskarinik asetilkolin reseptörlerini kompetitif olarak bloke etmesi",
-        "Asetilkolinesteraz enzimini yeniden aktive etmesi",
         "GABA-A reseptörlerini potansiyalize etmesi",
+        "Asetilkolinesteraz enzimini yeniden aktive etmesi",
         "Nikotinik asetilkolin reseptörlerini geri dönüşümsüz inhibe etmesi",
         "Katekolamin geri alımını inhibe etmesi"
       ],
@@ -2456,8 +2456,8 @@ export const rawCases = [
       "options": [
         "Kript apseleri ve devamlı mukozal ülserasyon",
         "Transmural granülomatöz inflamasyon",
-        "Villus atrofisi, kript hiperplazisi ve intraepitelyal lenfosit artışı",
         "Submukozal vasküler ektazi ve hemosiderin birikimi",
+        "Villus atrofisi, kript hiperplazisi ve intraepitelyal lenfosit artışı",
         "Pilorik gland metaplazisi ve Helicobacter benzeri organizmalar"
       ],
       "question": "Glutenle ilişkili kronik malabsorpsiyon, pozitif anti-tTG IgA ve duodenum biyopsisi yapılan bu hastada beklenen temel histopatolojik bulgu hangisidir?",
@@ -2691,10 +2691,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus axillaris",
       "options": [
-        "Nervus axillaris",
         "Nervus suprascapularis",
         "Nervus radialis",
         "Nervus musculocutaneus",
+        "Nervus axillaris",
         "Nervus thoracicus longus"
       ],
       "question": "Bu hastada omuz abdüksiyon kaybı ve deltoid bölge duyu azalmasını en doğrudan açıklayan sinir hasarı hangisidir?",
@@ -3040,8 +3040,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Glukoz-6-fosfataz eksikliği",
       "options": [
-        "Glukoz-6-fosfataz eksikliği",
         "Karaciğer glikojen fosforilaz eksikliği",
+        "Glukoz-6-fosfataz eksikliği",
         "Debranching enzyme eksikliği",
         "Branching enzyme eksikliği",
         "Aldolaz B eksikliği"
@@ -3550,10 +3550,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak",
       "options": [
-        "İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak",
         "İntravenöz düzenli insülin infüzyonunu sıvı ve potasyum değerlendirmesinden önce başlamak",
         "Sodyum bikarbonat infüzyonunu ilk tedavi olarak vermek",
         "Subkutan hızlı etkili insülinle ayaktan izlem planlamak",
+        "İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak",
         "Potasyum düzeyi düşük olmadan yüksek doz potasyum replasmanı yapmak"
       ],
       "question": "Hiperglisemi, ketonemi, anyon açıklıklı metabolik asidoz ve dehidratasyon bulguları olan bu hastada ilk tedavi basamağı hangisidir?",
@@ -3938,9 +3938,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Ramstedt piloromiyotomi",
       "options": [
-        "Ramstedt piloromiyotomi",
         "Geniş spektrumlu antibiyotik tedavisi",
         "Proton pompa inhibitörü tedavisi",
+        "Ramstedt piloromiyotomi",
         "Acil total parenteral beslenme",
         "Laktozsuz mama ile beslenme düzenlenmesi"
       ],
@@ -4317,8 +4317,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Eklem aspirasyonu ve sinovyal sıvı analizi",
       "options": [
-        "Diz manyetik rezonans görüntüleme",
         "Eklem aspirasyonu ve sinovyal sıvı analizi",
+        "Diz manyetik rezonans görüntüleme",
         "Serum ürik asit düzeyi ölçümü",
         "Diz direkt grafisi",
         "Antinükleer antikor testi"
@@ -4992,8 +4992,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil terapötik plazma değişimi",
       "options": [
-        "Acil terapötik plazma değişimi",
         "Rutin trombosit transfüzyonu",
+        "Acil terapötik plazma değişimi",
         "Yüksek doz intravenöz immünglobulin",
         "Düşük molekül ağırlıklı heparin",
         "Eculizumab tedavisi"
@@ -5206,10 +5206,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Anneye 72 saat içinde anti-D immünglobulin uygulanması",
       "options": [
-        "Anneye 72 saat içinde anti-D immünglobulin uygulanması",
         "Profilaksi vermeden rutin izlem yapılması",
         "Yenidoğana anti-D immünglobulin uygulanması",
         "Anne indirekt Coombs testi pozitifleşene kadar beklemek",
+        "Anneye 72 saat içinde anti-D immünglobulin uygulanması",
         "Anneye exchange transfüzyon yapılması"
       ],
       "question": "Rh negatif, indirekt Coombs testi negatif olan annenin Rh pozitif bebek doğurması sonrası en uygun yaklaşım hangisidir?",
@@ -5464,9 +5464,9 @@ export const rawCases = [
       "correct": "Acil cerrahi eksplorasyon ve detorsiyon yapılması",
       "options": [
         "Oral antibiyotik verilip poliklinik kontrolü önerilmesi",
+        "Acil cerrahi eksplorasyon ve detorsiyon yapılması",
         "İdrar kültürü sonucuna göre tedavi planlanması",
         "Önce Doppler skrotal ultrasonografi ile kan akımını doğrulayıp cerrahiyi sonuca göre planlamak",
-        "Acil cerrahi eksplorasyon ve detorsiyon yapılması",
         "Elektif skrotal ultrasonografi randevusu verilmesi"
       ],
       "question": "Ani başlayan şiddetli skrotal ağrı, yüksek-transvers testis ve kaybolmuş kremaster refleksi olan bu hastada en uygun acil yaklaşım hangisidir?",
@@ -5836,9 +5836,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Yüksek doz sistemik kortikosteroid başlamak",
       "options": [
-        "Yüksek doz sistemik kortikosteroid başlamak",
         "Temporal arter biyopsisi sonucunu beklemek",
         "Triptan tedavisi başlamak",
+        "Yüksek doz sistemik kortikosteroid başlamak",
         "Nonsteroid antiinflamatuvar tedaviyle izlemek",
         "Oral antibiyotik tedavisi başlamak"
       ],
@@ -6361,11 +6361,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Anti-GBM hastalığı",
       "options": [
-        "Anti-GBM hastalığı",
         "IgA nefropatisi",
         "Poststreptokokal glomerülonefrit",
         "ANCA ilişkili vaskülit",
-        "Minimal değişiklik hastalığı"
+        "Minimal değişiklik hastalığı",
+        "Anti-GBM hastalığı"
       ],
       "question": "Hemoptizi, hipoksemi, hızlı kreatinin artışı ve aktif idrar sedimenti bulunan bu hastada en olası tanı hangisidir?",
       "explanation": "Hemoptizi ve diffüz alveoler hemoraji bulgularına hızlı ilerleyen glomerülonefrit, hematüri, eritrosit silendirleri ve anti-GBM antikoru eşlik ediyorsa akciğer-böbrek sendromu içinde anti-GBM hastalığı öncelikli tanıdır. Böbrek biyopsisinde lineer IgG birikimi tanısal destek sağlar.",
@@ -6685,8 +6685,8 @@ export const rawCases = [
         "Antipsikotik dozunu artırmak",
         "Dopamin agonisti başlamak",
         "Asetilkolinesteraz inhibitörü vermek",
-        "Lityum tedavisine başlamak",
-        "Serotonerjik ilaçları kesip destek tedavisi ve siproheptadin vermek"
+        "Serotonerjik ilaçları kesip destek tedavisi ve siproheptadin vermek",
+        "Lityum tedavisine başlamak"
       ],
       "question": "SSRI ve linezolid sonrası ajitasyon, ateş, ishal, hiperrefleksi ve spontan klonus gelişen bu hastada en uygun tedavi yaklaşımı hangisidir?",
       "explanation": "Hızlı başlangıçlı ajitasyon, otonomik hiperaktivite, ishal, hiperrefleksi ve klonus; SSRI-linezolid etkileşimiyle serotonin sendromunu düşündürür. Tedavi sorumlu serotonerjik ilaçların kesilmesi, destek tedavisi, ajitasyon kontrolü ve orta-ağır olguda siproheptadindir.",
@@ -7073,8 +7073,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Oral vankomisin tedavisi başlanması",
       "options": [
-        "Oral vankomisin tedavisi başlanması",
         "Loperamid ile ishali baskılamak",
+        "Oral vankomisin tedavisi başlanması",
         "Probiyotik verip antibiyotik tedavisi olmadan izlemek",
         "İntravenöz aminoglikozid başlanması",
         "Peritonit bulgusu olmadan acil kolektomi yapmak"
@@ -7536,10 +7536,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Potasyum replasmanı yapıp insülini potasyum güvenli aralığa çıkana kadar ertelemek",
       "options": [
-        "Potasyum replasmanı yapıp insülini potasyum güvenli aralığa çıkana kadar ertelemek",
         "Potasyum düzeltilmeden intravenöz insülin infüzyonuna başlamak",
         "Sodyum bikarbonat infüzyonunu ilk tedavi olarak vermek",
         "Subkutan hızlı etkili insülin uygulamak",
+        "Potasyum replasmanı yapıp insülini potasyum güvenli aralığa çıkana kadar ertelemek",
         "Acil hemodiyaliz uygulamak"
       ],
       "question": "DKA ile uyumlu asidoz ve hiperglisemi saptanan bu hastada insülin tedavisine geçmeden önce en uygun yaklaşım hangisidir?",
@@ -7889,10 +7889,10 @@ export const rawCases = [
       "correct": "Maternal immünoglobulin G antikorlarının fetal eritrositleri hemolize uğratması",
       "options": [
         "Safra kanal tıkanıklığına bağlı konjuge bilirubin atılımının azalması",
-        "Maternal immünoglobulin G antikorlarının fetal eritrositleri hemolize uğratması",
         "Hepatositlerde bilirubin konjugasyonunun tamamen yok olması",
         "Anne sütündeki maddelere bağlı geç başlangıçlı enterohepatik dolaşım artışı",
-        "Eritrosit membran protein kusuruna bağlı kronik sferosit yıkımı"
+        "Eritrosit membran protein kusuruna bağlı kronik sferosit yıkımı",
+        "Maternal immünoglobulin G antikorlarının fetal eritrositleri hemolize uğratması"
       ],
       "question": "Bu bebekte sarılığın temel mekanizması aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Maternal immünoglobulin G antikorlarının fetal eritrositleri hemolize uğratması yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü erken dönemde sarılık için doğru tanı/tedavi önceliğini belirler.",
@@ -8205,11 +8205,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Uterin masaj ve intravenöz oksitosin uygulaması",
       "options": [
-        "Uterin masaj ve intravenöz oksitosin uygulaması",
         "Balon tamponadı ile uterin kavitenin tamponlanması",
         "Acil histerektomi yapılması",
         "Eritrosit süspansiyonu transfüzyonu ile izlem",
-        "Servikal/vajinal laserasyon onarımı için operasyona alınması"
+        "Servikal/vajinal laserasyon onarımı için operasyona alınması",
+        "Uterin masaj ve intravenöz oksitosin uygulaması"
       ],
       "question": "Vajinal doğumdan kısa süre sonra aktif kanaması devam eden, fundusu yumuşak ve gevşek palpe edilen bu hastada kanamayı kontrol etmek için ilk uygulanması gereken yaklaşım hangisidir?",
       "explanation": "Vajinal doğumdan kısa süre sonra devam eden yoğun kanama primer postpartum kanama tablosunu gösterir. Yumuşak ve gevşek fundus postpartum kanamanın en sık nedeni olan uterin atoniyi destekler. Bu bulgu örüntüsü Uterin masaj ve intravenöz oksitosin uygulaması lehine güçlü bir klinik gerekçe oluşturur. Yoğun postpartum kanama, yüksek şok indeksi ve yumuşak-gevşek uterin fundus uterin atoni lehinedir. Ayırıcı değerlendirmede Balon tamponadı ile uterin kavitenin tamponlanması, bu olgudaki temel bulgu birlikteliğini veya acil tedavi önceliğini aynı bütünlükte açıklamaz.",
@@ -8629,9 +8629,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Staphylococcus aureus",
       "options": [
-        "Staphylococcus aureus",
         "Streptococcus viridans",
         "Staphylococcus epidermidis",
+        "Staphylococcus aureus",
         "Enterococcus faecalis",
         "Coxiella burnetii"
       ],
@@ -8915,8 +8915,8 @@ export const rawCases = [
       "correct": "İntravenöz immünoglobulin",
       "options": [
         "Yüksek doz oral kortikosteroid",
-        "İntravenöz immünoglobulin",
         "Dopamin agonisti",
+        "İntravenöz immünoglobulin",
         "Asetilkolinesteraz inhibitörü",
         "Kontrol tedavisi olarak antibiyotik profilaksisi"
       ],
@@ -9306,8 +9306,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Glukagon reseptörü üzerinden Gs-adenilat siklaz yolunu aktive ederek hücre içi cAMP’yi artırması",
       "options": [
-        "Beta-1 adrenerjik reseptörleri doğrudan agonize ederek kalp hızını artırması",
         "Glukagon reseptörü üzerinden Gs-adenilat siklaz yolunu aktive ederek hücre içi cAMP’yi artırması",
+        "Beta-1 adrenerjik reseptörleri doğrudan agonize ederek kalp hızını artırması",
         "Muskarinik M2 reseptörlerini antagonize ederek vagal tonusu azaltması",
         "Fosfodiesterazı inhibe ederek cAMP yıkımını azaltması",
         "Voltaj kapılı sodyum kanal blokajını tersine çevirerek QRS süresini daraltması"
@@ -9651,9 +9651,9 @@ export const rawCases = [
       "correct": "Podosit ayaksı çıkıntılarında yaygın silinme",
       "options": [
         "Subepitelyal immün kompleks birikimleri",
+        "Podosit ayaksı çıkıntılarında yaygın silinme",
         "Glomerüler bazal membranda çift kontur görünümü",
         "Mezangial immünoglobulin A birikimi",
-        "Podosit ayaksı çıkıntılarında yaygın silinme",
         "Kresent oluşumu ve fibrinoid nekroz"
       ],
       "question": "Bu hastalıkta beklenen temel elektron mikroskobik bulgu aşağıdakilerden hangisidir?",
@@ -9887,9 +9887,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus laryngeus recurrens",
       "options": [
-        "Nervus laryngeus recurrens",
         "Nervus laryngeus superior - ramus externus",
         "Nervus hypoglossus",
+        "Nervus laryngeus recurrens",
         "Nervus glossopharyngeus",
         "Nervus accessorius"
       ],
@@ -10226,11 +10226,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nitrogliserin",
       "options": [
-        "Nitrogliserin",
         "Aspirin",
         "Heparin",
         "Klopidogrel",
-        "Atropin"
+        "Atropin",
+        "Nitrogliserin"
       ],
       "question": "İnferior ST elevasyonu, hipotansiyon, juguler venöz dolgunluk ve akciğerde ral olmaması bulunan bu hastada başlangıç yönetiminde kaçınılması gereken ilaç hangisidir?",
       "explanation": "İnferior ST elevasyonuna hipotansiyon, bradikardi, juguler venöz dolgunluk ve temiz akciğer bulgularının eşlik etmesi sağ ventrikül infarktını düşündürür. Sağ ventrikül infarktında kardiyak output preload bağımlıdır; nitrat venodilatasyonla preloadu azaltarak hipotansiyonu ağırlaştırabilir.",
@@ -10627,8 +10627,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz hidrokortizon ve izotonik sıvı replasmanı",
       "options": [
-        "İntravenöz hidrokortizon ve izotonik sıvı replasmanı",
         "Hipertonik salin ve sıvı kısıtlaması uygulamak",
+        "İntravenöz hidrokortizon ve izotonik sıvı replasmanı",
         "Spironolakton başlamak",
         "Oral fludrokortizonla ayaktan izlem planlamak",
         "Sıvı vermeden loop diüretik uygulamak"
@@ -10854,8 +10854,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Anti-D immünoglobulin uygulanması",
       "options": [
-        "Anti-D immünoglobulin uygulanması",
         "Anneye eritrosit transfüzyonu yapılması",
+        "Anti-D immünoglobulin uygulanması",
         "Fetal Rh tayiniyle profilaksiyi sonraki kontrole ertelemek",
         "Gebelik boyunca kortikosteroid profilaksisi verilmesi",
         "İndirekt Coombs tekrarına göre anti-D uygulamasını bir hafta sonra planlamak"
@@ -11283,9 +11283,9 @@ export const rawCases = [
       "correct": "Shiga toksininin endoteli zedeleyerek trombotik mikroanjiyopati oluşturması",
       "options": [
         "Glomerüler bazal membrana karşı IgG antikor gelişmesi",
-        "Shiga toksininin endoteli zedeleyerek trombotik mikroanjiyopati oluşturması",
         "Immün komplekslerin mezangiumda birikerek nefrit oluşturması",
         "C1 esteraz inhibitör eksikliğine bağlı damar geçirgenliği artışı",
+        "Shiga toksininin endoteli zedeleyerek trombotik mikroanjiyopati oluşturması",
         "Renal tübüllerde sistin kristallerinin birikmesi"
       ],
       "question": "Bu hastalıktaki temel patogenetik mekanizma aşağıdakilerden hangisidir?",
@@ -11812,10 +11812,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak",
       "options": [
-        "İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak",
         "İntravenöz düzenli insülin infüzyonunu sıvı ve potasyum değerlendirmesinden önce başlamak",
         "Sodyum bikarbonat infüzyonunu ilk tedavi olarak vermek",
         "Subkutan hızlı etkili insülinle ayaktan izlem planlamak",
+        "İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak",
         "Potasyum düzeyi düşük olmadan yüksek doz potasyum replasmanı yapmak"
       ],
       "question": "Hiperglisemi, ketonemi, anyon açıklıklı metabolik asidoz ve dehidratasyon bulguları olan bu hastada ilk tedavi basamağı hangisidir?",
@@ -12079,11 +12079,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Postsinaptik nikotinik asetilkolin reseptörlerine karşı otoantikor gelişmesi",
       "options": [
-        "Postsinaptik nikotinik asetilkolin reseptörlerine karşı otoantikor gelişmesi",
         "Presinaptik voltaj kapılı kalsiyum kanallarına karşı otoantikor gelişmesi",
         "Periferik sinir miyelinine karşı segmental demiyelinizasyon gelişmesi",
         "Dopaminerjik nöronlarda alfa-sinüklein birikimi olması",
-        "Üst motor nöronlarda glutamat aracılı dejenerasyon gelişmesi"
+        "Üst motor nöronlarda glutamat aracılı dejenerasyon gelişmesi",
+        "Postsinaptik nikotinik asetilkolin reseptörlerine karşı otoantikor gelişmesi"
       ],
       "question": "Fluktuasyon gösteren okülobulber güçsüzlük ve anti-AChR pozitifliği olan bu hastalıktaki temel patofizyolojik mekanizma hangisidir?",
       "explanation": "Pitoz, diplopi, gün içinde artan yorgunluk, dinlenmeyle düzelme, dekremental yanıt ve anti-AChR pozitifliği myastenia gravis ile uyumludur. Temel mekanizma postsinaptik nikotinik asetilkolin reseptörlerine karşı otoantikor gelişmesi ve nöromüsküler iletimin bozulmasıdır.",
@@ -12407,8 +12407,8 @@ export const rawCases = [
       "correct": "Kontrollü koşullarda hava yolunun güvence altına alınması",
       "options": [
         "Acil serviste dil basacağı ile orofarenks muayenesi yapılması",
-        "Kontrollü koşullarda hava yolunun güvence altına alınması",
         "Ayaktan oral antibiyotik başlanması",
+        "Kontrollü koşullarda hava yolunun güvence altına alınması",
         "Nebülize bronkodilatör ve kortikosteroid yanıtını izleyerek hava yolu müdahalesini ikinci basamağa bırakmak",
         "Boğaz kültürü alınması için çocuğun yatırılarak izlem planlanması"
       ],
@@ -12846,9 +12846,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Staphylococcus aureus",
       "options": [
-        "Staphylococcus aureus",
         "Streptococcus viridans",
         "Staphylococcus epidermidis",
+        "Staphylococcus aureus",
         "Enterococcus faecalis",
         "Coxiella burnetii"
       ],
@@ -13069,11 +13069,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Üreter",
       "options": [
-        "Üreter",
         "Nervus obturatorius",
         "Arteria ovarica",
         "Ligamentum teres uteri",
-        "Arteria iliaca interna"
+        "Arteria iliaca interna",
+        "Üreter"
       ],
       "question": "Uterin arter ligasyonu sırasında arterin yakınından geçtiği için özellikle korunması gereken yapı hangisidir?",
       "explanation": "Üreter, uterin arterin servikse yakın bölümünde arterin altından geçer. Bu nedenle histerektomi sırasında uterin arter bağlanırken üreterin tanınması ve korunması gerekir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
@@ -13445,8 +13445,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Alkol dehidrogenaz enzimini inhibe etmesi",
       "options": [
-        "Alkol dehidrogenaz enzimini inhibe etmesi",
         "Asetaldehit dehidrogenaz enzimini inhibe etmesi",
+        "Alkol dehidrogenaz enzimini inhibe etmesi",
         "Opioid reseptörlerini antagonize etmesi",
         "GABA-A reseptörlerini pozitif allosterik olarak modüle etmesi",
         "Formik asidi renal tübüllerden aktif olarak atması"
@@ -14084,11 +14084,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil terapötik plazma değişimi",
       "options": [
-        "Acil terapötik plazma değişimi",
         "Rutin trombosit transfüzyonu",
         "Yüksek doz intravenöz immünglobulin",
         "Düşük molekül ağırlıklı heparin",
-        "Eculizumab tedavisi"
+        "Eculizumab tedavisi",
+        "Acil terapötik plazma değişimi"
       ],
       "question": "Peteşi-ekimoz, ağır trombositopeni, şistositli hemoliz ve nörolojik dalgalanma bulunan bu hastada acilen başlanması gereken tedavi hangisidir?",
       "explanation": "Ağır trombositopeni, şistositli mikroanjiyopatik hemolitik anemi, LDH yüksekliği, nörolojik dalgalanma ve hafif böbrek etkilenimi TTP için yüksek klinik şüphe oluşturur. TTP’de mortaliteyi azaltan acil tedavi terapötik plazma değişimidir; ADAMTS13 sonucu beklenmemelidir.",
@@ -14467,8 +14467,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Primer adrenal yetmezlik",
       "options": [
-        "Primer adrenal yetmezlik",
         "Sekonder adrenal yetmezlik",
+        "Primer adrenal yetmezlik",
         "Uygunsuz ADH salınımı sendromu",
         "Hipertiroidi",
         "Cushing sendromu"
@@ -14806,8 +14806,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nalokson",
       "options": [
-        "Flumazenil",
         "Nalokson",
+        "Flumazenil",
         "Atropin",
         "Pralidoksim",
         "Fomepizol"
@@ -15295,10 +15295,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Potasyum replasmanı yapıp insülini potasyum güvenli aralığa çıkana kadar ertelemek",
       "options": [
-        "Potasyum replasmanı yapıp insülini potasyum güvenli aralığa çıkana kadar ertelemek",
         "Potasyum düzeltilmeden intravenöz insülin infüzyonuna başlamak",
         "Sodyum bikarbonat infüzyonunu ilk tedavi olarak vermek",
         "Subkutan hızlı etkili insülin uygulamak",
+        "Potasyum replasmanı yapıp insülini potasyum güvenli aralığa çıkana kadar ertelemek",
         "Acil hemodiyaliz uygulamak"
       ],
       "question": "DKA ile uyumlu asidoz ve hiperglisemi saptanan bu hastada insülin tedavisine geçmeden önce en uygun yaklaşım hangisidir?",
@@ -15594,11 +15594,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Alveoler surfaktan eksikliğine bağlı yüzey geriliminin artması",
       "options": [
-        "Alveoler surfaktan eksikliğine bağlı yüzey geriliminin artması",
         "Mezodermal akciğer tomurcuğunun gelişememesi",
         "Pulmoner venöz dönüşün sol atriyuma ulaşamaması",
         "Terminal bronşiollerde mukus tıkaçları oluşması",
-        "Fetal akciğer sıvısının lenfatik drenajının kalıcı olarak artması"
+        "Fetal akciğer sıvısının lenfatik drenajının kalıcı olarak artması",
+        "Alveoler surfaktan eksikliğine bağlı yüzey geriliminin artması"
       ],
       "question": "Bu hastadaki temel patofizyolojik mekanizma aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada prematürite, erken solunum sıkıntısı ve akciğerde düşük hacim/retikülogranüler görünüm birlikte değerlendirilince temel karar Alveoler surfaktan eksikliğine bağlı yüzey geriliminin artması yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü prematüre respiratuvar distres sendromu için doğru tanı/tedavi önceliğini belirler.",
@@ -16034,9 +16034,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Streptococcus viridans",
       "options": [
-        "Streptococcus viridans",
         "Staphylococcus aureus",
         "Enterococcus faecalis",
+        "Streptococcus viridans",
         "Staphylococcus epidermidis",
         "Candida albicans"
       ],
@@ -16293,8 +16293,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Substantia nigra pars compacta dopaminerjik nöronlarında kayıp",
       "options": [
-        "Substantia nigra pars compacta dopaminerjik nöronlarında kayıp",
         "Hippokampus CA1 bölgesinde akut iskemik nekroz",
+        "Substantia nigra pars compacta dopaminerjik nöronlarında kayıp",
         "Alt motor nöronlarda ön boynuz hücre kaybı",
         "Serebellar Purkinje hücrelerinde selektif kayıp",
         "Kaudat çekirdekte belirgin GABAerjik nöron kaybı"
@@ -16567,10 +16567,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Magnezyum sülfat ve kan basıncı kontrolü sonrası doğumun gerçekleştirilmesi",
       "options": [
-        "Magnezyum sülfat ve kan basıncı kontrolü sonrası doğumun gerçekleştirilmesi",
         "Ayaktan kan basıncı izlemi ve bir hafta sonra kontrol",
         "Oral antihipertansifle gebeliği 40. haftaya kadar sürdürmek",
         "Proteinüri kaybolana kadar doğumu ertelemek",
+        "Magnezyum sülfat ve kan basıncı kontrolü sonrası doğumun gerçekleştirilmesi",
         "Sadece antenatal kortikosteroid verip taburcu etmek"
       ],
       "question": "35. gebelik haftasında ağır özellikli preeklampsi bulguları olan bu hastada en uygun yönetim hangisidir?",
@@ -17186,11 +17186,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Endoskopik retrograd kolanjiyopankreatografi ile safra yolu drenajı",
       "options": [
-        "Endoskopik retrograd kolanjiyopankreatografi ile safra yolu drenajı",
         "Aynı seansta elektif laparoskopik kolesistektomi planlanması",
         "MRCP ile tanısal doğrulama beklenmesi",
         "Perkütan transhepatik biliyer drenajın ilk seçenek olarak uygulanması",
-        "Sadece antibiyotik ve analjezikle klinik izlem"
+        "Sadece antibiyotik ve analjezikle klinik izlem",
+        "Endoskopik retrograd kolanjiyopankreatografi ile safra yolu drenajı"
       ],
       "question": "Antibiyotik ve sıvı resüsitasyonu başlanan, ateş-titreme, sağ üst kadran ağrısı, ikter, kolestatik laboratuvar paterni ve USG’de distal koledok taşı bulunan bu hastada en uygun kaynak kontrol yaklaşımı hangisidir?",
       "explanation": "Ateş-titreme, sağ üst kadran ağrısı ve ikter Charcot triadını oluşturur; kolestatik laboratuvar paterni ve USG’de dilate koledok içinde distal taş görülmesi koledokolitiazise bağlı akut kolanjiti destekler. Akut kolanjitte antibiyotik ve sıvı desteği gereklidir, ancak enfekte ve obstrükte safra yolu drenaj olmadan kontrol altına alınamaz; bu nedenle ERCP ile biliyer drenaj uygun kaynak kontrolüdür.",
@@ -17828,11 +17828,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Trombotik trombositopenik purpura",
       "options": [
-        "Trombotik trombositopenik purpura",
         "İmmün trombositopenik purpura",
         "Dissemine intravasküler koagülasyon",
         "Hemolitik üremik sendrom",
-        "Akut lösemi"
+        "Akut lösemi",
+        "Trombotik trombositopenik purpura"
       ],
       "question": "Ağır trombositopeni, şistositli hemoliz ve nörolojik bulgularla başvuran bu hastada en olası tanı hangisidir?",
       "explanation": "Şistositli MAHA, ağır trombositopeni, nörolojik dalgalanma ve hafif böbrek etkilenimi TTP için tipiktir. Koagülasyon testlerinin belirgin bozulmaması DIC’yi geri plana iter; izole trombositopeni olmaması ITP’den uzaklaştırır.",
@@ -18193,8 +18193,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kalsiyum oksalat taşı",
       "options": [
-        "Kalsiyum oksalat taşı",
         "Ürik asit taşı",
+        "Kalsiyum oksalat taşı",
         "Strüvit taşı",
         "Sistin taşı",
         "Ksantin taşı"
@@ -18522,10 +18522,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Sağ ventrikül preloadunu azaltarak hipotansiyonu ağırlaştırması",
       "options": [
-        "Sağ ventrikül preloadunu azaltarak hipotansiyonu ağırlaştırması",
         "Koroner vazospazmı artırması",
         "Trombosit agregasyonunu artırması",
         "Atriyoventriküler iletimi tamamen bloke etmesi",
+        "Sağ ventrikül preloadunu azaltarak hipotansiyonu ağırlaştırması",
         "Miyokard oksijen tüketimini doğrudan artırması"
       ],
       "question": "İnferior ST elevasyonu, hipotansiyon, juguler venöz dolgunluk ve akciğerde ral olmaması bulunan bu hastada nitrat verilmesinden kaçınılmasının temel nedeni hangisidir?",
@@ -18700,8 +18700,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus thoracicus longus",
       "options": [
-        "Nervus thoracicus longus",
         "Nervus thoracodorsalis",
+        "Nervus thoracicus longus",
         "Nervus dorsalis scapulae",
         "Nervus suprascapularis",
         "Nervus axillaris"
@@ -19117,8 +19117,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "ADH etkisiyle principal hücrelerde aquaporin-2 yerleşiminin artması ve serbest su tutulması",
       "options": [
-        "ADH etkisiyle principal hücrelerde aquaporin-2 yerleşiminin artması ve serbest su tutulması",
         "Aldosteron eksikliğiyle distal nefronda sodyum geri emiliminin azalması",
+        "ADH etkisiyle principal hücrelerde aquaporin-2 yerleşiminin artması ve serbest su tutulması",
         "Glukozüriye bağlı osmotik diürezle serbest su kaybının artması",
         "Primer polidipsiye bağlı ADH baskılanması ve idrarın aşırı dilüe olması",
         "Henle çıkan kalın kolunda Na-K-2Cl kotransportunun akut inhibisyonu"
@@ -19475,10 +19475,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nöral krest hücrelerinin konotrunkal septuma göç ve katkısında bozulma",
       "options": [
-        "Nöral krest hücrelerinin konotrunkal septuma göç ve katkısında bozulma",
         "Endokardiyal yastıkların atriyoventriküler kanal septasyonunda kaynaşamaması",
         "Septum primum ve septum secundum ilişkisindeki bozukluk",
         "Duktus arteriozus düz kasının postnatal kapanma yanıtının bozulması",
+        "Nöral krest hücrelerinin konotrunkal septuma göç ve katkısında bozulma",
         "Sinüs venozusun sağ atriyuma katılımında bozulma"
       ],
       "question": "Bu yenidoğanda santral siyanoz, VSD, sağ ventrikül çıkış yolu darlığı ve binici aorta birlikteliği hangi embriyolojik gelişim kusuruyla en iyi açıklanır?",
@@ -19803,10 +19803,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Cystathionine beta-synthase (CBS) eksikliği",
       "options": [
-        "Cystathionine beta-synthase (CBS) eksikliği",
         "Methionine synthase eksikliği",
         "Methylenetetrahydrofolate reductase (MTHFR) eksikliği",
         "Cystathionine gamma-lyase eksikliği",
+        "Cystathionine beta-synthase (CBS) eksikliği",
         "Betaine-homocysteine methyltransferase eksikliği"
       ],
       "question": "Tromboz eğilimi, lens subluksasyonu ve metiyonin-total homosistein yüksekliğini en iyi açıklayan temel enzim defekti hangisidir?",
@@ -20143,8 +20143,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Toxoplasma gondii",
       "options": [
-        "Toxoplasma gondii",
         "Cytomegalovirus",
+        "Toxoplasma gondii",
         "Rubella virus",
         "Treponema pallidum",
         "Listeria monocytogenes"
@@ -20492,8 +20492,8 @@ export const rawCases = [
       "correct": "Berrak hücreli renal hücreli karsinom",
       "options": [
         "Ürotelyal karsinom",
-        "Berrak hücreli renal hücreli karsinom",
         "Wilms tümörü",
+        "Berrak hücreli renal hücreli karsinom",
         "Renal onkositom",
         "Anjiyomiyolipom"
       ],
@@ -20810,8 +20810,8 @@ export const rawCases = [
       "options": [
         "Beta-2 reseptör blokajına bağlı bronkokonstriksiyon",
         "Histamin H1 reseptör aktivasyonuna bağlı mukozal ödem",
-        "Lökotrien sentezinde artışa bağlı hava yolu inflamasyonu",
         "Bradikinin yıkımının azalmasına bağlı hava yolu irritasyonu",
+        "Lökotrien sentezinde artışa bağlı hava yolu inflamasyonu",
         "Muskarinik reseptör blokajına bağlı sekresyon koyulaşması"
       ],
       "question": "Yeni başlanan ACE inhibitöründen sonra balgamsız kuru öksürük gelişen bu hastada en olası farmakolojik mekanizma hangisidir?",
@@ -21315,9 +21315,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak",
       "options": [
-        "İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak",
         "İntravenöz düzenli insülin infüzyonunu sıvı ve potasyum değerlendirmesinden önce başlamak",
         "Sodyum bikarbonat infüzyonunu ilk tedavi olarak vermek",
+        "İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak",
         "Subkutan hızlı etkili insülinle ayaktan izlem planlamak",
         "Potasyum düzeyi düşük olmadan yüksek doz potasyum replasmanı yapmak"
       ],
@@ -21851,8 +21851,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Endoskopik retrograd kolanjiyopankreatografi ile biliyer drenaj",
       "options": [
-        "Endoskopik retrograd kolanjiyopankreatografi ile biliyer drenaj",
         "MRCP sonucuna kadar drenajı ertelemek",
+        "Endoskopik retrograd kolanjiyopankreatografi ile biliyer drenaj",
         "Stabilizasyon sonrası elektif kolesistektomi randevusu vermek",
         "Perkütan kolesistostomiyi koledok drenajı yerine ilk seçenek yapmak",
         "Yalnızca antibiyotik yanıtını izlemek"
@@ -22111,10 +22111,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Desmoglein 3",
       "options": [
-        "Desmoglein 3",
         "BP180 kollajen",
         "Tip VII kollajen",
         "Laminin 332",
+        "Desmoglein 3",
         "Integrin alfa-6 beta-4"
       ],
       "question": "Mukozal erozyon, gevşek bül, pozitif Nikolsky bulgusu ve suprabazal akantolizle seyreden bu hastalıkta hedef alınan temel adezyon proteini hangisidir?",
@@ -22526,8 +22526,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz immün globulin ve aspirin",
       "options": [
-        "Yüksek doz amoksisilin-klavulanat",
         "İntravenöz immün globulin ve aspirin",
+        "Yüksek doz amoksisilin-klavulanat",
         "Antipiretik tedaviyle klinik izlemi sürdürmek",
         "Oral asiklovir tedavisi",
         "Acil tonsillektomi"
@@ -22781,9 +22781,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Magnezyum sülfat",
       "options": [
-        "Magnezyum sülfat",
         "Furosemid",
         "Warfarin",
+        "Magnezyum sülfat",
         "Oral benzodiazepinle profilaksi",
         "Metilergonovin"
       ],
@@ -23431,11 +23431,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil terapötik plazma değişimi",
       "options": [
-        "Acil terapötik plazma değişimi",
         "Rutin trombosit transfüzyonu",
         "Yüksek doz intravenöz immünglobulin",
         "Düşük molekül ağırlıklı heparin",
-        "Eculizumab tedavisi"
+        "Eculizumab tedavisi",
+        "Acil terapötik plazma değişimi"
       ],
       "question": "Ağır trombositopeni, şistositli hemoliz ve geçici nörolojik bulgularla başvuran bu hastada hayat kurtarıcı ilk tedavi yaklaşımı hangisidir?",
       "explanation": "Ağır trombositopeni, şistositli mikroanjiyopatik hemolitik anemi, LDH yüksekliği, nörolojik dalgalanma ve hafif böbrek etkilenimi TTP için yüksek klinik şüphe oluşturur. TTP’de mortaliteyi azaltan acil tedavi terapötik plazma değişimidir; ADAMTS13 sonucu beklenmemelidir.",
@@ -23734,10 +23734,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Clostridioides difficile",
       "options": [
-        "Clostridioides difficile",
         "Vibrio cholerae",
         "Salmonella enterica",
         "Entamoeba histolytica",
+        "Clostridioides difficile",
         "Giardia lamblia"
       ],
       "question": "Geniş spektrumlu antibiyotik sonrası sulu ishal ve psödomembranöz kolit bulguları gelişen bu hastada en olası mikroorganizma hangisidir?",
@@ -24052,8 +24052,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Ryanodin reseptörü üzerinden sarkoplazmik retikulumdan kalsiyum salınımını azaltması",
       "options": [
-        "Ryanodin reseptörü üzerinden sarkoplazmik retikulumdan kalsiyum salınımını azaltması",
         "Asetilkolinesterazı inhibe ederek nöromüsküler iletimi artırması",
+        "Ryanodin reseptörü üzerinden sarkoplazmik retikulumdan kalsiyum salınımını azaltması",
         "GABA-A reseptörünü aktive ederek sedasyon sağlaması",
         "Dopamin D2 reseptörlerini bloke ederek otonom hiperaktiviteyi azaltması",
         "Voltaj kapılı sodyum kanallarını bloke ederek aksiyon potansiyelini durdurması"
@@ -24358,8 +24358,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Glomerüler bazal membranda spike and dome görünümü",
       "options": [
-        "Kresent oluşumu ve Bowman aralığında fibrin birikimi",
         "Glomerüler bazal membranda spike and dome görünümü",
+        "Kresent oluşumu ve Bowman aralığında fibrin birikimi",
         "Mezangial IgA birikimine bağlı mezangial proliferasyon",
         "Kongo kırmızısı ile elma yeşili çift kırılma",
         "Nodüler glomerüloskleroz ve Kimmelstiel-Wilson nodülleri"
@@ -24549,10 +24549,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus gluteus superior",
       "options": [
-        "Nervus gluteus superior",
         "Nervus gluteus inferior",
         "Nervus obturatorius",
         "Nervus femoralis",
+        "Nervus gluteus superior",
         "Nervus ischiadicus"
       ],
       "question": "Tek ayak üzerinde dururken karşı pelvisin düşmesini en iyi açıklayan sinir hasarı hangisidir?",
@@ -24984,10 +24984,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Elastik geri çekilimin azalması ve küçük hava yollarının ekspirasyonda dinamik kollabe olması",
       "options": [
-        "Elastik geri çekilimin azalması ve küçük hava yollarının ekspirasyonda dinamik kollabe olması",
         "Akciğer kompliyansının azalmasıyla inspiratuvar hacimlerin kısıtlanması",
         "Surfaktan azalmasına bağlı alveollerin inspirasyon sonunda kollabe olması",
         "Plevral boşluğa hava girmesiyle akciğerin dıştan komprese olması",
+        "Elastik geri çekilimin azalması ve küçük hava yollarının ekspirasyonda dinamik kollabe olması",
         "Merkezi kemoreseptör yanıtının kaybıyla ventilasyon dürtüsünün azalması"
       ],
       "question": "Bu hastadaki kronik hava hapsini en iyi açıklayan temel akciğer mekaniği değişikliği hangisidir?",
@@ -25378,9 +25378,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Ornitin transkarbamilaz eksikliği",
       "options": [
-        "Ornitin transkarbamilaz eksikliği",
         "Karbamoil fosfat sentetaz I eksikliği",
         "Argininosüksinat sentetaz eksikliği",
+        "Ornitin transkarbamilaz eksikliği",
         "Argininosüksinat liyaz eksikliği",
         "Arginaz eksikliği"
       ],
@@ -25612,9 +25612,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması",
       "options": [
-        "Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması",
         "Rutin gözlük numarası ölçümü yapılması",
         "Oral antihistaminik verilmesi",
+        "Topikal ve sistemik göz içi basıncı düşürücü tedavi başlanması",
         "Elektif katarakt cerrahisi için randevu verilmesi",
         "Acil intravitreal antibiyotik uygulanması"
       ],
@@ -26003,11 +26003,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Omfalomezenterik kanalın tam kapanmaması",
       "options": [
-        "Omfalomezenterik kanalın tam kapanmaması",
         "Ürakuş kalıntısının açık kalması",
         "Midgutun superior mezenterik arter etrafında normal rotasyonunu tamamlayamaması",
         "Kaudal nöroporun kapanma kusuru",
-        "Müller kanalının füzyon kusuru"
+        "Müller kanalının füzyon kusuru",
+        "Omfalomezenterik kanalın tam kapanmaması"
       ],
       "question": "Bu çocukta ağrısız tekrarlayan alt gastrointestinal kanama ve sağ alt kadranda ektopik gastrik mukoza tutulumu hangi embriyolojik kalıntıyla en iyi açıklanır?",
       "explanation": "Çocukta ağrısız, tekrarlayan rektal kanama ve Meckel sintigrafisinde sağ alt kadranda ektopik gastrik mukoza tutulumu Meckel divertikülünü düşündürür. Meckel divertikülü, ileum ile yolk sac arasındaki omfalomezenterik kanalın tam kapanmamasından kaynaklanan bir orta bağırsak kalıntısıdır.",
@@ -26352,9 +26352,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Toplayıcı kanalda sodyum geri emilimi artarken potasyum ve hidrojen iyonu sekresyonunun artması",
       "options": [
-        "Toplayıcı kanalda sodyum geri emilimi artarken potasyum ve hidrojen iyonu sekresyonunun artması",
         "Proksimal tübülde bikarbonat geri emiliminin azalması ve bikarbonatüri gelişmesi",
         "Henle inen kolunda su geçirgenliğinin artmasıyla potasyum sekresyonunun baskılanması",
+        "Toplayıcı kanalda sodyum geri emilimi artarken potasyum ve hidrojen iyonu sekresyonunun artması",
         "Afferent arteriyol dilatasyonuyla glomerüler filtrasyon basıncının düşmesi",
         "Distal tübülde PTH aracılı kalsiyum geri emiliminin azalması"
       ],
@@ -26658,8 +26658,8 @@ export const rawCases = [
       "correct": "İnhibitör internöronlarda GABA ve glisin salınımının engellenmesi",
       "options": [
         "Periferik nöromüsküler kavşakta asetilkolin salınımının engellenmesi",
-        "İnhibitör internöronlarda GABA ve glisin salınımının engellenmesi",
         "Adenilat siklaz aktivasyonu ile sulu sekresyonun artırılması",
+        "İnhibitör internöronlarda GABA ve glisin salınımının engellenmesi",
         "EF-2 inaktivasyonu ile protein sentezinin durdurulması",
         "MHC II-TCR çapraz bağlanmasıyla poliklonal T hücre aktivasyonu"
       ],
@@ -26992,10 +26992,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kontrastlı BT anjiyografi",
       "options": [
-        "Kontrastlı BT anjiyografi",
         "Ayakta direkt karın grafisi",
         "Abdominal ultrasonografi",
         "Kolonoskopi",
+        "Kontrastlı BT anjiyografi",
         "Elektif ince bağırsak pasaj grafisi"
       ],
       "question": "Atriyal fibrilasyonu olan, muayene bulgusuna göre orantısız şiddetli karın ağrısı, metabolik asidoz ve laktat yüksekliği saptanan bu hastada en uygun tanısal test hangisidir?",
@@ -27258,9 +27258,9 @@ export const rawCases = [
       "correct": "Orphan Annie eye nükleusları ve psammoma cisimcikleri",
       "options": [
         "Amiloid stromada kalsitonin üreten C hücre proliferasyonu",
+        "Orphan Annie eye nükleusları ve psammoma cisimcikleri",
         "Kapsül ve damar invazyonu gösteren uniform folliküler hücreler",
         "Anaplastik dev hücreler ve yaygın nekroz",
-        "Orphan Annie eye nükleusları ve psammoma cisimcikleri",
         "Granülomatöz inflamasyon ve multinükleer dev hücreler"
       ],
       "question": "Mikrokalsifikasyon içeren tiroid nodülü ve servikal lenf nodu bulunan hastada beklenen karakteristik patolojik bulgu hangisidir?",
@@ -27555,11 +27555,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Hipoksantin-guanin fosforiboziltransferaz (HGPRT) eksikliği",
       "options": [
-        "Hipoksantin-guanin fosforiboziltransferaz (HGPRT) eksikliği",
         "Adenozin deaminaz eksikliği",
         "Ksantin oksidaz eksikliği",
         "Dihidroorotat dehidrogenaz eksikliği",
-        "Orotat fosforiboziltransferaz eksikliği"
+        "Orotat fosforiboziltransferaz eksikliği",
+        "Hipoksantin-guanin fosforiboziltransferaz (HGPRT) eksikliği"
       ],
       "question": "Hiperürisemi, ürat kristalleri, nörolojik bulgular ve kendine zarar verme davranışı olan bu çocukta temel biyokimyasal defekt hangisidir?",
       "explanation": "Kendine zarar verme davranışı, distoni/spastisite, ürat kristalleri ve serum ürik asit yüksekliği Lesch-Nyhan sendromunu düşündürür. Temel defekt HGPRT eksikliğidir; pürin kurtarma yolu çalışmadığında PRPP artar, de novo pürin sentezi hızlanır ve ürik asit üretimi yükselir.",
@@ -27879,8 +27879,8 @@ export const rawCases = [
       "options": [
         "Heparine aynı dozda devam edilmesi",
         "Heparinin kesilip varfarinin tek başına hemen başlanması",
-        "Heparinin kesilip argatroban gibi non-heparin antikoagülan başlanması",
         "Trombosit transfüzyonu sonrası antikoagülasyonu keserek izlem planlamak",
+        "Heparinin kesilip argatroban gibi non-heparin antikoagülan başlanması",
         "Düşük doz aspirin ile izlem yapılması"
       ],
       "question": "Heparin kullanımı sırasında trombosit düşüşü ve yeni venöz tromboz gelişen bu hastada en uygun antikoagülan yaklaşım hangisidir?",
@@ -28232,8 +28232,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Üçüncü ve dördüncü faringeal poş gelişim bozukluğu",
       "options": [
-        "Üçüncü ve dördüncü faringeal poş gelişim bozukluğu",
         "Birinci faringeal ark gelişim bozukluğu",
+        "Üçüncü ve dördüncü faringeal poş gelişim bozukluğu",
         "İkinci faringeal yarığın persiste kalıntısı",
         "Metanefrik blastem indüksiyon kusuru",
         "Septum primum ve septum secundum ilişkisindeki bozukluk"
@@ -28560,10 +28560,10 @@ export const rawCases = [
       "correct": "EF-2’yi ADP-ribozilleyerek protein sentezini inhibe etmesi",
       "options": [
         "Gs proteininin ADP-ribozilasyonu ile adenilat siklaz aktivitesini artırması",
-        "EF-2’yi ADP-ribozilleyerek protein sentezini inhibe etmesi",
         "MHC II ve TCR arasında çapraz bağ kurarak süperantijen etkisi oluşturması",
         "SNARE proteinlerini parçalayarak asetilkolin salınımını engellemesi",
-        "Shiga-benzeri etkiyle 60S ribozomal alt birimi inaktive etmesi"
+        "Shiga-benzeri etkiyle 60S ribozomal alt birimi inaktive etmesi",
+        "EF-2’yi ADP-ribozilleyerek protein sentezini inhibe etmesi"
       ],
       "question": "Yanık yarasında yeşil pigmentli akıntı ve Pseudomonas paterni olan bu enfeksiyonda Exotoxin A’nın temel hücresel etki mekanizması hangisidir?",
       "explanation": "Exotoxin A’nın EF-2 üzerinden protein sentezini durdurması, yanık yarasında ilerleyen doku hasarını açıklayan temel toksin mekanizmasıdır. Hasta üç gün önce alev yanığı nedeniyle yatırılmıştır. Son 24 saatte yanık alanında artan ağrı, yeşil-mavi akıntı ve ateş gelişmiş; hastane ortamında nemli pansuman ve geniş yüzeyli doku hasarı mevcuttur. Bu bulgu örüntüsü EF-2’yi ADP-ribozilleyerek protein sentezini inhibe etmesi lehine güçlü bir klinik gerekçe oluşturur. P. aeruginosa yanık yaralarında nemli ortamı ve doku hasarını fırsat bilerek invaziv enfeksiyon yapabilir. Diğer seçenekler, özellikle Gs proteininin ADP-ribozilasyonu ile adenilat siklaz aktivitesini artırması, bu bulgu-mekanizma eşleşmesini aynı bütünlükte açıklamaz.",
@@ -28816,11 +28816,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Amonyagenez ve hidrojen iyonu sekresyonu artışıyla yeni bikarbonat kazanımının yükselmesi",
       "options": [
-        "Amonyagenez ve hidrojen iyonu sekresyonu artışıyla yeni bikarbonat kazanımının yükselmesi",
         "Bikarbonat atılımının artırılması ve idrarın alkalileştirilmesi",
         "Renal tübüler karbondioksit üretiminin azaltılarak PaCO₂’nin düşürülmesi",
         "Potasyum geri emiliminin tek başına artırılmasıyla pH’ın düzeltilmesi",
-        "ADH etkisinin kesilmesiyle serbest su atılımının artırılması"
+        "ADH etkisinin kesilmesiyle serbest su atılımının artırılması",
+        "Amonyagenez ve hidrojen iyonu sekresyonu artışıyla yeni bikarbonat kazanımının yükselmesi"
       ],
       "question": "Kronik karbondioksit retansiyonunda pH değerinin normale yaklaşmasını sağlayan temel renal kompanzasyon hangisidir?",
       "explanation": "Kronik respiratuvar asidozda primer sorun PaCO₂ yüksekliğidir. Böbrekler proksimal ve distal nefronda H+ sekresyonunu, amonyagenezi ve titrasyon asidi atılımını artırarak yeni bikarbonat üretir ve bikarbonat geri kazanımını yükseltir. Bu kompanzasyon günler içinde gelişir ve pH’ı tamamen normalleştirmese de normale yaklaştırır.",
@@ -29138,10 +29138,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nöral krest hücrelerinin distal bağırsağa göçünde bozulma",
       "options": [
-        "Nöral krest hücrelerinin distal bağırsağa göçünde bozulma",
         "Midgutun superior mezenterik arter etrafında normal rotasyonunu tamamlayamaması",
         "Omfalomezenterik kanalın persiste kalması",
         "Kloakal membranın doğumdan önce rüptüre olmaması",
+        "Nöral krest hücrelerinin distal bağırsağa göçünde bozulma",
         "Pleuroperitoneal membranın kapanmaması"
       ],
       "question": "Bu yenidoğanda mekonyum çıkaramama, distal dar segment ve rektal biyopside ganglion hücresi yokluğu hangi embriyolojik mekanizmayla açıklanır?",
@@ -29554,9 +29554,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Trakeoözofageal septumun ön bağırsağı trakea ve özofagus olarak ayırmasındaki kusur",
       "options": [
-        "Trakeoözofageal septumun ön bağırsağı trakea ve özofagus olarak ayırmasındaki kusur",
         "Laringotrakeal tomurcuğun ventral ön bağırsaktan gelişememesi",
         "Özofagus epitelinin rekanalizasyonunun gecikmesi",
+        "Trakeoözofageal septumun ön bağırsağı trakea ve özofagus olarak ayırmasındaki kusur",
         "Dorsal mezenterin özofagusu toraksta sabitleyememesi",
         "Faringeal ark kıkırdaklarının larenks kıkırdaklarına farklılaşamaması"
       ],
@@ -29863,8 +29863,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Legionella pneumophila",
       "options": [
-        "Legionella pneumophila",
         "Streptococcus pneumoniae",
+        "Legionella pneumophila",
         "Mycoplasma pneumoniae",
         "Chlamydophila psittaci",
         "Klebsiella pneumoniae"
@@ -30118,10 +30118,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Epstein-Barr virus",
       "options": [
-        "Epstein-Barr virus",
         "Cytomegalovirus",
         "Human herpesvirus 6",
         "Adenovirus",
+        "Epstein-Barr virus",
         "Parvovirus B19"
       ],
       "question": "Eksüdatif tonsillit, posterior servikal lenfadenopati, splenomegali ve heterofil antikor pozitifliği olan bu hastada en olası etken hangisidir?",
@@ -30611,8 +30611,8 @@ export const rawCases = [
       "options": [
         "Akciğer adenokarsinomu",
         "Akciğer skuamöz hücreli karsinomu",
-        "Küçük hücreli akciğer karsinomu",
         "Malign mezotelyoma",
+        "Küçük hücreli akciğer karsinomu",
         "Pulmoner karsinoid tümör"
       ],
       "question": "Yoğun sigara öyküsü, santral-hiler akciğer kitlesi, SIADH ile uyumlu hiponatremi ve biyopside nükleer molding gösteren küçük mavi hücreli tümöral proliferasyon bulunan hastada en olası tanı hangisidir?",
@@ -31005,9 +31005,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Safra taşı ileusu",
       "options": [
-        "Safra taşı ileusu",
         "Adezyona bağlı ince barsak obstrüksiyonu",
         "Sigmoid volvulus",
+        "Safra taşı ileusu",
         "Paralitik ileus",
         "Akut kolanjit"
       ],
@@ -31304,8 +31304,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Hemoglobinin oksijen taşıma kapasitesinin azalması ve kalan bağlanma bölgelerinde oksijen afinitesinin artması",
       "options": [
-        "Hemoglobinin oksijen taşıma kapasitesinin azalması ve kalan bağlanma bölgelerinde oksijen afinitesinin artması",
         "Alveoler PaO₂’nin belirgin düşmesiyle hipokseminin tek başına gelişmesi",
+        "Hemoglobinin oksijen taşıma kapasitesinin azalması ve kalan bağlanma bölgelerinde oksijen afinitesinin artması",
         "Hemoglobin-oksijen disosiasyon eğrisinin sağa kayarak oksijen bırakmasının artması",
         "Surfaktan kaybıyla yaygın atelektazi ve intrapulmoner şant oluşması",
         "Ferröz demirin ferrik forma oksitlenmesiyle methemoglobinemi gelişmesi"
@@ -31600,8 +31600,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Pirüvat dehidrogenaz kompleks aktivitesinin azalması",
       "options": [
-        "Pirüvat dehidrogenaz kompleks aktivitesinin azalması",
         "Pirüvat karboksilaz aktivitesinin azalması",
+        "Pirüvat dehidrogenaz kompleks aktivitesinin azalması",
         "Glukoz-6-fosfataz aktivitesinin azalması",
         "Medium-chain acyl-CoA dehydrogenase aktivitesinin azalması",
         "Homogentizat 1,2-dioksijenaz aktivitesinin azalması"
@@ -31817,9 +31817,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus medianus",
       "options": [
-        "Nervus medianus",
         "Nervus ulnaris",
         "Nervus radialis superficialis",
+        "Nervus medianus",
         "Nervus interosseus anterior",
         "Ramus palmaris nervi mediani"
       ],
@@ -32132,10 +32132,10 @@ export const rawCases = [
       "correct": "Nalokson",
       "options": [
         "Flumazenil",
-        "Nalokson",
         "Atropin",
         "Fomepizol",
-        "Pralidoksim"
+        "Pralidoksim",
+        "Nalokson"
       ],
       "question": "Opioid kullanım öyküsü, miyozis ve hiperkapnik solunum depresyonu olan bu hastada solunumu hızla geri çevirmek için en uygun tedavi hangisidir?",
       "explanation": "Opioidler mü opioid reseptörleri üzerinden beyin sapı solunum merkezinin karbondioksite yanıtını azaltır; miyozis ve bilinç baskılanması eşlik eder. Nalokson kompetitif opioid reseptör antagonisti olarak solunum depresyonunu hızla geri çevirebilir, ancak kısa etki süresi nedeniyle yeniden sedasyon açısından izlem gerekir.",
@@ -32407,11 +32407,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Oksijen basıncının artması ve prostaglandin E2 etkisinin azalması",
       "options": [
-        "Oksijen basıncının artması ve prostaglandin E2 etkisinin azalması",
         "Prostaglandin E2 düzeyinin artması ve oksijen basıncının azalması",
         "Pulmoner vasküler direncin artması ve sağdan sola şantın sürmesi",
         "Umbilikal ven basıncının artması",
-        "Foramen ovaleden sağdan sola akımın artması"
+        "Foramen ovaleden sağdan sola akımın artması",
+        "Oksijen basıncının artması ve prostaglandin E2 etkisinin azalması"
       ],
       "question": "Normal postnatal dönemde duktus arteriozusun fonksiyonel kapanmasını başlatan temel değişiklik aşağıdakilerden hangisidir?",
       "explanation": "Duktus arteriozus fetal dönemde düşük oksijen basıncı ve prostaglandin E2 etkisiyle açık kalır. Doğumdan sonra oksijen basıncının artması ve prostaglandin etkisinin azalması duktal düz kas kontraksiyonunu başlatarak fonksiyonel kapanmayı sağlar; prematürelerde bu süreç gecikebilir.",
@@ -32698,8 +32698,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Midgutun superior mezenterik arter etrafında normal rotasyonunu tamamlayamaması",
       "options": [
-        "Midgutun superior mezenterik arter etrafında normal rotasyonunu tamamlayamaması",
         "Omfalomezenterik kanalın tam kapanmaması",
+        "Midgutun superior mezenterik arter etrafında normal rotasyonunu tamamlayamaması",
         "Nöral krest hücrelerinin distal bağırsağa göç edememesi",
         "Ön bağırsağın trakea ve özofagusa ayrılmasını sağlayan septasyonun bozulması",
         "Ürakuş lümeninin doğum sonrası açık kalması"
@@ -33025,11 +33025,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil eksploratif laparotomi yapılması",
       "options": [
-        "Acil eksploratif laparotomi yapılması",
         "Kontrastlı abdominal BT için hastayı radyolojiye göndermek",
         "Seri fizik muayene ile acilde izlemek",
         "Ayaktan analjezik tedavi ve yakın kontrol planlamak",
-        "Elektif tanısal laparoskopi randevusu vermek"
+        "Elektif tanısal laparoskopi randevusu vermek",
+        "Acil eksploratif laparotomi yapılması"
       ],
       "question": "Künt karın travması sonrası hemodinamik instabil olan ve FAST incelemesinde intraperitoneal serbest sıvı saptanan bu hastada en uygun yaklaşım hangisidir?",
       "explanation": "Travmada hemodinamik instabilite ve pozitif FAST, intraperitoneal kanama lehine kabul edilir. Bu hasta radyolojiye gönderilecek kadar stabil değildir; resüsitasyonla eş zamanlı acil eksploratif laparotomi ile kanama kontrolü gerekir.",
@@ -33419,8 +33419,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Akut kolesistit",
       "options": [
-        "Akut kolesistit",
         "Biliyer kolik",
+        "Akut kolesistit",
         "Akut kolanjit",
         "Akut pankreatit",
         "Peptik ülser perforasyonu"
@@ -33733,10 +33733,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Medium-chain acyl-CoA dehydrogenase (MCAD) eksikliği",
       "options": [
-        "Medium-chain acyl-CoA dehydrogenase (MCAD) eksikliği",
         "Carnitine palmitoyltransferase I eksikliği",
         "Hepatik glukoz-6-fosfataz eksikliği",
         "HMG-CoA sentaz eksikliği",
+        "Medium-chain acyl-CoA dehydrogenase (MCAD) eksikliği",
         "Pirüvat dehidrogenaz kompleks eksikliği"
       ],
       "question": "Açlık/enfeksiyon sonrası hipoketotik hipoglisemi ve orta zincirli açilkarnitin artışı olan bu çocukta temel enzim defekti hangisidir?",
@@ -34095,9 +34095,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Reed-Sternberg hücresi",
       "options": [
-        "Reed-Sternberg hücresi",
         "Auer çubuğu içeren miyeloblast",
         "Sézary hücresi",
+        "Reed-Sternberg hücresi",
         "Touton dev hücresi",
         "Langhans tipi dev hücre"
       ],
@@ -34414,10 +34414,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Adenozin, CO₂, H⁺ ve K⁺ artışına bağlı arterioler vazodilatasyon",
       "options": [
-        "Adenozin, CO₂, H⁺ ve K⁺ artışına bağlı arterioler vazodilatasyon",
         "Lokal oksijen basıncının artmasıyla arterioler vazokonstriksiyon gelişmesi",
         "Parasempatik vagal liflerin iskelet kası arteriyollerini doğrudan kasması",
         "Anjiyotensin II artışıyla çalışan kasta arterioler direnç artması",
+        "Adenozin, CO₂, H⁺ ve K⁺ artışına bağlı arterioler vazodilatasyon",
         "Kapiller hidrostatik basıncın azalmasıyla arteriyel akımın pasif olarak kesilmesi"
       ],
       "question": "Egzersiz yapan iskelet kasında kan akımının artmasını sağlayan temel lokal fizyolojik mekanizma hangisidir?",
@@ -34666,9 +34666,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "HACEK grubu mikroorganizmalar",
       "options": [
-        "HACEK grubu mikroorganizmalar",
         "Viridans streptokoklar",
         "Staphylococcus aureus",
+        "HACEK grubu mikroorganizmalar",
         "Enterococcus faecalis",
         "Candida türleri"
       ],
@@ -34885,11 +34885,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Femoral ven",
       "options": [
-        "Femoral ven",
         "Laküner ligament",
         "İnguinal ligament",
         "Pektineal ligament",
-        "Femoral arter"
+        "Femoral arter",
+        "Femoral ven"
       ],
       "question": "Femoral herni kesesinin geçtiği femoral kanalın lateral komşuluğu hangisidir?",
       "explanation": "Femoral ven femoral kanalın hemen lateral komşusudur. İnguinal ligament altında, pubik tüberkül lateralindeki redükte edilemeyen kitle femoral herniyi düşündürür ve kanal anatomisinde lateral yapı femoral vendir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
@@ -35123,11 +35123,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi",
       "options": [
-        "Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi",
         "Dijital vajinal muayene ile servikal açıklığın hemen ölçülmesi",
         "Oksitosin infüzyonu başlanarak doğumun hızlandırılması",
         "Amniyotomi yapılarak kanamanın azaltılması",
-        "Ayaktan izlem ve planlı kontrol önermek"
+        "Ayaktan izlem ve planlı kontrol önermek",
+        "Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi"
       ],
       "question": "Ağrısız üçüncü trimester kanaması olan bu hastada dijital vajinal muayene yapılmadan önce uygulanması gereken ilk değerlendirme hangisidir?",
       "explanation": "Üçüncü trimesterde ağrısız ve parlak kırmızı vajinal kanama plasenta previa için tipiktir. Plasenta yerleşimi ultrasonla netleşmeden dijital vajinal muayene kanamayı artırabilir. Bu bulgu örüntüsü Transvajinal veya transabdominal ultrasonografi ile plasenta yerleşiminin değerlendirilmesi lehine güçlü bir klinik gerekçe oluşturur. Üçüncü trimesterde ağrısız, parlak kırmızı vajinal kanama ve hassasiyetsiz uterus plasenta previa şüphesini doğurur. Ayırıcı değerlendirmede Dijital vajinal muayene ile servikal açıklığın hemen ölçülmesi, bu olgudaki temel bulgu birlikteliğini veya acil tedavi önceliğini aynı bütünlükte açıklamaz.",
@@ -35365,10 +35365,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İkinci faringeal yarığın persiste kalıntısı",
       "options": [
-        "İkinci faringeal yarığın persiste kalıntısı",
         "Tiroglossal kanal kalıntısı",
         "Üçüncü ve dördüncü faringeal poş gelişim bozukluğu",
         "Ürakuş kalıntısı",
+        "İkinci faringeal yarığın persiste kalıntısı",
         "Omfalomezenterik kanal kalıntısı"
       ],
       "question": "Bu hastadaki lateral boyun kistinin en olası embriyolojik kökeni aşağıdakilerden hangisidir?",
@@ -35699,9 +35699,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kaudal nöroporun kapanma kusuru",
       "options": [
-        "Kaudal nöroporun kapanma kusuru",
         "Rostral nöroporun kapanma kusuru",
         "Üçüncü ve dördüncü faringeal poş gelişim bozukluğu",
+        "Kaudal nöroporun kapanma kusuru",
         "Omfalomezenterik kanalın tam kapanmaması",
         "Pleuroperitoneal membranın kapanmaması"
       ],
@@ -35983,9 +35983,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "POMC kaynaklı ACTH artışıyla melanokortin reseptör uyarısının artması",
       "options": [
-        "POMC kaynaklı ACTH artışıyla melanokortin reseptör uyarısının artması",
         "Aldosteron azalmasının melanositlerde melanin sentezini doğrudan artırması",
         "Kortizol azalmasının deride kalsiyum çökmesini artırması",
+        "POMC kaynaklı ACTH artışıyla melanokortin reseptör uyarısının artması",
         "TSH artışının epidermal keratin yıkımını hızlandırması",
         "İnsülin azalmasının melanositleri tamamen inaktive etmesi"
       ],
@@ -36235,11 +36235,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Bordetella pertussis",
       "options": [
-        "Bordetella pertussis",
         "Haemophilus influenzae tip b",
         "Respiratory syncytial virus",
         "Corynebacterium diphtheriae",
-        "Mycoplasma pneumoniae"
+        "Mycoplasma pneumoniae",
+        "Bordetella pertussis"
       ],
       "question": "Eksik aşılı çocukta paroksismal öksürük, inspiratuvar whoop, öksürük sonrası kusma ve lenfositoz geliştiğinde en olası etken hangisidir?",
       "explanation": "Paroksismal öksürük, inspiratuvar whoop ve posttussif kusma boğmaca için klasik klinik paterndir. Nazofarengeal PCR pozitifliği ve lenfositoz, B. pertussis tanısını destekler. Bu bulgu örüntüsü Bordetella pertussis lehine güçlü bir klinik gerekçe oluşturur. B. pertussis siliyer solunum epitelini tutar; pertussis toksini Gi proteinini ADP-ribozilleyerek cAMP sinyalini artırır ve lenfositoz ile uzamış paroksismal öksürüğe katkı sağlar. Diğer seçenekler, özellikle Haemophilus influenzae tip b, bu bulgu-mekanizma eşleşmesini aynı bütünlükte açıklamaz.",
@@ -36563,10 +36563,10 @@ export const rawCases = [
       "correct": "Subepitelyal hump benzeri immün kompleks birikimleri",
       "options": [
         "Lineer IgG birikimi",
-        "Subepitelyal hump benzeri immün kompleks birikimleri",
         "Nodüler glomerüloskleroz",
         "Mezangial IgA baskın birikimi",
-        "Villus atrofisi ve kript hiperplazisi"
+        "Villus atrofisi ve kript hiperplazisi",
+        "Subepitelyal hump benzeri immün kompleks birikimleri"
       ],
       "question": "İki hafta önce boğaz enfeksiyonu sonrası periorbital ödem, hipertansiyon, çay renginde idrar, yüksek ASO ve düşük C3 bulunan çocukta beklenen karakteristik patolojik bulgu hangisidir?",
       "explanation": "Poststreptokoksik glomerülonefritte nefritik tablo, ASO yüksekliği, kompleman tüketimi ve EM’de subepitelyal hump birikimleri birlikte beklenir.",
@@ -36914,9 +36914,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Galactose-1-phosphate uridyltransferase (GALT) eksikliği",
       "options": [
-        "Galactose-1-phosphate uridyltransferase (GALT) eksikliği",
         "Galaktokinaz eksikliği",
         "Aldolaz B eksikliği",
+        "Galactose-1-phosphate uridyltransferase (GALT) eksikliği",
         "Fruktokinaz eksikliği",
         "Glukoz-6-fosfataz eksikliği"
       ],
@@ -37246,10 +37246,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil cerrahi eksplorasyon ve geniş debridman",
       "options": [
-        "Acil cerrahi eksplorasyon ve geniş debridman",
         "Geniş spektrumlu antibiyotiği tek başına verip cerrahi kararı klinik yanıta bırakmak",
         "Kesin tanı için biyopsi veya kültür sonucunu beklemek",
         "Lokal insizyon-drenaj ile sınırlı apse tedavisi yapmak",
+        "Acil cerrahi eksplorasyon ve geniş debridman",
         "Steroid başlanarak inflamasyonu baskılamak"
       ],
       "question": "Diyabetik hastada küçük kesi sonrası hızla ilerleyen, orantısız ağrı, toksisite, krepitasyon, laktat yüksekliği ve yumuşak dokuda gaz ile seyreden bu tabloda en uygun acil yaklaşım hangisidir?",
@@ -37475,8 +37475,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Komplet hidatidiform mol",
       "options": [
-        "Komplet hidatidiform mol",
         "Ektopik gebelik",
+        "Komplet hidatidiform mol",
         "Plasenta previa",
         "Erken membran rüptürü",
         "Uterin leiomyom dejenerasyonu"
@@ -37653,8 +37653,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus laryngeus recurrens",
       "options": [
-        "Nervus laryngeus recurrens",
         "Nervus laryngeus superior - ramus externus",
+        "Nervus laryngeus recurrens",
         "Nervus hypoglossus",
         "Nervus glossopharyngeus",
         "Nervus accessorius"
@@ -38042,8 +38042,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Pnömatik veya hidrostatik enema ile redüksiyon",
       "options": [
-        "Pnömatik veya hidrostatik enema ile redüksiyon",
         "Geniş spektrumlu antibiyotik başlayıp redüksiyon girişimini klinik yanıta göre ikinci basamakta değerlendirmek",
+        "Pnömatik veya hidrostatik enema ile redüksiyon",
         "Acil apendektomi",
         "Sıvı desteği verip ultrasonografi bulgularını seri muayene ile izlemek",
         "Kontrol tedavisi olarak proton pompa inhibitörü tedavisi"
@@ -38317,11 +38317,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Baroreseptör ateşlemesinin azalmasıyla sempatik aktivitenin artması",
       "options": [
-        "Baroreseptör ateşlemesinin azalmasıyla sempatik aktivitenin artması",
         "Baroreseptör ateşlemesinin artmasıyla vagal tonusun baskın hale gelmesi",
         "Atriyal gerilimin artmasıyla ANP salınımının yükselmesi",
         "Kemoreseptörlerin baskılanmasıyla kalp hızının azalması",
-        "Renin salınımının akut olarak baskılanmasıyla periferik direncin düşmesi"
+        "Renin salınımının akut olarak baskılanmasıyla periferik direncin düşmesi",
+        "Baroreseptör ateşlemesinin azalmasıyla sempatik aktivitenin artması"
       ],
       "question": "Akut kan kaybında kan basıncını korumaya çalışan erken kompanzasyonun temel refleks mekanizması hangisidir?",
       "explanation": "Akut kan kaybında venöz dönüş ve arteriyel basınç azalır. Karotis sinüs ve aortik ark baroreseptörlerinin gerilimi azaldığı için ateşleme frekansı düşer; medüller merkezler sempatik çıkışı artırıp parasempatik tonusu azaltır. Bunun sonucu taşikardi, kontraktilite artışı ve periferik vazokonstriksiyonla basınç korunmaya çalışılır.",
@@ -38653,8 +38653,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Karbondioksit atılımını artırarak pH düşüşünü kısmen sınırlamak",
       "options": [
-        "Karbondioksit atılımını artırarak pH düşüşünü kısmen sınırlamak",
         "Akciğerde doğrudan bikarbonat sentezini artırmak",
+        "Karbondioksit atılımını artırarak pH düşüşünü kısmen sınırlamak",
         "Karbondioksit tutarak respiratuvar asidoz eklemek",
         "Oksijen tüketimini tamamen durdurarak keton üretimini kesmek",
         "Keton cisimlerini solunum yoluyla doğrudan atmak"
@@ -38932,9 +38932,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz K vitamini ve dört faktörlü protrombin kompleks konsantresi verilmesi",
       "options": [
+        "İntravenöz K vitamini ve dört faktörlü protrombin kompleks konsantresi verilmesi",
         "Warfarine aynı dozda devam edilmesi",
         "Düşük doz oral K vitamini verip pıhtılaşma parametrelerini seri kontrolle izlemek",
-        "İntravenöz K vitamini ve dört faktörlü protrombin kompleks konsantresi verilmesi",
         "Protamin sülfat verilmesi",
         "Asetilsalisilik asit eklenmesi"
       ],
@@ -39270,8 +39270,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Digoksin immün Fab antikoru",
       "options": [
-        "Digoksin immün Fab antikoru",
         "Nalokson",
+        "Digoksin immün Fab antikoru",
         "Vitamin K",
         "Pralidoksim",
         "Flumazenil"
@@ -39530,8 +39530,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kongo kırmızısı ile elma yeşili çift kırılma",
       "options": [
-        "Kongo kırmızısı ile elma yeşili çift kırılma",
         "Ziehl-Neelsen ile aside dirençli basil görülmesi",
+        "Kongo kırmızısı ile elma yeşili çift kırılma",
         "Prusya mavisi ile demir birikimi",
         "PAS ile fungal hiflerin gösterilmesi",
         "Gümüş boyası ile glomerüler bazal membranda spike görünümü"
@@ -39812,10 +39812,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Koagülasyon nekrozu ve nötrofil infiltrasyonunun başlaması",
       "options": [
-        "Koagülasyon nekrozu ve nötrofil infiltrasyonunun başlaması",
         "Yoğun makrofaj infiltrasyonu ve yumuşak sarı nekrotik alan",
         "Kollajen ağırlıklı yoğun skar dokusu",
         "Reaktif inflamatuvar değişiklik",
+        "Koagülasyon nekrozu ve nötrofil infiltrasyonunun başlaması",
         "Granülomatöz inflamasyon ve kazeöz nekroz"
       ],
       "question": "Yaklaşık 24 saat önce başlayan ST elevasyonlu miyokard enfarktüsü sonrası kaybedilen hastada enfarktüs alanında beklenen baskın histopatolojik bulgu hangisidir?",
@@ -40164,11 +40164,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Branched-chain alpha-ketoacid dehydrogenase kompleks eksikliği",
       "options": [
-        "Branched-chain alpha-ketoacid dehydrogenase kompleks eksikliği",
         "Fenilalanin hidroksilaz eksikliği",
         "Cystathionine beta-synthase eksikliği",
         "Homogentizat 1,2-dioksijenaz eksikliği",
-        "Galactose-1-phosphate uridyltransferase eksikliği"
+        "Galactose-1-phosphate uridyltransferase eksikliği",
+        "Branched-chain alpha-ketoacid dehydrogenase kompleks eksikliği"
       ],
       "question": "Beslenme sonrası kötüleşen letarji, tatlı kokulu idrar ve lösin-izolösin-valin yüksekliği olan bu yenidoğanda temel enzim kompleksi defekti hangisidir?",
       "explanation": "Tatlı kokulu idrar, yenidoğan döneminde letarji ve dallı zincirli aminoasit/ketoasit birikimi akçaağaç şurubu idrar hastalığını düşündürür. Temel defekt BCKDH kompleks eksikliğidir; bu kompleks lösin, izolösin ve valin katabolizmasında oksidatif dekarboksilasyonu sağlar.",
@@ -40496,8 +40496,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Glukoz-6-fosfat dehidrogenaz aktivitesinin azalması",
       "options": [
-        "Glukoz-6-fosfat dehidrogenaz aktivitesinin azalması",
         "Pirüvat kinaz aktivitesinin azalması",
+        "Glukoz-6-fosfat dehidrogenaz aktivitesinin azalması",
         "Ferroşelataz aktivitesinin artması",
         "Vitamin B12 bağımlı DNA sentezinin bozulması",
         "Hepcidin azalmasına bağlı demir salınımının artması"
@@ -40747,8 +40747,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Giardia lamblia",
       "options": [
-        "Giardia lamblia",
         "Entamoeba histolytica",
+        "Giardia lamblia",
         "Cryptosporidium parvum",
         "Cyclospora cayetanensis",
         "Balantidium coli"
@@ -40921,9 +40921,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Akut anal fissür",
       "options": [
-        "Akut anal fissür",
         "Perianal apse",
         "Tromboze eksternal hemoroid",
+        "Akut anal fissür",
         "Rektum kanseri",
         "Ülseratif kolit atağı"
       ],
@@ -41168,10 +41168,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz klindamisin ve gentamisin",
       "options": [
-        "İntravenöz klindamisin ve gentamisin",
         "Oral tek ajan antibiyotik ve antipiretikle kültür sonucunu beklemek",
         "Tek doz flukonazol",
         "Metilergonovin ile uterotonik tedavi",
+        "İntravenöz klindamisin ve gentamisin",
         "Acil histerektomi"
       ],
       "question": "Sezaryen sonrası üçüncü günde ateş, uterin hassasiyet ve kötü kokulu loşi gelişen bu hastada en uygun başlangıç tedavisi hangisidir?",
@@ -41386,9 +41386,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "McRoberts manevrası ve suprapubik bası",
       "options": [
-        "McRoberts manevrası ve suprapubik bası",
         "Fundal bası uygulanması",
         "Fetal başa traksiyonun artırılması",
+        "McRoberts manevrası ve suprapubik bası",
         "Doğumu durdurup elektif sezaryen planlanması",
         "Acil internal podalik versiyon"
       ],
@@ -41611,10 +41611,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus femoralis",
       "options": [
-        "Nervus femoralis",
         "Nervus obturatorius",
         "Nervus cutaneus femoris lateralis",
         "Nervus genitofemoralis",
+        "Nervus femoralis",
         "Truncus lumbosacralis"
       ],
       "question": "İliopsoas hematomu sonrası diz ekstansiyonu zayıflığı, patella refleksi azalması ve medial bacak duyusu kaybını hangi sinir basısı açıklar?",
@@ -41799,9 +41799,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus facialis",
       "options": [
-        "Nervus facialis",
         "Nervus trigeminus - n. mandibularis",
         "Nervus glossopharyngeus",
+        "Nervus facialis",
         "Nervus hypoglossus",
         "Nervus accessorius"
       ],
@@ -42163,9 +42163,9 @@ export const rawCases = [
       "correct": "IgA vasküliti",
       "options": [
         "İmmün trombositopenik purpura",
-        "IgA vasküliti",
         "Kawasaki hastalığı",
         "Meningokoksemi",
+        "IgA vasküliti",
         "Akut romatizmal ateş"
       ],
       "question": "Bu hastada en olası tanı aşağıdakilerden hangisidir?",
@@ -42515,11 +42515,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Pleuroperitoneal membranların kapanma kusuru",
       "options": [
-        "Pleuroperitoneal membranların kapanma kusuru",
         "Septum transversumun santral tendonu oluşturamaması",
         "Tiroglossal kanalın persiste kalması",
         "Nöral krest hücrelerinin distal bağırsağa göç edememesi",
-        "Septum primumun aşırı rezorpsiyonu"
+        "Septum primumun aşırı rezorpsiyonu",
+        "Pleuroperitoneal membranların kapanma kusuru"
       ],
       "question": "Bu yenidoğandaki toraksta barsak ansları, skafoid karın ve ağır solunum sıkıntısı hangi diyafram gelişim kusuruyla en iyi açıklanır?",
       "explanation": "Doğumdan hemen sonra ağır solunum sıkıntısı, skafoid karın, toraksta barsak sesleri ve grafide toraks içinde barsak ansları konjenital diyafragma hernisini düşündürür. Posterolateral diyafragma hernisinin klasik embriyolojik temeli pleuroperitoneal membranların kapanma kusurudur.",
@@ -42842,11 +42842,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil sistemik heparinizasyon ve revaskülarizasyon için damar cerrahisi girişimi",
       "options": [
-        "Acil sistemik heparinizasyon ve revaskülarizasyon için damar cerrahisi girişimi",
         "Elektif venöz Doppler randevusu planlanması",
         "Varis çorabı ve bacak elevasyonu önerilmesi",
         "Antibiyotik başlanıp selülit yanıtının izlenmesi",
-        "Ayaktan oral analjezik ve poliklinik kontrolü"
+        "Ayaktan oral analjezik ve poliklinik kontrolü",
+        "Acil sistemik heparinizasyon ve revaskülarizasyon için damar cerrahisi girişimi"
       ],
       "question": "Atriyal fibrilasyon öyküsü olan, ani bacak ağrısı, soğukluk, nabız kaybı, duyu ve motor kayıp gelişen bu hastada en uygun acil yaklaşım hangisidir?",
       "explanation": "Ani başlayan ağrı, solukluk, soğukluk, nabız kaybı ve nörolojik defisit akut ekstremite iskemisini gösterir. Atriyal fibrilasyon embolik tıkanıklık riskini artırır. Tehdit altındaki ekstremitede sistemik heparinizasyon ve acil revaskülarizasyon geciktirilmemelidir.",
@@ -43201,10 +43201,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "N-asetilsistein",
       "options": [
-        "N-asetilsistein",
         "Atropin",
         "Fomepizol",
         "Deferoksamin",
+        "N-asetilsistein",
         "Protamin sülfat"
       ],
       "question": "Yüksek doz parasetamol alımından 6 saat sonra toksik serum düzeyi saptanan bu hastada başlanması gereken antidot hangisidir?",
@@ -43506,9 +43506,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kolorektal adenokarsinom",
       "options": [
-        "Kolorektal adenokarsinom",
         "İrritabl bağırsak sendromu",
         "Akut enfeksiyöz gastroenterit",
+        "Kolorektal adenokarsinom",
         "Hemoroidal hastalık",
         "Çölyak hastalığı"
       ],
@@ -43778,10 +43778,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Mycoplasma pneumoniae",
       "options": [
-        "Mycoplasma pneumoniae",
         "Streptococcus pneumoniae",
         "Klebsiella pneumoniae",
         "Legionella pneumophila",
+        "Mycoplasma pneumoniae",
         "Staphylococcus aureus"
       ],
       "question": "Yurt ortamında yayılan, yavaş başlangıçlı kuru öksürük ve beta-laktama yanıtsız atipik pnömonide en olası mikroorganizma hangisidir?",
@@ -44099,10 +44099,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Artmış ventrikül dolumunun sarkomer uzunluğunu artırarak kasılma gücünü geçici artırması",
       "options": [
-        "Artmış ventrikül dolumunun sarkomer uzunluğunu artırarak kasılma gücünü geçici artırması",
         "Azalmış venöz dönüşün atım hacmini doğrudan artırması",
         "Baroreseptör ateşlemesinin artmasıyla sempatik tonusun tamamen baskılanması",
         "Pulmoner kapiller basıncın düşmesiyle alveoler sıvı emiliminin artması",
+        "Artmış ventrikül dolumunun sarkomer uzunluğunu artırarak kasılma gücünü geçici artırması",
         "Ventrikül duvar geriliminin azalmasıyla BNP salınımının artması"
       ],
       "question": "Kalp yetmezliğinde başlangıçta atım hacmini destekleyip ilerleyen dönemde konjesyona katkı veren temel fizyolojik mekanizma hangisidir?",
@@ -44475,10 +44475,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Karbamoil fosfat sentetaz I eksikliği",
       "options": [
-        "Karbamoil fosfat sentetaz I eksikliği",
         "Ornitin transkarbamilaz eksikliği",
         "Argininosüksinat sentetaz eksikliği",
         "Argininosüksinat liyaz eksikliği",
+        "Karbamoil fosfat sentetaz I eksikliği",
         "Arginaz eksikliği"
       ],
       "question": "Ağır hiperammonemi, düşük BUN, düşük sitrülin ve normal idrar orotik asit paterni hangi üre döngüsü defektini en iyi destekler?",
@@ -44772,9 +44772,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "HMG-CoA redüktaz inhibisyonu yapan ilacın metabolizmasının baskılanmasıyla toksisite riskinin artması",
       "options": [
-        "HMG-CoA redüktaz inhibisyonu yapan ilacın metabolizmasının baskılanmasıyla toksisite riskinin artması",
         "Beta-2 reseptör blokajına bağlı bronkokonstriksiyon gelişmesi",
         "Asetilkolinesteraz inhibisyonuyla kolinerjik kriz oluşması",
+        "HMG-CoA redüktaz inhibisyonu yapan ilacın metabolizmasının baskılanmasıyla toksisite riskinin artması",
         "Dopamin D2 reseptör blokajıyla akut distoni gelişmesi",
         "Vitamin K epoksit redüktaz inhibisyonuyla pıhtılaşma faktörlerinin azalması"
       ],
@@ -45033,11 +45033,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Endometrium adenokarsinomu",
       "options": [
-        "Endometrium adenokarsinomu",
         "Servikal skuamöz hücreli karsinom",
         "Over disgerminomu",
         "Vulvar lichen sclerosus",
-        "Gestasyonel trofoblastik hastalık"
+        "Gestasyonel trofoblastik hastalık",
+        "Endometrium adenokarsinomu"
       ],
       "question": "Postmenopozal kanama, obezite-hipertansiyon-diyabet-nulliparite öyküsü, kalın endometrium ve invaziv endometrioid glandüler proliferasyon bulunan hastada en olası tanı hangisidir?",
       "explanation": "Postmenopozal kanama ve karşılanmamış östrojen risk faktörleri endometrium adenokarsinomunu düşündürür; endometrial biyopside atipik invaziv glandüler proliferasyon tanıyı destekler.",
@@ -45305,9 +45305,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Listeria monocytogenes",
       "options": [
-        "Listeria monocytogenes",
         "Neisseria meningitidis",
         "Streptococcus pneumoniae",
+        "Listeria monocytogenes",
         "Haemophilus influenzae tip b",
         "Cryptococcus neoformans"
       ],
@@ -45542,8 +45542,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Gubernakulum aracılı testis inişi",
       "options": [
-        "Gubernakulum aracılı testis inişi",
         "Processus vaginalisin kapanmaması",
+        "Gubernakulum aracılı testis inişi",
         "Androjen etkisinin dış genital farklılaşmayı başlatamaması",
         "Mezonefrik kanalın epididim ve vaz deferense farklılaşamaması",
         "Kloakal membranın ürogenital açıklığı oluşturamaması"
@@ -45931,8 +45931,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Agresif intravenöz sıvı replasmanı, analjezi ve yakın klinik izlem",
       "options": [
-        "Agresif intravenöz sıvı replasmanı, analjezi ve yakın klinik izlem",
         "Acil pankreatektomi",
+        "Agresif intravenöz sıvı replasmanı, analjezi ve yakın klinik izlem",
         "Rutin profilaktik antibiyotik başlanması",
         "Ayaktan oral analjezik tedavi ve yakın kontrol",
         "Hemen yüksek yağlı oral beslenme başlanması"
@@ -46399,9 +46399,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Sıvı-elektrolit dengesi, kan basıncı kontrolü ve gerekirse diyalizi içeren destek tedavisi",
       "options": [
-        "Sıvı-elektrolit dengesi, kan basıncı kontrolü ve gerekirse diyalizi içeren destek tedavisi",
         "Rutin geniş spektrumlu antibiyotik ve antimotilite ilaç başlanması",
         "Yüksek doz kortikosteroid verip renal replasman gereksinimini klinik yanıta göre değerlendirmek",
+        "Sıvı-elektrolit dengesi, kan basıncı kontrolü ve gerekirse diyalizi içeren destek tedavisi",
         "Acil splenektomi",
         "Oral demir tedavisi"
       ],
@@ -46647,11 +46647,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kortikosteroid, latensi antibiyotiği ve yakın maternal-fetal izlem",
       "options": [
-        "Kortikosteroid, latensi antibiyotiği ve yakın maternal-fetal izlem",
         "Dijital vajinal muayeneleri sık tekrarlamak",
         "Ateş ve fetal distres olmadığı için ayaktan izlem planlamak",
         "Acil doğum indüksiyonu ve rutin histerektomi",
-        "Yüksek doz metotreksat tedavisi"
+        "Yüksek doz metotreksat tedavisi",
+        "Kortikosteroid, latensi antibiyotiği ve yakın maternal-fetal izlem"
       ],
       "question": "31. gebelik haftasında membran rüptürü olan, enfeksiyon veya fetal distres bulgusu bulunmayan bu hastada en uygun yönetim hangisidir?",
       "explanation": "31. gebelik haftasında ani berrak sıvı gelişi preterm prelabor membran rüptürünü düşündürür. Ateş, uterin hassasiyet ve fetal distres olmaması acil doğum yerine konservatif yatış yönetimini destekler. Bu bulgu örüntüsü Kortikosteroid, latensi antibiyotiği ve yakın maternal-fetal izlem lehine güçlü bir klinik gerekçe oluşturur. 31. haftada vajenden berrak sıvı gelişi ve pozitif membran rüptürü bulguları PPROM ile uyumludur. Ayırıcı değerlendirmede Dijital vajinal muayeneleri sık tekrarlamak, bu olgudaki temel bulgu birlikteliğini veya acil tedavi önceliğini aynı bütünlükte açıklamaz.",
@@ -46903,11 +46903,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Cryptococcus neoformans",
       "options": [
-        "Cryptococcus neoformans",
         "Candida albicans",
         "Aspergillus fumigatus",
         "Histoplasma capsulatum",
-        "Mucor türleri"
+        "Mucor türleri",
+        "Cryptococcus neoformans"
       ],
       "question": "İleri immünsüpresyonlu hastada subakut menenjit, yüksek BOS açılış basıncı ve kapsüllü maya hücreleri saptandığında en olası etken hangisidir?",
       "explanation": "Düşük CD4 sayısı, Cryptococcus menenjiti için temel risk faktörüdür. Haftalar içinde gelişen baş ağrısı ve artmış intrakraniyal basınç bulguları subakut fungal menenjiti düşündürür. Bu bulgu örüntüsü Cryptococcus neoformans lehine güçlü bir klinik gerekçe oluşturur. Cryptococcus neoformans polisakkarit kapsüllü bir mayadır ve özellikle hücresel immünitesi baskılanmış hastalarda subakut menenjit yapar. Diğer seçenekler, özellikle Candida albicans, bu bulgu-mekanizma eşleşmesini aynı bütünlükte açıklamaz.",
@@ -47201,11 +47201,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntramüsküler adrenalin uygulanması",
       "options": [
-        "İntramüsküler adrenalin uygulanması",
         "Oral antihistaminik verilmesi",
         "Nebülize salbutamol ve antihistaminik sonrası sistemik bulguların seyrine göre adrenalin kararını vermek",
         "İntravenöz kortikosteroid yanıtına göre tedavi planlamak",
-        "Alerji testi yapılana kadar tedavinin ertelenmesi"
+        "Alerji testi yapılana kadar tedavinin ertelenmesi",
+        "İntramüsküler adrenalin uygulanması"
       ],
       "question": "Bu çocukta ilk uygulanması gereken acil tedavi aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada alerjen maruziyeti sonrası hızlı başlayan ürtiker/mukozal bulgu, solunum sıkıntısı ve dolaşım etkilenimi birlikte değerlendirilince temel karar İntramüsküler adrenalin uygulanması yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü anafilaksi için doğru tanı/tedavi önceliğini belirler.",
@@ -47559,8 +47559,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz veya intranazal benzodiazepin uygulanması",
       "options": [
-        "İntravenöz veya intranazal benzodiazepin uygulanması",
         "Oral idame antiepileptik yükleyip benzodiazepini nöbet devam ederse uygulamak",
+        "İntravenöz veya intranazal benzodiazepin uygulanması",
         "Elektroensefalografi çekilene kadar ilaç verilmemesi",
         "Kontrol tedavisi olarak oral valproat tedavisine başlanması",
         "Ateş düşürücü verilerek nöbetin izlenmesi"
@@ -47969,10 +47969,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İzotonik sıvı replasmanı başlanması ve düşük potasyum düzeltilmeden insülinin ertelenmesi",
       "options": [
-        "İzotonik sıvı replasmanı başlanması ve düşük potasyum düzeltilmeden insülinin ertelenmesi",
         "İntravenöz insülin bolusu verilmesi",
         "Subkutan hızlı etkili insülin uygulanıp izlem yapılması",
         "Rutin sodyum bikarbonat bolusu verilmesi",
+        "İzotonik sıvı replasmanı başlanması ve düşük potasyum düzeltilmeden insülinin ertelenmesi",
         "Oral sıvı desteği ve ayaktan glukoz izlemi planlamak"
       ],
       "question": "Bu çocukta ilk tedavi yaklaşımı aşağıdakilerden hangisidir?",
@@ -48285,9 +48285,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid",
       "options": [
-        "Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid",
         "Oral antihistaminik ve tek doz inhale bronkodilatörle sistemik tedaviyi ikinci basamakta değerlendirmek",
         "Uzun etkili beta-2 agonist monoterapisi",
+        "Oksijen, tekrarlayan inhale kısa etkili beta-2 agonist, ipratropium ve sistemik kortikosteroid",
         "Antibiyotik başlanıp bronkodilatör verilmemesi",
         "Sedatif verilerek solunum eforunun azaltılması"
       ],
@@ -48602,11 +48602,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Deksametazon ve nebulize adrenalin uygulanması",
       "options": [
-        "Deksametazon ve nebulize adrenalin uygulanması",
         "Nebülize salbutamol ve ampirik antibiyotikle üst hava yolu ödemine yönelik tedaviyi ikinci basamakta değerlendirmek",
         "Acil tonsillektomi",
         "Oral antibiyotik başlanması",
-        "Zorlu dil basacağı muayenesi yapılması"
+        "Zorlu dil basacağı muayenesi yapılması",
+        "Deksametazon ve nebulize adrenalin uygulanması"
       ],
       "question": "Bu çocukta en uygun acil tedavi aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada alerjen maruziyeti sonrası hızlı başlayan ürtiker/mukozal bulgu, solunum sıkıntısı ve dolaşım etkilenimi birlikte değerlendirilince temel karar Deksametazon ve nebulize adrenalin uygulanması yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü anafilaksi için doğru tanı/tedavi önceliğini belirler.",
@@ -48917,8 +48917,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması",
       "options": [
-        "Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması",
         "Dil basacağı ile farenksin ayrıntılı muayene edilmesi",
+        "Kontrollü ortamda deneyimli ekip tarafından hava yolunun güvenceye alınması",
         "Ayaktan oral antibiyotik verilmesi",
         "Nebülize salbutamol ve oral steroid verip hava yolu değerlendirmesini klinik yanıta bırakmak",
         "Alerji testi yapılması"
@@ -49241,10 +49241,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Oksijen, damar yolu, izotonik sıvı bolusları, erken geniş spektrumlu antibiyotik ve yanıt yoksa vazopressör",
       "options": [
-        "Oksijen, damar yolu, izotonik sıvı bolusları, erken geniş spektrumlu antibiyotik ve yanıt yoksa vazopressör",
         "Kan kültürü sonucu çıkana kadar antibiyotiği erteleyip yalnız sıvı yanıtını izlemek",
         "Kan kültürü sonucu çıkana kadar antibiyotiğin ertelenmesi",
         "Oral rehidratasyon ile ayaktan takip",
+        "Oksijen, damar yolu, izotonik sıvı bolusları, erken geniş spektrumlu antibiyotik ve yanıt yoksa vazopressör",
         "Rutin diüretik verilmesi"
       ],
       "question": "Bu çocukta ilk saat içinde uygulanması gereken en uygun acil yaklaşım aşağıdakilerden hangisidir?",
@@ -49635,9 +49635,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Rijit bronkoskopi ile yabancı cismin çıkarılması",
       "options": [
-        "Rijit bronkoskopi ile yabancı cismin çıkarılması",
         "Kontrol tedavisi olarak inhale steroid başlanması",
         "Oral antibiyotik ve poliklinik kontrolü",
+        "Rijit bronkoskopi ile yabancı cismin çıkarılması",
         "Alerji testi yapılması",
         "Antitussif ve inhale bronkodilatörle yabancı cisim olasılığını seri oskültasyonla izlemek"
       ],
@@ -50274,11 +50274,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Deferoksamin ile demir şelasyonu",
       "options": [
-        "Deferoksamin ile demir şelasyonu",
         "Aktif kömür uygulaması",
         "N-asetilsistein ile glutatyon yenilenmesi",
         "Nalokson ile opioid reseptör antagonizması",
-        "Sodyum bikarbonat ile sodyum kanal blokajının düzeltilmesi"
+        "Sodyum bikarbonat ile sodyum kanal blokajının düzeltilmesi",
+        "Deferoksamin ile demir şelasyonu"
       ],
       "question": "Demir tableti alımından yaklaşık 4 saat sonra tekrarlayan kusma, letarji, hipotansiyon, yüksek serum demir düzeyi ve anyon açıklıklı metabolik asidoz gelişen bu çocukta en uygun spesifik tedavi hangisidir?",
       "explanation": "Bu çocukta demir tableti alımından birkaç saat sonra tekrarlayan kusma, karın ağrısı, letarji, hipotansiyon, yüksek serum demir düzeyi ve anyon açıklıklı metabolik asidoz gelişmesi ciddi akut demir zehirlenmesini gösterir. Demir serbest radikal hasarı, mitokondriyal disfonksiyon, gastrointestinal irritasyon, vazodilatasyon ve şok tablosuna yol açabilir. Semptomatik sistemik toksisite bulguları olan çocukta spesifik tedavi ferrik demiri bağlayan şelatör deferoksamindir.",
@@ -50554,8 +50554,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Prostaglandin E1 infüzyonu",
       "options": [
-        "Prostaglandin E1 infüzyonu",
         "İndometazin tedavisi",
+        "Prostaglandin E1 infüzyonu",
         "Oral beslenmenin artırılması",
         "Diüretik ve oksijen desteğiyle duktus bağımlı dolaşımı farmakolojik olarak açmadan izlemek",
         "Rutin fototerapi"
@@ -50880,10 +50880,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Antipseudomonal etkili intravenöz geniş spektrumlu antibiyotik başlanması",
       "options": [
-        "Antipseudomonal etkili intravenöz geniş spektrumlu antibiyotik başlanması",
         "Antipiretik tedaviyle kültür sonucuna göre izlem planlamak",
         "Oral geniş spektrumlu antibiyotik verip nötrofil sayısı toparlanana kadar yakın klinik izlem yapmak",
         "Nötrofil sayısı normale dönene kadar antibiyotik verilmemesi",
+        "Antipseudomonal etkili intravenöz geniş spektrumlu antibiyotik başlanması",
         "Rutin antiviral tedaviyle izlem yapılması"
       ],
       "question": "Bu çocukta kan kültürü alındıktan sonra ilk saat içinde başlanması gereken en uygun tedavi aşağıdakilerden hangisidir?",
@@ -51194,9 +51194,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Hızlı intravenöz adenozin uygulanması",
       "options": [
-        "Hızlı intravenöz adenozin uygulanması",
         "Senkronize kardiyoversiyonun sedasyonsuz hemen uygulanması",
         "Oral beta bloker reçete edilip eve gönderilmesi",
+        "Hızlı intravenöz adenozin uygulanması",
         "Defibrilasyon uygulanması",
         "Rutin antibiyotik başlanması"
       ],
@@ -51521,11 +51521,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kan kültürü alıp ampirik intravenöz antibiyotiği hemen başlamak",
       "options": [
-        "Kan kültürü alıp ampirik intravenöz antibiyotiği hemen başlamak",
         "Lomber ponksiyon tamamlanana kadar ampirik antibiyotiği başlatmamak",
         "Oral ateş düşürücü verip eve göndermek",
         "Antibiyotik yerine antiviral tedavi başlamak",
-        "Kültür sonuçları çıkana kadar tüm tedavileri durdurmak"
+        "Kültür sonuçları çıkana kadar tüm tedavileri durdurmak",
+        "Kan kültürü alıp ampirik intravenöz antibiyotiği hemen başlamak"
       ],
       "question": "Lomber ponksiyon kısa süre gecikecekse bu çocukta en uygun acil yaklaşım aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada ateş, ense sertliği, toksik görünüm ve inflamatuvar laboratuvar bulguları birlikte değerlendirilince temel karar Kan kültürü alıp ampirik intravenöz antibiyotiği hemen başlamak yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü bakteriyel menenjit için doğru tanı/tedavi önceliğini belirler.",
@@ -51758,8 +51758,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz dekstroz bolusu uygulanması",
       "options": [
-        "İntravenöz dekstroz bolusu uygulanması",
         "Oral karbonhidrat vererek klinik yanıtı izlemek",
+        "İntravenöz dekstroz bolusu uygulanması",
         "İdame antiepileptik yükleyip hipoglisemi tedavisini nöbet tekrarlarsa uygulamak",
         "Ateş düşürücü verilmesi",
         "İnsülin uygulanması"
@@ -51994,10 +51994,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Hızlı aktif soğutma ve eş zamanlı destek tedavisi",
       "options": [
-        "Hızlı aktif soğutma ve eş zamanlı destek tedavisi",
         "Oral sıvı ve gölgede soğutmayla klinik izlem",
         "Antipiretik ve pasif soğutmayla aktif soğutmayı laboratuvar sonuçlarına göre planlamak",
         "Antibiyotik başlanıp kültür sonucuna göre izlem planlama",
+        "Hızlı aktif soğutma ve eş zamanlı destek tedavisi",
         "Soğutmayı laboratuvar sonuçları çıkana kadar erteleme"
       ],
       "question": "Bu çocukta ilk ve en kritik acil yaklaşım aşağıdakilerden hangisidir?",
@@ -52273,9 +52273,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Epidural hematom",
       "options": [
-        "Epidural hematom",
         "Subaraknoid kanama",
         "Diffüz aksonal hasar",
+        "Epidural hematom",
         "Basit skalp hematomu",
         "Migren atağı"
       ],
@@ -52600,11 +52600,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi",
       "options": [
-        "Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi",
         "Oral D vitamini başlanıp eve gönderilmesi",
         "İnsülin infüzyonu başlanması",
         "Acil antibiyotik başlanıp kalsiyumun izlenmemesi",
-        "Sodyum bikarbonat bolusu verilmesi"
+        "Sodyum bikarbonat bolusu verilmesi",
+        "Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi"
       ],
       "question": "Bu yenidoğanda en uygun acil tedavi aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum birlikte değerlendirilince temel karar Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü semptomatik neonatal hipokalsemi için doğru tanı/tedavi önceliğini belirler.",
@@ -52881,8 +52881,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi",
       "options": [
-        "Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi",
         "Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi",
+        "Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi",
         "Kan basıncının hemen normal değerlere kadar hızla düşürülmesi",
         "Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek",
         "Hipertansiyonun büyüme çağında normal kabul edilmesi"
@@ -53240,10 +53240,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi",
       "options": [
-        "Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi",
         "Oral analjezik ve yüksek doz oral antibiyotikle mastoid komplikasyon değerlendirmesini poliklinik kontrolüne bırakmak",
         "Alerji testi yapılması",
         "Oral antihistaminik ile izlem",
+        "Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi",
         "Yüksek doz oral amoksisilin-klavulanat ile 48 saat yakın poliklinik izlemi planlamak"
       ],
       "question": "Bu çocukta en uygun acil yaklaşım aşağıdakilerden hangisidir?",
@@ -53566,9 +53566,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Yüksek akımlı yüzde yüz oksijen verilmesi",
       "options": [
-        "Yüksek akımlı yüzde yüz oksijen verilmesi",
         "Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak",
         "Antibiyotik başlanması",
+        "Yüksek akımlı yüzde yüz oksijen verilmesi",
         "Asetilsalisilik asit verilmesi",
         "İnsülin infüzyonu başlanması"
       ],
@@ -53846,11 +53846,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi",
       "options": [
-        "Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi",
         "Oral beslenmenin artırılması ve eve gönderilmesi",
         "Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi",
         "Fototerapi başlanması",
-        "Kültür sonucuna göre antibiyotiği klinik kötüleşme gelişirse başlamak"
+        "Kültür sonucuna göre antibiyotiği klinik kötüleşme gelişirse başlamak",
+        "Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi"
       ],
       "question": "Bu yenidoğanda kültürler alındıktan sonra ilk uygulanması gereken yaklaşım aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum birlikte değerlendirilince temel karar Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü pediatrik sepsis veya septik şok için doğru tanı/tedavi önceliğini belirler.",
@@ -54170,8 +54170,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İzotonik sıvı, dekstroz ve stres doz hidrokortizon başlanması",
       "options": [
-        "İzotonik sıvı, dekstroz ve stres doz hidrokortizon başlanması",
         "Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak",
+        "İzotonik sıvı, dekstroz ve stres doz hidrokortizon başlanması",
         "Spironolakton başlanması",
         "Sıvı verilmeden insülin infüzyonu başlanması",
         "ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak"
@@ -54527,10 +54527,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz kalsiyum glukonat verilmesi",
       "options": [
-        "İntravenöz kalsiyum glukonat verilmesi",
         "Potasyum kısıtlı diyet önerilmesi",
         "Furosemid reçete edilip eve gönderilmesi",
         "İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak",
+        "İntravenöz kalsiyum glukonat verilmesi",
         "Potasyum replasmanı başlanması"
       ],
       "question": "Bu çocukta ilk uygulanması gereken acil tedavi aşağıdakilerden hangisidir?",
@@ -54847,9 +54847,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz sodyum bikarbonat verilmesi",
       "options": [
-        "İntravenöz sodyum bikarbonat verilmesi",
         "Flumazenil verilmesi",
         "Nalokson verilmesi",
+        "İntravenöz sodyum bikarbonat verilmesi",
         "Beta bloker verilmesi",
         "Aktif kömür uygulayıp QRS genişliğini yalnız seri EKG ile izlemek"
       ],
@@ -55127,11 +55127,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz sodyum bikarbonat ile serum ve idrar alkalinizasyonu",
       "options": [
-        "İntravenöz sodyum bikarbonat ile serum ve idrar alkalinizasyonu",
         "Solunumu baskılamak için sedatif verilmesi",
         "Nalokson verilmesi",
         "Oral sıvı ve semptomatik tedaviyle serum salisilat düzeyinin seri düşüşünü hedeflemek",
-        "İnsülin ve potasyum tedavisi başlanması"
+        "İnsülin ve potasyum tedavisi başlanması",
+        "İntravenöz sodyum bikarbonat ile serum ve idrar alkalinizasyonu"
       ],
       "question": "Bu hastada uygun tedavi yaklaşımı aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite birlikte değerlendirilince temel karar İntravenöz sodyum bikarbonat ile serum ve idrar alkalinizasyonu yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü trisiklik antidepresan/sodyum kanal blokeri toksisitesi için doğru tanı/tedavi önceliğini belirler.",
@@ -55442,8 +55442,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil ürolojik eksplorasyon ve detorsiyon planlanması",
       "options": [
-        "Acil ürolojik eksplorasyon ve detorsiyon planlanması",
         "Oral antibiyotik başlanıp 48 saat sonra kontrol",
+        "Acil ürolojik eksplorasyon ve detorsiyon planlanması",
         "Doppler ultrasonografi randevusu sonrasında elektif ürolojik girişim planlamak",
         "Elektif infertilite değerlendirmesi yapılması",
         "İdrar kültürü sonucuna göre tedavi planlanması"
@@ -55844,10 +55844,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Sıvı-elektrolit bozukluğunun düzeltilmesi",
       "options": [
-        "Sıvı-elektrolit bozukluğunun düzeltilmesi",
         "Acil piloromiyotomiye sıvı verilmeden başlanması",
         "Oral beslenmenin artırılması",
         "Ampirik antibiyotik başlayıp cerrahi hazırlığı elektrolit düzelmesine ikincil bırakmak",
+        "Sıvı-elektrolit bozukluğunun düzeltilmesi",
         "Metabolik alkaloz ve hipokalemi düzeltilmeden cerrahiye hazırlık yapmak"
       ],
       "question": "Bu bebekte cerrahi öncesi ilk yapılması gereken yaklaşım aşağıdakilerden hangisidir?",
@@ -56124,9 +56124,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Dantrolen verilmesi ve tetikleyici anesteziklerin kesilmesi",
       "options": [
-        "Dantrolen verilmesi ve tetikleyici anesteziklerin kesilmesi",
         "Asetaminofen verilerek ameliyata devam edilmesi",
         "Süksinilkolin dozunun artırılması",
+        "Dantrolen verilmesi ve tetikleyici anesteziklerin kesilmesi",
         "Nalokson verilmesi",
         "Flumazenil verilmesi"
       ],
@@ -56404,11 +56404,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Hipertonik salin bolusu verilmesi",
       "options": [
-        "Hipertonik salin bolusu verilmesi",
         "Serbest su verilmesine devam edilmesi",
         "Oral su alımının artırılması",
         "Sodyum düzeltilmeden idame antiepileptik başlanması",
-        "Furosemid verip hipertonik salini sodyum düzeyi daha da düşerse başlamak"
+        "Furosemid verip hipertonik salini sodyum düzeyi daha da düşerse başlamak",
+        "Hipertonik salin bolusu verilmesi"
       ],
       "question": "Bu çocukta ilk uygulanması gereken tedavi aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Hipertonik salin bolusu verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü su alımı sonrası nöbet için doğru tanı/tedavi önceliğini belirler.",
@@ -56760,8 +56760,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Akut apandisit",
       "options": [
-        "Akut apandisit",
         "Viral gastroenterit",
+        "Akut apandisit",
         "İnvajinasyon",
         "Hipertrofik pilor stenozu",
         "İrritabl bağırsak sendromu"
@@ -57078,10 +57078,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi",
       "options": [
-        "Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi",
         "Akciğer grafisi çekilene kadar tüm girişimlerin ertelenmesi",
         "Portable akciğer grafisi ile doğrulama yapılmadan invaziv dekompresyona geçmemek",
         "Bronkodilatör ve ampirik antibiyotikle pnömoni/astım olasılığına göre izlemek",
+        "Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi",
         "Bronkodilatör verilerek astım atağı gibi izlenmesi"
       ],
       "question": "Bu çocukta ilk uygulanması gereken acil yaklaşım aşağıdakilerden hangisidir?",
@@ -57394,9 +57394,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Atropin ve pralidoksim verilmesi",
       "options": [
-        "Atropin ve pralidoksim verilmesi",
         "Nalokson verilmesi",
         "Flumazenil verilmesi",
+        "Atropin ve pralidoksim verilmesi",
         "N-asetilsistein verilmesi",
         "Oral antihistaminik verilmesi"
       ],
@@ -57709,11 +57709,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek",
       "options": [
-        "Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek",
         "Çocuğu kusturarak maddenin çıkarılmasını sağlamak",
         "Asidi bazla nötralize etmek için ev tipi karşı madde içirmek",
         "Aktif kömür vererek tüm kostik maddeyi bağlamak",
-        "Oral alımı sürdürüp endoskopiyi disfaji gelişirse planlamak"
+        "Oral alımı sürdürüp endoskopiyi disfaji gelişirse planlamak",
+        "Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek"
       ],
       "question": "Bu çocukta en uygun ilk yaklaşım aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski birlikte değerlendirilince temel karar Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü korozif madde alımı için doğru tanı/tedavi önceliğini belirler.",
@@ -58103,8 +58103,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Oksijen ve solunum desteğiyle izlem; kusturma ve gastrik lavajdan kaçınma",
       "options": [
-        "Oksijen ve solunum desteğiyle izlem; kusturma ve gastrik lavajdan kaçınma",
         "Zorla kusturma",
+        "Oksijen ve solunum desteğiyle izlem; kusturma ve gastrik lavajdan kaçınma",
         "Rutin gastrik lavaj yapılması",
         "Aktif kömür verilmesi",
         "Kusturma ve gastrik lavaj sonrası profilaktik antibiyotik başlamak"
@@ -58548,10 +58548,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil eritrosit süspansiyonu transfüzyonu ve dolaşım desteği",
       "options": [
-        "Acil eritrosit süspansiyonu transfüzyonu ve dolaşım desteği",
         "Oral demir tedavisi",
         "Sıvı desteği ve analjeziyle aplastik/sekestrasyon krizi ayrımını sonraki kontrole bırakmak",
         "Elektif splenektomi randevusu verilmesi",
+        "Acil eritrosit süspansiyonu transfüzyonu ve dolaşım desteği",
         "İmmün trombositopeni düşünülerek yalnız steroid verilmesi"
       ],
       "question": "Bu çocukta en uygun acil tedavi yaklaşımı aşağıdakilerden hangisidir?",
@@ -58864,9 +58864,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek",
       "options": [
-        "Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek",
         "İndometazin vererek duktusu kapatmak",
         "Acil servisten ayaktan kontrol planlamak",
+        "Diz-göğüs pozisyonu, oksijen ve sakinleştirme ile hipersiyanotik atağı yönetmek",
         "Sıvı kısıtlaması ve diüretik başlamak",
         "Oral antibiyotik vermek"
       ],
@@ -59180,11 +59180,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak",
       "options": [
-        "Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak",
         "Yanık alanını soğutma ve steril örtüleme sonrası yalnız ayaktan pansumanla izlemek",
         "Oral hidrasyon ve pansumanla intravenöz sıvı resüsitasyonunu idrar çıkışı düşerse planlamak",
         "Bülleri erken dönemde geniş şekilde debride edip primer kapama planlamak",
-        "Profilaktik sistemik antibiyotik başlamak ve sıvı resüsitasyonunu klinik izleme bırakmak"
+        "Profilaktik sistemik antibiyotik başlamak ve sıvı resüsitasyonunu klinik izleme bırakmak",
+        "Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak"
       ],
       "question": "Bu çocukta ilk uygun yaklaşım aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada geniş yüzeyli sıcak su yanığı, ağrı ve hipovolemi riski birlikte değerlendirilince temel karar Yanık alanını temizlemek, ağrı kontrolü sağlamak ve intravenöz izotonik sıvı resüsitasyonu başlamak yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü pediatrik yanık ve sıvı kaybı riski için doğru tanı/tedavi önceliğini belirler.",
@@ -59494,8 +59494,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Oksijen desteği ve solunum durumuna göre yakın izlem",
       "options": [
-        "Oksijen desteği ve solunum durumuna göre yakın izlem",
         "Sırtına bası yaparak akciğerdeki suyu çıkarmaya çalışmak",
+        "Oksijen desteği ve solunum durumuna göre yakın izlem",
         "Kısa klinik değerlendirme sonrası semptomlar azalırsa oksijen desteğini kesmek",
         "Rutin profilaktik antibiyotik başlamak",
         "Antitussif semptomatik tedavi vermek"
@@ -59916,10 +59916,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Hipertonik salin veya mannitol tedavisi başlanması",
       "options": [
-        "Hipertonik salin veya mannitol tedavisi başlanması",
         "Bilinç kötüleşmesi geçene kadar tüm sıvı ve insülinin kesilip izlenmesi",
         "Oral su verilerek susuzluğun giderilmesi",
         "Sıvı hızını azaltıp nörolojik kötüleşmeyi seri muayene ile izlemek",
+        "Hipertonik salin veya mannitol tedavisi başlanması",
         "Ateş düşürücü verilmesi"
       ],
       "question": "Bu çocukta en uygun acil tedavi aşağıdakilerden hangisidir?",
@@ -60187,9 +60187,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı",
       "options": [
-        "Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı",
         "Seri nörovasküler muayene ile kompartman basıncı değerlendirmesini polikliniğe bırakmak",
         "Nabız alındığı için kompartman sendromunu dışlamak",
+        "Alçının gevşetilmesi ve acil ortopedi değerlendirmesiyle fasyotomi hazırlığı",
         "Oral antibiyotik başlanması",
         "Bir hafta sonra rutin poliklinik kontrolü"
       ],
@@ -60425,11 +60425,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus axillaris",
       "options": [
-        "Nervus axillaris",
         "Nervus suprascapularis",
         "Nervus radialis",
         "Nervus musculocutaneus",
-        "Nervus thoracicus longus"
+        "Nervus thoracicus longus",
+        "Nervus axillaris"
       ],
       "question": "Bu hastada omuz abdüksiyon kaybı ve deltoid bölge duyu azalmasını en doğrudan açıklayan sinir hasarı hangisidir?",
       "explanation": "Nervus axillaris quadrangular space içinden geçer, m. deltoideus ve m. teres minoru innerve eder, lateral üst kol derisinin duyusunu taşır. Cerrahi boyun kırığı sonrası abdüksiyon zayıflığı ve deltoid üzerindeki duyu azalması bu sinirin etkilenimini doğrudan destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
@@ -60659,9 +60659,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Abdusens siniri",
       "options": [
+        "Abdusens siniri",
         "Okulomotor sinir",
         "Troklear sinir",
-        "Abdusens siniri",
         "N. ophthalmicus",
         "N. maxillaris"
       ],
@@ -60947,9 +60947,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Bikarbonat atılımının artması",
       "options": [
-        "Bikarbonat atılımının artması",
         "Bikarbonat geri emiliminin belirgin artması",
         "Hidrojen iyonu sekresyonunun aşırı artması",
+        "Bikarbonat atılımının artması",
         "Renal karbondioksit üretiminin artması",
         "Glukoz filtrasyonunun durması"
       ],
@@ -61401,11 +61401,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Adenozin aracılı afferent arteriyol vazokonstriksiyonu ve GFR azalması",
       "options": [
-        "Adenozin aracılı afferent arteriyol vazokonstriksiyonu ve GFR azalması",
         "Nitrik oksit aracılı afferent arteriyol vazodilatasyonu ve GFR artışı",
         "Renin salınımının artması ve anjiyotensin II aracılı efferent vazokonstriksiyon",
         "ADH salınımının artması ve serbest su geri emiliminin artması",
-        "Prostaglandin aracılı afferent vazodilatasyonla filtrasyonun korunması"
+        "Prostaglandin aracılı afferent vazodilatasyonla filtrasyonun korunması",
+        "Adenozin aracılı afferent arteriyol vazokonstriksiyonu ve GFR azalması"
       ],
       "question": "Distal tübüldeki makula densa hücreleri NaCl yükünde artış algıladığında tubuloglomerüler geri bildirim kapsamında beklenen lokal yanıt hangisidir?",
       "explanation": "Makula densa distal tübüldeki NaCl yükünü böbreğin filtrasyon ve tübüler akım durumuna ilişkin bir sinyal olarak algılar. NaCl yükü arttığında ATP/adenozin aracılı lokal sinyalizasyon afferent arteriyol tonusunu artırır. Afferent vazokonstriksiyon glomerüler kapiller hidrostatik basıncı azaltarak GFR’yi düşürür ve distal nefrona aşırı solüt akışını sınırlar.",
@@ -61683,9 +61683,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Hipoksantin-guanin fosforiboziltransferaz (HGPRT) eksikliği",
       "options": [
-        "Hipoksantin-guanin fosforiboziltransferaz (HGPRT) eksikliği",
         "Adenozin deaminaz eksikliği",
         "Ksantin oksidaz eksikliği",
+        "Hipoksantin-guanin fosforiboziltransferaz (HGPRT) eksikliği",
         "Dihidroorotat dehidrogenaz eksikliği",
         "Orotat fosforiboziltransferaz eksikliği"
       ],
@@ -61998,11 +61998,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Cystathionine beta-synthase (CBS) eksikliği",
       "options": [
-        "Cystathionine beta-synthase (CBS) eksikliği",
         "Methionine synthase eksikliği",
         "Methylenetetrahydrofolate reductase (MTHFR) eksikliği",
         "Cystathionine gamma-lyase eksikliği",
-        "Betaine-homocysteine methyltransferase eksikliği"
+        "Betaine-homocysteine methyltransferase eksikliği",
+        "Cystathionine beta-synthase (CBS) eksikliği"
       ],
       "question": "Tromboz eğilimi, lens subluksasyonu ve metiyonin-total homosistein yüksekliğini en iyi açıklayan temel enzim defekti hangisidir?",
       "explanation": "Travma olmadan gelişen DVT, lens subluksasyonu, uzun-ince vücut yapısı ve öğrenme güçlüğü homosistinüriyi düşündürür. Metiyonin ve total homosisteinin birlikte yüksek olması, homosisteinin transsülfürasyon yoluyla sistatiyonine dönüşemediğini gösterir; bu basamağı katalizleyen enzim cystathionine beta-synthase olduğundan temel defekt CBS eksikliğidir.",
@@ -62307,8 +62307,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Glomerüler bazal membranda spike görünümü",
       "options": [
-        "Glomerüler bazal membranda spike görünümü",
         "Kazeifiye granülom oluşumu",
+        "Glomerüler bazal membranda spike görünümü",
         "Reaktif inflamatuvar değişiklik",
         "Nodüler mezangial glomerüloskleroz",
         "Subepitelyal hump birikimleri"
@@ -62624,11 +62624,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Bradikinin yıkımının azalması",
       "options": [
-        "Bradikinin yıkımının azalması",
         "Beta-2 reseptörlerin doğrudan blokajı",
         "Histamin H1 reseptörlerinin uyarılması",
         "Sodyum kanallarının irreversibl blokajı",
-        "Dopamin D2 reseptörlerinin antagonizması"
+        "Dopamin D2 reseptörlerinin antagonizması",
+        "Bradikinin yıkımının azalması"
       ],
       "question": "Enalapril başlandıktan sonra ateşsiz ve balgamsız kuru öksürük gelişen bu hastada yan etkinin en olası mekanizması hangisidir?",
       "explanation": "ACE, anjiyotensin I’i anjiyotensin II’ye dönüştürmenin yanında bradikinin yıkımına da katkı sağlar. ACE inhibitörleri bradikinin ve bazı prostaglandinlerin birikimine yol açarak ateşsiz, balgamsız, inatçı kuru öksürük oluşturabilir. Normal muayene ve akciğer grafisi enfeksiyondan çok ilaç yan etkisini destekler.",
@@ -62881,10 +62881,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nöral krest hücrelerinin distal bağırsağa göç edememesi",
       "options": [
-        "Nöral krest hücrelerinin distal bağırsağa göç edememesi",
         "Midgutun superior mezenterik arter etrafında aşırı rotasyonu",
         "Omfalomezenterik kanalın persiste kalması",
         "Tiroglossal kanalın kapanmaması",
+        "Nöral krest hücrelerinin distal bağırsağa göç edememesi",
         "Pleuroperitoneal membranın kapanmaması"
       ],
       "question": "Bu yenidoğanda distal dar segment, proksimal dilatasyon ve rektal biyopside ganglion hücresi yokluğu hangi embriyolojik kusurla açıklanır?",
@@ -63190,10 +63190,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil cerrahi değerlendirme ve operatif onarım",
       "options": [
-        "Acil cerrahi değerlendirme ve operatif onarım",
         "Ağrılı kitleyi zorlayarak tekrarlı manuel redüksiyon denemek",
         "Analjezi sonrası elektif herni onarımı planlamak",
         "Laksatif tedavi başlamak",
+        "Acil cerrahi değerlendirme ve operatif onarım",
         "Ayaktan oral analjezik ve kontrol vermek"
       ],
       "question": "Redükte edilemeyen ağrılı kasık kitlesi, kusma, gaz çıkaramama, distansiyon ve obstrüksiyon bulguları olan bu hastada en uygun acil yaklaşım hangisidir?",
@@ -63431,8 +63431,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil cerrahi eksplorasyon ve hemodinamik resüsitasyon",
       "options": [
-        "Acil cerrahi eksplorasyon ve hemodinamik resüsitasyon",
         "Tek doz metotreksat verilip ayaktan takip",
+        "Acil cerrahi eksplorasyon ve hemodinamik resüsitasyon",
         "Beta-hCG değerinin 48 saat sonra tekrarına kadar izlem planlamak",
         "Analjezi ve seri beta-hCG kontrolüyle laparoskopiyi hemodinami düzelirse planlamak",
         "Rutin progesteron desteği başlamak"
@@ -63669,11 +63669,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Akut açı kapanması glokomu",
       "options": [
-        "Akut açı kapanması glokomu",
         "Basit viral konjonktivit",
         "Retina dekolmanı",
         "Optik nörit",
-        "Hordeolum"
+        "Hordeolum",
+        "Akut açı kapanması glokomu"
       ],
       "question": "Ani ağrılı kırmızı göz, haleler, korneal bulanıklık, orta dilate ışığa yanıtsız pupil ve yüksek göz içi basıncı olan bu hastada en olası tanı hangisidir?",
       "explanation": "Tek taraflı ani şiddetli göz ağrısı, haleler, bulantı, korneal bulanıklık, orta dilate pupil ve yüksek göz içi basıncı akut açı kapanması glokomunu gösterir. Bu patern ağrısız görme alanı kaybı yapan retina dekolmanından ve kaşıntı/sulanma ağırlıklı konjonktivitten ayrılır.",
@@ -63954,8 +63954,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Clostridium tetani",
       "options": [
-        "Clostridium tetani",
         "Clostridium botulinum",
+        "Clostridium tetani",
         "Corynebacterium diphtheriae",
         "Bacillus anthracis",
         "Listeria monocytogenes"
@@ -64351,9 +64351,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Akut kolesistit",
       "options": [
-        "Akut kolesistit",
         "Akut pankreatit",
         "Koledokolitiazise bağlı akut kolanjit",
+        "Akut kolesistit",
         "Renal kolik",
         "Peptik ülser perforasyonu"
       ],
@@ -64602,9 +64602,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Respiratuvar epitel",
       "options": [
-        "Respiratuvar epitel",
         "Çok katlı yassı keratinize epitel",
         "Tek katlı yassı epitel",
+        "Respiratuvar epitel",
         "Geçiş epiteli",
         "Tek katlı kübik epitel"
       ],
@@ -64894,8 +64894,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Lityumu kesmek, izotonik sıvı vermek ve ciddi nörolojik toksisite nedeniyle hemodiyalizi değerlendirmek",
       "options": [
-        "Lityumu kesmek, izotonik sıvı vermek ve ciddi nörolojik toksisite nedeniyle hemodiyalizi değerlendirmek",
         "Lityum dozunu artırmak",
+        "Lityumu kesmek, izotonik sıvı vermek ve ciddi nörolojik toksisite nedeniyle hemodiyalizi değerlendirmek",
         "Oral aktif kömür vermek",
         "Protamin sülfat uygulamak",
         "Asetilsistein başlamak"
@@ -65171,10 +65171,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Apendiks duvarında transmural nötrofil infiltrasyonu",
       "options": [
-        "Apendiks duvarında transmural nötrofil infiltrasyonu",
         "Submukozada nonkazeifiye granülomlar",
         "Goblet hücreli intestinal metaplazi",
         "Kongo kırmızısı ile elma yeşili çift kırılma",
+        "Apendiks duvarında transmural nötrofil infiltrasyonu",
         "Epidermiste akantoz ve hiperkeratoz"
       ],
       "question": "Sağ alt kadran ağrısı nedeniyle apendektomi yapılan hastada akut apandisit tanısı için en karakteristik histopatolojik bulgu hangisidir?",
@@ -65523,8 +65523,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Glukoz-6-fosfataz eksikliği",
       "options": [
-        "Glukoz-6-fosfataz eksikliği",
         "Karaciğer glikojen fosforilaz eksikliği",
+        "Glukoz-6-fosfataz eksikliği",
         "Debranching enzyme eksikliği",
         "Branching enzyme eksikliği",
         "Aldolaz B eksikliği"
@@ -65794,8 +65794,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar",
       "options": [
-        "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar",
         "Eğri sola kayar ve hemoglobinin oksijeni bırakması azalır",
+        "Eğri sağa kayar ve hemoglobinin oksijeni dokuya bırakması artar",
         "Eğri sağa kayar ancak oksijen bırakılması azalır",
         "Eğri değişmez çünkü pH ve sıcaklık oksijen bağlanmasını etkilemez",
         "Hemoglobin oksijeni geri dönüşümsüz şekilde bağlar"
@@ -66014,8 +66014,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı",
       "options": [
-        "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı",
         "Ductus choledochus, vena porta ve arteria hepatica communis",
+        "Ductus cysticus, ductus hepaticus communis ve karaciğerin inferior kenarı",
         "Ductus cysticus, arteria cystica ve ductus choledochus",
         "Mide küçük kurvaturu, pylorus ve duodenum birinci kısmı",
         "Ligamentum teres hepatis, ligamentum falciforme ve umblikal ven kalıntısı"
@@ -66248,10 +66248,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus radialis",
       "options": [
-        "Nervus radialis",
         "Nervus medianus",
         "Nervus ulnaris",
         "Nervus axillaris",
+        "Nervus radialis",
         "Nervus musculocutaneus"
       ],
       "question": "Humerus orta şaft kırığı sonrası el bileği-parmak ekstansiyon kaybını en iyi açıklayan sinir hasarı hangisidir?",
@@ -66482,9 +66482,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus fibularis communis",
       "options": [
-        "Nervus fibularis communis",
         "Nervus fibularis profundus",
         "Nervus fibularis superficialis",
+        "Nervus fibularis communis",
         "Nervus tibialis",
         "Nervus femoralis"
       ],
@@ -66670,11 +66670,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus ilioinguinalis",
       "options": [
-        "Nervus ilioinguinalis",
         "Nervus iliohypogastricus",
         "Ramus genitalis nervi genitofemoralis",
         "Nervus pudendus",
-        "Nervus obturatorius"
+        "Nervus obturatorius",
+        "Nervus ilioinguinalis"
       ],
       "question": "Açık inguinal herni onarımı sonrası kasık ve skrotum ön-üst kısmındaki duyu azalmasını en iyi açıklayan sinir etkilenimi hangisidir?",
       "explanation": "Nervus ilioinguinalis inguinal kanal içinde seyreder ve skrotum ön-üst kısmı ile kasık bölgesi duyusunu taşır. Açık inguinal herni onarımı sonrası bu alandaki uyuşma bu sinirin etkilenimini destekler. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
@@ -66986,10 +66986,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Posterior hipofiz kaynaklı antidiüretik hormon eksikliği",
       "options": [
-        "Posterior hipofiz kaynaklı antidiüretik hormon eksikliği",
         "Toplayıcı kanalın antidiüretik hormona yanıtsızlığı",
         "Aldosteron fazlalığına bağlı sodyum kaybı",
         "İnsülin fazlalığına bağlı ozmotik diürez",
+        "Posterior hipofiz kaynaklı antidiüretik hormon eksikliği",
         "Atriyal natriüretik peptid eksikliğine bağlı su tutulumu"
       ],
       "question": "Hipofiz cerrahisi sonrası poliüri ve desmopressinle idrar yoğunlaşması olan hastadaki temel fizyolojik bozukluk hangisidir?",
@@ -67239,9 +67239,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Böbrekte bikarbonat geri emilimi ve yeni bikarbonat üretiminin artması",
       "options": [
-        "Böbrekte bikarbonat geri emilimi ve yeni bikarbonat üretiminin artması",
         "Böbrekte bikarbonat atılımının artması",
         "Alveoler ventilasyonun durmasıyla PaCO₂’nin sabitlenmesi",
+        "Böbrekte bikarbonat geri emilimi ve yeni bikarbonat üretiminin artması",
         "Eritrositlerde oksijen bağlanmasının geri dönüşümsüz artması",
         "Toplayıcı kanalda su geçirgenliğinin kaybolması"
       ],
@@ -67492,11 +67492,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Parasempatik aktivite artışı ve kalp hızında azalma",
       "options": [
-        "Parasempatik aktivite artışı ve kalp hızında azalma",
         "Sempatik aktivite artışı ve kalp hızında artma",
         "Vagal tonus azalması ve taşikardi",
         "Renin salınımında ani artışla hipertansiyonun sürdürülmesi",
-        "Aldosteron salınımında akut artışla bradikardi oluşması"
+        "Aldosteron salınımında akut artışla bradikardi oluşması",
+        "Parasempatik aktivite artışı ve kalp hızında azalma"
       ],
       "question": "Karotis sinüs basıncı akut arttığında beklenen refleks otonom yanıt hangisidir?",
       "explanation": "Karotis sinüs gerilimi arttığında baroreseptör ateşleme frekansı yükselir. Nucleus tractus solitarius üzerinden vagal çıkış artar, sempatik çıkış azalır; kalp hızı ve kontraktilite düşer. Bu refleks akut basınç artışını tamponlayan negatif feedback yanıtıdır.",
@@ -67756,11 +67756,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Omfalomezenterik kanal kalıntısı",
       "options": [
-        "Omfalomezenterik kanal kalıntısı",
         "Ürakuş kalıntısı",
         "Tiroglossal kanal kalıntısı",
         "Nöral tüp kapanma kusuru",
-        "Pleuroperitoneal membran kapanma kusuru"
+        "Pleuroperitoneal membran kapanma kusuru",
+        "Omfalomezenterik kanal kalıntısı"
       ],
       "question": "Bu çocukta ağrısız alt gastrointestinal kanamanın en olası embriyolojik temeli aşağıdakilerden hangisidir?",
       "explanation": "Çocukta ağrısız alt GIS kanaması ve ektopik gastrik mukoza tutulumu Meckel divertikülünü düşündürür. Meckel divertikülü omfalomezenterik kanalın persiste kalmasıyla oluşan bir embriyolojik kalıntıdır.",
@@ -68065,8 +68065,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Üçüncü ve dördüncü faringeal poş gelişim kusuru",
       "options": [
-        "Üçüncü ve dördüncü faringeal poş gelişim kusuru",
         "Birinci faringeal arkın aşırı gelişimi",
+        "Üçüncü ve dördüncü faringeal poş gelişim kusuru",
         "Omfalomezenterik kanalın persiste kalması",
         "Kaudal nöroporun kapanmaması",
         "Allantoisin mesaneye dönüşememesi"
@@ -68374,10 +68374,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Tip II pnömosit",
       "options": [
-        "Tip II pnömosit",
         "Tip I pnömosit",
         "Goblet hücresi",
         "Kupffer hücresi",
+        "Tip II pnömosit",
         "Paneth hücresi"
       ],
       "question": "Bu prematüre bebekte surfaktan eksikliğine bağlı solunum sıkıntısının temelinde yetersiz fonksiyonu bulunan hücre hangisidir?",
@@ -68701,10 +68701,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Medium-chain acyl-CoA dehydrogenase (MCAD) eksikliği",
       "options": [
-        "Medium-chain acyl-CoA dehydrogenase (MCAD) eksikliği",
         "Carnitine palmitoyltransferase I eksikliği",
         "Hepatik glukoz-6-fosfataz eksikliği",
         "HMG-CoA sentaz eksikliği",
+        "Medium-chain acyl-CoA dehydrogenase (MCAD) eksikliği",
         "Pirüvat dehidrogenaz kompleks eksikliği"
       ],
       "question": "Açlık/enfeksiyon sonrası hipoketotik hipoglisemi ve orta zincirli açilkarnitin artışı olan bu çocukta temel enzim defekti hangisidir?",
@@ -68997,9 +68997,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Fenilalanin hidroksilaz eksikliği",
       "options": [
-        "Fenilalanin hidroksilaz eksikliği",
         "Tetrahidrobiyopterin (BH4) sentez/geri dönüşüm bozukluğu",
         "Homogentizat 1,2-dioksijenaz eksikliği",
+        "Fenilalanin hidroksilaz eksikliği",
         "Tirozin aminotransferaz eksikliği",
         "Branched-chain alpha-ketoacid dehydrogenase eksikliği"
       ],
@@ -69257,11 +69257,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Homogentizat 1,2-dioksijenaz eksikliği",
       "options": [
-        "Homogentizat 1,2-dioksijenaz eksikliği",
         "Fenilalanin hidroksilaz eksikliği",
         "Tirozin aminotransferaz eksikliği",
         "Fumarylasetoasetat hidrolaz eksikliği",
-        "Galaktokinaz eksikliği"
+        "Galaktokinaz eksikliği",
+        "Homogentizat 1,2-dioksijenaz eksikliği"
       ],
       "question": "Bekleyince koyulaşan idrar, okronotik pigmentasyon ve homogentisik asit yüksekliği olan bu hastada temel enzim defekti hangisidir?",
       "explanation": "İdrarın havayla temas sonrası koyulaşması, okronotik pigmentasyon ve homogentisik asit yüksekliği alkaptonüri için tipiktir. Temel defekt, tirozin katabolizmasında homogentisik asidi parçalayan homogentizat 1,2-dioksijenaz eksikliğidir.",
@@ -69509,10 +69509,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Rabies virus",
       "options": [
-        "Rabies virus",
         "Herpes simplex virus tip 1",
         "Varicella-zoster virus",
         "West Nile virus",
+        "Rabies virus",
         "Poliovirus"
       ],
       "question": "Sahipsiz köpek ısırığı sonrası hidrofobi, hipersalivasyon ve farengeal spazm gelişen hastada en olası virüs hangisidir?",
@@ -69763,9 +69763,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Helicobacter pylori",
       "options": [
-        "Helicobacter pylori",
         "Campylobacter jejuni",
         "Vibrio cholerae",
+        "Helicobacter pylori",
         "Salmonella enterica",
         "Clostridioides difficile"
       ],
@@ -70018,11 +70018,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Cytomegalovirus",
       "options": [
-        "Cytomegalovirus",
         "Herpes simplex virus tip 1",
         "Varicella-zoster virus",
         "Adenovirus",
-        "Parvovirus B19"
+        "Parvovirus B19",
+        "Cytomegalovirus"
       ],
       "question": "Transplant sonrası immünsüpresyon altında hemorajik nekrotizan retinit ve yüksek viral yük gelişen hastada en olası etken hangisidir?",
       "explanation": "Yüksek CMV DNA viral yükü aktif CMV enfeksiyonunu mikrobiyolojik olarak destekler. Hasta nakilden sonra takrolimus ve mikofenolat kullandığını, son haftalarda tek gözde görme bulanıklığı ve floaters geliştiğini belirtir. Ateş hafiftir; veziküler dermatomal döküntü yoktur. Bu bulgu örüntüsü Cytomegalovirus lehine güçlü bir klinik gerekçe oluşturur. CMV immünsüprese hastalarda reaktivasyonla retinit, kolit veya pnömoni yapabilir. Diğer seçenekler, özellikle Herpes simplex virus tip 1, bu bulgu-mekanizma eşleşmesini aynı bütünlükte açıklamaz.",
@@ -70284,9 +70284,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kazeifiye granülomatöz inflamasyon",
       "options": [
-        "Kazeifiye granülomatöz inflamasyon",
         "Fibrinoid nekrozlu küçük damar vasküliti",
         "Saf pürülan abse formasyonu",
+        "Kazeifiye granülomatöz inflamasyon",
         "Amiloid birikimi",
         "Displastik skuamöz epitel proliferasyonu"
       ],
@@ -70566,11 +70566,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Özofagus adenokarsinomu",
       "options": [
-        "Özofagus adenokarsinomu",
         "Özofagus skuamöz hücreli karsinomu",
         "Gastrik lenfoma",
         "Kolon nöroendokrin tümörü",
-        "Hepatoselüler karsinom"
+        "Hepatoselüler karsinom",
+        "Özofagus adenokarsinomu"
       ],
       "question": "Uzun süreli reflü, distal özofagusta somon renkli mukoza ve biyopside goblet hücreli intestinal metaplazi bulunan hastada uzun dönemde hangi malignite riski en çok artar?",
       "explanation": "Barrett özofagusu distal özofagusta intestinal metaplaziyle tanınır ve kronik GERD zemininde özofagus adenokarsinomu riskini artırır.",
@@ -70851,8 +70851,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Papiller tiroid karsinomu",
       "options": [
-        "Papiller tiroid karsinomu",
         "Folliküler tiroid adenom",
+        "Papiller tiroid karsinomu",
         "Medüller tiroid karsinomu",
         "Anaplastik tiroid karsinomu",
         "Hashimoto tiroiditi"
@@ -71168,10 +71168,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Bronş düz kasındaki beta-2 reseptör blokajı",
       "options": [
-        "Bronş düz kasındaki beta-2 reseptör blokajı",
         "Muskarinik reseptör blokajı",
         "Alfa-1 reseptör aktivasyonu",
         "Histamin H2 reseptör blokajı",
+        "Bronş düz kasındaki beta-2 reseptör blokajı",
         "Dopamin D2 reseptör blokajı"
       ],
       "question": "Astım öyküsü olan hastada propranolol sonrası hışıltı gelişmesinin en olası farmakolojik mekanizması hangisidir?",
@@ -71444,9 +71444,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "30S ribozomal alt birime bağlanarak protein sentezinde yanlış okumaya neden olmak",
       "options": [
-        "30S ribozomal alt birime bağlanarak protein sentezinde yanlış okumaya neden olmak",
         "50S ribozomal alt birimde peptidil transferazı inhibe etmek",
         "Hücre duvarında transpeptidaz enzimlerini inhibe etmek",
+        "30S ribozomal alt birime bağlanarak protein sentezinde yanlış okumaya neden olmak",
         "DNA girazı inhibe etmek",
         "Folat sentezinde dihidropteroat sentazı inhibe etmek"
       ],
@@ -71737,11 +71737,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Trombosit P2Y12 ADP reseptörünü inhibe etmek",
       "options": [
-        "Trombosit P2Y12 ADP reseptörünü inhibe etmek",
         "Trombinin fibrinojeni fibrine çevirmesini doğrudan inhibe etmek",
         "Vitamin K epoksit redüktazı inhibe etmek",
         "Antitrombin III aktivitesini artırmak",
-        "Siklooksijenazı geri dönüşümlü inhibe etmek"
+        "Siklooksijenazı geri dönüşümlü inhibe etmek",
+        "Trombosit P2Y12 ADP reseptörünü inhibe etmek"
       ],
       "question": "Klopidogrelin koroner stent sonrası trombosit agregasyonunu azaltan temel mekanizması hangisidir?",
       "explanation": "Klopidogrel aktif metabolitiyle trombosit P2Y12 ADP reseptörünü irreversibl olarak inhibe eder. ADP aracılı GPIIb/IIIa aktivasyonu azalır ve trombosit agregasyonu baskılanır. Stent sonrası aspirinle birlikte trombosit aracılı trombozu önlemek için kullanılır.",
@@ -72066,11 +72066,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Hemodinamik resüsitasyonla eş zamanlı acil damar cerrahisi onarımı",
       "options": [
-        "Hemodinamik resüsitasyonla eş zamanlı acil damar cerrahisi onarımı",
         "Kontrastlı BT anjiyografi için stabilizasyon beklemeden radyolojiye gönderme",
         "Oral antihipertansif verip ağrının azalmasını izleme",
         "Elektif poliklinik kontrolü planlama",
-        "Kolonoskopi hazırlığı başlama"
+        "Kolonoskopi hazırlığı başlama",
+        "Hemodinamik resüsitasyonla eş zamanlı acil damar cerrahisi onarımı"
       ],
       "question": "Ani sırt-karın ağrısı, hipotansiyon, pulsatil abdominal kitle ve yatak başı USG’de geniş abdominal aort anevrizması saptanan bu hastada en uygun acil yaklaşım hangisidir?",
       "explanation": "Ani sırt-karın ağrısı, hipotansiyon ve pulsatil kitle rüptüre AAA için klasik uyarıcıdır. İnstabil hastada yatak başı USG tanısal yönlendirme sağlar; resüsitasyonla eş zamanlı acil açık veya endovasküler damar cerrahisi onarımı gerekir.",
@@ -72434,8 +72434,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil ERCP ile biliyer drenaj",
       "options": [
-        "Acil ERCP ile biliyer drenaj",
         "Antibiyotik ve analjeziyle biliyer drenajı klinik yanıta göre ertelemek",
+        "Acil ERCP ile biliyer drenaj",
         "Elektif kolesistektomi için taburculuk planlamak",
         "Perkütan kolesistostomiyi koledok drenajı yerine ilk seçenek yapmak",
         "Rutin proton pompa inhibitörü tedavisi başlamak"
@@ -72730,10 +72730,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil cerrahi değerlendirme, resüsitasyon ve perforasyon onarımı",
       "options": [
-        "Acil cerrahi değerlendirme, resüsitasyon ve perforasyon onarımı",
         "Oral antiasit ve proton pompa inhibitörü verip izlemek",
         "Elektif üst gastrointestinal endoskopi randevusu planlamak",
         "Laksatif başlanması",
+        "Acil cerrahi değerlendirme, resüsitasyon ve perforasyon onarımı",
         "Ayaktan antibiyotiksiz izlem"
       ],
       "question": "NSAİİ kullanımı olan, ani epigastrik ağrı sonrası yaygın peritonit gelişen ve grafide diyafram altında serbest hava saptanan bu hastada en uygun yaklaşım hangisidir?",
@@ -72977,10 +72977,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Ablatio plasenta",
       "options": [
-        "Ablatio plasenta",
         "Plasenta previa",
         "Vasa previa",
         "Molar gebelik",
+        "Ablatio plasenta",
         "Servikal polip"
       ],
       "question": "Üçüncü trimesterde ağrılı koyu vajinal kanama, uterin hassasiyet ve düşük fibrinojen saptanan bu hastada en olası tanı hangisidir?",
@@ -73216,9 +73216,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Magnezyum sülfat",
       "options": [
-        "Magnezyum sülfat",
         "Furosemid",
         "Warfarin",
+        "Magnezyum sülfat",
         "Oral benzodiazepinle profilaksi",
         "Metilergonovin"
       ],
@@ -73453,11 +73453,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil laparoskopik değerlendirme ve detorsiyon",
       "options": [
-        "Acil laparoskopik değerlendirme ve detorsiyon",
         "Oral analjezik ve poliklinik kontrolü",
         "Metotreksat tedavisi",
         "Geniş spektrumlu antibiyotik başlayıp laparoskopiyi Doppler kontrolüne bırakmak",
-        "Elektif smear takibi"
+        "Elektif smear takibi",
+        "Acil laparoskopik değerlendirme ve detorsiyon"
       ],
       "question": "Ani başlayan tek taraflı pelvik ağrı, kusma ve büyümüş over bulguları olan bu hastada en uygun acil yaklaşım hangisidir?",
       "explanation": "Ani başlayan tek taraflı şiddetli pelvik ağrı ve kusma adneksiyal torsiyon için tipiktir. Hasta, ani başlayan şiddetli sol alt kadran ağrısı, bulantı ve kusma nedeniyle başvuruyor. Bu bulgu örüntüsü Acil laparoskopik değerlendirme ve detorsiyon lehine güçlü bir klinik gerekçe oluşturur. Ani tek taraflı pelvik ağrı, bulantı-kusma ve büyümüş kistik over adneksiyal torsiyonu düşündürür. Ayırıcı değerlendirmede Oral analjezik ve poliklinik kontrolü, bu olgudaki temel bulgu birlikteliğini veya acil tedavi önceliğini aynı bütünlükte açıklamaz.",
@@ -73673,8 +73673,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kontrastsız beyin bilgisayarlı tomografisi",
       "options": [
-        "Kontrastsız beyin bilgisayarlı tomografisi",
         "Elektif elektroensefalografi",
+        "Kontrastsız beyin bilgisayarlı tomografisi",
         "Direkt servikal grafi",
         "Rutin lomber ponksiyon",
         "Ayaktan kraniyal ultrasonografi"
@@ -73958,10 +73958,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Serotonin sendromu",
       "options": [
-        "Serotonin sendromu",
         "Nöroleptik malign sendrom",
         "Malign hipertermi",
         "Opioid intoksikasyonu",
+        "Serotonin sendromu",
         "Alkol yoksunluğu deliryumu"
       ],
       "question": "SSRI ve triptan sonrası aynı gün içinde ajitasyon, ishal, terleme, ateş, hiperrefleksi ve spontan klonus gelişen bu hastada en olası tanı hangisidir?",
@@ -74305,9 +74305,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil artrosentez yapıp sinovyal sıvı analizi-kültürü almak ve ampirik antibiyotik başlamak",
       "options": [
-        "Acil artrosentez yapıp sinovyal sıvı analizi-kültürü almak ve ampirik antibiyotik başlamak",
         "Nonsteroid antiinflamatuvar başlayıp eklem aspirasyonunu ateş düşmezse planlamak",
         "Elektif manyetik rezonans randevusu izlem planlamak",
+        "Acil artrosentez yapıp sinovyal sıvı analizi-kültürü almak ve ampirik antibiyotik başlamak",
         "Eklem içine steroid enjeksiyonu yapmak",
         "Gut diyeti önermek"
       ],
@@ -74559,8 +74559,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Ultrasonografi ile plasenta yerleşimini değerlendirmek ve dijital muayeneden kaçınmak",
       "options": [
-        "Dijital vajinal muayene ile servikal açıklığı değerlendirmek",
         "Ultrasonografi ile plasenta yerleşimini değerlendirmek ve dijital muayeneden kaçınmak",
+        "Dijital vajinal muayene ile servikal açıklığı değerlendirmek",
         "Kanama azaldığı için ultrason öncesi servikal değerlendirme ile izlem planlamak",
         "Uterin masaj ve metilergonovin uygulamak",
         "Amniyotomi yaparak doğumu hızlandırmak"
@@ -74803,9 +74803,9 @@ export const rawCases = [
       "correct": "Magnezyum sülfat verilmesi",
       "options": [
         "Diazepam ile kontrol tedavisi olarak idame tedavisi",
-        "Magnezyum sülfat verilmesi",
         "Labetalol yerine metotreksat başlanması",
         "Oksitosin infüzyonu ile nöbet kontrolü",
+        "Magnezyum sülfat verilmesi",
         "Klomifen sitrat verilmesi"
       ],
       "question": "Ağır hipertansiyon ve jeneralize nöbet ile başvuran gebede nöbet kontrolü ve tekrarını önlemek için en uygun tedavi hangisidir?",
@@ -75044,9 +75044,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Retina dekolmanı",
       "options": [
+        "Retina dekolmanı",
         "Akut açı kapanması glokomu",
         "Optik nörit",
-        "Retina dekolmanı",
         "Viral konjonktivit",
         "Hordeolum"
       ],
@@ -75330,10 +75330,10 @@ export const rawCases = [
       "correct": "Negatif psikotik belirtiler",
       "options": [
         "Manik belirtiler",
-        "Negatif psikotik belirtiler",
         "Panik belirtileri",
         "Obsesif-kompulsif belirtiler",
-        "Katatonik belirtiler"
+        "Katatonik belirtiler",
+        "Negatif psikotik belirtiler"
       ],
       "question": "Uzun süren sosyal çekilme, konuşma fakirliği, künt duygulanım ve kişisel bakımda bozulma olan bu hastada ön planda olan belirti grubu hangisidir?",
       "explanation": "Sosyal çekilme, aloji, künt duygulanım, avolisyon ve kişisel bakımda bozulma şizofreni spektrumunda negatif psikotik belirtileri düşündürür. Aktif sanrı/halüsinasyon, taşkın duygudurum, panik atağı veya katatonik motor bulgu ön planda değildir.",
@@ -75614,8 +75614,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Bordetella pertussis",
       "options": [
-        "Bordetella pertussis",
         "Mycoplasma pneumoniae",
+        "Bordetella pertussis",
         "Streptococcus pyogenes",
         "Corynebacterium diphtheriae",
         "Haemophilus influenzae tip b"
@@ -75879,9 +75879,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İyi diferansiye liposarkom",
       "options": [
+        "İyi diferansiye liposarkom",
         "Lipom",
         "Nodüler fasiit",
-        "İyi diferansiye liposarkom",
         "Rabdomiyom",
         "Ganglion kisti"
       ],
@@ -76178,8 +76178,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Venodilatasyonla preloadu azaltarak miyokard oksijen ihtiyacını düşürmesi",
       "options": [
-        "Afterloadu artırarak miyokard oksijen tüketimini yükseltmesi",
         "Venodilatasyonla preloadu azaltarak miyokard oksijen ihtiyacını düşürmesi",
+        "Afterloadu artırarak miyokard oksijen tüketimini yükseltmesi",
         "Beta-1 reseptörleri uyararak kalp hızını artırması",
         "Trombosit P2Y12 reseptörlerini irreversibl inhibe etmesi",
         "Renal sodyum geri emilimini artırması"
@@ -76507,8 +76507,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Glukoz-6-fosfat dehidrogenaz aktivitesinin azalması",
       "options": [
-        "Glukoz-6-fosfat dehidrogenaz aktivitesinin azalması",
         "Pirüvat kinaz aktivitesinin azalması",
+        "Glukoz-6-fosfat dehidrogenaz aktivitesinin azalması",
         "Ferroşelataz aktivitesinin artması",
         "Vitamin B12 bağımlı DNA sentezinin bozulması",
         "Hepcidin azalmasına bağlı demir salınımının artması"
@@ -76678,9 +76678,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Anal fissür",
       "options": [
-        "Anal fissür",
         "İç hemoroid",
         "Perianal fistül",
+        "Anal fissür",
         "Rektum kanseri",
         "Pilonidal sinüs"
       ],
@@ -76931,8 +76931,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi",
       "options": [
-        "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi",
         "Afferent arteriyolü tamamen kapatarak filtrasyonu durdurması",
+        "Efferent arteriyolde vazokonstriksiyon yaparak glomerüler kapiller basıncı desteklemesi",
         "Bowman kapsülü hidrostatik basıncını artırarak GFR’yi yükseltmesi",
         "Proksimal tübülde glukoz sekresyonunu başlatması",
         "Toplayıcı kanalda sodyum geri emilimini durdurması"
@@ -77107,8 +77107,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus medianus",
       "options": [
-        "Nervus medianus",
         "Nervus ulnaris",
+        "Nervus medianus",
         "Nervus radialis superficialis",
         "Nervus interosseus anterior",
         "Ramus palmaris nervi mediani"
@@ -77296,10 +77296,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus laryngeus recurrens",
       "options": [
-        "Nervus laryngeus recurrens",
         "Nervus laryngeus superior - ramus externus",
         "Nervus hypoglossus",
         "Nervus glossopharyngeus",
+        "Nervus laryngeus recurrens",
         "Nervus accessorius"
       ],
       "question": "Tiroid cerrahisi sonrası yeni başlayan ses kısıklığı ve vokal kord hareket azalmasını en iyi açıklayan sinir hasarı hangisidir?",
@@ -77573,9 +77573,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kaudal nöropor kapanma kusuru",
       "options": [
-        "Kaudal nöropor kapanma kusuru",
         "Rostral nöropor erken kapanması",
         "Omfalomezenterik kanal persiste kalması",
+        "Kaudal nöropor kapanma kusuru",
         "Üçüncü faringeal poş gelişim kusuru",
         "Ürakuşun açık kalması"
       ],
@@ -77881,11 +77881,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Zona glomerulosa",
       "options": [
-        "Zona glomerulosa",
         "Zona fasciculata",
         "Zona reticularis",
         "Adrenal medulla",
-        "Kapsül fibroblastları"
+        "Kapsül fibroblastları",
+        "Zona glomerulosa"
       ],
       "question": "Bu hastadaki aldosteron fazlalığından sorumlu adrenal korteks bölgesi hangisidir?",
       "explanation": "Hipertansiyon, hipokalemi, yüksek aldosteron ve baskılı renin primer mineralokortikoid fazlalığını düşündürür. Aldosteron sentezi adrenal korteksin kapsüle en yakın dış tabakası olan zona glomerulosada gerçekleşir.",
@@ -78165,10 +78165,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Distal nefronda sodyum geri emilimini artırırken potasyum ve hidrojen iyonu sekresyonunu artırması",
       "options": [
-        "Distal nefronda sodyum geri emilimini artırırken potasyum ve hidrojen iyonu sekresyonunu artırması",
         "Proksimal tübülde glukoz sekresyonunu artırması",
         "Toplayıcı kanalda su geçirgenliğini tamamen azaltması",
         "Glomerüler filtrasyonu tamamen durdurması",
+        "Distal nefronda sodyum geri emilimini artırırken potasyum ve hidrojen iyonu sekresyonunu artırması",
         "Henle kulpunda kalsiyum geri emilimini tamamen engellemesi"
       ],
       "question": "Aldosteron fazlalığının hipokalemi ve metabolik alkalozu oluşturma mekanizması hangisidir?",
@@ -78464,9 +78464,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Alveol-kapiller membran kalınlaşması nedeniyle oksijen difüzyonunun kapiller geçiş süresine yetişememesi",
       "options": [
-        "Alveol-kapiller membran kalınlaşması nedeniyle oksijen difüzyonunun kapiller geçiş süresine yetişememesi",
         "Hemoglobinin oksijeni geri dönüşümsüz bağlaması",
         "Alveoler ventilasyonun egzersizde tamamen durması",
+        "Alveol-kapiller membran kalınlaşması nedeniyle oksijen difüzyonunun kapiller geçiş süresine yetişememesi",
         "Karbondioksitin oksijenden daha yavaş difüze olması",
         "Pulmoner kapiller kan akımının egzersizde sıfıra düşmesi"
       ],
@@ -78778,10 +78778,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Karnitin palmitoiltransferaz sistemiyle uzun zincirli yağ asitlerinin mitokondriye taşınmasının bozulması",
       "options": [
-        "Karnitin palmitoiltransferaz sistemiyle uzun zincirli yağ asitlerinin mitokondriye taşınmasının bozulması",
         "Medium-chain acyl-CoA dehydrogenase aktivitesinin azalması",
         "Kas glikojen fosforilaz aktivitesinin azalması",
         "Lizozomal asit alfa-glukozidaz aktivitesinin azalması",
+        "Karnitin palmitoiltransferaz sistemiyle uzun zincirli yağ asitlerinin mitokondriye taşınmasının bozulması",
         "Homosisteinin metiyonine remetilasyonunun bozulması"
       ],
       "question": "Açlık ve uzun egzersizle tetiklenen kas ağrısı, koyu idrar, hipoketotik hipoglisemi ve uzun zincirli açilkarnitin artışı en çok hangi biyokimyasal sürecin bozulmasıyla açıklanır?",
@@ -79110,9 +79110,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Branched-chain alpha-ketoacid dehydrogenase kompleks eksikliği",
       "options": [
-        "Branched-chain alpha-ketoacid dehydrogenase kompleks eksikliği",
         "Fenilalanin hidroksilaz eksikliği",
         "Cystathionine beta-synthase eksikliği",
+        "Branched-chain alpha-ketoacid dehydrogenase kompleks eksikliği",
         "Homogentizat 1,2-dioksijenaz eksikliği",
         "Galactose-1-phosphate uridyltransferase eksikliği"
       ],
@@ -79362,10 +79362,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Clostridioides difficile",
       "options": [
-        "Clostridioides difficile",
         "Vibrio cholerae",
         "Entamoeba histolytica",
         "Salmonella Typhi",
+        "Clostridioides difficile",
         "Giardia intestinalis"
       ],
       "question": "Klindamisin sonrası sulu ishal ve dışkıda toksin A/B pozitifliği olan hastada en olası mikroorganizma hangisidir?",
@@ -79617,9 +79617,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Parvovirus B19",
       "options": [
-        "Parvovirus B19",
         "Epstein-Barr virus",
         "Cytomegalovirus",
+        "Parvovirus B19",
         "Rabies virus",
         "Rotavirus"
       ],
@@ -79945,10 +79945,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Hodgkin lenfoma",
       "options": [
-        "Hodgkin lenfoma",
         "Reaktif lenfadenit",
         "Burkitt lenfoma",
         "Multipl miyelom",
+        "Hodgkin lenfoma",
         "Kronik miyeloid lösemi"
       ],
       "question": "Ağrısız servikal lenfadenopati, B semptomları ve eksizyonel biyopside Reed-Sternberg hücreleri bulunan hastada en olası tanı hangisidir?",
@@ -80306,8 +80306,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Digoksin spesifik antikor fragmanı verilmesi",
       "options": [
-        "Digoksin spesifik antikor fragmanı verilmesi",
         "Beta-2 agonist inhalasyonu",
+        "Digoksin spesifik antikor fragmanı verilmesi",
         "Vitamin K verilmesi",
         "Protamin sülfat verilmesi",
         "Flumazenil verilmesi"
@@ -80599,11 +80599,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Akut mezenter iskemi",
       "options": [
-        "Akut mezenter iskemi",
         "Basit viral gastroenterit",
         "İrritabl bağırsak sendromu",
         "Safra koliği",
-        "Akut sistit"
+        "Akut sistit",
+        "Akut mezenter iskemi"
       ],
       "question": "Atriyal fibrilasyonu olan, muayene bulgusuna göre orantısız şiddetli karın ağrısı, laktat yüksekliği ve BT anjiyografide SMA dolum defekti bulunan hastada en olası tanı hangisidir?",
       "explanation": "Atriyal fibrilasyon embolik mezenter arter tıkanıklığına zemin hazırlar. Ağrının muayeneye göre orantısız olması, laktat/asidoz ve BT anjiyografide SMA dolum defekti akut mezenter iskemi tanısını destekler.",
@@ -80813,8 +80813,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "McRoberts manevrası ve suprapubik bası",
       "options": [
-        "McRoberts manevrası ve suprapubik bası",
         "Fundal bası uygulamak",
+        "McRoberts manevrası ve suprapubik bası",
         "Acil vakumla başı tekrar çekmek",
         "Dijital servikal dilatasyon yapmak",
         "Doğumu durdurup elektif sezaryen planlamak"
@@ -81055,8 +81055,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Temporal arter biyopsisi sonucunu beklemeden yüksek doz kortikosteroid başlamak",
       "options": [
-        "Temporal arter biyopsisi sonucunu beklemeden yüksek doz kortikosteroid başlamak",
         "Parasetamol verip poliklinik kontrolü önermek",
+        "Temporal arter biyopsisi sonucunu beklemeden yüksek doz kortikosteroid başlamak",
         "Antibiyotik başlanıp kültür sonucu izlem planlamak",
         "Antikoagülan başlanıp kortikosteroidi biyopsi sonucuna göre planlamak",
         "Acil lomber ponksiyon yapmak"
@@ -81304,9 +81304,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Arteria circumflexa femoris medialis",
       "options": [
-        "Arteria circumflexa femoris medialis",
         "Arteria circumflexa femoris lateralis",
         "Arteria obturatoria",
+        "Arteria circumflexa femoris medialis",
         "Arteria glutea inferior",
         "Arteria femoralis profunda"
       ],
@@ -81492,11 +81492,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus facialis",
       "options": [
-        "Nervus facialis",
         "Nervus trigeminus - n. mandibularis",
         "Nervus glossopharyngeus",
         "Nervus hypoglossus",
-        "Nervus accessorius"
+        "Nervus accessorius",
+        "Nervus facialis"
       ],
       "question": "Parotis cerrahisi sonrası alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin bozulmasını hangi sinir hasarı açıklar?",
       "explanation": "Nervus facialis parotis içinde dallanarak yüz mimik kaslarını innerve eder. Alın kırıştırma, göz kapama ve ağız köşesi hareketlerinin birlikte bozulması parotis cerrahisi sonrası fasiyal sinir etkilenimini gösterir. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
@@ -81827,11 +81827,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Ventilasyon-perfüzyon uyumsuzluğu",
       "options": [
-        "Ventilasyon-perfüzyon uyumsuzluğu",
         "Saf sağdan sola intrakardiyak şant",
         "Alveoler ventilasyonun tamamen durması",
         "Hemoglobinin oksijeni irreversibl bağlaması",
-        "Karbondioksit difüzyonunun tamamen durması"
+        "Karbondioksit difüzyonunun tamamen durması",
+        "Ventilasyon-perfüzyon uyumsuzluğu"
       ],
       "question": "Pulmoner embolide hipokseminin temel fizyolojik mekanizması hangisidir?",
       "explanation": "Pulmoner embolide bazı alveoller ventile olmaya devam ederken perfüzyon azalır. Bu yüksek V/Q ve ölü boşluk etkisi, diğer bölgelerde göreceli düşük V/Q dağılımıyla birlikte gaz değişimini bozar. Sonuç artmış A-a gradient ve hipoksemidir.",
@@ -82080,8 +82080,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Asetilkolin ve norepinefrin",
       "options": [
-        "Asetilkolin ve norepinefrin",
         "Norepinefrin ve asetilkolin",
+        "Asetilkolin ve norepinefrin",
         "Dopamin ve serotonin",
         "GABA ve glutamat",
         "Histamin ve bradikinin"
@@ -82317,8 +82317,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kupffer hücresi",
       "options": [
-        "Kupffer hücresi",
         "Ito hücresi",
+        "Kupffer hücresi",
         "Hepatosit",
         "Kolanjiyosit",
         "Tip II pnömosit"
@@ -82608,10 +82608,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Aortopulmoner septumun oluşmaması",
       "options": [
-        "Aortopulmoner septumun oluşmaması",
         "Aortopulmoner septumun spiral biçimde oluşamaması",
         "Endokardiyal yastıkların atriyoventriküler kanalı bölememesi",
         "Septum primumun aşırı rezorpsiyonu",
+        "Aortopulmoner septumun oluşmaması",
         "Duktus venosusun açık kalması"
       ],
       "question": "Bu yenidoğanda ventriküllerden tek ortak büyük arter çıkması ve geniş VSD bulunması hangi embriyolojik kusurla en iyi açıklanır?",
@@ -82917,11 +82917,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İndirgenmiş glutatyonun yenilenmesini sağlayarak",
       "options": [
-        "İndirgenmiş glutatyonun yenilenmesini sağlayarak",
         "Methemoglobini kalıcı olarak stabilize ederek",
         "Eritrositte DNA replikasyonunu artırarak",
         "Laktat üretimini tamamen durdurarak",
-        "Sodyum kanallarını bloke ederek"
+        "Sodyum kanallarını bloke ederek",
+        "İndirgenmiş glutatyonun yenilenmesini sağlayarak"
       ],
       "question": "NADPH eritrositte oksidatif strese karşı korumayı en çok hangi mekanizmayla sağlar?",
       "explanation": "Eritrositte NADPH’nin temel koruyucu görevi, glutatyon redüktaz aracılığıyla indirgenmiş glutatyonu yenilemektir. İndirgenmiş glutatyon peroksitleri uzaklaştırır; NADPH azaldığında hemoglobin oksidasyonu, Heinz cisimcikleri ve hemoliz gelişir.",
@@ -83311,8 +83311,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Ornitin transkarbamilaz eksikliği",
       "options": [
-        "Ornitin transkarbamilaz eksikliği",
         "Karbamoil fosfat sentetaz I eksikliği",
+        "Ornitin transkarbamilaz eksikliği",
         "Argininosüksinat sentetaz eksikliği",
         "Argininosüksinat liyaz eksikliği",
         "Arginaz eksikliği"
@@ -83563,11 +83563,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Neisseria meningitidis",
       "options": [
-        "Neisseria meningitidis",
         "Streptococcus pneumoniae",
         "Listeria monocytogenes",
         "Haemophilus influenzae tip b",
-        "Cryptococcus neoformans"
+        "Cryptococcus neoformans",
+        "Neisseria meningitidis"
       ],
       "question": "Yurt ortamında yaşayan gençte akut menenjit, peteşiyal döküntü ve BOS’ta gram negatif diplokoklar saptandığında en olası etken hangisidir?",
       "explanation": "BOS’ta gram negatif diplokok görülmesi N. meningitidis için mikrobiyolojik ayırt edicidir. Hasta yurtta kalmaktadır. Saatler içinde ateş, baş ağrısı, ense sertliği ve bacaklarda mor-kırmızı döküntüler gelişmiştir. Yakın temaslılarda üst solunum yolu enfeksiyonu öyküsü vardır. Bu bulgu örüntüsü Neisseria meningitidis lehine güçlü bir klinik gerekçe oluşturur. N. meningitidis kapsüllü, oksidaz pozitif gram negatif diplokoktur. Diğer seçenekler, özellikle Streptococcus pneumoniae, bu bulgu-mekanizma eşleşmesini aynı bütünlükte açıklamaz.",
@@ -83818,8 +83818,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Pseudomonas aeruginosa",
       "options": [
-        "Pseudomonas aeruginosa",
         "Staphylococcus aureus",
+        "Pseudomonas aeruginosa",
         "Streptococcus pyogenes",
         "Clostridium perfringens",
         "Escherichia coli"
@@ -84083,9 +84083,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Koagülasyon nekrozu",
       "options": [
-        "Koagülasyon nekrozu",
         "Likefaksiyon nekrozu",
         "Kazeifikasyon nekrozu",
+        "Koagülasyon nekrozu",
         "Yağ nekrozu",
         "Fibrinoid nekroz"
       ],
@@ -84382,10 +84382,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Vitamin K ve protrombin kompleks konsantresi verilmesi",
       "options": [
-        "Vitamin K ve protrombin kompleks konsantresi verilmesi",
         "Protamin sülfat verilmesi",
         "Flumazenil verilmesi",
         "Nalokson verilmesi",
+        "Vitamin K ve protrombin kompleks konsantresi verilmesi",
         "Asetilsistein verilmesi"
       ],
       "question": "Varfarin kullanan bu hastada ciddi kanamayı acilen geri çevirmek için en uygun yaklaşım hangisidir?",
@@ -84755,8 +84755,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz sıvı, analjezi, oral alımın düzenlenmesi ve yakın klinik izlem",
       "options": [
-        "İntravenöz sıvı, analjezi, oral alımın düzenlenmesi ve yakın klinik izlem",
         "Rutin erken profilaktik antibiyotik başlanması",
+        "İntravenöz sıvı, analjezi, oral alımın düzenlenmesi ve yakın klinik izlem",
         "Acil pankreatektomi yapılması",
         "Oral proton pompa inhibitörüyle pankreatit tedavisini ertelemek",
         "Laksatif tedavi başlanması"
@@ -85052,9 +85052,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Uterin masaj ve oksitosin uygulanması",
       "options": [
-        "Uterin masaj ve oksitosin uygulanması",
         "Balon tamponadı ile uterin kavitenin tamponlanması",
         "Acil histerektomi yapılması",
+        "Uterin masaj ve oksitosin uygulanması",
         "Eritrosit süspansiyonu transfüzyonu ile izlem",
         "Servikal/vajinal laserasyon onarımı için operasyona alınması"
       ],
@@ -85334,10 +85334,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi",
       "options": [
-        "Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi",
         "Oral antihistaminik verilmesi",
         "Soğuk kompres ve ayaktan yakın kontrol önermek",
         "Yüksek doz oral antibiyotik ile 24-48 saat poliklinik izlemi planlamak",
+        "Hastaneye yatırılarak intravenöz geniş spektrumlu antibiyotik başlanması ve yakın göz-KBB izlemi",
         "Topikal antibiyotikli damla kullanılması"
       ],
       "question": "Sinüzit sonrası ateş, proptoz, ağrılı-kısıtlı göz hareketi ve görme bulanıklığı gelişen bu çocukta en uygun tedavi yaklaşımı hangisidir?",
@@ -85538,8 +85538,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus gluteus superior",
       "options": [
-        "Nervus gluteus superior",
         "Nervus gluteus inferior",
+        "Nervus gluteus superior",
         "Nervus obturatorius",
         "Nervus femoralis",
         "Nervus ischiadicus"
@@ -85772,10 +85772,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Arteria meningea media",
       "options": [
-        "Arteria meningea media",
         "Arteria meningea anterior",
         "Arteria meningea posterior",
         "Arteria temporalis superficialis",
+        "Arteria meningea media",
         "Arteria cerebri media"
       ],
       "question": "Temporal kemik travması sonrası bikonveks epidural hematomun en olası kaynak damarı hangisidir?",
@@ -85960,9 +85960,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nervus thoracicus longus",
       "options": [
-        "Nervus thoracicus longus",
         "Nervus thoracodorsalis",
         "Nervus dorsalis scapulae",
+        "Nervus thoracicus longus",
         "Nervus suprascapularis",
         "Nervus axillaris"
       ],
@@ -86230,10 +86230,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Venöz basınç artışına bağlı kapiller hidrostatik basıncın yükselmesi",
       "options": [
-        "Venöz basınç artışına bağlı kapiller hidrostatik basıncın yükselmesi",
         "Plazma onkotik basıncının ağır azalması",
         "Lenfatik drenajın doğuştan tamamen olmaması",
         "Eritrosit oksijen taşıma kapasitesinin artması",
+        "Venöz basınç artışına bağlı kapiller hidrostatik basıncın yükselmesi",
         "Kapiller filtrasyon katsayısının sıfıra düşmesi"
       ],
       "question": "Kalp yetmezliğinde periferik ödemi en iyi açıklayan Starling kuvveti değişikliği hangisidir?",
@@ -86483,9 +86483,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Toplayıcı kanal principal hücre apikal membranına aquaporin-2 kanallarının yerleşimini artırması",
       "options": [
-        "Toplayıcı kanal principal hücre apikal membranına aquaporin-2 kanallarının yerleşimini artırması",
         "Proksimal tübülde glukoz sekresyonunu başlatması",
         "Henle çıkan kalın kolunu suya tamamen geçirgen hale getirmesi",
+        "Toplayıcı kanal principal hücre apikal membranına aquaporin-2 kanallarının yerleşimini artırması",
         "Distal tübülde potasyum filtrasyonunu durdurması",
         "Glomerüler filtrasyonu sıfıra indirmesi"
       ],
@@ -86740,11 +86740,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması",
       "options": [
-        "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması",
         "Aksiyon potansiyelini tamamen durdurması",
         "Sarkoplazmik retikulumdan kalsiyum salınımını geri dönüşümsüz engellemesi",
         "Kalp kapaklarını kalıcı olarak kapatması",
-        "Koroner kan akımını sıfıra düşürmesi"
+        "Koroner kan akımını sıfıra düşürmesi",
+        "Miyokard lif uzunluğunu artırarak daha güçlü kasılma oluşturması"
       ],
       "question": "Normal kalpte venöz dönüş artışı atım hacmini hangi mekanizmayla artırır?",
       "explanation": "Frank-Starling mekanizmasına göre venöz dönüş artışı ventrikül diyastol sonu hacmini ve miyokard lif uzunluğunu artırır. Sarkomer daha uygun aktin-miyozin örtüşmesine ulaştığında kasılma gücü ve atım hacmi artar. Bu yanıt normal kalpte dolum ile pompa çıkışını eşleştirir.",
@@ -86960,9 +86960,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Prostaglandin E2",
       "options": [
-        "Prostaglandin E2",
         "Asetilkolin",
         "Tiroksin",
+        "Prostaglandin E2",
         "Aldosteron",
         "Gastrin"
       ],
@@ -87206,11 +87206,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Mikrovillus",
       "options": [
-        "Mikrovillus",
         "Silyum",
         "Desmozom",
         "Bazal lamina",
-        "Hemidesmozom"
+        "Hemidesmozom",
+        "Mikrovillus"
       ],
       "question": "İnce bağırsak enterositlerinde emilim yüzey alanını doğrudan artıran apikal histolojik yapı aşağıdakilerden hangisidir?",
       "explanation": "İnce bağırsakta emilim yüzeyi villuslar, kriptler ve enterosit apikal mikrovilluslarıyla artırılır. Hücre düzeyinde fırçamsı kenarı oluşturan temel yapı mikrovillustur.",
@@ -87762,10 +87762,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Pirüvat dehidrogenaz kompleks aktivitesinin azalması",
       "options": [
-        "Pirüvat dehidrogenaz kompleks aktivitesinin azalması",
         "Pirüvat karboksilaz aktivitesinin azalması",
         "Glukoz-6-fosfataz aktivitesinin azalması",
         "Medium-chain acyl-CoA dehydrogenase aktivitesinin azalması",
+        "Pirüvat dehidrogenaz kompleks aktivitesinin azalması",
         "Homogentizat 1,2-dioksijenaz aktivitesinin azalması"
       ],
       "question": "Gelişim geriliği ve karbonhidrat sonrası laktik asidozu olan bu hastada temel biyokimyasal sorun hangisidir?",
@@ -88040,9 +88040,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "GM2 gangliozid",
       "options": [
-        "GM2 gangliozid",
         "Glukoserebrozid",
         "Sfingomiyelin",
+        "GM2 gangliozid",
         "Homogentisik asit",
         "Fenilalanin"
       ],
@@ -88336,11 +88336,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Karboksilazlar",
       "options": [
-        "Karboksilazlar",
         "Dehidrogenazlar",
         "Fosfatazlar",
         "Proteazlar",
-        "Helikazlar"
+        "Helikazlar",
+        "Karboksilazlar"
       ],
       "question": "Çiğ yumurta akı tüketimi sonrası biotin eksikliği gelişen bu hastada en çok etkilenen enzim sınıfı hangisidir?",
       "explanation": "Çiğ yumurta akındaki avidin biotini bağlayarak fonksiyonel biotin eksikliğine yol açabilir. Biotin, karboksilaz enzimlerinin kofaktörüdür; bu nedenle pirüvat karboksilaz, propiyonil-KoA karboksilaz ve asetil-KoA karboksilaz gibi enzimler etkilenir.",
@@ -88588,10 +88588,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Legionella pneumophila",
       "options": [
-        "Legionella pneumophila",
         "Mycoplasma pneumoniae",
         "Chlamydophila psittaci",
         "Streptococcus pneumoniae",
+        "Legionella pneumophila",
         "Coxiella burnetii"
       ],
       "question": "Otel konaklaması sonrası pnömoni, ishal, konfüzyon ve hiponatremi gelişen hastada en olası mikroorganizma hangisidir?",
@@ -88843,9 +88843,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Candida albicans",
       "options": [
-        "Candida albicans",
         "Aspergillus fumigatus",
         "Cryptococcus neoformans",
+        "Candida albicans",
         "Microsporum canis",
         "Pneumocystis jirovecii"
       ],
@@ -89098,11 +89098,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Chlamydia trachomatis",
       "options": [
-        "Chlamydia trachomatis",
         "Neisseria gonorrhoeae",
         "Mycoplasma genitalium",
         "Trichomonas vaginalis",
-        "Treponema pallidum"
+        "Treponema pallidum",
+        "Chlamydia trachomatis"
       ],
       "question": "Yoğun pürülan akıntı olmadan dizüri ve nongonokokal üretrit bulguları olan hastada NAAT pozitifliği hangi etkeni düşündürür?",
       "explanation": "İlk akım idrar NAAT pozitifliği Chlamydia trachomatis için mikrobiyolojik doğrulama sağlar. Korunmasız yeni cinsel temas, cinsel yolla bulaşan üretrit için risk oluşturur. Bu bulgu örüntüsü Chlamydia trachomatis lehine güçlü bir klinik gerekçe oluşturur. C. trachomatis zorunlu hücre içi bakteridir ve nongonokokal üretritin en önemli nedenlerinden biridir. Diğer seçenekler, özellikle Neisseria gonorrhoeae, bu bulgu-mekanizma eşleşmesini aynı bütünlükte açıklamaz.",
@@ -89364,11 +89364,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kongo kırmızısı ile elma yeşili çift kırılma",
       "options": [
-        "Kongo kırmızısı ile elma yeşili çift kırılma",
         "Gram boyamada gram-negatif diplokok",
         "Ziehl-Neelsen ile aside dirençli basil",
         "PAS negatif tamamen boş glomerüller",
-        "Masson trikrom ile yalnız kalsifikasyon"
+        "Masson trikrom ile yalnız kalsifikasyon",
+        "Kongo kırmızısı ile elma yeşili çift kırılma"
       ],
       "question": "Uzun süreli romatoid artrit ve nefrotik proteinürisi olan hastada böbrekte biriken amiloid materyal için en karakteristik histokimyasal bulgu hangisidir?",
       "explanation": "Kronik inflamasyon zemininde AA amiloid birikimi nefrotik proteinüri yapabilir; Kongo kırmızısı ile boyanıp polarize ışıkta elma yeşili çift kırılma gösterir.",
@@ -89602,8 +89602,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntestinal tip mide adenokarsinomu",
       "options": [
-        "İntestinal tip mide adenokarsinomu",
         "Hepatoselüler karsinom",
+        "İntestinal tip mide adenokarsinomu",
         "Papiller tiroid karsinomu",
         "Renal hücreli karsinom",
         "Osteosarkom"
@@ -89984,10 +89984,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Ektopik antidiüretik hormon salgısı",
       "options": [
-        "Ektopik antidiüretik hormon salgısı",
         "Ektopik eritropoietin salgısı",
         "Paratiroid hormon benzeri peptid salgısı",
         "İnsülin reseptör blokajı",
+        "Ektopik antidiüretik hormon salgısı",
         "Aldosteron yıkımının artması"
       ],
       "question": "Yoğun sigara öyküsü, küçük hücreli nöroendokrin akciğer tümörü ve hipotonik hiponatremi bulunan hastada hiponatreminin en olası paraneoplastik mekanizması hangisidir?",
@@ -90363,9 +90363,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "N-asetilsistein",
       "options": [
-        "N-asetilsistein",
         "Flumazenil",
         "Nalokson",
+        "N-asetilsistein",
         "Protamin sülfat",
         "Atropin"
       ],
@@ -90682,11 +90682,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Heparini kesip heparin dışı antikoagülan başlamak",
       "options": [
-        "Heparini kesip heparin dışı antikoagülan başlamak",
         "Heparin dozunu artırmak",
         "Trombosit transfüzyonu yapıp heparine devam etmek",
         "Varfarini tek başına hemen başlamak",
-        "Heparini kesip antikoagülasyonu trombositler normale dönene kadar tamamen durdurmak"
+        "Heparini kesip antikoagülasyonu trombositler normale dönene kadar tamamen durdurmak",
+        "Heparini kesip heparin dışı antikoagülan başlamak"
       ],
       "question": "Heparin sonrası trombosit düşüşü ve yeni bacak trombozu gelişen bu hastada en uygun yaklaşım hangisidir?",
       "explanation": "Heparin ilişkili trombositopeni, PF4-heparin kompleksine karşı antikorların trombosit aktivasyonu oluşturmasıyla gelişir. Bu nedenle trombosit sayısı düşerken tromboz riski artar. Tedavi heparini kesmek ve argatroban, bivalirudin veya fondaparinuks gibi heparin dışı antikoagülanla devam etmektir.",
@@ -90932,8 +90932,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Muskarinik M2 reseptörleri bloke etmesi",
       "options": [
-        "Muskarinik M2 reseptörleri bloke etmesi",
         "Beta-1 reseptörleri irreversibl bloke etmesi",
+        "Muskarinik M2 reseptörleri bloke etmesi",
         "Nikotinik reseptörleri sürekli aktive etmesi",
         "Adenozin reseptörlerini aktive etmesi",
         "Potasyum kanallarını kalıcı açması"
@@ -91261,10 +91261,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Geniş spektrumlu antibiyotik ve acil cerrahi debridman",
       "options": [
-        "Geniş spektrumlu antibiyotik ve acil cerrahi debridman",
         "İntravenöz antibiyotiği tek başına kullanıp debridmanı görüntüleme sonucuna göre ertelemek",
         "Kontrastlı görüntüleme ve kültür sonucuyla debridman kararını kesinleştirmek",
         "Ağrı kesici verip 48 saat sonra kontrol etmek",
+        "Geniş spektrumlu antibiyotik ve acil cerrahi debridman",
         "Lokal steroidli krem başlamak"
       ],
       "question": "Diyabetik hastada hızlı ilerleyen, orantısız ağrı, toksisite, krepitasyon, laktat yüksekliği ve yumuşak dokuda gaz ile seyreden tabloda en uygun acil yaklaşım hangisidir?",
@@ -91575,9 +91575,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Fleksibl sigmoidoskopi ile endoskopik detorsiyon",
       "options": [
-        "Fleksibl sigmoidoskopi ile endoskopik detorsiyon",
         "Peritonit yokken acil total kolektomi yapmak",
         "Rektal tüp ve laksatifle endoskopi olmadan detorsiyon denemek",
+        "Fleksibl sigmoidoskopi ile endoskopik detorsiyon",
         "Nazogastrik dekompresyonla endoskopik detorsiyonu ertelemek",
         "Kolonoskopi veya cerrahi olmadan uzun süre izlem"
       ],
@@ -91835,11 +91835,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Ultrason eşliğinde ince iğne aspirasyon biyopsisi",
       "options": [
-        "Ultrason eşliğinde ince iğne aspirasyon biyopsisi",
         "Yıllık takip ve ileri işlem yapmama",
         "Düşük TSH olmamasına rağmen öncelikli tiroid sintigrafisi isteme",
         "Acil radyoaktif iyot ablasyonu",
-        "Antibiyotik tedavisi başlama"
+        "Antibiyotik tedavisi başlama",
+        "Ultrason eşliğinde ince iğne aspirasyon biyopsisi"
       ],
       "question": "Normal TSH değeri olan, 1.5 cm solid hipoekoik, düzensiz sınırlı ve mikrokalsifikasyon içeren tiroid nodülü bulunan bu hastada en uygun sonraki tanısal yaklaşım hangisidir?",
       "explanation": "Normal TSH ve yüksek şüpheli USG özellikleri olan 1.5 cm tiroid nodülünde sonraki tanısal basamak ultrason eşliğinde ince iğne aspirasyon biyopsisidir. Sintigrafi özellikle TSH düşükse hiperfonksiyone nodül ayrımı için kullanılır.",
@@ -92064,11 +92064,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Mol hidatiform",
       "options": [
-        "Mol hidatiform",
         "Ektopik gebelik",
         "Normal intrauterin gebelik",
         "Plasenta previa",
-        "Over torsiyonu"
+        "Over torsiyonu",
+        "Mol hidatiform"
       ],
       "question": "Erken gebelikte vajinal kanama, aşırı bulantı-kusma, gebelik haftasına göre büyük uterus ve çok yüksek beta-hCG olan bu hastada en olası tanı hangisidir?",
       "explanation": "Gebeliğin 10. haftasında belirgin bulantı-kusma ve vajinal kanama trofoblastik hastalık olasılığını artırır. Uterusun gebelik haftasına göre büyük palpe edilmesi molar gebelik lehinedir. Bu bulgu örüntüsü Mol hidatiform lehine güçlü bir klinik gerekçe oluşturur. Erken gebelikte vajinal kanama, gebelik haftasına göre büyük uterus, aşırı bulantı-kusma ve çok yüksek beta-hCG molar gebeliği düşündürür. Ayırıcı değerlendirmede Ektopik gebelik, bu olgudaki temel bulgu birlikteliğini veya acil tedavi önceliğini aynı bütünlükte açıklamaz.",
@@ -92297,8 +92297,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Yatış, antenatal kortikosteroid, antibiyotik ve yakın izlem",
       "options": [
-        "Yatış, antenatal kortikosteroid, antibiyotik ve yakın izlem",
         "Dijital vajinal muayeneleri sık tekrarlamak",
+        "Yatış, antenatal kortikosteroid, antibiyotik ve yakın izlem",
         "Ateş ve fetal distres olmadığı için ayaktan izlem planlamak",
         "Acil doğum indüksiyonu ve rutin histerektomi",
         "Yüksek doz metotreksat tedavisi"
@@ -92536,10 +92536,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Over hiperstimülasyon sendromu",
       "options": [
-        "Over hiperstimülasyon sendromu",
         "Plasenta previa",
         "Ablatio plasenta",
         "Endometrial polip",
+        "Over hiperstimülasyon sendromu",
         "Servisit"
       ],
       "question": "Ovulasyon indüksiyonu ve hCG tetiklemesi sonrası karın distansiyonu, dispne, hemokonsantrasyon ve büyümüş overleri olan bu hastada en olası tanı hangisidir?",
@@ -92836,9 +92836,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz immünglobulin",
       "options": [
-        "İntravenöz immünglobulin",
         "Yüksek doz oral kortikosteroid",
         "Ampirik antibiyotikle ayaktan izlem",
+        "İntravenöz immünglobulin",
         "Levodopa tedavisi",
         "Sadece analjezi ve poliklinik kontrol"
       ],
@@ -93147,11 +93147,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi",
       "options": [
-        "Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi",
         "Topikal tedavi ve debridmanla sistemik antipseudomonal tedaviyi kültür sonucuna bırakmak",
         "Topikal kinolon damla ve kültür sonucuna göre sistemik tedavi planlamak",
         "Acil tonsillektomi",
-        "Steroidli kremle tek başına tedavi"
+        "Steroidli kremle tek başına tedavi",
+        "Antipseudomonal sistemik antibiyotik ve yakın KBB izlemi"
       ],
       "question": "Kötü kontrollü diyabet, şiddetli gece otaljisi, dış kulak yolunda granülasyon ve fasiyal zayıflık olan bu hastada en uygun yaklaşım hangisidir?",
       "explanation": "Diyabetik hastada dirençli şiddetli otalji, dış kulak yolunda granülasyon, kötü kokulu akıntı ve kraniyal sinir bulgusu malign eksternal otiti düşündürür. Pseudomonas riski nedeniyle sistemik antipseudomonal antibiyotik ve yakın KBB izlemi gerekir.",
@@ -93396,8 +93396,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Skafoid kırığı gibi kabul edip başparmak destekli immobilizasyon ve kontrol görüntüleme planlamak",
       "options": [
-        "Skafoid kırığı gibi kabul edip başparmak destekli immobilizasyon ve kontrol görüntüleme planlamak",
         "Grafi normal olduğu için immobilizasyon yapmadan kontrol görüntülemeyi semptom sürerse planlamak",
+        "Skafoid kırığı gibi kabul edip başparmak destekli immobilizasyon ve kontrol görüntüleme planlamak",
         "Acil karpal tünel cerrahisi yapmak",
         "Antibiyotik başlamak",
         "Bileği zorlayıcı egzersizlere hemen başlamak"
@@ -95889,11 +95889,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Spina ischiadica",
       "options": [
-        "Spina ischiadica",
         "Tuber ischiadicum",
         "Spina iliaca anterior superior",
         "Tuberculum pubicum",
-        "Os coccygis"
+        "Os coccygis",
+        "Spina ischiadica"
       ],
       "question": "Transvajinal pudendal sinir bloğunda palpasyonla hedeflenen en önemli kemik işaret noktası hangisidir?",
       "explanation": "Spina ischiadica pudendal sinirin sakrospinöz ligament komşuluğunda geçtiği düzey için palpasyon işaretidir. Doğumda perineal analjezi amacıyla yapılan pudendal blokta hedeflenen kritik landmark budur. Vakadaki kritik ipuçları birlikte değerlendirildiğinde anatomik lokalizasyon bu yapıya yönelir.",
@@ -99924,9 +99924,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Ülseratif kolit",
       "options": [
-        "Ülseratif kolit",
         "Crohn hastalığı",
         "İskemik kolit",
+        "Ülseratif kolit",
         "Pseudomembranöz kolit",
         "İrritabl bağırsak sendromu"
       ],
@@ -100207,11 +100207,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Aschoff cisimciği",
       "options": [
-        "Aschoff cisimciği",
         "Kazeifiye granülom",
         "Psammoma cisimciği",
         "Mallory-Denk cisimciği",
-        "Councilman cisimciği"
+        "Councilman cisimciği",
+        "Aschoff cisimciği"
       ],
       "question": "Tedavi edilmemiş streptokok farenjiti sonrası gezici poliartrit, yeni üfürüm, yüksek ASO ve kardit bulguları olan hastada karakteristik kardiyak histopatolojik lezyon hangisidir?",
       "explanation": "Akut romatizmal ateşte karditte Anitschkow hücreleri içeren Aschoff cisimcikleri görülür; mekanizma streptokok antijenlerine karşı çapraz reaksiyon gösteren immün yanıttır.",
@@ -100808,10 +100808,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek",
       "options": [
-        "İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek",
         "Vancomycin dozunu hızla artırmak",
         "Protamin sülfat uygulamak",
         "Vitamin K vermek",
+        "İnfüzyonu yavaşlatmak ve gerekirse antihistaminik vermek",
         "İnsülin infüzyonu başlamak"
       ],
       "question": "Vancomycin infüzyonu sırasında yüz-boyun kızarması ve kaşıntı gelişen, anafilaksi bulgusu olmayan bu hastada en uygun yaklaşım hangisidir?",
@@ -101084,9 +101084,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Clozapine tedavisini kesmek ve enfeksiyon-nötropeni yönetimi başlatmak",
       "options": [
-        "Clozapine tedavisini kesmek ve enfeksiyon-nötropeni yönetimi başlatmak",
         "Clozapine dozunu iki katına çıkarmak",
         "Clozapine dozunu azaltıp mutlak nötrofil sayısını 24 saat sonra yeniden değerlendirmek",
+        "Clozapine tedavisini kesmek ve enfeksiyon-nötropeni yönetimi başlatmak",
         "Varfarin başlamak",
         "Metotreksat vermek"
       ],
@@ -101342,11 +101342,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Ksantin oksidaz inhibisyonu",
       "options": [
-        "Ksantin oksidaz inhibisyonu",
         "Siklooksijenaz irreversibl inhibisyonu",
         "Dihidrofolat redüktaz inhibisyonu",
         "Beta-1 reseptör blokajı",
-        "H/K ATPaz inhibisyonu"
+        "H/K ATPaz inhibisyonu",
+        "Ksantin oksidaz inhibisyonu"
       ],
       "question": "Tekrarlayan gut atakları olan bu hastada allopurinolün ürik asit düzeyini azaltan temel mekanizması hangisidir?",
       "explanation": "Allopurinol, hipoksantin ve ksantinin ürik aside dönüşümünü katalizleyen ksantin oksidazı inhibe eder. Böylece ürik asit üretimi azalır ve tekrarlayan gut ataklarının uzun dönem önlenmesinde kullanılır; akut atağın analjezik tedavisiyle karıştırılmamalıdır.",
@@ -102257,9 +102257,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Endometriozis",
       "options": [
-        "Endometriozis",
         "Servikal polip",
         "Alt uterin segment plasenta yerleşimi",
+        "Endometriozis",
         "Over hiperstimülasyon sendromu",
         "Vajinal kandidiyazis"
       ],
@@ -102481,11 +102481,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Servikal serklaj değerlendirilmesi",
       "options": [
-        "Servikal serklaj değerlendirilmesi",
         "Metotreksat başlanması",
         "Acil histerektomi",
         "Dijital muayenelerin sık tekrarlanması",
-        "Uterin masaj yapılması"
+        "Uterin masaj yapılması",
+        "Servikal serklaj değerlendirilmesi"
       ],
       "question": "Ağrısız ikinci trimester kayıp öyküsü ve bu gebelikte kısa/açılan serviks saptanan hastada en uygun yaklaşım hangisidir?",
       "explanation": "Önceki gebelikte ağrısız ikinci trimester kayıp servikal yetmezlik için güçlü ipucudur. 18. haftada kontraksiyon veya enfeksiyon olmadan servikal kısalma/açılma saptanması tanıyı destekler. Bu bulgu örüntüsü Servikal serklaj değerlendirilmesi lehine güçlü bir klinik gerekçe oluşturur. Ağrısız ikinci trimester gebelik kaybı öyküsü ve mevcut gebelikte kontraksiyonsuz servikal kısalma/açılma servikal yetmezliği düşündürür. Ayırıcı değerlendirmede Metotreksat başlanması, bu olgudaki temel bulgu birlikteliğini veya acil tedavi önceliğini aynı bütünlükte açıklamaz.",
@@ -102958,10 +102958,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Myastenia gravis",
       "options": [
-        "Myastenia gravis",
         "Lambert-Eaton myastenik sendromu",
         "Parkinson hastalığı",
         "Amyotrofik lateral skleroz",
+        "Myastenia gravis",
         "Okülomotor sinir paralizisi"
       ],
       "question": "Sabah hafif, gün içinde artan pitoz, diplopi ve çiğneme yorgunluğu; korunmuş duyu-refleks ve anti-AChR pozitifliği olan bu hastada en olası tanı hangisidir?",
@@ -103225,9 +103225,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi",
       "options": [
-        "Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi",
         "Topikal antiviral damla ile sistemik tedaviyi göz değerlendirmesi sonrasına bırakmak",
         "Alerji testi sonucu izlem planlamak",
+        "Sistemik antiviral tedavi ve acil göz hastalıkları değerlendirmesi",
         "Oral antibiyotikle tek başına tedavi",
         "Topikal antiviral ile başlayıp oftalmoloji değerlendirmesini korneal bulgu gelişirse planlamak"
       ],
@@ -103492,11 +103492,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Mani atağı",
       "options": [
-        "Mani atağı",
         "Panik bozukluk",
         "Major depresif epizod",
         "Somatizasyon bozukluğu",
-        "Deliryum"
+        "Deliryum",
+        "Mani atağı"
       ],
       "question": "Bir haftadır azalmış uyku ihtiyacına rağmen enerji artışı, basınçlı konuşma, grandiyözite ve riskli harcamalar yapan bu hastada en olası tanı hangisidir?",
       "explanation": "Azalmış uyku ihtiyacı, taşkın/irritabl duygudurum, basınçlı konuşma, grandiyözite, psikomotor aktivite artışı ve riskli davranışlar mani atağıyla uyumludur. Bilinç dalgalanması ve yönelim bozukluğu olmaması deliryumu geri plana iter.",
@@ -103743,9 +103743,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Abdusens siniri",
       "options": [
+        "Abdusens siniri",
         "Okulomotor sinir",
         "Troklear sinir",
-        "Abdusens siniri",
         "N. ophthalmicus",
         "N. maxillaris"
       ],
@@ -111953,11 +111953,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntramüsküler adrenalin uygulamak",
       "options": [
-        "İntramüsküler adrenalin uygulamak",
         "Antihistaminik temelli semptomatik tedaviyle yetinmek",
         "Nebülize salbutamol ve antihistaminik yanıtına göre adrenalini ikinci basamakta düşünmek",
         "İnhale bronkodilatör ve antihistaminik sonrası hipotansiyonun seyrine göre adrenalin kararını vermek",
-        "Oral antibiyotik başlamak"
+        "Oral antibiyotik başlamak",
+        "İntramüsküler adrenalin uygulamak"
       ],
       "question": "Bu çocukta ilk uygulanması gereken hayat kurtarıcı tedavi aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada alerjen maruziyeti sonrası hızlı başlayan ürtiker/mukozal bulgu, solunum sıkıntısı ve dolaşım etkilenimi birlikte değerlendirilince temel karar İntramüsküler adrenalin uygulamak yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü anafilaksi için doğru tanı/tedavi önceliğini belirler.",
@@ -112270,8 +112270,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Uygun yoldan benzodiazepin vermek",
       "options": [
-        "Uygun yoldan benzodiazepin vermek",
         "Oral fenitoin tablet başlamak",
+        "Uygun yoldan benzodiazepin vermek",
         "Antipiretik tedaviyle nöbet kontrolünü izlemek",
         "Kültür sonucuna göre antimikrobiyal tedavi planlamak",
         "Ketojenik diyeti acil serviste başlatmak"
@@ -112587,10 +112587,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nebül adrenalin ve sistemik deksametazon uygulamak",
       "options": [
-        "Nebül adrenalin ve sistemik deksametazon uygulamak",
         "Oral hidrasyon ve soğuk buharla stridorun seyrine göre nebulize adrenalin kararını vermek",
         "Nebülize salbutamol ve antibiyotik yanıtına göre üst hava yolu tedavisini planlamak",
         "Acil tonsillektomi yapmak",
+        "Nebül adrenalin ve sistemik deksametazon uygulamak",
         "Antitüberküloz tedaviyi ampirik başlangıç yaklaşımı olarak kullanmak"
       ],
       "question": "Bu çocukta en uygun acil tedavi aşağıdakilerden hangisidir?",
@@ -112901,9 +112901,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak",
       "options": [
-        "Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak",
         "Dil basacağıyla orofarenksi ayrıntılı muayene etmek",
         "Çocuğu ağlatarak daha iyi ağız muayenesi yapmak",
+        "Acil hava yolu ekibini çağırıp kontrollü entübasyon hazırlığı yapmak",
         "Kan kültürü alıp intravenöz antibiyotiği hava yolu ekibi hazırlanmadan başlatmak",
         "Antipiretik tedaviyle klinik izlemi sürdürmek"
       ],
@@ -113137,11 +113137,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz veya intraosseöz izotonik kristalloid bolusu vermek",
       "options": [
-        "İntravenöz veya intraosseöz izotonik kristalloid bolusu vermek",
         "Oral rehidratasyon sıvısını küçük yudumlarla denemek",
         "Loperamid başlamak",
         "Sıvı alımını kısıtlamak",
-        "Probiyotik ve oral hidrasyonla destek tedavisi planlamak"
+        "Probiyotik ve oral hidrasyonla destek tedavisi planlamak",
+        "İntravenöz veya intraosseöz izotonik kristalloid bolusu vermek"
       ],
       "question": "Bu çocukta ilk resüsitasyon tedavisi aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum birlikte değerlendirilince temel karar İntravenöz veya intraosseöz izotonik kristalloid bolusu vermek yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü pediatrik sepsis veya septik şok için doğru tanı/tedavi önceliğini belirler.",
@@ -113539,8 +113539,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İzotonik sıvı tedavisi başlamak, potasyumu izlemek ve insülini dikkatli planlamak",
       "options": [
-        "İzotonik sıvı tedavisi başlamak, potasyumu izlemek ve insülini dikkatli planlamak",
         "Yüksek doz insülini bolus şeklinde hemen uygulamak",
+        "İzotonik sıvı tedavisi başlamak, potasyumu izlemek ve insülini dikkatli planlamak",
         "Rutin bikarbonat verip insülin-sıvı tedavisini pH yanıtına göre başlamak",
         "Oral antidiyabetik başlamak",
         "Diüretik vererek glukozu düşürmek"
@@ -113942,10 +113942,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz kalsiyum glukonat uygulamak",
       "options": [
-        "İntravenöz kalsiyum glukonat uygulamak",
         "Oral potasyum replasmanı yapmak",
         "Potasyum bağlayıcı reçine verip kardiyak membran stabilizasyonunu potasyum düşmezse uygulamak",
         "Beta bloker başlamak",
+        "İntravenöz kalsiyum glukonat uygulamak",
         "Potasyumdan zengin diyet önermek"
       ],
       "question": "Bu çocukta ilk acil tedavi aşağıdakilerden hangisidir?",
@@ -114256,9 +114256,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak",
       "options": [
-        "Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak",
         "Antihistaminik temelli semptomatik tedaviyle yetinmek",
         "Solunum egzersiziyle semptom kontrolü sağlamaya çalışmak",
+        "Oksijen, tekrarlayan kısa etkili beta-agonist, ipratropium ve sistemik kortikosteroid uygulamak",
         "Kültür sonucuna göre antimikrobiyal tedavi planlamak",
         "Tek doz kısa etkili beta-agonist sonrası tedaviyi kültür sonucuna göre daraltmak"
       ],
@@ -114571,11 +114571,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz dekstroz tedavisi başlamak",
       "options": [
-        "İntravenöz dekstroz tedavisi başlamak",
         "İnsülin uygulamak",
         "Su vermek",
         "Enteral beslenmeyle yanıtı izleyip intravenöz dekstrozu semptom sürerse başlamak",
-        "Oral antibiyotik vermek"
+        "Oral antibiyotik vermek",
+        "İntravenöz dekstroz tedavisi başlamak"
       ],
       "question": "Bu yenidoğanda en uygun acil tedavi aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada nöbet, jitteriness, beslenme bozulması veya bilinç değişikliğiyle birlikte düşük glukoz birlikte değerlendirilince temel karar İntravenöz dekstroz tedavisi başlamak yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü semptomatik hipoglisemi için doğru tanı/tedavi önceliğini belirler.",
@@ -115060,8 +115060,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Hemolitik üremik sendrom",
       "options": [
-        "Hemolitik üremik sendrom",
         "İmmün trombositopeni",
+        "Hemolitik üremik sendrom",
         "Nefrotik sendrom",
         "Akut romatizmal ateş",
         "Viral gastroenterit sonrası basit dehidratasyon"
@@ -115385,10 +115385,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kan kültürü alıp ampirik intravenöz antibiyotik tedavisini geciktirmeden başlamak",
       "options": [
-        "Kan kültürü alıp ampirik intravenöz antibiyotik tedavisini geciktirmeden başlamak",
         "Klinik stabiliteye dayanarak antibiyotiği lomber ponksiyon sonucuna göre başlamak",
         "Analjezi ve antipiretikle meningeal bulguları seri muayenede izlemek",
         "Aşı kayıtları bulunana kadar tedavi vermemek",
+        "Kan kültürü alıp ampirik intravenöz antibiyotik tedavisini geciktirmeden başlamak",
         "Antihistaminik temelli semptomatik tedaviyle yetinmek"
       ],
       "question": "Bu çocukta en uygun acil yaklaşım aşağıdakilerden hangisidir?",
@@ -116024,9 +116024,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Deferoksamin ile demir şelasyonu",
       "options": [
-        "Deferoksamin ile demir şelasyonu",
         "Aktif kömür uygulaması",
         "N-asetilsistein ile glutatyon yenilenmesi",
+        "Deferoksamin ile demir şelasyonu",
         "Nalokson ile opioid reseptör antagonizması",
         "Sodyum bikarbonat ile sodyum kanal blokajının düzeltilmesi"
       ],
@@ -116417,11 +116417,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Rijid bronkoskopi",
       "options": [
-        "Rijid bronkoskopi",
         "Planlı alerji testi",
         "Antitussif semptomatik tedavi",
         "Kontrol tedavisi olarak astım tedavisi başlamak",
-        "Bronkodilatör yanıtını izleyip bronkoskopiyi dirençli hışıltıya saklamak"
+        "Bronkodilatör yanıtını izleyip bronkoskopiyi dirençli hışıltıya saklamak",
+        "Rijid bronkoskopi"
       ],
       "question": "Bu çocukta en uygun tanısal ve tedavi edici yaklaşım aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada hışıltı, uzamış ekspiryum, konuşmada zorlanma ve oksijen ihtiyacı birlikte değerlendirilince temel karar Rijid bronkoskopi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü akut astım atağı için doğru tanı/tedavi önceliğini belirler.",
@@ -116742,8 +116742,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Eklem aspirasyonu alıp ampirik intravenöz antibiyotik başlamak",
       "options": [
-        "Eklem aspirasyonu alıp ampirik intravenöz antibiyotik başlamak",
         "İstirahat ve erken poliklinik kontrolüyle izlem planlamak",
+        "Eklem aspirasyonu alıp ampirik intravenöz antibiyotik başlamak",
         "Ağrı azalıncaya kadar fizik tedavi egzersizi yaptırmak",
         "Kan kültürü sonucuna göre eklem aspirasyonunu klinik yanıt olmazsa planlamak",
         "Oral antihistaminik vermek"
@@ -117066,10 +117066,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kan kültürü alıp ampirik intravenöz antibiyotik ve destek tedavisi başlamak",
       "options": [
-        "Kan kültürü alıp ampirik intravenöz antibiyotik ve destek tedavisi başlamak",
         "Termal stabilizasyon ve beslenme desteği sağlayıp antibiyotiği kültür sonucuna göre başlamak",
         "Seri vital izlemle enfeksiyon tedavisini klinik kötüleşme olursa başlamak",
         "Termal stabilizasyon ve beslenme desteğiyle antibiyotiği kültür sonucuna göre başlamak",
+        "Kan kültürü alıp ampirik intravenöz antibiyotik ve destek tedavisi başlamak",
         "Oral antihistaminik vermek"
       ],
       "question": "Bu yenidoğanda en uygun acil yaklaşım aşağıdakilerden hangisidir?",
@@ -117424,9 +117424,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Konjenital hipotiroidi",
       "options": [
-        "Konjenital hipotiroidi",
         "Neonatal hipertiroidi",
         "Konjenital adrenal hiperplazi",
+        "Konjenital hipotiroidi",
         "Fenilketonüri",
         "Galaktozemi"
       ],
@@ -117837,11 +117837,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Minimal değişiklik hastalığı",
       "options": [
-        "Minimal değişiklik hastalığı",
         "Alport sendromu",
         "Membranoproliferatif glomerülonefrit",
         "Akut interstisyel nefrit",
-        "Renal taş hastalığı"
+        "Renal taş hastalığı",
+        "Minimal değişiklik hastalığı"
       ],
       "question": "Bu yaş grubunda bu tablonun en olası nedeni aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada periorbital ödem, masif proteinüri, hipoalbüminemi ve hiperlipidemi birlikte değerlendirilince temel karar Minimal değişiklik hastalığı yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü minimal değişiklik hastalığına bağlı nefrotik sendrom için doğru tanı/tedavi önceliğini belirler.",
@@ -118204,8 +118204,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "IgA vasküliti",
       "options": [
-        "IgA vasküliti",
         "İmmün trombositopeni",
+        "IgA vasküliti",
         "Kızamık",
         "İlaç ürtikeri",
         "Akut lenfadenit"
@@ -118606,10 +118606,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz immünglobulin ve aspirin tedavisi",
       "options": [
-        "İntravenöz immünglobulin ve aspirin tedavisi",
         "Ekokardiyografi sonucuna göre intravenöz immünglobulini koroner tutulum saptanırsa başlamak",
         "Antifungal tedaviyle mukokutanöz bulguları izlemek",
         "Acil apendektomi",
+        "İntravenöz immünglobulin ve aspirin tedavisi",
         "Antihistaminik tedavi"
       ],
       "question": "Bu çocukta koroner arter komplikasyonu riskini azaltmak için en uygun tedavi aşağıdakilerden hangisidir?",
@@ -118932,9 +118932,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "21-hidroksilaz eksikliğine bağlı konjenital adrenal hiperplazi",
       "options": [
-        "21-hidroksilaz eksikliğine bağlı konjenital adrenal hiperplazi",
         "Konjenital hipotiroidi",
         "Turner sendromu",
+        "21-hidroksilaz eksikliğine bağlı konjenital adrenal hiperplazi",
         "Santral diyabetes insipidus",
         "Hipofosfatazik raşitizm"
       ],
@@ -119339,11 +119339,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kistik fibrozis",
       "options": [
-        "Kistik fibrozis",
         "Çölyak hastalığı",
         "Laktoz intoleransı",
         "Primer siliyer diskinezi",
-        "Selektif IgA eksikliği"
+        "Selektif IgA eksikliği",
+        "Kistik fibrozis"
       ],
       "question": "Bu çocukta en olası tanı aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada tekrarlayan solunum enfeksiyonu, yağlı dışkı, büyüme geriliği ve ter klorür yüksekliği birlikte değerlendirilince temel karar Kistik fibrozis yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü kistik fibrozis için doğru tanı/tedavi önceliğini belirler.",
@@ -119708,8 +119708,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Biliyer atrezi",
       "options": [
-        "Biliyer atrezi",
         "Fizyolojik yenidoğan sarılığı",
+        "Biliyer atrezi",
         "Anne sütü sarılığı",
         "Gilbert sendromu",
         "ABO uygunsuzluğuna bağlı hemoliz"
@@ -120034,10 +120034,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "D vitamini eksikliği raşitizmi",
       "options": [
-        "D vitamini eksikliği raşitizmi",
         "Skorbüt",
         "Akondroplazi",
         "Osteopetrozis",
+        "D vitamini eksikliği raşitizmi",
         "Hipofiz gigantizmi"
       ],
       "question": "Bu çocukta en olası tanı aşağıdakilerden hangisidir?",
@@ -120393,9 +120393,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Azitromisin tedavisi",
       "options": [
-        "Azitromisin tedavisi",
         "Acyclovir tedavisi",
         "Amfoterisin B tedavisi",
+        "Azitromisin tedavisi",
         "Albendazol tedavisi",
         "Oseltamivir tedavisi"
       ],
@@ -120762,11 +120762,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Akut lenfoblastik lösemi",
       "options": [
-        "Akut lenfoblastik lösemi",
         "Demir eksikliği anemisi",
         "İmmün trombositopeni",
         "Talassemi taşıyıcılığı",
-        "Vitamin D eksikliği"
+        "Vitamin D eksikliği",
+        "Akut lenfoblastik lösemi"
       ],
       "question": "Bu çocukta en olası tanı aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada solukluk, morarma, kemik ağrısı, hepatosplenomegali ve blast varlığı birlikte değerlendirilince temel karar Akut lenfoblastik lösemi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü akut lenfoblastik lösemi için doğru tanı/tedavi önceliğini belirler.",
@@ -121132,8 +121132,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri",
       "options": [
-        "Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri",
         "Acil karın ameliyatı",
+        "Aileyi bilgilendirme, rahatlatma ve güvenli destekleyici bakım önerileri",
         "Geniş spektrumlu antibiyotik başlamak",
         "Gastroözofageal reflü için ampirik proton pompa inhibitörü başlamak",
         "Kontrol tedavisi olarak sedatif tedavi başlamak"
@@ -121537,10 +121537,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Çölyak hastalığı",
       "options": [
-        "Çölyak hastalığı",
         "Laktoz intoleransı",
         "Akut viral gastroenterit",
         "İnfantil kolik",
+        "Çölyak hastalığı",
         "Fonksiyonel kabızlık"
       ],
       "question": "Bu çocukta en olası tanı aşağıdakilerden hangisidir?",
@@ -121974,9 +121974,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Oksijen desteği, nazal aspirasyon ve hidrasyonun sağlanması",
       "options": [
+        "Oksijen desteği, nazal aspirasyon ve hidrasyonun sağlanması",
         "İnhale kortikosteroidi kontrol tedavisi olarak başlamak",
         "Rutin geniş spektrumlu intravenöz antibiyotik başlamak",
-        "Oksijen desteği, nazal aspirasyon ve hidrasyonun sağlanması",
         "Sistemik kortikosteroidi rutin başlangıç tedavisi olarak kullanmak",
         "Antitussif ve bronkodilatörle nazal aspirasyon-hidrasyon desteğini klinik yanıta göre ikinci basamakta değerlendirmek"
       ],
@@ -122105,9 +122105,9 @@ export const rawCases = [
       "Antitussif ve bronkodilatörle nazal aspirasyon-hidrasyon desteğini klinik yanıta göre ikinci basamakta değerlendirmek": "Bu tetkik tanısal netlik sağlayabilir; ancak pediatrik acilde tedaviyi geciktirip geciktirmeyeceği klinik önceliğe göre değerlendirilir. Ancak bu vakada hışıltı, uzamış ekspiryum, konuşmada zorlanma ve oksijen ihtiyacı akut astım atağı lehinedir; bu nedenle Antitussif ve bronkodilatörle nazal aspirasyon-hidrasyon desteğini klinik yanıta göre ikinci basamakta değerlendirmek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
     },
     "optionFeedback": {
-      "A": "Uzun süreli inhale kortikosteroid akut RSV bronşiolitinin başlangıç tedavisi değildir.",
-      "B": "Rutin antibiyotik viral bronşiolitte gerekli değildir; bakteriyel odak veya sepsis bulgusu olmadıkça gereksizdir.",
-      "C": "Oksijen desteği, nazal aspirasyon ve hidrasyon bronşiolitte hipoksemi ve beslenme yetersizliğini hedefleyen doğru başlangıç tedavisidir.",
+      "A": "Oksijen desteği, nazal aspirasyon ve hidrasyon bronşiolitte hipoksemi ve beslenme yetersizliğini hedefleyen doğru başlangıç tedavisidir.",
+      "B": "Uzun süreli inhale kortikosteroid akut RSV bronşiolitinin başlangıç tedavisi değildir.",
+      "C": "Rutin antibiyotik viral bronşiolitte gerekli değildir; bakteriyel odak veya sepsis bulgusu olmadıkça gereksizdir.",
       "D": "Sistemik steroid bronşiolit tedavisinde rutin yarar göstermez ve ilk seçenek destek tedavinin yerini tutmaz.",
       "E": "Öksürük şurubu hipoksemiyi, takipneyi ve beslenme yetersizliğini düzeltmez; küçük infantlarda güvenli de değildir."
     },
@@ -122267,9 +122267,9 @@ export const rawCases = [
       "options": [
         "Spinal müsküler atrofi tip 1",
         "Myastenia gravis",
+        "Duchenne musküler distrofisi",
         "Serebral palsi spastik dipleji",
-        "Guillain-Barré sendromu",
-        "Duchenne musküler distrofisi"
+        "Guillain-Barré sendromu"
       ],
       "question": "Bu çocukta en olası tanı aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada erkek çocukta proksimal güçsüzlük, Gowers manevrası ve CK yüksekliği birlikte değerlendirilince temel karar Duchenne musküler distrofisi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü Duchenne musküler distrofisi için doğru tanı/tedavi önceliğini belirler.",
@@ -122398,9 +122398,9 @@ export const rawCases = [
     "optionFeedback": {
       "A": "Spinal müsküler atrofi tip 1 daha erken bebeklikte ağır hipotoni ve solunum-beslenme güçlüğüyle seyreder; baldır psödohipertrofisi tipik değildir.",
       "B": "Myastenia graviste güçsüzlük dalgalanır ve oküler-bulber bulgular belirgin olabilir; CK bu kadar yüksek beklenmez.",
-      "C": "Serebral palsi spastik diplejide üst motor nöron bulguları ve spastisite beklenir; progresif CK yüksekliği tipik değildir.",
-      "D": "Guillain-Barré sendromu akut/subakut çıkan güçsüzlük ve arefleksiyle seyreder; yıllar içinde progresif baldır psödohipertrofisi yapmaz.",
-      "E": "Duchenne musküler distrofisi erkek çocukta Gowers bulgusu, baldır psödohipertrofisi ve çok yüksek kreatin kinazla en uyumlu tanıdır."
+      "C": "Duchenne musküler distrofisi erkek çocukta Gowers bulgusu, baldır psödohipertrofisi ve çok yüksek kreatin kinazla en uyumlu tanıdır.",
+      "D": "Serebral palsi spastik diplejide üst motor nöron bulguları ve spastisite beklenir; progresif CK yüksekliği tipik değildir.",
+      "E": "Guillain-Barré sendromu akut/subakut çıkan güçsüzlük ve arefleksiyle seyreder; yıllar içinde progresif baldır psödohipertrofisi yapmaz."
     },
     "shuffleOptions": false,
     "difficultyTag": "Zor",
@@ -122634,8 +122634,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Basit febril nöbet",
       "options": [
-        "Hipoglisemik nöbet",
         "Basit febril nöbet",
+        "Hipoglisemik nöbet",
         "Fokal epilepsi nöbeti",
         "Uzamış afebril epileptik nöbet",
         "Menenjit kesin tanısı"
@@ -122765,8 +122765,8 @@ export const rawCases = [
       "Menenjit kesin tanısı": "Menenjit ateş, ense sertliği ve toksik görünümle acil antibiyotik gerektirir. Ancak bu vakada 6 ay-5 yaş arasında kısa süreli jeneralize ateşli nöbet ve nörolojik normale dönüş basit febril nöbet lehinedir; bu nedenle Menenjit kesin tanısı hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
     },
     "optionFeedback": {
-      "A": "Hipoglisemik nöbet kan glukozu düşüklüğüyle klinik eksene uyar; bu çocukta glukoz normal bulunmuştur.",
-      "B": "Basit febril nöbet yaş aralığı, kısa jeneralize nöbet süresi ve nörolojik normale dönüş ile en uyumlu tanımlamadır.",
+      "A": "Basit febril nöbet yaş aralığı, kısa jeneralize nöbet süresi ve nörolojik normale dönüş ile en uyumlu tanımlamadır.",
+      "B": "Hipoglisemik nöbet kan glukozu düşüklüğüyle klinik eksene uyar; bu çocukta glukoz normal bulunmuştur.",
       "C": "Fokal epilepsi nöbetinde lokal başlangıç veya fokal nörolojik bulgular beklenir; bu nöbet jeneralizedir.",
       "D": "Uzamış afebril epileptik nöbet ateşle ilişkili kısa ve kendiliğinden sonlanan bu tabloyu açıklamaz; nöbet süresi ve bağlam basit febril nöbet lehinedir.",
       "E": "Menenjit tanısı ense sertliği, bilinç bozukluğu veya meningeal bulgularla desteklenmelidir; bu olguda kesin menenjit bulgusu yoktur."
@@ -122927,8 +122927,8 @@ export const rawCases = [
         "Üst gastrointestinal pasaj grafisi",
         "Elektroensefalografi",
         "Akciğer tomografisi",
-        "Voiding sistoüretrografi",
-        "Alerji deri testi"
+        "Alerji deri testi",
+        "Voiding sistoüretrografi"
       ],
       "question": "Tekrarlayan febril idrar yolu enfeksiyonu ve ultrason bulgusu olan bu çocukta reflü değerlendirmesi için en uygun test aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada tekrarlayan ateşli İYE, renal USG anomalisi ve reflü şüphesi birlikte değerlendirilince temel karar Voiding sistoüretrografi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü tekrarlayan febril İYE ve vezikoüreteral reflü riski için doğru tanı/tedavi önceliğini belirler.",
@@ -123058,8 +123058,8 @@ export const rawCases = [
       "A": "Üst gastrointestinal pasaj grafisi özofagus-mide-duodenum değerlendirmesine yöneliktir; üriner reflüyü göstermez.",
       "B": "Elektroensefalografi nöbet değerlendirmesinde kullanılır; üriner reflü tanısı koymaz.",
       "C": "Akciğer tomografisi üriner sistem anatomisini ve vezikoüreteral reflüyü değerlendirmez.",
-      "D": "Voiding sistoüretrografi mesane dolum ve işeme sırasında reflüyü gösterdiği için bu olguda uygun testtir.",
-      "E": "Alerji deri testi tekrarlayan febril idrar yolu enfeksiyonu ve pelvikaliektaziyi açıklamaz."
+      "D": "Alerji deri testi tekrarlayan febril idrar yolu enfeksiyonu ve pelvikaliektaziyi açıklamaz.",
+      "E": "Voiding sistoüretrografi mesane dolum ve işeme sırasında reflüyü gösterdiği için bu olguda uygun testtir."
     },
     "shuffleOptions": false,
     "difficultyTag": "Zor",
@@ -123548,9 +123548,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Nöroblastom",
       "options": [
+        "Nöroblastom",
         "Hepatoblastom",
         "Lenfanjiyom",
-        "Nöroblastom",
         "Basit fekal impaksiyon",
         "Wilms tümörü"
       ],
@@ -123679,9 +123679,9 @@ export const rawCases = [
       "Wilms tümörü": "Wilms tümörü pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada küçük çocukta abdominal kitle, kilo kaybı ve katekolamin metabolit yüksekliği nöroblastom lehinedir; bu nedenle Wilms tümörü hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
     },
     "optionFeedback": {
-      "A": "Hepatoblastom karaciğer kaynaklı kitle ve alfa-fetoprotein yüksekliğiyle klinik eksene uyar; adrenal kitle paternini açıklamaz.",
-      "B": "Lenfanjiyom kistik lenfatik malformasyondur; katekolamin metabolit yüksekliği ve adrenal solid kitle yapmaz.",
-      "C": "Nöroblastom adrenal kaynaklı kitle, sistemik bulgular ve katekolamin metabolit yüksekliğiyle en uyumlu tanıdır.",
+      "A": "Nöroblastom adrenal kaynaklı kitle, sistemik bulgular ve katekolamin metabolit yüksekliğiyle en uyumlu tanıdır.",
+      "B": "Hepatoblastom karaciğer kaynaklı kitle ve alfa-fetoprotein yüksekliğiyle klinik eksene uyar; adrenal kitle paternini açıklamaz.",
+      "C": "Lenfanjiyom kistik lenfatik malformasyondur; katekolamin metabolit yüksekliği ve adrenal solid kitle yapmaz.",
       "D": "Fekal impaksiyon kabızlıkla kitle hissi verebilir ancak heterojen adrenal kitle ve VMA/HVA yüksekliğini açıklamaz.",
       "E": "Wilms tümörü genellikle böbrek kaynaklı, daha düzgün sınırlı ve orta hattı geçmeyen kitleyle düşünülür; VMA/HVA yüksekliği beklenmez."
     },
@@ -123882,11 +123882,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Geçici kalça sinoviti",
       "options": [
+        "Geçici kalça sinoviti",
         "Legg-Calvé-Perthes hastalığı",
         "Femur şaft kırığı",
         "Osteosarkom",
-        "Septik kalça artriti",
-        "Geçici kalça sinoviti"
+        "Septik kalça artriti"
       ],
       "question": "Bu çocukta en olası tanı aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada ÜSYE sonrası hafif topallama, iyi genel durum ve sınırlı inflamasyon birlikte değerlendirilince temel karar Geçici kalça sinoviti yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü geçici kalça sinoviti için doğru tanı/tedavi önceliğini belirler.",
@@ -124013,11 +124013,11 @@ export const rawCases = [
       "Geçici kalça sinoviti": "Bu seçenek doğrudur; çünkü ÜSYE sonrası hafif topallama, iyi genel durum ve sınırlı inflamasyon geçici kalça sinoviti lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar."
     },
     "optionFeedback": {
-      "A": "Legg-Calvé-Perthes hastalığı daha kronik seyirli femur başı avasküler nekrozudur; viral sonrası kısa süreli efüzyon paternini açıklamaz.",
-      "B": "Femur şaft kırığı belirgin travma, deformite ve yük verememe ile beklenir; travma öyküsü yoktur.",
-      "C": "Osteosarkom ilerleyici kemik ağrısı ve radyolojik agresif kemik lezyonu ile düşünülür; bu olgu reaktif kalça efüzyonuna uymaktadır.",
-      "D": "Septik kalça artritinde yüksek ateş, toksik görünüm, ciddi pasif hareket ağrısı ve belirgin inflamasyon beklenir; bu olguda bunlar yoktur.",
-      "E": "Geçici kalça sinoviti viral enfeksiyon sonrası iyi görünümlü afebril çocukta hafif kalça ağrısı ve düşük inflamasyonla en uyumludur."
+      "A": "Geçici kalça sinoviti viral enfeksiyon sonrası iyi görünümlü afebril çocukta hafif kalça ağrısı ve düşük inflamasyonla en uyumludur.",
+      "B": "Legg-Calvé-Perthes hastalığı daha kronik seyirli femur başı avasküler nekrozudur; viral sonrası kısa süreli efüzyon paternini açıklamaz.",
+      "C": "Femur şaft kırığı belirgin travma, deformite ve yük verememe ile beklenir; travma öyküsü yoktur.",
+      "D": "Osteosarkom ilerleyici kemik ağrısı ve radyolojik agresif kemik lezyonu ile düşünülür; bu olgu reaktif kalça efüzyonuna uymaktadır.",
+      "E": "Septik kalça artritinde yüksek ateş, toksik görünüm, ciddi pasif hareket ağrısı ve belirgin inflamasyon beklenir; bu olguda bunlar yoktur."
     },
     "shuffleOptions": false,
     "difficultyTag": "Orta",
@@ -124172,8 +124172,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "PFAPA sendromu",
       "options": [
-        "Ailevi Akdeniz ateşi",
         "PFAPA sendromu",
+        "Ailevi Akdeniz ateşi",
         "İmmün yetmezlik",
         "Tekrarlayan streptokok tonsilliti",
         "Siklik nötropeni"
@@ -124303,8 +124303,8 @@ export const rawCases = [
       "Siklik nötropeni": "Siklik nötropeni pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada düzenli aralıklarla ateş, aftöz stomatit, farenjit ve servikal adenit atakları PFAPA sendromu lehinedir; bu nedenle Siklik nötropeni hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
     },
     "optionFeedback": {
-      "A": "Ailevi Akdeniz ateşi daha çok serozit, karın ağrısı ve kısa ateş ataklarıyla klinik eksene uyar; aftöz stomatit-farenjit-adenit üçlüsü PFAPA lehinedir.",
-      "B": "PFAPA sendromu periyodik ateş, aftöz stomatit, farenjit ve servikal adenit kombinasyonuyla en uyumlu tanıdır.",
+      "A": "PFAPA sendromu periyodik ateş, aftöz stomatit, farenjit ve servikal adenit kombinasyonuyla en uyumlu tanıdır.",
+      "B": "Ailevi Akdeniz ateşi daha çok serozit, karın ağrısı ve kısa ateş ataklarıyla klinik eksene uyar; aftöz stomatit-farenjit-adenit üçlüsü PFAPA lehinedir.",
       "C": "İmmün yetmezlikte ağır, fırsatçı veya iyileşmeyen enfeksiyonlar ve büyüme geriliği beklenebilir; çocuk atak aralarında sağlıklıdır.",
       "D": "Tekrarlayan streptokok tonsillitinde kültür pozitifliği ve antibiyotik yanıtı beklenir; bu olguda kültür negatiftir.",
       "E": "Siklik nötropenide atak sırasında nötropeni beklenir; atak arası normal kan sayımı ve klasik PFAPA bulguları daha ön plandadır."
@@ -124627,10 +124627,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Herediter sferositoz",
       "options": [
+        "Herediter sferositoz",
         "Demir eksikliği anemisi",
         "Aplastik anemi",
         "Hemofili A",
-        "Herediter sferositoz",
         "Beta talasemi taşıyıcılığı"
       ],
       "question": "Bu çocukta en olası tanı aşağıdakilerden hangisidir?",
@@ -124758,10 +124758,10 @@ export const rawCases = [
       "Beta talasemi taşıyıcılığı": "Beta talasemi taşıyıcılığı pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada sarılık, splenomegali, hemoliz ve periferik yaymada sferositler herediter sferositoz lehinedir; bu nedenle Beta talasemi taşıyıcılığı hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
     },
     "optionFeedback": {
-      "A": "Demir eksikliği anemisi genellikle mikrositoz ve düşük ferritinle seyreder; sferosit ve splenomegali tipik değildir.",
-      "B": "Aplastik anemide kemik iliği yetmezliği ve pansitopeni beklenir; hemolitik sarılık ve sferosit paternini açıklamaz.",
-      "C": "Hemofili A pıhtılaşma faktör VIII eksikliğiyle kanama eğilimi yapar; kronik hemoliz ve sferosit oluşturmaz.",
-      "D": "Herediter sferositoz kronik hemoliz, splenomegali, yüksek MCHC ve sferositlerle en uyumlu tanıdır.",
+      "A": "Herediter sferositoz kronik hemoliz, splenomegali, yüksek MCHC ve sferositlerle en uyumlu tanıdır.",
+      "B": "Demir eksikliği anemisi genellikle mikrositoz ve düşük ferritinle seyreder; sferosit ve splenomegali tipik değildir.",
+      "C": "Aplastik anemide kemik iliği yetmezliği ve pansitopeni beklenir; hemolitik sarılık ve sferosit paternini açıklamaz.",
+      "D": "Hemofili A pıhtılaşma faktör VIII eksikliğiyle kanama eğilimi yapar; kronik hemoliz ve sferosit oluşturmaz.",
       "E": "Beta talasemi taşıyıcılığı mikrositozla seyreder; yüksek MCHC ve belirgin sferositik hemoliz beklenmez."
     },
     "shuffleOptions": false,
@@ -169219,8 +169219,8 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İntravenöz hidrokortizon başlamak",
       "options": [
-        "Sıvı resüsitasyonu ve hiperkalemi tedavisiyle yetinip steroid replasmanını endokrin değerlendirmeye bırakmak",
         "İntravenöz hidrokortizon başlamak",
+        "Sıvı resüsitasyonu ve hiperkalemi tedavisiyle yetinip steroid replasmanını endokrin değerlendirmeye bırakmak",
         "Potasyum replasmanı yapmak",
         "Oral hidrokortizonla ayaktan tedavi denemek",
         "Fototerapi başlamak"
@@ -169580,10 +169580,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Acil çocuk cerrahisi değerlendirmesi ve volvulus-iskemiye yönelik hazırlık yapmak",
       "options": [
+        "Acil çocuk cerrahisi değerlendirmesi ve volvulus-iskemiye yönelik hazırlık yapmak",
         "Nazogastrik dekompresyon sonrası üst gastrointestinal pasaj değerlendirmesini elektif şartlara bırakmak",
         "Hipertrofik pilor stenozu düşünerek elektif piloromiyotomi planlamak",
         "Kontrast lavmanla invajinasyon redüksiyonu denemek",
-        "Acil çocuk cerrahisi değerlendirmesi ve volvulus-iskemiye yönelik hazırlık yapmak",
         "Gastroözofageal reflü için kıvam artırıcı beslenme başlamak"
       ],
       "question": "Bu yenidoğanda en uygun acil yaklaşım aşağıdakilerden hangisidir?",
@@ -170027,9 +170027,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Enteral beslenmeyi kesmek, nazogastrik dekompresyon yapmak, geniş spektrumlu intravenöz antibiyotik ve cerrahi izlem başlatmak",
       "options": [
+        "Enteral beslenmeyi kesmek, nazogastrik dekompresyon yapmak, geniş spektrumlu intravenöz antibiyotik ve cerrahi izlem başlatmak",
         "Enteral beslenmeyi azaltıp antibiyotiği seri grafide kötüleşme olursa başlamak",
         "Mekonyum ileusu düşünerek gastrografin lavmanını ilk ve tek tedavi olarak uygulamak",
-        "Enteral beslenmeyi kesmek, nazogastrik dekompresyon yapmak, geniş spektrumlu intravenöz antibiyotik ve cerrahi izlem başlatmak",
         "Probiyotik ve beslenme düzenlemesiyle medikal konservatif izlem yapmak",
         "Rutin fototerapi başlamak"
       ],
@@ -170441,11 +170441,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Reye sendromu",
       "options": [
+        "Reye sendromu",
         "Viral ensefalit",
         "Asetaminofen toksisitesine bağlı akut karaciğer yetmezliği",
         "Üre döngüsü defekti",
-        "Bakteriyel menenjit",
-        "Reye sendromu"
+        "Bakteriyel menenjit"
       ],
       "question": "Bu çocukta en olası tanı aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite birlikte değerlendirilince temel karar Reye sendromu yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü trisiklik antidepresan/sodyum kanal blokeri toksisitesi için doğru tanı/tedavi önceliğini belirler.",
@@ -170813,9 +170813,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "İmmün trombositopeni",
       "options": [
+        "İmmün trombositopeni",
         "Akut lösemi",
         "Hemofili A",
-        "İmmün trombositopeni",
         "Von Willebrand hastalığı",
         "Aplastik anemi"
       ],
@@ -171184,10 +171184,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Ağır kombine immün yetmezlik",
       "options": [
+        "Ağır kombine immün yetmezlik",
         "Selektif IgA eksikliği",
         "X'e bağlı agammaglobulinemi",
         "Kronik granülomatöz hastalık",
-        "Ağır kombine immün yetmezlik",
         "Wiskott-Aldrich sendromu"
       ],
       "question": "Bu bebekte en olası tanı aşağıdakilerden hangisidir?",
@@ -171590,9 +171590,9 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Retinoblastom",
       "options": [
+        "Retinoblastom",
         "Konjenital katarakt",
         "Coats hastalığı",
-        "Retinoblastom",
         "Oküler toksokariazis",
         "Persistan fetal vaskülarite"
       ],
@@ -171962,10 +171962,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Juvenil dermatomiyozit",
       "options": [
+        "Juvenil dermatomiyozit",
         "Duchenne musküler distrofisi",
         "Sistemik lupus eritematozus",
         "Juvenil idiyopatik artrit",
-        "Juvenil dermatomiyozit",
         "Metabolik miyopati"
       ],
       "question": "Bu çocukta en olası tanı aşağıdakilerden hangisidir?",
@@ -172247,10 +172247,10 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Fenilalanin hidroksilaz aktivitesinde azalma",
       "options": [
+        "Fenilalanin hidroksilaz aktivitesinde azalma",
         "Galaktoz-1-fosfat üridiltransferaz aktivitesinde azalma",
         "Branched-chain alfa-ketoasit dehidrogenaz aktivitesinde azalma",
         "Tirozin aminotransferaz aktivitesinde azalma",
-        "Fenilalanin hidroksilaz aktivitesinde azalma",
         "Heksozaminidaz A aktivitesinde azalma"
       ],
       "question": "Bu hastalıkta temel biyokimyasal bozukluk aşağıdakilerden hangisidir?",
@@ -172575,11 +172575,11 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Santral puberte prekoks",
       "options": [
+        "Santral puberte prekoks",
         "Prematür telarş",
         "Prematür adrenarş",
         "Periferik puberte prekoks",
-        "McCune-Albright sendromu",
-        "Santral puberte prekoks"
+        "McCune-Albright sendromu"
       ],
       "question": "Bu çocukta en olası tanı aşağıdakilerden hangisidir?",
       "explanation": "Bu vakada kız çocukta 8 yaşından önce ilerleyici puberte bulguları, kemik yaşı ileriliği ve pubertal LH yanıtı birlikte değerlendirilince temel karar Santral puberte prekoks yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü santral puberte prekoks için doğru tanı/tedavi önceliğini belirler.",
