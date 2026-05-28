@@ -1,0 +1,217 @@
+{
+  "timestamp": "2026-05-28T09:27:58",
+  "totalRawCases": 620,
+  "standardClinicalCasesScanned": 410,
+  "tusSpotCasesExcludedAndUntouched": 210,
+  "caseCountChanged": false,
+  "idChanged": false,
+  "tusSpotHashBefore": "6f88a8484833f6a36e185179181d37af92a7f30b882b051ebfef9922f5ed63ae",
+  "tusSpotHashAfter": "6f88a8484833f6a36e185179181d37af92a7f30b882b051ebfef9922f5ed63ae",
+  "tusSpotUntouched": true,
+  "postUpdateBadTargetRationaleCount": 0,
+  "postUpdateBadTargetRationaleExamples": [],
+  "duplicateGeneratedRationaleExactMatches": [
+    {
+      "text": "Vakada antibiyotik enjeksiyonundan 10 dakika sonra çoklu sistem bulgularının başlaması, yaygın ürtiker ve dudak ödemine hışıltı ve oksijen satürasyonunda düşmenin eşlik etmesi ve hipotansiyon ve yüksek şok indeksinin dolaşım etkilenmesini göstermesi İntramüsküler adrenalin uygulanmasını gerektirir. Anafilakside antihistaminik, steroid ve beta-2 agonist yardımcıdır; hipotansiyon veya bronkospazm varken ilk basamak intramüsküler adrenalindir. Ayırıcı tanıda antihistaminikler kaşıntı ve ürtiker kontrolünde yardımcı olabilir; buna karşılık vakadaki antibiyotik enjeksiyonundan 10 dakika sonra çoklu sistem bulgularının başlaması ve yaygın ürtiker ve dudak ödemine hışıltı ve oksijen satürasyonunda düşmenin eşlik etmesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada kronik böbrek hastalığı ve ACE inhibitörü kullanımı potasyum atılımını azaltarak hiperkalemi riskini artırması ve potasyumun 7.1 mmol/L olması ve EKG’de sivri T dalgaları/QRS genişleme eğilimi aritmi tehdidini göstermesi İntravenöz kalsiyum glukonat verilmesini gerektirir. Hiperkalemi + EKG değişikliği = ilk basamak IV kalsiyum; insülin-glukoz ve beta-agonist potasyumu düşürür ama kalsiyumun yerini tutmaz. Ayırıcı tanıda i̇nsülin-glukoz potasyumu hücre içine kaydırarak serum potasyumunu düşürür ve erken tedavinin önemli parçasıdır; buna karşılık vakadaki kronik böbrek hastalığı ve ACE inhibitörü kullanımı potasyum atılımını azaltarak hiperkalemi riskini artırması ve potasyumun 7.1 mmol/L olması ve EKG’de sivri T dalgaları/QRS genişleme eğilimi aritmi tehdidini göstermesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada yüksek ateş, ense sertliği ve bilinç bulanıklığı meningeal enfeksiyon düşündüren bulguların bulunması, basmakla solmayan purpurik döküntülerin fulminan bakteriyemi saptanması ve lökositoz (23.000/mm³) saptanması etken olarak Neisseria meningitidis’i ön plana çıkarır. Purpurik döküntü, hızlı sepsis bulguları ve meningeal irritasyon birlikteliği meningokoksemi/menenjit için ayırt edicidir. Ayırıcı tanıda Streptococcus pneumoniae düşünülebilir; buna karşılık vakadaki yüksek ateş, ense sertliği ve bilinç bulanıklığı meningeal enfeksiyon düşündüren bulguların bulunması ve basmakla solmayan purpurik döküntülerin fulminan bakteriyemi saptanması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada pozitif beta-hCG ile birlikte intrauterin gebelik kesesinin izlenmemesi, gebeliğin bilinmeyen lokalizasyonu içinde ektopik gebeliği ön plana çıkarması ve hipotansiyon, taşikardi ve senkop hissi rüptür ve intraperitoneal kanama olasılığını göstermesi Acil cerrahi eksplorasyon yaklaşımını gerektirir. Ektopik gebelikte stabilite yönetimi belirler: rüptür veya hemodinamik instabilite varsa seri beta-hCG ya da metotreksat değil, acil cerrahi ve resüsitasyon önceliklidir. Ayırıcı tanıda metotreksat, hemodinamik olarak stabil, rüptür bulgusu olmayan ve yakın izleme uygun seçilmiş ektopik gebeliklerde kullanılabilir; buna karşılık vakadaki pozitif beta-hCG ile birlikte intrauterin gebelik kesesinin izlenmemesi, gebeliğin bilinmeyen lokalizasyonu içinde ektopik gebeliği ön plana çıkarması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada defisitler 90 dakika önce aniden başlamış ve reperfüzyon penceresini gündeme getirmiştir bulunması ve afazi ve sağ hemiparezi fokal kortikal tutulumla uyumlu akut inme paternidir bulunması Kontrastsız beyin bilgisayarlı tomografisi yaklaşımını gerektirir. Tromboliz penceresindeki akut fokal defisitte MR difüzyon yararlı olabilir; ancak ilk kanama dışlama testi kontrastsız beyin BT’dir. Ayırıcı tanıda difüzyon MR erken iskemiyi göstermede çok duyarlıdır ve seçilmiş merkezlerde yararlı olabilir; buna karşılık vakadaki defisitler 90 dakika önce aniden başlamış ve reperfüzyon penceresini gündeme getirmiştir bulunması ve afazi ve sağ hemiparezi fokal kortikal tutulumla uyumlu akut inme paternidir bulunması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada ağrının periumbilikal bölgeden sağ alt kadrana göç etmesi apandisitin tipik visseral-somatik ağrı geçişini düşündürmesi ve McBurney hassasiyeti, lokal rebound ve defans sağ alt kadranda lokal periton irritasyonunu göstermesi Akut apandisit tanısını ön plana çıkarır. Sağ alt kadran ağrısı sorularında göç eden ağrı + McBurney/rebound + komprese olmayan geniş apendiks üçlüsü akut apandisiti güçlü biçimde destekler. Ayırıcı tanıda meckel divertiküliti sağ alt kadran ağrısı yapabilir ve apandisiti taklit edebilir; buna karşılık vakadaki ağrının periumbilikal bölgeden sağ alt kadrana göç etmesi apandisitin tipik visseral-somatik ağrı geçişini düşündürmesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada kapalı alanda insektisit maruziyeti öyküsü, organofosfat toksisitesi için güçlü farmakolojik bağlam oluşturması ve miyozis, bronkore, salivasyon ve bradikardi muskarinik asetilkolin fazlalığını göstermesi Asetilkolinesteraz enzimini yeniden aktive etmesi yaklaşımını gerektirir. Organofosfat zehirlenmesinde atropin muskarinik bulguları bloke eder; pralidoksim ise asetilkolinesterazı reaktive ederek özellikle nikotinik bulgular için mekanistik antidottur. Ayırıcı tanıda bu mekanizma atropine aittir; sekresyon ve bronkoreyi azaltır; buna karşılık vakadaki kapalı alanda insektisit maruziyeti öyküsü, organofosfat toksisitesi için güçlü farmakolojik bağlam oluşturması ve miyozis, bronkore, salivasyon ve bradikardi muskarinik asetilkolin fazlalığını göstermesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada gluten içeren öğünlerden sonra artan şişkinlik ve kötü kokulu dışkılama malabsorpsiyon paternini desteklemesi ve tekrarlayan demir eksikliği ve pozitif anti-tTG IgA çölyak hastalığı olasılığını güçlendirir bulunması Villus atrofisi, kript hiperplazisi ve intraepitelyal lenfosit artışı kararını ön plana çıkarır. Çölyakta yüksek getirili histoloji üçlüsü villus atrofisi, kript hiperplazisi ve intraepitelyal lenfosit artışıdır; ülseratif kolitte kript apsesi, Crohn’da transmural granülom beklenir. Ayırıcı tanıda kript apseleri ve rektumdan başlayan devamlı mukozal tutulum ülseratif koliti düşündürür; buna karşılık vakadaki gluten içeren öğünlerden sonra artan şişkinlik ve kötü kokulu dışkılama malabsorpsiyon paternini desteklemesi ve tekrarlayan demir eksikliği ve pozitif anti-tTG IgA çölyak hastalığı olasılığını güçlendirir bulunması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada düşme sonrası humerus cerrahi boyun bölgesinde kırık hattı izlenmesi nervus axillarisin komşu seyrini risk oluşturması ve omuz abdüksiyonunun 15 dereceden sonra zayıflaması deltoid kas fonksiyon kaybını göstermesi Nervus axillaris hasarını ya da anatomik lokalizasyonunu düşündürür. Humerus cerrahi boyun travması + 15 dereceden sonra abdüksiyon zayıflığı + deltoid rozet alanında duyu azalması birlikte nervus axillaris hasarını düşündürür. Ayırıcı tanıda nervus suprascapularis supraspinatus ve infraspinatus kaslarını innerve eder; omuz abdüksiyonunun başlangıcı ve dış rotasyon etkilenir; buna karşılık vakadaki düşme sonrası humerus cerrahi boyun bölgesinde kırık hattı izlenmesi nervus axillarisin komşu seyrini risk oluşturması ve omuz abdüksiyonunun 15 dereceden sonra zayıflaması deltoid kas fonksiyon kaybını göstermesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada beslenme araları uzadığında gelişen terleme ve nöbet benzeri ataklar ağır açlık hipoglisemisini düşündürmesi ve belirgin hepatomegali, karaciğerde glikojen/yağ birikimiyle giden glikojen depo hastalığı paternini desteklemesi Glukoz-6-fosfataz eksikliği mekanizmasını açıklar. Açlık hipoglisemisi + hepatomegali + laktat/ürik asit/trigliserid yüksekliği von Gierke hastalığını düşündürür; Pompe veya Cori hastalığı aynı biyokimyasal üçlüyü tipik olarak vermez. Ayırıcı tanıda karaciğer glikojen fosforilaz eksikliği glikojen yıkımını başlatan basamağı etkiler ve genellikle daha hafif ketotik hipoglisemi yapar; buna karşılık vakadaki beslenme araları uzadığında gelişen terleme ve nöbet benzeri ataklar ağır açlık hipoglisemisini düşündürmesi bu olasılığı geri plana iter.",
+      "count": 4
+    },
+    {
+      "text": "Vakada beslenme araları uzadığında gelişen terleme ve nöbet benzeri ataklar ağır açlık hipoglisemisini düşündürmesi ve belirgin hepatomegali, karaciğerde glikojen/yağ birikimiyle giden glikojen depo hastalığı paternini desteklemesi Glukoz-6-fosfataz eksikliği mekanizmasını açıklar. Açlık hipoglisemisi + hepatomegali + laktat/ürik asit/trigliserid yüksekliği von Gierke hastalığını düşündürür; Pompe veya Cori hastalığı aynı biyokimyasal üçlüyü tipik olarak vermez. Ayırıcı tanıda debranching enzyme eksikliği glikojen yıkımında dallanma noktalarının çözülmesini bozar ve GSD tip III paternine yol açar; buna karşılık vakadaki beslenme araları uzadığında gelişen terleme ve nöbet benzeri ataklar ağır açlık hipoglisemisini düşündürmesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada beslenme araları uzadığında gelişen terleme ve nöbet benzeri ataklar ağır açlık hipoglisemisini düşündürmesi ve belirgin hepatomegali, karaciğerde glikojen/yağ birikimiyle giden glikojen depo hastalığı paternini desteklemesi Glukoz-6-fosfataz eksikliği mekanizmasını açıklar. Açlık hipoglisemisi + hepatomegali + laktat/ürik asit/trigliserid yüksekliği von Gierke hastalığını düşündürür; Pompe veya Cori hastalığı aynı biyokimyasal üçlüyü tipik olarak vermez. Ayırıcı tanıda branching enzyme eksikliği anormal yapılı glikojen birikimi ve ilerleyici karaciğer hastalığıyla ilişkilidir; buna karşılık vakadaki beslenme araları uzadığında gelişen terleme ve nöbet benzeri ataklar ağır açlık hipoglisemisini düşündürmesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada beslenme araları uzadığında gelişen terleme ve nöbet benzeri ataklar ağır açlık hipoglisemisini düşündürmesi ve belirgin hepatomegali, karaciğerde glikojen/yağ birikimiyle giden glikojen depo hastalığı paternini desteklemesi Glukoz-6-fosfataz eksikliği mekanizmasını açıklar. Açlık hipoglisemisi + hepatomegali + laktat/ürik asit/trigliserid yüksekliği von Gierke hastalığını düşündürür; Pompe veya Cori hastalığı aynı biyokimyasal üçlüyü tipik olarak vermez. Ayırıcı tanıda aldolaz B eksikliği fruktoz veya sükroz alımı sonrası fruktoz-1-fosfat birikimiyle hipoglisemi yapar; buna karşılık vakadaki beslenme araları uzadığında gelişen terleme ve nöbet benzeri ataklar ağır açlık hipoglisemisini düşündürmesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada kusma, poliüri, kuru mukoza, hipotansiyon ve taşikardi belirgin hacim kaybını göstermesi ve hiperglisemi, keton pozitifliği ve yüksek anyon açıklıklı metabolik asidoz DKA paternini oluşturması İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak yaklaşımını gerektirir. DKA’da ilk yaklaşım sıvı resüsitasyonudur; insülin başlanmadan önce potasyum mutlaka kontrol edilir, potasyum düşükse önce potasyum replasmanı yapılır. Ayırıcı tanıda i̇nsülin DKA tedavisinin temel basamağıdır ve ketogenezi durdurur; buna karşılık vakadaki kusma, poliüri, kuru mukoza, hipotansiyon ve taşikardi belirgin hacim kaybını göstermesi ve hiperglisemi, keton pozitifliği ve yüksek anyon açıklıklı metabolik asidoz DKA paternini oluşturması bu olasılığı geri plana iter.",
+      "count": 6
+    },
+    {
+      "text": "Vakada kusma, poliüri, kuru mukoza, hipotansiyon ve taşikardi belirgin hacim kaybını göstermesi ve hiperglisemi, keton pozitifliği ve yüksek anyon açıklıklı metabolik asidoz DKA paternini oluşturması İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak yaklaşımını gerektirir. DKA’da ilk yaklaşım sıvı resüsitasyonudur; insülin başlanmadan önce potasyum mutlaka kontrol edilir, potasyum düşükse önce potasyum replasmanı yapılır. Ayırıcı tanıda bikarbonat yalnızca çok ağır asidemi gibi seçilmiş durumlarda tartışılır; buna karşılık vakadaki kusma, poliüri, kuru mukoza, hipotansiyon ve taşikardi belirgin hacim kaybını göstermesi ve hiperglisemi, keton pozitifliği ve yüksek anyon açıklıklı metabolik asidoz DKA paternini oluşturması bu olasılığı geri plana iter.",
+      "count": 3
+    },
+    {
+      "text": "Vakada kusma, poliüri, kuru mukoza, hipotansiyon ve taşikardi belirgin hacim kaybını göstermesi ve hiperglisemi, keton pozitifliği ve yüksek anyon açıklıklı metabolik asidoz DKA paternini oluşturması İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak yaklaşımını gerektirir. DKA’da ilk yaklaşım sıvı resüsitasyonudur; insülin başlanmadan önce potasyum mutlaka kontrol edilir, potasyum düşükse önce potasyum replasmanı yapılır. Ayırıcı tanıda hafif hiperglisemilerde subkutan insülin ve yakın izlem düşünülebilir; buna karşılık vakadaki kusma, poliüri, kuru mukoza, hipotansiyon ve taşikardi belirgin hacim kaybını göstermesi ve hiperglisemi, keton pozitifliği ve yüksek anyon açıklıklı metabolik asidoz DKA paternini oluşturması bu olasılığı geri plana iter.",
+      "count": 3
+    },
+    {
+      "text": "Vakada kusma, poliüri, kuru mukoza, hipotansiyon ve taşikardi belirgin hacim kaybını göstermesi ve hiperglisemi, keton pozitifliği ve yüksek anyon açıklıklı metabolik asidoz DKA paternini oluşturması İzotonik salin ile intravenöz sıvı resüsitasyonu başlamak yaklaşımını gerektirir. DKA’da ilk yaklaşım sıvı resüsitasyonudur; insülin başlanmadan önce potasyum mutlaka kontrol edilir, potasyum düşükse önce potasyum replasmanı yapılır. Ayırıcı tanıda potasyum replasmanı DKA’da serum potasyumuna göre ayarlanır; buna karşılık vakadaki kusma, poliüri, kuru mukoza, hipotansiyon ve taşikardi belirgin hacim kaybını göstermesi ve hiperglisemi, keton pozitifliği ve yüksek anyon açıklıklı metabolik asidoz DKA paternini oluşturması bu olasılığı geri plana iter.",
+      "count": 3
+    },
+    {
+      "text": "Vakada beslenme sonrası safrasız fışkırır tarzda kusma tariflenmiştir bulunması, epigastrik bölgede küçük sert kitle ve üst batında peristaltik dalgalar bulunması ve serum klor 88 mmol/L bulunması Ramstedt piloromiyotomi yaklaşımını gerektirir. Pilor stenozunda kesin tedavi piloromiyotomidir; cerrahiden önce sıvı, klor ve potasyum düzeltilir. Ayırıcı tanıda ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir; buna karşılık vakadaki beslenme sonrası safrasız fışkırır tarzda kusma tariflenmiştir bulunması ve epigastrik bölgede küçük sert kitle ve üst batında peristaltik dalgalar bulunması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada ateş, diyabet öyküsü ve bir gün içinde hızla artan tek diz şişliği septik artrit riskini artırması ve eklem sıcaklığı, belirgin şişlik ve pasif hareketle ileri ağrı eklem içi inflamasyon/enfeksiyon lehine güçlü fizik muayene bulgularıdır bulunması Eklem aspirasyonu ve sinovyal sıvı analizi yaklaşımını gerektirir. Ateşli akut monoartrit septik artrit kabul edilip eklem aspirasyonu ile değerlendirilir; serum ürik asit, direkt grafi veya MR septik artriti dışlamaz. Ayırıcı tanıda MR osteomiyelit, derin apse veya yumuşak doku yayılımı şüphesinde yararlı olabilir; buna karşılık vakadaki ateş, diyabet öyküsü ve bir gün içinde hızla artan tek diz şişliği septik artrit riskini artırması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada peteşi, ekimoz ve çok düşük trombosit sayısı ağır trombositopeniye bağlı kanama eğilimini göstermesi ve şistositler, yüksek LDH, düşük haptoglobin ve indirekt bilirubin artışı mikroanjiyopatik hemolitik anemi paternini desteklemesi Acil terapötik plazma değişimi yaklaşımını gerektirir. TTP’de şistositli MAHA + ağır trombositopeni + nörolojik bulgu varsa pentadın tamamı ve ADAMTS13 sonucu beklenmeden plazma değişimi başlanır. Ayırıcı tanıda trombosit transfüzyonu yaşamı tehdit eden kanama veya zorunlu girişim durumunda düşünülebilir; buna karşılık vakadaki peteşi, ekimoz ve çok düşük trombosit sayısı ağır trombositopeniye bağlı kanama eğilimini göstermesi bu olasılığı geri plana iter.",
+      "count": 6
+    },
+    {
+      "text": "Vakada peteşi, ekimoz ve çok düşük trombosit sayısı ağır trombositopeniye bağlı kanama eğilimini göstermesi ve şistositler, yüksek LDH, düşük haptoglobin ve indirekt bilirubin artışı mikroanjiyopatik hemolitik anemi paternini desteklemesi Acil terapötik plazma değişimi yaklaşımını gerektirir. TTP’de şistositli MAHA + ağır trombositopeni + nörolojik bulgu varsa pentadın tamamı ve ADAMTS13 sonucu beklenmeden plazma değişimi başlanır. Ayırıcı tanıda IVIG immün trombositopenide hızlı trombosit artışı için kullanılabilir; buna karşılık vakadaki peteşi, ekimoz ve çok düşük trombosit sayısı ağır trombositopeniye bağlı kanama eğilimini göstermesi bu olasılığı geri plana iter.",
+      "count": 3
+    },
+    {
+      "text": "Vakada peteşi, ekimoz ve çok düşük trombosit sayısı ağır trombositopeniye bağlı kanama eğilimini göstermesi ve şistositler, yüksek LDH, düşük haptoglobin ve indirekt bilirubin artışı mikroanjiyopatik hemolitik anemi paternini desteklemesi Acil terapötik plazma değişimi yaklaşımını gerektirir. TTP’de şistositli MAHA + ağır trombositopeni + nörolojik bulgu varsa pentadın tamamı ve ADAMTS13 sonucu beklenmeden plazma değişimi başlanır. Ayırıcı tanıda heparin venöz tromboembolide kullanılır; buna karşılık vakadaki peteşi, ekimoz ve çok düşük trombosit sayısı ağır trombositopeniye bağlı kanama eğilimini göstermesi bu olasılığı geri plana iter.",
+      "count": 3
+    },
+    {
+      "text": "Vakada peteşi, ekimoz ve çok düşük trombosit sayısı ağır trombositopeniye bağlı kanama eğilimini göstermesi ve şistositler, yüksek LDH, düşük haptoglobin ve indirekt bilirubin artışı mikroanjiyopatik hemolitik anemi paternini desteklemesi Acil terapötik plazma değişimi yaklaşımını gerektirir. TTP’de şistositli MAHA + ağır trombositopeni + nörolojik bulgu varsa pentadın tamamı ve ADAMTS13 sonucu beklenmeden plazma değişimi başlanır. Ayırıcı tanıda eculizumab kompleman aracılı atipik HÜS için önemli bir tedavidir; buna karşılık vakadaki peteşi, ekimoz ve çok düşük trombosit sayısı ağır trombositopeniye bağlı kanama eğilimini göstermesi bu olasılığı geri plana iter.",
+      "count": 3
+    },
+    {
+      "text": "Vakada annenin Rh negatif olması ve indirekt Coombs testinin negatif bulunması duyarlılaşmanın henüz gelişmediğini göstermesi ve yenidoğanın Rh pozitif olması fetomaternal eritrosit geçişiyle anti-D oluşma riskini doğurur bulunması Anneye 72 saat içinde anti-D immünglobulin uygulanmasını gerektirir. Rh profilaksisinde hedef bebek değil annedir; Rh negatif, indirekt Coombs negatif anne Rh pozitif bebek doğurduysa anti-D ilk 72 saat içinde uygulanır. Ayırıcı tanıda rutin izlem yalnızca alloimmünizasyon riski yoksa uygundur; buna karşılık vakadaki annenin Rh negatif olması ve indirekt Coombs testinin negatif bulunması duyarlılaşmanın henüz gelişmediğini göstermesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada ağrı ani başlamış ve giderek şiddetlenmiştir; bu patern epididimite göre torsiyon lehinedir bulunması ve yüksek yerleşimli transvers testis ve kaybolmuş kremaster refleksi torsiyon için kritik muayene bulgularıdır bulunması Acil cerrahi eksplorasyon ve detorsiyon yapılmasını gerektirir. Akut skrotumda ani ağrı + yüksek testis + kremaster refleksi kaybı torsiyondur; doğru yaklaşım acil eksplorasyon ve detorsiyondur. Ayırıcı tanıda oral antibiyotik epididimit gibi enfeksiyöz tabloda, dizüri/akıntı ve daha yavaş başlangıç olduğunda düşünülebilir; buna karşılık vakadaki ağrı ani başlamış ve giderek şiddetlenmiştir; bu patern epididimite göre torsiyon lehinedir bulunması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada yetmiş yaş üzerinde yeni başlangıçlı temporal baş ağrısı ve temporal arter hassasiyeti dev hücreli arterit için kırmızı bayraktır bulunması ve çene klodikasyonu ve geçici görme bulanıklığı kraniyal arter iskemisini düşündürmesi Yüksek doz sistemik kortikosteroid başlamak yaklaşımını gerektirir. Dev hücreli arteritte görme semptomu varsa biyopsi beklenmez; yüksek doz kortikosteroid hemen başlanır. Ayırıcı tanıda temporal arter biyopsisi tanıyı destekleyen önemli testtir; buna karşılık vakadaki yetmiş yaş üzerinde yeni başlangıçlı temporal baş ağrısı ve temporal arter hassasiyeti dev hücreli arterit için kırmızı bayraktır bulunması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada hemoptizi, hipoksemi ve bilateral alveoler opasiteler alveoler hemoraji düşündürmesi ve dismorfik eritrosit, eritrosit silendiri ve hızlı kreatinin artışı hızlı ilerleyen glomerülonefrit paternini göstermesi Anti-GBM hastalığı tanısını ön plana çıkarır. Anti-GBM hastalığı = akciğer hemorajisi + hızlı ilerleyen glomerülonefrit + anti-GBM/lineer IgG paterni. Ayırıcı tanıda IgA nefropatisi üst solunum yolu enfeksiyonunu izleyen hematüriyle gelebilir; buna karşılık vakadaki hemoptizi, hipoksemi ve bilateral alveoler opasiteler alveoler hemoraji düşündürmesi ve dismorfik eritrosit, eritrosit silendiri ve hızlı kreatinin artışı hızlı ilerleyen glomerülonefrit paternini göstermesi bu olasılığı geri plana iter.",
+      "count": 4
+    },
+    {
+      "text": "Vakada hemoptizi, hipoksemi ve bilateral alveoler opasiteler alveoler hemoraji düşündürmesi ve dismorfik eritrosit, eritrosit silendiri ve hızlı kreatinin artışı hızlı ilerleyen glomerülonefrit paternini göstermesi Anti-GBM hastalığı tanısını ön plana çıkarır. Anti-GBM hastalığı = akciğer hemorajisi + hızlı ilerleyen glomerülonefrit + anti-GBM/lineer IgG paterni. Ayırıcı tanıda poststreptokokal GN enfeksiyon sonrası nefritik tablo, düşük C3 ve hipertansiyon yapabilir; buna karşılık vakadaki hemoptizi, hipoksemi ve bilateral alveoler opasiteler alveoler hemoraji düşündürmesi ve dismorfik eritrosit, eritrosit silendiri ve hızlı kreatinin artışı hızlı ilerleyen glomerülonefrit paternini göstermesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada hemoptizi, hipoksemi ve bilateral alveoler opasiteler alveoler hemoraji düşündürmesi ve dismorfik eritrosit, eritrosit silendiri ve hızlı kreatinin artışı hızlı ilerleyen glomerülonefrit paternini göstermesi Anti-GBM hastalığı tanısını ön plana çıkarır. Anti-GBM hastalığı = akciğer hemorajisi + hızlı ilerleyen glomerülonefrit + anti-GBM/lineer IgG paterni. Ayırıcı tanıda ANCA ilişkili vaskülit de akciğer-böbrek sendromu yapabilir ve önemli ayırıcıdır; buna karşılık vakadaki hemoptizi, hipoksemi ve bilateral alveoler opasiteler alveoler hemoraji düşündürmesi ve dismorfik eritrosit, eritrosit silendiri ve hızlı kreatinin artışı hızlı ilerleyen glomerülonefrit paternini göstermesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada hemoptizi, hipoksemi ve bilateral alveoler opasiteler alveoler hemoraji düşündürmesi ve dismorfik eritrosit, eritrosit silendiri ve hızlı kreatinin artışı hızlı ilerleyen glomerülonefrit paternini göstermesi Anti-GBM hastalığı tanısını ön plana çıkarır. Anti-GBM hastalığı = akciğer hemorajisi + hızlı ilerleyen glomerülonefrit + anti-GBM/lineer IgG paterni. Ayırıcı tanıda minimal değişiklik hastalığı nefrotik sendrom ve masif proteinüriyle seyreder; buna karşılık vakadaki hemoptizi, hipoksemi ve bilateral alveoler opasiteler alveoler hemoraji düşündürmesi ve dismorfik eritrosit, eritrosit silendiri ve hızlı kreatinin artışı hızlı ilerleyen glomerülonefrit paternini göstermesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada SSRI kullanımı üzerine linezolid başlanması serotonin toksisitesi için güçlü ilaç etkileşimi oluşturması ve ajitasyon, terleme, ishal ve ateş otonomik/mental durum bileşenini desteklemesi Serotonerjik ilaçları kesip destek tedavisi ve siproheptadin vermek yaklaşımını gerektirir. SSRI + linezolid/triptan sonrası hızlı ajitasyon, ishal, hiperrefleksi ve klonus serotonin sendromudur; NMS daha yavaş, rijidite baskın ve dopamin blokajı ilişkilidir. Ayırıcı tanıda antipsikotikler primer psikoz veya ağır ajitasyonun seçilmiş durumlarında kullanılabilir; buna karşılık vakadaki SSRI kullanımı üzerine linezolid başlanması serotonin toksisitesi için güçlü ilaç etkileşimi oluşturması ve ajitasyon, terleme, ishal ve ateş otonomik/mental durum bileşenini desteklemesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada geniş spektrumlu antibiyotik kullanımı ve hastane yatışı C. difficile için güçlü risk oluşturması ve sulu ishal, ateş, lökositoz ve toksin A/B pozitifliği semptomatik C. difficile kolitini desteklemesi Oral vankomisin tedavisi başlanmasını gerektirir. Antibiyotik sonrası sulu ishal + toksin pozitifliği C. difficile kolitidir; antimotilite tek başına verilmez, fulminan bulgu yoksa oral tedavi başlanır. Ayırıcı tanıda antimotilite ajanları enfeksiyöz/inflamatuvar ishalde toksin retansiyonu ve klinik kötüleşme riski nedeniyle tek başına uygun değildir; buna karşılık vakadaki geniş spektrumlu antibiyotik kullanımı ve hastane yatışı C. difficile için güçlü risk oluşturması ve sulu ishal, ateş, lökositoz ve toksin A/B pozitifliği semptomatik C. difficile kolitini desteklemesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada hiperglisemi, keton pozitifliği ve yüksek anyon açıklıklı asidoz DKA paternini oluşturması ve serum potasyumunun 2.9 mmol/L olması, toplam potasyum kaybının tedavi güvenliği açısından kritik olduğunu göstermesi Potasyum replasmanı yapıp insülini potasyum güvenli aralığa çıkana kadar ertelemek yaklaşımını gerektirir. Bu vaka DKA paternindedir, ancak serum potasyumu düşüktür. Ayırıcı tanıda i̇nsülin DKA’da ketogenezi durdurur,; buna karşılık vakadaki hiperglisemi, keton pozitifliği ve yüksek anyon açıklıklı asidoz DKA paternini oluşturması ve serum potasyumunun 2.9 mmol/L olması, toplam potasyum kaybının tedavi güvenliği açısından kritik olduğunu göstermesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada sarılığın yaşamın ilk iki günü içinde belirginleşmesi fizyolojik sarılıktan daha erken bir süreci düşündüren bulguların bulunması, anne ve bebek kan grupları arasında ABO uyumsuzluğu bulunması ve direkt antiglobulin testi Pozitif bulunması Maternal immünoglobulin G antikorlarının fetal eritrositleri hemolize uğratması mekanizmasını açıklar. Term doğduğu, doğum ağırlığının uygun olduğu ve emmesinin hafif azaldığı öğreniliyor. Ayırıcı tanıda Safra kanal tıkanıklığına bağlı konjuge bilirubin atılımının azalması düşünülebilir; buna karşılık vakadaki sarılığın yaşamın ilk iki günü içinde belirginleşmesi fizyolojik sarılıktan daha erken bir süreci düşündüren bulguların bulunması ve anne ve bebek kan grupları arasında ABO uyumsuzluğu bulunması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada vajinal doğumdan kısa süre sonra devam eden yoğun kanama primer postpartum kanama tablosunu göstermesi ve yumuşak ve gevşek fundus postpartum kanamanın en sık nedeni olan uterin atoniyi desteklemesi Uterin masaj ve intravenöz oksitosin uygulaması yaklaşımını gerektirir. Postpartum kanamada 4T düşün: Tone, Trauma, Tissue, Thrombin. Ayırıcı tanıda balon tamponadı, masaj ve uterotoniklere rağmen devam eden atonik postpartum kanamada sonraki basamaklardan biridir; buna karşılık vakadaki vajinal doğumdan kısa süre sonra devam eden yoğun kanama primer postpartum kanama tablosunu göstermesi ve yumuşak ve gevşek fundus postpartum kanamanın en sık nedeni olan uterin atoniyi desteklemesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada damar içi madde kullanımı sağ taraf endokarditi için güçlü risk faktörüdür bulunması, triküspit odakta yeni üfürüm ve ekokardiyografide vejetasyon enfektif endokarditi desteklemesi ve septik pulmoner emboli ve akut toksik tablo Staphylococcus aureus olasılığını artırması etken olarak Staphylococcus aureus’i ön plana çıkarır. IVDU + triküspit endokardit + septik pulmoner emboli denince S. aureus önceliklidir. Ayırıcı tanıda viridans streptokoklar diş girişimi sonrası subakut doğal kapak endokarditinde tipiktir; buna karşılık vakadaki damar içi madde kullanımı sağ taraf endokarditi için güçlü risk faktörüdür bulunması ve triküspit odakta yeni üfürüm ve ekokardiyografide vejetasyon enfektif endokarditi desteklemesi bu olasılığı geri plana iter.",
+      "count": 4
+    },
+    {
+      "text": "Vakada damar içi madde kullanımı sağ taraf endokarditi için güçlü risk faktörüdür bulunması, triküspit odakta yeni üfürüm ve ekokardiyografide vejetasyon enfektif endokarditi desteklemesi ve septik pulmoner emboli ve akut toksik tablo Staphylococcus aureus olasılığını artırması etken olarak Staphylococcus aureus’i ön plana çıkarır. IVDU + triküspit endokardit + septik pulmoner emboli denince S. aureus önceliklidir. Ayırıcı tanıda S. epidermidis protez kapak veya intravasküler cihaz ilişkili endokarditte düşünülür; buna karşılık vakadaki damar içi madde kullanımı sağ taraf endokarditi için güçlü risk faktörüdür bulunması ve triküspit odakta yeni üfürüm ve ekokardiyografide vejetasyon enfektif endokarditi desteklemesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada damar içi madde kullanımı sağ taraf endokarditi için güçlü risk faktörüdür bulunması, triküspit odakta yeni üfürüm ve ekokardiyografide vejetasyon enfektif endokarditi desteklemesi ve septik pulmoner emboli ve akut toksik tablo Staphylococcus aureus olasılığını artırması etken olarak Staphylococcus aureus’i ön plana çıkarır. IVDU + triküspit endokardit + septik pulmoner emboli denince S. aureus önceliklidir. Ayırıcı tanıda enterokok endokarditi genitoüriner/gastrointestinal girişimler ve yaşlı hastalarla ilişkilidir; buna karşılık vakadaki damar içi madde kullanımı sağ taraf endokarditi için güçlü risk faktörüdür bulunması ve triküspit odakta yeni üfürüm ve ekokardiyografide vejetasyon enfektif endokarditi desteklemesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada damar içi madde kullanımı sağ taraf endokarditi için güçlü risk faktörüdür bulunması, triküspit odakta yeni üfürüm ve ekokardiyografide vejetasyon enfektif endokarditi desteklemesi ve septik pulmoner emboli ve akut toksik tablo Staphylococcus aureus olasılığını artırması etken olarak Staphylococcus aureus’i ön plana çıkarır. IVDU + triküspit endokardit + septik pulmoner emboli denince S. aureus önceliklidir. Ayırıcı tanıda coxiella burnetii kültür negatif, subakut-kronik endokardit ve hayvan/çiftlik teması bağlamında düşünülür; buna karşılık vakadaki damar içi madde kullanımı sağ taraf endokarditi için güçlü risk faktörüdür bulunması ve triküspit odakta yeni üfürüm ve ekokardiyografide vejetasyon enfektif endokarditi desteklemesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada i̇ki hafta önce geçirilen ishal sonrası yükselen güçsüzlük postenfeksiyöz GBS zamanlamasıyla uyumludur bulunması ve yaygın arefleksi ve simetrik güçsüzlük periferik sinir/kök tutulumunu desteklemesi İntravenöz immünoglobulin yaklaşımını gerektirir. Yükselen güçsüzlük + arefleksi + albuminositolojik dissosiasyon GBS’dir; tedavi IVIG veya plazmaferezdir, FVC yakın izlenir. Ayırıcı tanıda kortikosteroidler birçok inflamatuvar nörolojik hastalıkta kullanılabilir; buna karşılık vakadaki i̇ki hafta önce geçirilen ishal sonrası yükselen güçsüzlük postenfeksiyöz GBS zamanlamasıyla uyumludur bulunması ve yaygın arefleksi ve simetrik güçsüzlük periferik sinir/kök tutulumunu desteklemesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada çoklu propranolol alımı öyküsü, beta-bloker intoksikasyonu için güçlü farmakolojik bağlam oluşturması ve sinüs bradikardisi, hipotansiyon ve soğuk-nemli cilt azalmış kronotropi/inotropi ve hipoperfüzyonla uyumludur bulunması Glukagon reseptörü üzerinden Gs-adenilat siklaz yolunu aktive ederek hücre içi cAMP’yi artırması yaklaşımını gerektirir. Beta-bloker zehirlenmesinde glukagon beta reseptörü bypass ederek Gs-adenilat siklaz-cAMP yolunu aktive eder; atropin muskarinik blokaj yapar, sodyum bikarbonat ise QRS genişleten sodyum kanal blokajında düşünülür. Ayırıcı tanıda beta-1 agonizmi dobutamin gibi beta agonistlerin etkisidir; buna karşılık vakadaki çoklu propranolol alımı öyküsü, beta-bloker intoksikasyonu için güçlü farmakolojik bağlam oluşturması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada periorbital ve pretibial ödem ağır protein kaybıyla uyumludur bulunması, nefrotik düzeyde proteinüri ve düşük serum albümini gösterilmiştir bulunması ve kompleman C3 98 mg/dL bulunması Podosit ayaksı çıkıntılarında yaygın silinme kararını ön plana çıkarır. Çocukluk çağı nefrotik sendromun en sık nedeni minimal değişiklik hastalığıdır; EM’de podosit ayaksı çıkıntı silinmesi beklenir. Ayırıcı tanıda Subepitelyal immün kompleks birikimleri düşünülebilir; buna karşılık vakadaki periorbital ve pretibial ödem ağır protein kaybıyla uyumludur bulunması ve nefrotik düzeyde proteinüri ve düşük serum albümini gösterilmiştir bulunması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada tiroid cerrahisi, trakeoözofageal olukta tiroide komşu seyreden nervus laryngeus recurrensi risk oluşturması ve ameliyat sonrası yeni başlayan nefesli ses ve ses kısıklığı vokal kord adduksiyon/abduksiyon fonksiyonunun bozulduğunu göstermesi Nervus laryngeus recurrens hasarını ya da anatomik lokalizasyonunu düşündürür. Tiroid cerrahisi sonrası vokal kord hareket kısıtlılığı görülürse ilk düşünülmesi gereken yapı nervus laryngeus recurrenstir. Ayırıcı tanıda nervus laryngeus superiorun eksternal dalı m. cricothyroideusu innerve eder; lezyonunda özellikle yüksek ses çıkarma ve ses perdesini ayarlama bozulur; buna karşılık vakadaki tiroid cerrahisi, trakeoözofageal olukta tiroide komşu seyreden nervus laryngeus recurrensi risk oluşturması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada i̇nferior ST elevasyonu akut koroner oklüzyonu düşündürmesi ve hipotansiyon, bradikardi, juguler venöz dolgunluk ve akciğerde ral olmaması sağ ventrikül tutulumunu desteklemesi Nitrogliserin kararını ön plana çıkarır. İnferior MI + hipotansiyon + JVD + temiz akciğer = sağ ventrikül MI düşün; nitrat verme, preloadu koru. Ayırıcı tanıda aspirin akut koroner sendromda antitrombosit tedavinin temel parçasıdır; buna karşılık vakadaki i̇nferior ST elevasyonu akut koroner oklüzyonu düşündürmesi ve hipotansiyon, bradikardi, juguler venöz dolgunluk ve akciğerde ral olmaması sağ ventrikül tutulumunu desteklemesi bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada kilo kaybı, hiperpigmentasyon ve tuz isteği kronik primer adrenal yetmezlik zeminini düşündürmesi ve hipotansiyon, hiponatremi, hiperkalemi ve hipoglisemi adrenal kriz paternini oluşturması İntravenöz hidrokortizon ve izotonik sıvı replasmanını gerektirir. Adrenal kriz şüphesinde kortizol/ACTH sonucu beklenmez; hidrokortizon ve izotonik sıvı birlikte başlanır. Ayırıcı tanıda hipertonik salin ağır semptomatik hiponatremide seçilmiş olarak kullanılır, sıvı kısıtlaması ise SIADH yaklaşımıdır; buna karşılık vakadaki kilo kaybı, hiperpigmentasyon ve tuz isteği kronik primer adrenal yetmezlik zeminini düşündürmesi ve hipotansiyon, hiponatremi, hiperkalemi ve hipoglisemi adrenal kriz paternini oluşturması bu olasılığı geri plana iter.",
+      "count": 4
+    },
+    {
+      "text": "Vakada kilo kaybı, hiperpigmentasyon ve tuz isteği kronik primer adrenal yetmezlik zeminini düşündürmesi ve hipotansiyon, hiponatremi, hiperkalemi ve hipoglisemi adrenal kriz paternini oluşturması İntravenöz hidrokortizon ve izotonik sıvı replasmanını gerektirir. Adrenal kriz şüphesinde kortizol/ACTH sonucu beklenmez; hidrokortizon ve izotonik sıvı birlikte başlanır. Ayırıcı tanıda spironolakton hiperaldosteronizm veya kalp yetmezliği gibi durumlarda kullanılabilir; buna karşılık vakadaki kilo kaybı, hiperpigmentasyon ve tuz isteği kronik primer adrenal yetmezlik zeminini düşündürmesi ve hipotansiyon, hiponatremi, hiperkalemi ve hipoglisemi adrenal kriz paternini oluşturması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada kilo kaybı, hiperpigmentasyon ve tuz isteği kronik primer adrenal yetmezlik zeminini düşündürmesi ve hipotansiyon, hiponatremi, hiperkalemi ve hipoglisemi adrenal kriz paternini oluşturması İntravenöz hidrokortizon ve izotonik sıvı replasmanını gerektirir. Adrenal kriz şüphesinde kortizol/ACTH sonucu beklenmez; hidrokortizon ve izotonik sıvı birlikte başlanır. Ayırıcı tanıda fludrokortizon kronik mineralokortikoid replasmanında kullanılır; buna karşılık vakadaki kilo kaybı, hiperpigmentasyon ve tuz isteği kronik primer adrenal yetmezlik zeminini düşündürmesi ve hipotansiyon, hiponatremi, hiperkalemi ve hipoglisemi adrenal kriz paternini oluşturması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada kilo kaybı, hiperpigmentasyon ve tuz isteği kronik primer adrenal yetmezlik zeminini düşündürmesi ve hipotansiyon, hiponatremi, hiperkalemi ve hipoglisemi adrenal kriz paternini oluşturması İntravenöz hidrokortizon ve izotonik sıvı replasmanını gerektirir. Adrenal kriz şüphesinde kortizol/ACTH sonucu beklenmez; hidrokortizon ve izotonik sıvı birlikte başlanır. Ayırıcı tanıda loop diüretik hacim fazlalığı durumlarında düşünülebilir; buna karşılık vakadaki kilo kaybı, hiperpigmentasyon ve tuz isteği kronik primer adrenal yetmezlik zeminini düşündürmesi ve hipotansiyon, hiponatremi, hiperkalemi ve hipoglisemi adrenal kriz paternini oluşturması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada gebelik 28. haftadadır ve travma sonrası vajinal lekelenme fetomaternal kanama riski oluşturması ve anne Rh negatiftir ve indirekt Coombs testi negatiftir; yani henüz duyarlılaşma kanıtı olmaması Anti-D immünoglobulin uygulanmasını gerektirir. Rh negatif gebede kanama, travma veya invaziv girişim sonrası indirekt Coombs negatifse anti-D profilaksisi anneye verilir; amaç duyarlılaşma gelişmeden önlemektir. Ayırıcı tanıda Anneye eritrosit transfüzyonu yapılması düşünülebilir; buna karşılık vakadaki gebelik 28. haftadadır ve travma sonrası vajinal lekelenme fetomaternal kanama riski oluşturması ve anne Rh negatiftir ve indirekt Coombs testi negatiftir; yani henüz duyarlılaşma kanıtı olmaması bu olasılığı geri plana iter.",
+      "count": 2
+    },
+    {
+      "text": "Vakada tablo kanlı ishalden yaklaşık bir hafta sonra başlaması, anemi, trombositopeni ve şistositler mikroanjiyopatik hemolizi göstermesi ve serum kreatinin 1.8 mg/dL bulunması Shiga toksininin endoteli zedeleyerek trombotik mikroanjiyopati oluşturması mekanizmasını açıklar. Tipik HÜS’te temel yaklaşım destek tedavisi, sıvı-elektrolit dengesi, kan basıncı kontrolü ve gerekirse diyalizdir. Ayırıcı tanıda Glomerüler bazal membrana karşı IgG antikor gelişmesi düşünülebilir; buna karşılık vakadaki tablo kanlı ishalden yaklaşık bir hafta sonra başlaması ve anemi, trombositopeni ve şistositler mikroanjiyopatik hemolizi göstermesi bu olasılığı geri plana iter.",
+      "count": 2
+    }
+  ],
+  "correctAnswerLogicPreserved": true,
+  "scientificConcerns": []
+}

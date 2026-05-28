@@ -1,0 +1,32 @@
+KlinikIQ SMALL CLERKSHIPS ULTRA REFINED TECHNICAL REPORT
+Generated: 2026-05-28
+
+Scope
+- Modified: src/data/cases.js
+- Targeted cases: branchId == 'minor-rotations' only
+- Targeted case count: 28
+- Updated case count: 28
+- TUS Spot Olgular touched: False
+- ID change: False
+- Correct answer logic preserved: True
+
+Technical changes
+- Rewrote patientIntro, chiefComplaint/stem where needed, vitals, exam, investigations, question, diagnosis.explanation, evidenceChain, coreKnowledge, examPearl, optionComparison, optionFeedback, answerFeedback and top-level mirrored fields for each small clerkships case.
+- Preserved branchId, caseType, answerTarget, IDs, order, and non-target branches.
+- Removed/overwrote generic feedback phrases such as 'bu olguda en uygun yanıt değildir' from targeted cases.
+- Replaced unrelated investigation summaries such as AST/ALT leakage in targeted minor-rotations cases.
+- Objective data rows now use explicit Parametre | Sonuç | Referans/Beklenen | Durum logic.
+
+Validation
+- Syntax: passed: node --check src/data/cases.js
+- Build/test: failed: npm run build could not run because vite was not installed; npm install was attempted but timed out in the sandbox environment.
+- Forbidden phrase scan in minor-rotations cases: passed for configured phrases.
+
+Produced reports
+- KlinikIQ_SMALL_CLERKSHIPS_CASES_COVERAGE_REPORT.json
+- KlinikIQ_SMALL_CLERKSHIPS_OPTIONS_FEEDBACK_REWRITE_REPORT.json
+- KlinikIQ_SMALL_CLERKSHIPS_OBJECTIVE_DATA_SHORT_COMMENT_REPORT.json
+- KlinikIQ_SMALL_CLERKSHIPS_SUBSPECIALTY_DECISION_REPORT.json
+- KlinikIQ_SMALL_CLERKSHIPS_TEXT_INTEGRITY_REPORT.json
+- KlinikIQ_SMALL_CLERKSHIPS_CASES_ULTRA_REFINED_REPORT.pdf
+- KlinikIQ_SMALL_CLERKSHIPS_CASES_ULTRA_REFINED_QC_REPORT.pdf

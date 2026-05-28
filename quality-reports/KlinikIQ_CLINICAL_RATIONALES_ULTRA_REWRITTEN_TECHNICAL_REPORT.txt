@@ -1,0 +1,40 @@
+KlinikIQ Clinical/Scientific Rationale Rewrite - Technical Report
+Timestamp: 2026-05-28T09:27:58
+Scope: src/data/cases.js rawCases; standard clinical cases only. TUS Spot Olgular / ai-spot records were excluded and hash-checked as untouched.
+Updated right-column rationale sources: diagnosis.explanation, diagnosis.answerFeedback.whyCorrect/rationale when present, top-level whyCorrect when present, and diagnosis.answerFeedback/diagnosis/top-level whyWrong maps.
+Duplicated optionComparison/optionFeedback entries containing the same bad template were normalized for UI consistency; no new schema fields or component refactors were introduced.
+No IDs, case order, branch metadata, visual paths/assets, caseType, difficulty or point fields were intentionally changed.
+
+- timestamp: 2026-05-28T09:27:58
+- totalClinicalCasesScanned: 410
+- clinicalScientificRationaleFieldsFound: 2050
+- clinicalScientificRationalesRewritten: 2050
+- badTemplateDetectedAndCleaned: 700
+- wrongOptionFocusedRationalesCorrected: 733
+- ancakDaOrLanguageErrorCleaned: 83
+- targetMechanismPatternTermsCleaned: 384
+- brokenOrHalfSentencesCorrected: 83
+- irrelevantOrGenericRationalesCleaned: 222
+- correctAnswerLogicPreserved: True
+- idChanged: False
+- caseCountChanged: False
+- tusSpotUntouched: True
+- scientificConcernCount: 0
+- postUpdateBadTargetRationaleCount: 0
+
+Branch rewrite counts:
+- Anatomi (anatomy): 145
+- Genel Cerrahi (general-surgery): 135
+- Histoloji ve Embriyoloji (histology-embryology): 140
+- İç Hastalıkları (internal-medicine): 130
+- Tıbbi Biyokimya (medical-biochemistry): 150
+- Tıbbi Mikrobiyoloji (medical-microbiology): 150
+- Tıbbi Patoloji (medical-pathology): 140
+- Tıbbi Farmakoloji (medical-pharmacology): 140
+- Küçük Stajlar (minor-rotations): 140
+- Kadın Hastalıkları ve Doğum (obstetrics-gynecology): 140
+- Çocuk Sağlığı ve Hastalıkları (pediatrics): 490
+- Fizyoloji (physiology): 150
+
+Post-update target bad-rationale count: 0
+Scientific concerns: 0
