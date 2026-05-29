@@ -79991,478 +79991,408 @@ export const rawCases = [
     "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
     "title": "Sıcak ortamda bilinç değişikliği",
     "difficulty": "Acil",
-    "clinicalFocus": "Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-    "learningTarget": "Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
+    "clinicalFocus": "Egzersiz ilişkili sıcak çarpmasında hipertermi, bilinç değişikliği ve erken organ hasarı ipuçlarını tanıyıp aktif soğutmayı geciktirmeden başlatma.",
+    "learningTarget": "Sıcak çarpmasında antipiretik veya pasif izlem yerine hızlı aktif soğutma, ABC stabilizasyonu, sıvı desteği ve rabdomiyoliz izleminin birlikte yürütülmesi gerektiğini ayırt edebilme.",
     "demographics": "13 yaşında erkek çocuk",
     "setting": "Çocuk acil servisinde",
-    "chiefComplaint": "Çocuk, sıcak havada futbol antrenmanı sonrası bilinç bulanıklığı ve bayılma nedeniyle acile getiriliyor.",
-    "stem": "Antrenman sırasında yeterince sıvı alamadığı, sonrasında baş dönmesi ve konfüzyon geliştiği öğreniliyor. Nöbet öyküsü yoktur.",
+    "chiefComplaint": "Çocuk, sıcak havada futbol antrenmanı sonrası bilinç bulanıklığı, bayılma hissi ve çok yüksek ateş nedeniyle acile getiriliyor.",
+    "stem": "Ailesinin ve antrenörünün ifadesine göre çocuk, öğle saatlerinde yapılan uzun antrenmanın son bölümünde baş ağrısı, baş dönmesi ve dengesizlik tarif etmiş; kısa süre sonra sorulara yavaş yanıt vermeye başlamıştır. Antrenman boyunca yeterince sıvı alamadığı, koyu renkli az idrar yaptığı ve gölgede dinlenmesine rağmen sersemlik halinin düzelmediği öğrenilir. Ateş düşürücü verilmemiştir; bilinen epilepsi, enfeksiyon teması veya kafa travması öyküsü yoktur.",
     "patientIntro": {
       "profile": "13 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
-      "presentation": "Çocuk, sıcak havada futbol antrenmanı sonrası bilinç bulanıklığı ve bayılma nedeniyle acile getiriliyor.",
-      "historySummary": "Antrenman sırasında yeterince sıvı alamadığı, sonrasında baş dönmesi ve konfüzyon geliştiği öğreniliyor. Nöbet öyküsü yoktur."
+      "presentation": "Sıcak havada yoğun egzersiz sonrası bilinç bulanıklığı, hipotansiyon eğilimi ve 40°C üzerinde çekirdek ısı ile getiriliyor.",
+      "historySummary": "Ailesinin ve antrenörünün ifadesine göre yakınmalar öğle saatlerinde yapılan futbol antrenmanının son bölümünde baş ağrısı ve baş dönmesiyle başlamış, kısa sürede dengesizlik ve konfüzyona ilerlemiştir. Çocuk antrenman boyunca yeterince sıvı alamamış, sonrasında koyu renkli az idrar yaptığı fark edilmiştir. Gölgede dinlendirilmesine ve üzerindeki ekipmanlar çıkarılmasına rağmen sersemlik hali düzelmemiştir. Eşlik eden öksürük, ishal, menenjit düşündürecek ense yakınması veya kafa travması anlatılmamaktadır."
     },
     "vitals": {
       "TA": "92/56 mmHg",
       "Nabız": "152/dk",
       "Solunum": "30/dk",
       "SpO2": "%98, oda havasında",
-      "Ateş": "40.8 °C",
-      "Şok indeksi": "1.65 pediatrik bağlamda yorumlanmalı"
+      "Ateş": "40.8 °C rektal",
+      "Şok indeksi": "1.65 - taşikardi ve hipotansiyon eğilimi ile dolaşım riski"
     },
     "exam": [
-      "Çocuk konfüzedir, cildi sıcak ve kurudur."
+      "Çocuk konfüze, ajite ve sorulara gecikmeli yanıt verir; GKS 13 olarak değerlendirilir.",
+      "Cilt sıcak ve kuru görünümdedir; belirgin terleme azalması ve yüzde kızarıklık vardır.",
+      "Kapiller dolum yaklaşık 3 saniyedir; belirgin fokal nörolojik defisit veya ense sertliği saptanmaz."
     ],
     "investigations": [
       {
         "id": "v180-new-155-sicak-ortamda-bilinc-degisikligi-core-temp-neuro",
-        "label": "Çekirdek ısı ve nörolojik durum",
-        "title": "Çekirdek ısı ve nörolojik durum",
+        "label": "Çekirdek ısı ve nörolojik değerlendirme",
+        "title": "Çekirdek ısı ve nörolojik değerlendirme",
         "type": "clinical",
         "priority": "essential",
         "subtype": "",
-        "summary": "Çekirdek ısının 40°C üzerinde olması ve bilinç değişikliği sıcak çarpması için acil alarm bulgusudur; aktif soğutma laboratuvar sonucu beklenerek geciktirilmez.",
-        "clinicalMeaning": "Çekirdek ısının 40°C üzerinde olması ve bilinç değişikliği sıcak çarpması için acil alarm bulgusudur; aktif soğutma laboratuvar sonucu beklenerek geciktirilmez.",
+        "summary": "Çekirdek ısı 40°C üzerinde ve bilinç değişikliği eşlik ediyor; bu kombinasyon sıcak çarpmasında laboratuvar beklemeden aktif soğutma gerektirir.",
+        "clinicalMeaning": "Çekirdek ısı 40°C üzerinde ve bilinç değişikliği eşlik ediyor; bu kombinasyon sıcak çarpmasında laboratuvar beklemeden aktif soğutma gerektirir.",
         "result": {
-          "title": "Çekirdek ısı ve nörolojik durum",
-          "summary": "Çekirdek ısının 40°C üzerinde olması ve bilinç değişikliği sıcak çarpması için acil alarm bulgusudur; aktif soğutma laboratuvar sonucu beklenerek geciktirilmez.",
-          "interpretation": "Çekirdek ısının 40°C üzerinde olması ve bilinç değişikliği sıcak çarpması için acil alarm bulgusudur; aktif soğutma laboratuvar sonucu beklenerek geciktirilmez.",
+          "title": "Çekirdek ısı ve nörolojik değerlendirme",
+          "summary": "Çekirdek ısı 40°C üzerinde ve bilinç değişikliği eşlik ediyor; bu kombinasyon sıcak çarpmasında laboratuvar beklemeden aktif soğutma gerektirir.",
+          "interpretation": "Çekirdek ısı 40°C üzerinde ve bilinç değişikliği eşlik ediyor; bu kombinasyon sıcak çarpmasında laboratuvar beklemeden aktif soğutma gerektirir.",
           "values": [
             [
-              "Çekirdek vücut ısısı",
+              "Rektal çekirdek ısı",
               "40.8 °C",
-              "<38 °C",
-              "Kritik yüksek"
+              "<38.0 °C",
+              "Kritik hipertermi"
             ],
             [
-              "Mental durum",
-              "Konfüzyon",
-              "Normal bilinç",
-              "Acil"
+              "Bilinç durumu",
+              "Konfüzyon, GKS 13",
+              "Yaşa uygun tam oryantasyon",
+              "Santral sinir sistemi etkilenimi"
+            ],
+            [
+              "Fokal nörolojik defisit",
+              "Saptanmadı",
+              "Saptanmamalı",
+              "Ayırıcı tanıda destekleyici"
             ]
           ],
           "rows": [
             [
-              "Çekirdek vücut ısısı",
+              "Rektal çekirdek ısı",
               "40.8 °C",
-              "<38 °C",
-              "Kritik yüksek"
+              "<38.0 °C",
+              "Kritik hipertermi"
             ],
             [
-              "Mental durum",
-              "Konfüzyon",
-              "Normal bilinç",
-              "Acil"
+              "Bilinç durumu",
+              "Konfüzyon, GKS 13",
+              "Yaşa uygun tam oryantasyon",
+              "Santral sinir sistemi etkilenimi"
+            ],
+            [
+              "Fokal nörolojik defisit",
+              "Saptanmadı",
+              "Saptanmamalı",
+              "Ayırıcı tanıda destekleyici"
             ]
           ]
         },
         "rows": [
           [
-            "Çekirdek vücut ısısı",
+            "Rektal çekirdek ısı",
             "40.8 °C",
-            "<38 °C",
-            "Kritik yüksek"
+            "<38.0 °C",
+            "Kritik hipertermi"
           ],
           [
-            "Mental durum",
-            "Konfüzyon",
-            "Normal bilinç",
-            "Acil"
+            "Bilinç durumu",
+            "Konfüzyon, GKS 13",
+            "Yaşa uygun tam oryantasyon",
+            "Santral sinir sistemi etkilenimi"
+          ],
+          [
+            "Fokal nörolojik defisit",
+            "Saptanmadı",
+            "Saptanmamalı",
+            "Ayırıcı tanıda destekleyici"
           ]
         ],
-        "postAnswerExplanation": "Çekirdek ısının 40°C üzerinde olması ve bilinç değişikliği sıcak çarpması için acil alarm bulgusudur; aktif soğutma laboratuvar sonucu beklenerek geciktirilmez.",
-        "interpretation": "Çekirdek ısının 40°C üzerinde olması ve bilinç değişikliği sıcak çarpması için acil alarm bulgusudur; aktif soğutma laboratuvar sonucu beklenerek geciktirilmez.",
+        "postAnswerExplanation": "Çekirdek ısı 40°C üzerinde ve bilinç değişikliği eşlik ediyor; bu kombinasyon sıcak çarpmasında laboratuvar beklemeden aktif soğutma gerektirir.",
+        "interpretation": "Çekirdek ısı 40°C üzerinde ve bilinç değişikliği eşlik ediyor; bu kombinasyon sıcak çarpmasında laboratuvar beklemeden aktif soğutma gerektirir.",
+        "explanationAfterAnswer": "Çekirdek ısı 40°C üzerinde ve bilinç değişikliği eşlik ediyor; bu kombinasyon sıcak çarpmasında laboratuvar beklemeden aktif soğutma gerektirir.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Çekirdek ısının 40°C üzerinde olması ve bilinç değişikliği sıcak çarpması için acil alarm bulgusudur; aktif soğutma laboratuvar sonucu beklenerek geciktirilmez.",
-        "testValueLabel": "Kritik tedavi belirler",
-        "clinicalPriorityLabel": "Kritik tedavi belirler",
-        "educationalValue": "Kritik tedavi belirler",
+        "clinicalFlowOrder": 50,
+        "flowOrder": 50,
+        "orderRank": 50,
+        "testValueLabel": "Karar verdirici veri",
+        "clinicalPriorityLabel": "Karar verdirici veri",
+        "educationalValue": "Karar verdirici veri",
         "scoreImpact": 5,
         "scoreValue": 5,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Kritik tedavi belirler",
-        "treatmentImpact": "Kritik tedavi belirler",
-        "orderRank": 10
+        "pediatricSafetyValue": "Acil önceliği belirler",
+        "treatmentImpact": "Acil önceliği belirler"
       },
       {
-        "id": "v180-new-155-sicak-ortamda-bilinc-degisikligi-glucose-electrolyte-renal",
+        "id": "v180-new-155-sicak-ortamda-bilinc-degisikligi-metabolic-renal-panel",
         "label": "Glukoz, elektrolit ve böbrek fonksiyonu",
         "title": "Glukoz, elektrolit ve böbrek fonksiyonu",
         "type": "lab",
         "priority": "essential",
         "subtype": "",
-        "summary": "Hipoglisemi, hipernatremi/hiperkalemi ve kreatinin artışı sıcak çarpmasında erken organ hasarı ve sıvı güvenliğini belirler.",
-        "clinicalMeaning": "Hipoglisemi, hipernatremi/hiperkalemi ve kreatinin artışı sıcak çarpmasında erken organ hasarı ve sıvı güvenliğini belirler.",
+        "summary": "Metabolik panel hipoglisemi dışlanırken dehidratasyon, elektrolit bozukluğu ve erken böbrek etkilenimini gösterir.",
+        "clinicalMeaning": "Metabolik panel hipoglisemi dışlanırken dehidratasyon, elektrolit bozukluğu ve erken böbrek etkilenimini gösterir.",
         "result": {
           "title": "Glukoz, elektrolit ve böbrek fonksiyonu",
-          "summary": "Hipoglisemi, hipernatremi/hiperkalemi ve kreatinin artışı sıcak çarpmasında erken organ hasarı ve sıvı güvenliğini belirler.",
-          "interpretation": "Hipoglisemi, hipernatremi/hiperkalemi ve kreatinin artışı sıcak çarpmasında erken organ hasarı ve sıvı güvenliğini belirler.",
+          "summary": "Metabolik panel hipoglisemi dışlanırken dehidratasyon, elektrolit bozukluğu ve erken böbrek etkilenimini gösterir.",
+          "interpretation": "Metabolik panel hipoglisemi dışlanırken dehidratasyon, elektrolit bozukluğu ve erken böbrek etkilenimini gösterir.",
           "values": [
             [
               "Glukoz",
-              "Klinik ağır tabloda kontrol edilir",
-              "Normoglisemi",
-              "Acil güvenlik"
+              "92 mg/dL",
+              "70–110 mg/dL",
+              "Hipoglisemi dışlandı"
+            ],
+            [
+              "Sodyum",
+              "150 mmol/L",
+              "135–145 mmol/L",
+              "Hipernatremik dehidratasyon eşlik ediyor"
             ],
             [
               "Potasyum",
-              "Yükselebilir",
+              "5.4 mmol/L",
               "3.5–5.0 mmol/L",
-              "İzlem gerekli"
+              "Hafif yüksek"
             ],
             [
               "Kreatinin",
-              "Yükselebilir",
-              "Yaşa göre düşük beklenir",
-              "Böbrek hasarı riski"
+              "1.1 mg/dL",
+              "0.5–1.0 mg/dL",
+              "Erken böbrek etkilenimi"
             ]
           ],
           "rows": [
             [
               "Glukoz",
-              "Klinik ağır tabloda kontrol edilir",
-              "Normoglisemi",
-              "Acil güvenlik"
+              "92 mg/dL",
+              "70–110 mg/dL",
+              "Hipoglisemi dışlandı"
+            ],
+            [
+              "Sodyum",
+              "150 mmol/L",
+              "135–145 mmol/L",
+              "Hipernatremik dehidratasyon eşlik ediyor"
             ],
             [
               "Potasyum",
-              "Yükselebilir",
+              "5.4 mmol/L",
               "3.5–5.0 mmol/L",
-              "İzlem gerekli"
+              "Hafif yüksek"
             ],
             [
               "Kreatinin",
-              "Yükselebilir",
-              "Yaşa göre düşük beklenir",
-              "Böbrek hasarı riski"
+              "1.1 mg/dL",
+              "0.5–1.0 mg/dL",
+              "Erken böbrek etkilenimi"
             ]
           ]
         },
         "rows": [
           [
             "Glukoz",
-            "Klinik ağır tabloda kontrol edilir",
-            "Normoglisemi",
-            "Acil güvenlik"
+            "92 mg/dL",
+            "70–110 mg/dL",
+            "Hipoglisemi dışlandı"
+          ],
+          [
+            "Sodyum",
+            "150 mmol/L",
+            "135–145 mmol/L",
+            "Hipernatremik dehidratasyon eşlik ediyor"
           ],
           [
             "Potasyum",
-            "Yükselebilir",
+            "5.4 mmol/L",
             "3.5–5.0 mmol/L",
-            "İzlem gerekli"
+            "Hafif yüksek"
           ],
           [
             "Kreatinin",
-            "Yükselebilir",
-            "Yaşa göre düşük beklenir",
-            "Böbrek hasarı riski"
+            "1.1 mg/dL",
+            "0.5–1.0 mg/dL",
+            "Erken böbrek etkilenimi"
           ]
         ],
-        "postAnswerExplanation": "Hipoglisemi, hipernatremi/hiperkalemi ve kreatinin artışı sıcak çarpmasında erken organ hasarı ve sıvı güvenliğini belirler.",
-        "interpretation": "Hipoglisemi, hipernatremi/hiperkalemi ve kreatinin artışı sıcak çarpmasında erken organ hasarı ve sıvı güvenliğini belirler.",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Hipoglisemi, hipernatremi/hiperkalemi ve kreatinin artışı sıcak çarpmasında erken organ hasarı ve sıvı güvenliğini belirler.",
-        "testValueLabel": "Acil güvenlik testi",
-        "clinicalPriorityLabel": "Acil güvenlik testi",
-        "educationalValue": "Acil güvenlik testi",
+        "postAnswerExplanation": "Metabolik panel hipoglisemi dışlanırken dehidratasyon, elektrolit bozukluğu ve erken böbrek etkilenimini gösterir.",
+        "interpretation": "Metabolik panel hipoglisemi dışlanırken dehidratasyon, elektrolit bozukluğu ve erken böbrek etkilenimini gösterir.",
+        "explanationAfterAnswer": "Metabolik panel hipoglisemi dışlanırken dehidratasyon, elektrolit bozukluğu ve erken böbrek etkilenimini gösterir.",
+        "category": "lab",
+        "testTypeCategory": "lab",
+        "clinicalFlowOrder": 40,
+        "flowOrder": 40,
+        "orderRank": 40,
+        "testValueLabel": "Karar verdirici veri",
+        "clinicalPriorityLabel": "Karar verdirici veri",
+        "educationalValue": "Karar verdirici veri",
         "scoreImpact": 4,
         "scoreValue": 4,
-        "clinicalFlowOrder": 22,
-        "flowOrder": 22,
-        "pediatricSafetyValue": "Acil güvenlik testi",
-        "treatmentImpact": "Acil güvenlik testi",
-        "orderRank": 22
+        "pediatricSafetyValue": "Acil önceliği belirler",
+        "treatmentImpact": "Acil önceliği belirler"
+      },
+      {
+        "id": "v180-new-155-sicak-ortamda-bilinc-degisikligi-ck-urinalysis",
+        "label": "Rabdomiyoliz taraması",
+        "title": "Rabdomiyoliz taraması",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "",
+        "summary": "Kreatin kinaz yüksekliği ve eritrositsiz heme pozitifliği ısı hasarına bağlı kas yıkımını destekler; sıvı ve böbrek izlemi gerektirir.",
+        "clinicalMeaning": "Kreatin kinaz yüksekliği ve eritrositsiz heme pozitifliği ısı hasarına bağlı kas yıkımını destekler; sıvı ve böbrek izlemi gerektirir.",
+        "result": {
+          "title": "Rabdomiyoliz taraması",
+          "summary": "Kreatin kinaz yüksekliği ve eritrositsiz heme pozitifliği ısı hasarına bağlı kas yıkımını destekler; sıvı ve böbrek izlemi gerektirir.",
+          "interpretation": "Kreatin kinaz yüksekliği ve eritrositsiz heme pozitifliği ısı hasarına bağlı kas yıkımını destekler; sıvı ve böbrek izlemi gerektirir.",
+          "values": [
+            [
+              "Kreatin kinaz",
+              "1.850 U/L",
+              "<200 U/L",
+              "Rabdomiyoliz riski"
+            ],
+            [
+              "İdrar çubuğu",
+              "Heme +++",
+              "Negatif",
+              "Miyoglobinüri ile uyumlu"
+            ],
+            [
+              "Mikroskopi",
+              "0–1 eritrosit/HPF",
+              "0–3 eritrosit/HPF",
+              "Heme pozitifliğini hematüri açıklamıyor"
+            ]
+          ],
+          "rows": [
+            [
+              "Kreatin kinaz",
+              "1.850 U/L",
+              "<200 U/L",
+              "Rabdomiyoliz riski"
+            ],
+            [
+              "İdrar çubuğu",
+              "Heme +++",
+              "Negatif",
+              "Miyoglobinüri ile uyumlu"
+            ],
+            [
+              "Mikroskopi",
+              "0–1 eritrosit/HPF",
+              "0–3 eritrosit/HPF",
+              "Heme pozitifliğini hematüri açıklamıyor"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kreatin kinaz",
+            "1.850 U/L",
+            "<200 U/L",
+            "Rabdomiyoliz riski"
+          ],
+          [
+            "İdrar çubuğu",
+            "Heme +++",
+            "Negatif",
+            "Miyoglobinüri ile uyumlu"
+          ],
+          [
+            "Mikroskopi",
+            "0–1 eritrosit/HPF",
+            "0–3 eritrosit/HPF",
+            "Heme pozitifliğini hematüri açıklamıyor"
+          ]
+        ],
+        "postAnswerExplanation": "Kreatin kinaz yüksekliği ve eritrositsiz heme pozitifliği ısı hasarına bağlı kas yıkımını destekler; sıvı ve böbrek izlemi gerektirir.",
+        "interpretation": "Kreatin kinaz yüksekliği ve eritrositsiz heme pozitifliği ısı hasarına bağlı kas yıkımını destekler; sıvı ve böbrek izlemi gerektirir.",
+        "explanationAfterAnswer": "Kreatin kinaz yüksekliği ve eritrositsiz heme pozitifliği ısı hasarına bağlı kas yıkımını destekler; sıvı ve böbrek izlemi gerektirir.",
+        "category": "lab",
+        "testTypeCategory": "lab",
+        "clinicalFlowOrder": 40,
+        "flowOrder": 40,
+        "orderRank": 40,
+        "testValueLabel": "Karar verdirici veri",
+        "clinicalPriorityLabel": "Karar verdirici veri",
+        "educationalValue": "Karar verdirici veri",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "pediatricSafetyValue": "Acil önceliği belirler",
+        "treatmentImpact": "Acil önceliği belirler"
       },
       {
         "id": "v180-new-155-sicak-ortamda-bilinc-degisikligi-blood-gas-lactate",
-        "label": "Kan gazı ve laktat",
-        "title": "Kan gazı ve laktat",
-        "type": "bloodGas",
-        "priority": "useful",
+        "label": "Venöz kan gazı ve laktat",
+        "title": "Venöz kan gazı ve laktat",
+        "type": "lab",
+        "priority": "essential",
         "subtype": "",
-        "summary": "Asidoz ve laktat yüksekliği doku hipoperfüzyonu ve ağır sistemik stres göstergesi olabilir; soğutma ve destek tedavisi önceliklidir.",
-        "clinicalMeaning": "Asidoz ve laktat yüksekliği doku hipoperfüzyonu ve ağır sistemik stres göstergesi olabilir; soğutma ve destek tedavisi önceliklidir.",
+        "summary": "Kan gazı ve laktat, ısı stresi ve dolaşım etkilenimine bağlı erken metabolik bozulmayı gösterir.",
+        "clinicalMeaning": "Kan gazı ve laktat, ısı stresi ve dolaşım etkilenimine bağlı erken metabolik bozulmayı gösterir.",
         "result": {
-          "title": "Kan gazı ve laktat",
-          "summary": "Asidoz ve laktat yüksekliği doku hipoperfüzyonu ve ağır sistemik stres göstergesi olabilir; soğutma ve destek tedavisi önceliklidir.",
-          "interpretation": "Asidoz ve laktat yüksekliği doku hipoperfüzyonu ve ağır sistemik stres göstergesi olabilir; soğutma ve destek tedavisi önceliklidir.",
+          "title": "Venöz kan gazı ve laktat",
+          "summary": "Kan gazı ve laktat, ısı stresi ve dolaşım etkilenimine bağlı erken metabolik bozulmayı gösterir.",
+          "interpretation": "Kan gazı ve laktat, ısı stresi ve dolaşım etkilenimine bağlı erken metabolik bozulmayı gösterir.",
           "values": [
             [
               "pH",
-              "7.31",
+              "7.32",
               "7.35–7.45",
-              "Düşük"
+              "Hafif asidemi"
+            ],
+            [
+              "HCO₃⁻",
+              "19 mmol/L",
+              "22–26 mmol/L",
+              "Metabolik asidoz eğilimi"
             ],
             [
               "Laktat",
-              "3.8 mmol/L",
-              "<2 mmol/L",
-              "Yüksek"
+              "3.1 mmol/L",
+              "<2.0 mmol/L",
+              "Hipoperfüzyon/ısı stresi"
             ]
           ],
           "rows": [
             [
               "pH",
-              "7.31",
+              "7.32",
               "7.35–7.45",
-              "Düşük"
+              "Hafif asidemi"
+            ],
+            [
+              "HCO₃⁻",
+              "19 mmol/L",
+              "22–26 mmol/L",
+              "Metabolik asidoz eğilimi"
             ],
             [
               "Laktat",
-              "3.8 mmol/L",
-              "<2 mmol/L",
-              "Yüksek"
+              "3.1 mmol/L",
+              "<2.0 mmol/L",
+              "Hipoperfüzyon/ısı stresi"
             ]
           ]
         },
         "rows": [
           [
             "pH",
-            "7.31",
+            "7.32",
             "7.35–7.45",
-            "Düşük"
+            "Hafif asidemi"
+          ],
+          [
+            "HCO₃⁻",
+            "19 mmol/L",
+            "22–26 mmol/L",
+            "Metabolik asidoz eğilimi"
           ],
           [
             "Laktat",
-            "3.8 mmol/L",
-            "<2 mmol/L",
-            "Yüksek"
+            "3.1 mmol/L",
+            "<2.0 mmol/L",
+            "Hipoperfüzyon/ısı stresi"
           ]
         ],
-        "postAnswerExplanation": "Asidoz ve laktat yüksekliği doku hipoperfüzyonu ve ağır sistemik stres göstergesi olabilir; soğutma ve destek tedavisi önceliklidir.",
-        "interpretation": "Asidoz ve laktat yüksekliği doku hipoperfüzyonu ve ağır sistemik stres göstergesi olabilir; soğutma ve destek tedavisi önceliklidir.",
-        "category": "respiratory",
-        "testTypeCategory": "respiratory",
-        "explanationAfterAnswer": "Asidoz ve laktat yüksekliği doku hipoperfüzyonu ve ağır sistemik stres göstergesi olabilir; soğutma ve destek tedavisi önceliklidir.",
-        "testValueLabel": "Şok göstergesi",
-        "clinicalPriorityLabel": "Şok göstergesi",
-        "educationalValue": "Şok göstergesi",
+        "postAnswerExplanation": "Kan gazı ve laktat, ısı stresi ve dolaşım etkilenimine bağlı erken metabolik bozulmayı gösterir.",
+        "interpretation": "Kan gazı ve laktat, ısı stresi ve dolaşım etkilenimine bağlı erken metabolik bozulmayı gösterir.",
+        "explanationAfterAnswer": "Kan gazı ve laktat, ısı stresi ve dolaşım etkilenimine bağlı erken metabolik bozulmayı gösterir.",
+        "category": "lab",
+        "testTypeCategory": "lab",
+        "clinicalFlowOrder": 30,
+        "flowOrder": 30,
+        "orderRank": 30,
+        "testValueLabel": "Destekleyici veri",
+        "clinicalPriorityLabel": "Destekleyici veri",
+        "educationalValue": "Destekleyici veri",
         "scoreImpact": 3,
         "scoreValue": 3,
-        "clinicalFlowOrder": 25,
-        "flowOrder": 25,
-        "pediatricSafetyValue": "Şok göstergesi",
-        "treatmentImpact": "Şok göstergesi",
-        "orderRank": 25
-      },
-      {
-        "id": "v180-new-155-sicak-ortamda-bilinc-degisikligi-ck-myoglobin",
-        "label": "CK ve idrar miyoglobin değerlendirmesi",
-        "title": "CK ve idrar miyoglobin değerlendirmesi",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "CK yüksekliği sıcak çarpmasında kas hasarı ve rabdomiyoliz riskini gösterir; böbrek fonksiyonu ve idrar çıkışı yakın izlenmelidir.",
-        "clinicalMeaning": "CK yüksekliği sıcak çarpmasında kas hasarı ve rabdomiyoliz riskini gösterir; böbrek fonksiyonu ve idrar çıkışı yakın izlenmelidir.",
-        "result": {
-          "title": "CK ve idrar miyoglobin değerlendirmesi",
-          "summary": "CK yüksekliği sıcak çarpmasında kas hasarı ve rabdomiyoliz riskini gösterir; böbrek fonksiyonu ve idrar çıkışı yakın izlenmelidir.",
-          "interpretation": "CK yüksekliği sıcak çarpmasında kas hasarı ve rabdomiyoliz riskini gösterir; böbrek fonksiyonu ve idrar çıkışı yakın izlenmelidir.",
-          "values": [
-            [
-              "CK",
-              "1.850 U/L",
-              "<200 U/L",
-              "Yüksek"
-            ],
-            [
-              "İdrar çubuğu kan",
-              "Pozitif; mikroskopide eritrosit az/yok",
-              "Negatif",
-              "Miyoglobin lehine"
-            ]
-          ],
-          "rows": [
-            [
-              "CK",
-              "1.850 U/L",
-              "<200 U/L",
-              "Yüksek"
-            ],
-            [
-              "İdrar çubuğu kan",
-              "Pozitif; mikroskopide eritrosit az/yok",
-              "Negatif",
-              "Miyoglobin lehine"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "CK",
-            "1.850 U/L",
-            "<200 U/L",
-            "Yüksek"
-          ],
-          [
-            "İdrar çubuğu kan",
-            "Pozitif; mikroskopide eritrosit az/yok",
-            "Negatif",
-            "Miyoglobin lehine"
-          ]
-        ],
-        "postAnswerExplanation": "CK yüksekliği sıcak çarpmasında kas hasarı ve rabdomiyoliz riskini gösterir; böbrek fonksiyonu ve idrar çıkışı yakın izlenmelidir.",
-        "interpretation": "CK yüksekliği sıcak çarpmasında kas hasarı ve rabdomiyoliz riskini gösterir; böbrek fonksiyonu ve idrar çıkışı yakın izlenmelidir.",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "CK yüksekliği sıcak çarpmasında kas hasarı ve rabdomiyoliz riskini gösterir; böbrek fonksiyonu ve idrar çıkışı yakın izlenmelidir.",
-        "testValueLabel": "Komplikasyon taraması",
-        "clinicalPriorityLabel": "Komplikasyon taraması",
-        "educationalValue": "Komplikasyon taraması",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "clinicalFlowOrder": 35,
-        "flowOrder": 35,
-        "pediatricSafetyValue": "Komplikasyon taraması",
-        "treatmentImpact": "Komplikasyon taraması",
-        "orderRank": 35
-      },
-      {
-        "id": "v180-new-155-sicak-ortamda-bilinc-degisikligi-liver-coag",
-        "label": "Karaciğer enzimleri ve koagülasyon",
-        "title": "Karaciğer enzimleri ve koagülasyon",
-        "type": "lab",
-        "priority": "situational",
-        "subtype": "",
-        "summary": "Ağır sıcak çarpmasında hepatoselüler hasar ve koagülopati gelişebilir; ağır veya uzayan tabloda AST/ALT, PT/INR ve trombosit izlenir.",
-        "clinicalMeaning": "Ağır sıcak çarpmasında hepatoselüler hasar ve koagülopati gelişebilir; ağır veya uzayan tabloda AST/ALT, PT/INR ve trombosit izlenir.",
-        "result": {
-          "title": "Karaciğer enzimleri ve koagülasyon",
-          "summary": "Ağır sıcak çarpmasında hepatoselüler hasar ve koagülopati gelişebilir; ağır veya uzayan tabloda AST/ALT, PT/INR ve trombosit izlenir.",
-          "interpretation": "Ağır sıcak çarpmasında hepatoselüler hasar ve koagülopati gelişebilir; ağır veya uzayan tabloda AST/ALT, PT/INR ve trombosit izlenir.",
-          "values": [
-            [
-              "AST/ALT",
-              "Ağır tabloda yükselebilir",
-              "Normal",
-              "İzlem"
-            ],
-            [
-              "PT/INR",
-              "Koagülopati açısından izlenir",
-              "Normal",
-              "Durumsal"
-            ]
-          ],
-          "rows": [
-            [
-              "AST/ALT",
-              "Ağır tabloda yükselebilir",
-              "Normal",
-              "İzlem"
-            ],
-            [
-              "PT/INR",
-              "Koagülopati açısından izlenir",
-              "Normal",
-              "Durumsal"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "AST/ALT",
-            "Ağır tabloda yükselebilir",
-            "Normal",
-            "İzlem"
-          ],
-          [
-            "PT/INR",
-            "Koagülopati açısından izlenir",
-            "Normal",
-            "Durumsal"
-          ]
-        ],
-        "postAnswerExplanation": "Ağır sıcak çarpmasında hepatoselüler hasar ve koagülopati gelişebilir; ağır veya uzayan tabloda AST/ALT, PT/INR ve trombosit izlenir.",
-        "interpretation": "Ağır sıcak çarpmasında hepatoselüler hasar ve koagülopati gelişebilir; ağır veya uzayan tabloda AST/ALT, PT/INR ve trombosit izlenir.",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Ağır sıcak çarpmasında hepatoselüler hasar ve koagülopati gelişebilir; ağır veya uzayan tabloda AST/ALT, PT/INR ve trombosit izlenir.",
-        "testValueLabel": "Komplikasyon taraması",
-        "clinicalPriorityLabel": "Komplikasyon taraması",
-        "educationalValue": "Komplikasyon taraması",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "clinicalFlowOrder": 50,
-        "flowOrder": 50,
-        "pediatricSafetyValue": "Komplikasyon taraması",
-        "treatmentImpact": "Komplikasyon taraması",
-        "orderRank": 50
-      },
-      {
-        "id": "v180-new-155-sicak-ortamda-bilinc-degisikligi-cooling-monitoring",
-        "label": "Soğutma yanıtı ve idrar çıkışı izlemi",
-        "title": "Soğutma yanıtı ve idrar çıkışı izlemi",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Isı düşüş hızı, mental durum, elektrolitler, CK, kreatinin ve idrar çıkışı seri izlenir; tedavinin merkezi hızlı aktif soğutmadır.",
-        "clinicalMeaning": "Isı düşüş hızı, mental durum, elektrolitler, CK, kreatinin ve idrar çıkışı seri izlenir; tedavinin merkezi hızlı aktif soğutmadır.",
-        "result": {
-          "title": "Soğutma yanıtı ve idrar çıkışı izlemi",
-          "summary": "Isı düşüş hızı, mental durum, elektrolitler, CK, kreatinin ve idrar çıkışı seri izlenir; tedavinin merkezi hızlı aktif soğutmadır.",
-          "interpretation": "Isı düşüş hızı, mental durum, elektrolitler, CK, kreatinin ve idrar çıkışı seri izlenir; tedavinin merkezi hızlı aktif soğutmadır.",
-          "values": [
-            [
-              "Isı trendi",
-              "Aktif soğutmayla düşmesi beklenir",
-              "<39 °C hedeflenir",
-              "İzlem"
-            ],
-            [
-              "İdrar çıkışı",
-              "Rabdomiyoliz/AKI açısından izlenir",
-              "Yeterli olmalı",
-              "Böbrek hasarı riski"
-            ]
-          ],
-          "rows": [
-            [
-              "Isı trendi",
-              "Aktif soğutmayla düşmesi beklenir",
-              "<39 °C hedeflenir",
-              "İzlem"
-            ],
-            [
-              "İdrar çıkışı",
-              "Rabdomiyoliz/AKI açısından izlenir",
-              "Yeterli olmalı",
-              "Böbrek hasarı riski"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Isı trendi",
-            "Aktif soğutmayla düşmesi beklenir",
-            "<39 °C hedeflenir",
-            "İzlem"
-          ],
-          [
-            "İdrar çıkışı",
-            "Rabdomiyoliz/AKI açısından izlenir",
-            "Yeterli olmalı",
-            "Böbrek hasarı riski"
-          ]
-        ],
-        "postAnswerExplanation": "Isı düşüş hızı, mental durum, elektrolitler, CK, kreatinin ve idrar çıkışı seri izlenir; tedavinin merkezi hızlı aktif soğutmadır.",
-        "interpretation": "Isı düşüş hızı, mental durum, elektrolitler, CK, kreatinin ve idrar çıkışı seri izlenir; tedavinin merkezi hızlı aktif soğutmadır.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Isı düşüş hızı, mental durum, elektrolitler, CK, kreatinin ve idrar çıkışı seri izlenir; tedavinin merkezi hızlı aktif soğutmadır.",
-        "testValueLabel": "İzlem için değerli",
-        "clinicalPriorityLabel": "İzlem için değerli",
-        "educationalValue": "İzlem için değerli",
-        "scoreImpact": 3,
-        "scoreValue": 3,
-        "clinicalFlowOrder": 90,
-        "flowOrder": 90,
-        "pediatricSafetyValue": "İzlem için değerli",
-        "treatmentImpact": "İzlem için değerli",
-        "orderRank": 90
+        "pediatricSafetyValue": "Klinik bağlamda yorumlanır",
+        "treatmentImpact": "Klinik bağlamda yorumlanır"
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -80475,152 +80405,127 @@ export const rawCases = [
     "questionType": "treatment",
     "answerTarget": "first_step",
     "diagnosis": {
-      "correct": "Hızlı aktif soğutma ve eş zamanlı destek tedavisi",
+      "correct": "Hızlı aktif soğutma başlatıp eş zamanlı ABC stabilizasyonu ve sıvı desteği sağlamak",
       "options": [
-        "Hızlı aktif soğutma ve eş zamanlı destek tedavisi",
-        "Oral sıvı ve gölgede soğutmayla klinik izlem",
-        "Antipiretik ve pasif soğutmayla aktif soğutmayı laboratuvar sonuçlarına göre planlamak",
-        "Antibiyotik başlanıp kültür sonucuna göre izlem planlama",
-        "Soğutmayı laboratuvar sonuçları çıkana kadar erteleme"
+        "Oral sıvı verip gölgede izlemle klinik düzelmeyi beklemek",
+        "Antipiretik verip aktif soğutmayı ateşin devamına göre planlamak",
+        "Hızlı aktif soğutma başlatıp eş zamanlı ABC stabilizasyonu ve sıvı desteği sağlamak",
+        "Ampirik antibiyotik başlanıp soğutmayı enfeksiyon dışlandıktan sonra düşünmek",
+        "Önce kraniyal görüntüleme yapıp soğutmayı tetkik sonucuna göre başlatmak"
       ],
       "question": "Bu çocukta ilk ve en kritik acil yaklaşım aşağıdakilerden hangisidir?",
-      "explanation": "Bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite birlikte değerlendirilince temel karar Hızlı aktif soğutma ve eş zamanlı destek tedavisi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
+      "explanation": "Egzersiz ilişkili sıcak çarpmasında tanı kliniktir: çekirdek ısının 40°C üzerinde olması ve santral sinir sistemi disfonksiyonu birlikte görülür. Bu çocukta konfüzyon, taşikardi, hipotansiyon eğilimi, elektrolit bozukluğu ve rabdomiyoliz bulguları aktif soğutmanın laboratuvar veya görüntüleme beklenmeden başlatılması gerektiğini gösterir. Destek tedavileri önemlidir; ancak merkezde ısı yükünün hızlı azaltılması vardır.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "TCA/sıcak çarpmasına bağlı rabdomiyoliz riskinde geniş QRS varsa IV sodyum bikarbonat verilir."
+          "text": "Sıcak çarpmasında antipiretik değil, hızlı aktif soğutma hayat kurtarır; hedef çekirdek ısıyı güvenli aralığa indirirken ABC ve rabdomiyoliz izlemini eş zamanlı yürütmektir."
         }
       ],
       "optionComparison": {
-        "Hızlı aktif soğutma ve eş zamanlı destek tedavisi": "Bu seçenek doğrudur; çünkü bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "Oral sıvı ve gölgede soğutmayla klinik izlem": "İzotonik sıvı tedavisi dehidratasyon, DKA veya şokta intravasküler hacmi ve doku perfüzyonunu düzeltmek için temel basamaktır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "Antipiretik ve pasif soğutmayla aktif soğutmayı laboratuvar sonuçlarına göre planlamak": "Antipiretik ve pasif soğutmayla aktif soğutmayı laboratuvar sonuçlarına göre planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "Antibiyotik başlanıp kültür sonucuna göre izlem planlama": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "Soğutmayı laboratuvar sonuçları çıkana kadar erteleme": "Soğutmayı laboratuvar sonuçları çıkana kadar erteleme pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir."
+        "Oral sıvı verip gölgede izlemle klinik düzelmeyi beklemek": "Oral sıvı ve gölge istirahati ısı bitkinliği gibi hafif tablolarda yeterli olabilir; ancak bu çocukta 40.8 °C çekirdek ısı, konfüzyon, hipotansiyon eğilimi ve rabdomiyoliz bulguları vardır. Bu nedenle yalnız izlem hayat kurtarıcı soğutmayı geciktirir.",
+        "Antipiretik verip aktif soğutmayı ateşin devamına göre planlamak": "Antipiretikler hipotalamik ateş yanıtını hedefler; sıcak çarpmasındaki problem çevresel/egzersiz ilişkili ısı yükü ve termoregülasyon yetmezliğidir. Bu vakada aktif soğutmanın yerine geçmez.",
+        "Hızlı aktif soğutma başlatıp eş zamanlı ABC stabilizasyonu ve sıvı desteği sağlamak": "Doğru yaklaşım budur. Hipertermiye bilinç değişikliği ve erken organ hasarı eşlik ettiği için evaporatif/soğuk su temelli hızlı aktif soğutma hemen başlatılmalı; hava yolu, dolaşım, IV sıvı, elektrolit ve rabdomiyoliz izlemi eş zamanlı yürütülmelidir.",
+        "Ampirik antibiyotik başlanıp soğutmayı enfeksiyon dışlandıktan sonra düşünmek": "Enfeksiyon bazı ateşli bilinç değişikliği tablolarında düşünülür; ancak öykü yoğun sıcak egzersiz sonrası ani kötüleşme, çekirdek hipertermi ve rabdomiyoliz eksenindedir. Antibiyotik merkezli yaklaşım temel acil problemi çözmez.",
+        "Önce kraniyal görüntüleme yapıp soğutmayı tetkik sonucuna göre başlatmak": "Fokal defisit veya travma yokken ve çekirdek ısı 40°C üzerindeyken görüntüleme beklemek tedaviyi tehlikeli biçimde geciktirir. Nörolojik etkilenimin ilk tedavisi bu bağlamda aktif soğutmadır."
       },
       "answerFeedback": {
-        "summary": "Bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite birlikte değerlendirilince temel karar Hızlı aktif soğutma ve eş zamanlı destek tedavisi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "whyCorrect": "Bilinç değişikliği sıcak havada yoğun egzersiz sonrası gelişmiştir. Rektal sıcaklık 40.8°C ölçülmüştür. Bu bulgular birlikte değerlendirildiğinde en uygun yanıt Hızlı aktif soğutma ve eş zamanlı destek tedavisi olur. Tedavi seçimi, klinik aciliyetin ve altta yatan mekanizmanın aynı anda hedeflenmesine dayanır; destek basamakları gerekirse eş zamanlı yürütülür fakat ana kararı tek başına değiştirmez. Alternatifler bazı destek veya ayırıcı basamaklarda kullanılabilir; ancak verilen acil karar noktasını bu seçenek kadar doğrudan karşılamaz.",
-        "rationale": "Bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite birlikte değerlendirilince temel karar Hızlı aktif soğutma ve eş zamanlı destek tedavisi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "correctOptionFeedback": "Bu seçenek doğrudur; çünkü bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
+        "summary": "Egzersiz ilişkili sıcak çarpmasında tanı kliniktir: çekirdek ısının 40°C üzerinde olması ve santral sinir sistemi disfonksiyonu birlikte görülür. Bu çocukta konfüzyon, taşikardi, hipotansiyon eğilimi, elektrolit bozukluğu ve rabdomiyoliz bulguları aktif soğutmanın laboratuvar veya görüntüleme beklenmeden başlatılması gerektiğini gösterir. Destek tedavileri önemlidir; ancak merkezde ısı yükünün hızlı azaltılması vardır.",
+        "whyCorrect": "Doğru yaklaşım budur. Hipertermiye bilinç değişikliği ve erken organ hasarı eşlik ettiği için evaporatif/soğuk su temelli hızlı aktif soğutma hemen başlatılmalı; hava yolu, dolaşım, IV sıvı, elektrolit ve rabdomiyoliz izlemi eş zamanlı yürütülmelidir.",
+        "rationale": "Egzersiz ilişkili sıcak çarpmasında tanı kliniktir: çekirdek ısının 40°C üzerinde olması ve santral sinir sistemi disfonksiyonu birlikte görülür. Bu çocukta konfüzyon, taşikardi, hipotansiyon eğilimi, elektrolit bozukluğu ve rabdomiyoliz bulguları aktif soğutmanın laboratuvar veya görüntüleme beklenmeden başlatılması gerektiğini gösterir. Destek tedavileri önemlidir; ancak merkezde ısı yükünün hızlı azaltılması vardır.",
+        "correctOptionFeedback": "Doğru yaklaşım budur. Hipertermiye bilinç değişikliği ve erken organ hasarı eşlik ettiği için evaporatif/soğuk su temelli hızlı aktif soğutma hemen başlatılmalı; hava yolu, dolaşım, IV sıvı, elektrolit ve rabdomiyoliz izlemi eş zamanlı yürütülmelidir.",
         "keyClues": [
-          "Bilinç değişikliği sıcak havada yoğun egzersiz sonrası gelişmiştir.",
-          "Rektal sıcaklık 40.8°C ölçülmüştür.",
-          "Objektif veri (Kreatin kinaz: Kreatin kinaz 1.850 U/L) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır."
+          "Yoğun sıcak ortamda egzersiz sonrası konfüzyon gelişmiştir.",
+          "Rektal çekirdek ısı 40.8 °C ölçülmüştür.",
+          "Kreatin kinaz yüksekliği ve miyoglobinüri rabdomiyoliz riskini göstermektedir.",
+          "Hipotansiyon eğilimi ve laktat yüksekliği sistemik etkilenimi desteklemektedir."
         ],
         "evidenceChain": [
           {
-            "text": "Bilinç değişikliği sıcak havada yoğun egzersiz sonrası gelişmiştir.",
+            "text": "Yoğun sıcak ortamda egzersiz sonrası konfüzyon gelişmiştir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Rektal sıcaklık 40.8°C ölçülmüştür.",
+            "text": "Rektal çekirdek ısı 40.8 °C ölçülmüştür.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Objektif veri (Kreatin kinaz: Kreatin kinaz 1.850 U/L) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
+            "text": "Kreatin kinaz yüksekliği ve miyoglobinüri rabdomiyoliz riskini göstermektedir.",
+            "weight": "medium",
+            "source": "case"
+          },
+          {
+            "text": "Hipotansiyon eğilimi ve laktat yüksekliği sistemik etkilenimi desteklemektedir.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "TCA/sıcak çarpmasına bağlı rabdomiyoliz riskinde geniş QRS varsa IV sodyum bikarbonat verilir.",
+        "examPearl": "Sıcak çarpmasında antipiretik değil, hızlı aktif soğutma hayat kurtarır; hedef çekirdek ısıyı güvenli aralığa indirirken ABC ve rabdomiyoliz izlemini eş zamanlı yürütmektir.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "TCA/sıcak çarpmasına bağlı rabdomiyoliz riskinde geniş QRS varsa IV sodyum bikarbonat verilir."
+            "text": "Sıcak çarpmasında antipiretik değil, hızlı aktif soğutma hayat kurtarır; hedef çekirdek ısıyı güvenli aralığa indirirken ABC ve rabdomiyoliz izlemini eş zamanlı yürütmektir."
           }
         ],
         "clinicalPearls": [
           {
             "label": "Sınav notu",
-            "text": "TCA/sıcak çarpmasına bağlı rabdomiyoliz riskinde geniş QRS varsa IV sodyum bikarbonat verilir."
+            "text": "Sıcak çarpmasında antipiretik değil, hızlı aktif soğutma hayat kurtarır; hedef çekirdek ısıyı güvenli aralığa indirirken ABC ve rabdomiyoliz izlemini eş zamanlı yürütmektir."
           }
         ],
         "optionComparison": {
-          "Hızlı aktif soğutma ve eş zamanlı destek tedavisi": "Bu seçenek doğrudur; çünkü bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-          "Oral sıvı ve gölgede soğutmayla klinik izlem": "İzotonik sıvı tedavisi dehidratasyon, DKA veya şokta intravasküler hacmi ve doku perfüzyonunu düzeltmek için temel basamaktır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-          "Antipiretik ve pasif soğutmayla aktif soğutmayı laboratuvar sonuçlarına göre planlamak": "Antipiretik ve pasif soğutmayla aktif soğutmayı laboratuvar sonuçlarına göre planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-          "Antibiyotik başlanıp kültür sonucuna göre izlem planlama": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-          "Soğutmayı laboratuvar sonuçları çıkana kadar erteleme": "Soğutmayı laboratuvar sonuçları çıkana kadar erteleme pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir."
-        },
-        "whyWrong": {
-          "Oral sıvı ve gölgede soğutmayla klinik izlem": "İzotonik sıvı tedavisi dehidratasyon, DKA veya şokta intravasküler hacmi ve doku perfüzyonunu düzeltmek için temel basamaktır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-          "Antipiretik ve pasif soğutmayla aktif soğutmayı laboratuvar sonuçlarına göre planlamak": "Antipiretik ve pasif soğutmayla aktif soğutmayı laboratuvar sonuçlarına göre planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-          "Antibiyotik başlanıp kültür sonucuna göre izlem planlama": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-          "Soğutmayı laboratuvar sonuçları çıkana kadar erteleme": "Soğutmayı laboratuvar sonuçları çıkana kadar erteleme pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Pediatrik sıcak çarpmasında hızlı soğutmanın önceliğini seçebilme",
-        "coreKnowledge": "Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir."
-      },
-      "whyCorrect": "Bu seçenek doğrudur; çünkü bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "evidenceChain": [
-        {
-          "text": "Bilinç değişikliği sıcak havada yoğun egzersiz sonrası gelişmiştir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Rektal sıcaklık 40.8°C ölçülmüştür.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Objektif veri (Kreatin kinaz: Kreatin kinaz 1.850 U/L) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-          "weight": "medium",
-          "source": "case"
+          "Oral sıvı verip gölgede izlemle klinik düzelmeyi beklemek": "Oral sıvı ve gölge istirahati ısı bitkinliği gibi hafif tablolarda yeterli olabilir; ancak bu çocukta 40.8 °C çekirdek ısı, konfüzyon, hipotansiyon eğilimi ve rabdomiyoliz bulguları vardır. Bu nedenle yalnız izlem hayat kurtarıcı soğutmayı geciktirir.",
+          "Antipiretik verip aktif soğutmayı ateşin devamına göre planlamak": "Antipiretikler hipotalamik ateş yanıtını hedefler; sıcak çarpmasındaki problem çevresel/egzersiz ilişkili ısı yükü ve termoregülasyon yetmezliğidir. Bu vakada aktif soğutmanın yerine geçmez.",
+          "Hızlı aktif soğutma başlatıp eş zamanlı ABC stabilizasyonu ve sıvı desteği sağlamak": "Doğru yaklaşım budur. Hipertermiye bilinç değişikliği ve erken organ hasarı eşlik ettiği için evaporatif/soğuk su temelli hızlı aktif soğutma hemen başlatılmalı; hava yolu, dolaşım, IV sıvı, elektrolit ve rabdomiyoliz izlemi eş zamanlı yürütülmelidir.",
+          "Ampirik antibiyotik başlanıp soğutmayı enfeksiyon dışlandıktan sonra düşünmek": "Enfeksiyon bazı ateşli bilinç değişikliği tablolarında düşünülür; ancak öykü yoğun sıcak egzersiz sonrası ani kötüleşme, çekirdek hipertermi ve rabdomiyoliz eksenindedir. Antibiyotik merkezli yaklaşım temel acil problemi çözmez.",
+          "Önce kraniyal görüntüleme yapıp soğutmayı tetkik sonucuna göre başlatmak": "Fokal defisit veya travma yokken ve çekirdek ısı 40°C üzerindeyken görüntüleme beklemek tedaviyi tehlikeli biçimde geciktirir. Nörolojik etkilenimin ilk tedavisi bu bağlamda aktif soğutmadır."
         }
-      ],
-      "coreKnowledge": "Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-      "examPearl": "TCA/sıcak çarpmasına bağlı rabdomiyoliz riskinde geniş QRS varsa IV sodyum bikarbonat verilir.",
-      "whyWrong": {
-        "Oral sıvı ve gölgede soğutmayla klinik izlem": "İzotonik sıvı tedavisi dehidratasyon, DKA veya şokta intravasküler hacmi ve doku perfüzyonunu düzeltmek için temel basamaktır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "Antipiretik ve pasif soğutmayla aktif soğutmayı laboratuvar sonuçlarına göre planlamak": "Antipiretik ve pasif soğutmayla aktif soğutmayı laboratuvar sonuçlarına göre planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "Antibiyotik başlanıp kültür sonucuna göre izlem planlama": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "Soğutmayı laboratuvar sonuçları çıkana kadar erteleme": "Soğutmayı laboratuvar sonuçları çıkana kadar erteleme pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir."
       }
     },
-    "difficultyTag": "Acil",
-    "coreKnowledge": "Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-    "examPearl": "TCA/sıcak çarpmasına bağlı rabdomiyoliz riskinde geniş QRS varsa IV sodyum bikarbonat verilir.",
-    "whyCorrect": "Bu seçenek doğrudur; çünkü bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
+    "difficultyTag": "Zor",
+    "coreKnowledge": "Egzersiz ilişkili sıcak çarpmasında tanı kliniktir: çekirdek ısının 40°C üzerinde olması ve santral sinir sistemi disfonksiyonu birlikte görülür. Bu çocukta konfüzyon, taşikardi, hipotansiyon eğilimi, elektrolit bozukluğu ve rabdomiyoliz bulguları aktif soğutmanın laboratuvar veya görüntüleme beklenmeden başlatılması gerektiğini gösterir. Destek tedavileri önemlidir; ancak merkezde ısı yükünün hızlı azaltılması vardır.",
+    "examPearl": "Sıcak çarpmasında antipiretik değil, hızlı aktif soğutma hayat kurtarır; hedef çekirdek ısıyı güvenli aralığa indirirken ABC ve rabdomiyoliz izlemini eş zamanlı yürütmektir.",
+    "whyCorrect": "Doğru yaklaşım budur. Hipertermiye bilinç değişikliği ve erken organ hasarı eşlik ettiği için evaporatif/soğuk su temelli hızlı aktif soğutma hemen başlatılmalı; hava yolu, dolaşım, IV sıvı, elektrolit ve rabdomiyoliz izlemi eş zamanlı yürütülmelidir.",
     "optionComparison": {
-      "Hızlı aktif soğutma ve eş zamanlı destek tedavisi": "Bu seçenek doğrudur; çünkü bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "Oral sıvı ve gölgede soğutmayla klinik izlem": "İzotonik sıvı tedavisi dehidratasyon, DKA veya şokta intravasküler hacmi ve doku perfüzyonunu düzeltmek için temel basamaktır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-      "Antipiretik ve pasif soğutmayla aktif soğutmayı laboratuvar sonuçlarına göre planlamak": "Antipiretik ve pasif soğutmayla aktif soğutmayı laboratuvar sonuçlarına göre planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-      "Antibiyotik başlanıp kültür sonucuna göre izlem planlama": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-      "Soğutmayı laboratuvar sonuçları çıkana kadar erteleme": "Soğutmayı laboratuvar sonuçları çıkana kadar erteleme pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir."
+      "Oral sıvı verip gölgede izlemle klinik düzelmeyi beklemek": "Oral sıvı ve gölge istirahati ısı bitkinliği gibi hafif tablolarda yeterli olabilir; ancak bu çocukta 40.8 °C çekirdek ısı, konfüzyon, hipotansiyon eğilimi ve rabdomiyoliz bulguları vardır. Bu nedenle yalnız izlem hayat kurtarıcı soğutmayı geciktirir.",
+      "Antipiretik verip aktif soğutmayı ateşin devamına göre planlamak": "Antipiretikler hipotalamik ateş yanıtını hedefler; sıcak çarpmasındaki problem çevresel/egzersiz ilişkili ısı yükü ve termoregülasyon yetmezliğidir. Bu vakada aktif soğutmanın yerine geçmez.",
+      "Hızlı aktif soğutma başlatıp eş zamanlı ABC stabilizasyonu ve sıvı desteği sağlamak": "Doğru yaklaşım budur. Hipertermiye bilinç değişikliği ve erken organ hasarı eşlik ettiği için evaporatif/soğuk su temelli hızlı aktif soğutma hemen başlatılmalı; hava yolu, dolaşım, IV sıvı, elektrolit ve rabdomiyoliz izlemi eş zamanlı yürütülmelidir.",
+      "Ampirik antibiyotik başlanıp soğutmayı enfeksiyon dışlandıktan sonra düşünmek": "Enfeksiyon bazı ateşli bilinç değişikliği tablolarında düşünülür; ancak öykü yoğun sıcak egzersiz sonrası ani kötüleşme, çekirdek hipertermi ve rabdomiyoliz eksenindedir. Antibiyotik merkezli yaklaşım temel acil problemi çözmez.",
+      "Önce kraniyal görüntüleme yapıp soğutmayı tetkik sonucuna göre başlatmak": "Fokal defisit veya travma yokken ve çekirdek ısı 40°C üzerindeyken görüntüleme beklemek tedaviyi tehlikeli biçimde geciktirir. Nörolojik etkilenimin ilk tedavisi bu bağlamda aktif soğutmadır."
     },
     "evidenceChain": [
       {
-        "text": "Bilinç değişikliği sıcak havada yoğun egzersiz sonrası gelişmiştir.",
+        "text": "Yoğun sıcak ortamda egzersiz sonrası konfüzyon gelişmiştir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Rektal sıcaklık 40.8°C ölçülmüştür.",
+        "text": "Rektal çekirdek ısı 40.8 °C ölçülmüştür.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Objektif veri (Kreatin kinaz: Kreatin kinaz 1.850 U/L) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
+        "text": "Kreatin kinaz yüksekliği ve miyoglobinüri rabdomiyoliz riskini göstermektedir.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "text": "Hipotansiyon eğilimi ve laktat yüksekliği sistemik etkilenimi desteklemektedir.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Oral sıvı ve gölgede soğutmayla klinik izlem": "İzotonik sıvı tedavisi dehidratasyon, DKA veya şokta intravasküler hacmi ve doku perfüzyonunu düzeltmek için temel basamaktır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-      "Antipiretik ve pasif soğutmayla aktif soğutmayı laboratuvar sonuçlarına göre planlamak": "Antipiretik ve pasif soğutmayla aktif soğutmayı laboratuvar sonuçlarına göre planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-      "Antibiyotik başlanıp kültür sonucuna göre izlem planlama": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-      "Soğutmayı laboratuvar sonuçları çıkana kadar erteleme": "Soğutmayı laboratuvar sonuçları çıkana kadar erteleme pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir."
+      "Oral sıvı verip gölgede izlemle klinik düzelmeyi beklemek": "Oral sıvı ve gölge istirahati ısı bitkinliği gibi hafif tablolarda yeterli olabilir; ancak bu çocukta 40.8 °C çekirdek ısı, konfüzyon, hipotansiyon eğilimi ve rabdomiyoliz bulguları vardır. Bu nedenle yalnız izlem hayat kurtarıcı soğutmayı geciktirir.",
+      "Antipiretik verip aktif soğutmayı ateşin devamına göre planlamak": "Antipiretikler hipotalamik ateş yanıtını hedefler; sıcak çarpmasındaki problem çevresel/egzersiz ilişkili ısı yükü ve termoregülasyon yetmezliğidir. Bu vakada aktif soğutmanın yerine geçmez.",
+      "Ampirik antibiyotik başlanıp soğutmayı enfeksiyon dışlandıktan sonra düşünmek": "Enfeksiyon bazı ateşli bilinç değişikliği tablolarında düşünülür; ancak öykü yoğun sıcak egzersiz sonrası ani kötüleşme, çekirdek hipertermi ve rabdomiyoliz eksenindedir. Antibiyotik merkezli yaklaşım temel acil problemi çözmez.",
+      "Önce kraniyal görüntüleme yapıp soğutmayı tetkik sonucuna göre başlatmak": "Fokal defisit veya travma yokken ve çekirdek ısı 40°C üzerindeyken görüntüleme beklemek tedaviyi tehlikeli biçimde geciktirir. Nörolojik etkilenimin ilk tedavisi bu bağlamda aktif soğutmadır."
     },
     "aiMeta": {
-      "generatedAt": "manual-v396-pediatrics-ultra-refined",
+      "generatedAt": "manual-v397-pediatrics-sixth-batch-ultra-refined",
       "generator": "manual-editorial-pediatrics-case-refinement",
-      "schemaVersion": "clinical-standard-v396",
+      "schemaVersion": "clinical-standard-v397",
       "provider": "manual-editorial",
       "validationWarnings": []
     }
@@ -80632,16 +80537,16 @@ export const rawCases = [
     "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
     "title": "Kafa travması sonrası yeniden bilinç kaybı",
     "difficulty": "Zor",
-    "clinicalFocus": "Kafa travması sonrası yeniden bilinç kaybı bağlamında pediatrik öykü, yaşa uygun vital bulgu, fizik muayene ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Kafa travması sonrası yeniden bilinç kaybı için pediatrik klinik patern, acil öncelik ve hedefe yönelik tanı/tedavi kararını açıklama.",
+    "clinicalFocus": "Kafa travması sonrası kısa lucid interval, giderek artan baş ağrısı-kusma, anizokori ve bikonveks ekstraaksiyel kanama paternini epidural hematom lehine yorumlama.",
+    "learningTarget": "Pediatrik kafa travmasında epidural hematomu konküzyon, subdural hematom ve diffüz aksonal hasardan ayıran klinik-görüntüleme ipuçlarını kullanabilme.",
     "demographics": "12 yaşında erkek çocuk",
     "setting": "Çocuk acil servisinde",
-    "chiefComplaint": "Çocuk, bisikletten düşme sonrası baş ağrısı ve bilinçte kötüleşme nedeniyle acile getiriliyor.",
-    "stem": "Düşme sonrası kısa süre bayıldığı, ardından yaklaşık bir saat iyi göründüğü ve konuştuğu öğreniliyor. Daha sonra şiddetli baş ağrısı, kusma ve uykuya eğilim gelişmiştir. Kask kullanmadığı belirtiliyor.",
+    "chiefComplaint": "Çocuk, bisikletten düşme sonrası kısa düzelmenin ardından gelişen şiddetli baş ağrısı, kusma ve bilinç bulanıklığı nedeniyle acile getiriliyor.",
+    "stem": "Kask takmadan bisikletten düşen çocuk olaydan hemen sonra kısa süreli bilinç kaybı yaşamış, ardından yaklaşık bir saat boyunca ailesiyle konuşup yürüyebilmiştir. Sonrasında giderek artan baş ağrısı, tekrarlayan kusma ve uykuya eğilim başlamıştır. Aile travma öncesinde ateş, nöbet veya benzer baş ağrısı öyküsü olmadığını belirtir.",
     "patientIntro": {
       "profile": "12 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
-      "presentation": "Çocuk, bisikletten düşme sonrası baş ağrısı ve bilinçte kötüleşme nedeniyle acile getiriliyor.",
-      "historySummary": "Düşme sonrası kısa süre bayıldığı, ardından yaklaşık bir saat iyi göründüğü ve konuştuğu öğreniliyor. Daha sonra şiddetli baş ağrısı, kusma ve uykuya eğilim gelişmiştir. Kask kullanmadığı belirtiliyor."
+      "presentation": "Bisikletten düşme sonrası kısa süre iyi görünmesini izleyen baş ağrısı, kusma ve bilinçte kötüleşme ile getiriliyor.",
+      "historySummary": "Ailesinin ifadesine göre çocuk kask takmadan bisikletten düşmüş ve başının sağ tarafını yere çarpmıştır. Olaydan hemen sonra kısa süre bayılmış, ardından yaklaşık bir saat boyunca konuşabilir ve yürüyebilir durumda görünmüştür. Daha sonra baş ağrısı hızla şiddetlenmiş, iki kez kusmuş ve uyandırılmakta zorlanır hale gelmiştir. Travma öncesinde ateş, bilinen kanama bozukluğu, antikoagülan kullanımı veya benzer nörolojik atak öyküsü yoktur."
     },
     "vitals": {
       "TA": "142/84 mmHg",
@@ -80649,211 +80554,283 @@ export const rawCases = [
       "Solunum": "24/dk",
       "SpO2": "%96, oda havasında",
       "Ateş": "36.8 °C",
-      "Şok indeksi": "0.41 pediatrik bağlamda yorumlanmalı"
+      "Şok indeksi": "0.41 - bradikardi ve hipertansiyon intrakraniyal basınç artışı açısından uyarıcı"
     },
     "exam": [
-      "Çocuk somnolandır",
-      "Sağ temporal bölgede hassas şişlik vardır.",
-      "Sol pupil sağa göre daha geniş ve ışık yanıtı zayıftır."
+      "Çocuk somnolandır; ağrılı uyaranla gözlerini açar ve GKS 11 olarak değerlendirilir.",
+      "Sağ temporal bölgede hassas şişlik ve yüzeyel abrazyon vardır.",
+      "Sağ pupil sola göre geniştir ve ışık yanıtı zayıftır; sol üst ekstremitede hafif güçsüzlük izlenir."
     ],
     "investigations": [
       {
-        "id": "acil-kraniyal-bilgisayarli-tomografi-1",
-        "label": "Acil kraniyal bilgisayarlı tomografi",
-        "title": "Acil kraniyal bilgisayarlı tomografi",
-        "type": "ct",
-        "priority": "essential",
-        "subtype": "BT",
-        "summary": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
-        "clinicalMeaning": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
-        "result": {
-          "title": "Acil kraniyal bilgisayarlı tomografi",
-          "summary": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
-          "interpretation": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
-          "values": [
-            [
-              "Görüntüleme bulgusu",
-              "Temporal bölgede bikonveks hiperdens ekstraaksiyel kanama ve orta hat şifti izlendi.",
-              "Modaliteye özgü bulgu",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Görüntüleme bulgusu",
-              "Temporal bölgede bikonveks hiperdens ekstraaksiyel kanama ve orta hat şifti izlendi.",
-              "Modaliteye özgü bulgu",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Görüntüleme bulgusu",
-            "Temporal bölgede bikonveks hiperdens ekstraaksiyel kanama ve orta hat şifti izlendi.",
-            "Modaliteye özgü bulgu",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
-        "interpretation": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Kontrastsız beyin BT’de kanama görülmemesi, akut iskemik inmede reperfüzyon uygunluğunu değerlendirmek için zorunlu güvenlik basamağıdır.",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      },
-      {
-        "id": "kapiller-kan-glukozu-2",
-        "label": "Kapiller kan glukozu",
-        "title": "Kapiller kan glukozu",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "Yatak başı testler",
-        "summary": "Glukoz değeri hipoglisemi veya hipergliseminin klinik tabloya katkısını gösterir; nörolojik bulgu, keton ve asit-baz durumu ile birlikte yorumlanır.",
-        "clinicalMeaning": "Glukoz değeri hipoglisemi veya hipergliseminin klinik tabloya katkısını gösterir; nörolojik bulgu, keton ve asit-baz durumu ile birlikte yorumlanır.",
-        "result": {
-          "title": "Kapiller kan glukozu",
-          "summary": "Glukoz değeri hipoglisemi veya hipergliseminin klinik tabloya katkısını gösterir; nörolojik bulgu, keton ve asit-baz durumu ile birlikte yorumlanır.",
-          "interpretation": "Glukoz değeri hipoglisemi veya hipergliseminin klinik tabloya katkısını gösterir; nörolojik bulgu, keton ve asit-baz durumu ile birlikte yorumlanır.",
-          "values": [
-            [
-              "Kapiller kan glukozu",
-              "112 mg/dL",
-              "70–140 mg/dL",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Kapiller kan glukozu",
-              "112 mg/dL",
-              "70–140 mg/dL",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Kapiller kan glukozu",
-            "112 mg/dL",
-            "70–140 mg/dL",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "Glukoz değeri hipoglisemi veya hipergliseminin klinik tabloya katkısını gösterir; nörolojik bulgu, keton ve asit-baz durumu ile birlikte yorumlanır.",
-        "interpretation": "Glukoz değeri hipoglisemi veya hipergliseminin klinik tabloya katkısını gösterir; nörolojik bulgu, keton ve asit-baz durumu ile birlikte yorumlanır.",
-        "explanationAfterAnswer": "Glukoz değeri hipoglisemi veya hipergliseminin klinik tabloya katkısını gösterir; nörolojik bulgu, keton ve asit-baz durumu ile birlikte yorumlanır.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      },
-      {
-        "id": "v180-new-156-kafa-travmasi-sonrasi-yeniden-bilinc-kaybi-pediatric-initial-assessment",
-        "label": "Pediatrik ilk değerlendirme",
-        "title": "Pediatrik ilk değerlendirme",
+        "id": "v180-new-156-kafa-travmasi-sonrasi-yeniden-bilinc-kaybi-neuro-reassessment",
+        "label": "Acil nörolojik yeniden değerlendirme",
+        "title": "Acil nörolojik yeniden değerlendirme",
         "type": "clinical",
         "priority": "essential",
         "subtype": "",
-        "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "clinicalMeaning": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
+        "summary": "Travma sonrası bilinçte kötüleşme, anizokori ve kusma acil kraniyal görüntüleme ve beyin cerrahisi değerlendirmesini gerektirir.",
+        "clinicalMeaning": "Travma sonrası bilinçte kötüleşme, anizokori ve kusma acil kraniyal görüntüleme ve beyin cerrahisi değerlendirmesini gerektirir.",
         "result": {
-          "title": "Pediatrik ilk değerlendirme",
-          "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
+          "title": "Acil nörolojik yeniden değerlendirme",
+          "summary": "Travma sonrası bilinçte kötüleşme, anizokori ve kusma acil kraniyal görüntüleme ve beyin cerrahisi değerlendirmesini gerektirir.",
+          "interpretation": "Travma sonrası bilinçte kötüleşme, anizokori ve kusma acil kraniyal görüntüleme ve beyin cerrahisi değerlendirmesini gerektirir.",
           "values": [
             [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
+              "GKS",
+              "11/15",
+              "15/15",
+              "Bilinçte kötüleşme"
             ],
             [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
+              "Pupil değerlendirmesi",
+              "Sağ pupil geniş, ışık yanıtı zayıf",
+              "Eşit ve reaktif",
+              "Unkal herniasyon riski"
             ],
             [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
+              "Kusma",
+              "Tekrarlayan kusma var",
+              "Yok",
+              "İntrakraniyal basınç artışı lehine"
             ]
           ],
           "rows": [
             [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
+              "GKS",
+              "11/15",
+              "15/15",
+              "Bilinçte kötüleşme"
             ],
             [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
+              "Pupil değerlendirmesi",
+              "Sağ pupil geniş, ışık yanıtı zayıf",
+              "Eşit ve reaktif",
+              "Unkal herniasyon riski"
             ],
             [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
+              "Kusma",
+              "Tekrarlayan kusma var",
+              "Yok",
+              "İntrakraniyal basınç artışı lehine"
             ]
           ]
         },
         "rows": [
           [
-            "Genel görünüm",
-            "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-            "Yaşa göre",
-            "Kritik izlem"
+            "GKS",
+            "11/15",
+            "15/15",
+            "Bilinçte kötüleşme"
           ],
           [
-            "Kapiller dolum/perfüzyon",
-            "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-            "<2 sn beklenir",
-            "Yaşa göre yorumlanır"
+            "Pupil değerlendirmesi",
+            "Sağ pupil geniş, ışık yanıtı zayıf",
+            "Eşit ve reaktif",
+            "Unkal herniasyon riski"
           ],
           [
-            "Solunum işi",
-            "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-            "Yaşa göre",
-            "Acil güvenlik"
+            "Kusma",
+            "Tekrarlayan kusma var",
+            "Yok",
+            "İntrakraniyal basınç artışı lehine"
           ]
         ],
-        "postAnswerExplanation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
+        "postAnswerExplanation": "Travma sonrası bilinçte kötüleşme, anizokori ve kusma acil kraniyal görüntüleme ve beyin cerrahisi değerlendirmesini gerektirir.",
+        "interpretation": "Travma sonrası bilinçte kötüleşme, anizokori ve kusma acil kraniyal görüntüleme ve beyin cerrahisi değerlendirmesini gerektirir.",
+        "explanationAfterAnswer": "Travma sonrası bilinçte kötüleşme, anizokori ve kusma acil kraniyal görüntüleme ve beyin cerrahisi değerlendirmesini gerektirir.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme",
-        "orderRank": 10
+        "clinicalFlowOrder": 50,
+        "flowOrder": 50,
+        "orderRank": 50,
+        "testValueLabel": "Karar verdirici veri",
+        "clinicalPriorityLabel": "Karar verdirici veri",
+        "educationalValue": "Karar verdirici veri",
+        "scoreImpact": 5,
+        "scoreValue": 5,
+        "pediatricSafetyValue": "Acil önceliği belirler",
+        "treatmentImpact": "Acil önceliği belirler"
+      },
+      {
+        "id": "v180-new-156-kafa-travmasi-sonrasi-yeniden-bilinc-kaybi-cranial-ct",
+        "label": "Kontrastsız kraniyal BT",
+        "title": "Kontrastsız kraniyal BT",
+        "type": "ct",
+        "priority": "essential",
+        "subtype": "BT",
+        "summary": "BT’de sütürlerle sınırlı bikonveks ekstraaksiyel kanama, temporal kırık ve kitle etkisi epidural hematom paternini gösterir.",
+        "clinicalMeaning": "BT’de sütürlerle sınırlı bikonveks ekstraaksiyel kanama, temporal kırık ve kitle etkisi epidural hematom paternini gösterir.",
+        "result": {
+          "title": "Kontrastsız kraniyal BT",
+          "summary": "BT’de sütürlerle sınırlı bikonveks ekstraaksiyel kanama, temporal kırık ve kitle etkisi epidural hematom paternini gösterir.",
+          "interpretation": "BT’de sütürlerle sınırlı bikonveks ekstraaksiyel kanama, temporal kırık ve kitle etkisi epidural hematom paternini gösterir.",
+          "values": [
+            [
+              "Ekstraaksiyel kanama",
+              "Sağ temporal bölgede bikonveks hiperdens koleksiyon",
+              "Kanama izlenmemeli",
+              "Epidural patern"
+            ],
+            [
+              "Kafatası",
+              "Sağ temporal lineer kırık hattı",
+              "Kırık izlenmemeli",
+              "Orta meningeal arter riski"
+            ],
+            [
+              "Kitle etkisi",
+              "5 mm orta hat şifti ve sulkus silinmesi",
+              "Kitle etkisi olmamalı",
+              "Acil cerrahi risk"
+            ]
+          ],
+          "rows": [
+            [
+              "Ekstraaksiyel kanama",
+              "Sağ temporal bölgede bikonveks hiperdens koleksiyon",
+              "Kanama izlenmemeli",
+              "Epidural patern"
+            ],
+            [
+              "Kafatası",
+              "Sağ temporal lineer kırık hattı",
+              "Kırık izlenmemeli",
+              "Orta meningeal arter riski"
+            ],
+            [
+              "Kitle etkisi",
+              "5 mm orta hat şifti ve sulkus silinmesi",
+              "Kitle etkisi olmamalı",
+              "Acil cerrahi risk"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Ekstraaksiyel kanama",
+            "Sağ temporal bölgede bikonveks hiperdens koleksiyon",
+            "Kanama izlenmemeli",
+            "Epidural patern"
+          ],
+          [
+            "Kafatası",
+            "Sağ temporal lineer kırık hattı",
+            "Kırık izlenmemeli",
+            "Orta meningeal arter riski"
+          ],
+          [
+            "Kitle etkisi",
+            "5 mm orta hat şifti ve sulkus silinmesi",
+            "Kitle etkisi olmamalı",
+            "Acil cerrahi risk"
+          ]
+        ],
+        "postAnswerExplanation": "BT’de sütürlerle sınırlı bikonveks ekstraaksiyel kanama, temporal kırık ve kitle etkisi epidural hematom paternini gösterir.",
+        "interpretation": "BT’de sütürlerle sınırlı bikonveks ekstraaksiyel kanama, temporal kırık ve kitle etkisi epidural hematom paternini gösterir.",
+        "explanationAfterAnswer": "BT’de sütürlerle sınırlı bikonveks ekstraaksiyel kanama, temporal kırık ve kitle etkisi epidural hematom paternini gösterir.",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "clinicalFlowOrder": 50,
+        "flowOrder": 50,
+        "orderRank": 50,
+        "testValueLabel": "Karar verdirici veri",
+        "clinicalPriorityLabel": "Karar verdirici veri",
+        "educationalValue": "Karar verdirici veri",
+        "scoreImpact": 5,
+        "scoreValue": 5,
+        "pediatricSafetyValue": "Acil önceliği belirler",
+        "treatmentImpact": "Acil önceliği belirler"
+      },
+      {
+        "id": "v180-new-156-kafa-travmasi-sonrasi-yeniden-bilinc-kaybi-preop-lab",
+        "label": "Preoperatif hemogram ve koagülasyon",
+        "title": "Preoperatif hemogram ve koagülasyon",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "",
+        "summary": "Hemogram ve koagülasyon değerleri cerrahi hazırlık ve kanama riskinin güvenli değerlendirilmesi için kullanılır.",
+        "clinicalMeaning": "Hemogram ve koagülasyon değerleri cerrahi hazırlık ve kanama riskinin güvenli değerlendirilmesi için kullanılır.",
+        "result": {
+          "title": "Preoperatif hemogram ve koagülasyon",
+          "summary": "Hemogram ve koagülasyon değerleri cerrahi hazırlık ve kanama riskinin güvenli değerlendirilmesi için kullanılır.",
+          "interpretation": "Hemogram ve koagülasyon değerleri cerrahi hazırlık ve kanama riskinin güvenli değerlendirilmesi için kullanılır.",
+          "values": [
+            [
+              "Hemoglobin",
+              "12.8 g/dL",
+              "11.5–15.5 g/dL",
+              "Başlangıç değeri"
+            ],
+            [
+              "Trombosit",
+              "265.000/mm³",
+              "150.000–450.000/mm³",
+              "Yeterli"
+            ],
+            [
+              "INR",
+              "1.0",
+              "0.8–1.2",
+              "Koagülopati yok"
+            ]
+          ],
+          "rows": [
+            [
+              "Hemoglobin",
+              "12.8 g/dL",
+              "11.5–15.5 g/dL",
+              "Başlangıç değeri"
+            ],
+            [
+              "Trombosit",
+              "265.000/mm³",
+              "150.000–450.000/mm³",
+              "Yeterli"
+            ],
+            [
+              "INR",
+              "1.0",
+              "0.8–1.2",
+              "Koagülopati yok"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Hemoglobin",
+            "12.8 g/dL",
+            "11.5–15.5 g/dL",
+            "Başlangıç değeri"
+          ],
+          [
+            "Trombosit",
+            "265.000/mm³",
+            "150.000–450.000/mm³",
+            "Yeterli"
+          ],
+          [
+            "INR",
+            "1.0",
+            "0.8–1.2",
+            "Koagülopati yok"
+          ]
+        ],
+        "postAnswerExplanation": "Hemogram ve koagülasyon değerleri cerrahi hazırlık ve kanama riskinin güvenli değerlendirilmesi için kullanılır.",
+        "interpretation": "Hemogram ve koagülasyon değerleri cerrahi hazırlık ve kanama riskinin güvenli değerlendirilmesi için kullanılır.",
+        "explanationAfterAnswer": "Hemogram ve koagülasyon değerleri cerrahi hazırlık ve kanama riskinin güvenli değerlendirilmesi için kullanılır.",
+        "category": "lab",
+        "testTypeCategory": "lab",
+        "clinicalFlowOrder": 30,
+        "flowOrder": 30,
+        "orderRank": 30,
+        "testValueLabel": "Destekleyici veri",
+        "clinicalPriorityLabel": "Destekleyici veri",
+        "educationalValue": "Destekleyici veri",
+        "scoreImpact": 3,
+        "scoreValue": 3,
+        "pediatricSafetyValue": "Klinik bağlamda yorumlanır",
+        "treatmentImpact": "Klinik bağlamda yorumlanır"
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -80868,150 +80845,125 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Epidural hematom",
       "options": [
-        "Epidural hematom",
-        "Basit skalp hematomu",
-        "Subaraknoid kanama",
-        "Migren atağı",
-        "Diffüz aksonal hasar"
+        "Beyin sarsıntısı",
+        "Akut subdural hematom",
+        "Diffüz aksonal hasar",
+        "Posttravmatik migren",
+        "Epidural hematom"
       ],
       "question": "Bu hastada en olası tanı aşağıdakilerden hangisidir?",
-      "explanation": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Epidural hematom yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü kafa travması sonrası yeniden bilinç kaybı için doğru tanı/tedavi önceliğini belirler.",
+      "explanation": "Bu olguda tanıyı belirleyen ana örüntü travma sonrası kısa lucid interval, ardından hızla artan baş ağrısı-kusma ve bilinç bozulmasıdır. Anizokori ve BT’de temporal kırıkla ilişkili bikonveks ekstraaksiyel kanama epidural hematomu diğer travmatik beyin hasarlarından ayırır. Bu tablo gözlemle izlenecek basit kafa travması değil, acil beyin cerrahisi değerlendirmesi gerektiren kitle etkili kanamadır.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Epidural hematom kararını destekler."
+          "text": "Travma sonrası “iyiydi, sonra kötüleşti” öyküsü ve bikonveks ekstraaksiyel kanama epidural hematom için yüksek verimli ipucudur."
         }
       ],
       "optionComparison": {
-        "Epidural hematom": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "Basit skalp hematomu": "Basit skalp hematomu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Basit skalp hematomu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Subaraknoid kanama": "Subaraknoid kanama pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Subaraknoid kanama hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Migren atağı": "Migren atağı pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Migren atağı hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Diffüz aksonal hasar": "Diffüz aksonal hasar pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Diffüz aksonal hasar hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+        "Beyin sarsıntısı": "Beyin sarsıntısında kısa süreli bilinç etkilenmesi olabilir; ancak ilerleyici bilinç bozulması, anizokori ve BT’de bikonveks ekstraaksiyel kanama beklenmez. Bu vaka basit konküzyon sınırını aşar.",
+        "Akut subdural hematom": "Akut subdural hematom daha çok hilal şeklinde, geniş yüzeyli ve sıklıkla venöz kökenli kanama paternidir. Bu hastadaki lucid interval, temporal kırık ve bikonveks kanama epidural hematomu daha güçlü destekler.",
+        "Diffüz aksonal hasar": "Diffüz aksonal hasarda yüksek enerjili travma sonrası derin ve uzamış koma beklenir; BT başlangıçta normal veya yaygın küçük kanamalar gösterebilir. Burada lokal temporal ekstraaksiyel koleksiyon ve lucid interval belirleyicidir.",
+        "Posttravmatik migren": "Posttravmatik migren baş ağrısı ve kusma yapabilir; ancak pupil asimetrisi, bilinçte progresif kötüleşme ve kitle etkili kanama ile açıklanamaz.",
+        "Epidural hematom": "Doğru tanı epidural hematomdur. Kafa travması sonrası kısa düzelme dönemi, ardından baş ağrısı-kusma-bilinç bozulması, temporal kırık ve bikonveks ekstraaksiyel kanama klasik patern oluşturur."
       },
       "answerFeedback": {
-        "summary": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Epidural hematom yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü kafa travması sonrası yeniden bilinç kaybı için doğru tanı/tedavi önceliğini belirler.",
-        "whyCorrect": "Travma sonrası kısa bilinç kaybını geçici düzelme dönemi izlemiştir. Daha sonra baş ağrısı, kusma ve somnolans gelişmiştir. Bu bulgular birlikte değerlendirildiğinde en uygun yanıt Epidural hematom olur. Pediatrik değerlendirmede yaş, klinik zamanlama, muayene bulgusu ve objektif veri birlikte yorumlandığında ayırıcı tanı belirgin biçimde daralır. Diğer olasılıklar tekil bulgularla benzerlik gösterebilir; ancak bu olgudaki zamanlama, klinik birliktelik ve objektif veriyi aynı güçte açıklamaz.",
-        "rationale": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Epidural hematom yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü kafa travması sonrası yeniden bilinç kaybı için doğru tanı/tedavi önceliğini belirler.",
-        "correctOptionFeedback": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
+        "summary": "Bu olguda tanıyı belirleyen ana örüntü travma sonrası kısa lucid interval, ardından hızla artan baş ağrısı-kusma ve bilinç bozulmasıdır. Anizokori ve BT’de temporal kırıkla ilişkili bikonveks ekstraaksiyel kanama epidural hematomu diğer travmatik beyin hasarlarından ayırır. Bu tablo gözlemle izlenecek basit kafa travması değil, acil beyin cerrahisi değerlendirmesi gerektiren kitle etkili kanamadır.",
+        "whyCorrect": "Doğru tanı epidural hematomdur. Kafa travması sonrası kısa düzelme dönemi, ardından baş ağrısı-kusma-bilinç bozulması, temporal kırık ve bikonveks ekstraaksiyel kanama klasik patern oluşturur.",
+        "rationale": "Bu olguda tanıyı belirleyen ana örüntü travma sonrası kısa lucid interval, ardından hızla artan baş ağrısı-kusma ve bilinç bozulmasıdır. Anizokori ve BT’de temporal kırıkla ilişkili bikonveks ekstraaksiyel kanama epidural hematomu diğer travmatik beyin hasarlarından ayırır. Bu tablo gözlemle izlenecek basit kafa travması değil, acil beyin cerrahisi değerlendirmesi gerektiren kitle etkili kanamadır.",
+        "correctOptionFeedback": "Doğru tanı epidural hematomdur. Kafa travması sonrası kısa düzelme dönemi, ardından baş ağrısı-kusma-bilinç bozulması, temporal kırık ve bikonveks ekstraaksiyel kanama klasik patern oluşturur.",
         "keyClues": [
-          "Travma sonrası kısa bilinç kaybını geçici düzelme dönemi izlemiştir.",
-          "Daha sonra baş ağrısı, kusma ve somnolans gelişmiştir.",
-          "Objektif veri (Kapiller kan glukozu: Kapiller kan glukozu 112 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır."
+          "Kafa travmasından sonra kısa süreli bilinç kaybı ve ardından lucid interval vardır.",
+          "Baş ağrısı, tekrarlayan kusma ve somnolans progresif intrakraniyal basınç artışını düşündürür.",
+          "Sağ pupil dilatasyonu ve ışık yanıtında azalma herniasyon riski açısından kritik bulgudur.",
+          "BT’de sağ temporal bikonveks ekstraaksiyel kanama ve temporal kırık izlenmiştir."
         ],
         "evidenceChain": [
           {
-            "text": "Travma sonrası kısa bilinç kaybını geçici düzelme dönemi izlemiştir.",
+            "text": "Kafa travmasından sonra kısa süreli bilinç kaybı ve ardından lucid interval vardır.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Daha sonra baş ağrısı, kusma ve somnolans gelişmiştir.",
+            "text": "Baş ağrısı, tekrarlayan kusma ve somnolans progresif intrakraniyal basınç artışını düşündürür.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Objektif veri (Kapiller kan glukozu: Kapiller kan glukozu 112 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-            "weight": "medium",
+            "text": "Sağ pupil dilatasyonu ve ışık yanıtında azalma herniasyon riski açısından kritik bulgudur.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "text": "BT’de sağ temporal bikonveks ekstraaksiyel kanama ve temporal kırık izlenmiştir.",
+            "weight": "high",
             "source": "case"
           }
         ],
-        "examPearl": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Epidural hematom kararını destekler.",
+        "examPearl": "Travma sonrası “iyiydi, sonra kötüleşti” öyküsü ve bikonveks ekstraaksiyel kanama epidural hematom için yüksek verimli ipucudur.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Epidural hematom kararını destekler."
+            "text": "Travma sonrası “iyiydi, sonra kötüleşti” öyküsü ve bikonveks ekstraaksiyel kanama epidural hematom için yüksek verimli ipucudur."
           }
         ],
         "clinicalPearls": [
           {
             "label": "Sınav notu",
-            "text": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Epidural hematom kararını destekler."
+            "text": "Travma sonrası “iyiydi, sonra kötüleşti” öyküsü ve bikonveks ekstraaksiyel kanama epidural hematom için yüksek verimli ipucudur."
           }
         ],
         "optionComparison": {
-          "Epidural hematom": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-          "Basit skalp hematomu": "Basit skalp hematomu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Basit skalp hematomu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Subaraknoid kanama": "Subaraknoid kanama pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Subaraknoid kanama hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Migren atağı": "Migren atağı pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Migren atağı hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Diffüz aksonal hasar": "Diffüz aksonal hasar pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Diffüz aksonal hasar hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "whyWrong": {
-          "Basit skalp hematomu": "Basit skalp hematomu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Basit skalp hematomu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Subaraknoid kanama": "Subaraknoid kanama pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Subaraknoid kanama hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Migren atağı": "Migren atağı pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Migren atağı hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Diffüz aksonal hasar": "Diffüz aksonal hasar pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Diffüz aksonal hasar hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Çocukta kafa travmasında epidural hematom bulgularını tanı açısından değerlendirebilme",
-        "coreKnowledge": "Kafa travması sonrası yeniden bilinç kaybı sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir."
-      },
-      "whyCorrect": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "evidenceChain": [
-        {
-          "text": "Travma sonrası kısa bilinç kaybını geçici düzelme dönemi izlemiştir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Daha sonra baş ağrısı, kusma ve somnolans gelişmiştir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Objektif veri (Kapiller kan glukozu: Kapiller kan glukozu 112 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-          "weight": "medium",
-          "source": "case"
+          "Beyin sarsıntısı": "Beyin sarsıntısında kısa süreli bilinç etkilenmesi olabilir; ancak ilerleyici bilinç bozulması, anizokori ve BT’de bikonveks ekstraaksiyel kanama beklenmez. Bu vaka basit konküzyon sınırını aşar.",
+          "Akut subdural hematom": "Akut subdural hematom daha çok hilal şeklinde, geniş yüzeyli ve sıklıkla venöz kökenli kanama paternidir. Bu hastadaki lucid interval, temporal kırık ve bikonveks kanama epidural hematomu daha güçlü destekler.",
+          "Diffüz aksonal hasar": "Diffüz aksonal hasarda yüksek enerjili travma sonrası derin ve uzamış koma beklenir; BT başlangıçta normal veya yaygın küçük kanamalar gösterebilir. Burada lokal temporal ekstraaksiyel koleksiyon ve lucid interval belirleyicidir.",
+          "Posttravmatik migren": "Posttravmatik migren baş ağrısı ve kusma yapabilir; ancak pupil asimetrisi, bilinçte progresif kötüleşme ve kitle etkili kanama ile açıklanamaz.",
+          "Epidural hematom": "Doğru tanı epidural hematomdur. Kafa travması sonrası kısa düzelme dönemi, ardından baş ağrısı-kusma-bilinç bozulması, temporal kırık ve bikonveks ekstraaksiyel kanama klasik patern oluşturur."
         }
-      ],
-      "coreKnowledge": "Kafa travması sonrası yeniden bilinç kaybı sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-      "examPearl": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Epidural hematom kararını destekler.",
-      "whyWrong": {
-        "Basit skalp hematomu": "Basit skalp hematomu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Basit skalp hematomu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Subaraknoid kanama": "Subaraknoid kanama pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Subaraknoid kanama hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Migren atağı": "Migren atağı pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Migren atağı hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Diffüz aksonal hasar": "Diffüz aksonal hasar pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Diffüz aksonal hasar hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
       }
     },
     "difficultyTag": "Zor",
-    "coreKnowledge": "Kafa travması sonrası yeniden bilinç kaybı sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-    "examPearl": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Epidural hematom kararını destekler.",
-    "whyCorrect": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
+    "coreKnowledge": "Bu olguda tanıyı belirleyen ana örüntü travma sonrası kısa lucid interval, ardından hızla artan baş ağrısı-kusma ve bilinç bozulmasıdır. Anizokori ve BT’de temporal kırıkla ilişkili bikonveks ekstraaksiyel kanama epidural hematomu diğer travmatik beyin hasarlarından ayırır. Bu tablo gözlemle izlenecek basit kafa travması değil, acil beyin cerrahisi değerlendirmesi gerektiren kitle etkili kanamadır.",
+    "examPearl": "Travma sonrası “iyiydi, sonra kötüleşti” öyküsü ve bikonveks ekstraaksiyel kanama epidural hematom için yüksek verimli ipucudur.",
+    "whyCorrect": "Doğru tanı epidural hematomdur. Kafa travması sonrası kısa düzelme dönemi, ardından baş ağrısı-kusma-bilinç bozulması, temporal kırık ve bikonveks ekstraaksiyel kanama klasik patern oluşturur.",
     "optionComparison": {
-      "Epidural hematom": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "Basit skalp hematomu": "Basit skalp hematomu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Basit skalp hematomu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Subaraknoid kanama": "Subaraknoid kanama pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Subaraknoid kanama hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Migren atağı": "Migren atağı pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Migren atağı hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Diffüz aksonal hasar": "Diffüz aksonal hasar pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Diffüz aksonal hasar hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+      "Beyin sarsıntısı": "Beyin sarsıntısında kısa süreli bilinç etkilenmesi olabilir; ancak ilerleyici bilinç bozulması, anizokori ve BT’de bikonveks ekstraaksiyel kanama beklenmez. Bu vaka basit konküzyon sınırını aşar.",
+      "Akut subdural hematom": "Akut subdural hematom daha çok hilal şeklinde, geniş yüzeyli ve sıklıkla venöz kökenli kanama paternidir. Bu hastadaki lucid interval, temporal kırık ve bikonveks kanama epidural hematomu daha güçlü destekler.",
+      "Diffüz aksonal hasar": "Diffüz aksonal hasarda yüksek enerjili travma sonrası derin ve uzamış koma beklenir; BT başlangıçta normal veya yaygın küçük kanamalar gösterebilir. Burada lokal temporal ekstraaksiyel koleksiyon ve lucid interval belirleyicidir.",
+      "Posttravmatik migren": "Posttravmatik migren baş ağrısı ve kusma yapabilir; ancak pupil asimetrisi, bilinçte progresif kötüleşme ve kitle etkili kanama ile açıklanamaz.",
+      "Epidural hematom": "Doğru tanı epidural hematomdur. Kafa travması sonrası kısa düzelme dönemi, ardından baş ağrısı-kusma-bilinç bozulması, temporal kırık ve bikonveks ekstraaksiyel kanama klasik patern oluşturur."
     },
     "evidenceChain": [
       {
-        "text": "Travma sonrası kısa bilinç kaybını geçici düzelme dönemi izlemiştir.",
+        "text": "Kafa travmasından sonra kısa süreli bilinç kaybı ve ardından lucid interval vardır.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Daha sonra baş ağrısı, kusma ve somnolans gelişmiştir.",
+        "text": "Baş ağrısı, tekrarlayan kusma ve somnolans progresif intrakraniyal basınç artışını düşündürür.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Objektif veri (Kapiller kan glukozu: Kapiller kan glukozu 112 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-        "weight": "medium",
+        "text": "Sağ pupil dilatasyonu ve ışık yanıtında azalma herniasyon riski açısından kritik bulgudur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "BT’de sağ temporal bikonveks ekstraaksiyel kanama ve temporal kırık izlenmiştir.",
+        "weight": "high",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Basit skalp hematomu": "Basit skalp hematomu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Basit skalp hematomu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Subaraknoid kanama": "Subaraknoid kanama pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Subaraknoid kanama hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Migren atağı": "Migren atağı pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Migren atağı hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Diffüz aksonal hasar": "Diffüz aksonal hasar pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kafa travması sonrası yeniden bilinç kaybı lehinedir; bu nedenle Diffüz aksonal hasar hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+      "Beyin sarsıntısı": "Beyin sarsıntısında kısa süreli bilinç etkilenmesi olabilir; ancak ilerleyici bilinç bozulması, anizokori ve BT’de bikonveks ekstraaksiyel kanama beklenmez. Bu vaka basit konküzyon sınırını aşar.",
+      "Akut subdural hematom": "Akut subdural hematom daha çok hilal şeklinde, geniş yüzeyli ve sıklıkla venöz kökenli kanama paternidir. Bu hastadaki lucid interval, temporal kırık ve bikonveks kanama epidural hematomu daha güçlü destekler.",
+      "Diffüz aksonal hasar": "Diffüz aksonal hasarda yüksek enerjili travma sonrası derin ve uzamış koma beklenir; BT başlangıçta normal veya yaygın küçük kanamalar gösterebilir. Burada lokal temporal ekstraaksiyel koleksiyon ve lucid interval belirleyicidir.",
+      "Posttravmatik migren": "Posttravmatik migren baş ağrısı ve kusma yapabilir; ancak pupil asimetrisi, bilinçte progresif kötüleşme ve kitle etkili kanama ile açıklanamaz."
     },
     "aiMeta": {
-      "generatedAt": "manual-v396-pediatrics-ultra-refined",
+      "generatedAt": "manual-v397-pediatrics-sixth-batch-ultra-refined",
       "generator": "manual-editorial-pediatrics-case-refinement",
-      "schemaVersion": "clinical-standard-v396",
+      "schemaVersion": "clinical-standard-v397",
       "provider": "manual-editorial",
       "validationWarnings": []
     }
@@ -81023,16 +80975,16 @@ export const rawCases = [
     "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
     "title": "Yenidoğanda kasılma ve jitteriness",
     "difficulty": "Acil",
-    "clinicalFocus": "Semptomatik neonatal hipokalsemi bağlamında pediatrik öykü, yaşa uygun vital bulgu, fizik muayene ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Semptomatik neonatal hipokalsemi için pediatrik klinik patern, acil öncelik ve hedefe yönelik tanı/tedavi kararını açıklama.",
+    "clinicalFocus": "Yenidoğanda jitteriness/nöbet benzeri atakların glukoz normal iken düşük iyonize kalsiyum ve QT uzamasıyla semptomatik hipokalsemiye bağlanması.",
+    "learningTarget": "Semptomatik neonatal hipokalsemide oral destek veya bekleme yerine kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi gerektiğini ayırt edebilme.",
     "demographics": "5 günlük erkek yenidoğan",
     "setting": "Yenidoğan acilinde",
-    "chiefComplaint": "Bebek, tekrarlayan kasılma benzeri hareketler ve beslenmede azalma nedeniyle getiriliyor.",
-    "stem": "Term doğduğu, annede diyabet öyküsü olduğu öğreniliyor. Son 12 saatte irkilme, çene titremesi ve kısa süreli kasılma atakları fark edilmiştir. Ateş veya travma öyküsü yoktur.",
+    "chiefComplaint": "Bebek, tekrarlayan irkilme-kasılma atakları, çene titremesi ve beslenmede azalma nedeniyle yenidoğan aciline getiriliyor.",
+    "stem": "Term doğan bebekte son 12 saatte emmenin azaldığı, çene titremesi ve kısa süreli kasılma benzeri hareketlerin tekrarladığı öğrenilir. Annenin gebelikte diyabet nedeniyle takip edildiği belirtilir. Ateş, travma, morarma, safralı kusma veya bilinen enfeksiyon teması yoktur.",
     "patientIntro": {
       "profile": "5 günlük erkek yenidoğan, yenidoğan acilinde değerlendiriliyor.",
-      "presentation": "Bebek, tekrarlayan kasılma benzeri hareketler ve beslenmede azalma nedeniyle getiriliyor.",
-      "historySummary": "Term doğduğu, annede diyabet öyküsü olduğu öğreniliyor. Son 12 saatte irkilme, çene titremesi ve kısa süreli kasılma atakları fark edilmiştir. Ateş veya travma öyküsü yoktur."
+      "presentation": "Tekrarlayan jitteriness, perioral seğirme ve beslenmede azalma nedeniyle getiriliyor.",
+      "historySummary": "Anne-babanın ifadesine göre bebek son 12 saatte daha huzursuz emmeye başlamış ve aralıklı çene titremesi fark edilmiştir. Kısa süreli kasılma benzeri hareketler birkaç kez tekrarlamış; ataklar sırasında belirgin morarma veya uzun süreli apne olmamıştır. Bebek term doğmuştur; annenin gebelikte diyabet nedeniyle izlendiği öğrenilir. Ateş, travma, safralı kusma, ishal veya evde ilaç verilme öyküsü bulunmamaktadır."
     },
     "vitals": {
       "TA": "70/45 mmHg",
@@ -81040,267 +80992,337 @@ export const rawCases = [
       "Solunum": "52/dk",
       "SpO2": "%98, oda havasında",
       "Ateş": "36.8 °C",
-      "Şok indeksi": "2.11 pediatrik bağlamda yorumlanmalı"
+      "Şok indeksi": "2.11 - yenidoğanda yaşa göre perfüzyonla birlikte yorumlanmalı"
     },
     "exam": [
-      "Bebek irritabl ve jittery görünmektedir.",
-      "Perioral seğirme izlenir.",
-      "Kardiyak oskültasyon doğaldır."
+      "Bebek irritabl ve jittery görünür; uyarı ile artan perioral seğirmeler izlenir.",
+      "Ön fontanel bombeli değildir; ense sertliği veya travma bulgusu saptanmaz.",
+      "Kalp sesleri ritmiktir; kapiller dolum 2 saniye, periferik perfüzyon yeterlidir."
     ],
     "investigations": [
       {
-        "id": "kapiller-kan-glukozu-2",
+        "id": "v180-new-157-yenidoganda-kasilma-ve-jitteriness-bedside-glucose",
         "label": "Kapiller kan glukozu",
         "title": "Kapiller kan glukozu",
         "type": "lab",
         "priority": "essential",
-        "subtype": "Yatak başı testler",
-        "summary": "Glukoz değeri hipoglisemi veya hipergliseminin klinik tabloya katkısını gösterir; nörolojik bulgu, keton ve asit-baz durumu ile birlikte yorumlanır.",
-        "clinicalMeaning": "Glukoz değeri hipoglisemi veya hipergliseminin klinik tabloya katkısını gösterir; nörolojik bulgu, keton ve asit-baz durumu ile birlikte yorumlanır.",
+        "subtype": "",
+        "summary": "Yenidoğanda nöbet/jitteriness değerlendirmesinde hipoglisemi hızla dışlanmalıdır; bu olguda glukoz semptomları açıklamamaktadır.",
+        "clinicalMeaning": "Yenidoğanda nöbet/jitteriness değerlendirmesinde hipoglisemi hızla dışlanmalıdır; bu olguda glukoz semptomları açıklamamaktadır.",
         "result": {
           "title": "Kapiller kan glukozu",
-          "summary": "Glukoz değeri hipoglisemi veya hipergliseminin klinik tabloya katkısını gösterir; nörolojik bulgu, keton ve asit-baz durumu ile birlikte yorumlanır.",
-          "interpretation": "Glukoz değeri hipoglisemi veya hipergliseminin klinik tabloya katkısını gösterir; nörolojik bulgu, keton ve asit-baz durumu ile birlikte yorumlanır.",
+          "summary": "Yenidoğanda nöbet/jitteriness değerlendirmesinde hipoglisemi hızla dışlanmalıdır; bu olguda glukoz semptomları açıklamamaktadır.",
+          "interpretation": "Yenidoğanda nöbet/jitteriness değerlendirmesinde hipoglisemi hızla dışlanmalıdır; bu olguda glukoz semptomları açıklamamaktadır.",
           "values": [
             [
-              "Kapiller kan glukozu",
-              "52 mg/dL",
-              "45–100 mg/dL yenidoğan için",
-              "Klinik bağlamda değerlendirilmeli"
+              "Kapiller glukoz",
+              "72 mg/dL",
+              "45–100 mg/dL yenidoğan",
+              "Hipoglisemi dışlandı"
             ]
           ],
           "rows": [
             [
-              "Kapiller kan glukozu",
-              "52 mg/dL",
-              "45–100 mg/dL yenidoğan için",
-              "Klinik bağlamda değerlendirilmeli"
+              "Kapiller glukoz",
+              "72 mg/dL",
+              "45–100 mg/dL yenidoğan",
+              "Hipoglisemi dışlandı"
             ]
           ]
         },
         "rows": [
           [
-            "Kapiller kan glukozu",
-            "52 mg/dL",
-            "45–100 mg/dL yenidoğan için",
-            "Klinik bağlamda değerlendirilmeli"
+            "Kapiller glukoz",
+            "72 mg/dL",
+            "45–100 mg/dL yenidoğan",
+            "Hipoglisemi dışlandı"
           ]
         ],
-        "postAnswerExplanation": "Glukoz değeri hipoglisemi veya hipergliseminin klinik tabloya katkısını gösterir; nörolojik bulgu, keton ve asit-baz durumu ile birlikte yorumlanır.",
-        "interpretation": "Glukoz değeri hipoglisemi veya hipergliseminin klinik tabloya katkısını gösterir; nörolojik bulgu, keton ve asit-baz durumu ile birlikte yorumlanır.",
-        "valueAssumption": "Eksik sayısal değer, vakanın mevcut tanı/yönetim hedefiyle uyumlu gerçekçi eğitim verisi olarak tamamlandı.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Glukoz değeri hipoglisemi veya hipergliseminin klinik tabloya katkısını gösterir; nörolojik bulgu, keton ve asit-baz durumu ile birlikte yorumlanır.",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
+        "postAnswerExplanation": "Yenidoğanda nöbet/jitteriness değerlendirmesinde hipoglisemi hızla dışlanmalıdır; bu olguda glukoz semptomları açıklamamaktadır.",
+        "interpretation": "Yenidoğanda nöbet/jitteriness değerlendirmesinde hipoglisemi hızla dışlanmalıdır; bu olguda glukoz semptomları açıklamamaktadır.",
+        "explanationAfterAnswer": "Yenidoğanda nöbet/jitteriness değerlendirmesinde hipoglisemi hızla dışlanmalıdır; bu olguda glukoz semptomları açıklamamaktadır.",
+        "category": "lab",
+        "testTypeCategory": "lab",
+        "clinicalFlowOrder": 40,
+        "flowOrder": 40,
+        "orderRank": 40,
+        "testValueLabel": "Karar verdirici veri",
+        "clinicalPriorityLabel": "Karar verdirici veri",
+        "educationalValue": "Karar verdirici veri",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "pediatricSafetyValue": "Acil önceliği belirler",
+        "treatmentImpact": "Acil önceliği belirler"
       },
       {
-        "id": "kultur-ornekleri-3",
-        "label": "Kültür örnekleri",
-        "title": "Kültür örnekleri",
-        "type": "microbiology",
-        "priority": "essential",
-        "subtype": "Mikrobiyoloji",
-        "summary": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-        "clinicalMeaning": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-        "result": {
-          "title": "Kültür örnekleri",
-          "summary": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-          "interpretation": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-          "values": [
-            [
-              "Kültür istemi",
-              "Henüz raporlanmadı",
-              "—",
-              "Sonuç bekleniyor"
-            ]
-          ],
-          "rows": [
-            [
-              "Kültür istemi",
-              "Henüz raporlanmadı",
-              "—",
-              "Sonuç bekleniyor"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Kültür istemi",
-            "Henüz raporlanmadı",
-            "—",
-            "Sonuç bekleniyor"
-          ]
-        ],
-        "postAnswerExplanation": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-        "interpretation": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      },
-      {
-        "id": "v180-new-157-yenidoganda-kasilma-ve-jitteriness-pediatric-initial-assessment",
-        "label": "Pediatrik ilk değerlendirme",
-        "title": "Pediatrik ilk değerlendirme",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "clinicalMeaning": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "result": {
-          "title": "Pediatrik ilk değerlendirme",
-          "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "values": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
-            ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ],
-          "rows": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
-            ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Genel görünüm",
-            "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-            "Yaşa göre",
-            "Kritik izlem"
-          ],
-          [
-            "Kapiller dolum/perfüzyon",
-            "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-            "<2 sn beklenir",
-            "Yaşa göre yorumlanır"
-          ],
-          [
-            "Solunum işi",
-            "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-            "Yaşa göre",
-            "Acil güvenlik"
-          ]
-        ],
-        "postAnswerExplanation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme",
-        "orderRank": 10
-      },
-      {
-        "id": "serum-total-kalsiyum-1",
-        "label": "Serum total kalsiyum",
-        "title": "Serum total kalsiyum",
+        "id": "v180-new-157-yenidoganda-kasilma-ve-jitteriness-calcium-magnesium",
+        "label": "Kalsiyum, iyonize kalsiyum ve magnezyum",
+        "title": "Kalsiyum, iyonize kalsiyum ve magnezyum",
         "type": "lab",
         "priority": "essential",
-        "subtype": "Laboratuvar",
-        "summary": "Serum total kalsiyum, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "clinicalMeaning": "Serum total kalsiyum, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
+        "subtype": "",
+        "summary": "Düşük iyonize kalsiyum semptomatik neonatal hipokalsemiyi gösterir ve intravenöz kalsiyum tedavisini gerektirir.",
+        "clinicalMeaning": "Düşük iyonize kalsiyum semptomatik neonatal hipokalsemiyi gösterir ve intravenöz kalsiyum tedavisini gerektirir.",
         "result": {
-          "title": "Serum total kalsiyum",
-          "summary": "Serum total kalsiyum, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-          "interpretation": "Serum total kalsiyum, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
+          "title": "Kalsiyum, iyonize kalsiyum ve magnezyum",
+          "summary": "Düşük iyonize kalsiyum semptomatik neonatal hipokalsemiyi gösterir ve intravenöz kalsiyum tedavisini gerektirir.",
+          "interpretation": "Düşük iyonize kalsiyum semptomatik neonatal hipokalsemiyi gösterir ve intravenöz kalsiyum tedavisini gerektirir.",
           "values": [
             [
-              "Serum total kalsiyum",
-              "7.2 mg/dL",
-              "8.5–10.5 mg/dL",
-              "Klinik bağlamda değerlendirilmeli"
+              "Total kalsiyum",
+              "6.8 mg/dL",
+              "8.0–10.5 mg/dL",
+              "Düşük"
+            ],
+            [
+              "İyonize kalsiyum",
+              "0.78 mmol/L",
+              "1.10–1.35 mmol/L",
+              "Kritik düşük"
+            ],
+            [
+              "Magnezyum",
+              "1.7 mg/dL",
+              "1.6–2.4 mg/dL",
+              "Belirgin düşük değil"
             ]
           ],
           "rows": [
             [
-              "Serum total kalsiyum",
-              "7.2 mg/dL",
-              "8.5–10.5 mg/dL",
-              "Klinik bağlamda değerlendirilmeli"
+              "Total kalsiyum",
+              "6.8 mg/dL",
+              "8.0–10.5 mg/dL",
+              "Düşük"
+            ],
+            [
+              "İyonize kalsiyum",
+              "0.78 mmol/L",
+              "1.10–1.35 mmol/L",
+              "Kritik düşük"
+            ],
+            [
+              "Magnezyum",
+              "1.7 mg/dL",
+              "1.6–2.4 mg/dL",
+              "Belirgin düşük değil"
             ]
           ]
         },
         "rows": [
           [
-            "Serum total kalsiyum",
-            "7.2 mg/dL",
-            "8.5–10.5 mg/dL",
-            "Klinik bağlamda değerlendirilmeli"
+            "Total kalsiyum",
+            "6.8 mg/dL",
+            "8.0–10.5 mg/dL",
+            "Düşük"
+          ],
+          [
+            "İyonize kalsiyum",
+            "0.78 mmol/L",
+            "1.10–1.35 mmol/L",
+            "Kritik düşük"
+          ],
+          [
+            "Magnezyum",
+            "1.7 mg/dL",
+            "1.6–2.4 mg/dL",
+            "Belirgin düşük değil"
           ]
         ],
-        "postAnswerExplanation": "Serum total kalsiyum, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "interpretation": "Serum total kalsiyum, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "valueAssumption": "Eksik sayısal değer, vakanın mevcut tanı/yönetim hedefiyle uyumlu gerçekçi eğitim verisi olarak tamamlandı.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Serum total kalsiyum, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
+        "postAnswerExplanation": "Düşük iyonize kalsiyum semptomatik neonatal hipokalsemiyi gösterir ve intravenöz kalsiyum tedavisini gerektirir.",
+        "interpretation": "Düşük iyonize kalsiyum semptomatik neonatal hipokalsemiyi gösterir ve intravenöz kalsiyum tedavisini gerektirir.",
+        "explanationAfterAnswer": "Düşük iyonize kalsiyum semptomatik neonatal hipokalsemiyi gösterir ve intravenöz kalsiyum tedavisini gerektirir.",
+        "category": "lab",
+        "testTypeCategory": "lab",
+        "clinicalFlowOrder": 50,
+        "flowOrder": 50,
+        "orderRank": 50,
+        "testValueLabel": "Karar verdirici veri",
+        "clinicalPriorityLabel": "Karar verdirici veri",
+        "educationalValue": "Karar verdirici veri",
+        "scoreImpact": 5,
+        "scoreValue": 5,
+        "pediatricSafetyValue": "Acil önceliği belirler",
+        "treatmentImpact": "Acil önceliği belirler"
+      },
+      {
+        "id": "v180-new-157-yenidoganda-kasilma-ve-jitteriness-ecg-qtc",
+        "label": "EKG",
+        "title": "EKG",
+        "type": "ecg",
+        "priority": "essential",
+        "subtype": "",
+        "summary": "QTc uzaması hipokalseminin kardiyak etkisini destekler; IV kalsiyum kardiyak monitörizasyon altında verilmelidir.",
+        "clinicalMeaning": "QTc uzaması hipokalseminin kardiyak etkisini destekler; IV kalsiyum kardiyak monitörizasyon altında verilmelidir.",
+        "result": {
+          "title": "EKG",
+          "summary": "QTc uzaması hipokalseminin kardiyak etkisini destekler; IV kalsiyum kardiyak monitörizasyon altında verilmelidir.",
+          "interpretation": "QTc uzaması hipokalseminin kardiyak etkisini destekler; IV kalsiyum kardiyak monitörizasyon altında verilmelidir.",
+          "values": [
+            [
+              "Ritim",
+              "Sinüs ritmi",
+              "Sinüs ritmi",
+              "Stabil ritim"
+            ],
+            [
+              "QTc",
+              "0.49 sn",
+              "<0.44 sn",
+              "Uzamış QT"
+            ],
+            [
+              "QRS",
+              "Dar",
+              "Dar",
+              "Sodyum kanal blokajı yok"
+            ]
+          ],
+          "rows": [
+            [
+              "Ritim",
+              "Sinüs ritmi",
+              "Sinüs ritmi",
+              "Stabil ritim"
+            ],
+            [
+              "QTc",
+              "0.49 sn",
+              "<0.44 sn",
+              "Uzamış QT"
+            ],
+            [
+              "QRS",
+              "Dar",
+              "Dar",
+              "Sodyum kanal blokajı yok"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Ritim",
+            "Sinüs ritmi",
+            "Sinüs ritmi",
+            "Stabil ritim"
+          ],
+          [
+            "QTc",
+            "0.49 sn",
+            "<0.44 sn",
+            "Uzamış QT"
+          ],
+          [
+            "QRS",
+            "Dar",
+            "Dar",
+            "Sodyum kanal blokajı yok"
+          ]
+        ],
+        "postAnswerExplanation": "QTc uzaması hipokalseminin kardiyak etkisini destekler; IV kalsiyum kardiyak monitörizasyon altında verilmelidir.",
+        "interpretation": "QTc uzaması hipokalseminin kardiyak etkisini destekler; IV kalsiyum kardiyak monitörizasyon altında verilmelidir.",
+        "explanationAfterAnswer": "QTc uzaması hipokalseminin kardiyak etkisini destekler; IV kalsiyum kardiyak monitörizasyon altında verilmelidir.",
+        "category": "cardiology",
+        "testTypeCategory": "cardiology",
+        "clinicalFlowOrder": 40,
+        "flowOrder": 40,
+        "orderRank": 40,
+        "testValueLabel": "Karar verdirici veri",
+        "clinicalPriorityLabel": "Karar verdirici veri",
+        "educationalValue": "Karar verdirici veri",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "pediatricSafetyValue": "Acil önceliği belirler",
+        "treatmentImpact": "Acil önceliği belirler"
+      },
+      {
+        "id": "v180-new-157-yenidoganda-kasilma-ve-jitteriness-infection-screen",
+        "label": "Enfeksiyon açısından başlangıç değerlendirmesi",
+        "title": "Enfeksiyon açısından başlangıç değerlendirmesi",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "",
+        "summary": "Ateş ve inflamasyon yanıtı olmaması sepsisi tamamen dışlamaz; ancak bu vakada acil tedavi hedefini düşük iyonize kalsiyum belirler.",
+        "clinicalMeaning": "Ateş ve inflamasyon yanıtı olmaması sepsisi tamamen dışlamaz; ancak bu vakada acil tedavi hedefini düşük iyonize kalsiyum belirler.",
+        "result": {
+          "title": "Enfeksiyon açısından başlangıç değerlendirmesi",
+          "summary": "Ateş ve inflamasyon yanıtı olmaması sepsisi tamamen dışlamaz; ancak bu vakada acil tedavi hedefini düşük iyonize kalsiyum belirler.",
+          "interpretation": "Ateş ve inflamasyon yanıtı olmaması sepsisi tamamen dışlamaz; ancak bu vakada acil tedavi hedefini düşük iyonize kalsiyum belirler.",
+          "values": [
+            [
+              "Lökosit",
+              "10.600/mm³",
+              "5.000–20.000/mm³ yenidoğan",
+              "Yaşa uygun"
+            ],
+            [
+              "CRP",
+              "2 mg/L",
+              "<5 mg/L",
+              "Belirgin inflamasyon yok"
+            ],
+            [
+              "Ateş",
+              "36.8 °C",
+              "36.5–37.5 °C",
+              "Febril değil"
+            ]
+          ],
+          "rows": [
+            [
+              "Lökosit",
+              "10.600/mm³",
+              "5.000–20.000/mm³ yenidoğan",
+              "Yaşa uygun"
+            ],
+            [
+              "CRP",
+              "2 mg/L",
+              "<5 mg/L",
+              "Belirgin inflamasyon yok"
+            ],
+            [
+              "Ateş",
+              "36.8 °C",
+              "36.5–37.5 °C",
+              "Febril değil"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Lökosit",
+            "10.600/mm³",
+            "5.000–20.000/mm³ yenidoğan",
+            "Yaşa uygun"
+          ],
+          [
+            "CRP",
+            "2 mg/L",
+            "<5 mg/L",
+            "Belirgin inflamasyon yok"
+          ],
+          [
+            "Ateş",
+            "36.8 °C",
+            "36.5–37.5 °C",
+            "Febril değil"
+          ]
+        ],
+        "postAnswerExplanation": "Ateş ve inflamasyon yanıtı olmaması sepsisi tamamen dışlamaz; ancak bu vakada acil tedavi hedefini düşük iyonize kalsiyum belirler.",
+        "interpretation": "Ateş ve inflamasyon yanıtı olmaması sepsisi tamamen dışlamaz; ancak bu vakada acil tedavi hedefini düşük iyonize kalsiyum belirler.",
+        "explanationAfterAnswer": "Ateş ve inflamasyon yanıtı olmaması sepsisi tamamen dışlamaz; ancak bu vakada acil tedavi hedefini düşük iyonize kalsiyum belirler.",
+        "category": "lab",
+        "testTypeCategory": "lab",
+        "clinicalFlowOrder": 20,
+        "flowOrder": 20,
+        "orderRank": 20,
+        "testValueLabel": "Destekleyici veri",
+        "clinicalPriorityLabel": "Destekleyici veri",
+        "educationalValue": "Destekleyici veri",
         "scoreImpact": 2,
         "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
+        "pediatricSafetyValue": "Klinik bağlamda yorumlanır",
+        "treatmentImpact": "Klinik bağlamda yorumlanır"
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -81315,150 +81337,125 @@ export const rawCases = [
     "diagnosis": {
       "correct": "Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi",
       "options": [
-        "Acil antibiyotik başlanıp kalsiyumun izlenmemesi",
-        "Sodyum bikarbonat bolusu verilmesi",
-        "İnsülin infüzyonu başlanması",
+        "Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi",
         "Oral D vitamini başlanıp eve gönderilmesi",
-        "Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi"
+        "İnsülin infüzyonu başlanması",
+        "Sodyum bikarbonat bolusu verilmesi",
+        "Kalsiyum düzeltmeden yalnız ampirik antibiyotik başlanması"
       ],
       "question": "Bu yenidoğanda en uygun acil tedavi aşağıdakilerden hangisidir?",
-      "explanation": "Bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum birlikte değerlendirilince temel karar Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü semptomatik neonatal hipokalsemi için doğru tanı/tedavi önceliğini belirler.",
+      "explanation": "Bu yenidoğanda nöbet benzeri atakların ilk değerlendirmesinde glukoz normal bulunurken iyonize kalsiyum belirgin düşüktür. Semptomatik hipokalsemi nörolojik irritabilite ve QT uzamasıyla birlikte olduğunda oral destek veya izlem yeterli değildir; tedavi kardiyak monitörizasyon altında intravenöz kalsiyum glukonattır. Enfeksiyon olasılığı klinik bağlama göre izlenebilir, ancak acil karar kalsiyum düzeltmesidir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "Semptomatik neonatal hipokalsemide kardiyak monitörizasyon altında IV kalsiyum glukonat verilir."
+          "text": "Semptomatik neonatal hipokalsemide kritik ayrım glukozun normal, iyonize kalsiyumun düşük olmasıdır; IV kalsiyum glukonat monitörizasyonla verilir."
         }
       ],
       "optionComparison": {
-        "Acil antibiyotik başlanıp kalsiyumun izlenmemesi": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Acil antibiyotik başlanıp kalsiyumun izlenmemesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Sodyum bikarbonat bolusu verilmesi": "Sodyum bikarbonat özellikle trisiklik antidepresan veya sodyum kanal blokeri toksisitesinde QRS genişlemesi ve kardiyotoksisite varsa kullanılır. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Sodyum bikarbonat bolusu verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "İnsülin infüzyonu başlanması": "İnsülin infüzyonu başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle İnsülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Oral D vitamini başlanıp eve gönderilmesi": "Oral D vitamini başlanıp eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Oral D vitamini başlanıp eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi": "Bu seçenek doğrudur; çünkü yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar."
+        "Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi": "Doğru tedavi budur. Yenidoğanda semptomatik hipokalsemi nöbet/jitteriness ve QT uzamasıyla ortaya çıkabilir; IV kalsiyum glukonat damar dışına kaçış ve aritmi riski nedeniyle kardiyak monitörizasyon altında verilmelidir.",
+        "Oral D vitamini başlanıp eve gönderilmesi": "Oral D vitamini uzun dönem eksiklik tedavisinde rol alabilir; ancak kasılma/jitteriness ve kritik düşük iyonize kalsiyum bulunan yenidoğanda acil semptom kontrolü için yeterli değildir.",
+        "İnsülin infüzyonu başlanması": "İnsülin infüzyonu hiperglisemik ketoasidoz gibi tablolarda kullanılır. Bu bebekte glukoz normaldir ve problem düşük iyonize kalsiyumdur.",
+        "Sodyum bikarbonat bolusu verilmesi": "Sodyum bikarbonat sodyum kanal blokeri toksisitesi veya seçilmiş ağır asidoz durumlarında gündeme gelir. Dar QRS, normal glukoz ve düşük kalsiyum bulunan bu yenidoğanda hedef tedavi değildir.",
+        "Kalsiyum düzeltmeden yalnız ampirik antibiyotik başlanması": "Yenidoğanda enfeksiyon dikkatle düşünülür; ancak ateş/inflamasyon bulguları zayıfken semptomları açıklayan kritik düşük iyonize kalsiyum vardır. Kalsiyum düzeltmesini geciktirmek nöbet ve aritmi riskini artırır."
       },
       "answerFeedback": {
-        "summary": "Bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum birlikte değerlendirilince temel karar Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü semptomatik neonatal hipokalsemi için doğru tanı/tedavi önceliğini belirler.",
-        "whyCorrect": "Bebekte jitteriness, perioral seğirme ve kasılma benzeri ataklar vardır. Serum kalsiyumu semptomatik düzeyde düşüktür. Bu bulgular birlikte değerlendirildiğinde en uygun yanıt Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi olur. Tedavi seçimi, klinik aciliyetin ve altta yatan mekanizmanın aynı anda hedeflenmesine dayanır; destek basamakları gerekirse eş zamanlı yürütülür fakat ana kararı tek başına değiştirmez. Alternatifler bazı destek veya ayırıcı basamaklarda kullanılabilir; ancak verilen acil karar noktasını bu seçenek kadar doğrudan karşılamaz.",
-        "rationale": "Bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum birlikte değerlendirilince temel karar Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü semptomatik neonatal hipokalsemi için doğru tanı/tedavi önceliğini belirler.",
-        "correctOptionFeedback": "Bu seçenek doğrudur; çünkü yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
+        "summary": "Bu yenidoğanda nöbet benzeri atakların ilk değerlendirmesinde glukoz normal bulunurken iyonize kalsiyum belirgin düşüktür. Semptomatik hipokalsemi nörolojik irritabilite ve QT uzamasıyla birlikte olduğunda oral destek veya izlem yeterli değildir; tedavi kardiyak monitörizasyon altında intravenöz kalsiyum glukonattır. Enfeksiyon olasılığı klinik bağlama göre izlenebilir, ancak acil karar kalsiyum düzeltmesidir.",
+        "whyCorrect": "Doğru tedavi budur. Yenidoğanda semptomatik hipokalsemi nöbet/jitteriness ve QT uzamasıyla ortaya çıkabilir; IV kalsiyum glukonat damar dışına kaçış ve aritmi riski nedeniyle kardiyak monitörizasyon altında verilmelidir.",
+        "rationale": "Bu yenidoğanda nöbet benzeri atakların ilk değerlendirmesinde glukoz normal bulunurken iyonize kalsiyum belirgin düşüktür. Semptomatik hipokalsemi nörolojik irritabilite ve QT uzamasıyla birlikte olduğunda oral destek veya izlem yeterli değildir; tedavi kardiyak monitörizasyon altında intravenöz kalsiyum glukonattır. Enfeksiyon olasılığı klinik bağlama göre izlenebilir, ancak acil karar kalsiyum düzeltmesidir.",
+        "correctOptionFeedback": "Doğru tedavi budur. Yenidoğanda semptomatik hipokalsemi nöbet/jitteriness ve QT uzamasıyla ortaya çıkabilir; IV kalsiyum glukonat damar dışına kaçış ve aritmi riski nedeniyle kardiyak monitörizasyon altında verilmelidir.",
         "keyClues": [
-          "Bebekte jitteriness, perioral seğirme ve kasılma benzeri ataklar vardır.",
-          "Serum kalsiyumu semptomatik düzeyde düşüktür.",
-          "Objektif veri (Kapiller kan glukozu: Kapiller kan glukozu 52 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır."
+          "Yenidoğanda tekrarlayan jitteriness ve perioral seğirme vardır.",
+          "Kapiller glukoz normaldir; hipoglisemi semptomları açıklamamaktadır.",
+          "İyonize kalsiyum 0.78 mmol/L ile kritik düşüktür.",
+          "EKG’de QTc uzaması hipokalseminin kardiyak etkisini destekler."
         ],
         "evidenceChain": [
           {
-            "text": "Bebekte jitteriness, perioral seğirme ve kasılma benzeri ataklar vardır.",
+            "text": "Yenidoğanda tekrarlayan jitteriness ve perioral seğirme vardır.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Serum kalsiyumu semptomatik düzeyde düşüktür.",
+            "text": "Kapiller glukoz normaldir; hipoglisemi semptomları açıklamamaktadır.",
+            "weight": "medium",
+            "source": "case"
+          },
+          {
+            "text": "İyonize kalsiyum 0.78 mmol/L ile kritik düşüktür.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Objektif veri (Kapiller kan glukozu: Kapiller kan glukozu 52 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
+            "text": "EKG’de QTc uzaması hipokalseminin kardiyak etkisini destekler.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "Semptomatik neonatal hipokalsemide kardiyak monitörizasyon altında IV kalsiyum glukonat verilir.",
+        "examPearl": "Semptomatik neonatal hipokalsemide kritik ayrım glukozun normal, iyonize kalsiyumun düşük olmasıdır; IV kalsiyum glukonat monitörizasyonla verilir.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Semptomatik neonatal hipokalsemide kardiyak monitörizasyon altında IV kalsiyum glukonat verilir."
+            "text": "Semptomatik neonatal hipokalsemide kritik ayrım glukozun normal, iyonize kalsiyumun düşük olmasıdır; IV kalsiyum glukonat monitörizasyonla verilir."
           }
         ],
         "clinicalPearls": [
           {
             "label": "Sınav notu",
-            "text": "Semptomatik neonatal hipokalsemide kardiyak monitörizasyon altında IV kalsiyum glukonat verilir."
+            "text": "Semptomatik neonatal hipokalsemide kritik ayrım glukozun normal, iyonize kalsiyumun düşük olmasıdır; IV kalsiyum glukonat monitörizasyonla verilir."
           }
         ],
         "optionComparison": {
-          "Acil antibiyotik başlanıp kalsiyumun izlenmemesi": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Acil antibiyotik başlanıp kalsiyumun izlenmemesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Sodyum bikarbonat bolusu verilmesi": "Sodyum bikarbonat özellikle trisiklik antidepresan veya sodyum kanal blokeri toksisitesinde QRS genişlemesi ve kardiyotoksisite varsa kullanılır. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Sodyum bikarbonat bolusu verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "İnsülin infüzyonu başlanması": "İnsülin infüzyonu başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle İnsülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Oral D vitamini başlanıp eve gönderilmesi": "Oral D vitamini başlanıp eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Oral D vitamini başlanıp eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi": "Bu seçenek doğrudur; çünkü yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar."
-        },
-        "whyWrong": {
-          "Acil antibiyotik başlanıp kalsiyumun izlenmemesi": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Acil antibiyotik başlanıp kalsiyumun izlenmemesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Sodyum bikarbonat bolusu verilmesi": "Sodyum bikarbonat özellikle trisiklik antidepresan veya sodyum kanal blokeri toksisitesinde QRS genişlemesi ve kardiyotoksisite varsa kullanılır. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Sodyum bikarbonat bolusu verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "İnsülin infüzyonu başlanması": "İnsülin infüzyonu başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle İnsülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Oral D vitamini başlanıp eve gönderilmesi": "Oral D vitamini başlanıp eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Oral D vitamini başlanıp eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Yenidoğanda hipokalsemik tetanide acil kalsiyum tedavisini seçebilme",
-        "coreKnowledge": "Semptomatik neonatal hipokalsemi sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir."
-      },
-      "whyCorrect": "Bu seçenek doğrudur; çünkü yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "evidenceChain": [
-        {
-          "text": "Bebekte jitteriness, perioral seğirme ve kasılma benzeri ataklar vardır.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Serum kalsiyumu semptomatik düzeyde düşüktür.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Objektif veri (Kapiller kan glukozu: Kapiller kan glukozu 52 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-          "weight": "medium",
-          "source": "case"
+          "Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi": "Doğru tedavi budur. Yenidoğanda semptomatik hipokalsemi nöbet/jitteriness ve QT uzamasıyla ortaya çıkabilir; IV kalsiyum glukonat damar dışına kaçış ve aritmi riski nedeniyle kardiyak monitörizasyon altında verilmelidir.",
+          "Oral D vitamini başlanıp eve gönderilmesi": "Oral D vitamini uzun dönem eksiklik tedavisinde rol alabilir; ancak kasılma/jitteriness ve kritik düşük iyonize kalsiyum bulunan yenidoğanda acil semptom kontrolü için yeterli değildir.",
+          "İnsülin infüzyonu başlanması": "İnsülin infüzyonu hiperglisemik ketoasidoz gibi tablolarda kullanılır. Bu bebekte glukoz normaldir ve problem düşük iyonize kalsiyumdur.",
+          "Sodyum bikarbonat bolusu verilmesi": "Sodyum bikarbonat sodyum kanal blokeri toksisitesi veya seçilmiş ağır asidoz durumlarında gündeme gelir. Dar QRS, normal glukoz ve düşük kalsiyum bulunan bu yenidoğanda hedef tedavi değildir.",
+          "Kalsiyum düzeltmeden yalnız ampirik antibiyotik başlanması": "Yenidoğanda enfeksiyon dikkatle düşünülür; ancak ateş/inflamasyon bulguları zayıfken semptomları açıklayan kritik düşük iyonize kalsiyum vardır. Kalsiyum düzeltmesini geciktirmek nöbet ve aritmi riskini artırır."
         }
-      ],
-      "coreKnowledge": "Semptomatik neonatal hipokalsemi sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-      "examPearl": "Semptomatik neonatal hipokalsemide kardiyak monitörizasyon altında IV kalsiyum glukonat verilir.",
-      "whyWrong": {
-        "Acil antibiyotik başlanıp kalsiyumun izlenmemesi": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Acil antibiyotik başlanıp kalsiyumun izlenmemesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Sodyum bikarbonat bolusu verilmesi": "Sodyum bikarbonat özellikle trisiklik antidepresan veya sodyum kanal blokeri toksisitesinde QRS genişlemesi ve kardiyotoksisite varsa kullanılır. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Sodyum bikarbonat bolusu verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "İnsülin infüzyonu başlanması": "İnsülin infüzyonu başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle İnsülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Oral D vitamini başlanıp eve gönderilmesi": "Oral D vitamini başlanıp eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Oral D vitamini başlanıp eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
       }
     },
-    "difficultyTag": "Acil",
-    "coreKnowledge": "Semptomatik neonatal hipokalsemi sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-    "examPearl": "Semptomatik neonatal hipokalsemide kardiyak monitörizasyon altında IV kalsiyum glukonat verilir.",
-    "whyCorrect": "Bu seçenek doğrudur; çünkü yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
+    "difficultyTag": "Zor",
+    "coreKnowledge": "Bu yenidoğanda nöbet benzeri atakların ilk değerlendirmesinde glukoz normal bulunurken iyonize kalsiyum belirgin düşüktür. Semptomatik hipokalsemi nörolojik irritabilite ve QT uzamasıyla birlikte olduğunda oral destek veya izlem yeterli değildir; tedavi kardiyak monitörizasyon altında intravenöz kalsiyum glukonattır. Enfeksiyon olasılığı klinik bağlama göre izlenebilir, ancak acil karar kalsiyum düzeltmesidir.",
+    "examPearl": "Semptomatik neonatal hipokalsemide kritik ayrım glukozun normal, iyonize kalsiyumun düşük olmasıdır; IV kalsiyum glukonat monitörizasyonla verilir.",
+    "whyCorrect": "Doğru tedavi budur. Yenidoğanda semptomatik hipokalsemi nöbet/jitteriness ve QT uzamasıyla ortaya çıkabilir; IV kalsiyum glukonat damar dışına kaçış ve aritmi riski nedeniyle kardiyak monitörizasyon altında verilmelidir.",
     "optionComparison": {
-      "Acil antibiyotik başlanıp kalsiyumun izlenmemesi": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Acil antibiyotik başlanıp kalsiyumun izlenmemesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Sodyum bikarbonat bolusu verilmesi": "Sodyum bikarbonat özellikle trisiklik antidepresan veya sodyum kanal blokeri toksisitesinde QRS genişlemesi ve kardiyotoksisite varsa kullanılır. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Sodyum bikarbonat bolusu verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "İnsülin infüzyonu başlanması": "İnsülin infüzyonu başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle İnsülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Oral D vitamini başlanıp eve gönderilmesi": "Oral D vitamini başlanıp eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Oral D vitamini başlanıp eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi": "Bu seçenek doğrudur; çünkü yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar."
+      "Kardiyak monitörizasyon altında intravenöz kalsiyum glukonat verilmesi": "Doğru tedavi budur. Yenidoğanda semptomatik hipokalsemi nöbet/jitteriness ve QT uzamasıyla ortaya çıkabilir; IV kalsiyum glukonat damar dışına kaçış ve aritmi riski nedeniyle kardiyak monitörizasyon altında verilmelidir.",
+      "Oral D vitamini başlanıp eve gönderilmesi": "Oral D vitamini uzun dönem eksiklik tedavisinde rol alabilir; ancak kasılma/jitteriness ve kritik düşük iyonize kalsiyum bulunan yenidoğanda acil semptom kontrolü için yeterli değildir.",
+      "İnsülin infüzyonu başlanması": "İnsülin infüzyonu hiperglisemik ketoasidoz gibi tablolarda kullanılır. Bu bebekte glukoz normaldir ve problem düşük iyonize kalsiyumdur.",
+      "Sodyum bikarbonat bolusu verilmesi": "Sodyum bikarbonat sodyum kanal blokeri toksisitesi veya seçilmiş ağır asidoz durumlarında gündeme gelir. Dar QRS, normal glukoz ve düşük kalsiyum bulunan bu yenidoğanda hedef tedavi değildir.",
+      "Kalsiyum düzeltmeden yalnız ampirik antibiyotik başlanması": "Yenidoğanda enfeksiyon dikkatle düşünülür; ancak ateş/inflamasyon bulguları zayıfken semptomları açıklayan kritik düşük iyonize kalsiyum vardır. Kalsiyum düzeltmesini geciktirmek nöbet ve aritmi riskini artırır."
     },
     "evidenceChain": [
       {
-        "text": "Bebekte jitteriness, perioral seğirme ve kasılma benzeri ataklar vardır.",
+        "text": "Yenidoğanda tekrarlayan jitteriness ve perioral seğirme vardır.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Serum kalsiyumu semptomatik düzeyde düşüktür.",
+        "text": "Kapiller glukoz normaldir; hipoglisemi semptomları açıklamamaktadır.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "text": "İyonize kalsiyum 0.78 mmol/L ile kritik düşüktür.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Objektif veri (Kapiller kan glukozu: Kapiller kan glukozu 52 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
+        "text": "EKG’de QTc uzaması hipokalseminin kardiyak etkisini destekler.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Acil antibiyotik başlanıp kalsiyumun izlenmemesi": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Acil antibiyotik başlanıp kalsiyumun izlenmemesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Sodyum bikarbonat bolusu verilmesi": "Sodyum bikarbonat özellikle trisiklik antidepresan veya sodyum kanal blokeri toksisitesinde QRS genişlemesi ve kardiyotoksisite varsa kullanılır. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Sodyum bikarbonat bolusu verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "İnsülin infüzyonu başlanması": "İnsülin infüzyonu başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle İnsülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Oral D vitamini başlanıp eve gönderilmesi": "Oral D vitamini başlanıp eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda jitteriness/nöbet ve düşük iyonize kalsiyum semptomatik neonatal hipokalsemi lehinedir; bu nedenle Oral D vitamini başlanıp eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+      "Oral D vitamini başlanıp eve gönderilmesi": "Oral D vitamini uzun dönem eksiklik tedavisinde rol alabilir; ancak kasılma/jitteriness ve kritik düşük iyonize kalsiyum bulunan yenidoğanda acil semptom kontrolü için yeterli değildir.",
+      "İnsülin infüzyonu başlanması": "İnsülin infüzyonu hiperglisemik ketoasidoz gibi tablolarda kullanılır. Bu bebekte glukoz normaldir ve problem düşük iyonize kalsiyumdur.",
+      "Sodyum bikarbonat bolusu verilmesi": "Sodyum bikarbonat sodyum kanal blokeri toksisitesi veya seçilmiş ağır asidoz durumlarında gündeme gelir. Dar QRS, normal glukoz ve düşük kalsiyum bulunan bu yenidoğanda hedef tedavi değildir.",
+      "Kalsiyum düzeltmeden yalnız ampirik antibiyotik başlanması": "Yenidoğanda enfeksiyon dikkatle düşünülür; ancak ateş/inflamasyon bulguları zayıfken semptomları açıklayan kritik düşük iyonize kalsiyum vardır. Kalsiyum düzeltmesini geciktirmek nöbet ve aritmi riskini artırır."
     },
     "aiMeta": {
-      "generatedAt": "manual-v396-pediatrics-ultra-refined",
+      "generatedAt": "manual-v397-pediatrics-sixth-batch-ultra-refined",
       "generator": "manual-editorial-pediatrics-case-refinement",
-      "schemaVersion": "clinical-standard-v396",
+      "schemaVersion": "clinical-standard-v397",
       "provider": "manual-editorial",
       "validationWarnings": []
     }
@@ -81470,16 +81467,16 @@ export const rawCases = [
     "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
     "title": "Baş ağrısı ve yüksek tansiyon",
     "difficulty": "Acil",
-    "clinicalFocus": "Baş ağrısı ve yüksek tansiyon bağlamında pediatrik öykü, yaşa uygun vital bulgu, fizik muayene ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Baş ağrısı ve yüksek tansiyon için pediatrik klinik patern, acil öncelik ve hedefe yönelik tanı/tedavi kararını açıklama.",
+    "clinicalFocus": "Çocukta ağır hipertansiyonun baş ağrısı, kusma, görme bulanıklığı ve papil ödemiyle hedef organ etkilenimine dönüştüğünü tanıma.",
+    "learningTarget": "Pediatrik hipertansif acilde kan basıncını hemen normalleştirmeden, yoğun izlem altında intravenöz ajanla kontrollü düşürme ilkesini ayırt edebilme.",
     "demographics": "14 yaşında erkek çocuk",
     "setting": "Çocuk acil servisinde",
-    "chiefComplaint": "Çocuk, şiddetli baş ağrısı, bulanık görme ve kusma nedeniyle acile getiriliyor.",
-    "stem": "Son haftalarda sabah baş ağrılarının arttığı, bugün görme bulanıklığı ve kusmanın eklendiği öğreniliyor. Daha önce böbrek hastalığı nedeniyle takip edildiği ancak kontrollerine düzenli gitmediği belirtiliyor.",
+    "chiefComplaint": "Çocuk, şiddetli baş ağrısı, bulanık görme ve kusma nedeniyle çocuk aciline getiriliyor.",
+    "stem": "Ailesi son haftalarda özellikle sabahları belirginleşen baş ağrılarının arttığını, bugün buna bulanık görme ve tekrarlayan kusmanın eklendiğini belirtir. Çocuğun daha önce böbrek hastalığı nedeniyle izlendiği, son aylarda kontrollerini aksattığı öğrenilir. Ateş, kafa travması, ilaç/uyarıcı madde kullanımı veya nöbet öyküsü tariflenmez.",
     "patientIntro": {
       "profile": "14 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
-      "presentation": "Çocuk, şiddetli baş ağrısı, bulanık görme ve kusma nedeniyle acile getiriliyor.",
-      "historySummary": "Son haftalarda sabah baş ağrılarının arttığı, bugün görme bulanıklığı ve kusmanın eklendiği öğreniliyor. Daha önce böbrek hastalığı nedeniyle takip edildiği ancak kontrollerine düzenli gitmediği belirtiliyor."
+      "presentation": "Şiddetli baş ağrısı, kusma, bulanık görme ve çok yüksek kan basıncı ile getiriliyor.",
+      "historySummary": "Ailenin ifadesine göre çocukta son haftalarda sabahları daha belirgin olan baş ağrıları başlamış, bugün okuldan döndükten sonra bulanık görme ve iki kez kusma eklenmiştir. Daha önce böbrek hastalığı nedeniyle takip edildiği, ancak son aylarda kontrollerine düzenli gitmediği öğrenilir. Evde ağrı kesici verilmesine rağmen baş ağrısı hafiflememiş ve çocuk ışığa karşı rahatsızlık tarif etmeye başlamıştır. Ateş, kafa travması, enerji içeceği/uyarıcı madde kullanımı veya daha önce benzer nöbet öyküsü yoktur."
     },
     "vitals": {
       "TA": "198/126 mmHg",
@@ -81487,211 +81484,391 @@ export const rawCases = [
       "Solunum": "22/dk",
       "SpO2": "%98, oda havasında",
       "Ateş": "36.8 °C",
-      "Şok indeksi": "0.53 pediatrik bağlamda yorumlanmalı"
+      "Şok indeksi": "0.53 - ağır hipertansiyon bağlamında yorumlanmalı"
     },
     "exam": [
-      "Çocuk ajite ve fotofobiktir.",
-      "Fundoskopide papil ödemi şüphesi vardır."
+      "Çocuk ajite, fotofobik ve baş ağrısı nedeniyle huzursuzdur.",
+      "Fundoskopide papil ödemi ile uyumlu disk sınırı silikliği izlenir.",
+      "Fokal motor defisit saptanmaz; ancak tekrarlayan kusma ve görme yakınması hedef organ etkilenimi açısından uyarıcıdır."
     ],
     "investigations": [
       {
-        "id": "idrar-analizi-2",
-        "label": "İdrar analizi",
-        "title": "İdrar analizi",
-        "type": "urine",
-        "priority": "essential",
-        "subtype": "İdrar tetkikleri",
-        "summary": "İdrar analizi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "clinicalMeaning": "İdrar analizi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "result": {
-          "title": "İdrar analizi",
-          "summary": "İdrar analizi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-          "interpretation": "İdrar analizi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-          "values": [
-            [
-              "İdrar analizi",
-              "Proteinüri ve mikroskobik hematüri saptandı.",
-              "—",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "İdrar analizi",
-              "Proteinüri ve mikroskobik hematüri saptandı.",
-              "—",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "İdrar analizi",
-            "Proteinüri ve mikroskobik hematüri saptandı.",
-            "—",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "İdrar analizi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "interpretation": "İdrar analizi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "İdrar analizi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      },
-      {
-        "id": "v180-new-158-bas-agrisi-ve-yuksek-tansiyon-pediatric-initial-assessment",
-        "label": "Pediatrik ilk değerlendirme",
-        "title": "Pediatrik ilk değerlendirme",
+        "id": "v180-new-158-bas-agrisi-ve-yuksek-tansiyon-repeat-bp",
+        "label": "Doğru manşonla tekrarlayan kan basıncı ölçümü",
+        "title": "Doğru manşonla tekrarlayan kan basıncı ölçümü",
         "type": "clinical",
         "priority": "essential",
         "subtype": "",
-        "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "clinicalMeaning": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
+        "summary": "Uygun manşonla tekrarlanan çok yüksek kan basıncı ölçümleri hipertansif acil yönetimini başlatır.",
+        "clinicalMeaning": "Uygun manşonla tekrarlanan çok yüksek kan basıncı ölçümleri hipertansif acil yönetimini başlatır.",
         "result": {
-          "title": "Pediatrik ilk değerlendirme",
-          "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
+          "title": "Doğru manşonla tekrarlayan kan basıncı ölçümü",
+          "summary": "Uygun manşonla tekrarlanan çok yüksek kan basıncı ölçümleri hipertansif acil yönetimini başlatır.",
+          "interpretation": "Uygun manşonla tekrarlanan çok yüksek kan basıncı ölçümleri hipertansif acil yönetimini başlatır.",
           "values": [
             [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
+              "Sağ kol ölçümü",
+              "198/126 mmHg",
+              "Yaş-boy-cinsiyet için <95. persantil",
+              "Ağır yüksek"
             ],
             [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
+              "Sol kol ölçümü",
+              "194/124 mmHg",
+              "Benzer olmalı",
+              "Kalıcı ağır hipertansiyon"
             ],
             [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
+              "Ölçüm koşulu",
+              "Uygun manşonla, istirahat sonrası tekrarlandı",
+              "Tek ölçüme bağlı kalınmaz",
+              "Doğrulanmış acil değer"
             ]
           ],
           "rows": [
             [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
+              "Sağ kol ölçümü",
+              "198/126 mmHg",
+              "Yaş-boy-cinsiyet için <95. persantil",
+              "Ağır yüksek"
             ],
             [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
+              "Sol kol ölçümü",
+              "194/124 mmHg",
+              "Benzer olmalı",
+              "Kalıcı ağır hipertansiyon"
             ],
             [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
+              "Ölçüm koşulu",
+              "Uygun manşonla, istirahat sonrası tekrarlandı",
+              "Tek ölçüme bağlı kalınmaz",
+              "Doğrulanmış acil değer"
             ]
           ]
         },
         "rows": [
           [
-            "Genel görünüm",
-            "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-            "Yaşa göre",
-            "Kritik izlem"
+            "Sağ kol ölçümü",
+            "198/126 mmHg",
+            "Yaş-boy-cinsiyet için <95. persantil",
+            "Ağır yüksek"
           ],
           [
-            "Kapiller dolum/perfüzyon",
-            "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-            "<2 sn beklenir",
-            "Yaşa göre yorumlanır"
+            "Sol kol ölçümü",
+            "194/124 mmHg",
+            "Benzer olmalı",
+            "Kalıcı ağır hipertansiyon"
           ],
           [
-            "Solunum işi",
-            "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-            "Yaşa göre",
-            "Acil güvenlik"
+            "Ölçüm koşulu",
+            "Uygun manşonla, istirahat sonrası tekrarlandı",
+            "Tek ölçüme bağlı kalınmaz",
+            "Doğrulanmış acil değer"
           ]
         ],
-        "postAnswerExplanation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
+        "postAnswerExplanation": "Uygun manşonla tekrarlanan çok yüksek kan basıncı ölçümleri hipertansif acil yönetimini başlatır.",
+        "interpretation": "Uygun manşonla tekrarlanan çok yüksek kan basıncı ölçümleri hipertansif acil yönetimini başlatır.",
+        "explanationAfterAnswer": "Uygun manşonla tekrarlanan çok yüksek kan basıncı ölçümleri hipertansif acil yönetimini başlatır.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme",
-        "orderRank": 10
+        "clinicalFlowOrder": 50,
+        "flowOrder": 50,
+        "orderRank": 50,
+        "testValueLabel": "Karar verdirici veri",
+        "clinicalPriorityLabel": "Karar verdirici veri",
+        "educationalValue": "Karar verdirici veri",
+        "scoreImpact": 5,
+        "scoreValue": 5,
+        "pediatricSafetyValue": "Acil önceliği belirler",
+        "treatmentImpact": "Acil önceliği belirler"
       },
       {
-        "id": "serum-kreatinin-1",
-        "label": "Serum kreatinin",
-        "title": "Serum kreatinin",
+        "id": "v180-new-158-bas-agrisi-ve-yuksek-tansiyon-renal-panel-urinalysis",
+        "label": "Böbrek fonksiyonu ve idrar analizi",
+        "title": "Böbrek fonksiyonu ve idrar analizi",
         "type": "lab",
         "priority": "essential",
-        "subtype": "Laboratuvar",
-        "summary": "Serum kreatinin, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "clinicalMeaning": "Serum kreatinin, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
+        "subtype": "",
+        "summary": "Böbrek fonksiyon bozukluğu ve idrar bulguları hipertansiyonun renal zeminini ve hedef organ etkilenimini destekler.",
+        "clinicalMeaning": "Böbrek fonksiyon bozukluğu ve idrar bulguları hipertansiyonun renal zeminini ve hedef organ etkilenimini destekler.",
         "result": {
-          "title": "Serum kreatinin",
-          "summary": "Serum kreatinin, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-          "interpretation": "Serum kreatinin, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
+          "title": "Böbrek fonksiyonu ve idrar analizi",
+          "summary": "Böbrek fonksiyon bozukluğu ve idrar bulguları hipertansiyonun renal zeminini ve hedef organ etkilenimini destekler.",
+          "interpretation": "Böbrek fonksiyon bozukluğu ve idrar bulguları hipertansiyonun renal zeminini ve hedef organ etkilenimini destekler.",
           "values": [
             [
-              "Serum kreatinin",
-              "0.5 mg/dL",
-              "0.5–1.0 mg/dL",
-              "Klinik bağlamda değerlendirilmeli"
+              "Kreatinin",
+              "1.8 mg/dL",
+              "0.6–1.1 mg/dL",
+              "Yüksek"
+            ],
+            [
+              "BUN",
+              "38 mg/dL",
+              "7–20 mg/dL",
+              "Yüksek"
+            ],
+            [
+              "İdrar protein",
+              "2+",
+              "Negatif",
+              "Böbrek etkilenimi"
+            ],
+            [
+              "Mikroskobik hematüri",
+              "15–20 eritrosit/HPF",
+              "0–3 eritrosit/HPF",
+              "Patolojik"
             ]
           ],
           "rows": [
             [
-              "Serum kreatinin",
-              "0.5 mg/dL",
-              "0.5–1.0 mg/dL",
-              "Klinik bağlamda değerlendirilmeli"
+              "Kreatinin",
+              "1.8 mg/dL",
+              "0.6–1.1 mg/dL",
+              "Yüksek"
+            ],
+            [
+              "BUN",
+              "38 mg/dL",
+              "7–20 mg/dL",
+              "Yüksek"
+            ],
+            [
+              "İdrar protein",
+              "2+",
+              "Negatif",
+              "Böbrek etkilenimi"
+            ],
+            [
+              "Mikroskobik hematüri",
+              "15–20 eritrosit/HPF",
+              "0–3 eritrosit/HPF",
+              "Patolojik"
             ]
           ]
         },
         "rows": [
           [
-            "Serum kreatinin",
-            "0.5 mg/dL",
-            "0.5–1.0 mg/dL",
-            "Klinik bağlamda değerlendirilmeli"
+            "Kreatinin",
+            "1.8 mg/dL",
+            "0.6–1.1 mg/dL",
+            "Yüksek"
+          ],
+          [
+            "BUN",
+            "38 mg/dL",
+            "7–20 mg/dL",
+            "Yüksek"
+          ],
+          [
+            "İdrar protein",
+            "2+",
+            "Negatif",
+            "Böbrek etkilenimi"
+          ],
+          [
+            "Mikroskobik hematüri",
+            "15–20 eritrosit/HPF",
+            "0–3 eritrosit/HPF",
+            "Patolojik"
           ]
         ],
-        "postAnswerExplanation": "Serum kreatinin, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "interpretation": "Serum kreatinin, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "valueAssumption": "Eksik sayısal değer, vakanın mevcut tanı/yönetim hedefiyle uyumlu gerçekçi eğitim verisi olarak tamamlandı.",
+        "postAnswerExplanation": "Böbrek fonksiyon bozukluğu ve idrar bulguları hipertansiyonun renal zeminini ve hedef organ etkilenimini destekler.",
+        "interpretation": "Böbrek fonksiyon bozukluğu ve idrar bulguları hipertansiyonun renal zeminini ve hedef organ etkilenimini destekler.",
+        "explanationAfterAnswer": "Böbrek fonksiyon bozukluğu ve idrar bulguları hipertansiyonun renal zeminini ve hedef organ etkilenimini destekler.",
+        "category": "lab",
+        "testTypeCategory": "lab",
+        "clinicalFlowOrder": 40,
+        "flowOrder": 40,
+        "orderRank": 40,
+        "testValueLabel": "Karar verdirici veri",
+        "clinicalPriorityLabel": "Karar verdirici veri",
+        "educationalValue": "Karar verdirici veri",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "pediatricSafetyValue": "Acil önceliği belirler",
+        "treatmentImpact": "Acil önceliği belirler"
+      },
+      {
+        "id": "v180-new-158-bas-agrisi-ve-yuksek-tansiyon-target-organ",
+        "label": "Hedef organ etkilenimi değerlendirmesi",
+        "title": "Hedef organ etkilenimi değerlendirmesi",
+        "type": "clinical",
+        "priority": "essential",
+        "subtype": "",
+        "summary": "Papil ödemi ve kardiyak yüklenme bulguları, kan basıncının ayaktan değil yoğun izlem altında düşürülmesi gerektiğini gösterir.",
+        "clinicalMeaning": "Papil ödemi ve kardiyak yüklenme bulguları, kan basıncının ayaktan değil yoğun izlem altında düşürülmesi gerektiğini gösterir.",
+        "result": {
+          "title": "Hedef organ etkilenimi değerlendirmesi",
+          "summary": "Papil ödemi ve kardiyak yüklenme bulguları, kan basıncının ayaktan değil yoğun izlem altında düşürülmesi gerektiğini gösterir.",
+          "interpretation": "Papil ödemi ve kardiyak yüklenme bulguları, kan basıncının ayaktan değil yoğun izlem altında düşürülmesi gerektiğini gösterir.",
+          "values": [
+            [
+              "Göz dibi",
+              "Papil ödemi ile uyumlu disk sınırı silikliği",
+              "Papil ödemi olmamalı",
+              "Nörolojik hedef organ etkilenimi"
+            ],
+            [
+              "Bilinç",
+              "Ajite, ancak koopere",
+              "Yaşa uygun koopere",
+              "Yakın izlem gerekli"
+            ],
+            [
+              "EKG",
+              "Sol ventrikül yüklenme bulgusu",
+              "Normal voltaj",
+              "Kronik basınç yükü lehine"
+            ]
+          ],
+          "rows": [
+            [
+              "Göz dibi",
+              "Papil ödemi ile uyumlu disk sınırı silikliği",
+              "Papil ödemi olmamalı",
+              "Nörolojik hedef organ etkilenimi"
+            ],
+            [
+              "Bilinç",
+              "Ajite, ancak koopere",
+              "Yaşa uygun koopere",
+              "Yakın izlem gerekli"
+            ],
+            [
+              "EKG",
+              "Sol ventrikül yüklenme bulgusu",
+              "Normal voltaj",
+              "Kronik basınç yükü lehine"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Göz dibi",
+            "Papil ödemi ile uyumlu disk sınırı silikliği",
+            "Papil ödemi olmamalı",
+            "Nörolojik hedef organ etkilenimi"
+          ],
+          [
+            "Bilinç",
+            "Ajite, ancak koopere",
+            "Yaşa uygun koopere",
+            "Yakın izlem gerekli"
+          ],
+          [
+            "EKG",
+            "Sol ventrikül yüklenme bulgusu",
+            "Normal voltaj",
+            "Kronik basınç yükü lehine"
+          ]
+        ],
+        "postAnswerExplanation": "Papil ödemi ve kardiyak yüklenme bulguları, kan basıncının ayaktan değil yoğun izlem altında düşürülmesi gerektiğini gösterir.",
+        "interpretation": "Papil ödemi ve kardiyak yüklenme bulguları, kan basıncının ayaktan değil yoğun izlem altında düşürülmesi gerektiğini gösterir.",
+        "explanationAfterAnswer": "Papil ödemi ve kardiyak yüklenme bulguları, kan basıncının ayaktan değil yoğun izlem altında düşürülmesi gerektiğini gösterir.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Serum kreatinin, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
+        "clinicalFlowOrder": 50,
+        "flowOrder": 50,
+        "orderRank": 50,
+        "testValueLabel": "Karar verdirici veri",
+        "clinicalPriorityLabel": "Karar verdirici veri",
+        "educationalValue": "Karar verdirici veri",
+        "scoreImpact": 5,
+        "scoreValue": 5,
+        "pediatricSafetyValue": "Acil önceliği belirler",
+        "treatmentImpact": "Acil önceliği belirler"
+      },
+      {
+        "id": "v180-new-158-bas-agrisi-ve-yuksek-tansiyon-electrolytes",
+        "label": "Elektrolitler",
+        "title": "Elektrolitler",
+        "type": "lab",
+        "priority": "essential",
+        "subtype": "",
+        "summary": "Elektrolitler renal zemin ve intravenöz antihipertansif tedavi sırasında güvenli izlem için başlangıç değeri sağlar.",
+        "clinicalMeaning": "Elektrolitler renal zemin ve intravenöz antihipertansif tedavi sırasında güvenli izlem için başlangıç değeri sağlar.",
+        "result": {
+          "title": "Elektrolitler",
+          "summary": "Elektrolitler renal zemin ve intravenöz antihipertansif tedavi sırasında güvenli izlem için başlangıç değeri sağlar.",
+          "interpretation": "Elektrolitler renal zemin ve intravenöz antihipertansif tedavi sırasında güvenli izlem için başlangıç değeri sağlar.",
+          "values": [
+            [
+              "Sodyum",
+              "139 mmol/L",
+              "135–145 mmol/L",
+              "Normal"
+            ],
+            [
+              "Potasyum",
+              "4.8 mmol/L",
+              "3.5–5.0 mmol/L",
+              "Üst-normal"
+            ],
+            [
+              "Bikarbonat",
+              "21 mmol/L",
+              "22–26 mmol/L",
+              "Hafif düşük"
+            ]
+          ],
+          "rows": [
+            [
+              "Sodyum",
+              "139 mmol/L",
+              "135–145 mmol/L",
+              "Normal"
+            ],
+            [
+              "Potasyum",
+              "4.8 mmol/L",
+              "3.5–5.0 mmol/L",
+              "Üst-normal"
+            ],
+            [
+              "Bikarbonat",
+              "21 mmol/L",
+              "22–26 mmol/L",
+              "Hafif düşük"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Sodyum",
+            "139 mmol/L",
+            "135–145 mmol/L",
+            "Normal"
+          ],
+          [
+            "Potasyum",
+            "4.8 mmol/L",
+            "3.5–5.0 mmol/L",
+            "Üst-normal"
+          ],
+          [
+            "Bikarbonat",
+            "21 mmol/L",
+            "22–26 mmol/L",
+            "Hafif düşük"
+          ]
+        ],
+        "postAnswerExplanation": "Elektrolitler renal zemin ve intravenöz antihipertansif tedavi sırasında güvenli izlem için başlangıç değeri sağlar.",
+        "interpretation": "Elektrolitler renal zemin ve intravenöz antihipertansif tedavi sırasında güvenli izlem için başlangıç değeri sağlar.",
+        "explanationAfterAnswer": "Elektrolitler renal zemin ve intravenöz antihipertansif tedavi sırasında güvenli izlem için başlangıç değeri sağlar.",
+        "category": "lab",
+        "testTypeCategory": "lab",
+        "clinicalFlowOrder": 30,
+        "flowOrder": 30,
+        "orderRank": 30,
+        "testValueLabel": "Destekleyici veri",
+        "clinicalPriorityLabel": "Destekleyici veri",
+        "educationalValue": "Destekleyici veri",
+        "scoreImpact": 3,
+        "scoreValue": 3,
+        "pediatricSafetyValue": "Klinik bağlamda yorumlanır",
+        "treatmentImpact": "Klinik bağlamda yorumlanır"
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -81704,152 +81881,127 @@ export const rawCases = [
     "questionType": "treatment",
     "answerTarget": "treatment",
     "diagnosis": {
-      "correct": "Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi",
+      "correct": "Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürmek",
       "options": [
-        "Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi",
-        "Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi",
-        "Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek",
-        "Hipertansiyonun büyüme çağında normal kabul edilmesi",
-        "Kan basıncının hemen normal değerlere kadar hızla düşürülmesi"
+        "Kan basıncını oral ilaçla haftalar içinde poliklinikte düzenlemek",
+        "Kan basıncını dakikalar içinde tamamen normal değerlere indirmek",
+        "Sadece analjezi verip kan basıncını ağrı geçtikten sonra yeniden değerlendirmek",
+        "Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürmek",
+        "Hipertansiyonu puberte döneminde geçici kabul edip taburcu etmek"
       ],
       "question": "Bu çocukta en uygun acil kan basıncı yönetimi aşağıdakilerden hangisidir?",
-      "explanation": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü baş ağrısı ve yüksek tansiyon için doğru tanı/tedavi önceliğini belirler.",
+      "explanation": "Bu çocukta yalnızca yüksek kan basıncı değil, baş ağrısı, kusma, görme bulanıklığı ve papil ödemiyle hedef organ etkilenimi vardır. Bu nedenle tablo hipertansif acil olarak ele alınmalı; kan basıncı yoğun izlem altında intravenöz ajanla kontrollü şekilde düşürülmelidir. Hızlı tam normalizasyon da, yalnız oral/ayaktan yaklaşım da güvenli değildir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi kararını destekler."
+          "text": "Pediatrik hipertansif acilde hedef kan basıncını bir anda normale indirmek değil, yoğun izlem altında kontrollü düşüş sağlamaktır."
         }
       ],
       "optionComparison": {
-        "Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi": "Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek": "Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Hipertansiyonun büyüme çağında normal kabul edilmesi": "Hipertansiyonun büyüme çağında normal kabul edilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Hipertansiyonun büyüme çağında normal kabul edilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Kan basıncının hemen normal değerlere kadar hızla düşürülmesi": "Kan basıncının hemen normal değerlere kadar hızla düşürülmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Kan basıncının hemen normal değerlere kadar hızla düşürülmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+        "Kan basıncını oral ilaçla haftalar içinde poliklinikte düzenlemek": "Ayaktan oral düzenleme asemptomatik veya kronik kontrol gerektiren hafif-orta hipertansiyonda düşünülebilir. Bu çocukta papil ödemi, kusma, görme bulanıklığı ve çok yüksek kan basıncı hedef organ etkilenimini gösterir.",
+        "Kan basıncını dakikalar içinde tamamen normal değerlere indirmek": "Kan basıncının aşırı hızlı normalleştirilmesi serebral, renal ve koroner perfüzyonu bozabilir. Hipertansif acilde amaç kontrollü düşüş sağlamaktır; hızlı tam normalizasyon güvenli değildir.",
+        "Sadece analjezi verip kan basıncını ağrı geçtikten sonra yeniden değerlendirmek": "Ağrı kan basıncını artırabilir; ancak 198/126 mmHg düzeyi, papil ödemi ve renal bulgular yalnız ağrıyla açıklanamaz. Analjezi tek başına hedef organ etkilenimini yönetmez.",
+        "Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürmek": "Doğru yaklaşımdır. Çocukta nörolojik semptomlar ve papil ödemiyle seyreden ağır hipertansiyon, yoğun izlem altında intravenöz antihipertansif ajanla kontrollü düşürülmelidir.",
+        "Hipertansiyonu puberte döneminde geçici kabul edip taburcu etmek": "Puberte döneminde bu düzeyde kan basıncı fizyolojik kabul edilemez. Semptom ve hedef organ bulguları varken taburculuk ciddi komplikasyon riskini artırır."
       },
       "answerFeedback": {
-        "summary": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü baş ağrısı ve yüksek tansiyon için doğru tanı/tedavi önceliğini belirler.",
-        "whyCorrect": "Kan basıncı 198/126 mmHg olarak ağır yüksek ölçülmüştür. Baş ağrısı, kusma, bulanık görme ve papil ödemi şüphesi hedef organ etkilenimini düşündüren bulgular vardır. Bu bulgular birlikte değerlendirildiğinde en uygun yanıt Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi olur. Tedavi seçimi, klinik aciliyetin ve altta yatan mekanizmanın aynı anda hedeflenmesine dayanır; destek basamakları gerekirse eş zamanlı yürütülür fakat ana kararı tek başına değiştirmez. Alternatifler bazı destek veya ayırıcı basamaklarda kullanılabilir; ancak verilen acil karar noktasını bu seçenek kadar doğrudan karşılamaz.",
-        "rationale": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü baş ağrısı ve yüksek tansiyon için doğru tanı/tedavi önceliğini belirler.",
-        "correctOptionFeedback": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
+        "summary": "Bu çocukta yalnızca yüksek kan basıncı değil, baş ağrısı, kusma, görme bulanıklığı ve papil ödemiyle hedef organ etkilenimi vardır. Bu nedenle tablo hipertansif acil olarak ele alınmalı; kan basıncı yoğun izlem altında intravenöz ajanla kontrollü şekilde düşürülmelidir. Hızlı tam normalizasyon da, yalnız oral/ayaktan yaklaşım da güvenli değildir.",
+        "whyCorrect": "Doğru yaklaşımdır. Çocukta nörolojik semptomlar ve papil ödemiyle seyreden ağır hipertansiyon, yoğun izlem altında intravenöz antihipertansif ajanla kontrollü düşürülmelidir.",
+        "rationale": "Bu çocukta yalnızca yüksek kan basıncı değil, baş ağrısı, kusma, görme bulanıklığı ve papil ödemiyle hedef organ etkilenimi vardır. Bu nedenle tablo hipertansif acil olarak ele alınmalı; kan basıncı yoğun izlem altında intravenöz ajanla kontrollü şekilde düşürülmelidir. Hızlı tam normalizasyon da, yalnız oral/ayaktan yaklaşım da güvenli değildir.",
+        "correctOptionFeedback": "Doğru yaklaşımdır. Çocukta nörolojik semptomlar ve papil ödemiyle seyreden ağır hipertansiyon, yoğun izlem altında intravenöz antihipertansif ajanla kontrollü düşürülmelidir.",
         "keyClues": [
-          "Kan basıncı 198/126 mmHg olarak ağır yüksek ölçülmüştür.",
-          "Baş ağrısı, kusma, bulanık görme ve papil ödemi şüphesi hedef organ etkilenimini düşündüren bulgular vardır.",
-          "Objektif veri (Serum kreatinin: Serum kreatinin 0.5 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır."
+          "Kan basıncı uygun ölçümle 198/126 mmHg ve tekrarında benzer düzeyde yüksektir.",
+          "Baş ağrısı, kusma ve bulanık görme nörolojik hedef organ etkilenimini düşündürür.",
+          "Fundoskopide papil ödemi ile uyumlu bulgu vardır.",
+          "Kreatinin yüksekliği ve proteinüri renal zemin/organ etkilenimini destekler."
         ],
         "evidenceChain": [
           {
-            "text": "Kan basıncı 198/126 mmHg olarak ağır yüksek ölçülmüştür.",
+            "text": "Kan basıncı uygun ölçümle 198/126 mmHg ve tekrarında benzer düzeyde yüksektir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Baş ağrısı, kusma, bulanık görme ve papil ödemi şüphesi hedef organ etkilenimini düşündüren bulgular vardır.",
+            "text": "Baş ağrısı, kusma ve bulanık görme nörolojik hedef organ etkilenimini düşündürür.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Objektif veri (Serum kreatinin: Serum kreatinin 0.5 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
+            "text": "Fundoskopide papil ödemi ile uyumlu bulgu vardır.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "text": "Kreatinin yüksekliği ve proteinüri renal zemin/organ etkilenimini destekler.",
             "weight": "medium",
             "source": "case"
           }
         ],
-        "examPearl": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi kararını destekler.",
+        "examPearl": "Pediatrik hipertansif acilde hedef kan basıncını bir anda normale indirmek değil, yoğun izlem altında kontrollü düşüş sağlamaktır.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi kararını destekler."
+            "text": "Pediatrik hipertansif acilde hedef kan basıncını bir anda normale indirmek değil, yoğun izlem altında kontrollü düşüş sağlamaktır."
           }
         ],
         "clinicalPearls": [
           {
             "label": "Sınav notu",
-            "text": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi kararını destekler."
+            "text": "Pediatrik hipertansif acilde hedef kan basıncını bir anda normale indirmek değil, yoğun izlem altında kontrollü düşüş sağlamaktır."
           }
         ],
         "optionComparison": {
-          "Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi": "Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-          "Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek": "Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Hipertansiyonun büyüme çağında normal kabul edilmesi": "Hipertansiyonun büyüme çağında normal kabul edilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Hipertansiyonun büyüme çağında normal kabul edilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Kan basıncının hemen normal değerlere kadar hızla düşürülmesi": "Kan basıncının hemen normal değerlere kadar hızla düşürülmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Kan basıncının hemen normal değerlere kadar hızla düşürülmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "whyWrong": {
-          "Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi": "Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek": "Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Hipertansiyonun büyüme çağında normal kabul edilmesi": "Hipertansiyonun büyüme çağında normal kabul edilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Hipertansiyonun büyüme çağında normal kabul edilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Kan basıncının hemen normal değerlere kadar hızla düşürülmesi": "Kan basıncının hemen normal değerlere kadar hızla düşürülmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Kan basıncının hemen normal değerlere kadar hızla düşürülmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Çocukta hipertansif acilde hedef organ bulgularıyla intravenöz tedavi gereksinimini seçebilme",
-        "coreKnowledge": "Baş ağrısı ve yüksek tansiyon sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir."
-      },
-      "whyCorrect": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "evidenceChain": [
-        {
-          "text": "Kan basıncı 198/126 mmHg olarak ağır yüksek ölçülmüştür.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Baş ağrısı, kusma, bulanık görme ve papil ödemi şüphesi hedef organ etkilenimini düşündüren bulgular vardır.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Objektif veri (Serum kreatinin: Serum kreatinin 0.5 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-          "weight": "medium",
-          "source": "case"
+          "Kan basıncını oral ilaçla haftalar içinde poliklinikte düzenlemek": "Ayaktan oral düzenleme asemptomatik veya kronik kontrol gerektiren hafif-orta hipertansiyonda düşünülebilir. Bu çocukta papil ödemi, kusma, görme bulanıklığı ve çok yüksek kan basıncı hedef organ etkilenimini gösterir.",
+          "Kan basıncını dakikalar içinde tamamen normal değerlere indirmek": "Kan basıncının aşırı hızlı normalleştirilmesi serebral, renal ve koroner perfüzyonu bozabilir. Hipertansif acilde amaç kontrollü düşüş sağlamaktır; hızlı tam normalizasyon güvenli değildir.",
+          "Sadece analjezi verip kan basıncını ağrı geçtikten sonra yeniden değerlendirmek": "Ağrı kan basıncını artırabilir; ancak 198/126 mmHg düzeyi, papil ödemi ve renal bulgular yalnız ağrıyla açıklanamaz. Analjezi tek başına hedef organ etkilenimini yönetmez.",
+          "Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürmek": "Doğru yaklaşımdır. Çocukta nörolojik semptomlar ve papil ödemiyle seyreden ağır hipertansiyon, yoğun izlem altında intravenöz antihipertansif ajanla kontrollü düşürülmelidir.",
+          "Hipertansiyonu puberte döneminde geçici kabul edip taburcu etmek": "Puberte döneminde bu düzeyde kan basıncı fizyolojik kabul edilemez. Semptom ve hedef organ bulguları varken taburculuk ciddi komplikasyon riskini artırır."
         }
-      ],
-      "coreKnowledge": "Baş ağrısı ve yüksek tansiyon sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-      "examPearl": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi kararını destekler.",
-      "whyWrong": {
-        "Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi": "Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek": "Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Hipertansiyonun büyüme çağında normal kabul edilmesi": "Hipertansiyonun büyüme çağında normal kabul edilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Hipertansiyonun büyüme çağında normal kabul edilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Kan basıncının hemen normal değerlere kadar hızla düşürülmesi": "Kan basıncının hemen normal değerlere kadar hızla düşürülmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Kan basıncının hemen normal değerlere kadar hızla düşürülmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
       }
     },
-    "difficultyTag": "Acil",
-    "coreKnowledge": "Baş ağrısı ve yüksek tansiyon sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-    "examPearl": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi kararını destekler.",
-    "whyCorrect": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
+    "difficultyTag": "Zor",
+    "coreKnowledge": "Bu çocukta yalnızca yüksek kan basıncı değil, baş ağrısı, kusma, görme bulanıklığı ve papil ödemiyle hedef organ etkilenimi vardır. Bu nedenle tablo hipertansif acil olarak ele alınmalı; kan basıncı yoğun izlem altında intravenöz ajanla kontrollü şekilde düşürülmelidir. Hızlı tam normalizasyon da, yalnız oral/ayaktan yaklaşım da güvenli değildir.",
+    "examPearl": "Pediatrik hipertansif acilde hedef kan basıncını bir anda normale indirmek değil, yoğun izlem altında kontrollü düşüş sağlamaktır.",
+    "whyCorrect": "Doğru yaklaşımdır. Çocukta nörolojik semptomlar ve papil ödemiyle seyreden ağır hipertansiyon, yoğun izlem altında intravenöz antihipertansif ajanla kontrollü düşürülmelidir.",
     "optionComparison": {
-      "Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi": "Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürülmesi": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek": "Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Hipertansiyonun büyüme çağında normal kabul edilmesi": "Hipertansiyonun büyüme çağında normal kabul edilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Hipertansiyonun büyüme çağında normal kabul edilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Kan basıncının hemen normal değerlere kadar hızla düşürülmesi": "Kan basıncının hemen normal değerlere kadar hızla düşürülmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Kan basıncının hemen normal değerlere kadar hızla düşürülmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+      "Kan basıncını oral ilaçla haftalar içinde poliklinikte düzenlemek": "Ayaktan oral düzenleme asemptomatik veya kronik kontrol gerektiren hafif-orta hipertansiyonda düşünülebilir. Bu çocukta papil ödemi, kusma, görme bulanıklığı ve çok yüksek kan basıncı hedef organ etkilenimini gösterir.",
+      "Kan basıncını dakikalar içinde tamamen normal değerlere indirmek": "Kan basıncının aşırı hızlı normalleştirilmesi serebral, renal ve koroner perfüzyonu bozabilir. Hipertansif acilde amaç kontrollü düşüş sağlamaktır; hızlı tam normalizasyon güvenli değildir.",
+      "Sadece analjezi verip kan basıncını ağrı geçtikten sonra yeniden değerlendirmek": "Ağrı kan basıncını artırabilir; ancak 198/126 mmHg düzeyi, papil ödemi ve renal bulgular yalnız ağrıyla açıklanamaz. Analjezi tek başına hedef organ etkilenimini yönetmez.",
+      "Yoğun izlem altında intravenöz antihipertansif ile kontrollü kan basıncı düşürmek": "Doğru yaklaşımdır. Çocukta nörolojik semptomlar ve papil ödemiyle seyreden ağır hipertansiyon, yoğun izlem altında intravenöz antihipertansif ajanla kontrollü düşürülmelidir.",
+      "Hipertansiyonu puberte döneminde geçici kabul edip taburcu etmek": "Puberte döneminde bu düzeyde kan basıncı fizyolojik kabul edilemez. Semptom ve hedef organ bulguları varken taburculuk ciddi komplikasyon riskini artırır."
     },
     "evidenceChain": [
       {
-        "text": "Kan basıncı 198/126 mmHg olarak ağır yüksek ölçülmüştür.",
+        "text": "Kan basıncı uygun ölçümle 198/126 mmHg ve tekrarında benzer düzeyde yüksektir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Baş ağrısı, kusma, bulanık görme ve papil ödemi şüphesi hedef organ etkilenimini düşündüren bulgular vardır.",
+        "text": "Baş ağrısı, kusma ve bulanık görme nörolojik hedef organ etkilenimini düşündürür.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Objektif veri (Serum kreatinin: Serum kreatinin 0.5 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
+        "text": "Fundoskopide papil ödemi ile uyumlu bulgu vardır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Kreatinin yüksekliği ve proteinüri renal zemin/organ etkilenimini destekler.",
         "weight": "medium",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi": "Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Kan basıncının oral ilaçla haftalar içinde yavaşça değerlendirilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek": "Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Analjezi ve oral antihipertansif başlanıp intravenöz tedaviyi dirençli olursa düşünmek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Hipertansiyonun büyüme çağında normal kabul edilmesi": "Hipertansiyonun büyüme çağında normal kabul edilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Hipertansiyonun büyüme çağında normal kabul edilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Kan basıncının hemen normal değerlere kadar hızla düşürülmesi": "Kan basıncının hemen normal değerlere kadar hızla düşürülmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi baş ağrısı ve yüksek tansiyon lehinedir; bu nedenle Kan basıncının hemen normal değerlere kadar hızla düşürülmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+      "Kan basıncını oral ilaçla haftalar içinde poliklinikte düzenlemek": "Ayaktan oral düzenleme asemptomatik veya kronik kontrol gerektiren hafif-orta hipertansiyonda düşünülebilir. Bu çocukta papil ödemi, kusma, görme bulanıklığı ve çok yüksek kan basıncı hedef organ etkilenimini gösterir.",
+      "Kan basıncını dakikalar içinde tamamen normal değerlere indirmek": "Kan basıncının aşırı hızlı normalleştirilmesi serebral, renal ve koroner perfüzyonu bozabilir. Hipertansif acilde amaç kontrollü düşüş sağlamaktır; hızlı tam normalizasyon güvenli değildir.",
+      "Sadece analjezi verip kan basıncını ağrı geçtikten sonra yeniden değerlendirmek": "Ağrı kan basıncını artırabilir; ancak 198/126 mmHg düzeyi, papil ödemi ve renal bulgular yalnız ağrıyla açıklanamaz. Analjezi tek başına hedef organ etkilenimini yönetmez.",
+      "Hipertansiyonu puberte döneminde geçici kabul edip taburcu etmek": "Puberte döneminde bu düzeyde kan basıncı fizyolojik kabul edilemez. Semptom ve hedef organ bulguları varken taburculuk ciddi komplikasyon riskini artırır."
     },
     "aiMeta": {
-      "generatedAt": "manual-v396-pediatrics-ultra-refined",
+      "generatedAt": "manual-v397-pediatrics-sixth-batch-ultra-refined",
       "generator": "manual-editorial-pediatrics-case-refinement",
-      "schemaVersion": "clinical-standard-v396",
+      "schemaVersion": "clinical-standard-v397",
       "provider": "manual-editorial",
       "validationWarnings": []
     }
@@ -81861,16 +82013,16 @@ export const rawCases = [
     "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
     "title": "Kulak ağrısı sonrası kulak arkasında şişlik",
     "difficulty": "Acil",
-    "clinicalFocus": "Kulak ağrısı sonrası kulak arkasında şişlik bağlamında pediatrik öykü, yaşa uygun vital bulgu, fizik muayene ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Kulak ağrısı sonrası kulak arkasında şişlik için pediatrik klinik patern, acil öncelik ve hedefe yönelik tanı/tedavi kararını açıklama.",
+    "clinicalFocus": "Akut otitis media sonrası gelişen mastoid bölgede eritem-hassasiyet, aurikulanın öne itilmesi ve BT bulgularıyla akut mastoiditi tanıma.",
+    "learningTarget": "Akut mastoiditte yalnız oral tedavi veya poliklinik izlem yerine hastaneye yatış, intravenöz antibiyotik ve KBB değerlendirmesi gerektiğini ayırt edebilme.",
     "demographics": "4 yaşında kız çocuk",
     "setting": "Çocuk acil servisinde",
-    "chiefComplaint": "Çocuk, ateş, kulak ağrısı ve kulak arkasında şişlik nedeniyle acile getiriliyor.",
-    "stem": "Bir haftadır sağ kulak ağrısı ve ateşi olduğu, son iki gündür kulak arkasında kızarıklık ve şişlik geliştiği öğreniliyor. Daha önce verilen oral antibiyotiği düzensiz kullanmıştır.",
+    "chiefComplaint": "Çocuk, ateş, sağ kulak ağrısı ve kulak arkasında giderek artan kızarıklık-şişlik nedeniyle acile getiriliyor.",
+    "stem": "Ailesi, bir haftadır sağ kulak ağrısı ve ateşi olan çocuğun son iki gündür kulağının arkasında kızarıklık ve şişlik geliştiğini, kulağının öne doğru belirginleştiğini fark etmiştir. Daha önce başlanmış oral antibiyotiği düzensiz kullandığı öğrenilir. Yüzde güçsüzlük, ense hareketinde belirgin kısıtlılık veya travma öyküsü yoktur.",
     "patientIntro": {
       "profile": "4 yaşında kız çocuk, çocuk acil servisinde değerlendiriliyor.",
-      "presentation": "Çocuk, ateş, kulak ağrısı ve kulak arkasında şişlik nedeniyle acile getiriliyor.",
-      "historySummary": "Bir haftadır sağ kulak ağrısı ve ateşi olduğu, son iki gündür kulak arkasında kızarıklık ve şişlik geliştiği öğreniliyor. Daha önce verilen oral antibiyotiği düzensiz kullanmıştır."
+      "presentation": "Ateş, sağ kulak ağrısı ve kulak arkasında şişlik-kızarıklık nedeniyle getiriliyor.",
+      "historySummary": "Annesinin ifadesine göre çocukta yaklaşık bir haftadır sağ kulak ağrısı ve aralıklı ateş vardır. İki gün önce kulak arkasında kızarıklık ve hassas şişlik fark edilmiş, bugün sağ kulağın öne doğru daha belirgin durması aileyi acile getirmiştir. Daha önce başlanmış oral antibiyotiği tadını sevmediği için düzensiz aldığı öğrenilir. Yüzde kayma, bilinç bulanıklığı, ense hareketinden kaçınma veya kulağa travma öyküsü tariflenmemektedir."
     },
     "vitals": {
       "TA": "100/64 mmHg",
@@ -81878,65 +82030,65 @@ export const rawCases = [
       "Solunum": "22/dk",
       "SpO2": "%98, oda havasında",
       "Ateş": "38.8 °C",
-      "Şok indeksi": "1.22 pediatrik bağlamda yorumlanmalı"
+      "Şok indeksi": "1.22 - ateş ve ağrı ile birlikte izlenmeli"
     },
     "exam": [
       "Sağ aurikula öne ve dışa doğru itilmiş görünmektedir.",
-      "Sağ mastoid bölgede eritem, şişlik ve belirgin hassasiyet vardır.",
-      "Otoskopide sağ timpan membran hiperemik ve bombe görünür."
+      "Sağ mastoid bölgede eritem, fluktuasyon göstermeyen şişlik ve belirgin hassasiyet vardır.",
+      "Otoskopide sağ timpan membran hiperemik ve bombe görünür; yüz siniri fonksiyonu simetriktir."
     ],
     "investigations": [
       {
-        "id": "hemogram-ve-temel-inflamasyon-paneli-2",
-        "label": "Hemogram ve temel inflamasyon paneli",
-        "title": "Hemogram ve temel inflamasyon paneli",
+        "id": "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik-cbc-crp",
+        "label": "Hemogram ve inflamasyon göstergeleri",
+        "title": "Hemogram ve inflamasyon göstergeleri",
         "type": "lab",
         "priority": "essential",
-        "subtype": "Laboratuvar",
-        "summary": "Hemogram, kulak ağrısı sonrası kulak arkasında şişlik ayırıcı tanısında enfeksiyon, anemi, trombositopeni veya kemik iliği etkilenimini yaşa uygun biçimde değerlendirmek için kullanılır.",
-        "clinicalMeaning": "Hemogram, kulak ağrısı sonrası kulak arkasında şişlik ayırıcı tanısında enfeksiyon, anemi, trombositopeni veya kemik iliği etkilenimini yaşa uygun biçimde değerlendirmek için kullanılır.",
+        "subtype": "",
+        "summary": "Nötrofili ve yüksek CRP akut bakteriyel komplikasyon olasılığını destekler; klinik kararı mastoid bulgularla birlikte güçlendirir.",
+        "clinicalMeaning": "Nötrofili ve yüksek CRP akut bakteriyel komplikasyon olasılığını destekler; klinik kararı mastoid bulgularla birlikte güçlendirir.",
         "result": {
-          "title": "Hemogram ve temel inflamasyon paneli",
-          "summary": "Hemogram, kulak ağrısı sonrası kulak arkasında şişlik ayırıcı tanısında enfeksiyon, anemi, trombositopeni veya kemik iliği etkilenimini yaşa uygun biçimde değerlendirmek için kullanılır.",
-          "interpretation": "Hemogram, kulak ağrısı sonrası kulak arkasında şişlik ayırıcı tanısında enfeksiyon, anemi, trombositopeni veya kemik iliği etkilenimini yaşa uygun biçimde değerlendirmek için kullanılır.",
+          "title": "Hemogram ve inflamasyon göstergeleri",
+          "summary": "Nötrofili ve yüksek CRP akut bakteriyel komplikasyon olasılığını destekler; klinik kararı mastoid bulgularla birlikte güçlendirir.",
+          "interpretation": "Nötrofili ve yüksek CRP akut bakteriyel komplikasyon olasılığını destekler; klinik kararı mastoid bulgularla birlikte güçlendirir.",
           "values": [
             [
               "Lökosit",
               "15.800/mm³",
-              "4.000–10.000/mm³",
-              "Klinik bağlamda değerlendirilmeli"
+              "5.000–14.500/mm³",
+              "Yüksek"
             ],
             [
               "Nötrofil",
-              "%84 /mm³",
-              "%40–70 /mm³",
-              "Klinik bağlamda değerlendirilmeli"
+              "%84",
+              "%35–65",
+              "Nötrofili"
             ],
             [
               "CRP",
               "86 mg/L",
               "<5 mg/L",
-              "Klinik bağlamda değerlendirilmeli"
+              "Belirgin yüksek"
             ]
           ],
           "rows": [
             [
               "Lökosit",
               "15.800/mm³",
-              "4.000–10.000/mm³",
-              "Klinik bağlamda değerlendirilmeli"
+              "5.000–14.500/mm³",
+              "Yüksek"
             ],
             [
               "Nötrofil",
-              "%84 /mm³",
-              "%40–70 /mm³",
-              "Klinik bağlamda değerlendirilmeli"
+              "%84",
+              "%35–65",
+              "Nötrofili"
             ],
             [
               "CRP",
               "86 mg/L",
               "<5 mg/L",
-              "Klinik bağlamda değerlendirilmeli"
+              "Belirgin yüksek"
             ]
           ]
         },
@@ -81944,235 +82096,289 @@ export const rawCases = [
           [
             "Lökosit",
             "15.800/mm³",
-            "4.000–10.000/mm³",
-            "Klinik bağlamda değerlendirilmeli"
+            "5.000–14.500/mm³",
+            "Yüksek"
           ],
           [
             "Nötrofil",
-            "%84 /mm³",
-            "%40–70 /mm³",
-            "Klinik bağlamda değerlendirilmeli"
+            "%84",
+            "%35–65",
+            "Nötrofili"
           ],
           [
             "CRP",
             "86 mg/L",
             "<5 mg/L",
-            "Klinik bağlamda değerlendirilmeli"
+            "Belirgin yüksek"
           ]
         ],
-        "postAnswerExplanation": "Hemogram, kulak ağrısı sonrası kulak arkasında şişlik ayırıcı tanısında enfeksiyon, anemi, trombositopeni veya kemik iliği etkilenimini yaşa uygun biçimde değerlendirmek için kullanılır.",
-        "interpretation": "Hemogram, kulak ağrısı sonrası kulak arkasında şişlik ayırıcı tanısında enfeksiyon, anemi, trombositopeni veya kemik iliği etkilenimini yaşa uygun biçimde değerlendirmek için kullanılır.",
-        "explanationAfterAnswer": "Hemogram, kulak ağrısı sonrası kulak arkasında şişlik ayırıcı tanısında enfeksiyon, anemi, trombositopeni veya kemik iliği etkilenimini yaşa uygun biçimde değerlendirmek için kullanılır.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
+        "postAnswerExplanation": "Nötrofili ve yüksek CRP akut bakteriyel komplikasyon olasılığını destekler; klinik kararı mastoid bulgularla birlikte güçlendirir.",
+        "interpretation": "Nötrofili ve yüksek CRP akut bakteriyel komplikasyon olasılığını destekler; klinik kararı mastoid bulgularla birlikte güçlendirir.",
+        "explanationAfterAnswer": "Nötrofili ve yüksek CRP akut bakteriyel komplikasyon olasılığını destekler; klinik kararı mastoid bulgularla birlikte güçlendirir.",
+        "category": "lab",
+        "testTypeCategory": "lab",
+        "clinicalFlowOrder": 40,
+        "flowOrder": 40,
+        "orderRank": 40,
+        "testValueLabel": "Karar verdirici veri",
+        "clinicalPriorityLabel": "Karar verdirici veri",
+        "educationalValue": "Karar verdirici veri",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "pediatricSafetyValue": "Acil önceliği belirler",
+        "treatmentImpact": "Acil önceliği belirler"
       },
       {
-        "id": "kultur-ornekleri-2",
-        "label": "Kültür örnekleri",
-        "title": "Kültür örnekleri",
-        "type": "microbiology",
-        "priority": "essential",
-        "subtype": "Mikrobiyoloji",
-        "summary": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-        "clinicalMeaning": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-        "result": {
-          "title": "Kültür örnekleri",
-          "summary": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-          "interpretation": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-          "values": [
-            [
-              "Kültür istemi",
-              "Henüz raporlanmadı",
-              "—",
-              "Sonuç bekleniyor"
-            ]
-          ],
-          "rows": [
-            [
-              "Kültür istemi",
-              "Henüz raporlanmadı",
-              "—",
-              "Sonuç bekleniyor"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Kültür istemi",
-            "Henüz raporlanmadı",
-            "—",
-            "Sonuç bekleniyor"
-          ]
-        ],
-        "postAnswerExplanation": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-        "interpretation": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      },
-      {
-        "id": "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik-pediatric-initial-assessment",
-        "label": "Pediatrik ilk değerlendirme",
-        "title": "Pediatrik ilk değerlendirme",
+        "id": "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik-otoscopy",
+        "label": "Otoskopi bulgusu",
+        "title": "Otoskopi bulgusu",
         "type": "clinical",
         "priority": "essential",
         "subtype": "",
-        "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "clinicalMeaning": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
+        "summary": "Otoskopi ve aurikula pozisyonu, basit otitis media yerine mastoid komplikasyon geliştiğini gösterir.",
+        "clinicalMeaning": "Otoskopi ve aurikula pozisyonu, basit otitis media yerine mastoid komplikasyon geliştiğini gösterir.",
         "result": {
-          "title": "Pediatrik ilk değerlendirme",
-          "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
+          "title": "Otoskopi bulgusu",
+          "summary": "Otoskopi ve aurikula pozisyonu, basit otitis media yerine mastoid komplikasyon geliştiğini gösterir.",
+          "interpretation": "Otoskopi ve aurikula pozisyonu, basit otitis media yerine mastoid komplikasyon geliştiğini gösterir.",
           "values": [
             [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
+              "Timpan membran",
+              "Sağda hiperemik ve bombe",
+              "Saydam, retrakte/bombe değil",
+              "Akut otitis media bulgusu"
             ],
             [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
+              "Dış kulak yolu",
+              "Akıntı yok",
+              "Akıntı olmamalı",
+              "Otitis eksterna ön planda değil"
             ],
             [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
+              "Aurikula pozisyonu",
+              "Sağ aurikula öne-dışa itilmiş",
+              "Simetrik",
+              "Mastoid komplikasyon lehine"
             ]
           ],
           "rows": [
             [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
+              "Timpan membran",
+              "Sağda hiperemik ve bombe",
+              "Saydam, retrakte/bombe değil",
+              "Akut otitis media bulgusu"
             ],
             [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
+              "Dış kulak yolu",
+              "Akıntı yok",
+              "Akıntı olmamalı",
+              "Otitis eksterna ön planda değil"
             ],
             [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
+              "Aurikula pozisyonu",
+              "Sağ aurikula öne-dışa itilmiş",
+              "Simetrik",
+              "Mastoid komplikasyon lehine"
             ]
           ]
         },
         "rows": [
           [
-            "Genel görünüm",
-            "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-            "Yaşa göre",
-            "Kritik izlem"
+            "Timpan membran",
+            "Sağda hiperemik ve bombe",
+            "Saydam, retrakte/bombe değil",
+            "Akut otitis media bulgusu"
           ],
           [
-            "Kapiller dolum/perfüzyon",
-            "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-            "<2 sn beklenir",
-            "Yaşa göre yorumlanır"
+            "Dış kulak yolu",
+            "Akıntı yok",
+            "Akıntı olmamalı",
+            "Otitis eksterna ön planda değil"
           ],
           [
-            "Solunum işi",
-            "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-            "Yaşa göre",
-            "Acil güvenlik"
+            "Aurikula pozisyonu",
+            "Sağ aurikula öne-dışa itilmiş",
+            "Simetrik",
+            "Mastoid komplikasyon lehine"
           ]
         ],
-        "postAnswerExplanation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
+        "postAnswerExplanation": "Otoskopi ve aurikula pozisyonu, basit otitis media yerine mastoid komplikasyon geliştiğini gösterir.",
+        "interpretation": "Otoskopi ve aurikula pozisyonu, basit otitis media yerine mastoid komplikasyon geliştiğini gösterir.",
+        "explanationAfterAnswer": "Otoskopi ve aurikula pozisyonu, basit otitis media yerine mastoid komplikasyon geliştiğini gösterir.",
         "category": "clinicalAssessment",
         "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme",
-        "orderRank": 10
+        "clinicalFlowOrder": 40,
+        "flowOrder": 40,
+        "orderRank": 40,
+        "testValueLabel": "Karar verdirici veri",
+        "clinicalPriorityLabel": "Karar verdirici veri",
+        "educationalValue": "Karar verdirici veri",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "pediatricSafetyValue": "Acil önceliği belirler",
+        "treatmentImpact": "Acil önceliği belirler"
       },
       {
-        "id": "temporal-kemik-bilgisayarli-tomografi-1",
-        "label": "Temporal kemik bilgisayarlı tomografi",
-        "title": "Temporal kemik bilgisayarlı tomografi",
+        "id": "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik-temporal-bone-ct",
+        "label": "Temporal kemik BT",
+        "title": "Temporal kemik BT",
         "type": "ct",
-        "priority": "lowPriority",
+        "priority": "essential",
         "subtype": "BT",
-        "summary": "Temporal kemik bilgisayarlı tomografi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "clinicalMeaning": "Temporal kemik bilgisayarlı tomografi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
+        "summary": "BT, mastoid hava hücrelerinde inflamasyon ve koalesan sürece gidişi göstererek yatış, IV antibiyotik ve KBB değerlendirmesini destekler.",
+        "clinicalMeaning": "BT, mastoid hava hücrelerinde inflamasyon ve koalesan sürece gidişi göstererek yatış, IV antibiyotik ve KBB değerlendirmesini destekler.",
         "result": {
-          "title": "Temporal kemik bilgisayarlı tomografi",
-          "summary": "Temporal kemik bilgisayarlı tomografi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-          "interpretation": "Temporal kemik bilgisayarlı tomografi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
+          "title": "Temporal kemik BT",
+          "summary": "BT, mastoid hava hücrelerinde inflamasyon ve koalesan sürece gidişi göstererek yatış, IV antibiyotik ve KBB değerlendirmesini destekler.",
+          "interpretation": "BT, mastoid hava hücrelerinde inflamasyon ve koalesan sürece gidişi göstererek yatış, IV antibiyotik ve KBB değerlendirmesini destekler.",
           "values": [
             [
-              "Görüntüleme bulgusu",
-              "Sağ mastoid hava hücrelerinde opasifikasyon ve kortikal incelme izlendi.",
-              "Modaliteye özgü bulgu",
-              "Klinik bağlamda değerlendirilmeli"
+              "Mastoid hava hücreleri",
+              "Sağda yaygın opasifikasyon",
+              "Havalanmış olmalı",
+              "Mastoidit ile uyumlu"
+            ],
+            [
+              "Kemik septalar",
+              "Sağ mastoid septalarda silinme ve kortikal incelme",
+              "Kemik destrüksiyonu olmamalı",
+              "Koalesan süreç riski"
+            ],
+            [
+              "Subperiostal alan",
+              "Belirgin apse koleksiyonu izlenmedi",
+              "Koleksiyon olmamalı",
+              "Cerrahi karar için izlem"
             ]
           ],
           "rows": [
             [
-              "Görüntüleme bulgusu",
-              "Sağ mastoid hava hücrelerinde opasifikasyon ve kortikal incelme izlendi.",
-              "Modaliteye özgü bulgu",
-              "Klinik bağlamda değerlendirilmeli"
+              "Mastoid hava hücreleri",
+              "Sağda yaygın opasifikasyon",
+              "Havalanmış olmalı",
+              "Mastoidit ile uyumlu"
+            ],
+            [
+              "Kemik septalar",
+              "Sağ mastoid septalarda silinme ve kortikal incelme",
+              "Kemik destrüksiyonu olmamalı",
+              "Koalesan süreç riski"
+            ],
+            [
+              "Subperiostal alan",
+              "Belirgin apse koleksiyonu izlenmedi",
+              "Koleksiyon olmamalı",
+              "Cerrahi karar için izlem"
             ]
           ]
         },
         "rows": [
           [
-            "Görüntüleme bulgusu",
-            "Sağ mastoid hava hücrelerinde opasifikasyon ve kortikal incelme izlendi.",
-            "Modaliteye özgü bulgu",
-            "Klinik bağlamda değerlendirilmeli"
+            "Mastoid hava hücreleri",
+            "Sağda yaygın opasifikasyon",
+            "Havalanmış olmalı",
+            "Mastoidit ile uyumlu"
+          ],
+          [
+            "Kemik septalar",
+            "Sağ mastoid septalarda silinme ve kortikal incelme",
+            "Kemik destrüksiyonu olmamalı",
+            "Koalesan süreç riski"
+          ],
+          [
+            "Subperiostal alan",
+            "Belirgin apse koleksiyonu izlenmedi",
+            "Koleksiyon olmamalı",
+            "Cerrahi karar için izlem"
           ]
         ],
-        "postAnswerExplanation": "Temporal kemik bilgisayarlı tomografi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "interpretation": "Temporal kemik bilgisayarlı tomografi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
+        "postAnswerExplanation": "BT, mastoid hava hücrelerinde inflamasyon ve koalesan sürece gidişi göstererek yatış, IV antibiyotik ve KBB değerlendirmesini destekler.",
+        "interpretation": "BT, mastoid hava hücrelerinde inflamasyon ve koalesan sürece gidişi göstererek yatış, IV antibiyotik ve KBB değerlendirmesini destekler.",
+        "explanationAfterAnswer": "BT, mastoid hava hücrelerinde inflamasyon ve koalesan sürece gidişi göstererek yatış, IV antibiyotik ve KBB değerlendirmesini destekler.",
         "category": "imaging",
         "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Temporal kemik bilgisayarlı tomografi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "clinicalFlowOrder": 82,
-        "flowOrder": 82,
-        "orderRank": 82,
-        "testValueLabel": "Bu olguda sınırlı katkı",
-        "clinicalPriorityLabel": "Bu olguda sınırlı katkı",
-        "educationalValue": "Bu olguda sınırlı katkı",
-        "scoreImpact": 0,
-        "scoreValue": 0,
-        "pediatricSafetyValue": "Bu olguda sınırlı katkı",
-        "treatmentImpact": "Bu olguda sınırlı katkı"
+        "clinicalFlowOrder": 50,
+        "flowOrder": 50,
+        "orderRank": 50,
+        "testValueLabel": "Karar verdirici veri",
+        "clinicalPriorityLabel": "Karar verdirici veri",
+        "educationalValue": "Karar verdirici veri",
+        "scoreImpact": 5,
+        "scoreValue": 5,
+        "pediatricSafetyValue": "Acil önceliği belirler",
+        "treatmentImpact": "Acil önceliği belirler"
+      },
+      {
+        "id": "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik-blood-culture-status",
+        "label": "Kan kültürü",
+        "title": "Kan kültürü",
+        "type": "microbiology",
+        "priority": "essential",
+        "subtype": "",
+        "summary": "Kan kültürü hedefe yönelik tedavi için alınır; ancak mastoidit bulguları olan çocukta IV antibiyotik kültür sonucunu beklemez.",
+        "clinicalMeaning": "Kan kültürü hedefe yönelik tedavi için alınır; ancak mastoidit bulguları olan çocukta IV antibiyotik kültür sonucunu beklemez.",
+        "result": {
+          "title": "Kan kültürü",
+          "summary": "Kan kültürü hedefe yönelik tedavi için alınır; ancak mastoidit bulguları olan çocukta IV antibiyotik kültür sonucunu beklemez.",
+          "interpretation": "Kan kültürü hedefe yönelik tedavi için alınır; ancak mastoidit bulguları olan çocukta IV antibiyotik kültür sonucunu beklemez.",
+          "values": [
+            [
+              "Örnek",
+              "Antibiyotik öncesi kan kültürü alındı",
+              "Uygun örnek alınmalı",
+              "Tedaviyi geciktirmeden"
+            ],
+            [
+              "İlk rapor",
+              "Üreme bilgisi henüz yok",
+              "İlk saatlerde sonuç beklenmez",
+              "Ampirik tedavi geciktirilmez"
+            ]
+          ],
+          "rows": [
+            [
+              "Örnek",
+              "Antibiyotik öncesi kan kültürü alındı",
+              "Uygun örnek alınmalı",
+              "Tedaviyi geciktirmeden"
+            ],
+            [
+              "İlk rapor",
+              "Üreme bilgisi henüz yok",
+              "İlk saatlerde sonuç beklenmez",
+              "Ampirik tedavi geciktirilmez"
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Örnek",
+            "Antibiyotik öncesi kan kültürü alındı",
+            "Uygun örnek alınmalı",
+            "Tedaviyi geciktirmeden"
+          ],
+          [
+            "İlk rapor",
+            "Üreme bilgisi henüz yok",
+            "İlk saatlerde sonuç beklenmez",
+            "Ampirik tedavi geciktirilmez"
+          ]
+        ],
+        "postAnswerExplanation": "Kan kültürü hedefe yönelik tedavi için alınır; ancak mastoidit bulguları olan çocukta IV antibiyotik kültür sonucunu beklemez.",
+        "interpretation": "Kan kültürü hedefe yönelik tedavi için alınır; ancak mastoidit bulguları olan çocukta IV antibiyotik kültür sonucunu beklemez.",
+        "explanationAfterAnswer": "Kan kültürü hedefe yönelik tedavi için alınır; ancak mastoidit bulguları olan çocukta IV antibiyotik kültür sonucunu beklemez.",
+        "category": "microbiology",
+        "testTypeCategory": "microbiology",
+        "clinicalFlowOrder": 20,
+        "flowOrder": 20,
+        "orderRank": 20,
+        "testValueLabel": "Destekleyici veri",
+        "clinicalPriorityLabel": "Destekleyici veri",
+        "educationalValue": "Destekleyici veri",
+        "scoreImpact": 2,
+        "scoreValue": 2,
+        "pediatricSafetyValue": "Klinik bağlamda yorumlanır",
+        "treatmentImpact": "Klinik bağlamda yorumlanır"
       }
     ],
     "useSyntheticInvestigationBank": false,
@@ -82185,2684 +82391,2500 @@ export const rawCases = [
     "questionType": "treatment",
     "answerTarget": "treatment",
     "diagnosis": {
-      "correct": "Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi",
+      "correct": "Hastaneye yatırarak intravenöz antibiyotik başlamak ve kulak burun boğaz değerlendirmesi istemek",
       "options": [
-        "Oral analjezik ve yüksek doz oral antibiyotikle mastoid komplikasyon değerlendirmesini poliklinik kontrolüne bırakmak",
-        "Oral antihistaminik ile izlem",
-        "Alerji testi yapılması",
-        "Yüksek doz oral amoksisilin-klavulanat ile 48 saat yakın poliklinik izlemi planlamak",
-        "Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi"
+        "Oral antihistaminik verip alerjik şişlik açısından izlemek",
+        "Hastaneye yatırarak intravenöz antibiyotik başlamak ve kulak burun boğaz değerlendirmesi istemek",
+        "Sadece topikal kulak damlası verip ateş kontrolüyle taburcu etmek",
+        "Yüksek doz oral antibiyotikle 48 saat sonra poliklinik kontrolü planlamak",
+        "Alerji testi ve elektif odyoloji randevusu düzenlemek"
       ],
       "question": "Bu çocukta en uygun acil yaklaşım aşağıdakilerden hangisidir?",
-      "explanation": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü kulak ağrısı sonrası kulak arkasında şişlik için doğru tanı/tedavi önceliğini belirler.",
+      "explanation": "Bu olgu basit otitis media değil, akut mastoidit komplikasyonunu düşündürür. Ateş ve kulak ağrısına mastoid eritem-hassasiyet, aurikulanın öne itilmesi ve BT’de mastoid hava hücrelerinde opasifikasyon/septa silinmesi eşlik etmektedir. Bu nedenle ayaktan oral tedavi veya topikal damla yeterli değildir; hastaneye yatış, intravenöz antibiyotik ve KBB değerlendirmesi gerekir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi kararını destekler."
+          "text": "Akut otitis media sonrası aurikulanın öne itilmesi ve mastoid hassasiyet gelişirse mastoidit düşün; tedavi yatış + IV antibiyotik + KBB değerlendirmesidir."
         }
       ],
       "optionComparison": {
-        "Oral analjezik ve yüksek doz oral antibiyotikle mastoid komplikasyon değerlendirmesini poliklinik kontrolüne bırakmak": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Oral analjezik ve yüksek doz oral antibiyotikle mastoid komplikasyon değerlendirmesini poliklinik kontrolüne bırakmak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Oral antihistaminik ile izlem": "Destekleyici izlem bazı hafif pediatrik tablolarda doğru olabilir; ancak acil/spesifik tedavi gerektiren bulgular varsa tek başına yetersiz kalır. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Oral antihistaminik ile izlem hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Alerji testi yapılması": "Alerji testi yapılması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Alerji testi yapılması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Yüksek doz oral amoksisilin-klavulanat ile 48 saat yakın poliklinik izlemi planlamak": "Destekleyici izlem bazı hafif pediatrik tablolarda doğru olabilir; ancak acil/spesifik tedavi gerektiren bulgular varsa tek başına yetersiz kalır. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Yüksek doz oral amoksisilin-klavulanat ile 48 saat yakın poliklinik izlemi planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar."
+        "Oral antihistaminik verip alerjik şişlik açısından izlemek": "Alerjik şişlik kaşıntılı, migratuvar veya yaygın ödem şeklinde olabilir; ancak ateş, otitis media bulgusu, mastoid hassasiyet ve aurikulanın öne itilmesiyle açıklanamaz.",
+        "Hastaneye yatırarak intravenöz antibiyotik başlamak ve kulak burun boğaz değerlendirmesi istemek": "Doğru yaklaşımdır. Akut otitis media sonrası mastoid eritem-hassasiyet ve aurikula protrüzyonu akut mastoidit lehinedir; çocuk yatırılmalı, intravenöz antibiyotik başlanmalı ve KBB olası komplikasyon/cerrahi gereksinim açısından değerlendirmelidir.",
+        "Sadece topikal kulak damlası verip ateş kontrolüyle taburcu etmek": "Topikal damla dış kulak yolu hastalıklarında kullanılabilir; mastoid kemik tutulumu ve sistemik ateş bulunan bu tabloda yetersizdir.",
+        "Yüksek doz oral antibiyotikle 48 saat sonra poliklinik kontrolü planlamak": "Basit akut otitis media oral antibiyotikle izlenebilir; fakat mastoid şişlik, aurikula protrüzyonu ve BT bulguları komplikasyon geliştiğini gösterir. Poliklinik izlem tedaviyi geciktirir.",
+        "Alerji testi ve elektif odyoloji randevusu düzenlemek": "Odyoloji veya alerji değerlendirmesi bu akut enfeksiyöz komplikasyonun ilk basamağı değildir. Öncelik enfeksiyon kontrolü ve komplikasyonların dışlanmasıdır."
       },
       "answerFeedback": {
-        "summary": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü kulak ağrısı sonrası kulak arkasında şişlik için doğru tanı/tedavi önceliğini belirler.",
-        "whyCorrect": "Kulak ağrısı ve ateş akut otitis media süreciyle başlamıştır. Mastoid bölgede eritem, şişlik ve hassasiyet vardır. Bu bulgular birlikte değerlendirildiğinde en uygun yanıt Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi olur. Tedavi seçimi, klinik aciliyetin ve altta yatan mekanizmanın aynı anda hedeflenmesine dayanır; destek basamakları gerekirse eş zamanlı yürütülür fakat ana kararı tek başına değiştirmez. Alternatifler bazı destek veya ayırıcı basamaklarda kullanılabilir; ancak verilen acil karar noktasını bu seçenek kadar doğrudan karşılamaz.",
-        "rationale": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü kulak ağrısı sonrası kulak arkasında şişlik için doğru tanı/tedavi önceliğini belirler.",
-        "correctOptionFeedback": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
+        "summary": "Bu olgu basit otitis media değil, akut mastoidit komplikasyonunu düşündürür. Ateş ve kulak ağrısına mastoid eritem-hassasiyet, aurikulanın öne itilmesi ve BT’de mastoid hava hücrelerinde opasifikasyon/septa silinmesi eşlik etmektedir. Bu nedenle ayaktan oral tedavi veya topikal damla yeterli değildir; hastaneye yatış, intravenöz antibiyotik ve KBB değerlendirmesi gerekir.",
+        "whyCorrect": "Doğru yaklaşımdır. Akut otitis media sonrası mastoid eritem-hassasiyet ve aurikula protrüzyonu akut mastoidit lehinedir; çocuk yatırılmalı, intravenöz antibiyotik başlanmalı ve KBB olası komplikasyon/cerrahi gereksinim açısından değerlendirmelidir.",
+        "rationale": "Bu olgu basit otitis media değil, akut mastoidit komplikasyonunu düşündürür. Ateş ve kulak ağrısına mastoid eritem-hassasiyet, aurikulanın öne itilmesi ve BT’de mastoid hava hücrelerinde opasifikasyon/septa silinmesi eşlik etmektedir. Bu nedenle ayaktan oral tedavi veya topikal damla yeterli değildir; hastaneye yatış, intravenöz antibiyotik ve KBB değerlendirmesi gerekir.",
+        "correctOptionFeedback": "Doğru yaklaşımdır. Akut otitis media sonrası mastoid eritem-hassasiyet ve aurikula protrüzyonu akut mastoidit lehinedir; çocuk yatırılmalı, intravenöz antibiyotik başlanmalı ve KBB olası komplikasyon/cerrahi gereksinim açısından değerlendirmelidir.",
         "keyClues": [
-          "Kulak ağrısı ve ateş akut otitis media süreciyle başlamıştır.",
-          "Mastoid bölgede eritem, şişlik ve hassasiyet vardır.",
-          "Objektif veri (Hemogram ve temel inflamasyon paneli: Lökosit 15.800/mm³) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır."
+          "Bir haftalık kulak ağrısı ve ateşin ardından mastoid bölgede kızarıklık-şişlik gelişmiştir.",
+          "Sağ aurikula öne ve dışa itilmiş, mastoid bölgede hassasiyet vardır.",
+          "Otoskopide sağ timpan membran hiperemik ve bombedir.",
+          "Temporal kemik BT’de mastoid hava hücrelerinde opasifikasyon ve septalarda silinme izlenmiştir."
         ],
         "evidenceChain": [
           {
-            "text": "Kulak ağrısı ve ateş akut otitis media süreciyle başlamıştır.",
+            "text": "Bir haftalık kulak ağrısı ve ateşin ardından mastoid bölgede kızarıklık-şişlik gelişmiştir.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Mastoid bölgede eritem, şişlik ve hassasiyet vardır.",
+            "text": "Sağ aurikula öne ve dışa itilmiş, mastoid bölgede hassasiyet vardır.",
             "weight": "high",
             "source": "case"
           },
           {
-            "text": "Objektif veri (Hemogram ve temel inflamasyon paneli: Lökosit 15.800/mm³) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
+            "text": "Otoskopide sağ timpan membran hiperemik ve bombedir.",
             "weight": "medium",
+            "source": "case"
+          },
+          {
+            "text": "Temporal kemik BT’de mastoid hava hücrelerinde opasifikasyon ve septalarda silinme izlenmiştir.",
+            "weight": "high",
             "source": "case"
           }
         ],
-        "examPearl": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi kararını destekler.",
+        "examPearl": "Akut otitis media sonrası aurikulanın öne itilmesi ve mastoid hassasiyet gelişirse mastoidit düşün; tedavi yatış + IV antibiyotik + KBB değerlendirmesidir.",
         "pearls": [
           {
             "label": "Sınav notu",
-            "text": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi kararını destekler."
+            "text": "Akut otitis media sonrası aurikulanın öne itilmesi ve mastoid hassasiyet gelişirse mastoidit düşün; tedavi yatış + IV antibiyotik + KBB değerlendirmesidir."
           }
         ],
         "clinicalPearls": [
           {
             "label": "Sınav notu",
-            "text": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi kararını destekler."
+            "text": "Akut otitis media sonrası aurikulanın öne itilmesi ve mastoid hassasiyet gelişirse mastoidit düşün; tedavi yatış + IV antibiyotik + KBB değerlendirmesidir."
           }
         ],
         "optionComparison": {
-          "Oral analjezik ve yüksek doz oral antibiyotikle mastoid komplikasyon değerlendirmesini poliklinik kontrolüne bırakmak": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Oral analjezik ve yüksek doz oral antibiyotikle mastoid komplikasyon değerlendirmesini poliklinik kontrolüne bırakmak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Oral antihistaminik ile izlem": "Destekleyici izlem bazı hafif pediatrik tablolarda doğru olabilir; ancak acil/spesifik tedavi gerektiren bulgular varsa tek başına yetersiz kalır. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Oral antihistaminik ile izlem hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Alerji testi yapılması": "Alerji testi yapılması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Alerji testi yapılması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Yüksek doz oral amoksisilin-klavulanat ile 48 saat yakın poliklinik izlemi planlamak": "Destekleyici izlem bazı hafif pediatrik tablolarda doğru olabilir; ancak acil/spesifik tedavi gerektiren bulgular varsa tek başına yetersiz kalır. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Yüksek doz oral amoksisilin-klavulanat ile 48 saat yakın poliklinik izlemi planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar."
-        },
-        "whyWrong": {
-          "Oral analjezik ve yüksek doz oral antibiyotikle mastoid komplikasyon değerlendirmesini poliklinik kontrolüne bırakmak": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Oral analjezik ve yüksek doz oral antibiyotikle mastoid komplikasyon değerlendirmesini poliklinik kontrolüne bırakmak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Oral antihistaminik ile izlem": "Destekleyici izlem bazı hafif pediatrik tablolarda doğru olabilir; ancak acil/spesifik tedavi gerektiren bulgular varsa tek başına yetersiz kalır. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Oral antihistaminik ile izlem hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Alerji testi yapılması": "Alerji testi yapılması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Alerji testi yapılması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Yüksek doz oral amoksisilin-klavulanat ile 48 saat yakın poliklinik izlemi planlamak": "Destekleyici izlem bazı hafif pediatrik tablolarda doğru olabilir; ancak acil/spesifik tedavi gerektiren bulgular varsa tek başına yetersiz kalır. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Yüksek doz oral amoksisilin-klavulanat ile 48 saat yakın poliklinik izlemi planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Akut otitis media komplikasyonu olan mastoiditte acil yaklaşımı seçebilme",
-        "coreKnowledge": "Kulak ağrısı sonrası kulak arkasında şişlik sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir."
-      },
-      "whyCorrect": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "evidenceChain": [
-        {
-          "text": "Kulak ağrısı ve ateş akut otitis media süreciyle başlamıştır.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Mastoid bölgede eritem, şişlik ve hassasiyet vardır.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Objektif veri (Hemogram ve temel inflamasyon paneli: Lökosit 15.800/mm³) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-          "weight": "medium",
-          "source": "case"
+          "Oral antihistaminik verip alerjik şişlik açısından izlemek": "Alerjik şişlik kaşıntılı, migratuvar veya yaygın ödem şeklinde olabilir; ancak ateş, otitis media bulgusu, mastoid hassasiyet ve aurikulanın öne itilmesiyle açıklanamaz.",
+          "Hastaneye yatırarak intravenöz antibiyotik başlamak ve kulak burun boğaz değerlendirmesi istemek": "Doğru yaklaşımdır. Akut otitis media sonrası mastoid eritem-hassasiyet ve aurikula protrüzyonu akut mastoidit lehinedir; çocuk yatırılmalı, intravenöz antibiyotik başlanmalı ve KBB olası komplikasyon/cerrahi gereksinim açısından değerlendirmelidir.",
+          "Sadece topikal kulak damlası verip ateş kontrolüyle taburcu etmek": "Topikal damla dış kulak yolu hastalıklarında kullanılabilir; mastoid kemik tutulumu ve sistemik ateş bulunan bu tabloda yetersizdir.",
+          "Yüksek doz oral antibiyotikle 48 saat sonra poliklinik kontrolü planlamak": "Basit akut otitis media oral antibiyotikle izlenebilir; fakat mastoid şişlik, aurikula protrüzyonu ve BT bulguları komplikasyon geliştiğini gösterir. Poliklinik izlem tedaviyi geciktirir.",
+          "Alerji testi ve elektif odyoloji randevusu düzenlemek": "Odyoloji veya alerji değerlendirmesi bu akut enfeksiyöz komplikasyonun ilk basamağı değildir. Öncelik enfeksiyon kontrolü ve komplikasyonların dışlanmasıdır."
         }
-      ],
-      "coreKnowledge": "Kulak ağrısı sonrası kulak arkasında şişlik sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-      "examPearl": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi kararını destekler.",
-      "whyWrong": {
-        "Oral analjezik ve yüksek doz oral antibiyotikle mastoid komplikasyon değerlendirmesini poliklinik kontrolüne bırakmak": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Oral analjezik ve yüksek doz oral antibiyotikle mastoid komplikasyon değerlendirmesini poliklinik kontrolüne bırakmak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Oral antihistaminik ile izlem": "Destekleyici izlem bazı hafif pediatrik tablolarda doğru olabilir; ancak acil/spesifik tedavi gerektiren bulgular varsa tek başına yetersiz kalır. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Oral antihistaminik ile izlem hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Alerji testi yapılması": "Alerji testi yapılması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Alerji testi yapılması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Yüksek doz oral amoksisilin-klavulanat ile 48 saat yakın poliklinik izlemi planlamak": "Destekleyici izlem bazı hafif pediatrik tablolarda doğru olabilir; ancak acil/spesifik tedavi gerektiren bulgular varsa tek başına yetersiz kalır. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Yüksek doz oral amoksisilin-klavulanat ile 48 saat yakın poliklinik izlemi planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
       }
     },
-    "difficultyTag": "Acil",
-    "coreKnowledge": "Kulak ağrısı sonrası kulak arkasında şişlik sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-    "examPearl": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi kararını destekler.",
-    "whyCorrect": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
+    "difficultyTag": "Zor",
+    "coreKnowledge": "Bu olgu basit otitis media değil, akut mastoidit komplikasyonunu düşündürür. Ateş ve kulak ağrısına mastoid eritem-hassasiyet, aurikulanın öne itilmesi ve BT’de mastoid hava hücrelerinde opasifikasyon/septa silinmesi eşlik etmektedir. Bu nedenle ayaktan oral tedavi veya topikal damla yeterli değildir; hastaneye yatış, intravenöz antibiyotik ve KBB değerlendirmesi gerekir.",
+    "examPearl": "Akut otitis media sonrası aurikulanın öne itilmesi ve mastoid hassasiyet gelişirse mastoidit düşün; tedavi yatış + IV antibiyotik + KBB değerlendirmesidir.",
+    "whyCorrect": "Doğru yaklaşımdır. Akut otitis media sonrası mastoid eritem-hassasiyet ve aurikula protrüzyonu akut mastoidit lehinedir; çocuk yatırılmalı, intravenöz antibiyotik başlanmalı ve KBB olası komplikasyon/cerrahi gereksinim açısından değerlendirmelidir.",
     "optionComparison": {
-      "Oral analjezik ve yüksek doz oral antibiyotikle mastoid komplikasyon değerlendirmesini poliklinik kontrolüne bırakmak": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Oral analjezik ve yüksek doz oral antibiyotikle mastoid komplikasyon değerlendirmesini poliklinik kontrolüne bırakmak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Oral antihistaminik ile izlem": "Destekleyici izlem bazı hafif pediatrik tablolarda doğru olabilir; ancak acil/spesifik tedavi gerektiren bulgular varsa tek başına yetersiz kalır. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Oral antihistaminik ile izlem hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Alerji testi yapılması": "Alerji testi yapılması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Alerji testi yapılması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Yüksek doz oral amoksisilin-klavulanat ile 48 saat yakın poliklinik izlemi planlamak": "Destekleyici izlem bazı hafif pediatrik tablolarda doğru olabilir; ancak acil/spesifik tedavi gerektiren bulgular varsa tek başına yetersiz kalır. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Yüksek doz oral amoksisilin-klavulanat ile 48 saat yakın poliklinik izlemi planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Hastaneye yatırılarak intravenöz antibiyotik başlanması ve kulak burun boğaz değerlendirmesi": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar."
+      "Oral antihistaminik verip alerjik şişlik açısından izlemek": "Alerjik şişlik kaşıntılı, migratuvar veya yaygın ödem şeklinde olabilir; ancak ateş, otitis media bulgusu, mastoid hassasiyet ve aurikulanın öne itilmesiyle açıklanamaz.",
+      "Hastaneye yatırarak intravenöz antibiyotik başlamak ve kulak burun boğaz değerlendirmesi istemek": "Doğru yaklaşımdır. Akut otitis media sonrası mastoid eritem-hassasiyet ve aurikula protrüzyonu akut mastoidit lehinedir; çocuk yatırılmalı, intravenöz antibiyotik başlanmalı ve KBB olası komplikasyon/cerrahi gereksinim açısından değerlendirmelidir.",
+      "Sadece topikal kulak damlası verip ateş kontrolüyle taburcu etmek": "Topikal damla dış kulak yolu hastalıklarında kullanılabilir; mastoid kemik tutulumu ve sistemik ateş bulunan bu tabloda yetersizdir.",
+      "Yüksek doz oral antibiyotikle 48 saat sonra poliklinik kontrolü planlamak": "Basit akut otitis media oral antibiyotikle izlenebilir; fakat mastoid şişlik, aurikula protrüzyonu ve BT bulguları komplikasyon geliştiğini gösterir. Poliklinik izlem tedaviyi geciktirir.",
+      "Alerji testi ve elektif odyoloji randevusu düzenlemek": "Odyoloji veya alerji değerlendirmesi bu akut enfeksiyöz komplikasyonun ilk basamağı değildir. Öncelik enfeksiyon kontrolü ve komplikasyonların dışlanmasıdır."
     },
     "evidenceChain": [
       {
-        "text": "Kulak ağrısı ve ateş akut otitis media süreciyle başlamıştır.",
+        "text": "Bir haftalık kulak ağrısı ve ateşin ardından mastoid bölgede kızarıklık-şişlik gelişmiştir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Mastoid bölgede eritem, şişlik ve hassasiyet vardır.",
+        "text": "Sağ aurikula öne ve dışa itilmiş, mastoid bölgede hassasiyet vardır.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Objektif veri (Hemogram ve temel inflamasyon paneli: Lökosit 15.800/mm³) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
+        "text": "Otoskopide sağ timpan membran hiperemik ve bombedir.",
         "weight": "medium",
+        "source": "case"
+      },
+      {
+        "text": "Temporal kemik BT’de mastoid hava hücrelerinde opasifikasyon ve septalarda silinme izlenmiştir.",
+        "weight": "high",
         "source": "case"
       }
     ],
     "whyWrong": {
-      "Oral analjezik ve yüksek doz oral antibiyotikle mastoid komplikasyon değerlendirmesini poliklinik kontrolüne bırakmak": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Oral analjezik ve yüksek doz oral antibiyotikle mastoid komplikasyon değerlendirmesini poliklinik kontrolüne bırakmak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Oral antihistaminik ile izlem": "Destekleyici izlem bazı hafif pediatrik tablolarda doğru olabilir; ancak acil/spesifik tedavi gerektiren bulgular varsa tek başına yetersiz kalır. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Oral antihistaminik ile izlem hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Alerji testi yapılması": "Alerji testi yapılması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Alerji testi yapılması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Yüksek doz oral amoksisilin-klavulanat ile 48 saat yakın poliklinik izlemi planlamak": "Destekleyici izlem bazı hafif pediatrik tablolarda doğru olabilir; ancak acil/spesifik tedavi gerektiren bulgular varsa tek başına yetersiz kalır. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi kulak ağrısı sonrası kulak arkasında şişlik lehinedir; bu nedenle Yüksek doz oral amoksisilin-klavulanat ile 48 saat yakın poliklinik izlemi planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+      "Oral antihistaminik verip alerjik şişlik açısından izlemek": "Alerjik şişlik kaşıntılı, migratuvar veya yaygın ödem şeklinde olabilir; ancak ateş, otitis media bulgusu, mastoid hassasiyet ve aurikulanın öne itilmesiyle açıklanamaz.",
+      "Sadece topikal kulak damlası verip ateş kontrolüyle taburcu etmek": "Topikal damla dış kulak yolu hastalıklarında kullanılabilir; mastoid kemik tutulumu ve sistemik ateş bulunan bu tabloda yetersizdir.",
+      "Yüksek doz oral antibiyotikle 48 saat sonra poliklinik kontrolü planlamak": "Basit akut otitis media oral antibiyotikle izlenebilir; fakat mastoid şişlik, aurikula protrüzyonu ve BT bulguları komplikasyon geliştiğini gösterir. Poliklinik izlem tedaviyi geciktirir.",
+      "Alerji testi ve elektif odyoloji randevusu düzenlemek": "Odyoloji veya alerji değerlendirmesi bu akut enfeksiyöz komplikasyonun ilk basamağı değildir. Öncelik enfeksiyon kontrolü ve komplikasyonların dışlanmasıdır."
     },
     "aiMeta": {
-      "generatedAt": "manual-v396-pediatrics-ultra-refined",
+      "generatedAt": "manual-v397-pediatrics-sixth-batch-ultra-refined",
       "generator": "manual-editorial-pediatrics-case-refinement",
-      "schemaVersion": "clinical-standard-v396",
+      "schemaVersion": "clinical-standard-v397",
       "provider": "manual-editorial",
       "validationWarnings": []
     }
   },
   {
-    "id": "v180-new-160-kapali-ortam-sonrasi-bas-agrisi",
-    "branchId": "pediatrics",
-    "caseType": "standard",
-    "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
-    "title": "Kapalı ortam sonrası baş ağrısı",
-    "difficulty": "Acil",
-    "clinicalFocus": "Karbon monoksit zehirlenmesi bağlamında pediatrik öykü, yaşa uygun vital bulgu, fizik muayene ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Karbon monoksit zehirlenmesi için pediatrik klinik patern, acil öncelik ve hedefe yönelik tanı/tedavi kararını açıklama.",
-    "demographics": "9 yaşında erkek çocuk",
-    "setting": "Çocuk acil servisinde",
-    "chiefComplaint": "Çocuk, baş ağrısı, bulantı ve uykuya eğilim nedeniyle acile getiriliyor.",
-    "stem": "Ailesi, çocuğun soba kullanılan kapalı odada birkaç saat kaldığını ve aynı evdeki başka kişilerde de baş ağrısı geliştiğini belirtiyor. Travma veya ateş öyküsü yoktur.",
-    "patientIntro": {
-      "profile": "9 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
-      "presentation": "Çocuk, baş ağrısı, bulantı ve uykuya eğilim nedeniyle acile getiriliyor.",
-      "historySummary": "Ailesi, çocuğun soba kullanılan kapalı odada birkaç saat kaldığını ve aynı evdeki başka kişilerde de baş ağrısı geliştiğini belirtiyor. Travma veya ateş öyküsü yoktur."
-    },
-    "vitals": {
-      "TA": "106/64 mmHg",
-      "Nabız": "118/dk",
-      "Solunum": "28/dk",
-      "SpO2": "%99, oda havasında",
-      "Ateş": "38.3 °C",
-      "Şok indeksi": "1.11 pediatrik bağlamda yorumlanmalı"
-    },
-    "exam": [
-      "Çocuk uykuya eğilimli ancak uyandırılabilir durumdadır.",
-      "Cilt renginde siyanoz veya kiraz kırmızısı belirginliği izlenmez.",
-      "Akciğer sesleri doğaldır."
-    ],
-    "investigations": [
-      {
-        "id": "ko-oksimetri-1",
-        "label": "Ko-oksimetri",
-        "title": "Ko-oksimetri",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "Laboratuvar",
-        "summary": "Ko-oksimetri, yenidoğanda hipokseminin pulmoner mi kardiyak mı olduğunu ayırmaya yardım eder; duktus bağımlı lezyon şüphesinde PGE1 ekokardiyografi beklenerek geciktirilmez.",
-        "clinicalMeaning": "Ko-oksimetri, yenidoğanda hipokseminin pulmoner mi kardiyak mı olduğunu ayırmaya yardım eder; duktus bağımlı lezyon şüphesinde PGE1 ekokardiyografi beklenerek geciktirilmez.",
-        "result": {
-          "title": "Ko-oksimetri",
-          "summary": "Ko-oksimetri, yenidoğanda hipokseminin pulmoner mi kardiyak mı olduğunu ayırmaya yardım eder; duktus bağımlı lezyon şüphesinde PGE1 ekokardiyografi beklenerek geciktirilmez.",
-          "interpretation": "Ko-oksimetri, yenidoğanda hipokseminin pulmoner mi kardiyak mı olduğunu ayırmaya yardım eder; duktus bağımlı lezyon şüphesinde PGE1 ekokardiyografi beklenerek geciktirilmez.",
-          "values": [
-            [
-              "Ko-oksimetri",
-              "%24",
-              "<%3 sigara içmeyenlerde",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Ko-oksimetri",
-              "%24",
-              "<%3 sigara içmeyenlerde",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
+  "id": "v180-new-160-kapali-ortam-sonrasi-bas-agrisi",
+  "branchId": "pediatrics",
+  "caseType": "standard",
+  "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
+  "title": "Kapalı ortam sonrası baş ağrısı",
+  "difficulty": "Acil",
+  "clinicalFocus": "Karbon monoksit zehirlenmesinde kapalı ortam maruziyeti, normal pulse oksimetre yanılsaması, karboksihemoglobin yüksekliği ve ilk oksijen tedavisi kararını birlikte yorumlama.",
+  "learningTarget": "Çocukta karbon monoksit zehirlenmesinde pulse oksimetrenin normal olabileceğini fark edip ilk tedavi olarak yüksek akımlı yüzde yüz oksijen başlatabilme.",
+  "demographics": "9 yaşında erkek çocuk",
+  "setting": "Çocuk acil servisinde",
+  "chiefComplaint": "Çocuk, baş ağrısı, bulantı ve uykuya eğilim nedeniyle acile getiriliyor.",
+  "stem": "Ailesinin ifadesine göre çocuk, kış akşamı soba kullanılan küçük ve havalandırması yetersiz bir odada birkaç saat kaldıktan sonra baş ağrısı ve bulantıdan yakınmaya başlamıştır. Aynı evde bulunan annesinde ve kardeşinde de daha hafif baş ağrısı olduğu fark edilince aile evi havalandırıp çocuğu acile getirmiştir. Çocuk son bir saatte normalden uykulu görünmüş, ancak belirgin nöbet, kafa travması veya bilinç kaybı tariflenmemiştir. Ateş, öksürük, ishal veya yeni ilaç alımı öyküsü yoktur. Evden çıkarıldıktan sonra bulantısı kısmen azalsa da halsizlik ve baş ağrısı sürdüğü için acil değerlendirme istenmiştir.",
+  "patientIntro": {
+    "profile": "9 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
+    "presentation": "Çocuk, baş ağrısı, bulantı ve uykuya eğilim nedeniyle acile getiriliyor.",
+    "historySummary": "Ailesinin ifadesine göre çocuk, kış akşamı soba kullanılan küçük ve havalandırması yetersiz bir odada birkaç saat kaldıktan sonra baş ağrısı ve bulantıdan yakınmaya başlamıştır. Aynı evde bulunan annesinde ve kardeşinde de daha hafif baş ağrısı olduğu fark edilince aile evi havalandırıp çocuğu acile getirmiştir. Çocuk son bir saatte normalden uykulu görünmüş, ancak belirgin nöbet, kafa travması veya bilinç kaybı tariflenmemiştir. Ateş, öksürük, ishal veya yeni ilaç alımı öyküsü yoktur. Evden çıkarıldıktan sonra bulantısı kısmen azalsa da halsizlik ve baş ağrısı sürdüğü için acil değerlendirme istenmiştir."
+  },
+  "vitals": {
+    "TA": "104/66 mmHg",
+    "Nabız": "112/dk",
+    "Solunum": "24/dk",
+    "SpO2": "%99, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "1.08 - yaşa göre hafif taşikardi ile birlikte yorumlanmalı"
+  },
+  "exam": [
+    "Çocuk uykuya eğilimli ancak sözlü uyaranla kolayca uyandırılabilir.",
+    "Nörolojik muayenede lateralizan defisit veya ense sertliği yoktur.",
+    "Akciğer oskültasyonu doğaldır; belirgin siyanoz veya solunum eforu artışı izlenmez."
+  ],
+  "investigations": [
+    {
+      "id": "co-pulse-oksimetre",
+      "label": "Pulse oksimetre",
+      "title": "Pulse oksimetre",
+      "type": "bedside",
+      "priority": "essential",
+      "subtype": "Yatak başı değerlendirme",
+      "summary": "Pulse oksimetrede normal satürasyon görülmesi, karboksihemoglobini ayırt edemediği için karbon monoksit zehirlenmesini dışlamaz.",
+      "clinicalMeaning": "Pulse oksimetrede normal satürasyon görülmesi, karboksihemoglobini ayırt edemediği için karbon monoksit zehirlenmesini dışlamaz.",
+      "result": {
+        "title": "Pulse oksimetre",
+        "summary": "Pulse oksimetrede normal satürasyon görülmesi, karboksihemoglobini ayırt edemediği için karbon monoksit zehirlenmesini dışlamaz.",
+        "interpretation": "Pulse oksimetrede normal satürasyon görülmesi, karboksihemoglobini ayırt edemediği için karbon monoksit zehirlenmesini dışlamaz.",
+        "values": [
+          [
+            "SpO₂",
+            "%99",
+            "≥%95",
+            "CO zehirlenmesinde yanlış normal olabilir"
           ]
-        },
+        ],
         "rows": [
           [
-            "Ko-oksimetri",
+            "SpO₂",
+            "%99",
+            "≥%95",
+            "CO zehirlenmesinde yanlış normal olabilir"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "SpO₂",
+          "%99",
+          "≥%95",
+          "CO zehirlenmesinde yanlış normal olabilir"
+        ]
+      ],
+      "postAnswerExplanation": "Pulse oksimetrede normal satürasyon görülmesi, karboksihemoglobini ayırt edemediği için karbon monoksit zehirlenmesini dışlamaz.",
+      "interpretation": "Pulse oksimetrede normal satürasyon görülmesi, karboksihemoglobini ayırt edemediği için karbon monoksit zehirlenmesini dışlamaz.",
+      "category": "targetedInvestigation",
+      "testTypeCategory": "targetedInvestigation",
+      "explanationAfterAnswer": "Pulse oksimetrede normal satürasyon görülmesi, karboksihemoglobini ayırt edemediği için karbon monoksit zehirlenmesini dışlamaz.",
+      "clinicalFlowOrder": 10,
+      "flowOrder": 10,
+      "orderRank": 10,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    },
+    {
+      "id": "co-oksimetri-karboksihemoglobin",
+      "label": "Ko-oksimetri",
+      "title": "Ko-oksimetri",
+      "type": "lab",
+      "priority": "essential",
+      "subtype": "Kan gazı / ko-oksimetri",
+      "summary": "Ko-oksimetride yüksek karboksihemoglobin, kapalı ortam maruziyeti ve nörolojik yakınmalarla birlikte karbon monoksit zehirlenmesini objektif olarak destekler.",
+      "clinicalMeaning": "Ko-oksimetride yüksek karboksihemoglobin, kapalı ortam maruziyeti ve nörolojik yakınmalarla birlikte karbon monoksit zehirlenmesini objektif olarak destekler.",
+      "result": {
+        "title": "Ko-oksimetri",
+        "summary": "Ko-oksimetride yüksek karboksihemoglobin, kapalı ortam maruziyeti ve nörolojik yakınmalarla birlikte karbon monoksit zehirlenmesini objektif olarak destekler.",
+        "interpretation": "Ko-oksimetride yüksek karboksihemoglobin, kapalı ortam maruziyeti ve nörolojik yakınmalarla birlikte karbon monoksit zehirlenmesini objektif olarak destekler.",
+        "values": [
+          [
+            "Karboksihemoglobin",
             "%24",
             "<%3 sigara içmeyenlerde",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "Ko-oksimetri, yenidoğanda hipokseminin pulmoner mi kardiyak mı olduğunu ayırmaya yardım eder; duktus bağımlı lezyon şüphesinde PGE1 ekokardiyografi beklenerek geciktirilmez.",
-        "interpretation": "Ko-oksimetri, yenidoğanda hipokseminin pulmoner mi kardiyak mı olduğunu ayırmaya yardım eder; duktus bağımlı lezyon şüphesinde PGE1 ekokardiyografi beklenerek geciktirilmez.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Ko-oksimetri, yenidoğanda hipokseminin pulmoner mi kardiyak mı olduğunu ayırmaya yardım eder; duktus bağımlı lezyon şüphesinde PGE1 ekokardiyografi beklenerek geciktirilmez.",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      },
-      {
-        "id": "kultur-ornekleri-3",
-        "label": "Kültür örnekleri",
-        "title": "Kültür örnekleri",
-        "type": "microbiology",
-        "priority": "essential",
-        "subtype": "Mikrobiyoloji",
-        "summary": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-        "clinicalMeaning": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-        "result": {
-          "title": "Kültür örnekleri",
-          "summary": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-          "interpretation": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-          "values": [
-            [
-              "Kültür istemi",
-              "Henüz raporlanmadı",
-              "—",
-              "Sonuç bekleniyor"
-            ]
-          ],
-          "rows": [
-            [
-              "Kültür istemi",
-              "Henüz raporlanmadı",
-              "—",
-              "Sonuç bekleniyor"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Kültür istemi",
-            "Henüz raporlanmadı",
-            "—",
-            "Sonuç bekleniyor"
-          ]
-        ],
-        "postAnswerExplanation": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-        "interpretation": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Mikrobiyolojik sonuç etkeni doğrulama ve hedefe yönelik tedavi seçimi için değerlidir; ağır enfeksiyon şüphesinde ilk ampirik yaklaşım klinik şiddete göre kültür sonucunu beklemeden planlanır.",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      },
-      {
-        "id": "v180-new-160-kapali-ortam-sonrasi-bas-agrisi-pediatric-initial-assessment",
-        "label": "Pediatrik ilk değerlendirme",
-        "title": "Pediatrik ilk değerlendirme",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "clinicalMeaning": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "result": {
-          "title": "Pediatrik ilk değerlendirme",
-          "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "values": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
-            ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ],
-          "rows": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
-            ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Genel görünüm",
-            "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-            "Yaşa göre",
-            "Kritik izlem"
+            "Belirgin yüksek"
           ],
           [
-            "Kapiller dolum/perfüzyon",
-            "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-            "<2 sn beklenir",
-            "Yaşa göre yorumlanır"
+            "pH",
+            "7.34",
+            "7.35–7.45",
+            "Hafif asidemi"
           ],
           [
-            "Solunum işi",
-            "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-            "Yaşa göre",
-            "Acil güvenlik"
-          ]
-        ],
-        "postAnswerExplanation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme",
-        "orderRank": 10
-      },
-      {
-        "id": "serum-laktat-2",
-        "label": "Serum laktat",
-        "title": "Serum laktat",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "Laboratuvar",
-        "summary": "Laktat yüksekliği doku hipoperfüzyonu veya ağır metabolik stres göstergesi olabilir; hipotansiyon, taşikardi veya sepsis bulguları varsa acil resüsitasyon gereksinimini destekler.",
-        "clinicalMeaning": "Laktat yüksekliği doku hipoperfüzyonu veya ağır metabolik stres göstergesi olabilir; hipotansiyon, taşikardi veya sepsis bulguları varsa acil resüsitasyon gereksinimini destekler.",
-        "result": {
-          "title": "Serum laktat",
-          "summary": "Laktat yüksekliği doku hipoperfüzyonu veya ağır metabolik stres göstergesi olabilir; hipotansiyon, taşikardi veya sepsis bulguları varsa acil resüsitasyon gereksinimini destekler.",
-          "interpretation": "Laktat yüksekliği doku hipoperfüzyonu veya ağır metabolik stres göstergesi olabilir; hipotansiyon, taşikardi veya sepsis bulguları varsa acil resüsitasyon gereksinimini destekler.",
-          "values": [
-            [
-              "Serum laktat",
-              "5.8 mmol/L",
-              "0.5–2.2 mmol/L",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Serum laktat",
-              "5.8 mmol/L",
-              "0.5–2.2 mmol/L",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Serum laktat",
-            "5.8 mmol/L",
+            "Laktat",
+            "3.4 mmol/L",
             "0.5–2.2 mmol/L",
-            "Klinik bağlamda değerlendirilmeli"
+            "Doku hipoksisiyle uyumlu"
           ]
         ],
-        "postAnswerExplanation": "Laktat yüksekliği doku hipoperfüzyonu veya ağır metabolik stres göstergesi olabilir; hipotansiyon, taşikardi veya sepsis bulguları varsa acil resüsitasyon gereksinimini destekler.",
-        "interpretation": "Laktat yüksekliği doku hipoperfüzyonu veya ağır metabolik stres göstergesi olabilir; hipotansiyon, taşikardi veya sepsis bulguları varsa acil resüsitasyon gereksinimini destekler.",
-        "valueAssumption": "Eksik sayısal değer, vakanın mevcut tanı/yönetim hedefiyle uyumlu gerçekçi eğitim verisi olarak tamamlandı.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Laktat yüksekliği doku hipoperfüzyonu veya ağır metabolik stres göstergesi olabilir; hipotansiyon, taşikardi veya sepsis bulguları varsa acil resüsitasyon gereksinimini destekler.",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
+        "rows": [
+          [
+            "Karboksihemoglobin",
+            "%24",
+            "<%3 sigara içmeyenlerde",
+            "Belirgin yüksek"
+          ],
+          [
+            "pH",
+            "7.34",
+            "7.35–7.45",
+            "Hafif asidemi"
+          ],
+          [
+            "Laktat",
+            "3.4 mmol/L",
+            "0.5–2.2 mmol/L",
+            "Doku hipoksisiyle uyumlu"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Karboksihemoglobin",
+          "%24",
+          "<%3 sigara içmeyenlerde",
+          "Belirgin yüksek"
+        ],
+        [
+          "pH",
+          "7.34",
+          "7.35–7.45",
+          "Hafif asidemi"
+        ],
+        [
+          "Laktat",
+          "3.4 mmol/L",
+          "0.5–2.2 mmol/L",
+          "Doku hipoksisiyle uyumlu"
+        ]
+      ],
+      "postAnswerExplanation": "Ko-oksimetride yüksek karboksihemoglobin, kapalı ortam maruziyeti ve nörolojik yakınmalarla birlikte karbon monoksit zehirlenmesini objektif olarak destekler.",
+      "interpretation": "Ko-oksimetride yüksek karboksihemoglobin, kapalı ortam maruziyeti ve nörolojik yakınmalarla birlikte karbon monoksit zehirlenmesini objektif olarak destekler.",
+      "category": "targetedInvestigation",
+      "testTypeCategory": "targetedInvestigation",
+      "explanationAfterAnswer": "Ko-oksimetride yüksek karboksihemoglobin, kapalı ortam maruziyeti ve nörolojik yakınmalarla birlikte karbon monoksit zehirlenmesini objektif olarak destekler.",
+      "clinicalFlowOrder": 20,
+      "flowOrder": 20,
+      "orderRank": 20,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    },
+    {
+      "id": "co-ekg",
+      "label": "EKG",
+      "title": "EKG",
+      "type": "cardiology",
+      "priority": "essential",
+      "subtype": "Kardiyak izlem",
+      "summary": "CO zehirlenmesinde kardiyak etkilenme olabileceği için EKG ve monitörizasyon, özellikle semptomatik çocukta güvenli izlem sağlar.",
+      "clinicalMeaning": "CO zehirlenmesinde kardiyak etkilenme olabileceği için EKG ve monitörizasyon, özellikle semptomatik çocukta güvenli izlem sağlar.",
+      "result": {
+        "title": "EKG",
+        "summary": "CO zehirlenmesinde kardiyak etkilenme olabileceği için EKG ve monitörizasyon, özellikle semptomatik çocukta güvenli izlem sağlar.",
+        "interpretation": "CO zehirlenmesinde kardiyak etkilenme olabileceği için EKG ve monitörizasyon, özellikle semptomatik çocukta güvenli izlem sağlar.",
+        "values": [
+          [
+            "Ritim",
+            "Sinüs taşikardisi",
+            "Sinüs ritmi",
+            "Hipoksi/stres yanıtı"
+          ],
+          [
+            "ST-T değişikliği",
+            "Yok",
+            "İskemik değişiklik beklenmez",
+            "Kardiyak komplikasyon açısından izlem"
+          ]
+        ],
+        "rows": [
+          [
+            "Ritim",
+            "Sinüs taşikardisi",
+            "Sinüs ritmi",
+            "Hipoksi/stres yanıtı"
+          ],
+          [
+            "ST-T değişikliği",
+            "Yok",
+            "İskemik değişiklik beklenmez",
+            "Kardiyak komplikasyon açısından izlem"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Ritim",
+          "Sinüs taşikardisi",
+          "Sinüs ritmi",
+          "Hipoksi/stres yanıtı"
+        ],
+        [
+          "ST-T değişikliği",
+          "Yok",
+          "İskemik değişiklik beklenmez",
+          "Kardiyak komplikasyon açısından izlem"
+        ]
+      ],
+      "postAnswerExplanation": "CO zehirlenmesinde kardiyak etkilenme olabileceği için EKG ve monitörizasyon, özellikle semptomatik çocukta güvenli izlem sağlar.",
+      "interpretation": "CO zehirlenmesinde kardiyak etkilenme olabileceği için EKG ve monitörizasyon, özellikle semptomatik çocukta güvenli izlem sağlar.",
+      "category": "targetedInvestigation",
+      "testTypeCategory": "targetedInvestigation",
+      "explanationAfterAnswer": "CO zehirlenmesinde kardiyak etkilenme olabileceği için EKG ve monitörizasyon, özellikle semptomatik çocukta güvenli izlem sağlar.",
+      "clinicalFlowOrder": 30,
+      "flowOrder": 30,
+      "orderRank": 30,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "shuffleOptions": false,
+  "question": "Bu çocukta ilk uygulanması gereken tedavi aşağıdakilerden hangisidir?",
+  "questionType": "treatment",
+  "answerTarget": "treatment",
+  "diagnosis": {
+    "correct": "Yüksek akımlı yüzde yüz oksijen başlamak",
+    "options": [
+      "Pulse oksimetre normal olduğu için gözlem ve semptomatik tedaviyle izlemek",
+      "Ampirik intravenöz seftriakson başlamak",
+      "Yalnız antiemetik verip oral hidrasyonla taburcu etmek",
+      "Yüksek akımlı yüzde yüz oksijen başlamak",
+      "İnsülin infüzyonu başlamak"
+    ],
+    "question": "Bu çocukta ilk uygulanması gereken tedavi aşağıdakilerden hangisidir?",
+    "explanation": "Kapalı ortamda soba maruziyeti, aile bireylerinde eş zamanlı baş ağrısı, baş ağrısı-bulantı-uykuya eğilim ve ko-oksimetride karboksihemoglobin yüksekliği karbon monoksit zehirlenmesini gösterir. Pulse oksimetrenin normal olması yanıltıcıdır; ilk tedavi karboksihemoglobin yarı ömrünü azaltmak ve doku oksijenasyonunu düzeltmek için yüksek akımlı %100 oksijendir.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "CO zehirlenmesinde normal SpO₂ güven vermez; ko-oksimetriyle karboksihemoglobin ölçülür ve ilk tedavi yüksek akımlı %100 oksijendir."
       }
     ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": {
-      "enabled": false
+    "optionComparison": {
+      "Pulse oksimetre normal olduğu için gözlem ve semptomatik tedaviyle izlemek": "Pulse oksimetrenin normal görünmesi karbon monoksit zehirlenmesini dışlamaz; cihaz oksihemoglobin ile karboksihemoglobini ayırt edemediği için yanlış güven verebilir. Bu çocukta nörolojik semptom ve yüksek karboksihemoglobin varken yalnız gözlem tedaviyi geciktirir.",
+      "Ampirik intravenöz seftriakson başlamak": "Ampirik seftriakson menenjit veya sepsis gibi enfeksiyöz acillerde doğru olabilir. Bu olguda ateş, meninks irritasyonu veya enfeksiyon odağı yerine kapalı ortam maruziyeti ve ailede eş zamanlı semptom öyküsü vardır; antibiyotik temel mekanizmayı hedeflemez.",
+      "Yalnız antiemetik verip oral hidrasyonla taburcu etmek": "Antiemetik ve oral hidrasyon bulantıyı geçici azaltabilir ancak doku hipoksisine yol açan karbon monoksitin hemoglobinden uzaklaştırılmasını sağlamaz. Uykuya eğilimli çocukta taburculuk güvenli değildir.",
+      "Yüksek akımlı yüzde yüz oksijen başlamak": "Doğru seçenektir. Yüksek akımlı %100 oksijen karboksihemoglobinin yarı ömrünü azaltır, dokulara oksijen sunumunu artırır ve nörolojik etkilenmesi olan çocukta gecikmeden başlanması gereken ilk tedavidir.",
+      "İnsülin infüzyonu başlamak": "İnsülin infüzyonu DKA veya belirli elektrolit kaydırma tedavilerinde kullanılır. Bu vakada hiperglisemi/asidoz paterninden çok karbon monoksit maruziyeti vardır; insülin gereksiz ve risklidir."
     },
-    "hideExamSignal": true,
-    "shuffleOptions": false,
-    "question": "Bu çocukta ilk uygulanması gereken tedavi aşağıdakilerden hangisidir?",
-    "questionType": "treatment",
-    "answerTarget": "treatment",
-    "diagnosis": {
-      "correct": "Yüksek akımlı yüzde yüz oksijen verilmesi",
-      "options": [
-        "Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak",
-        "Antibiyotik başlanması",
-        "Yüksek akımlı yüzde yüz oksijen verilmesi",
-        "Asetilsalisilik asit verilmesi",
-        "İnsülin infüzyonu başlanması"
+    "answerFeedback": {
+      "summary": "Kapalı ortamda soba maruziyeti, aile bireylerinde eş zamanlı baş ağrısı, baş ağrısı-bulantı-uykuya eğilim ve ko-oksimetride karboksihemoglobin yüksekliği karbon monoksit zehirlenmesini gösterir. Pulse oksimetrenin normal olması yanıltıcıdır; ilk tedavi karboksihemoglobin yarı ömrünü azaltmak ve doku oksijenasyonunu düzeltmek için yüksek akımlı %100 oksijendir.",
+      "whyCorrect": "Bu çocukta çevresel maruziyet öyküsü ve ko-oksimetri sonucu tanıyı desteklerken nörolojik semptom varlığı acil oksijen tedavisini gerektirir. Yüksek akımlı %100 oksijen, karbon monoksitin hemoglobinden ayrılmasını hızlandıran ve geciktirilmemesi gereken ilk basamaktır.",
+      "rationale": "Kapalı ortamda soba maruziyeti, aile bireylerinde eş zamanlı baş ağrısı, baş ağrısı-bulantı-uykuya eğilim ve ko-oksimetride karboksihemoglobin yüksekliği karbon monoksit zehirlenmesini gösterir. Pulse oksimetrenin normal olması yanıltıcıdır; ilk tedavi karboksihemoglobin yarı ömrünü azaltmak ve doku oksijenasyonunu düzeltmek için yüksek akımlı %100 oksijendir.",
+      "correctOptionFeedback": "Doğru seçenektir. Yüksek akımlı %100 oksijen karboksihemoglobinin yarı ömrünü azaltır, dokulara oksijen sunumunu artırır ve nörolojik etkilenmesi olan çocukta gecikmeden başlanması gereken ilk tedavidir.",
+      "keyClues": [
+        "Kapalı ve soba kullanılan odada birkaç saat maruziyet sonrası baş ağrısı, bulantı ve uykuya eğilim gelişmiştir.",
+        "Aynı evdeki başka kişilerde de baş ağrısı olması ortak çevresel toksik maruziyeti destekler.",
+        "Oda havasında SpO₂ normal görünmesine rağmen ko-oksimetride karboksihemoglobin %24 bulunması karbon monoksit maruziyetini doğrular."
       ],
-      "question": "Bu çocukta ilk uygulanması gereken tedavi aşağıdakilerden hangisidir?",
-      "explanation": "Bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin birlikte değerlendirilince temel karar Yüksek akımlı yüzde yüz oksijen verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü karbon monoksit zehirlenmesi için doğru tanı/tedavi önceliğini belirler.",
+      "evidenceChain": [
+        {
+          "text": "Kapalı ve soba kullanılan odada birkaç saat maruziyet sonrası baş ağrısı, bulantı ve uykuya eğilim gelişmiştir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Aynı evdeki başka kişilerde de baş ağrısı olması ortak çevresel toksik maruziyeti destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Oda havasında SpO₂ normal görünmesine rağmen ko-oksimetride karboksihemoglobin %24 bulunması karbon monoksit maruziyetini doğrular.",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "examPearl": "CO zehirlenmesinde normal SpO₂ güven vermez; ko-oksimetriyle karboksihemoglobin ölçülür ve ilk tedavi yüksek akımlı %100 oksijendir.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "CO zehirlenmesinde ilk tedavi yüksek akımlı %100 oksijendir; pulse oksimetre yanlış güven verebilir."
+          "text": "CO zehirlenmesinde normal SpO₂ güven vermez; ko-oksimetriyle karboksihemoglobin ölçülür ve ilk tedavi yüksek akımlı %100 oksijendir."
+        }
+      ],
+      "clinicalPearls": [
+        {
+          "label": "Sınav notu",
+          "text": "CO zehirlenmesinde normal SpO₂ güven vermez; ko-oksimetriyle karboksihemoglobin ölçülür ve ilk tedavi yüksek akımlı %100 oksijendir."
         }
       ],
       "optionComparison": {
-        "Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak": "Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Antibiyotik başlanması": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Antibiyotik başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Yüksek akımlı yüzde yüz oksijen verilmesi": "Bu seçenek doğrudur; çünkü kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "Asetilsalisilik asit verilmesi": "Asetilsalisilik asit verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Asetilsalisilik asit verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "İnsülin infüzyonu başlanması": "İnsülin infüzyonu başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle İnsülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+        "Pulse oksimetre normal olduğu için gözlem ve semptomatik tedaviyle izlemek": "Pulse oksimetrenin normal görünmesi karbon monoksit zehirlenmesini dışlamaz; cihaz oksihemoglobin ile karboksihemoglobini ayırt edemediği için yanlış güven verebilir. Bu çocukta nörolojik semptom ve yüksek karboksihemoglobin varken yalnız gözlem tedaviyi geciktirir.",
+        "Ampirik intravenöz seftriakson başlamak": "Ampirik seftriakson menenjit veya sepsis gibi enfeksiyöz acillerde doğru olabilir. Bu olguda ateş, meninks irritasyonu veya enfeksiyon odağı yerine kapalı ortam maruziyeti ve ailede eş zamanlı semptom öyküsü vardır; antibiyotik temel mekanizmayı hedeflemez.",
+        "Yalnız antiemetik verip oral hidrasyonla taburcu etmek": "Antiemetik ve oral hidrasyon bulantıyı geçici azaltabilir ancak doku hipoksisine yol açan karbon monoksitin hemoglobinden uzaklaştırılmasını sağlamaz. Uykuya eğilimli çocukta taburculuk güvenli değildir.",
+        "Yüksek akımlı yüzde yüz oksijen başlamak": "Doğru seçenektir. Yüksek akımlı %100 oksijen karboksihemoglobinin yarı ömrünü azaltır, dokulara oksijen sunumunu artırır ve nörolojik etkilenmesi olan çocukta gecikmeden başlanması gereken ilk tedavidir.",
+        "İnsülin infüzyonu başlamak": "İnsülin infüzyonu DKA veya belirli elektrolit kaydırma tedavilerinde kullanılır. Bu vakada hiperglisemi/asidoz paterninden çok karbon monoksit maruziyeti vardır; insülin gereksiz ve risklidir."
       },
-      "answerFeedback": {
-        "summary": "Bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin birlikte değerlendirilince temel karar Yüksek akımlı yüzde yüz oksijen verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü karbon monoksit zehirlenmesi için doğru tanı/tedavi önceliğini belirler.",
-        "whyCorrect": "Kapalı soba ortamında maruziyet öyküsü vardır. Aynı evdeki başka kişilerde de baş ağrısı gelişmiştir. Bu bulgular birlikte değerlendirildiğinde en uygun yanıt Yüksek akımlı yüzde yüz oksijen verilmesi olur. Tedavi seçimi, klinik aciliyetin ve altta yatan mekanizmanın aynı anda hedeflenmesine dayanır; destek basamakları gerekirse eş zamanlı yürütülür fakat ana kararı tek başına değiştirmez. Alternatifler bazı destek veya ayırıcı basamaklarda kullanılabilir; ancak verilen acil karar noktasını bu seçenek kadar doğrudan karşılamaz.",
-        "rationale": "Bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin birlikte değerlendirilince temel karar Yüksek akımlı yüzde yüz oksijen verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü karbon monoksit zehirlenmesi için doğru tanı/tedavi önceliğini belirler.",
-        "correctOptionFeedback": "Bu seçenek doğrudur; çünkü kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "keyClues": [
-          "Kapalı soba ortamında maruziyet öyküsü vardır.",
-          "Aynı evdeki başka kişilerde de baş ağrısı gelişmiştir.",
-          "Objektif veri (Ko-oksimetri: Ko-oksimetri %24) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır."
-        ],
-        "evidenceChain": [
-          {
-            "text": "Kapalı soba ortamında maruziyet öyküsü vardır.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Aynı evdeki başka kişilerde de baş ağrısı gelişmiştir.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Objektif veri (Ko-oksimetri: Ko-oksimetri %24) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "examPearl": "CO zehirlenmesinde ilk tedavi yüksek akımlı %100 oksijendir; pulse oksimetre yanlış güven verebilir.",
-        "pearls": [
-          {
-            "label": "Sınav notu",
-            "text": "CO zehirlenmesinde ilk tedavi yüksek akımlı %100 oksijendir; pulse oksimetre yanlış güven verebilir."
-          }
-        ],
-        "clinicalPearls": [
-          {
-            "label": "Sınav notu",
-            "text": "CO zehirlenmesinde ilk tedavi yüksek akımlı %100 oksijendir; pulse oksimetre yanlış güven verebilir."
-          }
-        ],
-        "optionComparison": {
-          "Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak": "Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Antibiyotik başlanması": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Antibiyotik başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Yüksek akımlı yüzde yüz oksijen verilmesi": "Bu seçenek doğrudur; çünkü kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-          "Asetilsalisilik asit verilmesi": "Asetilsalisilik asit verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Asetilsalisilik asit verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "İnsülin infüzyonu başlanması": "İnsülin infüzyonu başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle İnsülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "whyWrong": {
-          "Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak": "Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Antibiyotik başlanması": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Antibiyotik başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Asetilsalisilik asit verilmesi": "Asetilsalisilik asit verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Asetilsalisilik asit verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "İnsülin infüzyonu başlanması": "İnsülin infüzyonu başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle İnsülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Çocukta karbonmonoksit zehirlenmesinde oksijen tedavisini seçebilme",
-        "coreKnowledge": "Karbon monoksit zehirlenmesi sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir."
-      },
-      "whyCorrect": "Bu seçenek doğrudur; çünkü kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "evidenceChain": [
-        {
-          "text": "Kapalı soba ortamında maruziyet öyküsü vardır.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Aynı evdeki başka kişilerde de baş ağrısı gelişmiştir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Objektif veri (Ko-oksimetri: Ko-oksimetri %24) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-          "weight": "medium",
-          "source": "case"
-        }
-      ],
-      "coreKnowledge": "Karbon monoksit zehirlenmesi sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-      "examPearl": "CO zehirlenmesinde ilk tedavi yüksek akımlı %100 oksijendir; pulse oksimetre yanlış güven verebilir.",
       "whyWrong": {
-        "Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak": "Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Antibiyotik başlanması": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Antibiyotik başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Asetilsalisilik asit verilmesi": "Asetilsalisilik asit verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Asetilsalisilik asit verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "İnsülin infüzyonu başlanması": "İnsülin infüzyonu başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle İnsülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-      }
+        "Pulse oksimetre normal olduğu için gözlem ve semptomatik tedaviyle izlemek": "Pulse oksimetrenin normal görünmesi karbon monoksit zehirlenmesini dışlamaz; cihaz oksihemoglobin ile karboksihemoglobini ayırt edemediği için yanlış güven verebilir. Bu çocukta nörolojik semptom ve yüksek karboksihemoglobin varken yalnız gözlem tedaviyi geciktirir.",
+        "Ampirik intravenöz seftriakson başlamak": "Ampirik seftriakson menenjit veya sepsis gibi enfeksiyöz acillerde doğru olabilir. Bu olguda ateş, meninks irritasyonu veya enfeksiyon odağı yerine kapalı ortam maruziyeti ve ailede eş zamanlı semptom öyküsü vardır; antibiyotik temel mekanizmayı hedeflemez.",
+        "Yalnız antiemetik verip oral hidrasyonla taburcu etmek": "Antiemetik ve oral hidrasyon bulantıyı geçici azaltabilir ancak doku hipoksisine yol açan karbon monoksitin hemoglobinden uzaklaştırılmasını sağlamaz. Uykuya eğilimli çocukta taburculuk güvenli değildir.",
+        "İnsülin infüzyonu başlamak": "İnsülin infüzyonu DKA veya belirli elektrolit kaydırma tedavilerinde kullanılır. Bu vakada hiperglisemi/asidoz paterninden çok karbon monoksit maruziyeti vardır; insülin gereksiz ve risklidir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Çocukta karbon monoksit zehirlenmesinde pulse oksimetrenin normal olabileceğini fark edip ilk tedavi olarak yüksek akımlı yüzde yüz oksijen başlatabilme.",
+      "coreKnowledge": "Karbon monoksit zehirlenmesinde pulse oksimetre normal olabilir; karar maruziyet öyküsü, semptomlar ve ko-oksimetriyle verilir. Semptomatik çocukta ilk tedavi yüksek akımlı %100 oksijendir; ağır nörolojik/kardiyak bulgu veya çok yüksek karboksihemoglobin varsa hiperbarik oksijen ayrıca değerlendirilir."
     },
-    "difficultyTag": "Acil",
-    "coreKnowledge": "Karbon monoksit zehirlenmesi sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-    "examPearl": "CO zehirlenmesinde ilk tedavi yüksek akımlı %100 oksijendir; pulse oksimetre yanlış güven verebilir.",
-    "whyCorrect": "Bu seçenek doğrudur; çünkü kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-    "optionComparison": {
-      "Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak": "Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Antibiyotik başlanması": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Antibiyotik başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Yüksek akımlı yüzde yüz oksijen verilmesi": "Bu seçenek doğrudur; çünkü kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "Asetilsalisilik asit verilmesi": "Asetilsalisilik asit verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Asetilsalisilik asit verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "İnsülin infüzyonu başlanması": "İnsülin infüzyonu başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle İnsülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-    },
+    "whyCorrect": "Doğru seçenektir. Yüksek akımlı %100 oksijen karboksihemoglobinin yarı ömrünü azaltır, dokulara oksijen sunumunu artırır ve nörolojik etkilenmesi olan çocukta gecikmeden başlanması gereken ilk tedavidir.",
     "evidenceChain": [
       {
-        "text": "Kapalı soba ortamında maruziyet öyküsü vardır.",
+        "text": "Kapalı ve soba kullanılan odada birkaç saat maruziyet sonrası baş ağrısı, bulantı ve uykuya eğilim gelişmiştir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Aynı evdeki başka kişilerde de baş ağrısı gelişmiştir.",
+        "text": "Aynı evdeki başka kişilerde de baş ağrısı olması ortak çevresel toksik maruziyeti destekler.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Objektif veri (Ko-oksimetri: Ko-oksimetri %24) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-        "weight": "medium",
+        "text": "Oda havasında SpO₂ normal görünmesine rağmen ko-oksimetride karboksihemoglobin %24 bulunması karbon monoksit maruziyetini doğrular.",
+        "weight": "high",
         "source": "case"
       }
     ],
+    "coreKnowledge": "Karbon monoksit zehirlenmesinde pulse oksimetre normal olabilir; karar maruziyet öyküsü, semptomlar ve ko-oksimetriyle verilir. Semptomatik çocukta ilk tedavi yüksek akımlı %100 oksijendir; ağır nörolojik/kardiyak bulgu veya çok yüksek karboksihemoglobin varsa hiperbarik oksijen ayrıca değerlendirilir.",
+    "examPearl": "CO zehirlenmesinde normal SpO₂ güven vermez; ko-oksimetriyle karboksihemoglobin ölçülür ve ilk tedavi yüksek akımlı %100 oksijendir.",
     "whyWrong": {
-      "Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak": "Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Pulse oksimetre normal olduğu için karboksihemoglobin ölçümü yerine semptomatik tedavi planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Antibiyotik başlanması": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Antibiyotik başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Asetilsalisilik asit verilmesi": "Asetilsalisilik asit verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle Asetilsalisilik asit verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "İnsülin infüzyonu başlanması": "İnsülin infüzyonu başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada kapalı ortam maruziyeti, baş ağrısı/bilinç değişikliği ve yüksek karboksihemoglobin karbon monoksit zehirlenmesi lehinedir; bu nedenle İnsülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-    },
-    "aiMeta": {
-      "generatedAt": "manual-v396-pediatrics-ultra-refined",
-      "generator": "manual-editorial-pediatrics-case-refinement",
-      "schemaVersion": "clinical-standard-v396",
-      "provider": "manual-editorial",
-      "validationWarnings": []
+      "Pulse oksimetre normal olduğu için gözlem ve semptomatik tedaviyle izlemek": "Pulse oksimetrenin normal görünmesi karbon monoksit zehirlenmesini dışlamaz; cihaz oksihemoglobin ile karboksihemoglobini ayırt edemediği için yanlış güven verebilir. Bu çocukta nörolojik semptom ve yüksek karboksihemoglobin varken yalnız gözlem tedaviyi geciktirir.",
+      "Ampirik intravenöz seftriakson başlamak": "Ampirik seftriakson menenjit veya sepsis gibi enfeksiyöz acillerde doğru olabilir. Bu olguda ateş, meninks irritasyonu veya enfeksiyon odağı yerine kapalı ortam maruziyeti ve ailede eş zamanlı semptom öyküsü vardır; antibiyotik temel mekanizmayı hedeflemez.",
+      "Yalnız antiemetik verip oral hidrasyonla taburcu etmek": "Antiemetik ve oral hidrasyon bulantıyı geçici azaltabilir ancak doku hipoksisine yol açan karbon monoksitin hemoglobinden uzaklaştırılmasını sağlamaz. Uykuya eğilimli çocukta taburculuk güvenli değildir.",
+      "İnsülin infüzyonu başlamak": "İnsülin infüzyonu DKA veya belirli elektrolit kaydırma tedavilerinde kullanılır. Bu vakada hiperglisemi/asidoz paterninden çok karbon monoksit maruziyeti vardır; insülin gereksiz ve risklidir."
     }
   },
+  "difficultyTag": "Acil",
+  "coreKnowledge": "Karbon monoksit zehirlenmesinde pulse oksimetre normal olabilir; karar maruziyet öyküsü, semptomlar ve ko-oksimetriyle verilir. Semptomatik çocukta ilk tedavi yüksek akımlı %100 oksijendir; ağır nörolojik/kardiyak bulgu veya çok yüksek karboksihemoglobin varsa hiperbarik oksijen ayrıca değerlendirilir.",
+  "examPearl": "CO zehirlenmesinde normal SpO₂ güven vermez; ko-oksimetriyle karboksihemoglobin ölçülür ve ilk tedavi yüksek akımlı %100 oksijendir.",
+  "whyCorrect": "Doğru seçenektir. Yüksek akımlı %100 oksijen karboksihemoglobinin yarı ömrünü azaltır, dokulara oksijen sunumunu artırır ve nörolojik etkilenmesi olan çocukta gecikmeden başlanması gereken ilk tedavidir.",
+  "optionComparison": {
+    "Pulse oksimetre normal olduğu için gözlem ve semptomatik tedaviyle izlemek": "Pulse oksimetrenin normal görünmesi karbon monoksit zehirlenmesini dışlamaz; cihaz oksihemoglobin ile karboksihemoglobini ayırt edemediği için yanlış güven verebilir. Bu çocukta nörolojik semptom ve yüksek karboksihemoglobin varken yalnız gözlem tedaviyi geciktirir.",
+    "Ampirik intravenöz seftriakson başlamak": "Ampirik seftriakson menenjit veya sepsis gibi enfeksiyöz acillerde doğru olabilir. Bu olguda ateş, meninks irritasyonu veya enfeksiyon odağı yerine kapalı ortam maruziyeti ve ailede eş zamanlı semptom öyküsü vardır; antibiyotik temel mekanizmayı hedeflemez.",
+    "Yalnız antiemetik verip oral hidrasyonla taburcu etmek": "Antiemetik ve oral hidrasyon bulantıyı geçici azaltabilir ancak doku hipoksisine yol açan karbon monoksitin hemoglobinden uzaklaştırılmasını sağlamaz. Uykuya eğilimli çocukta taburculuk güvenli değildir.",
+    "Yüksek akımlı yüzde yüz oksijen başlamak": "Doğru seçenektir. Yüksek akımlı %100 oksijen karboksihemoglobinin yarı ömrünü azaltır, dokulara oksijen sunumunu artırır ve nörolojik etkilenmesi olan çocukta gecikmeden başlanması gereken ilk tedavidir.",
+    "İnsülin infüzyonu başlamak": "İnsülin infüzyonu DKA veya belirli elektrolit kaydırma tedavilerinde kullanılır. Bu vakada hiperglisemi/asidoz paterninden çok karbon monoksit maruziyeti vardır; insülin gereksiz ve risklidir."
+  },
+  "evidenceChain": [
+    {
+      "text": "Kapalı ve soba kullanılan odada birkaç saat maruziyet sonrası baş ağrısı, bulantı ve uykuya eğilim gelişmiştir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Aynı evdeki başka kişilerde de baş ağrısı olması ortak çevresel toksik maruziyeti destekler.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Oda havasında SpO₂ normal görünmesine rağmen ko-oksimetride karboksihemoglobin %24 bulunması karbon monoksit maruziyetini doğrular.",
+      "weight": "high",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Pulse oksimetre normal olduğu için gözlem ve semptomatik tedaviyle izlemek": "Pulse oksimetrenin normal görünmesi karbon monoksit zehirlenmesini dışlamaz; cihaz oksihemoglobin ile karboksihemoglobini ayırt edemediği için yanlış güven verebilir. Bu çocukta nörolojik semptom ve yüksek karboksihemoglobin varken yalnız gözlem tedaviyi geciktirir.",
+    "Ampirik intravenöz seftriakson başlamak": "Ampirik seftriakson menenjit veya sepsis gibi enfeksiyöz acillerde doğru olabilir. Bu olguda ateş, meninks irritasyonu veya enfeksiyon odağı yerine kapalı ortam maruziyeti ve ailede eş zamanlı semptom öyküsü vardır; antibiyotik temel mekanizmayı hedeflemez.",
+    "Yalnız antiemetik verip oral hidrasyonla taburcu etmek": "Antiemetik ve oral hidrasyon bulantıyı geçici azaltabilir ancak doku hipoksisine yol açan karbon monoksitin hemoglobinden uzaklaştırılmasını sağlamaz. Uykuya eğilimli çocukta taburculuk güvenli değildir.",
+    "İnsülin infüzyonu başlamak": "İnsülin infüzyonu DKA veya belirli elektrolit kaydırma tedavilerinde kullanılır. Bu vakada hiperglisemi/asidoz paterninden çok karbon monoksit maruziyeti vardır; insülin gereksiz ve risklidir."
+  },
+  "aiMeta": {
+    "generatedAt": "manual-v397-pediatrics-seventh-batch-ultra-refined",
+    "generator": "manual-editorial-pediatrics-case-refinement",
+    "schemaVersion": "clinical-standard-v397",
+    "provider": "manual-editorial",
+    "validationWarnings": []
+  }
+},
   {
-    "id": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi",
-    "branchId": "pediatrics",
-    "caseType": "standard",
-    "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
-    "title": "Yenidoğanda beslenme bozulması ve hipotermi",
-    "difficulty": "Acil",
-    "clinicalFocus": "Pediatrik sepsis veya septik şok bağlamında pediatrik öykü, yaşa uygun vital bulgu, fizik muayene ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Pediatrik sepsis veya septik şok için pediatrik klinik patern, acil öncelik ve hedefe yönelik tanı/tedavi kararını açıklama.",
-    "demographics": "10 günlük erkek yenidoğan",
-    "setting": "Yenidoğan değerlendirmesi",
-    "chiefComplaint": "Bebek, emmede azalma, uykuya eğilim ve vücut ısısında düşüklük nedeniyle acile getiriliyor.",
-    "stem": "Son 12 saattir emmesinin belirgin azaldığı, daha az hareket ettiği ve bez sayısının düştüğü öğreniliyor. Anne doğumdan önce uzun süreli membran rüptürü olduğunu belirtmektedir.",
-    "patientIntro": {
-      "profile": "10 günlük erkek yenidoğan, yenidoğan acilinde değerlendiriliyor.",
-      "presentation": "Bebek, emmede azalma, uykuya eğilim ve vücut ısısında düşüklük nedeniyle acile getiriliyor.",
-      "historySummary": "Son 12 saattir emmesinin belirgin azaldığı, daha az hareket ettiği ve bez sayısının düştüğü öğreniliyor. Anne doğumdan önce uzun süreli membran rüptürü olduğunu belirtmektedir."
-    },
-    "vitals": {
-      "TA": "58/34 mmHg",
-      "Nabız": "176/dk",
-      "Solunum": "62/dk",
-      "SpO2": "%96, oda havasında",
-      "Ateş": "35.8 °C",
-      "Şok indeksi": "3.03 pediatrik bağlamda yorumlanmalı"
-    },
-    "exam": [
-      "Bebek letarjik ve soluk görünümdedir.",
-      "Periferik perfüzyon zayıf, kapiller dolum süresi 4 saniyedir."
-    ],
-    "investigations": [
-      {
-        "id": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi-shock-assessment",
-        "label": "Pediatrik şok değerlendirmesi",
-        "title": "Pediatrik şok değerlendirmesi",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Letarji, kapiller dolum uzaması, soğuk ekstremite, hipotansiyon, zayıf nabız ve idrar çıkışı pediatrik septik şok ciddiyetini belirler; resüsitasyon test sonucu beklenerek geciktirilmez.",
-        "clinicalMeaning": "Letarji, kapiller dolum uzaması, soğuk ekstremite, hipotansiyon, zayıf nabız ve idrar çıkışı pediatrik septik şok ciddiyetini belirler; resüsitasyon test sonucu beklenerek geciktirilmez.",
-        "result": {
-          "title": "Pediatrik şok değerlendirmesi",
-          "summary": "Letarji, kapiller dolum uzaması, soğuk ekstremite, hipotansiyon, zayıf nabız ve idrar çıkışı pediatrik septik şok ciddiyetini belirler; resüsitasyon test sonucu beklenerek geciktirilmez.",
-          "interpretation": "Letarji, kapiller dolum uzaması, soğuk ekstremite, hipotansiyon, zayıf nabız ve idrar çıkışı pediatrik septik şok ciddiyetini belirler; resüsitasyon test sonucu beklenerek geciktirilmez.",
-          "values": [
-            [
-              "Mental durum",
-              "Letarjik/toksik görünüm",
-              "Uyanık ve iyi perfüze",
-              "Acil"
-            ],
-            [
-              "Kapiller dolum",
-              "5 sn",
-              "<2 sn",
-              "Şok göstergesi"
-            ],
-            [
-              "İdrar çıkışı",
-              "Azalmış",
-              "Yaşa/kiloya göre yeterli",
-              "Organ perfüzyonu"
-            ]
-          ],
-          "rows": [
-            [
-              "Mental durum",
-              "Letarjik/toksik görünüm",
-              "Uyanık ve iyi perfüze",
-              "Acil"
-            ],
-            [
-              "Kapiller dolum",
-              "5 sn",
-              "<2 sn",
-              "Şok göstergesi"
-            ],
-            [
-              "İdrar çıkışı",
-              "Azalmış",
-              "Yaşa/kiloya göre yeterli",
-              "Organ perfüzyonu"
-            ]
-          ]
-        },
-        "rows": [
+  "id": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi",
+  "branchId": "pediatrics",
+  "caseType": "standard",
+  "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
+  "title": "Yenidoğanda beslenme bozulması ve hipotermi",
+  "difficulty": "Acil",
+  "clinicalFocus": "Yenidoğanda ateş yerine hipotermiyle seyreden sepsis tablosunda beslenme bozulması, letarji, perfüzyon bozukluğu ve inflamasyon verilerini birlikte değerlendirerek acil ampirik antibiyotik kararını verme.",
+  "learningTarget": "Yenidoğan sepsisinde kültürler alındıktan sonra ampirik intravenöz antibiyotik tedavisinin geciktirilmemesi gerektiğini ayırt edebilme.",
+  "demographics": "10 günlük erkek yenidoğan",
+  "setting": "Yenidoğan değerlendirmesi",
+  "chiefComplaint": "Bebek, emmede azalma, uykuya eğilim ve vücut ısısında düşüklük nedeniyle acile getiriliyor.",
+  "stem": "Annesi, 10 günlük bebeğin son 12 saatte emme isteğinin belirgin azaldığını ve normalde kendiliğinden uyanırken artık güçlükle uyandırıldığını ifade eder. Aynı sürede bez sayısı azalmış, bacaklarının ve ellerinin daha soğuk olduğu fark edilmiştir. Evde ölçülen vücut ısısının düşük çıkması ve bebeğin giderek daha hareketsiz görünmesi üzerine acile başvurulmuştur. Doğum öyküsünde annede doğumdan önce uzun süreli membran rüptürü olduğu, bebeğin taburculuktan sonra belirgin öksürük, ishal veya sarı-yeşil kusma yaşamadığı öğrenilir. Evde ateş düşürücü ya da antibiyotik verilmemiştir.",
+  "patientIntro": {
+    "profile": "10 günlük erkek yenidoğan, yenidoğan acilinde değerlendiriliyor.",
+    "presentation": "Bebek, emmede azalma, uykuya eğilim ve vücut ısısında düşüklük nedeniyle acile getiriliyor.",
+    "historySummary": "Annesi, 10 günlük bebeğin son 12 saatte emme isteğinin belirgin azaldığını ve normalde kendiliğinden uyanırken artık güçlükle uyandırıldığını ifade eder. Aynı sürede bez sayısı azalmış, bacaklarının ve ellerinin daha soğuk olduğu fark edilmiştir. Evde ölçülen vücut ısısının düşük çıkması ve bebeğin giderek daha hareketsiz görünmesi üzerine acile başvurulmuştur. Doğum öyküsünde annede doğumdan önce uzun süreli membran rüptürü olduğu, bebeğin taburculuktan sonra belirgin öksürük, ishal veya sarı-yeşil kusma yaşamadığı öğrenilir. Evde ateş düşürücü ya da antibiyotik verilmemiştir."
+  },
+  "vitals": {
+    "TA": "62/34 mmHg",
+    "Nabız": "178/dk",
+    "Solunum": "62/dk",
+    "SpO2": "%94, oda havasında",
+    "Ateş": "35.4 °C",
+    "Şok indeksi": "2.87 - yenidoğanda dolaşım bozukluğu lehine"
+  },
+  "exam": [
+    "Bebek letarjiktir, zayıf ağlar ve emme refleksi belirgin azalmıştır.",
+    "Kapiller dolum 4 saniyedir; ekstremiteler soğuk ve periferik nabızlar zayıftır.",
+    "Ön fontanel bombeli değildir; belirgin fokal enfeksiyon odağı saptanmaz."
+  ],
+  "investigations": [
+    {
+      "id": "neo-sepsis-kan-glukozu",
+      "label": "Kapiller kan glukozu",
+      "title": "Kapiller kan glukozu",
+      "type": "bedside",
+      "priority": "essential",
+      "subtype": "Yatak başı test",
+      "summary": "Yenidoğanda letarji ve beslenme bozulmasında glukoz hızla değerlendirilir; hipoglisemi eşlik edebilir ve destek tedavisini etkiler.",
+      "clinicalMeaning": "Yenidoğanda letarji ve beslenme bozulmasında glukoz hızla değerlendirilir; hipoglisemi eşlik edebilir ve destek tedavisini etkiler.",
+      "result": {
+        "title": "Kapiller kan glukozu",
+        "summary": "Yenidoğanda letarji ve beslenme bozulmasında glukoz hızla değerlendirilir; hipoglisemi eşlik edebilir ve destek tedavisini etkiler.",
+        "interpretation": "Yenidoğanda letarji ve beslenme bozulmasında glukoz hızla değerlendirilir; hipoglisemi eşlik edebilir ve destek tedavisini etkiler.",
+        "values": [
           [
-            "Mental durum",
-            "Letarjik/toksik görünüm",
-            "Uyanık ve iyi perfüze",
-            "Acil"
-          ],
-          [
-            "Kapiller dolum",
-            "5 sn",
-            "<2 sn",
-            "Şok göstergesi"
-          ],
-          [
-            "İdrar çıkışı",
-            "Azalmış",
-            "Yaşa/kiloya göre yeterli",
-            "Organ perfüzyonu"
+            "Glukoz",
+            "54 mg/dL",
+            "50–110 mg/dL",
+            "Alt sınıra yakın; sepsis/stresle izlenmeli"
           ]
         ],
-        "postAnswerExplanation": "Letarji, kapiller dolum uzaması, soğuk ekstremite, hipotansiyon, zayıf nabız ve idrar çıkışı pediatrik septik şok ciddiyetini belirler; resüsitasyon test sonucu beklenerek geciktirilmez.",
-        "interpretation": "Letarji, kapiller dolum uzaması, soğuk ekstremite, hipotansiyon, zayıf nabız ve idrar çıkışı pediatrik septik şok ciddiyetini belirler; resüsitasyon test sonucu beklenerek geciktirilmez.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Letarji, kapiller dolum uzaması, soğuk ekstremite, hipotansiyon, zayıf nabız ve idrar çıkışı pediatrik septik şok ciddiyetini belirler; resüsitasyon test sonucu beklenerek geciktirilmez.",
-        "testValueLabel": "Dolaşım ciddiyeti",
-        "clinicalPriorityLabel": "Dolaşım ciddiyeti",
-        "educationalValue": "Dolaşım ciddiyeti",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Dolaşım ciddiyeti",
-        "treatmentImpact": "Dolaşım ciddiyeti",
-        "orderRank": 10
-      },
-      {
-        "id": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi-glucose-vbg-lactate",
-        "label": "Glukoz, kan gazı ve laktat",
-        "title": "Glukoz, kan gazı ve laktat",
-        "type": "bloodGas",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Hipoglisemi, metabolik asidoz ve laktat yüksekliği pediatrik şokta ani kötüleşme ve organ hipoperfüzyonunu gösterir; erken sıvı, oksijen ve antibiyotik önceliğini destekler.",
-        "clinicalMeaning": "Hipoglisemi, metabolik asidoz ve laktat yüksekliği pediatrik şokta ani kötüleşme ve organ hipoperfüzyonunu gösterir; erken sıvı, oksijen ve antibiyotik önceliğini destekler.",
-        "result": {
-          "title": "Glukoz, kan gazı ve laktat",
-          "summary": "Hipoglisemi, metabolik asidoz ve laktat yüksekliği pediatrik şokta ani kötüleşme ve organ hipoperfüzyonunu gösterir; erken sıvı, oksijen ve antibiyotik önceliğini destekler.",
-          "interpretation": "Hipoglisemi, metabolik asidoz ve laktat yüksekliği pediatrik şokta ani kötüleşme ve organ hipoperfüzyonunu gösterir; erken sıvı, oksijen ve antibiyotik önceliğini destekler.",
-          "values": [
-            [
-              "Glukoz",
-              "58 mg/dL",
-              "Yaşa göre normoglisemi",
-              "Düşük"
-            ],
-            [
-              "pH",
-              "7.28",
-              "7.35–7.45",
-              "Düşük"
-            ],
-            [
-              "Laktat",
-              "5.6 mmol/L",
-              "<2 mmol/L",
-              "Yüksek"
-            ]
-          ],
-          "rows": [
-            [
-              "Glukoz",
-              "58 mg/dL",
-              "Yaşa göre normoglisemi",
-              "Düşük"
-            ],
-            [
-              "pH",
-              "7.28",
-              "7.35–7.45",
-              "Düşük"
-            ],
-            [
-              "Laktat",
-              "5.6 mmol/L",
-              "<2 mmol/L",
-              "Yüksek"
-            ]
-          ]
-        },
         "rows": [
           [
             "Glukoz",
-            "58 mg/dL",
-            "Yaşa göre normoglisemi",
+            "54 mg/dL",
+            "50–110 mg/dL",
+            "Alt sınıra yakın; sepsis/stresle izlenmeli"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Glukoz",
+          "54 mg/dL",
+          "50–110 mg/dL",
+          "Alt sınıra yakın; sepsis/stresle izlenmeli"
+        ]
+      ],
+      "postAnswerExplanation": "Yenidoğanda letarji ve beslenme bozulmasında glukoz hızla değerlendirilir; hipoglisemi eşlik edebilir ve destek tedavisini etkiler.",
+      "interpretation": "Yenidoğanda letarji ve beslenme bozulmasında glukoz hızla değerlendirilir; hipoglisemi eşlik edebilir ve destek tedavisini etkiler.",
+      "category": "targetedInvestigation",
+      "testTypeCategory": "targetedInvestigation",
+      "explanationAfterAnswer": "Yenidoğanda letarji ve beslenme bozulmasında glukoz hızla değerlendirilir; hipoglisemi eşlik edebilir ve destek tedavisini etkiler.",
+      "clinicalFlowOrder": 10,
+      "flowOrder": 10,
+      "orderRank": 10,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    },
+    {
+      "id": "neo-sepsis-hemogram-crp",
+      "label": "Hemogram ve akut faz",
+      "title": "Hemogram ve akut faz",
+      "type": "lab",
+      "priority": "essential",
+      "subtype": "Laboratuvar",
+      "summary": "Lökopeni/nötropeni, trombositopeni ve yüksek inflamatuvar belirteçler yenidoğan sepsisi olasılığını güçlendirir.",
+      "clinicalMeaning": "Lökopeni/nötropeni, trombositopeni ve yüksek inflamatuvar belirteçler yenidoğan sepsisi olasılığını güçlendirir.",
+      "result": {
+        "title": "Hemogram ve akut faz",
+        "summary": "Lökopeni/nötropeni, trombositopeni ve yüksek inflamatuvar belirteçler yenidoğan sepsisi olasılığını güçlendirir.",
+        "interpretation": "Lökopeni/nötropeni, trombositopeni ve yüksek inflamatuvar belirteçler yenidoğan sepsisi olasılığını güçlendirir.",
+        "values": [
+          [
+            "Lökosit",
+            "3.100/mm³",
+            "5.000–20.000/mm³",
+            "Lökopeni"
+          ],
+          [
+            "Mutlak nötrofil",
+            "850/mm³",
+            "1.500–8.000/mm³",
+            "Nötropeni"
+          ],
+          [
+            "Trombosit",
+            "118.000/mm³",
+            "150.000–450.000/mm³",
             "Düşük"
           ],
+          [
+            "CRP",
+            "46 mg/L",
+            "<5 mg/L",
+            "Yüksek"
+          ],
+          [
+            "Prokalsitonin",
+            "8.2 ng/mL",
+            "<0.5 ng/mL",
+            "Belirgin yüksek"
+          ]
+        ],
+        "rows": [
+          [
+            "Lökosit",
+            "3.100/mm³",
+            "5.000–20.000/mm³",
+            "Lökopeni"
+          ],
+          [
+            "Mutlak nötrofil",
+            "850/mm³",
+            "1.500–8.000/mm³",
+            "Nötropeni"
+          ],
+          [
+            "Trombosit",
+            "118.000/mm³",
+            "150.000–450.000/mm³",
+            "Düşük"
+          ],
+          [
+            "CRP",
+            "46 mg/L",
+            "<5 mg/L",
+            "Yüksek"
+          ],
+          [
+            "Prokalsitonin",
+            "8.2 ng/mL",
+            "<0.5 ng/mL",
+            "Belirgin yüksek"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Lökosit",
+          "3.100/mm³",
+          "5.000–20.000/mm³",
+          "Lökopeni"
+        ],
+        [
+          "Mutlak nötrofil",
+          "850/mm³",
+          "1.500–8.000/mm³",
+          "Nötropeni"
+        ],
+        [
+          "Trombosit",
+          "118.000/mm³",
+          "150.000–450.000/mm³",
+          "Düşük"
+        ],
+        [
+          "CRP",
+          "46 mg/L",
+          "<5 mg/L",
+          "Yüksek"
+        ],
+        [
+          "Prokalsitonin",
+          "8.2 ng/mL",
+          "<0.5 ng/mL",
+          "Belirgin yüksek"
+        ]
+      ],
+      "postAnswerExplanation": "Lökopeni/nötropeni, trombositopeni ve yüksek inflamatuvar belirteçler yenidoğan sepsisi olasılığını güçlendirir.",
+      "interpretation": "Lökopeni/nötropeni, trombositopeni ve yüksek inflamatuvar belirteçler yenidoğan sepsisi olasılığını güçlendirir.",
+      "category": "targetedInvestigation",
+      "testTypeCategory": "targetedInvestigation",
+      "explanationAfterAnswer": "Lökopeni/nötropeni, trombositopeni ve yüksek inflamatuvar belirteçler yenidoğan sepsisi olasılığını güçlendirir.",
+      "clinicalFlowOrder": 20,
+      "flowOrder": 20,
+      "orderRank": 20,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    },
+    {
+      "id": "neo-sepsis-kan-gazi",
+      "label": "Venöz kan gazı ve laktat",
+      "title": "Venöz kan gazı ve laktat",
+      "type": "lab",
+      "priority": "essential",
+      "subtype": "Kan gazı",
+      "summary": "Metabolik asidoz ve laktat yüksekliği sepsiste doku hipoperfüzyonunu ve acil resüsitasyon gereksinimini destekler.",
+      "clinicalMeaning": "Metabolik asidoz ve laktat yüksekliği sepsiste doku hipoperfüzyonunu ve acil resüsitasyon gereksinimini destekler.",
+      "result": {
+        "title": "Venöz kan gazı ve laktat",
+        "summary": "Metabolik asidoz ve laktat yüksekliği sepsiste doku hipoperfüzyonunu ve acil resüsitasyon gereksinimini destekler.",
+        "interpretation": "Metabolik asidoz ve laktat yüksekliği sepsiste doku hipoperfüzyonunu ve acil resüsitasyon gereksinimini destekler.",
+        "values": [
           [
             "pH",
             "7.28",
             "7.35–7.45",
-            "Düşük"
+            "Asidemi"
+          ],
+          [
+            "HCO₃",
+            "15 mmol/L",
+            "18–24 mmol/L",
+            "Metabolik asidoz"
           ],
           [
             "Laktat",
-            "5.6 mmol/L",
-            "<2 mmol/L",
-            "Yüksek"
+            "4.6 mmol/L",
+            "0.5–2.2 mmol/L",
+            "Hipoperfüzyon lehine"
           ]
         ],
-        "postAnswerExplanation": "Hipoglisemi, metabolik asidoz ve laktat yüksekliği pediatrik şokta ani kötüleşme ve organ hipoperfüzyonunu gösterir; erken sıvı, oksijen ve antibiyotik önceliğini destekler.",
-        "interpretation": "Hipoglisemi, metabolik asidoz ve laktat yüksekliği pediatrik şokta ani kötüleşme ve organ hipoperfüzyonunu gösterir; erken sıvı, oksijen ve antibiyotik önceliğini destekler.",
-        "category": "respiratory",
-        "testTypeCategory": "respiratory",
-        "explanationAfterAnswer": "Hipoglisemi, metabolik asidoz ve laktat yüksekliği pediatrik şokta ani kötüleşme ve organ hipoperfüzyonunu gösterir; erken sıvı, oksijen ve antibiyotik önceliğini destekler.",
-        "testValueLabel": "Acil güvenlik testi",
-        "clinicalPriorityLabel": "Acil güvenlik testi",
-        "educationalValue": "Acil güvenlik testi",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "clinicalFlowOrder": 20,
-        "flowOrder": 20,
-        "pediatricSafetyValue": "Acil güvenlik testi",
-        "treatmentImpact": "Acil güvenlik testi",
-        "orderRank": 20
-      },
-      {
-        "id": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi-renal-electrolytes",
-        "label": "Elektrolit ve böbrek fonksiyonu",
-        "title": "Elektrolit ve böbrek fonksiyonu",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Elektrolitler, kreatinin ve karaciğer fonksiyonları organ disfonksiyonu ve sıvı/ilaç güvenliği açısından erken değerlendirilir.",
-        "clinicalMeaning": "Elektrolitler, kreatinin ve karaciğer fonksiyonları organ disfonksiyonu ve sıvı/ilaç güvenliği açısından erken değerlendirilir.",
-        "result": {
-          "title": "Elektrolit ve böbrek fonksiyonu",
-          "summary": "Elektrolitler, kreatinin ve karaciğer fonksiyonları organ disfonksiyonu ve sıvı/ilaç güvenliği açısından erken değerlendirilir.",
-          "interpretation": "Elektrolitler, kreatinin ve karaciğer fonksiyonları organ disfonksiyonu ve sıvı/ilaç güvenliği açısından erken değerlendirilir.",
-          "values": [
-            [
-              "Kreatinin",
-              "Yaşa göre yüksek eğilim",
-              "Yaşa göre düşük beklenir",
-              "Organ etkilenimi"
-            ],
-            [
-              "Sodyum/Potasyum",
-              "Klinik tabloya göre izlenir",
-              "Yaşa göre",
-              "Tedavi güvenliği"
-            ]
-          ],
-          "rows": [
-            [
-              "Kreatinin",
-              "Yaşa göre yüksek eğilim",
-              "Yaşa göre düşük beklenir",
-              "Organ etkilenimi"
-            ],
-            [
-              "Sodyum/Potasyum",
-              "Klinik tabloya göre izlenir",
-              "Yaşa göre",
-              "Tedavi güvenliği"
-            ]
-          ]
-        },
         "rows": [
           [
-            "Kreatinin",
-            "Yaşa göre yüksek eğilim",
-            "Yaşa göre düşük beklenir",
-            "Organ etkilenimi"
+            "pH",
+            "7.28",
+            "7.35–7.45",
+            "Asidemi"
           ],
           [
-            "Sodyum/Potasyum",
-            "Klinik tabloya göre izlenir",
-            "Yaşa göre",
-            "Tedavi güvenliği"
+            "HCO₃",
+            "15 mmol/L",
+            "18–24 mmol/L",
+            "Metabolik asidoz"
+          ],
+          [
+            "Laktat",
+            "4.6 mmol/L",
+            "0.5–2.2 mmol/L",
+            "Hipoperfüzyon lehine"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "pH",
+          "7.28",
+          "7.35–7.45",
+          "Asidemi"
+        ],
+        [
+          "HCO₃",
+          "15 mmol/L",
+          "18–24 mmol/L",
+          "Metabolik asidoz"
+        ],
+        [
+          "Laktat",
+          "4.6 mmol/L",
+          "0.5–2.2 mmol/L",
+          "Hipoperfüzyon lehine"
+        ]
+      ],
+      "postAnswerExplanation": "Metabolik asidoz ve laktat yüksekliği sepsiste doku hipoperfüzyonunu ve acil resüsitasyon gereksinimini destekler.",
+      "interpretation": "Metabolik asidoz ve laktat yüksekliği sepsiste doku hipoperfüzyonunu ve acil resüsitasyon gereksinimini destekler.",
+      "category": "targetedInvestigation",
+      "testTypeCategory": "targetedInvestigation",
+      "explanationAfterAnswer": "Metabolik asidoz ve laktat yüksekliği sepsiste doku hipoperfüzyonunu ve acil resüsitasyon gereksinimini destekler.",
+      "clinicalFlowOrder": 30,
+      "flowOrder": 30,
+      "orderRank": 30,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    },
+    {
+      "id": "neo-sepsis-kultur",
+      "label": "Kültür örnekleri",
+      "title": "Kültür örnekleri",
+      "type": "microbiology",
+      "priority": "essential",
+      "subtype": "Mikrobiyoloji",
+      "summary": "Yenidoğan sepsisinde kültürler antibiyotik öncesi alınır; ancak klinik şiddet nedeniyle ampirik antibiyotik kültür sonucunu beklemez.",
+      "clinicalMeaning": "Yenidoğan sepsisinde kültürler antibiyotik öncesi alınır; ancak klinik şiddet nedeniyle ampirik antibiyotik kültür sonucunu beklemez.",
+      "result": {
+        "title": "Kültür örnekleri",
+        "summary": "Yenidoğan sepsisinde kültürler antibiyotik öncesi alınır; ancak klinik şiddet nedeniyle ampirik antibiyotik kültür sonucunu beklemez.",
+        "interpretation": "Yenidoğan sepsisinde kültürler antibiyotik öncesi alınır; ancak klinik şiddet nedeniyle ampirik antibiyotik kültür sonucunu beklemez.",
+        "values": [
+          [
+            "Kan kültürü",
+            "Tedavi öncesi alındı",
+            "Üreme olmaması beklenir",
+            "Sonuç beklenmeden tedavi başlanır"
+          ],
+          [
+            "İdrar kültürü",
+            "Kateterle örnek alındı",
+            "Üreme olmaması beklenir",
+            "Odak araştırması"
+          ],
+          [
+            "BOS kültürü",
+            "Stabilizasyon sonrası planlandı",
+            "Üreme olmaması beklenir",
+            "Klinik duruma göre"
           ]
         ],
-        "postAnswerExplanation": "Elektrolitler, kreatinin ve karaciğer fonksiyonları organ disfonksiyonu ve sıvı/ilaç güvenliği açısından erken değerlendirilir.",
-        "interpretation": "Elektrolitler, kreatinin ve karaciğer fonksiyonları organ disfonksiyonu ve sıvı/ilaç güvenliği açısından erken değerlendirilir.",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Elektrolitler, kreatinin ve karaciğer fonksiyonları organ disfonksiyonu ve sıvı/ilaç güvenliği açısından erken değerlendirilir.",
-        "testValueLabel": "Kritik tedavi belirler",
-        "clinicalPriorityLabel": "Kritik tedavi belirler",
-        "educationalValue": "Kritik tedavi belirler",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "clinicalFlowOrder": 28,
-        "flowOrder": 28,
-        "pediatricSafetyValue": "Kritik tedavi belirler",
-        "treatmentImpact": "Kritik tedavi belirler",
-        "orderRank": 28
-      },
-      {
-        "id": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi-cbc-inflammation",
-        "label": "Hemogram ve inflamasyon belirteçleri",
-        "title": "Hemogram ve inflamasyon belirteçleri",
-        "type": "lab",
-        "priority": "useful",
-        "subtype": "",
-        "summary": "Lökosit, nötrofil, trombosit, CRP ve prokalsitonin enfeksiyon ve organ disfonksiyonu olasılığını destekler; tedavi kararı ağır klinikte laboratuvar kesinleşmesini beklemez.",
-        "clinicalMeaning": "Lökosit, nötrofil, trombosit, CRP ve prokalsitonin enfeksiyon ve organ disfonksiyonu olasılığını destekler; tedavi kararı ağır klinikte laboratuvar kesinleşmesini beklemez.",
-        "result": {
-          "title": "Hemogram ve inflamasyon belirteçleri",
-          "summary": "Lökosit, nötrofil, trombosit, CRP ve prokalsitonin enfeksiyon ve organ disfonksiyonu olasılığını destekler; tedavi kararı ağır klinikte laboratuvar kesinleşmesini beklemez.",
-          "interpretation": "Lökosit, nötrofil, trombosit, CRP ve prokalsitonin enfeksiyon ve organ disfonksiyonu olasılığını destekler; tedavi kararı ağır klinikte laboratuvar kesinleşmesini beklemez.",
-          "values": [
-            [
-              "Lökosit",
-              "23.000/mm³",
-              "Yaşa göre değişir",
-              "Yüksek"
-            ],
-            [
-              "Trombosit",
-              "Düşme eğilimi olabilir",
-              "150.000–450.000/mm³",
-              "İzlem gerekli"
-            ],
-            [
-              "CRP/Prokalsitonin",
-              "Yüksek",
-              "Düşük beklenir",
-              "Sepsis göstergesi"
-            ]
-          ],
-          "rows": [
-            [
-              "Lökosit",
-              "23.000/mm³",
-              "Yaşa göre değişir",
-              "Yüksek"
-            ],
-            [
-              "Trombosit",
-              "Düşme eğilimi olabilir",
-              "150.000–450.000/mm³",
-              "İzlem gerekli"
-            ],
-            [
-              "CRP/Prokalsitonin",
-              "Yüksek",
-              "Düşük beklenir",
-              "Sepsis göstergesi"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Lökosit",
-            "23.000/mm³",
-            "Yaşa göre değişir",
-            "Yüksek"
-          ],
-          [
-            "Trombosit",
-            "Düşme eğilimi olabilir",
-            "150.000–450.000/mm³",
-            "İzlem gerekli"
-          ],
-          [
-            "CRP/Prokalsitonin",
-            "Yüksek",
-            "Düşük beklenir",
-            "Sepsis göstergesi"
-          ]
-        ],
-        "postAnswerExplanation": "Lökosit, nötrofil, trombosit, CRP ve prokalsitonin enfeksiyon ve organ disfonksiyonu olasılığını destekler; tedavi kararı ağır klinikte laboratuvar kesinleşmesini beklemez.",
-        "interpretation": "Lökosit, nötrofil, trombosit, CRP ve prokalsitonin enfeksiyon ve organ disfonksiyonu olasılığını destekler; tedavi kararı ağır klinikte laboratuvar kesinleşmesini beklemez.",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "Lökosit, nötrofil, trombosit, CRP ve prokalsitonin enfeksiyon ve organ disfonksiyonu olasılığını destekler; tedavi kararı ağır klinikte laboratuvar kesinleşmesini beklemez.",
-        "testValueLabel": "Sepsis göstergesi",
-        "clinicalPriorityLabel": "Sepsis göstergesi",
-        "educationalValue": "Sepsis göstergesi",
-        "scoreImpact": 3,
-        "scoreValue": 3,
-        "clinicalFlowOrder": 34,
-        "flowOrder": 34,
-        "pediatricSafetyValue": "Sepsis göstergesi",
-        "treatmentImpact": "Sepsis göstergesi",
-        "orderRank": 34
-      },
-      {
-        "id": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi-blood-culture",
-        "label": "Kan kültürü",
-        "title": "Kan kültürü",
-        "type": "culture",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Kan kültürü antibiyotik öncesi hızla alınmalıdır; ancak septik şokta kültür sonucu veya örnek alma gecikmesi antibiyotik ve sıvı resüsitasyonunu geciktirmemelidir.",
-        "clinicalMeaning": "Kan kültürü antibiyotik öncesi hızla alınmalıdır; ancak septik şokta kültür sonucu veya örnek alma gecikmesi antibiyotik ve sıvı resüsitasyonunu geciktirmemelidir.",
-        "result": {
-          "title": "Kan kültürü",
-          "summary": "Kan kültürü antibiyotik öncesi hızla alınmalıdır; ancak septik şokta kültür sonucu veya örnek alma gecikmesi antibiyotik ve sıvı resüsitasyonunu geciktirmemelidir.",
-          "interpretation": "Kan kültürü antibiyotik öncesi hızla alınmalıdır; ancak septik şokta kültür sonucu veya örnek alma gecikmesi antibiyotik ve sıvı resüsitasyonunu geciktirmemelidir.",
-          "values": [
-            [
-              "Kan kültürü",
-              "Antibiyotik öncesi örnek alınır",
-              "Üreme olmamalı",
-              "Tedaviyi geciktirmez"
-            ]
-          ],
-          "rows": [
-            [
-              "Kan kültürü",
-              "Antibiyotik öncesi örnek alınır",
-              "Üreme olmamalı",
-              "Tedaviyi geciktirmez"
-            ]
-          ]
-        },
         "rows": [
           [
             "Kan kültürü",
-            "Antibiyotik öncesi örnek alınır",
-            "Üreme olmamalı",
-            "Tedaviyi geciktirmez"
+            "Tedavi öncesi alındı",
+            "Üreme olmaması beklenir",
+            "Sonuç beklenmeden tedavi başlanır"
+          ],
+          [
+            "İdrar kültürü",
+            "Kateterle örnek alındı",
+            "Üreme olmaması beklenir",
+            "Odak araştırması"
+          ],
+          [
+            "BOS kültürü",
+            "Stabilizasyon sonrası planlandı",
+            "Üreme olmaması beklenir",
+            "Klinik duruma göre"
           ]
-        ],
-        "postAnswerExplanation": "Kan kültürü antibiyotik öncesi hızla alınmalıdır; ancak septik şokta kültür sonucu veya örnek alma gecikmesi antibiyotik ve sıvı resüsitasyonunu geciktirmemelidir.",
-        "interpretation": "Kan kültürü antibiyotik öncesi hızla alınmalıdır; ancak septik şokta kültür sonucu veya örnek alma gecikmesi antibiyotik ve sıvı resüsitasyonunu geciktirmemelidir.",
-        "category": "microbiology",
-        "testTypeCategory": "microbiology",
-        "explanationAfterAnswer": "Kan kültürü antibiyotik öncesi hızla alınmalıdır; ancak septik şokta kültür sonucu veya örnek alma gecikmesi antibiyotik ve sıvı resüsitasyonunu geciktirmemelidir.",
-        "testValueLabel": "Antibiyotik öncesi alınmalı",
-        "clinicalPriorityLabel": "Antibiyotik öncesi alınmalı",
-        "educationalValue": "Antibiyotik öncesi alınmalı",
-        "scoreImpact": 3,
-        "scoreValue": 3,
-        "clinicalFlowOrder": 42,
-        "flowOrder": 42,
-        "pediatricSafetyValue": "Antibiyotik öncesi alınmalı",
-        "treatmentImpact": "Antibiyotik öncesi alınmalı",
-        "orderRank": 42
+        ]
       },
-      {
-        "id": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi-serial-monitoring",
-        "label": "Seri perfüzyon ve laktat izlemi",
-        "title": "Seri perfüzyon ve laktat izlemi",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Kapiller dolum, nabız kalitesi, mental durum, idrar çıkışı ve laktat düşüşü tedavi yanıtını gösterir; yanıt yoksa vazopressör/yoğun bakım planlanır.",
-        "clinicalMeaning": "Kapiller dolum, nabız kalitesi, mental durum, idrar çıkışı ve laktat düşüşü tedavi yanıtını gösterir; yanıt yoksa vazopressör/yoğun bakım planlanır.",
-        "result": {
-          "title": "Seri perfüzyon ve laktat izlemi",
-          "summary": "Kapiller dolum, nabız kalitesi, mental durum, idrar çıkışı ve laktat düşüşü tedavi yanıtını gösterir; yanıt yoksa vazopressör/yoğun bakım planlanır.",
-          "interpretation": "Kapiller dolum, nabız kalitesi, mental durum, idrar çıkışı ve laktat düşüşü tedavi yanıtını gösterir; yanıt yoksa vazopressör/yoğun bakım planlanır.",
-          "values": [
-            [
-              "Laktat trendi",
-              "Tedaviyle düşmesi beklenir",
-              "<2 mmol/L hedeflenir",
-              "İzlem"
-            ],
-            [
-              "İdrar çıkışı",
-              "Yaşa/kiloya göre izlenir",
-              "Yeterli olmalı",
-              "Organ perfüzyonu"
-            ]
-          ],
-          "rows": [
-            [
-              "Laktat trendi",
-              "Tedaviyle düşmesi beklenir",
-              "<2 mmol/L hedeflenir",
-              "İzlem"
-            ],
-            [
-              "İdrar çıkışı",
-              "Yaşa/kiloya göre izlenir",
-              "Yeterli olmalı",
-              "Organ perfüzyonu"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Laktat trendi",
-            "Tedaviyle düşmesi beklenir",
-            "<2 mmol/L hedeflenir",
-            "İzlem"
-          ],
-          [
-            "İdrar çıkışı",
-            "Yaşa/kiloya göre izlenir",
-            "Yeterli olmalı",
-            "Organ perfüzyonu"
-          ]
+      "rows": [
+        [
+          "Kan kültürü",
+          "Tedavi öncesi alındı",
+          "Üreme olmaması beklenir",
+          "Sonuç beklenmeden tedavi başlanır"
         ],
-        "postAnswerExplanation": "Kapiller dolum, nabız kalitesi, mental durum, idrar çıkışı ve laktat düşüşü tedavi yanıtını gösterir; yanıt yoksa vazopressör/yoğun bakım planlanır.",
-        "interpretation": "Kapiller dolum, nabız kalitesi, mental durum, idrar çıkışı ve laktat düşüşü tedavi yanıtını gösterir; yanıt yoksa vazopressör/yoğun bakım planlanır.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Kapiller dolum, nabız kalitesi, mental durum, idrar çıkışı ve laktat düşüşü tedavi yanıtını gösterir; yanıt yoksa vazopressör/yoğun bakım planlanır.",
-        "testValueLabel": "İzlem için değerli",
-        "clinicalPriorityLabel": "İzlem için değerli",
-        "educationalValue": "İzlem için değerli",
-        "scoreImpact": 3,
-        "scoreValue": 3,
-        "clinicalFlowOrder": 90,
-        "flowOrder": 90,
-        "pediatricSafetyValue": "İzlem için değerli",
-        "treatmentImpact": "İzlem için değerli",
-        "orderRank": 90
+        [
+          "İdrar kültürü",
+          "Kateterle örnek alındı",
+          "Üreme olmaması beklenir",
+          "Odak araştırması"
+        ],
+        [
+          "BOS kültürü",
+          "Stabilizasyon sonrası planlandı",
+          "Üreme olmaması beklenir",
+          "Klinik duruma göre"
+        ]
+      ],
+      "postAnswerExplanation": "Yenidoğan sepsisinde kültürler antibiyotik öncesi alınır; ancak klinik şiddet nedeniyle ampirik antibiyotik kültür sonucunu beklemez.",
+      "interpretation": "Yenidoğan sepsisinde kültürler antibiyotik öncesi alınır; ancak klinik şiddet nedeniyle ampirik antibiyotik kültür sonucunu beklemez.",
+      "category": "microbiology",
+      "testTypeCategory": "microbiology",
+      "explanationAfterAnswer": "Yenidoğan sepsisinde kültürler antibiyotik öncesi alınır; ancak klinik şiddet nedeniyle ampirik antibiyotik kültür sonucunu beklemez.",
+      "clinicalFlowOrder": 40,
+      "flowOrder": 40,
+      "orderRank": 40,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "shuffleOptions": false,
+  "question": "Bu yenidoğanda kültürler alındıktan sonra ilk uygulanması gereken yaklaşım aşağıdakilerden hangisidir?",
+  "questionType": "treatment",
+  "answerTarget": "treatment",
+  "diagnosis": {
+    "correct": "Kültürler alındıktan sonra intravenöz ampisilin ve gentamisin/sefotaksim başlamak",
+    "options": [
+      "Kültürler alındıktan sonra intravenöz ampisilin ve gentamisin/sefotaksim başlamak",
+      "Kültür sonucu çıkana kadar antibiyotik vermeden gözlemlemek",
+      "Oral amoksisilin reçete edip yakın poliklinik kontrolü önermek",
+      "Sadece fototerapi başlatmak",
+      "Tek başına parasetamol verip taburcu etmek"
+    ],
+    "question": "Bu yenidoğanda kültürler alındıktan sonra ilk uygulanması gereken yaklaşım aşağıdakilerden hangisidir?",
+    "explanation": "Yenidoğanda emmede azalma, letarji, hipotermi ve perfüzyon bozukluğu sepsis açısından yüksek risklidir. Kültürler tedavi öncesinde alınmalı, ancak sonuç beklenmeden ampisilin + gentamisin veya üçüncü kuşak sefalosporin içeren ampirik intravenöz antibiyotik ve destek tedavisi başlanmalıdır.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Yenidoğanda hipotermi + beslenme bozulması sepsis kabul edilmelidir; kültürlerden sonra ampirik IV antibiyotik başlanır, sonuç beklenmez."
       }
     ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": {
-      "enabled": false
+    "optionComparison": {
+      "Kültürler alındıktan sonra intravenöz ampisilin ve gentamisin/sefotaksim başlamak": "Doğru seçenektir. Yenidoğanda hipotermi, beslenme bozulması, letarji ve perfüzyon bozukluğu sepsis kabul edilmelidir; kan, idrar ve uygun durumda BOS kültürleri alındıktan sonra ampirik intravenöz antibiyotik geciktirilmez.",
+      "Kültür sonucu çıkana kadar antibiyotik vermeden gözlemlemek": "Kültür sonucunu beklemek yenidoğanda güvenli değildir; sepsis saatler içinde şok, menenjit ve ölümle sonuçlanabilir. Kültürler tedaviden önce alınır ancak tedavi sonucu beklemez.",
+      "Oral amoksisilin reçete edip yakın poliklinik kontrolü önermek": "Oral antibiyotik ve poliklinik izlemi iyi görünen büyük çocuklarda seçilmiş hafif enfeksiyonlarda düşünülebilir. Bu olgu letarjik, hipotermik ve perfüzyonu bozuk yenidoğandır; yatış ve IV tedavi gerekir.",
+      "Sadece fototerapi başlatmak": "Fototerapi indirekt hiperbilirubinemide kullanılır. Bu bebekte ana sorun sarılık değil; beslenme bozulması, hipotermi ve sistemik enfeksiyon bulgularıdır.",
+      "Tek başına parasetamol verip taburcu etmek": "Parasetamol ateş semptomunu azaltabilir fakat yenidoğan sepsisinde enfeksiyon odağını ve bakteriyemiyi tedavi etmez. Üstelik bu olguda ateş yerine hipotermi vardır ve taburculuk risklidir."
     },
-    "hideExamSignal": true,
-    "shuffleOptions": false,
-    "question": "Bu yenidoğanda kültürler alındıktan sonra ilk uygulanması gereken yaklaşım aşağıdakilerden hangisidir?",
-    "questionType": "treatment",
-    "answerTarget": "first_step",
-    "diagnosis": {
-      "correct": "Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi",
-      "options": [
-        "Fototerapi başlanması",
-        "Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi",
-        "Oral beslenmenin artırılması ve eve gönderilmesi",
-        "Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi",
-        "Kültür sonucuna göre antibiyotiği klinik kötüleşme gelişirse başlamak"
+    "answerFeedback": {
+      "summary": "Yenidoğanda emmede azalma, letarji, hipotermi ve perfüzyon bozukluğu sepsis açısından yüksek risklidir. Kültürler tedavi öncesinde alınmalı, ancak sonuç beklenmeden ampisilin + gentamisin veya üçüncü kuşak sefalosporin içeren ampirik intravenöz antibiyotik ve destek tedavisi başlanmalıdır.",
+      "whyCorrect": "Bu olgu iyi görünen ateşli büyük çocuk değildir; hipotermi ve dolaşım bozukluğu yenidoğanda ağır enfeksiyon göstergesi olabilir. Kültür almak tanısal doğrulama sağlar fakat antibiyotiğin geciktirilmesi mortalite riskini artırır.",
+      "rationale": "Yenidoğanda emmede azalma, letarji, hipotermi ve perfüzyon bozukluğu sepsis açısından yüksek risklidir. Kültürler tedavi öncesinde alınmalı, ancak sonuç beklenmeden ampisilin + gentamisin veya üçüncü kuşak sefalosporin içeren ampirik intravenöz antibiyotik ve destek tedavisi başlanmalıdır.",
+      "correctOptionFeedback": "Doğru seçenektir. Yenidoğanda hipotermi, beslenme bozulması, letarji ve perfüzyon bozukluğu sepsis kabul edilmelidir; kan, idrar ve uygun durumda BOS kültürleri alındıktan sonra ampirik intravenöz antibiyotik geciktirilmez.",
+      "keyClues": [
+        "10 günlük yenidoğanda emmede azalma, uykuya eğilim, hipotermi ve idrar azalması vardır.",
+        "Muayenede letarji, zayıf emme, uzamış kapiller dolum ve periferik soğukluk sistemik enfeksiyon/şok riskini gösterir.",
+        "Lökopeni, yüksek CRP/prokalsitonin ve laktat yüksekliği yenidoğan sepsisi için acil ampirik tedavi gereksinimini destekler."
       ],
-      "question": "Bu yenidoğanda kültürler alındıktan sonra ilk uygulanması gereken yaklaşım aşağıdakilerden hangisidir?",
-      "explanation": "Bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum birlikte değerlendirilince temel karar Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü pediatrik sepsis veya septik şok için doğru tanı/tedavi önceliğini belirler.",
+      "evidenceChain": [
+        {
+          "text": "10 günlük yenidoğanda emmede azalma, uykuya eğilim, hipotermi ve idrar azalması vardır.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Muayenede letarji, zayıf emme, uzamış kapiller dolum ve periferik soğukluk sistemik enfeksiyon/şok riskini gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Lökopeni, yüksek CRP/prokalsitonin ve laktat yüksekliği yenidoğan sepsisi için acil ampirik tedavi gereksinimini destekler.",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Yenidoğanda hipotermi + beslenme bozulması sepsis kabul edilmelidir; kültürlerden sonra ampirik IV antibiyotik başlanır, sonuç beklenmez.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "Pediatrik septik şokta oksijen, damar yolu, izotonik sıvı bolusları ve erken antibiyotik ilk saat içinde geciktirilmez."
+          "text": "Yenidoğanda hipotermi + beslenme bozulması sepsis kabul edilmelidir; kültürlerden sonra ampirik IV antibiyotik başlanır, sonuç beklenmez."
+        }
+      ],
+      "clinicalPearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Yenidoğanda hipotermi + beslenme bozulması sepsis kabul edilmelidir; kültürlerden sonra ampirik IV antibiyotik başlanır, sonuç beklenmez."
         }
       ],
       "optionComparison": {
-        "Fototerapi başlanması": "Fototerapi başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Fototerapi başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi": "Bu seçenek doğrudur; çünkü ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "Oral beslenmenin artırılması ve eve gönderilmesi": "Oral beslenmenin artırılması ve eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Oral beslenmenin artırılması ve eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi": "Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Kültür sonucuna göre antibiyotiği klinik kötüleşme gelişirse başlamak": "Bu tetkik tanısal netlik sağlayabilir; ancak pediatrik acilde tedaviyi geciktirip geciktirmeyeceği klinik önceliğe göre değerlendirilir. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Kültür sonucuna göre antibiyotiği klinik kötüleşme gelişirse başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+        "Kültürler alındıktan sonra intravenöz ampisilin ve gentamisin/sefotaksim başlamak": "Doğru seçenektir. Yenidoğanda hipotermi, beslenme bozulması, letarji ve perfüzyon bozukluğu sepsis kabul edilmelidir; kan, idrar ve uygun durumda BOS kültürleri alındıktan sonra ampirik intravenöz antibiyotik geciktirilmez.",
+        "Kültür sonucu çıkana kadar antibiyotik vermeden gözlemlemek": "Kültür sonucunu beklemek yenidoğanda güvenli değildir; sepsis saatler içinde şok, menenjit ve ölümle sonuçlanabilir. Kültürler tedaviden önce alınır ancak tedavi sonucu beklemez.",
+        "Oral amoksisilin reçete edip yakın poliklinik kontrolü önermek": "Oral antibiyotik ve poliklinik izlemi iyi görünen büyük çocuklarda seçilmiş hafif enfeksiyonlarda düşünülebilir. Bu olgu letarjik, hipotermik ve perfüzyonu bozuk yenidoğandır; yatış ve IV tedavi gerekir.",
+        "Sadece fototerapi başlatmak": "Fototerapi indirekt hiperbilirubinemide kullanılır. Bu bebekte ana sorun sarılık değil; beslenme bozulması, hipotermi ve sistemik enfeksiyon bulgularıdır.",
+        "Tek başına parasetamol verip taburcu etmek": "Parasetamol ateş semptomunu azaltabilir fakat yenidoğan sepsisinde enfeksiyon odağını ve bakteriyemiyi tedavi etmez. Üstelik bu olguda ateş yerine hipotermi vardır ve taburculuk risklidir."
       },
-      "answerFeedback": {
-        "summary": "Bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum birlikte değerlendirilince temel karar Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü pediatrik sepsis veya septik şok için doğru tanı/tedavi önceliğini belirler.",
-        "whyCorrect": "Bebekte emmede azalma, letarji ve hipotermi vardır. Kapiller dolum süresi uzamış ve kan basıncı düşüktür. Bu bulgular birlikte değerlendirildiğinde en uygun yanıt Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi olur. Tedavi seçimi, klinik aciliyetin ve altta yatan mekanizmanın aynı anda hedeflenmesine dayanır; destek basamakları gerekirse eş zamanlı yürütülür fakat ana kararı tek başına değiştirmez. Alternatifler bazı destek veya ayırıcı basamaklarda kullanılabilir; ancak verilen acil karar noktasını bu seçenek kadar doğrudan karşılamaz.",
-        "rationale": "Bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum birlikte değerlendirilince temel karar Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü pediatrik sepsis veya septik şok için doğru tanı/tedavi önceliğini belirler.",
-        "correctOptionFeedback": "Bu seçenek doğrudur; çünkü ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "keyClues": [
-          "Bebekte emmede azalma, letarji ve hipotermi vardır.",
-          "Kapiller dolum süresi uzamış ve kan basıncı düşüktür.",
-          "Objektif veri (C-reaktif protein: C-reaktif protein 46 mg/L) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır."
-        ],
-        "evidenceChain": [
-          {
-            "text": "Bebekte emmede azalma, letarji ve hipotermi vardır.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Kapiller dolum süresi uzamış ve kan basıncı düşüktür.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Objektif veri (C-reaktif protein: C-reaktif protein 46 mg/L) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "examPearl": "Pediatrik septik şokta oksijen, damar yolu, izotonik sıvı bolusları ve erken antibiyotik ilk saat içinde geciktirilmez.",
-        "pearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Pediatrik septik şokta oksijen, damar yolu, izotonik sıvı bolusları ve erken antibiyotik ilk saat içinde geciktirilmez."
-          }
-        ],
-        "clinicalPearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Pediatrik septik şokta oksijen, damar yolu, izotonik sıvı bolusları ve erken antibiyotik ilk saat içinde geciktirilmez."
-          }
-        ],
-        "optionComparison": {
-          "Fototerapi başlanması": "Fototerapi başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Fototerapi başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi": "Bu seçenek doğrudur; çünkü ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-          "Oral beslenmenin artırılması ve eve gönderilmesi": "Oral beslenmenin artırılması ve eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Oral beslenmenin artırılması ve eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi": "Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Kültür sonucuna göre antibiyotiği klinik kötüleşme gelişirse başlamak": "Bu tetkik tanısal netlik sağlayabilir; ancak pediatrik acilde tedaviyi geciktirip geciktirmeyeceği klinik önceliğe göre değerlendirilir. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Kültür sonucuna göre antibiyotiği klinik kötüleşme gelişirse başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "whyWrong": {
-          "Fototerapi başlanması": "Fototerapi başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Fototerapi başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Oral beslenmenin artırılması ve eve gönderilmesi": "Oral beslenmenin artırılması ve eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Oral beslenmenin artırılması ve eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi": "Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Kültür sonucuna göre antibiyotiği klinik kötüleşme gelişirse başlamak": "Bu tetkik tanısal netlik sağlayabilir; ancak pediatrik acilde tedaviyi geciktirip geciktirmeyeceği klinik önceliğe göre değerlendirilir. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Kültür sonucuna göre antibiyotiği klinik kötüleşme gelişirse başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Yenidoğan sepsisinde klinik bulgularla ampirik antibiyotik başlanmasını seçebilme",
-        "coreKnowledge": "Pediatrik sepsis veya septik şok sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir."
-      },
-      "whyCorrect": "Bu seçenek doğrudur; çünkü ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "evidenceChain": [
-        {
-          "text": "Bebekte emmede azalma, letarji ve hipotermi vardır.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Kapiller dolum süresi uzamış ve kan basıncı düşüktür.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Objektif veri (C-reaktif protein: C-reaktif protein 46 mg/L) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-          "weight": "medium",
-          "source": "case"
-        }
-      ],
-      "coreKnowledge": "Pediatrik sepsis veya septik şok sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-      "examPearl": "Pediatrik septik şokta oksijen, damar yolu, izotonik sıvı bolusları ve erken antibiyotik ilk saat içinde geciktirilmez.",
       "whyWrong": {
-        "Fototerapi başlanması": "Fototerapi başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Fototerapi başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Oral beslenmenin artırılması ve eve gönderilmesi": "Oral beslenmenin artırılması ve eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Oral beslenmenin artırılması ve eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi": "Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Kültür sonucuna göre antibiyotiği klinik kötüleşme gelişirse başlamak": "Bu tetkik tanısal netlik sağlayabilir; ancak pediatrik acilde tedaviyi geciktirip geciktirmeyeceği klinik önceliğe göre değerlendirilir. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Kültür sonucuna göre antibiyotiği klinik kötüleşme gelişirse başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-      }
+        "Kültür sonucu çıkana kadar antibiyotik vermeden gözlemlemek": "Kültür sonucunu beklemek yenidoğanda güvenli değildir; sepsis saatler içinde şok, menenjit ve ölümle sonuçlanabilir. Kültürler tedaviden önce alınır ancak tedavi sonucu beklemez.",
+        "Oral amoksisilin reçete edip yakın poliklinik kontrolü önermek": "Oral antibiyotik ve poliklinik izlemi iyi görünen büyük çocuklarda seçilmiş hafif enfeksiyonlarda düşünülebilir. Bu olgu letarjik, hipotermik ve perfüzyonu bozuk yenidoğandır; yatış ve IV tedavi gerekir.",
+        "Sadece fototerapi başlatmak": "Fototerapi indirekt hiperbilirubinemide kullanılır. Bu bebekte ana sorun sarılık değil; beslenme bozulması, hipotermi ve sistemik enfeksiyon bulgularıdır.",
+        "Tek başına parasetamol verip taburcu etmek": "Parasetamol ateş semptomunu azaltabilir fakat yenidoğan sepsisinde enfeksiyon odağını ve bakteriyemiyi tedavi etmez. Üstelik bu olguda ateş yerine hipotermi vardır ve taburculuk risklidir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Yenidoğan sepsisinde kültürler alındıktan sonra ampirik intravenöz antibiyotik tedavisinin geciktirilmemesi gerektiğini ayırt edebilme.",
+      "coreKnowledge": "Yenidoğan sepsisi ateş kadar hipotermi, emme azalması, letarji ve perfüzyon bozukluğu ile de gelebilir. Kültürler alınır, fakat ampirik IV antibiyotik ve destek tedavisi klinik şiddet nedeniyle geciktirilmez."
     },
-    "difficultyTag": "Acil",
-    "coreKnowledge": "Pediatrik sepsis veya septik şok sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-    "examPearl": "Pediatrik septik şokta oksijen, damar yolu, izotonik sıvı bolusları ve erken antibiyotik ilk saat içinde geciktirilmez.",
-    "whyCorrect": "Bu seçenek doğrudur; çünkü ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-    "optionComparison": {
-      "Fototerapi başlanması": "Fototerapi başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Fototerapi başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Ampisilin ve gentamisin içeren intravenöz ampirik antibiyotik tedavisi ile destek tedavisi": "Bu seçenek doğrudur; çünkü ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "Oral beslenmenin artırılması ve eve gönderilmesi": "Oral beslenmenin artırılması ve eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Oral beslenmenin artırılması ve eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi": "Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Kültür sonucuna göre antibiyotiği klinik kötüleşme gelişirse başlamak": "Bu tetkik tanısal netlik sağlayabilir; ancak pediatrik acilde tedaviyi geciktirip geciktirmeyeceği klinik önceliğe göre değerlendirilir. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Kültür sonucuna göre antibiyotiği klinik kötüleşme gelişirse başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-    },
+    "whyCorrect": "Doğru seçenektir. Yenidoğanda hipotermi, beslenme bozulması, letarji ve perfüzyon bozukluğu sepsis kabul edilmelidir; kan, idrar ve uygun durumda BOS kültürleri alındıktan sonra ampirik intravenöz antibiyotik geciktirilmez.",
     "evidenceChain": [
       {
-        "text": "Bebekte emmede azalma, letarji ve hipotermi vardır.",
+        "text": "10 günlük yenidoğanda emmede azalma, uykuya eğilim, hipotermi ve idrar azalması vardır.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Kapiller dolum süresi uzamış ve kan basıncı düşüktür.",
+        "text": "Muayenede letarji, zayıf emme, uzamış kapiller dolum ve periferik soğukluk sistemik enfeksiyon/şok riskini gösterir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Objektif veri (C-reaktif protein: C-reaktif protein 46 mg/L) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-        "weight": "medium",
+        "text": "Lökopeni, yüksek CRP/prokalsitonin ve laktat yüksekliği yenidoğan sepsisi için acil ampirik tedavi gereksinimini destekler.",
+        "weight": "high",
         "source": "case"
       }
     ],
+    "coreKnowledge": "Yenidoğan sepsisi ateş kadar hipotermi, emme azalması, letarji ve perfüzyon bozukluğu ile de gelebilir. Kültürler alınır, fakat ampirik IV antibiyotik ve destek tedavisi klinik şiddet nedeniyle geciktirilmez.",
+    "examPearl": "Yenidoğanda hipotermi + beslenme bozulması sepsis kabul edilmelidir; kültürlerden sonra ampirik IV antibiyotik başlanır, sonuç beklenmez.",
     "whyWrong": {
-      "Fototerapi başlanması": "Fototerapi başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Fototerapi başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Oral beslenmenin artırılması ve eve gönderilmesi": "Oral beslenmenin artırılması ve eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Oral beslenmenin artırılması ve eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi": "Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Ateş olmadığı için enfeksiyon tedavisinin ertelenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Kültür sonucuna göre antibiyotiği klinik kötüleşme gelişirse başlamak": "Bu tetkik tanısal netlik sağlayabilir; ancak pediatrik acilde tedaviyi geciktirip geciktirmeyeceği klinik önceliğe göre değerlendirilir. Ancak bu vakada ateş/hipotermi, toksik görünüm, taşikardi, hipotansiyon ve uzamış kapiller dolum pediatrik sepsis veya septik şok lehinedir; bu nedenle Kültür sonucuna göre antibiyotiği klinik kötüleşme gelişirse başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-    },
-    "aiMeta": {
-      "generatedAt": "manual-v396-pediatrics-ultra-refined",
-      "generator": "manual-editorial-pediatrics-case-refinement",
-      "schemaVersion": "clinical-standard-v396",
-      "provider": "manual-editorial",
-      "validationWarnings": []
+      "Kültür sonucu çıkana kadar antibiyotik vermeden gözlemlemek": "Kültür sonucunu beklemek yenidoğanda güvenli değildir; sepsis saatler içinde şok, menenjit ve ölümle sonuçlanabilir. Kültürler tedaviden önce alınır ancak tedavi sonucu beklemez.",
+      "Oral amoksisilin reçete edip yakın poliklinik kontrolü önermek": "Oral antibiyotik ve poliklinik izlemi iyi görünen büyük çocuklarda seçilmiş hafif enfeksiyonlarda düşünülebilir. Bu olgu letarjik, hipotermik ve perfüzyonu bozuk yenidoğandır; yatış ve IV tedavi gerekir.",
+      "Sadece fototerapi başlatmak": "Fototerapi indirekt hiperbilirubinemide kullanılır. Bu bebekte ana sorun sarılık değil; beslenme bozulması, hipotermi ve sistemik enfeksiyon bulgularıdır.",
+      "Tek başına parasetamol verip taburcu etmek": "Parasetamol ateş semptomunu azaltabilir fakat yenidoğan sepsisinde enfeksiyon odağını ve bakteriyemiyi tedavi etmez. Üstelik bu olguda ateş yerine hipotermi vardır ve taburculuk risklidir."
     }
   },
+  "difficultyTag": "Acil",
+  "coreKnowledge": "Yenidoğan sepsisi ateş kadar hipotermi, emme azalması, letarji ve perfüzyon bozukluğu ile de gelebilir. Kültürler alınır, fakat ampirik IV antibiyotik ve destek tedavisi klinik şiddet nedeniyle geciktirilmez.",
+  "examPearl": "Yenidoğanda hipotermi + beslenme bozulması sepsis kabul edilmelidir; kültürlerden sonra ampirik IV antibiyotik başlanır, sonuç beklenmez.",
+  "whyCorrect": "Doğru seçenektir. Yenidoğanda hipotermi, beslenme bozulması, letarji ve perfüzyon bozukluğu sepsis kabul edilmelidir; kan, idrar ve uygun durumda BOS kültürleri alındıktan sonra ampirik intravenöz antibiyotik geciktirilmez.",
+  "optionComparison": {
+    "Kültürler alındıktan sonra intravenöz ampisilin ve gentamisin/sefotaksim başlamak": "Doğru seçenektir. Yenidoğanda hipotermi, beslenme bozulması, letarji ve perfüzyon bozukluğu sepsis kabul edilmelidir; kan, idrar ve uygun durumda BOS kültürleri alındıktan sonra ampirik intravenöz antibiyotik geciktirilmez.",
+    "Kültür sonucu çıkana kadar antibiyotik vermeden gözlemlemek": "Kültür sonucunu beklemek yenidoğanda güvenli değildir; sepsis saatler içinde şok, menenjit ve ölümle sonuçlanabilir. Kültürler tedaviden önce alınır ancak tedavi sonucu beklemez.",
+    "Oral amoksisilin reçete edip yakın poliklinik kontrolü önermek": "Oral antibiyotik ve poliklinik izlemi iyi görünen büyük çocuklarda seçilmiş hafif enfeksiyonlarda düşünülebilir. Bu olgu letarjik, hipotermik ve perfüzyonu bozuk yenidoğandır; yatış ve IV tedavi gerekir.",
+    "Sadece fototerapi başlatmak": "Fototerapi indirekt hiperbilirubinemide kullanılır. Bu bebekte ana sorun sarılık değil; beslenme bozulması, hipotermi ve sistemik enfeksiyon bulgularıdır.",
+    "Tek başına parasetamol verip taburcu etmek": "Parasetamol ateş semptomunu azaltabilir fakat yenidoğan sepsisinde enfeksiyon odağını ve bakteriyemiyi tedavi etmez. Üstelik bu olguda ateş yerine hipotermi vardır ve taburculuk risklidir."
+  },
+  "evidenceChain": [
+    {
+      "text": "10 günlük yenidoğanda emmede azalma, uykuya eğilim, hipotermi ve idrar azalması vardır.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Muayenede letarji, zayıf emme, uzamış kapiller dolum ve periferik soğukluk sistemik enfeksiyon/şok riskini gösterir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Lökopeni, yüksek CRP/prokalsitonin ve laktat yüksekliği yenidoğan sepsisi için acil ampirik tedavi gereksinimini destekler.",
+      "weight": "high",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Kültür sonucu çıkana kadar antibiyotik vermeden gözlemlemek": "Kültür sonucunu beklemek yenidoğanda güvenli değildir; sepsis saatler içinde şok, menenjit ve ölümle sonuçlanabilir. Kültürler tedaviden önce alınır ancak tedavi sonucu beklemez.",
+    "Oral amoksisilin reçete edip yakın poliklinik kontrolü önermek": "Oral antibiyotik ve poliklinik izlemi iyi görünen büyük çocuklarda seçilmiş hafif enfeksiyonlarda düşünülebilir. Bu olgu letarjik, hipotermik ve perfüzyonu bozuk yenidoğandır; yatış ve IV tedavi gerekir.",
+    "Sadece fototerapi başlatmak": "Fototerapi indirekt hiperbilirubinemide kullanılır. Bu bebekte ana sorun sarılık değil; beslenme bozulması, hipotermi ve sistemik enfeksiyon bulgularıdır.",
+    "Tek başına parasetamol verip taburcu etmek": "Parasetamol ateş semptomunu azaltabilir fakat yenidoğan sepsisinde enfeksiyon odağını ve bakteriyemiyi tedavi etmez. Üstelik bu olguda ateş yerine hipotermi vardır ve taburculuk risklidir."
+  },
+  "aiMeta": {
+    "generatedAt": "manual-v397-pediatrics-seventh-batch-ultra-refined",
+    "generator": "manual-editorial-pediatrics-case-refinement",
+    "schemaVersion": "clinical-standard-v397",
+    "provider": "manual-editorial",
+    "validationWarnings": []
+  }
+},
   {
-    "id": "v181-new-162-yenidoganda-kusma-ve-sok",
-    "branchId": "pediatrics",
-    "caseType": "standard",
-    "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
-    "title": "Yenidoğanda kusma ve şok",
-    "difficulty": "Acil",
-    "clinicalFocus": "Yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı bulgularını birleştirerek adrenal kriz önceliğini belirleme.",
-    "learningTarget": "Tuz kaybettiren konjenital adrenal hiperplazide sıvı, dekstroz ve stres doz hidrokortizonun ileri hormon sonucu beklenmeden başlanması gerektiğini açıklama.",
-    "demographics": "18 günlük kız bebek",
-    "setting": "Çocuk acil servis",
-    "chiefComplaint": "Bebek, tekrarlayan kusma, beslenememe ve halsizlik nedeniyle acile getiriliyor.",
-    "stem": "Son iki gündür kusmalarının arttığı, emmesinin azaldığı ve kilo alamadığı öğreniliyor. Aile, dış genital görünümün doğumdan beri farklı olduğunu belirtmektedir.",
-    "patientIntro": {
-      "profile": "18 günlük kız bebek, çocuk acil servisinde değerlendiriliyor.",
-      "presentation": "Bebek, tekrarlayan kusma, beslenememe ve halsizlik nedeniyle acile getiriliyor.",
-      "historySummary": "Son iki gündür kusmalarının arttığı, emmesinin azaldığı ve kilo alamadığı öğreniliyor. Aile, dış genital görünümün doğumdan beri farklı olduğunu belirtmektedir."
-    },
-    "vitals": {
-      "TA": "56/32 mmHg",
-      "Nabız": "182/dk",
-      "Solunum": "18/dk",
-      "SpO2": "%97, oda havasında",
-      "Ateş": "36.7 °C",
-      "Şok indeksi": "3.25 pediatrik bağlamda yorumlanmalı"
-    },
-    "exam": [
-      "Bebek letarjik ve dehidrate görünümdedir.",
-      "Dış genital muayenede klitoromegali ve labial füzyon izlenir."
-    ],
-    "investigations": [
-      {
-        "id": "v181-new-162-yenidoganda-kusma-ve-sok-newborn-shock-assessment",
-        "label": "Yenidoğan dolaşım ve dehidratasyon değerlendirmesi",
-        "title": "Yenidoğan dolaşım ve dehidratasyon değerlendirmesi",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Yenidoğanda kusma, kilo kaybı/dehidratasyon, hipotansiyon veya ambigus genital yapı adrenal kriz açısından acil uyarıdır; sıvı, dekstroz ve stres doz steroid klinik ciddiyete göre geciktirilmez.",
-        "clinicalMeaning": "Yenidoğanda kusma, kilo kaybı/dehidratasyon, hipotansiyon veya ambigus genital yapı adrenal kriz açısından acil uyarıdır; sıvı, dekstroz ve stres doz steroid klinik ciddiyete göre geciktirilmez.",
-        "result": {
-          "title": "Yenidoğan dolaşım ve dehidratasyon değerlendirmesi",
-          "summary": "Yenidoğanda kusma, kilo kaybı/dehidratasyon, hipotansiyon veya ambigus genital yapı adrenal kriz açısından acil uyarıdır; sıvı, dekstroz ve stres doz steroid klinik ciddiyete göre geciktirilmez.",
-          "interpretation": "Yenidoğanda kusma, kilo kaybı/dehidratasyon, hipotansiyon veya ambigus genital yapı adrenal kriz açısından acil uyarıdır; sıvı, dekstroz ve stres doz steroid klinik ciddiyete göre geciktirilmez.",
-          "values": [
-            [
-              "Dolaşım",
-              "Şok/hipotansiyon açısından değerlendirilir",
-              "İyi perfüzyon",
-              "Acil"
-            ],
-            [
-              "Hidrasyon",
-              "Dehidratasyon/kusma",
-              "Normal hidrasyon",
-              "Tedavi önceliği"
-            ],
-            [
-              "Genital yapı",
-              "Ambigus yapı varsa kaydedilir",
-              "Yaşa/cinsiyete uygun",
-              "Hedefli bulgu"
-            ]
-          ],
-          "rows": [
-            [
-              "Dolaşım",
-              "Şok/hipotansiyon açısından değerlendirilir",
-              "İyi perfüzyon",
-              "Acil"
-            ],
-            [
-              "Hidrasyon",
-              "Dehidratasyon/kusma",
-              "Normal hidrasyon",
-              "Tedavi önceliği"
-            ],
-            [
-              "Genital yapı",
-              "Ambigus yapı varsa kaydedilir",
-              "Yaşa/cinsiyete uygun",
-              "Hedefli bulgu"
-            ]
-          ]
-        },
-        "rows": [
+  "id": "v181-new-162-yenidoganda-kusma-ve-sok",
+  "branchId": "pediatrics",
+  "caseType": "standard",
+  "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
+  "title": "Yenidoğanda kusma ve şok",
+  "difficulty": "Acil",
+  "clinicalFocus": "Yenidoğanda kusma, hipovolemik şok, hiponatremi-hiperkalemi-hipoglisemi ve genital ipuçlarını birlikte değerlendirerek tuz kaybettiren adrenal kriz tedavisini seçme.",
+  "learningTarget": "Konjenital adrenal hiperplaziye bağlı tuz kaybettiren adrenal krizde acil izotonik sıvı, dekstroz ve intravenöz hidrokortizon tedavisini başlatabilme.",
+  "demographics": "18 günlük kız bebek",
+  "setting": "Çocuk acil servis",
+  "chiefComplaint": "Bebek, tekrarlayan kusma, beslenememe ve halsizlik nedeniyle acile getiriliyor.",
+  "stem": "Aile, 18 günlük bebeğin son iki gündür emdikten kısa süre sonra tekrar tekrar kustuğunu ve bugün neredeyse hiç emmediğini belirtir. Son 24 saatte bez sayısı azalmış, bebek giderek daha halsiz ve soluk görünmeye başlamıştır. Doğumdan beri dış genital görünümün aileye farklı geldiği, ancak daha önce acil değerlendirme gerektirecek bir sorun yaşanmadığı öğrenilir. Ateş, kanlı dışkı veya safralı kusma tariflenmemektedir. Evde kusma için verilen küçük miktarda sıvıları da tolere edememesi üzerine acile başvurulmuştur.",
+  "patientIntro": {
+    "profile": "18 günlük kız bebek, çocuk acil servisinde değerlendiriliyor.",
+    "presentation": "Bebek, tekrarlayan kusma, beslenememe ve halsizlik nedeniyle acile getiriliyor.",
+    "historySummary": "Aile, 18 günlük bebeğin son iki gündür emdikten kısa süre sonra tekrar tekrar kustuğunu ve bugün neredeyse hiç emmediğini belirtir. Son 24 saatte bez sayısı azalmış, bebek giderek daha halsiz ve soluk görünmeye başlamıştır. Doğumdan beri dış genital görünümün aileye farklı geldiği, ancak daha önce acil değerlendirme gerektirecek bir sorun yaşanmadığı öğrenilir. Ateş, kanlı dışkı veya safralı kusma tariflenmemektedir. Evde kusma için verilen küçük miktarda sıvıları da tolere edememesi üzerine acile başvurulmuştur."
+  },
+  "vitals": {
+    "TA": "54/30 mmHg",
+    "Nabız": "190/dk",
+    "Solunum": "58/dk",
+    "SpO2": "%97, oda havasında",
+    "Ateş": "36.2 °C",
+    "Şok indeksi": "3.52 - ağır dolaşım bozukluğu ile uyumlu"
+  },
+  "exam": [
+    "Bebek letarjik ve belirgin dehidrate görünümdedir; ön fontanel çöküktür.",
+    "Kapiller dolum 5 saniyedir, periferik nabızlar zayıftır.",
+    "Dış genital muayenede klitoromegali ve labial füzyon izlenir; karında belirgin distansiyon veya periton irritasyonu yoktur."
+  ],
+  "investigations": [
+    {
+      "id": "adrenal-kriz-glukoz",
+      "label": "Kapiller kan glukozu",
+      "title": "Kapiller kan glukozu",
+      "type": "bedside",
+      "priority": "essential",
+      "subtype": "Yatak başı test",
+      "summary": "Adrenal krizde kortizol eksikliği hipoglisemiye yol açabilir; düşük glukoz acil dekstroz gereksinimini gösterir.",
+      "clinicalMeaning": "Adrenal krizde kortizol eksikliği hipoglisemiye yol açabilir; düşük glukoz acil dekstroz gereksinimini gösterir.",
+      "result": {
+        "title": "Kapiller kan glukozu",
+        "summary": "Adrenal krizde kortizol eksikliği hipoglisemiye yol açabilir; düşük glukoz acil dekstroz gereksinimini gösterir.",
+        "interpretation": "Adrenal krizde kortizol eksikliği hipoglisemiye yol açabilir; düşük glukoz acil dekstroz gereksinimini gösterir.",
+        "values": [
           [
-            "Dolaşım",
-            "Şok/hipotansiyon açısından değerlendirilir",
-            "İyi perfüzyon",
-            "Acil"
-          ],
-          [
-            "Hidrasyon",
-            "Dehidratasyon/kusma",
-            "Normal hidrasyon",
-            "Tedavi önceliği"
-          ],
-          [
-            "Genital yapı",
-            "Ambigus yapı varsa kaydedilir",
-            "Yaşa/cinsiyete uygun",
-            "Hedefli bulgu"
+            "Glukoz",
+            "38 mg/dL",
+            "50–110 mg/dL",
+            "Hipoglisemi"
           ]
         ],
-        "postAnswerExplanation": "Yenidoğanda kusma, kilo kaybı/dehidratasyon, hipotansiyon veya ambigus genital yapı adrenal kriz açısından acil uyarıdır; sıvı, dekstroz ve stres doz steroid klinik ciddiyete göre geciktirilmez.",
-        "interpretation": "Yenidoğanda kusma, kilo kaybı/dehidratasyon, hipotansiyon veya ambigus genital yapı adrenal kriz açısından acil uyarıdır; sıvı, dekstroz ve stres doz steroid klinik ciddiyete göre geciktirilmez.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Yenidoğanda kusma, kilo kaybı/dehidratasyon, hipotansiyon veya ambigus genital yapı adrenal kriz açısından acil uyarıdır; sıvı, dekstroz ve stres doz steroid klinik ciddiyete göre geciktirilmez.",
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme",
-        "orderRank": 10
-      },
-      {
-        "id": "v181-new-162-yenidoganda-kusma-ve-sok-glucose-na-k",
-        "label": "Glukoz, sodyum ve potasyum",
-        "title": "Glukoz, sodyum ve potasyum",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Hipoglisemi, hiponatremi ve hiperkalemi tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz paternini destekler; tedavi güvenliğini doğrudan belirler.",
-        "clinicalMeaning": "Hipoglisemi, hiponatremi ve hiperkalemi tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz paternini destekler; tedavi güvenliğini doğrudan belirler.",
-        "result": {
-          "title": "Glukoz, sodyum ve potasyum",
-          "summary": "Hipoglisemi, hiponatremi ve hiperkalemi tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz paternini destekler; tedavi güvenliğini doğrudan belirler.",
-          "interpretation": "Hipoglisemi, hiponatremi ve hiperkalemi tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz paternini destekler; tedavi güvenliğini doğrudan belirler.",
-          "values": [
-            [
-              "Glukoz",
-              "Düşük olabilir",
-              "Normoglisemi",
-              "Acil güvenlik"
-            ],
-            [
-              "Sodyum",
-              "124 mmol/L",
-              "135–145 mmol/L",
-              "Düşük"
-            ],
-            [
-              "Potasyum",
-              "6.3 mmol/L",
-              "3.5–5.0 mmol/L",
-              "Yüksek"
-            ]
-          ],
-          "rows": [
-            [
-              "Glukoz",
-              "Düşük olabilir",
-              "Normoglisemi",
-              "Acil güvenlik"
-            ],
-            [
-              "Sodyum",
-              "124 mmol/L",
-              "135–145 mmol/L",
-              "Düşük"
-            ],
-            [
-              "Potasyum",
-              "6.3 mmol/L",
-              "3.5–5.0 mmol/L",
-              "Yüksek"
-            ]
-          ]
-        },
         "rows": [
           [
             "Glukoz",
-            "Düşük olabilir",
-            "Normoglisemi",
-            "Acil güvenlik"
-          ],
+            "38 mg/dL",
+            "50–110 mg/dL",
+            "Hipoglisemi"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Glukoz",
+          "38 mg/dL",
+          "50–110 mg/dL",
+          "Hipoglisemi"
+        ]
+      ],
+      "postAnswerExplanation": "Adrenal krizde kortizol eksikliği hipoglisemiye yol açabilir; düşük glukoz acil dekstroz gereksinimini gösterir.",
+      "interpretation": "Adrenal krizde kortizol eksikliği hipoglisemiye yol açabilir; düşük glukoz acil dekstroz gereksinimini gösterir.",
+      "category": "targetedInvestigation",
+      "testTypeCategory": "targetedInvestigation",
+      "explanationAfterAnswer": "Adrenal krizde kortizol eksikliği hipoglisemiye yol açabilir; düşük glukoz acil dekstroz gereksinimini gösterir.",
+      "clinicalFlowOrder": 10,
+      "flowOrder": 10,
+      "orderRank": 10,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    },
+    {
+      "id": "adrenal-kriz-elektrolit",
+      "label": "Serum elektrolitleri ve böbrek fonksiyonu",
+      "title": "Serum elektrolitleri ve böbrek fonksiyonu",
+      "type": "lab",
+      "priority": "essential",
+      "subtype": "Laboratuvar",
+      "summary": "Hiponatremi ve hiperkalemi birlikteliği yenidoğanda tuz kaybettiren adrenal kriz için yüksek değerli objektif patern oluşturur.",
+      "clinicalMeaning": "Hiponatremi ve hiperkalemi birlikteliği yenidoğanda tuz kaybettiren adrenal kriz için yüksek değerli objektif patern oluşturur.",
+      "result": {
+        "title": "Serum elektrolitleri ve böbrek fonksiyonu",
+        "summary": "Hiponatremi ve hiperkalemi birlikteliği yenidoğanda tuz kaybettiren adrenal kriz için yüksek değerli objektif patern oluşturur.",
+        "interpretation": "Hiponatremi ve hiperkalemi birlikteliği yenidoğanda tuz kaybettiren adrenal kriz için yüksek değerli objektif patern oluşturur.",
+        "values": [
           [
             "Sodyum",
-            "124 mmol/L",
+            "119 mmol/L",
             "135–145 mmol/L",
-            "Düşük"
+            "Ağır hiponatremi"
           ],
           [
             "Potasyum",
-            "6.3 mmol/L",
-            "3.5–5.0 mmol/L",
-            "Yüksek"
+            "7.0 mmol/L",
+            "3.5–5.5 mmol/L",
+            "Ağır hiperkalemi"
+          ],
+          [
+            "Kreatinin",
+            "0.8 mg/dL",
+            "0.2–0.5 mg/dL",
+            "Dehidratasyonla artmış"
+          ],
+          [
+            "Üre",
+            "52 mg/dL",
+            "5–18 mg/dL",
+            "Prerenal etkilenme"
           ]
         ],
-        "postAnswerExplanation": "Hipoglisemi, hiponatremi ve hiperkalemi tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz paternini destekler; tedavi güvenliğini doğrudan belirler.",
-        "interpretation": "Hipoglisemi, hiponatremi ve hiperkalemi tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz paternini destekler; tedavi güvenliğini doğrudan belirler.",
-        "category": "metabolic",
-        "testTypeCategory": "metabolic",
-        "explanationAfterAnswer": "Hipoglisemi, hiponatremi ve hiperkalemi tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz paternini destekler; tedavi güvenliğini doğrudan belirler.",
-        "testValueLabel": "Kritik tedavi belirler",
-        "clinicalPriorityLabel": "Kritik tedavi belirler",
-        "educationalValue": "Kritik tedavi belirler",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "clinicalFlowOrder": 20,
-        "flowOrder": 20,
-        "pediatricSafetyValue": "Kritik tedavi belirler",
-        "treatmentImpact": "Kritik tedavi belirler",
-        "orderRank": 20
-      },
-      {
-        "id": "v181-new-162-yenidoganda-kusma-ve-sok-blood-gas-renin",
-        "label": "Kan gazı ve mineralokortikoid etkilenim",
-        "title": "Kan gazı ve mineralokortikoid etkilenim",
-        "type": "bloodGas",
-        "priority": "useful",
-        "subtype": "",
-        "summary": "Asidoz, hiperkalemiye bağlı EKG riski ve dehidratasyon ciddiyeti izlenir; ileri hormon testleri tedaviyi geciktirmemelidir.",
-        "clinicalMeaning": "Asidoz, hiperkalemiye bağlı EKG riski ve dehidratasyon ciddiyeti izlenir; ileri hormon testleri tedaviyi geciktirmemelidir.",
-        "result": {
-          "title": "Kan gazı ve mineralokortikoid etkilenim",
-          "summary": "Asidoz, hiperkalemiye bağlı EKG riski ve dehidratasyon ciddiyeti izlenir; ileri hormon testleri tedaviyi geciktirmemelidir.",
-          "interpretation": "Asidoz, hiperkalemiye bağlı EKG riski ve dehidratasyon ciddiyeti izlenir; ileri hormon testleri tedaviyi geciktirmemelidir.",
-          "values": [
-            [
-              "pH/HCO₃",
-              "Asidoz açısından değerlendirilir",
-              "Normal",
-              "İzlem"
-            ],
-            [
-              "EKG riski",
-              "Hiperkalemi varsa değerlendirilir",
-              "Normal ritim",
-              "Tedavi güvenliği"
-            ]
-          ],
-          "rows": [
-            [
-              "pH/HCO₃",
-              "Asidoz açısından değerlendirilir",
-              "Normal",
-              "İzlem"
-            ],
-            [
-              "EKG riski",
-              "Hiperkalemi varsa değerlendirilir",
-              "Normal ritim",
-              "Tedavi güvenliği"
-            ]
-          ]
-        },
         "rows": [
           [
-            "pH/HCO₃",
-            "Asidoz açısından değerlendirilir",
-            "Normal",
-            "İzlem"
+            "Sodyum",
+            "119 mmol/L",
+            "135–145 mmol/L",
+            "Ağır hiponatremi"
           ],
           [
-            "EKG riski",
-            "Hiperkalemi varsa değerlendirilir",
-            "Normal ritim",
-            "Tedavi güvenliği"
+            "Potasyum",
+            "7.0 mmol/L",
+            "3.5–5.5 mmol/L",
+            "Ağır hiperkalemi"
+          ],
+          [
+            "Kreatinin",
+            "0.8 mg/dL",
+            "0.2–0.5 mg/dL",
+            "Dehidratasyonla artmış"
+          ],
+          [
+            "Üre",
+            "52 mg/dL",
+            "5–18 mg/dL",
+            "Prerenal etkilenme"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Sodyum",
+          "119 mmol/L",
+          "135–145 mmol/L",
+          "Ağır hiponatremi"
+        ],
+        [
+          "Potasyum",
+          "7.0 mmol/L",
+          "3.5–5.5 mmol/L",
+          "Ağır hiperkalemi"
+        ],
+        [
+          "Kreatinin",
+          "0.8 mg/dL",
+          "0.2–0.5 mg/dL",
+          "Dehidratasyonla artmış"
+        ],
+        [
+          "Üre",
+          "52 mg/dL",
+          "5–18 mg/dL",
+          "Prerenal etkilenme"
+        ]
+      ],
+      "postAnswerExplanation": "Hiponatremi ve hiperkalemi birlikteliği yenidoğanda tuz kaybettiren adrenal kriz için yüksek değerli objektif patern oluşturur.",
+      "interpretation": "Hiponatremi ve hiperkalemi birlikteliği yenidoğanda tuz kaybettiren adrenal kriz için yüksek değerli objektif patern oluşturur.",
+      "category": "targetedInvestigation",
+      "testTypeCategory": "targetedInvestigation",
+      "explanationAfterAnswer": "Hiponatremi ve hiperkalemi birlikteliği yenidoğanda tuz kaybettiren adrenal kriz için yüksek değerli objektif patern oluşturur.",
+      "clinicalFlowOrder": 20,
+      "flowOrder": 20,
+      "orderRank": 20,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    },
+    {
+      "id": "adrenal-kriz-kan-gazi",
+      "label": "Kan gazı",
+      "title": "Kan gazı",
+      "type": "lab",
+      "priority": "essential",
+      "subtype": "Kan gazı",
+      "summary": "Metabolik asidoz, hipovolemi ve adrenal krizle ilişkili dolaşım bozukluğunu destekler.",
+      "clinicalMeaning": "Metabolik asidoz, hipovolemi ve adrenal krizle ilişkili dolaşım bozukluğunu destekler.",
+      "result": {
+        "title": "Kan gazı",
+        "summary": "Metabolik asidoz, hipovolemi ve adrenal krizle ilişkili dolaşım bozukluğunu destekler.",
+        "interpretation": "Metabolik asidoz, hipovolemi ve adrenal krizle ilişkili dolaşım bozukluğunu destekler.",
+        "values": [
+          [
+            "pH",
+            "7.24",
+            "7.35–7.45",
+            "Asidemi"
+          ],
+          [
+            "HCO₃",
+            "12 mmol/L",
+            "18–24 mmol/L",
+            "Metabolik asidoz"
           ]
         ],
-        "postAnswerExplanation": "Asidoz, hiperkalemiye bağlı EKG riski ve dehidratasyon ciddiyeti izlenir; ileri hormon testleri tedaviyi geciktirmemelidir.",
-        "interpretation": "Asidoz, hiperkalemiye bağlı EKG riski ve dehidratasyon ciddiyeti izlenir; ileri hormon testleri tedaviyi geciktirmemelidir.",
-        "category": "respiratory",
-        "testTypeCategory": "respiratory",
-        "explanationAfterAnswer": "Asidoz, hiperkalemiye bağlı EKG riski ve dehidratasyon ciddiyeti izlenir; ileri hormon testleri tedaviyi geciktirmemelidir.",
-        "testValueLabel": "Acil güvenlik testi",
-        "clinicalPriorityLabel": "Acil güvenlik testi",
-        "educationalValue": "Acil güvenlik testi",
-        "scoreImpact": 3,
-        "scoreValue": 3,
-        "clinicalFlowOrder": 28,
-        "flowOrder": 28,
-        "pediatricSafetyValue": "Acil güvenlik testi",
-        "treatmentImpact": "Acil güvenlik testi",
-        "orderRank": 28
-      },
-      {
-        "id": "v181-new-162-yenidoganda-kusma-ve-sok-17-ohp",
-        "label": "17-hidroksiprogesteron",
-        "title": "17-hidroksiprogesteron",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "17-hidroksiprogesteron yüksekliği 21-hidroksilaz eksikliğini destekler; adrenal kriz şüphesinde sonuç beklenmeden sıvı, dekstroz ve hidrokortizon başlanır.",
-        "clinicalMeaning": "17-hidroksiprogesteron yüksekliği 21-hidroksilaz eksikliğini destekler; adrenal kriz şüphesinde sonuç beklenmeden sıvı, dekstroz ve hidrokortizon başlanır.",
-        "result": {
-          "title": "17-hidroksiprogesteron",
-          "summary": "17-hidroksiprogesteron yüksekliği 21-hidroksilaz eksikliğini destekler; adrenal kriz şüphesinde sonuç beklenmeden sıvı, dekstroz ve hidrokortizon başlanır.",
-          "interpretation": "17-hidroksiprogesteron yüksekliği 21-hidroksilaz eksikliğini destekler; adrenal kriz şüphesinde sonuç beklenmeden sıvı, dekstroz ve hidrokortizon başlanır.",
-          "values": [
-            [
-              "17-OH progesteron",
-              "Belirgin yüksek",
-              "Yaşa göre düşük/normal",
-              "Yüksek"
-            ]
+        "rows": [
+          [
+            "pH",
+            "7.24",
+            "7.35–7.45",
+            "Asidemi"
           ],
-          "rows": [
-            [
-              "17-OH progesteron",
-              "Belirgin yüksek",
-              "Yaşa göre düşük/normal",
-              "Yüksek"
-            ]
+          [
+            "HCO₃",
+            "12 mmol/L",
+            "18–24 mmol/L",
+            "Metabolik asidoz"
           ]
-        },
+        ]
+      },
+      "rows": [
+        [
+          "pH",
+          "7.24",
+          "7.35–7.45",
+          "Asidemi"
+        ],
+        [
+          "HCO₃",
+          "12 mmol/L",
+          "18–24 mmol/L",
+          "Metabolik asidoz"
+        ]
+      ],
+      "postAnswerExplanation": "Metabolik asidoz, hipovolemi ve adrenal krizle ilişkili dolaşım bozukluğunu destekler.",
+      "interpretation": "Metabolik asidoz, hipovolemi ve adrenal krizle ilişkili dolaşım bozukluğunu destekler.",
+      "category": "targetedInvestigation",
+      "testTypeCategory": "targetedInvestigation",
+      "explanationAfterAnswer": "Metabolik asidoz, hipovolemi ve adrenal krizle ilişkili dolaşım bozukluğunu destekler.",
+      "clinicalFlowOrder": 30,
+      "flowOrder": 30,
+      "orderRank": 30,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    },
+    {
+      "id": "adrenal-kriz-17ohp",
+      "label": "17-hidroksiprogesteron",
+      "title": "17-hidroksiprogesteron",
+      "type": "endocrine",
+      "priority": "essential",
+      "subtype": "Endokrinoloji",
+      "summary": "Çok yüksek 17-hidroksiprogesteron 21-hidroksilaz eksikliğini destekler; ancak acil hidrokortizon ve sıvı tedavisi sonucu beklemez.",
+      "clinicalMeaning": "Çok yüksek 17-hidroksiprogesteron 21-hidroksilaz eksikliğini destekler; ancak acil hidrokortizon ve sıvı tedavisi sonucu beklemez.",
+      "result": {
+        "title": "17-hidroksiprogesteron",
+        "summary": "Çok yüksek 17-hidroksiprogesteron 21-hidroksilaz eksikliğini destekler; ancak acil hidrokortizon ve sıvı tedavisi sonucu beklemez.",
+        "interpretation": "Çok yüksek 17-hidroksiprogesteron 21-hidroksilaz eksikliğini destekler; ancak acil hidrokortizon ve sıvı tedavisi sonucu beklemez.",
+        "values": [
+          [
+            "17-OH progesteron",
+            ">20.000 ng/dL",
+            "<200 ng/dL",
+            "Belirgin yüksek"
+          ]
+        ],
         "rows": [
           [
             "17-OH progesteron",
-            "Belirgin yüksek",
-            "Yaşa göre düşük/normal",
+            ">20.000 ng/dL",
+            "<200 ng/dL",
+            "Belirgin yüksek"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "17-OH progesteron",
+          ">20.000 ng/dL",
+          "<200 ng/dL",
+          "Belirgin yüksek"
+        ]
+      ],
+      "postAnswerExplanation": "Çok yüksek 17-hidroksiprogesteron 21-hidroksilaz eksikliğini destekler; ancak acil hidrokortizon ve sıvı tedavisi sonucu beklemez.",
+      "interpretation": "Çok yüksek 17-hidroksiprogesteron 21-hidroksilaz eksikliğini destekler; ancak acil hidrokortizon ve sıvı tedavisi sonucu beklemez.",
+      "category": "targetedInvestigation",
+      "testTypeCategory": "targetedInvestigation",
+      "explanationAfterAnswer": "Çok yüksek 17-hidroksiprogesteron 21-hidroksilaz eksikliğini destekler; ancak acil hidrokortizon ve sıvı tedavisi sonucu beklemez.",
+      "clinicalFlowOrder": 40,
+      "flowOrder": 40,
+      "orderRank": 40,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "shuffleOptions": false,
+  "question": "Bu bebekte ilk uygulanması gereken acil tedavi aşağıdakilerden hangisidir?",
+  "questionType": "treatment",
+  "answerTarget": "treatment",
+  "diagnosis": {
+    "correct": "İzotonik salin, dekstroz ve intravenöz hidrokortizon başlamak",
+    "options": [
+      "Sadece antiemetik verip oral beslenmeyi denemek",
+      "Furosemid ile potasyum atılımını artırmak",
+      "Acil cerrahi eksplorasyon planlamak",
+      "Yalnız izotonik sıvı verip steroid tedavisini ertelemek",
+      "İzotonik salin, dekstroz ve intravenöz hidrokortizon başlamak"
+    ],
+    "question": "Bu bebekte ilk uygulanması gereken acil tedavi aşağıdakilerden hangisidir?",
+    "explanation": "Yenidoğanda kusma, hipovolemik şok, hiponatremi, hiperkalemi, hipoglisemi ve dış genital farklılık tuz kaybettiren konjenital adrenal hiperplazi krizini düşündürür. Tedavi yalnız sıvı veya elektrolit düzeltmesi değil; izotonik salin, dekstroz ve intravenöz hidrokortizonun birlikte ve acilen başlanmasıdır.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Yenidoğanda kusma + şok + hiponatremi/hiperkalemi varsa tuz kaybettiren KAH düşün; hidrokortizon ve sıvı tedavisi geciktirilmez."
+      }
+    ],
+    "optionComparison": {
+      "Sadece antiemetik verip oral beslenmeyi denemek": "Antiemetik kusmayı baskılayabilir ancak hipovolemi, hipoglisemi ve mineralokortikoid/glukokortikoid eksikliğini düzeltmez. Şok bulguları olan yenidoğanda oral deneme güvenli değildir.",
+      "Furosemid ile potasyum atılımını artırmak": "Furosemid potasyumu azaltabilir gibi görünse de hipovolemik ve hiponatremik yenidoğanda dolaşım bozukluğunu ağırlaştırabilir. Temel sorun adrenal hormon eksikliği ve tuz kaybıdır.",
+      "Acil cerrahi eksplorasyon planlamak": "Cerrahi eksplorasyon volvulus, intestinal obstrüksiyon veya akut batın bulguları varsa düşünülür. Bu bebekte elektrolit paterni ve genital öykü öncelikle adrenal krizi destekler.",
+      "Yalnız izotonik sıvı verip steroid tedavisini ertelemek": "İzotonik sıvı resüsitasyonun önemli parçasıdır ancak tek başına yeterli değildir. Kortizol eksikliği sürdüğü için hidrokortizon ertelenirse şok ve hipoglisemi düzelmeyebilir.",
+      "İzotonik salin, dekstroz ve intravenöz hidrokortizon başlamak": "Doğru seçenektir. Tuz kaybettiren adrenal krizde izotonik salin dolaşımı, dekstroz hipoglisemiyi, intravenöz hidrokortizon ise glukokortikoid eksikliğini hedefler; tedavi acilen ve birlikte başlanmalıdır."
+    },
+    "answerFeedback": {
+      "summary": "Yenidoğanda kusma, hipovolemik şok, hiponatremi, hiperkalemi, hipoglisemi ve dış genital farklılık tuz kaybettiren konjenital adrenal hiperplazi krizini düşündürür. Tedavi yalnız sıvı veya elektrolit düzeltmesi değil; izotonik salin, dekstroz ve intravenöz hidrokortizonun birlikte ve acilen başlanmasıdır.",
+      "whyCorrect": "Bu bebekte dolaşım bozukluğu ve metabolik bozukluklar adrenal hormon eksikliğine bağlıdır. İzotonik salin intravasküler hacmi, dekstroz hipoglisemiyi, hidrokortizon ise yaşamı tehdit eden kortizol eksikliğini düzeltir.",
+      "rationale": "Yenidoğanda kusma, hipovolemik şok, hiponatremi, hiperkalemi, hipoglisemi ve dış genital farklılık tuz kaybettiren konjenital adrenal hiperplazi krizini düşündürür. Tedavi yalnız sıvı veya elektrolit düzeltmesi değil; izotonik salin, dekstroz ve intravenöz hidrokortizonun birlikte ve acilen başlanmasıdır.",
+      "correctOptionFeedback": "Doğru seçenektir. Tuz kaybettiren adrenal krizde izotonik salin dolaşımı, dekstroz hipoglisemiyi, intravenöz hidrokortizon ise glukokortikoid eksikliğini hedefler; tedavi acilen ve birlikte başlanmalıdır.",
+      "keyClues": [
+        "18 günlük bebekte giderek artan kusma, beslenememe, kilo alamama ve şok bulguları vardır.",
+        "Dış genital görünümün doğumdan beri farklı tariflenmesi konjenital adrenal hiperplazi olasılığını artırır.",
+        "Hiponatremi, hiperkalemi, hipoglisemi ve metabolik asidoz tuz kaybettiren adrenal kriz paternini destekler."
+      ],
+      "evidenceChain": [
+        {
+          "text": "18 günlük bebekte giderek artan kusma, beslenememe, kilo alamama ve şok bulguları vardır.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Dış genital görünümün doğumdan beri farklı tariflenmesi konjenital adrenal hiperplazi olasılığını artırır.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Hiponatremi, hiperkalemi, hipoglisemi ve metabolik asidoz tuz kaybettiren adrenal kriz paternini destekler.",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Yenidoğanda kusma + şok + hiponatremi/hiperkalemi varsa tuz kaybettiren KAH düşün; hidrokortizon ve sıvı tedavisi geciktirilmez.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Yenidoğanda kusma + şok + hiponatremi/hiperkalemi varsa tuz kaybettiren KAH düşün; hidrokortizon ve sıvı tedavisi geciktirilmez."
+        }
+      ],
+      "clinicalPearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Yenidoğanda kusma + şok + hiponatremi/hiperkalemi varsa tuz kaybettiren KAH düşün; hidrokortizon ve sıvı tedavisi geciktirilmez."
+        }
+      ],
+      "optionComparison": {
+        "Sadece antiemetik verip oral beslenmeyi denemek": "Antiemetik kusmayı baskılayabilir ancak hipovolemi, hipoglisemi ve mineralokortikoid/glukokortikoid eksikliğini düzeltmez. Şok bulguları olan yenidoğanda oral deneme güvenli değildir.",
+        "Furosemid ile potasyum atılımını artırmak": "Furosemid potasyumu azaltabilir gibi görünse de hipovolemik ve hiponatremik yenidoğanda dolaşım bozukluğunu ağırlaştırabilir. Temel sorun adrenal hormon eksikliği ve tuz kaybıdır.",
+        "Acil cerrahi eksplorasyon planlamak": "Cerrahi eksplorasyon volvulus, intestinal obstrüksiyon veya akut batın bulguları varsa düşünülür. Bu bebekte elektrolit paterni ve genital öykü öncelikle adrenal krizi destekler.",
+        "Yalnız izotonik sıvı verip steroid tedavisini ertelemek": "İzotonik sıvı resüsitasyonun önemli parçasıdır ancak tek başına yeterli değildir. Kortizol eksikliği sürdüğü için hidrokortizon ertelenirse şok ve hipoglisemi düzelmeyebilir.",
+        "İzotonik salin, dekstroz ve intravenöz hidrokortizon başlamak": "Doğru seçenektir. Tuz kaybettiren adrenal krizde izotonik salin dolaşımı, dekstroz hipoglisemiyi, intravenöz hidrokortizon ise glukokortikoid eksikliğini hedefler; tedavi acilen ve birlikte başlanmalıdır."
+      },
+      "whyWrong": {
+        "Sadece antiemetik verip oral beslenmeyi denemek": "Antiemetik kusmayı baskılayabilir ancak hipovolemi, hipoglisemi ve mineralokortikoid/glukokortikoid eksikliğini düzeltmez. Şok bulguları olan yenidoğanda oral deneme güvenli değildir.",
+        "Furosemid ile potasyum atılımını artırmak": "Furosemid potasyumu azaltabilir gibi görünse de hipovolemik ve hiponatremik yenidoğanda dolaşım bozukluğunu ağırlaştırabilir. Temel sorun adrenal hormon eksikliği ve tuz kaybıdır.",
+        "Acil cerrahi eksplorasyon planlamak": "Cerrahi eksplorasyon volvulus, intestinal obstrüksiyon veya akut batın bulguları varsa düşünülür. Bu bebekte elektrolit paterni ve genital öykü öncelikle adrenal krizi destekler.",
+        "Yalnız izotonik sıvı verip steroid tedavisini ertelemek": "İzotonik sıvı resüsitasyonun önemli parçasıdır ancak tek başına yeterli değildir. Kortizol eksikliği sürdüğü için hidrokortizon ertelenirse şok ve hipoglisemi düzelmeyebilir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Konjenital adrenal hiperplaziye bağlı tuz kaybettiren adrenal krizde acil izotonik sıvı, dekstroz ve intravenöz hidrokortizon tedavisini başlatabilme.",
+      "coreKnowledge": "Tuz kaybettiren KAH genellikle 1–3. haftada kusma, kilo alamama, dehidratasyon, hiponatremi, hiperkalemi ve hipoglisemiyle adrenal kriz yapar. Şokta ilk yaklaşım izotonik sıvı + dekstroz + IV hidrokortizondur."
+    },
+    "whyCorrect": "Doğru seçenektir. Tuz kaybettiren adrenal krizde izotonik salin dolaşımı, dekstroz hipoglisemiyi, intravenöz hidrokortizon ise glukokortikoid eksikliğini hedefler; tedavi acilen ve birlikte başlanmalıdır.",
+    "evidenceChain": [
+      {
+        "text": "18 günlük bebekte giderek artan kusma, beslenememe, kilo alamama ve şok bulguları vardır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Dış genital görünümün doğumdan beri farklı tariflenmesi konjenital adrenal hiperplazi olasılığını artırır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Hiponatremi, hiperkalemi, hipoglisemi ve metabolik asidoz tuz kaybettiren adrenal kriz paternini destekler.",
+        "weight": "high",
+        "source": "case"
+      }
+    ],
+    "coreKnowledge": "Tuz kaybettiren KAH genellikle 1–3. haftada kusma, kilo alamama, dehidratasyon, hiponatremi, hiperkalemi ve hipoglisemiyle adrenal kriz yapar. Şokta ilk yaklaşım izotonik sıvı + dekstroz + IV hidrokortizondur.",
+    "examPearl": "Yenidoğanda kusma + şok + hiponatremi/hiperkalemi varsa tuz kaybettiren KAH düşün; hidrokortizon ve sıvı tedavisi geciktirilmez.",
+    "whyWrong": {
+      "Sadece antiemetik verip oral beslenmeyi denemek": "Antiemetik kusmayı baskılayabilir ancak hipovolemi, hipoglisemi ve mineralokortikoid/glukokortikoid eksikliğini düzeltmez. Şok bulguları olan yenidoğanda oral deneme güvenli değildir.",
+      "Furosemid ile potasyum atılımını artırmak": "Furosemid potasyumu azaltabilir gibi görünse de hipovolemik ve hiponatremik yenidoğanda dolaşım bozukluğunu ağırlaştırabilir. Temel sorun adrenal hormon eksikliği ve tuz kaybıdır.",
+      "Acil cerrahi eksplorasyon planlamak": "Cerrahi eksplorasyon volvulus, intestinal obstrüksiyon veya akut batın bulguları varsa düşünülür. Bu bebekte elektrolit paterni ve genital öykü öncelikle adrenal krizi destekler.",
+      "Yalnız izotonik sıvı verip steroid tedavisini ertelemek": "İzotonik sıvı resüsitasyonun önemli parçasıdır ancak tek başına yeterli değildir. Kortizol eksikliği sürdüğü için hidrokortizon ertelenirse şok ve hipoglisemi düzelmeyebilir."
+    }
+  },
+  "difficultyTag": "Acil",
+  "coreKnowledge": "Tuz kaybettiren KAH genellikle 1–3. haftada kusma, kilo alamama, dehidratasyon, hiponatremi, hiperkalemi ve hipoglisemiyle adrenal kriz yapar. Şokta ilk yaklaşım izotonik sıvı + dekstroz + IV hidrokortizondur.",
+  "examPearl": "Yenidoğanda kusma + şok + hiponatremi/hiperkalemi varsa tuz kaybettiren KAH düşün; hidrokortizon ve sıvı tedavisi geciktirilmez.",
+  "whyCorrect": "Doğru seçenektir. Tuz kaybettiren adrenal krizde izotonik salin dolaşımı, dekstroz hipoglisemiyi, intravenöz hidrokortizon ise glukokortikoid eksikliğini hedefler; tedavi acilen ve birlikte başlanmalıdır.",
+  "optionComparison": {
+    "Sadece antiemetik verip oral beslenmeyi denemek": "Antiemetik kusmayı baskılayabilir ancak hipovolemi, hipoglisemi ve mineralokortikoid/glukokortikoid eksikliğini düzeltmez. Şok bulguları olan yenidoğanda oral deneme güvenli değildir.",
+    "Furosemid ile potasyum atılımını artırmak": "Furosemid potasyumu azaltabilir gibi görünse de hipovolemik ve hiponatremik yenidoğanda dolaşım bozukluğunu ağırlaştırabilir. Temel sorun adrenal hormon eksikliği ve tuz kaybıdır.",
+    "Acil cerrahi eksplorasyon planlamak": "Cerrahi eksplorasyon volvulus, intestinal obstrüksiyon veya akut batın bulguları varsa düşünülür. Bu bebekte elektrolit paterni ve genital öykü öncelikle adrenal krizi destekler.",
+    "Yalnız izotonik sıvı verip steroid tedavisini ertelemek": "İzotonik sıvı resüsitasyonun önemli parçasıdır ancak tek başına yeterli değildir. Kortizol eksikliği sürdüğü için hidrokortizon ertelenirse şok ve hipoglisemi düzelmeyebilir.",
+    "İzotonik salin, dekstroz ve intravenöz hidrokortizon başlamak": "Doğru seçenektir. Tuz kaybettiren adrenal krizde izotonik salin dolaşımı, dekstroz hipoglisemiyi, intravenöz hidrokortizon ise glukokortikoid eksikliğini hedefler; tedavi acilen ve birlikte başlanmalıdır."
+  },
+  "evidenceChain": [
+    {
+      "text": "18 günlük bebekte giderek artan kusma, beslenememe, kilo alamama ve şok bulguları vardır.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Dış genital görünümün doğumdan beri farklı tariflenmesi konjenital adrenal hiperplazi olasılığını artırır.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Hiponatremi, hiperkalemi, hipoglisemi ve metabolik asidoz tuz kaybettiren adrenal kriz paternini destekler.",
+      "weight": "high",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Sadece antiemetik verip oral beslenmeyi denemek": "Antiemetik kusmayı baskılayabilir ancak hipovolemi, hipoglisemi ve mineralokortikoid/glukokortikoid eksikliğini düzeltmez. Şok bulguları olan yenidoğanda oral deneme güvenli değildir.",
+    "Furosemid ile potasyum atılımını artırmak": "Furosemid potasyumu azaltabilir gibi görünse de hipovolemik ve hiponatremik yenidoğanda dolaşım bozukluğunu ağırlaştırabilir. Temel sorun adrenal hormon eksikliği ve tuz kaybıdır.",
+    "Acil cerrahi eksplorasyon planlamak": "Cerrahi eksplorasyon volvulus, intestinal obstrüksiyon veya akut batın bulguları varsa düşünülür. Bu bebekte elektrolit paterni ve genital öykü öncelikle adrenal krizi destekler.",
+    "Yalnız izotonik sıvı verip steroid tedavisini ertelemek": "İzotonik sıvı resüsitasyonun önemli parçasıdır ancak tek başına yeterli değildir. Kortizol eksikliği sürdüğü için hidrokortizon ertelenirse şok ve hipoglisemi düzelmeyebilir."
+  },
+  "aiMeta": {
+    "generatedAt": "manual-v397-pediatrics-seventh-batch-ultra-refined",
+    "generator": "manual-editorial-pediatrics-case-refinement",
+    "schemaVersion": "clinical-standard-v397",
+    "provider": "manual-editorial",
+    "validationWarnings": []
+  }
+},
+  {
+  "id": "v181-new-163-bobrek-hastasinda-kas-gucsuzlugu",
+  "branchId": "pediatrics",
+  "caseType": "standard",
+  "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
+  "title": "Böbrek hastasında kas güçsüzlüğü",
+  "difficulty": "Acil",
+  "clinicalFocus": "Kronik böbrek hastalığı olan çocukta ağır hiperkalemi, kas güçsüzlüğü, EKG değişikliği ve acil kardiyak membran stabilizasyonu kararını birlikte değerlendirme.",
+  "learningTarget": "EKG değişikliği olan hiperkalemide ilk tedavinin intravenöz kalsiyum glukonat olduğunu ayırt edebilme.",
+  "demographics": "13 yaşında erkek çocuk",
+  "setting": "Çocuk acil servis",
+  "chiefComplaint": "Çocuk, yaygın halsizlik, çarpıntı ve kas güçsüzlüğü nedeniyle acile getiriliyor.",
+  "stem": "Kronik böbrek hastalığı nedeniyle izlenen 13 yaşındaki çocuğun ailesi, son iki gündür diyetine uymadığını ve bugün merdiven çıkarken belirgin bacak güçsüzlüğü yaşadığını söyler. Çocuk sabah saatlerinden itibaren çarpıntı ve göğüste huzursuzluk hissi tariflemiş, idrar miktarının da önceki günlere göre azaldığını belirtmiştir. Ateş, ishal, kusma veya yeni ilaç başlama öyküsü yoktur. Son diyaliz randevusunu aksattığı ve evde potasyum içeriği yüksek gıdalar tükettiği öğrenilir. Yakınlarının çocuğun giderek daha halsizleştiğini fark etmesi üzerine acile başvurulmuştur.",
+  "patientIntro": {
+    "profile": "13 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
+    "presentation": "Çocuk, yaygın halsizlik, çarpıntı ve kas güçsüzlüğü nedeniyle acile getiriliyor.",
+    "historySummary": "Kronik böbrek hastalığı nedeniyle izlenen 13 yaşındaki çocuğun ailesi, son iki gündür diyetine uymadığını ve bugün merdiven çıkarken belirgin bacak güçsüzlüğü yaşadığını söyler. Çocuk sabah saatlerinden itibaren çarpıntı ve göğüste huzursuzluk hissi tariflemiş, idrar miktarının da önceki günlere göre azaldığını belirtmiştir. Ateş, ishal, kusma veya yeni ilaç başlama öyküsü yoktur. Son diyaliz randevusunu aksattığı ve evde potasyum içeriği yüksek gıdalar tükettiği öğrenilir. Yakınlarının çocuğun giderek daha halsizleştiğini fark etmesi üzerine acile başvurulmuştur."
+  },
+  "vitals": {
+    "TA": "142/88 mmHg",
+    "Nabız": "118/dk",
+    "Solunum": "22/dk",
+    "SpO2": "%98, oda havasında",
+    "Ateş": "36.6 °C",
+    "Şok indeksi": "0.83 - hipertansiyon ve taşikardi ile birlikte değerlendirilmeli"
+  },
+  "exam": [
+    "Çocuk bilinç açık ancak belirgin halsiz ve yavaş hareketlidir.",
+    "Proksimal kas gücü hafif azalmıştır; derin tendon refleksleri alınabilir.",
+    "Periferik ödem hafiftir; akciğerlerde belirgin ral yoktur."
+  ],
+  "investigations": [
+    {
+      "id": "hiperkalemi-elektrolit",
+      "label": "Serum elektrolitleri ve böbrek fonksiyonu",
+      "title": "Serum elektrolitleri ve böbrek fonksiyonu",
+      "type": "lab",
+      "priority": "essential",
+      "subtype": "Laboratuvar",
+      "summary": "Ağır potasyum yüksekliği ve böbrek fonksiyon bozukluğu, aritmi riski olan hiperkalemik acili destekler.",
+      "clinicalMeaning": "Ağır potasyum yüksekliği ve böbrek fonksiyon bozukluğu, aritmi riski olan hiperkalemik acili destekler.",
+      "result": {
+        "title": "Serum elektrolitleri ve böbrek fonksiyonu",
+        "summary": "Ağır potasyum yüksekliği ve böbrek fonksiyon bozukluğu, aritmi riski olan hiperkalemik acili destekler.",
+        "interpretation": "Ağır potasyum yüksekliği ve böbrek fonksiyon bozukluğu, aritmi riski olan hiperkalemik acili destekler.",
+        "values": [
+          [
+            "Potasyum",
+            "7.2 mmol/L",
+            "3.5–5.0 mmol/L",
+            "Ağır hiperkalemi"
+          ],
+          [
+            "Sodyum",
+            "137 mmol/L",
+            "135–145 mmol/L",
+            "Normal"
+          ],
+          [
+            "Kreatinin",
+            "4.1 mg/dL",
+            "0.5–1.0 mg/dL",
+            "Kronik böbrek hastalığıyla uyumlu yüksek"
+          ],
+          [
+            "Üre",
+            "96 mg/dL",
+            "10–40 mg/dL",
             "Yüksek"
           ]
         ],
-        "postAnswerExplanation": "17-hidroksiprogesteron yüksekliği 21-hidroksilaz eksikliğini destekler; adrenal kriz şüphesinde sonuç beklenmeden sıvı, dekstroz ve hidrokortizon başlanır.",
-        "interpretation": "17-hidroksiprogesteron yüksekliği 21-hidroksilaz eksikliğini destekler; adrenal kriz şüphesinde sonuç beklenmeden sıvı, dekstroz ve hidrokortizon başlanır.",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "explanationAfterAnswer": "17-hidroksiprogesteron yüksekliği 21-hidroksilaz eksikliğini destekler; adrenal kriz şüphesinde sonuç beklenmeden sıvı, dekstroz ve hidrokortizon başlanır.",
-        "testValueLabel": "Doğrulayıcı test",
-        "clinicalPriorityLabel": "Doğrulayıcı test",
-        "educationalValue": "Doğrulayıcı test",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "clinicalFlowOrder": 50,
-        "flowOrder": 50,
-        "pediatricSafetyValue": "Doğrulayıcı test",
-        "treatmentImpact": "Doğrulayıcı test",
-        "orderRank": 50
-      }
-    ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": {
-      "enabled": false
-    },
-    "hideExamSignal": true,
-    "shuffleOptions": false,
-    "question": "Bu bebekte ilk uygulanması gereken acil tedavi aşağıdakilerden hangisidir?",
-    "questionType": "treatment",
-    "answerTarget": "first_step",
-    "diagnosis": {
-      "correct": "İzotonik sıvı, dekstroz ve stres doz hidrokortizon başlanması",
-      "options": [
-        "Spironolakton başlanması",
-        "ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak",
-        "İzotonik sıvı, dekstroz ve stres doz hidrokortizon başlanması",
-        "Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak",
-        "Sıvı verilmeden insülin infüzyonu başlanması"
+        "rows": [
+          [
+            "Potasyum",
+            "7.2 mmol/L",
+            "3.5–5.0 mmol/L",
+            "Ağır hiperkalemi"
+          ],
+          [
+            "Sodyum",
+            "137 mmol/L",
+            "135–145 mmol/L",
+            "Normal"
+          ],
+          [
+            "Kreatinin",
+            "4.1 mg/dL",
+            "0.5–1.0 mg/dL",
+            "Kronik böbrek hastalığıyla uyumlu yüksek"
+          ],
+          [
+            "Üre",
+            "96 mg/dL",
+            "10–40 mg/dL",
+            "Yüksek"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Potasyum",
+          "7.2 mmol/L",
+          "3.5–5.0 mmol/L",
+          "Ağır hiperkalemi"
+        ],
+        [
+          "Sodyum",
+          "137 mmol/L",
+          "135–145 mmol/L",
+          "Normal"
+        ],
+        [
+          "Kreatinin",
+          "4.1 mg/dL",
+          "0.5–1.0 mg/dL",
+          "Kronik böbrek hastalığıyla uyumlu yüksek"
+        ],
+        [
+          "Üre",
+          "96 mg/dL",
+          "10–40 mg/dL",
+          "Yüksek"
+        ]
       ],
-      "question": "Bu bebekte ilk uygulanması gereken acil tedavi aşağıdakilerden hangisidir?",
-      "explanation": "Yenidoğanda kusma, dolaşım bozukluğu, hiponatremi ve hiperkalemi tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz ile uyumludur. İlk yaklaşım izotonik sıvı, dekstroz ve stres doz hidrokortizondur; hormon doğrulaması tedaviyi geciktirmez.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Tuz kaybettiren konjenital adrenal hiperplazi/adrenal krizde nörolojik hasarı önlemek için hızlı IV dekstroz verilir."
-        }
-      ],
-      "optionComparison": {
-        "Spironolakton başlanması": "Spironolakton başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Spironolakton başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak": "ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "İzotonik sıvı, dekstroz ve stres doz hidrokortizon başlanması": "Bu seçenek doğrudur; çünkü yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak": "Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Sıvı verilmeden insülin infüzyonu başlanması": "İzotonik sıvı tedavisi dehidratasyon, DKA veya şokta intravasküler hacmi ve doku perfüzyonunu düzeltmek için temel basamaktır. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Sıvı verilmeden insülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-      },
-      "answerFeedback": {
-        "summary": "Bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı birlikte değerlendirilince temel karar İzotonik sıvı, dekstroz ve stres doz hidrokortizon başlanması yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz için doğru tanı/tedavi önceliğini belirler.",
-        "whyCorrect": "Bebekte dış genital virilizasyon bulguları vardır. Hipotansiyon, taşikardi ve uzamış kapiller dolum şoku göstermektedir. Bu bulgular birlikte değerlendirildiğinde en uygun yanıt İzotonik sıvı, dekstroz ve stres doz hidrokortizon başlanması olur. Tedavi seçimi, klinik aciliyetin ve altta yatan mekanizmanın aynı anda hedeflenmesine dayanır; destek basamakları gerekirse eş zamanlı yürütülür fakat ana kararı tek başına değiştirmez. Alternatifler bazı destek veya ayırıcı basamaklarda kullanılabilir; ancak verilen acil karar noktasını bu seçenek kadar doğrudan karşılamaz.",
-        "rationale": "Bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı birlikte değerlendirilince temel karar İzotonik sıvı, dekstroz ve stres doz hidrokortizon başlanması yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz için doğru tanı/tedavi önceliğini belirler.",
-        "correctOptionFeedback": "Bu seçenek doğrudur; çünkü yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "keyClues": [
-          "Bebekte dış genital virilizasyon bulguları vardır.",
-          "Hipotansiyon, taşikardi ve uzamış kapiller dolum şoku göstermektedir.",
-          "Hipoglisemi, hiponatremi/hiperkalemi ve şok bulguları yenidoğanda adrenal kriz açısından acil güvenlik verisidir; 17-OHP sonucu tedaviyi geciktirmemelidir."
-        ],
-        "evidenceChain": [
-          {
-            "text": "Bebekte dış genital virilizasyon bulguları vardır.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Hipotansiyon, taşikardi ve uzamış kapiller dolum şoku göstermektedir.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Hipoglisemi, hiponatremi/hiperkalemi ve şok bulguları yenidoğanda adrenal kriz açısından acil güvenlik verisidir; 17-OHP sonucu tedaviyi geciktirmemelidir.",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "examPearl": "Tuz kaybettiren konjenital adrenal hiperplazi/adrenal krizde nörolojik hasarı önlemek için hızlı IV dekstroz verilir.",
-        "pearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Tuz kaybettiren konjenital adrenal hiperplazi/adrenal krizde nörolojik hasarı önlemek için hızlı IV dekstroz verilir."
-          }
-        ],
-        "clinicalPearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Tuz kaybettiren konjenital adrenal hiperplazi/adrenal krizde nörolojik hasarı önlemek için hızlı IV dekstroz verilir."
-          }
-        ],
-        "optionComparison": {
-          "Spironolakton başlanması": "Spironolakton başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Spironolakton başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak": "ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "İzotonik sıvı, dekstroz ve stres doz hidrokortizon başlanması": "Bu seçenek doğrudur; çünkü yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-          "Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak": "Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Sıvı verilmeden insülin infüzyonu başlanması": "İzotonik sıvı tedavisi dehidratasyon, DKA veya şokta intravasküler hacmi ve doku perfüzyonunu düzeltmek için temel basamaktır. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Sıvı verilmeden insülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "whyWrong": {
-          "Spironolakton başlanması": "Spironolakton başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Spironolakton başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak": "ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak": "Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Sıvı verilmeden insülin infüzyonu başlanması": "İzotonik sıvı tedavisi dehidratasyon, DKA veya şokta intravasküler hacmi ve doku perfüzyonunu düzeltmek için temel basamaktır. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Sıvı verilmeden insülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Konjenital adrenal hiperplaziye bağlı tuz kaybettiren adrenal krizde ilk tedaviyi seçebilme",
-        "coreKnowledge": "Tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir."
-      },
-      "whyCorrect": "Bu seçenek doğrudur; çünkü yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "evidenceChain": [
-        {
-          "text": "Bebekte dış genital virilizasyon bulguları vardır.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Hipotansiyon, taşikardi ve uzamış kapiller dolum şoku göstermektedir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Hipoglisemi, hiponatremi/hiperkalemi ve şok bulguları yenidoğanda adrenal kriz açısından acil güvenlik verisidir; 17-OHP sonucu tedaviyi geciktirmemelidir.",
-          "weight": "medium",
-          "source": "case"
-        }
-      ],
-      "coreKnowledge": "Tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-      "examPearl": "Tuz kaybettiren konjenital adrenal hiperplazi/adrenal krizde nörolojik hasarı önlemek için hızlı IV dekstroz verilir.",
-      "whyWrong": {
-        "Spironolakton başlanması": "Spironolakton başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Spironolakton başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak": "ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak": "Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Sıvı verilmeden insülin infüzyonu başlanması": "İzotonik sıvı tedavisi dehidratasyon, DKA veya şokta intravasküler hacmi ve doku perfüzyonunu düzeltmek için temel basamaktır. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Sıvı verilmeden insülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-      },
-      "clinicalRationale": "Yenidoğanda tuz kaybettiren adrenal kriz hiponatremi, hiperkalemi, hipoglisemi, kusma ve dolaşım bozukluğu ile acil tablo oluşturur. 17-OHP tanıyı destekler ancak sıvı, dekstroz ve stres doz hidrokortizon sonucu beklemez."
+      "postAnswerExplanation": "Ağır potasyum yüksekliği ve böbrek fonksiyon bozukluğu, aritmi riski olan hiperkalemik acili destekler.",
+      "interpretation": "Ağır potasyum yüksekliği ve böbrek fonksiyon bozukluğu, aritmi riski olan hiperkalemik acili destekler.",
+      "category": "targetedInvestigation",
+      "testTypeCategory": "targetedInvestigation",
+      "explanationAfterAnswer": "Ağır potasyum yüksekliği ve böbrek fonksiyon bozukluğu, aritmi riski olan hiperkalemik acili destekler.",
+      "clinicalFlowOrder": 10,
+      "flowOrder": 10,
+      "orderRank": 10,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
     },
-    "difficultyTag": "Acil",
-    "coreKnowledge": "Yenidoğanda tuz kaybettiren adrenal kriz hiponatremi, hiperkalemi, hipoglisemi, kusma ve dolaşım bozukluğu ile acil tablo oluşturur. 17-OHP tanıyı destekler ancak sıvı, dekstroz ve stres doz hidrokortizon sonucu beklemez.",
-    "examPearl": "Yenidoğanda kusma + şok/dehidratasyon + hiponatremi + hiperkalemi, özellikle ambigus genital yapı varsa 21-hidroksilaz eksikliğine bağlı tuz kaybettiren adrenal krizi düşündürür.",
-    "whyCorrect": "Yenidoğanda kusma, dolaşım bozukluğu, hiponatremi ve hiperkalemi tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz ile uyumludur. İlk yaklaşım izotonik sıvı, dekstroz ve stres doz hidrokortizondur; hormon doğrulaması tedaviyi geciktirmez.",
-    "optionComparison": {
-      "Spironolakton başlanması": "Spironolakton başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Spironolakton başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak": "ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "İzotonik sıvı, dekstroz ve stres doz hidrokortizon başlanması": "Bu seçenek doğrudur; çünkü yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak": "Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Sıvı verilmeden insülin infüzyonu başlanması": "İzotonik sıvı tedavisi dehidratasyon, DKA veya şokta intravasküler hacmi ve doku perfüzyonunu düzeltmek için temel basamaktır. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Sıvı verilmeden insülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-    },
-    "evidenceChain": [
-      {
-        "text": "Bebekte dış genital virilizasyon bulguları vardır.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Hipotansiyon, taşikardi ve uzamış kapiller dolum şoku göstermektedir.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Hipoglisemi, hiponatremi/hiperkalemi ve şok bulguları yenidoğanda adrenal kriz açısından acil güvenlik verisidir; 17-OHP sonucu tedaviyi geciktirmemelidir.",
-        "weight": "medium",
-        "source": "case"
-      }
-    ],
-    "whyWrong": {
-      "Spironolakton başlanması": "Spironolakton başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Spironolakton başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak": "ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle ACTH stimülasyon testi sonucuna göre stres doz steroid tedavisini planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak": "Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Oral tuz ve mineralokortikoid desteği verip dolaşım resüsitasyonunu ikinci basamağa bırakmak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Sıvı verilmeden insülin infüzyonu başlanması": "İzotonik sıvı tedavisi dehidratasyon, DKA veya şokta intravasküler hacmi ve doku perfüzyonunu düzeltmek için temel basamaktır. Ancak bu vakada yenidoğanda kusma, dehidratasyon/şok, hiponatremi, hiperkalemi ve gerekirse ambigus genital yapı tuz kaybettiren konjenital adrenal hiperplazi/adrenal kriz lehinedir; bu nedenle Sıvı verilmeden insülin infüzyonu başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-    },
-    "aiMeta": {
-      "generatedAt": "manual-v396-pediatrics-ultra-refined",
-      "generator": "manual-editorial-pediatrics-case-refinement",
-      "schemaVersion": "clinical-standard-v396",
-      "provider": "manual-editorial",
-      "validationWarnings": []
-    }
-  },
-  {
-    "id": "v181-new-163-bobrek-hastasinda-kas-gucsuzlugu",
-    "branchId": "pediatrics",
-    "caseType": "standard",
-    "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
-    "title": "Böbrek hastasında kas güçsüzlüğü",
-    "difficulty": "Acil",
-    "clinicalFocus": "Hiperkalemiye bağlı kardiyak risk bağlamında pediatrik öykü, yaşa uygun vital bulgu, fizik muayene ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Hiperkalemiye bağlı kardiyak risk için pediatrik klinik patern, acil öncelik ve hedefe yönelik tanı/tedavi kararını açıklama.",
-    "demographics": "13 yaşında erkek çocuk",
-    "setting": "Çocuk acil servis",
-    "chiefComplaint": "Çocuk, yaygın halsizlik, çarpıntı ve kas güçsüzlüğü nedeniyle acile getiriliyor.",
-    "stem": "Kronik böbrek hastalığı nedeniyle takip edildiği, son günlerde diyetine uymadığı ve idrar miktarının azaldığı öğreniliyor.",
-    "patientIntro": {
-      "profile": "13 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
-      "presentation": "Çocuk, yaygın halsizlik, çarpıntı ve kas güçsüzlüğü nedeniyle acile getiriliyor.",
-      "historySummary": "Kronik böbrek hastalığı nedeniyle takip edildiği, son günlerde diyetine uymadığı ve idrar miktarının azaldığı öğreniliyor."
-    },
-    "vitals": {
-      "TA": "138/86 mmHg",
-      "Nabız": "54/dk",
-      "Solunum": "20/dk",
-      "SpO2": "%97, oda havasında",
-      "Ateş": "36.7 °C",
-      "Şok indeksi": "0.39 pediatrik bağlamda yorumlanmalı"
-    },
-    "exam": [
-      "Çocuk halsiz görünümdedir."
-    ],
-    "investigations": [
-      {
-        "id": "v181-new-163-bobrek-hastasinda-kas-gucsuzlugu-pediatric-initial-assessment",
-        "label": "Pediatrik ilk değerlendirme",
-        "title": "Pediatrik ilk değerlendirme",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "clinicalMeaning": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "result": {
-          "title": "Pediatrik ilk değerlendirme",
-          "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "values": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
-            ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ],
-          "rows": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
-            ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ]
-        },
-        "rows": [
+    {
+      "id": "hiperkalemi-ekg",
+      "label": "EKG",
+      "title": "EKG",
+      "type": "cardiology",
+      "priority": "essential",
+      "subtype": "Kardiyak değerlendirme",
+      "summary": "Sivri T dalgası ve QRS genişlemesi hiperkaleminin miyokard üzerine etkisini gösterir; ilk tedavi kardiyak membran stabilizasyonudur.",
+      "clinicalMeaning": "Sivri T dalgası ve QRS genişlemesi hiperkaleminin miyokard üzerine etkisini gösterir; ilk tedavi kardiyak membran stabilizasyonudur.",
+      "result": {
+        "title": "EKG",
+        "summary": "Sivri T dalgası ve QRS genişlemesi hiperkaleminin miyokard üzerine etkisini gösterir; ilk tedavi kardiyak membran stabilizasyonudur.",
+        "interpretation": "Sivri T dalgası ve QRS genişlemesi hiperkaleminin miyokard üzerine etkisini gösterir; ilk tedavi kardiyak membran stabilizasyonudur.",
+        "values": [
           [
-            "Genel görünüm",
-            "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-            "Yaşa göre",
-            "Kritik izlem"
+            "T dalgaları",
+            "Dar tabanlı sivri T dalgaları",
+            "Normal T morfolojisi",
+            "Hiperkalemi etkisi"
           ],
           [
-            "Kapiller dolum/perfüzyon",
-            "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-            "<2 sn beklenir",
-            "Yaşa göre yorumlanır"
-          ],
-          [
-            "Solunum işi",
-            "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-            "Yaşa göre",
-            "Acil güvenlik"
-          ]
-        ],
-        "postAnswerExplanation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme",
-        "orderRank": 10
-      },
-      {
-        "id": "tam-idrar-analizi-3",
-        "label": "Tam idrar analizi",
-        "title": "Tam idrar analizi",
-        "type": "urine",
-        "priority": "essential",
-        "subtype": "İdrar tetkikleri",
-        "summary": "İdrar değerlendirmesi bu çocukta böbrek/üriner sistem tutulumunu ve hidrasyon etkilenimini ayırmak için hedefe yönelik kullanılır.",
-        "clinicalMeaning": "İdrar değerlendirmesi bu çocukta böbrek/üriner sistem tutulumunu ve hidrasyon etkilenimini ayırmak için hedefe yönelik kullanılır.",
-        "result": {
-          "title": "Tam idrar analizi",
-          "summary": "İdrar değerlendirmesi bu çocukta böbrek/üriner sistem tutulumunu ve hidrasyon etkilenimini ayırmak için hedefe yönelik kullanılır.",
-          "interpretation": "İdrar değerlendirmesi bu çocukta böbrek/üriner sistem tutulumunu ve hidrasyon etkilenimini ayırmak için hedefe yönelik kullanılır.",
-          "values": [
-            [
-              "Protein",
-              "Negatif",
-              "Negatif/trace",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Eritrosit",
-              "0–2/HPF",
-              "0–3/HPF",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Lökosit",
-              "0–5/HPF",
-              "≤5/HPF",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Protein",
-              "Negatif",
-              "Negatif/trace",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Eritrosit",
-              "0–2/HPF",
-              "0–3/HPF",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Lökosit",
-              "0–5/HPF",
-              "≤5/HPF",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Protein",
-            "Negatif",
-            "Negatif/trace",
-            "Klinik bağlamda değerlendirilmeli"
-          ],
-          [
-            "Eritrosit",
-            "0–2/HPF",
-            "0–3/HPF",
-            "Klinik bağlamda değerlendirilmeli"
-          ],
-          [
-            "Lökosit",
-            "0–5/HPF",
-            "≤5/HPF",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "İdrar değerlendirmesi bu çocukta böbrek/üriner sistem tutulumunu ve hidrasyon etkilenimini ayırmak için hedefe yönelik kullanılır.",
-        "interpretation": "İdrar değerlendirmesi bu çocukta böbrek/üriner sistem tutulumunu ve hidrasyon etkilenimini ayırmak için hedefe yönelik kullanılır.",
-        "explanationAfterAnswer": "İdrar değerlendirmesi bu çocukta böbrek/üriner sistem tutulumunu ve hidrasyon etkilenimini ayırmak için hedefe yönelik kullanılır.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      },
-      {
-        "id": "elektrokardiyografi-2",
-        "label": "Elektrokardiyografi",
-        "title": "Elektrokardiyografi",
-        "type": "ecg",
-        "priority": "essential",
-        "subtype": "EKG",
-        "summary": "Elektrokardiyografi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "clinicalMeaning": "Elektrokardiyografi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "result": {
-          "title": "Elektrokardiyografi",
-          "summary": "Elektrokardiyografi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-          "interpretation": "Elektrokardiyografi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-          "values": [
-            [
-              "EKG bulgusu",
-              "Sivri T dalgaları ve QRS genişlemesi izlendi.",
-              "Elektrofizyolojik kayıt",
-              "Patolojik"
-            ]
-          ],
-          "rows": [
-            [
-              "EKG bulgusu",
-              "Sivri T dalgaları ve QRS genişlemesi izlendi.",
-              "Elektrofizyolojik kayıt",
-              "Patolojik"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "EKG bulgusu",
-            "Sivri T dalgaları ve QRS genişlemesi izlendi.",
-            "Elektrofizyolojik kayıt",
-            "Patolojik"
-          ]
-        ],
-        "postAnswerExplanation": "Elektrokardiyografi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "interpretation": "Elektrokardiyografi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "category": "cardiac",
-        "testTypeCategory": "cardiac",
-        "explanationAfterAnswer": "Elektrokardiyografi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "clinicalFlowOrder": 20,
-        "flowOrder": 20,
-        "orderRank": 20,
-        "testValueLabel": "Kritik tedavi belirler",
-        "clinicalPriorityLabel": "Kritik tedavi belirler",
-        "educationalValue": "Kritik tedavi belirler",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "pediatricSafetyValue": "Kritik tedavi belirler",
-        "treatmentImpact": "Kritik tedavi belirler"
-      },
-      {
-        "id": "serum-potasyum-1",
-        "label": "Serum potasyum",
-        "title": "Serum potasyum",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "Laboratuvar",
-        "summary": "Kritik potasyum yüksekliği EKG’de sivri T dalgaları veya QRS genişlemesiyle birlikte aritmi riskini gösterir; ilk hedef potasyumu düşürmeden önce miyokard membranını intravenöz kalsiyumla stabilize etmektir.",
-        "clinicalMeaning": "Kritik potasyum yüksekliği EKG’de sivri T dalgaları veya QRS genişlemesiyle birlikte aritmi riskini gösterir; ilk hedef potasyumu düşürmeden önce miyokard membranını intravenöz kalsiyumla stabilize etmektir.",
-        "result": {
-          "title": "Serum potasyum",
-          "summary": "Kritik potasyum yüksekliği EKG’de sivri T dalgaları veya QRS genişlemesiyle birlikte aritmi riskini gösterir; ilk hedef potasyumu düşürmeden önce miyokard membranını intravenöz kalsiyumla stabilize etmektir.",
-          "interpretation": "Kritik potasyum yüksekliği EKG’de sivri T dalgaları veya QRS genişlemesiyle birlikte aritmi riskini gösterir; ilk hedef potasyumu düşürmeden önce miyokard membranını intravenöz kalsiyumla stabilize etmektir.",
-          "values": [
-            [
-              "Serum potasyum",
-              "7.1 mEq/L",
-              "3.5–5.0 mEq/L",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Serum potasyum",
-              "7.1 mEq/L",
-              "3.5–5.0 mEq/L",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Serum potasyum",
-            "7.1 mEq/L",
-            "3.5–5.0 mEq/L",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "Kritik potasyum yüksekliği EKG’de sivri T dalgaları veya QRS genişlemesiyle birlikte aritmi riskini gösterir; ilk hedef potasyumu düşürmeden önce miyokard membranını intravenöz kalsiyumla stabilize etmektir.",
-        "interpretation": "Kritik potasyum yüksekliği EKG’de sivri T dalgaları veya QRS genişlemesiyle birlikte aritmi riskini gösterir; ilk hedef potasyumu düşürmeden önce miyokard membranını intravenöz kalsiyumla stabilize etmektir.",
-        "category": "metabolic",
-        "testTypeCategory": "metabolic",
-        "explanationAfterAnswer": "Kritik potasyum yüksekliği EKG’de sivri T dalgaları veya QRS genişlemesiyle birlikte aritmi riskini gösterir; ilk hedef potasyumu düşürmeden önce miyokard membranını intravenöz kalsiyumla stabilize etmektir.",
-        "clinicalFlowOrder": 22,
-        "flowOrder": 22,
-        "orderRank": 22,
-        "testValueLabel": "Kritik tedavi belirler",
-        "clinicalPriorityLabel": "Kritik tedavi belirler",
-        "educationalValue": "Kritik tedavi belirler",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "pediatricSafetyValue": "Kritik tedavi belirler",
-        "treatmentImpact": "Kritik tedavi belirler"
-      }
-    ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": {
-      "enabled": false
-    },
-    "hideExamSignal": true,
-    "shuffleOptions": false,
-    "question": "Bu çocukta ilk uygulanması gereken acil tedavi aşağıdakilerden hangisidir?",
-    "questionType": "treatment",
-    "answerTarget": "first_step",
-    "diagnosis": {
-      "correct": "İntravenöz kalsiyum glukonat verilmesi",
-      "options": [
-        "Potasyum replasmanı başlanması",
-        "Furosemid reçete edilip eve gönderilmesi",
-        "Potasyum kısıtlı diyet önerilmesi",
-        "İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak",
-        "İntravenöz kalsiyum glukonat verilmesi"
-      ],
-      "question": "Bu çocukta ilk uygulanması gereken acil tedavi aşağıdakilerden hangisidir?",
-      "explanation": "Bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği birlikte değerlendirilince temel karar İntravenöz kalsiyum glukonat verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü hiperkalemiye bağlı kardiyak risk için doğru tanı/tedavi önceliğini belirler.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Hiperkalemide EKG değişikliği varsa ilk tedavi miyokardı stabilize eden IV kalsiyum glukonattır."
-        }
-      ],
-      "optionComparison": {
-        "Potasyum replasmanı başlanması": "Potasyum replasmanı başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Potasyum replasmanı başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Furosemid reçete edilip eve gönderilmesi": "Furosemid reçete edilip eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Furosemid reçete edilip eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Potasyum kısıtlı diyet önerilmesi": "Potasyum kısıtlı diyet önerilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Potasyum kısıtlı diyet önerilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak": "İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "İntravenöz kalsiyum glukonat verilmesi": "Bu seçenek doğrudur; çünkü böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar."
-      },
-      "answerFeedback": {
-        "summary": "Bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği birlikte değerlendirilince temel karar İntravenöz kalsiyum glukonat verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü hiperkalemiye bağlı kardiyak risk için doğru tanı/tedavi önceliğini belirler.",
-        "whyCorrect": "Serum potasyumu 7.1 mmol/L düzeyindedir. Elektrokardiyografide sivri T dalgaları ve QRS genişlemesi vardır. Bu bulgular birlikte değerlendirildiğinde en uygun yanıt İntravenöz kalsiyum glukonat verilmesi olur. Tedavi seçimi, klinik aciliyetin ve altta yatan mekanizmanın aynı anda hedeflenmesine dayanır; destek basamakları gerekirse eş zamanlı yürütülür fakat ana kararı tek başına değiştirmez. Alternatifler bazı destek veya ayırıcı basamaklarda kullanılabilir; ancak verilen acil karar noktasını bu seçenek kadar doğrudan karşılamaz.",
-        "rationale": "Bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği birlikte değerlendirilince temel karar İntravenöz kalsiyum glukonat verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü hiperkalemiye bağlı kardiyak risk için doğru tanı/tedavi önceliğini belirler.",
-        "correctOptionFeedback": "Bu seçenek doğrudur; çünkü böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "keyClues": [
-          "Serum potasyumu 7.1 mmol/L düzeyindedir.",
-          "Elektrokardiyografide sivri T dalgaları ve QRS genişlemesi vardır.",
-          "Objektif veri (Serum potasyum: Serum potasyum 7.1 mEq/L) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır."
-        ],
-        "evidenceChain": [
-          {
-            "text": "Serum potasyumu 7.1 mmol/L düzeyindedir.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Elektrokardiyografide sivri T dalgaları ve QRS genişlemesi vardır.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Objektif veri (Serum potasyum: Serum potasyum 7.1 mEq/L) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "examPearl": "Hiperkalemide EKG değişikliği varsa ilk tedavi miyokardı stabilize eden IV kalsiyum glukonattır.",
-        "pearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Hiperkalemide EKG değişikliği varsa ilk tedavi miyokardı stabilize eden IV kalsiyum glukonattır."
-          }
-        ],
-        "clinicalPearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Hiperkalemide EKG değişikliği varsa ilk tedavi miyokardı stabilize eden IV kalsiyum glukonattır."
-          }
-        ],
-        "optionComparison": {
-          "Potasyum replasmanı başlanması": "Potasyum replasmanı başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Potasyum replasmanı başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Furosemid reçete edilip eve gönderilmesi": "Furosemid reçete edilip eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Furosemid reçete edilip eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Potasyum kısıtlı diyet önerilmesi": "Potasyum kısıtlı diyet önerilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Potasyum kısıtlı diyet önerilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak": "İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "İntravenöz kalsiyum glukonat verilmesi": "Bu seçenek doğrudur; çünkü böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar."
-        },
-        "whyWrong": {
-          "Potasyum replasmanı başlanması": "Potasyum replasmanı başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Potasyum replasmanı başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Furosemid reçete edilip eve gönderilmesi": "Furosemid reçete edilip eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Furosemid reçete edilip eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Potasyum kısıtlı diyet önerilmesi": "Potasyum kısıtlı diyet önerilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Potasyum kısıtlı diyet önerilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak": "İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Hiperkalemide EKG değişikliği varsa ilk kardiyak membran stabilizasyon tedavisini seçebilme",
-        "coreKnowledge": "Hiperkalemiye bağlı kardiyak risk sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir."
-      },
-      "whyCorrect": "Bu seçenek doğrudur; çünkü böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "evidenceChain": [
-        {
-          "text": "Serum potasyumu 7.1 mmol/L düzeyindedir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Elektrokardiyografide sivri T dalgaları ve QRS genişlemesi vardır.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Objektif veri (Serum potasyum: Serum potasyum 7.1 mEq/L) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-          "weight": "medium",
-          "source": "case"
-        }
-      ],
-      "coreKnowledge": "Hiperkalemiye bağlı kardiyak risk sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-      "examPearl": "Hiperkalemide EKG değişikliği varsa ilk tedavi miyokardı stabilize eden IV kalsiyum glukonattır.",
-      "whyWrong": {
-        "Potasyum replasmanı başlanması": "Potasyum replasmanı başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Potasyum replasmanı başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Furosemid reçete edilip eve gönderilmesi": "Furosemid reçete edilip eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Furosemid reçete edilip eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Potasyum kısıtlı diyet önerilmesi": "Potasyum kısıtlı diyet önerilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Potasyum kısıtlı diyet önerilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak": "İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-      }
-    },
-    "difficultyTag": "Acil",
-    "coreKnowledge": "Hiperkalemiye bağlı kardiyak risk sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-    "examPearl": "Hiperkalemide EKG değişikliği varsa ilk tedavi miyokardı stabilize eden IV kalsiyum glukonattır.",
-    "whyCorrect": "Bu seçenek doğrudur; çünkü böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-    "optionComparison": {
-      "Potasyum replasmanı başlanması": "Potasyum replasmanı başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Potasyum replasmanı başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Furosemid reçete edilip eve gönderilmesi": "Furosemid reçete edilip eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Furosemid reçete edilip eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Potasyum kısıtlı diyet önerilmesi": "Potasyum kısıtlı diyet önerilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Potasyum kısıtlı diyet önerilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak": "İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "İntravenöz kalsiyum glukonat verilmesi": "Bu seçenek doğrudur; çünkü böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar."
-    },
-    "evidenceChain": [
-      {
-        "text": "Serum potasyumu 7.1 mmol/L düzeyindedir.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Elektrokardiyografide sivri T dalgaları ve QRS genişlemesi vardır.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Objektif veri (Serum potasyum: Serum potasyum 7.1 mEq/L) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-        "weight": "medium",
-        "source": "case"
-      }
-    ],
-    "whyWrong": {
-      "Potasyum replasmanı başlanması": "Potasyum replasmanı başlanması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Potasyum replasmanı başlanması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Furosemid reçete edilip eve gönderilmesi": "Furosemid reçete edilip eve gönderilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Furosemid reçete edilip eve gönderilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Potasyum kısıtlı diyet önerilmesi": "Potasyum kısıtlı diyet önerilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle Potasyum kısıtlı diyet önerilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak": "İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada böbrek yetmezliği, kas güçsüzlüğü, yüksek potasyum ve EKG değişikliği hiperkalemiye bağlı kardiyak risk lehinedir; bu nedenle İnsülin-glukoz ve beta-agonist tedavisini kardiyak membran stabilizasyonundan önce başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-    },
-    "aiMeta": {
-      "generatedAt": "manual-v396-pediatrics-ultra-refined",
-      "generator": "manual-editorial-pediatrics-case-refinement",
-      "schemaVersion": "clinical-standard-v396",
-      "provider": "manual-editorial",
-      "validationWarnings": []
-    }
-  },
-  {
-    "id": "v181-new-164-ilac-alimi-sonrasi-bilinc-degisikligi",
-    "branchId": "pediatrics",
-    "caseType": "standard",
-    "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
-    "title": "İlaç alımı sonrası bilinç değişikliği",
-    "difficulty": "Acil",
-    "clinicalFocus": "Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-    "learningTarget": "Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-    "demographics": "15 yaşında kız hasta",
-    "setting": "Çocuk acil servis",
-    "chiefComplaint": "Hasta, evde çok sayıda antidepresan tablet aldıktan sonra bilinç bulanıklığı ve çarpıntı nedeniyle acile getiriliyor.",
-    "stem": "Yaklaşık 2 saat önce aile bireyine ait amitriptilin tabletlerinden bilinmeyen miktarda aldığı öğreniliyor. Alımdan sonra uyku hali, ağız kuruluğu ve huzursuzluk gelişmiştir.",
-    "patientIntro": {
-      "profile": "15 yaşında kız hasta, çocuk acil servisinde değerlendiriliyor.",
-      "presentation": "Hasta, evde çok sayıda antidepresan tablet aldıktan sonra bilinç bulanıklığı ve çarpıntı nedeniyle acile getiriliyor.",
-      "historySummary": "Yaklaşık 2 saat önce aile bireyine ait amitriptilin tabletlerinden bilinmeyen miktarda aldığı öğreniliyor. Alımdan sonra uyku hali, ağız kuruluğu ve huzursuzluk gelişmiştir."
-    },
-    "vitals": {
-      "TA": "88/52 mmHg",
-      "Nabız": "146/dk",
-      "Solunum": "24/dk",
-      "SpO2": "%96, oda havasında",
-      "Ateş": "36.8 °C",
-      "Şok indeksi": "1.66 pediatrik bağlamda yorumlanmalı"
-    },
-    "exam": [
-      "Hasta ajite ve konfüzedir.",
-      "Pupiller geniş, cilt kuru ve sıcaktır."
-    ],
-    "investigations": [
-      {
-        "id": "kapiller-kan-glukozu-2",
-        "label": "Kapiller kan glukozu",
-        "title": "Kapiller kan glukozu",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "Yatak başı testler",
-        "summary": "Normal kapiller glukoz hipoglisemi gibi inme taklitçilerini geri plana iter; akut fokal defisitte görüntüleme ve reperfüzyon değerlendirmesi önemini korur.",
-        "clinicalMeaning": "Normal kapiller glukoz hipoglisemi gibi inme taklitçilerini geri plana iter; akut fokal defisitte görüntüleme ve reperfüzyon değerlendirmesi önemini korur.",
-        "result": {
-          "title": "Kapiller kan glukozu",
-          "summary": "Normal kapiller glukoz hipoglisemi gibi inme taklitçilerini geri plana iter; akut fokal defisitte görüntüleme ve reperfüzyon değerlendirmesi önemini korur.",
-          "interpretation": "Normal kapiller glukoz hipoglisemi gibi inme taklitçilerini geri plana iter; akut fokal defisitte görüntüleme ve reperfüzyon değerlendirmesi önemini korur.",
-          "values": [
-            [
-              "Kapiller kan glukozu",
-              "112 mg/dL",
-              "70–140 mg/dL",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Kapiller kan glukozu",
-              "112 mg/dL",
-              "70–140 mg/dL",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Kapiller kan glukozu",
-            "112 mg/dL",
-            "70–140 mg/dL",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "Normal kapiller glukoz hipoglisemi gibi inme taklitçilerini geri plana iter; akut fokal defisitte görüntüleme ve reperfüzyon değerlendirmesi önemini korur.",
-        "interpretation": "Normal kapiller glukoz hipoglisemi gibi inme taklitçilerini geri plana iter; akut fokal defisitte görüntüleme ve reperfüzyon değerlendirmesi önemini korur.",
-        "explanationAfterAnswer": "Normal kapiller glukoz hipoglisemi gibi inme taklitçilerini geri plana iter; akut fokal defisitte görüntüleme ve reperfüzyon değerlendirmesi önemini korur.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      },
-      {
-        "id": "v181-new-164-ilac-alimi-sonrasi-bilinc-degisikligi-pediatric-initial-assessment",
-        "label": "Pediatrik ilk değerlendirme",
-        "title": "Pediatrik ilk değerlendirme",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "clinicalMeaning": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "result": {
-          "title": "Pediatrik ilk değerlendirme",
-          "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "values": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
-            ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ],
-          "rows": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
-            ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Genel görünüm",
-            "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-            "Yaşa göre",
-            "Kritik izlem"
-          ],
-          [
-            "Kapiller dolum/perfüzyon",
-            "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-            "<2 sn beklenir",
-            "Yaşa göre yorumlanır"
-          ],
-          [
-            "Solunum işi",
-            "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-            "Yaşa göre",
-            "Acil güvenlik"
-          ]
-        ],
-        "postAnswerExplanation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme",
-        "orderRank": 10
-      },
-      {
-        "id": "elektrokardiyografi-1",
-        "label": "Elektrokardiyografi",
-        "title": "Elektrokardiyografi",
-        "type": "ecg",
-        "priority": "essential",
-        "subtype": "EKG",
-        "summary": "Kritik potasyum yüksekliği EKG’de sivri T dalgaları veya QRS genişlemesiyle birlikte aritmi riskini gösterir; ilk hedef potasyumu düşürmeden önce miyokard membranını intravenöz kalsiyumla stabilize etmektir.",
-        "clinicalMeaning": "Kritik potasyum yüksekliği EKG’de sivri T dalgaları veya QRS genişlemesiyle birlikte aritmi riskini gösterir; ilk hedef potasyumu düşürmeden önce miyokard membranını intravenöz kalsiyumla stabilize etmektir.",
-        "result": {
-          "title": "Elektrokardiyografi",
-          "summary": "Kritik potasyum yüksekliği EKG’de sivri T dalgaları veya QRS genişlemesiyle birlikte aritmi riskini gösterir; ilk hedef potasyumu düşürmeden önce miyokard membranını intravenöz kalsiyumla stabilize etmektir.",
-          "interpretation": "Kritik potasyum yüksekliği EKG’de sivri T dalgaları veya QRS genişlemesiyle birlikte aritmi riskini gösterir; ilk hedef potasyumu düşürmeden önce miyokard membranını intravenöz kalsiyumla stabilize etmektir.",
-          "values": [
-            [
-              "Elektrokardiyografi",
-              "QRS 132 ms",
-              "<100 ms",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Elektrokardiyografi",
-              "QRS 132 ms",
-              "<100 ms",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Elektrokardiyografi",
-            "QRS 132 ms",
+            "QRS",
+            "124 ms",
             "<100 ms",
-            "Klinik bağlamda değerlendirilmeli"
+            "Genişleme mevcut"
+          ],
+          [
+            "Ritim",
+            "Sinüs taşikardisi",
+            "Sinüs ritmi",
+            "Monitörizasyon gerekli"
           ]
         ],
-        "postAnswerExplanation": "Kritik potasyum yüksekliği EKG’de sivri T dalgaları veya QRS genişlemesiyle birlikte aritmi riskini gösterir; ilk hedef potasyumu düşürmeden önce miyokard membranını intravenöz kalsiyumla stabilize etmektir.",
-        "interpretation": "Kritik potasyum yüksekliği EKG’de sivri T dalgaları veya QRS genişlemesiyle birlikte aritmi riskini gösterir; ilk hedef potasyumu düşürmeden önce miyokard membranını intravenöz kalsiyumla stabilize etmektir.",
-        "explanationAfterAnswer": "Kritik potasyum yüksekliği EKG’de sivri T dalgaları veya QRS genişlemesiyle birlikte aritmi riskini gösterir; ilk hedef potasyumu düşürmeden önce miyokard membranını intravenöz kalsiyumla stabilize etmektir.",
-        "category": "metabolic",
-        "testTypeCategory": "metabolic",
-        "clinicalFlowOrder": 22,
-        "flowOrder": 22,
-        "orderRank": 22,
-        "testValueLabel": "Kritik tedavi belirler",
-        "clinicalPriorityLabel": "Kritik tedavi belirler",
-        "educationalValue": "Kritik tedavi belirler",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "pediatricSafetyValue": "Kritik tedavi belirler",
-        "treatmentImpact": "Kritik tedavi belirler"
-      },
-      {
-        "id": "kontrastsiz-beyin-bt-2",
-        "label": "Kontrastsız beyin BT",
-        "title": "Kontrastsız beyin BT",
-        "type": "ct",
-        "priority": "essential",
-        "subtype": "BT",
-        "summary": "Kontrastsız beyin BT, sıcak çarpmasında organ hasarı ve rabdomiyoliz riskini izlemek için kullanılır; aktif soğutma tetkikler beklenerek geciktirilmez.",
-        "clinicalMeaning": "Kontrastsız beyin BT, sıcak çarpmasında organ hasarı ve rabdomiyoliz riskini izlemek için kullanılır; aktif soğutma tetkikler beklenerek geciktirilmez.",
-        "result": {
-          "title": "Kontrastsız beyin BT",
-          "summary": "Kontrastsız beyin BT, sıcak çarpmasında organ hasarı ve rabdomiyoliz riskini izlemek için kullanılır; aktif soğutma tetkikler beklenerek geciktirilmez.",
-          "interpretation": "Kontrastsız beyin BT, sıcak çarpmasında organ hasarı ve rabdomiyoliz riskini izlemek için kullanılır; aktif soğutma tetkikler beklenerek geciktirilmez.",
-          "values": [
-            [
-              "Görüntüleme bulgusu",
-              "Akut intrakraniyal kanama saptanmadı.",
-              "Modaliteye özgü bulgu",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Görüntüleme bulgusu",
-              "Akut intrakraniyal kanama saptanmadı.",
-              "Modaliteye özgü bulgu",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
-        },
         "rows": [
           [
-            "Görüntüleme bulgusu",
-            "Akut intrakraniyal kanama saptanmadı.",
-            "Modaliteye özgü bulgu",
-            "Klinik bağlamda değerlendirilmeli"
+            "T dalgaları",
+            "Dar tabanlı sivri T dalgaları",
+            "Normal T morfolojisi",
+            "Hiperkalemi etkisi"
+          ],
+          [
+            "QRS",
+            "124 ms",
+            "<100 ms",
+            "Genişleme mevcut"
+          ],
+          [
+            "Ritim",
+            "Sinüs taşikardisi",
+            "Sinüs ritmi",
+            "Monitörizasyon gerekli"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "T dalgaları",
+          "Dar tabanlı sivri T dalgaları",
+          "Normal T morfolojisi",
+          "Hiperkalemi etkisi"
+        ],
+        [
+          "QRS",
+          "124 ms",
+          "<100 ms",
+          "Genişleme mevcut"
+        ],
+        [
+          "Ritim",
+          "Sinüs taşikardisi",
+          "Sinüs ritmi",
+          "Monitörizasyon gerekli"
+        ]
+      ],
+      "postAnswerExplanation": "Sivri T dalgası ve QRS genişlemesi hiperkaleminin miyokard üzerine etkisini gösterir; ilk tedavi kardiyak membran stabilizasyonudur.",
+      "interpretation": "Sivri T dalgası ve QRS genişlemesi hiperkaleminin miyokard üzerine etkisini gösterir; ilk tedavi kardiyak membran stabilizasyonudur.",
+      "category": "cardiology",
+      "testTypeCategory": "cardiology",
+      "explanationAfterAnswer": "Sivri T dalgası ve QRS genişlemesi hiperkaleminin miyokard üzerine etkisini gösterir; ilk tedavi kardiyak membran stabilizasyonudur.",
+      "clinicalFlowOrder": 20,
+      "flowOrder": 20,
+      "orderRank": 20,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    },
+    {
+      "id": "hiperkalemi-kan-gazi",
+      "label": "Venöz kan gazı",
+      "title": "Venöz kan gazı",
+      "type": "lab",
+      "priority": "essential",
+      "subtype": "Kan gazı",
+      "summary": "Metabolik asidoz potasyum yüksekliğini artırabilir ve ağır böbrek hastalığı bağlamında acil düzeltme gereksinimini destekler.",
+      "clinicalMeaning": "Metabolik asidoz potasyum yüksekliğini artırabilir ve ağır böbrek hastalığı bağlamında acil düzeltme gereksinimini destekler.",
+      "result": {
+        "title": "Venöz kan gazı",
+        "summary": "Metabolik asidoz potasyum yüksekliğini artırabilir ve ağır böbrek hastalığı bağlamında acil düzeltme gereksinimini destekler.",
+        "interpretation": "Metabolik asidoz potasyum yüksekliğini artırabilir ve ağır böbrek hastalığı bağlamında acil düzeltme gereksinimini destekler.",
+        "values": [
+          [
+            "pH",
+            "7.29",
+            "7.35–7.45",
+            "Asidemi"
+          ],
+          [
+            "HCO₃",
+            "16 mmol/L",
+            "22–26 mmol/L",
+            "Metabolik asidoz"
           ]
         ],
-        "postAnswerExplanation": "Kontrastsız beyin BT, sıcak çarpmasında organ hasarı ve rabdomiyoliz riskini izlemek için kullanılır; aktif soğutma tetkikler beklenerek geciktirilmez.",
-        "interpretation": "Kontrastsız beyin BT, sıcak çarpmasında organ hasarı ve rabdomiyoliz riskini izlemek için kullanılır; aktif soğutma tetkikler beklenerek geciktirilmez.",
-        "category": "metabolic",
-        "testTypeCategory": "metabolic",
-        "explanationAfterAnswer": "Kontrastsız beyin BT, sıcak çarpmasında organ hasarı ve rabdomiyoliz riskini izlemek için kullanılır; aktif soğutma tetkikler beklenerek geciktirilmez.",
-        "clinicalFlowOrder": 22,
-        "flowOrder": 22,
-        "orderRank": 22,
-        "testValueLabel": "Acil güvenlik testi",
-        "clinicalPriorityLabel": "Acil güvenlik testi",
-        "educationalValue": "Acil güvenlik testi",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "pediatricSafetyValue": "Acil güvenlik testi",
-        "treatmentImpact": "Acil güvenlik testi"
+        "rows": [
+          [
+            "pH",
+            "7.29",
+            "7.35–7.45",
+            "Asidemi"
+          ],
+          [
+            "HCO₃",
+            "16 mmol/L",
+            "22–26 mmol/L",
+            "Metabolik asidoz"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "pH",
+          "7.29",
+          "7.35–7.45",
+          "Asidemi"
+        ],
+        [
+          "HCO₃",
+          "16 mmol/L",
+          "22–26 mmol/L",
+          "Metabolik asidoz"
+        ]
+      ],
+      "postAnswerExplanation": "Metabolik asidoz potasyum yüksekliğini artırabilir ve ağır böbrek hastalığı bağlamında acil düzeltme gereksinimini destekler.",
+      "interpretation": "Metabolik asidoz potasyum yüksekliğini artırabilir ve ağır böbrek hastalığı bağlamında acil düzeltme gereksinimini destekler.",
+      "category": "targetedInvestigation",
+      "testTypeCategory": "targetedInvestigation",
+      "explanationAfterAnswer": "Metabolik asidoz potasyum yüksekliğini artırabilir ve ağır böbrek hastalığı bağlamında acil düzeltme gereksinimini destekler.",
+      "clinicalFlowOrder": 30,
+      "flowOrder": 30,
+      "orderRank": 30,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "shuffleOptions": false,
+  "question": "Bu çocukta EKG değişikliği olan ağır hiperkalemi için ilk uygulanması gereken acil tedavi aşağıdakilerden hangisidir?",
+  "questionType": "treatment",
+  "answerTarget": "treatment",
+  "diagnosis": {
+    "correct": "İntravenöz kalsiyum glukonat vermek",
+    "options": [
+      "Potasyum kısıtlı diyet önerip ayaktan izlemek",
+      "İntravenöz kalsiyum glukonat vermek",
+      "Potasyum replasmanı başlamak",
+      "Furosemid reçete edip taburcu etmek",
+      "İnsülin-glukoz tedavisini kalsiyum vermeden başlamak"
+    ],
+    "question": "Bu çocukta EKG değişikliği olan ağır hiperkalemi için ilk uygulanması gereken acil tedavi aşağıdakilerden hangisidir?",
+    "explanation": "Kronik böbrek hastalığı, idrar azalması, serum potasyumunun 7.2 mmol/L olması ve EKG’de sivri T dalgaları ile QRS genişlemesi ağır hiperkalemik acili gösterir. EKG değişikliği varsa ilk adım intravenöz kalsiyum glukonatla miyokard membranını stabilize etmektir; insülin-glukoz ve eliminasyon basamakları bunu izler.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Hiperkalemi + EKG değişikliği = ilk tedavi IV kalsiyum glukonat; potasyumu düşüren tedaviler ikinci basamaktır."
       }
     ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": {
-      "enabled": false
+    "optionComparison": {
+      "Potasyum kısıtlı diyet önerip ayaktan izlemek": "Diyet düzenlemesi kronik hiperkalemi riskini azaltmada önemlidir ancak EKG değişikliği olan ağır hiperkalemide acil tedavi yerine geçmez. Ayaktan izlem kardiyak arrest riskini artırır.",
+      "İntravenöz kalsiyum glukonat vermek": "Doğru seçenektir. EKG değişikliği olan hiperkalemide ilk öncelik potasyumu hücre içine sokmak değil, miyokardı stabilize etmek için intravenöz kalsiyum glukonat vermektir.",
+      "Potasyum replasmanı başlamak": "Potasyum replasmanı hipokalemide kullanılır; bu çocukta potasyum zaten yaşamı tehdit edecek düzeyde yüksektir. Replasman aritmi riskini artırır.",
+      "Furosemid reçete edip taburcu etmek": "Furosemid potasyum eliminasyonuna yardımcı olabilir ancak EKG değişikliği olan ağır hiperkalemide tek başına ve taburculukla kullanılamaz. Önce kardiyak membran stabilizasyonu gerekir.",
+      "İnsülin-glukoz tedavisini kalsiyum vermeden başlamak": "İnsülin-glukoz potasyumu hücre içine kaydırmak için gereklidir, ancak EKG değişikliği varsa kalsiyumdan önce başlanması öncelik hatasıdır. Önce kalsiyumla miyokard stabilize edilir, ardından potasyumu düşürücü basamaklar eklenir."
     },
-    "hideExamSignal": true,
-    "shuffleOptions": false,
-    "question": "Bu hastada en uygun spesifik acil tedavi aşağıdakilerden hangisidir?",
-    "questionType": "treatment",
-    "answerTarget": "treatment",
-    "diagnosis": {
-      "correct": "İntravenöz sodyum bikarbonat verilmesi",
-      "options": [
-        "İntravenöz sodyum bikarbonat verilmesi",
-        "Flumazenil verilmesi",
-        "Beta bloker verilmesi",
-        "Nalokson verilmesi",
-        "Aktif kömür uygulayıp QRS genişliğini yalnız seri EKG ile izlemek"
+    "answerFeedback": {
+      "summary": "Kronik böbrek hastalığı, idrar azalması, serum potasyumunun 7.2 mmol/L olması ve EKG’de sivri T dalgaları ile QRS genişlemesi ağır hiperkalemik acili gösterir. EKG değişikliği varsa ilk adım intravenöz kalsiyum glukonatla miyokard membranını stabilize etmektir; insülin-glukoz ve eliminasyon basamakları bunu izler.",
+      "whyCorrect": "Kalsiyum glukonat serum potasyumunu hemen düşürmez ancak hiperkaleminin kardiyak membran üzerindeki etkisini hızla azaltır. Bu nedenle EKG değişikliği olan hastada potasyumu kaydırıcı tedavilerden önce verilmelidir.",
+      "rationale": "Kronik böbrek hastalığı, idrar azalması, serum potasyumunun 7.2 mmol/L olması ve EKG’de sivri T dalgaları ile QRS genişlemesi ağır hiperkalemik acili gösterir. EKG değişikliği varsa ilk adım intravenöz kalsiyum glukonatla miyokard membranını stabilize etmektir; insülin-glukoz ve eliminasyon basamakları bunu izler.",
+      "correctOptionFeedback": "Doğru seçenektir. EKG değişikliği olan hiperkalemide ilk öncelik potasyumu hücre içine sokmak değil, miyokardı stabilize etmek için intravenöz kalsiyum glukonat vermektir.",
+      "keyClues": [
+        "Kronik böbrek hastalığı olan çocukta kas güçsüzlüğü, çarpıntı ve idrar azalması gelişmiştir.",
+        "Serum potasyumu 7.2 mmol/L düzeyindedir.",
+        "EKG’de sivri T dalgaları ve QRS genişlemesi hiperkalemiye bağlı kardiyak membran etkilenmesini gösterir."
       ],
-      "question": "Bu hastada en uygun spesifik acil tedavi aşağıdakilerden hangisidir?",
-      "explanation": "Bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite birlikte değerlendirilince temel karar İntravenöz sodyum bikarbonat verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
+      "evidenceChain": [
+        {
+          "text": "Kronik böbrek hastalığı olan çocukta kas güçsüzlüğü, çarpıntı ve idrar azalması gelişmiştir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Serum potasyumu 7.2 mmol/L düzeyindedir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "EKG’de sivri T dalgaları ve QRS genişlemesi hiperkalemiye bağlı kardiyak membran etkilenmesini gösterir.",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Hiperkalemi + EKG değişikliği = ilk tedavi IV kalsiyum glukonat; potasyumu düşüren tedaviler ikinci basamaktır.",
       "pearls": [
         {
           "label": "Sınav notu",
-          "text": "TCA/sıcak çarpmasına bağlı rabdomiyoliz riskinde geniş QRS varsa IV sodyum bikarbonat verilir."
+          "text": "Hiperkalemi + EKG değişikliği = ilk tedavi IV kalsiyum glukonat; potasyumu düşüren tedaviler ikinci basamaktır."
+        }
+      ],
+      "clinicalPearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Hiperkalemi + EKG değişikliği = ilk tedavi IV kalsiyum glukonat; potasyumu düşüren tedaviler ikinci basamaktır."
         }
       ],
       "optionComparison": {
-        "İntravenöz sodyum bikarbonat verilmesi": "Bu seçenek doğrudur; çünkü bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "Flumazenil verilmesi": "Flumazenil seçilmiş benzodiazepin zehirlenmelerinde düşünülebilir; karışık alım veya nöbet riski varsa çocuklarda dikkatli kullanılmalıdır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "Beta bloker verilmesi": "Beta bloker verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "Nalokson verilmesi": "Nalokson opioid toksidromunda solunum depresyonu, miyozis ve bilinç baskılanması varsa opioid reseptör antagonisti olarak kullanılır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "Aktif kömür uygulayıp QRS genişliğini yalnız seri EKG ile izlemek": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir."
+        "Potasyum kısıtlı diyet önerip ayaktan izlemek": "Diyet düzenlemesi kronik hiperkalemi riskini azaltmada önemlidir ancak EKG değişikliği olan ağır hiperkalemide acil tedavi yerine geçmez. Ayaktan izlem kardiyak arrest riskini artırır.",
+        "İntravenöz kalsiyum glukonat vermek": "Doğru seçenektir. EKG değişikliği olan hiperkalemide ilk öncelik potasyumu hücre içine sokmak değil, miyokardı stabilize etmek için intravenöz kalsiyum glukonat vermektir.",
+        "Potasyum replasmanı başlamak": "Potasyum replasmanı hipokalemide kullanılır; bu çocukta potasyum zaten yaşamı tehdit edecek düzeyde yüksektir. Replasman aritmi riskini artırır.",
+        "Furosemid reçete edip taburcu etmek": "Furosemid potasyum eliminasyonuna yardımcı olabilir ancak EKG değişikliği olan ağır hiperkalemide tek başına ve taburculukla kullanılamaz. Önce kardiyak membran stabilizasyonu gerekir.",
+        "İnsülin-glukoz tedavisini kalsiyum vermeden başlamak": "İnsülin-glukoz potasyumu hücre içine kaydırmak için gereklidir, ancak EKG değişikliği varsa kalsiyumdan önce başlanması öncelik hatasıdır. Önce kalsiyumla miyokard stabilize edilir, ardından potasyumu düşürücü basamaklar eklenir."
       },
-      "answerFeedback": {
-        "summary": "Bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite birlikte değerlendirilince temel karar İntravenöz sodyum bikarbonat verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "whyCorrect": "Hastanın amitriptilin aldığı öğrenilmiştir. Ağız kuruluğu, midriyazis, kuru sıcak cilt ve konfüzyon antikolinerjik toksisiteyi . Bu bulgular birlikte değerlendirildiğinde en uygun yanıt İntravenöz sodyum bikarbonat verilmesi olur. Tedavi seçimi, klinik aciliyetin ve altta yatan mekanizmanın aynı anda hedeflenmesine dayanır; destek basamakları gerekirse eş zamanlı yürütülür fakat ana kararı tek başına değiştirmez. Alternatifler bazı destek veya ayırıcı basamaklarda kullanılabilir; ancak verilen acil karar noktasını bu seçenek kadar doğrudan karşılamaz.",
-        "rationale": "Bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite birlikte değerlendirilince temel karar İntravenöz sodyum bikarbonat verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "correctOptionFeedback": "Bu seçenek doğrudur; çünkü bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "keyClues": [
-          "Hastanın amitriptilin aldığı öğrenilmiştir.",
-          "Ağız kuruluğu, midriyazis, kuru sıcak cilt ve konfüzyon antikolinerjik toksisiteyi klinik olasılığı güçlendirir.",
-          "Objektif veri (Kapiller kan glukozu: Kapiller kan glukozu 112 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır."
-        ],
-        "evidenceChain": [
-          {
-            "text": "Hastanın amitriptilin aldığı öğrenilmiştir.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Ağız kuruluğu, midriyazis, kuru sıcak cilt ve konfüzyon antikolinerjik toksisiteyi klinik olasılığı güçlendirir.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Objektif veri (Kapiller kan glukozu: Kapiller kan glukozu 112 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "examPearl": "TCA/sıcak çarpmasına bağlı rabdomiyoliz riskinde geniş QRS varsa IV sodyum bikarbonat verilir.",
-        "pearls": [
-          {
-            "label": "Sınav notu",
-            "text": "TCA/sıcak çarpmasına bağlı rabdomiyoliz riskinde geniş QRS varsa IV sodyum bikarbonat verilir."
-          }
-        ],
-        "clinicalPearls": [
-          {
-            "label": "Sınav notu",
-            "text": "TCA/sıcak çarpmasına bağlı rabdomiyoliz riskinde geniş QRS varsa IV sodyum bikarbonat verilir."
-          }
-        ],
-        "optionComparison": {
-          "İntravenöz sodyum bikarbonat verilmesi": "Bu seçenek doğrudur; çünkü bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-          "Flumazenil verilmesi": "Flumazenil seçilmiş benzodiazepin zehirlenmelerinde düşünülebilir; karışık alım veya nöbet riski varsa çocuklarda dikkatli kullanılmalıdır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-          "Beta bloker verilmesi": "Beta bloker verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-          "Nalokson verilmesi": "Nalokson opioid toksidromunda solunum depresyonu, miyozis ve bilinç baskılanması varsa opioid reseptör antagonisti olarak kullanılır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-          "Aktif kömür uygulayıp QRS genişliğini yalnız seri EKG ile izlemek": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir."
-        },
-        "whyWrong": {
-          "Flumazenil verilmesi": "Flumazenil seçilmiş benzodiazepin zehirlenmelerinde düşünülebilir; karışık alım veya nöbet riski varsa çocuklarda dikkatli kullanılmalıdır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-          "Beta bloker verilmesi": "Beta bloker verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-          "Nalokson verilmesi": "Nalokson opioid toksidromunda solunum depresyonu, miyozis ve bilinç baskılanması varsa opioid reseptör antagonisti olarak kullanılır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-          "Aktif kömür uygulayıp QRS genişliğini yalnız seri EKG ile izlemek": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Trisiklik antidepresan zehirlenmesinde QRS genişlemesi varsa sodyum bikarbonat tedavisini seçebilme",
-        "coreKnowledge": "Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir."
-      },
-      "whyCorrect": "Bu seçenek doğrudur; çünkü bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "evidenceChain": [
-        {
-          "text": "Hastanın amitriptilin aldığı öğrenilmiştir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Ağız kuruluğu, midriyazis, kuru sıcak cilt ve konfüzyon antikolinerjik toksisiteyi klinik olasılığı güçlendirir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Objektif veri (Kapiller kan glukozu: Kapiller kan glukozu 112 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-          "weight": "medium",
-          "source": "case"
-        }
-      ],
-      "coreKnowledge": "Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-      "examPearl": "TCA/sıcak çarpmasına bağlı rabdomiyoliz riskinde geniş QRS varsa IV sodyum bikarbonat verilir.",
       "whyWrong": {
-        "Flumazenil verilmesi": "Flumazenil seçilmiş benzodiazepin zehirlenmelerinde düşünülebilir; karışık alım veya nöbet riski varsa çocuklarda dikkatli kullanılmalıdır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "Beta bloker verilmesi": "Beta bloker verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "Nalokson verilmesi": "Nalokson opioid toksidromunda solunum depresyonu, miyozis ve bilinç baskılanması varsa opioid reseptör antagonisti olarak kullanılır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-        "Aktif kömür uygulayıp QRS genişliğini yalnız seri EKG ile izlemek": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir."
-      }
+        "Potasyum kısıtlı diyet önerip ayaktan izlemek": "Diyet düzenlemesi kronik hiperkalemi riskini azaltmada önemlidir ancak EKG değişikliği olan ağır hiperkalemide acil tedavi yerine geçmez. Ayaktan izlem kardiyak arrest riskini artırır.",
+        "Potasyum replasmanı başlamak": "Potasyum replasmanı hipokalemide kullanılır; bu çocukta potasyum zaten yaşamı tehdit edecek düzeyde yüksektir. Replasman aritmi riskini artırır.",
+        "Furosemid reçete edip taburcu etmek": "Furosemid potasyum eliminasyonuna yardımcı olabilir ancak EKG değişikliği olan ağır hiperkalemide tek başına ve taburculukla kullanılamaz. Önce kardiyak membran stabilizasyonu gerekir.",
+        "İnsülin-glukoz tedavisini kalsiyum vermeden başlamak": "İnsülin-glukoz potasyumu hücre içine kaydırmak için gereklidir, ancak EKG değişikliği varsa kalsiyumdan önce başlanması öncelik hatasıdır. Önce kalsiyumla miyokard stabilize edilir, ardından potasyumu düşürücü basamaklar eklenir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "EKG değişikliği olan hiperkalemide ilk tedavinin intravenöz kalsiyum glukonat olduğunu ayırt edebilme.",
+      "coreKnowledge": "Hiperkalemide tedavi sırası önemlidir: EKG değişikliği varsa önce IV kalsiyum glukonatla miyokard stabilize edilir, ardından insülin-glukoz/beta agonist ile hücre içine kaydırma ve diyaliz/diürez/bağlayıcılarla eliminasyon planlanır."
     },
-    "difficultyTag": "Acil",
-    "coreKnowledge": "Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-    "examPearl": "TCA/sıcak çarpmasına bağlı rabdomiyoliz riskinde geniş QRS varsa IV sodyum bikarbonat verilir.",
-    "whyCorrect": "Bu seçenek doğrudur; çünkü bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-    "optionComparison": {
-      "İntravenöz sodyum bikarbonat verilmesi": "Bu seçenek doğrudur; çünkü bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "Flumazenil verilmesi": "Flumazenil seçilmiş benzodiazepin zehirlenmelerinde düşünülebilir; karışık alım veya nöbet riski varsa çocuklarda dikkatli kullanılmalıdır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-      "Beta bloker verilmesi": "Beta bloker verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-      "Nalokson verilmesi": "Nalokson opioid toksidromunda solunum depresyonu, miyozis ve bilinç baskılanması varsa opioid reseptör antagonisti olarak kullanılır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-      "Aktif kömür uygulayıp QRS genişliğini yalnız seri EKG ile izlemek": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir."
-    },
+    "whyCorrect": "Doğru seçenektir. EKG değişikliği olan hiperkalemide ilk öncelik potasyumu hücre içine sokmak değil, miyokardı stabilize etmek için intravenöz kalsiyum glukonat vermektir.",
     "evidenceChain": [
       {
-        "text": "Hastanın amitriptilin aldığı öğrenilmiştir.",
+        "text": "Kronik böbrek hastalığı olan çocukta kas güçsüzlüğü, çarpıntı ve idrar azalması gelişmiştir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Ağız kuruluğu, midriyazis, kuru sıcak cilt ve konfüzyon antikolinerjik toksisiteyi klinik olasılığı güçlendirir.",
+        "text": "Serum potasyumu 7.2 mmol/L düzeyindedir.",
         "weight": "high",
         "source": "case"
       },
       {
-        "text": "Objektif veri (Kapiller kan glukozu: Kapiller kan glukozu 112 mg/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-        "weight": "medium",
+        "text": "EKG’de sivri T dalgaları ve QRS genişlemesi hiperkalemiye bağlı kardiyak membran etkilenmesini gösterir.",
+        "weight": "high",
         "source": "case"
       }
     ],
+    "coreKnowledge": "Hiperkalemide tedavi sırası önemlidir: EKG değişikliği varsa önce IV kalsiyum glukonatla miyokard stabilize edilir, ardından insülin-glukoz/beta agonist ile hücre içine kaydırma ve diyaliz/diürez/bağlayıcılarla eliminasyon planlanır.",
+    "examPearl": "Hiperkalemi + EKG değişikliği = ilk tedavi IV kalsiyum glukonat; potasyumu düşüren tedaviler ikinci basamaktır.",
     "whyWrong": {
-      "Flumazenil verilmesi": "Flumazenil seçilmiş benzodiazepin zehirlenmelerinde düşünülebilir; karışık alım veya nöbet riski varsa çocuklarda dikkatli kullanılmalıdır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-      "Beta bloker verilmesi": "Beta bloker verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-      "Nalokson verilmesi": "Nalokson opioid toksidromunda solunum depresyonu, miyozis ve bilinç baskılanması varsa opioid reseptör antagonisti olarak kullanılır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir.",
-      "Aktif kömür uygulayıp QRS genişliğini yalnız seri EKG ile izlemek": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada bilinç değişikliği, hipotansiyon, geniş QRS ve kardiyotoksisite Bu olguda temel sorun ısıya bağlı santral sinir sistemi disfonksiyonu ve rabdomiyoliz riskidir."
-    },
-    "aiMeta": {
-      "generatedAt": "manual-v396-pediatrics-ultra-refined",
-      "generator": "manual-editorial-pediatrics-case-refinement",
-      "schemaVersion": "clinical-standard-v396",
-      "provider": "manual-editorial",
-      "validationWarnings": []
+      "Potasyum kısıtlı diyet önerip ayaktan izlemek": "Diyet düzenlemesi kronik hiperkalemi riskini azaltmada önemlidir ancak EKG değişikliği olan ağır hiperkalemide acil tedavi yerine geçmez. Ayaktan izlem kardiyak arrest riskini artırır.",
+      "Potasyum replasmanı başlamak": "Potasyum replasmanı hipokalemide kullanılır; bu çocukta potasyum zaten yaşamı tehdit edecek düzeyde yüksektir. Replasman aritmi riskini artırır.",
+      "Furosemid reçete edip taburcu etmek": "Furosemid potasyum eliminasyonuna yardımcı olabilir ancak EKG değişikliği olan ağır hiperkalemide tek başına ve taburculukla kullanılamaz. Önce kardiyak membran stabilizasyonu gerekir.",
+      "İnsülin-glukoz tedavisini kalsiyum vermeden başlamak": "İnsülin-glukoz potasyumu hücre içine kaydırmak için gereklidir, ancak EKG değişikliği varsa kalsiyumdan önce başlanması öncelik hatasıdır. Önce kalsiyumla miyokard stabilize edilir, ardından potasyumu düşürücü basamaklar eklenir."
     }
   },
+  "difficultyTag": "Acil",
+  "coreKnowledge": "Hiperkalemide tedavi sırası önemlidir: EKG değişikliği varsa önce IV kalsiyum glukonatla miyokard stabilize edilir, ardından insülin-glukoz/beta agonist ile hücre içine kaydırma ve diyaliz/diürez/bağlayıcılarla eliminasyon planlanır.",
+  "examPearl": "Hiperkalemi + EKG değişikliği = ilk tedavi IV kalsiyum glukonat; potasyumu düşüren tedaviler ikinci basamaktır.",
+  "whyCorrect": "Doğru seçenektir. EKG değişikliği olan hiperkalemide ilk öncelik potasyumu hücre içine sokmak değil, miyokardı stabilize etmek için intravenöz kalsiyum glukonat vermektir.",
+  "optionComparison": {
+    "Potasyum kısıtlı diyet önerip ayaktan izlemek": "Diyet düzenlemesi kronik hiperkalemi riskini azaltmada önemlidir ancak EKG değişikliği olan ağır hiperkalemide acil tedavi yerine geçmez. Ayaktan izlem kardiyak arrest riskini artırır.",
+    "İntravenöz kalsiyum glukonat vermek": "Doğru seçenektir. EKG değişikliği olan hiperkalemide ilk öncelik potasyumu hücre içine sokmak değil, miyokardı stabilize etmek için intravenöz kalsiyum glukonat vermektir.",
+    "Potasyum replasmanı başlamak": "Potasyum replasmanı hipokalemide kullanılır; bu çocukta potasyum zaten yaşamı tehdit edecek düzeyde yüksektir. Replasman aritmi riskini artırır.",
+    "Furosemid reçete edip taburcu etmek": "Furosemid potasyum eliminasyonuna yardımcı olabilir ancak EKG değişikliği olan ağır hiperkalemide tek başına ve taburculukla kullanılamaz. Önce kardiyak membran stabilizasyonu gerekir.",
+    "İnsülin-glukoz tedavisini kalsiyum vermeden başlamak": "İnsülin-glukoz potasyumu hücre içine kaydırmak için gereklidir, ancak EKG değişikliği varsa kalsiyumdan önce başlanması öncelik hatasıdır. Önce kalsiyumla miyokard stabilize edilir, ardından potasyumu düşürücü basamaklar eklenir."
+  },
+  "evidenceChain": [
+    {
+      "text": "Kronik böbrek hastalığı olan çocukta kas güçsüzlüğü, çarpıntı ve idrar azalması gelişmiştir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Serum potasyumu 7.2 mmol/L düzeyindedir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "EKG’de sivri T dalgaları ve QRS genişlemesi hiperkalemiye bağlı kardiyak membran etkilenmesini gösterir.",
+      "weight": "high",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Potasyum kısıtlı diyet önerip ayaktan izlemek": "Diyet düzenlemesi kronik hiperkalemi riskini azaltmada önemlidir ancak EKG değişikliği olan ağır hiperkalemide acil tedavi yerine geçmez. Ayaktan izlem kardiyak arrest riskini artırır.",
+    "Potasyum replasmanı başlamak": "Potasyum replasmanı hipokalemide kullanılır; bu çocukta potasyum zaten yaşamı tehdit edecek düzeyde yüksektir. Replasman aritmi riskini artırır.",
+    "Furosemid reçete edip taburcu etmek": "Furosemid potasyum eliminasyonuna yardımcı olabilir ancak EKG değişikliği olan ağır hiperkalemide tek başına ve taburculukla kullanılamaz. Önce kardiyak membran stabilizasyonu gerekir.",
+    "İnsülin-glukoz tedavisini kalsiyum vermeden başlamak": "İnsülin-glukoz potasyumu hücre içine kaydırmak için gereklidir, ancak EKG değişikliği varsa kalsiyumdan önce başlanması öncelik hatasıdır. Önce kalsiyumla miyokard stabilize edilir, ardından potasyumu düşürücü basamaklar eklenir."
+  },
+  "aiMeta": {
+    "generatedAt": "manual-v397-pediatrics-seventh-batch-ultra-refined",
+    "generator": "manual-editorial-pediatrics-case-refinement",
+    "schemaVersion": "clinical-standard-v397",
+    "provider": "manual-editorial",
+    "validationWarnings": []
+  }
+},
+  {
+  "id": "v181-new-164-ilac-alimi-sonrasi-bilinc-degisikligi",
+  "branchId": "pediatrics",
+  "caseType": "standard",
+  "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
+  "title": "İlaç alımı sonrası bilinç değişikliği",
+  "difficulty": "Acil",
+  "clinicalFocus": "Trisiklik antidepresan zehirlenmesinde antikolinerjik bulgular, hipotansiyon, QRS genişlemesi ve sodyum kanal blokajına yönelik acil tedavi kararını birlikte değerlendirme.",
+  "learningTarget": "Trisiklik antidepresan zehirlenmesinde QRS genişlemesi varsa intravenöz sodyum bikarbonat tedavisini seçebilme.",
+  "demographics": "15 yaşında kız hasta",
+  "setting": "Çocuk acil servis",
+  "chiefComplaint": "Hasta, evde çok sayıda antidepresan tablet aldıktan sonra bilinç bulanıklığı ve çarpıntı nedeniyle acile getiriliyor.",
+  "stem": "Ailesi, 15 yaşındaki hastanın yaklaşık iki saat önce aile bireyine ait amitriptilin tabletlerinden bilinmeyen sayıda aldığını fark ettiklerini belirtir. Alımdan sonra giderek artan uyku hali, huzursuzluk, ağız kuruluğu ve çarpıntı gelişmiş; bir kez kusmuş ancak tablet parçaları görülmemiştir. Evde alkol, opioid veya benzodiazepin alımı bilindiği kadarıyla yoktur; daha önce epilepsi öyküsü tariflenmez. Aile, hastanın yanıtlarının yavaşlaması ve dengesiz yürümeye başlaması üzerine acile başvurmuştur. Başvuruya kadar kusturma girişimi yapılmamış, yalnızca su içirilmiştir.",
+  "patientIntro": {
+    "profile": "15 yaşında kız hasta, çocuk acil servisinde değerlendiriliyor.",
+    "presentation": "Hasta, evde çok sayıda antidepresan tablet aldıktan sonra bilinç bulanıklığı ve çarpıntı nedeniyle acile getiriliyor.",
+    "historySummary": "Ailesi, 15 yaşındaki hastanın yaklaşık iki saat önce aile bireyine ait amitriptilin tabletlerinden bilinmeyen sayıda aldığını fark ettiklerini belirtir. Alımdan sonra giderek artan uyku hali, huzursuzluk, ağız kuruluğu ve çarpıntı gelişmiş; bir kez kusmuş ancak tablet parçaları görülmemiştir. Evde alkol, opioid veya benzodiazepin alımı bilindiği kadarıyla yoktur; daha önce epilepsi öyküsü tariflenmez. Aile, hastanın yanıtlarının yavaşlaması ve dengesiz yürümeye başlaması üzerine acile başvurmuştur. Başvuruya kadar kusturma girişimi yapılmamış, yalnızca su içirilmiştir."
+  },
+  "vitals": {
+    "TA": "88/52 mmHg",
+    "Nabız": "146/dk",
+    "Solunum": "24/dk",
+    "SpO2": "%96, oda havasında",
+    "Ateş": "36.8 °C",
+    "Şok indeksi": "1.66 - hipotansiyon ve taşikardiyle yüksek riskli"
+  },
+  "exam": [
+    "Hasta konfüze, ajite ve sorulara yavaş yanıt vermektedir.",
+    "Pupiller midriyatik, ağız mukozası kuru ve cilt sıcak-kurudur.",
+    "Barsak sesleri azalmıştır; belirgin opioid tipi miyozis veya solunum depresyonu yoktur."
+  ],
+  "investigations": [
+    {
+      "id": "tca-ekg",
+      "label": "EKG",
+      "title": "EKG",
+      "type": "cardiology",
+      "priority": "essential",
+      "subtype": "Kardiyotoksisite değerlendirmesi",
+      "summary": "QRS genişlemesi ve aVR terminal R dalgası, trisiklik antidepresanların hızlı sodyum kanal blokajına bağlı kardiyotoksisitesini gösterir.",
+      "clinicalMeaning": "QRS genişlemesi ve aVR terminal R dalgası, trisiklik antidepresanların hızlı sodyum kanal blokajına bağlı kardiyotoksisitesini gösterir.",
+      "result": {
+        "title": "EKG",
+        "summary": "QRS genişlemesi ve aVR terminal R dalgası, trisiklik antidepresanların hızlı sodyum kanal blokajına bağlı kardiyotoksisitesini gösterir.",
+        "interpretation": "QRS genişlemesi ve aVR terminal R dalgası, trisiklik antidepresanların hızlı sodyum kanal blokajına bağlı kardiyotoksisitesini gösterir.",
+        "values": [
+          [
+            "Ritim",
+            "Sinüs taşikardisi",
+            "Sinüs ritmi",
+            "Toksisiteyle uyumlu"
+          ],
+          [
+            "QRS süresi",
+            "132 ms",
+            "<100 ms",
+            "Belirgin geniş"
+          ],
+          [
+            "aVR",
+            "Terminal R dalgası belirgin",
+            "Belirgin olmamalı",
+            "TCA toksisitesi lehine"
+          ]
+        ],
+        "rows": [
+          [
+            "Ritim",
+            "Sinüs taşikardisi",
+            "Sinüs ritmi",
+            "Toksisiteyle uyumlu"
+          ],
+          [
+            "QRS süresi",
+            "132 ms",
+            "<100 ms",
+            "Belirgin geniş"
+          ],
+          [
+            "aVR",
+            "Terminal R dalgası belirgin",
+            "Belirgin olmamalı",
+            "TCA toksisitesi lehine"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Ritim",
+          "Sinüs taşikardisi",
+          "Sinüs ritmi",
+          "Toksisiteyle uyumlu"
+        ],
+        [
+          "QRS süresi",
+          "132 ms",
+          "<100 ms",
+          "Belirgin geniş"
+        ],
+        [
+          "aVR",
+          "Terminal R dalgası belirgin",
+          "Belirgin olmamalı",
+          "TCA toksisitesi lehine"
+        ]
+      ],
+      "postAnswerExplanation": "QRS genişlemesi ve aVR terminal R dalgası, trisiklik antidepresanların hızlı sodyum kanal blokajına bağlı kardiyotoksisitesini gösterir.",
+      "interpretation": "QRS genişlemesi ve aVR terminal R dalgası, trisiklik antidepresanların hızlı sodyum kanal blokajına bağlı kardiyotoksisitesini gösterir.",
+      "category": "cardiology",
+      "testTypeCategory": "cardiology",
+      "explanationAfterAnswer": "QRS genişlemesi ve aVR terminal R dalgası, trisiklik antidepresanların hızlı sodyum kanal blokajına bağlı kardiyotoksisitesini gösterir.",
+      "clinicalFlowOrder": 10,
+      "flowOrder": 10,
+      "orderRank": 10,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    },
+    {
+      "id": "tca-kan-gazi-elektrolit",
+      "label": "Kan gazı ve elektrolitler",
+      "title": "Kan gazı ve elektrolitler",
+      "type": "lab",
+      "priority": "essential",
+      "subtype": "Laboratuvar",
+      "summary": "Asidemi sodyum kanal blokajının kardiyak etkilerini artırabilir; glukozun normal olması bilinç değişikliği için hipoglisemiyi geri plana iter.",
+      "clinicalMeaning": "Asidemi sodyum kanal blokajının kardiyak etkilerini artırabilir; glukozun normal olması bilinç değişikliği için hipoglisemiyi geri plana iter.",
+      "result": {
+        "title": "Kan gazı ve elektrolitler",
+        "summary": "Asidemi sodyum kanal blokajının kardiyak etkilerini artırabilir; glukozun normal olması bilinç değişikliği için hipoglisemiyi geri plana iter.",
+        "interpretation": "Asidemi sodyum kanal blokajının kardiyak etkilerini artırabilir; glukozun normal olması bilinç değişikliği için hipoglisemiyi geri plana iter.",
+        "values": [
+          [
+            "pH",
+            "7.31",
+            "7.35–7.45",
+            "Hafif asidemi"
+          ],
+          [
+            "Sodyum",
+            "139 mmol/L",
+            "135–145 mmol/L",
+            "Normal"
+          ],
+          [
+            "Potasyum",
+            "3.8 mmol/L",
+            "3.5–5.0 mmol/L",
+            "Normal"
+          ],
+          [
+            "Glukoz",
+            "108 mg/dL",
+            "70–140 mg/dL",
+            "Hipoglisemi yok"
+          ]
+        ],
+        "rows": [
+          [
+            "pH",
+            "7.31",
+            "7.35–7.45",
+            "Hafif asidemi"
+          ],
+          [
+            "Sodyum",
+            "139 mmol/L",
+            "135–145 mmol/L",
+            "Normal"
+          ],
+          [
+            "Potasyum",
+            "3.8 mmol/L",
+            "3.5–5.0 mmol/L",
+            "Normal"
+          ],
+          [
+            "Glukoz",
+            "108 mg/dL",
+            "70–140 mg/dL",
+            "Hipoglisemi yok"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "pH",
+          "7.31",
+          "7.35–7.45",
+          "Hafif asidemi"
+        ],
+        [
+          "Sodyum",
+          "139 mmol/L",
+          "135–145 mmol/L",
+          "Normal"
+        ],
+        [
+          "Potasyum",
+          "3.8 mmol/L",
+          "3.5–5.0 mmol/L",
+          "Normal"
+        ],
+        [
+          "Glukoz",
+          "108 mg/dL",
+          "70–140 mg/dL",
+          "Hipoglisemi yok"
+        ]
+      ],
+      "postAnswerExplanation": "Asidemi sodyum kanal blokajının kardiyak etkilerini artırabilir; glukozun normal olması bilinç değişikliği için hipoglisemiyi geri plana iter.",
+      "interpretation": "Asidemi sodyum kanal blokajının kardiyak etkilerini artırabilir; glukozun normal olması bilinç değişikliği için hipoglisemiyi geri plana iter.",
+      "category": "targetedInvestigation",
+      "testTypeCategory": "targetedInvestigation",
+      "explanationAfterAnswer": "Asidemi sodyum kanal blokajının kardiyak etkilerini artırabilir; glukozun normal olması bilinç değişikliği için hipoglisemiyi geri plana iter.",
+      "clinicalFlowOrder": 20,
+      "flowOrder": 20,
+      "orderRank": 20,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    },
+    {
+      "id": "tca-toksikoloji",
+      "label": "Toksikoloji taraması",
+      "title": "Toksikoloji taraması",
+      "type": "toxicology",
+      "priority": "essential",
+      "subtype": "Toksikoloji",
+      "summary": "Toksikoloji taraması maruziyeti destekler; ancak geniş QRS varlığında sodyum bikarbonat tedavisi sonuç beklemeden başlanır.",
+      "clinicalMeaning": "Toksikoloji taraması maruziyeti destekler; ancak geniş QRS varlığında sodyum bikarbonat tedavisi sonuç beklemeden başlanır.",
+      "result": {
+        "title": "Toksikoloji taraması",
+        "summary": "Toksikoloji taraması maruziyeti destekler; ancak geniş QRS varlığında sodyum bikarbonat tedavisi sonuç beklemeden başlanır.",
+        "interpretation": "Toksikoloji taraması maruziyeti destekler; ancak geniş QRS varlığında sodyum bikarbonat tedavisi sonuç beklemeden başlanır.",
+        "values": [
+          [
+            "Trisiklik antidepresan taraması",
+            "Pozitif",
+            "Negatif",
+            "Amitriptilin alımıyla uyumlu"
+          ],
+          [
+            "Asetaminofen düzeyi",
+            "Saptanmadı",
+            "Toksik düzey olmamalı",
+            "Ek sık alım taraması"
+          ]
+        ],
+        "rows": [
+          [
+            "Trisiklik antidepresan taraması",
+            "Pozitif",
+            "Negatif",
+            "Amitriptilin alımıyla uyumlu"
+          ],
+          [
+            "Asetaminofen düzeyi",
+            "Saptanmadı",
+            "Toksik düzey olmamalı",
+            "Ek sık alım taraması"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Trisiklik antidepresan taraması",
+          "Pozitif",
+          "Negatif",
+          "Amitriptilin alımıyla uyumlu"
+        ],
+        [
+          "Asetaminofen düzeyi",
+          "Saptanmadı",
+          "Toksik düzey olmamalı",
+          "Ek sık alım taraması"
+        ]
+      ],
+      "postAnswerExplanation": "Toksikoloji taraması maruziyeti destekler; ancak geniş QRS varlığında sodyum bikarbonat tedavisi sonuç beklemeden başlanır.",
+      "interpretation": "Toksikoloji taraması maruziyeti destekler; ancak geniş QRS varlığında sodyum bikarbonat tedavisi sonuç beklemeden başlanır.",
+      "category": "targetedInvestigation",
+      "testTypeCategory": "targetedInvestigation",
+      "explanationAfterAnswer": "Toksikoloji taraması maruziyeti destekler; ancak geniş QRS varlığında sodyum bikarbonat tedavisi sonuç beklemeden başlanır.",
+      "clinicalFlowOrder": 30,
+      "flowOrder": 30,
+      "orderRank": 30,
+      "testValueLabel": "Hedefe yönelik objektif veri",
+      "clinicalPriorityLabel": "Tanı/tedavi kararını etkiler",
+      "educationalValue": "Karar verdirici",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "pediatricSafetyValue": "Acil öncelik",
+      "treatmentImpact": "Tedavi kararını değiştirir"
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "shuffleOptions": false,
+  "question": "Bu hastada en uygun spesifik acil tedavi aşağıdakilerden hangisidir?",
+  "questionType": "treatment",
+  "answerTarget": "treatment",
+  "diagnosis": {
+    "correct": "İntravenöz sodyum bikarbonat vermek",
+    "options": [
+      "Flumazenil vermek",
+      "Nalokson vermek",
+      "İntravenöz sodyum bikarbonat vermek",
+      "Beta bloker başlamak",
+      "Aktif kömür verip yalnız seri EKG ile izlemek"
+    ],
+    "question": "Bu hastada en uygun spesifik acil tedavi aşağıdakilerden hangisidir?",
+    "explanation": "Amitriptilin alımı sonrası antikolinerjik bulgular, hipotansiyon, taşikardi ve EKG’de QRS genişlemesi trisiklik antidepresan kardiyotoksisitesini gösterir. Geniş QRS, hızlı sodyum kanal blokajının klinik karşılığıdır ve spesifik acil tedavi intravenöz sodyum bikarbonattır.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "TCA zehirlenmesinde QRS >100 ms varsa IV sodyum bikarbonat verilir; flumazenil ve beta bloker bu tabloda uygun değildir."
+      }
+    ],
+    "optionComparison": {
+      "Flumazenil vermek": "Flumazenil benzodiazepin toksisitesinde seçilmiş durumlarda kullanılabilir; karışık alım veya nöbet riski varsa tehlikelidir. Amitriptilin zehirlenmesinde QRS genişlemesini düzeltmez ve nöbet riskini artırabilir.",
+      "Nalokson vermek": "Nalokson opioid toksidromunda solunum depresyonu ve miyozis varsa kullanılır. Bu hastada antikolinerjik bulgular, hipotansiyon ve geniş QRS vardır; opioid paternini destekleyen ana bulgu yoktur.",
+      "İntravenöz sodyum bikarbonat vermek": "Doğru seçenektir. Trisiklik antidepresan zehirlenmesinde geniş QRS sodyum kanal blokajını gösterir; intravenöz sodyum bikarbonat serum alkalinizasyonu ve sodyum yüküyle kardiyotoksisiteyi hedefler.",
+      "Beta bloker başlamak": "Beta bloker taşikardiyi azaltabilir gibi görünse de TCA zehirlenmesinde iletim bozukluğu ve hipotansiyonu kötüleştirebilir. Taşikardi toksik mekanizmanın sonucu olup öncelik sodyum kanal blokajını düzeltmektir.",
+      "Aktif kömür verip yalnız seri EKG ile izlemek": "Aktif kömür erken dönemde ve hava yolu güvenliği sağlanabiliyorsa düşünülebilir; ancak geniş QRS ve hipotansiyon varken tek başına izlem yeterli değildir. Spesifik acil tedavi sodyum bikarbonattır."
+    },
+    "answerFeedback": {
+      "summary": "Amitriptilin alımı sonrası antikolinerjik bulgular, hipotansiyon, taşikardi ve EKG’de QRS genişlemesi trisiklik antidepresan kardiyotoksisitesini gösterir. Geniş QRS, hızlı sodyum kanal blokajının klinik karşılığıdır ve spesifik acil tedavi intravenöz sodyum bikarbonattır.",
+      "whyCorrect": "Sodyum bikarbonat hem serum pH’ını yükselterek ilacın sodyum kanalına bağlanmasını azaltır hem de sodyum yüküyle iletim bozukluğunu düzeltmeye yardımcı olur. Geniş QRS ve hipotansiyon varken yalnız dekontaminasyon veya semptomatik izlem yeterli değildir.",
+      "rationale": "Amitriptilin alımı sonrası antikolinerjik bulgular, hipotansiyon, taşikardi ve EKG’de QRS genişlemesi trisiklik antidepresan kardiyotoksisitesini gösterir. Geniş QRS, hızlı sodyum kanal blokajının klinik karşılığıdır ve spesifik acil tedavi intravenöz sodyum bikarbonattır.",
+      "correctOptionFeedback": "Doğru seçenektir. Trisiklik antidepresan zehirlenmesinde geniş QRS sodyum kanal blokajını gösterir; intravenöz sodyum bikarbonat serum alkalinizasyonu ve sodyum yüküyle kardiyotoksisiteyi hedefler.",
+      "keyClues": [
+        "Amitriptilin alımından yaklaşık iki saat sonra bilinç bulanıklığı, çarpıntı ve antikolinerjik bulgular gelişmiştir.",
+        "Hipotansiyon ve sinüs taşikardisi kardiyovasküler toksisiteyi destekler.",
+        "EKG’de QRS süresinin 132 ms olması trisiklik antidepresan kaynaklı sodyum kanal blokajını gösterir."
+      ],
+      "evidenceChain": [
+        {
+          "text": "Amitriptilin alımından yaklaşık iki saat sonra bilinç bulanıklığı, çarpıntı ve antikolinerjik bulgular gelişmiştir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Hipotansiyon ve sinüs taşikardisi kardiyovasküler toksisiteyi destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "EKG’de QRS süresinin 132 ms olması trisiklik antidepresan kaynaklı sodyum kanal blokajını gösterir.",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "examPearl": "TCA zehirlenmesinde QRS >100 ms varsa IV sodyum bikarbonat verilir; flumazenil ve beta bloker bu tabloda uygun değildir.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "TCA zehirlenmesinde QRS >100 ms varsa IV sodyum bikarbonat verilir; flumazenil ve beta bloker bu tabloda uygun değildir."
+        }
+      ],
+      "clinicalPearls": [
+        {
+          "label": "Sınav notu",
+          "text": "TCA zehirlenmesinde QRS >100 ms varsa IV sodyum bikarbonat verilir; flumazenil ve beta bloker bu tabloda uygun değildir."
+        }
+      ],
+      "optionComparison": {
+        "Flumazenil vermek": "Flumazenil benzodiazepin toksisitesinde seçilmiş durumlarda kullanılabilir; karışık alım veya nöbet riski varsa tehlikelidir. Amitriptilin zehirlenmesinde QRS genişlemesini düzeltmez ve nöbet riskini artırabilir.",
+        "Nalokson vermek": "Nalokson opioid toksidromunda solunum depresyonu ve miyozis varsa kullanılır. Bu hastada antikolinerjik bulgular, hipotansiyon ve geniş QRS vardır; opioid paternini destekleyen ana bulgu yoktur.",
+        "İntravenöz sodyum bikarbonat vermek": "Doğru seçenektir. Trisiklik antidepresan zehirlenmesinde geniş QRS sodyum kanal blokajını gösterir; intravenöz sodyum bikarbonat serum alkalinizasyonu ve sodyum yüküyle kardiyotoksisiteyi hedefler.",
+        "Beta bloker başlamak": "Beta bloker taşikardiyi azaltabilir gibi görünse de TCA zehirlenmesinde iletim bozukluğu ve hipotansiyonu kötüleştirebilir. Taşikardi toksik mekanizmanın sonucu olup öncelik sodyum kanal blokajını düzeltmektir.",
+        "Aktif kömür verip yalnız seri EKG ile izlemek": "Aktif kömür erken dönemde ve hava yolu güvenliği sağlanabiliyorsa düşünülebilir; ancak geniş QRS ve hipotansiyon varken tek başına izlem yeterli değildir. Spesifik acil tedavi sodyum bikarbonattır."
+      },
+      "whyWrong": {
+        "Flumazenil vermek": "Flumazenil benzodiazepin toksisitesinde seçilmiş durumlarda kullanılabilir; karışık alım veya nöbet riski varsa tehlikelidir. Amitriptilin zehirlenmesinde QRS genişlemesini düzeltmez ve nöbet riskini artırabilir.",
+        "Nalokson vermek": "Nalokson opioid toksidromunda solunum depresyonu ve miyozis varsa kullanılır. Bu hastada antikolinerjik bulgular, hipotansiyon ve geniş QRS vardır; opioid paternini destekleyen ana bulgu yoktur.",
+        "Beta bloker başlamak": "Beta bloker taşikardiyi azaltabilir gibi görünse de TCA zehirlenmesinde iletim bozukluğu ve hipotansiyonu kötüleştirebilir. Taşikardi toksik mekanizmanın sonucu olup öncelik sodyum kanal blokajını düzeltmektir.",
+        "Aktif kömür verip yalnız seri EKG ile izlemek": "Aktif kömür erken dönemde ve hava yolu güvenliği sağlanabiliyorsa düşünülebilir; ancak geniş QRS ve hipotansiyon varken tek başına izlem yeterli değildir. Spesifik acil tedavi sodyum bikarbonattır."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Trisiklik antidepresan zehirlenmesinde QRS genişlemesi varsa intravenöz sodyum bikarbonat tedavisini seçebilme.",
+      "coreKnowledge": "TCA zehirlenmesinde antikolinerjik bulgulara geniş QRS, hipotansiyon, ventriküler aritmi veya nöbet eşlik ederse tedavi IV sodyum bikarbonattır. Aktif kömür sadece erken dönemde ve hava yolu güvenliyse ek dekontaminasyon olarak düşünülür."
+    },
+    "whyCorrect": "Doğru seçenektir. Trisiklik antidepresan zehirlenmesinde geniş QRS sodyum kanal blokajını gösterir; intravenöz sodyum bikarbonat serum alkalinizasyonu ve sodyum yüküyle kardiyotoksisiteyi hedefler.",
+    "evidenceChain": [
+      {
+        "text": "Amitriptilin alımından yaklaşık iki saat sonra bilinç bulanıklığı, çarpıntı ve antikolinerjik bulgular gelişmiştir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Hipotansiyon ve sinüs taşikardisi kardiyovasküler toksisiteyi destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "EKG’de QRS süresinin 132 ms olması trisiklik antidepresan kaynaklı sodyum kanal blokajını gösterir.",
+        "weight": "high",
+        "source": "case"
+      }
+    ],
+    "coreKnowledge": "TCA zehirlenmesinde antikolinerjik bulgulara geniş QRS, hipotansiyon, ventriküler aritmi veya nöbet eşlik ederse tedavi IV sodyum bikarbonattır. Aktif kömür sadece erken dönemde ve hava yolu güvenliyse ek dekontaminasyon olarak düşünülür.",
+    "examPearl": "TCA zehirlenmesinde QRS >100 ms varsa IV sodyum bikarbonat verilir; flumazenil ve beta bloker bu tabloda uygun değildir.",
+    "whyWrong": {
+      "Flumazenil vermek": "Flumazenil benzodiazepin toksisitesinde seçilmiş durumlarda kullanılabilir; karışık alım veya nöbet riski varsa tehlikelidir. Amitriptilin zehirlenmesinde QRS genişlemesini düzeltmez ve nöbet riskini artırabilir.",
+      "Nalokson vermek": "Nalokson opioid toksidromunda solunum depresyonu ve miyozis varsa kullanılır. Bu hastada antikolinerjik bulgular, hipotansiyon ve geniş QRS vardır; opioid paternini destekleyen ana bulgu yoktur.",
+      "Beta bloker başlamak": "Beta bloker taşikardiyi azaltabilir gibi görünse de TCA zehirlenmesinde iletim bozukluğu ve hipotansiyonu kötüleştirebilir. Taşikardi toksik mekanizmanın sonucu olup öncelik sodyum kanal blokajını düzeltmektir.",
+      "Aktif kömür verip yalnız seri EKG ile izlemek": "Aktif kömür erken dönemde ve hava yolu güvenliği sağlanabiliyorsa düşünülebilir; ancak geniş QRS ve hipotansiyon varken tek başına izlem yeterli değildir. Spesifik acil tedavi sodyum bikarbonattır."
+    }
+  },
+  "difficultyTag": "Acil",
+  "coreKnowledge": "TCA zehirlenmesinde antikolinerjik bulgulara geniş QRS, hipotansiyon, ventriküler aritmi veya nöbet eşlik ederse tedavi IV sodyum bikarbonattır. Aktif kömür sadece erken dönemde ve hava yolu güvenliyse ek dekontaminasyon olarak düşünülür.",
+  "examPearl": "TCA zehirlenmesinde QRS >100 ms varsa IV sodyum bikarbonat verilir; flumazenil ve beta bloker bu tabloda uygun değildir.",
+  "whyCorrect": "Doğru seçenektir. Trisiklik antidepresan zehirlenmesinde geniş QRS sodyum kanal blokajını gösterir; intravenöz sodyum bikarbonat serum alkalinizasyonu ve sodyum yüküyle kardiyotoksisiteyi hedefler.",
+  "optionComparison": {
+    "Flumazenil vermek": "Flumazenil benzodiazepin toksisitesinde seçilmiş durumlarda kullanılabilir; karışık alım veya nöbet riski varsa tehlikelidir. Amitriptilin zehirlenmesinde QRS genişlemesini düzeltmez ve nöbet riskini artırabilir.",
+    "Nalokson vermek": "Nalokson opioid toksidromunda solunum depresyonu ve miyozis varsa kullanılır. Bu hastada antikolinerjik bulgular, hipotansiyon ve geniş QRS vardır; opioid paternini destekleyen ana bulgu yoktur.",
+    "İntravenöz sodyum bikarbonat vermek": "Doğru seçenektir. Trisiklik antidepresan zehirlenmesinde geniş QRS sodyum kanal blokajını gösterir; intravenöz sodyum bikarbonat serum alkalinizasyonu ve sodyum yüküyle kardiyotoksisiteyi hedefler.",
+    "Beta bloker başlamak": "Beta bloker taşikardiyi azaltabilir gibi görünse de TCA zehirlenmesinde iletim bozukluğu ve hipotansiyonu kötüleştirebilir. Taşikardi toksik mekanizmanın sonucu olup öncelik sodyum kanal blokajını düzeltmektir.",
+    "Aktif kömür verip yalnız seri EKG ile izlemek": "Aktif kömür erken dönemde ve hava yolu güvenliği sağlanabiliyorsa düşünülebilir; ancak geniş QRS ve hipotansiyon varken tek başına izlem yeterli değildir. Spesifik acil tedavi sodyum bikarbonattır."
+  },
+  "evidenceChain": [
+    {
+      "text": "Amitriptilin alımından yaklaşık iki saat sonra bilinç bulanıklığı, çarpıntı ve antikolinerjik bulgular gelişmiştir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Hipotansiyon ve sinüs taşikardisi kardiyovasküler toksisiteyi destekler.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "EKG’de QRS süresinin 132 ms olması trisiklik antidepresan kaynaklı sodyum kanal blokajını gösterir.",
+      "weight": "high",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Flumazenil vermek": "Flumazenil benzodiazepin toksisitesinde seçilmiş durumlarda kullanılabilir; karışık alım veya nöbet riski varsa tehlikelidir. Amitriptilin zehirlenmesinde QRS genişlemesini düzeltmez ve nöbet riskini artırabilir.",
+    "Nalokson vermek": "Nalokson opioid toksidromunda solunum depresyonu ve miyozis varsa kullanılır. Bu hastada antikolinerjik bulgular, hipotansiyon ve geniş QRS vardır; opioid paternini destekleyen ana bulgu yoktur.",
+    "Beta bloker başlamak": "Beta bloker taşikardiyi azaltabilir gibi görünse de TCA zehirlenmesinde iletim bozukluğu ve hipotansiyonu kötüleştirebilir. Taşikardi toksik mekanizmanın sonucu olup öncelik sodyum kanal blokajını düzeltmektir.",
+    "Aktif kömür verip yalnız seri EKG ile izlemek": "Aktif kömür erken dönemde ve hava yolu güvenliği sağlanabiliyorsa düşünülebilir; ancak geniş QRS ve hipotansiyon varken tek başına izlem yeterli değildir. Spesifik acil tedavi sodyum bikarbonattır."
+  },
+  "aiMeta": {
+    "generatedAt": "manual-v397-pediatrics-seventh-batch-ultra-refined",
+    "generator": "manual-editorial-pediatrics-case-refinement",
+    "schemaVersion": "clinical-standard-v397",
+    "provider": "manual-editorial",
+    "validationWarnings": []
+  }
+},
   {
     "id": "v181-new-165-kulak-cinlamasi-ve-hiperventilasyon",
     "branchId": "pediatrics",
@@ -87001,479 +87023,378 @@ export const rawCases = [
     "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
     "title": "Sağ alt kadran ağrısı",
     "difficulty": "Orta",
-    "clinicalFocus": "Sağ alt kadran ağrısı bağlamında pediatrik öykü, yaşa uygun vital bulgu, fizik muayene ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Sağ alt kadran ağrısı için pediatrik klinik patern, acil öncelik ve hedefe yönelik tanı/tedavi kararını açıklama.",
+    "clinicalFocus": "Çocukta sağ alt kadran ağrısında akut apandisit ile gastroenterit, mezenterik lenfadenit ve üriner nedenleri ayırt etme.",
+    "learningTarget": "Ağrı migrasyonu, lokal periton irritasyonu, inflamatuvar laboratuvar ve ultrasonografi bulgularını birlikte kullanarak akut apandisit tanısını belirleme.",
     "demographics": "10 yaşında erkek çocuk",
     "setting": "Çocuk acil servis",
     "chiefComplaint": "Çocuk, karın ağrısı, iştahsızlık ve kusma nedeniyle acile getiriliyor.",
-    "stem": "Ağrının önce göbek çevresinde başladığı, sonrasında sağ alt kadrana yerleştiği öğreniliyor. Son 12 saatte iştahsızlık ve bir kez kusma gelişmiştir. İshal belirgin değildir.",
+    "stem": "Annesi tarafından acile getirilen 10 yaşındaki erkek çocukta karın ağrısı yaklaşık 18 saat önce göbek çevresinde başlamış, gece boyunca artarak sağ alt kadrana yerleşmiştir. Aile son 12 saatte iştahının belirgin azaldığını, bir kez safrasız kustuğunu ve yürürken karnını koruyarak hareket ettiğini fark etmiştir. İshal belirgin değildir; son dışkılaması normal kıvamdadır ve idrar yaparken yanma tariflememektedir. Evde verilen parasetamole rağmen ağrı tam düzelmemiş, ateşin yükselmesi ve ağrının tek noktaya yerleşmesi üzerine acile başvurulmuştur.",
     "patientIntro": {
-      "profile": "10 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
-      "presentation": "Çocuk, karın ağrısı, iştahsızlık ve kusma nedeniyle acile getiriliyor.",
-      "historySummary": "Ağrının önce göbek çevresinde başladığı, sonrasında sağ alt kadrana yerleştiği öğreniliyor. Son 12 saatte iştahsızlık ve bir kez kusma gelişmiştir. İshal belirgin değildir."
+        "profile": "10 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
+        "presentation": "Çocuk, karın ağrısı, iştahsızlık ve kusma nedeniyle acile getiriliyor.",
+        "historySummary": "Annesi tarafından acile getirilen 10 yaşındaki erkek çocukta karın ağrısı yaklaşık 18 saat önce göbek çevresinde başlamış, gece boyunca artarak sağ alt kadrana yerleşmiştir. Aile son 12 saatte iştahının belirgin azaldığını, bir kez safrasız kustuğunu ve yürürken karnını koruyarak hareket ettiğini fark etmiştir. İshal belirgin değildir; son dışkılaması normal kıvamdadır ve idrar yaparken yanma tariflememektedir. Evde verilen parasetamole rağmen ağrı tam düzelmemiş, ateşin yükselmesi ve ağrının tek noktaya yerleşmesi üzerine acile başvurulmuştur."
     },
     "vitals": {
-      "TA": "100/64 mmHg",
-      "Nabız": "112/dk",
-      "Solunum": "22/dk",
-      "SpO2": "%98, oda havasında",
-      "Ateş": "38.1 °C",
-      "Şok indeksi": "1.12 pediatrik bağlamda yorumlanmalı"
+        "TA": "104/66 mmHg",
+        "Nabız": "112/dk",
+        "Solunum": "22/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "38.2 °C",
+        "Şok indeksi": "1.08 - ağrı ve ateşle uyumlu taşikardi"
     },
     "exam": [
-      "Sağ alt kadranda hassasiyet, rebound ve istemli defans vardır.",
-      "Yürürken ağrısının arttığı gözlenir."
+        "Çocuk sedyede sağ kalçasını hafif fleksiyonda tutarak yatmaktadır ve yürürken sağ alt kadranı korur.",
+        "Karın muayenesinde sağ alt kadranda belirgin hassasiyet, istemli defans ve hafif rebound vardır.",
+        "Barsak sesleri azalmamıştır; yaygın distansiyon veya peritonit bulgusu yoktur."
     ],
     "investigations": [
-      {
-        "id": "beyaz-kure-sayisi-1",
-        "label": "Beyaz küre sayısı",
-        "title": "Beyaz küre sayısı",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "Laboratuvar",
-        "summary": "Kreatinin/BUN artışı prerenal azotemi veya sıvı açığıyla ilişkili böbrek perfüzyon azalmasını düşündürür; hidrasyon durumu ve idrar bulgularıyla birlikte yorumlanır.",
-        "clinicalMeaning": "Kreatinin/BUN artışı prerenal azotemi veya sıvı açığıyla ilişkili böbrek perfüzyon azalmasını düşündürür; hidrasyon durumu ve idrar bulgularıyla birlikte yorumlanır.",
-        "result": {
-          "title": "Beyaz küre sayısı",
-          "summary": "Kreatinin/BUN artışı prerenal azotemi veya sıvı açığıyla ilişkili böbrek perfüzyon azalmasını düşündürür; hidrasyon durumu ve idrar bulgularıyla birlikte yorumlanır.",
-          "interpretation": "Kreatinin/BUN artışı prerenal azotemi veya sıvı açığıyla ilişkili böbrek perfüzyon azalmasını düşündürür; hidrasyon durumu ve idrar bulgularıyla birlikte yorumlanır.",
-          "values": [
-            [
-              "Beyaz küre sayısı",
-              "16400/mm³",
-              "5000–15000/mm³",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Beyaz küre sayısı",
-              "16400/mm³",
-              "5000–15000/mm³",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
+        {
+            "id": "v181-new-170-sag-alt-kadran-agrisi-hemogram-crp",
+            "label": "Hemogram ve CRP",
+            "title": "Hemogram ve CRP",
+            "type": "laboratory",
+            "priority": "essential",
+            "subtype": "",
+            "summary": "Nötrofil baskın lökositoz ve CRP yüksekliği, sağ alt kadran periton irritasyonu ile birlikte akut inflamatuvar karın patolojisini destekler.",
+            "clinicalMeaning": "Nötrofil baskın lökositoz ve CRP yüksekliği, sağ alt kadran periton irritasyonu ile birlikte akut inflamatuvar karın patolojisini destekler.",
+            "result": {
+                "title": "Hemogram ve CRP",
+                "summary": "Nötrofil baskın lökositoz ve CRP yüksekliği, sağ alt kadran periton irritasyonu ile birlikte akut inflamatuvar karın patolojisini destekler.",
+                "interpretation": "Nötrofil baskın lökositoz ve CRP yüksekliği, sağ alt kadran periton irritasyonu ile birlikte akut inflamatuvar karın patolojisini destekler.",
+                "values": [
+                    [
+                        "Lökosit",
+                        "16.800/mm³",
+                        "4.500–13.500/mm³",
+                        "Nötrofil baskın lökositoz"
+                    ],
+                    [
+                        "Nötrofil oranı",
+                        "%84",
+                        "%40–70",
+                        "Bakteriyel/inflamatuvar süreç lehine"
+                    ],
+                    [
+                        "CRP",
+                        "52 mg/L",
+                        "<5 mg/L",
+                        "Akut inflamasyonu destekler"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "Lökosit",
+                        "16.800/mm³",
+                        "4.500–13.500/mm³",
+                        "Nötrofil baskın lökositoz"
+                    ],
+                    [
+                        "Nötrofil oranı",
+                        "%84",
+                        "%40–70",
+                        "Bakteriyel/inflamatuvar süreç lehine"
+                    ],
+                    [
+                        "CRP",
+                        "52 mg/L",
+                        "<5 mg/L",
+                        "Akut inflamasyonu destekler"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "Lökosit",
+                    "16.800/mm³",
+                    "4.500–13.500/mm³",
+                    "Nötrofil baskın lökositoz"
+                ],
+                [
+                    "Nötrofil oranı",
+                    "%84",
+                    "%40–70",
+                    "Bakteriyel/inflamatuvar süreç lehine"
+                ],
+                [
+                    "CRP",
+                    "52 mg/L",
+                    "<5 mg/L",
+                    "Akut inflamasyonu destekler"
+                ]
+            ],
+            "postAnswerExplanation": "Nötrofil baskın lökositoz ve CRP yüksekliği, sağ alt kadran periton irritasyonu ile birlikte akut inflamatuvar karın patolojisini destekler.",
+            "interpretation": "Nötrofil baskın lökositoz ve CRP yüksekliği, sağ alt kadran periton irritasyonu ile birlikte akut inflamatuvar karın patolojisini destekler.",
+            "category": "laboratory",
+            "testTypeCategory": "laboratory",
+            "explanationAfterAnswer": "Nötrofil baskın lökositoz ve CRP yüksekliği, sağ alt kadran periton irritasyonu ile birlikte akut inflamatuvar karın patolojisini destekler.",
+            "clinicalFlowOrder": 10,
+            "flowOrder": 10,
+            "orderRank": 10,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 3,
+            "scoreValue": 3,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
         },
-        "rows": [
-          [
-            "Beyaz küre sayısı",
-            "16400/mm³",
-            "5000–15000/mm³",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "Kreatinin/BUN artışı prerenal azotemi veya sıvı açığıyla ilişkili böbrek perfüzyon azalmasını düşündürür; hidrasyon durumu ve idrar bulgularıyla birlikte yorumlanır.",
-        "interpretation": "Kreatinin/BUN artışı prerenal azotemi veya sıvı açığıyla ilişkili böbrek perfüzyon azalmasını düşündürür; hidrasyon durumu ve idrar bulgularıyla birlikte yorumlanır.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Kreatinin/BUN artışı prerenal azotemi veya sıvı açığıyla ilişkili böbrek perfüzyon azalmasını düşündürür; hidrasyon durumu ve idrar bulgularıyla birlikte yorumlanır.",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      },
-      {
-        "id": "v181-new-170-sag-alt-kadran-agrisi-pediatric-initial-assessment",
-        "label": "Pediatrik ilk değerlendirme",
-        "title": "Pediatrik ilk değerlendirme",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "clinicalMeaning": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "result": {
-          "title": "Pediatrik ilk değerlendirme",
-          "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "values": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
+        {
+            "id": "v181-new-170-sag-alt-kadran-agrisi-idrar-analizi",
+            "label": "Tam idrar analizi",
+            "title": "Tam idrar analizi",
+            "type": "urinalysis",
+            "priority": "important",
+            "subtype": "",
+            "summary": "İdrarda belirgin piyüri veya nitrit olmaması, üriner sistem enfeksiyonunu bu klinik tabloda daha geri plana iter.",
+            "clinicalMeaning": "İdrarda belirgin piyüri veya nitrit olmaması, üriner sistem enfeksiyonunu bu klinik tabloda daha geri plana iter.",
+            "result": {
+                "title": "Tam idrar analizi",
+                "summary": "İdrarda belirgin piyüri veya nitrit olmaması, üriner sistem enfeksiyonunu bu klinik tabloda daha geri plana iter.",
+                "interpretation": "İdrarda belirgin piyüri veya nitrit olmaması, üriner sistem enfeksiyonunu bu klinik tabloda daha geri plana iter.",
+                "values": [
+                    [
+                        "Lökosit",
+                        "1–2/hpf",
+                        "0–5/hpf",
+                        "Belirgin piyüri yok"
+                    ],
+                    [
+                        "Nitrit",
+                        "Negatif",
+                        "Negatif",
+                        "Bakteriyel İYE lehine değil"
+                    ],
+                    [
+                        "Eritrosit",
+                        "0–1/hpf",
+                        "0–3/hpf",
+                        "Ürolitiyazis lehine güçlü bulgu yok"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "Lökosit",
+                        "1–2/hpf",
+                        "0–5/hpf",
+                        "Belirgin piyüri yok"
+                    ],
+                    [
+                        "Nitrit",
+                        "Negatif",
+                        "Negatif",
+                        "Bakteriyel İYE lehine değil"
+                    ],
+                    [
+                        "Eritrosit",
+                        "0–1/hpf",
+                        "0–3/hpf",
+                        "Ürolitiyazis lehine güçlü bulgu yok"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "Lökosit",
+                    "1–2/hpf",
+                    "0–5/hpf",
+                    "Belirgin piyüri yok"
+                ],
+                [
+                    "Nitrit",
+                    "Negatif",
+                    "Negatif",
+                    "Bakteriyel İYE lehine değil"
+                ],
+                [
+                    "Eritrosit",
+                    "0–1/hpf",
+                    "0–3/hpf",
+                    "Ürolitiyazis lehine güçlü bulgu yok"
+                ]
             ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ],
-          "rows": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
-            ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ]
+            "postAnswerExplanation": "İdrarda belirgin piyüri veya nitrit olmaması, üriner sistem enfeksiyonunu bu klinik tabloda daha geri plana iter.",
+            "interpretation": "İdrarda belirgin piyüri veya nitrit olmaması, üriner sistem enfeksiyonunu bu klinik tabloda daha geri plana iter.",
+            "category": "laboratory",
+            "testTypeCategory": "laboratory",
+            "explanationAfterAnswer": "İdrarda belirgin piyüri veya nitrit olmaması, üriner sistem enfeksiyonunu bu klinik tabloda daha geri plana iter.",
+            "clinicalFlowOrder": 20,
+            "flowOrder": 20,
+            "orderRank": 20,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 2,
+            "scoreValue": 2,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
         },
-        "rows": [
-          [
-            "Genel görünüm",
-            "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-            "Yaşa göre",
-            "Kritik izlem"
-          ],
-          [
-            "Kapiller dolum/perfüzyon",
-            "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-            "<2 sn beklenir",
-            "Yaşa göre yorumlanır"
-          ],
-          [
-            "Solunum işi",
-            "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-            "Yaşa göre",
-            "Acil güvenlik"
-          ]
-        ],
-        "postAnswerExplanation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme",
-        "orderRank": 10
-      },
-      {
-        "id": "tam-idrar-analizi-3",
-        "label": "Tam idrar analizi",
-        "title": "Tam idrar analizi",
-        "type": "urine",
-        "priority": "essential",
-        "subtype": "İdrar tetkikleri",
-        "summary": "Lökositoz ve CRP yüksekliği sağ alt kadran hassasiyetiyle birlikte akut apandisit olasılığını destekler; tek başına kan sayımı tanı koydurmaz, görüntüleme ve muayene bulgularıyla yorumlanır.",
-        "clinicalMeaning": "Lökositoz ve CRP yüksekliği sağ alt kadran hassasiyetiyle birlikte akut apandisit olasılığını destekler; tek başına kan sayımı tanı koydurmaz, görüntüleme ve muayene bulgularıyla yorumlanır.",
-        "result": {
-          "title": "Tam idrar analizi",
-          "summary": "Lökositoz ve CRP yüksekliği sağ alt kadran hassasiyetiyle birlikte akut apandisit olasılığını destekler; tek başına kan sayımı tanı koydurmaz, görüntüleme ve muayene bulgularıyla yorumlanır.",
-          "interpretation": "Lökositoz ve CRP yüksekliği sağ alt kadran hassasiyetiyle birlikte akut apandisit olasılığını destekler; tek başına kan sayımı tanı koydurmaz, görüntüleme ve muayene bulgularıyla yorumlanır.",
-          "values": [
-            [
-              "Eritrosit",
-              "0–2/HPF",
-              "0–3/HPF",
-              "Klinik bağlamda değerlendirilmeli"
+        {
+            "id": "v181-new-170-sag-alt-kadran-agrisi-abdomen-usg",
+            "label": "Sağ alt kadran ultrasonografisi",
+            "title": "Sağ alt kadran ultrasonografisi",
+            "type": "imaging",
+            "priority": "essential",
+            "subtype": "",
+            "summary": "Ultrasonografide komprese olmayan, çapı artmış apendiks ve periappendiküler inflamasyon izlenmesi akut apandisit olasılığını güçlendirir.",
+            "clinicalMeaning": "Ultrasonografide komprese olmayan, çapı artmış apendiks ve periappendiküler inflamasyon izlenmesi akut apandisit olasılığını güçlendirir.",
+            "result": {
+                "title": "Sağ alt kadran ultrasonografisi",
+                "summary": "Ultrasonografide komprese olmayan, çapı artmış apendiks ve periappendiküler inflamasyon izlenmesi akut apandisit olasılığını güçlendirir.",
+                "interpretation": "Ultrasonografide komprese olmayan, çapı artmış apendiks ve periappendiküler inflamasyon izlenmesi akut apandisit olasılığını güçlendirir.",
+                "values": [
+                    [
+                        "Apendiks çapı",
+                        "8,6 mm",
+                        "Çap artışı",
+                        "Komprese olmuyor"
+                    ],
+                    [
+                        "Periappendiküler yağ dokusu",
+                        "Ekojenite artışı",
+                        "Enflamasyon bulgusu",
+                        "Lokal inflamasyonla uyumlu"
+                    ],
+                    [
+                        "Serbest sıvı",
+                        "Minimal sağ alt kadran sıvısı",
+                        "Eşlik eden bulgu",
+                        "Perfore apandisit lehine yaygın sıvı yok"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "Apendiks çapı",
+                        "8,6 mm",
+                        "Çap artışı",
+                        "Komprese olmuyor"
+                    ],
+                    [
+                        "Periappendiküler yağ dokusu",
+                        "Ekojenite artışı",
+                        "Enflamasyon bulgusu",
+                        "Lokal inflamasyonla uyumlu"
+                    ],
+                    [
+                        "Serbest sıvı",
+                        "Minimal sağ alt kadran sıvısı",
+                        "Eşlik eden bulgu",
+                        "Perfore apandisit lehine yaygın sıvı yok"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "Apendiks çapı",
+                    "8,6 mm",
+                    "Çap artışı",
+                    "Komprese olmuyor"
+                ],
+                [
+                    "Periappendiküler yağ dokusu",
+                    "Ekojenite artışı",
+                    "Enflamasyon bulgusu",
+                    "Lokal inflamasyonla uyumlu"
+                ],
+                [
+                    "Serbest sıvı",
+                    "Minimal sağ alt kadran sıvısı",
+                    "Eşlik eden bulgu",
+                    "Perfore apandisit lehine yaygın sıvı yok"
+                ]
             ],
-            [
-              "Lökosit",
-              "0–5/HPF",
-              "≤5/HPF",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Nitrit",
-              "Negatif",
-              "Negatif beklenir",
-              "Referans içinde"
-            ]
-          ],
-          "rows": [
-            [
-              "Eritrosit",
-              "0–2/HPF",
-              "0–3/HPF",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Lökosit",
-              "0–5/HPF",
-              "≤5/HPF",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Nitrit",
-              "Negatif",
-              "Negatif beklenir",
-              "Referans içinde"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Eritrosit",
-            "0–2/HPF",
-            "0–3/HPF",
-            "Klinik bağlamda değerlendirilmeli"
-          ],
-          [
-            "Lökosit",
-            "0–5/HPF",
-            "≤5/HPF",
-            "Klinik bağlamda değerlendirilmeli"
-          ],
-          [
-            "Nitrit",
-            "Negatif",
-            "Negatif beklenir",
-            "Referans içinde"
-          ]
-        ],
-        "postAnswerExplanation": "Lökositoz ve CRP yüksekliği sağ alt kadran hassasiyetiyle birlikte akut apandisit olasılığını destekler; tek başına kan sayımı tanı koydurmaz, görüntüleme ve muayene bulgularıyla yorumlanır.",
-        "interpretation": "Lökositoz ve CRP yüksekliği sağ alt kadran hassasiyetiyle birlikte akut apandisit olasılığını destekler; tek başına kan sayımı tanı koydurmaz, görüntüleme ve muayene bulgularıyla yorumlanır.",
-        "explanationAfterAnswer": "Lökositoz ve CRP yüksekliği sağ alt kadran hassasiyetiyle birlikte akut apandisit olasılığını destekler; tek başına kan sayımı tanı koydurmaz, görüntüleme ve muayene bulgularıyla yorumlanır.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      },
-      {
-        "id": "abdominal-ultrasonografi-2",
-        "label": "Abdominal ultrasonografi",
-        "title": "Abdominal ultrasonografi",
-        "type": "ultrasound",
-        "priority": "essential",
-        "subtype": "Ultrasonografi",
-        "summary": "Komprese olmayan, çapı artmış kör sonlanan tübüler yapı apendiks inflamasyonunu anatomik olarak gösterir; göç eden sağ alt kadran ağrısıyla birlikte akut apandisiti destekler.",
-        "clinicalMeaning": "Komprese olmayan, çapı artmış kör sonlanan tübüler yapı apendiks inflamasyonunu anatomik olarak gösterir; göç eden sağ alt kadran ağrısıyla birlikte akut apandisiti destekler.",
-        "result": {
-          "title": "Abdominal ultrasonografi",
-          "summary": "Komprese olmayan, çapı artmış kör sonlanan tübüler yapı apendiks inflamasyonunu anatomik olarak gösterir; göç eden sağ alt kadran ağrısıyla birlikte akut apandisiti destekler.",
-          "interpretation": "Komprese olmayan, çapı artmış kör sonlanan tübüler yapı apendiks inflamasyonunu anatomik olarak gösterir; göç eden sağ alt kadran ağrısıyla birlikte akut apandisiti destekler.",
-          "values": [
-            [
-              "Abdominal ultrasonografi",
-              "8.5 mm",
-              "<6 mm",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Abdominal ultrasonografi",
-              "8.5 mm",
-              "<6 mm",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Abdominal ultrasonografi",
-            "8.5 mm",
-            "<6 mm",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "Komprese olmayan, çapı artmış kör sonlanan tübüler yapı apendiks inflamasyonunu anatomik olarak gösterir; göç eden sağ alt kadran ağrısıyla birlikte akut apandisiti destekler.",
-        "interpretation": "Komprese olmayan, çapı artmış kör sonlanan tübüler yapı apendiks inflamasyonunu anatomik olarak gösterir; göç eden sağ alt kadran ağrısıyla birlikte akut apandisiti destekler.",
-        "explanationAfterAnswer": "Komprese olmayan, çapı artmış kör sonlanan tübüler yapı apendiks inflamasyonunu anatomik olarak gösterir; göç eden sağ alt kadran ağrısıyla birlikte akut apandisiti destekler.",
-        "category": "imaging",
-        "testTypeCategory": "imaging",
-        "clinicalFlowOrder": 50,
-        "flowOrder": 50,
-        "orderRank": 50,
-        "testValueLabel": "Hedefli test",
-        "clinicalPriorityLabel": "Hedefli test",
-        "educationalValue": "Hedefli test",
-        "scoreImpact": 3,
-        "scoreValue": 3,
-        "pediatricSafetyValue": "Hedefli test",
-        "treatmentImpact": "Hedefli test"
-      }
+            "postAnswerExplanation": "Ultrasonografide komprese olmayan, çapı artmış apendiks ve periappendiküler inflamasyon izlenmesi akut apandisit olasılığını güçlendirir.",
+            "interpretation": "Ultrasonografide komprese olmayan, çapı artmış apendiks ve periappendiküler inflamasyon izlenmesi akut apandisit olasılığını güçlendirir.",
+            "category": "imaging",
+            "testTypeCategory": "imaging",
+            "explanationAfterAnswer": "Ultrasonografide komprese olmayan, çapı artmış apendiks ve periappendiküler inflamasyon izlenmesi akut apandisit olasılığını güçlendirir.",
+            "clinicalFlowOrder": 30,
+            "flowOrder": 30,
+            "orderRank": 30,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 4,
+            "scoreValue": 4,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
+        }
     ],
     "useSyntheticInvestigationBank": false,
     "managementSequence": {
-      "enabled": false
+        "enabled": false
     },
-    "hideExamSignal": true,
+    "hideExamSignal": false,
     "shuffleOptions": false,
     "question": "Bu çocukta en olası tanı aşağıdakilerden hangisidir?",
     "questionType": "diagnosis",
     "answerTarget": "diagnosis",
     "diagnosis": {
-      "correct": "Akut apandisit",
-      "options": [
-        "İrritabl bağırsak sendromu",
-        "İnvajinasyon",
-        "Akut apandisit",
-        "Viral gastroenterit",
-        "Hipertrofik pilor stenozu"
-      ],
-      "question": "Bu çocukta en olası tanı aşağıdakilerden hangisidir?",
-      "explanation": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Akut apandisit yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü sağ alt kadran ağrısı için doğru tanı/tedavi önceliğini belirler.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Akut apandisit kararını destekler."
-        }
-      ],
-      "optionComparison": {
-        "İrritabl bağırsak sendromu": "İrritabl bağırsak sendromu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle İrritabl bağırsak sendromu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "İnvajinasyon": "İnvajinasyon pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle İnvajinasyon hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Akut apandisit": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "Viral gastroenterit": "Akut viral gastroenterit genellikle kısa süreli kusma/ishalle seyreder; kronik büyüme etkilenimi veya özgül seroloji beklenmez. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle Viral gastroenterit hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Hipertrofik pilor stenozu": "Hipertrofik pilor stenozu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle Hipertrofik pilor stenozu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-      },
-      "answerFeedback": {
-        "summary": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Akut apandisit yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü sağ alt kadran ağrısı için doğru tanı/tedavi önceliğini belirler.",
-        "whyCorrect": "Ağrı periumbilikal başlayıp sağ alt kadrana yerleşmiştir. Sağ alt kadranda rebound ve defans vardır. Bu bulgular birlikte değerlendirildiğinde en uygun yanıt Akut apandisit olur. Pediatrik değerlendirmede yaş, klinik zamanlama, muayene bulgusu ve objektif veri birlikte yorumlandığında ayırıcı tanı belirgin biçimde daralır. Diğer olasılıklar tekil bulgularla benzerlik gösterebilir; ancak bu olgudaki zamanlama, klinik birliktelik ve objektif veriyi aynı güçte açıklamaz.",
-        "rationale": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Akut apandisit yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü sağ alt kadran ağrısı için doğru tanı/tedavi önceliğini belirler.",
-        "correctOptionFeedback": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "keyClues": [
-          "Ağrı periumbilikal başlayıp sağ alt kadrana yerleşmiştir.",
-          "Sağ alt kadranda rebound ve defans vardır.",
-          "Objektif veri (Beyaz küre sayısı: Beyaz küre sayısı 16400/mm³) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır."
+        "correct": "Akut apandisit",
+        "options": [
+            "Mezenterik lenfadenit",
+            "Akut gastroenterit",
+            "Akut apandisit",
+            "Üriner sistem enfeksiyonu",
+            "Fonksiyonel karın ağrısı"
         ],
-        "evidenceChain": [
-          {
-            "text": "Ağrı periumbilikal başlayıp sağ alt kadrana yerleşmiştir.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Sağ alt kadranda rebound ve defans vardır.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Objektif veri (Beyaz küre sayısı: Beyaz küre sayısı 16400/mm³) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "examPearl": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Akut apandisit kararını destekler.",
+        "question": "Bu çocukta en olası tanı aşağıdakilerden hangisidir?",
+        "explanation": "Göbek çevresinde başlayıp sağ alt kadrana yerleşen ağrı, iştahsızlık, kusma, lokal hassasiyet ve nötrofil baskın inflamasyon akut apandisit için klasik klinik zinciri oluşturur. İdrar analizinde İYE lehine belirgin bulgu olmaması ve ultrasonografide komprese olmayan geniş apendiks saptanması doğru tanıyı netleştirir.",
         "pearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Akut apandisit kararını destekler."
-          }
-        ],
-        "clinicalPearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Akut apandisit kararını destekler."
-          }
+            {
+                "label": "Sınav notu",
+                "text": "Çocukta periumblikal ağrının sağ alt kadrana göç etmesi, iştahsızlık ve lokal periton irritasyonu akut apandisit için yüksek değerli ipuçlarıdır."
+            }
         ],
         "optionComparison": {
-          "İrritabl bağırsak sendromu": "İrritabl bağırsak sendromu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle İrritabl bağırsak sendromu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "İnvajinasyon": "İnvajinasyon pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle İnvajinasyon hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Akut apandisit": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-          "Viral gastroenterit": "Akut viral gastroenterit genellikle kısa süreli kusma/ishalle seyreder; kronik büyüme etkilenimi veya özgül seroloji beklenmez. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle Viral gastroenterit hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Hipertrofik pilor stenozu": "Hipertrofik pilor stenozu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle Hipertrofik pilor stenozu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "whyWrong": {
-          "İrritabl bağırsak sendromu": "İrritabl bağırsak sendromu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle İrritabl bağırsak sendromu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "İnvajinasyon": "İnvajinasyon pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle İnvajinasyon hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Viral gastroenterit": "Akut viral gastroenterit genellikle kısa süreli kusma/ishalle seyreder; kronik büyüme etkilenimi veya özgül seroloji beklenmez. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle Viral gastroenterit hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Hipertrofik pilor stenozu": "Hipertrofik pilor stenozu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle Hipertrofik pilor stenozu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Çocukta akut apandisitte klinik bulgularla tanıyı seçebilme",
-        "coreKnowledge": "Sağ alt kadran ağrısı sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir."
-      },
-      "whyCorrect": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "evidenceChain": [
-        {
-          "text": "Ağrı periumbilikal başlayıp sağ alt kadrana yerleşmiştir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Sağ alt kadranda rebound ve defans vardır.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Objektif veri (Beyaz küre sayısı: Beyaz küre sayısı 16400/mm³) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-          "weight": "medium",
-          "source": "case"
+            "Mezenterik lenfadenit": "Mezenterik lenfadenit viral enfeksiyon sonrası sağ alt kadran ağrısı yapabilir; ancak bu vakada ağrının göçü, iştahsızlık, rebound hassasiyet ve apendiks USG bulgusu apandisiti daha güçlü destekler.",
+            "Akut gastroenterit": "Gastroenteritte yaygın kramp tarzı ağrı, ishal ve kusma ön plandadır. Bu çocukta ishalin olmaması ve ağrının sağ alt kadrana lokalize olması gastroenteriti geriye iter.",
+            "Akut apandisit": "Doğru seçenektir; klinik zaman çizgisi, muayene ve USG bulguları akut apandisit zinciriyle uyumludur.",
+            "Üriner sistem enfeksiyonu": "İYE karın ağrısı ve ateş yapabilir; ancak dizüri yoktur, tam idrar analizinde piyüri/nitrit saptanmamıştır ve ağrı paternini açıklamaz.",
+            "Fonksiyonel karın ağrısı": "Fonksiyonel ağrı tekrarlayıcı ve organik alarm bulgusu olmadan seyreder; ateş, kusma, lokal periton irritasyonu ve inflamatuvar laboratuvar artışı bu seçenekle uyumlu değildir."
         }
-      ],
-      "coreKnowledge": "Sağ alt kadran ağrısı sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-      "examPearl": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Akut apandisit kararını destekler.",
-      "whyWrong": {
-        "İrritabl bağırsak sendromu": "İrritabl bağırsak sendromu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle İrritabl bağırsak sendromu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "İnvajinasyon": "İnvajinasyon pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle İnvajinasyon hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Viral gastroenterit": "Akut viral gastroenterit genellikle kısa süreli kusma/ishalle seyreder; kronik büyüme etkilenimi veya özgül seroloji beklenmez. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle Viral gastroenterit hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Hipertrofik pilor stenozu": "Hipertrofik pilor stenozu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle Hipertrofik pilor stenozu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-      }
     },
     "difficultyTag": "Orta",
-    "coreKnowledge": "Sağ alt kadran ağrısı sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-    "examPearl": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Akut apandisit kararını destekler.",
-    "whyCorrect": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
+    "coreKnowledge": "Akut apandisit tanısı tek bir laboratuvar değeriyle değil; ağrının göçü, iştahsızlık-kusma, sağ alt kadran muayene bulgusu ve ultrasonografi bulgularının birlikte yorumlanmasıyla konur.",
+    "examPearl": "Çocukta periumblikal ağrının sağ alt kadrana göç etmesi, iştahsızlık ve lokal periton irritasyonu akut apandisit için yüksek değerli ipuçlarıdır.",
+    "whyCorrect": "Akut apandisit doğru yanıttır; çünkü ağrının göbek çevresinden sağ alt kadrana göç etmesi, iştahsızlık, lokal periton irritasyonu, nötrofilik lökositoz ve geniş-komprese olmayan apendiks aynı tanısal örüntüyü oluşturur.",
     "optionComparison": {
-      "İrritabl bağırsak sendromu": "İrritabl bağırsak sendromu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle İrritabl bağırsak sendromu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "İnvajinasyon": "İnvajinasyon pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle İnvajinasyon hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Akut apandisit": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "Viral gastroenterit": "Akut viral gastroenterit genellikle kısa süreli kusma/ishalle seyreder; kronik büyüme etkilenimi veya özgül seroloji beklenmez. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle Viral gastroenterit hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Hipertrofik pilor stenozu": "Hipertrofik pilor stenozu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle Hipertrofik pilor stenozu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+        "Mezenterik lenfadenit": "Mezenterik lenfadenit viral enfeksiyon sonrası sağ alt kadran ağrısı yapabilir; ancak bu vakada ağrının göçü, iştahsızlık, rebound hassasiyet ve apendiks USG bulgusu apandisiti daha güçlü destekler.",
+        "Akut gastroenterit": "Gastroenteritte yaygın kramp tarzı ağrı, ishal ve kusma ön plandadır. Bu çocukta ishalin olmaması ve ağrının sağ alt kadrana lokalize olması gastroenteriti geriye iter.",
+        "Akut apandisit": "Doğru seçenektir; klinik zaman çizgisi, muayene ve USG bulguları akut apandisit zinciriyle uyumludur.",
+        "Üriner sistem enfeksiyonu": "İYE karın ağrısı ve ateş yapabilir; ancak dizüri yoktur, tam idrar analizinde piyüri/nitrit saptanmamıştır ve ağrı paternini açıklamaz.",
+        "Fonksiyonel karın ağrısı": "Fonksiyonel ağrı tekrarlayıcı ve organik alarm bulgusu olmadan seyreder; ateş, kusma, lokal periton irritasyonu ve inflamatuvar laboratuvar artışı bu seçenekle uyumlu değildir."
     },
     "evidenceChain": [
-      {
-        "text": "Ağrı periumbilikal başlayıp sağ alt kadrana yerleşmiştir.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Sağ alt kadranda rebound ve defans vardır.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Objektif veri (Beyaz küre sayısı: Beyaz küre sayısı 16400/mm³) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-        "weight": "medium",
-        "source": "case"
-      }
+        {
+            "text": "Ağrı göbek çevresinde başlamış ve sağ alt kadrana göç etmiştir → visseral ağrıdan lokal peritoneal irritasyona ilerleyen apandisit paternini destekler.",
+            "weight": "high",
+            "source": "case"
+        },
+        {
+            "text": "İştahsızlık, kusma ve sağ alt kadranda lokal hassasiyet/rebound birliktedir → akut cerrahi karın olasılığını artırır.",
+            "weight": "high",
+            "source": "case"
+        },
+        {
+            "text": "Nötrofilik lökositoz, CRP yüksekliği ve USG’de komprese olmayan 8,6 mm apendiks vardır → tanısal zinciri objektif olarak tamamlar.",
+            "weight": "high",
+            "source": "case"
+        }
     ],
     "whyWrong": {
-      "İrritabl bağırsak sendromu": "İrritabl bağırsak sendromu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle İrritabl bağırsak sendromu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "İnvajinasyon": "İnvajinasyon pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle İnvajinasyon hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Viral gastroenterit": "Akut viral gastroenterit genellikle kısa süreli kusma/ishalle seyreder; kronik büyüme etkilenimi veya özgül seroloji beklenmez. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle Viral gastroenterit hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Hipertrofik pilor stenozu": "Hipertrofik pilor stenozu pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi sağ alt kadran ağrısı lehinedir; bu nedenle Hipertrofik pilor stenozu hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+        "Mezenterik lenfadenit": "Mezenterik lenfadenit viral enfeksiyon sonrası sağ alt kadran ağrısı yapabilir; ancak bu vakada ağrının göçü, iştahsızlık, rebound hassasiyet ve apendiks USG bulgusu apandisiti daha güçlü destekler.",
+        "Akut gastroenterit": "Gastroenteritte yaygın kramp tarzı ağrı, ishal ve kusma ön plandadır. Bu çocukta ishalin olmaması ve ağrının sağ alt kadrana lokalize olması gastroenteriti geriye iter.",
+        "Üriner sistem enfeksiyonu": "İYE karın ağrısı ve ateş yapabilir; ancak dizüri yoktur, tam idrar analizinde piyüri/nitrit saptanmamıştır ve ağrı paternini açıklamaz.",
+        "Fonksiyonel karın ağrısı": "Fonksiyonel ağrı tekrarlayıcı ve organik alarm bulgusu olmadan seyreder; ateş, kusma, lokal periton irritasyonu ve inflamatuvar laboratuvar artışı bu seçenekle uyumlu değildir."
     },
     "aiMeta": {
-      "generatedAt": "manual-v396-pediatrics-ultra-refined",
-      "generator": "manual-editorial-pediatrics-case-refinement",
-      "schemaVersion": "clinical-standard-v396",
-      "provider": "manual-editorial",
-      "validationWarnings": []
+        "generatedAt": "manual-v397-pediatrics-eighth-batch-ultra-refined",
+        "generator": "manual-editorial-pediatrics-case-refinement",
+        "schemaVersion": "clinical-standard-v397",
+        "provider": "manual-editorial",
+        "validationWarnings": []
     }
-  },
+},
   {
     "id": "v182-new-171-travma-sonrasi-ani-solunum-bozulmasi",
     "branchId": "pediatrics",
@@ -87481,337 +87402,378 @@ export const rawCases = [
     "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
     "title": "Travma sonrası ani solunum bozulması",
     "difficulty": "Acil",
-    "clinicalFocus": "Travma sonrası ani solunum bozulması bağlamında pediatrik öykü, yaşa uygun vital bulgu, fizik muayene ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Travma sonrası ani solunum bozulması için pediatrik klinik patern, acil öncelik ve hedefe yönelik tanı/tedavi kararını açıklama.",
-    "demographics": "13 yaşında erkek çocuk",
-    "setting": "Çocuk acil servis",
+    "clinicalFocus": "Çocuk travma hastasında tansiyon pnömotoraksı klinik olarak tanıyıp görüntüleme beklemeden acil dekompresyon kararını verme.",
+    "learningTarget": "Hipoksi, hipotansiyon, tek taraflı solunum sesi kaybı ve perfüzyon bozukluğunu tansiyon pnömotoraks lehine yorumlayarak ilk acil yaklaşımı seçme.",
+    "demographics": "12 yaşında erkek çocuk",
+    "setting": "Çocuk travma resüsitasyon alanı",
     "chiefComplaint": "Çocuk, göğüs travması sonrası hızla artan nefes darlığı ve bilinç bulanıklığı nedeniyle travma odasına alınıyor.",
-    "stem": "Bisikletle araç çarpışması sonrası sağ hemitoraksa darbe aldığı öğreniliyor. Olay yerinde başlangıçta konuşabildiği ancak acile gelirken solunum sıkıntısının hızla arttığı belirtiliyor.",
+    "stem": "Acil travma ekibine getirilen 12 yaşındaki erkek çocuk, bisikletiyle otomobile çarptıktan sonra sağ göğsünü gidona vurmuştur. Olay yerinde kısa süre konuşabildiği, ancak ambulans yolculuğu sırasında nefes darlığının hızla arttığı ve giderek dalgınlaştığı öğrenilir. Kusma veya nöbet tariflenmemiştir; belirgin dış kanama görülmemiştir. Paramedik ekibi oksijen verilmesine rağmen morarmanın ve solunum çabasının arttığını bildirerek hastayı doğrudan resüsitasyon alanına almıştır.",
     "patientIntro": {
-      "profile": "13 yaşında erkek çocuk, trafik kazası sonrası çocuk acil servisinde değerlendiriliyor.",
-      "presentation": "Çocuk, göğüs travması sonrası hızla artan nefes darlığı ve bilinç bulanıklığı nedeniyle travma odasına alınıyor.",
-      "historySummary": "Bisikletle araç çarpışması sonrası sağ hemitoraksa darbe aldığı öğreniliyor. Olay yerinde başlangıçta konuşabildiği ancak acile gelirken solunum sıkıntısının hızla arttığı belirtiliyor."
+        "profile": "12 yaşında erkek çocuk, çocuk travma resüsitasyon alanında değerlendiriliyor.",
+        "presentation": "Çocuk, göğüs travması sonrası hızla artan nefes darlığı ve bilinç bulanıklığı nedeniyle travma odasına alınıyor.",
+        "historySummary": "Acil travma ekibine getirilen 12 yaşındaki erkek çocuk, bisikletiyle otomobile çarptıktan sonra sağ göğsünü gidona vurmuştur. Olay yerinde kısa süre konuşabildiği, ancak ambulans yolculuğu sırasında nefes darlığının hızla arttığı ve giderek dalgınlaştığı öğrenilir. Kusma veya nöbet tariflenmemiştir; belirgin dış kanama görülmemiştir. Paramedik ekibi oksijen verilmesine rağmen morarmanın ve solunum çabasının arttığını bildirerek hastayı doğrudan resüsitasyon alanına almıştır."
     },
     "vitals": {
-      "TA": "72/44 mmHg",
-      "Nabız": "162/dk",
-      "Solunum": "28/dk",
-      "SpO2": "%82, oda havasında",
-      "Ateş": "36.8 °C",
-      "Şok indeksi": "2.25 pediatrik bağlamda yorumlanmalı"
+        "TA": "76/42 mmHg",
+        "Nabız": "148/dk",
+        "Solunum": "36/dk",
+        "SpO2": "%84, oksijen altında",
+        "Ateş": "36.5 °C",
+        "Şok indeksi": "1.95 - obstrüktif şok açısından çok yüksek"
     },
     "exam": [
-      "Çocuk ajite ve siyanoze görünümdedir.",
-      "Sağ hemitoraksta solunum sesleri belirgin azalmış, perküsyon hipersonordur.",
-      "Trakea sola deviye görünür.",
-      "Boyun venleri belirgindir."
+        "Çocuk ajite ve siyanoza eğilimlidir; yardımcı solunum kaslarını belirgin kullanır.",
+        "Sağ hemitoraksta solunum sesleri ileri derecede azalmış, perküsyon hipersonordur.",
+        "Trakea hafif sola deviye görünür; perifer soğuk ve kapiller dolum 4 saniyedir."
     ],
     "investigations": [
-      {
-        "id": "v182-new-171-travma-sonrasi-ani-solunum-bozulmasi-safety-peds",
-        "label": "Tedavi güvenliği ve izlem değerlendirmesi",
-        "title": "Tedavi güvenliği ve izlem değerlendirmesi",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Pediatrik acilde doğru tedavi kadar yaşa/kiloya uygun uygulama ve seri yanıt izlemi de güvenlik açısından gereklidir.",
-        "clinicalMeaning": "Pediatrik acilde doğru tedavi kadar yaşa/kiloya uygun uygulama ve seri yanıt izlemi de güvenlik açısından gereklidir.",
-        "result": {
-          "title": "Tedavi güvenliği ve izlem değerlendirmesi",
-          "summary": "Pediatrik acilde doğru tedavi kadar yaşa/kiloya uygun uygulama ve seri yanıt izlemi de güvenlik açısından gereklidir.",
-          "interpretation": "Pediatrik acilde doğru tedavi kadar yaşa/kiloya uygun uygulama ve seri yanıt izlemi de güvenlik açısından gereklidir.",
-          "values": [
-            [
-              "Kilo/doz güvenliği",
-              "Tedavi yaş ve kilo dikkate alınarak planlandı",
-              "Pediatrik doz güvenliği gerekir",
-              "İzlem gerekli"
+        {
+            "id": "v182-new-171-travma-sonrasi-ani-solunum-bozulmasi-primary-survey",
+            "label": "Travma birincil değerlendirmesi",
+            "title": "Travma birincil değerlendirmesi",
+            "type": "clinical",
+            "priority": "essential",
+            "subtype": "",
+            "summary": "Birincil değerlendirmede hipoksi, hipotansiyon ve tek taraflı solunum sesi kaybı birlikte saptanmıştır; bu bulgular görüntüleme beklenmeden acil dekompresyon gerektirir.",
+            "clinicalMeaning": "Birincil değerlendirmede hipoksi, hipotansiyon ve tek taraflı solunum sesi kaybı birlikte saptanmıştır; bu bulgular görüntüleme beklenmeden acil dekompresyon gerektirir.",
+            "result": {
+                "title": "Travma birincil değerlendirmesi",
+                "summary": "Birincil değerlendirmede hipoksi, hipotansiyon ve tek taraflı solunum sesi kaybı birlikte saptanmıştır; bu bulgular görüntüleme beklenmeden acil dekompresyon gerektirir.",
+                "interpretation": "Birincil değerlendirmede hipoksi, hipotansiyon ve tek taraflı solunum sesi kaybı birlikte saptanmıştır; bu bulgular görüntüleme beklenmeden acil dekompresyon gerektirir.",
+                "values": [
+                    [
+                        "Hava yolu",
+                        "Açık, konuşması kesik ve zayıf",
+                        "Klinik değerlendirme",
+                        "Solunum yetmezliği riski var"
+                    ],
+                    [
+                        "Solunum",
+                        "Sağ hemitoraksta solunum sesi belirgin azalmış",
+                        "Klinik değerlendirme",
+                        "Tek taraflı ventilasyon kaybı"
+                    ],
+                    [
+                        "Dolaşım",
+                        "Perifer soğuk, kapiller dolum 4 sn",
+                        "Klinik değerlendirme",
+                        "Obstrüktif şok bulgusu"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "Hava yolu",
+                        "Açık, konuşması kesik ve zayıf",
+                        "Klinik değerlendirme",
+                        "Solunum yetmezliği riski var"
+                    ],
+                    [
+                        "Solunum",
+                        "Sağ hemitoraksta solunum sesi belirgin azalmış",
+                        "Klinik değerlendirme",
+                        "Tek taraflı ventilasyon kaybı"
+                    ],
+                    [
+                        "Dolaşım",
+                        "Perifer soğuk, kapiller dolum 4 sn",
+                        "Klinik değerlendirme",
+                        "Obstrüktif şok bulgusu"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "Hava yolu",
+                    "Açık, konuşması kesik ve zayıf",
+                    "Klinik değerlendirme",
+                    "Solunum yetmezliği riski var"
+                ],
+                [
+                    "Solunum",
+                    "Sağ hemitoraksta solunum sesi belirgin azalmış",
+                    "Klinik değerlendirme",
+                    "Tek taraflı ventilasyon kaybı"
+                ],
+                [
+                    "Dolaşım",
+                    "Perifer soğuk, kapiller dolum 4 sn",
+                    "Klinik değerlendirme",
+                    "Obstrüktif şok bulgusu"
+                ]
             ],
-            [
-              "Yanıt izlemi",
-              "Vital, solunum ve mental durum seri izlenecek",
-              "Klinik stabilizasyon beklenir",
-              "İzlem gerekli"
-            ]
-          ],
-          "rows": [
-            [
-              "Kilo/doz güvenliği",
-              "Tedavi yaş ve kilo dikkate alınarak planlandı",
-              "Pediatrik doz güvenliği gerekir",
-              "İzlem gerekli"
-            ],
-            [
-              "Yanıt izlemi",
-              "Vital, solunum ve mental durum seri izlenecek",
-              "Klinik stabilizasyon beklenir",
-              "İzlem gerekli"
-            ]
-          ]
+            "postAnswerExplanation": "Birincil değerlendirmede hipoksi, hipotansiyon ve tek taraflı solunum sesi kaybı birlikte saptanmıştır; bu bulgular görüntüleme beklenmeden acil dekompresyon gerektirir.",
+            "interpretation": "Birincil değerlendirmede hipoksi, hipotansiyon ve tek taraflı solunum sesi kaybı birlikte saptanmıştır; bu bulgular görüntüleme beklenmeden acil dekompresyon gerektirir.",
+            "category": "clinicalAssessment",
+            "testTypeCategory": "clinicalAssessment",
+            "explanationAfterAnswer": "Birincil değerlendirmede hipoksi, hipotansiyon ve tek taraflı solunum sesi kaybı birlikte saptanmıştır; bu bulgular görüntüleme beklenmeden acil dekompresyon gerektirir.",
+            "clinicalFlowOrder": 10,
+            "flowOrder": 10,
+            "orderRank": 10,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 4,
+            "scoreValue": 4,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
         },
-        "rows": [
-          [
-            "Kilo/doz güvenliği",
-            "Tedavi yaş ve kilo dikkate alınarak planlandı",
-            "Pediatrik doz güvenliği gerekir",
-            "İzlem gerekli"
-          ],
-          [
-            "Yanıt izlemi",
-            "Vital, solunum ve mental durum seri izlenecek",
-            "Klinik stabilizasyon beklenir",
-            "İzlem gerekli"
-          ]
-        ],
-        "postAnswerExplanation": "Pediatrik acilde doğru tedavi kadar yaşa/kiloya uygun uygulama ve seri yanıt izlemi de güvenlik açısından gereklidir.",
-        "interpretation": "Pediatrik acilde doğru tedavi kadar yaşa/kiloya uygun uygulama ve seri yanıt izlemi de güvenlik açısından gereklidir.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Pediatrik acilde doğru tedavi kadar yaşa/kiloya uygun uygulama ve seri yanıt izlemi de güvenlik açısından gereklidir.",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      },
-      {
-        "id": "v182-new-171-travma-sonrasi-ani-solunum-bozulmasi-bedside-peds",
-        "label": "Yatak başı pediatrik acil değerlendirme",
-        "title": "Yatak başı pediatrik acil değerlendirme",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Adolesan hastada genel görünüm, perfüzyon, solunum işi ve mental durum tedavi önceliğini belirler; bu değerlendirme travma sonrası ani solunum bozulması kararının klinik temelidir.",
-        "clinicalMeaning": "Adolesan hastada genel görünüm, perfüzyon, solunum işi ve mental durum tedavi önceliğini belirler; bu değerlendirme travma sonrası ani solunum bozulması kararının klinik temelidir.",
-        "result": {
-          "title": "Yatak başı pediatrik acil değerlendirme",
-          "summary": "Adolesan hastada genel görünüm, perfüzyon, solunum işi ve mental durum tedavi önceliğini belirler; bu değerlendirme travma sonrası ani solunum bozulması kararının klinik temelidir.",
-          "interpretation": "Adolesan hastada genel görünüm, perfüzyon, solunum işi ve mental durum tedavi önceliğini belirler; bu değerlendirme travma sonrası ani solunum bozulması kararının klinik temelidir.",
-          "values": [
-            [
-              "Genel görünüm",
-              "Yaşa göre acil ciddiyet açısından değerlendirildi",
-              "Stabil/uyanık çocuk beklenir",
-              "Klinik bağlamda değerlendirilmeli"
+        {
+            "id": "v182-new-171-travma-sonrasi-ani-solunum-bozulmasi-kan-gazi",
+            "label": "Kan gazı ve laktat",
+            "title": "Kan gazı ve laktat",
+            "type": "bloodGas",
+            "priority": "important",
+            "subtype": "",
+            "summary": "Hipoksemi ve laktat yüksekliği travma sonrası ventilasyon-dolaşım bozulmasının ciddiyetini gösterir; tedavi kararı klinik bulgularla birlikte acildir.",
+            "clinicalMeaning": "Hipoksemi ve laktat yüksekliği travma sonrası ventilasyon-dolaşım bozulmasının ciddiyetini gösterir; tedavi kararı klinik bulgularla birlikte acildir.",
+            "result": {
+                "title": "Kan gazı ve laktat",
+                "summary": "Hipoksemi ve laktat yüksekliği travma sonrası ventilasyon-dolaşım bozulmasının ciddiyetini gösterir; tedavi kararı klinik bulgularla birlikte acildir.",
+                "interpretation": "Hipoksemi ve laktat yüksekliği travma sonrası ventilasyon-dolaşım bozulmasının ciddiyetini gösterir; tedavi kararı klinik bulgularla birlikte acildir.",
+                "values": [
+                    [
+                        "pH",
+                        "7.28",
+                        "7.35–7.45",
+                        "Akut solunum/dolaşım bozulması"
+                    ],
+                    [
+                        "PaO₂",
+                        "54 mmHg",
+                        "80–100 mmHg",
+                        "Belirgin hipoksemi"
+                    ],
+                    [
+                        "Laktat",
+                        "4.1 mmol/L",
+                        "<2 mmol/L",
+                        "Hipoperfüzyonla uyumlu"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "pH",
+                        "7.28",
+                        "7.35–7.45",
+                        "Akut solunum/dolaşım bozulması"
+                    ],
+                    [
+                        "PaO₂",
+                        "54 mmHg",
+                        "80–100 mmHg",
+                        "Belirgin hipoksemi"
+                    ],
+                    [
+                        "Laktat",
+                        "4.1 mmol/L",
+                        "<2 mmol/L",
+                        "Hipoperfüzyonla uyumlu"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "pH",
+                    "7.28",
+                    "7.35–7.45",
+                    "Akut solunum/dolaşım bozulması"
+                ],
+                [
+                    "PaO₂",
+                    "54 mmHg",
+                    "80–100 mmHg",
+                    "Belirgin hipoksemi"
+                ],
+                [
+                    "Laktat",
+                    "4.1 mmol/L",
+                    "<2 mmol/L",
+                    "Hipoperfüzyonla uyumlu"
+                ]
             ],
-            [
-              "Kapiller dolum",
-              "Klinik tabloya göre izlendi",
-              "<2 saniye",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Genel görünüm",
-              "Yaşa göre acil ciddiyet açısından değerlendirildi",
-              "Stabil/uyanık çocuk beklenir",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Kapiller dolum",
-              "Klinik tabloya göre izlendi",
-              "<2 saniye",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
+            "postAnswerExplanation": "Hipoksemi ve laktat yüksekliği travma sonrası ventilasyon-dolaşım bozulmasının ciddiyetini gösterir; tedavi kararı klinik bulgularla birlikte acildir.",
+            "interpretation": "Hipoksemi ve laktat yüksekliği travma sonrası ventilasyon-dolaşım bozulmasının ciddiyetini gösterir; tedavi kararı klinik bulgularla birlikte acildir.",
+            "category": "laboratory",
+            "testTypeCategory": "laboratory",
+            "explanationAfterAnswer": "Hipoksemi ve laktat yüksekliği travma sonrası ventilasyon-dolaşım bozulmasının ciddiyetini gösterir; tedavi kararı klinik bulgularla birlikte acildir.",
+            "clinicalFlowOrder": 20,
+            "flowOrder": 20,
+            "orderRank": 20,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 3,
+            "scoreValue": 3,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
         },
-        "rows": [
-          [
-            "Genel görünüm",
-            "Yaşa göre acil ciddiyet açısından değerlendirildi",
-            "Stabil/uyanık çocuk beklenir",
-            "Klinik bağlamda değerlendirilmeli"
-          ],
-          [
-            "Kapiller dolum",
-            "Klinik tabloya göre izlendi",
-            "<2 saniye",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "Adolesan hastada genel görünüm, perfüzyon, solunum işi ve mental durum tedavi önceliğini belirler; bu değerlendirme travma sonrası ani solunum bozulması kararının klinik temelidir.",
-        "interpretation": "Adolesan hastada genel görünüm, perfüzyon, solunum işi ve mental durum tedavi önceliğini belirler; bu değerlendirme travma sonrası ani solunum bozulması kararının klinik temelidir.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Adolesan hastada genel görünüm, perfüzyon, solunum işi ve mental durum tedavi önceliğini belirler; bu değerlendirme travma sonrası ani solunum bozulması kararının klinik temelidir.",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      }
+        {
+            "id": "v182-new-171-travma-sonrasi-ani-solunum-bozulmasi-post-decompression-xray",
+            "label": "Dekompresyon sonrası akciğer grafisi",
+            "title": "Dekompresyon sonrası akciğer grafisi",
+            "type": "imaging",
+            "priority": "important",
+            "subtype": "",
+            "summary": "Acil iğne dekompresyonundan sonra çekilen grafide sağ pnömotoraks ve akciğer ekspansiyonunda kısmi düzelme izlenmiştir; grafi tedaviyi başlatmak için beklenmemiştir.",
+            "clinicalMeaning": "Acil iğne dekompresyonundan sonra çekilen grafide sağ pnömotoraks ve akciğer ekspansiyonunda kısmi düzelme izlenmiştir; grafi tedaviyi başlatmak için beklenmemiştir.",
+            "result": {
+                "title": "Dekompresyon sonrası akciğer grafisi",
+                "summary": "Acil iğne dekompresyonundan sonra çekilen grafide sağ pnömotoraks ve akciğer ekspansiyonunda kısmi düzelme izlenmiştir; grafi tedaviyi başlatmak için beklenmemiştir.",
+                "interpretation": "Acil iğne dekompresyonundan sonra çekilen grafide sağ pnömotoraks ve akciğer ekspansiyonunda kısmi düzelme izlenmiştir; grafi tedaviyi başlatmak için beklenmemiştir.",
+                "values": [
+                    [
+                        "Görüntüleme zamanı",
+                        "Dekompresyon sonrası",
+                        "Tedavi sonrası kontrol",
+                        "İlk müdahale geciktirilmedi"
+                    ],
+                    [
+                        "Sağ hemitoraks",
+                        "Pnömotoraks hattı ve kısmi reekspansiyon",
+                        "Radyografik bulgu",
+                        "Tüp torakostomi gereksinimini destekler"
+                    ],
+                    [
+                        "Mediasten",
+                        "Önceki klinik kaymayı destekleyen sağ basınç bulgusu",
+                        "Klinik-radyolojik uyum",
+                        "Tansiyon fizyolojisiyle uyumlu"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "Görüntüleme zamanı",
+                        "Dekompresyon sonrası",
+                        "Tedavi sonrası kontrol",
+                        "İlk müdahale geciktirilmedi"
+                    ],
+                    [
+                        "Sağ hemitoraks",
+                        "Pnömotoraks hattı ve kısmi reekspansiyon",
+                        "Radyografik bulgu",
+                        "Tüp torakostomi gereksinimini destekler"
+                    ],
+                    [
+                        "Mediasten",
+                        "Önceki klinik kaymayı destekleyen sağ basınç bulgusu",
+                        "Klinik-radyolojik uyum",
+                        "Tansiyon fizyolojisiyle uyumlu"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "Görüntüleme zamanı",
+                    "Dekompresyon sonrası",
+                    "Tedavi sonrası kontrol",
+                    "İlk müdahale geciktirilmedi"
+                ],
+                [
+                    "Sağ hemitoraks",
+                    "Pnömotoraks hattı ve kısmi reekspansiyon",
+                    "Radyografik bulgu",
+                    "Tüp torakostomi gereksinimini destekler"
+                ],
+                [
+                    "Mediasten",
+                    "Önceki klinik kaymayı destekleyen sağ basınç bulgusu",
+                    "Klinik-radyolojik uyum",
+                    "Tansiyon fizyolojisiyle uyumlu"
+                ]
+            ],
+            "postAnswerExplanation": "Acil iğne dekompresyonundan sonra çekilen grafide sağ pnömotoraks ve akciğer ekspansiyonunda kısmi düzelme izlenmiştir; grafi tedaviyi başlatmak için beklenmemiştir.",
+            "interpretation": "Acil iğne dekompresyonundan sonra çekilen grafide sağ pnömotoraks ve akciğer ekspansiyonunda kısmi düzelme izlenmiştir; grafi tedaviyi başlatmak için beklenmemiştir.",
+            "category": "imaging",
+            "testTypeCategory": "imaging",
+            "explanationAfterAnswer": "Acil iğne dekompresyonundan sonra çekilen grafide sağ pnömotoraks ve akciğer ekspansiyonunda kısmi düzelme izlenmiştir; grafi tedaviyi başlatmak için beklenmemiştir.",
+            "clinicalFlowOrder": 30,
+            "flowOrder": 30,
+            "orderRank": 30,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 2,
+            "scoreValue": 2,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
+        }
     ],
     "useSyntheticInvestigationBank": false,
     "managementSequence": {
-      "enabled": false
+        "enabled": false
     },
-    "hideExamSignal": true,
+    "hideExamSignal": false,
     "shuffleOptions": false,
     "question": "Bu çocukta ilk uygulanması gereken acil yaklaşım aşağıdakilerden hangisidir?",
     "questionType": "treatment",
-    "answerTarget": "first_step",
+    "answerTarget": "treatment",
     "diagnosis": {
-      "correct": "Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi",
-      "options": [
-        "Portable akciğer grafisi ile doğrulama yapılmadan invaziv dekompresyona geçmemek",
-        "Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi",
-        "Bronkodilatör verilerek astım atağı gibi izlenmesi",
-        "Akciğer grafisi çekilene kadar tüm girişimlerin ertelenmesi",
-        "Bronkodilatör ve ampirik antibiyotikle pnömoni/astım olasılığına göre izlemek"
-      ],
-      "question": "Bu çocukta ilk uygulanması gereken acil yaklaşım aşağıdakilerden hangisidir?",
-      "explanation": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü travma sonrası ani solunum bozulması için doğru tanı/tedavi önceliğini belirler.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi kararını destekler."
-        }
-      ],
-      "optionComparison": {
-        "Portable akciğer grafisi ile doğrulama yapılmadan invaziv dekompresyona geçmemek": "Cerrahi veya girişimsel yaklaşım yapısal, obstrüktif ya da hayatı tehdit eden anatomik sorunlarda doğru olabilir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Portable akciğer grafisi ile doğrulama yapılmadan invaziv dekompresyona geçmemek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "Bronkodilatör verilerek astım atağı gibi izlenmesi": "Bronkodilatör verilerek astım atağı gibi izlenmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Bronkodilatör verilerek astım atağı gibi izlenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Akciğer grafisi çekilene kadar tüm girişimlerin ertelenmesi": "Bu tetkik tanısal netlik sağlayabilir; ancak pediatrik acilde tedaviyi geciktirip geciktirmeyeceği klinik önceliğe göre değerlendirilir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Akciğer grafisi çekilene kadar tüm girişimlerin ertelenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Bronkodilatör ve ampirik antibiyotikle pnömoni/astım olasılığına göre izlemek": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Bronkodilatör ve ampirik antibiyotikle pnömoni/astım olasılığına göre izlemek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-      },
-      "answerFeedback": {
-        "summary": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü travma sonrası ani solunum bozulması için doğru tanı/tedavi önceliğini belirler.",
-        "whyCorrect": "Çocukta künt göğüs travması sonrası ani solunum bozulması gelişmiştir. Sağ hemitoraksta solunum sesleri azalmış ve perküsyon hipersonordur. Bu bulgular birlikte değerlendirildiğinde en uygun yanıt Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi olur. Tedavi seçimi, klinik aciliyetin ve altta yatan mekanizmanın aynı anda hedeflenmesine dayanır; destek basamakları gerekirse eş zamanlı yürütülür fakat ana kararı tek başına değiştirmez. Alternatifler bazı destek veya ayırıcı basamaklarda kullanılabilir; ancak verilen acil karar noktasını bu seçenek kadar doğrudan karşılamaz.",
-        "rationale": "Bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi birlikte değerlendirilince temel karar Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü travma sonrası ani solunum bozulması için doğru tanı/tedavi önceliğini belirler.",
-        "correctOptionFeedback": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "keyClues": [
-          "Çocukta künt göğüs travması sonrası ani solunum bozulması gelişmiştir.",
-          "Sağ hemitoraksta solunum sesleri azalmış ve perküsyon hipersonordur.",
-          "Objektif veri (Yatak başı pediatrik acil değerlendirme: Genel görünüm Yaşa göre acil ciddiyet açısından değerlendirildi) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır."
+        "correct": "Acil iğne dekompresyonu ardından tüp torakostomi planlamak",
+        "options": [
+            "Toraks BT ile yaralanmayı ayrıntılandırmak",
+            "Sadece yüksek akımlı oksijen verip grafi sonucunu beklemek",
+            "Acil endotrakeal entübasyon yapıp pozitif basınçlı ventilasyona başlamak",
+            "İzotonik sıvı bolusu verip yeniden değerlendirmek",
+            "Acil iğne dekompresyonu ardından tüp torakostomi planlamak"
         ],
-        "evidenceChain": [
-          {
-            "text": "Çocukta künt göğüs travması sonrası ani solunum bozulması gelişmiştir.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Sağ hemitoraksta solunum sesleri azalmış ve perküsyon hipersonordur.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Objektif veri (Yatak başı pediatrik acil değerlendirme: Genel görünüm Yaşa göre acil ciddiyet açısından değerlendirildi) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "examPearl": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi kararını destekler.",
+        "question": "Bu çocukta ilk uygulanması gereken acil yaklaşım aşağıdakilerden hangisidir?",
+        "explanation": "Göğüs travması sonrası hızla kötüleşen dispne, hipoksi, hipotansiyon, tek taraflı solunum sesi azalması ve perfüzyon bozukluğu tansiyon pnömotoraksı düşündürür. Bu tablo klinik tanıdır; görüntüleme beklemek veya yalnız destek tedavisi vermek obstrüktif şoku derinleştirir, bu nedenle acil dekompresyon gerekir.",
         "pearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi kararını destekler."
-          }
-        ],
-        "clinicalPearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi kararını destekler."
-          }
+            {
+                "label": "Sınav notu",
+                "text": "Tansiyon pnömotoraksta tanı kliniktir; hipoksi ve şok bulguları varsa grafi veya BT beklenmeden iğne dekompresyonu yapılır."
+            }
         ],
         "optionComparison": {
-          "Portable akciğer grafisi ile doğrulama yapılmadan invaziv dekompresyona geçmemek": "Cerrahi veya girişimsel yaklaşım yapısal, obstrüktif ya da hayatı tehdit eden anatomik sorunlarda doğru olabilir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Portable akciğer grafisi ile doğrulama yapılmadan invaziv dekompresyona geçmemek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-          "Bronkodilatör verilerek astım atağı gibi izlenmesi": "Bronkodilatör verilerek astım atağı gibi izlenmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Bronkodilatör verilerek astım atağı gibi izlenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Akciğer grafisi çekilene kadar tüm girişimlerin ertelenmesi": "Bu tetkik tanısal netlik sağlayabilir; ancak pediatrik acilde tedaviyi geciktirip geciktirmeyeceği klinik önceliğe göre değerlendirilir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Akciğer grafisi çekilene kadar tüm girişimlerin ertelenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Bronkodilatör ve ampirik antibiyotikle pnömoni/astım olasılığına göre izlemek": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Bronkodilatör ve ampirik antibiyotikle pnömoni/astım olasılığına göre izlemek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "whyWrong": {
-          "Portable akciğer grafisi ile doğrulama yapılmadan invaziv dekompresyona geçmemek": "Cerrahi veya girişimsel yaklaşım yapısal, obstrüktif ya da hayatı tehdit eden anatomik sorunlarda doğru olabilir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Portable akciğer grafisi ile doğrulama yapılmadan invaziv dekompresyona geçmemek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Bronkodilatör verilerek astım atağı gibi izlenmesi": "Bronkodilatör verilerek astım atağı gibi izlenmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Bronkodilatör verilerek astım atağı gibi izlenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Akciğer grafisi çekilene kadar tüm girişimlerin ertelenmesi": "Bu tetkik tanısal netlik sağlayabilir; ancak pediatrik acilde tedaviyi geciktirip geciktirmeyeceği klinik önceliğe göre değerlendirilir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Akciğer grafisi çekilene kadar tüm girişimlerin ertelenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Bronkodilatör ve ampirik antibiyotikle pnömoni/astım olasılığına göre izlemek": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Bronkodilatör ve ampirik antibiyotikle pnömoni/astım olasılığına göre izlemek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Gerilim pnömotoraksında klinik bulgularla acil dekompresyon gereksinimini seçebilme",
-        "coreKnowledge": "Travma sonrası ani solunum bozulması sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir."
-      },
-      "whyCorrect": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "evidenceChain": [
-        {
-          "text": "Çocukta künt göğüs travması sonrası ani solunum bozulması gelişmiştir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Sağ hemitoraksta solunum sesleri azalmış ve perküsyon hipersonordur.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Objektif veri (Yatak başı pediatrik acil değerlendirme: Genel görünüm Yaşa göre acil ciddiyet açısından değerlendirildi) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-          "weight": "medium",
-          "source": "case"
+            "Toraks BT ile yaralanmayı ayrıntılandırmak": "BT stabil hastada ayrıntılı travma değerlendirmesinde değerli olabilir; ancak bu çocuk hipoksik ve hipotansiftir, görüntüleme için beklemek hayat kurtarıcı dekompresyonu geciktirir.",
+            "Sadece yüksek akımlı oksijen verip grafi sonucunu beklemek": "Oksijen destek tedavisidir fakat tansiyon fizyolojisini ortadan kaldırmaz. Tek taraflı solunum sesi kaybı ve şok bulguları varken grafi beklenmemelidir.",
+            "Acil endotrakeal entübasyon yapıp pozitif basınçlı ventilasyona başlamak": "Hava yolu desteği gerekebilir; ancak plevral basınç boşaltılmadan pozitif basınçlı ventilasyon tansiyon pnömotoraksı ağırlaştırabilir.",
+            "İzotonik sıvı bolusu verip yeniden değerlendirmek": "Sıvı travma resüsitasyonunda kullanılabilir; fakat burada primer sorun intratorasik basınca bağlı venöz dönüş azalmasıdır ve sıvı tek başına yeterli değildir.",
+            "Acil iğne dekompresyonu ardından tüp torakostomi planlamak": "Doğru seçenektir; klinik tablo tansiyon pnömotoraksı gösterdiği için ilk işlem acil dekompresyondur, ardından kalıcı drenaj için tüp torakostomi gerekir."
         }
-      ],
-      "coreKnowledge": "Travma sonrası ani solunum bozulması sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-      "examPearl": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi kararını destekler.",
-      "whyWrong": {
-        "Portable akciğer grafisi ile doğrulama yapılmadan invaziv dekompresyona geçmemek": "Cerrahi veya girişimsel yaklaşım yapısal, obstrüktif ya da hayatı tehdit eden anatomik sorunlarda doğru olabilir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Portable akciğer grafisi ile doğrulama yapılmadan invaziv dekompresyona geçmemek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Bronkodilatör verilerek astım atağı gibi izlenmesi": "Bronkodilatör verilerek astım atağı gibi izlenmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Bronkodilatör verilerek astım atağı gibi izlenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Akciğer grafisi çekilene kadar tüm girişimlerin ertelenmesi": "Bu tetkik tanısal netlik sağlayabilir; ancak pediatrik acilde tedaviyi geciktirip geciktirmeyeceği klinik önceliğe göre değerlendirilir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Akciğer grafisi çekilene kadar tüm girişimlerin ertelenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Bronkodilatör ve ampirik antibiyotikle pnömoni/astım olasılığına göre izlemek": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Bronkodilatör ve ampirik antibiyotikle pnömoni/astım olasılığına göre izlemek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-      }
     },
     "difficultyTag": "Acil",
-    "coreKnowledge": "Travma sonrası ani solunum bozulması sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-    "examPearl": "Pediatri sorularında karar yaşa uygun vital bulgular, genel durum, hidrasyon/perfüzyon ve hedefe yönelik tetkiklerle birlikte verilir; bu vaka Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi kararını destekler.",
-    "whyCorrect": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
+    "coreKnowledge": "Travmada tek taraflı solunum sesi kaybı, hipoksi, hipotansiyon ve mediastinal bası bulguları bir aradaysa ilk karar görüntüleme değil acil plevral dekompresyondur.",
+    "examPearl": "Tansiyon pnömotoraksta tanı kliniktir; hipoksi ve şok bulguları varsa grafi veya BT beklenmeden iğne dekompresyonu yapılır.",
+    "whyCorrect": "Acil iğne dekompresyonu ardından tüp torakostomi doğru yaklaşımdır; çünkü çocukta tansiyon pnömotoraks fizyolojisiyle uyumlu obstrüktif şok ve solunum yetmezliği vardır.",
     "optionComparison": {
-      "Portable akciğer grafisi ile doğrulama yapılmadan invaziv dekompresyona geçmemek": "Cerrahi veya girişimsel yaklaşım yapısal, obstrüktif ya da hayatı tehdit eden anatomik sorunlarda doğru olabilir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Portable akciğer grafisi ile doğrulama yapılmadan invaziv dekompresyona geçmemek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Acil iğne dekompresyonu ve ardından toraks tüpü yerleştirilmesi": "Bu seçenek doğrudur; çünkü yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "Bronkodilatör verilerek astım atağı gibi izlenmesi": "Bronkodilatör verilerek astım atağı gibi izlenmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Bronkodilatör verilerek astım atağı gibi izlenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Akciğer grafisi çekilene kadar tüm girişimlerin ertelenmesi": "Bu tetkik tanısal netlik sağlayabilir; ancak pediatrik acilde tedaviyi geciktirip geciktirmeyeceği klinik önceliğe göre değerlendirilir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Akciğer grafisi çekilene kadar tüm girişimlerin ertelenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Bronkodilatör ve ampirik antibiyotikle pnömoni/astım olasılığına göre izlemek": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Bronkodilatör ve ampirik antibiyotikle pnömoni/astım olasılığına göre izlemek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+        "Toraks BT ile yaralanmayı ayrıntılandırmak": "BT stabil hastada ayrıntılı travma değerlendirmesinde değerli olabilir; ancak bu çocuk hipoksik ve hipotansiftir, görüntüleme için beklemek hayat kurtarıcı dekompresyonu geciktirir.",
+        "Sadece yüksek akımlı oksijen verip grafi sonucunu beklemek": "Oksijen destek tedavisidir fakat tansiyon fizyolojisini ortadan kaldırmaz. Tek taraflı solunum sesi kaybı ve şok bulguları varken grafi beklenmemelidir.",
+        "Acil endotrakeal entübasyon yapıp pozitif basınçlı ventilasyona başlamak": "Hava yolu desteği gerekebilir; ancak plevral basınç boşaltılmadan pozitif basınçlı ventilasyon tansiyon pnömotoraksı ağırlaştırabilir.",
+        "İzotonik sıvı bolusu verip yeniden değerlendirmek": "Sıvı travma resüsitasyonunda kullanılabilir; fakat burada primer sorun intratorasik basınca bağlı venöz dönüş azalmasıdır ve sıvı tek başına yeterli değildir.",
+        "Acil iğne dekompresyonu ardından tüp torakostomi planlamak": "Doğru seçenektir; klinik tablo tansiyon pnömotoraksı gösterdiği için ilk işlem acil dekompresyondur, ardından kalıcı drenaj için tüp torakostomi gerekir."
     },
     "evidenceChain": [
-      {
-        "text": "Çocukta künt göğüs travması sonrası ani solunum bozulması gelişmiştir.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Sağ hemitoraksta solunum sesleri azalmış ve perküsyon hipersonordur.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Objektif veri (Yatak başı pediatrik acil değerlendirme: Genel görünüm Yaşa göre acil ciddiyet açısından değerlendirildi) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-        "weight": "medium",
-        "source": "case"
-      }
+        {
+            "text": "Göğüs travması sonrası solunum sıkıntısı ambulans yolculuğunda hızla artmıştır → akut basınçlı torasik komplikasyon olasılığını yükseltir.",
+            "weight": "high",
+            "source": "case"
+        },
+        {
+            "text": "Sağ hemitoraksta solunum sesi belirgin azalmış, hipoksi ve hipotansiyon vardır → tek taraflı pnömotoraksın dolaşımı bozduğunu gösterir.",
+            "weight": "high",
+            "source": "case"
+        },
+        {
+            "text": "Kapiller dolum uzaması, laktat yüksekliği ve dalgınlık obstrüktif şokun sistemik etkisini destekler → görüntüleme beklenmeden dekompresyon gerekir.",
+            "weight": "high",
+            "source": "case"
+        }
     ],
     "whyWrong": {
-      "Portable akciğer grafisi ile doğrulama yapılmadan invaziv dekompresyona geçmemek": "Cerrahi veya girişimsel yaklaşım yapısal, obstrüktif ya da hayatı tehdit eden anatomik sorunlarda doğru olabilir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Portable akciğer grafisi ile doğrulama yapılmadan invaziv dekompresyona geçmemek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Bronkodilatör verilerek astım atağı gibi izlenmesi": "Bronkodilatör verilerek astım atağı gibi izlenmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Bronkodilatör verilerek astım atağı gibi izlenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Akciğer grafisi çekilene kadar tüm girişimlerin ertelenmesi": "Bu tetkik tanısal netlik sağlayabilir; ancak pediatrik acilde tedaviyi geciktirip geciktirmeyeceği klinik önceliğe göre değerlendirilir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Akciğer grafisi çekilene kadar tüm girişimlerin ertelenmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Bronkodilatör ve ampirik antibiyotikle pnömoni/astım olasılığına göre izlemek": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada yaşa uygun öykü, fizik muayene, vital bulgu ve objektif verilerin aynı klinik eksende birleşmesi travma sonrası ani solunum bozulması lehinedir; bu nedenle Bronkodilatör ve ampirik antibiyotikle pnömoni/astım olasılığına göre izlemek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+        "Toraks BT ile yaralanmayı ayrıntılandırmak": "BT stabil hastada ayrıntılı travma değerlendirmesinde değerli olabilir; ancak bu çocuk hipoksik ve hipotansiftir, görüntüleme için beklemek hayat kurtarıcı dekompresyonu geciktirir.",
+        "Sadece yüksek akımlı oksijen verip grafi sonucunu beklemek": "Oksijen destek tedavisidir fakat tansiyon fizyolojisini ortadan kaldırmaz. Tek taraflı solunum sesi kaybı ve şok bulguları varken grafi beklenmemelidir.",
+        "Acil endotrakeal entübasyon yapıp pozitif basınçlı ventilasyona başlamak": "Hava yolu desteği gerekebilir; ancak plevral basınç boşaltılmadan pozitif basınçlı ventilasyon tansiyon pnömotoraksı ağırlaştırabilir.",
+        "İzotonik sıvı bolusu verip yeniden değerlendirmek": "Sıvı travma resüsitasyonunda kullanılabilir; fakat burada primer sorun intratorasik basınca bağlı venöz dönüş azalmasıdır ve sıvı tek başına yeterli değildir."
     },
     "aiMeta": {
-      "generatedAt": "manual-v396-pediatrics-ultra-refined",
-      "generator": "manual-editorial-pediatrics-case-refinement",
-      "schemaVersion": "clinical-standard-v396",
-      "provider": "manual-editorial",
-      "validationWarnings": []
+        "generatedAt": "manual-v397-pediatrics-eighth-batch-ultra-refined",
+        "generator": "manual-editorial-pediatrics-case-refinement",
+        "schemaVersion": "clinical-standard-v397",
+        "provider": "manual-editorial",
+        "validationWarnings": []
     }
-  },
+},
   {
     "id": "v182-new-172-pestisid-temasi-sonrasi-sekresyon-artisi",
     "branchId": "pediatrics",
@@ -87819,427 +87781,432 @@ export const rawCases = [
     "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
     "title": "Pestisid teması sonrası sekresyon artışı",
     "difficulty": "Acil",
-    "clinicalFocus": "Organofosfat zehirlenmesi bağlamında pediatrik öykü, yaşa uygun vital bulgu, fizik muayene ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Organofosfat zehirlenmesi için pediatrik klinik patern, acil öncelik ve hedefe yönelik tanı/tedavi kararını açıklama.",
+    "clinicalFocus": "Çocukta organofosfat zehirlenmesini kolinerjik toksidrom üzerinden tanıyıp atropin-pralidoksim ve dekontaminasyon kararını verme.",
+    "learningTarget": "Muskarinik, nikotinik ve solunumsal bulguları birlikte değerlendirerek organofosfat zehirlenmesinde spesifik tedaviyi seçme.",
     "demographics": "5 yaşında kız çocuk",
     "setting": "Çocuk acil servis",
     "chiefComplaint": "Çocuk, tarım ilacı bulunan depoda oynadıktan sonra kusma, salya artışı ve solunum sıkıntısı nedeniyle getiriliyor.",
-    "stem": "Yaklaşık bir saat önce pestisid kokusunun yoğun olduğu kapalı alanda bulunduğu ve ellerine sıvı bulaştığı öğreniliyor. Sonrasında karın krampları, kusma, göz yaşarması ve hırıltılı solunum başlamıştır.",
+    "stem": "Bakıcısı tarafından acile getirilen 5 yaşındaki kız çocuk, yaklaşık bir saat önce dedesinin tarım ilacı bulunan deposunda oynarken yoğun kokuya maruz kalmış ve ellerine sıvı bulaşmıştır. Kısa süre içinde karın krampları, tekrarlayan kusma, göz yaşarması ve ağızdan salya akması başlamıştır. Aile, çocuğun normalden daha terli ve huzursuz olduğunu, son dakikalarda hırıltılı nefes almaya başladığını belirtir. Bilinen astımı yoktur; yeni bir besin alımı veya böcek sokması tariflenmemektedir.",
     "patientIntro": {
-      "profile": "5 yaşında kız çocuk, çocuk acil servisinde değerlendiriliyor.",
-      "presentation": "Çocuk, tarım ilacı bulunan depoda oynadıktan sonra kusma, salya artışı ve solunum sıkıntısı nedeniyle getiriliyor.",
-      "historySummary": "Yaklaşık bir saat önce pestisid kokusunun yoğun olduğu kapalı alanda bulunduğu ve ellerine sıvı bulaştığı öğreniliyor. Sonrasında karın krampları, kusma, göz yaşarması ve hırıltılı solunum başlamıştır."
+        "profile": "5 yaşında kız çocuk, çocuk acil servisinde değerlendiriliyor.",
+        "presentation": "Çocuk, tarım ilacı bulunan depoda oynadıktan sonra kusma, salya artışı ve solunum sıkıntısı nedeniyle getiriliyor.",
+        "historySummary": "Bakıcısı tarafından acile getirilen 5 yaşındaki kız çocuk, yaklaşık bir saat önce dedesinin tarım ilacı bulunan deposunda oynarken yoğun kokuya maruz kalmış ve ellerine sıvı bulaşmıştır. Kısa süre içinde karın krampları, tekrarlayan kusma, göz yaşarması ve ağızdan salya akması başlamıştır. Aile, çocuğun normalden daha terli ve huzursuz olduğunu, son dakikalarda hırıltılı nefes almaya başladığını belirtir. Bilinen astımı yoktur; yeni bir besin alımı veya böcek sokması tariflenmemektedir."
     },
     "vitals": {
-      "TA": "86/48 mmHg",
-      "Nabız": "58/dk",
-      "Solunum": "28/dk",
-      "SpO2": "%88, oda havasında",
-      "Ateş": "36.7 °C",
-      "Şok indeksi": "0.67 pediatrik bağlamda yorumlanmalı"
+        "TA": "86/48 mmHg",
+        "Nabız": "58/dk",
+        "Solunum": "30/dk",
+        "SpO2": "%88, oda havasında",
+        "Ateş": "36.7 °C",
+        "Şok indeksi": "0.67 - bradikardi kolinerjik toksisite ile uyumlu"
     },
     "exam": [
-      "Çocuk terli ve huzursuzdur.",
-      "Belirgin salivasyon, bronkore, miyozis ve bilateral hışıltı vardır.",
-      "Kaslarda fasikülasyonlar izlenir."
+        "Çocuk terli, huzursuz ve sekresyonları belirgindir.",
+        "Pupiller bilateral miyotiktir; ağızdan salya akışı ve bilateral yaygın ronküs/bronkokore vardır.",
+        "Baldır kaslarında fasikülasyonlar izlenir; cilt ve kıyafetlerinde pestisid kokusu alınır."
     ],
     "investigations": [
-      {
-        "id": "v182-new-172-pestisid-temasi-sonrasi-sekresyon-artisi-pediatric-initial-assessment",
-        "label": "Pediatrik ilk değerlendirme",
-        "title": "Pediatrik ilk değerlendirme",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "clinicalMeaning": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "result": {
-          "title": "Pediatrik ilk değerlendirme",
-          "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "values": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
+        {
+            "id": "v182-new-172-pestisid-temasi-sonrasi-sekresyon-artisi-toxidrome-assessment",
+            "label": "Toksidrom odaklı klinik değerlendirme",
+            "title": "Toksidrom odaklı klinik değerlendirme",
+            "type": "clinical",
+            "priority": "essential",
+            "subtype": "",
+            "summary": "Miyozis, bronkore, bradikardi ve gastrointestinal hiperaktivite kolinerjik toksidromu gösterir; hava yolu sekresyonları tedavi önceliğini belirler.",
+            "clinicalMeaning": "Miyozis, bronkore, bradikardi ve gastrointestinal hiperaktivite kolinerjik toksidromu gösterir; hava yolu sekresyonları tedavi önceliğini belirler.",
+            "result": {
+                "title": "Toksidrom odaklı klinik değerlendirme",
+                "summary": "Miyozis, bronkore, bradikardi ve gastrointestinal hiperaktivite kolinerjik toksidromu gösterir; hava yolu sekresyonları tedavi önceliğini belirler.",
+                "interpretation": "Miyozis, bronkore, bradikardi ve gastrointestinal hiperaktivite kolinerjik toksidromu gösterir; hava yolu sekresyonları tedavi önceliğini belirler.",
+                "values": [
+                    [
+                        "Pupil",
+                        "Bilateral miyotik",
+                        "Klinik bulgu",
+                        "Kolinerjik etki lehine"
+                    ],
+                    [
+                        "Sekresyon",
+                        "Belirgin salivasyon ve bronkore",
+                        "Klinik bulgu",
+                        "Aspirasyon/solunum yetmezliği riski"
+                    ],
+                    [
+                        "Nöromüsküler bulgu",
+                        "Baldırlarda fasikülasyon",
+                        "Klinik bulgu",
+                        "Nikotinik etkiyi destekler"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "Pupil",
+                        "Bilateral miyotik",
+                        "Klinik bulgu",
+                        "Kolinerjik etki lehine"
+                    ],
+                    [
+                        "Sekresyon",
+                        "Belirgin salivasyon ve bronkore",
+                        "Klinik bulgu",
+                        "Aspirasyon/solunum yetmezliği riski"
+                    ],
+                    [
+                        "Nöromüsküler bulgu",
+                        "Baldırlarda fasikülasyon",
+                        "Klinik bulgu",
+                        "Nikotinik etkiyi destekler"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "Pupil",
+                    "Bilateral miyotik",
+                    "Klinik bulgu",
+                    "Kolinerjik etki lehine"
+                ],
+                [
+                    "Sekresyon",
+                    "Belirgin salivasyon ve bronkore",
+                    "Klinik bulgu",
+                    "Aspirasyon/solunum yetmezliği riski"
+                ],
+                [
+                    "Nöromüsküler bulgu",
+                    "Baldırlarda fasikülasyon",
+                    "Klinik bulgu",
+                    "Nikotinik etkiyi destekler"
+                ]
             ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ],
-          "rows": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
-            ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ]
+            "postAnswerExplanation": "Miyozis, bronkore, bradikardi ve gastrointestinal hiperaktivite kolinerjik toksidromu gösterir; hava yolu sekresyonları tedavi önceliğini belirler.",
+            "interpretation": "Miyozis, bronkore, bradikardi ve gastrointestinal hiperaktivite kolinerjik toksidromu gösterir; hava yolu sekresyonları tedavi önceliğini belirler.",
+            "category": "clinicalAssessment",
+            "testTypeCategory": "clinicalAssessment",
+            "explanationAfterAnswer": "Miyozis, bronkore, bradikardi ve gastrointestinal hiperaktivite kolinerjik toksidromu gösterir; hava yolu sekresyonları tedavi önceliğini belirler.",
+            "clinicalFlowOrder": 10,
+            "flowOrder": 10,
+            "orderRank": 10,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 4,
+            "scoreValue": 4,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
         },
-        "rows": [
-          [
-            "Genel görünüm",
-            "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-            "Yaşa göre",
-            "Kritik izlem"
-          ],
-          [
-            "Kapiller dolum/perfüzyon",
-            "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-            "<2 sn beklenir",
-            "Yaşa göre yorumlanır"
-          ],
-          [
-            "Solunum işi",
-            "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-            "Yaşa göre",
-            "Acil güvenlik"
-          ]
-        ],
-        "postAnswerExplanation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme",
-        "orderRank": 10
-      },
-      {
-        "id": "plazma-kolinesteraz-aktivitesi-1",
-        "label": "Plazma kolinesteraz aktivitesi",
-        "title": "Plazma kolinesteraz aktivitesi",
-        "type": "toxicology",
-        "priority": "essential",
-        "subtype": "Toksikoloji",
-        "summary": "İnsektisit maruziyeti sonrası muskarinik bulgular ve kolinesteraz baskılanması organofosfat toksisitesini açıklar; klinik öncelik atropinle kolinerjik fazlalığı kontrol etmektir.",
-        "clinicalMeaning": "İnsektisit maruziyeti sonrası muskarinik bulgular ve kolinesteraz baskılanması organofosfat toksisitesini açıklar; klinik öncelik atropinle kolinerjik fazlalığı kontrol etmektir.",
-        "result": {
-          "title": "Plazma kolinesteraz aktivitesi",
-          "summary": "İnsektisit maruziyeti sonrası muskarinik bulgular ve kolinesteraz baskılanması organofosfat toksisitesini açıklar; klinik öncelik atropinle kolinerjik fazlalığı kontrol etmektir.",
-          "interpretation": "İnsektisit maruziyeti sonrası muskarinik bulgular ve kolinesteraz baskılanması organofosfat toksisitesini açıklar; klinik öncelik atropinle kolinerjik fazlalığı kontrol etmektir.",
-          "values": [
-            [
-              "Plazma kolinesteraz aktivitesi",
-              "1.200 U/L %",
-              "5.000–12.000 U/L %",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Plazma kolinesteraz aktivitesi",
-              "1.200 U/L %",
-              "5.000–12.000 U/L %",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
+        {
+            "id": "v182-new-172-pestisid-temasi-sonrasi-sekresyon-artisi-kan-gazi",
+            "label": "Kan gazı",
+            "title": "Kan gazı",
+            "type": "bloodGas",
+            "priority": "essential",
+            "subtype": "",
+            "summary": "Hipoksemi ve karbondioksit retansiyonu bronkore/bronkokonstriksiyona bağlı ventilasyon bozukluğunu destekler.",
+            "clinicalMeaning": "Hipoksemi ve karbondioksit retansiyonu bronkore/bronkokonstriksiyona bağlı ventilasyon bozukluğunu destekler.",
+            "result": {
+                "title": "Kan gazı",
+                "summary": "Hipoksemi ve karbondioksit retansiyonu bronkore/bronkokonstriksiyona bağlı ventilasyon bozukluğunu destekler.",
+                "interpretation": "Hipoksemi ve karbondioksit retansiyonu bronkore/bronkokonstriksiyona bağlı ventilasyon bozukluğunu destekler.",
+                "values": [
+                    [
+                        "pH",
+                        "7.31",
+                        "7.35–7.45",
+                        "Solunumsal asidoz başlangıcı"
+                    ],
+                    [
+                        "PaCO₂",
+                        "52 mmHg",
+                        "35–45 mmHg",
+                        "Hipoventilasyon/bronkokonstriksiyon"
+                    ],
+                    [
+                        "PaO₂",
+                        "61 mmHg",
+                        "80–100 mmHg",
+                        "Hipoksemi"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "pH",
+                        "7.31",
+                        "7.35–7.45",
+                        "Solunumsal asidoz başlangıcı"
+                    ],
+                    [
+                        "PaCO₂",
+                        "52 mmHg",
+                        "35–45 mmHg",
+                        "Hipoventilasyon/bronkokonstriksiyon"
+                    ],
+                    [
+                        "PaO₂",
+                        "61 mmHg",
+                        "80–100 mmHg",
+                        "Hipoksemi"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "pH",
+                    "7.31",
+                    "7.35–7.45",
+                    "Solunumsal asidoz başlangıcı"
+                ],
+                [
+                    "PaCO₂",
+                    "52 mmHg",
+                    "35–45 mmHg",
+                    "Hipoventilasyon/bronkokonstriksiyon"
+                ],
+                [
+                    "PaO₂",
+                    "61 mmHg",
+                    "80–100 mmHg",
+                    "Hipoksemi"
+                ]
+            ],
+            "postAnswerExplanation": "Hipoksemi ve karbondioksit retansiyonu bronkore/bronkokonstriksiyona bağlı ventilasyon bozukluğunu destekler.",
+            "interpretation": "Hipoksemi ve karbondioksit retansiyonu bronkore/bronkokonstriksiyona bağlı ventilasyon bozukluğunu destekler.",
+            "category": "laboratory",
+            "testTypeCategory": "laboratory",
+            "explanationAfterAnswer": "Hipoksemi ve karbondioksit retansiyonu bronkore/bronkokonstriksiyona bağlı ventilasyon bozukluğunu destekler.",
+            "clinicalFlowOrder": 20,
+            "flowOrder": 20,
+            "orderRank": 20,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 3,
+            "scoreValue": 3,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
         },
-        "rows": [
-          [
-            "Plazma kolinesteraz aktivitesi",
-            "1.200 U/L %",
-            "5.000–12.000 U/L %",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "İnsektisit maruziyeti sonrası muskarinik bulgular ve kolinesteraz baskılanması organofosfat toksisitesini açıklar; klinik öncelik atropinle kolinerjik fazlalığı kontrol etmektir.",
-        "interpretation": "İnsektisit maruziyeti sonrası muskarinik bulgular ve kolinesteraz baskılanması organofosfat toksisitesini açıklar; klinik öncelik atropinle kolinerjik fazlalığı kontrol etmektir.",
-        "valueAssumption": "Eksik sayısal değer, vakanın mevcut tanı/yönetim hedefiyle uyumlu gerçekçi eğitim verisi olarak tamamlandı.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "İnsektisit maruziyeti sonrası muskarinik bulgular ve kolinesteraz baskılanması organofosfat toksisitesini açıklar; klinik öncelik atropinle kolinerjik fazlalığı kontrol etmektir.",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      },
-      {
-        "id": "tam-idrar-analizi-2",
-        "label": "Tam idrar analizi",
-        "title": "Tam idrar analizi",
-        "type": "urine",
-        "priority": "essential",
-        "subtype": "İdrar tetkikleri",
-        "summary": "İdrar değerlendirmesi bu çocukta böbrek/üriner sistem tutulumunu ve hidrasyon etkilenimini ayırmak için hedefe yönelik kullanılır.",
-        "clinicalMeaning": "İdrar değerlendirmesi bu çocukta böbrek/üriner sistem tutulumunu ve hidrasyon etkilenimini ayırmak için hedefe yönelik kullanılır.",
-        "result": {
-          "title": "Tam idrar analizi",
-          "summary": "İdrar değerlendirmesi bu çocukta böbrek/üriner sistem tutulumunu ve hidrasyon etkilenimini ayırmak için hedefe yönelik kullanılır.",
-          "interpretation": "İdrar değerlendirmesi bu çocukta böbrek/üriner sistem tutulumunu ve hidrasyon etkilenimini ayırmak için hedefe yönelik kullanılır.",
-          "values": [
-            [
-              "Eritrosit",
-              "0–2/HPF",
-              "0–3/HPF",
-              "Klinik bağlamda değerlendirilmeli"
+        {
+            "id": "v182-new-172-pestisid-temasi-sonrasi-sekresyon-artisi-cholinesterase",
+            "label": "Plazma psödokolinesteraz düzeyi",
+            "title": "Plazma psödokolinesteraz düzeyi",
+            "type": "toxicology",
+            "priority": "important",
+            "subtype": "",
+            "summary": "Kolinesteraz aktivitesinin belirgin düşük olması, klinik kolinerjik toksidromla birlikte organofosfat maruziyetini destekler.",
+            "clinicalMeaning": "Kolinesteraz aktivitesinin belirgin düşük olması, klinik kolinerjik toksidromla birlikte organofosfat maruziyetini destekler.",
+            "result": {
+                "title": "Plazma psödokolinesteraz düzeyi",
+                "summary": "Kolinesteraz aktivitesinin belirgin düşük olması, klinik kolinerjik toksidromla birlikte organofosfat maruziyetini destekler.",
+                "interpretation": "Kolinesteraz aktivitesinin belirgin düşük olması, klinik kolinerjik toksidromla birlikte organofosfat maruziyetini destekler.",
+                "values": [
+                    [
+                        "Psödokolinesteraz",
+                        "620 U/L",
+                        "5.320–12.920 U/L",
+                        "Belirgin baskılanmış"
+                    ],
+                    [
+                        "Örnek zamanı",
+                        "Başvuruda",
+                        "Maruziyet sonrası erken dönem",
+                        "Tedavi klinik olarak geciktirilmez"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "Psödokolinesteraz",
+                        "620 U/L",
+                        "5.320–12.920 U/L",
+                        "Belirgin baskılanmış"
+                    ],
+                    [
+                        "Örnek zamanı",
+                        "Başvuruda",
+                        "Maruziyet sonrası erken dönem",
+                        "Tedavi klinik olarak geciktirilmez"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "Psödokolinesteraz",
+                    "620 U/L",
+                    "5.320–12.920 U/L",
+                    "Belirgin baskılanmış"
+                ],
+                [
+                    "Örnek zamanı",
+                    "Başvuruda",
+                    "Maruziyet sonrası erken dönem",
+                    "Tedavi klinik olarak geciktirilmez"
+                ]
             ],
-            [
-              "Lökosit",
-              "0–5/HPF",
-              "≤5/HPF",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Nitrit",
-              "Negatif",
-              "Negatif beklenir",
-              "Referans içinde"
-            ]
-          ],
-          "rows": [
-            [
-              "Eritrosit",
-              "0–2/HPF",
-              "0–3/HPF",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Lökosit",
-              "0–5/HPF",
-              "≤5/HPF",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Nitrit",
-              "Negatif",
-              "Negatif beklenir",
-              "Referans içinde"
-            ]
-          ]
+            "postAnswerExplanation": "Kolinesteraz aktivitesinin belirgin düşük olması, klinik kolinerjik toksidromla birlikte organofosfat maruziyetini destekler.",
+            "interpretation": "Kolinesteraz aktivitesinin belirgin düşük olması, klinik kolinerjik toksidromla birlikte organofosfat maruziyetini destekler.",
+            "category": "laboratory",
+            "testTypeCategory": "laboratory",
+            "explanationAfterAnswer": "Kolinesteraz aktivitesinin belirgin düşük olması, klinik kolinerjik toksidromla birlikte organofosfat maruziyetini destekler.",
+            "clinicalFlowOrder": 30,
+            "flowOrder": 30,
+            "orderRank": 30,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 3,
+            "scoreValue": 3,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
         },
-        "rows": [
-          [
-            "Eritrosit",
-            "0–2/HPF",
-            "0–3/HPF",
-            "Klinik bağlamda değerlendirilmeli"
-          ],
-          [
-            "Lökosit",
-            "0–5/HPF",
-            "≤5/HPF",
-            "Klinik bağlamda değerlendirilmeli"
-          ],
-          [
-            "Nitrit",
-            "Negatif",
-            "Negatif beklenir",
-            "Referans içinde"
-          ]
-        ],
-        "postAnswerExplanation": "İdrar değerlendirmesi bu çocukta böbrek/üriner sistem tutulumunu ve hidrasyon etkilenimini ayırmak için hedefe yönelik kullanılır.",
-        "interpretation": "İdrar değerlendirmesi bu çocukta böbrek/üriner sistem tutulumunu ve hidrasyon etkilenimini ayırmak için hedefe yönelik kullanılır.",
-        "explanationAfterAnswer": "İdrar değerlendirmesi bu çocukta böbrek/üriner sistem tutulumunu ve hidrasyon etkilenimini ayırmak için hedefe yönelik kullanılır.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      }
+        {
+            "id": "v182-new-172-pestisid-temasi-sonrasi-sekresyon-artisi-ecg",
+            "label": "EKG",
+            "title": "EKG",
+            "type": "cardiology",
+            "priority": "important",
+            "subtype": "",
+            "summary": "EKG’de sinüs bradikardisi izlenmesi muskarinik toksisiteyle uyumludur; ritim izlemi antidot tedavisi sırasında sürdürülür.",
+            "clinicalMeaning": "EKG’de sinüs bradikardisi izlenmesi muskarinik toksisiteyle uyumludur; ritim izlemi antidot tedavisi sırasında sürdürülür.",
+            "result": {
+                "title": "EKG",
+                "summary": "EKG’de sinüs bradikardisi izlenmesi muskarinik toksisiteyle uyumludur; ritim izlemi antidot tedavisi sırasında sürdürülür.",
+                "interpretation": "EKG’de sinüs bradikardisi izlenmesi muskarinik toksisiteyle uyumludur; ritim izlemi antidot tedavisi sırasında sürdürülür.",
+                "values": [
+                    [
+                        "Ritim",
+                        "Sinüs bradikardisi",
+                        "EKG bulgusu",
+                        "Muskarinik etkiyle uyumlu"
+                    ],
+                    [
+                        "QRS",
+                        "Dar",
+                        "EKG bulgusu",
+                        "Sodyum kanal blokajı lehine değil"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "Ritim",
+                        "Sinüs bradikardisi",
+                        "EKG bulgusu",
+                        "Muskarinik etkiyle uyumlu"
+                    ],
+                    [
+                        "QRS",
+                        "Dar",
+                        "EKG bulgusu",
+                        "Sodyum kanal blokajı lehine değil"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "Ritim",
+                    "Sinüs bradikardisi",
+                    "EKG bulgusu",
+                    "Muskarinik etkiyle uyumlu"
+                ],
+                [
+                    "QRS",
+                    "Dar",
+                    "EKG bulgusu",
+                    "Sodyum kanal blokajı lehine değil"
+                ]
+            ],
+            "postAnswerExplanation": "EKG’de sinüs bradikardisi izlenmesi muskarinik toksisiteyle uyumludur; ritim izlemi antidot tedavisi sırasında sürdürülür.",
+            "interpretation": "EKG’de sinüs bradikardisi izlenmesi muskarinik toksisiteyle uyumludur; ritim izlemi antidot tedavisi sırasında sürdürülür.",
+            "category": "cardiology",
+            "testTypeCategory": "cardiology",
+            "explanationAfterAnswer": "EKG’de sinüs bradikardisi izlenmesi muskarinik toksisiteyle uyumludur; ritim izlemi antidot tedavisi sırasında sürdürülür.",
+            "clinicalFlowOrder": 40,
+            "flowOrder": 40,
+            "orderRank": 40,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 2,
+            "scoreValue": 2,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
+        }
     ],
     "useSyntheticInvestigationBank": false,
     "managementSequence": {
-      "enabled": false
+        "enabled": false
     },
-    "hideExamSignal": true,
+    "hideExamSignal": false,
     "shuffleOptions": false,
-    "question": "Bu çocukta en uygun spesifik tedavi aşağıdakilerden hangisidir?",
+    "question": "Bu çocukta en uygun spesifik acil tedavi aşağıdakilerden hangisidir?",
     "questionType": "treatment",
     "answerTarget": "treatment",
     "diagnosis": {
-      "correct": "Atropin ve pralidoksim verilmesi",
-      "options": [
-        "Flumazenil verilmesi",
-        "N-asetilsistein verilmesi",
-        "Atropin ve pralidoksim verilmesi",
-        "Oral antihistaminik verilmesi",
-        "Nalokson verilmesi"
-      ],
-      "question": "Bu çocukta en uygun spesifik tedavi aşağıdakilerden hangisidir?",
-      "explanation": "Bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü birlikte değerlendirilince temel karar Atropin ve pralidoksim verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü organofosfat zehirlenmesi için doğru tanı/tedavi önceliğini belirler.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Organofosfat zehirlenmesinde atropin muskarinik bulguları, pralidoksim nikotinik etkileri hedefler."
-        }
-      ],
-      "optionComparison": {
-        "Flumazenil verilmesi": "Flumazenil seçilmiş benzodiazepin zehirlenmelerinde düşünülebilir; karışık alım veya nöbet riski varsa çocuklarda dikkatli kullanılmalıdır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Flumazenil verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "N-asetilsistein verilmesi": "N-asetilsistein parasetamol toksisitesinde glutatyon depolarını destekleyerek NAPQI aracılı hepatotoksisiteyi azaltır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle N-asetilsistein verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Atropin ve pralidoksim verilmesi": "Bu seçenek doğrudur; çünkü miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "Oral antihistaminik verilmesi": "Oral antihistaminik verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Oral antihistaminik verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Nalokson verilmesi": "Nalokson opioid toksidromunda solunum depresyonu, miyozis ve bilinç baskılanması varsa opioid reseptör antagonisti olarak kullanılır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Nalokson verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-      },
-      "answerFeedback": {
-        "summary": "Bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü birlikte değerlendirilince temel karar Atropin ve pralidoksim verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü organofosfat zehirlenmesi için doğru tanı/tedavi önceliğini belirler.",
-        "whyCorrect": "Çocuk pestisid içeren kapalı alanda maruz kalmıştır. Miyozis, salivasyon, bronkore, bradikardi ve kusma kolinerjik toksidromla uyumludur. Bu bulgular birlikte değerlendirildiğinde en uygun yanıt Atropin ve pralidoksim verilmesi olur. Tedavi seçimi, klinik aciliyetin ve altta yatan mekanizmanın aynı anda hedeflenmesine dayanır; destek basamakları gerekirse eş zamanlı yürütülür fakat ana kararı tek başına değiştirmez. Alternatifler bazı destek veya ayırıcı basamaklarda kullanılabilir; ancak verilen acil karar noktasını bu seçenek kadar doğrudan karşılamaz.",
-        "rationale": "Bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü birlikte değerlendirilince temel karar Atropin ve pralidoksim verilmesi yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü organofosfat zehirlenmesi için doğru tanı/tedavi önceliğini belirler.",
-        "correctOptionFeedback": "Bu seçenek doğrudur; çünkü miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "keyClues": [
-          "Çocuk pestisid içeren kapalı alanda maruz kalmıştır.",
-          "Miyozis, salivasyon, bronkore, bradikardi ve kusma kolinerjik toksidromla uyumludur.",
-          "Objektif veri (Plazma kolinesteraz aktivitesi: Plazma kolinesteraz aktivitesi 1.200 U/L %) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır."
+        "correct": "Atropin titrasyonu, pralidoksim ve kontaminasyonun uzaklaştırılması",
+        "options": [
+            "Atropin titrasyonu, pralidoksim ve kontaminasyonun uzaklaştırılması",
+            "Sadece nebulize salbutamol ve oral antihistaminik verilmesi",
+            "Aktif kömür verip hasta asemptomatikse taburcu edilmesi",
+            "Nalokson uygulanması ve kısa gözlem sonrası izlem",
+            "Flumazenil verilmesi ve sedasyonun geri çevrilmesi"
         ],
-        "evidenceChain": [
-          {
-            "text": "Çocuk pestisid içeren kapalı alanda maruz kalmıştır.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Miyozis, salivasyon, bronkore, bradikardi ve kusma kolinerjik toksidromla uyumludur.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Objektif veri (Plazma kolinesteraz aktivitesi: Plazma kolinesteraz aktivitesi 1.200 U/L %) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "examPearl": "Organofosfat zehirlenmesinde atropin muskarinik bulguları, pralidoksim nikotinik etkileri hedefler.",
+        "question": "Bu çocukta en uygun spesifik acil tedavi aşağıdakilerden hangisidir?",
+        "explanation": "Pestisid maruziyetinden sonra gelişen miyozis, salivasyon, bronkore, kusma, bradikardi ve fasikülasyon kolinerjik toksidrom oluşturur. Tedavi hava yolu/oksijen desteğiyle birlikte sekresyonlar kuruyana kadar atropin titrasyonu, asetilkolinesteraz reaktivasyonu için pralidoksim ve deri-kıyafet dekontaminasyonudur.",
         "pearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Organofosfat zehirlenmesinde atropin muskarinik bulguları, pralidoksim nikotinik etkileri hedefler."
-          }
-        ],
-        "clinicalPearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Organofosfat zehirlenmesinde atropin muskarinik bulguları, pralidoksim nikotinik etkileri hedefler."
-          }
+            {
+                "label": "Sınav notu",
+                "text": "Organofosfat zehirlenmesinde atropin dozu kalp hızına değil bronkore ve sekresyonların kontrolüne göre titre edilir; pralidoksim erken dönemde eklenmelidir."
+            }
         ],
         "optionComparison": {
-          "Flumazenil verilmesi": "Flumazenil seçilmiş benzodiazepin zehirlenmelerinde düşünülebilir; karışık alım veya nöbet riski varsa çocuklarda dikkatli kullanılmalıdır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Flumazenil verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "N-asetilsistein verilmesi": "N-asetilsistein parasetamol toksisitesinde glutatyon depolarını destekleyerek NAPQI aracılı hepatotoksisiteyi azaltır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle N-asetilsistein verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Atropin ve pralidoksim verilmesi": "Bu seçenek doğrudur; çünkü miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-          "Oral antihistaminik verilmesi": "Oral antihistaminik verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Oral antihistaminik verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Nalokson verilmesi": "Nalokson opioid toksidromunda solunum depresyonu, miyozis ve bilinç baskılanması varsa opioid reseptör antagonisti olarak kullanılır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Nalokson verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "whyWrong": {
-          "Flumazenil verilmesi": "Flumazenil seçilmiş benzodiazepin zehirlenmelerinde düşünülebilir; karışık alım veya nöbet riski varsa çocuklarda dikkatli kullanılmalıdır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Flumazenil verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "N-asetilsistein verilmesi": "N-asetilsistein parasetamol toksisitesinde glutatyon depolarını destekleyerek NAPQI aracılı hepatotoksisiteyi azaltır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle N-asetilsistein verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Oral antihistaminik verilmesi": "Oral antihistaminik verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Oral antihistaminik verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Nalokson verilmesi": "Nalokson opioid toksidromunda solunum depresyonu, miyozis ve bilinç baskılanması varsa opioid reseptör antagonisti olarak kullanılır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Nalokson verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Organofosfat zehirlenmesinde kolinerjik bulgularla antidot tedavisini seçebilme",
-        "coreKnowledge": "Organofosfat zehirlenmesi sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir."
-      },
-      "whyCorrect": "Bu seçenek doğrudur; çünkü miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "evidenceChain": [
-        {
-          "text": "Çocuk pestisid içeren kapalı alanda maruz kalmıştır.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Miyozis, salivasyon, bronkore, bradikardi ve kusma kolinerjik toksidromla uyumludur.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Objektif veri (Plazma kolinesteraz aktivitesi: Plazma kolinesteraz aktivitesi 1.200 U/L %) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-          "weight": "medium",
-          "source": "case"
+            "Atropin titrasyonu, pralidoksim ve kontaminasyonun uzaklaştırılması": "Doğru seçenektir; organofosfat maruziyetine bağlı kolinerjik toksidromda sekresyon kontrolü için atropin, enzim reaktivasyonu için pralidoksim ve ikincil maruziyeti önlemek için dekontaminasyon gerekir.",
+            "Sadece nebulize salbutamol ve oral antihistaminik verilmesi": "Hışıltı ve solunum sıkıntısı nedeniyle akla gelebilir; ancak miyozis, bronkore, bradikardi, kusma ve fasikülasyon alerji/astımdan çok kolinerjik toksidromu gösterir.",
+            "Aktif kömür verip hasta asemptomatikse taburcu edilmesi": "Aktif kömür bazı oral ilaç alımlarında değerlendirilebilir; ancak bu vakada inhalasyon/deri teması ve ciddi semptomlar vardır, sekresyon kontrolü ve antidot tedavisi gerekir.",
+            "Nalokson uygulanması ve kısa gözlem sonrası izlem": "Nalokson opioid toksisitesinde solunum depresyonu ve miyozis için kullanılır; fakat bronkore, salivasyon, kusma, bradikardi ve fasikülasyon opioid toksisitesinden farklıdır.",
+            "Flumazenil verilmesi ve sedasyonun geri çevrilmesi": "Flumazenil benzodiazepin etkisini geri çevirebilir; bu çocukta sedatif alım öyküsü yoktur ve kolinerjik bulgular baskındır."
         }
-      ],
-      "coreKnowledge": "Organofosfat zehirlenmesi sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-      "examPearl": "Organofosfat zehirlenmesinde atropin muskarinik bulguları, pralidoksim nikotinik etkileri hedefler.",
-      "whyWrong": {
-        "Flumazenil verilmesi": "Flumazenil seçilmiş benzodiazepin zehirlenmelerinde düşünülebilir; karışık alım veya nöbet riski varsa çocuklarda dikkatli kullanılmalıdır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Flumazenil verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "N-asetilsistein verilmesi": "N-asetilsistein parasetamol toksisitesinde glutatyon depolarını destekleyerek NAPQI aracılı hepatotoksisiteyi azaltır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle N-asetilsistein verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Oral antihistaminik verilmesi": "Oral antihistaminik verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Oral antihistaminik verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Nalokson verilmesi": "Nalokson opioid toksidromunda solunum depresyonu, miyozis ve bilinç baskılanması varsa opioid reseptör antagonisti olarak kullanılır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Nalokson verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-      }
     },
     "difficultyTag": "Acil",
-    "coreKnowledge": "Organofosfat zehirlenmesi sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-    "examPearl": "Organofosfat zehirlenmesinde atropin muskarinik bulguları, pralidoksim nikotinik etkileri hedefler.",
-    "whyCorrect": "Bu seçenek doğrudur; çünkü miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
+    "coreKnowledge": "Organofosfat zehirlenmesi muskarinik, nikotinik ve santral bulguların kombinasyonudur; tedavide atropin muskarinik etkileri, pralidoksim enzim inhibisyonunu hedefler.",
+    "examPearl": "Organofosfat zehirlenmesinde atropin dozu kalp hızına değil bronkore ve sekresyonların kontrolüne göre titre edilir; pralidoksim erken dönemde eklenmelidir.",
+    "whyCorrect": "Atropin titrasyonu, pralidoksim ve dekontaminasyon doğru yanıttır; çünkü vakada kolinerjik toksidrom ve solunum sekresyonu ön plandadır.",
     "optionComparison": {
-      "Flumazenil verilmesi": "Flumazenil seçilmiş benzodiazepin zehirlenmelerinde düşünülebilir; karışık alım veya nöbet riski varsa çocuklarda dikkatli kullanılmalıdır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Flumazenil verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "N-asetilsistein verilmesi": "N-asetilsistein parasetamol toksisitesinde glutatyon depolarını destekleyerek NAPQI aracılı hepatotoksisiteyi azaltır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle N-asetilsistein verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Atropin ve pralidoksim verilmesi": "Bu seçenek doğrudur; çünkü miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "Oral antihistaminik verilmesi": "Oral antihistaminik verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Oral antihistaminik verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Nalokson verilmesi": "Nalokson opioid toksidromunda solunum depresyonu, miyozis ve bilinç baskılanması varsa opioid reseptör antagonisti olarak kullanılır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Nalokson verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+        "Atropin titrasyonu, pralidoksim ve kontaminasyonun uzaklaştırılması": "Doğru seçenektir; organofosfat maruziyetine bağlı kolinerjik toksidromda sekresyon kontrolü için atropin, enzim reaktivasyonu için pralidoksim ve ikincil maruziyeti önlemek için dekontaminasyon gerekir.",
+        "Sadece nebulize salbutamol ve oral antihistaminik verilmesi": "Hışıltı ve solunum sıkıntısı nedeniyle akla gelebilir; ancak miyozis, bronkore, bradikardi, kusma ve fasikülasyon alerji/astımdan çok kolinerjik toksidromu gösterir.",
+        "Aktif kömür verip hasta asemptomatikse taburcu edilmesi": "Aktif kömür bazı oral ilaç alımlarında değerlendirilebilir; ancak bu vakada inhalasyon/deri teması ve ciddi semptomlar vardır, sekresyon kontrolü ve antidot tedavisi gerekir.",
+        "Nalokson uygulanması ve kısa gözlem sonrası izlem": "Nalokson opioid toksisitesinde solunum depresyonu ve miyozis için kullanılır; fakat bronkore, salivasyon, kusma, bradikardi ve fasikülasyon opioid toksisitesinden farklıdır.",
+        "Flumazenil verilmesi ve sedasyonun geri çevrilmesi": "Flumazenil benzodiazepin etkisini geri çevirebilir; bu çocukta sedatif alım öyküsü yoktur ve kolinerjik bulgular baskındır."
     },
     "evidenceChain": [
-      {
-        "text": "Çocuk pestisid içeren kapalı alanda maruz kalmıştır.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Miyozis, salivasyon, bronkore, bradikardi ve kusma kolinerjik toksidromla uyumludur.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Objektif veri (Plazma kolinesteraz aktivitesi: Plazma kolinesteraz aktivitesi 1.200 U/L %) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-        "weight": "medium",
-        "source": "case"
-      }
+        {
+            "text": "Pestisid deposunda maruziyet ve cilt teması vardır → organofosfat maruziyeti için doğrudan çevresel bağlam sağlar.",
+            "weight": "high",
+            "source": "case"
+        },
+        {
+            "text": "Salivasyon, bronkore, miyozis, kusma ve bradikardi birliktedir → muskarinik kolinerjik toksidromu destekler.",
+            "weight": "high",
+            "source": "case"
+        },
+        {
+            "text": "Fasikülasyon ve düşük psödokolinesteraz düzeyi vardır → nikotinik etki ve asetilkolinesteraz inhibisyonu objektif olarak desteklenir.",
+            "weight": "high",
+            "source": "case"
+        }
     ],
     "whyWrong": {
-      "Flumazenil verilmesi": "Flumazenil seçilmiş benzodiazepin zehirlenmelerinde düşünülebilir; karışık alım veya nöbet riski varsa çocuklarda dikkatli kullanılmalıdır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Flumazenil verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "N-asetilsistein verilmesi": "N-asetilsistein parasetamol toksisitesinde glutatyon depolarını destekleyerek NAPQI aracılı hepatotoksisiteyi azaltır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle N-asetilsistein verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Oral antihistaminik verilmesi": "Oral antihistaminik verilmesi pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Oral antihistaminik verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Nalokson verilmesi": "Nalokson opioid toksidromunda solunum depresyonu, miyozis ve bilinç baskılanması varsa opioid reseptör antagonisti olarak kullanılır. Ancak bu vakada miyozis, bronkore, sekresyon artışı, bradikardi ve kas güçsüzlüğü organofosfat zehirlenmesi lehinedir; bu nedenle Nalokson verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+        "Sadece nebulize salbutamol ve oral antihistaminik verilmesi": "Hışıltı ve solunum sıkıntısı nedeniyle akla gelebilir; ancak miyozis, bronkore, bradikardi, kusma ve fasikülasyon alerji/astımdan çok kolinerjik toksidromu gösterir.",
+        "Aktif kömür verip hasta asemptomatikse taburcu edilmesi": "Aktif kömür bazı oral ilaç alımlarında değerlendirilebilir; ancak bu vakada inhalasyon/deri teması ve ciddi semptomlar vardır, sekresyon kontrolü ve antidot tedavisi gerekir.",
+        "Nalokson uygulanması ve kısa gözlem sonrası izlem": "Nalokson opioid toksisitesinde solunum depresyonu ve miyozis için kullanılır; fakat bronkore, salivasyon, kusma, bradikardi ve fasikülasyon opioid toksisitesinden farklıdır.",
+        "Flumazenil verilmesi ve sedasyonun geri çevrilmesi": "Flumazenil benzodiazepin etkisini geri çevirebilir; bu çocukta sedatif alım öyküsü yoktur ve kolinerjik bulgular baskındır."
     },
     "aiMeta": {
-      "generatedAt": "manual-v396-pediatrics-ultra-refined",
-      "generator": "manual-editorial-pediatrics-case-refinement",
-      "schemaVersion": "clinical-standard-v396",
-      "provider": "manual-editorial",
-      "validationWarnings": []
+        "generatedAt": "manual-v397-pediatrics-eighth-batch-ultra-refined",
+        "generator": "manual-editorial-pediatrics-case-refinement",
+        "schemaVersion": "clinical-standard-v397",
+        "provider": "manual-editorial",
+        "validationWarnings": []
     }
-  },
+},
   {
     "id": "v182-new-173-temizlik-maddesi-icme-sonrasi-agiz-yanigi",
     "branchId": "pediatrics",
@@ -88247,426 +88214,378 @@ export const rawCases = [
     "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
     "title": "Temizlik maddesi içme sonrası ağız yanığı",
     "difficulty": "Acil",
-    "clinicalFocus": "Akut üst hava yolu obstrüksiyonu/epiglottit bağlamında pediatrik öykü, yaşa uygun vital bulgu, fizik muayene ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Akut üst hava yolu obstrüksiyonu/epiglottit için pediatrik klinik patern, acil öncelik ve hedefe yönelik tanı/tedavi kararını açıklama.",
+    "clinicalFocus": "Çocukta kostik madde alımında güvenli ilk yaklaşımı, yapılmaması gereken girişimleri ve endoskopi gereksinimini ayırt etme.",
+    "learningTarget": "Oral yanık, salya artışı ve odinofaji bulgularını kullanarak korozif madde alımında NPO-hava yolu-endoskopi zincirini seçme.",
     "demographics": "3 yaşında erkek çocuk",
     "setting": "Çocuk acil servis",
     "chiefComplaint": "Çocuk, lavabo açıcı içtiği fark edildikten sonra ağızda yanma ve salya akması nedeniyle acile getiriliyor.",
-    "stem": "Ailesi çocuğun az miktarda alkali temizlik maddesini ağzına aldığını, sonrasında ağlama, ağızda yanma ve yutkunmada zorlanma geliştiğini belirtiyor. Evde kusturulmamıştır.",
+    "stem": "Annesi tarafından acile getirilen 3 yaşındaki erkek çocuk, mutfak dolabında pet şişeye konmuş lavabo açıcıyı ağzına aldıktan hemen sonra ağlamaya ve ağzını tutmaya başlamıştır. Aile, çocuğun birkaç yudumdan fazlasını içip içmediğinden emin değildir; olaydan sonra salya akışı ve yutkunmada zorlanma gelişmiştir. Evde kusturma, süt içirme veya nötralize edici başka bir madde verme girişiminde bulunulmamıştır. Öksürük, boğulma atağı veya belirgin nefes darlığı tariflenmez; çocuk olaydan önce sağlıklıdır.",
     "patientIntro": {
-      "profile": "3 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
-      "presentation": "Çocuk, lavabo açıcı içtiği fark edildikten sonra ağızda yanma ve salya akması nedeniyle acile getiriliyor.",
-      "historySummary": "Ailesi çocuğun az miktarda alkali temizlik maddesini ağzına aldığını, sonrasında ağlama, ağızda yanma ve yutkunmada zorlanma geliştiğini belirtiyor. Evde kusturulmamıştır."
+        "profile": "3 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
+        "presentation": "Çocuk, lavabo açıcı içtiği fark edildikten sonra ağızda yanma ve salya akması nedeniyle acile getiriliyor.",
+        "historySummary": "Annesi tarafından acile getirilen 3 yaşındaki erkek çocuk, mutfak dolabında pet şişeye konmuş lavabo açıcıyı ağzına aldıktan hemen sonra ağlamaya ve ağzını tutmaya başlamıştır. Aile, çocuğun birkaç yudumdan fazlasını içip içmediğinden emin değildir; olaydan sonra salya akışı ve yutkunmada zorlanma gelişmiştir. Evde kusturma, süt içirme veya nötralize edici başka bir madde verme girişiminde bulunulmamıştır. Öksürük, boğulma atağı veya belirgin nefes darlığı tariflenmez; çocuk olaydan önce sağlıklıdır."
     },
     "vitals": {
-      "TA": "100/64 mmHg",
-      "Nabız": "118/dk",
-      "Solunum": "28/dk",
-      "SpO2": "%98, oda havasında",
-      "Ateş": "36.9 °C",
-      "Şok indeksi": "1.18 pediatrik bağlamda yorumlanmalı"
+        "TA": "100/64 mmHg",
+        "Nabız": "118/dk",
+        "Solunum": "24/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "36.9 °C",
+        "Şok indeksi": "1.18 - ağrı ve ajitasyonla uyumlu"
     },
     "exam": [
-      "Çocuk huzursuzdur.",
-      "Dudak ve oral mukozada eritemli yanık alanları vardır.",
-      "Salya akışı artmıştır ancak solunum sıkıntısı yoktur."
+        "Çocuk huzursuzdur ancak konuşurken belirgin nefes darlığı yoktur.",
+        "Dudaklarda ve oral mukozada eritemli yanık alanları görülür; salya akışı artmıştır.",
+        "Stridor, çekilme veya yaygın abdominal defans saptanmaz."
     ],
     "investigations": [
-      {
-        "id": "v182-new-173-temizlik-maddesi-icme-sonrasi-agiz-yanigi-pediatric-initial-assessment",
-        "label": "Pediatrik ilk değerlendirme",
-        "title": "Pediatrik ilk değerlendirme",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "clinicalMeaning": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "result": {
-          "title": "Pediatrik ilk değerlendirme",
-          "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "values": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
+        {
+            "id": "v182-new-173-temizlik-maddesi-icme-sonrasi-agiz-yanigi-airway-gi-risk",
+            "label": "Hava yolu ve gastrointestinal risk değerlendirmesi",
+            "title": "Hava yolu ve gastrointestinal risk değerlendirmesi",
+            "type": "clinical",
+            "priority": "essential",
+            "subtype": "",
+            "summary": "Oral yanık ve salya artışı özofagus yaralanması riskini gösterir; solunum sıkıntısı olmaması ilk aşamada kontrollü izlem ve endoskopi planı için olanak sağlar.",
+            "clinicalMeaning": "Oral yanık ve salya artışı özofagus yaralanması riskini gösterir; solunum sıkıntısı olmaması ilk aşamada kontrollü izlem ve endoskopi planı için olanak sağlar.",
+            "result": {
+                "title": "Hava yolu ve gastrointestinal risk değerlendirmesi",
+                "summary": "Oral yanık ve salya artışı özofagus yaralanması riskini gösterir; solunum sıkıntısı olmaması ilk aşamada kontrollü izlem ve endoskopi planı için olanak sağlar.",
+                "interpretation": "Oral yanık ve salya artışı özofagus yaralanması riskini gösterir; solunum sıkıntısı olmaması ilk aşamada kontrollü izlem ve endoskopi planı için olanak sağlar.",
+                "values": [
+                    [
+                        "Oral mukoza",
+                        "Dudak ve ağız içinde eritemli yanık alanları",
+                        "Klinik bulgu",
+                        "Korozif temas kanıtı"
+                    ],
+                    [
+                        "Yutma",
+                        "Ağrılı yutkunma ve salya artışı",
+                        "Klinik bulgu",
+                        "Özofagus etkilenimi açısından riskli"
+                    ],
+                    [
+                        "Solunum",
+                        "Stridor veya çekilme yok",
+                        "Klinik bulgu",
+                        "Acil entübasyon gereksinimi saptanmadı"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "Oral mukoza",
+                        "Dudak ve ağız içinde eritemli yanık alanları",
+                        "Klinik bulgu",
+                        "Korozif temas kanıtı"
+                    ],
+                    [
+                        "Yutma",
+                        "Ağrılı yutkunma ve salya artışı",
+                        "Klinik bulgu",
+                        "Özofagus etkilenimi açısından riskli"
+                    ],
+                    [
+                        "Solunum",
+                        "Stridor veya çekilme yok",
+                        "Klinik bulgu",
+                        "Acil entübasyon gereksinimi saptanmadı"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "Oral mukoza",
+                    "Dudak ve ağız içinde eritemli yanık alanları",
+                    "Klinik bulgu",
+                    "Korozif temas kanıtı"
+                ],
+                [
+                    "Yutma",
+                    "Ağrılı yutkunma ve salya artışı",
+                    "Klinik bulgu",
+                    "Özofagus etkilenimi açısından riskli"
+                ],
+                [
+                    "Solunum",
+                    "Stridor veya çekilme yok",
+                    "Klinik bulgu",
+                    "Acil entübasyon gereksinimi saptanmadı"
+                ]
             ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ],
-          "rows": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
-            ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ]
+            "postAnswerExplanation": "Oral yanık ve salya artışı özofagus yaralanması riskini gösterir; solunum sıkıntısı olmaması ilk aşamada kontrollü izlem ve endoskopi planı için olanak sağlar.",
+            "interpretation": "Oral yanık ve salya artışı özofagus yaralanması riskini gösterir; solunum sıkıntısı olmaması ilk aşamada kontrollü izlem ve endoskopi planı için olanak sağlar.",
+            "category": "clinicalAssessment",
+            "testTypeCategory": "clinicalAssessment",
+            "explanationAfterAnswer": "Oral yanık ve salya artışı özofagus yaralanması riskini gösterir; solunum sıkıntısı olmaması ilk aşamada kontrollü izlem ve endoskopi planı için olanak sağlar.",
+            "clinicalFlowOrder": 10,
+            "flowOrder": 10,
+            "orderRank": 10,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 4,
+            "scoreValue": 4,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
         },
-        "rows": [
-          [
-            "Genel görünüm",
-            "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-            "Yaşa göre",
-            "Kritik izlem"
-          ],
-          [
-            "Kapiller dolum/perfüzyon",
-            "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-            "<2 sn beklenir",
-            "Yaşa göre yorumlanır"
-          ],
-          [
-            "Solunum işi",
-            "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-            "Yaşa göre",
-            "Acil güvenlik"
-          ]
-        ],
-        "postAnswerExplanation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme",
-        "orderRank": 10
-      },
-      {
-        "id": "hemogram-ve-temel-inflamasyon-paneli-1",
-        "label": "Hemogram ve temel inflamasyon paneli",
-        "title": "Hemogram ve temel inflamasyon paneli",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "Laboratuvar",
-        "summary": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
-        "clinicalMeaning": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
-        "result": {
-          "title": "Hemogram ve temel inflamasyon paneli",
-          "summary": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
-          "interpretation": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
-          "values": [
-            [
-              "Hemoglobin",
-              "13.2 g/dL",
-              "12–16 g/dL",
-              "Klinik bağlamda değerlendirilmeli"
+        {
+            "id": "v182-new-173-temizlik-maddesi-icme-sonrasi-agiz-yanigi-chest-neck-xray",
+            "label": "Boyun-göğüs grafisi",
+            "title": "Boyun-göğüs grafisi",
+            "type": "imaging",
+            "priority": "important",
+            "subtype": "",
+            "summary": "Grafide serbest hava veya mediastinal hava saptanmaması perforasyon lehine acil radyolojik bulgu olmadığını gösterir; bu sonuç endoskopi gereksinimini ortadan kaldırmaz.",
+            "clinicalMeaning": "Grafide serbest hava veya mediastinal hava saptanmaması perforasyon lehine acil radyolojik bulgu olmadığını gösterir; bu sonuç endoskopi gereksinimini ortadan kaldırmaz.",
+            "result": {
+                "title": "Boyun-göğüs grafisi",
+                "summary": "Grafide serbest hava veya mediastinal hava saptanmaması perforasyon lehine acil radyolojik bulgu olmadığını gösterir; bu sonuç endoskopi gereksinimini ortadan kaldırmaz.",
+                "interpretation": "Grafide serbest hava veya mediastinal hava saptanmaması perforasyon lehine acil radyolojik bulgu olmadığını gösterir; bu sonuç endoskopi gereksinimini ortadan kaldırmaz.",
+                "values": [
+                    [
+                        "Boyun yumuşak dokusu",
+                        "Serbest hava izlenmedi",
+                        "Radyografik bulgu",
+                        "Perforasyon bulgusu yok"
+                    ],
+                    [
+                        "Mediasten",
+                        "Pnömomediastinum saptanmadı",
+                        "Radyografik bulgu",
+                        "Acil cerrahi bulgu yok"
+                    ],
+                    [
+                        "Akciğer alanları",
+                        "Aspirasyon lehine infiltrasyon yok",
+                        "Radyografik bulgu",
+                        "Solunum bulgularıyla uyumlu"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "Boyun yumuşak dokusu",
+                        "Serbest hava izlenmedi",
+                        "Radyografik bulgu",
+                        "Perforasyon bulgusu yok"
+                    ],
+                    [
+                        "Mediasten",
+                        "Pnömomediastinum saptanmadı",
+                        "Radyografik bulgu",
+                        "Acil cerrahi bulgu yok"
+                    ],
+                    [
+                        "Akciğer alanları",
+                        "Aspirasyon lehine infiltrasyon yok",
+                        "Radyografik bulgu",
+                        "Solunum bulgularıyla uyumlu"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "Boyun yumuşak dokusu",
+                    "Serbest hava izlenmedi",
+                    "Radyografik bulgu",
+                    "Perforasyon bulgusu yok"
+                ],
+                [
+                    "Mediasten",
+                    "Pnömomediastinum saptanmadı",
+                    "Radyografik bulgu",
+                    "Acil cerrahi bulgu yok"
+                ],
+                [
+                    "Akciğer alanları",
+                    "Aspirasyon lehine infiltrasyon yok",
+                    "Radyografik bulgu",
+                    "Solunum bulgularıyla uyumlu"
+                ]
             ],
-            [
-              "Lökosit",
-              "8.900/mm³",
-              "4.000–10.000/mm³",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Trombosit",
-              "260.000/mm³",
-              "150.000–400.000/mm³",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Hemoglobin",
-              "13.2 g/dL",
-              "12–16 g/dL",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Lökosit",
-              "8.900/mm³",
-              "4.000–10.000/mm³",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Trombosit",
-              "260.000/mm³",
-              "150.000–400.000/mm³",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
+            "postAnswerExplanation": "Grafide serbest hava veya mediastinal hava saptanmaması perforasyon lehine acil radyolojik bulgu olmadığını gösterir; bu sonuç endoskopi gereksinimini ortadan kaldırmaz.",
+            "interpretation": "Grafide serbest hava veya mediastinal hava saptanmaması perforasyon lehine acil radyolojik bulgu olmadığını gösterir; bu sonuç endoskopi gereksinimini ortadan kaldırmaz.",
+            "category": "imaging",
+            "testTypeCategory": "imaging",
+            "explanationAfterAnswer": "Grafide serbest hava veya mediastinal hava saptanmaması perforasyon lehine acil radyolojik bulgu olmadığını gösterir; bu sonuç endoskopi gereksinimini ortadan kaldırmaz.",
+            "clinicalFlowOrder": 20,
+            "flowOrder": 20,
+            "orderRank": 20,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 2,
+            "scoreValue": 2,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
         },
-        "rows": [
-          [
-            "Hemoglobin",
-            "13.2 g/dL",
-            "12–16 g/dL",
-            "Klinik bağlamda değerlendirilmeli"
-          ],
-          [
-            "Lökosit",
-            "8.900/mm³",
-            "4.000–10.000/mm³",
-            "Klinik bağlamda değerlendirilmeli"
-          ],
-          [
-            "Trombosit",
-            "260.000/mm³",
-            "150.000–400.000/mm³",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
-        "interpretation": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
-        "explanationAfterAnswer": "BOS’ta nötrofil baskın pleositoz, düşük glukoz ve yüksek protein ateş/ense sertliğiyle birlikte bakteriyel menenjit lehinedir; antibiyotik tedavisi kültür sonucunu beklememelidir.",
-        "category": "metabolic",
-        "testTypeCategory": "metabolic",
-        "clinicalFlowOrder": 22,
-        "flowOrder": 22,
-        "orderRank": 22,
-        "testValueLabel": "Kritik tedavi belirler",
-        "clinicalPriorityLabel": "Kritik tedavi belirler",
-        "educationalValue": "Kritik tedavi belirler",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "pediatricSafetyValue": "Kritik tedavi belirler",
-        "treatmentImpact": "Kritik tedavi belirler"
-      },
-      {
-        "id": "akciger-grafisi-1",
-        "label": "Akciğer grafisi",
-        "title": "Akciğer grafisi",
-        "type": "xray",
-        "priority": "lowPriority",
-        "subtype": "Direkt/kontrastlı grafi",
-        "summary": "Akciğer grafisi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "clinicalMeaning": "Akciğer grafisi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "result": {
-          "title": "Akciğer grafisi",
-          "summary": "Akciğer grafisi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-          "interpretation": "Akciğer grafisi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-          "values": [
-            [
-              "Görüntüleme bulgusu",
-              "Akut kardiyopulmoner patoloji saptanmadı.",
-              "Modaliteye özgü bulgu",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Görüntüleme bulgusu",
-              "Akut kardiyopulmoner patoloji saptanmadı.",
-              "Modaliteye özgü bulgu",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Görüntüleme bulgusu",
-            "Akut kardiyopulmoner patoloji saptanmadı.",
-            "Modaliteye özgü bulgu",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "Akciğer grafisi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "interpretation": "Akciğer grafisi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "category": "imaging",
-        "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Akciğer grafisi, bu çocuk hastada yaşa ve klinik ciddiyete göre yorumlanır; sonucu tanısal yönelim veya güvenli tedavi önceliğiyle birlikte değerlendirilmelidir.",
-        "clinicalFlowOrder": 82,
-        "flowOrder": 82,
-        "orderRank": 82,
-        "testValueLabel": "Bu olguda sınırlı katkı",
-        "clinicalPriorityLabel": "Bu olguda sınırlı katkı",
-        "educationalValue": "Bu olguda sınırlı katkı",
-        "scoreImpact": 0,
-        "scoreValue": 0,
-        "pediatricSafetyValue": "Bu olguda sınırlı katkı",
-        "treatmentImpact": "Bu olguda sınırlı katkı"
-      }
+        {
+            "id": "v182-new-173-temizlik-maddesi-icme-sonrasi-agiz-yanigi-endoscopy",
+            "label": "Erken üst gastrointestinal endoskopi",
+            "title": "Erken üst gastrointestinal endoskopi",
+            "type": "endoscopy",
+            "priority": "essential",
+            "subtype": "",
+            "summary": "Stabilizasyon sonrası yapılan endoskopide özofagus mukozasında yüzeyel-orta derecede kostik hasar saptanmıştır; kusma veya nötralizasyon yapılmaması ek yaralanmayı önler.",
+            "clinicalMeaning": "Stabilizasyon sonrası yapılan endoskopide özofagus mukozasında yüzeyel-orta derecede kostik hasar saptanmıştır; kusma veya nötralizasyon yapılmaması ek yaralanmayı önler.",
+            "result": {
+                "title": "Erken üst gastrointestinal endoskopi",
+                "summary": "Stabilizasyon sonrası yapılan endoskopide özofagus mukozasında yüzeyel-orta derecede kostik hasar saptanmıştır; kusma veya nötralizasyon yapılmaması ek yaralanmayı önler.",
+                "interpretation": "Stabilizasyon sonrası yapılan endoskopide özofagus mukozasında yüzeyel-orta derecede kostik hasar saptanmıştır; kusma veya nötralizasyon yapılmaması ek yaralanmayı önler.",
+                "values": [
+                    [
+                        "Zamanlama",
+                        "Olaydan 14 saat sonra",
+                        "Stabilizasyon sonrası değerlendirme",
+                        "Uygun pencere içinde"
+                    ],
+                    [
+                        "Özofagus",
+                        "Orta kesimde eritem ve yüzeyel ülserasyon",
+                        "Endoskopik bulgu",
+                        "Kostik özofajit ile uyumlu"
+                    ],
+                    [
+                        "Perforasyon",
+                        "Saptanmadı",
+                        "Endoskopik/radyolojik uyum",
+                        "Cerrahi acil bulgu yok"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "Zamanlama",
+                        "Olaydan 14 saat sonra",
+                        "Stabilizasyon sonrası değerlendirme",
+                        "Uygun pencere içinde"
+                    ],
+                    [
+                        "Özofagus",
+                        "Orta kesimde eritem ve yüzeyel ülserasyon",
+                        "Endoskopik bulgu",
+                        "Kostik özofajit ile uyumlu"
+                    ],
+                    [
+                        "Perforasyon",
+                        "Saptanmadı",
+                        "Endoskopik/radyolojik uyum",
+                        "Cerrahi acil bulgu yok"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "Zamanlama",
+                    "Olaydan 14 saat sonra",
+                    "Stabilizasyon sonrası değerlendirme",
+                    "Uygun pencere içinde"
+                ],
+                [
+                    "Özofagus",
+                    "Orta kesimde eritem ve yüzeyel ülserasyon",
+                    "Endoskopik bulgu",
+                    "Kostik özofajit ile uyumlu"
+                ],
+                [
+                    "Perforasyon",
+                    "Saptanmadı",
+                    "Endoskopik/radyolojik uyum",
+                    "Cerrahi acil bulgu yok"
+                ]
+            ],
+            "postAnswerExplanation": "Stabilizasyon sonrası yapılan endoskopide özofagus mukozasında yüzeyel-orta derecede kostik hasar saptanmıştır; kusma veya nötralizasyon yapılmaması ek yaralanmayı önler.",
+            "interpretation": "Stabilizasyon sonrası yapılan endoskopide özofagus mukozasında yüzeyel-orta derecede kostik hasar saptanmıştır; kusma veya nötralizasyon yapılmaması ek yaralanmayı önler.",
+            "category": "endoscopy",
+            "testTypeCategory": "endoscopy",
+            "explanationAfterAnswer": "Stabilizasyon sonrası yapılan endoskopide özofagus mukozasında yüzeyel-orta derecede kostik hasar saptanmıştır; kusma veya nötralizasyon yapılmaması ek yaralanmayı önler.",
+            "clinicalFlowOrder": 30,
+            "flowOrder": 30,
+            "orderRank": 30,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 4,
+            "scoreValue": 4,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
+        }
     ],
     "useSyntheticInvestigationBank": false,
     "managementSequence": {
-      "enabled": false
+        "enabled": false
     },
-    "hideExamSignal": true,
+    "hideExamSignal": false,
     "shuffleOptions": false,
     "question": "Bu çocukta en uygun ilk yaklaşım aşağıdakilerden hangisidir?",
     "questionType": "treatment",
-    "answerTarget": "first_step",
+    "answerTarget": "treatment",
     "diagnosis": {
-      "correct": "Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek",
-      "options": [
-        "Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek",
-        "Asidi bazla nötralize etmek için ev tipi karşı madde içirmek",
-        "Oral alımı sürdürüp endoskopiyi disfaji gelişirse planlamak",
-        "Çocuğu kusturarak maddenin çıkarılmasını sağlamak",
-        "Aktif kömür vererek tüm kostik maddeyi bağlamak"
-      ],
-      "question": "Bu çocukta en uygun ilk yaklaşım aşağıdakilerden hangisidir?",
-      "explanation": "Bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski birlikte değerlendirilince temel karar Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü korozif madde alımı için doğru tanı/tedavi önceliğini belirler.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Korozif madde alımında kusturma/nötralizasyon yapılmaz; hava yolu değerlendirilir ve endoskopi gereksinimi izlenir."
-        }
-      ],
-      "optionComparison": {
-        "Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek": "Bu seçenek doğrudur; çünkü ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "Asidi bazla nötralize etmek için ev tipi karşı madde içirmek": "Asidi bazla nötralize etmek için ev tipi karşı madde içirmek pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Asidi bazla nötralize etmek için ev tipi karşı madde içirmek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Oral alımı sürdürüp endoskopiyi disfaji gelişirse planlamak": "Endoskopi korozif madde alımında özofagus ve mide yanığını derecelendirmek için stabilizasyon sonrası planlanır. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Oral alımı sürdürüp endoskopiyi disfaji gelişirse planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Çocuğu kusturarak maddenin çıkarılmasını sağlamak": "Çocuğu kusturarak maddenin çıkarılmasını sağlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Çocuğu kusturarak maddenin çıkarılmasını sağlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Aktif kömür vererek tüm kostik maddeyi bağlamak": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Aktif kömür vererek tüm kostik maddeyi bağlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-      },
-      "answerFeedback": {
-        "summary": "Bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski birlikte değerlendirilince temel karar Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü korozif madde alımı için doğru tanı/tedavi önceliğini belirler.",
-        "whyCorrect": "Çocuk alkali temizlik maddesi almıştır. Oral mukozada yanık ve salya akışı vardır. Bu bulgular birlikte değerlendirildiğinde en uygun yanıt Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek olur. Tedavi seçimi, klinik aciliyetin ve altta yatan mekanizmanın aynı anda hedeflenmesine dayanır; destek basamakları gerekirse eş zamanlı yürütülür fakat ana kararı tek başına değiştirmez. Alternatifler bazı destek veya ayırıcı basamaklarda kullanılabilir; ancak verilen acil karar noktasını bu seçenek kadar doğrudan karşılamaz.",
-        "rationale": "Bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski birlikte değerlendirilince temel karar Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü korozif madde alımı için doğru tanı/tedavi önceliğini belirler.",
-        "correctOptionFeedback": "Bu seçenek doğrudur; çünkü ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "keyClues": [
-          "Çocuk alkali temizlik maddesi almıştır.",
-          "Oral mukozada yanık ve salya akışı vardır.",
-          "Objektif veri (Hemogram ve temel inflamasyon paneli: Hemoglobin 13.2 g/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır."
+        "correct": "Ağızdan alımı kesmek, hava yolunu değerlendirmek ve erken endoskopi planlamak",
+        "options": [
+            "Çocuğu kusturup maddenin mideye geçmesini azaltmak",
+            "Evdeki zayıf asitlerle alkali maddeyi nötralize etmek",
+            "Aktif kömür verip ağızdan sıvı alımını sürdürmek",
+            "Ağızdan alımı kesmek, hava yolunu değerlendirmek ve erken endoskopi planlamak",
+            "Semptomlar azalırsa endoskopi yapmadan taburcu etmek"
         ],
-        "evidenceChain": [
-          {
-            "text": "Çocuk alkali temizlik maddesi almıştır.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Oral mukozada yanık ve salya akışı vardır.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Objektif veri (Hemogram ve temel inflamasyon paneli: Hemoglobin 13.2 g/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "examPearl": "Korozif madde alımında kusturma/nötralizasyon yapılmaz; hava yolu değerlendirilir ve endoskopi gereksinimi izlenir.",
+        "question": "Bu çocukta en uygun ilk yaklaşım aşağıdakilerden hangisidir?",
+        "explanation": "Alkali korozif madde alımı sonrası oral yanık, salya artışı ve odinofaji özofagus hasarı riskini gösterir. İlk yaklaşım kusturma veya nötralizasyon değil; oral alımı kesmek, hava yolunu izlemek, perforasyon bulgularını değerlendirmek ve stabil hastada uygun zamanda endoskopi planlamaktır.",
         "pearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Korozif madde alımında kusturma/nötralizasyon yapılmaz; hava yolu değerlendirilir ve endoskopi gereksinimi izlenir."
-          }
-        ],
-        "clinicalPearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Korozif madde alımında kusturma/nötralizasyon yapılmaz; hava yolu değerlendirilir ve endoskopi gereksinimi izlenir."
-          }
+            {
+                "label": "Sınav notu",
+                "text": "Kostik madde alımında kusturma, nötralizasyon ve gastrik lavaj ek mukozal hasar ve aspirasyon riski nedeniyle yapılmaz."
+            }
         ],
         "optionComparison": {
-          "Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek": "Bu seçenek doğrudur; çünkü ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-          "Asidi bazla nötralize etmek için ev tipi karşı madde içirmek": "Asidi bazla nötralize etmek için ev tipi karşı madde içirmek pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Asidi bazla nötralize etmek için ev tipi karşı madde içirmek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Oral alımı sürdürüp endoskopiyi disfaji gelişirse planlamak": "Endoskopi korozif madde alımında özofagus ve mide yanığını derecelendirmek için stabilizasyon sonrası planlanır. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Oral alımı sürdürüp endoskopiyi disfaji gelişirse planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Çocuğu kusturarak maddenin çıkarılmasını sağlamak": "Çocuğu kusturarak maddenin çıkarılmasını sağlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Çocuğu kusturarak maddenin çıkarılmasını sağlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Aktif kömür vererek tüm kostik maddeyi bağlamak": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Aktif kömür vererek tüm kostik maddeyi bağlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "whyWrong": {
-          "Asidi bazla nötralize etmek için ev tipi karşı madde içirmek": "Asidi bazla nötralize etmek için ev tipi karşı madde içirmek pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Asidi bazla nötralize etmek için ev tipi karşı madde içirmek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Oral alımı sürdürüp endoskopiyi disfaji gelişirse planlamak": "Endoskopi korozif madde alımında özofagus ve mide yanığını derecelendirmek için stabilizasyon sonrası planlanır. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Oral alımı sürdürüp endoskopiyi disfaji gelişirse planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Çocuğu kusturarak maddenin çıkarılmasını sağlamak": "Çocuğu kusturarak maddenin çıkarılmasını sağlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Çocuğu kusturarak maddenin çıkarılmasını sağlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Aktif kömür vererek tüm kostik maddeyi bağlamak": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Aktif kömür vererek tüm kostik maddeyi bağlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Kostik madde alımında uygun ilk yaklaşımı ve yapılmaması gerekenleri ayırt edebilme",
-        "coreKnowledge": "Korozif madde alımı sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir."
-      },
-      "whyCorrect": "Bu seçenek doğrudur; çünkü ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "evidenceChain": [
-        {
-          "text": "Çocuk alkali temizlik maddesi almıştır.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Oral mukozada yanık ve salya akışı vardır.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Objektif veri (Hemogram ve temel inflamasyon paneli: Hemoglobin 13.2 g/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-          "weight": "medium",
-          "source": "case"
+            "Çocuğu kusturup maddenin mideye geçmesini azaltmak": "Kusturma korozif maddenin özofagustan tekrar geçmesine ve aspirasyona yol açabilir; bu nedenle özellikle ağız yanığı ve salya artışı olan çocukta kontrendikedir.",
+            "Evdeki zayıf asitlerle alkali maddeyi nötralize etmek": "Nötralizasyon girişimi ekzotermik reaksiyon ve ek doku hasarı oluşturabilir; klinik yönetim kontrollü sağlık ortamında yapılmalıdır.",
+            "Aktif kömür verip ağızdan sıvı alımını sürdürmek": "Aktif kömür korozif maddeleri etkili şekilde bağlamaz ve kusma/aspirasyon riskini artırabilir; oral alım kesilmelidir.",
+            "Ağızdan alımı kesmek, hava yolunu değerlendirmek ve erken endoskopi planlamak": "Doğru seçenektir; semptomatik kostik alımda ilk güvenli yaklaşım NPO, hava yolu değerlendirmesi, perforasyon bulgularının dışlanması ve stabil hastada erken endoskopidir.",
+            "Semptomlar azalırsa endoskopi yapmadan taburcu etmek": "Ağız yanığı ve salya artışı varken semptomların azalması özofagus hasarını dışlamaz; gözlem ve endoskopik değerlendirme gerekir."
         }
-      ],
-      "coreKnowledge": "Korozif madde alımı sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-      "examPearl": "Korozif madde alımında kusturma/nötralizasyon yapılmaz; hava yolu değerlendirilir ve endoskopi gereksinimi izlenir.",
-      "whyWrong": {
-        "Asidi bazla nötralize etmek için ev tipi karşı madde içirmek": "Asidi bazla nötralize etmek için ev tipi karşı madde içirmek pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Asidi bazla nötralize etmek için ev tipi karşı madde içirmek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Oral alımı sürdürüp endoskopiyi disfaji gelişirse planlamak": "Endoskopi korozif madde alımında özofagus ve mide yanığını derecelendirmek için stabilizasyon sonrası planlanır. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Oral alımı sürdürüp endoskopiyi disfaji gelişirse planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Çocuğu kusturarak maddenin çıkarılmasını sağlamak": "Çocuğu kusturarak maddenin çıkarılmasını sağlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Çocuğu kusturarak maddenin çıkarılmasını sağlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Aktif kömür vererek tüm kostik maddeyi bağlamak": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Aktif kömür vererek tüm kostik maddeyi bağlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-      }
     },
     "difficultyTag": "Acil",
-    "coreKnowledge": "Korozif madde alımı sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-    "examPearl": "Korozif madde alımında kusturma/nötralizasyon yapılmaz; hava yolu değerlendirilir ve endoskopi gereksinimi izlenir.",
-    "whyCorrect": "Bu seçenek doğrudur; çünkü ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
+    "coreKnowledge": "Korozif madde alımında hasarın şiddeti alınan madde, miktar ve temas süresine bağlıdır; semptomatik çocukta hava yolu güvenliği ve erken endoskopik derecelendirme esastır.",
+    "examPearl": "Kostik madde alımında kusturma, nötralizasyon ve gastrik lavaj ek mukozal hasar ve aspirasyon riski nedeniyle yapılmaz.",
+    "whyCorrect": "Oral alımı kesmek, hava yolunu değerlendirmek ve erken endoskopi planlamak doğru yanıttır; çünkü çocukta semptomatik alkali korozif madde alımı ve özofagus yaralanması riski vardır.",
     "optionComparison": {
-      "Ağızdan alımı kesmek, hava yolunu değerlendirmek ve endoskopi gereksinimi için izlemek": "Bu seçenek doğrudur; çünkü ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "Asidi bazla nötralize etmek için ev tipi karşı madde içirmek": "Asidi bazla nötralize etmek için ev tipi karşı madde içirmek pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Asidi bazla nötralize etmek için ev tipi karşı madde içirmek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Oral alımı sürdürüp endoskopiyi disfaji gelişirse planlamak": "Endoskopi korozif madde alımında özofagus ve mide yanığını derecelendirmek için stabilizasyon sonrası planlanır. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Oral alımı sürdürüp endoskopiyi disfaji gelişirse planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Çocuğu kusturarak maddenin çıkarılmasını sağlamak": "Çocuğu kusturarak maddenin çıkarılmasını sağlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Çocuğu kusturarak maddenin çıkarılmasını sağlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Aktif kömür vererek tüm kostik maddeyi bağlamak": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Aktif kömür vererek tüm kostik maddeyi bağlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+        "Çocuğu kusturup maddenin mideye geçmesini azaltmak": "Kusturma korozif maddenin özofagustan tekrar geçmesine ve aspirasyona yol açabilir; bu nedenle özellikle ağız yanığı ve salya artışı olan çocukta kontrendikedir.",
+        "Evdeki zayıf asitlerle alkali maddeyi nötralize etmek": "Nötralizasyon girişimi ekzotermik reaksiyon ve ek doku hasarı oluşturabilir; klinik yönetim kontrollü sağlık ortamında yapılmalıdır.",
+        "Aktif kömür verip ağızdan sıvı alımını sürdürmek": "Aktif kömür korozif maddeleri etkili şekilde bağlamaz ve kusma/aspirasyon riskini artırabilir; oral alım kesilmelidir.",
+        "Ağızdan alımı kesmek, hava yolunu değerlendirmek ve erken endoskopi planlamak": "Doğru seçenektir; semptomatik kostik alımda ilk güvenli yaklaşım NPO, hava yolu değerlendirmesi, perforasyon bulgularının dışlanması ve stabil hastada erken endoskopidir.",
+        "Semptomlar azalırsa endoskopi yapmadan taburcu etmek": "Ağız yanığı ve salya artışı varken semptomların azalması özofagus hasarını dışlamaz; gözlem ve endoskopik değerlendirme gerekir."
     },
     "evidenceChain": [
-      {
-        "text": "Çocuk alkali temizlik maddesi almıştır.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Oral mukozada yanık ve salya akışı vardır.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Objektif veri (Hemogram ve temel inflamasyon paneli: Hemoglobin 13.2 g/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-        "weight": "medium",
-        "source": "case"
-      }
+        {
+            "text": "Lavabo açıcı gibi alkali korozif madde ağza alınmıştır → derin liküefaksiyon nekrozu ve özofagus hasarı riski vardır.",
+            "weight": "high",
+            "source": "case"
+        },
+        {
+            "text": "Oral yanık, salya artışı ve yutkunmada zorlanma mevcuttur → semptomatik kostik alımı gösterir.",
+            "weight": "high",
+            "source": "case"
+        },
+        {
+            "text": "Evde kusturma veya nötralizasyon yapılmamıştır ve solunum sıkıntısı yoktur → güvenli ilk yaklaşım NPO, hava yolu izlemi ve erken endoskopi planıdır.",
+            "weight": "medium",
+            "source": "case"
+        }
     ],
     "whyWrong": {
-      "Asidi bazla nötralize etmek için ev tipi karşı madde içirmek": "Asidi bazla nötralize etmek için ev tipi karşı madde içirmek pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Asidi bazla nötralize etmek için ev tipi karşı madde içirmek hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Oral alımı sürdürüp endoskopiyi disfaji gelişirse planlamak": "Endoskopi korozif madde alımında özofagus ve mide yanığını derecelendirmek için stabilizasyon sonrası planlanır. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Oral alımı sürdürüp endoskopiyi disfaji gelişirse planlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Çocuğu kusturarak maddenin çıkarılmasını sağlamak": "Çocuğu kusturarak maddenin çıkarılmasını sağlamak pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Çocuğu kusturarak maddenin çıkarılmasını sağlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Aktif kömür vererek tüm kostik maddeyi bağlamak": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada ağız yanığı, salya artışı, odinofaji ve özofagus yaralanması riski korozif madde alımı lehinedir; bu nedenle Aktif kömür vererek tüm kostik maddeyi bağlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+        "Çocuğu kusturup maddenin mideye geçmesini azaltmak": "Kusturma korozif maddenin özofagustan tekrar geçmesine ve aspirasyona yol açabilir; bu nedenle özellikle ağız yanığı ve salya artışı olan çocukta kontrendikedir.",
+        "Evdeki zayıf asitlerle alkali maddeyi nötralize etmek": "Nötralizasyon girişimi ekzotermik reaksiyon ve ek doku hasarı oluşturabilir; klinik yönetim kontrollü sağlık ortamında yapılmalıdır.",
+        "Aktif kömür verip ağızdan sıvı alımını sürdürmek": "Aktif kömür korozif maddeleri etkili şekilde bağlamaz ve kusma/aspirasyon riskini artırabilir; oral alım kesilmelidir.",
+        "Semptomlar azalırsa endoskopi yapmadan taburcu etmek": "Ağız yanığı ve salya artışı varken semptomların azalması özofagus hasarını dışlamaz; gözlem ve endoskopik değerlendirme gerekir."
     },
     "aiMeta": {
-      "generatedAt": "manual-v396-pediatrics-ultra-refined",
-      "generator": "manual-editorial-pediatrics-case-refinement",
-      "schemaVersion": "clinical-standard-v396",
-      "provider": "manual-editorial",
-      "validationWarnings": []
+        "generatedAt": "manual-v397-pediatrics-eighth-batch-ultra-refined",
+        "generator": "manual-editorial-pediatrics-case-refinement",
+        "schemaVersion": "clinical-standard-v397",
+        "provider": "manual-editorial",
+        "validationWarnings": []
     }
-  },
+},
   {
     "id": "v182-new-174-gaz-yagi-icme-sonrasi-oksuruk",
     "branchId": "pediatrics",
@@ -88674,515 +88593,468 @@ export const rawCases = [
     "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
     "title": "Gaz yağı içme sonrası öksürük",
     "difficulty": "Acil",
-    "clinicalFocus": "Hidrokarbon aspirasyon riski bağlamında pediatrik öykü, yaşa uygun vital bulgu, fizik muayene ve objektif veri ipuçlarını birlikte yorumlama.",
-    "learningTarget": "Hidrokarbon aspirasyon riski için pediatrik klinik patern, acil öncelik ve hedefe yönelik tanı/tedavi kararını açıklama.",
+    "clinicalFocus": "Çocukta hidrokarbon alımında aspirasyon riskini tanıyıp gastrointestinal dekontaminasyondan kaçınarak solunum desteği ve izlem kararı verme.",
+    "learningTarget": "Hidrokarbon alımında öksürük, hışıltı, hipoksemi ve grafi bulgularını kullanarak güvenli başlangıç yaklaşımını seçme.",
     "demographics": "2 yaşında kız çocuk",
     "setting": "Çocuk acil servis",
     "chiefComplaint": "Çocuk, gaz yağı içtiği fark edildikten sonra öksürük ve hırıltı nedeniyle getiriliyor.",
-    "stem": "Ailesi çocuğun pet şişede saklanan az miktarda gaz yağını içtiğini, hemen ardından öksürük nöbeti ve kusma geliştiğini belirtiyor. Evde kusturma denenmemiştir.",
+    "stem": "Ailesi tarafından acile getirilen 2 yaşındaki kız çocuk, balkonda pet şişede saklanan gaz yağından küçük bir miktar içtikten hemen sonra öksürük nöbeti geçirmiştir. Olayın ardından bir kez kusmuş, sonrasında hırıltılı soluma ve huzursuzluk gelişmiştir. Aile evde kusturmaya çalışmamış ve herhangi bir ilaç vermemiştir. Ateş veya öncesinde viral solunum yolu yakınması yoktur; kardeşlerinde benzer şikâyet bulunmamaktadır.",
     "patientIntro": {
-      "profile": "2 yaşında kız çocuk, çocuk acil servisinde değerlendiriliyor.",
-      "presentation": "Çocuk, gaz yağı içtiği fark edildikten sonra öksürük ve hırıltı nedeniyle getiriliyor.",
-      "historySummary": "Ailesi çocuğun pet şişede saklanan az miktarda gaz yağını içtiğini, hemen ardından öksürük nöbeti ve kusma geliştiğini belirtiyor. Evde kusturma denenmemiştir."
+        "profile": "2 yaşında kız çocuk, çocuk acil servisinde değerlendiriliyor.",
+        "presentation": "Çocuk, gaz yağı içtiği fark edildikten sonra öksürük ve hırıltı nedeniyle getiriliyor.",
+        "historySummary": "Ailesi tarafından acile getirilen 2 yaşındaki kız çocuk, balkonda pet şişede saklanan gaz yağından küçük bir miktar içtikten hemen sonra öksürük nöbeti geçirmiştir. Olayın ardından bir kez kusmuş, sonrasında hırıltılı soluma ve huzursuzluk gelişmiştir. Aile evde kusturmaya çalışmamış ve herhangi bir ilaç vermemiştir. Ateş veya öncesinde viral solunum yolu yakınması yoktur; kardeşlerinde benzer şikâyet bulunmamaktadır."
     },
     "vitals": {
-      "TA": "82/48 mmHg",
-      "Nabız": "128/dk",
-      "Solunum": "38/dk",
-      "SpO2": "%91, oda havasında",
-      "Ateş": "37.1 °C",
-      "Şok indeksi": "1.56 pediatrik bağlamda yorumlanmalı"
+        "TA": "92/56 mmHg",
+        "Nabız": "132/dk",
+        "Solunum": "42/dk",
+        "SpO2": "%90, oda havasında",
+        "Ateş": "37.1 °C",
+        "Şok indeksi": "1.43 - hipoksi ve ajitasyonla uyumlu taşikardi"
     },
     "exam": [
-      "Çocuk takipneiktir.",
-      "Bilateral hışıltı ve sağ bazalde ince raller duyulur."
+        "Çocuk takipneik ve huzursuzdur; hafif subkostal çekilme vardır.",
+        "Bilateral hışıltı ve sağ bazalde ince raller duyulur.",
+        "Ağız içinde kimyasal yanık yoktur; bilinç açık ve sıvı sekresyonu belirgin değildir."
     ],
     "investigations": [
-      {
-        "id": "arter-kan-gazi-laktat-2",
-        "label": "Arter kan gazı / laktat",
-        "title": "Arter kan gazı / laktat",
-        "type": "bloodGas",
-        "priority": "essential",
-        "subtype": "Kan gazı ve asit-baz değerlendirmesi",
-        "summary": "Laktat yüksekliği doku hipoperfüzyonu veya ağır metabolik stres göstergesi olabilir; hipotansiyon, taşikardi veya sepsis bulguları varsa acil resüsitasyon gereksinimini destekler.",
-        "clinicalMeaning": "Laktat yüksekliği doku hipoperfüzyonu veya ağır metabolik stres göstergesi olabilir; hipotansiyon, taşikardi veya sepsis bulguları varsa acil resüsitasyon gereksinimini destekler.",
-        "result": {
-          "title": "Arter kan gazı / laktat",
-          "summary": "Laktat yüksekliği doku hipoperfüzyonu veya ağır metabolik stres göstergesi olabilir; hipotansiyon, taşikardi veya sepsis bulguları varsa acil resüsitasyon gereksinimini destekler.",
-          "interpretation": "Laktat yüksekliği doku hipoperfüzyonu veya ağır metabolik stres göstergesi olabilir; hipotansiyon, taşikardi veya sepsis bulguları varsa acil resüsitasyon gereksinimini destekler.",
-          "values": [
-            [
-              "pH",
-              "7.45",
-              "7.35–7.45",
-              "Klinik bağlamda değerlendirilmeli"
+        {
+            "id": "v182-new-174-gaz-yagi-icme-sonrasi-oksuruk-resp-assessment",
+            "label": "Solunum odaklı ilk değerlendirme",
+            "title": "Solunum odaklı ilk değerlendirme",
+            "type": "clinical",
+            "priority": "essential",
+            "subtype": "",
+            "summary": "Hidrokarbon alımından hemen sonra gelişen öksürük, hışıltı ve hipoksi aspirasyon pnömonitini düşündürür; gastrointestinal dekontaminasyon aspirasyon riskini artırır.",
+            "clinicalMeaning": "Hidrokarbon alımından hemen sonra gelişen öksürük, hışıltı ve hipoksi aspirasyon pnömonitini düşündürür; gastrointestinal dekontaminasyon aspirasyon riskini artırır.",
+            "result": {
+                "title": "Solunum odaklı ilk değerlendirme",
+                "summary": "Hidrokarbon alımından hemen sonra gelişen öksürük, hışıltı ve hipoksi aspirasyon pnömonitini düşündürür; gastrointestinal dekontaminasyon aspirasyon riskini artırır.",
+                "interpretation": "Hidrokarbon alımından hemen sonra gelişen öksürük, hışıltı ve hipoksi aspirasyon pnömonitini düşündürür; gastrointestinal dekontaminasyon aspirasyon riskini artırır.",
+                "values": [
+                    [
+                        "Solunum işi",
+                        "Takipne ve hafif subkostal çekilme",
+                        "Klinik bulgu",
+                        "Aspirasyon sonrası solunum etkilenimi"
+                    ],
+                    [
+                        "Oskültasyon",
+                        "Sağ bazalde raller, bilateral hışıltı",
+                        "Klinik bulgu",
+                        "Kimyasal pnömonit ile uyumlu"
+                    ],
+                    [
+                        "Genel durum",
+                        "Huzursuz ama yanıtlı",
+                        "Klinik bulgu",
+                        "Yakın izlem gerektirir"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "Solunum işi",
+                        "Takipne ve hafif subkostal çekilme",
+                        "Klinik bulgu",
+                        "Aspirasyon sonrası solunum etkilenimi"
+                    ],
+                    [
+                        "Oskültasyon",
+                        "Sağ bazalde raller, bilateral hışıltı",
+                        "Klinik bulgu",
+                        "Kimyasal pnömonit ile uyumlu"
+                    ],
+                    [
+                        "Genel durum",
+                        "Huzursuz ama yanıtlı",
+                        "Klinik bulgu",
+                        "Yakın izlem gerektirir"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "Solunum işi",
+                    "Takipne ve hafif subkostal çekilme",
+                    "Klinik bulgu",
+                    "Aspirasyon sonrası solunum etkilenimi"
+                ],
+                [
+                    "Oskültasyon",
+                    "Sağ bazalde raller, bilateral hışıltı",
+                    "Klinik bulgu",
+                    "Kimyasal pnömonit ile uyumlu"
+                ],
+                [
+                    "Genel durum",
+                    "Huzursuz ama yanıtlı",
+                    "Klinik bulgu",
+                    "Yakın izlem gerektirir"
+                ]
             ],
-            [
-              "PaO₂",
-              "68 mmHg",
-              "80/100 mmHg",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "PaCO₂",
-              "32 mmHg",
-              "35/45 mmHg",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "pH",
-              "7.45",
-              "7.35–7.45",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "PaO₂",
-              "68 mmHg",
-              "80/100 mmHg",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "PaCO₂",
-              "32 mmHg",
-              "35/45 mmHg",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
+            "postAnswerExplanation": "Hidrokarbon alımından hemen sonra gelişen öksürük, hışıltı ve hipoksi aspirasyon pnömonitini düşündürür; gastrointestinal dekontaminasyon aspirasyon riskini artırır.",
+            "interpretation": "Hidrokarbon alımından hemen sonra gelişen öksürük, hışıltı ve hipoksi aspirasyon pnömonitini düşündürür; gastrointestinal dekontaminasyon aspirasyon riskini artırır.",
+            "category": "clinicalAssessment",
+            "testTypeCategory": "clinicalAssessment",
+            "explanationAfterAnswer": "Hidrokarbon alımından hemen sonra gelişen öksürük, hışıltı ve hipoksi aspirasyon pnömonitini düşündürür; gastrointestinal dekontaminasyon aspirasyon riskini artırır.",
+            "clinicalFlowOrder": 10,
+            "flowOrder": 10,
+            "orderRank": 10,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 4,
+            "scoreValue": 4,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
         },
-        "rows": [
-          [
-            "pH",
-            "7.45",
-            "7.35–7.45",
-            "Klinik bağlamda değerlendirilmeli"
-          ],
-          [
-            "PaO₂",
-            "68 mmHg",
-            "80/100 mmHg",
-            "Klinik bağlamda değerlendirilmeli"
-          ],
-          [
-            "PaCO₂",
-            "32 mmHg",
-            "35/45 mmHg",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "Laktat yüksekliği doku hipoperfüzyonu veya ağır metabolik stres göstergesi olabilir; hipotansiyon, taşikardi veya sepsis bulguları varsa acil resüsitasyon gereksinimini destekler.",
-        "interpretation": "Laktat yüksekliği doku hipoperfüzyonu veya ağır metabolik stres göstergesi olabilir; hipotansiyon, taşikardi veya sepsis bulguları varsa acil resüsitasyon gereksinimini destekler.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Laktat yüksekliği doku hipoperfüzyonu veya ağır metabolik stres göstergesi olabilir; hipotansiyon, taşikardi veya sepsis bulguları varsa acil resüsitasyon gereksinimini destekler.",
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "orderRank": 10,
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme"
-      },
-      {
-        "id": "v182-new-174-gaz-yagi-icme-sonrasi-oksuruk-pediatric-initial-assessment",
-        "label": "Pediatrik ilk değerlendirme",
-        "title": "Pediatrik ilk değerlendirme",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "clinicalMeaning": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "result": {
-          "title": "Pediatrik ilk değerlendirme",
-          "summary": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-          "values": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
+        {
+            "id": "v182-new-174-gaz-yagi-icme-sonrasi-oksuruk-blood-gas",
+            "label": "Kan gazı",
+            "title": "Kan gazı",
+            "type": "bloodGas",
+            "priority": "important",
+            "subtype": "",
+            "summary": "Hipoksemi ve hafif respiratuvar alkaloz, aspirasyon sonrası takipne ve ventilasyon-perfüzyon uyumsuzluğuyla uyumludur.",
+            "clinicalMeaning": "Hipoksemi ve hafif respiratuvar alkaloz, aspirasyon sonrası takipne ve ventilasyon-perfüzyon uyumsuzluğuyla uyumludur.",
+            "result": {
+                "title": "Kan gazı",
+                "summary": "Hipoksemi ve hafif respiratuvar alkaloz, aspirasyon sonrası takipne ve ventilasyon-perfüzyon uyumsuzluğuyla uyumludur.",
+                "interpretation": "Hipoksemi ve hafif respiratuvar alkaloz, aspirasyon sonrası takipne ve ventilasyon-perfüzyon uyumsuzluğuyla uyumludur.",
+                "values": [
+                    [
+                        "pH",
+                        "7.46",
+                        "7.35–7.45",
+                        "Takipneye bağlı hafif alkaloz"
+                    ],
+                    [
+                        "PaO₂",
+                        "66 mmHg",
+                        "80–100 mmHg",
+                        "Hipoksemi"
+                    ],
+                    [
+                        "PaCO₂",
+                        "31 mmHg",
+                        "35–45 mmHg",
+                        "Hiperventilasyonla düşük"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "pH",
+                        "7.46",
+                        "7.35–7.45",
+                        "Takipneye bağlı hafif alkaloz"
+                    ],
+                    [
+                        "PaO₂",
+                        "66 mmHg",
+                        "80–100 mmHg",
+                        "Hipoksemi"
+                    ],
+                    [
+                        "PaCO₂",
+                        "31 mmHg",
+                        "35–45 mmHg",
+                        "Hiperventilasyonla düşük"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "pH",
+                    "7.46",
+                    "7.35–7.45",
+                    "Takipneye bağlı hafif alkaloz"
+                ],
+                [
+                    "PaO₂",
+                    "66 mmHg",
+                    "80–100 mmHg",
+                    "Hipoksemi"
+                ],
+                [
+                    "PaCO₂",
+                    "31 mmHg",
+                    "35–45 mmHg",
+                    "Hiperventilasyonla düşük"
+                ]
             ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ],
-          "rows": [
-            [
-              "Genel görünüm",
-              "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-              "Yaşa göre",
-              "Kritik izlem"
-            ],
-            [
-              "Kapiller dolum/perfüzyon",
-              "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-              "<2 sn beklenir",
-              "Yaşa göre yorumlanır"
-            ],
-            [
-              "Solunum işi",
-              "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-              "Yaşa göre",
-              "Acil güvenlik"
-            ]
-          ]
+            "postAnswerExplanation": "Hipoksemi ve hafif respiratuvar alkaloz, aspirasyon sonrası takipne ve ventilasyon-perfüzyon uyumsuzluğuyla uyumludur.",
+            "interpretation": "Hipoksemi ve hafif respiratuvar alkaloz, aspirasyon sonrası takipne ve ventilasyon-perfüzyon uyumsuzluğuyla uyumludur.",
+            "category": "laboratory",
+            "testTypeCategory": "laboratory",
+            "explanationAfterAnswer": "Hipoksemi ve hafif respiratuvar alkaloz, aspirasyon sonrası takipne ve ventilasyon-perfüzyon uyumsuzluğuyla uyumludur.",
+            "clinicalFlowOrder": 20,
+            "flowOrder": 20,
+            "orderRank": 20,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 2,
+            "scoreValue": 2,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
         },
-        "rows": [
-          [
-            "Genel görünüm",
-            "Klinik tabloya göre toksik/orta-ağır etkilenmiş görünüm sorgulanır",
-            "Yaşa göre",
-            "Kritik izlem"
-          ],
-          [
-            "Kapiller dolum/perfüzyon",
-            "Kapiller dolum, ekstremite ısısı ve nabız kalitesi birlikte değerlendirilir",
-            "<2 sn beklenir",
-            "Yaşa göre yorumlanır"
-          ],
-          [
-            "Solunum işi",
-            "Çekilme, takipne, konuşma/beslenme ve SpO₂ ile birlikte yorumlanır",
-            "Yaşa göre",
-            "Acil güvenlik"
-          ]
-        ],
-        "postAnswerExplanation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "interpretation": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "explanationAfterAnswer": "Acil pediatrik ilk değerlendirme; genel görünüm, bilinç, solunum işi, kapiller dolum, periferik perfüzyon, hidrasyon ve yaşa göre vital bulgular birlikte değerlendirilir.",
-        "testValueLabel": "Pediatrik ilk değerlendirme",
-        "clinicalPriorityLabel": "Pediatrik ilk değerlendirme",
-        "educationalValue": "Pediatrik ilk değerlendirme",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Pediatrik ilk değerlendirme",
-        "treatmentImpact": "Pediatrik ilk değerlendirme",
-        "orderRank": 10
-      },
-      {
-        "id": "hemogram-ve-temel-inflamasyon-paneli-2",
-        "label": "Hemogram ve temel inflamasyon paneli",
-        "title": "Hemogram ve temel inflamasyon paneli",
-        "type": "lab",
-        "priority": "useful",
-        "subtype": "Laboratuvar",
-        "summary": "Lökositoz ve CRP/prokalsitonin yüksekliği inflamatuvar yanıtı destekler; ateş, öksürük ve akciğer grafisindeki konsolidasyonla birlikte bakteriyel pnömoni lehine yorumlanır.",
-        "clinicalMeaning": "Lökositoz ve CRP/prokalsitonin yüksekliği inflamatuvar yanıtı destekler; ateş, öksürük ve akciğer grafisindeki konsolidasyonla birlikte bakteriyel pnömoni lehine yorumlanır.",
-        "result": {
-          "title": "Hemogram ve temel inflamasyon paneli",
-          "summary": "Lökositoz ve CRP/prokalsitonin yüksekliği inflamatuvar yanıtı destekler; ateş, öksürük ve akciğer grafisindeki konsolidasyonla birlikte bakteriyel pnömoni lehine yorumlanır.",
-          "interpretation": "Lökositoz ve CRP/prokalsitonin yüksekliği inflamatuvar yanıtı destekler; ateş, öksürük ve akciğer grafisindeki konsolidasyonla birlikte bakteriyel pnömoni lehine yorumlanır.",
-          "values": [
-            [
-              "Hemoglobin",
-              "13.2 g/dL",
-              "12–16 g/dL",
-              "Klinik bağlamda değerlendirilmeli"
+        {
+            "id": "v182-new-174-gaz-yagi-icme-sonrasi-oksuruk-chest-xray",
+            "label": "Akciğer grafisi",
+            "title": "Akciğer grafisi",
+            "type": "imaging",
+            "priority": "important",
+            "subtype": "",
+            "summary": "Semptomatik çocukta çekilen grafide sağ alt zonda aspirasyonla uyumlu infiltratif değişiklik izlenmiştir; antibiyotik kararı enfeksiyon bulgularına göre ayrıca değerlendirilir.",
+            "clinicalMeaning": "Semptomatik çocukta çekilen grafide sağ alt zonda aspirasyonla uyumlu infiltratif değişiklik izlenmiştir; antibiyotik kararı enfeksiyon bulgularına göre ayrıca değerlendirilir.",
+            "result": {
+                "title": "Akciğer grafisi",
+                "summary": "Semptomatik çocukta çekilen grafide sağ alt zonda aspirasyonla uyumlu infiltratif değişiklik izlenmiştir; antibiyotik kararı enfeksiyon bulgularına göre ayrıca değerlendirilir.",
+                "interpretation": "Semptomatik çocukta çekilen grafide sağ alt zonda aspirasyonla uyumlu infiltratif değişiklik izlenmiştir; antibiyotik kararı enfeksiyon bulgularına göre ayrıca değerlendirilir.",
+                "values": [
+                    [
+                        "Sağ alt zon",
+                        "Yamalı infiltratif opasite",
+                        "Radyografik bulgu",
+                        "Aspirasyon pnömoniti ile uyumlu"
+                    ],
+                    [
+                        "Plevral alan",
+                        "Efüzyon veya pnömotoraks yok",
+                        "Radyografik bulgu",
+                        "Komplikasyon saptanmadı"
+                    ],
+                    [
+                        "Kontrol planı",
+                        "Klinik kötüleşirse tekrar değerlendirme",
+                        "İzlem kararı",
+                        "Semptomatik hidrokarbon alımı"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "Sağ alt zon",
+                        "Yamalı infiltratif opasite",
+                        "Radyografik bulgu",
+                        "Aspirasyon pnömoniti ile uyumlu"
+                    ],
+                    [
+                        "Plevral alan",
+                        "Efüzyon veya pnömotoraks yok",
+                        "Radyografik bulgu",
+                        "Komplikasyon saptanmadı"
+                    ],
+                    [
+                        "Kontrol planı",
+                        "Klinik kötüleşirse tekrar değerlendirme",
+                        "İzlem kararı",
+                        "Semptomatik hidrokarbon alımı"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "Sağ alt zon",
+                    "Yamalı infiltratif opasite",
+                    "Radyografik bulgu",
+                    "Aspirasyon pnömoniti ile uyumlu"
+                ],
+                [
+                    "Plevral alan",
+                    "Efüzyon veya pnömotoraks yok",
+                    "Radyografik bulgu",
+                    "Komplikasyon saptanmadı"
+                ],
+                [
+                    "Kontrol planı",
+                    "Klinik kötüleşirse tekrar değerlendirme",
+                    "İzlem kararı",
+                    "Semptomatik hidrokarbon alımı"
+                ]
             ],
-            [
-              "Lökosit",
-              "8.900/mm³",
-              "4.000–10.000/mm³",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Trombosit",
-              "260.000/mm³",
-              "150.000–400.000/mm³",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Hemoglobin",
-              "13.2 g/dL",
-              "12–16 g/dL",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Lökosit",
-              "8.900/mm³",
-              "4.000–10.000/mm³",
-              "Klinik bağlamda değerlendirilmeli"
-            ],
-            [
-              "Trombosit",
-              "260.000/mm³",
-              "150.000–400.000/mm³",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
+            "postAnswerExplanation": "Semptomatik çocukta çekilen grafide sağ alt zonda aspirasyonla uyumlu infiltratif değişiklik izlenmiştir; antibiyotik kararı enfeksiyon bulgularına göre ayrıca değerlendirilir.",
+            "interpretation": "Semptomatik çocukta çekilen grafide sağ alt zonda aspirasyonla uyumlu infiltratif değişiklik izlenmiştir; antibiyotik kararı enfeksiyon bulgularına göre ayrıca değerlendirilir.",
+            "category": "imaging",
+            "testTypeCategory": "imaging",
+            "explanationAfterAnswer": "Semptomatik çocukta çekilen grafide sağ alt zonda aspirasyonla uyumlu infiltratif değişiklik izlenmiştir; antibiyotik kararı enfeksiyon bulgularına göre ayrıca değerlendirilir.",
+            "clinicalFlowOrder": 30,
+            "flowOrder": 30,
+            "orderRank": 30,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 3,
+            "scoreValue": 3,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
         },
-        "rows": [
-          [
-            "Hemoglobin",
-            "13.2 g/dL",
-            "12–16 g/dL",
-            "Klinik bağlamda değerlendirilmeli"
-          ],
-          [
-            "Lökosit",
-            "8.900/mm³",
-            "4.000–10.000/mm³",
-            "Klinik bağlamda değerlendirilmeli"
-          ],
-          [
-            "Trombosit",
-            "260.000/mm³",
-            "150.000–400.000/mm³",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "Lökositoz ve CRP/prokalsitonin yüksekliği inflamatuvar yanıtı destekler; ateş, öksürük ve akciğer grafisindeki konsolidasyonla birlikte bakteriyel pnömoni lehine yorumlanır.",
-        "interpretation": "Lökositoz ve CRP/prokalsitonin yüksekliği inflamatuvar yanıtı destekler; ateş, öksürük ve akciğer grafisindeki konsolidasyonla birlikte bakteriyel pnömoni lehine yorumlanır.",
-        "explanationAfterAnswer": "Lökositoz ve CRP/prokalsitonin yüksekliği inflamatuvar yanıtı destekler; ateş, öksürük ve akciğer grafisindeki konsolidasyonla birlikte bakteriyel pnömoni lehine yorumlanır.",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "clinicalFlowOrder": 32,
-        "flowOrder": 32,
-        "orderRank": 32,
-        "testValueLabel": "İlk basamak veri",
-        "clinicalPriorityLabel": "İlk basamak veri",
-        "educationalValue": "İlk basamak veri",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "pediatricSafetyValue": "İlk basamak veri",
-        "treatmentImpact": "İlk basamak veri"
-      },
-      {
-        "id": "akciger-grafisi-1",
-        "label": "Akciğer grafisi",
-        "title": "Akciğer grafisi",
-        "type": "xray",
-        "priority": "lowPriority",
-        "subtype": "Direkt/kontrastlı grafi",
-        "summary": "Akciğer grafisi, pediatrik solunum ciddiyetini ve tedavi yanıtını değerlendirir; ağır atakta oksijen ve bronkodilatör tedavisi görüntüleme beklenerek geciktirilmemelidir.",
-        "clinicalMeaning": "Akciğer grafisi, pediatrik solunum ciddiyetini ve tedavi yanıtını değerlendirir; ağır atakta oksijen ve bronkodilatör tedavisi görüntüleme beklenerek geciktirilmemelidir.",
-        "result": {
-          "title": "Akciğer grafisi",
-          "summary": "Akciğer grafisi, pediatrik solunum ciddiyetini ve tedavi yanıtını değerlendirir; ağır atakta oksijen ve bronkodilatör tedavisi görüntüleme beklenerek geciktirilmemelidir.",
-          "interpretation": "Akciğer grafisi, pediatrik solunum ciddiyetini ve tedavi yanıtını değerlendirir; ağır atakta oksijen ve bronkodilatör tedavisi görüntüleme beklenerek geciktirilmemelidir.",
-          "values": [
-            [
-              "Görüntüleme bulgusu",
-              "Sağ alt zonda hafif infiltratif görünüm izlendi.",
-              "Modaliteye özgü bulgu",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ],
-          "rows": [
-            [
-              "Görüntüleme bulgusu",
-              "Sağ alt zonda hafif infiltratif görünüm izlendi.",
-              "Modaliteye özgü bulgu",
-              "Klinik bağlamda değerlendirilmeli"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Görüntüleme bulgusu",
-            "Sağ alt zonda hafif infiltratif görünüm izlendi.",
-            "Modaliteye özgü bulgu",
-            "Klinik bağlamda değerlendirilmeli"
-          ]
-        ],
-        "postAnswerExplanation": "Akciğer grafisi, pediatrik solunum ciddiyetini ve tedavi yanıtını değerlendirir; ağır atakta oksijen ve bronkodilatör tedavisi görüntüleme beklenerek geciktirilmemelidir.",
-        "interpretation": "Akciğer grafisi, pediatrik solunum ciddiyetini ve tedavi yanıtını değerlendirir; ağır atakta oksijen ve bronkodilatör tedavisi görüntüleme beklenerek geciktirilmemelidir.",
-        "category": "imaging",
-        "testTypeCategory": "imaging",
-        "explanationAfterAnswer": "Akciğer grafisi, pediatrik solunum ciddiyetini ve tedavi yanıtını değerlendirir; ağır atakta oksijen ve bronkodilatör tedavisi görüntüleme beklenerek geciktirilmemelidir.",
-        "clinicalFlowOrder": 82,
-        "flowOrder": 82,
-        "orderRank": 82,
-        "testValueLabel": "Bu olguda sınırlı katkı",
-        "clinicalPriorityLabel": "Bu olguda sınırlı katkı",
-        "educationalValue": "Bu olguda sınırlı katkı",
-        "scoreImpact": 0,
-        "scoreValue": 0,
-        "pediatricSafetyValue": "Bu olguda sınırlı katkı",
-        "treatmentImpact": "Bu olguda sınırlı katkı"
-      }
+        {
+            "id": "v182-new-174-gaz-yagi-icme-sonrasi-oksuruk-observation",
+            "label": "Acil gözlem bulgusu",
+            "title": "Acil gözlem bulgusu",
+            "type": "clinical",
+            "priority": "essential",
+            "subtype": "",
+            "summary": "Oksijen desteğiyle satürasyonun yükselmesi destek tedavisine yanıtı gösterir; kusturma, lavaj ve aktif kömürden kaçınılır.",
+            "clinicalMeaning": "Oksijen desteğiyle satürasyonun yükselmesi destek tedavisine yanıtı gösterir; kusturma, lavaj ve aktif kömürden kaçınılır.",
+            "result": {
+                "title": "Acil gözlem bulgusu",
+                "summary": "Oksijen desteğiyle satürasyonun yükselmesi destek tedavisine yanıtı gösterir; kusturma, lavaj ve aktif kömürden kaçınılır.",
+                "interpretation": "Oksijen desteğiyle satürasyonun yükselmesi destek tedavisine yanıtı gösterir; kusturma, lavaj ve aktif kömürden kaçınılır.",
+                "values": [
+                    [
+                        "Oksijen yanıtı",
+                        "Nazal oksijenle SpO₂ %96’ya yükseldi",
+                        "Klinik yanıt",
+                        "Destek tedavisi etkili"
+                    ],
+                    [
+                        "Kusma",
+                        "Tekrarlamadı",
+                        "Gözlem bulgusu",
+                        "Aspirasyon riski açısından izlem"
+                    ],
+                    [
+                        "Mental durum",
+                        "Uyanık ve huzursuz",
+                        "Gözlem bulgusu",
+                        "Yoğun bakım ihtiyacı klinik seyirle izlenir"
+                    ]
+                ],
+                "rows": [
+                    [
+                        "Oksijen yanıtı",
+                        "Nazal oksijenle SpO₂ %96’ya yükseldi",
+                        "Klinik yanıt",
+                        "Destek tedavisi etkili"
+                    ],
+                    [
+                        "Kusma",
+                        "Tekrarlamadı",
+                        "Gözlem bulgusu",
+                        "Aspirasyon riski açısından izlem"
+                    ],
+                    [
+                        "Mental durum",
+                        "Uyanık ve huzursuz",
+                        "Gözlem bulgusu",
+                        "Yoğun bakım ihtiyacı klinik seyirle izlenir"
+                    ]
+                ]
+            },
+            "rows": [
+                [
+                    "Oksijen yanıtı",
+                    "Nazal oksijenle SpO₂ %96’ya yükseldi",
+                    "Klinik yanıt",
+                    "Destek tedavisi etkili"
+                ],
+                [
+                    "Kusma",
+                    "Tekrarlamadı",
+                    "Gözlem bulgusu",
+                    "Aspirasyon riski açısından izlem"
+                ],
+                [
+                    "Mental durum",
+                    "Uyanık ve huzursuz",
+                    "Gözlem bulgusu",
+                    "Yoğun bakım ihtiyacı klinik seyirle izlenir"
+                ]
+            ],
+            "postAnswerExplanation": "Oksijen desteğiyle satürasyonun yükselmesi destek tedavisine yanıtı gösterir; kusturma, lavaj ve aktif kömürden kaçınılır.",
+            "interpretation": "Oksijen desteğiyle satürasyonun yükselmesi destek tedavisine yanıtı gösterir; kusturma, lavaj ve aktif kömürden kaçınılır.",
+            "category": "clinicalAssessment",
+            "testTypeCategory": "clinicalAssessment",
+            "explanationAfterAnswer": "Oksijen desteğiyle satürasyonun yükselmesi destek tedavisine yanıtı gösterir; kusturma, lavaj ve aktif kömürden kaçınılır.",
+            "clinicalFlowOrder": 40,
+            "flowOrder": 40,
+            "orderRank": 40,
+            "testValueLabel": "Tanısal değer",
+            "clinicalPriorityLabel": "Tanısal değer",
+            "educationalValue": "Tanısal değer",
+            "scoreImpact": 3,
+            "scoreValue": 3,
+            "pediatricSafetyValue": "Hasta özelinde yorumlandı",
+            "treatmentImpact": "Hasta özelinde yorumlandı"
+        }
     ],
     "useSyntheticInvestigationBank": false,
     "managementSequence": {
-      "enabled": false
+        "enabled": false
     },
-    "hideExamSignal": true,
+    "hideExamSignal": false,
     "shuffleOptions": false,
     "question": "Bu çocukta en uygun başlangıç yaklaşımı aşağıdakilerden hangisidir?",
     "questionType": "treatment",
     "answerTarget": "treatment",
     "diagnosis": {
-      "correct": "Oksijen ve solunum desteğiyle izlem; kusturma ve gastrik lavajdan kaçınma",
-      "options": [
-        "Aktif kömür verilmesi",
-        "Zorla kusturma",
-        "Kusturma ve gastrik lavaj sonrası profilaktik antibiyotik başlamak",
-        "Rutin gastrik lavaj yapılması",
-        "Oksijen ve solunum desteğiyle izlem; kusturma ve gastrik lavajdan kaçınma"
-      ],
-      "question": "Bu çocukta en uygun başlangıç yaklaşımı aşağıdakilerden hangisidir?",
-      "explanation": "Bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları birlikte değerlendirilince temel karar Oksijen ve solunum desteğiyle izlem; kusturma ve gastrik lavajdan kaçınma yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü hidrokarbon aspirasyon riski için doğru tanı/tedavi önceliğini belirler.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Hidrokarbon alımında kusturma ve gastrik lavaj aspirasyon riskini artırır; solunum desteği ve izlem önceliklidir."
-        }
-      ],
-      "optionComparison": {
-        "Aktif kömür verilmesi": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Aktif kömür verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Zorla kusturma": "Zorla kusturma pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Zorla kusturma hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Kusturma ve gastrik lavaj sonrası profilaktik antibiyotik başlamak": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Kusturma ve gastrik lavaj sonrası profilaktik antibiyotik başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Rutin gastrik lavaj yapılması": "Rutin gastrik lavaj yapılması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Rutin gastrik lavaj yapılması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Oksijen ve solunum desteğiyle izlem; kusturma ve gastrik lavajdan kaçınma": "Bu seçenek doğrudur; çünkü gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar."
-      },
-      "answerFeedback": {
-        "summary": "Bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları birlikte değerlendirilince temel karar Oksijen ve solunum desteğiyle izlem; kusturma ve gastrik lavajdan kaçınma yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü hidrokarbon aspirasyon riski için doğru tanı/tedavi önceliğini belirler.",
-        "whyCorrect": "Çocuk gaz yağı içtikten hemen sonra öksürük ve kusma yaşamıştır. Muayenede takipne, hışıltı ve oksijen düşüklüğü vardır. Bu bulgular birlikte değerlendirildiğinde en uygun yanıt Oksijen ve solunum desteğiyle izlem; kusturma ve gastrik lavajdan kaçınma olur. Tedavi seçimi, klinik aciliyetin ve altta yatan mekanizmanın aynı anda hedeflenmesine dayanır; destek basamakları gerekirse eş zamanlı yürütülür fakat ana kararı tek başına değiştirmez. Alternatifler bazı destek veya ayırıcı basamaklarda kullanılabilir; ancak verilen acil karar noktasını bu seçenek kadar doğrudan karşılamaz.",
-        "rationale": "Bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları birlikte değerlendirilince temel karar Oksijen ve solunum desteğiyle izlem; kusturma ve gastrik lavajdan kaçınma yönündedir. Pediatrik akıl yürütmede yaş grubu, vital bulgular, genel durum ve hedefe yönelik tetkikler tek bir örüntü halinde okunur; bu örüntü hidrokarbon aspirasyon riski için doğru tanı/tedavi önceliğini belirler.",
-        "correctOptionFeedback": "Bu seçenek doğrudur; çünkü gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-        "keyClues": [
-          "Çocuk gaz yağı içtikten hemen sonra öksürük ve kusma yaşamıştır.",
-          "Muayenede takipne, hışıltı ve oksijen düşüklüğü vardır.",
-          "Objektif veri (Hemogram ve temel inflamasyon paneli: Hemoglobin 13.2 g/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır."
+        "correct": "Oksijen desteği ve yakın solunum izlemi sağlamak; kusturma/lavajdan kaçınmak",
+        "options": [
+            "Aktif kömür verip gastrointestinal emilimi azaltmak",
+            "Oksijen desteği ve yakın solunum izlemi sağlamak; kusturma/lavajdan kaçınmak",
+            "Gastrik lavaj yapıp ardından profilaktik antibiyotik başlamak",
+            "Çocuğu kusturarak akciğere kaçan madde miktarını azaltmak",
+            "Asemptomatik kabul edip gözlem yapmadan taburcu etmek"
         ],
-        "evidenceChain": [
-          {
-            "text": "Çocuk gaz yağı içtikten hemen sonra öksürük ve kusma yaşamıştır.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Muayenede takipne, hışıltı ve oksijen düşüklüğü vardır.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Objektif veri (Hemogram ve temel inflamasyon paneli: Hemoglobin 13.2 g/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "examPearl": "Hidrokarbon alımında kusturma ve gastrik lavaj aspirasyon riskini artırır; solunum desteği ve izlem önceliklidir.",
+        "question": "Bu çocukta en uygun başlangıç yaklaşımı aşağıdakilerden hangisidir?",
+        "explanation": "Hidrokarbon alımında temel risk gastrointestinal emilimden çok düşük viskoziteye bağlı aspirasyon ve kimyasal pnömonittir. Öksürük, hışıltı, hipoksi ve grafide infiltrasyon olan çocukta yaklaşım oksijen ve solunum desteğiyle yakın izlem; kusturma, gastrik lavaj ve rutin aktif kömürden kaçınmadır.",
         "pearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Hidrokarbon alımında kusturma ve gastrik lavaj aspirasyon riskini artırır; solunum desteği ve izlem önceliklidir."
-          }
-        ],
-        "clinicalPearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Hidrokarbon alımında kusturma ve gastrik lavaj aspirasyon riskini artırır; solunum desteği ve izlem önceliklidir."
-          }
+            {
+                "label": "Sınav notu",
+                "text": "Hidrokarbon alımında kusturma ve gastrik lavaj aspirasyon riskini artırır; tedavi semptomatik solunum desteği ve izlem üzerine kuruludur."
+            }
         ],
         "optionComparison": {
-          "Aktif kömür verilmesi": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Aktif kömür verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Zorla kusturma": "Zorla kusturma pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Zorla kusturma hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Kusturma ve gastrik lavaj sonrası profilaktik antibiyotik başlamak": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Kusturma ve gastrik lavaj sonrası profilaktik antibiyotik başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Rutin gastrik lavaj yapılması": "Rutin gastrik lavaj yapılması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Rutin gastrik lavaj yapılması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Oksijen ve solunum desteğiyle izlem; kusturma ve gastrik lavajdan kaçınma": "Bu seçenek doğrudur; çünkü gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar."
-        },
-        "whyWrong": {
-          "Aktif kömür verilmesi": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Aktif kömür verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Zorla kusturma": "Zorla kusturma pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Zorla kusturma hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Kusturma ve gastrik lavaj sonrası profilaktik antibiyotik başlamak": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Kusturma ve gastrik lavaj sonrası profilaktik antibiyotik başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-          "Rutin gastrik lavaj yapılması": "Rutin gastrik lavaj yapılması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Rutin gastrik lavaj yapılması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Hidrokarbon aspirasyonunda solunum bulguları varsa destek tedavisini seçebilme",
-        "coreKnowledge": "Hidrokarbon aspirasyon riski sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir."
-      },
-      "whyCorrect": "Bu seçenek doğrudur; çünkü gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
-      "evidenceChain": [
-        {
-          "text": "Çocuk gaz yağı içtikten hemen sonra öksürük ve kusma yaşamıştır.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Muayenede takipne, hışıltı ve oksijen düşüklüğü vardır.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Objektif veri (Hemogram ve temel inflamasyon paneli: Hemoglobin 13.2 g/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-          "weight": "medium",
-          "source": "case"
+            "Aktif kömür verip gastrointestinal emilimi azaltmak": "Aktif kömür hidrokarbonlarda yararlı değildir ve kusma/aspirasyon riskini artırabilir; burada sorun akciğer etkilenimidir.",
+            "Oksijen desteği ve yakın solunum izlemi sağlamak; kusturma/lavajdan kaçınmak": "Doğru seçenektir; hidrokarbon alımında semptomatik çocuk oksijen, bronkospazm varsa inhaler destek ve yakın solunum izlemiyle yönetilir.",
+            "Gastrik lavaj yapıp ardından profilaktik antibiyotik başlamak": "Gastrik lavaj aspirasyon riskini artırır; antibiyotik yalnız bakteriyel enfeksiyon bulguları gelişirse düşünülür, rutin profilaksi değildir.",
+            "Çocuğu kusturarak akciğere kaçan madde miktarını azaltmak": "Kusturma hidrokarbonun tekrar aspire edilmesine yol açabilir ve kesinlikle uygun başlangıç yaklaşımı değildir.",
+            "Asemptomatik kabul edip gözlem yapmadan taburcu etmek": "Bu çocuk semptomatiktir; öksürük, hışıltı, hipoksi ve grafi bulgusu olduğu için gözlem ve destek tedavisi gerekir."
         }
-      ],
-      "coreKnowledge": "Hidrokarbon aspirasyon riski sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-      "examPearl": "Hidrokarbon alımında kusturma ve gastrik lavaj aspirasyon riskini artırır; solunum desteği ve izlem önceliklidir.",
-      "whyWrong": {
-        "Aktif kömür verilmesi": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Aktif kömür verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Zorla kusturma": "Zorla kusturma pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Zorla kusturma hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Kusturma ve gastrik lavaj sonrası profilaktik antibiyotik başlamak": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Kusturma ve gastrik lavaj sonrası profilaktik antibiyotik başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-        "Rutin gastrik lavaj yapılması": "Rutin gastrik lavaj yapılması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Rutin gastrik lavaj yapılması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
-      }
     },
     "difficultyTag": "Acil",
-    "coreKnowledge": "Hidrokarbon aspirasyon riski sorularında yalnız tanı adını değil; yaşa uygun vital bulgu, genel görünüm, perfüzyon/hidrasyon ve hedefe yönelik objektif verinin karar önceliğini nasıl değiştirdiğini birlikte değerlendir.",
-    "examPearl": "Hidrokarbon alımında kusturma ve gastrik lavaj aspirasyon riskini artırır; solunum desteği ve izlem önceliklidir.",
-    "whyCorrect": "Bu seçenek doğrudur; çünkü gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar.",
+    "coreKnowledge": "Hidrokarbon zehirlenmesinde klinik ciddiyet öyküde alınan miktardan çok aspirasyon bulguları, oksijen satürasyonu ve solunum muayenesiyle belirlenir.",
+    "examPearl": "Hidrokarbon alımında kusturma ve gastrik lavaj aspirasyon riskini artırır; tedavi semptomatik solunum desteği ve izlem üzerine kuruludur.",
+    "whyCorrect": "Oksijen desteği ve yakın solunum izlemi doğru yanıttır; çünkü bu çocukta hidrokarbon alımı sonrası aspirasyon bulguları ve hipoksemi vardır, gastrointestinal dekontaminasyon zarar verebilir.",
     "optionComparison": {
-      "Aktif kömür verilmesi": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Aktif kömür verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Zorla kusturma": "Zorla kusturma pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Zorla kusturma hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Kusturma ve gastrik lavaj sonrası profilaktik antibiyotik başlamak": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Kusturma ve gastrik lavaj sonrası profilaktik antibiyotik başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Rutin gastrik lavaj yapılması": "Rutin gastrik lavaj yapılması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Rutin gastrik lavaj yapılması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Oksijen ve solunum desteğiyle izlem; kusturma ve gastrik lavajdan kaçınma": "Bu seçenek doğrudur; çünkü gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir. Pediatrik yaş grubunda bu karar acil önceliği, mekanizmayı ve güvenli izlem gereksinimini doğrudan karşılar."
+        "Aktif kömür verip gastrointestinal emilimi azaltmak": "Aktif kömür hidrokarbonlarda yararlı değildir ve kusma/aspirasyon riskini artırabilir; burada sorun akciğer etkilenimidir.",
+        "Oksijen desteği ve yakın solunum izlemi sağlamak; kusturma/lavajdan kaçınmak": "Doğru seçenektir; hidrokarbon alımında semptomatik çocuk oksijen, bronkospazm varsa inhaler destek ve yakın solunum izlemiyle yönetilir.",
+        "Gastrik lavaj yapıp ardından profilaktik antibiyotik başlamak": "Gastrik lavaj aspirasyon riskini artırır; antibiyotik yalnız bakteriyel enfeksiyon bulguları gelişirse düşünülür, rutin profilaksi değildir.",
+        "Çocuğu kusturarak akciğere kaçan madde miktarını azaltmak": "Kusturma hidrokarbonun tekrar aspire edilmesine yol açabilir ve kesinlikle uygun başlangıç yaklaşımı değildir.",
+        "Asemptomatik kabul edip gözlem yapmadan taburcu etmek": "Bu çocuk semptomatiktir; öksürük, hışıltı, hipoksi ve grafi bulgusu olduğu için gözlem ve destek tedavisi gerekir."
     },
     "evidenceChain": [
-      {
-        "text": "Çocuk gaz yağı içtikten hemen sonra öksürük ve kusma yaşamıştır.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Muayenede takipne, hışıltı ve oksijen düşüklüğü vardır.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Objektif veri (Hemogram ve temel inflamasyon paneli: Hemoglobin 13.2 g/dL) öykü ve muayene bulgularıyla birlikte tanısal/tedavi önceliğini güçlendirir; sonuç pediatrik yaş grubu ve klinik ciddiyetle birlikte yorumlanmalıdır.",
-        "weight": "medium",
-        "source": "case"
-      }
+        {
+            "text": "Gaz yağı içtikten hemen sonra öksürük nöbeti ve kusma gelişmiştir → hidrokarbon aspirasyonu için yüksek riskli zaman ilişkisi vardır.",
+            "weight": "high",
+            "source": "case"
+        },
+        {
+            "text": "Hışıltı, takipne, SpO₂ düşüklüğü ve sağ bazalde raller vardır → solunum sistemi etkilenimi objektif olarak görülür.",
+            "weight": "high",
+            "source": "case"
+        },
+        {
+            "text": "Akciğer grafisinde sağ alt zonda infiltratif opasite izlenmiştir → kimyasal aspirasyon pnömoniti desteklenir.",
+            "weight": "high",
+            "source": "case"
+        }
     ],
     "whyWrong": {
-      "Aktif kömür verilmesi": "Aktif kömür birçok organik ilaç alımında erken dönemde yararlı olabilir; ancak her toksini bağlamaz ve hava yolu güvenliği sağlanmadan uygulanması aspirasyon riski yaratır. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Aktif kömür verilmesi hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Zorla kusturma": "Zorla kusturma pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Zorla kusturma hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Kusturma ve gastrik lavaj sonrası profilaktik antibiyotik başlamak": "Ampirik intravenöz antibiyotik, sepsis, menenjit, febril nötropeni veya septik artrit gibi hızlı ilerleyebilen çocuk acillerinde kültürlerden sonra geciktirilmemelidir. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Kusturma ve gastrik lavaj sonrası profilaktik antibiyotik başlamak hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir.",
-      "Rutin gastrik lavaj yapılması": "Rutin gastrik lavaj yapılması pediatrik ayırıcı tanı veya tedavi listesinde düşünülebilir; ancak yalnızca vakadaki hedef paternle uyumluysa doğru olur. Ancak bu vakada gaz yağı alımı sonrası öksürük ve solunum bulguları hidrokarbon aspirasyon riski lehinedir; bu nedenle Rutin gastrik lavaj yapılması hedef mekanizmayı karşılamaz veya kritik pediatrik tedavi önceliğini geciktirir."
+        "Aktif kömür verip gastrointestinal emilimi azaltmak": "Aktif kömür hidrokarbonlarda yararlı değildir ve kusma/aspirasyon riskini artırabilir; burada sorun akciğer etkilenimidir.",
+        "Gastrik lavaj yapıp ardından profilaktik antibiyotik başlamak": "Gastrik lavaj aspirasyon riskini artırır; antibiyotik yalnız bakteriyel enfeksiyon bulguları gelişirse düşünülür, rutin profilaksi değildir.",
+        "Çocuğu kusturarak akciğere kaçan madde miktarını azaltmak": "Kusturma hidrokarbonun tekrar aspire edilmesine yol açabilir ve kesinlikle uygun başlangıç yaklaşımı değildir.",
+        "Asemptomatik kabul edip gözlem yapmadan taburcu etmek": "Bu çocuk semptomatiktir; öksürük, hışıltı, hipoksi ve grafi bulgusu olduğu için gözlem ve destek tedavisi gerekir."
     },
     "aiMeta": {
-      "generatedAt": "manual-v396-pediatrics-ultra-refined",
-      "generator": "manual-editorial-pediatrics-case-refinement",
-      "schemaVersion": "clinical-standard-v396",
-      "provider": "manual-editorial",
-      "validationWarnings": []
+        "generatedAt": "manual-v397-pediatrics-eighth-batch-ultra-refined",
+        "generator": "manual-editorial-pediatrics-case-refinement",
+        "schemaVersion": "clinical-standard-v397",
+        "provider": "manual-editorial",
+        "validationWarnings": []
     }
-  },
+},
   {
     "id": "v182-new-175-orak-hucreli-cocukta-ani-solukluk",
     "branchId": "pediatrics",
