@@ -1,0 +1,9 @@
+KlinikIQ Küçük Stajlar tetkik/objektif veri katmanı güçlendirme raporu
+Kapsam: 28 Küçük Stajlar genel klinik vaka (branchId=minor-rotations).
+TUS Spot içindeki relatedBranch=Küçük Stajlar kayıtlarına dokunulmadı.
+Düzenlenen vaka sayısı: 28.
+Yeniden yapılandırılan/eklenen tetkik sayısı: 107.
+Kapsam dışı değişen vaka sayısı: 0.
+Eksik kritik tetkik metadatası: 0.
+Bilgilendirici duplicate sinyali: 0.
+Not: Doğru cevap, seçenekler, optionFeedback, explanation, evidenceChain ve sağ kolon alanları kasıtlı olarak değiştirilmedi; düzenleme tetkik/objektif veri katmanı, tetkik sırası, kısa yorum, değer etiketi, puan ve acil güvenlik metadatası ile sınırlandı.

@@ -1,0 +1,43 @@
+KLİNİKİQ PEDİATRİ İLK 5 VAKA KALİTE YÜKSELTME RAPORU
+
+{
+  "batch": "Çocuk Sağlığı ve Hastalıkları - ilk 5 pediatri vakası",
+  "editedCaseIds": [
+    "v163-new-003-atesli-dokuntulu-cocuk",
+    "v164-new-012-beslenme-sonrasi-kusan-bebek",
+    "v165-new-022-erken-donemde-sarilik",
+    "v165-new-027-yuzde-sislik-ve-proteinuri",
+    "v166-new-032-ishal-sonrasi-bobrek-yetmezligi"
+  ],
+  "editedTitles": [
+    "Ateşli döküntülü çocuk",
+    "Beslenme sonrası kusan bebek",
+    "Erken dönemde sarılık",
+    "Yüzde şişlik ve proteinüri",
+    "İshal sonrası böbrek yetmezliği"
+  ],
+  "changedAreas": [
+    "Profil/başvuru/hasta öyküsü",
+    "Fizik muayene ve yaşa uygun vital bulgular",
+    "Objektif veri/tetkik sonuçları",
+    "Soru kökü",
+    "Seçenekler ve doğru cevap konumu",
+    "Klinik/Bilimsel gerekçe",
+    "Kanıt zinciri",
+    "Seçenek karşılaştırması ve feedback"
+  ],
+  "investigationCleanup": [
+    "Sonuç yerine amaç/endikasyon/izlenir/beklenir tarzı satırlar gerçek hasta sonucu formatına çevrildi.",
+    "Sayısal laboratuvarlarda birim ve anlamlı referans aralığı eklendi.",
+    "Görüntüleme/nitel bulgularda anlamsız normalde beklenen referansları kaldırıldı; klinik yorum ayrı not alanına taşındı.",
+    "Vakayla uyumsuz veya gereksiz tetkikler çıkarıldı; pediatrik karar zincirini destekleyen tetkikler eklendi."
+  ],
+  "answerDistribution": {
+    "v163-new-003-atesli-dokuntulu-cocuk": 2,
+    "v164-new-012-beslenme-sonrasi-kusan-bebek": 4,
+    "v165-new-022-erken-donemde-sarilik": 3,
+    "v165-new-027-yuzde-sislik-ve-proteinuri": 2,
+    "v166-new-032-ishal-sonrasi-bobrek-yetmezligi": 5
+  },
+  "scopeGuard": "Yalnızca branchId=pediatrics olan ilk 5 vaka düzenlendi; batch dışındaki vakalara müdahale edilmedi."
+}
