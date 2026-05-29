@@ -20898,571 +20898,586 @@ export const rawCases = [
       "note": "Myastenia vakasında akış klinik fluktuasyon → solunum/bulber güvenlik → antikor → elektrofizyoloji → timus taraması şeklinde düzenlendi."
     }
   },
-  {
-    "id": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi",
-    "branchId": "pediatrics",
-    "caseType": "standard",
-    "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
-    "title": "Ateş ve üst hava yolu obstrüksiyonu",
-    "difficulty": "Acil",
-    "clinicalFocus": "Epiglottit şüphesinde toksik görünüm, salya akışı, yutamama ve istirahat stridorunu birlikte okuyarak güvenli ilk hava yolu yaklaşımını seçme.",
-    "learningTarget": "Epiglottit/akut supraglottik obstrüksiyonda boğaz muayenesi ve görüntülemenin hava yolu güvenliği sağlanmadan yapılmaması gerektiğini açıklayabilme.",
-    "demographics": "3 yaşında erkek çocuk",
-    "setting": "Çocuk acil servisi",
-    "chiefComplaint": "Çocuk, yüksek ateş, yutamama, salya akışı ve giderek artan inspiratuvar solunum sıkıntısı nedeniyle acile getiriliyor.",
-    "stem": "Yakınmalar aynı gün içinde hızla başlamıştır. Ailesi çocuğun tükürüğünü yutamadığını, sesinin boğuklaştığını, yatınca nefesinin kötüleştiğini ve kucağa alındığında öne eğilerek rahatlamaya çalıştığını belirtir. Hib aşı dozlarının eksik olduğu öğrenilir; öksürük havlar tarzda değildir.",
-    "patientIntro": {
-      "profile": "3 yaşında erkek çocuk, çocuk acil servisinde hava yolu riski açısından değerlendiriliyor.",
-      "presentation": "Yüksek ateşe eşlik eden yutamama, salya akışı, boğuk ses ve inspiratuvar stridor vardır.",
-      "historySummary": "Ailesi, çocuğun aynı gün içinde başlayan yüksek ateş ve boğaz ağrısından birkaç saat sonra su içmekte zorlandığını ve tükürüğünü yutamadığını fark etmiştir. Çocuğun sesi giderek boğuklaşmış, yatınca nefesi kötüleşmiş ve kucakta öne eğilerek durmayı tercih etmeye başlamıştır. Evde belirgin havlar tarzda öksürük olmamış, burun akıntısı yakınması ön planda değildir. Aşı kayıtları sorgulandığında Hib aşı dozlarının tamamlanmadığı öğrenilmiş; aile hızlı kötüleşme nedeniyle acile getirmiştir."
-    },
-    "vitals": {
-      "TA": "96/60 mmHg",
-      "Nabız": "158/dk",
-      "Solunum": "36/dk",
-      "SpO2": "%91, oda havasında",
-      "Ateş": "39.4 °C",
-      "Şok indeksi": "1.65 - yaşa göre belirgin taşikardi ve hava yolu stresi"
-    },
-    "exam": [
-      "Çocuk ajite, toksik görünümlü ve kucağa alındığında öne eğilerek oturma eğilimindedir; yatırılınca stridor belirginleşir.",
-      "Ağızdan salya akışı vardır, tükürüğünü yutamaz; ses boğuk/muffled niteliktedir.",
-      "İstirahatte inspiratuvar stridor duyulur; ağız içi muayenesi ve dil basacağı ile farenks değerlendirmesi yapılmamıştır.",
-      "Kapiller dolum 2 saniye, periferik nabızlar alınabilir; belirgin alt hava yolu wheezing paterni yoktur."
-    ],
-    "investigations": [
-      {
-        "id": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi-airway-risk",
-        "label": "Üst hava yolu risk değerlendirmesi",
-        "title": "Üst hava yolu risk değerlendirmesi",
-        "orderLabel": "Üst hava yolu risk değerlendirmesi",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "summary": "Salya akışı, yutamama, tripod pozisyonu ve istirahatte stridor bu hastada supraglottik obstrüksiyon riskini somutlaştırır; hava yolu hazırlığı tanısal işlemlerden önce gelir.",
-        "clinicalMeaning": "Salya akışı, yutamama, tripod pozisyonu ve istirahatte stridor bu hastada supraglottik obstrüksiyon riskini somutlaştırır; hava yolu hazırlığı tanısal işlemlerden önce gelir.",
-        "result": {
-          "title": "Üst hava yolu risk değerlendirmesi",
-          "summary": "Salya akışı, yutamama, tripod pozisyonu ve istirahatte stridor bu hastada supraglottik obstrüksiyon riskini somutlaştırır; hava yolu hazırlığı tanısal işlemlerden önce gelir.",
-          "interpretation": "Salya akışı, yutamama, tripod pozisyonu ve istirahatte stridor bu hastada supraglottik obstrüksiyon riskini somutlaştırır; hava yolu hazırlığı tanısal işlemlerden önce gelir.",
-          "values": [
-            [
-              "Salya/yutma",
-              "Tükürüğünü yutamıyor, ağızdan salya akışı var",
-              "—",
-              "Kritik hava yolu bulgusu"
-            ],
-            [
-              "Pozisyon",
-              "Öne eğilerek oturuyor; yatırılınca stridor artıyor",
-              "—",
-              "Tripod paterni"
-            ],
-            [
-              "Stridor",
-              "İstirahatte inspiratuvar stridor",
-              "—",
-              "Üst hava yolu obstrüksiyonu"
-            ],
-            [
-              "Ses",
-              "Boğuk/muffled ses",
-              "—",
-              "Supraglottik tutulum"
-            ]
-          ],
-          "rows": [
-            [
-              "Salya/yutma",
-              "Tükürüğünü yutamıyor, ağızdan salya akışı var",
-              "—",
-              "Kritik hava yolu bulgusu"
-            ],
-            [
-              "Pozisyon",
-              "Öne eğilerek oturuyor; yatırılınca stridor artıyor",
-              "—",
-              "Tripod paterni"
-            ],
-            [
-              "Stridor",
-              "İstirahatte inspiratuvar stridor",
-              "—",
-              "Üst hava yolu obstrüksiyonu"
-            ],
-            [
-              "Ses",
-              "Boğuk/muffled ses",
-              "—",
-              "Supraglottik tutulum"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Salya/yutma",
-            "Tükürüğünü yutamıyor, ağızdan salya akışı var",
-            "—",
-            "Kritik hava yolu bulgusu"
-          ],
-          [
-            "Pozisyon",
-            "Öne eğilerek oturuyor; yatırılınca stridor artıyor",
-            "—",
-            "Tripod paterni"
-          ],
-          [
-            "Stridor",
-            "İstirahatte inspiratuvar stridor",
-            "—",
-            "Üst hava yolu obstrüksiyonu"
-          ],
-          [
-            "Ses",
-            "Boğuk/muffled ses",
-            "—",
-            "Supraglottik tutulum"
-          ]
-        ],
-        "postAnswerExplanation": "Salya akışı, yutamama, tripod pozisyonu ve istirahatte stridor bu hastada supraglottik obstrüksiyon riskini somutlaştırır; hava yolu hazırlığı tanısal işlemlerden önce gelir.",
-        "interpretation": "Salya akışı, yutamama, tripod pozisyonu ve istirahatte stridor bu hastada supraglottik obstrüksiyon riskini somutlaştırır; hava yolu hazırlığı tanısal işlemlerden önce gelir.",
-        "explanationAfterAnswer": "Salya akışı, yutamama, tripod pozisyonu ve istirahatte stridor bu hastada supraglottik obstrüksiyon riskini somutlaştırır; hava yolu hazırlığı tanısal işlemlerden önce gelir.",
-        "testValueLabel": "Kritik karar verdirir",
-        "clinicalPriorityLabel": "Kritik karar verdirir",
-        "educationalValue": "Kritik karar verdirir",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Kritik karar verdirir",
-        "treatmentImpact": "Tedavi sırasını belirler",
-        "orderRank": 10
+    {
+      "id": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
+      "title": "Ateş ve üst hava yolu obstrüksiyonu",
+      "difficulty": "Acil",
+      "clinicalFocus": "Epiglottit şüphesinde toksik görünüm, salya akışı, yutamama ve istirahat stridorunu birlikte okuyarak güvenli ilk hava yolu yaklaşımını seçme.",
+      "learningTarget": "Epiglottit/akut supraglottik obstrüksiyonda boğaz muayenesi ve görüntülemenin hava yolu güvenliği sağlanmadan yapılmaması gerektiğini açıklayabilme.",
+      "demographics": "3 yaşında erkek çocuk",
+      "setting": "Çocuk acil servisi",
+      "chiefComplaint": "Çocuk, yüksek ateş, yutamama, salya akışı ve giderek artan inspiratuvar solunum sıkıntısı nedeniyle acile getiriliyor.",
+      "stem": "Yakınmalar aynı gün içinde hızla başlamış; aile önce ateş ve boğaz ağrısı olduğunu, birkaç saat içinde çocuğun su içmek istemediğini ve tükürüğünü yutamadığını belirtmiştir. Sesinin giderek boğuklaştığı, yatınca nefesinin zorlaştığı ve kucakta öne eğilerek durunca nispeten rahatladığı fark edilmiştir. Evde belirgin havlar tarzda öksürük veya uzun süren nezle yakınması olmamıştır. Aşı kayıtları sorgulandığında Hib dozlarının eksik olduğu öğrenilmiş ve hızlı kötüleşme nedeniyle acile başvurulmuştur.",
+      "patientIntro": {
+          "profile": "3 yaşında erkek çocuk, çocuk acil servisinde üst hava yolu riski açısından değerlendiriliyor.",
+          "presentation": "Yüksek ateşle birlikte yutamama, salya akışı, boğuk ses ve istirahatte inspiratuvar stridor vardır.",
+          "historySummary": "Yakınmalar aynı gün içinde hızla başlamış; aile önce ateş ve boğaz ağrısı olduğunu, birkaç saat içinde çocuğun su içmek istemediğini ve tükürüğünü yutamadığını belirtmiştir. Sesinin giderek boğuklaştığı, yatınca nefesinin zorlaştığı ve kucakta öne eğilerek durunca nispeten rahatladığı fark edilmiştir. Evde belirgin havlar tarzda öksürük veya uzun süren nezle yakınması olmamıştır. Aşı kayıtları sorgulandığında Hib dozlarının eksik olduğu öğrenilmiş ve hızlı kötüleşme nedeniyle acile başvurulmuştur."
       },
-      {
-        "id": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi-bedside-oxygenation",
-        "label": "Yatak başı oksijenasyon ve solunum işi",
-        "title": "Yatak başı oksijenasyon ve solunum işi",
-        "orderLabel": "Yatak başı oksijenasyon ve solunum işi",
-        "type": "respiratory",
-        "priority": "essential",
-        "subtype": "",
-        "category": "respiratory",
-        "testTypeCategory": "respiratory",
-        "summary": "Oksijen satürasyonu ve solunum işi hava yolu darlığının ciddiyetini destekler; hipoksemi epiglottitte geç ve tehlikeli bir bulgu olabilir.",
-        "clinicalMeaning": "Oksijen satürasyonu ve solunum işi hava yolu darlığının ciddiyetini destekler; hipoksemi epiglottitte geç ve tehlikeli bir bulgu olabilir.",
-        "result": {
-          "title": "Yatak başı oksijenasyon ve solunum işi",
-          "summary": "Oksijen satürasyonu ve solunum işi hava yolu darlığının ciddiyetini destekler; hipoksemi epiglottitte geç ve tehlikeli bir bulgu olabilir.",
-          "interpretation": "Oksijen satürasyonu ve solunum işi hava yolu darlığının ciddiyetini destekler; hipoksemi epiglottitte geç ve tehlikeli bir bulgu olabilir.",
-          "values": [
-            [
-              "SpO₂",
-              "%91 oda havasında",
-              "≥%94",
-              "Düşük"
-            ],
-            [
-              "Solunum sayısı",
-              "36/dk",
-              "3 yaş için yaklaşık 20–30/dk",
-              "Takipne"
-            ],
-            [
-              "Solunum paterni",
-              "Suprasternal çekilme ve istirahat stridoru",
-              "—",
-              "Artmış solunum işi"
-            ]
-          ],
-          "rows": [
-            [
-              "SpO₂",
-              "%91 oda havasında",
-              "≥%94",
-              "Düşük"
-            ],
-            [
-              "Solunum sayısı",
-              "36/dk",
-              "3 yaş için yaklaşık 20–30/dk",
-              "Takipne"
-            ],
-            [
-              "Solunum paterni",
-              "Suprasternal çekilme ve istirahat stridoru",
-              "—",
-              "Artmış solunum işi"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "SpO₂",
-            "%91 oda havasında",
-            "≥%94",
-            "Düşük"
-          ],
-          [
-            "Solunum sayısı",
-            "36/dk",
-            "3 yaş için yaklaşık 20–30/dk",
-            "Takipne"
-          ],
-          [
-            "Solunum paterni",
-            "Suprasternal çekilme ve istirahat stridoru",
-            "—",
-            "Artmış solunum işi"
-          ]
-        ],
-        "postAnswerExplanation": "Oksijen satürasyonu ve solunum işi hava yolu darlığının ciddiyetini destekler; hipoksemi epiglottitte geç ve tehlikeli bir bulgu olabilir.",
-        "interpretation": "Oksijen satürasyonu ve solunum işi hava yolu darlığının ciddiyetini destekler; hipoksemi epiglottitte geç ve tehlikeli bir bulgu olabilir.",
-        "explanationAfterAnswer": "Oksijen satürasyonu ve solunum işi hava yolu darlığının ciddiyetini destekler; hipoksemi epiglottitte geç ve tehlikeli bir bulgu olabilir.",
-        "testValueLabel": "Tanısal değeri yüksek",
-        "clinicalPriorityLabel": "Tanısal değeri yüksek",
-        "educationalValue": "Tanısal değeri yüksek",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "clinicalFlowOrder": 18,
-        "flowOrder": 18,
-        "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
-        "treatmentImpact": "Kararı destekler",
-        "orderRank": 18
+      "vitals": {
+          "TA": "96/60 mmHg",
+          "Nabız": "158/dk",
+          "Solunum": "36/dk",
+          "SpO2": "%91, oda havasında",
+          "Ateş": "39.4 °C",
+          "Şok indeksi": "1.65 - yaşa göre belirgin taşikardi ve hava yolu stresi"
       },
-      {
-        "id": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi-cbc-crp",
-        "label": "Hemogram ve CRP",
-        "title": "Hemogram ve CRP",
-        "orderLabel": "Hemogram ve CRP",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "summary": "Lökositoz ve CRP yüksekliği bakteriyel/invaziv enfeksiyon olasılığını destekler; ancak hava yolu güvenliği bu laboratuvar sonucundan önce ele alınır.",
-        "clinicalMeaning": "Lökositoz ve CRP yüksekliği bakteriyel/invaziv enfeksiyon olasılığını destekler; ancak hava yolu güvenliği bu laboratuvar sonucundan önce ele alınır.",
-        "result": {
-          "title": "Hemogram ve CRP",
-          "summary": "Lökositoz ve CRP yüksekliği bakteriyel/invaziv enfeksiyon olasılığını destekler; ancak hava yolu güvenliği bu laboratuvar sonucundan önce ele alınır.",
-          "interpretation": "Lökositoz ve CRP yüksekliği bakteriyel/invaziv enfeksiyon olasılığını destekler; ancak hava yolu güvenliği bu laboratuvar sonucundan önce ele alınır.",
-          "values": [
-            [
-              "Lökosit",
-              "17.600/mm³",
-              "5.000–14.500/mm³",
-              "Yüksek"
-            ],
-            [
-              "Nötrofil",
-              "%82",
-              "Yaklaşık %30–60",
-              "Nötrofili"
-            ],
-            [
-              "CRP",
-              "86 mg/L",
-              "<5 mg/L",
-              "Yüksek"
-            ]
-          ],
-          "rows": [
-            [
-              "Lökosit",
-              "17.600/mm³",
-              "5.000–14.500/mm³",
-              "Yüksek"
-            ],
-            [
-              "Nötrofil",
-              "%82",
-              "Yaklaşık %30–60",
-              "Nötrofili"
-            ],
-            [
-              "CRP",
-              "86 mg/L",
-              "<5 mg/L",
-              "Yüksek"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Lökosit",
-            "17.600/mm³",
-            "5.000–14.500/mm³",
-            "Yüksek"
-          ],
-          [
-            "Nötrofil",
-            "%82",
-            "Yaklaşık %30–60",
-            "Nötrofili"
-          ],
-          [
-            "CRP",
-            "86 mg/L",
-            "<5 mg/L",
-            "Yüksek"
-          ]
-        ],
-        "postAnswerExplanation": "Lökositoz ve CRP yüksekliği bakteriyel/invaziv enfeksiyon olasılığını destekler; ancak hava yolu güvenliği bu laboratuvar sonucundan önce ele alınır.",
-        "interpretation": "Lökositoz ve CRP yüksekliği bakteriyel/invaziv enfeksiyon olasılığını destekler; ancak hava yolu güvenliği bu laboratuvar sonucundan önce ele alınır.",
-        "explanationAfterAnswer": "Lökositoz ve CRP yüksekliği bakteriyel/invaziv enfeksiyon olasılığını destekler; ancak hava yolu güvenliği bu laboratuvar sonucundan önce ele alınır.",
-        "testValueLabel": "Destekleyici veri",
-        "clinicalPriorityLabel": "Destekleyici veri",
-        "educationalValue": "Destekleyici veri",
-        "scoreImpact": 3,
-        "scoreValue": 3,
-        "clinicalFlowOrder": 30,
-        "flowOrder": 30,
-        "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
-        "treatmentImpact": "Kararı destekler",
-        "orderRank": 30
-      },
-      {
-        "id": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi-lateral-neck-xray",
-        "label": "Boyun yan grafisi",
-        "title": "Boyun yan grafisi",
-        "orderLabel": "Boyun yan grafisi",
-        "type": "xray",
-        "priority": "lowPriority",
-        "subtype": "",
-        "category": "imaging",
-        "testTypeCategory": "imaging",
-        "summary": "Hasta stabil hale getirildikten sonra yardımcı olabilir; mevcut bulgu epiglot/supraglottik yumuşak doku kalınlaşmasını gösterir fakat hava yolu yönetimini geciktirmez.",
-        "clinicalMeaning": "Hasta stabil hale getirildikten sonra yardımcı olabilir; mevcut bulgu epiglot/supraglottik yumuşak doku kalınlaşmasını gösterir fakat hava yolu yönetimini geciktirmez.",
-        "result": {
-          "title": "Boyun yan grafisi",
-          "summary": "Hasta stabil hale getirildikten sonra yardımcı olabilir; mevcut bulgu epiglot/supraglottik yumuşak doku kalınlaşmasını gösterir fakat hava yolu yönetimini geciktirmez.",
-          "interpretation": "Hasta stabil hale getirildikten sonra yardımcı olabilir; mevcut bulgu epiglot/supraglottik yumuşak doku kalınlaşmasını gösterir fakat hava yolu yönetimini geciktirmez.",
-          "values": [
-            [
-              "Bulgular",
-              "Epiglotta belirgin kalınlaşma ve vallecula hava kolonunda daralma ile uyumlu “thumb sign” görünümü",
-              "—",
-              "Epiglottit ile uyumlu"
-            ]
-          ],
-          "rows": [
-            [
-              "Bulgular",
-              "Epiglotta belirgin kalınlaşma ve vallecula hava kolonunda daralma ile uyumlu “thumb sign” görünümü",
-              "—",
-              "Epiglottit ile uyumlu"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Bulgular",
-            "Epiglotta belirgin kalınlaşma ve vallecula hava kolonunda daralma ile uyumlu “thumb sign” görünümü",
-            "—",
-            "Epiglottit ile uyumlu"
-          ]
-        ],
-        "postAnswerExplanation": "Hasta stabil hale getirildikten sonra yardımcı olabilir; mevcut bulgu epiglot/supraglottik yumuşak doku kalınlaşmasını gösterir fakat hava yolu yönetimini geciktirmez.",
-        "interpretation": "Hasta stabil hale getirildikten sonra yardımcı olabilir; mevcut bulgu epiglot/supraglottik yumuşak doku kalınlaşmasını gösterir fakat hava yolu yönetimini geciktirmez.",
-        "explanationAfterAnswer": "Hasta stabil hale getirildikten sonra yardımcı olabilir; mevcut bulgu epiglot/supraglottik yumuşak doku kalınlaşmasını gösterir fakat hava yolu yönetimini geciktirmez.",
-        "testValueLabel": "Destekleyici veri",
-        "clinicalPriorityLabel": "Destekleyici veri",
-        "educationalValue": "Destekleyici veri",
-        "scoreImpact": 1,
-        "scoreValue": 1,
-        "clinicalFlowOrder": 85,
-        "flowOrder": 85,
-        "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
-        "treatmentImpact": "Kararı destekler",
-        "orderRank": 85
-      }
-    ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": {
-      "enabled": false
-    },
-    "hideExamSignal": true,
-    "question": "Bu çocukta ilk ve en güvenli yaklaşım aşağıdakilerden hangisidir?",
-    "questionType": "treatment",
-    "answerTarget": "first_step",
-    "diagnosis": {
-      "correct": "Anestezi-KBB eşliğinde kontrollü ortamda hava yolunu güvenceye almak",
-      "options": [
-        "Nebülize adrenalin ve deksametazon verip yanıtı serviste izlemek",
-        "Dil basacağı ile orofarenksi açarak epiglotu doğrudan görmek",
-        "Boyun yan grafisi çekilene kadar yalnız oksijen ve gözlemle beklemek",
-        "Anestezi-KBB eşliğinde kontrollü ortamda hava yolunu güvenceye almak",
-        "Ayaktan oral amoksisilin-klavulanat başlayıp ertesi gün kontrole çağırmak"
+      "exam": [
+          "Çocuk toksik görünümlü, huzursuz ve kucakta öne eğilerek oturma eğilimindedir; yatırılmaya çalışıldığında stridor belirginleşir.",
+          "Ağızdan salya akışı vardır ve tükürüğünü yutamaz; ses boğuk niteliktedir.",
+          "İstirahatte inspiratuvar stridor duyulur; ajitasyonu artırmamak için dil basacağı ile orofarenks muayenesi yapılmamıştır.",
+          "Kapiller dolum yaklaşık 2 saniyedir; yaygın alt hava yolu hışıltısı veya havlar tarzda öksürük ön planda değildir."
       ],
+      "investigations": [
+          {
+              "id": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi-airway-risk",
+              "label": "Üst hava yolu klinik bulguları",
+              "title": "Üst hava yolu klinik bulguları",
+              "orderLabel": "Üst hava yolu klinik bulguları",
+              "type": "clinical",
+              "priority": "essential",
+              "subtype": "",
+              "category": "clinicalAssessment",
+              "testTypeCategory": "clinicalAssessment",
+              "summary": "Yutamama, salya akışı, tripod eğilimi ve istirahatte stridor ağır supraglottik darlık olasılığını gösteren hasta bulgularıdır.",
+              "clinicalMeaning": "Yutamama, salya akışı, tripod eğilimi ve istirahatte stridor ağır supraglottik darlık olasılığını gösteren hasta bulgularıdır.",
+              "result": {
+                  "title": "Üst hava yolu klinik bulguları",
+                  "summary": "Yutamama, salya akışı, tripod eğilimi ve istirahatte stridor ağır supraglottik darlık olasılığını gösteren hasta bulgularıdır.",
+                  "interpretation": "Yutamama, salya akışı, tripod eğilimi ve istirahatte stridor ağır supraglottik darlık olasılığını gösteren hasta bulgularıdır.",
+                  "values": [
+                      {
+                          "parameter": "Yutma/salya",
+                          "value": "Tükürüğünü yutamıyor, ağızdan salya akışı var",
+                          "note": "Ağır üst hava yolu bulgusu"
+                      },
+                      {
+                          "parameter": "Pozisyon",
+                          "value": "Öne eğilerek oturmayı tercih ediyor; yatırılınca stridor artıyor",
+                          "note": "Tripod eğilimi"
+                      },
+                      {
+                          "parameter": "Stridor",
+                          "value": "İstirahatte inspiratuvar stridor duyuluyor",
+                          "note": "Obstrüksiyon bulgusu"
+                      },
+                      {
+                          "parameter": "Ses",
+                          "value": "Boğuk, kısık nitelikte",
+                          "note": "Supraglottik tutulum lehine"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Yutma/salya",
+                          "value": "Tükürüğünü yutamıyor, ağızdan salya akışı var",
+                          "note": "Ağır üst hava yolu bulgusu"
+                      },
+                      {
+                          "parameter": "Pozisyon",
+                          "value": "Öne eğilerek oturmayı tercih ediyor; yatırılınca stridor artıyor",
+                          "note": "Tripod eğilimi"
+                      },
+                      {
+                          "parameter": "Stridor",
+                          "value": "İstirahatte inspiratuvar stridor duyuluyor",
+                          "note": "Obstrüksiyon bulgusu"
+                      },
+                      {
+                          "parameter": "Ses",
+                          "value": "Boğuk, kısık nitelikte",
+                          "note": "Supraglottik tutulum lehine"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Yutma/salya",
+                      "value": "Tükürüğünü yutamıyor, ağızdan salya akışı var",
+                      "note": "Ağır üst hava yolu bulgusu"
+                  },
+                  {
+                      "parameter": "Pozisyon",
+                      "value": "Öne eğilerek oturmayı tercih ediyor; yatırılınca stridor artıyor",
+                      "note": "Tripod eğilimi"
+                  },
+                  {
+                      "parameter": "Stridor",
+                      "value": "İstirahatte inspiratuvar stridor duyuluyor",
+                      "note": "Obstrüksiyon bulgusu"
+                  },
+                  {
+                      "parameter": "Ses",
+                      "value": "Boğuk, kısık nitelikte",
+                      "note": "Supraglottik tutulum lehine"
+                  }
+              ],
+              "postAnswerExplanation": "Yutamama, salya akışı, tripod eğilimi ve istirahatte stridor ağır supraglottik darlık olasılığını gösteren hasta bulgularıdır.",
+              "interpretation": "Yutamama, salya akışı, tripod eğilimi ve istirahatte stridor ağır supraglottik darlık olasılığını gösteren hasta bulgularıdır.",
+              "explanationAfterAnswer": "Yutamama, salya akışı, tripod eğilimi ve istirahatte stridor ağır supraglottik darlık olasılığını gösteren hasta bulgularıdır.",
+              "testValueLabel": "Kritik klinik veri",
+              "clinicalPriorityLabel": "Kritik klinik veri",
+              "educationalValue": "Kritik klinik veri",
+              "scoreImpact": 5,
+              "scoreValue": 5,
+              "clinicalFlowOrder": 10,
+              "flowOrder": 10,
+              "pediatricSafetyValue": "Kritik karar verdirir",
+              "treatmentImpact": "Tedavi sırasını belirler",
+              "orderRank": 10
+          },
+          {
+              "id": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi-bedside-oxygenation",
+              "label": "Yatak başı oksijenasyon ve solunum işi",
+              "title": "Yatak başı oksijenasyon ve solunum işi",
+              "orderLabel": "Yatak başı oksijenasyon ve solunum işi",
+              "type": "respiratory",
+              "priority": "essential",
+              "subtype": "",
+              "category": "respiratory",
+              "testTypeCategory": "respiratory",
+              "summary": "Hipoksemi, takipne ve belirgin solunum işi üst hava yolu darlığının klinik ağırlığını destekler.",
+              "clinicalMeaning": "Hipoksemi, takipne ve belirgin solunum işi üst hava yolu darlığının klinik ağırlığını destekler.",
+              "result": {
+                  "title": "Yatak başı oksijenasyon ve solunum işi",
+                  "summary": "Hipoksemi, takipne ve belirgin solunum işi üst hava yolu darlığının klinik ağırlığını destekler.",
+                  "interpretation": "Hipoksemi, takipne ve belirgin solunum işi üst hava yolu darlığının klinik ağırlığını destekler.",
+                  "values": [
+                      {
+                          "parameter": "SpO₂",
+                          "value": "%91 oda havasında",
+                          "reference": "≥%94",
+                          "note": "Düşük"
+                      },
+                      {
+                          "parameter": "Solunum sayısı",
+                          "value": "36/dk",
+                          "reference": "3 yaşta yaklaşık 20–30/dk",
+                          "note": "Takipne"
+                      },
+                      {
+                          "parameter": "Solunum paterni",
+                          "value": "Suprasternal çekilme ve istirahat stridoru",
+                          "note": "Artmış solunum işi"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "SpO₂",
+                          "value": "%91 oda havasında",
+                          "reference": "≥%94",
+                          "note": "Düşük"
+                      },
+                      {
+                          "parameter": "Solunum sayısı",
+                          "value": "36/dk",
+                          "reference": "3 yaşta yaklaşık 20–30/dk",
+                          "note": "Takipne"
+                      },
+                      {
+                          "parameter": "Solunum paterni",
+                          "value": "Suprasternal çekilme ve istirahat stridoru",
+                          "note": "Artmış solunum işi"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "SpO₂",
+                      "value": "%91 oda havasında",
+                      "reference": "≥%94",
+                      "note": "Düşük"
+                  },
+                  {
+                      "parameter": "Solunum sayısı",
+                      "value": "36/dk",
+                      "reference": "3 yaşta yaklaşık 20–30/dk",
+                      "note": "Takipne"
+                  },
+                  {
+                      "parameter": "Solunum paterni",
+                      "value": "Suprasternal çekilme ve istirahat stridoru",
+                      "note": "Artmış solunum işi"
+                  }
+              ],
+              "postAnswerExplanation": "Hipoksemi, takipne ve belirgin solunum işi üst hava yolu darlığının klinik ağırlığını destekler.",
+              "interpretation": "Hipoksemi, takipne ve belirgin solunum işi üst hava yolu darlığının klinik ağırlığını destekler.",
+              "explanationAfterAnswer": "Hipoksemi, takipne ve belirgin solunum işi üst hava yolu darlığının klinik ağırlığını destekler.",
+              "testValueLabel": "Kritik klinik veri",
+              "clinicalPriorityLabel": "Kritik klinik veri",
+              "educationalValue": "Kritik klinik veri",
+              "scoreImpact": 4,
+              "scoreValue": 4,
+              "clinicalFlowOrder": 20,
+              "flowOrder": 20,
+              "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
+              "treatmentImpact": "Kararı destekler",
+              "orderRank": 20
+          },
+          {
+              "id": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi-cbc-crp",
+              "label": "Hemogram ve akut faz yanıtı",
+              "title": "Hemogram ve akut faz yanıtı",
+              "orderLabel": "Hemogram ve akut faz yanıtı",
+              "type": "lab",
+              "priority": "supportive",
+              "subtype": "",
+              "category": "laboratory",
+              "testTypeCategory": "laboratory",
+              "summary": "Nötrofil ağırlıklı lökositoz ve CRP yüksekliği invaziv bakteriyel enfeksiyon olasılığını destekleyen eşlikçi laboratuvar bulgularıdır.",
+              "clinicalMeaning": "Nötrofil ağırlıklı lökositoz ve CRP yüksekliği invaziv bakteriyel enfeksiyon olasılığını destekleyen eşlikçi laboratuvar bulgularıdır.",
+              "result": {
+                  "title": "Hemogram ve akut faz yanıtı",
+                  "summary": "Nötrofil ağırlıklı lökositoz ve CRP yüksekliği invaziv bakteriyel enfeksiyon olasılığını destekleyen eşlikçi laboratuvar bulgularıdır.",
+                  "interpretation": "Nötrofil ağırlıklı lökositoz ve CRP yüksekliği invaziv bakteriyel enfeksiyon olasılığını destekleyen eşlikçi laboratuvar bulgularıdır.",
+                  "values": [
+                      {
+                          "parameter": "Lökosit",
+                          "value": "17.600/mm³",
+                          "reference": "5.000–14.500/mm³",
+                          "note": "Yüksek"
+                      },
+                      {
+                          "parameter": "Nötrofil",
+                          "value": "%82",
+                          "reference": "Yaklaşık %30–60",
+                          "note": "Nötrofili"
+                      },
+                      {
+                          "parameter": "CRP",
+                          "value": "86 mg/L",
+                          "reference": "<5 mg/L",
+                          "note": "Yüksek"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Lökosit",
+                          "value": "17.600/mm³",
+                          "reference": "5.000–14.500/mm³",
+                          "note": "Yüksek"
+                      },
+                      {
+                          "parameter": "Nötrofil",
+                          "value": "%82",
+                          "reference": "Yaklaşık %30–60",
+                          "note": "Nötrofili"
+                      },
+                      {
+                          "parameter": "CRP",
+                          "value": "86 mg/L",
+                          "reference": "<5 mg/L",
+                          "note": "Yüksek"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Lökosit",
+                      "value": "17.600/mm³",
+                      "reference": "5.000–14.500/mm³",
+                      "note": "Yüksek"
+                  },
+                  {
+                      "parameter": "Nötrofil",
+                      "value": "%82",
+                      "reference": "Yaklaşık %30–60",
+                      "note": "Nötrofili"
+                  },
+                  {
+                      "parameter": "CRP",
+                      "value": "86 mg/L",
+                      "reference": "<5 mg/L",
+                      "note": "Yüksek"
+                  }
+              ],
+              "postAnswerExplanation": "Nötrofil ağırlıklı lökositoz ve CRP yüksekliği invaziv bakteriyel enfeksiyon olasılığını destekleyen eşlikçi laboratuvar bulgularıdır.",
+              "interpretation": "Nötrofil ağırlıklı lökositoz ve CRP yüksekliği invaziv bakteriyel enfeksiyon olasılığını destekleyen eşlikçi laboratuvar bulgularıdır.",
+              "explanationAfterAnswer": "Nötrofil ağırlıklı lökositoz ve CRP yüksekliği invaziv bakteriyel enfeksiyon olasılığını destekleyen eşlikçi laboratuvar bulgularıdır.",
+              "testValueLabel": "Destekleyici veri",
+              "clinicalPriorityLabel": "Destekleyici veri",
+              "educationalValue": "Destekleyici veri",
+              "scoreImpact": 3,
+              "scoreValue": 3,
+              "clinicalFlowOrder": 30,
+              "flowOrder": 30,
+              "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
+              "treatmentImpact": "Kararı destekler",
+              "orderRank": 30
+          },
+          {
+              "id": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi-differential-airway-clues",
+              "label": "Krup ve alt hava yolu ayırıcı bulguları",
+              "title": "Krup ve alt hava yolu ayırıcı bulguları",
+              "orderLabel": "Krup ve alt hava yolu ayırıcı bulguları",
+              "type": "clinical",
+              "priority": "supportive",
+              "subtype": "",
+              "category": "clinicalAssessment",
+              "testTypeCategory": "clinicalAssessment",
+              "summary": "Havlar tarzda öksürük ve yaygın hışıltının olmaması, ön plandaki problemin alt hava yolundan çok supraglottik düzeyde olduğunu destekler.",
+              "clinicalMeaning": "Havlar tarzda öksürük ve yaygın hışıltının olmaması, ön plandaki problemin alt hava yolundan çok supraglottik düzeyde olduğunu destekler.",
+              "result": {
+                  "title": "Krup ve alt hava yolu ayırıcı bulguları",
+                  "summary": "Havlar tarzda öksürük ve yaygın hışıltının olmaması, ön plandaki problemin alt hava yolundan çok supraglottik düzeyde olduğunu destekler.",
+                  "interpretation": "Havlar tarzda öksürük ve yaygın hışıltının olmaması, ön plandaki problemin alt hava yolundan çok supraglottik düzeyde olduğunu destekler.",
+                  "values": [
+                      {
+                          "parameter": "Öksürük paterni",
+                          "value": "Belirgin havlar tarzda öksürük tariflenmiyor",
+                          "note": "Krup lehine güçlü değil"
+                      },
+                      {
+                          "parameter": "Alt hava yolu",
+                          "value": "Yaygın ekspiratuvar wheezing ön planda değil",
+                          "note": "Bronkospazm baskın değil"
+                      },
+                      {
+                          "parameter": "Burun akıntısı",
+                          "value": "Uzun süren viral prodrom belirgin değil",
+                          "note": "Ayırıcı tanıya katkı sağlar"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Öksürük paterni",
+                          "value": "Belirgin havlar tarzda öksürük tariflenmiyor",
+                          "note": "Krup lehine güçlü değil"
+                      },
+                      {
+                          "parameter": "Alt hava yolu",
+                          "value": "Yaygın ekspiratuvar wheezing ön planda değil",
+                          "note": "Bronkospazm baskın değil"
+                      },
+                      {
+                          "parameter": "Burun akıntısı",
+                          "value": "Uzun süren viral prodrom belirgin değil",
+                          "note": "Ayırıcı tanıya katkı sağlar"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Öksürük paterni",
+                      "value": "Belirgin havlar tarzda öksürük tariflenmiyor",
+                      "note": "Krup lehine güçlü değil"
+                  },
+                  {
+                      "parameter": "Alt hava yolu",
+                      "value": "Yaygın ekspiratuvar wheezing ön planda değil",
+                      "note": "Bronkospazm baskın değil"
+                  },
+                  {
+                      "parameter": "Burun akıntısı",
+                      "value": "Uzun süren viral prodrom belirgin değil",
+                      "note": "Ayırıcı tanıya katkı sağlar"
+                  }
+              ],
+              "postAnswerExplanation": "Havlar tarzda öksürük ve yaygın hışıltının olmaması, ön plandaki problemin alt hava yolundan çok supraglottik düzeyde olduğunu destekler.",
+              "interpretation": "Havlar tarzda öksürük ve yaygın hışıltının olmaması, ön plandaki problemin alt hava yolundan çok supraglottik düzeyde olduğunu destekler.",
+              "explanationAfterAnswer": "Havlar tarzda öksürük ve yaygın hışıltının olmaması, ön plandaki problemin alt hava yolundan çok supraglottik düzeyde olduğunu destekler.",
+              "testValueLabel": "Ayırıcı tanı verisi",
+              "clinicalPriorityLabel": "Ayırıcı tanı verisi",
+              "educationalValue": "Ayırıcı tanı verisi",
+              "scoreImpact": 2,
+              "scoreValue": 2,
+              "clinicalFlowOrder": 40,
+              "flowOrder": 40,
+              "orderRank": 40
+          }
+      ],
+      "useSyntheticInvestigationBank": false,
+      "managementSequence": {
+          "enabled": false
+      },
+      "hideExamSignal": true,
       "question": "Bu çocukta ilk ve en güvenli yaklaşım aşağıdakilerden hangisidir?",
-      "explanation": "Bu çocukta yüksek ateş, toksik görünüm, salya akışı, yutamama, boğuk ses, tripod pozisyonu ve istirahatte stridor epiglottit/akut supraglottik obstrüksiyon paternini oluşturur. Epiglottit şüphesinde boğazı zorlayıcı muayene ve görüntüleme hava yolunu kaybettirebilir; bu nedenle ilk güvenli adım kontrollü koşullarda hava yolunu güvenceye almak, ardından intravenöz antibiyotik ve yoğun bakım izlemi başlatmaktır.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Epiglottitte salya akışı + tripod pozisyonu + toksik görünüm varsa ilk adım kontrollü ortamda hava yolunu güvenceye almaktır."
-        }
-      ],
+      "questionType": "treatment",
+      "answerTarget": "first_step",
+      "diagnosis": {
+          "correct": "Anestezi-KBB eşliğinde kontrollü ortamda hava yolunu güvenceye almak",
+          "options": [
+              "Nebülize adrenalin ve deksametazon verip serviste yanıt beklemek",
+              "Dil basacağı ile orofarenksi açarak epiglotu doğrudan değerlendirmek",
+              "Boyun yan grafisi çekilene kadar oksijen ve gözlemle beklemek",
+              "Anestezi-KBB eşliğinde kontrollü ortamda hava yolunu güvenceye almak",
+              "İntravenöz antibiyotik başlayıp hava yolu açısından pasif izlem yapmak"
+          ],
+          "question": "Bu çocukta ilk ve en güvenli yaklaşım aşağıdakilerden hangisidir?",
+          "explanation": "Aynı gün içinde hızla ilerleyen yüksek ateş, toksik görünüm, yutamama, salya akışı, boğuk ses, tripod eğilimi, istirahatte stridor ve hipoksemi akut epiglottit/supraglottik obstrüksiyon açısından yüksek riskli bir tablo oluşturur. Bu durumda çocuğu ajite eden orofarenks muayenesi veya görüntüleme öncelik değildir; en güvenli ilk basamak deneyimli ekip eşliğinde kontrollü ortamda hava yolunu güvenceye almak, ardından intravenöz antibiyotik ve yoğun bakım izlemini sürdürmektir.",
+          "pearls": [
+              {
+                  "label": "Sınav notu",
+                  "text": "Salya akışı, yutamama, tripod pozisyonu ve istirahatte stridor birlikteyse epiglottitte ilk güvenli adım kontrollü ortamda hava yolunu güvenceye almaktır."
+              }
+          ],
+          "optionComparison": {
+              "Nebülize adrenalin ve deksametazon verip serviste yanıt beklemek": "Nebülize adrenalin ve deksametazon krup yönetiminde kullanılabilir; ancak bu olguda havlar tarzda öksürükten çok salya akışı, yutamama, tripod eğilimi ve toksik görünüm ön plandadır. Serviste yanıt beklemek üst hava yolu kapanması riskini artırır.",
+              "Dil basacağı ile orofarenksi açarak epiglotu doğrudan değerlendirmek": "Epiglottit şüphesinde dil basacağıyla boğaz muayenesi çocuğu ajite ederek laringospazm veya tam obstrüksiyon tetikleyebilir. Bu değerlendirme ancak hava yolu güvenliği sağlanmış kontrollü koşullarda düşünülmelidir.",
+              "Boyun yan grafisi çekilene kadar oksijen ve gözlemle beklemek": "Boyun yan grafisi stabil ve hafif olgularda yardımcı olabilir; fakat bu çocukta hipoksemi, istirahat stridoru ve salya akışı varken görüntüleme hava yolu güvenliğinin önüne geçemez.",
+              "Anestezi-KBB eşliğinde kontrollü ortamda hava yolunu güvenceye almak": "Doğru yaklaşım, hava yolu kaybı riski yüksek olan çocuğu ajite etmeden anestezi ve KBB/yoğun bakım hazırlığıyla kontrollü ortamda hava yolunu güvenceye almaktır; çünkü salya akışı, yutamama, tripod eğilimi ve istirahatte stridor tanısal kesinlikten önce hava yolu güvenliğini önceliklendirir.",
+              "İntravenöz antibiyotik başlayıp hava yolu açısından pasif izlem yapmak": "İntravenöz antibiyotik epiglottit tedavisinin parçasıdır; ancak hava yolu riski kontrol altına alınmadan tek başına antibiyotik başlamak ilk güvenli basamak değildir."
+          },
+          "answerFeedback": {
+              "summary": "Aynı gün içinde hızla ilerleyen yüksek ateş, toksik görünüm, yutamama, salya akışı, boğuk ses, tripod eğilimi, istirahatte stridor ve hipoksemi akut epiglottit/supraglottik obstrüksiyon açısından yüksek riskli bir tablo oluşturur. Bu durumda çocuğu ajite eden orofarenks muayenesi veya görüntüleme öncelik değildir; en güvenli ilk basamak deneyimli ekip eşliğinde kontrollü ortamda hava yolunu güvenceye almak, ardından intravenöz antibiyotik ve yoğun bakım izlemini sürdürmektir.",
+              "whyCorrect": "Doğru yaklaşım, hava yolu kaybı riski yüksek olan çocuğu ajite etmeden anestezi ve KBB/yoğun bakım hazırlığıyla kontrollü ortamda hava yolunu güvenceye almaktır; çünkü salya akışı, yutamama, tripod eğilimi ve istirahatte stridor tanısal kesinlikten önce hava yolu güvenliğini önceliklendirir.",
+              "rationale": "Aynı gün içinde hızla ilerleyen yüksek ateş, toksik görünüm, yutamama, salya akışı, boğuk ses, tripod eğilimi, istirahatte stridor ve hipoksemi akut epiglottit/supraglottik obstrüksiyon açısından yüksek riskli bir tablo oluşturur. Bu durumda çocuğu ajite eden orofarenks muayenesi veya görüntüleme öncelik değildir; en güvenli ilk basamak deneyimli ekip eşliğinde kontrollü ortamda hava yolunu güvenceye almak, ardından intravenöz antibiyotik ve yoğun bakım izlemini sürdürmektir.",
+              "correctOptionFeedback": "Doğru yaklaşım, hava yolu kaybı riski yüksek olan çocuğu ajite etmeden anestezi ve KBB/yoğun bakım hazırlığıyla kontrollü ortamda hava yolunu güvenceye almaktır; çünkü salya akışı, yutamama, tripod eğilimi ve istirahatte stridor tanısal kesinlikten önce hava yolu güvenliğini önceliklendirir.",
+              "keyClues": [
+                  "Hızlı başlayan yüksek ateş ve toksik görünüm → basit viral krup yerine invaziv üst hava yolu enfeksiyonu olasılığını artırır.",
+                  "Salya akışı, yutamama, boğuk ses ve tripod eğilimi → supraglottik obstrüksiyon paternini gösterir.",
+                  "İstirahatte inspiratuvar stridor ve SpO₂ %91 → hava yolu darlığının klinik olarak ağırlaştığını gösterir.",
+                  "Dil basacağı ile muayenenin yapılmamış olması → çocuğu ajite eden işlemlerden kaçınılması gerektiğini destekler."
+              ],
+              "evidenceChain": [
+                  {
+                      "text": "Hızlı başlayan yüksek ateş ve toksik görünüm → basit viral krup yerine invaziv üst hava yolu enfeksiyonu olasılığını artırır.",
+                      "weight": "high",
+                      "source": "case"
+                  },
+                  {
+                      "text": "Salya akışı, yutamama, boğuk ses ve tripod eğilimi → supraglottik obstrüksiyon paternini gösterir.",
+                      "weight": "high",
+                      "source": "case"
+                  },
+                  {
+                      "text": "İstirahatte inspiratuvar stridor ve SpO₂ %91 → hava yolu darlığının klinik olarak ağırlaştığını gösterir.",
+                      "weight": "medium",
+                      "source": "case"
+                  },
+                  {
+                      "text": "Dil basacağı ile muayenenin yapılmamış olması → çocuğu ajite eden işlemlerden kaçınılması gerektiğini destekler.",
+                      "weight": "medium",
+                      "source": "case"
+                  }
+              ],
+              "examPearl": "Salya akışı, yutamama, tripod pozisyonu ve istirahatte stridor birlikteyse epiglottitte ilk güvenli adım kontrollü ortamda hava yolunu güvenceye almaktır.",
+              "pearls": [
+                  {
+                      "label": "Sınav notu",
+                      "text": "Salya akışı, yutamama, tripod pozisyonu ve istirahatte stridor birlikteyse epiglottitte ilk güvenli adım kontrollü ortamda hava yolunu güvenceye almaktır."
+                  }
+              ],
+              "clinicalPearls": [
+                  {
+                      "label": "Sınav notu",
+                      "text": "Salya akışı, yutamama, tripod pozisyonu ve istirahatte stridor birlikteyse epiglottitte ilk güvenli adım kontrollü ortamda hava yolunu güvenceye almaktır."
+                  }
+              ],
+              "optionComparison": {
+                  "Nebülize adrenalin ve deksametazon verip serviste yanıt beklemek": "Nebülize adrenalin ve deksametazon krup yönetiminde kullanılabilir; ancak bu olguda havlar tarzda öksürükten çok salya akışı, yutamama, tripod eğilimi ve toksik görünüm ön plandadır. Serviste yanıt beklemek üst hava yolu kapanması riskini artırır.",
+                  "Dil basacağı ile orofarenksi açarak epiglotu doğrudan değerlendirmek": "Epiglottit şüphesinde dil basacağıyla boğaz muayenesi çocuğu ajite ederek laringospazm veya tam obstrüksiyon tetikleyebilir. Bu değerlendirme ancak hava yolu güvenliği sağlanmış kontrollü koşullarda düşünülmelidir.",
+                  "Boyun yan grafisi çekilene kadar oksijen ve gözlemle beklemek": "Boyun yan grafisi stabil ve hafif olgularda yardımcı olabilir; fakat bu çocukta hipoksemi, istirahat stridoru ve salya akışı varken görüntüleme hava yolu güvenliğinin önüne geçemez.",
+                  "Anestezi-KBB eşliğinde kontrollü ortamda hava yolunu güvenceye almak": "Doğru yaklaşım, hava yolu kaybı riski yüksek olan çocuğu ajite etmeden anestezi ve KBB/yoğun bakım hazırlığıyla kontrollü ortamda hava yolunu güvenceye almaktır; çünkü salya akışı, yutamama, tripod eğilimi ve istirahatte stridor tanısal kesinlikten önce hava yolu güvenliğini önceliklendirir.",
+                  "İntravenöz antibiyotik başlayıp hava yolu açısından pasif izlem yapmak": "İntravenöz antibiyotik epiglottit tedavisinin parçasıdır; ancak hava yolu riski kontrol altına alınmadan tek başına antibiyotik başlamak ilk güvenli basamak değildir."
+              },
+              "whyWrong": {
+                  "Nebülize adrenalin ve deksametazon verip serviste yanıt beklemek": "Nebülize adrenalin ve deksametazon krup yönetiminde kullanılabilir; ancak bu olguda havlar tarzda öksürükten çok salya akışı, yutamama, tripod eğilimi ve toksik görünüm ön plandadır. Serviste yanıt beklemek üst hava yolu kapanması riskini artırır.",
+                  "Dil basacağı ile orofarenksi açarak epiglotu doğrudan değerlendirmek": "Epiglottit şüphesinde dil basacağıyla boğaz muayenesi çocuğu ajite ederek laringospazm veya tam obstrüksiyon tetikleyebilir. Bu değerlendirme ancak hava yolu güvenliği sağlanmış kontrollü koşullarda düşünülmelidir.",
+                  "Boyun yan grafisi çekilene kadar oksijen ve gözlemle beklemek": "Boyun yan grafisi stabil ve hafif olgularda yardımcı olabilir; fakat bu çocukta hipoksemi, istirahat stridoru ve salya akışı varken görüntüleme hava yolu güvenliğinin önüne geçemez.",
+                  "İntravenöz antibiyotik başlayıp hava yolu açısından pasif izlem yapmak": "İntravenöz antibiyotik epiglottit tedavisinin parçasıdır; ancak hava yolu riski kontrol altına alınmadan tek başına antibiyotik başlamak ilk güvenli basamak değildir."
+              },
+              "managementSteps": [],
+              "management": [],
+              "learningOutcome": "Öğrenci, epiglottit ile krupu ayıran hava yolu bulgularını ve ilk yaklaşım sırasını belirler.",
+              "coreKnowledge": "Epiglottit şüphesinde çocuk ajite edilmemeli; ağır üst hava yolu bulguları varsa tanısal işlemlerden önce kontrollü hava yolu güvenliği planlanmalıdır."
+          },
+          "whyCorrect": "Doğru yaklaşım, hava yolu kaybı riski yüksek olan çocuğu ajite etmeden anestezi ve KBB/yoğun bakım hazırlığıyla kontrollü ortamda hava yolunu güvenceye almaktır; çünkü salya akışı, yutamama, tripod eğilimi ve istirahatte stridor tanısal kesinlikten önce hava yolu güvenliğini önceliklendirir.",
+          "evidenceChain": [
+              {
+                  "text": "Hızlı başlayan yüksek ateş ve toksik görünüm → basit viral krup yerine invaziv üst hava yolu enfeksiyonu olasılığını artırır.",
+                  "weight": "high",
+                  "source": "case"
+              },
+              {
+                  "text": "Salya akışı, yutamama, boğuk ses ve tripod eğilimi → supraglottik obstrüksiyon paternini gösterir.",
+                  "weight": "high",
+                  "source": "case"
+              },
+              {
+                  "text": "İstirahatte inspiratuvar stridor ve SpO₂ %91 → hava yolu darlığının klinik olarak ağırlaştığını gösterir.",
+                  "weight": "medium",
+                  "source": "case"
+              },
+              {
+                  "text": "Dil basacağı ile muayenenin yapılmamış olması → çocuğu ajite eden işlemlerden kaçınılması gerektiğini destekler.",
+                  "weight": "medium",
+                  "source": "case"
+              }
+          ],
+          "coreKnowledge": "Epiglottit şüphesinde çocuk ajite edilmemeli; ağır üst hava yolu bulguları varsa tanısal işlemlerden önce kontrollü hava yolu güvenliği planlanmalıdır.",
+          "examPearl": "Salya akışı, yutamama, tripod pozisyonu ve istirahatte stridor birlikteyse epiglottitte ilk güvenli adım kontrollü ortamda hava yolunu güvenceye almaktır.",
+          "whyWrong": {
+              "Nebülize adrenalin ve deksametazon verip serviste yanıt beklemek": "Nebülize adrenalin ve deksametazon krup yönetiminde kullanılabilir; ancak bu olguda havlar tarzda öksürükten çok salya akışı, yutamama, tripod eğilimi ve toksik görünüm ön plandadır. Serviste yanıt beklemek üst hava yolu kapanması riskini artırır.",
+              "Dil basacağı ile orofarenksi açarak epiglotu doğrudan değerlendirmek": "Epiglottit şüphesinde dil basacağıyla boğaz muayenesi çocuğu ajite ederek laringospazm veya tam obstrüksiyon tetikleyebilir. Bu değerlendirme ancak hava yolu güvenliği sağlanmış kontrollü koşullarda düşünülmelidir.",
+              "Boyun yan grafisi çekilene kadar oksijen ve gözlemle beklemek": "Boyun yan grafisi stabil ve hafif olgularda yardımcı olabilir; fakat bu çocukta hipoksemi, istirahat stridoru ve salya akışı varken görüntüleme hava yolu güvenliğinin önüne geçemez.",
+              "İntravenöz antibiyotik başlayıp hava yolu açısından pasif izlem yapmak": "İntravenöz antibiyotik epiglottit tedavisinin parçasıdır; ancak hava yolu riski kontrol altına alınmadan tek başına antibiyotik başlamak ilk güvenli basamak değildir."
+          }
+      },
+      "shuffleOptions": false,
+      "difficultyTag": "Acil",
+      "coreKnowledge": "Epiglottit şüphesinde çocuk ajite edilmemeli; ağır üst hava yolu bulguları varsa tanısal işlemlerden önce kontrollü hava yolu güvenliği planlanmalıdır.",
+      "examPearl": "Salya akışı, yutamama, tripod pozisyonu ve istirahatte stridor birlikteyse epiglottitte ilk güvenli adım kontrollü ortamda hava yolunu güvenceye almaktır.",
+      "whyCorrect": "Doğru yaklaşım, hava yolu kaybı riski yüksek olan çocuğu ajite etmeden anestezi ve KBB/yoğun bakım hazırlığıyla kontrollü ortamda hava yolunu güvenceye almaktır; çünkü salya akışı, yutamama, tripod eğilimi ve istirahatte stridor tanısal kesinlikten önce hava yolu güvenliğini önceliklendirir.",
       "optionComparison": {
-        "Nebülize adrenalin ve deksametazon verip yanıtı serviste izlemek": "Nebülize adrenalin ve deksametazon krup için uygun olabilir; ancak bu çocukta ani toksik görünüm, salya akışı, yutamama, boğuk ses ve tripod pozisyonu epiglottit/üst hava yolu obstrüksiyonu düşündürür. Yanıt beklemek hava yolu kapanmasını geciktirebilir.",
-        "Dil basacağı ile orofarenksi açarak epiglotu doğrudan görmek": "Doğrudan orofarenks muayenesi epiglottit şüphesinde laringospazm ve tam obstrüksiyon tetikleyebilir. Bu bulgu ancak hava yolu güvenliği sağlanmış kontrollü koşullarda değerlendirilmelidir.",
-        "Boyun yan grafisi çekilene kadar yalnız oksijen ve gözlemle beklemek": "Boyun grafisi stabil ve atipik olguda yardımcı olabilir; fakat bu hastada hipoksemi, stridor ve salya akışı varken görüntüleme hava yolu güvenceye alınmadan öncelik olamaz.",
-        "Anestezi-KBB eşliğinde kontrollü ortamda hava yolunu güvenceye almak": "Doğru seçenek budur. Epiglottit şüphesinde ilk güvenli yaklaşım çocuğu ajite etmeden, anestezi ve KBB/yoğun bakım hazırlığıyla kontrollü ortamda hava yolunu güvenceye almak; ardından intravenöz antibiyotik ve destek tedavisini başlatmaktır.",
-        "Ayaktan oral amoksisilin-klavulanat başlayıp ertesi gün kontrole çağırmak": "Ayaktan oral antibiyotik, toksik görünüm ve üst hava yolu tıkanıklığı bulguları olan çocukta güvenli değildir. Bu tablo yatış, hava yolu hazırlığı ve intravenöz tedavi gerektirir."
+          "Nebülize adrenalin ve deksametazon verip serviste yanıt beklemek": "Nebülize adrenalin ve deksametazon krup yönetiminde kullanılabilir; ancak bu olguda havlar tarzda öksürükten çok salya akışı, yutamama, tripod eğilimi ve toksik görünüm ön plandadır. Serviste yanıt beklemek üst hava yolu kapanması riskini artırır.",
+          "Dil basacağı ile orofarenksi açarak epiglotu doğrudan değerlendirmek": "Epiglottit şüphesinde dil basacağıyla boğaz muayenesi çocuğu ajite ederek laringospazm veya tam obstrüksiyon tetikleyebilir. Bu değerlendirme ancak hava yolu güvenliği sağlanmış kontrollü koşullarda düşünülmelidir.",
+          "Boyun yan grafisi çekilene kadar oksijen ve gözlemle beklemek": "Boyun yan grafisi stabil ve hafif olgularda yardımcı olabilir; fakat bu çocukta hipoksemi, istirahat stridoru ve salya akışı varken görüntüleme hava yolu güvenliğinin önüne geçemez.",
+          "Anestezi-KBB eşliğinde kontrollü ortamda hava yolunu güvenceye almak": "Doğru yaklaşım, hava yolu kaybı riski yüksek olan çocuğu ajite etmeden anestezi ve KBB/yoğun bakım hazırlığıyla kontrollü ortamda hava yolunu güvenceye almaktır; çünkü salya akışı, yutamama, tripod eğilimi ve istirahatte stridor tanısal kesinlikten önce hava yolu güvenliğini önceliklendirir.",
+          "İntravenöz antibiyotik başlayıp hava yolu açısından pasif izlem yapmak": "İntravenöz antibiyotik epiglottit tedavisinin parçasıdır; ancak hava yolu riski kontrol altına alınmadan tek başına antibiyotik başlamak ilk güvenli basamak değildir."
       },
-      "answerFeedback": {
-        "summary": "Bu çocukta yüksek ateş, toksik görünüm, salya akışı, yutamama, boğuk ses, tripod pozisyonu ve istirahatte stridor epiglottit/akut supraglottik obstrüksiyon paternini oluşturur. Epiglottit şüphesinde boğazı zorlayıcı muayene ve görüntüleme hava yolunu kaybettirebilir; bu nedenle ilk güvenli adım kontrollü koşullarda hava yolunu güvenceye almak, ardından intravenöz antibiyotik ve yoğun bakım izlemi başlatmaktır.",
-        "whyCorrect": "Bu çocukta yüksek ateş, toksik görünüm, salya akışı, yutamama, boğuk ses, tripod pozisyonu ve istirahatte stridor epiglottit/akut supraglottik obstrüksiyon paternini oluşturur. Epiglottit şüphesinde boğazı zorlayıcı muayene ve görüntüleme hava yolunu kaybettirebilir; bu nedenle ilk güvenli adım kontrollü koşullarda hava yolunu güvenceye almak, ardından intravenöz antibiyotik ve yoğun bakım izlemi başlatmaktır.",
-        "rationale": "Bu çocukta yüksek ateş, toksik görünüm, salya akışı, yutamama, boğuk ses, tripod pozisyonu ve istirahatte stridor epiglottit/akut supraglottik obstrüksiyon paternini oluşturur. Epiglottit şüphesinde boğazı zorlayıcı muayene ve görüntüleme hava yolunu kaybettirebilir; bu nedenle ilk güvenli adım kontrollü koşullarda hava yolunu güvenceye almak, ardından intravenöz antibiyotik ve yoğun bakım izlemi başlatmaktır.",
-        "correctOptionFeedback": "Bu çocukta yüksek ateş, toksik görünüm, salya akışı, yutamama, boğuk ses, tripod pozisyonu ve istirahatte stridor epiglottit/akut supraglottik obstrüksiyon paternini oluşturur. Epiglottit şüphesinde boğazı zorlayıcı muayene ve görüntüleme hava yolunu kaybettirebilir; bu nedenle ilk güvenli adım kontrollü koşullarda hava yolunu güvenceye almak, ardından intravenöz antibiyotik ve yoğun bakım izlemi başlatmaktır.",
-        "keyClues": [
-          "Yüksek ateş, toksik görünüm ve hızlı kötüleşme basit viral krup yerine invaziv üst hava yolu enfeksiyonunu düşündürür.",
-          "Salya akışı, yutamama, boğuk ses ve tripod pozisyonu supraglottik hava yolu obstrüksiyonu için kritik klinik paterndir.",
-          "SpO₂’nin oda havasında %91–92 olması ve istirahatte inspiratuvar stridor hava yolunun güvenceye alınmasını görüntüleme veya boğaz muayenesinden öne geçirir.",
-          "Lökositoz ve CRP yüksekliği bakteriyel/invaziv enfeksiyon olasılığını destekler; ancak tanı ve ilk yaklaşım klinik hava yolu riski üzerinden belirlenir."
-        ],
-        "evidenceChain": [
-          {
-            "text": "Yüksek ateş, toksik görünüm ve hızlı kötüleşme basit viral krup yerine invaziv üst hava yolu enfeksiyonunu düşündürür.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Salya akışı, yutamama, boğuk ses ve tripod pozisyonu supraglottik hava yolu obstrüksiyonu için kritik klinik paterndir.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "SpO₂’nin oda havasında %91–92 olması ve istirahatte inspiratuvar stridor hava yolunun güvenceye alınmasını görüntüleme veya boğaz muayenesinden öne geçirir.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Lökositoz ve CRP yüksekliği bakteriyel/invaziv enfeksiyon olasılığını destekler; ancak tanı ve ilk yaklaşım klinik hava yolu riski üzerinden belirlenir.",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "examPearl": "Epiglottitte salya akışı + tripod pozisyonu + toksik görünüm varsa ilk adım kontrollü ortamda hava yolunu güvenceye almaktır.",
-        "pearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Epiglottitte salya akışı + tripod pozisyonu + toksik görünüm varsa ilk adım kontrollü ortamda hava yolunu güvenceye almaktır."
-          }
-        ],
-        "clinicalPearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Epiglottitte salya akışı + tripod pozisyonu + toksik görünüm varsa ilk adım kontrollü ortamda hava yolunu güvenceye almaktır."
-          }
-        ],
-        "optionComparison": {
-          "Nebülize adrenalin ve deksametazon verip yanıtı serviste izlemek": "Nebülize adrenalin ve deksametazon krup için uygun olabilir; ancak bu çocukta ani toksik görünüm, salya akışı, yutamama, boğuk ses ve tripod pozisyonu epiglottit/üst hava yolu obstrüksiyonu düşündürür. Yanıt beklemek hava yolu kapanmasını geciktirebilir.",
-          "Dil basacağı ile orofarenksi açarak epiglotu doğrudan görmek": "Doğrudan orofarenks muayenesi epiglottit şüphesinde laringospazm ve tam obstrüksiyon tetikleyebilir. Bu bulgu ancak hava yolu güvenliği sağlanmış kontrollü koşullarda değerlendirilmelidir.",
-          "Boyun yan grafisi çekilene kadar yalnız oksijen ve gözlemle beklemek": "Boyun grafisi stabil ve atipik olguda yardımcı olabilir; fakat bu hastada hipoksemi, stridor ve salya akışı varken görüntüleme hava yolu güvenceye alınmadan öncelik olamaz.",
-          "Anestezi-KBB eşliğinde kontrollü ortamda hava yolunu güvenceye almak": "Doğru seçenek budur. Epiglottit şüphesinde ilk güvenli yaklaşım çocuğu ajite etmeden, anestezi ve KBB/yoğun bakım hazırlığıyla kontrollü ortamda hava yolunu güvenceye almak; ardından intravenöz antibiyotik ve destek tedavisini başlatmaktır.",
-          "Ayaktan oral amoksisilin-klavulanat başlayıp ertesi gün kontrole çağırmak": "Ayaktan oral antibiyotik, toksik görünüm ve üst hava yolu tıkanıklığı bulguları olan çocukta güvenli değildir. Bu tablo yatış, hava yolu hazırlığı ve intravenöz tedavi gerektirir."
-        },
-        "whyWrong": {
-          "Nebülize adrenalin ve deksametazon verip yanıtı serviste izlemek": "Nebülize adrenalin ve deksametazon krup için uygun olabilir; ancak bu çocukta ani toksik görünüm, salya akışı, yutamama, boğuk ses ve tripod pozisyonu epiglottit/üst hava yolu obstrüksiyonu düşündürür. Yanıt beklemek hava yolu kapanmasını geciktirebilir.",
-          "Dil basacağı ile orofarenksi açarak epiglotu doğrudan görmek": "Doğrudan orofarenks muayenesi epiglottit şüphesinde laringospazm ve tam obstrüksiyon tetikleyebilir. Bu bulgu ancak hava yolu güvenliği sağlanmış kontrollü koşullarda değerlendirilmelidir.",
-          "Boyun yan grafisi çekilene kadar yalnız oksijen ve gözlemle beklemek": "Boyun grafisi stabil ve atipik olguda yardımcı olabilir; fakat bu hastada hipoksemi, stridor ve salya akışı varken görüntüleme hava yolu güvenceye alınmadan öncelik olamaz.",
-          "Ayaktan oral amoksisilin-klavulanat başlayıp ertesi gün kontrole çağırmak": "Ayaktan oral antibiyotik, toksik görünüm ve üst hava yolu tıkanıklığı bulguları olan çocukta güvenli değildir. Bu tablo yatış, hava yolu hazırlığı ve intravenöz tedavi gerektirir."
-        },
-        "managementSteps": [
-          "Çocuğu ajite etmeden oksijen ve monitörizasyon sağla.",
-          "Anestezi, KBB ve yoğun bakım ekibiyle kontrollü hava yolu hazırlığı yap.",
-          "Hava yolu güvenceye alındıktan sonra intravenöz antibiyotik ve destek tedavisi başlat."
-        ],
-        "management": [
-          "Çocuğu ajite etmeden oksijen ve monitörizasyon sağla.",
-          "Anestezi, KBB ve yoğun bakım ekibiyle kontrollü hava yolu hazırlığı yap.",
-          "Hava yolu güvenceye alındıktan sonra intravenöz antibiyotik ve destek tedavisi başlat."
-        ],
-        "learningOutcome": "Epiglottitte acil hava yolu önceliğini tanısal işlemlerden ayırabilme.",
-        "coreKnowledge": "Epiglottit kuşkusunda tanı kliniktir; çocuk ajite edilmez, dil basacağıyla boğaz muayenesi yapılmaz ve görüntüleme hava yolu güvenliği sağlanmadan öncelik haline getirilmez."
-      },
-      "whyCorrect": "Bu çocukta yüksek ateş, toksik görünüm, salya akışı, yutamama, boğuk ses, tripod pozisyonu ve istirahatte stridor epiglottit/akut supraglottik obstrüksiyon paternini oluşturur. Epiglottit şüphesinde boğazı zorlayıcı muayene ve görüntüleme hava yolunu kaybettirebilir; bu nedenle ilk güvenli adım kontrollü koşullarda hava yolunu güvenceye almak, ardından intravenöz antibiyotik ve yoğun bakım izlemi başlatmaktır.",
       "evidenceChain": [
-        {
-          "text": "Yüksek ateş, toksik görünüm ve hızlı kötüleşme basit viral krup yerine invaziv üst hava yolu enfeksiyonunu düşündürür.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Salya akışı, yutamama, boğuk ses ve tripod pozisyonu supraglottik hava yolu obstrüksiyonu için kritik klinik paterndir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "SpO₂’nin oda havasında %91–92 olması ve istirahatte inspiratuvar stridor hava yolunun güvenceye alınmasını görüntüleme veya boğaz muayenesinden öne geçirir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Lökositoz ve CRP yüksekliği bakteriyel/invaziv enfeksiyon olasılığını destekler; ancak tanı ve ilk yaklaşım klinik hava yolu riski üzerinden belirlenir.",
-          "weight": "medium",
-          "source": "case"
-        }
+          {
+              "text": "Hızlı başlayan yüksek ateş ve toksik görünüm → basit viral krup yerine invaziv üst hava yolu enfeksiyonu olasılığını artırır.",
+              "weight": "high",
+              "source": "case"
+          },
+          {
+              "text": "Salya akışı, yutamama, boğuk ses ve tripod eğilimi → supraglottik obstrüksiyon paternini gösterir.",
+              "weight": "high",
+              "source": "case"
+          },
+          {
+              "text": "İstirahatte inspiratuvar stridor ve SpO₂ %91 → hava yolu darlığının klinik olarak ağırlaştığını gösterir.",
+              "weight": "medium",
+              "source": "case"
+          },
+          {
+              "text": "Dil basacağı ile muayenenin yapılmamış olması → çocuğu ajite eden işlemlerden kaçınılması gerektiğini destekler.",
+              "weight": "medium",
+              "source": "case"
+          }
       ],
-      "coreKnowledge": "Epiglottit kuşkusunda tanı kliniktir; çocuk ajite edilmez, dil basacağıyla boğaz muayenesi yapılmaz ve görüntüleme hava yolu güvenliği sağlanmadan öncelik haline getirilmez.",
-      "examPearl": "Epiglottitte salya akışı + tripod pozisyonu + toksik görünüm varsa ilk adım kontrollü ortamda hava yolunu güvenceye almaktır.",
       "whyWrong": {
-        "Nebülize adrenalin ve deksametazon verip yanıtı serviste izlemek": "Nebülize adrenalin ve deksametazon krup için uygun olabilir; ancak bu çocukta ani toksik görünüm, salya akışı, yutamama, boğuk ses ve tripod pozisyonu epiglottit/üst hava yolu obstrüksiyonu düşündürür. Yanıt beklemek hava yolu kapanmasını geciktirebilir.",
-        "Dil basacağı ile orofarenksi açarak epiglotu doğrudan görmek": "Doğrudan orofarenks muayenesi epiglottit şüphesinde laringospazm ve tam obstrüksiyon tetikleyebilir. Bu bulgu ancak hava yolu güvenliği sağlanmış kontrollü koşullarda değerlendirilmelidir.",
-        "Boyun yan grafisi çekilene kadar yalnız oksijen ve gözlemle beklemek": "Boyun grafisi stabil ve atipik olguda yardımcı olabilir; fakat bu hastada hipoksemi, stridor ve salya akışı varken görüntüleme hava yolu güvenceye alınmadan öncelik olamaz.",
-        "Ayaktan oral amoksisilin-klavulanat başlayıp ertesi gün kontrole çağırmak": "Ayaktan oral antibiyotik, toksik görünüm ve üst hava yolu tıkanıklığı bulguları olan çocukta güvenli değildir. Bu tablo yatış, hava yolu hazırlığı ve intravenöz tedavi gerektirir."
+          "Nebülize adrenalin ve deksametazon verip serviste yanıt beklemek": "Nebülize adrenalin ve deksametazon krup yönetiminde kullanılabilir; ancak bu olguda havlar tarzda öksürükten çok salya akışı, yutamama, tripod eğilimi ve toksik görünüm ön plandadır. Serviste yanıt beklemek üst hava yolu kapanması riskini artırır.",
+          "Dil basacağı ile orofarenksi açarak epiglotu doğrudan değerlendirmek": "Epiglottit şüphesinde dil basacağıyla boğaz muayenesi çocuğu ajite ederek laringospazm veya tam obstrüksiyon tetikleyebilir. Bu değerlendirme ancak hava yolu güvenliği sağlanmış kontrollü koşullarda düşünülmelidir.",
+          "Boyun yan grafisi çekilene kadar oksijen ve gözlemle beklemek": "Boyun yan grafisi stabil ve hafif olgularda yardımcı olabilir; fakat bu çocukta hipoksemi, istirahat stridoru ve salya akışı varken görüntüleme hava yolu güvenliğinin önüne geçemez.",
+          "İntravenöz antibiyotik başlayıp hava yolu açısından pasif izlem yapmak": "İntravenöz antibiyotik epiglottit tedavisinin parçasıdır; ancak hava yolu riski kontrol altına alınmadan tek başına antibiyotik başlamak ilk güvenli basamak değildir."
+      },
+      "aiMeta": {
+          "generatedAt": "manual-v397-pediatrics-second5-quality-correction",
+          "generator": "manual-editorial-pediatrics-second5-quality-correction",
+          "schemaVersion": "clinical-standard-v397",
+          "provider": "manual-clinical-editorial",
+          "validationWarnings": [],
+          "qualityPass": "pediatrics-second5-targeted-quality-correction",
+          "batch": "pediatrics-second-5",
+          "editedFields": [
+              "coreKnowledge",
+              "diagnosis",
+              "evidenceChain",
+              "exam",
+              "examPearl",
+              "feedback",
+              "investigations",
+              "optionComparison",
+              "patientIntro",
+              "question",
+              "stem"
+          ]
       }
-    },
-    "shuffleOptions": false,
-    "difficultyTag": "Acil",
-    "coreKnowledge": "Epiglottit kuşkusunda tanı kliniktir; çocuk ajite edilmez, dil basacağıyla boğaz muayenesi yapılmaz ve görüntüleme hava yolu güvenliği sağlanmadan öncelik haline getirilmez.",
-    "examPearl": "Epiglottitte salya akışı + tripod pozisyonu + toksik görünüm varsa ilk adım kontrollü ortamda hava yolunu güvenceye almaktır.",
-    "whyCorrect": "Bu çocukta yüksek ateş, toksik görünüm, salya akışı, yutamama, boğuk ses, tripod pozisyonu ve istirahatte stridor epiglottit/akut supraglottik obstrüksiyon paternini oluşturur. Epiglottit şüphesinde boğazı zorlayıcı muayene ve görüntüleme hava yolunu kaybettirebilir; bu nedenle ilk güvenli adım kontrollü koşullarda hava yolunu güvenceye almak, ardından intravenöz antibiyotik ve yoğun bakım izlemi başlatmaktır.",
-    "optionComparison": {
-      "Nebülize adrenalin ve deksametazon verip yanıtı serviste izlemek": "Nebülize adrenalin ve deksametazon krup için uygun olabilir; ancak bu çocukta ani toksik görünüm, salya akışı, yutamama, boğuk ses ve tripod pozisyonu epiglottit/üst hava yolu obstrüksiyonu düşündürür. Yanıt beklemek hava yolu kapanmasını geciktirebilir.",
-      "Dil basacağı ile orofarenksi açarak epiglotu doğrudan görmek": "Doğrudan orofarenks muayenesi epiglottit şüphesinde laringospazm ve tam obstrüksiyon tetikleyebilir. Bu bulgu ancak hava yolu güvenliği sağlanmış kontrollü koşullarda değerlendirilmelidir.",
-      "Boyun yan grafisi çekilene kadar yalnız oksijen ve gözlemle beklemek": "Boyun grafisi stabil ve atipik olguda yardımcı olabilir; fakat bu hastada hipoksemi, stridor ve salya akışı varken görüntüleme hava yolu güvenceye alınmadan öncelik olamaz.",
-      "Anestezi-KBB eşliğinde kontrollü ortamda hava yolunu güvenceye almak": "Doğru seçenek budur. Epiglottit şüphesinde ilk güvenli yaklaşım çocuğu ajite etmeden, anestezi ve KBB/yoğun bakım hazırlığıyla kontrollü ortamda hava yolunu güvenceye almak; ardından intravenöz antibiyotik ve destek tedavisini başlatmaktır.",
-      "Ayaktan oral amoksisilin-klavulanat başlayıp ertesi gün kontrole çağırmak": "Ayaktan oral antibiyotik, toksik görünüm ve üst hava yolu tıkanıklığı bulguları olan çocukta güvenli değildir. Bu tablo yatış, hava yolu hazırlığı ve intravenöz tedavi gerektirir."
-    },
-    "evidenceChain": [
-      {
-        "text": "Yüksek ateş, toksik görünüm ve hızlı kötüleşme basit viral krup yerine invaziv üst hava yolu enfeksiyonunu düşündürür.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Salya akışı, yutamama, boğuk ses ve tripod pozisyonu supraglottik hava yolu obstrüksiyonu için kritik klinik paterndir.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "SpO₂’nin oda havasında %91–92 olması ve istirahatte inspiratuvar stridor hava yolunun güvenceye alınmasını görüntüleme veya boğaz muayenesinden öne geçirir.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Lökositoz ve CRP yüksekliği bakteriyel/invaziv enfeksiyon olasılığını destekler; ancak tanı ve ilk yaklaşım klinik hava yolu riski üzerinden belirlenir.",
-        "weight": "medium",
-        "source": "case"
-      }
-    ],
-    "whyWrong": {
-      "Nebülize adrenalin ve deksametazon verip yanıtı serviste izlemek": "Nebülize adrenalin ve deksametazon krup için uygun olabilir; ancak bu çocukta ani toksik görünüm, salya akışı, yutamama, boğuk ses ve tripod pozisyonu epiglottit/üst hava yolu obstrüksiyonu düşündürür. Yanıt beklemek hava yolu kapanmasını geciktirebilir.",
-      "Dil basacağı ile orofarenksi açarak epiglotu doğrudan görmek": "Doğrudan orofarenks muayenesi epiglottit şüphesinde laringospazm ve tam obstrüksiyon tetikleyebilir. Bu bulgu ancak hava yolu güvenliği sağlanmış kontrollü koşullarda değerlendirilmelidir.",
-      "Boyun yan grafisi çekilene kadar yalnız oksijen ve gözlemle beklemek": "Boyun grafisi stabil ve atipik olguda yardımcı olabilir; fakat bu hastada hipoksemi, stridor ve salya akışı varken görüntüleme hava yolu güvenceye alınmadan öncelik olamaz.",
-      "Ayaktan oral amoksisilin-klavulanat başlayıp ertesi gün kontrole çağırmak": "Ayaktan oral antibiyotik, toksik görünüm ve üst hava yolu tıkanıklığı bulguları olan çocukta güvenli değildir. Bu tablo yatış, hava yolu hazırlığı ve intravenöz tedavi gerektirir."
-    },
-    "aiMeta": {
-      "generatedAt": "manual-v397-pediatrics-second5-ultra-refined",
-      "generator": "manual-editorial-pediatrics-second-batch-refinement",
-      "schemaVersion": "clinical-standard-v397",
-      "provider": "manual-editorial",
-      "validationWarnings": [],
-      "qualityPass": "pediatrics-second5-ultra-refine",
-      "batch": "pediatrics-second-5"
-    }
   },
   {
     "id": "v166-new-036-ates-ve-yeni-ufurum",
@@ -26734,599 +26749,591 @@ export const rawCases = [
       "note": "DKA + hipokalemi vakasında potasyum güvenlik kapısı belirginleştirildi; insülini geciktirme mantığı tetkik yorumuna işlendi."
     }
   },
-  {
-    "id": "v167-new-043-premature-bebekte-solunum-sikintisi",
-    "branchId": "pediatrics",
-    "caseType": "standard",
-    "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
-    "title": "Prematüre yenidoğanda erken solunum sıkıntısı",
-    "difficulty": "Orta-Zor",
-    "clinicalFocus": "Prematüre yenidoğanda erken başlayan solunum sıkıntısını, grafi ve kan gazı bulgularıyla surfaktan eksikliği mekanizmasına bağlama.",
-    "learningTarget": "Neonatal respiratuvar distres sendromunda surfaktan eksikliğinin yüzey gerilimi, alveoler kollaps ve gaz değişimi üzerindeki etkisini açıklayabilme.",
-    "demographics": "29 haftalık, 1280 g erkek yenidoğan",
-    "setting": "Yenidoğan yoğun bakım ünitesi",
-    "chiefComplaint": "Prematüre bebek doğumdan kısa süre sonra takipne, inleme ve oksijen ihtiyacı nedeniyle yenidoğan yoğun bakıma alınıyor.",
-    "stem": "Anne preterm eylem nedeniyle acil doğurtulmuştur; antenatal steroid kürü tamamlanamamıştır. Bebekte doğumdan sonraki ilk 20 dakikada takipne, ekspiryumda inleme ve subkostal çekilmeler belirginleşmiştir. Amniyon sıvısı berraktır; mekonyum aspirasyonu öyküsü yoktur.",
-    "patientIntro": {
-      "profile": "29 haftalık, 1280 g erkek yenidoğan, yenidoğan yoğun bakımda değerlendiriliyor.",
-      "presentation": "Doğumdan hemen sonra takipne, inleme, retraksiyon ve oksijen ihtiyacı gelişmiştir.",
-      "historySummary": "Anne preterm eylem nedeniyle acil doğurtulmuş, antenatal steroid kürünün tamamlanamadığı doğum kayıtlarından öğrenilmiştir. Bebekte doğumdan sonraki ilk dakikalarda giderek artan hızlı soluma, inleme ve emmeye başlayamama fark edilmiştir. Yenidoğan ekibi kısa sürede oksijen ihtiyacının arttığını ve morarmanın özellikle ağlama sırasında belirginleştiğini bildirmiştir. Amniyon sıvısı berraktır; mekonyum aspirasyonu, uzamış membran rüptürü veya belirgin maternal ateş öyküsü yoktur."
-    },
-    "vitals": {
-      "TA": "48/30 mmHg",
-      "Nabız": "164/dk",
-      "Solunum": "72/dk",
-      "SpO2": "%86, oda havasında; CPAP ile %92",
-      "Ateş": "36.5 °C",
-      "Şok indeksi": "3.4 - yenidoğanda tek başına erişkin şok indeksiyle yorumlanmaz"
-    },
-    "exam": [
-      "Prematüre görünümde, takipneik ve ekspiryumda inleyen yenidoğan izlenir.",
-      "Subkostal ve interkostal çekilmeler belirgindir; burun kanadı solunumu vardır.",
-      "Her iki hemitoraksta hava girişi azalmış, yaygın ince krepitan raller duyulur; belirgin asimetrik solunum sesi kaybı yoktur.",
-      "Kardiyak üfürüm belirgin değildir; batın skafid değildir."
-    ],
-    "investigations": [
-      {
-        "id": "v167-new-043-premature-bebekte-solunum-sikintisi-silverman",
-        "label": "Yenidoğan solunum sıkıntısı skoru",
-        "title": "Yenidoğan solunum sıkıntısı skoru",
-        "orderLabel": "Yenidoğan solunum sıkıntısı skoru",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "category": "respiratory",
-        "testTypeCategory": "respiratory",
-        "summary": "İnleme, retraksiyon ve burun kanadı solunumu solunum sıkıntısının klinik ağırlığını gösterir.",
-        "clinicalMeaning": "İnleme, retraksiyon ve burun kanadı solunumu solunum sıkıntısının klinik ağırlığını gösterir.",
-        "result": {
-          "title": "Yenidoğan solunum sıkıntısı skoru",
-          "summary": "İnleme, retraksiyon ve burun kanadı solunumu solunum sıkıntısının klinik ağırlığını gösterir.",
-          "interpretation": "İnleme, retraksiyon ve burun kanadı solunumu solunum sıkıntısının klinik ağırlığını gösterir.",
-          "values": [
-            [
-              "İnleme",
-              "Ekspiryumda duyuluyor",
-              "—",
-              "Solunum sıkıntısı"
-            ],
-            [
-              "Retraksiyon",
-              "Subkostal ve interkostal çekilme belirgin",
-              "—",
-              "Artmış solunum işi"
-            ],
-            [
-              "Burun kanadı solunumu",
-              "Mevcut",
-              "—",
-              "Yenidoğan distresi"
-            ]
-          ],
-          "rows": [
-            [
-              "İnleme",
-              "Ekspiryumda duyuluyor",
-              "—",
-              "Solunum sıkıntısı"
-            ],
-            [
-              "Retraksiyon",
-              "Subkostal ve interkostal çekilme belirgin",
-              "—",
-              "Artmış solunum işi"
-            ],
-            [
-              "Burun kanadı solunumu",
-              "Mevcut",
-              "—",
-              "Yenidoğan distresi"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "İnleme",
-            "Ekspiryumda duyuluyor",
-            "—",
-            "Solunum sıkıntısı"
-          ],
-          [
-            "Retraksiyon",
-            "Subkostal ve interkostal çekilme belirgin",
-            "—",
-            "Artmış solunum işi"
-          ],
-          [
-            "Burun kanadı solunumu",
-            "Mevcut",
-            "—",
-            "Yenidoğan distresi"
-          ]
-        ],
-        "postAnswerExplanation": "İnleme, retraksiyon ve burun kanadı solunumu solunum sıkıntısının klinik ağırlığını gösterir.",
-        "interpretation": "İnleme, retraksiyon ve burun kanadı solunumu solunum sıkıntısının klinik ağırlığını gösterir.",
-        "explanationAfterAnswer": "İnleme, retraksiyon ve burun kanadı solunumu solunum sıkıntısının klinik ağırlığını gösterir.",
-        "testValueLabel": "Tanısal değeri yüksek",
-        "clinicalPriorityLabel": "Tanısal değeri yüksek",
-        "educationalValue": "Tanısal değeri yüksek",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
-        "treatmentImpact": "Kararı destekler",
-        "orderRank": 10
+    {
+      "id": "v167-new-043-premature-bebekte-solunum-sikintisi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
+      "title": "Prematüre yenidoğanda erken solunum sıkıntısı",
+      "difficulty": "Orta-Zor",
+      "clinicalFocus": "Prematüre yenidoğanda erken başlayan solunum sıkıntısını, grafi ve kan gazı bulgularıyla surfaktan eksikliği mekanizmasına bağlama.",
+      "learningTarget": "Neonatal respiratuvar distres sendromunda surfaktan eksikliğinin yüzey gerilimi, alveoler kollaps ve gaz değişimi üzerindeki etkisini açıklayabilme.",
+      "demographics": "29 haftalık, 1280 g erkek yenidoğan",
+      "setting": "Yenidoğan yoğun bakım ünitesi",
+      "chiefComplaint": "Prematüre bebek doğumdan kısa süre sonra takipne, inleme ve oksijen ihtiyacı nedeniyle yenidoğan yoğun bakıma alınıyor.",
+      "stem": "Anne preterm eylem nedeniyle acil doğurtulmuştur ve antenatal steroid kürü tamamlanamamıştır. Bebekte doğumdan sonraki ilk 20 dakika içinde hızlı soluma, ekspiryumda inleme ve subkostal çekilmeler belirginleşmiştir. Yenidoğan ekibi, oksijen ihtiyacının giderek arttığını ve bebeğin beslenmeye başlayamadığını bildirmiştir. Amniyon sıvısı berraktır; mekonyum aspirasyonu, belirgin maternal ateş veya uzamış membran rüptürü öyküsü yoktur.",
+      "patientIntro": {
+          "profile": "29 haftalık, 1280 g erkek yenidoğan, yenidoğan yoğun bakımda değerlendiriliyor.",
+          "presentation": "Doğumdan hemen sonra takipne, inleme, retraksiyon ve oksijen ihtiyacı gelişmiştir.",
+          "historySummary": "Anne preterm eylem nedeniyle acil doğurtulmuştur ve antenatal steroid kürü tamamlanamamıştır. Bebekte doğumdan sonraki ilk 20 dakika içinde hızlı soluma, ekspiryumda inleme ve subkostal çekilmeler belirginleşmiştir. Yenidoğan ekibi, oksijen ihtiyacının giderek arttığını ve bebeğin beslenmeye başlayamadığını bildirmiştir. Amniyon sıvısı berraktır; mekonyum aspirasyonu, belirgin maternal ateş veya uzamış membran rüptürü öyküsü yoktur."
       },
-      {
-        "id": "v167-new-043-premature-bebekte-solunum-sikintisi-blood-gas",
-        "label": "Arteriyel/kapiller kan gazı",
-        "title": "Arteriyel/kapiller kan gazı",
-        "orderLabel": "Arteriyel/kapiller kan gazı",
-        "type": "bloodGas",
-        "priority": "essential",
-        "subtype": "",
-        "category": "respiratory",
-        "testTypeCategory": "respiratory",
-        "summary": "Hipoksemi ve hafif respiratuvar asidoz alveoler kollapsa bağlı gaz değişim bozukluğunu destekler.",
-        "clinicalMeaning": "Hipoksemi ve hafif respiratuvar asidoz alveoler kollapsa bağlı gaz değişim bozukluğunu destekler.",
-        "result": {
-          "title": "Arteriyel/kapiller kan gazı",
-          "summary": "Hipoksemi ve hafif respiratuvar asidoz alveoler kollapsa bağlı gaz değişim bozukluğunu destekler.",
-          "interpretation": "Hipoksemi ve hafif respiratuvar asidoz alveoler kollapsa bağlı gaz değişim bozukluğunu destekler.",
-          "values": [
-            [
-              "pH",
-              "7.28",
-              "7.35–7.45",
-              "Asidemi"
-            ],
-            [
-              "PaCO₂",
-              "55 mmHg",
-              "35–45 mmHg",
-              "Yüksek"
-            ],
-            [
-              "PaO₂",
-              "48 mmHg",
-              "≥60 mmHg",
-              "Düşük"
-            ],
-            [
-              "HCO₃⁻",
-              "24 mEq/L",
-              "22–26 mEq/L",
-              "Normal"
-            ]
-          ],
-          "rows": [
-            [
-              "pH",
-              "7.28",
-              "7.35–7.45",
-              "Asidemi"
-            ],
-            [
-              "PaCO₂",
-              "55 mmHg",
-              "35–45 mmHg",
-              "Yüksek"
-            ],
-            [
-              "PaO₂",
-              "48 mmHg",
-              "≥60 mmHg",
-              "Düşük"
-            ],
-            [
-              "HCO₃⁻",
-              "24 mEq/L",
-              "22–26 mEq/L",
-              "Normal"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "pH",
-            "7.28",
-            "7.35–7.45",
-            "Asidemi"
-          ],
-          [
-            "PaCO₂",
-            "55 mmHg",
-            "35–45 mmHg",
-            "Yüksek"
-          ],
-          [
-            "PaO₂",
-            "48 mmHg",
-            "≥60 mmHg",
-            "Düşük"
-          ],
-          [
-            "HCO₃⁻",
-            "24 mEq/L",
-            "22–26 mEq/L",
-            "Normal"
-          ]
-        ],
-        "postAnswerExplanation": "Hipoksemi ve hafif respiratuvar asidoz alveoler kollapsa bağlı gaz değişim bozukluğunu destekler.",
-        "interpretation": "Hipoksemi ve hafif respiratuvar asidoz alveoler kollapsa bağlı gaz değişim bozukluğunu destekler.",
-        "explanationAfterAnswer": "Hipoksemi ve hafif respiratuvar asidoz alveoler kollapsa bağlı gaz değişim bozukluğunu destekler.",
-        "testValueLabel": "Tanısal değeri yüksek",
-        "clinicalPriorityLabel": "Tanısal değeri yüksek",
-        "educationalValue": "Tanısal değeri yüksek",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "clinicalFlowOrder": 22,
-        "flowOrder": 22,
-        "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
-        "treatmentImpact": "Kararı destekler",
-        "orderRank": 22
+      "vitals": {
+          "TA": "48/30 mmHg",
+          "Nabız": "164/dk",
+          "Solunum": "72/dk",
+          "SpO2": "%86, oda havasında; CPAP ile %92",
+          "Ateş": "36.5 °C",
+          "Şok indeksi": "3.4 - yenidoğanda tek başına erişkin şok indeksiyle yorumlanmaz"
       },
-      {
-        "id": "v167-new-043-premature-bebekte-solunum-sikintisi-chest-xray",
-        "label": "Akciğer grafisi",
-        "title": "Akciğer grafisi",
-        "orderLabel": "Akciğer grafisi",
-        "type": "xray",
-        "priority": "essential",
-        "subtype": "",
-        "category": "imaging",
-        "testTypeCategory": "imaging",
-        "summary": "Düşük akciğer hacmi, diffüz retikülogranüler görünüm ve hava bronkogramları neonatal RDS için tipiktir.",
-        "clinicalMeaning": "Düşük akciğer hacmi, diffüz retikülogranüler görünüm ve hava bronkogramları neonatal RDS için tipiktir.",
-        "result": {
-          "title": "Akciğer grafisi",
-          "summary": "Düşük akciğer hacmi, diffüz retikülogranüler görünüm ve hava bronkogramları neonatal RDS için tipiktir.",
-          "interpretation": "Düşük akciğer hacmi, diffüz retikülogranüler görünüm ve hava bronkogramları neonatal RDS için tipiktir.",
-          "values": [
-            [
-              "Akciğer hacmi",
-              "Bilateral düşük volüm",
-              "—",
-              "RDS lehine"
-            ],
-            [
-              "Parankim görünümü",
-              "Diffüz retikülogranüler/ground-glass opasiteler",
-              "—",
-              "Surfaktan eksikliği paterni"
-            ],
-            [
-              "Hava bronkogramı",
-              "Bilateral belirgin",
-              "—",
-              "Alveoler kollaps ile uyumlu"
-            ]
-          ],
-          "rows": [
-            [
-              "Akciğer hacmi",
-              "Bilateral düşük volüm",
-              "—",
-              "RDS lehine"
-            ],
-            [
-              "Parankim görünümü",
-              "Diffüz retikülogranüler/ground-glass opasiteler",
-              "—",
-              "Surfaktan eksikliği paterni"
-            ],
-            [
-              "Hava bronkogramı",
-              "Bilateral belirgin",
-              "—",
-              "Alveoler kollaps ile uyumlu"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Akciğer hacmi",
-            "Bilateral düşük volüm",
-            "—",
-            "RDS lehine"
-          ],
-          [
-            "Parankim görünümü",
-            "Diffüz retikülogranüler/ground-glass opasiteler",
-            "—",
-            "Surfaktan eksikliği paterni"
-          ],
-          [
-            "Hava bronkogramı",
-            "Bilateral belirgin",
-            "—",
-            "Alveoler kollaps ile uyumlu"
-          ]
-        ],
-        "postAnswerExplanation": "Düşük akciğer hacmi, diffüz retikülogranüler görünüm ve hava bronkogramları neonatal RDS için tipiktir.",
-        "interpretation": "Düşük akciğer hacmi, diffüz retikülogranüler görünüm ve hava bronkogramları neonatal RDS için tipiktir.",
-        "explanationAfterAnswer": "Düşük akciğer hacmi, diffüz retikülogranüler görünüm ve hava bronkogramları neonatal RDS için tipiktir.",
-        "testValueLabel": "Kritik karar verdirir",
-        "clinicalPriorityLabel": "Kritik karar verdirir",
-        "educationalValue": "Kritik karar verdirir",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "clinicalFlowOrder": 34,
-        "flowOrder": 34,
-        "pediatricSafetyValue": "Kritik karar verdirir",
-        "treatmentImpact": "Tedavi sırasını belirler",
-        "orderRank": 34
-      },
-      {
-        "id": "v167-new-043-premature-bebekte-solunum-sikintisi-infection-screen",
-        "label": "Enfeksiyon tarama paneli",
-        "title": "Enfeksiyon tarama paneli",
-        "orderLabel": "Enfeksiyon tarama paneli",
-        "type": "lab",
-        "priority": "medium",
-        "subtype": "",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "summary": "Erken neonatal sepsis ayırıcı tanıda tutulur; bu örnekte inflamasyon belirteçleri RDS mekanizmasını baskın açıklamayı değiştirmez.",
-        "clinicalMeaning": "Erken neonatal sepsis ayırıcı tanıda tutulur; bu örnekte inflamasyon belirteçleri RDS mekanizmasını baskın açıklamayı değiştirmez.",
-        "result": {
-          "title": "Enfeksiyon tarama paneli",
-          "summary": "Erken neonatal sepsis ayırıcı tanıda tutulur; bu örnekte inflamasyon belirteçleri RDS mekanizmasını baskın açıklamayı değiştirmez.",
-          "interpretation": "Erken neonatal sepsis ayırıcı tanıda tutulur; bu örnekte inflamasyon belirteçleri RDS mekanizmasını baskın açıklamayı değiştirmez.",
-          "values": [
-            [
-              "Lökosit",
-              "9.800/mm³",
-              "Yenidoğan için yaklaşık 9.000–30.000/mm³",
-              "Yaşa uygun"
-            ],
-            [
-              "CRP",
-              "2 mg/L",
-              "<5 mg/L",
-              "Yüksek değil"
-            ],
-            [
-              "Kan kültürü",
-              "Alındı, üreme yok",
-              "—",
-              "Sepsis lehine değil"
-            ]
-          ],
-          "rows": [
-            [
-              "Lökosit",
-              "9.800/mm³",
-              "Yenidoğan için yaklaşık 9.000–30.000/mm³",
-              "Yaşa uygun"
-            ],
-            [
-              "CRP",
-              "2 mg/L",
-              "<5 mg/L",
-              "Yüksek değil"
-            ],
-            [
-              "Kan kültürü",
-              "Alındı, üreme yok",
-              "—",
-              "Sepsis lehine değil"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Lökosit",
-            "9.800/mm³",
-            "Yenidoğan için yaklaşık 9.000–30.000/mm³",
-            "Yaşa uygun"
-          ],
-          [
-            "CRP",
-            "2 mg/L",
-            "<5 mg/L",
-            "Yüksek değil"
-          ],
-          [
-            "Kan kültürü",
-            "Alındı, üreme yok",
-            "—",
-            "Sepsis lehine değil"
-          ]
-        ],
-        "postAnswerExplanation": "Erken neonatal sepsis ayırıcı tanıda tutulur; bu örnekte inflamasyon belirteçleri RDS mekanizmasını baskın açıklamayı değiştirmez.",
-        "interpretation": "Erken neonatal sepsis ayırıcı tanıda tutulur; bu örnekte inflamasyon belirteçleri RDS mekanizmasını baskın açıklamayı değiştirmez.",
-        "explanationAfterAnswer": "Erken neonatal sepsis ayırıcı tanıda tutulur; bu örnekte inflamasyon belirteçleri RDS mekanizmasını baskın açıklamayı değiştirmez.",
-        "testValueLabel": "Destekleyici veri",
-        "clinicalPriorityLabel": "Destekleyici veri",
-        "educationalValue": "Destekleyici veri",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "clinicalFlowOrder": 48,
-        "flowOrder": 48,
-        "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
-        "treatmentImpact": "Kararı destekler",
-        "orderRank": 48
-      }
-    ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": {
-      "enabled": false
-    },
-    "hideExamSignal": true,
-    "question": "Bu yenidoğandaki solunum sıkıntısının temel patofizyolojik mekanizması aşağıdakilerden hangisidir?",
-    "questionType": "mechanism",
-    "answerTarget": "pathophysiology",
-    "diagnosis": {
-      "correct": "Tip II pnömosit immatüritesine bağlı surfaktan eksikliği ve alveoler kollaps",
-      "options": [
-        "Tip II pnömosit immatüritesine bağlı surfaktan eksikliği ve alveoler kollaps",
-        "Doğum sonrası fetal akciğer sıvısının gecikmiş temizlenmesine bağlı geçici takipne",
-        "Mekonyum aspirasyonuna bağlı distal hava yolu tıkanıklığı ve hava hapsi",
-        "Konjenital diyafram hernisine bağlı pulmoner hipoplazi ve mediastinal şift",
-        "Pulmoner venöz dönüş anomalisi nedeniyle pulmoner venöz konjesyon"
+      "exam": [
+          "Prematüre görünümde, takipneik ve ekspiryumda inleyen yenidoğan izlenir.",
+          "Subkostal ve interkostal çekilmeler belirgindir; burun kanadı solunumu vardır.",
+          "Her iki hemitoraksta hava girişi azalmış, yaygın ince krepitan raller duyulur; belirgin asimetrik solunum sesi kaybı yoktur.",
+          "Kardiyak üfürüm belirgin değildir; batın skafid değildir."
       ],
+      "investigations": [
+          {
+              "id": "v167-new-043-premature-bebekte-solunum-sikintisi-silverman",
+              "label": "Yenidoğan solunum sıkıntısı bulguları",
+              "title": "Yenidoğan solunum sıkıntısı bulguları",
+              "orderLabel": "Yenidoğan solunum sıkıntısı bulguları",
+              "type": "clinical",
+              "priority": "essential",
+              "subtype": "",
+              "category": "clinicalAssessment",
+              "testTypeCategory": "clinicalAssessment",
+              "summary": "İnleme, retraksiyon ve burun kanadı solunumu doğumdan hemen sonra başlayan solunum sıkıntısının klinik ağırlığını gösterir.",
+              "clinicalMeaning": "İnleme, retraksiyon ve burun kanadı solunumu doğumdan hemen sonra başlayan solunum sıkıntısının klinik ağırlığını gösterir.",
+              "result": {
+                  "title": "Yenidoğan solunum sıkıntısı bulguları",
+                  "summary": "İnleme, retraksiyon ve burun kanadı solunumu doğumdan hemen sonra başlayan solunum sıkıntısının klinik ağırlığını gösterir.",
+                  "interpretation": "İnleme, retraksiyon ve burun kanadı solunumu doğumdan hemen sonra başlayan solunum sıkıntısının klinik ağırlığını gösterir.",
+                  "values": [
+                      {
+                          "parameter": "İnleme",
+                          "value": "Ekspiryumda duyuluyor",
+                          "note": "Solunum sıkıntısı bulgusu"
+                      },
+                      {
+                          "parameter": "Retraksiyon",
+                          "value": "Subkostal ve interkostal çekilme belirgin",
+                          "note": "Artmış solunum işi"
+                      },
+                      {
+                          "parameter": "Burun kanadı solunumu",
+                          "value": "Mevcut",
+                          "note": "Yenidoğan distresi"
+                      },
+                      {
+                          "parameter": "Başlangıç zamanı",
+                          "value": "Doğumdan sonraki ilk dakikalarda belirginleşti",
+                          "note": "Erken neonatal başlangıç"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "İnleme",
+                          "value": "Ekspiryumda duyuluyor",
+                          "note": "Solunum sıkıntısı bulgusu"
+                      },
+                      {
+                          "parameter": "Retraksiyon",
+                          "value": "Subkostal ve interkostal çekilme belirgin",
+                          "note": "Artmış solunum işi"
+                      },
+                      {
+                          "parameter": "Burun kanadı solunumu",
+                          "value": "Mevcut",
+                          "note": "Yenidoğan distresi"
+                      },
+                      {
+                          "parameter": "Başlangıç zamanı",
+                          "value": "Doğumdan sonraki ilk dakikalarda belirginleşti",
+                          "note": "Erken neonatal başlangıç"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "İnleme",
+                      "value": "Ekspiryumda duyuluyor",
+                      "note": "Solunum sıkıntısı bulgusu"
+                  },
+                  {
+                      "parameter": "Retraksiyon",
+                      "value": "Subkostal ve interkostal çekilme belirgin",
+                      "note": "Artmış solunum işi"
+                  },
+                  {
+                      "parameter": "Burun kanadı solunumu",
+                      "value": "Mevcut",
+                      "note": "Yenidoğan distresi"
+                  },
+                  {
+                      "parameter": "Başlangıç zamanı",
+                      "value": "Doğumdan sonraki ilk dakikalarda belirginleşti",
+                      "note": "Erken neonatal başlangıç"
+                  }
+              ],
+              "postAnswerExplanation": "İnleme, retraksiyon ve burun kanadı solunumu doğumdan hemen sonra başlayan solunum sıkıntısının klinik ağırlığını gösterir.",
+              "interpretation": "İnleme, retraksiyon ve burun kanadı solunumu doğumdan hemen sonra başlayan solunum sıkıntısının klinik ağırlığını gösterir.",
+              "explanationAfterAnswer": "İnleme, retraksiyon ve burun kanadı solunumu doğumdan hemen sonra başlayan solunum sıkıntısının klinik ağırlığını gösterir.",
+              "testValueLabel": "Klinik ağırlık verisi",
+              "clinicalPriorityLabel": "Klinik ağırlık verisi",
+              "educationalValue": "Klinik ağırlık verisi",
+              "scoreImpact": 4,
+              "scoreValue": 4,
+              "clinicalFlowOrder": 10,
+              "flowOrder": 10,
+              "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
+              "treatmentImpact": "Kararı destekler",
+              "orderRank": 10
+          },
+          {
+              "id": "v167-new-043-premature-bebekte-solunum-sikintisi-blood-gas",
+              "label": "Arteriyel/kapiller kan gazı",
+              "title": "Arteriyel/kapiller kan gazı",
+              "orderLabel": "Arteriyel/kapiller kan gazı",
+              "type": "bloodGas",
+              "priority": "essential",
+              "subtype": "",
+              "category": "bloodGas",
+              "testTypeCategory": "bloodGas",
+              "summary": "Hipoksemi ve hafif respiratuvar asidoz alveoler ventilasyon ve gaz değişim bozukluğunu destekler.",
+              "clinicalMeaning": "Hipoksemi ve hafif respiratuvar asidoz alveoler ventilasyon ve gaz değişim bozukluğunu destekler.",
+              "result": {
+                  "title": "Arteriyel/kapiller kan gazı",
+                  "summary": "Hipoksemi ve hafif respiratuvar asidoz alveoler ventilasyon ve gaz değişim bozukluğunu destekler.",
+                  "interpretation": "Hipoksemi ve hafif respiratuvar asidoz alveoler ventilasyon ve gaz değişim bozukluğunu destekler.",
+                  "values": [
+                      {
+                          "parameter": "pH",
+                          "value": "7.28",
+                          "reference": "7.35–7.45",
+                          "note": "Asidemi"
+                      },
+                      {
+                          "parameter": "PaCO₂",
+                          "value": "55 mmHg",
+                          "reference": "35–45 mmHg",
+                          "note": "Yüksek"
+                      },
+                      {
+                          "parameter": "PaO₂",
+                          "value": "48 mmHg",
+                          "reference": "≥60 mmHg",
+                          "note": "Düşük"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "pH",
+                          "value": "7.28",
+                          "reference": "7.35–7.45",
+                          "note": "Asidemi"
+                      },
+                      {
+                          "parameter": "PaCO₂",
+                          "value": "55 mmHg",
+                          "reference": "35–45 mmHg",
+                          "note": "Yüksek"
+                      },
+                      {
+                          "parameter": "PaO₂",
+                          "value": "48 mmHg",
+                          "reference": "≥60 mmHg",
+                          "note": "Düşük"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "pH",
+                      "value": "7.28",
+                      "reference": "7.35–7.45",
+                      "note": "Asidemi"
+                  },
+                  {
+                      "parameter": "PaCO₂",
+                      "value": "55 mmHg",
+                      "reference": "35–45 mmHg",
+                      "note": "Yüksek"
+                  },
+                  {
+                      "parameter": "PaO₂",
+                      "value": "48 mmHg",
+                      "reference": "≥60 mmHg",
+                      "note": "Düşük"
+                  }
+              ],
+              "postAnswerExplanation": "Hipoksemi ve hafif respiratuvar asidoz alveoler ventilasyon ve gaz değişim bozukluğunu destekler.",
+              "interpretation": "Hipoksemi ve hafif respiratuvar asidoz alveoler ventilasyon ve gaz değişim bozukluğunu destekler.",
+              "explanationAfterAnswer": "Hipoksemi ve hafif respiratuvar asidoz alveoler ventilasyon ve gaz değişim bozukluğunu destekler.",
+              "testValueLabel": "Kritik fizyolojik veri",
+              "clinicalPriorityLabel": "Kritik fizyolojik veri",
+              "educationalValue": "Kritik fizyolojik veri",
+              "scoreImpact": 4,
+              "scoreValue": 4,
+              "clinicalFlowOrder": 20,
+              "flowOrder": 20,
+              "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
+              "treatmentImpact": "Kararı destekler",
+              "orderRank": 20
+          },
+          {
+              "id": "v167-new-043-premature-bebekte-solunum-sikintisi-chest-xray",
+              "label": "Akciğer grafisi",
+              "title": "Akciğer grafisi",
+              "orderLabel": "Akciğer grafisi",
+              "type": "xray",
+              "priority": "essential",
+              "subtype": "",
+              "category": "imaging",
+              "testTypeCategory": "imaging",
+              "summary": "Düşük akciğer hacmi, diffüz retikülogranüler opasiteler ve hava bronkogramları prematüre yenidoğanda surfaktan eksikliği paternini destekler.",
+              "clinicalMeaning": "Düşük akciğer hacmi, diffüz retikülogranüler opasiteler ve hava bronkogramları prematüre yenidoğanda surfaktan eksikliği paternini destekler.",
+              "result": {
+                  "title": "Akciğer grafisi",
+                  "summary": "Düşük akciğer hacmi, diffüz retikülogranüler opasiteler ve hava bronkogramları prematüre yenidoğanda surfaktan eksikliği paternini destekler.",
+                  "interpretation": "Düşük akciğer hacmi, diffüz retikülogranüler opasiteler ve hava bronkogramları prematüre yenidoğanda surfaktan eksikliği paternini destekler.",
+                  "values": [
+                      {
+                          "parameter": "Akciğer hacmi",
+                          "value": "Bilateral düşük volüm",
+                          "note": "Atelektazi eğilimi"
+                      },
+                      {
+                          "parameter": "Parankim görünümü",
+                          "value": "Diffüz retikülogranüler/ground-glass opasiteler",
+                          "note": "RDS paterni"
+                      },
+                      {
+                          "parameter": "Hava bronkogramı",
+                          "value": "Bilateral belirgin",
+                          "note": "Alveoler kollapsla uyumlu"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Akciğer hacmi",
+                          "value": "Bilateral düşük volüm",
+                          "note": "Atelektazi eğilimi"
+                      },
+                      {
+                          "parameter": "Parankim görünümü",
+                          "value": "Diffüz retikülogranüler/ground-glass opasiteler",
+                          "note": "RDS paterni"
+                      },
+                      {
+                          "parameter": "Hava bronkogramı",
+                          "value": "Bilateral belirgin",
+                          "note": "Alveoler kollapsla uyumlu"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Akciğer hacmi",
+                      "value": "Bilateral düşük volüm",
+                      "note": "Atelektazi eğilimi"
+                  },
+                  {
+                      "parameter": "Parankim görünümü",
+                      "value": "Diffüz retikülogranüler/ground-glass opasiteler",
+                      "note": "RDS paterni"
+                  },
+                  {
+                      "parameter": "Hava bronkogramı",
+                      "value": "Bilateral belirgin",
+                      "note": "Alveoler kollapsla uyumlu"
+                  }
+              ],
+              "postAnswerExplanation": "Düşük akciğer hacmi, diffüz retikülogranüler opasiteler ve hava bronkogramları prematüre yenidoğanda surfaktan eksikliği paternini destekler.",
+              "interpretation": "Düşük akciğer hacmi, diffüz retikülogranüler opasiteler ve hava bronkogramları prematüre yenidoğanda surfaktan eksikliği paternini destekler.",
+              "explanationAfterAnswer": "Düşük akciğer hacmi, diffüz retikülogranüler opasiteler ve hava bronkogramları prematüre yenidoğanda surfaktan eksikliği paternini destekler.",
+              "testValueLabel": "Tanısal destek",
+              "clinicalPriorityLabel": "Tanısal destek",
+              "educationalValue": "Tanısal destek",
+              "scoreImpact": 4,
+              "scoreValue": 4,
+              "clinicalFlowOrder": 30,
+              "flowOrder": 30,
+              "pediatricSafetyValue": "Kritik karar verdirir",
+              "treatmentImpact": "Tedavi sırasını belirler",
+              "orderRank": 30
+          },
+          {
+              "id": "v167-new-043-premature-bebekte-solunum-sikintisi-infection-screen",
+              "label": "Enfeksiyon ve aspirasyon ayırıcı verileri",
+              "title": "Enfeksiyon ve aspirasyon ayırıcı verileri",
+              "orderLabel": "Enfeksiyon ve aspirasyon ayırıcı verileri",
+              "type": "lab",
+              "priority": "supportive",
+              "subtype": "",
+              "category": "laboratory",
+              "testTypeCategory": "laboratory",
+              "summary": "Erken sepsis veya aspirasyon lehine güçlü destek olmaması, prematüriteye bağlı solunum sıkıntısı mekanizmasını daha baskın kılar.",
+              "clinicalMeaning": "Erken sepsis veya aspirasyon lehine güçlü destek olmaması, prematüriteye bağlı solunum sıkıntısı mekanizmasını daha baskın kılar.",
+              "result": {
+                  "title": "Enfeksiyon ve aspirasyon ayırıcı verileri",
+                  "summary": "Erken sepsis veya aspirasyon lehine güçlü destek olmaması, prematüriteye bağlı solunum sıkıntısı mekanizmasını daha baskın kılar.",
+                  "interpretation": "Erken sepsis veya aspirasyon lehine güçlü destek olmaması, prematüriteye bağlı solunum sıkıntısı mekanizmasını daha baskın kılar.",
+                  "values": [
+                      {
+                          "parameter": "Lökosit",
+                          "value": "9.800/mm³",
+                          "reference": "Yenidoğanda yaklaşık 9.000–30.000/mm³",
+                          "note": "Yaşa uygun"
+                      },
+                      {
+                          "parameter": "CRP",
+                          "value": "2 mg/L",
+                          "reference": "<5 mg/L",
+                          "note": "Yüksek değil"
+                      },
+                      {
+                          "parameter": "İ/T oranı",
+                          "value": "0.08",
+                          "reference": "<0.20",
+                          "note": "Belirgin sola kayma yok"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Lökosit",
+                          "value": "9.800/mm³",
+                          "reference": "Yenidoğanda yaklaşık 9.000–30.000/mm³",
+                          "note": "Yaşa uygun"
+                      },
+                      {
+                          "parameter": "CRP",
+                          "value": "2 mg/L",
+                          "reference": "<5 mg/L",
+                          "note": "Yüksek değil"
+                      },
+                      {
+                          "parameter": "İ/T oranı",
+                          "value": "0.08",
+                          "reference": "<0.20",
+                          "note": "Belirgin sola kayma yok"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Lökosit",
+                      "value": "9.800/mm³",
+                      "reference": "Yenidoğanda yaklaşık 9.000–30.000/mm³",
+                      "note": "Yaşa uygun"
+                  },
+                  {
+                      "parameter": "CRP",
+                      "value": "2 mg/L",
+                      "reference": "<5 mg/L",
+                      "note": "Yüksek değil"
+                  },
+                  {
+                      "parameter": "İ/T oranı",
+                      "value": "0.08",
+                      "reference": "<0.20",
+                      "note": "Belirgin sola kayma yok"
+                  }
+              ],
+              "postAnswerExplanation": "Erken sepsis veya aspirasyon lehine güçlü destek olmaması, prematüriteye bağlı solunum sıkıntısı mekanizmasını daha baskın kılar.",
+              "interpretation": "Erken sepsis veya aspirasyon lehine güçlü destek olmaması, prematüriteye bağlı solunum sıkıntısı mekanizmasını daha baskın kılar.",
+              "explanationAfterAnswer": "Erken sepsis veya aspirasyon lehine güçlü destek olmaması, prematüriteye bağlı solunum sıkıntısı mekanizmasını daha baskın kılar.",
+              "testValueLabel": "Ayırıcı tanı verisi",
+              "clinicalPriorityLabel": "Ayırıcı tanı verisi",
+              "educationalValue": "Ayırıcı tanı verisi",
+              "scoreImpact": 2,
+              "scoreValue": 2,
+              "clinicalFlowOrder": 40,
+              "flowOrder": 40,
+              "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
+              "treatmentImpact": "Kararı destekler",
+              "orderRank": 40
+          }
+      ],
+      "useSyntheticInvestigationBank": false,
+      "managementSequence": {
+          "enabled": false
+      },
+      "hideExamSignal": true,
       "question": "Bu yenidoğandaki solunum sıkıntısının temel patofizyolojik mekanizması aşağıdakilerden hangisidir?",
-      "explanation": "Bu prematüre yenidoğanda dakikalar içinde gelişen takipne, inleme, interkostal/subkostal çekilme, oksijen gereksinimi ve düşük hacimli retikülogranüler akciğer grafisi neonatal respiratuvar distres sendromunu düşündürür. Temel mekanizma tip II pnömosit immatüritesine bağlı surfaktan eksikliğidir; surfaktan azalınca alveoler yüzey gerilimi artar, ekspirasyonda alveoller kollabe olur ve hipoksemi-asidoz gelişir.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Prematüre + erken takipne/inleme + düşük hacimli retikülogranüler grafi = surfaktan eksikliğine bağlı neonatal RDS."
-        }
-      ],
+      "questionType": "mechanism",
+      "answerTarget": "pathophysiology",
+      "diagnosis": {
+          "correct": "Tip II pnömosit immatüritesine bağlı surfaktan eksikliği ve alveoler kollaps",
+          "options": [
+              "Tip II pnömosit immatüritesine bağlı surfaktan eksikliği ve alveoler kollaps",
+              "Doğum sonrası fetal akciğer sıvısının gecikmiş temizlenmesine bağlı geçici takipne",
+              "Mekonyum aspirasyonuna bağlı distal hava yolu tıkanıklığı ve hava hapsi",
+              "Konjenital diyafram hernisine bağlı pulmoner hipoplazi ve mediastinal şift",
+              "Erken neonatal sepsise bağlı primer inflamatuvar alveolit"
+          ],
+          "question": "Bu yenidoğandaki solunum sıkıntısının temel patofizyolojik mekanizması aşağıdakilerden hangisidir?",
+          "explanation": "29 haftalık prematüre yenidoğanda antenatal steroid kürünün tamamlanmamış olması, doğumdan dakikalar sonra başlayan takipne, inleme, retraksiyon ve oksijen ihtiyacı neonatal respiratuvar distres sendromunu düşündürür. Düşük akciğer hacmi, retikülogranüler görünüm ve hava bronkogramları surfaktan eksikliğine bağlı alveoler kollaps paternini destekler; temel mekanizma tip II pnömosit immatüritesine bağlı yetersiz surfaktan üretimidir.",
+          "pearls": [
+              {
+                  "label": "Sınav notu",
+                  "text": "Prematüre bebekte doğumdan hemen sonra inleme ve düşük hacimli retikülogranüler akciğer grafisi surfaktan eksikliğine bağlı neonatal RDS için yüksek verimlidir."
+              }
+          ],
+          "optionComparison": {
+              "Tip II pnömosit immatüritesine bağlı surfaktan eksikliği ve alveoler kollaps": "Doğru mekanizma prematüriteye bağlı tip II pnömosit immatüritesi sonucu surfaktan eksikliğidir; surfaktan azalınca alveoler yüzey gerilimi artar, ekspirasyonda alveoller kollabe olur, akciğer kompliyansı düşer ve hipoksemi-respiratuvar asidoz gelişir.",
+              "Doğum sonrası fetal akciğer sıvısının gecikmiş temizlenmesine bağlı geçici takipne": "Geçici takipne genellikle term veya geç preterm bebekte fetal akciğer sıvısının gecikmiş temizlenmesiyle olur; akciğer hacmi çoğunlukla artmış/normaldir. Bu olguda ileri prematürite, inleme ve düşük hacimli retikülogranüler grafi RDS lehinedir.",
+              "Mekonyum aspirasyonuna bağlı distal hava yolu tıkanıklığı ve hava hapsi": "Mekonyum aspirasyonunda mekonyumlu amniyon, kaba infiltrasyonlar, hiperinflasyon ve hava hapsi beklenir. Bu bebekte amniyon sıvısı berraktır ve grafi düşük hacimli RDS paterni gösterir.",
+              "Konjenital diyafram hernisine bağlı pulmoner hipoplazi ve mediastinal şift": "Konjenital diyafram hernisinde skafid abdomen, toraksta barsak ansları ve mediastinal şift beklenir. Muayene ve görüntüleme bu paternle uyumlu değildir.",
+              "Erken neonatal sepsise bağlı primer inflamatuvar alveolit": "Erken neonatal sepsis solunum sıkıntısı yapabilir; ancak belirgin maternal enfeksiyon öyküsü, yüksek CRP veya sola kayma yoktur. Baskın tablo prematürite ve surfaktan eksikliğiyle açıklanır."
+          },
+          "answerFeedback": {
+              "summary": "29 haftalık prematüre yenidoğanda antenatal steroid kürünün tamamlanmamış olması, doğumdan dakikalar sonra başlayan takipne, inleme, retraksiyon ve oksijen ihtiyacı neonatal respiratuvar distres sendromunu düşündürür. Düşük akciğer hacmi, retikülogranüler görünüm ve hava bronkogramları surfaktan eksikliğine bağlı alveoler kollaps paternini destekler; temel mekanizma tip II pnömosit immatüritesine bağlı yetersiz surfaktan üretimidir.",
+              "whyCorrect": "Doğru mekanizma prematüriteye bağlı tip II pnömosit immatüritesi sonucu surfaktan eksikliğidir; surfaktan azalınca alveoler yüzey gerilimi artar, ekspirasyonda alveoller kollabe olur, akciğer kompliyansı düşer ve hipoksemi-respiratuvar asidoz gelişir.",
+              "rationale": "29 haftalık prematüre yenidoğanda antenatal steroid kürünün tamamlanmamış olması, doğumdan dakikalar sonra başlayan takipne, inleme, retraksiyon ve oksijen ihtiyacı neonatal respiratuvar distres sendromunu düşündürür. Düşük akciğer hacmi, retikülogranüler görünüm ve hava bronkogramları surfaktan eksikliğine bağlı alveoler kollaps paternini destekler; temel mekanizma tip II pnömosit immatüritesine bağlı yetersiz surfaktan üretimidir.",
+              "correctOptionFeedback": "Doğru mekanizma prematüriteye bağlı tip II pnömosit immatüritesi sonucu surfaktan eksikliğidir; surfaktan azalınca alveoler yüzey gerilimi artar, ekspirasyonda alveoller kollabe olur, akciğer kompliyansı düşer ve hipoksemi-respiratuvar asidoz gelişir.",
+              "keyClues": [
+                  "29 haftalık prematürite ve tamamlanmamış antenatal steroid → surfaktan üretiminin yetersiz kalma riskini artırır.",
+                  "Doğumdan dakikalar sonra başlayan takipne, inleme ve retraksiyon → erken neonatal RDS paternini destekler.",
+                  "Düşük akciğer hacmi, retikülogranüler opasite ve hava bronkogramı → alveoler kollaps/surfaktan eksikliği ile uyumludur.",
+                  "Berrak amniyon sıvısı ve enfeksiyon göstergelerinin baskın olmaması → aspirasyon veya sepsis mekanizmasını daha geri plana iter."
+              ],
+              "evidenceChain": [
+                  {
+                      "text": "29 haftalık prematürite ve tamamlanmamış antenatal steroid → surfaktan üretiminin yetersiz kalma riskini artırır.",
+                      "weight": "high",
+                      "source": "case"
+                  },
+                  {
+                      "text": "Doğumdan dakikalar sonra başlayan takipne, inleme ve retraksiyon → erken neonatal RDS paternini destekler.",
+                      "weight": "high",
+                      "source": "case"
+                  },
+                  {
+                      "text": "Düşük akciğer hacmi, retikülogranüler opasite ve hava bronkogramı → alveoler kollaps/surfaktan eksikliği ile uyumludur.",
+                      "weight": "medium",
+                      "source": "case"
+                  },
+                  {
+                      "text": "Berrak amniyon sıvısı ve enfeksiyon göstergelerinin baskın olmaması → aspirasyon veya sepsis mekanizmasını daha geri plana iter.",
+                      "weight": "medium",
+                      "source": "case"
+                  }
+              ],
+              "examPearl": "Prematüre bebekte doğumdan hemen sonra inleme ve düşük hacimli retikülogranüler akciğer grafisi surfaktan eksikliğine bağlı neonatal RDS için yüksek verimlidir.",
+              "pearls": [
+                  {
+                      "label": "Sınav notu",
+                      "text": "Prematüre bebekte doğumdan hemen sonra inleme ve düşük hacimli retikülogranüler akciğer grafisi surfaktan eksikliğine bağlı neonatal RDS için yüksek verimlidir."
+                  }
+              ],
+              "clinicalPearls": [
+                  {
+                      "label": "Sınav notu",
+                      "text": "Prematüre bebekte doğumdan hemen sonra inleme ve düşük hacimli retikülogranüler akciğer grafisi surfaktan eksikliğine bağlı neonatal RDS için yüksek verimlidir."
+                  }
+              ],
+              "optionComparison": {
+                  "Tip II pnömosit immatüritesine bağlı surfaktan eksikliği ve alveoler kollaps": "Doğru mekanizma prematüriteye bağlı tip II pnömosit immatüritesi sonucu surfaktan eksikliğidir; surfaktan azalınca alveoler yüzey gerilimi artar, ekspirasyonda alveoller kollabe olur, akciğer kompliyansı düşer ve hipoksemi-respiratuvar asidoz gelişir.",
+                  "Doğum sonrası fetal akciğer sıvısının gecikmiş temizlenmesine bağlı geçici takipne": "Geçici takipne genellikle term veya geç preterm bebekte fetal akciğer sıvısının gecikmiş temizlenmesiyle olur; akciğer hacmi çoğunlukla artmış/normaldir. Bu olguda ileri prematürite, inleme ve düşük hacimli retikülogranüler grafi RDS lehinedir.",
+                  "Mekonyum aspirasyonuna bağlı distal hava yolu tıkanıklığı ve hava hapsi": "Mekonyum aspirasyonunda mekonyumlu amniyon, kaba infiltrasyonlar, hiperinflasyon ve hava hapsi beklenir. Bu bebekte amniyon sıvısı berraktır ve grafi düşük hacimli RDS paterni gösterir.",
+                  "Konjenital diyafram hernisine bağlı pulmoner hipoplazi ve mediastinal şift": "Konjenital diyafram hernisinde skafid abdomen, toraksta barsak ansları ve mediastinal şift beklenir. Muayene ve görüntüleme bu paternle uyumlu değildir.",
+                  "Erken neonatal sepsise bağlı primer inflamatuvar alveolit": "Erken neonatal sepsis solunum sıkıntısı yapabilir; ancak belirgin maternal enfeksiyon öyküsü, yüksek CRP veya sola kayma yoktur. Baskın tablo prematürite ve surfaktan eksikliğiyle açıklanır."
+              },
+              "whyWrong": {
+                  "Doğum sonrası fetal akciğer sıvısının gecikmiş temizlenmesine bağlı geçici takipne": "Geçici takipne genellikle term veya geç preterm bebekte fetal akciğer sıvısının gecikmiş temizlenmesiyle olur; akciğer hacmi çoğunlukla artmış/normaldir. Bu olguda ileri prematürite, inleme ve düşük hacimli retikülogranüler grafi RDS lehinedir.",
+                  "Mekonyum aspirasyonuna bağlı distal hava yolu tıkanıklığı ve hava hapsi": "Mekonyum aspirasyonunda mekonyumlu amniyon, kaba infiltrasyonlar, hiperinflasyon ve hava hapsi beklenir. Bu bebekte amniyon sıvısı berraktır ve grafi düşük hacimli RDS paterni gösterir.",
+                  "Konjenital diyafram hernisine bağlı pulmoner hipoplazi ve mediastinal şift": "Konjenital diyafram hernisinde skafid abdomen, toraksta barsak ansları ve mediastinal şift beklenir. Muayene ve görüntüleme bu paternle uyumlu değildir.",
+                  "Erken neonatal sepsise bağlı primer inflamatuvar alveolit": "Erken neonatal sepsis solunum sıkıntısı yapabilir; ancak belirgin maternal enfeksiyon öyküsü, yüksek CRP veya sola kayma yoktur. Baskın tablo prematürite ve surfaktan eksikliğiyle açıklanır."
+              },
+              "managementSteps": [],
+              "management": [],
+              "learningOutcome": "Öğrenci, prematüre yenidoğanda RDS mekanizmasını TTN, mekonyum aspirasyonu, diyafram hernisi ve sepsisten ayırır.",
+              "coreKnowledge": "Neonatal RDS’de prematürite, erken başlangıç, inleme-retraksiyon ve düşük hacimli retikülogranüler grafi surfaktan eksikliği mekanizmasını destekler."
+          },
+          "whyCorrect": "Doğru mekanizma prematüriteye bağlı tip II pnömosit immatüritesi sonucu surfaktan eksikliğidir; surfaktan azalınca alveoler yüzey gerilimi artar, ekspirasyonda alveoller kollabe olur, akciğer kompliyansı düşer ve hipoksemi-respiratuvar asidoz gelişir.",
+          "evidenceChain": [
+              {
+                  "text": "29 haftalık prematürite ve tamamlanmamış antenatal steroid → surfaktan üretiminin yetersiz kalma riskini artırır.",
+                  "weight": "high",
+                  "source": "case"
+              },
+              {
+                  "text": "Doğumdan dakikalar sonra başlayan takipne, inleme ve retraksiyon → erken neonatal RDS paternini destekler.",
+                  "weight": "high",
+                  "source": "case"
+              },
+              {
+                  "text": "Düşük akciğer hacmi, retikülogranüler opasite ve hava bronkogramı → alveoler kollaps/surfaktan eksikliği ile uyumludur.",
+                  "weight": "medium",
+                  "source": "case"
+              },
+              {
+                  "text": "Berrak amniyon sıvısı ve enfeksiyon göstergelerinin baskın olmaması → aspirasyon veya sepsis mekanizmasını daha geri plana iter.",
+                  "weight": "medium",
+                  "source": "case"
+              }
+          ],
+          "coreKnowledge": "Neonatal RDS’de prematürite, erken başlangıç, inleme-retraksiyon ve düşük hacimli retikülogranüler grafi surfaktan eksikliği mekanizmasını destekler.",
+          "examPearl": "Prematüre bebekte doğumdan hemen sonra inleme ve düşük hacimli retikülogranüler akciğer grafisi surfaktan eksikliğine bağlı neonatal RDS için yüksek verimlidir.",
+          "whyWrong": {
+              "Doğum sonrası fetal akciğer sıvısının gecikmiş temizlenmesine bağlı geçici takipne": "Geçici takipne genellikle term veya geç preterm bebekte fetal akciğer sıvısının gecikmiş temizlenmesiyle olur; akciğer hacmi çoğunlukla artmış/normaldir. Bu olguda ileri prematürite, inleme ve düşük hacimli retikülogranüler grafi RDS lehinedir.",
+              "Mekonyum aspirasyonuna bağlı distal hava yolu tıkanıklığı ve hava hapsi": "Mekonyum aspirasyonunda mekonyumlu amniyon, kaba infiltrasyonlar, hiperinflasyon ve hava hapsi beklenir. Bu bebekte amniyon sıvısı berraktır ve grafi düşük hacimli RDS paterni gösterir.",
+              "Konjenital diyafram hernisine bağlı pulmoner hipoplazi ve mediastinal şift": "Konjenital diyafram hernisinde skafid abdomen, toraksta barsak ansları ve mediastinal şift beklenir. Muayene ve görüntüleme bu paternle uyumlu değildir.",
+              "Erken neonatal sepsise bağlı primer inflamatuvar alveolit": "Erken neonatal sepsis solunum sıkıntısı yapabilir; ancak belirgin maternal enfeksiyon öyküsü, yüksek CRP veya sola kayma yoktur. Baskın tablo prematürite ve surfaktan eksikliğiyle açıklanır."
+          }
+      },
+      "shuffleOptions": false,
+      "difficultyTag": "Orta-Zor",
+      "coreKnowledge": "Neonatal RDS’de prematürite, erken başlangıç, inleme-retraksiyon ve düşük hacimli retikülogranüler grafi surfaktan eksikliği mekanizmasını destekler.",
+      "examPearl": "Prematüre bebekte doğumdan hemen sonra inleme ve düşük hacimli retikülogranüler akciğer grafisi surfaktan eksikliğine bağlı neonatal RDS için yüksek verimlidir.",
+      "whyCorrect": "Doğru mekanizma prematüriteye bağlı tip II pnömosit immatüritesi sonucu surfaktan eksikliğidir; surfaktan azalınca alveoler yüzey gerilimi artar, ekspirasyonda alveoller kollabe olur, akciğer kompliyansı düşer ve hipoksemi-respiratuvar asidoz gelişir.",
       "optionComparison": {
-        "Tip II pnömosit immatüritesine bağlı surfaktan eksikliği ve alveoler kollaps": "Doğru seçenek budur. 29 haftalık prematüre bebekte doğumdan dakikalar sonra başlayan takipne, inleme, retraksiyon, oksijen gereksinimi ve düşük hacimli retikülogranüler akciğer grafisi surfaktan eksikliğine bağlı neonatal RDS paternidir.",
-        "Doğum sonrası fetal akciğer sıvısının gecikmiş temizlenmesine bağlı geçici takipne": "Geçici takipnede daha çok term/sezaryen doğum, hiperinflasyon ve fissürlerde sıvı beklenir; ağır prematürite, düşük akciğer hacmi ve yaygın retikülogranüler görünüm surfaktan eksikliğini daha güçlü destekler.",
-        "Mekonyum aspirasyonuna bağlı distal hava yolu tıkanıklığı ve hava hapsi": "Mekonyum aspirasyonu genellikle postterm veya fetal distresli bebekte kaba infiltrasyon, hiperinflasyon ve hava kaçağı riskiyle seyreder. Bu olguda prematürite ve düşük hacimli granüler görünüm ön plandadır.",
-        "Konjenital diyafram hernisine bağlı pulmoner hipoplazi ve mediastinal şift": "Diyafram hernisinde skafid abdomen, barsak anslarının toraksta izlenmesi ve mediastinal şift beklenir. Burada iki akciğerde yaygın düşük volüm/retikülogranüler görünüm vardır.",
-        "Pulmoner venöz dönüş anomalisi nedeniyle pulmoner venöz konjesyon": "Pulmoner venöz dönüş anomalileri siyanoz ve kardiyak dolaşım bozukluğu ile ilişkili olabilir; ancak erken prematüre RDS’nin temel mekanizmasını açıklamaz."
+          "Tip II pnömosit immatüritesine bağlı surfaktan eksikliği ve alveoler kollaps": "Doğru mekanizma prematüriteye bağlı tip II pnömosit immatüritesi sonucu surfaktan eksikliğidir; surfaktan azalınca alveoler yüzey gerilimi artar, ekspirasyonda alveoller kollabe olur, akciğer kompliyansı düşer ve hipoksemi-respiratuvar asidoz gelişir.",
+          "Doğum sonrası fetal akciğer sıvısının gecikmiş temizlenmesine bağlı geçici takipne": "Geçici takipne genellikle term veya geç preterm bebekte fetal akciğer sıvısının gecikmiş temizlenmesiyle olur; akciğer hacmi çoğunlukla artmış/normaldir. Bu olguda ileri prematürite, inleme ve düşük hacimli retikülogranüler grafi RDS lehinedir.",
+          "Mekonyum aspirasyonuna bağlı distal hava yolu tıkanıklığı ve hava hapsi": "Mekonyum aspirasyonunda mekonyumlu amniyon, kaba infiltrasyonlar, hiperinflasyon ve hava hapsi beklenir. Bu bebekte amniyon sıvısı berraktır ve grafi düşük hacimli RDS paterni gösterir.",
+          "Konjenital diyafram hernisine bağlı pulmoner hipoplazi ve mediastinal şift": "Konjenital diyafram hernisinde skafid abdomen, toraksta barsak ansları ve mediastinal şift beklenir. Muayene ve görüntüleme bu paternle uyumlu değildir.",
+          "Erken neonatal sepsise bağlı primer inflamatuvar alveolit": "Erken neonatal sepsis solunum sıkıntısı yapabilir; ancak belirgin maternal enfeksiyon öyküsü, yüksek CRP veya sola kayma yoktur. Baskın tablo prematürite ve surfaktan eksikliğiyle açıklanır."
       },
-      "answerFeedback": {
-        "summary": "Bu prematüre yenidoğanda dakikalar içinde gelişen takipne, inleme, interkostal/subkostal çekilme, oksijen gereksinimi ve düşük hacimli retikülogranüler akciğer grafisi neonatal respiratuvar distres sendromunu düşündürür. Temel mekanizma tip II pnömosit immatüritesine bağlı surfaktan eksikliğidir; surfaktan azalınca alveoler yüzey gerilimi artar, ekspirasyonda alveoller kollabe olur ve hipoksemi-asidoz gelişir.",
-        "whyCorrect": "Bu prematüre yenidoğanda dakikalar içinde gelişen takipne, inleme, interkostal/subkostal çekilme, oksijen gereksinimi ve düşük hacimli retikülogranüler akciğer grafisi neonatal respiratuvar distres sendromunu düşündürür. Temel mekanizma tip II pnömosit immatüritesine bağlı surfaktan eksikliğidir; surfaktan azalınca alveoler yüzey gerilimi artar, ekspirasyonda alveoller kollabe olur ve hipoksemi-asidoz gelişir.",
-        "rationale": "Bu prematüre yenidoğanda dakikalar içinde gelişen takipne, inleme, interkostal/subkostal çekilme, oksijen gereksinimi ve düşük hacimli retikülogranüler akciğer grafisi neonatal respiratuvar distres sendromunu düşündürür. Temel mekanizma tip II pnömosit immatüritesine bağlı surfaktan eksikliğidir; surfaktan azalınca alveoler yüzey gerilimi artar, ekspirasyonda alveoller kollabe olur ve hipoksemi-asidoz gelişir.",
-        "correctOptionFeedback": "Bu prematüre yenidoğanda dakikalar içinde gelişen takipne, inleme, interkostal/subkostal çekilme, oksijen gereksinimi ve düşük hacimli retikülogranüler akciğer grafisi neonatal respiratuvar distres sendromunu düşündürür. Temel mekanizma tip II pnömosit immatüritesine bağlı surfaktan eksikliğidir; surfaktan azalınca alveoler yüzey gerilimi artar, ekspirasyonda alveoller kollabe olur ve hipoksemi-asidoz gelişir.",
-        "keyClues": [
-          "Bebek 29 haftalık prematüredir; bu yaşta tip II pnömosit surfaktan üretimi yetersiz kalabilir.",
-          "Solunum sıkıntısının doğumdan kısa süre sonra başlaması, takipne-inleme-retraksiyon üçlüsüyle neonatal RDS paternini destekler.",
-          "Akciğer grafisinde düşük akciğer hacmi, diffüz retikülogranüler görünüm ve hava bronkogramları surfaktan eksikliğine bağlı alveoler kollapsla uyumludur.",
-          "Kan gazında hipoksemi ve hafif respiratuvar asidoz, alveoler stabilitenin bozulmasına bağlı gaz değişim kusurunu gösterir."
-        ],
-        "evidenceChain": [
-          {
-            "text": "Bebek 29 haftalık prematüredir; bu yaşta tip II pnömosit surfaktan üretimi yetersiz kalabilir.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Solunum sıkıntısının doğumdan kısa süre sonra başlaması, takipne-inleme-retraksiyon üçlüsüyle neonatal RDS paternini destekler.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Akciğer grafisinde düşük akciğer hacmi, diffüz retikülogranüler görünüm ve hava bronkogramları surfaktan eksikliğine bağlı alveoler kollapsla uyumludur.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Kan gazında hipoksemi ve hafif respiratuvar asidoz, alveoler stabilitenin bozulmasına bağlı gaz değişim kusurunu gösterir.",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "examPearl": "Prematüre + erken takipne/inleme + düşük hacimli retikülogranüler grafi = surfaktan eksikliğine bağlı neonatal RDS.",
-        "pearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Prematüre + erken takipne/inleme + düşük hacimli retikülogranüler grafi = surfaktan eksikliğine bağlı neonatal RDS."
-          }
-        ],
-        "clinicalPearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Prematüre + erken takipne/inleme + düşük hacimli retikülogranüler grafi = surfaktan eksikliğine bağlı neonatal RDS."
-          }
-        ],
-        "optionComparison": {
-          "Tip II pnömosit immatüritesine bağlı surfaktan eksikliği ve alveoler kollaps": "Doğru seçenek budur. 29 haftalık prematüre bebekte doğumdan dakikalar sonra başlayan takipne, inleme, retraksiyon, oksijen gereksinimi ve düşük hacimli retikülogranüler akciğer grafisi surfaktan eksikliğine bağlı neonatal RDS paternidir.",
-          "Doğum sonrası fetal akciğer sıvısının gecikmiş temizlenmesine bağlı geçici takipne": "Geçici takipnede daha çok term/sezaryen doğum, hiperinflasyon ve fissürlerde sıvı beklenir; ağır prematürite, düşük akciğer hacmi ve yaygın retikülogranüler görünüm surfaktan eksikliğini daha güçlü destekler.",
-          "Mekonyum aspirasyonuna bağlı distal hava yolu tıkanıklığı ve hava hapsi": "Mekonyum aspirasyonu genellikle postterm veya fetal distresli bebekte kaba infiltrasyon, hiperinflasyon ve hava kaçağı riskiyle seyreder. Bu olguda prematürite ve düşük hacimli granüler görünüm ön plandadır.",
-          "Konjenital diyafram hernisine bağlı pulmoner hipoplazi ve mediastinal şift": "Diyafram hernisinde skafid abdomen, barsak anslarının toraksta izlenmesi ve mediastinal şift beklenir. Burada iki akciğerde yaygın düşük volüm/retikülogranüler görünüm vardır.",
-          "Pulmoner venöz dönüş anomalisi nedeniyle pulmoner venöz konjesyon": "Pulmoner venöz dönüş anomalileri siyanoz ve kardiyak dolaşım bozukluğu ile ilişkili olabilir; ancak erken prematüre RDS’nin temel mekanizmasını açıklamaz."
-        },
-        "whyWrong": {
-          "Doğum sonrası fetal akciğer sıvısının gecikmiş temizlenmesine bağlı geçici takipne": "Geçici takipnede daha çok term/sezaryen doğum, hiperinflasyon ve fissürlerde sıvı beklenir; ağır prematürite, düşük akciğer hacmi ve yaygın retikülogranüler görünüm surfaktan eksikliğini daha güçlü destekler.",
-          "Mekonyum aspirasyonuna bağlı distal hava yolu tıkanıklığı ve hava hapsi": "Mekonyum aspirasyonu genellikle postterm veya fetal distresli bebekte kaba infiltrasyon, hiperinflasyon ve hava kaçağı riskiyle seyreder. Bu olguda prematürite ve düşük hacimli granüler görünüm ön plandadır.",
-          "Konjenital diyafram hernisine bağlı pulmoner hipoplazi ve mediastinal şift": "Diyafram hernisinde skafid abdomen, barsak anslarının toraksta izlenmesi ve mediastinal şift beklenir. Burada iki akciğerde yaygın düşük volüm/retikülogranüler görünüm vardır.",
-          "Pulmoner venöz dönüş anomalisi nedeniyle pulmoner venöz konjesyon": "Pulmoner venöz dönüş anomalileri siyanoz ve kardiyak dolaşım bozukluğu ile ilişkili olabilir; ancak erken prematüre RDS’nin temel mekanizmasını açıklamaz."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Prematüre RDS mekanizmasını TTN, mekonyum aspirasyonu ve konjenital yapısal nedenlerden ayırabilme.",
-        "coreKnowledge": "Prematüre RDS’de ana problem fetal akciğer sıvısının temizlenememesi değil, surfaktan eksikliğine bağlı alveoler yüzey gerilimi artışı ve kollapstır."
-      },
-      "whyCorrect": "Bu prematüre yenidoğanda dakikalar içinde gelişen takipne, inleme, interkostal/subkostal çekilme, oksijen gereksinimi ve düşük hacimli retikülogranüler akciğer grafisi neonatal respiratuvar distres sendromunu düşündürür. Temel mekanizma tip II pnömosit immatüritesine bağlı surfaktan eksikliğidir; surfaktan azalınca alveoler yüzey gerilimi artar, ekspirasyonda alveoller kollabe olur ve hipoksemi-asidoz gelişir.",
       "evidenceChain": [
-        {
-          "text": "Bebek 29 haftalık prematüredir; bu yaşta tip II pnömosit surfaktan üretimi yetersiz kalabilir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Solunum sıkıntısının doğumdan kısa süre sonra başlaması, takipne-inleme-retraksiyon üçlüsüyle neonatal RDS paternini destekler.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Akciğer grafisinde düşük akciğer hacmi, diffüz retikülogranüler görünüm ve hava bronkogramları surfaktan eksikliğine bağlı alveoler kollapsla uyumludur.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Kan gazında hipoksemi ve hafif respiratuvar asidoz, alveoler stabilitenin bozulmasına bağlı gaz değişim kusurunu gösterir.",
-          "weight": "medium",
-          "source": "case"
-        }
+          {
+              "text": "29 haftalık prematürite ve tamamlanmamış antenatal steroid → surfaktan üretiminin yetersiz kalma riskini artırır.",
+              "weight": "high",
+              "source": "case"
+          },
+          {
+              "text": "Doğumdan dakikalar sonra başlayan takipne, inleme ve retraksiyon → erken neonatal RDS paternini destekler.",
+              "weight": "high",
+              "source": "case"
+          },
+          {
+              "text": "Düşük akciğer hacmi, retikülogranüler opasite ve hava bronkogramı → alveoler kollaps/surfaktan eksikliği ile uyumludur.",
+              "weight": "medium",
+              "source": "case"
+          },
+          {
+              "text": "Berrak amniyon sıvısı ve enfeksiyon göstergelerinin baskın olmaması → aspirasyon veya sepsis mekanizmasını daha geri plana iter.",
+              "weight": "medium",
+              "source": "case"
+          }
       ],
-      "coreKnowledge": "Prematüre RDS’de ana problem fetal akciğer sıvısının temizlenememesi değil, surfaktan eksikliğine bağlı alveoler yüzey gerilimi artışı ve kollapstır.",
-      "examPearl": "Prematüre + erken takipne/inleme + düşük hacimli retikülogranüler grafi = surfaktan eksikliğine bağlı neonatal RDS.",
       "whyWrong": {
-        "Doğum sonrası fetal akciğer sıvısının gecikmiş temizlenmesine bağlı geçici takipne": "Geçici takipnede daha çok term/sezaryen doğum, hiperinflasyon ve fissürlerde sıvı beklenir; ağır prematürite, düşük akciğer hacmi ve yaygın retikülogranüler görünüm surfaktan eksikliğini daha güçlü destekler.",
-        "Mekonyum aspirasyonuna bağlı distal hava yolu tıkanıklığı ve hava hapsi": "Mekonyum aspirasyonu genellikle postterm veya fetal distresli bebekte kaba infiltrasyon, hiperinflasyon ve hava kaçağı riskiyle seyreder. Bu olguda prematürite ve düşük hacimli granüler görünüm ön plandadır.",
-        "Konjenital diyafram hernisine bağlı pulmoner hipoplazi ve mediastinal şift": "Diyafram hernisinde skafid abdomen, barsak anslarının toraksta izlenmesi ve mediastinal şift beklenir. Burada iki akciğerde yaygın düşük volüm/retikülogranüler görünüm vardır.",
-        "Pulmoner venöz dönüş anomalisi nedeniyle pulmoner venöz konjesyon": "Pulmoner venöz dönüş anomalileri siyanoz ve kardiyak dolaşım bozukluğu ile ilişkili olabilir; ancak erken prematüre RDS’nin temel mekanizmasını açıklamaz."
+          "Doğum sonrası fetal akciğer sıvısının gecikmiş temizlenmesine bağlı geçici takipne": "Geçici takipne genellikle term veya geç preterm bebekte fetal akciğer sıvısının gecikmiş temizlenmesiyle olur; akciğer hacmi çoğunlukla artmış/normaldir. Bu olguda ileri prematürite, inleme ve düşük hacimli retikülogranüler grafi RDS lehinedir.",
+          "Mekonyum aspirasyonuna bağlı distal hava yolu tıkanıklığı ve hava hapsi": "Mekonyum aspirasyonunda mekonyumlu amniyon, kaba infiltrasyonlar, hiperinflasyon ve hava hapsi beklenir. Bu bebekte amniyon sıvısı berraktır ve grafi düşük hacimli RDS paterni gösterir.",
+          "Konjenital diyafram hernisine bağlı pulmoner hipoplazi ve mediastinal şift": "Konjenital diyafram hernisinde skafid abdomen, toraksta barsak ansları ve mediastinal şift beklenir. Muayene ve görüntüleme bu paternle uyumlu değildir.",
+          "Erken neonatal sepsise bağlı primer inflamatuvar alveolit": "Erken neonatal sepsis solunum sıkıntısı yapabilir; ancak belirgin maternal enfeksiyon öyküsü, yüksek CRP veya sola kayma yoktur. Baskın tablo prematürite ve surfaktan eksikliğiyle açıklanır."
+      },
+      "aiMeta": {
+          "generatedAt": "manual-v397-pediatrics-second5-quality-correction",
+          "generator": "manual-editorial-pediatrics-second5-quality-correction",
+          "schemaVersion": "clinical-standard-v397",
+          "provider": "manual-clinical-editorial",
+          "validationWarnings": [],
+          "qualityPass": "pediatrics-second5-targeted-quality-correction",
+          "batch": "pediatrics-second-5",
+          "editedFields": [
+              "coreKnowledge",
+              "diagnosis",
+              "evidenceChain",
+              "exam",
+              "examPearl",
+              "feedback",
+              "investigations",
+              "optionComparison",
+              "patientIntro",
+              "question",
+              "stem"
+          ]
       }
-    },
-    "shuffleOptions": false,
-    "difficultyTag": "Orta-Zor",
-    "coreKnowledge": "Prematüre RDS’de ana problem fetal akciğer sıvısının temizlenememesi değil, surfaktan eksikliğine bağlı alveoler yüzey gerilimi artışı ve kollapstır.",
-    "examPearl": "Prematüre + erken takipne/inleme + düşük hacimli retikülogranüler grafi = surfaktan eksikliğine bağlı neonatal RDS.",
-    "whyCorrect": "Bu prematüre yenidoğanda dakikalar içinde gelişen takipne, inleme, interkostal/subkostal çekilme, oksijen gereksinimi ve düşük hacimli retikülogranüler akciğer grafisi neonatal respiratuvar distres sendromunu düşündürür. Temel mekanizma tip II pnömosit immatüritesine bağlı surfaktan eksikliğidir; surfaktan azalınca alveoler yüzey gerilimi artar, ekspirasyonda alveoller kollabe olur ve hipoksemi-asidoz gelişir.",
-    "optionComparison": {
-      "Tip II pnömosit immatüritesine bağlı surfaktan eksikliği ve alveoler kollaps": "Doğru seçenek budur. 29 haftalık prematüre bebekte doğumdan dakikalar sonra başlayan takipne, inleme, retraksiyon, oksijen gereksinimi ve düşük hacimli retikülogranüler akciğer grafisi surfaktan eksikliğine bağlı neonatal RDS paternidir.",
-      "Doğum sonrası fetal akciğer sıvısının gecikmiş temizlenmesine bağlı geçici takipne": "Geçici takipnede daha çok term/sezaryen doğum, hiperinflasyon ve fissürlerde sıvı beklenir; ağır prematürite, düşük akciğer hacmi ve yaygın retikülogranüler görünüm surfaktan eksikliğini daha güçlü destekler.",
-      "Mekonyum aspirasyonuna bağlı distal hava yolu tıkanıklığı ve hava hapsi": "Mekonyum aspirasyonu genellikle postterm veya fetal distresli bebekte kaba infiltrasyon, hiperinflasyon ve hava kaçağı riskiyle seyreder. Bu olguda prematürite ve düşük hacimli granüler görünüm ön plandadır.",
-      "Konjenital diyafram hernisine bağlı pulmoner hipoplazi ve mediastinal şift": "Diyafram hernisinde skafid abdomen, barsak anslarının toraksta izlenmesi ve mediastinal şift beklenir. Burada iki akciğerde yaygın düşük volüm/retikülogranüler görünüm vardır.",
-      "Pulmoner venöz dönüş anomalisi nedeniyle pulmoner venöz konjesyon": "Pulmoner venöz dönüş anomalileri siyanoz ve kardiyak dolaşım bozukluğu ile ilişkili olabilir; ancak erken prematüre RDS’nin temel mekanizmasını açıklamaz."
-    },
-    "evidenceChain": [
-      {
-        "text": "Bebek 29 haftalık prematüredir; bu yaşta tip II pnömosit surfaktan üretimi yetersiz kalabilir.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Solunum sıkıntısının doğumdan kısa süre sonra başlaması, takipne-inleme-retraksiyon üçlüsüyle neonatal RDS paternini destekler.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Akciğer grafisinde düşük akciğer hacmi, diffüz retikülogranüler görünüm ve hava bronkogramları surfaktan eksikliğine bağlı alveoler kollapsla uyumludur.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Kan gazında hipoksemi ve hafif respiratuvar asidoz, alveoler stabilitenin bozulmasına bağlı gaz değişim kusurunu gösterir.",
-        "weight": "medium",
-        "source": "case"
-      }
-    ],
-    "whyWrong": {
-      "Doğum sonrası fetal akciğer sıvısının gecikmiş temizlenmesine bağlı geçici takipne": "Geçici takipnede daha çok term/sezaryen doğum, hiperinflasyon ve fissürlerde sıvı beklenir; ağır prematürite, düşük akciğer hacmi ve yaygın retikülogranüler görünüm surfaktan eksikliğini daha güçlü destekler.",
-      "Mekonyum aspirasyonuna bağlı distal hava yolu tıkanıklığı ve hava hapsi": "Mekonyum aspirasyonu genellikle postterm veya fetal distresli bebekte kaba infiltrasyon, hiperinflasyon ve hava kaçağı riskiyle seyreder. Bu olguda prematürite ve düşük hacimli granüler görünüm ön plandadır.",
-      "Konjenital diyafram hernisine bağlı pulmoner hipoplazi ve mediastinal şift": "Diyafram hernisinde skafid abdomen, barsak anslarının toraksta izlenmesi ve mediastinal şift beklenir. Burada iki akciğerde yaygın düşük volüm/retikülogranüler görünüm vardır.",
-      "Pulmoner venöz dönüş anomalisi nedeniyle pulmoner venöz konjesyon": "Pulmoner venöz dönüş anomalileri siyanoz ve kardiyak dolaşım bozukluğu ile ilişkili olabilir; ancak erken prematüre RDS’nin temel mekanizmasını açıklamaz."
-    },
-    "aiMeta": {
-      "generatedAt": "manual-v397-pediatrics-second5-ultra-refined",
-      "generator": "manual-editorial-pediatrics-second-batch-refinement",
-      "schemaVersion": "clinical-standard-v397",
-      "provider": "manual-editorial",
-      "validationWarnings": [],
-      "qualityPass": "pediatrics-second5-ultra-refine",
-      "batch": "pediatrics-second-5"
-    }
   },
   {
     "id": "v167-new-044-uzamis-ates-ve-ufurum",
@@ -38743,672 +38750,664 @@ export const rawCases = [
       "note": "Pemfigus vulgaris vakasında akış dermatolojik morfoloji → lezyonel biyopsi/histopatoloji → perilezyonel DIF → serolojik aktivite desteği şeklinde düzenlendi."
     }
   },
-  {
-    "id": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular",
-    "branchId": "pediatrics",
-    "caseType": "standard",
-    "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
-    "title": "Uzamış ateş ve mukokutanöz inflamasyon",
-    "difficulty": "Zor",
-    "clinicalFocus": "Kawasaki hastalığında ateş süresi, mukokutanöz kriterler, inflamasyon belirteçleri ve koroner risk bulgularını tedavi kararıyla ilişkilendirme.",
-    "learningTarget": "Kawasaki hastalığında IVIG ve aspirin tedavisinin koroner arter komplikasyonlarını azaltmadaki yerini açıklayabilme.",
-    "demographics": "4 yaşında erkek çocuk",
-    "setting": "Çocuk acil / çocuk kardiyoloji değerlendirmesi",
-    "chiefComplaint": "Çocuk, 6 gündür düşmeyen ateş, gözlerde kızarıklık, dudaklarda çatlama ve yaygın döküntü nedeniyle getiriliyor.",
-    "stem": "Ateş antipiretikle kısa süreli azalmakta ancak tekrar yükselmektedir. Öksürük, pürülan burun akıntısı veya eksüdatif tonsillit yoktur. Ailesi son iki gündür el ve ayaklarda şişlik, huzursuzluk ve beslenmede azalma fark etmiştir.",
-    "patientIntro": {
-      "profile": "4 yaşında erkek çocuk, uzamış ateş ve mukokutanöz bulgular nedeniyle değerlendiriliyor.",
-      "presentation": "Altı gündür süren ateşe bilateral göz kızarıklığı, dudak-dil değişiklikleri, döküntü ve ekstremite şişliği eşlik eder.",
-      "historySummary": "Annesi, çocuğun altı gündür yüksek ateşinin sürdüğünü ve ateş düşürücülerle yalnızca kısa süreli rahatlama olduğunu belirtmektedir. Son iki günde gözlerde kızarıklık, dudaklarda çatlama, gövdeden başlayan döküntü ve el-ayaklarda şişlik fark edilmiştir. Çocuk normalden huzursuzdur, oral alımı azalmıştır ve aile boyun bölgesinde şişlik hissettiğini söylemektedir. Öksürük, pürülan burun akıntısı, belirgin ishal veya eksüdatif boğaz enfeksiyonu öyküsü tariflenmemektedir."
-    },
-    "vitals": {
-      "TA": "94/58 mmHg",
-      "Nabız": "132/dk",
-      "Solunum": "26/dk",
-      "SpO2": "%98, oda havasında",
-      "Ateş": "39.1 °C",
-      "Şok indeksi": "1.40 - ateş ve inflamasyona bağlı taşikardi"
-    },
-    "exam": [
-      "Bilateral eksüdasız konjonktival hiperemi vardır.",
-      "Dudaklar kuru ve çatlak, dil çilek görünümündedir; orofarenkste eksüda yoktur.",
-      "Gövdede polimorf makülopapüler döküntü ve el-ayak dorsumunda ödem/eritem izlenir.",
-      "Sol servikal bölgede yaklaşık 1.8 cm hassas olmayan lenf nodu palpe edilir; meningeal irritasyon bulgusu yoktur."
-    ],
-    "investigations": [
-      {
-        "id": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular-clinical-criteria",
-        "label": "Kawasaki klinik kriterleri",
-        "title": "Kawasaki klinik kriterleri",
-        "orderLabel": "Kawasaki klinik kriterleri",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "summary": "Ateş süresi ve mukokutanöz bulgular klasik Kawasaki hastalığı paternini oluşturur.",
-        "clinicalMeaning": "Ateş süresi ve mukokutanöz bulgular klasik Kawasaki hastalığı paternini oluşturur.",
-        "result": {
-          "title": "Kawasaki klinik kriterleri",
-          "summary": "Ateş süresi ve mukokutanöz bulgular klasik Kawasaki hastalığı paternini oluşturur.",
-          "interpretation": "Ateş süresi ve mukokutanöz bulgular klasik Kawasaki hastalığı paternini oluşturur.",
-          "values": [
-            [
-              "Ateş süresi",
-              "6 gün",
-              "—",
-              "Kriteri karşılar"
-            ],
-            [
-              "Konjonktiva",
-              "Bilateral nonpürülan hiperemi",
-              "—",
-              "Mukokutanöz kriter"
-            ],
-            [
-              "Ağız/dil",
-              "Çatlamış dudak ve çilek dili",
-              "—",
-              "Mukozal kriter"
-            ],
-            [
-              "Ekstremite",
-              "El-ayak ödemi ve eritem",
-              "—",
-              "Ekstremite kriteri"
-            ],
-            [
-              "Döküntü/lenf nodu",
-              "Polimorf döküntü ve 1.8 cm servikal LAP",
-              "—",
-              "Kriter desteği"
-            ]
-          ],
-          "rows": [
-            [
-              "Ateş süresi",
-              "6 gün",
-              "—",
-              "Kriteri karşılar"
-            ],
-            [
-              "Konjonktiva",
-              "Bilateral nonpürülan hiperemi",
-              "—",
-              "Mukokutanöz kriter"
-            ],
-            [
-              "Ağız/dil",
-              "Çatlamış dudak ve çilek dili",
-              "—",
-              "Mukozal kriter"
-            ],
-            [
-              "Ekstremite",
-              "El-ayak ödemi ve eritem",
-              "—",
-              "Ekstremite kriteri"
-            ],
-            [
-              "Döküntü/lenf nodu",
-              "Polimorf döküntü ve 1.8 cm servikal LAP",
-              "—",
-              "Kriter desteği"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Ateş süresi",
-            "6 gün",
-            "—",
-            "Kriteri karşılar"
-          ],
-          [
-            "Konjonktiva",
-            "Bilateral nonpürülan hiperemi",
-            "—",
-            "Mukokutanöz kriter"
-          ],
-          [
-            "Ağız/dil",
-            "Çatlamış dudak ve çilek dili",
-            "—",
-            "Mukozal kriter"
-          ],
-          [
-            "Ekstremite",
-            "El-ayak ödemi ve eritem",
-            "—",
-            "Ekstremite kriteri"
-          ],
-          [
-            "Döküntü/lenf nodu",
-            "Polimorf döküntü ve 1.8 cm servikal LAP",
-            "—",
-            "Kriter desteği"
-          ]
-        ],
-        "postAnswerExplanation": "Ateş süresi ve mukokutanöz bulgular klasik Kawasaki hastalığı paternini oluşturur.",
-        "interpretation": "Ateş süresi ve mukokutanöz bulgular klasik Kawasaki hastalığı paternini oluşturur.",
-        "explanationAfterAnswer": "Ateş süresi ve mukokutanöz bulgular klasik Kawasaki hastalığı paternini oluşturur.",
-        "testValueLabel": "Kritik karar verdirir",
-        "clinicalPriorityLabel": "Kritik karar verdirir",
-        "educationalValue": "Kritik karar verdirir",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Kritik karar verdirir",
-        "treatmentImpact": "Tedavi sırasını belirler",
-        "orderRank": 10
+    {
+      "id": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
+      "title": "Uzamış ateş ve mukokutanöz inflamasyon",
+      "difficulty": "Zor",
+      "clinicalFocus": "Kawasaki hastalığında ateş süresi, mukokutanöz kriterler, inflamasyon belirteçleri ve koroner risk bulgularını tedavi kararıyla ilişkilendirme.",
+      "learningTarget": "Kawasaki hastalığında IVIG ve aspirin tedavisinin koroner arter komplikasyonlarını azaltmadaki yerini açıklayabilme.",
+      "demographics": "4 yaşında erkek çocuk",
+      "setting": "Çocuk acil / çocuk kardiyoloji değerlendirmesi",
+      "chiefComplaint": "Çocuk, 6 gündür düşmeyen ateş, gözlerde kızarıklık, dudaklarda çatlama ve yaygın döküntü nedeniyle getiriliyor.",
+      "stem": "Annesi, çocuğun altı gündür yüksek ateşinin devam ettiğini ve ateş düşürücülerle yalnızca kısa süreli rahatlama olduğunu belirtmektedir. Son iki günde gözlerde kızarıklık, dudaklarda çatlama, gövdeden başlayan döküntü ve el-ayaklarda şişlik fark edilmiştir. Çocuk normalden huzursuzdur, oral alımı azalmıştır ve aile boyun bölgesinde şişlik hissettiğini söylemektedir. Öksürük, pürülan burun akıntısı, belirgin ishal veya eksüdatif boğaz enfeksiyonu öyküsü tariflenmemektedir.",
+      "patientIntro": {
+          "profile": "4 yaşında erkek çocuk, uzamış ateş ve mukokutanöz bulgular nedeniyle değerlendiriliyor.",
+          "presentation": "Altı gündür süren ateşe bilateral göz kızarıklığı, dudak-dil değişiklikleri, döküntü ve ekstremite şişliği eşlik eder.",
+          "historySummary": "Annesi, çocuğun altı gündür yüksek ateşinin devam ettiğini ve ateş düşürücülerle yalnızca kısa süreli rahatlama olduğunu belirtmektedir. Son iki günde gözlerde kızarıklık, dudaklarda çatlama, gövdeden başlayan döküntü ve el-ayaklarda şişlik fark edilmiştir. Çocuk normalden huzursuzdur, oral alımı azalmıştır ve aile boyun bölgesinde şişlik hissettiğini söylemektedir. Öksürük, pürülan burun akıntısı, belirgin ishal veya eksüdatif boğaz enfeksiyonu öyküsü tariflenmemektedir."
       },
-      {
-        "id": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular-inflammation",
-        "label": "CRP ve eritrosit sedimentasyon hızı",
-        "title": "CRP ve eritrosit sedimentasyon hızı",
-        "orderLabel": "CRP ve eritrosit sedimentasyon hızı",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "summary": "Belirgin akut faz yanıtı Kawasaki hastalığında sistemik inflamasyonu destekler.",
-        "clinicalMeaning": "Belirgin akut faz yanıtı Kawasaki hastalığında sistemik inflamasyonu destekler.",
-        "result": {
-          "title": "CRP ve eritrosit sedimentasyon hızı",
-          "summary": "Belirgin akut faz yanıtı Kawasaki hastalığında sistemik inflamasyonu destekler.",
-          "interpretation": "Belirgin akut faz yanıtı Kawasaki hastalığında sistemik inflamasyonu destekler.",
-          "values": [
-            [
-              "CRP",
-              "112 mg/L",
-              "<5 mg/L",
-              "Yüksek"
-            ],
-            [
-              "ESR",
-              "78 mm/saat",
-              "<20 mm/saat",
-              "Yüksek"
-            ]
-          ],
-          "rows": [
-            [
-              "CRP",
-              "112 mg/L",
-              "<5 mg/L",
-              "Yüksek"
-            ],
-            [
-              "ESR",
-              "78 mm/saat",
-              "<20 mm/saat",
-              "Yüksek"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "CRP",
-            "112 mg/L",
-            "<5 mg/L",
-            "Yüksek"
-          ],
-          [
-            "ESR",
-            "78 mm/saat",
-            "<20 mm/saat",
-            "Yüksek"
-          ]
-        ],
-        "postAnswerExplanation": "Belirgin akut faz yanıtı Kawasaki hastalığında sistemik inflamasyonu destekler.",
-        "interpretation": "Belirgin akut faz yanıtı Kawasaki hastalığında sistemik inflamasyonu destekler.",
-        "explanationAfterAnswer": "Belirgin akut faz yanıtı Kawasaki hastalığında sistemik inflamasyonu destekler.",
-        "testValueLabel": "Tanısal değeri yüksek",
-        "clinicalPriorityLabel": "Tanısal değeri yüksek",
-        "educationalValue": "Tanısal değeri yüksek",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "clinicalFlowOrder": 22,
-        "flowOrder": 22,
-        "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
-        "treatmentImpact": "Kararı destekler",
-        "orderRank": 22
+      "vitals": {
+          "TA": "94/58 mmHg",
+          "Nabız": "132/dk",
+          "Solunum": "26/dk",
+          "SpO2": "%98, oda havasında",
+          "Ateş": "39.1 °C",
+          "Şok indeksi": "1.40 - ateş ve inflamasyona bağlı taşikardi"
       },
-      {
-        "id": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular-supportive-labs",
-        "label": "Destekleyici laboratuvar bulguları",
-        "title": "Destekleyici laboratuvar bulguları",
-        "orderLabel": "Destekleyici laboratuvar bulguları",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "summary": "Trombositoz eğilimi, hipoalbüminemi, hafif transaminaz yüksekliği ve steril piyüri Kawasaki inflamasyonunu destekleyen hasta sonuçlarıdır.",
-        "clinicalMeaning": "Trombositoz eğilimi, hipoalbüminemi, hafif transaminaz yüksekliği ve steril piyüri Kawasaki inflamasyonunu destekleyen hasta sonuçlarıdır.",
-        "result": {
-          "title": "Destekleyici laboratuvar bulguları",
-          "summary": "Trombositoz eğilimi, hipoalbüminemi, hafif transaminaz yüksekliği ve steril piyüri Kawasaki inflamasyonunu destekleyen hasta sonuçlarıdır.",
-          "interpretation": "Trombositoz eğilimi, hipoalbüminemi, hafif transaminaz yüksekliği ve steril piyüri Kawasaki inflamasyonunu destekleyen hasta sonuçlarıdır.",
-          "values": [
-            [
-              "Trombosit",
-              "585.000/mm³",
-              "150.000–450.000/mm³",
-              "Yüksek"
-            ],
-            [
-              "Albumin",
-              "3.0 g/dL",
-              "3.5–5.0 g/dL",
-              "Düşük"
-            ],
-            [
-              "ALT",
-              "72 U/L",
-              "<40 U/L",
-              "Yüksek"
-            ],
-            [
-              "İdrar lökosit",
-              "12–15/hpf",
-              "0–5/hpf",
-              "Steril piyüri"
-            ]
-          ],
-          "rows": [
-            [
-              "Trombosit",
-              "585.000/mm³",
-              "150.000–450.000/mm³",
-              "Yüksek"
-            ],
-            [
-              "Albumin",
-              "3.0 g/dL",
-              "3.5–5.0 g/dL",
-              "Düşük"
-            ],
-            [
-              "ALT",
-              "72 U/L",
-              "<40 U/L",
-              "Yüksek"
-            ],
-            [
-              "İdrar lökosit",
-              "12–15/hpf",
-              "0–5/hpf",
-              "Steril piyüri"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Trombosit",
-            "585.000/mm³",
-            "150.000–450.000/mm³",
-            "Yüksek"
-          ],
-          [
-            "Albumin",
-            "3.0 g/dL",
-            "3.5–5.0 g/dL",
-            "Düşük"
-          ],
-          [
-            "ALT",
-            "72 U/L",
-            "<40 U/L",
-            "Yüksek"
-          ],
-          [
-            "İdrar lökosit",
-            "12–15/hpf",
-            "0–5/hpf",
-            "Steril piyüri"
-          ]
-        ],
-        "postAnswerExplanation": "Trombositoz eğilimi, hipoalbüminemi, hafif transaminaz yüksekliği ve steril piyüri Kawasaki inflamasyonunu destekleyen hasta sonuçlarıdır.",
-        "interpretation": "Trombositoz eğilimi, hipoalbüminemi, hafif transaminaz yüksekliği ve steril piyüri Kawasaki inflamasyonunu destekleyen hasta sonuçlarıdır.",
-        "explanationAfterAnswer": "Trombositoz eğilimi, hipoalbüminemi, hafif transaminaz yüksekliği ve steril piyüri Kawasaki inflamasyonunu destekleyen hasta sonuçlarıdır.",
-        "testValueLabel": "Destekleyici veri",
-        "clinicalPriorityLabel": "Destekleyici veri",
-        "educationalValue": "Destekleyici veri",
-        "scoreImpact": 3,
-        "scoreValue": 3,
-        "clinicalFlowOrder": 30,
-        "flowOrder": 30,
-        "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
-        "treatmentImpact": "Kararı destekler",
-        "orderRank": 30
-      },
-      {
-        "id": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular-urine-culture",
-        "label": "İdrar kültürü",
-        "title": "İdrar kültürü",
-        "orderLabel": "İdrar kültürü",
-        "type": "culture",
-        "priority": "medium",
-        "subtype": "",
-        "category": "microbiology",
-        "testTypeCategory": "microbiology",
-        "summary": "Piyürinin bakteriyel üriner enfeksiyonla açıklanmadığını gösterir.",
-        "clinicalMeaning": "Piyürinin bakteriyel üriner enfeksiyonla açıklanmadığını gösterir.",
-        "result": {
-          "title": "İdrar kültürü",
-          "summary": "Piyürinin bakteriyel üriner enfeksiyonla açıklanmadığını gösterir.",
-          "interpretation": "Piyürinin bakteriyel üriner enfeksiyonla açıklanmadığını gösterir.",
-          "values": [
-            [
-              "İdrar kültürü",
-              "Üreme olmadı",
-              "—",
-              "Steril piyüri"
-            ]
-          ],
-          "rows": [
-            [
-              "İdrar kültürü",
-              "Üreme olmadı",
-              "—",
-              "Steril piyüri"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "İdrar kültürü",
-            "Üreme olmadı",
-            "—",
-            "Steril piyüri"
-          ]
-        ],
-        "postAnswerExplanation": "Piyürinin bakteriyel üriner enfeksiyonla açıklanmadığını gösterir.",
-        "interpretation": "Piyürinin bakteriyel üriner enfeksiyonla açıklanmadığını gösterir.",
-        "explanationAfterAnswer": "Piyürinin bakteriyel üriner enfeksiyonla açıklanmadığını gösterir.",
-        "testValueLabel": "Destekleyici veri",
-        "clinicalPriorityLabel": "Destekleyici veri",
-        "educationalValue": "Destekleyici veri",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "clinicalFlowOrder": 42,
-        "flowOrder": 42,
-        "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
-        "treatmentImpact": "Kararı destekler",
-        "orderRank": 42
-      },
-      {
-        "id": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular-echo",
-        "label": "Ekokardiyografi",
-        "title": "Ekokardiyografi",
-        "orderLabel": "Ekokardiyografi",
-        "type": "ultrasound",
-        "priority": "essential",
-        "subtype": "",
-        "category": "cardiac",
-        "testTypeCategory": "cardiac",
-        "summary": "Koroner arter etkilenmesi tedavinin geciktirilmemesi gerektiğini destekler.",
-        "clinicalMeaning": "Koroner arter etkilenmesi tedavinin geciktirilmemesi gerektiğini destekler.",
-        "result": {
-          "title": "Ekokardiyografi",
-          "summary": "Koroner arter etkilenmesi tedavinin geciktirilmemesi gerektiğini destekler.",
-          "interpretation": "Koroner arter etkilenmesi tedavinin geciktirilmemesi gerektiğini destekler.",
-          "values": [
-            [
-              "Sol ana koroner arter",
-              "Z-skor +2.6 ile hafif ektazi",
-              "—",
-              "Koroner etkilenme"
-            ],
-            [
-              "Sağ koroner arter",
-              "Z-skor +2.1",
-              "—",
-              "Sınırda genişleme"
-            ],
-            [
-              "Ventrikül fonksiyonu",
-              "Sistolik fonksiyon korunmuş",
-              "—",
-              "Başlangıç değerlendirmesi"
-            ]
-          ],
-          "rows": [
-            [
-              "Sol ana koroner arter",
-              "Z-skor +2.6 ile hafif ektazi",
-              "—",
-              "Koroner etkilenme"
-            ],
-            [
-              "Sağ koroner arter",
-              "Z-skor +2.1",
-              "—",
-              "Sınırda genişleme"
-            ],
-            [
-              "Ventrikül fonksiyonu",
-              "Sistolik fonksiyon korunmuş",
-              "—",
-              "Başlangıç değerlendirmesi"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Sol ana koroner arter",
-            "Z-skor +2.6 ile hafif ektazi",
-            "—",
-            "Koroner etkilenme"
-          ],
-          [
-            "Sağ koroner arter",
-            "Z-skor +2.1",
-            "—",
-            "Sınırda genişleme"
-          ],
-          [
-            "Ventrikül fonksiyonu",
-            "Sistolik fonksiyon korunmuş",
-            "—",
-            "Başlangıç değerlendirmesi"
-          ]
-        ],
-        "postAnswerExplanation": "Koroner arter etkilenmesi tedavinin geciktirilmemesi gerektiğini destekler.",
-        "interpretation": "Koroner arter etkilenmesi tedavinin geciktirilmemesi gerektiğini destekler.",
-        "explanationAfterAnswer": "Koroner arter etkilenmesi tedavinin geciktirilmemesi gerektiğini destekler.",
-        "testValueLabel": "Kritik karar verdirir",
-        "clinicalPriorityLabel": "Kritik karar verdirir",
-        "educationalValue": "Kritik karar verdirir",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "clinicalFlowOrder": 55,
-        "flowOrder": 55,
-        "pediatricSafetyValue": "Kritik karar verdirir",
-        "treatmentImpact": "Tedavi sırasını belirler",
-        "orderRank": 55
-      }
-    ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": {
-      "enabled": false
-    },
-    "hideExamSignal": true,
-    "question": "Bu hastada koroner arter komplikasyonu riskini azaltmak için en uygun tedavi aşağıdakilerden hangisidir?",
-    "questionType": "treatment",
-    "answerTarget": "definitive_treatment",
-    "diagnosis": {
-      "correct": "İntravenöz immün globulin ve aspirin tedavisi",
-      "options": [
-        "Yalnız antipiretik ve sıvı desteğiyle ayaktan izlem",
-        "Yüksek doz amoksisilin-klavulanat tedavisi",
-        "Sistemik kortikosteroid monoterapisi",
-        "Oral asiklovir tedavisi",
-        "İntravenöz immün globulin ve aspirin tedavisi"
+      "exam": [
+          "Bilateral eksüdasız konjonktival hiperemi vardır.",
+          "Dudaklar kuru ve çatlak, dil çilek görünümündedir; orofarenkste eksüda yoktur.",
+          "Gövdede polimorf makülopapüler döküntü ve el-ayak dorsumunda ödem/eritem izlenir.",
+          "Sol servikal bölgede yaklaşık 1.8 cm hassas olmayan lenf nodu palpe edilir; meningeal irritasyon bulgusu yoktur."
       ],
+      "investigations": [
+          {
+              "id": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular-clinical-criteria",
+              "label": "Mukokutanöz klinik bulgular",
+              "title": "Mukokutanöz klinik bulgular",
+              "orderLabel": "Mukokutanöz klinik bulgular",
+              "type": "clinical",
+              "priority": "essential",
+              "subtype": "",
+              "category": "clinicalAssessment",
+              "testTypeCategory": "clinicalAssessment",
+              "summary": "Uzamış ateşle birlikte nonpürülan konjonktivit, oral mukoza değişiklikleri, döküntü ve ekstremite ödemi Kawasaki paternini oluşturan hasta bulgularıdır.",
+              "clinicalMeaning": "Uzamış ateşle birlikte nonpürülan konjonktivit, oral mukoza değişiklikleri, döküntü ve ekstremite ödemi Kawasaki paternini oluşturan hasta bulgularıdır.",
+              "result": {
+                  "title": "Mukokutanöz klinik bulgular",
+                  "summary": "Uzamış ateşle birlikte nonpürülan konjonktivit, oral mukoza değişiklikleri, döküntü ve ekstremite ödemi Kawasaki paternini oluşturan hasta bulgularıdır.",
+                  "interpretation": "Uzamış ateşle birlikte nonpürülan konjonktivit, oral mukoza değişiklikleri, döküntü ve ekstremite ödemi Kawasaki paternini oluşturan hasta bulgularıdır.",
+                  "values": [
+                      {
+                          "parameter": "Ateş süresi",
+                          "value": "6 gündür devam ediyor",
+                          "note": "Uzamış ateş"
+                      },
+                      {
+                          "parameter": "Konjonktiva",
+                          "value": "Bilateral nonpürülan hiperemi",
+                          "note": "Eksüdasız göz tutulumu"
+                      },
+                      {
+                          "parameter": "Ağız/dil",
+                          "value": "Çatlamış dudak ve çilek dili",
+                          "note": "Mukozal tutulum"
+                      },
+                      {
+                          "parameter": "Ekstremite",
+                          "value": "El-ayak ödemi ve eritem",
+                          "note": "Akut ekstremite değişikliği"
+                      },
+                      {
+                          "parameter": "Döküntü/lenf nodu",
+                          "value": "Polimorf döküntü ve 1.8 cm servikal lenf nodu",
+                          "note": "Klinik paterni güçlendirir"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Ateş süresi",
+                          "value": "6 gündür devam ediyor",
+                          "note": "Uzamış ateş"
+                      },
+                      {
+                          "parameter": "Konjonktiva",
+                          "value": "Bilateral nonpürülan hiperemi",
+                          "note": "Eksüdasız göz tutulumu"
+                      },
+                      {
+                          "parameter": "Ağız/dil",
+                          "value": "Çatlamış dudak ve çilek dili",
+                          "note": "Mukozal tutulum"
+                      },
+                      {
+                          "parameter": "Ekstremite",
+                          "value": "El-ayak ödemi ve eritem",
+                          "note": "Akut ekstremite değişikliği"
+                      },
+                      {
+                          "parameter": "Döküntü/lenf nodu",
+                          "value": "Polimorf döküntü ve 1.8 cm servikal lenf nodu",
+                          "note": "Klinik paterni güçlendirir"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Ateş süresi",
+                      "value": "6 gündür devam ediyor",
+                      "note": "Uzamış ateş"
+                  },
+                  {
+                      "parameter": "Konjonktiva",
+                      "value": "Bilateral nonpürülan hiperemi",
+                      "note": "Eksüdasız göz tutulumu"
+                  },
+                  {
+                      "parameter": "Ağız/dil",
+                      "value": "Çatlamış dudak ve çilek dili",
+                      "note": "Mukozal tutulum"
+                  },
+                  {
+                      "parameter": "Ekstremite",
+                      "value": "El-ayak ödemi ve eritem",
+                      "note": "Akut ekstremite değişikliği"
+                  },
+                  {
+                      "parameter": "Döküntü/lenf nodu",
+                      "value": "Polimorf döküntü ve 1.8 cm servikal lenf nodu",
+                      "note": "Klinik paterni güçlendirir"
+                  }
+              ],
+              "postAnswerExplanation": "Uzamış ateşle birlikte nonpürülan konjonktivit, oral mukoza değişiklikleri, döküntü ve ekstremite ödemi Kawasaki paternini oluşturan hasta bulgularıdır.",
+              "interpretation": "Uzamış ateşle birlikte nonpürülan konjonktivit, oral mukoza değişiklikleri, döküntü ve ekstremite ödemi Kawasaki paternini oluşturan hasta bulgularıdır.",
+              "explanationAfterAnswer": "Uzamış ateşle birlikte nonpürülan konjonktivit, oral mukoza değişiklikleri, döküntü ve ekstremite ödemi Kawasaki paternini oluşturan hasta bulgularıdır.",
+              "testValueLabel": "Tanısal klinik veri",
+              "clinicalPriorityLabel": "Tanısal klinik veri",
+              "educationalValue": "Tanısal klinik veri",
+              "scoreImpact": 5,
+              "scoreValue": 5,
+              "clinicalFlowOrder": 10,
+              "flowOrder": 10,
+              "pediatricSafetyValue": "Kritik karar verdirir",
+              "treatmentImpact": "Tedavi sırasını belirler",
+              "orderRank": 10
+          },
+          {
+              "id": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular-inflammation",
+              "label": "CRP ve eritrosit sedimentasyon hızı",
+              "title": "CRP ve eritrosit sedimentasyon hızı",
+              "orderLabel": "CRP ve eritrosit sedimentasyon hızı",
+              "type": "lab",
+              "priority": "essential",
+              "subtype": "",
+              "category": "laboratory",
+              "testTypeCategory": "laboratory",
+              "summary": "Belirgin akut faz yüksekliği sistemik vaskülitik inflamasyonu destekler.",
+              "clinicalMeaning": "Belirgin akut faz yüksekliği sistemik vaskülitik inflamasyonu destekler.",
+              "result": {
+                  "title": "CRP ve eritrosit sedimentasyon hızı",
+                  "summary": "Belirgin akut faz yüksekliği sistemik vaskülitik inflamasyonu destekler.",
+                  "interpretation": "Belirgin akut faz yüksekliği sistemik vaskülitik inflamasyonu destekler.",
+                  "values": [
+                      {
+                          "parameter": "CRP",
+                          "value": "112 mg/L",
+                          "reference": "<5 mg/L",
+                          "note": "Yüksek"
+                      },
+                      {
+                          "parameter": "ESR",
+                          "value": "78 mm/saat",
+                          "reference": "<20 mm/saat",
+                          "note": "Yüksek"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "CRP",
+                          "value": "112 mg/L",
+                          "reference": "<5 mg/L",
+                          "note": "Yüksek"
+                      },
+                      {
+                          "parameter": "ESR",
+                          "value": "78 mm/saat",
+                          "reference": "<20 mm/saat",
+                          "note": "Yüksek"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "CRP",
+                      "value": "112 mg/L",
+                      "reference": "<5 mg/L",
+                      "note": "Yüksek"
+                  },
+                  {
+                      "parameter": "ESR",
+                      "value": "78 mm/saat",
+                      "reference": "<20 mm/saat",
+                      "note": "Yüksek"
+                  }
+              ],
+              "postAnswerExplanation": "Belirgin akut faz yüksekliği sistemik vaskülitik inflamasyonu destekler.",
+              "interpretation": "Belirgin akut faz yüksekliği sistemik vaskülitik inflamasyonu destekler.",
+              "explanationAfterAnswer": "Belirgin akut faz yüksekliği sistemik vaskülitik inflamasyonu destekler.",
+              "testValueLabel": "Destekleyici laboratuvar",
+              "clinicalPriorityLabel": "Destekleyici laboratuvar",
+              "educationalValue": "Destekleyici laboratuvar",
+              "scoreImpact": 4,
+              "scoreValue": 4,
+              "clinicalFlowOrder": 20,
+              "flowOrder": 20,
+              "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
+              "treatmentImpact": "Kararı destekler",
+              "orderRank": 20
+          },
+          {
+              "id": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular-supportive-labs",
+              "label": "Destekleyici laboratuvar bulguları",
+              "title": "Destekleyici laboratuvar bulguları",
+              "orderLabel": "Destekleyici laboratuvar bulguları",
+              "type": "lab",
+              "priority": "supportive",
+              "subtype": "",
+              "category": "laboratory",
+              "testTypeCategory": "laboratory",
+              "summary": "Trombositoz, hipoalbüminemi, hafif transaminaz yüksekliği ve piyüri Kawasaki hastalığında görülebilen destekleyici inflamasyon bulgularıdır.",
+              "clinicalMeaning": "Trombositoz, hipoalbüminemi, hafif transaminaz yüksekliği ve piyüri Kawasaki hastalığında görülebilen destekleyici inflamasyon bulgularıdır.",
+              "result": {
+                  "title": "Destekleyici laboratuvar bulguları",
+                  "summary": "Trombositoz, hipoalbüminemi, hafif transaminaz yüksekliği ve piyüri Kawasaki hastalığında görülebilen destekleyici inflamasyon bulgularıdır.",
+                  "interpretation": "Trombositoz, hipoalbüminemi, hafif transaminaz yüksekliği ve piyüri Kawasaki hastalığında görülebilen destekleyici inflamasyon bulgularıdır.",
+                  "values": [
+                      {
+                          "parameter": "Trombosit",
+                          "value": "585.000/mm³",
+                          "reference": "150.000–450.000/mm³",
+                          "note": "Yüksek"
+                      },
+                      {
+                          "parameter": "Albumin",
+                          "value": "3.0 g/dL",
+                          "reference": "3.5–5.0 g/dL",
+                          "note": "Düşük"
+                      },
+                      {
+                          "parameter": "ALT",
+                          "value": "72 U/L",
+                          "reference": "<40 U/L",
+                          "note": "Yüksek"
+                      },
+                      {
+                          "parameter": "İdrar lökosit",
+                          "value": "12–15/hpf",
+                          "reference": "0–5/hpf",
+                          "note": "Piyüri"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Trombosit",
+                          "value": "585.000/mm³",
+                          "reference": "150.000–450.000/mm³",
+                          "note": "Yüksek"
+                      },
+                      {
+                          "parameter": "Albumin",
+                          "value": "3.0 g/dL",
+                          "reference": "3.5–5.0 g/dL",
+                          "note": "Düşük"
+                      },
+                      {
+                          "parameter": "ALT",
+                          "value": "72 U/L",
+                          "reference": "<40 U/L",
+                          "note": "Yüksek"
+                      },
+                      {
+                          "parameter": "İdrar lökosit",
+                          "value": "12–15/hpf",
+                          "reference": "0–5/hpf",
+                          "note": "Piyüri"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Trombosit",
+                      "value": "585.000/mm³",
+                      "reference": "150.000–450.000/mm³",
+                      "note": "Yüksek"
+                  },
+                  {
+                      "parameter": "Albumin",
+                      "value": "3.0 g/dL",
+                      "reference": "3.5–5.0 g/dL",
+                      "note": "Düşük"
+                  },
+                  {
+                      "parameter": "ALT",
+                      "value": "72 U/L",
+                      "reference": "<40 U/L",
+                      "note": "Yüksek"
+                  },
+                  {
+                      "parameter": "İdrar lökosit",
+                      "value": "12–15/hpf",
+                      "reference": "0–5/hpf",
+                      "note": "Piyüri"
+                  }
+              ],
+              "postAnswerExplanation": "Trombositoz, hipoalbüminemi, hafif transaminaz yüksekliği ve piyüri Kawasaki hastalığında görülebilen destekleyici inflamasyon bulgularıdır.",
+              "interpretation": "Trombositoz, hipoalbüminemi, hafif transaminaz yüksekliği ve piyüri Kawasaki hastalığında görülebilen destekleyici inflamasyon bulgularıdır.",
+              "explanationAfterAnswer": "Trombositoz, hipoalbüminemi, hafif transaminaz yüksekliği ve piyüri Kawasaki hastalığında görülebilen destekleyici inflamasyon bulgularıdır.",
+              "testValueLabel": "Destekleyici laboratuvar",
+              "clinicalPriorityLabel": "Destekleyici laboratuvar",
+              "educationalValue": "Destekleyici laboratuvar",
+              "scoreImpact": 3,
+              "scoreValue": 3,
+              "clinicalFlowOrder": 30,
+              "flowOrder": 30,
+              "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
+              "treatmentImpact": "Kararı destekler",
+              "orderRank": 30
+          },
+          {
+              "id": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular-urine-culture",
+              "label": "İdrar kültürü",
+              "title": "İdrar kültürü",
+              "orderLabel": "İdrar kültürü",
+              "type": "culture",
+              "priority": "supportive",
+              "subtype": "",
+              "category": "microbiology",
+              "testTypeCategory": "microbiology",
+              "summary": "İdrar kültüründe üreme olmaması, piyürinin bakteriyel üriner enfeksiyonla açıklanmasını zayıflatır.",
+              "clinicalMeaning": "İdrar kültüründe üreme olmaması, piyürinin bakteriyel üriner enfeksiyonla açıklanmasını zayıflatır.",
+              "result": {
+                  "title": "İdrar kültürü",
+                  "summary": "İdrar kültüründe üreme olmaması, piyürinin bakteriyel üriner enfeksiyonla açıklanmasını zayıflatır.",
+                  "interpretation": "İdrar kültüründe üreme olmaması, piyürinin bakteriyel üriner enfeksiyonla açıklanmasını zayıflatır.",
+                  "values": [
+                      {
+                          "parameter": "Kültür sonucu",
+                          "value": "Üreme olmadı",
+                          "note": "Steril piyüriyi destekler"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Kültür sonucu",
+                          "value": "Üreme olmadı",
+                          "note": "Steril piyüriyi destekler"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Kültür sonucu",
+                      "value": "Üreme olmadı",
+                      "note": "Steril piyüriyi destekler"
+                  }
+              ],
+              "postAnswerExplanation": "İdrar kültüründe üreme olmaması, piyürinin bakteriyel üriner enfeksiyonla açıklanmasını zayıflatır.",
+              "interpretation": "İdrar kültüründe üreme olmaması, piyürinin bakteriyel üriner enfeksiyonla açıklanmasını zayıflatır.",
+              "explanationAfterAnswer": "İdrar kültüründe üreme olmaması, piyürinin bakteriyel üriner enfeksiyonla açıklanmasını zayıflatır.",
+              "testValueLabel": "Ayırıcı tanı verisi",
+              "clinicalPriorityLabel": "Ayırıcı tanı verisi",
+              "educationalValue": "Ayırıcı tanı verisi",
+              "scoreImpact": 2,
+              "scoreValue": 2,
+              "clinicalFlowOrder": 40,
+              "flowOrder": 40,
+              "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
+              "treatmentImpact": "Kararı destekler",
+              "orderRank": 40
+          },
+          {
+              "id": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular-echo",
+              "label": "Ekokardiyografi",
+              "title": "Ekokardiyografi",
+              "orderLabel": "Ekokardiyografi",
+              "type": "ultrasound",
+              "priority": "essential",
+              "subtype": "",
+              "category": "imaging",
+              "testTypeCategory": "imaging",
+              "summary": "Başlangıç ekokardiyografisi koroner arter boyutlarını ve ventrikül fonksiyonunu değerlendirir.",
+              "clinicalMeaning": "Başlangıç ekokardiyografisi koroner arter boyutlarını ve ventrikül fonksiyonunu değerlendirir.",
+              "result": {
+                  "title": "Ekokardiyografi",
+                  "summary": "Başlangıç ekokardiyografisi koroner arter boyutlarını ve ventrikül fonksiyonunu değerlendirir.",
+                  "interpretation": "Başlangıç ekokardiyografisi koroner arter boyutlarını ve ventrikül fonksiyonunu değerlendirir.",
+                  "values": [
+                      {
+                          "parameter": "Sol ana koroner arter Z-skoru",
+                          "value": "+2.6",
+                          "reference": "<+2.0",
+                          "note": "Hafif ektazi"
+                      },
+                      {
+                          "parameter": "Sağ koroner arter Z-skoru",
+                          "value": "+2.1",
+                          "reference": "<+2.0",
+                          "note": "Sınırda genişleme"
+                      },
+                      {
+                          "parameter": "Ventrikül fonksiyonu",
+                          "value": "Sistolik fonksiyon korunmuş",
+                          "note": "Başlangıç değerlendirmesi"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Sol ana koroner arter Z-skoru",
+                          "value": "+2.6",
+                          "reference": "<+2.0",
+                          "note": "Hafif ektazi"
+                      },
+                      {
+                          "parameter": "Sağ koroner arter Z-skoru",
+                          "value": "+2.1",
+                          "reference": "<+2.0",
+                          "note": "Sınırda genişleme"
+                      },
+                      {
+                          "parameter": "Ventrikül fonksiyonu",
+                          "value": "Sistolik fonksiyon korunmuş",
+                          "note": "Başlangıç değerlendirmesi"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Sol ana koroner arter Z-skoru",
+                      "value": "+2.6",
+                      "reference": "<+2.0",
+                      "note": "Hafif ektazi"
+                  },
+                  {
+                      "parameter": "Sağ koroner arter Z-skoru",
+                      "value": "+2.1",
+                      "reference": "<+2.0",
+                      "note": "Sınırda genişleme"
+                  },
+                  {
+                      "parameter": "Ventrikül fonksiyonu",
+                      "value": "Sistolik fonksiyon korunmuş",
+                      "note": "Başlangıç değerlendirmesi"
+                  }
+              ],
+              "postAnswerExplanation": "Başlangıç ekokardiyografisi koroner arter boyutlarını ve ventrikül fonksiyonunu değerlendirir.",
+              "interpretation": "Başlangıç ekokardiyografisi koroner arter boyutlarını ve ventrikül fonksiyonunu değerlendirir.",
+              "explanationAfterAnswer": "Başlangıç ekokardiyografisi koroner arter boyutlarını ve ventrikül fonksiyonunu değerlendirir.",
+              "testValueLabel": "Komplikasyon risk verisi",
+              "clinicalPriorityLabel": "Komplikasyon risk verisi",
+              "educationalValue": "Komplikasyon risk verisi",
+              "scoreImpact": 4,
+              "scoreValue": 4,
+              "clinicalFlowOrder": 50,
+              "flowOrder": 50,
+              "pediatricSafetyValue": "Kritik karar verdirir",
+              "treatmentImpact": "Tedavi sırasını belirler",
+              "orderRank": 50
+          }
+      ],
+      "useSyntheticInvestigationBank": false,
+      "managementSequence": {
+          "enabled": false
+      },
+      "hideExamSignal": true,
       "question": "Bu hastada koroner arter komplikasyonu riskini azaltmak için en uygun tedavi aşağıdakilerden hangisidir?",
-      "explanation": "Altı gündür süren ateşe bilateral nonpürülan konjonktivit, dudak çatlağı/çilek dili, polimorf döküntü, el-ayak ödemi ve servikal lenfadenopati eşlik etmektedir; laboratuvarda belirgin inflamasyon ve ekokardiyografide erken koroner etkilenme vardır. Bu tablo Kawasaki hastalığıyla uyumludur; koroner arter anevrizması riskini azaltan temel tedavi ilk 10 gün içinde intravenöz immün globulin ve aspirin başlanmasıdır.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Kawasaki: ≥5 gün ateş + mukokutanöz bulgular; koroner komplikasyonu azaltan tedavi IVIG + aspirindir."
-        }
-      ],
+      "questionType": "treatment",
+      "answerTarget": "definitive_treatment",
+      "diagnosis": {
+          "correct": "İntravenöz immün globulin ve aspirin tedavisi",
+          "options": [
+              "Yalnız antipiretik ve sıvı desteğiyle ayaktan izlem",
+              "Yüksek doz amoksisilin-klavulanat tedavisi",
+              "Sistemik kortikosteroid monoterapisi",
+              "Oral asiklovir tedavisi",
+              "İntravenöz immün globulin ve aspirin tedavisi"
+          ],
+          "question": "Bu hastada koroner arter komplikasyonu riskini azaltmak için en uygun tedavi aşağıdakilerden hangisidir?",
+          "explanation": "Altı gündür süren ateşe bilateral nonpürülan konjonktivit, çatlamış dudak/çilek dili, polimorf döküntü, el-ayak ödemi ve servikal lenfadenopati eşlik etmektedir; laboratuvarda belirgin inflamasyon ve destekleyici Kawasaki bulguları vardır. Bu tablo Kawasaki hastalığı ile uyumludur ve koroner arter komplikasyonu riskini azaltmak için geciktirilmemesi gereken temel tedavi intravenöz immün globulin ile aspirindir.",
+          "pearls": [
+              {
+                  "label": "Sınav notu",
+                  "text": "Kawasaki’de koroner riski azaltan klasik TUS cevabı IVIG + aspirindir; antibiyotik veya yalnız destek tedavisi bu riski azaltmaz."
+              }
+          ],
+          "optionComparison": {
+              "Yalnız antipiretik ve sıvı desteğiyle ayaktan izlem": "Yalnız destek tedavisi ateşi geçici olarak azaltabilir; ancak Kawasaki hastalığında koroner arter komplikasyon riskini azaltmaz. Bu çocukta çoklu mukokutanöz bulgu ve belirgin inflamasyon aktif tedavi gerektirir.",
+              "Yüksek doz amoksisilin-klavulanat tedavisi": "Bakteriyel tonsillit veya lenfadenit düşünülse antibiyotik gerekebilir; fakat eksüdatif tonsillit, pürülan odak veya kültürle desteklenen bakteriyel enfeksiyon yoktur. Bulgular yaygın vaskülitik inflamasyon paternindedir.",
+              "Sistemik kortikosteroid monoterapisi": "Kortikosteroidler yüksek riskli veya IVIG dirençli seçilmiş olgularda ek tedavi olarak düşünülebilir; bu olguda standart ilk tedavinin yerine tek başına kortikosteroid verilmez.",
+              "Oral asiklovir tedavisi": "Asiklovir veziküler herpetik lezyon veya ensefalit şüphesi gibi durumlarda anlamlıdır. Buradaki dudak-dil değişikliği ve döküntü Kawasaki paterninin parçasıdır, viral veziküler hastalık bulgusu değildir.",
+              "İntravenöz immün globulin ve aspirin tedavisi": "Doğru tedavi intravenöz immün globulin ve aspirindir; IVIG sistemik vaskülitik inflamasyonu baskılayarak koroner arter anevrizması riskini azaltır, aspirin ise akut dönemde antiinflamatuvar/antitrombotik tedavi planının parçasıdır."
+          },
+          "answerFeedback": {
+              "summary": "Altı gündür süren ateşe bilateral nonpürülan konjonktivit, çatlamış dudak/çilek dili, polimorf döküntü, el-ayak ödemi ve servikal lenfadenopati eşlik etmektedir; laboratuvarda belirgin inflamasyon ve destekleyici Kawasaki bulguları vardır. Bu tablo Kawasaki hastalığı ile uyumludur ve koroner arter komplikasyonu riskini azaltmak için geciktirilmemesi gereken temel tedavi intravenöz immün globulin ile aspirindir.",
+              "whyCorrect": "Doğru tedavi intravenöz immün globulin ve aspirindir; IVIG sistemik vaskülitik inflamasyonu baskılayarak koroner arter anevrizması riskini azaltır, aspirin ise akut dönemde antiinflamatuvar/antitrombotik tedavi planının parçasıdır.",
+              "rationale": "Altı gündür süren ateşe bilateral nonpürülan konjonktivit, çatlamış dudak/çilek dili, polimorf döküntü, el-ayak ödemi ve servikal lenfadenopati eşlik etmektedir; laboratuvarda belirgin inflamasyon ve destekleyici Kawasaki bulguları vardır. Bu tablo Kawasaki hastalığı ile uyumludur ve koroner arter komplikasyonu riskini azaltmak için geciktirilmemesi gereken temel tedavi intravenöz immün globulin ile aspirindir.",
+              "correctOptionFeedback": "Doğru tedavi intravenöz immün globulin ve aspirindir; IVIG sistemik vaskülitik inflamasyonu baskılayarak koroner arter anevrizması riskini azaltır, aspirin ise akut dönemde antiinflamatuvar/antitrombotik tedavi planının parçasıdır.",
+              "keyClues": [
+                  "Ateşin 6 gündür sürmesi → Kawasaki hastalığı için gerekli uzamış ateş paternini destekler.",
+                  "Nonpürülan konjonktivit, oral mukoza değişikliği, döküntü ve ekstremite ödemi → mukokutanöz kriterleri birlikte oluşturur.",
+                  "CRP/ESR yüksekliği, trombositoz ve hipoalbüminemi → sistemik inflamasyonu destekler.",
+                  "Koroner Z-skorlarında artış → koroner komplikasyon riskinin değerlendirilmesi gerektiğini gösterir."
+              ],
+              "evidenceChain": [
+                  {
+                      "text": "Ateşin 6 gündür sürmesi → Kawasaki hastalığı için gerekli uzamış ateş paternini destekler.",
+                      "weight": "high",
+                      "source": "case"
+                  },
+                  {
+                      "text": "Nonpürülan konjonktivit, oral mukoza değişikliği, döküntü ve ekstremite ödemi → mukokutanöz kriterleri birlikte oluşturur.",
+                      "weight": "high",
+                      "source": "case"
+                  },
+                  {
+                      "text": "CRP/ESR yüksekliği, trombositoz ve hipoalbüminemi → sistemik inflamasyonu destekler.",
+                      "weight": "medium",
+                      "source": "case"
+                  },
+                  {
+                      "text": "Koroner Z-skorlarında artış → koroner komplikasyon riskinin değerlendirilmesi gerektiğini gösterir.",
+                      "weight": "medium",
+                      "source": "case"
+                  }
+              ],
+              "examPearl": "Kawasaki’de koroner riski azaltan klasik TUS cevabı IVIG + aspirindir; antibiyotik veya yalnız destek tedavisi bu riski azaltmaz.",
+              "pearls": [
+                  {
+                      "label": "Sınav notu",
+                      "text": "Kawasaki’de koroner riski azaltan klasik TUS cevabı IVIG + aspirindir; antibiyotik veya yalnız destek tedavisi bu riski azaltmaz."
+                  }
+              ],
+              "clinicalPearls": [
+                  {
+                      "label": "Sınav notu",
+                      "text": "Kawasaki’de koroner riski azaltan klasik TUS cevabı IVIG + aspirindir; antibiyotik veya yalnız destek tedavisi bu riski azaltmaz."
+                  }
+              ],
+              "optionComparison": {
+                  "Yalnız antipiretik ve sıvı desteğiyle ayaktan izlem": "Yalnız destek tedavisi ateşi geçici olarak azaltabilir; ancak Kawasaki hastalığında koroner arter komplikasyon riskini azaltmaz. Bu çocukta çoklu mukokutanöz bulgu ve belirgin inflamasyon aktif tedavi gerektirir.",
+                  "Yüksek doz amoksisilin-klavulanat tedavisi": "Bakteriyel tonsillit veya lenfadenit düşünülse antibiyotik gerekebilir; fakat eksüdatif tonsillit, pürülan odak veya kültürle desteklenen bakteriyel enfeksiyon yoktur. Bulgular yaygın vaskülitik inflamasyon paternindedir.",
+                  "Sistemik kortikosteroid monoterapisi": "Kortikosteroidler yüksek riskli veya IVIG dirençli seçilmiş olgularda ek tedavi olarak düşünülebilir; bu olguda standart ilk tedavinin yerine tek başına kortikosteroid verilmez.",
+                  "Oral asiklovir tedavisi": "Asiklovir veziküler herpetik lezyon veya ensefalit şüphesi gibi durumlarda anlamlıdır. Buradaki dudak-dil değişikliği ve döküntü Kawasaki paterninin parçasıdır, viral veziküler hastalık bulgusu değildir.",
+                  "İntravenöz immün globulin ve aspirin tedavisi": "Doğru tedavi intravenöz immün globulin ve aspirindir; IVIG sistemik vaskülitik inflamasyonu baskılayarak koroner arter anevrizması riskini azaltır, aspirin ise akut dönemde antiinflamatuvar/antitrombotik tedavi planının parçasıdır."
+              },
+              "whyWrong": {
+                  "Yalnız antipiretik ve sıvı desteğiyle ayaktan izlem": "Yalnız destek tedavisi ateşi geçici olarak azaltabilir; ancak Kawasaki hastalığında koroner arter komplikasyon riskini azaltmaz. Bu çocukta çoklu mukokutanöz bulgu ve belirgin inflamasyon aktif tedavi gerektirir.",
+                  "Yüksek doz amoksisilin-klavulanat tedavisi": "Bakteriyel tonsillit veya lenfadenit düşünülse antibiyotik gerekebilir; fakat eksüdatif tonsillit, pürülan odak veya kültürle desteklenen bakteriyel enfeksiyon yoktur. Bulgular yaygın vaskülitik inflamasyon paternindedir.",
+                  "Sistemik kortikosteroid monoterapisi": "Kortikosteroidler yüksek riskli veya IVIG dirençli seçilmiş olgularda ek tedavi olarak düşünülebilir; bu olguda standart ilk tedavinin yerine tek başına kortikosteroid verilmez.",
+                  "Oral asiklovir tedavisi": "Asiklovir veziküler herpetik lezyon veya ensefalit şüphesi gibi durumlarda anlamlıdır. Buradaki dudak-dil değişikliği ve döküntü Kawasaki paterninin parçasıdır, viral veziküler hastalık bulgusu değildir."
+              },
+              "managementSteps": [],
+              "management": [],
+              "learningOutcome": "Öğrenci, Kawasaki hastalığında klinik kriterleri ve koroner komplikasyonu azaltan başlangıç tedavisini belirler.",
+              "coreKnowledge": "Kawasaki hastalığında uzamış ateş ve mukokutanöz bulgular tanıyı destekler; IVIG ve aspirin koroner komplikasyon riskini azaltmak için temel tedavidir."
+          },
+          "whyCorrect": "Doğru tedavi intravenöz immün globulin ve aspirindir; IVIG sistemik vaskülitik inflamasyonu baskılayarak koroner arter anevrizması riskini azaltır, aspirin ise akut dönemde antiinflamatuvar/antitrombotik tedavi planının parçasıdır.",
+          "evidenceChain": [
+              {
+                  "text": "Ateşin 6 gündür sürmesi → Kawasaki hastalığı için gerekli uzamış ateş paternini destekler.",
+                  "weight": "high",
+                  "source": "case"
+              },
+              {
+                  "text": "Nonpürülan konjonktivit, oral mukoza değişikliği, döküntü ve ekstremite ödemi → mukokutanöz kriterleri birlikte oluşturur.",
+                  "weight": "high",
+                  "source": "case"
+              },
+              {
+                  "text": "CRP/ESR yüksekliği, trombositoz ve hipoalbüminemi → sistemik inflamasyonu destekler.",
+                  "weight": "medium",
+                  "source": "case"
+              },
+              {
+                  "text": "Koroner Z-skorlarında artış → koroner komplikasyon riskinin değerlendirilmesi gerektiğini gösterir.",
+                  "weight": "medium",
+                  "source": "case"
+              }
+          ],
+          "coreKnowledge": "Kawasaki hastalığında uzamış ateş ve mukokutanöz bulgular tanıyı destekler; IVIG ve aspirin koroner komplikasyon riskini azaltmak için temel tedavidir.",
+          "examPearl": "Kawasaki’de koroner riski azaltan klasik TUS cevabı IVIG + aspirindir; antibiyotik veya yalnız destek tedavisi bu riski azaltmaz.",
+          "whyWrong": {
+              "Yalnız antipiretik ve sıvı desteğiyle ayaktan izlem": "Yalnız destek tedavisi ateşi geçici olarak azaltabilir; ancak Kawasaki hastalığında koroner arter komplikasyon riskini azaltmaz. Bu çocukta çoklu mukokutanöz bulgu ve belirgin inflamasyon aktif tedavi gerektirir.",
+              "Yüksek doz amoksisilin-klavulanat tedavisi": "Bakteriyel tonsillit veya lenfadenit düşünülse antibiyotik gerekebilir; fakat eksüdatif tonsillit, pürülan odak veya kültürle desteklenen bakteriyel enfeksiyon yoktur. Bulgular yaygın vaskülitik inflamasyon paternindedir.",
+              "Sistemik kortikosteroid monoterapisi": "Kortikosteroidler yüksek riskli veya IVIG dirençli seçilmiş olgularda ek tedavi olarak düşünülebilir; bu olguda standart ilk tedavinin yerine tek başına kortikosteroid verilmez.",
+              "Oral asiklovir tedavisi": "Asiklovir veziküler herpetik lezyon veya ensefalit şüphesi gibi durumlarda anlamlıdır. Buradaki dudak-dil değişikliği ve döküntü Kawasaki paterninin parçasıdır, viral veziküler hastalık bulgusu değildir."
+          }
+      },
+      "shuffleOptions": false,
+      "difficultyTag": "Zor",
+      "coreKnowledge": "Kawasaki hastalığında uzamış ateş ve mukokutanöz bulgular tanıyı destekler; IVIG ve aspirin koroner komplikasyon riskini azaltmak için temel tedavidir.",
+      "examPearl": "Kawasaki’de koroner riski azaltan klasik TUS cevabı IVIG + aspirindir; antibiyotik veya yalnız destek tedavisi bu riski azaltmaz.",
+      "whyCorrect": "Doğru tedavi intravenöz immün globulin ve aspirindir; IVIG sistemik vaskülitik inflamasyonu baskılayarak koroner arter anevrizması riskini azaltır, aspirin ise akut dönemde antiinflamatuvar/antitrombotik tedavi planının parçasıdır.",
       "optionComparison": {
-        "Yalnız antipiretik ve sıvı desteğiyle ayaktan izlem": "Destek tedavisi ateşi geçici azaltabilir; ancak beş günü aşan ateş ve mukokutanöz kriterler Kawasaki hastalığında koroner arter komplikasyonu riskini azaltmaz.",
-        "Yüksek doz amoksisilin-klavulanat tedavisi": "Bakteriyel tonsillit/lenfadenit düşünülseydi eksüda, lokalize pürülan odak veya uygun kültür bulgusu beklenirdi. Bu olgudaki bilateral nonpürülan konjonktivit, dudak-dil değişikliği ve ekstremite bulguları antibiyotikle açıklanmaz.",
-        "Sistemik kortikosteroid monoterapisi": "Kortikosteroid bazı dirençli/yüksek riskli Kawasaki olgularında ek tedavi olarak düşünülebilir; standart ilk tedavide IVIG’nin yerini tek başına almaz.",
-        "Oral asiklovir tedavisi": "Asiklovir herpes/varisella gibi veziküler mukokutanöz enfeksiyonlarda kullanılır; bu hastadaki polimorf döküntü, konjonktivit ve ekstremite ödemi Kawasaki paterniyle uyumludur.",
-        "İntravenöz immün globulin ve aspirin tedavisi": "Doğru seçenek budur. Kawasaki hastalığında ilk 10 gün içinde IVIG verilmesi koroner arter anevrizması riskini azaltır; aspirin akut inflamasyon döneminde eşlik eden tedavidir."
+          "Yalnız antipiretik ve sıvı desteğiyle ayaktan izlem": "Yalnız destek tedavisi ateşi geçici olarak azaltabilir; ancak Kawasaki hastalığında koroner arter komplikasyon riskini azaltmaz. Bu çocukta çoklu mukokutanöz bulgu ve belirgin inflamasyon aktif tedavi gerektirir.",
+          "Yüksek doz amoksisilin-klavulanat tedavisi": "Bakteriyel tonsillit veya lenfadenit düşünülse antibiyotik gerekebilir; fakat eksüdatif tonsillit, pürülan odak veya kültürle desteklenen bakteriyel enfeksiyon yoktur. Bulgular yaygın vaskülitik inflamasyon paternindedir.",
+          "Sistemik kortikosteroid monoterapisi": "Kortikosteroidler yüksek riskli veya IVIG dirençli seçilmiş olgularda ek tedavi olarak düşünülebilir; bu olguda standart ilk tedavinin yerine tek başına kortikosteroid verilmez.",
+          "Oral asiklovir tedavisi": "Asiklovir veziküler herpetik lezyon veya ensefalit şüphesi gibi durumlarda anlamlıdır. Buradaki dudak-dil değişikliği ve döküntü Kawasaki paterninin parçasıdır, viral veziküler hastalık bulgusu değildir.",
+          "İntravenöz immün globulin ve aspirin tedavisi": "Doğru tedavi intravenöz immün globulin ve aspirindir; IVIG sistemik vaskülitik inflamasyonu baskılayarak koroner arter anevrizması riskini azaltır, aspirin ise akut dönemde antiinflamatuvar/antitrombotik tedavi planının parçasıdır."
       },
-      "answerFeedback": {
-        "summary": "Altı gündür süren ateşe bilateral nonpürülan konjonktivit, dudak çatlağı/çilek dili, polimorf döküntü, el-ayak ödemi ve servikal lenfadenopati eşlik etmektedir; laboratuvarda belirgin inflamasyon ve ekokardiyografide erken koroner etkilenme vardır. Bu tablo Kawasaki hastalığıyla uyumludur; koroner arter anevrizması riskini azaltan temel tedavi ilk 10 gün içinde intravenöz immün globulin ve aspirin başlanmasıdır.",
-        "whyCorrect": "Altı gündür süren ateşe bilateral nonpürülan konjonktivit, dudak çatlağı/çilek dili, polimorf döküntü, el-ayak ödemi ve servikal lenfadenopati eşlik etmektedir; laboratuvarda belirgin inflamasyon ve ekokardiyografide erken koroner etkilenme vardır. Bu tablo Kawasaki hastalığıyla uyumludur; koroner arter anevrizması riskini azaltan temel tedavi ilk 10 gün içinde intravenöz immün globulin ve aspirin başlanmasıdır.",
-        "rationale": "Altı gündür süren ateşe bilateral nonpürülan konjonktivit, dudak çatlağı/çilek dili, polimorf döküntü, el-ayak ödemi ve servikal lenfadenopati eşlik etmektedir; laboratuvarda belirgin inflamasyon ve ekokardiyografide erken koroner etkilenme vardır. Bu tablo Kawasaki hastalığıyla uyumludur; koroner arter anevrizması riskini azaltan temel tedavi ilk 10 gün içinde intravenöz immün globulin ve aspirin başlanmasıdır.",
-        "correctOptionFeedback": "Altı gündür süren ateşe bilateral nonpürülan konjonktivit, dudak çatlağı/çilek dili, polimorf döküntü, el-ayak ödemi ve servikal lenfadenopati eşlik etmektedir; laboratuvarda belirgin inflamasyon ve ekokardiyografide erken koroner etkilenme vardır. Bu tablo Kawasaki hastalığıyla uyumludur; koroner arter anevrizması riskini azaltan temel tedavi ilk 10 gün içinde intravenöz immün globulin ve aspirin başlanmasıdır.",
-        "keyClues": [
-          "Ateş 6 gündür sürmektedir ve antibiyotik gerektiren lokal pürülan enfeksiyon odağı yoktur.",
-          "Bilateral nonpürülan konjonktivit, çatlamış dudaklar, çilek dili, polimorf döküntü ve el-ayak ödemi Kawasaki kriterlerini destekler.",
-          "CRP/ESR yüksekliği, trombositoz eğilimi, hipoalbüminemi ve steril piyüri sistemik vaskülitik inflamasyonla uyumludur.",
-          "Ekokardiyografide hafif koroner ektazi başlangıcı tedavinin koroner komplikasyon riskini azaltma hedefini doğrudan güçlendirir."
-        ],
-        "evidenceChain": [
-          {
-            "text": "Ateş 6 gündür sürmektedir ve antibiyotik gerektiren lokal pürülan enfeksiyon odağı yoktur.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Bilateral nonpürülan konjonktivit, çatlamış dudaklar, çilek dili, polimorf döküntü ve el-ayak ödemi Kawasaki kriterlerini destekler.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "CRP/ESR yüksekliği, trombositoz eğilimi, hipoalbüminemi ve steril piyüri sistemik vaskülitik inflamasyonla uyumludur.",
-            "weight": "medium",
-            "source": "case"
-          },
-          {
-            "text": "Ekokardiyografide hafif koroner ektazi başlangıcı tedavinin koroner komplikasyon riskini azaltma hedefini doğrudan güçlendirir.",
-            "weight": "high",
-            "source": "case"
-          }
-        ],
-        "examPearl": "Kawasaki: ≥5 gün ateş + mukokutanöz bulgular; koroner komplikasyonu azaltan tedavi IVIG + aspirindir.",
-        "pearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Kawasaki: ≥5 gün ateş + mukokutanöz bulgular; koroner komplikasyonu azaltan tedavi IVIG + aspirindir."
-          }
-        ],
-        "clinicalPearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Kawasaki: ≥5 gün ateş + mukokutanöz bulgular; koroner komplikasyonu azaltan tedavi IVIG + aspirindir."
-          }
-        ],
-        "optionComparison": {
-          "Yalnız antipiretik ve sıvı desteğiyle ayaktan izlem": "Destek tedavisi ateşi geçici azaltabilir; ancak beş günü aşan ateş ve mukokutanöz kriterler Kawasaki hastalığında koroner arter komplikasyonu riskini azaltmaz.",
-          "Yüksek doz amoksisilin-klavulanat tedavisi": "Bakteriyel tonsillit/lenfadenit düşünülseydi eksüda, lokalize pürülan odak veya uygun kültür bulgusu beklenirdi. Bu olgudaki bilateral nonpürülan konjonktivit, dudak-dil değişikliği ve ekstremite bulguları antibiyotikle açıklanmaz.",
-          "Sistemik kortikosteroid monoterapisi": "Kortikosteroid bazı dirençli/yüksek riskli Kawasaki olgularında ek tedavi olarak düşünülebilir; standart ilk tedavide IVIG’nin yerini tek başına almaz.",
-          "Oral asiklovir tedavisi": "Asiklovir herpes/varisella gibi veziküler mukokutanöz enfeksiyonlarda kullanılır; bu hastadaki polimorf döküntü, konjonktivit ve ekstremite ödemi Kawasaki paterniyle uyumludur.",
-          "İntravenöz immün globulin ve aspirin tedavisi": "Doğru seçenek budur. Kawasaki hastalığında ilk 10 gün içinde IVIG verilmesi koroner arter anevrizması riskini azaltır; aspirin akut inflamasyon döneminde eşlik eden tedavidir."
-        },
-        "whyWrong": {
-          "Yalnız antipiretik ve sıvı desteğiyle ayaktan izlem": "Destek tedavisi ateşi geçici azaltabilir; ancak beş günü aşan ateş ve mukokutanöz kriterler Kawasaki hastalığında koroner arter komplikasyonu riskini azaltmaz.",
-          "Yüksek doz amoksisilin-klavulanat tedavisi": "Bakteriyel tonsillit/lenfadenit düşünülseydi eksüda, lokalize pürülan odak veya uygun kültür bulgusu beklenirdi. Bu olgudaki bilateral nonpürülan konjonktivit, dudak-dil değişikliği ve ekstremite bulguları antibiyotikle açıklanmaz.",
-          "Sistemik kortikosteroid monoterapisi": "Kortikosteroid bazı dirençli/yüksek riskli Kawasaki olgularında ek tedavi olarak düşünülebilir; standart ilk tedavide IVIG’nin yerini tek başına almaz.",
-          "Oral asiklovir tedavisi": "Asiklovir herpes/varisella gibi veziküler mukokutanöz enfeksiyonlarda kullanılır; bu hastadaki polimorf döküntü, konjonktivit ve ekstremite ödemi Kawasaki paterniyle uyumludur."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "Kawasaki tedavisini enfeksiyon tedavisi veya yalnız destek tedavisinden ayırabilme.",
-        "coreKnowledge": "Kawasaki hastalığında tanı klinik kriterlerle konur; laboratuvar ve ekokardiyografi destekleyicidir. Tedavide IVIG geciktirilirse koroner anevrizma riski artar."
-      },
-      "whyCorrect": "Altı gündür süren ateşe bilateral nonpürülan konjonktivit, dudak çatlağı/çilek dili, polimorf döküntü, el-ayak ödemi ve servikal lenfadenopati eşlik etmektedir; laboratuvarda belirgin inflamasyon ve ekokardiyografide erken koroner etkilenme vardır. Bu tablo Kawasaki hastalığıyla uyumludur; koroner arter anevrizması riskini azaltan temel tedavi ilk 10 gün içinde intravenöz immün globulin ve aspirin başlanmasıdır.",
       "evidenceChain": [
-        {
-          "text": "Ateş 6 gündür sürmektedir ve antibiyotik gerektiren lokal pürülan enfeksiyon odağı yoktur.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Bilateral nonpürülan konjonktivit, çatlamış dudaklar, çilek dili, polimorf döküntü ve el-ayak ödemi Kawasaki kriterlerini destekler.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "CRP/ESR yüksekliği, trombositoz eğilimi, hipoalbüminemi ve steril piyüri sistemik vaskülitik inflamasyonla uyumludur.",
-          "weight": "medium",
-          "source": "case"
-        },
-        {
-          "text": "Ekokardiyografide hafif koroner ektazi başlangıcı tedavinin koroner komplikasyon riskini azaltma hedefini doğrudan güçlendirir.",
-          "weight": "high",
-          "source": "case"
-        }
+          {
+              "text": "Ateşin 6 gündür sürmesi → Kawasaki hastalığı için gerekli uzamış ateş paternini destekler.",
+              "weight": "high",
+              "source": "case"
+          },
+          {
+              "text": "Nonpürülan konjonktivit, oral mukoza değişikliği, döküntü ve ekstremite ödemi → mukokutanöz kriterleri birlikte oluşturur.",
+              "weight": "high",
+              "source": "case"
+          },
+          {
+              "text": "CRP/ESR yüksekliği, trombositoz ve hipoalbüminemi → sistemik inflamasyonu destekler.",
+              "weight": "medium",
+              "source": "case"
+          },
+          {
+              "text": "Koroner Z-skorlarında artış → koroner komplikasyon riskinin değerlendirilmesi gerektiğini gösterir.",
+              "weight": "medium",
+              "source": "case"
+          }
       ],
-      "coreKnowledge": "Kawasaki hastalığında tanı klinik kriterlerle konur; laboratuvar ve ekokardiyografi destekleyicidir. Tedavide IVIG geciktirilirse koroner anevrizma riski artar.",
-      "examPearl": "Kawasaki: ≥5 gün ateş + mukokutanöz bulgular; koroner komplikasyonu azaltan tedavi IVIG + aspirindir.",
       "whyWrong": {
-        "Yalnız antipiretik ve sıvı desteğiyle ayaktan izlem": "Destek tedavisi ateşi geçici azaltabilir; ancak beş günü aşan ateş ve mukokutanöz kriterler Kawasaki hastalığında koroner arter komplikasyonu riskini azaltmaz.",
-        "Yüksek doz amoksisilin-klavulanat tedavisi": "Bakteriyel tonsillit/lenfadenit düşünülseydi eksüda, lokalize pürülan odak veya uygun kültür bulgusu beklenirdi. Bu olgudaki bilateral nonpürülan konjonktivit, dudak-dil değişikliği ve ekstremite bulguları antibiyotikle açıklanmaz.",
-        "Sistemik kortikosteroid monoterapisi": "Kortikosteroid bazı dirençli/yüksek riskli Kawasaki olgularında ek tedavi olarak düşünülebilir; standart ilk tedavide IVIG’nin yerini tek başına almaz.",
-        "Oral asiklovir tedavisi": "Asiklovir herpes/varisella gibi veziküler mukokutanöz enfeksiyonlarda kullanılır; bu hastadaki polimorf döküntü, konjonktivit ve ekstremite ödemi Kawasaki paterniyle uyumludur."
+          "Yalnız antipiretik ve sıvı desteğiyle ayaktan izlem": "Yalnız destek tedavisi ateşi geçici olarak azaltabilir; ancak Kawasaki hastalığında koroner arter komplikasyon riskini azaltmaz. Bu çocukta çoklu mukokutanöz bulgu ve belirgin inflamasyon aktif tedavi gerektirir.",
+          "Yüksek doz amoksisilin-klavulanat tedavisi": "Bakteriyel tonsillit veya lenfadenit düşünülse antibiyotik gerekebilir; fakat eksüdatif tonsillit, pürülan odak veya kültürle desteklenen bakteriyel enfeksiyon yoktur. Bulgular yaygın vaskülitik inflamasyon paternindedir.",
+          "Sistemik kortikosteroid monoterapisi": "Kortikosteroidler yüksek riskli veya IVIG dirençli seçilmiş olgularda ek tedavi olarak düşünülebilir; bu olguda standart ilk tedavinin yerine tek başına kortikosteroid verilmez.",
+          "Oral asiklovir tedavisi": "Asiklovir veziküler herpetik lezyon veya ensefalit şüphesi gibi durumlarda anlamlıdır. Buradaki dudak-dil değişikliği ve döküntü Kawasaki paterninin parçasıdır, viral veziküler hastalık bulgusu değildir."
+      },
+      "aiMeta": {
+          "generatedAt": "manual-v397-pediatrics-second5-quality-correction",
+          "generator": "manual-editorial-pediatrics-second5-quality-correction",
+          "schemaVersion": "clinical-standard-v397",
+          "provider": "manual-clinical-editorial",
+          "validationWarnings": [],
+          "qualityPass": "pediatrics-second5-targeted-quality-correction",
+          "batch": "pediatrics-second-5",
+          "editedFields": [
+              "coreKnowledge",
+              "diagnosis",
+              "evidenceChain",
+              "exam",
+              "examPearl",
+              "feedback",
+              "investigations",
+              "optionComparison",
+              "patientIntro",
+              "question",
+              "stem"
+          ]
       }
-    },
-    "shuffleOptions": false,
-    "difficultyTag": "Zor",
-    "coreKnowledge": "Kawasaki hastalığında tanı klinik kriterlerle konur; laboratuvar ve ekokardiyografi destekleyicidir. Tedavide IVIG geciktirilirse koroner anevrizma riski artar.",
-    "examPearl": "Kawasaki: ≥5 gün ateş + mukokutanöz bulgular; koroner komplikasyonu azaltan tedavi IVIG + aspirindir.",
-    "whyCorrect": "Altı gündür süren ateşe bilateral nonpürülan konjonktivit, dudak çatlağı/çilek dili, polimorf döküntü, el-ayak ödemi ve servikal lenfadenopati eşlik etmektedir; laboratuvarda belirgin inflamasyon ve ekokardiyografide erken koroner etkilenme vardır. Bu tablo Kawasaki hastalığıyla uyumludur; koroner arter anevrizması riskini azaltan temel tedavi ilk 10 gün içinde intravenöz immün globulin ve aspirin başlanmasıdır.",
-    "optionComparison": {
-      "Yalnız antipiretik ve sıvı desteğiyle ayaktan izlem": "Destek tedavisi ateşi geçici azaltabilir; ancak beş günü aşan ateş ve mukokutanöz kriterler Kawasaki hastalığında koroner arter komplikasyonu riskini azaltmaz.",
-      "Yüksek doz amoksisilin-klavulanat tedavisi": "Bakteriyel tonsillit/lenfadenit düşünülseydi eksüda, lokalize pürülan odak veya uygun kültür bulgusu beklenirdi. Bu olgudaki bilateral nonpürülan konjonktivit, dudak-dil değişikliği ve ekstremite bulguları antibiyotikle açıklanmaz.",
-      "Sistemik kortikosteroid monoterapisi": "Kortikosteroid bazı dirençli/yüksek riskli Kawasaki olgularında ek tedavi olarak düşünülebilir; standart ilk tedavide IVIG’nin yerini tek başına almaz.",
-      "Oral asiklovir tedavisi": "Asiklovir herpes/varisella gibi veziküler mukokutanöz enfeksiyonlarda kullanılır; bu hastadaki polimorf döküntü, konjonktivit ve ekstremite ödemi Kawasaki paterniyle uyumludur.",
-      "İntravenöz immün globulin ve aspirin tedavisi": "Doğru seçenek budur. Kawasaki hastalığında ilk 10 gün içinde IVIG verilmesi koroner arter anevrizması riskini azaltır; aspirin akut inflamasyon döneminde eşlik eden tedavidir."
-    },
-    "evidenceChain": [
-      {
-        "text": "Ateş 6 gündür sürmektedir ve antibiyotik gerektiren lokal pürülan enfeksiyon odağı yoktur.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Bilateral nonpürülan konjonktivit, çatlamış dudaklar, çilek dili, polimorf döküntü ve el-ayak ödemi Kawasaki kriterlerini destekler.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "CRP/ESR yüksekliği, trombositoz eğilimi, hipoalbüminemi ve steril piyüri sistemik vaskülitik inflamasyonla uyumludur.",
-        "weight": "medium",
-        "source": "case"
-      },
-      {
-        "text": "Ekokardiyografide hafif koroner ektazi başlangıcı tedavinin koroner komplikasyon riskini azaltma hedefini doğrudan güçlendirir.",
-        "weight": "high",
-        "source": "case"
-      }
-    ],
-    "whyWrong": {
-      "Yalnız antipiretik ve sıvı desteğiyle ayaktan izlem": "Destek tedavisi ateşi geçici azaltabilir; ancak beş günü aşan ateş ve mukokutanöz kriterler Kawasaki hastalığında koroner arter komplikasyonu riskini azaltmaz.",
-      "Yüksek doz amoksisilin-klavulanat tedavisi": "Bakteriyel tonsillit/lenfadenit düşünülseydi eksüda, lokalize pürülan odak veya uygun kültür bulgusu beklenirdi. Bu olgudaki bilateral nonpürülan konjonktivit, dudak-dil değişikliği ve ekstremite bulguları antibiyotikle açıklanmaz.",
-      "Sistemik kortikosteroid monoterapisi": "Kortikosteroid bazı dirençli/yüksek riskli Kawasaki olgularında ek tedavi olarak düşünülebilir; standart ilk tedavide IVIG’nin yerini tek başına almaz.",
-      "Oral asiklovir tedavisi": "Asiklovir herpes/varisella gibi veziküler mukokutanöz enfeksiyonlarda kullanılır; bu hastadaki polimorf döküntü, konjonktivit ve ekstremite ödemi Kawasaki paterniyle uyumludur."
-    },
-    "aiMeta": {
-      "generatedAt": "manual-v397-pediatrics-second5-ultra-refined",
-      "generator": "manual-editorial-pediatrics-second-batch-refinement",
-      "schemaVersion": "clinical-standard-v397",
-      "provider": "manual-editorial",
-      "validationWarnings": [],
-      "qualityPass": "pediatrics-second5-ultra-refine",
-      "batch": "pediatrics-second-5"
-    }
   },
   {
     "id": "v169-new-062-gebelikte-hipertansiyon-ve-norolojik-yakinma",
@@ -59862,589 +59861,552 @@ export const rawCases = [
       "Nervus glossopharyngeus": "Nervus glossopharyngeus yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. İzole vokal kord paralizisi ve tiroide yakın cerrahi saha bu sinirden çok nervus laryngeus recurrensi düşündürür."
     }
   },
-  {
-    "id": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski",
-    "branchId": "pediatrics",
-    "caseType": "standard",
-    "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
-    "title": "Aralıklı karın ağrısı ve kanlı-mukuslu dışkı",
-    "difficulty": "Acil",
-    "clinicalFocus": "İnvajinasyonda klasik kolik ağrı-dışkı-muayene-USG paternini tanıyıp perforasyon yoksa enema redüksiyonunu seçme.",
-    "learningTarget": "İnvajinasyonda stabil hastada pnömatik/hidrostatik enema redüksiyonunun cerrahiden önceki tedavi olduğunu açıklayabilme.",
-    "demographics": "8 aylık erkek bebek",
-    "setting": "Çocuk acil servisi",
-    "chiefComplaint": "Bebek, aralıklı şiddetli ağlama, kusma ve kanlı-mukuslu dışkı nedeniyle acile getiriliyor.",
-    "stem": "Son 12 saattir birkaç dakikada bir başlayan ağlama nöbetleri sırasında bacaklarını karnına çekmektedir. Nöbet aralarında halsiz ve soluk görünür. Başlangıçta safrasız kusma olmuş, son bezinde koyu kırmızı mukuslu dışkı fark edilmiştir. Ateş belirgin değildir; daha önce benzer atak olmamıştır.",
-    "patientIntro": {
-      "profile": "8 aylık erkek bebek, akut aralıklı karın ağrısı ve kanlı-mukuslu dışkı nedeniyle çocuk acilde değerlendiriliyor.",
-      "presentation": "Kolik ağlama nöbetleri, bacakları karna çekme, kusma ve kırmızı jöle kıvamlı dışkı vardır.",
-      "historySummary": "Anne, bebeğin son 12 saattir aralıklarla aniden ağlamaya başladığını, bu ataklarda bacaklarını karnına çektiğini ve birkaç dakika sonra yorgun şekilde sakinleştiğini anlatmaktadır. Başlangıçta safrasız kusma olmuş, son bez değişiminde koyu kırmızı mukuslu dışkı görülmüştür. Atak aralarında bebeğin eskisine göre daha soluk ve halsiz olduğu, beslenmek istemediği fark edilmiştir. Yüksek ateş veya daha önce benzer karın ağrısı atağı öyküsü yoktur; aile kötüleşme nedeniyle acile başvurmuştur."
-    },
-    "vitals": {
-      "TA": "86/54 mmHg",
-      "Nabız": "146/dk",
-      "Solunum": "32/dk",
-      "SpO2": "%98, oda havasında",
-      "Ateş": "37.4 °C",
-      "Şok indeksi": "1.70 - yaşa göre taşikardi ve ağrı/dehidratasyon riski"
-    },
-    "exam": [
-      "Bebek atak sırasında bacaklarını karnına çekerek ağlar; atak aralarında soluk ve halsizdir.",
-      "Karın hafif distandüdür; sağ üst kadranda sosis şeklinde hassas kitle palpe edilir.",
-      "Periton irritasyon bulgusu, defans veya rebound yoktur.",
-      "Rektal değerlendirmede mukusla karışık koyu kırmızı dışkı görülür."
-    ],
-    "investigations": [
-      {
-        "id": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski-hydration-perfusion",
-        "label": "Pediatrik ilk değerlendirme",
-        "title": "Pediatrik ilk değerlendirme",
-        "orderLabel": "Pediatrik ilk değerlendirme",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "summary": "Ağrı atakları, perfüzyon ve peritonit bulguları invajinasyonda tedavi yolunu belirler.",
-        "clinicalMeaning": "Ağrı atakları, perfüzyon ve peritonit bulguları invajinasyonda tedavi yolunu belirler.",
-        "result": {
-          "title": "Pediatrik ilk değerlendirme",
-          "summary": "Ağrı atakları, perfüzyon ve peritonit bulguları invajinasyonda tedavi yolunu belirler.",
-          "interpretation": "Ağrı atakları, perfüzyon ve peritonit bulguları invajinasyonda tedavi yolunu belirler.",
-          "values": [
-            [
-              "Genel durum",
-              "Ataklar arasında soluk ve halsiz",
-              "—",
-              "Klinik ciddiyet"
-            ],
-            [
-              "Perfüzyon",
-              "Kapiller dolum 2–3 sn, taşikardi var",
-              "—",
-              "Sıvı gereksinimi"
-            ],
-            [
-              "Periton bulgusu",
-              "Defans/rebound yok",
-              "—",
-              "Enema için uygunluk"
-            ]
-          ],
-          "rows": [
-            [
-              "Genel durum",
-              "Ataklar arasında soluk ve halsiz",
-              "—",
-              "Klinik ciddiyet"
-            ],
-            [
-              "Perfüzyon",
-              "Kapiller dolum 2–3 sn, taşikardi var",
-              "—",
-              "Sıvı gereksinimi"
-            ],
-            [
-              "Periton bulgusu",
-              "Defans/rebound yok",
-              "—",
-              "Enema için uygunluk"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Genel durum",
-            "Ataklar arasında soluk ve halsiz",
-            "—",
-            "Klinik ciddiyet"
-          ],
-          [
-            "Perfüzyon",
-            "Kapiller dolum 2–3 sn, taşikardi var",
-            "—",
-            "Sıvı gereksinimi"
-          ],
-          [
-            "Periton bulgusu",
-            "Defans/rebound yok",
-            "—",
-            "Enema için uygunluk"
-          ]
-        ],
-        "postAnswerExplanation": "Ağrı atakları, perfüzyon ve peritonit bulguları invajinasyonda tedavi yolunu belirler.",
-        "interpretation": "Ağrı atakları, perfüzyon ve peritonit bulguları invajinasyonda tedavi yolunu belirler.",
-        "explanationAfterAnswer": "Ağrı atakları, perfüzyon ve peritonit bulguları invajinasyonda tedavi yolunu belirler.",
-        "testValueLabel": "Tanısal değeri yüksek",
-        "clinicalPriorityLabel": "Tanısal değeri yüksek",
-        "educationalValue": "Tanısal değeri yüksek",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
-        "treatmentImpact": "Kararı destekler",
-        "orderRank": 10
+    {
+      "id": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
+      "title": "Aralıklı karın ağrısı ve kanlı-mukuslu dışkı",
+      "difficulty": "Acil",
+      "clinicalFocus": "İnvajinasyonda klasik kolik ağrı-dışkı-muayene-USG paternini tanıyıp perforasyon yoksa enema redüksiyonunu seçme.",
+      "learningTarget": "İnvajinasyonda stabil hastada pnömatik/hidrostatik enema redüksiyonunun cerrahiden önceki tedavi olduğunu açıklayabilme.",
+      "demographics": "8 aylık erkek bebek",
+      "setting": "Çocuk acil servisi",
+      "chiefComplaint": "Bebek, aralıklı şiddetli ağlama, kusma ve kanlı-mukuslu dışkı nedeniyle acile getiriliyor.",
+      "stem": "Anne, bebeğin son 12 saattir aralıklarla aniden ağlamaya başladığını, bu ataklarda bacaklarını karnına çektiğini ve birkaç dakika sonra yorgun şekilde sakinleştiğini anlatmaktadır. Başlangıçta safrasız kusma olmuş, son bez değişiminde koyu kırmızı mukuslu dışkı görülmüştür. Atak aralarında bebeğin eskisine göre daha soluk ve halsiz olduğu, beslenmek istemediği fark edilmiştir. Yüksek ateş, bilinen kanama bozukluğu veya daha önce benzer karın ağrısı atağı öyküsü yoktur.",
+      "patientIntro": {
+          "profile": "8 aylık erkek bebek, akut aralıklı karın ağrısı ve kanlı-mukuslu dışkı nedeniyle çocuk acilde değerlendiriliyor.",
+          "presentation": "Kolik ağlama nöbetleri, bacakları karna çekme, kusma ve kırmızı jöle kıvamlı dışkı vardır.",
+          "historySummary": "Anne, bebeğin son 12 saattir aralıklarla aniden ağlamaya başladığını, bu ataklarda bacaklarını karnına çektiğini ve birkaç dakika sonra yorgun şekilde sakinleştiğini anlatmaktadır. Başlangıçta safrasız kusma olmuş, son bez değişiminde koyu kırmızı mukuslu dışkı görülmüştür. Atak aralarında bebeğin eskisine göre daha soluk ve halsiz olduğu, beslenmek istemediği fark edilmiştir. Yüksek ateş, bilinen kanama bozukluğu veya daha önce benzer karın ağrısı atağı öyküsü yoktur."
       },
-      {
-        "id": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski-cbc-electrolyte",
-        "label": "Hemogram ve elektrolitler",
-        "title": "Hemogram ve elektrolitler",
-        "orderLabel": "Hemogram ve elektrolitler",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "summary": "Dehidratasyon ve inflamasyon eşliklerini değerlendirir; invajinasyon tanısını tek başına koydurmaz.",
-        "clinicalMeaning": "Dehidratasyon ve inflamasyon eşliklerini değerlendirir; invajinasyon tanısını tek başına koydurmaz.",
-        "result": {
-          "title": "Hemogram ve elektrolitler",
-          "summary": "Dehidratasyon ve inflamasyon eşliklerini değerlendirir; invajinasyon tanısını tek başına koydurmaz.",
-          "interpretation": "Dehidratasyon ve inflamasyon eşliklerini değerlendirir; invajinasyon tanısını tek başına koydurmaz.",
-          "values": [
-            [
-              "Lökosit",
-              "14.900/mm³",
-              "6.000–17.500/mm³",
-              "Yaşa göre üst sınıra yakın"
-            ],
-            [
-              "Hemoglobin",
-              "11.2 g/dL",
-              "10.5–13.5 g/dL",
-              "Yaşa uygun"
-            ],
-            [
-              "Sodyum",
-              "136 mEq/L",
-              "135–145 mEq/L",
-              "Normal"
-            ],
-            [
-              "Potasyum",
-              "4.4 mEq/L",
-              "3.5–5.5 mEq/L",
-              "Normal"
-            ]
-          ],
-          "rows": [
-            [
-              "Lökosit",
-              "14.900/mm³",
-              "6.000–17.500/mm³",
-              "Yaşa göre üst sınıra yakın"
-            ],
-            [
-              "Hemoglobin",
-              "11.2 g/dL",
-              "10.5–13.5 g/dL",
-              "Yaşa uygun"
-            ],
-            [
-              "Sodyum",
-              "136 mEq/L",
-              "135–145 mEq/L",
-              "Normal"
-            ],
-            [
-              "Potasyum",
-              "4.4 mEq/L",
-              "3.5–5.5 mEq/L",
-              "Normal"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Lökosit",
-            "14.900/mm³",
-            "6.000–17.500/mm³",
-            "Yaşa göre üst sınıra yakın"
-          ],
-          [
-            "Hemoglobin",
-            "11.2 g/dL",
-            "10.5–13.5 g/dL",
-            "Yaşa uygun"
-          ],
-          [
-            "Sodyum",
-            "136 mEq/L",
-            "135–145 mEq/L",
-            "Normal"
-          ],
-          [
-            "Potasyum",
-            "4.4 mEq/L",
-            "3.5–5.5 mEq/L",
-            "Normal"
-          ]
-        ],
-        "postAnswerExplanation": "Dehidratasyon ve inflamasyon eşliklerini değerlendirir; invajinasyon tanısını tek başına koydurmaz.",
-        "interpretation": "Dehidratasyon ve inflamasyon eşliklerini değerlendirir; invajinasyon tanısını tek başına koydurmaz.",
-        "explanationAfterAnswer": "Dehidratasyon ve inflamasyon eşliklerini değerlendirir; invajinasyon tanısını tek başına koydurmaz.",
-        "testValueLabel": "Destekleyici veri",
-        "clinicalPriorityLabel": "Destekleyici veri",
-        "educationalValue": "Destekleyici veri",
-        "scoreImpact": 2,
-        "scoreValue": 2,
-        "clinicalFlowOrder": 24,
-        "flowOrder": 24,
-        "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
-        "treatmentImpact": "Kararı destekler",
-        "orderRank": 24
+      "vitals": {
+          "TA": "86/54 mmHg",
+          "Nabız": "146/dk",
+          "Solunum": "32/dk",
+          "SpO2": "%98, oda havasında",
+          "Ateş": "37.4 °C",
+          "Şok indeksi": "1.70 - yaşa göre taşikardi ve ağrı/dehidratasyon riski"
       },
-      {
-        "id": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski-abdominal-usg",
-        "label": "Abdominal ultrasonografi",
-        "title": "Abdominal ultrasonografi",
-        "orderLabel": "Abdominal ultrasonografi",
-        "type": "ultrasound",
-        "priority": "essential",
-        "subtype": "",
-        "category": "imaging",
-        "testTypeCategory": "imaging",
-        "summary": "Ultrasonografide hedef/donut görünümü invajinasyonu objektif olarak doğrular.",
-        "clinicalMeaning": "Ultrasonografide hedef/donut görünümü invajinasyonu objektif olarak doğrular.",
-        "result": {
-          "title": "Abdominal ultrasonografi",
-          "summary": "Ultrasonografide hedef/donut görünümü invajinasyonu objektif olarak doğrular.",
-          "interpretation": "Ultrasonografide hedef/donut görünümü invajinasyonu objektif olarak doğrular.",
-          "values": [
-            [
-              "İleoçekal bölge",
-              "Transvers kesitte hedef/donut görünümü",
-              "—",
-              "İnvajinasyon ile uyumlu"
-            ],
-            [
-              "Uzun aks görünümü",
-              "Pseudokidney görünümü",
-              "—",
-              "Tanısal bulgu"
-            ],
-            [
-              "Serbest hava/sıvı",
-              "Serbest hava yok, minimal serbest sıvı",
-              "—",
-              "Perforasyon lehine değil"
-            ]
-          ],
-          "rows": [
-            [
-              "İleoçekal bölge",
-              "Transvers kesitte hedef/donut görünümü",
-              "—",
-              "İnvajinasyon ile uyumlu"
-            ],
-            [
-              "Uzun aks görünümü",
-              "Pseudokidney görünümü",
-              "—",
-              "Tanısal bulgu"
-            ],
-            [
-              "Serbest hava/sıvı",
-              "Serbest hava yok, minimal serbest sıvı",
-              "—",
-              "Perforasyon lehine değil"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "İleoçekal bölge",
-            "Transvers kesitte hedef/donut görünümü",
-            "—",
-            "İnvajinasyon ile uyumlu"
-          ],
-          [
-            "Uzun aks görünümü",
-            "Pseudokidney görünümü",
-            "—",
-            "Tanısal bulgu"
-          ],
-          [
-            "Serbest hava/sıvı",
-            "Serbest hava yok, minimal serbest sıvı",
-            "—",
-            "Perforasyon lehine değil"
-          ]
-        ],
-        "postAnswerExplanation": "Ultrasonografide hedef/donut görünümü invajinasyonu objektif olarak doğrular.",
-        "interpretation": "Ultrasonografide hedef/donut görünümü invajinasyonu objektif olarak doğrular.",
-        "explanationAfterAnswer": "Ultrasonografide hedef/donut görünümü invajinasyonu objektif olarak doğrular.",
-        "testValueLabel": "Kritik karar verdirir",
-        "clinicalPriorityLabel": "Kritik karar verdirir",
-        "educationalValue": "Kritik karar verdirir",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "clinicalFlowOrder": 32,
-        "flowOrder": 32,
-        "pediatricSafetyValue": "Kritik karar verdirir",
-        "treatmentImpact": "Tedavi sırasını belirler",
-        "orderRank": 32
-      },
-      {
-        "id": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski-abdominal-xray",
-        "label": "Ayakta/yan dekübit karın grafisi",
-        "title": "Ayakta/yan dekübit karın grafisi",
-        "orderLabel": "Ayakta/yan dekübit karın grafisi",
-        "type": "xray",
-        "priority": "medium",
-        "subtype": "",
-        "category": "imaging",
-        "testTypeCategory": "imaging",
-        "summary": "Perforasyon veya belirgin obstrüksiyon bulgusu olup olmadığını tedavi öncesi güvenlik açısından gösterir.",
-        "clinicalMeaning": "Perforasyon veya belirgin obstrüksiyon bulgusu olup olmadığını tedavi öncesi güvenlik açısından gösterir.",
-        "result": {
-          "title": "Ayakta/yan dekübit karın grafisi",
-          "summary": "Perforasyon veya belirgin obstrüksiyon bulgusu olup olmadığını tedavi öncesi güvenlik açısından gösterir.",
-          "interpretation": "Perforasyon veya belirgin obstrüksiyon bulgusu olup olmadığını tedavi öncesi güvenlik açısından gösterir.",
-          "values": [
-            [
-              "Serbest hava",
-              "Saptanmadı",
-              "—",
-              "Perforasyon yok"
-            ],
-            [
-              "Barsak gaz dağılımı",
-              "Sağ alt kadranda gaz azalması",
-              "—",
-              "İnvajinasyonla uyumlu olabilir"
-            ]
-          ],
-          "rows": [
-            [
-              "Serbest hava",
-              "Saptanmadı",
-              "—",
-              "Perforasyon yok"
-            ],
-            [
-              "Barsak gaz dağılımı",
-              "Sağ alt kadranda gaz azalması",
-              "—",
-              "İnvajinasyonla uyumlu olabilir"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Serbest hava",
-            "Saptanmadı",
-            "—",
-            "Perforasyon yok"
-          ],
-          [
-            "Barsak gaz dağılımı",
-            "Sağ alt kadranda gaz azalması",
-            "—",
-            "İnvajinasyonla uyumlu olabilir"
-          ]
-        ],
-        "postAnswerExplanation": "Perforasyon veya belirgin obstrüksiyon bulgusu olup olmadığını tedavi öncesi güvenlik açısından gösterir.",
-        "interpretation": "Perforasyon veya belirgin obstrüksiyon bulgusu olup olmadığını tedavi öncesi güvenlik açısından gösterir.",
-        "explanationAfterAnswer": "Perforasyon veya belirgin obstrüksiyon bulgusu olup olmadığını tedavi öncesi güvenlik açısından gösterir.",
-        "testValueLabel": "Destekleyici veri",
-        "clinicalPriorityLabel": "Destekleyici veri",
-        "educationalValue": "Destekleyici veri",
-        "scoreImpact": 3,
-        "scoreValue": 3,
-        "clinicalFlowOrder": 42,
-        "flowOrder": 42,
-        "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
-        "treatmentImpact": "Kararı destekler",
-        "orderRank": 42
-      }
-    ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": {
-      "enabled": false
-    },
-    "hideExamSignal": true,
-    "shuffleOptions": false,
-    "question": "Peritonit veya perforasyon bulgusu olmayan bu bebekte en uygun tedavi yaklaşımı aşağıdakilerden hangisidir?",
-    "questionType": "treatment",
-    "answerTarget": "definitive_treatment",
-    "diagnosis": {
-      "correct": "Pnömatik veya hidrostatik enema ile redüksiyon yapmak",
-      "options": [
-        "Acil apendektomiye almak",
-        "Yalnız intravenöz sıvı verip ultrason bulgularını seri izlemek",
-        "Pnömatik veya hidrostatik enema ile redüksiyon yapmak",
-        "Geniş spektrumlu antibiyotikle yanıt bekleyip redüksiyonu ertelemek",
-        "Proton pompa inhibitörü ve oral rehidrasyonla taburcu etmek"
+      "exam": [
+          "Bebek atak sırasında bacaklarını karnına çekerek ağlar; atak aralarında soluk ve halsizdir.",
+          "Karın hafif distandüdür; sağ üst kadranda sosis şeklinde hassas kitle palpe edilir.",
+          "Periton irritasyon bulgusu, defans veya rebound yoktur.",
+          "Rektal değerlendirmede mukusla karışık koyu kırmızı dışkı görülür."
       ],
+      "investigations": [
+          {
+              "id": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski-hydration-perfusion",
+              "label": "Pediatrik ilk değerlendirme",
+              "title": "Pediatrik ilk değerlendirme",
+              "orderLabel": "Pediatrik ilk değerlendirme",
+              "type": "clinical",
+              "priority": "essential",
+              "subtype": "",
+              "category": "clinicalAssessment",
+              "testTypeCategory": "clinicalAssessment",
+              "summary": "Ağrı atakları, perfüzyon ve periton bulguları klinik ciddiyeti ve komplikasyon varlığını değerlendirmek için kullanılır.",
+              "clinicalMeaning": "Ağrı atakları, perfüzyon ve periton bulguları klinik ciddiyeti ve komplikasyon varlığını değerlendirmek için kullanılır.",
+              "result": {
+                  "title": "Pediatrik ilk değerlendirme",
+                  "summary": "Ağrı atakları, perfüzyon ve periton bulguları klinik ciddiyeti ve komplikasyon varlığını değerlendirmek için kullanılır.",
+                  "interpretation": "Ağrı atakları, perfüzyon ve periton bulguları klinik ciddiyeti ve komplikasyon varlığını değerlendirmek için kullanılır.",
+                  "values": [
+                      {
+                          "parameter": "Genel durum",
+                          "value": "Ataklar arasında soluk ve halsiz",
+                          "note": "Klinik ciddiyet"
+                      },
+                      {
+                          "parameter": "Perfüzyon",
+                          "value": "Kapiller dolum 2–3 saniye, taşikardi eşlik ediyor",
+                          "note": "Sıvı gereksinimi"
+                      },
+                      {
+                          "parameter": "Periton bulgusu",
+                          "value": "Defans ve rebound saptanmıyor",
+                          "note": "Peritonit lehine değil"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Genel durum",
+                          "value": "Ataklar arasında soluk ve halsiz",
+                          "note": "Klinik ciddiyet"
+                      },
+                      {
+                          "parameter": "Perfüzyon",
+                          "value": "Kapiller dolum 2–3 saniye, taşikardi eşlik ediyor",
+                          "note": "Sıvı gereksinimi"
+                      },
+                      {
+                          "parameter": "Periton bulgusu",
+                          "value": "Defans ve rebound saptanmıyor",
+                          "note": "Peritonit lehine değil"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Genel durum",
+                      "value": "Ataklar arasında soluk ve halsiz",
+                      "note": "Klinik ciddiyet"
+                  },
+                  {
+                      "parameter": "Perfüzyon",
+                      "value": "Kapiller dolum 2–3 saniye, taşikardi eşlik ediyor",
+                      "note": "Sıvı gereksinimi"
+                  },
+                  {
+                      "parameter": "Periton bulgusu",
+                      "value": "Defans ve rebound saptanmıyor",
+                      "note": "Peritonit lehine değil"
+                  }
+              ],
+              "postAnswerExplanation": "Ağrı atakları, perfüzyon ve periton bulguları klinik ciddiyeti ve komplikasyon varlığını değerlendirmek için kullanılır.",
+              "interpretation": "Ağrı atakları, perfüzyon ve periton bulguları klinik ciddiyeti ve komplikasyon varlığını değerlendirmek için kullanılır.",
+              "explanationAfterAnswer": "Ağrı atakları, perfüzyon ve periton bulguları klinik ciddiyeti ve komplikasyon varlığını değerlendirmek için kullanılır.",
+              "testValueLabel": "Klinik güvenlik verisi",
+              "clinicalPriorityLabel": "Klinik güvenlik verisi",
+              "educationalValue": "Klinik güvenlik verisi",
+              "scoreImpact": 4,
+              "scoreValue": 4,
+              "clinicalFlowOrder": 10,
+              "flowOrder": 10,
+              "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
+              "treatmentImpact": "Kararı destekler",
+              "orderRank": 10
+          },
+          {
+              "id": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski-cbc-electrolyte",
+              "label": "Hemogram ve elektrolitler",
+              "title": "Hemogram ve elektrolitler",
+              "orderLabel": "Hemogram ve elektrolitler",
+              "type": "lab",
+              "priority": "supportive",
+              "subtype": "",
+              "category": "laboratory",
+              "testTypeCategory": "laboratory",
+              "summary": "Laboratuvar sonuçları dehidratasyon ve eşlik eden inflamasyon açısından destekleyici bilgi sağlar; tanı klinik ve ultrasonografiyle netleşir.",
+              "clinicalMeaning": "Laboratuvar sonuçları dehidratasyon ve eşlik eden inflamasyon açısından destekleyici bilgi sağlar; tanı klinik ve ultrasonografiyle netleşir.",
+              "result": {
+                  "title": "Hemogram ve elektrolitler",
+                  "summary": "Laboratuvar sonuçları dehidratasyon ve eşlik eden inflamasyon açısından destekleyici bilgi sağlar; tanı klinik ve ultrasonografiyle netleşir.",
+                  "interpretation": "Laboratuvar sonuçları dehidratasyon ve eşlik eden inflamasyon açısından destekleyici bilgi sağlar; tanı klinik ve ultrasonografiyle netleşir.",
+                  "values": [
+                      {
+                          "parameter": "Lökosit",
+                          "value": "14.900/mm³",
+                          "reference": "6.000–17.500/mm³",
+                          "note": "Yaşa göre üst sınıra yakın"
+                      },
+                      {
+                          "parameter": "Hemoglobin",
+                          "value": "11.2 g/dL",
+                          "reference": "10.5–13.5 g/dL",
+                          "note": "Yaşa uygun"
+                      },
+                      {
+                          "parameter": "Sodyum",
+                          "value": "136 mEq/L",
+                          "reference": "135–145 mEq/L",
+                          "note": "Normal"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Lökosit",
+                          "value": "14.900/mm³",
+                          "reference": "6.000–17.500/mm³",
+                          "note": "Yaşa göre üst sınıra yakın"
+                      },
+                      {
+                          "parameter": "Hemoglobin",
+                          "value": "11.2 g/dL",
+                          "reference": "10.5–13.5 g/dL",
+                          "note": "Yaşa uygun"
+                      },
+                      {
+                          "parameter": "Sodyum",
+                          "value": "136 mEq/L",
+                          "reference": "135–145 mEq/L",
+                          "note": "Normal"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Lökosit",
+                      "value": "14.900/mm³",
+                      "reference": "6.000–17.500/mm³",
+                      "note": "Yaşa göre üst sınıra yakın"
+                  },
+                  {
+                      "parameter": "Hemoglobin",
+                      "value": "11.2 g/dL",
+                      "reference": "10.5–13.5 g/dL",
+                      "note": "Yaşa uygun"
+                  },
+                  {
+                      "parameter": "Sodyum",
+                      "value": "136 mEq/L",
+                      "reference": "135–145 mEq/L",
+                      "note": "Normal"
+                  }
+              ],
+              "postAnswerExplanation": "Laboratuvar sonuçları dehidratasyon ve eşlik eden inflamasyon açısından destekleyici bilgi sağlar; tanı klinik ve ultrasonografiyle netleşir.",
+              "interpretation": "Laboratuvar sonuçları dehidratasyon ve eşlik eden inflamasyon açısından destekleyici bilgi sağlar; tanı klinik ve ultrasonografiyle netleşir.",
+              "explanationAfterAnswer": "Laboratuvar sonuçları dehidratasyon ve eşlik eden inflamasyon açısından destekleyici bilgi sağlar; tanı klinik ve ultrasonografiyle netleşir.",
+              "testValueLabel": "Destekleyici laboratuvar",
+              "clinicalPriorityLabel": "Destekleyici laboratuvar",
+              "educationalValue": "Destekleyici laboratuvar",
+              "scoreImpact": 2,
+              "scoreValue": 2,
+              "clinicalFlowOrder": 20,
+              "flowOrder": 20,
+              "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
+              "treatmentImpact": "Kararı destekler",
+              "orderRank": 20
+          },
+          {
+              "id": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski-abdominal-usg",
+              "label": "Abdominal ultrasonografi",
+              "title": "Abdominal ultrasonografi",
+              "orderLabel": "Abdominal ultrasonografi",
+              "type": "ultrasound",
+              "priority": "essential",
+              "subtype": "",
+              "category": "imaging",
+              "testTypeCategory": "imaging",
+              "summary": "Ultrasonografide hedef/donut görünümü ve pseudokidney görünümü ile ileoçekal invajinasyon objektif olarak desteklenir.",
+              "clinicalMeaning": "Ultrasonografide hedef/donut görünümü ve pseudokidney görünümü ile ileoçekal invajinasyon objektif olarak desteklenir.",
+              "result": {
+                  "title": "Abdominal ultrasonografi",
+                  "summary": "Ultrasonografide hedef/donut görünümü ve pseudokidney görünümü ile ileoçekal invajinasyon objektif olarak desteklenir.",
+                  "interpretation": "Ultrasonografide hedef/donut görünümü ve pseudokidney görünümü ile ileoçekal invajinasyon objektif olarak desteklenir.",
+                  "values": [
+                      {
+                          "parameter": "İleoçekal bölge",
+                          "value": "Transvers kesitte hedef/donut görünümü",
+                          "note": "İnvajinasyon paterni"
+                      },
+                      {
+                          "parameter": "Uzun aks görünümü",
+                          "value": "Pseudokidney görünümü",
+                          "note": "Tanısal destek"
+                      },
+                      {
+                          "parameter": "Serbest hava/sıvı",
+                          "value": "Serbest hava yok, minimal serbest sıvı var",
+                          "note": "Perforasyon lehine değil"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "İleoçekal bölge",
+                          "value": "Transvers kesitte hedef/donut görünümü",
+                          "note": "İnvajinasyon paterni"
+                      },
+                      {
+                          "parameter": "Uzun aks görünümü",
+                          "value": "Pseudokidney görünümü",
+                          "note": "Tanısal destek"
+                      },
+                      {
+                          "parameter": "Serbest hava/sıvı",
+                          "value": "Serbest hava yok, minimal serbest sıvı var",
+                          "note": "Perforasyon lehine değil"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "İleoçekal bölge",
+                      "value": "Transvers kesitte hedef/donut görünümü",
+                      "note": "İnvajinasyon paterni"
+                  },
+                  {
+                      "parameter": "Uzun aks görünümü",
+                      "value": "Pseudokidney görünümü",
+                      "note": "Tanısal destek"
+                  },
+                  {
+                      "parameter": "Serbest hava/sıvı",
+                      "value": "Serbest hava yok, minimal serbest sıvı var",
+                      "note": "Perforasyon lehine değil"
+                  }
+              ],
+              "postAnswerExplanation": "Ultrasonografide hedef/donut görünümü ve pseudokidney görünümü ile ileoçekal invajinasyon objektif olarak desteklenir.",
+              "interpretation": "Ultrasonografide hedef/donut görünümü ve pseudokidney görünümü ile ileoçekal invajinasyon objektif olarak desteklenir.",
+              "explanationAfterAnswer": "Ultrasonografide hedef/donut görünümü ve pseudokidney görünümü ile ileoçekal invajinasyon objektif olarak desteklenir.",
+              "testValueLabel": "Tanısal görüntüleme",
+              "clinicalPriorityLabel": "Tanısal görüntüleme",
+              "educationalValue": "Tanısal görüntüleme",
+              "scoreImpact": 5,
+              "scoreValue": 5,
+              "clinicalFlowOrder": 30,
+              "flowOrder": 30,
+              "pediatricSafetyValue": "Kritik karar verdirir",
+              "treatmentImpact": "Tedavi sırasını belirler",
+              "orderRank": 30
+          },
+          {
+              "id": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski-abdominal-xray",
+              "label": "Ayakta/yan dekübit karın grafisi",
+              "title": "Ayakta/yan dekübit karın grafisi",
+              "orderLabel": "Ayakta/yan dekübit karın grafisi",
+              "type": "xray",
+              "priority": "supportive",
+              "subtype": "",
+              "category": "imaging",
+              "testTypeCategory": "imaging",
+              "summary": "Grafi serbest hava ve belirgin obstrüksiyon bulgularını değerlendirmeye yardımcı olur.",
+              "clinicalMeaning": "Grafi serbest hava ve belirgin obstrüksiyon bulgularını değerlendirmeye yardımcı olur.",
+              "result": {
+                  "title": "Ayakta/yan dekübit karın grafisi",
+                  "summary": "Grafi serbest hava ve belirgin obstrüksiyon bulgularını değerlendirmeye yardımcı olur.",
+                  "interpretation": "Grafi serbest hava ve belirgin obstrüksiyon bulgularını değerlendirmeye yardımcı olur.",
+                  "values": [
+                      {
+                          "parameter": "Serbest hava",
+                          "value": "Saptanmadı",
+                          "note": "Perforasyon bulgusu yok"
+                      },
+                      {
+                          "parameter": "Barsak gaz dağılımı",
+                          "value": "Sağ alt kadranda gaz azalması",
+                          "note": "Klinikle uyumlu olabilir"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Serbest hava",
+                          "value": "Saptanmadı",
+                          "note": "Perforasyon bulgusu yok"
+                      },
+                      {
+                          "parameter": "Barsak gaz dağılımı",
+                          "value": "Sağ alt kadranda gaz azalması",
+                          "note": "Klinikle uyumlu olabilir"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Serbest hava",
+                      "value": "Saptanmadı",
+                      "note": "Perforasyon bulgusu yok"
+                  },
+                  {
+                      "parameter": "Barsak gaz dağılımı",
+                      "value": "Sağ alt kadranda gaz azalması",
+                      "note": "Klinikle uyumlu olabilir"
+                  }
+              ],
+              "postAnswerExplanation": "Grafi serbest hava ve belirgin obstrüksiyon bulgularını değerlendirmeye yardımcı olur.",
+              "interpretation": "Grafi serbest hava ve belirgin obstrüksiyon bulgularını değerlendirmeye yardımcı olur.",
+              "explanationAfterAnswer": "Grafi serbest hava ve belirgin obstrüksiyon bulgularını değerlendirmeye yardımcı olur.",
+              "testValueLabel": "Komplikasyon taraması",
+              "clinicalPriorityLabel": "Komplikasyon taraması",
+              "educationalValue": "Komplikasyon taraması",
+              "scoreImpact": 3,
+              "scoreValue": 3,
+              "clinicalFlowOrder": 40,
+              "flowOrder": 40,
+              "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
+              "treatmentImpact": "Kararı destekler",
+              "orderRank": 40
+          }
+      ],
+      "useSyntheticInvestigationBank": false,
+      "managementSequence": {
+          "enabled": false
+      },
+      "hideExamSignal": true,
+      "shuffleOptions": false,
       "question": "Peritonit veya perforasyon bulgusu olmayan bu bebekte en uygun tedavi yaklaşımı aşağıdakilerden hangisidir?",
-      "explanation": "Bu 8 aylık bebekte aralıklı kolik tarzda ağlama, bacakları karna çekme, kusma, kırmızı jöle kıvamlı dışkı, sağ üst kadranda sosis şeklinde kitle ve ultrasonografide hedef görünümü invajinasyonu destekler. Peritonit, perforasyon veya hemodinamik instabilite bulgusu olmadığı için en uygun tedavi pnömatik veya hidrostatik enema ile redüksiyondur; cerrahi enema başarısızlığı ya da komplikasyon durumunda gündeme gelir.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "İnvajinasyon + hedef bulgusu + peritonit yokluğu → pnömatik/hidrostatik enema redüksiyonu."
-        }
-      ],
+      "questionType": "treatment",
+      "answerTarget": "definitive_treatment",
+      "diagnosis": {
+          "correct": "Pnömatik veya hidrostatik enema ile redüksiyon yapmak",
+          "options": [
+              "Acil apendektomiye almak",
+              "Yalnız intravenöz sıvı verip ultrason bulgularını seri izlemek",
+              "Pnömatik veya hidrostatik enema ile redüksiyon yapmak",
+              "Geniş spektrumlu antibiyotikle yanıt bekleyip redüksiyonu ertelemek",
+              "Proton pompa inhibitörü ve oral rehidrasyonla taburcu etmek"
+          ],
+          "question": "Peritonit veya perforasyon bulgusu olmayan bu bebekte en uygun tedavi yaklaşımı aşağıdakilerden hangisidir?",
+          "explanation": "Sekiz aylık bebekte aralıklı kolik tarzda ağlama, bacakları karna çekme, kusma, kanlı-mukuslu dışkı, sağ üst kadranda sosis şeklinde kitle ve ultrasonografide hedef görünümü invajinasyonu destekler. Defans, rebound, serbest hava veya belirgin hemodinamik instabilite olmadığı için uygun yaklaşım sıvı desteği ve hazırlık sonrası pnömatik veya hidrostatik enema ile redüksiyondur; cerrahi komplikasyon, perforasyon veya başarısız redüksiyon durumunda gündeme gelir.",
+          "pearls": [
+              {
+                  "label": "Sınav notu",
+                  "text": "İnvajinasyonda hedef görünümü + perforasyon/peritonit yokluğu varsa TUS düzeyinde ilk tedavi enema redüksiyonudur; cerrahi başarısızlık veya komplikasyonda gelir."
+              }
+          ],
+          "optionComparison": {
+              "Acil apendektomiye almak": "Apendektomi akut apandisit için uygundur; bu bebekte yaş, kolik ataklar, kanlı-mukuslu dışkı ve hedef görünümü invajinasyonu gösterir. Cerrahi, enema başarısızlığı veya komplikasyon varsa düşünülür.",
+              "Yalnız intravenöz sıvı verip ultrason bulgularını seri izlemek": "Sıvı desteği önemlidir, ancak doğrulanmış invajinasyonda yalnız seri izlem barsak iskemisi riskini artırır. Klinik ve ultrason bulguları tedavi gerektirecek kadar belirgindir.",
+              "Pnömatik veya hidrostatik enema ile redüksiyon yapmak": "Doğru yaklaşım pnömatik veya hidrostatik enema ile redüksiyondur; çünkü ileoçekal invajinasyon ultrasonla desteklenmiş, ancak perforasyon/peritonit bulguları yoktur ve bu durumda nonoperatif redüksiyon ilk tedavi seçeneğidir.",
+              "Geniş spektrumlu antibiyotikle yanıt bekleyip redüksiyonu ertelemek": "Antibiyotik tek başına invajinasyonu çözmez ve redüksiyonu geciktirir. Enfeksiyon bulgusu baskın değildir; mekanik invajinasyon tedavi edilmelidir.",
+              "Proton pompa inhibitörü ve oral rehidrasyonla taburcu etmek": "PPI ve oral rehidrasyon gastroözofageal/enterit benzeri hafif tablolar için düşünülebilir; bu olguda kanlı-mukuslu dışkı, kitle ve ultrason bulgusu taburculuğu güvenli kılmaz."
+          },
+          "answerFeedback": {
+              "summary": "Sekiz aylık bebekte aralıklı kolik tarzda ağlama, bacakları karna çekme, kusma, kanlı-mukuslu dışkı, sağ üst kadranda sosis şeklinde kitle ve ultrasonografide hedef görünümü invajinasyonu destekler. Defans, rebound, serbest hava veya belirgin hemodinamik instabilite olmadığı için uygun yaklaşım sıvı desteği ve hazırlık sonrası pnömatik veya hidrostatik enema ile redüksiyondur; cerrahi komplikasyon, perforasyon veya başarısız redüksiyon durumunda gündeme gelir.",
+              "whyCorrect": "Doğru yaklaşım pnömatik veya hidrostatik enema ile redüksiyondur; çünkü ileoçekal invajinasyon ultrasonla desteklenmiş, ancak perforasyon/peritonit bulguları yoktur ve bu durumda nonoperatif redüksiyon ilk tedavi seçeneğidir.",
+              "rationale": "Sekiz aylık bebekte aralıklı kolik tarzda ağlama, bacakları karna çekme, kusma, kanlı-mukuslu dışkı, sağ üst kadranda sosis şeklinde kitle ve ultrasonografide hedef görünümü invajinasyonu destekler. Defans, rebound, serbest hava veya belirgin hemodinamik instabilite olmadığı için uygun yaklaşım sıvı desteği ve hazırlık sonrası pnömatik veya hidrostatik enema ile redüksiyondur; cerrahi komplikasyon, perforasyon veya başarısız redüksiyon durumunda gündeme gelir.",
+              "correctOptionFeedback": "Doğru yaklaşım pnömatik veya hidrostatik enema ile redüksiyondur; çünkü ileoçekal invajinasyon ultrasonla desteklenmiş, ancak perforasyon/peritonit bulguları yoktur ve bu durumda nonoperatif redüksiyon ilk tedavi seçeneğidir.",
+              "keyClues": [
+                  "Aralıklı ağlama nöbetleri ve bacakları karna çekme → kolik tarzda invajinasyon ağrısını destekler.",
+                  "Kanlı-mukuslu dışkı ve sağ üst kadranda sosis şeklinde kitle → ileoçekal invajinasyon için klasik klinik ipuçlarıdır.",
+                  "Ultrasonografide hedef/donut ve pseudokidney görünümü → invajinasyonu objektif olarak doğrular.",
+                  "Defans, rebound ve serbest hava olmaması → perforasyon/peritonit bulgusunun olmadığını gösterir."
+              ],
+              "evidenceChain": [
+                  {
+                      "text": "Aralıklı ağlama nöbetleri ve bacakları karna çekme → kolik tarzda invajinasyon ağrısını destekler.",
+                      "weight": "high",
+                      "source": "case"
+                  },
+                  {
+                      "text": "Kanlı-mukuslu dışkı ve sağ üst kadranda sosis şeklinde kitle → ileoçekal invajinasyon için klasik klinik ipuçlarıdır.",
+                      "weight": "high",
+                      "source": "case"
+                  },
+                  {
+                      "text": "Ultrasonografide hedef/donut ve pseudokidney görünümü → invajinasyonu objektif olarak doğrular.",
+                      "weight": "medium",
+                      "source": "case"
+                  },
+                  {
+                      "text": "Defans, rebound ve serbest hava olmaması → perforasyon/peritonit bulgusunun olmadığını gösterir.",
+                      "weight": "medium",
+                      "source": "case"
+                  }
+              ],
+              "examPearl": "İnvajinasyonda hedef görünümü + perforasyon/peritonit yokluğu varsa TUS düzeyinde ilk tedavi enema redüksiyonudur; cerrahi başarısızlık veya komplikasyonda gelir.",
+              "pearls": [
+                  {
+                      "label": "Sınav notu",
+                      "text": "İnvajinasyonda hedef görünümü + perforasyon/peritonit yokluğu varsa TUS düzeyinde ilk tedavi enema redüksiyonudur; cerrahi başarısızlık veya komplikasyonda gelir."
+                  }
+              ],
+              "clinicalPearls": [
+                  {
+                      "label": "Sınav notu",
+                      "text": "İnvajinasyonda hedef görünümü + perforasyon/peritonit yokluğu varsa TUS düzeyinde ilk tedavi enema redüksiyonudur; cerrahi başarısızlık veya komplikasyonda gelir."
+                  }
+              ],
+              "optionComparison": {
+                  "Acil apendektomiye almak": "Apendektomi akut apandisit için uygundur; bu bebekte yaş, kolik ataklar, kanlı-mukuslu dışkı ve hedef görünümü invajinasyonu gösterir. Cerrahi, enema başarısızlığı veya komplikasyon varsa düşünülür.",
+                  "Yalnız intravenöz sıvı verip ultrason bulgularını seri izlemek": "Sıvı desteği önemlidir, ancak doğrulanmış invajinasyonda yalnız seri izlem barsak iskemisi riskini artırır. Klinik ve ultrason bulguları tedavi gerektirecek kadar belirgindir.",
+                  "Pnömatik veya hidrostatik enema ile redüksiyon yapmak": "Doğru yaklaşım pnömatik veya hidrostatik enema ile redüksiyondur; çünkü ileoçekal invajinasyon ultrasonla desteklenmiş, ancak perforasyon/peritonit bulguları yoktur ve bu durumda nonoperatif redüksiyon ilk tedavi seçeneğidir.",
+                  "Geniş spektrumlu antibiyotikle yanıt bekleyip redüksiyonu ertelemek": "Antibiyotik tek başına invajinasyonu çözmez ve redüksiyonu geciktirir. Enfeksiyon bulgusu baskın değildir; mekanik invajinasyon tedavi edilmelidir.",
+                  "Proton pompa inhibitörü ve oral rehidrasyonla taburcu etmek": "PPI ve oral rehidrasyon gastroözofageal/enterit benzeri hafif tablolar için düşünülebilir; bu olguda kanlı-mukuslu dışkı, kitle ve ultrason bulgusu taburculuğu güvenli kılmaz."
+              },
+              "whyWrong": {
+                  "Acil apendektomiye almak": "Apendektomi akut apandisit için uygundur; bu bebekte yaş, kolik ataklar, kanlı-mukuslu dışkı ve hedef görünümü invajinasyonu gösterir. Cerrahi, enema başarısızlığı veya komplikasyon varsa düşünülür.",
+                  "Yalnız intravenöz sıvı verip ultrason bulgularını seri izlemek": "Sıvı desteği önemlidir, ancak doğrulanmış invajinasyonda yalnız seri izlem barsak iskemisi riskini artırır. Klinik ve ultrason bulguları tedavi gerektirecek kadar belirgindir.",
+                  "Geniş spektrumlu antibiyotikle yanıt bekleyip redüksiyonu ertelemek": "Antibiyotik tek başına invajinasyonu çözmez ve redüksiyonu geciktirir. Enfeksiyon bulgusu baskın değildir; mekanik invajinasyon tedavi edilmelidir.",
+                  "Proton pompa inhibitörü ve oral rehidrasyonla taburcu etmek": "PPI ve oral rehidrasyon gastroözofageal/enterit benzeri hafif tablolar için düşünülebilir; bu olguda kanlı-mukuslu dışkı, kitle ve ultrason bulgusu taburculuğu güvenli kılmaz."
+              },
+              "managementSteps": [],
+              "management": [],
+              "learningOutcome": "Öğrenci, invajinasyonda tanısal klinik-ultrason paternini ve peritonit/perforasyon yokluğunda tedavi sırasını belirler.",
+              "coreKnowledge": "İnvajinasyonda perforasyon veya peritonit yoksa ultrasonla desteklenen ileokolik olguda ilk tedavi nonoperatif pnömatik/hidrostatik enema redüksiyonudur."
+          },
+          "whyCorrect": "Doğru yaklaşım pnömatik veya hidrostatik enema ile redüksiyondur; çünkü ileoçekal invajinasyon ultrasonla desteklenmiş, ancak perforasyon/peritonit bulguları yoktur ve bu durumda nonoperatif redüksiyon ilk tedavi seçeneğidir.",
+          "evidenceChain": [
+              {
+                  "text": "Aralıklı ağlama nöbetleri ve bacakları karna çekme → kolik tarzda invajinasyon ağrısını destekler.",
+                  "weight": "high",
+                  "source": "case"
+              },
+              {
+                  "text": "Kanlı-mukuslu dışkı ve sağ üst kadranda sosis şeklinde kitle → ileoçekal invajinasyon için klasik klinik ipuçlarıdır.",
+                  "weight": "high",
+                  "source": "case"
+              },
+              {
+                  "text": "Ultrasonografide hedef/donut ve pseudokidney görünümü → invajinasyonu objektif olarak doğrular.",
+                  "weight": "medium",
+                  "source": "case"
+              },
+              {
+                  "text": "Defans, rebound ve serbest hava olmaması → perforasyon/peritonit bulgusunun olmadığını gösterir.",
+                  "weight": "medium",
+                  "source": "case"
+              }
+          ],
+          "coreKnowledge": "İnvajinasyonda perforasyon veya peritonit yoksa ultrasonla desteklenen ileokolik olguda ilk tedavi nonoperatif pnömatik/hidrostatik enema redüksiyonudur.",
+          "examPearl": "İnvajinasyonda hedef görünümü + perforasyon/peritonit yokluğu varsa TUS düzeyinde ilk tedavi enema redüksiyonudur; cerrahi başarısızlık veya komplikasyonda gelir.",
+          "whyWrong": {
+              "Acil apendektomiye almak": "Apendektomi akut apandisit için uygundur; bu bebekte yaş, kolik ataklar, kanlı-mukuslu dışkı ve hedef görünümü invajinasyonu gösterir. Cerrahi, enema başarısızlığı veya komplikasyon varsa düşünülür.",
+              "Yalnız intravenöz sıvı verip ultrason bulgularını seri izlemek": "Sıvı desteği önemlidir, ancak doğrulanmış invajinasyonda yalnız seri izlem barsak iskemisi riskini artırır. Klinik ve ultrason bulguları tedavi gerektirecek kadar belirgindir.",
+              "Geniş spektrumlu antibiyotikle yanıt bekleyip redüksiyonu ertelemek": "Antibiyotik tek başına invajinasyonu çözmez ve redüksiyonu geciktirir. Enfeksiyon bulgusu baskın değildir; mekanik invajinasyon tedavi edilmelidir.",
+              "Proton pompa inhibitörü ve oral rehidrasyonla taburcu etmek": "PPI ve oral rehidrasyon gastroözofageal/enterit benzeri hafif tablolar için düşünülebilir; bu olguda kanlı-mukuslu dışkı, kitle ve ultrason bulgusu taburculuğu güvenli kılmaz."
+          }
+      },
+      "difficultyTag": "Acil",
+      "coreKnowledge": "İnvajinasyonda perforasyon veya peritonit yoksa ultrasonla desteklenen ileokolik olguda ilk tedavi nonoperatif pnömatik/hidrostatik enema redüksiyonudur.",
+      "examPearl": "İnvajinasyonda hedef görünümü + perforasyon/peritonit yokluğu varsa TUS düzeyinde ilk tedavi enema redüksiyonudur; cerrahi başarısızlık veya komplikasyonda gelir.",
+      "whyCorrect": "Doğru yaklaşım pnömatik veya hidrostatik enema ile redüksiyondur; çünkü ileoçekal invajinasyon ultrasonla desteklenmiş, ancak perforasyon/peritonit bulguları yoktur ve bu durumda nonoperatif redüksiyon ilk tedavi seçeneğidir.",
       "optionComparison": {
-        "Acil apendektomiye almak": "Cerrahi, peritonit, perforasyon, şok veya enema başarısızlığı varsa gerekir. Bu bebekte peritonit/perforasyon bulgusu yoktur; ilk tedavi radyolojik enema redüksiyonudur.",
-        "Yalnız intravenöz sıvı verip ultrason bulgularını seri izlemek": "Sıvı desteği başlangıç stabilizasyonunun parçasıdır; ancak ultrasonla doğrulanmış invajinasyonda tek başına izlem obstrüksiyon ve iskemi riskini artırır.",
-        "Pnömatik veya hidrostatik enema ile redüksiyon yapmak": "Doğru seçenek budur. Stabil, peritonit veya perforasyon bulgusu olmayan invajinasyonda pnömatik ya da hidrostatik enema hem tanısal doğrulama hem de tedavi edici redüksiyon sağlar.",
-        "Geniş spektrumlu antibiyotikle yanıt bekleyip redüksiyonu ertelemek": "Antibiyotik sepsis/perforasyon veya cerrahi gereksinim varsa eklenebilir; fakat tipik invajinasyonun primer tedavisini erteleyen yaklaşım doğru değildir.",
-        "Proton pompa inhibitörü ve oral rehidrasyonla taburcu etmek": "PPI ve oral rehidrasyon gastroözofageal reflü veya hafif gastroenterit gibi durumlarda düşünülebilir; kırmızı jöle dışkı ve hedef bulgusu olan bebekte yetersiz ve tehlikelidir."
+          "Acil apendektomiye almak": "Apendektomi akut apandisit için uygundur; bu bebekte yaş, kolik ataklar, kanlı-mukuslu dışkı ve hedef görünümü invajinasyonu gösterir. Cerrahi, enema başarısızlığı veya komplikasyon varsa düşünülür.",
+          "Yalnız intravenöz sıvı verip ultrason bulgularını seri izlemek": "Sıvı desteği önemlidir, ancak doğrulanmış invajinasyonda yalnız seri izlem barsak iskemisi riskini artırır. Klinik ve ultrason bulguları tedavi gerektirecek kadar belirgindir.",
+          "Pnömatik veya hidrostatik enema ile redüksiyon yapmak": "Doğru yaklaşım pnömatik veya hidrostatik enema ile redüksiyondur; çünkü ileoçekal invajinasyon ultrasonla desteklenmiş, ancak perforasyon/peritonit bulguları yoktur ve bu durumda nonoperatif redüksiyon ilk tedavi seçeneğidir.",
+          "Geniş spektrumlu antibiyotikle yanıt bekleyip redüksiyonu ertelemek": "Antibiyotik tek başına invajinasyonu çözmez ve redüksiyonu geciktirir. Enfeksiyon bulgusu baskın değildir; mekanik invajinasyon tedavi edilmelidir.",
+          "Proton pompa inhibitörü ve oral rehidrasyonla taburcu etmek": "PPI ve oral rehidrasyon gastroözofageal/enterit benzeri hafif tablolar için düşünülebilir; bu olguda kanlı-mukuslu dışkı, kitle ve ultrason bulgusu taburculuğu güvenli kılmaz."
       },
-      "answerFeedback": {
-        "summary": "Bu 8 aylık bebekte aralıklı kolik tarzda ağlama, bacakları karna çekme, kusma, kırmızı jöle kıvamlı dışkı, sağ üst kadranda sosis şeklinde kitle ve ultrasonografide hedef görünümü invajinasyonu destekler. Peritonit, perforasyon veya hemodinamik instabilite bulgusu olmadığı için en uygun tedavi pnömatik veya hidrostatik enema ile redüksiyondur; cerrahi enema başarısızlığı ya da komplikasyon durumunda gündeme gelir.",
-        "whyCorrect": "Bu 8 aylık bebekte aralıklı kolik tarzda ağlama, bacakları karna çekme, kusma, kırmızı jöle kıvamlı dışkı, sağ üst kadranda sosis şeklinde kitle ve ultrasonografide hedef görünümü invajinasyonu destekler. Peritonit, perforasyon veya hemodinamik instabilite bulgusu olmadığı için en uygun tedavi pnömatik veya hidrostatik enema ile redüksiyondur; cerrahi enema başarısızlığı ya da komplikasyon durumunda gündeme gelir.",
-        "rationale": "Bu 8 aylık bebekte aralıklı kolik tarzda ağlama, bacakları karna çekme, kusma, kırmızı jöle kıvamlı dışkı, sağ üst kadranda sosis şeklinde kitle ve ultrasonografide hedef görünümü invajinasyonu destekler. Peritonit, perforasyon veya hemodinamik instabilite bulgusu olmadığı için en uygun tedavi pnömatik veya hidrostatik enema ile redüksiyondur; cerrahi enema başarısızlığı ya da komplikasyon durumunda gündeme gelir.",
-        "correctOptionFeedback": "Bu 8 aylık bebekte aralıklı kolik tarzda ağlama, bacakları karna çekme, kusma, kırmızı jöle kıvamlı dışkı, sağ üst kadranda sosis şeklinde kitle ve ultrasonografide hedef görünümü invajinasyonu destekler. Peritonit, perforasyon veya hemodinamik instabilite bulgusu olmadığı için en uygun tedavi pnömatik veya hidrostatik enema ile redüksiyondur; cerrahi enema başarısızlığı ya da komplikasyon durumunda gündeme gelir.",
-        "keyClues": [
-          "Bebekte aralıklı şiddetli ağlama nöbetleri sırasında bacakları karna çekme davranışı kolik tarzı invajinasyon ağrısını düşündürür.",
-          "Kusma, solukluk dönemleri ve kırmızı jöle kıvamlı mukuslu-kanlı dışkı invajinasyon için klasik klinik birlikteliktir.",
-          "Sağ üst kadranda sosis şeklinde kitle ve ultrasonografide hedef/donut görünümü tanıyı objektifleştirir.",
-          "Peritonit, serbest hava veya perforasyon bulgusunun olmaması enema redüksiyonunu ilk tedavi seçeneği yapar."
-        ],
-        "evidenceChain": [
-          {
-            "text": "Bebekte aralıklı şiddetli ağlama nöbetleri sırasında bacakları karna çekme davranışı kolik tarzı invajinasyon ağrısını düşündürür.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Kusma, solukluk dönemleri ve kırmızı jöle kıvamlı mukuslu-kanlı dışkı invajinasyon için klasik klinik birlikteliktir.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Sağ üst kadranda sosis şeklinde kitle ve ultrasonografide hedef/donut görünümü tanıyı objektifleştirir.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Peritonit, serbest hava veya perforasyon bulgusunun olmaması enema redüksiyonunu ilk tedavi seçeneği yapar.",
-            "weight": "high",
-            "source": "case"
-          }
-        ],
-        "examPearl": "İnvajinasyon + hedef bulgusu + peritonit yokluğu → pnömatik/hidrostatik enema redüksiyonu.",
-        "pearls": [
-          {
-            "label": "Sınav notu",
-            "text": "İnvajinasyon + hedef bulgusu + peritonit yokluğu → pnömatik/hidrostatik enema redüksiyonu."
-          }
-        ],
-        "clinicalPearls": [
-          {
-            "label": "Sınav notu",
-            "text": "İnvajinasyon + hedef bulgusu + peritonit yokluğu → pnömatik/hidrostatik enema redüksiyonu."
-          }
-        ],
-        "optionComparison": {
-          "Acil apendektomiye almak": "Cerrahi, peritonit, perforasyon, şok veya enema başarısızlığı varsa gerekir. Bu bebekte peritonit/perforasyon bulgusu yoktur; ilk tedavi radyolojik enema redüksiyonudur.",
-          "Yalnız intravenöz sıvı verip ultrason bulgularını seri izlemek": "Sıvı desteği başlangıç stabilizasyonunun parçasıdır; ancak ultrasonla doğrulanmış invajinasyonda tek başına izlem obstrüksiyon ve iskemi riskini artırır.",
-          "Pnömatik veya hidrostatik enema ile redüksiyon yapmak": "Doğru seçenek budur. Stabil, peritonit veya perforasyon bulgusu olmayan invajinasyonda pnömatik ya da hidrostatik enema hem tanısal doğrulama hem de tedavi edici redüksiyon sağlar.",
-          "Geniş spektrumlu antibiyotikle yanıt bekleyip redüksiyonu ertelemek": "Antibiyotik sepsis/perforasyon veya cerrahi gereksinim varsa eklenebilir; fakat tipik invajinasyonun primer tedavisini erteleyen yaklaşım doğru değildir.",
-          "Proton pompa inhibitörü ve oral rehidrasyonla taburcu etmek": "PPI ve oral rehidrasyon gastroözofageal reflü veya hafif gastroenterit gibi durumlarda düşünülebilir; kırmızı jöle dışkı ve hedef bulgusu olan bebekte yetersiz ve tehlikelidir."
-        },
-        "whyWrong": {
-          "Acil apendektomiye almak": "Cerrahi, peritonit, perforasyon, şok veya enema başarısızlığı varsa gerekir. Bu bebekte peritonit/perforasyon bulgusu yoktur; ilk tedavi radyolojik enema redüksiyonudur.",
-          "Yalnız intravenöz sıvı verip ultrason bulgularını seri izlemek": "Sıvı desteği başlangıç stabilizasyonunun parçasıdır; ancak ultrasonla doğrulanmış invajinasyonda tek başına izlem obstrüksiyon ve iskemi riskini artırır.",
-          "Geniş spektrumlu antibiyotikle yanıt bekleyip redüksiyonu ertelemek": "Antibiyotik sepsis/perforasyon veya cerrahi gereksinim varsa eklenebilir; fakat tipik invajinasyonun primer tedavisini erteleyen yaklaşım doğru değildir.",
-          "Proton pompa inhibitörü ve oral rehidrasyonla taburcu etmek": "PPI ve oral rehidrasyon gastroözofageal reflü veya hafif gastroenterit gibi durumlarda düşünülebilir; kırmızı jöle dışkı ve hedef bulgusu olan bebekte yetersiz ve tehlikelidir."
-        },
-        "managementSteps": [
-          "Damar yolu, analjezi ve izotonik sıvıyla stabilize et.",
-          "Perforasyon/peritonit yokluğunu değerlendir.",
-          "Radyoloji/cerrahi hazırlığıyla pnömatik veya hidrostatik enema redüksiyonu uygula."
-        ],
-        "management": [
-          "Damar yolu, analjezi ve izotonik sıvıyla stabilize et.",
-          "Perforasyon/peritonit yokluğunu değerlendir.",
-          "Radyoloji/cerrahi hazırlığıyla pnömatik veya hidrostatik enema redüksiyonu uygula."
-        ],
-        "learningOutcome": "İnvajinasyonda cerrahi ve enema endikasyonlarını ayırabilme.",
-        "coreKnowledge": "İnvajinasyonda stabil ve perforasyonsuz çocukta pnömatik/hidrostatik enema ilk tedavidir; cerrahi, peritonit/perforasyon ya da başarısız redüksiyonda gerekir."
-      },
-      "whyCorrect": "Bu 8 aylık bebekte aralıklı kolik tarzda ağlama, bacakları karna çekme, kusma, kırmızı jöle kıvamlı dışkı, sağ üst kadranda sosis şeklinde kitle ve ultrasonografide hedef görünümü invajinasyonu destekler. Peritonit, perforasyon veya hemodinamik instabilite bulgusu olmadığı için en uygun tedavi pnömatik veya hidrostatik enema ile redüksiyondur; cerrahi enema başarısızlığı ya da komplikasyon durumunda gündeme gelir.",
       "evidenceChain": [
-        {
-          "text": "Bebekte aralıklı şiddetli ağlama nöbetleri sırasında bacakları karna çekme davranışı kolik tarzı invajinasyon ağrısını düşündürür.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Kusma, solukluk dönemleri ve kırmızı jöle kıvamlı mukuslu-kanlı dışkı invajinasyon için klasik klinik birlikteliktir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Sağ üst kadranda sosis şeklinde kitle ve ultrasonografide hedef/donut görünümü tanıyı objektifleştirir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Peritonit, serbest hava veya perforasyon bulgusunun olmaması enema redüksiyonunu ilk tedavi seçeneği yapar.",
-          "weight": "high",
-          "source": "case"
-        }
+          {
+              "text": "Aralıklı ağlama nöbetleri ve bacakları karna çekme → kolik tarzda invajinasyon ağrısını destekler.",
+              "weight": "high",
+              "source": "case"
+          },
+          {
+              "text": "Kanlı-mukuslu dışkı ve sağ üst kadranda sosis şeklinde kitle → ileoçekal invajinasyon için klasik klinik ipuçlarıdır.",
+              "weight": "high",
+              "source": "case"
+          },
+          {
+              "text": "Ultrasonografide hedef/donut ve pseudokidney görünümü → invajinasyonu objektif olarak doğrular.",
+              "weight": "medium",
+              "source": "case"
+          },
+          {
+              "text": "Defans, rebound ve serbest hava olmaması → perforasyon/peritonit bulgusunun olmadığını gösterir.",
+              "weight": "medium",
+              "source": "case"
+          }
       ],
-      "coreKnowledge": "İnvajinasyonda stabil ve perforasyonsuz çocukta pnömatik/hidrostatik enema ilk tedavidir; cerrahi, peritonit/perforasyon ya da başarısız redüksiyonda gerekir.",
-      "examPearl": "İnvajinasyon + hedef bulgusu + peritonit yokluğu → pnömatik/hidrostatik enema redüksiyonu.",
       "whyWrong": {
-        "Acil apendektomiye almak": "Cerrahi, peritonit, perforasyon, şok veya enema başarısızlığı varsa gerekir. Bu bebekte peritonit/perforasyon bulgusu yoktur; ilk tedavi radyolojik enema redüksiyonudur.",
-        "Yalnız intravenöz sıvı verip ultrason bulgularını seri izlemek": "Sıvı desteği başlangıç stabilizasyonunun parçasıdır; ancak ultrasonla doğrulanmış invajinasyonda tek başına izlem obstrüksiyon ve iskemi riskini artırır.",
-        "Geniş spektrumlu antibiyotikle yanıt bekleyip redüksiyonu ertelemek": "Antibiyotik sepsis/perforasyon veya cerrahi gereksinim varsa eklenebilir; fakat tipik invajinasyonun primer tedavisini erteleyen yaklaşım doğru değildir.",
-        "Proton pompa inhibitörü ve oral rehidrasyonla taburcu etmek": "PPI ve oral rehidrasyon gastroözofageal reflü veya hafif gastroenterit gibi durumlarda düşünülebilir; kırmızı jöle dışkı ve hedef bulgusu olan bebekte yetersiz ve tehlikelidir."
+          "Acil apendektomiye almak": "Apendektomi akut apandisit için uygundur; bu bebekte yaş, kolik ataklar, kanlı-mukuslu dışkı ve hedef görünümü invajinasyonu gösterir. Cerrahi, enema başarısızlığı veya komplikasyon varsa düşünülür.",
+          "Yalnız intravenöz sıvı verip ultrason bulgularını seri izlemek": "Sıvı desteği önemlidir, ancak doğrulanmış invajinasyonda yalnız seri izlem barsak iskemisi riskini artırır. Klinik ve ultrason bulguları tedavi gerektirecek kadar belirgindir.",
+          "Geniş spektrumlu antibiyotikle yanıt bekleyip redüksiyonu ertelemek": "Antibiyotik tek başına invajinasyonu çözmez ve redüksiyonu geciktirir. Enfeksiyon bulgusu baskın değildir; mekanik invajinasyon tedavi edilmelidir.",
+          "Proton pompa inhibitörü ve oral rehidrasyonla taburcu etmek": "PPI ve oral rehidrasyon gastroözofageal/enterit benzeri hafif tablolar için düşünülebilir; bu olguda kanlı-mukuslu dışkı, kitle ve ultrason bulgusu taburculuğu güvenli kılmaz."
+      },
+      "aiMeta": {
+          "generatedAt": "manual-v397-pediatrics-second5-quality-correction",
+          "generator": "manual-editorial-pediatrics-second5-quality-correction",
+          "schemaVersion": "clinical-standard-v397",
+          "provider": "manual-clinical-editorial",
+          "validationWarnings": [],
+          "qualityPass": "pediatrics-second5-targeted-quality-correction",
+          "batch": "pediatrics-second-5",
+          "editedFields": [
+              "coreKnowledge",
+              "diagnosis",
+              "evidenceChain",
+              "exam",
+              "examPearl",
+              "feedback",
+              "investigations",
+              "optionComparison",
+              "patientIntro",
+              "question",
+              "stem"
+          ]
       }
-    },
-    "difficultyTag": "Acil",
-    "coreKnowledge": "İnvajinasyonda stabil ve perforasyonsuz çocukta pnömatik/hidrostatik enema ilk tedavidir; cerrahi, peritonit/perforasyon ya da başarısız redüksiyonda gerekir.",
-    "examPearl": "İnvajinasyon + hedef bulgusu + peritonit yokluğu → pnömatik/hidrostatik enema redüksiyonu.",
-    "whyCorrect": "Bu 8 aylık bebekte aralıklı kolik tarzda ağlama, bacakları karna çekme, kusma, kırmızı jöle kıvamlı dışkı, sağ üst kadranda sosis şeklinde kitle ve ultrasonografide hedef görünümü invajinasyonu destekler. Peritonit, perforasyon veya hemodinamik instabilite bulgusu olmadığı için en uygun tedavi pnömatik veya hidrostatik enema ile redüksiyondur; cerrahi enema başarısızlığı ya da komplikasyon durumunda gündeme gelir.",
-    "optionComparison": {
-      "Acil apendektomiye almak": "Cerrahi, peritonit, perforasyon, şok veya enema başarısızlığı varsa gerekir. Bu bebekte peritonit/perforasyon bulgusu yoktur; ilk tedavi radyolojik enema redüksiyonudur.",
-      "Yalnız intravenöz sıvı verip ultrason bulgularını seri izlemek": "Sıvı desteği başlangıç stabilizasyonunun parçasıdır; ancak ultrasonla doğrulanmış invajinasyonda tek başına izlem obstrüksiyon ve iskemi riskini artırır.",
-      "Pnömatik veya hidrostatik enema ile redüksiyon yapmak": "Doğru seçenek budur. Stabil, peritonit veya perforasyon bulgusu olmayan invajinasyonda pnömatik ya da hidrostatik enema hem tanısal doğrulama hem de tedavi edici redüksiyon sağlar.",
-      "Geniş spektrumlu antibiyotikle yanıt bekleyip redüksiyonu ertelemek": "Antibiyotik sepsis/perforasyon veya cerrahi gereksinim varsa eklenebilir; fakat tipik invajinasyonun primer tedavisini erteleyen yaklaşım doğru değildir.",
-      "Proton pompa inhibitörü ve oral rehidrasyonla taburcu etmek": "PPI ve oral rehidrasyon gastroözofageal reflü veya hafif gastroenterit gibi durumlarda düşünülebilir; kırmızı jöle dışkı ve hedef bulgusu olan bebekte yetersiz ve tehlikelidir."
-    },
-    "evidenceChain": [
-      {
-        "text": "Bebekte aralıklı şiddetli ağlama nöbetleri sırasında bacakları karna çekme davranışı kolik tarzı invajinasyon ağrısını düşündürür.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Kusma, solukluk dönemleri ve kırmızı jöle kıvamlı mukuslu-kanlı dışkı invajinasyon için klasik klinik birlikteliktir.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Sağ üst kadranda sosis şeklinde kitle ve ultrasonografide hedef/donut görünümü tanıyı objektifleştirir.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Peritonit, serbest hava veya perforasyon bulgusunun olmaması enema redüksiyonunu ilk tedavi seçeneği yapar.",
-        "weight": "high",
-        "source": "case"
-      }
-    ],
-    "whyWrong": {
-      "Acil apendektomiye almak": "Cerrahi, peritonit, perforasyon, şok veya enema başarısızlığı varsa gerekir. Bu bebekte peritonit/perforasyon bulgusu yoktur; ilk tedavi radyolojik enema redüksiyonudur.",
-      "Yalnız intravenöz sıvı verip ultrason bulgularını seri izlemek": "Sıvı desteği başlangıç stabilizasyonunun parçasıdır; ancak ultrasonla doğrulanmış invajinasyonda tek başına izlem obstrüksiyon ve iskemi riskini artırır.",
-      "Geniş spektrumlu antibiyotikle yanıt bekleyip redüksiyonu ertelemek": "Antibiyotik sepsis/perforasyon veya cerrahi gereksinim varsa eklenebilir; fakat tipik invajinasyonun primer tedavisini erteleyen yaklaşım doğru değildir.",
-      "Proton pompa inhibitörü ve oral rehidrasyonla taburcu etmek": "PPI ve oral rehidrasyon gastroözofageal reflü veya hafif gastroenterit gibi durumlarda düşünülebilir; kırmızı jöle dışkı ve hedef bulgusu olan bebekte yetersiz ve tehlikelidir."
-    },
-    "aiMeta": {
-      "generatedAt": "manual-v397-pediatrics-second5-ultra-refined",
-      "generator": "manual-editorial-pediatrics-second-batch-refinement",
-      "schemaVersion": "clinical-standard-v397",
-      "provider": "manual-editorial",
-      "validationWarnings": [],
-      "qualityPass": "pediatrics-second5-ultra-refine",
-      "batch": "pediatrics-second-5"
-    }
   },
   {
     "id": "v176-new-111-akut-kan-kaybi-sonrasi-tasikardi",
@@ -64833,708 +64795,679 @@ export const rawCases = [
       "Nervus hypoglossus": "Nervus hypoglossus dil kaslarını innerve eder; lezyonda dil deviasyonu ve artikülasyon bozukluğu beklenir. Dil deviasyonunun olmaması ve mimik kaybı fasiyal sinire uyar."
     }
   },
-  {
-    "id": "v177-new-125-cocukta-purpura-ve-karin-agrisi",
-    "branchId": "pediatrics",
-    "caseType": "standard",
-    "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
-    "title": "Palpabl purpura ve karın ağrısı",
-    "difficulty": "Orta-Zor",
-    "clinicalFocus": "IgA vaskülitinde palpabl purpura, gastrointestinal yakınma, artralji ve renal bulguları trombositopenik purpuradan ayırma.",
-    "learningTarget": "IgA vaskülitinde tanısal klinik paternin normal trombosit sayısı ve renal izlem gereksinimiyle nasıl desteklendiğini açıklayabilme.",
-    "demographics": "6 yaşında erkek çocuk",
-    "setting": "Çocuk acil / çocuk nefroloji değerlendirmesi",
-    "chiefComplaint": "Çocuk, bacaklarda mor döküntü, karın ağrısı ve eklem ağrısı nedeniyle getiriliyor.",
-    "stem": "Yaklaşık 10 gün önce üst solunum yolu enfeksiyonu geçirmiştir. Son iki gündür ayak bileği çevresinde ağrı ve sabah belirginleşen karın ağrısı vardır. Aile, döküntülerin özellikle bacak ve kalça çevresinde kabarık olduğunu belirtir. Burun kanaması, diş eti kanaması veya bilinç değişikliği yoktur.",
-    "patientIntro": {
-      "profile": "6 yaşında erkek çocuk, palpabl purpura ve karın ağrısı nedeniyle değerlendiriliyor.",
-      "presentation": "Alt ekstremite ve kalça çevresinde palpabl purpura, karın ağrısı ve artralji vardır.",
-      "historySummary": "Ailesi, çocuğun iki gün önce ayak bilekleri çevresinde başlayan mor-kırmızı döküntülerinin bacaklara ve kalça çevresine yayıldığını fark etmiştir. Aynı dönemde özellikle sabahları artan karın ağrısı ve yürürken ayak bileklerinde ağrı tariflenmektedir. Yaklaşık 10 gün önce burun akıntısı ve boğaz ağrısıyla seyreden hafif bir üst solunum yolu enfeksiyonu geçirmiştir. Burun kanaması, diş eti kanaması, bilinç değişikliği veya belirgin yüksek ateş öyküsü yoktur; aile idrar renginde koyulaşma olup olmadığını özellikle fark etmediğini belirtmektedir."
-    },
-    "vitals": {
-      "TA": "96/60 mmHg",
-      "Nabız": "102/dk",
-      "Solunum": "22/dk",
-      "SpO2": "%99, oda havasında",
-      "Ateş": "37.2 °C",
-      "Şok indeksi": "1.06 - hemodinamik olarak stabil"
-    },
-    "exam": [
-      "Alt ekstremite ekstansör yüzleri ve gluteal bölgede basmakla solmayan palpabl purpura vardır.",
-      "Ayak bileklerinde hafif şişlik ve hassasiyet izlenir; hareket açıklığı belirgin kısıtlı değildir.",
-      "Karında yaygın hafif hassasiyet vardır; defans, rebound veya invajinasyon düşündüren akut obstrüksiyon bulgusu yoktur.",
-      "Meningeal irritasyon, hipotansiyon veya toksik görünüm saptanmaz."
-    ],
-    "investigations": [
-      {
-        "id": "v177-new-125-cocukta-purpura-ve-karin-agrisi-skin-exam",
-        "label": "Döküntü morfolojisi",
-        "title": "Döküntü morfolojisi",
-        "orderLabel": "Döküntü morfolojisi",
-        "type": "clinical",
-        "priority": "essential",
-        "subtype": "",
-        "category": "clinicalAssessment",
-        "testTypeCategory": "clinicalAssessment",
-        "summary": "Döküntünün palpabl ve alt ekstremite/gluteal dağılımda olması IgA vasküliti için ana klinik ipucudur.",
-        "clinicalMeaning": "Döküntünün palpabl ve alt ekstremite/gluteal dağılımda olması IgA vasküliti için ana klinik ipucudur.",
-        "result": {
-          "title": "Döküntü morfolojisi",
-          "summary": "Döküntünün palpabl ve alt ekstremite/gluteal dağılımda olması IgA vasküliti için ana klinik ipucudur.",
-          "interpretation": "Döküntünün palpabl ve alt ekstremite/gluteal dağılımda olması IgA vasküliti için ana klinik ipucudur.",
-          "values": [
-            [
-              "Morfoloji",
-              "Palpabl purpura",
-              "—",
-              "Vaskülitik döküntü"
-            ],
-            [
-              "Dağılım",
-              "Alt ekstremite ekstansör yüzleri ve gluteal bölge",
-              "—",
-              "IgA vasküliti paterni"
-            ],
-            [
-              "Basmakla solma",
-              "Solmuyor",
-              "—",
-              "Purpura"
-            ]
-          ],
-          "rows": [
-            [
-              "Morfoloji",
-              "Palpabl purpura",
-              "—",
-              "Vaskülitik döküntü"
-            ],
-            [
-              "Dağılım",
-              "Alt ekstremite ekstansör yüzleri ve gluteal bölge",
-              "—",
-              "IgA vasküliti paterni"
-            ],
-            [
-              "Basmakla solma",
-              "Solmuyor",
-              "—",
-              "Purpura"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Morfoloji",
-            "Palpabl purpura",
-            "—",
-            "Vaskülitik döküntü"
-          ],
-          [
-            "Dağılım",
-            "Alt ekstremite ekstansör yüzleri ve gluteal bölge",
-            "—",
-            "IgA vasküliti paterni"
-          ],
-          [
-            "Basmakla solma",
-            "Solmuyor",
-            "—",
-            "Purpura"
-          ]
-        ],
-        "postAnswerExplanation": "Döküntünün palpabl ve alt ekstremite/gluteal dağılımda olması IgA vasküliti için ana klinik ipucudur.",
-        "interpretation": "Döküntünün palpabl ve alt ekstremite/gluteal dağılımda olması IgA vasküliti için ana klinik ipucudur.",
-        "explanationAfterAnswer": "Döküntünün palpabl ve alt ekstremite/gluteal dağılımda olması IgA vasküliti için ana klinik ipucudur.",
-        "testValueLabel": "Kritik karar verdirir",
-        "clinicalPriorityLabel": "Kritik karar verdirir",
-        "educationalValue": "Kritik karar verdirir",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "clinicalFlowOrder": 10,
-        "flowOrder": 10,
-        "pediatricSafetyValue": "Kritik karar verdirir",
-        "treatmentImpact": "Tedavi sırasını belirler",
-        "orderRank": 10
+    {
+      "id": "v177-new-125-cocukta-purpura-ve-karin-agrisi",
+      "branchId": "pediatrics",
+      "caseType": "standard",
+      "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
+      "title": "Palpabl purpura ve karın ağrısı",
+      "difficulty": "Orta-Zor",
+      "clinicalFocus": "IgA vaskülitinde palpabl purpura, gastrointestinal yakınma, artralji ve renal bulguları trombositopenik purpuradan ayırma.",
+      "learningTarget": "IgA vaskülitinde tanısal klinik paternin normal trombosit sayısı ve renal izlem gereksinimiyle nasıl desteklendiğini açıklayabilme.",
+      "demographics": "6 yaşında erkek çocuk",
+      "setting": "Çocuk acil / çocuk nefroloji değerlendirmesi",
+      "chiefComplaint": "Çocuk, bacaklarda mor döküntü, karın ağrısı ve eklem ağrısı nedeniyle getiriliyor.",
+      "stem": "Ailesi, çocuğun iki gün önce ayak bilekleri çevresinde başlayan mor-kırmızı kabarık döküntülerinin bacaklara ve kalça çevresine yayıldığını fark etmiştir. Aynı dönemde özellikle sabahları artan karın ağrısı ve yürürken ayak bileklerinde ağrı tariflenmektedir. Yaklaşık 10 gün önce burun akıntısı ve boğaz ağrısıyla seyreden hafif bir üst solunum yolu enfeksiyonu geçirmiştir. Burun kanaması, diş eti kanaması, bilinç değişikliği veya belirgin yüksek ateş öyküsü yoktur; aile idrar renginde belirgin koyulaşma fark etmemiştir.",
+      "patientIntro": {
+          "profile": "6 yaşında erkek çocuk, palpabl purpura ve karın ağrısı nedeniyle değerlendiriliyor.",
+          "presentation": "Alt ekstremite ve kalça çevresinde palpabl purpura, karın ağrısı ve artralji vardır.",
+          "historySummary": "Ailesi, çocuğun iki gün önce ayak bilekleri çevresinde başlayan mor-kırmızı kabarık döküntülerinin bacaklara ve kalça çevresine yayıldığını fark etmiştir. Aynı dönemde özellikle sabahları artan karın ağrısı ve yürürken ayak bileklerinde ağrı tariflenmektedir. Yaklaşık 10 gün önce burun akıntısı ve boğaz ağrısıyla seyreden hafif bir üst solunum yolu enfeksiyonu geçirmiştir. Burun kanaması, diş eti kanaması, bilinç değişikliği veya belirgin yüksek ateş öyküsü yoktur; aile idrar renginde belirgin koyulaşma fark etmemiştir."
       },
-      {
-        "id": "v177-new-125-cocukta-purpura-ve-karin-agrisi-cbc-coag",
-        "label": "Hemogram ve koagülasyon",
-        "title": "Hemogram ve koagülasyon",
-        "orderLabel": "Hemogram ve koagülasyon",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "summary": "Normal trombosit ve koagülasyon sonuçları purpurayı trombositopeni/DIC yerine vaskülit yönünde destekler.",
-        "clinicalMeaning": "Normal trombosit ve koagülasyon sonuçları purpurayı trombositopeni/DIC yerine vaskülit yönünde destekler.",
-        "result": {
-          "title": "Hemogram ve koagülasyon",
-          "summary": "Normal trombosit ve koagülasyon sonuçları purpurayı trombositopeni/DIC yerine vaskülit yönünde destekler.",
-          "interpretation": "Normal trombosit ve koagülasyon sonuçları purpurayı trombositopeni/DIC yerine vaskülit yönünde destekler.",
-          "values": [
-            [
-              "Trombosit",
-              "312.000/mm³",
-              "150.000–450.000/mm³",
-              "Normal"
-            ],
-            [
-              "Hemoglobin",
-              "12.1 g/dL",
-              "11.5–15.5 g/dL",
-              "Normal"
-            ],
-            [
-              "Lökosit",
-              "8.900/mm³",
-              "5.000–14.500/mm³",
-              "Normal"
-            ],
-            [
-              "PT/INR",
-              "INR 1.0",
-              "0.8–1.2",
-              "Normal"
-            ],
-            [
-              "aPTT",
-              "31 sn",
-              "25–35 sn",
-              "Normal"
-            ]
-          ],
-          "rows": [
-            [
-              "Trombosit",
-              "312.000/mm³",
-              "150.000–450.000/mm³",
-              "Normal"
-            ],
-            [
-              "Hemoglobin",
-              "12.1 g/dL",
-              "11.5–15.5 g/dL",
-              "Normal"
-            ],
-            [
-              "Lökosit",
-              "8.900/mm³",
-              "5.000–14.500/mm³",
-              "Normal"
-            ],
-            [
-              "PT/INR",
-              "INR 1.0",
-              "0.8–1.2",
-              "Normal"
-            ],
-            [
-              "aPTT",
-              "31 sn",
-              "25–35 sn",
-              "Normal"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Trombosit",
-            "312.000/mm³",
-            "150.000–450.000/mm³",
-            "Normal"
-          ],
-          [
-            "Hemoglobin",
-            "12.1 g/dL",
-            "11.5–15.5 g/dL",
-            "Normal"
-          ],
-          [
-            "Lökosit",
-            "8.900/mm³",
-            "5.000–14.500/mm³",
-            "Normal"
-          ],
-          [
-            "PT/INR",
-            "INR 1.0",
-            "0.8–1.2",
-            "Normal"
-          ],
-          [
-            "aPTT",
-            "31 sn",
-            "25–35 sn",
-            "Normal"
-          ]
-        ],
-        "postAnswerExplanation": "Normal trombosit ve koagülasyon sonuçları purpurayı trombositopeni/DIC yerine vaskülit yönünde destekler.",
-        "interpretation": "Normal trombosit ve koagülasyon sonuçları purpurayı trombositopeni/DIC yerine vaskülit yönünde destekler.",
-        "explanationAfterAnswer": "Normal trombosit ve koagülasyon sonuçları purpurayı trombositopeni/DIC yerine vaskülit yönünde destekler.",
-        "testValueLabel": "Tanısal değeri yüksek",
-        "clinicalPriorityLabel": "Tanısal değeri yüksek",
-        "educationalValue": "Tanısal değeri yüksek",
-        "scoreImpact": 4,
-        "scoreValue": 4,
-        "clinicalFlowOrder": 22,
-        "flowOrder": 22,
-        "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
-        "treatmentImpact": "Kararı destekler",
-        "orderRank": 22
+      "vitals": {
+          "TA": "96/60 mmHg",
+          "Nabız": "102/dk",
+          "Solunum": "22/dk",
+          "SpO2": "%99, oda havasında",
+          "Ateş": "37.2 °C",
+          "Şok indeksi": "1.06 - hemodinamik olarak stabil"
       },
-      {
-        "id": "v177-new-125-cocukta-purpura-ve-karin-agrisi-urinalysis",
-        "label": "Tam idrar analizi",
-        "title": "Tam idrar analizi",
-        "orderLabel": "Tam idrar analizi",
-        "type": "urine",
-        "priority": "essential",
-        "subtype": "",
-        "category": "urine",
-        "testTypeCategory": "urine",
-        "summary": "Mikroskobik hematüri ve hafif proteinüri IgA vaskülitinde renal tutulum açısından izlem gerektirir.",
-        "clinicalMeaning": "Mikroskobik hematüri ve hafif proteinüri IgA vaskülitinde renal tutulum açısından izlem gerektirir.",
-        "result": {
-          "title": "Tam idrar analizi",
-          "summary": "Mikroskobik hematüri ve hafif proteinüri IgA vaskülitinde renal tutulum açısından izlem gerektirir.",
-          "interpretation": "Mikroskobik hematüri ve hafif proteinüri IgA vaskülitinde renal tutulum açısından izlem gerektirir.",
-          "values": [
-            [
-              "Eritrosit",
-              "15–20/hpf",
-              "0–2/hpf",
-              "Mikroskobik hematüri"
-            ],
-            [
-              "Protein",
-              "1+",
-              "Negatif",
-              "Hafif proteinüri"
-            ],
-            [
-              "Silendir",
-              "Yok",
-              "Yok",
-              "Ağır nefritik bulgu yok"
-            ]
-          ],
-          "rows": [
-            [
-              "Eritrosit",
-              "15–20/hpf",
-              "0–2/hpf",
-              "Mikroskobik hematüri"
-            ],
-            [
-              "Protein",
-              "1+",
-              "Negatif",
-              "Hafif proteinüri"
-            ],
-            [
-              "Silendir",
-              "Yok",
-              "Yok",
-              "Ağır nefritik bulgu yok"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Eritrosit",
-            "15–20/hpf",
-            "0–2/hpf",
-            "Mikroskobik hematüri"
-          ],
-          [
-            "Protein",
-            "1+",
-            "Negatif",
-            "Hafif proteinüri"
-          ],
-          [
-            "Silendir",
-            "Yok",
-            "Yok",
-            "Ağır nefritik bulgu yok"
-          ]
-        ],
-        "postAnswerExplanation": "Mikroskobik hematüri ve hafif proteinüri IgA vaskülitinde renal tutulum açısından izlem gerektirir.",
-        "interpretation": "Mikroskobik hematüri ve hafif proteinüri IgA vaskülitinde renal tutulum açısından izlem gerektirir.",
-        "explanationAfterAnswer": "Mikroskobik hematüri ve hafif proteinüri IgA vaskülitinde renal tutulum açısından izlem gerektirir.",
-        "testValueLabel": "Kritik karar verdirir",
-        "clinicalPriorityLabel": "Kritik karar verdirir",
-        "educationalValue": "Kritik karar verdirir",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "clinicalFlowOrder": 32,
-        "flowOrder": 32,
-        "pediatricSafetyValue": "Kritik karar verdirir",
-        "treatmentImpact": "Tedavi sırasını belirler",
-        "orderRank": 32
-      },
-      {
-        "id": "v177-new-125-cocukta-purpura-ve-karin-agrisi-renal-function",
-        "label": "Böbrek fonksiyonları",
-        "title": "Böbrek fonksiyonları",
-        "orderLabel": "Böbrek fonksiyonları",
-        "type": "lab",
-        "priority": "essential",
-        "subtype": "",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "summary": "Başlangıç böbrek fonksiyonu korunmuştur; idrar bulguları nedeniyle seri kan basıncı ve idrar izlemi gerekir.",
-        "clinicalMeaning": "Başlangıç böbrek fonksiyonu korunmuştur; idrar bulguları nedeniyle seri kan basıncı ve idrar izlemi gerekir.",
-        "result": {
-          "title": "Böbrek fonksiyonları",
-          "summary": "Başlangıç böbrek fonksiyonu korunmuştur; idrar bulguları nedeniyle seri kan basıncı ve idrar izlemi gerekir.",
-          "interpretation": "Başlangıç böbrek fonksiyonu korunmuştur; idrar bulguları nedeniyle seri kan basıncı ve idrar izlemi gerekir.",
-          "values": [
-            [
-              "Kreatinin",
-              "0.42 mg/dL",
-              "6 yaş için yaklaşık 0.3–0.7 mg/dL",
-              "Yaşa uygun"
-            ],
-            [
-              "Üre",
-              "24 mg/dL",
-              "10–40 mg/dL",
-              "Normal"
-            ],
-            [
-              "Serum albumin",
-              "4.1 g/dL",
-              "3.5–5.0 g/dL",
-              "Normal"
-            ]
-          ],
-          "rows": [
-            [
-              "Kreatinin",
-              "0.42 mg/dL",
-              "6 yaş için yaklaşık 0.3–0.7 mg/dL",
-              "Yaşa uygun"
-            ],
-            [
-              "Üre",
-              "24 mg/dL",
-              "10–40 mg/dL",
-              "Normal"
-            ],
-            [
-              "Serum albumin",
-              "4.1 g/dL",
-              "3.5–5.0 g/dL",
-              "Normal"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Kreatinin",
-            "0.42 mg/dL",
-            "6 yaş için yaklaşık 0.3–0.7 mg/dL",
-            "Yaşa uygun"
-          ],
-          [
-            "Üre",
-            "24 mg/dL",
-            "10–40 mg/dL",
-            "Normal"
-          ],
-          [
-            "Serum albumin",
-            "4.1 g/dL",
-            "3.5–5.0 g/dL",
-            "Normal"
-          ]
-        ],
-        "postAnswerExplanation": "Başlangıç böbrek fonksiyonu korunmuştur; idrar bulguları nedeniyle seri kan basıncı ve idrar izlemi gerekir.",
-        "interpretation": "Başlangıç böbrek fonksiyonu korunmuştur; idrar bulguları nedeniyle seri kan basıncı ve idrar izlemi gerekir.",
-        "explanationAfterAnswer": "Başlangıç böbrek fonksiyonu korunmuştur; idrar bulguları nedeniyle seri kan basıncı ve idrar izlemi gerekir.",
-        "testValueLabel": "Destekleyici veri",
-        "clinicalPriorityLabel": "Destekleyici veri",
-        "educationalValue": "Destekleyici veri",
-        "scoreImpact": 3,
-        "scoreValue": 3,
-        "clinicalFlowOrder": 38,
-        "flowOrder": 38,
-        "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
-        "treatmentImpact": "Kararı destekler",
-        "orderRank": 38
-      },
-      {
-        "id": "v177-new-125-cocukta-purpura-ve-karin-agrisi-abdominal-usg",
-        "label": "Abdominal ultrasonografi",
-        "title": "Abdominal ultrasonografi",
-        "orderLabel": "Abdominal ultrasonografi",
-        "type": "ultrasound",
-        "priority": "medium",
-        "subtype": "",
-        "category": "imaging",
-        "testTypeCategory": "imaging",
-        "summary": "Karın ağrısı olan IgA vaskülitinde invajinasyon veya cerrahi akut karın dışlanması için kullanılır; bu hastada cerrahi komplikasyon saptanmamıştır.",
-        "clinicalMeaning": "Karın ağrısı olan IgA vaskülitinde invajinasyon veya cerrahi akut karın dışlanması için kullanılır; bu hastada cerrahi komplikasyon saptanmamıştır.",
-        "result": {
-          "title": "Abdominal ultrasonografi",
-          "summary": "Karın ağrısı olan IgA vaskülitinde invajinasyon veya cerrahi akut karın dışlanması için kullanılır; bu hastada cerrahi komplikasyon saptanmamıştır.",
-          "interpretation": "Karın ağrısı olan IgA vaskülitinde invajinasyon veya cerrahi akut karın dışlanması için kullanılır; bu hastada cerrahi komplikasyon saptanmamıştır.",
-          "values": [
-            [
-              "Barsak duvarı",
-              "İleal segmentlerde hafif duvar kalınlaşması",
-              "—",
-              "Vaskülitik GİS tutulumla uyumlu"
-            ],
-            [
-              "İnvajinasyon",
-              "Hedef görünümü saptanmadı",
-              "—",
-              "Komplikasyon yok"
-            ],
-            [
-              "Serbest sıvı",
-              "Minimal pelvis sıvısı",
-              "—",
-              "Klinik izlemi destekler"
-            ]
-          ],
-          "rows": [
-            [
-              "Barsak duvarı",
-              "İleal segmentlerde hafif duvar kalınlaşması",
-              "—",
-              "Vaskülitik GİS tutulumla uyumlu"
-            ],
-            [
-              "İnvajinasyon",
-              "Hedef görünümü saptanmadı",
-              "—",
-              "Komplikasyon yok"
-            ],
-            [
-              "Serbest sıvı",
-              "Minimal pelvis sıvısı",
-              "—",
-              "Klinik izlemi destekler"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Barsak duvarı",
-            "İleal segmentlerde hafif duvar kalınlaşması",
-            "—",
-            "Vaskülitik GİS tutulumla uyumlu"
-          ],
-          [
-            "İnvajinasyon",
-            "Hedef görünümü saptanmadı",
-            "—",
-            "Komplikasyon yok"
-          ],
-          [
-            "Serbest sıvı",
-            "Minimal pelvis sıvısı",
-            "—",
-            "Klinik izlemi destekler"
-          ]
-        ],
-        "postAnswerExplanation": "Karın ağrısı olan IgA vaskülitinde invajinasyon veya cerrahi akut karın dışlanması için kullanılır; bu hastada cerrahi komplikasyon saptanmamıştır.",
-        "interpretation": "Karın ağrısı olan IgA vaskülitinde invajinasyon veya cerrahi akut karın dışlanması için kullanılır; bu hastada cerrahi komplikasyon saptanmamıştır.",
-        "explanationAfterAnswer": "Karın ağrısı olan IgA vaskülitinde invajinasyon veya cerrahi akut karın dışlanması için kullanılır; bu hastada cerrahi komplikasyon saptanmamıştır.",
-        "testValueLabel": "Destekleyici veri",
-        "clinicalPriorityLabel": "Destekleyici veri",
-        "educationalValue": "Destekleyici veri",
-        "scoreImpact": 3,
-        "scoreValue": 3,
-        "clinicalFlowOrder": 48,
-        "flowOrder": 48,
-        "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
-        "treatmentImpact": "Kararı destekler",
-        "orderRank": 48
-      }
-    ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": {
-      "enabled": false
-    },
-    "hideExamSignal": true,
-    "shuffleOptions": false,
-    "question": "Bu hastada en olası tanı aşağıdakilerden hangisidir?",
-    "questionType": "diagnosis",
-    "answerTarget": "most_likely_diagnosis",
-    "diagnosis": {
-      "correct": "IgA vasküliti",
-      "options": [
-        "İmmün trombositopenik purpura",
-        "IgA vasküliti",
-        "Meningokoksemi",
-        "Akut romatizmal ateş",
-        "Kawasaki hastalığı"
+      "exam": [
+          "Alt ekstremite ekstansör yüzleri ve gluteal bölgede basmakla solmayan palpabl purpura vardır.",
+          "Ayak bileklerinde hafif şişlik ve hassasiyet izlenir; hareket açıklığı belirgin kısıtlı değildir.",
+          "Karında yaygın hafif hassasiyet vardır; defans, rebound veya invajinasyon düşündüren akut obstrüksiyon bulgusu yoktur.",
+          "Meningeal irritasyon, hipotansiyon veya toksik görünüm saptanmaz."
       ],
+      "investigations": [
+          {
+              "id": "v177-new-125-cocukta-purpura-ve-karin-agrisi-skin-exam",
+              "label": "Döküntü morfolojisi ve dağılımı",
+              "title": "Döküntü morfolojisi ve dağılımı",
+              "orderLabel": "Döküntü morfolojisi ve dağılımı",
+              "type": "clinical",
+              "priority": "essential",
+              "subtype": "",
+              "category": "clinicalAssessment",
+              "testTypeCategory": "clinicalAssessment",
+              "summary": "Palpabl, basmakla solmayan ve alt ekstremite-gluteal bölgede yoğunlaşan purpura küçük damar vasküliti paternini destekler.",
+              "clinicalMeaning": "Palpabl, basmakla solmayan ve alt ekstremite-gluteal bölgede yoğunlaşan purpura küçük damar vasküliti paternini destekler.",
+              "result": {
+                  "title": "Döküntü morfolojisi ve dağılımı",
+                  "summary": "Palpabl, basmakla solmayan ve alt ekstremite-gluteal bölgede yoğunlaşan purpura küçük damar vasküliti paternini destekler.",
+                  "interpretation": "Palpabl, basmakla solmayan ve alt ekstremite-gluteal bölgede yoğunlaşan purpura küçük damar vasküliti paternini destekler.",
+                  "values": [
+                      {
+                          "parameter": "Morfoloji",
+                          "value": "Palpabl purpura",
+                          "note": "Vaskülitik döküntü"
+                      },
+                      {
+                          "parameter": "Dağılım",
+                          "value": "Alt ekstremite ekstansör yüzleri ve gluteal bölge",
+                          "note": "Tipik yerleşim"
+                      },
+                      {
+                          "parameter": "Basmakla solma",
+                          "value": "Solmuyor",
+                          "note": "Purpura"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Morfoloji",
+                          "value": "Palpabl purpura",
+                          "note": "Vaskülitik döküntü"
+                      },
+                      {
+                          "parameter": "Dağılım",
+                          "value": "Alt ekstremite ekstansör yüzleri ve gluteal bölge",
+                          "note": "Tipik yerleşim"
+                      },
+                      {
+                          "parameter": "Basmakla solma",
+                          "value": "Solmuyor",
+                          "note": "Purpura"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Morfoloji",
+                      "value": "Palpabl purpura",
+                      "note": "Vaskülitik döküntü"
+                  },
+                  {
+                      "parameter": "Dağılım",
+                      "value": "Alt ekstremite ekstansör yüzleri ve gluteal bölge",
+                      "note": "Tipik yerleşim"
+                  },
+                  {
+                      "parameter": "Basmakla solma",
+                      "value": "Solmuyor",
+                      "note": "Purpura"
+                  }
+              ],
+              "postAnswerExplanation": "Palpabl, basmakla solmayan ve alt ekstremite-gluteal bölgede yoğunlaşan purpura küçük damar vasküliti paternini destekler.",
+              "interpretation": "Palpabl, basmakla solmayan ve alt ekstremite-gluteal bölgede yoğunlaşan purpura küçük damar vasküliti paternini destekler.",
+              "explanationAfterAnswer": "Palpabl, basmakla solmayan ve alt ekstremite-gluteal bölgede yoğunlaşan purpura küçük damar vasküliti paternini destekler.",
+              "testValueLabel": "Tanısal klinik veri",
+              "clinicalPriorityLabel": "Tanısal klinik veri",
+              "educationalValue": "Tanısal klinik veri",
+              "scoreImpact": 5,
+              "scoreValue": 5,
+              "clinicalFlowOrder": 10,
+              "flowOrder": 10,
+              "pediatricSafetyValue": "Kritik karar verdirir",
+              "treatmentImpact": "Tedavi sırasını belirler",
+              "orderRank": 10
+          },
+          {
+              "id": "v177-new-125-cocukta-purpura-ve-karin-agrisi-cbc-coag",
+              "label": "Hemogram ve koagülasyon",
+              "title": "Hemogram ve koagülasyon",
+              "orderLabel": "Hemogram ve koagülasyon",
+              "type": "lab",
+              "priority": "essential",
+              "subtype": "",
+              "category": "laboratory",
+              "testTypeCategory": "laboratory",
+              "summary": "Normal trombosit ve koagülasyon değerleri purpuranın trombositopeni veya yaygın koagülopatiyle açıklanmasını zayıflatır.",
+              "clinicalMeaning": "Normal trombosit ve koagülasyon değerleri purpuranın trombositopeni veya yaygın koagülopatiyle açıklanmasını zayıflatır.",
+              "result": {
+                  "title": "Hemogram ve koagülasyon",
+                  "summary": "Normal trombosit ve koagülasyon değerleri purpuranın trombositopeni veya yaygın koagülopatiyle açıklanmasını zayıflatır.",
+                  "interpretation": "Normal trombosit ve koagülasyon değerleri purpuranın trombositopeni veya yaygın koagülopatiyle açıklanmasını zayıflatır.",
+                  "values": [
+                      {
+                          "parameter": "Trombosit",
+                          "value": "312.000/mm³",
+                          "reference": "150.000–450.000/mm³",
+                          "note": "Normal"
+                      },
+                      {
+                          "parameter": "Hemoglobin",
+                          "value": "12.1 g/dL",
+                          "reference": "11.5–15.5 g/dL",
+                          "note": "Normal"
+                      },
+                      {
+                          "parameter": "Lökosit",
+                          "value": "8.900/mm³",
+                          "reference": "5.000–14.500/mm³",
+                          "note": "Normal"
+                      },
+                      {
+                          "parameter": "PT/aPTT",
+                          "value": "Yaşa uygun aralıkta",
+                          "note": "Koagülopati lehine değil"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Trombosit",
+                          "value": "312.000/mm³",
+                          "reference": "150.000–450.000/mm³",
+                          "note": "Normal"
+                      },
+                      {
+                          "parameter": "Hemoglobin",
+                          "value": "12.1 g/dL",
+                          "reference": "11.5–15.5 g/dL",
+                          "note": "Normal"
+                      },
+                      {
+                          "parameter": "Lökosit",
+                          "value": "8.900/mm³",
+                          "reference": "5.000–14.500/mm³",
+                          "note": "Normal"
+                      },
+                      {
+                          "parameter": "PT/aPTT",
+                          "value": "Yaşa uygun aralıkta",
+                          "note": "Koagülopati lehine değil"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Trombosit",
+                      "value": "312.000/mm³",
+                      "reference": "150.000–450.000/mm³",
+                      "note": "Normal"
+                  },
+                  {
+                      "parameter": "Hemoglobin",
+                      "value": "12.1 g/dL",
+                      "reference": "11.5–15.5 g/dL",
+                      "note": "Normal"
+                  },
+                  {
+                      "parameter": "Lökosit",
+                      "value": "8.900/mm³",
+                      "reference": "5.000–14.500/mm³",
+                      "note": "Normal"
+                  },
+                  {
+                      "parameter": "PT/aPTT",
+                      "value": "Yaşa uygun aralıkta",
+                      "note": "Koagülopati lehine değil"
+                  }
+              ],
+              "postAnswerExplanation": "Normal trombosit ve koagülasyon değerleri purpuranın trombositopeni veya yaygın koagülopatiyle açıklanmasını zayıflatır.",
+              "interpretation": "Normal trombosit ve koagülasyon değerleri purpuranın trombositopeni veya yaygın koagülopatiyle açıklanmasını zayıflatır.",
+              "explanationAfterAnswer": "Normal trombosit ve koagülasyon değerleri purpuranın trombositopeni veya yaygın koagülopatiyle açıklanmasını zayıflatır.",
+              "testValueLabel": "Ayırıcı tanı verisi",
+              "clinicalPriorityLabel": "Ayırıcı tanı verisi",
+              "educationalValue": "Ayırıcı tanı verisi",
+              "scoreImpact": 4,
+              "scoreValue": 4,
+              "clinicalFlowOrder": 20,
+              "flowOrder": 20,
+              "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
+              "treatmentImpact": "Kararı destekler",
+              "orderRank": 20
+          },
+          {
+              "id": "v177-new-125-cocukta-purpura-ve-karin-agrisi-urinalysis",
+              "label": "Tam idrar analizi",
+              "title": "Tam idrar analizi",
+              "orderLabel": "Tam idrar analizi",
+              "type": "urine",
+              "priority": "essential",
+              "subtype": "",
+              "category": "laboratory",
+              "testTypeCategory": "laboratory",
+              "summary": "Mikroskobik hematüri ve hafif proteinüri IgA vaskülitinde renal tutulum açısından izlem gerektiren bulgulardır.",
+              "clinicalMeaning": "Mikroskobik hematüri ve hafif proteinüri IgA vaskülitinde renal tutulum açısından izlem gerektiren bulgulardır.",
+              "result": {
+                  "title": "Tam idrar analizi",
+                  "summary": "Mikroskobik hematüri ve hafif proteinüri IgA vaskülitinde renal tutulum açısından izlem gerektiren bulgulardır.",
+                  "interpretation": "Mikroskobik hematüri ve hafif proteinüri IgA vaskülitinde renal tutulum açısından izlem gerektiren bulgulardır.",
+                  "values": [
+                      {
+                          "parameter": "Eritrosit",
+                          "value": "15–20/hpf",
+                          "reference": "0–2/hpf",
+                          "note": "Mikroskobik hematüri"
+                      },
+                      {
+                          "parameter": "Protein",
+                          "value": "1+",
+                          "reference": "Negatif",
+                          "note": "Hafif proteinüri"
+                      },
+                      {
+                          "parameter": "Silendir",
+                          "value": "Saptanmadı",
+                          "note": "Ağır nefritik bulgu yok"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Eritrosit",
+                          "value": "15–20/hpf",
+                          "reference": "0–2/hpf",
+                          "note": "Mikroskobik hematüri"
+                      },
+                      {
+                          "parameter": "Protein",
+                          "value": "1+",
+                          "reference": "Negatif",
+                          "note": "Hafif proteinüri"
+                      },
+                      {
+                          "parameter": "Silendir",
+                          "value": "Saptanmadı",
+                          "note": "Ağır nefritik bulgu yok"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Eritrosit",
+                      "value": "15–20/hpf",
+                      "reference": "0–2/hpf",
+                      "note": "Mikroskobik hematüri"
+                  },
+                  {
+                      "parameter": "Protein",
+                      "value": "1+",
+                      "reference": "Negatif",
+                      "note": "Hafif proteinüri"
+                  },
+                  {
+                      "parameter": "Silendir",
+                      "value": "Saptanmadı",
+                      "note": "Ağır nefritik bulgu yok"
+                  }
+              ],
+              "postAnswerExplanation": "Mikroskobik hematüri ve hafif proteinüri IgA vaskülitinde renal tutulum açısından izlem gerektiren bulgulardır.",
+              "interpretation": "Mikroskobik hematüri ve hafif proteinüri IgA vaskülitinde renal tutulum açısından izlem gerektiren bulgulardır.",
+              "explanationAfterAnswer": "Mikroskobik hematüri ve hafif proteinüri IgA vaskülitinde renal tutulum açısından izlem gerektiren bulgulardır.",
+              "testValueLabel": "Renal izlem verisi",
+              "clinicalPriorityLabel": "Renal izlem verisi",
+              "educationalValue": "Renal izlem verisi",
+              "scoreImpact": 4,
+              "scoreValue": 4,
+              "clinicalFlowOrder": 30,
+              "flowOrder": 30,
+              "pediatricSafetyValue": "Kritik karar verdirir",
+              "treatmentImpact": "Tedavi sırasını belirler",
+              "orderRank": 30
+          },
+          {
+              "id": "v177-new-125-cocukta-purpura-ve-karin-agrisi-renal-function",
+              "label": "Böbrek fonksiyonları ve albumin",
+              "title": "Böbrek fonksiyonları ve albumin",
+              "orderLabel": "Böbrek fonksiyonları ve albumin",
+              "type": "lab",
+              "priority": "supportive",
+              "subtype": "",
+              "category": "laboratory",
+              "testTypeCategory": "laboratory",
+              "summary": "Başlangıç böbrek fonksiyonu ve serum albumini korunmuştur; idrar bulguları nedeniyle kan basıncı ve idrar izlemi önemlidir.",
+              "clinicalMeaning": "Başlangıç böbrek fonksiyonu ve serum albumini korunmuştur; idrar bulguları nedeniyle kan basıncı ve idrar izlemi önemlidir.",
+              "result": {
+                  "title": "Böbrek fonksiyonları ve albumin",
+                  "summary": "Başlangıç böbrek fonksiyonu ve serum albumini korunmuştur; idrar bulguları nedeniyle kan basıncı ve idrar izlemi önemlidir.",
+                  "interpretation": "Başlangıç böbrek fonksiyonu ve serum albumini korunmuştur; idrar bulguları nedeniyle kan basıncı ve idrar izlemi önemlidir.",
+                  "values": [
+                      {
+                          "parameter": "Kreatinin",
+                          "value": "0.42 mg/dL",
+                          "reference": "6 yaş için yaklaşık 0.3–0.7 mg/dL",
+                          "note": "Yaşa uygun"
+                      },
+                      {
+                          "parameter": "Üre",
+                          "value": "24 mg/dL",
+                          "reference": "10–40 mg/dL",
+                          "note": "Normal"
+                      },
+                      {
+                          "parameter": "Serum albumin",
+                          "value": "4.1 g/dL",
+                          "reference": "3.5–5.0 g/dL",
+                          "note": "Normal"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Kreatinin",
+                          "value": "0.42 mg/dL",
+                          "reference": "6 yaş için yaklaşık 0.3–0.7 mg/dL",
+                          "note": "Yaşa uygun"
+                      },
+                      {
+                          "parameter": "Üre",
+                          "value": "24 mg/dL",
+                          "reference": "10–40 mg/dL",
+                          "note": "Normal"
+                      },
+                      {
+                          "parameter": "Serum albumin",
+                          "value": "4.1 g/dL",
+                          "reference": "3.5–5.0 g/dL",
+                          "note": "Normal"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Kreatinin",
+                      "value": "0.42 mg/dL",
+                      "reference": "6 yaş için yaklaşık 0.3–0.7 mg/dL",
+                      "note": "Yaşa uygun"
+                  },
+                  {
+                      "parameter": "Üre",
+                      "value": "24 mg/dL",
+                      "reference": "10–40 mg/dL",
+                      "note": "Normal"
+                  },
+                  {
+                      "parameter": "Serum albumin",
+                      "value": "4.1 g/dL",
+                      "reference": "3.5–5.0 g/dL",
+                      "note": "Normal"
+                  }
+              ],
+              "postAnswerExplanation": "Başlangıç böbrek fonksiyonu ve serum albumini korunmuştur; idrar bulguları nedeniyle kan basıncı ve idrar izlemi önemlidir.",
+              "interpretation": "Başlangıç böbrek fonksiyonu ve serum albumini korunmuştur; idrar bulguları nedeniyle kan basıncı ve idrar izlemi önemlidir.",
+              "explanationAfterAnswer": "Başlangıç böbrek fonksiyonu ve serum albumini korunmuştur; idrar bulguları nedeniyle kan basıncı ve idrar izlemi önemlidir.",
+              "testValueLabel": "Renal izlem verisi",
+              "clinicalPriorityLabel": "Renal izlem verisi",
+              "educationalValue": "Renal izlem verisi",
+              "scoreImpact": 3,
+              "scoreValue": 3,
+              "clinicalFlowOrder": 40,
+              "flowOrder": 40,
+              "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
+              "treatmentImpact": "Kararı destekler",
+              "orderRank": 40
+          },
+          {
+              "id": "v177-new-125-cocukta-purpura-ve-karin-agrisi-abdominal-usg",
+              "label": "Eklem ve gastrointestinal değerlendirme",
+              "title": "Eklem ve gastrointestinal değerlendirme",
+              "orderLabel": "Eklem ve gastrointestinal değerlendirme",
+              "type": "clinical",
+              "priority": "supportive",
+              "subtype": "",
+              "category": "clinicalAssessment",
+              "testTypeCategory": "clinicalAssessment",
+              "summary": "Ayak bileği artraljisi ve karın hassasiyeti IgA vaskülitinin eklem ve gastrointestinal tutulumunu destekler; akut cerrahi karın bulgusu yoktur.",
+              "clinicalMeaning": "Ayak bileği artraljisi ve karın hassasiyeti IgA vaskülitinin eklem ve gastrointestinal tutulumunu destekler; akut cerrahi karın bulgusu yoktur.",
+              "result": {
+                  "title": "Eklem ve gastrointestinal değerlendirme",
+                  "summary": "Ayak bileği artraljisi ve karın hassasiyeti IgA vaskülitinin eklem ve gastrointestinal tutulumunu destekler; akut cerrahi karın bulgusu yoktur.",
+                  "interpretation": "Ayak bileği artraljisi ve karın hassasiyeti IgA vaskülitinin eklem ve gastrointestinal tutulumunu destekler; akut cerrahi karın bulgusu yoktur.",
+                  "values": [
+                      {
+                          "parameter": "Eklem bulgusu",
+                          "value": "Ayak bileklerinde hafif şişlik ve hassasiyet",
+                          "note": "Artralji/artrit desteği"
+                      },
+                      {
+                          "parameter": "Karın muayenesi",
+                          "value": "Yaygın hafif hassasiyet; defans ve rebound yok",
+                          "note": "GİS tutulumu olabilir"
+                      },
+                      {
+                          "parameter": "Genel durum",
+                          "value": "Toksik görünüm ve hipotansiyon saptanmadı",
+                          "note": "Sepsis lehine değil"
+                      }
+                  ],
+                  "rows": [
+                      {
+                          "parameter": "Eklem bulgusu",
+                          "value": "Ayak bileklerinde hafif şişlik ve hassasiyet",
+                          "note": "Artralji/artrit desteği"
+                      },
+                      {
+                          "parameter": "Karın muayenesi",
+                          "value": "Yaygın hafif hassasiyet; defans ve rebound yok",
+                          "note": "GİS tutulumu olabilir"
+                      },
+                      {
+                          "parameter": "Genel durum",
+                          "value": "Toksik görünüm ve hipotansiyon saptanmadı",
+                          "note": "Sepsis lehine değil"
+                      }
+                  ]
+              },
+              "rows": [
+                  {
+                      "parameter": "Eklem bulgusu",
+                      "value": "Ayak bileklerinde hafif şişlik ve hassasiyet",
+                      "note": "Artralji/artrit desteği"
+                  },
+                  {
+                      "parameter": "Karın muayenesi",
+                      "value": "Yaygın hafif hassasiyet; defans ve rebound yok",
+                      "note": "GİS tutulumu olabilir"
+                  },
+                  {
+                      "parameter": "Genel durum",
+                      "value": "Toksik görünüm ve hipotansiyon saptanmadı",
+                      "note": "Sepsis lehine değil"
+                  }
+              ],
+              "postAnswerExplanation": "Ayak bileği artraljisi ve karın hassasiyeti IgA vaskülitinin eklem ve gastrointestinal tutulumunu destekler; akut cerrahi karın bulgusu yoktur.",
+              "interpretation": "Ayak bileği artraljisi ve karın hassasiyeti IgA vaskülitinin eklem ve gastrointestinal tutulumunu destekler; akut cerrahi karın bulgusu yoktur.",
+              "explanationAfterAnswer": "Ayak bileği artraljisi ve karın hassasiyeti IgA vaskülitinin eklem ve gastrointestinal tutulumunu destekler; akut cerrahi karın bulgusu yoktur.",
+              "testValueLabel": "Klinik tutulum verisi",
+              "clinicalPriorityLabel": "Klinik tutulum verisi",
+              "educationalValue": "Klinik tutulum verisi",
+              "scoreImpact": 3,
+              "scoreValue": 3,
+              "clinicalFlowOrder": 50,
+              "flowOrder": 50,
+              "pediatricSafetyValue": "Klinik bağlamı güçlendirir",
+              "treatmentImpact": "Kararı destekler",
+              "orderRank": 50
+          }
+      ],
+      "useSyntheticInvestigationBank": false,
+      "managementSequence": {
+          "enabled": false
+      },
+      "hideExamSignal": true,
+      "shuffleOptions": false,
       "question": "Bu hastada en olası tanı aşağıdakilerden hangisidir?",
-      "explanation": "Bu çocukta üst solunum yolu enfeksiyonunu izleyen palpabl purpura, karın ağrısı, artralji, normal trombosit/koagülasyon değerleri ve idrarda mikroskobik hematüri IgA vasküliti paternini oluşturur. Purpuranın palpabl olması ve trombositopeni olmaması kanama diyatezinden çok küçük damar vaskülitini düşündürür; renal tutulum açısından idrar ve kan basıncı izlemi gerekir.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Palpabl purpura + karın ağrısı/artralji + normal trombosit = IgA vasküliti; renal tutulum için idrar ve kan basıncı izle."
-        }
-      ],
+      "questionType": "diagnosis",
+      "answerTarget": "most_likely_diagnosis",
+      "diagnosis": {
+          "correct": "IgA vasküliti",
+          "options": [
+              "İmmün trombositopenik purpura",
+              "IgA vasküliti",
+              "Meningokoksemi",
+              "Akut romatizmal ateş",
+              "Kawasaki hastalığı"
+          ],
+          "question": "Bu hastada en olası tanı aşağıdakilerden hangisidir?",
+          "explanation": "Üst solunum yolu enfeksiyonunu izleyen palpabl, basmakla solmayan alt ekstremite-gluteal purpura; karın ağrısı, ayak bileği artraljisi, normal trombosit/koagülasyon değerleri ve idrarda mikroskobik hematüri IgA vasküliti paternini oluşturur. Purpuranın palpabl olması ve trombositopeni olmaması kanama diyatezinden çok küçük damar vaskülitini düşündürür; renal tutulum çoğu zaman sessiz olabileceği için kan basıncı ve idrar izlemi gereklidir.",
+          "pearls": [
+              {
+                  "label": "Sınav notu",
+                  "text": "Palpabl purpura + karın ağrısı + artralji + normal trombosit kombinasyonu IgA vasküliti için klasik sınav paternidir."
+              }
+          ],
+          "optionComparison": {
+              "İmmün trombositopenik purpura": "ITP’de purpura trombositopeniye bağlıdır ve genellikle izole mukokutanöz kanama ön plandadır. Bu çocukta trombosit normal, purpura palpabl ve karın ağrısı-artralji-hematüri eşlik etmektedir.",
+              "IgA vasküliti": "Doğru tanı IgA vaskülitidir; çünkü çocuk yaşta ÜSYE sonrası gelişen palpabl purpura, karın ağrısı, artralji ve mikroskobik hematüri küçük damar IgA aracılı vaskülit paternini birlikte oluşturur.",
+              "Meningokoksemi": "Meningokoksemi ateş, toksik görünüm, hipotansiyon ve hızla yayılan purpura fulminans tablosuyla beklenir. Bu olguda çocuk hemodinamik olarak stabil ve döküntü dağılımı vaskülitik paterndedir.",
+              "Akut romatizmal ateş": "Akut romatizmal ateşte migratuar artrit, kardit, kore veya streptokok enfeksiyonu kanıtı ön plandadır. Palpabl purpura, karın ağrısı ve hematüri ARF için tipik değildir.",
+              "Kawasaki hastalığı": "Kawasaki hastalığında uzamış ateş, konjonktivit, oral mukoza değişikliği, ekstremite ödemi ve polimorf döküntü beklenir. Bu vakada baskın bulgu palpabl purpura, artralji, karın ağrısı ve idrar bulgusudur."
+          },
+          "answerFeedback": {
+              "summary": "Üst solunum yolu enfeksiyonunu izleyen palpabl, basmakla solmayan alt ekstremite-gluteal purpura; karın ağrısı, ayak bileği artraljisi, normal trombosit/koagülasyon değerleri ve idrarda mikroskobik hematüri IgA vasküliti paternini oluşturur. Purpuranın palpabl olması ve trombositopeni olmaması kanama diyatezinden çok küçük damar vaskülitini düşündürür; renal tutulum çoğu zaman sessiz olabileceği için kan basıncı ve idrar izlemi gereklidir.",
+              "whyCorrect": "Doğru tanı IgA vaskülitidir; çünkü çocuk yaşta ÜSYE sonrası gelişen palpabl purpura, karın ağrısı, artralji ve mikroskobik hematüri küçük damar IgA aracılı vaskülit paternini birlikte oluşturur.",
+              "rationale": "Üst solunum yolu enfeksiyonunu izleyen palpabl, basmakla solmayan alt ekstremite-gluteal purpura; karın ağrısı, ayak bileği artraljisi, normal trombosit/koagülasyon değerleri ve idrarda mikroskobik hematüri IgA vasküliti paternini oluşturur. Purpuranın palpabl olması ve trombositopeni olmaması kanama diyatezinden çok küçük damar vaskülitini düşündürür; renal tutulum çoğu zaman sessiz olabileceği için kan basıncı ve idrar izlemi gereklidir.",
+              "correctOptionFeedback": "Doğru tanı IgA vaskülitidir; çünkü çocuk yaşta ÜSYE sonrası gelişen palpabl purpura, karın ağrısı, artralji ve mikroskobik hematüri küçük damar IgA aracılı vaskülit paternini birlikte oluşturur.",
+              "keyClues": [
+                  "ÜSYE sonrası başlayan palpabl purpura → çocukluk çağı küçük damar vasküliti için tipik zamanlama ve morfolojidir.",
+                  "Alt ekstremite-gluteal dağılım ve basmakla solmama → IgA vasküliti döküntü paternini destekler.",
+                  "Karın ağrısı ve ayak bileği artraljisi → gastrointestinal ve eklem tutulumunu gösterir.",
+                  "Normal trombosit/koagülasyon ve mikroskobik hematüri → ITP/DIC yerine vaskülit ve renal izlem gereksinimini destekler."
+              ],
+              "evidenceChain": [
+                  {
+                      "text": "ÜSYE sonrası başlayan palpabl purpura → çocukluk çağı küçük damar vasküliti için tipik zamanlama ve morfolojidir.",
+                      "weight": "high",
+                      "source": "case"
+                  },
+                  {
+                      "text": "Alt ekstremite-gluteal dağılım ve basmakla solmama → IgA vasküliti döküntü paternini destekler.",
+                      "weight": "high",
+                      "source": "case"
+                  },
+                  {
+                      "text": "Karın ağrısı ve ayak bileği artraljisi → gastrointestinal ve eklem tutulumunu gösterir.",
+                      "weight": "medium",
+                      "source": "case"
+                  },
+                  {
+                      "text": "Normal trombosit/koagülasyon ve mikroskobik hematüri → ITP/DIC yerine vaskülit ve renal izlem gereksinimini destekler.",
+                      "weight": "medium",
+                      "source": "case"
+                  }
+              ],
+              "examPearl": "Palpabl purpura + karın ağrısı + artralji + normal trombosit kombinasyonu IgA vasküliti için klasik sınav paternidir.",
+              "pearls": [
+                  {
+                      "label": "Sınav notu",
+                      "text": "Palpabl purpura + karın ağrısı + artralji + normal trombosit kombinasyonu IgA vasküliti için klasik sınav paternidir."
+                  }
+              ],
+              "clinicalPearls": [
+                  {
+                      "label": "Sınav notu",
+                      "text": "Palpabl purpura + karın ağrısı + artralji + normal trombosit kombinasyonu IgA vasküliti için klasik sınav paternidir."
+                  }
+              ],
+              "optionComparison": {
+                  "İmmün trombositopenik purpura": "ITP’de purpura trombositopeniye bağlıdır ve genellikle izole mukokutanöz kanama ön plandadır. Bu çocukta trombosit normal, purpura palpabl ve karın ağrısı-artralji-hematüri eşlik etmektedir.",
+                  "IgA vasküliti": "Doğru tanı IgA vaskülitidir; çünkü çocuk yaşta ÜSYE sonrası gelişen palpabl purpura, karın ağrısı, artralji ve mikroskobik hematüri küçük damar IgA aracılı vaskülit paternini birlikte oluşturur.",
+                  "Meningokoksemi": "Meningokoksemi ateş, toksik görünüm, hipotansiyon ve hızla yayılan purpura fulminans tablosuyla beklenir. Bu olguda çocuk hemodinamik olarak stabil ve döküntü dağılımı vaskülitik paterndedir.",
+                  "Akut romatizmal ateş": "Akut romatizmal ateşte migratuar artrit, kardit, kore veya streptokok enfeksiyonu kanıtı ön plandadır. Palpabl purpura, karın ağrısı ve hematüri ARF için tipik değildir.",
+                  "Kawasaki hastalığı": "Kawasaki hastalığında uzamış ateş, konjonktivit, oral mukoza değişikliği, ekstremite ödemi ve polimorf döküntü beklenir. Bu vakada baskın bulgu palpabl purpura, artralji, karın ağrısı ve idrar bulgusudur."
+              },
+              "whyWrong": {
+                  "İmmün trombositopenik purpura": "ITP’de purpura trombositopeniye bağlıdır ve genellikle izole mukokutanöz kanama ön plandadır. Bu çocukta trombosit normal, purpura palpabl ve karın ağrısı-artralji-hematüri eşlik etmektedir.",
+                  "Meningokoksemi": "Meningokoksemi ateş, toksik görünüm, hipotansiyon ve hızla yayılan purpura fulminans tablosuyla beklenir. Bu olguda çocuk hemodinamik olarak stabil ve döküntü dağılımı vaskülitik paterndedir.",
+                  "Akut romatizmal ateş": "Akut romatizmal ateşte migratuar artrit, kardit, kore veya streptokok enfeksiyonu kanıtı ön plandadır. Palpabl purpura, karın ağrısı ve hematüri ARF için tipik değildir.",
+                  "Kawasaki hastalığı": "Kawasaki hastalığında uzamış ateş, konjonktivit, oral mukoza değişikliği, ekstremite ödemi ve polimorf döküntü beklenir. Bu vakada baskın bulgu palpabl purpura, artralji, karın ağrısı ve idrar bulgusudur."
+              },
+              "managementSteps": [],
+              "management": [],
+              "learningOutcome": "Öğrenci, IgA vaskülitini ITP, meningokoksemi, Kawasaki ve akut romatizmal ateşten ayıran klinik-laboratuvar zincirini kurar.",
+              "coreKnowledge": "IgA vasküliti çocukta palpabl purpura, artralji/artrit, abdominal ağrı ve renal bulgularla tanınır; trombositlerin normal olması ITP’den ayırıcıdır."
+          },
+          "whyCorrect": "Doğru tanı IgA vaskülitidir; çünkü çocuk yaşta ÜSYE sonrası gelişen palpabl purpura, karın ağrısı, artralji ve mikroskobik hematüri küçük damar IgA aracılı vaskülit paternini birlikte oluşturur.",
+          "evidenceChain": [
+              {
+                  "text": "ÜSYE sonrası başlayan palpabl purpura → çocukluk çağı küçük damar vasküliti için tipik zamanlama ve morfolojidir.",
+                  "weight": "high",
+                  "source": "case"
+              },
+              {
+                  "text": "Alt ekstremite-gluteal dağılım ve basmakla solmama → IgA vasküliti döküntü paternini destekler.",
+                  "weight": "high",
+                  "source": "case"
+              },
+              {
+                  "text": "Karın ağrısı ve ayak bileği artraljisi → gastrointestinal ve eklem tutulumunu gösterir.",
+                  "weight": "medium",
+                  "source": "case"
+              },
+              {
+                  "text": "Normal trombosit/koagülasyon ve mikroskobik hematüri → ITP/DIC yerine vaskülit ve renal izlem gereksinimini destekler.",
+                  "weight": "medium",
+                  "source": "case"
+              }
+          ],
+          "coreKnowledge": "IgA vasküliti çocukta palpabl purpura, artralji/artrit, abdominal ağrı ve renal bulgularla tanınır; trombositlerin normal olması ITP’den ayırıcıdır.",
+          "examPearl": "Palpabl purpura + karın ağrısı + artralji + normal trombosit kombinasyonu IgA vasküliti için klasik sınav paternidir.",
+          "whyWrong": {
+              "İmmün trombositopenik purpura": "ITP’de purpura trombositopeniye bağlıdır ve genellikle izole mukokutanöz kanama ön plandadır. Bu çocukta trombosit normal, purpura palpabl ve karın ağrısı-artralji-hematüri eşlik etmektedir.",
+              "Meningokoksemi": "Meningokoksemi ateş, toksik görünüm, hipotansiyon ve hızla yayılan purpura fulminans tablosuyla beklenir. Bu olguda çocuk hemodinamik olarak stabil ve döküntü dağılımı vaskülitik paterndedir.",
+              "Akut romatizmal ateş": "Akut romatizmal ateşte migratuar artrit, kardit, kore veya streptokok enfeksiyonu kanıtı ön plandadır. Palpabl purpura, karın ağrısı ve hematüri ARF için tipik değildir.",
+              "Kawasaki hastalığı": "Kawasaki hastalığında uzamış ateş, konjonktivit, oral mukoza değişikliği, ekstremite ödemi ve polimorf döküntü beklenir. Bu vakada baskın bulgu palpabl purpura, artralji, karın ağrısı ve idrar bulgusudur."
+          }
+      },
+      "difficultyTag": "Orta-Zor",
+      "coreKnowledge": "IgA vasküliti çocukta palpabl purpura, artralji/artrit, abdominal ağrı ve renal bulgularla tanınır; trombositlerin normal olması ITP’den ayırıcıdır.",
+      "examPearl": "Palpabl purpura + karın ağrısı + artralji + normal trombosit kombinasyonu IgA vasküliti için klasik sınav paternidir.",
+      "whyCorrect": "Doğru tanı IgA vaskülitidir; çünkü çocuk yaşta ÜSYE sonrası gelişen palpabl purpura, karın ağrısı, artralji ve mikroskobik hematüri küçük damar IgA aracılı vaskülit paternini birlikte oluşturur.",
       "optionComparison": {
-        "İmmün trombositopenik purpura": "ITP purpura/peteşi yapabilir; fakat trombosit düşüklüğü beklenir ve karın ağrısı-artralji-renal bulgu birlikteliği tipik değildir. Bu hastada trombosit sayısı normaldir.",
-        "IgA vasküliti": "Doğru seçenek budur. Alt ekstremite ve kalçada palpabl purpura, karın ağrısı, artralji, normal trombosit sayısı ve mikroskobik hematüri IgA vasküliti paternini oluşturur.",
-        "Meningokoksemi": "Meningokoksemide toksik görünüm, yüksek ateş, hipotansiyon, hızla yayılan purpura fulminans ve koagülopati beklenir. Bu çocuk hemodinamik olarak stabildir ve trombosit/koagülasyon bozukluğu yoktur.",
-        "Akut romatizmal ateş": "Akut romatizmal ateşte gezici büyük eklem artriti, kardit, kore veya streptokok kanıtı ön plandadır; palpabl purpura ve renal izlem gerektiren küçük damar vasküliti beklenmez.",
-        "Kawasaki hastalığı": "Kawasaki hastalığında uzamış ateş, konjonktivit, mukozal değişiklik ve ekstremite ödemi beklenir. Bu olguda afebril/iyi genel durumlu palpabl purpura-karın ağrısı-artralji paterni baskındır."
+          "İmmün trombositopenik purpura": "ITP’de purpura trombositopeniye bağlıdır ve genellikle izole mukokutanöz kanama ön plandadır. Bu çocukta trombosit normal, purpura palpabl ve karın ağrısı-artralji-hematüri eşlik etmektedir.",
+          "IgA vasküliti": "Doğru tanı IgA vaskülitidir; çünkü çocuk yaşta ÜSYE sonrası gelişen palpabl purpura, karın ağrısı, artralji ve mikroskobik hematüri küçük damar IgA aracılı vaskülit paternini birlikte oluşturur.",
+          "Meningokoksemi": "Meningokoksemi ateş, toksik görünüm, hipotansiyon ve hızla yayılan purpura fulminans tablosuyla beklenir. Bu olguda çocuk hemodinamik olarak stabil ve döküntü dağılımı vaskülitik paterndedir.",
+          "Akut romatizmal ateş": "Akut romatizmal ateşte migratuar artrit, kardit, kore veya streptokok enfeksiyonu kanıtı ön plandadır. Palpabl purpura, karın ağrısı ve hematüri ARF için tipik değildir.",
+          "Kawasaki hastalığı": "Kawasaki hastalığında uzamış ateş, konjonktivit, oral mukoza değişikliği, ekstremite ödemi ve polimorf döküntü beklenir. Bu vakada baskın bulgu palpabl purpura, artralji, karın ağrısı ve idrar bulgusudur."
       },
-      "answerFeedback": {
-        "summary": "Bu çocukta üst solunum yolu enfeksiyonunu izleyen palpabl purpura, karın ağrısı, artralji, normal trombosit/koagülasyon değerleri ve idrarda mikroskobik hematüri IgA vasküliti paternini oluşturur. Purpuranın palpabl olması ve trombositopeni olmaması kanama diyatezinden çok küçük damar vaskülitini düşündürür; renal tutulum açısından idrar ve kan basıncı izlemi gerekir.",
-        "whyCorrect": "Bu çocukta üst solunum yolu enfeksiyonunu izleyen palpabl purpura, karın ağrısı, artralji, normal trombosit/koagülasyon değerleri ve idrarda mikroskobik hematüri IgA vasküliti paternini oluşturur. Purpuranın palpabl olması ve trombositopeni olmaması kanama diyatezinden çok küçük damar vaskülitini düşündürür; renal tutulum açısından idrar ve kan basıncı izlemi gerekir.",
-        "rationale": "Bu çocukta üst solunum yolu enfeksiyonunu izleyen palpabl purpura, karın ağrısı, artralji, normal trombosit/koagülasyon değerleri ve idrarda mikroskobik hematüri IgA vasküliti paternini oluşturur. Purpuranın palpabl olması ve trombositopeni olmaması kanama diyatezinden çok küçük damar vaskülitini düşündürür; renal tutulum açısından idrar ve kan basıncı izlemi gerekir.",
-        "correctOptionFeedback": "Bu çocukta üst solunum yolu enfeksiyonunu izleyen palpabl purpura, karın ağrısı, artralji, normal trombosit/koagülasyon değerleri ve idrarda mikroskobik hematüri IgA vasküliti paternini oluşturur. Purpuranın palpabl olması ve trombositopeni olmaması kanama diyatezinden çok küçük damar vaskülitini düşündürür; renal tutulum açısından idrar ve kan basıncı izlemi gerekir.",
-        "keyClues": [
-          "Purpura alt ekstremite ve kalça çevresinde simetrik, palpabl ve trombositopeni olmadan gelişmiştir.",
-          "Karın ağrısı ve ayak bileği/diz çevresinde artralji IgA vaskülitinde görülen gastrointestinal ve eklem tutulumunu destekler.",
-          "Trombosit sayısı ve koagülasyon testlerinin normal olması ITP, DIC veya meningokoksemi gibi kanama bozukluğu temelli olasılıkları zayıflatır.",
-          "İdrarda mikroskobik hematüri ve hafif proteinüri renal tutulum açısından izlem gerektiren IgA vaskülitiyle uyumludur."
-        ],
-        "evidenceChain": [
-          {
-            "text": "Purpura alt ekstremite ve kalça çevresinde simetrik, palpabl ve trombositopeni olmadan gelişmiştir.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Karın ağrısı ve ayak bileği/diz çevresinde artralji IgA vaskülitinde görülen gastrointestinal ve eklem tutulumunu destekler.",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "text": "Trombosit sayısı ve koagülasyon testlerinin normal olması ITP, DIC veya meningokoksemi gibi kanama bozukluğu temelli olasılıkları zayıflatır.",
-            "weight": "medium",
-            "source": "case"
-          },
-          {
-            "text": "İdrarda mikroskobik hematüri ve hafif proteinüri renal tutulum açısından izlem gerektiren IgA vaskülitiyle uyumludur.",
-            "weight": "high",
-            "source": "case"
-          }
-        ],
-        "examPearl": "Palpabl purpura + karın ağrısı/artralji + normal trombosit = IgA vasküliti; renal tutulum için idrar ve kan basıncı izle.",
-        "pearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Palpabl purpura + karın ağrısı/artralji + normal trombosit = IgA vasküliti; renal tutulum için idrar ve kan basıncı izle."
-          }
-        ],
-        "clinicalPearls": [
-          {
-            "label": "Sınav notu",
-            "text": "Palpabl purpura + karın ağrısı/artralji + normal trombosit = IgA vasküliti; renal tutulum için idrar ve kan basıncı izle."
-          }
-        ],
-        "optionComparison": {
-          "İmmün trombositopenik purpura": "ITP purpura/peteşi yapabilir; fakat trombosit düşüklüğü beklenir ve karın ağrısı-artralji-renal bulgu birlikteliği tipik değildir. Bu hastada trombosit sayısı normaldir.",
-          "IgA vasküliti": "Doğru seçenek budur. Alt ekstremite ve kalçada palpabl purpura, karın ağrısı, artralji, normal trombosit sayısı ve mikroskobik hematüri IgA vasküliti paternini oluşturur.",
-          "Meningokoksemi": "Meningokoksemide toksik görünüm, yüksek ateş, hipotansiyon, hızla yayılan purpura fulminans ve koagülopati beklenir. Bu çocuk hemodinamik olarak stabildir ve trombosit/koagülasyon bozukluğu yoktur.",
-          "Akut romatizmal ateş": "Akut romatizmal ateşte gezici büyük eklem artriti, kardit, kore veya streptokok kanıtı ön plandadır; palpabl purpura ve renal izlem gerektiren küçük damar vasküliti beklenmez.",
-          "Kawasaki hastalığı": "Kawasaki hastalığında uzamış ateş, konjonktivit, mukozal değişiklik ve ekstremite ödemi beklenir. Bu olguda afebril/iyi genel durumlu palpabl purpura-karın ağrısı-artralji paterni baskındır."
-        },
-        "whyWrong": {
-          "İmmün trombositopenik purpura": "ITP purpura/peteşi yapabilir; fakat trombosit düşüklüğü beklenir ve karın ağrısı-artralji-renal bulgu birlikteliği tipik değildir. Bu hastada trombosit sayısı normaldir.",
-          "Meningokoksemi": "Meningokoksemide toksik görünüm, yüksek ateş, hipotansiyon, hızla yayılan purpura fulminans ve koagülopati beklenir. Bu çocuk hemodinamik olarak stabildir ve trombosit/koagülasyon bozukluğu yoktur.",
-          "Akut romatizmal ateş": "Akut romatizmal ateşte gezici büyük eklem artriti, kardit, kore veya streptokok kanıtı ön plandadır; palpabl purpura ve renal izlem gerektiren küçük damar vasküliti beklenmez.",
-          "Kawasaki hastalığı": "Kawasaki hastalığında uzamış ateş, konjonktivit, mukozal değişiklik ve ekstremite ödemi beklenir. Bu olguda afebril/iyi genel durumlu palpabl purpura-karın ağrısı-artralji paterni baskındır."
-        },
-        "managementSteps": [],
-        "management": [],
-        "learningOutcome": "IgA vaskülitini ITP, meningokoksemi, Kawasaki ve akut romatizmal ateşten ayırabilme.",
-        "coreKnowledge": "IgA vaskülitinde purpura palpabldır ve trombosit sayısı genellikle normaldir; karın ağrısı, artralji ve idrar bulguları tanıyı ve izlem gereksinimini güçlendirir."
-      },
-      "whyCorrect": "Bu çocukta üst solunum yolu enfeksiyonunu izleyen palpabl purpura, karın ağrısı, artralji, normal trombosit/koagülasyon değerleri ve idrarda mikroskobik hematüri IgA vasküliti paternini oluşturur. Purpuranın palpabl olması ve trombositopeni olmaması kanama diyatezinden çok küçük damar vaskülitini düşündürür; renal tutulum açısından idrar ve kan basıncı izlemi gerekir.",
       "evidenceChain": [
-        {
-          "text": "Purpura alt ekstremite ve kalça çevresinde simetrik, palpabl ve trombositopeni olmadan gelişmiştir.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Karın ağrısı ve ayak bileği/diz çevresinde artralji IgA vaskülitinde görülen gastrointestinal ve eklem tutulumunu destekler.",
-          "weight": "high",
-          "source": "case"
-        },
-        {
-          "text": "Trombosit sayısı ve koagülasyon testlerinin normal olması ITP, DIC veya meningokoksemi gibi kanama bozukluğu temelli olasılıkları zayıflatır.",
-          "weight": "medium",
-          "source": "case"
-        },
-        {
-          "text": "İdrarda mikroskobik hematüri ve hafif proteinüri renal tutulum açısından izlem gerektiren IgA vaskülitiyle uyumludur.",
-          "weight": "high",
-          "source": "case"
-        }
+          {
+              "text": "ÜSYE sonrası başlayan palpabl purpura → çocukluk çağı küçük damar vasküliti için tipik zamanlama ve morfolojidir.",
+              "weight": "high",
+              "source": "case"
+          },
+          {
+              "text": "Alt ekstremite-gluteal dağılım ve basmakla solmama → IgA vasküliti döküntü paternini destekler.",
+              "weight": "high",
+              "source": "case"
+          },
+          {
+              "text": "Karın ağrısı ve ayak bileği artraljisi → gastrointestinal ve eklem tutulumunu gösterir.",
+              "weight": "medium",
+              "source": "case"
+          },
+          {
+              "text": "Normal trombosit/koagülasyon ve mikroskobik hematüri → ITP/DIC yerine vaskülit ve renal izlem gereksinimini destekler.",
+              "weight": "medium",
+              "source": "case"
+          }
       ],
-      "coreKnowledge": "IgA vaskülitinde purpura palpabldır ve trombosit sayısı genellikle normaldir; karın ağrısı, artralji ve idrar bulguları tanıyı ve izlem gereksinimini güçlendirir.",
-      "examPearl": "Palpabl purpura + karın ağrısı/artralji + normal trombosit = IgA vasküliti; renal tutulum için idrar ve kan basıncı izle.",
       "whyWrong": {
-        "İmmün trombositopenik purpura": "ITP purpura/peteşi yapabilir; fakat trombosit düşüklüğü beklenir ve karın ağrısı-artralji-renal bulgu birlikteliği tipik değildir. Bu hastada trombosit sayısı normaldir.",
-        "Meningokoksemi": "Meningokoksemide toksik görünüm, yüksek ateş, hipotansiyon, hızla yayılan purpura fulminans ve koagülopati beklenir. Bu çocuk hemodinamik olarak stabildir ve trombosit/koagülasyon bozukluğu yoktur.",
-        "Akut romatizmal ateş": "Akut romatizmal ateşte gezici büyük eklem artriti, kardit, kore veya streptokok kanıtı ön plandadır; palpabl purpura ve renal izlem gerektiren küçük damar vasküliti beklenmez.",
-        "Kawasaki hastalığı": "Kawasaki hastalığında uzamış ateş, konjonktivit, mukozal değişiklik ve ekstremite ödemi beklenir. Bu olguda afebril/iyi genel durumlu palpabl purpura-karın ağrısı-artralji paterni baskındır."
+          "İmmün trombositopenik purpura": "ITP’de purpura trombositopeniye bağlıdır ve genellikle izole mukokutanöz kanama ön plandadır. Bu çocukta trombosit normal, purpura palpabl ve karın ağrısı-artralji-hematüri eşlik etmektedir.",
+          "Meningokoksemi": "Meningokoksemi ateş, toksik görünüm, hipotansiyon ve hızla yayılan purpura fulminans tablosuyla beklenir. Bu olguda çocuk hemodinamik olarak stabil ve döküntü dağılımı vaskülitik paterndedir.",
+          "Akut romatizmal ateş": "Akut romatizmal ateşte migratuar artrit, kardit, kore veya streptokok enfeksiyonu kanıtı ön plandadır. Palpabl purpura, karın ağrısı ve hematüri ARF için tipik değildir.",
+          "Kawasaki hastalığı": "Kawasaki hastalığında uzamış ateş, konjonktivit, oral mukoza değişikliği, ekstremite ödemi ve polimorf döküntü beklenir. Bu vakada baskın bulgu palpabl purpura, artralji, karın ağrısı ve idrar bulgusudur."
+      },
+      "aiMeta": {
+          "generatedAt": "manual-v397-pediatrics-second5-quality-correction",
+          "generator": "manual-editorial-pediatrics-second5-quality-correction",
+          "schemaVersion": "clinical-standard-v397",
+          "provider": "manual-clinical-editorial",
+          "validationWarnings": [],
+          "qualityPass": "pediatrics-second5-targeted-quality-correction",
+          "batch": "pediatrics-second-5",
+          "editedFields": [
+              "coreKnowledge",
+              "diagnosis",
+              "evidenceChain",
+              "exam",
+              "examPearl",
+              "feedback",
+              "investigations",
+              "optionComparison",
+              "patientIntro",
+              "question",
+              "stem"
+          ]
       }
-    },
-    "difficultyTag": "Orta-Zor",
-    "coreKnowledge": "IgA vaskülitinde purpura palpabldır ve trombosit sayısı genellikle normaldir; karın ağrısı, artralji ve idrar bulguları tanıyı ve izlem gereksinimini güçlendirir.",
-    "examPearl": "Palpabl purpura + karın ağrısı/artralji + normal trombosit = IgA vasküliti; renal tutulum için idrar ve kan basıncı izle.",
-    "whyCorrect": "Bu çocukta üst solunum yolu enfeksiyonunu izleyen palpabl purpura, karın ağrısı, artralji, normal trombosit/koagülasyon değerleri ve idrarda mikroskobik hematüri IgA vasküliti paternini oluşturur. Purpuranın palpabl olması ve trombositopeni olmaması kanama diyatezinden çok küçük damar vaskülitini düşündürür; renal tutulum açısından idrar ve kan basıncı izlemi gerekir.",
-    "optionComparison": {
-      "İmmün trombositopenik purpura": "ITP purpura/peteşi yapabilir; fakat trombosit düşüklüğü beklenir ve karın ağrısı-artralji-renal bulgu birlikteliği tipik değildir. Bu hastada trombosit sayısı normaldir.",
-      "IgA vasküliti": "Doğru seçenek budur. Alt ekstremite ve kalçada palpabl purpura, karın ağrısı, artralji, normal trombosit sayısı ve mikroskobik hematüri IgA vasküliti paternini oluşturur.",
-      "Meningokoksemi": "Meningokoksemide toksik görünüm, yüksek ateş, hipotansiyon, hızla yayılan purpura fulminans ve koagülopati beklenir. Bu çocuk hemodinamik olarak stabildir ve trombosit/koagülasyon bozukluğu yoktur.",
-      "Akut romatizmal ateş": "Akut romatizmal ateşte gezici büyük eklem artriti, kardit, kore veya streptokok kanıtı ön plandadır; palpabl purpura ve renal izlem gerektiren küçük damar vasküliti beklenmez.",
-      "Kawasaki hastalığı": "Kawasaki hastalığında uzamış ateş, konjonktivit, mukozal değişiklik ve ekstremite ödemi beklenir. Bu olguda afebril/iyi genel durumlu palpabl purpura-karın ağrısı-artralji paterni baskındır."
-    },
-    "evidenceChain": [
-      {
-        "text": "Purpura alt ekstremite ve kalça çevresinde simetrik, palpabl ve trombositopeni olmadan gelişmiştir.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Karın ağrısı ve ayak bileği/diz çevresinde artralji IgA vaskülitinde görülen gastrointestinal ve eklem tutulumunu destekler.",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "text": "Trombosit sayısı ve koagülasyon testlerinin normal olması ITP, DIC veya meningokoksemi gibi kanama bozukluğu temelli olasılıkları zayıflatır.",
-        "weight": "medium",
-        "source": "case"
-      },
-      {
-        "text": "İdrarda mikroskobik hematüri ve hafif proteinüri renal tutulum açısından izlem gerektiren IgA vaskülitiyle uyumludur.",
-        "weight": "high",
-        "source": "case"
-      }
-    ],
-    "whyWrong": {
-      "İmmün trombositopenik purpura": "ITP purpura/peteşi yapabilir; fakat trombosit düşüklüğü beklenir ve karın ağrısı-artralji-renal bulgu birlikteliği tipik değildir. Bu hastada trombosit sayısı normaldir.",
-      "Meningokoksemi": "Meningokoksemide toksik görünüm, yüksek ateş, hipotansiyon, hızla yayılan purpura fulminans ve koagülopati beklenir. Bu çocuk hemodinamik olarak stabildir ve trombosit/koagülasyon bozukluğu yoktur.",
-      "Akut romatizmal ateş": "Akut romatizmal ateşte gezici büyük eklem artriti, kardit, kore veya streptokok kanıtı ön plandadır; palpabl purpura ve renal izlem gerektiren küçük damar vasküliti beklenmez.",
-      "Kawasaki hastalığı": "Kawasaki hastalığında uzamış ateş, konjonktivit, mukozal değişiklik ve ekstremite ödemi beklenir. Bu olguda afebril/iyi genel durumlu palpabl purpura-karın ağrısı-artralji paterni baskındır."
-    },
-    "aiMeta": {
-      "generatedAt": "manual-v397-pediatrics-second5-ultra-refined",
-      "generator": "manual-editorial-pediatrics-second-batch-refinement",
-      "schemaVersion": "clinical-standard-v397",
-      "provider": "manual-editorial",
-      "validationWarnings": [],
-      "qualityPass": "pediatrics-second5-ultra-refine",
-      "batch": "pediatrics-second-5"
-    }
   },
   {
     "id": "v177-new-126-yenidoganda-agir-solunum-sikintisi",
