@@ -1,0 +1,688 @@
+{
+  "scope": "Only branchId=pediatrics cases were modified; non-pediatric branches and TUS spot non-case items were left untouched.",
+  "pediatricCasesTouched": 98,
+  "totalInvestigationCountBefore": 301,
+  "totalInvestigationCountAfter": 425,
+  "specificActions": [
+    "v163-new-003-atesli-dokuntulu-cocuk: Menenjit olgusunda LP öncesi stabilizasyon, kan kültürü-antibiyotik geciktirmeme, BOS analizi ve Gram/PCR ayrımı netleştirildi.",
+    "v166-new-032-ishal-sonrasi-bobrek-yetmezligi: HUS olgusunda hemogramı Hb+trombosit şeklinde yapılandırıldı, hemoliz paneli, böbrek-elektrolit, Shiga toksin/PCR eklendi; USG düşük önceliğe çekildi.",
+    "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi: Üst hava yolu olgusunda klinik hava yolu önceliği ve görüntülemenin tedaviyi geciktirmemesi vurgulandı.",
+    "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular: Kawasaki olgusunda ABG/CXR çıkarıldı, trombosit ayrı parametreye çevrildi, CRP/ESR + destek biyokimyası + steril piyüri + ekokardiyografi eklendi.",
+    "v178-new-138-kanli-ishal-sonrasi-oliguri: HUS olgusunda hemogramı Hb+trombosit şeklinde yapılandırıldı, hemoliz paneli, böbrek-elektrolit, Shiga toksin/PCR eklendi; USG düşük önceliğe çekildi.",
+    "v179-new-141-besin-sonrasi-akut-reaksiyon: Anafilaksi olgusunda klinik tanı, kilo-adrenalin doz güvenliği ve tedavi yanıt izlemi öne alındı.",
+    "v179-new-143-hiperglisemi-ve-kusma: DKA/metabolik acil olgusunda potasyum güvenliği, VBG, keton, sıvı-insülin izlem ve serebral ödem güvenlik kapısı güçlendirildi.",
+    "v179-new-144-hisilti-ve-solunum-sikintisi: Ağır astım atağı için SpO₂/solunum işi, kilo-doz güvenliği, PEF/FEV1 durumsal ölçüm, kan gazı endikasyonu ve tedavi yanıt izlemi eklendi; CXR rutin dışına çekildi.",
+    "v179-new-145-havlar-tarzda-oksuruk-ve-stridor: Üst hava yolu olgusunda klinik hava yolu önceliği ve görüntülemenin tedaviyi geciktirmemesi vurgulandı.",
+    "v179-new-146-ates-ve-salya-akmasi: Üst hava yolu olgusunda klinik hava yolu önceliği ve görüntülemenin tedaviyi geciktirmemesi vurgulandı.",
+    "v179-new-147-ates-ve-dolasim-bozuklugu: Septik şok/dehidratasyon-dolaşım bozukluğu için şok değerlendirmesi, glukoz-VBG-laktat, elektrolit/böbrek, kültür ve seri izlem eklendi; kültür antibiyotiği geciktirmeyecek şekilde yazıldı.",
+    "v179-new-148-ani-baslayan-tek-tarafli-hisilti: Yabancı cisim aspirasyonunda tek taraflı solunum bulgusu, grafi sınırlılığı ve rijit bronkoskopinin tedaviyi geciktirmemesi vurgulandı.",
+    "v179-new-150-yenidoganda-direncli-siyanoz: Yenidoğan dirençli siyanozda çelişkili SpO₂ düzeltildi; pre/postduktal satürasyon, tam kan gazı-laktat, hiperoksi yanıtı, CXR ve eko eklendi; PGE1 geciktirmeme notu yazıldı.",
+    "v180-new-151-kemoterapi-sonrasi-ates: Febril nötropenide ANC, kültür-antibiyotik geciktirmeme ve doz güvenliği katmanı güçlendirildi.",
+    "v180-new-153-ates-ve-ense-sertligi: Menenjit olgusunda LP öncesi stabilizasyon, kan kültürü-antibiyotik geciktirmeme, BOS analizi ve Gram/PCR ayrımı netleştirildi.",
+    "v180-new-155-sicak-ortamda-bilinc-degisikligi: Sıcak çarpması olgusunda TCA/sodyum kanal benzeri yanlış toksisite bağlamı temizlenip çekirdek ısı, CK-miyoglobin, renal-elektrolit, laktat, koagülasyon ve aktif soğutma izlem katmanı eklendi.",
+    "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi: Septik şok/dehidratasyon-dolaşım bozukluğu için şok değerlendirmesi, glukoz-VBG-laktat, elektrolit/böbrek, kültür ve seri izlem eklendi; kültür antibiyotiği geciktirmeyecek şekilde yazıldı.",
+    "v181-new-162-yenidoganda-kusma-ve-sok: Yenidoğan adrenal kriz/KAHT olgusunda glukoz-Na-K güvenliği, dolaşım değerlendirmesi ve 17-OHP doğrulaması tedaviyi geciktirmeyecek şekilde eklendi.",
+    "v182-new-179-dka-tedavisi-sirasinda-bilinc-kotulesmesi: DKA/metabolik acil olgusunda potasyum güvenliği, VBG, keton, sıvı-insülin izlem ve serebral ödem güvenlik kapısı güçlendirildi.",
+    "v196-new-364-yemek-sonrasi-ani-solunum-sikintisi: Anafilaksi olgusunda klinik tanı, kilo-adrenalin doz güvenliği ve tedavi yanıt izlemi öne alındı.",
+    "v196-new-366-havlar-tarzda-oksuruk-ve-cekilme: Üst hava yolu olgusunda klinik hava yolu önceliği ve görüntülemenin tedaviyi geciktirmemesi vurgulandı.",
+    "v196-new-367-yutamama-ve-tripod-pozisyonu: Üst hava yolu olgusunda klinik hava yolu önceliği ve görüntülemenin tedaviyi geciktirmemesi vurgulandı.",
+    "v196-new-368-ishal-sonrasi-dolasim-bozuklugu: Gastroenterit/dehidratasyon şokunda klinik şok bulguları, elektrolit-böbrek güvenliği ve sıvı yanıt izlemi eklendi.",
+    "v196-new-369-kilo-kaybi-ve-derin-solunum: DKA/metabolik acil olgusunda potasyum güvenliği, VBG, keton, sıvı-insülin izlem ve serebral ödem güvenlik kapısı güçlendirildi.",
+    "v196-new-371-konusamama-ve-hisilti: Ağır astım atağı için SpO₂/solunum işi, kilo-doz güvenliği, PEF/FEV1 durumsal ölçüm, kan gazı endikasyonu ve tedavi yanıt izlemi eklendi; CXR rutin dışına çekildi.",
+    "v196-new-373-kanli-ishal-sonrasi-idrar-azalmasi: HUS olgusunda hemogramı Hb+trombosit şeklinde yapılandırıldı, hemoliz paneli, böbrek-elektrolit, Shiga toksin/PCR eklendi; USG düşük önceliğe çekildi.",
+    "v196-new-374-ates-ve-ense-sertligi: Menenjit olgusunda LP öncesi stabilizasyon, kan kültürü-antibiyotik geciktirmeme, BOS analizi ve Gram/PCR ayrımı netleştirildi.",
+    "v196-new-376-kuruyemis-sonrasi-tek-tarafli-hisilti: Yabancı cisim aspirasyonunda tek taraflı solunum bulgusu, grafi sınırlılığı ve rijit bronkoskopinin tedaviyi geciktirmemesi vurgulandı.",
+    "v196-new-377-ates-ve-tek-dizde-sislik: Septik artritte eklem aspirasyonu/sinovyal sıvı doğrulaması ve antibiyotik geciktirmeme katmanı eklendi.",
+    "v196-new-378-yenidoganda-emme-azalmasi: Septik şok/dehidratasyon-dolaşım bozukluğu için şok değerlendirmesi, glukoz-VBG-laktat, elektrolit/böbrek, kültür ve seri izlem eklendi; kültür antibiyotiği geciktirmeyecek şekilde yazıldı.",
+    "v196-new-382-bes-gunu-asan-ates: Kawasaki olgusunda ABG/CXR çıkarıldı, trombosit ayrı parametreye çevrildi, CRP/ESR + destek biyokimyası + steril piyüri + ekokardiyografi eklendi.",
+    "v196-new-383-yenidoganda-kusma-ve-ambigus-genital-yapi: Yenidoğan adrenal kriz/KAHT olgusunda glukoz-Na-K güvenliği, dolaşım değerlendirmesi ve 17-OHP doğrulaması tedaviyi geciktirmeyecek şekilde eklendi.",
+    "v337-peds-clinical-unique-001-infantta-hisilti-ve-beslenememe: Bronşiolit/inflant hışıltı olgusunda klinik solunum-beslenme ciddiyeti, hidrasyon izlemi ve gereksiz CXR uyarısı eklendi.",
+    "v337-peds-clinical-unique-003-ates-sirasinda-kisa-nobet: Basit febril nöbette gereksiz menenjit/BOS akışı yerine nöbet sınıflaması, glukoz güvenliği ve BT sınırlılığı düzenlendi.",
+    "v339-peds-001-yenidoganda-kusma-ve-dolasim-bozuklugu: Yenidoğan adrenal kriz/KAHT olgusunda glukoz-Na-K güvenliği, dolaşım değerlendirmesi ve 17-OHP doğrulaması tedaviyi geciktirmeyecek şekilde eklendi.",
+    "v339-peds-002-biloz-kusma-ve-batin-hassasiyeti: Bilöz kusma/olası volvulus için cerrahi acil değerlendirme, metabolik güvenlik ve hedefli görüntüleme akışı eklendi."
+  ],
+  "touchedCases": [
+    {
+      "id": "v163-new-003-atesli-dokuntulu-cocuk",
+      "title": "Ateşli döküntülü çocuk",
+      "beforeCount": 3,
+      "afterCount": 6
+    },
+    {
+      "id": "v164-new-012-beslenme-sonrasi-kusan-bebek",
+      "title": "Beslenme sonrası kusan bebek",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v165-new-022-erken-donemde-sarilik",
+      "title": "Erken dönemde sarılık",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v165-new-027-yuzde-sislik-ve-proteinuri",
+      "title": "Yüzde şişlik ve proteinüri",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v166-new-032-ishal-sonrasi-bobrek-yetmezligi",
+      "title": "İshal sonrası böbrek yetmezliği",
+      "beforeCount": 5,
+      "afterCount": 8
+    },
+    {
+      "id": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi",
+      "title": "Ateş ve inspiratuvar solunum sıkıntısı",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v167-new-043-premature-bebekte-solunum-sikintisi",
+      "title": "Prematüre bebekte solunum sıkıntısı",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular",
+      "title": "Uzamış ateş ve mukokutanöz bulgular",
+      "beforeCount": 4,
+      "afterCount": 6
+    },
+    {
+      "id": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski",
+      "title": "Aralıklı karın ağrısı ve kanlı dışkı",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v177-new-125-cocukta-purpura-ve-karin-agrisi",
+      "title": "Çocukta purpura ve karın ağrısı",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v178-new-138-kanli-ishal-sonrasi-oliguri",
+      "title": "Kanlı ishal sonrası oligüri",
+      "beforeCount": 6,
+      "afterCount": 8
+    },
+    {
+      "id": "v179-new-141-besin-sonrasi-akut-reaksiyon",
+      "title": "Besin sonrası akut reaksiyon",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v179-new-142-uzayan-nobet",
+      "title": "Uzayan nöbet",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v179-new-143-hiperglisemi-ve-kusma",
+      "title": "Hiperglisemi ve kusma",
+      "beforeCount": 5,
+      "afterCount": 5
+    },
+    {
+      "id": "v179-new-144-hisilti-ve-solunum-sikintisi",
+      "title": "Hışıltı ve solunum sıkıntısı",
+      "beforeCount": 2,
+      "afterCount": 6
+    },
+    {
+      "id": "v179-new-145-havlar-tarzda-oksuruk-ve-stridor",
+      "title": "Havlar tarzda öksürük ve stridor",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v179-new-146-ates-ve-salya-akmasi",
+      "title": "Ateş ve salya akması",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v179-new-147-ates-ve-dolasim-bozuklugu",
+      "title": "Ateş ve dolaşım bozukluğu",
+      "beforeCount": 3,
+      "afterCount": 6
+    },
+    {
+      "id": "v179-new-148-ani-baslayan-tek-tarafli-hisilti",
+      "title": "Ani başlayan tek taraflı hışıltı",
+      "beforeCount": 3,
+      "afterCount": 3
+    },
+    {
+      "id": "v179-new-149-tablet-alimi-sonrasi-kusma-ve-metabolik-asidoz",
+      "title": "Tablet alımı sonrası kusma ve metabolik asidoz",
+      "beforeCount": 6,
+      "afterCount": 7
+    },
+    {
+      "id": "v179-new-150-yenidoganda-direncli-siyanoz",
+      "title": "Yenidoğanda dirençli siyanoz",
+      "beforeCount": 2,
+      "afterCount": 6
+    },
+    {
+      "id": "v180-new-151-kemoterapi-sonrasi-ates",
+      "title": "Kemoterapi sonrası ateş",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v180-new-152-ani-baslayan-carpinti",
+      "title": "Ani başlayan çarpıntı",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v180-new-153-ates-ve-ense-sertligi",
+      "title": "Ateş ve ense sertliği",
+      "beforeCount": 3,
+      "afterCount": 6
+    },
+    {
+      "id": "v180-new-154-aclik-sonrasi-nobet",
+      "title": "Açlık sonrası nöbet",
+      "beforeCount": 1,
+      "afterCount": 2
+    },
+    {
+      "id": "v180-new-155-sicak-ortamda-bilinc-degisikligi",
+      "title": "Sıcak ortamda bilinç değişikliği",
+      "beforeCount": 1,
+      "afterCount": 6
+    },
+    {
+      "id": "v180-new-156-kafa-travmasi-sonrasi-yeniden-bilinc-kaybi",
+      "title": "Kafa travması sonrası yeniden bilinç kaybı",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v180-new-157-yenidoganda-kasilma-ve-jitteriness",
+      "title": "Yenidoğanda kasılma ve jitteriness",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v180-new-158-bas-agrisi-ve-yuksek-tansiyon",
+      "title": "Baş ağrısı ve yüksek tansiyon",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik",
+      "title": "Kulak ağrısı sonrası kulak arkasında şişlik",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v180-new-160-kapali-ortam-sonrasi-bas-agrisi",
+      "title": "Kapalı ortam sonrası baş ağrısı",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi",
+      "title": "Yenidoğanda beslenme bozulması ve hipotermi",
+      "beforeCount": 2,
+      "afterCount": 6
+    },
+    {
+      "id": "v181-new-162-yenidoganda-kusma-ve-sok",
+      "title": "Yenidoğanda kusma ve şok",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v181-new-163-bobrek-hastasinda-kas-gucsuzlugu",
+      "title": "Böbrek hastasında kas güçsüzlüğü",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v181-new-164-ilac-alimi-sonrasi-bilinc-degisikligi",
+      "title": "İlaç alımı sonrası bilinç değişikliği",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v181-new-165-kulak-cinlamasi-ve-hiperventilasyon",
+      "title": "Kulak çınlaması ve hiperventilasyon",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v181-new-166-ani-baslayan-skrotal-agri",
+      "title": "Ani başlayan skrotal ağrı",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v181-new-167-fiskirir-tarzda-kusma",
+      "title": "Fışkırır tarzda kusma",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v181-new-168-anestezi-sirasinda-ani-hipertermi",
+      "title": "Anestezi sırasında ani hipertermi",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v181-new-169-su-alimi-sonrasi-nobet",
+      "title": "Su alımı sonrası nöbet",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v181-new-170-sag-alt-kadran-agrisi",
+      "title": "Sağ alt kadran ağrısı",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v182-new-171-travma-sonrasi-ani-solunum-bozulmasi",
+      "title": "Travma sonrası ani solunum bozulması",
+      "beforeCount": 2,
+      "afterCount": 2
+    },
+    {
+      "id": "v182-new-172-pestisid-temasi-sonrasi-sekresyon-artisi",
+      "title": "Pestisid teması sonrası sekresyon artışı",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v182-new-173-temizlik-maddesi-icme-sonrasi-agiz-yanigi",
+      "title": "Temizlik maddesi içme sonrası ağız yanığı",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v182-new-174-gaz-yagi-icme-sonrasi-oksuruk",
+      "title": "Gaz yağı içme sonrası öksürük",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v182-new-175-orak-hucreli-cocukta-ani-solukluk",
+      "title": "Orak hücreli çocukta ani solukluk",
+      "beforeCount": 5,
+      "afterCount": 6
+    },
+    {
+      "id": "v182-new-176-aglama-sonrasi-morarma-atagi",
+      "title": "Ağlama sonrası morarma atağı",
+      "beforeCount": 2,
+      "afterCount": 2
+    },
+    {
+      "id": "v182-new-177-sicak-su-yanigi",
+      "title": "Sıcak su yanığı",
+      "beforeCount": 2,
+      "afterCount": 2
+    },
+    {
+      "id": "v182-new-178-havuzdan-cikarilma-sonrasi-oksuruk",
+      "title": "Havuzdan çıkarılma sonrası öksürük",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v182-new-179-dka-tedavisi-sirasinda-bilinc-kotulesmesi",
+      "title": "DKA tedavisi sırasında bilinç kötüleşmesi",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v182-new-180-alci-sonrasi-artan-ekstremite-agrisi",
+      "title": "Alçı sonrası artan ekstremite ağrısı",
+      "beforeCount": 1,
+      "afterCount": 2
+    },
+    {
+      "id": "v196-new-364-yemek-sonrasi-ani-solunum-sikintisi",
+      "title": "Yemek sonrası ani solunum sıkıntısı",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v196-new-365-uzamis-jeneralize-nobet",
+      "title": "Uzamış jeneralize nöbet",
+      "beforeCount": 2,
+      "afterCount": 2
+    },
+    {
+      "id": "v196-new-366-havlar-tarzda-oksuruk-ve-cekilme",
+      "title": "Havlar tarzda öksürük ve çekilme",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v196-new-367-yutamama-ve-tripod-pozisyonu",
+      "title": "Yutamama ve tripod pozisyonu",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v196-new-368-ishal-sonrasi-dolasim-bozuklugu",
+      "title": "İshal sonrası dolaşım bozukluğu",
+      "beforeCount": 1,
+      "afterCount": 4
+    },
+    {
+      "id": "v196-new-369-kilo-kaybi-ve-derin-solunum",
+      "title": "Kilo kaybı ve derin solunum",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v196-new-370-bobrek-yetmezliginde-ritim-riski",
+      "title": "Böbrek yetmezliğinde ritim riski",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v196-new-371-konusamama-ve-hisilti",
+      "title": "Konuşamama ve hışıltı",
+      "beforeCount": 2,
+      "afterCount": 6
+    },
+    {
+      "id": "v196-new-372-yenidoganda-titreme-ve-emme-zayifligi",
+      "title": "Yenidoğanda titreme ve emme zayıflığı",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v196-new-373-kanli-ishal-sonrasi-idrar-azalmasi",
+      "title": "Kanlı ishal sonrası idrar azalması",
+      "beforeCount": 6,
+      "afterCount": 8
+    },
+    {
+      "id": "v196-new-374-ates-ve-ense-sertligi",
+      "title": "Ateş ve ense sertliği",
+      "beforeCount": 3,
+      "afterCount": 6
+    },
+    {
+      "id": "v196-new-375-tablet-alimi-sonrasi-kusma-ve-sok",
+      "title": "Tablet alımı sonrası kusma ve şok",
+      "beforeCount": 6,
+      "afterCount": 7
+    },
+    {
+      "id": "v196-new-376-kuruyemis-sonrasi-tek-tarafli-hisilti",
+      "title": "Kuruyemiş sonrası tek taraflı hışıltı",
+      "beforeCount": 3,
+      "afterCount": 3
+    },
+    {
+      "id": "v196-new-377-ates-ve-tek-dizde-sislik",
+      "title": "Ateş ve tek dizde şişlik",
+      "beforeCount": 3,
+      "afterCount": 5
+    },
+    {
+      "id": "v196-new-378-yenidoganda-emme-azalmasi",
+      "title": "Yenidoğanda emme azalması",
+      "beforeCount": 3,
+      "afterCount": 6
+    },
+    {
+      "id": "v196-new-379-yenidogan-taramasinda-tiroid-bozuklugu",
+      "title": "Yenidoğan taramasında tiroid bozukluğu",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v196-new-380-periorbital-odem-ve-kopuklu-idrar",
+      "title": "Periorbital ödem ve köpüklü idrar",
+      "beforeCount": 5,
+      "afterCount": 6
+    },
+    {
+      "id": "v196-new-381-purpura-ve-karin-agrisi",
+      "title": "Purpura ve karın ağrısı",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v196-new-382-bes-gunu-asan-ates",
+      "title": "Beş günü aşan ateş",
+      "beforeCount": 4,
+      "afterCount": 6
+    },
+    {
+      "id": "v196-new-383-yenidoganda-kusma-ve-ambigus-genital-yapi",
+      "title": "Yenidoğanda kusma ve ambigus genital yapı",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v196-new-384-tekrarlayan-oksuruk-ve-yagli-diski",
+      "title": "Tekrarlayan öksürük ve yağlı dışkı",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v196-new-385-uzamis-sarilik-ve-acik-renk-diski",
+      "title": "Uzamış sarılık ve açık renk dışkı",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v196-new-386-gec-yurume-ve-bacak-egriligi",
+      "title": "Geç yürüme ve bacak eğriliği",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v196-new-387-uzayan-oksuruk-nobetleri",
+      "title": "Uzayan öksürük nöbetleri",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v196-new-388-solukluk-morarma-ve-kemik-agrisi",
+      "title": "Solukluk, morarma ve kemik ağrısı",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v196-new-389-aksamlari-artan-aglama",
+      "title": "Akşamları artan ağlama",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v196-new-390-kilo-alamama-ve-kronik-ishal",
+      "title": "Kilo alamama ve kronik ishal",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v337-peds-clinical-unique-001-infantta-hisilti-ve-beslenememe",
+      "title": "İnfantta hışıltı ve beslenememe",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v337-peds-clinical-unique-002-merdiven-cikmada-zorlanma",
+      "title": "Merdiven çıkmada zorlanma",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v337-peds-clinical-unique-003-ates-sirasinda-kisa-nobet",
+      "title": "Ateş sırasında kısa nöbet",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v337-peds-clinical-unique-004-tekrarlayan-atesli-idrar-yolu-enfeksiyonu",
+      "title": "Tekrarlayan ateşli idrar yolu enfeksiyonu",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v337-peds-clinical-unique-005-kucuk-cocukta-tek-diz-sisligi",
+      "title": "Küçük çocukta tek diz şişliği",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v337-peds-clinical-unique-006-karinda-kitle-ve-kilo-kaybi",
+      "title": "Karında kitle ve kilo kaybı",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v337-peds-clinical-unique-007-ust-solunum-yolu-enfeksiyonu-sonrasi-topal",
+      "title": "Üst solunum yolu enfeksiyonu sonrası topallama",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v337-peds-clinical-unique-008-duzenli-tekrarlayan-ates-ataklari",
+      "title": "Düzenli tekrarlayan ateş atakları",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v337-peds-clinical-unique-009-sarilik-ve-dalak-buyuklugu",
+      "title": "Sarılık ve dalak büyüklüğü",
+      "beforeCount": 5,
+      "afterCount": 6
+    },
+    {
+      "id": "v337-peds-clinical-unique-010-diz-agrisiyla-gelen-adolesan",
+      "title": "Diz ağrısıyla gelen adölesan",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v339-peds-001-yenidoganda-kusma-ve-dolasim-bozuklugu",
+      "title": "Yenidoğanda kusma ve dolaşım bozukluğu",
+      "beforeCount": 5,
+      "afterCount": 4
+    },
+    {
+      "id": "v339-peds-002-biloz-kusma-ve-batin-hassasiyeti",
+      "title": "Bilöz kusma ve batın hassasiyeti",
+      "beforeCount": 3,
+      "afterCount": 4
+    },
+    {
+      "id": "v339-peds-003-premature-bebekte-batin-distansiyonu",
+      "title": "Prematüre bebekte batın distansiyonu",
+      "beforeCount": 5,
+      "afterCount": 6
+    },
+    {
+      "id": "v339-peds-004-grip-sonrasi-kusma-ve-bilinc-degisikligi",
+      "title": "Grip sonrası kusma ve bilinç değişikliği",
+      "beforeCount": 5,
+      "afterCount": 6
+    },
+    {
+      "id": "v339-peds-005-viral-enfeksiyon-sonrasi-morarma",
+      "title": "Viral enfeksiyon sonrası morarma",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v339-peds-006-bebekte-tekrarlayan-agir-enfeksiyon",
+      "title": "Bebekte tekrarlayan ağır enfeksiyon",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v339-peds-007-fotografta-beyaz-pupilla",
+      "title": "Fotoğrafta beyaz pupilla",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v339-peds-008-kas-gucsuzlugu-ve-goz-cevresinde-mor-dokuntu",
+      "title": "Kas güçsüzlüğü ve göz çevresinde mor döküntü",
+      "beforeCount": 4,
+      "afterCount": 5
+    },
+    {
+      "id": "v339-peds-009-yenidogan-taramasinda-metabolik-risk",
+      "title": "Yenidoğan taramasında metabolik risk",
+      "beforeCount": 2,
+      "afterCount": 3
+    },
+    {
+      "id": "v339-peds-010-erken-meme-gelisimi",
+      "title": "Erken meme gelişimi",
+      "beforeCount": 3,
+      "afterCount": 4
+    }
+  ],
+  "duplicateExactGroups": [],
+  "qualityGates": [
+    "All pediatric investigation cards now carry short UI-safe value tags through testValueLabel/clinicalPriorityLabel.",
+    "scoreImpact/scoreValue were added without changing existing answer keys or option-feedback mappings.",
+    "clinicalFlowOrder/flowOrder were added so cards sort from pediatric first assessment to emergency safety, basic tests, targeted/confirmatory tests, and follow-up.",
+    "Kawasaki ABG/CXR routine use was removed in targeted cases and echocardiography/coronary risk evaluation was added.",
+    "HUS ultrasound was demoted to limited contribution and hemolysis/renal/Shiga toxin layers were added.",
+    "Sepsis/meningitis cultures and LP now explicitly do not delay antibiotics/resuscitation.",
+    "Asthma/bronchiolitis imaging and spirometry are marked situational rather than treatment-delaying.",
+    "Neonatal cyanosis has internally consistent pre/postductal saturation and PGE1 delay-prevention note.",
+    "Heat stroke CK interpretation was kept in heat stroke/rhabdomyolysis context and active cooling priority was emphasized.",
+    "Obvious copied visible context phrases in croup, foreign body aspiration, bronchiolitis and adrenal crisis cases were corrected when they conflicted with the investigation layer."
+  ],
+  "visibleContextPatches": [
+    "v179-new-145-havlar-tarzda-oksuruk-ve-stridor",
+    "v179-new-148-ani-baslayan-tek-tarafli-hisilti",
+    "v181-new-162-yenidoganda-kusma-ve-sok",
+    "v196-new-366-havlar-tarzda-oksuruk-ve-cekilme",
+    "v196-new-376-kuruyemis-sonrasi-tek-tarafli-hisilti",
+    "v337-peds-clinical-unique-001-infantta-hisilti-ve-beslenememe"
+  ],
+  "finalCleanup": {
+    "genericEvidenceTemplateRemoved": true,
+    "keyVisibleContextCasesCleaned": [
+      "v179-new-145-havlar-tarzda-oksuruk-ve-stridor",
+      "v196-new-366-havlar-tarzda-oksuruk-ve-cekilme",
+      "v179-new-148-ani-baslayan-tek-tarafli-hisilti",
+      "v196-new-376-kuruyemis-sonrasi-tek-tarafli-hisilti",
+      "v337-peds-clinical-unique-001-infantta-hisilti-ve-beslenememe",
+      "v181-new-162-yenidoganda-kusma-ve-sok"
+    ],
+    "croupInvestigationContextCorrected": true,
+    "heatStrokeToxicologyCopyGuardApplied": true
+  },
+  "finalValidation": {
+    "importSyntax": "passed",
+    "totalRawCases": 620,
+    "totalRenderableCases": 620,
+    "pediatricsCases": 98,
+    "pediatricsInvestigationCards": 425,
+    "requiredInvestigationFieldMissingCount": 0,
+    "forbiddenTemplatePhraseHits": {
+      "Hedefe yönelik objektif veri": 0,
+      "Bu hedefe yönelik veri": 0,
+      "Görüntüleme bulgusu X kararını": 0,
+      "trisiklik antidepresan/sodyum kanal blokeri toksisitesi": 0,
+      "Klinikle uyumlu": 0,
+      "Doğru.": 0,
+      "Yanlış.": 0
+    },
+    "duplicateIdCount": 0,
+    "duplicateIds": [],
+    "npmInstallBuildStatus": "npm install attempted but timed out in sandbox; lightweight ES module import/syntax validation passed."
+  }
+}

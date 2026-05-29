@@ -1,0 +1,15 @@
+KlinikIQ Genel Cerrahi tetkik/objektif veri katmanı güçlendirme raporu
+Kapsam: yalnız branchId="general-surgery" ve caseType="standard" olan 27 vaka.
+Yapılanlar:
+- Her Genel Cerrahi vakasına cerrahi ilk değerlendirme / klinik alarm / stabilite-kaynak kontrol katmanı eklendi.
+- Mevcut tetkikler cerrahi acil önceliğe göre etiketlendi: acil güvenlik testi, kaynak kontrolü belirler, girişim öncesi güvenlik, ilk basamak görüntüleme, hedefli görüntüleme, doğrulayıcı test, komplikasyon taraması.
+- Tüm tetkiklere testValueLabel, clinicalPriorityLabel, educationalValue, scoreImpact, scoreValue ve clinicalFlowOrder alanları eklendi veya güncellendi.
+- Ağır kolanjit ve nekrotizan enfeksiyonlarda kültürün antibiyotik/debridman/drenajı geciktirmemesi açıkça belirtildi.
+- Perforasyon, rüptüre AAA, travma, strangülasyon ve nekrotizan enfeksiyonlarda ileri tetkikin kaynak kontrolünü geciktirmeme kapısı korundu.
+- Akut kolesistit USG yorumundaki bozuk/eksik kalıp cümle temizlendi; patolojik bulgu etiketleri korunarak anlamlı hale getirildi.
+- Tiroid nodülünde TSH → USG risk sınıflaması → USG eşliğinde İİAB akışı netleştirildi; normal TSH’da sintigrafinin öncelikli olmadığı mesajı korundu.
+- Duplicate case ID kontrolü ve Genel Cerrahi dışı branş değişmedi hash kontrolü yapıldı.
+
+Genel Cerrahi vaka sayısı: 27
+Değiştirilen vaka sayısı: 27
+Genel Cerrahi dışı scope guard: GEÇTİ

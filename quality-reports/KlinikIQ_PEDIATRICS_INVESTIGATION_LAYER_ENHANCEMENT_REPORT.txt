@@ -1,0 +1,20 @@
+KlinikIQ Pediatri Tetkik/Objektif Veri Katmanı Güncelleme Raporu
+
+Kapsam: Yalnızca branchId="pediatrics" olan Çocuk Sağlığı ve Hastalıkları genel klinik vakaları.
+Toplam vaka: 620
+Pediatri vaka sayısı: 98
+Pediatri tetkik kartı sayısı: 425
+
+Uygulanan ana işlemler:
+- Pediatri tetkikleri pediatrik ilk değerlendirme, acil güvenlik, temel laboratuvar, hedefli/doğrulayıcı test ve izlem akışına göre yeniden etiketlendi.
+- testValueLabel / clinicalPriorityLabel / educationalValue / scoreImpact / clinicalFlowOrder gibi render tarafından desteklenen schema-uyumlu alanlar dolduruldu.
+- Kawasaki, HUS, ağır astım, bronşiolit, sepsis/septik şok, menenjit/meningokoksemi, yenidoğan dirençli siyanozu, sıcak çarpması, DKA, anafilaksi, krup/üst hava yolu, yabancı cisim aspirasyonu, febril nötropeni, septik artrit ve adrenal kriz gibi yüksek riskli pediatri olgularında hedefli tetkik akışı güçlendirildi.
+- Tedavi geciktirmeme güvenlik kapıları vurgulandı: sepsis/menenjit antibiyotiği, ağır astım tedavisi, duktus bağımlı yenidoğanda PGE1, sıcak çarpmasında aktif soğutma, DKA potasyum güvenliği.
+- Eski jenerik "Hedefe yönelik objektif veri..." kalıpları temizlendi.
+- Duplicate ID kontrolü yapıldı: 0.
+
+Son kontrol:
+- ES module import/syntax kontrolü: geçti.
+- Gerekli pediatrik tetkik alanı eksikliği: 0.
+- Yasak/template ifade kalıntıları: {"Hedefe yönelik objektif veri":0,"Bu hedefe yönelik veri":0,"Görüntüleme bulgusu X kararını":0,"trisiklik antidepresan/sodyum kanal blokeri toksisitesi":0,"Klinikle uyumlu":0,"Doğru.":0,"Yanlış.":0}.
+- Vite build: npm install sandbox içinde zaman aşımına uğradığı için tam build çalıştırılamadı; veri dosyası import/syntax düzeyinde doğrulandı.
