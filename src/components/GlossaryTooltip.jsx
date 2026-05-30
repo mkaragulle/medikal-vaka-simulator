@@ -592,7 +592,19 @@ function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFlo
         updatePosition();
       });
     };
-    const handleScroll = () => onRequestClose?.();
+    const handleScroll = (event) => {
+      const target = event?.target;
+      const floatingEl = tooltipRef.current;
+
+      // Internal tooltip/toolbox scrolling must not close the glossary popover.
+      // The scroll listener is registered on window in capture mode, so scrolls
+      // from the card body arrive here before React handlers can stop them.
+      if (target && target !== window && target !== document) {
+        if (floatingEl?.contains(target) || isInsideAnyGlossaryTooltip(target)) return;
+      }
+
+      onRequestClose?.();
+    };
     const handleResize = () => schedulePositionUpdate();
     const handlePointerDown = (event) => {
       const referenceEl = triggerRef.current;
@@ -639,6 +651,12 @@ function FloatingTooltip({ id, triggerRef, open, children, onRequestClose, onFlo
       }}
       onPointerLeave={(event) => {
         if (isMousePointer(event)) onFloatingLeave?.(event);
+      }}
+      onWheel={(event) => {
+        event.stopPropagation();
+      }}
+      onTouchMove={(event) => {
+        event.stopPropagation();
       }}
       style={{
         position: 'fixed',

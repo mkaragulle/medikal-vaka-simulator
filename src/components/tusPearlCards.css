@@ -19650,3 +19650,27 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
     display: none !important;
   }
 }
+
+
+/* ========================================================================== 
+   V406 — Hap Bilgi Çalış delete popover centered to Kartı Sil button
+   Centers the portal confirmation over the clicked delete button instead of
+   right-aligning it to the button edge. The small pointer now follows the
+   clicked button center, so the indicator no longer sits on the far right.
+   ========================================================================== */
+.pearl-inline-delete-popover.pearl-inline-delete-popover-portal {
+  transform-origin: top center !important;
+}
+
+.pearl-inline-delete-popover.pearl-inline-delete-popover-portal::before {
+  left: var(--delete-popover-arrow-left, 24px) !important;
+  right: auto !important;
+}
+
+.pearl-inline-delete-popover.pearl-inline-delete-popover-portal.is-top {
+  transform-origin: bottom center !important;
+}
+
+.pearl-inline-delete-popover.pearl-inline-delete-popover-portal.is-bottom {
+  transform-origin: top center !important;
+}

@@ -54629,3 +54629,26 @@ html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card .patient
   font-weight: 800;
   opacity: 0.82;
 }
+
+/* ===== KlinikIQ Glossary Toolbox Hidden Scroll Fix =====
+   Allows glossary popover/toolbox content to scroll without showing a scrollbar. */
+#klinikiq-tooltip-layer .smart-glossary-popover .smart-glossary-card,
+.smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip .smart-glossary-card,
+#klinikiq-tooltip-layer .glossary-tooltip .smart-glossary-card,
+.glossary-tooltip.floating-glossary-tooltip .smart-glossary-card {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  overscroll-behavior: contain !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  touch-action: pan-y !important;
+}
+
+#klinikiq-tooltip-layer .smart-glossary-popover .smart-glossary-card::-webkit-scrollbar,
+.smart-glossary-popover.glossary-tooltip.floating-glossary-tooltip .smart-glossary-card::-webkit-scrollbar,
+#klinikiq-tooltip-layer .glossary-tooltip .smart-glossary-card::-webkit-scrollbar,
+.glossary-tooltip.floating-glossary-tooltip .smart-glossary-card::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}

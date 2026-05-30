@@ -1175,11 +1175,14 @@ function TusPearlStudyScreen({
     const popoverWidth = Math.min(320, Math.max(260, viewportWidth - margin * 2));
     const estimatedHeight = 190;
     const openUp = viewportHeight - rect.bottom < estimatedHeight + gap && rect.top > estimatedHeight + gap;
-    const left = Math.max(margin, Math.min(rect.right - popoverWidth, viewportWidth - popoverWidth - margin));
+    const triggerCenter = rect.left + rect.width / 2;
+    const left = Math.max(margin, Math.min(triggerCenter - popoverWidth / 2, viewportWidth - popoverWidth - margin));
+    const arrowLeft = Math.max(18, Math.min(triggerCenter - left - 6.5, popoverWidth - 31));
 
     return {
       left,
       width: popoverWidth,
+      arrowLeft,
       placement: openUp ? 'top' : 'bottom',
       top: openUp ? rect.top - gap : rect.bottom + gap,
     };
@@ -1219,6 +1222,7 @@ function TusPearlStudyScreen({
       '--delete-popover-left': `${Math.round(position.left)}px`,
       '--delete-popover-top': `${Math.round(position.top)}px`,
       '--delete-popover-width': `${Math.round(position.width || 320)}px`,
+      '--delete-popover-arrow-left': `${Math.round(position.arrowLeft ?? 24)}px`,
     };
 
     return createPortal(
