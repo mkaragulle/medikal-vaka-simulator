@@ -19625,3 +19625,28 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
   padding: 0 !important;
   transform: none !important;
 }
+
+/* ========================================================================== 
+   V405 — Hap Bilgi Çalış right-column hidden internal scroll
+   Makes the right control column independently scrollable when Tekrar Araçları,
+   Oturum and Kart Araçları exceed the available viewport height. The scrollbar
+   remains visually hidden, but mouse wheel, trackpad and touch scrolling stay
+   active inside the right panel.
+   ========================================================================== */
+@media (min-width: 981px) {
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-right-v92.pearl-study-control-panel-v93 {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    touch-action: pan-y !important;
+  }
+
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .pearl-study-right-v92.pearl-study-control-panel-v93::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+  }
+}
