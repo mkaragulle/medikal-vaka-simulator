@@ -10,6 +10,9 @@ import { TUS_PEARL_INTERNAL_MEDICINE_FIRST50_TEXT_OVERRIDES } from './tusPearlIn
 import { TUS_PEARL_INTERNAL_MEDICINE_SECOND50_TEXT_OVERRIDES } from './tusPearlInternalMedicineSecond50Overrides.js';
 import { TUS_PEARL_INTERNAL_MEDICINE_THIRD59_TEXT_OVERRIDES } from './tusPearlInternalMedicineThird59Overrides.js';
 import { TUS_PEARL_PEDIATRICS_FIRST63_TEXT_OVERRIDES } from './tusPearlPediatricsFirst63Overrides.js';
+import { TUS_PEARL_PEDIATRICS_SECOND63_TEXT_OVERRIDES } from './tusPearlPediatricsSecond63Overrides.js';
+import { TUS_PEARL_OBGYN_FIRST64_TEXT_OVERRIDES } from './tusPearlObgynFirst64Overrides.js';
+import { TUS_PEARL_SMALL_CLERKSHIPS_FIRST58_TEXT_OVERRIDES } from './tusPearlSmallClerkshipsFirst58Overrides.js';
 // Auto-generated high-yield TUS flashcard seed deck for KlinikIQ.
 // Years are intentionally empty unless a source explicitly provides a year.
 
@@ -9885,112 +9888,256 @@ const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
     ]
   },
   "tus-pearl-general-surgery-090-spot": {
-    "front": "Periumbilikal başlayıp sağ alt kadrana göç eden ağrı ne düşündürür?",
-    "keywords": [
-      "periumbilikal ağrı; sağ alt kadran; rebound; iştahsızlık"
-    ]
+      "front": "Periumbilikal başlayıp sağ alt kadrana göç eden ağrıya lokal hassasiyet ve rebound eşlik ediyorsa en olası cerrahi tanı nedir?",
+      "back": "Akut apandisit.",
+      "answer": "Akut apandisit.",
+      "explanation": "Visseral ağrının periumbilikal başlaması, inflamasyon paryetal peritona ulaştığında sağ alt kadrana lokalize olur. Rebound, defans veya giderek artan lokal periton irritasyonu komplike apandisit olasılığını ve cerrahi değerlendirme aciliyetini artırır.",
+      "tusTip": "Göç eden ağrı + McBurney hassasiyeti apandisitte klasik aktif hatırlama paternidir.",
+      "differentialNote": "Gastroenteritte yaygın kramp ve ishal ön plandadır; lokalize rebound cerrahi akut karın lehinedir.",
+      "keywords": [
+          "periumbilikal ağrı",
+          "sağ alt kadran",
+          "rebound",
+          "McBurney"
+      ]
   },
   "tus-pearl-general-surgery-090-extra": {
-    "front": "Apandisitte görüntüleme için çocuk/gebede öncelikli yöntem nedir?",
-    "keywords": [
-      "periumbilikal ağrı; sağ alt kadran; rebound; iştahsızlık"
-    ]
+      "front": "Apandisit şüphesinde çocuk ve gebede radyasyon vermeden öncelikle hangi görüntüleme yöntemi tercih edilir?",
+      "back": "Ultrasonografi.",
+      "answer": "Ultrasonografi.",
+      "explanation": "Çocuk ve gebede ilk basamakta ultrasonografi tercih edilir; nonkomprese, çapı artmış apendiks ve çevresel inflamasyon tanıyı destekler. Erişkinde veya USG yetersiz kaldığında kontrastlı BT tanısal doğruluğu artırır.",
+      "tusTip": "Apandisit görüntülemesinde hasta grubu önemlidir: çocuk/gebede USG, erişkinde çoğu zaman BT öne çıkar.",
+      "differentialNote": "Negatif veya yetersiz USG, klinik şüphe yüksekse apandisiti dışlamaz; ileri görüntüleme veya cerrahi gözlem gerekebilir.",
+      "keywords": [
+          "apandisit",
+          "çocuk",
+          "gebelik",
+          "ultrasonografi"
+      ]
   },
   "tus-pearl-general-surgery-091-spot": {
-    "front": "Ateş, sarılık ve sağ üst kadran ağrısı triadı nedir?",
-    "keywords": [
-      "ateş; sarılık; sağ üst kadran ağrısı; Charcot"
-    ]
+      "front": "Ateş, sarılık ve sağ üst kadran ağrısı birlikteliği hangi hepatobilier acil triadını düşündürür?",
+      "back": "Charcot triadı; akut kolanjit.",
+      "answer": "Charcot triadı; akut kolanjit.",
+      "explanation": "Koledok obstrüksiyonu üzerine gelişen enfeksiyon ateş, kolestatik sarılık ve sağ üst kadran ağrısı ile seyreder. Hipotansiyon ve bilinç değişikliği eklenirse Reynolds pentadı oluşur ve sepsis riski artar.",
+      "tusTip": "Kolanjitte temel karar; antibiyotik ve resüsitasyon sonrası biliyer drenaj ihtiyacını fark etmektir.",
+      "differentialNote": "Akut kolesistitte Murphy pozitifliği ön plandadır; belirgin sarılık ve sepsis kolanjiti daha çok destekler.",
+      "keywords": [
+          "Charcot triadı",
+          "ateş",
+          "sarılık",
+          "sağ üst kadran ağrısı"
+      ]
   },
   "tus-pearl-general-surgery-091-extra": {
-    "front": "Akut kolanjitte dekompresyon için kullanılan yöntem nedir?",
-    "keywords": [
-      "ateş; sarılık; sağ üst kadran ağrısı; Charcot"
-    ]
+      "front": "Akut kolanjitte antibiyotik ve sıvı resüsitasyonuna rağmen obstrüksiyon sürüyorsa hangi işlem kaynak kontrolü sağlar?",
+      "back": "ERCP ile biliyer dekompresyon.",
+      "answer": "ERCP ile biliyer dekompresyon.",
+      "explanation": "Kolanjitte enfekte safra yolu basıncı düşürülmeden sepsis kontrol altına alınamayabilir. ERCP taş çıkarma, sfinkterotomi veya stent ile hem tanısal hem terapötik biliyer drenaj sağlar.",
+      "tusTip": "Kolanjit sorusunda 'sarılık + ateş + sepsis' görülürse yalnız antibiyotik değil, drenaj düşünülmelidir.",
+      "differentialNote": "Akut pankreatitte ERCP rutin değildir; kolanjit veya devam eden koledok obstrüksiyonu varsa öncelik kazanır.",
+      "keywords": [
+          "akut kolanjit",
+          "ERCP",
+          "biliyer drenaj",
+          "kaynak kontrolü"
+      ]
   },
   "tus-pearl-general-surgery-092-spot": {
-    "front": "Sağ üst kadran ağrısı ve Murphy pozitifliği hangi tabloyu düşündürür?",
-    "keywords": [
-      "RUQ ağrı; Murphy; safra taşı; ateş"
-    ]
+      "front": "Sağ üst kadran ağrısı, ateş ve inspirasyonda kesilen Murphy bulgusu hangi safra kesesi patolojisini düşündürür?",
+      "back": "Akut kolesistit.",
+      "answer": "Akut kolesistit.",
+      "explanation": "Sistik kanal tıkanması safra kesesi distansiyonu ve duvar inflamasyonu oluşturur. Murphy pozitifliği, lokal peritoneal irritasyonun klinik yansımasıdır ve özellikle taşlı kolesistitte tipiktir.",
+      "tusTip": "Murphy pozitifliği safra kesesi inflamasyonunu; Charcot triadı ise koledok enfeksiyonunu düşündürür.",
+      "differentialNote": "Biliyer kolikte ateş ve kalıcı inflamasyon beklenmez; kolesistitte ağrı daha uzun sürer ve inflamatuvar bulgular eklenir.",
+      "keywords": [
+          "akut kolesistit",
+          "Murphy",
+          "sistik kanal",
+          "sağ üst kadran"
+      ]
   },
   "tus-pearl-general-surgery-092-extra": {
-    "front": "Akut kolesistitte ilk tercih görüntüleme nedir?",
-    "keywords": [
-      "RUQ ağrı; Murphy; safra taşı; ateş"
-    ]
+      "front": "Akut kolesistit şüphesinde taş, duvar kalınlaşması ve perikolesistik sıvıyı göstermek için ilk tercih edilen görüntüleme hangisidir?",
+      "back": "Sağ üst kadran ultrasonografisi.",
+      "answer": "Sağ üst kadran ultrasonografisi.",
+      "explanation": "Ultrasonografi safra taşını, safra kesesi duvar kalınlığını, perikolesistik sıvıyı ve sonografik Murphy bulgusunu değerlendirebilir. Klinik güçlü ama USG belirsizse sintigrafi veya ileri görüntüleme düşünülebilir.",
+      "tusTip": "Kolesistit tanısında ilk görüntüleme USG; koledok taşı/kolanjit şüphesinde MRCP veya ERCP gündeme gelir.",
+      "differentialNote": "Koledokolitiaziste ortak safra yolu dilatasyonu ve kolestatik laboratuvar paterni daha belirgindir.",
+      "keywords": [
+          "kolesistit",
+          "ultrasonografi",
+          "duvar kalınlaşması",
+          "perikolesistik sıvı"
+      ]
   },
   "tus-pearl-general-surgery-093-spot": {
-    "front": "Travma sonrası pasif germe ile şiddetli ağrı hangi acil cerrahi tabloyu düşündürür?",
-    "keywords": [
-      "pasif germe ağrısı; travma; gergin kompartman; parestezi"
-    ]
+      "front": "Ekstremite travmasından sonra pasif germeyle artan orantısız ağrı ve gergin kompartman hangi acili düşündürür?",
+      "back": "Akut kompartman sendromu.",
+      "answer": "Akut kompartman sendromu.",
+      "explanation": "Kapalı fasiyal kompartmanda basınç artışı kapiller perfüzyonu bozar ve kas-sinir iskemi riski doğurur. Nabız alınması tabloyu dışlamaz; erken bulgu pasif germeyle artan şiddetli ağrıdır.",
+      "tusTip": "Kompartman sendromunda geç bulguları beklemek kalıcı nöromüsküler hasara yol açabilir.",
+      "differentialNote": "Basit kırık ağrısı immobilizasyonla azalabilir; kompartman sendromunda analjeziye dirençli, orantısız ağrı ön plandadır.",
+      "keywords": [
+          "kompartman sendromu",
+          "pasif germe ağrısı",
+          "orantısız ağrı",
+          "travma"
+      ]
   },
   "tus-pearl-general-surgery-093-extra": {
-    "front": "Kompartman sendromunda kesin tedavi nedir?",
-    "keywords": [
-      "pasif germe ağrısı; travma; gergin kompartman; parestezi"
-    ]
+      "front": "Akut kompartman sendromunda kas ve sinir nekrozunu önleyen kesin cerrahi tedavi nedir?",
+      "back": "Acil fasyotomi.",
+      "answer": "Acil fasyotomi.",
+      "explanation": "Fasyotomi kompartman basıncını düşürerek doku perfüzyonunu yeniden sağlar. Klinik şüphe yüksekse tanısal gecikme yerine acil ortopedik/cerrahi müdahale öncelenir.",
+      "tusTip": "Kompartman sendromu 'ölç, izle' kartı değil; iskemi tehdidinde acil fasyotomi kartıdır.",
+      "differentialNote": "Geç parezi, solukluk ve nabız kaybı gelişmişse hasar ilerlemiştir; erken karar ağrı paternine dayanır.",
+      "keywords": [
+          "fasyotomi",
+          "kompartman basıncı",
+          "iskemi",
+          "acil cerrahi"
+      ]
   },
   "tus-pearl-general-surgery-094-spot": {
-    "front": "Yaşlı erkek, hipotansiyon, sırt/karın ağrısı ve pulsatif kitle ne düşündürür?",
-    "keywords": [
-      "hipotansiyon; sırt ağrısı; pulsatif kitle; yaşlı erkek"
-    ]
+      "front": "Yaşlı erkek hastada ani karın-sırt ağrısı, hipotansiyon ve pulsatif abdominal kitle birlikteliği hangi vasküler katastrofiyi düşündürür?",
+      "back": "Rüptüre abdominal aort anevrizması.",
+      "answer": "Rüptüre abdominal aort anevrizması.",
+      "explanation": "Rüptüre AAA retroperitoneal veya intraperitoneal kanama ile hızla hemorajik şoka ilerleyebilir. Hemodinamik instabil hastada tanısal süreci uzatmak yerine acil vasküler cerrahi yaklaşım gerekir.",
+      "tusTip": "AAA rüptüründe klasik üçlü; ağrı, hipotansiyon ve pulsatif kitle olarak hatırlanır.",
+      "differentialNote": "Renal kolik şiddetli yan ağrısı yapabilir ancak hipotansiyon ve pulsatif kitle beklenmez.",
+      "keywords": [
+          "rüptüre AAA",
+          "hipotansiyon",
+          "pulsatif kitle",
+          "sırt ağrısı"
+      ]
   },
   "tus-pearl-general-surgery-094-extra": {
-    "front": "AAA taraması hangi grupta klasik olarak önerilir?",
-    "keywords": [
-      "hipotansiyon; sırt ağrısı; pulsatif kitle; yaşlı erkek"
-    ]
+      "front": "Abdominal aort anevrizması için sigara öyküsü olan 65–75 yaş erkeklerde klasik tarama yöntemi nedir?",
+      "back": "Tek sefer abdominal ultrasonografi.",
+      "answer": "Tek sefer abdominal ultrasonografi.",
+      "explanation": "Ultrasonografi AAA çapını noninvaziv ve hızlı biçimde saptar. Tarama bilgisi özellikle risk grubunu tanımak ve rüptür gelişmeden elektif değerlendirmeyi planlamak için önemlidir.",
+      "tusTip": "Semptomatik veya rüptüre AAA tarama konusu değildir; acil stabilizasyon ve cerrahi karar gerektirir.",
+      "differentialNote": "Stabil, semptomatik veya preoperatif planlama gereken hastada BT anjiyografi anatomiyi daha ayrıntılı gösterir.",
+      "keywords": [
+          "AAA taraması",
+          "65-75 yaş erkek",
+          "sigara",
+          "ultrasonografi"
+      ]
   },
   "tus-pearl-general-surgery-095-spot": {
-    "front": "Genç kadında hareketli, düzgün sınırlı, lastik kıvamlı meme kitlesi ne düşündürür?",
-    "keywords": [
-      "genç kadın; hareketli kitle; düzgün sınır; lastik kıvam"
-    ]
+      "front": "Genç kadında düzgün sınırlı, hareketli ve lastik kıvamlı meme kitlesi en çok hangi benign lezyonu düşündürür?",
+      "back": "Fibroadenom.",
+      "answer": "Fibroadenom.",
+      "explanation": "Fibroadenom genç yaşta sık görülen benign fibroepitelyal meme tümörüdür. Mobil, iyi sınırlı kitle özelliği maligniteye göre daha rahat hareket eden ve düzenli sınırlı bir lezyonu düşündürür.",
+      "tusTip": "Genç kadın + mobil lastik kıvamlı kitle fibroadenom için klasik ipucudur.",
+      "differentialNote": "Sert, fikse, düzensiz sınırlı kitle veya aksiller lenfadenopati malignite açısından biyopsi gerektirir.",
+      "keywords": [
+          "fibroadenom",
+          "genç kadın",
+          "mobil kitle",
+          "benign meme"
+      ]
   },
   "tus-pearl-general-surgery-095-extra": {
-    "front": "Fibroadenom hangi stromal-epitelyal benign tümördür?",
-    "keywords": [
-      "genç kadın; hareketli kitle; düzgün sınır; lastik kıvam"
-    ]
+      "front": "Fibroadenomdan şüphelenilen meme kitlesinde klinik, görüntüleme ve patoloji uyumsuzsa hangi yaklaşım güvenlidir?",
+      "back": "Doku tanısı veya eksizyonla yeniden değerlendirme.",
+      "answer": "Doku tanısı veya eksizyonla yeniden değerlendirme.",
+      "explanation": "Meme kitlelerinde güvenli yaklaşım klinik muayene, görüntüleme ve gerektiğinde biyopsinin uyumlu olmasıdır. Uyum yoksa 'benign görünüyor' diye izlemek yerine maligniteyi dışlayacak doku değerlendirmesi gerekir.",
+      "tusTip": "Meme cerrahisinde üçlü değerlendirme uyumsuzluğu, takipten çok biyopsi/eksizyon düşünülmesi gereken sınav tuzağıdır.",
+      "differentialNote": "Basit kist aspirasyonla kaybolabilir; solid ve uyumsuz kitlede patolojik doğrulama önemlidir.",
+      "keywords": [
+          "fibroadenom",
+          "üçlü değerlendirme",
+          "core biyopsi",
+          "meme kitlesi"
+      ]
   },
   "tus-pearl-general-surgery-096-spot": {
-    "front": "Direkt inguinal herni inferior epigastrik damarlara göre nereden çıkar?",
-    "keywords": [
-      "direkt herni; medial; Hesselbach; inferior epigastrik"
-    ]
+      "front": "Direkt inguinal herni inferior epigastrik damarlara göre hangi taraftan çıkar ve hangi anatomik zayıf alandan geçer?",
+      "back": "Medialden; Hesselbach üçgeninden.",
+      "answer": "Medialden; Hesselbach üçgeninden.",
+      "explanation": "Direkt inguinal herni posterior duvar zayıflığı nedeniyle Hesselbach üçgeninden çıkar. İnferior epigastrik damarlara medial yerleşmesi TUS için temel anatomik ayırıcıdır.",
+      "tusTip": "Direkt herni medial, indirekt herni lateral kuralı inferior epigastrik damar üzerinden kurulur.",
+      "differentialNote": "Direkt herni genellikle edinseldir ve skrotuma inme eğilimi indirekt herni kadar belirgin değildir.",
+      "keywords": [
+          "direkt inguinal herni",
+          "medial",
+          "inferior epigastrik",
+          "Hesselbach"
+      ]
   },
   "tus-pearl-general-surgery-096-extra": {
-    "front": "İndirekt inguinal herni inferior epigastrik damarlara göre nereden çıkar?",
-    "keywords": [
-      "direkt herni; medial; Hesselbach; inferior epigastrik"
-    ]
+      "front": "İndirekt inguinal herni inferior epigastrik damarlara göre nereden geçer ve hangi açıklıktan inguinal kanala girer?",
+      "back": "Lateralden; derin inguinal halkadan.",
+      "answer": "Lateralden; derin inguinal halkadan.",
+      "explanation": "İndirekt herni processus vaginalis açıklığı veya derin halka yoluyla inguinal kanala girer. Bu nedenle inferior epigastrik damarlara lateral yerleşir ve skrotuma uzanabilir.",
+      "tusTip": "İndirekt herni lateralden gelir; femoral herni ise inguinal ligamanın altındadır ve strangülasyon riski daha yüksektir.",
+      "differentialNote": "Femoral herni kadınlarda daha sık ve strangülasyona daha yatkındır; inguinal kanal yerine femoral kanaldan çıkar.",
+      "keywords": [
+          "indirekt inguinal herni",
+          "lateral",
+          "derin inguinal halka",
+          "processus vaginalis"
+      ]
   },
   "tus-pearl-general-surgery-097-spot": {
-    "front": "Travma hastasında ilk değerlendirme hangi sırayla yapılır?",
-    "keywords": [
-      "travma; airway; breathing; circulation; ABCDE"
-    ]
+      "front": "Travma hastasında yaşamı tehdit eden sorunları kaçırmamak için primer değerlendirme hangi sistematik sırayla yapılır?",
+      "back": "ABCDE yaklaşımı.",
+      "answer": "ABCDE yaklaşımı.",
+      "explanation": "ATLS primer değerlendirmede airway, breathing, circulation, disability ve exposure sırasıyla ölümcül sorunlar hızla aranır ve aynı anda tedavi edilir. Amaç kesin tanıdan önce fizyolojik stabilizasyonu sağlamaktır.",
+      "tusTip": "Travmada ilk soru 'tanı nedir?' değil, 'hava yolu, solunum ve dolaşım güvenli mi?' sorusudur.",
+      "differentialNote": "Stabil hastada ayrıntılı görüntüleme planlanabilir; instabil hastada primer değerlendirme ve hayat kurtarıcı girişimler önceliklidir.",
+      "keywords": [
+          "ATLS",
+          "ABCDE",
+          "travma",
+          "primer değerlendirme"
+      ]
   },
   "tus-pearl-general-surgery-097-extra": {
-    "front": "ATLS’de masif dış kanama hangi basamakta kontrol edilir?",
-    "keywords": [
-      "travma; airway; breathing; circulation; ABCDE"
-    ]
+      "front": "Travmada masif dış kanama hangi öncelikle kontrol edilmeli ve ABCDE içinde hangi basamakla ilişkilidir?",
+      "back": "Hemen kontrol edilir; dolaşım basamağıyla ilişkilidir.",
+      "answer": "Hemen kontrol edilir; dolaşım basamağıyla ilişkilidir.",
+      "explanation": "Masif dış kanama doğrudan bası, turnike veya uygun kanama kontrolü ile gecikmeden durdurulmalıdır. Dolaşım değerlendirmesi nabız, cilt perfüzyonu, kanama ve şok bulgularını birlikte ele alır.",
+      "tusTip": "Hemorajik şokta kristaloid oyalanması değil, kanama kontrolü ve kan ürünleriyle resüsitasyon mantığı önemlidir.",
+      "differentialNote": "Gizli iç kanamada dış kanama görünmeyebilir; pelvis, toraks, abdomen ve uzun kemikler kan kaybı kaynağı olabilir.",
+      "keywords": [
+          "masif kanama",
+          "circulation",
+          "kanama kontrolü",
+          "travma"
+      ]
   },
   "tus-pearl-general-surgery-098-spot": {
-    "front": "Tiroid nodülünde malignite riskini değerlendirmede temel ilk görüntüleme hangisidir?",
-    "keywords": [
-      "tiroid nodülü; USG; FNA; hipoekoik/mikrokalsifikasyon"
-    ]
+      "front": "Tiroid nodülünde malignite riskini sınıflamak ve FNA gerekliliğini belirlemek için ilk temel görüntüleme hangisidir?",
+      "back": "Tiroid ultrasonografisi.",
+      "answer": "Tiroid ultrasonografisi.",
+      "explanation": "USG nodül boyutu, solid yapı, hipoekojenite, düzensiz sınır ve mikrokalsifikasyon gibi malignite risk özelliklerini değerlendirir. FNA kararı tek başına palpasyonla değil, USG paterni ve boyutla birlikte verilir.",
+      "tusTip": "Tiroid nodülünde TSH ve USG başlangıç değerlendirmesinin temel iki eksenidir.",
+      "differentialNote": "Kistik ve süngerimsi nodüllerde risk daha düşük olabilir; şüpheli solid nodülde sitolojik değerlendirme gerekir.",
+      "keywords": [
+          "tiroid nodülü",
+          "ultrasonografi",
+          "FNA",
+          "mikrokalsifikasyon"
+      ]
   },
   "tus-pearl-general-surgery-098-extra": {
-    "front": "Tiroid nodülünde düşük TSH varsa hangi test düşünülür?",
-    "keywords": [
-      "tiroid nodülü; USG; FNA; hipoekoik/mikrokalsifikasyon"
-    ]
+      "front": "Tiroid nodülünde TSH düşükse FNA’dan önce fonksiyonel nodülü ayırmak için hangi test düşünülür?",
+      "back": "Radyoizotop tiroid sintigrafisi.",
+      "answer": "Radyoizotop tiroid sintigrafisi.",
+      "explanation": "Düşük TSH otonom hormon üreten sıcak nodül olasılığını artırır. Sıcak nodüllerde malignite riski düşüktür; bu nedenle sintigrafi FNA kararını değiştirebilir.",
+      "tusTip": "Düşük TSH + tiroid nodülü sorusunda 'önce sintigrafi' ayrımı sık sorulur.",
+      "differentialNote": "TSH normal veya yüksekse sintigrafiden çok USG risk paternine göre FNA planlanır.",
+      "keywords": [
+          "düşük TSH",
+          "tiroid sintigrafisi",
+          "sıcak nodül",
+          "FNA"
+      ]
   },
   "tus-pearl-obstetrics-gynecology-099-spot": {
     "front": "Amenore, karın ağrısı ve vajinal kanama triadı hangi acili düşündürür?",
@@ -15639,400 +15786,620 @@ const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
     ]
   },
   "tus-pearl-general-surgery-438-spot": {
-    "front": "Künt travma sonrası hipotansiyon ve peritonit bulguları varsa en uygun yaklaşım nedir?",
-    "keywords": [
-      "travma",
-      "hipotansiyon",
-      "peritonit",
-      "laparotomi"
-    ]
+      "front": "Künt karın travması sonrası hipotansiyon ve yaygın peritonit varsa BT beklemeden hangi yaklaşım gerekir?",
+      "back": "Acil eksploratif laparotomi.",
+      "answer": "Acil eksploratif laparotomi.",
+      "explanation": "Hemodinamik instabilite ve peritonit birlikteyse intraabdominal kanama veya perforasyon olasılığı yüksektir. Bu hastada tanıyı uzatacak BT yerine resüsitasyonla eş zamanlı cerrahi eksplorasyon öncelenir.",
+      "tusTip": "Travmada instabilite + peritonit, görüntüleme değil ameliyathane kararını güçlendirir.",
+      "differentialNote": "Stabil künt travma hastasında kontrastlı BT solid organ yaralanmasını evrelemek için uygundur.",
+      "keywords": [
+          "karın travması",
+          "hipotansiyon",
+          "peritonit",
+          "laparotomi"
+      ]
   },
   "tus-pearl-general-surgery-438-extra": {
-    "front": "Vaka kökünde travma, hipotansiyon ve peritonit birlikte verilirse hangi tedavi veya klinik yaklaşım öncelikle düşünülür?",
-    "keywords": [
-      "travma",
-      "hipotansiyon",
-      "peritonit",
-      "laparotomi"
-    ]
+      "front": "Travma hastası resüsitasyona rağmen instabil kalıyor ve karın içi kanama düşünülüyorsa hangi cerrahi strateji hayat kurtarıcıdır?",
+      "back": "Acil hasar kontrol laparotomisi.",
+      "answer": "Acil hasar kontrol laparotomisi.",
+      "explanation": "Hasar kontrol cerrahisinde amaç uzun rekonstrüksiyon değil, kanama ve kontaminasyonu hızla kontrol etmektir. Hipotermi, asidoz ve koagülopati döngüsü kırıldıktan sonra definitif onarım planlanır.",
+      "tusTip": "Travma cerrahisinde instabil hastada 'definitif mükemmel onarım' değil, önce fizyolojik kurtarma hedeflenir.",
+      "differentialNote": "Hemodinamik olarak stabil solid organ yaralanmalarında seçilmiş olgularda nonoperatif takip mümkün olabilir.",
+      "keywords": [
+          "hasar kontrol",
+          "instabil travma",
+          "kanama kontrolü",
+          "laparotomi"
+      ]
   },
   "tus-pearl-general-surgery-439-spot": {
-    "front": "Hemodinamik instabil karın travmasında yatak başı serbest sıvı değerlendirmesi için hangi yöntem kullanılır?",
-    "keywords": [
-      "FAST",
-      "travma",
-      "serbest sıvı",
-      "instabil hasta"
-    ]
+      "front": "Hemodinamik instabil karın travmasında yatak başında intraperitoneal serbest sıvıyı hızlı göstermek için hangi yöntem kullanılır?",
+      "back": "FAST ultrasonografi.",
+      "answer": "FAST ultrasonografi.",
+      "explanation": "FAST, travmada perikardiyal ve intraperitoneal serbest sıvıyı yatak başında hızla değerlendirir. İnstabil hastada pozitif FAST, intraabdominal kanama lehine güçlü bir ameliyat karar desteğidir.",
+      "tusTip": "FAST tanıdan çok karar hızlandırma aracıdır; özellikle instabil travma hastasında değerlidir.",
+      "differentialNote": "Stabil hastada negatif FAST intraabdominal yaralanmayı dışlamaz; BT daha ayrıntılı değerlendirme sağlar.",
+      "keywords": [
+          "FAST",
+          "travma",
+          "serbest sıvı",
+          "instabil hasta"
+      ]
   },
   "tus-pearl-general-surgery-439-extra": {
-    "front": "Vaka kökünde travma, serbest sıvı ve instabil hasta birlikte verilirse hangi tanısal test veya bulgu öncelikle düşünülür?",
-    "keywords": [
-      "FAST",
-      "travma",
-      "serbest sıvı",
-      "instabil hasta"
-    ]
+      "front": "İnstabil künt travma hastasında FAST pozitifse sonraki karar genellikle hangi yönde olur?",
+      "back": "Acil cerrahi eksplorasyon.",
+      "answer": "Acil cerrahi eksplorasyon.",
+      "explanation": "Pozitif FAST, instabil hastada kanamanın abdomen kaynaklı olabileceğini gösterir. Bu durumda BT ile zaman kaybetmek yerine resüsitasyon ve laparotomi hazırlığı yapılır.",
+      "tusTip": "Pozitif FAST + instabilite = ameliyathane; pozitif FAST + stabilite = çoğu zaman BT ile evreleme.",
+      "differentialNote": "Pelvik kırıkta pozitif FAST yoksa retroperitoneal kanama ve pelvis kaynaklı şok ayrıca düşünülmelidir.",
+      "keywords": [
+          "pozitif FAST",
+          "instabilite",
+          "laparotomi",
+          "künt travma"
+      ]
   },
   "tus-pearl-general-surgery-440-spot": {
-    "front": "Travma hastasında hipotansiyon, trakeal deviasyon ve tek taraflı solunum sesinde azalma varsa ilk işlem nedir?",
-    "keywords": [
-      "tansiyon pnömotoraks",
-      "iğne dekompresyon",
-      "hipotansiyon",
-      "trakeal deviasyon"
-    ]
+      "front": "Travmada hipotansiyon, trakeal deviasyon ve tek taraflı solunum sesinde azalma gelişirse beklemeden yapılacak ilk işlem nedir?",
+      "back": "Acil iğne dekompresyonu.",
+      "answer": "Acil iğne dekompresyonu.",
+      "explanation": "Tansiyon pnömotoraks intratorasik basıncı artırarak venöz dönüşü ve kardiyak outputu düşürür. Klinik tanı konduğunda akciğer grafisi beklenmeden dekompresyon yapılmalıdır.",
+      "tusTip": "Tansiyon pnömotoraks görüntüleme bekleyen değil, klinik tanıyla boşaltılan travma acilidir.",
+      "differentialNote": "Basit pnömotoraksta şok ve trakeal deviasyon beklenmez; tansiyon komponenti dolaşım bozukluğu ile anlaşılır.",
+      "keywords": [
+          "tansiyon pnömotoraks",
+          "iğne dekompresyon",
+          "hipotansiyon",
+          "trakeal deviasyon"
+      ]
   },
   "tus-pearl-general-surgery-440-extra": {
-    "front": "Vaka kökünde tansiyon pnömotoraks, hipotansiyon ve trakeal deviasyon birlikte verilirse hangi tedavi veya klinik yaklaşım öncelikle düşünülür?",
-    "keywords": [
-      "tansiyon pnömotoraks",
-      "iğne dekompresyon",
-      "hipotansiyon",
-      "trakeal deviasyon"
-    ]
+      "front": "Tansiyon pnömotoraksta acil iğne dekompresyonundan sonra kalıcı hava drenajı için hangi işlem yapılır?",
+      "back": "Tüp torakostomi.",
+      "answer": "Tüp torakostomi.",
+      "explanation": "İğne dekompresyonu geçici basınç boşaltımı sağlar; kesin torasik drenaj tüp torakostomi ile yapılır. Böylece plevral hava sürekli boşaltılır ve akciğer yeniden ekspansiyonu desteklenir.",
+      "tusTip": "İğne dekompresyonu hayat kurtarıcı ilk adımdır; toraks tüpü devam tedavisidir.",
+      "differentialNote": "Açık pnömotoraksta üç tarafı kapalı pansuman ve toraks tüpü düşünülür; tansiyon pnömotoraksta önce basınç boşaltılır.",
+      "keywords": [
+          "tansiyon pnömotoraks",
+          "tüp torakostomi",
+          "plevral hava",
+          "acil yaklaşım"
+      ]
   },
   "tus-pearl-general-surgery-441-spot": {
-    "front": "Tüp torakostomi sonrası çok yüksek başlangıç kan drenajı hangi yaklaşımı gerektirir?",
-    "keywords": [
-      "masif hemotoraks",
-      "tüp torakostomi",
-      "torakotomi",
-      "devam eden kanama"
-    ]
+      "front": "Tüp torakostomide başlangıçta çok yüksek kan drenajı veya devam eden hızlı kanama varsa hangi cerrahi karar düşünülür?",
+      "back": "Acil torakotomi değerlendirmesi.",
+      "answer": "Acil torakotomi değerlendirmesi.",
+      "explanation": "Masif hemotoraks büyük damar, akciğer veya interkostal damar yaralanmasını gösterebilir. Başlangıçta yaklaşık 1500 mL drenaj veya saatlik yüksek devam eden kanama torakotomi endikasyonu olarak değerlendirilir.",
+      "tusTip": "Hemotoraksta toraks tüpü hem tedavi hem de kanama miktarını ölçen karar aracıdır.",
+      "differentialNote": "Küçük ve stabil hemotoraks izlenebilir; şok veya masif drenaj cerrahi aciliyet oluşturur.",
+      "keywords": [
+          "masif hemotoraks",
+          "tüp torakostomi",
+          "torakotomi",
+          "devam eden kanama"
+      ]
   },
   "tus-pearl-general-surgery-441-extra": {
-    "front": "Vaka kökünde masif hemotoraks, tüp torakostomi ve devam eden kanama birlikte verilirse hangi tedavi veya klinik yaklaşım öncelikle düşünülür?",
-    "keywords": [
-      "masif hemotoraks",
-      "tüp torakostomi",
-      "torakotomi",
-      "devam eden kanama"
-    ]
+      "front": "Travmatik hemotoraksta ilk drenaj işlemi hangisidir ve hangi bulgu ameliyathane kararını güçlendirir?",
+      "back": "Tüp torakostomi; masif veya devam eden kanama.",
+      "answer": "Tüp torakostomi; masif veya devam eden kanama.",
+      "explanation": "Toraks tüpü plevral kanı boşaltır, akciğer ekspansiyonunu sağlar ve kanama hızını objektifleştirir. Drenaj miktarı yüksekse veya hemodinami bozuluyorsa torakotomi gündeme gelir.",
+      "tusTip": "Hemotoraksta yalnız görüntü değil, toraks tüpünden gelen kan miktarı cerrahi kararı belirler.",
+      "differentialNote": "Pnömotoraksta hava drenajı; hemotoraksta kan drenajı ve kanama kontrolü önceliklidir.",
+      "keywords": [
+          "hemotoraks",
+          "toraks tüpü",
+          "kanama miktarı",
+          "cerrahi endikasyon"
+      ]
   },
   "tus-pearl-general-surgery-442-spot": {
-    "front": "Çoklu komşu kot kırıkları sonrası paradoksal göğüs duvarı hareketi hangi tabloyu düşündürür?",
-    "keywords": [
-      "flail chest",
-      "paradoks hareket",
-      "çoklu kot kırığı",
-      "kontüzyon"
-    ]
+      "front": "Çoklu komşu kot kırıkları sonrası inspirasyonda içe, ekspirasyonda dışa hareket eden göğüs duvarı segmenti hangi tabloyu gösterir?",
+      "back": "Flail chest.",
+      "answer": "Flail chest.",
+      "explanation": "Flail chest, birden fazla komşu kotun iki ayrı noktadan kırılmasıyla serbest göğüs duvarı segmenti oluşmasıdır. Klinik önemi çoğu kez eşlik eden pulmoner kontüzyon ve solunum yetmezliği riskinden kaynaklanır.",
+      "tusTip": "Paradoksal göğüs duvarı hareketi flail chest için anahtar muayene bulgusudur.",
+      "differentialNote": "Basit kot kırığı ağrı yapar; paradoks hareket ve hipoksemi flail chest/akciğer kontüzyonunu düşündürür.",
+      "keywords": [
+          "flail chest",
+          "paradoks hareket",
+          "çoklu kot kırığı",
+          "pulmoner kontüzyon"
+      ]
   },
   "tus-pearl-general-surgery-442-extra": {
-    "front": "Vaka kökünde paradoks hareket, çoklu kot kırığı ve kontüzyon birlikte verilirse hangi tanı öncelikle düşünülür?",
-    "keywords": [
-      "flail chest",
-      "paradoks hareket",
-      "çoklu kot kırığı",
-      "kontüzyon"
-    ]
+      "front": "Flail chest hastasında mortaliteyi artıran temel eşlik eden akciğer patolojisi hangisidir?",
+      "back": "Pulmoner kontüzyon.",
+      "answer": "Pulmoner kontüzyon.",
+      "explanation": "Pulmoner kontüzyon alveoler kanama ve ödemle gaz değişimini bozar. Bu nedenle tedavide analjezi, oksijenasyon, solunum desteği ve gerekirse mekanik ventilasyon önem kazanır.",
+      "tusTip": "Flail chest sorusunda yalnız kırık sayısını değil, solunum yetmezliği riskini düşün.",
+      "differentialNote": "Ağrılı fakat stabil kot kırığında analjezi yeterli olabilir; hipoksemi ve solunum işi artışı yoğun destek gerektirir.",
+      "keywords": [
+          "pulmoner kontüzyon",
+          "flail chest",
+          "hipoksemi",
+          "solunum desteği"
+      ]
   },
   "tus-pearl-general-surgery-443-spot": {
-    "front": "Şiddetli karın ağrısına rağmen muayene bulgularının başlangıçta silik olması hangi vasküler acili düşündürür?",
-    "keywords": [
-      "mezenter iskemi",
-      "orantısız ağrı",
-      "atriyal fibrilasyon",
-      "laktat"
-    ]
+      "front": "Atriyal fibrilasyonu olan hastada muayeneye göre orantısız şiddette karın ağrısı hangi vasküler akut karın tanısını düşündürür?",
+      "back": "Akut mezenter iskemi.",
+      "answer": "Akut mezenter iskemi.",
+      "explanation": "SMA embolisi bağırsak perfüzyonunu ani bozabilir; erken dönemde barsak duvarı henüz peritonit oluşturmadan şiddetli iskemi ağrısı yapar. Laktat artışı ve metabolik asidoz geç veya ileri iskemi bulgusu olarak destekleyicidir.",
+      "tusTip": "Ağrı muayeneden fazlaysa mezenter iskemi sınavda akla getirilmelidir.",
+      "differentialNote": "Peritonit gelişmesi transmural nekroz veya perforasyon olasılığını artırır ve cerrahi aciliyeti yükseltir.",
+      "keywords": [
+          "mezenter iskemi",
+          "orantısız ağrı",
+          "atriyal fibrilasyon",
+          "laktat"
+      ]
   },
   "tus-pearl-general-surgery-443-extra": {
-    "front": "Vaka kökünde orantısız ağrı, atriyal fibrilasyon ve laktat birlikte verilirse hangi tanı öncelikle düşünülür?",
-    "keywords": [
-      "mezenter iskemi",
-      "orantısız ağrı",
-      "atriyal fibrilasyon",
-      "laktat"
-    ]
+      "front": "Akut mezenter iskemi şüphesinde tanıyı hızla doğrulamak ve damar anatomisini göstermek için hangi görüntüleme tercih edilir?",
+      "back": "BT anjiyografi.",
+      "answer": "BT anjiyografi.",
+      "explanation": "BT anjiyografi arteriyel tıkanıklığı, barsak duvar bulgularını ve komplikasyonları değerlendirebilir. Tedavi antikoagülasyon, revaskülarizasyon ve nekrotik barsak varsa rezeksiyon mantığıyla planlanır.",
+      "tusTip": "Mezenter iskemide gecikme mortaliteyi artırır; tanı ve revaskülarizasyon düşüncesi birlikte yürür.",
+      "differentialNote": "Nonspesifik karın ağrısında normal laktat erken iskemiyi dışlamaz; klinik şüphe belirleyicidir.",
+      "keywords": [
+          "BT anjiyografi",
+          "mezenter iskemi",
+          "revaskülarizasyon",
+          "SMA"
+      ]
   },
   "tus-pearl-general-surgery-444-spot": {
-    "front": "Fluktuasyon veren ağrılı perianal şişlikte temel tedavi nedir?",
-    "keywords": [
-      "perianal apse",
-      "insizyon",
-      "drenaj",
-      "fluktuasyon"
-    ]
+      "front": "Fluktuasyon veren ağrılı perianal şişlikte temel tedavi yaklaşımı nedir?",
+      "back": "İnsizyon ve drenaj.",
+      "answer": "İnsizyon ve drenaj.",
+      "explanation": "Apse tedavisinin temel prensibi püyün boşaltılmasıdır; antibiyotik tek başına kapalı apse kavitesini yeterli tedavi etmez. İmmünsüpresyon, yaygın selülit veya sistemik bulgu varsa antibiyotik eklenebilir.",
+      "tusTip": "Cerrahi apsede ana kelime drenajdır; yalnız antibiyotik çoğu zaman yetersizdir.",
+      "differentialNote": "Hemoroid ağrılı olabilir fakat fluktuasyon ve ateş perianal apse lehinedir.",
+      "keywords": [
+          "perianal apse",
+          "fluktuasyon",
+          "insizyon",
+          "drenaj"
+      ]
   },
   "tus-pearl-general-surgery-444-extra": {
-    "front": "perianal apse ve fluktuasyon birlikteliği öğrenciyi hangi tedavi veya klinik yaklaşım yanıtına götürür?",
-    "keywords": [
-      "perianal apse",
-      "insizyon",
-      "drenaj",
-      "fluktuasyon"
-    ]
+      "front": "Perianal apse drenajından sonra tekrarlayan akıntı ve dış ağız gelişmesi hangi komplikasyonu düşündürür?",
+      "back": "Anal fistül.",
+      "answer": "Anal fistül.",
+      "explanation": "Anal bez enfeksiyonu apse oluşturduktan sonra cilt ile anal kanal arasında kalıcı trakt bırakabilir. Tekrarlayan akıntı ve dış açıklık fistül lehinedir ve cerrahi değerlendirme gerektirir.",
+      "tusTip": "Perianal apse ve fistül aynı kriptoglandüler sürecin iki farklı klinik aşaması gibi sorulabilir.",
+      "differentialNote": "Basit fissürde yırtılır tarzda defekasyon ağrısı ve parlak kırmızı kan daha tipiktir.",
+      "keywords": [
+          "anal fistül",
+          "perianal apse",
+          "tekrarlayan akıntı",
+          "kriptoglandüler"
+      ]
   },
   "tus-pearl-general-surgery-445-spot": {
-    "front": "Şiddetli ağrı, hızlı ilerleyen yumuşak doku enfeksiyonu ve sistemik toksisite varsa temel yaklaşım nedir?",
-    "keywords": [
-      "nekrotizan fasiit",
-      "cerrahi debridman",
-      "şiddetli ağrı",
-      "toksisite"
-    ]
+      "front": "Hızla ilerleyen yumuşak doku enfeksiyonunda cilt bulgusuna göre orantısız şiddetli ağrı ve toksisite varsa temel yaklaşım nedir?",
+      "back": "Acil cerrahi debridman.",
+      "answer": "Acil cerrahi debridman.",
+      "explanation": "Nekrotizan fasiit fasyal planlarda hızla ilerleyerek sepsis ve doku nekrozu oluşturur. Geniş spektrumlu antibiyotik başlanır ancak kaynak kontrolü için acil cerrahi eksplorasyon ve debridman geciktirilmez.",
+      "tusTip": "Orantısız ağrı + toksisite + hızlı ilerleme nekrotizan fasiit için kırmızı bayraktır.",
+      "differentialNote": "Selülitte sınırlar daha yüzeyel ve ilerleme daha yavaştır; nekrotizan enfeksiyonda sistemik toksisite belirgindir.",
+      "keywords": [
+          "nekrotizan fasiit",
+          "orantısız ağrı",
+          "toksisite",
+          "debridman"
+      ]
   },
   "tus-pearl-general-surgery-445-extra": {
-    "front": "Vaka kökünde nekrotizan fasiit, şiddetli ağrı ve toksisite birlikte verilirse hangi tedavi veya klinik yaklaşım öncelikle düşünülür?",
-    "keywords": [
-      "nekrotizan fasiit",
-      "cerrahi debridman",
-      "şiddetli ağrı",
-      "toksisite"
-    ]
+      "front": "Nekrotizan fasiit şüphesinde görüntüleme veya kültür sonucunu beklemek neden tehlikelidir?",
+      "back": "Kaynak kontrolünü geciktirerek sepsis ve doku kaybını artırır.",
+      "answer": "Kaynak kontrolünü geciktirerek sepsis ve doku kaybını artırır.",
+      "explanation": "Tanı çoğu zaman klinik şüpheyle konur ve cerrahi eksplorasyon hem tanısal hem terapötiktir. Antibiyotik tedavisi debridmanın yerine geçmez, yalnızca eşlik eden sistemik tedavi basamağıdır.",
+      "tusTip": "Nekrotizan fasiit kartında doğru refleks: erken cerrah çağır, antibiyotik başla, debridmanı geciktirme.",
+      "differentialNote": "Gaz görülebilir ama gaz yokluğu nekrotizan fasiiti dışlamaz; klinik toksisite daha önemlidir.",
+      "keywords": [
+          "nekrotizan fasiit",
+          "erken eksplorasyon",
+          "kaynak kontrolü",
+          "sepsis"
+      ]
   },
   "tus-pearl-general-surgery-446-spot": {
-    "front": "Perineal bölgede nekrotizan enfeksiyon ve sepsis hangi cerrahi acili düşündürür?",
-    "keywords": [
-      "Fournier",
-      "perine",
-      "nekrotizan fasiit",
-      "debridman"
-    ]
+      "front": "Perine ve genital bölgede nekrotizan enfeksiyon, krepitasyon ve sepsis hangi özel cerrahi acili düşündürür?",
+      "back": "Fournier gangreni.",
+      "answer": "Fournier gangreni.",
+      "explanation": "Fournier gangreni perineal nekrotizan fasiit formudur ve özellikle diyabet, immünsüpresyon veya ürogenital/anorektal kaynakla ilişkili olabilir. Mortaliteyi azaltmak için geniş spektrumlu antibiyotik ve acil debridman gerekir.",
+      "tusTip": "Perineal nekrotizan enfeksiyon sorusunda Fournier gangreni ve acil debridman birlikte düşünülür.",
+      "differentialNote": "Basit perianal apse lokalize fluktuasyon yapar; Fournier’de hızlı yayılım, nekroz ve sistemik toksisite vardır.",
+      "keywords": [
+          "Fournier gangreni",
+          "perine",
+          "nekrotizan enfeksiyon",
+          "sepsis"
+      ]
   },
   "tus-pearl-general-surgery-446-extra": {
-    "front": "Vaka kökünde perine, nekrotizan fasiit ve debridman birlikte verilirse hangi tedavi veya klinik yaklaşım öncelikle düşünülür?",
-    "keywords": [
-      "Fournier",
-      "perine",
-      "nekrotizan fasiit",
-      "debridman"
-    ]
+      "front": "Fournier gangreninde antibiyotik başlandıktan sonra tedavinin belirleyici cerrahi basamağı nedir?",
+      "back": "Geniş ve tekrarlı cerrahi debridman.",
+      "answer": "Geniş ve tekrarlı cerrahi debridman.",
+      "explanation": "Nekrotik dokular enfeksiyonun devam eden kaynağıdır; yalnız antibiyotik doku penetrasyonu ve kaynak kontrolü açısından yetersiz kalır. Gerekirse seri debridman, yoğun bakım desteği ve altta yatan kaynağın kontrolü gerekir.",
+      "tusTip": "Fournier gangreni 'antibiyotik verip izle' değil, agresif cerrahi kaynak kontrolü gerektiren tablodur.",
+      "differentialNote": "Elektif drenajla yönetilen lokal apse ile sepsisli nekrotizan perine enfeksiyonu aynı aciliyet düzeyinde değildir.",
+      "keywords": [
+          "Fournier",
+          "debridman",
+          "geniş spektrumlu antibiyotik",
+          "kaynak kontrolü"
+      ]
   },
   "tus-pearl-general-surgery-447-spot": {
-    "front": "BI-RADS 4 meme lezyonunda ilk uygun yaklaşım nedir?",
-    "keywords": [
-      "BI-RADS 4",
-      "meme biyopsisi",
-      "şüpheli lezyon",
-      "core biyopsi"
-    ]
+      "front": "BI-RADS 4 olarak raporlanan şüpheli meme lezyonunda izlem yerine ilk uygun tanısal yaklaşım nedir?",
+      "back": "Görüntüleme eşliğinde core iğne biyopsisi.",
+      "answer": "Görüntüleme eşliğinde core iğne biyopsisi.",
+      "explanation": "BI-RADS 4 lezyon malignite açısından şüpheli kabul edilir ve histolojik doğrulama gerektirir. Core biyopsi lezyonun invaziv/in situ ayrımı ve reseptör değerlendirmesi için aspirasyondan daha öğreticidir.",
+      "tusTip": "BI-RADS 4 = biyopsi; kısa aralıklı takip BI-RADS 3 mantığıdır.",
+      "differentialNote": "BI-RADS 2 benign bulgudur; BI-RADS 5 malignite olasılığı çok yüksek lezyonu ifade eder.",
+      "keywords": [
+          "BI-RADS 4",
+          "meme lezyonu",
+          "core biyopsi",
+          "histolojik tanı"
+      ]
   },
   "tus-pearl-general-surgery-447-extra": {
-    "front": "Vaka kökünde BI-RADS 4, meme biyopsisi ve şüpheli lezyon birlikte verilirse hangi tanısal test veya bulgu öncelikle düşünülür?",
-    "keywords": [
-      "BI-RADS 4",
-      "meme biyopsisi",
-      "şüpheli lezyon",
-      "core biyopsi"
-    ]
+      "front": "Şüpheli meme lezyonunda biyopsi sonucu, görüntüleme ve fizik muayene birbiriyle uyumsuzsa hangi prensip uygulanır?",
+      "back": "Uyumsuzluk malignite dışlanana kadar yeniden örnekleme veya eksizyon gerektirir.",
+      "answer": "Uyumsuzluk malignite dışlanana kadar yeniden örnekleme veya eksizyon gerektirir.",
+      "explanation": "Meme tanısında klinik-radyolojik-patolojik uyum güvenlik sağlar. Benign biyopsi sonucu şüpheli görüntüleme ile uyumsuzsa örnekleme hatası düşünülür ve daha ileri doku tanısı gerekir.",
+      "tusTip": "Meme kitlelerinde uyumsuz üçlü değerlendirme, pasif izlem tuzağıdır.",
+      "differentialNote": "Tam uyumlu benign lezyonda takip planlanabilir; uyumsuzlukta tanı kapatılmış sayılmaz.",
+      "keywords": [
+          "meme biyopsisi",
+          "uyumsuzluk",
+          "triple assessment",
+          "eksizyon"
+      ]
   },
   "tus-pearl-general-surgery-448-spot": {
-    "front": "Tiroidde foliküler neoplazide benign-malign ayrımı için hangi özellik gerekir?",
-    "keywords": [
-      "foliküler neoplazi",
-      "kapsül invazyonu",
-      "damar invazyonu",
-      "lobektomi"
-    ]
+      "front": "Tiroidde foliküler neoplazide benign adenom ile karsinom ayrımı için hangi histolojik bulgu gerekir?",
+      "back": "Kapsül veya damar invazyonu.",
+      "answer": "Kapsül veya damar invazyonu.",
+      "explanation": "Foliküler tiroid lezyonlarında sitoloji hücre paternini gösterir ancak kapsül ve damar invazyonunu güvenle değerlendiremez. Bu nedenle benign-malign ayrımı histolojik invazyonun gösterilmesine dayanır.",
+      "tusTip": "Foliküler neoplazide FNA 'karsinom' ayrımını çoğu zaman kesinleştirmez; invazyon gerekir.",
+      "differentialNote": "Papiller tiroid kanserinde nükleer özellikler sitolojide daha tanısal olabilir; folikülerde invazyon esastır.",
+      "keywords": [
+          "foliküler neoplazi",
+          "kapsül invazyonu",
+          "damar invazyonu",
+          "tiroid"
+      ]
   },
   "tus-pearl-general-surgery-448-extra": {
-    "front": "Vaka kökünde foliküler neoplazi, kapsül invazyonu ve lobektomi birlikte verilirse hangi tanı öncelikle düşünülür?",
-    "keywords": [
-      "foliküler neoplazi",
-      "kapsül invazyonu",
-      "damar invazyonu",
-      "lobektomi"
-    ]
+      "front": "FNA’da foliküler neoplazi gelen tiroid nodülünde kesin benign-malign ayrımı için sıklıkla hangi cerrahi işlem tanısal değer taşır?",
+      "back": "Tanısal lobektomi.",
+      "answer": "Tanısal lobektomi.",
+      "explanation": "Lobektomi materyali kapsül ve damar invazyonunu değerlendirme olanağı verir. Bu bilgi, foliküler adenom ile foliküler karsinom ayrımının temelini oluşturur.",
+      "tusTip": "Foliküler tiroid neoplazisi sorusunda 'sitoloji yetmez, histoloji gerekir' cümlesi anahtardır.",
+      "differentialNote": "Medüller karsinomda kalsitonin; papiller karsinomda nükleer bulgular daha ayırt edicidir.",
+      "keywords": [
+          "tanısal lobektomi",
+          "foliküler tiroid",
+          "histoloji",
+          "invazyon"
+      ]
   },
   "tus-pearl-general-surgery-449-spot": {
-    "front": "Kalsitonin yüksekliği hangi tiroid kanserini düşündürür?",
-    "keywords": [
-      "medüller tiroid",
-      "kalsitonin",
-      "C hücresi",
-      "MEN2"
-    ]
+      "front": "Kalsitonin yüksekliği, C hücresi kökeni ve MEN2 ilişkisi hangi tiroid kanserini düşündürür?",
+      "back": "Medüller tiroid karsinomu.",
+      "answer": "Medüller tiroid karsinomu.",
+      "explanation": "Medüller tiroid karsinomu parafolliküler C hücrelerinden gelişir ve kalsitonin salgılayabilir. MEN2 sendromlarıyla ilişkisi nedeniyle aile öyküsü ve eşlik eden endokrin tümörler önemlidir.",
+      "tusTip": "Kalsitonin denince foliküler hücre değil C hücresi ve medüller kanser düşünülür.",
+      "differentialNote": "Papiller tiroid karsinomu lenfatik yayılım ve nükleer özelliklerle; foliküler karsinom hematolojik yayılımla öne çıkar.",
+      "keywords": [
+          "medüller tiroid",
+          "kalsitonin",
+          "C hücresi",
+          "MEN2"
+      ]
   },
   "tus-pearl-general-surgery-449-extra": {
-    "front": "Vaka kökünde kalsitonin, C hücresi ve MEN2 birlikte verilirse hangi tanı öncelikle düşünülür?",
-    "keywords": [
-      "medüller tiroid",
-      "kalsitonin",
-      "C hücresi",
-      "MEN2"
-    ]
+      "front": "MEN2 ilişkili medüller tiroid karsinomunda tiroid cerrahisinden önce hangi adrenal tümör mutlaka dışlanmalıdır?",
+      "back": "Feokromositoma.",
+      "answer": "Feokromositoma.",
+      "explanation": "MEN2’de medüller tiroid karsinomu feokromositoma ile birlikte bulunabilir. Tanınmamış feokromositoma anestezi ve cerrahi sırasında hipertansif kriz oluşturabileceği için önce değerlendirilmelidir.",
+      "tusTip": "MEN2’de ameliyat sırası mantığı: önce feokromositomayı ara ve kontrol et, sonra tiroid cerrahisini güvenle planla.",
+      "differentialNote": "Primer hiperparatiroidi MEN2A’da eşlik edebilir; akut perioperatif kriz riski açısından feokromositoma daha kritiktir.",
+      "keywords": [
+          "MEN2",
+          "feokromositoma",
+          "medüller tiroid",
+          "cerrahi öncesi"
+      ]
   },
   "tus-pearl-general-surgery-450-spot": {
-    "front": "Feokromositoma cerrahisi öncesi önce hangi adrenerjik blokaj yapılmalıdır?",
-    "keywords": [
-      "feokromositoma",
-      "alfa blokaj",
-      "fenoksibenzamin",
-      "beta blokaj"
-    ]
+      "front": "Feokromositoma cerrahisi öncesinde hipertansif krizi önlemek için önce hangi adrenerjik blokaj yapılır?",
+      "back": "Alfa adrenerjik blokaj.",
+      "answer": "Alfa adrenerjik blokaj.",
+      "explanation": "Katekolamin fazlalığında öncelikle alfa aracılı vazokonstriksiyon kontrol edilmelidir. Yeterli alfa blokaj ve volüm optimizasyonundan sonra taşikardi gerekiyorsa beta blokaj eklenebilir.",
+      "tusTip": "Feokromositomada sıra kritiktir: alfa blokajdan önce beta blokaj verilmez.",
+      "differentialNote": "Beta blokajın erken verilmesi vazodilatör beta etkisini kapatıp karşılıksız alfa vazokonstriksiyonla krizi ağırlaştırabilir.",
+      "keywords": [
+          "feokromositoma",
+          "alfa blokaj",
+          "fenoksibenzamin",
+          "beta blokaj"
+      ]
   },
   "tus-pearl-general-surgery-450-extra": {
-    "front": "Vaka kökünde feokromositoma, fenoksibenzamin ve beta blokaj birlikte verilirse hangi tedavi veya klinik yaklaşım öncelikle düşünülür?",
-    "keywords": [
-      "feokromositoma",
-      "alfa blokaj",
-      "fenoksibenzamin",
-      "beta blokaj"
-    ]
+      "front": "Feokromositomada alfa blokaj yapılmadan beta bloker verilmesi neden tehlikelidir?",
+      "back": "Karşılıksız alfa vazokonstriksiyonla hipertansif kriz yapabilir.",
+      "answer": "Karşılıksız alfa vazokonstriksiyonla hipertansif kriz yapabilir.",
+      "explanation": "Beta reseptörlerin önce bloke edilmesi, katekolaminlerin alfa reseptörler üzerinden vazokonstriktör etkisini baskın bırakır. Bu durum ciddi hipertansiyon, miyokard iskemisi ve perioperatif instabiliteye yol açabilir.",
+      "tusTip": "Feokromositoma sorularında tedavi bilgisi kadar blokaj sırası da sınav değerindedir.",
+      "differentialNote": "Esansiyel hipertansiyon yönetimindeki beta bloker mantığı feokromositomaya doğrudan uygulanmaz.",
+      "keywords": [
+          "karşılıksız alfa",
+          "beta blokaj",
+          "hipertansif kriz",
+          "feokromositoma"
+      ]
   },
   "tus-pearl-general-surgery-451-spot": {
-    "front": "Semptomatik primer hiperparatiroidide küratif tedavi nedir?",
-    "keywords": [
-      "primer hiperparatiroidi",
-      "paratiroidektomi",
-      "hiperkalsemi",
-      "PTH"
-    ]
+      "front": "Semptomatik primer hiperparatiroidide hiperkalsemiyi kalıcı olarak düzelten temel cerrahi tedavi nedir?",
+      "back": "Paratiroidektomi.",
+      "answer": "Paratiroidektomi.",
+      "explanation": "Primer hiperparatiroidide otonom PTH salınımı kemik rezorpsiyonu, böbrek taşı ve hiperkalsemi bulguları oluşturabilir. Semptomatik hastada patolojik bezin çıkarılması küratif tedavi yaklaşımıdır.",
+      "tusTip": "Hiperkalsemi + yüksek veya uygunsuz normal PTH primer hiperparatiroidiyi düşündürür.",
+      "differentialNote": "Maligniteye bağlı hiperkalsemide PTH baskılıdır; primer hiperparatiroidide PTH uygunsuz yüksektir.",
+      "keywords": [
+          "primer hiperparatiroidi",
+          "paratiroidektomi",
+          "hiperkalsemi",
+          "PTH"
+      ]
   },
   "tus-pearl-general-surgery-451-extra": {
-    "front": "hiperkalsemi ve PTH birlikteliği öğrenciyi hangi tedavi veya klinik yaklaşım yanıtına götürür?",
-    "keywords": [
-      "primer hiperparatiroidi",
-      "paratiroidektomi",
-      "hiperkalsemi",
-      "PTH"
-    ]
+      "front": "Primer hiperparatiroidide sestamibi veya boyun USG’sinin temel amacı tanı koymak mı, ameliyat planlamak mı?",
+      "back": "Ameliyat öncesi lokalizasyonu planlamak.",
+      "answer": "Ameliyat öncesi lokalizasyonu planlamak.",
+      "explanation": "Primer hiperparatiroidi tanısı biyokimyasal olarak hiperkalsemi ve uygunsuz yüksek PTH ile konur. Görüntüleme, hangi bezin çıkarılacağını planlamaya yardım eder; negatif görüntüleme tanıyı dışlamaz.",
+      "tusTip": "Paratiroid hastalığında görüntüleme tanı testi değil, cerrahi haritalama aracıdır.",
+      "differentialNote": "Tiroid nodülünde USG tanısal risk sınıflaması yaparken, paratiroidde biyokimya tanının merkezindedir.",
+      "keywords": [
+          "sestamibi",
+          "paratiroid USG",
+          "lokalizasyon",
+          "biyokimyasal tanı"
+      ]
   },
   "tus-pearl-general-surgery-452-spot": {
-    "front": "Hernide sürekli ağrı, hassasiyet ve sistemik bulgu gelişmesi neyi düşündürür?",
-    "keywords": [
-      "strangüle herni",
-      "sürekli ağrı",
-      "iskemi",
-      "acil cerrahi"
-    ]
+      "front": "Hernide sürekli ağrı, hassasiyet, cilt değişikliği veya sistemik toksisite gelişmesi hangi komplikasyonu düşündürür?",
+      "back": "Strangülasyon.",
+      "answer": "Strangülasyon.",
+      "explanation": "Strangülasyon, fıtık içeriğinin kanlanmasının bozulmasıdır ve barsak iskemi-nekrozu riski taşır. Bu bulgular geliştiğinde elektif onarım değil acil cerrahi değerlendirme gerekir.",
+      "tusTip": "Redükte edilemeyen fıtık inkarserasyon; iskemi bulgusu eklenirse strangülasyondur.",
+      "differentialNote": "Basit redükte edilebilir herni elektif planlanabilir; strangülasyon bekletilmez.",
+      "keywords": [
+          "strangüle herni",
+          "sürekli ağrı",
+          "iskemi",
+          "acil cerrahi"
+      ]
   },
   "tus-pearl-general-surgery-452-extra": {
-    "front": "Vaka kökünde strangüle herni, sürekli ağrı ve iskemi birlikte verilirse hangi tanı öncelikle düşünülür?",
-    "keywords": [
-      "strangüle herni",
-      "sürekli ağrı",
-      "iskemi",
-      "acil cerrahi"
-    ]
+      "front": "İnkarserasyon ile strangülasyonu ayıran cerrahi açıdan en kritik fark nedir?",
+      "back": "Strangülasyonda kanlanma bozulur ve iskemi gelişir.",
+      "answer": "Strangülasyonda kanlanma bozulur ve iskemi gelişir.",
+      "explanation": "İnkarserasyon fıtığın redükte edilememesini ifade eder; strangülasyon ise vasküler dolaşım bozukluğu eklenmesidir. Ateş, taşikardi, peritonit, cilt eritemi veya laktat artışı acil cerrahi alarmıdır.",
+      "tusTip": "Fıtık sorusunda aciliyeti belirleyen kelime 'iskemi/strangülasyon'dur.",
+      "differentialNote": "Femoral herniler dar boyun nedeniyle strangülasyona daha yatkındır.",
+      "keywords": [
+          "inkarserasyon",
+          "strangülasyon",
+          "iskemi",
+          "femoral herni"
+      ]
   },
   "tus-pearl-general-surgery-453-spot": {
-    "front": "Sol alt kadran ağrısı ve ateşle gelen divertikülit şüphesinde en yararlı görüntüleme hangisidir?",
-    "keywords": [
-      "divertikülit",
-      "sol alt kadran",
-      "BT",
-      "apse"
-    ]
+      "front": "Sol alt kadran ağrısı ve ateşle gelen erişkin hastada divertikülit ve komplikasyonlarını değerlendirmek için en yararlı görüntüleme hangisidir?",
+      "back": "Kontrastlı abdominal BT.",
+      "answer": "Kontrastlı abdominal BT.",
+      "explanation": "BT divertikülit tanısını, perikolik inflamasyonu, apseyi, perforasyonu ve obstrüksiyonu değerlendirebilir. Özellikle şiddetli tablo, tanı belirsizliği veya komplikasyon şüphesinde cerrahi kararı yönlendirir.",
+      "tusTip": "Divertikülitte kolonoskopi akut dönemde perforasyon riski nedeniyle ilk tanı testi değildir.",
+      "differentialNote": "Kolon kanseri de sol kolon daralması yapabilir; akut atak yatıştıktan sonra uygun hastada kolonik değerlendirme gerekebilir.",
+      "keywords": [
+          "divertikülit",
+          "sol alt kadran",
+          "kontrastlı BT",
+          "apse"
+      ]
   },
   "tus-pearl-general-surgery-453-extra": {
-    "front": "Vaka kökünde divertikülit, sol alt kadran ve apse birlikte verilirse hangi tanısal test veya bulgu öncelikle düşünülür?",
-    "keywords": [
-      "divertikülit",
-      "sol alt kadran",
-      "BT",
-      "apse"
-    ]
+      "front": "Divertikülitte büyük apse saptanırsa antibiyotiğe ek olarak hangi kaynak kontrolü yaklaşımı düşünülür?",
+      "back": "Perkütan apse drenajı.",
+      "answer": "Perkütan apse drenajı.",
+      "explanation": "Komplike divertikülitte apse kavitesi antibiyotik penetrasyonunu sınırlayabilir. Uygun yerleşimli büyük apselerde perkütan drenaj, sepsis kontrolü ve acil cerrahi ihtiyacını azaltmak için kullanılır.",
+      "tusTip": "Divertikülitte karar, komplike olmayan atak ile apse/perforasyon/peritonit varlığı ayrımına dayanır.",
+      "differentialNote": "Yaygın peritonit veya serbest perforasyonda drenajdan çok acil cerrahi kaynak kontrolü gerekir.",
+      "keywords": [
+          "divertikülit apsesi",
+          "perkütan drenaj",
+          "komplikasyon",
+          "kaynak kontrolü"
+      ]
   },
   "tus-pearl-general-surgery-454-spot": {
-    "front": "Sınırlı ve rezektabl karaciğer metastazı olan kolorektal kanserde hangi yaklaşım sağkalımı artırabilir?",
-    "keywords": [
-      "kolorektal kanser",
-      "karaciğer metastazı",
-      "metastazektomi",
-      "rezektabl"
-    ]
+      "front": "Sınırlı ve teknik olarak çıkarılabilir karaciğer metastazı olan kolorektal kanserde hangi yaklaşım seçilmiş hastada sağkalımı artırabilir?",
+      "back": "Karaciğer metastaz rezeksiyonu.",
+      "answer": "Karaciğer metastaz rezeksiyonu.",
+      "explanation": "Kolorektal kanserde karaciğer metastazı her zaman yalnız palyatif kabul edilmez. Ekstrahepatik yayılım, remnant karaciğer yeterliliği ve R0 rezeksiyon olasılığı uygunsa metastazektomi küratif niyetli stratejinin parçası olabilir.",
+      "tusTip": "Kolorektal karaciğer metastazında 'rezektabl mı?' sorusu onkolojik cerrahi kararın merkezindedir.",
+      "differentialNote": "Yaygın, kontrolsüz ekstrahepatik hastalıkta sistemik tedavi/palyatif yaklaşım daha ön plandadır.",
+      "keywords": [
+          "kolorektal kanser",
+          "karaciğer metastazı",
+          "metastazektomi",
+          "R0 rezeksiyon"
+      ]
   },
   "tus-pearl-general-surgery-454-extra": {
-    "front": "Vaka kökünde kolorektal kanser, karaciğer metastazı ve metastazektomi birlikte verilirse hangi komplikasyon veya klinik sonuç öncelikle düşünülür?",
-    "keywords": [
-      "kolorektal kanser",
-      "karaciğer metastazı",
-      "metastazektomi",
-      "rezektabl"
-    ]
+      "front": "Kolorektal kanserde rezektabl karaciğer metastazı saptanması evre IV hastalıkta cerrahi seçeneği neden tamamen ortadan kaldırmaz?",
+      "back": "Seçilmiş hastada metastazektomi küratif niyetli olabilir.",
+      "answer": "Seçilmiş hastada metastazektomi küratif niyetli olabilir.",
+      "explanation": "Kolorektal kanser karaciğer metastazlarında tüm hastalar aynı prognoz grubunda değildir. Sınırlı metastaz, yeterli karaciğer rezervi ve temiz cerrahi sınır sağlanabiliyorsa primer tümör ve metastaz için cerrahi plan yapılabilir.",
+      "tusTip": "Evre IV ifadesi otomatik 'cerrahi yok' anlamına gelmez; rezektabilite ve hasta seçimi belirleyicidir.",
+      "differentialNote": "Pankreas kanserinde uzak metastaz çoğu zaman rezeksiyonu dışlar; kolorektal kanserde seçilmiş karaciğer metastazı farklıdır.",
+      "keywords": [
+          "rezektabl metastaz",
+          "kolorektal kanser",
+          "küratif niyet",
+          "karaciğer rezervi"
+      ]
   },
   "tus-pearl-general-surgery-455-spot": {
-    "front": "Ağrısız sarılık ve Courvoisier bulgusu en çok hangi maligniteyi düşündürür?",
-    "keywords": [
-      "pankreas başı kanseri",
-      "ağrısız sarılık",
-      "Courvoisier",
-      "koledok obstrüksiyonu"
-    ]
+      "front": "Ağrısız ilerleyici sarılık, kilo kaybı ve palpabl hidropik safra kesesi hangi tümörü düşündürür?",
+      "back": "Pankreas başı kanseri.",
+      "answer": "Pankreas başı kanseri.",
+      "explanation": "Pankreas başı tümörü distal koledoku dıştan basılayarak obstrüktif sarılık oluşturabilir. Courvoisier bulgusu taş hastalığından çok malign obstrüksiyon lehine klasik bir ipucudur.",
+      "tusTip": "Ağrısız sarılık + Courvoisier bulgusu, pankreas başı kanseri için yüksek verimli eşleşmedir.",
+      "differentialNote": "Koledok taşında ağrı ve kolanjit bulguları daha sık eşlik eder; malign obstrüksiyonda sarılık progresif olabilir.",
+      "keywords": [
+          "pankreas başı kanseri",
+          "ağrısız sarılık",
+          "Courvoisier",
+          "obstrüktif sarılık"
+      ]
   },
   "tus-pearl-general-surgery-455-extra": {
-    "front": "Vaka kökünde ağrısız sarılık, Courvoisier ve koledok obstrüksiyonu birlikte verilirse hangi tanı öncelikle düşünülür?",
-    "keywords": [
-      "pankreas başı kanseri",
-      "ağrısız sarılık",
-      "Courvoisier",
-      "koledok obstrüksiyonu"
-    ]
+      "front": "Pankreas başı kanserinde beklenen sarılık laboratuvar paterni nasıldır?",
+      "back": "Konjuge bilirubin, ALP ve GGT artışıyla kolestatik patern.",
+      "answer": "Konjuge bilirubin, ALP ve GGT artışıyla kolestatik patern.",
+      "explanation": "Ekstrahepatik safra yolu tıkanıklığında direkt bilirubin ve kolestaz enzimleri belirgin yükselir. Bu patern hepatoselüler hasardan çok mekanik obstrüksiyonu düşündürür.",
+      "tusTip": "Pankreas başı tümörü sorusunda laboratuvar anahtarı kolestatik sarılıktır.",
+      "differentialNote": "Viral hepatitte AST/ALT baskın yükselir; mekanik tıkanıklıkta ALP/GGT ve direkt bilirubin öne çıkar.",
+      "keywords": [
+          "kolestatik patern",
+          "direkt bilirubin",
+          "ALP",
+          "GGT"
+      ]
   },
   "tus-pearl-general-surgery-456-spot": {
-    "front": "Alt ekstremitede ani ağrı, solukluk, nabızsızlık ve parestezi varsa ilk medikal tedavi nedir?",
-    "keywords": [
-      "akut ekstremite iskemisi",
-      "6P",
-      "heparin",
-      "nabızsızlık"
-    ]
+      "front": "Alt ekstremitede ani ağrı, solukluk, soğukluk, parestezi ve nabız kaybı gelişirse ilk medikal tedavi basamağı nedir?",
+      "back": "İntravenöz sistemik heparin.",
+      "answer": "İntravenöz sistemik heparin.",
+      "explanation": "Akut ekstremite iskemisinde trombüsün ilerlemesini önlemek için kontrendikasyon yoksa hızlıca heparinizasyon yapılır. Aynı anda ekstremitenin viabilitesi değerlendirilir ve revaskülarizasyon planlanır.",
+      "tusTip": "Akut ekstremite iskemisinde 6P bulgularını görünce heparin ve vasküler cerrahi refleksi gerekir.",
+      "differentialNote": "Kronik periferik arter hastalığında klaudikasyon daha yavaş gelişir; ani 6P akut tıkanmayı düşündürür.",
+      "keywords": [
+          "akut ekstremite iskemisi",
+          "6P",
+          "heparin",
+          "nabızsızlık"
+      ]
   },
   "tus-pearl-general-surgery-456-extra": {
-    "front": "Vaka kökünde akut ekstremite iskemisi, 6P ve nabızsızlık birlikte verilirse hangi tedavi veya klinik yaklaşım öncelikle düşünülür?",
-    "keywords": [
-      "akut ekstremite iskemisi",
-      "6P",
-      "heparin",
-      "nabızsızlık"
-    ]
+      "front": "Akut ekstremite iskemisinde motor kayıp veya duyu defisiti eklenmesi tedavi kararını nasıl değiştirir?",
+      "back": "Tehdit altındaki ekstremite nedeniyle acil revaskülarizasyon gerektirir.",
+      "answer": "Tehdit altındaki ekstremite nedeniyle acil revaskülarizasyon gerektirir.",
+      "explanation": "Nörolojik bulgular iskeminin yalnız ağrı düzeyinde kalmadığını, kas ve sinir viabilitesinin tehdit altında olduğunu gösterir. Bu durumda heparin sonrası embolektomi, tromboliz veya cerrahi revaskülarizasyon hızla planlanır.",
+      "tusTip": "Akut iskemi sorusunda motor-duyu kaybı ekstremiteyi tehdit eden evreyi düşündürür.",
+      "differentialNote": "Geri dönüşsüz iskemi gelişmişse revaskülarizasyon reperfüzyon hasarı ve sistemik toksisite yaratabilir; viabilite değerlendirilmelidir.",
+      "keywords": [
+          "motor kayıp",
+          "duyu defisiti",
+          "revaskülarizasyon",
+          "ekstremite viabilitesi"
+      ]
   },
   "tus-pearl-general-surgery-457-spot": {
-    "front": "İlk 24 saatte yanık sıvı resüsitasyonunda sık kullanılan formül hangisidir?",
-    "keywords": [
-      "yanık",
-      "Parkland",
-      "Ringer laktat",
-      "ilk 24 saat"
-    ]
+      "front": "Geniş yanıkta ilk 24 saat kristalloid ihtiyacını hesaplamak için klasik olarak hangi formül kullanılır?",
+      "back": "Parkland formülü.",
+      "answer": "Parkland formülü.",
+      "explanation": "Parkland formülü erişkinde 4 mL × vücut ağırlığı × yanık yüzdesi kristalloid hesabına dayanır. Hesaplanan sıvının yarısı yanık anından itibaren ilk 8 saatte, kalanı sonraki 16 saatte verilir ve idrar çıkışına göre titre edilir.",
+      "tusTip": "Yanık sıvısında saat, hastaneye gelişten değil yanık anından başlatılır.",
+      "differentialNote": "Birinci derece yanıklar toplam yanık yüzdesi hesabına genellikle dahil edilmez.",
+      "keywords": [
+          "Parkland",
+          "yanık",
+          "Ringer laktat",
+          "ilk 24 saat"
+      ]
   },
   "tus-pearl-general-surgery-457-extra": {
-    "front": "Vaka kökünde yanık, Ringer laktat ve ilk 24 saat birlikte verilirse hangi tanı öncelikle düşünülür?",
-    "keywords": [
-      "yanık",
-      "Parkland",
-      "Ringer laktat",
-      "ilk 24 saat"
-    ]
+      "front": "Parkland formülünde hesaplanan sıvının ilk yarısı hangi zaman aralığında verilmelidir?",
+      "back": "Yanık anından itibaren ilk 8 saatte.",
+      "answer": "Yanık anından itibaren ilk 8 saatte.",
+      "explanation": "Kapiller kaçak erken dönemde en belirgindir ve hipovolemik şok riski doğurur. Bu nedenle ilk yarı hızla verilir, fakat aşırı resüsitasyon ödem ve kompartman sorunlarına yol açabileceği için idrar çıkışıyla takip edilir.",
+      "tusTip": "Yanık resüsitasyonunda doğru cevap sadece formül değil, zamanlama ve idrar çıkışı takibidir.",
+      "differentialNote": "Çocuklarda bakım sıvısı gereksinimi ayrıca düşünülür; erişkin Parkland hesabı tek başına her yaşa aynen uygulanmaz.",
+      "keywords": [
+          "ilk 8 saat",
+          "yanık anı",
+          "idrar çıkışı",
+          "sıvı resüsitasyonu"
+      ]
   },
   "tus-pearl-general-surgery-458-spot": {
-    "front": "Ateş, sağ alt kadran ağrısı ve lökositoza peritonit eklenmesi neyi düşündürür?",
-    "keywords": [
-      "apandisit",
-      "perforasyon",
-      "peritonit",
-      "lökositoz"
-    ]
+      "front": "Apandisit bulgularına yaygın peritonit, yüksek ateş veya sepsis eklenmesi hangi komplikasyonu düşündürür?",
+      "back": "Perfore apandisit.",
+      "answer": "Perfore apandisit.",
+      "explanation": "Apendiks duvar nekrozu ve perforasyon enfekte içeriğin peritoneal boşluğa yayılmasına neden olur. Lokalize ağrının yaygın peritonite dönüşmesi cerrahi aciliyeti belirgin artırır.",
+      "tusTip": "Apandisitte peritonit bulgusu basit inflamasyondan komplike hastalığa geçiş ipucudur.",
+      "differentialNote": "Erken apandisitte ağrı lokalize olabilir; perforasyonda defans, rebound ve sistemik toksisite artar.",
+      "keywords": [
+          "perfore apandisit",
+          "peritonit",
+          "sepsis",
+          "komplike apandisit"
+      ]
   },
   "tus-pearl-general-surgery-458-extra": {
-    "front": "Vaka kökünde perforasyon, peritonit ve lökositoz birlikte verilirse hangi komplikasyon veya klinik sonuç öncelikle düşünülür?",
-    "keywords": [
-      "apandisit",
-      "perforasyon",
-      "peritonit",
-      "lökositoz"
-    ]
+      "front": "Apandisit sonrası sağ alt kadranda kitle ve ateşle sınırlı koleksiyon gelişirse hangi komplikasyon düşünülür?",
+      "back": "Periapendiküler apse.",
+      "answer": "Periapendiküler apse.",
+      "explanation": "Perforasyon bazen omentum ve komşu barsaklar tarafından sınırlanarak apse oluşturur. Stabil hastada antibiyotik ve uygun apsede perkütan drenaj düşünülebilir; yaygın peritonit varsa acil cerrahi gerekir.",
+      "tusTip": "Apandisit komplikasyonunda yaygın peritonit ile lokalize apse yönetimi aynı değildir.",
+      "differentialNote": "Flegmon solid inflamatuvar kitle olabilir; drenaj kararı sıvı koleksiyonu/apse varlığına göre değişir.",
+      "keywords": [
+          "periapendiküler apse",
+          "apandisit komplikasyonu",
+          "perkütan drenaj",
+          "lokalize koleksiyon"
+      ]
   },
   "tus-pearl-general-surgery-459-spot": {
-    "front": "Yaşlı hastada mekanik ileus ve pnömobilia birlikteliği hangi tabloyu düşündürür?",
-    "keywords": [
-      "safra taşı ileusu",
-      "pnömobilia",
-      "mekanik obstrüksiyon",
-      "fistül"
-    ]
+      "front": "Yaşlı hastada mekanik ince bağırsak obstrüksiyonu, pnömobilia ve ektopik safra taşı birlikteliği hangi tabloyu düşündürür?",
+      "back": "Safra taşı ileusu.",
+      "answer": "Safra taşı ileusu.",
+      "explanation": "Kronik safra taşı hastalığı kolesistoenterik fistül oluşturabilir ve büyük taş barsak lümenine geçerek obstrüksiyon yapabilir. Pnömobilia, safra yolu ile barsak arasında fistül olduğunu gösteren önemli ipucudur.",
+      "tusTip": "Rigler triadı: mekanik obstrüksiyon, pnömobilia ve ektopik safra taşıdır.",
+      "differentialNote": "Basit adezyon ileusunda pnömobilia beklenmez; bu bulgu safra yolu-barsak fistülünü düşündürür.",
+      "keywords": [
+          "safra taşı ileusu",
+          "Rigler triadı",
+          "pnömobilia",
+          "mekanik obstrüksiyon"
+      ]
   },
   "tus-pearl-general-surgery-459-extra": {
-    "front": "Vaka kökünde pnömobilia, mekanik obstrüksiyon ve fistül birlikte verilirse hangi tanı öncelikle düşünülür?",
-    "keywords": [
-      "safra taşı ileusu",
-      "pnömobilia",
-      "mekanik obstrüksiyon",
-      "fistül"
-    ]
+      "front": "Safra taşı ileusunda pnömobilia hangi patofizyolojik bağlantıyı gösterir?",
+      "back": "Kolesistoenterik fistül varlığını.",
+      "answer": "Kolesistoenterik fistül varlığını.",
+      "explanation": "Safra kesesi ile barsak arasında fistül oluştuğunda hava safra yollarına geçebilir ve taş barsak lümenine düşebilir. Büyük taş özellikle terminal ileumda takılarak mekanik obstrüksiyon oluşturur.",
+      "tusTip": "Pnömobilia + obstrüksiyon sorusunda taşın barsağa fistül yoluyla geçtiğini düşün.",
+      "differentialNote": "İleus sonrası görülen hava-sıvı seviyeleri tek başına safra taşı ileusunu kanıtlamaz; pnömobilia ayırt ettirir.",
+      "keywords": [
+          "kolesistoenterik fistül",
+          "pnömobilia",
+          "ektopik safra taşı",
+          "terminal ileum"
+      ]
   },
   "tus-pearl-obstetrics-gynecology-460-spot": {
     "front": "Preterm prematür membran rüptüründe fetal akciğer matürasyonu için hangi tedavi verilir?",
@@ -17721,6 +18088,9 @@ function applyFinalTextOverride(card = {}, override = {}) {
   if (Object.prototype.hasOwnProperty.call(override, 'front')) {
     nextCard.front = cleanQuestion(override.front || card.front);
   }
+  if (Object.prototype.hasOwnProperty.call(override, 'topic')) {
+    nextCard.topic = cleanText(override.topic || card.topic);
+  }
   if (Array.isArray(override.keywords)) {
     nextCard.keywords = override.keywords.map((keyword) => cleanText(keyword)).filter(Boolean);
   }
@@ -17749,8 +18119,11 @@ function applyRevisedPearlCardText(card = {}) {
   const internalMedicineSecond50Override = TUS_PEARL_INTERNAL_MEDICINE_SECOND50_TEXT_OVERRIDES[card.id] || null;
   const internalMedicineThird59Override = TUS_PEARL_INTERNAL_MEDICINE_THIRD59_TEXT_OVERRIDES[card.id] || null;
   const pediatricsFirst63Override = TUS_PEARL_PEDIATRICS_FIRST63_TEXT_OVERRIDES[card.id] || null;
-  const override = baseOverride || anatomyOverride || physiologyOverride || histologyEmbryologyOverride || medicalBiochemistryOverride || medicalMicrobiologyOverride || medicalMicrobiologySecond52Override || medicalPathologyFirst84Override || medicalPharmacologyFirst51Override || medicalPharmacologySecond50Override || internalMedicineFirst50Override || internalMedicineSecond50Override || internalMedicineThird59Override || pediatricsFirst63Override
-    ? { ...(baseOverride || {}), ...(anatomyOverride || {}), ...(physiologyOverride || {}), ...(histologyEmbryologyOverride || {}), ...(medicalBiochemistryOverride || {}), ...(medicalMicrobiologyOverride || {}), ...(medicalMicrobiologySecond52Override || {}), ...(medicalPathologyFirst84Override || {}), ...(medicalPharmacologyFirst51Override || {}), ...(medicalPharmacologySecond50Override || {}), ...(internalMedicineFirst50Override || {}), ...(internalMedicineSecond50Override || {}), ...(internalMedicineThird59Override || {}), ...(pediatricsFirst63Override || {}) }
+  const pediatricsSecond63Override = TUS_PEARL_PEDIATRICS_SECOND63_TEXT_OVERRIDES[card.id] || null;
+  const obgynFirst64Override = TUS_PEARL_OBGYN_FIRST64_TEXT_OVERRIDES[card.id] || null;
+  const smallClerkshipsFirst58Override = TUS_PEARL_SMALL_CLERKSHIPS_FIRST58_TEXT_OVERRIDES[card.id] || null;
+  const override = baseOverride || anatomyOverride || physiologyOverride || histologyEmbryologyOverride || medicalBiochemistryOverride || medicalMicrobiologyOverride || medicalMicrobiologySecond52Override || medicalPathologyFirst84Override || medicalPharmacologyFirst51Override || medicalPharmacologySecond50Override || internalMedicineFirst50Override || internalMedicineSecond50Override || internalMedicineThird59Override || pediatricsFirst63Override || pediatricsSecond63Override || obgynFirst64Override || smallClerkshipsFirst58Override
+    ? { ...(baseOverride || {}), ...(anatomyOverride || {}), ...(physiologyOverride || {}), ...(histologyEmbryologyOverride || {}), ...(medicalBiochemistryOverride || {}), ...(medicalMicrobiologyOverride || {}), ...(medicalMicrobiologySecond52Override || {}), ...(medicalPathologyFirst84Override || {}), ...(medicalPharmacologyFirst51Override || {}), ...(medicalPharmacologySecond50Override || {}), ...(internalMedicineFirst50Override || {}), ...(internalMedicineSecond50Override || {}), ...(internalMedicineThird59Override || {}), ...(pediatricsFirst63Override || {}), ...(pediatricsSecond63Override || {}), ...(obgynFirst64Override || {}), ...(smallClerkshipsFirst58Override || {}) }
     : null;
   const preRevisedCard = override ? applyFinalTextOverride(card, {
     front: override.front,
