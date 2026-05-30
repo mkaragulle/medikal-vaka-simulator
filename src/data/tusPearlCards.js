@@ -1,3 +1,15 @@
+import { TUS_PEARL_PHYSIOLOGY_FIRST47_TEXT_OVERRIDES } from './tusPearlPhysiologyFirst47Overrides.js';
+import { TUS_PEARL_HISTOLOGY_EMBRYOLOGY_FIRST34_TEXT_OVERRIDES } from './tusPearlHistologyEmbryologyFirst34Overrides.js';
+import { TUS_PEARL_MEDICAL_BIOCHEMISTRY_FIRST74_TEXT_OVERRIDES } from './tusPearlMedicalBiochemistryFirst74Overrides.js';
+import { TUS_PEARL_MEDICAL_MICROBIOLOGY_FIRST52_TEXT_OVERRIDES } from './tusPearlMedicalMicrobiologyFirst52Overrides.js';
+import { TUS_PEARL_MEDICAL_MICROBIOLOGY_SECOND52_TEXT_OVERRIDES } from './tusPearlMedicalMicrobiologySecond52Overrides.js';
+import { TUS_PEARL_MEDICAL_PATHOLOGY_FIRST84_TEXT_OVERRIDES } from './tusPearlMedicalPathologyFirst84Overrides.js';
+import { TUS_PEARL_MEDICAL_PHARMACOLOGY_FIRST51_TEXT_OVERRIDES } from './tusPearlMedicalPharmacologyFirst51Overrides.js';
+import { TUS_PEARL_MEDICAL_PHARMACOLOGY_SECOND50_TEXT_OVERRIDES } from './tusPearlMedicalPharmacologySecond50Overrides.js';
+import { TUS_PEARL_INTERNAL_MEDICINE_FIRST50_TEXT_OVERRIDES } from './tusPearlInternalMedicineFirst50Overrides.js';
+import { TUS_PEARL_INTERNAL_MEDICINE_SECOND50_TEXT_OVERRIDES } from './tusPearlInternalMedicineSecond50Overrides.js';
+import { TUS_PEARL_INTERNAL_MEDICINE_THIRD59_TEXT_OVERRIDES } from './tusPearlInternalMedicineThird59Overrides.js';
+import { TUS_PEARL_PEDIATRICS_FIRST63_TEXT_OVERRIDES } from './tusPearlPediatricsFirst63Overrides.js';
 // Auto-generated high-yield TUS flashcard seed deck for KlinikIQ.
 // Years are intentionally empty unless a source explicitly provides a year.
 
@@ -16762,6 +16774,795 @@ const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
   }
 });
 
+// V405 — Anatomy first 56 active Hap Bilgi cards: full front/back educational rewrite.
+// Scope guard: only IDs listed here are overridden; branch/order/schema metadata remain unchanged.
+const TUS_PEARL_ANATOMY_FIRST56_TEXT_OVERRIDES = Object.freeze({
+  "tus-pearl-anatomy-001-spot": {
+    "front": "Ulnar sinir lezyonunda pençe el görünümü neden özellikle 4. ve 5. parmaklarda belirginleşir?",
+    "back": "Ulnar sinir lezyonu.",
+    "answer": "Ulnar sinir lezyonu.",
+    "explanation": "Ulnar sinir interosseöz kasları ve medial iki lumbrikali innerve eder; bu kasların kaybı MCP fleksiyonu ile IP ekstansiyonunu bozar. Sonuçta özellikle 4–5. parmaklarda pençeleşme ve medial 1,5 parmakta duyu kaybı beklenir.",
+    "tusTip": "4–5. parmak duyu kaybı + interosseöz zayıflık + Froment pozitifliği ulnar sinir için yüksek verimli üçlüdür.",
+    "differentialNote": "Median sinir karpal tünelde thenar zayıflık ve ilk 3,5 parmak parestezisi yapar; ulnar sinir daha çok interosseöz/adduktor pollicis fonksiyonuyla ayrılır.",
+    "keywords": [
+      "ulnar sinir",
+      "4–5. parmak",
+      "interosseöz kaslar",
+      "pençe el"
+    ]
+  },
+  "tus-pearl-anatomy-001-extra": {
+    "front": "Froment belirtisinde hastanın kağıdı başparmağıyla fleksiyona getirerek tutması hangi kas ve sinir kaybını düşündürür?",
+    "back": "Adductor pollicis zayıflığına bağlı ulnar sinir lezyonu.",
+    "answer": "Adductor pollicis zayıflığına bağlı ulnar sinir lezyonu.",
+    "explanation": "Adductor pollicis ulnar sinirle innerve edilir ve normalde başparmağı adduksiyonda tutar. Ulnar sinir lezyonunda hasta kağıdı tutmak için median sinirli flexor pollicis longus ile başparmak IP fleksiyonuna kaçar.",
+    "tusTip": "Froment testi, ulnar sinirin intrinsik el kası fonksiyonunu sorgular; yalnız duyu kaybı sorusu değildir.",
+    "differentialNote": "Median sinir başparmak opozisyonu ve flexor pollicis longus ile ilişkilidir; Froment’te görülen fleksiyon kompansasyon, primer lezyonun median olduğunu göstermez.",
+    "keywords": [
+      "Froment belirtisi",
+      "adductor pollicis",
+      "ulnar sinir",
+      "başparmak adduksiyonu"
+    ]
+  },
+  "tus-pearl-anatomy-002-spot": {
+    "front": "Humerus şaft kırığından sonra el bileği ve parmak ekstansiyonunun kaybı hangi sinir hasarıyla açıklanır?",
+    "back": "Radial sinir lezyonu.",
+    "answer": "Radial sinir lezyonu.",
+    "explanation": "Radial sinir humerusun spiral oluğunda seyreder ve ön kol ekstansör kompartmanının temel motor siniridir. Bu nedenle şaft kırığında el bileği ekstansiyonu kaybı düşük el görünümü oluşturur.",
+    "tusTip": "Humerus şaftı + spiral oluk + düşük el birlikte verildiğinde cevap radial sinirdir.",
+    "differentialNote": "Median sinir lezyonunda thenar atrofi ve opozisyon kaybı; ulnar sinirde interosseöz zayıflık beklenir. Düşük el radial sinire özgü sınav ipucudur.",
+    "keywords": [
+      "radial sinir",
+      "spiral oluk",
+      "düşük el",
+      "humerus şaft kırığı"
+    ]
+  },
+  "tus-pearl-anatomy-002-extra": {
+    "front": "Radial sinirin humerus üzerindeki en klasik yaralanma bölgesi hangi anatomik olukla ilişkilidir?",
+    "back": "Sulcus nervi radialis, yani spiral oluk.",
+    "answer": "Sulcus nervi radialis, yani spiral oluk.",
+    "explanation": "Radial sinir kolun posteriorunda profunda brachii arterle birlikte spiral olukta seyreder. Humerus şaft kırıkları bu bölgede siniri zedeleyerek el bileği ekstansiyonunu azaltabilir.",
+    "tusTip": "Radial sinir için kemik komşuluğu spiral oluk; klinik sonucu düşük eldir.",
+    "differentialNote": "Cerrahi boyun kırığında aksiller sinir, medial epikondil çevresinde ulnar sinir daha çok risk altındadır.",
+    "keywords": [
+      "sulcus nervi radialis",
+      "spiral oluk",
+      "profunda brachii",
+      "radial sinir"
+    ]
+  },
+  "tus-pearl-anatomy-003-spot": {
+    "front": "Fibula boynu travmasından sonra düşük ayak ve steppage yürüyüş gelişmesi hangi sinirin yüzeyel seyrine bağlıdır?",
+    "back": "Common fibular sinir lezyonu.",
+    "answer": "Common fibular sinir lezyonu.",
+    "explanation": "Common fibular sinir fibula boynu çevresinde yüzeyel dolaşır ve derin fibular dalı ayak dorsifleksörlerini innerve eder. Dorsifleksiyon kaybı düşük ayak, yürüme sırasında ayağı yüksek kaldırma ise steppage yürüyüş oluşturur.",
+    "tusTip": "Fibula boynu + dorsifleksiyon kaybı + düşük ayak = common fibular sinir.",
+    "differentialNote": "Tibial sinir plantar fleksiyon, taban duyusu ve tarsal tünel ile ilişkilidir; düşük ayak daha çok fibular sinir hasarıdır.",
+    "keywords": [
+      "common fibular sinir",
+      "fibula boynu",
+      "düşük ayak",
+      "dorsifleksiyon"
+    ]
+  },
+  "tus-pearl-anatomy-003-extra": {
+    "front": "Düşük ayakta esas kaybolan hareket hangi kompartman ve sinir dalıyla ilişkilidir?",
+    "back": "Anterior kompartman dorsifleksiyonu; derin fibular sinir.",
+    "answer": "Anterior kompartman dorsifleksiyonu; derin fibular sinir.",
+    "explanation": "Derin fibular sinir tibialis anterior ve diğer dorsifleksörleri innerve eder. Common fibular sinir fibula boynunda hasarlanırsa bu dalın fonksiyonu da bozulur ve ayak bileği dorsifleksiyonu kaybolur.",
+    "tusTip": "Dorsifleksiyon/anterior kompartman derin fibular; eversiyon/lateral kompartman yüzeyel fibular sinirdir.",
+    "differentialNote": "Tibialis posterior ve gastroknemius-soleus tibial sinirle çalışır; bunların kaybı düşük ayak değil plantar fleksiyon zayıflığı yapar.",
+    "keywords": [
+      "derin fibular sinir",
+      "anterior kompartman",
+      "dorsifleksiyon",
+      "tibialis anterior"
+    ]
+  },
+  "tus-pearl-anatomy-004-spot": {
+    "front": "Parotis cerrahisinde bez dokusu içinden geçtiği için korunması gereken temel motor sinir hangisidir?",
+    "back": "Nervus facialis.",
+    "answer": "Nervus facialis.",
+    "explanation": "Fasiyal sinir stylomastoid foramenden çıktıktan sonra parotis bezinin içinde dallanır ve mimik kaslarına motor lif verir. Parotisin sekretomotor parasempatik lifleri ise fasiyal sinirden değil glossopharyngeal sinir-otic ganglion yolundan gelir.",
+    "tusTip": "Parotis içinde dallanan ama parotisi innerve etmeyen motor sinir fasiyal sinirdir.",
+    "differentialNote": "Nervus glossopharyngeus parotis sekresyonunu otic ganglion üzerinden sağlar; cerrahi yüz felci riski fasiyal sinir dallarıyla ilgilidir.",
+    "keywords": [
+      "parotis",
+      "nervus facialis",
+      "mimik kasları",
+      "otic ganglion"
+    ]
+  },
+  "tus-pearl-anatomy-004-extra": {
+    "front": "Parotis bezinin parasempatik sekretomotor lifleri hangi gangliondan geçerek beze ulaşır?",
+    "back": "Ganglion oticum.",
+    "answer": "Ganglion oticum.",
+    "explanation": "Parotisin parasempatik yolu inferior salivatory nucleus, nervus glossopharyngeus, tympanic plexus, lesser petrosal nerve ve otic ganglion üzerinden ilerler. Postganglionik lifler auriculotemporal sinirle parotis bezine taşınır.",
+    "tusTip": "Parotis sekresyonu CN IX + otic ganglion; parotis içinden geçen motor dallar CN VII’dir.",
+    "differentialNote": "Submandibular ve sublingual bezler chorda tympani-submandibular ganglion yoluyla parasempatik lif alır; parotis bu yoldan gitmez.",
+    "keywords": [
+      "parotis sekresyonu",
+      "ganglion oticum",
+      "glossopharyngeal sinir",
+      "auriculotemporal sinir"
+    ]
+  },
+  "tus-pearl-anatomy-005-spot": {
+    "front": "Kavernöz sinüs içinde internal karotis artere en yakın seyreden ve erken tutulabilen kraniyal sinir hangisidir?",
+    "back": "Nervus abducens.",
+    "answer": "Nervus abducens.",
+    "explanation": "Abducens siniri kavernöz sinüs lümeni içinde internal karotis arterin lateralinde seyreder. III, IV, V1 ve V2 ise daha çok sinüsün lateral duvarında yer alır; bu topografik fark abducensi bası ve tromboza duyarlı kılar.",
+    "tusTip": "Kavernöz sinüsün “içinden” ICA ile geçen sinir VI; lateral duvar sinirleri III, IV, V1 ve V2’dir.",
+    "differentialNote": "Okülomotor sinir de kavernöz sinüs patolojilerinde tutulabilir, fakat internal karotisle lümen içinde en karakteristik komşuluk abducens siniridir.",
+    "keywords": [
+      "kavernöz sinüs",
+      "abducens",
+      "internal karotis",
+      "lateral duvar"
+    ]
+  },
+  "tus-pearl-anatomy-005-extra": {
+    "front": "Kavernöz sinüs trombozunda lateral rektus paralizisi hangi kraniyal sinirin fonksiyon kaybını gösterir?",
+    "back": "Nervus abducens.",
+    "answer": "Nervus abducens.",
+    "explanation": "Lateral rektus kası gözü abduksiyona getirir ve tek motor innervasyonu abducens siniridir. Kavernöz sinüs içinde serbest seyreden VI. sinir tutulumunda hasta gözü dışa baktıramaz ve diplopi gelişir.",
+    "tusTip": "Gözü dışa baktıran lateral rektus = CN VI; kavernöz sinüste en kırılgan sinirlerden biridir.",
+    "differentialNote": "CN III lezyonunda pitozis, dışa-aşağı bakış ve pupilla etkilenmesi daha belirgindir; izole lateral bakış kaybı CN VI lehinedir.",
+    "keywords": [
+      "lateral rektus",
+      "CN VI",
+      "diplopi",
+      "kavernöz sinüs"
+    ]
+  },
+  "tus-pearl-anatomy-126-spot": {
+    "front": "Aksiller diseksiyon sonrası üst kolun medialinde uyuşukluk gelişmesi hangi kutanöz sinirin zedelenmesini düşündürür?",
+    "back": "İnterkostobrakiyal sinir.",
+    "answer": "İnterkostobrakiyal sinir.",
+    "explanation": "İnterkostobrakiyal sinir genellikle T2 interkostal sinirin lateral kutanöz dalıdır ve aksillayı geçerek üst medial kol derisinin duyusunu taşır. Aksiller lenf nodu diseksiyonunda bu sinir kolayca kesilebilir veya gerilebilir.",
+    "tusTip": "Mastektomi/aksiller diseksiyon sonrası medial kol uyuşukluğu brachial pleksus değil interkostobrakiyal sinir ipucudur.",
+    "differentialNote": "Aksiller sinir deltoid zayıflığı ve lateral omuz duyusu ile sorulur; medial kol duyusu interkostobrakiyal sinire daha uygundur.",
+    "keywords": [
+      "interkostobrakiyal sinir",
+      "T2",
+      "aksiller diseksiyon",
+      "medial kol duyusu"
+    ]
+  },
+  "tus-pearl-anatomy-126-extra": {
+    "front": "İnterkostobrakiyal sinirin temel duyusal alanı neresidir?",
+    "back": "Üst kolun medial cildi ve aksiller bölge duyusu.",
+    "answer": "Üst kolun medial cildi ve aksiller bölge duyusu.",
+    "explanation": "Bu sinir T2’den gelen kutanöz lifleri aksilla üzerinden kola taşır. Bu nedenle meme cerrahisi sonrası motor defisitten çok uyuşma, yanma veya hipoestezi beklenir.",
+    "tusTip": "İnterkostobrakiyal sinir motor kas sorusu değil, aksilla-medial kol duyusu sorusudur.",
+    "differentialNote": "Medial antebrachial cutaneous sinir ön kol medial duyusuna katkı verir; üst medial kol/aksilla vurgusu interkostobrakiyal siniri öne çıkarır.",
+    "keywords": [
+      "medial kol",
+      "aksilla",
+      "kutanöz duyu",
+      "T2"
+    ]
+  },
+  "tus-pearl-anatomy-127-spot": {
+    "front": "Subaraknoid kanama bulgularına pitozis, midriyazis ve gözün dışa-aşağı deviasyonu eklenirse hangi anevrizma lokalizasyonu düşünülür?",
+    "back": "Posterior communicating arter anevrizması.",
+    "answer": "Posterior communicating arter anevrizması.",
+    "explanation": "Posterior communicating arter anevrizması okulomotor sinire bası yapabilir. CN III motor lif kaybı pitozis ve dışa-aşağı bakışa, yüzeyel parasempatik lif basısı ise midriyazise yol açar.",
+    "tusTip": "Ağrılı üçüncü sinir felci + pupilla tutulumu PCom anevrizması açısından klasik uyarıdır.",
+    "differentialNote": "Diyabetik mikrovasküler CN III palsisinde pupilla çoğu kez korunabilir; pupilla dilatasyonu kompresif lezyon lehinedir.",
+    "keywords": [
+      "posterior communicating arter",
+      "CN III",
+      "midriyazis",
+      "pitozis"
+    ]
+  },
+  "tus-pearl-anatomy-127-extra": {
+    "front": "Okulomotor sinirin yüzeyel parasempatik lifleri basıya uğrarsa pupillada hangi değişiklik beklenir?",
+    "back": "Midriyazis.",
+    "answer": "Midriyazis.",
+    "explanation": "CN III’ün parasempatik lifleri sfinkter pupillae kasına gider ve pupilla konstriksiyonunu sağlar. Kompresyon bu lifleri bozarsa sempatik tonus karşılıksız kalır ve pupilla genişler.",
+    "tusTip": "CN III basısı + midriyazis kompresif anevrizma lehine; pupilla korunması daha çok iskemik nöropatiyi düşündürür.",
+    "differentialNote": "Abducens lezyonunda temel bulgu lateral bakış kaybıdır; pupilla genişlemesi CN VI için tipik değildir.",
+    "keywords": [
+      "okulomotor sinir",
+      "parasempatik lif",
+      "sfinkter pupillae",
+      "midriyazis"
+    ]
+  },
+  "tus-pearl-anatomy-128-spot": {
+    "front": "Acil venöz girişim veya greft için ayak bileğinde vena saphena magna en güvenilir olarak nerede aranır?",
+    "back": "Medial malleolün önünde.",
+    "answer": "Medial malleolün önünde.",
+    "explanation": "Vena saphena magna ayak dorsumunun medialinden yükselir ve medial malleolün önünden geçerek bacağın medial yüzünde seyreder. Bu sabit yüzeyel komşuluk venöz erişim ve greft sorularında sık kullanılır.",
+    "tusTip": "Magna = medial malleol önü; parva = lateral malleol arkası şeklinde hatırlanır.",
+    "differentialNote": "Vena saphena parva posterior-lateral hatta ilerleyip popliteal vene dökülür; medial malleol önü onun yolu değildir.",
+    "keywords": [
+      "vena saphena magna",
+      "medial malleol önü",
+      "venöz erişim",
+      "greft"
+    ]
+  },
+  "tus-pearl-anatomy-128-extra": {
+    "front": "Vena saphena parva ayak bileği çevresinde hangi malleol komşuluğundan geçer?",
+    "back": "Lateral malleolün arkasından.",
+    "answer": "Lateral malleolün arkasından.",
+    "explanation": "Vena saphena parva ayak dorsumunun lateralinden başlar, lateral malleol arkasından geçer ve bacağın posteriorunda yükselir. Genellikle popliteal fossada vena poplitea’ya açılır.",
+    "tusTip": "Saphena parva lateral-posterior hatta; saphena magna medial-anterior hatta seyreder.",
+    "differentialNote": "Medial malleol önü büyük safen ven için ayırt ettiricidir; küçük safen ven burada aranmaz.",
+    "keywords": [
+      "vena saphena parva",
+      "lateral malleol arkası",
+      "popliteal ven",
+      "posterior bacak"
+    ]
+  },
+  "tus-pearl-anatomy-129-spot": {
+    "front": "Tarsal tünel sendromunda fleksör retinakulum altında sıkışan temel sinir hangisidir?",
+    "back": "Tibial sinir.",
+    "answer": "Tibial sinir.",
+    "explanation": "Tarsal tünel medial malleol arkasında, fleksör retinakulum altında yer alır ve tibial sinir burada posterior tibial damarlarla birlikte seyreder. Bası, ayak tabanında ağrı ve paresteziye neden olabilir.",
+    "tusTip": "Tarsal tünel = tibial sinir; karpal tünel = median sinir şeklinde yüksek verimli karşılaştırılır.",
+    "differentialNote": "Common fibular sinir fibula boynunda sık yaralanır ve düşük ayak yapar; tarsal tünel basısı taban duyusuyla ilişkilidir.",
+    "keywords": [
+      "tarsal tünel",
+      "tibial sinir",
+      "fleksör retinakulum",
+      "taban parestezisi"
+    ]
+  },
+  "tus-pearl-anatomy-129-extra": {
+    "front": "Tarsal tünel basısında duyusal yakınmaların ayak tabanına yayılması hangi sinir dallarıyla açıklanır?",
+    "back": "Medial ve lateral plantar sinirler.",
+    "answer": "Medial ve lateral plantar sinirler.",
+    "explanation": "Tibial sinir tarsal tünelden geçtikten sonra medial ve lateral plantar dallara ayrılır. Bu dallar ayak tabanı derisi ve intrinsik kaslarıyla ilişkili olduğu için tarsal tünel sendromunda plantar ağrı/parestezi beklenir.",
+    "tusTip": "Tarsal tünel sorusunda şikâyet dorsumda değil tabanda belirginse tibial sinir ve plantar dallar düşünülür.",
+    "differentialNote": "Derin fibular sinir ayak sırtında özellikle birinci web aralığı duyusuyla ilişkilidir; plantar yayılım tarsal tüneli destekler.",
+    "keywords": [
+      "medial plantar sinir",
+      "lateral plantar sinir",
+      "tibial sinir",
+      "ayak tabanı"
+    ]
+  },
+  "tus-pearl-anatomy-130-spot": {
+    "front": "Median epizyotomide zedelenmesi pelvik taban desteğini bozabilecek merkezi yapı hangisidir?",
+    "back": "Corpus perineale.",
+    "answer": "Corpus perineale.",
+    "explanation": "Corpus perineale perine ortasında birçok kas ve fasya lifinin birleştiği fibromüsküler düğümdür. Median kesi bu yapıya uzanırsa pelvik taban desteği zayıflayabilir ve perineal yırtıklar derinleşebilir.",
+    "tusTip": "Median epizyotomi + merkezi destek yapısı = corpus perineale.",
+    "differentialNote": "Mediolateral epizyotomi farklı kas liflerini kesebilir ancak anal sfinktere direkt uzanma riski median keside daha belirgin vurgulanır.",
+    "keywords": [
+      "median epizyotomi",
+      "corpus perineale",
+      "pelvik taban",
+      "perine desteği"
+    ]
+  },
+  "tus-pearl-anatomy-130-extra": {
+    "front": "Corpus perineale neden doğum ve pelvik taban anatomisinde kritik bir destek noktasıdır?",
+    "back": "Perineal kas ve fasya liflerinin merkezi tutunma noktasıdır.",
+    "answer": "Perineal kas ve fasya liflerinin merkezi tutunma noktasıdır.",
+    "explanation": "Bulbospongiosus, external anal sphincter ve transvers perineal kaslar gibi yapılar corpus perineale ile ilişkilidir. Bu nedenle yapının zedelenmesi perineal stabiliteyi ve pelvik organ desteğini etkileyebilir.",
+    "tusTip": "Corpus perineale tek bir kas değil, perineyi bir arada tutan fibromüsküler merkezdir.",
+    "differentialNote": "Perineal membran daha çok ürogenital üçgenin fasiyal tabakasıdır; merkezi kas-fasya düğümü olarak sorulan yapı corpus perinealedir.",
+    "keywords": [
+      "corpus perineale",
+      "fibromüsküler merkez",
+      "external anal sphincter",
+      "pelvik destek"
+    ]
+  },
+  "tus-pearl-anatomy-176-spot": {
+    "front": "Anterior omuz çıkığı sonrası deltoid güçsüzlüğü ve lateral omuz duyusu kaybı hangi sinirin yaralanmasına işaret eder?",
+    "back": "Nervus axillaris.",
+    "answer": "Nervus axillaris.",
+    "explanation": "Aksiller sinir cerrahi boyun çevresinde ve quadrangular aralıkta seyreder; deltoid ile teres minor kaslarını innerve eder. Superior lateral cutaneous nerve of arm dalı lateral omuz duyusunu taşır.",
+    "tusTip": "Omuz çıkığı + deltoid zayıflığı + “regimental badge” duyusu = aksiller sinir.",
+    "differentialNote": "Radial sinir düşük el yapar; suprascapular sinir supraspinatus/infraspinatus üzerinden omuz başlangıç hareketlerini etkiler fakat lateral omuz duyusu vermez.",
+    "keywords": [
+      "aksiller sinir",
+      "omuz çıkığı",
+      "deltoid",
+      "lateral omuz duyusu"
+    ]
+  },
+  "tus-pearl-anatomy-176-extra": {
+    "front": "Quadrangular aralıktan aksiller sinirle birlikte geçen damar hangisidir?",
+    "back": "Arteria circumflexa humeri posterior.",
+    "answer": "Arteria circumflexa humeri posterior.",
+    "explanation": "Quadrangular aralık teres minor, teres major, humerus cerrahi boynu ve triceps uzun başı ile sınırlanır. Aksiller sinir bu aralıktan posterior circumflex humeral arterle birlikte geçer.",
+    "tusTip": "Quadrangular space denince aksiller sinir + posterior circumflex humeral arter birlikte düşünülür.",
+    "differentialNote": "Triangular aralık daha çok circumflex scapular damarların geçişiyle ilişkilidir; aksiller sinirin klasik geçişi quadrangular aralıktır.",
+    "keywords": [
+      "quadrangular aralık",
+      "aksiller sinir",
+      "posterior circumflex humeral arter",
+      "teres minor"
+    ]
+  },
+  "tus-pearl-anatomy-177-spot": {
+    "front": "Duvara itme testinde skapulanın medial kenarının kanatlanması hangi sinir-kas biriminin kaybını düşündürür?",
+    "back": "Nervus thoracicus longus ve serratus anterior.",
+    "answer": "Nervus thoracicus longus ve serratus anterior.",
+    "explanation": "Long thoracic sinir serratus anterior kasını innerve eder. Serratus anterior skapulayı toraks duvarına sabitler ve yukarı rotasyona yardım eder; kaybında medial kanatlanma ve kolu baş üstüne kaldırmada güçlük gelişir.",
+    "tusTip": "Kanat skapula + serratus anterior = long thoracic sinir; özellikle aksiller cerrahi sonrası sorulur.",
+    "differentialNote": "Spinal aksesuar sinir trapezius zayıflığı ve omuz düşüklüğü yapar; medial kenarın belirgin kanatlanması serratus anterior kaybına daha tipiktir.",
+    "keywords": [
+      "long thoracic sinir",
+      "serratus anterior",
+      "kanat skapula",
+      "duvar itme testi"
+    ]
+  },
+  "tus-pearl-anatomy-177-extra": {
+    "front": "Serratus anterior kaybında kolun baş üzerine kaldırılması neden zorlaşır?",
+    "back": "Skapulanın yukarı rotasyonu ve toraks duvarına sabitlenmesi bozulur.",
+    "answer": "Skapulanın yukarı rotasyonu ve toraks duvarına sabitlenmesi bozulur.",
+    "explanation": "Omuz elevasyonunda humerus hareketine skapulanın kontrollü yukarı rotasyonu eşlik eder. Serratus anterior bu rotasyona ve skapulanın göğüs duvarında tutulmasına katkı verdiği için kaybı abduksiyon/elevasyonun ileri kısmını bozar.",
+    "tusTip": "Serratus anterior yalnız “skapula kanatlanması” değil, baş üstü elevasyon mekaniği için de kritiktir.",
+    "differentialNote": "Deltoid kaybı 15–90° abduksiyonu bozar; serratus anterior kaybında sorun skapulotorasik stabilizasyon ve yukarı rotasyondur.",
+    "keywords": [
+      "serratus anterior",
+      "skapula yukarı rotasyonu",
+      "baş üstü elevasyon",
+      "skapulotorasik stabilite"
+    ]
+  },
+  "tus-pearl-anatomy-178-spot": {
+    "front": "Tiroid cerrahisi sonrası ses kısıklığı ve vokal kord hareket bozukluğu en çok hangi sinir yaralanmasıyla ilişkilidir?",
+    "back": "Nervus laryngeus recurrens.",
+    "answer": "Nervus laryngeus recurrens.",
+    "explanation": "Rekürren laringeal sinir krikotiroid dışındaki intrensek larinks kaslarının motor innervasyonunu sağlar. Tiroidin posteromedialinde inferior tiroid arter dallarıyla yakın komşuluğu nedeniyle cerrahide risk altındadır.",
+    "tusTip": "Tiroid cerrahisi + ses kısıklığı/vokal kord paralizisi = rekürren laringeal sinir.",
+    "differentialNote": "External laryngeal sinir krikotiroid kası etkileyerek tiz ses çıkarma güçlüğü yapar; yaygın vokal kord hareket bozukluğu rekürren sinir lehinedir.",
+    "keywords": [
+      "rekürren laringeal sinir",
+      "tiroid cerrahisi",
+      "vokal kord",
+      "inferior tiroid arter"
+    ]
+  },
+  "tus-pearl-anatomy-178-extra": {
+    "front": "Tiroid üst pol cerrahisinden sonra tiz ses çıkarma güçlüğü hangi sinir ve kas ilişkisiyle açıklanır?",
+    "back": "External laryngeal sinir ve cricothyroid kas.",
+    "answer": "External laryngeal sinir ve cricothyroid kas.",
+    "explanation": "External laryngeal sinir superior thyroid arterle komşu seyreder ve cricothyroid kası innerve eder. Cricothyroid kas vokal kordları gererek ses perdesini yükseltir; hasarında yüksek perdeli ses zorlaşır.",
+    "tusTip": "Ses kısıklığı/vokal kord paralizisi rekürren; tiz ses kaybı-cricothyroid dış laringeal sinir ayrımı TUS için kritiktir.",
+    "differentialNote": "Internal laryngeal sinir supraglottik duyu taşır; cricothyroid motor fonksiyonu external laryngeal dala aittir.",
+    "keywords": [
+      "external laryngeal sinir",
+      "cricothyroid",
+      "tiz ses",
+      "superior thyroid arter"
+    ]
+  },
+  "tus-pearl-anatomy-179-spot": {
+    "front": "Sağ üst vücut kadranı dışındaki lenfin büyük kısmı hangi kanal üzerinden venöz sisteme dökülür?",
+    "back": "Ductus thoracicus.",
+    "answer": "Ductus thoracicus.",
+    "explanation": "Ductus thoracicus alt ekstremiteler, abdomen, sol toraks, sol üst ekstremite ve sol baş-boyundan gelen lenfi taşır. Genellikle sol venöz açıya, yani sol internal juguler ve sol subklavian ven birleşimine dökülür.",
+    "tusTip": "Thoracic duct tüm alt vücut + sol üst kadranı drene eder; sağ lenfatik kanal yalnız sağ üst kadrandır.",
+    "differentialNote": "Sağ lenfatik kanal sağ baş-boyun, sağ üst ekstremite ve sağ toraksın bir bölümünü drene eder; alt ekstremite lenfi ona gitmez.",
+    "keywords": [
+      "ductus thoracicus",
+      "sol venöz açı",
+      "lenf drenajı",
+      "alt ekstremite"
+    ]
+  },
+  "tus-pearl-anatomy-179-extra": {
+    "front": "Sağ lenfatik kanal hangi vücut bölgesinin lenfini toplamasıyla ductus thoracicus’tan ayrılır?",
+    "back": "Sağ baş-boyun, sağ üst ekstremite ve sağ toraksın üst bölümü.",
+    "answer": "Sağ baş-boyun, sağ üst ekstremite ve sağ toraksın üst bölümü.",
+    "explanation": "Sağ lenfatik kanal sınırlı bir sağ üst kadran drenajına sahiptir ve sağ venöz açıya açılır. Vücudun geri kalan büyük kısmı ductus thoracicus aracılığıyla sol venöz açıya döner.",
+    "tusTip": "Lenf drenajında istisna sağ üst kadrandır; bunun dışı genel olarak thoracic duct alanıdır.",
+    "differentialNote": "Sol üst ekstremite ve tüm alt vücut sağ lenfatik kanalın alanı değildir; bu bölgeler thoracic duct ile taşınır.",
+    "keywords": [
+      "sağ lenfatik kanal",
+      "sağ venöz açı",
+      "sağ üst kadran",
+      "thoracic duct"
+    ]
+  },
+  "tus-pearl-anatomy-180-spot": {
+    "front": "Küçük laküner infarktta kontralateral saf motor hemiparezi oluşması internal kapsülün en çok hangi bölümüyle ilişkilidir?",
+    "back": "Capsula interna’nın posterior bacağı.",
+    "answer": "Capsula interna’nın posterior bacağı.",
+    "explanation": "Kortikospinal ve kortikobulber motor lifler internal kapsülün genu-posterior bacak bölgesinde yoğunlaşır; özellikle posterior bacak saf motor defisitlerle ilişkilidir. Liflerin sıkışık seyri küçük lezyonların bile belirgin hemiparezi yapmasını açıklar.",
+    "tusTip": "Saf motor inme + laküner infarkt + internal kapsül = posterior bacak/kortikospinal lifler.",
+    "differentialNote": "Kapsülün anterior bacağı daha çok frontopontin lifler ve davranışsal-bilişsel bağlantılarla ilişkilidir; saf motor sendromda posterior bacak öne çıkar.",
+    "keywords": [
+      "internal kapsül",
+      "posterior bacak",
+      "kortikospinal trakt",
+      "saf motor inme"
+    ]
+  },
+  "tus-pearl-anatomy-180-extra": {
+    "front": "Internal kapsül lezyonlarında küçük bir hasarın geniş motor defisit yapabilmesinin anatomik nedeni nedir?",
+    "back": "Kortikospinal liflerin dar bir alanda yoğunlaşması.",
+    "answer": "Kortikospinal liflerin dar bir alanda yoğunlaşması.",
+    "explanation": "Internal kapsül projeksiyon liflerinin kompakt geçtiği bir beyaz cevher yoludur. Bu nedenle küçük damar hastalığına bağlı sınırlı bir lezyon bile vücudun karşı tarafında yüz-kol-bacak motor bulgularını birlikte etkileyebilir.",
+    "tusTip": "Kortikal lezyonda homunkulus dağılımı daha seçici olabilir; internal kapsülde lifler sıkışık olduğu için defisit yoğun ve yaygındır.",
+    "differentialNote": "Beyin sapı lezyonlarında çapraz bulgular ve kraniyal sinir işaretleri eşlik edebilir; izole saf motor patern internal kapsülü destekler.",
+    "keywords": [
+      "kompakt lifler",
+      "kortikospinal trakt",
+      "laküner infarkt",
+      "kontralateral hemiparezi"
+    ]
+  },
+  "tus-pearl-anatomy-181-spot": {
+    "front": "Akıcı olmayan, eforlu konuşma fakat görece korunmuş anlama hangi dominant hemisfer alanının lezyonunu düşündürür?",
+    "back": "Broca alanı.",
+    "answer": "Broca alanı.",
+    "explanation": "Broca alanı dominant inferior frontal girusta yer alır ve motor konuşma üretimiyle ilişkilidir. Lezyonda hasta ne söylemek istediğini büyük ölçüde anlar fakat kelime üretimi yavaş, eforlu ve gramerden fakirdir.",
+    "tusTip": "Non-fluent afazi + korunmuş anlama = Broca; lokalizasyon dominant inferior frontal girustur.",
+    "differentialNote": "Wernicke lezyonunda konuşma akıcı olabilir fakat anlama bozulur ve içerik anlamsızlaşır.",
+    "keywords": [
+      "Broca alanı",
+      "inferior frontal girus",
+      "non-fluent afazi",
+      "dominant hemisfer"
+    ]
+  },
+  "tus-pearl-anatomy-181-extra": {
+    "front": "Broca afazisinin anatomik lokalizasyonu hangi girus ve hemisferle ilişkilidir?",
+    "back": "Dominant hemisfer inferior frontal girusu.",
+    "answer": "Dominant hemisfer inferior frontal girusu.",
+    "explanation": "Çoğu kişide dil dominant hemisfer soldur ve Broca alanı inferior frontal girusun posterior kısmında yer alır. Bu bölge konuşma motor programını düzenlediği için lezyon eforlu, tutuk konuşma yapar.",
+    "tusTip": "Broca = dominant inferior frontal; Wernicke = dominant superior temporal şeklinde lokalize edilir.",
+    "differentialNote": "Motor korteks lezyonu dizartri veya yüz-kol güçsüzlüğü yapabilir; Broca afazisi dil üretim programının bozulmasıdır.",
+    "keywords": [
+      "dominant hemisfer",
+      "inferior frontal girus",
+      "motor konuşma",
+      "Broca afazisi"
+    ]
+  },
+  "tus-pearl-anatomy-182-spot": {
+    "front": "Akıcı fakat anlamsız konuşma ve belirgin anlama bozukluğu hangi dil alanı lezyonuna özgüdür?",
+    "back": "Wernicke alanı.",
+    "answer": "Wernicke alanı.",
+    "explanation": "Wernicke alanı dominant superior temporal girusun posterior bölümüyle ilişkilidir ve işitsel-dil anlamlandırmasında rol alır. Lezyonda konuşma akıcıdır ancak içerik anlamsız olabilir ve hasta söyleneni anlamakta zorlanır.",
+    "tusTip": "Fluent afazi + kötü anlama = Wernicke; non-fluent + iyi anlama = Broca.",
+    "differentialNote": "Broca lezyonunda hasta çoğunlukla anlar fakat konuşamaz; Wernicke lezyonunda konuşma akıcı olsa da anlam bozulur.",
+    "keywords": [
+      "Wernicke alanı",
+      "superior temporal girus",
+      "fluent afazi",
+      "anlama bozukluğu"
+    ]
+  },
+  "tus-pearl-anatomy-182-extra": {
+    "front": "Wernicke alanı klasik olarak dominant hemisferde hangi kortikal bölgeyle ilişkilidir?",
+    "back": "Posterior superior temporal girus.",
+    "answer": "Posterior superior temporal girus.",
+    "explanation": "Wernicke alanı dilin anlamlandırılması için kritik temporal korteks bölgesidir. Bu alanın lezyonu akıcı ama anlamsız konuşma, parafazi ve bozulmuş anlama ile sonuçlanır.",
+    "tusTip": "Dil alanlarında lokalizasyonu cümleyle hatırla: Broca frontal üretir, Wernicke temporal anlar.",
+    "differentialNote": "Arcuate fasciculus lezyonunda iletim afazisi ve belirgin tekrar bozukluğu beklenir; primer anlama bozukluğu Wernicke alanını düşündürür.",
+    "keywords": [
+      "posterior superior temporal girus",
+      "dominant hemisfer",
+      "dil anlama",
+      "Wernicke afazisi"
+    ]
+  },
+  "tus-pearl-anatomy-183-spot": {
+    "front": "Pterion travmasından sonra epidural hematom gelişmesi en çok hangi arterin yırtılmasıyla açıklanır?",
+    "back": "Arteria meningea media.",
+    "answer": "Arteria meningea media.",
+    "explanation": "Pterion, frontal, parietal, temporal ve sfenoid kemiklerin birleşim bölgesidir ve orta meningeal arterin anterior dalı bu bölgede kemiğe yakın seyreder. Kırık arter yırtığına ve arteriyel epidural kanamaya yol açabilir.",
+    "tusTip": "Pterion + lucid interval + epidural hematom = orta meningeal arter.",
+    "differentialNote": "Subdural hematom genellikle köprü venlerin yırtılmasıyla oluşur ve venöz kökenlidir; epidural hematomda klasik damar arteria meningea media’dır.",
+    "keywords": [
+      "pterion",
+      "orta meningeal arter",
+      "epidural hematom",
+      "lucid interval"
+    ]
+  },
+  "tus-pearl-anatomy-183-extra": {
+    "front": "Epidural ve subdural hematomu anatomik damar kaynağı açısından ayıran temel fark nedir?",
+    "back": "Epidural hematom çoğunlukla orta meningeal arter; subdural hematom köprü venleri kaynaklıdır.",
+    "answer": "Epidural hematom çoğunlukla orta meningeal arter; subdural hematom köprü venleri kaynaklıdır.",
+    "explanation": "Epidural kanama dura ile kafatası arasında arteriyel basınçla birikir ve lentiform görünümle ilişkilidir. Subdural kanama dura ile araknoid arasında köprü venlerin yırtılmasıyla gelişir ve daha yayvan olabilir.",
+    "tusTip": "Travma sorusunda pterion/arter/lucid interval epidural; yaşlı veya beyin atrofisi/köprü ven subdural lehinedir.",
+    "differentialNote": "Subaraknoid kanama bazal sisternalarda kan ve ani şiddetli baş ağrısıyla sorulur; pterion-orta meningeal arter ikilisi epiduraldir.",
+    "keywords": [
+      "epidural hematom",
+      "subdural hematom",
+      "orta meningeal arter",
+      "köprü ven"
+    ]
+  },
+  "tus-pearl-anatomy-184-spot": {
+    "front": "Mide, dalak, karaciğer ve proksimal duodenum gibi foregut organlarının ana arteriyel gövdesi hangisidir?",
+    "back": "Truncus coeliacus.",
+    "answer": "Truncus coeliacus.",
+    "explanation": "Truncus coeliacus foregut türevlerinin ana arteriyel kaynağıdır. Klasik üç ana dalı sol gastrik, splenik ve common hepatic arterdir.",
+    "tusTip": "Foregut organları ve üçlü dal — sol gastrik, splenik, common hepatic — truncus coeliacus’u işaret eder.",
+    "differentialNote": "SMA midgut, IMA hindgut kanlanmasını sağlar; mide ve dalak için ana gövde celiac trunk’tır.",
+    "keywords": [
+      "truncus coeliacus",
+      "foregut",
+      "sol gastrik arter",
+      "splenik arter"
+    ]
+  },
+  "tus-pearl-anatomy-184-extra": {
+    "front": "Truncus coeliacus’un klasik üç ana dalı hangileridir?",
+    "back": "Sol gastrik arter, splenik arter ve common hepatic arter.",
+    "answer": "Sol gastrik arter, splenik arter ve common hepatic arter.",
+    "explanation": "Celiac trunk kısa bir arter gövdesidir ve foregut organlarını bu üç ana dal üzerinden besler. Dalların organ dağılımı mide, dalak, karaciğer, safra yolları, pankreasın bir bölümü ve proksimal duodenumla ilişkilidir.",
+    "tusTip": "Celiac trunk dalları “left gastric–splenic–common hepatic” üçlüsüyle ezberlenir; superior mesenteric bu üçlüye dahil değildir.",
+    "differentialNote": "Gastroduodenal arter common hepatic sisteminden çıkar; truncus coeliacus’un doğrudan üç ana dalından biri olarak sayılmaz.",
+    "keywords": [
+      "left gastric",
+      "splenic",
+      "common hepatic",
+      "foregut arterleri"
+    ]
+  },
+  "tus-pearl-anatomy-185-spot": {
+    "front": "Distal duodenumdan proksimal iki üçüncü transvers kolona kadar uzanan midgut segmentlerinin ana damarı hangisidir?",
+    "back": "Arteria mesenterica superior.",
+    "answer": "Arteria mesenterica superior.",
+    "explanation": "Süperior mezenterik arter midgut türevlerini besler; distal duodenum, jejunum, ileum, çekum, apendiks, çıkan kolon ve transvers kolonun proksimal iki üçünü kapsar. Bu dağılım bağırsak embriyolojisi ve volvulus/iskemi sorularında önemlidir.",
+    "tusTip": "Midgut sınırı distal duodenumdan proksimal 2/3 transvers kolona kadar; ana damar SMA’dır.",
+    "differentialNote": "Truncus coeliacus foregut, inferior mezenterik arter distal 1/3 transvers kolondan üst rektuma kadar hindgut alanını besler.",
+    "keywords": [
+      "SMA",
+      "midgut",
+      "distal duodenum",
+      "proksimal transvers kolon"
+    ]
+  },
+  "tus-pearl-anatomy-185-extra": {
+    "front": "Apendiks ve çekumun arteriyel beslenmesi hangi ana mezenterik damar alanına dahildir?",
+    "back": "Arteria mesenterica superior alanı.",
+    "answer": "Arteria mesenterica superior alanı.",
+    "explanation": "Çekum ve apendiks midgut türevleridir; ileocolic arter üzerinden superior mezenterik arter sisteminden kanlanırlar. Bu nedenle sağ alt kadran bağırsak segmentleri SMA dağılımında değerlendirilir.",
+    "tusTip": "Apendiks-çekum-ileum üçlüsü midgut/SMA haritasının pratik sınav ipucudur.",
+    "differentialNote": "Sigmoid kolon ve üst rektum IMA alanına girer; apendiks ve çekum IMA değil SMA ile ilişkilidir.",
+    "keywords": [
+      "apendiks",
+      "çekum",
+      "ileocolic arter",
+      "SMA"
+    ]
+  },
+  "tus-pearl-anatomy-186-spot": {
+    "front": "Distal üçte bir transvers kolon, inen kolon ve sigmoid kolonun ana arteriyel kaynağı hangisidir?",
+    "back": "Arteria mesenterica inferior.",
+    "answer": "Arteria mesenterica inferior.",
+    "explanation": "İnferior mezenterik arter hindgut türevlerinin ana damarıdır. Sol colic, sigmoid ve superior rectal dallarıyla distal transvers kolonun üçte biri, inen kolon, sigmoid kolon ve üst rektumu besler.",
+    "tusTip": "Hindgut haritası distal 1/3 transvers kolonla başlar ve üst rektuma kadar IMA ile gider.",
+    "differentialNote": "SMA proksimal 2/3 transvers kolonda biter; distal transvers ve sigmoid kolon IMA alanıdır.",
+    "keywords": [
+      "IMA",
+      "hindgut",
+      "sigmoid kolon",
+      "superior rectal arter"
+    ]
+  },
+  "tus-pearl-anatomy-186-extra": {
+    "front": "İnferior mezenterik arterin rektuma uzanan terminal dalı hangisidir?",
+    "back": "Arteria rectalis superior.",
+    "answer": "Arteria rectalis superior.",
+    "explanation": "İMA, superior rectal arter olarak devam ederek üst rektumun arteriyel beslenmesine katılır. Bu bağlantı hindgut damar alanının rektuma kadar uzandığını gösterir.",
+    "tusTip": "IMA’nın terminal devamı superior rectal arterdir; orta ve inferior rectal arterler internal iliac sistemle ilişkilidir.",
+    "differentialNote": "Superior rectal arter portal sistemle, middle/inferior rectal venöz drenaj sistemik bağlantılarla anılır; anorektal portal-kaval anastomoz sorularında bu ayrım önemlidir.",
+    "keywords": [
+      "superior rectal arter",
+      "IMA",
+      "üst rektum",
+      "hindgut"
+    ]
+  },
+  "tus-pearl-anatomy-187-spot": {
+    "front": "Sol varikoselin sağa göre daha sık görülmesi sol testiküler venin hangi drenaj özelliğiyle açıklanır?",
+    "back": "Sol testiküler venin sol renal vene dik açıyla açılması.",
+    "answer": "Sol testiküler venin sol renal vene dik açıyla açılması.",
+    "explanation": "Sol testiküler ven doğrudan vena cava inferiora değil sol renal vene açılır. Sol renal ven basıncı veya drenaj açısı arttığında pampiniform pleksusta venöz göllenme ve varikosel gelişimine yatkınlık oluşur.",
+    "tusTip": "Sol varikosel = sol testiküler ven → sol renal ven; sağ testiküler ven → VCI.",
+    "differentialNote": "Sağ taraflı izole yeni varikosel retroperitoneal kitle açısından uyarıcı olabilir; klasik anatomik yatkınlık soldadır.",
+    "keywords": [
+      "sol varikosel",
+      "sol testiküler ven",
+      "sol renal ven",
+      "pampiniform pleksus"
+    ]
+  },
+  "tus-pearl-anatomy-187-extra": {
+    "front": "Sağ ve sol testiküler venlerin ana drenaj farkı nedir?",
+    "back": "Sağ testiküler ven inferior vena kavaya, sol testiküler ven sol renal vene dökülür.",
+    "answer": "Sağ testiküler ven inferior vena kavaya, sol testiküler ven sol renal vene dökülür.",
+    "explanation": "Bu asimetrik venöz drenaj sol tarafta venöz basınca duyarlılığı artırır. Varikosel sorularında bu fark, skrotal venöz genişlemenin neden çoğu kez solda belirgin olduğunu açıklar.",
+    "tusTip": "Testiküler venlerde sağ direkt VCI, sol renal ven üzerinden dolaylı drenaj yapar.",
+    "differentialNote": "Testiküler arterler her iki tarafta abdominal aortadan çıkar; varikosel farkını belirleyen ana yapı arter değil venöz drenajdır.",
+    "keywords": [
+      "sağ testiküler ven",
+      "inferior vena kava",
+      "sol renal ven",
+      "venöz drenaj"
+    ]
+  },
+  "tus-pearl-anatomy-188-spot": {
+    "front": "Femoral herninin strangülasyona yatkın olmasını açıklayan temel anatomik neden nedir?",
+    "back": "Femoral kanalın dar ve sert sınırlı femoral halka içinden geçmesi.",
+    "answer": "Femoral kanalın dar ve sert sınırlı femoral halka içinden geçmesi.",
+    "explanation": "Femoral kanal femoral venin medialinde, inguinal ligament ve laküner ligament gibi sert yapılarla sınırlı dar bir boşluktur. Herni kesesi bu halkadan geçtiğinde genişleme kapasitesi az olduğu için boğulma riski artar.",
+    "tusTip": "Femoral herni daha az sık ama daha çok strangüle olur; ana neden dar femoral ring ve laküner ligament komşuluğudur.",
+    "differentialNote": "İnguinal herniler daha sık görülür; femoral herni inguinal ligamentin altında ve femoral venin medialinde yer alır.",
+    "keywords": [
+      "femoral kanal",
+      "femoral halka",
+      "laküner ligament",
+      "strangülasyon"
+    ]
+  },
+  "tus-pearl-anatomy-188-extra": {
+    "front": "Femoral kanal, femoral üçgende femoral vene göre hangi konumda yer alır?",
+    "back": "Femoral venin medialinde.",
+    "answer": "Femoral venin medialinde.",
+    "explanation": "Femoral kılıf içinde lateralden mediale doğru femoral arter, femoral ven ve femoral kanal sıralanır. Femoral herni bu kanal boyunca ilerleyerek inguinal ligamentin altında kitle oluşturabilir.",
+    "tusTip": "Femoral üçgende NAVeL dizilimi: Nerve, Artery, Vein, empty space/lymphatics.",
+    "differentialNote": "Femoral sinir femoral kılıf içinde değildir ve arterin lateralindedir; femoral kanal ise venin medialindeki boşluktur.",
+    "keywords": [
+      "femoral ven",
+      "femoral kanal",
+      "NAVeL",
+      "inguinal ligament"
+    ]
+  },
+  "tus-pearl-anatomy-189-spot": {
+    "front": "Gece artan ilk üç buçuk parmak parestezisi ve thenar güçsüzlükte karpal tünelde sıkışan sinir hangisidir?",
+    "back": "Median sinir.",
+    "answer": "Median sinir.",
+    "explanation": "Median sinir fleksör tendonlarla birlikte karpal tünelden geçer. Bası, lateral 3,5 parmakta parestezi ve thenar kaslarda zayıflık yapabilir; palmar kutanöz dal tünelden geçmediği için avuç içi duyusu görece korunabilir.",
+    "tusTip": "Karpal tünel = median sinir; ulnar sinir karpal tünelden değil Guyon kanalından geçer.",
+    "differentialNote": "Ulnar sinir lezyonunda 4–5. parmak duyusu ve interosseöz fonksiyon bozulur; median sinirde thenar/opozisyon bulgusu öne çıkar.",
+    "keywords": [
+      "karpal tünel",
+      "median sinir",
+      "thenar zayıflık",
+      "ilk 3,5 parmak"
+    ]
+  },
+  "tus-pearl-anatomy-189-extra": {
+    "front": "Karpal tünelden geçmeyip Guyon kanalında sıkışabilen sinir hangisidir?",
+    "back": "Ulnar sinir.",
+    "answer": "Ulnar sinir.",
+    "explanation": "Ulnar sinir ve ulnar arter el bileğinde flexor retinaculumun yüzeyelinde Guyon kanalından geçer. Bu nedenle ulnar sinir basısı karpal tünel sendromu değil, farklı bir kanal patolojisi olarak düşünülmelidir.",
+    "tusTip": "Median sinir karpal tünelde; ulnar sinir Guyon kanalında sorulur.",
+    "differentialNote": "Karpal tünelde median sinirle birlikte fleksör tendonlar bulunur; ulnar sinir karpal tünel içeriği sayılmaz.",
+    "keywords": [
+      "Guyon kanalı",
+      "ulnar sinir",
+      "karpal tünel",
+      "median sinir"
+    ]
+  },
+  "tus-pearl-anatomy-190-spot": {
+    "front": "Doğumda perine analjezisi için yapılan pudendal sinir bloğunda palpasyonla hedef alınan kemik çıkıntı hangisidir?",
+    "back": "Spina ischiadica.",
+    "answer": "Spina ischiadica.",
+    "explanation": "Pudendal sinir S2–S4 kökenlidir, sakrospinal ligament ve spina ischiadica komşuluğundan geçerek pudendal kanala ilerler. Bu komşuluk doğum analjezisi için sinir bloğunda pratik hedef oluşturur.",
+    "tusTip": "Pudendal blokta ana landmark iskial spina/sakrospinal ligament komşuluğudur.",
+    "differentialNote": "Femoral sinir ön uyluk ve quadricepsle ilişkilidir; perine analjezisi için pudendal sinir hedeflenir.",
+    "keywords": [
+      "pudendal sinir",
+      "spina ischiadica",
+      "S2-S4",
+      "perine analjezisi"
+    ]
+  },
+  "tus-pearl-anatomy-190-extra": {
+    "front": "Pudendal sinir hangi spinal segmentlerden köken alır ve hangi ana bölgenin duyusunu taşır?",
+    "back": "S2–S4; perine duyusu ve dış genital bölge.",
+    "answer": "S2–S4; perine duyusu ve dış genital bölge.",
+    "explanation": "Pudendal sinir sakral pleksustan çıkar, pelvis dışına greater sciatic foramenle çıkar ve lesser sciatic foramenle perineye döner. Perine duyusu yanında external anal sphincter ve external urethral sphincter gibi somatik motor yapılarla da ilişkilidir.",
+    "tusTip": "Pudendal sinir S2–S4’tür: perine duyusu + eksternal sfinkterlerin somatik kontrolü.",
+    "differentialNote": "Pelvik splanknik sinirler de S2–S4 kökenlidir ancak parasempatik visseral lif taşır; pudendal sinir somatik perine siniridir.",
+    "keywords": [
+      "S2-S4",
+      "pudendal sinir",
+      "perine",
+      "eksternal sfinkter"
+    ]
+  },
+  "tus-pearl-anatomy-191-spot": {
+    "front": "Burun ve üst dudak çevresi enfeksiyonlarının kavernöz sinüse yayılabilmesi hangi venöz anatomiyle açıklanır?",
+    "back": "Yüz venlerinin kapakçıksız olması ve oftalmik venlerle bağlantısı.",
+    "answer": "Yüz venlerinin kapakçıksız olması ve oftalmik venlerle bağlantısı.",
+    "explanation": "Facial/angular venler superior ve inferior ophthalmic venlerle kavernöz sinüse bağlantı kurabilir. Kapakçıkların olmaması enfeksiyonun retrograd yayılımını kolaylaştırır.",
+    "tusTip": "Tehlikeli yüz üçgeni + kapakçıksız venler + oftalmik ven bağlantısı = kavernöz sinüs riski.",
+    "differentialNote": "Bu mekanizma primer lenfatik drenajla açıklanmaz; sınavda venöz bağlantı ve kapakçık yokluğu sorgulanır.",
+    "keywords": [
+      "tehlikeli yüz üçgeni",
+      "facial vein",
+      "ophthalmic vein",
+      "kavernöz sinüs"
+    ]
+  },
+  "tus-pearl-anatomy-191-extra": {
+    "front": "Yüzün tehlikeli üçgeninden kavernöz sinüse uzanan başlıca venöz bağlantı hangi venler üzerinden kurulur?",
+    "back": "Angular/facial venlerden superior ophthalmic ven aracılığıyla.",
+    "answer": "Angular/facial venlerden superior ophthalmic ven aracılığıyla.",
+    "explanation": "Angular ven orbital venöz sistemle bağlantı kurar ve superior ophthalmic ven kavernöz sinüse drene olur. Kapakçıksız venöz sistem nedeniyle enfeksiyon retrograd yönde ilerleyebilir.",
+    "tusTip": "Üst dudak-burun enfeksiyonu sorusunda yol: facial/angular vein → superior ophthalmic vein → cavernous sinus.",
+    "differentialNote": "Pterygoid venöz pleksus da kavernöz sinüsle bağlantılı olabilir; klasik tehlikeli yüz üçgeni anlatımı angular/superior ophthalmic ven üzerinden verilir.",
+    "keywords": [
+      "angular vein",
+      "superior ophthalmic vein",
+      "cavernous sinus",
+      "kapakçıksız ven"
+    ]
+  },
+  "tus-pearl-anatomy-192-spot": {
+    "front": "Patella refleksinde azalma ve diz ekstansiyonunda güçsüzlük hangi sinirin motor fonksiyon kaybını düşündürür?",
+    "back": "Femoral sinir.",
+    "answer": "Femoral sinir.",
+    "explanation": "Femoral sinir L2–L4 kökenlidir ve quadriceps femoris kasını innerve eder. Quadriceps diz ekstansiyonunu sağlar ve patellar refleks arkının temel motor bileşenidir.",
+    "tusTip": "Patella refleksi + quadriceps + diz ekstansiyonu = femoral sinir/L2–L4.",
+    "differentialNote": "Obturator sinir uyluk adduksiyonunu etkiler; siyatik sinir posterior uyluk ve bacak-ayak dallarıyla ilişkilidir.",
+    "keywords": [
+      "femoral sinir",
+      "quadriceps",
+      "patella refleksi",
+      "L2-L4"
+    ]
+  },
+  "tus-pearl-anatomy-192-extra": {
+    "front": "Femoral sinir ile obturator sinir alt ekstremitede hangi temel hareketlerle ayırt edilir?",
+    "back": "Femoral sinir diz ekstansiyonu; obturator sinir uyluk adduksiyonu ile ilişkilidir.",
+    "answer": "Femoral sinir diz ekstansiyonu; obturator sinir uyluk adduksiyonu ile ilişkilidir.",
+    "explanation": "Femoral sinir anterior uyluk kompartmanını, özellikle quadriceps’i innerve eder. Obturator sinir medial uyluk adduktorlarını innerve ederek kalça adduksiyonunda belirgin rol oynar.",
+    "tusTip": "Anterior uyluk/quadriceps femoral; medial uyluk/adduktorlar obturator sinirdir.",
+    "differentialNote": "Femoral sinir duyu olarak anterior uyluk ve saphenous dalıyla medial bacak; obturator sinir medial uyluk duyusuyla daha sınırlı ilişkilidir.",
+    "keywords": [
+      "femoral sinir",
+      "obturator sinir",
+      "diz ekstansiyonu",
+      "uyluk adduksiyonu"
+    ]
+  },
+  "tus-pearl-anatomy-193-spot": {
+    "front": "Diz çıkığı sonrasında distal nabız kaybı ve akut iskemi gelişirse öncelikle hangi damar yaralanması düşünülür?",
+    "back": "Popliteal arter yaralanması.",
+    "answer": "Popliteal arter yaralanması.",
+    "explanation": "Popliteal arter diz eklemi arkasında nispeten sabit bir seyir gösterir ve femur-tibia yer değiştirmelerinde gerilme veya yırtılmaya açıktır. Distal nabız kaybı sinir lezyonundan çok vasküler yaralanmayı öne çıkarır.",
+    "tusTip": "Diz çıkığı + distal nabız kaybı = popliteal arter acil değerlendirilir.",
+    "differentialNote": "Common fibular sinir yaralanması düşük ayak yapabilir; ancak nabız kaybı ve iskemi arteriyel lezyon lehinedir.",
+    "keywords": [
+      "diz çıkığı",
+      "popliteal arter",
+      "distal nabız kaybı",
+      "akut iskemi"
+    ]
+  },
+  "tus-pearl-anatomy-193-extra": {
+    "front": "Diz çıkığından sonra düşük ayak ile distal nabız kaybını ayırmak hangi iki yapının farklı hasarını düşündürür?",
+    "back": "Düşük ayak common fibular sinir; distal nabız kaybı popliteal arter hasarını düşündürür.",
+    "answer": "Düşük ayak common fibular sinir; distal nabız kaybı popliteal arter hasarını düşündürür.",
+    "explanation": "Diz çevresi travmalarında hem sinir hem damar yaralanması olabilir. Fibula boynu komşuluğundaki common fibular sinir dorsifleksiyon kaybıyla, popliteal arter ise distal perfüzyon kaybıyla klinik verir.",
+    "tusTip": "Motor düşük ayak sinir; nabız/iskemi damar bulgusudur. Diz çıkığında popliteal arter kaçırılmamalıdır.",
+    "differentialNote": "Tibial sinir plantar fleksiyon ve taban duyusuyla ilişkilidir; diz çıkığı sonrası akut iskemi popliteal arter açısından daha acildir.",
+    "keywords": [
+      "common fibular sinir",
+      "popliteal arter",
+      "düşük ayak",
+      "distal nabız"
+    ]
+  }
+});
+
 // V240 — Structured back-face rewrite guard for all 1000 Hap Bilgi cards.
 // Each back-face field must carry a different educational job:
 // answer = direct response, explanation = why, tusTip = exam catching clue,
@@ -16913,15 +17714,51 @@ function revisePearlBackFaceFields(card = {}) {
   };
 }
 
-function applyRevisedPearlCardText(card = {}) {
-  const override = TUS_PEARL_REVISED_TEXT_OVERRIDES[card.id];
-  const nextCard = override ? {
-    ...card,
-    front: cleanQuestion(override.front || card.front),
-    keywords: Array.isArray(override.keywords) ? override.keywords.map((keyword) => cleanText(keyword)).filter(Boolean) : card.keywords,
-  } : card;
+function applyFinalTextOverride(card = {}, override = {}) {
+  if (!override) return card;
+  const nextCard = { ...card };
 
-  return revisePearlBackFaceFields(nextCard);
+  if (Object.prototype.hasOwnProperty.call(override, 'front')) {
+    nextCard.front = cleanQuestion(override.front || card.front);
+  }
+  if (Array.isArray(override.keywords)) {
+    nextCard.keywords = override.keywords.map((keyword) => cleanText(keyword)).filter(Boolean);
+  }
+
+  ['back', 'answer', 'explanation', 'tusTip', 'differentialNote'].forEach((field) => {
+    if (Object.prototype.hasOwnProperty.call(override, field)) {
+      nextCard[field] = cleanSentence(override[field] || '');
+    }
+  });
+
+  return nextCard;
+}
+
+function applyRevisedPearlCardText(card = {}) {
+  const baseOverride = TUS_PEARL_REVISED_TEXT_OVERRIDES[card.id] || null;
+  const anatomyOverride = TUS_PEARL_ANATOMY_FIRST56_TEXT_OVERRIDES[card.id] || null;
+  const physiologyOverride = TUS_PEARL_PHYSIOLOGY_FIRST47_TEXT_OVERRIDES[card.id] || null;
+  const histologyEmbryologyOverride = TUS_PEARL_HISTOLOGY_EMBRYOLOGY_FIRST34_TEXT_OVERRIDES[card.id] || null;
+  const medicalBiochemistryOverride = TUS_PEARL_MEDICAL_BIOCHEMISTRY_FIRST74_TEXT_OVERRIDES[card.id] || null;
+  const medicalMicrobiologyOverride = TUS_PEARL_MEDICAL_MICROBIOLOGY_FIRST52_TEXT_OVERRIDES[card.id] || null;
+  const medicalMicrobiologySecond52Override = TUS_PEARL_MEDICAL_MICROBIOLOGY_SECOND52_TEXT_OVERRIDES[card.id] || null;
+  const medicalPathologyFirst84Override = TUS_PEARL_MEDICAL_PATHOLOGY_FIRST84_TEXT_OVERRIDES[card.id] || null;
+  const medicalPharmacologyFirst51Override = TUS_PEARL_MEDICAL_PHARMACOLOGY_FIRST51_TEXT_OVERRIDES[card.id] || null;
+  const medicalPharmacologySecond50Override = TUS_PEARL_MEDICAL_PHARMACOLOGY_SECOND50_TEXT_OVERRIDES[card.id] || null;
+  const internalMedicineFirst50Override = TUS_PEARL_INTERNAL_MEDICINE_FIRST50_TEXT_OVERRIDES[card.id] || null;
+  const internalMedicineSecond50Override = TUS_PEARL_INTERNAL_MEDICINE_SECOND50_TEXT_OVERRIDES[card.id] || null;
+  const internalMedicineThird59Override = TUS_PEARL_INTERNAL_MEDICINE_THIRD59_TEXT_OVERRIDES[card.id] || null;
+  const pediatricsFirst63Override = TUS_PEARL_PEDIATRICS_FIRST63_TEXT_OVERRIDES[card.id] || null;
+  const override = baseOverride || anatomyOverride || physiologyOverride || histologyEmbryologyOverride || medicalBiochemistryOverride || medicalMicrobiologyOverride || medicalMicrobiologySecond52Override || medicalPathologyFirst84Override || medicalPharmacologyFirst51Override || medicalPharmacologySecond50Override || internalMedicineFirst50Override || internalMedicineSecond50Override || internalMedicineThird59Override || pediatricsFirst63Override
+    ? { ...(baseOverride || {}), ...(anatomyOverride || {}), ...(physiologyOverride || {}), ...(histologyEmbryologyOverride || {}), ...(medicalBiochemistryOverride || {}), ...(medicalMicrobiologyOverride || {}), ...(medicalMicrobiologySecond52Override || {}), ...(medicalPathologyFirst84Override || {}), ...(medicalPharmacologyFirst51Override || {}), ...(medicalPharmacologySecond50Override || {}), ...(internalMedicineFirst50Override || {}), ...(internalMedicineSecond50Override || {}), ...(internalMedicineThird59Override || {}), ...(pediatricsFirst63Override || {}) }
+    : null;
+  const preRevisedCard = override ? applyFinalTextOverride(card, {
+    front: override.front,
+    keywords: override.keywords,
+  }) : card;
+
+  const revisedCard = revisePearlBackFaceFields(preRevisedCard);
+  return override ? applyFinalTextOverride(revisedCard, override) : revisedCard;
 }
 
 export function buildTusPearlCards() {
