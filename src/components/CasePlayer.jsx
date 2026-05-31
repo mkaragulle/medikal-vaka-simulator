@@ -381,7 +381,7 @@ function summaryRowKind(label = '') {
 function summaryIconName(kind = '') {
   const normalized = String(kind || '').toLocaleLowerCase('tr');
   if (normalized.includes('profile')) return 'User';
-  if (normalized.includes('presentation')) return 'ClipboardList';
+  if (normalized.includes('presentation')) return 'Folder';
   if (normalized.includes('risk')) return 'ShieldCheck';
   if (normalized.includes('clues')) return 'Target';
   return 'BookOpen';
@@ -936,64 +936,69 @@ function CasePlayer({
               <div className="case-title-copy">
                 <h1><GlossaryText text={clinicalCase.title} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></h1>
                 <ExamSignalBox signal={caseExamSignal} compact={isSpotCase} />
-                <div className="patient-summary-card professional-patient-summary-card clinical-summary-card premium-reference-summary-card refined-case-intro-card exact-reference-summary-card">
-                  {/* UI-only redesign: veri kaynakları korunur; yalnız kart görünümü referans tasarıma yaklaştırıldı. */}
-                  <header className="patient-summary-reference-header" aria-label="Olgu sunumu başlığı">
-                    <strong>Olgu sunumu</strong>
+                <div className="patient-summary-card professional-patient-summary-card clinical-summary-card premium-reference-summary-card refined-case-intro-card">
+                  {/* UI-only redesign: PROFİL, BAŞVURU ve HASTA ÖYKÜSÜ verileri aynı kaynaklardan okunur; yalnız sunum katmanı sadeleştirildi. */}
+                  <header className="patient-summary-unified-header" aria-label="Olgu sunumu başlığı">
+                    <div className="patient-summary-head-copy">
+                      <strong>Olgu sunumu</strong>
+                    </div>
                   </header>
 
-                  <div className="patient-summary-reference-list" aria-label="Olgu sunumu içeriği">
-                    {patientSummary.rows.map((row) => {
-                      const rowKind = row.kind || summaryRowKind(row.label);
-                      const iconName = rowKind === 'profile' ? 'User' : rowKind === 'presentation' ? 'Folder' : summaryIconName(rowKind);
-                      return (
-                        <section key={row.label} className={`patient-summary-reference-row patient-summary-reference-row--${rowKind}`}>
-                          <span className="patient-summary-reference-iconbox" aria-hidden="true">
-                            <Icon name={iconName} size={28} strokeWidth={1.9} />
-                          </span>
-                          <div className="patient-summary-reference-content">
-                            <span className="patient-summary-reference-label">{row.label.toLocaleUpperCase('tr')}</span>
-                            <p className="patient-summary-reference-text">
-                              <GlossaryText text={row.value} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} />
-                            </p>
-                          </div>
-                        </section>
-                      );
-                    })}
-
-                    <section className="patient-summary-reference-row patient-summary-reference-row--history" aria-label="Hasta öyküsü">
-                      <span className="patient-summary-reference-iconbox" aria-hidden="true">
-                        <Icon name="Notes" size={28} strokeWidth={1.9} />
-                      </span>
-                      <div className="patient-summary-reference-content">
-                        <span className="patient-summary-reference-label">HASTA ÖYKÜSÜ</span>
-                        <p className="patient-summary-reference-text patient-summary-reference-text--history">
-                          {patientSummary.history.map((part, index) => (
-                            <span
-                              key={`${clinicalCase.id}-summary-story-${index}`}
-                              role="button"
-                              tabIndex={0}
-                              className={highlighted[index] ? `stem-sentence patient-summary-inline-sentence highlighted hl-${highlighted[index]}` : 'stem-sentence patient-summary-inline-sentence'}
-                              onClick={() => toggleHighlight(index)}
-                              onKeyDown={(event) => {
-                                if (event.key === 'Enter' || event.key === ' ') {
-                                  event.preventDefault();
-                                  toggleHighlight(index);
-                                }
-                              }}
-                              aria-label={`${activeHighlighter} rengiyle öykü cümlesini vurgula`}
-                            >
-                              <GlossaryText text={toSentence(part)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} />
-                            </span>
-                          ))}
-                        </p>
-                      </div>
-                    </section>
+                  <div className="patient-summary-intro-layout" aria-label="Hasta profil ve başvuru özeti">
+                    <div className="patient-summary-grid structured-patient-summary-grid unified-summary-grid patient-summary-intro-blocks">
+                      {patientSummary.rows.map((row) => {
+                        const rowKind = row.kind || summaryRowKind(row.label);
+                        return (
+                          <section key={row.label} className={`summary-detail-card summary-detail-card--${rowKind}${row.items ? ' risk-chip-card' : ''}`}>
+                            <div className="summary-detail-row-head">
+                              <span className="summary-detail-icon" aria-hidden="true">
+                                <Icon name={summaryIconName(rowKind)} size={22} strokeWidth={1.92} />
+                              </span>
+                              <span className="summary-detail-label">{row.label.toLocaleUpperCase('tr')}</span>
+                            </div>
+                            <div className="summary-detail-copy">
+                              {row.items ? (
+                                row.items.length ? (
+                                  <PatientSummaryItems items={row.items} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} />
+                                ) : <p>{row.fallback}</p>
+                              ) : (
+                                <p><GlossaryText text={row.value} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></p>
+                              )}
+                            </div>
+                          </section>
+                        );
+                      })}
+                    </div>
                   </div>
 
-                  <span className="patient-summary-reference-sparkle" aria-hidden="true">
-                    <Icon name="Sparkles" size={34} strokeWidth={1.75} />
-                  </span>
+                  <section className="patient-summary-story-block unified-history-block" aria-label="Hasta öyküsü">
+                    <div className="summary-story-label">
+                      <span className="summary-wide-icon summary-wide-icon--history" aria-hidden="true">
+                        <Icon name="Notes" size={22} strokeWidth={1.9} />
+                      </span>
+                      <span>HASTA ÖYKÜSÜ</span>
+                    </div>
+                    <div className="summary-story-text">
+                      {patientSummary.history.map((part, index) => (
+                        <span
+                          key={`${clinicalCase.id}-summary-story-${index}`}
+                          role="button"
+                          tabIndex={0}
+                          className={highlighted[index] ? `stem-sentence highlighted hl-${highlighted[index]}` : 'stem-sentence'}
+                          onClick={() => toggleHighlight(index)}
+                          onKeyDown={(event) => {
+                            if (event.key === 'Enter' || event.key === ' ') {
+                              event.preventDefault();
+                              toggleHighlight(index);
+                            }
+                          }}
+                          aria-label={`${activeHighlighter} rengiyle öykü cümlesini vurgula`}
+                        >
+                          <GlossaryText text={toSentence(part)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} />
+                        </span>
+                      ))}
+                    </div>
+                  </section>
                 </div>
               </div>
             </div>
