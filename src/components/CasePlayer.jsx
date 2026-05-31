@@ -381,7 +381,7 @@ function summaryRowKind(label = '') {
 function summaryIconName(kind = '') {
   const normalized = String(kind || '').toLocaleLowerCase('tr');
   if (normalized.includes('profile')) return 'User';
-  if (normalized.includes('presentation')) return 'Folder';
+  if (normalized.includes('presentation')) return 'ClipboardList';
   if (normalized.includes('risk')) return 'ShieldCheck';
   if (normalized.includes('clues')) return 'Target';
   return 'BookOpen';
@@ -939,8 +939,12 @@ function CasePlayer({
                 <div className="patient-summary-card professional-patient-summary-card clinical-summary-card premium-reference-summary-card refined-case-intro-card">
                   {/* UI-only redesign: PROFİL, BAŞVURU ve HASTA ÖYKÜSÜ verileri aynı kaynaklardan okunur; yalnız sunum katmanı sadeleştirildi. */}
                   <header className="patient-summary-unified-header" aria-label="Olgu sunumu başlığı">
+                    <span className="patient-summary-main-icon patient-summary-anchor-icon" aria-hidden="true">
+                      <Icon name="User" size={30} strokeWidth={1.9} />
+                    </span>
                     <div className="patient-summary-head-copy">
                       <strong>Olgu sunumu</strong>
+                      <small>Hasta profili, başvuru nedeni ve klinik öykü</small>
                     </div>
                   </header>
 
@@ -948,6 +952,7 @@ function CasePlayer({
                     <div className="patient-summary-grid structured-patient-summary-grid unified-summary-grid patient-summary-intro-blocks">
                       {patientSummary.rows.map((row) => {
                         const rowKind = row.kind || summaryRowKind(row.label);
+                        const profileCopy = rowKind === 'profile' ? splitProfileText(row.value) : null;
                         return (
                           <section key={row.label} className={`summary-detail-card summary-detail-card--${rowKind}${row.items ? ' risk-chip-card' : ''}`}>
                             <div className="summary-detail-row-head">
@@ -961,6 +966,11 @@ function CasePlayer({
                                 row.items.length ? (
                                   <PatientSummaryItems items={row.items} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} />
                                 ) : <p>{row.fallback}</p>
+                              ) : profileCopy ? (
+                                <p className="summary-profile-copy">
+                                  <strong><GlossaryText text={profileCopy.primary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></strong>
+                                  {profileCopy.secondary ? <small><GlossaryText text={profileCopy.secondary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></small> : null}
+                                </p>
                               ) : (
                                 <p><GlossaryText text={row.value} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></p>
                               )}
