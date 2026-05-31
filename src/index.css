@@ -54742,3 +54742,262 @@ body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-
     padding: 10px 11px !important;
   }
 }
+
+
+/* ==========================================================================
+   KLINIKIQ V394 — Birleşik klinik sunum kartı son düzeltme
+   --------------------------------------------------------------------------
+   İç başlık kaldırıldı. Profil / Başvuru / Hasta Öyküsü artık mini kart gibi
+   değil, tek sakin klinik kart içinde divider ile ayrılan tek akış olarak görünür.
+   ========================================================================== */
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card,
+.case-page-shell .patient-summary-card.premium-reference-summary-card,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card {
+  background: #f8faf9 !important;
+  border: 1px solid #e2e8e5 !important;
+  border-radius: 20px !important;
+  box-shadow: none !important;
+  padding: clamp(15px, 1.45vw, 19px) clamp(16px, 1.7vw, 22px) !important;
+}
+
+.case-page-shell .patient-summary-head,
+.case-page-shell .premium-summary-head,
+.case-page-shell .compact-summary-head,
+.clinical-case.qbank-case .patient-summary-head,
+.clinical-case.qbank-case .premium-summary-head,
+.clinical-case.qbank-case .compact-summary-head {
+  display: none !important;
+}
+
+.case-page-shell .patient-summary-unified-card,
+.clinical-case.qbank-case .patient-summary-unified-card {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.case-page-shell .structured-patient-summary-grid.unified-summary-grid,
+.clinical-case.qbank-case .structured-patient-summary-grid.unified-summary-grid {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
+}
+
+.case-page-shell .summary-detail-card,
+.case-page-shell .patient-summary-story-block.unified-history-block,
+.clinical-case.qbank-case .summary-detail-card,
+.clinical-case.qbank-case .patient-summary-story-block.unified-history-block,
+.case-page-shell .patient-summary-unified-card > .summary-unified-section,
+.clinical-case.qbank-case .patient-summary-unified-card > .summary-unified-section {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: 36px minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 12px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 14px 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.case-page-shell .patient-summary-unified-card > .summary-unified-section:first-child,
+.clinical-case.qbank-case .patient-summary-unified-card > .summary-unified-section:first-child {
+  padding-top: 0 !important;
+}
+
+.case-page-shell .patient-summary-unified-card > .summary-unified-section:last-child,
+.clinical-case.qbank-case .patient-summary-unified-card > .summary-unified-section:last-child {
+  padding-bottom: 0 !important;
+}
+
+.case-page-shell .patient-summary-unified-card > .summary-unified-section:not(:last-child)::after,
+.clinical-case.qbank-case .patient-summary-unified-card > .summary-unified-section:not(:last-child)::after {
+  content: '' !important;
+  position: absolute !important;
+  left: 48px !important;
+  right: 6px !important;
+  bottom: 0 !important;
+  height: 1px !important;
+  display: block !important;
+  background: #e4ebe8 !important;
+  opacity: 0.95 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+}
+
+.case-page-shell .summary-detail-card::before,
+.case-page-shell .patient-summary-story-block.unified-history-block::before,
+.clinical-case.qbank-case .summary-detail-card::before,
+.clinical-case.qbank-case .patient-summary-story-block.unified-history-block::before,
+.case-page-shell .summary-detail-card:hover,
+.case-page-shell .patient-summary-story-block.unified-history-block:hover,
+.clinical-case.qbank-case .summary-detail-card:hover,
+.clinical-case.qbank-case .patient-summary-story-block.unified-history-block:hover {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.case-page-shell .summary-detail-icon,
+.case-page-shell .summary-wide-icon,
+.clinical-case.qbank-case .summary-detail-icon,
+.clinical-case.qbank-case .summary-wide-icon {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  border-radius: 12px !important;
+  color: #334155 !important;
+  background: #eef3f1 !important;
+  border: 1px solid #d8e0dd !important;
+  box-shadow: none !important;
+}
+
+.case-page-shell .summary-detail-icon svg,
+.case-page-shell .summary-wide-icon svg,
+.clinical-case.qbank-case .summary-detail-icon svg,
+.clinical-case.qbank-case .summary-wide-icon svg {
+  width: 20px !important;
+  height: 20px !important;
+  stroke-width: 1.75 !important;
+}
+
+.case-page-shell .summary-detail-copy,
+.case-page-shell .summary-wide-content,
+.clinical-case.qbank-case .summary-detail-copy,
+.clinical-case.qbank-case .summary-wide-content {
+  min-width: 0 !important;
+  padding-top: 0 !important;
+}
+
+.case-page-shell .summary-detail-label,
+.case-page-shell .summary-story-label span,
+.clinical-case.qbank-case .summary-detail-label,
+.clinical-case.qbank-case .summary-story-label span {
+  margin: 0 0 5px 0 !important;
+  color: #475569 !important;
+  font-size: 0.7rem !important;
+  font-weight: 760 !important;
+  letter-spacing: 0.075em !important;
+  line-height: 1.2 !important;
+}
+
+.case-page-shell .summary-detail-card p,
+.case-page-shell .summary-profile-copy,
+.case-page-shell .summary-story-text,
+.clinical-case.qbank-case .summary-detail-card p,
+.clinical-case.qbank-case .summary-profile-copy,
+.clinical-case.qbank-case .summary-story-text {
+  color: #1f2937 !important;
+  font-size: 0.95rem !important;
+  font-weight: 520 !important;
+  line-height: 1.6 !important;
+  letter-spacing: -0.006em !important;
+}
+
+.case-page-shell .summary-profile-copy strong,
+.clinical-case.qbank-case .summary-profile-copy strong {
+  color: #111827 !important;
+  font-weight: 650 !important;
+}
+
+.case-page-shell .summary-profile-copy small,
+.clinical-case.qbank-case .summary-profile-copy small {
+  color: #4b5563 !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+}
+
+.case-page-shell .summary-story-text .stem-sentence,
+.clinical-case.qbank-case .summary-story-text .stem-sentence {
+  color: inherit !important;
+  background: transparent !important;
+}
+
+html[data-theme='dark'] .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card,
+html[data-theme='dark'] .case-page-shell .patient-summary-card.premium-reference-summary-card,
+.app-shell[data-theme='dark'] .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card,
+.app-shell[data-theme='dark'] .case-page-shell .patient-summary-card.premium-reference-summary-card {
+  background: #111827 !important;
+  border-color: #263241 !important;
+}
+
+html[data-theme='dark'] .case-page-shell .summary-detail-icon,
+html[data-theme='dark'] .case-page-shell .summary-wide-icon,
+.app-shell[data-theme='dark'] .case-page-shell .summary-detail-icon,
+.app-shell[data-theme='dark'] .case-page-shell .summary-wide-icon {
+  color: #d1d5db !important;
+  background: #1f2937 !important;
+  border-color: #334155 !important;
+}
+
+html[data-theme='dark'] .case-page-shell .patient-summary-unified-card > .summary-unified-section:not(:last-child)::after,
+.app-shell[data-theme='dark'] .case-page-shell .patient-summary-unified-card > .summary-unified-section:not(:last-child)::after {
+  background: #2f3b4a !important;
+}
+
+html[data-theme='dark'] .case-page-shell .summary-detail-label,
+html[data-theme='dark'] .case-page-shell .summary-story-label span,
+.app-shell[data-theme='dark'] .case-page-shell .summary-detail-label,
+.app-shell[data-theme='dark'] .case-page-shell .summary-story-label span {
+  color: #aeb8c5 !important;
+}
+
+html[data-theme='dark'] .case-page-shell .summary-detail-card p,
+html[data-theme='dark'] .case-page-shell .summary-profile-copy,
+html[data-theme='dark'] .case-page-shell .summary-story-text,
+.app-shell[data-theme='dark'] .case-page-shell .summary-detail-card p,
+.app-shell[data-theme='dark'] .case-page-shell .summary-profile-copy,
+.app-shell[data-theme='dark'] .case-page-shell .summary-story-text {
+  color: #e5e7eb !important;
+}
+
+html[data-theme='dark'] .case-page-shell .summary-profile-copy strong,
+.app-shell[data-theme='dark'] .case-page-shell .summary-profile-copy strong {
+  color: #f3f4f6 !important;
+}
+
+html[data-theme='dark'] .case-page-shell .summary-profile-copy small,
+.app-shell[data-theme='dark'] .case-page-shell .summary-profile-copy small {
+  color: #cbd5e1 !important;
+}
+
+@media (max-width: 720px) {
+  .case-page-shell .summary-detail-card,
+  .case-page-shell .patient-summary-story-block.unified-history-block,
+  .clinical-case.qbank-case .summary-detail-card,
+  .clinical-case.qbank-case .patient-summary-story-block.unified-history-block,
+  .case-page-shell .patient-summary-unified-card > .summary-unified-section,
+  .clinical-case.qbank-case .patient-summary-unified-card > .summary-unified-section {
+    grid-template-columns: 34px minmax(0, 1fr) !important;
+    gap: 10px !important;
+    padding: 13px 0 !important;
+  }
+
+  .case-page-shell .summary-detail-icon,
+  .case-page-shell .summary-wide-icon,
+  .clinical-case.qbank-case .summary-detail-icon,
+  .clinical-case.qbank-case .summary-wide-icon {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    border-radius: 11px !important;
+  }
+
+  .case-page-shell .patient-summary-unified-card > .summary-unified-section:not(:last-child)::after,
+  .clinical-case.qbank-case .patient-summary-unified-card > .summary-unified-section:not(:last-child)::after {
+    left: 44px !important;
+    right: 2px !important;
+  }
+}

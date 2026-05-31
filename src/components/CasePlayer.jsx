@@ -937,24 +937,14 @@ function CasePlayer({
                 <h1><GlossaryText text={clinicalCase.title} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></h1>
                 <ExamSignalBox signal={caseExamSignal} compact={isSpotCase} />
                 <div className="patient-summary-card professional-patient-summary-card clinical-summary-card premium-reference-summary-card">
-                  {/* Hasta özeti, referans görseldeki tek, premium ve okunabilir klinik çerçeve tasarımına göre yeniden düzenlendi. */}
-                  <header className="patient-summary-head compact-summary-head premium-summary-head">
-                    <span className="patient-summary-main-icon" aria-hidden="true">
-                      <Icon name="Stethoscope" size={28} strokeWidth={1.95} />
-                    </span>
-                    <div className="patient-summary-head-copy">
-                      <strong>Olgu sunumu</strong>
-                    </div>
-                  </header>
-
-                  <div className="patient-summary-unified-card" aria-label="Olgu sunumu detayları">
+                  <div className="patient-summary-unified-card" aria-label="Klinik sunum detayları">
                     {patientSummary.rows.map((row) => {
                       const rowKind = row.kind || summaryRowKind(row.label);
                       const profileCopy = rowKind === 'profile' ? splitProfileText(row.value) : null;
                       return (
                         <section key={row.label} className={`summary-detail-card summary-unified-section summary-detail-card--${rowKind}${row.items ? ' risk-chip-card' : ''}`}>
                           <span className="summary-detail-icon" aria-hidden="true">
-                            <Icon name={summaryIconName(rowKind)} size={25} strokeWidth={1.85} />
+                            <Icon name={summaryIconName(rowKind)} size={22} strokeWidth={1.75} />
                           </span>
                           <div className="summary-detail-copy">
                             <span className="summary-detail-label">{row.label.toLocaleUpperCase('tr')}</span>
@@ -977,7 +967,7 @@ function CasePlayer({
 
                     <section className="patient-summary-story-block unified-history-block summary-unified-section" aria-label="Hasta öyküsü">
                       <span className="summary-wide-icon summary-wide-icon--history" aria-hidden="true">
-                        <Icon name="PatientHistory" size={25} strokeWidth={1.85} />
+                        <Icon name="PatientHistory" size={22} strokeWidth={1.75} />
                       </span>
                       <div className="summary-wide-content">
                         <div className="summary-story-label">
