@@ -55305,3 +55305,16 @@ html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.professi
   color: #5eead4 !important;
   font-weight: 800 !important;
 }
+
+/* ===== V414 — Olgu kartı bölüm başlıkları hafif büyütme ===== */
+.case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-label,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-label,
+.case-page-shell .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span {
+  font-size: 0.84rem !important;
+  font-weight: 800 !important;
+}
