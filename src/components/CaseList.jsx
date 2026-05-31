@@ -113,26 +113,40 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
   }, [layout, updateHorizontalViewport]);
 
   const handleHorizontalWheel = useCallback((event) => {
-    if (layout !== 'horizontal') return;
+    if (layout !== 'horizontal') return false;
+    if (event.defaultPrevented || event.ctrlKey) return false;
+
     const listNode = listRef.current;
-    if (!listNode) return;
+    if (!listNode) return false;
 
-    const maxScrollLeft = listNode.scrollWidth - listNode.clientWidth;
-    if (maxScrollLeft <= 1) return;
+    const maxScrollLeft = Math.max(0, listNode.scrollWidth - listNode.clientWidth);
+    if (maxScrollLeft <= 1) return false;
 
-    const rawDeltaX = Number(event.deltaX) || 0;
-    const rawDeltaY = Number(event.deltaY) || 0;
-    const horizontalDelta = Math.abs(rawDeltaX) > Math.abs(rawDeltaY) ? rawDeltaX : rawDeltaY;
-    if (!horizontalDelta) return;
+    const deltaMode = Number(event.deltaMode) || 0;
+    const deltaFactor = deltaMode === 1 ? 18 : deltaMode === 2 ? Math.max(1, listNode.clientWidth) : 1;
+    const rawDeltaX = (Number(event.deltaX) || 0) * deltaFactor;
+    const rawDeltaY = (Number(event.deltaY) || 0) * deltaFactor;
+    const horizontalDelta = event.shiftKey
+      ? (rawDeltaY || rawDeltaX)
+      : (Math.abs(rawDeltaX) > Math.abs(rawDeltaY) ? rawDeltaX : rawDeltaY);
+
+    if (!horizontalDelta) return false;
+
+    // V409: while the cursor is on “Diğer olgular”, the wheel must belong to
+    // the horizontal rail only. Preventing both default scroll and propagation
+    // stops the page/body scrollbar from stealing the wheel event, including
+    // when the rail is already at the left/right edge.
+    if (event.cancelable !== false) event.preventDefault();
+    event.stopPropagation?.();
 
     const currentLeft = listNode.scrollLeft || 0;
-    const atStart = currentLeft <= 1;
-    const atEnd = currentLeft >= maxScrollLeft - 1;
-    if ((horizontalDelta < 0 && atStart) || (horizontalDelta > 0 && atEnd)) return;
+    const nextLeft = Math.min(maxScrollLeft, Math.max(0, currentLeft + horizontalDelta));
+    if (Math.abs(nextLeft - currentLeft) >= 0.5) {
+      listNode.scrollLeft = nextLeft;
+      updateHorizontalViewport();
+    }
 
-    event.preventDefault();
-    listNode.scrollLeft = Math.min(maxScrollLeft, Math.max(0, currentLeft + horizontalDelta));
-    updateHorizontalViewport();
+    return true;
   }, [layout, updateHorizontalViewport]);
 
   useLayoutEffect(() => {
@@ -172,6 +186,21 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', so
       }
     };
   }, [layout, updateHorizontalViewport]);
+
+  useEffect(() => {
+    if (layout !== 'horizontal') return undefined;
+    const listNode = listRef.current;
+    if (!listNode) return undefined;
+
+    const handleNativeWheel = (event) => {
+      handleHorizontalWheel(event);
+    };
+
+    listNode.addEventListener('wheel', handleNativeWheel, { passive: false, capture: true });
+    return () => {
+      listNode.removeEventListener('wheel', handleNativeWheel, { capture: true });
+    };
+  }, [handleHorizontalWheel, layout]);
 
   // V389: custom scrollbar layers are disabled globally, so this list no longer
   // dispatches expensive scrollbar rescan events during horizontal scroll.

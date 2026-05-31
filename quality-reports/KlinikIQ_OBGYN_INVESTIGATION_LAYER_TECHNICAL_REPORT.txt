@@ -1,9 +1,0 @@
-KlinikIQ Kadın Hastalıkları ve Doğum tetkik/objektif veri katmanı güçlendirme raporu
-Kapsam: 28 Kadın Hastalıkları ve Doğum vakası (branchId=obstetrics-gynecology).
-Değiştirilen vaka sayısı: 28.
-Eklenen yeni tetkik/objektif veri sayısı: 20.
-Yeniden adlandırılan tetkik başlığı sayısı: 14.
-Etiket/puan/akış metadatası eklenen veya doğrulanan tetkik sayısı: 95.
-Kullanıcıya görünen tetkik title/label alanlarında kalan “Klinik materyal”: 0.
-Eksik label/type/tag/score metadatası: 0.
-Not: Doğru cevap, seçenek sırası ve optionFeedback alanları değiştirilmedi; düzenleme tetkik katmanı, tetkik adı/etiketi/puanı/akışı ve kısa tetkik geri bildirimiyle sınırlandı.

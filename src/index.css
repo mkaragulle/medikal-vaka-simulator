@@ -54652,3 +54652,51 @@ html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card .patient
   height: 0 !important;
   display: none !important;
 }
+
+
+/* ========================================================================== 
+   KLINIKIQ V409 — “Diğer olgular” wheel-to-horizontal rail lock
+   --------------------------------------------------------------------------
+   The bottom case rail must consume mouse-wheel / trackpad-wheel input while
+   the cursor is over the case cards. Vertical wheel movement is translated to
+   horizontal scrolling; the body/page scrollbar is not allowed to chain-scroll.
+   Native scrollbars stay invisible, but overflow remains fully interactive.
+   ========================================================================== */
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list,
+.case-page-shell .bottom-case-browser .horizontal-case-list,
+.bottom-case-browser .horizontal-case-list,
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list.horizontal-case-list-virtualized,
+.case-page-shell .bottom-case-browser .horizontal-case-list.horizontal-case-list-virtualized,
+.bottom-case-browser .horizontal-case-list.horizontal-case-list-virtualized {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  overscroll-behavior: contain !important;
+  overscroll-behavior-x: contain !important;
+  overscroll-behavior-y: contain !important;
+  overscroll-behavior-inline: contain !important;
+  overscroll-behavior-block: contain !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  scroll-behavior: auto !important;
+  touch-action: pan-x !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list::-webkit-scrollbar,
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-track,
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-thumb,
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-corner,
+.case-page-shell .bottom-case-browser .horizontal-case-list::-webkit-scrollbar,
+.case-page-shell .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-track,
+.case-page-shell .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-thumb,
+.case-page-shell .bottom-case-browser .horizontal-case-list::-webkit-scrollbar-corner,
+.bottom-case-browser .horizontal-case-list::-webkit-scrollbar,
+.bottom-case-browser .horizontal-case-list::-webkit-scrollbar-track,
+.bottom-case-browser .horizontal-case-list::-webkit-scrollbar-thumb,
+.bottom-case-browser .horizontal-case-list::-webkit-scrollbar-corner {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+  opacity: 0 !important;
+  background: transparent !important;
+}

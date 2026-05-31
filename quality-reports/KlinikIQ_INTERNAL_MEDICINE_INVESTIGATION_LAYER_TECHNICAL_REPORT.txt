@@ -1,7 +1,0 @@
-KlinikIQ Internal Medicine Investigation Layer Enhancement Technical Report
-Scope: Only branchId === internal-medicine cases were transformed.
-Cases processed: 26
-Investigation count: 108 -> 135 (net +27)
-UI/data support added: clinicalFlowOrder propagation and immunologySerology category metadata.
-Safety gates embedded: hyperkalemia membrane stabilization, DKA potassium gate, HHS fluids-first logic, adrenal crisis treatment-not-delayed rule, endocarditis culture/treatment balance, TTP ADAMTS13-not-delayed rule.
-Scope guard: non-internal medicine case JSON remained unchanged before write.

@@ -1,8 +1,0 @@
-KlinikIQ Histoloji ve Embriyoloji tetkik/objektif veri katmanı güncellemesi
-Güncellenen vaka sayısı: 28
-Tetkiksiz / vaka dışı spot kayıt olarak atlanan kayıt sayısı: 12
-Kapsam: Yalnızca branchId=histology-embryology veya relatedBranch Histoloji/Embriyoloji olan kayıtlar.
-Uygulanan değişiklikler: basitten komplekse tetkik akışı, prenatal/postnatal değerlendirme sırası, kısa test değer etiketi, scoreValue/scoreImpact, kategori düzeltmeleri ve kısa yorumların mekanizma odaklı temizlenmesi.
-Koruma: Tanı seçenekleri, doğru cevap metni, optionFeedback ve genel vaka schema alanları korunmuştur; yalnızca tetkik katmanı ve preserveInvestigationOrder alanı güncellenmiştir.
-Ek teknik not: src/utils/investigationOrders.js explicit category değerlerini koruyacak şekilde güncellendi; prenatal kategori eklendi. InvestigationPanel kategori sırası klinik değerlendirme → yatak başı → prenatal/lab/görüntüleme → doğrulayıcı patoloji akışına daha uyumlu hale getirildi.
-Doğrulama: Node import kontrolü cases.js ve investigationOrders.js için başarılı. npm run build çalıştırıldı fakat yüklenen ZIP içinde node_modules/vite bulunmadığı için build doğrulaması yapılamadı.
