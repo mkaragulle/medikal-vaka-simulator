@@ -938,42 +938,44 @@ function CasePlayer({
                 <ExamSignalBox signal={caseExamSignal} compact={isSpotCase} />
                 <div className="patient-summary-card professional-patient-summary-card clinical-summary-card premium-reference-summary-card">
                   {/* Hasta özeti, referans görseldeki tek, premium ve okunabilir klinik çerçeve tasarımına göre yeniden düzenlendi. */}
-                  <header className="patient-summary-head compact-summary-head premium-summary-head">
-                    <span className="patient-summary-main-icon" aria-hidden="true">
-                      <Icon name="Stethoscope" size={28} strokeWidth={1.95} />
-                    </span>
-                    <div className="patient-summary-head-copy">
-                      <strong>Olgu sunumu</strong>
-                    </div>
-                  </header>
+                  <div className="patient-summary-intro-layout" aria-label="Hasta profil ve başvuru özeti">
+                    <header className="patient-summary-head compact-summary-head premium-summary-head patient-summary-anchor-panel">
+                      <span className="patient-summary-main-icon patient-summary-anchor-icon" aria-hidden="true">
+                        <Icon name="User" size={32} strokeWidth={1.9} />
+                      </span>
+                      <div className="patient-summary-head-copy">
+                        <strong>Olgu sunumu</strong>
+                      </div>
+                    </header>
 
-                  <div className="patient-summary-grid structured-patient-summary-grid unified-summary-grid">
-                    {patientSummary.rows.map((row) => {
-                      const rowKind = row.kind || summaryRowKind(row.label);
-                      const profileCopy = rowKind === 'profile' ? splitProfileText(row.value) : null;
-                      return (
-                        <section key={row.label} className={`summary-detail-card summary-detail-card--${rowKind}${row.items ? ' risk-chip-card' : ''}`}>
-                          <span className="summary-detail-icon" aria-hidden="true">
-                            <Icon name={summaryIconName(rowKind)} size={27} strokeWidth={1.92} />
-                          </span>
-                          <div className="summary-detail-copy">
-                            <span className="summary-detail-label">{row.label.toLocaleUpperCase('tr')}</span>
-                            {row.items ? (
-                              row.items.length ? (
-                                <PatientSummaryItems items={row.items} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} />
-                              ) : <p>{row.fallback}</p>
-                            ) : profileCopy ? (
-                              <p className="summary-profile-copy">
-                                <strong><GlossaryText text={profileCopy.primary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></strong>
-                                {profileCopy.secondary ? <small><GlossaryText text={profileCopy.secondary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></small> : null}
-                              </p>
-                            ) : (
-                              <p><GlossaryText text={row.value} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></p>
-                            )}
-                          </div>
-                        </section>
-                      );
-                    })}
+                    <div className="patient-summary-grid structured-patient-summary-grid unified-summary-grid patient-summary-intro-blocks">
+                      {patientSummary.rows.map((row) => {
+                        const rowKind = row.kind || summaryRowKind(row.label);
+                        const profileCopy = rowKind === 'profile' ? splitProfileText(row.value) : null;
+                        return (
+                          <section key={row.label} className={`summary-detail-card summary-detail-card--${rowKind}${row.items ? ' risk-chip-card' : ''}`}>
+                            <span className="summary-detail-icon" aria-hidden="true">
+                              <Icon name={summaryIconName(rowKind)} size={27} strokeWidth={1.92} />
+                            </span>
+                            <div className="summary-detail-copy">
+                              <span className="summary-detail-label">{row.label.toLocaleUpperCase('tr')}</span>
+                              {row.items ? (
+                                row.items.length ? (
+                                  <PatientSummaryItems items={row.items} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} />
+                                ) : <p>{row.fallback}</p>
+                              ) : profileCopy ? (
+                                <p className="summary-profile-copy">
+                                  <strong><GlossaryText text={profileCopy.primary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></strong>
+                                  {profileCopy.secondary ? <small><GlossaryText text={profileCopy.secondary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></small> : null}
+                                </p>
+                              ) : (
+                                <p><GlossaryText text={row.value} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></p>
+                              )}
+                            </div>
+                          </section>
+                        );
+                      })}
+                    </div>
                   </div>
 
                   <section className="patient-summary-story-block unified-history-block" aria-label="Hasta öyküsü">
