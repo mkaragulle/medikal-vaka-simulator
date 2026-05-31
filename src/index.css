@@ -55259,6 +55259,7 @@ html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.premium-
 .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
 .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span {
   color: #0f766e !important;
+  font-size: 0.75rem !important;
   font-weight: 800 !important;
 }
 
