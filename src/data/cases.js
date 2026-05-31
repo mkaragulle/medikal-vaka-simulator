@@ -4,572 +4,572 @@ import { sanitizeClinicalCaseExam } from '../utils/clinicalExamSanitizer.js';
 
 export const rawCases = [
       {
-    "id": "v163-new-001-akut-sistemik-reaksiyon",
-    "branchId": "minor-rotations",
-    "caseType": "standard",
-    "relatedBranch": "Acil Tıp / İmmünoloji",
-    "title": "Akut sistemik reaksiyon",
-    "difficulty": "Acil",
-    "clinicalFocus": "Anafilakside dakikalar içinde gelişen deri-mukoza, solunum ve dolaşım bulgularını birlikte tanıyarak ilk özgül acil tedaviyi seçme.",
-    "learningTarget": "Anafilakside oksijen, sıvı, bronkodilatör, antihistaminik ve steroidin destek basamakları olduğunu; hipotansiyon veya bronkospazm varlığında ilk özgül tedavinin gecikmeden intramüsküler adrenalin olduğunu ayırt edebilme.",
-    "demographics": "24 yaşında kadın hasta",
-    "setting": "Acil servis",
-    "chiefComplaint": "Hasta, antibiyotik enjeksiyonundan dakikalar sonra başlayan kaşıntı, dudak şişliği, boğazda daralma, hışıltı ve bayılacak gibi olma yakınmasıyla acil servise getiriliyor.",
-    "stem": "Hasta, diş enfeksiyonu için yapılan antibiyotik enjeksiyonundan yaklaşık 10 dakika sonra avuç içlerinde kaşıntı ve yüzünde kızarma başladığını anlatır. Bekleme odasında kısa süre içinde dudaklarının şiştiğini, boğazında daralma hissettiğini ve nefes verirken hışıltı duyduğunu fark etmiştir. Ayağa kalkmaya çalıştığında başı dönmüş, bayılacak gibi olmuş ve yakınları tarafından acil servise alınmıştır. Daha önce bu şiddette ilaç reaksiyonu geçirmediğini, bilinen astım veya kronik ürtiker öyküsü olmadığını söyler. Enjeksiyon öncesinde ateş, öksürük, travma ya da aktif kanama yakınması bulunmadığını belirtir.",
-    "patientIntro": {
-        "profile": "24 yaşında kadın hasta, acil serviste enjeksiyon sonrası dakikalar içinde gelişen sistemik reaksiyon nedeniyle değerlendiriliyor.",
-        "presentation": "Kaşıntı ve yüz kızarmasını izleyen dudak ödemi, boğazda daralma, hışıltı ve presenkop yakınması vardır.",
-        "historySummary": "Hasta, diş enfeksiyonu nedeniyle yapılan antibiyotik enjeksiyonundan birkaç dakika sonra avuç içlerinde kaşıntı ve yüzünde sıcaklık hissi başladığını söylüyor. Bekleme odasında dudaklarının şiştiğini fark etmiş, ardından boğazında daralma hissi ve nefes verirken hışıltı gelişmiş. Ayağa kalktığında başı dönmüş, gözleri kararmış ve yakınları bayılacak gibi olduğunu görerek acil ekibe haber vermiş. Enjeksiyon sonrası evde başka bir ilaç almamış; olaydan önce ateş, öksürük, travma veya belirgin kanama yakınması olmadığını belirtiyor. Daha önce benzer ağırlıkta reaksiyon geçirmediğini ve bilinen astım öyküsü bulunmadığını ifade ediyor."
+  "id": "v163-new-001-akut-sistemik-reaksiyon",
+  "branchId": "minor-rotations",
+  "caseType": "standard",
+  "relatedBranch": "Acil Tıp / İmmünoloji",
+  "title": "Akut sistemik reaksiyon",
+  "difficulty": "Acil",
+  "clinicalFocus": "Anafilakside dakikalar içinde gelişen deri-mukoza, solunum ve dolaşım bulgularını birlikte tanıyarak ilk özgül acil tedaviyi seçme.",
+  "learningTarget": "Anafilakside oksijen, sıvı, bronkodilatör, antihistaminik ve steroidin destek basamakları olduğunu; hipotansiyon veya bronkospazm varlığında ilk özgül tedavinin gecikmeden intramüsküler adrenalin olduğunu ayırt edebilme.",
+  "demographics": "24 yaşında kadın hasta",
+  "setting": "Acil servis",
+  "chiefComplaint": "Hasta, antibiyotik enjeksiyonundan dakikalar sonra başlayan kaşıntı, dudak şişliği, boğazda daralma, hışıltı ve bayılacak gibi olma nedeniyle acil serviste değerlendiriliyor.",
+  "stem": "Hasta, diş enfeksiyonu nedeniyle yapılan antibiyotik enjeksiyonundan yaklaşık 10 dakika sonra avuç içlerinde kaşıntı ve yüzünde sıcak basması hissettiğini anlatır. Bekleme alanında kısa süre içinde dudaklarının şiştiğini fark etmiş, ardından boğazında daralma hissi ve nefes verirken hışıltı başlamıştır. Ayağa kalkmaya çalıştığında başı dönmüş, gözleri kararmış ve yakınları onu acil ekibe haber vererek sedyeye aldırmıştır. Olaydan önce ateş, öksürük, travma, aktif kanama veya farklı bir ilaç alımı olmadığını; daha önce bu ağırlıkta bir reaksiyon yaşamadığını söyler.",
+  "patientIntro": {
+    "profile": "24 yaşında kadın hasta, antibiyotik enjeksiyonu sonrası dakikalar içinde başlayan sistemik yakınmalar nedeniyle acil serviste değerlendiriliyor.",
+    "presentation": "Kaşıntı ve yüz kızarmasını izleyen dudak şişliği, boğazda daralma, hışıltı ve presenkop yakınması vardır.",
+    "historySummary": "Hasta, diş enfeksiyonu nedeniyle yapılan antibiyotik enjeksiyonundan yaklaşık 10 dakika sonra avuç içlerinde kaşıntı ve yüzünde sıcak basması hissettiğini anlatır. Bekleme alanında kısa süre içinde dudaklarının şiştiğini fark etmiş, ardından boğazında daralma hissi ve nefes verirken hışıltı başlamıştır. Ayağa kalkmaya çalıştığında başı dönmüş, gözleri kararmış ve yakınları onu acil ekibe haber vererek sedyeye aldırmıştır. Olaydan önce ateş, öksürük, travma, aktif kanama veya farklı bir ilaç alımı olmadığını; daha önce bu ağırlıkta bir reaksiyon yaşamadığını söyler."
+  },
+  "vitals": {
+    "TA": "80/45 mmHg",
+    "Nabız": "128/dk",
+    "Solunum": "28/dk",
+    "SpO2": "%91, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "1.60 - dolaşım riski yüksek"
+  },
+  "exam": [
+    "Hasta huzursuz, soluk ve cümleleri nefes nefese tamamlayan görünümdedir.",
+    "Dudaklarda belirgin ödem, yüzde kızarma ve gövdede yaygın kabarık ürtiker plakları izlenir.",
+    "Akciğer oskültasyonunda bilateral yaygın ekspiryum sonu hışıltı duyulur; belirgin inspiratuvar stridor saptanmaz.",
+    "Periferik nabızlar hızlı ve zayıftır; kapiller dolum yaklaşık 4 saniyedir."
+  ],
+  "investigations": [
+    {
+      "id": "v163-new-001-akut-sistemik-reaksiyon-anafilaksi-klinik-kriterleri",
+      "label": "Çok sistemli akut alerjik reaksiyon bulguları",
+      "title": "Çok sistemli akut alerjik reaksiyon bulguları",
+      "orderLabel": "Çok sistemli akut alerjik reaksiyon bulguları",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "Çok sistemli akut alerjik reaksiyon bulguları",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Enjeksiyondan kısa süre sonra başlayan deri-mukoza yakınmalarına aynı başvuruda solunum yakınması ve dolaşım bozulması eşlik etmektedir.",
+      "clinicalMeaning": "Enjeksiyondan kısa süre sonra başlayan deri-mukoza yakınmalarına aynı başvuruda solunum yakınması ve dolaşım bozulması eşlik etmektedir.",
+      "result": {
+        "title": "Çok sistemli akut alerjik reaksiyon değerlendirmesi",
+        "summary": "Enjeksiyondan kısa süre sonra başlayan deri-mukoza yakınmalarına aynı başvuruda solunum yakınması ve dolaşım bozulması eşlik etmektedir.",
+        "interpretation": "Enjeksiyondan kısa süre sonra başlayan deri-mukoza yakınmalarına aynı başvuruda solunum yakınması ve dolaşım bozulması eşlik etmektedir.",
+        "values": [
+          [
+            "Başlangıç zamanı",
+            "Antibiyotik enjeksiyonundan yaklaşık 10 dakika sonra",
+            "",
+            "Hızlı başlangıç"
+          ],
+          [
+            "Deri/mukoza",
+            "Yaygın ürtiker, yüzde kızarma ve dudak ödemi",
+            "",
+            "Deri-mukoza tutulumu"
+          ],
+          [
+            "Solunum",
+            "Boğazda daralma hissi ve bilateral ekspiryum sonu hışıltı",
+            "",
+            "Solunum tutulumu"
+          ],
+          [
+            "Dolaşım",
+            "Presenkop, hipotansiyon ve uzamış kapiller dolum",
+            "",
+            "Perfüzyon bozulması"
+          ]
+        ],
+        "rows": [
+          [
+            "Başlangıç zamanı",
+            "Antibiyotik enjeksiyonundan yaklaşık 10 dakika sonra",
+            "",
+            "Hızlı başlangıç"
+          ],
+          [
+            "Deri/mukoza",
+            "Yaygın ürtiker, yüzde kızarma ve dudak ödemi",
+            "",
+            "Deri-mukoza tutulumu"
+          ],
+          [
+            "Solunum",
+            "Boğazda daralma hissi ve bilateral ekspiryum sonu hışıltı",
+            "",
+            "Solunum tutulumu"
+          ],
+          [
+            "Dolaşım",
+            "Presenkop, hipotansiyon ve uzamış kapiller dolum",
+            "",
+            "Perfüzyon bozulması"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Başlangıç zamanı",
+          "Antibiyotik enjeksiyonundan yaklaşık 10 dakika sonra",
+          "",
+          "Hızlı başlangıç"
+        ],
+        [
+          "Deri/mukoza",
+          "Yaygın ürtiker, yüzde kızarma ve dudak ödemi",
+          "",
+          "Deri-mukoza tutulumu"
+        ],
+        [
+          "Solunum",
+          "Boğazda daralma hissi ve bilateral ekspiryum sonu hışıltı",
+          "",
+          "Solunum tutulumu"
+        ],
+        [
+          "Dolaşım",
+          "Presenkop, hipotansiyon ve uzamış kapiller dolum",
+          "",
+          "Perfüzyon bozulması"
+        ]
+      ],
+      "postAnswerExplanation": "Enjeksiyondan kısa süre sonra başlayan deri-mukoza yakınmalarına aynı başvuruda solunum yakınması ve dolaşım bozulması eşlik etmektedir.",
+      "interpretation": "Enjeksiyondan kısa süre sonra başlayan deri-mukoza yakınmalarına aynı başvuruda solunum yakınması ve dolaşım bozulması eşlik etmektedir.",
+      "explanationAfterAnswer": "Enjeksiyondan kısa süre sonra başlayan deri-mukoza yakınmalarına aynı başvuruda solunum yakınması ve dolaşım bozulması eşlik etmektedir.",
+      "testValueLabel": "Acil klinik değerlendirme",
+      "educationalValue": "Acil klinik değerlendirme",
+      "clinicalPriorityLabel": "Acil klinik değerlendirme",
+      "scoreImpact": 5,
+      "scoreValue": 5,
+      "clinicalFlowOrder": 1,
+      "purpose": "İlaç maruziyetinden kısa süre sonra deri-mukoza bulgularına solunum ve dolaşım bulguları eklenmiştir; değerlendirme eş zamanlı sistemik etkilenme ve vital risk üzerinden yapılır.",
+      "inlineFeedback": "Enjeksiyondan kısa süre sonra başlayan deri-mukoza yakınmalarına aynı başvuruda solunum yakınması ve dolaşım bozulması eşlik etmektedir.",
+      "treatmentImpact": "Deri, solunum ve dolaşım verileri acil tedavi önceliğinin destek basamaklarıyla sınırlı kalamayacağını gösterir.",
+      "emergencyValue": "Solunum ve dolaşım etkilenimi dakikalar içinde kötüleşebileceği için eş zamanlı monitörizasyon gerekir."
     },
-    "vitals": {
-        "TA": "80/45 mmHg",
-        "Nabız": "128/dk",
-        "Solunum": "28/dk",
-        "SpO2": "%91, oda havasında",
-        "Ateş": "36.7 °C",
-        "Şok indeksi": "1.60 - dolaşım riski yüksek"
+    {
+      "id": "v163-new-001-akut-sistemik-reaksiyon-hava-yolu-oksijenasyon-dolasim",
+      "label": "Hava yolu, oksijenasyon ve dolaşım bulguları",
+      "title": "Hava yolu, oksijenasyon ve dolaşım bulguları",
+      "orderLabel": "Hava yolu, oksijenasyon ve dolaşım bulguları",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "Hava yolu, oksijenasyon ve dolaşım bulguları",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Oda havasında düşük oksijen satürasyonu, bronkospazm bulgusu, hipotansiyon ve yüksek şok indeksi aynı anda kaydedilmiştir.",
+      "clinicalMeaning": "Oda havasında düşük oksijen satürasyonu, bronkospazm bulgusu, hipotansiyon ve yüksek şok indeksi aynı anda kaydedilmiştir.",
+      "result": {
+        "title": "Hava yolu, oksijenasyon ve dolaşım durumu",
+        "summary": "Oda havasında düşük oksijen satürasyonu, bronkospazm bulgusu, hipotansiyon ve yüksek şok indeksi aynı anda kaydedilmiştir.",
+        "interpretation": "Oda havasında düşük oksijen satürasyonu, bronkospazm bulgusu, hipotansiyon ve yüksek şok indeksi aynı anda kaydedilmiştir.",
+        "values": [
+          [
+            "SpO₂",
+            "%91 oda havasında",
+            "≥%95",
+            "Düşük"
+          ],
+          [
+            "Kan basıncı",
+            "80/45 mmHg",
+            "≥90 mmHg sistolik",
+            "Hipotansiyon"
+          ],
+          [
+            "Şok indeksi",
+            "1.60",
+            "<0.9",
+            "Yüksek"
+          ],
+          [
+            "Akciğer muayenesi",
+            "Bilateral yaygın ekspiryum sonu hışıltı",
+            "",
+            "Bronkospazm bulgusu"
+          ]
+        ],
+        "rows": [
+          [
+            "SpO₂",
+            "%91 oda havasında",
+            "≥%95",
+            "Düşük"
+          ],
+          [
+            "Kan basıncı",
+            "80/45 mmHg",
+            "≥90 mmHg sistolik",
+            "Hipotansiyon"
+          ],
+          [
+            "Şok indeksi",
+            "1.60",
+            "<0.9",
+            "Yüksek"
+          ],
+          [
+            "Akciğer muayenesi",
+            "Bilateral yaygın ekspiryum sonu hışıltı",
+            "",
+            "Bronkospazm bulgusu"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "SpO₂",
+          "%91 oda havasında",
+          "≥%95",
+          "Düşük"
+        ],
+        [
+          "Kan basıncı",
+          "80/45 mmHg",
+          "≥90 mmHg sistolik",
+          "Hipotansiyon"
+        ],
+        [
+          "Şok indeksi",
+          "1.60",
+          "<0.9",
+          "Yüksek"
+        ],
+        [
+          "Akciğer muayenesi",
+          "Bilateral yaygın ekspiryum sonu hışıltı",
+          "",
+          "Bronkospazm bulgusu"
+        ]
+      ],
+      "postAnswerExplanation": "Oda havasında düşük oksijen satürasyonu, bronkospazm bulgusu, hipotansiyon ve yüksek şok indeksi aynı anda kaydedilmiştir.",
+      "interpretation": "Oda havasında düşük oksijen satürasyonu, bronkospazm bulgusu, hipotansiyon ve yüksek şok indeksi aynı anda kaydedilmiştir.",
+      "explanationAfterAnswer": "Oda havasında düşük oksijen satürasyonu, bronkospazm bulgusu, hipotansiyon ve yüksek şok indeksi aynı anda kaydedilmiştir.",
+      "testValueLabel": "Resüsitasyon güvenliği",
+      "educationalValue": "Resüsitasyon güvenliği",
+      "clinicalPriorityLabel": "Resüsitasyon güvenliği",
+      "scoreImpact": 5,
+      "scoreValue": 5,
+      "clinicalFlowOrder": 2,
+      "purpose": "Hipoksemi, bronkospazm bulgusu ve hipotansiyon birlikte izlenmektedir; bu tablo yalnızca deriyle sınırlı hafif alerjik reaksiyondan ayrılır.",
+      "inlineFeedback": "Oda havasında düşük oksijen satürasyonu, bronkospazm bulgusu, hipotansiyon ve yüksek şok indeksi aynı anda kaydedilmiştir.",
+      "treatmentImpact": "Oksijenasyon ve perfüzyon verileri acil müdahale yoğunluğunu belirler.",
+      "emergencyValue": "Hipotansiyon ve hipoksemi birlikte olduğunda izlem tek başına güvenli değildir."
     },
-    "exam": [
-        "Hasta huzursuz, soluk ve cümleleri nefes nefese tamamlayan görünümdedir.",
-        "Dudaklarda belirgin ödem, yüzde kızarma ve gövdede yaygın kabarık ürtiker plakları izlenir.",
-        "Akciğer oskültasyonunda bilateral yaygın ekspiryum sonu hışıltı duyulur; belirgin inspiratuvar stridor saptanmaz.",
-        "Periferik nabızlar hızlı ve zayıftır; kapiller dolum yaklaşık 4 saniyedir."
+    {
+      "id": "v163-new-001-akut-sistemik-reaksiyon-serum-triptaz-izlem",
+      "label": "Başlangıç zamanı ve alternatif şok nedenleri",
+      "title": "Başlangıç zamanı ve alternatif şok nedenleri",
+      "orderLabel": "Başlangıç zamanı ve alternatif şok nedenleri",
+      "type": "clinical",
+      "priority": "useful",
+      "subtype": "Başlangıç zamanı ve alternatif şok nedenleri",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Yakınmaların enjeksiyonla yakın zaman ilişkisi vardır; eşlik eden ateş, travma, dış kanama veya pürülan odak saptanmamıştır.",
+      "clinicalMeaning": "Yakınmaların enjeksiyonla yakın zaman ilişkisi vardır; eşlik eden ateş, travma, dış kanama veya pürülan odak saptanmamıştır.",
+      "result": {
+        "title": "Alternatif neden ve klinik seyir taraması",
+        "summary": "Yakınmaların enjeksiyonla yakın zaman ilişkisi vardır; eşlik eden ateş, travma, dış kanama veya pürülan odak saptanmamıştır.",
+        "interpretation": "Yakınmaların enjeksiyonla yakın zaman ilişkisi vardır; eşlik eden ateş, travma, dış kanama veya pürülan odak saptanmamıştır.",
+        "values": [
+          [
+            "Zaman ilişkisi",
+            "Yakınmalar enjeksiyon sonrası dakikalar içinde başlamış",
+            "",
+            "Yakın zaman ilişkisi"
+          ],
+          [
+            "Enfeksiyon bulgusu",
+            "Ateş yok; belirgin pürülan odak veya meningismus saptanmadı",
+            "",
+            "Alternatif neden zayıf"
+          ],
+          [
+            "Travma/kanama",
+            "Aktif kanama, ekimoz veya travmatik yaralanma tariflenmiyor",
+            "",
+            "Alternatif neden zayıf"
+          ],
+          [
+            "Klinik seyir",
+            "Başvuru sırasında boğazda daralma ve hışıltı devam ediyor",
+            "",
+            "Devam eden yakınma"
+          ]
+        ],
+        "rows": [
+          [
+            "Zaman ilişkisi",
+            "Yakınmalar enjeksiyon sonrası dakikalar içinde başlamış",
+            "",
+            "Yakın zaman ilişkisi"
+          ],
+          [
+            "Enfeksiyon bulgusu",
+            "Ateş yok; belirgin pürülan odak veya meningismus saptanmadı",
+            "",
+            "Alternatif neden zayıf"
+          ],
+          [
+            "Travma/kanama",
+            "Aktif kanama, ekimoz veya travmatik yaralanma tariflenmiyor",
+            "",
+            "Alternatif neden zayıf"
+          ],
+          [
+            "Klinik seyir",
+            "Başvuru sırasında boğazda daralma ve hışıltı devam ediyor",
+            "",
+            "Devam eden yakınma"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Zaman ilişkisi",
+          "Yakınmalar enjeksiyon sonrası dakikalar içinde başlamış",
+          "",
+          "Yakın zaman ilişkisi"
+        ],
+        [
+          "Enfeksiyon bulgusu",
+          "Ateş yok; belirgin pürülan odak veya meningismus saptanmadı",
+          "",
+          "Alternatif neden zayıf"
+        ],
+        [
+          "Travma/kanama",
+          "Aktif kanama, ekimoz veya travmatik yaralanma tariflenmiyor",
+          "",
+          "Alternatif neden zayıf"
+        ],
+        [
+          "Klinik seyir",
+          "Başvuru sırasında boğazda daralma ve hışıltı devam ediyor",
+          "",
+          "Devam eden yakınma"
+        ]
+      ],
+      "postAnswerExplanation": "Yakınmaların enjeksiyonla yakın zaman ilişkisi vardır; eşlik eden ateş, travma, dış kanama veya pürülan odak saptanmamıştır.",
+      "interpretation": "Yakınmaların enjeksiyonla yakın zaman ilişkisi vardır; eşlik eden ateş, travma, dış kanama veya pürülan odak saptanmamıştır.",
+      "explanationAfterAnswer": "Yakınmaların enjeksiyonla yakın zaman ilişkisi vardır; eşlik eden ateş, travma, dış kanama veya pürülan odak saptanmamıştır.",
+      "testValueLabel": "Destekleyici doğrulama",
+      "educationalValue": "Destekleyici doğrulama",
+      "clinicalPriorityLabel": "Destekleyici doğrulama",
+      "scoreImpact": 2,
+      "scoreValue": 2,
+      "clinicalFlowOrder": 3,
+      "purpose": "Yakınmaların maruziyetle yakın zaman ilişkisi vardır; ateş, travma ve aktif kanama bulgularının olmaması eş zamanlı alternatif şok nedenlerini geri planda bırakır.",
+      "inlineFeedback": "Yakınmaların enjeksiyonla yakın zaman ilişkisi vardır; eşlik eden ateş, travma, dış kanama veya pürülan odak saptanmamıştır.",
+      "treatmentImpact": "Alternatif neden taraması klinik aciliyeti azaltmadan ayırıcı tanıyı düzenler.",
+      "emergencyValue": "Progresif yakınmalar yakın monitörizasyon ve eş zamanlı resüsitasyon hazırlığı gerektirir."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "question": "Enjeksiyon sonrası dakikalar içinde deri-mukoza, solunum ve dolaşım bulguları gelişen bu hastada ilk özgül acil tedavi hangisidir?",
+  "questionType": "treatment",
+  "answerTarget": "first_step",
+  "diagnosis": {
+    "correct": "Uyluk anterolateraline intramüsküler adrenalin uygulamak",
+    "options": [
+      "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek",
+      "Uyluk anterolateraline intramüsküler adrenalin uygulamak",
+      "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek",
+      "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek",
+      "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek"
     ],
-    "investigations": [
-        {
-            "id": "v163-new-001-akut-sistemik-reaksiyon-anafilaksi-klinik-kriterleri",
-            "label": "Çok sistemli alerjik reaksiyon değerlendirmesi",
-            "title": "Çok sistemli akut alerjik reaksiyon değerlendirmesi",
-            "orderLabel": "Çok sistemli akut alerjik reaksiyon değerlendirmesi",
-            "type": "clinical",
-            "priority": "essential",
-            "subtype": "Çok sistemli akut alerjik reaksiyon değerlendirmesi",
-            "category": "clinicalAssessment",
-            "testTypeCategory": "clinicalAssessment",
-            "summary": "İlaç maruziyetinden kısa süre sonra deri-mukoza bulgularına solunum ve dolaşım bulguları eklenmiştir; değerlendirme eş zamanlı sistemik etkilenme ve vital risk üzerinden yapılır.",
-            "clinicalMeaning": "İlaç maruziyetinden kısa süre sonra deri-mukoza bulgularına solunum ve dolaşım bulguları eklenmiştir; değerlendirme eş zamanlı sistemik etkilenme ve vital risk üzerinden yapılır.",
-            "result": {
-                "title": "Çok sistemli akut alerjik reaksiyon değerlendirmesi",
-                "summary": "İlaç maruziyetinden kısa süre sonra deri-mukoza bulgularına solunum ve dolaşım bulguları eklenmiştir; değerlendirme eş zamanlı sistemik etkilenme ve vital risk üzerinden yapılır.",
-                "interpretation": "İlaç maruziyetinden kısa süre sonra deri-mukoza bulgularına solunum ve dolaşım bulguları eklenmiştir; değerlendirme eş zamanlı sistemik etkilenme ve vital risk üzerinden yapılır.",
-                "values": [
-                    [
-                        "Başlangıç zamanı",
-                        "Antibiyotik enjeksiyonundan yaklaşık 10 dakika sonra",
-                        "",
-                        "Hızlı başlangıç"
-                    ],
-                    [
-                        "Deri/mukoza",
-                        "Yaygın ürtiker, yüzde kızarma ve dudak ödemi",
-                        "",
-                        "Sistemik bulgu"
-                    ],
-                    [
-                        "Solunum",
-                        "Boğazda daralma hissi ve bilateral ekspiryum sonu hışıltı",
-                        "",
-                        "Solunum etkilenimi"
-                    ],
-                    [
-                        "Dolaşım",
-                        "Presenkop, hipotansiyon ve uzamış kapiller dolum",
-                        "",
-                        "Perfüzyon bozulması"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "Başlangıç zamanı",
-                        "Antibiyotik enjeksiyonundan yaklaşık 10 dakika sonra",
-                        "",
-                        "Hızlı başlangıç"
-                    ],
-                    [
-                        "Deri/mukoza",
-                        "Yaygın ürtiker, yüzde kızarma ve dudak ödemi",
-                        "",
-                        "Sistemik bulgu"
-                    ],
-                    [
-                        "Solunum",
-                        "Boğazda daralma hissi ve bilateral ekspiryum sonu hışıltı",
-                        "",
-                        "Solunum etkilenimi"
-                    ],
-                    [
-                        "Dolaşım",
-                        "Presenkop, hipotansiyon ve uzamış kapiller dolum",
-                        "",
-                        "Perfüzyon bozulması"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "Başlangıç zamanı",
-                    "Antibiyotik enjeksiyonundan yaklaşık 10 dakika sonra",
-                    "",
-                    "Hızlı başlangıç"
-                ],
-                [
-                    "Deri/mukoza",
-                    "Yaygın ürtiker, yüzde kızarma ve dudak ödemi",
-                    "",
-                    "Sistemik bulgu"
-                ],
-                [
-                    "Solunum",
-                    "Boğazda daralma hissi ve bilateral ekspiryum sonu hışıltı",
-                    "",
-                    "Solunum etkilenimi"
-                ],
-                [
-                    "Dolaşım",
-                    "Presenkop, hipotansiyon ve uzamış kapiller dolum",
-                    "",
-                    "Perfüzyon bozulması"
-                ]
-            ],
-            "postAnswerExplanation": "İlaç maruziyetinden kısa süre sonra deri-mukoza bulgularına solunum ve dolaşım bulguları eklenmiştir; değerlendirme eş zamanlı sistemik etkilenme ve vital risk üzerinden yapılır.",
-            "interpretation": "İlaç maruziyetinden kısa süre sonra deri-mukoza bulgularına solunum ve dolaşım bulguları eklenmiştir; değerlendirme eş zamanlı sistemik etkilenme ve vital risk üzerinden yapılır.",
-            "explanationAfterAnswer": "İlaç maruziyetinden kısa süre sonra deri-mukoza bulgularına solunum ve dolaşım bulguları eklenmiştir; değerlendirme eş zamanlı sistemik etkilenme ve vital risk üzerinden yapılır.",
-            "testValueLabel": "Acil klinik değerlendirme",
-            "educationalValue": "Acil klinik değerlendirme",
-            "clinicalPriorityLabel": "Acil klinik değerlendirme",
-            "scoreImpact": 5,
-            "scoreValue": 5,
-            "clinicalFlowOrder": 1,
-            "purpose": "İlaç maruziyetinden kısa süre sonra deri-mukoza bulgularına solunum ve dolaşım bulguları eklenmiştir; değerlendirme eş zamanlı sistemik etkilenme ve vital risk üzerinden yapılır.",
-            "inlineFeedback": "İlaç maruziyetinden kısa süre sonra deri-mukoza bulgularına solunum ve dolaşım bulguları eklenmiştir; değerlendirme eş zamanlı sistemik etkilenme ve vital risk üzerinden yapılır.",
-            "treatmentImpact": "Deri, solunum ve dolaşım verileri acil tedavi önceliğinin destek basamaklarıyla sınırlı kalamayacağını gösterir.",
-            "emergencyValue": "Solunum ve dolaşım etkilenimi dakikalar içinde kötüleşebileceği için eş zamanlı monitörizasyon gerekir."
-        },
-        {
-            "id": "v163-new-001-akut-sistemik-reaksiyon-hava-yolu-oksijenasyon-dolasim",
-            "label": "Hava yolu, oksijenasyon ve dolaşım durumu",
-            "title": "Hava yolu, oksijenasyon ve dolaşım durumu",
-            "orderLabel": "Hava yolu, oksijenasyon ve dolaşım durumu",
-            "type": "clinical",
-            "priority": "essential",
-            "subtype": "Hava yolu, oksijenasyon ve dolaşım durumu",
-            "category": "clinicalAssessment",
-            "testTypeCategory": "clinicalAssessment",
-            "summary": "Hipoksemi, bronkospazm bulgusu ve hipotansiyon birlikte izlenmektedir; bu tablo yalnızca deriyle sınırlı hafif alerjik reaksiyondan ayrılır.",
-            "clinicalMeaning": "Hipoksemi, bronkospazm bulgusu ve hipotansiyon birlikte izlenmektedir; bu tablo yalnızca deriyle sınırlı hafif alerjik reaksiyondan ayrılır.",
-            "result": {
-                "title": "Hava yolu, oksijenasyon ve dolaşım durumu",
-                "summary": "Hipoksemi, bronkospazm bulgusu ve hipotansiyon birlikte izlenmektedir; bu tablo yalnızca deriyle sınırlı hafif alerjik reaksiyondan ayrılır.",
-                "interpretation": "Hipoksemi, bronkospazm bulgusu ve hipotansiyon birlikte izlenmektedir; bu tablo yalnızca deriyle sınırlı hafif alerjik reaksiyondan ayrılır.",
-                "values": [
-                    [
-                        "SpO₂",
-                        "%91 oda havasında",
-                        "≥%95",
-                        "Düşük"
-                    ],
-                    [
-                        "Kan basıncı",
-                        "80/45 mmHg",
-                        "≥90 mmHg sistolik",
-                        "Hipotansiyon"
-                    ],
-                    [
-                        "Şok indeksi",
-                        "1.60",
-                        "<0.9",
-                        "Yüksek"
-                    ],
-                    [
-                        "Akciğer muayenesi",
-                        "Bilateral yaygın ekspiryum sonu hışıltı",
-                        "",
-                        "Bronkospazm bulgusu"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "SpO₂",
-                        "%91 oda havasında",
-                        "≥%95",
-                        "Düşük"
-                    ],
-                    [
-                        "Kan basıncı",
-                        "80/45 mmHg",
-                        "≥90 mmHg sistolik",
-                        "Hipotansiyon"
-                    ],
-                    [
-                        "Şok indeksi",
-                        "1.60",
-                        "<0.9",
-                        "Yüksek"
-                    ],
-                    [
-                        "Akciğer muayenesi",
-                        "Bilateral yaygın ekspiryum sonu hışıltı",
-                        "",
-                        "Bronkospazm bulgusu"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "SpO₂",
-                    "%91 oda havasında",
-                    "≥%95",
-                    "Düşük"
-                ],
-                [
-                    "Kan basıncı",
-                    "80/45 mmHg",
-                    "≥90 mmHg sistolik",
-                    "Hipotansiyon"
-                ],
-                [
-                    "Şok indeksi",
-                    "1.60",
-                    "<0.9",
-                    "Yüksek"
-                ],
-                [
-                    "Akciğer muayenesi",
-                    "Bilateral yaygın ekspiryum sonu hışıltı",
-                    "",
-                    "Bronkospazm bulgusu"
-                ]
-            ],
-            "postAnswerExplanation": "Hipoksemi, bronkospazm bulgusu ve hipotansiyon birlikte izlenmektedir; bu tablo yalnızca deriyle sınırlı hafif alerjik reaksiyondan ayrılır.",
-            "interpretation": "Hipoksemi, bronkospazm bulgusu ve hipotansiyon birlikte izlenmektedir; bu tablo yalnızca deriyle sınırlı hafif alerjik reaksiyondan ayrılır.",
-            "explanationAfterAnswer": "Hipoksemi, bronkospazm bulgusu ve hipotansiyon birlikte izlenmektedir; bu tablo yalnızca deriyle sınırlı hafif alerjik reaksiyondan ayrılır.",
-            "testValueLabel": "Resüsitasyon güvenliği",
-            "educationalValue": "Resüsitasyon güvenliği",
-            "clinicalPriorityLabel": "Resüsitasyon güvenliği",
-            "scoreImpact": 5,
-            "scoreValue": 5,
-            "clinicalFlowOrder": 2,
-            "purpose": "Hipoksemi, bronkospazm bulgusu ve hipotansiyon birlikte izlenmektedir; bu tablo yalnızca deriyle sınırlı hafif alerjik reaksiyondan ayrılır.",
-            "inlineFeedback": "Hipoksemi, bronkospazm bulgusu ve hipotansiyon birlikte izlenmektedir; bu tablo yalnızca deriyle sınırlı hafif alerjik reaksiyondan ayrılır.",
-            "treatmentImpact": "Oksijenasyon ve perfüzyon verileri acil müdahale yoğunluğunu belirler.",
-            "emergencyValue": "Hipotansiyon ve hipoksemi birlikte olduğunda izlem tek başına güvenli değildir."
-        },
-        {
-            "id": "v163-new-001-akut-sistemik-reaksiyon-serum-triptaz-izlem",
-            "label": "Alternatif neden ve klinik seyir taraması",
-            "title": "Alternatif neden ve klinik seyir taraması",
-            "orderLabel": "Alternatif neden ve klinik seyir taraması",
-            "type": "lab",
-            "priority": "useful",
-            "subtype": "Alternatif neden ve klinik seyir taraması",
-            "category": "lab",
-            "testTypeCategory": "lab",
-            "summary": "Yakınmaların maruziyetle yakın zaman ilişkisi vardır; ateş, travma ve aktif kanama bulgularının olmaması eş zamanlı alternatif şok nedenlerini geri planda bırakır.",
-            "clinicalMeaning": "Yakınmaların maruziyetle yakın zaman ilişkisi vardır; ateş, travma ve aktif kanama bulgularının olmaması eş zamanlı alternatif şok nedenlerini geri planda bırakır.",
-            "result": {
-                "title": "Alternatif neden ve klinik seyir taraması",
-                "summary": "Yakınmaların maruziyetle yakın zaman ilişkisi vardır; ateş, travma ve aktif kanama bulgularının olmaması eş zamanlı alternatif şok nedenlerini geri planda bırakır.",
-                "interpretation": "Yakınmaların maruziyetle yakın zaman ilişkisi vardır; ateş, travma ve aktif kanama bulgularının olmaması eş zamanlı alternatif şok nedenlerini geri planda bırakır.",
-                "values": [
-                    [
-                        "Zaman ilişkisi",
-                        "Yakınmalar enjeksiyon sonrası dakikalar içinde başlamış",
-                        "",
-                        "Uyumlu seyir"
-                    ],
-                    [
-                        "Enfeksiyon bulgusu",
-                        "Ateş yok; belirgin pürülan odak veya meningismus saptanmadı",
-                        "",
-                        "Alternatif neden zayıf"
-                    ],
-                    [
-                        "Travma/kanama",
-                        "Aktif kanama, ekimoz veya travmatik yaralanma tariflenmiyor",
-                        "",
-                        "Alternatif neden zayıf"
-                    ],
-                    [
-                        "Klinik seyir",
-                        "Acil başvurusunda boğazda daralma ve hışıltı devam ediyor",
-                        "",
-                        "İlerleyici yakınma"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "Zaman ilişkisi",
-                        "Yakınmalar enjeksiyon sonrası dakikalar içinde başlamış",
-                        "",
-                        "Uyumlu seyir"
-                    ],
-                    [
-                        "Enfeksiyon bulgusu",
-                        "Ateş yok; belirgin pürülan odak veya meningismus saptanmadı",
-                        "",
-                        "Alternatif neden zayıf"
-                    ],
-                    [
-                        "Travma/kanama",
-                        "Aktif kanama, ekimoz veya travmatik yaralanma tariflenmiyor",
-                        "",
-                        "Alternatif neden zayıf"
-                    ],
-                    [
-                        "Klinik seyir",
-                        "Acil başvurusunda boğazda daralma ve hışıltı devam ediyor",
-                        "",
-                        "İlerleyici yakınma"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "Zaman ilişkisi",
-                    "Yakınmalar enjeksiyon sonrası dakikalar içinde başlamış",
-                    "",
-                    "Uyumlu seyir"
-                ],
-                [
-                    "Enfeksiyon bulgusu",
-                    "Ateş yok; belirgin pürülan odak veya meningismus saptanmadı",
-                    "",
-                    "Alternatif neden zayıf"
-                ],
-                [
-                    "Travma/kanama",
-                    "Aktif kanama, ekimoz veya travmatik yaralanma tariflenmiyor",
-                    "",
-                    "Alternatif neden zayıf"
-                ],
-                [
-                    "Klinik seyir",
-                    "Acil başvurusunda boğazda daralma ve hışıltı devam ediyor",
-                    "",
-                    "İlerleyici yakınma"
-                ]
-            ],
-            "postAnswerExplanation": "Yakınmaların maruziyetle yakın zaman ilişkisi vardır; ateş, travma ve aktif kanama bulgularının olmaması eş zamanlı alternatif şok nedenlerini geri planda bırakır.",
-            "interpretation": "Yakınmaların maruziyetle yakın zaman ilişkisi vardır; ateş, travma ve aktif kanama bulgularının olmaması eş zamanlı alternatif şok nedenlerini geri planda bırakır.",
-            "explanationAfterAnswer": "Yakınmaların maruziyetle yakın zaman ilişkisi vardır; ateş, travma ve aktif kanama bulgularının olmaması eş zamanlı alternatif şok nedenlerini geri planda bırakır.",
-            "testValueLabel": "Destekleyici doğrulama",
-            "educationalValue": "Destekleyici doğrulama",
-            "clinicalPriorityLabel": "Destekleyici doğrulama",
-            "scoreImpact": 2,
-            "scoreValue": 2,
-            "clinicalFlowOrder": 3,
-            "purpose": "Yakınmaların maruziyetle yakın zaman ilişkisi vardır; ateş, travma ve aktif kanama bulgularının olmaması eş zamanlı alternatif şok nedenlerini geri planda bırakır.",
-            "inlineFeedback": "Yakınmaların maruziyetle yakın zaman ilişkisi vardır; ateş, travma ve aktif kanama bulgularının olmaması eş zamanlı alternatif şok nedenlerini geri planda bırakır.",
-            "treatmentImpact": "Alternatif neden taraması klinik aciliyeti azaltmadan ayırıcı tanıyı düzenler.",
-            "emergencyValue": "Progresif yakınmalar yakın monitörizasyon ve eş zamanlı resüsitasyon hazırlığı gerektirir."
-        }
+    "question": "Enjeksiyon sonrası dakikalar içinde deri-mukoza, solunum ve dolaşım bulguları gelişen bu hastada ilk özgül acil tedavi hangisidir?",
+    "explanation": "İlaç maruziyetinden dakikalar sonra başlayan ürtiker ve dudak ödemine hışıltı, hipoksemi, hipotansiyon ve uzamış kapiller dolum eşlik etmektedir. Bu tablo yalnızca kutanöz reaksiyon değil, solunum ve dolaşım tutulumu olan sistemik akut alerjik reaksiyondur. İlk özgül acil tedavi uyluk anterolateraline intramüsküler adrenalindir; oksijen, kristalloid sıvı, inhaler bronkodilatör, antihistaminik ve kortikosteroid destek veya ek basamak olarak kullanılır.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Anafilakside antihistaminik, steroid ve beta-2 agonist yardımcıdır; hipotansiyon, hışıltı veya mukozal ödem varsa ilk özgül tedavi IM adrenalindir."
+      }
     ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": {
-        "enabled": false
-    },
-    "hideExamSignal": true,
-    "question": "Antibiyotik enjeksiyonundan dakikalar sonra deri-mukoza bulgularına hışıltı, hipoksemi ve hipotansiyon eklenen bu hastada ilk özgül acil tedavi hangisidir?",
-    "questionType": "treatment",
-    "answerTarget": "first_step",
-    "diagnosis": {
-        "correct": "Uyluk anterolateraline intramüsküler adrenalin uygulamak",
-        "options": [
-            "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek",
-            "Uyluk anterolateraline intramüsküler adrenalin uygulamak",
-            "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek",
-            "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek",
-            "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek"
-        ],
-        "question": "Antibiyotik enjeksiyonundan dakikalar sonra deri-mukoza bulgularına hışıltı, hipoksemi ve hipotansiyon eklenen bu hastada ilk özgül acil tedavi hangisidir?",
-        "explanation": "Bu hastada ilaç maruziyetinden dakikalar sonra başlayan ürtiker ve dudak ödemine hışıltı, hipoksemi, hipotansiyon ve uzamış kapiller dolum eşlik etmektedir. Bulgular yalnızca kutanöz reaksiyon düzeyinde değildir; solunum ve dolaşım etkilenimi aynı anda vardır. Bu nedenle ilk özgül acil tedavi uyluk anterolateraline intramüsküler adrenalindir; oksijen, kristalloid sıvı, inhaler bronkodilatör, antihistaminik ve steroid destek/ek basamak olarak düşünülür.",
-        "pearls": [
-            {
-                "label": "Sınav notu",
-                "text": "Anafilakside antihistaminik, steroid ve beta-2 agonist yardımcıdır; hipotansiyon veya bronkospazm varsa ilk özgül tedavi IM adrenalindir."
-            }
-        ],
-        "answerFeedback": {
-            "summary": "Bu hastada ilaç maruziyetinden dakikalar sonra başlayan ürtiker ve dudak ödemine hışıltı, hipoksemi, hipotansiyon ve uzamış kapiller dolum eşlik etmektedir. Bulgular yalnızca kutanöz reaksiyon düzeyinde değildir; solunum ve dolaşım etkilenimi aynı anda vardır. Bu nedenle ilk özgül acil tedavi uyluk anterolateraline intramüsküler adrenalindir; oksijen, kristalloid sıvı, inhaler bronkodilatör, antihistaminik ve steroid destek/ek basamak olarak düşünülür.",
-            "whyCorrect": "İntramüsküler adrenalin alfa ve beta adrenerjik etkileriyle vazodilatasyon, kapiller kaçak, mukozal ödem ve bronkospazmı aynı anda hedefler. Bu hastada hipotansiyon ve hışıltı bulunduğu için antihistaminik, steroid veya tek başına bronkodilatör yanıtı beklemek zaman kaybettirir.",
-            "rationale": "Bu hastada ilaç maruziyetinden dakikalar sonra başlayan ürtiker ve dudak ödemine hışıltı, hipoksemi, hipotansiyon ve uzamış kapiller dolum eşlik etmektedir. Bulgular yalnızca kutanöz reaksiyon düzeyinde değildir; solunum ve dolaşım etkilenimi aynı anda vardır. Bu nedenle ilk özgül acil tedavi uyluk anterolateraline intramüsküler adrenalindir; oksijen, kristalloid sıvı, inhaler bronkodilatör, antihistaminik ve steroid destek/ek basamak olarak düşünülür.",
-            "correctOptionFeedback": "Bu seçenek solunum ve dolaşım tutulumu olan sistemik alerjik reaksiyonun patofizyolojisini doğrudan hedefler. Uyluk anterolateral kası hızlı emilim sağlar ve IV erişim veya laboratuvar sonucu beklenmeden uygulanması gerekir.",
-            "keyClues": [
-                "Enjeksiyondan yaklaşık 10 dakika sonra başlayan kaşıntı ve yüz kızarması hızlı maruziyet-zaman ilişkisini gösterir.",
-                "Dudak ödemi ve yaygın ürtikere boğazda daralma hissi ile hışıltının eklenmesi deri-mukoza ve solunum etkilenimini birlikte gösterir.",
-                "80/45 mmHg kan basıncı, 1.60 şok indeksi ve uzamış kapiller dolum dolaşım etkilenmesini gösterir.",
-                "Ateş, travma veya aktif kanama öyküsünün olmaması eş zamanlı alternatif şok nedenlerini zayıflatır."
-            ],
-            "evidenceChain": [
-                {
-                    "text": "Enjeksiyondan yaklaşık 10 dakika sonra başlayan kaşıntı ve yüz kızarması hızlı maruziyet-zaman ilişkisini gösterir.",
-                    "weight": "high",
-                    "source": "case"
-                },
-                {
-                    "text": "Dudak ödemi ve yaygın ürtikere boğazda daralma hissi ile hışıltının eklenmesi deri-mukoza ve solunum etkilenimini birlikte gösterir.",
-                    "weight": "high",
-                    "source": "case"
-                },
-                {
-                    "text": "80/45 mmHg kan basıncı, 1.60 şok indeksi ve uzamış kapiller dolum dolaşım etkilenmesini gösterir.",
-                    "weight": "high",
-                    "source": "case"
-                },
-                {
-                    "text": "Ateş, travma veya aktif kanama öyküsünün olmaması eş zamanlı alternatif şok nedenlerini zayıflatır.",
-                    "weight": "medium",
-                    "source": "case"
-                }
-            ],
-            "examPearl": "Anafilakside antihistaminik, steroid ve beta-2 agonist yardımcıdır; hipotansiyon veya bronkospazm varsa ilk özgül tedavi IM adrenalindir.",
-            "pearls": [
-                {
-                    "label": "Sınav notu",
-                    "text": "Anafilakside antihistaminik, steroid ve beta-2 agonist yardımcıdır; hipotansiyon veya bronkospazm varsa ilk özgül tedavi IM adrenalindir."
-                }
-            ],
-            "clinicalPearls": [
-                {
-                    "label": "Klinik ayrım",
-                    "text": "Basit ürtiker kaşıntı ve plaklarla sınırlıdır; hışıltı, hipoksemi, hipotansiyon veya presenkop eklenirse acil sistemik reaksiyon olarak yönetilir."
-                }
-            ],
-            "optionComparison": {
-                "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada gereklidir; ancak tek başına destek tedavisi bronkospazmı, mukozal ödemi ve vazodilatasyonu yeterince hızlı tersine çevirmez. Hipotansiyon ve solunum bulgusu varken özgül tedavi ertelenmemelidir.",
-                "Uyluk anterolateraline intramüsküler adrenalin uygulamak": "Bu seçenek solunum ve dolaşım tutulumu olan sistemik alerjik reaksiyonun patofizyolojisini doğrudan hedefler. Uyluk anterolateral kası hızlı emilim sağlar ve IV erişim veya laboratuvar sonucu beklenmeden uygulanması gerekir.",
-                "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtikerin semptomatik kontrolüne yardımcı olabilir. Ancak hışıltı, hipoksemi ve hipotansiyon varlığında antihistaminik yanıtı beklemek hava yolu ve dolaşım riskini artırır.",
-                "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "Beta-2 agonist bronkospazm için ek tedavi olarak değerlidir. Fakat hastada eş zamanlı mukozal ödem ve dolaşım çökmesi bulunduğu için yalnız bronkodilatasyon sistemik reaksiyonu kontrol etmez.",
-                "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin akut etkisi yavaştır ve ilk dakikalardaki hipotansiyon-bronkospazmı hızla düzeltmez. Geç faz veya uzamış semptom riski için eklenebilir, ancak ilk özgül tedaviyi geciktirmemelidir."
-            },
-            "optionFeedback": {
-                "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada gereklidir; ancak tek başına destek tedavisi bronkospazmı, mukozal ödemi ve vazodilatasyonu yeterince hızlı tersine çevirmez. Hipotansiyon ve solunum bulgusu varken özgül tedavi ertelenmemelidir.",
-                "Uyluk anterolateraline intramüsküler adrenalin uygulamak": "Bu seçenek solunum ve dolaşım tutulumu olan sistemik alerjik reaksiyonun patofizyolojisini doğrudan hedefler. Uyluk anterolateral kası hızlı emilim sağlar ve IV erişim veya laboratuvar sonucu beklenmeden uygulanması gerekir.",
-                "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtikerin semptomatik kontrolüne yardımcı olabilir. Ancak hışıltı, hipoksemi ve hipotansiyon varlığında antihistaminik yanıtı beklemek hava yolu ve dolaşım riskini artırır.",
-                "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "Beta-2 agonist bronkospazm için ek tedavi olarak değerlidir. Fakat hastada eş zamanlı mukozal ödem ve dolaşım çökmesi bulunduğu için yalnız bronkodilatasyon sistemik reaksiyonu kontrol etmez.",
-                "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin akut etkisi yavaştır ve ilk dakikalardaki hipotansiyon-bronkospazmı hızla düzeltmez. Geç faz veya uzamış semptom riski için eklenebilir, ancak ilk özgül tedaviyi geciktirmemelidir."
-            },
-            "whyWrong": {
-                "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada gereklidir; ancak tek başına destek tedavisi bronkospazmı, mukozal ödemi ve vazodilatasyonu yeterince hızlı tersine çevirmez. Hipotansiyon ve solunum bulgusu varken özgül tedavi ertelenmemelidir.",
-                "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtikerin semptomatik kontrolüne yardımcı olabilir. Ancak hışıltı, hipoksemi ve hipotansiyon varlığında antihistaminik yanıtı beklemek hava yolu ve dolaşım riskini artırır.",
-                "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "Beta-2 agonist bronkospazm için ek tedavi olarak değerlidir. Fakat hastada eş zamanlı mukozal ödem ve dolaşım çökmesi bulunduğu için yalnız bronkodilatasyon sistemik reaksiyonu kontrol etmez.",
-                "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin akut etkisi yavaştır ve ilk dakikalardaki hipotansiyon-bronkospazmı hızla düzeltmez. Geç faz veya uzamış semptom riski için eklenebilir, ancak ilk özgül tedaviyi geciktirmemelidir."
-            },
-            "managementSteps": [],
-            "management": [],
-            "learningOutcome": "Anafilakside çok sistem etkilenimini tanıyarak destek tedavilerini ilk özgül tedaviyle karıştırmama.",
-            "coreKnowledge": "Anafilakside tanı kliniktir; deri-mukoza bulgularına solunum veya dolaşım etkilenmesi eklendiğinde ilk özgül tedavi gecikmeden intramüsküler adrenalindir."
+    "answerFeedback": {
+      "summary": "İlaç maruziyetinden dakikalar sonra başlayan ürtiker ve dudak ödemine hışıltı, hipoksemi, hipotansiyon ve uzamış kapiller dolum eşlik etmektedir. Bu tablo yalnızca kutanöz reaksiyon değil, solunum ve dolaşım tutulumu olan sistemik akut alerjik reaksiyondur. İlk özgül acil tedavi uyluk anterolateraline intramüsküler adrenalindir; oksijen, kristalloid sıvı, inhaler bronkodilatör, antihistaminik ve kortikosteroid destek veya ek basamak olarak kullanılır.",
+      "whyCorrect": "İntramüsküler adrenalin alfa ve beta adrenerjik etkileriyle vazodilatasyon, kapiller kaçak, mukozal ödem ve bronkospazmı aynı anda hedefler. Bu nedenle solunum veya dolaşım tutulumu bulunan sistemik alerjik reaksiyonda yardımcı ilaçların yanıtı beklenmez.",
+      "rationale": "İlaç maruziyetinden dakikalar sonra başlayan ürtiker ve dudak ödemine hışıltı, hipoksemi, hipotansiyon ve uzamış kapiller dolum eşlik etmektedir. Bu tablo yalnızca kutanöz reaksiyon değil, solunum ve dolaşım tutulumu olan sistemik akut alerjik reaksiyondur. İlk özgül acil tedavi uyluk anterolateraline intramüsküler adrenalindir; oksijen, kristalloid sıvı, inhaler bronkodilatör, antihistaminik ve kortikosteroid destek veya ek basamak olarak kullanılır.",
+      "correctOptionFeedback": "Bu seçenek vazodilatasyon, kapiller kaçak, mukozal ödem ve bronkospazmı aynı anda hedefler. Uyluk anterolateral kasına intramüsküler uygulama hızlı emilim sağlar ve IV erişim, laboratuvar veya yardımcı ilaç yanıtı beklenmeden verilmelidir.",
+      "keyClues": [
+        "Enjeksiyondan yaklaşık 10 dakika sonra başlayan kaşıntı ve yüz kızarması hızlı maruziyet-zaman ilişkisini gösterir.",
+        "Dudak ödemi, boğazda daralma ve hışıltı deri-mukoza bulgularına solunum tutulumu eklendiğini gösterir.",
+        "80/45 mmHg kan basıncı, yüksek şok indeksi ve uzamış kapiller dolum dolaşım etkilenmesini gösterir.",
+        "Ateş, travma ve aktif kanama öyküsünün olmaması eş zamanlı alternatif şok nedenlerini zayıflatır."
+      ],
+      "evidenceChain": [
+        {
+          "text": "Enjeksiyondan yaklaşık 10 dakika sonra başlayan kaşıntı ve yüz kızarması hızlı maruziyet-zaman ilişkisini gösterir.",
+          "weight": "high",
+          "source": "case"
         },
-        "whyCorrect": "İntramüsküler adrenalin vazodilatasyon, kapiller kaçak, mukozal ödem ve bronkospazmı aynı anda hedefleyen hızlı etkili özgül tedavidir. Hipotansiyon ve hışıltı bulunduğu için antihistaminik veya steroid yanıtı beklemek hasta güvenliğini bozar.",
-        "evidenceChain": [
-            {
-                "text": "Enjeksiyondan yaklaşık 10 dakika sonra başlayan progresif yakınmalar hızlı sistemik reaksiyon paternini destekler.",
-                "weight": "high",
-                "source": "case"
-            },
-            {
-                "text": "Ürtiker ve dudak ödemine hışıltı ve SpO₂ düşüklüğü eşlik etmesi deri-mukoza ve solunum sisteminin birlikte etkilendiğini gösterir.",
-                "weight": "high",
-                "source": "case"
-            },
-            {
-                "text": "80/45 mmHg kan basıncı, 1.60 şok indeksi ve uzamış kapiller dolum dolaşım etkilenmesini gösterir.",
-                "weight": "high",
-                "source": "case"
-            },
-            {
-                "text": "Ateş, travma veya aktif kanama bulgusunun olmaması alternatif şok nedenlerini geri plana iter.",
-                "weight": "medium",
-                "source": "case"
-            }
-        ],
-        "optionComparison": {
-            "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada gereklidir; ancak tek başına destek tedavisi bronkospazmı, mukozal ödemi ve vazodilatasyonu yeterince hızlı tersine çevirmez. Hipotansiyon ve solunum bulgusu varken özgül tedavi ertelenmemelidir.",
-            "Uyluk anterolateraline intramüsküler adrenalin uygulamak": "Bu seçenek solunum ve dolaşım tutulumu olan sistemik alerjik reaksiyonun patofizyolojisini doğrudan hedefler. Uyluk anterolateral kası hızlı emilim sağlar ve IV erişim veya laboratuvar sonucu beklenmeden uygulanması gerekir.",
-            "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtikerin semptomatik kontrolüne yardımcı olabilir. Ancak hışıltı, hipoksemi ve hipotansiyon varlığında antihistaminik yanıtı beklemek hava yolu ve dolaşım riskini artırır.",
-            "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "Beta-2 agonist bronkospazm için ek tedavi olarak değerlidir. Fakat hastada eş zamanlı mukozal ödem ve dolaşım çökmesi bulunduğu için yalnız bronkodilatasyon sistemik reaksiyonu kontrol etmez.",
-            "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin akut etkisi yavaştır ve ilk dakikalardaki hipotansiyon-bronkospazmı hızla düzeltmez. Geç faz veya uzamış semptom riski için eklenebilir, ancak ilk özgül tedaviyi geciktirmemelidir."
+        {
+          "text": "Dudak ödemi, boğazda daralma ve hışıltı deri-mukoza bulgularına solunum tutulumu eklendiğini gösterir.",
+          "weight": "high",
+          "source": "case"
         },
-        "coreKnowledge": "Anafilakside tanı kliniktir; deri-mukoza bulgularına solunum veya dolaşım etkilenmesi eklendiğinde ilk özgül tedavi intramüsküler adrenalindir.",
-        "examPearl": "Anafilakside antihistaminik, steroid ve beta-2 agonist yardımcıdır; hipotansiyon veya bronkospazm varsa ilk özgül tedavi IM adrenalindir.",
-        "whyWrong": {
-            "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada gereklidir; ancak tek başına destek tedavisi bronkospazmı, mukozal ödemi ve vazodilatasyonu yeterince hızlı tersine çevirmez. Hipotansiyon ve solunum bulgusu varken özgül tedavi ertelenmemelidir.",
-            "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtikerin semptomatik kontrolüne yardımcı olabilir. Ancak hışıltı, hipoksemi ve hipotansiyon varlığında antihistaminik yanıtı beklemek hava yolu ve dolaşım riskini artırır.",
-            "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "Beta-2 agonist bronkospazm için ek tedavi olarak değerlidir. Fakat hastada eş zamanlı mukozal ödem ve dolaşım çökmesi bulunduğu için yalnız bronkodilatasyon sistemik reaksiyonu kontrol etmez.",
-            "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin akut etkisi yavaştır ve ilk dakikalardaki hipotansiyon-bronkospazmı hızla düzeltmez. Geç faz veya uzamış semptom riski için eklenebilir, ancak ilk özgül tedaviyi geciktirmemelidir."
+        {
+          "text": "80/45 mmHg kan basıncı, yüksek şok indeksi ve uzamış kapiller dolum dolaşım etkilenmesini gösterir.",
+          "weight": "high",
+          "source": "case"
         },
-        "optionFeedback": {
-            "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada gereklidir; ancak tek başına destek tedavisi bronkospazmı, mukozal ödemi ve vazodilatasyonu yeterince hızlı tersine çevirmez. Hipotansiyon ve solunum bulgusu varken özgül tedavi ertelenmemelidir.",
-            "Uyluk anterolateraline intramüsküler adrenalin uygulamak": "Bu seçenek solunum ve dolaşım tutulumu olan sistemik alerjik reaksiyonun patofizyolojisini doğrudan hedefler. Uyluk anterolateral kası hızlı emilim sağlar ve IV erişim veya laboratuvar sonucu beklenmeden uygulanması gerekir.",
-            "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtikerin semptomatik kontrolüne yardımcı olabilir. Ancak hışıltı, hipoksemi ve hipotansiyon varlığında antihistaminik yanıtı beklemek hava yolu ve dolaşım riskini artırır.",
-            "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "Beta-2 agonist bronkospazm için ek tedavi olarak değerlidir. Fakat hastada eş zamanlı mukozal ödem ve dolaşım çökmesi bulunduğu için yalnız bronkodilatasyon sistemik reaksiyonu kontrol etmez.",
-            "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin akut etkisi yavaştır ve ilk dakikalardaki hipotansiyon-bronkospazmı hızla düzeltmez. Geç faz veya uzamış semptom riski için eklenebilir, ancak ilk özgül tedaviyi geciktirmemelidir."
+        {
+          "text": "Ateş, travma ve aktif kanama öyküsünün olmaması eş zamanlı alternatif şok nedenlerini zayıflatır.",
+          "weight": "medium",
+          "source": "case"
         }
-    },
-    "shuffleOptions": false,
-    "difficultyTag": "Acil",
-    "coreKnowledge": "Anafilakside tanı kliniktir; deri-mukoza bulgularına solunum veya dolaşım etkilenmesi eklendiğinde ilk özgül tedavi gecikmeden intramüsküler adrenalindir.",
-    "examPearl": "Anafilakside antihistaminik, steroid ve beta-2 agonist yardımcıdır; hipotansiyon veya bronkospazm varsa ilk özgül tedavi IM adrenalindir.",
-    "whyCorrect": "İntramüsküler adrenalin alfa ve beta adrenerjik etkileriyle vazodilatasyon, kapiller kaçak, mukozal ödem ve bronkospazmı aynı anda hedefler. Bu hastada hipotansiyon ve hışıltı bulunduğu için antihistaminik, steroid veya tek başına bronkodilatör yanıtı beklemek zaman kaybettirir.",
-    "optionComparison": {
+      ],
+      "examPearl": "Anafilakside antihistaminik, steroid ve beta-2 agonist yardımcıdır; hipotansiyon, hışıltı veya mukozal ödem varsa ilk özgül tedavi IM adrenalindir.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Anafilakside antihistaminik, steroid ve beta-2 agonist yardımcıdır; hipotansiyon, hışıltı veya mukozal ödem varsa ilk özgül tedavi IM adrenalindir."
+        }
+      ],
+      "clinicalPearls": [
+        {
+          "label": "Klinik ayrım",
+          "text": "Basit ürtiker kaşıntı ve plaklarla sınırlıdır; hışıltı, hipoksemi, hipotansiyon veya presenkop eklenirse acil sistemik reaksiyon olarak yönetilir."
+        }
+      ],
+      "optionComparison": {
+        "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada eş zamanlı destek basamaklarıdır; ancak tek başına bekle-gör yaklaşımı bronkospazm, mukozal ödem ve vazodilatasyonu hızlıca tersine çevirmez. Hipotansiyon ve hışıltı varken özgül tedavi geciktirilmemelidir.",
+        "Uyluk anterolateraline intramüsküler adrenalin uygulamak": "Bu seçenek vazodilatasyon, kapiller kaçak, mukozal ödem ve bronkospazmı aynı anda hedefler. Uyluk anterolateral kasına intramüsküler uygulama hızlı emilim sağlar ve IV erişim, laboratuvar veya yardımcı ilaç yanıtı beklenmeden verilmelidir.",
+        "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtiker için yardımcı olabilir, fakat hipotansiyon, hışıltı ve boğazda daralma gibi yaşamı tehdit eden bulguları tek başına düzeltmez. Bu vakada ürtiker yanıtını beklemek solunum-dolaşım riskini artırır.",
+        "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "İnhale beta-2 agonist bronkospazm için eklenebilir; ancak mukozal ödem, kapiller kaçak ve hipotansiyonu tedavi etmez. Hastada dolaşım bozulması da olduğu için tek başına bronkodilatör ilk özgül tedavi değildir.",
+        "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin etkisi geç başlar ve akut hipotansiyon-bronkospazm döngüsünü dakikalar içinde düzeltmez. Geç faz reaksiyonunu azaltma amacıyla eklenebilir, fakat ilk acil basamak yerine geçmez."
+      },
+      "optionFeedback": {
         "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada gereklidir; ancak tek başına destek tedavisi bronkospazmı, mukozal ödemi ve vazodilatasyonu yeterince hızlı tersine çevirmez. Hipotansiyon ve solunum bulgusu varken özgül tedavi ertelenmemelidir.",
         "Uyluk anterolateraline intramüsküler adrenalin uygulamak": "Bu seçenek solunum ve dolaşım tutulumu olan sistemik alerjik reaksiyonun patofizyolojisini doğrudan hedefler. Uyluk anterolateral kası hızlı emilim sağlar ve IV erişim veya laboratuvar sonucu beklenmeden uygulanması gerekir.",
         "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtikerin semptomatik kontrolüne yardımcı olabilir. Ancak hışıltı, hipoksemi ve hipotansiyon varlığında antihistaminik yanıtı beklemek hava yolu ve dolaşım riskini artırır.",
         "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "Beta-2 agonist bronkospazm için ek tedavi olarak değerlidir. Fakat hastada eş zamanlı mukozal ödem ve dolaşım çökmesi bulunduğu için yalnız bronkodilatasyon sistemik reaksiyonu kontrol etmez.",
         "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin akut etkisi yavaştır ve ilk dakikalardaki hipotansiyon-bronkospazmı hızla düzeltmez. Geç faz veya uzamış semptom riski için eklenebilir, ancak ilk özgül tedaviyi geciktirmemelidir."
-    },
-    "evidenceChain": [
-        {
-            "text": "Enjeksiyondan yaklaşık 10 dakika sonra başlayan kaşıntı ve yüz kızarması hızlı maruziyet-zaman ilişkisini gösterir.",
-            "weight": "high",
-            "source": "case"
-        },
-        {
-            "text": "Dudak ödemi ve yaygın ürtikere boğazda daralma hissi ile hışıltının eklenmesi deri-mukoza ve solunum etkilenimini birlikte gösterir.",
-            "weight": "high",
-            "source": "case"
-        },
-        {
-            "text": "80/45 mmHg kan basıncı, 1.60 şok indeksi ve uzamış kapiller dolum dolaşım etkilenmesini gösterir.",
-            "weight": "high",
-            "source": "case"
-        },
-        {
-            "text": "Ateş, travma veya aktif kanama öyküsünün olmaması eş zamanlı alternatif şok nedenlerini zayıflatır.",
-            "weight": "medium",
-            "source": "case"
-        }
-    ],
-    "whyWrong": {
+      },
+      "whyWrong": {
         "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada gereklidir; ancak tek başına destek tedavisi bronkospazmı, mukozal ödemi ve vazodilatasyonu yeterince hızlı tersine çevirmez. Hipotansiyon ve solunum bulgusu varken özgül tedavi ertelenmemelidir.",
         "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtikerin semptomatik kontrolüne yardımcı olabilir. Ancak hışıltı, hipoksemi ve hipotansiyon varlığında antihistaminik yanıtı beklemek hava yolu ve dolaşım riskini artırır.",
         "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "Beta-2 agonist bronkospazm için ek tedavi olarak değerlidir. Fakat hastada eş zamanlı mukozal ödem ve dolaşım çökmesi bulunduğu için yalnız bronkodilatasyon sistemik reaksiyonu kontrol etmez.",
         "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin akut etkisi yavaştır ve ilk dakikalardaki hipotansiyon-bronkospazmı hızla düzeltmez. Geç faz veya uzamış semptom riski için eklenebilir, ancak ilk özgül tedaviyi geciktirmemelidir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Anafilakside çok sistem etkilenimini tanıyarak destek tedavilerini ilk özgül tedaviyle karıştırmama.",
+      "coreKnowledge": "Anafilakside tanı kliniktir; deri-mukoza bulgularına solunum veya dolaşım etkilenmesi eklendiğinde ilk özgül tedavi gecikmeden intramüsküler adrenalindir."
     },
-    "editorialMeta": {
-        "smallClerkshipsUltraRefined": true,
-        "smallClerkshipsSubspecialty": "Acil servis / immünoloji - anafilaksi",
-        "lastRefinedAt": "2026-05-31"
+    "whyCorrect": "İntramüsküler adrenalin vazodilatasyon, kapiller kaçak, mukozal ödem ve bronkospazmı aynı anda hedefleyen hızlı etkili özgül tedavidir. Hipotansiyon ve hışıltı bulunduğu için antihistaminik veya steroid yanıtı beklemek hasta güvenliğini bozar.",
+    "evidenceChain": [
+      {
+        "text": "Enjeksiyondan yaklaşık 10 dakika sonra başlayan progresif yakınmalar hızlı sistemik reaksiyon paternini destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Ürtiker ve dudak ödemine hışıltı ve SpO₂ düşüklüğü eşlik etmesi deri-mukoza ve solunum sisteminin birlikte etkilendiğini gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "80/45 mmHg kan basıncı, 1.60 şok indeksi ve uzamış kapiller dolum dolaşım etkilenmesini gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Ateş, travma veya aktif kanama bulgusunun olmaması alternatif şok nedenlerini geri plana iter.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada gereklidir; ancak tek başına destek tedavisi bronkospazmı, mukozal ödemi ve vazodilatasyonu yeterince hızlı tersine çevirmez. Hipotansiyon ve solunum bulgusu varken özgül tedavi ertelenmemelidir.",
+      "Uyluk anterolateraline intramüsküler adrenalin uygulamak": "Bu seçenek solunum ve dolaşım tutulumu olan sistemik alerjik reaksiyonun patofizyolojisini doğrudan hedefler. Uyluk anterolateral kası hızlı emilim sağlar ve IV erişim veya laboratuvar sonucu beklenmeden uygulanması gerekir.",
+      "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtikerin semptomatik kontrolüne yardımcı olabilir. Ancak hışıltı, hipoksemi ve hipotansiyon varlığında antihistaminik yanıtı beklemek hava yolu ve dolaşım riskini artırır.",
+      "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "Beta-2 agonist bronkospazm için ek tedavi olarak değerlidir. Fakat hastada eş zamanlı mukozal ödem ve dolaşım çökmesi bulunduğu için yalnız bronkodilatasyon sistemik reaksiyonu kontrol etmez.",
+      "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin akut etkisi yavaştır ve ilk dakikalardaki hipotansiyon-bronkospazmı hızla düzeltmez. Geç faz veya uzamış semptom riski için eklenebilir, ancak ilk özgül tedaviyi geciktirmemelidir."
     },
-    "preserveInvestigationOrder": true,
-    "smallClerkshipsInvestigationLayerEnhanced": true,
-    "smallClerkshipsInvestigationLayerVersion": "v398-small-clerkships-investigation-layer",
-    "smallClerkshipsSubspecialty": "Acil servis / immünoloji - anafilaksi",
-    "investigationLayerMeta": {
-        "enhancedAt": "2026-05-31",
-        "editor": "small-clerkships-first5-quality-pass",
-        "scope": "Only branchId === minor-rotations general clinical cases",
-        "subspecialty": "Acil servis / immünoloji - anafilaksi",
-        "objective": "Multidisipliner küçük staj gerçekçiliği, acil öncelik, organ/fonksiyon koruma, basitten komplekse tetkik akışı, tetkik değer etiketi ve girişim geciktirmeme güvenlik kapısı",
-        "note": "Anafilaksi vakasında objektif veri katmanı klinik tanı → hava yolu/oksijenasyon-dolaşım güvenliği → destekleyici doğrulama/izlem şeklinde düzenlendi; IM adrenalin laboratuvar beklenerek geciktirilmez."
+    "coreKnowledge": "Anafilakside tanı kliniktir; deri-mukoza bulgularına solunum veya dolaşım etkilenmesi eklendiğinde ilk özgül tedavi intramüsküler adrenalindir.",
+    "examPearl": "Anafilakside antihistaminik, steroid ve beta-2 agonist yardımcıdır; hipotansiyon veya bronkospazm varsa ilk özgül tedavi IM adrenalindir.",
+    "whyWrong": {
+      "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada gereklidir; ancak tek başına destek tedavisi bronkospazmı, mukozal ödemi ve vazodilatasyonu yeterince hızlı tersine çevirmez. Hipotansiyon ve solunum bulgusu varken özgül tedavi ertelenmemelidir.",
+      "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtikerin semptomatik kontrolüne yardımcı olabilir. Ancak hışıltı, hipoksemi ve hipotansiyon varlığında antihistaminik yanıtı beklemek hava yolu ve dolaşım riskini artırır.",
+      "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "Beta-2 agonist bronkospazm için ek tedavi olarak değerlidir. Fakat hastada eş zamanlı mukozal ödem ve dolaşım çökmesi bulunduğu için yalnız bronkodilatasyon sistemik reaksiyonu kontrol etmez.",
+      "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin akut etkisi yavaştır ve ilk dakikalardaki hipotansiyon-bronkospazmı hızla düzeltmez. Geç faz veya uzamış semptom riski için eklenebilir, ancak ilk özgül tedaviyi geciktirmemelidir."
     },
     "optionFeedback": {
-        "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada gereklidir; ancak tek başına destek tedavisi bronkospazmı, mukozal ödemi ve vazodilatasyonu yeterince hızlı tersine çevirmez. Hipotansiyon ve solunum bulgusu varken özgül tedavi ertelenmemelidir.",
-        "Uyluk anterolateraline intramüsküler adrenalin uygulamak": "Bu seçenek solunum ve dolaşım tutulumu olan sistemik alerjik reaksiyonun patofizyolojisini doğrudan hedefler. Uyluk anterolateral kası hızlı emilim sağlar ve IV erişim veya laboratuvar sonucu beklenmeden uygulanması gerekir.",
-        "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtikerin semptomatik kontrolüne yardımcı olabilir. Ancak hışıltı, hipoksemi ve hipotansiyon varlığında antihistaminik yanıtı beklemek hava yolu ve dolaşım riskini artırır.",
-        "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "Beta-2 agonist bronkospazm için ek tedavi olarak değerlidir. Fakat hastada eş zamanlı mukozal ödem ve dolaşım çökmesi bulunduğu için yalnız bronkodilatasyon sistemik reaksiyonu kontrol etmez.",
-        "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin akut etkisi yavaştır ve ilk dakikalardaki hipotansiyon-bronkospazmı hızla düzeltmez. Geç faz veya uzamış semptom riski için eklenebilir, ancak ilk özgül tedaviyi geciktirmemelidir."
+      "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada gereklidir; ancak tek başına destek tedavisi bronkospazmı, mukozal ödemi ve vazodilatasyonu yeterince hızlı tersine çevirmez. Hipotansiyon ve solunum bulgusu varken özgül tedavi ertelenmemelidir.",
+      "Uyluk anterolateraline intramüsküler adrenalin uygulamak": "Bu seçenek solunum ve dolaşım tutulumu olan sistemik alerjik reaksiyonun patofizyolojisini doğrudan hedefler. Uyluk anterolateral kası hızlı emilim sağlar ve IV erişim veya laboratuvar sonucu beklenmeden uygulanması gerekir.",
+      "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtikerin semptomatik kontrolüne yardımcı olabilir. Ancak hışıltı, hipoksemi ve hipotansiyon varlığında antihistaminik yanıtı beklemek hava yolu ve dolaşım riskini artırır.",
+      "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "Beta-2 agonist bronkospazm için ek tedavi olarak değerlidir. Fakat hastada eş zamanlı mukozal ödem ve dolaşım çökmesi bulunduğu için yalnız bronkodilatasyon sistemik reaksiyonu kontrol etmez.",
+      "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin akut etkisi yavaştır ve ilk dakikalardaki hipotansiyon-bronkospazmı hızla düzeltmez. Geç faz veya uzamış semptom riski için eklenebilir, ancak ilk özgül tedaviyi geciktirmemelidir."
     }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Acil",
+  "coreKnowledge": "Anafilakside tanı kliniktir; deri-mukoza bulgularına solunum veya dolaşım etkilenmesi eklendiğinde ilk özgül tedavi gecikmeden intramüsküler adrenalindir.",
+  "examPearl": "Anafilakside antihistaminik, steroid ve beta-2 agonist yardımcıdır; hipotansiyon, hışıltı veya mukozal ödem varsa ilk özgül tedavi IM adrenalindir.",
+  "whyCorrect": "İntramüsküler adrenalin alfa ve beta adrenerjik etkileriyle vazodilatasyon, kapiller kaçak, mukozal ödem ve bronkospazmı aynı anda hedefler. Bu nedenle solunum veya dolaşım tutulumu bulunan sistemik alerjik reaksiyonda yardımcı ilaçların yanıtı beklenmez.",
+  "optionComparison": {
+    "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada eş zamanlı destek basamaklarıdır; ancak tek başına bekle-gör yaklaşımı bronkospazm, mukozal ödem ve vazodilatasyonu hızlıca tersine çevirmez. Hipotansiyon ve hışıltı varken özgül tedavi geciktirilmemelidir.",
+    "Uyluk anterolateraline intramüsküler adrenalin uygulamak": "Bu seçenek vazodilatasyon, kapiller kaçak, mukozal ödem ve bronkospazmı aynı anda hedefler. Uyluk anterolateral kasına intramüsküler uygulama hızlı emilim sağlar ve IV erişim, laboratuvar veya yardımcı ilaç yanıtı beklenmeden verilmelidir.",
+    "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtiker için yardımcı olabilir, fakat hipotansiyon, hışıltı ve boğazda daralma gibi yaşamı tehdit eden bulguları tek başına düzeltmez. Bu vakada ürtiker yanıtını beklemek solunum-dolaşım riskini artırır.",
+    "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "İnhale beta-2 agonist bronkospazm için eklenebilir; ancak mukozal ödem, kapiller kaçak ve hipotansiyonu tedavi etmez. Hastada dolaşım bozulması da olduğu için tek başına bronkodilatör ilk özgül tedavi değildir.",
+    "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin etkisi geç başlar ve akut hipotansiyon-bronkospazm döngüsünü dakikalar içinde düzeltmez. Geç faz reaksiyonunu azaltma amacıyla eklenebilir, fakat ilk acil basamak yerine geçmez."
+  },
+  "evidenceChain": [
+    {
+      "text": "Enjeksiyondan yaklaşık 10 dakika sonra başlayan kaşıntı ve yüz kızarması hızlı maruziyet-zaman ilişkisini gösterir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Dudak ödemi, boğazda daralma ve hışıltı deri-mukoza bulgularına solunum tutulumu eklendiğini gösterir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "80/45 mmHg kan basıncı, yüksek şok indeksi ve uzamış kapiller dolum dolaşım etkilenmesini gösterir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Ateş, travma ve aktif kanama öyküsünün olmaması eş zamanlı alternatif şok nedenlerini zayıflatır.",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada eş zamanlı destek basamaklarıdır; ancak tek başına bekle-gör yaklaşımı bronkospazm, mukozal ödem ve vazodilatasyonu hızlıca tersine çevirmez. Hipotansiyon ve hışıltı varken özgül tedavi geciktirilmemelidir.",
+    "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtiker için yardımcı olabilir, fakat hipotansiyon, hışıltı ve boğazda daralma gibi yaşamı tehdit eden bulguları tek başına düzeltmez. Bu vakada ürtiker yanıtını beklemek solunum-dolaşım riskini artırır.",
+    "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "İnhale beta-2 agonist bronkospazm için eklenebilir; ancak mukozal ödem, kapiller kaçak ve hipotansiyonu tedavi etmez. Hastada dolaşım bozulması da olduğu için tek başına bronkodilatör ilk özgül tedavi değildir.",
+    "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin etkisi geç başlar ve akut hipotansiyon-bronkospazm döngüsünü dakikalar içinde düzeltmez. Geç faz reaksiyonunu azaltma amacıyla eklenebilir, fakat ilk acil basamak yerine geçmez."
+  },
+  "editorialMeta": {
+    "smallClerkshipsUltraRefined": true,
+    "smallClerkshipsSubspecialty": "Acil servis / immünoloji - anafilaksi",
+    "lastRefinedAt": "2026-05-31"
+  },
+  "preserveInvestigationOrder": true,
+  "smallClerkshipsInvestigationLayerEnhanced": true,
+  "smallClerkshipsInvestigationLayerVersion": "v398-small-clerkships-investigation-layer",
+  "smallClerkshipsSubspecialty": "Acil servis / immünoloji - anafilaksi",
+  "investigationLayerMeta": {
+    "enhancedAt": "2026-05-31",
+    "editor": "small-clerkships-first5-quality-pass",
+    "scope": "Only branchId === minor-rotations general clinical cases",
+    "subspecialty": "Acil servis / immünoloji - anafilaksi",
+    "objective": "Multidisipliner küçük staj gerçekçiliği, acil öncelik, organ/fonksiyon koruma, basitten komplekse tetkik akışı, tetkik değer etiketi ve girişim geciktirmeme güvenlik kapısı",
+    "note": "Anafilaksi vakasında objektif veri katmanı klinik tanı → hava yolu/oksijenasyon-dolaşım güvenliği → destekleyici doğrulama/izlem şeklinde düzenlendi; IM adrenalin laboratuvar beklenerek geciktirilmez."
+  },
+  "optionFeedback": {
+    "Sadece yüksek akımlı oksijen, monitörizasyon ve intravenöz sıvı ile yanıtı izlemek": "Oksijen, monitörizasyon ve kristalloid sıvı bu hastada eş zamanlı destek basamaklarıdır; ancak tek başına bekle-gör yaklaşımı bronkospazm, mukozal ödem ve vazodilatasyonu hızlıca tersine çevirmez. Hipotansiyon ve hışıltı varken özgül tedavi geciktirilmemelidir.",
+    "Uyluk anterolateraline intramüsküler adrenalin uygulamak": "Bu seçenek vazodilatasyon, kapiller kaçak, mukozal ödem ve bronkospazmı aynı anda hedefler. Uyluk anterolateral kasına intramüsküler uygulama hızlı emilim sağlar ve IV erişim, laboratuvar veya yardımcı ilaç yanıtı beklenmeden verilmelidir.",
+    "İntravenöz H1 antihistaminik verip ürtiker yanıtını beklemek": "H1 antihistaminikler kaşıntı ve ürtiker için yardımcı olabilir, fakat hipotansiyon, hışıltı ve boğazda daralma gibi yaşamı tehdit eden bulguları tek başına düzeltmez. Bu vakada ürtiker yanıtını beklemek solunum-dolaşım riskini artırır.",
+    "İnhale kısa etkili beta-2 agonist başlayıp bronkospazm yanıtını izlemek": "İnhale beta-2 agonist bronkospazm için eklenebilir; ancak mukozal ödem, kapiller kaçak ve hipotansiyonu tedavi etmez. Hastada dolaşım bozulması da olduğu için tek başına bronkodilatör ilk özgül tedavi değildir.",
+    "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin etkisi geç başlar ve akut hipotansiyon-bronkospazm döngüsünü dakikalar içinde düzeltmez. Geç faz reaksiyonunu azaltma amacıyla eklenebilir, fakat ilk acil basamak yerine geçmez."
+  }
 },
   {
     "id": "v163-new-002-acil-elektrolit-bozuklugu",
@@ -2471,565 +2471,572 @@ export const rawCases = [
   "obgynFirst5UltraQualityReviewed": true
 },
       {
-    "id": "v163-new-005-ani-gelisen-norolojik-defisit",
-    "branchId": "minor-rotations",
-    "caseType": "standard",
-    "relatedBranch": "Nöroloji",
-    "title": "Ani gelişen nörolojik defisit",
-    "difficulty": "Acil",
-    "clinicalFocus": "Ani başlayan kortikal fokal defisitte inme taklitçilerini hızla tarayıp reperfüzyon kararı öncesi ilk beyin görüntülemeyi seçme.",
-    "learningTarget": "Akut iskemik inme şüphesinde glukoz gibi taklitçilerin hızla dışlanacağını, ancak tromboliz/trombektomi uygunluğu öncesi intrakraniyal kanamanın ilk olarak kontrastsız beyin BT ile dışlanacağını ayırt edebilme.",
-    "demographics": "71 yaşında erkek hasta",
-    "setting": "Acil servis",
-    "chiefComplaint": "Hasta, 90 dakika önce başlayan konuşma bozukluğu ve sağ taraf güçsüzlüğü nedeniyle yakınları tarafından acil servise getiriliyor.",
-    "stem": "Hasta sabah kahvaltı masasında yakınlarıyla konuşurken yaklaşık 90 dakika önce aniden kelimeleri çıkaramamaya başlamış. Aynı anda sağ kolunu kaldıramadığı ve yürümeye çalışırken sağ bacağının sürüklendiği fark edilmiştir. Yakınları olay sırasında bilinç kaybı, jeneralize kasılma, kafa travması veya şiddetli patlayıcı baş ağrısı görmediklerini belirtir. Atriyal fibrilasyon öyküsü vardır; son haftalarda antikoagülanını bazı günler almadığı öğrenilir. Olay öncesinde açlık, soğuk terleme veya hipoglisemi düşündüren yaygın yakınmaları olmamıştır; acil servise geldiğinde konuşma bozukluğu ve sağ taraf güçsüzlüğü devam etmektedir.",
-    "patientIntro": {
-        "profile": "72 yaşında erkek hasta, acil serviste ani başlayan konuşma bozukluğu ve sağ taraf güçsüzlüğü nedeniyle değerlendiriliyor.",
-        "presentation": "Son bilinen iyi hâlden yaklaşık 90 dakika sonra devam eden afazi ve sağ hemiparezi vardır.",
-        "historySummary": "Yakınları, hastanın kahvaltı sırasında normal konuşurken bir anda kelimeleri çıkaramamaya başladığını ve sağ kolunu kaldıramadığını fark ettiklerini anlatıyor. Yürütmeye çalıştıklarında sağ bacağının da belirgin zayıf olduğunu görmüşler ve başlangıç saatini yaklaşık 90 dakika önce olarak not etmişler. Olay sırasında bayılma, jeneralize nöbet, kafa travması veya patlayıcı baş ağrısı olmamış. Atriyal fibrilasyon öyküsü olduğu, ancak antikoagülanını son haftalarda düzensiz kullandığı öğreniliyor. Acile geldiğinde bilinci açık olsa da konuşma bozukluğu ve sağ taraf güçsüzlüğü sürüyor."
+  "id": "v163-new-005-ani-gelisen-norolojik-defisit",
+  "branchId": "minor-rotations",
+  "caseType": "standard",
+  "relatedBranch": "Nöroloji",
+  "title": "Ani gelişen nörolojik defisit",
+  "difficulty": "Acil",
+  "clinicalFocus": "Ani başlayan kortikal fokal defisitte inme taklitçilerini hızla tarayıp reperfüzyon kararı öncesi ilk beyin görüntülemeyi seçme.",
+  "learningTarget": "Akut iskemik inme şüphesinde glukoz gibi taklitçilerin hızla dışlanacağını, ancak tromboliz/trombektomi uygunluğu öncesi intrakraniyal kanamanın ilk olarak kontrastsız beyin BT ile dışlanacağını ayırt edebilme.",
+  "demographics": "71 yaşında erkek hasta",
+  "setting": "Acil servis",
+  "chiefComplaint": "Hasta, 90 dakika önce başlayan konuşma bozukluğu ve sağ taraf güçsüzlüğü nedeniyle yakınları tarafından acil servise getiriliyor.",
+  "stem": "Yakınları, hastanın kahvaltı sırasında normal konuşurken yaklaşık 90 dakika önce bir anda kelimeleri çıkaramamaya başladığını anlatır. Aynı anda sağ kolunu kaldıramamış, ayağa kaldırıldığında sağ bacağı belirgin sürüklenmiş ve konuşma bozukluğu düzelmemiştir. Olay sırasında bayılma, jeneralize kasılma, kafa travması veya patlayıcı tarzda baş ağrısı olmamıştır. Atriyal fibrilasyon öyküsü olduğu, son haftalarda antikoagülanını bazı günler atladığı ve olay öncesinde hipoglisemi düşündüren açlık-terleme atağı yaşamadığı öğrenilir. Acil servise geldiğinde bilinci açık olsa da konuşma güçlüğü ve sağ taraf güçsüzlüğü devam etmektedir.",
+  "patientIntro": {
+    "profile": "Akut başlayan konuşma bozukluğu ve sağ taraf güçsüzlüğü nedeniyle acil serviste değerlendirilen hasta.",
+    "presentation": "Son normal görülme zamanı yaklaşık 90 dakika öncedir; fokal nörolojik defisit başvuru sırasında devam etmektedir.",
+    "historySummary": "Yakınları, hastanın kahvaltı sırasında normal konuşurken yaklaşık 90 dakika önce bir anda kelimeleri çıkaramamaya başladığını anlatır. Aynı anda sağ kolunu kaldıramamış, ayağa kaldırıldığında sağ bacağı belirgin sürüklenmiş ve konuşma bozukluğu düzelmemiştir. Olay sırasında bayılma, jeneralize kasılma, kafa travması veya patlayıcı tarzda baş ağrısı olmamıştır. Atriyal fibrilasyon öyküsü olduğu, son haftalarda antikoagülanını bazı günler atladığı ve olay öncesinde hipoglisemi düşündüren açlık-terleme atağı yaşamadığı öğrenilir. Acil servise geldiğinde bilinci açık olsa da konuşma güçlüğü ve sağ taraf güçsüzlüğü devam etmektedir."
+  },
+  "vitals": {
+    "TA": "166/94 mmHg",
+    "Nabız": "96/dk, düzensiz",
+    "Solunum": "22/dk",
+    "SpO2": "%96, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "0.58 - dolaşım stabil"
+  },
+  "exam": [
+    "Hasta uyanık ve koopere olmakla birlikte belirgin ekspresif afaziktir.",
+    "Sağ nazolabial sulkus siliktir; sağ üst ekstremite kas gücü 2/5, sağ alt ekstremite kas gücü 3/5 olarak değerlendirilir.",
+    "Sağda hemihipoestezi ve sağ plantar ekstansör yanıt vardır; ense sertliği veya meningeal irritasyon bulgusu yoktur.",
+    "Kafa travmasına ait skalp kesi, ekimoz veya hematom izlenmez."
+  ],
+  "investigations": [
+    {
+      "id": "v163-new-005-ani-gelisen-norolojik-defisit-kapiller-glukoz",
+      "label": "Yatak başı glukoz ve inme taklitçisi taraması",
+      "title": "Yatak başı glukoz ve inme taklitçisi taraması",
+      "orderLabel": "Yatak başı glukoz ve inme taklitçisi taraması",
+      "type": "lab",
+      "priority": "essential",
+      "subtype": "Yatak başı glukoz ve inme taklitçisi taraması",
+      "category": "lab",
+      "testTypeCategory": "lab",
+      "summary": "Kapiller glukoz normaldir; bilinç açık olup tanıklı jeneralize nöbet, postiktal konfüzyon veya kafa travması bulgusu yoktur.",
+      "clinicalMeaning": "Kapiller glukoz normaldir; bilinç açık olup tanıklı jeneralize nöbet, postiktal konfüzyon veya kafa travması bulgusu yoktur.",
+      "result": {
+        "title": "Yatak başı glukoz ve inme taklitçisi taraması",
+        "summary": "Kapiller glukoz normaldir; bilinç açık olup tanıklı jeneralize nöbet, postiktal konfüzyon veya kafa travması bulgusu yoktur.",
+        "interpretation": "Kapiller glukoz normaldir; bilinç açık olup tanıklı jeneralize nöbet, postiktal konfüzyon veya kafa travması bulgusu yoktur.",
+        "values": [
+          [
+            "Kapiller glukoz",
+            "104 mg/dL",
+            "70-140 mg/dL",
+            "Normal"
+          ],
+          [
+            "Bilinç düzeyi",
+            "Uyanık ve koopere",
+            "",
+            "Değerlendirilebilir"
+          ],
+          [
+            "Nöbet sonrası dönem",
+            "Tanıklı jeneralize nöbet veya postiktal konfüzyon yok",
+            "",
+            "Taklitçi zayıf"
+          ],
+          [
+            "Travma bulgusu",
+            "Skalp kesi, ekimoz veya hematom yok",
+            "",
+            "Travma bulgusu yok"
+          ]
+        ],
+        "rows": [
+          [
+            "Kapiller glukoz",
+            "104 mg/dL",
+            "70-140 mg/dL",
+            "Normal"
+          ],
+          [
+            "Bilinç düzeyi",
+            "Uyanık ve koopere",
+            "",
+            "Değerlendirilebilir"
+          ],
+          [
+            "Nöbet sonrası dönem",
+            "Tanıklı jeneralize nöbet veya postiktal konfüzyon yok",
+            "",
+            "Taklitçi zayıf"
+          ],
+          [
+            "Travma bulgusu",
+            "Skalp kesi, ekimoz veya hematom yok",
+            "",
+            "Travma bulgusu yok"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Kapiller glukoz",
+          "104 mg/dL",
+          "70-140 mg/dL",
+          "Normal"
+        ],
+        [
+          "Bilinç düzeyi",
+          "Uyanık ve koopere",
+          "",
+          "Değerlendirilebilir"
+        ],
+        [
+          "Nöbet sonrası dönem",
+          "Tanıklı jeneralize nöbet veya postiktal konfüzyon yok",
+          "",
+          "Taklitçi zayıf"
+        ],
+        [
+          "Travma bulgusu",
+          "Skalp kesi, ekimoz veya hematom yok",
+          "",
+          "Travma bulgusu yok"
+        ]
+      ],
+      "postAnswerExplanation": "Kapiller glukoz normaldir; bilinç açık olup tanıklı jeneralize nöbet, postiktal konfüzyon veya kafa travması bulgusu yoktur.",
+      "interpretation": "Kapiller glukoz normaldir; bilinç açık olup tanıklı jeneralize nöbet, postiktal konfüzyon veya kafa travması bulgusu yoktur.",
+      "explanationAfterAnswer": "Kapiller glukoz normaldir; bilinç açık olup tanıklı jeneralize nöbet, postiktal konfüzyon veya kafa travması bulgusu yoktur.",
+      "testValueLabel": "Acil dışlama",
+      "educationalValue": "Acil dışlama",
+      "clinicalPriorityLabel": "Acil dışlama",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "clinicalFlowOrder": 1,
+      "purpose": "Kapiller glukoz normal aralıktadır; hızlı düzeltilebilir metabolik taklitçi dışlanırken kalıcı lateralize defisit için acil nörolojik akış sürdürülür.",
+      "inlineFeedback": "Kapiller glukoz normaldir; bilinç açık olup tanıklı jeneralize nöbet, postiktal konfüzyon veya kafa travması bulgusu yoktur.",
+      "treatmentImpact": "Metabolik ve travmatik taklitçi taraması acil görüntüleme kararını geciktirmeden yapılır.",
+      "emergencyValue": "Kalıcı fokal defisit zaman kritik nörolojik değerlendirme gerektirir."
     },
-    "vitals": {
-        "TA": "166/94 mmHg",
-        "Nabız": "96/dk, düzensiz",
-        "Solunum": "22/dk",
-        "SpO2": "%96, oda havasında",
-        "Ateş": "36.7 °C",
-        "Şok indeksi": "0.58 - dolaşım stabil"
+    {
+      "id": "v163-new-005-ani-gelisen-norolojik-defisit-kontrastsiz-bt",
+      "label": "Akut nörolojik defisit ve zaman penceresi",
+      "title": "Akut nörolojik defisit ve zaman penceresi",
+      "orderLabel": "Akut nörolojik defisit ve zaman penceresi",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "Akut nörolojik defisit ve zaman penceresi",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Son normal görülme zamanı yaklaşık 90 dakikadır; ekspresif afazi, sağ hemiparezi ve sağ hemihipoestezi aynı başvuruda devam etmektedir.",
+      "clinicalMeaning": "Son normal görülme zamanı yaklaşık 90 dakikadır; ekspresif afazi, sağ hemiparezi ve sağ hemihipoestezi aynı başvuruda devam etmektedir.",
+      "result": {
+        "title": "Akut fokal defisit ve zaman penceresi",
+        "summary": "Son normal görülme zamanı yaklaşık 90 dakikadır; ekspresif afazi, sağ hemiparezi ve sağ hemihipoestezi aynı başvuruda devam etmektedir.",
+        "interpretation": "Son normal görülme zamanı yaklaşık 90 dakikadır; ekspresif afazi, sağ hemiparezi ve sağ hemihipoestezi aynı başvuruda devam etmektedir.",
+        "values": [
+          [
+            "Son bilinen iyi hâl",
+            "Yaklaşık 90 dakika önce",
+            "<4,5 saat tromboliz penceresi",
+            "Zaman kritik"
+          ],
+          [
+            "Dil fonksiyonu",
+            "Ekspresif afazi",
+            "",
+            "Kortikal bulgu"
+          ],
+          [
+            "Motor defisit",
+            "Sağ yüz, kol ve bacakta belirgin güç kaybı",
+            "",
+            "Lateralize defisit"
+          ],
+          [
+            "NIHSS tahmini",
+            "Yaklaşık 11",
+            "0 normal; yüksek skor daha ağır defisit",
+            "İşlev bozucu defisit"
+          ]
+        ],
+        "rows": [
+          [
+            "Son bilinen iyi hâl",
+            "Yaklaşık 90 dakika önce",
+            "<4,5 saat tromboliz penceresi",
+            "Zaman kritik"
+          ],
+          [
+            "Dil fonksiyonu",
+            "Ekspresif afazi",
+            "",
+            "Kortikal bulgu"
+          ],
+          [
+            "Motor defisit",
+            "Sağ yüz, kol ve bacakta belirgin güç kaybı",
+            "",
+            "Lateralize defisit"
+          ],
+          [
+            "NIHSS tahmini",
+            "Yaklaşık 11",
+            "0 normal; yüksek skor daha ağır defisit",
+            "İşlev bozucu defisit"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Son bilinen iyi hâl",
+          "Yaklaşık 90 dakika önce",
+          "<4,5 saat tromboliz penceresi",
+          "Zaman kritik"
+        ],
+        [
+          "Dil fonksiyonu",
+          "Ekspresif afazi",
+          "",
+          "Kortikal bulgu"
+        ],
+        [
+          "Motor defisit",
+          "Sağ yüz, kol ve bacakta belirgin güç kaybı",
+          "",
+          "Lateralize defisit"
+        ],
+        [
+          "NIHSS tahmini",
+          "Yaklaşık 11",
+          "0 normal; yüksek skor daha ağır defisit",
+          "İşlev bozucu defisit"
+        ]
+      ],
+      "postAnswerExplanation": "Son normal görülme zamanı yaklaşık 90 dakikadır; ekspresif afazi, sağ hemiparezi ve sağ hemihipoestezi aynı başvuruda devam etmektedir.",
+      "interpretation": "Son normal görülme zamanı yaklaşık 90 dakikadır; ekspresif afazi, sağ hemiparezi ve sağ hemihipoestezi aynı başvuruda devam etmektedir.",
+      "explanationAfterAnswer": "Son normal görülme zamanı yaklaşık 90 dakikadır; ekspresif afazi, sağ hemiparezi ve sağ hemihipoestezi aynı başvuruda devam etmektedir.",
+      "testValueLabel": "İnme penceresi",
+      "educationalValue": "İnme penceresi",
+      "clinicalPriorityLabel": "İnme penceresi",
+      "scoreImpact": 5,
+      "scoreValue": 5,
+      "clinicalFlowOrder": 2,
+      "purpose": "Afazi ve sağ hemiparezi kortikal-anterior dolaşım paternini düşündürür; kısa başlangıç süresi acil görüntüleme ve reperfüzyon uygunluğu açısından zaman kritiktir.",
+      "inlineFeedback": "Son normal görülme zamanı yaklaşık 90 dakikadır; ekspresif afazi, sağ hemiparezi ve sağ hemihipoestezi aynı başvuruda devam etmektedir.",
+      "treatmentImpact": "Zaman ve defisit ağırlığı ileri kararların hızlı verilmesini gerektirir.",
+      "emergencyValue": "Dakika kaybı reperfüzyon uygunluğunu ve fonksiyonel prognozu etkileyebilir."
     },
-    "exam": [
-        "Hasta uyanık ve koopere olmakla birlikte belirgin ekspresif afaziktir.",
-        "Sağ nazolabial sulkus siliktir; sağ üst ekstremite kas gücü 2/5, sağ alt ekstremite kas gücü 3/5 olarak değerlendirilir.",
-        "Sağda hemihipoestezi ve sağ plantar ekstansör yanıt vardır; ense sertliği veya meningeal irritasyon bulgusu yoktur.",
-        "Kafa travmasına ait skalp kesi, ekimoz veya hematom izlenmez."
+    {
+      "id": "v163-new-005-ani-gelisen-norolojik-defisit-bt-anjiyografi-lab",
+      "label": "Reperfüzyon öncesi klinik güvenlik verileri",
+      "title": "Reperfüzyon öncesi klinik güvenlik verileri",
+      "orderLabel": "Reperfüzyon öncesi klinik güvenlik verileri",
+      "type": "clinical",
+      "priority": "useful",
+      "subtype": "Reperfüzyon öncesi klinik güvenlik verileri",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Atriyal fibrilasyon öyküsü, düzensiz nabız ve düzensiz antikoagülan kullanımı kaydedilmiştir; kan basıncı tromboliz öncesi hedef eşiğin altındadır.",
+      "clinicalMeaning": "Atriyal fibrilasyon öyküsü, düzensiz nabız ve düzensiz antikoagülan kullanımı kaydedilmiştir; kan basıncı tromboliz öncesi hedef eşiğin altındadır.",
+      "result": {
+        "title": "Reperfüzyon güvenliği ve vasküler risk verileri",
+        "summary": "Atriyal fibrilasyon öyküsü, düzensiz nabız ve düzensiz antikoagülan kullanımı kaydedilmiştir; kan basıncı tromboliz öncesi hedef eşiğin altındadır.",
+        "interpretation": "Atriyal fibrilasyon öyküsü, düzensiz nabız ve düzensiz antikoagülan kullanımı kaydedilmiştir; kan basıncı tromboliz öncesi hedef eşiğin altındadır.",
+        "values": [
+          [
+            "Ritim/öykü",
+            "Atriyal fibrilasyon öyküsü ve düzensiz nabız var",
+            "",
+            "Embolik risk"
+          ],
+          [
+            "Antikoagülan kullanımı",
+            "Son haftalarda düzensiz kullanım bildirilmiş",
+            "",
+            "Güvenlik sorgusu"
+          ],
+          [
+            "Kan basıncı",
+            "166/94 mmHg",
+            "<185/110 mmHg tromboliz öncesi hedef",
+            "Kontrol edilebilir düzey"
+          ],
+          [
+            "Dış kanama/travma",
+            "Aktif dış kanama, skalp hematomu veya yeni travma bulgusu yok",
+            "",
+            "Klinik güvenlik verisi"
+          ]
+        ],
+        "rows": [
+          [
+            "Ritim/öykü",
+            "Atriyal fibrilasyon öyküsü ve düzensiz nabız var",
+            "",
+            "Embolik risk"
+          ],
+          [
+            "Antikoagülan kullanımı",
+            "Son haftalarda düzensiz kullanım bildirilmiş",
+            "",
+            "Güvenlik sorgusu"
+          ],
+          [
+            "Kan basıncı",
+            "166/94 mmHg",
+            "<185/110 mmHg tromboliz öncesi hedef",
+            "Kontrol edilebilir düzey"
+          ],
+          [
+            "Dış kanama/travma",
+            "Aktif dış kanama, skalp hematomu veya yeni travma bulgusu yok",
+            "",
+            "Klinik güvenlik verisi"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Ritim/öykü",
+          "Atriyal fibrilasyon öyküsü ve düzensiz nabız var",
+          "",
+          "Embolik risk"
+        ],
+        [
+          "Antikoagülan kullanımı",
+          "Son haftalarda düzensiz kullanım bildirilmiş",
+          "",
+          "Güvenlik sorgusu"
+        ],
+        [
+          "Kan basıncı",
+          "166/94 mmHg",
+          "<185/110 mmHg tromboliz öncesi hedef",
+          "Kontrol edilebilir düzey"
+        ],
+        [
+          "Dış kanama/travma",
+          "Aktif dış kanama, skalp hematomu veya yeni travma bulgusu yok",
+          "",
+          "Klinik güvenlik verisi"
+        ]
+      ],
+      "postAnswerExplanation": "Atriyal fibrilasyon öyküsü, düzensiz nabız ve düzensiz antikoagülan kullanımı kaydedilmiştir; kan basıncı tromboliz öncesi hedef eşiğin altındadır.",
+      "interpretation": "Atriyal fibrilasyon öyküsü, düzensiz nabız ve düzensiz antikoagülan kullanımı kaydedilmiştir; kan basıncı tromboliz öncesi hedef eşiğin altındadır.",
+      "explanationAfterAnswer": "Atriyal fibrilasyon öyküsü, düzensiz nabız ve düzensiz antikoagülan kullanımı kaydedilmiştir; kan basıncı tromboliz öncesi hedef eşiğin altındadır.",
+      "testValueLabel": "Tedavi güvenliği",
+      "educationalValue": "Tedavi güvenliği",
+      "clinicalPriorityLabel": "Tedavi güvenliği",
+      "scoreImpact": 4,
+      "scoreValue": 4,
+      "clinicalFlowOrder": 3,
+      "purpose": "Atriyal fibrilasyon embolik riski artırır; kan basıncı, antikoagülan öyküsü ve kanama-travma bulguları acil tedavi güvenliği için birlikte değerlendirilir.",
+      "inlineFeedback": "Atriyal fibrilasyon öyküsü, düzensiz nabız ve düzensiz antikoagülan kullanımı kaydedilmiştir; kan basıncı tromboliz öncesi hedef eşiğin altındadır.",
+      "treatmentImpact": "Güvenlik verileri görüntüleme sonrası reperfüzyon uygunluğu için temel oluşturur.",
+      "emergencyValue": "Kanama dışlanmadan reperfüzyon tedavisi güvenli kabul edilemez."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "question": "Akut reperfüzyon kararı öncesinde intrakraniyal kanamayı en hızlı dışlamak için ilk beyin görüntüleme yöntemi hangisidir?",
+  "questionType": "diagnostic_test",
+  "answerTarget": "diagnostic_test",
+  "diagnosis": {
+    "correct": "Kontrastsız beyin bilgisayarlı tomografisi",
+    "options": [
+      "Elektroensefalografi",
+      "Beyin pozitron emisyon tomografisi",
+      "Kontrastsız beyin bilgisayarlı tomografisi",
+      "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme",
+      "Karotis Doppler ultrasonografi"
     ],
-    "investigations": [
-        {
-            "id": "v163-new-005-ani-gelisen-norolojik-defisit-kapiller-glukoz",
-            "label": "Yatak başı glukoz ve inme taklitçisi taraması",
-            "title": "Yatak başı glukoz ve inme taklitçisi taraması",
-            "orderLabel": "Yatak başı glukoz ve inme taklitçisi taraması",
-            "type": "lab",
-            "priority": "essential",
-            "subtype": "Yatak başı glukoz ve inme taklitçisi taraması",
-            "category": "lab",
-            "testTypeCategory": "lab",
-            "summary": "Kapiller glukoz normal aralıktadır; hızlı düzeltilebilir metabolik taklitçi dışlanırken kalıcı lateralize defisit için acil nörolojik akış sürdürülür.",
-            "clinicalMeaning": "Kapiller glukoz normal aralıktadır; hızlı düzeltilebilir metabolik taklitçi dışlanırken kalıcı lateralize defisit için acil nörolojik akış sürdürülür.",
-            "result": {
-                "title": "Yatak başı glukoz ve inme taklitçisi taraması",
-                "summary": "Kapiller glukoz normal aralıktadır; hızlı düzeltilebilir metabolik taklitçi dışlanırken kalıcı lateralize defisit için acil nörolojik akış sürdürülür.",
-                "interpretation": "Kapiller glukoz normal aralıktadır; hızlı düzeltilebilir metabolik taklitçi dışlanırken kalıcı lateralize defisit için acil nörolojik akış sürdürülür.",
-                "values": [
-                    [
-                        "Kapiller glukoz",
-                        "104 mg/dL",
-                        "70-140 mg/dL",
-                        "Normal"
-                    ],
-                    [
-                        "Bilinç düzeyi",
-                        "Uyanık ve koopere",
-                        "",
-                        "Değerlendirilebilir"
-                    ],
-                    [
-                        "Nöbet sonrası dönem",
-                        "Tanıklı jeneralize nöbet veya postiktal konfüzyon yok",
-                        "",
-                        "Taklitçi zayıf"
-                    ],
-                    [
-                        "Travma bulgusu",
-                        "Skalp kesi, ekimoz veya hematom yok",
-                        "",
-                        "Travma bulgusu yok"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "Kapiller glukoz",
-                        "104 mg/dL",
-                        "70-140 mg/dL",
-                        "Normal"
-                    ],
-                    [
-                        "Bilinç düzeyi",
-                        "Uyanık ve koopere",
-                        "",
-                        "Değerlendirilebilir"
-                    ],
-                    [
-                        "Nöbet sonrası dönem",
-                        "Tanıklı jeneralize nöbet veya postiktal konfüzyon yok",
-                        "",
-                        "Taklitçi zayıf"
-                    ],
-                    [
-                        "Travma bulgusu",
-                        "Skalp kesi, ekimoz veya hematom yok",
-                        "",
-                        "Travma bulgusu yok"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "Kapiller glukoz",
-                    "104 mg/dL",
-                    "70-140 mg/dL",
-                    "Normal"
-                ],
-                [
-                    "Bilinç düzeyi",
-                    "Uyanık ve koopere",
-                    "",
-                    "Değerlendirilebilir"
-                ],
-                [
-                    "Nöbet sonrası dönem",
-                    "Tanıklı jeneralize nöbet veya postiktal konfüzyon yok",
-                    "",
-                    "Taklitçi zayıf"
-                ],
-                [
-                    "Travma bulgusu",
-                    "Skalp kesi, ekimoz veya hematom yok",
-                    "",
-                    "Travma bulgusu yok"
-                ]
-            ],
-            "postAnswerExplanation": "Kapiller glukoz normal aralıktadır; hızlı düzeltilebilir metabolik taklitçi dışlanırken kalıcı lateralize defisit için acil nörolojik akış sürdürülür.",
-            "interpretation": "Kapiller glukoz normal aralıktadır; hızlı düzeltilebilir metabolik taklitçi dışlanırken kalıcı lateralize defisit için acil nörolojik akış sürdürülür.",
-            "explanationAfterAnswer": "Kapiller glukoz normal aralıktadır; hızlı düzeltilebilir metabolik taklitçi dışlanırken kalıcı lateralize defisit için acil nörolojik akış sürdürülür.",
-            "testValueLabel": "Acil dışlama",
-            "educationalValue": "Acil dışlama",
-            "clinicalPriorityLabel": "Acil dışlama",
-            "scoreImpact": 3,
-            "scoreValue": 3,
-            "clinicalFlowOrder": 1,
-            "purpose": "Kapiller glukoz normal aralıktadır; hızlı düzeltilebilir metabolik taklitçi dışlanırken kalıcı lateralize defisit için acil nörolojik akış sürdürülür.",
-            "inlineFeedback": "Kapiller glukoz normal aralıktadır; hızlı düzeltilebilir metabolik taklitçi dışlanırken kalıcı lateralize defisit için acil nörolojik akış sürdürülür.",
-            "treatmentImpact": "Metabolik ve travmatik taklitçi taraması acil görüntüleme kararını geciktirmeden yapılır.",
-            "emergencyValue": "Kalıcı fokal defisit zaman kritik nörolojik değerlendirme gerektirir."
-        },
-        {
-            "id": "v163-new-005-ani-gelisen-norolojik-defisit-kontrastsiz-bt",
-            "label": "Akut nörolojik defisit ve zaman penceresi",
-            "title": "Akut fokal defisit ve zaman penceresi",
-            "orderLabel": "Akut fokal defisit ve zaman penceresi",
-            "type": "clinical",
-            "priority": "essential",
-            "subtype": "Akut fokal defisit ve zaman penceresi",
-            "category": "clinicalAssessment",
-            "testTypeCategory": "clinicalAssessment",
-            "summary": "Afazi ve sağ hemiparezi kortikal-anterior dolaşım paternini düşündürür; kısa başlangıç süresi acil görüntüleme ve reperfüzyon uygunluğu açısından zaman kritiktir.",
-            "clinicalMeaning": "Afazi ve sağ hemiparezi kortikal-anterior dolaşım paternini düşündürür; kısa başlangıç süresi acil görüntüleme ve reperfüzyon uygunluğu açısından zaman kritiktir.",
-            "result": {
-                "title": "Akut fokal defisit ve zaman penceresi",
-                "summary": "Afazi ve sağ hemiparezi kortikal-anterior dolaşım paternini düşündürür; kısa başlangıç süresi acil görüntüleme ve reperfüzyon uygunluğu açısından zaman kritiktir.",
-                "interpretation": "Afazi ve sağ hemiparezi kortikal-anterior dolaşım paternini düşündürür; kısa başlangıç süresi acil görüntüleme ve reperfüzyon uygunluğu açısından zaman kritiktir.",
-                "values": [
-                    [
-                        "Son bilinen iyi hâl",
-                        "Yaklaşık 90 dakika önce",
-                        "<4,5 saat tromboliz penceresi",
-                        "Zaman kritik"
-                    ],
-                    [
-                        "Dil fonksiyonu",
-                        "Ekspresif afazi",
-                        "",
-                        "Kortikal bulgu"
-                    ],
-                    [
-                        "Motor defisit",
-                        "Sağ yüz, kol ve bacakta belirgin güç kaybı",
-                        "",
-                        "Lateralize defisit"
-                    ],
-                    [
-                        "NIHSS tahmini",
-                        "Yaklaşık 11",
-                        "0 normal; yüksek skor daha ağır defisit",
-                        "İşlev bozucu defisit"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "Son bilinen iyi hâl",
-                        "Yaklaşık 90 dakika önce",
-                        "<4,5 saat tromboliz penceresi",
-                        "Zaman kritik"
-                    ],
-                    [
-                        "Dil fonksiyonu",
-                        "Ekspresif afazi",
-                        "",
-                        "Kortikal bulgu"
-                    ],
-                    [
-                        "Motor defisit",
-                        "Sağ yüz, kol ve bacakta belirgin güç kaybı",
-                        "",
-                        "Lateralize defisit"
-                    ],
-                    [
-                        "NIHSS tahmini",
-                        "Yaklaşık 11",
-                        "0 normal; yüksek skor daha ağır defisit",
-                        "İşlev bozucu defisit"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "Son bilinen iyi hâl",
-                    "Yaklaşık 90 dakika önce",
-                    "<4,5 saat tromboliz penceresi",
-                    "Zaman kritik"
-                ],
-                [
-                    "Dil fonksiyonu",
-                    "Ekspresif afazi",
-                    "",
-                    "Kortikal bulgu"
-                ],
-                [
-                    "Motor defisit",
-                    "Sağ yüz, kol ve bacakta belirgin güç kaybı",
-                    "",
-                    "Lateralize defisit"
-                ],
-                [
-                    "NIHSS tahmini",
-                    "Yaklaşık 11",
-                    "0 normal; yüksek skor daha ağır defisit",
-                    "İşlev bozucu defisit"
-                ]
-            ],
-            "postAnswerExplanation": "Afazi ve sağ hemiparezi kortikal-anterior dolaşım paternini düşündürür; kısa başlangıç süresi acil görüntüleme ve reperfüzyon uygunluğu açısından zaman kritiktir.",
-            "interpretation": "Afazi ve sağ hemiparezi kortikal-anterior dolaşım paternini düşündürür; kısa başlangıç süresi acil görüntüleme ve reperfüzyon uygunluğu açısından zaman kritiktir.",
-            "explanationAfterAnswer": "Afazi ve sağ hemiparezi kortikal-anterior dolaşım paternini düşündürür; kısa başlangıç süresi acil görüntüleme ve reperfüzyon uygunluğu açısından zaman kritiktir.",
-            "testValueLabel": "İnme penceresi",
-            "educationalValue": "İnme penceresi",
-            "clinicalPriorityLabel": "İnme penceresi",
-            "scoreImpact": 5,
-            "scoreValue": 5,
-            "clinicalFlowOrder": 2,
-            "purpose": "Afazi ve sağ hemiparezi kortikal-anterior dolaşım paternini düşündürür; kısa başlangıç süresi acil görüntüleme ve reperfüzyon uygunluğu açısından zaman kritiktir.",
-            "inlineFeedback": "Afazi ve sağ hemiparezi kortikal-anterior dolaşım paternini düşündürür; kısa başlangıç süresi acil görüntüleme ve reperfüzyon uygunluğu açısından zaman kritiktir.",
-            "treatmentImpact": "Zaman ve defisit ağırlığı ileri kararların hızlı verilmesini gerektirir.",
-            "emergencyValue": "Dakika kaybı reperfüzyon uygunluğunu ve fonksiyonel prognozu etkileyebilir."
-        },
-        {
-            "id": "v163-new-005-ani-gelisen-norolojik-defisit-bt-anjiyografi-lab",
-            "label": "Reperfüzyon öncesi güvenlik değerlendirmesi",
-            "title": "Reperfüzyon güvenliği ve vasküler risk verileri",
-            "orderLabel": "Reperfüzyon güvenliği ve vasküler risk verileri",
-            "type": "clinical",
-            "priority": "useful",
-            "subtype": "Reperfüzyon güvenliği ve vasküler risk verileri",
-            "category": "clinicalAssessment",
-            "testTypeCategory": "clinicalAssessment",
-            "summary": "Atriyal fibrilasyon embolik riski artırır; kan basıncı, antikoagülan öyküsü ve kanama-travma bulguları acil tedavi güvenliği için birlikte değerlendirilir.",
-            "clinicalMeaning": "Atriyal fibrilasyon embolik riski artırır; kan basıncı, antikoagülan öyküsü ve kanama-travma bulguları acil tedavi güvenliği için birlikte değerlendirilir.",
-            "result": {
-                "title": "Reperfüzyon güvenliği ve vasküler risk verileri",
-                "summary": "Atriyal fibrilasyon embolik riski artırır; kan basıncı, antikoagülan öyküsü ve kanama-travma bulguları acil tedavi güvenliği için birlikte değerlendirilir.",
-                "interpretation": "Atriyal fibrilasyon embolik riski artırır; kan basıncı, antikoagülan öyküsü ve kanama-travma bulguları acil tedavi güvenliği için birlikte değerlendirilir.",
-                "values": [
-                    [
-                        "Ritim/öykü",
-                        "Atriyal fibrilasyon öyküsü ve düzensiz nabız var",
-                        "",
-                        "Embolik risk"
-                    ],
-                    [
-                        "Antikoagülan kullanımı",
-                        "Son haftalarda düzensiz kullanım bildirilmiş",
-                        "",
-                        "Güvenlik sorgusu"
-                    ],
-                    [
-                        "Kan basıncı",
-                        "166/94 mmHg",
-                        "<185/110 mmHg tromboliz öncesi hedef",
-                        "Kontrol edilebilir düzey"
-                    ],
-                    [
-                        "Dış kanama/travma",
-                        "Aktif dış kanama, skalp hematomu veya yeni travma bulgusu yok",
-                        "",
-                        "Klinik güvenlik verisi"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "Ritim/öykü",
-                        "Atriyal fibrilasyon öyküsü ve düzensiz nabız var",
-                        "",
-                        "Embolik risk"
-                    ],
-                    [
-                        "Antikoagülan kullanımı",
-                        "Son haftalarda düzensiz kullanım bildirilmiş",
-                        "",
-                        "Güvenlik sorgusu"
-                    ],
-                    [
-                        "Kan basıncı",
-                        "166/94 mmHg",
-                        "<185/110 mmHg tromboliz öncesi hedef",
-                        "Kontrol edilebilir düzey"
-                    ],
-                    [
-                        "Dış kanama/travma",
-                        "Aktif dış kanama, skalp hematomu veya yeni travma bulgusu yok",
-                        "",
-                        "Klinik güvenlik verisi"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "Ritim/öykü",
-                    "Atriyal fibrilasyon öyküsü ve düzensiz nabız var",
-                    "",
-                    "Embolik risk"
-                ],
-                [
-                    "Antikoagülan kullanımı",
-                    "Son haftalarda düzensiz kullanım bildirilmiş",
-                    "",
-                    "Güvenlik sorgusu"
-                ],
-                [
-                    "Kan basıncı",
-                    "166/94 mmHg",
-                    "<185/110 mmHg tromboliz öncesi hedef",
-                    "Kontrol edilebilir düzey"
-                ],
-                [
-                    "Dış kanama/travma",
-                    "Aktif dış kanama, skalp hematomu veya yeni travma bulgusu yok",
-                    "",
-                    "Klinik güvenlik verisi"
-                ]
-            ],
-            "postAnswerExplanation": "Atriyal fibrilasyon embolik riski artırır; kan basıncı, antikoagülan öyküsü ve kanama-travma bulguları acil tedavi güvenliği için birlikte değerlendirilir.",
-            "interpretation": "Atriyal fibrilasyon embolik riski artırır; kan basıncı, antikoagülan öyküsü ve kanama-travma bulguları acil tedavi güvenliği için birlikte değerlendirilir.",
-            "explanationAfterAnswer": "Atriyal fibrilasyon embolik riski artırır; kan basıncı, antikoagülan öyküsü ve kanama-travma bulguları acil tedavi güvenliği için birlikte değerlendirilir.",
-            "testValueLabel": "Tedavi güvenliği",
-            "educationalValue": "Tedavi güvenliği",
-            "clinicalPriorityLabel": "Tedavi güvenliği",
-            "scoreImpact": 4,
-            "scoreValue": 4,
-            "clinicalFlowOrder": 3,
-            "purpose": "Atriyal fibrilasyon embolik riski artırır; kan basıncı, antikoagülan öyküsü ve kanama-travma bulguları acil tedavi güvenliği için birlikte değerlendirilir.",
-            "inlineFeedback": "Atriyal fibrilasyon embolik riski artırır; kan basıncı, antikoagülan öyküsü ve kanama-travma bulguları acil tedavi güvenliği için birlikte değerlendirilir.",
-            "treatmentImpact": "Güvenlik verileri görüntüleme sonrası reperfüzyon uygunluğu için temel oluşturur.",
-            "emergencyValue": "Kanama dışlanmadan reperfüzyon tedavisi güvenli kabul edilemez."
-        }
+    "question": "Akut reperfüzyon kararı öncesinde intrakraniyal kanamayı en hızlı dışlamak için ilk beyin görüntüleme yöntemi hangisidir?",
+    "explanation": "Son normal görülme zamanı yaklaşık 90 dakika olan hastada devam eden ekspresif afazi ve sağ hemiparezi akut inme paternindedir. Yatak başı glukoz normaldir ve travma/nöbet öyküsü belirgin değildir; reperfüzyon düşünülmeden önce kanama hızlıca dışlanmalıdır. Bu amaçla ilk ve en pratik görüntüleme kontrastsız beyin BT’dir; DWI-MRG seçilmiş durumlarda duyarlı olabilir, ancak akut kapıda kanamayı dışlama basamağının yerini çoğu durumda almaz.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Akut fokal defisit + kısa zaman penceresi varsa önce kanama dışlanır: pratik ilk görüntüleme kontrastsız beyin BT’dir."
+      }
     ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": {
-        "enabled": false
-    },
-    "hideExamSignal": true,
-    "question": "Akut reperfüzyon tedavisi düşünülmeden önce intrakraniyal kanamayı hızla dışlamak için ilk yapılması gereken beyin görüntüleme yöntemi hangisidir?",
-    "questionType": "diagnostic_test",
-    "answerTarget": "diagnostic_test",
-    "diagnosis": {
-        "correct": "Kontrastsız beyin bilgisayarlı tomografisi",
-        "options": [
-            "Elektroensefalografi",
-            "Beyin pozitron emisyon tomografisi",
-            "Kontrastsız beyin bilgisayarlı tomografisi",
-            "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme",
-            "Karotis Doppler ultrasonografi"
-        ],
-        "question": "Akut reperfüzyon tedavisi düşünülmeden önce intrakraniyal kanamayı hızla dışlamak için ilk yapılması gereken beyin görüntüleme yöntemi hangisidir?",
-        "explanation": "Bu hastada son bilinen iyi hâlden 90 dakika sonra devam eden ekspresif afazi ve sağ hemiparezi akut inme paternindedir. Reperfüzyon tedavisi planlanmadan önce en hızlı ve yaygın ilk görüntüleme intrakraniyal kanamayı dışlamaya yönelik kontrastsız beyin BT’dir. MRG iskemiyi daha duyarlı gösterebilir, BT anjiyografi veya damar çalışmaları büyük damar tıkanıklığını değerlendirebilir; ancak ilk güvenlik basamağı kanamayı hızla dışlamaktır.",
-        "pearls": [
-            {
-                "label": "Sınav notu",
-                "text": "Akut fokal defisit + zaman penceresi varsa “önce kanama dışla”: acil ilk görüntüleme kontrastsız beyin BT’dir; damar görüntüleme ve ileri MRG sonraki kararları destekler."
-            }
-        ],
-        "answerFeedback": {
-            "summary": "Bu hastada son bilinen iyi hâlden 90 dakika sonra devam eden ekspresif afazi ve sağ hemiparezi akut inme paternindedir. Reperfüzyon tedavisi planlanmadan önce en hızlı ve yaygın ilk görüntüleme intrakraniyal kanamayı dışlamaya yönelik kontrastsız beyin BT’dir. MRG iskemiyi daha duyarlı gösterebilir, BT anjiyografi veya damar çalışmaları büyük damar tıkanıklığını değerlendirebilir; ancak ilk güvenlik basamağı kanamayı hızla dışlamaktır.",
-            "whyCorrect": "Kontrastsız BT akut kanamayı hızlı saptar, acil servis akışında ulaşılabilirdir ve tromboliz/trombektomi uygunluğunun güvenli biçimde değerlendirilmesini başlatır. Bu vaka zaman penceresinde ve disabling defisitli olduğu için görüntüleme geciktirilmemelidir.",
-            "rationale": "Bu hastada son bilinen iyi hâlden 90 dakika sonra devam eden ekspresif afazi ve sağ hemiparezi akut inme paternindedir. Reperfüzyon tedavisi planlanmadan önce en hızlı ve yaygın ilk görüntüleme intrakraniyal kanamayı dışlamaya yönelik kontrastsız beyin BT’dir. MRG iskemiyi daha duyarlı gösterebilir, BT anjiyografi veya damar çalışmaları büyük damar tıkanıklığını değerlendirebilir; ancak ilk güvenlik basamağı kanamayı hızla dışlamaktır.",
-            "correctOptionFeedback": "Bu seçenek akut kanamayı hızlı dışlayarak reperfüzyon tedavisi güvenliğini başlatır. Hastanın afazi ve hemiparezisi devam ettiği, glukozu normal olduğu ve başvuru penceresi kısa olduğu için ilk görüntüleme bu olmalıdır.",
-            "keyClues": [
-                "Son bilinen iyi hâlin yaklaşık 90 dakika önce olması reperfüzyon açısından zaman duyarlı pencereyi gösterir.",
-                "Ekspresif afazi ve sağ hemiparezi kortikal-anterior dolaşım inme paternini destekler.",
-                "Kapiller glukozun 104 mg/dL olması hipoglisemi taklitçisini geri plana iter.",
-                "Travma, jeneralize nöbet veya patlayıcı baş ağrısı öyküsünün olmaması alternatif nedenleri zayıflatır; yine de kanama görüntüleme ile dışlanmalıdır."
-            ],
-            "evidenceChain": [
-                {
-                    "text": "Son bilinen iyi hâlin yaklaşık 90 dakika önce olması reperfüzyon açısından zaman duyarlı pencereyi gösterir.",
-                    "weight": "high",
-                    "source": "case"
-                },
-                {
-                    "text": "Ekspresif afazi ve sağ hemiparezi kortikal-anterior dolaşım inme paternini destekler.",
-                    "weight": "high",
-                    "source": "case"
-                },
-                {
-                    "text": "Kapiller glukozun 104 mg/dL olması hipoglisemi taklitçisini geri plana iter.",
-                    "weight": "medium",
-                    "source": "case"
-                },
-                {
-                    "text": "Travma, jeneralize nöbet veya patlayıcı baş ağrısı öyküsünün olmaması alternatif nedenleri zayıflatır; yine de kanama görüntüleme ile dışlanmalıdır.",
-                    "weight": "medium",
-                    "source": "case"
-                }
-            ],
-            "examPearl": "Akut fokal defisit + zaman penceresi varsa “önce kanama dışla”: acil ilk görüntüleme kontrastsız beyin BT’dir; damar görüntüleme ve ileri MRG sonraki kararları destekler.",
-            "pearls": [
-                {
-                    "label": "Sınav notu",
-                    "text": "Akut fokal defisit + zaman penceresi varsa “önce kanama dışla”: acil ilk görüntüleme kontrastsız beyin BT’dir; damar görüntüleme ve ileri MRG sonraki kararları destekler."
-                }
-            ],
-            "clinicalPearls": [
-                {
-                    "label": "Klinik ayrım",
-                    "text": "MRG iskemiyi erken gösterebilir fakat erişim ve süre nedeniyle acil reperfüzyon kapısında kontrastsız BT kanama dışlama için standart ilk adımdır."
-                }
-            ],
-            "optionComparison": {
-                "Elektroensefalografi": "EEG nöbet veya nonkonvülzif status şüphesinde değerlidir. Bu hastada tanıklı nöbet/postiktal dönem yoktur ve esas sorun reperfüzyon öncesi kanamayı hızla dışlamaktır; EEG bu güvenlik basamağını sağlamaz.",
-                "Beyin pozitron emisyon tomografisi": "PET metabolik ve araştırma/onkolojik-nörodejeneratif bağlamlarda kullanılabilir; akut inme kapısında hızlı kanama dışlama yöntemi değildir. Zaman penceresinde PET beklemek tedaviyi gereksiz geciktirir.",
-                "Kontrastsız beyin bilgisayarlı tomografisi": "Bu seçenek akut kanamayı hızlı dışlayarak reperfüzyon tedavisi güvenliğini başlatır. Hastanın afazi ve hemiparezisi devam ettiği, glukozu normal olduğu ve başvuru penceresi kısa olduğu için ilk görüntüleme bu olmalıdır.",
-                "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme": "DWI MRG erken iskemi için duyarlıdır ve seçilmiş durumlarda çok yararlıdır. Ancak acil ilk basamakta amaç kanamayı en hızlı dışlamaktır; MRG erişimi ve süre görüntüleme kapısını geciktirebilir.",
-                "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat akut intrakraniyal kanamayı dışlamaz ve reperfüzyon öncesi ilk beyin görüntülemesi değildir. Büyük damar tıkanıklığı için uygun yöntem BT/MR anjiyografidir."
-            },
-            "optionFeedback": {
-                "Elektroensefalografi": "EEG nöbet veya nonkonvülzif status şüphesinde değerlidir. Bu hastada tanıklı nöbet/postiktal dönem yoktur ve esas sorun reperfüzyon öncesi kanamayı hızla dışlamaktır; EEG bu güvenlik basamağını sağlamaz.",
-                "Beyin pozitron emisyon tomografisi": "PET metabolik ve araştırma/onkolojik-nörodejeneratif bağlamlarda kullanılabilir; akut inme kapısında hızlı kanama dışlama yöntemi değildir. Zaman penceresinde PET beklemek tedaviyi gereksiz geciktirir.",
-                "Kontrastsız beyin bilgisayarlı tomografisi": "Bu seçenek akut kanamayı hızlı dışlayarak reperfüzyon tedavisi güvenliğini başlatır. Hastanın afazi ve hemiparezisi devam ettiği, glukozu normal olduğu ve başvuru penceresi kısa olduğu için ilk görüntüleme bu olmalıdır.",
-                "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme": "DWI MRG erken iskemi için duyarlıdır ve seçilmiş durumlarda çok yararlıdır. Ancak acil ilk basamakta amaç kanamayı en hızlı dışlamaktır; MRG erişimi ve süre görüntüleme kapısını geciktirebilir.",
-                "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat akut intrakraniyal kanamayı dışlamaz ve reperfüzyon öncesi ilk beyin görüntülemesi değildir. Büyük damar tıkanıklığı için uygun yöntem BT/MR anjiyografidir."
-            },
-            "whyWrong": {
-                "Elektroensefalografi": "EEG nöbet veya nonkonvülzif status şüphesinde değerlidir. Bu hastada tanıklı nöbet/postiktal dönem yoktur ve esas sorun reperfüzyon öncesi kanamayı hızla dışlamaktır; EEG bu güvenlik basamağını sağlamaz.",
-                "Beyin pozitron emisyon tomografisi": "PET metabolik ve araştırma/onkolojik-nörodejeneratif bağlamlarda kullanılabilir; akut inme kapısında hızlı kanama dışlama yöntemi değildir. Zaman penceresinde PET beklemek tedaviyi gereksiz geciktirir.",
-                "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme": "DWI MRG erken iskemi için duyarlıdır ve seçilmiş durumlarda çok yararlıdır. Ancak acil ilk basamakta amaç kanamayı en hızlı dışlamaktır; MRG erişimi ve süre görüntüleme kapısını geciktirebilir.",
-                "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat akut intrakraniyal kanamayı dışlamaz ve reperfüzyon öncesi ilk beyin görüntülemesi değildir. Büyük damar tıkanıklığı için uygun yöntem BT/MR anjiyografidir."
-            },
-            "managementSteps": [],
-            "management": [],
-            "learningOutcome": "Akut inme akışında EEG, PET, karotis Doppler ve ileri MRG’nin ilk kanama dışlama basamağının yerine geçmediğini ayırt etme.",
-            "coreKnowledge": "Akut inme şüphesinde ilk hedef tedavi edilebilir taklitçileri hızla dışlamak ve reperfüzyon öncesi intrakraniyal kanamayı kontrastsız beyin BT ile değerlendirmektir."
+    "answerFeedback": {
+      "summary": "Son normal görülme zamanı yaklaşık 90 dakika olan hastada devam eden ekspresif afazi ve sağ hemiparezi akut inme paternindedir. Yatak başı glukoz normaldir ve travma/nöbet öyküsü belirgin değildir; reperfüzyon düşünülmeden önce kanama hızlıca dışlanmalıdır. Bu amaçla ilk ve en pratik görüntüleme kontrastsız beyin BT’dir; DWI-MRG seçilmiş durumlarda duyarlı olabilir, ancak akut kapıda kanamayı dışlama basamağının yerini çoğu durumda almaz.",
+      "whyCorrect": "Kontrastsız beyin BT, akut inme kapısında kanamayı hızla dışlayarak reperfüzyon tedavisi için güvenlik kararını başlatır. Damar görüntüleme veya MRG daha sonra tedavi stratejisini ayrıntılandırabilir.",
+      "rationale": "Son normal görülme zamanı yaklaşık 90 dakika olan hastada devam eden ekspresif afazi ve sağ hemiparezi akut inme paternindedir. Yatak başı glukoz normaldir ve travma/nöbet öyküsü belirgin değildir; reperfüzyon düşünülmeden önce kanama hızlıca dışlanmalıdır. Bu amaçla ilk ve en pratik görüntüleme kontrastsız beyin BT’dir; DWI-MRG seçilmiş durumlarda duyarlı olabilir, ancak akut kapıda kanamayı dışlama basamağının yerini çoğu durumda almaz.",
+      "correctOptionFeedback": "Bu seçenek intrakraniyal kanamayı hızlı dışlayarak reperfüzyon uygunluğu için temel güvenlik basamağını sağlar. Devam eden afazi-hemiparezi, normal glukoz ve kısa zaman penceresi nedeniyle ilk görüntüleme bu olmalıdır.",
+      "keyClues": [
+        "Konuşma bozukluğu ve sağ taraf güçsüzlüğünün ani başlaması fokal nörolojik defisit paternini oluşturur.",
+        "Son normal görülme zamanının yaklaşık 90 dakika olması akut reperfüzyon değerlendirmesini zaman kritik hale getirir.",
+        "Kapiller glukozun normal olması hızlı düzeltilebilir hipoglisemi taklitçisini zayıflatır.",
+        "Tedavi öncesi en kritik güvenlik sorusu intrakraniyal kanamanın hızla dışlanmasıdır."
+      ],
+      "evidenceChain": [
+        {
+          "text": "Konuşma bozukluğu ve sağ taraf güçsüzlüğünün ani başlaması fokal nörolojik defisit paternini oluşturur.",
+          "weight": "high",
+          "source": "case"
         },
-        "whyCorrect": "Kontrastsız BT akut kanamayı hızlı saptar, acil servis akışında ulaşılabilirdir ve tromboliz/trombektomi uygunluğunun güvenli biçimde değerlendirilmesini başlatır. Bu vaka zaman penceresinde ve disabling defisitli olduğu için görüntüleme geciktirilmemelidir.",
-        "evidenceChain": [
-            {
-                "text": "Son bilinen iyi hâlin yaklaşık 90 dakika önce olması reperfüzyon açısından zaman duyarlı pencereyi gösterir.",
-                "weight": "high",
-                "source": "case"
-            },
-            {
-                "text": "Ekspresif afazi ve sağ hemiparezi kortikal-anterior dolaşım inme paternini destekler.",
-                "weight": "high",
-                "source": "case"
-            },
-            {
-                "text": "Kapiller glukozun 104 mg/dL olması hipoglisemi taklitçisini geri plana iter.",
-                "weight": "medium",
-                "source": "case"
-            },
-            {
-                "text": "Travma, jeneralize nöbet veya patlayıcı baş ağrısı öyküsünün olmaması alternatif nedenleri zayıflatır; yine de kanama görüntüleme ile dışlanmalıdır.",
-                "weight": "medium",
-                "source": "case"
-            }
-        ],
-        "optionComparison": {
-            "Elektroensefalografi": "EEG nöbet veya nonkonvülzif status şüphesinde değerlidir. Bu hastada tanıklı nöbet/postiktal dönem yoktur ve esas sorun reperfüzyon öncesi kanamayı hızla dışlamaktır; EEG bu güvenlik basamağını sağlamaz.",
-            "Beyin pozitron emisyon tomografisi": "PET metabolik ve araştırma/onkolojik-nörodejeneratif bağlamlarda kullanılabilir; akut inme kapısında hızlı kanama dışlama yöntemi değildir. Zaman penceresinde PET beklemek tedaviyi gereksiz geciktirir.",
-            "Kontrastsız beyin bilgisayarlı tomografisi": "Bu seçenek akut kanamayı hızlı dışlayarak reperfüzyon tedavisi güvenliğini başlatır. Hastanın afazi ve hemiparezisi devam ettiği, glukozu normal olduğu ve başvuru penceresi kısa olduğu için ilk görüntüleme bu olmalıdır.",
-            "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme": "DWI MRG erken iskemi için duyarlıdır ve seçilmiş durumlarda çok yararlıdır. Ancak acil ilk basamakta amaç kanamayı en hızlı dışlamaktır; MRG erişimi ve süre görüntüleme kapısını geciktirebilir.",
-            "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat akut intrakraniyal kanamayı dışlamaz ve reperfüzyon öncesi ilk beyin görüntülemesi değildir. Büyük damar tıkanıklığı için uygun yöntem BT/MR anjiyografidir."
+        {
+          "text": "Son normal görülme zamanının yaklaşık 90 dakika olması akut reperfüzyon değerlendirmesini zaman kritik hale getirir.",
+          "weight": "high",
+          "source": "case"
         },
-        "coreKnowledge": "Akut inme şüphesinde ilk hedef tedavi edilebilir taklitçileri hızla dışlamak ve reperfüzyon öncesi intrakraniyal kanamayı kontrastsız beyin BT ile değerlendirmektir.",
-        "examPearl": "Akut fokal defisit + zaman penceresi varsa “önce kanama dışla”: acil ilk görüntüleme kontrastsız beyin BT’dir; damar görüntüleme ve ileri MRG sonraki kararları destekler.",
-        "whyWrong": {
-            "Elektroensefalografi": "EEG nöbet veya nonkonvülzif status şüphesinde değerlidir. Bu hastada tanıklı nöbet/postiktal dönem yoktur ve esas sorun reperfüzyon öncesi kanamayı hızla dışlamaktır; EEG bu güvenlik basamağını sağlamaz.",
-            "Beyin pozitron emisyon tomografisi": "PET metabolik ve araştırma/onkolojik-nörodejeneratif bağlamlarda kullanılabilir; akut inme kapısında hızlı kanama dışlama yöntemi değildir. Zaman penceresinde PET beklemek tedaviyi gereksiz geciktirir.",
-            "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme": "DWI MRG erken iskemi için duyarlıdır ve seçilmiş durumlarda çok yararlıdır. Ancak acil ilk basamakta amaç kanamayı en hızlı dışlamaktır; MRG erişimi ve süre görüntüleme kapısını geciktirebilir.",
-            "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat akut intrakraniyal kanamayı dışlamaz ve reperfüzyon öncesi ilk beyin görüntülemesi değildir. Büyük damar tıkanıklığı için uygun yöntem BT/MR anjiyografidir."
+        {
+          "text": "Kapiller glukozun normal olması hızlı düzeltilebilir hipoglisemi taklitçisini zayıflatır.",
+          "weight": "medium",
+          "source": "case"
         },
-        "optionFeedback": {
-            "Elektroensefalografi": "EEG nöbet veya nonkonvülzif status şüphesinde değerlidir. Bu hastada tanıklı nöbet/postiktal dönem yoktur ve esas sorun reperfüzyon öncesi kanamayı hızla dışlamaktır; EEG bu güvenlik basamağını sağlamaz.",
-            "Beyin pozitron emisyon tomografisi": "PET metabolik ve araştırma/onkolojik-nörodejeneratif bağlamlarda kullanılabilir; akut inme kapısında hızlı kanama dışlama yöntemi değildir. Zaman penceresinde PET beklemek tedaviyi gereksiz geciktirir.",
-            "Kontrastsız beyin bilgisayarlı tomografisi": "Bu seçenek akut kanamayı hızlı dışlayarak reperfüzyon tedavisi güvenliğini başlatır. Hastanın afazi ve hemiparezisi devam ettiği, glukozu normal olduğu ve başvuru penceresi kısa olduğu için ilk görüntüleme bu olmalıdır.",
-            "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme": "DWI MRG erken iskemi için duyarlıdır ve seçilmiş durumlarda çok yararlıdır. Ancak acil ilk basamakta amaç kanamayı en hızlı dışlamaktır; MRG erişimi ve süre görüntüleme kapısını geciktirebilir.",
-            "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat akut intrakraniyal kanamayı dışlamaz ve reperfüzyon öncesi ilk beyin görüntülemesi değildir. Büyük damar tıkanıklığı için uygun yöntem BT/MR anjiyografidir."
+        {
+          "text": "Tedavi öncesi en kritik güvenlik sorusu intrakraniyal kanamanın hızla dışlanmasıdır.",
+          "weight": "high",
+          "source": "case"
         }
-    },
-    "shuffleOptions": false,
-    "difficultyTag": "Acil",
-    "coreKnowledge": "Akut inme şüphesinde ilk hedef tedavi edilebilir taklitçileri hızla dışlamak ve reperfüzyon öncesi intrakraniyal kanamayı kontrastsız beyin BT ile değerlendirmektir.",
-    "examPearl": "Akut fokal defisit + zaman penceresi varsa “önce kanama dışla”: acil ilk görüntüleme kontrastsız beyin BT’dir; damar görüntüleme ve ileri MRG sonraki kararları destekler.",
-    "whyCorrect": "Kontrastsız BT akut kanamayı hızlı saptar, acil servis akışında ulaşılabilirdir ve tromboliz/trombektomi uygunluğunun güvenli biçimde değerlendirilmesini başlatır. Bu vaka zaman penceresinde ve disabling defisitli olduğu için görüntüleme geciktirilmemelidir.",
-    "optionComparison": {
+      ],
+      "examPearl": "Akut fokal defisit + kısa zaman penceresi varsa önce kanama dışlanır: pratik ilk görüntüleme kontrastsız beyin BT’dir.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Akut fokal defisit + kısa zaman penceresi varsa önce kanama dışlanır: pratik ilk görüntüleme kontrastsız beyin BT’dir."
+        }
+      ],
+      "clinicalPearls": [
+        {
+          "label": "Klinik ayrım",
+          "text": "MRG iskemiyi erken gösterebilir fakat erişim ve süre nedeniyle acil reperfüzyon kapısında kontrastsız BT kanama dışlama için standart ilk adımdır."
+        }
+      ],
+      "optionComparison": {
+        "Elektroensefalografi": "EEG nöbet, nonkonvülzif status veya belirsiz bilinç değişikliğinde değerli olabilir. Bu vakada tanıklı nöbet/postiktal dönem yoktur ve karar, reperfüzyon öncesi intrakraniyal kanamanın hızla dışlanmasına bağlıdır; EEG bu güvenlik basamağını sağlamaz.",
+        "Beyin pozitron emisyon tomografisi": "PET metabolik, onkolojik veya nörodejeneratif değerlendirmelerde kullanılabilir; akut inme kapısında hızlı kanama dışlama yöntemi değildir. Zaman penceresindeki hastada PET beklemek tedavi kararını gereksiz geciktirir.",
+        "Kontrastsız beyin bilgisayarlı tomografisi": "Bu seçenek intrakraniyal kanamayı hızlı dışlayarak reperfüzyon uygunluğu için temel güvenlik basamağını sağlar. Devam eden afazi-hemiparezi, normal glukoz ve kısa zaman penceresi nedeniyle ilk görüntüleme bu olmalıdır.",
+        "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme": "DWI-MRG erken iskemiyi çok duyarlı gösterebilir ve bazı merkezlerde kullanılabilir. Ancak acil ilk hedef kanamayı gecikmeden dışlamaktır; MRG erişimi veya çekim süresi kapı-tedavi süresini uzatabilecekse ilk tercih değildir.",
+        "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat intrakraniyal kanamayı dışlamaz. Akut reperfüzyon kararı öncesinde ilk beyin görüntülemesi yerine geçmez; damar görüntüleme gerekiyorsa BT/MR anjiyografi daha hedeflidir."
+      },
+      "optionFeedback": {
         "Elektroensefalografi": "EEG nöbet veya nonkonvülzif status şüphesinde değerlidir. Bu hastada tanıklı nöbet/postiktal dönem yoktur ve esas sorun reperfüzyon öncesi kanamayı hızla dışlamaktır; EEG bu güvenlik basamağını sağlamaz.",
         "Beyin pozitron emisyon tomografisi": "PET metabolik ve araştırma/onkolojik-nörodejeneratif bağlamlarda kullanılabilir; akut inme kapısında hızlı kanama dışlama yöntemi değildir. Zaman penceresinde PET beklemek tedaviyi gereksiz geciktirir.",
         "Kontrastsız beyin bilgisayarlı tomografisi": "Bu seçenek akut kanamayı hızlı dışlayarak reperfüzyon tedavisi güvenliğini başlatır. Hastanın afazi ve hemiparezisi devam ettiği, glukozu normal olduğu ve başvuru penceresi kısa olduğu için ilk görüntüleme bu olmalıdır.",
         "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme": "DWI MRG erken iskemi için duyarlıdır ve seçilmiş durumlarda çok yararlıdır. Ancak acil ilk basamakta amaç kanamayı en hızlı dışlamaktır; MRG erişimi ve süre görüntüleme kapısını geciktirebilir.",
         "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat akut intrakraniyal kanamayı dışlamaz ve reperfüzyon öncesi ilk beyin görüntülemesi değildir. Büyük damar tıkanıklığı için uygun yöntem BT/MR anjiyografidir."
-    },
-    "evidenceChain": [
-        {
-            "text": "Son bilinen iyi hâlin yaklaşık 90 dakika önce olması reperfüzyon açısından zaman duyarlı pencereyi gösterir.",
-            "weight": "high",
-            "source": "case"
-        },
-        {
-            "text": "Ekspresif afazi ve sağ hemiparezi kortikal-anterior dolaşım inme paternini destekler.",
-            "weight": "high",
-            "source": "case"
-        },
-        {
-            "text": "Kapiller glukozun 104 mg/dL olması hipoglisemi taklitçisini geri plana iter.",
-            "weight": "medium",
-            "source": "case"
-        },
-        {
-            "text": "Travma, jeneralize nöbet veya patlayıcı baş ağrısı öyküsünün olmaması alternatif nedenleri zayıflatır; yine de kanama görüntüleme ile dışlanmalıdır.",
-            "weight": "medium",
-            "source": "case"
-        }
-    ],
-    "whyWrong": {
+      },
+      "whyWrong": {
         "Elektroensefalografi": "EEG nöbet veya nonkonvülzif status şüphesinde değerlidir. Bu hastada tanıklı nöbet/postiktal dönem yoktur ve esas sorun reperfüzyon öncesi kanamayı hızla dışlamaktır; EEG bu güvenlik basamağını sağlamaz.",
         "Beyin pozitron emisyon tomografisi": "PET metabolik ve araştırma/onkolojik-nörodejeneratif bağlamlarda kullanılabilir; akut inme kapısında hızlı kanama dışlama yöntemi değildir. Zaman penceresinde PET beklemek tedaviyi gereksiz geciktirir.",
         "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme": "DWI MRG erken iskemi için duyarlıdır ve seçilmiş durumlarda çok yararlıdır. Ancak acil ilk basamakta amaç kanamayı en hızlı dışlamaktır; MRG erişimi ve süre görüntüleme kapısını geciktirebilir.",
         "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat akut intrakraniyal kanamayı dışlamaz ve reperfüzyon öncesi ilk beyin görüntülemesi değildir. Büyük damar tıkanıklığı için uygun yöntem BT/MR anjiyografidir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Akut inme akışında EEG, PET, karotis Doppler ve ileri MRG’nin ilk kanama dışlama basamağının yerine geçmediğini ayırt etme.",
+      "coreKnowledge": "Akut inme şüphesinde ilk hedef tedavi edilebilir taklitçileri hızla dışlamak ve reperfüzyon öncesi intrakraniyal kanamayı kontrastsız beyin BT ile değerlendirmektir."
     },
-    "editorialMeta": {
-        "smallClerkshipsUltraRefined": true,
-        "smallClerkshipsSubspecialty": "Nöroloji / acil inme görüntüleme",
-        "lastRefinedAt": "2026-05-31"
+    "whyCorrect": "Kontrastsız BT akut kanamayı hızlı saptar, acil servis akışında ulaşılabilirdir ve tromboliz/trombektomi uygunluğunun güvenli biçimde değerlendirilmesini başlatır. Bu vaka zaman penceresinde ve disabling defisitli olduğu için görüntüleme geciktirilmemelidir.",
+    "evidenceChain": [
+      {
+        "text": "Son bilinen iyi hâlin yaklaşık 90 dakika önce olması reperfüzyon açısından zaman duyarlı pencereyi gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Ekspresif afazi ve sağ hemiparezi kortikal-anterior dolaşım inme paternini destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Kapiller glukozun 104 mg/dL olması hipoglisemi taklitçisini geri plana iter.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "text": "Travma, jeneralize nöbet veya patlayıcı baş ağrısı öyküsünün olmaması alternatif nedenleri zayıflatır; yine de kanama görüntüleme ile dışlanmalıdır.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Elektroensefalografi": "EEG nöbet veya nonkonvülzif status şüphesinde değerlidir. Bu hastada tanıklı nöbet/postiktal dönem yoktur ve esas sorun reperfüzyon öncesi kanamayı hızla dışlamaktır; EEG bu güvenlik basamağını sağlamaz.",
+      "Beyin pozitron emisyon tomografisi": "PET metabolik ve araştırma/onkolojik-nörodejeneratif bağlamlarda kullanılabilir; akut inme kapısında hızlı kanama dışlama yöntemi değildir. Zaman penceresinde PET beklemek tedaviyi gereksiz geciktirir.",
+      "Kontrastsız beyin bilgisayarlı tomografisi": "Bu seçenek akut kanamayı hızlı dışlayarak reperfüzyon tedavisi güvenliğini başlatır. Hastanın afazi ve hemiparezisi devam ettiği, glukozu normal olduğu ve başvuru penceresi kısa olduğu için ilk görüntüleme bu olmalıdır.",
+      "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme": "DWI MRG erken iskemi için duyarlıdır ve seçilmiş durumlarda çok yararlıdır. Ancak acil ilk basamakta amaç kanamayı en hızlı dışlamaktır; MRG erişimi ve süre görüntüleme kapısını geciktirebilir.",
+      "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat akut intrakraniyal kanamayı dışlamaz ve reperfüzyon öncesi ilk beyin görüntülemesi değildir. Büyük damar tıkanıklığı için uygun yöntem BT/MR anjiyografidir."
     },
-    "preserveInvestigationOrder": true,
-    "smallClerkshipsInvestigationLayerEnhanced": true,
-    "smallClerkshipsInvestigationLayerVersion": "v398-small-clerkships-investigation-layer",
-    "smallClerkshipsSubspecialty": "Nöroloji / acil inme görüntüleme",
-    "investigationLayerMeta": {
-        "enhancedAt": "2026-05-31",
-        "editor": "small-clerkships-first5-quality-pass",
-        "scope": "Only branchId === minor-rotations general clinical cases",
-        "subspecialty": "Nöroloji / acil inme görüntüleme",
-        "objective": "Multidisipliner küçük staj gerçekçiliği, acil öncelik, organ/fonksiyon koruma, basitten komplekse tetkik akışı, tetkik değer etiketi ve girişim geciktirmeme güvenlik kapısı",
-        "note": "Akut fokal defisit vakasında objektif veri kapiller glukoz → kanama dışlama BT → vasküler görüntüleme/laboratuvar hazırlığı şeklinde düzenlendi; reperfüzyon penceresi gereksiz testlerle geciktirilmez."
+    "coreKnowledge": "Akut inme şüphesinde ilk hedef tedavi edilebilir taklitçileri hızla dışlamak ve reperfüzyon öncesi intrakraniyal kanamayı kontrastsız beyin BT ile değerlendirmektir.",
+    "examPearl": "Akut fokal defisit + zaman penceresi varsa “önce kanama dışla”: acil ilk görüntüleme kontrastsız beyin BT’dir; damar görüntüleme ve ileri MRG sonraki kararları destekler.",
+    "whyWrong": {
+      "Elektroensefalografi": "EEG nöbet veya nonkonvülzif status şüphesinde değerlidir. Bu hastada tanıklı nöbet/postiktal dönem yoktur ve esas sorun reperfüzyon öncesi kanamayı hızla dışlamaktır; EEG bu güvenlik basamağını sağlamaz.",
+      "Beyin pozitron emisyon tomografisi": "PET metabolik ve araştırma/onkolojik-nörodejeneratif bağlamlarda kullanılabilir; akut inme kapısında hızlı kanama dışlama yöntemi değildir. Zaman penceresinde PET beklemek tedaviyi gereksiz geciktirir.",
+      "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme": "DWI MRG erken iskemi için duyarlıdır ve seçilmiş durumlarda çok yararlıdır. Ancak acil ilk basamakta amaç kanamayı en hızlı dışlamaktır; MRG erişimi ve süre görüntüleme kapısını geciktirebilir.",
+      "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat akut intrakraniyal kanamayı dışlamaz ve reperfüzyon öncesi ilk beyin görüntülemesi değildir. Büyük damar tıkanıklığı için uygun yöntem BT/MR anjiyografidir."
+    },
+    "optionFeedback": {
+      "Elektroensefalografi": "EEG nöbet veya nonkonvülzif status şüphesinde değerlidir. Bu hastada tanıklı nöbet/postiktal dönem yoktur ve esas sorun reperfüzyon öncesi kanamayı hızla dışlamaktır; EEG bu güvenlik basamağını sağlamaz.",
+      "Beyin pozitron emisyon tomografisi": "PET metabolik ve araştırma/onkolojik-nörodejeneratif bağlamlarda kullanılabilir; akut inme kapısında hızlı kanama dışlama yöntemi değildir. Zaman penceresinde PET beklemek tedaviyi gereksiz geciktirir.",
+      "Kontrastsız beyin bilgisayarlı tomografisi": "Bu seçenek akut kanamayı hızlı dışlayarak reperfüzyon tedavisi güvenliğini başlatır. Hastanın afazi ve hemiparezisi devam ettiği, glukozu normal olduğu ve başvuru penceresi kısa olduğu için ilk görüntüleme bu olmalıdır.",
+      "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme": "DWI MRG erken iskemi için duyarlıdır ve seçilmiş durumlarda çok yararlıdır. Ancak acil ilk basamakta amaç kanamayı en hızlı dışlamaktır; MRG erişimi ve süre görüntüleme kapısını geciktirebilir.",
+      "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat akut intrakraniyal kanamayı dışlamaz ve reperfüzyon öncesi ilk beyin görüntülemesi değildir. Büyük damar tıkanıklığı için uygun yöntem BT/MR anjiyografidir."
     }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Acil",
+  "coreKnowledge": "Akut inme şüphesinde ilk hedef hızlı düzeltilebilir taklitçileri dışlamak ve reperfüzyon öncesi intrakraniyal kanamayı kontrastsız beyin BT ile değerlendirmektir.",
+  "examPearl": "Akut fokal defisit + kısa zaman penceresi varsa önce kanama dışlanır: pratik ilk görüntüleme kontrastsız beyin BT’dir.",
+  "whyCorrect": "Kontrastsız beyin BT, akut inme kapısında kanamayı hızla dışlayarak reperfüzyon tedavisi için güvenlik kararını başlatır. Damar görüntüleme veya MRG daha sonra tedavi stratejisini ayrıntılandırabilir.",
+  "optionComparison": {
+    "Elektroensefalografi": "EEG nöbet, nonkonvülzif status veya belirsiz bilinç değişikliğinde değerli olabilir. Bu vakada tanıklı nöbet/postiktal dönem yoktur ve karar, reperfüzyon öncesi intrakraniyal kanamanın hızla dışlanmasına bağlıdır; EEG bu güvenlik basamağını sağlamaz.",
+    "Beyin pozitron emisyon tomografisi": "PET metabolik, onkolojik veya nörodejeneratif değerlendirmelerde kullanılabilir; akut inme kapısında hızlı kanama dışlama yöntemi değildir. Zaman penceresindeki hastada PET beklemek tedavi kararını gereksiz geciktirir.",
+    "Kontrastsız beyin bilgisayarlı tomografisi": "Bu seçenek intrakraniyal kanamayı hızlı dışlayarak reperfüzyon uygunluğu için temel güvenlik basamağını sağlar. Devam eden afazi-hemiparezi, normal glukoz ve kısa zaman penceresi nedeniyle ilk görüntüleme bu olmalıdır.",
+    "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme": "DWI-MRG erken iskemiyi çok duyarlı gösterebilir ve bazı merkezlerde kullanılabilir. Ancak acil ilk hedef kanamayı gecikmeden dışlamaktır; MRG erişimi veya çekim süresi kapı-tedavi süresini uzatabilecekse ilk tercih değildir.",
+    "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat intrakraniyal kanamayı dışlamaz. Akut reperfüzyon kararı öncesinde ilk beyin görüntülemesi yerine geçmez; damar görüntüleme gerekiyorsa BT/MR anjiyografi daha hedeflidir."
+  },
+  "evidenceChain": [
+    {
+      "text": "Konuşma bozukluğu ve sağ taraf güçsüzlüğünün ani başlaması fokal nörolojik defisit paternini oluşturur.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Son normal görülme zamanının yaklaşık 90 dakika olması akut reperfüzyon değerlendirmesini zaman kritik hale getirir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Kapiller glukozun normal olması hızlı düzeltilebilir hipoglisemi taklitçisini zayıflatır.",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "text": "Tedavi öncesi en kritik güvenlik sorusu intrakraniyal kanamanın hızla dışlanmasıdır.",
+      "weight": "high",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Elektroensefalografi": "EEG nöbet, nonkonvülzif status veya belirsiz bilinç değişikliğinde değerli olabilir. Bu vakada tanıklı nöbet/postiktal dönem yoktur ve karar, reperfüzyon öncesi intrakraniyal kanamanın hızla dışlanmasına bağlıdır; EEG bu güvenlik basamağını sağlamaz.",
+    "Beyin pozitron emisyon tomografisi": "PET metabolik, onkolojik veya nörodejeneratif değerlendirmelerde kullanılabilir; akut inme kapısında hızlı kanama dışlama yöntemi değildir. Zaman penceresindeki hastada PET beklemek tedavi kararını gereksiz geciktirir.",
+    "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme": "DWI-MRG erken iskemiyi çok duyarlı gösterebilir ve bazı merkezlerde kullanılabilir. Ancak acil ilk hedef kanamayı gecikmeden dışlamaktır; MRG erişimi veya çekim süresi kapı-tedavi süresini uzatabilecekse ilk tercih değildir.",
+    "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat intrakraniyal kanamayı dışlamaz. Akut reperfüzyon kararı öncesinde ilk beyin görüntülemesi yerine geçmez; damar görüntüleme gerekiyorsa BT/MR anjiyografi daha hedeflidir."
+  },
+  "editorialMeta": {
+    "smallClerkshipsUltraRefined": true,
+    "smallClerkshipsSubspecialty": "Nöroloji / acil inme görüntüleme",
+    "lastRefinedAt": "2026-05-31"
+  },
+  "preserveInvestigationOrder": true,
+  "smallClerkshipsInvestigationLayerEnhanced": true,
+  "smallClerkshipsInvestigationLayerVersion": "v398-small-clerkships-investigation-layer",
+  "smallClerkshipsSubspecialty": "Nöroloji / acil inme görüntüleme",
+  "investigationLayerMeta": {
+    "enhancedAt": "2026-05-31",
+    "editor": "small-clerkships-first5-quality-pass",
+    "scope": "Only branchId === minor-rotations general clinical cases",
+    "subspecialty": "Nöroloji / acil inme görüntüleme",
+    "objective": "Multidisipliner küçük staj gerçekçiliği, acil öncelik, organ/fonksiyon koruma, basitten komplekse tetkik akışı, tetkik değer etiketi ve girişim geciktirmeme güvenlik kapısı",
+    "note": "Akut fokal defisit vakasında objektif veri kapiller glukoz → kanama dışlama BT → vasküler görüntüleme/laboratuvar hazırlığı şeklinde düzenlendi; reperfüzyon penceresi gereksiz testlerle geciktirilmez."
+  },
+  "optionFeedback": {
+    "Elektroensefalografi": "EEG nöbet, nonkonvülzif status veya belirsiz bilinç değişikliğinde değerli olabilir. Bu vakada tanıklı nöbet/postiktal dönem yoktur ve karar, reperfüzyon öncesi intrakraniyal kanamanın hızla dışlanmasına bağlıdır; EEG bu güvenlik basamağını sağlamaz.",
+    "Beyin pozitron emisyon tomografisi": "PET metabolik, onkolojik veya nörodejeneratif değerlendirmelerde kullanılabilir; akut inme kapısında hızlı kanama dışlama yöntemi değildir. Zaman penceresindeki hastada PET beklemek tedavi kararını gereksiz geciktirir.",
+    "Kontrastsız beyin bilgisayarlı tomografisi": "Bu seçenek intrakraniyal kanamayı hızlı dışlayarak reperfüzyon uygunluğu için temel güvenlik basamağını sağlar. Devam eden afazi-hemiparezi, normal glukoz ve kısa zaman penceresi nedeniyle ilk görüntüleme bu olmalıdır.",
+    "Difüzyon ağırlıklı beyin manyetik rezonans görüntüleme": "DWI-MRG erken iskemiyi çok duyarlı gösterebilir ve bazı merkezlerde kullanılabilir. Ancak acil ilk hedef kanamayı gecikmeden dışlamaktır; MRG erişimi veya çekim süresi kapı-tedavi süresini uzatabilecekse ilk tercih değildir.",
+    "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat intrakraniyal kanamayı dışlamaz. Akut reperfüzyon kararı öncesinde ilk beyin görüntülemesi yerine geçmez; damar görüntüleme gerekiyorsa BT/MR anjiyografi daha hedeflidir."
+  }
 },
   {
     "id": "v163-new-006-sag-alt-kadran-agrisi",
@@ -6874,663 +6881,663 @@ export const rawCases = [
     }
   },
       {
-    "id": "v164-new-013-atesli-monoartrit",
-    "branchId": "minor-rotations",
-    "caseType": "standard",
-    "relatedBranch": "Ortopedi / Enfeksiyon Hastalıkları",
-    "title": "Ateşli monoartrit",
-    "difficulty": "Orta",
-    "clinicalFocus": "Ateşli akut monoartritte septik artrit olasılığını tanıyıp tanıyı kesinleştiren ve tedaviyi yönlendiren ilk işlemi seçme.",
-    "learningTarget": "Sıcak-şiş tek eklem, pasif hareketle şiddetli ağrı ve sistemik inflamasyon varlığında serum ürik asit, ANA, grafi veya MRG’nin sinovyal sıvı analizinin yerini tutmadığını ayırt edebilme.",
-    "demographics": "63 yaşında kadın hasta",
-    "setting": "Acil servis",
-    "chiefComplaint": "Hasta, 24 saat içinde hızla artan sağ diz ağrısı, şişlik, ateş ve üzerine basamama nedeniyle acil servise başvuruyor.",
-    "stem": "Hasta, önceki gün başlayan sağ diz ağrısının 24 saat içinde hızla arttığını ve sabah artık dizine basamaz hâle geldiğini söyler. Ağrı istirahatte de sürmekte, dizini hafifçe bükmeye çalıştığında belirgin şekilde şiddetlenmektedir. Tip 2 diyabet nedeniyle oral antidiyabetik kullanır; yakın zamanda düşme, spor yaralanması, eklem içi enjeksiyon veya diz cerrahisi geçirmemiştir. Daha önce gut atağı ya da benzer tek eklem şişliği yaşamadığını belirtir. Son haftalarda gezici eklem ağrısı, yaygın döküntü veya belirgin boğaz enfeksiyonu sonrası başlayan romatizmal yakınma tariflemez.",
-    "patientIntro": {
-        "profile": "58 yaşında erkek hasta, acil serviste ateşli ve ağrılı sağ diz şişliği nedeniyle değerlendiriliyor.",
-        "presentation": "Yirmi dört saat içinde artan sıcak-şiş tek diz, üzerine basamama ve pasif hareketle belirgin ağrı vardır.",
-        "historySummary": "Hasta sağ diz ağrısının bir gün içinde hızla arttığını, başlangıçta yürüyebilirken sabah dizine basamaz hâle geldiğini anlatıyor. Ağrı istirahatte de geçmemiş, dizini hafif oynatmaya çalıştığında belirgin şekilde şiddetlenmiş. Tip 2 diyabet nedeniyle ilaç kullandığını, ancak son günlerde düşme, spor yaralanması, eklem içi enjeksiyon veya ameliyat geçirmediğini söylüyor. Daha önce gut atağı yaşamadığını ve bu kadar hızlı gelişen tek eklem şişliği olmadığını belirtiyor. Yakın zamanda gezici eklem ağrısı, yaygın döküntü veya boğaz enfeksiyonu sonrası başlayan romatizmal yakınma tarif etmiyor."
+  "id": "v164-new-013-atesli-monoartrit",
+  "branchId": "minor-rotations",
+  "caseType": "standard",
+  "relatedBranch": "Ortopedi / Enfeksiyon Hastalıkları",
+  "title": "Ateşli monoartrit",
+  "difficulty": "Orta",
+  "clinicalFocus": "Ateşli akut monoartritte septik artrit olasılığını tanıyıp tanıyı kesinleştiren ve tedaviyi yönlendiren ilk işlemi seçme.",
+  "learningTarget": "Sıcak-şiş tek eklem, pasif hareketle şiddetli ağrı ve sistemik inflamasyon varlığında serum ürik asit, ANA, grafi veya MRG’nin sinovyal sıvı analizinin yerini tutmadığını ayırt edebilme.",
+  "demographics": "63 yaşında kadın hasta",
+  "setting": "Acil servis",
+  "chiefComplaint": "Hasta, 24 saat içinde hızla artan sağ diz ağrısı, şişlik, ateş ve üzerine basamama nedeniyle acil servise başvuruyor.",
+  "stem": "Hasta, sağ dizindeki ağrının önceki gün hafif sızı şeklinde başladığını, 24 saat içinde hızla artarak sabah yatağından kalktığında üzerine basamaz hâle geldiğini söyler. Ağrı istirahatte de sürmüş, dizini çok az bükmeye çalıştığında bile belirgin şekilde şiddetlenmiştir. Tip 2 diyabet nedeniyle oral antidiyabetik kullandığını, son günlerde düşme, spor yaralanması, eklem içi enjeksiyon veya diz ameliyatı geçirmediğini belirtir. Daha önce gut atağı veya benzer hızda gelişen tek eklem şişliği yaşamamıştır. Son haftalarda gezici eklem ağrısı, yaygın döküntü ya da boğaz enfeksiyonu sonrası başlayan romatizmal yakınma tarif etmez.",
+  "patientIntro": {
+    "profile": "Tip 2 diyabet öyküsü olan hasta, hızla artan tek diz ağrısı ve üzerine basamama nedeniyle acil serviste değerlendiriliyor.",
+    "presentation": "Sağ dizde akut şişlik, ısı artışı, ateş ve pasif hareketle belirginleşen ağrı vardır.",
+    "historySummary": "Hasta, sağ dizindeki ağrının önceki gün hafif sızı şeklinde başladığını, 24 saat içinde hızla artarak sabah yatağından kalktığında üzerine basamaz hâle geldiğini söyler. Ağrı istirahatte de sürmüş, dizini çok az bükmeye çalıştığında bile belirgin şekilde şiddetlenmiştir. Tip 2 diyabet nedeniyle oral antidiyabetik kullandığını, son günlerde düşme, spor yaralanması, eklem içi enjeksiyon veya diz ameliyatı geçirmediğini belirtir. Daha önce gut atağı veya benzer hızda gelişen tek eklem şişliği yaşamamıştır. Son haftalarda gezici eklem ağrısı, yaygın döküntü ya da boğaz enfeksiyonu sonrası başlayan romatizmal yakınma tarif etmez."
+  },
+  "vitals": {
+    "TA": "130/78 mmHg",
+    "Nabız": "112/dk",
+    "Solunum": "24/dk",
+    "SpO2": "%96, oda havasında",
+    "Ateş": "38.7 °C",
+    "Şok indeksi": "0.86 - hemodinami korunmuş, enfeksiyon aciliyeti sürüyor"
+  },
+  "exam": [
+    "Sağ diz belirgin şiş, sıcak ve palpasyonla yaygın hassastır.",
+    "Aktif fleksiyon çok kısıtlıdır; minimal pasif hareketle ileri derecede ağrı oluşur.",
+    "Diz çevresinde açık yara, selülit odağı veya travmatik deformite izlenmez.",
+    "Distal nabızlar alınır, kapiller dolum normaldir; duyu ve motor muayene korunmuştur."
+  ],
+  "investigations": [
+    {
+      "id": "v164-new-013-atesli-monoartrit-eklem-klinik",
+      "label": "Akut monoartrit klinik bulguları",
+      "title": "Akut monoartrit klinik bulguları",
+      "orderLabel": "Akut monoartrit klinik bulguları",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "Akut monoartrit klinik bulguları",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Sağ dizde sıcaklık, şişlik, yaygın hassasiyet, yük verememe ve minimal pasif fleksiyonda belirgin ağrı kaydedilmiştir.",
+      "clinicalMeaning": "Sağ dizde sıcaklık, şişlik, yaygın hassasiyet, yük verememe ve minimal pasif fleksiyonda belirgin ağrı kaydedilmiştir.",
+      "result": {
+        "title": "Akut monoartrit klinik değerlendirmesi",
+        "summary": "Sağ dizde sıcaklık, şişlik, yaygın hassasiyet, yük verememe ve minimal pasif fleksiyonda belirgin ağrı kaydedilmiştir.",
+        "interpretation": "Sağ dizde sıcaklık, şişlik, yaygın hassasiyet, yük verememe ve minimal pasif fleksiyonda belirgin ağrı kaydedilmiştir.",
+        "values": [
+          [
+            "Eklem görünümü",
+            "Sağ diz sıcak, şiş ve palpasyonla yaygın hassas",
+            "",
+            "Akut inflamasyon"
+          ],
+          [
+            "Pasif hareket",
+            "Minimal pasif fleksiyonda ileri derecede ağrı",
+            "",
+            "Eklem içi süreç"
+          ],
+          [
+            "Yük verme",
+            "Sağ alt ekstremiteye tam yük veremiyor",
+            "",
+            "Fonksiyon kaybı"
+          ],
+          [
+            "Travma bulgusu",
+            "Açık yara, deformite veya travma öyküsü yok",
+            "",
+            "Travma bulgusu yok"
+          ]
+        ],
+        "rows": [
+          [
+            "Eklem görünümü",
+            "Sağ diz sıcak, şiş ve palpasyonla yaygın hassas",
+            "",
+            "Akut inflamasyon"
+          ],
+          [
+            "Pasif hareket",
+            "Minimal pasif fleksiyonda ileri derecede ağrı",
+            "",
+            "Eklem içi süreç"
+          ],
+          [
+            "Yük verme",
+            "Sağ alt ekstremiteye tam yük veremiyor",
+            "",
+            "Fonksiyon kaybı"
+          ],
+          [
+            "Travma bulgusu",
+            "Açık yara, deformite veya travma öyküsü yok",
+            "",
+            "Travma bulgusu yok"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Eklem görünümü",
+          "Sağ diz sıcak, şiş ve palpasyonla yaygın hassas",
+          "",
+          "Akut inflamasyon"
+        ],
+        [
+          "Pasif hareket",
+          "Minimal pasif fleksiyonda ileri derecede ağrı",
+          "",
+          "Eklem içi süreç"
+        ],
+        [
+          "Yük verme",
+          "Sağ alt ekstremiteye tam yük veremiyor",
+          "",
+          "Fonksiyon kaybı"
+        ],
+        [
+          "Travma bulgusu",
+          "Açık yara, deformite veya travma öyküsü yok",
+          "",
+          "Travma bulgusu yok"
+        ]
+      ],
+      "postAnswerExplanation": "Sağ dizde sıcaklık, şişlik, yaygın hassasiyet, yük verememe ve minimal pasif fleksiyonda belirgin ağrı kaydedilmiştir.",
+      "interpretation": "Sağ dizde sıcaklık, şişlik, yaygın hassasiyet, yük verememe ve minimal pasif fleksiyonda belirgin ağrı kaydedilmiştir.",
+      "explanationAfterAnswer": "Sağ dizde sıcaklık, şişlik, yaygın hassasiyet, yük verememe ve minimal pasif fleksiyonda belirgin ağrı kaydedilmiştir.",
+      "testValueLabel": "Acil eklem değerlendirmesi",
+      "educationalValue": "Acil eklem değerlendirmesi",
+      "clinicalPriorityLabel": "Acil eklem değerlendirmesi",
+      "scoreImpact": 5,
+      "scoreValue": 5,
+      "clinicalFlowOrder": 1,
+      "purpose": "Ateşli, sıcak-şiş tek eklem ve pasif hareketle belirgin ağrı eklem içi akut inflamatuvar süreci düşündürür; travmatik deformite olmaması mekanik nedeni zayıflatır.",
+      "inlineFeedback": "Sağ dizde sıcaklık, şişlik, yaygın hassasiyet, yük verememe ve minimal pasif fleksiyonda belirgin ağrı kaydedilmiştir.",
+      "treatmentImpact": "Eklem içi ağrı paterni tanısal doğrulama gereksinimini güçlendirir.",
+      "emergencyValue": "Ateşli monoartrit eklem hasarı riski nedeniyle geciktirilmeden değerlendirilmelidir."
     },
-    "vitals": {
-        "TA": "130/78 mmHg",
-        "Nabız": "112/dk",
-        "Solunum": "24/dk",
-        "SpO2": "%96, oda havasında",
-        "Ateş": "38.7 °C",
-        "Şok indeksi": "0.86 - hemodinami korunmuş, enfeksiyon aciliyeti sürüyor"
+    {
+      "id": "v164-new-013-atesli-monoartrit-inflamasyon-kan-kultur",
+      "label": "Hemogram, inflamasyon belirteçleri ve kan kültürü",
+      "title": "Hemogram, inflamasyon belirteçleri ve kan kültürü",
+      "orderLabel": "Hemogram, inflamasyon belirteçleri ve kan kültürü",
+      "type": "lab",
+      "priority": "essential",
+      "subtype": "Hemogram, inflamasyon belirteçleri ve kan kültürü",
+      "category": "lab",
+      "testTypeCategory": "lab",
+      "summary": "Lökosit ve CRP belirgin yüksektir; ateş vardır ve dolaşım parametreleri korunmuştur.",
+      "clinicalMeaning": "Lökosit ve CRP belirgin yüksektir; ateş vardır ve dolaşım parametreleri korunmuştur.",
+      "result": {
+        "title": "Hemogram, inflamasyon belirteçleri ve kan kültürü",
+        "summary": "Lökosit ve CRP belirgin yüksektir; ateş vardır ve dolaşım parametreleri korunmuştur.",
+        "interpretation": "Lökosit ve CRP belirgin yüksektir; ateş vardır ve dolaşım parametreleri korunmuştur.",
+        "values": [
+          [
+            "Lökosit",
+            "15.200/mm³",
+            "4.000-10.000/mm³",
+            "Yüksek"
+          ],
+          [
+            "CRP",
+            "118 mg/L",
+            "<5 mg/L",
+            "Belirgin yüksek"
+          ],
+          [
+            "Ateş",
+            "38.7 °C",
+            "<38.0 °C",
+            "Yüksek"
+          ],
+          [
+            "Hemodinami",
+            "TA 130/78 mmHg, şok indeksi 0.86",
+            "Şok indeksi <0.9",
+            "Stabil"
+          ]
+        ],
+        "rows": [
+          [
+            "Lökosit",
+            "15.200/mm³",
+            "4.000-10.000/mm³",
+            "Yüksek"
+          ],
+          [
+            "CRP",
+            "118 mg/L",
+            "<5 mg/L",
+            "Belirgin yüksek"
+          ],
+          [
+            "Ateş",
+            "38.7 °C",
+            "<38.0 °C",
+            "Yüksek"
+          ],
+          [
+            "Hemodinami",
+            "TA 130/78 mmHg, şok indeksi 0.86",
+            "Şok indeksi <0.9",
+            "Stabil"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Lökosit",
+          "15.200/mm³",
+          "4.000-10.000/mm³",
+          "Yüksek"
+        ],
+        [
+          "CRP",
+          "118 mg/L",
+          "<5 mg/L",
+          "Belirgin yüksek"
+        ],
+        [
+          "Ateş",
+          "38.7 °C",
+          "<38.0 °C",
+          "Yüksek"
+        ],
+        [
+          "Hemodinami",
+          "TA 130/78 mmHg, şok indeksi 0.86",
+          "Şok indeksi <0.9",
+          "Stabil"
+        ]
+      ],
+      "postAnswerExplanation": "Lökosit ve CRP belirgin yüksektir; ateş vardır ve dolaşım parametreleri korunmuştur.",
+      "interpretation": "Lökosit ve CRP belirgin yüksektir; ateş vardır ve dolaşım parametreleri korunmuştur.",
+      "explanationAfterAnswer": "Lökosit ve CRP belirgin yüksektir; ateş vardır ve dolaşım parametreleri korunmuştur.",
+      "testValueLabel": "Sistemik inflamasyon",
+      "educationalValue": "Sistemik inflamasyon",
+      "clinicalPriorityLabel": "Sistemik inflamasyon",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "clinicalFlowOrder": 2,
+      "purpose": "Lökositoz, yüksek CRP ve ateş sistemik inflamasyonu destekler; hemodinamik stabilite eklem kaynaklı acil değerlendirme gerekliliğini ortadan kaldırmaz.",
+      "inlineFeedback": "Lökosit ve CRP belirgin yüksektir; ateş vardır ve dolaşım parametreleri korunmuştur.",
+      "treatmentImpact": "Sistemik inflamasyon verileri eklem içi nedenin ciddiyetini artırır.",
+      "emergencyValue": "Stabil dolaşım enfeksiyöz eklem sürecini dışlamaz."
     },
-    "exam": [
-        "Sağ diz belirgin şiş, sıcak ve palpasyonla yaygın hassastır.",
-        "Aktif fleksiyon çok kısıtlıdır; minimal pasif hareketle ileri derecede ağrı oluşur.",
-        "Diz çevresinde açık yara, selülit odağı veya travmatik deformite izlenmez.",
-        "Distal nabızlar alınır, kapiller dolum normaldir; duyu ve motor muayene korunmuştur."
+    {
+      "id": "v164-new-013-atesli-monoartrit-sinovyal-sivi",
+      "label": "Risk faktörü ve ayırıcı tanı öyküsü",
+      "title": "Risk faktörü ve ayırıcı tanı öyküsü",
+      "orderLabel": "Risk faktörü ve ayırıcı tanı öyküsü",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "Risk faktörü ve ayırıcı tanı öyküsü",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Diyabet öyküsü ve pasif hareketle şiddetlenen eklem içi ağrı vardır; belirgin deri odağı, bilinen gut atağı veya gezici artrit öyküsü yoktur.",
+      "clinicalMeaning": "Diyabet öyküsü ve pasif hareketle şiddetlenen eklem içi ağrı vardır; belirgin deri odağı, bilinen gut atağı veya gezici artrit öyküsü yoktur.",
+      "result": {
+        "title": "Ayırıcı tanı ve eklem içi risk verileri",
+        "summary": "Diyabet öyküsü ve pasif hareketle şiddetlenen eklem içi ağrı vardır; belirgin deri odağı, bilinen gut atağı veya gezici artrit öyküsü yoktur.",
+        "interpretation": "Diyabet öyküsü ve pasif hareketle şiddetlenen eklem içi ağrı vardır; belirgin deri odağı, bilinen gut atağı veya gezici artrit öyküsü yoktur.",
+        "values": [
+          [
+            "Risk faktörü",
+            "Tip 2 diyabet mevcut",
+            "",
+            "Risk artışı"
+          ],
+          [
+            "Ağrı paterni",
+            "İstirahatte sürüyor ve pasif hareketle belirgin şiddetleniyor",
+            "",
+            "Eklem içi süreç"
+          ],
+          [
+            "Deri odağı",
+            "Diz çevresinde açık yara veya selülit odağı görülmedi",
+            "",
+            "Belirgin odağı yok"
+          ],
+          [
+            "Kristal/romatizmal öykü",
+            "Bilinen gut atağı, gezici artrit veya yaygın döküntü tariflenmiyor",
+            "",
+            "Ayırıcı tanı verisi"
+          ]
+        ],
+        "rows": [
+          [
+            "Risk faktörü",
+            "Tip 2 diyabet mevcut",
+            "",
+            "Risk artışı"
+          ],
+          [
+            "Ağrı paterni",
+            "İstirahatte sürüyor ve pasif hareketle belirgin şiddetleniyor",
+            "",
+            "Eklem içi süreç"
+          ],
+          [
+            "Deri odağı",
+            "Diz çevresinde açık yara veya selülit odağı görülmedi",
+            "",
+            "Belirgin odağı yok"
+          ],
+          [
+            "Kristal/romatizmal öykü",
+            "Bilinen gut atağı, gezici artrit veya yaygın döküntü tariflenmiyor",
+            "",
+            "Ayırıcı tanı verisi"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Risk faktörü",
+          "Tip 2 diyabet mevcut",
+          "",
+          "Risk artışı"
+        ],
+        [
+          "Ağrı paterni",
+          "İstirahatte sürüyor ve pasif hareketle belirgin şiddetleniyor",
+          "",
+          "Eklem içi süreç"
+        ],
+        [
+          "Deri odağı",
+          "Diz çevresinde açık yara veya selülit odağı görülmedi",
+          "",
+          "Belirgin odağı yok"
+        ],
+        [
+          "Kristal/romatizmal öykü",
+          "Bilinen gut atağı, gezici artrit veya yaygın döküntü tariflenmiyor",
+          "",
+          "Ayırıcı tanı verisi"
+        ]
+      ],
+      "postAnswerExplanation": "Diyabet öyküsü ve pasif hareketle şiddetlenen eklem içi ağrı vardır; belirgin deri odağı, bilinen gut atağı veya gezici artrit öyküsü yoktur.",
+      "interpretation": "Diyabet öyküsü ve pasif hareketle şiddetlenen eklem içi ağrı vardır; belirgin deri odağı, bilinen gut atağı veya gezici artrit öyküsü yoktur.",
+      "explanationAfterAnswer": "Diyabet öyküsü ve pasif hareketle şiddetlenen eklem içi ağrı vardır; belirgin deri odağı, bilinen gut atağı veya gezici artrit öyküsü yoktur.",
+      "testValueLabel": "Ayırıcı tanı verisi",
+      "educationalValue": "Ayırıcı tanı verisi",
+      "clinicalPriorityLabel": "Ayırıcı tanı verisi",
+      "scoreImpact": 5,
+      "scoreValue": 5,
+      "clinicalFlowOrder": 3,
+      "purpose": "Diyabet ve şiddetli eklem içi ağrı enfeksiyöz süreç olasılığını artırırken; gut öyküsü, gezici artrit ve belirgin deri odağı olmaması ayırıcı tanıyı daraltır.",
+      "inlineFeedback": "Diyabet öyküsü ve pasif hareketle şiddetlenen eklem içi ağrı vardır; belirgin deri odağı, bilinen gut atağı veya gezici artrit öyküsü yoktur.",
+      "treatmentImpact": "Risk ve ayırıcı tanı verileri eklem içi örnekleme gereksinimini destekler.",
+      "emergencyValue": "Kristal hastalığı dışlanmadan da enfeksiyon olasılığı güvenli şekilde göz ardı edilemez."
+    },
+    {
+      "id": "v164-new-013-atesli-monoartrit-diz-grafisi",
+      "label": "Diz direkt grafisi",
+      "title": "Diz direkt grafisi",
+      "orderLabel": "Diz direkt grafisi",
+      "type": "xray",
+      "priority": "useful",
+      "subtype": "Diz direkt grafisi",
+      "category": "imaging",
+      "testTypeCategory": "imaging",
+      "summary": "Direkt grafide kırık veya çıkık saptanmamıştır; akut dönemde belirgin kemik destrüksiyonu yoktur ve yumuşak doku şişliği izlenir.",
+      "clinicalMeaning": "Direkt grafide kırık veya çıkık saptanmamıştır; akut dönemde belirgin kemik destrüksiyonu yoktur ve yumuşak doku şişliği izlenir.",
+      "result": {
+        "title": "Diz direkt grafisi",
+        "summary": "Direkt grafide kırık veya çıkık saptanmamıştır; akut dönemde belirgin kemik destrüksiyonu yoktur ve yumuşak doku şişliği izlenir.",
+        "interpretation": "Direkt grafide kırık veya çıkık saptanmamıştır; akut dönemde belirgin kemik destrüksiyonu yoktur ve yumuşak doku şişliği izlenir.",
+        "values": [
+          [
+            "Kırık/çıkık",
+            "Saptanmadı",
+            "",
+            "Travma aleyhine"
+          ],
+          [
+            "Eklem aralığı",
+            "Akut dönemde belirgin destrüksiyon yok",
+            "",
+            "Nonspesifik"
+          ],
+          [
+            "Yumuşak doku",
+            "Eklem çevresinde şişlik izleniyor",
+            "",
+            "Efüzyonla uyumlu"
+          ]
+        ],
+        "rows": [
+          [
+            "Kırık/çıkık",
+            "Saptanmadı",
+            "",
+            "Travma aleyhine"
+          ],
+          [
+            "Eklem aralığı",
+            "Akut dönemde belirgin destrüksiyon yok",
+            "",
+            "Nonspesifik"
+          ],
+          [
+            "Yumuşak doku",
+            "Eklem çevresinde şişlik izleniyor",
+            "",
+            "Efüzyonla uyumlu"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Kırık/çıkık",
+          "Saptanmadı",
+          "",
+          "Travma aleyhine"
+        ],
+        [
+          "Eklem aralığı",
+          "Akut dönemde belirgin destrüksiyon yok",
+          "",
+          "Nonspesifik"
+        ],
+        [
+          "Yumuşak doku",
+          "Eklem çevresinde şişlik izleniyor",
+          "",
+          "Efüzyonla uyumlu"
+        ]
+      ],
+      "postAnswerExplanation": "Direkt grafide kırık veya çıkık saptanmamıştır; akut dönemde belirgin kemik destrüksiyonu yoktur ve yumuşak doku şişliği izlenir.",
+      "interpretation": "Direkt grafide kırık veya çıkık saptanmamıştır; akut dönemde belirgin kemik destrüksiyonu yoktur ve yumuşak doku şişliği izlenir.",
+      "explanationAfterAnswer": "Direkt grafide kırık veya çıkık saptanmamıştır; akut dönemde belirgin kemik destrüksiyonu yoktur ve yumuşak doku şişliği izlenir.",
+      "testValueLabel": "Görüntüleme desteği",
+      "educationalValue": "Görüntüleme desteği",
+      "clinicalPriorityLabel": "Görüntüleme desteği",
+      "scoreImpact": 1,
+      "scoreValue": 1,
+      "clinicalFlowOrder": 4,
+      "purpose": "Direkt grafide kırık veya çıkık saptanmaması travmatik nedeni zayıflatır; akut inflamatuvar eklem sürecinde grafi erken dönemde nonspesifik kalabilir.",
+      "inlineFeedback": "Direkt grafide kırık veya çıkık saptanmamıştır; akut dönemde belirgin kemik destrüksiyonu yoktur ve yumuşak doku şişliği izlenir.",
+      "treatmentImpact": "Grafi travmayı dışlamaya yardımcı olur, ancak eklem içi inflamasyonun nedenini tek başına belirlemez.",
+      "emergencyValue": "Normal veya nonspesifik grafi ateşli monoartritte tanısal süreci sonlandırmaz."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "question": "Ateşli, sıcak-şiş ve pasif hareketle çok ağrılı tek diz ekleminde tanıyı kesinleştirmek ve tedaviyi yönlendirmek için ilk tanısal işlem hangisidir?",
+  "questionType": "diagnostic_test",
+  "answerTarget": "diagnostic_test",
+  "diagnosis": {
+    "correct": "Eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizi",
+    "options": [
+      "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak",
+      "Eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizi",
+      "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak",
+      "Direkt grafi ile kırık dışlandıktan sonra tanısal süreci sonlandırmak",
+      "Antinükleer antikor ve romatoid faktör paneli istemek"
     ],
-    "investigations": [
-        {
-            "id": "v164-new-013-atesli-monoartrit-eklem-klinik",
-            "label": "Akut monoartrit klinik değerlendirmesi",
-            "title": "Akut monoartrit klinik değerlendirmesi",
-            "orderLabel": "Akut monoartrit klinik değerlendirmesi",
-            "type": "clinical",
-            "priority": "essential",
-            "subtype": "Akut monoartrit klinik değerlendirmesi",
-            "category": "clinicalAssessment",
-            "testTypeCategory": "clinicalAssessment",
-            "summary": "Ateşli, sıcak-şiş tek eklem ve pasif hareketle belirgin ağrı eklem içi akut inflamatuvar süreci düşündürür; travmatik deformite olmaması mekanik nedeni zayıflatır.",
-            "clinicalMeaning": "Ateşli, sıcak-şiş tek eklem ve pasif hareketle belirgin ağrı eklem içi akut inflamatuvar süreci düşündürür; travmatik deformite olmaması mekanik nedeni zayıflatır.",
-            "result": {
-                "title": "Akut monoartrit klinik değerlendirmesi",
-                "summary": "Ateşli, sıcak-şiş tek eklem ve pasif hareketle belirgin ağrı eklem içi akut inflamatuvar süreci düşündürür; travmatik deformite olmaması mekanik nedeni zayıflatır.",
-                "interpretation": "Ateşli, sıcak-şiş tek eklem ve pasif hareketle belirgin ağrı eklem içi akut inflamatuvar süreci düşündürür; travmatik deformite olmaması mekanik nedeni zayıflatır.",
-                "values": [
-                    [
-                        "Eklem görünümü",
-                        "Sağ diz sıcak, şiş ve palpasyonla yaygın hassas",
-                        "",
-                        "Akut inflamasyon"
-                    ],
-                    [
-                        "Pasif hareket",
-                        "Minimal pasif fleksiyonda ileri derecede ağrı",
-                        "",
-                        "Eklem içi süreç"
-                    ],
-                    [
-                        "Yük verme",
-                        "Sağ alt ekstremiteye tam yük veremiyor",
-                        "",
-                        "Fonksiyon kaybı"
-                    ],
-                    [
-                        "Travma bulgusu",
-                        "Açık yara, deformite veya travma öyküsü yok",
-                        "",
-                        "Travma bulgusu yok"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "Eklem görünümü",
-                        "Sağ diz sıcak, şiş ve palpasyonla yaygın hassas",
-                        "",
-                        "Akut inflamasyon"
-                    ],
-                    [
-                        "Pasif hareket",
-                        "Minimal pasif fleksiyonda ileri derecede ağrı",
-                        "",
-                        "Eklem içi süreç"
-                    ],
-                    [
-                        "Yük verme",
-                        "Sağ alt ekstremiteye tam yük veremiyor",
-                        "",
-                        "Fonksiyon kaybı"
-                    ],
-                    [
-                        "Travma bulgusu",
-                        "Açık yara, deformite veya travma öyküsü yok",
-                        "",
-                        "Travma bulgusu yok"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "Eklem görünümü",
-                    "Sağ diz sıcak, şiş ve palpasyonla yaygın hassas",
-                    "",
-                    "Akut inflamasyon"
-                ],
-                [
-                    "Pasif hareket",
-                    "Minimal pasif fleksiyonda ileri derecede ağrı",
-                    "",
-                    "Eklem içi süreç"
-                ],
-                [
-                    "Yük verme",
-                    "Sağ alt ekstremiteye tam yük veremiyor",
-                    "",
-                    "Fonksiyon kaybı"
-                ],
-                [
-                    "Travma bulgusu",
-                    "Açık yara, deformite veya travma öyküsü yok",
-                    "",
-                    "Travma bulgusu yok"
-                ]
-            ],
-            "postAnswerExplanation": "Ateşli, sıcak-şiş tek eklem ve pasif hareketle belirgin ağrı eklem içi akut inflamatuvar süreci düşündürür; travmatik deformite olmaması mekanik nedeni zayıflatır.",
-            "interpretation": "Ateşli, sıcak-şiş tek eklem ve pasif hareketle belirgin ağrı eklem içi akut inflamatuvar süreci düşündürür; travmatik deformite olmaması mekanik nedeni zayıflatır.",
-            "explanationAfterAnswer": "Ateşli, sıcak-şiş tek eklem ve pasif hareketle belirgin ağrı eklem içi akut inflamatuvar süreci düşündürür; travmatik deformite olmaması mekanik nedeni zayıflatır.",
-            "testValueLabel": "Acil eklem değerlendirmesi",
-            "educationalValue": "Acil eklem değerlendirmesi",
-            "clinicalPriorityLabel": "Acil eklem değerlendirmesi",
-            "scoreImpact": 5,
-            "scoreValue": 5,
-            "clinicalFlowOrder": 1,
-            "purpose": "Ateşli, sıcak-şiş tek eklem ve pasif hareketle belirgin ağrı eklem içi akut inflamatuvar süreci düşündürür; travmatik deformite olmaması mekanik nedeni zayıflatır.",
-            "inlineFeedback": "Ateşli, sıcak-şiş tek eklem ve pasif hareketle belirgin ağrı eklem içi akut inflamatuvar süreci düşündürür; travmatik deformite olmaması mekanik nedeni zayıflatır.",
-            "treatmentImpact": "Eklem içi ağrı paterni tanısal doğrulama gereksinimini güçlendirir.",
-            "emergencyValue": "Ateşli monoartrit eklem hasarı riski nedeniyle geciktirilmeden değerlendirilmelidir."
-        },
-        {
-            "id": "v164-new-013-atesli-monoartrit-inflamasyon-kan-kultur",
-            "label": "Hemogram, inflamasyon belirteçleri ve kan kültürü",
-            "title": "Hemogram, inflamasyon belirteçleri ve kan kültürü",
-            "orderLabel": "Hemogram, inflamasyon belirteçleri ve kan kültürü",
-            "type": "lab",
-            "priority": "essential",
-            "subtype": "Hemogram, inflamasyon belirteçleri ve kan kültürü",
-            "category": "lab",
-            "testTypeCategory": "lab",
-            "summary": "Lökositoz, yüksek CRP ve ateş sistemik inflamasyonu destekler; hemodinamik stabilite eklem kaynaklı acil değerlendirme gerekliliğini ortadan kaldırmaz.",
-            "clinicalMeaning": "Lökositoz, yüksek CRP ve ateş sistemik inflamasyonu destekler; hemodinamik stabilite eklem kaynaklı acil değerlendirme gerekliliğini ortadan kaldırmaz.",
-            "result": {
-                "title": "Hemogram, inflamasyon belirteçleri ve kan kültürü",
-                "summary": "Lökositoz, yüksek CRP ve ateş sistemik inflamasyonu destekler; hemodinamik stabilite eklem kaynaklı acil değerlendirme gerekliliğini ortadan kaldırmaz.",
-                "interpretation": "Lökositoz, yüksek CRP ve ateş sistemik inflamasyonu destekler; hemodinamik stabilite eklem kaynaklı acil değerlendirme gerekliliğini ortadan kaldırmaz.",
-                "values": [
-                    [
-                        "Lökosit",
-                        "15.200/mm³",
-                        "4.000-10.000/mm³",
-                        "Yüksek"
-                    ],
-                    [
-                        "CRP",
-                        "118 mg/L",
-                        "<5 mg/L",
-                        "Belirgin yüksek"
-                    ],
-                    [
-                        "Ateş",
-                        "38.7 °C",
-                        "<38.0 °C",
-                        "Yüksek"
-                    ],
-                    [
-                        "Hemodinami",
-                        "TA 130/78 mmHg, şok indeksi 0.86",
-                        "Şok indeksi <0.9",
-                        "Stabil"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "Lökosit",
-                        "15.200/mm³",
-                        "4.000-10.000/mm³",
-                        "Yüksek"
-                    ],
-                    [
-                        "CRP",
-                        "118 mg/L",
-                        "<5 mg/L",
-                        "Belirgin yüksek"
-                    ],
-                    [
-                        "Ateş",
-                        "38.7 °C",
-                        "<38.0 °C",
-                        "Yüksek"
-                    ],
-                    [
-                        "Hemodinami",
-                        "TA 130/78 mmHg, şok indeksi 0.86",
-                        "Şok indeksi <0.9",
-                        "Stabil"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "Lökosit",
-                    "15.200/mm³",
-                    "4.000-10.000/mm³",
-                    "Yüksek"
-                ],
-                [
-                    "CRP",
-                    "118 mg/L",
-                    "<5 mg/L",
-                    "Belirgin yüksek"
-                ],
-                [
-                    "Ateş",
-                    "38.7 °C",
-                    "<38.0 °C",
-                    "Yüksek"
-                ],
-                [
-                    "Hemodinami",
-                    "TA 130/78 mmHg, şok indeksi 0.86",
-                    "Şok indeksi <0.9",
-                    "Stabil"
-                ]
-            ],
-            "postAnswerExplanation": "Lökositoz, yüksek CRP ve ateş sistemik inflamasyonu destekler; hemodinamik stabilite eklem kaynaklı acil değerlendirme gerekliliğini ortadan kaldırmaz.",
-            "interpretation": "Lökositoz, yüksek CRP ve ateş sistemik inflamasyonu destekler; hemodinamik stabilite eklem kaynaklı acil değerlendirme gerekliliğini ortadan kaldırmaz.",
-            "explanationAfterAnswer": "Lökositoz, yüksek CRP ve ateş sistemik inflamasyonu destekler; hemodinamik stabilite eklem kaynaklı acil değerlendirme gerekliliğini ortadan kaldırmaz.",
-            "testValueLabel": "Sistemik inflamasyon",
-            "educationalValue": "Sistemik inflamasyon",
-            "clinicalPriorityLabel": "Sistemik inflamasyon",
-            "scoreImpact": 3,
-            "scoreValue": 3,
-            "clinicalFlowOrder": 2,
-            "purpose": "Lökositoz, yüksek CRP ve ateş sistemik inflamasyonu destekler; hemodinamik stabilite eklem kaynaklı acil değerlendirme gerekliliğini ortadan kaldırmaz.",
-            "inlineFeedback": "Lökositoz, yüksek CRP ve ateş sistemik inflamasyonu destekler; hemodinamik stabilite eklem kaynaklı acil değerlendirme gerekliliğini ortadan kaldırmaz.",
-            "treatmentImpact": "Sistemik inflamasyon verileri eklem içi nedenin ciddiyetini artırır.",
-            "emergencyValue": "Stabil dolaşım enfeksiyöz eklem sürecini dışlamaz."
-        },
-        {
-            "id": "v164-new-013-atesli-monoartrit-sinovyal-sivi",
-            "label": "Eklem içi enfeksiyon olasılığı değerlendirmesi",
-            "title": "Ayırıcı tanı ve eklem içi risk verileri",
-            "orderLabel": "Ayırıcı tanı ve eklem içi risk verileri",
-            "type": "clinical",
-            "priority": "essential",
-            "subtype": "Ayırıcı tanı ve eklem içi risk verileri",
-            "category": "clinicalAssessment",
-            "testTypeCategory": "clinicalAssessment",
-            "summary": "Diyabet ve şiddetli eklem içi ağrı enfeksiyöz süreç olasılığını artırırken; gut öyküsü, gezici artrit ve belirgin deri odağı olmaması ayırıcı tanıyı daraltır.",
-            "clinicalMeaning": "Diyabet ve şiddetli eklem içi ağrı enfeksiyöz süreç olasılığını artırırken; gut öyküsü, gezici artrit ve belirgin deri odağı olmaması ayırıcı tanıyı daraltır.",
-            "result": {
-                "title": "Ayırıcı tanı ve eklem içi risk verileri",
-                "summary": "Diyabet ve şiddetli eklem içi ağrı enfeksiyöz süreç olasılığını artırırken; gut öyküsü, gezici artrit ve belirgin deri odağı olmaması ayırıcı tanıyı daraltır.",
-                "interpretation": "Diyabet ve şiddetli eklem içi ağrı enfeksiyöz süreç olasılığını artırırken; gut öyküsü, gezici artrit ve belirgin deri odağı olmaması ayırıcı tanıyı daraltır.",
-                "values": [
-                    [
-                        "Risk faktörü",
-                        "Tip 2 diyabet mevcut",
-                        "",
-                        "Risk artışı"
-                    ],
-                    [
-                        "Ağrı paterni",
-                        "İstirahatte sürüyor ve pasif hareketle belirgin şiddetleniyor",
-                        "",
-                        "Eklem içi süreç"
-                    ],
-                    [
-                        "Deri odağı",
-                        "Diz çevresinde açık yara veya selülit odağı görülmedi",
-                        "",
-                        "Belirgin odağı yok"
-                    ],
-                    [
-                        "Kristal/romatizmal öykü",
-                        "Bilinen gut atağı, gezici artrit veya yaygın döküntü tariflenmiyor",
-                        "",
-                        "Ayırıcı tanı verisi"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "Risk faktörü",
-                        "Tip 2 diyabet mevcut",
-                        "",
-                        "Risk artışı"
-                    ],
-                    [
-                        "Ağrı paterni",
-                        "İstirahatte sürüyor ve pasif hareketle belirgin şiddetleniyor",
-                        "",
-                        "Eklem içi süreç"
-                    ],
-                    [
-                        "Deri odağı",
-                        "Diz çevresinde açık yara veya selülit odağı görülmedi",
-                        "",
-                        "Belirgin odağı yok"
-                    ],
-                    [
-                        "Kristal/romatizmal öykü",
-                        "Bilinen gut atağı, gezici artrit veya yaygın döküntü tariflenmiyor",
-                        "",
-                        "Ayırıcı tanı verisi"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "Risk faktörü",
-                    "Tip 2 diyabet mevcut",
-                    "",
-                    "Risk artışı"
-                ],
-                [
-                    "Ağrı paterni",
-                    "İstirahatte sürüyor ve pasif hareketle belirgin şiddetleniyor",
-                    "",
-                    "Eklem içi süreç"
-                ],
-                [
-                    "Deri odağı",
-                    "Diz çevresinde açık yara veya selülit odağı görülmedi",
-                    "",
-                    "Belirgin odağı yok"
-                ],
-                [
-                    "Kristal/romatizmal öykü",
-                    "Bilinen gut atağı, gezici artrit veya yaygın döküntü tariflenmiyor",
-                    "",
-                    "Ayırıcı tanı verisi"
-                ]
-            ],
-            "postAnswerExplanation": "Diyabet ve şiddetli eklem içi ağrı enfeksiyöz süreç olasılığını artırırken; gut öyküsü, gezici artrit ve belirgin deri odağı olmaması ayırıcı tanıyı daraltır.",
-            "interpretation": "Diyabet ve şiddetli eklem içi ağrı enfeksiyöz süreç olasılığını artırırken; gut öyküsü, gezici artrit ve belirgin deri odağı olmaması ayırıcı tanıyı daraltır.",
-            "explanationAfterAnswer": "Diyabet ve şiddetli eklem içi ağrı enfeksiyöz süreç olasılığını artırırken; gut öyküsü, gezici artrit ve belirgin deri odağı olmaması ayırıcı tanıyı daraltır.",
-            "testValueLabel": "Ayırıcı tanı verisi",
-            "educationalValue": "Ayırıcı tanı verisi",
-            "clinicalPriorityLabel": "Ayırıcı tanı verisi",
-            "scoreImpact": 5,
-            "scoreValue": 5,
-            "clinicalFlowOrder": 3,
-            "purpose": "Diyabet ve şiddetli eklem içi ağrı enfeksiyöz süreç olasılığını artırırken; gut öyküsü, gezici artrit ve belirgin deri odağı olmaması ayırıcı tanıyı daraltır.",
-            "inlineFeedback": "Diyabet ve şiddetli eklem içi ağrı enfeksiyöz süreç olasılığını artırırken; gut öyküsü, gezici artrit ve belirgin deri odağı olmaması ayırıcı tanıyı daraltır.",
-            "treatmentImpact": "Risk ve ayırıcı tanı verileri eklem içi örnekleme gereksinimini destekler.",
-            "emergencyValue": "Kristal hastalığı dışlanmadan da enfeksiyon olasılığı güvenli şekilde göz ardı edilemez."
-        },
-        {
-            "id": "v164-new-013-atesli-monoartrit-diz-grafisi",
-            "label": "Diz direkt grafisi",
-            "title": "Diz direkt grafisi",
-            "orderLabel": "Diz direkt grafisi",
-            "type": "xray",
-            "priority": "useful",
-            "subtype": "Diz direkt grafisi",
-            "category": "imaging",
-            "testTypeCategory": "imaging",
-            "summary": "Direkt grafide kırık veya çıkık saptanmaması travmatik nedeni zayıflatır; akut inflamatuvar eklem sürecinde grafi erken dönemde nonspesifik kalabilir.",
-            "clinicalMeaning": "Direkt grafide kırık veya çıkık saptanmaması travmatik nedeni zayıflatır; akut inflamatuvar eklem sürecinde grafi erken dönemde nonspesifik kalabilir.",
-            "result": {
-                "title": "Diz direkt grafisi",
-                "summary": "Direkt grafide kırık veya çıkık saptanmaması travmatik nedeni zayıflatır; akut inflamatuvar eklem sürecinde grafi erken dönemde nonspesifik kalabilir.",
-                "interpretation": "Direkt grafide kırık veya çıkık saptanmaması travmatik nedeni zayıflatır; akut inflamatuvar eklem sürecinde grafi erken dönemde nonspesifik kalabilir.",
-                "values": [
-                    [
-                        "Kırık/çıkık",
-                        "Saptanmadı",
-                        "",
-                        "Travma aleyhine"
-                    ],
-                    [
-                        "Eklem aralığı",
-                        "Akut dönemde belirgin destrüksiyon yok",
-                        "",
-                        "Nonspesifik"
-                    ],
-                    [
-                        "Yumuşak doku",
-                        "Eklem çevresinde şişlik izleniyor",
-                        "",
-                        "Efüzyonla uyumlu"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "Kırık/çıkık",
-                        "Saptanmadı",
-                        "",
-                        "Travma aleyhine"
-                    ],
-                    [
-                        "Eklem aralığı",
-                        "Akut dönemde belirgin destrüksiyon yok",
-                        "",
-                        "Nonspesifik"
-                    ],
-                    [
-                        "Yumuşak doku",
-                        "Eklem çevresinde şişlik izleniyor",
-                        "",
-                        "Efüzyonla uyumlu"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "Kırık/çıkık",
-                    "Saptanmadı",
-                    "",
-                    "Travma aleyhine"
-                ],
-                [
-                    "Eklem aralığı",
-                    "Akut dönemde belirgin destrüksiyon yok",
-                    "",
-                    "Nonspesifik"
-                ],
-                [
-                    "Yumuşak doku",
-                    "Eklem çevresinde şişlik izleniyor",
-                    "",
-                    "Efüzyonla uyumlu"
-                ]
-            ],
-            "postAnswerExplanation": "Direkt grafide kırık veya çıkık saptanmaması travmatik nedeni zayıflatır; akut inflamatuvar eklem sürecinde grafi erken dönemde nonspesifik kalabilir.",
-            "interpretation": "Direkt grafide kırık veya çıkık saptanmaması travmatik nedeni zayıflatır; akut inflamatuvar eklem sürecinde grafi erken dönemde nonspesifik kalabilir.",
-            "explanationAfterAnswer": "Direkt grafide kırık veya çıkık saptanmaması travmatik nedeni zayıflatır; akut inflamatuvar eklem sürecinde grafi erken dönemde nonspesifik kalabilir.",
-            "testValueLabel": "Görüntüleme desteği",
-            "educationalValue": "Görüntüleme desteği",
-            "clinicalPriorityLabel": "Görüntüleme desteği",
-            "scoreImpact": 1,
-            "scoreValue": 1,
-            "clinicalFlowOrder": 4,
-            "purpose": "Direkt grafide kırık veya çıkık saptanmaması travmatik nedeni zayıflatır; akut inflamatuvar eklem sürecinde grafi erken dönemde nonspesifik kalabilir.",
-            "inlineFeedback": "Direkt grafide kırık veya çıkık saptanmaması travmatik nedeni zayıflatır; akut inflamatuvar eklem sürecinde grafi erken dönemde nonspesifik kalabilir.",
-            "treatmentImpact": "Grafi travmayı dışlamaya yardımcı olur, ancak eklem içi inflamasyonun nedenini tek başına belirlemez.",
-            "emergencyValue": "Normal veya nonspesifik grafi ateşli monoartritte tanısal süreci sonlandırmaz."
-        }
+    "question": "Ateşli, sıcak-şiş ve pasif hareketle çok ağrılı tek diz ekleminde tanıyı kesinleştirmek ve tedaviyi yönlendirmek için ilk tanısal işlem hangisidir?",
+    "explanation": "Diyabet öyküsü olan hastada ateş, belirgin CRP/lökosit yüksekliği ve pasif hareketle şiddetlenen sıcak-şiş tek diz eklemi septik artriti acil dışlanması gereken olasılık hâline getirir. Tanıyı kesinleştiren ve antibiyotik seçimi ile drenaj gereksinimini yönlendiren ilk işlem eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizidir. Serum ürik asit, direkt grafi, MRG veya romatolojik serolojiler yardımcı olabilir; ancak sinovyal sıvı incelemesinin yerini tutmaz.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Sıcak-şiş tek eklem + ateş + pasif hareketle şiddetli ağrı varsa serum ürik asit veya grafiyle yetinme; tanısal kilit artrosentezdir."
+      }
     ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": {
-        "enabled": false
-    },
-    "hideExamSignal": true,
-    "question": "Diyabet öyküsü olan, ateşli ve pasif hareketle ileri derecede ağrılı sıcak-şiş tek diz eklemi bulunan bu hastada tanıyı kesinleştirmek ve tedaviyi yönlendirmek için ilk yapılması gereken tanısal işlem hangisidir?",
-    "questionType": "diagnostic_test",
-    "answerTarget": "diagnostic_test",
-    "diagnosis": {
-        "correct": "Eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizi",
-        "options": [
-            "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak",
-            "Eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizi",
-            "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak",
-            "Direkt grafi ile kırık dışlandıktan sonra tanısal süreci sonlandırmak",
-            "Antinükleer antikor ve romatoid faktör paneli istemek"
-        ],
-        "question": "Diyabet öyküsü olan, ateşli ve pasif hareketle ileri derecede ağrılı sıcak-şiş tek diz eklemi bulunan bu hastada tanıyı kesinleştirmek ve tedaviyi yönlendirmek için ilk yapılması gereken tanısal işlem hangisidir?",
-        "explanation": "Bu hastada ateş, lökositoz, belirgin CRP yüksekliği, diyabet öyküsü ve pasif hareketle şiddetlenen sıcak-şiş tek diz eklemi septik artrit olasılığını acil hâle getirir. Tanıyı kesinleştiren ve tedaviyi yönlendiren ilk işlem eklem aspirasyonu ile sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizidir. Serum ürik asit, direkt grafi, MRG veya romatolojik serolojiler yardımcı olabilir; ancak eklem içi enfeksiyonu dışlamak için sinovyal sıvı incelemesinin yerini tutmaz.",
-        "pearls": [
-            {
-                "label": "Sınav notu",
-                "text": "Sıcak-şiş tek eklem + ateş + pasif hareketle şiddetli ağrı varsa serum ürik asit veya grafiyle yetinme; tanısal kilit artrosentezdir."
-            }
-        ],
-        "answerFeedback": {
-            "summary": "Bu hastada ateş, lökositoz, belirgin CRP yüksekliği, diyabet öyküsü ve pasif hareketle şiddetlenen sıcak-şiş tek diz eklemi septik artrit olasılığını acil hâle getirir. Tanıyı kesinleştiren ve tedaviyi yönlendiren ilk işlem eklem aspirasyonu ile sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizidir. Serum ürik asit, direkt grafi, MRG veya romatolojik serolojiler yardımcı olabilir; ancak eklem içi enfeksiyonu dışlamak için sinovyal sıvı incelemesinin yerini tutmaz.",
-            "whyCorrect": "Sinovyal sıvı analizi hem enfeksiyöz artriti doğrular hem de kristal artrit gibi çeldiricileri aynı örnek üzerinden ayırır. Diyabetli ve febril bir hastada aspirasyonu ertelemek eklem destrüksiyonu ve sepsis riskini artırır.",
-            "rationale": "Bu hastada ateş, lökositoz, belirgin CRP yüksekliği, diyabet öyküsü ve pasif hareketle şiddetlenen sıcak-şiş tek diz eklemi septik artrit olasılığını acil hâle getirir. Tanıyı kesinleştiren ve tedaviyi yönlendiren ilk işlem eklem aspirasyonu ile sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizidir. Serum ürik asit, direkt grafi, MRG veya romatolojik serolojiler yardımcı olabilir; ancak eklem içi enfeksiyonu dışlamak için sinovyal sıvı incelemesinin yerini tutmaz.",
-            "correctOptionFeedback": "Ateşli, sıcak-şiş ve pasif hareketle çok ağrılı tek eklemde sinovyal sıvı analizi tanıyı kesinleştiren ve tedaviyi yönlendiren temel basamaktır. Hücre sayımı, Gram boyama, kültür ve kristal analizi enfeksiyöz artriti kristal artrit ve diğer inflamatuvar nedenlerden ayırır.",
-            "keyClues": [
-                "Sağ dizin sıcak, şiş ve pasif hareketle ileri derecede ağrılı olması eklem içi akut inflamatuvar süreci gösterir.",
-                "38.7 °C ateş, 15.200/mm³ lökosit ve CRP 118 mg/L sistemik inflamasyonu destekler.",
-                "Tip 2 diyabet enfeksiyöz eklem süreci için risk artışı oluşturur.",
-                "Travma, açık yara, bilinen gut atağı ve gezici romatizmal öykünün olmaması diğer nedenleri geri plana iter ama enfeksiyonu dışlamaz."
-            ],
-            "evidenceChain": [
-                {
-                    "text": "Sağ dizin sıcak, şiş ve pasif hareketle ileri derecede ağrılı olması eklem içi akut inflamatuvar süreci gösterir.",
-                    "weight": "high",
-                    "source": "case"
-                },
-                {
-                    "text": "38.7 °C ateş, 15.200/mm³ lökosit ve CRP 118 mg/L sistemik inflamasyonu destekler.",
-                    "weight": "high",
-                    "source": "case"
-                },
-                {
-                    "text": "Tip 2 diyabet enfeksiyöz eklem süreci için risk artışı oluşturur.",
-                    "weight": "medium",
-                    "source": "case"
-                },
-                {
-                    "text": "Travma, açık yara, bilinen gut atağı ve gezici romatizmal öykünün olmaması diğer nedenleri geri plana iter ama enfeksiyonu dışlamaz.",
-                    "weight": "medium",
-                    "source": "case"
-                }
-            ],
-            "examPearl": "Sıcak-şiş tek eklem + ateş + pasif hareketle şiddetli ağrı varsa serum ürik asit veya grafiyle yetinme; tanısal kilit artrosentezdir.",
-            "pearls": [
-                {
-                    "label": "Sınav notu",
-                    "text": "Sıcak-şiş tek eklem + ateş + pasif hareketle şiddetli ağrı varsa serum ürik asit veya grafiyle yetinme; tanısal kilit artrosentezdir."
-                }
-            ],
-            "clinicalPearls": [
-                {
-                    "label": "Klinik ayrım",
-                    "text": "Kristal artrit septik artriti dışlamaz; febril monoartritte kültürlü sinovyal sıvı analizi tedavi güvenliği için önceliklidir."
-                }
-            ],
-            "optionComparison": {
-                "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit düzeyi gut lehine veya aleyhine tek başına güvenilir karar verdirmez; ayrıca gut atağı septik artritle birlikte de bulunabilir. Bu vakada ateş, yüksek CRP ve pasif hareketle şiddetli ağrı varken yalnız serum testi eklem içi enfeksiyonu güvenle dışlamaz.",
-                "Eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizi": "Ateşli, sıcak-şiş ve pasif hareketle çok ağrılı tek eklemde sinovyal sıvı analizi tanıyı kesinleştiren ve tedaviyi yönlendiren temel basamaktır. Hücre sayımı, Gram boyama, kültür ve kristal analizi enfeksiyöz artriti kristal artrit ve diğer inflamatuvar nedenlerden ayırır.",
-                "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir; ancak sıcak-şiş eklemde ilk tanısal hedef sinovyal sıvının değerlendirilmesidir. MRG beklemek tanı ve antibiyotik/drenaj kararını geciktirebilir.",
-                "Direkt grafi ile kırık dışlandıktan sonra tanısal süreci sonlandırmak": "Direkt grafi kırık, çıkık veya kronik destrüksiyonu değerlendirmeye yardım eder; erken septik artritte normal ya da nonspesifik olabilir. Grafiyle kırık dışlanması ateşli monoartritte tanısal süreci bitirmez.",
-                "Antinükleer antikor ve romatoid faktör paneli istemek": "ANA ve romatoid faktör kronik veya sistemik romatolojik hastalık şüphesinde anlamlı olabilir. Bu hastada saatler içinde gelişen ateşli tek büyük eklem tablosu öncelikle eklem içi sıvı incelemesi gerektirir."
-            },
-            "optionFeedback": {
-                "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit düzeyi gut lehine veya aleyhine tek başına güvenilir karar verdirmez; ayrıca gut atağı septik artritle birlikte de bulunabilir. Bu vakada ateş, yüksek CRP ve pasif hareketle şiddetli ağrı varken yalnız serum testi eklem içi enfeksiyonu güvenle dışlamaz.",
-                "Eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizi": "Ateşli, sıcak-şiş ve pasif hareketle çok ağrılı tek eklemde sinovyal sıvı analizi tanıyı kesinleştiren ve tedaviyi yönlendiren temel basamaktır. Hücre sayımı, Gram boyama, kültür ve kristal analizi enfeksiyöz artriti kristal artrit ve diğer inflamatuvar nedenlerden ayırır.",
-                "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir; ancak sıcak-şiş eklemde ilk tanısal hedef sinovyal sıvının değerlendirilmesidir. MRG beklemek tanı ve antibiyotik/drenaj kararını geciktirebilir.",
-                "Direkt grafi ile kırık dışlandıktan sonra tanısal süreci sonlandırmak": "Direkt grafi kırık, çıkık veya kronik destrüksiyonu değerlendirmeye yardım eder; erken septik artritte normal ya da nonspesifik olabilir. Grafiyle kırık dışlanması ateşli monoartritte tanısal süreci bitirmez.",
-                "Antinükleer antikor ve romatoid faktör paneli istemek": "ANA ve romatoid faktör kronik veya sistemik romatolojik hastalık şüphesinde anlamlı olabilir. Bu hastada saatler içinde gelişen ateşli tek büyük eklem tablosu öncelikle eklem içi sıvı incelemesi gerektirir."
-            },
-            "whyWrong": {
-                "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit düzeyi gut lehine veya aleyhine tek başına güvenilir karar verdirmez; ayrıca gut atağı septik artritle birlikte de bulunabilir. Bu vakada ateş, yüksek CRP ve pasif hareketle şiddetli ağrı varken yalnız serum testi eklem içi enfeksiyonu güvenle dışlamaz.",
-                "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir; ancak sıcak-şiş eklemde ilk tanısal hedef sinovyal sıvının değerlendirilmesidir. MRG beklemek tanı ve antibiyotik/drenaj kararını geciktirebilir.",
-                "Direkt grafi ile kırık dışlandıktan sonra tanısal süreci sonlandırmak": "Direkt grafi kırık, çıkık veya kronik destrüksiyonu değerlendirmeye yardım eder; erken septik artritte normal ya da nonspesifik olabilir. Grafiyle kırık dışlanması ateşli monoartritte tanısal süreci bitirmez.",
-                "Antinükleer antikor ve romatoid faktör paneli istemek": "ANA ve romatoid faktör kronik veya sistemik romatolojik hastalık şüphesinde anlamlı olabilir. Bu hastada saatler içinde gelişen ateşli tek büyük eklem tablosu öncelikle eklem içi sıvı incelemesi gerektirir."
-            },
-            "managementSteps": [],
-            "management": [],
-            "learningOutcome": "Ateşli monoartritte eklem içi enfeksiyon olasılığını tanıyıp ilk tanısal basamağı doğru seçebilme.",
-            "coreKnowledge": "Ateşli akut monoartritte septik artrit dışlanana kadar acil kabul edilir; tanı ve tedavi yönlendirmesi için sinovyal sıvı hücre sayımı, Gram boyama, kültür ve kristal analizi gerekir."
+    "answerFeedback": {
+      "summary": "Diyabet öyküsü olan hastada ateş, belirgin CRP/lökosit yüksekliği ve pasif hareketle şiddetlenen sıcak-şiş tek diz eklemi septik artriti acil dışlanması gereken olasılık hâline getirir. Tanıyı kesinleştiren ve antibiyotik seçimi ile drenaj gereksinimini yönlendiren ilk işlem eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizidir. Serum ürik asit, direkt grafi, MRG veya romatolojik serolojiler yardımcı olabilir; ancak sinovyal sıvı incelemesinin yerini tutmaz.",
+      "whyCorrect": "Sinovyal sıvı incelemesi hem septik artriti doğrulamaya hem de kristal artrit gibi çeldiricileri ayırmaya yarar; tedavi kültür ve klinik aciliyetle yönlendirilir.",
+      "rationale": "Diyabet öyküsü olan hastada ateş, belirgin CRP/lökosit yüksekliği ve pasif hareketle şiddetlenen sıcak-şiş tek diz eklemi septik artriti acil dışlanması gereken olasılık hâline getirir. Tanıyı kesinleştiren ve antibiyotik seçimi ile drenaj gereksinimini yönlendiren ilk işlem eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizidir. Serum ürik asit, direkt grafi, MRG veya romatolojik serolojiler yardımcı olabilir; ancak sinovyal sıvı incelemesinin yerini tutmaz.",
+      "correctOptionFeedback": "Bu işlem eklem içi sıvıyı doğrudan değerlendirir; hücre sayımı inflamasyon şiddetini, Gram boyama ve kültür etkeni, kristal analizi ise gut/psödogut ayırımını sağlar. Bu vakadaki ateşli monoartrit paterninde karar verdirici basamak budur.",
+      "keyClues": [
+        "Sağ diz ağrısının 24 saat içinde yük veremeyecek düzeye gelmesi akut monoartrit paternini gösterir.",
+        "Minimal pasif hareketle ileri ağrı eklem içi inflamatuvar süreci destekler.",
+        "Ateş, lökositoz ve belirgin CRP yüksekliği enfeksiyöz olasılığı acil hale getirir.",
+        "Diyabet öyküsü enfeksiyon riskini artırırken travma ve bilinen gut atağı öyküsünün olmaması ayırıcı tanıyı daraltır."
+      ],
+      "evidenceChain": [
+        {
+          "text": "Sağ diz ağrısının 24 saat içinde yük veremeyecek düzeye gelmesi akut monoartrit paternini gösterir.",
+          "weight": "high",
+          "source": "case"
         },
-        "whyCorrect": "Sinovyal sıvı analizi enfeksiyon, kristal artriti ve diğer inflamatuvar nedenleri aynı anda ayırır; kültür antibiyotik seçimini yönlendirir. Bu hastada antibiyotik öncesi örnekleme hedefi, tedavi gecikmeden tanısal kesinlik sağlamaktır.",
-        "evidenceChain": [
-            {
-                "text": "Sağ dizde sıcaklık, şişlik ve minimal pasif hareketle ileri ağrı eklem içi akut süreci gösterir.",
-                "weight": "high",
-                "source": "case"
-            },
-            {
-                "text": "38.7 °C ateş, 15.200/mm³ lökosit ve 118 mg/L CRP sistemik inflamasyonu destekler.",
-                "weight": "high",
-                "source": "case"
-            },
-            {
-                "text": "Tip 2 diyabet enfeksiyon riskini artıran hasta faktörüdür.",
-                "weight": "medium",
-                "source": "case"
-            },
-            {
-                "text": "Direkt grafide kırık/çıkık olmaması ve travma öyküsünün bulunmaması mekanik nedeni geri plana iter.",
-                "weight": "medium",
-                "source": "case"
-            }
-        ],
-        "optionComparison": {
-            "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit akut gut atağında normal olabilir ve yüksekliği de tek başına tanı koydurmaz. Bu hastada ateş, yüksek CRP/lökositoz ve pasif hareketle ileri ağrı olduğu için enfeksiyon dışlanmadan serum ürik asitle karar vermek güvenli değildir.",
-            "Eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizi": "Bu işlem enfeksiyon ve kristal artritini aynı örnek üzerinden ayırır, etkeni saptayarak antibiyotik seçimini ve drenaj gereksinimini yönlendirir. Vakanın ateşli akut tek eklem tablosunda ilk tanısal basamak budur.",
-            "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir. Ancak akut sıcak-şiş tek eklemde enfekte sinovyal sıvıyı göstermeden MRG beklemek tanıyı ve tedaviyi geciktirir.",
-            "Direkt grafi sonucuna göre antibiyotik kararını ertelemek": "Direkt grafi kırık, çıkık veya geç eklem destrüksiyonunu değerlendirmeye yardım eder; erken septik artritte normal olabilir. Bu nedenle normal grafi enfekte eklemi dışlamaz ve antibiyotik/drenaj kararını tek başına belirlememelidir.",
-            "Antinükleer antikor ve romatoid faktör paneli istemek": "Otoimmün testler kronik veya sistemik inflamatuvar artritlerde seçilmiş bağlamda kullanılır. Bu hastadaki 24 saatlik ateşli monoartrit ve eklem içi ağrı paterni acil enfeksiyon dışlamasını gerektirir."
+        {
+          "text": "Minimal pasif hareketle ileri ağrı eklem içi inflamatuvar süreci destekler.",
+          "weight": "high",
+          "source": "case"
         },
-        "coreKnowledge": "Ateşli akut monoartritte septik artrit dışlanana kadar acil kabul edilir; tanısal ana basamak sinovyal sıvı analizi ve kültürdür.",
-        "examPearl": "Sıcak-şiş tek eklem + ateş + pasif hareketle şiddetli ağrı varsa serum ürik asit veya grafiyle oyalanma; eklem aspirasyonu tanı ve tedavi yönlendirmesinin merkezidir.",
-        "whyWrong": {
-            "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit akut gut atağında normal olabilir ve yüksekliği de tek başına tanı koydurmaz. Bu hastada ateş, yüksek CRP/lökositoz ve pasif hareketle ileri ağrı olduğu için enfeksiyon dışlanmadan serum ürik asitle karar vermek güvenli değildir.",
-            "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir. Ancak akut sıcak-şiş tek eklemde enfekte sinovyal sıvıyı göstermeden MRG beklemek tanıyı ve tedaviyi geciktirir.",
-            "Direkt grafi sonucuna göre antibiyotik kararını ertelemek": "Direkt grafi kırık, çıkık veya geç eklem destrüksiyonunu değerlendirmeye yardım eder; erken septik artritte normal olabilir. Bu nedenle normal grafi enfekte eklemi dışlamaz ve antibiyotik/drenaj kararını tek başına belirlememelidir.",
-            "Antinükleer antikor ve romatoid faktör paneli istemek": "Otoimmün testler kronik veya sistemik inflamatuvar artritlerde seçilmiş bağlamda kullanılır. Bu hastadaki 24 saatlik ateşli monoartrit ve eklem içi ağrı paterni acil enfeksiyon dışlamasını gerektirir."
+        {
+          "text": "Ateş, lökositoz ve belirgin CRP yüksekliği enfeksiyöz olasılığı acil hale getirir.",
+          "weight": "high",
+          "source": "case"
         },
-        "optionFeedback": {
-            "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit akut gut atağında normal olabilir ve yüksekliği de tek başına tanı koydurmaz. Bu hastada ateş, yüksek CRP/lökositoz ve pasif hareketle ileri ağrı olduğu için enfeksiyon dışlanmadan serum ürik asitle karar vermek güvenli değildir.",
-            "Eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizi": "Bu işlem enfeksiyon ve kristal artritini aynı örnek üzerinden ayırır, etkeni saptayarak antibiyotik seçimini ve drenaj gereksinimini yönlendirir. Vakanın ateşli akut tek eklem tablosunda ilk tanısal basamak budur.",
-            "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir. Ancak akut sıcak-şiş tek eklemde enfekte sinovyal sıvıyı göstermeden MRG beklemek tanıyı ve tedaviyi geciktirir.",
-            "Direkt grafi sonucuna göre antibiyotik kararını ertelemek": "Direkt grafi kırık, çıkık veya geç eklem destrüksiyonunu değerlendirmeye yardım eder; erken septik artritte normal olabilir. Bu nedenle normal grafi enfekte eklemi dışlamaz ve antibiyotik/drenaj kararını tek başına belirlememelidir.",
-            "Antinükleer antikor ve romatoid faktör paneli istemek": "Otoimmün testler kronik veya sistemik inflamatuvar artritlerde seçilmiş bağlamda kullanılır. Bu hastadaki 24 saatlik ateşli monoartrit ve eklem içi ağrı paterni acil enfeksiyon dışlamasını gerektirir."
+        {
+          "text": "Diyabet öyküsü enfeksiyon riskini artırırken travma ve bilinen gut atağı öyküsünün olmaması ayırıcı tanıyı daraltır.",
+          "weight": "medium",
+          "source": "case"
         }
-    },
-    "shuffleOptions": false,
-    "difficultyTag": "Orta",
-    "coreKnowledge": "Ateşli akut monoartritte septik artrit dışlanana kadar acil kabul edilir; tanı ve tedavi yönlendirmesi için sinovyal sıvı hücre sayımı, Gram boyama, kültür ve kristal analizi gerekir.",
-    "examPearl": "Sıcak-şiş tek eklem + ateş + pasif hareketle şiddetli ağrı varsa serum ürik asit veya grafiyle yetinme; tanısal kilit artrosentezdir.",
-    "whyCorrect": "Sinovyal sıvı analizi hem enfeksiyöz artriti doğrular hem de kristal artrit gibi çeldiricileri aynı örnek üzerinden ayırır. Diyabetli ve febril bir hastada aspirasyonu ertelemek eklem destrüksiyonu ve sepsis riskini artırır.",
-    "optionComparison": {
+      ],
+      "examPearl": "Sıcak-şiş tek eklem + ateş + pasif hareketle şiddetli ağrı varsa serum ürik asit veya grafiyle yetinme; tanısal kilit artrosentezdir.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Sıcak-şiş tek eklem + ateş + pasif hareketle şiddetli ağrı varsa serum ürik asit veya grafiyle yetinme; tanısal kilit artrosentezdir."
+        }
+      ],
+      "clinicalPearls": [
+        {
+          "label": "Klinik ayrım",
+          "text": "Kristal artrit septik artriti dışlamaz; febril monoartritte kültürlü sinovyal sıvı analizi tedavi güvenliği için önceliklidir."
+        }
+      ],
+      "optionComparison": {
+        "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit akut atakta normal olabilir veya asemptomatik yüksek bulunabilir; ayrıca kristal artrit septik artritle birlikte olabilir. Ateşli ve pasif hareketle çok ağrılı tek eklemde yalnız serum testi enfeksiyonu güvenle dışlamaz.",
+        "Eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizi": "Bu işlem eklem içi sıvıyı doğrudan değerlendirir; hücre sayımı inflamasyon şiddetini, Gram boyama ve kültür etkeni, kristal analizi ise gut/psödogut ayırımını sağlar. Bu vakadaki ateşli monoartrit paterninde karar verdirici basamak budur.",
+        "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir; ancak akut sıcak-şiş eklemde ilk tanısal hedef sinovyal sıvıdır. MRG beklemek tanı ve tedavi kararını geciktirebilir.",
+        "Direkt grafi ile kırık dışlandıktan sonra tanısal süreci sonlandırmak": "Direkt grafi kırık, çıkık veya kronik destrüksiyon için yardımcıdır, fakat erken septik artritte normal ya da nonspesifik olabilir. Grafide kırık olmaması ateşli monoartritte süreci sonlandırmaz.",
+        "Antinükleer antikor ve romatoid faktör paneli istemek": "ANA ve romatoid faktör kronik veya sistemik romatolojik hastalık bağlamında değerlidir. Bu hastadaki saatler içinde gelişen ateşli tek büyük eklem tablosu önce sinovyal sıvı incelemesi gerektirir."
+      },
+      "optionFeedback": {
         "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit düzeyi gut lehine veya aleyhine tek başına güvenilir karar verdirmez; ayrıca gut atağı septik artritle birlikte de bulunabilir. Bu vakada ateş, yüksek CRP ve pasif hareketle şiddetli ağrı varken yalnız serum testi eklem içi enfeksiyonu güvenle dışlamaz.",
         "Eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizi": "Ateşli, sıcak-şiş ve pasif hareketle çok ağrılı tek eklemde sinovyal sıvı analizi tanıyı kesinleştiren ve tedaviyi yönlendiren temel basamaktır. Hücre sayımı, Gram boyama, kültür ve kristal analizi enfeksiyöz artriti kristal artrit ve diğer inflamatuvar nedenlerden ayırır.",
         "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir; ancak sıcak-şiş eklemde ilk tanısal hedef sinovyal sıvının değerlendirilmesidir. MRG beklemek tanı ve antibiyotik/drenaj kararını geciktirebilir.",
         "Direkt grafi ile kırık dışlandıktan sonra tanısal süreci sonlandırmak": "Direkt grafi kırık, çıkık veya kronik destrüksiyonu değerlendirmeye yardım eder; erken septik artritte normal ya da nonspesifik olabilir. Grafiyle kırık dışlanması ateşli monoartritte tanısal süreci bitirmez.",
         "Antinükleer antikor ve romatoid faktör paneli istemek": "ANA ve romatoid faktör kronik veya sistemik romatolojik hastalık şüphesinde anlamlı olabilir. Bu hastada saatler içinde gelişen ateşli tek büyük eklem tablosu öncelikle eklem içi sıvı incelemesi gerektirir."
-    },
-    "evidenceChain": [
-        {
-            "text": "Sağ dizin sıcak, şiş ve pasif hareketle ileri derecede ağrılı olması eklem içi akut inflamatuvar süreci gösterir.",
-            "weight": "high",
-            "source": "case"
-        },
-        {
-            "text": "38.7 °C ateş, 15.200/mm³ lökosit ve CRP 118 mg/L sistemik inflamasyonu destekler.",
-            "weight": "high",
-            "source": "case"
-        },
-        {
-            "text": "Tip 2 diyabet enfeksiyöz eklem süreci için risk artışı oluşturur.",
-            "weight": "medium",
-            "source": "case"
-        },
-        {
-            "text": "Travma, açık yara, bilinen gut atağı ve gezici romatizmal öykünün olmaması diğer nedenleri geri plana iter ama enfeksiyonu dışlamaz.",
-            "weight": "medium",
-            "source": "case"
-        }
-    ],
-    "whyWrong": {
+      },
+      "whyWrong": {
         "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit düzeyi gut lehine veya aleyhine tek başına güvenilir karar verdirmez; ayrıca gut atağı septik artritle birlikte de bulunabilir. Bu vakada ateş, yüksek CRP ve pasif hareketle şiddetli ağrı varken yalnız serum testi eklem içi enfeksiyonu güvenle dışlamaz.",
         "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir; ancak sıcak-şiş eklemde ilk tanısal hedef sinovyal sıvının değerlendirilmesidir. MRG beklemek tanı ve antibiyotik/drenaj kararını geciktirebilir.",
         "Direkt grafi ile kırık dışlandıktan sonra tanısal süreci sonlandırmak": "Direkt grafi kırık, çıkık veya kronik destrüksiyonu değerlendirmeye yardım eder; erken septik artritte normal ya da nonspesifik olabilir. Grafiyle kırık dışlanması ateşli monoartritte tanısal süreci bitirmez.",
         "Antinükleer antikor ve romatoid faktör paneli istemek": "ANA ve romatoid faktör kronik veya sistemik romatolojik hastalık şüphesinde anlamlı olabilir. Bu hastada saatler içinde gelişen ateşli tek büyük eklem tablosu öncelikle eklem içi sıvı incelemesi gerektirir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Ateşli monoartritte eklem içi enfeksiyon olasılığını tanıyıp ilk tanısal basamağı doğru seçebilme.",
+      "coreKnowledge": "Ateşli akut monoartritte septik artrit dışlanana kadar acil kabul edilir; tanı ve tedavi yönlendirmesi için sinovyal sıvı hücre sayımı, Gram boyama, kültür ve kristal analizi gerekir."
     },
-    "editorialMeta": {
-        "smallClerkshipsUltraRefined": true,
-        "smallClerkshipsSubspecialty": "Ortopedi / enfeksiyon - septik artrit",
-        "lastRefinedAt": "2026-05-31"
+    "whyCorrect": "Sinovyal sıvı analizi enfeksiyon, kristal artriti ve diğer inflamatuvar nedenleri aynı anda ayırır; kültür antibiyotik seçimini yönlendirir. Bu hastada antibiyotik öncesi örnekleme hedefi, tedavi gecikmeden tanısal kesinlik sağlamaktır.",
+    "evidenceChain": [
+      {
+        "text": "Sağ dizde sıcaklık, şişlik ve minimal pasif hareketle ileri ağrı eklem içi akut süreci gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "38.7 °C ateş, 15.200/mm³ lökosit ve 118 mg/L CRP sistemik inflamasyonu destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Tip 2 diyabet enfeksiyon riskini artıran hasta faktörüdür.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "text": "Direkt grafide kırık/çıkık olmaması ve travma öyküsünün bulunmaması mekanik nedeni geri plana iter.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit akut gut atağında normal olabilir ve yüksekliği de tek başına tanı koydurmaz. Bu hastada ateş, yüksek CRP/lökositoz ve pasif hareketle ileri ağrı olduğu için enfeksiyon dışlanmadan serum ürik asitle karar vermek güvenli değildir.",
+      "Eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizi": "Bu işlem enfeksiyon ve kristal artritini aynı örnek üzerinden ayırır, etkeni saptayarak antibiyotik seçimini ve drenaj gereksinimini yönlendirir. Vakanın ateşli akut tek eklem tablosunda ilk tanısal basamak budur.",
+      "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir. Ancak akut sıcak-şiş tek eklemde enfekte sinovyal sıvıyı göstermeden MRG beklemek tanıyı ve tedaviyi geciktirir.",
+      "Direkt grafi sonucuna göre antibiyotik kararını ertelemek": "Direkt grafi kırık, çıkık veya geç eklem destrüksiyonunu değerlendirmeye yardım eder; erken septik artritte normal olabilir. Bu nedenle normal grafi enfekte eklemi dışlamaz ve antibiyotik/drenaj kararını tek başına belirlememelidir.",
+      "Antinükleer antikor ve romatoid faktör paneli istemek": "Otoimmün testler kronik veya sistemik inflamatuvar artritlerde seçilmiş bağlamda kullanılır. Bu hastadaki 24 saatlik ateşli monoartrit ve eklem içi ağrı paterni acil enfeksiyon dışlamasını gerektirir."
     },
-    "preserveInvestigationOrder": true,
-    "smallClerkshipsInvestigationLayerEnhanced": true,
-    "smallClerkshipsInvestigationLayerVersion": "v398-small-clerkships-investigation-layer",
-    "smallClerkshipsSubspecialty": "Ortopedi / enfeksiyon - septik artrit",
-    "investigationLayerMeta": {
-        "enhancedAt": "2026-05-31",
-        "editor": "small-clerkships-first5-quality-pass",
-        "scope": "Only branchId === minor-rotations general clinical cases",
-        "subspecialty": "Ortopedi / enfeksiyon - septik artrit",
-        "objective": "Multidisipliner küçük staj gerçekçiliği, acil öncelik, organ/fonksiyon koruma, basitten komplekse tetkik akışı, tetkik değer etiketi ve girişim geciktirmeme güvenlik kapısı",
-        "note": "Septik artrit vakasında akış eklem muayenesi → inflamasyon/kan kültürü → acil artrosentez → grafi/izlem şeklinde düzenlendi; antibiyotik ve drenaj kararı aspirasyonla ilişkilendirildi."
+    "coreKnowledge": "Ateşli akut monoartritte septik artrit dışlanana kadar acil kabul edilir; tanısal ana basamak sinovyal sıvı analizi ve kültürdür.",
+    "examPearl": "Sıcak-şiş tek eklem + ateş + pasif hareketle şiddetli ağrı varsa serum ürik asit veya grafiyle oyalanma; eklem aspirasyonu tanı ve tedavi yönlendirmesinin merkezidir.",
+    "whyWrong": {
+      "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit akut gut atağında normal olabilir ve yüksekliği de tek başına tanı koydurmaz. Bu hastada ateş, yüksek CRP/lökositoz ve pasif hareketle ileri ağrı olduğu için enfeksiyon dışlanmadan serum ürik asitle karar vermek güvenli değildir.",
+      "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir. Ancak akut sıcak-şiş tek eklemde enfekte sinovyal sıvıyı göstermeden MRG beklemek tanıyı ve tedaviyi geciktirir.",
+      "Direkt grafi sonucuna göre antibiyotik kararını ertelemek": "Direkt grafi kırık, çıkık veya geç eklem destrüksiyonunu değerlendirmeye yardım eder; erken septik artritte normal olabilir. Bu nedenle normal grafi enfekte eklemi dışlamaz ve antibiyotik/drenaj kararını tek başına belirlememelidir.",
+      "Antinükleer antikor ve romatoid faktör paneli istemek": "Otoimmün testler kronik veya sistemik inflamatuvar artritlerde seçilmiş bağlamda kullanılır. Bu hastadaki 24 saatlik ateşli monoartrit ve eklem içi ağrı paterni acil enfeksiyon dışlamasını gerektirir."
     },
     "optionFeedback": {
-        "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit düzeyi gut lehine veya aleyhine tek başına güvenilir karar verdirmez; ayrıca gut atağı septik artritle birlikte de bulunabilir. Bu vakada ateş, yüksek CRP ve pasif hareketle şiddetli ağrı varken yalnız serum testi eklem içi enfeksiyonu güvenle dışlamaz.",
-        "Eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizi": "Ateşli, sıcak-şiş ve pasif hareketle çok ağrılı tek eklemde sinovyal sıvı analizi tanıyı kesinleştiren ve tedaviyi yönlendiren temel basamaktır. Hücre sayımı, Gram boyama, kültür ve kristal analizi enfeksiyöz artriti kristal artrit ve diğer inflamatuvar nedenlerden ayırır.",
-        "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir; ancak sıcak-şiş eklemde ilk tanısal hedef sinovyal sıvının değerlendirilmesidir. MRG beklemek tanı ve antibiyotik/drenaj kararını geciktirebilir.",
-        "Direkt grafi ile kırık dışlandıktan sonra tanısal süreci sonlandırmak": "Direkt grafi kırık, çıkık veya kronik destrüksiyonu değerlendirmeye yardım eder; erken septik artritte normal ya da nonspesifik olabilir. Grafiyle kırık dışlanması ateşli monoartritte tanısal süreci bitirmez.",
-        "Antinükleer antikor ve romatoid faktör paneli istemek": "ANA ve romatoid faktör kronik veya sistemik romatolojik hastalık şüphesinde anlamlı olabilir. Bu hastada saatler içinde gelişen ateşli tek büyük eklem tablosu öncelikle eklem içi sıvı incelemesi gerektirir."
+      "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit akut gut atağında normal olabilir ve yüksekliği de tek başına tanı koydurmaz. Bu hastada ateş, yüksek CRP/lökositoz ve pasif hareketle ileri ağrı olduğu için enfeksiyon dışlanmadan serum ürik asitle karar vermek güvenli değildir.",
+      "Eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizi": "Bu işlem enfeksiyon ve kristal artritini aynı örnek üzerinden ayırır, etkeni saptayarak antibiyotik seçimini ve drenaj gereksinimini yönlendirir. Vakanın ateşli akut tek eklem tablosunda ilk tanısal basamak budur.",
+      "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir. Ancak akut sıcak-şiş tek eklemde enfekte sinovyal sıvıyı göstermeden MRG beklemek tanıyı ve tedaviyi geciktirir.",
+      "Direkt grafi sonucuna göre antibiyotik kararını ertelemek": "Direkt grafi kırık, çıkık veya geç eklem destrüksiyonunu değerlendirmeye yardım eder; erken septik artritte normal olabilir. Bu nedenle normal grafi enfekte eklemi dışlamaz ve antibiyotik/drenaj kararını tek başına belirlememelidir.",
+      "Antinükleer antikor ve romatoid faktör paneli istemek": "Otoimmün testler kronik veya sistemik inflamatuvar artritlerde seçilmiş bağlamda kullanılır. Bu hastadaki 24 saatlik ateşli monoartrit ve eklem içi ağrı paterni acil enfeksiyon dışlamasını gerektirir."
     }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Orta",
+  "coreKnowledge": "Ateşli akut monoartritte septik artrit dışlanana kadar acil kabul edilir; karar verdirici tanısal basamak sinovyal sıvı hücre sayımı, Gram boyama, kültür ve kristal analizidir.",
+  "examPearl": "Sıcak-şiş tek eklem + ateş + pasif hareketle şiddetli ağrı varsa serum ürik asit veya grafiyle yetinme; tanısal kilit artrosentezdir.",
+  "whyCorrect": "Sinovyal sıvı incelemesi hem septik artriti doğrulamaya hem de kristal artrit gibi çeldiricileri ayırmaya yarar; tedavi kültür ve klinik aciliyetle yönlendirilir.",
+  "optionComparison": {
+    "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit akut atakta normal olabilir veya asemptomatik yüksek bulunabilir; ayrıca kristal artrit septik artritle birlikte olabilir. Ateşli ve pasif hareketle çok ağrılı tek eklemde yalnız serum testi enfeksiyonu güvenle dışlamaz.",
+    "Eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizi": "Bu işlem eklem içi sıvıyı doğrudan değerlendirir; hücre sayımı inflamasyon şiddetini, Gram boyama ve kültür etkeni, kristal analizi ise gut/psödogut ayırımını sağlar. Bu vakadaki ateşli monoartrit paterninde karar verdirici basamak budur.",
+    "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir; ancak akut sıcak-şiş eklemde ilk tanısal hedef sinovyal sıvıdır. MRG beklemek tanı ve tedavi kararını geciktirebilir.",
+    "Direkt grafi ile kırık dışlandıktan sonra tanısal süreci sonlandırmak": "Direkt grafi kırık, çıkık veya kronik destrüksiyon için yardımcıdır, fakat erken septik artritte normal ya da nonspesifik olabilir. Grafide kırık olmaması ateşli monoartritte süreci sonlandırmaz.",
+    "Antinükleer antikor ve romatoid faktör paneli istemek": "ANA ve romatoid faktör kronik veya sistemik romatolojik hastalık bağlamında değerlidir. Bu hastadaki saatler içinde gelişen ateşli tek büyük eklem tablosu önce sinovyal sıvı incelemesi gerektirir."
+  },
+  "evidenceChain": [
+    {
+      "text": "Sağ diz ağrısının 24 saat içinde yük veremeyecek düzeye gelmesi akut monoartrit paternini gösterir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Minimal pasif hareketle ileri ağrı eklem içi inflamatuvar süreci destekler.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Ateş, lökositoz ve belirgin CRP yüksekliği enfeksiyöz olasılığı acil hale getirir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Diyabet öyküsü enfeksiyon riskini artırırken travma ve bilinen gut atağı öyküsünün olmaması ayırıcı tanıyı daraltır.",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit akut atakta normal olabilir veya asemptomatik yüksek bulunabilir; ayrıca kristal artrit septik artritle birlikte olabilir. Ateşli ve pasif hareketle çok ağrılı tek eklemde yalnız serum testi enfeksiyonu güvenle dışlamaz.",
+    "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir; ancak akut sıcak-şiş eklemde ilk tanısal hedef sinovyal sıvıdır. MRG beklemek tanı ve tedavi kararını geciktirebilir.",
+    "Direkt grafi ile kırık dışlandıktan sonra tanısal süreci sonlandırmak": "Direkt grafi kırık, çıkık veya kronik destrüksiyon için yardımcıdır, fakat erken septik artritte normal ya da nonspesifik olabilir. Grafide kırık olmaması ateşli monoartritte süreci sonlandırmaz.",
+    "Antinükleer antikor ve romatoid faktör paneli istemek": "ANA ve romatoid faktör kronik veya sistemik romatolojik hastalık bağlamında değerlidir. Bu hastadaki saatler içinde gelişen ateşli tek büyük eklem tablosu önce sinovyal sıvı incelemesi gerektirir."
+  },
+  "editorialMeta": {
+    "smallClerkshipsUltraRefined": true,
+    "smallClerkshipsSubspecialty": "Ortopedi / enfeksiyon - septik artrit",
+    "lastRefinedAt": "2026-05-31"
+  },
+  "preserveInvestigationOrder": true,
+  "smallClerkshipsInvestigationLayerEnhanced": true,
+  "smallClerkshipsInvestigationLayerVersion": "v398-small-clerkships-investigation-layer",
+  "smallClerkshipsSubspecialty": "Ortopedi / enfeksiyon - septik artrit",
+  "investigationLayerMeta": {
+    "enhancedAt": "2026-05-31",
+    "editor": "small-clerkships-first5-quality-pass",
+    "scope": "Only branchId === minor-rotations general clinical cases",
+    "subspecialty": "Ortopedi / enfeksiyon - septik artrit",
+    "objective": "Multidisipliner küçük staj gerçekçiliği, acil öncelik, organ/fonksiyon koruma, basitten komplekse tetkik akışı, tetkik değer etiketi ve girişim geciktirmeme güvenlik kapısı",
+    "note": "Septik artrit vakasında akış eklem muayenesi → inflamasyon/kan kültürü → acil artrosentez → grafi/izlem şeklinde düzenlendi; antibiyotik ve drenaj kararı aspirasyonla ilişkilendirildi."
+  },
+  "optionFeedback": {
+    "Serum ürik asit düzeyi ölçümüyle gut tanısını dışlamak": "Serum ürik asit akut atakta normal olabilir veya asemptomatik yüksek bulunabilir; ayrıca kristal artrit septik artritle birlikte olabilir. Ateşli ve pasif hareketle çok ağrılı tek eklemde yalnız serum testi enfeksiyonu güvenle dışlamaz.",
+    "Eklem aspirasyonu ve sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal analizi": "Bu işlem eklem içi sıvıyı doğrudan değerlendirir; hücre sayımı inflamasyon şiddetini, Gram boyama ve kültür etkeni, kristal analizi ise gut/psödogut ayırımını sağlar. Bu vakadaki ateşli monoartrit paterninde karar verdirici basamak budur.",
+    "Diz manyetik rezonans görüntüleme ile osteomiyelit araştırmak": "MRG osteomiyelit, derin yumuşak doku enfeksiyonu veya komplike olgularda yararlı olabilir; ancak akut sıcak-şiş eklemde ilk tanısal hedef sinovyal sıvıdır. MRG beklemek tanı ve tedavi kararını geciktirebilir.",
+    "Direkt grafi ile kırık dışlandıktan sonra tanısal süreci sonlandırmak": "Direkt grafi kırık, çıkık veya kronik destrüksiyon için yardımcıdır, fakat erken septik artritte normal ya da nonspesifik olabilir. Grafide kırık olmaması ateşli monoartritte süreci sonlandırmaz.",
+    "Antinükleer antikor ve romatoid faktör paneli istemek": "ANA ve romatoid faktör kronik veya sistemik romatolojik hastalık bağlamında değerlidir. Bu hastadaki saatler içinde gelişen ateşli tek büyük eklem tablosu önce sinovyal sıvı incelemesi gerektirir."
+  }
 },
   {
     "id": "v164-new-014-purpura-ve-norolojik-bulgular",
@@ -9327,681 +9334,681 @@ export const rawCases = [
   "obgynFirst5UltraQualityReviewed": true
 },
       {
-    "id": "v164-new-016-akut-skrotal-agri",
-    "branchId": "minor-rotations",
-    "caseType": "standard",
-    "relatedBranch": "Üroloji",
-    "title": "Akut skrotal ağrı",
-    "difficulty": "Acil",
-    "clinicalFocus": "Akut skrotumda testis torsiyonu bulgularını tanıyıp organ koruyucu acil ürolojik yaklaşımı seçme.",
-    "learningTarget": "Ani başlayan şiddetli testis ağrısı, bulantı, yüksek-transvers testis ve kaybolmuş kremaster refleksi varlığında görüntüleme veya kültür beklemenin organ canlılığını riske atacağını ayırt edebilme.",
-    "demographics": "15 yaşında erkek hasta",
-    "setting": "Acil servis",
-    "chiefComplaint": "Hasta, birkaç saat önce aniden başlayan şiddetli sol skrotal ağrı ve bulantı nedeniyle acil servise başvuruyor.",
-    "stem": "Hasta, sol testis ağrısının istirahat hâlindeyken bir anda başladığını ve ilk saat içinde giderek şiddetlendiğini anlatır. Ağrı sol kasığa doğru yayılmış, bulantı eklenmiş ve yürümeye çalıştığında belirgin artmıştır. Dizüri, sık idrara çıkma, üretral akıntı, ateş veya yakın zamanda cinsel yolla bulaşan enfeksiyon düşündüren yakınma tariflemez. Doğrudan skrotal travma, karın ağrısı ya da daha önce benzer ağrı atağı öyküsü yoktur. Ailesi ağrının başlamasından kısa süre sonra acil servise geldiklerini belirtir.",
-    "patientIntro": {
-        "profile": "17 yaşında erkek hasta, acil serviste ani başlayan şiddetli sol skrotal ağrı nedeniyle değerlendiriliyor.",
-        "presentation": "İstirahatte başlayan testis ağrısına bulantı, yüksek-transvers testis pozisyonu ve kremaster refleksi kaybı eşlik ediyor.",
-        "historySummary": "Hasta, sol testis ağrısının hiçbir travma olmadan istirahat ederken aniden başladığını ve kısa sürede dayanılmaz hâle geldiğini anlatıyor. Ağrı sol kasığa yayılmış, bulantı gelişmiş ve yürümekle belirgin artmış. İdrar yaparken yanma, sık idrara çıkma, üretral akıntı veya ateş tarif etmiyor. Son günlerde cinsel yolla bulaşan enfeksiyon düşündüren yakınma ya da doğrudan skrotal darbe öyküsü yok. Ailesi ağrı başladıktan kısa süre sonra acile başvurduklarını ve evde ağrının giderek arttığını belirtiyor."
+  "id": "v164-new-016-akut-skrotal-agri",
+  "branchId": "minor-rotations",
+  "caseType": "standard",
+  "relatedBranch": "Üroloji",
+  "title": "Akut skrotal ağrı",
+  "difficulty": "Acil",
+  "clinicalFocus": "Akut skrotumda testis torsiyonu bulgularını tanıyıp organ koruyucu acil ürolojik yaklaşımı seçme.",
+  "learningTarget": "Ani başlayan şiddetli testis ağrısı, bulantı, yüksek-transvers testis ve kaybolmuş kremaster refleksi varlığında görüntüleme veya kültür beklemenin organ canlılığını riske atacağını ayırt edebilme.",
+  "demographics": "15 yaşında erkek hasta",
+  "setting": "Acil servis",
+  "chiefComplaint": "Hasta, birkaç saat önce aniden başlayan şiddetli sol skrotal ağrı ve bulantı nedeniyle acil servise başvuruyor.",
+  "stem": "Hasta, sol testis ağrısının dinlenirken bir anda başladığını ve ilk saat içinde giderek dayanılmaz hâle geldiğini anlatır. Ağrı sol kasığa yayılmış, kısa süre sonra bulantı eklenmiş ve yürümeye çalıştığında belirgin artmıştır. İdrar yaparken yanma, sık idrara çıkma, üretral akıntı, ateş veya son günlerde cinsel yolla bulaşan enfeksiyon düşündüren yakınması olmadığını söyler. Doğrudan skrotal darbe, karın ağrısı veya daha önce kendiliğinden geçip tekrarlayan benzer ağrı atağı yaşamamıştır. Ailesi ağrının başlamasından kısa süre sonra acile geldiklerini ve evde ağrının azalmadığını belirtir.",
+  "patientIntro": {
+    "profile": "Ani başlayan şiddetli sol skrotal ağrı nedeniyle acil serviste değerlendirilen genç erkek hasta.",
+    "presentation": "Ağrı kısa sürede şiddetlenmiş, kasığa yayılmış ve bulantı eşlik etmiştir; üriner enfeksiyon bulgusu belirgin değildir.",
+    "historySummary": "Hasta, sol testis ağrısının dinlenirken bir anda başladığını ve ilk saat içinde giderek dayanılmaz hâle geldiğini anlatır. Ağrı sol kasığa yayılmış, kısa süre sonra bulantı eklenmiş ve yürümeye çalıştığında belirgin artmıştır. İdrar yaparken yanma, sık idrara çıkma, üretral akıntı, ateş veya son günlerde cinsel yolla bulaşan enfeksiyon düşündüren yakınması olmadığını söyler. Doğrudan skrotal darbe, karın ağrısı veya daha önce kendiliğinden geçip tekrarlayan benzer ağrı atağı yaşamamıştır. Ailesi ağrının başlamasından kısa süre sonra acile geldiklerini ve evde ağrının azalmadığını belirtir."
+  },
+  "vitals": {
+    "TA": "118/72 mmHg",
+    "Nabız": "104/dk",
+    "Solunum": "20/dk",
+    "SpO2": "%98, oda havasında",
+    "Ateş": "36.8 °C",
+    "Şok indeksi": "0.88 - ağrıya bağlı taşikardi"
+  },
+  "exam": [
+    "Sol hemiskrotum şiş, yukarı çekik ve ileri derecede hassastır.",
+    "Sol testis yüksek yerleşimli ve transvers pozisyondadır; palpasyon ağrıyı belirgin artırır.",
+    "Sol kremaster refleksi alınamaz, sağ tarafta korunmuştur.",
+    "Prehn bulgusu ile belirgin rahatlama olmaz; karın muayenesinde peritonit bulgusu yoktur."
+  ],
+  "investigations": [
+    {
+      "id": "v164-new-016-akut-skrotal-agri-akut-skrotum-klinik",
+      "label": "Akut skrotum klinik bulguları",
+      "title": "Akut skrotum klinik bulguları",
+      "orderLabel": "Akut skrotum klinik bulguları",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "Akut skrotum klinik bulguları",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Sol skrotal ağrı ani başlamıştır; sol testis yüksek-transvers pozisyondadır ve ipsilateral kremaster refleksi alınamamaktadır.",
+      "clinicalMeaning": "Sol skrotal ağrı ani başlamıştır; sol testis yüksek-transvers pozisyondadır ve ipsilateral kremaster refleksi alınamamaktadır.",
+      "result": {
+        "title": "Akut skrotum klinik değerlendirmesi",
+        "summary": "Sol skrotal ağrı ani başlamıştır; sol testis yüksek-transvers pozisyondadır ve ipsilateral kremaster refleksi alınamamaktadır.",
+        "interpretation": "Sol skrotal ağrı ani başlamıştır; sol testis yüksek-transvers pozisyondadır ve ipsilateral kremaster refleksi alınamamaktadır.",
+        "values": [
+          [
+            "Başlangıç",
+            "İstirahat sırasında ani ve şiddetli başladı",
+            "",
+            "Zaman kritik"
+          ],
+          [
+            "Testis pozisyonu",
+            "Sol testis yüksek yerleşimli ve transvers",
+            "",
+            "Kritik muayene bulgusu"
+          ],
+          [
+            "Kremaster refleksi",
+            "Solda alınamıyor, sağda korunmuş",
+            "",
+            "Lateralize bulgu"
+          ],
+          [
+            "Bulantı",
+            "Skrotal ağrıya bulantı eşlik ediyor",
+            "",
+            "Visseral eşlik"
+          ]
+        ],
+        "rows": [
+          [
+            "Başlangıç",
+            "İstirahat sırasında ani ve şiddetli başladı",
+            "",
+            "Zaman kritik"
+          ],
+          [
+            "Testis pozisyonu",
+            "Sol testis yüksek yerleşimli ve transvers",
+            "",
+            "Kritik muayene bulgusu"
+          ],
+          [
+            "Kremaster refleksi",
+            "Solda alınamıyor, sağda korunmuş",
+            "",
+            "Lateralize bulgu"
+          ],
+          [
+            "Bulantı",
+            "Skrotal ağrıya bulantı eşlik ediyor",
+            "",
+            "Visseral eşlik"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Başlangıç",
+          "İstirahat sırasında ani ve şiddetli başladı",
+          "",
+          "Zaman kritik"
+        ],
+        [
+          "Testis pozisyonu",
+          "Sol testis yüksek yerleşimli ve transvers",
+          "",
+          "Kritik muayene bulgusu"
+        ],
+        [
+          "Kremaster refleksi",
+          "Solda alınamıyor, sağda korunmuş",
+          "",
+          "Lateralize bulgu"
+        ],
+        [
+          "Bulantı",
+          "Skrotal ağrıya bulantı eşlik ediyor",
+          "",
+          "Visseral eşlik"
+        ]
+      ],
+      "postAnswerExplanation": "Sol skrotal ağrı ani başlamıştır; sol testis yüksek-transvers pozisyondadır ve ipsilateral kremaster refleksi alınamamaktadır.",
+      "interpretation": "Sol skrotal ağrı ani başlamıştır; sol testis yüksek-transvers pozisyondadır ve ipsilateral kremaster refleksi alınamamaktadır.",
+      "explanationAfterAnswer": "Sol skrotal ağrı ani başlamıştır; sol testis yüksek-transvers pozisyondadır ve ipsilateral kremaster refleksi alınamamaktadır.",
+      "testValueLabel": "Acil klinik olasılık",
+      "educationalValue": "Acil klinik olasılık",
+      "clinicalPriorityLabel": "Acil klinik olasılık",
+      "scoreImpact": 5,
+      "scoreValue": 5,
+      "clinicalFlowOrder": 1,
+      "purpose": "Ani şiddetli ağrı, bulantı, yüksek-transvers testis ve kremaster refleksi kaybı zaman kritik akut skrotum paternini güçlendirir.",
+      "inlineFeedback": "Sol skrotal ağrı ani başlamıştır; sol testis yüksek-transvers pozisyondadır ve ipsilateral kremaster refleksi alınamamaktadır.",
+      "treatmentImpact": "Klinik olasılık yüksek olduğunda karar süreci organ koruma penceresini gözetmelidir.",
+      "emergencyValue": "Skrotal organ canlılığı sistemik şok olmadan da acil öncelik taşır."
     },
-    "vitals": {
-        "TA": "118/72 mmHg",
-        "Nabız": "104/dk",
-        "Solunum": "20/dk",
-        "SpO2": "%98, oda havasında",
-        "Ateş": "36.8 °C",
-        "Şok indeksi": "0.88 - ağrıya bağlı taşikardi"
+    {
+      "id": "v164-new-016-akut-skrotal-agri-idrar-analizi-uretrit",
+      "label": "Üriner enfeksiyon ve epididimit ayırıcı verileri",
+      "title": "Üriner enfeksiyon ve epididimit ayırıcı verileri",
+      "orderLabel": "Üriner enfeksiyon ve epididimit ayırıcı verileri",
+      "type": "urine",
+      "priority": "useful",
+      "subtype": "Üriner enfeksiyon ve epididimit ayırıcı verileri",
+      "category": "lab",
+      "testTypeCategory": "lab",
+      "summary": "Dizüri, sık idrara çıkma, üretral akıntı ve ateş bildirilmemiştir; idrar lökosit/nitrit belirgin pozitif değildir.",
+      "clinicalMeaning": "Dizüri, sık idrara çıkma, üretral akıntı ve ateş bildirilmemiştir; idrar lökosit/nitrit belirgin pozitif değildir.",
+      "result": {
+        "title": "Üriner enfeksiyon ve epididimit ayırımı",
+        "summary": "Dizüri, sık idrara çıkma, üretral akıntı ve ateş bildirilmemiştir; idrar lökosit/nitrit belirgin pozitif değildir.",
+        "interpretation": "Dizüri, sık idrara çıkma, üretral akıntı ve ateş bildirilmemiştir; idrar lökosit/nitrit belirgin pozitif değildir.",
+        "values": [
+          [
+            "Dizüri/urgency",
+            "Yok",
+            "",
+            "Üriner semptom yok"
+          ],
+          [
+            "Üretral akıntı",
+            "Yok",
+            "",
+            "Üretrit bulgusu yok"
+          ],
+          [
+            "İdrar lökosit/nitrit",
+            "Belirgin pozitiflik yok",
+            "",
+            "Enfeksiyon desteği zayıf"
+          ],
+          [
+            "Ateş",
+            "36.8 °C",
+            "<38.0 °C",
+            "Normal"
+          ]
+        ],
+        "rows": [
+          [
+            "Dizüri/urgency",
+            "Yok",
+            "",
+            "Üriner semptom yok"
+          ],
+          [
+            "Üretral akıntı",
+            "Yok",
+            "",
+            "Üretrit bulgusu yok"
+          ],
+          [
+            "İdrar lökosit/nitrit",
+            "Belirgin pozitiflik yok",
+            "",
+            "Enfeksiyon desteği zayıf"
+          ],
+          [
+            "Ateş",
+            "36.8 °C",
+            "<38.0 °C",
+            "Normal"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Dizüri/urgency",
+          "Yok",
+          "",
+          "Üriner semptom yok"
+        ],
+        [
+          "Üretral akıntı",
+          "Yok",
+          "",
+          "Üretrit bulgusu yok"
+        ],
+        [
+          "İdrar lökosit/nitrit",
+          "Belirgin pozitiflik yok",
+          "",
+          "Enfeksiyon desteği zayıf"
+        ],
+        [
+          "Ateş",
+          "36.8 °C",
+          "<38.0 °C",
+          "Normal"
+        ]
+      ],
+      "postAnswerExplanation": "Dizüri, sık idrara çıkma, üretral akıntı ve ateş bildirilmemiştir; idrar lökosit/nitrit belirgin pozitif değildir.",
+      "interpretation": "Dizüri, sık idrara çıkma, üretral akıntı ve ateş bildirilmemiştir; idrar lökosit/nitrit belirgin pozitif değildir.",
+      "explanationAfterAnswer": "Dizüri, sık idrara çıkma, üretral akıntı ve ateş bildirilmemiştir; idrar lökosit/nitrit belirgin pozitif değildir.",
+      "testValueLabel": "Ayırıcı tanı verisi",
+      "educationalValue": "Ayırıcı tanı verisi",
+      "clinicalPriorityLabel": "Ayırıcı tanı verisi",
+      "scoreImpact": 2,
+      "scoreValue": 2,
+      "clinicalFlowOrder": 2,
+      "purpose": "Üriner semptom, ateş ve üretral akıntı olmaması enfeksiyöz epididimit olasılığını azaltır; idrar bulguları şiddetli akut skrotal tabloyu tek başına açıklamamaktadır.",
+      "inlineFeedback": "Dizüri, sık idrara çıkma, üretral akıntı ve ateş bildirilmemiştir; idrar lökosit/nitrit belirgin pozitif değildir.",
+      "treatmentImpact": "Enfeksiyon bulgularının zayıflığı antibiyotikle izlem yaklaşımını güvenli başlangıç seçeneği olmaktan uzaklaştırır.",
+      "emergencyValue": "Afebril olmak akut skrotal organ tehdidini dışlamaz."
     },
-    "exam": [
-        "Sol hemiskrotum şiş, yukarı çekik ve ileri derecede hassastır.",
-        "Sol testis yüksek yerleşimli ve transvers pozisyondadır; palpasyon ağrıyı belirgin artırır.",
-        "Sol kremaster refleksi alınamaz, sağ tarafta korunmuştur.",
-        "Prehn bulgusu ile belirgin rahatlama olmaz; karın muayenesinde peritonit bulgusu yoktur."
+    {
+      "id": "v164-new-016-akut-skrotal-agri-skrotal-doppler",
+      "label": "Başvuru zamanı ve ayırıcı öykü",
+      "title": "Başvuru zamanı ve ayırıcı öykü",
+      "orderLabel": "Başvuru zamanı ve ayırıcı öykü",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "Başvuru zamanı ve ayırıcı öykü",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Ağrı başladıktan kısa süre sonra başvuru yapılmıştır; doğrudan skrotal travma, peritonit bulgusu veya akut batını destekleyen karın muayenesi bulgusu yoktur.",
+      "clinicalMeaning": "Ağrı başladıktan kısa süre sonra başvuru yapılmıştır; doğrudan skrotal travma, peritonit bulgusu veya akut batını destekleyen karın muayenesi bulgusu yoktur.",
+      "result": {
+        "title": "Görüntüleme gecikme riski değerlendirmesi",
+        "summary": "Ağrı başladıktan kısa süre sonra başvuru yapılmıştır; doğrudan skrotal travma, peritonit bulgusu veya akut batını destekleyen karın muayenesi bulgusu yoktur.",
+        "interpretation": "Ağrı başladıktan kısa süre sonra başvuru yapılmıştır; doğrudan skrotal travma, peritonit bulgusu veya akut batını destekleyen karın muayenesi bulgusu yoktur.",
+        "values": [
+          [
+            "Başvuru zamanı",
+            "Ağrı başladıktan kısa süre sonra acile gelmiş",
+            "",
+            "Erken başvuru"
+          ],
+          [
+            "Travma",
+            "Doğrudan skrotal darbe tariflenmiyor",
+            "",
+            "Travma aleyhine"
+          ],
+          [
+            "Karın muayenesi",
+            "Peritonit bulgusu yok",
+            "",
+            "Akut batın aleyhine"
+          ],
+          [
+            "Önceki atak",
+            "Kendiliğinden geçip tekrarlayan benzer ağrı atağı yok",
+            "",
+            "Öykü verisi"
+          ]
+        ],
+        "rows": [
+          [
+            "Başvuru zamanı",
+            "Ağrı başladıktan kısa süre sonra acile gelmiş",
+            "",
+            "Erken başvuru"
+          ],
+          [
+            "Travma",
+            "Doğrudan skrotal darbe tariflenmiyor",
+            "",
+            "Travma aleyhine"
+          ],
+          [
+            "Karın muayenesi",
+            "Peritonit bulgusu yok",
+            "",
+            "Akut batın aleyhine"
+          ],
+          [
+            "Önceki atak",
+            "Kendiliğinden geçip tekrarlayan benzer ağrı atağı yok",
+            "",
+            "Öykü verisi"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Başvuru zamanı",
+          "Ağrı başladıktan kısa süre sonra acile gelmiş",
+          "",
+          "Erken başvuru"
+        ],
+        [
+          "Travma",
+          "Doğrudan skrotal darbe tariflenmiyor",
+          "",
+          "Travma aleyhine"
+        ],
+        [
+          "Karın muayenesi",
+          "Peritonit bulgusu yok",
+          "",
+          "Akut batın aleyhine"
+        ],
+        [
+          "Önceki atak",
+          "Kendiliğinden geçip tekrarlayan benzer ağrı atağı yok",
+          "",
+          "Öykü verisi"
+        ]
+      ],
+      "postAnswerExplanation": "Ağrı başladıktan kısa süre sonra başvuru yapılmıştır; doğrudan skrotal travma, peritonit bulgusu veya akut batını destekleyen karın muayenesi bulgusu yoktur.",
+      "interpretation": "Ağrı başladıktan kısa süre sonra başvuru yapılmıştır; doğrudan skrotal travma, peritonit bulgusu veya akut batını destekleyen karın muayenesi bulgusu yoktur.",
+      "explanationAfterAnswer": "Ağrı başladıktan kısa süre sonra başvuru yapılmıştır; doğrudan skrotal travma, peritonit bulgusu veya akut batını destekleyen karın muayenesi bulgusu yoktur.",
+      "testValueLabel": "Gecikme riski",
+      "educationalValue": "Gecikme riski",
+      "clinicalPriorityLabel": "Gecikme riski",
+      "scoreImpact": 4,
+      "scoreValue": 4,
+      "clinicalFlowOrder": 3,
+      "purpose": "Muayene ile klinik olasılık yüksektir ve başvuru erken dönemdedir; görüntüleme yalnızca acil ürolojik kararı geciktirmeyecekse ayırıcı tanıya katkı sağlar.",
+      "inlineFeedback": "Ağrı başladıktan kısa süre sonra başvuru yapılmıştır; doğrudan skrotal travma, peritonit bulgusu veya akut batını destekleyen karın muayenesi bulgusu yoktur.",
+      "treatmentImpact": "Görüntüleme kararı klinik aciliyeti geciktirmeyecek şekilde verilmelidir.",
+      "emergencyValue": "Yüksek klinik şüphede bekleme süresi organ kaybı riskini artırabilir."
+    },
+    {
+      "id": "v164-new-016-akut-skrotal-agri-urolojik-eksplorasyon",
+      "label": "Vital bulgular ve sistemik durum",
+      "title": "Vital bulgular ve sistemik durum",
+      "orderLabel": "Vital bulgular ve sistemik durum",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "Vital bulgular ve sistemik durum",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Kan basıncı ve oksijen satürasyonu stabildir; ağrıya eşlik eden taşikardi dışında sistemik dolaşım bozukluğu bulgusu yoktur.",
+      "clinicalMeaning": "Kan basıncı ve oksijen satürasyonu stabildir; ağrıya eşlik eden taşikardi dışında sistemik dolaşım bozukluğu bulgusu yoktur.",
+      "result": {
+        "title": "Sistemik ve nörovasküler durum",
+        "summary": "Kan basıncı ve oksijen satürasyonu stabildir; ağrıya eşlik eden taşikardi dışında sistemik dolaşım bozukluğu bulgusu yoktur.",
+        "interpretation": "Kan basıncı ve oksijen satürasyonu stabildir; ağrıya eşlik eden taşikardi dışında sistemik dolaşım bozukluğu bulgusu yoktur.",
+        "values": [
+          [
+            "Kan basıncı",
+            "118/72 mmHg",
+            "≥90 mmHg sistolik",
+            "Stabil"
+          ],
+          [
+            "Nabız",
+            "104/dk",
+            "60-100/dk",
+            "Hafif yüksek"
+          ],
+          [
+            "Şok indeksi",
+            "0.88",
+            "<0.9",
+            "Sınırda-stabil"
+          ],
+          [
+            "Peritonit bulgusu",
+            "Yok",
+            "",
+            "Akut batın aleyhine"
+          ]
+        ],
+        "rows": [
+          [
+            "Kan basıncı",
+            "118/72 mmHg",
+            "≥90 mmHg sistolik",
+            "Stabil"
+          ],
+          [
+            "Nabız",
+            "104/dk",
+            "60-100/dk",
+            "Hafif yüksek"
+          ],
+          [
+            "Şok indeksi",
+            "0.88",
+            "<0.9",
+            "Sınırda-stabil"
+          ],
+          [
+            "Peritonit bulgusu",
+            "Yok",
+            "",
+            "Akut batın aleyhine"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Kan basıncı",
+          "118/72 mmHg",
+          "≥90 mmHg sistolik",
+          "Stabil"
+        ],
+        [
+          "Nabız",
+          "104/dk",
+          "60-100/dk",
+          "Hafif yüksek"
+        ],
+        [
+          "Şok indeksi",
+          "0.88",
+          "<0.9",
+          "Sınırda-stabil"
+        ],
+        [
+          "Peritonit bulgusu",
+          "Yok",
+          "",
+          "Akut batın aleyhine"
+        ]
+      ],
+      "postAnswerExplanation": "Kan basıncı ve oksijen satürasyonu stabildir; ağrıya eşlik eden taşikardi dışında sistemik dolaşım bozukluğu bulgusu yoktur.",
+      "interpretation": "Kan basıncı ve oksijen satürasyonu stabildir; ağrıya eşlik eden taşikardi dışında sistemik dolaşım bozukluğu bulgusu yoktur.",
+      "explanationAfterAnswer": "Kan basıncı ve oksijen satürasyonu stabildir; ağrıya eşlik eden taşikardi dışında sistemik dolaşım bozukluğu bulgusu yoktur.",
+      "testValueLabel": "Sistemik güvenlik",
+      "educationalValue": "Sistemik güvenlik",
+      "clinicalPriorityLabel": "Sistemik güvenlik",
+      "scoreImpact": 5,
+      "scoreValue": 5,
+      "clinicalFlowOrder": 4,
+      "purpose": "Hemodinami genel olarak stabildir; buna rağmen lokal skrotal organ tehdidi sistemik dolaşım bozulması olmadan da acil yönetim gerektirir.",
+      "inlineFeedback": "Kan basıncı ve oksijen satürasyonu stabildir; ağrıya eşlik eden taşikardi dışında sistemik dolaşım bozukluğu bulgusu yoktur.",
+      "treatmentImpact": "Sistemik stabilite lokal acil ürolojik önceliği azaltmaz.",
+      "emergencyValue": "Ağrıya bağlı taşikardi yakın izlem gerektirir."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "question": "Ani başlayan şiddetli skrotal ağrı, yüksek-transvers testis ve kaybolmuş kremaster refleksi olan bu hastada en uygun acil yaklaşım hangisidir?",
+  "questionType": "treatment",
+  "answerTarget": "first_step",
+  "diagnosis": {
+    "correct": "Acil üroloji değerlendirmesi ile skrotal eksplorasyon ve detorsiyon yapmak",
+    "options": [
+      "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak",
+      "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek",
+      "Acil üroloji değerlendirmesi ile skrotal eksplorasyon ve detorsiyon yapmak",
+      "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak",
+      "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek"
     ],
-    "investigations": [
-        {
-            "id": "v164-new-016-akut-skrotal-agri-akut-skrotum-klinik",
-            "label": "Akut skrotum klinik değerlendirmesi",
-            "title": "Akut skrotum klinik değerlendirmesi",
-            "orderLabel": "Akut skrotum klinik değerlendirmesi",
-            "type": "clinical",
-            "priority": "essential",
-            "subtype": "Akut skrotum klinik değerlendirmesi",
-            "category": "clinicalAssessment",
-            "testTypeCategory": "clinicalAssessment",
-            "summary": "Ani şiddetli ağrı, bulantı, yüksek-transvers testis ve kremaster refleksi kaybı zaman kritik akut skrotum paternini güçlendirir.",
-            "clinicalMeaning": "Ani şiddetli ağrı, bulantı, yüksek-transvers testis ve kremaster refleksi kaybı zaman kritik akut skrotum paternini güçlendirir.",
-            "result": {
-                "title": "Akut skrotum klinik değerlendirmesi",
-                "summary": "Ani şiddetli ağrı, bulantı, yüksek-transvers testis ve kremaster refleksi kaybı zaman kritik akut skrotum paternini güçlendirir.",
-                "interpretation": "Ani şiddetli ağrı, bulantı, yüksek-transvers testis ve kremaster refleksi kaybı zaman kritik akut skrotum paternini güçlendirir.",
-                "values": [
-                    [
-                        "Başlangıç",
-                        "İstirahat sırasında ani ve şiddetli başladı",
-                        "",
-                        "Zaman kritik"
-                    ],
-                    [
-                        "Testis pozisyonu",
-                        "Sol testis yüksek yerleşimli ve transvers",
-                        "",
-                        "Kritik muayene bulgusu"
-                    ],
-                    [
-                        "Kremaster refleksi",
-                        "Solda alınamıyor, sağda korunmuş",
-                        "",
-                        "Lateralize bulgu"
-                    ],
-                    [
-                        "Bulantı",
-                        "Skrotal ağrıya bulantı eşlik ediyor",
-                        "",
-                        "Visseral eşlik"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "Başlangıç",
-                        "İstirahat sırasında ani ve şiddetli başladı",
-                        "",
-                        "Zaman kritik"
-                    ],
-                    [
-                        "Testis pozisyonu",
-                        "Sol testis yüksek yerleşimli ve transvers",
-                        "",
-                        "Kritik muayene bulgusu"
-                    ],
-                    [
-                        "Kremaster refleksi",
-                        "Solda alınamıyor, sağda korunmuş",
-                        "",
-                        "Lateralize bulgu"
-                    ],
-                    [
-                        "Bulantı",
-                        "Skrotal ağrıya bulantı eşlik ediyor",
-                        "",
-                        "Visseral eşlik"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "Başlangıç",
-                    "İstirahat sırasında ani ve şiddetli başladı",
-                    "",
-                    "Zaman kritik"
-                ],
-                [
-                    "Testis pozisyonu",
-                    "Sol testis yüksek yerleşimli ve transvers",
-                    "",
-                    "Kritik muayene bulgusu"
-                ],
-                [
-                    "Kremaster refleksi",
-                    "Solda alınamıyor, sağda korunmuş",
-                    "",
-                    "Lateralize bulgu"
-                ],
-                [
-                    "Bulantı",
-                    "Skrotal ağrıya bulantı eşlik ediyor",
-                    "",
-                    "Visseral eşlik"
-                ]
-            ],
-            "postAnswerExplanation": "Ani şiddetli ağrı, bulantı, yüksek-transvers testis ve kremaster refleksi kaybı zaman kritik akut skrotum paternini güçlendirir.",
-            "interpretation": "Ani şiddetli ağrı, bulantı, yüksek-transvers testis ve kremaster refleksi kaybı zaman kritik akut skrotum paternini güçlendirir.",
-            "explanationAfterAnswer": "Ani şiddetli ağrı, bulantı, yüksek-transvers testis ve kremaster refleksi kaybı zaman kritik akut skrotum paternini güçlendirir.",
-            "testValueLabel": "Acil klinik olasılık",
-            "educationalValue": "Acil klinik olasılık",
-            "clinicalPriorityLabel": "Acil klinik olasılık",
-            "scoreImpact": 5,
-            "scoreValue": 5,
-            "clinicalFlowOrder": 1,
-            "purpose": "Ani şiddetli ağrı, bulantı, yüksek-transvers testis ve kremaster refleksi kaybı zaman kritik akut skrotum paternini güçlendirir.",
-            "inlineFeedback": "Ani şiddetli ağrı, bulantı, yüksek-transvers testis ve kremaster refleksi kaybı zaman kritik akut skrotum paternini güçlendirir.",
-            "treatmentImpact": "Klinik olasılık yüksek olduğunda karar süreci organ koruma penceresini gözetmelidir.",
-            "emergencyValue": "Skrotal organ canlılığı sistemik şok olmadan da acil öncelik taşır."
-        },
-        {
-            "id": "v164-new-016-akut-skrotal-agri-idrar-analizi-uretrit",
-            "label": "Üriner enfeksiyon ve epididimit ayırımı",
-            "title": "Üriner enfeksiyon ve epididimit ayırımı",
-            "orderLabel": "Üriner enfeksiyon ve epididimit ayırımı",
-            "type": "urine",
-            "priority": "useful",
-            "subtype": "Üriner enfeksiyon ve epididimit ayırımı",
-            "category": "lab",
-            "testTypeCategory": "lab",
-            "summary": "Üriner semptom, ateş ve üretral akıntı olmaması enfeksiyöz epididimit olasılığını azaltır; idrar bulguları şiddetli akut skrotal tabloyu tek başına açıklamamaktadır.",
-            "clinicalMeaning": "Üriner semptom, ateş ve üretral akıntı olmaması enfeksiyöz epididimit olasılığını azaltır; idrar bulguları şiddetli akut skrotal tabloyu tek başına açıklamamaktadır.",
-            "result": {
-                "title": "Üriner enfeksiyon ve epididimit ayırımı",
-                "summary": "Üriner semptom, ateş ve üretral akıntı olmaması enfeksiyöz epididimit olasılığını azaltır; idrar bulguları şiddetli akut skrotal tabloyu tek başına açıklamamaktadır.",
-                "interpretation": "Üriner semptom, ateş ve üretral akıntı olmaması enfeksiyöz epididimit olasılığını azaltır; idrar bulguları şiddetli akut skrotal tabloyu tek başına açıklamamaktadır.",
-                "values": [
-                    [
-                        "Dizüri/urgency",
-                        "Yok",
-                        "",
-                        "Üriner semptom yok"
-                    ],
-                    [
-                        "Üretral akıntı",
-                        "Yok",
-                        "",
-                        "Üretrit bulgusu yok"
-                    ],
-                    [
-                        "İdrar lökosit/nitrit",
-                        "Belirgin pozitiflik yok",
-                        "",
-                        "Enfeksiyon desteği zayıf"
-                    ],
-                    [
-                        "Ateş",
-                        "36.8 °C",
-                        "<38.0 °C",
-                        "Normal"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "Dizüri/urgency",
-                        "Yok",
-                        "",
-                        "Üriner semptom yok"
-                    ],
-                    [
-                        "Üretral akıntı",
-                        "Yok",
-                        "",
-                        "Üretrit bulgusu yok"
-                    ],
-                    [
-                        "İdrar lökosit/nitrit",
-                        "Belirgin pozitiflik yok",
-                        "",
-                        "Enfeksiyon desteği zayıf"
-                    ],
-                    [
-                        "Ateş",
-                        "36.8 °C",
-                        "<38.0 °C",
-                        "Normal"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "Dizüri/urgency",
-                    "Yok",
-                    "",
-                    "Üriner semptom yok"
-                ],
-                [
-                    "Üretral akıntı",
-                    "Yok",
-                    "",
-                    "Üretrit bulgusu yok"
-                ],
-                [
-                    "İdrar lökosit/nitrit",
-                    "Belirgin pozitiflik yok",
-                    "",
-                    "Enfeksiyon desteği zayıf"
-                ],
-                [
-                    "Ateş",
-                    "36.8 °C",
-                    "<38.0 °C",
-                    "Normal"
-                ]
-            ],
-            "postAnswerExplanation": "Üriner semptom, ateş ve üretral akıntı olmaması enfeksiyöz epididimit olasılığını azaltır; idrar bulguları şiddetli akut skrotal tabloyu tek başına açıklamamaktadır.",
-            "interpretation": "Üriner semptom, ateş ve üretral akıntı olmaması enfeksiyöz epididimit olasılığını azaltır; idrar bulguları şiddetli akut skrotal tabloyu tek başına açıklamamaktadır.",
-            "explanationAfterAnswer": "Üriner semptom, ateş ve üretral akıntı olmaması enfeksiyöz epididimit olasılığını azaltır; idrar bulguları şiddetli akut skrotal tabloyu tek başına açıklamamaktadır.",
-            "testValueLabel": "Ayırıcı tanı verisi",
-            "educationalValue": "Ayırıcı tanı verisi",
-            "clinicalPriorityLabel": "Ayırıcı tanı verisi",
-            "scoreImpact": 2,
-            "scoreValue": 2,
-            "clinicalFlowOrder": 2,
-            "purpose": "Üriner semptom, ateş ve üretral akıntı olmaması enfeksiyöz epididimit olasılığını azaltır; idrar bulguları şiddetli akut skrotal tabloyu tek başına açıklamamaktadır.",
-            "inlineFeedback": "Üriner semptom, ateş ve üretral akıntı olmaması enfeksiyöz epididimit olasılığını azaltır; idrar bulguları şiddetli akut skrotal tabloyu tek başına açıklamamaktadır.",
-            "treatmentImpact": "Enfeksiyon bulgularının zayıflığı antibiyotikle izlem yaklaşımını güvenli başlangıç seçeneği olmaktan uzaklaştırır.",
-            "emergencyValue": "Afebril olmak akut skrotal organ tehdidini dışlamaz."
-        },
-        {
-            "id": "v164-new-016-akut-skrotal-agri-skrotal-doppler",
-            "label": "Skrotal görüntüleme uygunluğu",
-            "title": "Görüntüleme gecikme riski değerlendirmesi",
-            "orderLabel": "Görüntüleme gecikme riski değerlendirmesi",
-            "type": "clinical",
-            "priority": "essential",
-            "subtype": "Görüntüleme gecikme riski değerlendirmesi",
-            "category": "clinicalAssessment",
-            "testTypeCategory": "clinicalAssessment",
-            "summary": "Muayene ile klinik olasılık yüksektir ve başvuru erken dönemdedir; görüntüleme yalnızca acil ürolojik kararı geciktirmeyecekse ayırıcı tanıya katkı sağlar.",
-            "clinicalMeaning": "Muayene ile klinik olasılık yüksektir ve başvuru erken dönemdedir; görüntüleme yalnızca acil ürolojik kararı geciktirmeyecekse ayırıcı tanıya katkı sağlar.",
-            "result": {
-                "title": "Görüntüleme gecikme riski değerlendirmesi",
-                "summary": "Muayene ile klinik olasılık yüksektir ve başvuru erken dönemdedir; görüntüleme yalnızca acil ürolojik kararı geciktirmeyecekse ayırıcı tanıya katkı sağlar.",
-                "interpretation": "Muayene ile klinik olasılık yüksektir ve başvuru erken dönemdedir; görüntüleme yalnızca acil ürolojik kararı geciktirmeyecekse ayırıcı tanıya katkı sağlar.",
-                "values": [
-                    [
-                        "Klinik şüphe düzeyi",
-                        "Ani ağrı, yüksek testis ve refleks kaybı birlikte mevcut",
-                        "",
-                        "Yüksek klinik risk"
-                    ],
-                    [
-                        "Başvuru zamanı",
-                        "Ağrı başladıktan kısa süre sonra acile gelmiş",
-                        "",
-                        "Organ koruma penceresi"
-                    ],
-                    [
-                        "Doppler erişimi",
-                        "Anlık yatak başı erişim yok; bekleme süresi kararı uzatabilir",
-                        "",
-                        "Gecikme riski"
-                    ],
-                    [
-                        "Travma/akut batın",
-                        "Direkt travma ve peritonit bulgusu yok",
-                        "",
-                        "Ayırıcı neden zayıf"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "Klinik şüphe düzeyi",
-                        "Ani ağrı, yüksek testis ve refleks kaybı birlikte mevcut",
-                        "",
-                        "Yüksek klinik risk"
-                    ],
-                    [
-                        "Başvuru zamanı",
-                        "Ağrı başladıktan kısa süre sonra acile gelmiş",
-                        "",
-                        "Organ koruma penceresi"
-                    ],
-                    [
-                        "Doppler erişimi",
-                        "Anlık yatak başı erişim yok; bekleme süresi kararı uzatabilir",
-                        "",
-                        "Gecikme riski"
-                    ],
-                    [
-                        "Travma/akut batın",
-                        "Direkt travma ve peritonit bulgusu yok",
-                        "",
-                        "Ayırıcı neden zayıf"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "Klinik şüphe düzeyi",
-                    "Ani ağrı, yüksek testis ve refleks kaybı birlikte mevcut",
-                    "",
-                    "Yüksek klinik risk"
-                ],
-                [
-                    "Başvuru zamanı",
-                    "Ağrı başladıktan kısa süre sonra acile gelmiş",
-                    "",
-                    "Organ koruma penceresi"
-                ],
-                [
-                    "Doppler erişimi",
-                    "Anlık yatak başı erişim yok; bekleme süresi kararı uzatabilir",
-                    "",
-                    "Gecikme riski"
-                ],
-                [
-                    "Travma/akut batın",
-                    "Direkt travma ve peritonit bulgusu yok",
-                    "",
-                    "Ayırıcı neden zayıf"
-                ]
-            ],
-            "postAnswerExplanation": "Muayene ile klinik olasılık yüksektir ve başvuru erken dönemdedir; görüntüleme yalnızca acil ürolojik kararı geciktirmeyecekse ayırıcı tanıya katkı sağlar.",
-            "interpretation": "Muayene ile klinik olasılık yüksektir ve başvuru erken dönemdedir; görüntüleme yalnızca acil ürolojik kararı geciktirmeyecekse ayırıcı tanıya katkı sağlar.",
-            "explanationAfterAnswer": "Muayene ile klinik olasılık yüksektir ve başvuru erken dönemdedir; görüntüleme yalnızca acil ürolojik kararı geciktirmeyecekse ayırıcı tanıya katkı sağlar.",
-            "testValueLabel": "Gecikme riski",
-            "educationalValue": "Gecikme riski",
-            "clinicalPriorityLabel": "Gecikme riski",
-            "scoreImpact": 4,
-            "scoreValue": 4,
-            "clinicalFlowOrder": 3,
-            "purpose": "Muayene ile klinik olasılık yüksektir ve başvuru erken dönemdedir; görüntüleme yalnızca acil ürolojik kararı geciktirmeyecekse ayırıcı tanıya katkı sağlar.",
-            "inlineFeedback": "Muayene ile klinik olasılık yüksektir ve başvuru erken dönemdedir; görüntüleme yalnızca acil ürolojik kararı geciktirmeyecekse ayırıcı tanıya katkı sağlar.",
-            "treatmentImpact": "Görüntüleme kararı klinik aciliyeti geciktirmeyecek şekilde verilmelidir.",
-            "emergencyValue": "Yüksek klinik şüphede bekleme süresi organ kaybı riskini artırabilir."
-        },
-        {
-            "id": "v164-new-016-akut-skrotal-agri-urolojik-eksplorasyon",
-            "label": "Nörovasküler ve sistemik durum",
-            "title": "Sistemik ve nörovasküler durum",
-            "orderLabel": "Sistemik ve nörovasküler durum",
-            "type": "clinical",
-            "priority": "essential",
-            "subtype": "Sistemik ve nörovasküler durum",
-            "category": "clinicalAssessment",
-            "testTypeCategory": "clinicalAssessment",
-            "summary": "Hemodinami genel olarak stabildir; buna rağmen lokal skrotal organ tehdidi sistemik dolaşım bozulması olmadan da acil yönetim gerektirir.",
-            "clinicalMeaning": "Hemodinami genel olarak stabildir; buna rağmen lokal skrotal organ tehdidi sistemik dolaşım bozulması olmadan da acil yönetim gerektirir.",
-            "result": {
-                "title": "Sistemik ve nörovasküler durum",
-                "summary": "Hemodinami genel olarak stabildir; buna rağmen lokal skrotal organ tehdidi sistemik dolaşım bozulması olmadan da acil yönetim gerektirir.",
-                "interpretation": "Hemodinami genel olarak stabildir; buna rağmen lokal skrotal organ tehdidi sistemik dolaşım bozulması olmadan da acil yönetim gerektirir.",
-                "values": [
-                    [
-                        "Kan basıncı",
-                        "118/72 mmHg",
-                        "≥90 mmHg sistolik",
-                        "Stabil"
-                    ],
-                    [
-                        "Nabız",
-                        "104/dk",
-                        "60-100/dk",
-                        "Hafif yüksek"
-                    ],
-                    [
-                        "Şok indeksi",
-                        "0.88",
-                        "<0.9",
-                        "Sınırda-stabil"
-                    ],
-                    [
-                        "Peritonit bulgusu",
-                        "Yok",
-                        "",
-                        "Akut batın aleyhine"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "Kan basıncı",
-                        "118/72 mmHg",
-                        "≥90 mmHg sistolik",
-                        "Stabil"
-                    ],
-                    [
-                        "Nabız",
-                        "104/dk",
-                        "60-100/dk",
-                        "Hafif yüksek"
-                    ],
-                    [
-                        "Şok indeksi",
-                        "0.88",
-                        "<0.9",
-                        "Sınırda-stabil"
-                    ],
-                    [
-                        "Peritonit bulgusu",
-                        "Yok",
-                        "",
-                        "Akut batın aleyhine"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "Kan basıncı",
-                    "118/72 mmHg",
-                    "≥90 mmHg sistolik",
-                    "Stabil"
-                ],
-                [
-                    "Nabız",
-                    "104/dk",
-                    "60-100/dk",
-                    "Hafif yüksek"
-                ],
-                [
-                    "Şok indeksi",
-                    "0.88",
-                    "<0.9",
-                    "Sınırda-stabil"
-                ],
-                [
-                    "Peritonit bulgusu",
-                    "Yok",
-                    "",
-                    "Akut batın aleyhine"
-                ]
-            ],
-            "postAnswerExplanation": "Hemodinami genel olarak stabildir; buna rağmen lokal skrotal organ tehdidi sistemik dolaşım bozulması olmadan da acil yönetim gerektirir.",
-            "interpretation": "Hemodinami genel olarak stabildir; buna rağmen lokal skrotal organ tehdidi sistemik dolaşım bozulması olmadan da acil yönetim gerektirir.",
-            "explanationAfterAnswer": "Hemodinami genel olarak stabildir; buna rağmen lokal skrotal organ tehdidi sistemik dolaşım bozulması olmadan da acil yönetim gerektirir.",
-            "testValueLabel": "Sistemik güvenlik",
-            "educationalValue": "Sistemik güvenlik",
-            "clinicalPriorityLabel": "Sistemik güvenlik",
-            "scoreImpact": 5,
-            "scoreValue": 5,
-            "clinicalFlowOrder": 4,
-            "purpose": "Hemodinami genel olarak stabildir; buna rağmen lokal skrotal organ tehdidi sistemik dolaşım bozulması olmadan da acil yönetim gerektirir.",
-            "inlineFeedback": "Hemodinami genel olarak stabildir; buna rağmen lokal skrotal organ tehdidi sistemik dolaşım bozulması olmadan da acil yönetim gerektirir.",
-            "treatmentImpact": "Sistemik stabilite lokal acil ürolojik önceliği azaltmaz.",
-            "emergencyValue": "Ağrıya bağlı taşikardi yakın izlem gerektirir."
-        }
-    ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": {
-        "enabled": false
-    },
-    "hideExamSignal": true,
     "question": "Ani başlayan şiddetli skrotal ağrı, yüksek-transvers testis ve kaybolmuş kremaster refleksi olan bu hastada en uygun acil yaklaşım hangisidir?",
-    "questionType": "treatment",
-    "answerTarget": "first_step",
-    "diagnosis": {
-        "correct": "Acil üroloji değerlendirmesi ile skrotal eksplorasyon ve detorsiyon yapmak",
-        "options": [
-            "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak",
-            "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek",
-            "Acil üroloji değerlendirmesi ile skrotal eksplorasyon ve detorsiyon yapmak",
-            "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak",
-            "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek"
-        ],
-        "question": "Ani başlayan şiddetli skrotal ağrı, yüksek-transvers testis ve kaybolmuş kremaster refleksi olan bu hastada en uygun acil yaklaşım hangisidir?",
-        "explanation": "Bu hastada ani başlayan şiddetli testis ağrısı, bulantı, yüksek-transvers testis pozisyonu ve ipsilateral kremaster refleksinin kaybı testis torsiyonu için yüksek klinik olasılık oluşturur. Erken başvuru organ canlılığı açısından kritiktir; yüksek klinik şüphede cerrahi karar Doppler bekleme süresiyle geciktirilmemelidir. En uygun acil yaklaşım acil üroloji değerlendirmesi ile skrotal eksplorasyon, detorsiyon ve testisin canlılığına göre fiksasyon/cerrahi yönetimdir.",
-        "pearls": [
-            {
-                "label": "Sınav notu",
-                "text": "Ani skrotal ağrı + yüksek-transvers testis + kremaster refleksi kaybı torsiyon lehinedir; organ kurtarma penceresinde Doppler beklemek cerrahiyi geciktirmemelidir."
-            }
-        ],
-        "answerFeedback": {
-            "summary": "Bu hastada ani başlayan şiddetli testis ağrısı, bulantı, yüksek-transvers testis pozisyonu ve ipsilateral kremaster refleksinin kaybı testis torsiyonu için yüksek klinik olasılık oluşturur. Erken başvuru organ canlılığı açısından kritiktir; yüksek klinik şüphede cerrahi karar Doppler bekleme süresiyle geciktirilmemelidir. En uygun acil yaklaşım acil üroloji değerlendirmesi ile skrotal eksplorasyon, detorsiyon ve testisin canlılığına göre fiksasyon/cerrahi yönetimdir.",
-            "whyCorrect": "Torsiyonda iskemi süresi uzadıkça testis kaybı riski artar; bu nedenle yüksek klinik şüphe varsa organ kurtarıcı yaklaşım zaman kaybetmeden başlatılır. Bu olguda enfeksiyon, travma ve akut batın bulguları zayıf olduğu için antibiyotikle izlem veya elektif görüntüleme güvenli değildir.",
-            "rationale": "Bu hastada ani başlayan şiddetli testis ağrısı, bulantı, yüksek-transvers testis pozisyonu ve ipsilateral kremaster refleksinin kaybı testis torsiyonu için yüksek klinik olasılık oluşturur. Erken başvuru organ canlılığı açısından kritiktir; yüksek klinik şüphede cerrahi karar Doppler bekleme süresiyle geciktirilmemelidir. En uygun acil yaklaşım acil üroloji değerlendirmesi ile skrotal eksplorasyon, detorsiyon ve testisin canlılığına göre fiksasyon/cerrahi yönetimdir.",
-            "correctOptionFeedback": "Bu yaklaşım hem tanıyı doğrular hem de torsiyon varsa iskemi süresini kısaltarak testis canlılığını korumaya çalışır. Klinik bulgular yüksek olasılıklı olduğu için acil karar düzeyi budur.",
-            "keyClues": [
-                "İstirahat sırasında ani başlayan şiddetli sol testis ağrısı ve bulantı zaman kritik akut skrotum paternini gösterir.",
-                "Sol testisin yüksek-transvers pozisyonda olması ve solda kremaster refleksinin alınamaması kritik lateralize muayene bulgularıdır.",
-                "Dizüri, üretral akıntı, ateş ve belirgin idrar lökosit/nitrit pozitifliğinin olmaması epididimit olasılığını zayıflatır.",
-                "Ağrı başladıktan kısa süre sonra başvuru yapılmış olması organ koruma açısından kararın geciktirilmemesi gerektiğini gösterir."
-            ],
-            "evidenceChain": [
-                {
-                    "text": "İstirahat sırasında ani başlayan şiddetli sol testis ağrısı ve bulantı zaman kritik akut skrotum paternini gösterir.",
-                    "weight": "high",
-                    "source": "case"
-                },
-                {
-                    "text": "Sol testisin yüksek-transvers pozisyonda olması ve solda kremaster refleksinin alınamaması kritik lateralize muayene bulgularıdır.",
-                    "weight": "high",
-                    "source": "case"
-                },
-                {
-                    "text": "Dizüri, üretral akıntı, ateş ve belirgin idrar lökosit/nitrit pozitifliğinin olmaması epididimit olasılığını zayıflatır.",
-                    "weight": "medium",
-                    "source": "case"
-                },
-                {
-                    "text": "Ağrı başladıktan kısa süre sonra başvuru yapılmış olması organ koruma açısından kararın geciktirilmemesi gerektiğini gösterir.",
-                    "weight": "high",
-                    "source": "case"
-                }
-            ],
-            "examPearl": "Ani skrotal ağrı + yüksek-transvers testis + kremaster refleksi kaybı torsiyon lehinedir; organ kurtarma penceresinde Doppler beklemek cerrahiyi geciktirmemelidir.",
-            "pearls": [
-                {
-                    "label": "Sınav notu",
-                    "text": "Ani skrotal ağrı + yüksek-transvers testis + kremaster refleksi kaybı torsiyon lehinedir; organ kurtarma penceresinde Doppler beklemek cerrahiyi geciktirmemelidir."
-                }
-            ],
-            "clinicalPearls": [
-                {
-                    "label": "Klinik ayrım",
-                    "text": "Epididimit genellikle üriner semptom, ateş veya üretral akıntıyla desteklenir; torsiyonda ani başlangıç, bulantı ve refleks kaybı daha ayırt ettiricidir."
-                }
-            ],
-            "optionComparison": {
-                "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hızlı erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve bekleme süresi kararı uzatabilir; görüntüleme sonucunu beklemek iskemi süresini artırır.",
-                "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünülüyorsa değerlidir, fakat sonuç saatler-günler sonra çıkar. Bu hastada dizüri, ateş ve üretral akıntı yok; kültür beklemek organ koruyucu acil yaklaşımı geciktirir.",
-                "Acil üroloji değerlendirmesi ile skrotal eksplorasyon ve detorsiyon yapmak": "Bu yaklaşım hem tanıyı doğrular hem de torsiyon varsa iskemi süresini kısaltarak testis canlılığını korumaya çalışır. Klinik bulgular yüksek olasılıklı olduğu için acil karar düzeyi budur.",
-                "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu dakikalar-saatler içinde geri dönüşsüz hasara ilerleyebilir.",
-                "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
-            },
-            "optionFeedback": {
-                "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hızlı erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve bekleme süresi kararı uzatabilir; görüntüleme sonucunu beklemek iskemi süresini artırır.",
-                "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünülüyorsa değerlidir, fakat sonuç saatler-günler sonra çıkar. Bu hastada dizüri, ateş ve üretral akıntı yok; kültür beklemek organ koruyucu acil yaklaşımı geciktirir.",
-                "Acil üroloji değerlendirmesi ile skrotal eksplorasyon ve detorsiyon yapmak": "Bu yaklaşım hem tanıyı doğrular hem de torsiyon varsa iskemi süresini kısaltarak testis canlılığını korumaya çalışır. Klinik bulgular yüksek olasılıklı olduğu için acil karar düzeyi budur.",
-                "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu dakikalar-saatler içinde geri dönüşsüz hasara ilerleyebilir.",
-                "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
-            },
-            "whyWrong": {
-                "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hızlı erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve bekleme süresi kararı uzatabilir; görüntüleme sonucunu beklemek iskemi süresini artırır.",
-                "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünülüyorsa değerlidir, fakat sonuç saatler-günler sonra çıkar. Bu hastada dizüri, ateş ve üretral akıntı yok; kültür beklemek organ koruyucu acil yaklaşımı geciktirir.",
-                "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu dakikalar-saatler içinde geri dönüşsüz hasara ilerleyebilir.",
-                "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
-            },
-            "managementSteps": [],
-            "management": [],
-            "learningOutcome": "Akut skrotal ağrıda zaman kritik organ koruyucu yaklaşımı antibiyotikle izlem veya gecikmiş görüntüleme seçeneklerinden ayırabilme.",
-            "coreKnowledge": "Testis torsiyonunda yüksek klinik şüphe varsa acil üroloji değerlendirmesi ve cerrahi eksplorasyon önceliklidir; Doppler USG yalnızca kararı geciktirmeyecekse kullanılmalıdır."
+    "explanation": "Ani başlayan şiddetli testis ağrısı, bulantı, yüksek-transvers testis pozisyonu ve ipsilateral kremaster refleksinin kaybı testis torsiyonu için yüksek klinik olasılık oluşturur. Erken başvuru organ canlılığı açısından kritiktir; yüksek klinik şüphede cerrahi karar Doppler sonucunu bekleyerek geciktirilmemelidir. En uygun acil yaklaşım acil üroloji değerlendirmesiyle skrotal eksplorasyon, detorsiyon ve testisin canlılığına göre fiksasyon/cerrahi yönetimdir.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Ani skrotal ağrı + yüksek-transvers testis + kremaster refleksi kaybı torsiyon lehinedir; organ kurtarma penceresinde Doppler beklemek cerrahiyi geciktirmemelidir."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Ani başlayan şiddetli testis ağrısı, bulantı, yüksek-transvers testis pozisyonu ve ipsilateral kremaster refleksinin kaybı testis torsiyonu için yüksek klinik olasılık oluşturur. Erken başvuru organ canlılığı açısından kritiktir; yüksek klinik şüphede cerrahi karar Doppler sonucunu bekleyerek geciktirilmemelidir. En uygun acil yaklaşım acil üroloji değerlendirmesiyle skrotal eksplorasyon, detorsiyon ve testisin canlılığına göre fiksasyon/cerrahi yönetimdir.",
+      "whyCorrect": "Yüksek klinik olasılıklı testis torsiyonunda acil cerrahi yaklaşım hem tanısal hem terapötiktir; görüntüleme ancak cerrahi kararı geciktirmeyecekse yardımcı olabilir.",
+      "rationale": "Ani başlayan şiddetli testis ağrısı, bulantı, yüksek-transvers testis pozisyonu ve ipsilateral kremaster refleksinin kaybı testis torsiyonu için yüksek klinik olasılık oluşturur. Erken başvuru organ canlılığı açısından kritiktir; yüksek klinik şüphede cerrahi karar Doppler sonucunu bekleyerek geciktirilmemelidir. En uygun acil yaklaşım acil üroloji değerlendirmesiyle skrotal eksplorasyon, detorsiyon ve testisin canlılığına göre fiksasyon/cerrahi yönetimdir.",
+      "correctOptionFeedback": "Bu yaklaşım hem tanıyı doğrular hem de torsiyon varsa iskemi süresini kısaltarak testis canlılığını korumaya çalışır. Ani başlangıç, yüksek-transvers testis ve kremaster refleksi kaybı nedeniyle acil karar düzeyi budur.",
+      "keyClues": [
+        "Sol testis ağrısının istirahat halinde ani başlaması ve hızla şiddetlenmesi zaman kritik akut skrotum paternidir.",
+        "Yüksek-transvers testis ve ipsilateral kremaster refleksi kaybı torsiyon lehine güçlü muayene bulgularıdır.",
+        "Dizüri, üretral akıntı ve ateş olmaması epididimit olasılığını zayıflatır.",
+        "Erken başvuru organ koruma olasılığı nedeniyle acil ürolojik kararı öne çıkarır."
+      ],
+      "evidenceChain": [
+        {
+          "text": "Sol testis ağrısının istirahat halinde ani başlaması ve hızla şiddetlenmesi zaman kritik akut skrotum paternidir.",
+          "weight": "high",
+          "source": "case"
         },
-        "whyCorrect": "Cerrahi eksplorasyon hem tanısal hem tedavi edicidir; detorsiyonla iskemi süresi kısaltılır ve testis kurtarılma olasılığı artırılır. Bu olguda enfeksiyon verileri zayıf ve klinik torsiyon olasılığı yüksek olduğu için görüntüleme beklemek ana hatadır.",
-        "evidenceChain": [
-            {
-                "text": "Sol testis ağrısının istirahatte ani başlaması ve ilk saat içinde şiddetlenmesi vasküler akut skrotum paternidir.",
-                "weight": "high",
-                "source": "case"
-            },
-            {
-                "text": "Yüksek-transvers testis pozisyonu ve solda kremaster refleksi kaybı kritik lateralize muayene bulgularıdır.",
-                "weight": "high",
-                "source": "case"
-            },
-            {
-                "text": "Dizüri, üretral akıntı, ateş ve idrar lökosit/nitrit pozitifliğinin olmaması epididimit olasılığını azaltır.",
-                "weight": "medium",
-                "source": "case"
-            },
-            {
-                "text": "Ağrı başladıktan kısa süre sonra başvuru yapılması organ koruma penceresinin hâlen önemli olduğunu gösterir.",
-                "weight": "high",
-                "source": "case"
-            }
-        ],
-        "optionComparison": {
-            "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hızlı erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve bekleme süresi kararı uzatabilir; görüntüleme sonucunu beklemek iskemi süresini artırır.",
-            "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünülüyorsa değerlidir, fakat sonuç saatler-günler sonra çıkar. Bu hastada dizüri, ateş ve üretral akıntı yok; kültür beklemek organ koruyucu acil yaklaşımı geciktirir.",
-            "Acil üroloji değerlendirmesi ile skrotal eksplorasyon ve detorsiyon yapmak": "Bu yaklaşım hem tanıyı doğrular hem de torsiyon varsa iskemi süresini kısaltarak testis canlılığını korumaya çalışır. Klinik bulgular yüksek olasılıklı olduğu için acil karar düzeyi budur.",
-            "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu dakikalar-saatler içinde geri dönüşsüz hasara ilerleyebilir.",
-            "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
+        {
+          "text": "Yüksek-transvers testis ve ipsilateral kremaster refleksi kaybı torsiyon lehine güçlü muayene bulgularıdır.",
+          "weight": "high",
+          "source": "case"
         },
-        "coreKnowledge": "Testis torsiyonu klinik olarak yüksek olasılıklıysa acil cerrahi değerlendirme geciktirilmez; ultrason ancak cerrahi kararı geciktirmeyecekse kullanılmalıdır.",
-        "examPearl": "Akut skrotumda “ani ağrı + yüksek/transvers testis + absent kremaster” varsa kültür, antibiyotik veya elektif ultrason beklemek testis kaybı riskini artırır.",
-        "whyWrong": {
-            "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hızlı erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve bekleme süresi kararı uzatabilir; görüntüleme sonucunu beklemek iskemi süresini artırır.",
-            "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünülüyorsa değerlidir, fakat sonuç saatler-günler sonra çıkar. Bu hastada dizüri, ateş ve üretral akıntı yok; kültür beklemek organ koruyucu acil yaklaşımı geciktirir.",
-            "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu dakikalar-saatler içinde geri dönüşsüz hasara ilerleyebilir.",
-            "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
+        {
+          "text": "Dizüri, üretral akıntı ve ateş olmaması epididimit olasılığını zayıflatır.",
+          "weight": "medium",
+          "source": "case"
         },
-        "optionFeedback": {
-            "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hızlı erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve bekleme süresi kararı uzatabilir; görüntüleme sonucunu beklemek iskemi süresini artırır.",
-            "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünülüyorsa değerlidir, fakat sonuç saatler-günler sonra çıkar. Bu hastada dizüri, ateş ve üretral akıntı yok; kültür beklemek organ koruyucu acil yaklaşımı geciktirir.",
-            "Acil üroloji değerlendirmesi ile skrotal eksplorasyon ve detorsiyon yapmak": "Bu yaklaşım hem tanıyı doğrular hem de torsiyon varsa iskemi süresini kısaltarak testis canlılığını korumaya çalışır. Klinik bulgular yüksek olasılıklı olduğu için acil karar düzeyi budur.",
-            "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu dakikalar-saatler içinde geri dönüşsüz hasara ilerleyebilir.",
-            "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
+        {
+          "text": "Erken başvuru organ koruma olasılığı nedeniyle acil ürolojik kararı öne çıkarır.",
+          "weight": "high",
+          "source": "case"
         }
-    },
-    "shuffleOptions": false,
-    "difficultyTag": "Acil",
-    "coreKnowledge": "Testis torsiyonunda yüksek klinik şüphe varsa acil üroloji değerlendirmesi ve cerrahi eksplorasyon önceliklidir; Doppler USG yalnızca kararı geciktirmeyecekse kullanılmalıdır.",
-    "examPearl": "Ani skrotal ağrı + yüksek-transvers testis + kremaster refleksi kaybı torsiyon lehinedir; organ kurtarma penceresinde Doppler beklemek cerrahiyi geciktirmemelidir.",
-    "whyCorrect": "Torsiyonda iskemi süresi uzadıkça testis kaybı riski artar; bu nedenle yüksek klinik şüphe varsa organ kurtarıcı yaklaşım zaman kaybetmeden başlatılır. Bu olguda enfeksiyon, travma ve akut batın bulguları zayıf olduğu için antibiyotikle izlem veya elektif görüntüleme güvenli değildir.",
-    "optionComparison": {
+      ],
+      "examPearl": "Ani skrotal ağrı + yüksek-transvers testis + kremaster refleksi kaybı torsiyon lehinedir; organ kurtarma penceresinde Doppler beklemek cerrahiyi geciktirmemelidir.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Ani skrotal ağrı + yüksek-transvers testis + kremaster refleksi kaybı torsiyon lehinedir; organ kurtarma penceresinde Doppler beklemek cerrahiyi geciktirmemelidir."
+        }
+      ],
+      "clinicalPearls": [
+        {
+          "label": "Klinik ayrım",
+          "text": "Epididimit genellikle üriner semptom, ateş veya üretral akıntıyla desteklenir; torsiyonda ani başlangıç, bulantı ve refleks kaybı daha ayırt ettiricidir."
+        }
+      ],
+      "optionComparison": {
+        "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hemen erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve organ koruma zamanı sınırlıdır; görüntüleme sonucunu beklemek iskemi süresini artırabilir.",
+        "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünüldüğünde değerlidir, fakat sonuç saatler-günler sonra çıkar. Dizüri, ateş ve üretral akıntı olmaması enfeksiyonu geri plana iter; kültür beklemek acil organ koruyucu yaklaşımı geciktirir.",
+        "Acil üroloji değerlendirmesi ile skrotal eksplorasyon ve detorsiyon yapmak": "Bu yaklaşım hem tanıyı doğrular hem de torsiyon varsa iskemi süresini kısaltarak testis canlılığını korumaya çalışır. Ani başlangıç, yüksek-transvers testis ve kremaster refleksi kaybı nedeniyle acil karar düzeyi budur.",
+        "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu saatler içinde geri dönüşsüz hasara ilerleyebilir.",
+        "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte daha kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
+      },
+      "optionFeedback": {
         "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hızlı erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve bekleme süresi kararı uzatabilir; görüntüleme sonucunu beklemek iskemi süresini artırır.",
         "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünülüyorsa değerlidir, fakat sonuç saatler-günler sonra çıkar. Bu hastada dizüri, ateş ve üretral akıntı yok; kültür beklemek organ koruyucu acil yaklaşımı geciktirir.",
         "Acil üroloji değerlendirmesi ile skrotal eksplorasyon ve detorsiyon yapmak": "Bu yaklaşım hem tanıyı doğrular hem de torsiyon varsa iskemi süresini kısaltarak testis canlılığını korumaya çalışır. Klinik bulgular yüksek olasılıklı olduğu için acil karar düzeyi budur.",
         "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu dakikalar-saatler içinde geri dönüşsüz hasara ilerleyebilir.",
         "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
-    },
-    "evidenceChain": [
-        {
-            "text": "İstirahat sırasında ani başlayan şiddetli sol testis ağrısı ve bulantı zaman kritik akut skrotum paternini gösterir.",
-            "weight": "high",
-            "source": "case"
-        },
-        {
-            "text": "Sol testisin yüksek-transvers pozisyonda olması ve solda kremaster refleksinin alınamaması kritik lateralize muayene bulgularıdır.",
-            "weight": "high",
-            "source": "case"
-        },
-        {
-            "text": "Dizüri, üretral akıntı, ateş ve belirgin idrar lökosit/nitrit pozitifliğinin olmaması epididimit olasılığını zayıflatır.",
-            "weight": "medium",
-            "source": "case"
-        },
-        {
-            "text": "Ağrı başladıktan kısa süre sonra başvuru yapılmış olması organ koruma açısından kararın geciktirilmemesi gerektiğini gösterir.",
-            "weight": "high",
-            "source": "case"
-        }
-    ],
-    "whyWrong": {
+      },
+      "whyWrong": {
         "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hızlı erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve bekleme süresi kararı uzatabilir; görüntüleme sonucunu beklemek iskemi süresini artırır.",
         "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünülüyorsa değerlidir, fakat sonuç saatler-günler sonra çıkar. Bu hastada dizüri, ateş ve üretral akıntı yok; kültür beklemek organ koruyucu acil yaklaşımı geciktirir.",
         "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu dakikalar-saatler içinde geri dönüşsüz hasara ilerleyebilir.",
         "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Akut skrotal ağrıda zaman kritik organ koruyucu yaklaşımı antibiyotikle izlem veya gecikmiş görüntüleme seçeneklerinden ayırabilme.",
+      "coreKnowledge": "Testis torsiyonunda yüksek klinik şüphe varsa acil üroloji değerlendirmesi ve cerrahi eksplorasyon önceliklidir; Doppler USG yalnızca kararı geciktirmeyecekse kullanılmalıdır."
     },
-    "editorialMeta": {
-        "smallClerkshipsUltraRefined": true,
-        "smallClerkshipsSubspecialty": "Üroloji - testis torsiyonu",
-        "lastRefinedAt": "2026-05-31"
+    "whyCorrect": "Cerrahi eksplorasyon hem tanısal hem tedavi edicidir; detorsiyonla iskemi süresi kısaltılır ve testis kurtarılma olasılığı artırılır. Bu olguda enfeksiyon verileri zayıf ve klinik torsiyon olasılığı yüksek olduğu için görüntüleme beklemek ana hatadır.",
+    "evidenceChain": [
+      {
+        "text": "Sol testis ağrısının istirahatte ani başlaması ve ilk saat içinde şiddetlenmesi vasküler akut skrotum paternidir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Yüksek-transvers testis pozisyonu ve solda kremaster refleksi kaybı kritik lateralize muayene bulgularıdır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Dizüri, üretral akıntı, ateş ve idrar lökosit/nitrit pozitifliğinin olmaması epididimit olasılığını azaltır.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "text": "Ağrı başladıktan kısa süre sonra başvuru yapılması organ koruma penceresinin hâlen önemli olduğunu gösterir.",
+        "weight": "high",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hızlı erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve bekleme süresi kararı uzatabilir; görüntüleme sonucunu beklemek iskemi süresini artırır.",
+      "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünülüyorsa değerlidir, fakat sonuç saatler-günler sonra çıkar. Bu hastada dizüri, ateş ve üretral akıntı yok; kültür beklemek organ koruyucu acil yaklaşımı geciktirir.",
+      "Acil üroloji değerlendirmesi ile skrotal eksplorasyon ve detorsiyon yapmak": "Bu yaklaşım hem tanıyı doğrular hem de torsiyon varsa iskemi süresini kısaltarak testis canlılığını korumaya çalışır. Klinik bulgular yüksek olasılıklı olduğu için acil karar düzeyi budur.",
+      "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu dakikalar-saatler içinde geri dönüşsüz hasara ilerleyebilir.",
+      "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
     },
-    "preserveInvestigationOrder": true,
-    "smallClerkshipsInvestigationLayerEnhanced": true,
-    "smallClerkshipsInvestigationLayerVersion": "v398-small-clerkships-investigation-layer",
-    "smallClerkshipsSubspecialty": "Üroloji - testis torsiyonu",
-    "investigationLayerMeta": {
-        "enhancedAt": "2026-05-31",
-        "editor": "small-clerkships-first5-quality-pass",
-        "scope": "Only branchId === minor-rotations general clinical cases",
-        "subspecialty": "Üroloji - testis torsiyonu",
-        "objective": "Multidisipliner küçük staj gerçekçiliği, acil öncelik, organ/fonksiyon koruma, basitten komplekse tetkik akışı, tetkik değer etiketi ve girişim geciktirmeme güvenlik kapısı",
-        "note": "Akut skrotum vakasında akış klinik torsiyon değerlendirmesi → epididimit ayrımı için idrar verisi → hızlı Doppler → organ kurtarıcı eksplorasyon şeklinde düzenlendi; Dopplerin cerrahiyi geciktirmemesi vurgulandı."
+    "coreKnowledge": "Testis torsiyonu klinik olarak yüksek olasılıklıysa acil cerrahi değerlendirme geciktirilmez; ultrason ancak cerrahi kararı geciktirmeyecekse kullanılmalıdır.",
+    "examPearl": "Akut skrotumda “ani ağrı + yüksek/transvers testis + absent kremaster” varsa kültür, antibiyotik veya elektif ultrason beklemek testis kaybı riskini artırır.",
+    "whyWrong": {
+      "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hızlı erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve bekleme süresi kararı uzatabilir; görüntüleme sonucunu beklemek iskemi süresini artırır.",
+      "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünülüyorsa değerlidir, fakat sonuç saatler-günler sonra çıkar. Bu hastada dizüri, ateş ve üretral akıntı yok; kültür beklemek organ koruyucu acil yaklaşımı geciktirir.",
+      "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu dakikalar-saatler içinde geri dönüşsüz hasara ilerleyebilir.",
+      "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
     },
     "optionFeedback": {
-        "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hızlı erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve bekleme süresi kararı uzatabilir; görüntüleme sonucunu beklemek iskemi süresini artırır.",
-        "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünülüyorsa değerlidir, fakat sonuç saatler-günler sonra çıkar. Bu hastada dizüri, ateş ve üretral akıntı yok; kültür beklemek organ koruyucu acil yaklaşımı geciktirir.",
-        "Acil üroloji değerlendirmesi ile skrotal eksplorasyon ve detorsiyon yapmak": "Bu yaklaşım hem tanıyı doğrular hem de torsiyon varsa iskemi süresini kısaltarak testis canlılığını korumaya çalışır. Klinik bulgular yüksek olasılıklı olduğu için acil karar düzeyi budur.",
-        "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu dakikalar-saatler içinde geri dönüşsüz hasara ilerleyebilir.",
-        "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
+      "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hızlı erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve bekleme süresi kararı uzatabilir; görüntüleme sonucunu beklemek iskemi süresini artırır.",
+      "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünülüyorsa değerlidir, fakat sonuç saatler-günler sonra çıkar. Bu hastada dizüri, ateş ve üretral akıntı yok; kültür beklemek organ koruyucu acil yaklaşımı geciktirir.",
+      "Acil üroloji değerlendirmesi ile skrotal eksplorasyon ve detorsiyon yapmak": "Bu yaklaşım hem tanıyı doğrular hem de torsiyon varsa iskemi süresini kısaltarak testis canlılığını korumaya çalışır. Klinik bulgular yüksek olasılıklı olduğu için acil karar düzeyi budur.",
+      "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu dakikalar-saatler içinde geri dönüşsüz hasara ilerleyebilir.",
+      "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
     }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Acil",
+  "coreKnowledge": "Testis torsiyonunda yüksek klinik şüphe varsa acil üroloji değerlendirmesi ve cerrahi eksplorasyon önceliklidir; Doppler USG yalnızca kararı geciktirmeyecekse kullanılmalıdır.",
+  "examPearl": "Ani skrotal ağrı + yüksek-transvers testis + kremaster refleksi kaybı torsiyon lehinedir; organ kurtarma penceresinde Doppler beklemek cerrahiyi geciktirmemelidir.",
+  "whyCorrect": "Yüksek klinik olasılıklı testis torsiyonunda acil cerrahi yaklaşım hem tanısal hem terapötiktir; görüntüleme ancak cerrahi kararı geciktirmeyecekse yardımcı olabilir.",
+  "optionComparison": {
+    "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hemen erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve organ koruma zamanı sınırlıdır; görüntüleme sonucunu beklemek iskemi süresini artırabilir.",
+    "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünüldüğünde değerlidir, fakat sonuç saatler-günler sonra çıkar. Dizüri, ateş ve üretral akıntı olmaması enfeksiyonu geri plana iter; kültür beklemek acil organ koruyucu yaklaşımı geciktirir.",
+    "Acil üroloji değerlendirmesi ile skrotal eksplorasyon ve detorsiyon yapmak": "Bu yaklaşım hem tanıyı doğrular hem de torsiyon varsa iskemi süresini kısaltarak testis canlılığını korumaya çalışır. Ani başlangıç, yüksek-transvers testis ve kremaster refleksi kaybı nedeniyle acil karar düzeyi budur.",
+    "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu saatler içinde geri dönüşsüz hasara ilerleyebilir.",
+    "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte daha kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
+  },
+  "evidenceChain": [
+    {
+      "text": "Sol testis ağrısının istirahat halinde ani başlaması ve hızla şiddetlenmesi zaman kritik akut skrotum paternidir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Yüksek-transvers testis ve ipsilateral kremaster refleksi kaybı torsiyon lehine güçlü muayene bulgularıdır.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Dizüri, üretral akıntı ve ateş olmaması epididimit olasılığını zayıflatır.",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "text": "Erken başvuru organ koruma olasılığı nedeniyle acil ürolojik kararı öne çıkarır.",
+      "weight": "high",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hemen erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve organ koruma zamanı sınırlıdır; görüntüleme sonucunu beklemek iskemi süresini artırabilir.",
+    "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünüldüğünde değerlidir, fakat sonuç saatler-günler sonra çıkar. Dizüri, ateş ve üretral akıntı olmaması enfeksiyonu geri plana iter; kültür beklemek acil organ koruyucu yaklaşımı geciktirir.",
+    "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu saatler içinde geri dönüşsüz hasara ilerleyebilir.",
+    "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte daha kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
+  },
+  "editorialMeta": {
+    "smallClerkshipsUltraRefined": true,
+    "smallClerkshipsSubspecialty": "Üroloji - testis torsiyonu",
+    "lastRefinedAt": "2026-05-31"
+  },
+  "preserveInvestigationOrder": true,
+  "smallClerkshipsInvestigationLayerEnhanced": true,
+  "smallClerkshipsInvestigationLayerVersion": "v398-small-clerkships-investigation-layer",
+  "smallClerkshipsSubspecialty": "Üroloji - testis torsiyonu",
+  "investigationLayerMeta": {
+    "enhancedAt": "2026-05-31",
+    "editor": "small-clerkships-first5-quality-pass",
+    "scope": "Only branchId === minor-rotations general clinical cases",
+    "subspecialty": "Üroloji - testis torsiyonu",
+    "objective": "Multidisipliner küçük staj gerçekçiliği, acil öncelik, organ/fonksiyon koruma, basitten komplekse tetkik akışı, tetkik değer etiketi ve girişim geciktirmeme güvenlik kapısı",
+    "note": "Akut skrotum vakasında akış klinik torsiyon değerlendirmesi → epididimit ayrımı için idrar verisi → hızlı Doppler → organ kurtarıcı eksplorasyon şeklinde düzenlendi; Dopplerin cerrahiyi geciktirmemesi vurgulandı."
+  },
+  "optionFeedback": {
+    "Önce Doppler skrotal ultrasonografi sonucunu bekleyip cerrahiyi buna göre planlamak": "Doppler ultrason düşük/orta şüpheli veya hemen erişilebilir olgularda yardımcı olabilir. Ancak bu hastada klinik olasılık yüksek ve organ koruma zamanı sınırlıdır; görüntüleme sonucunu beklemek iskemi süresini artırabilir.",
+    "İdrar kültürü sonucuna göre antibiyotik tedavisini düzenlemek": "İdrar kültürü epididimoorşit düşünüldüğünde değerlidir, fakat sonuç saatler-günler sonra çıkar. Dizüri, ateş ve üretral akıntı olmaması enfeksiyonu geri plana iter; kültür beklemek acil organ koruyucu yaklaşımı geciktirir.",
+    "Acil üroloji değerlendirmesi ile skrotal eksplorasyon ve detorsiyon yapmak": "Bu yaklaşım hem tanıyı doğrular hem de torsiyon varsa iskemi süresini kısaltarak testis canlılığını korumaya çalışır. Ani başlangıç, yüksek-transvers testis ve kremaster refleksi kaybı nedeniyle acil karar düzeyi budur.",
+    "Ağrı kontrolü verip elektif skrotal ultrasonografi randevusu planlamak": "Analjezi verilmelidir, ancak tek başına ağrı kontrolü ve elektif randevu akut organ tehdidini gözden kaçırır. Testis torsiyonu saatler içinde geri dönüşsüz hasara ilerleyebilir.",
+    "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte daha kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
+  }
 },
   {
     "id": "v164-new-017-yeni-baslayan-temporal-bas-agrisi",
@@ -11908,663 +11915,663 @@ export const rawCases = [
     }
   },
       {
-    "id": "v164-new-019-ilac-sonrasi-ajitasyon-ve-ates",
-    "branchId": "minor-rotations",
-    "caseType": "standard",
-    "relatedBranch": "Psikiyatri / Farmakoloji",
-    "title": "İlaç sonrası ajitasyon ve ateş",
-    "difficulty": "Zor",
-    "clinicalFocus": "Serotonerjik ilaç etkileşimi sonrası gelişen mental durum, otonomik ve nöromüsküler bulguları tanıyıp güvenli akut tedavi yaklaşımını seçme.",
-    "learningTarget": "SSRI ve linezolid birlikteliği sonrası hızlı ajitasyon, hipertermi, ishal, hiperrefleksi ve klonus varlığında serotonin toksisitesini NMS, primer psikoz ve kolinerjik/duygudurum tedavilerinden ayırabilme.",
-    "demographics": "39 yaşında kadın hasta",
-    "setting": "Acil servis",
-    "chiefComplaint": "Hasta, SSRI kullanırken linezolid başlanmasından sonra gelişen ajitasyon, ateş, terleme, tremor ve sık dışkılama nedeniyle acil servise getiriliyor.",
-    "stem": "Hasta depresyon nedeniyle düzenli SSRI kullanmaktadır ve dirençli yumuşak doku enfeksiyonu için iki gün önce linezolid başlanmıştır. Yakınları, ilacın başlanmasından sonra hastanın aynı gün içinde giderek huzursuzlaştığını, yerinde duramadığını, belirgin terlediğini ve titrediğini anlatır. Akşam saatlerinde sık dışkılama ve ateş eklenmiş; evde alkol, uyarıcı madde kullanımı veya yeni antipsikotik başlanması tariflenmemiştir. Bilinç kaybı ya da tanıklı nöbet olmamış, ancak acile geldiğinde çevresel uyaranlara aşırı tepki veren, irrite ve ateşli bir görünümü vardır. Ailesi son haftalarda antipsikotik doz artışı olmadığını özellikle belirtir.",
-    "patientIntro": {
-        "profile": "39 yaşında kadın hasta, acil serviste serotonerjik ilaç kombinasyonu sonrası gelişen ajitasyon ve hipertermi nedeniyle değerlendiriliyor.",
-        "presentation": "SSRI kullanımı üzerine linezolid başlanmasından sonra huzursuzluk, terleme, tremor, sık dışkılama ve ateş gelişmiştir.",
-        "historySummary": "Hasta depresyon nedeniyle düzenli SSRI kullanırken iki gün önce dirençli yumuşak doku enfeksiyonu için linezolid başlanmış. Yakınları, yeni ilaçtan sonra hastanın aynı gün içinde giderek huzursuzlaştığını, yerinde duramadığını, terlediğini ve titrediğini anlatıyor. Akşam saatlerinde sık dışkılama ve ateş eklenmiş; evde alkol veya uyarıcı madde kullanımı bildirilmemiş. Son haftalarda antipsikotik başlanmadığı veya dozunun artırılmadığı belirtiliyor. Bilinç kaybı ya da tanıklı nöbet olmamış, ancak acile geldiğinde irrite, aşırı uyarılmış ve ateşli görünüyor."
+  "id": "v164-new-019-ilac-sonrasi-ajitasyon-ve-ates",
+  "branchId": "minor-rotations",
+  "caseType": "standard",
+  "relatedBranch": "Psikiyatri / Farmakoloji",
+  "title": "İlaç sonrası ajitasyon ve ateş",
+  "difficulty": "Zor",
+  "clinicalFocus": "Serotonerjik ilaç etkileşimi sonrası gelişen mental durum, otonomik ve nöromüsküler bulguları tanıyıp güvenli akut tedavi yaklaşımını seçme.",
+  "learningTarget": "SSRI ve linezolid birlikteliği sonrası hızlı ajitasyon, hipertermi, ishal, hiperrefleksi ve klonus varlığında serotonin toksisitesini NMS, primer psikoz ve kolinerjik/duygudurum tedavilerinden ayırabilme.",
+  "demographics": "39 yaşında kadın hasta",
+  "setting": "Acil servis",
+  "chiefComplaint": "Hasta, SSRI kullanırken linezolid başlanmasından sonra gelişen ajitasyon, ateş, terleme, tremor ve sık dışkılama nedeniyle acil servise getiriliyor.",
+  "stem": "Hasta depresyon nedeniyle düzenli SSRI kullanırken dirençli yumuşak doku enfeksiyonu için iki gün önce linezolid başlanmıştır. Yakınları, yeni antibiyotik sonrasında aynı gün içinde hastanın giderek huzursuzlaştığını, yerinde duramadığını, terlediğini ve ellerinde titreme fark ettiklerini anlatır. Akşam saatlerinde sık dışkılama ve ateş eklenmiş; evde alkol, uyarıcı madde kullanımı ya da yeni antipsikotik başlanması bildirilmemiştir. Tanıklı nöbet veya bilinç kaybı olmamış, ancak acile geldiğinde çevresel uyaranlara aşırı tepki veren irrite ve ateşli bir görünümü vardır. Ailesi son haftalarda antipsikotik doz artışı veya uzun süreli hareketsizlik dönemi olmadığını özellikle belirtir.",
+  "patientIntro": {
+    "profile": "SSRI kullanırken linezolid başlandıktan sonra ajitasyon, ateş, terleme ve sık dışkılama gelişen hasta.",
+    "presentation": "Yakın ilaç değişimini izleyen hızlı mental durum değişikliği, otonom aktivasyon ve nöromüsküler bulgular vardır.",
+    "historySummary": "Hasta depresyon nedeniyle düzenli SSRI kullanırken dirençli yumuşak doku enfeksiyonu için iki gün önce linezolid başlanmıştır. Yakınları, yeni antibiyotik sonrasında aynı gün içinde hastanın giderek huzursuzlaştığını, yerinde duramadığını, terlediğini ve ellerinde titreme fark ettiklerini anlatır. Akşam saatlerinde sık dışkılama ve ateş eklenmiş; evde alkol, uyarıcı madde kullanımı ya da yeni antipsikotik başlanması bildirilmemiştir. Tanıklı nöbet veya bilinç kaybı olmamış, ancak acile geldiğinde çevresel uyaranlara aşırı tepki veren irrite ve ateşli bir görünümü vardır. Ailesi son haftalarda antipsikotik doz artışı veya uzun süreli hareketsizlik dönemi olmadığını özellikle belirtir."
+  },
+  "vitals": {
+    "TA": "156/88 mmHg",
+    "Nabız": "128/dk",
+    "Solunum": "18/dk",
+    "SpO2": "%98, oda havasında",
+    "Ateş": "39.0 °C",
+    "Şok indeksi": "0.82 - otonomik hiperaktivite"
+  },
+  "exam": [
+    "Hasta ajite, diaforetik, tremorlu ve çevresel uyaranlara aşırı duyarlıdır.",
+    "Alt ekstremitelerde belirgin hiperrefleksi, indüklenebilir ve spontan klonus izlenir.",
+    "Pupiller midriyatik ancak ışık refleksleri korunmuştur.",
+    "Kas tonusu artmış olmakla birlikte kurşun boru tarzı rijidite baskın değildir; ense sertliği yoktur."
+  ],
+  "investigations": [
+    {
+      "id": "v164-new-019-ilac-sonrasi-ajitasyon-ve-ates-ilac-etkilesimi-toksidrom",
+      "label": "İlaç maruziyeti ve toksidrom bulguları",
+      "title": "İlaç maruziyeti ve toksidrom bulguları",
+      "orderLabel": "İlaç maruziyeti ve toksidrom bulguları",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "İlaç maruziyeti ve toksidrom bulguları",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "SSRI kullanımı üzerine linezolid başlanmıştır; aynı gün içinde ajitasyon, terleme, taşikardi, ateş ve sık dışkılama gelişmiştir.",
+      "clinicalMeaning": "SSRI kullanımı üzerine linezolid başlanmıştır; aynı gün içinde ajitasyon, terleme, taşikardi, ateş ve sık dışkılama gelişmiştir.",
+      "result": {
+        "title": "İlaç etkileşimi ve toksidrom değerlendirmesi",
+        "summary": "SSRI kullanımı üzerine linezolid başlanmıştır; aynı gün içinde ajitasyon, terleme, taşikardi, ateş ve sık dışkılama gelişmiştir.",
+        "interpretation": "SSRI kullanımı üzerine linezolid başlanmıştır; aynı gün içinde ajitasyon, terleme, taşikardi, ateş ve sık dışkılama gelişmiştir.",
+        "values": [
+          [
+            "İlaç maruziyeti",
+            "SSRI kullanımı üzerine 2 gün önce linezolid başlanmış",
+            "",
+            "Etkileşim riski"
+          ],
+          [
+            "Mental durum",
+            "Ajitasyon, irritabilite ve yerinde duramama var",
+            "",
+            "Mental durum değişikliği"
+          ],
+          [
+            "Otonom bulgular",
+            "Terleme, taşikardi, hipertansif eğilim ve ateş var",
+            "",
+            "Otonom aktivasyon"
+          ],
+          [
+            "Gastrointestinal bulgu",
+            "Sık dışkılama/ishal tarifleniyor",
+            "",
+            "Eşlik eden bulgu"
+          ]
+        ],
+        "rows": [
+          [
+            "İlaç maruziyeti",
+            "SSRI kullanımı üzerine 2 gün önce linezolid başlanmış",
+            "",
+            "Etkileşim riski"
+          ],
+          [
+            "Mental durum",
+            "Ajitasyon, irritabilite ve yerinde duramama var",
+            "",
+            "Mental durum değişikliği"
+          ],
+          [
+            "Otonom bulgular",
+            "Terleme, taşikardi, hipertansif eğilim ve ateş var",
+            "",
+            "Otonom aktivasyon"
+          ],
+          [
+            "Gastrointestinal bulgu",
+            "Sık dışkılama/ishal tarifleniyor",
+            "",
+            "Eşlik eden bulgu"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "İlaç maruziyeti",
+          "SSRI kullanımı üzerine 2 gün önce linezolid başlanmış",
+          "",
+          "Etkileşim riski"
+        ],
+        [
+          "Mental durum",
+          "Ajitasyon, irritabilite ve yerinde duramama var",
+          "",
+          "Mental durum değişikliği"
+        ],
+        [
+          "Otonom bulgular",
+          "Terleme, taşikardi, hipertansif eğilim ve ateş var",
+          "",
+          "Otonom aktivasyon"
+        ],
+        [
+          "Gastrointestinal bulgu",
+          "Sık dışkılama/ishal tarifleniyor",
+          "",
+          "Eşlik eden bulgu"
+        ]
+      ],
+      "postAnswerExplanation": "SSRI kullanımı üzerine linezolid başlanmıştır; aynı gün içinde ajitasyon, terleme, taşikardi, ateş ve sık dışkılama gelişmiştir.",
+      "interpretation": "SSRI kullanımı üzerine linezolid başlanmıştır; aynı gün içinde ajitasyon, terleme, taşikardi, ateş ve sık dışkılama gelişmiştir.",
+      "explanationAfterAnswer": "SSRI kullanımı üzerine linezolid başlanmıştır; aynı gün içinde ajitasyon, terleme, taşikardi, ateş ve sık dışkılama gelişmiştir.",
+      "testValueLabel": "Toksidrom taraması",
+      "educationalValue": "Toksidrom taraması",
+      "clinicalPriorityLabel": "Toksidrom taraması",
+      "scoreImpact": 5,
+      "scoreValue": 5,
+      "clinicalFlowOrder": 1,
+      "purpose": "SSRI kullanımı üzerine linezolid başlanmasından sonra hızlı gelişen mental durum değişikliği, otonomik aktivasyon ve gastrointestinal yakınmalar ilaç etkileşimi ilişkili toksidromu düşündürür.",
+      "inlineFeedback": "SSRI kullanımı üzerine linezolid başlanmıştır; aynı gün içinde ajitasyon, terleme, taşikardi, ateş ve sık dışkılama gelişmiştir.",
+      "treatmentImpact": "İlaç zamanlaması nedensel ajanların gözden geçirilmesini ve akut destek düzeyinin belirlenmesini sağlar.",
+      "emergencyValue": "Hipertermi ve ajitasyon komplikasyon riskini artırır."
     },
-    "vitals": {
-        "TA": "156/88 mmHg",
-        "Nabız": "128/dk",
-        "Solunum": "18/dk",
-        "SpO2": "%98, oda havasında",
-        "Ateş": "39.0 °C",
-        "Şok indeksi": "0.82 - otonomik hiperaktivite"
+    {
+      "id": "v164-new-019-ilac-sonrasi-ajitasyon-ve-ates-hipertermi-otonom",
+      "label": "Nöromüsküler bulgular ve hipertermi",
+      "title": "Nöromüsküler bulgular ve hipertermi",
+      "orderLabel": "Nöromüsküler bulgular ve hipertermi",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "Nöromüsküler bulgular ve hipertermi",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Ateş, alt ekstremitelerde belirgin hiperrefleksi, spontan/indüklenebilir klonus ve baskın olmayan rijidite paterni kaydedilmiştir.",
+      "clinicalMeaning": "Ateş, alt ekstremitelerde belirgin hiperrefleksi, spontan/indüklenebilir klonus ve baskın olmayan rijidite paterni kaydedilmiştir.",
+      "result": {
+        "title": "Nöromüsküler ve hipertermi değerlendirmesi",
+        "summary": "Ateş, alt ekstremitelerde belirgin hiperrefleksi, spontan/indüklenebilir klonus ve baskın olmayan rijidite paterni kaydedilmiştir.",
+        "interpretation": "Ateş, alt ekstremitelerde belirgin hiperrefleksi, spontan/indüklenebilir klonus ve baskın olmayan rijidite paterni kaydedilmiştir.",
+        "values": [
+          [
+            "Ateş",
+            "39.0 °C",
+            "<38.0 °C",
+            "Yüksek"
+          ],
+          [
+            "Refleksler",
+            "Alt ekstremitelerde belirgin hiperrefleksi",
+            "",
+            "Artmış refleks"
+          ],
+          [
+            "Klonus",
+            "Spontan ve indüklenebilir klonus var",
+            "",
+            "Nöromüsküler bulgu"
+          ],
+          [
+            "Rijidite paterni",
+            "Kurşun boru tarzı rijidite baskın değil",
+            "",
+            "Ayırıcı bulgu"
+          ]
+        ],
+        "rows": [
+          [
+            "Ateş",
+            "39.0 °C",
+            "<38.0 °C",
+            "Yüksek"
+          ],
+          [
+            "Refleksler",
+            "Alt ekstremitelerde belirgin hiperrefleksi",
+            "",
+            "Artmış refleks"
+          ],
+          [
+            "Klonus",
+            "Spontan ve indüklenebilir klonus var",
+            "",
+            "Nöromüsküler bulgu"
+          ],
+          [
+            "Rijidite paterni",
+            "Kurşun boru tarzı rijidite baskın değil",
+            "",
+            "Ayırıcı bulgu"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Ateş",
+          "39.0 °C",
+          "<38.0 °C",
+          "Yüksek"
+        ],
+        [
+          "Refleksler",
+          "Alt ekstremitelerde belirgin hiperrefleksi",
+          "",
+          "Artmış refleks"
+        ],
+        [
+          "Klonus",
+          "Spontan ve indüklenebilir klonus var",
+          "",
+          "Nöromüsküler bulgu"
+        ],
+        [
+          "Rijidite paterni",
+          "Kurşun boru tarzı rijidite baskın değil",
+          "",
+          "Ayırıcı bulgu"
+        ]
+      ],
+      "postAnswerExplanation": "Ateş, alt ekstremitelerde belirgin hiperrefleksi, spontan/indüklenebilir klonus ve baskın olmayan rijidite paterni kaydedilmiştir.",
+      "interpretation": "Ateş, alt ekstremitelerde belirgin hiperrefleksi, spontan/indüklenebilir klonus ve baskın olmayan rijidite paterni kaydedilmiştir.",
+      "explanationAfterAnswer": "Ateş, alt ekstremitelerde belirgin hiperrefleksi, spontan/indüklenebilir klonus ve baskın olmayan rijidite paterni kaydedilmiştir.",
+      "testValueLabel": "Nöromüsküler güvenlik",
+      "educationalValue": "Nöromüsküler güvenlik",
+      "clinicalPriorityLabel": "Nöromüsküler güvenlik",
+      "scoreImpact": 4,
+      "scoreValue": 4,
+      "clinicalFlowOrder": 2,
+      "purpose": "Klonus ve hiperrefleksi nöromüsküler hiperaktiviteyi gösterir; baskın kurşun boru rijiditesi olmaması dopamin blokajı ilişkili sendromları daha az olası kılar.",
+      "inlineFeedback": "Ateş, alt ekstremitelerde belirgin hiperrefleksi, spontan/indüklenebilir klonus ve baskın olmayan rijidite paterni kaydedilmiştir.",
+      "treatmentImpact": "Nöromüsküler bulgu paterni tedavi hedefinin primer psikiyatrik sedasyondan farklı olduğunu gösterir.",
+      "emergencyValue": "Klonus ve hipertermi kas aktivitesi kaynaklı komplikasyon riskini artırabilir."
     },
-    "exam": [
-        "Hasta ajite, diaforetik, tremorlu ve çevresel uyaranlara aşırı duyarlıdır.",
-        "Alt ekstremitelerde belirgin hiperrefleksi, indüklenebilir ve spontan klonus izlenir.",
-        "Pupiller midriyatik ancak ışık refleksleri korunmuştur.",
-        "Kas tonusu artmış olmakla birlikte kurşun boru tarzı rijidite baskın değildir; ense sertliği yoktur."
+    {
+      "id": "v164-new-019-ilac-sonrasi-ajitasyon-ve-ates-ck-elektrolit-renal",
+      "label": "CK, elektrolit ve böbrek fonksiyon izlemi",
+      "title": "CK, elektrolit ve böbrek fonksiyon izlemi",
+      "orderLabel": "CK, elektrolit ve böbrek fonksiyon izlemi",
+      "type": "lab",
+      "priority": "useful",
+      "subtype": "CK, elektrolit ve böbrek fonksiyon izlemi",
+      "category": "lab",
+      "testTypeCategory": "lab",
+      "summary": "CK yüksekliği vardır; kreatinin, sodyum ve potasyum başvuru sırasında normal aralıktadır.",
+      "clinicalMeaning": "CK yüksekliği vardır; kreatinin, sodyum ve potasyum başvuru sırasında normal aralıktadır.",
+      "result": {
+        "title": "CK, elektrolit ve böbrek fonksiyon izlemi",
+        "summary": "CK yüksekliği vardır; kreatinin, sodyum ve potasyum başvuru sırasında normal aralıktadır.",
+        "interpretation": "CK yüksekliği vardır; kreatinin, sodyum ve potasyum başvuru sırasında normal aralıktadır.",
+        "values": [
+          [
+            "CK",
+            "780 U/L",
+            "<190 U/L",
+            "Yüksek"
+          ],
+          [
+            "Kreatinin",
+            "0.9 mg/dL",
+            "0.6-1.1 mg/dL",
+            "Normal"
+          ],
+          [
+            "Sodyum",
+            "137 mmol/L",
+            "135-145 mmol/L",
+            "Normal"
+          ],
+          [
+            "Potasyum",
+            "4.1 mmol/L",
+            "3.5-5.1 mmol/L",
+            "Normal"
+          ]
+        ],
+        "rows": [
+          [
+            "CK",
+            "780 U/L",
+            "<190 U/L",
+            "Yüksek"
+          ],
+          [
+            "Kreatinin",
+            "0.9 mg/dL",
+            "0.6-1.1 mg/dL",
+            "Normal"
+          ],
+          [
+            "Sodyum",
+            "137 mmol/L",
+            "135-145 mmol/L",
+            "Normal"
+          ],
+          [
+            "Potasyum",
+            "4.1 mmol/L",
+            "3.5-5.1 mmol/L",
+            "Normal"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "CK",
+          "780 U/L",
+          "<190 U/L",
+          "Yüksek"
+        ],
+        [
+          "Kreatinin",
+          "0.9 mg/dL",
+          "0.6-1.1 mg/dL",
+          "Normal"
+        ],
+        [
+          "Sodyum",
+          "137 mmol/L",
+          "135-145 mmol/L",
+          "Normal"
+        ],
+        [
+          "Potasyum",
+          "4.1 mmol/L",
+          "3.5-5.1 mmol/L",
+          "Normal"
+        ]
+      ],
+      "postAnswerExplanation": "CK yüksekliği vardır; kreatinin, sodyum ve potasyum başvuru sırasında normal aralıktadır.",
+      "interpretation": "CK yüksekliği vardır; kreatinin, sodyum ve potasyum başvuru sırasında normal aralıktadır.",
+      "explanationAfterAnswer": "CK yüksekliği vardır; kreatinin, sodyum ve potasyum başvuru sırasında normal aralıktadır.",
+      "testValueLabel": "Komplikasyon izlemi",
+      "educationalValue": "Komplikasyon izlemi",
+      "clinicalPriorityLabel": "Komplikasyon izlemi",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "clinicalFlowOrder": 3,
+      "purpose": "CK yüksekliği kas aktivitesi ve hipertermiye bağlı komplikasyon riskini gösterir; böbrek fonksiyonu ve elektrolitler izlem güvenliği için değerlendirilir.",
+      "inlineFeedback": "CK yüksekliği vardır; kreatinin, sodyum ve potasyum başvuru sırasında normal aralıktadır.",
+      "treatmentImpact": "Laboratuvar izlemi komplikasyon gelişimini erken yakalamaya yardım eder.",
+      "emergencyValue": "CK yüksekliği ve hipertermi yakın takip gerektirir."
+    },
+    {
+      "id": "v164-new-019-ilac-sonrasi-ajitasyon-ve-ates-ekg-sedasyon-guvenligi",
+      "label": "EKG ve sedasyon güvenliği",
+      "title": "EKG ve sedasyon güvenliği",
+      "orderLabel": "EKG ve sedasyon güvenliği",
+      "type": "ecg",
+      "priority": "useful",
+      "subtype": "EKG ve sedasyon güvenliği",
+      "category": "cardiology",
+      "testTypeCategory": "cardiology",
+      "summary": "EKG sinüs taşikardisi göstermektedir; QRS ve QTc akut sedasyon/monitörizasyon açısından belirgin uzamış değildir.",
+      "clinicalMeaning": "EKG sinüs taşikardisi göstermektedir; QRS ve QTc akut sedasyon/monitörizasyon açısından belirgin uzamış değildir.",
+      "result": {
+        "title": "EKG ve sedasyon güvenliği",
+        "summary": "EKG sinüs taşikardisi göstermektedir; QRS ve QTc akut sedasyon/monitörizasyon açısından belirgin uzamış değildir.",
+        "interpretation": "EKG sinüs taşikardisi göstermektedir; QRS ve QTc akut sedasyon/monitörizasyon açısından belirgin uzamış değildir.",
+        "values": [
+          [
+            "Ritim",
+            "Sinüs taşikardisi",
+            "60-100/dk",
+            "Taşikardi"
+          ],
+          [
+            "QRS",
+            "88 ms",
+            "<120 ms",
+            "Normal"
+          ],
+          [
+            "QTc",
+            "430 ms",
+            "<460 ms",
+            "Normal"
+          ]
+        ],
+        "rows": [
+          [
+            "Ritim",
+            "Sinüs taşikardisi",
+            "60-100/dk",
+            "Taşikardi"
+          ],
+          [
+            "QRS",
+            "88 ms",
+            "<120 ms",
+            "Normal"
+          ],
+          [
+            "QTc",
+            "430 ms",
+            "<460 ms",
+            "Normal"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Ritim",
+          "Sinüs taşikardisi",
+          "60-100/dk",
+          "Taşikardi"
+        ],
+        [
+          "QRS",
+          "88 ms",
+          "<120 ms",
+          "Normal"
+        ],
+        [
+          "QTc",
+          "430 ms",
+          "<460 ms",
+          "Normal"
+        ]
+      ],
+      "postAnswerExplanation": "EKG sinüs taşikardisi göstermektedir; QRS ve QTc akut sedasyon/monitörizasyon açısından belirgin uzamış değildir.",
+      "interpretation": "EKG sinüs taşikardisi göstermektedir; QRS ve QTc akut sedasyon/monitörizasyon açısından belirgin uzamış değildir.",
+      "explanationAfterAnswer": "EKG sinüs taşikardisi göstermektedir; QRS ve QTc akut sedasyon/monitörizasyon açısından belirgin uzamış değildir.",
+      "testValueLabel": "Güvenli sedasyon izlemi",
+      "educationalValue": "Güvenli sedasyon izlemi",
+      "clinicalPriorityLabel": "Güvenli sedasyon izlemi",
+      "scoreImpact": 2,
+      "scoreValue": 2,
+      "clinicalFlowOrder": 4,
+      "purpose": "Sinüs taşikardisi otonomik aktivasyonla uyumludur; QRS ve QTc değerleri akut sedasyon ve monitörizasyon güvenliği açısından değerlendirilir.",
+      "inlineFeedback": "EKG sinüs taşikardisi göstermektedir; QRS ve QTc akut sedasyon/monitörizasyon açısından belirgin uzamış değildir.",
+      "treatmentImpact": "EKG tanı koydurmaz; güvenli sedasyon ve destek tedavisi sırasında monitörizasyonu yönlendirir.",
+      "emergencyValue": "Taşikardi ve hipertermi eş zamanlı izlenmelidir."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "question": "SSRI ve linezolid sonrası ajitasyon, ateş, ishal, hiperrefleksi ve spontan klonus gelişen bu hastada en uygun tedavi yaklaşımı hangisidir?",
+  "questionType": "treatment",
+  "answerTarget": "treatment",
+  "diagnosis": {
+    "correct": "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek",
+    "options": [
+      "Ajitasyonu primer psikotik atak kabul edip haloperidol ağırlıklı sedasyon başlamak",
+      "Dantrolen verip malign hipertermi protokolüyle izlemek",
+      "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek",
+      "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak",
+      "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek"
     ],
-    "investigations": [
-        {
-            "id": "v164-new-019-ilac-sonrasi-ajitasyon-ve-ates-ilac-etkilesimi-toksidrom",
-            "label": "İlaç etkileşimi ve toksidrom değerlendirmesi",
-            "title": "İlaç etkileşimi ve toksidrom değerlendirmesi",
-            "orderLabel": "İlaç etkileşimi ve toksidrom değerlendirmesi",
-            "type": "clinical",
-            "priority": "essential",
-            "subtype": "İlaç etkileşimi ve toksidrom değerlendirmesi",
-            "category": "clinicalAssessment",
-            "testTypeCategory": "clinicalAssessment",
-            "summary": "SSRI kullanımı üzerine linezolid başlanmasından sonra hızlı gelişen mental durum değişikliği, otonomik aktivasyon ve gastrointestinal yakınmalar ilaç etkileşimi ilişkili toksidromu düşündürür.",
-            "clinicalMeaning": "SSRI kullanımı üzerine linezolid başlanmasından sonra hızlı gelişen mental durum değişikliği, otonomik aktivasyon ve gastrointestinal yakınmalar ilaç etkileşimi ilişkili toksidromu düşündürür.",
-            "result": {
-                "title": "İlaç etkileşimi ve toksidrom değerlendirmesi",
-                "summary": "SSRI kullanımı üzerine linezolid başlanmasından sonra hızlı gelişen mental durum değişikliği, otonomik aktivasyon ve gastrointestinal yakınmalar ilaç etkileşimi ilişkili toksidromu düşündürür.",
-                "interpretation": "SSRI kullanımı üzerine linezolid başlanmasından sonra hızlı gelişen mental durum değişikliği, otonomik aktivasyon ve gastrointestinal yakınmalar ilaç etkileşimi ilişkili toksidromu düşündürür.",
-                "values": [
-                    [
-                        "İlaç maruziyeti",
-                        "SSRI kullanımı üzerine 2 gün önce linezolid başlanmış",
-                        "",
-                        "Etkileşim riski"
-                    ],
-                    [
-                        "Mental durum",
-                        "Ajitasyon, irritabilite ve yerinde duramama var",
-                        "",
-                        "Mental durum değişikliği"
-                    ],
-                    [
-                        "Otonom bulgular",
-                        "Terleme, taşikardi, hipertansif eğilim ve ateş var",
-                        "",
-                        "Otonom aktivasyon"
-                    ],
-                    [
-                        "Gastrointestinal bulgu",
-                        "Sık dışkılama/ishal tarifleniyor",
-                        "",
-                        "Eşlik eden bulgu"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "İlaç maruziyeti",
-                        "SSRI kullanımı üzerine 2 gün önce linezolid başlanmış",
-                        "",
-                        "Etkileşim riski"
-                    ],
-                    [
-                        "Mental durum",
-                        "Ajitasyon, irritabilite ve yerinde duramama var",
-                        "",
-                        "Mental durum değişikliği"
-                    ],
-                    [
-                        "Otonom bulgular",
-                        "Terleme, taşikardi, hipertansif eğilim ve ateş var",
-                        "",
-                        "Otonom aktivasyon"
-                    ],
-                    [
-                        "Gastrointestinal bulgu",
-                        "Sık dışkılama/ishal tarifleniyor",
-                        "",
-                        "Eşlik eden bulgu"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "İlaç maruziyeti",
-                    "SSRI kullanımı üzerine 2 gün önce linezolid başlanmış",
-                    "",
-                    "Etkileşim riski"
-                ],
-                [
-                    "Mental durum",
-                    "Ajitasyon, irritabilite ve yerinde duramama var",
-                    "",
-                    "Mental durum değişikliği"
-                ],
-                [
-                    "Otonom bulgular",
-                    "Terleme, taşikardi, hipertansif eğilim ve ateş var",
-                    "",
-                    "Otonom aktivasyon"
-                ],
-                [
-                    "Gastrointestinal bulgu",
-                    "Sık dışkılama/ishal tarifleniyor",
-                    "",
-                    "Eşlik eden bulgu"
-                ]
-            ],
-            "postAnswerExplanation": "SSRI kullanımı üzerine linezolid başlanmasından sonra hızlı gelişen mental durum değişikliği, otonomik aktivasyon ve gastrointestinal yakınmalar ilaç etkileşimi ilişkili toksidromu düşündürür.",
-            "interpretation": "SSRI kullanımı üzerine linezolid başlanmasından sonra hızlı gelişen mental durum değişikliği, otonomik aktivasyon ve gastrointestinal yakınmalar ilaç etkileşimi ilişkili toksidromu düşündürür.",
-            "explanationAfterAnswer": "SSRI kullanımı üzerine linezolid başlanmasından sonra hızlı gelişen mental durum değişikliği, otonomik aktivasyon ve gastrointestinal yakınmalar ilaç etkileşimi ilişkili toksidromu düşündürür.",
-            "testValueLabel": "Toksidrom taraması",
-            "educationalValue": "Toksidrom taraması",
-            "clinicalPriorityLabel": "Toksidrom taraması",
-            "scoreImpact": 5,
-            "scoreValue": 5,
-            "clinicalFlowOrder": 1,
-            "purpose": "SSRI kullanımı üzerine linezolid başlanmasından sonra hızlı gelişen mental durum değişikliği, otonomik aktivasyon ve gastrointestinal yakınmalar ilaç etkileşimi ilişkili toksidromu düşündürür.",
-            "inlineFeedback": "SSRI kullanımı üzerine linezolid başlanmasından sonra hızlı gelişen mental durum değişikliği, otonomik aktivasyon ve gastrointestinal yakınmalar ilaç etkileşimi ilişkili toksidromu düşündürür.",
-            "treatmentImpact": "İlaç zamanlaması nedensel ajanların gözden geçirilmesini ve akut destek düzeyinin belirlenmesini sağlar.",
-            "emergencyValue": "Hipertermi ve ajitasyon komplikasyon riskini artırır."
-        },
-        {
-            "id": "v164-new-019-ilac-sonrasi-ajitasyon-ve-ates-hipertermi-otonom",
-            "label": "Nöromüsküler ve hipertermi değerlendirmesi",
-            "title": "Nöromüsküler ve hipertermi değerlendirmesi",
-            "orderLabel": "Nöromüsküler ve hipertermi değerlendirmesi",
-            "type": "clinical",
-            "priority": "essential",
-            "subtype": "Nöromüsküler ve hipertermi değerlendirmesi",
-            "category": "clinicalAssessment",
-            "testTypeCategory": "clinicalAssessment",
-            "summary": "Klonus ve hiperrefleksi nöromüsküler hiperaktiviteyi gösterir; baskın kurşun boru rijiditesi olmaması dopamin blokajı ilişkili sendromları daha az olası kılar.",
-            "clinicalMeaning": "Klonus ve hiperrefleksi nöromüsküler hiperaktiviteyi gösterir; baskın kurşun boru rijiditesi olmaması dopamin blokajı ilişkili sendromları daha az olası kılar.",
-            "result": {
-                "title": "Nöromüsküler ve hipertermi değerlendirmesi",
-                "summary": "Klonus ve hiperrefleksi nöromüsküler hiperaktiviteyi gösterir; baskın kurşun boru rijiditesi olmaması dopamin blokajı ilişkili sendromları daha az olası kılar.",
-                "interpretation": "Klonus ve hiperrefleksi nöromüsküler hiperaktiviteyi gösterir; baskın kurşun boru rijiditesi olmaması dopamin blokajı ilişkili sendromları daha az olası kılar.",
-                "values": [
-                    [
-                        "Ateş",
-                        "39.0 °C",
-                        "<38.0 °C",
-                        "Yüksek"
-                    ],
-                    [
-                        "Refleksler",
-                        "Alt ekstremitelerde belirgin hiperrefleksi",
-                        "",
-                        "Artmış refleks"
-                    ],
-                    [
-                        "Klonus",
-                        "Spontan ve indüklenebilir klonus var",
-                        "",
-                        "Nöromüsküler bulgu"
-                    ],
-                    [
-                        "Rijidite paterni",
-                        "Kurşun boru tarzı rijidite baskın değil",
-                        "",
-                        "Ayırıcı bulgu"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "Ateş",
-                        "39.0 °C",
-                        "<38.0 °C",
-                        "Yüksek"
-                    ],
-                    [
-                        "Refleksler",
-                        "Alt ekstremitelerde belirgin hiperrefleksi",
-                        "",
-                        "Artmış refleks"
-                    ],
-                    [
-                        "Klonus",
-                        "Spontan ve indüklenebilir klonus var",
-                        "",
-                        "Nöromüsküler bulgu"
-                    ],
-                    [
-                        "Rijidite paterni",
-                        "Kurşun boru tarzı rijidite baskın değil",
-                        "",
-                        "Ayırıcı bulgu"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "Ateş",
-                    "39.0 °C",
-                    "<38.0 °C",
-                    "Yüksek"
-                ],
-                [
-                    "Refleksler",
-                    "Alt ekstremitelerde belirgin hiperrefleksi",
-                    "",
-                    "Artmış refleks"
-                ],
-                [
-                    "Klonus",
-                    "Spontan ve indüklenebilir klonus var",
-                    "",
-                    "Nöromüsküler bulgu"
-                ],
-                [
-                    "Rijidite paterni",
-                    "Kurşun boru tarzı rijidite baskın değil",
-                    "",
-                    "Ayırıcı bulgu"
-                ]
-            ],
-            "postAnswerExplanation": "Klonus ve hiperrefleksi nöromüsküler hiperaktiviteyi gösterir; baskın kurşun boru rijiditesi olmaması dopamin blokajı ilişkili sendromları daha az olası kılar.",
-            "interpretation": "Klonus ve hiperrefleksi nöromüsküler hiperaktiviteyi gösterir; baskın kurşun boru rijiditesi olmaması dopamin blokajı ilişkili sendromları daha az olası kılar.",
-            "explanationAfterAnswer": "Klonus ve hiperrefleksi nöromüsküler hiperaktiviteyi gösterir; baskın kurşun boru rijiditesi olmaması dopamin blokajı ilişkili sendromları daha az olası kılar.",
-            "testValueLabel": "Nöromüsküler güvenlik",
-            "educationalValue": "Nöromüsküler güvenlik",
-            "clinicalPriorityLabel": "Nöromüsküler güvenlik",
-            "scoreImpact": 4,
-            "scoreValue": 4,
-            "clinicalFlowOrder": 2,
-            "purpose": "Klonus ve hiperrefleksi nöromüsküler hiperaktiviteyi gösterir; baskın kurşun boru rijiditesi olmaması dopamin blokajı ilişkili sendromları daha az olası kılar.",
-            "inlineFeedback": "Klonus ve hiperrefleksi nöromüsküler hiperaktiviteyi gösterir; baskın kurşun boru rijiditesi olmaması dopamin blokajı ilişkili sendromları daha az olası kılar.",
-            "treatmentImpact": "Nöromüsküler bulgu paterni tedavi hedefinin primer psikiyatrik sedasyondan farklı olduğunu gösterir.",
-            "emergencyValue": "Klonus ve hipertermi kas aktivitesi kaynaklı komplikasyon riskini artırabilir."
-        },
-        {
-            "id": "v164-new-019-ilac-sonrasi-ajitasyon-ve-ates-ck-elektrolit-renal",
-            "label": "CK, elektrolit ve böbrek fonksiyon izlemi",
-            "title": "CK, elektrolit ve böbrek fonksiyon izlemi",
-            "orderLabel": "CK, elektrolit ve böbrek fonksiyon izlemi",
-            "type": "lab",
-            "priority": "useful",
-            "subtype": "CK, elektrolit ve böbrek fonksiyon izlemi",
-            "category": "lab",
-            "testTypeCategory": "lab",
-            "summary": "CK yüksekliği kas aktivitesi ve hipertermiye bağlı komplikasyon riskini gösterir; böbrek fonksiyonu ve elektrolitler izlem güvenliği için değerlendirilir.",
-            "clinicalMeaning": "CK yüksekliği kas aktivitesi ve hipertermiye bağlı komplikasyon riskini gösterir; böbrek fonksiyonu ve elektrolitler izlem güvenliği için değerlendirilir.",
-            "result": {
-                "title": "CK, elektrolit ve böbrek fonksiyon izlemi",
-                "summary": "CK yüksekliği kas aktivitesi ve hipertermiye bağlı komplikasyon riskini gösterir; böbrek fonksiyonu ve elektrolitler izlem güvenliği için değerlendirilir.",
-                "interpretation": "CK yüksekliği kas aktivitesi ve hipertermiye bağlı komplikasyon riskini gösterir; böbrek fonksiyonu ve elektrolitler izlem güvenliği için değerlendirilir.",
-                "values": [
-                    [
-                        "CK",
-                        "780 U/L",
-                        "<190 U/L",
-                        "Yüksek"
-                    ],
-                    [
-                        "Kreatinin",
-                        "0.9 mg/dL",
-                        "0.6-1.1 mg/dL",
-                        "Normal"
-                    ],
-                    [
-                        "Sodyum",
-                        "137 mmol/L",
-                        "135-145 mmol/L",
-                        "Normal"
-                    ],
-                    [
-                        "Potasyum",
-                        "4.1 mmol/L",
-                        "3.5-5.1 mmol/L",
-                        "Normal"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "CK",
-                        "780 U/L",
-                        "<190 U/L",
-                        "Yüksek"
-                    ],
-                    [
-                        "Kreatinin",
-                        "0.9 mg/dL",
-                        "0.6-1.1 mg/dL",
-                        "Normal"
-                    ],
-                    [
-                        "Sodyum",
-                        "137 mmol/L",
-                        "135-145 mmol/L",
-                        "Normal"
-                    ],
-                    [
-                        "Potasyum",
-                        "4.1 mmol/L",
-                        "3.5-5.1 mmol/L",
-                        "Normal"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "CK",
-                    "780 U/L",
-                    "<190 U/L",
-                    "Yüksek"
-                ],
-                [
-                    "Kreatinin",
-                    "0.9 mg/dL",
-                    "0.6-1.1 mg/dL",
-                    "Normal"
-                ],
-                [
-                    "Sodyum",
-                    "137 mmol/L",
-                    "135-145 mmol/L",
-                    "Normal"
-                ],
-                [
-                    "Potasyum",
-                    "4.1 mmol/L",
-                    "3.5-5.1 mmol/L",
-                    "Normal"
-                ]
-            ],
-            "postAnswerExplanation": "CK yüksekliği kas aktivitesi ve hipertermiye bağlı komplikasyon riskini gösterir; böbrek fonksiyonu ve elektrolitler izlem güvenliği için değerlendirilir.",
-            "interpretation": "CK yüksekliği kas aktivitesi ve hipertermiye bağlı komplikasyon riskini gösterir; böbrek fonksiyonu ve elektrolitler izlem güvenliği için değerlendirilir.",
-            "explanationAfterAnswer": "CK yüksekliği kas aktivitesi ve hipertermiye bağlı komplikasyon riskini gösterir; böbrek fonksiyonu ve elektrolitler izlem güvenliği için değerlendirilir.",
-            "testValueLabel": "Komplikasyon izlemi",
-            "educationalValue": "Komplikasyon izlemi",
-            "clinicalPriorityLabel": "Komplikasyon izlemi",
-            "scoreImpact": 3,
-            "scoreValue": 3,
-            "clinicalFlowOrder": 3,
-            "purpose": "CK yüksekliği kas aktivitesi ve hipertermiye bağlı komplikasyon riskini gösterir; böbrek fonksiyonu ve elektrolitler izlem güvenliği için değerlendirilir.",
-            "inlineFeedback": "CK yüksekliği kas aktivitesi ve hipertermiye bağlı komplikasyon riskini gösterir; böbrek fonksiyonu ve elektrolitler izlem güvenliği için değerlendirilir.",
-            "treatmentImpact": "Laboratuvar izlemi komplikasyon gelişimini erken yakalamaya yardım eder.",
-            "emergencyValue": "CK yüksekliği ve hipertermi yakın takip gerektirir."
-        },
-        {
-            "id": "v164-new-019-ilac-sonrasi-ajitasyon-ve-ates-ekg-sedasyon-guvenligi",
-            "label": "EKG ve sedasyon güvenliği",
-            "title": "EKG ve sedasyon güvenliği",
-            "orderLabel": "EKG ve sedasyon güvenliği",
-            "type": "ecg",
-            "priority": "useful",
-            "subtype": "EKG ve sedasyon güvenliği",
-            "category": "cardiology",
-            "testTypeCategory": "cardiology",
-            "summary": "Sinüs taşikardisi otonomik aktivasyonla uyumludur; QRS ve QTc değerleri akut sedasyon ve monitörizasyon güvenliği açısından değerlendirilir.",
-            "clinicalMeaning": "Sinüs taşikardisi otonomik aktivasyonla uyumludur; QRS ve QTc değerleri akut sedasyon ve monitörizasyon güvenliği açısından değerlendirilir.",
-            "result": {
-                "title": "EKG ve sedasyon güvenliği",
-                "summary": "Sinüs taşikardisi otonomik aktivasyonla uyumludur; QRS ve QTc değerleri akut sedasyon ve monitörizasyon güvenliği açısından değerlendirilir.",
-                "interpretation": "Sinüs taşikardisi otonomik aktivasyonla uyumludur; QRS ve QTc değerleri akut sedasyon ve monitörizasyon güvenliği açısından değerlendirilir.",
-                "values": [
-                    [
-                        "Ritim",
-                        "Sinüs taşikardisi",
-                        "60-100/dk",
-                        "Taşikardi"
-                    ],
-                    [
-                        "QRS",
-                        "88 ms",
-                        "<120 ms",
-                        "Normal"
-                    ],
-                    [
-                        "QTc",
-                        "430 ms",
-                        "<460 ms",
-                        "Normal"
-                    ]
-                ],
-                "rows": [
-                    [
-                        "Ritim",
-                        "Sinüs taşikardisi",
-                        "60-100/dk",
-                        "Taşikardi"
-                    ],
-                    [
-                        "QRS",
-                        "88 ms",
-                        "<120 ms",
-                        "Normal"
-                    ],
-                    [
-                        "QTc",
-                        "430 ms",
-                        "<460 ms",
-                        "Normal"
-                    ]
-                ]
-            },
-            "rows": [
-                [
-                    "Ritim",
-                    "Sinüs taşikardisi",
-                    "60-100/dk",
-                    "Taşikardi"
-                ],
-                [
-                    "QRS",
-                    "88 ms",
-                    "<120 ms",
-                    "Normal"
-                ],
-                [
-                    "QTc",
-                    "430 ms",
-                    "<460 ms",
-                    "Normal"
-                ]
-            ],
-            "postAnswerExplanation": "Sinüs taşikardisi otonomik aktivasyonla uyumludur; QRS ve QTc değerleri akut sedasyon ve monitörizasyon güvenliği açısından değerlendirilir.",
-            "interpretation": "Sinüs taşikardisi otonomik aktivasyonla uyumludur; QRS ve QTc değerleri akut sedasyon ve monitörizasyon güvenliği açısından değerlendirilir.",
-            "explanationAfterAnswer": "Sinüs taşikardisi otonomik aktivasyonla uyumludur; QRS ve QTc değerleri akut sedasyon ve monitörizasyon güvenliği açısından değerlendirilir.",
-            "testValueLabel": "Güvenli sedasyon izlemi",
-            "educationalValue": "Güvenli sedasyon izlemi",
-            "clinicalPriorityLabel": "Güvenli sedasyon izlemi",
-            "scoreImpact": 2,
-            "scoreValue": 2,
-            "clinicalFlowOrder": 4,
-            "purpose": "Sinüs taşikardisi otonomik aktivasyonla uyumludur; QRS ve QTc değerleri akut sedasyon ve monitörizasyon güvenliği açısından değerlendirilir.",
-            "inlineFeedback": "Sinüs taşikardisi otonomik aktivasyonla uyumludur; QRS ve QTc değerleri akut sedasyon ve monitörizasyon güvenliği açısından değerlendirilir.",
-            "treatmentImpact": "EKG tanı koydurmaz; güvenli sedasyon ve destek tedavisi sırasında monitörizasyonu yönlendirir.",
-            "emergencyValue": "Taşikardi ve hipertermi eş zamanlı izlenmelidir."
-        }
-    ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": {
-        "enabled": false
-    },
-    "hideExamSignal": true,
     "question": "SSRI ve linezolid sonrası ajitasyon, ateş, ishal, hiperrefleksi ve spontan klonus gelişen bu hastada en uygun tedavi yaklaşımı hangisidir?",
-    "questionType": "treatment",
-    "answerTarget": "treatment",
-    "diagnosis": {
-        "correct": "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek",
-        "options": [
-            "Ajitasyonu primer psikotik atak kabul edip haloperidol ağırlıklı sedasyon başlamak",
-            "Dantrolen verip malign hipertermi protokolüyle izlemek",
-            "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek",
-            "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak",
-            "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek"
-        ],
-        "question": "SSRI ve linezolid sonrası ajitasyon, ateş, ishal, hiperrefleksi ve spontan klonus gelişen bu hastada en uygun tedavi yaklaşımı hangisidir?",
-        "explanation": "Bu hastada SSRI kullanımı üzerine linezolid başlanmasından sonra hızlı gelişen ajitasyon, terleme, ateş, sık dışkılama, hiperrefleksi ve spontan/indüklenebilir klonus serotonerjik toksisite paternini oluşturur. Tedavide ilk hedef serotonerjik ajanların kesilmesi, destek tedavisi, dıştan soğutma ve ajitasyon-nöromüsküler hiperaktivite için benzodiazepindir; orta-ağır tabloda siproheptadin eklenebilir. Antipsikotik artırmak, lityum başlamak, bromokriptin veya dantroleni birincil seçenek yapmak bu vaka paterninin hedefini kaçırır.",
-        "pearls": [
-            {
-                "label": "Sınav notu",
-                "text": "SSRI + linezolid/triptan sonrası hızlı ajitasyon, ishal, hiperrefleksi ve klonus serotonin toksisitesidir; NMS daha yavaş başlar ve kurşun boru rijiditesi-dopamin blokajı baskındır."
-            }
-        ],
-        "answerFeedback": {
-            "summary": "Bu hastada SSRI kullanımı üzerine linezolid başlanmasından sonra hızlı gelişen ajitasyon, terleme, ateş, sık dışkılama, hiperrefleksi ve spontan/indüklenebilir klonus serotonerjik toksisite paternini oluşturur. Tedavide ilk hedef serotonerjik ajanların kesilmesi, destek tedavisi, dıştan soğutma ve ajitasyon-nöromüsküler hiperaktivite için benzodiazepindir; orta-ağır tabloda siproheptadin eklenebilir. Antipsikotik artırmak, lityum başlamak, bromokriptin veya dantroleni birincil seçenek yapmak bu vaka paterninin hedefini kaçırır.",
-            "whyCorrect": "Doğru yaklaşım hem nedeni ortadan kaldırır hem de hipertermi, ajitasyon ve nöromüsküler hiperaktivite döngüsünü güvenli biçimde kontrol eder. Klonus ve hiperrefleksi baskın olduğu için tablo primer psikoz veya dopamin blokajı sendromu gibi yönetilmemelidir.",
-            "rationale": "Bu hastada SSRI kullanımı üzerine linezolid başlanmasından sonra hızlı gelişen ajitasyon, terleme, ateş, sık dışkılama, hiperrefleksi ve spontan/indüklenebilir klonus serotonerjik toksisite paternini oluşturur. Tedavide ilk hedef serotonerjik ajanların kesilmesi, destek tedavisi, dıştan soğutma ve ajitasyon-nöromüsküler hiperaktivite için benzodiazepindir; orta-ağır tabloda siproheptadin eklenebilir. Antipsikotik artırmak, lityum başlamak, bromokriptin veya dantroleni birincil seçenek yapmak bu vaka paterninin hedefini kaçırır.",
-            "correctOptionFeedback": "Bu seçenek olası nedensel ilaçları keser, ajitasyon ve kas aktivitesini benzodiazepinle azaltır, destek tedavisiyle hipertermi/otonom bulguları yönetir ve orta-ağır tabloda serotonin antagonizması için siproheptadini ekler.",
-            "keyClues": [
-                "SSRI kullanımı üzerine linezolid başlanması serotonerjik yükü artıran güçlü bir ilaç etkileşimi oluşturur.",
-                "Ajitasyon, terleme, taşikardi, hipertansif eğilim, ateş ve ishal mental/otonomik toksidrom bileşenlerini destekler.",
-                "Spontan klonus ve hiperrefleksi serotonin toksisitesini nöroleptik malign sendromdan ayıran kritik nöromüsküler bulgulardır.",
-                "Antipsikotik maruziyet veya baskın kurşun boru rijiditesinin olmaması dopamin blokajı ilişkili sendrom olasılığını azaltır."
-            ],
-            "evidenceChain": [
-                {
-                    "text": "SSRI kullanımı üzerine linezolid başlanması serotonerjik yükü artıran güçlü bir ilaç etkileşimi oluşturur.",
-                    "weight": "high",
-                    "source": "case"
-                },
-                {
-                    "text": "Ajitasyon, terleme, taşikardi, hipertansif eğilim, ateş ve ishal mental/otonomik toksidrom bileşenlerini destekler.",
-                    "weight": "high",
-                    "source": "case"
-                },
-                {
-                    "text": "Spontan klonus ve hiperrefleksi serotonin toksisitesini nöroleptik malign sendromdan ayıran kritik nöromüsküler bulgulardır.",
-                    "weight": "high",
-                    "source": "case"
-                },
-                {
-                    "text": "Antipsikotik maruziyet veya baskın kurşun boru rijiditesinin olmaması dopamin blokajı ilişkili sendrom olasılığını azaltır.",
-                    "weight": "medium",
-                    "source": "case"
-                }
-            ],
-            "examPearl": "SSRI + linezolid/triptan sonrası hızlı ajitasyon, ishal, hiperrefleksi ve klonus serotonin toksisitesidir; NMS daha yavaş başlar ve kurşun boru rijiditesi-dopamin blokajı baskındır.",
-            "pearls": [
-                {
-                    "label": "Sınav notu",
-                    "text": "SSRI + linezolid/triptan sonrası hızlı ajitasyon, ishal, hiperrefleksi ve klonus serotonin toksisitesidir; NMS daha yavaş başlar ve kurşun boru rijiditesi-dopamin blokajı baskındır."
-                }
-            ],
-            "clinicalPearls": [
-                {
-                    "label": "Klinik ayrım",
-                    "text": "Serotonin toksisitesi nöromüsküler hiperaktiviteyle; NMS ise daha çok bradikinezi, kurşun boru rijiditesi ve dopamin blokajı öyküsüyle ayrılır."
-                }
-            ],
-            "optionComparison": {
-                "Ajitasyonu primer psikotik atak kabul edip haloperidol ağırlıklı sedasyon başlamak": "Ajitasyon tek başına primer psikoz gibi görünse de bu hastada yakın ilaç etkileşimi, ateş, ishal, hiperrefleksi ve klonus vardır. Haloperidol ağırlıklı yaklaşım altta yatan toksidromu hedeflemez ve hipertermi/rijidite ayırıcı tanısını zorlaştırabilir.",
-                "Dantrolen verip malign hipertermi protokolüyle izlemek": "Dantrolen malign hipertermi veya bazı ağır hipermetabolik kas sendromlarında düşünülür. Bu olguda anestezik maruziyet yoktur; ilaç etkileşimi sonrası klonus, hiperrefleksi ve gastrointestinal bulgular ön plandadır.",
-                "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum duygudurum düzenleyici olarak elektif bir tedavidir ve akut hipertermik toksidromda yeri yoktur. Bu hastanın ateş, taşikardi, klonus ve ajitasyonla acil izlem gerektiren tablosu ayaktan yönetilemez.",
-                "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedeflemek için kullanılabilir. Bu vakada antipsikotik maruziyet veya kurşun boru rijiditesi baskın değildir; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir.",
-                "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek": "Bu seçenek olası nedensel ilaçları keser, ajitasyon ve kas aktivitesini benzodiazepinle azaltır, destek tedavisiyle hipertermi/otonom bulguları yönetir ve orta-ağır tabloda serotonin antagonizması için siproheptadini ekler."
-            },
-            "optionFeedback": {
-                "Ajitasyonu primer psikotik atak kabul edip haloperidol ağırlıklı sedasyon başlamak": "Ajitasyon tek başına primer psikoz gibi görünse de bu hastada yakın ilaç etkileşimi, ateş, ishal, hiperrefleksi ve klonus vardır. Haloperidol ağırlıklı yaklaşım altta yatan toksidromu hedeflemez ve hipertermi/rijidite ayırıcı tanısını zorlaştırabilir.",
-                "Dantrolen verip malign hipertermi protokolüyle izlemek": "Dantrolen malign hipertermi veya bazı ağır hipermetabolik kas sendromlarında düşünülür. Bu olguda anestezik maruziyet yoktur; ilaç etkileşimi sonrası klonus, hiperrefleksi ve gastrointestinal bulgular ön plandadır.",
-                "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum duygudurum düzenleyici olarak elektif bir tedavidir ve akut hipertermik toksidromda yeri yoktur. Bu hastanın ateş, taşikardi, klonus ve ajitasyonla acil izlem gerektiren tablosu ayaktan yönetilemez.",
-                "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedeflemek için kullanılabilir. Bu vakada antipsikotik maruziyet veya kurşun boru rijiditesi baskın değildir; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir.",
-                "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek": "Bu seçenek olası nedensel ilaçları keser, ajitasyon ve kas aktivitesini benzodiazepinle azaltır, destek tedavisiyle hipertermi/otonom bulguları yönetir ve orta-ağır tabloda serotonin antagonizması için siproheptadini ekler."
-            },
-            "whyWrong": {
-                "Ajitasyonu primer psikotik atak kabul edip haloperidol ağırlıklı sedasyon başlamak": "Ajitasyon tek başına primer psikoz gibi görünse de bu hastada yakın ilaç etkileşimi, ateş, ishal, hiperrefleksi ve klonus vardır. Haloperidol ağırlıklı yaklaşım altta yatan toksidromu hedeflemez ve hipertermi/rijidite ayırıcı tanısını zorlaştırabilir.",
-                "Dantrolen verip malign hipertermi protokolüyle izlemek": "Dantrolen malign hipertermi veya bazı ağır hipermetabolik kas sendromlarında düşünülür. Bu olguda anestezik maruziyet yoktur; ilaç etkileşimi sonrası klonus, hiperrefleksi ve gastrointestinal bulgular ön plandadır.",
-                "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum duygudurum düzenleyici olarak elektif bir tedavidir ve akut hipertermik toksidromda yeri yoktur. Bu hastanın ateş, taşikardi, klonus ve ajitasyonla acil izlem gerektiren tablosu ayaktan yönetilemez.",
-                "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedeflemek için kullanılabilir. Bu vakada antipsikotik maruziyet veya kurşun boru rijiditesi baskın değildir; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir."
-            },
-            "managementSteps": [],
-            "management": [],
-            "learningOutcome": "Serotonin toksisitesini NMS, primer psikoz ve diğer hipermetabolik tablolarla ayırıp akut tedavi önceliğini seçebilme.",
-            "coreKnowledge": "Serotonin toksisitesinde belirleyici bulgular hızlı başlangıç, otonomik hiperaktivite, gastrointestinal semptomlar, hiperrefleksi ve klonustur; tedavi serotonerjik ajanları kesmek, destek tedavisi vermek, benzodiazepin kullanmak ve gerekirse siproheptadin eklemektir."
+    "explanation": "SSRI kullanımı üzerine linezolid başlanmasını izleyen hızlı ajitasyon, terleme, ateş, sık dışkılama, hiperrefleksi ve spontan/indüklenebilir klonus serotonerjik toksisite paternini oluşturur. Tedavide nedensel serotonerjik ajanlar kesilir, destek tedavisi ve dıştan soğutma uygulanır, ajitasyon ile nöromüsküler hiperaktivite için benzodiazepin verilir; orta-ağır tabloda siproheptadin eklenebilir. Primer psikoz tedavisi, lityum başlama, bromokriptin veya dantroleni birincil seçenek yapma bu vaka paterninin ana mekanizmasını hedeflemez.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "SSRI + linezolid/triptan sonrası hızlı ajitasyon, ishal, hiperrefleksi ve klonus serotonin toksisitesidir; NMS daha yavaş başlar ve kurşun boru rijiditesi-dopamin blokajı baskındır."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "SSRI kullanımı üzerine linezolid başlanmasını izleyen hızlı ajitasyon, terleme, ateş, sık dışkılama, hiperrefleksi ve spontan/indüklenebilir klonus serotonerjik toksisite paternini oluşturur. Tedavide nedensel serotonerjik ajanlar kesilir, destek tedavisi ve dıştan soğutma uygulanır, ajitasyon ile nöromüsküler hiperaktivite için benzodiazepin verilir; orta-ağır tabloda siproheptadin eklenebilir. Primer psikoz tedavisi, lityum başlama, bromokriptin veya dantroleni birincil seçenek yapma bu vaka paterninin ana mekanizmasını hedeflemez.",
+      "whyCorrect": "Doğru yaklaşım nedensel ilaç etkileşimini keser ve hipertermi, ajitasyon ile nöromüsküler hiperaktivite döngüsünü güvenli şekilde kontrol eder. Klonus ve hiperrefleksi baskın olduğundan tablo primer psikoz veya dopamin blokajı sendromu gibi yönetilmemelidir.",
+      "rationale": "SSRI kullanımı üzerine linezolid başlanmasını izleyen hızlı ajitasyon, terleme, ateş, sık dışkılama, hiperrefleksi ve spontan/indüklenebilir klonus serotonerjik toksisite paternini oluşturur. Tedavide nedensel serotonerjik ajanlar kesilir, destek tedavisi ve dıştan soğutma uygulanır, ajitasyon ile nöromüsküler hiperaktivite için benzodiazepin verilir; orta-ağır tabloda siproheptadin eklenebilir. Primer psikoz tedavisi, lityum başlama, bromokriptin veya dantroleni birincil seçenek yapma bu vaka paterninin ana mekanizmasını hedeflemez.",
+      "correctOptionFeedback": "Bu seçenek olası nedensel ilaçları keser, destek tedavisiyle hipertermi ve otonom bulguları yönetir, benzodiazepinle ajitasyon-kas aktivitesini azaltır ve orta-ağır tabloda serotonin antagonizması için siproheptadini ekler.",
+      "keyClues": [
+        "SSRI kullanımı üzerine linezolid başlanması serotonerjik yükü artıran güçlü bir ilaç etkileşimi oluşturur.",
+        "Ajitasyon, terleme, taşikardi, ateş ve sık dışkılama mental-otonom toksidrom bileşenlerini destekler.",
+        "Spontan klonus ve hiperrefleksi serotonin toksisitesini nöroleptik malign sendromdan ayıran kritik nöromüsküler bulgulardır.",
+        "Yeni antipsikotik başlanmaması ve baskın kurşun boru rijiditesinin olmaması dopamin blokajı ilişkili sendrom olasılığını azaltır."
+      ],
+      "evidenceChain": [
+        {
+          "text": "SSRI kullanımı üzerine linezolid başlanması serotonerjik yükü artıran güçlü bir ilaç etkileşimi oluşturur.",
+          "weight": "high",
+          "source": "case"
         },
-        "whyCorrect": "Bu yaklaşım toksidromun nedenini ortadan kaldırır, ajitasyon-hipertermi döngüsünü azaltır ve serotonerjik fazlalığı hedefler. Klonus/hiperrefleksi baskın olduğu için primer psikoz veya dopamin blokajı sendromu gibi yönetmek uygun değildir.",
-        "evidenceChain": [
-            {
-                "text": "SSRI kullanımı üzerine linezolid başlanması serotonerjik yükü artıran güçlü bir ilaç etkileşimi oluşturur.",
-                "weight": "high",
-                "source": "case"
-            },
-            {
-                "text": "Ajitasyon, terleme, taşikardi, hipertansif eğilim, ateş ve ishal mental/otonomik toksidrom bileşenlerini destekler.",
-                "weight": "high",
-                "source": "case"
-            },
-            {
-                "text": "Spontan klonus ve hiperrefleksi serotonin toksisitesini nöroleptik malign sendromdan ayıran kritik nöromüsküler bulgulardır.",
-                "weight": "high",
-                "source": "case"
-            },
-            {
-                "text": "Antipsikotik maruziyet veya kurşun boru rijiditesinin olmaması NMS olasılığını geri plana iter.",
-                "weight": "medium",
-                "source": "case"
-            }
-        ],
-        "optionComparison": {
-            "Antipsikotik dozunu artırıp ajitasyonu tek başına baskılamak": "Antipsikotik primer psikotik ajitasyonda seçilmiş durumlarda kullanılabilir. Bu olguda ajitasyon ilaç etkileşimine bağlı toksidromun parçasıdır; antipsikotik artırmak hipertermi ve ayırıcı tanı karmaşasını kötüleştirebilir.",
-            "Asetilkolinesteraz inhibitörü vererek otonom bulguları azaltmak": "Asetilkolinesteraz inhibitörleri myastenia gravis veya belirli antikolinerjik toksisite bağlamlarında düşünülür. Bu hastada güçsüzlük değil hiperrefleksi ve klonus vardır; kolinerjik artırma doğru hedef değildir.",
-            "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum bipolar bozuklukta duygudurum düzenleyici olarak kullanılır. Akut hipertermik toksidromda lityum başlamak tedaviyi geciktirir, toksisite riskini artırabilir ve ayaktan izlem güvenli değildir.",
-            "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedefler. Bu hastada antipsikotik maruziyet yoktur; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir.",
-            "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek": "Bu seçenek hem nedeni ortadan kaldırır hem de ajitasyon, hipertermi ve nöromüsküler hiperaktiviteyi güvenli biçimde hedefler. Orta-ağır tabloda siproheptadin serotonin antagonizması için eklenebilir."
+        {
+          "text": "Ajitasyon, terleme, taşikardi, ateş ve sık dışkılama mental-otonom toksidrom bileşenlerini destekler.",
+          "weight": "high",
+          "source": "case"
         },
-        "coreKnowledge": "Serotonin toksisitesinde belirleyici bulgular hızlı başlangıç, otonomik hiperaktivite, gastrointestinal semptomlar, hiperrefleksi ve klonustur; tedavi serotonerjik ajanları kesmek ve destekleyici/sedatif-antagonist yaklaşımı uygulamaktır.",
-        "examPearl": "SSRI + linezolid/triptan sonrası hızlı ajitasyon, ishal, hiperrefleksi ve klonus serotonin toksisitesidir; NMS daha yavaş başlar ve kurşun boru rijiditesi-dopamin blokajı baskındır.",
-        "whyWrong": {
-            "Antipsikotik dozunu artırıp ajitasyonu tek başına baskılamak": "Antipsikotik primer psikotik ajitasyonda seçilmiş durumlarda kullanılabilir. Bu olguda ajitasyon ilaç etkileşimine bağlı toksidromun parçasıdır; antipsikotik artırmak hipertermi ve ayırıcı tanı karmaşasını kötüleştirebilir.",
-            "Asetilkolinesteraz inhibitörü vererek otonom bulguları azaltmak": "Asetilkolinesteraz inhibitörleri myastenia gravis veya belirli antikolinerjik toksisite bağlamlarında düşünülür. Bu hastada güçsüzlük değil hiperrefleksi ve klonus vardır; kolinerjik artırma doğru hedef değildir.",
-            "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum bipolar bozuklukta duygudurum düzenleyici olarak kullanılır. Akut hipertermik toksidromda lityum başlamak tedaviyi geciktirir, toksisite riskini artırabilir ve ayaktan izlem güvenli değildir.",
-            "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedefler. Bu hastada antipsikotik maruziyet yoktur; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir."
+        {
+          "text": "Spontan klonus ve hiperrefleksi serotonin toksisitesini nöroleptik malign sendromdan ayıran kritik nöromüsküler bulgulardır.",
+          "weight": "high",
+          "source": "case"
         },
-        "optionFeedback": {
-            "Antipsikotik dozunu artırıp ajitasyonu tek başına baskılamak": "Antipsikotik primer psikotik ajitasyonda seçilmiş durumlarda kullanılabilir. Bu olguda ajitasyon ilaç etkileşimine bağlı toksidromun parçasıdır; antipsikotik artırmak hipertermi ve ayırıcı tanı karmaşasını kötüleştirebilir.",
-            "Asetilkolinesteraz inhibitörü vererek otonom bulguları azaltmak": "Asetilkolinesteraz inhibitörleri myastenia gravis veya belirli antikolinerjik toksisite bağlamlarında düşünülür. Bu hastada güçsüzlük değil hiperrefleksi ve klonus vardır; kolinerjik artırma doğru hedef değildir.",
-            "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum bipolar bozuklukta duygudurum düzenleyici olarak kullanılır. Akut hipertermik toksidromda lityum başlamak tedaviyi geciktirir, toksisite riskini artırabilir ve ayaktan izlem güvenli değildir.",
-            "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedefler. Bu hastada antipsikotik maruziyet yoktur; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir.",
-            "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek": "Bu seçenek hem nedeni ortadan kaldırır hem de ajitasyon, hipertermi ve nöromüsküler hiperaktiviteyi güvenli biçimde hedefler. Orta-ağır tabloda siproheptadin serotonin antagonizması için eklenebilir."
+        {
+          "text": "Yeni antipsikotik başlanmaması ve baskın kurşun boru rijiditesinin olmaması dopamin blokajı ilişkili sendrom olasılığını azaltır.",
+          "weight": "medium",
+          "source": "case"
         }
-    },
-    "shuffleOptions": false,
-    "difficultyTag": "Zor",
-    "coreKnowledge": "Serotonin toksisitesinde belirleyici bulgular hızlı başlangıç, otonomik hiperaktivite, gastrointestinal semptomlar, hiperrefleksi ve klonustur; tedavi serotonerjik ajanları kesmek, destek tedavisi vermek, benzodiazepin kullanmak ve gerekirse siproheptadin eklemektir.",
-    "examPearl": "SSRI + linezolid/triptan sonrası hızlı ajitasyon, ishal, hiperrefleksi ve klonus serotonin toksisitesidir; NMS daha yavaş başlar ve kurşun boru rijiditesi-dopamin blokajı baskındır.",
-    "whyCorrect": "Doğru yaklaşım hem nedeni ortadan kaldırır hem de hipertermi, ajitasyon ve nöromüsküler hiperaktivite döngüsünü güvenli biçimde kontrol eder. Klonus ve hiperrefleksi baskın olduğu için tablo primer psikoz veya dopamin blokajı sendromu gibi yönetilmemelidir.",
-    "optionComparison": {
+      ],
+      "examPearl": "SSRI + linezolid/triptan sonrası hızlı ajitasyon, ishal, hiperrefleksi ve klonus serotonin toksisitesidir; NMS daha yavaş başlar ve kurşun boru rijiditesi-dopamin blokajı baskındır.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "SSRI + linezolid/triptan sonrası hızlı ajitasyon, ishal, hiperrefleksi ve klonus serotonin toksisitesidir; NMS daha yavaş başlar ve kurşun boru rijiditesi-dopamin blokajı baskındır."
+        }
+      ],
+      "clinicalPearls": [
+        {
+          "label": "Klinik ayrım",
+          "text": "Serotonin toksisitesi nöromüsküler hiperaktiviteyle; NMS ise daha çok bradikinezi, kurşun boru rijiditesi ve dopamin blokajı öyküsüyle ayrılır."
+        }
+      ],
+      "optionComparison": {
+        "Ajitasyonu primer psikotik atak kabul edip haloperidol ağırlıklı sedasyon başlamak": "Ajitasyon tek başına primer psikozu düşündürebilir; ancak yakın ilaç etkileşimi, ateş, ishal, hiperrefleksi ve klonus toksidromu öne çıkarır. Haloperidol ağırlıklı yaklaşım serotonerjik yükü ortadan kaldırmaz ve ayırıcı tanıyı zorlaştırabilir.",
+        "Dantrolen verip malign hipertermi protokolüyle izlemek": "Dantrolen malign hipertermi veya bazı ağır hipermetabolik kas sendromlarında gündeme gelir. Bu olguda anestezik maruziyet yoktur; ilaç etkileşimi sonrası klonus, hiperrefleksi ve gastrointestinal bulgular daha ayırt ettiricidir.",
+        "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum elektif duygudurum düzenleyici tedavidir ve akut hipertermik toksidromda yeri yoktur. Ateş, taşikardi, klonus ve ajitasyonla gelen bu hasta ayaktan izlem için güvenli değildir.",
+        "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedeflemek için kullanılabilir. Bu vakada antipsikotik maruziyet/doz artışı ve kurşun boru rijiditesi baskın değildir; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir.",
+        "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek": "Bu seçenek olası nedensel ilaçları keser, destek tedavisiyle hipertermi ve otonom bulguları yönetir, benzodiazepinle ajitasyon-kas aktivitesini azaltır ve orta-ağır tabloda serotonin antagonizması için siproheptadini ekler."
+      },
+      "optionFeedback": {
         "Ajitasyonu primer psikotik atak kabul edip haloperidol ağırlıklı sedasyon başlamak": "Ajitasyon tek başına primer psikoz gibi görünse de bu hastada yakın ilaç etkileşimi, ateş, ishal, hiperrefleksi ve klonus vardır. Haloperidol ağırlıklı yaklaşım altta yatan toksidromu hedeflemez ve hipertermi/rijidite ayırıcı tanısını zorlaştırabilir.",
         "Dantrolen verip malign hipertermi protokolüyle izlemek": "Dantrolen malign hipertermi veya bazı ağır hipermetabolik kas sendromlarında düşünülür. Bu olguda anestezik maruziyet yoktur; ilaç etkileşimi sonrası klonus, hiperrefleksi ve gastrointestinal bulgular ön plandadır.",
         "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum duygudurum düzenleyici olarak elektif bir tedavidir ve akut hipertermik toksidromda yeri yoktur. Bu hastanın ateş, taşikardi, klonus ve ajitasyonla acil izlem gerektiren tablosu ayaktan yönetilemez.",
         "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedeflemek için kullanılabilir. Bu vakada antipsikotik maruziyet veya kurşun boru rijiditesi baskın değildir; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir.",
         "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek": "Bu seçenek olası nedensel ilaçları keser, ajitasyon ve kas aktivitesini benzodiazepinle azaltır, destek tedavisiyle hipertermi/otonom bulguları yönetir ve orta-ağır tabloda serotonin antagonizması için siproheptadini ekler."
-    },
-    "evidenceChain": [
-        {
-            "text": "SSRI kullanımı üzerine linezolid başlanması serotonerjik yükü artıran güçlü bir ilaç etkileşimi oluşturur.",
-            "weight": "high",
-            "source": "case"
-        },
-        {
-            "text": "Ajitasyon, terleme, taşikardi, hipertansif eğilim, ateş ve ishal mental/otonomik toksidrom bileşenlerini destekler.",
-            "weight": "high",
-            "source": "case"
-        },
-        {
-            "text": "Spontan klonus ve hiperrefleksi serotonin toksisitesini nöroleptik malign sendromdan ayıran kritik nöromüsküler bulgulardır.",
-            "weight": "high",
-            "source": "case"
-        },
-        {
-            "text": "Antipsikotik maruziyet veya baskın kurşun boru rijiditesinin olmaması dopamin blokajı ilişkili sendrom olasılığını azaltır.",
-            "weight": "medium",
-            "source": "case"
-        }
-    ],
-    "whyWrong": {
+      },
+      "whyWrong": {
         "Ajitasyonu primer psikotik atak kabul edip haloperidol ağırlıklı sedasyon başlamak": "Ajitasyon tek başına primer psikoz gibi görünse de bu hastada yakın ilaç etkileşimi, ateş, ishal, hiperrefleksi ve klonus vardır. Haloperidol ağırlıklı yaklaşım altta yatan toksidromu hedeflemez ve hipertermi/rijidite ayırıcı tanısını zorlaştırabilir.",
         "Dantrolen verip malign hipertermi protokolüyle izlemek": "Dantrolen malign hipertermi veya bazı ağır hipermetabolik kas sendromlarında düşünülür. Bu olguda anestezik maruziyet yoktur; ilaç etkileşimi sonrası klonus, hiperrefleksi ve gastrointestinal bulgular ön plandadır.",
         "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum duygudurum düzenleyici olarak elektif bir tedavidir ve akut hipertermik toksidromda yeri yoktur. Bu hastanın ateş, taşikardi, klonus ve ajitasyonla acil izlem gerektiren tablosu ayaktan yönetilemez.",
         "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedeflemek için kullanılabilir. Bu vakada antipsikotik maruziyet veya kurşun boru rijiditesi baskın değildir; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Serotonin toksisitesini NMS, primer psikoz ve diğer hipermetabolik tablolarla ayırıp akut tedavi önceliğini seçebilme.",
+      "coreKnowledge": "Serotonin toksisitesinde belirleyici bulgular hızlı başlangıç, otonomik hiperaktivite, gastrointestinal semptomlar, hiperrefleksi ve klonustur; tedavi serotonerjik ajanları kesmek, destek tedavisi vermek, benzodiazepin kullanmak ve gerekirse siproheptadin eklemektir."
     },
-    "editorialMeta": {
-        "smallClerkshipsUltraRefined": true,
-        "smallClerkshipsSubspecialty": "Psikiyatri / toksikoloji - serotonin toksisitesi",
-        "lastRefinedAt": "2026-05-31"
+    "whyCorrect": "Bu yaklaşım toksidromun nedenini ortadan kaldırır, ajitasyon-hipertermi döngüsünü azaltır ve serotonerjik fazlalığı hedefler. Klonus/hiperrefleksi baskın olduğu için primer psikoz veya dopamin blokajı sendromu gibi yönetmek uygun değildir.",
+    "evidenceChain": [
+      {
+        "text": "SSRI kullanımı üzerine linezolid başlanması serotonerjik yükü artıran güçlü bir ilaç etkileşimi oluşturur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Ajitasyon, terleme, taşikardi, hipertansif eğilim, ateş ve ishal mental/otonomik toksidrom bileşenlerini destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Spontan klonus ve hiperrefleksi serotonin toksisitesini nöroleptik malign sendromdan ayıran kritik nöromüsküler bulgulardır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "text": "Antipsikotik maruziyet veya kurşun boru rijiditesinin olmaması NMS olasılığını geri plana iter.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Antipsikotik dozunu artırıp ajitasyonu tek başına baskılamak": "Antipsikotik primer psikotik ajitasyonda seçilmiş durumlarda kullanılabilir. Bu olguda ajitasyon ilaç etkileşimine bağlı toksidromun parçasıdır; antipsikotik artırmak hipertermi ve ayırıcı tanı karmaşasını kötüleştirebilir.",
+      "Asetilkolinesteraz inhibitörü vererek otonom bulguları azaltmak": "Asetilkolinesteraz inhibitörleri myastenia gravis veya belirli antikolinerjik toksisite bağlamlarında düşünülür. Bu hastada güçsüzlük değil hiperrefleksi ve klonus vardır; kolinerjik artırma doğru hedef değildir.",
+      "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum bipolar bozuklukta duygudurum düzenleyici olarak kullanılır. Akut hipertermik toksidromda lityum başlamak tedaviyi geciktirir, toksisite riskini artırabilir ve ayaktan izlem güvenli değildir.",
+      "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedefler. Bu hastada antipsikotik maruziyet yoktur; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir.",
+      "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek": "Bu seçenek hem nedeni ortadan kaldırır hem de ajitasyon, hipertermi ve nöromüsküler hiperaktiviteyi güvenli biçimde hedefler. Orta-ağır tabloda siproheptadin serotonin antagonizması için eklenebilir."
     },
-    "preserveInvestigationOrder": true,
-    "smallClerkshipsInvestigationLayerEnhanced": true,
-    "smallClerkshipsInvestigationLayerVersion": "v398-small-clerkships-investigation-layer",
-    "smallClerkshipsSubspecialty": "Psikiyatri / toksikoloji - serotonin toksisitesi",
-    "investigationLayerMeta": {
-        "enhancedAt": "2026-05-31",
-        "editor": "small-clerkships-first5-quality-pass",
-        "scope": "Only branchId === minor-rotations general clinical cases",
-        "subspecialty": "Psikiyatri / toksikoloji - serotonin toksisitesi",
-        "objective": "Multidisipliner küçük staj gerçekçiliği, acil öncelik, organ/fonksiyon koruma, basitten komplekse tetkik akışı, tetkik değer etiketi ve girişim geciktirmeme güvenlik kapısı",
-        "note": "Serotonin toksisitesi vakasında akış ilaç etkileşimi ve nöromüsküler toksidrom → hipertermi/otonom güvenlik → CK-elektrolit/renal izlem → EKG-sedasyon güvenliği olarak düzenlendi."
+    "coreKnowledge": "Serotonin toksisitesinde belirleyici bulgular hızlı başlangıç, otonomik hiperaktivite, gastrointestinal semptomlar, hiperrefleksi ve klonustur; tedavi serotonerjik ajanları kesmek ve destekleyici/sedatif-antagonist yaklaşımı uygulamaktır.",
+    "examPearl": "SSRI + linezolid/triptan sonrası hızlı ajitasyon, ishal, hiperrefleksi ve klonus serotonin toksisitesidir; NMS daha yavaş başlar ve kurşun boru rijiditesi-dopamin blokajı baskındır.",
+    "whyWrong": {
+      "Antipsikotik dozunu artırıp ajitasyonu tek başına baskılamak": "Antipsikotik primer psikotik ajitasyonda seçilmiş durumlarda kullanılabilir. Bu olguda ajitasyon ilaç etkileşimine bağlı toksidromun parçasıdır; antipsikotik artırmak hipertermi ve ayırıcı tanı karmaşasını kötüleştirebilir.",
+      "Asetilkolinesteraz inhibitörü vererek otonom bulguları azaltmak": "Asetilkolinesteraz inhibitörleri myastenia gravis veya belirli antikolinerjik toksisite bağlamlarında düşünülür. Bu hastada güçsüzlük değil hiperrefleksi ve klonus vardır; kolinerjik artırma doğru hedef değildir.",
+      "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum bipolar bozuklukta duygudurum düzenleyici olarak kullanılır. Akut hipertermik toksidromda lityum başlamak tedaviyi geciktirir, toksisite riskini artırabilir ve ayaktan izlem güvenli değildir.",
+      "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedefler. Bu hastada antipsikotik maruziyet yoktur; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir."
     },
     "optionFeedback": {
-        "Ajitasyonu primer psikotik atak kabul edip haloperidol ağırlıklı sedasyon başlamak": "Ajitasyon tek başına primer psikoz gibi görünse de bu hastada yakın ilaç etkileşimi, ateş, ishal, hiperrefleksi ve klonus vardır. Haloperidol ağırlıklı yaklaşım altta yatan toksidromu hedeflemez ve hipertermi/rijidite ayırıcı tanısını zorlaştırabilir.",
-        "Dantrolen verip malign hipertermi protokolüyle izlemek": "Dantrolen malign hipertermi veya bazı ağır hipermetabolik kas sendromlarında düşünülür. Bu olguda anestezik maruziyet yoktur; ilaç etkileşimi sonrası klonus, hiperrefleksi ve gastrointestinal bulgular ön plandadır.",
-        "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum duygudurum düzenleyici olarak elektif bir tedavidir ve akut hipertermik toksidromda yeri yoktur. Bu hastanın ateş, taşikardi, klonus ve ajitasyonla acil izlem gerektiren tablosu ayaktan yönetilemez.",
-        "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedeflemek için kullanılabilir. Bu vakada antipsikotik maruziyet veya kurşun boru rijiditesi baskın değildir; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir.",
-        "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek": "Bu seçenek olası nedensel ilaçları keser, ajitasyon ve kas aktivitesini benzodiazepinle azaltır, destek tedavisiyle hipertermi/otonom bulguları yönetir ve orta-ağır tabloda serotonin antagonizması için siproheptadini ekler."
+      "Antipsikotik dozunu artırıp ajitasyonu tek başına baskılamak": "Antipsikotik primer psikotik ajitasyonda seçilmiş durumlarda kullanılabilir. Bu olguda ajitasyon ilaç etkileşimine bağlı toksidromun parçasıdır; antipsikotik artırmak hipertermi ve ayırıcı tanı karmaşasını kötüleştirebilir.",
+      "Asetilkolinesteraz inhibitörü vererek otonom bulguları azaltmak": "Asetilkolinesteraz inhibitörleri myastenia gravis veya belirli antikolinerjik toksisite bağlamlarında düşünülür. Bu hastada güçsüzlük değil hiperrefleksi ve klonus vardır; kolinerjik artırma doğru hedef değildir.",
+      "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum bipolar bozuklukta duygudurum düzenleyici olarak kullanılır. Akut hipertermik toksidromda lityum başlamak tedaviyi geciktirir, toksisite riskini artırabilir ve ayaktan izlem güvenli değildir.",
+      "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedefler. Bu hastada antipsikotik maruziyet yoktur; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir.",
+      "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek": "Bu seçenek hem nedeni ortadan kaldırır hem de ajitasyon, hipertermi ve nöromüsküler hiperaktiviteyi güvenli biçimde hedefler. Orta-ağır tabloda siproheptadin serotonin antagonizması için eklenebilir."
     }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Zor",
+  "coreKnowledge": "Serotonin toksisitesinde belirleyici bulgular hızlı başlangıç, otonomik hiperaktivite, gastrointestinal semptomlar, hiperrefleksi ve klonustur; tedavi serotonerjik ajanları kesmek, destek tedavisi vermek, benzodiazepin kullanmak ve gerekirse siproheptadin eklemektir.",
+  "examPearl": "SSRI + linezolid/triptan sonrası hızlı ajitasyon, ishal, hiperrefleksi ve klonus serotonin toksisitesidir; NMS daha yavaş başlar ve kurşun boru rijiditesi-dopamin blokajı baskındır.",
+  "whyCorrect": "Doğru yaklaşım nedensel ilaç etkileşimini keser ve hipertermi, ajitasyon ile nöromüsküler hiperaktivite döngüsünü güvenli şekilde kontrol eder. Klonus ve hiperrefleksi baskın olduğundan tablo primer psikoz veya dopamin blokajı sendromu gibi yönetilmemelidir.",
+  "optionComparison": {
+    "Ajitasyonu primer psikotik atak kabul edip haloperidol ağırlıklı sedasyon başlamak": "Ajitasyon tek başına primer psikozu düşündürebilir; ancak yakın ilaç etkileşimi, ateş, ishal, hiperrefleksi ve klonus toksidromu öne çıkarır. Haloperidol ağırlıklı yaklaşım serotonerjik yükü ortadan kaldırmaz ve ayırıcı tanıyı zorlaştırabilir.",
+    "Dantrolen verip malign hipertermi protokolüyle izlemek": "Dantrolen malign hipertermi veya bazı ağır hipermetabolik kas sendromlarında gündeme gelir. Bu olguda anestezik maruziyet yoktur; ilaç etkileşimi sonrası klonus, hiperrefleksi ve gastrointestinal bulgular daha ayırt ettiricidir.",
+    "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum elektif duygudurum düzenleyici tedavidir ve akut hipertermik toksidromda yeri yoktur. Ateş, taşikardi, klonus ve ajitasyonla gelen bu hasta ayaktan izlem için güvenli değildir.",
+    "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedeflemek için kullanılabilir. Bu vakada antipsikotik maruziyet/doz artışı ve kurşun boru rijiditesi baskın değildir; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir.",
+    "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek": "Bu seçenek olası nedensel ilaçları keser, destek tedavisiyle hipertermi ve otonom bulguları yönetir, benzodiazepinle ajitasyon-kas aktivitesini azaltır ve orta-ağır tabloda serotonin antagonizması için siproheptadini ekler."
+  },
+  "evidenceChain": [
+    {
+      "text": "SSRI kullanımı üzerine linezolid başlanması serotonerjik yükü artıran güçlü bir ilaç etkileşimi oluşturur.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Ajitasyon, terleme, taşikardi, ateş ve sık dışkılama mental-otonom toksidrom bileşenlerini destekler.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Spontan klonus ve hiperrefleksi serotonin toksisitesini nöroleptik malign sendromdan ayıran kritik nöromüsküler bulgulardır.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "text": "Yeni antipsikotik başlanmaması ve baskın kurşun boru rijiditesinin olmaması dopamin blokajı ilişkili sendrom olasılığını azaltır.",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Ajitasyonu primer psikotik atak kabul edip haloperidol ağırlıklı sedasyon başlamak": "Ajitasyon tek başına primer psikozu düşündürebilir; ancak yakın ilaç etkileşimi, ateş, ishal, hiperrefleksi ve klonus toksidromu öne çıkarır. Haloperidol ağırlıklı yaklaşım serotonerjik yükü ortadan kaldırmaz ve ayırıcı tanıyı zorlaştırabilir.",
+    "Dantrolen verip malign hipertermi protokolüyle izlemek": "Dantrolen malign hipertermi veya bazı ağır hipermetabolik kas sendromlarında gündeme gelir. Bu olguda anestezik maruziyet yoktur; ilaç etkileşimi sonrası klonus, hiperrefleksi ve gastrointestinal bulgular daha ayırt ettiricidir.",
+    "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum elektif duygudurum düzenleyici tedavidir ve akut hipertermik toksidromda yeri yoktur. Ateş, taşikardi, klonus ve ajitasyonla gelen bu hasta ayaktan izlem için güvenli değildir.",
+    "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedeflemek için kullanılabilir. Bu vakada antipsikotik maruziyet/doz artışı ve kurşun boru rijiditesi baskın değildir; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir."
+  },
+  "editorialMeta": {
+    "smallClerkshipsUltraRefined": true,
+    "smallClerkshipsSubspecialty": "Psikiyatri / toksikoloji - serotonin toksisitesi",
+    "lastRefinedAt": "2026-05-31"
+  },
+  "preserveInvestigationOrder": true,
+  "smallClerkshipsInvestigationLayerEnhanced": true,
+  "smallClerkshipsInvestigationLayerVersion": "v398-small-clerkships-investigation-layer",
+  "smallClerkshipsSubspecialty": "Psikiyatri / toksikoloji - serotonin toksisitesi",
+  "investigationLayerMeta": {
+    "enhancedAt": "2026-05-31",
+    "editor": "small-clerkships-first5-quality-pass",
+    "scope": "Only branchId === minor-rotations general clinical cases",
+    "subspecialty": "Psikiyatri / toksikoloji - serotonin toksisitesi",
+    "objective": "Multidisipliner küçük staj gerçekçiliği, acil öncelik, organ/fonksiyon koruma, basitten komplekse tetkik akışı, tetkik değer etiketi ve girişim geciktirmeme güvenlik kapısı",
+    "note": "Serotonin toksisitesi vakasında akış ilaç etkileşimi ve nöromüsküler toksidrom → hipertermi/otonom güvenlik → CK-elektrolit/renal izlem → EKG-sedasyon güvenliği olarak düzenlendi."
+  },
+  "optionFeedback": {
+    "Ajitasyonu primer psikotik atak kabul edip haloperidol ağırlıklı sedasyon başlamak": "Ajitasyon tek başına primer psikozu düşündürebilir; ancak yakın ilaç etkileşimi, ateş, ishal, hiperrefleksi ve klonus toksidromu öne çıkarır. Haloperidol ağırlıklı yaklaşım serotonerjik yükü ortadan kaldırmaz ve ayırıcı tanıyı zorlaştırabilir.",
+    "Dantrolen verip malign hipertermi protokolüyle izlemek": "Dantrolen malign hipertermi veya bazı ağır hipermetabolik kas sendromlarında gündeme gelir. Bu olguda anestezik maruziyet yoktur; ilaç etkileşimi sonrası klonus, hiperrefleksi ve gastrointestinal bulgular daha ayırt ettiricidir.",
+    "Lityum tedavisi başlamak ve ayaktan yakın izlem önermek": "Lityum elektif duygudurum düzenleyici tedavidir ve akut hipertermik toksidromda yeri yoktur. Ateş, taşikardi, klonus ve ajitasyonla gelen bu hasta ayaktan izlem için güvenli değildir.",
+    "Bromokriptin öncelikli dopamin agonisti tedaviye başlamak": "Bromokriptin nöroleptik malign sendromda dopamin blokajını hedeflemek için kullanılabilir. Bu vakada antipsikotik maruziyet/doz artışı ve kurşun boru rijiditesi baskın değildir; hızlı başlangıç, ishal, hiperrefleksi ve klonus serotonerjik toksisite lehinedir.",
+    "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek": "Bu seçenek olası nedensel ilaçları keser, destek tedavisiyle hipertermi ve otonom bulguları yönetir, benzodiazepinle ajitasyon-kas aktivitesini azaltır ve orta-ağır tabloda serotonin antagonizması için siproheptadini ekler."
+  }
 },
   {
     "id": "v164-new-020-antibiyotik-sonrasi-ishal",
