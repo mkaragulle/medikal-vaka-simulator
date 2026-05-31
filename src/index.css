@@ -55056,7 +55056,7 @@ html[data-theme='dark'] .case-page-shell .summary-profile-copy small,
 .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-unified-card > .summary-unified-section:not(:last-child)::after {
   left: 46px !important;
   right: 4px !important;
-  background: #e6ebf0 !important;
+  background: #e4e9f0 !important;
   opacity: 1 !important;
 }
 
@@ -55071,9 +55071,9 @@ html[data-theme='dark'] .case-page-shell .summary-profile-copy small,
   min-width: 32px !important;
   min-height: 32px !important;
   border-radius: 10px !important;
-  color: #53657f !important;
-  background: #eef2f6 !important;
-  border: 1px solid #d9e1e8 !important;
+  color: #3f5375 !important;
+  background: #edf1f7 !important;
+  border: 1px solid #d7dee8 !important;
   box-shadow: none !important;
 }
 
@@ -55090,7 +55090,7 @@ html[data-theme='dark'] .case-page-shell .summary-profile-copy small,
 .case-page-shell .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
 .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-label,
 .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span {
-  color: #53657f !important;
+  color: #3f5375 !important;
   font-size: 11.5px !important;
   line-height: 1.15 !important;
   font-weight: 700 !important;
@@ -55132,9 +55132,9 @@ html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.premium-
 .app-shell[data-theme='dark'] .case-page-shell .patient-summary-card.premium-reference-summary-card .summary-wide-icon,
 .app-shell[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-icon,
 .app-shell[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-wide-icon {
-  color: #a6b5cb !important;
-  background: rgba(75, 93, 115, 0.18) !important;
-  border-color: rgba(154, 171, 194, 0.24) !important;
+  color: #afbdd4 !important;
+  background: rgba(63, 83, 117, 0.20) !important;
+  border-color: rgba(175, 189, 212, 0.26) !important;
 }
 
 html[data-theme='dark'] .case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-label,
@@ -55145,7 +55145,7 @@ html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.premium-
 .app-shell[data-theme='dark'] .case-page-shell .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
 .app-shell[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-label,
 .app-shell[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span {
-  color: #a6b5cb !important;
+  color: #afbdd4 !important;
 }
 
 @media (max-width: 720px) {
