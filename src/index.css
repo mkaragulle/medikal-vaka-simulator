@@ -54700,3 +54700,45 @@ body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser .horizontal-
   opacity: 0 !important;
   background: transparent !important;
 }
+
+
+/* ===== KlinikIQ Tetkik/Veri single-line order row cleanup ===== */
+.smart-investigation-order-section .smart-order-card.requested-test-card-head.investigation-option-card,
+.smart-investigation-order-section .neutral-order-card.requested-test-card-head.investigation-option-card {
+  min-height: 58px !important;
+  padding: 11px 14px !important;
+  align-items: center !important;
+}
+
+.smart-investigation-order-section .requested-test-copy,
+.smart-investigation-order-section .smart-order-copy {
+  display: flex !important;
+  align-items: center !important;
+  min-width: 0 !important;
+  gap: 0 !important;
+}
+
+.smart-investigation-order-section .requested-test-copy strong,
+.smart-investigation-order-section .smart-order-copy strong {
+  line-height: 1.28 !important;
+}
+
+.smart-investigation-order-section .order-card-subline,
+.smart-investigation-order-section .neutral-order-subline {
+  display: none !important;
+}
+
+.smart-investigation-order-section .requested-test-actions,
+.smart-investigation-order-section .smart-order-actions {
+  align-items: center !important;
+  justify-content: flex-end !important;
+}
+
+@media (max-width: 560px) {
+  .smart-investigation-order-section .smart-order-card.requested-test-card-head.investigation-option-card,
+  .smart-investigation-order-section .neutral-order-card.requested-test-card-head.investigation-option-card {
+    grid-template-columns: 34px minmax(0, 1fr) auto !important;
+    gap: 8px !important;
+    padding: 10px 11px !important;
+  }
+}

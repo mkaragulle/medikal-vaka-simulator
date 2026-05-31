@@ -7,7 +7,6 @@ import {
   buildInvestigationOrders,
   getOrderCategoryMeta,
   investigationIconByType,
-  typeLabels,
 } from '../utils/investigationOrders.js';
 
 const CATEGORY_ORDER = [
@@ -34,134 +33,6 @@ const CATEGORY_ORDER = [
   'other',
 ];
 
-
-const REDUNDANT_ORDER_SUBTITLE_LABELS = new Set([
-  'idrar tetkikleri',
-  'idrar tetkiki',
-  'idrar',
-  'idrar mikroskopisi',
-  'laboratuvar',
-  'kan örneği sonuçları',
-  'görüntüleme',
-  'direkt grafi',
-  'direkt/kontrastlı grafi',
-  'bt',
-  'mr',
-  'ultrasonografi',
-  'nükleer tıp görüntüleme',
-  'klinik değerlendirme',
-  'temel klinik değerlendirme',
-  'girişimsel klinik değerlendirme',
-  'klinik gözlem',
-  'hedefe yönelik muayene',
-  'lokal yara muayenesi',
-  'fizik muayene',
-  'mikrobiyoloji',
-  'patoloji',
-  'patoloji / histopatoloji',
-  'mikroskopi',
-  'kardiyak değerlendirme',
-  'ritim ve kardiyak incelemeler',
-  'ekg',
-  'ekokardiyografi',
-  'fonksiyonel testler',
-  'fonksiyonel solunum testi',
-  'solunum değerlendirmesi',
-  'nörolojik değerlendirme',
-  'objektif veri',
-  'tetkik',
-  'kan gazı',
-  'kan gazı ve asit-baz değerlendirmesi',
-  'kan gazı / metabolik ölçüm',
-  'osmolalite / elektrolit',
-  'renal klirens ölçümü',
-  'basınç ölçümü',
-  'ürodinami',
-  'kan bankası',
-  'kan hazırlığı',
-  'kültür',
-  'toksikoloji',
-  'endoskopik değerlendirme',
-  'gebelik / beta-hcg',
-  'bos / sıvı analizi',
-  'bos / vücut sıvısı analizi',
-  'fetal izlem',
-  'yatak başı testler',
-  'metabolik değerlendirme',
-  'ürogenital değerlendirme',
-  'serum biyokimyası',
-  'hematolojik parametreler',
-  'toraks görüntüleme bulguları',
-  'doku düzeyinde histopatolojik inceleme',
-  'örnek türüne göre mikrobiyolojik etken değerlendirmesi',
-  'fizyolojik kapasite, basınç ve izlem ölçümleri',
-  'yara derinliği, kontaminasyon ve enfeksiyon riski',
-  'tetkik sonucu',
-  'klinik veri özeti',
-]);
-
-const REDUNDANT_ORDER_SUBTITLE_PATTERNS = [
-  /^kan\s+gaz[ıi]\s*(?:ve|\/)\s*(?:asit[- ]?baz|metabolik ölçüm)/iu,
-  /^(?:osmolalite\s*\/\s*elektrolit|renal klirens ölçümü|basınç ölçümü|ürodinami)$/iu,
-  /^(?:serum biyokimyası|hematolojik parametreler|toraks görüntüleme bulguları)$/iu,
-  /^(?:doku düzeyinde histopatolojik inceleme|örnek türüne göre mikrobiyolojik etken değerlendirmesi)$/iu,
-  /^(?:fizyolojik kapasite, basınç ve izlem ölçümleri|yara derinliği, kontaminasyon ve enfeksiyon riski)$/iu,
-  /^(?:tetkik sonucu|klinik veri özeti|objektif veri)$/iu,
-];
-
-function normalizeOrderSubtitleText(value = '') {
-  return String(value || '')
-    .toLocaleLowerCase('tr')
-    .replace(/ı/g, 'i')
-    .replace(/İ/g, 'i')
-    .replace(/ğ/g, 'g')
-    .replace(/ü/g, 'u')
-    .replace(/ş/g, 's')
-    .replace(/ö/g, 'o')
-    .replace(/ç/g, 'c')
-    .replace(/â/g, 'a')
-    .replace(/î/g, 'i')
-    .replace(/û/g, 'u')
-    .replace(/[^a-z0-9]+/g, ' ')
-    .trim();
-}
-
-
-function shouldHideOrderSubtitle(item = {}, subtitle = '') {
-  const raw = String(subtitle || '').trim();
-  if (!raw) return true;
-
-  const normalizedSubtitle = normalizeOrderSubtitleText(raw);
-  const categoryMeta = getOrderCategoryMeta(item.testTypeCategory || item.category || 'other');
-  const comparisonValues = [
-    item.title,
-    item.label,
-    item.type,
-    item.category,
-    item.testTypeCategory,
-    typeLabels[item.type],
-    categoryMeta.label,
-    categoryMeta.description,
-  ]
-    .map(normalizeOrderSubtitleText)
-    .filter(Boolean);
-
-  if (comparisonValues.includes(normalizedSubtitle)) return true;
-  if (REDUNDANT_ORDER_SUBTITLE_LABELS.has(raw.toLocaleLowerCase('tr')) || REDUNDANT_ORDER_SUBTITLE_LABELS.has(normalizedSubtitle)) return true;
-  if (REDUNDANT_ORDER_SUBTITLE_PATTERNS.some((pattern) => pattern.test(raw))) return true;
-
-  const wordCount = raw.split(/\s+/).filter(Boolean).length;
-  const looksLikeShortTypeLabel = wordCount <= 3 && /(tetkik|test|panel|laboratuvar|görüntüleme|grafi|bt|mr|ekg|ultrasonografi|mikrobiyoloji|patoloji|klinik|muayene|değerlendirme|kültür|hcg|idrar|kan gazı|bankası|izlem)/iu.test(raw);
-  if (looksLikeShortTypeLabel) return true;
-
-  const overlapsCategory = wordCount <= 3 && comparisonValues.some((value) => value.includes(normalizedSubtitle) || normalizedSubtitle.includes(value));
-  return overlapsCategory;
-}
-
-function getOrderCardSubtitle(item = {}) {
-  const subtitle = item.subtype || typeLabels[item.type] || '';
-  return shouldHideOrderSubtitle(item, subtitle) ? '' : subtitle;
-}
 
 function getOrderValueTag(item = {}) {
   const raw = item.testValueLabel || item.educationalValue || item.clinicalPriorityLabel || '';
@@ -389,6 +260,73 @@ function evaluateSemanticStatus(row = {}) {
   return { tone: 'neutral', label: note || '—' };
 }
 
+function normalizeCellTextForDedup(value = '') {
+  return String(value || '')
+    .normalize('NFKC')
+    .replace(/[\u200B-\u200D\uFEFF]/g, '')
+    .toLocaleLowerCase('tr')
+    .replace(/ı/g, 'i')
+    .replace(/İ/g, 'i')
+    .replace(/ğ/g, 'g')
+    .replace(/ü/g, 'u')
+    .replace(/ş/g, 's')
+    .replace(/ö/g, 'o')
+    .replace(/ç/g, 'c')
+    .replace(/â/g, 'a')
+    .replace(/î/g, 'i')
+    .replace(/û/g, 'u')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function collapseRepeatedWholeCellText(value = '') {
+  const text = String(value || '').trim();
+  if (!text) return '';
+
+  const tokens = text.split(/\s+/).filter(Boolean);
+  if (tokens.length >= 2 && tokens.length % 2 === 0) {
+    const middle = tokens.length / 2;
+    const firstHalf = tokens.slice(0, middle).join(' ');
+    const secondHalf = tokens.slice(middle).join(' ');
+    if (normalizeCellTextForDedup(firstHalf) === normalizeCellTextForDedup(secondHalf)) {
+      return firstHalf;
+    }
+  }
+
+  return text;
+}
+
+function uniqueCellLines(value = '') {
+  const rawText = String(value || '');
+  const hasExplicitLines = /\r|\n/.test(rawText);
+  const sourceLines = hasExplicitLines
+    ? rawText.split(/\r?\n+/).map((line) => line.trim()).filter(Boolean)
+    : [rawText.trim()].filter(Boolean);
+  const seen = new Set();
+  const uniqueLines = [];
+
+  sourceLines.forEach((line) => {
+    const collapsed = collapseRepeatedWholeCellText(line);
+    const normalized = normalizeCellTextForDedup(collapsed);
+    if (!normalized || seen.has(normalized)) return;
+    seen.add(normalized);
+    uniqueLines.push(collapsed);
+  });
+
+  return uniqueLines.join('\n');
+}
+
+function sanitizeUniqueCellText(value = '') {
+  const uniqueText = uniqueCellLines(value);
+  return sanitizeMeasurementText(uniqueText || '');
+}
+
+function isDuplicateCellLine(primary = '', secondary = '') {
+  const normalizedPrimary = normalizeCellTextForDedup(primary);
+  const normalizedSecondary = normalizeCellTextForDedup(secondary);
+  return Boolean(normalizedPrimary && normalizedSecondary && normalizedPrimary === normalizedSecondary);
+}
+
 function normalizeResultRow(row) {
   const normalized = Array.isArray(row)
     ? { parameter: row[0], value: row[1], reference: row[2], note: row[3] }
@@ -398,13 +336,22 @@ function normalizeResultRow(row) {
       reference: row.reference,
       note: row.note || row.interpretation,
     };
-  const repaired = normalizeLabResultRow(normalized);
+  const repaired = normalizeLabResultRow({
+    ...normalized,
+    parameter: uniqueCellLines(normalized.parameter || ''),
+    value: uniqueCellLines(normalized.value || ''),
+    reference: uniqueCellLines(normalized.reference || ''),
+    note: uniqueCellLines(normalized.note || ''),
+  });
+
+  const value = sanitizeUniqueCellText(repaired.value || '');
+  const note = sanitizeUniqueCellText(repaired.note || '');
 
   return {
-    parameter: sanitizeMeasurementText(repaired.parameter || ''),
-    value: sanitizeMeasurementText(repaired.value || ''),
-    reference: sanitizeMeasurementText(repaired.reference || ''),
-    note: sanitizeMeasurementText(repaired.note || ''),
+    parameter: sanitizeUniqueCellText(repaired.parameter || ''),
+    value,
+    reference: sanitizeUniqueCellText(repaired.reference || ''),
+    note: isDuplicateCellLine(value, note) ? '' : note,
   };
 }
 
@@ -666,7 +613,7 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
           <tbody>
             {normalizedRows.map(({ parameter, value, reference, note }, index) => {
               const { tone } = evaluateSemanticStatus({ parameter, value, reference, note });
-              const secondary = note && !isGenericResultNote(note) ? note : '';
+              const secondary = note && !isGenericResultNote(note) && !isDuplicateCellLine(value, note) ? note : '';
               return (
                 <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
                   <td>
@@ -701,7 +648,7 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
           <tbody>
             {normalizedRows.map(({ parameter, value, reference, note }, index) => {
               const { tone } = evaluateSemanticStatus({ parameter, value, reference, note });
-              const secondary = note && !isGenericResultNote(note) ? note : '';
+              const secondary = note && !isGenericResultNote(note) && !isDuplicateCellLine(value, note) ? note : '';
               return (
                 <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
                   <td>
@@ -945,7 +892,6 @@ function InlineOrderResult({ item, mode, hardMode = false, glossaryRevealMode = 
 }
 
 function OrderCard({ item, selected, expanded, onToggle, mode, hardMode = false, glossaryRevealMode = 'preAnswer' }) {
-  const subtitle = getOrderCardSubtitle(item);
   const valueTag = getOrderValueTag(item);
   const scoreBadge = getOrderScoreBadge(item);
   return (
@@ -961,7 +907,6 @@ function OrderCard({ item, selected, expanded, onToggle, mode, hardMode = false,
         <IconBadge icon={investigationIconByType[item.type] || 'Search'} tone={selected ? 'success' : 'blue'} size="sm" />
         <span className="investigation-option-copy smart-order-copy requested-test-copy">
           <strong>{item.title || item.label}</strong>
-          {subtitle ? <span className="order-card-subline neutral-order-subline"><em>{subtitle}</em></span> : null}
         </span>
         <span className="smart-order-actions requested-test-actions">
           <span className={`investigation-option-state smart-order-state order-status-chip ${selected ? 'requested' : 'idle'}`}>
