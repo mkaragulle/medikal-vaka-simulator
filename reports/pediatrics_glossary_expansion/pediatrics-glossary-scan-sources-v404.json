@@ -1,0 +1,30 @@
+[
+  {
+    "sourceFilePath": "src/data/cases.js",
+    "sourceType": "clinicalCases",
+    "sourceArea": "Çocuk Sağlığı ve Hastalıkları",
+    "recordCount": 116,
+    "textFieldCount": 31974
+  },
+  {
+    "sourceFilePath": "src/data/tusPearlCards.js",
+    "sourceType": "tusPearlCards",
+    "sourceArea": "Çocuk Sağlığı ve Hastalıkları",
+    "recordCount": 63,
+    "textFieldCount": 819
+  },
+  {
+    "sourceFilePath": "src/data/tusPearlPediatricsFirst63Overrides.js",
+    "sourceType": "hapCardOverrides",
+    "sourceArea": "Çocuk Sağlığı ve Hastalıkları",
+    "recordCount": 63,
+    "textFieldCount": 630
+  },
+  {
+    "sourceFilePath": "src/data/tusPearlPediatricsSecond63Overrides.js",
+    "sourceType": "hapCardOverrides",
+    "sourceArea": "Çocuk Sağlığı ve Hastalıkları",
+    "recordCount": 63,
+    "textFieldCount": 630
+  }
+]

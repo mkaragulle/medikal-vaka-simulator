@@ -1,0 +1,1623 @@
+[
+  {
+    "term": "Yenidoğan sepsisi",
+    "aliases": [],
+    "subcategory": "Neonatoloji / Enfeksiyon",
+    "short": "Yenidoğanda hipotermi/ateş, beslenme bozulması, letarji ve perfüzyon bozukluğu ile seyredebilir ağır enfeksiyon tablosudur.",
+    "detail": "Yenidoğan bağışıklık yanıtı olgun olmadığı için enfeksiyon her zaman yüksek ateşle gelmeyebilir; hipotermi, emmeme, soluk-gri görünüm ve apne sepsis ipucu olabilir. Tedavi mantığı kültürleri aldıktan sonra ampirik antibiyotiği geciktirmemektir.",
+    "pearl": "Yenidoğanda kötü beslenme + hipotermi/letarji sepsis kabul edilip kültür + ampirik antibiyotik zinciriyle yönetilir.",
+    "diff": "Basit viral ÜSYE’de genel durum genellikle korunur; yenidoğan sepsisinde perfüzyon, bilinç ve beslenme hızla bozulabilir.",
+    "nested": [
+      "Kan kültürü",
+      "Ampirik antibiyotik",
+      "Hipotermi"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Geç başlangıçlı yenidoğan sepsisi",
+    "aliases": [
+      "geç neonatal sepsis"
+    ],
+    "subcategory": "Neonatoloji / Enfeksiyon",
+    "short": "Yaşamın 72. saatinden sonra gelişen yenidoğan sepsisidir.",
+    "detail": "Prematüre yoğun bakım hastalarında kateter, ventilasyon, cilt bariyeri bozukluğu ve hastane florası etken olabilir. Klinik karar yine ateşten çok genel durum, beslenme, solunum ve perfüzyon değişikliğiyle verilir.",
+    "pearl": "Prematüre + kateter/yoğun bakım + yeni kötüleşme geç neonatal sepsis düşündürür.",
+    "diff": "Erken sepsis maternal geçişle; geç sepsis çevresel/hastane ilişkili etkenlerle daha çok bağlantılıdır.",
+    "nested": [
+      "Yenidoğan sepsisi",
+      "Kateter ilişkili enfeksiyon",
+      "Prematürite"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "Yenidoğan hiperbilirubinemisi",
+    "aliases": [
+      "neonatal hiperbilirubinemi"
+    ],
+    "subcategory": "Neonatoloji / Sarılık",
+    "short": "Yenidoğanda serum bilirubin düzeyinin artmasıyla cilt ve skleralarda sararma gelişmesidir.",
+    "detail": "İndirekt bilirubin artışı fizyolojik olabilse de ilk 24 saatte sarılık, hızlı yükseliş, prematürite veya hemoliz risklidir. Pediatri sorusunda kritik ayrım fizyolojik sarılık ile fototerapi/kan değişimi gerektirebilecek patolojik sarılık arasındadır.",
+    "pearl": "İlk 24 saatte sarılık patolojik kabul edilir; hemoliz ve ciddi hiperbilirubinemi araştırılır.",
+    "diff": "Direkt bilirubin artışı kolestazı düşündürür; indirekt artışta hemoliz, fizyolojik sarılık ve anne sütü ilişkisi öne çıkar.",
+    "nested": [
+      "İndirekt hiperbilirubinemi",
+      "Fototerapi",
+      "Kernikterus"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "İndirekt hiperbilirubinemi",
+    "aliases": [],
+    "subcategory": "Neonatoloji / Bilirubin metabolizması",
+    "short": "Konjuge olmamış bilirubin düzeyinin yükselmesidir.",
+    "detail": "Lipid çözünürlüğü nedeniyle ağır düzeylerde kan-beyin bariyerini geçip kernikterus riski yaratabilir. Yenidoğanda hemoliz, fizyolojik olgunlaşmamış konjugasyon ve anne sütü sarılığı bu grupta düşünülür.",
+    "pearl": "İndirekt bilirubin yükselmesi kernikterus riski nedeniyle fototerapi eşikleriyle izlenir.",
+    "diff": "Direkt hiperbilirubinemi kolestaz ve hepatobiliyer hastalık uyarısıdır; indirekt form hemoliz/konjugasyon yetersizliğiyle ilişkilidir.",
+    "nested": [
+      "Kernikterus",
+      "Fototerapi",
+      "ABO hemolitik hastalık"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Direkt hiperbilirubinemi",
+    "aliases": [],
+    "subcategory": "Neonatoloji / Kolestaz",
+    "short": "Konjuge bilirubin artışıdır ve yenidoğanda kolestaz alarmı kabul edilir.",
+    "detail": "Direkt bilirubin artışı fizyolojik sarılık gibi izlenmez; biliyer atrezi, neonatal hepatit, enfeksiyon ve metabolik hastalıklar araştırılır. Akolik dışkı ve koyu idrar biliyer obstrüksiyon lehinedir.",
+    "pearl": "Uzamış sarılık + akolik dışkı/koyu idrar direkt bilirubin ve biliyer atrezi açısından alarmdır.",
+    "diff": "Anne sütü sarılığı indirekt bilirubin artışıyla gider; direkt bilirubin kolestatik hastalık düşündürür.",
+    "nested": [
+      "Biliyer atrezi",
+      "Akolik dışkı",
+      "Kasai portoenterostomi"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Fototerapi",
+    "aliases": [],
+    "subcategory": "Neonatoloji / Sarılık tedavisi",
+    "short": "İndirekt bilirubini suda çözünebilen izomerlere dönüştürerek atılımını artıran ışık tedavisidir.",
+    "detail": "Fototerapi bilirubin düzeyi, yaş saati ve risk faktörlerine göre başlanır. Asıl amaç bilirubinin nörotoksik düzeye çıkmasını önlemektir; direkt hiperbilirubinemide temel tedavi değildir.",
+    "pearl": "Yenidoğan sarılığında karar bilirubin değeri kadar postnatal saat ve risk faktörüne bağlıdır.",
+    "diff": "Kan değişimi daha ağır veya fototerapiye rağmen tehlikeli düzeylerde gündeme gelir.",
+    "nested": [
+      "İndirekt hiperbilirubinemi",
+      "Kernikterus",
+      "Kan değişimi"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Kan değişimi",
+    "aliases": [
+      "exchange transfüzyon",
+      "exchange transfusion"
+    ],
+    "subcategory": "Neonatoloji / Sarılık tedavisi",
+    "short": "Ağır yenidoğan hiperbilirubinemisinde bilirubin ve antikor yüklü kanın uzaklaştırılması için yapılan exchange transfüzyondur.",
+    "detail": "Fototerapiye rağmen tehlikeli düzeyde bilirubin, akut bilirubin ensefalopatisi bulgusu veya ağır hemolizde düşünülür. TUS mantığında bu, rutin sarılık tedavisi değil nörotoksisiteyi önleyen ileri basamaktır.",
+    "pearl": "Bilirubin ensefalopatisi bulgusu varsa fototerapi beklemek yerine kan değişimi düşünülür.",
+    "diff": "Fototerapi çoğu indirekt sarılıkta ilk basamaktır; kan değişimi ağır/dirençli olgular içindir.",
+    "nested": [
+      "Fototerapi",
+      "Kernikterus",
+      "ABO hemolitik hastalık"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "ABO hemolitik hastalık",
+    "aliases": [],
+    "subcategory": "Neonatoloji / Hemoliz",
+    "short": "Anne O, bebeğin A veya B olduğu durumlarda maternal anti-A/B antikorlarına bağlı yenidoğan hemolizidir.",
+    "detail": "Rh hastalığına göre daha sık ancak genellikle daha hafif olabilir; erken sarılık ve pozitif/negatif olabilen Coombs paterniyle sorulabilir. Hemoliz indirekt bilirubini artırarak fototerapi gereksinimini doğurur.",
+    "pearl": "Anne O + bebek A/B + erken sarılık ABO hemolitik hastalığı düşündürür.",
+    "diff": "Rh izoimmünizasyonu daha ağır anemi/hidrops riskiyle seyredebilir.",
+    "nested": [
+      "İlk 24 saatte sarılık",
+      "Direkt Coombs testi",
+      "İndirekt hiperbilirubinemi"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Rh izoimmünizasyonu",
+    "aliases": [],
+    "subcategory": "Neonatoloji / Hemolitik hastalık",
+    "short": "Rh negatif annenin Rh pozitif fetüse karşı anti-D antikoru geliştirmesiyle oluşan hemolitik hastalıktır.",
+    "detail": "Maternal IgG plasentayı geçerek fetal eritrosit yıkımı yapar; ağır olguda fetal anemi ve hidrops gelişebilir. Rh immün globulin profilaksisi korunmada temel noktadır.",
+    "pearl": "Rh uygunsuzluğunda sorun maternal anti-D IgG’nin fetal eritrositleri yıkmasıdır.",
+    "diff": "ABO hastalığı daha sık ve genellikle daha hafif; Rh hastalığı ağır fetal anemi yapabilir.",
+    "nested": [
+      "Hidrops fetalis",
+      "Direkt Coombs testi",
+      "Rh immün globulin"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "Anne sütü sarılığı",
+    "aliases": [],
+    "subcategory": "Neonatoloji / Uzamış indirekt sarılık",
+    "short": "İyi beslenen sağlıklı bebekte ikinci haftadan sonra uzayan indirekt hiperbilirubinemidir.",
+    "detail": "Bebek iyi görünümlü, kilo alımı yeterli ve direkt bilirubin normal ise benign seyirli olabilir. Ancak uzamış sarılıkta önce kolestaz, hipotiroidi ve enfeksiyon gibi patolojik nedenler dışlanmalıdır.",
+    "pearl": "İyi bebek + 2. hafta sonrası indirekt sarılık anne sütü sarılığını düşündürür; direkt bilirubini kontrol et.",
+    "diff": "Biliyer atrezide akolik dışkı/koyu idrar ve direkt bilirubin artışı beklenir.",
+    "nested": [
+      "İndirekt hiperbilirubinemi",
+      "Direkt hiperbilirubinemi",
+      "Biliyer atrezi"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Biliyer atrezi",
+    "aliases": [],
+    "subcategory": "Neonatoloji / Kolestatik hastalık",
+    "short": "Ekstrahepatik safra yollarının obliterasyonu ile giden yenidoğan kolestaz nedenidir.",
+    "detail": "Uzamış sarılık, akolik dışkı, koyu idrar ve direkt bilirubin artışı tipiktir. Erken Kasai portoenterostomisi prognoz için kritik olduğundan “bekle-gör” yaklaşımı uygun değildir.",
+    "pearl": "Uzamış sarılık + akolik dışkı = direkt bilirubin bak ve biliyer atreziyi geciktirme.",
+    "diff": "Anne sütü sarılığı iyi bebekte indirekt bilirubin artışı yapar; biliyer atrezi kolestatik paterndir.",
+    "nested": [
+      "Direkt hiperbilirubinemi",
+      "Akolik dışkı",
+      "Kasai portoenterostomi"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Respiratuvar distres sendromu",
+    "aliases": [
+      "neonatal RDS",
+      "yenidoğan RDS"
+    ],
+    "subcategory": "Neonatoloji / Solunum",
+    "short": "Prematüre yenidoğanda surfaktan eksikliğine bağlı alveol kollapsı ve solunum sıkıntısı tablosudur.",
+    "detail": "Tip II pnömosit olgunlaşması yetersiz olduğunda yüzey gerilimi artar, atelektazi gelişir ve gaz değişimi bozulur. Doğumdan kısa süre sonra takipne, inleme, retraksiyon ve grafide retikülogranüler görünüm beklenir.",
+    "pearl": "Prematüre + erken solunum sıkıntısı + surfaktan eksikliği = neonatal RDS.",
+    "diff": "TTN daha çok term/erken term bebekte geçici sıvı emilim gecikmesiyle olur; RDS surfaktan eksikliğidir.",
+    "nested": [
+      "Surfaktan",
+      "Tip II pnömosit",
+      "Retikülogranüler görünüm"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Nekrotizan enterokolit",
+    "aliases": [
+      "NEK",
+      "NEC"
+    ],
+    "subcategory": "Neonatoloji / Gastrointestinal acil",
+    "short": "Özellikle prematürelerde bağırsak duvarında inflamasyon, iskemik hasar ve nekrozla giden acil tablodur.",
+    "detail": "Beslenme intoleransı, batın distansiyonu, kanlı dışkı ve sistemik kötüleşme ile gelir. Direkt grafide pnömatozis intestinalis veya portal ven gazı varsa enteral beslenme kesilir, geniş spektrum antibiyotik ve cerrahi izlem gerekir.",
+    "pearl": "Prematüre + batın distansiyonu + kanlı dışkı + pnömatozis intestinalis = NEK.",
+    "diff": "Basit gastroenteritte bağırsak duvarında gaz ve sistemik nekroz paterni beklenmez.",
+    "nested": [
+      "Pnömatozis intestinalis",
+      "Portal ven gazı",
+      "Prematürite"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Portal ven gazı",
+    "aliases": [],
+    "subcategory": "Neonatoloji / Görüntüleme",
+    "short": "Bağırsak duvarından portal venöz sisteme geçen gazın görüntülemede görülmesidir.",
+    "detail": "Nekrotizan enterokolit gibi ağır bağırsak duvarı hasarlarında gelişebilir. Klinik tabloda sistemik toksisiteyle birlikteyse hastalığın ağırlaştığını düşündürür.",
+    "pearl": "NEK’te portal ven gazı ağır bağırsak duvarı hasarını destekler.",
+    "diff": "Lümen içi gazdan farklı olarak portal ven dağılımında periferik karaciğer gazı şeklinde izlenir.",
+    "nested": [
+      "Nekrotizan enterokolit",
+      "Pnömatozis intestinalis",
+      "Bağırsak nekrozu"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "Malrotasyon-volvulus",
+    "aliases": [
+      "midgut volvulus"
+    ],
+    "subcategory": "Neonatoloji / Cerrahi acil",
+    "short": "Barsak rotasyon anomalisi zemininde orta bağırsak dönmesi ve vasküler kompromis gelişmesidir.",
+    "detail": "Yenidoğanda bilöz kusma, batın hassasiyeti ve dolaşım bozukluğu varsa bağırsak iskemisi riski nedeniyle acil cerrahi değerlendirme gerekir. Tanı gecikirse nekroz ve şok gelişebilir.",
+    "pearl": "Bilöz kusma + hasta yenidoğan = malrotasyon-volvulus düşün, cerrahiyi geciktirme.",
+    "diff": "Pilor stenozu safrasız kusar; volvulusta kusma bilöz olabilir ve iskemi riski taşır.",
+    "nested": [
+      "Bilöz kusma",
+      "Üst GIS pasaj grafisi",
+      "Bağırsak iskemisi"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Üst GIS pasaj grafisi",
+    "aliases": [],
+    "subcategory": "Neonatoloji / Görüntüleme",
+    "short": "Yenidoğanda malrotasyon-volvulus şüphesinde duodenum ve jejunum yerleşimini değerlendiren kontrast çalışmadır.",
+    "detail": "Bilöz kusmalı stabil bebekte duodenojejunal bileşke pozisyonu ve corkscrew görünümü gibi bulgularla tanıya yardım eder. Şok veya peritonit varsa görüntüleme cerrahiyi geciktirmemelidir.",
+    "pearl": "Bilöz kusmada stabil hastada üst GIS pasaj grafisi malrotasyonu araştırır.",
+    "diff": "Abdominal USG invajinasyonda ilk tercihtir; malrotasyonda üst GIS pasaj grafisi klasik tanı aracıdır.",
+    "nested": [
+      "Malrotasyon-volvulus",
+      "Bilöz kusma",
+      "Corkscrew görünümü"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "Pilor stenozu",
+    "aliases": [
+      "hipertrofik pilor stenozu"
+    ],
+    "subcategory": "Pediatrik gastroenteroloji / Kusma",
+    "short": "Süt çocuğunda pilor kası hipertrofisine bağlı gastrik çıkış obstrüksiyonudur.",
+    "detail": "Tipik olarak 2–8 haftalık erkek bebekte safrasız projektil kusma, kusmaya rağmen açlık ve hipokloremik hipokalemik metabolik alkaloz görülür. Önce sıvı-elektrolit düzeltilir, sonra piloromiyotomi yapılır.",
+    "pearl": "Safrasız projektil kusma + aç bebek + metabolik alkaloz pilor stenozudur.",
+    "diff": "Bilöz kusma malrotasyon-volvulus alarmıdır; pilor stenozunda kusma safrasızdır.",
+    "nested": [
+      "Safrasız fışkırır kusma",
+      "Hipokloremik metabolik alkaloz",
+      "Piloromiyotomi"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Kistik fibrozis",
+    "aliases": [
+      "CF"
+    ],
+    "subcategory": "Pediatrik pulmonoloji / Genetik hastalık",
+    "short": "CFTR kanal kusuruna bağlı koyu sekresyonlar, kronik akciğer hastalığı ve pankreatik yetmezlikle seyreden otozomal resesif hastalıktır.",
+    "detail": "Klor kanal bozukluğu hava yollarında koyu mukus ve tekrarlayan enfeksiyon; pankreasta malabsorbsiyon; yenidoğanda mekonyum ileusu yapabilir. Tanıda ter klorür testi ve genetik analiz kullanılır.",
+    "pearl": "Tekrarlayan sinopulmoner enfeksiyon + pankreatik yetmezlik + yüksek ter klorürü kistik fibrozistir.",
+    "diff": "Primer siliyer diskinezide situs inversus ve siliyer hareket bozukluğu; CF’de CFTR/klor kanalı kusuru ön plandadır.",
+    "nested": [
+      "CFTR",
+      "Ter klorür testi",
+      "Mekonyum ileusu"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Bronşiolit",
+    "aliases": [
+      "viral bronşiolit"
+    ],
+    "subcategory": "Pediatrik pulmonoloji / Alt solunum yolu",
+    "short": "Genellikle 2 yaş altı bebeklerde viral küçük hava yolu inflamasyonu ile hışıltı ve taşipne yapan tablodur.",
+    "detail": "RSV en sık etkenlerdendir. Tedavinin temeli destek bakım, hidrasyon, nazal aspirasyon ve oksijen gereksinimini izlemektir; rutin antibiyotik veya bronkodilatör her hastada gerekli değildir.",
+    "pearl": "İnfant + viral prodrom + hışıltı/taşipne = bronşiolit; temel tedavi destek tedavisidir.",
+    "diff": "Astımda tekrarlayan atak/atopi ve bronkodilatör yanıtı daha belirgin olabilir; bronşiolit genellikle ilk viral hışıltı atağıdır.",
+    "nested": [
+      "RSV",
+      "Nazal aspirasyon",
+      "Oksijen desteği"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Krup",
+    "aliases": [
+      "croup",
+      "laringotrakeit"
+    ],
+    "subcategory": "Pediatrik pulmonoloji / Üst hava yolu",
+    "short": "Genellikle viral laringotrakeit sonucu havlar tarzda öksürük ve inspiratuvar stridor yapan tablodur.",
+    "detail": "Subglottik ödem hava yolunu daraltır; hafif olguda deksametazon, istirahatte stridor veya belirgin solunum sıkıntısında nebülize adrenalin gerekir. Çocuğu ajite etmek stridoru artırabilir.",
+    "pearl": "Havlar öksürük + stridor = krup; istirahat stridoru varsa nebülize adrenalin eklenir.",
+    "diff": "Epiglottitte toksik görünüm, salya akması ve tripod baskındır; krup daha viral prodrom ve havlar öksürükle gelir.",
+    "nested": [
+      "İnspiratuvar stridor",
+      "Nebülize adrenalin",
+      "Deksametazon"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Epiglottit",
+    "aliases": [],
+    "subcategory": "Pediatrik acil / Hava yolu acili",
+    "short": "Epiglot ve supraglottik dokuların hızla hava yolu tıkanıklığına ilerleyebilen enfeksiyonudur.",
+    "detail": "Toksik görünüm, yüksek ateş, salya akması, yutamama, tripod pozisyonu ve istirahat stridoru alarmdır. Çocuğu yatırmak veya boğaz muayenesiyle ajite etmek hava yolunu kapatabilir; güvenli hava yolu ve IV antibiyotik önceliklidir.",
+    "pearl": "Epiglottit şüphesinde boğazı kurcalama; kontrollü hava yolu yönetimi önceliklidir.",
+    "diff": "Krup havlar öksürükle; epiglottit toksik görünüm, drooling ve tripodla ayrılır.",
+    "nested": [
+      "Tripod pozisyonu",
+      "Salya akması",
+      "Güvenli hava yolu"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Tripod pozisyonu",
+    "aliases": [],
+    "subcategory": "Pediatrik acil / Hava yolu bulgusu",
+    "short": "Çocuğun hava yolunu açık tutmak için öne eğilerek oturma pozisyonudur.",
+    "detail": "Epiglottit ve ağır üst hava yolu obstrüksiyonunda çocuk bu pozisyonda daha rahat nefes alabilir. Bu bulgu hastayı yatırmama ve ajite etmeme gerektiğini hatırlatır.",
+    "pearl": "Toksik çocuk + salya + tripod epiglottit için kırmızı bayraktır.",
+    "diff": "Krupta havlar öksürük öne çıkar; tripod ve yutamama epiglottiti güçlendirir.",
+    "nested": [
+      "Epiglottit",
+      "Salya akması",
+      "İnspiratuvar stridor"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Laringomalazi",
+    "aliases": [],
+    "subcategory": "Pediatrik pulmonoloji / Kronik stridor",
+    "short": "Süt çocuklarında supraglottik yapıların inspirasyonda kollabe olmasıyla kronik inspiratuvar stridor yapan en sık nedendir.",
+    "detail": "Stridor genellikle beslenme, ağlama veya sırtüstü pozisyonda artar; çoğu olgu büyümeyle düzelir. Kilo alamama, apne veya ciddi solunum sıkıntısı varsa ileri değerlendirme gerekir.",
+    "pearl": "İnfantta kronik inspiratuvar stridorun en sık nedeni laringomalazidir.",
+    "diff": "Krup akut viral tablo; laringomalazi kronik/pozisyonel stridordur.",
+    "nested": [
+      "İnspiratuvar stridor",
+      "Supraglottik kollaps",
+      "Beslenme güçlüğü"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Koanal atrezi",
+    "aliases": [],
+    "subcategory": "Pediatrik KBB / Nazal obstrüksiyon",
+    "short": "Posterior nazal açıklığın tek veya çift taraflı kapalı olmasıdır.",
+    "detail": "Yenidoğanlar zorunlu nazal solunum eğiliminde olduğundan bilateral koanal atrezi beslenirken siyanoz, ağlayınca düzelme yapabilir. Nazogastrik sonda ilerletilememesi tanısal ipucudur.",
+    "pearl": "Beslenirken morarma, ağlayınca düzelme koanal atrezi için klasik ipucudur.",
+    "diff": "Laringomalazide stridor; koanal atrezi nazal hava yolu tıkanıklığıyla siyanoz yapar.",
+    "nested": [
+      "Beslenirken siyanoz",
+      "Nazal obstrüksiyon",
+      "CHARGE sendromu"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Subglottik stenoz",
+    "aliases": [],
+    "subcategory": "Pediatrik KBB / Hava yolu darlığı",
+    "short": "Krikoid altındaki hava yolunun daralmasıdır.",
+    "detail": "Konjenital olabilir veya uzun süreli entübasyon sonrası gelişebilir. Kronik/tekrarlayan stridor ve krup benzeri ataklarla karışabilir; entübasyon öyküsü ayırıcı tanıda değerlidir.",
+    "pearl": "Uzun entübasyon öyküsü + kronik stridor subglottik stenozu düşündürür.",
+    "diff": "Krup akut viral ve geçicidir; subglottik stenoz yapısal darlıktır.",
+    "nested": [
+      "İnspiratuvar stridor",
+      "Entübasyon öyküsü",
+      "Krup"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Yabancı cisim aspirasyonu",
+    "aliases": [],
+    "subcategory": "Pediatrik acil / Hava yolu",
+    "short": "Ani öksürük/boğulma atağı sonrası tek taraflı hışıltı veya solunum sesi azalmasıyla giden aspirasyon tablosudur.",
+    "detail": "Çocuklarda kuruyemiş/oyuncak parçaları sık neden olabilir. Ekspiratuvar grafide hava hapsi görülebilir; tanı ve tedavide rijit bronkoskopi önemlidir.",
+    "pearl": "Ani başlangıç + tek taraflı wheezing yabancı cisim aspirasyonudur; astım gibi tedavi edip geciktirme.",
+    "diff": "Astım genellikle yaygın ve tekrarlayıcıdır; yabancı cisimde ani, fokal ve tek taraflı bulgu beklenir.",
+    "nested": [
+      "Rijit bronkoskopi",
+      "Hava hapsi",
+      "Tek taraflı hışıltı"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Status asthmaticus",
+    "aliases": [],
+    "subcategory": "Pediatrik pulmonoloji / Ağır astım",
+    "short": "Standart başlangıç bronkodilatör tedavisine yeterli yanıt vermeyen ağır astım atağıdır.",
+    "detail": "Solunum kas yorgunluğu, hiperkapni, sessiz akciğer ve bilinç değişikliği yaşamı tehdit eder. Tedavi yoğun bronkodilatör, sistemik steroid, magnezyum ve gerektiğinde yoğun bakım/ventilasyon basamaklarını içerir.",
+    "pearl": "Tedaviye dirençli ağır astımda hiperkapni ve sessiz akciğer entübasyon riski taşır.",
+    "diff": "Basit hışıltı atağı tedaviye hızla yanıt verir; status asthmaticus dirençli ve progresiftir.",
+    "nested": [
+      "Pediatrik astım atağı",
+      "Sessiz akciğer",
+      "Hiperkapni"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "İnvajinasyon",
+    "aliases": [],
+    "subcategory": "Pediatrik gastroenteroloji / Cerrahi acil",
+    "short": "Bağırsak segmentinin distal segment içine teleskopik şekilde girmesidir.",
+    "detail": "Aralıklı kolik ağrı, dizleri karna çekme, kusma ve geç dönemde currant jelly dışkı ile gelebilir. Ultrasonografide target/donut sign tanıyı destekler; perforasyon yoksa hava/kontrast enema redüksiyonu tedavi edici olabilir.",
+    "pearl": "Kolik ağrı + currant jelly dışkı + target sign invajinasyondur.",
+    "diff": "Gastroenteritte ağrı daha yaygın ve sürekli olabilir; invajinasyonda aralıklı kolik ataklar tipiktir.",
+    "nested": [
+      "Currant jelly dışkı",
+      "Target sign",
+      "Enema redüksiyonu"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Target sign",
+    "aliases": [
+      "donut sign",
+      "hedef bulgusu"
+    ],
+    "subcategory": "Pediatrik gastroenteroloji / Ultrason bulgusu",
+    "short": "İnvajinasyonda ultrasonda iç içe geçmiş bağırsak segmentlerinin hedef/donut görünümüdür.",
+    "detail": "Transvers kesitte konsantrik halkalar şeklinde izlenir. Çocukta aralıklı kolik ağrı ve kusmayla birlikte tanıyı hızlandırır.",
+    "pearl": "İnvajinasyonda ilk görüntüleme abdominal USG; target sign yüksek verimli bulgudur.",
+    "diff": "Pilor stenozunda USG pilor kalınlığı/uzunluğunu; invajinasyonda target signı gösterir.",
+    "nested": [
+      "İnvajinasyon",
+      "Abdominal ultrasonografi",
+      "Enema redüksiyonu"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Hemolitik üremik sendrom",
+    "aliases": [
+      "HÜS",
+      "HUS"
+    ],
+    "subcategory": "Pediatrik nefroloji / Trombotik mikroanjiyopati",
+    "short": "Mikroanjiyopatik hemolitik anemi, trombositopeni ve akut böbrek hasarı üçlüsüdür.",
+    "detail": "Çocuklarda tipik form sıklıkla Shiga toksinli kanlı ishal sonrası gelişir. Tedavi çoğunlukla destekleyicidir; antibiyotik ve antimotilite ilaçlar EHEC ilişkili tabloda kötüleştirme riski nedeniyle tuzak olabilir.",
+    "pearl": "Kanlı ishal sonrası anemi + trombositopeni + böbrek yetmezliği HÜS’tür.",
+    "diff": "TTP’de nörolojik bulgular ve erişkin patern daha ön plandadır; tipik pediatrik HÜS ishal sonrası renal tabloyla gelir.",
+    "nested": [
+      "Mikroanjiyopatik hemolitik anemi",
+      "Shiga toksin",
+      "Akut böbrek hasarı"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "İdrar çıkışında azalma",
+    "aliases": [
+      "oligüri"
+    ],
+    "subcategory": "Pediatrik nefroloji / Oligüri",
+    "short": "Çocuğun yaş ve ağırlığına göre beklenen idrar miktarının belirgin azalmasıdır.",
+    "detail": "Dehidratasyon, şok, akut böbrek hasarı veya HÜS gibi durumlarda erken uyarı olabilir. Pediatride aile öyküsündeki bez sayısı bile perfüzyon ve renal fonksiyon için değerli ipucudur.",
+    "pearl": "Bez sayısının azalması çocukta hipoperfüzyon veya akut böbrek hasarı ipucu olabilir.",
+    "diff": "Sık idrara çıkma polidipsi/DM ile; idrar azalması volüm kaybı veya renal hasarla ilişkilidir.",
+    "nested": [
+      "Oligüri",
+      "Akut böbrek hasarı",
+      "Dehidratasyon"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Minimal değişiklik hastalığı",
+    "aliases": [],
+    "subcategory": "Pediatrik nefroloji / Nefrotik sendrom",
+    "short": "Çocukluk çağının en sık nefrotik sendrom nedeni olan podosit hastalığıdır.",
+    "detail": "Masif proteinüri, hipoalbüminemi, ödem ve hiperlipidemi yapar; ışık mikroskobisi genellikle normal, elektron mikroskopide podosit ayaksı çıkıntı silinmesi görülür. Steroide iyi yanıt tipiktir.",
+    "pearl": "Çocukta nefrotik sendrom + normal kompleman + belirgin hematüri yokluğu minimal değişiklik lehinedir.",
+    "diff": "Poststreptokokal GN nefritik patern ve düşük C3 ile; minimal değişiklik nefrotik paternle gelir.",
+    "nested": [
+      "Nefrotik sendrom",
+      "Podosit ayaksı çıkıntı silinmesi",
+      "Masif proteinüri"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Masif proteinüri",
+    "aliases": [],
+    "subcategory": "Pediatrik nefroloji / Nefrotik patern",
+    "short": "Nefrotik düzeyde yüksek protein kaybıdır.",
+    "detail": "Glomerüler filtrasyon bariyeri özellikle podosit düzeyinde bozulduğunda albumin idrara kaçar; hipoalbüminemi ve ödem gelişir. Çocukta nefrotik sendrom tanısının temel laboratuvar ayağıdır.",
+    "pearl": "Ödem + masif proteinüri + hipoalbüminemi nefrotik sendrom paternidir.",
+    "diff": "Nefritik sendromda hematüri, hipertansiyon ve azotemi daha belirgindir.",
+    "nested": [
+      "Nefrotik sendrom",
+      "Hipoalbüminemi",
+      "Ödem"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Poststreptokokal glomerülonefrit",
+    "aliases": [
+      "PSGN",
+      "post-streptokokal GN"
+    ],
+    "subcategory": "Pediatrik nefroloji / Nefritik sendrom",
+    "short": "Streptokok enfeksiyonu sonrası immün kompleks aracılı akut nefritik sendromdur.",
+    "detail": "Çay rengi idrar, periorbital ödem, hipertansiyon, düşük C3 ve ASO/anti-DNase B yüksekliği ile sorulabilir. Genellikle enfeksiyondan latent dönem sonra gelişir.",
+    "pearl": "Çocukta çay rengi idrar + düşük C3 + streptokok öyküsü PSGN düşündürür.",
+    "diff": "IgA nefropatisinde hematüri enfeksiyonla eş zamanlı; PSGN’de latent dönem vardır.",
+    "nested": [
+      "Düşük C3",
+      "ASO yüksekliği",
+      "Çay rengi idrar"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "IgA vasküliti",
+    "aliases": [
+      "Henoch-Schönlein purpurası",
+      "HSP"
+    ],
+    "subcategory": "Pediatrik romatoloji / Küçük damar vasküliti",
+    "short": "Palpabl purpura, karın ağrısı, artralji ve renal tutulumla giden IgA aracılı vaskülittir.",
+    "detail": "Döküntü genellikle alt ekstremite ve kalçada belirgindir; trombosit sayısı normaldir. Karın ağrısı invajinasyonla, renal tutulum hematüri/proteinüriyle komplike olabilir.",
+    "pearl": "Palpabl purpura + karın ağrısı + normal trombosit IgA vaskülitidir.",
+    "diff": "İTP’de purpura trombositopeniye bağlıdır; IgA vaskülitinde purpura vaskülit kaynaklıdır ve trombosit normal olabilir.",
+    "nested": [
+      "Palpabl purpura",
+      "İnvajinasyon",
+      "Hematüri"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Pediatrik DKA",
+    "aliases": [
+      "çocuk DKA",
+      "diyabetik ketoasidoz"
+    ],
+    "subcategory": "Pediatrik endokrinoloji / Diyabet acili",
+    "short": "Çocukta insülin eksikliğine bağlı hiperglisemi, ketozis ve yüksek anyon açıklıklı metabolik asidoz tablosudur.",
+    "detail": "Tedavide sıvı resüsitasyonu, insülin infüzyonu ve potasyum güvenliği birlikte yönetilir. Çocuklarda serebral ödem riski nedeniyle hızlı osmolar değişim ve nörolojik kötüleşme yakından izlenir.",
+    "pearl": "Pediatrik DKA’da insülin başlamadan önce potasyum ve perfüzyon değerlendirilir.",
+    "diff": "HHS’de ketozis daha az belirgin, hiperosmolarite daha baskındır; pediatrik DKA’da ketozis-asidoz öne çıkar.",
+    "nested": [
+      "Ketozis",
+      "DKA potasyum güvenliği",
+      "Serebral ödem"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "DKA potasyum güvenliği",
+    "aliases": [],
+    "subcategory": "Pediatrik endokrinoloji / Tedavi güvenliği",
+    "short": "DKA tedavisinde serum potasyumunun insülin öncesi ve sırasında güvenli aralıkta tutulmasıdır.",
+    "detail": "Toplam vücut potasyumu eksiktir; insülin potasyumu hücre içine sokarak hipokalemiyi ağırlaştırabilir. Bu nedenle hipokalemi varsa insülin geciktirilip potasyum replasmanı önceliklenir.",
+    "pearl": "DKA’da potasyum düşükse önce potasyum ver; insülin hipokalemiyi derinleştirir.",
+    "diff": "Hiperkalemik görünen DKA’da bile toplam vücut potasyumu düşük olabilir.",
+    "nested": [
+      "Pediatrik DKA",
+      "Hipokalemi",
+      "İnsülin infüzyonu"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "Serebral ödem",
+    "aliases": [],
+    "subcategory": "Pediatrik endokrinoloji / DKA komplikasyonu",
+    "short": "Pediatrik DKA tedavisinin en korkulan nörolojik komplikasyonudur.",
+    "detail": "Baş ağrısı, bilinç değişikliği, bradikardi, hipertansiyon ve pupilla bulguları artmış intrakraniyal basıncı düşündürür. Hızlı tanı ve hipertonik tedavi nörolojik sekeli azaltmak için kritiktir.",
+    "pearl": "DKA tedavisinde bilinç kötüleşmesi serebral ödem alarmıdır.",
+    "diff": "Hipoglisemi de bilinç değişikliği yapar; DKA’da nörolojik kötüleşme serebral ödem açısından değerlendirilir.",
+    "nested": [
+      "Pediatrik DKA",
+      "Artmış intrakraniyal basınç",
+      "Hipertonik salin"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Ketotik hipoglisemi",
+    "aliases": [],
+    "subcategory": "Pediatrik endokrinoloji / Açlık hipoglisemisi",
+    "short": "Açlık veya hastalık sonrası keton artışıyla birlikte gelişen çocukluk çağı hipoglisemisidir.",
+    "detail": "Glikojen depoları sınırlı ve oral alımı azalan küçük çocukta keton üretimi belirginleşir. Hipoketotik hipoglisemiden farkı yağ asidi oksidasyon kusurundan çok açlık adaptasyonunun ketonlu yanıtıdır.",
+    "pearl": "Açlık sonrası hipoglisemi + keton varlığı ketotik hipoglisemi lehinedir.",
+    "diff": "Hipoketotik hipoglisemi yağ asidi oksidasyon kusurlarını düşündürür.",
+    "nested": [
+      "Açlık hipoglisemisi",
+      "Ketonemi",
+      "MCAD"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "Santral puberte prekoks",
+    "aliases": [],
+    "subcategory": "Pediatrik endokrinoloji / Puberte",
+    "short": "Hipotalamus-hipofiz-gonad aksının erken aktive olmasıyla gelişen erken pubertedir.",
+    "detail": "Kızda 8, erkekte 9 yaşından önce ilerleyici puberte bulguları, büyüme hızında artış, kemik yaşı ileriliği ve pubertal LH yanıtı beklenir. Tedavide seçilmiş olguda GnRH analoğu kullanılır.",
+    "pearl": "Erken puberte + pubertal LH yanıtı santral puberte prekoks lehinedir.",
+    "diff": "Periferik pubertede LH baskılıdır ve gonadal/adrenal hormon üretimi bağımsızdır.",
+    "nested": [
+      "Kemik yaşı ileriliği",
+      "GnRH stimülasyon testi",
+      "Prematür telarş"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Prematür telarş",
+    "aliases": [],
+    "subcategory": "Pediatrik endokrinoloji / Puberte varyantı",
+    "short": "Kız çocukta diğer puberte bulguları olmadan erken meme gelişimidir.",
+    "detail": "Genellikle izole ve ilerleyici olmayan benign bir varyanttır. Pubik kıllanma, hızlı büyüme, kemik yaşı ileriliği veya pubertal LH yanıtı varsa santral puberte prekoks düşünülür.",
+    "pearl": "İzole meme gelişimi prematür telarş olabilir; ilerleme varsa puberte prekoksu dışlama.",
+    "diff": "Prematür adrenarş pubik/aksiller kıllanma ve vücut kokusuyla gider; telarş meme gelişimidir.",
+    "nested": [
+      "Santral puberte prekoks",
+      "Kemik yaşı",
+      "GnRH stimülasyon testi"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Prematür adrenarş",
+    "aliases": [],
+    "subcategory": "Pediatrik endokrinoloji / Puberte varyantı",
+    "short": "Adrenal androjen artışına bağlı erken pubik/aksiller kıllanma veya vücut kokusudur.",
+    "detail": "Meme gelişimi veya testis büyümesi beklenmez; büyüme hızı ve kemik yaşı sınırlı etkilenebilir. Hızlı virilizasyon varsa adrenal tümör veya KAH dışlanmalıdır.",
+    "pearl": "Erken pubik kıllanma + meme/testis gelişimi yoksa prematür adrenarş düşün.",
+    "diff": "Santral puberte prekoks gonadotropin bağımlıdır ve meme/testis gelişimiyle ilerleyebilir.",
+    "nested": [
+      "Adrenal androjen",
+      "Virilizasyon",
+      "Santral puberte prekoks"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "GnRH stimülasyon testi",
+    "aliases": [],
+    "subcategory": "Pediatrik endokrinoloji / Puberte testi",
+    "short": "GnRH veya analog uyarısı sonrası LH yanıtını değerlendirerek pubertenin santral olup olmadığını gösteren testtir.",
+    "detail": "Pubertal düzeyde LH yanıtı hipotalamus-hipofiz-gonad aksının aktive olduğunu gösterir. Periferik puberte prekoksda LH genellikle baskılı kalır.",
+    "pearl": "Pubertal LH yanıtı santral puberte prekoksu destekler.",
+    "diff": "Periferik pubertede seks steroidleri yüksek olabilir ama gonadotropin yanıtı baskılıdır.",
+    "nested": [
+      "Santral puberte prekoks",
+      "LH yanıtı",
+      "Periferik puberte prekoks"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "Konjenital hipotiroidi",
+    "aliases": [],
+    "subcategory": "Pediatrik endokrinoloji / Yenidoğan taraması",
+    "short": "Doğumsal tiroid hormon eksikliğidir ve tedavi edilmezse kalıcı nörogelişimsel hasar yapabilir.",
+    "detail": "Uzamış sarılık, kabızlık, makroglossi, hipotoni ve büyük fontanel görülebilir; ancak çoğu bebek tarama ile semptom gelişmeden yakalanır. Erken levotiroksin tedavisi nörolojik prognoz için kritiktir.",
+    "pearl": "Yenidoğan taramasında TSH/T4 anormalliği konjenital hipotiroidiyi erken yakalar.",
+    "diff": "Anne sütü sarılığı indirekt bilirubinle; konjenital hipotiroidi uzamış sarılık ve gelişim riskiyle ayırt edilir.",
+    "nested": [
+      "Yenidoğan taraması",
+      "Topuk kanı",
+      "Makroglossi"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Topuk kanı",
+    "aliases": [],
+    "subcategory": "Pediatri / Tarama örneği",
+    "short": "Yenidoğan taramaları için topuktan alınan kuru kan damlası örneğidir.",
+    "detail": "Metabolik ve endokrin hastalıkların erken yakalanmasında kullanılır. Pozitif sonuç aileyi korkutmadan doğrulayıcı test ve hızlı yönlendirme gerektirir.",
+    "pearl": "Topuk kanı tarama testidir; pozitiflik doğrulama gerektirir.",
+    "diff": "Rutin biyokimya kanı tanısal olabilir; topuk kanı popülasyon taramasıdır.",
+    "nested": [
+      "Yenidoğan taraması",
+      "Fenilketonüri",
+      "Konjenital hipotiroidi"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "Fenilketonüri",
+    "aliases": [
+      "PKU"
+    ],
+    "subcategory": "Pediatrik metabolizma / Aminoasit metabolizması",
+    "short": "Fenilalanin hidroksilaz eksikliği veya BH4 metabolizması bozukluğuyla fenilalanin birikmesidir.",
+    "detail": "Tedavi edilmezse ağır entelektüel yetersizlik, nöbet ve hipopigmentasyon gelişebilir. Yenidoğan taramasında erken saptanır ve fenilalanin kısıtlı diyetle nörolojik hasar önlenir.",
+    "pearl": "Yenidoğan taramasında fenilalanin yüksekliği PKU için erken tedavi fırsatıdır.",
+    "diff": "Maple syrup urine disease dallı zincirli aminoasitlerle; PKU fenilalanin birikimiyle gider.",
+    "nested": [
+      "Fenilalanin hidroksilaz",
+      "Yenidoğan taraması",
+      "Fenilalanin kısıtlı diyet"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Fenilalanin hidroksilaz",
+    "aliases": [],
+    "subcategory": "Pediatrik metabolizma / Enzim",
+    "short": "Fenilalanini tirozine dönüştüren enzimdir.",
+    "detail": "Enzim eksikliğinde fenilalanin ve fenilketonlar birikir; gelişmekte olan beyinde toksisite yapar. PKU patofizyolojisinin temel enzimidir.",
+    "pearl": "PKU’da temel kusur fenilalanin hidroksilaz veya kofaktör BH4 yolundadır.",
+    "diff": "Tirozinemi tirozin katabolizmasıyla ilişkilidir; PKU fenilalanin dönüşüm kusurudur.",
+    "nested": [
+      "Fenilketonüri",
+      "Tirozin",
+      "BH4"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Organik asidemi",
+    "aliases": [],
+    "subcategory": "Pediatrik metabolizma / Metabolik asidoz",
+    "short": "Organik asitlerin birikimiyle ağır metabolik asidoz, ketozis ve hiperamonyemi yapabilen kalıtsal metabolik hastalık grubudur.",
+    "detail": "Yenidoğan veya süt çocukluğunda beslenme bozulması, kusma, letarji ve anyon açıklıklı asidozla gelebilir. Propiyonik ve metilmalonik asidemi klasik örneklerdir.",
+    "pearl": "Yenidoğan + ketotik metabolik asidoz + hiperamonyemi organik asidemi düşündürür.",
+    "diff": "Üre döngüsü bozukluklarında hiperamonyemi belirgin ama asidoz/ketozis genellikle daha azdır.",
+    "nested": [
+      "Propiyonik asidemi",
+      "Metilmalonik asidemi",
+      "Hiperamonyemi"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Metilmalonik asidemi",
+    "aliases": [],
+    "subcategory": "Pediatrik metabolizma / Organik asidemi",
+    "short": "Metilmalonil-CoA metabolizması bozukluğu sonucu metilmalonik asit birikimiyle seyreden hastalıktır.",
+    "detail": "B12 ilişkili veya enzimatik kusurlar olabilir; kusma, letarji, ketotik metabolik asidoz ve hiperamonyemi görülebilir. B12 yanıtlı formlar ayırıcı tanıda önemlidir.",
+    "pearl": "Metilmalonik asit artışı + ketotik asidoz metilmalonik asidemiyi düşündürür.",
+    "diff": "Propiyonik asidemi benzer kliniğe sahip olabilir; özgül organik asit profili ayrım sağlar.",
+    "nested": [
+      "Organik asidemi",
+      "B12 metabolizması",
+      "Hiperamonyemi"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Reye sendromu",
+    "aliases": [],
+    "subcategory": "Pediatrik metabolizma / Toksik-metabolik ensefalopati",
+    "short": "Viral enfeksiyon sonrası aspirin kullanımıyla ilişkilenen akut ensefalopati ve hepatik disfonksiyon tablosudur.",
+    "detail": "Mitokondriyal yağ asidi metabolizması bozulur; kusma, bilinç değişikliği, hipoglisemi, transaminaz yüksekliği ve hiperamonyemi görülebilir. Çocuklarda viral enfeksiyonda aspirin verilmemesinin klasik nedeni budur.",
+    "pearl": "Çocukta viral hastalık + aspirin + kusma/ensefalopati Reye sendromudur.",
+    "diff": "Viral meningoensefalitte BOS bulguları öne çıkar; Reye’de karaciğer-metabolik ensefalopati paterni vardır.",
+    "nested": [
+      "Aspirin",
+      "Hiperamonyemi",
+      "Hepatik disfonksiyon"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Kronik granülomatöz hastalık",
+    "aliases": [
+      "CGD"
+    ],
+    "subcategory": "Pediatrik immünoloji / Fagosit öldürme kusuru",
+    "short": "NADPH oksidaz kusuru nedeniyle fagositlerin oksidatif öldürme yapamadığı primer immün yetmezliktir.",
+    "detail": "Katalaz pozitif mikroorganizmalarla tekrarlayan apse ve enfeksiyonlar gelişir. Dihidrorodamin testi tanıda kullanılır.",
+    "pearl": "Katalaz pozitif enfeksiyonlar + apse + DHR testi bozukluğu CGD düşündürür.",
+    "diff": "LAD’de nötrofil dokuya gidemez; CGD’de fagosit gelir ama öldüremez.",
+    "nested": [
+      "NADPH oksidaz",
+      "Katalaz pozitif mikroorganizma",
+      "Dihidrorodamin testi"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Selektif IgA eksikliği",
+    "aliases": [],
+    "subcategory": "Pediatrik immünoloji / Antikor eksikliği",
+    "short": "Serum IgA düşüklüğüyle giden en sık primer immün yetmezliklerden biridir.",
+    "detail": "Mukozal enfeksiyonlar, Giardia, alerji/otoimmünite ve anti-IgA antikorları varsa transfüzyon reaksiyonu riskiyle sorulabilir. Çoğu olgu asemptomatik de olabilir.",
+    "pearl": "Tekrarlayan mukozal enfeksiyon + düşük IgA selektif IgA eksikliği düşündürür.",
+    "diff": "CVID’de birden çok immünoglobulin sınıfı düşer; selektif IgA’da temel kusur IgA’dır.",
+    "nested": [
+      "Mukozal enfeksiyon",
+      "Giardia",
+      "Anafilaktik transfüzyon reaksiyonu"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Kompleks febril nöbet",
+    "aliases": [],
+    "subcategory": "Pediatrik nöroloji / Ateşli nöbet",
+    "short": "Fokal özellikli, 15 dakikadan uzun süren veya 24 saatte tekrarlayan febril nöbettir.",
+    "detail": "Basit febril nöbete göre altta yatan patoloji ve tekrar riski açısından daha dikkatli değerlendirilir. Menenjit, metabolik bozukluk veya yapısal neden bulguları özellikle aranır.",
+    "pearl": "Fokal, uzun veya tekrarlayan ateşli nöbet kompleks febril nöbettir.",
+    "diff": "Basit febril nöbet kısa, jeneralize ve tek ataktır.",
+    "nested": [
+      "Febril nöbet",
+      "Menenjit",
+      "Lomber ponksiyon"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Status epileptikus",
+    "aliases": [],
+    "subcategory": "Pediatrik nöroloji / Nöbet acili",
+    "short": "Uzamış veya tekrarlayan nöbetlerle bilinç toparlanmasının olmadığı nörolojik acildir.",
+    "detail": "Pediatrik yaklaşım ABC, glukoz kontrolü, benzodiazepin ve devam eden nöbette ikinci basamak antiepileptiklerle ilerler. Hipoglisemi gibi düzeltilebilir nedenler aynı anda aranır.",
+    "pearl": "Uzamış nöbette önce ABC + glukoz + benzodiazepin zinciri kurulur.",
+    "diff": "Basit febril nöbet kısa sürer ve kendiliğinden biter; status epileptikus acil tedavi gerektirir.",
+    "nested": [
+      "Benzodiazepin",
+      "IV dekstroz bolusu",
+      "Hipoglisemi"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Terapötik hipotermi",
+    "aliases": [],
+    "subcategory": "Neonatoloji / Nöroproteksiyon",
+    "short": "Orta-ağır hipoksik iskemik ensefalopatide beyin hasarını azaltmak için kontrollü soğutma tedavisidir.",
+    "detail": "Belirli zaman penceresinde uygulanır; metabolik hızı, eksitotoksisiteyi ve sekonder enerji yetmezliğini azaltmayı hedefler. Her asfiktik bebek değil, kriterleri karşılayan orta-ağır HİE olguları uygundur.",
+    "pearl": "HİE’de hipotermi zaman duyarlı nöroprotektif tedavidir.",
+    "diff": "Ateş düşürme değildir; protokollü nöroprotektif soğutmadır.",
+    "nested": [
+      "Hipoksik iskemik ensefalopati",
+      "Perinatal asfiksi",
+      "Nörolojik sekel"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Kawasaki hastalığı",
+    "aliases": [],
+    "subcategory": "Pediatrik kardiyoloji / Vaskülit",
+    "short": "Uzamış ateş ve mukokutanöz bulgularla seyreden, koroner arter anevrizması riski taşıyan çocukluk çağı vaskülitidir.",
+    "detail": "En az 5 gün ateş, bilateral nonpürülan konjonktivit, oral değişiklikler, döküntü, ekstremite değişiklikleri ve servikal lenfadenopati kriterleriyle düşünülür. IVIG ve aspirin koroner komplikasyon riskini azaltmak için erken verilir.",
+    "pearl": "5 günden uzun ateş + mukokutanöz bulgular Kawasaki; koroner risk için IVIG önemlidir.",
+    "diff": "Kızamıkta öksürük-koryza-Koplik ve yaygın döküntü; Kawasaki’de koroner arter riski ön plandadır.",
+    "nested": [
+      "Koroner arter anevrizması",
+      "IVIG",
+      "Mukokutanöz bulgular"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Koroner arter anevrizması",
+    "aliases": [],
+    "subcategory": "Pediatrik kardiyoloji / Kawasaki komplikasyonu",
+    "short": "Koroner arter duvarında genişleme ve anevrizmatik değişiklik gelişmesidir.",
+    "detail": "Kawasaki hastalığında temel mortalite/morbidite nedeni olabilir. Tedavide IVIG’in hedefi inflamasyonu azaltarak bu komplikasyonu önlemektir.",
+    "pearl": "Kawasaki tedavisindeki ana hedef koroner anevrizmayı önlemektir.",
+    "diff": "Basit viral döküntüler koroner anevrizma riski taşımaz.",
+    "nested": [
+      "Kawasaki hastalığı",
+      "IVIG",
+      "Ekokardiyografi"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "IVIG",
+    "aliases": [
+      "intravenöz immünoglobulin"
+    ],
+    "subcategory": "Pediatrik immünoloji / Tedavi",
+    "short": "İntravenöz immünoglobulin tedavisidir.",
+    "detail": "Kawasaki’de koroner anevrizma riskini azaltır; ITP’de kanama riski yüksek veya trombosit çok düşükse trombosit artışı sağlayabilir. Mekanizması hastalığa göre immün modülasyondur.",
+    "pearl": "Kawasaki’de IVIG koroner komplikasyon önlemek için erken verilir.",
+    "diff": "Antibiyotik enfeksiyon etkenini hedefler; IVIG immün modülasyon sağlar.",
+    "nested": [
+      "Kawasaki hastalığı",
+      "ITP",
+      "Koroner arter anevrizması"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "İnkomplet Kawasaki",
+    "aliases": [],
+    "subcategory": "Pediatrik kardiyoloji / Vaskülit",
+    "short": "Kawasaki kriterlerinin tamamı olmadan koroner risk taşıyabilen Kawasaki tablosudur.",
+    "detail": "Özellikle 6 aydan küçük bebeklerde eksik mukokutanöz bulgularla gelebilir ve tanı gecikirse koroner komplikasyon riski artar. Uzamış ateş + inflamasyon belirteçleri + ekokardiyografi bulguları tanıda önemlidir.",
+    "pearl": "Bebekte uzamış ateş ve yüksek inflamasyon varsa kriterler eksik olsa da Kawasaki düşün.",
+    "diff": "Viral enfeksiyonda ateş genellikle kısa sürer ve koroner risk yoktur.",
+    "nested": [
+      "Kawasaki hastalığı",
+      "Koroner arter anevrizması",
+      "CRP yüksekliği"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "Kızamık",
+    "aliases": [],
+    "subcategory": "Pediatrik enfeksiyon / Döküntülü hastalık",
+    "short": "Ateş, öksürük, koryza, konjonktivit ve Koplik lekeleriyle seyreden viral döküntülü hastalıktır.",
+    "detail": "Döküntü yüz-saçlı deriden başlayıp gövdeye yayılabilir. Aşılanmamış çocukta yüksek bulaştırıcılık, pnömoni ve ensefalit komplikasyonları açısından önemlidir.",
+    "pearl": "Öksürük-koryza-konjonktivit + Koplik lekesi kızamık için klasik paterndir.",
+    "diff": "Kızılda zımpara döküntüsü ve çilek dili streptokokla ilişkilidir; kızamık viral ve Koplik lekeli tablodur.",
+    "nested": [
+      "Koplik lekeleri",
+      "MMR aşısı",
+      "Konjonktivit"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Koplik lekeleri",
+    "aliases": [],
+    "subcategory": "Pediatrik enfeksiyon / Mukozal bulgu",
+    "short": "Kızamıkta bukkal mukozada görülen küçük beyaz-mavimsi lezyonlardır.",
+    "detail": "Döküntüden önce ortaya çıkabilir ve kızamık için çok özgül klasik bulgudur. Aşısız çocukta ateş ve 3K bulgularıyla birlikte tanıyı güçlendirir.",
+    "pearl": "Koplik lekeleri kızamık için yüksek özgüllükte ipucudur.",
+    "diff": "Kızılda ağız bulgusu çilek dilidir; Koplik kızamığa gider.",
+    "nested": [
+      "Kızamık",
+      "MMR aşısı",
+      "Bukkal mukoza"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Kızıl",
+    "aliases": [],
+    "subcategory": "Pediatrik enfeksiyon / Streptokokal toksin hastalığı",
+    "short": "Grup A streptokok farenjiti sonrası eritrojenik toksinle gelişen döküntülü tablodur.",
+    "detail": "Ateş, boğaz ağrısı, zımpara kağıdı döküntüsü ve çilek dili klasik ipuçlarıdır. Tedavi streptokok eradikasyonu ve akut romatizmal ateş riskini azaltma açısından önemlidir.",
+    "pearl": "Boğaz ağrısı + zımpara döküntüsü + çilek dili kızılı düşündürür.",
+    "diff": "Kızamıkta öksürük-koryza-konjonktivit ve Koplik lekeleri; kızılda streptokokal farenjit bulguları vardır.",
+    "nested": [
+      "Grup A streptokok",
+      "Çilek dili",
+      "Zımpara kağıdı döküntüsü"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Çilek dili",
+    "aliases": [],
+    "subcategory": "Pediatrik enfeksiyon / Ağız bulgusu",
+    "short": "Dilde papillaların belirginleştiği kırmızı çilek görünümüdür.",
+    "detail": "Kızıl ve Kawasaki gibi pediatrik tablolarla ilişkili olabilir. Bağlam tanı koydurur: boğaz ağrısı-zımpara döküntüsü kızıl, uzamış ateş-mukokutanöz bulgular Kawasaki lehinedir.",
+    "pearl": "Çilek dili tek başına değil, eşlik eden döküntü/ateş paterniyle yorumlanır.",
+    "diff": "Koplik lekesi kızamık için; çilek dili kızıl/Kawasaki bağlamında düşünülür.",
+    "nested": [
+      "Kızıl",
+      "Kawasaki hastalığı",
+      "Mukokutanöz bulgular"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Zımpara kağıdı döküntüsü",
+    "aliases": [],
+    "subcategory": "Pediatrik enfeksiyon / Döküntü paterni",
+    "short": "Ele pütürlü gelen yaygın eritemli döküntüdür.",
+    "detail": "Kızılda eritrojenik streptokok toksinine bağlı gelişir. Pastia çizgileri ve çilek dili eşlik edebilir.",
+    "pearl": "Zımpara gibi döküntü + farenjit kızıl için klasik ipucudur.",
+    "diff": "Kawasaki döküntüsü polimorf olabilir ama streptokokal farenjit paterni şart değildir.",
+    "nested": [
+      "Kızıl",
+      "Çilek dili",
+      "Grup A streptokok"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "Akut romatizmal ateş",
+    "aliases": [
+      "ARA"
+    ],
+    "subcategory": "Pediatrik kardiyoloji / Poststreptokokal hastalık",
+    "short": "Grup A streptokok farenjiti sonrası gelişen otoimmün inflamatuvar hastalıktır.",
+    "detail": "Gezici poliartrit, kardit, Sydenham kore, eritema marginatum ve subkutan nodüller Jones kriterlerinde yer alır. Asıl kalıcı risk romatizmal kalp hastalığıdır.",
+    "pearl": "Strep farenjiti sonrası kardit/gezici artrit ARA düşündürür.",
+    "diff": "Poststreptokokal GN böbrek bulgularıyla; ARA kardit ve Jones kriterleriyle ayrılır.",
+    "nested": [
+      "Jones kriterleri",
+      "Sydenham kore",
+      "Kardit"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Jones kriterleri",
+    "aliases": [],
+    "subcategory": "Pediatrik kardiyoloji / Tanı kriteri",
+    "short": "Akut romatizmal ateş tanısında kullanılan majör-minör klinik ve laboratuvar kriterleridir.",
+    "detail": "Streptokok enfeksiyonu kanıtıyla birlikte majör/minör kriter kombinasyonu tanı koydurur. Kardit, gezici poliartrit, Sydenham kore, eritema marginatum ve subkutan nodül majör başlıklardır.",
+    "pearl": "ARA tanısında Jones kriterleri + streptokok kanıtı birlikte düşünülür.",
+    "diff": "Kawasaki’de tanı uzamış ateş ve mukokutanöz kriterlerle; ARA’da Jones kriterleriyle kurulur.",
+    "nested": [
+      "Akut romatizmal ateş",
+      "Kardit",
+      "ASO yüksekliği"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Sydenham kore",
+    "aliases": [],
+    "subcategory": "Pediatrik nöroloji / ARA majör kriteri",
+    "short": "Akut romatizmal ateşte görülebilen istemsiz, düzensiz koreiform hareket bozukluğudur.",
+    "detail": "Bazal ganglionlara karşı otoimmün yanıtla ilişkilidir ve streptokok enfeksiyonundan haftalar-aylar sonra ortaya çıkabilir. ARA majör kriterlerinden biridir.",
+    "pearl": "Koreiform hareket + strep öyküsü Sydenham kore/ARA düşündürür.",
+    "diff": "Tik bozuklukları daha stereotipik olabilir; Sydenham kore düzensiz dans eder tarzda hareketlerle seyreder.",
+    "nested": [
+      "Akut romatizmal ateş",
+      "Jones kriterleri",
+      "Bazal ganglion"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "İmmün trombositopeni",
+    "aliases": [
+      "ITP",
+      "çocukluk çağı İTP"
+    ],
+    "subcategory": "Pediatrik hematoloji / Trombositopeni",
+    "short": "Çocukta çoğu kez viral enfeksiyon sonrası gelişen izole trombositopeni ve mukokutanöz kanama tablosudur.",
+    "detail": "Genel durum iyi, Hb/lökosit normal ve hepatosplenomegali yoksa tipik İTP düşünülür. Atipik bulgular lösemi gibi kemik iliği hastalıklarını dışlamayı gerektirir.",
+    "pearl": "Viral enfeksiyon sonrası izole trombositopeni + peteşi İTP lehinedir.",
+    "diff": "Lösemide anemi, lökosit bozukluğu, kemik ağrısı veya organomegali eşlik edebilir.",
+    "nested": [
+      "İzole trombositopeni",
+      "Peteşi",
+      "IVIG"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Hemofili A",
+    "aliases": [],
+    "subcategory": "Pediatrik hematoloji / Koagülasyon bozukluğu",
+    "short": "Faktör VIII eksikliğine bağlı X’e bağlı kanama bozukluğudur.",
+    "detail": "Derin doku kanamaları, hemartroz ve uzamış aPTT beklenir; trombosit sayısı ve kanama zamanı genellikle normaldir. Tedavide faktör VIII replasmanı temel yaklaşımdır.",
+    "pearl": "Erkek çocuk + hemartroz + uzamış aPTT Hemofili A düşündürür.",
+    "diff": "ITP mukokutanöz kanama ve düşük trombosit yapar; hemofilide trombosit normaldir.",
+    "nested": [
+      "Faktör VIII eksikliği",
+      "Hemartroz",
+      "aPTT uzaması"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Febril nötropeni",
+    "aliases": [],
+    "subcategory": "Pediatrik onkoloji / Enfeksiyon acili",
+    "short": "Nötropenik hastada ateş gelişmesiyle sepsis riski taşıyan acil tablodur.",
+    "detail": "Kemoterapi sonrası mukozal bariyer bozulur ve nötrofil savunması azalır. Kan kültürlerinden sonra ilk saat içinde antipseudomonal geniş spektrumlu IV antibiyotik geciktirilmez.",
+    "pearl": "Kemoterapi sonrası ateş + düşük ANC = febril nötropeni; antibiyotik ilk saat içinde.",
+    "diff": "Basit viral ateşte genel durum iyi olabilir; febril nötropeni sepsis kabul edilip hızlı tedavi edilir.",
+    "nested": [
+      "Mutlak nötrofil sayısı",
+      "Antipseudomonal antibiyotik",
+      "Kan kültürü"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Mutlak nötrofil sayısı",
+    "aliases": [
+      "ANC"
+    ],
+    "subcategory": "Pediatrik hematoloji / Laboratuvar",
+    "short": "Toplam lökosit içinde dolaşımdaki nötrofil sayısını gösteren hesaplanmış değerdir.",
+    "detail": "Febril nötropeni riskini belirlemede kullanılır; sayı düştükçe bakteriyel/fungal enfeksiyon riski artar. Kemoterapi alan çocukta ateş değerlendirmesinin temel parametresidir.",
+    "pearl": "Ateşli kemoterapi hastasında ANC febril nötropeni kararını belirler.",
+    "diff": "Toplam lökosit normal olsa bile nötrofil alt grubu düşük olabilir.",
+    "nested": [
+      "Febril nötropeni",
+      "Nötropeni",
+      "Antipseudomonal antibiyotik"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Prostaglandin E1",
+    "aliases": [
+      "PGE1",
+      "alprostadil"
+    ],
+    "subcategory": "Pediatrik kardiyoloji / Duktal açıklık tedavisi",
+    "short": "Duktus arteriozusu açık tutmak için kullanılan prostaglandin tedavisidir.",
+    "detail": "Duktus bağımlı kalp hastalıklarında sistemik veya pulmoner kan akımını geçici olarak sürdürür. Apne önemli yan etkidir; yenidoğan yoğun bakım koşullarında verilir.",
+    "pearl": "Duktus bağımlı lezyonda PGE1 hayat kurtarıcı köprü tedavidir.",
+    "diff": "PDA kapatmak için indometazin/ibuprofen; duktusu açık tutmak için PGE1 kullanılır.",
+    "nested": [
+      "Duktus bağımlı konjenital kalp hastalığı",
+      "Apne",
+      "PDA"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Preduktal-postduktal satürasyon farkı",
+    "aliases": [
+      "pre/postduktal satürasyon farkı"
+    ],
+    "subcategory": "Pediatrik kardiyoloji / Yenidoğan değerlendirme",
+    "short": "Sağ el ile alt ekstremite oksijen satürasyonları arasındaki farktır.",
+    "detail": "Duktus arteriozus düzeyinde sağ-sol şant veya pulmoner hipertansiyon/duktal bağımlı lezyonlarda fark gelişebilir. Yenidoğan siyanozunda kardiyak-pulmoner ayrım için kullanılır.",
+    "pearl": "Sağ el satürasyonu preduktal, ayak satürasyonu postduktal bilgidir.",
+    "diff": "Diffüz akciğer hastalığında fark daha az olabilir; duktal düzeyde şantta belirginleşebilir.",
+    "nested": [
+      "Duktus bağımlı konjenital kalp hastalığı",
+      "Hiperoksi testi",
+      "Santral siyanoz"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "Hiperoksi testi",
+    "aliases": [],
+    "subcategory": "Pediatrik kardiyoloji / Siyanoz ayrımı",
+    "short": "Yenidoğan siyanozunda yüksek oksijen verilince PaO2 yanıtını değerlendirerek pulmoner-kardiyak ayrım yapmaya yardım eden testtir.",
+    "detail": "Akciğer hastalığında oksijen yanıtı daha iyi olabilir; siyanotik konjenital kalp hastalığında sağ-sol şant nedeniyle yanıt sınırlı kalır. Modern pratikte ekokardiyografi önceliklidir ama sınav jargonu önemlidir.",
+    "pearl": "Oksijene dirençli siyanoz siyanotik KKH veya pulmoner hipertansiyon düşündürür.",
+    "diff": "Methemoglobinemide pulse oksimetre ve kan rengi farklı ipuçları verebilir; hiperoksi testi şant mantığına odaklanır.",
+    "nested": [
+      "Duktus bağımlı konjenital kalp hastalığı",
+      "Santral siyanoz",
+      "Ekokardiyografi"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "Fallot tetralojisi",
+    "aliases": [
+      "TOF"
+    ],
+    "subcategory": "Pediatrik kardiyoloji / Siyanotik KKH",
+    "short": "VSD, pulmoner stenoz, sağ ventrikül hipertrofisi ve overriding aorta bileşenlerinden oluşan siyanotik kalp hastalığıdır.",
+    "detail": "Pulmoner çıkış darlığı sağ-sol şantı artırarak siyanoz yapar. Hipoksik spell sırasında çömelme sistemik vasküler direnci artırıp sağ-sol şantı azaltabilir.",
+    "pearl": "Siyanotik çocuk + çömelme davranışı Fallot tetralojisini düşündürür.",
+    "diff": "VSD tek başına asiyanotik soldan sağa şant yapabilir; Fallot’ta pulmoner stenoz ve sağ-sol şant siyanoz oluşturur.",
+    "nested": [
+      "Hipoksik spell",
+      "Çömelme davranışı",
+      "VSD"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Hipoksik spell",
+    "aliases": [],
+    "subcategory": "Pediatrik kardiyoloji / Siyanotik atak",
+    "short": "Fallot tetralojisinde ani siyanoz ve hiperpne ataklarıdır.",
+    "detail": "Sağ ventrikül çıkış yolu darlığı artınca sağ-sol şant artar ve oksijenlenme bozulur. Diz-göğüs pozisyonu, oksijen, morfin ve beta bloker gibi basamaklar bağlama göre kullanılır.",
+    "pearl": "Fallot’ta ani siyanoz atağı hipoksik spell olarak sorulur.",
+    "diff": "Basit nefes tutma atağı genellikle ağlama sonrası benign; hipoksik spell yapısal kalp hastalığı zeminindedir.",
+    "nested": [
+      "Fallot tetralojisi",
+      "Çömelme davranışı",
+      "Sağ-sol şant"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "Makine üfürümü",
+    "aliases": [],
+    "subcategory": "Pediatrik kardiyoloji / Oskültasyon",
+    "short": "Sistol-diyastol boyunca devam eden sürekli üfürüm tarifidir.",
+    "detail": "Patent duktus arteriozusta aorttan pulmoner artere sürekli akım bu üfürümü oluşturur. Prematüre bebekte PDA tedavi kararı hemodinamik etkiye göre verilir.",
+    "pearl": "Sürekli makine üfürümü PDA için klasik ipucudur.",
+    "diff": "VSD holosistolik üfürüm yapar; PDA sürekli üfürümle ayrılır.",
+    "nested": [
+      "PDA",
+      "İndometazin",
+      "Prematürite"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "SVT",
+    "aliases": [
+      "supraventriküler taşikardi"
+    ],
+    "subcategory": "Pediatrik kardiyoloji / Taşiaritmi",
+    "short": "Çocukta çoğu kez ani başlayan düzenli dar QRS taşikardisidir.",
+    "detail": "Sinüs taşikardisinden farkı başlangıç-bitişin ani olması ve hızın klinik durumla orantısız olabilmesidir. Stabil çocukta vagal manevra, başarısızsa hızlı IV adenozin kullanılır.",
+    "pearl": "Ani başlayan düzenli dar QRS taşikardi SVT’dir; stabilse vagal manevra/adenozin.",
+    "diff": "Sinüs taşikardisi ateş/dehidratasyonla uyumludur ve başlangıcı daha kademelidir.",
+    "nested": [
+      "Dar QRS taşikardi",
+      "Adenozin hızlı IV puşe",
+      "Vagal manevra"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Adenozin hızlı IV puşe",
+    "aliases": [],
+    "subcategory": "Pediatrik kardiyoloji / SVT tedavisi",
+    "short": "SVT tedavisinde adenozinin hızlı damar içi bolus ve flush ile verilmesidir.",
+    "detail": "Adenozin çok kısa yarı ömürlüdür; AV nodu geçici bloke ederek re-entry taşikardiyi sonlandırabilir. Yavaş verilirse etkisiz kalabilir.",
+    "pearl": "Adenozin SVT’de hızlı IV puşe + flush şeklinde verilmelidir.",
+    "diff": "Hemodinamik instabil taşikardide senkronize kardiyoversiyon önceliklidir.",
+    "nested": [
+      "SVT",
+      "AV nod blokajı",
+      "Dar QRS taşikardi"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  },
+  {
+    "term": "Senkronize kardiyoversiyon",
+    "aliases": [],
+    "subcategory": "Pediatrik acil / Aritmi tedavisi",
+    "short": "Hemodinamik instabil taşikardide elektrik şokunun QRS ile senkronize verilmesidir.",
+    "detail": "Senkronizasyon repolarizasyon dönemine denk gelen şok riskini azaltır. Pediatrik taşikardi algoritmasında hipotansiyon, bilinç bozukluğu veya şok bulgusu varsa ilaç beklenmez.",
+    "pearl": "İnstabil taşikardide senkronize kardiyoversiyon ilaçtan önce gelir.",
+    "diff": "Defibrilasyon nabızsız VT/VF için senkronize edilmeden verilir; kardiyoversiyon nabızlı instabil taşikardi içindir.",
+    "nested": [
+      "SVT",
+      "Geniş QRS taşikardi",
+      "Hemodinamik instabilite"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Deferoksamin",
+    "aliases": [],
+    "subcategory": "Pediatrik toksikoloji / Antidot",
+    "short": "Demir toksisitesinde kullanılan demir şelatör antidottur.",
+    "detail": "Serbest demiri bağlayarak idrarla atılmasını sağlar; ciddi zehirlenmede hipotansiyon, asidoz veya yüksek demir düzeyi varsa kullanılır. Kırmızımsı idrar klasik bilgi olabilir.",
+    "pearl": "Ağır demir zehirlenmesinin antidotu deferoksamindir.",
+    "diff": "Aktif kömür demiri iyi bağlamaz; demir toksisitesinde antidot mantığı farklıdır.",
+    "nested": [
+      "Demir toksisitesi",
+      "Şelasyon",
+      "Metabolik asidoz"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "alreadyActiveGlossary"
+  },
+  {
+    "term": "Isı çarpması",
+    "aliases": [],
+    "subcategory": "Pediatrik acil / Hipertermi",
+    "short": "Çekirdek ısı yüksekliği ve santral sinir sistemi disfonksiyonuyla seyreden hayatı tehdit eden hipertermi tablosudur.",
+    "detail": "Egzersiz veya sıcak ortam sonrası bilinç değişikliği, konfüzyon, nöbet ve rabdomiyoliz gelişebilir. Tedavide hızlı soğutma zaman kritiktir; antipiretikler patofizyolojiyi düzeltmez.",
+    "pearl": "Hipertermi + bilinç değişikliği = ısı çarpması; hızlı soğutma gerekir.",
+    "diff": "Ateşte hipotalamik set-point artar; ısı çarpmasında ısı yükü ve termoregülasyon yetmezliği vardır.",
+    "nested": [
+      "Rabdomiyoliz",
+      "Hızlı soğutma",
+      "Çekirdek ısı"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "ambiguityRisk": "low",
+    "phraseOnly": true,
+    "skipReason": "noDirectOccurrenceInPediatricsScan"
+  }
+]

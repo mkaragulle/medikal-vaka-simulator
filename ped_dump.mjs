@@ -1,0 +1,11 @@
+import { rawCases } from './src/data/cases.js';
+import { TUS_PEARL_TOPICS } from './src/data/tusPearlCards.js';
+import { TUS_PEARL_PEDIATRICS_FIRST63_TEXT_OVERRIDES } from './src/data/tusPearlPediatricsFirst63Overrides.js';
+import { TUS_PEARL_PEDIATRICS_SECOND63_TEXT_OVERRIDES } from './src/data/tusPearlPediatricsSecond63Overrides.js';
+import { getGlossaryTerms } from './src/utils/glossary.js';
+console.log('rawCases', rawCases.length);
+console.log('peds cases', rawCases.filter(c=>c.branchId==='pediatrics'||String(c.relatedBranch||'').includes('Çocuk')).length);
+console.log('topics', TUS_PEARL_TOPICS.length, 'ped topics', TUS_PEARL_TOPICS.filter(t=>t.branchId==='pediatrics'||String(t.subject||'').includes('Çocuk')).length);
+console.log('overrides1', Object.keys(TUS_PEARL_PEDIATRICS_FIRST63_TEXT_OVERRIDES).length, 'overrides2', Object.keys(TUS_PEARL_PEDIATRICS_SECOND63_TEXT_OVERRIDES).length);
+console.log('glossary', getGlossaryTerms().length);
+console.log(TUS_PEARL_TOPICS.filter(t=>t.branchId==='pediatrics').slice(0,2));

@@ -1,0 +1,96 @@
+# KlinikIQ V404 Pediatrics Glossary Expansion Summary
+
+Bu paket yalnızca Çocuk Sağlığı ve Hastalıkları ile ilişkili klinik olgular, TUS Pearl kartları ve pediatri hap kart override metinleri üzerinden hazırlanmıştır. Açıklamalar kaynak kontrollüdür; glossary UI metinlerine referans eklenmemiştir.
+
+## Özet
+- **version:** V404
+- **branch:** Çocuk Sağlığı ve Hastalıkları
+- **sourceCounts:** {'pedCases': 116, 'pedTopics': 63, 'ov1': 63, 'ov2': 63, 'textFields': 34053}
+- **activeGlossaryExactTermAliasCount:** 10152
+- **curatedCandidateBankCount:** 155
+- **addedEntryCount:** 73
+- **skippedCount:** 82
+- **skippedAlreadyActive:** 64
+- **skippedNoDirectOccurrence:** 18
+- **priorityDistribution:** {'P0': 23, 'P1': 50, 'P2': 0}
+
+## Kaynak envanteri
+- `src/data/cases.js` — 116 kayıt, 31974 metin alanı
+- `src/data/tusPearlCards.js` — 63 kayıt, 819 metin alanı
+- `src/data/tusPearlPediatricsFirst63Overrides.js` — 63 kayıt, 630 metin alanı
+- `src/data/tusPearlPediatricsSecond63Overrides.js` — 63 kayıt, 630 metin alanı
+
+## Eklenen terimler
+- **Kernikterus** (P0, Neonatoloji / Bilirubin ensefalopatisi): Ağır indirekt hiperbilirubineminin bazal gangliyonlar başta olmak üzere beyinde nörotoksik hasar yapmasıdır.
+- **Bilöz kusma** (P0, Neonatoloji / Cerrahi alarm): Safra içeren yeşil kusmadır ve yenidoğanda intestinal obstrüksiyon/volvulus açısından acil kabul edilir.
+- **Pnömatozis intestinalis** (P0, Neonatoloji / Görüntüleme): Bağırsak duvarı içinde gaz görülmesidir ve nekrotizan enterokolit için klasik radyolojik bulgudur.
+- **Hipoksik iskemik ensefalopati** (P0, Neonatoloji / Perinatal nöroloji): Perinatal asfiksi sonrası beyin oksijenlenme ve perfüzyon bozukluğuna bağlı ensefalopati tablosudur.
+- **İlk 24 saatte sarılık** (P0, Neonatoloji / Sarılık alarmı): Yaşamın ilk günü ortaya çıkan sarılıktır ve genellikle patolojik kabul edilir.
+- **Ağır dehidratasyon** (P0, Pediatrik acil / Sıvı kaybı): Dolaşım bozukluğu, letarji, belirgin kapiller dolum uzaması veya zayıf nabızla seyreden ciddi sıvı kaybıdır.
+- **Pediatrik septik şok** (P0, Pediatrik acil / Şok): Enfeksiyona bağlı dolaşım yetmezliği ve doku hipoperfüzyonu tablosudur.
+- **Semptomatik hipoglisemi** (P0, Pediatrik endokrinoloji / Acil glukoz): Düşük glukozun nöbet, letarji, bilinç değişikliği veya adrenerjik bulgularla seyretmesidir.
+- **Tuz kaybettiren adrenal kriz** (P0, Pediatrik endokrinoloji / Adrenal acil): Aldosteron ve kortizol eksikliğine bağlı hiponatremi, hiperkalemi, dehidratasyon ve şok tablosudur.
+- **Bruton agammaglobulinemisi** (P0, Pediatrik immünoloji / B hücre yetmezliği): BTK mutasyonuna bağlı B hücre olgunlaşma kusuru ve çok düşük immünoglobulin düzeyleriyle seyreden X’e bağlı hastalıktır.
+- **Lökosit adezyon defekti** (P0, Pediatrik immünoloji / Fagosit kusuru): Nötrofillerin damar dışına göç edememesiyle giden adezyon molekül kusurudur.
+- **DiGeorge sendromu** (P0, Pediatrik immünoloji / Faringeal poş anomalisi): 22q11 delesyonuna bağlı timus ve paratiroid gelişim bozukluğu, konotrunkal kalp defekti ve hipokalsemiyle seyreden sendromdur.
+- **Wiskott-Aldrich sendromu** (P0, Pediatrik immünoloji / Kombine immün yetmezlik): Egzama, trombositopeni ve tekrarlayan enfeksiyon triadıyla giden X’e bağlı immün yetmezliktir.
+- **Ağır kombine immün yetmezlik** (P0, Pediatrik immünoloji / Primer immün yetmezlik): T ve B hücre fonksiyonlarının ağır bozulduğu, erken bebeklikte hayatı tehdit eden immün yetmezliktir.
+- **Duktus bağımlı konjenital kalp hastalığı** (P0, Pediatrik kardiyoloji / Yenidoğan kardiyak acil): Sistemik veya pulmoner kan akımının açık duktus arteriozusa bağlı olduğu doğumsal kalp hastalıklarıdır.
+- **Febril nöbet** (P0, Pediatrik nöroloji / Ateşli nöbet): 6 ay-5 yaş arasında ateşle ilişkili, MSS enfeksiyonu veya metabolik neden olmadan gelişen nöbettir.
+- **Duchenne musküler distrofi** (P0, Pediatrik nöromüsküler / Kas hastalığı): Distrofin eksikliğine bağlı X’e bağlı progresif kas hastalığıdır.
+- **Spinal musküler atrofi tip 1** (P0, Pediatrik nöromüsküler / Motor nöron hastalığı): SMN1 gen kusuruna bağlı erken bebeklikte ağır hipotoni ve güçsüzlük yapan alt motor nöron hastalığıdır.
+- **Retinoblastom** (P0, Pediatrik onkoloji / Göz tümörü): Retinal hücrelerden gelişen çocukluk çağı malign göz tümörüdür.
+- **Pediatrik astım atağı** (P0, Pediatrik pulmonoloji / Acil): Çocukta bronş hiperreaktivitesi ve hava yolu inflamasyonuna bağlı akut hışıltı, dispne ve solunum işi artışı tablosudur.
+- **Sessiz akciğer** (P0, Pediatrik pulmonoloji / Ağır obstrüksiyon): Ağır hava yolu obstrüksiyonunda wheezing sesinin azalması veya kaybolmasıdır.
+- **İnspiratuvar stridor** (P0, Pediatrik pulmonoloji / Üst hava yolu bulgusu): İnspirasyon sırasında üst hava yolu darlığına bağlı duyulan kaba, tiz solunum sesidir.
+- **Demir toksisitesi** (P0, Pediatrik toksikoloji / Zehirlenme): Aşırı demir alımına bağlı gastrointestinal irritasyon, şok, metabolik asidoz ve çoklu organ hasarı yapabilen zehirlenmedir.
+- **Hava bronkogramı** (P1, Neonatoloji / Akciğer grafisi): Alveoller opaklaştığında hava dolu bronşların grafide belirginleşmesidir.
+- **Retikülogranüler görünüm** (P1, Neonatoloji / Akciğer grafisi): Neonatal RDS’de yaygın ince granüler opasiteler ve düşük akciğer hacmi paternidir.
+- **Kasai portoenterostomi** (P1, Neonatoloji / Cerrahi tedavi): Biliyer atrezide safra drenajını sağlamak için yapılan portoenterostomi ameliyatıdır.
+- **Erken başlangıçlı yenidoğan sepsisi** (P1, Neonatoloji / Enfeksiyon): İlk 72 saatte ortaya çıkan ve çoğunlukla maternal-genital yol kaynaklı yenidoğan sepsisidir.
+- **Akolik dışkı** (P1, Neonatoloji / Kolestaz bulgusu): Safranın barsağa ulaşamaması nedeniyle dışkının açık/kil renginde olmasıdır.
+- **Yenidoğan taraması** (P1, Pediatri / Koruyucu hekimlik): Doğum sonrası belirli hastalıkları semptom gelişmeden yakalamayı amaçlayan tarama programıdır.
+- **Solunum işi artışı** (P1, Pediatrik acil / Fizik muayene): Çocuğun nefes almak için normalden fazla kas gücü kullanmasıdır.
+- **Yardımcı kas kullanımı** (P1, Pediatrik acil / Fizik muayene): Solunumda boyun, interkostal veya abdominal kasların belirgin kullanılmasıdır.
+- **IV dekstroz bolusu** (P1, Pediatrik acil / Hipoglisemi tedavisi): Semptomatik hipoglisemide intravenöz glukozun hızlı verilmesidir.
+- **Deksametazon** (P1, Pediatrik acil / Krup tedavisi): Krupta hava yolu inflamasyonunu azaltmak için kullanılan sistemik kortikosteroiddir.
+- **Kapiller dolum süresi** (P1, Pediatrik acil / Perfüzyon bulgusu): Cilde bası sonrası rengin geri dönme süresidir ve periferik perfüzyonu değerlendirir.
+- **Nebülize adrenalin** (P1, Pediatrik acil / Üst hava yolu tedavisi): Krupta üst hava yolu ödemini geçici olarak azaltan inhalasyon tedavisidir.
+- **Enema redüksiyonu** (P1, Pediatrik cerrahi / Tedavi): İnvajinasyonda hava veya kontrast lavmanla bağırsak segmentinin açılmasıdır.
+- **Piloromiyotomi** (P1, Pediatrik cerrahi / Tedavi): Hipertrofik pilor stenozunda hipertrofik pilor kasının kesilmesi işlemidir.
+- **Kemik yaşı ileriliği** (P1, Pediatrik endokrinoloji / Büyüme-puberte): Kemik maturasyonunun kronolojik yaştan ileri olmasıdır.
+- **Ambigus genitalya** (P1, Pediatrik endokrinoloji / Cinsel gelişim): Dış genital yapının tipik kız/erkek görünümüne net uymamasıdır.
+- **Makroglossi** (P1, Pediatrik endokrinoloji / Fizik muayene): Dilin beklenenden büyük görünmesidir.
+- **Antipseudomonal antibiyotik** (P1, Pediatrik enfeksiyon / Febril nötropeni tedavisi): Pseudomonas aeruginosa dahil gram negatifleri kapsayan antibiyotik yaklaşımıdır.
+- **RSV** (P1, Pediatrik enfeksiyon / Solunum virüsü): Respiratuvar sinsityal virüs, süt çocuklarında bronşiolitin en önemli viral etkenlerinden biridir.
+- **Currant jelly dışkı** (P1, Pediatrik gastroenteroloji / Dışkı bulgusu): Mukus ve kan içeren, kırmızı jöle görünümünde dışkı tarifidir.
+- **Mekonyum ileusu** (P1, Pediatrik gastroenteroloji / Kistik fibrozis): Yenidoğanda koyu yapışkan mekonyumun ileumda tıkanıklık oluşturmasıdır.
+- **Safrasız fışkırır kusma** (P1, Pediatrik gastroenteroloji / Kusma paterni): Safra içermeyen, güçlü ve projektil kusma paternidir.
+- **Pankreatik yetmezlik** (P1, Pediatrik gastroenteroloji / Malabsorpsiyon): Pankreas enzim salgısının yetersizliği nedeniyle yağ ve besin emiliminin bozulmasıdır.
+- **Oral rehidratasyon tedavisi** (P1, Pediatrik gastroenteroloji / Sıvı tedavisi): Hafif-orta dehidratasyonda oral rehidratasyon solüsyonuyla sıvı-elektrolit yerine koyma tedavisidir.
+- **Hemartroz** (P1, Pediatrik hematoloji / Kanama paterni): Eklem içine kanamadır.
+- **İzole trombositopeni** (P1, Pediatrik hematoloji / Laboratuvar paterni): Trombosit düşüklüğünün anemi veya lökosit bozukluğu olmadan görülmesidir.
+- **Ataksi telenjiektazi** (P1, Pediatrik immünoloji / DNA tamir bozukluğu): ATM gen kusuruna bağlı serebellar ataksi, okülokutanöz telenjiektazi ve immün yetmezlikle giden hastalıktır.
+- **Dihidrorodamin testi** (P1, Pediatrik immünoloji / Fagosit fonksiyon testi): Nötrofillerin oksidatif patlama kapasitesini ölçen akım sitometri testidir.
+- **Gecikmiş göbek kordonu düşmesi** (P1, Pediatrik immünoloji / Klinik ipucu): Umblikal kordun beklenenden geç ayrılmasıdır ve lökosit adezyon defekti için klasik ipucudur.
+- **PDA kapatma tedavisi** (P1, Pediatrik kardiyoloji / Duktus yönetimi): Patent duktus arteriozusun farmakolojik veya girişimsel olarak kapatılmasıdır.
+- **Çömelme davranışı** (P1, Pediatrik kardiyoloji / Klinik kompansasyon): Siyanotik çocukta çömelerek sistemik vasküler direnci artırma davranışıdır.
+- **Sabit çift S2** (P1, Pediatrik kardiyoloji / Oskültasyon): Solunumla değişmeyen geniş çift ikinci kalp sesidir.
+- **Propiyonik asidemi** (P1, Pediatrik metabolizma / Organik asidemi): Propionil-CoA karboksilaz eksikliğine bağlı organik asidemi tablosudur.
+- **Çay rengi idrar** (P1, Pediatrik nefroloji / Hematüri bulgusu): Glomerüler kaynaklı hematüride idrarın koyu kahverengi/çay renginde görünmesidir.
+- **Shiga toksin ilişkili HÜS** (P1, Pediatrik nefroloji / Post-diyareik HÜS): EHEC veya Shigella sonrası Shiga toksininin endotel hasarıyla HÜS oluşturmasıdır.
+- **Basit febril nöbet** (P1, Pediatrik nöroloji / Ateşli nöbet): Kısa süreli, jeneralize, 24 saat içinde tekrarlamayan febril nöbettir.
+- **Katılma nöbeti** (P1, Pediatrik nöroloji / Benign paroksismal olay): Ağlama veya korku sonrası soluk tutma, morarma/solukluk ve kısa bilinç kaybıyla giden benign çocukluk olayıdır.
+- **Arefleksi** (P1, Pediatrik nöromüsküler / Muayene bulgusu): Derin tendon reflekslerinin alınamamasıdır.
+- **Baldır psödohipertrofisi** (P1, Pediatrik nöromüsküler / Muayene bulgusu): Kas lifleri yerine yağ ve bağ dokusu artışına bağlı baldırların büyük görünmesidir.
+- **Dil fasikülasyonu** (P1, Pediatrik nöromüsküler / Muayene bulgusu): Dilde ince kas seğirmelerinin görülmesidir.
+- **Gowers bulgusu** (P1, Pediatrik nöromüsküler / Muayene bulgusu): Çocuğun yerden kalkarken elleriyle bacaklarına tırmanarak doğrulmasıdır.
+- **Lökokori** (P1, Pediatrik oftalmoloji / Göz bulgusu): Pupillada normal kırmızı refle yerine beyaz refle görülmesidir.
+- **Kırmızı refle** (P1, Pediatrik oftalmoloji / Tarama muayenesi): Oftalmoskopla pupilladan retinal yansımanın kırmızı-turuncu görülmesidir.
+- **Nazal aspirasyon** (P1, Pediatrik pulmonoloji / Destek tedavisi): Bebeklerde üst hava yolu sekresyonlarının temizlenmesi işlemidir.
+- **Tek taraflı hışıltı** (P1, Pediatrik pulmonoloji / Fizik muayene): Wheezing bulgusunun bir hemitoraksta belirgin olmasıdır.
+- **Hava hapsi** (P1, Pediatrik pulmonoloji / Görüntüleme): Obstrüksiyon nedeniyle havanın distal akciğer segmentinden çıkamamasıdır.
+- **Palpabl purpura** (P1, Pediatrik romatoloji / Döküntü bulgusu): Ciltte ele gelen mor-kırmızı purpurik döküntüdür.
+- **Ko-oksimetri** (P1, Pediatrik toksikoloji / CO tanısı): Karboksihemoglobin gibi dishemoglobinleri ölçebilen özel oksimetri yöntemidir.
+- **Hiperbarik oksijen** (P1, Pediatrik toksikoloji / CO tedavisi): Seçilmiş ağır karbon monoksit zehirlenmelerinde yüksek basınç altında oksijen verilmesidir.
+- **Karboksihemoglobin** (P1, Pediatrik toksikoloji / Dishemoglobin): Karbon monoksitin hemoglobine bağlanmasıyla oluşan formdur.

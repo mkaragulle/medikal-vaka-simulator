@@ -1,0 +1,45 @@
+{
+  "projectVersionInput": "KlinikIQ_V397_PHYSIOLOGY_GLOSSARY_EXPANSION(1).zip",
+  "projectVersionOutput": "KlinikIQ_V398_HISTOLOGY_EMBRYOLOGY_GLOSSARY_EXPANSION.zip",
+  "scanDate": "2026-05-30",
+  "scope": [
+    {
+      "sourceFilePath": "src/data/cases.js",
+      "sourceArea": "Histoloji ve embriyoloji klinik olgular ve TUS Spot olgular",
+      "recordCount": 40,
+      "textFieldCount": 9364
+    },
+    {
+      "sourceFilePath": "src/data/tusPearlHistologyEmbryologyFirst34Overrides.js",
+      "sourceArea": "Histoloji ve embriyoloji hap kart override metinleri",
+      "recordCount": 34,
+      "textFieldCount": 374
+    },
+    {
+      "sourceFilePath": "src/data/tusPearlCards.js",
+      "sourceArea": "Histoloji ve embriyoloji TUS Pearl kartları",
+      "recordCount": 34,
+      "textFieldCount": 646
+    },
+    {
+      "sourceFilePath": "src/utils/glossary.js + src/data/tusGlossary*.js",
+      "sourceArea": "Aktif glossary exact term/alias karşılaştırması",
+      "recordCount": 2531,
+      "textFieldCount": 8193
+    }
+  ],
+  "counts": {
+    "scannedHistologyEmbryologyCases": 40,
+    "scannedHistologyEmbryologyOverrideCards": 34,
+    "scannedHistologyEmbryologyTusPearlCards": 34,
+    "scannedTextFields": 10384,
+    "activeGlossaryEntriesBefore": 2531,
+    "activeExactTermAliasBefore": 8193,
+    "curatedCandidateBank": 122,
+    "addedNewEntries": 102,
+    "skippedAlreadyActiveOrNoOccurrence": 20,
+    "P0": 27,
+    "P1": 73,
+    "P2": 2
+  }
+}

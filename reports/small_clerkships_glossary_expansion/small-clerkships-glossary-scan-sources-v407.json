@@ -1,0 +1,41 @@
+{
+  "version": "V407_SMALL_CLERKSHIPS_GLOSSARY_EXPANSION",
+  "scannedFiles": [
+    {
+      "path": "src/data/cases.js",
+      "contentType": "Küçük Stajlar clinical cases",
+      "recordsScanned": 26
+    },
+    {
+      "path": "src/data/tusPearlCards.js",
+      "contentType": "Küçük Stajlar TUS Pearl / Hap cards",
+      "recordsScanned": 29
+    },
+    {
+      "path": "src/data/tusPearlSmallClerkshipsFirst58Overrides.js",
+      "contentType": "Küçük Stajlar override card texts",
+      "recordsScanned": 58
+    },
+    {
+      "path": "src/utils/glossary.js",
+      "contentType": "active glossary comparison/import target",
+      "recordsScanned": 1
+    }
+  ],
+  "textFieldsScanned": 8015,
+  "activeGlossaryEntriesBefore": 3404,
+  "activeGlossaryExactNormsBefore": 10746,
+  "candidateBankSize": 116,
+  "entriesAdded": 103,
+  "skipped": 13,
+  "areasCovered": [
+    "Dermatoloji",
+    "Göz Hastalıkları",
+    "KBB",
+    "Nöroloji",
+    "Psikiyatri",
+    "Ortopedi ve Travmatoloji",
+    "FTR",
+    "Acil/Toksikoloji"
+  ]
+}

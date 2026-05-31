@@ -1,6 +1,6 @@
-// V330 — Ultra-deep glossary additions from V317 Batch 5 and foundation Batch 6 candidate audits.
-// Sources: glossary-v317-ultradeep-quality-batch5(3).json and glossary-v317-foundation-major-gap-batch6(1).json
-// Accepted entries were filtered against the V329 active glossary aliases, de-duplicated, and broad low-signal symptoms were excluded or context-guarded.
+// KlinikIQ TUS-focused smart glossary layer.
+// V330 ultra-deep glossary batch 5 + foundation batch 6.
+// Curated terms only; used by the central tooltip/glossary merge pipeline.
 
 export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
   {
@@ -126,7 +126,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-akut-hipertansif-akciger-odemi",
     "term": "Akut hipertansif akciğer ödemi",
     "aliases": [
-      "Akut hipertansif akciğer ödemi"
+      "Akut hipertansif akciğer ödemi",
+      "hipertansif pulmoner ödem",
+      "flash pulmoner ödem"
     ],
     "normalizedTerm": "akut hipertansif akciger odemi",
     "TurkishName": "Akut hipertansif akciğer ödemi",
@@ -134,17 +136,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Hipertansif akciğer ödeminde afterload düşürülmesi hızlı hemodinamik rahatlama sağlar.",
-    "definition": "Hipertansif akciğer ödeminde afterload düşürülmesi hızlı hemodinamik rahatlama sağlar.",
-    "detailedExplanation": "Akut hipertansif akciğer ödemi Hipertansif akciğer ödeminde afterload düşürülmesi hızlı hemodinamik rahatlama sağlar.",
-    "postAnswerExplanation": "Akut hipertansif akciğer ödemi Hipertansif akciğer ödeminde afterload düşürülmesi hızlı hemodinamik rahatlama sağlar.",
-    "postAnswerExpandedExplanation": "Akut hipertansif akciğer ödemi Hipertansif akciğer ödeminde afterload düşürülmesi hızlı hemodinamik rahatlama sağlar.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Ani afterload artışı ve sol ventrikül dolum basıncı yükselmesiyle gelişen hızlı pulmoner konjesyon tablosudur. Şiddetli dispne, köpüklü balgam, yaygın ral ve çok yüksek kan basıncıyla acil tedavi gerektirir.",
+    "preAnswerSafeDefinition": "Ani afterload artışı ve sol ventrikül dolum basıncı yükselmesiyle gelişen hızlı pulmoner konjesyon tablosudur. Şiddetli dispne, köpüklü balgam, yaygın ral ve çok yüksek kan basıncıyla acil tedavi gerektirir.",
+    "shortDefinition": "Ani afterload artışı ve sol ventrikül dolum basıncı yükselmesiyle gelişen hızlı pulmoner konjesyon tablosudur. Şiddetli dispne, köpüklü balgam, yaygın ral ve çok yüksek kan basıncıyla acil tedavi gerektirir.",
+    "definition": "Ani afterload artışı ve sol ventrikül dolum basıncı yükselmesiyle gelişen hızlı pulmoner konjesyon tablosudur. Şiddetli dispne, köpüklü balgam, yaygın ral ve çok yüksek kan basıncıyla acil tedavi gerektirir.",
+    "detailedExplanation": "Akut hipertansif akciğer ödeminde temel sorun sıvı fazlalığından çok ani basınç yükü ve pulmoner kapiller basınç artışıdır. Noninvaziv ventilasyon, nitratlarla afterload/preload azaltılması ve oksijenizasyon ilk basamak yaklaşımın merkezindedir.",
+    "postAnswerExplanation": "Akut hipertansif akciğer ödeminde temel sorun sıvı fazlalığından çok ani basınç yükü ve pulmoner kapiller basınç artışıdır. Noninvaziv ventilasyon, nitratlarla afterload/preload azaltılması ve oksijenizasyon ilk basamak yaklaşımın merkezindedir.",
+    "postAnswerExpandedExplanation": "Akut hipertansif akciğer ödeminde temel sorun sıvı fazlalığından çok ani basınç yükü ve pulmoner kapiller basınç artışıdır. Noninvaziv ventilasyon, nitratlarla afterload/preload azaltılması ve oksijenizasyon ilk basamak yaklaşımın merkezindedir.",
+    "tusPearl": "Hipertansif pulmoner ödemde hızlı rahatlama çoğu kez nitratla afterload düşürülmesine bağlıdır; yalnız diüretik düşünmek eksik kalır.",
+    "differentialPoint": "KOAH/astım alevlenmesinde wheezing baskındır; hipertansif akciğer ödeminde ağır hipertansiyon, ortopne, ral ve akciğer grafisinde konjesyon öne çıkar.",
+    "clinicalRelevance": "Acil dispne sorularında kan basıncı yüksekliği ve yaygın ral tedavi önceliğini değiştirir.",
+    "mechanism": "Afterload artışı sol ventrikül boşalmasını azaltır; sol atriyum ve pulmoner ven basıncı yükselerek alveoler ödem oluşturur.",
     "relatedBranches": [
       "cardiology"
     ],
@@ -157,7 +159,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Akut hipertansif akciğer ödemi"
+      "Akut hipertansif akciğer ödemi",
+      "hipertansif pulmoner ödem",
+      "flash pulmoner ödem"
     ],
     "sourceTextExamples": [
       "Akut hipertansif akciğer ödemi",
@@ -297,7 +301,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-alkol-dehidrogenaz-inhibisyonu",
     "term": "Alkol dehidrogenaz inhibisyonu",
     "aliases": [
-      "Alkol dehidrogenaz inhibisyonu"
+      "Alkol dehidrogenaz inhibisyonu",
+      "fomepizol mekanizması",
+      "ADH inhibisyonu"
     ],
     "normalizedTerm": "alkol dehidrogenaz inhibisyonu",
     "TurkishName": "Alkol dehidrogenaz inhibisyonu",
@@ -305,17 +311,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": ", metanolün formik asit gibi toksik metabolitlere dönüşmesini engellediği için fomepizolün temel mekanizmasıdır.",
-    "definition": ", metanolün formik asit gibi toksik metabolitlere dönüşmesini engellediği için fomepizolün temel mekanizmasıdır.",
-    "detailedExplanation": "Alkol dehidrogenaz inhibisyonu, metanolün formik asit gibi toksik metabolitlere dönüşmesini engellediği için fomepizolün temel mekanizmasıdır. Kaynağı belirsiz alkol alımı sonrası görme bozukluğu, yüksek anyon açıklı metabolik asidoz ve artmış osmolar açıklık metanol zehirlenmesini düşündürür. Fomepizol, alkol dehidrogenazı inhibe ederek metanolün toksik metabolitleri olan formaldehit ve formik aside dönüşmesini...",
-    "postAnswerExplanation": "Alkol dehidrogenaz inhibisyonu, metanolün formik asit gibi toksik metabolitlere dönüşmesini engellediği için fomepizolün temel mekanizmasıdır. Kaynağı belirsiz alkol alımı sonrası görme bozukluğu, yüksek anyon açıklı metabolik asidoz ve artmış osmolar açıklık metanol zehirlenmesini düşündürür. Fomepizol, alkol dehidrogenazı inhibe ederek metanolün toksik metabolitleri olan formaldehit ve formik aside dönüşmesini...",
-    "postAnswerExpandedExplanation": "Alkol dehidrogenaz inhibisyonu, metanolün formik asit gibi toksik metabolitlere dönüşmesini engellediği için fomepizolün temel mekanizmasıdır. Kaynağı belirsiz alkol alımı sonrası görme bozukluğu, yüksek anyon açıklı metabolik asidoz ve artmış osmolar açıklık metanol zehirlenmesini düşündürür. Fomepizol, alkol dehidrogenazı inhibe ederek metanolün toksik metabolitleri olan formaldehit ve formik aside dönüşmesini...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Alkol dehidrogenaz enziminin metanol veya etilen glikolü toksik metabolitlere çevirmesinin engellenmesidir. Fomepizol bu enzimi inhibe ederek formik asit ve glikolik/oksalik asit oluşumunu azaltır.",
+    "preAnswerSafeDefinition": "Alkol dehidrogenaz enziminin metanol veya etilen glikolü toksik metabolitlere çevirmesinin engellenmesidir. Fomepizol bu enzimi inhibe ederek formik asit ve glikolik/oksalik asit oluşumunu azaltır.",
+    "shortDefinition": "Alkol dehidrogenaz enziminin metanol veya etilen glikolü toksik metabolitlere çevirmesinin engellenmesidir. Fomepizol bu enzimi inhibe ederek formik asit ve glikolik/oksalik asit oluşumunu azaltır.",
+    "definition": "Alkol dehidrogenaz enziminin metanol veya etilen glikolü toksik metabolitlere çevirmesinin engellenmesidir. Fomepizol bu enzimi inhibe ederek formik asit ve glikolik/oksalik asit oluşumunu azaltır.",
+    "detailedExplanation": "Metanol zehirlenmesinde görme bozukluğu, yüksek anyon açıklı metabolik asidoz ve osmolar açıklık tipiktir. Etilen glikolde böbrek hasarı ve kalsiyum oksalat kristalleri beklenebilir; iki tabloda da fomepizol toksik metabolit oluşumunu keser.",
+    "postAnswerExplanation": "Metanol zehirlenmesinde görme bozukluğu, yüksek anyon açıklı metabolik asidoz ve osmolar açıklık tipiktir. Etilen glikolde böbrek hasarı ve kalsiyum oksalat kristalleri beklenebilir; iki tabloda da fomepizol toksik metabolit oluşumunu keser.",
+    "postAnswerExpandedExplanation": "Metanol zehirlenmesinde görme bozukluğu, yüksek anyon açıklı metabolik asidoz ve osmolar açıklık tipiktir. Etilen glikolde böbrek hasarı ve kalsiyum oksalat kristalleri beklenebilir; iki tabloda da fomepizol toksik metabolit oluşumunu keser.",
+    "tusPearl": "Toksik alkol sorusunda antidot mantığı ana alkolü değil, alkol dehidrogenaz üzerinden oluşacak asidik metaboliti durdurmaktır.",
+    "differentialPoint": "Etanol intoksikasyonu sedasyon yapar; metanol görme bulgusu, etilen glikol ise renal hasar ve oksalat kristaliyle ayrılır.",
+    "clinicalRelevance": "Toksikoloji sorularında antidot seçimi doğrudan metabolizma basamağına bağlanır.",
+    "mechanism": "Fomepizol alkol dehidrogenazı kompetitif inhibe ederek toksik aldehit ve asit metabolitlerin oluşumunu azaltır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -328,7 +334,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Alkol dehidrogenaz inhibisyonu"
+      "Alkol dehidrogenaz inhibisyonu",
+      "fomepizol mekanizması",
+      "ADH inhibisyonu"
     ],
     "sourceTextExamples": [
       "Alkol dehidrogenaz inhibisyonu, metanolün formik asit gibi toksik metabolitlere dönüşmesini engellediği için fomepizolün temel mekanizmasıdır.",
@@ -407,7 +415,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-aclik-sonrasi-hipoglisemik-atak",
     "term": "Açlık sonrası hipoglisemik atak",
     "aliases": [
-      "Açlık sonrası hipoglisemik atak"
+      "Açlık sonrası hipoglisemik atak",
+      "hipoketotik hipoglisemi",
+      "MCAD hipoglisemisi"
     ],
     "normalizedTerm": "aclik sonrasi hipoglisemik atak",
     "TurkishName": "Açlık sonrası hipoglisemik atak",
@@ -415,17 +425,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Uzun açlık veya enfeksiyon sonrası gelişen hipoketotik hipoglisemi ve orta zincirli açil-karnitin artışı MCAD eksikliğini düşündürür.",
-    "definition": "Uzun açlık veya enfeksiyon sonrası gelişen hipoketotik hipoglisemi ve orta zincirli açil-karnitin artışı MCAD eksikliğini düşündürür.",
-    "detailedExplanation": "Açlık sonrası hipoglisemik atak Uzun açlık veya enfeksiyon sonrası gelişen hipoketotik hipoglisemi ve orta zincirli açil-karnitin artışı MCAD eksikliğini düşündürür. Orta zincirli yağ asitlerinin beta-oksidasyonu bozulduğunda açlıkta enerji ve asetil-CoA üretimi azalır; ketogenez yetersiz kalır ve glukoneogenez desteklenemez.",
-    "postAnswerExplanation": "Açlık sonrası hipoglisemik atak Uzun açlık veya enfeksiyon sonrası gelişen hipoketotik hipoglisemi ve orta zincirli açil-karnitin artışı MCAD eksikliğini düşündürür. Orta zincirli yağ asitlerinin beta-oksidasyonu bozulduğunda açlıkta enerji ve asetil-CoA üretimi azalır; ketogenez yetersiz kalır ve glukoneogenez desteklenemez.",
-    "postAnswerExpandedExplanation": "Açlık sonrası hipoglisemik atak Uzun açlık veya enfeksiyon sonrası gelişen hipoketotik hipoglisemi ve orta zincirli açil-karnitin artışı MCAD eksikliğini düşündürür. Orta zincirli yağ asitlerinin beta-oksidasyonu bozulduğunda açlıkta enerji ve asetil-CoA üretimi azalır; ketogenez yetersiz kalır ve glukoneogenez desteklenemez.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Uzamış açlık veya enfeksiyon sonrası glukoz üretimi yetersiz kaldığında gelişen hipoglisemi atağıdır. Hipoketotik hipoglisemi özellikle orta zincirli açil-CoA dehidrogenaz eksikliğini düşündürür.",
+    "preAnswerSafeDefinition": "Uzamış açlık veya enfeksiyon sonrası glukoz üretimi yetersiz kaldığında gelişen hipoglisemi atağıdır. Hipoketotik hipoglisemi özellikle orta zincirli açil-CoA dehidrogenaz eksikliğini düşündürür.",
+    "shortDefinition": "Uzamış açlık veya enfeksiyon sonrası glukoz üretimi yetersiz kaldığında gelişen hipoglisemi atağıdır. Hipoketotik hipoglisemi özellikle orta zincirli açil-CoA dehidrogenaz eksikliğini düşündürür.",
+    "definition": "Uzamış açlık veya enfeksiyon sonrası glukoz üretimi yetersiz kaldığında gelişen hipoglisemi atağıdır. Hipoketotik hipoglisemi özellikle orta zincirli açil-CoA dehidrogenaz eksikliğini düşündürür.",
+    "detailedExplanation": "MCAD eksikliğinde orta zincirli yağ asitlerinin beta-oksidasyonu bozulur; asetil-CoA ve keton üretimi azalır. Çocukta kusma, letarji, nöbet ve ketonun beklenenden düşük olması tanısal ipucudur.",
+    "postAnswerExplanation": "MCAD eksikliğinde orta zincirli yağ asitlerinin beta-oksidasyonu bozulur; asetil-CoA ve keton üretimi azalır. Çocukta kusma, letarji, nöbet ve ketonun beklenenden düşük olması tanısal ipucudur.",
+    "postAnswerExpandedExplanation": "MCAD eksikliğinde orta zincirli yağ asitlerinin beta-oksidasyonu bozulur; asetil-CoA ve keton üretimi azalır. Çocukta kusma, letarji, nöbet ve ketonun beklenenden düşük olması tanısal ipucudur.",
+    "tusPearl": "Açlık sonrası hipoglisemi + düşük keton = yağ asidi oksidasyon kusuru düşün.",
+    "differentialPoint": "İnsülin fazlalığında keton baskılanır ama orta zincirli açilkarnitin artışı beklenmez; glikojen depo hastalıklarında hepatomegali daha belirgin olabilir.",
+    "clinicalRelevance": "Pediatrik metabolik kriz sorularında keton düzeyi ayırıcı tanıyı hızla daraltır.",
+    "mechanism": "Yağ asidi beta-oksidasyonu bozulunca açlıkta ketogenez ve glukoneogenezi destekleyen enerji üretimi azalır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -443,7 +453,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Açlık sonrası hipoglisemik atak",
-      "hipoglisemi"
+      "hipoketotik hipoglisemi",
+      "MCAD hipoglisemisi"
     ],
     "sourceTextExamples": [
       "Açlık sonrası hipoglisemik atak",
@@ -707,8 +718,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "İnguinal ligamentin altında ve pubik tüberkülün lateralinde yerleşen ağrılı, redükte edilemeyen kitle femoral herniyi düşündürür.",
+    "preAnswerSafeDefinition": "İnguinal ligamentin altında ve pubik tüberkülün lateralinde yerleşen ağrılı, redükte edilemeyen kitle femoral herniyi düşündürür.",
     "shortDefinition": "İnguinal ligamentin altında ve pubik tüberkülün lateralinde yerleşen ağrılı, redükte edilemeyen kitle femoral herniyi düşündürür.",
     "definition": "İnguinal ligamentin altında ve pubik tüberkülün lateralinde yerleşen ağrılı, redükte edilemeyen kitle femoral herniyi düşündürür.",
     "detailedExplanation": "İnguinal ligamentin altında ve pubik tüberkülün lateralinde yerleşen ağrılı, redükte edilemeyen kitle femoral herniyi düşündürür. Femoral kanal femoral kılıfın medial kompartmanıdır; kanalın lateralinde femoral ven bulunur. Dar femoral halka nedeniyle strangülasyon riski yüksektir. İnguinal ligamentin altında ve pubik tüberkülün lateralinde yerleşen ağrılı, redükte edilemeyen kitle femoral herniyi düşündürür....",
@@ -897,8 +908,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Kadın Hastalıkları ve Doğum",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Koryoamniyonit maternal ve fetal enfeksiyon riskini artırır; gebeliği sürdürmek uygun değildir.",
+    "preAnswerSafeDefinition": "Koryoamniyonit maternal ve fetal enfeksiyon riskini artırır; gebeliği sürdürmek uygun değildir.",
     "shortDefinition": "Koryoamniyonit maternal ve fetal enfeksiyon riskini artırır; gebeliği sürdürmek uygun değildir.",
     "definition": "Koryoamniyonit maternal ve fetal enfeksiyon riskini artırır; gebeliği sürdürmek uygun değildir.",
     "detailedExplanation": "Koryoamniyonit yaklaşımı Koryoamniyonit maternal ve fetal enfeksiyon riskini artırır; gebeliği sürdürmek uygun değildir.",
@@ -952,8 +963,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Pediatri",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "preAnswerSafeDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
+    "previewDefinition": "Duktus kapanması sonrası alt vücut perfüzyonu bozulur.",
+    "preAnswerSafeDefinition": "Duktus kapanması sonrası alt vücut perfüzyonu bozulur.",
     "shortDefinition": "Duktus kapanması sonrası alt vücut perfüzyonu bozulur.",
     "definition": "Duktus kapanması sonrası alt vücut perfüzyonu bozulur.",
     "detailedExplanation": "Kritik aort koarktasyonu Duktus kapanması sonrası alt vücut perfüzyonu bozulur.",
@@ -1078,8 +1089,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Cerrahi / Acil",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
+    "previewDefinition": "Masif veya devam eden kanama büyük damar ya da akciğer yaralanmasını düşündürür.",
+    "preAnswerSafeDefinition": "Masif veya devam eden kanama büyük damar ya da akciğer yaralanmasını düşündürür.",
     "shortDefinition": "Masif veya devam eden kanama büyük damar ya da akciğer yaralanmasını düşündürür.",
     "definition": "Masif veya devam eden kanama büyük damar ya da akciğer yaralanmasını düşündürür.",
     "detailedExplanation": "Masif hemotoraks Masif veya devam eden kanama büyük damar ya da akciğer yaralanmasını düşündürür.",
@@ -1307,8 +1318,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Kadın Hastalıkları ve Doğum",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Histerektomi PPROM yönetiminde yeri olmayan radikal bir işlemdir.",
+    "preAnswerSafeDefinition": "Histerektomi PPROM yönetiminde yeri olmayan radikal bir işlemdir.",
     "shortDefinition": "Histerektomi PPROM yönetiminde yeri olmayan radikal bir işlemdir.",
     "definition": "Histerektomi PPROM yönetiminde yeri olmayan radikal bir işlemdir.",
     "detailedExplanation": "Histerektomi PPROM yönetiminde yeri olmayan radikal bir işlemdir. 31. haftada preterm erken membran rüptürü olan ve enfeksiyon-fetal distres bulgusu olmayan hastada bekleme yaklaşımı uygulanır. Yatış, antenatal kortikosteroid, latans antibiyotiği ve anne-fetus izlemi gerekir; dijital muayeneden kaçınılır.",
@@ -1362,8 +1373,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Cerrahi / Acil",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
+    "previewDefinition": "Kristalloid gereksinimi vücut ağırlığı ve yanık yüzdesine göre hesaplanır.",
+    "preAnswerSafeDefinition": "Kristalloid gereksinimi vücut ağırlığı ve yanık yüzdesine göre hesaplanır.",
     "shortDefinition": "Kristalloid gereksinimi vücut ağırlığı ve yanık yüzdesine göre hesaplanır.",
     "definition": "Kristalloid gereksinimi vücut ağırlığı ve yanık yüzdesine göre hesaplanır.",
     "detailedExplanation": "Parkland formülü. Kristalloid gereksinimi vücut ağırlığı ve yanık yüzdesine göre hesaplanır.",
@@ -1475,8 +1486,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Kadın Hastalıkları ve Doğum",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Uterin skar alanında desidua bozukluğu plasentanın invaziv tutunmasına yol açabilir.",
+    "preAnswerSafeDefinition": "Uterin skar alanında desidua bozukluğu plasentanın invaziv tutunmasına yol açabilir.",
     "shortDefinition": "Uterin skar alanında desidua bozukluğu plasentanın invaziv tutunmasına yol açabilir.",
     "definition": "Uterin skar alanında desidua bozukluğu plasentanın invaziv tutunmasına yol açabilir.",
     "detailedExplanation": "Plasenta akreata spektrumu. Uterin skar alanında desidua bozukluğu plasentanın invaziv tutunmasına yol açabilir.",
@@ -1530,8 +1541,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Anatomik ilişki",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Popliteal arter diz arkasında sabit seyri nedeniyle diz çıkıklarında gerilme ve yırtılma riski taşır.",
+    "preAnswerSafeDefinition": "Popliteal arter diz arkasında sabit seyri nedeniyle diz çıkıklarında gerilme ve yırtılma riski taşır.",
     "shortDefinition": "Popliteal arter diz arkasında sabit seyri nedeniyle diz çıkıklarında gerilme ve yırtılma riski taşır.",
     "definition": "Popliteal arter diz arkasında sabit seyri nedeniyle diz çıkıklarında gerilme ve yırtılma riski taşır.",
     "detailedExplanation": "Popliteal arter yaralanması Popliteal arter diz arkasında sabit seyri nedeniyle diz çıkıklarında gerilme ve yırtılma riski taşır.",
@@ -1668,8 +1679,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Sinus sagittalis superior venöz sinüstür ve orta hatta seyreder; pterion travmasıyla ilişkili tipik damar değildir.",
+    "preAnswerSafeDefinition": "Sinus sagittalis superior venöz sinüstür ve orta hatta seyreder; pterion travmasıyla ilişkili tipik damar değildir.",
     "shortDefinition": "Sinus sagittalis superior venöz sinüstür ve orta hatta seyreder; pterion travmasıyla ilişkili tipik damar değildir.",
     "definition": "Sinus sagittalis superior venöz sinüstür ve orta hatta seyreder; pterion travmasıyla ilişkili tipik damar değildir.",
     "detailedExplanation": "Sinus sagittalis superior venöz sinüstür ve orta hatta seyreder; pterion travmasıyla ilişkili tipik damar değildir. Pterion bölgesi ince kemik yapısı nedeniyle travmada kırılabilir ve hemen altında seyreden arteria meningea media yaralanabilir. Arteriyel kanama dura ile kafatası arasında bikonveks epidural hematom oluşturur.",
@@ -1860,7 +1871,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-staphylococcus-aureus-toksik-sok-sendromu",
     "term": "Staphylococcus aureus toksik şok sendromu",
     "aliases": [
-      "Staphylococcus aureus toksik şok sendromu"
+      "Staphylococcus aureus toksik şok sendromu",
+      "stafilokokal toksik şok",
+      "TSST-1"
     ],
     "normalizedTerm": "staphylococcus aureus toksik sok sendromu",
     "TurkishName": "Staphylococcus aureus toksik şok sendromu",
@@ -1868,17 +1881,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "TSST-1 süperantijen gibi davranır ve yaygın sitokin salınımı oluşturur.",
-    "definition": "TSST-1 süperantijen gibi davranır ve yaygın sitokin salınımı oluşturur.",
-    "detailedExplanation": "Staphylococcus aureus toksik şok sendromu. TSST-1 süperantijen gibi davranır ve yaygın sitokin salınımı oluşturur.",
-    "postAnswerExplanation": "Staphylococcus aureus toksik şok sendromu. TSST-1 süperantijen gibi davranır ve yaygın sitokin salınımı oluşturur.",
-    "postAnswerExpandedExplanation": "Staphylococcus aureus toksik şok sendromu. TSST-1 süperantijen gibi davranır ve yaygın sitokin salınımı oluşturur.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Staphylococcus aureus toksinlerinin süperantijen etkisiyle gelişen ateş, hipotansiyon, yaygın döküntü ve çoklu organ tutulumu tablosudur. Tampon, cerrahi yara veya deri-yumuşak doku enfeksiyonu sonrası görülebilir.",
+    "preAnswerSafeDefinition": "Staphylococcus aureus toksinlerinin süperantijen etkisiyle gelişen ateş, hipotansiyon, yaygın döküntü ve çoklu organ tutulumu tablosudur. Tampon, cerrahi yara veya deri-yumuşak doku enfeksiyonu sonrası görülebilir.",
+    "shortDefinition": "Staphylococcus aureus toksinlerinin süperantijen etkisiyle gelişen ateş, hipotansiyon, yaygın döküntü ve çoklu organ tutulumu tablosudur. Tampon, cerrahi yara veya deri-yumuşak doku enfeksiyonu sonrası görülebilir.",
+    "definition": "Staphylococcus aureus toksinlerinin süperantijen etkisiyle gelişen ateş, hipotansiyon, yaygın döküntü ve çoklu organ tutulumu tablosudur. Tampon, cerrahi yara veya deri-yumuşak doku enfeksiyonu sonrası görülebilir.",
+    "detailedExplanation": "TSST-1 ve ilişkili toksinler T hücrelerini antijen özgüllüğü olmadan aktive ederek yoğun sitokin salınımı oluşturur. Eritrodermi, deskuamasyon, hipotansiyon ve böbrek/karaciğer/kas tutulumu birlikte aranır.",
+    "postAnswerExplanation": "TSST-1 ve ilişkili toksinler T hücrelerini antijen özgüllüğü olmadan aktive ederek yoğun sitokin salınımı oluşturur. Eritrodermi, deskuamasyon, hipotansiyon ve böbrek/karaciğer/kas tutulumu birlikte aranır.",
+    "postAnswerExpandedExplanation": "TSST-1 ve ilişkili toksinler T hücrelerini antijen özgüllüğü olmadan aktive ederek yoğun sitokin salınımı oluşturur. Eritrodermi, deskuamasyon, hipotansiyon ve böbrek/karaciğer/kas tutulumu birlikte aranır.",
+    "tusPearl": "Toksik şokta anahtar mekanizma süperantijen kaynaklı yaygın T hücre aktivasyonu ve sitokin fırtınasıdır.",
+    "differentialPoint": "Streptokokal toksik şok genellikle invaziv yumuşak doku enfeksiyonu ve daha belirgin nekrotizan tabloyla gider; stafilokokal formda odak daha sınırlı olabilir.",
+    "clinicalRelevance": "Ateş-hipotansiyon-döküntü birlikteliğinde toksin aracılı sistemik tabloyu tanımayı sağlar.",
+    "mechanism": "Süperantijenler MHC-II ile TCR Vβ bölgesini çapraz bağlayarak poliklonal T hücre aktivasyonu yapar.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -1896,7 +1909,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Staphylococcus aureus toksik şok sendromu",
-      "şok"
+      "stafilokokal toksik şok",
+      "TSST-1"
     ],
     "sourceTextExamples": [
       "Staphylococcus aureus toksik şok sendromu.",
@@ -1975,7 +1989,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-terapotik-hipotermi",
     "term": "Terapötik hipotermi",
     "aliases": [
-      "Terapötik hipotermi"
+      "Terapötik hipotermi",
+      "yenidoğan terapötik hipotermi",
+      "HİE hipotermi tedavisi"
     ],
     "normalizedTerm": "terapotik hipotermi",
     "TurkishName": "Terapötik hipotermi",
@@ -1983,17 +1999,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Pediatri",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "preAnswerSafeDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "shortDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "definition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "detailedExplanation": "İlk 6 saat içinde terapötik hipotermi. Uygun term veya near-term yenidoğanda perinatal asfiksi sonrası orta-ağır HİE saptanırsa nöroprotektif hipotermi zaman penceresi kaçırılmamalıdır.",
-    "postAnswerExplanation": "İlk 6 saat içinde terapötik hipotermi. Uygun term veya near-term yenidoğanda perinatal asfiksi sonrası orta-ağır HİE saptanırsa nöroprotektif hipotermi zaman penceresi kaçırılmamalıdır.",
-    "postAnswerExpandedExplanation": "İlk 6 saat içinde terapötik hipotermi. Uygun term veya near-term yenidoğanda perinatal asfiksi sonrası orta-ağır HİE saptanırsa nöroprotektif hipotermi zaman penceresi kaçırılmamalıdır.",
-    "tusPearl": "Pediatride yaş, doğum öyküsü, beslenme, aşı/immünite ve acil solunum-dolaşım riski soruyu belirler.",
-    "differentialPoint": "Erişkin yaklaşımından farkı yaşa özgü eşikler, congenital nedenler ve hızlı kötüleşme riskidir.",
-    "clinicalRelevance": "Pediatride yaş, doğum öyküsü, beslenme, aşı/immünite ve acil solunum-dolaşım riski soruyu belirler.",
-    "mechanism": "",
+    "previewDefinition": "Perinatal asfiksi sonrası orta-ağır hipoksik iskemik ensefalopatisi olan uygun term veya near-term yenidoğanda vücut ısısının kontrollü düşürülmesidir. Nöroprotektif etkinlik için genellikle ilk 6 saatlik pencere kritiktir.",
+    "preAnswerSafeDefinition": "Perinatal asfiksi sonrası orta-ağır hipoksik iskemik ensefalopatisi olan uygun term veya near-term yenidoğanda vücut ısısının kontrollü düşürülmesidir. Nöroprotektif etkinlik için genellikle ilk 6 saatlik pencere kritiktir.",
+    "shortDefinition": "Perinatal asfiksi sonrası orta-ağır hipoksik iskemik ensefalopatisi olan uygun term veya near-term yenidoğanda vücut ısısının kontrollü düşürülmesidir. Nöroprotektif etkinlik için genellikle ilk 6 saatlik pencere kritiktir.",
+    "definition": "Perinatal asfiksi sonrası orta-ağır hipoksik iskemik ensefalopatisi olan uygun term veya near-term yenidoğanda vücut ısısının kontrollü düşürülmesidir. Nöroprotektif etkinlik için genellikle ilk 6 saatlik pencere kritiktir.",
+    "detailedExplanation": "Terapötik hipotermi serebral metabolik hızı ve ikincil enerji yetmezliğini azaltarak nöronal hasarı sınırlamayı hedefler. Uygun hasta seçimi, zamanlama ve yoğun bakım izlemi tedavinin güvenliği açısından belirleyicidir.",
+    "postAnswerExplanation": "Terapötik hipotermi serebral metabolik hızı ve ikincil enerji yetmezliğini azaltarak nöronal hasarı sınırlamayı hedefler. Uygun hasta seçimi, zamanlama ve yoğun bakım izlemi tedavinin güvenliği açısından belirleyicidir.",
+    "postAnswerExpandedExplanation": "Terapötik hipotermi serebral metabolik hızı ve ikincil enerji yetmezliğini azaltarak nöronal hasarı sınırlamayı hedefler. Uygun hasta seçimi, zamanlama ve yoğun bakım izlemi tedavinin güvenliği açısından belirleyicidir.",
+    "tusPearl": "Term/near-term yenidoğanda perinatal asfiksi + orta-ağır HİE varsa ilk 6 saat içinde terapötik hipotermi düşünülür.",
+    "differentialPoint": "Hafif HİE veya prematüre/uygunsuz klinik durumda rutin hipotermi uygulanmaz; tedavi kararı nörolojik bulgu ve zamanlamaya bağlıdır.",
+    "clinicalRelevance": "Neonatoloji sorularında asfiksi sonrası nöroprotektif acil yaklaşımı öğretir.",
+    "mechanism": "Kontrollü hipotermi eksitotoksisite, oksidatif stres ve inflamatuvar ikincil hasarı azaltmayı amaçlar.",
     "relatedBranches": [
       "pediatrics"
     ],
@@ -2013,8 +2029,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Terapötik hipotermi",
-      "yenidoğan/çocuk ipucu",
-      "acil yaklaşım"
+      "yenidoğan terapötik hipotermi",
+      "HİE hipotermi tedavisi"
     ],
     "sourceTextExamples": [
       "İlk 6 saat içinde terapötik hipotermi.",
@@ -2112,7 +2128,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-yabanci-cisim-aspirasyonu",
     "term": "Yabancı cisim aspirasyonu",
     "aliases": [
-      "Yabancı cisim aspirasyonu"
+      "Yabancı cisim aspirasyonu",
+      "çocukta yabancı cisim aspirasyonu",
+      "aspire yabancı cisim"
     ],
     "normalizedTerm": "yabanci cisim aspirasyonu",
     "TurkishName": "Yabancı cisim aspirasyonu",
@@ -2120,17 +2138,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Pediatri",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "preAnswerSafeDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "shortDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "definition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "detailedExplanation": "Çocukta yabancı cisim aspirasyonunda klinik bulgularla uygun tanısal-terapötik yaklaşımı seçebilme Kuruyemiş yerken ani öksürük ve morarma atağı, sonrasında tek taraflı azalmış solunum sesi, lokalize hışıltı ve hava hapsi yabancı cisim aspirasyonunu düşündürür. Şüphe güçlü olduğunda tanısal ve terapötik yaklaşım rijit bronkoskopi ile yabancı cismin çıkarılmasıdır.",
-    "postAnswerExplanation": "Çocukta yabancı cisim aspirasyonunda klinik bulgularla uygun tanısal-terapötik yaklaşımı seçebilme Kuruyemiş yerken ani öksürük ve morarma atağı, sonrasında tek taraflı azalmış solunum sesi, lokalize hışıltı ve hava hapsi yabancı cisim aspirasyonunu düşündürür. Şüphe güçlü olduğunda tanısal ve terapötik yaklaşım rijit bronkoskopi ile yabancı cismin çıkarılmasıdır.",
-    "postAnswerExpandedExplanation": "Çocukta yabancı cisim aspirasyonunda klinik bulgularla uygun tanısal-terapötik yaklaşımı seçebilme Kuruyemiş yerken ani öksürük ve morarma atağı, sonrasında tek taraflı azalmış solunum sesi, lokalize hışıltı ve hava hapsi yabancı cisim aspirasyonunu düşündürür. Şüphe güçlü olduğunda tanısal ve terapötik yaklaşım rijit bronkoskopi ile yabancı cismin çıkarılmasıdır.",
-    "tusPearl": "Pediatride yaş, doğum öyküsü, beslenme, aşı/immünite ve acil solunum-dolaşım riski soruyu belirler.",
-    "differentialPoint": "Erişkin yaklaşımından farkı yaşa özgü eşikler, congenital nedenler ve hızlı kötüleşme riskidir.",
-    "clinicalRelevance": "Pediatride yaş, doğum öyküsü, beslenme, aşı/immünite ve acil solunum-dolaşım riski soruyu belirler.",
-    "mechanism": "",
+    "previewDefinition": "Yabancı bir materyalin trakeobronşiyal ağaca kaçmasıdır; çocukta ani öksürük, boğulma atağı, tek taraflı solunum sesi azalması veya lokalize wheezing ile ortaya çıkabilir. Güçlü şüphede rijit bronkoskopi tanısal ve terapötiktir.",
+    "preAnswerSafeDefinition": "Yabancı bir materyalin trakeobronşiyal ağaca kaçmasıdır; çocukta ani öksürük, boğulma atağı, tek taraflı solunum sesi azalması veya lokalize wheezing ile ortaya çıkabilir. Güçlü şüphede rijit bronkoskopi tanısal ve terapötiktir.",
+    "shortDefinition": "Yabancı bir materyalin trakeobronşiyal ağaca kaçmasıdır; çocukta ani öksürük, boğulma atağı, tek taraflı solunum sesi azalması veya lokalize wheezing ile ortaya çıkabilir. Güçlü şüphede rijit bronkoskopi tanısal ve terapötiktir.",
+    "definition": "Yabancı bir materyalin trakeobronşiyal ağaca kaçmasıdır; çocukta ani öksürük, boğulma atağı, tek taraflı solunum sesi azalması veya lokalize wheezing ile ortaya çıkabilir. Güçlü şüphede rijit bronkoskopi tanısal ve terapötiktir.",
+    "detailedExplanation": "Kuruyemiş veya küçük oyuncak sonrası ani başlayan öksürük-morarma atağı tipik hikâyedir. Grafi normal olabilir; hava hapsi, atelektazi veya tek taraflı hiperinflasyon görülebilir.",
+    "postAnswerExplanation": "Kuruyemiş veya küçük oyuncak sonrası ani başlayan öksürük-morarma atağı tipik hikâyedir. Grafi normal olabilir; hava hapsi, atelektazi veya tek taraflı hiperinflasyon görülebilir.",
+    "postAnswerExpandedExplanation": "Kuruyemiş veya küçük oyuncak sonrası ani başlayan öksürük-morarma atağı tipik hikâyedir. Grafi normal olabilir; hava hapsi, atelektazi veya tek taraflı hiperinflasyon görülebilir.",
+    "tusPearl": "Çocukta ani boğulma atağı + tek taraflı hava hapsi/yetersiz solunum sesi yabancı cisim aspirasyonunu düşündürür.",
+    "differentialPoint": "Astımda genellikle tekrarlayan/diffüz wheezing vardır; yabancı cisim aspirasyonunda başlangıç anidir ve bulgu tek taraflı olabilir.",
+    "clinicalRelevance": "Pediatrik acil ve KBB/göğüs cerrahisi sorularında hızlı tanı-tedavi kararını belirler.",
+    "mechanism": "Cisim bronş lümenini kısmen veya tam tıkayarak valv tipi hava hapsi, atelektazi veya obstrüktif enfeksiyon oluşturabilir.",
     "relatedBranches": [
       "pediatrics"
     ],
@@ -2150,8 +2168,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Yabancı cisim aspirasyonu",
-      "yenidoğan/çocuk ipucu",
-      "acil yaklaşım"
+      "çocukta yabancı cisim aspirasyonu",
+      "aspire yabancı cisim"
     ],
     "sourceTextExamples": [
       "Çocukta yabancı cisim aspirasyonunda klinik bulgularla uygun tanısal-terapötik yaklaşımı seçebilme",
@@ -2183,8 +2201,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Anatomik ilişki",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Kapakçıksız venöz bağlantılar enfeksiyonun retrograd yayılımına izin verebilir.",
+    "preAnswerSafeDefinition": "Kapakçıksız venöz bağlantılar enfeksiyonun retrograd yayılımına izin verebilir.",
     "shortDefinition": "Kapakçıksız venöz bağlantılar enfeksiyonun retrograd yayılımına izin verebilir.",
     "definition": "Kapakçıksız venöz bağlantılar enfeksiyonun retrograd yayılımına izin verebilir.",
     "detailedExplanation": "Yüz venleri ve kavernöz sinüs Kapakçıksız venöz bağlantılar enfeksiyonun retrograd yayılımına izin verebilir.",
@@ -2238,7 +2256,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-oglisemik-diyabetik-ketoasidoz",
     "term": "Öglisemik diyabetik ketoasidoz",
     "aliases": [
-      "Öglisemik diyabetik ketoasidoz"
+      "Öglisemik diyabetik ketoasidoz",
+      "öglisemik DKA",
+      "SGLT2 ilişkili ketoasidoz"
     ],
     "normalizedTerm": "oglisemik diyabetik ketoasidoz",
     "TurkishName": "Öglisemik diyabetik ketoasidoz",
@@ -2246,17 +2266,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "İdrarla glukoz kaybı ve insülin ihtiyacının azalması ketogenezi maskeleyebilir.",
-    "definition": "İdrarla glukoz kaybı ve insülin ihtiyacının azalması ketogenezi maskeleyebilir.",
-    "detailedExplanation": "Öglisemik diyabetik ketoasidoz. İdrarla glukoz kaybı ve insülin ihtiyacının azalması ketogenezi maskeleyebilir.",
-    "postAnswerExplanation": "Öglisemik diyabetik ketoasidoz. İdrarla glukoz kaybı ve insülin ihtiyacının azalması ketogenezi maskeleyebilir.",
-    "postAnswerExpandedExplanation": "Öglisemik diyabetik ketoasidoz. İdrarla glukoz kaybı ve insülin ihtiyacının azalması ketogenezi maskeleyebilir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Belirgin hiperglisemi olmadan gelişen ketonemi ve yüksek anyon açıklı metabolik asidoz tablosudur. SGLT2 inhibitörü kullanımı, gebelik, açlık veya düşük karbonhidrat alımıyla tetiklenebilir.",
+    "preAnswerSafeDefinition": "Belirgin hiperglisemi olmadan gelişen ketonemi ve yüksek anyon açıklı metabolik asidoz tablosudur. SGLT2 inhibitörü kullanımı, gebelik, açlık veya düşük karbonhidrat alımıyla tetiklenebilir.",
+    "shortDefinition": "Belirgin hiperglisemi olmadan gelişen ketonemi ve yüksek anyon açıklı metabolik asidoz tablosudur. SGLT2 inhibitörü kullanımı, gebelik, açlık veya düşük karbonhidrat alımıyla tetiklenebilir.",
+    "definition": "Belirgin hiperglisemi olmadan gelişen ketonemi ve yüksek anyon açıklı metabolik asidoz tablosudur. SGLT2 inhibitörü kullanımı, gebelik, açlık veya düşük karbonhidrat alımıyla tetiklenebilir.",
+    "detailedExplanation": "SGLT2 inhibitörleri glukozüri yaparak kan glukozunu görece düşük tutabilir; buna rağmen insülin eksikliği ve karşı düzenleyici hormonlar ketogenezi artırır. Bu nedenle normal-yakın glukoz değeri DKA’yı dışlamaz.",
+    "postAnswerExplanation": "SGLT2 inhibitörleri glukozüri yaparak kan glukozunu görece düşük tutabilir; buna rağmen insülin eksikliği ve karşı düzenleyici hormonlar ketogenezi artırır. Bu nedenle normal-yakın glukoz değeri DKA’yı dışlamaz.",
+    "postAnswerExpandedExplanation": "SGLT2 inhibitörleri glukozüri yaparak kan glukozunu görece düşük tutabilir; buna rağmen insülin eksikliği ve karşı düzenleyici hormonlar ketogenezi artırır. Bu nedenle normal-yakın glukoz değeri DKA’yı dışlamaz.",
+    "tusPearl": "SGLT2 kullanan hastada asidoz + keton varsa glukoz normal olsa bile DKA düşün.",
+    "differentialPoint": "Klasik DKA’da glukoz genellikle belirgin yüksektir; alkolik ketoasidozda diyabet/SGLT2 öyküsü yerine alkol ve yetersiz beslenme öne çıkar.",
+    "clinicalRelevance": "Acilde normal glukozun yanıltıcı olabileceği metabolik asidoz paternidir.",
+    "mechanism": "Glukozüri hiperglisemiyi maskeleyebilir; düşük efektif insülin/glukagon oranı lipoliz ve keton üretimini artırır.",
     "relatedBranches": [
       "endocrinology"
     ],
@@ -2269,7 +2289,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Öglisemik diyabetik ketoasidoz"
+      "Öglisemik diyabetik ketoasidoz",
+      "öglisemik DKA",
+      "SGLT2 ilişkili ketoasidoz"
     ],
     "sourceTextExamples": [
       "Öglisemik diyabetik ketoasidoz.",
@@ -2360,8 +2382,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Kadın Hastalıkları ve Doğum",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Maternal IgG anti-A veya anti-B antikorları yenidoğanda hemoliz yapabilir.",
+    "preAnswerSafeDefinition": "Maternal IgG anti-A veya anti-B antikorları yenidoğanda hemoliz yapabilir.",
     "shortDefinition": "Maternal IgG anti-A veya anti-B antikorları yenidoğanda hemoliz yapabilir.",
     "definition": "Maternal IgG anti-A veya anti-B antikorları yenidoğanda hemoliz yapabilir.",
     "detailedExplanation": "ABO hemolitik hastalık Maternal IgG anti-A veya anti-B antikorları yenidoğanda hemoliz yapabilir.",
@@ -2407,7 +2429,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-akalazya-manometrisi",
     "term": "Akalazya manometrisi",
     "aliases": [
-      "Akalazya manometrisi"
+      "Akalazya manometrisi",
+      "özofagus manometrisi",
+      "LES relaksasyon bozukluğu"
     ],
     "normalizedTerm": "akalazya manometrisi",
     "TurkishName": "Akalazya manometrisi",
@@ -2415,17 +2439,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "İç Hastalıkları / Klinik Karar",
     "subcategory": "Tanısal test / karar eşiği",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Akalazyada aperistaltizm ve alt özofagus sfinkter relaksasyon bozukluğu manometride gösterilir.",
-    "definition": "Akalazyada aperistaltizm ve alt özofagus sfinkter relaksasyon bozukluğu manometride gösterilir.",
-    "detailedExplanation": "Akalazya manometrisi Akalazyada aperistaltizm ve alt özofagus sfinkter relaksasyon bozukluğu manometride gösterilir.",
-    "postAnswerExplanation": "Akalazya manometrisi Akalazyada aperistaltizm ve alt özofagus sfinkter relaksasyon bozukluğu manometride gösterilir.",
-    "postAnswerExpandedExplanation": "Akalazya manometrisi Akalazyada aperistaltizm ve alt özofagus sfinkter relaksasyon bozukluğu manometride gösterilir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Akalazyada tanıyı destekleyen manometrik bulgu özofagus aperistaltizmi ve alt özofagus sfinkterinin yetersiz gevşemesidir. Katı ve sıvı gıdaya disfaji tipiktir.",
+    "preAnswerSafeDefinition": "Akalazyada tanıyı destekleyen manometrik bulgu özofagus aperistaltizmi ve alt özofagus sfinkterinin yetersiz gevşemesidir. Katı ve sıvı gıdaya disfaji tipiktir.",
+    "shortDefinition": "Akalazyada tanıyı destekleyen manometrik bulgu özofagus aperistaltizmi ve alt özofagus sfinkterinin yetersiz gevşemesidir. Katı ve sıvı gıdaya disfaji tipiktir.",
+    "definition": "Akalazyada tanıyı destekleyen manometrik bulgu özofagus aperistaltizmi ve alt özofagus sfinkterinin yetersiz gevşemesidir. Katı ve sıvı gıdaya disfaji tipiktir.",
+    "detailedExplanation": "Akalazya enterik inhibitör nöron kaybına bağlı LES relaksasyon kusuru ve özofagus gövdesinde peristaltizm kaybıyla seyreder. Baryum grafide kuş gagası görünümü destekleyicidir ancak en fonksiyonel tanısal test manometridir.",
+    "postAnswerExplanation": "Akalazya enterik inhibitör nöron kaybına bağlı LES relaksasyon kusuru ve özofagus gövdesinde peristaltizm kaybıyla seyreder. Baryum grafide kuş gagası görünümü destekleyicidir ancak en fonksiyonel tanısal test manometridir.",
+    "postAnswerExpandedExplanation": "Akalazya enterik inhibitör nöron kaybına bağlı LES relaksasyon kusuru ve özofagus gövdesinde peristaltizm kaybıyla seyreder. Baryum grafide kuş gagası görünümü destekleyicidir ancak en fonksiyonel tanısal test manometridir.",
+    "tusPearl": "Hem katıya hem sıvıya disfaji + manometride aperistaltizm/LES relaksasyon kusuru akalazya lehinedir.",
+    "differentialPoint": "Mekanik darlıkta başlangıçta katı gıdaya disfaji baskındır; akalazyada en baştan katı ve sıvı disfajisi olabilir.",
+    "clinicalRelevance": "Disfaji sorularında motilite bozukluğu ile obstrüktif lezyonu ayırır.",
+    "mechanism": "Miyenterik pleksustaki inhibitör nöron kaybı LES gevşemesini ve koordineli peristaltizmi bozar.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -2438,7 +2462,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Akalazya manometrisi"
+      "Akalazya manometrisi",
+      "özofagus manometrisi",
+      "LES relaksasyon bozukluğu"
     ],
     "sourceTextExamples": [],
     "sourceCandidate": {
@@ -2826,8 +2852,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Pediatri",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "preAnswerSafeDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
+    "previewDefinition": "genellikle daha geç dönemde belirginleşir ve pozitif direkt antiglobulin testiyle açıklanmaz.",
+    "preAnswerSafeDefinition": "genellikle daha geç dönemde belirginleşir ve pozitif direkt antiglobulin testiyle açıklanmaz.",
     "shortDefinition": "genellikle daha geç dönemde belirginleşir ve pozitif direkt antiglobulin testiyle açıklanmaz.",
     "definition": "genellikle daha geç dönemde belirginleşir ve pozitif direkt antiglobulin testiyle açıklanmaz.",
     "detailedExplanation": "Anne sütü sarılığı genellikle daha geç dönemde belirginleşir ve pozitif direkt antiglobulin testiyle açıklanmaz. İlk 24-48 saatte belirginleşen indirekt bilirubin artışı, anne-bebek ABO uyumsuzluğu ve direkt antiglobulin testinin pozitif olması immün aracılı hemolizi düşündürür. Maternal immünoglobulin G antikorları plasentayı geçerek yenidoğan eritrositlerine bağlanır ve bilirubin yükünü artıran hemolize yol açar.",
@@ -2952,8 +2978,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Kadın Hastalıkları ve Doğum",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Plasenta previada ağrısız üçüncü trimester kanamasını tanıyıp vajinal muayeneden kaçınmayı seçebilme Üçüncü trimesterde ağrısız parlak kırmızı vajinal kanama, yumuşak-hassasiyetsiz uterus ve geçirilmiş sezaryen öyküsü plasenta previayı düşündürür.",
+    "preAnswerSafeDefinition": "Plasenta previada ağrısız üçüncü trimester kanamasını tanıyıp vajinal muayeneden kaçınmayı seçebilme Üçüncü trimesterde ağrısız parlak kırmızı vajinal kanama, yumuşak-hassasiyetsiz uterus ve geçirilmiş sezaryen öyküsü plasenta previayı düşündürür.",
     "shortDefinition": "Plasenta previada ağrısız üçüncü trimester kanamasını tanıyıp vajinal muayeneden kaçınmayı seçebilme Üçüncü trimesterde ağrısız parlak kırmızı vajinal kanama, yumuşak-hassasiyetsiz uterus ve geçirilmiş sezaryen öyküsü plasenta previayı düşündürür.",
     "definition": "Plasenta previada ağrısız üçüncü trimester kanamasını tanıyıp vajinal muayeneden kaçınmayı seçebilme Üçüncü trimesterde ağrısız parlak kırmızı vajinal kanama, yumuşak-hassasiyetsiz uterus ve geçirilmiş sezaryen öyküsü plasenta previayı düşündürür.",
     "detailedExplanation": "Plasenta previada ağrısız üçüncü trimester kanamasını tanıyıp vajinal muayeneden kaçınmayı seçebilme Üçüncü trimesterde ağrısız parlak kırmızı vajinal kanama, yumuşak-hassasiyetsiz uterus ve geçirilmiş sezaryen öyküsü plasenta previayı düşündürür. Plasenta previa dışlanmadan dijital vajinal muayene yapılması masif kanamayı tetikleyebilir; ilk değerlendirme ultrasonografiyle plasenta yerleşimini belirlemektir.",
@@ -3007,8 +3033,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Cerrahi / Acil",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
+    "previewDefinition": "BI-RADS 4 şüpheli lezyondur; histolojik doğrulama gerekir.",
+    "preAnswerSafeDefinition": "BI-RADS 4 şüpheli lezyondur; histolojik doğrulama gerekir.",
     "shortDefinition": "BI-RADS 4 şüpheli lezyondur; histolojik doğrulama gerekir.",
     "definition": "BI-RADS 4 şüpheli lezyondur; histolojik doğrulama gerekir.",
     "detailedExplanation": "BI-RADS 4 yaklaşımı BI-RADS 4 şüpheli lezyondur; histolojik doğrulama gerekir.",
@@ -3189,7 +3215,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-barrett-metaplazisi",
     "term": "Barrett metaplazisi",
     "aliases": [
-      "Barrett metaplazisi"
+      "Barrett metaplazisi",
+      "Barrett özofagusu",
+      "intestinal metaplazi"
     ],
     "normalizedTerm": "barrett metaplazisi",
     "TurkishName": "Barrett metaplazisi",
@@ -3197,17 +3225,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "İç Hastalıkları / Klinik Karar",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Kolon nöroendokrin tümörü Barrett metaplazisinin beklenen malign dönüşüm yolu değildir.",
-    "definition": "Kolon nöroendokrin tümörü Barrett metaplazisinin beklenen malign dönüşüm yolu değildir.",
-    "detailedExplanation": "Kolon nöroendokrin tümörü Barrett metaplazisinin beklenen malign dönüşüm yolu değildir. Uzun süreli gastroözofageal reflü distal özofagusta intestinal metaplaziye yol açabilir. Goblet hücreli intestinal metaplazi Barrett özofagusudur ve özofagus adenokarsinomu riskini artırır.",
-    "postAnswerExplanation": "Kolon nöroendokrin tümörü Barrett metaplazisinin beklenen malign dönüşüm yolu değildir. Uzun süreli gastroözofageal reflü distal özofagusta intestinal metaplaziye yol açabilir. Goblet hücreli intestinal metaplazi Barrett özofagusudur ve özofagus adenokarsinomu riskini artırır.",
-    "postAnswerExpandedExplanation": "Kolon nöroendokrin tümörü Barrett metaplazisinin beklenen malign dönüşüm yolu değildir. Uzun süreli gastroözofageal reflü distal özofagusta intestinal metaplaziye yol açabilir. Goblet hücreli intestinal metaplazi Barrett özofagusudur ve özofagus adenokarsinomu riskini artırır.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Distal özofagus yassı epitelinin kronik reflü etkisiyle goblet hücreli intestinal tip kolumnar epitele dönüşmesidir. Özofagus adenokarsinomu riskini artırır.",
+    "preAnswerSafeDefinition": "Distal özofagus yassı epitelinin kronik reflü etkisiyle goblet hücreli intestinal tip kolumnar epitele dönüşmesidir. Özofagus adenokarsinomu riskini artırır.",
+    "shortDefinition": "Distal özofagus yassı epitelinin kronik reflü etkisiyle goblet hücreli intestinal tip kolumnar epitele dönüşmesidir. Özofagus adenokarsinomu riskini artırır.",
+    "definition": "Distal özofagus yassı epitelinin kronik reflü etkisiyle goblet hücreli intestinal tip kolumnar epitele dönüşmesidir. Özofagus adenokarsinomu riskini artırır.",
+    "detailedExplanation": "Barrett özofagusu uzun süreli gastroözofageal reflünün premalign komplikasyonudur. Histolojide intestinal metaplazi aranır; displazi gelişimi adenokarsinom riskini belirler.",
+    "postAnswerExplanation": "Barrett özofagusu uzun süreli gastroözofageal reflünün premalign komplikasyonudur. Histolojide intestinal metaplazi aranır; displazi gelişimi adenokarsinom riskini belirler.",
+    "postAnswerExpandedExplanation": "Barrett özofagusu uzun süreli gastroözofageal reflünün premalign komplikasyonudur. Histolojide intestinal metaplazi aranır; displazi gelişimi adenokarsinom riskini belirler.",
+    "tusPearl": "Reflü öyküsü + distal özofagusta goblet hücreli intestinal metaplazi = Barrett; beklenen kanser adenokarsinomdur.",
+    "differentialPoint": "Skuamöz hücreli karsinom daha çok sigara, alkol ve yassı epitel displazisiyle ilişkilidir; Barrett adenokarsinom öncülüdür.",
+    "clinicalRelevance": "GİS patoloji sorularında metaplazi-kanser ilişkisini doğrudan öğretir.",
+    "mechanism": "Kronik asit/safra maruziyeti epitel adaptasyonu ve intestinal metaplaziye yol açar.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -3220,7 +3248,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Barrett metaplazisi"
+      "Barrett metaplazisi",
+      "Barrett özofagusu",
+      "intestinal metaplazi"
     ],
     "sourceTextExamples": [
       "Kolon nöroendokrin tümörü Barrett metaplazisinin beklenen malign dönüşüm yolu değildir.",
@@ -3311,8 +3341,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Pediatri",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "preAnswerSafeDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
+    "previewDefinition": "de direkt hiperbilirubinemi, akolik dışkı ve erken cerrahi yönlendirmeyi tanıyabilme Uzamış sarılıkta direkt bilirubin yüksekliği, akolik dışkı, koyu idrar, hepatomegali ve barsağa safra geçişinin olmaması biliyer atreziyi düşündürür.",
+    "preAnswerSafeDefinition": "de direkt hiperbilirubinemi, akolik dışkı ve erken cerrahi yönlendirmeyi tanıyabilme Uzamış sarılıkta direkt bilirubin yüksekliği, akolik dışkı, koyu idrar, hepatomegali ve barsağa safra geçişinin olmaması biliyer atreziyi düşündürür.",
     "shortDefinition": "de direkt hiperbilirubinemi, akolik dışkı ve erken cerrahi yönlendirmeyi tanıyabilme Uzamış sarılıkta direkt bilirubin yüksekliği, akolik dışkı, koyu idrar, hepatomegali ve barsağa safra geçişinin olmaması biliyer atreziyi düşündürür.",
     "definition": "de direkt hiperbilirubinemi, akolik dışkı ve erken cerrahi yönlendirmeyi tanıyabilme Uzamış sarılıkta direkt bilirubin yüksekliği, akolik dışkı, koyu idrar, hepatomegali ve barsağa safra geçişinin olmaması biliyer atreziyi düşündürür.",
     "detailedExplanation": "Biliyer atrezide direkt hiperbilirubinemi, akolik dışkı ve erken cerrahi yönlendirmeyi tanıyabilme Uzamış sarılıkta direkt bilirubin yüksekliği, akolik dışkı, koyu idrar, hepatomegali ve barsağa safra geçişinin olmaması biliyer atreziyi düşündürür. Erken tanı ve Kasai portoenterostomisi için hızlı cerrahi yönlendirme prognoz açısından kritiktir.",
@@ -4043,8 +4073,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Pediatri",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "preAnswerSafeDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
+    "previewDefinition": "Telomer biyolojisi bozukluğu mukokutanöz bulgular ve kemik iliği yetmezliği yapabilir.",
+    "preAnswerSafeDefinition": "Telomer biyolojisi bozukluğu mukokutanöz bulgular ve kemik iliği yetmezliği yapabilir.",
     "shortDefinition": "Telomer biyolojisi bozukluğu mukokutanöz bulgular ve kemik iliği yetmezliği yapabilir.",
     "definition": "Telomer biyolojisi bozukluğu mukokutanöz bulgular ve kemik iliği yetmezliği yapabilir.",
     "detailedExplanation": "Diskeratozis konjenita Telomer biyolojisi bozukluğu mukokutanöz bulgular ve kemik iliği yetmezliği yapabilir.",
@@ -4365,8 +4395,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Kadın Hastalıkları ve Doğum",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Metotreksat trofoblast proliferasyonunu durdurur; stabil ve uygun hastalarda seçilir.",
+    "preAnswerSafeDefinition": "Metotreksat trofoblast proliferasyonunu durdurur; stabil ve uygun hastalarda seçilir.",
     "shortDefinition": "Metotreksat trofoblast proliferasyonunu durdurur; stabil ve uygun hastalarda seçilir.",
     "definition": "Metotreksat trofoblast proliferasyonunu durdurur; stabil ve uygun hastalarda seçilir.",
     "detailedExplanation": "Ektopik gebelik metotreksat Metotreksat trofoblast proliferasyonunu durdurur; stabil ve uygun hastalarda seçilir.",
@@ -4542,8 +4572,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Pediatri",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "preAnswerSafeDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
+    "previewDefinition": "Çömelme sistemik vasküler direnci artırarak sağdan sola şantı azaltabilir.",
+    "preAnswerSafeDefinition": "Çömelme sistemik vasküler direnci artırarak sağdan sola şantı azaltabilir.",
     "shortDefinition": "Çömelme sistemik vasküler direnci artırarak sağdan sola şantı azaltabilir.",
     "definition": "Çömelme sistemik vasküler direnci artırarak sağdan sola şantı azaltabilir.",
     "detailedExplanation": "Fallot tetralojisi çömelme Çömelme sistemik vasküler direnci artırarak sağdan sola şantı azaltabilir.",
@@ -4605,8 +4635,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Cerrahi / Acil",
     "subcategory": "Tedavi kararı",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
+    "previewDefinition": "Önce alfa blokaj yapılmadan beta blokaj verilmesi hipertansif krizi ağırlaştırabilir.",
+    "preAnswerSafeDefinition": "Önce alfa blokaj yapılmadan beta blokaj verilmesi hipertansif krizi ağırlaştırabilir.",
     "shortDefinition": "Önce alfa blokaj yapılmadan beta blokaj verilmesi hipertansif krizi ağırlaştırabilir.",
     "definition": "Önce alfa blokaj yapılmadan beta blokaj verilmesi hipertansif krizi ağırlaştırabilir.",
     "detailedExplanation": "Feokromositomada ameliyat öncesi blokaj Önce alfa blokaj yapılmadan beta blokaj verilmesi hipertansif krizi ağırlaştırabilir.",
@@ -4661,8 +4691,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Cerrahi / Acil",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
+    "previewDefinition": "Göğüs duvarı segmenti ventilasyon sırasında ters hareket eder ve pulmoner kontüzyon eşlik edebilir.",
+    "preAnswerSafeDefinition": "Göğüs duvarı segmenti ventilasyon sırasında ters hareket eder ve pulmoner kontüzyon eşlik edebilir.",
     "shortDefinition": "Göğüs duvarı segmenti ventilasyon sırasında ters hareket eder ve pulmoner kontüzyon eşlik edebilir.",
     "definition": "Göğüs duvarı segmenti ventilasyon sırasında ters hareket eder ve pulmoner kontüzyon eşlik edebilir.",
     "detailedExplanation": "Flail chest Göğüs duvarı segmenti ventilasyon sırasında ters hareket eder ve pulmoner kontüzyon eşlik edebilir.",
@@ -4777,8 +4807,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Cerrahi / Acil",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
+    "previewDefinition": "İİAB foliküler mimariyi gösterir ancak invazyonu güvenilir biçimde değerlendiremez.",
+    "preAnswerSafeDefinition": "İİAB foliküler mimariyi gösterir ancak invazyonu güvenilir biçimde değerlendiremez.",
     "shortDefinition": "İİAB foliküler mimariyi gösterir ancak invazyonu güvenilir biçimde değerlendiremez.",
     "definition": "İİAB foliküler mimariyi gösterir ancak invazyonu güvenilir biçimde değerlendiremez.",
     "detailedExplanation": "Foliküler tiroid neoplazisi İİAB foliküler mimariyi gösterir ancak invazyonu güvenilir biçimde değerlendiremez.",
@@ -4897,8 +4927,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Kadın Hastalıkları ve Doğum",
     "subcategory": "Tedavi kararı",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "İntrapartum antibiyotik yenidoğan erken GBS hastalığı riskini azaltır.",
+    "preAnswerSafeDefinition": "İntrapartum antibiyotik yenidoğan erken GBS hastalığı riskini azaltır.",
     "shortDefinition": "İntrapartum antibiyotik yenidoğan erken GBS hastalığı riskini azaltır.",
     "definition": "İntrapartum antibiyotik yenidoğan erken GBS hastalığı riskini azaltır.",
     "detailedExplanation": "Grup B streptokok profilaksisi İntrapartum antibiyotik yenidoğan erken GBS hastalığı riskini azaltır.",
@@ -5082,8 +5112,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Kadın Hastalıkları ve Doğum",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Ağır kusma dehidratasyon ve ketozise yol açabilir.",
+    "preAnswerSafeDefinition": "Ağır kusma dehidratasyon ve ketozise yol açabilir.",
     "shortDefinition": "Ağır kusma dehidratasyon ve ketozise yol açabilir.",
     "definition": "Ağır kusma dehidratasyon ve ketozise yol açabilir.",
     "detailedExplanation": "Hiperemezis gravidarum Ağır kusma dehidratasyon ve ketozise yol açabilir.",
@@ -5266,7 +5296,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-hipotonik-ovolemik-hiponatremi",
     "term": "Hipotonik övolemik hiponatremi",
     "aliases": [
-      "Hipotonik övolemik hiponatremi"
+      "Hipotonik övolemik hiponatremi",
+      "övolemik hiponatremi",
+      "SIADH hiponatremisi"
     ],
     "normalizedTerm": "hipotonik ovolemik hiponatremi",
     "TurkishName": "Hipotonik övolemik hiponatremi",
@@ -5274,17 +5306,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "İç Hastalıkları / Klinik Karar",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "SIADH tipik olarak hipotonik övolemik hiponatremi oluşturur; serum osmolalitesi düşüktür, idrar ise ADH etkisi nedeniyle uygunsuz biçimde konsantredir.",
-    "definition": "SIADH tipik olarak hipotonik övolemik hiponatremi oluşturur; serum osmolalitesi düşüktür, idrar ise ADH etkisi nedeniyle uygunsuz biçimde konsantredir.",
-    "detailedExplanation": "SIADH tipik olarak hipotonik övolemik hiponatremi oluşturur; serum osmolalitesi düşüktür, idrar ise ADH etkisi nedeniyle uygunsuz biçimde konsantredir. SIADH’de serum osmolalitesinin artması beklenmez; tersine hiponatremiye bağlı düşük serum osmolalitesi tipiktir. İdrar osmolalitesi ve idrar sodyumu uygunsuz yüksek kalabilir; hipourisemi de SIADH lehine destekleyici olabilir. SIADH tipik olarak hipotonik övolemik...",
-    "postAnswerExplanation": "SIADH tipik olarak hipotonik övolemik hiponatremi oluşturur; serum osmolalitesi düşüktür, idrar ise ADH etkisi nedeniyle uygunsuz biçimde konsantredir. SIADH’de serum osmolalitesinin artması beklenmez; tersine hiponatremiye bağlı düşük serum osmolalitesi tipiktir. İdrar osmolalitesi ve idrar sodyumu uygunsuz yüksek kalabilir; hipourisemi de SIADH lehine destekleyici olabilir. SIADH tipik olarak hipotonik övolemik...",
-    "postAnswerExpandedExplanation": "SIADH tipik olarak hipotonik övolemik hiponatremi oluşturur; serum osmolalitesi düşüktür, idrar ise ADH etkisi nedeniyle uygunsuz biçimde konsantredir. SIADH’de serum osmolalitesinin artması beklenmez; tersine hiponatremiye bağlı düşük serum osmolalitesi tipiktir. İdrar osmolalitesi ve idrar sodyumu uygunsuz yüksek kalabilir; hipourisemi de SIADH lehine destekleyici olabilir. SIADH tipik olarak hipotonik övolemik...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Düşük serum osmolalitesi ve belirgin hacim kaybı/ödem olmadan sodyum düşüklüğü bulunmasıdır. SIADH’de idrar osmolalitesi ve idrar sodyumu uygunsuz biçimde yüksek kalabilir.",
+    "preAnswerSafeDefinition": "Düşük serum osmolalitesi ve belirgin hacim kaybı/ödem olmadan sodyum düşüklüğü bulunmasıdır. SIADH’de idrar osmolalitesi ve idrar sodyumu uygunsuz biçimde yüksek kalabilir.",
+    "shortDefinition": "Düşük serum osmolalitesi ve belirgin hacim kaybı/ödem olmadan sodyum düşüklüğü bulunmasıdır. SIADH’de idrar osmolalitesi ve idrar sodyumu uygunsuz biçimde yüksek kalabilir.",
+    "definition": "Düşük serum osmolalitesi ve belirgin hacim kaybı/ödem olmadan sodyum düşüklüğü bulunmasıdır. SIADH’de idrar osmolalitesi ve idrar sodyumu uygunsuz biçimde yüksek kalabilir.",
+    "detailedExplanation": "SIADH serbest su tutulumu yaparak hipotonik hiponatremi oluşturur; hasta klinik olarak çoğu kez övolemiktir. İdrarın dilüe olamaması ve idrar sodyumunun yüksekliği tanısal ipucudur.",
+    "postAnswerExplanation": "SIADH serbest su tutulumu yaparak hipotonik hiponatremi oluşturur; hasta klinik olarak çoğu kez övolemiktir. İdrarın dilüe olamaması ve idrar sodyumunun yüksekliği tanısal ipucudur.",
+    "postAnswerExpandedExplanation": "SIADH serbest su tutulumu yaparak hipotonik hiponatremi oluşturur; hasta klinik olarak çoğu kez övolemiktir. İdrarın dilüe olamaması ve idrar sodyumunun yüksekliği tanısal ipucudur.",
+    "tusPearl": "Düşük serum osmolalitesi + övolemik görünüm + konsantre idrar SIADH lehinedir.",
+    "differentialPoint": "Hipovolemik hiponatremide dehidratasyon bulguları vardır; hipervolemik hiponatremide kalp yetmezliği/siroz/nefrotik sendrom gibi ödemli durumlar öne çıkar.",
+    "clinicalRelevance": "Elektrolit sorularında hacim durumu tanısal algoritmanın merkezindedir.",
+    "mechanism": "Uygunsuz ADH etkisi böbrekte serbest su atılımını azaltır ve serum sodyumunu dilüe eder.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -5302,7 +5334,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Hipotonik övolemik hiponatremi",
-      "hiponatremi"
+      "övolemik hiponatremi",
+      "SIADH hiponatremisi"
     ],
     "sourceTextExamples": [
       "SIADH tipik olarak hipotonik övolemik hiponatremi oluşturur; serum osmolalitesi düşüktür, idrar ise ADH etkisi nedeniyle uygunsuz biçimde konsantredir.",
@@ -5326,7 +5359,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-igf-1-duzeyi",
     "term": "IGF-1 düzeyi",
     "aliases": [
-      "IGF-1 düzeyi"
+      "IGF-1 düzeyi",
+      "insülin benzeri büyüme faktörü 1",
+      "somatomedin C"
     ],
     "normalizedTerm": "igf-1 duzeyi",
     "TurkishName": "IGF-1 düzeyi",
@@ -5334,17 +5369,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "İç Hastalıkları / Klinik Karar",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "IGF-1 gün içinde daha stabildir ve büyüme hormonu fazlalığını yansıtır.",
-    "definition": "IGF-1 gün içinde daha stabildir ve büyüme hormonu fazlalığını yansıtır.",
-    "detailedExplanation": "IGF-1 düzeyi. IGF-1 gün içinde daha stabildir ve büyüme hormonu fazlalığını yansıtır.",
-    "postAnswerExplanation": "IGF-1 düzeyi. IGF-1 gün içinde daha stabildir ve büyüme hormonu fazlalığını yansıtır.",
-    "postAnswerExpandedExplanation": "IGF-1 düzeyi. IGF-1 gün içinde daha stabildir ve büyüme hormonu fazlalığını yansıtır.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Büyüme hormonu etkisini yansıtan ve gün içinde GH’ye göre daha stabil seyreden serum belirtecidir. Akromegali taramasında ilk tercih edilen laboratuvar testlerinden biridir.",
+    "preAnswerSafeDefinition": "Büyüme hormonu etkisini yansıtan ve gün içinde GH’ye göre daha stabil seyreden serum belirtecidir. Akromegali taramasında ilk tercih edilen laboratuvar testlerinden biridir.",
+    "shortDefinition": "Büyüme hormonu etkisini yansıtan ve gün içinde GH’ye göre daha stabil seyreden serum belirtecidir. Akromegali taramasında ilk tercih edilen laboratuvar testlerinden biridir.",
+    "definition": "Büyüme hormonu etkisini yansıtan ve gün içinde GH’ye göre daha stabil seyreden serum belirtecidir. Akromegali taramasında ilk tercih edilen laboratuvar testlerinden biridir.",
+    "detailedExplanation": "GH pulsatil salgılandığı için tek GH ölçümü güvenilir değildir. IGF-1 karaciğerde GH etkisiyle üretilir ve kronik GH fazlalığını daha iyi yansıtır; doğrulamada oral glukozla GH baskılanma testi kullanılır.",
+    "postAnswerExplanation": "GH pulsatil salgılandığı için tek GH ölçümü güvenilir değildir. IGF-1 karaciğerde GH etkisiyle üretilir ve kronik GH fazlalığını daha iyi yansıtır; doğrulamada oral glukozla GH baskılanma testi kullanılır.",
+    "postAnswerExpandedExplanation": "GH pulsatil salgılandığı için tek GH ölçümü güvenilir değildir. IGF-1 karaciğerde GH etkisiyle üretilir ve kronik GH fazlalığını daha iyi yansıtır; doğrulamada oral glukozla GH baskılanma testi kullanılır.",
+    "tusPearl": "Akromegali şüphesinde rastgele GH değil, IGF-1 ile tarama düşünülür.",
+    "differentialPoint": "Cushing veya hipotiroidi yüz görünümünü değiştirebilir; IGF-1 yüksekliği ve glukozla baskılanmayan GH akromegaliyi destekler.",
+    "clinicalRelevance": "Endokrin sorularında pulsatil hormon yerine stabil hedef belirteci seçme mantığını gösterir.",
+    "mechanism": "GH hepatik IGF-1 sentezini uyarır; IGF-1 büyüme ve yumuşak doku etkilerinin önemli aracısıdır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -5357,7 +5392,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
     "keywordsForSearch": [
-      "IGF-1 düzeyi"
+      "IGF-1 düzeyi",
+      "insülin benzeri büyüme faktörü 1",
+      "somatomedin C"
     ],
     "sourceTextExamples": [],
     "sourceCandidate": {
@@ -5378,7 +5415,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-kll-tanisi",
     "term": "KLL tanısı",
     "aliases": [
-      "KLL tanısı"
+      "KLL tanısı",
+      "kronik lenfositik lösemi",
+      "CLL tanısı"
     ],
     "normalizedTerm": "kll tanisi",
     "TurkishName": "KLL tanısı",
@@ -5386,17 +5425,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "İç Hastalıkları / Klinik Karar",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "KLL olgun görünümlü klonal B lenfositlerin saptanmasıyla tanınır.",
-    "definition": "KLL olgun görünümlü klonal B lenfositlerin saptanmasıyla tanınır.",
-    "detailedExplanation": "KLL tanısı KLL olgun görünümlü klonal B lenfositlerin saptanmasıyla tanınır.",
-    "postAnswerExplanation": "KLL tanısı KLL olgun görünümlü klonal B lenfositlerin saptanmasıyla tanınır.",
-    "postAnswerExpandedExplanation": "KLL tanısı KLL olgun görünümlü klonal B lenfositlerin saptanmasıyla tanınır.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Periferik kanda kalıcı klonal olgun B lenfositozu ile tanınan erişkin lösemisidir. İmmünfenotipte tipik olarak CD5 pozitif ve CD23 pozitif B hücreleri görülür.",
+    "preAnswerSafeDefinition": "Periferik kanda kalıcı klonal olgun B lenfositozu ile tanınan erişkin lösemisidir. İmmünfenotipte tipik olarak CD5 pozitif ve CD23 pozitif B hücreleri görülür.",
+    "shortDefinition": "Periferik kanda kalıcı klonal olgun B lenfositozu ile tanınan erişkin lösemisidir. İmmünfenotipte tipik olarak CD5 pozitif ve CD23 pozitif B hücreleri görülür.",
+    "definition": "Periferik kanda kalıcı klonal olgun B lenfositozu ile tanınan erişkin lösemisidir. İmmünfenotipte tipik olarak CD5 pozitif ve CD23 pozitif B hücreleri görülür.",
+    "detailedExplanation": "KLL yaşlı erişkinde asemptomatik lenfositoz, lenfadenopati, hipogammaglobulinemi veya otoimmün hemolizle saptanabilir. Yaymada smudge cell görülebilir; kesin sınıflama akım sitometrisiyle yapılır.",
+    "postAnswerExplanation": "KLL yaşlı erişkinde asemptomatik lenfositoz, lenfadenopati, hipogammaglobulinemi veya otoimmün hemolizle saptanabilir. Yaymada smudge cell görülebilir; kesin sınıflama akım sitometrisiyle yapılır.",
+    "postAnswerExpandedExplanation": "KLL yaşlı erişkinde asemptomatik lenfositoz, lenfadenopati, hipogammaglobulinemi veya otoimmün hemolizle saptanabilir. Yaymada smudge cell görülebilir; kesin sınıflama akım sitometrisiyle yapılır.",
+    "tusPearl": "CD5+ CD23+ B hücre paterni KLL için klasik; CD5+ CD23− patern mantle hücreli lenfoma lehinedir.",
+    "differentialPoint": "Mantle hücreli lenfomada siklin D1/t(11;14) beklenir ve CD23 genellikle negatiftir.",
+    "clinicalRelevance": "Hematoloji marker sorularında KLL-mantle ayrımını netleştirir.",
+    "mechanism": "Klonal B hücre birikimi apoptoz kusuru ve immün disregülasyonla ilişkilidir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -5409,7 +5448,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
     "keywordsForSearch": [
-      "KLL tanısı"
+      "KLL tanısı",
+      "kronik lenfositik lösemi",
+      "CLL tanısı"
     ],
     "sourceTextExamples": [],
     "sourceCandidate": {
@@ -5512,8 +5553,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Pediatri",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "preAnswerSafeDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
+    "previewDefinition": "özellikle beslenmeyle artan siyanoz ve burundan sonda geçememe ile ayrılır.",
+    "preAnswerSafeDefinition": "özellikle beslenmeyle artan siyanoz ve burundan sonda geçememe ile ayrılır.",
     "shortDefinition": "özellikle beslenmeyle artan siyanoz ve burundan sonda geçememe ile ayrılır.",
     "definition": "özellikle beslenmeyle artan siyanoz ve burundan sonda geçememe ile ayrılır.",
     "detailedExplanation": "Koanal atrezi özellikle beslenmeyle artan siyanoz ve burundan sonda geçememe ile ayrılır. Supraglottik yapıların gevşekliği inspirasyonda kollapsa neden olur.",
@@ -5635,8 +5676,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Kadın Hastalıkları ve Doğum",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Trofoblastik tümörler erken kan damar invazyonu ve özellikle akciğer metastazı yapabilir.",
+    "preAnswerSafeDefinition": "Trofoblastik tümörler erken kan damar invazyonu ve özellikle akciğer metastazı yapabilir.",
     "shortDefinition": "Trofoblastik tümörler erken kan damar invazyonu ve özellikle akciğer metastazı yapabilir.",
     "definition": "Trofoblastik tümörler erken kan damar invazyonu ve özellikle akciğer metastazı yapabilir.",
     "detailedExplanation": "Koryokarsinom yayılımı Trofoblastik tümörler erken kan damar invazyonu ve özellikle akciğer metastazı yapabilir.",
@@ -5816,7 +5857,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-laringomalazi",
     "term": "Laringomalazi",
     "aliases": [
-      "Laringomalazi"
+      "Laringomalazi",
+      "supraglottik kollaps",
+      "bebekte inspiratuvar stridor"
     ],
     "normalizedTerm": "laringomalazi",
     "TurkishName": "Laringomalazi",
@@ -5824,17 +5867,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Pediatri",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "preAnswerSafeDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "shortDefinition": "Üst hava yolunda laringomalaziye bağlı inspiratuvar kollaps Doğru cevap A’dır.",
-    "definition": "Üst hava yolunda laringomalaziye bağlı inspiratuvar kollaps Doğru cevap A’dır.",
-    "detailedExplanation": "Üst hava yolunda laringomalaziye bağlı inspiratuvar kollaps Doğru cevap A’dır. Yenidoğan respiratuvar distres sendromunda temel sorun surfaktan yetersizliğidir. Surfaktan azalınca alveollerde yüzey gerilimi artar, özellikle ekspirasyon sonunda alveoller kollabe olur ve akciğer kompliyansı düşer. Prematürite en önemli risk faktörüdür çünkü tip II pnömosit gelişimi ve surfaktan üretimi yetersizdir. Antenatal...",
-    "postAnswerExplanation": "Üst hava yolunda laringomalaziye bağlı inspiratuvar kollaps Doğru cevap A’dır. Yenidoğan respiratuvar distres sendromunda temel sorun surfaktan yetersizliğidir. Surfaktan azalınca alveollerde yüzey gerilimi artar, özellikle ekspirasyon sonunda alveoller kollabe olur ve akciğer kompliyansı düşer. Prematürite en önemli risk faktörüdür çünkü tip II pnömosit gelişimi ve surfaktan üretimi yetersizdir. Antenatal...",
-    "postAnswerExpandedExplanation": "Üst hava yolunda laringomalaziye bağlı inspiratuvar kollaps Doğru cevap A’dır. Yenidoğan respiratuvar distres sendromunda temel sorun surfaktan yetersizliğidir. Surfaktan azalınca alveollerde yüzey gerilimi artar, özellikle ekspirasyon sonunda alveoller kollabe olur ve akciğer kompliyansı düşer. Prematürite en önemli risk faktörüdür çünkü tip II pnömosit gelişimi ve surfaktan üretimi yetersizdir. Antenatal...",
-    "tusPearl": "Pediatride yaş, doğum öyküsü, beslenme, aşı/immünite ve acil solunum-dolaşım riski soruyu belirler.",
-    "differentialPoint": "Erişkin yaklaşımından farkı yaşa özgü eşikler, congenital nedenler ve hızlı kötüleşme riskidir.",
-    "clinicalRelevance": "Pediatride yaş, doğum öyküsü, beslenme, aşı/immünite ve acil solunum-dolaşım riski soruyu belirler.",
-    "mechanism": "",
+    "previewDefinition": "Bebeklerde supraglottik yapıların inspiryumda içe kollabe olmasıyla gelişen en sık konjenital stridor nedenidir. Stridor genellikle beslenme, ağlama veya sırtüstü yatışla artar.",
+    "preAnswerSafeDefinition": "Bebeklerde supraglottik yapıların inspiryumda içe kollabe olmasıyla gelişen en sık konjenital stridor nedenidir. Stridor genellikle beslenme, ağlama veya sırtüstü yatışla artar.",
+    "shortDefinition": "Bebeklerde supraglottik yapıların inspiryumda içe kollabe olmasıyla gelişen en sık konjenital stridor nedenidir. Stridor genellikle beslenme, ağlama veya sırtüstü yatışla artar.",
+    "definition": "Bebeklerde supraglottik yapıların inspiryumda içe kollabe olmasıyla gelişen en sık konjenital stridor nedenidir. Stridor genellikle beslenme, ağlama veya sırtüstü yatışla artar.",
+    "detailedExplanation": "Laringomalazi çoğu olguda iyi huylu ve kendini sınırlayıcıdır; büyüme geriliği, apne, siyanoz veya ciddi beslenme güçlüğü varsa ileri değerlendirme gerekir. Temel ayırıcı nokta alt hava yolu veya alveoler surfaktan hastalığından çok üst hava yolu dinamiğidir.",
+    "postAnswerExplanation": "Laringomalazi çoğu olguda iyi huylu ve kendini sınırlayıcıdır; büyüme geriliği, apne, siyanoz veya ciddi beslenme güçlüğü varsa ileri değerlendirme gerekir. Temel ayırıcı nokta alt hava yolu veya alveoler surfaktan hastalığından çok üst hava yolu dinamiğidir.",
+    "postAnswerExpandedExplanation": "Laringomalazi çoğu olguda iyi huylu ve kendini sınırlayıcıdır; büyüme geriliği, apne, siyanoz veya ciddi beslenme güçlüğü varsa ileri değerlendirme gerekir. Temel ayırıcı nokta alt hava yolu veya alveoler surfaktan hastalığından çok üst hava yolu dinamiğidir.",
+    "tusPearl": "Bebekte pozisyonla artan inspiratuvar stridor laringomalaziyi düşündürür.",
+    "differentialPoint": "Yenidoğan RDS prematürede surfaktan eksikliği ve yaygın alveoler kollapsla gider; laringomalazi üst hava yolu kollapsıdır.",
+    "clinicalRelevance": "Pediatrik solunum sorularında stridorun üst hava yolu kaynaklı olduğunu ayırt ettirir.",
+    "mechanism": "Supraglottik dokuların gevşekliği inspiryumda negatif basınçla larenks girişine doğru çökme oluşturur.",
     "relatedBranches": [
       "pediatrics"
     ],
@@ -5854,12 +5897,13 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Laringomalazi",
-      "yenidoğan/çocuk ipucu",
-      "acil yaklaşım"
+      "supraglottik kollaps",
+      "bebekte inspiratuvar stridor"
     ],
     "sourceTextExamples": [
       "Üst hava yolunda laringomalaziye bağlı inspiratuvar kollaps",
-      "Yanlıştır. Laringomalazi üst hava yolu kollapsı ve stridorla ilişkili olabilir. Prematüre RDS’nin temel mekanizması surfaktan eksikliğidir."
+      "Laringomalazi",
+      "Bebeklerde supraglottik yapıların inspiryumda içe kollabe olmasıyla gelişen en sık konjenital stridor nedenidir. Stridor genellikle beslenme, ağlama veya sırtüstü yatışla artar."
     ],
     "sourceCandidate": {
       "sourceBatch": "batch5-ultradeep",
@@ -6256,8 +6300,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Kadın Hastalıkları ve Doğum",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Gestasyonel trofoblastik hastalıkların tanı ve tedavi sonrası takibinde beta-hCG düzeyleri kullanılır.",
+    "preAnswerSafeDefinition": "Gestasyonel trofoblastik hastalıkların tanı ve tedavi sonrası takibinde beta-hCG düzeyleri kullanılır.",
     "shortDefinition": "Gestasyonel trofoblastik hastalıkların tanı ve tedavi sonrası takibinde beta-hCG düzeyleri kullanılır.",
     "definition": "Gestasyonel trofoblastik hastalıkların tanı ve tedavi sonrası takibinde beta-hCG düzeyleri kullanılır.",
     "detailedExplanation": "Gestasyonel trofoblastik hastalıkların tanı ve tedavi sonrası takibinde beta-hCG düzeyleri kullanılır. CA-125 over epitel tümörleriyle, AFP germ hücreli tümörler ve hepatoselüler karsinomla, CEA gastrointestinal malignitelerle daha çok ilişkilidir. Gestasyonel trofoblastik hastalıklar trofoblastik dokudan kaynaklandığı için izlemde seri beta-hCG ölçümü temel belirteçtir. Beta-hCG trofoblastik doku aktivitesini...",
@@ -6416,7 +6460,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-nefrotik-sendromda-antitrombin-iii-kaybi",
     "term": "Nefrotik sendromda antitrombin III kaybı",
     "aliases": [
-      "Nefrotik sendromda antitrombin III kaybı"
+      "Nefrotik sendromda antitrombin III kaybı",
+      "antitrombin kaybı",
+      "nefrotik tromboz riski"
     ],
     "normalizedTerm": "nefrotik sendromda antitrombin iii kaybi",
     "TurkishName": "Nefrotik sendromda antitrombin III kaybı",
@@ -6424,17 +6470,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "İç Hastalıkları / Klinik Karar",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Nefrotik sendromda antitrombin kaybı ve hiperkoagülabilite tromboz riskini artırır.",
-    "definition": "Nefrotik sendromda antitrombin kaybı ve hiperkoagülabilite tromboz riskini artırır.",
-    "detailedExplanation": "Nefrotik sendromda antitrombin kaybı ve hiperkoagülabilite tromboz riskini artırır. Minimal değişiklik hastalığı çocukta sık olsa da renal ven trombozu klasik olarak membranözle anılır.",
-    "postAnswerExplanation": "Nefrotik sendromda antitrombin kaybı ve hiperkoagülabilite tromboz riskini artırır. Minimal değişiklik hastalığı çocukta sık olsa da renal ven trombozu klasik olarak membranözle anılır.",
-    "postAnswerExpandedExplanation": "Nefrotik sendromda antitrombin kaybı ve hiperkoagülabilite tromboz riskini artırır. Minimal değişiklik hastalığı çocukta sık olsa da renal ven trombozu klasik olarak membranözle anılır.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Nefrotik sendromda antikoagülan proteinlerin idrarla kaybı hiperkoagülabilite ve tromboz riskini artırır. Antitrombin III kaybı bu mekanizmanın klasik örneklerindendir.",
+    "preAnswerSafeDefinition": "Nefrotik sendromda antikoagülan proteinlerin idrarla kaybı hiperkoagülabilite ve tromboz riskini artırır. Antitrombin III kaybı bu mekanizmanın klasik örneklerindendir.",
+    "shortDefinition": "Nefrotik sendromda antikoagülan proteinlerin idrarla kaybı hiperkoagülabilite ve tromboz riskini artırır. Antitrombin III kaybı bu mekanizmanın klasik örneklerindendir.",
+    "definition": "Nefrotik sendromda antikoagülan proteinlerin idrarla kaybı hiperkoagülabilite ve tromboz riskini artırır. Antitrombin III kaybı bu mekanizmanın klasik örneklerindendir.",
+    "detailedExplanation": "Masif proteinüri yalnız albümin değil antitrombin III gibi doğal antikoagülanların da kaybına yol açar. Özellikle membranöz nefropatide renal ven trombozu TUS açısından klasik ilişkilidir.",
+    "postAnswerExplanation": "Masif proteinüri yalnız albümin değil antitrombin III gibi doğal antikoagülanların da kaybına yol açar. Özellikle membranöz nefropatide renal ven trombozu TUS açısından klasik ilişkilidir.",
+    "postAnswerExpandedExplanation": "Masif proteinüri yalnız albümin değil antitrombin III gibi doğal antikoagülanların da kaybına yol açar. Özellikle membranöz nefropatide renal ven trombozu TUS açısından klasik ilişkilidir.",
+    "tusPearl": "Nefrotik sendrom + yan ağrısı/hematüri/renal fonksiyon bozulması renal ven trombozunu düşündürür.",
+    "differentialPoint": "Nefritik sendromda belirgin hematüri, eritrosit silendirleri ve hipertansiyon daha öndedir; nefrotikte proteinüri-ödem-hiperlipidemi baskındır.",
+    "clinicalRelevance": "Nefrotik sendromun yalnız ödem değil tromboz komplikasyonu da yaptığını öğretir.",
+    "mechanism": "İdrarla antitrombin III kaybı trombin kontrolünü azaltır ve koagülasyon eğilimini artırır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -6452,7 +6498,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": true,
     "keywordsForSearch": [
       "Nefrotik sendromda antitrombin III kaybı",
-      "nefrotik sendrom"
+      "antitrombin kaybı",
+      "nefrotik tromboz riski"
     ],
     "sourceTextExamples": [
       "Nefrotik sendromda antitrombin kaybı ve hiperkoagülabilite tromboz riskini artırır."
@@ -6475,7 +6522,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-nefrotik-sendromda-hiperlipidemi-ve-tromboz-egilimi",
     "term": "Nefrotik sendromda hiperlipidemi ve tromboz eğilimi",
     "aliases": [
-      "Nefrotik sendromda hiperlipidemi ve tromboz eğilimi"
+      "Nefrotik sendromda hiperlipidemi ve tromboz eğilimi",
+      "nefrotik hiperlipidemi",
+      "nefrotik hiperkoagülabilite"
     ],
     "normalizedTerm": "nefrotik sendromda hiperlipidemi ve tromboz egilimi",
     "TurkishName": "Nefrotik sendromda hiperlipidemi ve tromboz eğilimi",
@@ -6483,17 +6532,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "İç Hastalıkları / Klinik Karar",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Tromboz eğilimi olan ergen Uzun ince vücut yapısı, lens subluksasyonu, tromboz eğilimi, yüksek homosistein ve yüksek metiyonin, transsülfürasyon yolunda cystathionine beta-synthase eksikliğini düşündürür.",
-    "definition": "Tromboz eğilimi olan ergen Uzun ince vücut yapısı, lens subluksasyonu, tromboz eğilimi, yüksek homosistein ve yüksek metiyonin, transsülfürasyon yolunda cystathionine beta-synthase eksikliğini düşündürür.",
-    "detailedExplanation": "Tromboz eğilimi olan ergen Uzun ince vücut yapısı, lens subluksasyonu, tromboz eğilimi, yüksek homosistein ve yüksek metiyonin, transsülfürasyon yolunda cystathionine beta-synthase eksikliğini düşündürür. Bu defekt homosisteinin sisteine dönüşümünü bozar ve damar endoteli üzerinde pro-trombotik etki oluşturur.",
-    "postAnswerExplanation": "Tromboz eğilimi olan ergen Uzun ince vücut yapısı, lens subluksasyonu, tromboz eğilimi, yüksek homosistein ve yüksek metiyonin, transsülfürasyon yolunda cystathionine beta-synthase eksikliğini düşündürür. Bu defekt homosisteinin sisteine dönüşümünü bozar ve damar endoteli üzerinde pro-trombotik etki oluşturur.",
-    "postAnswerExpandedExplanation": "Tromboz eğilimi olan ergen Uzun ince vücut yapısı, lens subluksasyonu, tromboz eğilimi, yüksek homosistein ve yüksek metiyonin, transsülfürasyon yolunda cystathionine beta-synthase eksikliğini düşündürür. Bu defekt homosisteinin sisteine dönüşümünü bozar ve damar endoteli üzerinde pro-trombotik etki oluşturur.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Nefrotik sendromda albümin kaybına yanıt olarak karaciğer lipoprotein sentezi artar ve hiperlipidemi gelişir. Aynı tabloda antikoagülan protein kaybı tromboz eğilimini artırır.",
+    "preAnswerSafeDefinition": "Nefrotik sendromda albümin kaybına yanıt olarak karaciğer lipoprotein sentezi artar ve hiperlipidemi gelişir. Aynı tabloda antikoagülan protein kaybı tromboz eğilimini artırır.",
+    "shortDefinition": "Nefrotik sendromda albümin kaybına yanıt olarak karaciğer lipoprotein sentezi artar ve hiperlipidemi gelişir. Aynı tabloda antikoagülan protein kaybı tromboz eğilimini artırır.",
+    "definition": "Nefrotik sendromda albümin kaybına yanıt olarak karaciğer lipoprotein sentezi artar ve hiperlipidemi gelişir. Aynı tabloda antikoagülan protein kaybı tromboz eğilimini artırır.",
+    "detailedExplanation": "Nefrotik sendromun temel bulguları masif proteinüri, hipoalbüminemi, ödem, hiperlipidemi ve lipidüridir. Hiperkoagülabilite özellikle membranöz nefropatide renal ven trombozu gibi komplikasyonlara yol açabilir.",
+    "postAnswerExplanation": "Nefrotik sendromun temel bulguları masif proteinüri, hipoalbüminemi, ödem, hiperlipidemi ve lipidüridir. Hiperkoagülabilite özellikle membranöz nefropatide renal ven trombozu gibi komplikasyonlara yol açabilir.",
+    "postAnswerExpandedExplanation": "Nefrotik sendromun temel bulguları masif proteinüri, hipoalbüminemi, ödem, hiperlipidemi ve lipidüridir. Hiperkoagülabilite özellikle membranöz nefropatide renal ven trombozu gibi komplikasyonlara yol açabilir.",
+    "tusPearl": "Proteinüri sadece albümin kaybı değildir; lipoprotein artışı ve antitrombin kaybı nefrotik komplikasyonları açıklar.",
+    "differentialPoint": "Homosistinüride tromboz uzun ince vücut yapısı ve lens subluksasyonu ile birliktedir; nefrotikte ödem, proteinüri ve hipoalbüminemi belirleyicidir.",
+    "clinicalRelevance": "Nefrotik sendrom sorularında laboratuvar ve komplikasyon mantığını birleştirir.",
+    "mechanism": "Düşük onkotik basınç ve hepatik protein/lipoprotein sentez artışı ödem ve hiperlipidemiye; antikoagülan kaybı tromboza yol açar.",
     "relatedBranches": [
       "hematology",
       "oncology"
@@ -6514,8 +6563,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Nefrotik sendromda hiperlipidemi ve tromboz eğilimi",
-      "tromboz",
-      "nefrotik sendrom"
+      "nefrotik hiperlipidemi",
+      "nefrotik hiperkoagülabilite"
     ],
     "sourceTextExamples": [
       "Tromboz eğilimi olan ergen",
@@ -6662,8 +6711,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Cerrahi / Acil",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
+    "previewDefinition": "Kabızlık ve sert dışkılama sonrası dışkılama sırasında cam kesiği tarzında ağrı, tuvalet kâğıdında parlak kırmızı kan ve posterior orta hatta lineer yırtık akut anal fissür için tipiktir.",
+    "preAnswerSafeDefinition": "Kabızlık ve sert dışkılama sonrası dışkılama sırasında cam kesiği tarzında ağrı, tuvalet kâğıdında parlak kırmızı kan ve posterior orta hatta lineer yırtık akut anal fissür için tipiktir.",
     "shortDefinition": "Kabızlık ve sert dışkılama sonrası dışkılama sırasında cam kesiği tarzında ağrı, tuvalet kâğıdında parlak kırmızı kan ve posterior orta hatta lineer yırtık akut anal fissür için tipiktir.",
     "definition": "Kabızlık ve sert dışkılama sonrası dışkılama sırasında cam kesiği tarzında ağrı, tuvalet kâğıdında parlak kırmızı kan ve posterior orta hatta lineer yırtık akut anal fissür için tipiktir.",
     "detailedExplanation": "Perianal apse Kabızlık ve sert dışkılama sonrası dışkılama sırasında cam kesiği tarzında ağrı, tuvalet kâğıdında parlak kırmızı kan ve posterior orta hatta lineer yırtık akut anal fissür için tipiktir. Perianal apse veya maligniteyi düşündürecek fluktuasyon, sistemik belirti ya da kilo kaybı verilmemiştir.",
@@ -6717,8 +6766,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Cerrahi / Acil",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
+    "previewDefinition": "Dışkılama sırasında cam kesiği tarzında şiddetli ağrı, az miktarda parlak kanama, kabızlık öyküsü ve posterior orta hatta lineer yırtık anal fissür için tipiktir.",
+    "preAnswerSafeDefinition": "Dışkılama sırasında cam kesiği tarzında şiddetli ağrı, az miktarda parlak kanama, kabızlık öyküsü ve posterior orta hatta lineer yırtık anal fissür için tipiktir.",
     "shortDefinition": "Dışkılama sırasında cam kesiği tarzında şiddetli ağrı, az miktarda parlak kanama, kabızlık öyküsü ve posterior orta hatta lineer yırtık anal fissür için tipiktir.",
     "definition": "Dışkılama sırasında cam kesiği tarzında şiddetli ağrı, az miktarda parlak kanama, kabızlık öyküsü ve posterior orta hatta lineer yırtık anal fissür için tipiktir.",
     "detailedExplanation": "Pilonidal sinüs Dışkılama sırasında cam kesiği tarzında şiddetli ağrı, az miktarda parlak kanama, kabızlık öyküsü ve posterior orta hatta lineer yırtık anal fissür için tipiktir. İç hemoroid kanaması genellikle ağrısızdır.",
@@ -6827,7 +6876,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-plazma-serbest-metanefrin",
     "term": "Plazma serbest metanefrin",
     "aliases": [
-      "Plazma serbest metanefrin"
+      "Plazma serbest metanefrin",
+      "serbest metanefrin",
+      "feokromositoma taraması"
     ],
     "normalizedTerm": "plazma serbest metanefrin",
     "TurkishName": "Plazma serbest metanefrin",
@@ -6835,17 +6886,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "İç Hastalıkları / Klinik Karar",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "definition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "detailedExplanation": "Plazma serbest metanefrin düzeyi. Katekolamin metabolitleri feokromositoma taramasında duyarlı belirteçlerdir.",
-    "postAnswerExplanation": "Plazma serbest metanefrin düzeyi. Katekolamin metabolitleri feokromositoma taramasında duyarlı belirteçlerdir.",
-    "postAnswerExpandedExplanation": "Plazma serbest metanefrin düzeyi. Katekolamin metabolitleri feokromositoma taramasında duyarlı belirteçlerdir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Katekolamin metabolitlerinin kanda ölçülmesidir ve feokromositoma/paraganglioma taramasında duyarlı bir testtir. Paroksismal hipertansiyon, baş ağrısı, terleme ve çarpıntı ile birlikte anlam kazanır.",
+    "preAnswerSafeDefinition": "Katekolamin metabolitlerinin kanda ölçülmesidir ve feokromositoma/paraganglioma taramasında duyarlı bir testtir. Paroksismal hipertansiyon, baş ağrısı, terleme ve çarpıntı ile birlikte anlam kazanır.",
+    "shortDefinition": "Katekolamin metabolitlerinin kanda ölçülmesidir ve feokromositoma/paraganglioma taramasında duyarlı bir testtir. Paroksismal hipertansiyon, baş ağrısı, terleme ve çarpıntı ile birlikte anlam kazanır.",
+    "definition": "Katekolamin metabolitlerinin kanda ölçülmesidir ve feokromositoma/paraganglioma taramasında duyarlı bir testtir. Paroksismal hipertansiyon, baş ağrısı, terleme ve çarpıntı ile birlikte anlam kazanır.",
+    "detailedExplanation": "Feokromositomada katekolamin salınımı dalgalanabilir; metanefrinler ise sürekli tümör içi metabolizma nedeniyle daha güvenilir belirteçlerdir. Pozitif tarama sonrası anatomik lokalizasyon görüntüleme ile yapılır.",
+    "postAnswerExplanation": "Feokromositomada katekolamin salınımı dalgalanabilir; metanefrinler ise sürekli tümör içi metabolizma nedeniyle daha güvenilir belirteçlerdir. Pozitif tarama sonrası anatomik lokalizasyon görüntüleme ile yapılır.",
+    "postAnswerExpandedExplanation": "Feokromositomada katekolamin salınımı dalgalanabilir; metanefrinler ise sürekli tümör içi metabolizma nedeniyle daha güvenilir belirteçlerdir. Pozitif tarama sonrası anatomik lokalizasyon görüntüleme ile yapılır.",
+    "tusPearl": "Feokromositoma şüphesinde önce biyokimyasal kanıt, sonra görüntüleme yaklaşımı beklenir.",
+    "differentialPoint": "Panik atakta benzer semptomlar olabilir; kalıcı/paroksismal hipertansiyon ve yüksek metanefrin feokromositomayı destekler.",
+    "clinicalRelevance": "Endokrin hipertansiyon sorularında doğru tarama testini seçtirir.",
+    "mechanism": "Katekolaminler COMT ve MAO aracılığıyla metanefrin/normetanefrine metabolize edilir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -6858,7 +6909,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Plazma serbest metanefrin"
+      "Plazma serbest metanefrin",
+      "serbest metanefrin",
+      "feokromositoma taraması"
     ],
     "sourceTextExamples": [
       "Plazma serbest metanefrin düzeyi.",
@@ -7069,8 +7122,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Kadın Hastalıkları ve Doğum",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Gebelik veya jinekolojik klinik karar bağlamında kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Anti-D fetal Rh pozitif eritrositlere karşı maternal alloimmünizasyonu önler.",
+    "preAnswerSafeDefinition": "Anti-D fetal Rh pozitif eritrositlere karşı maternal alloimmünizasyonu önler.",
     "shortDefinition": "Anti-D fetal Rh pozitif eritrositlere karşı maternal alloimmünizasyonu önler.",
     "definition": "Anti-D fetal Rh pozitif eritrositlere karşı maternal alloimmünizasyonu önler.",
     "detailedExplanation": "Rh immün globulin Anti-D fetal Rh pozitif eritrositlere karşı maternal alloimmünizasyonu önler.",
@@ -7510,8 +7563,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Pediatri",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "preAnswerSafeDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
+    "previewDefinition": "Entübasyon travması subglottik bölgede skar ve daralma oluşturabilir.",
+    "preAnswerSafeDefinition": "Entübasyon travması subglottik bölgede skar ve daralma oluşturabilir.",
     "shortDefinition": "Entübasyon travması subglottik bölgede skar ve daralma oluşturabilir.",
     "definition": "Entübasyon travması subglottik bölgede skar ve daralma oluşturabilir.",
     "detailedExplanation": "Subglottik stenoz Entübasyon travması subglottik bölgede skar ve daralma oluşturabilir.",
@@ -7706,8 +7759,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Cerrahi / Acil",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır.",
+    "previewDefinition": "Hemodinamik instabilite ve peritonit görüntüleme beklemeden cerrahi eksplorasyon gerektirir.",
+    "preAnswerSafeDefinition": "Hemodinamik instabilite ve peritonit görüntüleme beklemeden cerrahi eksplorasyon gerektirir.",
     "shortDefinition": "Hemodinamik instabilite ve peritonit görüntüleme beklemeden cerrahi eksplorasyon gerektirir.",
     "definition": "Hemodinamik instabilite ve peritonit görüntüleme beklemeden cerrahi eksplorasyon gerektirir.",
     "detailedExplanation": "Travmada peritonit Hemodinamik instabilite ve peritonit görüntüleme beklemeden cerrahi eksplorasyon gerektirir.",
@@ -8004,8 +8057,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Pediatri",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
-    "preAnswerSafeDefinition": "Pediatrik yaş grubunda kullanılan klinik tanı veya yönetim paternidir.",
+    "previewDefinition": "Peroksizomal beta oksidasyon bozukluğu beyaz cevher ve adrenal korteksi etkiler.",
+    "preAnswerSafeDefinition": "Peroksizomal beta oksidasyon bozukluğu beyaz cevher ve adrenal korteksi etkiler.",
     "shortDefinition": "Peroksizomal beta oksidasyon bozukluğu beyaz cevher ve adrenal korteksi etkiler.",
     "definition": "Peroksizomal beta oksidasyon bozukluğu beyaz cevher ve adrenal korteksi etkiler.",
     "detailedExplanation": "X bağlı adrenolökodistrofi Peroksizomal beta oksidasyon bozukluğu beyaz cevher ve adrenal korteksi etkiler.",
@@ -8196,7 +8249,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-yuksek-idrar-sodyumu",
     "term": "Yüksek idrar sodyumu",
     "aliases": [
-      "Yüksek idrar sodyumu"
+      "Yüksek idrar sodyumu",
+      "idrar sodyumu yüksekliği",
+      "üriner sodyum yüksekliği"
     ],
     "normalizedTerm": "yuksek idrar sodyumu",
     "TurkishName": "Yüksek idrar sodyumu",
@@ -8204,17 +8259,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "İç Hastalıkları / Klinik Karar",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Övolemik hiponatremi, yüksek idrar ozmolalitesi ve yüksek idrar sodyumu ne düşündürür?",
-    "definition": "Övolemik hiponatremi, yüksek idrar ozmolalitesi ve yüksek idrar sodyumu ne düşündürür?",
-    "detailedExplanation": "Övolemik hiponatremi, yüksek idrar ozmolalitesi ve yüksek idrar sodyumu ne düşündürür? ADH uygunsuz yüksekliğine bağlı serbest su tutulumu vardır.",
-    "postAnswerExplanation": "Övolemik hiponatremi, yüksek idrar ozmolalitesi ve yüksek idrar sodyumu ne düşündürür? ADH uygunsuz yüksekliğine bağlı serbest su tutulumu vardır.",
-    "postAnswerExpandedExplanation": "Övolemik hiponatremi, yüksek idrar ozmolalitesi ve yüksek idrar sodyumu ne düşündürür? ADH uygunsuz yüksekliğine bağlı serbest su tutulumu vardır.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Böbreğin sodyumu tutmak yerine idrarla atmaya devam ettiğini gösteren laboratuvar bulgusudur. Hiponatremide övolemik tabloyla birlikte yüksek idrar sodyumu SIADH lehine olabilir.",
+    "preAnswerSafeDefinition": "Böbreğin sodyumu tutmak yerine idrarla atmaya devam ettiğini gösteren laboratuvar bulgusudur. Hiponatremide övolemik tabloyla birlikte yüksek idrar sodyumu SIADH lehine olabilir.",
+    "shortDefinition": "Böbreğin sodyumu tutmak yerine idrarla atmaya devam ettiğini gösteren laboratuvar bulgusudur. Hiponatremide övolemik tabloyla birlikte yüksek idrar sodyumu SIADH lehine olabilir.",
+    "definition": "Böbreğin sodyumu tutmak yerine idrarla atmaya devam ettiğini gösteren laboratuvar bulgusudur. Hiponatremide övolemik tabloyla birlikte yüksek idrar sodyumu SIADH lehine olabilir.",
+    "detailedExplanation": "Hiponatremi değerlendirmesinde idrar sodyumu hacim durumu ve renal yanıtı yorumlatır. SIADH’de efektif dolaşım hacmi korunur; ADH etkisiyle su tutulurken idrar sodyumu genellikle baskılanmaz.",
+    "postAnswerExplanation": "Hiponatremi değerlendirmesinde idrar sodyumu hacim durumu ve renal yanıtı yorumlatır. SIADH’de efektif dolaşım hacmi korunur; ADH etkisiyle su tutulurken idrar sodyumu genellikle baskılanmaz.",
+    "postAnswerExpandedExplanation": "Hiponatremi değerlendirmesinde idrar sodyumu hacim durumu ve renal yanıtı yorumlatır. SIADH’de efektif dolaşım hacmi korunur; ADH etkisiyle su tutulurken idrar sodyumu genellikle baskılanmaz.",
+    "tusPearl": "Hiponatremide idrar sodyumu yüksekliği, klinik hacim durumu ile birlikte yorumlanmadan tek başına tanı koydurmaz.",
+    "differentialPoint": "Ekstrarenal sıvı kaybında idrar sodyumu düşük beklenir; diüretik kullanımı veya adrenal yetmezlik idrar sodyumunu yükseltebilir.",
+    "clinicalRelevance": "Elektrolit algoritmalarında hipovolemik-övolemik nedenleri ayırmaya yardım eder.",
+    "mechanism": "Aldosteron/sodyum tutma yanıtı yoksa veya natriürez baskılanmıyorsa idrar sodyumu yüksek kalır.",
     "relatedBranches": [
       "nephrology"
     ],
@@ -8227,7 +8282,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Yüksek idrar sodyumu"
+      "Yüksek idrar sodyumu",
+      "idrar sodyumu yüksekliği",
+      "üriner sodyum yüksekliği"
     ],
     "sourceTextExamples": [
       "Övolemik hiponatremi, yüksek idrar ozmolalitesi ve yüksek idrar sodyumu ne düşündürür?",
@@ -8373,7 +8430,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-asd-sabit-cift-s2",
     "term": "ASD sabit çift S2",
     "aliases": [
-      "ASD sabit çift S2"
+      "ASD sabit çift S2",
+      "sabit çift ikinci kalp sesi",
+      "atriyal septal defekt S2"
     ],
     "normalizedTerm": "asd sabit cift s2",
     "TurkishName": "ASD sabit çift S2",
@@ -8381,17 +8440,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Sol-sağ atriyal şant sağ kalp hacim yükü ve pulmoner akım artışı oluşturur.",
-    "definition": "Sol-sağ atriyal şant sağ kalp hacim yükü ve pulmoner akım artışı oluşturur.",
-    "detailedExplanation": "ASD sabit çift S2 Sol-sağ atriyal şant sağ kalp hacim yükü ve pulmoner akım artışı oluşturur.",
-    "postAnswerExplanation": "ASD sabit çift S2 Sol-sağ atriyal şant sağ kalp hacim yükü ve pulmoner akım artışı oluşturur.",
-    "postAnswerExpandedExplanation": "ASD sabit çift S2 Sol-sağ atriyal şant sağ kalp hacim yükü ve pulmoner akım artışı oluşturur.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Atriyal septal defektte sağ kalbe sürekli hacim yükü nedeniyle ikinci kalp sesinin solunumla değişmeyen çift duyulmasıdır. Sol-sağ şant pulmoner akımı artırır.",
+    "preAnswerSafeDefinition": "Atriyal septal defektte sağ kalbe sürekli hacim yükü nedeniyle ikinci kalp sesinin solunumla değişmeyen çift duyulmasıdır. Sol-sağ şant pulmoner akımı artırır.",
+    "shortDefinition": "Atriyal septal defektte sağ kalbe sürekli hacim yükü nedeniyle ikinci kalp sesinin solunumla değişmeyen çift duyulmasıdır. Sol-sağ şant pulmoner akımı artırır.",
+    "definition": "Atriyal septal defektte sağ kalbe sürekli hacim yükü nedeniyle ikinci kalp sesinin solunumla değişmeyen çift duyulmasıdır. Sol-sağ şant pulmoner akımı artırır.",
+    "detailedExplanation": "Normalde inspiryumda pulmoner kapak kapanması gecikir ve S2 fizyolojik ayrışır. ASD’de sağ ventrikül hacim yükü sürekli olduğu için P2 gecikmesi sabit hâle gelir.",
+    "postAnswerExplanation": "Normalde inspiryumda pulmoner kapak kapanması gecikir ve S2 fizyolojik ayrışır. ASD’de sağ ventrikül hacim yükü sürekli olduğu için P2 gecikmesi sabit hâle gelir.",
+    "postAnswerExpandedExplanation": "Normalde inspiryumda pulmoner kapak kapanması gecikir ve S2 fizyolojik ayrışır. ASD’de sağ ventrikül hacim yükü sürekli olduğu için P2 gecikmesi sabit hâle gelir.",
+    "tusPearl": "Sabit çift S2, TUS’ta atriyal septal defekt için klasik oskültasyon ipucudur.",
+    "differentialPoint": "Pulmoner stenozda geniş ayrışma olabilir ama ASD’de ayrışmanın solunumla sabit kalması ayırt ettiricidir.",
+    "clinicalRelevance": "Pediatrik/kardiyoloji muayene sorularında konjenital şantı düşündürür.",
+    "mechanism": "Sol-sağ atriyal şant sağ ventrikül dolumunu artırır ve pulmoner kapak kapanmasını sürekli geciktirir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -8404,7 +8463,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
     "keywordsForSearch": [
-      "ASD sabit çift S2"
+      "ASD sabit çift S2",
+      "sabit çift ikinci kalp sesi",
+      "atriyal septal defekt S2"
     ],
     "sourceTextExamples": [
       "Vaka kökünde ASD, sabit çift S2 ve sağ kalp dilatasyonu birlikte verilirse hangi tanı öncelikle düşünülür?"
@@ -8435,8 +8496,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Enzim/genetik defekt",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "ATP7A kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
+    "preAnswerSafeDefinition": "ATP7A kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "shortDefinition": "ATP7A kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "definition": "ATP7A kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "detailedExplanation": "ATP7A kusuru. Menkes hastalığında bağırsaktan bakır taşınması bozulur; bakır bağımlı enzimler etkilenir.",
@@ -8488,8 +8549,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Enzim/genetik defekt",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "ATP7B kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
+    "preAnswerSafeDefinition": "ATP7B kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "shortDefinition": "ATP7B kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "definition": "ATP7B kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "detailedExplanation": "Wilson hastalığı ATP7B kusuruyla karaciğer ve bazal ganglionlarda bakır birikimi yapar. Menkes hastalığında bağırsaktan bakır taşınması bozulur; bakır bağımlı enzimler etkilenir.",
@@ -8535,7 +8596,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-adrenal-medulla-kokeni",
     "term": "Adrenal medulla kökeni",
     "aliases": [
-      "Adrenal medulla kökeni"
+      "Adrenal medulla kökeni",
+      "nöral krest kökenli adrenal medulla",
+      "kromaffin hücre kökeni"
     ],
     "normalizedTerm": "adrenal medulla kokeni",
     "TurkishName": "Adrenal medulla kökeni",
@@ -8543,17 +8606,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Endoderm gastrointestinal ve solunum epiteli gibi yapılara katkı verir; adrenal medulla kökeni değildir.",
-    "definition": "Endoderm gastrointestinal ve solunum epiteli gibi yapılara katkı verir; adrenal medulla kökeni değildir.",
-    "detailedExplanation": "Endoderm gastrointestinal ve solunum epiteli gibi yapılara katkı verir; adrenal medulla kökeni değildir. Adrenal medulla kromaffin hücreleri modifiye postganglionik sempatik nöronlar gibi davranır ve nöral krest kökenlidir. Katekolamin salgılamaları bu sempatoadrenal kökenle uyumludur.",
-    "postAnswerExplanation": "Endoderm gastrointestinal ve solunum epiteli gibi yapılara katkı verir; adrenal medulla kökeni değildir. Adrenal medulla kromaffin hücreleri modifiye postganglionik sempatik nöronlar gibi davranır ve nöral krest kökenlidir. Katekolamin salgılamaları bu sempatoadrenal kökenle uyumludur.",
-    "postAnswerExpandedExplanation": "Endoderm gastrointestinal ve solunum epiteli gibi yapılara katkı verir; adrenal medulla kökeni değildir. Adrenal medulla kromaffin hücreleri modifiye postganglionik sempatik nöronlar gibi davranır ve nöral krest kökenlidir. Katekolamin salgılamaları bu sempatoadrenal kökenle uyumludur.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Adrenal medulla nöral krest kökenli kromaffin hücrelerden gelişir. Bu hücreler modifiye postganglionik sempatik nöron gibi katekolamin salgılar.",
+    "preAnswerSafeDefinition": "Adrenal medulla nöral krest kökenli kromaffin hücrelerden gelişir. Bu hücreler modifiye postganglionik sempatik nöron gibi katekolamin salgılar.",
+    "shortDefinition": "Adrenal medulla nöral krest kökenli kromaffin hücrelerden gelişir. Bu hücreler modifiye postganglionik sempatik nöron gibi katekolamin salgılar.",
+    "definition": "Adrenal medulla nöral krest kökenli kromaffin hücrelerden gelişir. Bu hücreler modifiye postganglionik sempatik nöron gibi katekolamin salgılar.",
+    "detailedExplanation": "Adrenal korteks mezoderm kökenliyken adrenal medulla nöral krest kökenlidir. Embriyolojik köken farkı kortikal steroid üretimi ile medüller katekolamin üretimini ayırır.",
+    "postAnswerExplanation": "Adrenal korteks mezoderm kökenliyken adrenal medulla nöral krest kökenlidir. Embriyolojik köken farkı kortikal steroid üretimi ile medüller katekolamin üretimini ayırır.",
+    "postAnswerExpandedExplanation": "Adrenal korteks mezoderm kökenliyken adrenal medulla nöral krest kökenlidir. Embriyolojik köken farkı kortikal steroid üretimi ile medüller katekolamin üretimini ayırır.",
+    "tusPearl": "Adrenal korteks mezoderm, adrenal medulla nöral krest kökenlidir.",
+    "differentialPoint": "Endoderm GİS ve solunum epiteli gibi yapılara katkı verir; adrenal medullanın kaynağı değildir.",
+    "clinicalRelevance": "Embriyoloji ve endokrin tümör sorularında nöral krest ilişkisini öğretir.",
+    "mechanism": "Nöral krest hücreleri sempatoadrenal hatta farklılaşarak kromaffin hücreleri oluşturur.",
     "relatedBranches": [
       "nephrology",
       "endocrinology"
@@ -8567,7 +8630,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Adrenal medulla kökeni"
+      "Adrenal medulla kökeni",
+      "nöral krest kökenli adrenal medulla",
+      "kromaffin hücre kökeni"
     ],
     "sourceTextExamples": [
       "Endoderm gastrointestinal ve solunum epiteli gibi yapılara katkı verir; adrenal medulla kökeni değildir.",
@@ -8654,8 +8719,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Akut hücresel rejeksiyon, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Akut hücresel rejeksiyon, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Akut hücresel rejeksiyon, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Akut hücresel rejeksiyon, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Akut hücresel rejeksiyon genellikle günler-haftalar içinde T hücre aracılı gelişir. Alıcıda önceden var olan anti-donör antikorlar kompleman aktivasyonu ve tromboza yol açar.",
@@ -8710,8 +8775,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Akut intermittan porfiri, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
+    "preAnswerSafeDefinition": "Akut intermittan porfiri, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "shortDefinition": "Akut intermittan porfiri, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "definition": "Akut intermittan porfiri, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "detailedExplanation": "Akut intermittan porfiri Hem sentezinde erken basamak bozulur; ALA ve PBG artışı nörovisseral ataklara yol açar.",
@@ -8758,7 +8823,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-alfa-interkale-hucre",
     "term": "Alfa interkale hücre",
     "aliases": [
-      "Alfa interkale hücre"
+      "Alfa interkale hücre",
+      "α-interkale hücre",
+      "tip A interkale hücre"
     ],
     "normalizedTerm": "alfa interkale hucre",
     "TurkishName": "Alfa interkale hücre",
@@ -8766,17 +8833,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "shortDefinition": "Distal renal tübüler asidozda alfa interkale hücrelerin H+ sekresyonu bozulur; idrar pH’si yeterince düşürülemez.",
-    "definition": "Distal renal tübüler asidozda alfa interkale hücrelerin H+ sekresyonu bozulur; idrar pH’si yeterince düşürülemez.",
-    "detailedExplanation": "Distal renal tübüler asidozda alfa interkale hücrelerin H+ sekresyonu bozulur; idrar pH’si yeterince düşürülemez. Normal anyon açıklıklı metabolik asidoz, hipokalemi eğilimi, nefrolitiyazis ve nefrokalsinozis görülebilir. Doğru cevap A’dır. Distal RTA’da sorun distal nefronda hidrojen iyonu sekresyonunun yetersiz olmasıdır. Böbrek asit yükünü idrara atamaz ve idrar pH’si metabolik asidoza rağmen uygunsuz yüksek...",
-    "postAnswerExplanation": "Distal renal tübüler asidozda alfa interkale hücrelerin H+ sekresyonu bozulur; idrar pH’si yeterince düşürülemez. Normal anyon açıklıklı metabolik asidoz, hipokalemi eğilimi, nefrolitiyazis ve nefrokalsinozis görülebilir. Doğru cevap A’dır. Distal RTA’da sorun distal nefronda hidrojen iyonu sekresyonunun yetersiz olmasıdır. Böbrek asit yükünü idrara atamaz ve idrar pH’si metabolik asidoza rağmen uygunsuz yüksek...",
-    "postAnswerExpandedExplanation": "Distal renal tübüler asidozda alfa interkale hücrelerin H+ sekresyonu bozulur; idrar pH’si yeterince düşürülemez. Normal anyon açıklıklı metabolik asidoz, hipokalemi eğilimi, nefrolitiyazis ve nefrokalsinozis görülebilir. Doğru cevap A’dır. Distal RTA’da sorun distal nefronda hidrojen iyonu sekresyonunun yetersiz olmasıdır. Böbrek asit yükünü idrara atamaz ve idrar pH’si metabolik asidoza rağmen uygunsuz yüksek...",
-    "tusPearl": "Anatomi sorularında terimi yalnız ezberleme; hasar bulgusu, damar/sinir komşuluğu ve cerrahi risk ile birlikte düşün.",
-    "differentialPoint": "Benzer anatomik yapılardan ayırıcı nokta, etkilediği organ alanı veya yaralanınca verdiği klinik bulgudur.",
-    "clinicalRelevance": "Anatomi sorularında terimi yalnız ezberleme; hasar bulgusu, damar/sinir komşuluğu ve cerrahi risk ile birlikte düşün.",
-    "mechanism": "",
+    "previewDefinition": "Toplayıcı kanalın asit salgılayan interkale hücresidir; lümene H⁺ sekrete eder ve bikarbonatın kana geri kazanılmasına katkı sağlar. Distal renal tübüler asidozda bu hücre fonksiyonu bozulabilir.",
+    "preAnswerSafeDefinition": "Toplayıcı kanalın asit salgılayan interkale hücresidir; lümene H⁺ sekrete eder ve bikarbonatın kana geri kazanılmasına katkı sağlar. Distal renal tübüler asidozda bu hücre fonksiyonu bozulabilir.",
+    "shortDefinition": "Toplayıcı kanalın asit salgılayan interkale hücresidir; lümene H⁺ sekrete eder ve bikarbonatın kana geri kazanılmasına katkı sağlar. Distal renal tübüler asidozda bu hücre fonksiyonu bozulabilir.",
+    "definition": "Toplayıcı kanalın asit salgılayan interkale hücresidir; lümene H⁺ sekrete eder ve bikarbonatın kana geri kazanılmasına katkı sağlar. Distal renal tübüler asidozda bu hücre fonksiyonu bozulabilir.",
+    "detailedExplanation": "Alfa interkale hücrelerde H⁺-ATPaz ve H⁺/K⁺-ATPaz aracılı asit atılımı azalırsa idrar metabolik asidoza rağmen yeterince asitleştirilemez. Normal anyon açıklıklı metabolik asidoz, hipokalemi eğilimi ve nefrolitiyazis görülebilir.",
+    "postAnswerExplanation": "Alfa interkale hücrelerde H⁺-ATPaz ve H⁺/K⁺-ATPaz aracılı asit atılımı azalırsa idrar metabolik asidoza rağmen yeterince asitleştirilemez. Normal anyon açıklıklı metabolik asidoz, hipokalemi eğilimi ve nefrolitiyazis görülebilir.",
+    "postAnswerExpandedExplanation": "Alfa interkale hücrelerde H⁺-ATPaz ve H⁺/K⁺-ATPaz aracılı asit atılımı azalırsa idrar metabolik asidoza rağmen yeterince asitleştirilemez. Normal anyon açıklıklı metabolik asidoz, hipokalemi eğilimi ve nefrolitiyazis görülebilir.",
+    "tusPearl": "Distal RTA’da sorun alfa interkale hücrenin H⁺ sekresyon kusurudur; idrar pH’si uygunsuz yüksek kalır.",
+    "differentialPoint": "Proksimal RTA bikarbonat geri emilim kusurudur; distal RTA’da idrar asitleştirme kusuru belirgindir.",
+    "clinicalRelevance": "Böbrek fizyolojisinde hücre tipi ile asit-baz bozukluğunu bağlar.",
+    "mechanism": "Toplayıcı kanalda H⁺ sekresyonu azalınca asit atılımı bozulur ve bikarbonat tamponu tüketilir.",
     "relatedBranches": [
       "anatomy"
     ],
@@ -8796,8 +8863,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Alfa interkale hücre",
-      "anatomik komşuluk",
-      "klinik hasar paterni"
+      "α-interkale hücre",
+      "tip A interkale hücre"
     ],
     "sourceTextExamples": [
       "Distal renal tübüler asidozda alfa interkale hücrelerin H+ sekresyonu bozulur; idrar pH’si yeterince düşürülemez. Normal anyon açıklıklı metabolik asidoz, hipokalemi eğilimi, nefrolitiyazis ve nefrokalsinozis görülebilir.",
@@ -8821,7 +8888,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-alfa-1-antitripsin-hepatosit-protein-birikimi",
     "term": "Alfa-1 antitripsin hepatosit protein birikimi",
     "aliases": [
-      "Alfa-1 antitripsin hepatosit protein birikimi"
+      "Alfa-1 antitripsin hepatosit protein birikimi",
+      "A1AT hepatosit birikimi",
+      "PAS pozitif globül"
     ],
     "normalizedTerm": "alfa-1 antitripsin hepatosit protein birikimi",
     "TurkishName": "Alfa-1 antitripsin hepatosit protein birikimi",
@@ -8829,17 +8898,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "definition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "detailedExplanation": "Yanlıştır. Alfa-1 antitripsin mutasyonu hepatositlerde yanlış katlanmış protein birikimi ve akciğerde elastaz hasarı ile ilişkilidir. Wilson mekanizması değildir. Doğru cevap A’dır. ATP7B hepatositlerde bakırın safra yoluyla atılımı ve aposeruloplazmine bağlanması için gereklidir. Bu protein bozulduğunda bakır karaciğerde birikir, daha sonra dolaşıma ve diğer dokulara geçerek nöropsikiyatrik bulgular, karaciğer...",
-    "postAnswerExplanation": "Yanlıştır. Alfa-1 antitripsin mutasyonu hepatositlerde yanlış katlanmış protein birikimi ve akciğerde elastaz hasarı ile ilişkilidir. Wilson mekanizması değildir. Doğru cevap A’dır. ATP7B hepatositlerde bakırın safra yoluyla atılımı ve aposeruloplazmine bağlanması için gereklidir. Bu protein bozulduğunda bakır karaciğerde birikir, daha sonra dolaşıma ve diğer dokulara geçerek nöropsikiyatrik bulgular, karaciğer...",
-    "postAnswerExpandedExplanation": "Yanlıştır. Alfa-1 antitripsin mutasyonu hepatositlerde yanlış katlanmış protein birikimi ve akciğerde elastaz hasarı ile ilişkilidir. Wilson mekanizması değildir. Doğru cevap A’dır. ATP7B hepatositlerde bakırın safra yoluyla atılımı ve aposeruloplazmine bağlanması için gereklidir. Bu protein bozulduğunda bakır karaciğerde birikir, daha sonra dolaşıma ve diğer dokulara geçerek nöropsikiyatrik bulgular, karaciğer...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Alfa-1 antitripsin eksikliğinde yanlış katlanmış A1AT proteininin hepatositlerde birikmesidir. Karaciğerde PAS pozitif globüller, akciğerde ise panasinerd amfizem eğilimi oluşur.",
+    "preAnswerSafeDefinition": "Alfa-1 antitripsin eksikliğinde yanlış katlanmış A1AT proteininin hepatositlerde birikmesidir. Karaciğerde PAS pozitif globüller, akciğerde ise panasinerd amfizem eğilimi oluşur.",
+    "shortDefinition": "Alfa-1 antitripsin eksikliğinde yanlış katlanmış A1AT proteininin hepatositlerde birikmesidir. Karaciğerde PAS pozitif globüller, akciğerde ise panasinerd amfizem eğilimi oluşur.",
+    "definition": "Alfa-1 antitripsin eksikliğinde yanlış katlanmış A1AT proteininin hepatositlerde birikmesidir. Karaciğerde PAS pozitif globüller, akciğerde ise panasinerd amfizem eğilimi oluşur.",
+    "detailedExplanation": "PiZZ gibi ağır mutasyonlarda A1AT endoplazmik retikulumda birikir ve hepatoselüler hasar yapabilir. Kanda düşük A1AT nedeniyle nötrofil elastaz kontrolsüz kalır ve özellikle alt loblarda panasinerd amfizem gelişir.",
+    "postAnswerExplanation": "PiZZ gibi ağır mutasyonlarda A1AT endoplazmik retikulumda birikir ve hepatoselüler hasar yapabilir. Kanda düşük A1AT nedeniyle nötrofil elastaz kontrolsüz kalır ve özellikle alt loblarda panasinerd amfizem gelişir.",
+    "postAnswerExpandedExplanation": "PiZZ gibi ağır mutasyonlarda A1AT endoplazmik retikulumda birikir ve hepatoselüler hasar yapabilir. Kanda düşük A1AT nedeniyle nötrofil elastaz kontrolsüz kalır ve özellikle alt loblarda panasinerd amfizem gelişir.",
+    "tusPearl": "A1AT eksikliği iki yönlüdür: karaciğerde protein birikimi, akciğerde elastaz hasarı.",
+    "differentialPoint": "Wilson hastalığında bakır birikimi, Kayser-Fleischer halkası ve düşük seruloplazmin beklenir; A1AT’de PAS pozitif hepatosit globülleri tipiktir.",
+    "clinicalRelevance": "Patoloji sorularında yanlış katlanmış protein birikimi ile doku hasarını bağlar.",
+    "mechanism": "Mutant A1AT hepatosit ER’sinde katlanma/sekresyon kusuru nedeniyle birikir; dolaşımdaki antiproteaz aktivitesi azalır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -8852,11 +8921,13 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Alfa-1 antitripsin hepatosit protein birikimi"
+      "Alfa-1 antitripsin hepatosit protein birikimi",
+      "A1AT hepatosit birikimi",
+      "PAS pozitif globül"
     ],
     "sourceTextExamples": [
-      "Yanlıştır. Alfa-1 antitripsin mutasyonu hepatositlerde yanlış katlanmış protein birikimi ve akciğerde elastaz hasarı ile ilişkilidir. Wilson mekanizması değildir.",
-      "Yanlıştır. Alfa-1 antitripsin mutasyonu hepatositlerde yanlış katlanmış protein birikimi ve akciğerde elastaz hasarı ile ilişkilidir. Wilson mekanizması değildir."
+      "Alfa-1 antitripsin hepatosit protein birikimi",
+      "Alfa-1 antitripsin eksikliğinde yanlış katlanmış A1AT proteininin hepatositlerde birikmesidir. Karaciğerde PAS pozitif globüller, akciğerde ise panasinerd amfizem eğilimi oluşur."
     ],
     "sourceCandidate": {
       "sourceBatch": "batch5-ultradeep",
@@ -8876,7 +8947,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-alfa-1-antitripsin-ve-notrofil-elastaz-dengesi",
     "term": "Alfa-1 antitripsin ve nötrofil elastaz dengesi",
     "aliases": [
-      "Alfa-1 antitripsin ve nötrofil elastaz dengesi"
+      "Alfa-1 antitripsin ve nötrofil elastaz dengesi",
+      "A1AT elastaz dengesi",
+      "antiproteaz-proteaz dengesi"
     ],
     "normalizedTerm": "alfa-1 antitripsin ve notrofil elastaz dengesi",
     "TurkishName": "Alfa-1 antitripsin ve nötrofil elastaz dengesi",
@@ -8884,17 +8957,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Alfa-1 antitripsin fazlalığı nedeniyle elastaz aktivitesinin tamamen baskılanması Doğru cevap A’dır.",
-    "definition": "Alfa-1 antitripsin fazlalığı nedeniyle elastaz aktivitesinin tamamen baskılanması Doğru cevap A’dır.",
-    "detailedExplanation": "Alfa-1 antitripsin fazlalığı nedeniyle elastaz aktivitesinin tamamen baskılanması Doğru cevap A’dır. CFTR proteini epitel hücrelerinde klor ve bikarbonat taşınmasında görev alır. Solunum yollarında CFTR fonksiyon bozukluğu klor sekresyonunu azaltır ve ENaC aracılı sodyum geri emilimini artırarak suyun lümenden çekilmesine neden olur. Sonuçta hava yolu yüzey sıvısı azalır, mukus dehidrate ve viskoz hâle gelir. Bu...",
-    "postAnswerExplanation": "Alfa-1 antitripsin fazlalığı nedeniyle elastaz aktivitesinin tamamen baskılanması Doğru cevap A’dır. CFTR proteini epitel hücrelerinde klor ve bikarbonat taşınmasında görev alır. Solunum yollarında CFTR fonksiyon bozukluğu klor sekresyonunu azaltır ve ENaC aracılı sodyum geri emilimini artırarak suyun lümenden çekilmesine neden olur. Sonuçta hava yolu yüzey sıvısı azalır, mukus dehidrate ve viskoz hâle gelir. Bu...",
-    "postAnswerExpandedExplanation": "Alfa-1 antitripsin fazlalığı nedeniyle elastaz aktivitesinin tamamen baskılanması Doğru cevap A’dır. CFTR proteini epitel hücrelerinde klor ve bikarbonat taşınmasında görev alır. Solunum yollarında CFTR fonksiyon bozukluğu klor sekresyonunu azaltır ve ENaC aracılı sodyum geri emilimini artırarak suyun lümenden çekilmesine neden olur. Sonuçta hava yolu yüzey sıvısı azalır, mukus dehidrate ve viskoz hâle gelir. Bu...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Alfa-1 antitripsin nötrofil elastazı inhibe ederek alveol duvarını proteolitik yıkımdan koruyan antiproteazdır. Eksikliğinde elastaz aktivitesi artar ve panasinerd amfizem gelişir.",
+    "preAnswerSafeDefinition": "Alfa-1 antitripsin nötrofil elastazı inhibe ederek alveol duvarını proteolitik yıkımdan koruyan antiproteazdır. Eksikliğinde elastaz aktivitesi artar ve panasinerd amfizem gelişir.",
+    "shortDefinition": "Alfa-1 antitripsin nötrofil elastazı inhibe ederek alveol duvarını proteolitik yıkımdan koruyan antiproteazdır. Eksikliğinde elastaz aktivitesi artar ve panasinerd amfizem gelişir.",
+    "definition": "Alfa-1 antitripsin nötrofil elastazı inhibe ederek alveol duvarını proteolitik yıkımdan koruyan antiproteazdır. Eksikliğinde elastaz aktivitesi artar ve panasinerd amfizem gelişir.",
+    "detailedExplanation": "A1AT eksikliğinde özellikle sigara dumanı oksidatif hasarı artırarak antiproteaz kapasiteyi daha da azaltır. Klinik olarak genç yaşta bazal ağırlıklı amfizem ve karaciğer hastalığı birlikte görülebilir.",
+    "postAnswerExplanation": "A1AT eksikliğinde özellikle sigara dumanı oksidatif hasarı artırarak antiproteaz kapasiteyi daha da azaltır. Klinik olarak genç yaşta bazal ağırlıklı amfizem ve karaciğer hastalığı birlikte görülebilir.",
+    "postAnswerExpandedExplanation": "A1AT eksikliğinde özellikle sigara dumanı oksidatif hasarı artırarak antiproteaz kapasiteyi daha da azaltır. Klinik olarak genç yaşta bazal ağırlıklı amfizem ve karaciğer hastalığı birlikte görülebilir.",
+    "tusPearl": "Genç hastada bazal panasinerd amfizem + karaciğer bulgusu A1AT eksikliğini düşündürür.",
+    "differentialPoint": "Sigara ilişkili sentriasiner amfizem daha çok üst loblarda ve yaşlı/uzun sigara öykülü hastada beklenir.",
+    "clinicalRelevance": "Akciğer patolojisinde proteaz-antiproteaz dengesini sınav açısından netleştirir.",
+    "mechanism": "A1AT azalınca nötrofil elastaz alveoler septaları yıkar ve elastik recoil kaybı gelişir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -8907,7 +8980,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Alfa-1 antitripsin ve nötrofil elastaz dengesi"
+      "Alfa-1 antitripsin ve nötrofil elastaz dengesi",
+      "A1AT elastaz dengesi",
+      "antiproteaz-proteaz dengesi"
     ],
     "sourceTextExamples": [
       "Alfa-1 antitripsin fazlalığı nedeniyle elastaz aktivitesinin tamamen baskılanması",
@@ -8931,7 +9006,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-antimitokondriyal-antikor-ve-primer-biliyer-kolanjit",
     "term": "Antimitokondriyal antikor ve primer biliyer kolanjit",
     "aliases": [
-      "Antimitokondriyal antikor ve primer biliyer kolanjit"
+      "Antimitokondriyal antikor ve primer biliyer kolanjit",
+      "AMA pozitif PBC",
+      "primer biliyer kolanjit otoantikoru"
     ],
     "normalizedTerm": "antimitokondriyal antikor ve primer biliyer kolanjit",
     "TurkishName": "Antimitokondriyal antikor ve primer biliyer kolanjit",
@@ -8939,17 +9016,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Seroloji / otoantikor",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Primer biliyer kolanjit küçük intrahepatik safra kanallarını tutan otoimmün kolestatik hastalıktır ve en karakteristik serolojik belirteci antimitokondriyal antikordur.",
-    "definition": "Primer biliyer kolanjit küçük intrahepatik safra kanallarını tutan otoimmün kolestatik hastalıktır ve en karakteristik serolojik belirteci antimitokondriyal antikordur.",
-    "detailedExplanation": "Primer biliyer kolanjit küçük intrahepatik safra kanallarını tutan otoimmün kolestatik hastalıktır ve en karakteristik serolojik belirteci antimitokondriyal antikordur. Antimitokondriyal antikor özellikle PBC ile güçlü ilişkilidir. Anti-düz kas antikoru otoimmün hepatitte, anti-LKM1 tip 2 otoimmün hepatitte, p-ANCA ise primer sklerozan kolanjit ve inflamatuvar bağırsak hastalığı bağlamında daha çok düşünülür. Primer...",
-    "postAnswerExplanation": "Primer biliyer kolanjit küçük intrahepatik safra kanallarını tutan otoimmün kolestatik hastalıktır ve en karakteristik serolojik belirteci antimitokondriyal antikordur. Antimitokondriyal antikor özellikle PBC ile güçlü ilişkilidir. Anti-düz kas antikoru otoimmün hepatitte, anti-LKM1 tip 2 otoimmün hepatitte, p-ANCA ise primer sklerozan kolanjit ve inflamatuvar bağırsak hastalığı bağlamında daha çok düşünülür. Primer...",
-    "postAnswerExpandedExplanation": "Primer biliyer kolanjit küçük intrahepatik safra kanallarını tutan otoimmün kolestatik hastalıktır ve en karakteristik serolojik belirteci antimitokondriyal antikordur. Antimitokondriyal antikor özellikle PBC ile güçlü ilişkilidir. Anti-düz kas antikoru otoimmün hepatitte, anti-LKM1 tip 2 otoimmün hepatitte, p-ANCA ise primer sklerozan kolanjit ve inflamatuvar bağırsak hastalığı bağlamında daha çok düşünülür. Primer...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Antimitokondriyal antikor primer biliyer kolanjitin en karakteristik serolojik belirtecidir. PBC küçük intrahepatik safra kanallarını tutan otoimmün kolestatik hastalıktır.",
+    "preAnswerSafeDefinition": "Antimitokondriyal antikor primer biliyer kolanjitin en karakteristik serolojik belirtecidir. PBC küçük intrahepatik safra kanallarını tutan otoimmün kolestatik hastalıktır.",
+    "shortDefinition": "Antimitokondriyal antikor primer biliyer kolanjitin en karakteristik serolojik belirtecidir. PBC küçük intrahepatik safra kanallarını tutan otoimmün kolestatik hastalıktır.",
+    "definition": "Antimitokondriyal antikor primer biliyer kolanjitin en karakteristik serolojik belirtecidir. PBC küçük intrahepatik safra kanallarını tutan otoimmün kolestatik hastalıktır.",
+    "detailedExplanation": "PBC genellikle orta yaş kadınlarda kaşıntı, yorgunluk ve ALP/GGT yüksekliği ile seyreder. Antimitokondriyal antikor pozitifliği kolestatik enzim paterniyle birlikte tanıyı güçlendirir.",
+    "postAnswerExplanation": "PBC genellikle orta yaş kadınlarda kaşıntı, yorgunluk ve ALP/GGT yüksekliği ile seyreder. Antimitokondriyal antikor pozitifliği kolestatik enzim paterniyle birlikte tanıyı güçlendirir.",
+    "postAnswerExpandedExplanation": "PBC genellikle orta yaş kadınlarda kaşıntı, yorgunluk ve ALP/GGT yüksekliği ile seyreder. Antimitokondriyal antikor pozitifliği kolestatik enzim paterniyle birlikte tanıyı güçlendirir.",
+    "tusPearl": "Kolestatik enzim paterni + AMA pozitifliği = primer biliyer kolanjit lehine güçlü eşleşme.",
+    "differentialPoint": "Anti-düz kas antikoru otoimmün hepatit; p-ANCA primer sklerozan kolanjit/İBH birlikteliği için daha tipiktir.",
+    "clinicalRelevance": "Karaciğer otoantikor sorularında doğru hastalık-antikoru eşleştirir.",
+    "mechanism": "Otoimmün hasar küçük intrahepatik safra kanallarında destrüksiyon ve kronik kolestaz oluşturur.",
     "relatedBranches": [
       "rheumatology",
       "immunology"
@@ -8968,7 +9045,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Antimitokondriyal antikor ve primer biliyer kolanjit",
-      "antikor"
+      "AMA pozitif PBC",
+      "primer biliyer kolanjit otoantikoru"
     ],
     "sourceTextExamples": [
       "Primer biliyer kolanjit küçük intrahepatik safra kanallarını tutan otoimmün kolestatik hastalıktır ve en karakteristik serolojik belirteci antimitokondriyal antikordur.",
@@ -9000,8 +9078,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Aplastik anemi iliği, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Aplastik anemi iliği, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Aplastik anemi iliği, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Aplastik anemi iliği, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Aplastik anemi iliği Hematopoietik kök hücre hasarı tüm serilerde azalmaya neden olur.",
@@ -9053,8 +9131,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Anatomik ilişki",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Kapalı ortamda jeneratör maruziyeti, normal pulse oksimetreye rağmen nörolojik bulgular ve yüksek karboksihemoglobin karbonmonoksit zehirlenmesini gösterir.",
+    "preAnswerSafeDefinition": "Kapalı ortamda jeneratör maruziyeti, normal pulse oksimetreye rağmen nörolojik bulgular ve yüksek karboksihemoglobin karbonmonoksit zehirlenmesini gösterir.",
     "shortDefinition": "Kapalı ortamda jeneratör maruziyeti, normal pulse oksimetreye rağmen nörolojik bulgular ve yüksek karboksihemoglobin karbonmonoksit zehirlenmesini gösterir.",
     "definition": "Kapalı ortamda jeneratör maruziyeti, normal pulse oksimetreye rağmen nörolojik bulgular ve yüksek karboksihemoglobin karbonmonoksit zehirlenmesini gösterir.",
     "detailedExplanation": "Arter kan gazı ko-oksimetri Kapalı ortamda jeneratör maruziyeti, normal pulse oksimetreye rağmen nörolojik bulgular ve yüksek karboksihemoglobin karbonmonoksit zehirlenmesini gösterir. Karbonmonoksit hemoglobine yüksek afiniteli bağlanarak oksijen taşıma kapasitesini azaltır ve kalan oksijen bağlanma bölgelerinin afinitesini artırarak oksijen-hemoglobin ayrışma eğrisini sola kaydırır; dokulara oksijen bırakılması...",
@@ -9116,8 +9194,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Aschoff cisimciği, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Aschoff cisimciği, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Aschoff cisimciği, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Aschoff cisimciği, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Akut romatizmal ateşte Aschoff cisimciğini ve pankardit riskini tanıyabilme Tedavi edilmemiş grup A streptokok farenjiti sonrası gelişen gezici poliartrit ve kardit akut romatizmal ateşi düşündürür. Kalpte Anitschkow hücreleri içeren Aschoff cisimcikleri karakteristik lezyondur.",
@@ -9163,7 +9241,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-asetilkolin-reseptor-antikoru",
     "term": "Asetilkolin reseptör antikoru",
     "aliases": [
-      "Asetilkolin reseptör antikoru"
+      "Asetilkolin reseptör antikoru",
+      "AChR antikoru",
+      "miyastenia gravis antikoru"
     ],
     "normalizedTerm": "asetilkolin reseptor antikoru",
     "TurkishName": "Asetilkolin reseptör antikoru",
@@ -9171,17 +9251,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Seroloji / otoantikor",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Dalgalanan oküler ve proksimal kas güçsüzlüğü, dinlenmeyle düzelme, dekrement yanıt ve asetilkolin reseptör antikor pozitifliği miyastenia gravis ile uyumludur.",
-    "definition": "Dalgalanan oküler ve proksimal kas güçsüzlüğü, dinlenmeyle düzelme, dekrement yanıt ve asetilkolin reseptör antikor pozitifliği miyastenia gravis ile uyumludur.",
-    "detailedExplanation": "Asetilkolin reseptör antikoru Dalgalanan oküler ve proksimal kas güçsüzlüğü, dinlenmeyle düzelme, dekrement yanıt ve asetilkolin reseptör antikor pozitifliği miyastenia gravis ile uyumludur. Temel mekanizma postsinaptik nikotinik asetilkolin reseptörlerinin otoantikorlarla hedeflenmesi ve nöromüsküler iletimin azalmasıdır.",
-    "postAnswerExplanation": "Asetilkolin reseptör antikoru Dalgalanan oküler ve proksimal kas güçsüzlüğü, dinlenmeyle düzelme, dekrement yanıt ve asetilkolin reseptör antikor pozitifliği miyastenia gravis ile uyumludur. Temel mekanizma postsinaptik nikotinik asetilkolin reseptörlerinin otoantikorlarla hedeflenmesi ve nöromüsküler iletimin azalmasıdır.",
-    "postAnswerExpandedExplanation": "Asetilkolin reseptör antikoru Dalgalanan oküler ve proksimal kas güçsüzlüğü, dinlenmeyle düzelme, dekrement yanıt ve asetilkolin reseptör antikor pozitifliği miyastenia gravis ile uyumludur. Temel mekanizma postsinaptik nikotinik asetilkolin reseptörlerinin otoantikorlarla hedeflenmesi ve nöromüsküler iletimin azalmasıdır.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Nöromüsküler kavşaktaki postsinaptik nikotinik asetilkolin reseptörlerine karşı gelişen otoantikordur. Miyastenia graviste dalgalanan kas güçsüzlüğü ve yorulabilirlik ile ilişkilidir.",
+    "preAnswerSafeDefinition": "Nöromüsküler kavşaktaki postsinaptik nikotinik asetilkolin reseptörlerine karşı gelişen otoantikordur. Miyastenia graviste dalgalanan kas güçsüzlüğü ve yorulabilirlik ile ilişkilidir.",
+    "shortDefinition": "Nöromüsküler kavşaktaki postsinaptik nikotinik asetilkolin reseptörlerine karşı gelişen otoantikordur. Miyastenia graviste dalgalanan kas güçsüzlüğü ve yorulabilirlik ile ilişkilidir.",
+    "definition": "Nöromüsküler kavşaktaki postsinaptik nikotinik asetilkolin reseptörlerine karşı gelişen otoantikordur. Miyastenia graviste dalgalanan kas güçsüzlüğü ve yorulabilirlik ile ilişkilidir.",
+    "detailedExplanation": "AChR antikorları reseptör sayısını ve postsinaptik iletimi azaltır. Oküler bulgular, proksimal güçsüzlük, dinlenmeyle düzelme ve repetitif sinir uyarısında dekrement yanıt tanıyı destekler.",
+    "postAnswerExplanation": "AChR antikorları reseptör sayısını ve postsinaptik iletimi azaltır. Oküler bulgular, proksimal güçsüzlük, dinlenmeyle düzelme ve repetitif sinir uyarısında dekrement yanıt tanıyı destekler.",
+    "postAnswerExpandedExplanation": "AChR antikorları reseptör sayısını ve postsinaptik iletimi azaltır. Oküler bulgular, proksimal güçsüzlük, dinlenmeyle düzelme ve repetitif sinir uyarısında dekrement yanıt tanıyı destekler.",
+    "tusPearl": "Yorulmakla artan pitoz/diplopi + AChR antikoru miyastenia gravis için klasik ipucudur.",
+    "differentialPoint": "Lambert-Eaton’da presinaptik kalsiyum kanalı antikoru ve kullanım ile güçte artış beklenir; miyastenide kullanım güçsüzlüğü artırır.",
+    "clinicalRelevance": "Nöroimmün kas güçsüzlüğü sorularında presinaptik-postsinaptik ayrımı sağlar.",
+    "mechanism": "Otoantikorlar reseptörleri bloke eder, yıktırır veya kompleman aracılı postsinaptik membran hasarı oluşturur.",
     "relatedBranches": [
       "rheumatology",
       "immunology"
@@ -9200,7 +9280,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Asetilkolin reseptör antikoru",
-      "antikor"
+      "AChR antikoru",
+      "miyastenia gravis antikoru"
     ],
     "sourceTextExamples": [
       "Asetilkolin reseptör antikoru",
@@ -9287,8 +9368,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Benign fruktozüri, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
+    "preAnswerSafeDefinition": "Benign fruktozüri, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "shortDefinition": "Benign fruktozüri, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "definition": "Benign fruktozüri, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "detailedExplanation": "Fruktokinaz eksikliği benign esansiyel fruktozüriye yol açar; glukoz-6-fosfataz eksikliği von Gierke hastalığıdır. Galaktoz-1-fosfat üridiltransferaz eksikliği klasik galaktozemidir ve fruktoz-1-fosfat birikimini açıklamaz. Kalıtsal fruktoz intoleransı aldolaz B eksikliğine bağlıdır; fruktoz-1-fosfat parçalanamaz, inorganik fosfat ve ATP azalır, glukoneogenez/glikojenoliz baskılanarak hipoglisemi gelişir....",
@@ -9343,8 +9424,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Enzim/genetik defekt",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Branched-chain alpha-ketoacid dehydrogenase kompleks eksikliği, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
+    "preAnswerSafeDefinition": "Branched-chain alpha-ketoacid dehydrogenase kompleks eksikliği, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "shortDefinition": "Branched-chain alpha-ketoacid dehydrogenase kompleks eksikliği, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "definition": "Branched-chain alpha-ketoacid dehydrogenase kompleks eksikliği, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "detailedExplanation": "Branched-chain alpha-ketoacid dehydrogenase kompleks eksikliği Yenidoğanda beslenme bozukluğu, letarji, nörolojik bulgular, tatlımsı idrar kokusu ve lösin-izolösin-valin artışı akçaağaç şurubu idrar hastalığını düşündürür. Temel defekt dallı zincirli alfa-ketoasit dehidrogenaz kompleksindedir; dallı zincirli amino asitler ve ketoasitleri birikir.",
@@ -9399,8 +9480,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Burkitt lenfoma, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Burkitt lenfoma, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Burkitt lenfoma, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Burkitt lenfoma, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Burkitt lenfoma Ağrısız servikal lenfadenopati, B semptomları ve biyopside Reed-Sternberg hücreleri Hodgkin lenfomayı düşündürür. Reed-Sternberg hücreleri klasik olarak CD15 ve CD30 pozitif olabilir.",
@@ -9446,7 +9527,10 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-ccr5-cxcr4-koreseptorleri",
     "term": "CCR5/CXCR4 koreseptörleri",
     "aliases": [
-      "CCR5/CXCR4 koreseptörleri"
+      "CCR5/CXCR4 koreseptörleri",
+      "HIV koreseptörleri",
+      "CCR5",
+      "CXCR4"
     ],
     "normalizedTerm": "ccr5/cxcr4 koreseptorleri",
     "TurkishName": "CCR5/CXCR4 koreseptörleri",
@@ -9454,17 +9538,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "HIV gp120, CD4 molekülüne bağlandıktan sonra CCR5 veya CXCR4 koreseptörlerinden yararlanabilir Doğru cevap A’dır.",
-    "definition": "HIV gp120, CD4 molekülüne bağlandıktan sonra CCR5 veya CXCR4 koreseptörlerinden yararlanabilir Doğru cevap A’dır.",
-    "detailedExplanation": "HIV gp120, CD4 molekülüne bağlandıktan sonra CCR5 veya CXCR4 koreseptörlerinden yararlanabilir Doğru cevap A’dır. HIV’in hedef hücreye girişi CD4 molekülü ile başlar; gp120-CD4 etkileşimi sonrası virüs CCR5 veya CXCR4 koreseptörlerinden birini kullanarak giriş sürecini ilerletir. CCR5 kullanımı erken enfeksiyon ve makrofaj-tropik suşlarla, CXCR4 kullanımı ise daha çok T hücre tropizmiyle ilişkilendirilir. gp41 viral...",
-    "postAnswerExplanation": "HIV gp120, CD4 molekülüne bağlandıktan sonra CCR5 veya CXCR4 koreseptörlerinden yararlanabilir Doğru cevap A’dır. HIV’in hedef hücreye girişi CD4 molekülü ile başlar; gp120-CD4 etkileşimi sonrası virüs CCR5 veya CXCR4 koreseptörlerinden birini kullanarak giriş sürecini ilerletir. CCR5 kullanımı erken enfeksiyon ve makrofaj-tropik suşlarla, CXCR4 kullanımı ise daha çok T hücre tropizmiyle ilişkilendirilir. gp41 viral...",
-    "postAnswerExpandedExplanation": "HIV gp120, CD4 molekülüne bağlandıktan sonra CCR5 veya CXCR4 koreseptörlerinden yararlanabilir Doğru cevap A’dır. HIV’in hedef hücreye girişi CD4 molekülü ile başlar; gp120-CD4 etkileşimi sonrası virüs CCR5 veya CXCR4 koreseptörlerinden birini kullanarak giriş sürecini ilerletir. CCR5 kullanımı erken enfeksiyon ve makrofaj-tropik suşlarla, CXCR4 kullanımı ise daha çok T hücre tropizmiyle ilişkilendirilir. gp41 viral...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "HIV’in CD4’e bağlandıktan sonra hücreye giriş için kullandığı kemokin koreseptörleridir. CCR5 erken/makrofaj-tropik, CXCR4 ise daha çok T hücre tropizmiyle ilişkilendirilir.",
+    "preAnswerSafeDefinition": "HIV’in CD4’e bağlandıktan sonra hücreye giriş için kullandığı kemokin koreseptörleridir. CCR5 erken/makrofaj-tropik, CXCR4 ise daha çok T hücre tropizmiyle ilişkilendirilir.",
+    "shortDefinition": "HIV’in CD4’e bağlandıktan sonra hücreye giriş için kullandığı kemokin koreseptörleridir. CCR5 erken/makrofaj-tropik, CXCR4 ise daha çok T hücre tropizmiyle ilişkilendirilir.",
+    "definition": "HIV’in CD4’e bağlandıktan sonra hücreye giriş için kullandığı kemokin koreseptörleridir. CCR5 erken/makrofaj-tropik, CXCR4 ise daha çok T hücre tropizmiyle ilişkilendirilir.",
+    "detailedExplanation": "HIV gp120 önce CD4 molekülüne bağlanır, ardından CCR5 veya CXCR4 koreseptörüyle etkileşerek gp41 aracılı füzyonu başlatır. Koreseptör kullanımı viral tropizm ve tedavi hedefleri açısından önem taşır.",
+    "postAnswerExplanation": "HIV gp120 önce CD4 molekülüne bağlanır, ardından CCR5 veya CXCR4 koreseptörüyle etkileşerek gp41 aracılı füzyonu başlatır. Koreseptör kullanımı viral tropizm ve tedavi hedefleri açısından önem taşır.",
+    "postAnswerExpandedExplanation": "HIV gp120 önce CD4 molekülüne bağlanır, ardından CCR5 veya CXCR4 koreseptörüyle etkileşerek gp41 aracılı füzyonu başlatır. Koreseptör kullanımı viral tropizm ve tedavi hedefleri açısından önem taşır.",
+    "tusPearl": "HIV girişinde CD4 tek başına yetmez; CCR5 veya CXCR4 koreseptörü gerekir.",
+    "differentialPoint": "gp120 bağlanma ve koreseptör tanımada, gp41 ise membran füzyonunda görev alır.",
+    "clinicalRelevance": "Mikrobiyoloji ve farmakoloji sorularında HIV giriş mekanizmasını netleştirir.",
+    "mechanism": "gp120-CD4 bağlanması sonrası koreseptör etkileşimi konformasyon değişikliği yapar ve gp41 füzyonu sağlar.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -9477,7 +9561,10 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
     "keywordsForSearch": [
-      "CCR5/CXCR4 koreseptörleri"
+      "CCR5/CXCR4 koreseptörleri",
+      "HIV koreseptörleri",
+      "CCR5",
+      "CXCR4"
     ],
     "sourceTextExamples": [
       "HIV gp120, CD4 molekülüne bağlandıktan sonra CCR5 veya CXCR4 koreseptörlerinden yararlanabilir",
@@ -9509,8 +9596,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "CD15 ve CD30 pozitifliği, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "CD15 ve CD30 pozitifliği, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "CD15 ve CD30 pozitifliği, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "CD15 ve CD30 pozitifliği, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Büyük atipik hücrelerde CD15 ve CD30 pozitifliği saptandı. Genç erişkinde ağrısız servikal lenfadenopati, B semptomları, karışık inflamatuvar zeminde iki çekirdekli belirgin nükleollü büyük hücreler ve CD15-CD30 pozitifliği klasik Hodgkin lenfomayı destekler. Bu tümör için karakteristik hücre Reed-Sternberg hücresidir.",
@@ -9557,7 +9644,10 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-cps1-nags-eksikligi-paterni",
     "term": "CPS1/NAGS eksikliği paterni",
     "aliases": [
-      "CPS1/NAGS eksikliği paterni"
+      "CPS1/NAGS eksikliği paterni",
+      "CPS1 eksikliği",
+      "NAGS eksikliği",
+      "düşük orotik asitli hiperamonyemi"
     ],
     "normalizedTerm": "cps1/nags eksikligi paterni",
     "TurkishName": "CPS1/NAGS eksikliği paterni",
@@ -9565,17 +9655,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Tanısal test / karar eşiği",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "CPS1/NAGS eksikliği paterni, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
-    "definition": "CPS1/NAGS eksikliği paterni, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
-    "detailedExplanation": "OTC eksikliğinde mitokondride biriken karbamoil fosfat pirimidin sentezine yönelir ve orotik asit artar. CPS1 eksikliğinde karbamoil fosfat oluşumu azaldığı için orotik asit artışı beklenmez. Doğru cevap C’dir. Hem OTC eksikliği hem de CPS1 eksikliği hiperamonyemiye yol açabilir; bu nedenle amonyak artışı ayırıcı değildir. OTC eksikliğinde karbamoil fosfat üretimi devam eder ancak ornitinle sitrülin oluşturma...",
-    "postAnswerExplanation": "OTC eksikliğinde mitokondride biriken karbamoil fosfat pirimidin sentezine yönelir ve orotik asit artar. CPS1 eksikliğinde karbamoil fosfat oluşumu azaldığı için orotik asit artışı beklenmez. Doğru cevap C’dir. Hem OTC eksikliği hem de CPS1 eksikliği hiperamonyemiye yol açabilir; bu nedenle amonyak artışı ayırıcı değildir. OTC eksikliğinde karbamoil fosfat üretimi devam eder ancak ornitinle sitrülin oluşturma...",
-    "postAnswerExpandedExplanation": "OTC eksikliğinde mitokondride biriken karbamoil fosfat pirimidin sentezine yönelir ve orotik asit artar. CPS1 eksikliğinde karbamoil fosfat oluşumu azaldığı için orotik asit artışı beklenmez. Doğru cevap C’dir. Hem OTC eksikliği hem de CPS1 eksikliği hiperamonyemiye yol açabilir; bu nedenle amonyak artışı ayırıcı değildir. OTC eksikliğinde karbamoil fosfat üretimi devam eder ancak ornitinle sitrülin oluşturma...",
-    "tusPearl": "Metabolizma sorusunda ipucu genellikle substrat birikimi, ürün azalması, açlık/fruktoz/protein alımı sonrası tablo veya kalıtım tipidir.",
-    "differentialPoint": "Benzer metabolik hastalıklardan ayrım, hangi metabolitin biriktiği ve atağı neyin tetiklediği üzerinden yapılır.",
-    "clinicalRelevance": "Metabolizma sorusunda ipucu genellikle substrat birikimi, ürün azalması, açlık/fruktoz/protein alımı sonrası tablo veya kalıtım tipidir.",
-    "mechanism": "",
+    "previewDefinition": "Üre döngüsünün ilk mitokondriyal basamaklarında bozuklukla gelişen hiperamonyemi paternidir. CPS1 veya NAGS eksikliğinde orotik asit artışı beklenmez ya da belirgin değildir.",
+    "preAnswerSafeDefinition": "Üre döngüsünün ilk mitokondriyal basamaklarında bozuklukla gelişen hiperamonyemi paternidir. CPS1 veya NAGS eksikliğinde orotik asit artışı beklenmez ya da belirgin değildir.",
+    "shortDefinition": "Üre döngüsünün ilk mitokondriyal basamaklarında bozuklukla gelişen hiperamonyemi paternidir. CPS1 veya NAGS eksikliğinde orotik asit artışı beklenmez ya da belirgin değildir.",
+    "definition": "Üre döngüsünün ilk mitokondriyal basamaklarında bozuklukla gelişen hiperamonyemi paternidir. CPS1 veya NAGS eksikliğinde orotik asit artışı beklenmez ya da belirgin değildir.",
+    "detailedExplanation": "CPS1 karbamoil fosfat sentezler; NAGS ise CPS1 aktivatörü olan N-asetilglutamat üretimiyle bu basamağı destekler. OTC eksikliğinde karbamoil fosfat pirimidin yoluna kaçar ve orotik asit artar; CPS1/NAGS eksikliğinde bu kaçış olmaz.",
+    "postAnswerExplanation": "CPS1 karbamoil fosfat sentezler; NAGS ise CPS1 aktivatörü olan N-asetilglutamat üretimiyle bu basamağı destekler. OTC eksikliğinde karbamoil fosfat pirimidin yoluna kaçar ve orotik asit artar; CPS1/NAGS eksikliğinde bu kaçış olmaz.",
+    "postAnswerExpandedExplanation": "CPS1 karbamoil fosfat sentezler; NAGS ise CPS1 aktivatörü olan N-asetilglutamat üretimiyle bu basamağı destekler. OTC eksikliğinde karbamoil fosfat pirimidin yoluna kaçar ve orotik asit artar; CPS1/NAGS eksikliğinde bu kaçış olmaz.",
+    "tusPearl": "Hiperamonyemi + düşük/normal orotik asit CPS1/NAGS; hiperamonyemi + yüksek orotik asit OTC eksikliğini düşündürür.",
+    "differentialPoint": "OTC eksikliği X’e bağlıdır ve orotik asit yüksekliğiyle ayrılır; CPS1/NAGS eksikliğinde mitokondriyal ilk basamak aksar.",
+    "clinicalRelevance": "Metabolizma sorularında üre döngüsü defektlerini orotik asit üzerinden ayırır.",
+    "mechanism": "Karbamoil fosfat oluşumu veya CPS1 aktivasyonu bozulduğu için amonyak üreye yeterince katılamaz.",
     "relatedBranches": [
       "biochemistry",
       "genetics"
@@ -9589,7 +9679,10 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
     "keywordsForSearch": [
-      "CPS1/NAGS eksikliği paterni"
+      "CPS1/NAGS eksikliği paterni",
+      "CPS1 eksikliği",
+      "NAGS eksikliği",
+      "düşük orotik asitli hiperamonyemi"
     ],
     "sourceTextExamples": [
       "OTC eksikliğinde mitokondride biriken karbamoil fosfat pirimidin sentezine yönelir ve orotik asit artar. CPS1 eksikliğinde karbamoil fosfat oluşumu azaldığı için orotik asit artışı beklenmez.",
@@ -9621,8 +9714,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Tanısal test / karar eşiği",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "DIC laboratuvar paterni, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "DIC laboratuvar paterni, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "DIC laboratuvar paterni, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "DIC laboratuvar paterni, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "DIC laboratuvar paterni Koagülasyon faktörleri ve trombositler tüketilir; fibrin yıkım ürünleri artar.",
@@ -9729,8 +9822,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Enzim/genetik defekt",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Demir eksikliği anemisi ayırımı, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
+    "preAnswerSafeDefinition": "Demir eksikliği anemisi ayırımı, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "shortDefinition": "Demir eksikliği anemisi ayırımı, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "definition": "Demir eksikliği anemisi ayırımı, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "detailedExplanation": "Demir eksikliği anemisi ayırımı Ferritin demir depolarını yansıtır; demir eksikliğinde depo azalır.",
@@ -9779,7 +9872,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-e2f-baskisinin-kalkmasi",
     "term": "E2F baskısının kalkması",
     "aliases": [
-      "E2F baskısının kalkması"
+      "E2F baskısının kalkması",
+      "Rb-E2F ekseni",
+      "E2F aktivasyonu"
     ],
     "normalizedTerm": "e2f baskisinin kalkmasi",
     "TurkishName": "E2F baskısının kalkması",
@@ -9787,17 +9882,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Rb-E2F ekseni hücre döngüsü kontrolünün klasik G1-S kapısıdır.",
-    "definition": "Rb-E2F ekseni hücre döngüsü kontrolünün klasik G1-S kapısıdır.",
-    "detailedExplanation": "Rb-E2F ekseni hücre döngüsü kontrolünün klasik G1-S kapısıdır. NF-κB inflamasyon ve sağkalım sinyalleriyle, STAT3 sitokin/büyüme faktörü sinyaliyle, SMAD4 ise TGF-β yoluyla ilişkilidir; Rb’nin doğrudan bağlayıp baskıladığı temel faktör E2F’dir. Hipofosforile Rb, E2F transkripsiyon faktörünü baskılar; Rb’nin fosforilasyonu veya kaybı E2F’yi serbestleştirerek S fazı genlerinin ekspresyonunu artırır. Rb’nin klasik...",
-    "postAnswerExplanation": "Rb-E2F ekseni hücre döngüsü kontrolünün klasik G1-S kapısıdır. NF-κB inflamasyon ve sağkalım sinyalleriyle, STAT3 sitokin/büyüme faktörü sinyaliyle, SMAD4 ise TGF-β yoluyla ilişkilidir; Rb’nin doğrudan bağlayıp baskıladığı temel faktör E2F’dir. Hipofosforile Rb, E2F transkripsiyon faktörünü baskılar; Rb’nin fosforilasyonu veya kaybı E2F’yi serbestleştirerek S fazı genlerinin ekspresyonunu artırır. Rb’nin klasik...",
-    "postAnswerExpandedExplanation": "Rb-E2F ekseni hücre döngüsü kontrolünün klasik G1-S kapısıdır. NF-κB inflamasyon ve sağkalım sinyalleriyle, STAT3 sitokin/büyüme faktörü sinyaliyle, SMAD4 ise TGF-β yoluyla ilişkilidir; Rb’nin doğrudan bağlayıp baskıladığı temel faktör E2F’dir. Hipofosforile Rb, E2F transkripsiyon faktörünü baskılar; Rb’nin fosforilasyonu veya kaybı E2F’yi serbestleştirerek S fazı genlerinin ekspresyonunu artırır. Rb’nin klasik...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Rb proteininin E2F transkripsiyon faktörünü baskılayamaması sonucu S fazı genlerinin aktive olmasıdır. G1/S geçişinin temel hücre döngüsü kontrol noktalarından biridir.",
+    "preAnswerSafeDefinition": "Rb proteininin E2F transkripsiyon faktörünü baskılayamaması sonucu S fazı genlerinin aktive olmasıdır. G1/S geçişinin temel hücre döngüsü kontrol noktalarından biridir.",
+    "shortDefinition": "Rb proteininin E2F transkripsiyon faktörünü baskılayamaması sonucu S fazı genlerinin aktive olmasıdır. G1/S geçişinin temel hücre döngüsü kontrol noktalarından biridir.",
+    "definition": "Rb proteininin E2F transkripsiyon faktörünü baskılayamaması sonucu S fazı genlerinin aktive olmasıdır. G1/S geçişinin temel hücre döngüsü kontrol noktalarından biridir.",
+    "detailedExplanation": "Hipofosforile Rb E2F’yi bağlayarak DNA sentezi genlerini baskılar. Siklin D-CDK4/6 fosforilasyonu veya RB1 kaybı E2F’yi serbestleştirir ve hücre S fazına ilerler.",
+    "postAnswerExplanation": "Hipofosforile Rb E2F’yi bağlayarak DNA sentezi genlerini baskılar. Siklin D-CDK4/6 fosforilasyonu veya RB1 kaybı E2F’yi serbestleştirir ve hücre S fazına ilerler.",
+    "postAnswerExpandedExplanation": "Hipofosforile Rb E2F’yi bağlayarak DNA sentezi genlerini baskılar. Siklin D-CDK4/6 fosforilasyonu veya RB1 kaybı E2F’yi serbestleştirir ve hücre S fazına ilerler.",
+    "tusPearl": "Rb kaybı veya inaktivasyonu, E2F’nin kontrolsüz aktivasyonu üzerinden G1/S geçişini kolaylaştırır.",
+    "differentialPoint": "p53 DNA hasarında p21 üzerinden CDK aktivitesini azaltır; Rb doğrudan E2F baskısıyla S fazı girişini kontrol eder.",
+    "clinicalRelevance": "Kanser biyolojisi sorularında tümör baskılayıcı kaybının hücre döngüsüne etkisini gösterir.",
+    "mechanism": "Rb fosforile/inaktive olduğunda E2F serbest kalır ve DNA replikasyonu için gerekli genleri başlatır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -9810,7 +9905,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "E2F baskısının kalkması"
+      "E2F baskısının kalkması",
+      "Rb-E2F ekseni",
+      "E2F aktivasyonu"
     ],
     "sourceTextExamples": [
       "Rb-E2F ekseni hücre döngüsü kontrolünün klasik G1-S kapısıdır. NF-κB inflamasyon ve sağkalım sinyalleriyle, STAT3 sitokin/büyüme faktörü sinyaliyle, SMAD4 ise TGF-β yoluyla ilişkilidir; Rb’nin doğrudan bağlayıp baskıladığı temel faktör E2F’dir.",
@@ -9834,7 +9931,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-eklem-aspirasyonu-ve-sinovyal-sivi-analizi",
     "term": "Eklem aspirasyonu ve sinovyal sıvı analizi",
     "aliases": [
-      "Eklem aspirasyonu ve sinovyal sıvı analizi"
+      "Eklem aspirasyonu ve sinovyal sıvı analizi",
+      "artrosentez",
+      "sinovyal sıvı analizi"
     ],
     "normalizedTerm": "eklem aspirasyonu ve sinovyal sivi analizi",
     "TurkishName": "Eklem aspirasyonu ve sinovyal sıvı analizi",
@@ -9842,17 +9941,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Ateş, akut tek eklem şişliği, sıcaklık artışı, hareketle şiddetli ağrı ve inflamatuvar belirteç yüksekliği septik artrit açısından acil değerlendirme gerektirir.",
-    "definition": "Ateş, akut tek eklem şişliği, sıcaklık artışı, hareketle şiddetli ağrı ve inflamatuvar belirteç yüksekliği septik artrit açısından acil değerlendirme gerektirir.",
-    "detailedExplanation": "Eklem aspirasyonu ve sinovyal sıvı analizi Ateş, akut tek eklem şişliği, sıcaklık artışı, hareketle şiddetli ağrı ve inflamatuvar belirteç yüksekliği septik artrit açısından acil değerlendirme gerektirir. Tanıyı kesinleştiren ve etken ile antibiyotik seçimini yönlendiren temel işlem eklem aspirasyonu ile sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal açısından incelenmesidir.",
-    "postAnswerExplanation": "Eklem aspirasyonu ve sinovyal sıvı analizi Ateş, akut tek eklem şişliği, sıcaklık artışı, hareketle şiddetli ağrı ve inflamatuvar belirteç yüksekliği septik artrit açısından acil değerlendirme gerektirir. Tanıyı kesinleştiren ve etken ile antibiyotik seçimini yönlendiren temel işlem eklem aspirasyonu ile sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal açısından incelenmesidir.",
-    "postAnswerExpandedExplanation": "Eklem aspirasyonu ve sinovyal sıvı analizi Ateş, akut tek eklem şişliği, sıcaklık artışı, hareketle şiddetli ağrı ve inflamatuvar belirteç yüksekliği septik artrit açısından acil değerlendirme gerektirir. Tanıyı kesinleştiren ve etken ile antibiyotik seçimini yönlendiren temel işlem eklem aspirasyonu ile sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal açısından incelenmesidir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Akut şiş ve ağrılı eklemde sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal incelemesi için alınmasıdır. Septik artrit şüphesinde tanı ve tedavi kararını belirleyen acil işlemdir.",
+    "preAnswerSafeDefinition": "Akut şiş ve ağrılı eklemde sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal incelemesi için alınmasıdır. Septik artrit şüphesinde tanı ve tedavi kararını belirleyen acil işlemdir.",
+    "shortDefinition": "Akut şiş ve ağrılı eklemde sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal incelemesi için alınmasıdır. Septik artrit şüphesinde tanı ve tedavi kararını belirleyen acil işlemdir.",
+    "definition": "Akut şiş ve ağrılı eklemde sinovyal sıvının hücre sayımı, Gram boyama, kültür ve kristal incelemesi için alınmasıdır. Septik artrit şüphesinde tanı ve tedavi kararını belirleyen acil işlemdir.",
+    "detailedExplanation": "Ateş, tek eklemde sıcaklık-şişlik, hareketle şiddetli ağrı ve yüksek inflamatuvar belirteçler septik artrit düşündürür. Antibiyotik öncesi eklem aspirasyonu etkeni ve kristal artrit ayrımını gösterebilir.",
+    "postAnswerExplanation": "Ateş, tek eklemde sıcaklık-şişlik, hareketle şiddetli ağrı ve yüksek inflamatuvar belirteçler septik artrit düşündürür. Antibiyotik öncesi eklem aspirasyonu etkeni ve kristal artrit ayrımını gösterebilir.",
+    "postAnswerExpandedExplanation": "Ateş, tek eklemde sıcaklık-şişlik, hareketle şiddetli ağrı ve yüksek inflamatuvar belirteçler septik artrit düşündürür. Antibiyotik öncesi eklem aspirasyonu etkeni ve kristal artrit ayrımını gösterebilir.",
+    "tusPearl": "Akut monoartritte septik artrit dışlanmadan yalnız gut/pseudogut varsayımı yapılmaz; aspirasyon kritiktir.",
+    "differentialPoint": "Gut negatif birefringent monosodyum ürat kristali; psödogut pozitif birefringent kalsiyum pirofosfat kristali ile ayrılır.",
+    "clinicalRelevance": "Ortopedi-romatoloji acil sorularında tanısal ilk adımı netleştirir.",
+    "mechanism": "Enfeksiyon veya kristal inflamasyonu sinovyal boşlukta nötrofilik yanıt ve ağrılı effüzyon oluşturur.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -9865,7 +9964,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Eklem aspirasyonu ve sinovyal sıvı analizi"
+      "Eklem aspirasyonu ve sinovyal sıvı analizi",
+      "artrosentez",
+      "sinovyal sıvı analizi"
     ],
     "sourceTextExamples": [
       "Eklem aspirasyonu ve sinovyal sıvı analizi",
@@ -9889,7 +9990,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-endometrium-adenokarsinomu",
     "term": "Endometrium adenokarsinomu",
     "aliases": [
-      "Endometrium adenokarsinomu"
+      "Endometrium adenokarsinomu",
+      "endometrioid adenokarsinom",
+      "endometrium kanseri"
     ],
     "normalizedTerm": "endometrium adenokarsinomu",
     "TurkishName": "Endometrium adenokarsinomu",
@@ -9897,17 +10000,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Postmenopozal vajinal kanama, obezite, hipertansiyon, diyabet ve nulliparite endometrium adenokarsinomu açısından risk oluşturur.",
-    "definition": "Postmenopozal vajinal kanama, obezite, hipertansiyon, diyabet ve nulliparite endometrium adenokarsinomu açısından risk oluşturur.",
-    "detailedExplanation": "Endometrium adenokarsinomu Postmenopozal vajinal kanama, obezite, hipertansiyon, diyabet ve nulliparite endometrium adenokarsinomu açısından risk oluşturur. Artmış endometrium kalınlığı ve biyopside invaziv endometrioid adenokarsinom tanıyı destekler; patogenezde karşılanmamış östrojen etkisi önemlidir.",
-    "postAnswerExplanation": "Endometrium adenokarsinomu Postmenopozal vajinal kanama, obezite, hipertansiyon, diyabet ve nulliparite endometrium adenokarsinomu açısından risk oluşturur. Artmış endometrium kalınlığı ve biyopside invaziv endometrioid adenokarsinom tanıyı destekler; patogenezde karşılanmamış östrojen etkisi önemlidir.",
-    "postAnswerExpandedExplanation": "Endometrium adenokarsinomu Postmenopozal vajinal kanama, obezite, hipertansiyon, diyabet ve nulliparite endometrium adenokarsinomu açısından risk oluşturur. Artmış endometrium kalınlığı ve biyopside invaziv endometrioid adenokarsinom tanıyı destekler; patogenezde karşılanmamış östrojen etkisi önemlidir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Endometrium epitelinden gelişen malign tümördür ve en sık postmenopozal kanama ile bulgu verir. Obezite, karşılanmamış östrojen, nulliparite, diyabet ve hipertansiyon risk artırır.",
+    "preAnswerSafeDefinition": "Endometrium epitelinden gelişen malign tümördür ve en sık postmenopozal kanama ile bulgu verir. Obezite, karşılanmamış östrojen, nulliparite, diyabet ve hipertansiyon risk artırır.",
+    "shortDefinition": "Endometrium epitelinden gelişen malign tümördür ve en sık postmenopozal kanama ile bulgu verir. Obezite, karşılanmamış östrojen, nulliparite, diyabet ve hipertansiyon risk artırır.",
+    "definition": "Endometrium epitelinden gelişen malign tümördür ve en sık postmenopozal kanama ile bulgu verir. Obezite, karşılanmamış östrojen, nulliparite, diyabet ve hipertansiyon risk artırır.",
+    "detailedExplanation": "Tip I endometrioid adenokarsinom östrojen bağımlı hiperplazi zemininden gelişebilir. Transvajinal USG’de endometrium kalınlığı artışı biyopsi gereksinimini destekler; kesin tanı histopatolojiyle konur.",
+    "postAnswerExplanation": "Tip I endometrioid adenokarsinom östrojen bağımlı hiperplazi zemininden gelişebilir. Transvajinal USG’de endometrium kalınlığı artışı biyopsi gereksinimini destekler; kesin tanı histopatolojiyle konur.",
+    "postAnswerExpandedExplanation": "Tip I endometrioid adenokarsinom östrojen bağımlı hiperplazi zemininden gelişebilir. Transvajinal USG’de endometrium kalınlığı artışı biyopsi gereksinimini destekler; kesin tanı histopatolojiyle konur.",
+    "tusPearl": "Postmenopozal kanama aksi kanıtlanana kadar endometrium kanseri açısından değerlendirilir.",
+    "differentialPoint": "Serviks kanseri postkoital kanama ve servikal lezyonla öne çıkabilir; endometrium kanserinde uterin kaynaklı postmenopozal kanama tipiktir.",
+    "clinicalRelevance": "Kadın doğum-onkoloji sorularında risk faktörü ve tanısal yaklaşımı bağlar.",
+    "mechanism": "Uzun süreli karşılanmamış östrojen endometrial proliferasyonu ve hiperplazi-displazi-kanser dizisini artırır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -9920,7 +10023,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Endometrium adenokarsinomu"
+      "Endometrium adenokarsinomu",
+      "endometrioid adenokarsinom",
+      "endometrium kanseri"
     ],
     "sourceTextExamples": [
       "Endometrium adenokarsinomu",
@@ -9952,8 +10057,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Enfektif endokardit vejetasyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Enfektif endokardit vejetasyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Enfektif endokardit vejetasyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Enfektif endokardit vejetasyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Enfektif endokardit vejetasyonu Enfektif endokarditte fibrin, trombosit ve mikroorganizmalardan oluşan vejetasyonlar gelişir.",
@@ -10000,7 +10105,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-enterococcus-faecalis",
     "term": "Enterococcus faecalis",
     "aliases": [
-      "Enterococcus faecalis"
+      "Enterococcus faecalis",
+      "enterokok",
+      "E. faecalis"
     ],
     "normalizedTerm": "enterococcus faecalis",
     "TurkishName": "Enterococcus faecalis",
@@ -10008,17 +10115,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "İntravenöz madde kullanımı olan hastada ateş, triküspit vejetasyon, septik pulmoner emboli bulguları ve gram-pozitif kok kümeleri akut sağ kalp endokarditini düşündürür.",
-    "definition": "İntravenöz madde kullanımı olan hastada ateş, triküspit vejetasyon, septik pulmoner emboli bulguları ve gram-pozitif kok kümeleri akut sağ kalp endokarditini düşündürür.",
-    "detailedExplanation": "Enterococcus faecalis İntravenöz madde kullanımı olan hastada ateş, triküspit vejetasyon, septik pulmoner emboli bulguları ve gram-pozitif kok kümeleri akut sağ kalp endokarditini düşündürür. Bu klinik bağlamda en olası etken Staphylococcus aureus’tur.",
-    "postAnswerExplanation": "Enterococcus faecalis İntravenöz madde kullanımı olan hastada ateş, triküspit vejetasyon, septik pulmoner emboli bulguları ve gram-pozitif kok kümeleri akut sağ kalp endokarditini düşündürür. Bu klinik bağlamda en olası etken Staphylococcus aureus’tur.",
-    "postAnswerExpandedExplanation": "Enterococcus faecalis İntravenöz madde kullanımı olan hastada ateş, triküspit vejetasyon, septik pulmoner emboli bulguları ve gram-pozitif kok kümeleri akut sağ kalp endokarditini düşündürür. Bu klinik bağlamda en olası etken Staphylococcus aureus’tur.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Gram pozitif, katalaz negatif, safra-eskülin pozitif ve çoğu kez bağırsak florasında bulunan koktur. Üriner enfeksiyon, safra yolu enfeksiyonu, intraabdominal enfeksiyon ve subakut endokardit etkeni olabilir.",
+    "preAnswerSafeDefinition": "Gram pozitif, katalaz negatif, safra-eskülin pozitif ve çoğu kez bağırsak florasında bulunan koktur. Üriner enfeksiyon, safra yolu enfeksiyonu, intraabdominal enfeksiyon ve subakut endokardit etkeni olabilir.",
+    "shortDefinition": "Gram pozitif, katalaz negatif, safra-eskülin pozitif ve çoğu kez bağırsak florasında bulunan koktur. Üriner enfeksiyon, safra yolu enfeksiyonu, intraabdominal enfeksiyon ve subakut endokardit etkeni olabilir.",
+    "definition": "Gram pozitif, katalaz negatif, safra-eskülin pozitif ve çoğu kez bağırsak florasında bulunan koktur. Üriner enfeksiyon, safra yolu enfeksiyonu, intraabdominal enfeksiyon ve subakut endokardit etkeni olabilir.",
+    "detailedExplanation": "Enterococcus faecalis özellikle yaşlı, hastane kaynaklı, üriner kateterli veya geçirilmiş GİS/GÜS işlem öyküsü olan hastalarda önemlidir. Endokarditte genitoüriner veya gastrointestinal kaynak ipucu olabilir.",
+    "postAnswerExplanation": "Enterococcus faecalis özellikle yaşlı, hastane kaynaklı, üriner kateterli veya geçirilmiş GİS/GÜS işlem öyküsü olan hastalarda önemlidir. Endokarditte genitoüriner veya gastrointestinal kaynak ipucu olabilir.",
+    "postAnswerExpandedExplanation": "Enterococcus faecalis özellikle yaşlı, hastane kaynaklı, üriner kateterli veya geçirilmiş GİS/GÜS işlem öyküsü olan hastalarda önemlidir. Endokarditte genitoüriner veya gastrointestinal kaynak ipucu olabilir.",
+    "tusPearl": "Enterokok sorusunda GİS/GÜS kaynak, safra-eskülin pozitifliği ve intrinsik sefalosporin direnci akılda tutulur.",
+    "differentialPoint": "İntravenöz madde kullanımı ve triküspit endokardit klasik olarak Staphylococcus aureus lehinedir; enterokokta GİS/GÜS odak daha tipiktir.",
+    "clinicalRelevance": "Mikrobiyoloji sorularında gram pozitif kokların klinik kaynak ayrımını güçlendirir.",
+    "mechanism": "Enterokoklar bağırsak florasından translokasyon veya kateter/işlem ilişkili yayılımla enfeksiyon oluşturabilir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -10031,7 +10138,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Enterococcus faecalis"
+      "Enterococcus faecalis",
+      "enterokok",
+      "E. faecalis"
     ],
     "sourceTextExamples": [
       "Enterococcus faecalis",
@@ -10063,8 +10172,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Esansiyel trombositemi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Esansiyel trombositemi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Esansiyel trombositemi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Esansiyel trombositemi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Esansiyel trombositemi Miyeloproliferatif klonal süreç tromboz ve kanama riskini artırabilir.",
@@ -10119,8 +10228,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Ewing sarkomu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Ewing sarkomu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Ewing sarkomu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Ewing sarkomu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Ewing sarkomu Ergende diz çevresi metafiz yerleşimli agresif kemik lezyonu, güneş ışını periost reaksiyonu, Codman üçgeni ve malign hücrelerce osteoid üretimi osteosarkomu düşündürür.",
@@ -10238,8 +10347,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Enzim/genetik defekt",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Fibrillin-1 kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
+    "preAnswerSafeDefinition": "Fibrillin-1 kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "shortDefinition": "Fibrillin-1 kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "definition": "Fibrillin-1 kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "detailedExplanation": "Fibrillin-1 kusuru. FBN1 mutasyonu elastik dokuların yapısını ve TGF-beta sinyalini etkiler.",
@@ -10291,8 +10400,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Foliküler lenfoma translokasyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Foliküler lenfoma translokasyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Foliküler lenfoma translokasyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Foliküler lenfoma translokasyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Foliküler lenfoma translokasyonu BCL2 apoptozu azaltır ve germinal merkez B hücrelerinin birikmesine yol açar.",
@@ -10347,8 +10456,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Fruktoz alımı sonrası hipoglisemi, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
+    "preAnswerSafeDefinition": "Fruktoz alımı sonrası hipoglisemi, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "shortDefinition": "Fruktoz alımı sonrası hipoglisemi, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "definition": "Fruktoz alımı sonrası hipoglisemi, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "detailedExplanation": "Aldolaz B eksikliği fruktoz alımı sonrası hipoglisemi ve hepatik hasar tablosunu açıklar. Fruktoz içeren gıdalarla başlayan kusma, hipoglisemi ve hepatik etkilenim herediter fruktoz intoleransını düşündürür. Aldolaz B eksikliğinde fruktoz-1-fosfat birikir, fosfat tuzaklanır ve glukoneogenez ile glikojenoliz bozulur.",
@@ -10452,7 +10561,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-gebeligin-intrahepatik-kolestazi",
     "term": "Gebeliğin intrahepatik kolestazı",
     "aliases": [
-      "Gebeliğin intrahepatik kolestazı"
+      "Gebeliğin intrahepatik kolestazı",
+      "intrahepatik kolestaz",
+      "obstetrik kolestaz"
     ],
     "normalizedTerm": "gebeligin intrahepatik kolestazi",
     "TurkishName": "Gebeliğin intrahepatik kolestazı",
@@ -10460,17 +10571,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "nda kaşıntı ve safra asidi artışı daha belirgindir.",
-    "definition": "nda kaşıntı ve safra asidi artışı daha belirgindir.",
-    "detailedExplanation": "Gebeliğin intrahepatik kolestazında kaşıntı ve safra asidi artışı daha belirgindir. Mikroanjiyopatik hasar hemoliz ve karaciğer-trombosit bulgularını oluşturur.",
-    "postAnswerExplanation": "Gebeliğin intrahepatik kolestazında kaşıntı ve safra asidi artışı daha belirgindir. Mikroanjiyopatik hasar hemoliz ve karaciğer-trombosit bulgularını oluşturur.",
-    "postAnswerExpandedExplanation": "Gebeliğin intrahepatik kolestazında kaşıntı ve safra asidi artışı daha belirgindir. Mikroanjiyopatik hasar hemoliz ve karaciğer-trombosit bulgularını oluşturur.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Gebelikte safra asitlerinin artmasıyla ortaya çıkan, özellikle avuç içi ve ayak tabanında kaşıntı yapan kolestatik tablodur. Maternal semptom çoğu kez kaşıntıdır; fetal risk safra asidi düzeyiyle ilişkilidir.",
+    "preAnswerSafeDefinition": "Gebelikte safra asitlerinin artmasıyla ortaya çıkan, özellikle avuç içi ve ayak tabanında kaşıntı yapan kolestatik tablodur. Maternal semptom çoğu kez kaşıntıdır; fetal risk safra asidi düzeyiyle ilişkilidir.",
+    "shortDefinition": "Gebelikte safra asitlerinin artmasıyla ortaya çıkan, özellikle avuç içi ve ayak tabanında kaşıntı yapan kolestatik tablodur. Maternal semptom çoğu kez kaşıntıdır; fetal risk safra asidi düzeyiyle ilişkilidir.",
+    "definition": "Gebelikte safra asitlerinin artmasıyla ortaya çıkan, özellikle avuç içi ve ayak tabanında kaşıntı yapan kolestatik tablodur. Maternal semptom çoğu kez kaşıntıdır; fetal risk safra asidi düzeyiyle ilişkilidir.",
+    "detailedExplanation": "Gebeliğin intrahepatik kolestazında sarılık olmayabilir; ALP gebelikte fizyolojik artabileceği için safra asidi daha anlamlıdır. Tedavi ve doğum zamanlaması fetal risk nedeniyle önem kazanır.",
+    "postAnswerExplanation": "Gebeliğin intrahepatik kolestazında sarılık olmayabilir; ALP gebelikte fizyolojik artabileceği için safra asidi daha anlamlıdır. Tedavi ve doğum zamanlaması fetal risk nedeniyle önem kazanır.",
+    "postAnswerExpandedExplanation": "Gebeliğin intrahepatik kolestazında sarılık olmayabilir; ALP gebelikte fizyolojik artabileceği için safra asidi daha anlamlıdır. Tedavi ve doğum zamanlaması fetal risk nedeniyle önem kazanır.",
+    "tusPearl": "Gebede kaşıntı + yüksek safra asidi = intrahepatik kolestaz; döküntü olmaması ayırt ettiricidir.",
+    "differentialPoint": "HELLP sendromunda hemoliz, trombositopeni ve AST/ALT yüksekliği baskındır; intrahepatik kolestazda kaşıntı ve safra asidi artışı öne çıkar.",
+    "clinicalRelevance": "Obstetrik sorularda kaşıntı-döküntü-laboratuvar ayrımını öğretir.",
+    "mechanism": "Gebelik hormonları ve genetik yatkınlık safra transportunu bozarak serum safra asitlerini yükseltir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -10483,7 +10594,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Gebeliğin intrahepatik kolestazı"
+      "Gebeliğin intrahepatik kolestazı",
+      "intrahepatik kolestaz",
+      "obstetrik kolestaz"
     ],
     "sourceTextExamples": [
       "Gebeliğin intrahepatik kolestazında kaşıntı ve safra asidi artışı daha belirgindir.",
@@ -10507,7 +10620,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-glomeruler-bazal-membranda-spike-and-dome-gorunumu",
     "term": "Glomerüler bazal membranda spike and dome görünümü",
     "aliases": [
-      "Glomerüler bazal membranda spike and dome görünümü"
+      "Glomerüler bazal membranda spike and dome görünümü",
+      "spike and dome",
+      "membranöz nefropati görünümü"
     ],
     "normalizedTerm": "glomeruler bazal membranda spike and dome gorunumu",
     "TurkishName": "Glomerüler bazal membranda spike and dome görünümü",
@@ -10515,17 +10630,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Erişkinde nefrotik düzey proteinüri, hipoalbüminemi ve subepitelyal immün kompleks birikimleri membranöz nefropatiyi düşündürür.",
-    "definition": "Erişkinde nefrotik düzey proteinüri, hipoalbüminemi ve subepitelyal immün kompleks birikimleri membranöz nefropatiyi düşündürür.",
-    "detailedExplanation": "Glomerüler bazal membranda spike and dome görünümü Erişkinde nefrotik düzey proteinüri, hipoalbüminemi ve subepitelyal immün kompleks birikimleri membranöz nefropatiyi düşündürür. Bu hastalıkta glomerüler bazal membran immün kompleksler arasında yeni membran materyali oluşturur ve ışık mikroskobunda spike and dome görünümü beklenir.",
-    "postAnswerExplanation": "Glomerüler bazal membranda spike and dome görünümü Erişkinde nefrotik düzey proteinüri, hipoalbüminemi ve subepitelyal immün kompleks birikimleri membranöz nefropatiyi düşündürür. Bu hastalıkta glomerüler bazal membran immün kompleksler arasında yeni membran materyali oluşturur ve ışık mikroskobunda spike and dome görünümü beklenir.",
-    "postAnswerExpandedExplanation": "Glomerüler bazal membranda spike and dome görünümü Erişkinde nefrotik düzey proteinüri, hipoalbüminemi ve subepitelyal immün kompleks birikimleri membranöz nefropatiyi düşündürür. Bu hastalıkta glomerüler bazal membran immün kompleksler arasında yeni membran materyali oluşturur ve ışık mikroskobunda spike and dome görünümü beklenir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Membranöz nefropatide subepitelyal immün kompleksler arasında yeni bazal membran materyali birikmesiyle oluşan mikroskobik görünümdür. Erişkinde nefrotik sendromun klasik nedenlerinden biridir.",
+    "preAnswerSafeDefinition": "Membranöz nefropatide subepitelyal immün kompleksler arasında yeni bazal membran materyali birikmesiyle oluşan mikroskobik görünümdür. Erişkinde nefrotik sendromun klasik nedenlerinden biridir.",
+    "shortDefinition": "Membranöz nefropatide subepitelyal immün kompleksler arasında yeni bazal membran materyali birikmesiyle oluşan mikroskobik görünümdür. Erişkinde nefrotik sendromun klasik nedenlerinden biridir.",
+    "definition": "Membranöz nefropatide subepitelyal immün kompleksler arasında yeni bazal membran materyali birikmesiyle oluşan mikroskobik görünümdür. Erişkinde nefrotik sendromun klasik nedenlerinden biridir.",
+    "detailedExplanation": "Subepitelyal immün kompleksler podosit tarafında yerleşir ve GBM kalınlaşması yapar. Gümüş boyada immün kompleksler arasındaki membran uzantıları spike, kompleksler dome görünümü verir.",
+    "postAnswerExplanation": "Subepitelyal immün kompleksler podosit tarafında yerleşir ve GBM kalınlaşması yapar. Gümüş boyada immün kompleksler arasındaki membran uzantıları spike, kompleksler dome görünümü verir.",
+    "postAnswerExpandedExplanation": "Subepitelyal immün kompleksler podosit tarafında yerleşir ve GBM kalınlaşması yapar. Gümüş boyada immün kompleksler arasındaki membran uzantıları spike, kompleksler dome görünümü verir.",
+    "tusPearl": "Erişkin nefrotik sendrom + subepitelyal depozit + spike and dome = membranöz nefropati.",
+    "differentialPoint": "Minimal değişiklik hastalığında ışık mikroskopisi çoğu kez normaldir; elektron mikroskopisinde podosit ayaksı çıkıntı silinmesi görülür.",
+    "clinicalRelevance": "Nefropati patolojisinde depozit lokalizasyonunu morfolojiyle bağlar.",
+    "mechanism": "İmmün kompleksler podosit altında kompleman aracılı hasar ve proteinüri oluşturur.",
     "relatedBranches": [
       "nephrology"
     ],
@@ -10538,7 +10653,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Glomerüler bazal membranda spike and dome görünümü"
+      "Glomerüler bazal membranda spike and dome görünümü",
+      "spike and dome",
+      "membranöz nefropati görünümü"
     ],
     "sourceTextExamples": [
       "Glomerüler bazal membranda spike and dome görünümü",
@@ -10617,7 +10734,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-glutatyon-tukenmesi",
     "term": "Glutatyon tükenmesi",
     "aliases": [
-      "Glutatyon tükenmesi"
+      "Glutatyon tükenmesi",
+      "GSH tükenmesi",
+      "parasetamol toksisitesi"
     ],
     "normalizedTerm": "glutatyon tukenmesi",
     "TurkishName": "Glutatyon tükenmesi",
@@ -10625,17 +10744,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Glutatyon tükenmesi, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
-    "definition": "Glutatyon tükenmesi, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
-    "detailedExplanation": "Doğru cevap A’dır. Parasetamol normal dozlarda çoğunlukla glukuronidasyon ve sülfatlama ile metabolize edilir; küçük bir kısmı CYP aracılığıyla NAPQI’ye dönüşür. NAPQI normalde glutatyonla bağlanarak zararsız hâle getirilir. Aşırı dozda glutatyon depoları tükenir ve NAPQI hepatosit proteinlerine bağlanarak özellikle santral lobüler karaciğer hasarı oluşturur. N-asetilsistein glutatyon sentezi için sistein sağlar ve...",
-    "postAnswerExplanation": "Doğru cevap A’dır. Parasetamol normal dozlarda çoğunlukla glukuronidasyon ve sülfatlama ile metabolize edilir; küçük bir kısmı CYP aracılığıyla NAPQI’ye dönüşür. NAPQI normalde glutatyonla bağlanarak zararsız hâle getirilir. Aşırı dozda glutatyon depoları tükenir ve NAPQI hepatosit proteinlerine bağlanarak özellikle santral lobüler karaciğer hasarı oluşturur. N-asetilsistein glutatyon sentezi için sistein sağlar ve...",
-    "postAnswerExpandedExplanation": "Doğru cevap A’dır. Parasetamol normal dozlarda çoğunlukla glukuronidasyon ve sülfatlama ile metabolize edilir; küçük bir kısmı CYP aracılığıyla NAPQI’ye dönüşür. NAPQI normalde glutatyonla bağlanarak zararsız hâle getirilir. Aşırı dozda glutatyon depoları tükenir ve NAPQI hepatosit proteinlerine bağlanarak özellikle santral lobüler karaciğer hasarı oluşturur. N-asetilsistein glutatyon sentezi için sistein sağlar ve...",
-    "tusPearl": "Metabolizma sorusunda ipucu genellikle substrat birikimi, ürün azalması, açlık/fruktoz/protein alımı sonrası tablo veya kalıtım tipidir.",
-    "differentialPoint": "Benzer metabolik hastalıklardan ayrım, hangi metabolitin biriktiği ve atağı neyin tetiklediği üzerinden yapılır.",
-    "clinicalRelevance": "Metabolizma sorusunda ipucu genellikle substrat birikimi, ürün azalması, açlık/fruktoz/protein alımı sonrası tablo veya kalıtım tipidir.",
-    "mechanism": "",
+    "previewDefinition": "Hücresel antioksidan glutatyon depolarının azalmasıdır; parasetamol aşırı dozunda NAPQI detoksifikasyonu yetersiz kalır. Bu durum özellikle santral lobüler hepatosit hasarı yapar.",
+    "preAnswerSafeDefinition": "Hücresel antioksidan glutatyon depolarının azalmasıdır; parasetamol aşırı dozunda NAPQI detoksifikasyonu yetersiz kalır. Bu durum özellikle santral lobüler hepatosit hasarı yapar.",
+    "shortDefinition": "Hücresel antioksidan glutatyon depolarının azalmasıdır; parasetamol aşırı dozunda NAPQI detoksifikasyonu yetersiz kalır. Bu durum özellikle santral lobüler hepatosit hasarı yapar.",
+    "definition": "Hücresel antioksidan glutatyon depolarının azalmasıdır; parasetamol aşırı dozunda NAPQI detoksifikasyonu yetersiz kalır. Bu durum özellikle santral lobüler hepatosit hasarı yapar.",
+    "detailedExplanation": "Normalde NAPQI glutatyonla bağlanarak zararsızlaştırılır. Aşırı dozda glutatyon tükenince NAPQI hepatosit proteinlerine bağlanır; N-asetilsistein sistein sağlayarak glutatyon sentezini destekler.",
+    "postAnswerExplanation": "Normalde NAPQI glutatyonla bağlanarak zararsızlaştırılır. Aşırı dozda glutatyon tükenince NAPQI hepatosit proteinlerine bağlanır; N-asetilsistein sistein sağlayarak glutatyon sentezini destekler.",
+    "postAnswerExpandedExplanation": "Normalde NAPQI glutatyonla bağlanarak zararsızlaştırılır. Aşırı dozda glutatyon tükenince NAPQI hepatosit proteinlerine bağlanır; N-asetilsistein sistein sağlayarak glutatyon sentezini destekler.",
+    "tusPearl": "Parasetamol toksisitesinde antidot N-asetilsisteindir; mantık glutatyon havuzunu yenilemektir.",
+    "differentialPoint": "Viral hepatitte immün/inflamatuvar hepatit paterni beklenir; parasetamolde doz ilişkili NAPQI ve sentrilobüler nekroz öne çıkar.",
+    "clinicalRelevance": "Toksikoloji ve biyokimya sorularında antidotun metabolik gerekçesini açıklar.",
+    "mechanism": "Glutatyon azalınca reaktif NAPQI kovalent bağlanma ve oksidatif stres üzerinden hepatosit nekrozu oluşturur.",
     "relatedBranches": [
       "biochemistry",
       "genetics"
@@ -10649,11 +10768,14 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Glutatyon tükenmesi"
+      "Glutatyon tükenmesi",
+      "GSH tükenmesi",
+      "parasetamol toksisitesi"
     ],
     "sourceTextExamples": [
-      "Doğru cevap A’dır. Parasetamol normal dozlarda çoğunlukla glukuronidasyon ve sülfatlama ile metabolize edilir; küçük bir kısmı CYP aracılığıyla NAPQI’ye dönüşür. NAPQI normalde glutatyonla bağlanarak zararsız hâle getirilir.",
-      "Parasetamol toksisitesi = NAPQI birikimi + glutatyon tükenmesi; antidot N-asetilsistein glutatyonu yeniler."
+      "Parasetamol toksisitesi = NAPQI birikimi + glutatyon tükenmesi; antidot N-asetilsistein glutatyonu yeniler.",
+      "Glutatyon tükenmesi",
+      "Hücresel antioksidan glutatyon depolarının azalmasıdır; parasetamol aşırı dozunda NAPQI detoksifikasyonu yetersiz kalır. Bu durum özellikle santral lobüler hepatosit hasarı yapar."
     ],
     "sourceCandidate": {
       "sourceBatch": "batch5-ultradeep",
@@ -10681,8 +10803,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Granüler IgG ve C3 birikimi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Granüler IgG ve C3 birikimi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Granüler IgG ve C3 birikimi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Granüler IgG ve C3 birikimi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Kapiller duvar boyunca granüler IgG ve C3 birikimi izlendi. Erişkin nefrotik sendromunda glomerüler bazal membran kalınlaşması, subepitelyal immün kompleks birikimi, granüler IgG-C3 ve spike görünümü membranöz nefropatiyi düşündürür.",
@@ -10737,7 +10859,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-granulom-yapisi",
     "term": "Granülom yapısı",
     "aliases": [
-      "Granülom yapısı"
+      "Granülom yapısı",
+      "granülom",
+      "epiteloid histiyosit topluluğu"
     ],
     "normalizedTerm": "granulom yapisi",
     "TurkishName": "Granülom yapısı",
@@ -10745,17 +10869,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Makrofajların epiteloid dönüşümü ve dev hücreler granülom morfolojisini oluşturur.",
-    "definition": "Makrofajların epiteloid dönüşümü ve dev hücreler granülom morfolojisini oluşturur.",
-    "detailedExplanation": "Granülom yapısı Makrofajların epiteloid dönüşümü ve dev hücreler granülom morfolojisini oluşturur.",
-    "postAnswerExplanation": "Granülom yapısı Makrofajların epiteloid dönüşümü ve dev hücreler granülom morfolojisini oluşturur.",
-    "postAnswerExpandedExplanation": "Granülom yapısı Makrofajların epiteloid dönüşümü ve dev hücreler granülom morfolojisini oluşturur.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Kronik inflamasyonda aktive makrofajların epiteloid histiyositlere dönüşerek oluşturduğu organize hücre topluluğudur. Dev hücreler ve lenfosit halkası eşlik edebilir.",
+    "preAnswerSafeDefinition": "Kronik inflamasyonda aktive makrofajların epiteloid histiyositlere dönüşerek oluşturduğu organize hücre topluluğudur. Dev hücreler ve lenfosit halkası eşlik edebilir.",
+    "shortDefinition": "Kronik inflamasyonda aktive makrofajların epiteloid histiyositlere dönüşerek oluşturduğu organize hücre topluluğudur. Dev hücreler ve lenfosit halkası eşlik edebilir.",
+    "definition": "Kronik inflamasyonda aktive makrofajların epiteloid histiyositlere dönüşerek oluşturduğu organize hücre topluluğudur. Dev hücreler ve lenfosit halkası eşlik edebilir.",
+    "detailedExplanation": "Granülomlar tüberküloz, sarkoidoz, fungal enfeksiyonlar, yabancı cisim reaksiyonu ve Crohn hastalığında görülebilir. Kazeifikasyon nekrozu özellikle tüberküloz lehine güçlü bir ipucudur.",
+    "postAnswerExplanation": "Granülomlar tüberküloz, sarkoidoz, fungal enfeksiyonlar, yabancı cisim reaksiyonu ve Crohn hastalığında görülebilir. Kazeifikasyon nekrozu özellikle tüberküloz lehine güçlü bir ipucudur.",
+    "postAnswerExpandedExplanation": "Granülomlar tüberküloz, sarkoidoz, fungal enfeksiyonlar, yabancı cisim reaksiyonu ve Crohn hastalığında görülebilir. Kazeifikasyon nekrozu özellikle tüberküloz lehine güçlü bir ipucudur.",
+    "tusPearl": "Granülom varsa önce kazeifikasyon var mı ve enfeksiyöz etken kanıtı var mı sorusu ayırıcı tanıyı yönlendirir.",
+    "differentialPoint": "Sarkoidozda nonkazeifiye granülom beklenir; tüberkülozda kazeifiye nekroz ve aside dirençli basil araştırılır.",
+    "clinicalRelevance": "Patoloji ve enfeksiyon sorularında kronik inflamasyon paternini öğretir.",
+    "mechanism": "T hücre aracılı makrofaj aktivasyonu kalıcı antijeni sınırlamak için granülomatöz organizasyon oluşturur.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -10768,7 +10892,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Granülom yapısı"
+      "Granülom yapısı",
+      "granülom",
+      "epiteloid histiyosit topluluğu"
     ],
     "sourceTextExamples": [],
     "sourceCandidate": {
@@ -10789,7 +10915,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-hbsag-negatif-anti-hbs-negatif-anti-hbc-igm-pozitifligi",
     "term": "HBsAg negatif anti-HBs negatif anti-HBc IgM pozitifliği",
     "aliases": [
-      "HBsAg negatif anti-HBs negatif anti-HBc IgM pozitifliği"
+      "HBsAg negatif anti-HBs negatif anti-HBc IgM pozitifliği",
+      "HBV pencere dönemi",
+      "anti-HBc IgM pozitifliği"
     ],
     "normalizedTerm": "hbsag negatif anti-hbs negatif anti-hbc igm pozitifligi",
     "TurkishName": "HBsAg negatif anti-HBs negatif anti-HBc IgM pozitifliği",
@@ -10797,17 +10925,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "HBV serolojisinde pencere dönemi, yüzey antijeninin saptanamaz hâle geldiği ancak koruyucu anti-HBs antikorunun henüz ölçülebilir düzeye ulaşmadığı aralıktır.",
-    "definition": "HBV serolojisinde pencere dönemi, yüzey antijeninin saptanamaz hâle geldiği ancak koruyucu anti-HBs antikorunun henüz ölçülebilir düzeye ulaşmadığı aralıktır.",
-    "detailedExplanation": "HBV serolojisinde pencere dönemi, yüzey antijeninin saptanamaz hâle geldiği ancak koruyucu anti-HBs antikorunun henüz ölçülebilir düzeye ulaşmadığı aralıktır. Bu aralıkta HBsAg negatif, anti-HBs negatif olabilir; bu nedenle bu iki belirtece bakmak tanıyı kaçırabilir. Anti-HBc IgM ise akut veya yakın dönem HBV enfeksiyonunu gösterir ve pencere döneminde tanısal olarak en değerlidir. HBeAg viral replikasyon ve...",
-    "postAnswerExplanation": "HBV serolojisinde pencere dönemi, yüzey antijeninin saptanamaz hâle geldiği ancak koruyucu anti-HBs antikorunun henüz ölçülebilir düzeye ulaşmadığı aralıktır. Bu aralıkta HBsAg negatif, anti-HBs negatif olabilir; bu nedenle bu iki belirtece bakmak tanıyı kaçırabilir. Anti-HBc IgM ise akut veya yakın dönem HBV enfeksiyonunu gösterir ve pencere döneminde tanısal olarak en değerlidir. HBeAg viral replikasyon ve...",
-    "postAnswerExpandedExplanation": "HBV serolojisinde pencere dönemi, yüzey antijeninin saptanamaz hâle geldiği ancak koruyucu anti-HBs antikorunun henüz ölçülebilir düzeye ulaşmadığı aralıktır. Bu aralıkta HBsAg negatif, anti-HBs negatif olabilir; bu nedenle bu iki belirtece bakmak tanıyı kaçırabilir. Anti-HBc IgM ise akut veya yakın dönem HBV enfeksiyonunu gösterir ve pencere döneminde tanısal olarak en değerlidir. HBeAg viral replikasyon ve...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Akut hepatit B pencere döneminde görülebilen serolojik paterndir. HBsAg kaybolmuş, anti-HBs henüz oluşmamışken anti-HBc IgM pozitif kalır.",
+    "preAnswerSafeDefinition": "Akut hepatit B pencere döneminde görülebilen serolojik paterndir. HBsAg kaybolmuş, anti-HBs henüz oluşmamışken anti-HBc IgM pozitif kalır.",
+    "shortDefinition": "Akut hepatit B pencere döneminde görülebilen serolojik paterndir. HBsAg kaybolmuş, anti-HBs henüz oluşmamışken anti-HBc IgM pozitif kalır.",
+    "definition": "Akut hepatit B pencere döneminde görülebilen serolojik paterndir. HBsAg kaybolmuş, anti-HBs henüz oluşmamışken anti-HBc IgM pozitif kalır.",
+    "detailedExplanation": "Pencere döneminde sadece HBsAg ve anti-HBs’ye bakılırsa akut HBV enfeksiyonu kaçırılabilir. Anti-HBc IgM akut veya yakın dönem enfeksiyonu gösterdiği için bu dönemin en değerli belirtecidir.",
+    "postAnswerExplanation": "Pencere döneminde sadece HBsAg ve anti-HBs’ye bakılırsa akut HBV enfeksiyonu kaçırılabilir. Anti-HBc IgM akut veya yakın dönem enfeksiyonu gösterdiği için bu dönemin en değerli belirtecidir.",
+    "postAnswerExpandedExplanation": "Pencere döneminde sadece HBsAg ve anti-HBs’ye bakılırsa akut HBV enfeksiyonu kaçırılabilir. Anti-HBc IgM akut veya yakın dönem enfeksiyonu gösterdiği için bu dönemin en değerli belirtecidir.",
+    "tusPearl": "HBV pencere döneminin ana belirteci anti-HBc IgM’dir.",
+    "differentialPoint": "Aşılanmış kişide anti-HBs pozitif, anti-HBc negatiftir; geçirilmiş enfeksiyonda anti-HBs ve anti-HBc IgG birlikte pozitif olabilir.",
+    "clinicalRelevance": "Seroloji sorularında akut enfeksiyon-aşı-geçirilmiş enfeksiyon ayrımını sağlar.",
+    "mechanism": "Yüzey antijeni temizlenirken koruyucu yüzey antikoru henüz ölçülebilir düzeye ulaşmamıştır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -10825,7 +10953,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": true,
     "keywordsForSearch": [
       "HBsAg negatif anti-HBs negatif anti-HBc IgM pozitifliği",
-      "IgM"
+      "HBV pencere dönemi",
+      "anti-HBc IgM pozitifliği"
     ],
     "sourceTextExamples": [
       "HBV serolojisinde pencere dönemi, yüzey antijeninin saptanamaz hâle geldiği ancak koruyucu anti-HBs antikorunun henüz ölçülebilir düzeye ulaşmadığı aralıktır. Bu aralıkta HBsAg negatif, anti-HBs negatif olabilir; bu nedenle bu iki belirtece bakmak tanıyı kaçırabilir.",
@@ -10922,7 +11051,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-herediter-hemokromatoz",
     "term": "Herediter hemokromatoz",
     "aliases": [
-      "Herediter hemokromatoz"
+      "Herediter hemokromatoz",
+      "HFE hemokromatozu",
+      "primer demir yüklenmesi"
     ],
     "normalizedTerm": "herediter hemokromatoz",
     "TurkishName": "Herediter hemokromatoz",
@@ -10930,17 +11061,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Herediter hemokromatoz, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
-    "definition": "Herediter hemokromatoz, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
-    "detailedExplanation": "Herediter hemokromatozis laboratuvar paterni Doğru cevap A’dır. Herediter hemokromatoziste en sık HFE ilişkili hepcidin düzenleme bozukluğu sonucunda bağırsaktan demir emilimi artar. Plazmada demir yükü arttıkça transferrin satürasyonu yükselir; depo demiri arttığında ferritin de artar. Demir eksikliği anemisinde ise serum demiri ve ferritin azalır, total demir bağlama kapasitesi artar; bu patern hemokromatozisin...",
-    "postAnswerExplanation": "Herediter hemokromatozis laboratuvar paterni Doğru cevap A’dır. Herediter hemokromatoziste en sık HFE ilişkili hepcidin düzenleme bozukluğu sonucunda bağırsaktan demir emilimi artar. Plazmada demir yükü arttıkça transferrin satürasyonu yükselir; depo demiri arttığında ferritin de artar. Demir eksikliği anemisinde ise serum demiri ve ferritin azalır, total demir bağlama kapasitesi artar; bu patern hemokromatozisin...",
-    "postAnswerExpandedExplanation": "Herediter hemokromatozis laboratuvar paterni Doğru cevap A’dır. Herediter hemokromatoziste en sık HFE ilişkili hepcidin düzenleme bozukluğu sonucunda bağırsaktan demir emilimi artar. Plazmada demir yükü arttıkça transferrin satürasyonu yükselir; depo demiri arttığında ferritin de artar. Demir eksikliği anemisinde ise serum demiri ve ferritin azalır, total demir bağlama kapasitesi artar; bu patern hemokromatozisin...",
-    "tusPearl": "Metabolizma sorusunda ipucu genellikle substrat birikimi, ürün azalması, açlık/fruktoz/protein alımı sonrası tablo veya kalıtım tipidir.",
-    "differentialPoint": "Benzer metabolik hastalıklardan ayrım, hangi metabolitin biriktiği ve atağı neyin tetiklediği üzerinden yapılır.",
-    "clinicalRelevance": "Metabolizma sorusunda ipucu genellikle substrat birikimi, ürün azalması, açlık/fruktoz/protein alımı sonrası tablo veya kalıtım tipidir.",
-    "mechanism": "",
+    "previewDefinition": "Genellikle HFE ilişkili hepcidin düzenleme bozukluğu nedeniyle bağırsaktan demir emiliminin artmasıyla gelişen kalıtsal demir yüklenmesidir. Ferritin ve transferrin satürasyonu artar.",
+    "preAnswerSafeDefinition": "Genellikle HFE ilişkili hepcidin düzenleme bozukluğu nedeniyle bağırsaktan demir emiliminin artmasıyla gelişen kalıtsal demir yüklenmesidir. Ferritin ve transferrin satürasyonu artar.",
+    "shortDefinition": "Genellikle HFE ilişkili hepcidin düzenleme bozukluğu nedeniyle bağırsaktan demir emiliminin artmasıyla gelişen kalıtsal demir yüklenmesidir. Ferritin ve transferrin satürasyonu artar.",
+    "definition": "Genellikle HFE ilişkili hepcidin düzenleme bozukluğu nedeniyle bağırsaktan demir emiliminin artmasıyla gelişen kalıtsal demir yüklenmesidir. Ferritin ve transferrin satürasyonu artar.",
+    "detailedExplanation": "Demir karaciğer, pankreas, kalp, eklem ve deride birikerek siroz, diyabet, kardiyomiyopati, artropati ve bronz pigmentasyon yapabilir. Tedavide flebotomi temel yaklaşımdır.",
+    "postAnswerExplanation": "Demir karaciğer, pankreas, kalp, eklem ve deride birikerek siroz, diyabet, kardiyomiyopati, artropati ve bronz pigmentasyon yapabilir. Tedavide flebotomi temel yaklaşımdır.",
+    "postAnswerExpandedExplanation": "Demir karaciğer, pankreas, kalp, eklem ve deride birikerek siroz, diyabet, kardiyomiyopati, artropati ve bronz pigmentasyon yapabilir. Tedavide flebotomi temel yaklaşımdır.",
+    "tusPearl": "Yüksek transferrin satürasyonu + yüksek ferritin primer hemokromatoz lehine güçlü laboratuvar paternidir.",
+    "differentialPoint": "Demir eksikliği anemisinde ferritin ve serum demiri düşer, TDBK artar; hemokromatozda demir yükü ve satürasyon yüksektir.",
+    "clinicalRelevance": "Demir metabolizması sorularında eksiklik-yüklenme laboratuvar ayrımını netleştirir.",
+    "mechanism": "Hepcidin sinyali azalınca ferroportin üzerinden intestinal demir geçişi ve makrofaj demir salınımı artar.",
     "relatedBranches": [
       "biochemistry",
       "genetics"
@@ -10954,7 +11085,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Herediter hemokromatoz"
+      "Herediter hemokromatoz",
+      "HFE hemokromatozu",
+      "primer demir yüklenmesi"
     ],
     "sourceTextExamples": [
       "Herediter hemokromatozis laboratuvar paterni",
@@ -10986,8 +11119,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Hiperakut greft rejeksiyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Hiperakut greft rejeksiyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Hiperakut greft rejeksiyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Hiperakut greft rejeksiyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Hiperakut greft rejeksiyonu Alıcıda önceden var olan anti-donör antikorlar kompleman aktivasyonu ve tromboza yol açar.",
@@ -11034,7 +11167,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-hiperurisemi-plus-kendine-zarar-verme-davranisi",
     "term": "Hiperürisemi + kendine zarar verme davranışı",
     "aliases": [
-      "Hiperürisemi + kendine zarar verme davranışı"
+      "Hiperürisemi + kendine zarar verme davranışı",
+      "Lesch-Nyhan paterni",
+      "HGPRT eksikliği"
     ],
     "normalizedTerm": "hiperurisemi + kendine zarar verme davranisi",
     "TurkishName": "Hiperürisemi + kendine zarar verme davranışı",
@@ -11042,17 +11177,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Erkek çocukta nörogelişimsel bozukluk, kendine zarar verme davranışı, distoni, hiperürisemi ve ürat kristalleri Lesch-Nyhan sendromunu düşündürür.",
-    "definition": "Erkek çocukta nörogelişimsel bozukluk, kendine zarar verme davranışı, distoni, hiperürisemi ve ürat kristalleri Lesch-Nyhan sendromunu düşündürür.",
-    "detailedExplanation": "Erkek çocukta nörogelişimsel bozukluk, kendine zarar verme davranışı, distoni, hiperürisemi ve ürat kristalleri Lesch-Nyhan sendromunu düşündürür. Temel defekt purin kurtarma yolunda hipoksantin-guanin fosforiboziltransferaz eksikliğidir; bu durum purinlerin yıkıma gitmesini artırarak ürik asit üretimini yükseltir. Erkek çocukta nörogelişimsel bozukluk, kendine zarar verme davranışı, distoni, hiperürisemi ve ürat...",
-    "postAnswerExplanation": "Erkek çocukta nörogelişimsel bozukluk, kendine zarar verme davranışı, distoni, hiperürisemi ve ürat kristalleri Lesch-Nyhan sendromunu düşündürür. Temel defekt purin kurtarma yolunda hipoksantin-guanin fosforiboziltransferaz eksikliğidir; bu durum purinlerin yıkıma gitmesini artırarak ürik asit üretimini yükseltir. Erkek çocukta nörogelişimsel bozukluk, kendine zarar verme davranışı, distoni, hiperürisemi ve ürat...",
-    "postAnswerExpandedExplanation": "Erkek çocukta nörogelişimsel bozukluk, kendine zarar verme davranışı, distoni, hiperürisemi ve ürat kristalleri Lesch-Nyhan sendromunu düşündürür. Temel defekt purin kurtarma yolunda hipoksantin-guanin fosforiboziltransferaz eksikliğidir; bu durum purinlerin yıkıma gitmesini artırarak ürik asit üretimini yükseltir. Erkek çocukta nörogelişimsel bozukluk, kendine zarar verme davranışı, distoni, hiperürisemi ve ürat...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Erkek çocukta hiperürisemi, distoni/nörogelişimsel sorunlar ve kendine zarar verme davranışının birlikte görülmesi Lesch-Nyhan sendromunu düşündürür. Temel kusur HGPRT eksikliğidir.",
+    "preAnswerSafeDefinition": "Erkek çocukta hiperürisemi, distoni/nörogelişimsel sorunlar ve kendine zarar verme davranışının birlikte görülmesi Lesch-Nyhan sendromunu düşündürür. Temel kusur HGPRT eksikliğidir.",
+    "shortDefinition": "Erkek çocukta hiperürisemi, distoni/nörogelişimsel sorunlar ve kendine zarar verme davranışının birlikte görülmesi Lesch-Nyhan sendromunu düşündürür. Temel kusur HGPRT eksikliğidir.",
+    "definition": "Erkek çocukta hiperürisemi, distoni/nörogelişimsel sorunlar ve kendine zarar verme davranışının birlikte görülmesi Lesch-Nyhan sendromunu düşündürür. Temel kusur HGPRT eksikliğidir.",
+    "detailedExplanation": "Purin kurtarma yolu bozulunca hipoksantin ve guanin yeniden kullanılamaz; purin yıkımı ve ürik asit üretimi artar. Nörolojik bulgular ve dudak/parmak ısırma TUS açısından ayırt ettiricidir.",
+    "postAnswerExplanation": "Purin kurtarma yolu bozulunca hipoksantin ve guanin yeniden kullanılamaz; purin yıkımı ve ürik asit üretimi artar. Nörolojik bulgular ve dudak/parmak ısırma TUS açısından ayırt ettiricidir.",
+    "postAnswerExpandedExplanation": "Purin kurtarma yolu bozulunca hipoksantin ve guanin yeniden kullanılamaz; purin yıkımı ve ürik asit üretimi artar. Nörolojik bulgular ve dudak/parmak ısırma TUS açısından ayırt ettiricidir.",
+    "tusPearl": "Kendine zarar verme + hiperürisemi + erkek çocuk = Lesch-Nyhan sendromu düşün.",
+    "differentialPoint": "Gut hiperürisemi yapar ancak çocuklukta nörodavranışsal kendine zarar verme paterni beklenmez.",
+    "clinicalRelevance": "Biyokimya-genetik sorularında purin kurtarma yolunu klinikle bağlar.",
+    "mechanism": "HGPRT eksikliği PRPP artışı ve de novo purin sentezinin artması üzerinden ürik asit üretimini yükseltir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -11065,7 +11200,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Hiperürisemi + kendine zarar verme davranışı"
+      "Hiperürisemi + kendine zarar verme davranışı",
+      "Lesch-Nyhan paterni",
+      "HGPRT eksikliği"
     ],
     "sourceTextExamples": [
       "Erkek çocukta nörogelişimsel bozukluk, kendine zarar verme davranışı, distoni, hiperürisemi ve ürat kristalleri Lesch-Nyhan sendromunu düşündürür.",
@@ -11089,7 +11226,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-hirschsprung-hastaligi-kokeni",
     "term": "Hirschsprung hastalığı kökeni",
     "aliases": [
-      "Hirschsprung hastalığı kökeni"
+      "Hirschsprung hastalığı kökeni",
+      "aganglionik megakolon",
+      "nöral krest göç kusuru"
     ],
     "normalizedTerm": "hirschsprung hastaligi kokeni",
     "TurkishName": "Hirschsprung hastalığı kökeni",
@@ -11097,17 +11236,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Enterik ganglionlar nöral krest kökenlidir; migrasyon bozulursa aganglionik segment gelişir.",
-    "definition": "Enterik ganglionlar nöral krest kökenlidir; migrasyon bozulursa aganglionik segment gelişir.",
-    "detailedExplanation": "Hirschsprung hastalığı kökeni Enterik ganglionlar nöral krest kökenlidir; migrasyon bozulursa aganglionik segment gelişir.",
-    "postAnswerExplanation": "Hirschsprung hastalığı kökeni Enterik ganglionlar nöral krest kökenlidir; migrasyon bozulursa aganglionik segment gelişir.",
-    "postAnswerExpandedExplanation": "Hirschsprung hastalığı kökeni Enterik ganglionlar nöral krest kökenlidir; migrasyon bozulursa aganglionik segment gelişir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Hirschsprung hastalığı distal bağırsakta enterik ganglion hücrelerinin yokluğuyla gelişen fonksiyonel obstrüksiyondur. Temel embriyolojik sorun nöral krest hücrelerinin migrasyon kusurudur.",
+    "preAnswerSafeDefinition": "Hirschsprung hastalığı distal bağırsakta enterik ganglion hücrelerinin yokluğuyla gelişen fonksiyonel obstrüksiyondur. Temel embriyolojik sorun nöral krest hücrelerinin migrasyon kusurudur.",
+    "shortDefinition": "Hirschsprung hastalığı distal bağırsakta enterik ganglion hücrelerinin yokluğuyla gelişen fonksiyonel obstrüksiyondur. Temel embriyolojik sorun nöral krest hücrelerinin migrasyon kusurudur.",
+    "definition": "Hirschsprung hastalığı distal bağırsakta enterik ganglion hücrelerinin yokluğuyla gelişen fonksiyonel obstrüksiyondur. Temel embriyolojik sorun nöral krest hücrelerinin migrasyon kusurudur.",
+    "detailedExplanation": "Yenidoğanda mekonyum çıkaramama, karın distansiyonu ve patlayıcı dışkılama hikâyesi tipiktir. Rektal biyopside ganglion hücrelerinin yokluğu ve asetilkolinesteraz pozitif sinir lifleri tanıyı destekler.",
+    "postAnswerExplanation": "Yenidoğanda mekonyum çıkaramama, karın distansiyonu ve patlayıcı dışkılama hikâyesi tipiktir. Rektal biyopside ganglion hücrelerinin yokluğu ve asetilkolinesteraz pozitif sinir lifleri tanıyı destekler.",
+    "postAnswerExpandedExplanation": "Yenidoğanda mekonyum çıkaramama, karın distansiyonu ve patlayıcı dışkılama hikâyesi tipiktir. Rektal biyopside ganglion hücrelerinin yokluğu ve asetilkolinesteraz pozitif sinir lifleri tanıyı destekler.",
+    "tusPearl": "Hirschsprung = nöral krest göç kusuru + distal aganglionik segment.",
+    "differentialPoint": "Kistik fibrozise bağlı mekonyum ileusunda ganglion hücresi yokluğu değil koyu mekonyum tıkanıklığı beklenir.",
+    "clinicalRelevance": "Embriyoloji ve pediatrik cerrahi sorularında köken-bulgu bağlantısını kurar.",
+    "mechanism": "Enterik nöral krest hücreleri distal barsağa ulaşamaz; aganglionik segment gevşeyemez ve proksimal dilatasyon gelişir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -11120,7 +11259,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Hirschsprung hastalığı kökeni"
+      "Hirschsprung hastalığı kökeni",
+      "aganglionik megakolon",
+      "nöral krest göç kusuru"
     ],
     "sourceTextExamples": [
       "Hirschsprung hastalığı kökeni",
@@ -11152,8 +11293,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "IgA nefropatisi hematüri zamanı, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "IgA nefropatisi hematüri zamanı, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "IgA nefropatisi hematüri zamanı, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "IgA nefropatisi hematüri zamanı, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "IgA nefropatisi hematüri zamanı Mezangial IgA birikimi sinfarenjit hematuri paterni oluşturabilir.",
@@ -11205,7 +11346,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-kras-ve-nras-mutasyonlari",
     "term": "KRAS ve NRAS mutasyonları",
     "aliases": [
-      "KRAS ve NRAS mutasyonları"
+      "KRAS ve NRAS mutasyonları",
+      "RAS mutasyonu",
+      "anti-EGFR direnç belirteci"
     ],
     "normalizedTerm": "kras ve nras mutasyonlari",
     "TurkishName": "KRAS ve NRAS mutasyonları",
@@ -11213,17 +11356,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Enzim/genetik defekt",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "RAS mutasyonu varsa EGFR hedefli tedaviden beklenen yanıt azalır.",
-    "definition": "RAS mutasyonu varsa EGFR hedefli tedaviden beklenen yanıt azalır.",
-    "detailedExplanation": "KRAS ve NRAS mutasyonları. RAS mutasyonu varsa EGFR hedefli tedaviden beklenen yanıt azalır.",
-    "postAnswerExplanation": "KRAS ve NRAS mutasyonları. RAS mutasyonu varsa EGFR hedefli tedaviden beklenen yanıt azalır.",
-    "postAnswerExpandedExplanation": "KRAS ve NRAS mutasyonları. RAS mutasyonu varsa EGFR hedefli tedaviden beklenen yanıt azalır.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "RAS yolunu EGFR’den bağımsız aktif hâle getirebilen onkojenik mutasyonlardır. Metastatik kolorektal kanserde KRAS/NRAS mutasyonu varsa anti-EGFR tedaviden beklenen yanıt azalır.",
+    "preAnswerSafeDefinition": "RAS yolunu EGFR’den bağımsız aktif hâle getirebilen onkojenik mutasyonlardır. Metastatik kolorektal kanserde KRAS/NRAS mutasyonu varsa anti-EGFR tedaviden beklenen yanıt azalır.",
+    "shortDefinition": "RAS yolunu EGFR’den bağımsız aktif hâle getirebilen onkojenik mutasyonlardır. Metastatik kolorektal kanserde KRAS/NRAS mutasyonu varsa anti-EGFR tedaviden beklenen yanıt azalır.",
+    "definition": "RAS yolunu EGFR’den bağımsız aktif hâle getirebilen onkojenik mutasyonlardır. Metastatik kolorektal kanserde KRAS/NRAS mutasyonu varsa anti-EGFR tedaviden beklenen yanıt azalır.",
+    "detailedExplanation": "Cetuksimab veya panitumumab gibi anti-EGFR ajanlar reseptör düzeyini hedefler. Downstream RAS mutasyonu varsa sinyal reseptörden bağımsız sürdüğü için bu blokaj etkisiz kalabilir.",
+    "postAnswerExplanation": "Cetuksimab veya panitumumab gibi anti-EGFR ajanlar reseptör düzeyini hedefler. Downstream RAS mutasyonu varsa sinyal reseptörden bağımsız sürdüğü için bu blokaj etkisiz kalabilir.",
+    "postAnswerExpandedExplanation": "Cetuksimab veya panitumumab gibi anti-EGFR ajanlar reseptör düzeyini hedefler. Downstream RAS mutasyonu varsa sinyal reseptörden bağımsız sürdüğü için bu blokaj etkisiz kalabilir.",
+    "tusPearl": "Kolorektal kanserde anti-EGFR tedavi öncesi RAS wild-type durumu aranır.",
+    "differentialPoint": "BRAF mutasyonu da kötü prognoz ve hedef tedavi kararında önemlidir; RAS mutasyonu özellikle anti-EGFR yanıtsızlığıyla ilişkilidir.",
+    "clinicalRelevance": "Onkoloji sorularında moleküler belirteç-tedavi seçimi bağlantısını öğretir.",
+    "mechanism": "Mutant RAS GTPaz aktivitesini kaybederek MAPK yolunu sürekli aktif tutar.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -11236,7 +11379,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
     "keywordsForSearch": [
-      "KRAS ve NRAS mutasyonları"
+      "KRAS ve NRAS mutasyonları",
+      "RAS mutasyonu",
+      "anti-EGFR direnç belirteci"
     ],
     "sourceTextExamples": [
       "KRAS ve NRAS mutasyonları.",
@@ -11315,7 +11460,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-karbondioksit-atilimi-ile-metabolik-asidoz-kompanzasyonu",
     "term": "Karbondioksit atılımı ile metabolik asidoz kompanzasyonu",
     "aliases": [
-      "Karbondioksit atılımı ile metabolik asidoz kompanzasyonu"
+      "Karbondioksit atılımı ile metabolik asidoz kompanzasyonu",
+      "Kussmaul kompanzasyonu",
+      "respiratuvar kompanzasyon"
     ],
     "normalizedTerm": "karbondioksit atilimi ile metabolik asidoz kompanzasyonu",
     "TurkishName": "Karbondioksit atılımı ile metabolik asidoz kompanzasyonu",
@@ -11323,17 +11470,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Bu hastada primer bozukluk düşük bikarbonatla seyreden metabolik asidozdur.",
-    "definition": "Bu hastada primer bozukluk düşük bikarbonatla seyreden metabolik asidozdur.",
-    "detailedExplanation": "Bu hastada primer bozukluk düşük bikarbonatla seyreden metabolik asidozdur. Periferik ve santral kemoreseptör yanıtları ventilasyonu artırır; karbondioksit atılımı artınca PaCO2 düşer ve Henderson-Hasselbalch ilişkisi üzerinden pH düşüşü kısmen kompanse edilir. Bu hastada primer bozukluk düşük bikarbonatla seyreden metabolik asidozdur. Periferik ve santral kemoreseptör yanıtları ventilasyonu artırır; karbondioksit...",
-    "postAnswerExplanation": "Bu hastada primer bozukluk düşük bikarbonatla seyreden metabolik asidozdur. Periferik ve santral kemoreseptör yanıtları ventilasyonu artırır; karbondioksit atılımı artınca PaCO2 düşer ve Henderson-Hasselbalch ilişkisi üzerinden pH düşüşü kısmen kompanse edilir. Bu hastada primer bozukluk düşük bikarbonatla seyreden metabolik asidozdur. Periferik ve santral kemoreseptör yanıtları ventilasyonu artırır; karbondioksit...",
-    "postAnswerExpandedExplanation": "Bu hastada primer bozukluk düşük bikarbonatla seyreden metabolik asidozdur. Periferik ve santral kemoreseptör yanıtları ventilasyonu artırır; karbondioksit atılımı artınca PaCO2 düşer ve Henderson-Hasselbalch ilişkisi üzerinden pH düşüşü kısmen kompanse edilir. Bu hastada primer bozukluk düşük bikarbonatla seyreden metabolik asidozdur. Periferik ve santral kemoreseptör yanıtları ventilasyonu artırır; karbondioksit...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Metabolik asidozda ventilasyon artışıyla PaCO₂’nin düşürülmesi ve pH düşüşünün kısmen dengelenmesidir. Kussmaul solunumu ağır asidozda görülebilir.",
+    "preAnswerSafeDefinition": "Metabolik asidozda ventilasyon artışıyla PaCO₂’nin düşürülmesi ve pH düşüşünün kısmen dengelenmesidir. Kussmaul solunumu ağır asidozda görülebilir.",
+    "shortDefinition": "Metabolik asidozda ventilasyon artışıyla PaCO₂’nin düşürülmesi ve pH düşüşünün kısmen dengelenmesidir. Kussmaul solunumu ağır asidozda görülebilir.",
+    "definition": "Metabolik asidozda ventilasyon artışıyla PaCO₂’nin düşürülmesi ve pH düşüşünün kısmen dengelenmesidir. Kussmaul solunumu ağır asidozda görülebilir.",
+    "detailedExplanation": "Düşük bikarbonat primer metabolik bozukluğu gösterir; kemoreseptör yanıtı ventilasyonu artırır. CO₂ azalınca Henderson-Hasselbalch ilişkisiyle pH kısmen yükselir ancak primer bozukluk düzelmez.",
+    "postAnswerExplanation": "Düşük bikarbonat primer metabolik bozukluğu gösterir; kemoreseptör yanıtı ventilasyonu artırır. CO₂ azalınca Henderson-Hasselbalch ilişkisiyle pH kısmen yükselir ancak primer bozukluk düzelmez.",
+    "postAnswerExpandedExplanation": "Düşük bikarbonat primer metabolik bozukluğu gösterir; kemoreseptör yanıtı ventilasyonu artırır. CO₂ azalınca Henderson-Hasselbalch ilişkisiyle pH kısmen yükselir ancak primer bozukluk düzelmez.",
+    "tusPearl": "Metabolik asidozda beklenen kompanzasyon PaCO₂ düşüşüdür; PaCO₂ yüksekse ek respiratuvar yetmezlik düşünülür.",
+    "differentialPoint": "Respiratuvar alkalozda primer olay PaCO₂ düşüklüğüdür; metabolik asidozda düşük HCO₃⁻ primerdir ve CO₂ düşüşü kompanzasyondur.",
+    "clinicalRelevance": "Kan gazı sorularında primer bozukluk-kompanzasyon ayrımını sağlar.",
+    "mechanism": "Asidemi periferik kemoreseptörleri uyarır; hiperventilasyon CO₂ atılımını artırır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -11351,7 +11498,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Karbondioksit atılımı ile metabolik asidoz kompanzasyonu",
-      "metabolik asidoz"
+      "Kussmaul kompanzasyonu",
+      "respiratuvar kompanzasyon"
     ],
     "sourceTextExamples": [
       "Bu hastada primer bozukluk düşük bikarbonatla seyreden metabolik asidozdur. Periferik ve santral kemoreseptör yanıtları ventilasyonu artırır; karbondioksit atılımı artınca PaCO2 düşer ve Henderson-Hasselbalch ilişkisi üzerinden pH düşüşü kısmen kompanse edilir.",
@@ -11375,7 +11523,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-karbonmonoksit-zehirlenmesinde-sola-kaymis-oksijen-hemoglobin-egrisi",
     "term": "Karbonmonoksit zehirlenmesinde sola kaymış oksijen-hemoglobin eğrisi",
     "aliases": [
-      "Karbonmonoksit zehirlenmesinde sola kaymış oksijen-hemoglobin eğrisi"
+      "Karbonmonoksit zehirlenmesinde sola kaymış oksijen-hemoglobin eğrisi",
+      "CO zehirlenmesi",
+      "karboksihemoglobin"
     ],
     "normalizedTerm": "karbonmonoksit zehirlenmesinde sola kaymis oksijen-hemoglobin egrisi",
     "TurkishName": "Karbonmonoksit zehirlenmesinde sola kaymış oksijen-hemoglobin eğrisi",
@@ -11383,17 +11533,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Toksin / toksisite",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Karbonmonoksit zehirlenmesinde oksijen-hemoglobin eğrisi değişimini açıklayabilme Kapalı ortamda jeneratör maruziyeti, normal pulse oksimetreye rağmen nörolojik bulgular ve yüksek karboksihemoglobin karbonmonoksit zehirlenmesini gösterir.",
-    "definition": "Karbonmonoksit zehirlenmesinde oksijen-hemoglobin eğrisi değişimini açıklayabilme Kapalı ortamda jeneratör maruziyeti, normal pulse oksimetreye rağmen nörolojik bulgular ve yüksek karboksihemoglobin karbonmonoksit zehirlenmesini gösterir.",
-    "detailedExplanation": "Karbonmonoksit zehirlenmesinde oksijen-hemoglobin eğrisi değişimini açıklayabilme Kapalı ortamda jeneratör maruziyeti, normal pulse oksimetreye rağmen nörolojik bulgular ve yüksek karboksihemoglobin karbonmonoksit zehirlenmesini gösterir. Karbonmonoksit hemoglobine yüksek afiniteli bağlanarak oksijen taşıma kapasitesini azaltır ve kalan oksijen bağlanma bölgelerinin afinitesini artırarak oksijen-hemoglobin ayrışma...",
-    "postAnswerExplanation": "Karbonmonoksit zehirlenmesinde oksijen-hemoglobin eğrisi değişimini açıklayabilme Kapalı ortamda jeneratör maruziyeti, normal pulse oksimetreye rağmen nörolojik bulgular ve yüksek karboksihemoglobin karbonmonoksit zehirlenmesini gösterir. Karbonmonoksit hemoglobine yüksek afiniteli bağlanarak oksijen taşıma kapasitesini azaltır ve kalan oksijen bağlanma bölgelerinin afinitesini artırarak oksijen-hemoglobin ayrışma...",
-    "postAnswerExpandedExplanation": "Karbonmonoksit zehirlenmesinde oksijen-hemoglobin eğrisi değişimini açıklayabilme Kapalı ortamda jeneratör maruziyeti, normal pulse oksimetreye rağmen nörolojik bulgular ve yüksek karboksihemoglobin karbonmonoksit zehirlenmesini gösterir. Karbonmonoksit hemoglobine yüksek afiniteli bağlanarak oksijen taşıma kapasitesini azaltır ve kalan oksijen bağlanma bölgelerinin afinitesini artırarak oksijen-hemoglobin ayrışma...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Karbonmonoksitin hemoglobine yüksek afiniteyle bağlanması sonucu oksijen taşıma kapasitesinin azalması ve kalan oksijenin dokulara bırakılmasının zorlaşmasıdır. Bu durum oksijen-hemoglobin eğrisini sola kaydırır.",
+    "preAnswerSafeDefinition": "Karbonmonoksitin hemoglobine yüksek afiniteyle bağlanması sonucu oksijen taşıma kapasitesinin azalması ve kalan oksijenin dokulara bırakılmasının zorlaşmasıdır. Bu durum oksijen-hemoglobin eğrisini sola kaydırır.",
+    "shortDefinition": "Karbonmonoksitin hemoglobine yüksek afiniteyle bağlanması sonucu oksijen taşıma kapasitesinin azalması ve kalan oksijenin dokulara bırakılmasının zorlaşmasıdır. Bu durum oksijen-hemoglobin eğrisini sola kaydırır.",
+    "definition": "Karbonmonoksitin hemoglobine yüksek afiniteyle bağlanması sonucu oksijen taşıma kapasitesinin azalması ve kalan oksijenin dokulara bırakılmasının zorlaşmasıdır. Bu durum oksijen-hemoglobin eğrisini sola kaydırır.",
+    "detailedExplanation": "CO zehirlenmesinde pulse oksimetre yanıltıcı normal görünebilir çünkü karboksihemoglobin ayırt edilemez. Nörolojik bulgu, kapalı ortam maruziyeti ve yüksek karboksihemoglobin tanıyı destekler.",
+    "postAnswerExplanation": "CO zehirlenmesinde pulse oksimetre yanıltıcı normal görünebilir çünkü karboksihemoglobin ayırt edilemez. Nörolojik bulgu, kapalı ortam maruziyeti ve yüksek karboksihemoglobin tanıyı destekler.",
+    "postAnswerExpandedExplanation": "CO zehirlenmesinde pulse oksimetre yanıltıcı normal görünebilir çünkü karboksihemoglobin ayırt edilemez. Nörolojik bulgu, kapalı ortam maruziyeti ve yüksek karboksihemoglobin tanıyı destekler.",
+    "tusPearl": "Normal pulse oksimetre CO zehirlenmesini dışlamaz; karboksihemoglobin ölçümü gerekir.",
+    "differentialPoint": "Siyanür zehirlenmesinde hücresel oksijen kullanımı bozulur ve ağır laktik asidoz öne çıkar; CO’da hemoglobin bağlanması ve sol kayma tipiktir.",
+    "clinicalRelevance": "Toksikoloji ve fizyoloji sorularında satürasyonun neden yanıltıcı olabileceğini gösterir.",
+    "mechanism": "CO hemoglobine oksijenden çok daha yüksek afiniteyle bağlanır ve diğer heme bölgelerinin oksijene afinitesini artırır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -11413,8 +11563,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Karbonmonoksit zehirlenmesinde sola kaymış oksijen-hemoglobin eğrisi",
-      "oksijen",
-      "hemoglobin"
+      "CO zehirlenmesi",
+      "karboksihemoglobin"
     ],
     "sourceTextExamples": [
       "Karbonmonoksit zehirlenmesinde oksijen-hemoglobin eğrisi değişimini açıklayabilme",
@@ -11446,8 +11596,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Enzim/genetik defekt",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Karnitin palmitoiltransferaz II eksikliği, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
+    "preAnswerSafeDefinition": "Karnitin palmitoiltransferaz II eksikliği, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "shortDefinition": "Karnitin palmitoiltransferaz II eksikliği, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "definition": "Karnitin palmitoiltransferaz II eksikliği, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "detailedExplanation": "Karnitin palmitoiltransferaz II eksikliği. Uzun zincirli yağ asitlerinin mitokondri içinde oksidasyonu bozulur.",
@@ -11502,8 +11652,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "ni Guyon kanalı ve yüzeyel duyu dallarından ayırt edebilme Nervus medianus karpal tünel sendromunda basıya uğrayan temel sinirdir.",
+    "preAnswerSafeDefinition": "ni Guyon kanalı ve yüzeyel duyu dallarından ayırt edebilme Nervus medianus karpal tünel sendromunda basıya uğrayan temel sinirdir.",
     "shortDefinition": "ni Guyon kanalı ve yüzeyel duyu dallarından ayırt edebilme Nervus medianus karpal tünel sendromunda basıya uğrayan temel sinirdir.",
     "definition": "ni Guyon kanalı ve yüzeyel duyu dallarından ayırt edebilme Nervus medianus karpal tünel sendromunda basıya uğrayan temel sinirdir.",
     "detailedExplanation": "Karpal tünel içeriğini Guyon kanalı ve yüzeyel duyu dallarından ayırt edebilme Nervus medianus karpal tünel sendromunda basıya uğrayan temel sinirdir. Nervus ulnaris karpal tünelden değil Guyon kanalından geçer; nervus medianus’un palmar dalı ise fleksör retinakulumun üzerinden geçtiği için karpal tünel basısında genellikle korunur. Karpal tünelden fleksör tendonlarla birlikte nervus medianus geçer; nervus ulnaris...",
@@ -11612,7 +11762,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-kolorektal-adenokarsinom",
     "term": "Kolorektal adenokarsinom",
     "aliases": [
-      "Kolorektal adenokarsinom"
+      "Kolorektal adenokarsinom",
+      "kolon adenokarsinomu",
+      "kolorektal kanser"
     ],
     "normalizedTerm": "kolorektal adenokarsinom",
     "TurkishName": "Kolorektal adenokarsinom",
@@ -11620,17 +11772,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "definition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "detailedExplanation": "Kolorektal adenokarsinomda sol kolon yerleşiminin klinik ve morfolojik özelliklerini tanıyabilme Yaşlı hastada dışkılama alışkanlığında değişiklik, dışkı çapında incelme, rektal kanama, kilo kaybı, anemi ve sigmoid kolonda lümeni daraltan halka şeklinde kitle kolorektal adenokarsinomu düşündürür. Biyopside atipik glandüler invaziv tümör varlığı tanıyı destekler.",
-    "postAnswerExplanation": "Kolorektal adenokarsinomda sol kolon yerleşiminin klinik ve morfolojik özelliklerini tanıyabilme Yaşlı hastada dışkılama alışkanlığında değişiklik, dışkı çapında incelme, rektal kanama, kilo kaybı, anemi ve sigmoid kolonda lümeni daraltan halka şeklinde kitle kolorektal adenokarsinomu düşündürür. Biyopside atipik glandüler invaziv tümör varlığı tanıyı destekler.",
-    "postAnswerExpandedExplanation": "Kolorektal adenokarsinomda sol kolon yerleşiminin klinik ve morfolojik özelliklerini tanıyabilme Yaşlı hastada dışkılama alışkanlığında değişiklik, dışkı çapında incelme, rektal kanama, kilo kaybı, anemi ve sigmoid kolonda lümeni daraltan halka şeklinde kitle kolorektal adenokarsinomu düşündürür. Biyopside atipik glandüler invaziv tümör varlığı tanıyı destekler.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Kolon veya rektum mukozasındaki glandüler epitelden gelişen malign tümördür. Sağ kolon daha çok gizli kanama/anemi, sol kolon ise dışkılama değişikliği ve obstrüksiyon bulguları yapabilir.",
+    "preAnswerSafeDefinition": "Kolon veya rektum mukozasındaki glandüler epitelden gelişen malign tümördür. Sağ kolon daha çok gizli kanama/anemi, sol kolon ise dışkılama değişikliği ve obstrüksiyon bulguları yapabilir.",
+    "shortDefinition": "Kolon veya rektum mukozasındaki glandüler epitelden gelişen malign tümördür. Sağ kolon daha çok gizli kanama/anemi, sol kolon ise dışkılama değişikliği ve obstrüksiyon bulguları yapabilir.",
+    "definition": "Kolon veya rektum mukozasındaki glandüler epitelden gelişen malign tümördür. Sağ kolon daha çok gizli kanama/anemi, sol kolon ise dışkılama değişikliği ve obstrüksiyon bulguları yapabilir.",
+    "detailedExplanation": "Sol kolon kanserleri lümeni daraltan halka tarzı kitlelerle dışkı çapında incelme, konstipasyon ve rektal kanama yapabilir. Biyopside invaziv atipik glandüler yapı tanıyı doğrular.",
+    "postAnswerExplanation": "Sol kolon kanserleri lümeni daraltan halka tarzı kitlelerle dışkı çapında incelme, konstipasyon ve rektal kanama yapabilir. Biyopside invaziv atipik glandüler yapı tanıyı doğrular.",
+    "postAnswerExpandedExplanation": "Sol kolon kanserleri lümeni daraltan halka tarzı kitlelerle dışkı çapında incelme, konstipasyon ve rektal kanama yapabilir. Biyopside invaziv atipik glandüler yapı tanıyı doğrular.",
+    "tusPearl": "Yaşlı hastada dışkılama alışkanlığı değişikliği + demir eksikliği/rektal kanama kolorektal kanser açısından araştırılır.",
+    "differentialPoint": "Ülseratif kolitte inflamatuvar atak ve yaygın mukozal tutulum olabilir; adenokarsinomda fokal invaziv kitle ve kilo kaybı daha belirgindir.",
+    "clinicalRelevance": "Gastrointestinal onkoloji sorularında lokalizasyon-bulgu ilişkisini öğretir.",
+    "mechanism": "Adenom-karsinom dizisi APC, KRAS ve p53 gibi moleküler değişikliklerle ilerleyebilir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -11643,7 +11795,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Kolorektal adenokarsinom"
+      "Kolorektal adenokarsinom",
+      "kolon adenokarsinomu",
+      "kolorektal kanser"
     ],
     "sourceTextExamples": [
       "Kolorektal adenokarsinomda sol kolon yerleşiminin klinik ve morfolojik özelliklerini tanıyabilme",
@@ -11667,7 +11821,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-kompleks-febril-nobet",
     "term": "Kompleks febril nöbet",
     "aliases": [
-      "Kompleks febril nöbet"
+      "Kompleks febril nöbet",
+      "komplike febril nöbet",
+      "fokal febril nöbet"
     ],
     "normalizedTerm": "kompleks febril nobet",
     "TurkishName": "Kompleks febril nöbet",
@@ -11675,17 +11831,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Fokal, uzamış veya tekrarlayan nöbet kompleks febril nöbettir.",
-    "definition": "Fokal, uzamış veya tekrarlayan nöbet kompleks febril nöbettir.",
-    "detailedExplanation": "Fokal, uzamış veya tekrarlayan nöbet kompleks febril nöbettir. 15 dakikadan kısa, 24 saatte tekrarlamayan ve fokal olmayan nöbettir.",
-    "postAnswerExplanation": "Fokal, uzamış veya tekrarlayan nöbet kompleks febril nöbettir. 15 dakikadan kısa, 24 saatte tekrarlamayan ve fokal olmayan nöbettir.",
-    "postAnswerExpandedExplanation": "Fokal, uzamış veya tekrarlayan nöbet kompleks febril nöbettir. 15 dakikadan kısa, 24 saatte tekrarlamayan ve fokal olmayan nöbettir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Ateşle ilişkili nöbetin fokal olması, 15 dakikadan uzun sürmesi veya 24 saat içinde tekrarlaması kompleks febril nöbet olarak adlandırılır. Bu özellikler basit febril nöbetten ayrılır.",
+    "preAnswerSafeDefinition": "Ateşle ilişkili nöbetin fokal olması, 15 dakikadan uzun sürmesi veya 24 saat içinde tekrarlaması kompleks febril nöbet olarak adlandırılır. Bu özellikler basit febril nöbetten ayrılır.",
+    "shortDefinition": "Ateşle ilişkili nöbetin fokal olması, 15 dakikadan uzun sürmesi veya 24 saat içinde tekrarlaması kompleks febril nöbet olarak adlandırılır. Bu özellikler basit febril nöbetten ayrılır.",
+    "definition": "Ateşle ilişkili nöbetin fokal olması, 15 dakikadan uzun sürmesi veya 24 saat içinde tekrarlaması kompleks febril nöbet olarak adlandırılır. Bu özellikler basit febril nöbetten ayrılır.",
+    "detailedExplanation": "Basit febril nöbet jeneralize, 15 dakikadan kısa ve aynı ateşli hastalık döneminde tek nöbettir. Kompleks özellik varsa altta yatan merkezi sinir sistemi enfeksiyonu, yapısal sorun veya epilepsi riski daha dikkatle değerlendirilir.",
+    "postAnswerExplanation": "Basit febril nöbet jeneralize, 15 dakikadan kısa ve aynı ateşli hastalık döneminde tek nöbettir. Kompleks özellik varsa altta yatan merkezi sinir sistemi enfeksiyonu, yapısal sorun veya epilepsi riski daha dikkatle değerlendirilir.",
+    "postAnswerExpandedExplanation": "Basit febril nöbet jeneralize, 15 dakikadan kısa ve aynı ateşli hastalık döneminde tek nöbettir. Kompleks özellik varsa altta yatan merkezi sinir sistemi enfeksiyonu, yapısal sorun veya epilepsi riski daha dikkatle değerlendirilir.",
+    "tusPearl": "Fokal, uzun süren veya tekrarlayan febril nöbet “kompleks” kabul edilir.",
+    "differentialPoint": "Menenjitte ense sertliği, bilinç değişikliği ve toksik görünüm febril nöbetten daha güçlü alarm bulgularıdır.",
+    "clinicalRelevance": "Pediatri acil sorularında basit-kompleks febril nöbet ayrımını netleştirir.",
+    "mechanism": "Ateş gelişmekte olan beyinde nöbet eşiğini düşürür; fokalite/uzama ek risk değerlendirmesi gerektirir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -11698,7 +11854,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Kompleks febril nöbet"
+      "Kompleks febril nöbet",
+      "komplike febril nöbet",
+      "fokal febril nöbet"
     ],
     "sourceTextExamples": [
       "Fokal, uzamış veya tekrarlayan nöbet kompleks febril nöbettir.",
@@ -11722,7 +11880,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-kontrastli-kolon-grafisi",
     "term": "Kontrastlı kolon grafisi",
     "aliases": [
-      "Kontrastlı kolon grafisi"
+      "Kontrastlı kolon grafisi",
+      "kontrastlı kolon incelemesi",
+      "baryum kolon grafisi"
     ],
     "normalizedTerm": "kontrastli kolon grafisi",
     "TurkishName": "Kontrastlı kolon grafisi",
@@ -11730,17 +11890,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Yenidoğanda mekonyum çıkaramama, karın distansiyonu, distal dar segment ve rektal biyopside ganglion hücrelerinin yokluğu Hirschsprung hastalığını düşündürür.",
-    "definition": "Yenidoğanda mekonyum çıkaramama, karın distansiyonu, distal dar segment ve rektal biyopside ganglion hücrelerinin yokluğu Hirschsprung hastalığını düşündürür.",
-    "detailedExplanation": "Kontrastlı kolon grafisi Yenidoğanda mekonyum çıkaramama, karın distansiyonu, distal dar segment ve rektal biyopside ganglion hücrelerinin yokluğu Hirschsprung hastalığını düşündürür. Temel embriyolojik kusur nöral krest kökenli enterik ganglion hücrelerinin distal bağırsak segmentine göç edememesidir; aganglionik segment gevşeyemez ve fonksiyonel obstrüksiyon gelişir.",
-    "postAnswerExplanation": "Kontrastlı kolon grafisi Yenidoğanda mekonyum çıkaramama, karın distansiyonu, distal dar segment ve rektal biyopside ganglion hücrelerinin yokluğu Hirschsprung hastalığını düşündürür. Temel embriyolojik kusur nöral krest kökenli enterik ganglion hücrelerinin distal bağırsak segmentine göç edememesidir; aganglionik segment gevşeyemez ve fonksiyonel obstrüksiyon gelişir.",
-    "postAnswerExpandedExplanation": "Kontrastlı kolon grafisi Yenidoğanda mekonyum çıkaramama, karın distansiyonu, distal dar segment ve rektal biyopside ganglion hücrelerinin yokluğu Hirschsprung hastalığını düşündürür. Temel embriyolojik kusur nöral krest kökenli enterik ganglion hücrelerinin distal bağırsak segmentine göç edememesidir; aganglionik segment gevşeyemez ve fonksiyonel obstrüksiyon gelişir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Kolon lümeni ve geçiş paternini göstermek için kullanılan kontrastlı radyolojik incelemedir. Hirschsprung hastalığında distal dar segment ve proksimal dilatasyon/transition zone gösterebilir.",
+    "preAnswerSafeDefinition": "Kolon lümeni ve geçiş paternini göstermek için kullanılan kontrastlı radyolojik incelemedir. Hirschsprung hastalığında distal dar segment ve proksimal dilatasyon/transition zone gösterebilir.",
+    "shortDefinition": "Kolon lümeni ve geçiş paternini göstermek için kullanılan kontrastlı radyolojik incelemedir. Hirschsprung hastalığında distal dar segment ve proksimal dilatasyon/transition zone gösterebilir.",
+    "definition": "Kolon lümeni ve geçiş paternini göstermek için kullanılan kontrastlı radyolojik incelemedir. Hirschsprung hastalığında distal dar segment ve proksimal dilatasyon/transition zone gösterebilir.",
+    "detailedExplanation": "Yenidoğanda mekonyum çıkaramama ve karın distansiyonu varsa Hirschsprung ayırıcı tanıya girer. Kontrastlı grafi destekleyicidir; kesin tanı rektal biyopside ganglion hücresi yokluğuyla konur.",
+    "postAnswerExplanation": "Yenidoğanda mekonyum çıkaramama ve karın distansiyonu varsa Hirschsprung ayırıcı tanıya girer. Kontrastlı grafi destekleyicidir; kesin tanı rektal biyopside ganglion hücresi yokluğuyla konur.",
+    "postAnswerExpandedExplanation": "Yenidoğanda mekonyum çıkaramama ve karın distansiyonu varsa Hirschsprung ayırıcı tanıya girer. Kontrastlı grafi destekleyicidir; kesin tanı rektal biyopside ganglion hücresi yokluğuyla konur.",
+    "tusPearl": "Hirschsprung’da kontrastlı grafi ipucu verir, kesin tanı rektal biyopsidir.",
+    "differentialPoint": "Midgut malrotasyonunda üst GİS grafide duodenojejunal bileşke yerleşimi değerlendirilir; Hirschsprung için kolon/rektoanal bölge önemlidir.",
+    "clinicalRelevance": "Pediatrik cerrahi sorularında doğru görüntüleme-hedef organ eşleşmesini sağlar.",
+    "mechanism": "Aganglionik segment gevşeyemediği için fonksiyonel tıkanıklık ve proksimal dilatasyon gelişir.",
     "relatedBranches": [
       "gastroenterology"
     ],
@@ -11753,7 +11913,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Kontrastlı kolon grafisi"
+      "Kontrastlı kolon grafisi",
+      "kontrastlı kolon incelemesi",
+      "baryum kolon grafisi"
     ],
     "sourceTextExamples": [
       "Kontrastlı kolon grafisi",
@@ -11785,8 +11947,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Kronik greft rejeksiyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Kronik greft rejeksiyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Kronik greft rejeksiyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Kronik greft rejeksiyonu, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Kronik greft rejeksiyonu Uzun süreli immün hasar vasküler daralma ve fibrozisle greft işlevini bozar.",
@@ -11833,7 +11995,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-kronik-respiratuvar-asidozda-renal-kompanzasyon",
     "term": "Kronik respiratuvar asidozda renal kompanzasyon",
     "aliases": [
-      "Kronik respiratuvar asidozda renal kompanzasyon"
+      "Kronik respiratuvar asidozda renal kompanzasyon",
+      "renal bikarbonat kompanzasyonu",
+      "kronik CO2 retansiyonu"
     ],
     "normalizedTerm": "kronik respiratuvar asidozda renal kompanzasyon",
     "TurkishName": "Kronik respiratuvar asidozda renal kompanzasyon",
@@ -11841,17 +12005,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "mekanizmasını açıklayabilme Kronik karbondioksit retansiyonu respiratuvar asidoz oluşturur.",
-    "definition": "mekanizmasını açıklayabilme Kronik karbondioksit retansiyonu respiratuvar asidoz oluşturur.",
-    "detailedExplanation": "Kronik respiratuvar asidozda renal kompanzasyon mekanizmasını açıklayabilme Kronik karbondioksit retansiyonu respiratuvar asidoz oluşturur. Böbrekler zamanla hidrojen iyonu sekresyonunu ve amonyagenezi artırarak asit atılımını yükseltir; aynı süreç bikarbonat geri kazanımı ve yeni bikarbonat üretimiyle pH değerinin normale yaklaşmasını sağlar.",
-    "postAnswerExplanation": "Kronik respiratuvar asidozda renal kompanzasyon mekanizmasını açıklayabilme Kronik karbondioksit retansiyonu respiratuvar asidoz oluşturur. Böbrekler zamanla hidrojen iyonu sekresyonunu ve amonyagenezi artırarak asit atılımını yükseltir; aynı süreç bikarbonat geri kazanımı ve yeni bikarbonat üretimiyle pH değerinin normale yaklaşmasını sağlar.",
-    "postAnswerExpandedExplanation": "Kronik respiratuvar asidozda renal kompanzasyon mekanizmasını açıklayabilme Kronik karbondioksit retansiyonu respiratuvar asidoz oluşturur. Böbrekler zamanla hidrojen iyonu sekresyonunu ve amonyagenezi artırarak asit atılımını yükseltir; aynı süreç bikarbonat geri kazanımı ve yeni bikarbonat üretimiyle pH değerinin normale yaklaşmasını sağlar.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Kronik CO₂ retansiyonunda böbreğin hidrojen atılımını ve bikarbonat geri kazanımını artırarak pH’ı kısmen düzeltmesidir. KOAH gibi kronik hipoventilasyon tablolarında görülür.",
+    "preAnswerSafeDefinition": "Kronik CO₂ retansiyonunda böbreğin hidrojen atılımını ve bikarbonat geri kazanımını artırarak pH’ı kısmen düzeltmesidir. KOAH gibi kronik hipoventilasyon tablolarında görülür.",
+    "shortDefinition": "Kronik CO₂ retansiyonunda böbreğin hidrojen atılımını ve bikarbonat geri kazanımını artırarak pH’ı kısmen düzeltmesidir. KOAH gibi kronik hipoventilasyon tablolarında görülür.",
+    "definition": "Kronik CO₂ retansiyonunda böbreğin hidrojen atılımını ve bikarbonat geri kazanımını artırarak pH’ı kısmen düzeltmesidir. KOAH gibi kronik hipoventilasyon tablolarında görülür.",
+    "detailedExplanation": "Akut respiratuvar asidozda bikarbonat artışı sınırlıdır; kronik tabloda böbrekler günler içinde yeni bikarbonat üretir. Bu nedenle kronik CO₂ yüksekliğinde HCO₃⁻ belirgin artmış olabilir.",
+    "postAnswerExplanation": "Akut respiratuvar asidozda bikarbonat artışı sınırlıdır; kronik tabloda böbrekler günler içinde yeni bikarbonat üretir. Bu nedenle kronik CO₂ yüksekliğinde HCO₃⁻ belirgin artmış olabilir.",
+    "postAnswerExpandedExplanation": "Akut respiratuvar asidozda bikarbonat artışı sınırlıdır; kronik tabloda böbrekler günler içinde yeni bikarbonat üretir. Bu nedenle kronik CO₂ yüksekliğinde HCO₃⁻ belirgin artmış olabilir.",
+    "tusPearl": "Yüksek PaCO₂ + belirgin yüksek HCO₃⁻ kronik respiratuvar asidoz kompanzasyonunu düşündürür.",
+    "differentialPoint": "Metabolik alkalozda primer bozukluk HCO₃⁻ artışıdır; kronik respiratuvar asidozda primer bozukluk CO₂ retansiyonudur.",
+    "clinicalRelevance": "Kan gazı yorumunda akut-kronik respiratuvar bozukluğu ayırmaya yardım eder.",
+    "mechanism": "Böbrekler amonyagenez ve H⁺ sekresyonunu artırır; bikarbonat geri kazanımı ve üretimi yükselir.",
     "relatedBranches": [
       "nephrology"
     ],
@@ -11871,8 +12035,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Kronik respiratuvar asidozda renal kompanzasyon",
-      "respiratuvar asidoz",
-      "renal kompanzasyon"
+      "renal bikarbonat kompanzasyonu",
+      "kronik CO2 retansiyonu"
     ],
     "sourceTextExamples": [
       "Kronik respiratuvar asidozda renal kompanzasyon mekanizmasını açıklayabilme",
@@ -11904,8 +12068,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Seroloji / otoantikor",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Miyastenia graviste sorun postsinaptik asetilkolin reseptöründedir; Lambert-Eaton sendromunda ise presinaptik kalsiyum kanalı hedeflenir.",
+    "preAnswerSafeDefinition": "Miyastenia graviste sorun postsinaptik asetilkolin reseptöründedir; Lambert-Eaton sendromunda ise presinaptik kalsiyum kanalı hedeflenir.",
     "shortDefinition": "Miyastenia graviste sorun postsinaptik asetilkolin reseptöründedir; Lambert-Eaton sendromunda ise presinaptik kalsiyum kanalı hedeflenir.",
     "definition": "Miyastenia graviste sorun postsinaptik asetilkolin reseptöründedir; Lambert-Eaton sendromunda ise presinaptik kalsiyum kanalı hedeflenir.",
     "detailedExplanation": "Miyastenia graviste sorun postsinaptik asetilkolin reseptöründedir; Lambert-Eaton sendromunda ise presinaptik kalsiyum kanalı hedeflenir. Dalgalanan oküler ve proksimal kas güçsüzlüğü, dinlenmeyle düzelme, dekrement yanıt ve asetilkolin reseptör antikor pozitifliği miyastenia gravis ile uyumludur. Temel mekanizma postsinaptik nikotinik asetilkolin reseptörlerinin otoantikorlarla hedeflenmesi ve nöromüsküler iletimin...",
@@ -12031,7 +12195,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-lesch-nyhan-purin-salvage-kusuru",
     "term": "Lesch-Nyhan purin salvage kusuru",
     "aliases": [
-      "Lesch-Nyhan purin salvage kusuru"
+      "Lesch-Nyhan purin salvage kusuru",
+      "HGPRT eksikliği",
+      "purin kurtarma yolu kusuru"
     ],
     "normalizedTerm": "lesch-nyhan purin salvage kusuru",
     "TurkishName": "Lesch-Nyhan purin salvage kusuru",
@@ -12039,17 +12205,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Enzim/genetik defekt",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Lesch-Nyhan purin salvage kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
-    "definition": "Lesch-Nyhan purin salvage kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
-    "detailedExplanation": "Doğru cevap A’dır. HGPRT enzimi hipoksantin ve guanini IMP ve GMP’ye dönüştüren pürin kurtarma yolunda görev alır. Enzim eksikliğinde pürin bazları yeniden kullanılamaz ve ürik aside yıkım artar. Aynı zamanda PRPP artışı ve IMP/GMP azalmasına bağlı negatif geri bildirim kaybı de novo pürin sentezini hızlandırır. Bu iki etki birlikte hiperürisemi, gut eğilimi ve nörolojik bulgularla giden Lesch-Nyhan tablosunu...",
-    "postAnswerExplanation": "Doğru cevap A’dır. HGPRT enzimi hipoksantin ve guanini IMP ve GMP’ye dönüştüren pürin kurtarma yolunda görev alır. Enzim eksikliğinde pürin bazları yeniden kullanılamaz ve ürik aside yıkım artar. Aynı zamanda PRPP artışı ve IMP/GMP azalmasına bağlı negatif geri bildirim kaybı de novo pürin sentezini hızlandırır. Bu iki etki birlikte hiperürisemi, gut eğilimi ve nörolojik bulgularla giden Lesch-Nyhan tablosunu...",
-    "postAnswerExpandedExplanation": "Doğru cevap A’dır. HGPRT enzimi hipoksantin ve guanini IMP ve GMP’ye dönüştüren pürin kurtarma yolunda görev alır. Enzim eksikliğinde pürin bazları yeniden kullanılamaz ve ürik aside yıkım artar. Aynı zamanda PRPP artışı ve IMP/GMP azalmasına bağlı negatif geri bildirim kaybı de novo pürin sentezini hızlandırır. Bu iki etki birlikte hiperürisemi, gut eğilimi ve nörolojik bulgularla giden Lesch-Nyhan tablosunu...",
-    "tusPearl": "Metabolizma sorusunda ipucu genellikle substrat birikimi, ürün azalması, açlık/fruktoz/protein alımı sonrası tablo veya kalıtım tipidir.",
-    "differentialPoint": "Benzer metabolik hastalıklardan ayrım, hangi metabolitin biriktiği ve atağı neyin tetiklediği üzerinden yapılır.",
-    "clinicalRelevance": "Metabolizma sorusunda ipucu genellikle substrat birikimi, ürün azalması, açlık/fruktoz/protein alımı sonrası tablo veya kalıtım tipidir.",
-    "mechanism": "",
+    "previewDefinition": "HGPRT eksikliğine bağlı purin kurtarma yolunun bozulmasıdır. Hipoksantin ve guanin geri kazanılamaz; ürik asit üretimi artar ve nörodavranışsal bulgular gelişir.",
+    "preAnswerSafeDefinition": "HGPRT eksikliğine bağlı purin kurtarma yolunun bozulmasıdır. Hipoksantin ve guanin geri kazanılamaz; ürik asit üretimi artar ve nörodavranışsal bulgular gelişir.",
+    "shortDefinition": "HGPRT eksikliğine bağlı purin kurtarma yolunun bozulmasıdır. Hipoksantin ve guanin geri kazanılamaz; ürik asit üretimi artar ve nörodavranışsal bulgular gelişir.",
+    "definition": "HGPRT eksikliğine bağlı purin kurtarma yolunun bozulmasıdır. Hipoksantin ve guanin geri kazanılamaz; ürik asit üretimi artar ve nörodavranışsal bulgular gelişir.",
+    "detailedExplanation": "Lesch-Nyhan sendromu X’e bağlı geçer ve erkek çocukta hiperürisemi, distoni, gelişim geriliği ve kendine zarar verme davranışıyla karakterizedir. PRPP artışı ve geri bildirim kaybı de novo purin sentezini artırır.",
+    "postAnswerExplanation": "Lesch-Nyhan sendromu X’e bağlı geçer ve erkek çocukta hiperürisemi, distoni, gelişim geriliği ve kendine zarar verme davranışıyla karakterizedir. PRPP artışı ve geri bildirim kaybı de novo purin sentezini artırır.",
+    "postAnswerExpandedExplanation": "Lesch-Nyhan sendromu X’e bağlı geçer ve erkek çocukta hiperürisemi, distoni, gelişim geriliği ve kendine zarar verme davranışıyla karakterizedir. PRPP artışı ve geri bildirim kaybı de novo purin sentezini artırır.",
+    "tusPearl": "HGPRT eksikliği + kendine zarar verme davranışı + hiperürisemi = Lesch-Nyhan.",
+    "differentialPoint": "Adenozin deaminaz eksikliği SCID ile ilişkilidir; Lesch-Nyhan purin yıkımı ve nörodavranışsal tabloyla ayrılır.",
+    "clinicalRelevance": "Biyokimya-genetik sorularında purin kurtarma yolunu klinik fenotiple birleştirir.",
+    "mechanism": "Purin bazları IMP/GMP’ye dönüştürülemez; PRPP birikimi de novo sentezi, yıkım ise ürik asidi artırır.",
     "relatedBranches": [
       "biochemistry",
       "genetics"
@@ -12063,11 +12229,14 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Lesch-Nyhan purin salvage kusuru"
+      "Lesch-Nyhan purin salvage kusuru",
+      "HGPRT eksikliği",
+      "purin kurtarma yolu kusuru"
     ],
     "sourceTextExamples": [
-      "Doğru cevap A’dır. HGPRT enzimi hipoksantin ve guanini IMP ve GMP’ye dönüştüren pürin kurtarma yolunda görev alır. Enzim eksikliğinde pürin bazları yeniden kullanılamaz ve ürik aside yıkım artar.",
-      "Lesch-Nyhan = HGPRT eksikliği + pürin salvage kusuru + hiperürisemi + nörolojik bulgular + kendine zarar verme davranışı."
+      "Lesch-Nyhan = HGPRT eksikliği + pürin salvage kusuru + hiperürisemi + nörolojik bulgular + kendine zarar verme davranışı.",
+      "Lesch-Nyhan purin salvage kusuru",
+      "HGPRT eksikliğine bağlı purin kurtarma yolunun bozulmasıdır. Hipoksantin ve guanin geri kazanılamaz; ürik asit üretimi artar ve nörodavranışsal bulgular gelişir."
     ],
     "sourceCandidate": {
       "sourceBatch": "batch5-ultradeep",
@@ -12095,8 +12264,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Leydig hücreleri LH uyarısıyla testosteron sentezler.",
+    "preAnswerSafeDefinition": "Leydig hücreleri LH uyarısıyla testosteron sentezler.",
     "shortDefinition": "Leydig hücreleri LH uyarısıyla testosteron sentezler.",
     "definition": "Leydig hücreleri LH uyarısıyla testosteron sentezler.",
     "detailedExplanation": "Leydig hücresi fonksiyonu Leydig hücreleri LH uyarısıyla testosteron sentezler.",
@@ -12150,7 +12319,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-masif-proteinuri-plus-hipoalbuminemi-plus-odem",
     "term": "Masif proteinüri + hipoalbüminemi + ödem",
     "aliases": [
-      "Masif proteinüri + hipoalbüminemi + ödem"
+      "Masif proteinüri + hipoalbüminemi + ödem",
+      "nefrotik sendrom triadı",
+      "nefrotik düzey proteinüri"
     ],
     "normalizedTerm": "masif proteinuri + hipoalbuminemi + odem",
     "TurkishName": "Masif proteinüri + hipoalbüminemi + ödem",
@@ -12158,17 +12329,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "definition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "detailedExplanation": "Doğru cevap A’dır. Nefrotik sendromun temel ekseni glomerüler protein kaybıdır. Albumin kaybı plazma onkotik basıncını düşürür ve interstisyel alana sıvı geçişini kolaylaştırarak ödem oluşturur. Karaciğer lipoprotein sentezini artırdığı için hiperlipidemi ve lipidüri görülebilir. Ayrıca antitrombin III gibi antikoagülan proteinlerin idrarla kaybı tromboz riskini artırabilir. Belirgin hematüri ve eritrosit...",
-    "postAnswerExplanation": "Doğru cevap A’dır. Nefrotik sendromun temel ekseni glomerüler protein kaybıdır. Albumin kaybı plazma onkotik basıncını düşürür ve interstisyel alana sıvı geçişini kolaylaştırarak ödem oluşturur. Karaciğer lipoprotein sentezini artırdığı için hiperlipidemi ve lipidüri görülebilir. Ayrıca antitrombin III gibi antikoagülan proteinlerin idrarla kaybı tromboz riskini artırabilir. Belirgin hematüri ve eritrosit...",
-    "postAnswerExpandedExplanation": "Doğru cevap A’dır. Nefrotik sendromun temel ekseni glomerüler protein kaybıdır. Albumin kaybı plazma onkotik basıncını düşürür ve interstisyel alana sıvı geçişini kolaylaştırarak ödem oluşturur. Karaciğer lipoprotein sentezini artırdığı için hiperlipidemi ve lipidüri görülebilir. Ayrıca antitrombin III gibi antikoagülan proteinlerin idrarla kaybı tromboz riskini artırabilir. Belirgin hematüri ve eritrosit...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Nefrotik sendromun temel klinik-laboratuvar paternidir. Glomerüler protein kaybı hipoalbüminemiye, düşük onkotik basınç ise yaygın ödeme yol açar.",
+    "preAnswerSafeDefinition": "Nefrotik sendromun temel klinik-laboratuvar paternidir. Glomerüler protein kaybı hipoalbüminemiye, düşük onkotik basınç ise yaygın ödeme yol açar.",
+    "shortDefinition": "Nefrotik sendromun temel klinik-laboratuvar paternidir. Glomerüler protein kaybı hipoalbüminemiye, düşük onkotik basınç ise yaygın ödeme yol açar.",
+    "definition": "Nefrotik sendromun temel klinik-laboratuvar paternidir. Glomerüler protein kaybı hipoalbüminemiye, düşük onkotik basınç ise yaygın ödeme yol açar.",
+    "detailedExplanation": "Nefrotik sendromda masif proteinüriye hiperlipidemi, lipidüri ve tromboz eğilimi eşlik edebilir. Antitrombin III kaybı hiperkoagülabiliteyi, hepatik lipoprotein sentez artışı hiperlipidemiyi açıklar.",
+    "postAnswerExplanation": "Nefrotik sendromda masif proteinüriye hiperlipidemi, lipidüri ve tromboz eğilimi eşlik edebilir. Antitrombin III kaybı hiperkoagülabiliteyi, hepatik lipoprotein sentez artışı hiperlipidemiyi açıklar.",
+    "postAnswerExpandedExplanation": "Nefrotik sendromda masif proteinüriye hiperlipidemi, lipidüri ve tromboz eğilimi eşlik edebilir. Antitrombin III kaybı hiperkoagülabiliteyi, hepatik lipoprotein sentez artışı hiperlipidemiyi açıklar.",
+    "tusPearl": "Masif proteinüri + hipoalbüminemi + ödem görülüyorsa nefrotik sendrom ekseni kurulmalıdır.",
+    "differentialPoint": "Nefritik sendromda eritrosit silendirleri, hematüri ve hipertansiyon daha baskındır; nefrotikte protein kaybı ve ödem ön plandadır.",
+    "clinicalRelevance": "Böbrek sorularında sendromik tanı kurmanın anahtar paternidir.",
+    "mechanism": "Glomerüler filtrasyon bariyeri hasarı albumin kaybı yapar; karaciğer lipoprotein sentezini artırır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -12181,11 +12352,14 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Masif proteinüri + hipoalbüminemi + ödem"
+      "Masif proteinüri + hipoalbüminemi + ödem",
+      "nefrotik sendrom triadı",
+      "nefrotik düzey proteinüri"
     ],
     "sourceTextExamples": [
-      "Doğru cevap A’dır. Nefrotik sendromun temel ekseni glomerüler protein kaybıdır. Albumin kaybı plazma onkotik basıncını düşürür ve interstisyel alana sıvı geçişini kolaylaştırarak ödem oluşturur. Karaciğer lipoprotein sentezini artırdığı için hiperlipidemi ve lipidüri görülebilir.",
-      "Nefrotik sendrom = masif proteinüri + hipoalbüminemi + ödem + hiperlipidemi; nefritik sendrom = hematüri + eritrosit silendiri + hipertansiyon/azotemi."
+      "Nefrotik sendrom = masif proteinüri + hipoalbüminemi + ödem + hiperlipidemi; nefritik sendrom = hematüri + eritrosit silendiri + hipertansiyon/azotemi.",
+      "Masif proteinüri + hipoalbüminemi + ödem",
+      "Nefrotik sendromun temel klinik-laboratuvar paternidir. Glomerüler protein kaybı hipoalbüminemiye, düşük onkotik basınç ise yaygın ödeme yol açar."
     ],
     "sourceCandidate": {
       "sourceBatch": "batch5-ultradeep",
@@ -12213,8 +12387,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Megakaryosit artışı, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Megakaryosit artışı, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Megakaryosit artışı, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Megakaryosit artışı, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Megakaryosit artışı. Periferik trombosit yıkımı arttığı için kemik iliği kompansatuvar megakaryosit artışı gösterebilir.",
@@ -12268,8 +12442,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Megaloblastik anemi morfolojisi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Megaloblastik anemi morfolojisi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Megaloblastik anemi morfolojisi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Megaloblastik anemi morfolojisi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Megaloblastik anemi morfolojisi DNA sentez bozukluğu çekirdek-sitoplazma uyumsuzluğu ve hipersegmente nötrofil oluşturur.",
@@ -12324,8 +12498,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Mezangial IgA baskın birikimi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Mezangial IgA baskın birikimi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Mezangial IgA baskın birikimi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Mezangial IgA baskın birikimi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Mezangial IgA baskın birikimi Streptokok farenjiti sonrası gelişen hematüri, periorbital ödem, hipertansiyon, düşük C3 ve yüksek antistreptolizin O titresi poststreptokoksik glomerülonefriti düşündürür. Bu immün kompleks aracılı nefritik tabloda elektron mikroskopisinde subepitelyal hump benzeri birikimler tipiktir.",
@@ -12385,8 +12559,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Anatomik ilişki",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Erkek iç genital yolları testosteron etkisiyle mezonefrik kanaldan gelişir.",
+    "preAnswerSafeDefinition": "Erkek iç genital yolları testosteron etkisiyle mezonefrik kanaldan gelişir.",
     "shortDefinition": "Erkek iç genital yolları testosteron etkisiyle mezonefrik kanaldan gelişir.",
     "definition": "Erkek iç genital yolları testosteron etkisiyle mezonefrik kanaldan gelişir.",
     "detailedExplanation": "Mezonefrik kanal türevleri Erkek iç genital yolları testosteron etkisiyle mezonefrik kanaldan gelişir.",
@@ -12448,8 +12622,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Mezotelyoma ilişkisi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Mezotelyoma ilişkisi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Mezotelyoma ilişkisi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Mezotelyoma ilişkisi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Mezotelyoma ilişkisi Asbest lifleri plevrada kronik hasar ve malign dönüşüm riskini artırır.",
@@ -12501,8 +12675,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Miyokart infarktı erken nekroz, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Miyokart infarktı erken nekroz, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Miyokart infarktı erken nekroz, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Miyokart infarktı erken nekroz, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Miyokart infarktı erken nekroz İskemik solid organ hasarında doku mimarisi başlangıçta korunarak protein denatürasyonu baskın olur.",
@@ -12557,8 +12731,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "N-asetilsistein ile glutatyon replenishment, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
+    "preAnswerSafeDefinition": "N-asetilsistein ile glutatyon replenishment, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "shortDefinition": "N-asetilsistein ile glutatyon replenishment, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "definition": "N-asetilsistein ile glutatyon replenishment, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "detailedExplanation": "Yüksek doz parasetamol alımında toksik metabolit NAPQI glutatyon depoları tükendiğinde hepatoselüler hasar oluşturur. N-asetilsistein glutatyon prekürsörü olarak NAPQI detoksifikasyonunu artırır ve hepatotoksisiteyi önlemek için erken dönemde başlanmalıdır. Yüksek doz parasetamol alımında toksik metabolit NAPQI glutatyon depoları tükendiğinde hepatoselüler hasar oluşturur. N-asetilsistein glutatyon prekürsörü olarak...",
@@ -12605,7 +12779,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-napqi-birikimi",
     "term": "NAPQI birikimi",
     "aliases": [
-      "NAPQI birikimi"
+      "NAPQI birikimi",
+      "N-asetil-p-benzokinon imin",
+      "parasetamol reaktif metaboliti"
     ],
     "normalizedTerm": "napqi birikimi",
     "TurkishName": "NAPQI birikimi",
@@ -12613,17 +12789,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "NAPQI birikimi, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
-    "definition": "NAPQI birikimi, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
-    "detailedExplanation": "Doğru cevap A’dır. Parasetamol normal dozlarda çoğunlukla glukuronidasyon ve sülfatlama ile metabolize edilir; küçük bir kısmı CYP aracılığıyla NAPQI’ye dönüşür. NAPQI normalde glutatyonla bağlanarak zararsız hâle getirilir. Aşırı dozda glutatyon depoları tükenir ve NAPQI hepatosit proteinlerine bağlanarak özellikle santral lobüler karaciğer hasarı oluşturur. N-asetilsistein glutatyon sentezi için sistein sağlar ve...",
-    "postAnswerExplanation": "Doğru cevap A’dır. Parasetamol normal dozlarda çoğunlukla glukuronidasyon ve sülfatlama ile metabolize edilir; küçük bir kısmı CYP aracılığıyla NAPQI’ye dönüşür. NAPQI normalde glutatyonla bağlanarak zararsız hâle getirilir. Aşırı dozda glutatyon depoları tükenir ve NAPQI hepatosit proteinlerine bağlanarak özellikle santral lobüler karaciğer hasarı oluşturur. N-asetilsistein glutatyon sentezi için sistein sağlar ve...",
-    "postAnswerExpandedExplanation": "Doğru cevap A’dır. Parasetamol normal dozlarda çoğunlukla glukuronidasyon ve sülfatlama ile metabolize edilir; küçük bir kısmı CYP aracılığıyla NAPQI’ye dönüşür. NAPQI normalde glutatyonla bağlanarak zararsız hâle getirilir. Aşırı dozda glutatyon depoları tükenir ve NAPQI hepatosit proteinlerine bağlanarak özellikle santral lobüler karaciğer hasarı oluşturur. N-asetilsistein glutatyon sentezi için sistein sağlar ve...",
-    "tusPearl": "Metabolizma sorusunda ipucu genellikle substrat birikimi, ürün azalması, açlık/fruktoz/protein alımı sonrası tablo veya kalıtım tipidir.",
-    "differentialPoint": "Benzer metabolik hastalıklardan ayrım, hangi metabolitin biriktiği ve atağı neyin tetiklediği üzerinden yapılır.",
-    "clinicalRelevance": "Metabolizma sorusunda ipucu genellikle substrat birikimi, ürün azalması, açlık/fruktoz/protein alımı sonrası tablo veya kalıtım tipidir.",
-    "mechanism": "",
+    "previewDefinition": "Parasetamolün CYP aracılı reaktif metaboliti NAPQI’nin glutatyonla yeterince detoksifiye edilememesi sonucu birikmesidir. Hepatosit proteinlerine bağlanarak karaciğer nekrozu oluşturabilir.",
+    "preAnswerSafeDefinition": "Parasetamolün CYP aracılı reaktif metaboliti NAPQI’nin glutatyonla yeterince detoksifiye edilememesi sonucu birikmesidir. Hepatosit proteinlerine bağlanarak karaciğer nekrozu oluşturabilir.",
+    "shortDefinition": "Parasetamolün CYP aracılı reaktif metaboliti NAPQI’nin glutatyonla yeterince detoksifiye edilememesi sonucu birikmesidir. Hepatosit proteinlerine bağlanarak karaciğer nekrozu oluşturabilir.",
+    "definition": "Parasetamolün CYP aracılı reaktif metaboliti NAPQI’nin glutatyonla yeterince detoksifiye edilememesi sonucu birikmesidir. Hepatosit proteinlerine bağlanarak karaciğer nekrozu oluşturabilir.",
+    "detailedExplanation": "Normal dozda NAPQI az miktarda oluşur ve glutatyonla temizlenir. Aşırı doz, alkol kullanımı veya enzim indüksiyonu NAPQI yükünü artırabilir; N-asetilsistein glutatyon sentezini destekler.",
+    "postAnswerExplanation": "Normal dozda NAPQI az miktarda oluşur ve glutatyonla temizlenir. Aşırı doz, alkol kullanımı veya enzim indüksiyonu NAPQI yükünü artırabilir; N-asetilsistein glutatyon sentezini destekler.",
+    "postAnswerExpandedExplanation": "Normal dozda NAPQI az miktarda oluşur ve glutatyonla temizlenir. Aşırı doz, alkol kullanımı veya enzim indüksiyonu NAPQI yükünü artırabilir; N-asetilsistein glutatyon sentezini destekler.",
+    "tusPearl": "Parasetamol toksisitesinde hasar NAPQI birikimiyle, tedavi N-asetilsisteinle açıklanır.",
+    "differentialPoint": "İzoniazid hepatotoksisite yapabilir ancak klasik antidot-glutatyon ilişkisi parasetamol/NAPQI mekanizmasıdır.",
+    "clinicalRelevance": "İlaç toksisitesi sorularında metabolit birikimi ile antidotu eşleştirir.",
+    "mechanism": "CYP2E1 başta olmak üzere CYP enzimleri parasetamolün bir kısmını NAPQI’ye dönüştürür; glutatyon tükenince kovalent protein hasarı gelişir.",
     "relatedBranches": [
       "biochemistry",
       "genetics"
@@ -12637,11 +12813,14 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
     "keywordsForSearch": [
-      "NAPQI birikimi"
+      "NAPQI birikimi",
+      "N-asetil-p-benzokinon imin",
+      "parasetamol reaktif metaboliti"
     ],
     "sourceTextExamples": [
-      "Doğru cevap A’dır. Parasetamol normal dozlarda çoğunlukla glukuronidasyon ve sülfatlama ile metabolize edilir; küçük bir kısmı CYP aracılığıyla NAPQI’ye dönüşür. NAPQI normalde glutatyonla bağlanarak zararsız hâle getirilir.",
-      "Parasetamol toksisitesi = NAPQI birikimi + glutatyon tükenmesi; antidot N-asetilsistein glutatyonu yeniler."
+      "Parasetamol toksisitesi = NAPQI birikimi + glutatyon tükenmesi; antidot N-asetilsistein glutatyonu yeniler.",
+      "NAPQI birikimi",
+      "Parasetamolün CYP aracılı reaktif metaboliti NAPQI’nin glutatyonla yeterince detoksifiye edilememesi sonucu birikmesidir. Hepatosit proteinlerine bağlanarak karaciğer nekrozu oluşturabilir."
     ],
     "sourceCandidate": {
       "sourceBatch": "batch5-ultradeep",
@@ -12661,7 +12840,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-neonatal-varisella-riski",
     "term": "Neonatal varisella riski",
     "aliases": [
-      "Neonatal varisella riski"
+      "Neonatal varisella riski",
+      "peripartum varisella",
+      "yenidoğan varisella riski"
     ],
     "normalizedTerm": "neonatal varisella riski",
     "TurkishName": "Neonatal varisella riski",
@@ -12669,17 +12850,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Peripartum varisella ağır neonatal enfeksiyon riski taşır ve immünoglobulin gerekebilir.",
-    "definition": "Peripartum varisella ağır neonatal enfeksiyon riski taşır ve immünoglobulin gerekebilir.",
-    "detailedExplanation": "Neonatal varisella riski Peripartum varisella ağır neonatal enfeksiyon riski taşır ve immünoglobulin gerekebilir.",
-    "postAnswerExplanation": "Neonatal varisella riski Peripartum varisella ağır neonatal enfeksiyon riski taşır ve immünoglobulin gerekebilir.",
-    "postAnswerExpandedExplanation": "Neonatal varisella riski Peripartum varisella ağır neonatal enfeksiyon riski taşır ve immünoglobulin gerekebilir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Annenin doğuma yakın dönemde varisella geçirmesiyle yenidoğanda ağır yaygın enfeksiyon gelişme riskidir. Özellikle döküntünün doğumdan kısa süre önce veya hemen sonra başlaması önemlidir.",
+    "preAnswerSafeDefinition": "Annenin doğuma yakın dönemde varisella geçirmesiyle yenidoğanda ağır yaygın enfeksiyon gelişme riskidir. Özellikle döküntünün doğumdan kısa süre önce veya hemen sonra başlaması önemlidir.",
+    "shortDefinition": "Annenin doğuma yakın dönemde varisella geçirmesiyle yenidoğanda ağır yaygın enfeksiyon gelişme riskidir. Özellikle döküntünün doğumdan kısa süre önce veya hemen sonra başlaması önemlidir.",
+    "definition": "Annenin doğuma yakın dönemde varisella geçirmesiyle yenidoğanda ağır yaygın enfeksiyon gelişme riskidir. Özellikle döküntünün doğumdan kısa süre önce veya hemen sonra başlaması önemlidir.",
+    "detailedExplanation": "Anne yeterli antikor geliştirmeden doğum olursa pasif koruyucu antikor geçişi yetersiz kalır. Yenidoğana varisella-zoster immünoglobulini ve yakın izlem gerekebilir.",
+    "postAnswerExplanation": "Anne yeterli antikor geliştirmeden doğum olursa pasif koruyucu antikor geçişi yetersiz kalır. Yenidoğana varisella-zoster immünoglobulini ve yakın izlem gerekebilir.",
+    "postAnswerExpandedExplanation": "Anne yeterli antikor geliştirmeden doğum olursa pasif koruyucu antikor geçişi yetersiz kalır. Yenidoğana varisella-zoster immünoglobulini ve yakın izlem gerekebilir.",
+    "tusPearl": "Doğuma yakın maternal varisella, yenidoğan için en riskli zamanlamadır.",
+    "differentialPoint": "Gebeliğin erken dönem varisellası konjenital varisella sendromu açısından; peripartum varisella ise ağır neonatal enfeksiyon açısından kritiktir.",
+    "clinicalRelevance": "Pediatri-obstetri sorularında enfeksiyon zamanlamasının yönetimi değiştirdiğini gösterir.",
+    "mechanism": "Yenidoğanda immün yanıt olgun değildir ve maternal antikor geçişi yetersizse VZV yaygın enfeksiyon yapabilir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -12692,7 +12873,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Neonatal varisella riski"
+      "Neonatal varisella riski",
+      "peripartum varisella",
+      "yenidoğan varisella riski"
     ],
     "sourceTextExamples": [
       "Neonatal varisella riski",
@@ -12716,7 +12899,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-normal-basincli-hidrosefali",
     "term": "Normal basınçlı hidrosefali",
     "aliases": [
-      "Normal basınçlı hidrosefali"
+      "Normal basınçlı hidrosefali",
+      "NPH",
+      "Hakim-Adams triadı"
     ],
     "normalizedTerm": "normal basincli hidrosefali",
     "TurkishName": "Normal basınçlı hidrosefali",
@@ -12724,17 +12909,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Yüzün üst ve alt kısmını birlikte tutan tek taraflı fasiyal güçsüzlük periferik fasiyal paraliziyi düşündürür.",
-    "definition": "Yüzün üst ve alt kısmını birlikte tutan tek taraflı fasiyal güçsüzlük periferik fasiyal paraliziyi düşündürür.",
-    "detailedExplanation": "Normal basınçlı hidrosefali Yüzün üst ve alt kısmını birlikte tutan tek taraflı fasiyal güçsüzlük periferik fasiyal paraliziyi düşündürür. Santral üst motor nöron lezyonlarında alın çoğu kez korunur; bu hastada alın ve göz kapatma da etkilenmiştir.",
-    "postAnswerExplanation": "Normal basınçlı hidrosefali Yüzün üst ve alt kısmını birlikte tutan tek taraflı fasiyal güçsüzlük periferik fasiyal paraliziyi düşündürür. Santral üst motor nöron lezyonlarında alın çoğu kez korunur; bu hastada alın ve göz kapatma da etkilenmiştir.",
-    "postAnswerExpandedExplanation": "Normal basınçlı hidrosefali Yüzün üst ve alt kısmını birlikte tutan tek taraflı fasiyal güçsüzlük periferik fasiyal paraliziyi düşündürür. Santral üst motor nöron lezyonlarında alın çoğu kez korunur; bu hastada alın ve göz kapatma da etkilenmiştir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "BOS basıncı çoğu kez normal ölçülmesine rağmen ventrikülomegaliyle seyreden yürüme bozukluğu, bilişsel yıkım ve idrar inkontinansı triadıdır. Yaşlı hastada geri döndürülebilir demans nedenlerinden biridir.",
+    "preAnswerSafeDefinition": "BOS basıncı çoğu kez normal ölçülmesine rağmen ventrikülomegaliyle seyreden yürüme bozukluğu, bilişsel yıkım ve idrar inkontinansı triadıdır. Yaşlı hastada geri döndürülebilir demans nedenlerinden biridir.",
+    "shortDefinition": "BOS basıncı çoğu kez normal ölçülmesine rağmen ventrikülomegaliyle seyreden yürüme bozukluğu, bilişsel yıkım ve idrar inkontinansı triadıdır. Yaşlı hastada geri döndürülebilir demans nedenlerinden biridir.",
+    "definition": "BOS basıncı çoğu kez normal ölçülmesine rağmen ventrikülomegaliyle seyreden yürüme bozukluğu, bilişsel yıkım ve idrar inkontinansı triadıdır. Yaşlı hastada geri döndürülebilir demans nedenlerinden biridir.",
+    "detailedExplanation": "Klasik triad manyetik yürüyüş/apraksi, demans benzeri bilişsel yavaşlama ve üriner inkontinanstır. Görüntülemede kortikal atrofiye göre orantısız ventrikül genişliği beklenir; şanttan fayda görülebilir.",
+    "postAnswerExplanation": "Klasik triad manyetik yürüyüş/apraksi, demans benzeri bilişsel yavaşlama ve üriner inkontinanstır. Görüntülemede kortikal atrofiye göre orantısız ventrikül genişliği beklenir; şanttan fayda görülebilir.",
+    "postAnswerExpandedExplanation": "Klasik triad manyetik yürüyüş/apraksi, demans benzeri bilişsel yavaşlama ve üriner inkontinanstır. Görüntülemede kortikal atrofiye göre orantısız ventrikül genişliği beklenir; şanttan fayda görülebilir.",
+    "tusPearl": "Yaşlıda yürüme bozukluğu + demans + idrar kaçırma = normal basınçlı hidrosefali düşün.",
+    "differentialPoint": "Alzheimer’da erken belirgin bellek bozukluğu baskındır; NPH’de yürüme bozukluğu çoğu kez erken ve belirleyicidir.",
+    "clinicalRelevance": "Nöroloji sorularında tedavi edilebilir demans nedenini ayırt ettirir.",
+    "mechanism": "BOS dolaşım/absorpsiyon bozukluğu ventrikül genişlemesi ve periventriküler trakt basısı oluşturur.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -12747,7 +12932,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Normal basınçlı hidrosefali"
+      "Normal basınçlı hidrosefali",
+      "NPH",
+      "Hakim-Adams triadı"
     ],
     "sourceTextExamples": [
       "Normal basınçlı hidrosefali",
@@ -12779,8 +12966,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Kaudal nöropor kapanma kusuru omurga arklarının ve nöral dokuların kapanma bozukluğuna yol açabilir.",
+    "preAnswerSafeDefinition": "Kaudal nöropor kapanma kusuru omurga arklarının ve nöral dokuların kapanma bozukluğuna yol açabilir.",
     "shortDefinition": "Kaudal nöropor kapanma kusuru omurga arklarının ve nöral dokuların kapanma bozukluğuna yol açabilir.",
     "definition": "Kaudal nöropor kapanma kusuru omurga arklarının ve nöral dokuların kapanma bozukluğuna yol açabilir.",
     "detailedExplanation": "Nöral tüp kaudal kapanma defekti Kaudal nöropor kapanma kusuru omurga arklarının ve nöral dokuların kapanma bozukluğuna yol açabilir.",
@@ -12834,7 +13021,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-noroleptik-malign-sendrom",
     "term": "Nöroleptik malign sendrom",
     "aliases": [
-      "Nöroleptik malign sendrom"
+      "Nöroleptik malign sendrom",
+      "NMS",
+      "antipsikotik malign sendrom"
     ],
     "normalizedTerm": "noroleptik malign sendrom",
     "TurkishName": "Nöroleptik malign sendrom",
@@ -12842,17 +13031,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Dopamin agonisti nöroleptik malign sendromda düşünülebilir; bu olguda ilaç etkileşimi, ishal, hiperrefleksi ve klonus serotonerjik toksisiteyi destekler.",
-    "definition": "Dopamin agonisti nöroleptik malign sendromda düşünülebilir; bu olguda ilaç etkileşimi, ishal, hiperrefleksi ve klonus serotonerjik toksisiteyi destekler.",
-    "detailedExplanation": "Dopamin agonisti nöroleptik malign sendromda düşünülebilir; bu olguda ilaç etkileşimi, ishal, hiperrefleksi ve klonus serotonerjik toksisiteyi destekler. Selektif serotonin geri alım inhibitörü ile linezolid birlikteliği sonrası ajitasyon, otonom hiperaktivite, ishal, hiperrefleksi ve klonus serotonin fazlalığına bağlı toksisiteyi düşündürür. Tedavide sorumlu serotonerjik ilaçlar kesilir, destek tedavisi uygulanır...",
-    "postAnswerExplanation": "Dopamin agonisti nöroleptik malign sendromda düşünülebilir; bu olguda ilaç etkileşimi, ishal, hiperrefleksi ve klonus serotonerjik toksisiteyi destekler. Selektif serotonin geri alım inhibitörü ile linezolid birlikteliği sonrası ajitasyon, otonom hiperaktivite, ishal, hiperrefleksi ve klonus serotonin fazlalığına bağlı toksisiteyi düşündürür. Tedavide sorumlu serotonerjik ilaçlar kesilir, destek tedavisi uygulanır...",
-    "postAnswerExpandedExplanation": "Dopamin agonisti nöroleptik malign sendromda düşünülebilir; bu olguda ilaç etkileşimi, ishal, hiperrefleksi ve klonus serotonerjik toksisiteyi destekler. Selektif serotonin geri alım inhibitörü ile linezolid birlikteliği sonrası ajitasyon, otonom hiperaktivite, ishal, hiperrefleksi ve klonus serotonin fazlalığına bağlı toksisiteyi düşündürür. Tedavide sorumlu serotonerjik ilaçlar kesilir, destek tedavisi uygulanır...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Dopamin D2 blokajı veya dopaminerjik ilaç kesilmesi sonrası gelişen hipertermi, rijidite, otonom instabilite ve bilinç değişikliği tablosudur. CK yüksekliği ve rabdomiyoliz eşlik edebilir.",
+    "preAnswerSafeDefinition": "Dopamin D2 blokajı veya dopaminerjik ilaç kesilmesi sonrası gelişen hipertermi, rijidite, otonom instabilite ve bilinç değişikliği tablosudur. CK yüksekliği ve rabdomiyoliz eşlik edebilir.",
+    "shortDefinition": "Dopamin D2 blokajı veya dopaminerjik ilaç kesilmesi sonrası gelişen hipertermi, rijidite, otonom instabilite ve bilinç değişikliği tablosudur. CK yüksekliği ve rabdomiyoliz eşlik edebilir.",
+    "definition": "Dopamin D2 blokajı veya dopaminerjik ilaç kesilmesi sonrası gelişen hipertermi, rijidite, otonom instabilite ve bilinç değişikliği tablosudur. CK yüksekliği ve rabdomiyoliz eşlik edebilir.",
+    "detailedExplanation": "NMS genellikle antipsikotik başlanması veya doz artırılması sonrası günler içinde gelişir. Tedavide sorumlu ilaç kesilir, destek tedavisi verilir; ağır olgularda dantrolen veya bromokriptin düşünülebilir.",
+    "postAnswerExplanation": "NMS genellikle antipsikotik başlanması veya doz artırılması sonrası günler içinde gelişir. Tedavide sorumlu ilaç kesilir, destek tedavisi verilir; ağır olgularda dantrolen veya bromokriptin düşünülebilir.",
+    "postAnswerExpandedExplanation": "NMS genellikle antipsikotik başlanması veya doz artırılması sonrası günler içinde gelişir. Tedavide sorumlu ilaç kesilir, destek tedavisi verilir; ağır olgularda dantrolen veya bromokriptin düşünülebilir.",
+    "tusPearl": "Kurşun boru rijiditesi + yüksek CK + antipsikotik öyküsü NMS lehinedir.",
+    "differentialPoint": "Serotonin sendromunda hiperrefleksi, klonus ve gastrointestinal bulgular daha belirgindir; NMS’de rijidite ve CK yüksekliği öne çıkar.",
+    "clinicalRelevance": "Psikiyatri-acil toksidrom sorularında serotonin sendromu ile ayrımı sağlar.",
+    "mechanism": "Santral dopaminerjik blokaj termoregülasyon ve kas tonusu kontrolünü bozarak hipertermi ve rijidite yapar.",
     "relatedBranches": [
       "neurology"
     ],
@@ -12865,7 +13054,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Nöroleptik malign sendrom"
+      "Nöroleptik malign sendrom",
+      "NMS",
+      "antipsikotik malign sendrom"
     ],
     "sourceTextExamples": [
       "Dopamin agonisti nöroleptik malign sendromda düşünülebilir; bu olguda ilaç etkileşimi, ishal, hiperrefleksi ve klonus serotonerjik toksisiteyi destekler.",
@@ -12889,7 +13080,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-omfalosel-ayrimi",
     "term": "Omfalosel ayrımı",
     "aliases": [
-      "Omfalosel ayrımı"
+      "Omfalosel ayrımı",
+      "omfalosel",
+      "karın duvarı defekti"
     ],
     "normalizedTerm": "omfalosel ayrimi",
     "TurkishName": "Omfalosel ayrımı",
@@ -12897,17 +13090,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Omfaloselde herniye organlar periton ve amniyonla örtülüdür ve orta hatta yerleşir.",
-    "definition": "Omfaloselde herniye organlar periton ve amniyonla örtülüdür ve orta hatta yerleşir.",
-    "detailedExplanation": "Omfalosel ayrımı Omfaloselde herniye organlar periton ve amniyonla örtülüdür ve orta hatta yerleşir.",
-    "postAnswerExplanation": "Omfalosel ayrımı Omfaloselde herniye organlar periton ve amniyonla örtülüdür ve orta hatta yerleşir.",
-    "postAnswerExpandedExplanation": "Omfalosel ayrımı Omfaloselde herniye organlar periton ve amniyonla örtülüdür ve orta hatta yerleşir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Omfaloselde abdominal organlar orta hatta göbek kordonu tabanından herniye olur ve periton-amniyon zarıyla örtülüdür. Kromozomal anomaliler ve diğer malformasyonlarla birliktelik daha sıktır.",
+    "preAnswerSafeDefinition": "Omfaloselde abdominal organlar orta hatta göbek kordonu tabanından herniye olur ve periton-amniyon zarıyla örtülüdür. Kromozomal anomaliler ve diğer malformasyonlarla birliktelik daha sıktır.",
+    "shortDefinition": "Omfaloselde abdominal organlar orta hatta göbek kordonu tabanından herniye olur ve periton-amniyon zarıyla örtülüdür. Kromozomal anomaliler ve diğer malformasyonlarla birliktelik daha sıktır.",
+    "definition": "Omfaloselde abdominal organlar orta hatta göbek kordonu tabanından herniye olur ve periton-amniyon zarıyla örtülüdür. Kromozomal anomaliler ve diğer malformasyonlarla birliktelik daha sıktır.",
+    "detailedExplanation": "Omfalosel ile gastroşizis ayrımı karın duvarı defekti sorularında kritiktir. Omfalosel zarlı ve orta hat lezyonudur; gastroşizis genellikle sağ paraumbilikal, zarsız ve serbest bağırsakla seyreder.",
+    "postAnswerExplanation": "Omfalosel ile gastroşizis ayrımı karın duvarı defekti sorularında kritiktir. Omfalosel zarlı ve orta hat lezyonudur; gastroşizis genellikle sağ paraumbilikal, zarsız ve serbest bağırsakla seyreder.",
+    "postAnswerExpandedExplanation": "Omfalosel ile gastroşizis ayrımı karın duvarı defekti sorularında kritiktir. Omfalosel zarlı ve orta hat lezyonudur; gastroşizis genellikle sağ paraumbilikal, zarsız ve serbest bağırsakla seyreder.",
+    "tusPearl": "Orta hatta, zarla örtülü herniasyon = omfalosel; zarsız sağ paraumbilikal bağırsak = gastroşizis.",
+    "differentialPoint": "Gastroşiziste kromozomal anomali birlikteliği daha azdır; bağırsak amniyotik sıvıya açık olduğu için inflamasyon belirgin olabilir.",
+    "clinicalRelevance": "Pediatrik cerrahi/embriyoloji sorularında iki karın duvarı defektini ayırt ettirir.",
+    "mechanism": "Omfalosel orta hat kapanma ve fizyolojik herniasyonun geri dönüş kusuruyla ilişkilidir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -12920,7 +13113,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Omfalosel ayrımı"
+      "Omfalosel ayrımı",
+      "omfalosel",
+      "karın duvarı defekti"
     ],
     "sourceTextExamples": [],
     "sourceCandidate": {
@@ -12941,7 +13136,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-orbital-selulit",
     "term": "Orbital selülit",
     "aliases": [
-      "Orbital selülit"
+      "Orbital selülit",
+      "postseptal selülit",
+      "orbital cellulitis"
     ],
     "normalizedTerm": "orbital selulit",
     "TurkishName": "Orbital selülit",
@@ -12949,17 +13146,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Akut bakteriyel orbital selülitte proptoz ve göz hareket kısıtlılığıyla acil intravenöz antibiyotik gereksinimini seçebilme Sinüzit sonrası ateş, proptoz, göz hareket kısıtlılığı, kemozis ve postseptal inflamasyon orbital selüliti düşündürür.",
-    "definition": "Akut bakteriyel orbital selülitte proptoz ve göz hareket kısıtlılığıyla acil intravenöz antibiyotik gereksinimini seçebilme Sinüzit sonrası ateş, proptoz, göz hareket kısıtlılığı, kemozis ve postseptal inflamasyon orbital selüliti düşündürür.",
-    "detailedExplanation": "Akut bakteriyel orbital selülitte proptoz ve göz hareket kısıtlılığıyla acil intravenöz antibiyotik gereksinimini seçebilme Sinüzit sonrası ateş, proptoz, göz hareket kısıtlılığı, kemozis ve postseptal inflamasyon orbital selüliti düşündürür. Görmeyi ve intrakraniyal yayılımı tehdit eden bu tabloda hastaneye yatış, intravenöz antibiyotik ve multidisipliner izlem gerekir.",
-    "postAnswerExplanation": "Akut bakteriyel orbital selülitte proptoz ve göz hareket kısıtlılığıyla acil intravenöz antibiyotik gereksinimini seçebilme Sinüzit sonrası ateş, proptoz, göz hareket kısıtlılığı, kemozis ve postseptal inflamasyon orbital selüliti düşündürür. Görmeyi ve intrakraniyal yayılımı tehdit eden bu tabloda hastaneye yatış, intravenöz antibiyotik ve multidisipliner izlem gerekir.",
-    "postAnswerExpandedExplanation": "Akut bakteriyel orbital selülitte proptoz ve göz hareket kısıtlılığıyla acil intravenöz antibiyotik gereksinimini seçebilme Sinüzit sonrası ateş, proptoz, göz hareket kısıtlılığı, kemozis ve postseptal inflamasyon orbital selüliti düşündürür. Görmeyi ve intrakraniyal yayılımı tehdit eden bu tabloda hastaneye yatış, intravenöz antibiyotik ve multidisipliner izlem gerekir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Orbital septum arkasındaki dokuların enfeksiyonudur ve görme kaybı ile intrakraniyal yayılım riski taşır. Proptoz, göz hareket ağrısı/kısıtlılığı, kemozis ve ateş uyarıcı bulgulardır.",
+    "preAnswerSafeDefinition": "Orbital septum arkasındaki dokuların enfeksiyonudur ve görme kaybı ile intrakraniyal yayılım riski taşır. Proptoz, göz hareket ağrısı/kısıtlılığı, kemozis ve ateş uyarıcı bulgulardır.",
+    "shortDefinition": "Orbital septum arkasındaki dokuların enfeksiyonudur ve görme kaybı ile intrakraniyal yayılım riski taşır. Proptoz, göz hareket ağrısı/kısıtlılığı, kemozis ve ateş uyarıcı bulgulardır.",
+    "definition": "Orbital septum arkasındaki dokuların enfeksiyonudur ve görme kaybı ile intrakraniyal yayılım riski taşır. Proptoz, göz hareket ağrısı/kısıtlılığı, kemozis ve ateş uyarıcı bulgulardır.",
+    "detailedExplanation": "Orbital selülit çoğu kez sinüzit sonrası gelişir ve acil hastane yatışı gerektirir. İntravenöz antibiyotik, görüntüleme ve göz/KBB değerlendirmesi gerekir; apse varsa drenaj gerekebilir.",
+    "postAnswerExplanation": "Orbital selülit çoğu kez sinüzit sonrası gelişir ve acil hastane yatışı gerektirir. İntravenöz antibiyotik, görüntüleme ve göz/KBB değerlendirmesi gerekir; apse varsa drenaj gerekebilir.",
+    "postAnswerExpandedExplanation": "Orbital selülit çoğu kez sinüzit sonrası gelişir ve acil hastane yatışı gerektirir. İntravenöz antibiyotik, görüntüleme ve göz/KBB değerlendirmesi gerekir; apse varsa drenaj gerekebilir.",
+    "tusPearl": "Proptoz veya göz hareket kısıtlılığı varsa preseptal değil orbital selülit düşün.",
+    "differentialPoint": "Preseptal selülitte enfeksiyon septum önündedir; proptoz, oftalmopleji ve görme etkilenmesi beklenmez.",
+    "clinicalRelevance": "Göz/KBB acillerinde basit kapak enfeksiyonu ile görmeyi tehdit eden tabloyu ayırır.",
+    "mechanism": "Sinüs enfeksiyonu lamina papyracea ve venöz bağlantılar üzerinden orbital dokulara yayılabilir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -12972,7 +13169,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Orbital selülit"
+      "Orbital selülit",
+      "postseptal selülit",
+      "orbital cellulitis"
     ],
     "sourceTextExamples": [
       "Akut bakteriyel orbital selülitte proptoz ve göz hareket kısıtlılığıyla acil intravenöz antibiyotik gereksinimini seçebilme",
@@ -12996,7 +13195,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-otitis-eksterna",
     "term": "Otitis eksterna",
     "aliases": [
-      "Otitis eksterna"
+      "Otitis eksterna",
+      "dış kulak yolu enfeksiyonu",
+      "swimmer’s ear"
     ],
     "normalizedTerm": "otitis eksterna",
     "TurkishName": "Otitis eksterna",
@@ -13004,17 +13205,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "kulak kepçesi hareketiyle ağrı ve dış kanal hassasiyetiyle ayrılır.",
-    "definition": "kulak kepçesi hareketiyle ağrı ve dış kanal hassasiyetiyle ayrılır.",
-    "detailedExplanation": "Otitis eksterna kulak kepçesi hareketiyle ağrı ve dış kanal hassasiyetiyle ayrılır. En sık etkenler Streptococcus pneumoniae, H. influenzae ve Moraxella catarrhalis’tir.",
-    "postAnswerExplanation": "Otitis eksterna kulak kepçesi hareketiyle ağrı ve dış kanal hassasiyetiyle ayrılır. En sık etkenler Streptococcus pneumoniae, H. influenzae ve Moraxella catarrhalis’tir.",
-    "postAnswerExpandedExplanation": "Otitis eksterna kulak kepçesi hareketiyle ağrı ve dış kanal hassasiyetiyle ayrılır. En sık etkenler Streptococcus pneumoniae, H. influenzae ve Moraxella catarrhalis’tir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Dış kulak yolunun inflamasyon veya enfeksiyonudur; tragus basısı veya kulak kepçesi çekilmesiyle ağrının artması tipiktir. En sık etkenler Pseudomonas aeruginosa ve Staphylococcus aureus’tur.",
+    "preAnswerSafeDefinition": "Dış kulak yolunun inflamasyon veya enfeksiyonudur; tragus basısı veya kulak kepçesi çekilmesiyle ağrının artması tipiktir. En sık etkenler Pseudomonas aeruginosa ve Staphylococcus aureus’tur.",
+    "shortDefinition": "Dış kulak yolunun inflamasyon veya enfeksiyonudur; tragus basısı veya kulak kepçesi çekilmesiyle ağrının artması tipiktir. En sık etkenler Pseudomonas aeruginosa ve Staphylococcus aureus’tur.",
+    "definition": "Dış kulak yolunun inflamasyon veya enfeksiyonudur; tragus basısı veya kulak kepçesi çekilmesiyle ağrının artması tipiktir. En sık etkenler Pseudomonas aeruginosa ve Staphylococcus aureus’tur.",
+    "detailedExplanation": "Nem, travma ve kulak çubuğu kullanımı dış kulak yolu bariyerini bozabilir. Diyabetik veya immünsüprese hastada şiddetli ağrı ve granülasyon dokusu malign otitis eksterna açısından uyarıcıdır.",
+    "postAnswerExplanation": "Nem, travma ve kulak çubuğu kullanımı dış kulak yolu bariyerini bozabilir. Diyabetik veya immünsüprese hastada şiddetli ağrı ve granülasyon dokusu malign otitis eksterna açısından uyarıcıdır.",
+    "postAnswerExpandedExplanation": "Nem, travma ve kulak çubuğu kullanımı dış kulak yolu bariyerini bozabilir. Diyabetik veya immünsüprese hastada şiddetli ağrı ve granülasyon dokusu malign otitis eksterna açısından uyarıcıdır.",
+    "tusPearl": "Kulak kepçesi hareketiyle ağrı otitis eksternayı otitis mediadan ayıran klasik ipucudur.",
+    "differentialPoint": "Akut otitis mediada ağrı orta kulak kaynaklıdır; timpan zarında bombeleşme ve pnömatik otoskopide hareket azalması beklenir.",
+    "clinicalRelevance": "KBB sorularında dış kulak-orta kulak enfeksiyonu ayrımını öğretir.",
+    "mechanism": "Dış kulak yolunda bariyer bozulması bakteriyel kolonizasyon ve lokal inflamasyona yol açar.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -13027,7 +13228,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Otitis eksterna"
+      "Otitis eksterna",
+      "dış kulak yolu enfeksiyonu",
+      "swimmer’s ear"
     ],
     "sourceTextExamples": [
       "Otitis eksterna kulak kepçesi hareketiyle ağrı ve dış kanal hassasiyetiyle ayrılır."
@@ -13058,8 +13261,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Tanısal test / karar eşiği",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Otoimmün hemolitik anemi testi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Otoimmün hemolitik anemi testi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Otoimmün hemolitik anemi testi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Otoimmün hemolitik anemi testi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Otoimmün hemolitik anemi testi Eritrosit yüzeyindeki antikor veya kompleman varlığı direkt antiglobulin testiyle saptanır.",
@@ -13116,8 +13319,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Anatomik ilişki",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Müller kanalı olarak da bilinen paramezonefrik kanal kadın iç genital sisteminin ana kaynağıdır.",
+    "preAnswerSafeDefinition": "Müller kanalı olarak da bilinen paramezonefrik kanal kadın iç genital sisteminin ana kaynağıdır.",
     "shortDefinition": "Müller kanalı olarak da bilinen paramezonefrik kanal kadın iç genital sisteminin ana kaynağıdır.",
     "definition": "Müller kanalı olarak da bilinen paramezonefrik kanal kadın iç genital sisteminin ana kaynağıdır.",
     "detailedExplanation": "Paramezonefrik kanal türevleri Müller kanalı olarak da bilinen paramezonefrik kanal kadın iç genital sisteminin ana kaynağıdır.",
@@ -13235,8 +13438,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Peroksizom biyogenez bozukluğu, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
+    "preAnswerSafeDefinition": "Peroksizom biyogenez bozukluğu, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "shortDefinition": "Peroksizom biyogenez bozukluğu, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "definition": "Peroksizom biyogenez bozukluğu, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "detailedExplanation": "Peroksizom biyogenez bozukluğu. Zellweger spektrumunda peroksizomal fonksiyon bozulur ve çok uzun zincirli yağ asitleri birikir.",
@@ -13291,8 +13494,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Pirüvat karboksilaz kofaktörü, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
+    "preAnswerSafeDefinition": "Pirüvat karboksilaz kofaktörü, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "shortDefinition": "Pirüvat karboksilaz kofaktörü, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "definition": "Pirüvat karboksilaz kofaktörü, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "detailedExplanation": "Pirüvat karboksilaz kofaktörü Pirüvat karboksilaz glukoneogenezde pirüvatı oksaloasetata çevirir ve biotin bağımlıdır.",
@@ -13419,8 +13622,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Polisitemia vera, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Polisitemia vera, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Polisitemia vera, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Polisitemia vera, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Polisitemia vera Yoğun adet kanaması, pika, koilonişi, mikrositik anemi ve düşük ferritin demir eksikliği anemisini düşündürür. Ferritin demir depolarını yansıtır ve düşük olması tanıda güçlü destek sağlar.",
@@ -13466,7 +13669,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-porphyria-cutanea-tarda",
     "term": "Porphyria cutanea tarda",
     "aliases": [
-      "Porphyria cutanea tarda"
+      "Porphyria cutanea tarda",
+      "PCT",
+      "üroporfirinojen dekarboksilaz eksikliği"
     ],
     "normalizedTerm": "porphyria cutanea tarda",
     "TurkishName": "Porphyria cutanea tarda",
@@ -13474,17 +13679,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "daha çok fotosensitivite ve üroporfirinojen dekarboksilaz ile ilişkilidir.",
-    "definition": "daha çok fotosensitivite ve üroporfirinojen dekarboksilaz ile ilişkilidir.",
-    "detailedExplanation": "Porphyria cutanea tarda daha çok fotosensitivite ve üroporfirinojen dekarboksilaz ile ilişkilidir. Hem sentezinde erken basamak bozulur; ALA ve PBG artışı nörovisseral ataklara yol açar.",
-    "postAnswerExplanation": "Porphyria cutanea tarda daha çok fotosensitivite ve üroporfirinojen dekarboksilaz ile ilişkilidir. Hem sentezinde erken basamak bozulur; ALA ve PBG artışı nörovisseral ataklara yol açar.",
-    "postAnswerExpandedExplanation": "Porphyria cutanea tarda daha çok fotosensitivite ve üroporfirinojen dekarboksilaz ile ilişkilidir. Hem sentezinde erken basamak bozulur; ALA ve PBG artışı nörovisseral ataklara yol açar.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Üroporfirinojen dekarboksilaz aktivite azalmasıyla gelişen, güneşe maruz alanlarda bül ve deri frajilitesi yapan porfiridir. Nörovisseral ataklar yerine fotosensitivite ön plandadır.",
+    "preAnswerSafeDefinition": "Üroporfirinojen dekarboksilaz aktivite azalmasıyla gelişen, güneşe maruz alanlarda bül ve deri frajilitesi yapan porfiridir. Nörovisseral ataklar yerine fotosensitivite ön plandadır.",
+    "shortDefinition": "Üroporfirinojen dekarboksilaz aktivite azalmasıyla gelişen, güneşe maruz alanlarda bül ve deri frajilitesi yapan porfiridir. Nörovisseral ataklar yerine fotosensitivite ön plandadır.",
+    "definition": "Üroporfirinojen dekarboksilaz aktivite azalmasıyla gelişen, güneşe maruz alanlarda bül ve deri frajilitesi yapan porfiridir. Nörovisseral ataklar yerine fotosensitivite ön plandadır.",
+    "detailedExplanation": "PCT hepatit C, alkol, demir yükü ve östrojenlerle ilişkilendirilebilir. İdrarda porfirin artışı ve kronik güneş hassasiyeti tipiktir; akut karın ağrısı ve nöropsikiyatrik atak beklenen ana özellik değildir.",
+    "postAnswerExplanation": "PCT hepatit C, alkol, demir yükü ve östrojenlerle ilişkilendirilebilir. İdrarda porfirin artışı ve kronik güneş hassasiyeti tipiktir; akut karın ağrısı ve nöropsikiyatrik atak beklenen ana özellik değildir.",
+    "postAnswerExpandedExplanation": "PCT hepatit C, alkol, demir yükü ve östrojenlerle ilişkilendirilebilir. İdrarda porfirin artışı ve kronik güneş hassasiyeti tipiktir; akut karın ağrısı ve nöropsikiyatrik atak beklenen ana özellik değildir.",
+    "tusPearl": "Fotosensitivite + büllöz lezyon + üroporfirinojen dekarboksilaz = porphyria cutanea tarda.",
+    "differentialPoint": "Akut intermitan porfiride ALA/PBG artışı, karın ağrısı ve nörovisseral ataklar öne çıkar; PCT’de kutanöz fotosensitivite baskındır.",
+    "clinicalRelevance": "Biyokimya-dermatoloji sorularında porfiri tiplerini klinik fenotiple ayırır.",
+    "mechanism": "UROD azalınca karaciğer ve deride fotosensitize porfirinler birikir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -13497,7 +13702,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Porphyria cutanea tarda"
+      "Porphyria cutanea tarda",
+      "PCT",
+      "üroporfirinojen dekarboksilaz eksikliği"
     ],
     "sourceTextExamples": [
       "Porphyria cutanea tarda daha çok fotosensitivite ve üroporfirinojen dekarboksilaz ile ilişkilidir.",
@@ -13529,8 +13736,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Poststreptokoksik glomerülonefrit, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Poststreptokoksik glomerülonefrit, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Poststreptokoksik glomerülonefrit, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Poststreptokoksik glomerülonefrit, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Poststreptokoksik glomerülonefritte nefritik sendrom ve immün kompleks paternini tanıyabilme Streptokok farenjiti sonrası gelişen hematüri, periorbital ödem, hipertansiyon, düşük C3 ve yüksek antistreptolizin O titresi poststreptokoksik glomerülonefriti düşündürür. Bu immün kompleks aracılı nefritik tabloda elektron mikroskopisinde subepitelyal hump benzeri birikimler tipiktir.",
@@ -13583,7 +13790,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-preseptal-selulit",
     "term": "Preseptal selülit",
     "aliases": [
-      "Preseptal selülit"
+      "Preseptal selülit",
+      "periorbital selülit",
+      "kapak selüliti"
     ],
     "normalizedTerm": "preseptal selulit",
     "TurkishName": "Preseptal selülit",
@@ -13591,17 +13800,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Orbital selülitte proptoz ve göz hareket kısıtlılığı preseptal selülitten ayırıcı ciddi bulgulardır.",
-    "definition": "Orbital selülitte proptoz ve göz hareket kısıtlılığı preseptal selülitten ayırıcı ciddi bulgulardır.",
-    "detailedExplanation": "Orbital selülitte proptoz ve göz hareket kısıtlılığı preseptal selülitten ayırıcı ciddi bulgulardır. Sinüzit sonrası ateş, proptoz, göz hareket kısıtlılığı, kemozis ve postseptal inflamasyon orbital selüliti düşündürür. Görmeyi ve intrakraniyal yayılımı tehdit eden bu tabloda hastaneye yatış, intravenöz antibiyotik ve multidisipliner izlem gerekir.",
-    "postAnswerExplanation": "Orbital selülitte proptoz ve göz hareket kısıtlılığı preseptal selülitten ayırıcı ciddi bulgulardır. Sinüzit sonrası ateş, proptoz, göz hareket kısıtlılığı, kemozis ve postseptal inflamasyon orbital selüliti düşündürür. Görmeyi ve intrakraniyal yayılımı tehdit eden bu tabloda hastaneye yatış, intravenöz antibiyotik ve multidisipliner izlem gerekir.",
-    "postAnswerExpandedExplanation": "Orbital selülitte proptoz ve göz hareket kısıtlılığı preseptal selülitten ayırıcı ciddi bulgulardır. Sinüzit sonrası ateş, proptoz, göz hareket kısıtlılığı, kemozis ve postseptal inflamasyon orbital selüliti düşündürür. Görmeyi ve intrakraniyal yayılımı tehdit eden bu tabloda hastaneye yatış, intravenöz antibiyotik ve multidisipliner izlem gerekir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Orbital septum önündeki göz kapağı ve periorbital yumuşak dokuların enfeksiyonudur. Göz hareketleri, görme ve glob pozisyonu genellikle korunur.",
+    "preAnswerSafeDefinition": "Orbital septum önündeki göz kapağı ve periorbital yumuşak dokuların enfeksiyonudur. Göz hareketleri, görme ve glob pozisyonu genellikle korunur.",
+    "shortDefinition": "Orbital septum önündeki göz kapağı ve periorbital yumuşak dokuların enfeksiyonudur. Göz hareketleri, görme ve glob pozisyonu genellikle korunur.",
+    "definition": "Orbital septum önündeki göz kapağı ve periorbital yumuşak dokuların enfeksiyonudur. Göz hareketleri, görme ve glob pozisyonu genellikle korunur.",
+    "detailedExplanation": "Preseptal selülit kapak şişliği ve eritemle seyreder ancak proptoz ve oftalmopleji yapmamalıdır. Orbital bulgu gelişirse acil görüntüleme ve intravenöz tedavi gerekir.",
+    "postAnswerExplanation": "Preseptal selülit kapak şişliği ve eritemle seyreder ancak proptoz ve oftalmopleji yapmamalıdır. Orbital bulgu gelişirse acil görüntüleme ve intravenöz tedavi gerekir.",
+    "postAnswerExpandedExplanation": "Preseptal selülit kapak şişliği ve eritemle seyreder ancak proptoz ve oftalmopleji yapmamalıdır. Orbital bulgu gelişirse acil görüntüleme ve intravenöz tedavi gerekir.",
+    "tusPearl": "Kapak şişliği var ama proptoz/göz hareket kısıtlılığı yoksa preseptal selülit daha olasıdır.",
+    "differentialPoint": "Orbital selülitte postseptal tutulum nedeniyle proptoz, göz hareket ağrısı/kısıtlılığı, kemozis veya görme azalması beklenebilir.",
+    "clinicalRelevance": "Göz acillerinde hangi hastanın yatırılıp ileri değerlendirilmesi gerektiğini ayırt ettirir.",
+    "mechanism": "Lokal deri enfeksiyonu veya sinüs kaynaklı yayılım septum önündeki dokularda sınırlı kalır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -13614,7 +13823,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Preseptal selülit"
+      "Preseptal selülit",
+      "periorbital selülit",
+      "kapak selüliti"
     ],
     "sourceTextExamples": [
       "Orbital selülitte proptoz ve göz hareket kısıtlılığı preseptal selülitten ayırıcı ciddi bulgulardır.",
@@ -13638,7 +13849,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-presinaptik-kalsiyum-kanali-antikorlari",
     "term": "Presinaptik kalsiyum kanalı antikorları",
     "aliases": [
-      "Presinaptik kalsiyum kanalı antikorları"
+      "Presinaptik kalsiyum kanalı antikorları",
+      "P/Q tipi kalsiyum kanal antikoru",
+      "Lambert-Eaton antikoru"
     ],
     "normalizedTerm": "presinaptik kalsiyum kanali antikorlari",
     "TurkishName": "Presinaptik kalsiyum kanalı antikorları",
@@ -13646,17 +13859,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Seroloji / otoantikor",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "shortDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "definition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "detailedExplanation": "Yanlıştır. Presinaptik kalsiyum kanalı antikorları Lambert-Eaton sendromunda görülür. Bu tabloda egzersizle güçte geçici artış görülebilir. Doğru cevap A’dır. Myastenia graviste otoantikorlar postsinaptik asetilkolin reseptörlerini bloke edebilir, kompleman aracılı hasara yol açabilir ve reseptör sayısını azaltabilir. Sonuçta sinaptik iletim güvenlik faktörü düşer; tekrarlayan kullanımda kas güçsüzlüğü...",
-    "postAnswerExplanation": "Yanlıştır. Presinaptik kalsiyum kanalı antikorları Lambert-Eaton sendromunda görülür. Bu tabloda egzersizle güçte geçici artış görülebilir. Doğru cevap A’dır. Myastenia graviste otoantikorlar postsinaptik asetilkolin reseptörlerini bloke edebilir, kompleman aracılı hasara yol açabilir ve reseptör sayısını azaltabilir. Sonuçta sinaptik iletim güvenlik faktörü düşer; tekrarlayan kullanımda kas güçsüzlüğü...",
-    "postAnswerExpandedExplanation": "Yanlıştır. Presinaptik kalsiyum kanalı antikorları Lambert-Eaton sendromunda görülür. Bu tabloda egzersizle güçte geçici artış görülebilir. Doğru cevap A’dır. Myastenia graviste otoantikorlar postsinaptik asetilkolin reseptörlerini bloke edebilir, kompleman aracılı hasara yol açabilir ve reseptör sayısını azaltabilir. Sonuçta sinaptik iletim güvenlik faktörü düşer; tekrarlayan kullanımda kas güçsüzlüğü...",
-    "tusPearl": "Anatomi sorularında terimi yalnız ezberleme; hasar bulgusu, damar/sinir komşuluğu ve cerrahi risk ile birlikte düşün.",
-    "differentialPoint": "Benzer anatomik yapılardan ayırıcı nokta, etkilediği organ alanı veya yaralanınca verdiği klinik bulgudur.",
-    "clinicalRelevance": "Anatomi sorularında terimi yalnız ezberleme; hasar bulgusu, damar/sinir komşuluğu ve cerrahi risk ile birlikte düşün.",
-    "mechanism": "",
+    "previewDefinition": "Nöromüsküler kavşakta presinaptik voltaj kapılı P/Q tipi kalsiyum kanallarına karşı gelişen otoantikorlardır. Lambert-Eaton miyastenik sendromunda asetilkolin salınımı azalır.",
+    "preAnswerSafeDefinition": "Nöromüsküler kavşakta presinaptik voltaj kapılı P/Q tipi kalsiyum kanallarına karşı gelişen otoantikorlardır. Lambert-Eaton miyastenik sendromunda asetilkolin salınımı azalır.",
+    "shortDefinition": "Nöromüsküler kavşakta presinaptik voltaj kapılı P/Q tipi kalsiyum kanallarına karşı gelişen otoantikorlardır. Lambert-Eaton miyastenik sendromunda asetilkolin salınımı azalır.",
+    "definition": "Nöromüsküler kavşakta presinaptik voltaj kapılı P/Q tipi kalsiyum kanallarına karşı gelişen otoantikorlardır. Lambert-Eaton miyastenik sendromunda asetilkolin salınımı azalır.",
+    "detailedExplanation": "Lambert-Eaton’da proksimal güçsüzlük, azalmış refleksler ve kullanım/egzersizle kısa süreli güç artışı görülebilir. Küçük hücreli akciğer kanseriyle paraneoplastik ilişki klasik sınav ipucudur.",
+    "postAnswerExplanation": "Lambert-Eaton’da proksimal güçsüzlük, azalmış refleksler ve kullanım/egzersizle kısa süreli güç artışı görülebilir. Küçük hücreli akciğer kanseriyle paraneoplastik ilişki klasik sınav ipucudur.",
+    "postAnswerExpandedExplanation": "Lambert-Eaton’da proksimal güçsüzlük, azalmış refleksler ve kullanım/egzersizle kısa süreli güç artışı görülebilir. Küçük hücreli akciğer kanseriyle paraneoplastik ilişki klasik sınav ipucudur.",
+    "tusPearl": "Kullanımla güç artışı + presinaptik Ca²⁺ kanal antikoru Lambert-Eaton lehinedir.",
+    "differentialPoint": "Miyastenia graviste postsinaptik ACh reseptörü hedeflenir ve tekrarlayan kullanım güçsüzlüğü artırır.",
+    "clinicalRelevance": "Nöromüsküler kavşak sorularında presinaptik-postsinaptik ayrımı sağlar.",
+    "mechanism": "Kalsiyum girişi azalınca sinaptik veziküllerden asetilkolin salınımı düşer.",
     "relatedBranches": [
       "anatomy",
       "rheumatology",
@@ -13678,12 +13891,12 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Presinaptik kalsiyum kanalı antikorları",
-      "antikor",
-      "kalsiyum"
+      "P/Q tipi kalsiyum kanal antikoru",
+      "Lambert-Eaton antikoru"
     ],
     "sourceTextExamples": [
-      "Yanlıştır. Presinaptik kalsiyum kanalı antikorları Lambert-Eaton sendromunda görülür. Bu tabloda egzersizle güçte geçici artış görülebilir.",
-      "Yanlıştır. Presinaptik kalsiyum kanalı antikorları Lambert-Eaton sendromunda görülür. Bu tabloda egzersizle güçte geçici artış görülebilir."
+      "Presinaptik kalsiyum kanalı antikorları",
+      "Nöromüsküler kavşakta presinaptik voltaj kapılı P/Q tipi kalsiyum kanallarına karşı gelişen otoantikorlardır. Lambert-Eaton miyastenik sendromunda asetilkolin salınımı azalır."
     ],
     "sourceCandidate": {
       "sourceBatch": "batch5-ultradeep",
@@ -13703,7 +13916,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-primer-biliyer-kolanjitte-kolestatik-enzim-paterni",
     "term": "Primer biliyer kolanjitte kolestatik enzim paterni",
     "aliases": [
-      "Primer biliyer kolanjitte kolestatik enzim paterni"
+      "Primer biliyer kolanjitte kolestatik enzim paterni",
+      "PBC kolestaz paterni",
+      "ALP yüksekliği PBC"
     ],
     "normalizedTerm": "primer biliyer kolanjitte kolestatik enzim paterni",
     "TurkishName": "Primer biliyer kolanjitte kolestatik enzim paterni",
@@ -13711,17 +13926,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Tanısal test / karar eşiği",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Primer biliyer kolanjitte kolestatik otoimmün karaciğer hastalığı ile karakteristi Antimitokondriyal antikor özellikle PBC ile güçlü ilişkilidir.",
-    "definition": "Primer biliyer kolanjitte kolestatik otoimmün karaciğer hastalığı ile karakteristi Antimitokondriyal antikor özellikle PBC ile güçlü ilişkilidir.",
-    "detailedExplanation": "Primer biliyer kolanjitte kolestatik otoimmün karaciğer hastalığı ile karakteristi Antimitokondriyal antikor özellikle PBC ile güçlü ilişkilidir. Anti-düz kas antikoru otoimmün hepatitte, anti-LKM1 tip 2 otoimmün hepatitte, p-ANCA ise primer sklerozan kolanjit ve inflamatuvar bağırsak hastalığı bağlamında daha çok düşünülür. Primer biliyer kolanjit küçük intrahepatik safra kanallarını tutan otoimmün kolestatik...",
-    "postAnswerExplanation": "Primer biliyer kolanjitte kolestatik otoimmün karaciğer hastalığı ile karakteristi Antimitokondriyal antikor özellikle PBC ile güçlü ilişkilidir. Anti-düz kas antikoru otoimmün hepatitte, anti-LKM1 tip 2 otoimmün hepatitte, p-ANCA ise primer sklerozan kolanjit ve inflamatuvar bağırsak hastalığı bağlamında daha çok düşünülür. Primer biliyer kolanjit küçük intrahepatik safra kanallarını tutan otoimmün kolestatik...",
-    "postAnswerExpandedExplanation": "Primer biliyer kolanjitte kolestatik otoimmün karaciğer hastalığı ile karakteristi Antimitokondriyal antikor özellikle PBC ile güçlü ilişkilidir. Anti-düz kas antikoru otoimmün hepatitte, anti-LKM1 tip 2 otoimmün hepatitte, p-ANCA ise primer sklerozan kolanjit ve inflamatuvar bağırsak hastalığı bağlamında daha çok düşünülür. Primer biliyer kolanjit küçük intrahepatik safra kanallarını tutan otoimmün kolestatik...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Primer biliyer kolanjitte ALP ve GGT yüksekliğinin transaminazlardan daha baskın olduğu laboratuvar paternidir. Kaşıntı ve antimitokondriyal antikor pozitifliğiyle birlikte tanıyı destekler.",
+    "preAnswerSafeDefinition": "Primer biliyer kolanjitte ALP ve GGT yüksekliğinin transaminazlardan daha baskın olduğu laboratuvar paternidir. Kaşıntı ve antimitokondriyal antikor pozitifliğiyle birlikte tanıyı destekler.",
+    "shortDefinition": "Primer biliyer kolanjitte ALP ve GGT yüksekliğinin transaminazlardan daha baskın olduğu laboratuvar paternidir. Kaşıntı ve antimitokondriyal antikor pozitifliğiyle birlikte tanıyı destekler.",
+    "definition": "Primer biliyer kolanjitte ALP ve GGT yüksekliğinin transaminazlardan daha baskın olduğu laboratuvar paternidir. Kaşıntı ve antimitokondriyal antikor pozitifliğiyle birlikte tanıyı destekler.",
+    "detailedExplanation": "PBC küçük intrahepatik safra kanallarını tutar; bu nedenle kolestatik enzimler ön plandadır. Hastalık ilerledikçe kronik kolestaz, yağda eriyen vitamin eksikliği ve siroz gelişebilir.",
+    "postAnswerExplanation": "PBC küçük intrahepatik safra kanallarını tutar; bu nedenle kolestatik enzimler ön plandadır. Hastalık ilerledikçe kronik kolestaz, yağda eriyen vitamin eksikliği ve siroz gelişebilir.",
+    "postAnswerExpandedExplanation": "PBC küçük intrahepatik safra kanallarını tutar; bu nedenle kolestatik enzimler ön plandadır. Hastalık ilerledikçe kronik kolestaz, yağda eriyen vitamin eksikliği ve siroz gelişebilir.",
+    "tusPearl": "Orta yaş kadın + kaşıntı + ALP/GGT yüksekliği + AMA pozitifliği PBC için klasik kombinasyondur.",
+    "differentialPoint": "Otoimmün hepatitte transaminaz yüksekliği ve anti-düz kas antikoru daha belirgindir; PSC’de p-ANCA ve İBH ilişkisi öne çıkabilir.",
+    "clinicalRelevance": "Karaciğer testlerini hepatoselüler-kolestatik patern olarak yorumlatır.",
+    "mechanism": "Küçük safra kanalı hasarı safra akımını bozar ve kolestatik enzim salınımını artırır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -13734,7 +13949,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Primer biliyer kolanjitte kolestatik enzim paterni"
+      "Primer biliyer kolanjitte kolestatik enzim paterni",
+      "PBC kolestaz paterni",
+      "ALP yüksekliği PBC"
     ],
     "sourceTextExamples": [
       "Primer biliyer kolanjitte kolestatik otoimmün karaciğer hastalığı ile karakteristi",
@@ -13758,7 +13975,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-proksimal-tubul-organik-anyon-sekresyonu-inhibisyonu",
     "term": "Proksimal tübül organik anyon sekresyonu inhibisyonu",
     "aliases": [
-      "Proksimal tübül organik anyon sekresyonu inhibisyonu"
+      "Proksimal tübül organik anyon sekresyonu inhibisyonu",
+      "probenesid etkisi",
+      "organik anyon transport inhibisyonu"
     ],
     "normalizedTerm": "proksimal tubul organik anyon sekresyonu inhibisyonu",
     "TurkishName": "Proksimal tübül organik anyon sekresyonu inhibisyonu",
@@ -13766,17 +13985,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Probenesid renal eliminasyonu azaltır; penisilini metabolize etmez, glomerüler filtrasyonu artırmaz ve diüretik kotransporter blokajı üzerinden etki göstermez.",
-    "definition": "Probenesid renal eliminasyonu azaltır; penisilini metabolize etmez, glomerüler filtrasyonu artırmaz ve diüretik kotransporter blokajı üzerinden etki göstermez.",
-    "detailedExplanation": "Probenesid renal eliminasyonu azaltır; penisilini metabolize etmez, glomerüler filtrasyonu artırmaz ve diüretik kotransporter blokajı üzerinden etki göstermez. Probenesid proksimal tübüldeki organik anyon transport sistemini inhibe eder; penisilin gibi organik anyonların renal tübüler sekresyonu azalır ve plazma düzeyi/yarı ömrü artar. Seçilmelidir; probenesidin klasik etkisi proksimal tübül organik anyon...",
-    "postAnswerExplanation": "Probenesid renal eliminasyonu azaltır; penisilini metabolize etmez, glomerüler filtrasyonu artırmaz ve diüretik kotransporter blokajı üzerinden etki göstermez. Probenesid proksimal tübüldeki organik anyon transport sistemini inhibe eder; penisilin gibi organik anyonların renal tübüler sekresyonu azalır ve plazma düzeyi/yarı ömrü artar. Seçilmelidir; probenesidin klasik etkisi proksimal tübül organik anyon...",
-    "postAnswerExpandedExplanation": "Probenesid renal eliminasyonu azaltır; penisilini metabolize etmez, glomerüler filtrasyonu artırmaz ve diüretik kotransporter blokajı üzerinden etki göstermez. Probenesid proksimal tübüldeki organik anyon transport sistemini inhibe eder; penisilin gibi organik anyonların renal tübüler sekresyonu azalır ve plazma düzeyi/yarı ömrü artar. Seçilmelidir; probenesidin klasik etkisi proksimal tübül organik anyon...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Proksimal tübüldeki organik anyon taşıyıcılarının inhibe edilmesiyle bazı ilaçların tübüler sekresyonunun azalmasıdır. Probenesid penisilin atılımını azaltarak plazma düzeyini artırabilir.",
+    "preAnswerSafeDefinition": "Proksimal tübüldeki organik anyon taşıyıcılarının inhibe edilmesiyle bazı ilaçların tübüler sekresyonunun azalmasıdır. Probenesid penisilin atılımını azaltarak plazma düzeyini artırabilir.",
+    "shortDefinition": "Proksimal tübüldeki organik anyon taşıyıcılarının inhibe edilmesiyle bazı ilaçların tübüler sekresyonunun azalmasıdır. Probenesid penisilin atılımını azaltarak plazma düzeyini artırabilir.",
+    "definition": "Proksimal tübüldeki organik anyon taşıyıcılarının inhibe edilmesiyle bazı ilaçların tübüler sekresyonunun azalmasıdır. Probenesid penisilin atılımını azaltarak plazma düzeyini artırabilir.",
+    "detailedExplanation": "Probenesid OAT taşıyıcılarını inhibe eder ve organik anyonların renal sekresyonunu düşürür. Bu etki tarihsel olarak penisilinin yarı ömrünü uzatmak ve ürik asit atılımını değiştirmek için önemlidir.",
+    "postAnswerExplanation": "Probenesid OAT taşıyıcılarını inhibe eder ve organik anyonların renal sekresyonunu düşürür. Bu etki tarihsel olarak penisilinin yarı ömrünü uzatmak ve ürik asit atılımını değiştirmek için önemlidir.",
+    "postAnswerExpandedExplanation": "Probenesid OAT taşıyıcılarını inhibe eder ve organik anyonların renal sekresyonunu düşürür. Bu etki tarihsel olarak penisilinin yarı ömrünü uzatmak ve ürik asit atılımını değiştirmek için önemlidir.",
+    "tusPearl": "Probenesid penisilini metabolize etmez; proksimal tübülde organik anyon sekresyonunu azaltır.",
+    "differentialPoint": "Loop/tiazid diüretikler sodyum taşıyıcılarını hedefler; probenesid klasik olarak organik anyon transport sistemiyle ilişkilidir.",
+    "clinicalRelevance": "Farmakokinetik sorularında renal tübüler sekresyon ve ilaç etkileşimini açıklar.",
+    "mechanism": "OAT inhibisyonu lümene ilaç taşınmasını azaltır; renal klirens düşer ve plazma maruziyeti artar.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -13789,7 +14008,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Proksimal tübül organik anyon sekresyonu inhibisyonu"
+      "Proksimal tübül organik anyon sekresyonu inhibisyonu",
+      "probenesid etkisi",
+      "organik anyon transport inhibisyonu"
     ],
     "sourceTextExamples": [
       "Probenesid renal eliminasyonu azaltır; penisilini metabolize etmez, glomerüler filtrasyonu artırmaz ve diüretik kotransporter blokajı üzerinden etki göstermez.",
@@ -13879,7 +14100,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-retinoblastom-genetigi",
     "term": "Retinoblastom genetiği",
     "aliases": [
-      "Retinoblastom genetiği"
+      "Retinoblastom genetiği",
+      "RB1 mutasyonu",
+      "iki vuruş hipotezi"
     ],
     "normalizedTerm": "retinoblastom genetigi",
     "TurkishName": "Retinoblastom genetiği",
@@ -13887,17 +14110,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "RB1 kaybı G1/S hücre döngüsü kontrolünü bozar.",
-    "definition": "RB1 kaybı G1/S hücre döngüsü kontrolünü bozar.",
-    "detailedExplanation": "Retinoblastom genetiği RB1 kaybı G1/S hücre döngüsü kontrolünü bozar.",
-    "postAnswerExplanation": "Retinoblastom genetiği RB1 kaybı G1/S hücre döngüsü kontrolünü bozar.",
-    "postAnswerExpandedExplanation": "Retinoblastom genetiği RB1 kaybı G1/S hücre döngüsü kontrolünü bozar.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Retinoblastom çoğunlukla RB1 tümör baskılayıcı geninin iki alelinin fonksiyon kaybıyla gelişir. Kalıtsal olgularda ilk vuruş germline olduğundan bilateral ve erken başlangıç daha olasıdır.",
+    "preAnswerSafeDefinition": "Retinoblastom çoğunlukla RB1 tümör baskılayıcı geninin iki alelinin fonksiyon kaybıyla gelişir. Kalıtsal olgularda ilk vuruş germline olduğundan bilateral ve erken başlangıç daha olasıdır.",
+    "shortDefinition": "Retinoblastom çoğunlukla RB1 tümör baskılayıcı geninin iki alelinin fonksiyon kaybıyla gelişir. Kalıtsal olgularda ilk vuruş germline olduğundan bilateral ve erken başlangıç daha olasıdır.",
+    "definition": "Retinoblastom çoğunlukla RB1 tümör baskılayıcı geninin iki alelinin fonksiyon kaybıyla gelişir. Kalıtsal olgularda ilk vuruş germline olduğundan bilateral ve erken başlangıç daha olasıdır.",
+    "detailedExplanation": "RB1 kaybı G1/S kontrolünü bozar çünkü Rb proteini E2F’yi baskılayamaz. Sporadik olgularda iki somatik vuruş aynı retinal hücre hattında gerçekleşir.",
+    "postAnswerExplanation": "RB1 kaybı G1/S kontrolünü bozar çünkü Rb proteini E2F’yi baskılayamaz. Sporadik olgularda iki somatik vuruş aynı retinal hücre hattında gerçekleşir.",
+    "postAnswerExpandedExplanation": "RB1 kaybı G1/S kontrolünü bozar çünkü Rb proteini E2F’yi baskılayamaz. Sporadik olgularda iki somatik vuruş aynı retinal hücre hattında gerçekleşir.",
+    "tusPearl": "Retinoblastom klasik “two-hit” tümör baskılayıcı gen örneğidir.",
+    "differentialPoint": "Kalıtsal formda bilateral/multifokal tümör ve osteosarkom gibi ikincil malignite riski artar; sporadik form genellikle unilateral olabilir.",
+    "clinicalRelevance": "Genetik ve kanser biyolojisi sorularında tümör baskılayıcı mantığını öğretir.",
+    "mechanism": "RB1 inaktivasyonu Rb-E2F frenini kaldırarak kontrolsüz S fazı girişine izin verir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -13910,7 +14133,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Retinoblastom genetiği"
+      "Retinoblastom genetiği",
+      "RB1 mutasyonu",
+      "iki vuruş hipotezi"
     ],
     "sourceTextExamples": [
       "Retinoblastom genetiği",
@@ -13934,7 +14159,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-retinoblastom-protein-kaybi",
     "term": "Retinoblastom protein kaybı",
     "aliases": [
-      "Retinoblastom protein kaybı"
+      "Retinoblastom protein kaybı",
+      "Rb protein kaybı",
+      "RB1 inaktivasyonu"
     ],
     "normalizedTerm": "retinoblastom protein kaybi",
     "TurkishName": "Retinoblastom protein kaybı",
@@ -13942,17 +14169,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "RB proteini G1 kontrol noktasının merkezi tümör baskılayıcılarından biridir.",
-    "definition": "RB proteini G1 kontrol noktasının merkezi tümör baskılayıcılarından biridir.",
-    "detailedExplanation": "RB proteini G1 kontrol noktasının merkezi tümör baskılayıcılarından biridir. Normalde hipofosforile RB, E2F’yi bağlayarak S fazına geçiş için gerekli genlerin transkripsiyonunu engeller. Siklin D-CDK4/6 aracılı fosforilasyon RB’yi inaktive eder ve E2F kontrollü biçimde serbestleşir. RB geninin kalıcı inaktivasyonunda ise hücre dışı büyüme sinyallerinden bağımsız olarak E2F aktivitesi artar; DNA sentezi programı...",
-    "postAnswerExplanation": "RB proteini G1 kontrol noktasının merkezi tümör baskılayıcılarından biridir. Normalde hipofosforile RB, E2F’yi bağlayarak S fazına geçiş için gerekli genlerin transkripsiyonunu engeller. Siklin D-CDK4/6 aracılı fosforilasyon RB’yi inaktive eder ve E2F kontrollü biçimde serbestleşir. RB geninin kalıcı inaktivasyonunda ise hücre dışı büyüme sinyallerinden bağımsız olarak E2F aktivitesi artar; DNA sentezi programı...",
-    "postAnswerExpandedExplanation": "RB proteini G1 kontrol noktasının merkezi tümör baskılayıcılarından biridir. Normalde hipofosforile RB, E2F’yi bağlayarak S fazına geçiş için gerekli genlerin transkripsiyonunu engeller. Siklin D-CDK4/6 aracılı fosforilasyon RB’yi inaktive eder ve E2F kontrollü biçimde serbestleşir. RB geninin kalıcı inaktivasyonunda ise hücre dışı büyüme sinyallerinden bağımsız olarak E2F aktivitesi artar; DNA sentezi programı...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Rb proteininin E2F’yi baskılayamaması sonucu G1/S kontrol noktasının zayıflamasıdır. Bu kayıp hücre döngüsünde kontrolsüz proliferasyona yol açabilir.",
+    "preAnswerSafeDefinition": "Rb proteininin E2F’yi baskılayamaması sonucu G1/S kontrol noktasının zayıflamasıdır. Bu kayıp hücre döngüsünde kontrolsüz proliferasyona yol açabilir.",
+    "shortDefinition": "Rb proteininin E2F’yi baskılayamaması sonucu G1/S kontrol noktasının zayıflamasıdır. Bu kayıp hücre döngüsünde kontrolsüz proliferasyona yol açabilir.",
+    "definition": "Rb proteininin E2F’yi baskılayamaması sonucu G1/S kontrol noktasının zayıflamasıdır. Bu kayıp hücre döngüsünde kontrolsüz proliferasyona yol açabilir.",
+    "detailedExplanation": "Normalde hipofosforile Rb E2F transkripsiyon faktörünü bağlayarak S fazı genlerini baskılar. Rb kaybolduğunda veya kalıcı inaktive olduğunda E2F aktivitesi artar ve DNA sentezi programı başlar.",
+    "postAnswerExplanation": "Normalde hipofosforile Rb E2F transkripsiyon faktörünü bağlayarak S fazı genlerini baskılar. Rb kaybolduğunda veya kalıcı inaktive olduğunda E2F aktivitesi artar ve DNA sentezi programı başlar.",
+    "postAnswerExpandedExplanation": "Normalde hipofosforile Rb E2F transkripsiyon faktörünü bağlayarak S fazı genlerini baskılar. Rb kaybolduğunda veya kalıcı inaktive olduğunda E2F aktivitesi artar ve DNA sentezi programı başlar.",
+    "tusPearl": "Rb kaybı doğrudan E2F serbestleşmesi ve S fazı genlerinin artışıyla düşünülür.",
+    "differentialPoint": "p53 kaybı DNA hasarlı hücrenin durdurulması/apoptozunu bozar; Rb kaybı G1/S geçiş frenini kaldırır.",
+    "clinicalRelevance": "Hücre döngüsü-onkoloji sorularında Rb’nin tümör baskılayıcı rolünü açıklar.",
+    "mechanism": "Rb-E2F etkileşiminin kaybı DNA replikasyon genlerinin transkripsiyonunu artırır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -13965,7 +14192,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Retinoblastom protein kaybı"
+      "Retinoblastom protein kaybı",
+      "Rb protein kaybı",
+      "RB1 inaktivasyonu"
     ],
     "sourceTextExamples": [
       "RB proteini G1 kontrol noktasının merkezi tümör baskılayıcılarından biridir. Normalde hipofosforile RB, E2F’yi bağlayarak S fazına geçiş için gerekli genlerin transkripsiyonunu engeller.",
@@ -13989,7 +14218,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-s-fazina-gecis-kolaylasmasi",
     "term": "S fazına geçiş kolaylaşması",
     "aliases": [
-      "S fazına geçiş kolaylaşması"
+      "S fazına geçiş kolaylaşması",
+      "G1/S geçişi",
+      "DNA sentez fazına giriş"
     ],
     "normalizedTerm": "s fazina gecis kolaylasmasi",
     "TurkishName": "S fazına geçiş kolaylaşması",
@@ -13997,17 +14228,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Rb-E2F ekseni hücre döngüsü kontrolünün klasik G1-S kapısıdır.",
-    "definition": "Rb-E2F ekseni hücre döngüsü kontrolünün klasik G1-S kapısıdır.",
-    "detailedExplanation": "Rb-E2F ekseni hücre döngüsü kontrolünün klasik G1-S kapısıdır. NF-κB inflamasyon ve sağkalım sinyalleriyle, STAT3 sitokin/büyüme faktörü sinyaliyle, SMAD4 ise TGF-β yoluyla ilişkilidir; Rb’nin doğrudan bağlayıp baskıladığı temel faktör E2F’dir. Hipofosforile Rb, E2F transkripsiyon faktörünü baskılar; Rb’nin fosforilasyonu veya kaybı E2F’yi serbestleştirerek S fazı genlerinin ekspresyonunu artırır. Rb’nin klasik...",
-    "postAnswerExplanation": "Rb-E2F ekseni hücre döngüsü kontrolünün klasik G1-S kapısıdır. NF-κB inflamasyon ve sağkalım sinyalleriyle, STAT3 sitokin/büyüme faktörü sinyaliyle, SMAD4 ise TGF-β yoluyla ilişkilidir; Rb’nin doğrudan bağlayıp baskıladığı temel faktör E2F’dir. Hipofosforile Rb, E2F transkripsiyon faktörünü baskılar; Rb’nin fosforilasyonu veya kaybı E2F’yi serbestleştirerek S fazı genlerinin ekspresyonunu artırır. Rb’nin klasik...",
-    "postAnswerExpandedExplanation": "Rb-E2F ekseni hücre döngüsü kontrolünün klasik G1-S kapısıdır. NF-κB inflamasyon ve sağkalım sinyalleriyle, STAT3 sitokin/büyüme faktörü sinyaliyle, SMAD4 ise TGF-β yoluyla ilişkilidir; Rb’nin doğrudan bağlayıp baskıladığı temel faktör E2F’dir. Hipofosforile Rb, E2F transkripsiyon faktörünü baskılar; Rb’nin fosforilasyonu veya kaybı E2F’yi serbestleştirerek S fazı genlerinin ekspresyonunu artırır. Rb’nin klasik...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Hücrenin G1 fazından DNA sentezinin gerçekleştiği S fazına ilerlemesinin kolaylaşmasıdır. Siklin-CDK aktivitesi ve Rb-E2F ekseni bu geçişin ana düzenleyicileridir.",
+    "preAnswerSafeDefinition": "Hücrenin G1 fazından DNA sentezinin gerçekleştiği S fazına ilerlemesinin kolaylaşmasıdır. Siklin-CDK aktivitesi ve Rb-E2F ekseni bu geçişin ana düzenleyicileridir.",
+    "shortDefinition": "Hücrenin G1 fazından DNA sentezinin gerçekleştiği S fazına ilerlemesinin kolaylaşmasıdır. Siklin-CDK aktivitesi ve Rb-E2F ekseni bu geçişin ana düzenleyicileridir.",
+    "definition": "Hücrenin G1 fazından DNA sentezinin gerçekleştiği S fazına ilerlemesinin kolaylaşmasıdır. Siklin-CDK aktivitesi ve Rb-E2F ekseni bu geçişin ana düzenleyicileridir.",
+    "detailedExplanation": "Siklin D-CDK4/6 Rb’yi fosforile eder; Rb baskısı kalkınca E2F S fazı genlerini aktive eder. Bu kapının kontrolsüz açılması proliferasyon ve kanser biyolojisi açısından kritiktir.",
+    "postAnswerExplanation": "Siklin D-CDK4/6 Rb’yi fosforile eder; Rb baskısı kalkınca E2F S fazı genlerini aktive eder. Bu kapının kontrolsüz açılması proliferasyon ve kanser biyolojisi açısından kritiktir.",
+    "postAnswerExpandedExplanation": "Siklin D-CDK4/6 Rb’yi fosforile eder; Rb baskısı kalkınca E2F S fazı genlerini aktive eder. Bu kapının kontrolsüz açılması proliferasyon ve kanser biyolojisi açısından kritiktir.",
+    "tusPearl": "G1/S geçişinde ana sınav ekseni Siklin D-CDK4/6 → Rb fosforilasyonu → E2F serbestleşmesidir.",
+    "differentialPoint": "G2/M kontrolü DNA replikasyonu tamamlandı mı sorusuna odaklanır; G1/S kontrolü hücrenin DNA sentezine girip girmeyeceğini belirler.",
+    "clinicalRelevance": "Hücre döngüsü sorularında moleküler sıralamayı netleştirir.",
+    "mechanism": "CDK aktivitesi Rb’yi inaktive eder ve E2F aracılı DNA sentez genleri açılır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -14020,7 +14251,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "S fazına geçiş kolaylaşması"
+      "S fazına geçiş kolaylaşması",
+      "G1/S geçişi",
+      "DNA sentez fazına giriş"
     ],
     "sourceTextExamples": [
       "Rb-E2F ekseni hücre döngüsü kontrolünün klasik G1-S kapısıdır. NF-κB inflamasyon ve sağkalım sinyalleriyle, STAT3 sitokin/büyüme faktörü sinyaliyle, SMAD4 ise TGF-β yoluyla ilişkilidir; Rb’nin doğrudan bağlayıp baskıladığı temel faktör E2F’dir.",
@@ -14104,8 +14337,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Sertoli hücreleri sıkı bağlantılarla spermatogenetik hücreleri immün sistemden ayırır.",
+    "preAnswerSafeDefinition": "Sertoli hücreleri sıkı bağlantılarla spermatogenetik hücreleri immün sistemden ayırır.",
     "shortDefinition": "Sertoli hücreleri sıkı bağlantılarla spermatogenetik hücreleri immün sistemden ayırır.",
     "definition": "Sertoli hücreleri sıkı bağlantılarla spermatogenetik hücreleri immün sistemden ayırır.",
     "detailedExplanation": "Sertoli hücresi bariyeri Sertoli hücreleri sıkı bağlantılarla spermatogenetik hücreleri immün sistemden ayırır.",
@@ -14159,7 +14392,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-serum-triptaz-duzeyi",
     "term": "Serum triptaz düzeyi",
     "aliases": [
-      "Serum triptaz düzeyi"
+      "Serum triptaz düzeyi",
+      "triptaz",
+      "mast hücre aktivasyon belirteci"
     ],
     "normalizedTerm": "serum triptaz duzeyi",
     "TurkishName": "Serum triptaz düzeyi",
@@ -14167,17 +14402,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Triptaz mast hücre aktivasyonunu gösterir; klinik acil tedavinin yerini tutmaz.",
-    "definition": "Triptaz mast hücre aktivasyonunu gösterir; klinik acil tedavinin yerini tutmaz.",
-    "detailedExplanation": "Serum triptaz düzeyi. Triptaz mast hücre aktivasyonunu gösterir; klinik acil tedavinin yerini tutmaz.",
-    "postAnswerExplanation": "Serum triptaz düzeyi. Triptaz mast hücre aktivasyonunu gösterir; klinik acil tedavinin yerini tutmaz.",
-    "postAnswerExpandedExplanation": "Serum triptaz düzeyi. Triptaz mast hücre aktivasyonunu gösterir; klinik acil tedavinin yerini tutmaz.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Mast hücre degranülasyonu sonrası kanda artabilen proteaz düzeyidir. Anafilaksi tanısını destekleyebilir ancak acil adrenalin tedavisinin yerine geçmez.",
+    "preAnswerSafeDefinition": "Mast hücre degranülasyonu sonrası kanda artabilen proteaz düzeyidir. Anafilaksi tanısını destekleyebilir ancak acil adrenalin tedavisinin yerine geçmez.",
+    "shortDefinition": "Mast hücre degranülasyonu sonrası kanda artabilen proteaz düzeyidir. Anafilaksi tanısını destekleyebilir ancak acil adrenalin tedavisinin yerine geçmez.",
+    "definition": "Mast hücre degranülasyonu sonrası kanda artabilen proteaz düzeyidir. Anafilaksi tanısını destekleyebilir ancak acil adrenalin tedavisinin yerine geçmez.",
+    "detailedExplanation": "Triptaz özellikle sistemik mast hücre aktivasyonunda yükselir ve olaydan sonraki saatlerde ölçüldüğünde destekleyici bilgi verir. Normal olması anafilaksiyi tamamen dışlamaz; tanı klinikle konur.",
+    "postAnswerExplanation": "Triptaz özellikle sistemik mast hücre aktivasyonunda yükselir ve olaydan sonraki saatlerde ölçüldüğünde destekleyici bilgi verir. Normal olması anafilaksiyi tamamen dışlamaz; tanı klinikle konur.",
+    "postAnswerExpandedExplanation": "Triptaz özellikle sistemik mast hücre aktivasyonunda yükselir ve olaydan sonraki saatlerde ölçüldüğünde destekleyici bilgi verir. Normal olması anafilaksiyi tamamen dışlamaz; tanı klinikle konur.",
+    "tusPearl": "Anafilakside tedavi kliniktir: IM adrenalin geciktirilmez; triptaz destekleyici testtir.",
+    "differentialPoint": "Vazovagal senkopta ürtiker, bronkospazm ve mast hücre belirteci artışı beklenmez; anafilakside çok sistemli bulgu olabilir.",
+    "clinicalRelevance": "Acil alerji sorularında laboratuvarın tedaviyi geciktirmemesi gerektiğini öğretir.",
+    "mechanism": "Aktive mast hücreleri histaminle birlikte triptaz salgılar ve sistemik inflamatuvar yanıtı tetikler.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -14190,7 +14425,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Serum triptaz düzeyi"
+      "Serum triptaz düzeyi",
+      "triptaz",
+      "mast hücre aktivasyon belirteci"
     ],
     "sourceTextExamples": [
       "Serum triptaz düzeyi.",
@@ -14222,8 +14459,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Servikal skuamöz hücreli karsinom, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Servikal skuamöz hücreli karsinom, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Servikal skuamöz hücreli karsinom, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Servikal skuamöz hücreli karsinom, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Servikal skuamöz hücreli karsinom Postmenopozal vajinal kanama, obezite, hipertansiyon, diyabet ve nulliparite endometrium adenokarsinomu açısından risk oluşturur. Artmış endometrium kalınlığı ve biyopside invaziv endometrioid adenokarsinom tanıyı destekler; patogenezde karşılanmamış östrojen etkisi önemlidir.",
@@ -14278,8 +14515,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Silikozis, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Silikozis, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Silikozis, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Silikozis, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Silikozis Silika maruziyeti üst lob fibrozisi ve tüberküloz riskinde artışla ilişkilidir.",
@@ -14323,7 +14560,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-sol-varikosel-anatomisi",
     "term": "Sol varikosel anatomisi",
     "aliases": [
-      "Sol varikosel anatomisi"
+      "Sol varikosel anatomisi",
+      "sol testiküler ven drenajı",
+      "sol pampiniform pleksus"
     ],
     "normalizedTerm": "sol varikosel anatomisi",
     "TurkishName": "Sol varikosel anatomisi",
@@ -14331,17 +14570,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Sol testiküler ven önce sol renal vene açılır; bu anatomik drenaj basınç artışına yatkınlık oluşturur.",
-    "definition": "Sol testiküler ven önce sol renal vene açılır; bu anatomik drenaj basınç artışına yatkınlık oluşturur.",
-    "detailedExplanation": "Sol varikosel anatomisi Sol testiküler ven önce sol renal vene açılır; bu anatomik drenaj basınç artışına yatkınlık oluşturur.",
-    "postAnswerExplanation": "Sol varikosel anatomisi Sol testiküler ven önce sol renal vene açılır; bu anatomik drenaj basınç artışına yatkınlık oluşturur.",
-    "postAnswerExpandedExplanation": "Sol varikosel anatomisi Sol testiküler ven önce sol renal vene açılır; bu anatomik drenaj basınç artışına yatkınlık oluşturur.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Sol testiküler venin dik açıyla sol renal vene drene olması nedeniyle sol tarafta varikoselin daha sık görülmesini açıklayan anatomidir. Artan venöz basınç pampiniform pleksusta dilatasyon yapar.",
+    "preAnswerSafeDefinition": "Sol testiküler venin dik açıyla sol renal vene drene olması nedeniyle sol tarafta varikoselin daha sık görülmesini açıklayan anatomidir. Artan venöz basınç pampiniform pleksusta dilatasyon yapar.",
+    "shortDefinition": "Sol testiküler venin dik açıyla sol renal vene drene olması nedeniyle sol tarafta varikoselin daha sık görülmesini açıklayan anatomidir. Artan venöz basınç pampiniform pleksusta dilatasyon yapar.",
+    "definition": "Sol testiküler venin dik açıyla sol renal vene drene olması nedeniyle sol tarafta varikoselin daha sık görülmesini açıklayan anatomidir. Artan venöz basınç pampiniform pleksusta dilatasyon yapar.",
+    "detailedExplanation": "Sağ testiküler ven doğrudan vena kavaya açılırken sol testiküler ven sol renal vene açılır. Bu drenaj farkı ve renal ven basıncı sol varikosel yatkınlığını artırır.",
+    "postAnswerExplanation": "Sağ testiküler ven doğrudan vena kavaya açılırken sol testiküler ven sol renal vene açılır. Bu drenaj farkı ve renal ven basıncı sol varikosel yatkınlığını artırır.",
+    "postAnswerExpandedExplanation": "Sağ testiküler ven doğrudan vena kavaya açılırken sol testiküler ven sol renal vene açılır. Bu drenaj farkı ve renal ven basıncı sol varikosel yatkınlığını artırır.",
+    "tusPearl": "Varikosel en sık soldadır; ani sağ varikosel veya yatınca kaybolmayan varikosel retroperitoneal kitle açısından uyarıcıdır.",
+    "differentialPoint": "Hidrosel sıvı koleksiyonudur ve transilluminasyon verebilir; varikosel “solucan torbası” şeklinde venöz genişlemedir.",
+    "clinicalRelevance": "Üroloji-anatomi sorularında venöz drenajın klinik sonucunu gösterir.",
+    "mechanism": "Venöz drenaj açısı ve basınç artışı pampiniform pleksusta venöz dilatasyon oluşturur.",
     "relatedBranches": [
       "anatomy"
     ],
@@ -14354,7 +14593,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Sol varikosel anatomisi"
+      "Sol varikosel anatomisi",
+      "sol testiküler ven drenajı",
+      "sol pampiniform pleksus"
     ],
     "sourceTextExamples": [
       "Sol varikosel anatomisi",
@@ -14378,7 +14619,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-soguk-nodul",
     "term": "Soğuk nodül",
     "aliases": [
-      "Soğuk nodül"
+      "Soğuk nodül",
+      "hipofonksiyonel tiroid nodülü",
+      "cold thyroid nodule"
     ],
     "normalizedTerm": "soguk nodul",
     "TurkishName": "Soğuk nodül",
@@ -14386,17 +14629,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir.",
-    "definition": "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir.",
-    "detailedExplanation": "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir. USG özelliklerine göre ince iğne aspirasyon kararı verilir.",
-    "postAnswerExplanation": "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir. USG özelliklerine göre ince iğne aspirasyon kararı verilir.",
-    "postAnswerExpandedExplanation": "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir. USG özelliklerine göre ince iğne aspirasyon kararı verilir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Tiroid sintigrafisinde çevre dokuya göre radyoaktif iyot/teknesyum tutmayan veya az tutan nodüldür. Malignite riski sıcak nodüle göre daha yüksektir ancak karar ultrason özellikleri ve boyuta göre verilir.",
+    "preAnswerSafeDefinition": "Tiroid sintigrafisinde çevre dokuya göre radyoaktif iyot/teknesyum tutmayan veya az tutan nodüldür. Malignite riski sıcak nodüle göre daha yüksektir ancak karar ultrason özellikleri ve boyuta göre verilir.",
+    "shortDefinition": "Tiroid sintigrafisinde çevre dokuya göre radyoaktif iyot/teknesyum tutmayan veya az tutan nodüldür. Malignite riski sıcak nodüle göre daha yüksektir ancak karar ultrason özellikleri ve boyuta göre verilir.",
+    "definition": "Tiroid sintigrafisinde çevre dokuya göre radyoaktif iyot/teknesyum tutmayan veya az tutan nodüldür. Malignite riski sıcak nodüle göre daha yüksektir ancak karar ultrason özellikleri ve boyuta göre verilir.",
+    "detailedExplanation": "Soğuk nodül hormon üretmez; düşük TSH varsa sintigrafi sıcak-soğuk ayrımı için kullanılır. Şüpheli USG bulguları varsa ince iğne aspirasyon biyopsisi değerlendirilir.",
+    "postAnswerExplanation": "Soğuk nodül hormon üretmez; düşük TSH varsa sintigrafi sıcak-soğuk ayrımı için kullanılır. Şüpheli USG bulguları varsa ince iğne aspirasyon biyopsisi değerlendirilir.",
+    "postAnswerExpandedExplanation": "Soğuk nodül hormon üretmez; düşük TSH varsa sintigrafi sıcak-soğuk ayrımı için kullanılır. Şüpheli USG bulguları varsa ince iğne aspirasyon biyopsisi değerlendirilir.",
+    "tusPearl": "Soğuk nodül malignite açısından daha dikkatli değerlendirilir; sıcak nodül genellikle malign değildir.",
+    "differentialPoint": "Sıcak nodül otonom hormon üretimiyle TSH baskılanması yapabilir; soğuk nodül fonksiyon göstermeyen lezyondur.",
+    "clinicalRelevance": "Tiroid nodülü algoritmasında sintigrafi sonucunu doğru yorumlatır.",
+    "mechanism": "Nodül iyot/teknesyum tutmadığında sintigrafide çevre tiroid dokusuna göre düşük aktivite gösterir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -14409,7 +14652,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Soğuk nodül"
+      "Soğuk nodül",
+      "hipofonksiyonel tiroid nodülü",
+      "cold thyroid nodule"
     ],
     "sourceTextExamples": [
       "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir.",
@@ -14433,7 +14678,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-subepidermal-gergin-bul",
     "term": "Subepidermal gergin bül",
     "aliases": [
-      "Subepidermal gergin bül"
+      "Subepidermal gergin bül",
+      "büllöz pemfigoid bülü",
+      "gergin bül"
     ],
     "normalizedTerm": "subepidermal gergin bul",
     "TurkishName": "Subepidermal gergin bül",
@@ -14441,17 +14688,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "shortDefinition": "Subepidermal gergin bül, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
-    "definition": "Subepidermal gergin bül, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
-    "detailedExplanation": "Doğru cevap A’dır. Pemfigus vulgariste desmoglein 1 ve/veya desmoglein 3’e karşı IgG otoantikorları keratinositler arası adezyonu bozar; buna akantoliz denir. Bül intraepidermaldir, sıklıkla flasid karakterdedir ve mukozal tutulum görülebilir. Büllöz pemfigoidde hedef hemidesmozomal proteinlerdir; dermoepidermal bileşke etkilenir ve subepidermal, daha gergin büller oluşur. Bu nedenle desmozom-hemidesmozom,...",
-    "postAnswerExplanation": "Doğru cevap A’dır. Pemfigus vulgariste desmoglein 1 ve/veya desmoglein 3’e karşı IgG otoantikorları keratinositler arası adezyonu bozar; buna akantoliz denir. Bül intraepidermaldir, sıklıkla flasid karakterdedir ve mukozal tutulum görülebilir. Büllöz pemfigoidde hedef hemidesmozomal proteinlerdir; dermoepidermal bileşke etkilenir ve subepidermal, daha gergin büller oluşur. Bu nedenle desmozom-hemidesmozom,...",
-    "postAnswerExpandedExplanation": "Doğru cevap A’dır. Pemfigus vulgariste desmoglein 1 ve/veya desmoglein 3’e karşı IgG otoantikorları keratinositler arası adezyonu bozar; buna akantoliz denir. Bül intraepidermaldir, sıklıkla flasid karakterdedir ve mukozal tutulum görülebilir. Büllöz pemfigoidde hedef hemidesmozomal proteinlerdir; dermoepidermal bileşke etkilenir ve subepidermal, daha gergin büller oluşur. Bu nedenle desmozom-hemidesmozom,...",
-    "tusPearl": "Patoloji sorusunda morfoloji + immünfenotip + klinik bağlam birlikte okunmalıdır.",
-    "differentialPoint": "Benzer hastalıklardan ayrım, hücre tipi, boyanma paterni, genetik değişiklik veya eşlik eden klinik bulgudur.",
-    "clinicalRelevance": "Patoloji sorusunda morfoloji + immünfenotip + klinik bağlam birlikte okunmalıdır.",
-    "mechanism": "",
+    "previewDefinition": "Dermoepidermal bileşke düzeyinde ayrışma sonucu oluşan, çatısı sağlam olduğu için gergin görünen bül tipidir. Büllöz pemfigoid için klasik histolojik-klinik paternlerden biridir.",
+    "preAnswerSafeDefinition": "Dermoepidermal bileşke düzeyinde ayrışma sonucu oluşan, çatısı sağlam olduğu için gergin görünen bül tipidir. Büllöz pemfigoid için klasik histolojik-klinik paternlerden biridir.",
+    "shortDefinition": "Dermoepidermal bileşke düzeyinde ayrışma sonucu oluşan, çatısı sağlam olduğu için gergin görünen bül tipidir. Büllöz pemfigoid için klasik histolojik-klinik paternlerden biridir.",
+    "definition": "Dermoepidermal bileşke düzeyinde ayrışma sonucu oluşan, çatısı sağlam olduğu için gergin görünen bül tipidir. Büllöz pemfigoid için klasik histolojik-klinik paternlerden biridir.",
+    "detailedExplanation": "Büllöz pemfigoidde hemidesmozomal BP180/BP230 antijenlerine karşı IgG ve kompleman birikimi subepidermal bül oluşturur. Yaşlı hastada kaşıntılı, gergin büller ve genellikle daha az mukozal tutulum beklenir.",
+    "postAnswerExplanation": "Büllöz pemfigoidde hemidesmozomal BP180/BP230 antijenlerine karşı IgG ve kompleman birikimi subepidermal bül oluşturur. Yaşlı hastada kaşıntılı, gergin büller ve genellikle daha az mukozal tutulum beklenir.",
+    "postAnswerExpandedExplanation": "Büllöz pemfigoidde hemidesmozomal BP180/BP230 antijenlerine karşı IgG ve kompleman birikimi subepidermal bül oluşturur. Yaşlı hastada kaşıntılı, gergin büller ve genellikle daha az mukozal tutulum beklenir.",
+    "tusPearl": "Gergin subepidermal bül + lineer IgG/C3 = büllöz pemfigoid.",
+    "differentialPoint": "Pemfigus vulgariste desmoglein antikorları akantoliz yapar; bül intraepidermal ve flasiddir, mukozal tutulum daha sıktır.",
+    "clinicalRelevance": "Dermatopatoloji sorularında bül düzeyi ve immün birikim paternini ayırır.",
+    "mechanism": "Hemidesmozom hasarı epidermisi dermisten ayırır; bül çatısı kalın olduğu için gergin görünür.",
     "relatedBranches": [
       "hematology",
       "oncology"
@@ -14465,11 +14712,14 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Subepidermal gergin bül"
+      "Subepidermal gergin bül",
+      "büllöz pemfigoid bülü",
+      "gergin bül"
     ],
     "sourceTextExamples": [
-      "Doğru cevap A’dır. Pemfigus vulgariste desmoglein 1 ve/veya desmoglein 3’e karşı IgG otoantikorları keratinositler arası adezyonu bozar; buna akantoliz denir. Bül intraepidermaldir, sıklıkla flasid karakterdedir ve mukozal tutulum görülebilir.",
-      "Pemfigus vulgaris = desmoglein/desmozom + intraepidermal flasid bül + mukozal tutulum; büllöz pemfigoid = hemidesmozom + subepidermal gergin bül."
+      "Pemfigus vulgaris = desmoglein/desmozom + intraepidermal flasid bül + mukozal tutulum; büllöz pemfigoid = hemidesmozom + subepidermal gergin bül.",
+      "Subepidermal gergin bül",
+      "Dermoepidermal bileşke düzeyinde ayrışma sonucu oluşan, çatısı sağlam olduğu için gergin görünen bül tipidir. Büllöz pemfigoid için klasik histolojik-klinik paternlerden biridir."
     ],
     "sourceCandidate": {
       "sourceBatch": "batch5-ultradeep",
@@ -14497,8 +14747,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Anatomik ilişki",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Trendelenburg bulgusunu superior gluteal sinir hasarıyla ilişkilendirebilme Tek ayak duruşunda karşı pelvisin düşmesi Trendelenburg bulgusudur ve stance tarafındaki kalça abduktorlarının yetersizliğini gösterir.",
+    "preAnswerSafeDefinition": "Trendelenburg bulgusunu superior gluteal sinir hasarıyla ilişkilendirebilme Tek ayak duruşunda karşı pelvisin düşmesi Trendelenburg bulgusudur ve stance tarafındaki kalça abduktorlarının yetersizliğini gösterir.",
     "shortDefinition": "Trendelenburg bulgusunu superior gluteal sinir hasarıyla ilişkilendirebilme Tek ayak duruşunda karşı pelvisin düşmesi Trendelenburg bulgusudur ve stance tarafındaki kalça abduktorlarının yetersizliğini gösterir.",
     "definition": "Trendelenburg bulgusunu superior gluteal sinir hasarıyla ilişkilendirebilme Tek ayak duruşunda karşı pelvisin düşmesi Trendelenburg bulgusudur ve stance tarafındaki kalça abduktorlarının yetersizliğini gösterir.",
     "detailedExplanation": "Trendelenburg bulgusunu superior gluteal sinir hasarıyla ilişkilendirebilme Tek ayak duruşunda karşı pelvisin düşmesi Trendelenburg bulgusudur ve stance tarafındaki kalça abduktorlarının yetersizliğini gösterir. Musculus gluteus medius ve musculus gluteus minimus kaslarını nervus gluteus superior innerve eder; bu sinirin hasarı kalça stabilitesini bozar.",
@@ -14561,8 +14811,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Anatomik ilişki",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Süperior mezenterik arter midgut türevlerini besleyen ana damardır.",
+    "preAnswerSafeDefinition": "Süperior mezenterik arter midgut türevlerini besleyen ana damardır.",
     "shortDefinition": "Süperior mezenterik arter midgut türevlerini besleyen ana damardır.",
     "definition": "Süperior mezenterik arter midgut türevlerini besleyen ana damardır.",
     "detailedExplanation": "Süperior mezenterik arter alanı Süperior mezenterik arter midgut türevlerini besleyen ana damardır.",
@@ -14616,7 +14866,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-sicak-nodul",
     "term": "Sıcak nodül",
     "aliases": [
-      "Sıcak nodül"
+      "Sıcak nodül",
+      "hiperfonksiyonel tiroid nodülü",
+      "hot thyroid nodule"
     ],
     "normalizedTerm": "sicak nodul",
     "TurkishName": "Sıcak nodül",
@@ -14624,17 +14876,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir.",
-    "definition": "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir.",
-    "detailedExplanation": "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir. USG özelliklerine göre ince iğne aspirasyon kararı verilir.",
-    "postAnswerExplanation": "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir. USG özelliklerine göre ince iğne aspirasyon kararı verilir.",
-    "postAnswerExpandedExplanation": "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir. USG özelliklerine göre ince iğne aspirasyon kararı verilir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Tiroid sintigrafisinde çevre dokuya göre artmış radyoaktif madde tutan, otonom hormon üretebilen nodüldür. Malignite olasılığı soğuk nodüle göre düşüktür.",
+    "preAnswerSafeDefinition": "Tiroid sintigrafisinde çevre dokuya göre artmış radyoaktif madde tutan, otonom hormon üretebilen nodüldür. Malignite olasılığı soğuk nodüle göre düşüktür.",
+    "shortDefinition": "Tiroid sintigrafisinde çevre dokuya göre artmış radyoaktif madde tutan, otonom hormon üretebilen nodüldür. Malignite olasılığı soğuk nodüle göre düşüktür.",
+    "definition": "Tiroid sintigrafisinde çevre dokuya göre artmış radyoaktif madde tutan, otonom hormon üretebilen nodüldür. Malignite olasılığı soğuk nodüle göre düşüktür.",
+    "detailedExplanation": "Sıcak nodül düşük TSH ve hipertiroidi bulgularıyla ilişkili olabilir. Bu durumda öncelik malignite biyopsisinden çok hipertiroidinin fonksiyonel nedenini ortaya koymaktır.",
+    "postAnswerExplanation": "Sıcak nodül düşük TSH ve hipertiroidi bulgularıyla ilişkili olabilir. Bu durumda öncelik malignite biyopsisinden çok hipertiroidinin fonksiyonel nedenini ortaya koymaktır.",
+    "postAnswerExpandedExplanation": "Sıcak nodül düşük TSH ve hipertiroidi bulgularıyla ilişkili olabilir. Bu durumda öncelik malignite biyopsisinden çok hipertiroidinin fonksiyonel nedenini ortaya koymaktır.",
+    "tusPearl": "Düşük TSH’lı nodülde sintigrafi yapılır; sıcak nodül çoğu kez biyopsi gerektiren malignite paterninden uzaktır.",
+    "differentialPoint": "Soğuk nodül hormon üretmez ve malignite riski daha yüksektir; sıcak nodül otonom fonksiyon gösterir.",
+    "clinicalRelevance": "Tiroid nodülü sorularında TSH-sintigrafi-FNAB sıralamasını öğretir.",
+    "mechanism": "Otonom tiroid hücreleri TSH’dan bağımsız iyot/teknesyum tutar ve hormon sentezleyebilir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -14647,7 +14899,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Sıcak nodül"
+      "Sıcak nodül",
+      "hiperfonksiyonel tiroid nodülü",
+      "hot thyroid nodule"
     ],
     "sourceTextExamples": [
       "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir."
@@ -14678,8 +14932,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "TTP patogenezi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "TTP patogenezi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "TTP patogenezi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "TTP patogenezi, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "TTP patogenezi VWF multimerleri parçalanamaz ve mikrotrombüs oluşumu artar.",
@@ -14803,8 +15057,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Tanısal test / karar eşiği",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Dalgalanan oküler ve proksimal kas güçsüzlüğü, dinlenmeyle düzelme, dekrement yanıt ve asetilkolin reseptör antikor pozitifliği miyastenia gravis ile uyumludur.",
+    "preAnswerSafeDefinition": "Dalgalanan oküler ve proksimal kas güçsüzlüğü, dinlenmeyle düzelme, dekrement yanıt ve asetilkolin reseptör antikor pozitifliği miyastenia gravis ile uyumludur.",
     "shortDefinition": "Dalgalanan oküler ve proksimal kas güçsüzlüğü, dinlenmeyle düzelme, dekrement yanıt ve asetilkolin reseptör antikor pozitifliği miyastenia gravis ile uyumludur.",
     "definition": "Dalgalanan oküler ve proksimal kas güçsüzlüğü, dinlenmeyle düzelme, dekrement yanıt ve asetilkolin reseptör antikor pozitifliği miyastenia gravis ile uyumludur.",
     "detailedExplanation": "Tekrarlayan sinir uyarım testi Dalgalanan oküler ve proksimal kas güçsüzlüğü, dinlenmeyle düzelme, dekrement yanıt ve asetilkolin reseptör antikor pozitifliği miyastenia gravis ile uyumludur. Temel mekanizma postsinaptik nikotinik asetilkolin reseptörlerinin otoantikorlarla hedeflenmesi ve nöromüsküler iletimin azalmasıdır.",
@@ -14867,8 +15121,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Biyokimya / Genetik / Metabolizma",
     "subcategory": "Enzim/genetik defekt",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Metabolik yolak, enzim defekti veya kalıtım ilişkisiyle kullanılan güvenli bir kavramdır.",
+    "previewDefinition": "Tip I kollajen kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
+    "preAnswerSafeDefinition": "Tip I kollajen kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "shortDefinition": "Tip I kollajen kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "definition": "Tip I kollajen kusuru, enzim/kofaktör/genetik defekt ile biriken veya azalan metabolitin eşleştirilmesini sağlayan biyokimyasal kavramdır.",
     "detailedExplanation": "Tip I kollajen kusuru. Osteogenezis imperfektada kemik matriksinin ana kollajeni etkilenir.",
@@ -14923,8 +15177,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Tip II pnömositler surfaktan sentezler ve alveoler epitelin yenilenmesinde progenitör rol oynar.",
+    "preAnswerSafeDefinition": "Tip II pnömositler surfaktan sentezler ve alveoler epitelin yenilenmesinde progenitör rol oynar.",
     "shortDefinition": "Tip II pnömositler surfaktan sentezler ve alveoler epitelin yenilenmesinde progenitör rol oynar.",
     "definition": "Tip II pnömositler surfaktan sentezler ve alveoler epitelin yenilenmesinde progenitör rol oynar.",
     "detailedExplanation": "Tip II pnömosit lameller cisimcikler Tip II pnömositler surfaktan sentezler ve alveoler epitelin yenilenmesinde progenitör rol oynar.",
@@ -14978,7 +15232,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-tiroid-ince-igne-aspirasyon-biyopsisi",
     "term": "Tiroid ince iğne aspirasyon biyopsisi",
     "aliases": [
-      "Tiroid ince iğne aspirasyon biyopsisi"
+      "Tiroid ince iğne aspirasyon biyopsisi",
+      "tiroid İİAB",
+      "tiroid FNAB"
     ],
     "normalizedTerm": "tiroid ince igne aspirasyon biyopsisi",
     "TurkishName": "Tiroid ince iğne aspirasyon biyopsisi",
@@ -14986,17 +15242,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Tiroid nodülünde malignite şüphesinde ince iğne aspirasyon biyopsisini seçebilme Sert düzensiz tiroid nodülü, mikrokalsifikasyon, hipoekojenite, radyasyon ve aile öyküsü malignite riskini artırır.",
-    "definition": "Tiroid nodülünde malignite şüphesinde ince iğne aspirasyon biyopsisini seçebilme Sert düzensiz tiroid nodülü, mikrokalsifikasyon, hipoekojenite, radyasyon ve aile öyküsü malignite riskini artırır.",
-    "detailedExplanation": "Tiroid nodülünde malignite şüphesinde ince iğne aspirasyon biyopsisini seçebilme Sert düzensiz tiroid nodülü, mikrokalsifikasyon, hipoekojenite, radyasyon ve aile öyküsü malignite riskini artırır. Uygun boyut ve şüpheli ultrason özellikleri varlığında tanısal yaklaşım ultrason eşliğinde ince iğne aspirasyon biyopsisidir.",
-    "postAnswerExplanation": "Tiroid nodülünde malignite şüphesinde ince iğne aspirasyon biyopsisini seçebilme Sert düzensiz tiroid nodülü, mikrokalsifikasyon, hipoekojenite, radyasyon ve aile öyküsü malignite riskini artırır. Uygun boyut ve şüpheli ultrason özellikleri varlığında tanısal yaklaşım ultrason eşliğinde ince iğne aspirasyon biyopsisidir.",
-    "postAnswerExpandedExplanation": "Tiroid nodülünde malignite şüphesinde ince iğne aspirasyon biyopsisini seçebilme Sert düzensiz tiroid nodülü, mikrokalsifikasyon, hipoekojenite, radyasyon ve aile öyküsü malignite riskini artırır. Uygun boyut ve şüpheli ultrason özellikleri varlığında tanısal yaklaşım ultrason eşliğinde ince iğne aspirasyon biyopsisidir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Tiroid nodülünden sitolojik değerlendirme için ince iğneyle hücre örneği alınmasıdır. Şüpheli ultrason bulguları ve uygun boyut eşiği varsa malignite değerlendirmesinde temel testtir.",
+    "preAnswerSafeDefinition": "Tiroid nodülünden sitolojik değerlendirme için ince iğneyle hücre örneği alınmasıdır. Şüpheli ultrason bulguları ve uygun boyut eşiği varsa malignite değerlendirmesinde temel testtir.",
+    "shortDefinition": "Tiroid nodülünden sitolojik değerlendirme için ince iğneyle hücre örneği alınmasıdır. Şüpheli ultrason bulguları ve uygun boyut eşiği varsa malignite değerlendirmesinde temel testtir.",
+    "definition": "Tiroid nodülünden sitolojik değerlendirme için ince iğneyle hücre örneği alınmasıdır. Şüpheli ultrason bulguları ve uygun boyut eşiği varsa malignite değerlendirmesinde temel testtir.",
+    "detailedExplanation": "Mikrokalsifikasyon, düzensiz sınır, hipoekojenite, taller-than-wide görünüm ve patolojik lenf nodu malignite riskini artırır. FNAB kararı TSH, sintigrafi gerekliliği ve USG risk paternine göre verilir.",
+    "postAnswerExplanation": "Mikrokalsifikasyon, düzensiz sınır, hipoekojenite, taller-than-wide görünüm ve patolojik lenf nodu malignite riskini artırır. FNAB kararı TSH, sintigrafi gerekliliği ve USG risk paternine göre verilir.",
+    "postAnswerExpandedExplanation": "Mikrokalsifikasyon, düzensiz sınır, hipoekojenite, taller-than-wide görünüm ve patolojik lenf nodu malignite riskini artırır. FNAB kararı TSH, sintigrafi gerekliliği ve USG risk paternine göre verilir.",
+    "tusPearl": "Tiroid nodülünde ilk değerlendirme TSH + USG; FNAB kararı sıcak/soğuk ayrımı ve USG riskine göre verilir.",
+    "differentialPoint": "Düşük TSH varsa önce sintigrafiyle sıcak nodül araştırılır; sıcak nodül çoğu kez FNAB öncelikli değildir.",
+    "clinicalRelevance": "Tiroid nodülü algoritmasında gereksiz biyopsi ile gerekli biyopsiyi ayırır.",
+    "mechanism": "İğne aspirasyonu sitolojik atipi, papiller nükleer özellikler veya malignite şüphesini değerlendirmeye yarar.",
     "relatedBranches": [
       "endocrinology"
     ],
@@ -15014,7 +15270,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Tiroid ince iğne aspirasyon biyopsisi",
-      "biyopsi"
+      "tiroid İİAB",
+      "tiroid FNAB"
     ],
     "sourceTextExamples": [
       "Tiroid nodülünde malignite şüphesinde ince iğne aspirasyon biyopsisini seçebilme",
@@ -15038,7 +15295,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-tiroid-sintigrafisi",
     "term": "Tiroid sintigrafisi",
     "aliases": [
-      "Tiroid sintigrafisi"
+      "Tiroid sintigrafisi",
+      "tiroid uptake sintigrafisi",
+      "radyoaktif iyot sintigrafisi"
     ],
     "normalizedTerm": "tiroid sintigrafisi",
     "TurkishName": "Tiroid sintigrafisi",
@@ -15046,17 +15305,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir.",
-    "definition": "düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir.",
-    "detailedExplanation": "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir. USG özelliklerine göre ince iğne aspirasyon kararı verilir.",
-    "postAnswerExplanation": "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir. USG özelliklerine göre ince iğne aspirasyon kararı verilir.",
-    "postAnswerExpandedExplanation": "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir. USG özelliklerine göre ince iğne aspirasyon kararı verilir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Tiroid dokusunun radyoaktif iyot veya teknesyum tutulumunu gösteren fonksiyonel görüntüleme testidir. Nodülde özellikle TSH düşükse sıcak-soğuk ayrımı için kullanılır.",
+    "preAnswerSafeDefinition": "Tiroid dokusunun radyoaktif iyot veya teknesyum tutulumunu gösteren fonksiyonel görüntüleme testidir. Nodülde özellikle TSH düşükse sıcak-soğuk ayrımı için kullanılır.",
+    "shortDefinition": "Tiroid dokusunun radyoaktif iyot veya teknesyum tutulumunu gösteren fonksiyonel görüntüleme testidir. Nodülde özellikle TSH düşükse sıcak-soğuk ayrımı için kullanılır.",
+    "definition": "Tiroid dokusunun radyoaktif iyot veya teknesyum tutulumunu gösteren fonksiyonel görüntüleme testidir. Nodülde özellikle TSH düşükse sıcak-soğuk ayrımı için kullanılır.",
+    "detailedExplanation": "Tiroid nodülünde her hastaya ilk test sintigrafi değildir; ultrason ve TSH değerlendirmesi önceliklidir. Düşük TSH otonom fonksiyon olasılığını artırdığı için sintigrafi anlam kazanır.",
+    "postAnswerExplanation": "Tiroid nodülünde her hastaya ilk test sintigrafi değildir; ultrason ve TSH değerlendirmesi önceliklidir. Düşük TSH otonom fonksiyon olasılığını artırdığı için sintigrafi anlam kazanır.",
+    "postAnswerExpandedExplanation": "Tiroid nodülünde her hastaya ilk test sintigrafi değildir; ultrason ve TSH değerlendirmesi önceliklidir. Düşük TSH otonom fonksiyon olasılığını artırdığı için sintigrafi anlam kazanır.",
+    "tusPearl": "Tiroid nodülünde TSH düşükse sintigrafi; TSH normal/yüksekse USG riskine göre FNAB düşünülür.",
+    "differentialPoint": "Ultrason anatomik ve malignite risk özelliklerini gösterir; sintigrafi nodülün fonksiyonel sıcak/soğuk durumunu gösterir.",
+    "clinicalRelevance": "Endokrin algoritma sorularında test sıralamasını netleştirir.",
+    "mechanism": "Fonksiyonel tiroid hücreleri iyot/teknesyum tutar; otonom nodül artmış tutulum gösterir.",
     "relatedBranches": [
       "endocrinology"
     ],
@@ -15069,7 +15328,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Tiroid sintigrafisi"
+      "Tiroid sintigrafisi",
+      "tiroid uptake sintigrafisi",
+      "radyoaktif iyot sintigrafisi"
     ],
     "sourceTextExamples": [
       "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir."
@@ -15092,7 +15353,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-trismus",
     "term": "Trismus",
     "aliases": [
-      "Trismus"
+      "Trismus",
+      "çene kilitlenmesi",
+      "ağız açmada kısıtlılık"
     ],
     "normalizedTerm": "trismus",
     "TurkishName": "Trismus",
@@ -15100,17 +15363,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": ", risus sardonicus görünümü ve uyarıyla artan yaygın kas spazmları izlenir.",
-    "definition": ", risus sardonicus görünümü ve uyarıyla artan yaygın kas spazmları izlenir.",
-    "detailedExplanation": "Trismus, risus sardonicus görünümü ve uyarıyla artan yaygın kas spazmları izlenir. Kirli derin yara sonrası trismus ve uyarıyla artan yaygın kas spazmları tetanoz tablosunu düşündürür. Tetanospazmin merkezi sinir sisteminde inhibitör internöronlara taşınır ve gama-aminobütirik asit ile glisin salınımını engelleyerek motor nöronların kontrolsüz aktivasyonuna yol açar.",
-    "postAnswerExplanation": "Trismus, risus sardonicus görünümü ve uyarıyla artan yaygın kas spazmları izlenir. Kirli derin yara sonrası trismus ve uyarıyla artan yaygın kas spazmları tetanoz tablosunu düşündürür. Tetanospazmin merkezi sinir sisteminde inhibitör internöronlara taşınır ve gama-aminobütirik asit ile glisin salınımını engelleyerek motor nöronların kontrolsüz aktivasyonuna yol açar.",
-    "postAnswerExpandedExplanation": "Trismus, risus sardonicus görünümü ve uyarıyla artan yaygın kas spazmları izlenir. Kirli derin yara sonrası trismus ve uyarıyla artan yaygın kas spazmları tetanoz tablosunu düşündürür. Tetanospazmin merkezi sinir sisteminde inhibitör internöronlara taşınır ve gama-aminobütirik asit ile glisin salınımını engelleyerek motor nöronların kontrolsüz aktivasyonuna yol açar.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Çiğneme kaslarının spazmı veya mekanik kısıtlılığı nedeniyle ağız açmanın zorlaşmasıdır. Tetanus, peritonsiller apse, dental enfeksiyon, mandibula travması ve temporomandibular eklem sorunlarında görülebilir.",
+    "preAnswerSafeDefinition": "Çiğneme kaslarının spazmı veya mekanik kısıtlılığı nedeniyle ağız açmanın zorlaşmasıdır. Tetanus, peritonsiller apse, dental enfeksiyon, mandibula travması ve temporomandibular eklem sorunlarında görülebilir.",
+    "shortDefinition": "Çiğneme kaslarının spazmı veya mekanik kısıtlılığı nedeniyle ağız açmanın zorlaşmasıdır. Tetanus, peritonsiller apse, dental enfeksiyon, mandibula travması ve temporomandibular eklem sorunlarında görülebilir.",
+    "definition": "Çiğneme kaslarının spazmı veya mekanik kısıtlılığı nedeniyle ağız açmanın zorlaşmasıdır. Tetanus, peritonsiller apse, dental enfeksiyon, mandibula travması ve temporomandibular eklem sorunlarında görülebilir.",
+    "detailedExplanation": "Kirli derin yara sonrası trismus, risus sardonicus ve uyarıyla artan yaygın kas spazmları tetanoz lehinedir. Peritonsiller apsede ise boğaz ağrısı, ateş, tek taraflı tonsiller şişlik ve uvula deviasyonu eşlik edebilir.",
+    "postAnswerExplanation": "Kirli derin yara sonrası trismus, risus sardonicus ve uyarıyla artan yaygın kas spazmları tetanoz lehinedir. Peritonsiller apsede ise boğaz ağrısı, ateş, tek taraflı tonsiller şişlik ve uvula deviasyonu eşlik edebilir.",
+    "postAnswerExpandedExplanation": "Kirli derin yara sonrası trismus, risus sardonicus ve uyarıyla artan yaygın kas spazmları tetanoz lehinedir. Peritonsiller apsede ise boğaz ağrısı, ateş, tek taraflı tonsiller şişlik ve uvula deviasyonu eşlik edebilir.",
+    "tusPearl": "Tetanusta trismus genellikle risus sardonicus ve uyarıyla artan yaygın kas spazmlarıyla birlikte düşünülür.",
+    "differentialPoint": "Peritonsiller apsede trismusa tek taraflı tonsiller şişlik, uvula deviasyonu ve boğuk ses eşlik edebilir; tetanusta yaygın kas spazmı baskındır.",
+    "clinicalRelevance": "KBB, diş ve enfeksiyon acillerinde lokal apse ile sistemik tetanoz ayrımını güçlendirir.",
+    "mechanism": "Kas spazmı veya lokal inflamasyon çiğneme kaslarının hareketini kısıtlayarak ağız açıklığını azaltır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -15123,7 +15386,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Trismus"
+      "Trismus",
+      "çene kilitlenmesi",
+      "ağız açmada kısıtlılık"
     ],
     "sourceTextExamples": [
       "Trismus, risus sardonicus görünümü ve uyarıyla artan yaygın kas spazmları izlenir.",
@@ -15155,8 +15420,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "dalları Truncus coeliacus foregut organlarını besler ve gastrik, splenik, hepatik arter dallarını verir.",
+    "preAnswerSafeDefinition": "dalları Truncus coeliacus foregut organlarını besler ve gastrik, splenik, hepatik arter dallarını verir.",
     "shortDefinition": "dalları Truncus coeliacus foregut organlarını besler ve gastrik, splenik, hepatik arter dallarını verir.",
     "definition": "dalları Truncus coeliacus foregut organlarını besler ve gastrik, splenik, hepatik arter dallarını verir.",
     "detailedExplanation": "Truncus coeliacus dalları Truncus coeliacus foregut organlarını besler ve gastrik, splenik, hepatik arter dallarını verir.",
@@ -15217,8 +15482,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Truncus coeliacus foregut organlarını besler ve gastrik, splenik, hepatik arter dallarını verir.",
+    "preAnswerSafeDefinition": "Truncus coeliacus foregut organlarını besler ve gastrik, splenik, hepatik arter dallarını verir.",
     "shortDefinition": "Truncus coeliacus foregut organlarını besler ve gastrik, splenik, hepatik arter dallarını verir.",
     "definition": "Truncus coeliacus foregut organlarını besler ve gastrik, splenik, hepatik arter dallarını verir.",
     "detailedExplanation": "Truncus coeliacus dalları Truncus coeliacus foregut organlarını besler ve gastrik, splenik, hepatik arter dallarını verir.",
@@ -15280,8 +15545,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Anatomik ilişki",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Uterin masaj ve intravenöz oksitosin uygulaması Doğum sonrası yoğun kanama, yumuşak ve gevşek uterus fundusu ile belirgin laserasyon olmaması uterin atoniyi düşündürür.",
+    "preAnswerSafeDefinition": "Uterin masaj ve intravenöz oksitosin uygulaması Doğum sonrası yoğun kanama, yumuşak ve gevşek uterus fundusu ile belirgin laserasyon olmaması uterin atoniyi düşündürür.",
     "shortDefinition": "Uterin masaj ve intravenöz oksitosin uygulaması Doğum sonrası yoğun kanama, yumuşak ve gevşek uterus fundusu ile belirgin laserasyon olmaması uterin atoniyi düşündürür.",
     "definition": "Uterin masaj ve intravenöz oksitosin uygulaması Doğum sonrası yoğun kanama, yumuşak ve gevşek uterus fundusu ile belirgin laserasyon olmaması uterin atoniyi düşündürür.",
     "detailedExplanation": "Uterin masaj ve intravenöz oksitosin uygulaması Doğum sonrası yoğun kanama, yumuşak ve gevşek uterus fundusu ile belirgin laserasyon olmaması uterin atoniyi düşündürür. İlk tedavi uterusun kasılmasını sağlamak için uterin masaj ve oksitosindir; kan replasmanı destekleyici olabilir ancak kanamanın kaynağını düzeltmez.",
@@ -15344,8 +15609,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Anatomik ilişki",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "lokalizasyonu Safen ven medial malleol önünden geçer; bu sabit nokta venöz erişim ve greft sorularında kullanılır.",
+    "preAnswerSafeDefinition": "lokalizasyonu Safen ven medial malleol önünden geçer; bu sabit nokta venöz erişim ve greft sorularında kullanılır.",
     "shortDefinition": "lokalizasyonu Safen ven medial malleol önünden geçer; bu sabit nokta venöz erişim ve greft sorularında kullanılır.",
     "definition": "lokalizasyonu Safen ven medial malleol önünden geçer; bu sabit nokta venöz erişim ve greft sorularında kullanılır.",
     "detailedExplanation": "vena saphena magna lokalizasyonu Safen ven medial malleol önünden geçer; bu sabit nokta venöz erişim ve greft sorularında kullanılır.",
@@ -15407,8 +15672,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Villus atrofisi, kript hiperplazisi ve intraepitelyal lenfosit artışı Kronik ishal, malabsorpsiyon, demir eksikliği, glutenle ilişkili yakınmalar ve anti-doku transglutaminaz IgA pozitifliği çölyak hastalığını destekler.",
+    "preAnswerSafeDefinition": "Villus atrofisi, kript hiperplazisi ve intraepitelyal lenfosit artışı Kronik ishal, malabsorpsiyon, demir eksikliği, glutenle ilişkili yakınmalar ve anti-doku transglutaminaz IgA pozitifliği çölyak hastalığını destekler.",
     "shortDefinition": "Villus atrofisi, kript hiperplazisi ve intraepitelyal lenfosit artışı Kronik ishal, malabsorpsiyon, demir eksikliği, glutenle ilişkili yakınmalar ve anti-doku transglutaminaz IgA pozitifliği çölyak hastalığını destekler.",
     "definition": "Villus atrofisi, kript hiperplazisi ve intraepitelyal lenfosit artışı Kronik ishal, malabsorpsiyon, demir eksikliği, glutenle ilişkili yakınmalar ve anti-doku transglutaminaz IgA pozitifliği çölyak hastalığını destekler.",
     "detailedExplanation": "Villus atrofisi, kript hiperplazisi ve intraepitelyal lenfosit artışı Kronik ishal, malabsorpsiyon, demir eksikliği, glutenle ilişkili yakınmalar ve anti-doku transglutaminaz IgA pozitifliği çölyak hastalığını destekler. Bu tabloda duodenum biyopsisinde villus atrofisi, kript hiperplazisi ve intraepitelyal lenfosit artışı beklenir.",
@@ -15462,7 +15727,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-wernicke-korsakoff-anatomisi",
     "term": "Wernicke-Korsakoff anatomisi",
     "aliases": [
-      "Wernicke-Korsakoff anatomisi"
+      "Wernicke-Korsakoff anatomisi",
+      "mamiller cisim",
+      "medial talamus"
     ],
     "normalizedTerm": "wernicke-korsakoff anatomisi",
     "TurkishName": "Wernicke-Korsakoff anatomisi",
@@ -15470,17 +15737,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Tiamin eksikliği limbik bellek devrelerini etkiler ve Korsakoff sendromuna yol açabilir.",
-    "definition": "Tiamin eksikliği limbik bellek devrelerini etkiler ve Korsakoff sendromuna yol açabilir.",
-    "detailedExplanation": "Wernicke-Korsakoff anatomisi Tiamin eksikliği limbik bellek devrelerini etkiler ve Korsakoff sendromuna yol açabilir.",
-    "postAnswerExplanation": "Wernicke-Korsakoff anatomisi Tiamin eksikliği limbik bellek devrelerini etkiler ve Korsakoff sendromuna yol açabilir.",
-    "postAnswerExpandedExplanation": "Wernicke-Korsakoff anatomisi Tiamin eksikliği limbik bellek devrelerini etkiler ve Korsakoff sendromuna yol açabilir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Tiamin eksikliğinde özellikle mamiller cisimler, medial talamus ve periaqueductal gri madde gibi bellek-devre yapılarının etkilenmesini ifade eder. Wernicke ensefalopatisi tedavi edilmezse Korsakoff amnezisine ilerleyebilir.",
+    "preAnswerSafeDefinition": "Tiamin eksikliğinde özellikle mamiller cisimler, medial talamus ve periaqueductal gri madde gibi bellek-devre yapılarının etkilenmesini ifade eder. Wernicke ensefalopatisi tedavi edilmezse Korsakoff amnezisine ilerleyebilir.",
+    "shortDefinition": "Tiamin eksikliğinde özellikle mamiller cisimler, medial talamus ve periaqueductal gri madde gibi bellek-devre yapılarının etkilenmesini ifade eder. Wernicke ensefalopatisi tedavi edilmezse Korsakoff amnezisine ilerleyebilir.",
+    "definition": "Tiamin eksikliğinde özellikle mamiller cisimler, medial talamus ve periaqueductal gri madde gibi bellek-devre yapılarının etkilenmesini ifade eder. Wernicke ensefalopatisi tedavi edilmezse Korsakoff amnezisine ilerleyebilir.",
+    "detailedExplanation": "Wernicke triadı konfüzyon, ataksi ve oftalmoplejidir; acil tiamin verilmelidir. Korsakoff sendromunda anterograd amnezi ve konfabulasyon öne çıkar.",
+    "postAnswerExplanation": "Wernicke triadı konfüzyon, ataksi ve oftalmoplejidir; acil tiamin verilmelidir. Korsakoff sendromunda anterograd amnezi ve konfabulasyon öne çıkar.",
+    "postAnswerExpandedExplanation": "Wernicke triadı konfüzyon, ataksi ve oftalmoplejidir; acil tiamin verilmelidir. Korsakoff sendromunda anterograd amnezi ve konfabulasyon öne çıkar.",
+    "tusPearl": "Alkol kullanım bozukluğu veya malnütrisyonda glukozdan önce tiamin verilmesi Wernicke riskini azaltır.",
+    "differentialPoint": "Deliryum tremens otonom hiperaktivite ve halüsinasyonlarla seyreder; Wernicke’de oftalmopleji-ataksi-konfüzyon triadı aranır.",
+    "clinicalRelevance": "Nöroloji ve psikiyatri sorularında vitamin eksikliği-anatomik lezyon ilişkisini öğretir.",
+    "mechanism": "Tiamin eksikliği enerji metabolizmasını bozar; yüksek metabolik gereksinimli periventriküler ve limbik yapılar hasarlanır.",
     "relatedBranches": [
       "anatomy"
     ],
@@ -15493,7 +15760,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Wernicke-Korsakoff anatomisi"
+      "Wernicke-Korsakoff anatomisi",
+      "mamiller cisim",
+      "medial talamus"
     ],
     "sourceTextExamples": [
       "Wernicke-Korsakoff anatomisi",
@@ -15525,8 +15794,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Wilms tümörü, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "Wilms tümörü, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "Wilms tümörü, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "Wilms tümörü, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Wilms tümörü Ağrısız hematüri, renal kortikal solid kitle ve berrak sitoplazmalı hücrelerin ince vasküler ağla ayrılmış yuvalar oluşturması clear cell renal cell carcinoma için tipiktir. Bu tümör erişkinlerde en sık renal kortikal malignitelerden biridir ve sigara öyküsü risk faktörleri arasındadır.",
@@ -15572,7 +15841,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-xla-dusuk-b-hucresi-ve-dusuk-immunoglobulin-paterni",
     "term": "XLA düşük B hücresi ve düşük immünoglobulin paterni",
     "aliases": [
-      "XLA düşük B hücresi ve düşük immünoglobulin paterni"
+      "XLA düşük B hücresi ve düşük immünoglobulin paterni",
+      "X’e bağlı agammaglobulinemi",
+      "BTK eksikliği"
     ],
     "normalizedTerm": "xla dusuk b hucresi ve dusuk immunoglobulin paterni",
     "TurkishName": "XLA düşük B hücresi ve düşük immünoglobulin paterni",
@@ -15580,17 +15851,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Tanısal test / karar eşiği",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Doğru eşleştirme BTK mutasyonu ile pre-B hücre maturasyon bloğudur.",
-    "definition": "Doğru eşleştirme BTK mutasyonu ile pre-B hücre maturasyon bloğudur.",
-    "detailedExplanation": "Doğru eşleştirme BTK mutasyonu ile pre-B hücre maturasyon bloğudur. IL2RG ağır kombine immün yetmezlik, WAS küçük trombositli ekzema-immün yetmezlik tablosu, AIRE otoimmün poliendokrinopati, CYBB ise kronik granülomatöz hastalık ile ilişkilidir. X’e bağlı agammaglobulinemi Bruton tirozin kinaz (BTK) mutasyonuna bağlıdır; pre-B hücre maturasyonu durur, periferik olgun B hücreleri ve tüm immünoglobulin düzeyleri...",
-    "postAnswerExplanation": "Doğru eşleştirme BTK mutasyonu ile pre-B hücre maturasyon bloğudur. IL2RG ağır kombine immün yetmezlik, WAS küçük trombositli ekzema-immün yetmezlik tablosu, AIRE otoimmün poliendokrinopati, CYBB ise kronik granülomatöz hastalık ile ilişkilidir. X’e bağlı agammaglobulinemi Bruton tirozin kinaz (BTK) mutasyonuna bağlıdır; pre-B hücre maturasyonu durur, periferik olgun B hücreleri ve tüm immünoglobulin düzeyleri...",
-    "postAnswerExpandedExplanation": "Doğru eşleştirme BTK mutasyonu ile pre-B hücre maturasyon bloğudur. IL2RG ağır kombine immün yetmezlik, WAS küçük trombositli ekzema-immün yetmezlik tablosu, AIRE otoimmün poliendokrinopati, CYBB ise kronik granülomatöz hastalık ile ilişkilidir. X’e bağlı agammaglobulinemi Bruton tirozin kinaz (BTK) mutasyonuna bağlıdır; pre-B hücre maturasyonu durur, periferik olgun B hücreleri ve tüm immünoglobulin düzeyleri...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Bruton tirozin kinaz mutasyonuna bağlı pre-B hücre maturasyon bloğu nedeniyle periferik B hücrelerinin ve tüm immünoglobulin sınıflarının düşük olmasıdır. Erkek çocukta tekrarlayan bakteriyel enfeksiyonlarla seyreder.",
+    "preAnswerSafeDefinition": "Bruton tirozin kinaz mutasyonuna bağlı pre-B hücre maturasyon bloğu nedeniyle periferik B hücrelerinin ve tüm immünoglobulin sınıflarının düşük olmasıdır. Erkek çocukta tekrarlayan bakteriyel enfeksiyonlarla seyreder.",
+    "shortDefinition": "Bruton tirozin kinaz mutasyonuna bağlı pre-B hücre maturasyon bloğu nedeniyle periferik B hücrelerinin ve tüm immünoglobulin sınıflarının düşük olmasıdır. Erkek çocukta tekrarlayan bakteriyel enfeksiyonlarla seyreder.",
+    "definition": "Bruton tirozin kinaz mutasyonuna bağlı pre-B hücre maturasyon bloğu nedeniyle periferik B hücrelerinin ve tüm immünoglobulin sınıflarının düşük olmasıdır. Erkek çocukta tekrarlayan bakteriyel enfeksiyonlarla seyreder.",
+    "detailedExplanation": "XLA genellikle maternal IgG koruması azaldıktan sonra kapsüllü bakterilerle enfeksiyonlarla fark edilir. Lenfoid dokular küçük olabilir; T hücre fonksiyonu temel sorun değildir.",
+    "postAnswerExplanation": "XLA genellikle maternal IgG koruması azaldıktan sonra kapsüllü bakterilerle enfeksiyonlarla fark edilir. Lenfoid dokular küçük olabilir; T hücre fonksiyonu temel sorun değildir.",
+    "postAnswerExpandedExplanation": "XLA genellikle maternal IgG koruması azaldıktan sonra kapsüllü bakterilerle enfeksiyonlarla fark edilir. Lenfoid dokular küçük olabilir; T hücre fonksiyonu temel sorun değildir.",
+    "tusPearl": "Erkek çocuk + düşük B hücresi + tüm Ig’lerde düşüklük = BTK/XLA düşün.",
+    "differentialPoint": "Ağır kombine immün yetmezlikte T hücre bozukluğu da belirgindir; XLA’da esas defekt B hücre maturasyonudur.",
+    "clinicalRelevance": "İmmün yetmezlik marker sorularında hücre tipi-defekt ilişkisini netleştirir.",
+    "mechanism": "BTK eksikliği pre-BCR sinyalini bozar ve B hücre maturasyonunu erken basamakta durdurur.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -15603,7 +15874,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
     "keywordsForSearch": [
-      "XLA düşük B hücresi ve düşük immünoglobulin paterni"
+      "XLA düşük B hücresi ve düşük immünoglobulin paterni",
+      "X’e bağlı agammaglobulinemi",
+      "BTK eksikliği"
     ],
     "sourceTextExamples": [
       "Doğru eşleştirme BTK mutasyonu ile pre-B hücre maturasyon bloğudur. IL2RG ağır kombine immün yetmezlik, WAS küçük trombositli ekzema-immün yetmezlik tablosu, AIRE otoimmün poliendokrinopati, CYBB ise kronik granülomatöz hastalık ile ilişkilidir.",
@@ -15627,7 +15900,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-yalanci-cok-katli-silli-prizmatik-epitel",
     "term": "Yalancı çok katlı silli prizmatik epitel",
     "aliases": [
-      "Yalancı çok katlı silli prizmatik epitel"
+      "Yalancı çok katlı silli prizmatik epitel",
+      "respiratuvar epitel",
+      "psödostratifiye silli kolumnar epitel"
     ],
     "normalizedTerm": "yalanci cok katli silli prizmatik epitel",
     "TurkishName": "Yalancı çok katlı silli prizmatik epitel",
@@ -15635,17 +15910,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "shortDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "definition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "detailedExplanation": "Yalancı çok katlı silli prizmatik epitel ve goblet hücreleri izlendi. Nazal kavite ve iletici hava yollarının tipik epiteli yalancı çok katlı silli prizmatik epitel olup goblet hücreleri içerir. Bu yapı mukus üretimi ve mukosiliyer temizleme için özelleşmiştir ve respiratuvar epitel olarak adlandırılır.",
-    "postAnswerExplanation": "Yalancı çok katlı silli prizmatik epitel ve goblet hücreleri izlendi. Nazal kavite ve iletici hava yollarının tipik epiteli yalancı çok katlı silli prizmatik epitel olup goblet hücreleri içerir. Bu yapı mukus üretimi ve mukosiliyer temizleme için özelleşmiştir ve respiratuvar epitel olarak adlandırılır.",
-    "postAnswerExpandedExplanation": "Yalancı çok katlı silli prizmatik epitel ve goblet hücreleri izlendi. Nazal kavite ve iletici hava yollarının tipik epiteli yalancı çok katlı silli prizmatik epitel olup goblet hücreleri içerir. Bu yapı mukus üretimi ve mukosiliyer temizleme için özelleşmiştir ve respiratuvar epitel olarak adlandırılır.",
-    "tusPearl": "Anatomi sorularında terimi yalnız ezberleme; hasar bulgusu, damar/sinir komşuluğu ve cerrahi risk ile birlikte düşün.",
-    "differentialPoint": "Benzer anatomik yapılardan ayırıcı nokta, etkilediği organ alanı veya yaralanınca verdiği klinik bulgudur.",
-    "clinicalRelevance": "Anatomi sorularında terimi yalnız ezberleme; hasar bulgusu, damar/sinir komşuluğu ve cerrahi risk ile birlikte düşün.",
-    "mechanism": "",
+    "previewDefinition": "Tüm hücrelerin bazal membrana temas ettiği ancak çekirdek düzeyleri farklı olduğu için çok katlı gibi görünen silli prizmatik epiteldir. İletici solunum yollarında goblet hücreleriyle birlikte mukosiliyer temizliği sağlar.",
+    "preAnswerSafeDefinition": "Tüm hücrelerin bazal membrana temas ettiği ancak çekirdek düzeyleri farklı olduğu için çok katlı gibi görünen silli prizmatik epiteldir. İletici solunum yollarında goblet hücreleriyle birlikte mukosiliyer temizliği sağlar.",
+    "shortDefinition": "Tüm hücrelerin bazal membrana temas ettiği ancak çekirdek düzeyleri farklı olduğu için çok katlı gibi görünen silli prizmatik epiteldir. İletici solunum yollarında goblet hücreleriyle birlikte mukosiliyer temizliği sağlar.",
+    "definition": "Tüm hücrelerin bazal membrana temas ettiği ancak çekirdek düzeyleri farklı olduğu için çok katlı gibi görünen silli prizmatik epiteldir. İletici solunum yollarında goblet hücreleriyle birlikte mukosiliyer temizliği sağlar.",
+    "detailedExplanation": "Nazal kavite, trakea ve bronşlarda respiratuvar epitel mukus üretimi ve silya hareketiyle partikülleri uzaklaştırır. Sigara veya kronik irritasyon bu epitelde skuamöz metaplaziye yol açabilir.",
+    "postAnswerExplanation": "Nazal kavite, trakea ve bronşlarda respiratuvar epitel mukus üretimi ve silya hareketiyle partikülleri uzaklaştırır. Sigara veya kronik irritasyon bu epitelde skuamöz metaplaziye yol açabilir.",
+    "postAnswerExpandedExplanation": "Nazal kavite, trakea ve bronşlarda respiratuvar epitel mukus üretimi ve silya hareketiyle partikülleri uzaklaştırır. Sigara veya kronik irritasyon bu epitelde skuamöz metaplaziye yol açabilir.",
+    "tusPearl": "Trakea/bronş histolojisinde silli yalancı çok katlı prizmatik epitel + goblet hücresi respiratuvar epitel ipucudur.",
+    "differentialPoint": "Alveoller gaz değişimi için tek katlı yassı epitel ağırlıklıdır; iletici hava yollarında mukosiliyer respiratuvar epitel beklenir.",
+    "clinicalRelevance": "Histoloji sorularında epitel tipi ile solunum yolu fonksiyonunu ilişkilendirir.",
+    "mechanism": "Silyalar mukusu farinkse doğru taşır; goblet hücreleri partikül ve mikroorganizmaları tutan mukusu üretir.",
     "relatedBranches": [
       "anatomy"
     ],
@@ -15665,8 +15940,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Yalancı çok katlı silli prizmatik epitel",
-      "anatomik komşuluk",
-      "klinik hasar paterni"
+      "respiratuvar epitel",
+      "psödostratifiye silli kolumnar epitel"
     ],
     "sourceTextExamples": [
       "Yalancı çok katlı silli prizmatik epitel ve goblet hücreleri izlendi.",
@@ -15690,7 +15965,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-yuksek-duyarlilik-ve-yanlis-negatiflik-iliskisi",
     "term": "Yüksek duyarlılık ve yanlış negatiflik ilişkisi",
     "aliases": [
-      "Yüksek duyarlılık ve yanlış negatiflik ilişkisi"
+      "Yüksek duyarlılık ve yanlış negatiflik ilişkisi",
+      "duyarlılık",
+      "sensitivite"
     ],
     "normalizedTerm": "yuksek duyarlilik ve yanlis negatiflik iliskisi",
     "TurkishName": "Yüksek duyarlılık ve yanlış negatiflik ilişkisi",
@@ -15698,17 +15975,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Duyarlılığı yüksek testte yanlış negatiflik azalır ve negatif sonuç hastalık olasılığını düşürür.",
-    "definition": "Duyarlılığı yüksek testte yanlış negatiflik azalır ve negatif sonuç hastalık olasılığını düşürür.",
-    "detailedExplanation": "Duyarlılığı yüksek testte yanlış negatiflik azalır ve negatif sonuç hastalık olasılığını düşürür. Pozitif sonucu kesinleştirme daha çok yüksek özgüllükle ilişkilidir; pozitif prediktif değer ise prevalanstan etkilenir ve duyarlılık artışı özgüllüğün zorunlu olarak artması anlamına gelmez. Yüksek duyarlılığa sahip test hastalığı olan kişileri yakalama kapasitesi yüksek olan testtir; bu nedenle negatif sonuç hastalığı...",
-    "postAnswerExplanation": "Duyarlılığı yüksek testte yanlış negatiflik azalır ve negatif sonuç hastalık olasılığını düşürür. Pozitif sonucu kesinleştirme daha çok yüksek özgüllükle ilişkilidir; pozitif prediktif değer ise prevalanstan etkilenir ve duyarlılık artışı özgüllüğün zorunlu olarak artması anlamına gelmez. Yüksek duyarlılığa sahip test hastalığı olan kişileri yakalama kapasitesi yüksek olan testtir; bu nedenle negatif sonuç hastalığı...",
-    "postAnswerExpandedExplanation": "Duyarlılığı yüksek testte yanlış negatiflik azalır ve negatif sonuç hastalık olasılığını düşürür. Pozitif sonucu kesinleştirme daha çok yüksek özgüllükle ilişkilidir; pozitif prediktif değer ise prevalanstan etkilenir ve duyarlılık artışı özgüllüğün zorunlu olarak artması anlamına gelmez. Yüksek duyarlılığa sahip test hastalığı olan kişileri yakalama kapasitesi yüksek olan testtir; bu nedenle negatif sonuç hastalığı...",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Duyarlılığı yüksek test, hastalığı olan kişileri yakalama kapasitesi yüksek olduğu için yanlış negatif sonucu azaltır. Negatif sonuç hastalığı dışlamada daha kullanışlıdır.",
+    "preAnswerSafeDefinition": "Duyarlılığı yüksek test, hastalığı olan kişileri yakalama kapasitesi yüksek olduğu için yanlış negatif sonucu azaltır. Negatif sonuç hastalığı dışlamada daha kullanışlıdır.",
+    "shortDefinition": "Duyarlılığı yüksek test, hastalığı olan kişileri yakalama kapasitesi yüksek olduğu için yanlış negatif sonucu azaltır. Negatif sonuç hastalığı dışlamada daha kullanışlıdır.",
+    "definition": "Duyarlılığı yüksek test, hastalığı olan kişileri yakalama kapasitesi yüksek olduğu için yanlış negatif sonucu azaltır. Negatif sonuç hastalığı dışlamada daha kullanışlıdır.",
+    "detailedExplanation": "SNOUT kuralı, yüksek sensitiviteye sahip test negatifse hastalığın dışlanmasına yardım eder mantığını özetler. Pozitif sonucu kesinleştirmek ise daha çok yüksek özgüllükle ilişkilidir.",
+    "postAnswerExplanation": "SNOUT kuralı, yüksek sensitiviteye sahip test negatifse hastalığın dışlanmasına yardım eder mantığını özetler. Pozitif sonucu kesinleştirmek ise daha çok yüksek özgüllükle ilişkilidir.",
+    "postAnswerExpandedExplanation": "SNOUT kuralı, yüksek sensitiviteye sahip test negatifse hastalığın dışlanmasına yardım eder mantığını özetler. Pozitif sonucu kesinleştirmek ise daha çok yüksek özgüllükle ilişkilidir.",
+    "tusPearl": "Yüksek duyarlılık → az yanlış negatif → negatif test hastalığı dışlamaya yarar.",
+    "differentialPoint": "Yüksek özgüllük yanlış pozitifi azaltır ve pozitif sonucu doğrulamada daha değerlidir; prediktif değerler prevalanstan etkilenir.",
+    "clinicalRelevance": "Biyoistatistik sorularında tarama ve doğrulama testi mantığını ayırır.",
+    "mechanism": "Duyarlılık = gerçek pozitif / tüm hastalar; oran yükseldikçe kaçırılan hasta azalır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -15721,7 +15998,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Yüksek duyarlılık ve yanlış negatiflik ilişkisi"
+      "Yüksek duyarlılık ve yanlış negatiflik ilişkisi",
+      "duyarlılık",
+      "sensitivite"
     ],
     "sourceTextExamples": [
       "Duyarlılığı yüksek testte yanlış negatiflik azalır ve negatif sonuç hastalık olasılığını düşürür.",
@@ -15745,7 +16024,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-yuz-venlerinde-kapakciklarin-olmamasi",
     "term": "Yüz venlerinde kapakçıkların olmaması",
     "aliases": [
-      "Yüz venlerinde kapakçıkların olmaması"
+      "Yüz venlerinde kapakçıkların olmaması",
+      "kapakçıksız yüz venleri",
+      "kavernöz sinüs yayılımı"
     ],
     "normalizedTerm": "yuz venlerinde kapakciklarin olmamasi",
     "TurkishName": "Yüz venlerinde kapakçıkların olmaması",
@@ -15753,17 +16034,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Anatomik ilişki",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "shortDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "definition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "detailedExplanation": "Yüz venlerinde kapakçıkların olmaması ve oftalmik venlerle bağlantı. Kapakçıksız venöz bağlantılar enfeksiyonun retrograd yayılımına izin verebilir.",
-    "postAnswerExplanation": "Yüz venlerinde kapakçıkların olmaması ve oftalmik venlerle bağlantı. Kapakçıksız venöz bağlantılar enfeksiyonun retrograd yayılımına izin verebilir.",
-    "postAnswerExpandedExplanation": "Yüz venlerinde kapakçıkların olmaması ve oftalmik venlerle bağlantı. Kapakçıksız venöz bağlantılar enfeksiyonun retrograd yayılımına izin verebilir.",
-    "tusPearl": "Anatomi sorularında terimi yalnız ezberleme; hasar bulgusu, damar/sinir komşuluğu ve cerrahi risk ile birlikte düşün.",
-    "differentialPoint": "Benzer anatomik yapılardan ayırıcı nokta, etkilediği organ alanı veya yaralanınca verdiği klinik bulgudur.",
-    "clinicalRelevance": "Anatomi sorularında terimi yalnız ezberleme; hasar bulgusu, damar/sinir komşuluğu ve cerrahi risk ile birlikte düşün.",
-    "mechanism": "",
+    "previewDefinition": "Yüz venlerinin önemli kısmında kapakçık bulunmaması, enfeksiyonun venöz bağlantılarla retrograd yayılmasına olanak verebilir. Özellikle üst dudak-burun çevresi enfeksiyonları kavernöz sinüse yayılım riski açısından önemlidir.",
+    "preAnswerSafeDefinition": "Yüz venlerinin önemli kısmında kapakçık bulunmaması, enfeksiyonun venöz bağlantılarla retrograd yayılmasına olanak verebilir. Özellikle üst dudak-burun çevresi enfeksiyonları kavernöz sinüse yayılım riski açısından önemlidir.",
+    "shortDefinition": "Yüz venlerinin önemli kısmında kapakçık bulunmaması, enfeksiyonun venöz bağlantılarla retrograd yayılmasına olanak verebilir. Özellikle üst dudak-burun çevresi enfeksiyonları kavernöz sinüse yayılım riski açısından önemlidir.",
+    "definition": "Yüz venlerinin önemli kısmında kapakçık bulunmaması, enfeksiyonun venöz bağlantılarla retrograd yayılmasına olanak verebilir. Özellikle üst dudak-burun çevresi enfeksiyonları kavernöz sinüse yayılım riski açısından önemlidir.",
+    "detailedExplanation": "Fasiyal ven, angular ven ve oftalmik ven bağlantıları nedeniyle “tehlike üçgeni” enfeksiyonları intrakraniyal komplikasyon oluşturabilir. Kavernöz sinüs trombozunda ateş, proptoz, kemozis ve kraniyal sinir bulguları görülebilir.",
+    "postAnswerExplanation": "Fasiyal ven, angular ven ve oftalmik ven bağlantıları nedeniyle “tehlike üçgeni” enfeksiyonları intrakraniyal komplikasyon oluşturabilir. Kavernöz sinüs trombozunda ateş, proptoz, kemozis ve kraniyal sinir bulguları görülebilir.",
+    "postAnswerExpandedExplanation": "Fasiyal ven, angular ven ve oftalmik ven bağlantıları nedeniyle “tehlike üçgeni” enfeksiyonları intrakraniyal komplikasyon oluşturabilir. Kavernöz sinüs trombozunda ateş, proptoz, kemozis ve kraniyal sinir bulguları görülebilir.",
+    "tusPearl": "Burun-üst dudak çevresi enfeksiyonu + proptoz/oftalmopleji kavernöz sinüs trombozu açısından uyarıcıdır.",
+    "differentialPoint": "Basit lokal selülitte orbital bulgular beklenmez; kavernöz sinüs yayılımında bilateral göz bulguları ve kraniyal sinir tutulumları gelişebilir.",
+    "clinicalRelevance": "Anatomi ve enfeksiyon sorularında venöz drenajın klinik yayılım riskini açıklar.",
+    "mechanism": "Kapakçıksız venöz sistem basınç değişiklikleriyle enfekte trombüs veya mikroorganizmaların retrograd yayılmasına izin verebilir.",
     "relatedBranches": [
       "anatomy"
     ],
@@ -15783,8 +16064,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "Yüz venlerinde kapakçıkların olmaması",
-      "anatomik komşuluk",
-      "klinik hasar paterni"
+      "kapakçıksız yüz venleri",
+      "kavernöz sinüs yayılımı"
     ],
     "sourceTextExamples": [
       "Yüz venlerinde kapakçıkların olmaması ve oftalmik venlerle bağlantı.",
@@ -15808,7 +16089,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-ust-gastrointestinal-kontrastli-grafi",
     "term": "Üst gastrointestinal kontrastlı grafi",
     "aliases": [
-      "Üst gastrointestinal kontrastlı grafi"
+      "Üst gastrointestinal kontrastlı grafi",
+      "üst GİS grafisi",
+      "upper GI series"
     ],
     "normalizedTerm": "ust gastrointestinal kontrastli grafi",
     "TurkishName": "Üst gastrointestinal kontrastlı grafi",
@@ -15816,17 +16099,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Tanısal test / karar eşiği",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Yenidoğanda safralı kusma ve üst gastrointestinal grafide duodenojejunal bileşkenin anormal yerleşimi midgut malrotasyonunu düşündürür.",
-    "definition": "Yenidoğanda safralı kusma ve üst gastrointestinal grafide duodenojejunal bileşkenin anormal yerleşimi midgut malrotasyonunu düşündürür.",
-    "detailedExplanation": "Üst gastrointestinal kontrastlı grafi Yenidoğanda safralı kusma ve üst gastrointestinal grafide duodenojejunal bileşkenin anormal yerleşimi midgut malrotasyonunu düşündürür. Normalde midgut fizyolojik herniasyon sırasında ve karın boşluğuna dönerken superior mezenterik arter etrafında toplam 270 derece saat yönünün tersine rotasyon yapar; bu süreç tamamlanmazsa volvulus riski gelişir.",
-    "postAnswerExplanation": "Üst gastrointestinal kontrastlı grafi Yenidoğanda safralı kusma ve üst gastrointestinal grafide duodenojejunal bileşkenin anormal yerleşimi midgut malrotasyonunu düşündürür. Normalde midgut fizyolojik herniasyon sırasında ve karın boşluğuna dönerken superior mezenterik arter etrafında toplam 270 derece saat yönünün tersine rotasyon yapar; bu süreç tamamlanmazsa volvulus riski gelişir.",
-    "postAnswerExpandedExplanation": "Üst gastrointestinal kontrastlı grafi Yenidoğanda safralı kusma ve üst gastrointestinal grafide duodenojejunal bileşkenin anormal yerleşimi midgut malrotasyonunu düşündürür. Normalde midgut fizyolojik herniasyon sırasında ve karın boşluğuna dönerken superior mezenterik arter etrafında toplam 270 derece saat yönünün tersine rotasyon yapar; bu süreç tamamlanmazsa volvulus riski gelişir.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Özofagus, mide ve duodenumun kontrast maddeyle radyolojik değerlendirilmesidir. Yenidoğanda safralı kusma ve malrotasyon/volvulus şüphesinde duodenojejunal bileşke yerleşimini göstermek için kullanılır.",
+    "preAnswerSafeDefinition": "Özofagus, mide ve duodenumun kontrast maddeyle radyolojik değerlendirilmesidir. Yenidoğanda safralı kusma ve malrotasyon/volvulus şüphesinde duodenojejunal bileşke yerleşimini göstermek için kullanılır.",
+    "shortDefinition": "Özofagus, mide ve duodenumun kontrast maddeyle radyolojik değerlendirilmesidir. Yenidoğanda safralı kusma ve malrotasyon/volvulus şüphesinde duodenojejunal bileşke yerleşimini göstermek için kullanılır.",
+    "definition": "Özofagus, mide ve duodenumun kontrast maddeyle radyolojik değerlendirilmesidir. Yenidoğanda safralı kusma ve malrotasyon/volvulus şüphesinde duodenojejunal bileşke yerleşimini göstermek için kullanılır.",
+    "detailedExplanation": "Midgut malrotasyonunda duodenojejunal bileşke normal sol üst yerleşimde olmayabilir. Safralı kusma acil cerrahi değerlendirme gerektirir çünkü volvulus bağırsak iskemisine yol açabilir.",
+    "postAnswerExplanation": "Midgut malrotasyonunda duodenojejunal bileşke normal sol üst yerleşimde olmayabilir. Safralı kusma acil cerrahi değerlendirme gerektirir çünkü volvulus bağırsak iskemisine yol açabilir.",
+    "postAnswerExpandedExplanation": "Midgut malrotasyonunda duodenojejunal bileşke normal sol üst yerleşimde olmayabilir. Safralı kusma acil cerrahi değerlendirme gerektirir çünkü volvulus bağırsak iskemisine yol açabilir.",
+    "tusPearl": "Yenidoğanda safralı kusma malrotasyon-volvulus açısından acil kabul edilir; üst GİS grafisi kritik testtir.",
+    "differentialPoint": "Hirschsprung hastalığında kontrastlı kolon grafisi ve rektal biyopsi öne çıkar; malrotasyonda üst GİS grafisi hedef testtir.",
+    "clinicalRelevance": "Pediatrik cerrahi sorularında görüntüleme seçimini klinik senaryoya bağlar.",
+    "mechanism": "Rotasyon/fiksasyon kusuru SMA etrafında volvulus riskini artırır ve proksimal obstrüksiyon yapabilir.",
     "relatedBranches": [
       "gastroenterology"
     ],
@@ -15839,7 +16122,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "Üst gastrointestinal kontrastlı grafi"
+      "Üst gastrointestinal kontrastlı grafi",
+      "üst GİS grafisi",
+      "upper GI series"
     ],
     "sourceTextExamples": [
       "Üst gastrointestinal kontrastlı grafi",
@@ -15871,8 +16156,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "ın gelişememesi Beslenmeyle öksürük ve siyanoz, ağızda köpüklü sekresyon, nazogastrik sondanın ilerlememesi ve batında gaz bulunması özofagus atrezisi ile distal trakeoözofageal fistülü düşündürür.",
+    "preAnswerSafeDefinition": "ın gelişememesi Beslenmeyle öksürük ve siyanoz, ağızda köpüklü sekresyon, nazogastrik sondanın ilerlememesi ve batında gaz bulunması özofagus atrezisi ile distal trakeoözofageal fistülü düşündürür.",
     "shortDefinition": "ın gelişememesi Beslenmeyle öksürük ve siyanoz, ağızda köpüklü sekresyon, nazogastrik sondanın ilerlememesi ve batında gaz bulunması özofagus atrezisi ile distal trakeoözofageal fistülü düşündürür.",
     "definition": "ın gelişememesi Beslenmeyle öksürük ve siyanoz, ağızda köpüklü sekresyon, nazogastrik sondanın ilerlememesi ve batında gaz bulunması özofagus atrezisi ile distal trakeoözofageal fistülü düşündürür.",
     "detailedExplanation": "Üçüncü ve dördüncü faringeal poşların gelişememesi Beslenmeyle öksürük ve siyanoz, ağızda köpüklü sekresyon, nazogastrik sondanın ilerlememesi ve batında gaz bulunması özofagus atrezisi ile distal trakeoözofageal fistülü düşündürür. Bu anomalinin temelinde ön bağırsağın ventral respiratuvar divertikül ve dorsal özofagus olarak ayrılmasındaki trakeoözofageal septasyon kusuru yer alır.",
@@ -15926,7 +16211,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-idarucizumab",
     "term": "İdarucizumab",
     "aliases": [
-      "İdarucizumab"
+      "İdarucizumab",
+      "dabigatran antidotu",
+      "Praxbind"
     ],
     "normalizedTerm": "idarucizumab",
     "TurkishName": "İdarucizumab",
@@ -15934,17 +16221,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "Dabigatran direkt trombin inhibitörüdür; idarucizumab ilacı bağlayarak etkisini nötralize eder.",
-    "definition": "Dabigatran direkt trombin inhibitörüdür; idarucizumab ilacı bağlayarak etkisini nötralize eder.",
-    "detailedExplanation": "İdarucizumab. Dabigatran direkt trombin inhibitörüdür; idarucizumab ilacı bağlayarak etkisini nötralize eder.",
-    "postAnswerExplanation": "İdarucizumab. Dabigatran direkt trombin inhibitörüdür; idarucizumab ilacı bağlayarak etkisini nötralize eder.",
-    "postAnswerExpandedExplanation": "İdarucizumab. Dabigatran direkt trombin inhibitörüdür; idarucizumab ilacı bağlayarak etkisini nötralize eder.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "Dabigatranı yüksek afiniteli bağlayarak antikoagülan etkisini hızla nötralize eden monoklonal antikor fragmanıdır. Hayatı tehdit eden kanama veya acil cerrahi gereksiniminde kullanılır.",
+    "preAnswerSafeDefinition": "Dabigatranı yüksek afiniteli bağlayarak antikoagülan etkisini hızla nötralize eden monoklonal antikor fragmanıdır. Hayatı tehdit eden kanama veya acil cerrahi gereksiniminde kullanılır.",
+    "shortDefinition": "Dabigatranı yüksek afiniteli bağlayarak antikoagülan etkisini hızla nötralize eden monoklonal antikor fragmanıdır. Hayatı tehdit eden kanama veya acil cerrahi gereksiniminde kullanılır.",
+    "definition": "Dabigatranı yüksek afiniteli bağlayarak antikoagülan etkisini hızla nötralize eden monoklonal antikor fragmanıdır. Hayatı tehdit eden kanama veya acil cerrahi gereksiniminde kullanılır.",
+    "detailedExplanation": "Dabigatran direkt trombin inhibitörüdür; idarucizumab serbest ve trombine bağlı dabigatranı bağlar. Faktör Xa inhibitörlerinin özgül geri çeviricisi değildir.",
+    "postAnswerExplanation": "Dabigatran direkt trombin inhibitörüdür; idarucizumab serbest ve trombine bağlı dabigatranı bağlar. Faktör Xa inhibitörlerinin özgül geri çeviricisi değildir.",
+    "postAnswerExpandedExplanation": "Dabigatran direkt trombin inhibitörüdür; idarucizumab serbest ve trombine bağlı dabigatranı bağlar. Faktör Xa inhibitörlerinin özgül geri çeviricisi değildir.",
+    "tusPearl": "Dabigatran antidotu idarucizumabdır; faktör Xa inhibitörleri için aynı yanıt beklenmez.",
+    "differentialPoint": "Varfarin etkisi vitamin K ve PCC ile; heparin etkisi protaminle geri çevrilir.",
+    "clinicalRelevance": "Farmakoloji-acil kanama sorularında ilaç-antidot eşleşmesini öğretir.",
+    "mechanism": "Fab fragmanı dabigatranı bağlayarak trombin inhibisyonunu ortadan kaldırır.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -15957,7 +16244,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "İdarucizumab"
+      "İdarucizumab",
+      "dabigatran antidotu",
+      "Praxbind"
     ],
     "sourceTextExamples": [],
     "sourceCandidate": {
@@ -15986,8 +16275,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Anatomik ilişki",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "İnferior mezenterik arter hindgut türevlerini besler.",
+    "preAnswerSafeDefinition": "İnferior mezenterik arter hindgut türevlerini besler.",
     "shortDefinition": "İnferior mezenterik arter hindgut türevlerini besler.",
     "definition": "İnferior mezenterik arter hindgut türevlerini besler.",
     "detailedExplanation": "İnferior mezenterik arter alanı İnferior mezenterik arter hindgut türevlerini besler.",
@@ -16041,7 +16330,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-insulin-ve-potasyum-kaymasi",
     "term": "İnsülin ve potasyum kayması",
     "aliases": [
-      "İnsülin ve potasyum kayması"
+      "İnsülin ve potasyum kayması",
+      "insülinle potasyum düşürme",
+      "hiperkalemi insülin tedavisi"
     ],
     "normalizedTerm": "insulin ve potasyum kaymasi",
     "TurkishName": "İnsülin ve potasyum kayması",
@@ -16049,17 +16340,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "İnsülin Na/K-ATPaz aktivitesini artırır ve potasyumun hücre içine girmesini kolaylaştırır.",
-    "definition": "İnsülin Na/K-ATPaz aktivitesini artırır ve potasyumun hücre içine girmesini kolaylaştırır.",
-    "detailedExplanation": "İnsülin ve potasyum kayması İnsülin Na/K-ATPaz aktivitesini artırır ve potasyumun hücre içine girmesini kolaylaştırır.",
-    "postAnswerExplanation": "İnsülin ve potasyum kayması İnsülin Na/K-ATPaz aktivitesini artırır ve potasyumun hücre içine girmesini kolaylaştırır.",
-    "postAnswerExpandedExplanation": "İnsülin ve potasyum kayması İnsülin Na/K-ATPaz aktivitesini artırır ve potasyumun hücre içine girmesini kolaylaştırır.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "İnsülinin Na⁺/K⁺-ATPaz aktivitesini artırarak potasyumu hücre içine kaydırmasıdır. Hiperkalemi acil tedavisinde glukozla birlikte insülin bu nedenle kullanılır.",
+    "preAnswerSafeDefinition": "İnsülinin Na⁺/K⁺-ATPaz aktivitesini artırarak potasyumu hücre içine kaydırmasıdır. Hiperkalemi acil tedavisinde glukozla birlikte insülin bu nedenle kullanılır.",
+    "shortDefinition": "İnsülinin Na⁺/K⁺-ATPaz aktivitesini artırarak potasyumu hücre içine kaydırmasıdır. Hiperkalemi acil tedavisinde glukozla birlikte insülin bu nedenle kullanılır.",
+    "definition": "İnsülinin Na⁺/K⁺-ATPaz aktivitesini artırarak potasyumu hücre içine kaydırmasıdır. Hiperkalemi acil tedavisinde glukozla birlikte insülin bu nedenle kullanılır.",
+    "detailedExplanation": "İnsülin serum potasyumunu toplam vücut potasyumunu azaltmadan geçici olarak düşürür. Kalp membran stabilizasyonu için kalsiyum, potasyum eliminasyonu için diüretik, reçine veya diyaliz gerekebilir.",
+    "postAnswerExplanation": "İnsülin serum potasyumunu toplam vücut potasyumunu azaltmadan geçici olarak düşürür. Kalp membran stabilizasyonu için kalsiyum, potasyum eliminasyonu için diüretik, reçine veya diyaliz gerekebilir.",
+    "postAnswerExpandedExplanation": "İnsülin serum potasyumunu toplam vücut potasyumunu azaltmadan geçici olarak düşürür. Kalp membran stabilizasyonu için kalsiyum, potasyum eliminasyonu için diüretik, reçine veya diyaliz gerekebilir.",
+    "tusPearl": "Hiperkalemide kalsiyum kalbi stabilize eder; insülin-glukoz potasyumu hücre içine kaydırır.",
+    "differentialPoint": "Beta-agonistler de hücre içine kaydırma yapabilir; loop diüretik/diyaliz ise potasyumu vücuttan uzaklaştırır.",
+    "clinicalRelevance": "Acil elektrolit yönetiminde tedavilerin hangi basamağa etki ettiğini ayırır.",
+    "mechanism": "İnsülin hücre membranında Na⁺/K⁺-ATPazı uyarır ve K⁺ hücre içine girer.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -16077,7 +16368,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
       "İnsülin ve potasyum kayması",
-      "potasyum"
+      "insülinle potasyum düşürme",
+      "hiperkalemi insülin tedavisi"
     ],
     "sourceTextExamples": [
       "İnsülin ve potasyum kayması",
@@ -16109,8 +16401,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "İntraepidermal akantoliz, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "İntraepidermal akantoliz, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "İntraepidermal akantoliz, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "İntraepidermal akantoliz, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "Suprabazal akantoliz ve intraepidermal bül oluşumu izlendi. Ağrılı oral erozyonlar, gevşek büller, pozitif epidermal ayrılma bulgusu, suprabazal akantoliz ve hücreler arası IgG birikimi pemfigus vulgaris ile uyumludur. Bu hastalıkta otoantikorlar desmozomal adezyon proteinlerinden özellikle desmoglein 3’e yönelir.",
@@ -16165,8 +16457,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Anatomi / Histoloji / Embriyoloji",
     "subcategory": "Anatomik ilişki",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Anatomik lokalizasyon veya yapı-komşuluk ilişkisini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "Sezaryen, uzamış membran rüptürü, postpartum ateş, uterin hassasiyet ve kötü kokulu loşi postpartum endometriti düşündürür.",
+    "preAnswerSafeDefinition": "Sezaryen, uzamış membran rüptürü, postpartum ateş, uterin hassasiyet ve kötü kokulu loşi postpartum endometriti düşündürür.",
     "shortDefinition": "Sezaryen, uzamış membran rüptürü, postpartum ateş, uterin hassasiyet ve kötü kokulu loşi postpartum endometriti düşündürür.",
     "definition": "Sezaryen, uzamış membran rüptürü, postpartum ateş, uterin hassasiyet ve kötü kokulu loşi postpartum endometriti düşündürür.",
     "detailedExplanation": "İntravenöz klindamisin ve gentamisin Sezaryen, uzamış membran rüptürü, postpartum ateş, uterin hassasiyet ve kötü kokulu loşi postpartum endometriti düşündürür. Tedavide polimikrobiyal aerob-anaerob florayı kapsayan intravenöz geniş spektrumlu antibiyotik gerekir; klasik başlangıç rejimi klindamisin ve gentamisindir.",
@@ -16228,8 +16520,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "Patoloji / Hematoloji / Onkoloji",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Hücre, doku, immün birikim veya malignite paternini ifade eden güvenli bir kavramdır.",
+    "previewDefinition": "İnvaziv duktal karsinom, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
+    "preAnswerSafeDefinition": "İnvaziv duktal karsinom, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "shortDefinition": "İnvaziv duktal karsinom, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "definition": "İnvaziv duktal karsinom, histolojik/laboratuvar patern ile hastalık eşleştirmesini öğreten patoloji-hematoloji kavramıdır.",
     "detailedExplanation": "İnvaziv duktal karsinom saptandı. Erken evre ve klinik nod negatif meme kanserinde aksiller evreleme için sentinel lenf nodu biyopsisi tercih edilir. Böylece gereksiz aksiller diseksiyonun lenfödem gibi morbiditeleri azaltılabilir.",
@@ -16276,7 +16568,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "id": "v330-ultradeep-batch5-6-izoniazid-ve-b6",
     "term": "İzoniazid ve B6",
     "aliases": [
-      "İzoniazid ve B6"
+      "İzoniazid ve B6",
+      "izoniazid piridoksin",
+      "INH nöropatisi"
     ],
     "normalizedTerm": "izoniazid ve b6",
     "TurkishName": "İzoniazid ve B6",
@@ -16284,17 +16578,17 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "category": "TUS Klinik Pattern / Karma",
     "subcategory": "Klinik pattern",
     "sourceLayer": "V330 ultra-deep glossary batch 5 + foundation batch 6",
-    "previewDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "preAnswerSafeDefinition": "Klinik karar veya ayırıcı tanı bağlamında kullanılan güvenli bir kavramdır.",
-    "shortDefinition": "İzoniazid B6 metabolizmasını etkileyerek nöropati riskini artırır.",
-    "definition": "İzoniazid B6 metabolizmasını etkileyerek nöropati riskini artırır.",
-    "detailedExplanation": "İzoniazid ve B6 İzoniazid B6 metabolizmasını etkileyerek nöropati riskini artırır.",
-    "postAnswerExplanation": "İzoniazid ve B6 İzoniazid B6 metabolizmasını etkileyerek nöropati riskini artırır.",
-    "postAnswerExpandedExplanation": "İzoniazid ve B6 İzoniazid B6 metabolizmasını etkileyerek nöropati riskini artırır.",
-    "tusPearl": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "differentialPoint": "Ayırıcı nokta, aynı bulguyu yapan alternatif nedenlerden hangi ek ipucuyla ayrıldığıdır.",
-    "clinicalRelevance": "Bu terimde amaç kelimeyi değil; hangi bulgu ile hangi kararın bağlandığını hatırlamaktır.",
-    "mechanism": "",
+    "previewDefinition": "İzoniazid kullanımında piridoksin metabolizmasının etkilenmesi nedeniyle B6 desteği gereksinimini ifade eder. B6 eksikliği periferik nöropati ve nöbet riskini artırabilir.",
+    "preAnswerSafeDefinition": "İzoniazid kullanımında piridoksin metabolizmasının etkilenmesi nedeniyle B6 desteği gereksinimini ifade eder. B6 eksikliği periferik nöropati ve nöbet riskini artırabilir.",
+    "shortDefinition": "İzoniazid kullanımında piridoksin metabolizmasının etkilenmesi nedeniyle B6 desteği gereksinimini ifade eder. B6 eksikliği periferik nöropati ve nöbet riskini artırabilir.",
+    "definition": "İzoniazid kullanımında piridoksin metabolizmasının etkilenmesi nedeniyle B6 desteği gereksinimini ifade eder. B6 eksikliği periferik nöropati ve nöbet riskini artırabilir.",
+    "detailedExplanation": "İzoniazid tüberküloz tedavisinin temel ilaçlarındandır ancak piridoksin eksikliğine yatkınlık oluşturur. Gebelik, malnütrisyon, HIV, alkol kullanımı ve diyabet gibi risklerde B6 desteği özellikle önemlidir.",
+    "postAnswerExplanation": "İzoniazid tüberküloz tedavisinin temel ilaçlarındandır ancak piridoksin eksikliğine yatkınlık oluşturur. Gebelik, malnütrisyon, HIV, alkol kullanımı ve diyabet gibi risklerde B6 desteği özellikle önemlidir.",
+    "postAnswerExpandedExplanation": "İzoniazid tüberküloz tedavisinin temel ilaçlarındandır ancak piridoksin eksikliğine yatkınlık oluşturur. Gebelik, malnütrisyon, HIV, alkol kullanımı ve diyabet gibi risklerde B6 desteği özellikle önemlidir.",
+    "tusPearl": "İzoniazid kullanan hastada periferik nöropatiyi önlemek için piridoksin verilir.",
+    "differentialPoint": "Etambutol optik nörit, rifampisin turuncu vücut sıvıları ve CYP indüksiyonu, pirazinamid hiperürisemi ile daha çok ilişkilidir.",
+    "clinicalRelevance": "Farmakoloji sorularında anti-TB ilaç yan etkisi ve profilaksisini eşleştirir.",
+    "mechanism": "İzoniazid piridoksin türevleriyle etkileşerek GABA sentezi ve periferik sinir fonksiyonu için gerekli B6 havuzunu azaltabilir.",
     "relatedBranches": [
       "general-medicine"
     ],
@@ -16307,7 +16601,9 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
     "keywordsForSearch": [
-      "İzoniazid ve B6"
+      "İzoniazid ve B6",
+      "izoniazid piridoksin",
+      "INH nöropatisi"
     ],
     "sourceTextExamples": [],
     "sourceCandidate": {

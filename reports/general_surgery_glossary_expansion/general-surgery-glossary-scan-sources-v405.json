@@ -1,0 +1,21 @@
+{
+  "version": "V405_GENERAL_SURGERY_GLOSSARY_EXPANSION",
+  "baseZip": "KlinikIQ_V404_PEDIATRICS_GLOSSARY_EXPANSION(1).zip",
+  "scannedFiles": [
+    {
+      "path": "src/data/cases.js",
+      "contentType": "Genel Cerrahi clinical cases",
+      "records": 40
+    },
+    {
+      "path": "src/data/tusPearlCards.js",
+      "contentType": "Genel Cerrahi TUS Pearl / Hap card topics",
+      "records": 31
+    }
+  ],
+  "scannedTextFields": 16273,
+  "activeGlossaryBefore": 3262,
+  "addedEntries": 73,
+  "activeGlossaryAfterExpected": 3335,
+  "note": "No separate general-surgery override file was present in src/data; branch-specific TUS/Hap card texts were scanned from tusPearlCards.js."
+}

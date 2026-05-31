@@ -1,0 +1,234 @@
+{
+  "projectVersion": "V402 Medical Pharmacology Glossary Expansion",
+  "baseZip": "KlinikIQ_V401_MEDICAL_PATHOLOGY_GLOSSARY_EXPANSION(1).zip",
+  "scannedFiles": [
+    {
+      "sourceFilePath": "src/data/cases.js",
+      "contentType": "medical-pharmacology clinical cases and TUS Spot cases",
+      "recordCount": 48,
+      "textFieldCount": 8526
+    },
+    {
+      "sourceFilePath": "src/data/tusPearlCards.js",
+      "contentType": "medical-pharmacology TUS Pearl/Hap cards",
+      "recordCount": 101,
+      "textFieldCount": 1818
+    },
+    {
+      "sourceFilePath": "src/data/tusPearlMedicalPharmacologyFirst51Overrides.js",
+      "contentType": "medical-pharmacology first 51 override cards",
+      "recordCount": 51,
+      "textFieldCount": 510
+    },
+    {
+      "sourceFilePath": "src/data/tusPearlMedicalPharmacologySecond50Overrides.js",
+      "contentType": "medical-pharmacology second 50 override cards",
+      "recordCount": 50,
+      "textFieldCount": 500
+    }
+  ],
+  "totalTextFields": 11354,
+  "activeGlossaryBefore": 2970,
+  "curatedCandidateBankSize": 166,
+  "addedEntries": 115,
+  "skippedAlreadyActive": 48,
+  "skippedCandidates": [
+    {
+      "term": "Organofosfat zehirlenmesi",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Asetilkolinesteraz inhibisyonu",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Pralidoksim",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Atropin",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Kolinerjik kriz",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "NAPQI",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "N-asetilsistein",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Beta bloker toksisitesi",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Glukagon",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Yüksek doz insülin-euglisemi tedavisi",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Membran stabilizasyonu",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "TCA toksisitesi",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Opioid toksisitesi",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Nalokson",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Flumazenil",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Serotonin sendromu",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Nöroleptik malign sendrom",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Dantrolen",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Malign hipertermi",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Roküronyum",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Sugammadeks",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Adenozin",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Amiodaron",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Digoksin toksisitesi",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Digoksin immün Fab",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "ACE inhibitörü",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "ARB",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Spironolakton",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Furosemid",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Tiyazid diüretik",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Asetazolamid",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "GLP-1 reseptör agonisti",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "SGLT2 inhibitörü",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Levotiroksin",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Metimazol",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Propiltiyourasil",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Warfarin",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Heparin",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Protamin sülfat",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "İdarucizumab",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Andexanet alfa",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "P2Y12 reseptör blokajı",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Alteplaz",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "SABA",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "PPI",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Metotreksat",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "Doksorubisin kardiyotoksisitesi",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    },
+    {
+      "term": "İlk geçiş metabolizması",
+      "reason": "alreadyActiveGlossaryExactOrAlias"
+    }
+  ],
+  "additionalExtraBankSkippedAlreadyActive": [
+    "Fibrat",
+    "Oksitosin",
+    "Magnezyum sülfat"
+  ]
+}

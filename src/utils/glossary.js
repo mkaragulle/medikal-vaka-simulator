@@ -23,6 +23,18 @@ import { TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS } from '../data/tusGloss
 import { TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS } from '../data/tusGlossaryV330UltraDeepBatch5And6Index.js';
 import { TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS } from '../data/tusGlossaryV332MajorJargonBatch7Index.js';
 import { TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS } from '../data/tusGlossaryV368MajorDiseaseJargonBatch8Index.js';
+import { TUS_GLOSSARY_V396_ANATOMY_EXPANSION_TERMS } from '../data/tusGlossaryV396AnatomyExpansionIndex.js';
+import { TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS } from '../data/tusGlossaryV397PhysiologyExpansionIndex.js';
+import { TUS_GLOSSARY_V398_HISTOLOGY_EMBRYOLOGY_EXPANSION_TERMS } from '../data/tusGlossaryV398HistologyEmbryologyExpansionIndex.js';
+import { TUS_GLOSSARY_V399_BIOCHEMISTRY_EXPANSION_TERMS } from '../data/tusGlossaryV399BiochemistryExpansionIndex.js';
+import { TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS } from '../data/tusGlossaryV400MicrobiologyExpansionIndex.js';
+import { TUS_GLOSSARY_V401_PATHOLOGY_EXPANSION_TERMS } from '../data/tusGlossaryV401PathologyExpansionIndex.js';
+import { TUS_GLOSSARY_V402_PHARMACOLOGY_EXPANSION_TERMS } from '../data/tusGlossaryV402PharmacologyExpansionIndex.js';
+import { TUS_GLOSSARY_V403_INTERNAL_MEDICINE_EXPANSION_TERMS } from '../data/tusGlossaryV403InternalMedicineExpansionIndex.js';
+import { TUS_GLOSSARY_V404_PEDIATRICS_EXPANSION_TERMS } from '../data/tusGlossaryV404PediatricsExpansionIndex.js';
+import { TUS_GLOSSARY_V405_GENERAL_SURGERY_EXPANSION_TERMS } from '../data/tusGlossaryV405GeneralSurgeryExpansionIndex.js';
+import { TUS_GLOSSARY_V406_OBGYN_EXPANSION_TERMS } from '../data/tusGlossaryV406ObgynExpansionIndex.js';
+import { TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS } from '../data/tusGlossaryV407SmallClerkshipsExpansionIndex.js';
 
 const teachingOnly = 'teachingOnly';
 
@@ -9486,6 +9498,18 @@ export const defaultGlossaryTerms = globalGlossaryTerms;
 const STATIC_GLOSSARY_SOURCES = [
   // Highest-priority quality layer: removes placeholder/filler definitions while preserving aliases and matching behavior.
   ...TUS_GLOSSARY_DEFINITION_QUALITY_TERMS,
+  ...TUS_GLOSSARY_V396_ANATOMY_EXPANSION_TERMS,
+  ...TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS,
+  ...TUS_GLOSSARY_V398_HISTOLOGY_EMBRYOLOGY_EXPANSION_TERMS,
+  ...TUS_GLOSSARY_V399_BIOCHEMISTRY_EXPANSION_TERMS,
+  ...TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS,
+  ...TUS_GLOSSARY_V401_PATHOLOGY_EXPANSION_TERMS,
+  ...TUS_GLOSSARY_V402_PHARMACOLOGY_EXPANSION_TERMS,
+  ...TUS_GLOSSARY_V403_INTERNAL_MEDICINE_EXPANSION_TERMS,
+  ...TUS_GLOSSARY_V404_PEDIATRICS_EXPANSION_TERMS,
+  ...TUS_GLOSSARY_V405_GENERAL_SURGERY_EXPANSION_TERMS,
+  ...TUS_GLOSSARY_V406_OBGYN_EXPANSION_TERMS,
+  ...TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS,
   ...TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS,
   ...TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS,
   ...TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS,

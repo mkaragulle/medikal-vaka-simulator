@@ -1,0 +1,26 @@
+[
+  {
+    "sourceFilePath": "src/data/cases.js",
+    "sourceArea": "Tıbbi Mikrobiyoloji klinik olgular",
+    "recordCount": 49,
+    "textFieldCount": 7506
+  },
+  {
+    "sourceFilePath": "src/data/tusPearlCards.js",
+    "sourceArea": "Tıbbi Mikrobiyoloji TUS Pearl kartları",
+    "recordCount": 52,
+    "textFieldCount": 680
+  },
+  {
+    "sourceFilePath": "src/data/tusPearlMedicalMicrobiologyFirst52Overrides.js",
+    "sourceArea": "Tıbbi Mikrobiyoloji ilk 52 hap kart override",
+    "recordCount": 52,
+    "textFieldCount": 520
+  },
+  {
+    "sourceFilePath": "src/data/tusPearlMedicalMicrobiologySecond52Overrides.js",
+    "sourceArea": "Tıbbi Mikrobiyoloji ikinci 52 hap kart override",
+    "recordCount": 52,
+    "textFieldCount": 520
+  }
+]

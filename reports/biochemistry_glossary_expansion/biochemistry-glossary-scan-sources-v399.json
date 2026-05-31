@@ -1,0 +1,124 @@
+{
+  "version": "V399 medical biochemistry glossary expansion",
+  "baseZip": "KlinikIQ_V398_HISTOLOGY_EMBRYOLOGY_GLOSSARY_EXPANSION(1).zip",
+  "scannedFiles": [
+    "src/data/cases.js",
+    "src/data/tusPearlCards.js",
+    "src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
+    "src/utils/glossary.js"
+  ],
+  "caseCount": 48,
+  "tusPearlCardCount": 37,
+  "hapCardOverrideCount": 74,
+  "textFieldCount": 10034,
+  "activeGlossaryEntryCountBefore": 2633,
+  "activeExactTermAliasCountBefore": 8594,
+  "candidateBankSize": 122,
+  "addedCount": 109,
+  "skippedAlreadyExistingCount": 13,
+  "skippedAlreadyExisting": [
+    {
+      "term": "Hipoketotik hipoglisemi paterni",
+      "reason": "active exact term/alias already exists",
+      "matchedAliases": [
+        "hipoketotik hipoglisemi",
+        "ketonsuz hipoglisemi"
+      ]
+    },
+    {
+      "term": "PFK-1",
+      "reason": "active exact term/alias already exists",
+      "matchedAliases": [
+        "PFK-1",
+        "fosfofruktokinaz-1"
+      ]
+    },
+    {
+      "term": "Fruktoz-2,6-bisfosfat",
+      "reason": "active exact term/alias already exists",
+      "matchedAliases": [
+        "Fruktoz-2,6-bisfosfat",
+        "F2,6BP"
+      ]
+    },
+    {
+      "term": "Piruvat dehidrogenaz",
+      "reason": "active exact term/alias already exists",
+      "matchedAliases": [
+        "pyruvate dehydrogenase",
+        "PDH"
+      ]
+    },
+    {
+      "term": "İndirgenmiş glutatyon",
+      "reason": "active exact term/alias already exists",
+      "matchedAliases": [
+        "İndirgenmiş glutatyon",
+        "GSH",
+        "reduced glutathione"
+      ]
+    },
+    {
+      "term": "NADPH",
+      "reason": "active exact term/alias already exists",
+      "matchedAliases": [
+        "NADPH",
+        "reduced NADP"
+      ]
+    },
+    {
+      "term": "Yağ asidi beta oksidasyonu",
+      "reason": "active exact term/alias already exists",
+      "matchedAliases": [
+        "beta oksidasyon",
+        "β-oksidasyon"
+      ]
+    },
+    {
+      "term": "Malonil-CoA",
+      "reason": "active exact term/alias already exists",
+      "matchedAliases": [
+        "malonyl-CoA"
+      ]
+    },
+    {
+      "term": "Sistatiyonin beta-sentaz",
+      "reason": "active exact term/alias already exists",
+      "matchedAliases": [
+        "CBS",
+        "cystathionine beta-synthase"
+      ]
+    },
+    {
+      "term": "Dallı zincirli aminoasitler",
+      "reason": "active exact term/alias already exists",
+      "matchedAliases": [
+        "lösin izolösin valin"
+      ]
+    },
+    {
+      "term": "Metilmalonik asidemi",
+      "reason": "active exact term/alias already exists",
+      "matchedAliases": [
+        "Metilmalonik asidemi",
+        "methylmalonic acidemia"
+      ]
+    },
+    {
+      "term": "Transferrin satürasyonu",
+      "reason": "active exact term/alias already exists",
+      "matchedAliases": [
+        "Transferrin satürasyonu",
+        "transferrin saturation"
+      ]
+    },
+    {
+      "term": "Maternal kalıtım",
+      "reason": "active exact term/alias already exists",
+      "matchedAliases": [
+        "maternal inheritance"
+      ]
+    }
+  ],
+  "method": "Branch-filtered extraction from medical-biochemistry cases, TUS Pearl cards and hap-card overrides; active glossary exact term/alias comparison; curated biochemical pathway/enzyme/cofactor/lab-pattern selection; reference-free educational definitions."
+}

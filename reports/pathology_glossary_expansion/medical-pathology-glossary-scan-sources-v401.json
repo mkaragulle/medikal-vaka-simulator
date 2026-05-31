@@ -1,0 +1,23 @@
+[
+  {
+    "sourceFilePath": "src/data/cases.js",
+    "contentType": "medical-pathology clinical cases",
+    "recordCount": 51,
+    "textFieldCount": 9502,
+    "scannedFields": "all recursive string fields from pathology-related cases"
+  },
+  {
+    "sourceFilePath": "src/data/tusPearlCards.js",
+    "contentType": "medical-pathology TUS Pearl cards",
+    "recordCount": 84,
+    "textFieldCount": 1512,
+    "scannedFields": "all recursive string fields from Tıbbi Patoloji cards"
+  },
+  {
+    "sourceFilePath": "src/data/tusPearlMedicalPathologyFirst84Overrides.js",
+    "contentType": "medical-pathology Hap Kart overrides",
+    "recordCount": 84,
+    "textFieldCount": 840,
+    "scannedFields": "front, back, answer, explanation, tusTip, differentialNote, keywords and nested strings"
+  }
+]

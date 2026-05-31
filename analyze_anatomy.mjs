@@ -1,0 +1,11 @@
+import { cases } from './src/data/cases.js';
+import { TUS_PEARL_CARDS, TUS_PEARL_TOPICS } from './src/data/tusPearlCards.js';
+import { getGlossaryTerms, normalizeGlossaryText } from './src/utils/glossary.js';
+console.log('cases', cases.length, 'cards', TUS_PEARL_CARDS.length, 'topics', TUS_PEARL_TOPICS.length);
+const anatomyCases=cases.filter(c=>String(c.branchId).includes('anatomy')||String(c.relatedBranch||'').toLowerCase().includes('anatomi')||String(c.questionType||'').includes('anatomy')||String(c.answerTarget||'').includes('anatomy'));
+console.log('anatomy cases', anatomyCases.length); console.log(anatomyCases.slice(0,5).map(c=>({id:c.id,title:c.title,branchId:c.branchId,relatedBranch:c.relatedBranch})));
+const anatomyCards=TUS_PEARL_CARDS.filter(c=>c.branchId==='anatomy'||c.subject==='Anatomi'||c.category==='Anatomi');
+console.log('anatomy cards', anatomyCards.length); console.log(anatomyCards.slice(0,10).map(c=>({id:c.id,title:c.title,topic:c.topic,front:c.front?.slice(0,80)})));
+const glossary=getGlossaryTerms();
+console.log('glossary terms', glossary.length);
+console.log('first', glossary[0]);

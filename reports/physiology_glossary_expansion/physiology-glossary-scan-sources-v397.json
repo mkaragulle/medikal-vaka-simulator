@@ -1,0 +1,38 @@
+{
+  "projectVersion": "V396 anatomy baseline -> V397 physiology glossary expansion",
+  "scannedAreas": [
+    {
+      "source": "src/data/cases.js",
+      "filter": "branchId === physiology / relatedBranch Fizyoloji",
+      "recordCount": 49
+    },
+    {
+      "source": "src/data/tusPearlCards.js",
+      "filter": "branchId === physiology / subject Fizyoloji",
+      "recordCount": 23
+    },
+    {
+      "source": "src/data/tusPearlPhysiologyFirst47Overrides.js",
+      "filter": "all override entries",
+      "recordCount": 47
+    }
+  ],
+  "textFieldCount": 10884,
+  "activeGlossaryBefore": 2433,
+  "activeExactTermAliasBefore": 7685,
+  "addedEntries": 98,
+  "skippedExisting": 8,
+  "categories": {
+    "Fizyoloji / asit-baz": 4,
+    "Fizyoloji / dolaşım": 5,
+    "Fizyoloji / gastrointestinal": 9,
+    "Fizyoloji / kardiyovasküler": 17,
+    "Fizyoloji / nörofizyoloji": 6,
+    "Fizyoloji / nöromüsküler": 7,
+    "Fizyoloji / otonom": 3,
+    "Fizyoloji / renal": 20,
+    "Fizyoloji / renal-endokrin": 4,
+    "Fizyoloji / renal-kardiyovasküler": 2,
+    "Fizyoloji / solunum": 21
+  }
+}

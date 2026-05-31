@@ -1,0 +1,444 @@
+[
+  {
+    "term": "Nöral krest hücreleri",
+    "aliases": [
+      "Nöral krest hücreleri",
+      "nöral krest",
+      "neural crest cells",
+      "nöral krest hücresi"
+    ],
+    "subcategory": "Nöral krest ve göç",
+    "short": "Nöral tüp kenarından ayrılıp göç eden multipotent embriyonik hücre popülasyonudur.",
+    "detail": "Periferik sinir sistemi gliaları, melanositler, adrenal medulla kromaffin hücreleri, enterik ganglion hücreleri ve kraniofasiyal mezenşimin önemli kısmı bu kökenden gelir. Sorularda çok farklı organ bulgularını tek embriyolojik kökende birleştiren ana kavramdır.",
+    "pearl": "Schwann + melanosit + adrenal medulla + enterik ganglion aynı kümeye giriyorsa cevap çoğu zaman nöral kresttir.",
+    "diff": "Nöral tüp MSS nöron/glialarını; nöral krest ise göç eden PSS, pigment, kraniofasiyal ve bazı kardiyak çıkış yolu yapılarını açıklar.",
+    "nested": [
+      "Kardiyak nöral krest",
+      "Enterik ganglion hücreleri",
+      "Schwann hücresi",
+      "Melanosit"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "noral krest hucreleri",
+    "reason": "activeExactTermOrAliasAlreadyExists"
+  },
+  {
+    "term": "Nöral plaka",
+    "aliases": [
+      "Nöral plaka",
+      "neural plate"
+    ],
+    "subcategory": "Nöral tüp gelişimi",
+    "short": "Ektodermin kalınlaşıp merkezi sinir sistemi öncülü haline gelen erken yapısıdır.",
+    "detail": "Nöral plaka katlanarak nöral oluğu ve ardından nöral tüpü oluşturur. Bu basamak, nöral tüp defektlerinin embriyolojik başlangıcını anlamak için temel kavramdır.",
+    "pearl": "Nöral plaka → nöral oluk → nöral tüp sırası nörülasyonun iskeletidir.",
+    "diff": "Nöral plaka ektoderm kökenlidir; mezodermal yapılardan gelişmez.",
+    "nested": [
+      "Nörülasyon",
+      "Nöral tüp",
+      "Ektoderm"
+    ],
+    "priority": "P2",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "noral plaka",
+    "reason": "noOccurrenceAndP2"
+  },
+  {
+    "term": "Anensefali",
+    "aliases": [
+      "Anensefali",
+      "anencephaly"
+    ],
+    "subcategory": "Nöral tüp defekti",
+    "short": "Kranial nöropor kapanma kusuruna bağlı ağır açık nöral tüp defektidir.",
+    "detail": "Beyin ve kranial kemik gelişiminin ağır bozulmasıyla seyreder. Prenatal taramada açık nöral doku nedeniyle AFP yüksekliğiyle ilişkilendirilebilir.",
+    "pearl": "Kranial nöropor kapanmazsa anensefali; kaudal kapanmazsa spina bifida düşünülür.",
+    "diff": "Ensefalosel kranial içerik herniasyonu yapar; anensefalide kranial nöral gelişim çok daha ağır bozulmuştur.",
+    "nested": [
+      "Kranial nöropor",
+      "Maternal serum AFP",
+      "Nöral tüp defekti"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "anensefali",
+    "reason": "activeExactTermOrAliasAlreadyExists"
+  },
+  {
+    "term": "Maternal serum AFP",
+    "aliases": [
+      "Maternal serum AFP",
+      "AFP yüksekliği",
+      "alfa-fetoprotein yüksekliği",
+      "maternal AFP",
+      "MSAFP"
+    ],
+    "subcategory": "Prenatal tarama",
+    "short": "Fetustan kaynaklanan alfa-fetoproteinin anne serumunda ölçülen düzeyidir.",
+    "detail": "Açık nöral tüp defekti ve bazı karın duvarı defektlerinde yükselir; Down sendromu taramasında ise genellikle düşük paternin parçasıdır. Bu nedenle tek başına değil defektin açık/kapalı olmasıyla yorumlanır.",
+    "pearl": "Açık defektlerde AFP artar; kapalı/örtülü defektte artış belirgin olmayabilir.",
+    "diff": "AFP yüksekliği tanı değil tarama ipucudur; anatomik doğrulama için ultrason ve gerekirse amniyon değerlendirmesi gerekir.",
+    "nested": [
+      "Nöral tüp defekti",
+      "Amniyon sıvısında asetilkolinesteraz",
+      "Anensefali"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "maternal serum afp",
+    "reason": "activeExactTermOrAliasAlreadyExists"
+  },
+  {
+    "term": "Tiroglossal kanal kisti",
+    "aliases": [
+      "Tiroglossal kanal kisti",
+      "thyroglossal duct cyst",
+      "orta hat boyun kisti"
+    ],
+    "subcategory": "Tiroid embriyolojisi",
+    "short": "Tiroglossal kanalın persiste kalmasına bağlı orta hat boyun kistidir.",
+    "detail": "Genellikle hyoid çevresinde orta hatta bulunur ve yutkunma veya dil hareketiyle hareket eder. Bu hareket, tiroidin embriyolojik iniş yoluyla bağlantısını gösterir.",
+    "pearl": "Dil çıkarınca hareket eden orta hat kitle tiroglossal kanal kistidir.",
+    "diff": "Brankial yarık kisti daha lateral yerleşir ve dil hareketiyle tipik olarak yükselmez.",
+    "nested": [
+      "Tiroglossal kanal",
+      "Foramen caecum",
+      "Hyoid kemik"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "tiroglossal kanal kisti",
+    "reason": "activeExactTermOrAliasAlreadyExists"
+  },
+  {
+    "term": "Foramen ovale",
+    "aliases": [
+      "Foramen ovale",
+      "foramen ovale",
+      "fetal foramen ovale"
+    ],
+    "subcategory": "Fetal dolaşım",
+    "short": "Fetusta sağ atriyumdan sol atriyuma kan geçişine izin veren atriyal açıklıktır.",
+    "detail": "Doğumdan sonra pulmoner dolaşım başlayınca sol atriyum basıncı artar ve septum primum septum secunduma kapanır. Persistansı patent foramen ovale olarak kalabilir.",
+    "pearl": "Fetusta foramen ovale akciğeri bypass eder; doğumdan sonra sol atriyum basıncıyla kapanır.",
+    "diff": "Duktus arteriozus pulmoner arter-aorta arasında; foramen ovale atriyumlar arasındadır.",
+    "nested": [
+      "Septum primum",
+      "Septum secundum",
+      "Fetal dolaşım"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "foramen ovale",
+    "reason": "activeExactTermOrAliasAlreadyExists"
+  },
+  {
+    "term": "Duktus arteriozus",
+    "aliases": [
+      "Duktus arteriozus",
+      "ductus arteriosus",
+      "arteriyel kanal",
+      "duktus arteriosus"
+    ],
+    "subcategory": "Fetal dolaşım",
+    "short": "Fetusta pulmoner arter ile aorta arasında kan geçişi sağlayan vasküler şanttır.",
+    "detail": "Fetal dönemde yüksek pulmoner direnç nedeniyle kanın önemli kısmı akciğeri bypass eder. Doğumdan sonra oksijen artışı ve prostaglandin azalmasıyla kapanarak ligamentum arteriosuma dönüşür.",
+    "pearl": "Prematürde PDA; prostaglandin açık tutar, indometasin/ibuprofen kapanmayı destekler.",
+    "diff": "Foramen ovale atriyal şanttır; duktus arteriozus arteriyel şanttır.",
+    "nested": [
+      "Patent duktus arteriozus",
+      "Ligamentum arteriosum",
+      "Fetal dolaşım"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "duktus arteriozus",
+    "reason": "activeExactTermOrAliasAlreadyExists"
+  },
+  {
+    "term": "Ligamentum arteriosum",
+    "aliases": [
+      "Ligamentum arteriosum",
+      "arteriyel ligament",
+      "ligamentum arteriosum"
+    ],
+    "subcategory": "Fetal dolaşım",
+    "short": "Duktus arteriozusun doğum sonrası fibrotik kalıntısıdır.",
+    "detail": "Duktus arteriozus kapanınca pulmoner arter ile aorta arasındaki bağlantı ligamentum arteriosum olarak kalır. Klinik olarak aort travması ve rekürren laringeal sinir komşuluğu açısından da önemlidir.",
+    "pearl": "Duktus arteriozusun erişkin kalıntısı ligamentum arteriosumdur.",
+    "diff": "Duktus venozusun kalıntısı ligamentum venosumdur; ikisi karıştırılmamalıdır.",
+    "nested": [
+      "Duktus arteriozus",
+      "Fetal dolaşım",
+      "Patent duktus arteriozus"
+    ],
+    "priority": "P2",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "ligamentum arteriosum",
+    "reason": "noOccurrenceAndP2"
+  },
+  {
+    "term": "Ektopik gastrik mukoza",
+    "aliases": [
+      "Ektopik gastrik mukoza",
+      "ektopik mide mukozası",
+      "ectopic gastric mucosa"
+    ],
+    "subcategory": "GİS embriyolojisi/histolojisi",
+    "short": "Normal mide dışında yerleşen, asit salgılayabilen gastrik mukoza odağıdır.",
+    "detail": "Meckel divertikülünde bulunursa asit salgısı ile ileal mukozada ülserasyon ve ağrısız alt GİS kanaması oluşturabilir. Teknesyum-99m perteknetat tutulumu bu histolojik özelliği yakalamaya yöneliktir.",
+    "pearl": "Çocukta ağrısız alt GİS kanaması + Meckel = ektopik gastrik mukoza düşün.",
+    "diff": "Ektopik pankreas dokusu da görülebilir ama ağrısız kanama daha çok asit salgılayan gastrik mukoza ile ilişkilidir.",
+    "nested": [
+      "Meckel divertikülü",
+      "Teknesyum-99m perteknetat",
+      "Vitellin kanal"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "ektopik gastrik mukoza",
+    "reason": "activeExactTermOrAliasAlreadyExists"
+  },
+  {
+    "term": "Malrotasyon",
+    "aliases": [
+      "Malrotasyon",
+      "intestinal malrotasyon",
+      "bağırsak malrotasyonu"
+    ],
+    "subcategory": "GİS embriyolojisi",
+    "short": "Bağırsakların embriyolojik rotasyon ve fiksasyonunun normal tamamlanmamasıdır.",
+    "detail": "Dar mezenter kökü ve anormal yerleşim midgut volvulus riskini artırır. Yenidoğanda safralı kusma ve üst GİS kontrastlı incelemede anormal duodenojejunal yerleşim kritik ipuçlarıdır.",
+    "pearl": "Yenidoğanda safralı kusmada malrotasyon-volvulus acil dışlanmalıdır.",
+    "diff": "Hirschsprung mekonyum çıkaramama ve aganglionozla; malrotasyon safralı kusma ve volvulus riskiyle öne çıkar.",
+    "nested": [
+      "Midgut volvulus",
+      "Orta bağırsak rotasyonu",
+      "Ladd bantları"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "malrotasyon",
+    "reason": "activeExactTermOrAliasAlreadyExists"
+  },
+  {
+    "term": "Pleuroperitoneal membran",
+    "aliases": [
+      "Pleuroperitoneal membran",
+      "pleuroperitoneal membranes",
+      "pleuroperitoneal membranlar"
+    ],
+    "subcategory": "Diyafram embriyolojisi",
+    "short": "Embriyoda plevral ve peritoneal boşlukları ayırmak üzere diyafram gelişimine katılan membranlardır.",
+    "detail": "Kapanma kusuru özellikle posterolateral diyafram defekti ve konjenital diyafram hernisiyle ilişkilidir. Karın organlarının toraksa geçmesi akciğer gelişimini baskılayarak pulmoner hipoplazi yapabilir.",
+    "pearl": "Posterolateral diyafram hernisi = pleuroperitoneal membran kapanma kusuru.",
+    "diff": "Septum transversum santral tendon katkısıyla; pleuroperitoneal membran posterolateral kapanmayla daha çok ilişkilidir.",
+    "nested": [
+      "Bochdalek hernisi",
+      "Konjenital diyafram hernisi",
+      "Pulmoner hipoplazi"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "pleuroperitoneal membran",
+    "reason": "activeExactTermOrAliasAlreadyExists"
+  },
+  {
+    "term": "Bochdalek hernisi",
+    "aliases": [
+      "Bochdalek hernisi",
+      "Bochdalek hernia",
+      "posterolateral diyafram hernisi"
+    ],
+    "subcategory": "Diyafram embriyolojisi",
+    "short": "Posterolateral diyafram kapanma kusuruna bağlı konjenital diyafram hernisidir.",
+    "detail": "Genellikle sol tarafta görülür; abdominal organların toraksa geçmesi akciğer gelişimini baskılar ve yenidoğanda solunum sıkıntısı yapabilir. Embriyolojik köken pleuroperitoneal membran kapanma kusurudur.",
+    "pearl": "Yenidoğanda toraksta barsak sesleri + solunum sıkıntısı = konjenital diyafram hernisi/Bochdalek.",
+    "diff": "Morgagni hernisi anterior-retrosternal; Bochdalek posterolateral yerleşimlidir.",
+    "nested": [
+      "Pleuroperitoneal membran",
+      "Pulmoner hipoplazi",
+      "Konjenital diyafram hernisi"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "bochdalek hernisi",
+    "reason": "activeExactTermOrAliasAlreadyExists"
+  },
+  {
+    "term": "Aganglionik segment",
+    "aliases": [
+      "Aganglionik segment",
+      "aganglionoz",
+      "aganglionic segment"
+    ],
+    "subcategory": "Enterik sinir sistemi embriyolojisi",
+    "short": "Bağırsak duvarında enterik ganglion hücrelerinin bulunmadığı segmenttir.",
+    "detail": "Hirschsprung hastalığında distal segmentte peristaltik gevşeme bozulur; proksimal bağırsak dilate olabilir. Patolojik tanıda ganglion hücresi yokluğu belirleyicidir.",
+    "pearl": "Hirschsprung’da dar distal aganglionik segment ve proksimal dilatasyon beklenir.",
+    "diff": "Fonksiyonel konstipasyonda ganglion hücreleri kaybolmaz; Hirschsprung’da histolojik yokluk vardır.",
+    "nested": [
+      "Enterik ganglion hücreleri",
+      "Hirschsprung hastalığı",
+      "Auerbach pleksusu"
+    ],
+    "priority": "P0",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "aganglionik segment",
+    "reason": "activeExactTermOrAliasAlreadyExists"
+  },
+  {
+    "term": "Tersiyer koryonik villus",
+    "aliases": [
+      "Tersiyer koryonik villus",
+      "tertiary chorionic villus",
+      "üçüncül koryonik villus"
+    ],
+    "subcategory": "Plasenta histolojisi",
+    "short": "İçinde fetal damar gelişmiş koryonik villus evresidir.",
+    "detail": "Fetal kapillerlerin villus içine girmesiyle gerçek maternal-fetal madde alışverişi etkinleşir. Bu basamak plasental dolaşımın fonksiyonel olgunlaşmasını gösterir.",
+    "pearl": "Villus içinde fetal damar varsa tersiyer koryonik villus düşün.",
+    "diff": "Primer villus yalnız trofoblast ağırlıklıdır; sekonder villusta mezenşim, tersiyerde fetal damar bulunur.",
+    "nested": [
+      "Koryonik villus",
+      "Plasental bariyer",
+      "İntervillöz boşluk"
+    ],
+    "priority": "P2",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "tersiyer koryonik villus",
+    "reason": "noOccurrenceAndP2"
+  },
+  {
+    "term": "Paneth hücresi",
+    "aliases": [
+      "Paneth hücresi",
+      "Paneth cell",
+      "paneth hücreleri"
+    ],
+    "subcategory": "Bağırsak histolojisi",
+    "short": "İnce bağırsak kriptlerinin tabanında yer alan antimikrobiyal salgı hücresidir.",
+    "detail": "Lizozim ve defensin gibi ürünlerle mukozal doğuştan bağışıklığa katkı verir. Kript tabanındaki eozinofilik granülleriyle histolojik olarak tanınır.",
+    "pearl": "Paneth = kript tabanı + defensin/lizozim.",
+    "diff": "Goblet hücresi mukus üretir; Paneth hücresi antimikrobiyal granül salgılar.",
+    "nested": [
+      "Lieberkühn kripti",
+      "Defensin",
+      "Lizozim"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "paneth hucresi",
+    "reason": "activeExactTermOrAliasAlreadyExists"
+  },
+  {
+    "term": "Plica circularis",
+    "aliases": [
+      "Plica circularis",
+      "Kerckring plikası",
+      "plicae circulares"
+    ],
+    "subcategory": "Bağırsak histolojisi",
+    "short": "İnce bağırsakta mukoza ve submukozanın oluşturduğu kalıcı dairesel kıvrımlardır.",
+    "detail": "Emilim yüzey alanını villus ve mikrovilluslarla birlikte artırır. Tek başına hücresel değil, doku düzeyinde yüzey artırıcı yapıdır.",
+    "pearl": "Yüzey artışı sırası: plica circularis > villus > mikrovillus şeklinde katmanlı düşün.",
+    "diff": "Villus yalnız mukozal çıkıntı; plica circularis mukoza + submukoza kıvrımıdır.",
+    "nested": [
+      "Villus",
+      "Mikrovillus",
+      "Fırçamsı kenar"
+    ],
+    "priority": "P2",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "plica circularis",
+    "reason": "noOccurrenceAndP2"
+  },
+  {
+    "term": "Portal triad",
+    "aliases": [
+      "Portal triad",
+      "portal alan",
+      "portal trakt",
+      "portal triad"
+    ],
+    "subcategory": "Karaciğer histolojisi",
+    "short": "Portal ven dalı, hepatik arter dalı ve safra kanalcığını içeren karaciğer portal alanıdır.",
+    "detail": "Kan portal ven ve hepatik arter dallarından sinüzoidlere akar; safra ise hepatositlerden portal alandaki safra kanalına doğru ters yönde ilerler. Bu akım yönleri karaciğer histolojisinin temel ayırıcı noktasıdır.",
+    "pearl": "Portal triad = ven + arter + safra kanalı.",
+    "diff": "Santral vende safra kanalı bulunmaz; sinüzoid kanı santral vene boşalır.",
+    "nested": [
+      "Hepatik sinüzoid",
+      "Safra kanalikülü",
+      "Santral ven"
+    ],
+    "priority": "P1",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "portal triad",
+    "reason": "activeExactTermOrAliasAlreadyExists"
+  },
+  {
+    "term": "Kolloid",
+    "aliases": [
+      "Kolloid",
+      "thyroid colloid",
+      "tiroid kolloidi"
+    ],
+    "subcategory": "Endokrin histoloji",
+    "short": "Tiroid folikül lümeninde bulunan tiroglobulin açısından zengin depo materyalidir.",
+    "detail": "Tiroid hormon sentezinde iyotlanmış tiroglobulin burada depolanır. Histolojik olarak folikül lümenindeki pembe homojen materyal şeklinde görülür.",
+    "pearl": "Tiroidde kolloid hormonun kendisi değil tiroglobulin deposudur.",
+    "diff": "Parafoliküler C hücreleri folikül lümenindeki kolloide bağlı çalışmaz; kalsitonin üretir.",
+    "nested": [
+      "Tiroid folikül hücresi",
+      "Tiroglobulin",
+      "T3/T4"
+    ],
+    "priority": "P2",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "kolloid",
+    "reason": "noOccurrenceAndP2"
+  },
+  {
+    "term": "Osteoblast",
+    "aliases": [
+      "Osteoblast",
+      "osteoblast"
+    ],
+    "subcategory": "Kemik histolojisi",
+    "short": "Kemik matriksi/osteoid üreten hücredir.",
+    "detail": "Mezenkimal kökenlidir ve kemik yapımından sorumludur. Matriks içine gömülüp olgunlaşınca osteosite dönüşebilir.",
+    "pearl": "Osteoblast yapar, osteoklast yıkar, osteosit matriksi sürdürür.",
+    "diff": "Osteoklast monosit-makrofaj kökenli çok çekirdekli rezorptif hücredir.",
+    "nested": [
+      "Osteoid",
+      "Osteosit",
+      "Osteoklast"
+    ],
+    "priority": "P2",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "osteoblast",
+    "reason": "noOccurrenceAndP2"
+  },
+  {
+    "term": "Osteoklast",
+    "aliases": [
+      "Osteoklast",
+      "osteoclast"
+    ],
+    "subcategory": "Kemik histolojisi",
+    "short": "Kemik rezorpsiyonu yapan çok çekirdekli hücredir.",
+    "detail": "Monosit-makrofaj hattından gelişir; asit ve proteazlarla mineral ve organik matriksi yıkar. Parathormon etkisinin kemik rezorpsiyonuna yansıması osteoblast-RANKL aracılığıyla osteoklast aktivasyonudur.",
+    "pearl": "Osteoklast kemik yıkar; osteoblast kemik yapar.",
+    "diff": "Osteoblast mezenkimal kökenli tek çekirdekli yapım hücresidir.",
+    "nested": [
+      "Kemik rezorpsiyonu",
+      "RANKL",
+      "Osteoblast"
+    ],
+    "priority": "P2",
+    "answerLeakRisk": "low",
+    "normalizedTerm": "osteoklast",
+    "reason": "noOccurrenceAndP2"
+  }
+]

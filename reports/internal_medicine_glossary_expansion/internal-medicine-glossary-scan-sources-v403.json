@@ -1,0 +1,47 @@
+{
+  "version": "V403_INTERNAL_MEDICINE_GLOSSARY_EXPANSION",
+  "scannedFiles": [
+    {
+      "file": "src/data/cases.js",
+      "contentType": "internal medicine clinical cases",
+      "records": 26,
+      "textFields": "recursive string fields from internal-medicine branch cases"
+    },
+    {
+      "file": "src/data/tusPearlCards.js",
+      "contentType": "internal medicine TUS Pearl/Hap cards",
+      "records": 159,
+      "textFields": "recursive string fields from internal-medicine cards"
+    },
+    {
+      "file": "src/data/tusPearlInternalMedicineFirst50Overrides.js",
+      "contentType": "internal medicine hap card overrides",
+      "records": "first 50 override object records",
+      "textFields": "front/back/answer/explanation/tusTip/differentialNote/keywords"
+    },
+    {
+      "file": "src/data/tusPearlInternalMedicineSecond50Overrides.js",
+      "contentType": "internal medicine hap card overrides",
+      "records": "second 50 override object records",
+      "textFields": "front/back/answer/explanation/tusTip/differentialNote/keywords"
+    },
+    {
+      "file": "src/data/tusPearlInternalMedicineThird59Overrides.js",
+      "contentType": "internal medicine hap card overrides",
+      "records": "third 59 override object records",
+      "textFields": "front/back/answer/explanation/tusTip/differentialNote/keywords"
+    }
+  ],
+  "counts": {
+    "internalCases": 26,
+    "internalCards": 159,
+    "overrides": 159,
+    "textFields": 22213,
+    "activeGlossaryTerms": 3085,
+    "activeGlossaryNorms": 9981
+  },
+  "candidateBankSize": 175,
+  "addedEntries": 104,
+  "skippedAlreadyActiveOrDuplicate": 71,
+  "activeGlossaryExactNormsBeforeV403": 9981
+}
