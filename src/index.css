@@ -55248,3 +55248,59 @@ html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.premium-
 .app-shell[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span {
   color: #5eead4 !important;
 }
+
+/* ===== V413 — Olgu kartı bölüm başlıkları teal + bold kesin override ===== */
+.case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-label,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-label,
+.case-page-shell .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span {
+  color: #0f766e !important;
+  font-weight: 800 !important;
+}
+
+.case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-icon,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-icon,
+.case-page-shell .patient-summary-card.premium-reference-summary-card .summary-wide-icon,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-wide-icon,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-icon,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-icon,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-wide-icon,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-wide-icon {
+  color: #0f766e !important;
+}
+
+.case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-icon svg,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-icon svg,
+.case-page-shell .patient-summary-card.premium-reference-summary-card .summary-wide-icon svg,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-wide-icon svg,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-icon svg,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-icon svg,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-wide-icon svg,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-wide-icon svg {
+  color: #0f766e !important;
+  stroke: #0f766e !important;
+}
+
+html[data-theme='dark'] .case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-label,
+html[data-theme='dark'] .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-label,
+html[data-theme='dark'] .case-page-shell .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+html[data-theme='dark'] .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span,
+html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-label,
+html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-label,
+html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span,
+.app-shell[data-theme='dark'] .case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-label,
+.app-shell[data-theme='dark'] .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-label,
+.app-shell[data-theme='dark'] .case-page-shell .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+.app-shell[data-theme='dark'] .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span,
+.app-shell[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-label,
+.app-shell[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-label,
+.app-shell[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+.app-shell[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span {
+  color: #5eead4 !important;
+  font-weight: 800 !important;
+}
