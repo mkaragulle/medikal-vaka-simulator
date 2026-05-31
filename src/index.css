@@ -55001,3 +55001,35 @@ html[data-theme='dark'] .case-page-shell .summary-profile-copy small,
     right: 2px !important;
   }
 }
+
+/* ===== V410 mirror: compact neutral Olgu sunumu card ===== */
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card.premium-reference-summary-card {
+  margin-top: 14px !important;
+  padding: 16px 18px !important;
+  border-radius: 18px !important;
+  border-color: #e3e8ea !important;
+  background: #fbfcfc !important;
+  box-shadow: none !important;
+}
+
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-icon,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-wide-icon,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-wide-icon--history {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  min-height: 34px !important;
+  border-radius: 10px !important;
+  color: #64717f !important;
+  background: #f5f7f8 !important;
+  border-color: #e1e7ea !important;
+  box-shadow: none !important;
+}
+
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span {
+  color: #334155 !important;
+  font-size: 11px !important;
+  font-weight: 720 !important;
+  letter-spacing: .065em !important;
+}
