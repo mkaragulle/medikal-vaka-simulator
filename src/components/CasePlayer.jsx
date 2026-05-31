@@ -936,77 +936,74 @@ function CasePlayer({
               <div className="case-title-copy">
                 <h1><GlossaryText text={clinicalCase.title} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></h1>
                 <ExamSignalBox signal={caseExamSignal} compact={isSpotCase} />
-                <div className="patient-summary-card professional-patient-summary-card clinical-summary-card premium-reference-summary-card refined-case-intro-card">
-                  {/* UI-only redesign: PROFİL, BAŞVURU ve HASTA ÖYKÜSÜ verileri aynı kaynaklardan okunur; yalnız sunum katmanı sadeleştirildi. */}
-                  <header className="patient-summary-unified-header" aria-label="Olgu sunumu başlığı">
-                    <span className="patient-summary-main-icon patient-summary-anchor-icon" aria-hidden="true">
-                      <Icon name="User" size={30} strokeWidth={1.9} />
+                <div className="patient-summary-card professional-patient-summary-card clinical-summary-card premium-reference-summary-card">
+                  {/* Hasta özeti, referans görseldeki tek, premium ve okunabilir klinik çerçeve tasarımına göre yeniden düzenlendi. */}
+                  <header className="patient-summary-head compact-summary-head premium-summary-head">
+                    <span className="patient-summary-main-icon" aria-hidden="true">
+                      <Icon name="Stethoscope" size={28} strokeWidth={1.95} />
                     </span>
                     <div className="patient-summary-head-copy">
                       <strong>Olgu sunumu</strong>
-                      <small>Hasta profili, başvuru nedeni ve klinik öykü</small>
                     </div>
                   </header>
 
-                  <div className="patient-summary-intro-layout" aria-label="Hasta profil ve başvuru özeti">
-                    <div className="patient-summary-grid structured-patient-summary-grid unified-summary-grid patient-summary-intro-blocks">
-                      {patientSummary.rows.map((row) => {
-                        const rowKind = row.kind || summaryRowKind(row.label);
-                        const profileCopy = rowKind === 'profile' ? splitProfileText(row.value) : null;
-                        return (
-                          <section key={row.label} className={`summary-detail-card summary-detail-card--${rowKind}${row.items ? ' risk-chip-card' : ''}`}>
-                            <div className="summary-detail-row-head">
-                              <span className="summary-detail-icon" aria-hidden="true">
-                                <Icon name={summaryIconName(rowKind)} size={22} strokeWidth={1.92} />
-                              </span>
-                              <span className="summary-detail-label">{row.label.toLocaleUpperCase('tr')}</span>
-                            </div>
-                            <div className="summary-detail-copy">
-                              {row.items ? (
-                                row.items.length ? (
-                                  <PatientSummaryItems items={row.items} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} />
-                                ) : <p>{row.fallback}</p>
-                              ) : profileCopy ? (
-                                <p className="summary-profile-copy">
-                                  <strong><GlossaryText text={profileCopy.primary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></strong>
-                                  {profileCopy.secondary ? <small><GlossaryText text={profileCopy.secondary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></small> : null}
-                                </p>
-                              ) : (
-                                <p><GlossaryText text={row.value} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></p>
-                              )}
-                            </div>
-                          </section>
-                        );
-                      })}
-                    </div>
+                  <div className="patient-summary-grid structured-patient-summary-grid unified-summary-grid">
+                    {patientSummary.rows.map((row) => {
+                      const rowKind = row.kind || summaryRowKind(row.label);
+                      const profileCopy = rowKind === 'profile' ? splitProfileText(row.value) : null;
+                      return (
+                        <section key={row.label} className={`summary-detail-card summary-detail-card--${rowKind}${row.items ? ' risk-chip-card' : ''}`}>
+                          <span className="summary-detail-icon" aria-hidden="true">
+                            <Icon name={summaryIconName(rowKind)} size={27} strokeWidth={1.92} />
+                          </span>
+                          <div className="summary-detail-copy">
+                            <span className="summary-detail-label">{row.label.toLocaleUpperCase('tr')}</span>
+                            {row.items ? (
+                              row.items.length ? (
+                                <PatientSummaryItems items={row.items} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} />
+                              ) : <p>{row.fallback}</p>
+                            ) : profileCopy ? (
+                              <p className="summary-profile-copy">
+                                <strong><GlossaryText text={profileCopy.primary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></strong>
+                                {profileCopy.secondary ? <small><GlossaryText text={profileCopy.secondary} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></small> : null}
+                              </p>
+                            ) : (
+                              <p><GlossaryText text={row.value} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} /></p>
+                            )}
+                          </div>
+                        </section>
+                      );
+                    })}
                   </div>
 
                   <section className="patient-summary-story-block unified-history-block" aria-label="Hasta öyküsü">
-                    <div className="summary-story-label">
-                      <span className="summary-wide-icon summary-wide-icon--history" aria-hidden="true">
-                        <Icon name="Notes" size={22} strokeWidth={1.9} />
-                      </span>
-                      <span>HASTA ÖYKÜSÜ</span>
-                    </div>
-                    <div className="summary-story-text">
-                      {patientSummary.history.map((part, index) => (
-                        <span
-                          key={`${clinicalCase.id}-summary-story-${index}`}
-                          role="button"
-                          tabIndex={0}
-                          className={highlighted[index] ? `stem-sentence highlighted hl-${highlighted[index]}` : 'stem-sentence'}
-                          onClick={() => toggleHighlight(index)}
-                          onKeyDown={(event) => {
-                            if (event.key === 'Enter' || event.key === ' ') {
-                              event.preventDefault();
-                              toggleHighlight(index);
-                            }
-                          }}
-                          aria-label={`${activeHighlighter} rengiyle öykü cümlesini vurgula`}
-                        >
-                          <GlossaryText text={toSentence(part)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} />
-                        </span>
-                      ))}
+                    <span className="summary-wide-icon summary-wide-icon--history" aria-hidden="true">
+                      <Icon name="Notes" size={27} strokeWidth={1.9} />
+                    </span>
+                    <div className="summary-wide-content">
+                      <div className="summary-story-label">
+                        <span>HASTA ÖYKÜSÜ</span>
+                      </div>
+                      <div className="summary-story-text">
+                        {patientSummary.history.map((part, index) => (
+                          <span
+                            key={`${clinicalCase.id}-summary-story-${index}`}
+                            role="button"
+                            tabIndex={0}
+                            className={highlighted[index] ? `stem-sentence highlighted hl-${highlighted[index]}` : 'stem-sentence'}
+                            onClick={() => toggleHighlight(index)}
+                            onKeyDown={(event) => {
+                              if (event.key === 'Enter' || event.key === ' ') {
+                                event.preventDefault();
+                                toggleHighlight(index);
+                              }
+                            }}
+                            aria-label={`${activeHighlighter} rengiyle öykü cümlesini vurgula`}
+                          >
+                            <GlossaryText text={toSentence(part)} enabled={caseGlossaryEnabled} revealMode={caseGlossaryRevealMode} maxTerms={9} />
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </section>
                 </div>
