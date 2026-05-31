@@ -5328,3 +5328,423 @@ html[data-theme='dark'] .case-page-shell .patient-summary-card .summary-story-te
     overflow-wrap: anywhere !important;
   }
 }
+
+/* ==========================================================================
+   KLINIKIQ V411 — Olgu Sunumu exact reference card match
+   --------------------------------------------------------------------------
+   Rebuilds the case summary panel to match the provided single-card reference:
+   large title, three structured rows, left icon boxes, and calm separators.
+   ========================================================================== */
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card.premium-reference-summary-card.refined-case-intro-card,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card.refined-case-intro-card,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card.premium-reference-summary-card.refined-case-intro-card,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card.refined-case-intro-card {
+  position: relative !important;
+  padding: 0 !important;
+  border-radius: 38px !important;
+  overflow: hidden !important;
+  background: linear-gradient(180deg, #dde6e4 0%, #dfe8e6 100%) !important;
+  border: 2px solid #b4c5c1 !important;
+  box-shadow: 0 12px 28px rgba(32, 61, 63, 0.08) !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-shell,
+.case-page-shell .patient-summary-reference-shell {
+  position: relative !important;
+  width: 100% !important;
+  padding: clamp(24px, 2.7vw, 34px) clamp(24px, 3vw, 42px) clamp(26px, 3vw, 38px) !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-header,
+.case-page-shell .patient-summary-reference-header {
+  margin: 0 0 clamp(18px, 2vw, 28px) !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-header h2,
+.case-page-shell .patient-summary-reference-header h2 {
+  margin: 0 !important;
+  color: #1d4e59 !important;
+  font-size: clamp(2rem, 3.3vw, 3.1rem) !important;
+  line-height: 1.06 !important;
+  font-weight: 820 !important;
+  letter-spacing: -0.03em !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-sections,
+.case-page-shell .patient-summary-reference-sections {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-row,
+.case-page-shell .patient-summary-reference-row {
+  display: grid !important;
+  grid-template-columns: 96px minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: clamp(18px, 2.2vw, 28px) !important;
+  padding: clamp(18px, 2vw, 30px) 0 !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-row + .patient-summary-reference-row,
+.case-page-shell .patient-summary-reference-row + .patient-summary-reference-row {
+  border-top: 2px solid rgba(104, 133, 136, 0.24) !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-icon-box,
+.case-page-shell .patient-summary-reference-icon-box {
+  width: 78px !important;
+  height: 78px !important;
+  min-width: 78px !important;
+  min-height: 78px !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  border-radius: 24px !important;
+  color: #2f7271 !important;
+  background: linear-gradient(180deg, rgba(236, 244, 243, 0.92) 0%, rgba(231, 240, 239, 0.98) 100%) !important;
+  border: 2px solid rgba(129, 160, 159, 0.34) !important;
+  box-shadow: 0 8px 18px rgba(67, 96, 97, 0.08) !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-content,
+.case-page-shell .patient-summary-reference-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  min-width: 0 !important;
+  padding-top: 2px !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-label,
+.case-page-shell .patient-summary-reference-label {
+  display: inline-block !important;
+  color: #2f7271 !important;
+  font-size: clamp(1rem, 1.25vw, 1.18rem) !important;
+  font-weight: 820 !important;
+  letter-spacing: -0.015em !important;
+  line-height: 1.1 !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-content p,
+.case-page-shell .patient-summary-reference-content p {
+  margin: 0 !important;
+  color: #111827 !important;
+  font-size: clamp(1.22rem, 2vw, 1.65rem) !important;
+  line-height: 1.42 !important;
+  font-weight: 560 !important;
+  letter-spacing: -0.02em !important;
+  overflow-wrap: anywhere !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-history-copy,
+.case-page-shell .patient-summary-reference-history-copy {
+  display: block !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-history-copy .stem-sentence,
+.case-page-shell .patient-summary-reference-history-copy .stem-sentence {
+  display: inline !important;
+  border-radius: 10px !important;
+  padding: 0.02em 0.08em !important;
+  cursor: pointer !important;
+  transition: background-color 120ms ease, box-shadow 120ms ease !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-sparkle,
+.case-page-shell .patient-summary-reference-sparkle {
+  position: absolute !important;
+  right: clamp(14px, 1.8vw, 22px) !important;
+  bottom: clamp(14px, 1.8vw, 22px) !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  opacity: 0.9 !important;
+  pointer-events: none !important;
+}
+
+html[data-theme="dark"] .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card.premium-reference-summary-card.refined-case-intro-card,
+html[data-theme="dark"] .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card.refined-case-intro-card,
+.app-shell[data-theme="dark"] .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card.premium-reference-summary-card.refined-case-intro-card,
+.app-shell[data-theme="dark"] .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card.refined-case-intro-card {
+  background: linear-gradient(180deg, #d8e2e0 0%, #dae5e3 100%) !important;
+  border-color: #93aba7 !important;
+}
+
+@media (max-width: 760px) {
+  .clinical-case.qbank-case .patient-summary-reference-shell,
+  .case-page-shell .patient-summary-reference-shell {
+    padding: 22px 20px 24px !important;
+  }
+
+  .clinical-case.qbank-case .patient-summary-reference-row,
+  .case-page-shell .patient-summary-reference-row {
+    grid-template-columns: 72px minmax(0, 1fr) !important;
+    gap: 16px !important;
+    padding: 18px 0 !important;
+  }
+
+  .clinical-case.qbank-case .patient-summary-reference-icon-box,
+  .case-page-shell .patient-summary-reference-icon-box {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
+    border-radius: 18px !important;
+  }
+
+  .clinical-case.qbank-case .patient-summary-reference-icon-box svg,
+  .case-page-shell .patient-summary-reference-icon-box svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  .clinical-case.qbank-case .patient-summary-reference-content p,
+  .case-page-shell .patient-summary-reference-content p {
+    font-size: clamp(1.05rem, 4.8vw, 1.28rem) !important;
+  }
+}
+
+@media (max-width: 540px) {
+  .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card.premium-reference-summary-card.refined-case-intro-card,
+  .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card.refined-case-intro-card,
+  .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card.premium-reference-summary-card.refined-case-intro-card,
+  .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card.refined-case-intro-card {
+    border-radius: 28px !important;
+  }
+
+  .clinical-case.qbank-case .patient-summary-reference-shell,
+  .case-page-shell .patient-summary-reference-shell {
+    padding: 18px 16px 20px !important;
+  }
+
+  .clinical-case.qbank-case .patient-summary-reference-row,
+  .case-page-shell .patient-summary-reference-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .clinical-case.qbank-case .patient-summary-reference-icon-box,
+  .case-page-shell .patient-summary-reference-icon-box {
+    margin-bottom: 2px !important;
+  }
+
+  .clinical-case.qbank-case .patient-summary-reference-sparkle,
+  .case-page-shell .patient-summary-reference-sparkle {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   KLINIKIQ V412 — Final exact Olgu Sunumu reference implementation
+   --------------------------------------------------------------------------
+   Standalone class, intentionally detached from old patient-summary-card rules.
+   ========================================================================== */
+.clinical-case.qbank-case .patient-summary-reference-card.refined-case-intro-card,
+.case-page-shell .patient-summary-reference-card.refined-case-intro-card {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  margin: clamp(18px, 2vw, 26px) 0 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  border-radius: 34px !important;
+  background: #e7f0ee !important;
+  border: 1.7px solid #b7cac7 !important;
+  box-shadow: none !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-card.refined-case-intro-card::after,
+.case-page-shell .patient-summary-reference-card.refined-case-intro-card::after {
+  content: "✦" !important;
+  position: absolute !important;
+  right: 20px !important;
+  bottom: 18px !important;
+  z-index: 0 !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-size: clamp(34px, 3vw, 48px) !important;
+  line-height: 1 !important;
+  font-weight: 500 !important;
+  pointer-events: none !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-shell,
+.case-page-shell .patient-summary-reference-card .patient-summary-reference-shell {
+  position: relative !important;
+  z-index: 1 !important;
+  width: 100% !important;
+  padding: 30px 50px 38px !important;
+  background: transparent !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-header,
+.case-page-shell .patient-summary-reference-card .patient-summary-reference-header {
+  margin: 0 0 18px !important;
+  padding: 0 !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-header h2,
+.case-page-shell .patient-summary-reference-card .patient-summary-reference-header h2 {
+  margin: 0 !important;
+  color: #1d4e59 !important;
+  font-size: clamp(2rem, 2.7vw, 2.75rem) !important;
+  line-height: 1.05 !important;
+  font-weight: 820 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-sections,
+.case-page-shell .patient-summary-reference-card .patient-summary-reference-sections {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  width: 100% !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-row,
+.case-page-shell .patient-summary-reference-card .patient-summary-reference-row {
+  display: grid !important;
+  grid-template-columns: 88px minmax(0, 1fr) !important;
+  align-items: start !important;
+  column-gap: 38px !important;
+  width: 100% !important;
+  padding: 25px 0 32px !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-row--profile,
+.case-page-shell .patient-summary-reference-card .patient-summary-reference-row--profile {
+  padding-top: 20px !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-row + .patient-summary-reference-row,
+.case-page-shell .patient-summary-reference-card .patient-summary-reference-row + .patient-summary-reference-row {
+  border-top: 2px solid rgba(106, 130, 132, 0.23) !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-icon-box,
+.case-page-shell .patient-summary-reference-card .patient-summary-reference-icon-box {
+  width: 78px !important;
+  height: 78px !important;
+  min-width: 78px !important;
+  min-height: 78px !important;
+  max-width: 78px !important;
+  max-height: 78px !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  margin: 0 !important;
+  border-radius: 22px !important;
+  color: #2f7271 !important;
+  background: rgba(235, 246, 244, 0.88) !important;
+  border: 1.7px solid rgba(130, 161, 159, 0.34) !important;
+  box-shadow: 0 6px 15px rgba(50, 80, 84, 0.055) !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-icon-box svg,
+.case-page-shell .patient-summary-reference-card .patient-summary-reference-icon-box svg {
+  width: 33px !important;
+  height: 33px !important;
+  stroke: currentColor !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-content,
+.case-page-shell .patient-summary-reference-card .patient-summary-reference-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 13px !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-label,
+.case-page-shell .patient-summary-reference-card .patient-summary-reference-label {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #2f7271 !important;
+  font-size: clamp(1rem, 1.22vw, 1.16rem) !important;
+  line-height: 1.05 !important;
+  font-weight: 820 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-content p,
+.case-page-shell .patient-summary-reference-card .patient-summary-reference-content p {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #111111 !important;
+  font-size: clamp(1.32rem, 2.05vw, 1.72rem) !important;
+  line-height: 1.46 !important;
+  font-weight: 520 !important;
+  letter-spacing: -0.028em !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  overflow-wrap: anywhere !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-history-copy .stem-sentence,
+.case-page-shell .patient-summary-reference-card .patient-summary-reference-history-copy .stem-sentence {
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0.015em 0.055em !important;
+  color: inherit !important;
+  font: inherit !important;
+  line-height: inherit !important;
+  border-radius: 8px !important;
+}
+
+.clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-sparkle,
+.case-page-shell .patient-summary-reference-card .patient-summary-reference-sparkle {
+  display: none !important;
+}
+
+@media (max-width: 860px) {
+  .clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-shell,
+  .case-page-shell .patient-summary-reference-card .patient-summary-reference-shell {
+    padding: 26px 28px 32px !important;
+  }
+
+  .clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-row,
+  .case-page-shell .patient-summary-reference-card .patient-summary-reference-row {
+    grid-template-columns: 76px minmax(0, 1fr) !important;
+    column-gap: 22px !important;
+    padding: 22px 0 28px !important;
+  }
+
+  .clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-icon-box,
+  .case-page-shell .patient-summary-reference-card .patient-summary-reference-icon-box {
+    width: 64px !important;
+    height: 64px !important;
+    min-width: 64px !important;
+    min-height: 64px !important;
+    max-width: 64px !important;
+    max-height: 64px !important;
+    border-radius: 18px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .clinical-case.qbank-case .patient-summary-reference-card.refined-case-intro-card,
+  .case-page-shell .patient-summary-reference-card.refined-case-intro-card {
+    border-radius: 26px !important;
+  }
+
+  .clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-shell,
+  .case-page-shell .patient-summary-reference-card .patient-summary-reference-shell {
+    padding: 22px 18px 26px !important;
+  }
+
+  .clinical-case.qbank-case .patient-summary-reference-card .patient-summary-reference-row,
+  .case-page-shell .patient-summary-reference-card .patient-summary-reference-row {
+    grid-template-columns: 1fr !important;
+    row-gap: 14px !important;
+  }
+}
