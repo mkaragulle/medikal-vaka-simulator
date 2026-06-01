@@ -5558,3 +5558,41 @@ html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.professi
   color: #5eead4 !important;
   font-weight: 800 !important;
 }
+
+/* ===== V415 — Olgu sunumu bölüm başlıklarını gövde metninden bir tık büyük yap =====
+   PROFİL / BAŞVURU / HASTA ÖYKÜSÜ artık 15px gövde metninden net şekilde
+   ayrışır; renk ve ikon teması korunur, yalnızca başlık hiyerarşisi güçlendirilir. */
+.case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-detail-label,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-detail-label,
+.case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-card--presentation .summary-detail-label,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--presentation .summary-detail-label,
+.case-page-shell .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--presentation .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--presentation .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span {
+  font-size: 16px !important;
+  line-height: 1.18 !important;
+  font-weight: 820 !important;
+  letter-spacing: 0.045em !important;
+}
+
+@media (max-width: 680px) {
+  .case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-detail-label,
+  .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-detail-label,
+  .case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-card--presentation .summary-detail-label,
+  .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--presentation .summary-detail-label,
+  .case-page-shell .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+  .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span,
+  .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-detail-label,
+  .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-detail-label,
+  .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--presentation .summary-detail-label,
+  .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--presentation .summary-detail-label,
+  .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+  .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span {
+    font-size: 15.5px !important;
+  }
+}
