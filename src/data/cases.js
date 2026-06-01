@@ -271476,2281 +271476,52 @@ export const rawCases = [
   "helpText": "Kuvvet düşüşünü yorumlarken CMAP ve kreatin kinazın ne söylediğini metabolik pH-laktat verisiyle birlikte değerlendir.",
   "preserveInvestigationOrder": true
 },
-  {
-    "id": "v214-new-001-zorlanma-manevrasinda-dolasim-kaydi",
-    "branchId": "physiology",
-    "caseType": "standard",
-    "relatedBranch": "Fizyoloji",
-    "title": "Zorlanma manevrasında dolaşım kaydı",
-    "difficulty": "Orta-Zor",
-    "difficultyTag": "Orta-Zor",
-    "clinicalFocus": "Kapalı glottise karşı zorlanma sırasında toraks basıncı, venöz dönüş, atım hacmi ve refleks kalp hızı yanıtını birlikte yorumlama.",
-    "learningTarget": "Zorlanma fazındaki geçici arter basıncı ve nabız değişikliklerini primer kontraktilite, periferik direnç ve venöz dönüş etkilerinden ayırabilme.",
-    "demographics": "23 yaşında sağlıklı erkek gönüllü",
-    "setting": "Kardiyovasküler fizyoloji laboratuvarı",
-    "chiefComplaint": "Gönüllü, standart zorlanma manevrası sırasında parmak basınç kaydı ve kalp hızı izlemiyle değerlendiriliyor.",
-    "stem": "Gönüllü ders içi fizyoloji uygulamasına aç gelmeden ve kafein almadan katılır. Oturur pozisyonda birkaç dakika dinlendikten sonra ağızlık üzerinden kısa süreli sabit basınç oluşturması istenir. Manevranın ortasında göğsünde baskı hissi ve hafif baş dönmesi tarif eder; komutla manevrayı bırakınca yakınması saniyeler içinde kaybolur. Daha önce bayılma öyküsü, çarpıntı atağı, bilinen kalp hastalığı veya düzenli ilaç kullanımı olmadığını söyler.",
-    "patientIntro": {
-      "profile": "23 yaşında sağlıklı erkek gönüllü, kısa süreli zorlanma manevrası sırasında dolaşım yanıtı açısından izleniyor.",
-      "presentation": "Manevra sırasında hafif baş dönmesi, daralan nabız basıncı ve kalp hızında artış kaydediliyor.",
-      "historySummary": "Gönüllü ders içi fizyoloji uygulamasına aç gelmeden ve kafein almadan katılır. Oturur pozisyonda birkaç dakika dinlendikten sonra ağızlık üzerinden kısa süreli sabit basınç oluşturması istenir. Manevranın ortasında göğsünde baskı hissi ve hafif baş dönmesi tarif eder; komutla manevrayı bırakınca yakınması saniyeler içinde kaybolur. Daha önce bayılma öyküsü, çarpıntı atağı, bilinen kalp hastalığı veya düzenli ilaç kullanımı olmadığını söyler."
-    },
-    "vitals": {
-      "TA": "118/74 mmHg, bazal; 96/78 mmHg, zorlanma ortası",
-      "Nabız": "72/dk bazal; 98/dk zorlanma ortası",
-      "Solunum": "16/dk, manevra öncesi",
-      "SpO2": "%98, oda havasında",
-      "Ateş": "36.5 °C",
-      "Şok indeksi": "0.61 bazal; 1.02 zorlanma ortası"
-    },
-    "exam": [
-      "Gönüllü uyanık, koopere ve test komutlarını doğru uygulayacak durumdadır.",
-      "Periferik nabızlar bazalde düzenlidir; siyanoz veya belirgin solukluk izlenmez.",
-      "Manevra sırasında kısa süreli yüz kızarması ve hafif huzursuzluk olur.",
-      "Manevra bırakıldıktan sonra baş dönmesi hızla geriler ve nörolojik defisit saptanmaz."
-    ],
-    "investigations": [
-      {
-        "id": "v214-new-001-zorlanma-manevrasinda-dolasim-kaydi-parmak-basinc-ve-nabiz-kaydi",
-        "label": "Parmak basınç ve nabız kaydı",
-        "title": "Parmak basınç ve nabız kaydı",
-        "type": "functional",
-        "priority": "essential",
-        "subtype": "Hemodinamik fizyoloji testi",
-        "category": "physiologyTest",
-        "testTypeCategory": "physiologyTest",
-        "summary": "Zorlanma fazında sistolik basınç ve nabız basıncı azalırken kalp hızı artmıştır.",
-        "clinicalMeaning": "Zorlanma fazında sistolik basınç ve nabız basıncı azalırken kalp hızı artmıştır.",
-        "testValueLabel": "Kritik veri",
-        "educationalValue": "Kritik veri",
-        "clinicalPriorityLabel": "Kritik veri",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "source": "case",
-        "clinicalFlowOrder": 1,
-        "result": {
-          "title": "Parmak basınç ve nabız kaydı",
-          "summary": "Zorlanma fazında sistolik basınç ve nabız basıncı azalırken kalp hızı artmıştır.",
-          "interpretation": "Zorlanma fazında sistolik basınç ve nabız basıncı azalırken kalp hızı artmıştır.",
-          "values": [
-            [
-              "Sistolik basınç",
-              "118 → 96 mmHg",
-              "Manevra öncesi bazal",
-              "Azaldı"
-            ],
-            [
-              "Diyastolik basınç",
-              "74 → 78 mmHg",
-              "Manevra öncesi bazal",
-              "Hafif arttı"
-            ],
-            [
-              "Nabız basıncı",
-              "44 → 18 mmHg",
-              "Bazal değere göre",
-              "Daraldı"
-            ],
-            [
-              "Kalp hızı",
-              "72 → 98/dk",
-              "60-100/dk",
-              "Arttı"
-            ]
-          ],
-          "rows": [
-            [
-              "Sistolik basınç",
-              "118 → 96 mmHg",
-              "Manevra öncesi bazal",
-              "Azaldı"
-            ],
-            [
-              "Diyastolik basınç",
-              "74 → 78 mmHg",
-              "Manevra öncesi bazal",
-              "Hafif arttı"
-            ],
-            [
-              "Nabız basıncı",
-              "44 → 18 mmHg",
-              "Bazal değere göre",
-              "Daraldı"
-            ],
-            [
-              "Kalp hızı",
-              "72 → 98/dk",
-              "60-100/dk",
-              "Arttı"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Sistolik basınç",
-            "118 → 96 mmHg",
-            "Manevra öncesi bazal",
-            "Azaldı"
-          ],
-          [
-            "Diyastolik basınç",
-            "74 → 78 mmHg",
-            "Manevra öncesi bazal",
-            "Hafif arttı"
-          ],
-          [
-            "Nabız basıncı",
-            "44 → 18 mmHg",
-            "Bazal değere göre",
-            "Daraldı"
-          ],
-          [
-            "Kalp hızı",
-            "72 → 98/dk",
-            "60-100/dk",
-            "Arttı"
-          ]
-        ],
-        "postAnswerExplanation": "Zorlanma fazında sistolik basınç ve nabız basıncı azalırken kalp hızı artmıştır.",
-        "interpretation": "Zorlanma fazında sistolik basınç ve nabız basıncı azalırken kalp hızı artmıştır.",
-        "inlineFeedback": "Zorlanma fazında sistolik basınç ve nabız basıncı azalırken kalp hızı artmıştır.",
-        "explanationAfterAnswer": "Zorlanma fazında sistolik basınç ve nabız basıncı azalırken kalp hızı artmıştır."
-      },
-      {
-        "id": "v214-new-001-zorlanma-manevrasinda-dolasim-kaydi-atım-hacmi-izlemi",
-        "label": "Atım hacmi izlemi",
-        "title": "Atım hacmi izlemi",
-        "type": "functional",
-        "priority": "essential",
-        "subtype": "Noninvaziv kardiyak izlem",
-        "category": "physiologyTest",
-        "testTypeCategory": "physiologyTest",
-        "summary": "Manevra sırasında atım hacmi düşmüş; bırakma sonrası kısa süreli toparlanma izlenmiştir.",
-        "clinicalMeaning": "Manevra sırasında atım hacmi düşmüş; bırakma sonrası kısa süreli toparlanma izlenmiştir.",
-        "testValueLabel": "Kritik veri",
-        "educationalValue": "Kritik veri",
-        "clinicalPriorityLabel": "Kritik veri",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "source": "case",
-        "clinicalFlowOrder": 2,
-        "result": {
-          "title": "Atım hacmi izlemi",
-          "summary": "Manevra sırasında atım hacmi düşmüş; bırakma sonrası kısa süreli toparlanma izlenmiştir.",
-          "interpretation": "Manevra sırasında atım hacmi düşmüş; bırakma sonrası kısa süreli toparlanma izlenmiştir.",
-          "values": [
-            [
-              "Atım hacmi",
-              "82 → 58 mL",
-              "Bazal değere göre",
-              "Azaldı"
-            ],
-            [
-              "Kardiyak ritim",
-              "Sinüs ritmi",
-              "Sinüs ritmi",
-              "Korunmuş"
-            ],
-            [
-              "ST değişikliği",
-              "Yok",
-              "Yok",
-              "Saptanmadı"
-            ],
-            [
-              "Manevra sonrası sistolik basınç",
-              "128 mmHg",
-              "Bazale yakın",
-              "Kısa süreli yükseldi"
-            ]
-          ],
-          "rows": [
-            [
-              "Atım hacmi",
-              "82 → 58 mL",
-              "Bazal değere göre",
-              "Azaldı"
-            ],
-            [
-              "Kardiyak ritim",
-              "Sinüs ritmi",
-              "Sinüs ritmi",
-              "Korunmuş"
-            ],
-            [
-              "ST değişikliği",
-              "Yok",
-              "Yok",
-              "Saptanmadı"
-            ],
-            [
-              "Manevra sonrası sistolik basınç",
-              "128 mmHg",
-              "Bazale yakın",
-              "Kısa süreli yükseldi"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Atım hacmi",
-            "82 → 58 mL",
-            "Bazal değere göre",
-            "Azaldı"
-          ],
-          [
-            "Kardiyak ritim",
-            "Sinüs ritmi",
-            "Sinüs ritmi",
-            "Korunmuş"
-          ],
-          [
-            "ST değişikliği",
-            "Yok",
-            "Yok",
-            "Saptanmadı"
-          ],
-          [
-            "Manevra sonrası sistolik basınç",
-            "128 mmHg",
-            "Bazale yakın",
-            "Kısa süreli yükseldi"
-          ]
-        ],
-        "postAnswerExplanation": "Manevra sırasında atım hacmi düşmüş; bırakma sonrası kısa süreli toparlanma izlenmiştir.",
-        "interpretation": "Manevra sırasında atım hacmi düşmüş; bırakma sonrası kısa süreli toparlanma izlenmiştir.",
-        "inlineFeedback": "Manevra sırasında atım hacmi düşmüş; bırakma sonrası kısa süreli toparlanma izlenmiştir.",
-        "explanationAfterAnswer": "Manevra sırasında atım hacmi düşmüş; bırakma sonrası kısa süreli toparlanma izlenmiştir."
-      }
-    ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": [],
-    "hideExamSignal": true,
-    "shuffleOptions": true,
-    "question": "Zorlanma fazında gözlenen erken dolaşım değişikliğini en iyi açıklayan fizyolojik mekanizma hangisidir?",
-    "questionType": "physiology_mechanism",
-    "answerTarget": "strain_phase_venous_return_stroke_volume",
-    "diagnosis": {
-      "correct": "Göğüs içi basınç artışıyla venöz dönüş ve atım hacminin azalması",
-      "options": [
-        "Arteriyel direnç azalmasıyla diyastolik basıncın belirgin düşmesi",
-        "Göğüs içi basınç artışıyla venöz dönüş ve atım hacminin azalması",
-        "Sol ventrikül kontraktilitesi artışıyla nabız basıncının genişlemesi",
-        "Karotis sinüs gerilimi artışıyla parasempatik etkinin baskınlaşması",
-        "Kapiller onkotik basınç azalmasıyla plazma hacminin akut düşmesi"
-      ],
-      "question": "Zorlanma fazında gözlenen erken dolaşım değişikliğini en iyi açıklayan fizyolojik mekanizma hangisidir?",
-      "explanation": "Zorlanma fazında sistolik basınç ve nabız basıncı daralırken kalp hızının artması, kalbe dönen kan hacmindeki geçici azalmayı düşündürür. Toraks basıncı yükseldiğinde venöz dönüş sınırlanır; sağ kalp doluşu ve ardından sol ventrikül atım hacmi azalır. Refleks yanıt kalp hızını artırsa da erken dönemde ölçülen temel değişiklik atım hacmindeki düşüştür.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Kısa süreli zorlanma manevrasında nabız basıncı daralırsa önce venöz dönüş ve atım hacmi yönünü düşün; yalnız kalp hızına bakmak yanıltıcı olabilir."
-        }
-      ],
-      "optionComparison": {
-        "Göğüs içi basınç artışıyla venöz dönüş ve atım hacminin azalması": "Doğru seçenek budur. Kapalı glottise karşı zorlanma sırasında toraks içindeki basınç yükselir ve sistemik venlerden sağ atriyuma dönen kan azalır. Sağ kalp doluşu azaldığı için birkaç atım sonra sol kalbe gelen hacim ve atım hacmi düşer; olgudaki daralan nabız basıncı ve eş zamanlı kalp hızı artışı bu erken hacim etkisini destekler.",
-        "Arteriyel direnç azalmasıyla diyastolik basıncın belirgin düşmesi": "Sistemik arteriol dilatasyonu diyastolik basıncı ve total periferik direnci azaltabilir; sıcak ortam, sepsis veya vazodilatör etkilerde akla gelir. Bu testte temel veri diyastolik basıncın izole düşmesi değil, zorlanma fazında nabız basıncının daralması ve atım hacminin azalmasıdır; bu nedenle primer mekanizma periferik vazodilatasyon değildir.",
-        "Sol ventrikül kontraktilitesi artışıyla nabız basıncının genişlemesi": "Kontraktilite artışı atım hacmini ve nabız basıncını artırma eğilimindedir; egzersiz veya sempatik uyarıyla görülebilir. Burada kayıt sırasında atım hacmi azalmış ve nabız basıncı daralmıştır; bu yön, kontraktilite artışından çok kalbe dönen hacmin azalmasıyla uyumludur.",
-        "Karotis sinüs gerilimi artışıyla parasempatik etkinin baskınlaşması": "Karotis sinüs geriliminin artması parasempatik etkinliği artırarak bradikardiye yol açabilir; arter basıncı yükseldiğinde bu refleks öne çıkar. Olguda zorlanma fazında sistolik basınç ve atım hacmi azalırken kalp hızı artmıştır; bu, artmış karotis gerilimine bağlı baskın vagal yanıtla açıklanamaz.",
-        "Kapiller onkotik basınç azalmasıyla plazma hacminin akut düşmesi": "Onkotik basınç azalması ödem ve plazma hacmi değişikliklerinde önemlidir fakat saniyeler içinde başlayan manevra yanıtını açıklamaz. Albumin normaldir ve dolaşım değişikliği manevranın başlamasıyla eş zamanlıdır; bu nedenle kapiller protein basıncı ana neden değildir."
-      },
-      "answerFeedback": {
-        "summary": "Zorlanma fazında sistolik basınç ve nabız basıncı daralırken kalp hızının artması, kalbe dönen kan hacmindeki geçici azalmayı düşündürür. Toraks basıncı yükseldiğinde venöz dönüş sınırlanır; sağ kalp doluşu ve ardından sol ventrikül atım hacmi azalır. Refleks yanıt kalp hızını artırsa da erken dönemde ölçülen temel değişiklik atım hacmindeki düşüştür.",
-        "whyCorrect": "Doğru seçenek budur. Kapalı glottise karşı zorlanma sırasında toraks içindeki basınç yükselir ve sistemik venlerden sağ atriyuma dönen kan azalır. Sağ kalp doluşu azaldığı için birkaç atım sonra sol kalbe gelen hacim ve atım hacmi düşer; olgudaki daralan nabız basıncı ve eş zamanlı kalp hızı artışı bu erken hacim etkisini destekler.",
-        "keyClues": [
-          "Basınç oluşturulduktan sonra değişiklik başlamıştır → yanıt testin mekanik fazıyla ilişkilidir",
-          "44 mmHg'den 18 mmHg'ye düşmüştür → her atımdaki hacim bileşeni azalmıştır",
-          "82 mL'den 58 mL'ye gerilemiştir → dolaşıma pompalanan hacim erken dönemde düşmüştür"
-        ],
-        "examPearl": "Kısa süreli zorlanma manevrasında nabız basıncı daralırsa önce venöz dönüş ve atım hacmi yönünü düşün; yalnız kalp hızına bakmak yanıltıcı olabilir.",
-        "evidenceChain": [
-          {
-            "title": "Manevra zamanlaması",
-            "text": "Basınç oluşturulduktan sonra değişiklik başlamıştır → yanıt testin mekanik fazıyla ilişkilidir",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "title": "Nabız basıncı",
-            "text": "44 mmHg'den 18 mmHg'ye düşmüştür → her atımdaki hacim bileşeni azalmıştır",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "title": "Atım hacmi",
-            "text": "82 mL'den 58 mL'ye gerilemiştir → dolaşıma pompalanan hacim erken dönemde düşmüştür",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "title": "Kalp hızı",
-            "text": "72/dk'dan 98/dk'ya çıkmıştır → arter basıncı düşüşüne karşı refleks hızlanma eşlik etmiştir",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "optionComparison": {
-          "Göğüs içi basınç artışıyla venöz dönüş ve atım hacminin azalması": "Doğru seçenek budur. Kapalı glottise karşı zorlanma sırasında toraks içindeki basınç yükselir ve sistemik venlerden sağ atriyuma dönen kan azalır. Sağ kalp doluşu azaldığı için birkaç atım sonra sol kalbe gelen hacim ve atım hacmi düşer; olgudaki daralan nabız basıncı ve eş zamanlı kalp hızı artışı bu erken hacim etkisini destekler.",
-          "Arteriyel direnç azalmasıyla diyastolik basıncın belirgin düşmesi": "Sistemik arteriol dilatasyonu diyastolik basıncı ve total periferik direnci azaltabilir; sıcak ortam, sepsis veya vazodilatör etkilerde akla gelir. Bu testte temel veri diyastolik basıncın izole düşmesi değil, zorlanma fazında nabız basıncının daralması ve atım hacminin azalmasıdır; bu nedenle primer mekanizma periferik vazodilatasyon değildir.",
-          "Sol ventrikül kontraktilitesi artışıyla nabız basıncının genişlemesi": "Kontraktilite artışı atım hacmini ve nabız basıncını artırma eğilimindedir; egzersiz veya sempatik uyarıyla görülebilir. Burada kayıt sırasında atım hacmi azalmış ve nabız basıncı daralmıştır; bu yön, kontraktilite artışından çok kalbe dönen hacmin azalmasıyla uyumludur.",
-          "Karotis sinüs gerilimi artışıyla parasempatik etkinin baskınlaşması": "Karotis sinüs geriliminin artması parasempatik etkinliği artırarak bradikardiye yol açabilir; arter basıncı yükseldiğinde bu refleks öne çıkar. Olguda zorlanma fazında sistolik basınç ve atım hacmi azalırken kalp hızı artmıştır; bu, artmış karotis gerilimine bağlı baskın vagal yanıtla açıklanamaz.",
-          "Kapiller onkotik basınç azalmasıyla plazma hacminin akut düşmesi": "Onkotik basınç azalması ödem ve plazma hacmi değişikliklerinde önemlidir fakat saniyeler içinde başlayan manevra yanıtını açıklamaz. Albumin normaldir ve dolaşım değişikliği manevranın başlamasıyla eş zamanlıdır; bu nedenle kapiller protein basıncı ana neden değildir."
-        },
-        "rationale": "Zorlanma fazında sistolik basınç ve nabız basıncı daralırken kalp hızının artması, kalbe dönen kan hacmindeki geçici azalmayı düşündürür. Toraks basıncı yükseldiğinde venöz dönüş sınırlanır; sağ kalp doluşu ve ardından sol ventrikül atım hacmi azalır. Refleks yanıt kalp hızını artırsa da erken dönemde ölçülen temel değişiklik atım hacmindeki düşüştür.",
-        "whyWrong": {
-          "Arteriyel direnç azalmasıyla diyastolik basıncın belirgin düşmesi": "Sistemik arteriol dilatasyonu diyastolik basıncı ve total periferik direnci azaltabilir; sıcak ortam, sepsis veya vazodilatör etkilerde akla gelir. Bu testte temel veri diyastolik basıncın izole düşmesi değil, zorlanma fazında nabız basıncının daralması ve atım hacminin azalmasıdır; bu nedenle primer mekanizma periferik vazodilatasyon değildir.",
-          "Sol ventrikül kontraktilitesi artışıyla nabız basıncının genişlemesi": "Kontraktilite artışı atım hacmini ve nabız basıncını artırma eğilimindedir; egzersiz veya sempatik uyarıyla görülebilir. Burada kayıt sırasında atım hacmi azalmış ve nabız basıncı daralmıştır; bu yön, kontraktilite artışından çok kalbe dönen hacmin azalmasıyla uyumludur.",
-          "Karotis sinüs gerilimi artışıyla parasempatik etkinin baskınlaşması": "Karotis sinüs geriliminin artması parasempatik etkinliği artırarak bradikardiye yol açabilir; arter basıncı yükseldiğinde bu refleks öne çıkar. Olguda zorlanma fazında sistolik basınç ve atım hacmi azalırken kalp hızı artmıştır; bu, artmış karotis gerilimine bağlı baskın vagal yanıtla açıklanamaz.",
-          "Kapiller onkotik basınç azalmasıyla plazma hacminin akut düşmesi": "Onkotik basınç azalması ödem ve plazma hacmi değişikliklerinde önemlidir fakat saniyeler içinde başlayan manevra yanıtını açıklamaz. Albumin normaldir ve dolaşım değişikliği manevranın başlamasıyla eş zamanlıdır; bu nedenle kapiller protein basıncı ana neden değildir."
-        },
-        "coreKnowledge": "Göğüs içi basınç artışı venöz dönüşü azaltır; venöz dönüş azalınca sağ kalp doluşu, sol kalbe gelen hacim, atım hacmi ve nabız basıncı düşer.",
-        "managementSteps": [],
-        "management": []
-      }
-    },
-    "coreKnowledge": "Göğüs içi basınç artışı venöz dönüşü azaltır; venöz dönüş azalınca sağ kalp doluşu, sol kalbe gelen hacim, atım hacmi ve nabız basıncı düşer.",
-    "examPearl": "Kısa süreli zorlanma manevrasında nabız basıncı daralırsa önce venöz dönüş ve atım hacmi yönünü düşün; yalnız kalp hızına bakmak yanıltıcı olabilir.",
-    "whyCorrect": "Doğru seçenek budur. Kapalı glottise karşı zorlanma sırasında toraks içindeki basınç yükselir ve sistemik venlerden sağ atriyuma dönen kan azalır. Sağ kalp doluşu azaldığı için birkaç atım sonra sol kalbe gelen hacim ve atım hacmi düşer; olgudaki daralan nabız basıncı ve eş zamanlı kalp hızı artışı bu erken hacim etkisini destekler.",
-    "optionComparison": {
-      "Göğüs içi basınç artışıyla venöz dönüş ve atım hacminin azalması": "Doğru seçenek budur. Kapalı glottise karşı zorlanma sırasında toraks içindeki basınç yükselir ve sistemik venlerden sağ atriyuma dönen kan azalır. Sağ kalp doluşu azaldığı için birkaç atım sonra sol kalbe gelen hacim ve atım hacmi düşer; olgudaki daralan nabız basıncı ve eş zamanlı kalp hızı artışı bu erken hacim etkisini destekler.",
-      "Arteriyel direnç azalmasıyla diyastolik basıncın belirgin düşmesi": "Sistemik arteriol dilatasyonu diyastolik basıncı ve total periferik direnci azaltabilir; sıcak ortam, sepsis veya vazodilatör etkilerde akla gelir. Bu testte temel veri diyastolik basıncın izole düşmesi değil, zorlanma fazında nabız basıncının daralması ve atım hacminin azalmasıdır; bu nedenle primer mekanizma periferik vazodilatasyon değildir.",
-      "Sol ventrikül kontraktilitesi artışıyla nabız basıncının genişlemesi": "Kontraktilite artışı atım hacmini ve nabız basıncını artırma eğilimindedir; egzersiz veya sempatik uyarıyla görülebilir. Burada kayıt sırasında atım hacmi azalmış ve nabız basıncı daralmıştır; bu yön, kontraktilite artışından çok kalbe dönen hacmin azalmasıyla uyumludur.",
-      "Karotis sinüs gerilimi artışıyla parasempatik etkinin baskınlaşması": "Karotis sinüs geriliminin artması parasempatik etkinliği artırarak bradikardiye yol açabilir; arter basıncı yükseldiğinde bu refleks öne çıkar. Olguda zorlanma fazında sistolik basınç ve atım hacmi azalırken kalp hızı artmıştır; bu, artmış karotis gerilimine bağlı baskın vagal yanıtla açıklanamaz.",
-      "Kapiller onkotik basınç azalmasıyla plazma hacminin akut düşmesi": "Onkotik basınç azalması ödem ve plazma hacmi değişikliklerinde önemlidir fakat saniyeler içinde başlayan manevra yanıtını açıklamaz. Albumin normaldir ve dolaşım değişikliği manevranın başlamasıyla eş zamanlıdır; bu nedenle kapiller protein basıncı ana neden değildir."
-    },
-    "evidenceChain": [
-      {
-        "title": "Manevra zamanlaması",
-        "text": "Basınç oluşturulduktan sonra değişiklik başlamıştır → yanıt testin mekanik fazıyla ilişkilidir",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "title": "Nabız basıncı",
-        "text": "44 mmHg'den 18 mmHg'ye düşmüştür → her atımdaki hacim bileşeni azalmıştır",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "title": "Atım hacmi",
-        "text": "82 mL'den 58 mL'ye gerilemiştir → dolaşıma pompalanan hacim erken dönemde düşmüştür",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "title": "Kalp hızı",
-        "text": "72/dk'dan 98/dk'ya çıkmıştır → arter basıncı düşüşüne karşı refleks hızlanma eşlik etmiştir",
-        "weight": "medium",
-        "source": "case"
-      }
-    ],
-    "whyWrong": {
-      "Arteriyel direnç azalmasıyla diyastolik basıncın belirgin düşmesi": "Sistemik arteriol dilatasyonu diyastolik basıncı ve total periferik direnci azaltabilir; sıcak ortam, sepsis veya vazodilatör etkilerde akla gelir. Bu testte temel veri diyastolik basıncın izole düşmesi değil, zorlanma fazında nabız basıncının daralması ve atım hacminin azalmasıdır; bu nedenle primer mekanizma periferik vazodilatasyon değildir.",
-      "Sol ventrikül kontraktilitesi artışıyla nabız basıncının genişlemesi": "Kontraktilite artışı atım hacmini ve nabız basıncını artırma eğilimindedir; egzersiz veya sempatik uyarıyla görülebilir. Burada kayıt sırasında atım hacmi azalmış ve nabız basıncı daralmıştır; bu yön, kontraktilite artışından çok kalbe dönen hacmin azalmasıyla uyumludur.",
-      "Karotis sinüs gerilimi artışıyla parasempatik etkinin baskınlaşması": "Karotis sinüs geriliminin artması parasempatik etkinliği artırarak bradikardiye yol açabilir; arter basıncı yükseldiğinde bu refleks öne çıkar. Olguda zorlanma fazında sistolik basınç ve atım hacmi azalırken kalp hızı artmıştır; bu, artmış karotis gerilimine bağlı baskın vagal yanıtla açıklanamaz.",
-      "Kapiller onkotik basınç azalmasıyla plazma hacminin akut düşmesi": "Onkotik basınç azalması ödem ve plazma hacmi değişikliklerinde önemlidir fakat saniyeler içinde başlayan manevra yanıtını açıklamaz. Albumin normaldir ve dolaşım değişikliği manevranın başlamasıyla eş zamanlıdır; bu nedenle kapiller protein basıncı ana neden değildir."
-    },
-    "mechanismExplanation": "Zorlanma sırasında toraks basıncı yükselir, venöz dönüş azalır, atım hacmi düşer ve arter basıncındaki düşmeye karşı kalp hızı refleks olarak artar.",
-    "scientificComment": "Soru, geçici hemodinamik değişikliği primer kalp kası sorunu veya periferik direnç değişikliğinden ayırmayı hedefler.",
-    "helpText": "Zorlanma manevralarında yönü çözmek için önce toraks basıncının venöz dönüşe etkisini, sonra nabız basıncı ve kalp hızı yanıtını birlikte değerlendir.",
-    "preserveInvestigationOrder": true
-  },
-  {
-    "id": "v214-new-002-yavas-soluma-sonrasi-kan-gazi-degisimi",
-    "branchId": "physiology",
-    "caseType": "standard",
-    "relatedBranch": "Fizyoloji",
-    "title": "Yavaş soluma sonrası kan gazı değişimi",
-    "difficulty": "Orta-Zor",
-    "difficultyTag": "Orta-Zor",
-    "clinicalFocus": "Azalmış ventilasyon sırasında PaCO2, pH, PaO2 ve A-a farkını birlikte yorumlayarak temel solunum mekanizmasını ayırt etme.",
-    "learningTarget": "Hipoksemi ve hiperkapni birlikteliğinde normal A-a farkının alveoler ventilasyon azalmasını nasıl desteklediğini açıklayabilme.",
-    "demographics": "34 yaşında kadın hasta",
-    "setting": "Uyku ve solunum fizyolojisi değerlendirme odası",
-    "chiefComplaint": "Hasta, kısa süreli uyuklama döneminde yavaşlayan solunum sonrası kan gazı ve satürasyon izlemiyle değerlendiriliyor.",
-    "stem": "Hasta birkaç haftadır özellikle akşam saatlerinde belirgin uyku hali ve sabah baş ağrısı yaşadığını anlatır. Değerlendirme sırasında sessiz bir odada izleme alınır ve kısa süreli uyuklama dönemleri gözlenir. Bu dönemlerde solunumunun yavaşladığını yakınları da fark ettiğini, uyandırıldığında birkaç derin nefes aldıktan sonra daha iyi hissettiğini söyler. Ateş, balgam, göğüs ağrısı veya yakın zamanda yüksek irtifaya çıkma öyküsü yoktur.",
-    "patientIntro": {
-      "profile": "34 yaşında kadın hasta, uyuklama döneminde gelişen yavaş solunum ve kan gazı değişikliği nedeniyle değerlendiriliyor.",
-      "presentation": "Solunum sayısı azalırken arteriyel CO2 yükselmiş, oksijen basıncı düşmüş ve A-a farkı belirgin genişlememiştir.",
-      "historySummary": "Hasta birkaç haftadır özellikle akşam saatlerinde belirgin uyku hali ve sabah baş ağrısı yaşadığını anlatır. Değerlendirme sırasında sessiz bir odada izleme alınır ve kısa süreli uyuklama dönemleri gözlenir. Bu dönemlerde solunumunun yavaşladığını yakınları da fark ettiğini, uyandırıldığında birkaç derin nefes aldıktan sonra daha iyi hissettiğini söyler. Ateş, balgam, göğüs ağrısı veya yakın zamanda yüksek irtifaya çıkma öyküsü yoktur."
-    },
-    "vitals": {
-      "TA": "112/70 mmHg",
-      "Nabız": "86/dk",
-      "Solunum": "7/dk, uyuklama döneminde",
-      "SpO2": "%90, oda havasında",
-      "Ateş": "36.7 °C",
-      "Şok indeksi": "0.77"
-    },
-    "exam": [
-      "Hasta uyandırıldığında koopere olur ve cümleleri tamamlayabilir.",
-      "Akciğer oskültasyonunda yaygın ronküs veya belirgin ral duyulmaz.",
-      "Periferik siyanoz hafiftir; kapiller dolum 2 saniye civarındadır.",
-      "Göğüs duvarı hareketleri simetriktir; belirgin yardımcı solunum kası kullanımı izlenmez."
-    ],
-    "investigations": [
-      {
-        "id": "v214-new-002-yavas-soluma-sonrasi-kan-gazi-degisimi-arter-kan-gazi",
-        "label": "Arter kan gazı",
-        "title": "Arter kan gazı",
-        "type": "laboratory",
-        "priority": "essential",
-        "subtype": "Kan gazı analizi",
-        "category": "laboratory",
-        "testTypeCategory": "laboratory",
-        "summary": "Uyuklama döneminde pH düşük, PaCO2 yüksek ve PaO2 azalmış ölçülmüştür.",
-        "clinicalMeaning": "Uyuklama döneminde pH düşük, PaCO2 yüksek ve PaO2 azalmış ölçülmüştür.",
-        "testValueLabel": "Kritik veri",
-        "educationalValue": "Kritik veri",
-        "clinicalPriorityLabel": "Kritik veri",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "source": "case",
-        "clinicalFlowOrder": 1,
-        "result": {
-          "title": "Arter kan gazı",
-          "summary": "Uyuklama döneminde pH düşük, PaCO2 yüksek ve PaO2 azalmış ölçülmüştür.",
-          "interpretation": "Uyuklama döneminde pH düşük, PaCO2 yüksek ve PaO2 azalmış ölçülmüştür.",
-          "values": [
-            [
-              "pH",
-              "7.30",
-              "7.35-7.45",
-              "Düşük"
-            ],
-            [
-              "PaCO2",
-              "60 mmHg",
-              "35-45 mmHg",
-              "Yüksek"
-            ],
-            [
-              "HCO3-",
-              "28 mmol/L",
-              "22-26 mmol/L",
-              "Hafif yüksek"
-            ],
-            [
-              "PaO2",
-              "62 mmHg",
-              "80-100 mmHg",
-              "Düşük"
-            ]
-          ],
-          "rows": [
-            [
-              "pH",
-              "7.30",
-              "7.35-7.45",
-              "Düşük"
-            ],
-            [
-              "PaCO2",
-              "60 mmHg",
-              "35-45 mmHg",
-              "Yüksek"
-            ],
-            [
-              "HCO3-",
-              "28 mmol/L",
-              "22-26 mmol/L",
-              "Hafif yüksek"
-            ],
-            [
-              "PaO2",
-              "62 mmHg",
-              "80-100 mmHg",
-              "Düşük"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "pH",
-            "7.30",
-            "7.35-7.45",
-            "Düşük"
-          ],
-          [
-            "PaCO2",
-            "60 mmHg",
-            "35-45 mmHg",
-            "Yüksek"
-          ],
-          [
-            "HCO3-",
-            "28 mmol/L",
-            "22-26 mmol/L",
-            "Hafif yüksek"
-          ],
-          [
-            "PaO2",
-            "62 mmHg",
-            "80-100 mmHg",
-            "Düşük"
-          ]
-        ],
-        "postAnswerExplanation": "Uyuklama döneminde pH düşük, PaCO2 yüksek ve PaO2 azalmış ölçülmüştür.",
-        "interpretation": "Uyuklama döneminde pH düşük, PaCO2 yüksek ve PaO2 azalmış ölçülmüştür.",
-        "inlineFeedback": "Uyuklama döneminde pH düşük, PaCO2 yüksek ve PaO2 azalmış ölçülmüştür.",
-        "explanationAfterAnswer": "Uyuklama döneminde pH düşük, PaCO2 yüksek ve PaO2 azalmış ölçülmüştür."
-      },
-      {
-        "id": "v214-new-002-yavas-soluma-sonrasi-kan-gazi-degisimi-solunum-izlem",
-        "label": "Solunum izlem kaydı",
-        "title": "Solunum izlem kaydı",
-        "type": "functional",
-        "priority": "essential",
-        "subtype": "Solunum paterni kaydı",
-        "category": "physiologyTest",
-        "testTypeCategory": "physiologyTest",
-        "summary": "Solunum sayısı belirgin azalırken tidal volüm orta düzeyde korunmuş, kısa ventilasyon desteği sonrası gaz değerleri toparlamıştır.",
-        "clinicalMeaning": "Solunum sayısı belirgin azalırken tidal volüm orta düzeyde korunmuş, kısa ventilasyon desteği sonrası gaz değerleri toparlamıştır.",
-        "testValueLabel": "Kritik veri",
-        "educationalValue": "Kritik veri",
-        "clinicalPriorityLabel": "Kritik veri",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "source": "case",
-        "clinicalFlowOrder": 2,
-        "result": {
-          "title": "Solunum izlem kaydı",
-          "summary": "Solunum sayısı belirgin azalırken tidal volüm orta düzeyde korunmuş, kısa ventilasyon desteği sonrası gaz değerleri toparlamıştır.",
-          "interpretation": "Solunum sayısı belirgin azalırken tidal volüm orta düzeyde korunmuş, kısa ventilasyon desteği sonrası gaz değerleri toparlamıştır.",
-          "values": [
-            [
-              "Solunum sayısı",
-              "7/dk",
-              "12-20/dk",
-              "Azalmış"
-            ],
-            [
-              "Tidal volüm",
-              "420 mL",
-              "Yaklaşık 400-600 mL",
-              "Korunmuş"
-            ],
-            [
-              "Hesaplanan A-a farkı",
-              "10 mmHg",
-              "Yaşa göre geniş değil",
-              "Belirgin artmamış"
-            ],
-            [
-              "Ventilasyon desteği sonrası PaCO2",
-              "42 mmHg",
-              "35-45 mmHg",
-              "Düzeldi"
-            ]
-          ],
-          "rows": [
-            [
-              "Solunum sayısı",
-              "7/dk",
-              "12-20/dk",
-              "Azalmış"
-            ],
-            [
-              "Tidal volüm",
-              "420 mL",
-              "Yaklaşık 400-600 mL",
-              "Korunmuş"
-            ],
-            [
-              "Hesaplanan A-a farkı",
-              "10 mmHg",
-              "Yaşa göre geniş değil",
-              "Belirgin artmamış"
-            ],
-            [
-              "Ventilasyon desteği sonrası PaCO2",
-              "42 mmHg",
-              "35-45 mmHg",
-              "Düzeldi"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Solunum sayısı",
-            "7/dk",
-            "12-20/dk",
-            "Azalmış"
-          ],
-          [
-            "Tidal volüm",
-            "420 mL",
-            "Yaklaşık 400-600 mL",
-            "Korunmuş"
-          ],
-          [
-            "Hesaplanan A-a farkı",
-            "10 mmHg",
-            "Yaşa göre geniş değil",
-            "Belirgin artmamış"
-          ],
-          [
-            "Ventilasyon desteği sonrası PaCO2",
-            "42 mmHg",
-            "35-45 mmHg",
-            "Düzeldi"
-          ]
-        ],
-        "postAnswerExplanation": "Solunum sayısı belirgin azalırken tidal volüm orta düzeyde korunmuş, kısa ventilasyon desteği sonrası gaz değerleri toparlamıştır.",
-        "interpretation": "Solunum sayısı belirgin azalırken tidal volüm orta düzeyde korunmuş, kısa ventilasyon desteği sonrası gaz değerleri toparlamıştır.",
-        "inlineFeedback": "Solunum sayısı belirgin azalırken tidal volüm orta düzeyde korunmuş, kısa ventilasyon desteği sonrası gaz değerleri toparlamıştır.",
-        "explanationAfterAnswer": "Solunum sayısı belirgin azalırken tidal volüm orta düzeyde korunmuş, kısa ventilasyon desteği sonrası gaz değerleri toparlamıştır."
-      }
-    ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": [],
-    "hideExamSignal": true,
-    "shuffleOptions": true,
-    "question": "Bu kan gazı paternini en iyi açıklayan solunum fizyolojisi mekanizması hangisidir?",
-    "questionType": "physiology_mechanism",
-    "answerTarget": "alveolar_hypoventilation_normal_aa_gradient",
-    "diagnosis": {
-      "correct": "Alveoler ventilasyon azalmasıyla PaCO2 yükselmesi ve alveoler O2'nin düşmesi",
-      "options": [
-        "Difüzyon mesafesi artışıyla A-a oksijen farkının belirgin genişlemesi",
-        "Sağdan sola şant artışıyla oksijen desteğine zayıf yanıt oluşması",
-        "Ölü boşluk ventilasyonu artışıyla etkili CO2 atılımının azalması",
-        "Alveoler ventilasyon azalmasıyla PaCO2 yükselmesi ve alveoler O2'nin düşmesi",
-        "Hiperventilasyon gelişimiyle PaCO2 düşmesi ve pH yükselmesi"
-      ],
-      "question": "Bu kan gazı paternini en iyi açıklayan solunum fizyolojisi mekanizması hangisidir?",
-      "explanation": "PaCO2 yüksekliği, CO2 atılımının yetersiz olduğunu gösterir. PaO2 düşüklüğüne rağmen A-a farkının belirgin genişlememesi, alveol-kapiller geçişten çok alveole ulaşan taze hava miktarının azaldığını düşündürür. Ventilasyon desteğiyle PaCO2 ve PaO2'nin düzelmesi, temel sorunun azalmış alveoler ventilasyon olduğunu destekler.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Hipoksemiye hiperkapni eşlik ediyor ve A-a farkı belirgin genişlemiyorsa önce alveoler ventilasyon miktarını değerlendir."
-        }
-      ],
-      "optionComparison": {
-        "Alveoler ventilasyon azalmasıyla PaCO2 yükselmesi ve alveoler O2'nin düşmesi": "Doğru seçenek budur. Solunum sayısı ve dakika ventilasyonu azaldığında alveollere ulaşan taze hava azalır; CO2 atılımı düşer ve PaCO2 yükselir. Alveoler gaz denklemine göre PaCO2 artışı alveoler oksijen basıncını da düşürür; normal sınırlardaki A-a farkı gaz değişim yüzeyinden çok ventilasyon miktarını öne çıkarır.",
-        "Difüzyon mesafesi artışıyla A-a oksijen farkının belirgin genişlemesi": "Difüzyon kısıtlılığında özellikle eforla A-a oksijen farkı genişler ve alveol-kapiller geçiş problemi belirginleşir. Bu olguda A-a farkı geniş değildir; PaCO2 yüksekliği ve düşük solunum sayısı difüzyondan çok yetersiz alveoler ventilasyonu destekler.",
-        "Sağdan sola şant artışıyla oksijen desteğine zayıf yanıt oluşması": "Sağdan sola şantta oksijen desteğine yanıt sınırlı olabilir ve A-a farkı genellikle belirgin genişler. Bu kayıtta kısa süreli ventilasyon desteğiyle hem PaCO2 hem PaO2 düzelmiştir; bu patern kalıcı şanttan çok ventilasyon yetersizliğiyle uyumludur.",
-        "Ölü boşluk ventilasyonu artışıyla etkili CO2 atılımının azalması": "Ölü boşluk artışı da etkili alveoler ventilasyonu azaltarak CO2 retansiyonuna katkı verebilir; pulmoner emboli veya belirgin ventilasyon-perfüzyon uyumsuzluğunda akla gelir. Bu olguda tidal volüm korunmuşken temel değişiklik solunum sayısı ve toplam ventilasyonun düşmesidir; ek bir ölü boşluk artışı verisi yoktur.",
-        "Hiperventilasyon gelişimiyle PaCO2 düşmesi ve pH yükselmesi": "Hiperventilasyonda PaCO2 düşer, pH yükselir ve sıklıkla parestezi veya baş dönmesi eşlik edebilir. Burada PaCO2 yüksek, pH düşüktür ve solunum sayısı azalmıştır; bu nedenle gözlenen kan gazı yönü hiperventilasyonla ters düşer."
-      },
-      "answerFeedback": {
-        "summary": "PaCO2 yüksekliği, CO2 atılımının yetersiz olduğunu gösterir. PaO2 düşüklüğüne rağmen A-a farkının belirgin genişlememesi, alveol-kapiller geçişten çok alveole ulaşan taze hava miktarının azaldığını düşündürür. Ventilasyon desteğiyle PaCO2 ve PaO2'nin düzelmesi, temel sorunun azalmış alveoler ventilasyon olduğunu destekler.",
-        "whyCorrect": "Doğru seçenek budur. Solunum sayısı ve dakika ventilasyonu azaldığında alveollere ulaşan taze hava azalır; CO2 atılımı düşer ve PaCO2 yükselir. Alveoler gaz denklemine göre PaCO2 artışı alveoler oksijen basıncını da düşürür; normal sınırlardaki A-a farkı gaz değişim yüzeyinden çok ventilasyon miktarını öne çıkarır.",
-        "keyClues": [
-          "Uyuklama sırasında 7/dk ölçülmüştür → dakika ventilasyonu azalmıştır",
-          "PaCO2 60 mmHg'dir → CO2 atılımı yetersizdir",
-          "Hesaplanan fark 10 mmHg'dir → gaz değişim yüzeyinde belirgin ayrışma yoktur"
-        ],
-        "examPearl": "Hipoksemiye hiperkapni eşlik ediyor ve A-a farkı belirgin genişlemiyorsa önce alveoler ventilasyon miktarını değerlendir.",
-        "evidenceChain": [
-          {
-            "title": "Solunum sayısı",
-            "text": "Uyuklama sırasında 7/dk ölçülmüştür → dakika ventilasyonu azalmıştır",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "title": "CO2 yönü",
-            "text": "PaCO2 60 mmHg'dir → CO2 atılımı yetersizdir",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "title": "A-a farkı",
-            "text": "Hesaplanan fark 10 mmHg'dir → gaz değişim yüzeyinde belirgin ayrışma yoktur",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "title": "Düzeltilebilirlik",
-            "text": "Ventilasyon desteği sonrası PaCO2 normale yaklaşmıştır → sorun ventilasyon miktarıyla ilişkilidir",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "optionComparison": {
-          "Alveoler ventilasyon azalmasıyla PaCO2 yükselmesi ve alveoler O2'nin düşmesi": "Doğru seçenek budur. Solunum sayısı ve dakika ventilasyonu azaldığında alveollere ulaşan taze hava azalır; CO2 atılımı düşer ve PaCO2 yükselir. Alveoler gaz denklemine göre PaCO2 artışı alveoler oksijen basıncını da düşürür; normal sınırlardaki A-a farkı gaz değişim yüzeyinden çok ventilasyon miktarını öne çıkarır.",
-          "Difüzyon mesafesi artışıyla A-a oksijen farkının belirgin genişlemesi": "Difüzyon kısıtlılığında özellikle eforla A-a oksijen farkı genişler ve alveol-kapiller geçiş problemi belirginleşir. Bu olguda A-a farkı geniş değildir; PaCO2 yüksekliği ve düşük solunum sayısı difüzyondan çok yetersiz alveoler ventilasyonu destekler.",
-          "Sağdan sola şant artışıyla oksijen desteğine zayıf yanıt oluşması": "Sağdan sola şantta oksijen desteğine yanıt sınırlı olabilir ve A-a farkı genellikle belirgin genişler. Bu kayıtta kısa süreli ventilasyon desteğiyle hem PaCO2 hem PaO2 düzelmiştir; bu patern kalıcı şanttan çok ventilasyon yetersizliğiyle uyumludur.",
-          "Ölü boşluk ventilasyonu artışıyla etkili CO2 atılımının azalması": "Ölü boşluk artışı da etkili alveoler ventilasyonu azaltarak CO2 retansiyonuna katkı verebilir; pulmoner emboli veya belirgin ventilasyon-perfüzyon uyumsuzluğunda akla gelir. Bu olguda tidal volüm korunmuşken temel değişiklik solunum sayısı ve toplam ventilasyonun düşmesidir; ek bir ölü boşluk artışı verisi yoktur.",
-          "Hiperventilasyon gelişimiyle PaCO2 düşmesi ve pH yükselmesi": "Hiperventilasyonda PaCO2 düşer, pH yükselir ve sıklıkla parestezi veya baş dönmesi eşlik edebilir. Burada PaCO2 yüksek, pH düşüktür ve solunum sayısı azalmıştır; bu nedenle gözlenen kan gazı yönü hiperventilasyonla ters düşer."
-        },
-        "rationale": "PaCO2 yüksekliği, CO2 atılımının yetersiz olduğunu gösterir. PaO2 düşüklüğüne rağmen A-a farkının belirgin genişlememesi, alveol-kapiller geçişten çok alveole ulaşan taze hava miktarının azaldığını düşündürür. Ventilasyon desteğiyle PaCO2 ve PaO2'nin düzelmesi, temel sorunun azalmış alveoler ventilasyon olduğunu destekler.",
-        "whyWrong": {
-          "Difüzyon mesafesi artışıyla A-a oksijen farkının belirgin genişlemesi": "Difüzyon kısıtlılığında özellikle eforla A-a oksijen farkı genişler ve alveol-kapiller geçiş problemi belirginleşir. Bu olguda A-a farkı geniş değildir; PaCO2 yüksekliği ve düşük solunum sayısı difüzyondan çok yetersiz alveoler ventilasyonu destekler.",
-          "Sağdan sola şant artışıyla oksijen desteğine zayıf yanıt oluşması": "Sağdan sola şantta oksijen desteğine yanıt sınırlı olabilir ve A-a farkı genellikle belirgin genişler. Bu kayıtta kısa süreli ventilasyon desteğiyle hem PaCO2 hem PaO2 düzelmiştir; bu patern kalıcı şanttan çok ventilasyon yetersizliğiyle uyumludur.",
-          "Ölü boşluk ventilasyonu artışıyla etkili CO2 atılımının azalması": "Ölü boşluk artışı da etkili alveoler ventilasyonu azaltarak CO2 retansiyonuna katkı verebilir; pulmoner emboli veya belirgin ventilasyon-perfüzyon uyumsuzluğunda akla gelir. Bu olguda tidal volüm korunmuşken temel değişiklik solunum sayısı ve toplam ventilasyonun düşmesidir; ek bir ölü boşluk artışı verisi yoktur.",
-          "Hiperventilasyon gelişimiyle PaCO2 düşmesi ve pH yükselmesi": "Hiperventilasyonda PaCO2 düşer, pH yükselir ve sıklıkla parestezi veya baş dönmesi eşlik edebilir. Burada PaCO2 yüksek, pH düşüktür ve solunum sayısı azalmıştır; bu nedenle gözlenen kan gazı yönü hiperventilasyonla ters düşer."
-        },
-        "coreKnowledge": "Alveoler ventilasyon PaCO2'nin ana belirleyicisidir; ventilasyon azalınca PaCO2 yükselir, alveoler oksijen basıncı düşer ve A-a farkı belirgin genişlemeden hipoksemi gelişebilir.",
-        "managementSteps": [],
-        "management": []
-      }
-    },
-    "coreKnowledge": "Alveoler ventilasyon PaCO2'nin ana belirleyicisidir; ventilasyon azalınca PaCO2 yükselir, alveoler oksijen basıncı düşer ve A-a farkı belirgin genişlemeden hipoksemi gelişebilir.",
-    "examPearl": "Hipoksemiye hiperkapni eşlik ediyor ve A-a farkı belirgin genişlemiyorsa önce alveoler ventilasyon miktarını değerlendir.",
-    "whyCorrect": "Doğru seçenek budur. Solunum sayısı ve dakika ventilasyonu azaldığında alveollere ulaşan taze hava azalır; CO2 atılımı düşer ve PaCO2 yükselir. Alveoler gaz denklemine göre PaCO2 artışı alveoler oksijen basıncını da düşürür; normal sınırlardaki A-a farkı gaz değişim yüzeyinden çok ventilasyon miktarını öne çıkarır.",
-    "optionComparison": {
-      "Alveoler ventilasyon azalmasıyla PaCO2 yükselmesi ve alveoler O2'nin düşmesi": "Doğru seçenek budur. Solunum sayısı ve dakika ventilasyonu azaldığında alveollere ulaşan taze hava azalır; CO2 atılımı düşer ve PaCO2 yükselir. Alveoler gaz denklemine göre PaCO2 artışı alveoler oksijen basıncını da düşürür; normal sınırlardaki A-a farkı gaz değişim yüzeyinden çok ventilasyon miktarını öne çıkarır.",
-      "Difüzyon mesafesi artışıyla A-a oksijen farkının belirgin genişlemesi": "Difüzyon kısıtlılığında özellikle eforla A-a oksijen farkı genişler ve alveol-kapiller geçiş problemi belirginleşir. Bu olguda A-a farkı geniş değildir; PaCO2 yüksekliği ve düşük solunum sayısı difüzyondan çok yetersiz alveoler ventilasyonu destekler.",
-      "Sağdan sola şant artışıyla oksijen desteğine zayıf yanıt oluşması": "Sağdan sola şantta oksijen desteğine yanıt sınırlı olabilir ve A-a farkı genellikle belirgin genişler. Bu kayıtta kısa süreli ventilasyon desteğiyle hem PaCO2 hem PaO2 düzelmiştir; bu patern kalıcı şanttan çok ventilasyon yetersizliğiyle uyumludur.",
-      "Ölü boşluk ventilasyonu artışıyla etkili CO2 atılımının azalması": "Ölü boşluk artışı da etkili alveoler ventilasyonu azaltarak CO2 retansiyonuna katkı verebilir; pulmoner emboli veya belirgin ventilasyon-perfüzyon uyumsuzluğunda akla gelir. Bu olguda tidal volüm korunmuşken temel değişiklik solunum sayısı ve toplam ventilasyonun düşmesidir; ek bir ölü boşluk artışı verisi yoktur.",
-      "Hiperventilasyon gelişimiyle PaCO2 düşmesi ve pH yükselmesi": "Hiperventilasyonda PaCO2 düşer, pH yükselir ve sıklıkla parestezi veya baş dönmesi eşlik edebilir. Burada PaCO2 yüksek, pH düşüktür ve solunum sayısı azalmıştır; bu nedenle gözlenen kan gazı yönü hiperventilasyonla ters düşer."
-    },
-    "evidenceChain": [
-      {
-        "title": "Solunum sayısı",
-        "text": "Uyuklama sırasında 7/dk ölçülmüştür → dakika ventilasyonu azalmıştır",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "title": "CO2 yönü",
-        "text": "PaCO2 60 mmHg'dir → CO2 atılımı yetersizdir",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "title": "A-a farkı",
-        "text": "Hesaplanan fark 10 mmHg'dir → gaz değişim yüzeyinde belirgin ayrışma yoktur",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "title": "Düzeltilebilirlik",
-        "text": "Ventilasyon desteği sonrası PaCO2 normale yaklaşmıştır → sorun ventilasyon miktarıyla ilişkilidir",
-        "weight": "medium",
-        "source": "case"
-      }
-    ],
-    "whyWrong": {
-      "Difüzyon mesafesi artışıyla A-a oksijen farkının belirgin genişlemesi": "Difüzyon kısıtlılığında özellikle eforla A-a oksijen farkı genişler ve alveol-kapiller geçiş problemi belirginleşir. Bu olguda A-a farkı geniş değildir; PaCO2 yüksekliği ve düşük solunum sayısı difüzyondan çok yetersiz alveoler ventilasyonu destekler.",
-      "Sağdan sola şant artışıyla oksijen desteğine zayıf yanıt oluşması": "Sağdan sola şantta oksijen desteğine yanıt sınırlı olabilir ve A-a farkı genellikle belirgin genişler. Bu kayıtta kısa süreli ventilasyon desteğiyle hem PaCO2 hem PaO2 düzelmiştir; bu patern kalıcı şanttan çok ventilasyon yetersizliğiyle uyumludur.",
-      "Ölü boşluk ventilasyonu artışıyla etkili CO2 atılımının azalması": "Ölü boşluk artışı da etkili alveoler ventilasyonu azaltarak CO2 retansiyonuna katkı verebilir; pulmoner emboli veya belirgin ventilasyon-perfüzyon uyumsuzluğunda akla gelir. Bu olguda tidal volüm korunmuşken temel değişiklik solunum sayısı ve toplam ventilasyonun düşmesidir; ek bir ölü boşluk artışı verisi yoktur.",
-      "Hiperventilasyon gelişimiyle PaCO2 düşmesi ve pH yükselmesi": "Hiperventilasyonda PaCO2 düşer, pH yükselir ve sıklıkla parestezi veya baş dönmesi eşlik edebilir. Burada PaCO2 yüksek, pH düşüktür ve solunum sayısı azalmıştır; bu nedenle gözlenen kan gazı yönü hiperventilasyonla ters düşer."
-    },
-    "mechanismExplanation": "Solunum hızı azalınca alveoler ventilasyon düşer, CO2 birikir, alveoler O2 azalır ve arter kan gazında hiperkapni ile hipoksemi birlikte görülür.",
-    "scientificComment": "Soru, hipoksemi mekanizmalarını A-a farkı ve PaCO2 yönü üzerinden ayırmayı güçlendirir.",
-    "helpText": "Hipoksemi sorularında PaCO2 ve A-a farkını aynı anda oku; yüksek PaCO2 + normal A-a farkı ventilasyon miktarına işaret eder.",
-    "preserveInvestigationOrder": true
-  },
-  {
-    "id": "v214-new-003-perfuzyon-basinci-artisinda-gfr-kaydi",
-    "branchId": "physiology",
-    "caseType": "standard",
-    "relatedBranch": "Fizyoloji",
-    "title": "Perfüzyon basıncı artışında GFR kaydı",
-    "difficulty": "Orta-Zor",
-    "difficultyTag": "Orta-Zor",
-    "clinicalFocus": "Renal perfüzyon basıncı değiştiğinde GFR ve renal kan akımının lokal vasküler yanıtlarla nasıl sınırlandığını yorumlama.",
-    "learningTarget": "Myojenik renal otoregülasyonu tubuloglomerüler feedback, efferent arteriyol etkisi ve tübüler emilim mekanizmalarından ayırabilme.",
-    "demographics": "Fizyoloji laboratuvarı deney modeli",
-    "setting": "Renal hemodinami simülasyon laboratuvarı",
-    "chiefComplaint": "Deney modelinde renal arter basıncı kontrollü artırılarak akım ve filtrasyon ölçümleri kaydediliyor.",
-    "stem": "Laboratuvar uygulamasında izole renal dolaşım simülasyonu kullanılır. Sistem bazal basınçta birkaç dakika dengelendikten sonra renal arter giriş basıncı kısa sürede daha yüksek bir düzeye çıkarılır. Araştırmacı, basınç değişimine rağmen akım ve filtrasyon değerlerinin yalnızca sınırlı oynadığını gözler. Test sırasında solüt yükü, plazma protein düzeyi ve hormonal uyarı koşulları sabit tutulur.",
-    "patientIntro": {
-      "profile": "Renal dolaşım simülasyonunda perfüzyon basıncı artırılan bir deney modeli değerlendiriliyor.",
-      "presentation": "Basınç artışına rağmen renal kan akımı ve filtrasyon büyük ölçüde korunurken afferent direnç artışı kaydediliyor.",
-      "historySummary": "Laboratuvar uygulamasında izole renal dolaşım simülasyonu kullanılır. Sistem bazal basınçta birkaç dakika dengelendikten sonra renal arter giriş basıncı kısa sürede daha yüksek bir düzeye çıkarılır. Araştırmacı, basınç değişimine rağmen akım ve filtrasyon değerlerinin yalnızca sınırlı oynadığını gözler. Test sırasında solüt yükü, plazma protein düzeyi ve hormonal uyarı koşulları sabit tutulur."
-    },
-    "vitals": {
-      "TA": "Deneysel renal giriş basıncı 90 → 130 mmHg",
-      "Nabız": "— deney modeli",
-      "Solunum": "— deney modeli",
-      "SpO2": "— deney modeli",
-      "Ateş": "37.0 °C ortam eşdeğeri",
-      "Şok indeksi": "— deney modeli"
-    },
-    "exam": [
-      "Deney düzeneğinde böbrek dışı sistemik refleks girişleri sabit tutulmuştur.",
-      "Renal arter giriş basıncı hedef değere kontrollü şekilde yükseltilmiştir.",
-      "Toplam plazma protein konsantrasyonu ve hematokrit deney boyunca değiştirilmemiştir.",
-      "Tübüler solüt yükünü değiştirecek ek madde verilmemiştir."
-    ],
-    "investigations": [
-      {
-        "id": "v214-new-003-perfuzyon-basinci-artisinda-gfr-kaydi-renal-hemodinami-kaydi",
-        "label": "Renal hemodinami kaydı",
-        "title": "Renal hemodinami kaydı",
-        "type": "functional",
-        "priority": "essential",
-        "subtype": "Renal akım ve filtrasyon testi",
-        "category": "physiologyTest",
-        "testTypeCategory": "physiologyTest",
-        "summary": "Perfüzyon basıncı yükselmesine rağmen renal plazma akımı ve GFR sınırlı değişmiştir.",
-        "clinicalMeaning": "Perfüzyon basıncı yükselmesine rağmen renal plazma akımı ve GFR sınırlı değişmiştir.",
-        "testValueLabel": "Kritik veri",
-        "educationalValue": "Kritik veri",
-        "clinicalPriorityLabel": "Kritik veri",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "source": "case",
-        "clinicalFlowOrder": 1,
-        "result": {
-          "title": "Renal hemodinami kaydı",
-          "summary": "Perfüzyon basıncı yükselmesine rağmen renal plazma akımı ve GFR sınırlı değişmiştir.",
-          "interpretation": "Perfüzyon basıncı yükselmesine rağmen renal plazma akımı ve GFR sınırlı değişmiştir.",
-          "values": [
-            [
-              "Renal arter basıncı",
-              "90 → 130 mmHg",
-              "Deneysel aralık",
-              "Artırıldı"
-            ],
-            [
-              "Renal plazma akımı",
-              "610 → 625 mL/dk",
-              "Bazal değere yakın",
-              "Sınırlı arttı"
-            ],
-            [
-              "GFR",
-              "118 → 121 mL/dk",
-              "Yaklaşık 90-125 mL/dk",
-              "Korundu"
-            ],
-            [
-              "Filtrasyon fraksiyonu",
-              "0.19 → 0.19",
-              "Yaklaşık 0.20",
-              "Belirgin değişmedi"
-            ]
-          ],
-          "rows": [
-            [
-              "Renal arter basıncı",
-              "90 → 130 mmHg",
-              "Deneysel aralık",
-              "Artırıldı"
-            ],
-            [
-              "Renal plazma akımı",
-              "610 → 625 mL/dk",
-              "Bazal değere yakın",
-              "Sınırlı arttı"
-            ],
-            [
-              "GFR",
-              "118 → 121 mL/dk",
-              "Yaklaşık 90-125 mL/dk",
-              "Korundu"
-            ],
-            [
-              "Filtrasyon fraksiyonu",
-              "0.19 → 0.19",
-              "Yaklaşık 0.20",
-              "Belirgin değişmedi"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Renal arter basıncı",
-            "90 → 130 mmHg",
-            "Deneysel aralık",
-            "Artırıldı"
-          ],
-          [
-            "Renal plazma akımı",
-            "610 → 625 mL/dk",
-            "Bazal değere yakın",
-            "Sınırlı arttı"
-          ],
-          [
-            "GFR",
-            "118 → 121 mL/dk",
-            "Yaklaşık 90-125 mL/dk",
-            "Korundu"
-          ],
-          [
-            "Filtrasyon fraksiyonu",
-            "0.19 → 0.19",
-            "Yaklaşık 0.20",
-            "Belirgin değişmedi"
-          ]
-        ],
-        "postAnswerExplanation": "Perfüzyon basıncı yükselmesine rağmen renal plazma akımı ve GFR sınırlı değişmiştir.",
-        "interpretation": "Perfüzyon basıncı yükselmesine rağmen renal plazma akımı ve GFR sınırlı değişmiştir.",
-        "inlineFeedback": "Perfüzyon basıncı yükselmesine rağmen renal plazma akımı ve GFR sınırlı değişmiştir.",
-        "explanationAfterAnswer": "Perfüzyon basıncı yükselmesine rağmen renal plazma akımı ve GFR sınırlı değişmiştir."
-      },
-      {
-        "id": "v214-new-003-perfuzyon-basinci-artisinda-gfr-kaydi-arteriyol-direnc-kaydi",
-        "label": "Arteriyol direnç kaydı",
-        "title": "Arteriyol direnç kaydı",
-        "type": "functional",
-        "priority": "essential",
-        "subtype": "Mikrovasküler direnç izlemi",
-        "category": "physiologyTest",
-        "testTypeCategory": "physiologyTest",
-        "summary": "Basınç artışı sonrası afferent direnç yükselmiş, renin düzeyi belirgin değişmemiştir.",
-        "clinicalMeaning": "Basınç artışı sonrası afferent direnç yükselmiş, renin düzeyi belirgin değişmemiştir.",
-        "testValueLabel": "Kritik veri",
-        "educationalValue": "Kritik veri",
-        "clinicalPriorityLabel": "Kritik veri",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "source": "case",
-        "clinicalFlowOrder": 2,
-        "result": {
-          "title": "Arteriyol direnç kaydı",
-          "summary": "Basınç artışı sonrası afferent direnç yükselmiş, renin düzeyi belirgin değişmemiştir.",
-          "interpretation": "Basınç artışı sonrası afferent direnç yükselmiş, renin düzeyi belirgin değişmemiştir.",
-          "values": [
-            [
-              "Afferent direnç",
-              "+%26",
-              "Bazale göre",
-              "Artmış"
-            ],
-            [
-              "Efferent direnç",
-              "+%3",
-              "Bazale göre",
-              "Belirgin değişmedi"
-            ],
-            [
-              "Renin aktivitesi",
-              "1.1 → 1.0 ng/mL/saat",
-              "Bazale yakın",
-              "Değişmedi"
-            ],
-            [
-              "Distal NaCl yükü",
-              "Bazale yakın",
-              "Deneysel sabit",
-              "Korundu"
-            ]
-          ],
-          "rows": [
-            [
-              "Afferent direnç",
-              "+%26",
-              "Bazale göre",
-              "Artmış"
-            ],
-            [
-              "Efferent direnç",
-              "+%3",
-              "Bazale göre",
-              "Belirgin değişmedi"
-            ],
-            [
-              "Renin aktivitesi",
-              "1.1 → 1.0 ng/mL/saat",
-              "Bazale yakın",
-              "Değişmedi"
-            ],
-            [
-              "Distal NaCl yükü",
-              "Bazale yakın",
-              "Deneysel sabit",
-              "Korundu"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Afferent direnç",
-            "+%26",
-            "Bazale göre",
-            "Artmış"
-          ],
-          [
-            "Efferent direnç",
-            "+%3",
-            "Bazale göre",
-            "Belirgin değişmedi"
-          ],
-          [
-            "Renin aktivitesi",
-            "1.1 → 1.0 ng/mL/saat",
-            "Bazale yakın",
-            "Değişmedi"
-          ],
-          [
-            "Distal NaCl yükü",
-            "Bazale yakın",
-            "Deneysel sabit",
-            "Korundu"
-          ]
-        ],
-        "postAnswerExplanation": "Basınç artışı sonrası afferent direnç yükselmiş, renin düzeyi belirgin değişmemiştir.",
-        "interpretation": "Basınç artışı sonrası afferent direnç yükselmiş, renin düzeyi belirgin değişmemiştir.",
-        "inlineFeedback": "Basınç artışı sonrası afferent direnç yükselmiş, renin düzeyi belirgin değişmemiştir.",
-        "explanationAfterAnswer": "Basınç artışı sonrası afferent direnç yükselmiş, renin düzeyi belirgin değişmemiştir."
-      }
-    ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": [],
-    "hideExamSignal": true,
-    "shuffleOptions": true,
-    "question": "Bu basınç değişiminde filtrasyonun sınırlı dalgalanmasını en iyi açıklayan lokal renal mekanizma hangisidir?",
-    "questionType": "physiology_mechanism",
-    "answerTarget": "renal_myogenic_autoregulation_afferent_constriction",
-    "diagnosis": {
-      "correct": "Afferent arteriyol düz kasının gerilmeye yanıt olarak kasılması",
-      "options": [
-        "Distal NaCl azalmasıyla afferent arteriyol genişlemesinin gelişmesi",
-        "Efferent arteriyol kasılmasıyla filtrasyon basıncının yükselmesi",
-        "Afferent arteriyol düz kasının gerilmeye yanıt olarak kasılması",
-        "Mesangial hücre gevşemesiyle filtrasyon yüzeyinin genişlemesi",
-        "Peritübüler onkotik basınç artışıyla proksimal emilimin hızlanması"
-      ],
-      "question": "Bu basınç değişiminde filtrasyonun sınırlı dalgalanmasını en iyi açıklayan lokal renal mekanizma hangisidir?",
-      "explanation": "Renal arter basıncı artırıldığında filtrasyonun kontrolsüz yükselmemesi için giriş direncinin hızla ayarlanması gerekir. Bu kayıtta GFR ve renal plazma akımı büyük ölçüde sabit kalırken afferent direnç artmıştır. Hormonal değişiklik olmadan gelişen bu lokal yanıt, afferent arteriyol düz kasının gerilmeye verdiği kasılma yanıtıyla açıklanır.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Renal otoregülasyonda basınç artarsa afferent arteriyol kasılarak glomerülü aşırı basınçtan korur; bu, makula densa sinyalinden daha hızlı bir yerel damar yanıtıdır."
-        }
-      ],
-      "optionComparison": {
-        "Afferent arteriyol düz kasının gerilmeye yanıt olarak kasılması": "Doğru seçenek budur. Renal perfüzyon basıncı akut arttığında afferent arteriyol duvarı gerilir; düz kas hücreleri buna kasılarak yanıt verir ve glomerüle aktarılan basınç artışını sınırlar. Olguda basınç yükselmesine rağmen RPF ve GFR'nin büyük ölçüde korunması, lokal myojenik yanıtla afferent direnç artışını destekler.",
-        "Distal NaCl azalmasıyla afferent arteriyol genişlemesinin gelişmesi": "Distal NaCl azalması makula densa üzerinden afferent genişleme ve renin artışı gibi yanıtları düşündürebilir; düşük tübüler akımda GFR'yi koruma yönünde çalışır. Bu testte perfüzyon basıncı artırılmış ve afferent direnç yükselmiştir; distal NaCl azalmasına bağlı genişleme paterniyle uyumlu değildir.",
-        "Efferent arteriyol kasılmasıyla filtrasyon basıncının yükselmesi": "Efferent arteriyol kasılması glomerül kapiller basıncını artırarak filtrasyonu destekleyebilir; düşük efektif hacim veya anjiyotensin II etkisinde önemlidir. Burada renin değişmemiş ve ölçülen direnç artışı afferent taraftadır; bu nedenle ana açıklama efferent kasılma değildir.",
-        "Mesangial hücre gevşemesiyle filtrasyon yüzeyinin genişlemesi": "Mesangial gevşeme filtrasyon yüzeyini artırarak GFR'yi yükseltebilir. Oysa kayıtta basınç artışına rağmen GFR'nin aşırı yükselmesi engellenmiştir; filtrasyon yüzeyinin genişlemesi bu sınırlayıcı yanıtı açıklamaz.",
-        "Peritübüler onkotik basınç artışıyla proksimal emilimin hızlanması": "Peritübüler onkotik basınç proksimal tübüler geri emilim üzerinde etkilidir ve filtrasyon sonrası emilim dengesini değiştirir. Bu mekanizma, saniyeler-dakikalar içinde perfüzyon basıncı artışına karşın glomerüler akımı stabilize eden primer vasküler yanıt değildir."
-      },
-      "answerFeedback": {
-        "summary": "Renal arter basıncı artırıldığında filtrasyonun kontrolsüz yükselmemesi için giriş direncinin hızla ayarlanması gerekir. Bu kayıtta GFR ve renal plazma akımı büyük ölçüde sabit kalırken afferent direnç artmıştır. Hormonal değişiklik olmadan gelişen bu lokal yanıt, afferent arteriyol düz kasının gerilmeye verdiği kasılma yanıtıyla açıklanır.",
-        "whyCorrect": "Doğru seçenek budur. Renal perfüzyon basıncı akut arttığında afferent arteriyol duvarı gerilir; düz kas hücreleri buna kasılarak yanıt verir ve glomerüle aktarılan basınç artışını sınırlar. Olguda basınç yükselmesine rağmen RPF ve GFR'nin büyük ölçüde korunması, lokal myojenik yanıtla afferent direnç artışını destekler.",
-        "keyClues": [
-          "Renal giriş basıncı 90'dan 130 mmHg'ye çıkarılmıştır → böbreğe gelen mekanik yük artmıştır",
-          "GFR 118'den 121 mL/dk'ya sınırlı değişmiştir → filtrasyon basınca pasif şekilde eşlik etmemiştir",
-          "Afferent direnç %26 artmıştır → giriş damarında sınırlayıcı yanıt oluşmuştur"
-        ],
-        "examPearl": "Renal otoregülasyonda basınç artarsa afferent arteriyol kasılarak glomerülü aşırı basınçtan korur; bu, makula densa sinyalinden daha hızlı bir yerel damar yanıtıdır.",
-        "evidenceChain": [
-          {
-            "title": "Basınç artışı",
-            "text": "Renal giriş basıncı 90'dan 130 mmHg'ye çıkarılmıştır → böbreğe gelen mekanik yük artmıştır",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "title": "GFR yanıtı",
-            "text": "GFR 118'den 121 mL/dk'ya sınırlı değişmiştir → filtrasyon basınca pasif şekilde eşlik etmemiştir",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "title": "Afferent direnç",
-            "text": "Afferent direnç %26 artmıştır → giriş damarında sınırlayıcı yanıt oluşmuştur",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "title": "Renin verisi",
-            "text": "Renin belirgin değişmemiştir → ana yanıt sistemik hormonal aktivasyondan bağımsızdır",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "optionComparison": {
-          "Afferent arteriyol düz kasının gerilmeye yanıt olarak kasılması": "Doğru seçenek budur. Renal perfüzyon basıncı akut arttığında afferent arteriyol duvarı gerilir; düz kas hücreleri buna kasılarak yanıt verir ve glomerüle aktarılan basınç artışını sınırlar. Olguda basınç yükselmesine rağmen RPF ve GFR'nin büyük ölçüde korunması, lokal myojenik yanıtla afferent direnç artışını destekler.",
-          "Distal NaCl azalmasıyla afferent arteriyol genişlemesinin gelişmesi": "Distal NaCl azalması makula densa üzerinden afferent genişleme ve renin artışı gibi yanıtları düşündürebilir; düşük tübüler akımda GFR'yi koruma yönünde çalışır. Bu testte perfüzyon basıncı artırılmış ve afferent direnç yükselmiştir; distal NaCl azalmasına bağlı genişleme paterniyle uyumlu değildir.",
-          "Efferent arteriyol kasılmasıyla filtrasyon basıncının yükselmesi": "Efferent arteriyol kasılması glomerül kapiller basıncını artırarak filtrasyonu destekleyebilir; düşük efektif hacim veya anjiyotensin II etkisinde önemlidir. Burada renin değişmemiş ve ölçülen direnç artışı afferent taraftadır; bu nedenle ana açıklama efferent kasılma değildir.",
-          "Mesangial hücre gevşemesiyle filtrasyon yüzeyinin genişlemesi": "Mesangial gevşeme filtrasyon yüzeyini artırarak GFR'yi yükseltebilir. Oysa kayıtta basınç artışına rağmen GFR'nin aşırı yükselmesi engellenmiştir; filtrasyon yüzeyinin genişlemesi bu sınırlayıcı yanıtı açıklamaz.",
-          "Peritübüler onkotik basınç artışıyla proksimal emilimin hızlanması": "Peritübüler onkotik basınç proksimal tübüler geri emilim üzerinde etkilidir ve filtrasyon sonrası emilim dengesini değiştirir. Bu mekanizma, saniyeler-dakikalar içinde perfüzyon basıncı artışına karşın glomerüler akımı stabilize eden primer vasküler yanıt değildir."
-        },
-        "rationale": "Renal arter basıncı artırıldığında filtrasyonun kontrolsüz yükselmemesi için giriş direncinin hızla ayarlanması gerekir. Bu kayıtta GFR ve renal plazma akımı büyük ölçüde sabit kalırken afferent direnç artmıştır. Hormonal değişiklik olmadan gelişen bu lokal yanıt, afferent arteriyol düz kasının gerilmeye verdiği kasılma yanıtıyla açıklanır.",
-        "whyWrong": {
-          "Distal NaCl azalmasıyla afferent arteriyol genişlemesinin gelişmesi": "Distal NaCl azalması makula densa üzerinden afferent genişleme ve renin artışı gibi yanıtları düşündürebilir; düşük tübüler akımda GFR'yi koruma yönünde çalışır. Bu testte perfüzyon basıncı artırılmış ve afferent direnç yükselmiştir; distal NaCl azalmasına bağlı genişleme paterniyle uyumlu değildir.",
-          "Efferent arteriyol kasılmasıyla filtrasyon basıncının yükselmesi": "Efferent arteriyol kasılması glomerül kapiller basıncını artırarak filtrasyonu destekleyebilir; düşük efektif hacim veya anjiyotensin II etkisinde önemlidir. Burada renin değişmemiş ve ölçülen direnç artışı afferent taraftadır; bu nedenle ana açıklama efferent kasılma değildir.",
-          "Mesangial hücre gevşemesiyle filtrasyon yüzeyinin genişlemesi": "Mesangial gevşeme filtrasyon yüzeyini artırarak GFR'yi yükseltebilir. Oysa kayıtta basınç artışına rağmen GFR'nin aşırı yükselmesi engellenmiştir; filtrasyon yüzeyinin genişlemesi bu sınırlayıcı yanıtı açıklamaz.",
-          "Peritübüler onkotik basınç artışıyla proksimal emilimin hızlanması": "Peritübüler onkotik basınç proksimal tübüler geri emilim üzerinde etkilidir ve filtrasyon sonrası emilim dengesini değiştirir. Bu mekanizma, saniyeler-dakikalar içinde perfüzyon basıncı artışına karşın glomerüler akımı stabilize eden primer vasküler yanıt değildir."
-        },
-        "coreKnowledge": "Renal myojenik otoregülasyonda afferent arteriyol düz kası artan duvar gerilimine kasılarak yanıt verir; böylece renal kan akımı ve GFR geniş basınç aralığında korunur.",
-        "managementSteps": [],
-        "management": []
-      }
-    },
-    "coreKnowledge": "Renal myojenik otoregülasyonda afferent arteriyol düz kası artan duvar gerilimine kasılarak yanıt verir; böylece renal kan akımı ve GFR geniş basınç aralığında korunur.",
-    "examPearl": "Renal otoregülasyonda basınç artarsa afferent arteriyol kasılarak glomerülü aşırı basınçtan korur; bu, makula densa sinyalinden daha hızlı bir yerel damar yanıtıdır.",
-    "whyCorrect": "Doğru seçenek budur. Renal perfüzyon basıncı akut arttığında afferent arteriyol duvarı gerilir; düz kas hücreleri buna kasılarak yanıt verir ve glomerüle aktarılan basınç artışını sınırlar. Olguda basınç yükselmesine rağmen RPF ve GFR'nin büyük ölçüde korunması, lokal myojenik yanıtla afferent direnç artışını destekler.",
-    "optionComparison": {
-      "Afferent arteriyol düz kasının gerilmeye yanıt olarak kasılması": "Doğru seçenek budur. Renal perfüzyon basıncı akut arttığında afferent arteriyol duvarı gerilir; düz kas hücreleri buna kasılarak yanıt verir ve glomerüle aktarılan basınç artışını sınırlar. Olguda basınç yükselmesine rağmen RPF ve GFR'nin büyük ölçüde korunması, lokal myojenik yanıtla afferent direnç artışını destekler.",
-      "Distal NaCl azalmasıyla afferent arteriyol genişlemesinin gelişmesi": "Distal NaCl azalması makula densa üzerinden afferent genişleme ve renin artışı gibi yanıtları düşündürebilir; düşük tübüler akımda GFR'yi koruma yönünde çalışır. Bu testte perfüzyon basıncı artırılmış ve afferent direnç yükselmiştir; distal NaCl azalmasına bağlı genişleme paterniyle uyumlu değildir.",
-      "Efferent arteriyol kasılmasıyla filtrasyon basıncının yükselmesi": "Efferent arteriyol kasılması glomerül kapiller basıncını artırarak filtrasyonu destekleyebilir; düşük efektif hacim veya anjiyotensin II etkisinde önemlidir. Burada renin değişmemiş ve ölçülen direnç artışı afferent taraftadır; bu nedenle ana açıklama efferent kasılma değildir.",
-      "Mesangial hücre gevşemesiyle filtrasyon yüzeyinin genişlemesi": "Mesangial gevşeme filtrasyon yüzeyini artırarak GFR'yi yükseltebilir. Oysa kayıtta basınç artışına rağmen GFR'nin aşırı yükselmesi engellenmiştir; filtrasyon yüzeyinin genişlemesi bu sınırlayıcı yanıtı açıklamaz.",
-      "Peritübüler onkotik basınç artışıyla proksimal emilimin hızlanması": "Peritübüler onkotik basınç proksimal tübüler geri emilim üzerinde etkilidir ve filtrasyon sonrası emilim dengesini değiştirir. Bu mekanizma, saniyeler-dakikalar içinde perfüzyon basıncı artışına karşın glomerüler akımı stabilize eden primer vasküler yanıt değildir."
-    },
-    "evidenceChain": [
-      {
-        "title": "Basınç artışı",
-        "text": "Renal giriş basıncı 90'dan 130 mmHg'ye çıkarılmıştır → böbreğe gelen mekanik yük artmıştır",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "title": "GFR yanıtı",
-        "text": "GFR 118'den 121 mL/dk'ya sınırlı değişmiştir → filtrasyon basınca pasif şekilde eşlik etmemiştir",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "title": "Afferent direnç",
-        "text": "Afferent direnç %26 artmıştır → giriş damarında sınırlayıcı yanıt oluşmuştur",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "title": "Renin verisi",
-        "text": "Renin belirgin değişmemiştir → ana yanıt sistemik hormonal aktivasyondan bağımsızdır",
-        "weight": "medium",
-        "source": "case"
-      }
-    ],
-    "whyWrong": {
-      "Distal NaCl azalmasıyla afferent arteriyol genişlemesinin gelişmesi": "Distal NaCl azalması makula densa üzerinden afferent genişleme ve renin artışı gibi yanıtları düşündürebilir; düşük tübüler akımda GFR'yi koruma yönünde çalışır. Bu testte perfüzyon basıncı artırılmış ve afferent direnç yükselmiştir; distal NaCl azalmasına bağlı genişleme paterniyle uyumlu değildir.",
-      "Efferent arteriyol kasılmasıyla filtrasyon basıncının yükselmesi": "Efferent arteriyol kasılması glomerül kapiller basıncını artırarak filtrasyonu destekleyebilir; düşük efektif hacim veya anjiyotensin II etkisinde önemlidir. Burada renin değişmemiş ve ölçülen direnç artışı afferent taraftadır; bu nedenle ana açıklama efferent kasılma değildir.",
-      "Mesangial hücre gevşemesiyle filtrasyon yüzeyinin genişlemesi": "Mesangial gevşeme filtrasyon yüzeyini artırarak GFR'yi yükseltebilir. Oysa kayıtta basınç artışına rağmen GFR'nin aşırı yükselmesi engellenmiştir; filtrasyon yüzeyinin genişlemesi bu sınırlayıcı yanıtı açıklamaz.",
-      "Peritübüler onkotik basınç artışıyla proksimal emilimin hızlanması": "Peritübüler onkotik basınç proksimal tübüler geri emilim üzerinde etkilidir ve filtrasyon sonrası emilim dengesini değiştirir. Bu mekanizma, saniyeler-dakikalar içinde perfüzyon basıncı artışına karşın glomerüler akımı stabilize eden primer vasküler yanıt değildir."
-    },
-    "mechanismExplanation": "Perfüzyon basıncı artar, afferent arteriyol duvarı gerilir, düz kas kasılır, glomerüler basınç aktarımı sınırlanır ve GFR sabit kalır.",
-    "scientificComment": "Soru, renal otoregülasyonun hızlı vasküler bileşenini RAAS ve tubuloglomerüler feedback çeldiricilerinden ayırmayı sağlar.",
-    "helpText": "Basınç değişimine saniyeler içinde afferent direnç artışı eşlik ediyorsa renal myojenik yanıtı düşün; renin ve distal NaCl verileri yönü ayırdırır.",
-    "preserveInvestigationOrder": true
-  },
-  {
-    "id": "v214-new-004-titresim-uyaraninda-duyu-kaydi",
-    "branchId": "physiology",
-    "caseType": "standard",
-    "relatedBranch": "Fizyoloji",
-    "title": "Titreşim uyaranında duyu kaydı",
-    "difficulty": "Orta-Zor",
-    "difficultyTag": "Orta-Zor",
-    "clinicalFocus": "Sürekli titreşim uyaranında başlangıç-bitiş yanıtı ile sürdürülen uyaran yanıtını karşılaştırarak mekanoreseptör adaptasyonunu yorumlama.",
-    "learningTarget": "Kutanöz mekanoreseptörlerin adaptasyon hızlarını, kodladıkları uyaran tipini ve afferent ateşleme paternini ayırt edebilme.",
-    "demographics": "20 yaşında sağlıklı kadın gönüllü",
-    "setting": "Duyu fizyolojisi laboratuvarı",
-    "chiefComplaint": "Gönüllü, parmak pulpasına uygulanan titreşim uyaranı sırasında algı ve afferent kayıt değişimiyle değerlendiriliyor.",
-    "stem": "Gönüllü dokunma duyusu uygulamasında sağ işaret parmağını sabit bir platforma yerleştirir. Uygulayıcı parmak pulpasına kısa aralarla tekrarlayan titreşim uyaranı verir ve gönüllüden algının zaman içindeki şiddetini söylemesini ister. İlk temas anında titreşimi çok belirgin hissettiğini, birkaç saniye sonra aynı uyaran sürerken algının azaldığını belirtir. Uyaran kapatıldığında yeniden kısa ve net bir değişiklik hissettiğini söyler; test öncesinde parmakta ağrı, uyuşma veya yara olmadığını bildirir.",
-    "patientIntro": {
-      "profile": "20 yaşında sağlıklı kadın gönüllü, parmak pulpasına uygulanan titreşim uyaranı sırasında duyu yanıtı açısından değerlendiriliyor.",
-      "presentation": "Sabit titreşim sürerken algı azalıyor; başlangıç ve bitiş anlarında afferent yanıt daha belirgin kaydediliyor.",
-      "historySummary": "Gönüllü dokunma duyusu uygulamasında sağ işaret parmağını sabit bir platforma yerleştirir. Uygulayıcı parmak pulpasına kısa aralarla tekrarlayan titreşim uyaranı verir ve gönüllüden algının zaman içindeki şiddetini söylemesini ister. İlk temas anında titreşimi çok belirgin hissettiğini, birkaç saniye sonra aynı uyaran sürerken algının azaldığını belirtir. Uyaran kapatıldığında yeniden kısa ve net bir değişiklik hissettiğini söyler; test öncesinde parmakta ağrı, uyuşma veya yara olmadığını bildirir."
-    },
-    "vitals": {
-      "TA": "110/68 mmHg",
-      "Nabız": "74/dk",
-      "Solunum": "14/dk",
-      "SpO2": "%99, oda havasında",
-      "Ateş": "36.4 °C",
-      "Şok indeksi": "0.67"
-    },
-    "exam": [
-      "Gönüllü uyanık, koopere ve test yönergelerine uyumludur.",
-      "Parmak cildinde yara, ödem veya renk değişikliği izlenmez.",
-      "İki nokta ayrımı beklenen sınırlar içindedir.",
-      "Motor güç ve derin tendon refleksleri simetriktir."
-    ],
-    "investigations": [
-      {
-        "id": "v214-new-004-titresim-uyaraninda-duyu-kaydi-titreşim-algi-kaydi",
-        "label": "Titreşim algı kaydı",
-        "title": "Titreşim algı kaydı",
-        "type": "functional",
-        "priority": "essential",
-        "subtype": "Somatik duyu testi",
-        "category": "physiologyTest",
-        "testTypeCategory": "physiologyTest",
-        "summary": "Sabit frekanslı titreşimde algı başlangıçta belirgin, birkaç saniye içinde daha zayıf bildirilmiştir.",
-        "clinicalMeaning": "Sabit frekanslı titreşimde algı başlangıçta belirgin, birkaç saniye içinde daha zayıf bildirilmiştir.",
-        "testValueLabel": "Kritik veri",
-        "educationalValue": "Kritik veri",
-        "clinicalPriorityLabel": "Kritik veri",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "source": "case",
-        "clinicalFlowOrder": 1,
-        "result": {
-          "title": "Titreşim algı kaydı",
-          "summary": "Sabit frekanslı titreşimde algı başlangıçta belirgin, birkaç saniye içinde daha zayıf bildirilmiştir.",
-          "interpretation": "Sabit frekanslı titreşimde algı başlangıçta belirgin, birkaç saniye içinde daha zayıf bildirilmiştir.",
-          "values": [
-            [
-              "Uyaran frekansı",
-              "250 Hz",
-              "Deneysel sabit",
-              "Uygulandı"
-            ],
-            [
-              "Başlangıç algısı",
-              "Belirgin",
-              "Bireysel bildirim",
-              "Yüksek"
-            ],
-            [
-              "5. saniye algısı",
-              "Azalmış",
-              "Bireysel bildirim",
-              "Sönümlenmiş"
-            ],
-            [
-              "Uyaran bitiş algısı",
-              "Kısa belirgin değişiklik",
-              "Bireysel bildirim",
-              "Var"
-            ]
-          ],
-          "rows": [
-            [
-              "Uyaran frekansı",
-              "250 Hz",
-              "Deneysel sabit",
-              "Uygulandı"
-            ],
-            [
-              "Başlangıç algısı",
-              "Belirgin",
-              "Bireysel bildirim",
-              "Yüksek"
-            ],
-            [
-              "5. saniye algısı",
-              "Azalmış",
-              "Bireysel bildirim",
-              "Sönümlenmiş"
-            ],
-            [
-              "Uyaran bitiş algısı",
-              "Kısa belirgin değişiklik",
-              "Bireysel bildirim",
-              "Var"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Uyaran frekansı",
-            "250 Hz",
-            "Deneysel sabit",
-            "Uygulandı"
-          ],
-          [
-            "Başlangıç algısı",
-            "Belirgin",
-            "Bireysel bildirim",
-            "Yüksek"
-          ],
-          [
-            "5. saniye algısı",
-            "Azalmış",
-            "Bireysel bildirim",
-            "Sönümlenmiş"
-          ],
-          [
-            "Uyaran bitiş algısı",
-            "Kısa belirgin değişiklik",
-            "Bireysel bildirim",
-            "Var"
-          ]
-        ],
-        "postAnswerExplanation": "Sabit frekanslı titreşimde algı başlangıçta belirgin, birkaç saniye içinde daha zayıf bildirilmiştir.",
-        "interpretation": "Sabit frekanslı titreşimde algı başlangıçta belirgin, birkaç saniye içinde daha zayıf bildirilmiştir.",
-        "inlineFeedback": "Sabit frekanslı titreşimde algı başlangıçta belirgin, birkaç saniye içinde daha zayıf bildirilmiştir.",
-        "explanationAfterAnswer": "Sabit frekanslı titreşimde algı başlangıçta belirgin, birkaç saniye içinde daha zayıf bildirilmiştir."
-      },
-      {
-        "id": "v214-new-004-titresim-uyaraninda-duyu-kaydi-afferent-atesleme-kaydi",
-        "label": "Afferent ateşleme kaydı",
-        "title": "Afferent ateşleme kaydı",
-        "type": "functional",
-        "priority": "essential",
-        "subtype": "Duyu siniri kayıt testi",
-        "category": "neurophysiology",
-        "testTypeCategory": "neurophysiology",
-        "summary": "Afferent aktivite uyaran başlangıcı ve bitişinde yüksek, sürdürülen fazda daha düşük kaydedilmiştir.",
-        "clinicalMeaning": "Afferent aktivite uyaran başlangıcı ve bitişinde yüksek, sürdürülen fazda daha düşük kaydedilmiştir.",
-        "testValueLabel": "Kritik veri",
-        "educationalValue": "Kritik veri",
-        "clinicalPriorityLabel": "Kritik veri",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "source": "case",
-        "clinicalFlowOrder": 2,
-        "result": {
-          "title": "Afferent ateşleme kaydı",
-          "summary": "Afferent aktivite uyaran başlangıcı ve bitişinde yüksek, sürdürülen fazda daha düşük kaydedilmiştir.",
-          "interpretation": "Afferent aktivite uyaran başlangıcı ve bitişinde yüksek, sürdürülen fazda daha düşük kaydedilmiştir.",
-          "values": [
-            [
-              "Başlangıç deşarjı",
-              "Yüksek frekanslı kısa burst",
-              "Bazale göre",
-              "Artmış"
-            ],
-            [
-              "Sürdürülen faz",
-              "Düşük frekanslı ateşleme",
-              "Başlangıca göre",
-              "Azalmış"
-            ],
-            [
-              "Bitiş yanıtı",
-              "Kısa burst",
-              "Bazale göre",
-              "Artmış"
-            ],
-            [
-              "Ağrı bildirimi",
-              "Yok",
-              "Yok",
-              "Saptanmadı"
-            ]
-          ],
-          "rows": [
-            [
-              "Başlangıç deşarjı",
-              "Yüksek frekanslı kısa burst",
-              "Bazale göre",
-              "Artmış"
-            ],
-            [
-              "Sürdürülen faz",
-              "Düşük frekanslı ateşleme",
-              "Başlangıca göre",
-              "Azalmış"
-            ],
-            [
-              "Bitiş yanıtı",
-              "Kısa burst",
-              "Bazale göre",
-              "Artmış"
-            ],
-            [
-              "Ağrı bildirimi",
-              "Yok",
-              "Yok",
-              "Saptanmadı"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Başlangıç deşarjı",
-            "Yüksek frekanslı kısa burst",
-            "Bazale göre",
-            "Artmış"
-          ],
-          [
-            "Sürdürülen faz",
-            "Düşük frekanslı ateşleme",
-            "Başlangıca göre",
-            "Azalmış"
-          ],
-          [
-            "Bitiş yanıtı",
-            "Kısa burst",
-            "Bazale göre",
-            "Artmış"
-          ],
-          [
-            "Ağrı bildirimi",
-            "Yok",
-            "Yok",
-            "Saptanmadı"
-          ]
-        ],
-        "postAnswerExplanation": "Afferent aktivite uyaran başlangıcı ve bitişinde yüksek, sürdürülen fazda daha düşük kaydedilmiştir.",
-        "interpretation": "Afferent aktivite uyaran başlangıcı ve bitişinde yüksek, sürdürülen fazda daha düşük kaydedilmiştir.",
-        "inlineFeedback": "Afferent aktivite uyaran başlangıcı ve bitişinde yüksek, sürdürülen fazda daha düşük kaydedilmiştir.",
-        "explanationAfterAnswer": "Afferent aktivite uyaran başlangıcı ve bitişinde yüksek, sürdürülen fazda daha düşük kaydedilmiştir."
-      }
-    ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": [],
-    "hideExamSignal": true,
-    "shuffleOptions": true,
-    "question": "Bu fizyolojik testte gözlenen duyu yanıtını en iyi açıklayan mekanizma hangisidir?",
-    "questionType": "physiology_mechanism",
-    "answerTarget": "pacinian_corpuscle_rapid_adaptation_vibration",
-    "diagnosis": {
-      "correct": "Lamelli mekanoreseptörde kapsül filtrelemesiyle hızlı adaptasyon oluşması",
-      "options": [
-        "Merkel diskinde basınca karşı yavaş adapte deşarjın sürmesi",
-        "Ruffini ucunda deri gerilimine tonik yanıtın korunması",
-        "Lamelli mekanoreseptörde kapsül filtrelemesiyle hızlı adaptasyon oluşması",
-        "Kas iğciğinde statik gerimle Ia/II afferent aktivitenin artması",
-        "Serbest sinir ucunda kimyasal mediyatörlerle nosisepsiyonun sürmesi"
-      ],
-      "question": "Bu fizyolojik testte gözlenen duyu yanıtını en iyi açıklayan mekanizma hangisidir?",
-      "explanation": "Sabit titreşim sırasında algının hızla azalması ve afferent deşarjın özellikle başlangıç-bitiş anlarında artması, hızlı değişikliklere duyarlı bir mekanoreseptör paternidir. Lamelli reseptör kapsülü sabit basınç bileşenini mekanik olarak filtreler; bu nedenle reseptör sürekli uyarandan çok değişimin hızını kodlar. Ağrı, kas gerimi veya tonik deri gerilimi verisi bulunmaması diğer reseptör tiplerini geri plana iter.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Titreşim ve hızlı adaptasyon birlikte verildiğinde reseptörün neyi kodladığını düşün: sabit basınçtan çok uyaran değişimi önemlidir."
-        }
-      ],
-      "optionComparison": {
-        "Lamelli mekanoreseptörde kapsül filtrelemesiyle hızlı adaptasyon oluşması": "Doğru seçenek budur. Yüksek frekanslı titreşimde lamelli mekanoreseptörler özellikle uyaranın başlangıç ve bitişindeki hızlı değişikliklere güçlü yanıt verir. Kapsül yapısı sabit basınç bileşenini filtrelediği için sürdürülen uyarıda afferent ateşleme azalır; olgudaki başlangıç-bitiş deşarjı ve algının hızla sönmesi bu hızlı adaptasyon paternini destekler.",
-        "Merkel diskinde basınca karşı yavaş adapte deşarjın sürmesi": "Merkel diskleri sürekli basınç ve şekil ayrıntısında yavaş adapte yanıt verir; statik temasın sürmesini kodlamada önemlidir. Bu kayıtta deşarj uyaran sürdüğü halde belirgin azalmakta ve özellikle başlangıç-bitiş anlarında artmaktadır; bu Merkel tipi yavaş adaptasyonla uyumlu değildir.",
-        "Ruffini ucunda deri gerilimine tonik yanıtın korunması": "Ruffini uçları deri gerilimine daha tonik ve yavaş adapte yanıt verebilir. Olguda uygulanan uyaran sürekli deri gerilimi değil yüksek frekanslı titreşimdir; kaydın hızlı sönmesi tonik gerilim reseptörü paterninden ayrılır.",
-        "Kas iğciğinde statik gerimle Ia/II afferent aktivitenin artması": "Kas iğcikleri kas uzunluğu ve gerim değişimini izler; refleks tonus ve propriosepsiyonda önemlidir. Parmak pulpasına uygulanan yüzeyel titreşimde temel kayıt kutanöz afferentlerden alınmıştır; statik kas gerimi veya kas uzunluğu değişikliği ana uyaran değildir.",
-        "Serbest sinir ucunda kimyasal mediyatörlerle nosisepsiyonun sürmesi": "Serbest sinir uçları ağrı, sıcaklık ve bazı kimyasal uyaranları iletebilir; inflamasyon mediyatörleriyle süren nosiseptif ateşleme görülebilir. Bu testte ağrı veya doku hasarı yoktur; yüksek frekanslı, ağrısız titreşim ve hızlı adaptasyon paterninden söz edilmektedir."
-      },
-      "answerFeedback": {
-        "summary": "Sabit titreşim sırasında algının hızla azalması ve afferent deşarjın özellikle başlangıç-bitiş anlarında artması, hızlı değişikliklere duyarlı bir mekanoreseptör paternidir. Lamelli reseptör kapsülü sabit basınç bileşenini mekanik olarak filtreler; bu nedenle reseptör sürekli uyarandan çok değişimin hızını kodlar. Ağrı, kas gerimi veya tonik deri gerilimi verisi bulunmaması diğer reseptör tiplerini geri plana iter.",
-        "whyCorrect": "Doğru seçenek budur. Yüksek frekanslı titreşimde lamelli mekanoreseptörler özellikle uyaranın başlangıç ve bitişindeki hızlı değişikliklere güçlü yanıt verir. Kapsül yapısı sabit basınç bileşenini filtrelediği için sürdürülen uyarıda afferent ateşleme azalır; olgudaki başlangıç-bitiş deşarjı ve algının hızla sönmesi bu hızlı adaptasyon paternini destekler.",
-        "keyClues": [
-          "250 Hz titreşim uygulanmıştır → yüksek frekanslı mekanik değişim oluşturulmuştur",
-          "Algı birkaç saniye içinde azalmıştır → sürdürülen uyaran güçlü tonik yanıt oluşturmamıştır",
-          "Başlangıç ve bitişte kısa burst görülmüştür → değişim anları daha güçlü kodlanmıştır"
-        ],
-        "examPearl": "Titreşim ve hızlı adaptasyon birlikte verildiğinde reseptörün neyi kodladığını düşün: sabit basınçtan çok uyaran değişimi önemlidir.",
-        "evidenceChain": [
-          {
-            "title": "Uyaran tipi",
-            "text": "250 Hz titreşim uygulanmıştır → yüksek frekanslı mekanik değişim oluşturulmuştur",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "title": "Algı seyri",
-            "text": "Algı birkaç saniye içinde azalmıştır → sürdürülen uyaran güçlü tonik yanıt oluşturmamıştır",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "title": "Afferent kayıt",
-            "text": "Başlangıç ve bitişte kısa burst görülmüştür → değişim anları daha güçlü kodlanmıştır",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "title": "Negatif bulgu",
-            "text": "Ağrı ve deri hasarı yoktur → nosiseptif serbest uç yanıtı geri plandadır",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "optionComparison": {
-          "Lamelli mekanoreseptörde kapsül filtrelemesiyle hızlı adaptasyon oluşması": "Doğru seçenek budur. Yüksek frekanslı titreşimde lamelli mekanoreseptörler özellikle uyaranın başlangıç ve bitişindeki hızlı değişikliklere güçlü yanıt verir. Kapsül yapısı sabit basınç bileşenini filtrelediği için sürdürülen uyarıda afferent ateşleme azalır; olgudaki başlangıç-bitiş deşarjı ve algının hızla sönmesi bu hızlı adaptasyon paternini destekler.",
-          "Merkel diskinde basınca karşı yavaş adapte deşarjın sürmesi": "Merkel diskleri sürekli basınç ve şekil ayrıntısında yavaş adapte yanıt verir; statik temasın sürmesini kodlamada önemlidir. Bu kayıtta deşarj uyaran sürdüğü halde belirgin azalmakta ve özellikle başlangıç-bitiş anlarında artmaktadır; bu Merkel tipi yavaş adaptasyonla uyumlu değildir.",
-          "Ruffini ucunda deri gerilimine tonik yanıtın korunması": "Ruffini uçları deri gerilimine daha tonik ve yavaş adapte yanıt verebilir. Olguda uygulanan uyaran sürekli deri gerilimi değil yüksek frekanslı titreşimdir; kaydın hızlı sönmesi tonik gerilim reseptörü paterninden ayrılır.",
-          "Kas iğciğinde statik gerimle Ia/II afferent aktivitenin artması": "Kas iğcikleri kas uzunluğu ve gerim değişimini izler; refleks tonus ve propriosepsiyonda önemlidir. Parmak pulpasına uygulanan yüzeyel titreşimde temel kayıt kutanöz afferentlerden alınmıştır; statik kas gerimi veya kas uzunluğu değişikliği ana uyaran değildir.",
-          "Serbest sinir ucunda kimyasal mediyatörlerle nosisepsiyonun sürmesi": "Serbest sinir uçları ağrı, sıcaklık ve bazı kimyasal uyaranları iletebilir; inflamasyon mediyatörleriyle süren nosiseptif ateşleme görülebilir. Bu testte ağrı veya doku hasarı yoktur; yüksek frekanslı, ağrısız titreşim ve hızlı adaptasyon paterninden söz edilmektedir."
-        },
-        "rationale": "Sabit titreşim sırasında algının hızla azalması ve afferent deşarjın özellikle başlangıç-bitiş anlarında artması, hızlı değişikliklere duyarlı bir mekanoreseptör paternidir. Lamelli reseptör kapsülü sabit basınç bileşenini mekanik olarak filtreler; bu nedenle reseptör sürekli uyarandan çok değişimin hızını kodlar. Ağrı, kas gerimi veya tonik deri gerilimi verisi bulunmaması diğer reseptör tiplerini geri plana iter.",
-        "whyWrong": {
-          "Merkel diskinde basınca karşı yavaş adapte deşarjın sürmesi": "Merkel diskleri sürekli basınç ve şekil ayrıntısında yavaş adapte yanıt verir; statik temasın sürmesini kodlamada önemlidir. Bu kayıtta deşarj uyaran sürdüğü halde belirgin azalmakta ve özellikle başlangıç-bitiş anlarında artmaktadır; bu Merkel tipi yavaş adaptasyonla uyumlu değildir.",
-          "Ruffini ucunda deri gerilimine tonik yanıtın korunması": "Ruffini uçları deri gerilimine daha tonik ve yavaş adapte yanıt verebilir. Olguda uygulanan uyaran sürekli deri gerilimi değil yüksek frekanslı titreşimdir; kaydın hızlı sönmesi tonik gerilim reseptörü paterninden ayrılır.",
-          "Kas iğciğinde statik gerimle Ia/II afferent aktivitenin artması": "Kas iğcikleri kas uzunluğu ve gerim değişimini izler; refleks tonus ve propriosepsiyonda önemlidir. Parmak pulpasına uygulanan yüzeyel titreşimde temel kayıt kutanöz afferentlerden alınmıştır; statik kas gerimi veya kas uzunluğu değişikliği ana uyaran değildir.",
-          "Serbest sinir ucunda kimyasal mediyatörlerle nosisepsiyonun sürmesi": "Serbest sinir uçları ağrı, sıcaklık ve bazı kimyasal uyaranları iletebilir; inflamasyon mediyatörleriyle süren nosiseptif ateşleme görülebilir. Bu testte ağrı veya doku hasarı yoktur; yüksek frekanslı, ağrısız titreşim ve hızlı adaptasyon paterninden söz edilmektedir."
-        },
-        "coreKnowledge": "Lamelli mekanoreseptörler titreşim ve hızlı basınç değişimlerine duyarlıdır; kapsül yapısı sabit uyaranı filtrelediği için hızlı adapte olurlar.",
-        "managementSteps": [],
-        "management": []
-      }
-    },
-    "coreKnowledge": "Lamelli mekanoreseptörler titreşim ve hızlı basınç değişimlerine duyarlıdır; kapsül yapısı sabit uyaranı filtrelediği için hızlı adapte olurlar.",
-    "examPearl": "Titreşim ve hızlı adaptasyon birlikte verildiğinde reseptörün neyi kodladığını düşün: sabit basınçtan çok uyaran değişimi önemlidir.",
-    "whyCorrect": "Doğru seçenek budur. Yüksek frekanslı titreşimde lamelli mekanoreseptörler özellikle uyaranın başlangıç ve bitişindeki hızlı değişikliklere güçlü yanıt verir. Kapsül yapısı sabit basınç bileşenini filtrelediği için sürdürülen uyarıda afferent ateşleme azalır; olgudaki başlangıç-bitiş deşarjı ve algının hızla sönmesi bu hızlı adaptasyon paternini destekler.",
-    "optionComparison": {
-      "Lamelli mekanoreseptörde kapsül filtrelemesiyle hızlı adaptasyon oluşması": "Doğru seçenek budur. Yüksek frekanslı titreşimde lamelli mekanoreseptörler özellikle uyaranın başlangıç ve bitişindeki hızlı değişikliklere güçlü yanıt verir. Kapsül yapısı sabit basınç bileşenini filtrelediği için sürdürülen uyarıda afferent ateşleme azalır; olgudaki başlangıç-bitiş deşarjı ve algının hızla sönmesi bu hızlı adaptasyon paternini destekler.",
-      "Merkel diskinde basınca karşı yavaş adapte deşarjın sürmesi": "Merkel diskleri sürekli basınç ve şekil ayrıntısında yavaş adapte yanıt verir; statik temasın sürmesini kodlamada önemlidir. Bu kayıtta deşarj uyaran sürdüğü halde belirgin azalmakta ve özellikle başlangıç-bitiş anlarında artmaktadır; bu Merkel tipi yavaş adaptasyonla uyumlu değildir.",
-      "Ruffini ucunda deri gerilimine tonik yanıtın korunması": "Ruffini uçları deri gerilimine daha tonik ve yavaş adapte yanıt verebilir. Olguda uygulanan uyaran sürekli deri gerilimi değil yüksek frekanslı titreşimdir; kaydın hızlı sönmesi tonik gerilim reseptörü paterninden ayrılır.",
-      "Kas iğciğinde statik gerimle Ia/II afferent aktivitenin artması": "Kas iğcikleri kas uzunluğu ve gerim değişimini izler; refleks tonus ve propriosepsiyonda önemlidir. Parmak pulpasına uygulanan yüzeyel titreşimde temel kayıt kutanöz afferentlerden alınmıştır; statik kas gerimi veya kas uzunluğu değişikliği ana uyaran değildir.",
-      "Serbest sinir ucunda kimyasal mediyatörlerle nosisepsiyonun sürmesi": "Serbest sinir uçları ağrı, sıcaklık ve bazı kimyasal uyaranları iletebilir; inflamasyon mediyatörleriyle süren nosiseptif ateşleme görülebilir. Bu testte ağrı veya doku hasarı yoktur; yüksek frekanslı, ağrısız titreşim ve hızlı adaptasyon paterninden söz edilmektedir."
-    },
-    "evidenceChain": [
-      {
-        "title": "Uyaran tipi",
-        "text": "250 Hz titreşim uygulanmıştır → yüksek frekanslı mekanik değişim oluşturulmuştur",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "title": "Algı seyri",
-        "text": "Algı birkaç saniye içinde azalmıştır → sürdürülen uyaran güçlü tonik yanıt oluşturmamıştır",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "title": "Afferent kayıt",
-        "text": "Başlangıç ve bitişte kısa burst görülmüştür → değişim anları daha güçlü kodlanmıştır",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "title": "Negatif bulgu",
-        "text": "Ağrı ve deri hasarı yoktur → nosiseptif serbest uç yanıtı geri plandadır",
-        "weight": "medium",
-        "source": "case"
-      }
-    ],
-    "whyWrong": {
-      "Merkel diskinde basınca karşı yavaş adapte deşarjın sürmesi": "Merkel diskleri sürekli basınç ve şekil ayrıntısında yavaş adapte yanıt verir; statik temasın sürmesini kodlamada önemlidir. Bu kayıtta deşarj uyaran sürdüğü halde belirgin azalmakta ve özellikle başlangıç-bitiş anlarında artmaktadır; bu Merkel tipi yavaş adaptasyonla uyumlu değildir.",
-      "Ruffini ucunda deri gerilimine tonik yanıtın korunması": "Ruffini uçları deri gerilimine daha tonik ve yavaş adapte yanıt verebilir. Olguda uygulanan uyaran sürekli deri gerilimi değil yüksek frekanslı titreşimdir; kaydın hızlı sönmesi tonik gerilim reseptörü paterninden ayrılır.",
-      "Kas iğciğinde statik gerimle Ia/II afferent aktivitenin artması": "Kas iğcikleri kas uzunluğu ve gerim değişimini izler; refleks tonus ve propriosepsiyonda önemlidir. Parmak pulpasına uygulanan yüzeyel titreşimde temel kayıt kutanöz afferentlerden alınmıştır; statik kas gerimi veya kas uzunluğu değişikliği ana uyaran değildir.",
-      "Serbest sinir ucunda kimyasal mediyatörlerle nosisepsiyonun sürmesi": "Serbest sinir uçları ağrı, sıcaklık ve bazı kimyasal uyaranları iletebilir; inflamasyon mediyatörleriyle süren nosiseptif ateşleme görülebilir. Bu testte ağrı veya doku hasarı yoktur; yüksek frekanslı, ağrısız titreşim ve hızlı adaptasyon paterninden söz edilmektedir."
-    },
-    "mechanismExplanation": "Titreşim başlar, kapsül hızlı mekanik değişimi reseptör ucuna iletir, sürdürülen basınç filtrelenir ve afferent ateşleme azalır; uyaran bitince tekrar kısa yanıt oluşur.",
-    "scientificComment": "Soru, somatik duyu reseptörlerini yalnız lokalizasyonla değil adaptasyon hızı ve ateşleme paterniyle ayırmayı hedefler.",
-    "helpText": "Duyu reseptörü sorularında uyaran tipi kadar yanıtın zaman içindeki biçimini de oku; hızlı sönme önemli bir ayırıcıdır.",
-    "preserveInvestigationOrder": true
-  },
-  {
-    "id": "v214-new-005-aclik-doneminde-motilite-kaydi",
-    "branchId": "physiology",
-    "caseType": "standard",
-    "relatedBranch": "Fizyoloji",
-    "title": "Açlık döneminde motilite kaydı",
-    "difficulty": "Orta-Zor",
-    "difficultyTag": "Orta-Zor",
-    "clinicalFocus": "Açlık ve tokluk dönemlerinde gastrointestinal motilite paternini manometri verileri ve hormon yanıtları üzerinden yorumlama.",
-    "learningTarget": "Göç eden motor kompleksleri postprandiyal sekresyon ve incretin yanıtlarından ayırarak açlık motilitesinin düzenlenmesini açıklayabilme.",
-    "demographics": "27 yaşında sağlıklı erkek gönüllü",
-    "setting": "Gastrointestinal fizyoloji laboratuvarı",
-    "chiefComplaint": "Gönüllü, uzun açlık sonrası aralıklı karın gurultusu ve manometri paternleri açısından izleniyor.",
-    "stem": "Gönüllü sabah erken saatte laboratuvara gelir ve önceki gece geç saatlerden beri yemek yemediğini belirtir. İzlem sırasında belirli aralıklarla karnında guruldama ve kısa süreli kramp benzeri hareket hissi olduğunu söyler. Araştırma ekibi açlık kaydından sonra standart bir öğün verir ve aynı manometri izlemini sürdürür. Öğünden sonra gönüllüde açlık dönemindeki aralıklı hareket hissi kaybolur; bulantı, ishal, ateş veya karın ağrısı öyküsü yoktur.",
-    "patientIntro": {
-      "profile": "27 yaşında sağlıklı erkek gönüllü, açlık ve öğün sonrası gastrointestinal motilite kaydıyla değerlendiriliyor.",
-      "presentation": "Açlıkta periyodik ve aboral ilerleyen dalga kümeleri izlenirken öğün sonrası bu patern baskılanıyor.",
-      "historySummary": "Gönüllü sabah erken saatte laboratuvara gelir ve önceki gece geç saatlerden beri yemek yemediğini belirtir. İzlem sırasında belirli aralıklarla karnında guruldama ve kısa süreli kramp benzeri hareket hissi olduğunu söyler. Araştırma ekibi açlık kaydından sonra standart bir öğün verir ve aynı manometri izlemini sürdürür. Öğünden sonra gönüllüde açlık dönemindeki aralıklı hareket hissi kaybolur; bulantı, ishal, ateş veya karın ağrısı öyküsü yoktur."
-    },
-    "vitals": {
-      "TA": "116/72 mmHg",
-      "Nabız": "78/dk",
-      "Solunum": "15/dk",
-      "SpO2": "%99, oda havasında",
-      "Ateş": "36.6 °C",
-      "Şok indeksi": "0.67"
-    },
-    "exam": [
-      "Gönüllü rahat, koopere ve hidratasyonu iyi görünümdedir.",
-      "Batın yumuşaktır; defans veya rebound yoktur.",
-      "Açlık döneminde aralıklı bağırsak sesleri duyulur.",
-      "Öğün sonrası belirgin bulantı, kusma veya vazovagal yakınma gelişmez."
-    ],
-    "investigations": [
-      {
-        "id": "v214-new-005-aclik-doneminde-motilite-kaydi-aclik-manometri-kaydi",
-        "label": "Açlık manometri kaydı",
-        "title": "Açlık manometri kaydı",
-        "type": "functional",
-        "priority": "essential",
-        "subtype": "Gastrointestinal motilite testi",
-        "category": "physiologyTest",
-        "testTypeCategory": "physiologyTest",
-        "summary": "Açlık döneminde mide antrumundan başlayıp duodenuma ilerleyen periyodik basınç dalga kümeleri kaydedilmiştir.",
-        "clinicalMeaning": "Açlık döneminde mide antrumundan başlayıp duodenuma ilerleyen periyodik basınç dalga kümeleri kaydedilmiştir.",
-        "testValueLabel": "Kritik veri",
-        "educationalValue": "Kritik veri",
-        "clinicalPriorityLabel": "Kritik veri",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "source": "case",
-        "clinicalFlowOrder": 1,
-        "result": {
-          "title": "Açlık manometri kaydı",
-          "summary": "Açlık döneminde mide antrumundan başlayıp duodenuma ilerleyen periyodik basınç dalga kümeleri kaydedilmiştir.",
-          "interpretation": "Açlık döneminde mide antrumundan başlayıp duodenuma ilerleyen periyodik basınç dalga kümeleri kaydedilmiştir.",
-          "values": [
-            [
-              "Açlık süresi",
-              "12 saat",
-              "Deneysel koşul",
-              "Uygun"
-            ],
-            [
-              "Dalga aralığı",
-              "Yaklaşık 95 dakika",
-              "Periyodik",
-              "Düzenli"
-            ],
-            [
-              "Başlangıç bölgesi",
-              "Mide antrumu/duodenum",
-              "Proksimal segment",
-              "Kaydedildi"
-            ],
-            [
-              "İlerleme yönü",
-              "Aboral",
-              "Tek yönlü ilerleme",
-              "İzlendi"
-            ]
-          ],
-          "rows": [
-            [
-              "Açlık süresi",
-              "12 saat",
-              "Deneysel koşul",
-              "Uygun"
-            ],
-            [
-              "Dalga aralığı",
-              "Yaklaşık 95 dakika",
-              "Periyodik",
-              "Düzenli"
-            ],
-            [
-              "Başlangıç bölgesi",
-              "Mide antrumu/duodenum",
-              "Proksimal segment",
-              "Kaydedildi"
-            ],
-            [
-              "İlerleme yönü",
-              "Aboral",
-              "Tek yönlü ilerleme",
-              "İzlendi"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Açlık süresi",
-            "12 saat",
-            "Deneysel koşul",
-            "Uygun"
-          ],
-          [
-            "Dalga aralığı",
-            "Yaklaşık 95 dakika",
-            "Periyodik",
-            "Düzenli"
-          ],
-          [
-            "Başlangıç bölgesi",
-            "Mide antrumu/duodenum",
-            "Proksimal segment",
-            "Kaydedildi"
-          ],
-          [
-            "İlerleme yönü",
-            "Aboral",
-            "Tek yönlü ilerleme",
-            "İzlendi"
-          ]
-        ],
-        "postAnswerExplanation": "Açlık döneminde mide antrumundan başlayıp duodenuma ilerleyen periyodik basınç dalga kümeleri kaydedilmiştir.",
-        "interpretation": "Açlık döneminde mide antrumundan başlayıp duodenuma ilerleyen periyodik basınç dalga kümeleri kaydedilmiştir.",
-        "inlineFeedback": "Açlık döneminde mide antrumundan başlayıp duodenuma ilerleyen periyodik basınç dalga kümeleri kaydedilmiştir.",
-        "explanationAfterAnswer": "Açlık döneminde mide antrumundan başlayıp duodenuma ilerleyen periyodik basınç dalga kümeleri kaydedilmiştir."
-      },
-      {
-        "id": "v214-new-005-aclik-doneminde-motilite-kaydi-ogun-sonrasi-motilite-kaydi",
-        "label": "Öğün sonrası motilite kaydı",
-        "title": "Öğün sonrası motilite kaydı",
-        "type": "functional",
-        "priority": "essential",
-        "subtype": "Postprandiyal motilite izlemi",
-        "category": "physiologyTest",
-        "testTypeCategory": "physiologyTest",
-        "summary": "Standart öğün sonrası açlıktaki periyodik dalga kümeleri baskılanmış, daha düzensiz karıştırıcı aktivite izlenmiştir.",
-        "clinicalMeaning": "Standart öğün sonrası açlıktaki periyodik dalga kümeleri baskılanmış, daha düzensiz karıştırıcı aktivite izlenmiştir.",
-        "testValueLabel": "Kritik veri",
-        "educationalValue": "Kritik veri",
-        "clinicalPriorityLabel": "Kritik veri",
-        "scoreImpact": 5,
-        "scoreValue": 5,
-        "source": "case",
-        "clinicalFlowOrder": 2,
-        "result": {
-          "title": "Öğün sonrası motilite kaydı",
-          "summary": "Standart öğün sonrası açlıktaki periyodik dalga kümeleri baskılanmış, daha düzensiz karıştırıcı aktivite izlenmiştir.",
-          "interpretation": "Standart öğün sonrası açlıktaki periyodik dalga kümeleri baskılanmış, daha düzensiz karıştırıcı aktivite izlenmiştir.",
-          "values": [
-            [
-              "Öğün içeriği",
-              "Standart karışık öğün",
-              "Deneysel koşul",
-              "Verildi"
-            ],
-            [
-              "Periyodik dalga kümeleri",
-              "Baskılandı",
-              "Açlık kaydına göre",
-              "Azaldı"
-            ],
-            [
-              "Karıştırıcı aktivite",
-              "Arttı",
-              "Öğün sonrası beklenen",
-              "Belirgin"
-            ],
-            [
-              "Semptom",
-              "Bulantı/kusma yok",
-              "Yok",
-              "Saptanmadı"
-            ]
-          ],
-          "rows": [
-            [
-              "Öğün içeriği",
-              "Standart karışık öğün",
-              "Deneysel koşul",
-              "Verildi"
-            ],
-            [
-              "Periyodik dalga kümeleri",
-              "Baskılandı",
-              "Açlık kaydına göre",
-              "Azaldı"
-            ],
-            [
-              "Karıştırıcı aktivite",
-              "Arttı",
-              "Öğün sonrası beklenen",
-              "Belirgin"
-            ],
-            [
-              "Semptom",
-              "Bulantı/kusma yok",
-              "Yok",
-              "Saptanmadı"
-            ]
-          ]
-        },
-        "rows": [
-          [
-            "Öğün içeriği",
-            "Standart karışık öğün",
-            "Deneysel koşul",
-            "Verildi"
-          ],
-          [
-            "Periyodik dalga kümeleri",
-            "Baskılandı",
-            "Açlık kaydına göre",
-            "Azaldı"
-          ],
-          [
-            "Karıştırıcı aktivite",
-            "Arttı",
-            "Öğün sonrası beklenen",
-            "Belirgin"
-          ],
-          [
-            "Semptom",
-            "Bulantı/kusma yok",
-            "Yok",
-            "Saptanmadı"
-          ]
-        ],
-        "postAnswerExplanation": "Standart öğün sonrası açlıktaki periyodik dalga kümeleri baskılanmış, daha düzensiz karıştırıcı aktivite izlenmiştir.",
-        "interpretation": "Standart öğün sonrası açlıktaki periyodik dalga kümeleri baskılanmış, daha düzensiz karıştırıcı aktivite izlenmiştir.",
-        "inlineFeedback": "Standart öğün sonrası açlıktaki periyodik dalga kümeleri baskılanmış, daha düzensiz karıştırıcı aktivite izlenmiştir.",
-        "explanationAfterAnswer": "Standart öğün sonrası açlıktaki periyodik dalga kümeleri baskılanmış, daha düzensiz karıştırıcı aktivite izlenmiştir."
-      }
-    ],
-    "useSyntheticInvestigationBank": false,
-    "managementSequence": [],
-    "hideExamSignal": true,
-    "shuffleOptions": true,
-    "question": "Bu fizyolojik kayıtta açlık dönemindeki aralıklı motor yanıtı en iyi açıklayan hormonal düzenleme hangisidir?",
-    "questionType": "physiology_mechanism",
-    "answerTarget": "motilin_migrating_motor_complex_fasting",
-    "diagnosis": {
-      "correct": "Motilin artışıyla mide-duodenumdan başlayan göç eden motor komplekslerin tetiklenmesi",
-      "options": [
-        "Sekretin artışıyla pankreas duktuslarından bikarbonat salgısının yükselmesi",
-        "Kolesistokinin artışıyla safra kesesi kasılması ve mide boşalmasının yavaşlaması",
-        "Gastrin artışıyla parietal hücre asit sekresyonunun güçlenmesi",
-        "GIP/GLP-1 artışıyla glukoza bağımlı insülin salınımının yükselmesi",
-        "Motilin artışıyla mide-duodenumdan başlayan göç eden motor komplekslerin tetiklenmesi"
-      ],
-      "question": "Bu fizyolojik kayıtta açlık dönemindeki aralıklı motor yanıtı en iyi açıklayan hormonal düzenleme hangisidir?",
-      "explanation": "Açlık sırasında belirli aralıklarla başlayan ve mide-duodenumdan aboral ilerleyen güçlü motor dalga kümeleri, lümen temizliğiyle ilişkili açlık motilitesi paternidir. Öğün sonrası bu paternin baskılanması, olayın postprandiyal sindirim sekresyonundan farklı olduğunu gösterir. Bu döngüsel motor aktivite motilin artışıyla tetiklenen göç eden motor komplekslerle açıklanır.",
-      "pearls": [
-        {
-          "label": "Sınav notu",
-          "text": "Açlıkta periyodik, aboral ilerleyen güçlü motilite dalgaları verilirse postprandiyal hormonlardan önce motilin ilişkili motor kompleksi düşün."
-        }
-      ],
-      "optionComparison": {
-        "Motilin artışıyla mide-duodenumdan başlayan göç eden motor komplekslerin tetiklenmesi": "Doğru seçenek budur. Açlık döneminde belirli aralıklarla başlayan ve aboral ilerleyen motor aktivite, mide ve ince bağırsakta lümeni temizleyen göç eden motor kompleks paternidir. Bu patern yemekle baskılanır ve motilin artışıyla ilişkilidir; olguda periyodik manometri dalgalarının öğünden sonra kaybolması bu düzenlemeyi destekler.",
-        "Sekretin artışıyla pankreas duktuslarından bikarbonat salgısının yükselmesi": "Sekretin asidik duodenal içerik sonrası pankreas duktuslarından bikarbonat salgısını artırır. Bu mekanizma duodenal pH düzenlenmesinde önemlidir ancak açlıkta 90 dakikalık aralıklarla ilerleyen motor dalga kümelerinin ana açıklaması değildir.",
-        "Kolesistokinin artışıyla safra kesesi kasılması ve mide boşalmasının yavaşlaması": "Kolesistokinin yağ ve aminoasitlerle uyarılır; safra kesesi kasılması, pankreatik enzim salgısı ve mide boşalmasının yavaşlamasıyla ilişkilidir. Olguda yanıt açlık döneminde ortaya çıkmış ve yemek sonrası kaybolmuştur; bu CCK baskın postprandiyal paternle ters yöndedir.",
-        "Gastrin artışıyla parietal hücre asit sekresyonunun güçlenmesi": "Gastrin mide asit sekresyonunu ve mukozal büyüme etkilerini artırır; proteinli öğün ve mide distansiyonu ile belirginleşir. Bu testte temel ölçüm asit sekresyonu değil açlıkta ritmik motor dalgaların aboral ilerlemesidir.",
-        "GIP/GLP-1 artışıyla glukoza bağımlı insülin salınımının yükselmesi": "GIP ve GLP-1 oral karbonhidrat/yağ alımı sonrası insülin yanıtını güçlendiren incretin hormonlarıdır. Olguda glukoz yükü veya insülin sekresyonu değil, açlıkta kaydedilen gastrointestinal motilite paterninin zamanlaması sorgulanmaktadır."
-      },
-      "answerFeedback": {
-        "summary": "Açlık sırasında belirli aralıklarla başlayan ve mide-duodenumdan aboral ilerleyen güçlü motor dalga kümeleri, lümen temizliğiyle ilişkili açlık motilitesi paternidir. Öğün sonrası bu paternin baskılanması, olayın postprandiyal sindirim sekresyonundan farklı olduğunu gösterir. Bu döngüsel motor aktivite motilin artışıyla tetiklenen göç eden motor komplekslerle açıklanır.",
-        "whyCorrect": "Doğru seçenek budur. Açlık döneminde belirli aralıklarla başlayan ve aboral ilerleyen motor aktivite, mide ve ince bağırsakta lümeni temizleyen göç eden motor kompleks paternidir. Bu patern yemekle baskılanır ve motilin artışıyla ilişkilidir; olguda periyodik manometri dalgalarının öğünden sonra kaybolması bu düzenlemeyi destekler.",
-        "keyClues": [
-          "Gönüllü 12 saattir açtır → postprandiyal sekresyon yanıtları baskın değildir",
-          "Dalga kümeleri yaklaşık 95 dakikada bir görülmüştür → döngüsel açlık motilitesi paternidir",
-          "Dalga mide-duodenumdan aboral ilerlemiştir → lümeni süpüren organize motor aktivite vardır"
-        ],
-        "examPearl": "Açlıkta periyodik, aboral ilerleyen güçlü motilite dalgaları verilirse postprandiyal hormonlardan önce motilin ilişkili motor kompleksi düşün.",
-        "evidenceChain": [
-          {
-            "title": "Açlık koşulu",
-            "text": "Gönüllü 12 saattir açtır → postprandiyal sekresyon yanıtları baskın değildir",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "title": "Periyodiklik",
-            "text": "Dalga kümeleri yaklaşık 95 dakikada bir görülmüştür → döngüsel açlık motilitesi paternidir",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "title": "İlerleme yönü",
-            "text": "Dalga mide-duodenumdan aboral ilerlemiştir → lümeni süpüren organize motor aktivite vardır",
-            "weight": "high",
-            "source": "case"
-          },
-          {
-            "title": "Öğün etkisi",
-            "text": "Standart öğün sonrası periyodik patern baskılanmıştır → açlık dönemine özgü düzenleme desteklenir",
-            "weight": "medium",
-            "source": "case"
-          }
-        ],
-        "optionComparison": {
-          "Motilin artışıyla mide-duodenumdan başlayan göç eden motor komplekslerin tetiklenmesi": "Doğru seçenek budur. Açlık döneminde belirli aralıklarla başlayan ve aboral ilerleyen motor aktivite, mide ve ince bağırsakta lümeni temizleyen göç eden motor kompleks paternidir. Bu patern yemekle baskılanır ve motilin artışıyla ilişkilidir; olguda periyodik manometri dalgalarının öğünden sonra kaybolması bu düzenlemeyi destekler.",
-          "Sekretin artışıyla pankreas duktuslarından bikarbonat salgısının yükselmesi": "Sekretin asidik duodenal içerik sonrası pankreas duktuslarından bikarbonat salgısını artırır. Bu mekanizma duodenal pH düzenlenmesinde önemlidir ancak açlıkta 90 dakikalık aralıklarla ilerleyen motor dalga kümelerinin ana açıklaması değildir.",
-          "Kolesistokinin artışıyla safra kesesi kasılması ve mide boşalmasının yavaşlaması": "Kolesistokinin yağ ve aminoasitlerle uyarılır; safra kesesi kasılması, pankreatik enzim salgısı ve mide boşalmasının yavaşlamasıyla ilişkilidir. Olguda yanıt açlık döneminde ortaya çıkmış ve yemek sonrası kaybolmuştur; bu CCK baskın postprandiyal paternle ters yöndedir.",
-          "Gastrin artışıyla parietal hücre asit sekresyonunun güçlenmesi": "Gastrin mide asit sekresyonunu ve mukozal büyüme etkilerini artırır; proteinli öğün ve mide distansiyonu ile belirginleşir. Bu testte temel ölçüm asit sekresyonu değil açlıkta ritmik motor dalgaların aboral ilerlemesidir.",
-          "GIP/GLP-1 artışıyla glukoza bağımlı insülin salınımının yükselmesi": "GIP ve GLP-1 oral karbonhidrat/yağ alımı sonrası insülin yanıtını güçlendiren incretin hormonlarıdır. Olguda glukoz yükü veya insülin sekresyonu değil, açlıkta kaydedilen gastrointestinal motilite paterninin zamanlaması sorgulanmaktadır."
-        },
-        "rationale": "Açlık sırasında belirli aralıklarla başlayan ve mide-duodenumdan aboral ilerleyen güçlü motor dalga kümeleri, lümen temizliğiyle ilişkili açlık motilitesi paternidir. Öğün sonrası bu paternin baskılanması, olayın postprandiyal sindirim sekresyonundan farklı olduğunu gösterir. Bu döngüsel motor aktivite motilin artışıyla tetiklenen göç eden motor komplekslerle açıklanır.",
-        "whyWrong": {
-          "Sekretin artışıyla pankreas duktuslarından bikarbonat salgısının yükselmesi": "Sekretin asidik duodenal içerik sonrası pankreas duktuslarından bikarbonat salgısını artırır. Bu mekanizma duodenal pH düzenlenmesinde önemlidir ancak açlıkta 90 dakikalık aralıklarla ilerleyen motor dalga kümelerinin ana açıklaması değildir.",
-          "Kolesistokinin artışıyla safra kesesi kasılması ve mide boşalmasının yavaşlaması": "Kolesistokinin yağ ve aminoasitlerle uyarılır; safra kesesi kasılması, pankreatik enzim salgısı ve mide boşalmasının yavaşlamasıyla ilişkilidir. Olguda yanıt açlık döneminde ortaya çıkmış ve yemek sonrası kaybolmuştur; bu CCK baskın postprandiyal paternle ters yöndedir.",
-          "Gastrin artışıyla parietal hücre asit sekresyonunun güçlenmesi": "Gastrin mide asit sekresyonunu ve mukozal büyüme etkilerini artırır; proteinli öğün ve mide distansiyonu ile belirginleşir. Bu testte temel ölçüm asit sekresyonu değil açlıkta ritmik motor dalgaların aboral ilerlemesidir.",
-          "GIP/GLP-1 artışıyla glukoza bağımlı insülin salınımının yükselmesi": "GIP ve GLP-1 oral karbonhidrat/yağ alımı sonrası insülin yanıtını güçlendiren incretin hormonlarıdır. Olguda glukoz yükü veya insülin sekresyonu değil, açlıkta kaydedilen gastrointestinal motilite paterninin zamanlaması sorgulanmaktadır."
-        },
-        "coreKnowledge": "Motilin açlık döneminde göç eden motor kompleksleri tetikler; bu kompleksler mide ve ince bağırsakta periyodik, aboral ilerleyen güçlü kontraksiyon dalgaları oluşturur ve yemekle baskılanır.",
-        "managementSteps": [],
-        "management": []
-      }
-    },
-    "coreKnowledge": "Motilin açlık döneminde göç eden motor kompleksleri tetikler; bu kompleksler mide ve ince bağırsakta periyodik, aboral ilerleyen güçlü kontraksiyon dalgaları oluşturur ve yemekle baskılanır.",
-    "examPearl": "Açlıkta periyodik, aboral ilerleyen güçlü motilite dalgaları verilirse postprandiyal hormonlardan önce motilin ilişkili motor kompleksi düşün.",
-    "whyCorrect": "Doğru seçenek budur. Açlık döneminde belirli aralıklarla başlayan ve aboral ilerleyen motor aktivite, mide ve ince bağırsakta lümeni temizleyen göç eden motor kompleks paternidir. Bu patern yemekle baskılanır ve motilin artışıyla ilişkilidir; olguda periyodik manometri dalgalarının öğünden sonra kaybolması bu düzenlemeyi destekler.",
-    "optionComparison": {
-      "Motilin artışıyla mide-duodenumdan başlayan göç eden motor komplekslerin tetiklenmesi": "Doğru seçenek budur. Açlık döneminde belirli aralıklarla başlayan ve aboral ilerleyen motor aktivite, mide ve ince bağırsakta lümeni temizleyen göç eden motor kompleks paternidir. Bu patern yemekle baskılanır ve motilin artışıyla ilişkilidir; olguda periyodik manometri dalgalarının öğünden sonra kaybolması bu düzenlemeyi destekler.",
-      "Sekretin artışıyla pankreas duktuslarından bikarbonat salgısının yükselmesi": "Sekretin asidik duodenal içerik sonrası pankreas duktuslarından bikarbonat salgısını artırır. Bu mekanizma duodenal pH düzenlenmesinde önemlidir ancak açlıkta 90 dakikalık aralıklarla ilerleyen motor dalga kümelerinin ana açıklaması değildir.",
-      "Kolesistokinin artışıyla safra kesesi kasılması ve mide boşalmasının yavaşlaması": "Kolesistokinin yağ ve aminoasitlerle uyarılır; safra kesesi kasılması, pankreatik enzim salgısı ve mide boşalmasının yavaşlamasıyla ilişkilidir. Olguda yanıt açlık döneminde ortaya çıkmış ve yemek sonrası kaybolmuştur; bu CCK baskın postprandiyal paternle ters yöndedir.",
-      "Gastrin artışıyla parietal hücre asit sekresyonunun güçlenmesi": "Gastrin mide asit sekresyonunu ve mukozal büyüme etkilerini artırır; proteinli öğün ve mide distansiyonu ile belirginleşir. Bu testte temel ölçüm asit sekresyonu değil açlıkta ritmik motor dalgaların aboral ilerlemesidir.",
-      "GIP/GLP-1 artışıyla glukoza bağımlı insülin salınımının yükselmesi": "GIP ve GLP-1 oral karbonhidrat/yağ alımı sonrası insülin yanıtını güçlendiren incretin hormonlarıdır. Olguda glukoz yükü veya insülin sekresyonu değil, açlıkta kaydedilen gastrointestinal motilite paterninin zamanlaması sorgulanmaktadır."
-    },
-    "evidenceChain": [
-      {
-        "title": "Açlık koşulu",
-        "text": "Gönüllü 12 saattir açtır → postprandiyal sekresyon yanıtları baskın değildir",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "title": "Periyodiklik",
-        "text": "Dalga kümeleri yaklaşık 95 dakikada bir görülmüştür → döngüsel açlık motilitesi paternidir",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "title": "İlerleme yönü",
-        "text": "Dalga mide-duodenumdan aboral ilerlemiştir → lümeni süpüren organize motor aktivite vardır",
-        "weight": "high",
-        "source": "case"
-      },
-      {
-        "title": "Öğün etkisi",
-        "text": "Standart öğün sonrası periyodik patern baskılanmıştır → açlık dönemine özgü düzenleme desteklenir",
-        "weight": "medium",
-        "source": "case"
-      }
-    ],
-    "whyWrong": {
-      "Sekretin artışıyla pankreas duktuslarından bikarbonat salgısının yükselmesi": "Sekretin asidik duodenal içerik sonrası pankreas duktuslarından bikarbonat salgısını artırır. Bu mekanizma duodenal pH düzenlenmesinde önemlidir ancak açlıkta 90 dakikalık aralıklarla ilerleyen motor dalga kümelerinin ana açıklaması değildir.",
-      "Kolesistokinin artışıyla safra kesesi kasılması ve mide boşalmasının yavaşlaması": "Kolesistokinin yağ ve aminoasitlerle uyarılır; safra kesesi kasılması, pankreatik enzim salgısı ve mide boşalmasının yavaşlamasıyla ilişkilidir. Olguda yanıt açlık döneminde ortaya çıkmış ve yemek sonrası kaybolmuştur; bu CCK baskın postprandiyal paternle ters yöndedir.",
-      "Gastrin artışıyla parietal hücre asit sekresyonunun güçlenmesi": "Gastrin mide asit sekresyonunu ve mukozal büyüme etkilerini artırır; proteinli öğün ve mide distansiyonu ile belirginleşir. Bu testte temel ölçüm asit sekresyonu değil açlıkta ritmik motor dalgaların aboral ilerlemesidir.",
-      "GIP/GLP-1 artışıyla glukoza bağımlı insülin salınımının yükselmesi": "GIP ve GLP-1 oral karbonhidrat/yağ alımı sonrası insülin yanıtını güçlendiren incretin hormonlarıdır. Olguda glukoz yükü veya insülin sekresyonu değil, açlıkta kaydedilen gastrointestinal motilite paterninin zamanlaması sorgulanmaktadır."
-    },
-    "mechanismExplanation": "Açlık uzar, motilin düzeyi döngüsel artar, mide-duodenumdan başlayan motor kompleks ilerler, lümen içeriği distale taşınır ve öğünle bu patern baskılanır.",
-    "scientificComment": "Soru, gastrointestinal hormonları yalnız salgı etkileriyle değil motilite zamanlaması ve açlık-tokluk bağlamıyla ayırmayı hedefler.",
-    "helpText": "GI hormon sorularında uyaranı oku: asit sekretini, yağ CCK'yi, oral glukoz incretini, açlıkta periyodik motor dalgalar motilini düşündürür.",
-    "preserveInvestigationOrder": true
-  }
-
-,
 {
-  "id": "v215-new-001-ayakta-bekleme-sonrasi-hacim-degisimi",
+  "id": "v214-new-001-idrar-yogunlugunda-beklenmeyen-degisim",
   "branchId": "physiology",
   "caseType": "standard",
   "relatedBranch": "Fizyoloji",
-  "title": "Ayakta bekleme sonrası hacim değişimi",
+  "title": "İdrar yoğunluğunda beklenmeyen değişim",
   "difficulty": "Orta-Zor",
   "difficultyTag": "Orta-Zor",
-  "clinicalFocus": "Alt ekstremitede pozisyona bağlı sıvı birikimini kapiller hidrostatik basınç, onkotik basınç, lenfatik dönüş ve geçirgenlik değişikliklerinden ayırma.",
-  "learningTarget": "Starling kuvvetleri bağlamında venöz basınç artışının kapiller filtrasyon yönünü nasıl değiştirdiğini yorumlayabilme.",
-  "demographics": "22 yaşında sağlıklı kadın gönüllü",
-  "setting": "Kardiyovasküler fizyoloji laboratuvarı",
-  "chiefComplaint": "Gönüllü, uzun süre ayakta bekleme protokolü sırasında bacak çevresi ve venöz dolum değişimi açısından izleniyor.",
-  "stem": "Gönüllü sabah saatlerinde fizyoloji uygulamasına katılır ve test öncesi oturur pozisyonda kısa süre dinlenir. Daha sonra konuşmadan ve yerinde yürümeye izin verilmeden ayakta beklemesi istenir. Sürenin sonuna doğru ayak bileklerinde hafif gerginlik hissettiğini, ancak ağrı veya nefes darlığı olmadığını söyler. Test bitince bacaklarını yükselterek dinlenir ve gerginliğin kısa sürede azaldığını belirtir. Daha önce böbrek, karaciğer, kalp hastalığı veya bacak operasyonu öyküsü olmadığını ifade eder.",
+  "clinicalFocus": "Artmış idrar hacmi ve düşük idrar osmolalitesi olan hastada renal yoğunlaştırma kapasitesini mekanizma düzeyinde yorumlama.",
+  "learningTarget": "Medüller ozmotik gradyanın toplayıcı kanalda su geri emilimi için neden gerekli olduğunu hasta verileri üzerinden ayırt edebilme.",
+  "demographics": "68 yaşında erkek hasta",
+  "setting": "Kardiyoloji polikliniği sonrası acil değerlendirme",
+  "chiefComplaint": "Hasta, son günlerde artan susama, sık idrara çıkma ve bacak krampları nedeniyle başvuruyor.",
+  "stem": "Hasta, kalp yetmezliği nedeniyle izlenirken son bir haftada ayak bileği şişliğinin arttığını ve evdeki ilaç dozunun yükseltildiğini anlatır. İlk günlerde nefes darlığının azaldığını, ancak birkaç gündür gece sık idrara kalktığını, ağzının kuruduğunu ve merdiven çıkarken baldırlarında kramp olduğunu söyler. İshal, kusma, ateş veya yeni başlayan diyabet öyküsü tariflemez. Günlük sıvı alımını artırmasına rağmen idrarının açık renkli ve bol olduğunu fark ettiği için kontrole erken gelmiştir.",
   "patientIntro": {
-    "profile": "22 yaşında sağlıklı kadın gönüllü, kardiyovasküler fizyoloji laboratuvarı bağlamında değerlendiriliyor.",
-    "presentation": "Ayakta bekleme sırasında ayak bileği çevresinde geçici artış ve hafif gerginlik kaydediliyor.",
-    "historySummary": "Gönüllü sabah saatlerinde fizyoloji uygulamasına katılır ve test öncesi oturur pozisyonda kısa süre dinlenir. Daha sonra konuşmadan ve yerinde yürümeye izin verilmeden ayakta beklemesi istenir. Sürenin sonuna doğru ayak bileklerinde hafif gerginlik hissettiğini, ancak ağrı veya nefes darlığı olmadığını söyler. Test bitince bacaklarını yükselterek dinlenir ve gerginliğin kısa sürede azaldığını belirtir. Daha önce böbrek, karaciğer, kalp hastalığı veya bacak operasyonu öyküsü olmadığını ifade eder."
+    "profile": "68 yaşında erkek hasta, kalp yetmezliği izlemi sırasında artan susama ve bol idrar yakınmasıyla değerlendiriliyor.",
+    "presentation": "Sık idrara çıkma, ağız kuruluğu ve bacak krampları ön plandadır.",
+    "historySummary": "Hasta, kalp yetmezliği nedeniyle izlenirken son bir haftada ayak bileği şişliğinin arttığını ve evdeki ilaç dozunun yükseltildiğini anlatır. İlk günlerde nefes darlığının azaldığını, ancak birkaç gündür gece sık idrara kalktığını, ağzının kuruduğunu ve merdiven çıkarken baldırlarında kramp olduğunu söyler. İshal, kusma, ateş veya yeni başlayan diyabet öyküsü tariflemez. Günlük sıvı alımını artırmasına rağmen idrarının açık renkli ve bol olduğunu fark ettiği için kontrole erken gelmiştir."
   },
   "vitals": {
-    "TA": "112/70 mmHg otururken; 106/74 mmHg ayakta 40. dakika",
-    "Nabız": "68/dk otururken; 86/dk ayakta 40. dakika",
-    "Solunum": "15/dk",
-    "SpO2": "%99, oda havasında",
+    "TA": "104/66 mmHg",
+    "Nabız": "98/dk",
+    "Solunum": "18/dk",
+    "SpO2": "%96, oda havasında",
     "Ateş": "36.6 °C",
-    "Şok indeksi": "0.61 otururken; 0.81 ayakta"
+    "Şok indeksi": "0.94 - sınırda yüksek"
   },
   "exam": [
-    "Gönüllü uyanık, koopere ve test talimatlarını doğru uygulayacak durumdadır.",
-    "Ayakta bekleme sonunda her iki ayak bileğinde çorap izi belirginleşir; kızarıklık veya lokal ısı artışı izlenmez.",
-    "Periferik nabızlar simetrik ve dolgundur; belirgin siyanoz veya ekstremite soğukluğu yoktur.",
-    "Bacak elevasyonu sonrası ayak bileği gerginliği ve çevre artışı kısmen geriler."
+    "Hasta uyanık ve koopere, mukozalar hafif kurudur.",
+    "Akciğer bazallerinde belirgin ral duyulmaz; periferik ödem önceki kayda göre azalmıştır.",
+    "Baldır palpasyonunda hassasiyet yoktur, ancak hasta aralıklı kramp tarifler.",
+    "Kapiller dolum yaklaşık 3 saniyedir; periferik nabızlar alınabilir."
   ],
   "investigations": [
     {
-      "id": "v215-new-001-ayakta-bekleme-sonrasi-hacim-degisimi-bacak-cevresi-ve-venoz-dolum-kaydi",
-      "label": "Bacak çevresi ve venöz dolum kaydı",
-      "title": "Bacak çevresi ve venöz dolum kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Mikrodolaşım fizyoloji testi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Ayakta bekleme sonunda alt ekstremite çevresi ve venöz dolum göstergeleri bazale göre artmıştır.",
-      "clinicalMeaning": "Ayakta bekleme sonunda alt ekstremite çevresi ve venöz dolum göstergeleri bazale göre artmıştır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "Bacak çevresi ve venöz dolum kaydı",
-        "summary": "Ayakta bekleme sonunda alt ekstremite çevresi ve venöz dolum göstergeleri bazale göre artmıştır.",
-        "interpretation": "Ayakta bekleme sonunda alt ekstremite çevresi ve venöz dolum göstergeleri bazale göre artmıştır.",
-        "values": [
-          [
-            "Ayak bileği çevresi",
-            "22.4 → 23.8 cm",
-            "Bazal değere göre",
-            "Arttı"
-          ],
-          [
-            "Baldır çevresi",
-            "34.1 → 34.8 cm",
-            "Bazal değere göre",
-            "Hafif arttı"
-          ],
-          [
-            "Venöz dolum indeksi",
-            "Bazale göre %28 artış",
-            "Bazal değere göre",
-            "Arttı"
-          ],
-          [
-            "Bacak elevasyonu sonrası çevre",
-            "23.8 → 22.9 cm",
-            "Test sonrası",
-            "Kısmen geriledi"
-          ]
-        ],
-        "rows": [
-          [
-            "Ayak bileği çevresi",
-            "22.4 → 23.8 cm",
-            "Bazal değere göre",
-            "Arttı"
-          ],
-          [
-            "Baldır çevresi",
-            "34.1 → 34.8 cm",
-            "Bazal değere göre",
-            "Hafif arttı"
-          ],
-          [
-            "Venöz dolum indeksi",
-            "Bazale göre %28 artış",
-            "Bazal değere göre",
-            "Arttı"
-          ],
-          [
-            "Bacak elevasyonu sonrası çevre",
-            "23.8 → 22.9 cm",
-            "Test sonrası",
-            "Kısmen geriledi"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Ayak bileği çevresi",
-          "22.4 → 23.8 cm",
-          "Bazal değere göre",
-          "Arttı"
-        ],
-        [
-          "Baldır çevresi",
-          "34.1 → 34.8 cm",
-          "Bazal değere göre",
-          "Hafif arttı"
-        ],
-        [
-          "Venöz dolum indeksi",
-          "Bazale göre %28 artış",
-          "Bazal değere göre",
-          "Arttı"
-        ],
-        [
-          "Bacak elevasyonu sonrası çevre",
-          "23.8 → 22.9 cm",
-          "Test sonrası",
-          "Kısmen geriledi"
-        ]
-      ],
-      "postAnswerExplanation": "Ayakta bekleme sonunda alt ekstremite çevresi ve venöz dolum göstergeleri bazale göre artmıştır.",
-      "interpretation": "Ayakta bekleme sonunda alt ekstremite çevresi ve venöz dolum göstergeleri bazale göre artmıştır.",
-      "inlineFeedback": "Ayakta bekleme sonunda alt ekstremite çevresi ve venöz dolum göstergeleri bazale göre artmıştır.",
-      "explanationAfterAnswer": "Ayakta bekleme sonunda alt ekstremite çevresi ve venöz dolum göstergeleri bazale göre artmıştır."
-    },
-    {
-      "id": "v215-new-001-ayakta-bekleme-sonrasi-hacim-degisimi-protein-ve-bobrek-tarama",
-      "label": "Serum protein ve idrar taraması",
-      "title": "Serum protein ve idrar taraması",
+      "id": "v214-new-001-idrar-yogunlugunda-beklenmeyen-degisim-serum-idrar-elektrolit-osmolalite",
+      "label": "Serum ve idrar elektrolit-osmolalite kaydı",
+      "title": "Serum ve idrar elektrolit-osmolalite kaydı",
+      "orderLabel": "Serum ve idrar elektrolit-osmolalite kaydı",
       "type": "laboratory",
       "priority": "essential",
-      "subtype": "Temel laboratuvar kontrolü",
+      "subtype": "Elektrolit ve osmolalite ölçümü",
       "category": "laboratory",
       "testTypeCategory": "laboratory",
-      "summary": "Serum albümini ve idrar protein taraması normal sınırlardadır.",
-      "clinicalMeaning": "Serum albümini ve idrar protein taraması normal sınırlardadır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 4,
-      "scoreValue": 4,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "Serum protein ve idrar taraması",
-        "summary": "Serum albümini ve idrar protein taraması normal sınırlardadır.",
-        "interpretation": "Serum albümini ve idrar protein taraması normal sınırlardadır.",
-        "values": [
-          [
-            "Serum albümin",
-            "4.3 g/dL",
-            "3.5-5.0 g/dL",
-            "Normal"
-          ],
-          [
-            "Total protein",
-            "7.2 g/dL",
-            "6.4-8.3 g/dL",
-            "Normal"
-          ],
-          [
-            "Spot idrar protein",
-            "Negatif",
-            "Negatif",
-            "Saptanmadı"
-          ],
-          [
-            "Kreatinin",
-            "0.74 mg/dL",
-            "0.5-1.1 mg/dL",
-            "Normal"
-          ]
-        ],
-        "rows": [
-          [
-            "Serum albümin",
-            "4.3 g/dL",
-            "3.5-5.0 g/dL",
-            "Normal"
-          ],
-          [
-            "Total protein",
-            "7.2 g/dL",
-            "6.4-8.3 g/dL",
-            "Normal"
-          ],
-          [
-            "Spot idrar protein",
-            "Negatif",
-            "Negatif",
-            "Saptanmadı"
-          ],
-          [
-            "Kreatinin",
-            "0.74 mg/dL",
-            "0.5-1.1 mg/dL",
-            "Normal"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Serum albümin",
-          "4.3 g/dL",
-          "3.5-5.0 g/dL",
-          "Normal"
-        ],
-        [
-          "Total protein",
-          "7.2 g/dL",
-          "6.4-8.3 g/dL",
-          "Normal"
-        ],
-        [
-          "Spot idrar protein",
-          "Negatif",
-          "Negatif",
-          "Saptanmadı"
-        ],
-        [
-          "Kreatinin",
-          "0.74 mg/dL",
-          "0.5-1.1 mg/dL",
-          "Normal"
-        ]
-      ],
-      "postAnswerExplanation": "Serum albümini ve idrar protein taraması normal sınırlardadır.",
-      "interpretation": "Serum albümini ve idrar protein taraması normal sınırlardadır.",
-      "inlineFeedback": "Serum albümini ve idrar protein taraması normal sınırlardadır.",
-      "explanationAfterAnswer": "Serum albümini ve idrar protein taraması normal sınırlardadır."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Ayakta bekleme sonrası alt ekstremitede gözlenen geçici sıvı birikimini en iyi açıklayan fizyolojik mekanizma hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "orthostatic_venous_pressure_capillary_filtration",
-  "diagnosis": {
-    "correct": "Venöz hidrostatik basınç artışıyla kapiller filtrasyonun yükselmesi",
-    "options": [
-      "Plazma protein azalmasıyla kapiller onkotik basıncın düşmesi",
-      "Lenfatik pompa artışıyla interstisyel sıvının hızla uzaklaştırılması",
-      "Venöz hidrostatik basınç artışıyla kapiller filtrasyonun yükselmesi",
-      "Arteriyel vazokonstriksiyonla kapiller basıncın belirgin azalması",
-      "Kapiller geçirgenlik artışıyla protein kaçağının baskınlaşması"
-    ],
-    "question": "Ayakta bekleme sonrası alt ekstremitede gözlenen geçici sıvı birikimini en iyi açıklayan fizyolojik mekanizma hangisidir?",
-    "explanation": "Uzun süre ayakta ve hareketsiz kalma alt ekstremite venöz basıncını artırır. Venöz basınç artışı kapiller hidrostatik basınca yansır, net filtrasyon damar dışına doğru artar ve özellikle ayak bileği çevresinde geçici hacim artışı oluşur. Normal albümin ve proteinüri olmaması onkotik basınç azalmasını, inflamasyon bulgusu olmaması ise geçirgenlik artışını geri plana iter.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "Pozisyona bağlı ödem sorusunda önce kapiller hidrostatik basıncı düşün; albümin düşüklüğü, proteinüri veya inflamasyon yoksa onkotik/geçirgenlik seçeneklerine erken gitme."
-      }
-    ],
-    "optionComparison": {
-      "Plazma protein azalmasıyla kapiller onkotik basıncın düşmesi": "Plazma protein azalması onkotik çekim gücünü düşürerek yaygın ödem eğilimi oluşturabilir; malnütrisyon, karaciğer hastalığı veya protein kaybında akla gelir. Bu olguda serum albümini ve idrar proteini normaldir; değişiklik kısa süreli ayakta beklemeyle alt ekstremitede belirginleşmiştir. Bu nedenle ana açıklama protein azalması değil, pozisyona bağlı venöz basınç yükünün kapiller sıvı geçişini artırmasıdır.",
-      "Lenfatik pompa artışıyla interstisyel sıvının hızla uzaklaştırılması": "Lenfatik akım interstisyel sıvıyı geri taşıyarak ödemi sınırlayan koruyucu mekanizmadır. Ancak lenfatik pompanın artması tek başına ayakta bekleme sonrası ölçülen çevre artışını açıklamaz; tersine filtrasyon artışına karşı tamponlayıcı olur. Sınavda lenfatik tıkanıklık veya cerrahi öykü varsa lenfatik mekanizma düşünülür; burada böyle bir veri yoktur.",
-      "Venöz hidrostatik basınç artışıyla kapiller filtrasyonun yükselmesi": "Doğru seçenek budur. Ayakta hareketsiz kalınca yerçekimi alt ekstremite venlerinde basıncı artırır; bu basınç kapiller hidrostatik basınca yansır ve damar dışına net sıvı filtrasyonu yükselir. Normal albümin, normal idrar proteini ve istirahatle gerileyen çevre artışı, kalıcı protein kaçağından çok pozisyona bağlı mikrodolaşım dengesini destekler.",
-      "Arteriyel vazokonstriksiyonla kapiller basıncın belirgin azalması": "Arteriyel vazokonstriksiyon kapiller hidrostatik basıncı azaltma eğilimindedir ve filtrasyonu sınırlayabilir. Bu olguda beklenen ölçüm bacak çevresinde artış ve venöz dolumda yükselmedir; bu, kapiller basıncın azaldığı bir paternle uyumlu değildir. Bu çeldirici, sempatik tonus artışını her zaman ödem nedeni sanma hatasını sınar.",
-      "Kapiller geçirgenlik artışıyla protein kaçağının baskınlaşması": "Kapiller geçirgenlik artışı inflamasyon, yanık veya alerjik reaksiyon gibi durumlarda protein kaçağı ve daha kalıcı ödem yapar. Olguda kızarıklık, ısı artışı, ürtiker, travma veya sistemik inflamasyon bulgusu yoktur. Kısa süreli ve pozisyona bağlı ölçüm, geçirgenlik artışından çok hidrostatik kuvvet değişikliğini düşündürür."
-    },
-    "answerFeedback": {
-      "Plazma protein azalmasıyla kapiller onkotik basıncın düşmesi": "Plazma protein azalması onkotik çekim gücünü düşürerek yaygın ödem eğilimi oluşturabilir; malnütrisyon, karaciğer hastalığı veya protein kaybında akla gelir. Bu olguda serum albümini ve idrar proteini normaldir; değişiklik kısa süreli ayakta beklemeyle alt ekstremitede belirginleşmiştir. Bu nedenle ana açıklama protein azalması değil, pozisyona bağlı venöz basınç yükünün kapiller sıvı geçişini artırmasıdır.",
-      "Lenfatik pompa artışıyla interstisyel sıvının hızla uzaklaştırılması": "Lenfatik akım interstisyel sıvıyı geri taşıyarak ödemi sınırlayan koruyucu mekanizmadır. Ancak lenfatik pompanın artması tek başına ayakta bekleme sonrası ölçülen çevre artışını açıklamaz; tersine filtrasyon artışına karşı tamponlayıcı olur. Sınavda lenfatik tıkanıklık veya cerrahi öykü varsa lenfatik mekanizma düşünülür; burada böyle bir veri yoktur.",
-      "Venöz hidrostatik basınç artışıyla kapiller filtrasyonun yükselmesi": "Doğru seçenek budur. Ayakta hareketsiz kalınca yerçekimi alt ekstremite venlerinde basıncı artırır; bu basınç kapiller hidrostatik basınca yansır ve damar dışına net sıvı filtrasyonu yükselir. Normal albümin, normal idrar proteini ve istirahatle gerileyen çevre artışı, kalıcı protein kaçağından çok pozisyona bağlı mikrodolaşım dengesini destekler.",
-      "Arteriyel vazokonstriksiyonla kapiller basıncın belirgin azalması": "Arteriyel vazokonstriksiyon kapiller hidrostatik basıncı azaltma eğilimindedir ve filtrasyonu sınırlayabilir. Bu olguda beklenen ölçüm bacak çevresinde artış ve venöz dolumda yükselmedir; bu, kapiller basıncın azaldığı bir paternle uyumlu değildir. Bu çeldirici, sempatik tonus artışını her zaman ödem nedeni sanma hatasını sınar.",
-      "Kapiller geçirgenlik artışıyla protein kaçağının baskınlaşması": "Kapiller geçirgenlik artışı inflamasyon, yanık veya alerjik reaksiyon gibi durumlarda protein kaçağı ve daha kalıcı ödem yapar. Olguda kızarıklık, ısı artışı, ürtiker, travma veya sistemik inflamasyon bulgusu yoktur. Kısa süreli ve pozisyona bağlı ölçüm, geçirgenlik artışından çok hidrostatik kuvvet değişikliğini düşündürür."
-    }
-  },
-  "coreKnowledge": "Uzun süre ayakta ve hareketsiz kalma alt ekstremite venöz basıncını artırır. Venöz basınç artışı kapiller hidrostatik basınca yansır, net filtrasyon damar dışına doğru artar ve özellikle ayak bileği çevresinde geçici hacim artışı oluşur. Normal albümin ve proteinüri olmaması onkotik basınç azalmasını, inflamasyon bulgusu olmaması ise geçirgenlik artışını geri plana iter.",
-  "examPearl": "Pozisyona bağlı ödem sorusunda önce kapiller hidrostatik basıncı düşün; albümin düşüklüğü, proteinüri veya inflamasyon yoksa onkotik/geçirgenlik seçeneklerine erken gitme.",
-  "whyCorrect": "Doğru seçenek budur. Ayakta hareketsiz kalınca yerçekimi alt ekstremite venlerinde basıncı artırır; bu basınç kapiller hidrostatik basınca yansır ve damar dışına net sıvı filtrasyonu yükselir. Normal albümin, normal idrar proteini ve istirahatle gerileyen çevre artışı, kalıcı protein kaçağından çok pozisyona bağlı mikrodolaşım dengesini destekler.",
-  "optionComparison": {
-    "Plazma protein azalmasıyla kapiller onkotik basıncın düşmesi": "Plazma protein azalması onkotik çekim gücünü düşürerek yaygın ödem eğilimi oluşturabilir; malnütrisyon, karaciğer hastalığı veya protein kaybında akla gelir. Bu olguda serum albümini ve idrar proteini normaldir; değişiklik kısa süreli ayakta beklemeyle alt ekstremitede belirginleşmiştir. Bu nedenle ana açıklama protein azalması değil, pozisyona bağlı venöz basınç yükünün kapiller sıvı geçişini artırmasıdır.",
-    "Lenfatik pompa artışıyla interstisyel sıvının hızla uzaklaştırılması": "Lenfatik akım interstisyel sıvıyı geri taşıyarak ödemi sınırlayan koruyucu mekanizmadır. Ancak lenfatik pompanın artması tek başına ayakta bekleme sonrası ölçülen çevre artışını açıklamaz; tersine filtrasyon artışına karşı tamponlayıcı olur. Sınavda lenfatik tıkanıklık veya cerrahi öykü varsa lenfatik mekanizma düşünülür; burada böyle bir veri yoktur.",
-    "Venöz hidrostatik basınç artışıyla kapiller filtrasyonun yükselmesi": "Doğru seçenek budur. Ayakta hareketsiz kalınca yerçekimi alt ekstremite venlerinde basıncı artırır; bu basınç kapiller hidrostatik basınca yansır ve damar dışına net sıvı filtrasyonu yükselir. Normal albümin, normal idrar proteini ve istirahatle gerileyen çevre artışı, kalıcı protein kaçağından çok pozisyona bağlı mikrodolaşım dengesini destekler.",
-    "Arteriyel vazokonstriksiyonla kapiller basıncın belirgin azalması": "Arteriyel vazokonstriksiyon kapiller hidrostatik basıncı azaltma eğilimindedir ve filtrasyonu sınırlayabilir. Bu olguda beklenen ölçüm bacak çevresinde artış ve venöz dolumda yükselmedir; bu, kapiller basıncın azaldığı bir paternle uyumlu değildir. Bu çeldirici, sempatik tonus artışını her zaman ödem nedeni sanma hatasını sınar.",
-    "Kapiller geçirgenlik artışıyla protein kaçağının baskınlaşması": "Kapiller geçirgenlik artışı inflamasyon, yanık veya alerjik reaksiyon gibi durumlarda protein kaçağı ve daha kalıcı ödem yapar. Olguda kızarıklık, ısı artışı, ürtiker, travma veya sistemik inflamasyon bulgusu yoktur. Kısa süreli ve pozisyona bağlı ölçüm, geçirgenlik artışından çok hidrostatik kuvvet değişikliğini düşündürür."
-  },
-  "evidenceChain": [
-    {
-      "title": "Pozisyon etkisi",
-      "text": "Uzun süre ayakta bekleme → alt ekstremite venöz dolumunda artış",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Ölçülen hacim",
-      "text": "Ayak bileği çevresi 22.4 → 23.8 cm → damar dışı sıvı geçişi yönünde geçici artış",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Protein dengesi",
-      "text": "Serum albümini ve idrar protein taraması normal → onkotik basınç kaybı ana mekanizma değildir",
-      "weight": "medium",
-      "source": "case"
-    },
-    {
-      "title": "Geri dönüş",
-      "text": "Bacak elevasyonu sonrası çevre azalması → pozisyona bağlı hidrostatik etki desteklenir",
-      "weight": "medium",
-      "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "Plazma protein azalmasıyla kapiller onkotik basıncın düşmesi": "Plazma protein azalması onkotik çekim gücünü düşürerek yaygın ödem eğilimi oluşturabilir; malnütrisyon, karaciğer hastalığı veya protein kaybında akla gelir. Bu olguda serum albümini ve idrar proteini normaldir; değişiklik kısa süreli ayakta beklemeyle alt ekstremitede belirginleşmiştir. Bu nedenle ana açıklama protein azalması değil, pozisyona bağlı venöz basınç yükünün kapiller sıvı geçişini artırmasıdır.",
-    "Lenfatik pompa artışıyla interstisyel sıvının hızla uzaklaştırılması": "Lenfatik akım interstisyel sıvıyı geri taşıyarak ödemi sınırlayan koruyucu mekanizmadır. Ancak lenfatik pompanın artması tek başına ayakta bekleme sonrası ölçülen çevre artışını açıklamaz; tersine filtrasyon artışına karşı tamponlayıcı olur. Sınavda lenfatik tıkanıklık veya cerrahi öykü varsa lenfatik mekanizma düşünülür; burada böyle bir veri yoktur.",
-    "Arteriyel vazokonstriksiyonla kapiller basıncın belirgin azalması": "Arteriyel vazokonstriksiyon kapiller hidrostatik basıncı azaltma eğilimindedir ve filtrasyonu sınırlayabilir. Bu olguda beklenen ölçüm bacak çevresinde artış ve venöz dolumda yükselmedir; bu, kapiller basıncın azaldığı bir paternle uyumlu değildir. Bu çeldirici, sempatik tonus artışını her zaman ödem nedeni sanma hatasını sınar.",
-    "Kapiller geçirgenlik artışıyla protein kaçağının baskınlaşması": "Kapiller geçirgenlik artışı inflamasyon, yanık veya alerjik reaksiyon gibi durumlarda protein kaçağı ve daha kalıcı ödem yapar. Olguda kızarıklık, ısı artışı, ürtiker, travma veya sistemik inflamasyon bulgusu yoktur. Kısa süreli ve pozisyona bağlı ölçüm, geçirgenlik artışından çok hidrostatik kuvvet değişikliğini düşündürür."
-  },
-  "mechanismExplanation": "Ayakta bekleme venöz basıncı artırır, kapiller hidrostatik basınç yükselir, net filtrasyon interstisyuma yönelir ve elevasyonla kısmen geri dönen geçici hacim artışı oluşur.",
-  "scientificComment": "Soru, mikrodolaşımda sıvı hareketini yalnız ödem varlığıyla değil hidrostatik, onkotik, lenfatik ve geçirgenlik kuvvetlerinin yönüyle ayırt ettirmeyi hedefler.",
-  "helpText": "Alt ekstremite ödemi sorularında süre, pozisyon, albümin/proteinüri ve inflamasyon bulgularını birlikte değerlendir.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v215-new-002-kapali-devre-soluma-kaydi",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Kapalı devre soluma kaydı",
-  "difficulty": "Orta-Zor",
-  "difficultyTag": "Orta-Zor",
-  "clinicalFocus": "Kısa süreli yeniden soluma sırasında PaCO2, pH ve dakika ventilasyonu değişimini kemoreseptör düzeyinde yorumlama.",
-  "learningTarget": "CO2 artışının merkezi kemoreseptörler üzerinden solunum merkezlerini nasıl uyardığını hipoksi, gerim reseptörü ve barorefleks yanıtlarından ayırt edebilme.",
-  "demographics": "24 yaşında sağlıklı erkek gönüllü",
-  "setting": "Solunum fizyolojisi laboratuvarı",
-  "chiefComplaint": "Gönüllü, kısa süreli kapalı devre soluma protokolünde kan gazı ve ventilasyon yanıtı açısından izleniyor.",
-  "stem": "Gönüllü testten önce oturur pozisyonda birkaç dakika dinlenir ve burun klipsi takılarak ağızlık üzerinden solumaya başlar. İlk dakikada belirgin yakınması yoktur; üçüncü dakikaya doğru havanın ağırlaştığını ve daha derin nefes alma isteği oluştuğunu söyler. Test ekibi protokol süresi tamamlanınca ağızlığı çıkarır ve gönüllü oda havasında kısa sürede rahatlar. Astım, sigara kullanımı, panik atak öyküsü veya düzenli ilaç kullanımı olmadığını belirtir.",
-  "patientIntro": {
-    "profile": "24 yaşında sağlıklı erkek gönüllü, solunum fizyolojisi laboratuvarı bağlamında değerlendiriliyor.",
-    "presentation": "Test sırasında hava açlığı hissi, dakika ventilasyonunda artış ve kan gazında kısa süreli değişim kaydediliyor.",
-    "historySummary": "Gönüllü testten önce oturur pozisyonda birkaç dakika dinlenir ve burun klipsi takılarak ağızlık üzerinden solumaya başlar. İlk dakikada belirgin yakınması yoktur; üçüncü dakikaya doğru havanın ağırlaştığını ve daha derin nefes alma isteği oluştuğunu söyler. Test ekibi protokol süresi tamamlanınca ağızlığı çıkarır ve gönüllü oda havasında kısa sürede rahatlar. Astım, sigara kullanımı, panik atak öyküsü veya düzenli ilaç kullanımı olmadığını belirtir."
-  },
-  "vitals": {
-    "TA": "116/72 mmHg bazal; 118/74 mmHg test sonu",
-    "Nabız": "70/dk bazal; 88/dk test sonu",
-    "Solunum": "14/dk bazal; 24/dk test sonu",
-    "SpO2": "%99 bazal; %97 test sonu",
-    "Ateş": "36.7 °C",
-    "Şok indeksi": "0.60 bazal; 0.75 test sonu"
-  },
-  "exam": [
-    "Gönüllü uyanık, koopere ve komutları doğru uygulamaktadır.",
-    "Test sırasında konuşması kısa cümlelerle sınırlanır; siyanoz veya wheezing izlenmez.",
-    "Akciğer oskültasyonunda belirgin ronküs veya stridor duyulmaz.",
-    "Oda havasına geçtikten sonra solunum hızı birkaç dakika içinde bazale yaklaşır."
-  ],
-  "investigations": [
-    {
-      "id": "v215-new-002-kapali-devre-soluma-kaydi-kan-gazi-degisimi",
-      "label": "Arteriyel kan gazı değişimi",
-      "title": "Arteriyel kan gazı değişimi",
-      "type": "laboratory",
-      "priority": "essential",
-      "subtype": "Kısa süreli solunum testi",
-      "category": "bloodGas",
-      "testTypeCategory": "bloodGas",
-      "summary": "Test sonunda PaCO2 yükselmiş ve pH düşmüş; PaO2 belirgin hipoksemi düzeyine inmemiştir.",
-      "clinicalMeaning": "Test sonunda PaCO2 yükselmiş ve pH düşmüş; PaO2 belirgin hipoksemi düzeyine inmemiştir.",
+      "summary": "Serum osmolalitesi normal aralıktayken idrar hacmi artmış ve idrar osmolalitesi düşük ölçülmüştür.",
+      "clinicalMeaning": "Serum osmolalitesi normal aralıktayken idrar hacmi artmış ve idrar osmolalitesi düşük ölçülmüştür.",
       "testValueLabel": "Kritik veri",
       "educationalValue": "Kritik veri",
       "clinicalPriorityLabel": "Kritik veri",
@@ -273759,2365 +271530,416 @@ export const rawCases = [
       "source": "case",
       "clinicalFlowOrder": 1,
       "result": {
-        "title": "Arteriyel kan gazı değişimi",
-        "summary": "Test sonunda PaCO2 yükselmiş ve pH düşmüş; PaO2 belirgin hipoksemi düzeyine inmemiştir.",
-        "interpretation": "Test sonunda PaCO2 yükselmiş ve pH düşmüş; PaO2 belirgin hipoksemi düzeyine inmemiştir.",
+        "title": "Serum ve idrar elektrolit-osmolalite kaydı",
+        "summary": "Serum osmolalitesi normal aralıktayken idrar hacmi artmış ve idrar osmolalitesi düşük ölçülmüştür.",
+        "interpretation": "Serum osmolalitesi normal aralıktayken idrar hacmi artmış ve idrar osmolalitesi düşük ölçülmüştür.",
         "values": [
           [
-            "pH",
-            "7.40 → 7.31",
-            "7.35-7.45",
-            "Düştü"
-          ],
-          [
-            "PaCO2",
-            "40 → 54 mmHg",
-            "35-45 mmHg",
-            "Arttı"
-          ],
-          [
-            "HCO3-",
-            "24 → 25 mmol/L",
-            "22-26 mmol/L",
-            "Belirgin değişmedi"
-          ],
-          [
-            "PaO2",
-            "96 → 88 mmHg",
-            "80-100 mmHg",
-            "Hafif azaldı"
-          ]
-        ],
-        "rows": [
-          [
-            "pH",
-            "7.40 → 7.31",
-            "7.35-7.45",
-            "Düştü"
-          ],
-          [
-            "PaCO2",
-            "40 → 54 mmHg",
-            "35-45 mmHg",
-            "Arttı"
-          ],
-          [
-            "HCO3-",
-            "24 → 25 mmol/L",
-            "22-26 mmol/L",
-            "Belirgin değişmedi"
-          ],
-          [
-            "PaO2",
-            "96 → 88 mmHg",
-            "80-100 mmHg",
-            "Hafif azaldı"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "pH",
-          "7.40 → 7.31",
-          "7.35-7.45",
-          "Düştü"
-        ],
-        [
-          "PaCO2",
-          "40 → 54 mmHg",
-          "35-45 mmHg",
-          "Arttı"
-        ],
-        [
-          "HCO3-",
-          "24 → 25 mmol/L",
-          "22-26 mmol/L",
-          "Belirgin değişmedi"
-        ],
-        [
-          "PaO2",
-          "96 → 88 mmHg",
-          "80-100 mmHg",
-          "Hafif azaldı"
-        ]
-      ],
-      "postAnswerExplanation": "Test sonunda PaCO2 yükselmiş ve pH düşmüş; PaO2 belirgin hipoksemi düzeyine inmemiştir.",
-      "interpretation": "Test sonunda PaCO2 yükselmiş ve pH düşmüş; PaO2 belirgin hipoksemi düzeyine inmemiştir.",
-      "inlineFeedback": "Test sonunda PaCO2 yükselmiş ve pH düşmüş; PaO2 belirgin hipoksemi düzeyine inmemiştir.",
-      "explanationAfterAnswer": "Test sonunda PaCO2 yükselmiş ve pH düşmüş; PaO2 belirgin hipoksemi düzeyine inmemiştir."
-    },
-    {
-      "id": "v215-new-002-kapali-devre-soluma-kaydi-ventilasyon-yaniti",
-      "label": "Ventilasyon yanıtı kaydı",
-      "title": "Ventilasyon yanıtı kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Spirometrik fizyoloji kaydı",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Dakika ventilasyonu test boyunca artmış ve oda havasına geçince bazale yaklaşmıştır.",
-      "clinicalMeaning": "Dakika ventilasyonu test boyunca artmış ve oda havasına geçince bazale yaklaşmıştır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "Ventilasyon yanıtı kaydı",
-        "summary": "Dakika ventilasyonu test boyunca artmış ve oda havasına geçince bazale yaklaşmıştır.",
-        "interpretation": "Dakika ventilasyonu test boyunca artmış ve oda havasına geçince bazale yaklaşmıştır.",
-        "values": [
-          [
-            "Dakika ventilasyonu",
-            "6.8 → 18.9 L/dk",
-            "Bazal değere göre",
-            "Arttı"
-          ],
-          [
-            "Tidal volüm",
-            "480 → 780 mL",
-            "Bazal değere göre",
-            "Arttı"
-          ],
-          [
-            "Solunum sayısı",
-            "14 → 24/dk",
-            "Bazal değere göre",
-            "Arttı"
-          ],
-          [
-            "Wheezing",
-            "Yok",
-            "Yok",
-            "Saptanmadı"
-          ]
-        ],
-        "rows": [
-          [
-            "Dakika ventilasyonu",
-            "6.8 → 18.9 L/dk",
-            "Bazal değere göre",
-            "Arttı"
-          ],
-          [
-            "Tidal volüm",
-            "480 → 780 mL",
-            "Bazal değere göre",
-            "Arttı"
-          ],
-          [
-            "Solunum sayısı",
-            "14 → 24/dk",
-            "Bazal değere göre",
-            "Arttı"
-          ],
-          [
-            "Wheezing",
-            "Yok",
-            "Yok",
-            "Saptanmadı"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Dakika ventilasyonu",
-          "6.8 → 18.9 L/dk",
-          "Bazal değere göre",
-          "Arttı"
-        ],
-        [
-          "Tidal volüm",
-          "480 → 780 mL",
-          "Bazal değere göre",
-          "Arttı"
-        ],
-        [
-          "Solunum sayısı",
-          "14 → 24/dk",
-          "Bazal değere göre",
-          "Arttı"
-        ],
-        [
-          "Wheezing",
-          "Yok",
-          "Yok",
-          "Saptanmadı"
-        ]
-      ],
-      "postAnswerExplanation": "Dakika ventilasyonu test boyunca artmış ve oda havasına geçince bazale yaklaşmıştır.",
-      "interpretation": "Dakika ventilasyonu test boyunca artmış ve oda havasına geçince bazale yaklaşmıştır.",
-      "inlineFeedback": "Dakika ventilasyonu test boyunca artmış ve oda havasına geçince bazale yaklaşmıştır.",
-      "explanationAfterAnswer": "Dakika ventilasyonu test boyunca artmış ve oda havasına geçince bazale yaklaşmıştır."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu testte ventilasyon artışını başlatan temel fizyolojik algılama mekanizması hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "central_co2_chemoreception_csf_h_response",
-  "diagnosis": {
-    "correct": "Medüller çevrede H+ artışının CO2 geçişi sonrası algılanması",
-    "options": [
-      "Karotis cisimciğinde PaO2 azalmasına bağlı uyarı artışı",
-      "Medüller çevrede H+ artışının CO2 geçişi sonrası algılanması",
-      "Akciğer gerim reseptörlerinde şişmeye bağlı inspirasyonun uzaması",
-      "Aortik baroreseptörlerde basınç düşüşüne bağlı ventilasyon artışı",
-      "Bronş düz kasında kolinerjik kasılmaya bağlı dakika ventilasyonu artışı"
-    ],
-    "question": "Bu testte ventilasyon artışını başlatan temel fizyolojik algılama mekanizması hangisidir?",
-    "explanation": "Kısa süreli kapalı devre soluma sırasında CO2 birikir, PaCO2 yükselir ve CO2 kan-beyin bariyerini geçerek medüller çevrede H+ artışına neden olur. Merkezi kemoreseptörler bu pH değişimini algılayarak solunum merkezlerini uyarır; dakika ventilasyonu ve tidal volüm artar. PaO2 yalnız hafif azaldığı için yanıtın temel açıklaması ağır hipoksi değil CO2/H+ duyarlılığıdır.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "PaCO2 hızla yükselip ventilasyon artıyorsa merkezi kemoreseptörleri düşün; PaO2 ciddi düşmeden karotis cisimciği ana cevap olmayabilir."
-      }
-    ],
-    "optionComparison": {
-      "Karotis cisimciğinde PaO2 azalmasına bağlı uyarı artışı": "Periferik kemoreseptörler özellikle PaO2 belirgin düştüğünde hızla ventilasyonu artırır. Bu testte PaO2 ciddi düşmemiş, belirgin değişen parametre PaCO2 yükselmesi ve pH düşmesidir. Hipoksi baskın olsaydı karotis cisimciği seçeneği güçlenirdi; burada ventilasyon artışının ana itici gücü CO2/H+ sinyalidir.",
-      "Medüller çevrede H+ artışının CO2 geçişi sonrası algılanması": "Doğru seçenek budur. CO2 kan-beyin bariyerini hızla geçer, medüller çevrede karbonik asit üzerinden H+ artışına yol açar ve bu değişim solunum merkezlerini uyarır. PaCO2 artışıyla dakika ventilasyonunun birkaç dakika içinde yükselmesi, oksijen düşüklüğünden çok CO2 kaynaklı merkezi kemoduyarlılığı destekler.",
-      "Akciğer gerim reseptörlerinde şişmeye bağlı inspirasyonun uzaması": "Akciğer gerim reseptörleri aşırı inflasyonda inspirasyonu sınırlayan koruyucu reflekslere katılır. Olguda tidal volüm ve dakika ventilasyonu artmıştır; ancak testin temel uyaranı akciğerin aşırı gerilmesi değil gaz karışımındaki CO2 birikimidir. Gerim reseptörü yanıtı bu kan gazı paterninin ana açıklaması değildir.",
-      "Aortik baroreseptörlerde basınç düşüşüne bağlı ventilasyon artışı": "Baroreseptörler arter basıncı değişikliklerini algılar ve esas olarak kalp hızı ile damar tonusunu düzenler. Kan basıncında belirgin düşüş yoktur ve ventilasyon artışı basınç refleksiyle açıklanacak bir patern göstermez. Bu seçenek, solunum yanıtını dolaşım refleksiyle karıştırma hatasını sınar.",
-      "Bronş düz kasında kolinerjik kasılmaya bağlı dakika ventilasyonu artışı": "Kolinerjik bronş düz kas kasılması hava yolu direncini artırabilir ve obstrüktif yakınma oluşturabilir. Bu testte hışıltı veya obstrüksiyon bulgusu yoktur; dakika ventilasyonu artışı hava yolu daralmasına değil artan CO2 yüküne verilen solunumsal yanıta bağlıdır. Bu nedenle bronkokonstriksiyon mekanizması uygun değildir."
-    },
-    "answerFeedback": {
-      "Karotis cisimciğinde PaO2 azalmasına bağlı uyarı artışı": "Periferik kemoreseptörler özellikle PaO2 belirgin düştüğünde hızla ventilasyonu artırır. Bu testte PaO2 ciddi düşmemiş, belirgin değişen parametre PaCO2 yükselmesi ve pH düşmesidir. Hipoksi baskın olsaydı karotis cisimciği seçeneği güçlenirdi; burada ventilasyon artışının ana itici gücü CO2/H+ sinyalidir.",
-      "Medüller çevrede H+ artışının CO2 geçişi sonrası algılanması": "Doğru seçenek budur. CO2 kan-beyin bariyerini hızla geçer, medüller çevrede karbonik asit üzerinden H+ artışına yol açar ve bu değişim solunum merkezlerini uyarır. PaCO2 artışıyla dakika ventilasyonunun birkaç dakika içinde yükselmesi, oksijen düşüklüğünden çok CO2 kaynaklı merkezi kemoduyarlılığı destekler.",
-      "Akciğer gerim reseptörlerinde şişmeye bağlı inspirasyonun uzaması": "Akciğer gerim reseptörleri aşırı inflasyonda inspirasyonu sınırlayan koruyucu reflekslere katılır. Olguda tidal volüm ve dakika ventilasyonu artmıştır; ancak testin temel uyaranı akciğerin aşırı gerilmesi değil gaz karışımındaki CO2 birikimidir. Gerim reseptörü yanıtı bu kan gazı paterninin ana açıklaması değildir.",
-      "Aortik baroreseptörlerde basınç düşüşüne bağlı ventilasyon artışı": "Baroreseptörler arter basıncı değişikliklerini algılar ve esas olarak kalp hızı ile damar tonusunu düzenler. Kan basıncında belirgin düşüş yoktur ve ventilasyon artışı basınç refleksiyle açıklanacak bir patern göstermez. Bu seçenek, solunum yanıtını dolaşım refleksiyle karıştırma hatasını sınar.",
-      "Bronş düz kasında kolinerjik kasılmaya bağlı dakika ventilasyonu artışı": "Kolinerjik bronş düz kas kasılması hava yolu direncini artırabilir ve obstrüktif yakınma oluşturabilir. Bu testte hışıltı veya obstrüksiyon bulgusu yoktur; dakika ventilasyonu artışı hava yolu daralmasına değil artan CO2 yüküne verilen solunumsal yanıta bağlıdır. Bu nedenle bronkokonstriksiyon mekanizması uygun değildir."
-    }
-  },
-  "coreKnowledge": "Kısa süreli kapalı devre soluma sırasında CO2 birikir, PaCO2 yükselir ve CO2 kan-beyin bariyerini geçerek medüller çevrede H+ artışına neden olur. Merkezi kemoreseptörler bu pH değişimini algılayarak solunum merkezlerini uyarır; dakika ventilasyonu ve tidal volüm artar. PaO2 yalnız hafif azaldığı için yanıtın temel açıklaması ağır hipoksi değil CO2/H+ duyarlılığıdır.",
-  "examPearl": "PaCO2 hızla yükselip ventilasyon artıyorsa merkezi kemoreseptörleri düşün; PaO2 ciddi düşmeden karotis cisimciği ana cevap olmayabilir.",
-  "whyCorrect": "Doğru seçenek budur. CO2 kan-beyin bariyerini hızla geçer, medüller çevrede karbonik asit üzerinden H+ artışına yol açar ve bu değişim solunum merkezlerini uyarır. PaCO2 artışıyla dakika ventilasyonunun birkaç dakika içinde yükselmesi, oksijen düşüklüğünden çok CO2 kaynaklı merkezi kemoduyarlılığı destekler.",
-  "optionComparison": {
-    "Karotis cisimciğinde PaO2 azalmasına bağlı uyarı artışı": "Periferik kemoreseptörler özellikle PaO2 belirgin düştüğünde hızla ventilasyonu artırır. Bu testte PaO2 ciddi düşmemiş, belirgin değişen parametre PaCO2 yükselmesi ve pH düşmesidir. Hipoksi baskın olsaydı karotis cisimciği seçeneği güçlenirdi; burada ventilasyon artışının ana itici gücü CO2/H+ sinyalidir.",
-    "Medüller çevrede H+ artışının CO2 geçişi sonrası algılanması": "Doğru seçenek budur. CO2 kan-beyin bariyerini hızla geçer, medüller çevrede karbonik asit üzerinden H+ artışına yol açar ve bu değişim solunum merkezlerini uyarır. PaCO2 artışıyla dakika ventilasyonunun birkaç dakika içinde yükselmesi, oksijen düşüklüğünden çok CO2 kaynaklı merkezi kemoduyarlılığı destekler.",
-    "Akciğer gerim reseptörlerinde şişmeye bağlı inspirasyonun uzaması": "Akciğer gerim reseptörleri aşırı inflasyonda inspirasyonu sınırlayan koruyucu reflekslere katılır. Olguda tidal volüm ve dakika ventilasyonu artmıştır; ancak testin temel uyaranı akciğerin aşırı gerilmesi değil gaz karışımındaki CO2 birikimidir. Gerim reseptörü yanıtı bu kan gazı paterninin ana açıklaması değildir.",
-    "Aortik baroreseptörlerde basınç düşüşüne bağlı ventilasyon artışı": "Baroreseptörler arter basıncı değişikliklerini algılar ve esas olarak kalp hızı ile damar tonusunu düzenler. Kan basıncında belirgin düşüş yoktur ve ventilasyon artışı basınç refleksiyle açıklanacak bir patern göstermez. Bu seçenek, solunum yanıtını dolaşım refleksiyle karıştırma hatasını sınar.",
-    "Bronş düz kasında kolinerjik kasılmaya bağlı dakika ventilasyonu artışı": "Kolinerjik bronş düz kas kasılması hava yolu direncini artırabilir ve obstrüktif yakınma oluşturabilir. Bu testte hışıltı veya obstrüksiyon bulgusu yoktur; dakika ventilasyonu artışı hava yolu daralmasına değil artan CO2 yüküne verilen solunumsal yanıta bağlıdır. Bu nedenle bronkokonstriksiyon mekanizması uygun değildir."
-  },
-  "evidenceChain": [
-    {
-      "title": "Gaz değişimi",
-      "text": "PaCO2 40 → 54 mmHg → test sırasında CO2 yükü artmıştır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "pH yönü",
-      "text": "pH 7.40 → 7.31 → CO2 artışıyla asidik yönde değişim vardır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Oksijen düzeyi",
-      "text": "PaO2 88 mmHg ve SpO2 %97 → ağır hipoksemi baskın uyaran değildir",
-      "weight": "medium",
-      "source": "case"
-    },
-    {
-      "title": "Ventilasyon yanıtı",
-      "text": "Dakika ventilasyonu 6.8 → 18.9 L/dk → solunum merkezi uyarısı belirgindir",
-      "weight": "high",
-      "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "Karotis cisimciğinde PaO2 azalmasına bağlı uyarı artışı": "Periferik kemoreseptörler özellikle PaO2 belirgin düştüğünde hızla ventilasyonu artırır. Bu testte PaO2 ciddi düşmemiş, belirgin değişen parametre PaCO2 yükselmesi ve pH düşmesidir. Hipoksi baskın olsaydı karotis cisimciği seçeneği güçlenirdi; burada ventilasyon artışının ana itici gücü CO2/H+ sinyalidir.",
-    "Akciğer gerim reseptörlerinde şişmeye bağlı inspirasyonun uzaması": "Akciğer gerim reseptörleri aşırı inflasyonda inspirasyonu sınırlayan koruyucu reflekslere katılır. Olguda tidal volüm ve dakika ventilasyonu artmıştır; ancak testin temel uyaranı akciğerin aşırı gerilmesi değil gaz karışımındaki CO2 birikimidir. Gerim reseptörü yanıtı bu kan gazı paterninin ana açıklaması değildir.",
-    "Aortik baroreseptörlerde basınç düşüşüne bağlı ventilasyon artışı": "Baroreseptörler arter basıncı değişikliklerini algılar ve esas olarak kalp hızı ile damar tonusunu düzenler. Kan basıncında belirgin düşüş yoktur ve ventilasyon artışı basınç refleksiyle açıklanacak bir patern göstermez. Bu seçenek, solunum yanıtını dolaşım refleksiyle karıştırma hatasını sınar.",
-    "Bronş düz kasında kolinerjik kasılmaya bağlı dakika ventilasyonu artışı": "Kolinerjik bronş düz kas kasılması hava yolu direncini artırabilir ve obstrüktif yakınma oluşturabilir. Bu testte hışıltı veya obstrüksiyon bulgusu yoktur; dakika ventilasyonu artışı hava yolu daralmasına değil artan CO2 yüküne verilen solunumsal yanıta bağlıdır. Bu nedenle bronkokonstriksiyon mekanizması uygun değildir."
-  },
-  "mechanismExplanation": "CO2 yükselir, beyin omurilik sıvısı çevresinde H+ artar, merkezi kemoreseptörler uyarılır ve dakika ventilasyonu artarak CO2 atılımı artırılmaya çalışılır.",
-  "scientificComment": "Soru, solunum kontrolünde CO2/pH sinyalinin merkezi kemoreseptörlerle ilişkisini hipoksi ve mekanik akciğer reflekslerinden ayırmayı hedefler.",
-  "helpText": "Solunum yanıtı sorusunda PaCO2, pH ve PaO2 yönünü birlikte oku; ağır hipoksemi yoksa yanıtın merkezi CO2 duyarlılığıyla açıklanma olasılığı artar.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v215-new-003-sivi-kaybi-sonrasi-asit-yuku",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Sıvı kaybı sonrası asit yükü",
-  "difficulty": "Zor",
-  "difficultyTag": "Zor",
-  "clinicalFocus": "Baz kaybı sonrası gelişen metabolik asidozda böbreğin net asit atılımı ve yeni bikarbonat kazanımı yönünü yorumlama.",
-  "learningTarget": "Metabolik asidozda proksimal tübül glutamin metabolizması, NH4+ atılımı ve yeni HCO3- üretimi arasındaki ilişkiyi açıklayabilme.",
-  "demographics": "19 yaşında erkek hasta",
-  "setting": "Acil servis gözlem alanı",
-  "chiefComplaint": "Hasta, birkaç gündür süren sulu dışkılama sonrası halsizlik ve baş dönmesi nedeniyle değerlendiriliyor.",
-  "stem": "Hasta dört gündür aralıklı sulu dışkılama yaşadığını ve bu sürede iştahının azaldığını anlatır. İlk iki gün evde su içerek idare etmiş, ancak son gün merdiven çıkarken belirgin halsizlik ve ağız kuruluğu fark etmiştir. Kusma, kanlı dışkı, yeni ilaç kullanımı veya alkol alımı tariflemez. Yakınmaları artınca ailesiyle birlikte acil servise başvurur. Daha önce böbrek hastalığı veya diyabet öyküsü olmadığını söyler.",
-  "patientIntro": {
-    "profile": "19 yaşında erkek hasta, acil servis gözlem alanı bağlamında değerlendiriliyor.",
-    "presentation": "Sulu dışkılama sonrası düşük bikarbonatlı kan gazı ve idrarda asitleşme bulguları kaydediliyor.",
-    "historySummary": "Hasta dört gündür aralıklı sulu dışkılama yaşadığını ve bu sürede iştahının azaldığını anlatır. İlk iki gün evde su içerek idare etmiş, ancak son gün merdiven çıkarken belirgin halsizlik ve ağız kuruluğu fark etmiştir. Kusma, kanlı dışkı, yeni ilaç kullanımı veya alkol alımı tariflemez. Yakınmaları artınca ailesiyle birlikte acil servise başvurur. Daha önce böbrek hastalığı veya diyabet öyküsü olmadığını söyler."
-  },
-  "vitals": {
-    "TA": "102/66 mmHg",
-    "Nabız": "104/dk",
-    "Solunum": "22/dk",
-    "SpO2": "%98, oda havasında",
-    "Ateş": "37.1 °C",
-    "Şok indeksi": "1.02 - sınırda yüksek"
-  },
-  "exam": [
-    "Hasta uyanık ve koopere, mukozaları hafif kurudur.",
-    "Karın yumuşaktır; yaygın hassasiyet veya defans saptanmaz.",
-    "Akciğer oskültasyonu doğaldır; belirgin wheezing veya ral duyulmaz.",
-    "Periferik nabızlar hızlıdır; kapiller dolum yaklaşık 3 saniyedir."
-  ],
-  "investigations": [
-    {
-      "id": "v215-new-003-sivi-kaybi-sonrasi-asit-yuku-kan-gazi-ve-elektrolit",
-      "label": "Kan gazı ve serum elektrolitleri",
-      "title": "Kan gazı ve serum elektrolitleri",
-      "type": "laboratory",
-      "priority": "essential",
-      "subtype": "Asit-baz laboratuvarı",
-      "category": "bloodGas",
-      "testTypeCategory": "bloodGas",
-      "summary": "pH ve HCO3- düşmüş, PaCO2 kompansatuvar yönde azalmış ve anyon açığı belirgin yükselmemiştir.",
-      "clinicalMeaning": "pH ve HCO3- düşmüş, PaCO2 kompansatuvar yönde azalmış ve anyon açığı belirgin yükselmemiştir.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "Kan gazı ve serum elektrolitleri",
-        "summary": "pH ve HCO3- düşmüş, PaCO2 kompansatuvar yönde azalmış ve anyon açığı belirgin yükselmemiştir.",
-        "interpretation": "pH ve HCO3- düşmüş, PaCO2 kompansatuvar yönde azalmış ve anyon açığı belirgin yükselmemiştir.",
-        "values": [
-          [
-            "pH",
-            "7.28",
-            "7.35-7.45",
-            "Düşük"
-          ],
-          [
-            "PaCO2",
-            "30 mmHg",
-            "35-45 mmHg",
-            "Düşük"
-          ],
-          [
-            "HCO3-",
-            "15 mmol/L",
-            "22-26 mmol/L",
-            "Düşük"
-          ],
-          [
-            "Na+/Cl-",
-            "138/112 mmol/L",
-            "135-145 / 98-107 mmol/L",
-            "Klor yüksek"
-          ],
-          [
-            "Anyon açığı",
-            "11 mmol/L",
-            "8-12 mmol/L",
-            "Normal aralıkta"
-          ]
-        ],
-        "rows": [
-          [
-            "pH",
-            "7.28",
-            "7.35-7.45",
-            "Düşük"
-          ],
-          [
-            "PaCO2",
-            "30 mmHg",
-            "35-45 mmHg",
-            "Düşük"
-          ],
-          [
-            "HCO3-",
-            "15 mmol/L",
-            "22-26 mmol/L",
-            "Düşük"
-          ],
-          [
-            "Na+/Cl-",
-            "138/112 mmol/L",
-            "135-145 / 98-107 mmol/L",
-            "Klor yüksek"
-          ],
-          [
-            "Anyon açığı",
-            "11 mmol/L",
-            "8-12 mmol/L",
-            "Normal aralıkta"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "pH",
-          "7.28",
-          "7.35-7.45",
-          "Düşük"
-        ],
-        [
-          "PaCO2",
-          "30 mmHg",
-          "35-45 mmHg",
-          "Düşük"
-        ],
-        [
-          "HCO3-",
-          "15 mmol/L",
-          "22-26 mmol/L",
-          "Düşük"
-        ],
-        [
-          "Na+/Cl-",
-          "138/112 mmol/L",
-          "135-145 / 98-107 mmol/L",
-          "Klor yüksek"
-        ],
-        [
-          "Anyon açığı",
-          "11 mmol/L",
-          "8-12 mmol/L",
-          "Normal aralıkta"
-        ]
-      ],
-      "postAnswerExplanation": "pH ve HCO3- düşmüş, PaCO2 kompansatuvar yönde azalmış ve anyon açığı belirgin yükselmemiştir.",
-      "interpretation": "pH ve HCO3- düşmüş, PaCO2 kompansatuvar yönde azalmış ve anyon açığı belirgin yükselmemiştir.",
-      "inlineFeedback": "pH ve HCO3- düşmüş, PaCO2 kompansatuvar yönde azalmış ve anyon açığı belirgin yükselmemiştir.",
-      "explanationAfterAnswer": "pH ve HCO3- düşmüş, PaCO2 kompansatuvar yönde azalmış ve anyon açığı belirgin yükselmemiştir."
-    },
-    {
-      "id": "v215-new-003-sivi-kaybi-sonrasi-asit-yuku-idrar-asitlestirme-kaydi",
-      "label": "İdrar asitleştirme verileri",
-      "title": "İdrar asitleştirme verileri",
-      "type": "laboratory",
-      "priority": "essential",
-      "subtype": "Renal fizyoloji laboratuvarı",
-      "category": "laboratory",
-      "testTypeCategory": "laboratory",
-      "summary": "İdrar pH'sı düşüktür ve net asit atılımını destekleyen idrar elektrolit paterni vardır.",
-      "clinicalMeaning": "İdrar pH'sı düşüktür ve net asit atılımını destekleyen idrar elektrolit paterni vardır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "İdrar asitleştirme verileri",
-        "summary": "İdrar pH'sı düşüktür ve net asit atılımını destekleyen idrar elektrolit paterni vardır.",
-        "interpretation": "İdrar pH'sı düşüktür ve net asit atılımını destekleyen idrar elektrolit paterni vardır.",
-        "values": [
-          [
-            "İdrar pH",
-            "5.1",
-            "5.0-7.5",
-            "Asidik"
-          ],
-          [
-            "İdrar Na+",
-            "42 mmol/L",
-            "Değişken",
-            "Ölçüldü"
-          ],
-          [
-            "İdrar K+",
-            "28 mmol/L",
-            "Değişken",
-            "Ölçüldü"
-          ],
-          [
-            "İdrar Cl-",
-            "92 mmol/L",
-            "Değişken",
-            "Yüksek"
-          ],
-          [
-            "Kreatinin",
-            "0.88 mg/dL",
-            "0.6-1.2 mg/dL",
-            "Normal"
-          ]
-        ],
-        "rows": [
-          [
-            "İdrar pH",
-            "5.1",
-            "5.0-7.5",
-            "Asidik"
-          ],
-          [
-            "İdrar Na+",
-            "42 mmol/L",
-            "Değişken",
-            "Ölçüldü"
-          ],
-          [
-            "İdrar K+",
-            "28 mmol/L",
-            "Değişken",
-            "Ölçüldü"
-          ],
-          [
-            "İdrar Cl-",
-            "92 mmol/L",
-            "Değişken",
-            "Yüksek"
-          ],
-          [
-            "Kreatinin",
-            "0.88 mg/dL",
-            "0.6-1.2 mg/dL",
-            "Normal"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "İdrar pH",
-          "5.1",
-          "5.0-7.5",
-          "Asidik"
-        ],
-        [
-          "İdrar Na+",
-          "42 mmol/L",
-          "Değişken",
-          "Ölçüldü"
-        ],
-        [
-          "İdrar K+",
-          "28 mmol/L",
-          "Değişken",
-          "Ölçüldü"
-        ],
-        [
-          "İdrar Cl-",
-          "92 mmol/L",
-          "Değişken",
-          "Yüksek"
-        ],
-        [
-          "Kreatinin",
-          "0.88 mg/dL",
-          "0.6-1.2 mg/dL",
-          "Normal"
-        ]
-      ],
-      "postAnswerExplanation": "İdrar pH'sı düşüktür ve net asit atılımını destekleyen idrar elektrolit paterni vardır.",
-      "interpretation": "İdrar pH'sı düşüktür ve net asit atılımını destekleyen idrar elektrolit paterni vardır.",
-      "inlineFeedback": "İdrar pH'sı düşüktür ve net asit atılımını destekleyen idrar elektrolit paterni vardır.",
-      "explanationAfterAnswer": "İdrar pH'sı düşüktür ve net asit atılımını destekleyen idrar elektrolit paterni vardır."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu hastada asit yüküne karşı beklenen temel renal kompansatuvar yanıt hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "metabolic_acidosis_renal_ammoniagenesis_new_bicarbonate",
-  "diagnosis": {
-    "correct": "Glutamin kaynaklı NH4+ üretimi artarak yeni HCO3- kazanımı sağlanması",
-    "options": [
-      "Toplayıcı kanalda H+ sekresyonunun azalmasıyla idrar pH yükselmesi",
-      "Proksimal HCO3- geri emiliminin azalmasıyla bikarbonatüri gelişmesi",
-      "Karbonik anhidraz etkinliğinin azalmasıyla asit atılımının zayıflaması",
-      "Glutamin kaynaklı NH4+ üretimi artarak yeni HCO3- kazanımı sağlanması",
-      "Fosfat tamponunun baskılanmasıyla titrasyon asiditesinin azalması"
-    ],
-    "question": "Bu hastada asit yüküne karşı beklenen temel renal kompansatuvar yanıt hangisidir?",
-    "explanation": "Sulu dışkılama bikarbonat kaybı yaparak normal anyon açıklı metabolik asidoza yol açabilir. Günler içinde böbrek proksimal tübülde glutamin metabolizmasını artırır; NH4+ idrarla atılırken dolaşıma yeni HCO3- kazandırılır. Bu yanıt asit yükünü tamponlamaya ve ekstraselüler pH'yı düzeltmeye yöneliktir.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "Metabolik asidozda böbrek HCO3- kaybetmez; HCO3- geri kazanır, yeni HCO3- üretir ve NH4+ ile asit atılımını artırır."
-      }
-    ],
-    "optionComparison": {
-      "Toplayıcı kanalda H+ sekresyonunun azalmasıyla idrar pH yükselmesi": "H+ sekresyonunun azalması idrarı daha alkali yapar ve asit yükünün uzaklaştırılmasını güçleştirir. Bu olguda kan gazı metabolik asidoz yönündedir; böbreğin uygun yanıtı asit atılımını azaltmak değil artırmaktır. İdrar pH'sının düşük olması da H+ sekresyonunun azaldığını değil aktif asitleştirme olduğunu gösterir.",
-      "Proksimal HCO3- geri emiliminin azalmasıyla bikarbonatüri gelişmesi": "Bikarbonatüri, vücuttan baz kaybını artırır ve metabolik asidozu sürdürebilir; karbonik anhidraz inhibisyonu veya proksimal tübül bozukluklarında düşünülür. Burada mevcut sorun dışkıyla baz kaybı sonrası gelişen asit yüküdür; kompansasyon proksimal bikarbonat geri emilimini azaltmak değil bikarbonatı korumak ve yeni bikarbonat üretmektir.",
-      "Karbonik anhidraz etkinliğinin azalmasıyla asit atılımının zayıflaması": "Karbonik anhidraz etkinliğinin azalması tübüler H+ sekresyonunu ve HCO3- geri kazanımını bozar. Bu mekanizma idrarla bikarbonat kaybı ve asidoz yapabilir; ancak verilen patern böbreğin kompansatuvar asit atılımını artırması gereken bir durumu göstermektedir. Bu nedenle zayıflamış asit atılımı doğru yanıt değildir.",
-      "Glutamin kaynaklı NH4+ üretimi artarak yeni HCO3- kazanımı sağlanması": "Doğru seçenek budur. Günler süren metabolik asidozda proksimal tübül glutamini daha fazla metabolize eder; oluşan NH4+ idrarla atılırken kana yeni HCO3- kazandırılır. Düşük pH, düşük HCO3- ve düşük idrar pH'sı, böbreğin asit yüküne karşı asitleştirme ve tamponlu asit atılımını artırma yönündeki yanıtıyla uyumludur.",
-      "Fosfat tamponunun baskılanmasıyla titrasyon asiditesinin azalması": "Fosfat tamponu distal nefronda atılan H+'ın bir kısmını bağlayarak titrasyon asiditesi oluşturur. Asit yükünde bu tamponlama baskılanmaz; aksine net asit atılımına katkı sağlar. Bu seçenek, renal tamponların kompansasyonda azaldığını varsaydığı için olgunun yönüyle ters düşer."
-    },
-    "answerFeedback": {
-      "Toplayıcı kanalda H+ sekresyonunun azalmasıyla idrar pH yükselmesi": "H+ sekresyonunun azalması idrarı daha alkali yapar ve asit yükünün uzaklaştırılmasını güçleştirir. Bu olguda kan gazı metabolik asidoz yönündedir; böbreğin uygun yanıtı asit atılımını azaltmak değil artırmaktır. İdrar pH'sının düşük olması da H+ sekresyonunun azaldığını değil aktif asitleştirme olduğunu gösterir.",
-      "Proksimal HCO3- geri emiliminin azalmasıyla bikarbonatüri gelişmesi": "Bikarbonatüri, vücuttan baz kaybını artırır ve metabolik asidozu sürdürebilir; karbonik anhidraz inhibisyonu veya proksimal tübül bozukluklarında düşünülür. Burada mevcut sorun dışkıyla baz kaybı sonrası gelişen asit yüküdür; kompansasyon proksimal bikarbonat geri emilimini azaltmak değil bikarbonatı korumak ve yeni bikarbonat üretmektir.",
-      "Karbonik anhidraz etkinliğinin azalmasıyla asit atılımının zayıflaması": "Karbonik anhidraz etkinliğinin azalması tübüler H+ sekresyonunu ve HCO3- geri kazanımını bozar. Bu mekanizma idrarla bikarbonat kaybı ve asidoz yapabilir; ancak verilen patern böbreğin kompansatuvar asit atılımını artırması gereken bir durumu göstermektedir. Bu nedenle zayıflamış asit atılımı doğru yanıt değildir.",
-      "Glutamin kaynaklı NH4+ üretimi artarak yeni HCO3- kazanımı sağlanması": "Doğru seçenek budur. Günler süren metabolik asidozda proksimal tübül glutamini daha fazla metabolize eder; oluşan NH4+ idrarla atılırken kana yeni HCO3- kazandırılır. Düşük pH, düşük HCO3- ve düşük idrar pH'sı, böbreğin asit yüküne karşı asitleştirme ve tamponlu asit atılımını artırma yönündeki yanıtıyla uyumludur.",
-      "Fosfat tamponunun baskılanmasıyla titrasyon asiditesinin azalması": "Fosfat tamponu distal nefronda atılan H+'ın bir kısmını bağlayarak titrasyon asiditesi oluşturur. Asit yükünde bu tamponlama baskılanmaz; aksine net asit atılımına katkı sağlar. Bu seçenek, renal tamponların kompansasyonda azaldığını varsaydığı için olgunun yönüyle ters düşer."
-    }
-  },
-  "coreKnowledge": "Sulu dışkılama bikarbonat kaybı yaparak normal anyon açıklı metabolik asidoza yol açabilir. Günler içinde böbrek proksimal tübülde glutamin metabolizmasını artırır; NH4+ idrarla atılırken dolaşıma yeni HCO3- kazandırılır. Bu yanıt asit yükünü tamponlamaya ve ekstraselüler pH'yı düzeltmeye yöneliktir.",
-  "examPearl": "Metabolik asidozda böbrek HCO3- kaybetmez; HCO3- geri kazanır, yeni HCO3- üretir ve NH4+ ile asit atılımını artırır.",
-  "whyCorrect": "Doğru seçenek budur. Günler süren metabolik asidozda proksimal tübül glutamini daha fazla metabolize eder; oluşan NH4+ idrarla atılırken kana yeni HCO3- kazandırılır. Düşük pH, düşük HCO3- ve düşük idrar pH'sı, böbreğin asit yüküne karşı asitleştirme ve tamponlu asit atılımını artırma yönündeki yanıtıyla uyumludur.",
-  "optionComparison": {
-    "Toplayıcı kanalda H+ sekresyonunun azalmasıyla idrar pH yükselmesi": "H+ sekresyonunun azalması idrarı daha alkali yapar ve asit yükünün uzaklaştırılmasını güçleştirir. Bu olguda kan gazı metabolik asidoz yönündedir; böbreğin uygun yanıtı asit atılımını azaltmak değil artırmaktır. İdrar pH'sının düşük olması da H+ sekresyonunun azaldığını değil aktif asitleştirme olduğunu gösterir.",
-    "Proksimal HCO3- geri emiliminin azalmasıyla bikarbonatüri gelişmesi": "Bikarbonatüri, vücuttan baz kaybını artırır ve metabolik asidozu sürdürebilir; karbonik anhidraz inhibisyonu veya proksimal tübül bozukluklarında düşünülür. Burada mevcut sorun dışkıyla baz kaybı sonrası gelişen asit yüküdür; kompansasyon proksimal bikarbonat geri emilimini azaltmak değil bikarbonatı korumak ve yeni bikarbonat üretmektir.",
-    "Karbonik anhidraz etkinliğinin azalmasıyla asit atılımının zayıflaması": "Karbonik anhidraz etkinliğinin azalması tübüler H+ sekresyonunu ve HCO3- geri kazanımını bozar. Bu mekanizma idrarla bikarbonat kaybı ve asidoz yapabilir; ancak verilen patern böbreğin kompansatuvar asit atılımını artırması gereken bir durumu göstermektedir. Bu nedenle zayıflamış asit atılımı doğru yanıt değildir.",
-    "Glutamin kaynaklı NH4+ üretimi artarak yeni HCO3- kazanımı sağlanması": "Doğru seçenek budur. Günler süren metabolik asidozda proksimal tübül glutamini daha fazla metabolize eder; oluşan NH4+ idrarla atılırken kana yeni HCO3- kazandırılır. Düşük pH, düşük HCO3- ve düşük idrar pH'sı, böbreğin asit yüküne karşı asitleştirme ve tamponlu asit atılımını artırma yönündeki yanıtıyla uyumludur.",
-    "Fosfat tamponunun baskılanmasıyla titrasyon asiditesinin azalması": "Fosfat tamponu distal nefronda atılan H+'ın bir kısmını bağlayarak titrasyon asiditesi oluşturur. Asit yükünde bu tamponlama baskılanmaz; aksine net asit atılımına katkı sağlar. Bu seçenek, renal tamponların kompansasyonda azaldığını varsaydığı için olgunun yönüyle ters düşer."
-  },
-  "evidenceChain": [
-    {
-      "title": "Primer patern",
-      "text": "pH 7.28 + HCO3- 15 mmol/L → primer metabolik asidoz yönünde veri",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Solunumsal yanıt",
-      "text": "PaCO2 30 mmHg → ventilasyonla CO2 azaltılarak kompansasyon başlamıştır",
-      "weight": "medium",
-      "source": "case"
-    },
-    {
-      "title": "Kayıp tipi",
-      "text": "Sulu dışkılama + normal anyon açığı → bikarbonat kaybı olasılığı desteklenir",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Renal yön",
-      "text": "İdrar pH 5.1 → böbrek idrarı asitleştirme yönünde yanıt vermektedir",
-      "weight": "medium",
-      "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "Toplayıcı kanalda H+ sekresyonunun azalmasıyla idrar pH yükselmesi": "H+ sekresyonunun azalması idrarı daha alkali yapar ve asit yükünün uzaklaştırılmasını güçleştirir. Bu olguda kan gazı metabolik asidoz yönündedir; böbreğin uygun yanıtı asit atılımını azaltmak değil artırmaktır. İdrar pH'sının düşük olması da H+ sekresyonunun azaldığını değil aktif asitleştirme olduğunu gösterir.",
-    "Proksimal HCO3- geri emiliminin azalmasıyla bikarbonatüri gelişmesi": "Bikarbonatüri, vücuttan baz kaybını artırır ve metabolik asidozu sürdürebilir; karbonik anhidraz inhibisyonu veya proksimal tübül bozukluklarında düşünülür. Burada mevcut sorun dışkıyla baz kaybı sonrası gelişen asit yüküdür; kompansasyon proksimal bikarbonat geri emilimini azaltmak değil bikarbonatı korumak ve yeni bikarbonat üretmektir.",
-    "Karbonik anhidraz etkinliğinin azalmasıyla asit atılımının zayıflaması": "Karbonik anhidraz etkinliğinin azalması tübüler H+ sekresyonunu ve HCO3- geri kazanımını bozar. Bu mekanizma idrarla bikarbonat kaybı ve asidoz yapabilir; ancak verilen patern böbreğin kompansatuvar asit atılımını artırması gereken bir durumu göstermektedir. Bu nedenle zayıflamış asit atılımı doğru yanıt değildir.",
-    "Fosfat tamponunun baskılanmasıyla titrasyon asiditesinin azalması": "Fosfat tamponu distal nefronda atılan H+'ın bir kısmını bağlayarak titrasyon asiditesi oluşturur. Asit yükünde bu tamponlama baskılanmaz; aksine net asit atılımına katkı sağlar. Bu seçenek, renal tamponların kompansasyonda azaldığını varsaydığı için olgunun yönüyle ters düşer."
-  },
-  "mechanismExplanation": "Baz kaybı metabolik asidoz oluşturur, böbrek glutamin metabolizmasını artırır, NH4+ idrarla atılır, yeni HCO3- kana eklenir ve pH düzeltilmeye çalışılır.",
-  "scientificComment": "Soru, asit-baz kompansasyonunu yalnız kan gazı tanısıyla değil böbreğin günler içinde geliştirdiği yeni bikarbonat üretimiyle ilişkilendirmeyi hedefler.",
-  "helpText": "Asidoz sorusunda böbreğin yönü nettir: H+ atılımı, NH4+ üretimi ve HCO3- kazanımı artar.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v215-new-004-dokunma-uyarani-sonrasi-agri-kaydi",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Dokunma uyaranı sonrası ağrı kaydı",
-  "difficulty": "Orta",
-  "difficultyTag": "Orta",
-  "clinicalFocus": "Ağrılı uyaran sırasında eş zamanlı dokunma/titreşim girdisinin spinal ağrı iletimi üzerindeki etkisini yorumlama.",
-  "learningTarget": "Aβ afferentleri, dorsal boynuz inhibitör ara nöronları ve ağrı geçiş kontrolü arasındaki mekanizma ilişkisini açıklayabilme.",
-  "demographics": "21 yaşında sağlıklı kadın gönüllü",
-  "setting": "Nörofizyoloji laboratuvarı",
-  "chiefComplaint": "Gönüllü, kısa süreli yüzeyel ağrı uyaranı sırasında eş zamanlı dokunma ve titreşim uygulamasının etkisi açısından değerlendiriliyor.",
-  "stem": "Gönüllü laboratuvar uygulamasında ön kol derisine düşük şiddette, güvenli aralıkta elektriksel uyarı verileceğini öğrenir. İlk uygulamada iğnelenme tarzında kısa süreli ağrı hissettiğini söyler. İkinci uygulamada aynı bölgenin hemen yanına titreşimli dokunma uyaranı eklenir ve ağrının daha katlanılabilir hale geldiğini belirtir. Test sonrasında kalıcı uyuşma, güçsüzlük veya yanma olmadığını ifade eder. Daha önce nöropati, kronik ağrı veya düzenli analjezik kullanımı olmadığını söyler.",
-  "patientIntro": {
-    "profile": "21 yaşında sağlıklı kadın gönüllü, nörofizyoloji laboratuvarı bağlamında değerlendiriliyor.",
-    "presentation": "Aynı ağrılı uyaran sırasında zararsız mekanik uyaran eklendiğinde ağrı skorunda azalma kaydediliyor.",
-    "historySummary": "Gönüllü laboratuvar uygulamasında ön kol derisine düşük şiddette, güvenli aralıkta elektriksel uyarı verileceğini öğrenir. İlk uygulamada iğnelenme tarzında kısa süreli ağrı hissettiğini söyler. İkinci uygulamada aynı bölgenin hemen yanına titreşimli dokunma uyaranı eklenir ve ağrının daha katlanılabilir hale geldiğini belirtir. Test sonrasında kalıcı uyuşma, güçsüzlük veya yanma olmadığını ifade eder. Daha önce nöropati, kronik ağrı veya düzenli analjezik kullanımı olmadığını söyler."
-  },
-  "vitals": {
-    "TA": "110/68 mmHg",
-    "Nabız": "74/dk",
-    "Solunum": "15/dk",
-    "SpO2": "%99, oda havasında",
-    "Ateş": "36.5 °C",
-    "Şok indeksi": "0.67 normal"
-  },
-  "exam": [
-    "Gönüllü uyanık, koopere ve ağrı skorlamasını anlayarak yanıtlamaktadır.",
-    "Ön kol derisinde kızarıklık, kabarıklık veya duyu kaybı izlenmez.",
-    "Hafif dokunma ve vibrasyon algısı iki tarafta simetriktir.",
-    "El bileği ve parmak hareketleri tamdır; motor defisit saptanmaz."
-  ],
-  "investigations": [
-    {
-      "id": "v215-new-004-dokunma-uyarani-sonrasi-agri-kaydi-agri-skoru-kaydi",
-      "label": "Ağrı skoru kaydı",
-      "title": "Ağrı skoru kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Duyusal fizyoloji testi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Aynı ağrılı uyaran sırasında komşu dokunma/titreşim uyaranı eklendiğinde bildirilen ağrı skoru düşmüştür.",
-      "clinicalMeaning": "Aynı ağrılı uyaran sırasında komşu dokunma/titreşim uyaranı eklendiğinde bildirilen ağrı skoru düşmüştür.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "Ağrı skoru kaydı",
-        "summary": "Aynı ağrılı uyaran sırasında komşu dokunma/titreşim uyaranı eklendiğinde bildirilen ağrı skoru düşmüştür.",
-        "interpretation": "Aynı ağrılı uyaran sırasında komşu dokunma/titreşim uyaranı eklendiğinde bildirilen ağrı skoru düşmüştür.",
-        "values": [
-          [
-            "Yalnız ağrılı uyaran",
-            "7/10",
-            "0-10 sayısal skor",
-            "Yüksek"
-          ],
-          [
-            "Ağrılı uyaran + titreşim",
-            "3/10",
-            "0-10 sayısal skor",
-            "Azaldı"
-          ],
-          [
-            "Uyaran şiddeti",
-            "Aynı",
-            "Protokol sabit",
-            "Değişmedi"
-          ],
-          [
-            "Test sonrası ağrı",
-            "0/10",
-            "0-10 sayısal skor",
-            "Kalmadı"
-          ]
-        ],
-        "rows": [
-          [
-            "Yalnız ağrılı uyaran",
-            "7/10",
-            "0-10 sayısal skor",
-            "Yüksek"
-          ],
-          [
-            "Ağrılı uyaran + titreşim",
-            "3/10",
-            "0-10 sayısal skor",
-            "Azaldı"
-          ],
-          [
-            "Uyaran şiddeti",
-            "Aynı",
-            "Protokol sabit",
-            "Değişmedi"
-          ],
-          [
-            "Test sonrası ağrı",
-            "0/10",
-            "0-10 sayısal skor",
-            "Kalmadı"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Yalnız ağrılı uyaran",
-          "7/10",
-          "0-10 sayısal skor",
-          "Yüksek"
-        ],
-        [
-          "Ağrılı uyaran + titreşim",
-          "3/10",
-          "0-10 sayısal skor",
-          "Azaldı"
-        ],
-        [
-          "Uyaran şiddeti",
-          "Aynı",
-          "Protokol sabit",
-          "Değişmedi"
-        ],
-        [
-          "Test sonrası ağrı",
-          "0/10",
-          "0-10 sayısal skor",
-          "Kalmadı"
-        ]
-      ],
-      "postAnswerExplanation": "Aynı ağrılı uyaran sırasında komşu dokunma/titreşim uyaranı eklendiğinde bildirilen ağrı skoru düşmüştür.",
-      "interpretation": "Aynı ağrılı uyaran sırasında komşu dokunma/titreşim uyaranı eklendiğinde bildirilen ağrı skoru düşmüştür.",
-      "inlineFeedback": "Aynı ağrılı uyaran sırasında komşu dokunma/titreşim uyaranı eklendiğinde bildirilen ağrı skoru düşmüştür.",
-      "explanationAfterAnswer": "Aynı ağrılı uyaran sırasında komşu dokunma/titreşim uyaranı eklendiğinde bildirilen ağrı skoru düşmüştür."
-    },
-    {
-      "id": "v215-new-004-dokunma-uyarani-sonrasi-agri-kaydi-duyu-modalitesi-kaydi",
-      "label": "Duyu modalitesi kaydı",
-      "title": "Duyu modalitesi kaydı",
-      "type": "clinical",
-      "priority": "essential",
-      "subtype": "Somatosensoriyel muayene",
-      "category": "clinicalAssessment",
-      "testTypeCategory": "clinicalAssessment",
-      "summary": "Hafif dokunma ve vibrasyon algısı korunmuş; motor veya kalıcı duyu kaybı saptanmamıştır.",
-      "clinicalMeaning": "Hafif dokunma ve vibrasyon algısı korunmuş; motor veya kalıcı duyu kaybı saptanmamıştır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 4,
-      "scoreValue": 4,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "Duyu modalitesi kaydı",
-        "summary": "Hafif dokunma ve vibrasyon algısı korunmuş; motor veya kalıcı duyu kaybı saptanmamıştır.",
-        "interpretation": "Hafif dokunma ve vibrasyon algısı korunmuş; motor veya kalıcı duyu kaybı saptanmamıştır.",
-        "values": [
-          [
-            "Hafif dokunma",
-            "İki tarafta simetrik",
-            "Simetrik",
-            "Korunmuş"
-          ],
-          [
-            "Vibrasyon",
-            "İki tarafta simetrik",
-            "Simetrik",
-            "Korunmuş"
-          ],
-          [
-            "Motor muayene",
-            "El bileği/parmak hareketleri tam",
-            "Tam",
-            "Normal"
-          ],
-          [
-            "Kalıcı parestezi",
-            "Yok",
-            "Yok",
-            "Saptanmadı"
-          ]
-        ],
-        "rows": [
-          [
-            "Hafif dokunma",
-            "İki tarafta simetrik",
-            "Simetrik",
-            "Korunmuş"
-          ],
-          [
-            "Vibrasyon",
-            "İki tarafta simetrik",
-            "Simetrik",
-            "Korunmuş"
-          ],
-          [
-            "Motor muayene",
-            "El bileği/parmak hareketleri tam",
-            "Tam",
-            "Normal"
-          ],
-          [
-            "Kalıcı parestezi",
-            "Yok",
-            "Yok",
-            "Saptanmadı"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Hafif dokunma",
-          "İki tarafta simetrik",
-          "Simetrik",
-          "Korunmuş"
-        ],
-        [
-          "Vibrasyon",
-          "İki tarafta simetrik",
-          "Simetrik",
-          "Korunmuş"
-        ],
-        [
-          "Motor muayene",
-          "El bileği/parmak hareketleri tam",
-          "Tam",
-          "Normal"
-        ],
-        [
-          "Kalıcı parestezi",
-          "Yok",
-          "Yok",
-          "Saptanmadı"
-        ]
-      ],
-      "postAnswerExplanation": "Hafif dokunma ve vibrasyon algısı korunmuş; motor veya kalıcı duyu kaybı saptanmamıştır.",
-      "interpretation": "Hafif dokunma ve vibrasyon algısı korunmuş; motor veya kalıcı duyu kaybı saptanmamıştır.",
-      "inlineFeedback": "Hafif dokunma ve vibrasyon algısı korunmuş; motor veya kalıcı duyu kaybı saptanmamıştır.",
-      "explanationAfterAnswer": "Hafif dokunma ve vibrasyon algısı korunmuş; motor veya kalıcı duyu kaybı saptanmamıştır."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Ağrılı uyaran sırasında dokunma/titreşim uygulamasıyla ağrı algısının azalmasını en iyi açıklayan mekanizma hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "gate_control_abeta_dorsal_horn_inhibition",
-  "diagnosis": {
-    "correct": "Kalın Aβ afferentlerinin dorsal boynuz inhibitör ara nöronlarını artırması",
-    "options": [
-      "Kalın Aβ afferentlerinin dorsal boynuz inhibitör ara nöronlarını artırması",
-      "C liflerinde iletim hızının yeni miyelin oluşumuyla yükselmesi",
-      "Arka kolon liflerinin talamusa uğramadan kortekse doğrudan çıkması",
-      "Kas iğciği Ia afferentlerinin alfa motor nöronları uyarması",
-      "Sempatik postganglionik liflerin nociceptör eşiğini kalıcı düşürmesi"
-    ],
-    "question": "Ağrılı uyaran sırasında dokunma/titreşim uygulamasıyla ağrı algısının azalmasını en iyi açıklayan mekanizma hangisidir?",
-    "explanation": "Dokunma ve titreşim, kalın miyelinli Aβ afferentleriyle omuriliğe taşınır. Bu afferentler dorsal boynuzdaki inhibitör ara nöronları etkinleştirerek ağrı iletim nöronlarının aktivitesini azaltabilir. Aynı ağrılı uyaranın şiddeti değişmeden ağrı skorunun düşmesi, periferik hasarın azalmasından çok spinal düzeyde duyusal modülasyonu gösterir.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "Ağrılı bölgeyi ovmanın fizyolojik temeli periferik hasarı düzeltmek değil, Aβ girdisiyle dorsal boynuzda ağrı iletiminin baskılanmasıdır."
-      }
-    ],
-    "optionComparison": {
-      "Kalın Aβ afferentlerinin dorsal boynuz inhibitör ara nöronlarını artırması": "Doğru seçenek budur. Dokunma ve titreşim gibi zararsız mekanik uyaranlar kalın miyelinli Aβ lifleriyle taşınır; bu lifler dorsal boynuzdaki inhibitör ara nöronları etkinleştirerek ağrı iletim nöronlarının çıkışını azaltabilir. Ağrılı uyaran aynı kalırken titreşim eklendiğinde ağrı skorunun düşmesi bu spinal modülasyon mantığıyla uyumludur.",
-      "C liflerinde iletim hızının yeni miyelin oluşumuyla yükselmesi": "C lifleri yavaş, miyelinsiz veya çok az miyelinli ağrı lifleridir; birkaç dakikalık testte yeni miyelin oluşumu beklenmez. İletim hızının artması ağrıyı azaltmak yerine sinyal iletimini kolaylaştırabilir. Olguda temel değişiklik C lifinin yapısı değil, eş zamanlı dokunma girdisinin spinal düzeyde ağrı aktarımını baskılamasıdır.",
-      "Arka kolon liflerinin talamusa uğramadan kortekse doğrudan çıkması": "Arka kolon-medial lemniskus yolu ince dokunma, vibrasyon ve propriosepsiyon bilgisini taşır; ancak talamusa uğramadan kortekse doğrudan çıkmaz. Ayrıca bu yolun varlığı tek başına ağrı skorunun azalmasını açıklamaz. Ağrı azalması için dorsal boynuzdaki modülasyon basamağı kritik noktadır.",
-      "Kas iğciği Ia afferentlerinin alfa motor nöronları uyarması": "Kas iğciği Ia afferentleri gerilme refleksi ve kas tonusu düzenlenmesinde önemlidir. Bu mekanizma patellar refleks veya kas gerimi sorularında düşünülür; yüzeyel deri uyarısıyla ağrı skorunun azalmasını açıklamaz. Burada motor refleks değil duyusal ağrı modülasyonu sorgulanmaktadır.",
-      "Sempatik postganglionik liflerin nociceptör eşiğini kalıcı düşürmesi": "Sempatik lifler bazı kronik ağrı durumlarında duyarlılığı etkileyebilir; ancak kısa süreli dokunma/titreşim uygulamasıyla ağrının azalması kalıcı nociceptör eşiği düşmesiyle açıklanmaz. Üstelik eşik düşmesi ağrıyı azaltma değil artırma yönünde olur. Bu nedenle olgunun yönüyle ters düşer."
-    },
-    "answerFeedback": {
-      "Kalın Aβ afferentlerinin dorsal boynuz inhibitör ara nöronlarını artırması": "Doğru seçenek budur. Dokunma ve titreşim gibi zararsız mekanik uyaranlar kalın miyelinli Aβ lifleriyle taşınır; bu lifler dorsal boynuzdaki inhibitör ara nöronları etkinleştirerek ağrı iletim nöronlarının çıkışını azaltabilir. Ağrılı uyaran aynı kalırken titreşim eklendiğinde ağrı skorunun düşmesi bu spinal modülasyon mantığıyla uyumludur.",
-      "C liflerinde iletim hızının yeni miyelin oluşumuyla yükselmesi": "C lifleri yavaş, miyelinsiz veya çok az miyelinli ağrı lifleridir; birkaç dakikalık testte yeni miyelin oluşumu beklenmez. İletim hızının artması ağrıyı azaltmak yerine sinyal iletimini kolaylaştırabilir. Olguda temel değişiklik C lifinin yapısı değil, eş zamanlı dokunma girdisinin spinal düzeyde ağrı aktarımını baskılamasıdır.",
-      "Arka kolon liflerinin talamusa uğramadan kortekse doğrudan çıkması": "Arka kolon-medial lemniskus yolu ince dokunma, vibrasyon ve propriosepsiyon bilgisini taşır; ancak talamusa uğramadan kortekse doğrudan çıkmaz. Ayrıca bu yolun varlığı tek başına ağrı skorunun azalmasını açıklamaz. Ağrı azalması için dorsal boynuzdaki modülasyon basamağı kritik noktadır.",
-      "Kas iğciği Ia afferentlerinin alfa motor nöronları uyarması": "Kas iğciği Ia afferentleri gerilme refleksi ve kas tonusu düzenlenmesinde önemlidir. Bu mekanizma patellar refleks veya kas gerimi sorularında düşünülür; yüzeyel deri uyarısıyla ağrı skorunun azalmasını açıklamaz. Burada motor refleks değil duyusal ağrı modülasyonu sorgulanmaktadır.",
-      "Sempatik postganglionik liflerin nociceptör eşiğini kalıcı düşürmesi": "Sempatik lifler bazı kronik ağrı durumlarında duyarlılığı etkileyebilir; ancak kısa süreli dokunma/titreşim uygulamasıyla ağrının azalması kalıcı nociceptör eşiği düşmesiyle açıklanmaz. Üstelik eşik düşmesi ağrıyı azaltma değil artırma yönünde olur. Bu nedenle olgunun yönüyle ters düşer."
-    }
-  },
-  "coreKnowledge": "Dokunma ve titreşim, kalın miyelinli Aβ afferentleriyle omuriliğe taşınır. Bu afferentler dorsal boynuzdaki inhibitör ara nöronları etkinleştirerek ağrı iletim nöronlarının aktivitesini azaltabilir. Aynı ağrılı uyaranın şiddeti değişmeden ağrı skorunun düşmesi, periferik hasarın azalmasından çok spinal düzeyde duyusal modülasyonu gösterir.",
-  "examPearl": "Ağrılı bölgeyi ovmanın fizyolojik temeli periferik hasarı düzeltmek değil, Aβ girdisiyle dorsal boynuzda ağrı iletiminin baskılanmasıdır.",
-  "whyCorrect": "Doğru seçenek budur. Dokunma ve titreşim gibi zararsız mekanik uyaranlar kalın miyelinli Aβ lifleriyle taşınır; bu lifler dorsal boynuzdaki inhibitör ara nöronları etkinleştirerek ağrı iletim nöronlarının çıkışını azaltabilir. Ağrılı uyaran aynı kalırken titreşim eklendiğinde ağrı skorunun düşmesi bu spinal modülasyon mantığıyla uyumludur.",
-  "optionComparison": {
-    "Kalın Aβ afferentlerinin dorsal boynuz inhibitör ara nöronlarını artırması": "Doğru seçenek budur. Dokunma ve titreşim gibi zararsız mekanik uyaranlar kalın miyelinli Aβ lifleriyle taşınır; bu lifler dorsal boynuzdaki inhibitör ara nöronları etkinleştirerek ağrı iletim nöronlarının çıkışını azaltabilir. Ağrılı uyaran aynı kalırken titreşim eklendiğinde ağrı skorunun düşmesi bu spinal modülasyon mantığıyla uyumludur.",
-    "C liflerinde iletim hızının yeni miyelin oluşumuyla yükselmesi": "C lifleri yavaş, miyelinsiz veya çok az miyelinli ağrı lifleridir; birkaç dakikalık testte yeni miyelin oluşumu beklenmez. İletim hızının artması ağrıyı azaltmak yerine sinyal iletimini kolaylaştırabilir. Olguda temel değişiklik C lifinin yapısı değil, eş zamanlı dokunma girdisinin spinal düzeyde ağrı aktarımını baskılamasıdır.",
-    "Arka kolon liflerinin talamusa uğramadan kortekse doğrudan çıkması": "Arka kolon-medial lemniskus yolu ince dokunma, vibrasyon ve propriosepsiyon bilgisini taşır; ancak talamusa uğramadan kortekse doğrudan çıkmaz. Ayrıca bu yolun varlığı tek başına ağrı skorunun azalmasını açıklamaz. Ağrı azalması için dorsal boynuzdaki modülasyon basamağı kritik noktadır.",
-    "Kas iğciği Ia afferentlerinin alfa motor nöronları uyarması": "Kas iğciği Ia afferentleri gerilme refleksi ve kas tonusu düzenlenmesinde önemlidir. Bu mekanizma patellar refleks veya kas gerimi sorularında düşünülür; yüzeyel deri uyarısıyla ağrı skorunun azalmasını açıklamaz. Burada motor refleks değil duyusal ağrı modülasyonu sorgulanmaktadır.",
-    "Sempatik postganglionik liflerin nociceptör eşiğini kalıcı düşürmesi": "Sempatik lifler bazı kronik ağrı durumlarında duyarlılığı etkileyebilir; ancak kısa süreli dokunma/titreşim uygulamasıyla ağrının azalması kalıcı nociceptör eşiği düşmesiyle açıklanmaz. Üstelik eşik düşmesi ağrıyı azaltma değil artırma yönünde olur. Bu nedenle olgunun yönüyle ters düşer."
-  },
-  "evidenceChain": [
-    {
-      "title": "Sabit uyaran",
-      "text": "Ağrılı uyaran şiddeti değişmedi → ağrı azalması uyaranın zayıflamasından kaynaklanmaz",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Mekanik girdi",
-      "text": "Titreşim/dokunma eklendi → kalın mekanoreseptif afferent girdisi artmıştır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Skor değişimi",
-      "text": "Ağrı skoru 7/10 → 3/10 → eş zamanlı duyusal modülasyon vardır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Nörolojik bütünlük",
-      "text": "Motor kayıp ve kalıcı duyu kaybı yok → yapısal sinir hasarı açıklaması zayıftır",
-      "weight": "medium",
-      "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "C liflerinde iletim hızının yeni miyelin oluşumuyla yükselmesi": "C lifleri yavaş, miyelinsiz veya çok az miyelinli ağrı lifleridir; birkaç dakikalık testte yeni miyelin oluşumu beklenmez. İletim hızının artması ağrıyı azaltmak yerine sinyal iletimini kolaylaştırabilir. Olguda temel değişiklik C lifinin yapısı değil, eş zamanlı dokunma girdisinin spinal düzeyde ağrı aktarımını baskılamasıdır.",
-    "Arka kolon liflerinin talamusa uğramadan kortekse doğrudan çıkması": "Arka kolon-medial lemniskus yolu ince dokunma, vibrasyon ve propriosepsiyon bilgisini taşır; ancak talamusa uğramadan kortekse doğrudan çıkmaz. Ayrıca bu yolun varlığı tek başına ağrı skorunun azalmasını açıklamaz. Ağrı azalması için dorsal boynuzdaki modülasyon basamağı kritik noktadır.",
-    "Kas iğciği Ia afferentlerinin alfa motor nöronları uyarması": "Kas iğciği Ia afferentleri gerilme refleksi ve kas tonusu düzenlenmesinde önemlidir. Bu mekanizma patellar refleks veya kas gerimi sorularında düşünülür; yüzeyel deri uyarısıyla ağrı skorunun azalmasını açıklamaz. Burada motor refleks değil duyusal ağrı modülasyonu sorgulanmaktadır.",
-    "Sempatik postganglionik liflerin nociceptör eşiğini kalıcı düşürmesi": "Sempatik lifler bazı kronik ağrı durumlarında duyarlılığı etkileyebilir; ancak kısa süreli dokunma/titreşim uygulamasıyla ağrının azalması kalıcı nociceptör eşiği düşmesiyle açıklanmaz. Üstelik eşik düşmesi ağrıyı azaltma değil artırma yönünde olur. Bu nedenle olgunun yönüyle ters düşer."
-  },
-  "mechanismExplanation": "Zararsız mekanik uyaran Aβ afferentlerini aktive eder, dorsal boynuz inhibitör ara nöronları güçlenir, ağrı iletim nöronlarının çıkışı azalır ve ağrı algısı düşer.",
-  "scientificComment": "Soru, ağrı iletimini yalnız nosiseptör aktivitesiyle değil spinal devrelerdeki inhibitör modülasyonla birlikte yorumlatmayı hedefler.",
-  "helpText": "Ağrıyı ovmak/titreşimle azaltmak sorulursa Aβ lifi ve dorsal boynuz inhibitör ara nöron ilişkisini düşün.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v215-new-005-gece-verilen-tablet-sonrasi-hormon-kaydi",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Gece verilen tablet sonrası hormon kaydı",
-  "difficulty": "Orta-Zor",
-  "difficultyTag": "Orta-Zor",
-  "clinicalFocus": "Hipotalamus-hipofiz-adrenal aksın kısa süreli glukokortikoid geri bildirimiyle nasıl baskılandığını yorumlama.",
-  "learningTarget": "Eksojen glukokortikoid sinyalinin CRH, ACTH ve endojen kortizol üretimi üzerindeki negatif feedback etkisini açıklayabilme.",
-  "demographics": "27 yaşında sağlıklı kadın gönüllü",
-  "setting": "Endokrin fizyoloji laboratuvarı",
-  "chiefComplaint": "Gönüllü, gece verilen standart tablet sonrası sabah hormon ölçümleriyle değerlendiriliyor.",
-  "stem": "Gönüllü düzenli uyku saatine sahip olduğunu ve testten önceki hafta gece nöbeti tutmadığını belirtir. Protokol gereği saat 23.00'te tek doz sentetik glukokortikoid tableti alır ve ertesi sabah aç olarak laboratuvara gelir. Gece boyunca belirgin çarpıntı, kusma veya bayılma yaşamadığını söyler. Düzenli steroid, antiepileptik veya oral kontraseptif kullanmadığını ifade eder. Daha önce endokrin hastalık tanısı almadığını belirtir.",
-  "patientIntro": {
-    "profile": "27 yaşında sağlıklı kadın gönüllü, endokrin fizyoloji laboratuvarı bağlamında değerlendiriliyor.",
-    "presentation": "Gece verilen tablet sonrası sabah ACTH ve kortizol düzeylerinde düşüş kaydediliyor.",
-    "historySummary": "Gönüllü düzenli uyku saatine sahip olduğunu ve testten önceki hafta gece nöbeti tutmadığını belirtir. Protokol gereği saat 23.00'te tek doz sentetik glukokortikoid tableti alır ve ertesi sabah aç olarak laboratuvara gelir. Gece boyunca belirgin çarpıntı, kusma veya bayılma yaşamadığını söyler. Düzenli steroid, antiepileptik veya oral kontraseptif kullanmadığını ifade eder. Daha önce endokrin hastalık tanısı almadığını belirtir."
-  },
-  "vitals": {
-    "TA": "112/70 mmHg",
-    "Nabız": "76/dk",
-    "Solunum": "16/dk",
-    "SpO2": "%99, oda havasında",
-    "Ateş": "36.4 °C",
-    "Şok indeksi": "0.68 normal"
-  },
-  "exam": [
-    "Gönüllü uyanık, koopere ve genel durumu iyidir.",
-    "Cushingoid görünüm, belirgin hiperpigmentasyon veya ortostatik yakınma izlenmez.",
-    "Tiroid palpasyonunda belirgin büyüme saptanmaz; tremor yoktur.",
-    "Dehidratasyon veya akut enfeksiyon bulgusu izlenmez."
-  ],
-  "investigations": [
-    {
-      "id": "v215-new-005-gece-verilen-tablet-sonrasi-hormon-kaydi-sabah-hormon-olcumu",
-      "label": "Sabah hormon ölçümü",
-      "title": "Sabah hormon ölçümü",
-      "type": "laboratory",
-      "priority": "essential",
-      "subtype": "Endokrin aks değerlendirmesi",
-      "category": "laboratory",
-      "testTypeCategory": "laboratory",
-      "summary": "Tablet sonrası sabah ACTH ve kortizol düzeyleri bazal ölçüme göre belirgin düşmüştür.",
-      "clinicalMeaning": "Tablet sonrası sabah ACTH ve kortizol düzeyleri bazal ölçüme göre belirgin düşmüştür.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "Sabah hormon ölçümü",
-        "summary": "Tablet sonrası sabah ACTH ve kortizol düzeyleri bazal ölçüme göre belirgin düşmüştür.",
-        "interpretation": "Tablet sonrası sabah ACTH ve kortizol düzeyleri bazal ölçüme göre belirgin düşmüştür.",
-        "values": [
-          [
-            "Bazal sabah kortizol",
-            "15.6 µg/dL",
-            "5-25 µg/dL",
-            "Normal"
-          ],
-          [
-            "Tablet sonrası sabah kortizol",
-            "1.4 µg/dL",
-            "<1.8 µg/dL",
-            "Baskılanmış"
-          ],
-          [
-            "Bazal ACTH",
-            "34 pg/mL",
-            "10-60 pg/mL",
-            "Normal"
-          ],
-          [
-            "Tablet sonrası ACTH",
-            "6 pg/mL",
-            "10-60 pg/mL",
-            "Düşük"
-          ]
-        ],
-        "rows": [
-          [
-            "Bazal sabah kortizol",
-            "15.6 µg/dL",
-            "5-25 µg/dL",
-            "Normal"
-          ],
-          [
-            "Tablet sonrası sabah kortizol",
-            "1.4 µg/dL",
-            "<1.8 µg/dL",
-            "Baskılanmış"
-          ],
-          [
-            "Bazal ACTH",
-            "34 pg/mL",
-            "10-60 pg/mL",
-            "Normal"
-          ],
-          [
-            "Tablet sonrası ACTH",
-            "6 pg/mL",
-            "10-60 pg/mL",
-            "Düşük"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Bazal sabah kortizol",
-          "15.6 µg/dL",
-          "5-25 µg/dL",
-          "Normal"
-        ],
-        [
-          "Tablet sonrası sabah kortizol",
-          "1.4 µg/dL",
-          "<1.8 µg/dL",
-          "Baskılanmış"
-        ],
-        [
-          "Bazal ACTH",
-          "34 pg/mL",
-          "10-60 pg/mL",
-          "Normal"
-        ],
-        [
-          "Tablet sonrası ACTH",
-          "6 pg/mL",
-          "10-60 pg/mL",
-          "Düşük"
-        ]
-      ],
-      "postAnswerExplanation": "Tablet sonrası sabah ACTH ve kortizol düzeyleri bazal ölçüme göre belirgin düşmüştür.",
-      "interpretation": "Tablet sonrası sabah ACTH ve kortizol düzeyleri bazal ölçüme göre belirgin düşmüştür.",
-      "inlineFeedback": "Tablet sonrası sabah ACTH ve kortizol düzeyleri bazal ölçüme göre belirgin düşmüştür.",
-      "explanationAfterAnswer": "Tablet sonrası sabah ACTH ve kortizol düzeyleri bazal ölçüme göre belirgin düşmüştür."
-    },
-    {
-      "id": "v215-new-005-gece-verilen-tablet-sonrasi-hormon-kaydi-test-uygunluk-kaydi",
-      "label": "Test uygunluk kaydı",
-      "title": "Test uygunluk kaydı",
-      "type": "laboratory",
-      "priority": "essential",
-      "subtype": "Örnekleme ve ilaç düzeyi kontrolü",
-      "category": "laboratory",
-      "testTypeCategory": "laboratory",
-      "summary": "Örnek sabah saatinde alınmış ve verilen tabletin sistemik düzeyi ölçülebilir aralıktadır.",
-      "clinicalMeaning": "Örnek sabah saatinde alınmış ve verilen tabletin sistemik düzeyi ölçülebilir aralıktadır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 4,
-      "scoreValue": 4,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "Test uygunluk kaydı",
-        "summary": "Örnek sabah saatinde alınmış ve verilen tabletin sistemik düzeyi ölçülebilir aralıktadır.",
-        "interpretation": "Örnek sabah saatinde alınmış ve verilen tabletin sistemik düzeyi ölçülebilir aralıktadır.",
-        "values": [
-          [
-            "Örnek zamanı",
-            "08.00",
-            "Sabah örneklemi",
-            "Uygun"
-          ],
-          [
-            "Sentetik glukokortikoid düzeyi",
-            "Ölçülebilir aralıkta",
-            "Protokol aralığı",
-            "Uygun"
-          ],
-          [
-            "Açlık glukozu",
-            "88 mg/dL",
-            "70-100 mg/dL",
-            "Normal"
-          ],
-          [
-            "Serum sodyum",
-            "139 mmol/L",
+            "Serum Na⁺",
+            "136 mmol/L",
             "135-145 mmol/L",
             "Normal"
+          ],
+          [
+            "Serum K⁺",
+            "3.1 mmol/L",
+            "3.5-5.0 mmol/L",
+            "Düşük"
+          ],
+          [
+            "Serum osmolalitesi",
+            "292 mOsm/kg",
+            "275-295 mOsm/kg",
+            "Normal aralıkta"
+          ],
+          [
+            "İdrar osmolalitesi",
+            "178 mOsm/kg",
+            "300-900 mOsm/kg",
+            "Düşük"
+          ],
+          [
+            "24 saatlik idrar hacmi",
+            "3.4 L/gün",
+            "0.8-2.0 L/gün",
+            "Artmış"
           ]
         ],
         "rows": [
           [
-            "Örnek zamanı",
-            "08.00",
-            "Sabah örneklemi",
-            "Uygun"
-          ],
-          [
-            "Sentetik glukokortikoid düzeyi",
-            "Ölçülebilir aralıkta",
-            "Protokol aralığı",
-            "Uygun"
-          ],
-          [
-            "Açlık glukozu",
-            "88 mg/dL",
-            "70-100 mg/dL",
-            "Normal"
-          ],
-          [
-            "Serum sodyum",
-            "139 mmol/L",
+            "Serum Na⁺",
+            "136 mmol/L",
             "135-145 mmol/L",
             "Normal"
+          ],
+          [
+            "Serum K⁺",
+            "3.1 mmol/L",
+            "3.5-5.0 mmol/L",
+            "Düşük"
+          ],
+          [
+            "Serum osmolalitesi",
+            "292 mOsm/kg",
+            "275-295 mOsm/kg",
+            "Normal aralıkta"
+          ],
+          [
+            "İdrar osmolalitesi",
+            "178 mOsm/kg",
+            "300-900 mOsm/kg",
+            "Düşük"
+          ],
+          [
+            "24 saatlik idrar hacmi",
+            "3.4 L/gün",
+            "0.8-2.0 L/gün",
+            "Artmış"
           ]
         ]
       },
       "rows": [
         [
-          "Örnek zamanı",
-          "08.00",
-          "Sabah örneklemi",
-          "Uygun"
-        ],
-        [
-          "Sentetik glukokortikoid düzeyi",
-          "Ölçülebilir aralıkta",
-          "Protokol aralığı",
-          "Uygun"
-        ],
-        [
-          "Açlık glukozu",
-          "88 mg/dL",
-          "70-100 mg/dL",
-          "Normal"
-        ],
-        [
-          "Serum sodyum",
-          "139 mmol/L",
+          "Serum Na⁺",
+          "136 mmol/L",
           "135-145 mmol/L",
           "Normal"
+        ],
+        [
+          "Serum K⁺",
+          "3.1 mmol/L",
+          "3.5-5.0 mmol/L",
+          "Düşük"
+        ],
+        [
+          "Serum osmolalitesi",
+          "292 mOsm/kg",
+          "275-295 mOsm/kg",
+          "Normal aralıkta"
+        ],
+        [
+          "İdrar osmolalitesi",
+          "178 mOsm/kg",
+          "300-900 mOsm/kg",
+          "Düşük"
+        ],
+        [
+          "24 saatlik idrar hacmi",
+          "3.4 L/gün",
+          "0.8-2.0 L/gün",
+          "Artmış"
         ]
       ],
-      "postAnswerExplanation": "Örnek sabah saatinde alınmış ve verilen tabletin sistemik düzeyi ölçülebilir aralıktadır.",
-      "interpretation": "Örnek sabah saatinde alınmış ve verilen tabletin sistemik düzeyi ölçülebilir aralıktadır.",
-      "inlineFeedback": "Örnek sabah saatinde alınmış ve verilen tabletin sistemik düzeyi ölçülebilir aralıktadır.",
-      "explanationAfterAnswer": "Örnek sabah saatinde alınmış ve verilen tabletin sistemik düzeyi ölçülebilir aralıktadır."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu hormon paternini en iyi açıklayan fizyolojik düzenleme hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "glucocorticoid_negative_feedback_hpa_axis_suppression",
-  "diagnosis": {
-    "correct": "Glukokortikoid aracılı negatif feedback ile CRH/ACTH salınımının azalması",
-    "options": [
-      "TRH artışıyla TSH üzerinden tiroid hormon sentezinin uyarılması",
-      "GnRH puls sıklığı artışıyla LH baskın gonadal yanıt oluşması",
-      "PTH artışıyla renal kalsiyum geri emiliminin yükselmesi",
-      "Prolaktin artışıyla dopaminerjik tonusun azalması",
-      "Glukokortikoid aracılı negatif feedback ile CRH/ACTH salınımının azalması"
-    ],
-    "question": "Bu hormon paternini en iyi açıklayan fizyolojik düzenleme hangisidir?",
-    "explanation": "Hipotalamus-hipofiz-adrenal aks, glukokortikoidler tarafından negatif feedback ile düzenlenir. Gece alınan sentetik glukokortikoid hipotalamik CRH ve hipofizer ACTH salınımını azaltır; ACTH azalınca adrenal korteksten endojen kortizol üretimi düşer. Bu nedenle sabah ACTH ve kortizolün birlikte baskılanması HPA aksının sağlam geri bildirim yanıtıyla açıklanır.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "Kortizol/ACTH birlikte düşükse ve öncesinde glukokortikoid verilmişse eksen uyarılmıyor; negatif feedback ile hipotalamus-hipofiz çıkışı baskılanıyor demektir."
-      }
-    ],
-    "optionComparison": {
-      "TRH artışıyla TSH üzerinden tiroid hormon sentezinin uyarılması": "TRH-TSH-tiroid aksı metabolizma ve tiroid hormon üretimini düzenler. Olguda TSH veya tiroid hormonları değil, kortizol ve ACTH ölçülmüştür. Ayrıca verilen tablet sonrası sabah ACTH ve kortizolün düşmesi, tiroid aksının uyarılmasından çok başka bir endokrin aksın baskılanmasını gösterir.",
-      "GnRH puls sıklığı artışıyla LH baskın gonadal yanıt oluşması": "GnRH puls sıklığı LH/FSH oranını ve gonadal steroid yanıtını etkiler. Bu mekanizma puberte, ovulasyon veya hipogonadizm sorularında önemlidir; burada ölçülen patern gonadal hormonlarla ilgili değildir. ACTH ve kortizol azalması GnRH puls değişikliğiyle açıklanmaz.",
-      "PTH artışıyla renal kalsiyum geri emiliminin yükselmesi": "PTH kalsiyum-fosfat dengesinde böbrek, kemik ve D vitamini üzerinden etki gösterir. Verilerde kalsiyum, fosfat veya PTH değişimi yoktur. Kortizol ve ACTH'nin birlikte düşmesi, paratiroid yanıtından çok hipotalamus-hipofiz-adrenal aksın geri bildirim düzenini düşündürür.",
-      "Prolaktin artışıyla dopaminerjik tonusun azalması": "Prolaktin normalde dopamin tarafından tonik olarak baskılanır; prolaktin artışı laktasyon ve gonadal aks baskılanmasıyla ilişkilidir. Bu olguda prolaktin ölçümü veya galaktore gibi bir bağlam yoktur. ACTH-kortizol düşüşü dopaminerjik prolaktin kontrolünden farklı bir negatif feedback mekanizmasıyla açıklanır.",
-      "Glukokortikoid aracılı negatif feedback ile CRH/ACTH salınımının azalması": "Doğru seçenek budur. Gece verilen sentetik glukokortikoid hipotalamus ve hipofiz düzeyinde negatif feedback oluşturur; CRH ve ACTH salınımı azalır. ACTH azalınca adrenal korteksten sabah endojen kortizol üretimi düşer; ölçülen ACTH ve kortizol azalması bu eksen yanıtıyla uyumludur."
-    },
-    "answerFeedback": {
-      "TRH artışıyla TSH üzerinden tiroid hormon sentezinin uyarılması": "TRH-TSH-tiroid aksı metabolizma ve tiroid hormon üretimini düzenler. Olguda TSH veya tiroid hormonları değil, kortizol ve ACTH ölçülmüştür. Ayrıca verilen tablet sonrası sabah ACTH ve kortizolün düşmesi, tiroid aksının uyarılmasından çok başka bir endokrin aksın baskılanmasını gösterir.",
-      "GnRH puls sıklığı artışıyla LH baskın gonadal yanıt oluşması": "GnRH puls sıklığı LH/FSH oranını ve gonadal steroid yanıtını etkiler. Bu mekanizma puberte, ovulasyon veya hipogonadizm sorularında önemlidir; burada ölçülen patern gonadal hormonlarla ilgili değildir. ACTH ve kortizol azalması GnRH puls değişikliğiyle açıklanmaz.",
-      "PTH artışıyla renal kalsiyum geri emiliminin yükselmesi": "PTH kalsiyum-fosfat dengesinde böbrek, kemik ve D vitamini üzerinden etki gösterir. Verilerde kalsiyum, fosfat veya PTH değişimi yoktur. Kortizol ve ACTH'nin birlikte düşmesi, paratiroid yanıtından çok hipotalamus-hipofiz-adrenal aksın geri bildirim düzenini düşündürür.",
-      "Prolaktin artışıyla dopaminerjik tonusun azalması": "Prolaktin normalde dopamin tarafından tonik olarak baskılanır; prolaktin artışı laktasyon ve gonadal aks baskılanmasıyla ilişkilidir. Bu olguda prolaktin ölçümü veya galaktore gibi bir bağlam yoktur. ACTH-kortizol düşüşü dopaminerjik prolaktin kontrolünden farklı bir negatif feedback mekanizmasıyla açıklanır.",
-      "Glukokortikoid aracılı negatif feedback ile CRH/ACTH salınımının azalması": "Doğru seçenek budur. Gece verilen sentetik glukokortikoid hipotalamus ve hipofiz düzeyinde negatif feedback oluşturur; CRH ve ACTH salınımı azalır. ACTH azalınca adrenal korteksten sabah endojen kortizol üretimi düşer; ölçülen ACTH ve kortizol azalması bu eksen yanıtıyla uyumludur."
-    }
-  },
-  "coreKnowledge": "Hipotalamus-hipofiz-adrenal aks, glukokortikoidler tarafından negatif feedback ile düzenlenir. Gece alınan sentetik glukokortikoid hipotalamik CRH ve hipofizer ACTH salınımını azaltır; ACTH azalınca adrenal korteksten endojen kortizol üretimi düşer. Bu nedenle sabah ACTH ve kortizolün birlikte baskılanması HPA aksının sağlam geri bildirim yanıtıyla açıklanır.",
-  "examPearl": "Kortizol/ACTH birlikte düşükse ve öncesinde glukokortikoid verilmişse eksen uyarılmıyor; negatif feedback ile hipotalamus-hipofiz çıkışı baskılanıyor demektir.",
-  "whyCorrect": "Doğru seçenek budur. Gece verilen sentetik glukokortikoid hipotalamus ve hipofiz düzeyinde negatif feedback oluşturur; CRH ve ACTH salınımı azalır. ACTH azalınca adrenal korteksten sabah endojen kortizol üretimi düşer; ölçülen ACTH ve kortizol azalması bu eksen yanıtıyla uyumludur.",
-  "optionComparison": {
-    "TRH artışıyla TSH üzerinden tiroid hormon sentezinin uyarılması": "TRH-TSH-tiroid aksı metabolizma ve tiroid hormon üretimini düzenler. Olguda TSH veya tiroid hormonları değil, kortizol ve ACTH ölçülmüştür. Ayrıca verilen tablet sonrası sabah ACTH ve kortizolün düşmesi, tiroid aksının uyarılmasından çok başka bir endokrin aksın baskılanmasını gösterir.",
-    "GnRH puls sıklığı artışıyla LH baskın gonadal yanıt oluşması": "GnRH puls sıklığı LH/FSH oranını ve gonadal steroid yanıtını etkiler. Bu mekanizma puberte, ovulasyon veya hipogonadizm sorularında önemlidir; burada ölçülen patern gonadal hormonlarla ilgili değildir. ACTH ve kortizol azalması GnRH puls değişikliğiyle açıklanmaz.",
-    "PTH artışıyla renal kalsiyum geri emiliminin yükselmesi": "PTH kalsiyum-fosfat dengesinde böbrek, kemik ve D vitamini üzerinden etki gösterir. Verilerde kalsiyum, fosfat veya PTH değişimi yoktur. Kortizol ve ACTH'nin birlikte düşmesi, paratiroid yanıtından çok hipotalamus-hipofiz-adrenal aksın geri bildirim düzenini düşündürür.",
-    "Prolaktin artışıyla dopaminerjik tonusun azalması": "Prolaktin normalde dopamin tarafından tonik olarak baskılanır; prolaktin artışı laktasyon ve gonadal aks baskılanmasıyla ilişkilidir. Bu olguda prolaktin ölçümü veya galaktore gibi bir bağlam yoktur. ACTH-kortizol düşüşü dopaminerjik prolaktin kontrolünden farklı bir negatif feedback mekanizmasıyla açıklanır.",
-    "Glukokortikoid aracılı negatif feedback ile CRH/ACTH salınımının azalması": "Doğru seçenek budur. Gece verilen sentetik glukokortikoid hipotalamus ve hipofiz düzeyinde negatif feedback oluşturur; CRH ve ACTH salınımı azalır. ACTH azalınca adrenal korteksten sabah endojen kortizol üretimi düşer; ölçülen ACTH ve kortizol azalması bu eksen yanıtıyla uyumludur."
-  },
-  "evidenceChain": [
-    {
-      "title": "Uyaran",
-      "text": "Gece tek doz sentetik glukokortikoid alınması → aks üzerinde dış glukokortikoid sinyali oluşmuştur",
-      "weight": "high",
-      "source": "case"
+      "postAnswerExplanation": "Serum osmolalitesi normal aralıktayken idrar hacmi artmış ve idrar osmolalitesi düşük ölçülmüştür.",
+      "interpretation": "Serum osmolalitesi normal aralıktayken idrar hacmi artmış ve idrar osmolalitesi düşük ölçülmüştür.",
+      "explanationAfterAnswer": "Serum osmolalitesi normal aralıktayken idrar hacmi artmış ve idrar osmolalitesi düşük ölçülmüştür.",
+      "inlineFeedback": "Serum osmolalitesi normal aralıktayken idrar hacmi artmış ve idrar osmolalitesi düşük ölçülmüştür."
     },
     {
-      "title": "Hipofiz yanıtı",
-      "text": "ACTH 34 → 6 pg/mL → hipofizer çıkış baskılanmıştır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Adrenal sonuç",
-      "text": "Kortizol 15.6 → 1.4 µg/dL → ACTH azalmasına eşlik eden endojen üretim düşüşü vardır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Örnek güvenilirliği",
-      "text": "Örnek sabah saatinde alınmış ve tablet düzeyi ölçülebilir → patern test koşuluyla uyumludur",
-      "weight": "medium",
-      "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "TRH artışıyla TSH üzerinden tiroid hormon sentezinin uyarılması": "TRH-TSH-tiroid aksı metabolizma ve tiroid hormon üretimini düzenler. Olguda TSH veya tiroid hormonları değil, kortizol ve ACTH ölçülmüştür. Ayrıca verilen tablet sonrası sabah ACTH ve kortizolün düşmesi, tiroid aksının uyarılmasından çok başka bir endokrin aksın baskılanmasını gösterir.",
-    "GnRH puls sıklığı artışıyla LH baskın gonadal yanıt oluşması": "GnRH puls sıklığı LH/FSH oranını ve gonadal steroid yanıtını etkiler. Bu mekanizma puberte, ovulasyon veya hipogonadizm sorularında önemlidir; burada ölçülen patern gonadal hormonlarla ilgili değildir. ACTH ve kortizol azalması GnRH puls değişikliğiyle açıklanmaz.",
-    "PTH artışıyla renal kalsiyum geri emiliminin yükselmesi": "PTH kalsiyum-fosfat dengesinde böbrek, kemik ve D vitamini üzerinden etki gösterir. Verilerde kalsiyum, fosfat veya PTH değişimi yoktur. Kortizol ve ACTH'nin birlikte düşmesi, paratiroid yanıtından çok hipotalamus-hipofiz-adrenal aksın geri bildirim düzenini düşündürür.",
-    "Prolaktin artışıyla dopaminerjik tonusun azalması": "Prolaktin normalde dopamin tarafından tonik olarak baskılanır; prolaktin artışı laktasyon ve gonadal aks baskılanmasıyla ilişkilidir. Bu olguda prolaktin ölçümü veya galaktore gibi bir bağlam yoktur. ACTH-kortizol düşüşü dopaminerjik prolaktin kontrolünden farklı bir negatif feedback mekanizmasıyla açıklanır."
-  },
-  "mechanismExplanation": "Sentetik glukokortikoid sinyali artar, CRH/ACTH salınımı negatif feedback ile azalır, adrenal korteks daha az uyarılır ve sabah endojen kortizol düzeyi düşer.",
-  "scientificComment": "Soru, endokrin akslarda hedef hormonun yalnız periferik etkisini değil hipotalamus ve hipofiz üzerindeki geri bildirim yönünü yorumlatmayı hedefler.",
-  "helpText": "Endokrin feedback sorularında önce verilen/artan hormonun aksın üst basamaklarını baskılayıp baskılamadığını belirle.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v216-new-001-erken-dogum-sonrasi-solunum-cabasi",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Erken doğum sonrası solunum çabası",
-  "difficulty": "Orta-Zor",
-  "difficultyTag": "Orta-Zor",
-  "clinicalFocus": "Erken doğan yenidoğanda artmış solunum işi, düşük akciğer kompliyansı ve hipoksemiyi alveoler yüzey kuvvetleri açısından yorumlama.",
-  "learningTarget": "Alveol yüzey gerilimi, Laplace ilişkisi, akciğer kompliyansı ve küçük hava boşluklarının açık kalması arasındaki fizyolojik bağlantıyı açıklayabilme.",
-  "demographics": "31 haftalık erkek yenidoğan",
-  "setting": "Yenidoğan izlem alanı",
-  "chiefComplaint": "Bebek, doğumdan kısa süre sonra artan solunum eforu ve oksijen gereksinimi nedeniyle değerlendiriliyor.",
-  "stem": "Bebek acil sezaryenle doğduktan sonra ilk dakikalarda ağladı, ancak kısa süre içinde solunumu hızlandı ve göğüs duvarında çekilmeler belirginleşti. Anne gebeliğinin son haftalarında düzenli kontrole gidemediğini, doğumdan önce ateş veya kötü kokulu akıntı olmadığını ifade eder. Bebek beslenmeye başlatılmadan önce hemşireler huzursuzluk ve burun kanadı solunumu fark eder. Oksijen desteği verildiğinde rengi kısmen düzelir, fakat solunum çabası devam eder.",
-  "patientIntro": {
-    "profile": "31 haftalık erkek yenidoğan, doğum sonrası erken dönemde solunum eforu nedeniyle izleniyor.",
-    "presentation": "Takipne, çekilme ve oda havasında düşük oksijen satürasyonu vardır.",
-    "historySummary": "Bebek acil sezaryenle doğduktan sonra ilk dakikalarda ağladı, ancak kısa süre içinde solunumu hızlandı ve göğüs duvarında çekilmeler belirginleşti. Anne gebeliğinin son haftalarında düzenli kontrole gidemediğini, doğumdan önce ateş veya kötü kokulu akıntı olmadığını ifade eder. Bebek beslenmeye başlatılmadan önce hemşireler huzursuzluk ve burun kanadı solunumu fark eder. Oksijen desteği verildiğinde rengi kısmen düzelir, fakat solunum çabası devam eder."
-  },
-  "vitals": {
-    "TA": "58/34 mmHg",
-    "Nabız": "162/dk",
-    "Solunum": "72/dk",
-    "SpO2": "%88, oda havasında; %93 düşük akımlı oksijenle",
-    "Ateş": "36.5 °C",
-    "Şok indeksi": "2.79 - yenidoğan bağlamında yakın izlem gerektirir"
-  },
-  "exam": [
-    "Bebek huzursuz, burun kanadı solunumu ve interkostal çekilmeleri belirgindir.",
-    "Akciğer sesleri iki tarafta yaygın olarak azalmış duyulur; fokal hışıltı veya belirgin asimetri yoktur.",
-    "Kalp sesleri ritmik, üfürüm belirgin değildir; periferik nabızlar alınabilir.",
-    "Karın yumuşaktır; yaygın ödem veya belirgin sıvı yüklenmesi bulgusu izlenmez."
-  ],
-  "investigations": [
-    {
-      "id": "v216-new-001-erken-dogum-sonrasi-solunum-cabasi-kan-gazi-ve-oksijenasyon-kaydi",
-      "label": "Kan gazı ve oksijenasyon kaydı",
-      "title": "Kan gazı ve oksijenasyon kaydı",
+      "id": "v214-new-001-idrar-yogunlugunda-beklenmeyen-degisim-glukoz-bobrek-fonksiyon-kaydi",
+      "label": "Glukoz ve böbrek fonksiyon kaydı",
+      "title": "Glukoz ve böbrek fonksiyon kaydı",
+      "orderLabel": "Glukoz ve böbrek fonksiyon kaydı",
       "type": "laboratory",
-      "priority": "essential",
-      "subtype": "Arteriyel kan gazı",
+      "priority": "supportive",
+      "subtype": "Temel metabolik değerlendirme",
       "category": "laboratory",
       "testTypeCategory": "laboratory",
-      "summary": "Kan gazında hipoksemiye hafif asidemi ve CO₂ birikimi eşlik etmektedir.",
-      "clinicalMeaning": "Kan gazında hipoksemiye hafif asidemi ve CO₂ birikimi eşlik etmektedir.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "Kan gazı ve oksijenasyon kaydı",
-        "summary": "Kan gazında hipoksemiye hafif asidemi ve CO₂ birikimi eşlik etmektedir.",
-        "interpretation": "Kan gazında hipoksemiye hafif asidemi ve CO₂ birikimi eşlik etmektedir.",
-        "values": [
-          [
-            "pH",
-            "7.29",
-            "7.35-7.45",
-            "Düşük"
-          ],
-          [
-            "PaCO₂",
-            "54 mmHg",
-            "35-45 mmHg",
-            "Yüksek"
-          ],
-          [
-            "PaO₂",
-            "55 mmHg",
-            "80-100 mmHg",
-            "Düşük"
-          ],
-          [
-            "HCO₃⁻",
-            "25 mmol/L",
-            "22-26 mmol/L",
-            "Normal aralıkta"
-          ]
-        ],
-        "rows": [
-          [
-            "pH",
-            "7.29",
-            "7.35-7.45",
-            "Düşük"
-          ],
-          [
-            "PaCO₂",
-            "54 mmHg",
-            "35-45 mmHg",
-            "Yüksek"
-          ],
-          [
-            "PaO₂",
-            "55 mmHg",
-            "80-100 mmHg",
-            "Düşük"
-          ],
-          [
-            "HCO₃⁻",
-            "25 mmol/L",
-            "22-26 mmol/L",
-            "Normal aralıkta"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "pH",
-          "7.29",
-          "7.35-7.45",
-          "Düşük"
-        ],
-        [
-          "PaCO₂",
-          "54 mmHg",
-          "35-45 mmHg",
-          "Yüksek"
-        ],
-        [
-          "PaO₂",
-          "55 mmHg",
-          "80-100 mmHg",
-          "Düşük"
-        ],
-        [
-          "HCO₃⁻",
-          "25 mmol/L",
-          "22-26 mmol/L",
-          "Normal aralıkta"
-        ]
-      ],
-      "postAnswerExplanation": "Kan gazında hipoksemiye hafif asidemi ve CO₂ birikimi eşlik etmektedir.",
-      "interpretation": "Kan gazında hipoksemiye hafif asidemi ve CO₂ birikimi eşlik etmektedir.",
-      "inlineFeedback": "Kan gazında hipoksemiye hafif asidemi ve CO₂ birikimi eşlik etmektedir.",
-      "explanationAfterAnswer": "Kan gazında hipoksemiye hafif asidemi ve CO₂ birikimi eşlik etmektedir."
-    },
-    {
-      "id": "v216-new-001-erken-dogum-sonrasi-solunum-cabasi-akciğer-hacmi-ve-kompliyans-kaydi",
-      "label": "Akciğer hacmi ve kompliyans kaydı",
-      "title": "Akciğer hacmi ve kompliyans kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Solunum mekaniği değerlendirmesi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Düşük hacimli akciğer görünümüne açılma için yüksek basınç gereksinimi eşlik etmektedir.",
-      "clinicalMeaning": "Düşük hacimli akciğer görünümüne açılma için yüksek basınç gereksinimi eşlik etmektedir.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "Akciğer hacmi ve kompliyans kaydı",
-        "summary": "Düşük hacimli akciğer görünümüne açılma için yüksek basınç gereksinimi eşlik etmektedir.",
-        "interpretation": "Düşük hacimli akciğer görünümüne açılma için yüksek basınç gereksinimi eşlik etmektedir.",
-        "values": [
-          [
-            "Dinamik kompliyans",
-            "0.55 mL/cmH₂O/kg",
-            "Yaşa göre daha yüksek beklenir",
-            "Düşük"
-          ],
-          [
-            "Başlangıç açılma basıncı",
-            "Yüksek basınç gereksinimi",
-            "Düşük basınçla açılma beklenir",
-            "Artmış"
-          ],
-          [
-            "Akciğer hacmi",
-            "Yaygın düşük hacim paterni",
-            "Doğum sonrası havalanma artışı beklenir",
-            "Düşük"
-          ],
-          [
-            "Fokal asimetri",
-            "Saptanmadı",
-            "Saptanmaması beklenir",
-            "Yok"
-          ]
-        ],
-        "rows": [
-          [
-            "Dinamik kompliyans",
-            "0.55 mL/cmH₂O/kg",
-            "Yaşa göre daha yüksek beklenir",
-            "Düşük"
-          ],
-          [
-            "Başlangıç açılma basıncı",
-            "Yüksek basınç gereksinimi",
-            "Düşük basınçla açılma beklenir",
-            "Artmış"
-          ],
-          [
-            "Akciğer hacmi",
-            "Yaygın düşük hacim paterni",
-            "Doğum sonrası havalanma artışı beklenir",
-            "Düşük"
-          ],
-          [
-            "Fokal asimetri",
-            "Saptanmadı",
-            "Saptanmaması beklenir",
-            "Yok"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Dinamik kompliyans",
-          "0.55 mL/cmH₂O/kg",
-          "Yaşa göre daha yüksek beklenir",
-          "Düşük"
-        ],
-        [
-          "Başlangıç açılma basıncı",
-          "Yüksek basınç gereksinimi",
-          "Düşük basınçla açılma beklenir",
-          "Artmış"
-        ],
-        [
-          "Akciğer hacmi",
-          "Yaygın düşük hacim paterni",
-          "Doğum sonrası havalanma artışı beklenir",
-          "Düşük"
-        ],
-        [
-          "Fokal asimetri",
-          "Saptanmadı",
-          "Saptanmaması beklenir",
-          "Yok"
-        ]
-      ],
-      "postAnswerExplanation": "Düşük hacimli akciğer görünümüne açılma için yüksek basınç gereksinimi eşlik etmektedir.",
-      "interpretation": "Düşük hacimli akciğer görünümüne açılma için yüksek basınç gereksinimi eşlik etmektedir.",
-      "inlineFeedback": "Düşük hacimli akciğer görünümüne açılma için yüksek basınç gereksinimi eşlik etmektedir.",
-      "explanationAfterAnswer": "Düşük hacimli akciğer görünümüne açılma için yüksek basınç gereksinimi eşlik etmektedir."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu bebekte artmış solunum işini ve düşük akciğer hacmini en iyi açıklayan alveoler fizyolojik mekanizma hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "alveolar_surface_tension_low_compliance",
-  "diagnosis": {
-    "correct": "Alveol yüzey geriliminin artmasıyla akciğer kompliyansının azalması",
-    "options": [
-      "Solunum merkezi CO₂ duyarlılığının azalmasıyla ventilatuvar sürücünün düşmesi",
-      "Alveol yüzey geriliminin artmasıyla akciğer kompliyansının azalması",
-      "Bronş düz kas tonusunun artmasıyla ekspiratuvar hava yolu direncinin yükselmesi",
-      "Pulmoner kapiller hidrostatik basıncın artmasıyla interstisyel sıvı birikmesi",
-      "Elastik recoil azalmasıyla rezidüel hacmin ve hava hapsinin artması"
-    ],
-    "question": "Bu bebekte artmış solunum işini ve düşük akciğer hacmini en iyi açıklayan alveoler fizyolojik mekanizma hangisidir?",
-    "explanation": "Bulgular doğum sonrası akciğerin açılması ve açık kalması için gereken basıncın arttığını gösterir. Küçük alveollerde yüzey gerilimi yeterince düşürülemediğinde Laplace ilişkisi nedeniyle kollaps eğilimi artar, akciğer kompliyansı azalır ve aynı tidal hacim için daha fazla solunum işi gerekir. Düşük hacim, yaygın solunum eforu ve hipoksemi bu mekanizmanın klinik yansımasıdır.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "Yenidoğanda düşük akciğer hacmi + düşük kompliyans + yüksek açılma basıncı varsa obstrüksiyondan önce alveoler yüzey gerilimi ve kompliyans ilişkisini düşün."
-      }
-    ],
-    "optionComparison": {
-      "Solunum merkezi CO₂ duyarlılığının azalmasıyla ventilatuvar sürücünün düşmesi": "Solunum merkezi duyarlılığının azalması hipoventilasyon ve CO₂ birikimi oluşturabilir; sedatif etkiler veya santral depresyon tablolarında akla gelir. Bu olguda sorun doğumdan hemen sonra belirgin solunum eforu, düşük akciğer hacmi ve düşük kompliyans paternidir. Takipne ve çekilmelerin varlığı ventilatuvar sürücünün baskılanmasından çok akciğerin açılma işinin arttığını düşündürür.",
-      "Alveol yüzey geriliminin artmasıyla akciğer kompliyansının azalması": "Doğru seçenek budur. Erken doğan bebekte alveollerin açık kalmasını kolaylaştıran yüzey gerilimi azaltıcı etki yetersiz kaldığında küçük hava boşluklarını genişletmek için daha yüksek basınç gerekir. Düşük dinamik kompliyans, yaygın düşük hacimli görüntü ve artmış solunum eforu bu mekanizma ile uyumludur.",
-      "Bronş düz kas tonusunun artmasıyla ekspiratuvar hava yolu direncinin yükselmesi": "Bronş düz kas tonusu artışı astım benzeri obstrüktif tabloda hışıltı, uzamış ekspiryum ve hava hapsiyle öne çıkar. Bu bebekte temel ölçüm düşük akciğer hacmi ve inspiratuvar açılma güçlüğüdür; ekspiratuvar direnç artışını destekleyen baskın bir patern yoktur. Çeldirici, solunum sıkıntısını her zaman bronkospazm gibi yorumlama hatasını sınar.",
-      "Pulmoner kapiller hidrostatik basıncın artmasıyla interstisyel sıvı birikmesi": "Pulmoner kapiller hidrostatik basınç artışı kardiyak dolum basıncı yükseldiğinde interstisyel/alveoler sıvı birikimi yapabilir. Olguda kalp yetmezliği, belirgin hepatomegali veya sıvı yüklenmesi verisi yoktur; problem erken dönemde düşük hacimli ve düşük kompliyanslı akciğer paternidir. Bu nedenle ana mekanizma kapiller basınç artışı değildir.",
-      "Elastik recoil azalmasıyla rezidüel hacmin ve hava hapsinin artması": "Elastik recoil azalması erişkin amfizematöz paternlerde hava hapsi ve rezidüel hacim artışıyla ilişkilidir. Burada ölçülen akciğer hacimleri düşük ve açılma basıncı yüksektir; bu, recoil azalmasıyla oluşan hiperinflasyondan farklıdır. Sınavda düşük kompliyans ile hava hapsi ayrımı özellikle önemlidir."
-    },
-    "answerFeedback": {
-      "Solunum merkezi CO₂ duyarlılığının azalmasıyla ventilatuvar sürücünün düşmesi": "Solunum merkezi duyarlılığının azalması hipoventilasyon ve CO₂ birikimi oluşturabilir; sedatif etkiler veya santral depresyon tablolarında akla gelir. Bu olguda sorun doğumdan hemen sonra belirgin solunum eforu, düşük akciğer hacmi ve düşük kompliyans paternidir. Takipne ve çekilmelerin varlığı ventilatuvar sürücünün baskılanmasından çok akciğerin açılma işinin arttığını düşündürür.",
-      "Alveol yüzey geriliminin artmasıyla akciğer kompliyansının azalması": "Doğru seçenek budur. Erken doğan bebekte alveollerin açık kalmasını kolaylaştıran yüzey gerilimi azaltıcı etki yetersiz kaldığında küçük hava boşluklarını genişletmek için daha yüksek basınç gerekir. Düşük dinamik kompliyans, yaygın düşük hacimli görüntü ve artmış solunum eforu bu mekanizma ile uyumludur.",
-      "Bronş düz kas tonusunun artmasıyla ekspiratuvar hava yolu direncinin yükselmesi": "Bronş düz kas tonusu artışı astım benzeri obstrüktif tabloda hışıltı, uzamış ekspiryum ve hava hapsiyle öne çıkar. Bu bebekte temel ölçüm düşük akciğer hacmi ve inspiratuvar açılma güçlüğüdür; ekspiratuvar direnç artışını destekleyen baskın bir patern yoktur. Çeldirici, solunum sıkıntısını her zaman bronkospazm gibi yorumlama hatasını sınar.",
-      "Pulmoner kapiller hidrostatik basıncın artmasıyla interstisyel sıvı birikmesi": "Pulmoner kapiller hidrostatik basınç artışı kardiyak dolum basıncı yükseldiğinde interstisyel/alveoler sıvı birikimi yapabilir. Olguda kalp yetmezliği, belirgin hepatomegali veya sıvı yüklenmesi verisi yoktur; problem erken dönemde düşük hacimli ve düşük kompliyanslı akciğer paternidir. Bu nedenle ana mekanizma kapiller basınç artışı değildir.",
-      "Elastik recoil azalmasıyla rezidüel hacmin ve hava hapsinin artması": "Elastik recoil azalması erişkin amfizematöz paternlerde hava hapsi ve rezidüel hacim artışıyla ilişkilidir. Burada ölçülen akciğer hacimleri düşük ve açılma basıncı yüksektir; bu, recoil azalmasıyla oluşan hiperinflasyondan farklıdır. Sınavda düşük kompliyans ile hava hapsi ayrımı özellikle önemlidir."
-    }
-  },
-  "coreKnowledge": "Alveoler yüzey gerilimi küçük hava boşluklarının kapanma eğilimini artırır. Yüzey gerilimi yeterince azaltılamadığında akciğer kompliyansı düşer, açılma basıncı artar ve hipoksemiye eşlik eden belirgin solunum eforu gelişir. Bu patern hava hapsi yapan obstrüktif mekanizmalardan farklıdır.",
-  "examPearl": "Düşük kompliyans solunumu sertleştirir; obstrüksiyon ise çoğunlukla direnç, uzamış ekspiryum ve hava hapsiyle düşündürür.",
-  "whyCorrect": "Doğru seçenek budur. Erken doğan bebekte alveollerin açık kalmasını kolaylaştıran yüzey gerilimi azaltıcı etki yetersiz kaldığında küçük hava boşluklarını genişletmek için daha yüksek basınç gerekir. Düşük dinamik kompliyans, yaygın düşük hacimli görüntü ve artmış solunum eforu bu mekanizma ile uyumludur.",
-  "optionComparison": {
-    "Solunum merkezi CO₂ duyarlılığının azalmasıyla ventilatuvar sürücünün düşmesi": "Solunum merkezi duyarlılığının azalması hipoventilasyon ve CO₂ birikimi oluşturabilir; sedatif etkiler veya santral depresyon tablolarında akla gelir. Bu olguda sorun doğumdan hemen sonra belirgin solunum eforu, düşük akciğer hacmi ve düşük kompliyans paternidir. Takipne ve çekilmelerin varlığı ventilatuvar sürücünün baskılanmasından çok akciğerin açılma işinin arttığını düşündürür.",
-    "Alveol yüzey geriliminin artmasıyla akciğer kompliyansının azalması": "Doğru seçenek budur. Erken doğan bebekte alveollerin açık kalmasını kolaylaştıran yüzey gerilimi azaltıcı etki yetersiz kaldığında küçük hava boşluklarını genişletmek için daha yüksek basınç gerekir. Düşük dinamik kompliyans, yaygın düşük hacimli görüntü ve artmış solunum eforu bu mekanizma ile uyumludur.",
-    "Bronş düz kas tonusunun artmasıyla ekspiratuvar hava yolu direncinin yükselmesi": "Bronş düz kas tonusu artışı astım benzeri obstrüktif tabloda hışıltı, uzamış ekspiryum ve hava hapsiyle öne çıkar. Bu bebekte temel ölçüm düşük akciğer hacmi ve inspiratuvar açılma güçlüğüdür; ekspiratuvar direnç artışını destekleyen baskın bir patern yoktur. Çeldirici, solunum sıkıntısını her zaman bronkospazm gibi yorumlama hatasını sınar.",
-    "Pulmoner kapiller hidrostatik basıncın artmasıyla interstisyel sıvı birikmesi": "Pulmoner kapiller hidrostatik basınç artışı kardiyak dolum basıncı yükseldiğinde interstisyel/alveoler sıvı birikimi yapabilir. Olguda kalp yetmezliği, belirgin hepatomegali veya sıvı yüklenmesi verisi yoktur; problem erken dönemde düşük hacimli ve düşük kompliyanslı akciğer paternidir. Bu nedenle ana mekanizma kapiller basınç artışı değildir.",
-    "Elastik recoil azalmasıyla rezidüel hacmin ve hava hapsinin artması": "Elastik recoil azalması erişkin amfizematöz paternlerde hava hapsi ve rezidüel hacim artışıyla ilişkilidir. Burada ölçülen akciğer hacimleri düşük ve açılma basıncı yüksektir; bu, recoil azalmasıyla oluşan hiperinflasyondan farklıdır. Sınavda düşük kompliyans ile hava hapsi ayrımı özellikle önemlidir."
-  },
-  "evidenceChain": [
-    {
-      "title": "Zamanlama",
-      "text": "Doğumdan kısa süre sonra başlayan solunum eforu → havalanma ve alveol stabilitesiyle ilişkili erken dönem sorun",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Mekanik kayıt",
-      "text": "Dinamik kompliyans düşük ve açılma basıncı yüksek → akciğerin genişletilmesi için daha fazla basınç gerekir",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Gaz değişimi",
-      "text": "PaO₂ 55 mmHg ve SpO₂ düşük → yaygın havalanma yetersizliği oksijenlenmeyi azaltır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Ayırıcı veri",
-      "text": "Fokal asimetri veya belirgin hışıltı yok → tek taraflı mekanik tıkanma ya da baskın bronkospazm geri plandadır",
-      "weight": "medium",
-      "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "Solunum merkezi CO₂ duyarlılığının azalmasıyla ventilatuvar sürücünün düşmesi": "Solunum merkezi duyarlılığının azalması hipoventilasyon ve CO₂ birikimi oluşturabilir; sedatif etkiler veya santral depresyon tablolarında akla gelir. Bu olguda sorun doğumdan hemen sonra belirgin solunum eforu, düşük akciğer hacmi ve düşük kompliyans paternidir. Takipne ve çekilmelerin varlığı ventilatuvar sürücünün baskılanmasından çok akciğerin açılma işinin arttığını düşündürür.",
-    "Bronş düz kas tonusunun artmasıyla ekspiratuvar hava yolu direncinin yükselmesi": "Bronş düz kas tonusu artışı astım benzeri obstrüktif tabloda hışıltı, uzamış ekspiryum ve hava hapsiyle öne çıkar. Bu bebekte temel ölçüm düşük akciğer hacmi ve inspiratuvar açılma güçlüğüdür; ekspiratuvar direnç artışını destekleyen baskın bir patern yoktur. Çeldirici, solunum sıkıntısını her zaman bronkospazm gibi yorumlama hatasını sınar.",
-    "Pulmoner kapiller hidrostatik basıncın artmasıyla interstisyel sıvı birikmesi": "Pulmoner kapiller hidrostatik basınç artışı kardiyak dolum basıncı yükseldiğinde interstisyel/alveoler sıvı birikimi yapabilir. Olguda kalp yetmezliği, belirgin hepatomegali veya sıvı yüklenmesi verisi yoktur; problem erken dönemde düşük hacimli ve düşük kompliyanslı akciğer paternidir. Bu nedenle ana mekanizma kapiller basınç artışı değildir.",
-    "Elastik recoil azalmasıyla rezidüel hacmin ve hava hapsinin artması": "Elastik recoil azalması erişkin amfizematöz paternlerde hava hapsi ve rezidüel hacim artışıyla ilişkilidir. Burada ölçülen akciğer hacimleri düşük ve açılma basıncı yüksektir; bu, recoil azalmasıyla oluşan hiperinflasyondan farklıdır. Sınavda düşük kompliyans ile hava hapsi ayrımı özellikle önemlidir."
-  },
-  "mechanismExplanation": "Yüzey gerilimi artar, küçük alveollerin kapanma eğilimi yükselir, kompliyans düşer, açılma basıncı ve solunum işi artar; yetersiz havalanma hipoksemiye katkı verir.",
-  "scientificComment": "Soru, yenidoğan solunum sıkıntısını tanı etiketiyle değil alveoler yüzey kuvvetleri, Laplace ilişkisi ve kompliyans mantığıyla çözdürmeyi hedefler.",
-  "helpText": "Solunum mekaniği sorularında düşük kompliyans ile artmış hava yolu direncini önce ayır; biri akciğeri açmayı, diğeri akımı sürdürmeyi zorlaştırır.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v216-new-002-hizli-kalp-atisinda-perfuzyon-kaydi",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Hızlı kalp atışında perfüzyon kaydı",
-  "difficulty": "Zor",
-  "difficultyTag": "Zor",
-  "clinicalFocus": "Kalp hızı arttığında sol ventrikül miyokard perfüzyonunun kalp döngüsü fazlarıyla ilişkisini yorumlama.",
-  "learningTarget": "Sol koroner akımın sistol-diyastol dağılımını, intramiyokardiyal basıncı ve taşikardide diyastolik süre kısalmasını mekanizma düzeyinde açıklayabilme.",
-  "demographics": "46 yaşında erkek gönüllü",
-  "setting": "Kardiyovasküler fizyoloji laboratuvarı",
-  "chiefComplaint": "Gönüllü, kontrollü egzersiz sırasında kalp hızı ve koroner akım değişimleri açısından izleniyor.",
-  "stem": "Gönüllü, göğüs ağrısı olmayan ancak egzersiz fizyolojisi çalışmasına katılan bir bireydir. Test öncesi 10 dakika dinlendirilir ve ardından bisiklet ergometresinde kademeli yük artışı uygulanır. Yük arttıkça kalp atımlarını daha güçlü hissettiğini, ancak baş dönmesi veya nefes darlığı olmadığını söyler. Test hedef kalp hızına ulaşıldığında sonlandırılır ve kısa dinlenme döneminde yakınmaları hızla kaybolur.",
-  "patientIntro": {
-    "profile": "46 yaşında erkek gönüllü, kontrollü egzersiz sırasında kardiyovasküler yanıt açısından değerlendiriliyor.",
-    "presentation": "Egzersizle kalp hızı artarken sol koroner akım faz dağılımı kaydediliyor.",
-    "historySummary": "Gönüllü, göğüs ağrısı olmayan ancak egzersiz fizyolojisi çalışmasına katılan bir bireydir. Test öncesi 10 dakika dinlendirilir ve ardından bisiklet ergometresinde kademeli yük artışı uygulanır. Yük arttıkça kalp atımlarını daha güçlü hissettiğini, ancak baş dönmesi veya nefes darlığı olmadığını söyler. Test hedef kalp hızına ulaşıldığında sonlandırılır ve kısa dinlenme döneminde yakınmaları hızla kaybolur."
-  },
-  "vitals": {
-    "TA": "118/74 mmHg dinlenme; 154/82 mmHg egzersiz sonunda",
-    "Nabız": "72/dk dinlenme; 148/dk egzersiz sonunda",
-    "Solunum": "16/dk dinlenme; 30/dk egzersiz sonunda",
-    "SpO2": "%98, oda havasında",
-    "Ateş": "36.7 °C",
-    "Şok indeksi": "0.61 dinlenme; 0.96 egzersiz sonunda"
-  },
-  "exam": [
-    "Gönüllü uyanık, koopere ve egzersiz protokolünü sürdürebilecek durumdadır.",
-    "Kalp oskültasyonunda ritim düzenli, yeni üfürüm duyulmaz.",
-    "Akciğer oskültasyonu doğaldır; wheezing veya ral saptanmaz.",
-    "Egzersiz sonunda periferik nabızlar dolgun, kapiller dolum 2 saniyenin altındadır."
-  ],
-  "investigations": [
-    {
-      "id": "v216-new-002-hizli-kalp-atisinda-perfuzyon-kaydi-kalp-hizi-ve-dongu-suresi-kaydi",
-      "label": "Kalp hızı ve döngü süresi kaydı",
-      "title": "Kalp hızı ve döngü süresi kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Egzersiz hemodinami kaydı",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Egzersiz sırasında kalp hızı artmış ve gevşeme fazı toplam döngü içinde belirgin kısalmıştır.",
-      "clinicalMeaning": "Egzersiz sırasında kalp hızı artmış ve gevşeme fazı toplam döngü içinde belirgin kısalmıştır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "Kalp hızı ve döngü süresi kaydı",
-        "summary": "Egzersiz sırasında kalp hızı artmış ve gevşeme fazı toplam döngü içinde belirgin kısalmıştır.",
-        "interpretation": "Egzersiz sırasında kalp hızı artmış ve gevşeme fazı toplam döngü içinde belirgin kısalmıştır.",
-        "values": [
-          [
-            "Kalp hızı",
-            "72 → 148/dk",
-            "Protokol öncesine göre",
-            "Arttı"
-          ],
-          [
-            "Toplam kardiyak döngü",
-            "830 → 405 ms",
-            "Kalp hızına bağlı",
-            "Kısaldı"
-          ],
-          [
-            "Gevşeme fazı süresi",
-            "510 → 185 ms",
-            "Kalp hızına bağlı",
-            "Belirgin kısaldı"
-          ],
-          [
-            "Kasılma fazı süresi",
-            "320 → 220 ms",
-            "Kalp hızına bağlı",
-            "Daha az kısaldı"
-          ]
-        ],
-        "rows": [
-          [
-            "Kalp hızı",
-            "72 → 148/dk",
-            "Protokol öncesine göre",
-            "Arttı"
-          ],
-          [
-            "Toplam kardiyak döngü",
-            "830 → 405 ms",
-            "Kalp hızına bağlı",
-            "Kısaldı"
-          ],
-          [
-            "Gevşeme fazı süresi",
-            "510 → 185 ms",
-            "Kalp hızına bağlı",
-            "Belirgin kısaldı"
-          ],
-          [
-            "Kasılma fazı süresi",
-            "320 → 220 ms",
-            "Kalp hızına bağlı",
-            "Daha az kısaldı"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Kalp hızı",
-          "72 → 148/dk",
-          "Protokol öncesine göre",
-          "Arttı"
-        ],
-        [
-          "Toplam kardiyak döngü",
-          "830 → 405 ms",
-          "Kalp hızına bağlı",
-          "Kısaldı"
-        ],
-        [
-          "Gevşeme fazı süresi",
-          "510 → 185 ms",
-          "Kalp hızına bağlı",
-          "Belirgin kısaldı"
-        ],
-        [
-          "Kasılma fazı süresi",
-          "320 → 220 ms",
-          "Kalp hızına bağlı",
-          "Daha az kısaldı"
-        ]
-      ],
-      "postAnswerExplanation": "Egzersiz sırasında kalp hızı artmış ve gevşeme fazı toplam döngü içinde belirgin kısalmıştır.",
-      "interpretation": "Egzersiz sırasında kalp hızı artmış ve gevşeme fazı toplam döngü içinde belirgin kısalmıştır.",
-      "inlineFeedback": "Egzersiz sırasında kalp hızı artmış ve gevşeme fazı toplam döngü içinde belirgin kısalmıştır.",
-      "explanationAfterAnswer": "Egzersiz sırasında kalp hızı artmış ve gevşeme fazı toplam döngü içinde belirgin kısalmıştır."
-    },
-    {
-      "id": "v216-new-002-hizli-kalp-atisinda-perfuzyon-kaydi-sol-koroner-akim-faz-kaydi",
-      "label": "Sol koroner akım faz kaydı",
-      "title": "Sol koroner akım faz kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Doppler akım ölçümü",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Sol koroner akım entegrali yüksek hızda toplamda artmış olsa da gevşeme fazındaki süre azalması rezervi sınırlamıştır.",
-      "clinicalMeaning": "Sol koroner akım entegrali yüksek hızda toplamda artmış olsa da gevşeme fazındaki süre azalması rezervi sınırlamıştır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "Sol koroner akım faz kaydı",
-        "summary": "Sol koroner akım entegrali yüksek hızda toplamda artmış olsa da gevşeme fazındaki süre azalması rezervi sınırlamıştır.",
-        "interpretation": "Sol koroner akım entegrali yüksek hızda toplamda artmış olsa da gevşeme fazındaki süre azalması rezervi sınırlamıştır.",
-        "values": [
-          [
-            "Dinlenme akım paterni",
-            "Akımın büyük kısmı gevşeme fazında",
-            "Faz dağılımına göre",
-            "Gevşeme ağırlıklı"
-          ],
-          [
-            "Egzersiz sonu faz süresi",
-            "Gevşeme fazı kısa",
-            "Kalp hızına bağlı",
-            "Azalmış"
-          ],
-          [
-            "Sistolik akım bileşeni",
-            "Geçici azalma dönemleri izleniyor",
-            "Döngü içi değişken",
-            "Sınırlı"
-          ],
-          [
-            "SpO₂ ve hemoglobin",
-            "%98; 14.7 g/dL",
-            "Normal aralık",
-            "Korunmuş"
-          ]
-        ],
-        "rows": [
-          [
-            "Dinlenme akım paterni",
-            "Akımın büyük kısmı gevşeme fazında",
-            "Faz dağılımına göre",
-            "Gevşeme ağırlıklı"
-          ],
-          [
-            "Egzersiz sonu faz süresi",
-            "Gevşeme fazı kısa",
-            "Kalp hızına bağlı",
-            "Azalmış"
-          ],
-          [
-            "Sistolik akım bileşeni",
-            "Geçici azalma dönemleri izleniyor",
-            "Döngü içi değişken",
-            "Sınırlı"
-          ],
-          [
-            "SpO₂ ve hemoglobin",
-            "%98; 14.7 g/dL",
-            "Normal aralık",
-            "Korunmuş"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Dinlenme akım paterni",
-          "Akımın büyük kısmı gevşeme fazında",
-          "Faz dağılımına göre",
-          "Gevşeme ağırlıklı"
-        ],
-        [
-          "Egzersiz sonu faz süresi",
-          "Gevşeme fazı kısa",
-          "Kalp hızına bağlı",
-          "Azalmış"
-        ],
-        [
-          "Sistolik akım bileşeni",
-          "Geçici azalma dönemleri izleniyor",
-          "Döngü içi değişken",
-          "Sınırlı"
-        ],
-        [
-          "SpO₂ ve hemoglobin",
-          "%98; 14.7 g/dL",
-          "Normal aralık",
-          "Korunmuş"
-        ]
-      ],
-      "postAnswerExplanation": "Sol koroner akım entegrali yüksek hızda toplamda artmış olsa da gevşeme fazındaki süre azalması rezervi sınırlamıştır.",
-      "interpretation": "Sol koroner akım entegrali yüksek hızda toplamda artmış olsa da gevşeme fazındaki süre azalması rezervi sınırlamıştır.",
-      "inlineFeedback": "Sol koroner akım entegrali yüksek hızda toplamda artmış olsa da gevşeme fazındaki süre azalması rezervi sınırlamıştır.",
-      "explanationAfterAnswer": "Sol koroner akım entegrali yüksek hızda toplamda artmış olsa da gevşeme fazındaki süre azalması rezervi sınırlamıştır."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu kayıtta yüksek kalp hızında sol ventrikül miyokard perfüzyon rezervinin sınırlanmasını en iyi açıklayan hemodinamik mekanizma hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "tachycardia_diastolic_coronary_perfusion_limitation",
-  "diagnosis": {
-    "correct": "Kasılma basıncı sürerken gevşeme süresinin kısalmasıyla koroner dolumun sınırlanması",
-    "options": [
-      "Sistemik venöz dönüş azalmasıyla sağ atriyal dolum basıncının düşmesi",
-      "Pulmoner vasküler direnç artışıyla sağ ventrikül duvar geriliminin yükselmesi",
-      "Arteriyel oksijen içeriği artışıyla miyokard ekstraksiyon gereksiniminin azalması",
-      "Kasılma basıncı sürerken gevşeme süresinin kısalmasıyla koroner dolumun sınırlanması",
-      "Aortik geri kaçış azalmasıyla diyastolik perfüzyon basıncının belirgin yükselmesi"
-    ],
-    "question": "Bu kayıtta yüksek kalp hızında sol ventrikül miyokard perfüzyon rezervinin sınırlanmasını en iyi açıklayan hemodinamik mekanizma hangisidir?",
-    "explanation": "Sol ventrikül duvarı kasılma sırasında yüksek basınca maruz kalır ve intramiyokardiyal damarlar özellikle subendokardiyal bölgede sıkışır. Bu nedenle sol koroner kan akımı gevşeme fazına daha bağımlıdır. Kalp hızı arttığında gevşeme süresi orantısız kısalır; talep artarken dolum için ayrılan zaman azalır ve perfüzyon rezervi sınırlanır.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "Taşikardide miyokard oksijen talebi artar; sol koroner sunumu ise gevşeme süresi kısaldığı için özellikle subendokardiyal bölgede zorlanır."
-      }
-    ],
-    "optionComparison": {
-      "Sistemik venöz dönüş azalmasıyla sağ atriyal dolum basıncının düşmesi": "Venöz dönüş azalması sağ kalp dolumunu ve atım hacmini etkileyebilir; ortostatik stres veya pozitif basınçlı solunumda akla gelir. Bu kayıtta temel değişken sol koroner akımın faz dağılımı ve kalp hızıyla kısalan gevşeme dönemidir. Sağ atriyal dolum basıncı düşüşü, sol ventrikül duvarı içindeki akım kısıtlanmasını açıklayan ana mekanizma değildir.",
-      "Pulmoner vasküler direnç artışıyla sağ ventrikül duvar geriliminin yükselmesi": "Pulmoner vasküler direnç artışı sağ ventrikül afterloadını yükseltir ve sağ kalp yüklenmesiyle ilişkilidir. Olguda sağ ventrikül basıncı veya pulmoner hipertansiyon paterninden çok sol koroner akım kaydı sorgulanmaktadır. Bu seçenek koroner perfüzyonun sol ventrikül kasılma-gevşeme döngüsüne bağımlılığını açıklamaz.",
-      "Arteriyel oksijen içeriği artışıyla miyokard ekstraksiyon gereksiniminin azalması": "Arteriyel oksijen içeriği artarsa teorik olarak aynı akımda oksijen sunumu artabilir. Bu olguda hemoglobin ve SpO₂ normaldir; sorun oksijen içeriğinden çok akımın kalp döngüsü içinde ne kadar süre devam edebildiğidir. Egzersizle artan talep karşısında sol koroner akım rezervini belirleyen kritik nokta faz süresidir.",
-      "Kasılma basıncı sürerken gevşeme süresinin kısalmasıyla koroner dolumun sınırlanması": "Doğru seçenek budur. Sol ventrikül kasılırken miyokard içi basınç özellikle subendokardiyal damarları sıkıştırır; bu nedenle sol koroner akımın önemli bölümü gevşeme döneminde gerçekleşir. Kalp hızı artınca gevşeme süresi kısalır, aynı zamanda kasılma basıncı yüksek seyreder ve perfüzyon rezervi sınırlanır.",
-      "Aortik geri kaçış azalmasıyla diyastolik perfüzyon basıncının belirgin yükselmesi": "Aortik geri kaçış azalması diyastolik aort basıncını koruyabilir ve bazı durumlarda koroner perfüzyona katkı sağlayabilir. Bu olguda aort yetersizliği veya geri kaçış verisi yoktur; aksine yüksek hızda ölçülen ana değişiklik gevşeme döneminin kısalmasıdır. Bu seçenek doğru fizyolojik zamanlama problemini ters yönde yorumlar."
-    },
-    "answerFeedback": {
-      "Sistemik venöz dönüş azalmasıyla sağ atriyal dolum basıncının düşmesi": "Venöz dönüş azalması sağ kalp dolumunu ve atım hacmini etkileyebilir; ortostatik stres veya pozitif basınçlı solunumda akla gelir. Bu kayıtta temel değişken sol koroner akımın faz dağılımı ve kalp hızıyla kısalan gevşeme dönemidir. Sağ atriyal dolum basıncı düşüşü, sol ventrikül duvarı içindeki akım kısıtlanmasını açıklayan ana mekanizma değildir.",
-      "Pulmoner vasküler direnç artışıyla sağ ventrikül duvar geriliminin yükselmesi": "Pulmoner vasküler direnç artışı sağ ventrikül afterloadını yükseltir ve sağ kalp yüklenmesiyle ilişkilidir. Olguda sağ ventrikül basıncı veya pulmoner hipertansiyon paterninden çok sol koroner akım kaydı sorgulanmaktadır. Bu seçenek koroner perfüzyonun sol ventrikül kasılma-gevşeme döngüsüne bağımlılığını açıklamaz.",
-      "Arteriyel oksijen içeriği artışıyla miyokard ekstraksiyon gereksiniminin azalması": "Arteriyel oksijen içeriği artarsa teorik olarak aynı akımda oksijen sunumu artabilir. Bu olguda hemoglobin ve SpO₂ normaldir; sorun oksijen içeriğinden çok akımın kalp döngüsü içinde ne kadar süre devam edebildiğidir. Egzersizle artan talep karşısında sol koroner akım rezervini belirleyen kritik nokta faz süresidir.",
-      "Kasılma basıncı sürerken gevşeme süresinin kısalmasıyla koroner dolumun sınırlanması": "Doğru seçenek budur. Sol ventrikül kasılırken miyokard içi basınç özellikle subendokardiyal damarları sıkıştırır; bu nedenle sol koroner akımın önemli bölümü gevşeme döneminde gerçekleşir. Kalp hızı artınca gevşeme süresi kısalır, aynı zamanda kasılma basıncı yüksek seyreder ve perfüzyon rezervi sınırlanır.",
-      "Aortik geri kaçış azalmasıyla diyastolik perfüzyon basıncının belirgin yükselmesi": "Aortik geri kaçış azalması diyastolik aort basıncını koruyabilir ve bazı durumlarda koroner perfüzyona katkı sağlayabilir. Bu olguda aort yetersizliği veya geri kaçış verisi yoktur; aksine yüksek hızda ölçülen ana değişiklik gevşeme döneminin kısalmasıdır. Bu seçenek doğru fizyolojik zamanlama problemini ters yönde yorumlar."
-    }
-  },
-  "coreKnowledge": "Sol koroner akım, sol ventrikül kasılması sırasında miyokard içi damarların sıkışması nedeniyle gevşeme fazına daha bağımlıdır. Taşikardi toplam kardiyak döngüyü kısaltır; bu kısalma özellikle gevşeme süresinde belirginleşir. Böylece oksijen gereksinimi artarken koroner doluma ayrılan süre azalır.",
-  "examPearl": "Koroner perfüzyon sorusunda “kalp hızlı” ifadesi yalnız debiyi değil diyastolik süreyi de düşündürmelidir.",
-  "whyCorrect": "Doğru seçenek budur. Sol ventrikül kasılırken miyokard içi basınç özellikle subendokardiyal damarları sıkıştırır; bu nedenle sol koroner akımın önemli bölümü gevşeme döneminde gerçekleşir. Kalp hızı artınca gevşeme süresi kısalır, aynı zamanda kasılma basıncı yüksek seyreder ve perfüzyon rezervi sınırlanır.",
-  "optionComparison": {
-    "Sistemik venöz dönüş azalmasıyla sağ atriyal dolum basıncının düşmesi": "Venöz dönüş azalması sağ kalp dolumunu ve atım hacmini etkileyebilir; ortostatik stres veya pozitif basınçlı solunumda akla gelir. Bu kayıtta temel değişken sol koroner akımın faz dağılımı ve kalp hızıyla kısalan gevşeme dönemidir. Sağ atriyal dolum basıncı düşüşü, sol ventrikül duvarı içindeki akım kısıtlanmasını açıklayan ana mekanizma değildir.",
-    "Pulmoner vasküler direnç artışıyla sağ ventrikül duvar geriliminin yükselmesi": "Pulmoner vasküler direnç artışı sağ ventrikül afterloadını yükseltir ve sağ kalp yüklenmesiyle ilişkilidir. Olguda sağ ventrikül basıncı veya pulmoner hipertansiyon paterninden çok sol koroner akım kaydı sorgulanmaktadır. Bu seçenek koroner perfüzyonun sol ventrikül kasılma-gevşeme döngüsüne bağımlılığını açıklamaz.",
-    "Arteriyel oksijen içeriği artışıyla miyokard ekstraksiyon gereksiniminin azalması": "Arteriyel oksijen içeriği artarsa teorik olarak aynı akımda oksijen sunumu artabilir. Bu olguda hemoglobin ve SpO₂ normaldir; sorun oksijen içeriğinden çok akımın kalp döngüsü içinde ne kadar süre devam edebildiğidir. Egzersizle artan talep karşısında sol koroner akım rezervini belirleyen kritik nokta faz süresidir.",
-    "Kasılma basıncı sürerken gevşeme süresinin kısalmasıyla koroner dolumun sınırlanması": "Doğru seçenek budur. Sol ventrikül kasılırken miyokard içi basınç özellikle subendokardiyal damarları sıkıştırır; bu nedenle sol koroner akımın önemli bölümü gevşeme döneminde gerçekleşir. Kalp hızı artınca gevşeme süresi kısalır, aynı zamanda kasılma basıncı yüksek seyreder ve perfüzyon rezervi sınırlanır.",
-    "Aortik geri kaçış azalmasıyla diyastolik perfüzyon basıncının belirgin yükselmesi": "Aortik geri kaçış azalması diyastolik aort basıncını koruyabilir ve bazı durumlarda koroner perfüzyona katkı sağlayabilir. Bu olguda aort yetersizliği veya geri kaçış verisi yoktur; aksine yüksek hızda ölçülen ana değişiklik gevşeme döneminin kısalmasıdır. Bu seçenek doğru fizyolojik zamanlama problemini ters yönde yorumlar."
-  },
-  "evidenceChain": [
-    {
-      "title": "Hız etkisi",
-      "text": "Nabız 72 → 148/dk → kardiyak döngü süresi belirgin kısalmıştır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Faz süresi",
-      "text": "Gevşeme fazı 510 → 185 ms → sol koroner doluma ayrılan zaman azalmıştır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Akım paterni",
-      "text": "Dinlenmede akım gevşeme ağırlıklı → sol ventrikül perfüzyonu döngü fazına bağımlıdır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Oksijen içeriği",
-      "text": "SpO₂ ve hemoglobin korunmuş → sınırlılık oksijen içeriğinden çok akım zamanlamasıyla ilişkilidir",
-      "weight": "medium",
-      "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "Sistemik venöz dönüş azalmasıyla sağ atriyal dolum basıncının düşmesi": "Venöz dönüş azalması sağ kalp dolumunu ve atım hacmini etkileyebilir; ortostatik stres veya pozitif basınçlı solunumda akla gelir. Bu kayıtta temel değişken sol koroner akımın faz dağılımı ve kalp hızıyla kısalan gevşeme dönemidir. Sağ atriyal dolum basıncı düşüşü, sol ventrikül duvarı içindeki akım kısıtlanmasını açıklayan ana mekanizma değildir.",
-    "Pulmoner vasküler direnç artışıyla sağ ventrikül duvar geriliminin yükselmesi": "Pulmoner vasküler direnç artışı sağ ventrikül afterloadını yükseltir ve sağ kalp yüklenmesiyle ilişkilidir. Olguda sağ ventrikül basıncı veya pulmoner hipertansiyon paterninden çok sol koroner akım kaydı sorgulanmaktadır. Bu seçenek koroner perfüzyonun sol ventrikül kasılma-gevşeme döngüsüne bağımlılığını açıklamaz.",
-    "Arteriyel oksijen içeriği artışıyla miyokard ekstraksiyon gereksiniminin azalması": "Arteriyel oksijen içeriği artarsa teorik olarak aynı akımda oksijen sunumu artabilir. Bu olguda hemoglobin ve SpO₂ normaldir; sorun oksijen içeriğinden çok akımın kalp döngüsü içinde ne kadar süre devam edebildiğidir. Egzersizle artan talep karşısında sol koroner akım rezervini belirleyen kritik nokta faz süresidir.",
-    "Aortik geri kaçış azalmasıyla diyastolik perfüzyon basıncının belirgin yükselmesi": "Aortik geri kaçış azalması diyastolik aort basıncını koruyabilir ve bazı durumlarda koroner perfüzyona katkı sağlayabilir. Bu olguda aort yetersizliği veya geri kaçış verisi yoktur; aksine yüksek hızda ölçülen ana değişiklik gevşeme döneminin kısalmasıdır. Bu seçenek doğru fizyolojik zamanlama problemini ters yönde yorumlar."
-  },
-  "mechanismExplanation": "Taşikardi gevşeme süresini kısaltır; sol ventrikül kasılması intramiyokardiyal damarları sıkıştırır; sol koroner akım gevşeme fazına bağımlı olduğu için perfüzyon rezervi sınırlanır.",
-  "scientificComment": "Soru, koroner dolaşımı yalnız basınç farkı üzerinden değil kalp döngüsü fazları ve miyokard içi mekanik basınç üzerinden yorumlatır.",
-  "helpText": "Koroner akım sorularında sağ ve sol ventrikül farkını, sistol/diyastol dağılımını ve kalp hızının gevşeme süresine etkisini birlikte değerlendir.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v216-new-003-isik-uyaraninda-pupil-kaydi",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Işık uyaranında pupil kaydı",
-  "difficulty": "Orta",
-  "difficultyTag": "Orta",
-  "clinicalFocus": "Tek taraflı ışık uyaranı sırasında doğrudan ve karşı taraf pupilla yanıtını afferent-efferent refleks arkı üzerinden yorumlama.",
-  "learningTarget": "Pupilla ışık refleksinde optik afferent, pretektal bağlantı, parasempatik çıkış ve sfinkter pupillae yanıtı arasındaki ilişkiyi açıklayabilme.",
-  "demographics": "23 yaşında sağlıklı kadın gönüllü",
-  "setting": "Nörofizyoloji laboratuvarı",
-  "chiefComplaint": "Gönüllü, standart pupil ışık refleksi testi sırasında pupilla çapı değişimi açısından izleniyor.",
-  "stem": "Gönüllü karanlık bir odada birkaç dakika dinlendirilir ve uzak bir noktaya bakması istenir. Önce sağ göze kısa süreli ışık verilir, sonra aynı işlem sol göz için tekrarlanır. Test sırasında başını çevirmemesi ve gözlerini kısmaması istenir. Gönüllü işlem boyunca ağrı, baş dönmesi veya görme kaybı tariflemez.",
-  "patientIntro": {
-    "profile": "23 yaşında sağlıklı kadın gönüllü, nörofizyoloji laboratuvarında pupil yanıtı açısından değerlendiriliyor.",
-    "presentation": "Tek göze ışık verildiğinde iki gözde pupilla çapı değişimi kaydediliyor.",
-    "historySummary": "Gönüllü karanlık bir odada birkaç dakika dinlendirilir ve uzak bir noktaya bakması istenir. Önce sağ göze kısa süreli ışık verilir, sonra aynı işlem sol göz için tekrarlanır. Test sırasında başını çevirmemesi ve gözlerini kısmaması istenir. Gönüllü işlem boyunca ağrı, baş dönmesi veya görme kaybı tariflemez."
-  },
-  "vitals": {
-    "TA": "108/66 mmHg",
-    "Nabız": "70/dk",
-    "Solunum": "14/dk",
-    "SpO2": "%99, oda havasında",
-    "Ateş": "36.6 °C",
-    "Şok indeksi": "0.65"
-  },
-  "exam": [
-    "Bilinç açık, kooperasyon tamdır; göz kapaklarında düşüklük izlenmez.",
-    "Ekstraoküler hareketler tam ve simetriktir.",
-    "Kornea yüzeyi belirgin irritasyon göstermemektedir.",
-    "İstirahat pupil çapları iki tarafta eşittir."
-  ],
-  "investigations": [
-    {
-      "id": "v216-new-003-isik-uyaraninda-pupil-kaydi-pupil-cap-degisimi-kaydi",
-      "label": "Pupil çapı değişimi kaydı",
-      "title": "Pupil çapı değişimi kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Nörofizyolojik refleks testi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Tek göze ışık verildiğinde aynı anda iki pupillada çap azalması kaydedilmiştir.",
-      "clinicalMeaning": "Tek göze ışık verildiğinde aynı anda iki pupillada çap azalması kaydedilmiştir.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "Pupil çapı değişimi kaydı",
-        "summary": "Tek göze ışık verildiğinde aynı anda iki pupillada çap azalması kaydedilmiştir.",
-        "interpretation": "Tek göze ışık verildiğinde aynı anda iki pupillada çap azalması kaydedilmiştir.",
-        "values": [
-          [
-            "Karanlıkta sağ pupil",
-            "5.2 mm",
-            "Test başlangıcı",
-            "Bazal"
-          ],
-          [
-            "Sağ göze ışıkta sağ pupil",
-            "5.2 → 2.7 mm",
-            "Uyaran sonrası",
-            "Azaldı"
-          ],
-          [
-            "Sağ göze ışıkta sol pupil",
-            "5.1 → 2.8 mm",
-            "Uyaran sonrası",
-            "Azaldı"
-          ],
-          [
-            "Sol göze ışıkta iki pupil",
-            "Benzer çap azalması",
-            "Uyaran sonrası",
-            "Simetrik"
-          ]
-        ],
-        "rows": [
-          [
-            "Karanlıkta sağ pupil",
-            "5.2 mm",
-            "Test başlangıcı",
-            "Bazal"
-          ],
-          [
-            "Sağ göze ışıkta sağ pupil",
-            "5.2 → 2.7 mm",
-            "Uyaran sonrası",
-            "Azaldı"
-          ],
-          [
-            "Sağ göze ışıkta sol pupil",
-            "5.1 → 2.8 mm",
-            "Uyaran sonrası",
-            "Azaldı"
-          ],
-          [
-            "Sol göze ışıkta iki pupil",
-            "Benzer çap azalması",
-            "Uyaran sonrası",
-            "Simetrik"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Karanlıkta sağ pupil",
-          "5.2 mm",
-          "Test başlangıcı",
-          "Bazal"
-        ],
-        [
-          "Sağ göze ışıkta sağ pupil",
-          "5.2 → 2.7 mm",
-          "Uyaran sonrası",
-          "Azaldı"
-        ],
-        [
-          "Sağ göze ışıkta sol pupil",
-          "5.1 → 2.8 mm",
-          "Uyaran sonrası",
-          "Azaldı"
-        ],
-        [
-          "Sol göze ışıkta iki pupil",
-          "Benzer çap azalması",
-          "Uyaran sonrası",
-          "Simetrik"
-        ]
-      ],
-      "postAnswerExplanation": "Tek göze ışık verildiğinde aynı anda iki pupillada çap azalması kaydedilmiştir.",
-      "interpretation": "Tek göze ışık verildiğinde aynı anda iki pupillada çap azalması kaydedilmiştir.",
-      "inlineFeedback": "Tek göze ışık verildiğinde aynı anda iki pupillada çap azalması kaydedilmiştir.",
-      "explanationAfterAnswer": "Tek göze ışık verildiğinde aynı anda iki pupillada çap azalması kaydedilmiştir."
-    },
-    {
-      "id": "v216-new-003-isik-uyaraninda-pupil-kaydi-goz-hareketi-ve-duyu-kontrolu",
-      "label": "Göz hareketi ve duyu kontrolü",
-      "title": "Göz hareketi ve duyu kontrolü",
-      "type": "clinical",
-      "priority": "useful",
-      "subtype": "Temel nörolojik kontrol",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Göz hareketleri ve yüzeyel oküler duyu test sırasında korunmuştur.",
-      "clinicalMeaning": "Göz hareketleri ve yüzeyel oküler duyu test sırasında korunmuştur.",
-      "testValueLabel": "Destek veri",
-      "educationalValue": "Destek veri",
-      "clinicalPriorityLabel": "Destek veri",
+      "summary": "Glukoz yükü ve belirgin böbrek fonksiyon bozukluğu lehine ek veri saptanmamıştır.",
+      "clinicalMeaning": "Glukoz yükü ve belirgin böbrek fonksiyon bozukluğu lehine ek veri saptanmamıştır.",
+      "testValueLabel": "Destekleyici veri",
+      "educationalValue": "Destekleyici veri",
+      "clinicalPriorityLabel": "Destekleyici veri",
       "scoreImpact": 3,
       "scoreValue": 3,
       "source": "case",
       "clinicalFlowOrder": 2,
       "result": {
-        "title": "Göz hareketi ve duyu kontrolü",
-        "summary": "Göz hareketleri ve yüzeyel oküler duyu test sırasında korunmuştur.",
-        "interpretation": "Göz hareketleri ve yüzeyel oküler duyu test sırasında korunmuştur.",
+        "title": "Glukoz ve böbrek fonksiyon kaydı",
+        "summary": "Glukoz yükü ve belirgin böbrek fonksiyon bozukluğu lehine ek veri saptanmamıştır.",
+        "interpretation": "Glukoz yükü ve belirgin böbrek fonksiyon bozukluğu lehine ek veri saptanmamıştır.",
         "values": [
           [
-            "Ekstraoküler hareket",
-            "Tam ve simetrik",
-            "Normal",
-            "Korunmuş"
+            "Serum glukozu",
+            "94 mg/dL",
+            "70-100 mg/dL",
+            "Normal"
           ],
           [
-            "Korneal yüzey yakınması",
-            "Yok",
-            "Yakınma olmaması beklenir",
-            "Yok"
+            "Kreatinin",
+            "1.0 mg/dL",
+            "0.7-1.3 mg/dL",
+            "Normal"
           ],
           [
-            "Göz kırpma artefaktı",
-            "Minimal",
-            "Kayıt kalitesi için",
-            "Düşük"
+            "Üre",
+            "34 mg/dL",
+            "15-45 mg/dL",
+            "Normal aralıkta"
           ],
           [
-            "İstirahat anizokorisi",
-            "Saptanmadı",
-            "Eşit çap beklenir",
-            "Yok"
+            "İdrar glukozu",
+            "Negatif",
+            "Negatif",
+            "Saptanmadı"
           ]
         ],
         "rows": [
           [
-            "Ekstraoküler hareket",
-            "Tam ve simetrik",
-            "Normal",
-            "Korunmuş"
+            "Serum glukozu",
+            "94 mg/dL",
+            "70-100 mg/dL",
+            "Normal"
           ],
           [
-            "Korneal yüzey yakınması",
-            "Yok",
-            "Yakınma olmaması beklenir",
-            "Yok"
+            "Kreatinin",
+            "1.0 mg/dL",
+            "0.7-1.3 mg/dL",
+            "Normal"
           ],
           [
-            "Göz kırpma artefaktı",
-            "Minimal",
-            "Kayıt kalitesi için",
-            "Düşük"
+            "Üre",
+            "34 mg/dL",
+            "15-45 mg/dL",
+            "Normal aralıkta"
           ],
           [
-            "İstirahat anizokorisi",
-            "Saptanmadı",
-            "Eşit çap beklenir",
-            "Yok"
+            "İdrar glukozu",
+            "Negatif",
+            "Negatif",
+            "Saptanmadı"
           ]
         ]
       },
       "rows": [
         [
-          "Ekstraoküler hareket",
-          "Tam ve simetrik",
-          "Normal",
-          "Korunmuş"
+          "Serum glukozu",
+          "94 mg/dL",
+          "70-100 mg/dL",
+          "Normal"
         ],
         [
-          "Korneal yüzey yakınması",
-          "Yok",
-          "Yakınma olmaması beklenir",
-          "Yok"
+          "Kreatinin",
+          "1.0 mg/dL",
+          "0.7-1.3 mg/dL",
+          "Normal"
         ],
         [
-          "Göz kırpma artefaktı",
-          "Minimal",
-          "Kayıt kalitesi için",
-          "Düşük"
+          "Üre",
+          "34 mg/dL",
+          "15-45 mg/dL",
+          "Normal aralıkta"
         ],
         [
-          "İstirahat anizokorisi",
-          "Saptanmadı",
-          "Eşit çap beklenir",
-          "Yok"
+          "İdrar glukozu",
+          "Negatif",
+          "Negatif",
+          "Saptanmadı"
         ]
       ],
-      "postAnswerExplanation": "Göz hareketleri ve yüzeyel oküler duyu test sırasında korunmuştur.",
-      "interpretation": "Göz hareketleri ve yüzeyel oküler duyu test sırasında korunmuştur.",
-      "inlineFeedback": "Göz hareketleri ve yüzeyel oküler duyu test sırasında korunmuştur.",
-      "explanationAfterAnswer": "Göz hareketleri ve yüzeyel oküler duyu test sırasında korunmuştur."
+      "postAnswerExplanation": "Glukoz yükü ve belirgin böbrek fonksiyon bozukluğu lehine ek veri saptanmamıştır.",
+      "interpretation": "Glukoz yükü ve belirgin böbrek fonksiyon bozukluğu lehine ek veri saptanmamıştır.",
+      "explanationAfterAnswer": "Glukoz yükü ve belirgin böbrek fonksiyon bozukluğu lehine ek veri saptanmamıştır.",
+      "inlineFeedback": "Glukoz yükü ve belirgin böbrek fonksiyon bozukluğu lehine ek veri saptanmamıştır."
     }
   ],
   "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
+  "managementSequence": {
+    "enabled": false
+  },
   "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Tek göze verilen ışık sonrası iki pupillada birlikte küçülmeyi en iyi açıklayan refleks arkı özelliği hangisidir?",
+  "shuffleOptions": false,
+  "question": "Bu hastada idrarın yeterince yoğunlaşamamasını en iyi açıklayan renal fizyolojik mekanizma hangisidir?",
   "questionType": "physiology_mechanism",
-  "answerTarget": "bilateral_pupillary_light_reflex_pretetcal_projection",
+  "answerTarget": "renal_concentrating_gradient_loop_transport",
   "diagnosis": {
-    "correct": "Optik afferentlerin pretektal alandan iki parasempatik çekirdeğe dağılması",
+    "correct": "Kalın çıkan kolda Na⁺-K⁺-2Cl⁻ taşınmasının azalmasıyla medüller gradyanın zayıflaması",
     "options": [
-      "Sempatik liflerin superior servikal ganglion üzerinden radial kası uyarması",
-      "Vestibüler çekirdeklerin abdusens nöronlarına karşılıklı göz hareketi başlatması",
-      "Kortikospinal liflerin mezensefalon üzerinden sfinkter kasına doğrudan inmesi",
-      "Trigeminal ağrı afferentlerinin parasempatik çıkışı bilateral olarak baskılaması",
-      "Optik afferentlerin pretektal alandan iki parasempatik çekirdeğe dağılması"
+      "Proksimal tübülde solüt tutulumu artışıyla lümende suyun geri emilmeden kalması",
+      "Toplayıcı kanalda ENaC etkinliğinin azalmasıyla lümen negatifliğinin zayıflaması",
+      "Kalın çıkan kolda Na⁺-K⁺-2Cl⁻ taşınmasının azalmasıyla medüller gradyanın zayıflaması",
+      "Erken distal tübülde NaCl taşınmasının azalmasıyla kalsiyum geri emiliminin artması",
+      "V2 reseptör sinyalinin artmasıyla aquaporin-2 yerleşiminin belirgin güçlenmesi"
     ],
-    "question": "Tek göze verilen ışık sonrası iki pupillada birlikte küçülmeyi en iyi açıklayan refleks arkı özelliği hangisidir?",
-    "explanation": "Pupilla ışık refleksinde ışık bilgisi retina ve optik sinir üzerinden pretektal bölgeye taşınır. Pretektal nöronların iki taraflı parasempatik çekirdeklere projeksiyonu nedeniyle tek göze verilen uyaran aynı anda ipsilateral ve kontralateral pupilla sfinkter yanıtı oluşturur. Bu yanıt kortikospinal istemli motor yoldan veya sempatik dilatasyon yolundan farklıdır.",
+    "question": "Bu hastada idrarın yeterince yoğunlaşamamasını en iyi açıklayan renal fizyolojik mekanizma hangisidir?",
+    "explanation": "Yüksek idrar hacmi ve düşük idrar osmolalitesi, glukoz aracılı osmotik diürez olmadan gelişmiştir. Kalın çıkan kolun Na⁺-K⁺-2Cl⁻ taşıması medüller hipertonisiteyi oluşturur; bu basamak zayıfladığında toplayıcı kanal su geri emilimi için yeterli ozmotik çekim bulamaz ve idrar yoğunlaştırma kapasitesi azalır.",
     "pearls": [
       {
         "label": "Sınav notu",
-        "text": "Direkt ve konsensüel ışık yanıtı aynı afferent uyaranın beyin sapında iki taraflı parasempatik çıkışa dağıldığını gösterir."
+        "text": "İdrar osmolalitesi düşükse yalnızca ADH varlığını değil, medüller ozmotik gradyanın kurulup kurulamadığını da düşün."
       }
     ],
     "optionComparison": {
-      "Sempatik liflerin superior servikal ganglion üzerinden radial kası uyarması": "Sempatik yol pupilla dilatasyonunda önemlidir; hipotalamus, intermediolateral kolon, superior servikal ganglion ve radial kas hattıyla çalışır. Bu olguda ışık verilince genişleme değil her iki pupillada küçülme kaydedilmiştir. Bu nedenle sempatik radial kas aktivasyonu, gözlenen yanıtın ana açıklaması değildir.",
-      "Vestibüler çekirdeklerin abdusens nöronlarına karşılıklı göz hareketi başlatması": "Vestibüler çekirdekler baş hareketi sırasında gözlerin hedefte kalmasına katkı verir; vestibülo-oküler refleks sorularında beklenir. Burada baş hareketi değil tek göze ışık uyaranı uygulanmıştır. Göz pozisyonu yerine pupilla çapındaki eş zamanlı değişim ölçülmektedir.",
-      "Kortikospinal liflerin mezensefalon üzerinden sfinkter kasına doğrudan inmesi": "Kortikospinal lifler istemli motor kontrolle ilişkilidir ve pupilla sfinkter kasına doğrudan inen bir yol oluşturmaz. Pupilla ışık yanıtı kortikal karar gerektirmeyen beyin sapı aracılı bir reflekstir. Bu seçenek, somatik motor yol ile otonom refleks yolunu karıştırma hatasını sınar.",
-      "Trigeminal ağrı afferentlerinin parasempatik çıkışı bilateral olarak baskılaması": "Trigeminal ağrı afferentleri korneal refleks ve bazı otonom yanıtlarla ilişkili olabilir; ağrılı uyaran bağlamında akla gelir. Bu testte ağrı uyaranı yoktur ve yanıt parasempatik çıkışın baskılanması değil pupilla daralmasıdır. Bu nedenle patern trigeminal baskılanma ile açıklanmaz.",
-      "Optik afferentlerin pretektal alandan iki parasempatik çekirdeğe dağılması": "Doğru seçenek budur. Bir göze verilen ışık sinyali optik sinir üzerinden pretektal bölgeye ulaşır ve buradan iki taraflı parasempatik çekirdeklere dağıtılır. Bu çift taraflı bağlantı aynı anda hem doğrudan hem karşı göz pupillasında küçülme oluşturur."
+      "Proksimal tübülde solüt tutulumu artışıyla lümende suyun geri emilmeden kalması": "Bu seçenek osmotik diürezi düşündürür ve glukoz gibi lümende kalan solütler belirgin olduğunda anlam kazanır. Bu hastada serum glukozu normaldir ve idrar osmolalitesinin düşük kalması proksimal solüt yükünden çok medüller yoğunlaştırma basamağındaki zayıflamayı düşündürür.",
+      "Toplayıcı kanalda ENaC etkinliğinin azalmasıyla lümen negatifliğinin zayıflaması": "ENaC etkinliğinin azalması distal sodyum dengesi ve potasyum atılımını etkileyebilir; ancak idrarı yoğunlaştıran ana karşı-akım gradyanını açıklamaz. Bu vakada hipokalemi ve yüksek idrar hacmi, distal lümen negatifliğinden çok çıkan kol transportunun bozulmasıyla birlikte yorumlanmalıdır.",
+      "Kalın çıkan kolda Na⁺-K⁺-2Cl⁻ taşınmasının azalmasıyla medüller gradyanın zayıflaması": "Doğru seçenek budur. Kalın çıkan kol suya geçirgen değildir ve Na⁺-K⁺-2Cl⁻ taşıması medüller interstisyumun hipertonik kalmasını sağlar. Bu taşıma azaldığında toplayıcı kanalda ADH etkisi olsa bile suyun geri emilebileceği ozmotik çekim zayıflar; bu nedenle idrar hacmi artar ve idrar yeterince yoğunlaşamaz.",
+      "Erken distal tübülde NaCl taşınmasının azalmasıyla kalsiyum geri emiliminin artması": "Erken distal tübülde NaCl taşınmasının azalması özellikle kalsiyum geri emilimiyle ilişkilidir ve tiazid benzeri bir patern oluşturur. Bu mekanizma idrar yoğunlaştırma kapasitesindeki belirgin azalmayı ve yüksek idrar hacmini tek başına açıklamaz.",
+      "V2 reseptör sinyalinin artmasıyla aquaporin-2 yerleşiminin belirgin güçlenmesi": "V2 reseptör sinyalinin artması aquaporin-2 yerleşimini artırarak normalde su geri emilimini güçlendirir. Bu vakada idrar osmolalitesi düşük kaldığı için sorun su kanalının artmış aktivasyonundan değil, suyun çekileceği medüller ozmotik ortamın zayıflamasından kaynaklanır."
     },
     "answerFeedback": {
-      "Sempatik liflerin superior servikal ganglion üzerinden radial kası uyarması": "Sempatik yol pupilla dilatasyonunda önemlidir; hipotalamus, intermediolateral kolon, superior servikal ganglion ve radial kas hattıyla çalışır. Bu olguda ışık verilince genişleme değil her iki pupillada küçülme kaydedilmiştir. Bu nedenle sempatik radial kas aktivasyonu, gözlenen yanıtın ana açıklaması değildir.",
-      "Vestibüler çekirdeklerin abdusens nöronlarına karşılıklı göz hareketi başlatması": "Vestibüler çekirdekler baş hareketi sırasında gözlerin hedefte kalmasına katkı verir; vestibülo-oküler refleks sorularında beklenir. Burada baş hareketi değil tek göze ışık uyaranı uygulanmıştır. Göz pozisyonu yerine pupilla çapındaki eş zamanlı değişim ölçülmektedir.",
-      "Kortikospinal liflerin mezensefalon üzerinden sfinkter kasına doğrudan inmesi": "Kortikospinal lifler istemli motor kontrolle ilişkilidir ve pupilla sfinkter kasına doğrudan inen bir yol oluşturmaz. Pupilla ışık yanıtı kortikal karar gerektirmeyen beyin sapı aracılı bir reflekstir. Bu seçenek, somatik motor yol ile otonom refleks yolunu karıştırma hatasını sınar.",
-      "Trigeminal ağrı afferentlerinin parasempatik çıkışı bilateral olarak baskılaması": "Trigeminal ağrı afferentleri korneal refleks ve bazı otonom yanıtlarla ilişkili olabilir; ağrılı uyaran bağlamında akla gelir. Bu testte ağrı uyaranı yoktur ve yanıt parasempatik çıkışın baskılanması değil pupilla daralmasıdır. Bu nedenle patern trigeminal baskılanma ile açıklanmaz.",
-      "Optik afferentlerin pretektal alandan iki parasempatik çekirdeğe dağılması": "Doğru seçenek budur. Bir göze verilen ışık sinyali optik sinir üzerinden pretektal bölgeye ulaşır ve buradan iki taraflı parasempatik çekirdeklere dağıtılır. Bu çift taraflı bağlantı aynı anda hem doğrudan hem karşı göz pupillasında küçülme oluşturur."
+      "summary": "Yüksek idrar hacmi ve düşük idrar osmolalitesi, glukoz aracılı osmotik diürez olmadan gelişmiştir.",
+      "whyCorrect": "Doğru seçenek budur. Kalın çıkan kol suya geçirgen değildir ve Na⁺-K⁺-2Cl⁻ taşıması medüller interstisyumun hipertonik kalmasını sağlar. Bu taşıma azaldığında toplayıcı kanalda ADH etkisi olsa bile suyun geri emilebileceği ozmotik çekim zayıflar; bu nedenle idrar hacmi artar ve idrar yeterince yoğunlaşamaz.",
+      "keyClues": [
+        "Günde 3.4 L idrar → su kaybı ve yoğunlaştırma kapasitesinde azalma yönünde veri sağlar",
+        "İdrar osmolalitesi 178 mOsm/kg → plazmaya göre beklenenden düşük yoğunlukta idrar vardır",
+        "Potasyum 3.1 mmol/L → distal akım artışıyla uyumlu elektrolit kaybı eşlik eder"
+      ],
+      "examPearl": "İdrar osmolalitesi düşükse yalnızca ADH varlığını değil, medüller ozmotik gradyanın kurulup kurulamadığını da düşün.",
+      "evidenceChain": [
+        {
+          "title": "İdrar hacmi",
+          "text": "Günde 3.4 L idrar → su kaybı ve yoğunlaştırma kapasitesinde azalma yönünde veri sağlar",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "İdrar osmolalitesi",
+          "text": "İdrar osmolalitesi 178 mOsm/kg → plazmaya göre beklenenden düşük yoğunlukta idrar vardır",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Serum elektroliti",
+          "text": "Potasyum 3.1 mmol/L → distal akım artışıyla uyumlu elektrolit kaybı eşlik eder",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Glukoz verisi",
+          "text": "Serum glukozu normal → osmotik diürez için glukoz yükü ön planda değildir",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Proksimal tübülde solüt tutulumu artışıyla lümende suyun geri emilmeden kalması": "Bu seçenek osmotik diürezi düşündürür ve glukoz gibi lümende kalan solütler belirgin olduğunda anlam kazanır. Bu hastada serum glukozu normaldir ve idrar osmolalitesinin düşük kalması proksimal solüt yükünden çok medüller yoğunlaştırma basamağındaki zayıflamayı düşündürür.",
+        "Toplayıcı kanalda ENaC etkinliğinin azalmasıyla lümen negatifliğinin zayıflaması": "ENaC etkinliğinin azalması distal sodyum dengesi ve potasyum atılımını etkileyebilir; ancak idrarı yoğunlaştıran ana karşı-akım gradyanını açıklamaz. Bu vakada hipokalemi ve yüksek idrar hacmi, distal lümen negatifliğinden çok çıkan kol transportunun bozulmasıyla birlikte yorumlanmalıdır.",
+        "Kalın çıkan kolda Na⁺-K⁺-2Cl⁻ taşınmasının azalmasıyla medüller gradyanın zayıflaması": "Doğru seçenek budur. Kalın çıkan kol suya geçirgen değildir ve Na⁺-K⁺-2Cl⁻ taşıması medüller interstisyumun hipertonik kalmasını sağlar. Bu taşıma azaldığında toplayıcı kanalda ADH etkisi olsa bile suyun geri emilebileceği ozmotik çekim zayıflar; bu nedenle idrar hacmi artar ve idrar yeterince yoğunlaşamaz.",
+        "Erken distal tübülde NaCl taşınmasının azalmasıyla kalsiyum geri emiliminin artması": "Erken distal tübülde NaCl taşınmasının azalması özellikle kalsiyum geri emilimiyle ilişkilidir ve tiazid benzeri bir patern oluşturur. Bu mekanizma idrar yoğunlaştırma kapasitesindeki belirgin azalmayı ve yüksek idrar hacmini tek başına açıklamaz.",
+        "V2 reseptör sinyalinin artmasıyla aquaporin-2 yerleşiminin belirgin güçlenmesi": "V2 reseptör sinyalinin artması aquaporin-2 yerleşimini artırarak normalde su geri emilimini güçlendirir. Bu vakada idrar osmolalitesi düşük kaldığı için sorun su kanalının artmış aktivasyonundan değil, suyun çekileceği medüller ozmotik ortamın zayıflamasından kaynaklanır."
+      },
+      "answerFeedbackByOption": {
+        "Proksimal tübülde solüt tutulumu artışıyla lümende suyun geri emilmeden kalması": {
+          "explanation": "Bu seçenek osmotik diürezi düşündürür ve glukoz gibi lümende kalan solütler belirgin olduğunda anlam kazanır. Bu hastada serum glukozu normaldir ve idrar osmolalitesinin düşük kalması proksimal solüt yükünden çok medüller yoğunlaştırma basamağındaki zayıflamayı düşündürür."
+        },
+        "Toplayıcı kanalda ENaC etkinliğinin azalmasıyla lümen negatifliğinin zayıflaması": {
+          "explanation": "ENaC etkinliğinin azalması distal sodyum dengesi ve potasyum atılımını etkileyebilir; ancak idrarı yoğunlaştıran ana karşı-akım gradyanını açıklamaz. Bu vakada hipokalemi ve yüksek idrar hacmi, distal lümen negatifliğinden çok çıkan kol transportunun bozulmasıyla birlikte yorumlanmalıdır."
+        },
+        "Kalın çıkan kolda Na⁺-K⁺-2Cl⁻ taşınmasının azalmasıyla medüller gradyanın zayıflaması": {
+          "explanation": "Doğru seçenek budur. Kalın çıkan kol suya geçirgen değildir ve Na⁺-K⁺-2Cl⁻ taşıması medüller interstisyumun hipertonik kalmasını sağlar. Bu taşıma azaldığında toplayıcı kanalda ADH etkisi olsa bile suyun geri emilebileceği ozmotik çekim zayıflar; bu nedenle idrar hacmi artar ve idrar yeterince yoğunlaşamaz."
+        },
+        "Erken distal tübülde NaCl taşınmasının azalmasıyla kalsiyum geri emiliminin artması": {
+          "explanation": "Erken distal tübülde NaCl taşınmasının azalması özellikle kalsiyum geri emilimiyle ilişkilidir ve tiazid benzeri bir patern oluşturur. Bu mekanizma idrar yoğunlaştırma kapasitesindeki belirgin azalmayı ve yüksek idrar hacmini tek başına açıklamaz."
+        },
+        "V2 reseptör sinyalinin artmasıyla aquaporin-2 yerleşiminin belirgin güçlenmesi": {
+          "explanation": "V2 reseptör sinyalinin artması aquaporin-2 yerleşimini artırarak normalde su geri emilimini güçlendirir. Bu vakada idrar osmolalitesi düşük kaldığı için sorun su kanalının artmış aktivasyonundan değil, suyun çekileceği medüller ozmotik ortamın zayıflamasından kaynaklanır."
+        }
+      },
+      "learningOutcome": "Medüller ozmotik gradyanın toplayıcı kanalda su geri emilimi için neden gerekli olduğunu hasta verileri üzerinden ayırt edebilme.",
+      "clinicalPearls": [
+        "İdrar osmolalitesi düşükse yalnızca ADH varlığını değil, medüller ozmotik gradyanın kurulup kurulamadığını da düşün."
+      ],
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "İdrar osmolalitesi düşükse yalnızca ADH varlığını değil, medüller ozmotik gradyanın kurulup kurulamadığını da düşün."
+        }
+      ]
     }
   },
-  "coreKnowledge": "Pupilla ışık refleksi, retina-optik sinir afferenti ile başlayan ve beyin sapında iki taraflı parasempatik çıkışa dağılan bir otonom reflekstir. Efferent yol okülomotor sinirin parasempatik bileşeni üzerinden sfinkter pupillae kasına ulaşır. Bu çift taraflı bağlantı direkt ve karşı taraf yanıtının birlikte görülmesini sağlar.",
-  "examPearl": "Tek göze ışık + iki pupilde daralma = afferent tek başına değildir; beyin sapında bilateral parasempatik dağılım aranır.",
-  "whyCorrect": "Doğru seçenek budur. Bir göze verilen ışık sinyali optik sinir üzerinden pretektal bölgeye ulaşır ve buradan iki taraflı parasempatik çekirdeklere dağıtılır. Bu çift taraflı bağlantı aynı anda hem doğrudan hem karşı göz pupillasında küçülme oluşturur.",
+  "coreKnowledge": "Kalın çıkan kol suya geçirgen olmadan tuz geri emerek medüller hipertonisiteyi oluşturur; bu gradyan toplayıcı kanalda su geri emiliminin temel koşuludur.",
+  "examPearl": "İdrar osmolalitesi düşükse yalnızca ADH varlığını değil, medüller ozmotik gradyanın kurulup kurulamadığını da düşün.",
+  "whyCorrect": "Doğru seçenek budur. Kalın çıkan kol suya geçirgen değildir ve Na⁺-K⁺-2Cl⁻ taşıması medüller interstisyumun hipertonik kalmasını sağlar. Bu taşıma azaldığında toplayıcı kanalda ADH etkisi olsa bile suyun geri emilebileceği ozmotik çekim zayıflar; bu nedenle idrar hacmi artar ve idrar yeterince yoğunlaşamaz.",
   "optionComparison": {
-    "Sempatik liflerin superior servikal ganglion üzerinden radial kası uyarması": "Sempatik yol pupilla dilatasyonunda önemlidir; hipotalamus, intermediolateral kolon, superior servikal ganglion ve radial kas hattıyla çalışır. Bu olguda ışık verilince genişleme değil her iki pupillada küçülme kaydedilmiştir. Bu nedenle sempatik radial kas aktivasyonu, gözlenen yanıtın ana açıklaması değildir.",
-    "Vestibüler çekirdeklerin abdusens nöronlarına karşılıklı göz hareketi başlatması": "Vestibüler çekirdekler baş hareketi sırasında gözlerin hedefte kalmasına katkı verir; vestibülo-oküler refleks sorularında beklenir. Burada baş hareketi değil tek göze ışık uyaranı uygulanmıştır. Göz pozisyonu yerine pupilla çapındaki eş zamanlı değişim ölçülmektedir.",
-    "Kortikospinal liflerin mezensefalon üzerinden sfinkter kasına doğrudan inmesi": "Kortikospinal lifler istemli motor kontrolle ilişkilidir ve pupilla sfinkter kasına doğrudan inen bir yol oluşturmaz. Pupilla ışık yanıtı kortikal karar gerektirmeyen beyin sapı aracılı bir reflekstir. Bu seçenek, somatik motor yol ile otonom refleks yolunu karıştırma hatasını sınar.",
-    "Trigeminal ağrı afferentlerinin parasempatik çıkışı bilateral olarak baskılaması": "Trigeminal ağrı afferentleri korneal refleks ve bazı otonom yanıtlarla ilişkili olabilir; ağrılı uyaran bağlamında akla gelir. Bu testte ağrı uyaranı yoktur ve yanıt parasempatik çıkışın baskılanması değil pupilla daralmasıdır. Bu nedenle patern trigeminal baskılanma ile açıklanmaz.",
-    "Optik afferentlerin pretektal alandan iki parasempatik çekirdeğe dağılması": "Doğru seçenek budur. Bir göze verilen ışık sinyali optik sinir üzerinden pretektal bölgeye ulaşır ve buradan iki taraflı parasempatik çekirdeklere dağıtılır. Bu çift taraflı bağlantı aynı anda hem doğrudan hem karşı göz pupillasında küçülme oluşturur."
+    "Proksimal tübülde solüt tutulumu artışıyla lümende suyun geri emilmeden kalması": "Bu seçenek osmotik diürezi düşündürür ve glukoz gibi lümende kalan solütler belirgin olduğunda anlam kazanır. Bu hastada serum glukozu normaldir ve idrar osmolalitesinin düşük kalması proksimal solüt yükünden çok medüller yoğunlaştırma basamağındaki zayıflamayı düşündürür.",
+    "Toplayıcı kanalda ENaC etkinliğinin azalmasıyla lümen negatifliğinin zayıflaması": "ENaC etkinliğinin azalması distal sodyum dengesi ve potasyum atılımını etkileyebilir; ancak idrarı yoğunlaştıran ana karşı-akım gradyanını açıklamaz. Bu vakada hipokalemi ve yüksek idrar hacmi, distal lümen negatifliğinden çok çıkan kol transportunun bozulmasıyla birlikte yorumlanmalıdır.",
+    "Kalın çıkan kolda Na⁺-K⁺-2Cl⁻ taşınmasının azalmasıyla medüller gradyanın zayıflaması": "Doğru seçenek budur. Kalın çıkan kol suya geçirgen değildir ve Na⁺-K⁺-2Cl⁻ taşıması medüller interstisyumun hipertonik kalmasını sağlar. Bu taşıma azaldığında toplayıcı kanalda ADH etkisi olsa bile suyun geri emilebileceği ozmotik çekim zayıflar; bu nedenle idrar hacmi artar ve idrar yeterince yoğunlaşamaz.",
+    "Erken distal tübülde NaCl taşınmasının azalmasıyla kalsiyum geri emiliminin artması": "Erken distal tübülde NaCl taşınmasının azalması özellikle kalsiyum geri emilimiyle ilişkilidir ve tiazid benzeri bir patern oluşturur. Bu mekanizma idrar yoğunlaştırma kapasitesindeki belirgin azalmayı ve yüksek idrar hacmini tek başına açıklamaz.",
+    "V2 reseptör sinyalinin artmasıyla aquaporin-2 yerleşiminin belirgin güçlenmesi": "V2 reseptör sinyalinin artması aquaporin-2 yerleşimini artırarak normalde su geri emilimini güçlendirir. Bu vakada idrar osmolalitesi düşük kaldığı için sorun su kanalının artmış aktivasyonundan değil, suyun çekileceği medüller ozmotik ortamın zayıflamasından kaynaklanır."
   },
   "evidenceChain": [
     {
-      "title": "Uyaran",
-      "text": "Işık tek göze verildi → afferent giriş tek taraftan başlatılmıştır",
+      "title": "İdrar hacmi",
+      "text": "Günde 3.4 L idrar → su kaybı ve yoğunlaştırma kapasitesinde azalma yönünde veri sağlar",
       "weight": "high",
       "source": "case"
     },
     {
-      "title": "Yanıt dağılımı",
-      "text": "İki pupillada eş zamanlı çap azalması → çıkış iki tarafa da ulaşmıştır",
+      "title": "İdrar osmolalitesi",
+      "text": "İdrar osmolalitesi 178 mOsm/kg → plazmaya göre beklenenden düşük yoğunlukta idrar vardır",
       "weight": "high",
       "source": "case"
     },
     {
-      "title": "Motor ayrım",
-      "text": "Ekstraoküler hareketler tam → sorun göz hareketi refleksi değildir",
+      "title": "Serum elektroliti",
+      "text": "Potasyum 3.1 mmol/L → distal akım artışıyla uyumlu elektrolit kaybı eşlik eder",
       "weight": "medium",
       "source": "case"
     },
     {
-      "title": "Otonom yön",
-      "text": "Pupilla küçülmesi kaydedildi → sempatik dilatasyon değil parasempatik sfinkter yanıtı baskındır",
-      "weight": "high",
+      "title": "Glukoz verisi",
+      "text": "Serum glukozu normal → osmotik diürez için glukoz yükü ön planda değildir",
+      "weight": "medium",
       "source": "case"
     }
   ],
   "whyWrong": {
-    "Sempatik liflerin superior servikal ganglion üzerinden radial kası uyarması": "Sempatik yol pupilla dilatasyonunda önemlidir; hipotalamus, intermediolateral kolon, superior servikal ganglion ve radial kas hattıyla çalışır. Bu olguda ışık verilince genişleme değil her iki pupillada küçülme kaydedilmiştir. Bu nedenle sempatik radial kas aktivasyonu, gözlenen yanıtın ana açıklaması değildir.",
-    "Vestibüler çekirdeklerin abdusens nöronlarına karşılıklı göz hareketi başlatması": "Vestibüler çekirdekler baş hareketi sırasında gözlerin hedefte kalmasına katkı verir; vestibülo-oküler refleks sorularında beklenir. Burada baş hareketi değil tek göze ışık uyaranı uygulanmıştır. Göz pozisyonu yerine pupilla çapındaki eş zamanlı değişim ölçülmektedir.",
-    "Kortikospinal liflerin mezensefalon üzerinden sfinkter kasına doğrudan inmesi": "Kortikospinal lifler istemli motor kontrolle ilişkilidir ve pupilla sfinkter kasına doğrudan inen bir yol oluşturmaz. Pupilla ışık yanıtı kortikal karar gerektirmeyen beyin sapı aracılı bir reflekstir. Bu seçenek, somatik motor yol ile otonom refleks yolunu karıştırma hatasını sınar.",
-    "Trigeminal ağrı afferentlerinin parasempatik çıkışı bilateral olarak baskılaması": "Trigeminal ağrı afferentleri korneal refleks ve bazı otonom yanıtlarla ilişkili olabilir; ağrılı uyaran bağlamında akla gelir. Bu testte ağrı uyaranı yoktur ve yanıt parasempatik çıkışın baskılanması değil pupilla daralmasıdır. Bu nedenle patern trigeminal baskılanma ile açıklanmaz."
+    "Proksimal tübülde solüt tutulumu artışıyla lümende suyun geri emilmeden kalması": "Bu seçenek osmotik diürezi düşündürür ve glukoz gibi lümende kalan solütler belirgin olduğunda anlam kazanır. Bu hastada serum glukozu normaldir ve idrar osmolalitesinin düşük kalması proksimal solüt yükünden çok medüller yoğunlaştırma basamağındaki zayıflamayı düşündürür.",
+    "Toplayıcı kanalda ENaC etkinliğinin azalmasıyla lümen negatifliğinin zayıflaması": "ENaC etkinliğinin azalması distal sodyum dengesi ve potasyum atılımını etkileyebilir; ancak idrarı yoğunlaştıran ana karşı-akım gradyanını açıklamaz. Bu vakada hipokalemi ve yüksek idrar hacmi, distal lümen negatifliğinden çok çıkan kol transportunun bozulmasıyla birlikte yorumlanmalıdır.",
+    "Erken distal tübülde NaCl taşınmasının azalmasıyla kalsiyum geri emiliminin artması": "Erken distal tübülde NaCl taşınmasının azalması özellikle kalsiyum geri emilimiyle ilişkilidir ve tiazid benzeri bir patern oluşturur. Bu mekanizma idrar yoğunlaştırma kapasitesindeki belirgin azalmayı ve yüksek idrar hacmini tek başına açıklamaz.",
+    "V2 reseptör sinyalinin artmasıyla aquaporin-2 yerleşiminin belirgin güçlenmesi": "V2 reseptör sinyalinin artması aquaporin-2 yerleşimini artırarak normalde su geri emilimini güçlendirir. Bu vakada idrar osmolalitesi düşük kaldığı için sorun su kanalının artmış aktivasyonundan değil, suyun çekileceği medüller ozmotik ortamın zayıflamasından kaynaklanır."
   },
-  "mechanismExplanation": "Işık sinyali optik afferentle beyin sapına gelir, pretektal düzeyde iki taraflı parasempatik çekirdeklere dağılır, okülomotor parasempatik çıkış sfinkter pupillae kasını uyarır ve iki pupilla daralır.",
-  "scientificComment": "Soru, nörofizyolojik refleksleri afferent uyaran, merkezi dağılım ve otonom efferent yanıt sırasıyla düşündürür.",
-  "helpText": "Pupil sorularında önce yanıtın daralma mı genişleme mi olduğunu belirle; sonra afferent göz ile efferent gözlerin dağılımını karşılaştır.",
+  "mechanismExplanation": "Kalın çıkan kolda tuz geri emilimi azalırsa medüller interstisyum yeterince hipertonik kalamaz; toplayıcı kanaldan su geri emilimi azalır ve idrar hacmi artar.",
+  "scientificComment": "Soru, renal karşı-akım mekanizmasını osmotik diürez, distal sodyum transportu ve ADH etkisinden ayırmayı hedefler.",
+  "helpText": "İdrar hacmi ve osmolaliteyi glukoz, potasyum ve böbrek fonksiyonuyla birlikte değerlendir.",
   "preserveInvestigationOrder": true
 },
 {
-  "id": "v216-new-004-potasyum-artisinda-iletim-kaydi",
+  "id": "v214-new-002-karinda-sislik-ve-ayak-bilegi-odemi",
   "branchId": "physiology",
   "caseType": "standard",
   "relatedBranch": "Fizyoloji",
-  "title": "Potasyum artışında iletim kaydı",
-  "difficulty": "Zor",
-  "difficultyTag": "Zor",
-  "clinicalFocus": "Ekstrasellüler potasyum artışının kardiyak miyosit membran potansiyeli, hızlı sodyum kanalı kullanılabilirliği ve iletim hızı üzerindeki etkisini yorumlama.",
-  "learningTarget": "Potasyum denge potansiyeli, istirahat membran potansiyeli, faz 0 yükseliş hızı ve EKG iletim süresi arasındaki ilişkiyi mekanizma düzeyinde açıklayabilme.",
-  "demographics": "58 yaşında erkek hasta",
-  "setting": "Acil gözlem birimi",
-  "chiefComplaint": "Hasta, çarpıntı hissi ve halsizlik nedeniyle acil gözlem biriminde elektrolit ve ritim açısından değerlendiriliyor.",
-  "stem": "Hasta son iki gündür iştahının azaldığını, bacaklarında güçsüzlük ve aralıklı çarpıntı hissettiğini anlatır. Hipertansiyon için düzenli ilaç kullandığını, son haftalarda tuz yerine potasyum içeren bir ürün kullanmaya başladığını belirtir. Göğüs ağrısı, ateş, ishal veya yeni başlayan kusma tariflemez. Yakınmaları artınca evde tansiyonunu ölçmüş ve nabzını düzensiz hissettiği için acil servise başvurmuştur.",
+  "title": "Karında şişlik ve ayak bileği ödemi",
+  "difficulty": "Orta",
+  "difficultyTag": "Orta",
+  "clinicalFocus": "Yaygın ödem ve asit gelişen hastada Starling kuvvetlerinden hangisinin baskın değiştiğini ayırt etme.",
+  "learningTarget": "Plazma protein düzeyi azaldığında kapiller sıvı dengesinin neden interstisyel sıvı birikimine kaydığını vaka verileriyle açıklayabilme.",
+  "demographics": "46 yaşında kadın hasta",
+  "setting": "Dahiliye polikliniği",
+  "chiefComplaint": "Hasta, son haftalarda artan karında şişlik ve ayak bileklerinde ödem nedeniyle başvuruyor.",
+  "stem": "Hasta, yaklaşık üç haftadır ayakkabılarının gün sonunda sıkmaya başladığını ve yüzüğünün parmağında daha dar durduğunu fark ettiğini anlatır. Son günlerde karnında dolgunluk hissi belirginleşmiş, merdiven çıkarken nefes darlığı olmadan çabuk yorulmaya başlamıştır. Göğüs ağrısı, gece nefes darlığıyla uyanma, ateş veya yeni başlayan eklem ağrısı tariflemez. Tuz alımını belirgin artırmadığını, ancak son aylarda iştahının azaldığını ve kilosunun dalgalandığını söyler.",
   "patientIntro": {
-    "profile": "58 yaşında erkek hasta, halsizlik ve çarpıntı hissi nedeniyle acil gözlemde değerlendiriliyor.",
-    "presentation": "Elektrolit değişimi ile eş zamanlı kardiyak iletim kaydı alınmıştır.",
-    "historySummary": "Hasta son iki gündür iştahının azaldığını, bacaklarında güçsüzlük ve aralıklı çarpıntı hissettiğini anlatır. Hipertansiyon için düzenli ilaç kullandığını, son haftalarda tuz yerine potasyum içeren bir ürün kullanmaya başladığını belirtir. Göğüs ağrısı, ateş, ishal veya yeni başlayan kusma tariflemez. Yakınmaları artınca evde tansiyonunu ölçmüş ve nabzını düzensiz hissettiği için acil servise başvurmuştur."
+    "profile": "46 yaşında kadın hasta, yavaş gelişen periferik ödem ve karında şişlik nedeniyle değerlendiriliyor.",
+    "presentation": "Ayak bileklerinde gode bırakan ödem ve karında dolgunluk hissi ön plandadır.",
+    "historySummary": "Hasta, yaklaşık üç haftadır ayakkabılarının gün sonunda sıkmaya başladığını ve yüzüğünün parmağında daha dar durduğunu fark ettiğini anlatır. Son günlerde karnında dolgunluk hissi belirginleşmiş, merdiven çıkarken nefes darlığı olmadan çabuk yorulmaya başlamıştır. Göğüs ağrısı, gece nefes darlığıyla uyanma, ateş veya yeni başlayan eklem ağrısı tariflemez. Tuz alımını belirgin artırmadığını, ancak son aylarda iştahının azaldığını ve kilosunun dalgalandığını söyler."
   },
   "vitals": {
-    "TA": "126/78 mmHg",
-    "Nabız": "58/dk, düzensiz aralıklarla",
-    "Solunum": "16/dk",
-    "SpO2": "%98, oda havasında",
-    "Ateş": "36.7 °C",
-    "Şok indeksi": "0.46"
+    "TA": "112/70 mmHg",
+    "Nabız": "88/dk",
+    "Solunum": "17/dk",
+    "SpO2": "%97, oda havasında",
+    "Ateş": "36.8 °C",
+    "Şok indeksi": "0.79 - normal aralıkta"
   },
   "exam": [
-    "Hasta uyanık ve koopere; konuşması nettir.",
-    "Kas gücü proksimal bacaklarda hafif azalmış, derin tendon refleksleri alınabilir durumdadır.",
-    "Akciğer oskültasyonu doğaldır; periferik ödem saptanmaz.",
-    "Kalp oskültasyonunda ritim aralıklı düzensizdir; belirgin yeni üfürüm duyulmaz."
+    "Her iki ayak bileğinde pretibial gode bırakan ödem vardır.",
+    "Batında hafif distansiyon ve mobil matite alınır.",
+    "Juguler venöz dolgunluk belirgin değildir; akciğer bazallerinde ral duyulmaz.",
+    "Cilt turgoru korunmuş, periferik nabızlar simetriktir."
   ],
   "investigations": [
     {
-      "id": "v216-new-004-potasyum-artisinda-iletim-kaydi-serum-elektrolit-paneli",
-      "label": "Serum elektrolit paneli",
-      "title": "Serum elektrolit paneli",
+      "id": "v214-new-002-karinda-sislik-ve-ayak-bilegi-odemi-serum-protein-bobrek-fonksiyon",
+      "label": "Serum proteinleri ve temel biyokimya",
+      "title": "Serum proteinleri ve temel biyokimya",
+      "orderLabel": "Serum proteinleri ve temel biyokimya",
       "type": "laboratory",
       "priority": "essential",
-      "subtype": "Temel elektrolit değerlendirmesi",
+      "subtype": "Protein ve böbrek fonksiyon ölçümü",
       "category": "laboratory",
       "testTypeCategory": "laboratory",
-      "summary": "Serum potasyumu yüksek, kalsiyum ve magnezyum değerleri belirgin sapma göstermemektedir.",
-      "clinicalMeaning": "Serum potasyumu yüksek, kalsiyum ve magnezyum değerleri belirgin sapma göstermemektedir.",
+      "summary": "Serum proteinleri düşükken kreatinin ve sodyum normal aralıkta ölçülmüştür.",
+      "clinicalMeaning": "Serum proteinleri düşükken kreatinin ve sodyum normal aralıkta ölçülmüştür.",
       "testValueLabel": "Kritik veri",
       "educationalValue": "Kritik veri",
       "clinicalPriorityLabel": "Kritik veri",
@@ -276126,331 +271948,798 @@ export const rawCases = [
       "source": "case",
       "clinicalFlowOrder": 1,
       "result": {
-        "title": "Serum elektrolit paneli",
-        "summary": "Serum potasyumu yüksek, kalsiyum ve magnezyum değerleri belirgin sapma göstermemektedir.",
-        "interpretation": "Serum potasyumu yüksek, kalsiyum ve magnezyum değerleri belirgin sapma göstermemektedir.",
+        "title": "Serum proteinleri ve temel biyokimya",
+        "summary": "Serum proteinleri düşükken kreatinin ve sodyum normal aralıkta ölçülmüştür.",
+        "interpretation": "Serum proteinleri düşükken kreatinin ve sodyum normal aralıkta ölçülmüştür.",
         "values": [
           [
-            "Potasyum",
-            "6.7 mmol/L",
-            "3.5-5.1 mmol/L",
-            "Yüksek"
+            "Serum albümini",
+            "2.0 g/dL",
+            "3.5-5.0 g/dL",
+            "Düşük"
+          ],
+          [
+            "Total protein",
+            "4.8 g/dL",
+            "6.4-8.3 g/dL",
+            "Düşük"
+          ],
+          [
+            "Kreatinin",
+            "0.8 mg/dL",
+            "0.6-1.1 mg/dL",
+            "Normal"
           ],
           [
             "Sodyum",
             "138 mmol/L",
             "135-145 mmol/L",
-            "Normal"
-          ],
-          [
-            "Kalsiyum",
-            "9.4 mg/dL",
-            "8.6-10.2 mg/dL",
-            "Normal"
-          ],
-          [
-            "Magnezyum",
-            "2.0 mg/dL",
-            "1.7-2.4 mg/dL",
             "Normal"
           ]
         ],
         "rows": [
           [
-            "Potasyum",
-            "6.7 mmol/L",
-            "3.5-5.1 mmol/L",
-            "Yüksek"
+            "Serum albümini",
+            "2.0 g/dL",
+            "3.5-5.0 g/dL",
+            "Düşük"
+          ],
+          [
+            "Total protein",
+            "4.8 g/dL",
+            "6.4-8.3 g/dL",
+            "Düşük"
+          ],
+          [
+            "Kreatinin",
+            "0.8 mg/dL",
+            "0.6-1.1 mg/dL",
+            "Normal"
           ],
           [
             "Sodyum",
             "138 mmol/L",
             "135-145 mmol/L",
-            "Normal"
-          ],
-          [
-            "Kalsiyum",
-            "9.4 mg/dL",
-            "8.6-10.2 mg/dL",
-            "Normal"
-          ],
-          [
-            "Magnezyum",
-            "2.0 mg/dL",
-            "1.7-2.4 mg/dL",
             "Normal"
           ]
         ]
       },
       "rows": [
         [
-          "Potasyum",
-          "6.7 mmol/L",
-          "3.5-5.1 mmol/L",
-          "Yüksek"
+          "Serum albümini",
+          "2.0 g/dL",
+          "3.5-5.0 g/dL",
+          "Düşük"
+        ],
+        [
+          "Total protein",
+          "4.8 g/dL",
+          "6.4-8.3 g/dL",
+          "Düşük"
+        ],
+        [
+          "Kreatinin",
+          "0.8 mg/dL",
+          "0.6-1.1 mg/dL",
+          "Normal"
         ],
         [
           "Sodyum",
           "138 mmol/L",
           "135-145 mmol/L",
           "Normal"
-        ],
-        [
-          "Kalsiyum",
-          "9.4 mg/dL",
-          "8.6-10.2 mg/dL",
-          "Normal"
-        ],
-        [
-          "Magnezyum",
-          "2.0 mg/dL",
-          "1.7-2.4 mg/dL",
-          "Normal"
         ]
       ],
-      "postAnswerExplanation": "Serum potasyumu yüksek, kalsiyum ve magnezyum değerleri belirgin sapma göstermemektedir.",
-      "interpretation": "Serum potasyumu yüksek, kalsiyum ve magnezyum değerleri belirgin sapma göstermemektedir.",
-      "inlineFeedback": "Serum potasyumu yüksek, kalsiyum ve magnezyum değerleri belirgin sapma göstermemektedir.",
-      "explanationAfterAnswer": "Serum potasyumu yüksek, kalsiyum ve magnezyum değerleri belirgin sapma göstermemektedir."
+      "postAnswerExplanation": "Serum proteinleri düşükken kreatinin ve sodyum normal aralıkta ölçülmüştür.",
+      "interpretation": "Serum proteinleri düşükken kreatinin ve sodyum normal aralıkta ölçülmüştür.",
+      "explanationAfterAnswer": "Serum proteinleri düşükken kreatinin ve sodyum normal aralıkta ölçülmüştür.",
+      "inlineFeedback": "Serum proteinleri düşükken kreatinin ve sodyum normal aralıkta ölçülmüştür."
     },
     {
-      "id": "v216-new-004-potasyum-artisinda-iletim-kaydi-ekg-iletim-kaydi",
-      "label": "EKG iletim kaydı",
-      "title": "EKG iletim kaydı",
-      "type": "functional",
+      "id": "v214-new-002-karinda-sislik-ve-ayak-bilegi-odemi-sivi-birikimi-degerlendirme",
+      "label": "Periferik ve abdominal sıvı değerlendirmesi",
+      "title": "Periferik ve abdominal sıvı değerlendirmesi",
+      "orderLabel": "Periferik ve abdominal sıvı değerlendirmesi",
+      "type": "clinical",
+      "priority": "supportive",
+      "subtype": "Klinik sıvı birikimi kaydı",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Periferik ve abdominal sıvı birikimi varken belirgin santral venöz konjesyon bulgusu saptanmamıştır.",
+      "clinicalMeaning": "Periferik ve abdominal sıvı birikimi varken belirgin santral venöz konjesyon bulgusu saptanmamıştır.",
+      "testValueLabel": "Destekleyici veri",
+      "educationalValue": "Destekleyici veri",
+      "clinicalPriorityLabel": "Destekleyici veri",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "source": "case",
+      "clinicalFlowOrder": 2,
+      "result": {
+        "title": "Periferik ve abdominal sıvı değerlendirmesi",
+        "summary": "Periferik ve abdominal sıvı birikimi varken belirgin santral venöz konjesyon bulgusu saptanmamıştır.",
+        "interpretation": "Periferik ve abdominal sıvı birikimi varken belirgin santral venöz konjesyon bulgusu saptanmamıştır.",
+        "values": [
+          [
+            "Pretibial ödem",
+            "Bilateral +2 gode",
+            "",
+            "Mevcut"
+          ],
+          [
+            "Mobil matite",
+            "Pozitif",
+            "",
+            "Asit lehine"
+          ],
+          [
+            "Juguler venöz dolgunluk",
+            "Belirgin değil",
+            "",
+            "Saptanmadı"
+          ],
+          [
+            "Akciğer oskültasyonu",
+            "Ralsiz",
+            "",
+            "Konjesyon bulgusu yok"
+          ]
+        ],
+        "rows": [
+          [
+            "Pretibial ödem",
+            "Bilateral +2 gode",
+            "",
+            "Mevcut"
+          ],
+          [
+            "Mobil matite",
+            "Pozitif",
+            "",
+            "Asit lehine"
+          ],
+          [
+            "Juguler venöz dolgunluk",
+            "Belirgin değil",
+            "",
+            "Saptanmadı"
+          ],
+          [
+            "Akciğer oskültasyonu",
+            "Ralsiz",
+            "",
+            "Konjesyon bulgusu yok"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Pretibial ödem",
+          "Bilateral +2 gode",
+          "",
+          "Mevcut"
+        ],
+        [
+          "Mobil matite",
+          "Pozitif",
+          "",
+          "Asit lehine"
+        ],
+        [
+          "Juguler venöz dolgunluk",
+          "Belirgin değil",
+          "",
+          "Saptanmadı"
+        ],
+        [
+          "Akciğer oskültasyonu",
+          "Ralsiz",
+          "",
+          "Konjesyon bulgusu yok"
+        ]
+      ],
+      "postAnswerExplanation": "Periferik ve abdominal sıvı birikimi varken belirgin santral venöz konjesyon bulgusu saptanmamıştır.",
+      "interpretation": "Periferik ve abdominal sıvı birikimi varken belirgin santral venöz konjesyon bulgusu saptanmamıştır.",
+      "explanationAfterAnswer": "Periferik ve abdominal sıvı birikimi varken belirgin santral venöz konjesyon bulgusu saptanmamıştır.",
+      "inlineFeedback": "Periferik ve abdominal sıvı birikimi varken belirgin santral venöz konjesyon bulgusu saptanmamıştır."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "shuffleOptions": false,
+  "question": "Bu hastadaki yaygın sıvı birikimini en iyi açıklayan Starling kuvveti değişikliği hangisidir?",
+  "questionType": "physiology_mechanism",
+  "answerTarget": "starling_forces_low_plasma_oncotic_pressure",
+  "diagnosis": {
+    "correct": "Plazma kolloid ozmotik basıncının azalmasıyla interstisyuma sıvı geçişinin artması",
+    "options": [
+      "Kapiller hidrostatik basıncın artmasıyla filtrasyonun venöz uçta sürmesi",
+      "Plazma kolloid ozmotik basıncının azalmasıyla interstisyuma sıvı geçişinin artması",
+      "İnterstisyel hidrostatik basıncın artmasıyla kapillere sıvı dönüşünün hızlanması",
+      "Lenfatik drenajın artmasıyla doku proteinlerinin uzaklaştırılmasının güçlenmesi",
+      "Arterioler vazokonstriksiyonla kapiller yüzey alanının ve filtrasyonun azalması"
+    ],
+    "question": "Bu hastadaki yaygın sıvı birikimini en iyi açıklayan Starling kuvveti değişikliği hangisidir?",
+    "explanation": "Yaygın gode bırakan ödem ve asit, belirgin venöz konjesyon olmadan düşük serum albüminiyle birliktedir. Albümin azalınca plazma kolloid ozmotik basıncı düşer; kapiller içi geri çekici kuvvet zayıfladığı için sıvı interstisyel ve seröz boşluklarda birikir.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Ödem sorularında hidrostatik basınç ve onkotik basınç ayrımı, juguler venöz bulgular ve albümin düzeyiyle yapılır."
+      }
+    ],
+    "optionComparison": {
+      "Kapiller hidrostatik basıncın artmasıyla filtrasyonun venöz uçta sürmesi": "Kapiller hidrostatik basınç artışı kalp yetmezliği veya venöz konjesyon gibi durumlarda ödem oluşturabilir. Bu hastada juguler venöz dolgunluk ve belirgin akciğer konjesyonu yokken serum albümininin çok düşük olması, ana Starling değişkeninin hidrostatik basınç değil plazma onkotik basıncı olduğunu gösterir.",
+      "Plazma kolloid ozmotik basıncının azalmasıyla interstisyuma sıvı geçişinin artması": "Doğru seçenek budur. Albümin kapiller içinde suyu tutan kolloid ozmotik gücün temel belirleyicisidir. Albümin belirgin azaldığında kapillerden interstisyuma geçen sıvının geri çekilmesi zorlaşır; bu durum gode bırakan ödem ve karında sıvı birikimiyle klinik olarak görünür hale gelir.",
+      "İnterstisyel hidrostatik basıncın artmasıyla kapillere sıvı dönüşünün hızlanması": "İnterstisyel hidrostatik basıncın artması genellikle filtrasyonu sınırlayıcı yönde davranır ve tek başına yaygın ödemin temel nedeni değildir. Bu vakada sıvı birikiminin sürmesi, kapiller içine çekici kuvvetin azalmasıyla daha iyi açıklanır.",
+      "Lenfatik drenajın artmasıyla doku proteinlerinin uzaklaştırılmasının güçlenmesi": "Lenfatik drenaj artışı ödemi azaltmaya çalışan koruyucu bir yanıttır. Eğer lenfatik drenaj yetersiz veya tıkalı olsaydı lokal, proteinli ödem beklenirdi; bu hastada yaygın ödem düşük plazma protein düzeyiyle paraleldir.",
+      "Arterioler vazokonstriksiyonla kapiller yüzey alanının ve filtrasyonun azalması": "Arterioler vazokonstriksiyon kapiller yüzey alanını ve hidrostatik basıncı azaltarak filtrasyonu düşürme eğilimindedir. Olgudaki yaygın sıvı geçişi ve düşük albümin, filtrasyonun azalmasından çok geri emici onkotik kuvvetin zayıflamasıyla uyumludur."
+    },
+    "answerFeedback": {
+      "summary": "Yaygın gode bırakan ödem ve asit, belirgin venöz konjesyon olmadan düşük serum albüminiyle birliktedir.",
+      "whyCorrect": "Doğru seçenek budur. Albümin kapiller içinde suyu tutan kolloid ozmotik gücün temel belirleyicisidir. Albümin belirgin azaldığında kapillerden interstisyuma geçen sıvının geri çekilmesi zorlaşır; bu durum gode bırakan ödem ve karında sıvı birikimiyle klinik olarak görünür hale gelir.",
+      "keyClues": [
+        "Albümin 2.0 g/dL → kapiller içi kolloid çekim gücü belirgin azalmıştır",
+        "Bilateral gode bırakan ödem ve asit → sistemik sıvı transüdasyonu lehine bulgular vardır",
+        "Juguler venöz dolgunluk belirgin değil → primer venöz konjesyon verisi güçlü değildir"
+      ],
+      "examPearl": "Ödem sorularında hidrostatik basınç ve onkotik basınç ayrımı, juguler venöz bulgular ve albümin düzeyiyle yapılır.",
+      "evidenceChain": [
+        {
+          "title": "Serum albümini",
+          "text": "Albümin 2.0 g/dL → kapiller içi kolloid çekim gücü belirgin azalmıştır",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Ödem paterni",
+          "text": "Bilateral gode bırakan ödem ve asit → sistemik sıvı transüdasyonu lehine bulgular vardır",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Dolaşım muayenesi",
+          "text": "Juguler venöz dolgunluk belirgin değil → primer venöz konjesyon verisi güçlü değildir",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Böbrek fonksiyonu",
+          "text": "Kreatinin normal → ödemi açıklayan ağır filtrasyon kaybı ön planda değildir",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Kapiller hidrostatik basıncın artmasıyla filtrasyonun venöz uçta sürmesi": "Kapiller hidrostatik basınç artışı kalp yetmezliği veya venöz konjesyon gibi durumlarda ödem oluşturabilir. Bu hastada juguler venöz dolgunluk ve belirgin akciğer konjesyonu yokken serum albümininin çok düşük olması, ana Starling değişkeninin hidrostatik basınç değil plazma onkotik basıncı olduğunu gösterir.",
+        "Plazma kolloid ozmotik basıncının azalmasıyla interstisyuma sıvı geçişinin artması": "Doğru seçenek budur. Albümin kapiller içinde suyu tutan kolloid ozmotik gücün temel belirleyicisidir. Albümin belirgin azaldığında kapillerden interstisyuma geçen sıvının geri çekilmesi zorlaşır; bu durum gode bırakan ödem ve karında sıvı birikimiyle klinik olarak görünür hale gelir.",
+        "İnterstisyel hidrostatik basıncın artmasıyla kapillere sıvı dönüşünün hızlanması": "İnterstisyel hidrostatik basıncın artması genellikle filtrasyonu sınırlayıcı yönde davranır ve tek başına yaygın ödemin temel nedeni değildir. Bu vakada sıvı birikiminin sürmesi, kapiller içine çekici kuvvetin azalmasıyla daha iyi açıklanır.",
+        "Lenfatik drenajın artmasıyla doku proteinlerinin uzaklaştırılmasının güçlenmesi": "Lenfatik drenaj artışı ödemi azaltmaya çalışan koruyucu bir yanıttır. Eğer lenfatik drenaj yetersiz veya tıkalı olsaydı lokal, proteinli ödem beklenirdi; bu hastada yaygın ödem düşük plazma protein düzeyiyle paraleldir.",
+        "Arterioler vazokonstriksiyonla kapiller yüzey alanının ve filtrasyonun azalması": "Arterioler vazokonstriksiyon kapiller yüzey alanını ve hidrostatik basıncı azaltarak filtrasyonu düşürme eğilimindedir. Olgudaki yaygın sıvı geçişi ve düşük albümin, filtrasyonun azalmasından çok geri emici onkotik kuvvetin zayıflamasıyla uyumludur."
+      },
+      "answerFeedbackByOption": {
+        "Kapiller hidrostatik basıncın artmasıyla filtrasyonun venöz uçta sürmesi": {
+          "explanation": "Kapiller hidrostatik basınç artışı kalp yetmezliği veya venöz konjesyon gibi durumlarda ödem oluşturabilir. Bu hastada juguler venöz dolgunluk ve belirgin akciğer konjesyonu yokken serum albümininin çok düşük olması, ana Starling değişkeninin hidrostatik basınç değil plazma onkotik basıncı olduğunu gösterir."
+        },
+        "Plazma kolloid ozmotik basıncının azalmasıyla interstisyuma sıvı geçişinin artması": {
+          "explanation": "Doğru seçenek budur. Albümin kapiller içinde suyu tutan kolloid ozmotik gücün temel belirleyicisidir. Albümin belirgin azaldığında kapillerden interstisyuma geçen sıvının geri çekilmesi zorlaşır; bu durum gode bırakan ödem ve karında sıvı birikimiyle klinik olarak görünür hale gelir."
+        },
+        "İnterstisyel hidrostatik basıncın artmasıyla kapillere sıvı dönüşünün hızlanması": {
+          "explanation": "İnterstisyel hidrostatik basıncın artması genellikle filtrasyonu sınırlayıcı yönde davranır ve tek başına yaygın ödemin temel nedeni değildir. Bu vakada sıvı birikiminin sürmesi, kapiller içine çekici kuvvetin azalmasıyla daha iyi açıklanır."
+        },
+        "Lenfatik drenajın artmasıyla doku proteinlerinin uzaklaştırılmasının güçlenmesi": {
+          "explanation": "Lenfatik drenaj artışı ödemi azaltmaya çalışan koruyucu bir yanıttır. Eğer lenfatik drenaj yetersiz veya tıkalı olsaydı lokal, proteinli ödem beklenirdi; bu hastada yaygın ödem düşük plazma protein düzeyiyle paraleldir."
+        },
+        "Arterioler vazokonstriksiyonla kapiller yüzey alanının ve filtrasyonun azalması": {
+          "explanation": "Arterioler vazokonstriksiyon kapiller yüzey alanını ve hidrostatik basıncı azaltarak filtrasyonu düşürme eğilimindedir. Olgudaki yaygın sıvı geçişi ve düşük albümin, filtrasyonun azalmasından çok geri emici onkotik kuvvetin zayıflamasıyla uyumludur."
+        }
+      },
+      "learningOutcome": "Plazma protein düzeyi azaldığında kapiller sıvı dengesinin neden interstisyel sıvı birikimine kaydığını vaka verileriyle açıklayabilme.",
+      "clinicalPearls": [
+        "Ödem sorularında hidrostatik basınç ve onkotik basınç ayrımı, juguler venöz bulgular ve albümin düzeyiyle yapılır."
+      ],
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Ödem sorularında hidrostatik basınç ve onkotik basınç ayrımı, juguler venöz bulgular ve albümin düzeyiyle yapılır."
+        }
+      ]
+    }
+  },
+  "coreKnowledge": "Albümin düşüklüğü plazma kolloid ozmotik basıncını azaltarak sıvının kapiller dışı alanda birikmesini kolaylaştırır.",
+  "examPearl": "Ödem sorularında hidrostatik basınç ve onkotik basınç ayrımı, juguler venöz bulgular ve albümin düzeyiyle yapılır.",
+  "whyCorrect": "Doğru seçenek budur. Albümin kapiller içinde suyu tutan kolloid ozmotik gücün temel belirleyicisidir. Albümin belirgin azaldığında kapillerden interstisyuma geçen sıvının geri çekilmesi zorlaşır; bu durum gode bırakan ödem ve karında sıvı birikimiyle klinik olarak görünür hale gelir.",
+  "optionComparison": {
+    "Kapiller hidrostatik basıncın artmasıyla filtrasyonun venöz uçta sürmesi": "Kapiller hidrostatik basınç artışı kalp yetmezliği veya venöz konjesyon gibi durumlarda ödem oluşturabilir. Bu hastada juguler venöz dolgunluk ve belirgin akciğer konjesyonu yokken serum albümininin çok düşük olması, ana Starling değişkeninin hidrostatik basınç değil plazma onkotik basıncı olduğunu gösterir.",
+    "Plazma kolloid ozmotik basıncının azalmasıyla interstisyuma sıvı geçişinin artması": "Doğru seçenek budur. Albümin kapiller içinde suyu tutan kolloid ozmotik gücün temel belirleyicisidir. Albümin belirgin azaldığında kapillerden interstisyuma geçen sıvının geri çekilmesi zorlaşır; bu durum gode bırakan ödem ve karında sıvı birikimiyle klinik olarak görünür hale gelir.",
+    "İnterstisyel hidrostatik basıncın artmasıyla kapillere sıvı dönüşünün hızlanması": "İnterstisyel hidrostatik basıncın artması genellikle filtrasyonu sınırlayıcı yönde davranır ve tek başına yaygın ödemin temel nedeni değildir. Bu vakada sıvı birikiminin sürmesi, kapiller içine çekici kuvvetin azalmasıyla daha iyi açıklanır.",
+    "Lenfatik drenajın artmasıyla doku proteinlerinin uzaklaştırılmasının güçlenmesi": "Lenfatik drenaj artışı ödemi azaltmaya çalışan koruyucu bir yanıttır. Eğer lenfatik drenaj yetersiz veya tıkalı olsaydı lokal, proteinli ödem beklenirdi; bu hastada yaygın ödem düşük plazma protein düzeyiyle paraleldir.",
+    "Arterioler vazokonstriksiyonla kapiller yüzey alanının ve filtrasyonun azalması": "Arterioler vazokonstriksiyon kapiller yüzey alanını ve hidrostatik basıncı azaltarak filtrasyonu düşürme eğilimindedir. Olgudaki yaygın sıvı geçişi ve düşük albümin, filtrasyonun azalmasından çok geri emici onkotik kuvvetin zayıflamasıyla uyumludur."
+  },
+  "evidenceChain": [
+    {
+      "title": "Serum albümini",
+      "text": "Albümin 2.0 g/dL → kapiller içi kolloid çekim gücü belirgin azalmıştır",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Ödem paterni",
+      "text": "Bilateral gode bırakan ödem ve asit → sistemik sıvı transüdasyonu lehine bulgular vardır",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Dolaşım muayenesi",
+      "text": "Juguler venöz dolgunluk belirgin değil → primer venöz konjesyon verisi güçlü değildir",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "title": "Böbrek fonksiyonu",
+      "text": "Kreatinin normal → ödemi açıklayan ağır filtrasyon kaybı ön planda değildir",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Kapiller hidrostatik basıncın artmasıyla filtrasyonun venöz uçta sürmesi": "Kapiller hidrostatik basınç artışı kalp yetmezliği veya venöz konjesyon gibi durumlarda ödem oluşturabilir. Bu hastada juguler venöz dolgunluk ve belirgin akciğer konjesyonu yokken serum albümininin çok düşük olması, ana Starling değişkeninin hidrostatik basınç değil plazma onkotik basıncı olduğunu gösterir.",
+    "İnterstisyel hidrostatik basıncın artmasıyla kapillere sıvı dönüşünün hızlanması": "İnterstisyel hidrostatik basıncın artması genellikle filtrasyonu sınırlayıcı yönde davranır ve tek başına yaygın ödemin temel nedeni değildir. Bu vakada sıvı birikiminin sürmesi, kapiller içine çekici kuvvetin azalmasıyla daha iyi açıklanır.",
+    "Lenfatik drenajın artmasıyla doku proteinlerinin uzaklaştırılmasının güçlenmesi": "Lenfatik drenaj artışı ödemi azaltmaya çalışan koruyucu bir yanıttır. Eğer lenfatik drenaj yetersiz veya tıkalı olsaydı lokal, proteinli ödem beklenirdi; bu hastada yaygın ödem düşük plazma protein düzeyiyle paraleldir.",
+    "Arterioler vazokonstriksiyonla kapiller yüzey alanının ve filtrasyonun azalması": "Arterioler vazokonstriksiyon kapiller yüzey alanını ve hidrostatik basıncı azaltarak filtrasyonu düşürme eğilimindedir. Olgudaki yaygın sıvı geçişi ve düşük albümin, filtrasyonun azalmasından çok geri emici onkotik kuvvetin zayıflamasıyla uyumludur."
+  },
+  "mechanismExplanation": "Plazma proteinleri azalınca kapiller içi kolloid ozmotik basınç düşer; filtrasyon sonrası sıvının kapiller içine geri çekilmesi azalır ve ödem-asit gelişir.",
+  "scientificComment": "Soru, Starling kuvvetleri içinde hidrostatik basınç artışı ile plazma onkotik basınç azalmasını ayırmayı hedefler.",
+  "helpText": "Ödemin dağılımını albümin, venöz konjesyon ve akciğer bulgularıyla birlikte değerlendir.",
+  "preserveInvestigationOrder": true
+},
+{
+  "id": "v214-new-003-gunun-sonunda-artan-goz-kapagi-dusuklugu",
+  "branchId": "physiology",
+  "caseType": "standard",
+  "relatedBranch": "Fizyoloji",
+  "title": "Günün sonunda artan göz kapağı düşüklüğü",
+  "difficulty": "Orta-Zor",
+  "difficultyTag": "Orta-Zor",
+  "clinicalFocus": "Kullanımla artan kas güçsüzlüğünde nöromüsküler kavşak güvenlik marjını fizyolojik olarak yorumlama.",
+  "learningTarget": "Uç plak potansiyelinin eşik üstünde kalmasını sağlayan postsinaptik yanıtın azalmasıyla kullanım bağımlı güçsüzlüğün nasıl geliştiğini ayırt edebilme.",
+  "demographics": "32 yaşında kadın hasta",
+  "setting": "Nöroloji polikliniği",
+  "chiefComplaint": "Hasta, gün içinde artan göz kapağı düşüklüğü, çift görme ve çiğneme sırasında yorulma nedeniyle başvuruyor.",
+  "stem": "Hasta, son iki aydır özellikle akşam saatlerinde sol göz kapağının düştüğünü ve uzun süre konuştuğunda kelimeleri daha zor çıkardığını anlatır. Sabah uyandığında daha iyi olduğunu, ancak iş yerinde toplantıların sonunda çift görmenin belirginleştiğini söyler. Yemek sırasında çiğnemenin ilk dakikalarda normal olduğunu, ilerleyen dakikalarda çenesinin yorulduğunu fark etmiştir. Kol ve bacaklarda uyuşma, idrar kaçırma, ateş veya yeni başlayan baş ağrısı tariflemez.",
+  "patientIntro": {
+    "profile": "32 yaşında kadın hasta, gün içinde artan oküler ve bulber yorgunluk yakınmalarıyla değerlendiriliyor.",
+    "presentation": "Göz kapağı düşüklüğü, çift görme ve çiğneme sırasında yorulma vardır.",
+    "historySummary": "Hasta, son iki aydır özellikle akşam saatlerinde sol göz kapağının düştüğünü ve uzun süre konuştuğunda kelimeleri daha zor çıkardığını anlatır. Sabah uyandığında daha iyi olduğunu, ancak iş yerinde toplantıların sonunda çift görmenin belirginleştiğini söyler. Yemek sırasında çiğnemenin ilk dakikalarda normal olduğunu, ilerleyen dakikalarda çenesinin yorulduğunu fark etmiştir. Kol ve bacaklarda uyuşma, idrar kaçırma, ateş veya yeni başlayan baş ağrısı tariflemez."
+  },
+  "vitals": {
+    "TA": "118/74 mmHg",
+    "Nabız": "82/dk",
+    "Solunum": "16/dk",
+    "SpO2": "%98, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "0.69 - normal aralıkta"
+  },
+  "exam": [
+    "Sol göz kapağında bakış yukarıda tutulduğunda belirginleşen pitoz izlenir.",
+    "Ekstraoküler hareketlerde kısa süreli bakış sonrası diplopi tarifler.",
+    "Kas tonusu normaldir; derin tendon refleksleri simetrik ve canlıdır.",
+    "Duyu muayenesinde yüzeyel ve derin duyu kaybı saptanmaz."
+  ],
+  "investigations": [
+    {
+      "id": "v214-new-003-gunun-sonunda-artan-goz-kapagi-dusuklugu-tekrarlayan-uyarim-kaydi",
+      "label": "Tekrarlayan sinir uyarımı kaydı",
+      "title": "Tekrarlayan sinir uyarımı kaydı",
+      "orderLabel": "Tekrarlayan sinir uyarımı kaydı",
+      "type": "neurophysiology",
       "priority": "essential",
-      "subtype": "Kardiyak elektrofizyoloji kaydı",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "EKG’de repolarizasyon görünümü belirginleşmiş ve ventrikül içi iletim süresi uzamıştır.",
-      "clinicalMeaning": "EKG’de repolarizasyon görünümü belirginleşmiş ve ventrikül içi iletim süresi uzamıştır.",
+      "subtype": "Nöromüsküler iletim kaydı",
+      "category": "neurophysiology",
+      "testTypeCategory": "neurophysiology",
+      "summary": "Tekrarlayan motor uyarımda yanıt amplitüdü azalırken duyusal sinir yanıtı korunmuştur.",
+      "clinicalMeaning": "Tekrarlayan motor uyarımda yanıt amplitüdü azalırken duyusal sinir yanıtı korunmuştur.",
       "testValueLabel": "Kritik veri",
       "educationalValue": "Kritik veri",
       "clinicalPriorityLabel": "Kritik veri",
       "scoreImpact": 5,
       "scoreValue": 5,
       "source": "case",
-      "clinicalFlowOrder": 2,
+      "clinicalFlowOrder": 1,
       "result": {
-        "title": "EKG iletim kaydı",
-        "summary": "EKG’de repolarizasyon görünümü belirginleşmiş ve ventrikül içi iletim süresi uzamıştır.",
-        "interpretation": "EKG’de repolarizasyon görünümü belirginleşmiş ve ventrikül içi iletim süresi uzamıştır.",
+        "title": "Tekrarlayan sinir uyarımı kaydı",
+        "summary": "Tekrarlayan motor uyarımda yanıt amplitüdü azalırken duyusal sinir yanıtı korunmuştur.",
+        "interpretation": "Tekrarlayan motor uyarımda yanıt amplitüdü azalırken duyusal sinir yanıtı korunmuştur.",
         "values": [
           [
-            "QRS süresi",
-            "126 ms",
-            "<110 ms",
-            "Uzamış"
+            "Başlangıç bileşik kas yanıtı",
+            "5.1 mV",
+            "Laboratuvara göre",
+            "Kaydedildi"
           ],
           [
-            "PR aralığı",
-            "218 ms",
-            "120-200 ms",
-            "Uzamış"
+            "5. yanıtta amplitüd değişimi",
+            "%18 azalma",
+            "<%10 azalma",
+            "Belirgin azalma"
           ],
           [
-            "T dalgası",
-            "Yüksek ve sivri görünüm",
-            "Bazale göre",
-            "Belirginleşmiş"
+            "Kısa istirahat sonrası yanıt",
+            "Kısmi toparlanma",
+            "",
+            "Gözlendi"
           ],
           [
-            "ST elevasyonu",
-            "Saptanmadı",
-            "Saptanmaması beklenir",
-            "Yok"
+            "Duyusal sinir aksiyon potansiyeli",
+            "Normal",
+            "Normal",
+            "Korunmuş"
           ]
         ],
         "rows": [
           [
-            "QRS süresi",
-            "126 ms",
-            "<110 ms",
-            "Uzamış"
+            "Başlangıç bileşik kas yanıtı",
+            "5.1 mV",
+            "Laboratuvara göre",
+            "Kaydedildi"
           ],
           [
-            "PR aralığı",
-            "218 ms",
-            "120-200 ms",
-            "Uzamış"
+            "5. yanıtta amplitüd değişimi",
+            "%18 azalma",
+            "<%10 azalma",
+            "Belirgin azalma"
           ],
           [
-            "T dalgası",
-            "Yüksek ve sivri görünüm",
-            "Bazale göre",
-            "Belirginleşmiş"
+            "Kısa istirahat sonrası yanıt",
+            "Kısmi toparlanma",
+            "",
+            "Gözlendi"
           ],
           [
-            "ST elevasyonu",
-            "Saptanmadı",
-            "Saptanmaması beklenir",
-            "Yok"
+            "Duyusal sinir aksiyon potansiyeli",
+            "Normal",
+            "Normal",
+            "Korunmuş"
           ]
         ]
       },
       "rows": [
         [
-          "QRS süresi",
-          "126 ms",
-          "<110 ms",
-          "Uzamış"
+          "Başlangıç bileşik kas yanıtı",
+          "5.1 mV",
+          "Laboratuvara göre",
+          "Kaydedildi"
         ],
         [
-          "PR aralığı",
-          "218 ms",
-          "120-200 ms",
-          "Uzamış"
+          "5. yanıtta amplitüd değişimi",
+          "%18 azalma",
+          "<%10 azalma",
+          "Belirgin azalma"
         ],
         [
-          "T dalgası",
-          "Yüksek ve sivri görünüm",
-          "Bazale göre",
-          "Belirginleşmiş"
+          "Kısa istirahat sonrası yanıt",
+          "Kısmi toparlanma",
+          "",
+          "Gözlendi"
         ],
         [
-          "ST elevasyonu",
-          "Saptanmadı",
-          "Saptanmaması beklenir",
-          "Yok"
+          "Duyusal sinir aksiyon potansiyeli",
+          "Normal",
+          "Normal",
+          "Korunmuş"
         ]
       ],
-      "postAnswerExplanation": "EKG’de repolarizasyon görünümü belirginleşmiş ve ventrikül içi iletim süresi uzamıştır.",
-      "interpretation": "EKG’de repolarizasyon görünümü belirginleşmiş ve ventrikül içi iletim süresi uzamıştır.",
-      "inlineFeedback": "EKG’de repolarizasyon görünümü belirginleşmiş ve ventrikül içi iletim süresi uzamıştır.",
-      "explanationAfterAnswer": "EKG’de repolarizasyon görünümü belirginleşmiş ve ventrikül içi iletim süresi uzamıştır."
+      "postAnswerExplanation": "Tekrarlayan motor uyarımda yanıt amplitüdü azalırken duyusal sinir yanıtı korunmuştur.",
+      "interpretation": "Tekrarlayan motor uyarımda yanıt amplitüdü azalırken duyusal sinir yanıtı korunmuştur.",
+      "explanationAfterAnswer": "Tekrarlayan motor uyarımda yanıt amplitüdü azalırken duyusal sinir yanıtı korunmuştur.",
+      "inlineFeedback": "Tekrarlayan motor uyarımda yanıt amplitüdü azalırken duyusal sinir yanıtı korunmuştur."
+    },
+    {
+      "id": "v214-new-003-gunun-sonunda-artan-goz-kapagi-dusuklugu-kas-enzimi-ve-muayene-kaydi",
+      "label": "Kas enzimi ve muayene destek verisi",
+      "title": "Kas enzimi ve muayene destek verisi",
+      "orderLabel": "Kas enzimi ve muayene destek verisi",
+      "type": "laboratory",
+      "priority": "supportive",
+      "subtype": "Kas hasarı destek değerlendirmesi",
+      "category": "laboratory",
+      "testTypeCategory": "laboratory",
+      "summary": "Kas hasarı veya belirgin duyusal-refleks kayıp lehine destekleyici veri saptanmamıştır.",
+      "clinicalMeaning": "Kas hasarı veya belirgin duyusal-refleks kayıp lehine destekleyici veri saptanmamıştır.",
+      "testValueLabel": "Destekleyici veri",
+      "educationalValue": "Destekleyici veri",
+      "clinicalPriorityLabel": "Destekleyici veri",
+      "scoreImpact": 3,
+      "scoreValue": 3,
+      "source": "case",
+      "clinicalFlowOrder": 2,
+      "result": {
+        "title": "Kas enzimi ve muayene destek verisi",
+        "summary": "Kas hasarı veya belirgin duyusal-refleks kayıp lehine destekleyici veri saptanmamıştır.",
+        "interpretation": "Kas hasarı veya belirgin duyusal-refleks kayıp lehine destekleyici veri saptanmamıştır.",
+        "values": [
+          [
+            "Kreatin kinaz",
+            "92 U/L",
+            "30-170 U/L",
+            "Normal"
+          ],
+          [
+            "Derin tendon refleksleri",
+            "Simetrik",
+            "",
+            "Korunmuş"
+          ],
+          [
+            "Yüzeyel duyu",
+            "Normal",
+            "",
+            "Korunmuş"
+          ],
+          [
+            "İstirahat sonrası yakınma",
+            "Kısmen azalıyor",
+            "",
+            "Dalgalı"
+          ]
+        ],
+        "rows": [
+          [
+            "Kreatin kinaz",
+            "92 U/L",
+            "30-170 U/L",
+            "Normal"
+          ],
+          [
+            "Derin tendon refleksleri",
+            "Simetrik",
+            "",
+            "Korunmuş"
+          ],
+          [
+            "Yüzeyel duyu",
+            "Normal",
+            "",
+            "Korunmuş"
+          ],
+          [
+            "İstirahat sonrası yakınma",
+            "Kısmen azalıyor",
+            "",
+            "Dalgalı"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Kreatin kinaz",
+          "92 U/L",
+          "30-170 U/L",
+          "Normal"
+        ],
+        [
+          "Derin tendon refleksleri",
+          "Simetrik",
+          "",
+          "Korunmuş"
+        ],
+        [
+          "Yüzeyel duyu",
+          "Normal",
+          "",
+          "Korunmuş"
+        ],
+        [
+          "İstirahat sonrası yakınma",
+          "Kısmen azalıyor",
+          "",
+          "Dalgalı"
+        ]
+      ],
+      "postAnswerExplanation": "Kas hasarı veya belirgin duyusal-refleks kayıp lehine destekleyici veri saptanmamıştır.",
+      "interpretation": "Kas hasarı veya belirgin duyusal-refleks kayıp lehine destekleyici veri saptanmamıştır.",
+      "explanationAfterAnswer": "Kas hasarı veya belirgin duyusal-refleks kayıp lehine destekleyici veri saptanmamıştır.",
+      "inlineFeedback": "Kas hasarı veya belirgin duyusal-refleks kayıp lehine destekleyici veri saptanmamıştır."
     }
   ],
   "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
+  "managementSequence": {
+    "enabled": false
+  },
   "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu hastadaki iletim yavaşlamasını en iyi açıklayan hücresel elektrofizyolojik mekanizma hangisidir?",
+  "shuffleOptions": false,
+  "question": "Bu hastada tekrarlayan kullanım ile artan güçsüzlüğü en iyi açıklayan nöromüsküler fizyolojik mekanizma hangisidir?",
   "questionType": "physiology_mechanism",
-  "answerTarget": "hyperkalemia_partial_depolarization_sodium_channel_inactivation",
+  "answerTarget": "neuromuscular_junction_safety_factor_decrement",
   "diagnosis": {
-    "correct": "Ekstrasellüler K⁺ artışıyla kısmi depolarizasyon ve hızlı Na⁺ kanal inaktivasyonu",
+    "correct": "Postsinaptik nikotinik reseptör etkinliğinin azalmasıyla uç plak güvenlik marjının düşmesi",
     "options": [
-      "Ekstrasellüler K⁺ artışıyla kısmi depolarizasyon ve hızlı Na⁺ kanal inaktivasyonu",
-      "Ekstrasellüler K⁺ azalmasıyla membranın hiperpolarize olup eşik değerden uzaklaşması",
-      "L tipi Ca²⁺ akımı artışıyla plato süresinin uzaması ve refrakterliğin kısalması",
-      "If akımı hızlanmasıyla ventrikül miyositinde faz 4 depolarizasyonunun belirginleşmesi",
-      "Na⁺/K⁺ pompası aktivitesi artışıyla hücre içi Na⁺ birikiminin iletimi hızlandırması"
+      "Presinaptik kalsiyum girişinin artmasıyla asetilkolin vezikül salınımının güçlenmesi",
+      "Postsinaptik nikotinik reseptör etkinliğinin azalmasıyla uç plak güvenlik marjının düşmesi",
+      "Motor akson miyelininin segmental kaybıyla aksiyon potansiyelinin proksimalde bloklanması",
+      "Kas lifinde L-tipi kalsiyum kanal aktivitesinin artmasıyla tetanik kasılmanın sürmesi",
+      "Sarkomer proteinlerinde yapısal kayıpla çapraz köprü sayısının kalıcı olarak azalması"
     ],
-    "question": "Bu hastadaki iletim yavaşlamasını en iyi açıklayan hücresel elektrofizyolojik mekanizma hangisidir?",
-    "explanation": "Ekstrasellüler K⁺ artışı K⁺ denge potansiyelini daha az negatif hale getirir ve istirahat membran potansiyelini kısmen depolarize eder. Membran uzun süre eşik değere yakın kaldığında hızlı Na⁺ kanallarının bir kısmı inaktif durumda kalır; bu da faz 0 yükseliş hızını ve iletim hızını azaltır. Uzamış PR/QRS ve yüksek T dalgası bu iyonik ortamın iletim ve repolarizasyon üzerindeki etkileriyle uyumludur.",
+    "question": "Bu hastada tekrarlayan kullanım ile artan güçsüzlüğü en iyi açıklayan nöromüsküler fizyolojik mekanizma hangisidir?",
+    "explanation": "Kullanımla artan pitoz, bulber yorgunluk, korunmuş duyu-refleks muayenesi ve tekrarlayan motor uyarımda amplitüd azalması sinir-kas kavşağında güvenlik marjının azaldığını gösterir. Postsinaptik nikotinik reseptör yanıtı yetersiz kaldığında bazı uç plak potansiyelleri eşik altına iner ve kas aksiyon potansiyeli her uyarıda güvenli biçimde oluşamaz.",
     "pearls": [
       {
         "label": "Sınav notu",
-        "text": "Hiperkalemi başlangıçta membranı depolarize eder; ağırlaştığında hızlı Na⁺ kanalı inaktivasyonu ile iletimi yavaşlatır."
+        "text": "Kullanımla artan ve istirahatle azalan güçsüzlükte önce kas hasarı değil, nöromüsküler kavşakta güvenlik marjı düşünülür."
       }
     ],
     "optionComparison": {
-      "Ekstrasellüler K⁺ artışıyla kısmi depolarizasyon ve hızlı Na⁺ kanal inaktivasyonu": "Doğru seçenek budur. Ekstrasellüler potasyum arttığında potasyum denge potansiyeli daha az negatif hale gelir ve istirahat membran potansiyeli kısmen depolarize olur. Bu durum hızlı voltaj kapılı Na⁺ kanallarının bir bölümünü inaktive eder; faz 0 yükseliş hızı azalır ve iletim yavaşlar.",
-      "Ekstrasellüler K⁺ azalmasıyla membranın hiperpolarize olup eşik değerden uzaklaşması": "Ekstrasellüler potasyum azalması membranı daha negatif hale getirerek uyarılabilirliği farklı biçimde azaltabilir. Bu olguda serum potasyumu düşük değil yüksektir; ölçülen patern kısmi depolarizasyon ve iletim yavaşlamasıyla uyumludur. Sınavda hipo- ve hiperkaleminin membran potansiyeli üzerindeki yönünü karıştırmamak gerekir.",
-      "L tipi Ca²⁺ akımı artışıyla plato süresinin uzaması ve refrakterliğin kısalması": "L tipi kalsiyum akımı plato fazı ve nodal dokularda depolarizasyon için önemlidir. Ancak bu seçenek hem primer potasyum değişimini hem de hızlı Na⁺ kanalı kullanılabilirliğini açıklamaz. Ayrıca refrakterliğin kısalması ifadesi, geniş QRS ile izlenen iletim yavaşlaması paternini desteklemez.",
-      "If akımı hızlanmasıyla ventrikül miyositinde faz 4 depolarizasyonunun belirginleşmesi": "If akımı SA düğümünde faz 4 spontan depolarizasyonuna katkı verir; ventrikül miyositleri normalde belirgin otomatik faz 4 depolarizasyonu ile çalışmaz. Bu olguda sorun pacemaker hızlanmasından çok ventrikül içi iletim süresinin uzamasıdır. Bu nedenle If akımı bu kaydın ana açıklaması değildir.",
-      "Na⁺/K⁺ pompası aktivitesi artışıyla hücre içi Na⁺ birikiminin iletimi hızlandırması": "Na⁺/K⁺ pompası iyon gradyanlarını sürdürür, fakat burada ölçülen akut patern ekstrasellüler potasyum artışının membran potansiyeline doğrudan etkisidir. Hücre içi Na⁺ birikiminin iletimi hızlandırması beklenen temel sonuç değildir. Bu seçenek pompa gradyanı ile kanal inaktivasyonu etkisini karıştırır."
+      "Presinaptik kalsiyum girişinin artmasıyla asetilkolin vezikül salınımının güçlenmesi": "Presinaptik kalsiyum girişinin artması asetilkolin salınımını artırır ve iletimi güçlendirme yönünde etki eder. Olguda tekrarlayan kullanım ile yanıt azalmakta ve istirahatle toparlanmaktadır; bu patern salınım artışıyla değil, postsinaptik yanıt eşiğine ulaşma güvenliğinin düşmesiyle uyumludur.",
+      "Postsinaptik nikotinik reseptör etkinliğinin azalmasıyla uç plak güvenlik marjının düşmesi": "Doğru seçenek budur. Nöromüsküler kavşakta normalde uç plak potansiyeli kas aksiyon potansiyelini başlatmak için güvenli bir fazlalığa sahiptir. Postsinaptik nikotinik reseptör etkinliği azaldığında bu güvenlik marjı düşer; tekrarlayan kullanımda bazı uyarılar eşik altı kalır ve kas gücü gün içinde azalır.",
+      "Motor akson miyelininin segmental kaybıyla aksiyon potansiyelinin proksimalde bloklanması": "Motor akson miyelin kaybı iletim bloğu veya iletim yavaşlaması yapabilir ve genellikle duyusal bulgular ya da refleks değişiklikleriyle birlikte değerlendirilebilir. Bu hastada duyusal muayene ve refleksler korunmuş, sorun kullanım ile dalgalanan kavşak düzeyinde iletim paternine uymaktadır.",
+      "Kas lifinde L-tipi kalsiyum kanal aktivitesinin artmasıyla tetanik kasılmanın sürmesi": "L-tipi kalsiyum kanal aktivitesinin artması iskelet kasında uyarı-kasılma eşleşmesini farklı bir düzeyde etkiler; tetanik kasılmanın sürmesi beklenirdi. Burada temel sorun kasılmanın kalıcı artışı değil, tekrarlayan aktiviteyle kas kuvvetinin azalmasıdır.",
+      "Sarkomer proteinlerinde yapısal kayıpla çapraz köprü sayısının kalıcı olarak azalması": "Sarkomer protein kaybı yapısal ve daha kalıcı kas güçsüzlüğü bekletir. Bu vakada kısa istirahatle kısmi düzelme ve tekrarlayan uyarımda azalma, yapısal protein kaybından çok sinir-kas kavşağında güvenlik marjı sorununu destekler."
     },
     "answerFeedback": {
-      "Ekstrasellüler K⁺ artışıyla kısmi depolarizasyon ve hızlı Na⁺ kanal inaktivasyonu": "Doğru seçenek budur. Ekstrasellüler potasyum arttığında potasyum denge potansiyeli daha az negatif hale gelir ve istirahat membran potansiyeli kısmen depolarize olur. Bu durum hızlı voltaj kapılı Na⁺ kanallarının bir bölümünü inaktive eder; faz 0 yükseliş hızı azalır ve iletim yavaşlar.",
-      "Ekstrasellüler K⁺ azalmasıyla membranın hiperpolarize olup eşik değerden uzaklaşması": "Ekstrasellüler potasyum azalması membranı daha negatif hale getirerek uyarılabilirliği farklı biçimde azaltabilir. Bu olguda serum potasyumu düşük değil yüksektir; ölçülen patern kısmi depolarizasyon ve iletim yavaşlamasıyla uyumludur. Sınavda hipo- ve hiperkaleminin membran potansiyeli üzerindeki yönünü karıştırmamak gerekir.",
-      "L tipi Ca²⁺ akımı artışıyla plato süresinin uzaması ve refrakterliğin kısalması": "L tipi kalsiyum akımı plato fazı ve nodal dokularda depolarizasyon için önemlidir. Ancak bu seçenek hem primer potasyum değişimini hem de hızlı Na⁺ kanalı kullanılabilirliğini açıklamaz. Ayrıca refrakterliğin kısalması ifadesi, geniş QRS ile izlenen iletim yavaşlaması paternini desteklemez.",
-      "If akımı hızlanmasıyla ventrikül miyositinde faz 4 depolarizasyonunun belirginleşmesi": "If akımı SA düğümünde faz 4 spontan depolarizasyonuna katkı verir; ventrikül miyositleri normalde belirgin otomatik faz 4 depolarizasyonu ile çalışmaz. Bu olguda sorun pacemaker hızlanmasından çok ventrikül içi iletim süresinin uzamasıdır. Bu nedenle If akımı bu kaydın ana açıklaması değildir.",
-      "Na⁺/K⁺ pompası aktivitesi artışıyla hücre içi Na⁺ birikiminin iletimi hızlandırması": "Na⁺/K⁺ pompası iyon gradyanlarını sürdürür, fakat burada ölçülen akut patern ekstrasellüler potasyum artışının membran potansiyeline doğrudan etkisidir. Hücre içi Na⁺ birikiminin iletimi hızlandırması beklenen temel sonuç değildir. Bu seçenek pompa gradyanı ile kanal inaktivasyonu etkisini karıştırır."
+      "summary": "Kullanımla artan pitoz, bulber yorgunluk, korunmuş duyu-refleks muayenesi ve tekrarlayan motor uyarımda amplitüd azalması sinir-kas kavşağında güvenlik marjının azaldığını gösterir.",
+      "whyCorrect": "Doğru seçenek budur. Nöromüsküler kavşakta normalde uç plak potansiyeli kas aksiyon potansiyelini başlatmak için güvenli bir fazlalığa sahiptir. Postsinaptik nikotinik reseptör etkinliği azaldığında bu güvenlik marjı düşer; tekrarlayan kullanımda bazı uyarılar eşik altı kalır ve kas gücü gün içinde azalır.",
+      "keyClues": [
+        "Yakınmalar gün sonunda ve uzun konuşma sonrası artıyor → kullanım bağımlı iletim zayıflığı düşündürür",
+        "Kısa dinlenmeyle yutma ve kapak düşüklüğü azalıyor → kalıcı yapısal kas hasarı geri plandadır",
+        "Duyu ve refleksler korunmuş → yaygın periferik sinir iletim kaybı güçlü değildir"
+      ],
+      "examPearl": "Kullanımla artan ve istirahatle azalan güçsüzlükte önce kas hasarı değil, nöromüsküler kavşakta güvenlik marjı düşünülür.",
+      "evidenceChain": [
+        {
+          "title": "Dalgalanma",
+          "text": "Yakınmalar gün sonunda ve uzun konuşma sonrası artıyor → kullanım bağımlı iletim zayıflığı düşündürür",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "İstirahat etkisi",
+          "text": "Kısa dinlenmeyle yutma ve kapak düşüklüğü azalıyor → kalıcı yapısal kas hasarı geri plandadır",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Nörolojik muayene",
+          "text": "Duyu ve refleksler korunmuş → yaygın periferik sinir iletim kaybı güçlü değildir",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Tekrarlayan uyarım",
+          "text": "Beşinci yanıtta amplitüd %18 düşüyor → kavşak iletiminde güvenlik marjı azalmıştır",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Presinaptik kalsiyum girişinin artmasıyla asetilkolin vezikül salınımının güçlenmesi": "Presinaptik kalsiyum girişinin artması asetilkolin salınımını artırır ve iletimi güçlendirme yönünde etki eder. Olguda tekrarlayan kullanım ile yanıt azalmakta ve istirahatle toparlanmaktadır; bu patern salınım artışıyla değil, postsinaptik yanıt eşiğine ulaşma güvenliğinin düşmesiyle uyumludur.",
+        "Postsinaptik nikotinik reseptör etkinliğinin azalmasıyla uç plak güvenlik marjının düşmesi": "Doğru seçenek budur. Nöromüsküler kavşakta normalde uç plak potansiyeli kas aksiyon potansiyelini başlatmak için güvenli bir fazlalığa sahiptir. Postsinaptik nikotinik reseptör etkinliği azaldığında bu güvenlik marjı düşer; tekrarlayan kullanımda bazı uyarılar eşik altı kalır ve kas gücü gün içinde azalır.",
+        "Motor akson miyelininin segmental kaybıyla aksiyon potansiyelinin proksimalde bloklanması": "Motor akson miyelin kaybı iletim bloğu veya iletim yavaşlaması yapabilir ve genellikle duyusal bulgular ya da refleks değişiklikleriyle birlikte değerlendirilebilir. Bu hastada duyusal muayene ve refleksler korunmuş, sorun kullanım ile dalgalanan kavşak düzeyinde iletim paternine uymaktadır.",
+        "Kas lifinde L-tipi kalsiyum kanal aktivitesinin artmasıyla tetanik kasılmanın sürmesi": "L-tipi kalsiyum kanal aktivitesinin artması iskelet kasında uyarı-kasılma eşleşmesini farklı bir düzeyde etkiler; tetanik kasılmanın sürmesi beklenirdi. Burada temel sorun kasılmanın kalıcı artışı değil, tekrarlayan aktiviteyle kas kuvvetinin azalmasıdır.",
+        "Sarkomer proteinlerinde yapısal kayıpla çapraz köprü sayısının kalıcı olarak azalması": "Sarkomer protein kaybı yapısal ve daha kalıcı kas güçsüzlüğü bekletir. Bu vakada kısa istirahatle kısmi düzelme ve tekrarlayan uyarımda azalma, yapısal protein kaybından çok sinir-kas kavşağında güvenlik marjı sorununu destekler."
+      },
+      "answerFeedbackByOption": {
+        "Presinaptik kalsiyum girişinin artmasıyla asetilkolin vezikül salınımının güçlenmesi": {
+          "explanation": "Presinaptik kalsiyum girişinin artması asetilkolin salınımını artırır ve iletimi güçlendirme yönünde etki eder. Olguda tekrarlayan kullanım ile yanıt azalmakta ve istirahatle toparlanmaktadır; bu patern salınım artışıyla değil, postsinaptik yanıt eşiğine ulaşma güvenliğinin düşmesiyle uyumludur."
+        },
+        "Postsinaptik nikotinik reseptör etkinliğinin azalmasıyla uç plak güvenlik marjının düşmesi": {
+          "explanation": "Doğru seçenek budur. Nöromüsküler kavşakta normalde uç plak potansiyeli kas aksiyon potansiyelini başlatmak için güvenli bir fazlalığa sahiptir. Postsinaptik nikotinik reseptör etkinliği azaldığında bu güvenlik marjı düşer; tekrarlayan kullanımda bazı uyarılar eşik altı kalır ve kas gücü gün içinde azalır."
+        },
+        "Motor akson miyelininin segmental kaybıyla aksiyon potansiyelinin proksimalde bloklanması": {
+          "explanation": "Motor akson miyelin kaybı iletim bloğu veya iletim yavaşlaması yapabilir ve genellikle duyusal bulgular ya da refleks değişiklikleriyle birlikte değerlendirilebilir. Bu hastada duyusal muayene ve refleksler korunmuş, sorun kullanım ile dalgalanan kavşak düzeyinde iletim paternine uymaktadır."
+        },
+        "Kas lifinde L-tipi kalsiyum kanal aktivitesinin artmasıyla tetanik kasılmanın sürmesi": {
+          "explanation": "L-tipi kalsiyum kanal aktivitesinin artması iskelet kasında uyarı-kasılma eşleşmesini farklı bir düzeyde etkiler; tetanik kasılmanın sürmesi beklenirdi. Burada temel sorun kasılmanın kalıcı artışı değil, tekrarlayan aktiviteyle kas kuvvetinin azalmasıdır."
+        },
+        "Sarkomer proteinlerinde yapısal kayıpla çapraz köprü sayısının kalıcı olarak azalması": {
+          "explanation": "Sarkomer protein kaybı yapısal ve daha kalıcı kas güçsüzlüğü bekletir. Bu vakada kısa istirahatle kısmi düzelme ve tekrarlayan uyarımda azalma, yapısal protein kaybından çok sinir-kas kavşağında güvenlik marjı sorununu destekler."
+        }
+      },
+      "learningOutcome": "Uç plak potansiyelinin eşik üstünde kalmasını sağlayan postsinaptik yanıtın azalmasıyla kullanım bağımlı güçsüzlüğün nasıl geliştiğini ayırt edebilme.",
+      "clinicalPearls": [
+        "Kullanımla artan ve istirahatle azalan güçsüzlükte önce kas hasarı değil, nöromüsküler kavşakta güvenlik marjı düşünülür."
+      ],
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Kullanımla artan ve istirahatle azalan güçsüzlükte önce kas hasarı değil, nöromüsküler kavşakta güvenlik marjı düşünülür."
+        }
+      ]
     }
   },
-  "coreKnowledge": "Kardiyak hızlı yanıt dokusunda faz 0 yükselişi voltaj kapılı Na⁺ kanallarına bağlıdır. Ekstrasellüler K⁺ yükseldiğinde membran potansiyeli daha az negatif hale gelir; bu kısmi depolarizasyon Na⁺ kanalı kullanılabilirliğini azaltır. Sonuçta aksiyon potansiyeli yükseliş hızı ve iletim hızı düşer.",
-  "examPearl": "Hiperkalemide “depolarizasyon” her zaman daha kolay iletim demek değildir; kalıcı kısmi depolarizasyon Na⁺ kanallarını inaktive ederek iletimi yavaşlatır.",
-  "whyCorrect": "Doğru seçenek budur. Ekstrasellüler potasyum arttığında potasyum denge potansiyeli daha az negatif hale gelir ve istirahat membran potansiyeli kısmen depolarize olur. Bu durum hızlı voltaj kapılı Na⁺ kanallarının bir bölümünü inaktive eder; faz 0 yükseliş hızı azalır ve iletim yavaşlar.",
+  "coreKnowledge": "Nöromüsküler kavşakta güvenlik marjı, uç plak potansiyelinin kas aksiyon potansiyeli eşiğini aşma payını ifade eder; bu pay azalırsa yorulabilir güçsüzlük gelişir.",
+  "examPearl": "Kullanımla artan ve istirahatle azalan güçsüzlükte önce kas hasarı değil, nöromüsküler kavşakta güvenlik marjı düşünülür.",
+  "whyCorrect": "Doğru seçenek budur. Nöromüsküler kavşakta normalde uç plak potansiyeli kas aksiyon potansiyelini başlatmak için güvenli bir fazlalığa sahiptir. Postsinaptik nikotinik reseptör etkinliği azaldığında bu güvenlik marjı düşer; tekrarlayan kullanımda bazı uyarılar eşik altı kalır ve kas gücü gün içinde azalır.",
   "optionComparison": {
-    "Ekstrasellüler K⁺ artışıyla kısmi depolarizasyon ve hızlı Na⁺ kanal inaktivasyonu": "Doğru seçenek budur. Ekstrasellüler potasyum arttığında potasyum denge potansiyeli daha az negatif hale gelir ve istirahat membran potansiyeli kısmen depolarize olur. Bu durum hızlı voltaj kapılı Na⁺ kanallarının bir bölümünü inaktive eder; faz 0 yükseliş hızı azalır ve iletim yavaşlar.",
-    "Ekstrasellüler K⁺ azalmasıyla membranın hiperpolarize olup eşik değerden uzaklaşması": "Ekstrasellüler potasyum azalması membranı daha negatif hale getirerek uyarılabilirliği farklı biçimde azaltabilir. Bu olguda serum potasyumu düşük değil yüksektir; ölçülen patern kısmi depolarizasyon ve iletim yavaşlamasıyla uyumludur. Sınavda hipo- ve hiperkaleminin membran potansiyeli üzerindeki yönünü karıştırmamak gerekir.",
-    "L tipi Ca²⁺ akımı artışıyla plato süresinin uzaması ve refrakterliğin kısalması": "L tipi kalsiyum akımı plato fazı ve nodal dokularda depolarizasyon için önemlidir. Ancak bu seçenek hem primer potasyum değişimini hem de hızlı Na⁺ kanalı kullanılabilirliğini açıklamaz. Ayrıca refrakterliğin kısalması ifadesi, geniş QRS ile izlenen iletim yavaşlaması paternini desteklemez.",
-    "If akımı hızlanmasıyla ventrikül miyositinde faz 4 depolarizasyonunun belirginleşmesi": "If akımı SA düğümünde faz 4 spontan depolarizasyonuna katkı verir; ventrikül miyositleri normalde belirgin otomatik faz 4 depolarizasyonu ile çalışmaz. Bu olguda sorun pacemaker hızlanmasından çok ventrikül içi iletim süresinin uzamasıdır. Bu nedenle If akımı bu kaydın ana açıklaması değildir.",
-    "Na⁺/K⁺ pompası aktivitesi artışıyla hücre içi Na⁺ birikiminin iletimi hızlandırması": "Na⁺/K⁺ pompası iyon gradyanlarını sürdürür, fakat burada ölçülen akut patern ekstrasellüler potasyum artışının membran potansiyeline doğrudan etkisidir. Hücre içi Na⁺ birikiminin iletimi hızlandırması beklenen temel sonuç değildir. Bu seçenek pompa gradyanı ile kanal inaktivasyonu etkisini karıştırır."
+    "Presinaptik kalsiyum girişinin artmasıyla asetilkolin vezikül salınımının güçlenmesi": "Presinaptik kalsiyum girişinin artması asetilkolin salınımını artırır ve iletimi güçlendirme yönünde etki eder. Olguda tekrarlayan kullanım ile yanıt azalmakta ve istirahatle toparlanmaktadır; bu patern salınım artışıyla değil, postsinaptik yanıt eşiğine ulaşma güvenliğinin düşmesiyle uyumludur.",
+    "Postsinaptik nikotinik reseptör etkinliğinin azalmasıyla uç plak güvenlik marjının düşmesi": "Doğru seçenek budur. Nöromüsküler kavşakta normalde uç plak potansiyeli kas aksiyon potansiyelini başlatmak için güvenli bir fazlalığa sahiptir. Postsinaptik nikotinik reseptör etkinliği azaldığında bu güvenlik marjı düşer; tekrarlayan kullanımda bazı uyarılar eşik altı kalır ve kas gücü gün içinde azalır.",
+    "Motor akson miyelininin segmental kaybıyla aksiyon potansiyelinin proksimalde bloklanması": "Motor akson miyelin kaybı iletim bloğu veya iletim yavaşlaması yapabilir ve genellikle duyusal bulgular ya da refleks değişiklikleriyle birlikte değerlendirilebilir. Bu hastada duyusal muayene ve refleksler korunmuş, sorun kullanım ile dalgalanan kavşak düzeyinde iletim paternine uymaktadır.",
+    "Kas lifinde L-tipi kalsiyum kanal aktivitesinin artmasıyla tetanik kasılmanın sürmesi": "L-tipi kalsiyum kanal aktivitesinin artması iskelet kasında uyarı-kasılma eşleşmesini farklı bir düzeyde etkiler; tetanik kasılmanın sürmesi beklenirdi. Burada temel sorun kasılmanın kalıcı artışı değil, tekrarlayan aktiviteyle kas kuvvetinin azalmasıdır.",
+    "Sarkomer proteinlerinde yapısal kayıpla çapraz köprü sayısının kalıcı olarak azalması": "Sarkomer protein kaybı yapısal ve daha kalıcı kas güçsüzlüğü bekletir. Bu vakada kısa istirahatle kısmi düzelme ve tekrarlayan uyarımda azalma, yapısal protein kaybından çok sinir-kas kavşağında güvenlik marjı sorununu destekler."
   },
   "evidenceChain": [
     {
-      "title": "Elektrolit verisi",
-      "text": "Potasyum 6.7 mmol/L → ekstrasellüler K⁺ belirgin yüksektir",
+      "title": "Dalgalanma",
+      "text": "Yakınmalar gün sonunda ve uzun konuşma sonrası artıyor → kullanım bağımlı iletim zayıflığı düşündürür",
       "weight": "high",
       "source": "case"
     },
     {
-      "title": "İletim süresi",
-      "text": "QRS 126 ms ve PR 218 ms → kardiyak iletim yavaşlamıştır",
+      "title": "İstirahat etkisi",
+      "text": "Kısa dinlenmeyle yutma ve kapak düşüklüğü azalıyor → kalıcı yapısal kas hasarı geri plandadır",
       "weight": "high",
       "source": "case"
     },
     {
-      "title": "Repolarizasyon bulgusu",
-      "text": "T dalgası yüksek ve sivri → potasyum değişiminin elektriksel etkisi desteklenir",
+      "title": "Nörolojik muayene",
+      "text": "Duyu ve refleksler korunmuş → yaygın periferik sinir iletim kaybı güçlü değildir",
       "weight": "medium",
       "source": "case"
     },
     {
-      "title": "Ayırıcı veri",
-      "text": "Kalsiyum ve magnezyum normal → temel patern başka elektrolit kaymasına bağlanmaz",
-      "weight": "medium",
+      "title": "Tekrarlayan uyarım",
+      "text": "Beşinci yanıtta amplitüd %18 düşüyor → kavşak iletiminde güvenlik marjı azalmıştır",
+      "weight": "high",
       "source": "case"
     }
   ],
   "whyWrong": {
-    "Ekstrasellüler K⁺ azalmasıyla membranın hiperpolarize olup eşik değerden uzaklaşması": "Ekstrasellüler potasyum azalması membranı daha negatif hale getirerek uyarılabilirliği farklı biçimde azaltabilir. Bu olguda serum potasyumu düşük değil yüksektir; ölçülen patern kısmi depolarizasyon ve iletim yavaşlamasıyla uyumludur. Sınavda hipo- ve hiperkaleminin membran potansiyeli üzerindeki yönünü karıştırmamak gerekir.",
-    "L tipi Ca²⁺ akımı artışıyla plato süresinin uzaması ve refrakterliğin kısalması": "L tipi kalsiyum akımı plato fazı ve nodal dokularda depolarizasyon için önemlidir. Ancak bu seçenek hem primer potasyum değişimini hem de hızlı Na⁺ kanalı kullanılabilirliğini açıklamaz. Ayrıca refrakterliğin kısalması ifadesi, geniş QRS ile izlenen iletim yavaşlaması paternini desteklemez.",
-    "If akımı hızlanmasıyla ventrikül miyositinde faz 4 depolarizasyonunun belirginleşmesi": "If akımı SA düğümünde faz 4 spontan depolarizasyonuna katkı verir; ventrikül miyositleri normalde belirgin otomatik faz 4 depolarizasyonu ile çalışmaz. Bu olguda sorun pacemaker hızlanmasından çok ventrikül içi iletim süresinin uzamasıdır. Bu nedenle If akımı bu kaydın ana açıklaması değildir.",
-    "Na⁺/K⁺ pompası aktivitesi artışıyla hücre içi Na⁺ birikiminin iletimi hızlandırması": "Na⁺/K⁺ pompası iyon gradyanlarını sürdürür, fakat burada ölçülen akut patern ekstrasellüler potasyum artışının membran potansiyeline doğrudan etkisidir. Hücre içi Na⁺ birikiminin iletimi hızlandırması beklenen temel sonuç değildir. Bu seçenek pompa gradyanı ile kanal inaktivasyonu etkisini karıştırır."
+    "Presinaptik kalsiyum girişinin artmasıyla asetilkolin vezikül salınımının güçlenmesi": "Presinaptik kalsiyum girişinin artması asetilkolin salınımını artırır ve iletimi güçlendirme yönünde etki eder. Olguda tekrarlayan kullanım ile yanıt azalmakta ve istirahatle toparlanmaktadır; bu patern salınım artışıyla değil, postsinaptik yanıt eşiğine ulaşma güvenliğinin düşmesiyle uyumludur.",
+    "Motor akson miyelininin segmental kaybıyla aksiyon potansiyelinin proksimalde bloklanması": "Motor akson miyelin kaybı iletim bloğu veya iletim yavaşlaması yapabilir ve genellikle duyusal bulgular ya da refleks değişiklikleriyle birlikte değerlendirilebilir. Bu hastada duyusal muayene ve refleksler korunmuş, sorun kullanım ile dalgalanan kavşak düzeyinde iletim paternine uymaktadır.",
+    "Kas lifinde L-tipi kalsiyum kanal aktivitesinin artmasıyla tetanik kasılmanın sürmesi": "L-tipi kalsiyum kanal aktivitesinin artması iskelet kasında uyarı-kasılma eşleşmesini farklı bir düzeyde etkiler; tetanik kasılmanın sürmesi beklenirdi. Burada temel sorun kasılmanın kalıcı artışı değil, tekrarlayan aktiviteyle kas kuvvetinin azalmasıdır.",
+    "Sarkomer proteinlerinde yapısal kayıpla çapraz köprü sayısının kalıcı olarak azalması": "Sarkomer protein kaybı yapısal ve daha kalıcı kas güçsüzlüğü bekletir. Bu vakada kısa istirahatle kısmi düzelme ve tekrarlayan uyarımda azalma, yapısal protein kaybından çok sinir-kas kavşağında güvenlik marjı sorununu destekler."
   },
-  "mechanismExplanation": "Ekstrasellüler K⁺ artışı istirahat potansiyelini daha az negatif yapar, hızlı Na⁺ kanallarının bir kısmı inaktive olur, faz 0 eğimi azalır ve kardiyak iletim yavaşlar.",
-  "scientificComment": "Soru, elektrolit değişimini EKG ezberinden ziyade membran potansiyeli ve kanal kullanılabilirliği mantığıyla ilişkilendirir.",
-  "helpText": "Elektrofizyoloji sorularında iyonun denge potansiyelini, istirahat potansiyelinin yönünü ve hangi kanalın hangi fazı taşıdığını sırayla düşün.",
+  "mechanismExplanation": "Postsinaptik uç plak yanıtı küçülürse normalde eşik üstünde olan kavşak potansiyeli tekrarlayan aktivitede eşik altına düşebilir; kas lifi her uyarıda ateşlenemez.",
+  "scientificComment": "Soru, periferik sinir iletim kaybı, yapısal kas hasarı ve nöromüsküler kavşak fizyolojisini ayırmayı hedefler.",
+  "helpText": "Duyu-refleks korunumu ile kullanım bağımlı güçsüzlüğü birlikte değerlendir.",
   "preserveInvestigationOrder": true
 },
 {
-  "id": "v216-new-005-yemek-oncesi-mide-salgisi-kaydi",
+  "id": "v214-new-004-adet-duzensizligi-ve-meme-akintisi",
   "branchId": "physiology",
   "caseType": "standard",
   "relatedBranch": "Fizyoloji",
-  "title": "Yemek öncesi mide salgısı kaydı",
+  "title": "Adet düzensizliği ve meme akıntısı",
   "difficulty": "Orta",
   "difficultyTag": "Orta",
-  "clinicalFocus": "Besin mideye ulaşmadan önce başlayan mide asit sekresyon artışını nöral-hormonal gastrointestinal düzenleme üzerinden yorumlama.",
-  "learningTarget": "Sefalik fazda vagal çıkışın parietal, ECL ve G hücreleri üzerindeki etkilerini sekretin, safra döngüsü ve kolonik reflekslerden ayırabilme.",
-  "demographics": "27 yaşında sağlıklı erkek gönüllü",
-  "setting": "Gastrointestinal fizyoloji laboratuvarı",
-  "chiefComplaint": "Gönüllü, standart öğün öncesi ve sonrası mide salgısı değişimi açısından izleniyor.",
-  "stem": "Gönüllü gece açlığından sonra laboratuvara gelir ve başlangıç ölçümü alınana kadar yalnızca su içmesine izin verilir. Daha sonra sevdiği bir yemeğin kokusu ve görüntüsüyle karşılaştırılır, birkaç dakika çiğneme hareketi yapar ancak bu aşamada yutmasına izin verilmez. İşlem sırasında bulantı, karın ağrısı veya reflü yakınması tariflemez. İlk ölçümler tamamlandıktan sonra standart öğünü yer ve takip kayıtları sürdürülür.",
+  "clinicalFocus": "Prolaktin yüksekliği ve adet düzensizliğinde hipotalamo-hipofizer geri bildirim kontrolünü yorumlama.",
+  "learningTarget": "Prolaktinin diğer ön hipofiz hormonlarından farklı olarak baskın biçimde tonik inhibitör kontrol altında tutulduğunu klinik paternle ayırt edebilme.",
+  "demographics": "29 yaşında kadın hasta",
+  "setting": "Endokrinoloji polikliniği",
+  "chiefComplaint": "Hasta, adet aralarının uzaması ve memeden süt benzeri akıntı nedeniyle başvuruyor.",
+  "stem": "Hasta, son altı aydır adetlerinin düzensizleştiğini ve iki aydır adet görmediğini anlatır. Gebelik düşünmediğini, ancak son haftalarda sütyeninde süt benzeri lekelenme fark ettiğini söyler. Sabahları hafif baş ağrısı olduğunu, görmesinde belirgin kayıp fark etmediğini belirtir. Yeni doğum, emzirme, yoğun egzersiz değişikliği, belirgin kilo kaybı veya düzenli antipsikotik kullanımı tariflemez.",
   "patientIntro": {
-    "profile": "27 yaşında sağlıklı erkek gönüllü, gastrointestinal fizyoloji laboratuvarında mide salgısı açısından değerlendiriliyor.",
-    "presentation": "Besin yutulmadan önce ve standart öğün sonrasında mide asit çıkışı ölçülüyor.",
-    "historySummary": "Gönüllü gece açlığından sonra laboratuvara gelir ve başlangıç ölçümü alınana kadar yalnızca su içmesine izin verilir. Daha sonra sevdiği bir yemeğin kokusu ve görüntüsüyle karşılaştırılır, birkaç dakika çiğneme hareketi yapar ancak bu aşamada yutmasına izin verilmez. İşlem sırasında bulantı, karın ağrısı veya reflü yakınması tariflemez. İlk ölçümler tamamlandıktan sonra standart öğünü yer ve takip kayıtları sürdürülür."
+    "profile": "29 yaşında kadın hasta, adet düzensizliği ve süt benzeri meme akıntısıyla değerlendiriliyor.",
+    "presentation": "Adet aralarının uzaması, amenore ve galaktore yakınmaları vardır.",
+    "historySummary": "Hasta, son altı aydır adetlerinin düzensizleştiğini ve iki aydır adet görmediğini anlatır. Gebelik düşünmediğini, ancak son haftalarda sütyeninde süt benzeri lekelenme fark ettiğini söyler. Sabahları hafif baş ağrısı olduğunu, görmesinde belirgin kayıp fark etmediğini belirtir. Yeni doğum, emzirme, yoğun egzersiz değişikliği, belirgin kilo kaybı veya düzenli antipsikotik kullanımı tariflemez."
   },
   "vitals": {
-    "TA": "116/72 mmHg",
+    "TA": "110/68 mmHg",
     "Nabız": "76/dk",
     "Solunum": "15/dk",
     "SpO2": "%99, oda havasında",
     "Ateş": "36.5 °C",
-    "Şok indeksi": "0.66"
+    "Şok indeksi": "0.69 - normal aralıkta"
   },
   "exam": [
-    "Gönüllü uyanık, koopere ve açlık protokolüne uyumludur.",
-    "Karın yumuşak, defans veya belirgin hassasiyet yoktur.",
-    "Ağız ve farinks muayenesinde belirgin irritasyon izlenmez.",
-    "Test sırasında otonom yakınma oluşturacak belirgin ağrı veya stres bulgusu yoktur."
+    "Genel durumu iyi, bilinç açık ve koopere görünür.",
+    "Meme muayenesinde bilateral süt benzeri akıntı ifade edilir; inflamasyon bulgusu yoktur.",
+    "Görme alanı kaba muayenede tamdır.",
+    "Ciltte belirgin hiperpigmentasyon veya miksödem görünümü yoktur."
   ],
   "investigations": [
     {
-      "id": "v216-new-005-yemek-oncesi-mide-salgisi-kaydi-mide-asit-cikisi-zaman-kaydi",
-      "label": "Mide asit çıkışı zaman kaydı",
-      "title": "Mide asit çıkışı zaman kaydı",
-      "type": "functional",
+      "id": "v214-new-004-adet-duzensizligi-ve-meme-akintisi-hormon-paneli",
+      "label": "Hipofiz ve gebelik dışlama hormon paneli",
+      "title": "Hipofiz ve gebelik dışlama hormon paneli",
+      "orderLabel": "Hipofiz ve gebelik dışlama hormon paneli",
+      "type": "laboratory",
       "priority": "essential",
-      "subtype": "Gastrik sekresyon testi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Besin yutulmadan önce mide asit çıkışı bazale göre artmış, öğünden sonra artış daha belirgin hale gelmiştir.",
-      "clinicalMeaning": "Besin yutulmadan önce mide asit çıkışı bazale göre artmış, öğünden sonra artış daha belirgin hale gelmiştir.",
+      "subtype": "Endokrin laboratuvar paneli",
+      "category": "laboratory",
+      "testTypeCategory": "laboratory",
+      "summary": "Prolaktin belirgin yüksekken gebelik testi negatif, TSH normal ve gonadotropinler düşük-normal ölçülmüştür.",
+      "clinicalMeaning": "Prolaktin belirgin yüksekken gebelik testi negatif, TSH normal ve gonadotropinler düşük-normal ölçülmüştür.",
       "testValueLabel": "Kritik veri",
       "educationalValue": "Kritik veri",
       "clinicalPriorityLabel": "Kritik veri",
@@ -276459,331 +272748,380 @@ export const rawCases = [
       "source": "case",
       "clinicalFlowOrder": 1,
       "result": {
-        "title": "Mide asit çıkışı zaman kaydı",
-        "summary": "Besin yutulmadan önce mide asit çıkışı bazale göre artmış, öğünden sonra artış daha belirgin hale gelmiştir.",
-        "interpretation": "Besin yutulmadan önce mide asit çıkışı bazale göre artmış, öğünden sonra artış daha belirgin hale gelmiştir.",
+        "title": "Hipofiz ve gebelik dışlama hormon paneli",
+        "summary": "Prolaktin belirgin yüksekken gebelik testi negatif, TSH normal ve gonadotropinler düşük-normal ölçülmüştür.",
+        "interpretation": "Prolaktin belirgin yüksekken gebelik testi negatif, TSH normal ve gonadotropinler düşük-normal ölçülmüştür.",
         "values": [
           [
-            "Bazal asit çıkışı",
-            "1.8 mEq/saat",
-            "Açlık bazali",
-            "Düşük-bazal"
+            "Prolaktin",
+            "126 ng/mL",
+            "5-25 ng/mL",
+            "Yüksek"
           ],
           [
-            "Görüntü/koku/çiğneme sonrası",
-            "5.9 mEq/saat",
-            "Bazale göre",
-            "Artmış"
+            "β-hCG",
+            "Negatif",
+            "Negatif",
+            "Gebelik lehine değil"
           ],
           [
-            "Öğün sonrası 30. dakika",
-            "12.4 mEq/saat",
-            "Bazale göre",
-            "Daha yüksek"
+            "TSH",
+            "2.1 mIU/L",
+            "0.4-4.0 mIU/L",
+            "Normal"
           ],
           [
-            "Duodenal pH erken kayıt",
-            "6.7",
-            "6.0-7.5",
-            "Korunmuş"
+            "LH / FSH",
+            "Düşük-normal",
+            "Siklus fazına göre değişir",
+            "Baskılı patern"
           ]
         ],
         "rows": [
           [
-            "Bazal asit çıkışı",
-            "1.8 mEq/saat",
-            "Açlık bazali",
-            "Düşük-bazal"
+            "Prolaktin",
+            "126 ng/mL",
+            "5-25 ng/mL",
+            "Yüksek"
           ],
           [
-            "Görüntü/koku/çiğneme sonrası",
-            "5.9 mEq/saat",
-            "Bazale göre",
-            "Artmış"
+            "β-hCG",
+            "Negatif",
+            "Negatif",
+            "Gebelik lehine değil"
           ],
           [
-            "Öğün sonrası 30. dakika",
-            "12.4 mEq/saat",
-            "Bazale göre",
-            "Daha yüksek"
+            "TSH",
+            "2.1 mIU/L",
+            "0.4-4.0 mIU/L",
+            "Normal"
           ],
           [
-            "Duodenal pH erken kayıt",
-            "6.7",
-            "6.0-7.5",
-            "Korunmuş"
+            "LH / FSH",
+            "Düşük-normal",
+            "Siklus fazına göre değişir",
+            "Baskılı patern"
           ]
         ]
       },
       "rows": [
         [
-          "Bazal asit çıkışı",
-          "1.8 mEq/saat",
-          "Açlık bazali",
-          "Düşük-bazal"
+          "Prolaktin",
+          "126 ng/mL",
+          "5-25 ng/mL",
+          "Yüksek"
         ],
         [
-          "Görüntü/koku/çiğneme sonrası",
-          "5.9 mEq/saat",
-          "Bazale göre",
-          "Artmış"
+          "β-hCG",
+          "Negatif",
+          "Negatif",
+          "Gebelik lehine değil"
         ],
         [
-          "Öğün sonrası 30. dakika",
-          "12.4 mEq/saat",
-          "Bazale göre",
-          "Daha yüksek"
+          "TSH",
+          "2.1 mIU/L",
+          "0.4-4.0 mIU/L",
+          "Normal"
         ],
         [
-          "Duodenal pH erken kayıt",
-          "6.7",
-          "6.0-7.5",
-          "Korunmuş"
+          "LH / FSH",
+          "Düşük-normal",
+          "Siklus fazına göre değişir",
+          "Baskılı patern"
         ]
       ],
-      "postAnswerExplanation": "Besin yutulmadan önce mide asit çıkışı bazale göre artmış, öğünden sonra artış daha belirgin hale gelmiştir.",
-      "interpretation": "Besin yutulmadan önce mide asit çıkışı bazale göre artmış, öğünden sonra artış daha belirgin hale gelmiştir.",
-      "inlineFeedback": "Besin yutulmadan önce mide asit çıkışı bazale göre artmış, öğünden sonra artış daha belirgin hale gelmiştir.",
-      "explanationAfterAnswer": "Besin yutulmadan önce mide asit çıkışı bazale göre artmış, öğünden sonra artış daha belirgin hale gelmiştir."
+      "postAnswerExplanation": "Prolaktin belirgin yüksekken gebelik testi negatif, TSH normal ve gonadotropinler düşük-normal ölçülmüştür.",
+      "interpretation": "Prolaktin belirgin yüksekken gebelik testi negatif, TSH normal ve gonadotropinler düşük-normal ölçülmüştür.",
+      "explanationAfterAnswer": "Prolaktin belirgin yüksekken gebelik testi negatif, TSH normal ve gonadotropinler düşük-normal ölçülmüştür.",
+      "inlineFeedback": "Prolaktin belirgin yüksekken gebelik testi negatif, TSH normal ve gonadotropinler düşük-normal ölçülmüştür."
     },
     {
-      "id": "v216-new-005-yemek-oncesi-mide-salgisi-kaydi-hormon-ve-faz-kaydi",
-      "label": "Gastrin ve faz kaydı",
-      "title": "Gastrin ve faz kaydı",
-      "type": "laboratory",
-      "priority": "essential",
-      "subtype": "Gastrointestinal hormon ölçümü",
-      "category": "laboratory",
-      "testTypeCategory": "laboratory",
-      "summary": "Erken dönemde gastrin düzeyi bazale göre yükselmiş, duodenal asitle ilişkili belirgin bir erken pH düşüşü kaydedilmemiştir.",
-      "clinicalMeaning": "Erken dönemde gastrin düzeyi bazale göre yükselmiş, duodenal asitle ilişkili belirgin bir erken pH düşüşü kaydedilmemiştir.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 4,
-      "scoreValue": 4,
+      "id": "v214-new-004-adet-duzensizligi-ve-meme-akintisi-sellar-goruntuleme",
+      "label": "Sellar bölge görüntüleme özeti",
+      "title": "Sellar bölge görüntüleme özeti",
+      "orderLabel": "Sellar bölge görüntüleme özeti",
+      "type": "mri",
+      "priority": "supportive",
+      "subtype": "Hipofiz bölgesi görüntüleme",
+      "category": "imaging",
+      "testTypeCategory": "imaging",
+      "summary": "Sellar bölgede küçük kitle lezyonu ve infundibulum komşuluğunda hafif deviasyon izlenmiştir.",
+      "clinicalMeaning": "Sellar bölgede küçük kitle lezyonu ve infundibulum komşuluğunda hafif deviasyon izlenmiştir.",
+      "testValueLabel": "Destekleyici veri",
+      "educationalValue": "Destekleyici veri",
+      "clinicalPriorityLabel": "Destekleyici veri",
+      "scoreImpact": 3,
+      "scoreValue": 3,
       "source": "case",
       "clinicalFlowOrder": 2,
       "result": {
-        "title": "Gastrin ve faz kaydı",
-        "summary": "Erken dönemde gastrin düzeyi bazale göre yükselmiş, duodenal asitle ilişkili belirgin bir erken pH düşüşü kaydedilmemiştir.",
-        "interpretation": "Erken dönemde gastrin düzeyi bazale göre yükselmiş, duodenal asitle ilişkili belirgin bir erken pH düşüşü kaydedilmemiştir.",
+        "title": "Sellar bölge görüntüleme özeti",
+        "summary": "Sellar bölgede küçük kitle lezyonu ve infundibulum komşuluğunda hafif deviasyon izlenmiştir.",
+        "interpretation": "Sellar bölgede küçük kitle lezyonu ve infundibulum komşuluğunda hafif deviasyon izlenmiştir.",
         "values": [
           [
-            "Serum gastrin",
-            "42 → 88 pg/mL",
-            "<100 pg/mL açlıkta; uyarı sonrası artabilir",
-            "Artmış"
+            "Sellar bölge",
+            "12 mm kitle lezyonu",
+            "",
+            "Saptandı"
           ],
           [
-            "Duodenal pH",
-            "6.7",
-            "6.0-7.5",
+            "Optik kiazma",
+            "Belirgin bası yok",
+            "",
             "Korunmuş"
           ],
           [
-            "Pankreatik bikarbonat çıkışı",
-            "Bazale yakın",
-            "Uyarana göre değişir",
-            "Belirgin artış yok"
-          ],
-          [
-            "Yutulan besin",
-            "İlk kayıt sırasında yok",
-            "Protokole göre",
-            "Yok"
+            "İnfundibulum komşuluğu",
+            "Hafif deviasyon",
+            "",
+            "Eşlik ediyor"
           ]
         ],
         "rows": [
           [
-            "Serum gastrin",
-            "42 → 88 pg/mL",
-            "<100 pg/mL açlıkta; uyarı sonrası artabilir",
-            "Artmış"
+            "Sellar bölge",
+            "12 mm kitle lezyonu",
+            "",
+            "Saptandı"
           ],
           [
-            "Duodenal pH",
-            "6.7",
-            "6.0-7.5",
+            "Optik kiazma",
+            "Belirgin bası yok",
+            "",
             "Korunmuş"
           ],
           [
-            "Pankreatik bikarbonat çıkışı",
-            "Bazale yakın",
-            "Uyarana göre değişir",
-            "Belirgin artış yok"
-          ],
-          [
-            "Yutulan besin",
-            "İlk kayıt sırasında yok",
-            "Protokole göre",
-            "Yok"
+            "İnfundibulum komşuluğu",
+            "Hafif deviasyon",
+            "",
+            "Eşlik ediyor"
           ]
         ]
       },
       "rows": [
         [
-          "Serum gastrin",
-          "42 → 88 pg/mL",
-          "<100 pg/mL açlıkta; uyarı sonrası artabilir",
-          "Artmış"
+          "Sellar bölge",
+          "12 mm kitle lezyonu",
+          "",
+          "Saptandı"
         ],
         [
-          "Duodenal pH",
-          "6.7",
-          "6.0-7.5",
+          "Optik kiazma",
+          "Belirgin bası yok",
+          "",
           "Korunmuş"
         ],
         [
-          "Pankreatik bikarbonat çıkışı",
-          "Bazale yakın",
-          "Uyarana göre değişir",
-          "Belirgin artış yok"
-        ],
-        [
-          "Yutulan besin",
-          "İlk kayıt sırasında yok",
-          "Protokole göre",
-          "Yok"
+          "İnfundibulum komşuluğu",
+          "Hafif deviasyon",
+          "",
+          "Eşlik ediyor"
         ]
       ],
-      "postAnswerExplanation": "Erken dönemde gastrin düzeyi bazale göre yükselmiş, duodenal asitle ilişkili belirgin bir erken pH düşüşü kaydedilmemiştir.",
-      "interpretation": "Erken dönemde gastrin düzeyi bazale göre yükselmiş, duodenal asitle ilişkili belirgin bir erken pH düşüşü kaydedilmemiştir.",
-      "inlineFeedback": "Erken dönemde gastrin düzeyi bazale göre yükselmiş, duodenal asitle ilişkili belirgin bir erken pH düşüşü kaydedilmemiştir.",
-      "explanationAfterAnswer": "Erken dönemde gastrin düzeyi bazale göre yükselmiş, duodenal asitle ilişkili belirgin bir erken pH düşüşü kaydedilmemiştir."
+      "postAnswerExplanation": "Sellar bölgede küçük kitle lezyonu ve infundibulum komşuluğunda hafif deviasyon izlenmiştir.",
+      "interpretation": "Sellar bölgede küçük kitle lezyonu ve infundibulum komşuluğunda hafif deviasyon izlenmiştir.",
+      "explanationAfterAnswer": "Sellar bölgede küçük kitle lezyonu ve infundibulum komşuluğunda hafif deviasyon izlenmiştir.",
+      "inlineFeedback": "Sellar bölgede küçük kitle lezyonu ve infundibulum komşuluğunda hafif deviasyon izlenmiştir."
     }
   ],
   "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
+  "managementSequence": {
+    "enabled": false
+  },
   "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Besin mideye ulaşmadan önce başlayan mide asit sekresyonu artışını en iyi açıklayan fizyolojik mekanizma hangisidir?",
+  "shuffleOptions": false,
+  "question": "Bu hastadaki hormon paternini en iyi açıklayan hipotalamo-hipofizer fizyolojik düzenleme hangisidir?",
   "questionType": "physiology_mechanism",
-  "answerTarget": "cephalic_phase_vagal_gastric_acid_secretion",
+  "answerTarget": "dopamine_tonic_inhibition_prolactin_release",
   "diagnosis": {
-    "correct": "Vagal efferent aktivasyonla parietal, ECL ve G hücrelerinin uyarılması",
+    "correct": "Hipofiz sapından dopaminerjik tonik inhibisyonun azalmasıyla prolaktin salınımının artması",
     "options": [
-      "Duodenal asit artışıyla sekretin aracılı pankreatik bikarbonat salınımı",
-      "İleal safra tuzu emilimiyle hepatik safra sentezinin geri bildirimle azalması",
-      "Vagal efferent aktivasyonla parietal, ECL ve G hücrelerinin uyarılması",
-      "Kolonik distansiyonla kitle hareketlerinin parasempatik olarak tetiklenmesi",
-      "Pankreatik proteaz artışıyla gastrik boşalmanın enterik düzeyde yavaşlaması"
+      "Tirotrop hücrelerde TSH salınımının primer artmasıyla TRH yanıtının güçlenmesi",
+      "Hipotalamik GnRH atımlarının hızlanmasıyla LH piklerinin daha sık ortaya çıkması",
+      "Posterior hipofizde oksitosin salınımının artmasıyla süt kanallarının boşalması",
+      "Hipofiz sapından dopaminerjik tonik inhibisyonun azalmasıyla prolaktin salınımının artması",
+      "Adrenal kortekste kortizol üretiminin azalmasıyla ACTH geri bildiriminin güçlenmesi"
     ],
-    "question": "Besin mideye ulaşmadan önce başlayan mide asit sekresyonu artışını en iyi açıklayan fizyolojik mekanizma hangisidir?",
-    "explanation": "Görüntü, koku, tat ve çiğneme gibi yemekle ilişkili uyaranlar besin mideye ulaşmadan önce vagal efferent çıkışı artırır. Vagus parietal hücreleri doğrudan uyarır; ECL hücresinden histamin ve G hücresinden gastrin yanıtı üzerinden asit sekresyonunu güçlendirir. Duodenal pH’ın korunması ve besin yutulmadan artış başlaması, intestinal sekretin yanıtından çok erken nöral fazı destekler.",
+    "question": "Bu hastadaki hormon paternini en iyi açıklayan hipotalamo-hipofizer fizyolojik düzenleme hangisidir?",
+    "explanation": "Prolaktin belirgin yüksek, gebelik testi negatif ve TSH normaldir; LH/FSH düşük-normal patern ise üreme aksında baskılanmayı destekler. Prolaktin salınımı hipotalamik dopamin tarafından tonik olarak inhibe edilir; bu inhibitör etkinin azalması laktotrop hücrelerden prolaktin salınımını artırır ve yüksek prolaktin GnRH pulslarını baskılayarak adet düzensizliği oluşturur.",
     "pearls": [
       {
         "label": "Sınav notu",
-        "text": "Besin daha mideye ulaşmadan mide asidi artıyorsa önce sefalik faz ve vagal uyarı düşünülür; duodenal asit-sekretin yanıtı daha sonraki intestinal fazdır."
+        "text": "Prolaktin, ön hipofiz hormonları içinde baskın olarak hipotalamik uyarıdan değil dopaminerjik inhibisyonun kalkmasından etkilenmesiyle ayırt edilir."
       }
     ],
     "optionComparison": {
-      "Duodenal asit artışıyla sekretin aracılı pankreatik bikarbonat salınımı": "Duodenal asit, sekretin salınımını artırarak pankreatik bikarbonat sekresyonunu güçlendirir; bu daha çok asidik kimus duodenuma ulaştıktan sonra beklenir. Bu olguda besin henüz mideye ve duodenuma geçmeden mide salgısı artmıştır. Bu nedenle sekretin-bikarbonat yanıtı zamanlama açısından ana açıklama değildir.",
-      "İleal safra tuzu emilimiyle hepatik safra sentezinin geri bildirimle azalması": "İleal safra tuzu emilimi enterohepatik dolaşım ve safra havuzunun korunmasıyla ilişkilidir. Yemek öncesi mide asit çıkışındaki kısa süreli artışı doğrudan açıklamaz. Bu seçenek, yağ sindirimi ve safra döngüsünü mide salgısının erken nöral fazıyla karıştırma hatasını sınar.",
-      "Vagal efferent aktivasyonla parietal, ECL ve G hücrelerinin uyarılması": "Doğru seçenek budur. Yemek görüntüsü, kokusu, çiğneme ve beklenti kortikal-hipotalamik merkezler üzerinden vagal çıkışı artırabilir. Vagal uyarı parietal hücreleri doğrudan, ECL hücreleri histamin üzerinden ve G hücreleri gastrin üzerinden etkileyerek mide asit sekresyonunu besin mideye ulaşmadan artırır.",
-      "Kolonik distansiyonla kitle hareketlerinin parasempatik olarak tetiklenmesi": "Kolonik distansiyon kitle hareketleri ve defekasyon refleksiyle ilişkili olabilir. Ancak burada ölçüm kolon motilitesi değil mide salgısıdır ve olay yemek öncesi uyarılarla başlamıştır. Bu nedenle kolonik parasempatik refleks bu kayıt için uygun mekanizma değildir.",
-      "Pankreatik proteaz artışıyla gastrik boşalmanın enterik düzeyde yavaşlaması": "Pankreatik proteazlar protein sindiriminde görev alır ve intestinal fazda geri bildirimlerle pankreas sekresyonunu etkileyebilir. Bu olguda proteaz düzeyi değil mide asit çıkışı, üstelik besin mideye girmeden önce ölçülmüştür. Gastrik boşalma yavaşlaması da asit sekresyonunun erken artışını açıklamaz."
+      "Tirotrop hücrelerde TSH salınımının primer artmasıyla TRH yanıtının güçlenmesi": "Primer TSH artışı tiroid aksı üzerinden prolaktini dolaylı etkileyebilir; genellikle TSH yüksekliği ve hipotiroidi bulguları eşlik eder. Bu hastada TSH normal aralıkta olduğundan galaktore ve adet düzensizliğini temel olarak tirotrop hücre aktivitesiyle açıklamak uygun değildir.",
+      "Hipotalamik GnRH atımlarının hızlanmasıyla LH piklerinin daha sık ortaya çıkması": "GnRH atımlarının hızlanması gonadotropin paternini değiştirebilir; ancak bu mekanizma süt gelmesini açıklamaz. Olguda LH/FSH baskılanmış ölçülmüş ve bu durum GnRH aktivitesinin artmasından çok prolaktin yüksekliğinin üreme aksını baskılamasına uyar.",
+      "Posterior hipofizde oksitosin salınımının artmasıyla süt kanallarının boşalması": "Oksitosin süt ejeksiyonunda görev alır; süt üretimini ve prolaktin yüksekliğini primer olarak açıklamaz. Bu vakada ana bulgu süt kanallarının boşalmasından çok prolaktin düzeyinin belirgin yüksekliği ve adet döngüsünün bozulmasıdır.",
+      "Hipofiz sapından dopaminerjik tonik inhibisyonun azalmasıyla prolaktin salınımının artması": "Doğru seçenek budur. Prolaktin, hipotalamustan gelen dopaminerjik tonik inhibisyon altında tutulur. Hipofiz sapı düzeyinde bu inhibitör etkinin azalması laktotrop hücrelerin daha fazla prolaktin salmasına yol açar; prolaktin yüksekliği de GnRH pulslarını baskılayarak adet düzensizliğine katkı verir.",
+      "Adrenal kortekste kortizol üretiminin azalmasıyla ACTH geri bildiriminin güçlenmesi": "Kortizol azalması ACTH artışıyla sonuçlanabilir ve adrenal aks bulguları oluşturur. Bu mekanizma meme akıntısı ve prolaktin yüksekliğini doğrudan açıklamaz; vakadaki temel hormon paterni hipotalamo-hipofizer prolaktin kontrolüyle ilişkilidir."
     },
     "answerFeedback": {
-      "Duodenal asit artışıyla sekretin aracılı pankreatik bikarbonat salınımı": "Duodenal asit, sekretin salınımını artırarak pankreatik bikarbonat sekresyonunu güçlendirir; bu daha çok asidik kimus duodenuma ulaştıktan sonra beklenir. Bu olguda besin henüz mideye ve duodenuma geçmeden mide salgısı artmıştır. Bu nedenle sekretin-bikarbonat yanıtı zamanlama açısından ana açıklama değildir.",
-      "İleal safra tuzu emilimiyle hepatik safra sentezinin geri bildirimle azalması": "İleal safra tuzu emilimi enterohepatik dolaşım ve safra havuzunun korunmasıyla ilişkilidir. Yemek öncesi mide asit çıkışındaki kısa süreli artışı doğrudan açıklamaz. Bu seçenek, yağ sindirimi ve safra döngüsünü mide salgısının erken nöral fazıyla karıştırma hatasını sınar.",
-      "Vagal efferent aktivasyonla parietal, ECL ve G hücrelerinin uyarılması": "Doğru seçenek budur. Yemek görüntüsü, kokusu, çiğneme ve beklenti kortikal-hipotalamik merkezler üzerinden vagal çıkışı artırabilir. Vagal uyarı parietal hücreleri doğrudan, ECL hücreleri histamin üzerinden ve G hücreleri gastrin üzerinden etkileyerek mide asit sekresyonunu besin mideye ulaşmadan artırır.",
-      "Kolonik distansiyonla kitle hareketlerinin parasempatik olarak tetiklenmesi": "Kolonik distansiyon kitle hareketleri ve defekasyon refleksiyle ilişkili olabilir. Ancak burada ölçüm kolon motilitesi değil mide salgısıdır ve olay yemek öncesi uyarılarla başlamıştır. Bu nedenle kolonik parasempatik refleks bu kayıt için uygun mekanizma değildir.",
-      "Pankreatik proteaz artışıyla gastrik boşalmanın enterik düzeyde yavaşlaması": "Pankreatik proteazlar protein sindiriminde görev alır ve intestinal fazda geri bildirimlerle pankreas sekresyonunu etkileyebilir. Bu olguda proteaz düzeyi değil mide asit çıkışı, üstelik besin mideye girmeden önce ölçülmüştür. Gastrik boşalma yavaşlaması da asit sekresyonunun erken artışını açıklamaz."
+      "summary": "Prolaktin belirgin yüksek, gebelik testi negatif ve TSH normaldir; LH/FSH düşük-normal patern ise üreme aksında baskılanmayı destekler.",
+      "whyCorrect": "Doğru seçenek budur. Prolaktin, hipotalamustan gelen dopaminerjik tonik inhibisyon altında tutulur. Hipofiz sapı düzeyinde bu inhibitör etkinin azalması laktotrop hücrelerin daha fazla prolaktin salmasına yol açar; prolaktin yüksekliği de GnRH pulslarını baskılayarak adet düzensizliğine katkı verir.",
+      "keyClues": [
+        "Prolaktin 126 ng/mL → laktotrop hücre aktivitesi belirgin artmıştır",
+        "β-hCG negatif → fizyolojik gebelik ilişkili açıklama dışlanmıştır",
+        "TSH normal → primer tiroid aksı üzerinden açıklama güçlü değildir"
+      ],
+      "examPearl": "Prolaktin, ön hipofiz hormonları içinde baskın olarak hipotalamik uyarıdan değil dopaminerjik inhibisyonun kalkmasından etkilenmesiyle ayırt edilir.",
+      "evidenceChain": [
+        {
+          "title": "Prolaktin düzeyi",
+          "text": "Prolaktin 126 ng/mL → laktotrop hücre aktivitesi belirgin artmıştır",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Gebelik testi",
+          "text": "β-hCG negatif → fizyolojik gebelik ilişkili açıklama dışlanmıştır",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Tiroid verisi",
+          "text": "TSH normal → primer tiroid aksı üzerinden açıklama güçlü değildir",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Gonadotropinler",
+          "text": "LH ve FSH düşük-normal → üreme aksı uyarılmaktan çok baskılanmış görünür",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Tirotrop hücrelerde TSH salınımının primer artmasıyla TRH yanıtının güçlenmesi": "Primer TSH artışı tiroid aksı üzerinden prolaktini dolaylı etkileyebilir; genellikle TSH yüksekliği ve hipotiroidi bulguları eşlik eder. Bu hastada TSH normal aralıkta olduğundan galaktore ve adet düzensizliğini temel olarak tirotrop hücre aktivitesiyle açıklamak uygun değildir.",
+        "Hipotalamik GnRH atımlarının hızlanmasıyla LH piklerinin daha sık ortaya çıkması": "GnRH atımlarının hızlanması gonadotropin paternini değiştirebilir; ancak bu mekanizma süt gelmesini açıklamaz. Olguda LH/FSH baskılanmış ölçülmüş ve bu durum GnRH aktivitesinin artmasından çok prolaktin yüksekliğinin üreme aksını baskılamasına uyar.",
+        "Posterior hipofizde oksitosin salınımının artmasıyla süt kanallarının boşalması": "Oksitosin süt ejeksiyonunda görev alır; süt üretimini ve prolaktin yüksekliğini primer olarak açıklamaz. Bu vakada ana bulgu süt kanallarının boşalmasından çok prolaktin düzeyinin belirgin yüksekliği ve adet döngüsünün bozulmasıdır.",
+        "Hipofiz sapından dopaminerjik tonik inhibisyonun azalmasıyla prolaktin salınımının artması": "Doğru seçenek budur. Prolaktin, hipotalamustan gelen dopaminerjik tonik inhibisyon altında tutulur. Hipofiz sapı düzeyinde bu inhibitör etkinin azalması laktotrop hücrelerin daha fazla prolaktin salmasına yol açar; prolaktin yüksekliği de GnRH pulslarını baskılayarak adet düzensizliğine katkı verir.",
+        "Adrenal kortekste kortizol üretiminin azalmasıyla ACTH geri bildiriminin güçlenmesi": "Kortizol azalması ACTH artışıyla sonuçlanabilir ve adrenal aks bulguları oluşturur. Bu mekanizma meme akıntısı ve prolaktin yüksekliğini doğrudan açıklamaz; vakadaki temel hormon paterni hipotalamo-hipofizer prolaktin kontrolüyle ilişkilidir."
+      },
+      "answerFeedbackByOption": {
+        "Tirotrop hücrelerde TSH salınımının primer artmasıyla TRH yanıtının güçlenmesi": {
+          "explanation": "Primer TSH artışı tiroid aksı üzerinden prolaktini dolaylı etkileyebilir; genellikle TSH yüksekliği ve hipotiroidi bulguları eşlik eder. Bu hastada TSH normal aralıkta olduğundan galaktore ve adet düzensizliğini temel olarak tirotrop hücre aktivitesiyle açıklamak uygun değildir."
+        },
+        "Hipotalamik GnRH atımlarının hızlanmasıyla LH piklerinin daha sık ortaya çıkması": {
+          "explanation": "GnRH atımlarının hızlanması gonadotropin paternini değiştirebilir; ancak bu mekanizma süt gelmesini açıklamaz. Olguda LH/FSH baskılanmış ölçülmüş ve bu durum GnRH aktivitesinin artmasından çok prolaktin yüksekliğinin üreme aksını baskılamasına uyar."
+        },
+        "Posterior hipofizde oksitosin salınımının artmasıyla süt kanallarının boşalması": {
+          "explanation": "Oksitosin süt ejeksiyonunda görev alır; süt üretimini ve prolaktin yüksekliğini primer olarak açıklamaz. Bu vakada ana bulgu süt kanallarının boşalmasından çok prolaktin düzeyinin belirgin yüksekliği ve adet döngüsünün bozulmasıdır."
+        },
+        "Hipofiz sapından dopaminerjik tonik inhibisyonun azalmasıyla prolaktin salınımının artması": {
+          "explanation": "Doğru seçenek budur. Prolaktin, hipotalamustan gelen dopaminerjik tonik inhibisyon altında tutulur. Hipofiz sapı düzeyinde bu inhibitör etkinin azalması laktotrop hücrelerin daha fazla prolaktin salmasına yol açar; prolaktin yüksekliği de GnRH pulslarını baskılayarak adet düzensizliğine katkı verir."
+        },
+        "Adrenal kortekste kortizol üretiminin azalmasıyla ACTH geri bildiriminin güçlenmesi": {
+          "explanation": "Kortizol azalması ACTH artışıyla sonuçlanabilir ve adrenal aks bulguları oluşturur. Bu mekanizma meme akıntısı ve prolaktin yüksekliğini doğrudan açıklamaz; vakadaki temel hormon paterni hipotalamo-hipofizer prolaktin kontrolüyle ilişkilidir."
+        }
+      },
+      "learningOutcome": "Prolaktinin diğer ön hipofiz hormonlarından farklı olarak baskın biçimde tonik inhibitör kontrol altında tutulduğunu klinik paternle ayırt edebilme.",
+      "clinicalPearls": [
+        "Prolaktin, ön hipofiz hormonları içinde baskın olarak hipotalamik uyarıdan değil dopaminerjik inhibisyonun kalkmasından etkilenmesiyle ayırt edilir."
+      ],
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Prolaktin, ön hipofiz hormonları içinde baskın olarak hipotalamik uyarıdan değil dopaminerjik inhibisyonun kalkmasından etkilenmesiyle ayırt edilir."
+        }
+      ]
     }
   },
-  "coreKnowledge": "Mide asit sekresyonu sefalik, gastrik ve intestinal fazlarla düzenlenir. Sefalik fazda yemekle ilişkili duyusal uyaranlar vagal çıkışı artırır; asetilkolin, histamin ve gastrin bağlantıları parietal hücre asit üretimini güçlendirir. Bu yanıt besin mideye ulaşmadan başlayabilir.",
-  "examPearl": "Zamanlama ayırt ettirir: yemek düşünme/koklama/çiğneme = sefalik-vagal; duodenal asit = sekretin-bikarbonat.",
-  "whyCorrect": "Doğru seçenek budur. Yemek görüntüsü, kokusu, çiğneme ve beklenti kortikal-hipotalamik merkezler üzerinden vagal çıkışı artırabilir. Vagal uyarı parietal hücreleri doğrudan, ECL hücreleri histamin üzerinden ve G hücreleri gastrin üzerinden etkileyerek mide asit sekresyonunu besin mideye ulaşmadan artırır.",
+  "coreKnowledge": "Prolaktin salınımı hipotalamik dopaminle tonik inhibe edilir; bu fren azalırsa prolaktin yükselir ve GnRH pulsları baskılanabilir.",
+  "examPearl": "Prolaktin, ön hipofiz hormonları içinde baskın olarak hipotalamik uyarıdan değil dopaminerjik inhibisyonun kalkmasından etkilenmesiyle ayırt edilir.",
+  "whyCorrect": "Doğru seçenek budur. Prolaktin, hipotalamustan gelen dopaminerjik tonik inhibisyon altında tutulur. Hipofiz sapı düzeyinde bu inhibitör etkinin azalması laktotrop hücrelerin daha fazla prolaktin salmasına yol açar; prolaktin yüksekliği de GnRH pulslarını baskılayarak adet düzensizliğine katkı verir.",
   "optionComparison": {
-    "Duodenal asit artışıyla sekretin aracılı pankreatik bikarbonat salınımı": "Duodenal asit, sekretin salınımını artırarak pankreatik bikarbonat sekresyonunu güçlendirir; bu daha çok asidik kimus duodenuma ulaştıktan sonra beklenir. Bu olguda besin henüz mideye ve duodenuma geçmeden mide salgısı artmıştır. Bu nedenle sekretin-bikarbonat yanıtı zamanlama açısından ana açıklama değildir.",
-    "İleal safra tuzu emilimiyle hepatik safra sentezinin geri bildirimle azalması": "İleal safra tuzu emilimi enterohepatik dolaşım ve safra havuzunun korunmasıyla ilişkilidir. Yemek öncesi mide asit çıkışındaki kısa süreli artışı doğrudan açıklamaz. Bu seçenek, yağ sindirimi ve safra döngüsünü mide salgısının erken nöral fazıyla karıştırma hatasını sınar.",
-    "Vagal efferent aktivasyonla parietal, ECL ve G hücrelerinin uyarılması": "Doğru seçenek budur. Yemek görüntüsü, kokusu, çiğneme ve beklenti kortikal-hipotalamik merkezler üzerinden vagal çıkışı artırabilir. Vagal uyarı parietal hücreleri doğrudan, ECL hücreleri histamin üzerinden ve G hücreleri gastrin üzerinden etkileyerek mide asit sekresyonunu besin mideye ulaşmadan artırır.",
-    "Kolonik distansiyonla kitle hareketlerinin parasempatik olarak tetiklenmesi": "Kolonik distansiyon kitle hareketleri ve defekasyon refleksiyle ilişkili olabilir. Ancak burada ölçüm kolon motilitesi değil mide salgısıdır ve olay yemek öncesi uyarılarla başlamıştır. Bu nedenle kolonik parasempatik refleks bu kayıt için uygun mekanizma değildir.",
-    "Pankreatik proteaz artışıyla gastrik boşalmanın enterik düzeyde yavaşlaması": "Pankreatik proteazlar protein sindiriminde görev alır ve intestinal fazda geri bildirimlerle pankreas sekresyonunu etkileyebilir. Bu olguda proteaz düzeyi değil mide asit çıkışı, üstelik besin mideye girmeden önce ölçülmüştür. Gastrik boşalma yavaşlaması da asit sekresyonunun erken artışını açıklamaz."
+    "Tirotrop hücrelerde TSH salınımının primer artmasıyla TRH yanıtının güçlenmesi": "Primer TSH artışı tiroid aksı üzerinden prolaktini dolaylı etkileyebilir; genellikle TSH yüksekliği ve hipotiroidi bulguları eşlik eder. Bu hastada TSH normal aralıkta olduğundan galaktore ve adet düzensizliğini temel olarak tirotrop hücre aktivitesiyle açıklamak uygun değildir.",
+    "Hipotalamik GnRH atımlarının hızlanmasıyla LH piklerinin daha sık ortaya çıkması": "GnRH atımlarının hızlanması gonadotropin paternini değiştirebilir; ancak bu mekanizma süt gelmesini açıklamaz. Olguda LH/FSH baskılanmış ölçülmüş ve bu durum GnRH aktivitesinin artmasından çok prolaktin yüksekliğinin üreme aksını baskılamasına uyar.",
+    "Posterior hipofizde oksitosin salınımının artmasıyla süt kanallarının boşalması": "Oksitosin süt ejeksiyonunda görev alır; süt üretimini ve prolaktin yüksekliğini primer olarak açıklamaz. Bu vakada ana bulgu süt kanallarının boşalmasından çok prolaktin düzeyinin belirgin yüksekliği ve adet döngüsünün bozulmasıdır.",
+    "Hipofiz sapından dopaminerjik tonik inhibisyonun azalmasıyla prolaktin salınımının artması": "Doğru seçenek budur. Prolaktin, hipotalamustan gelen dopaminerjik tonik inhibisyon altında tutulur. Hipofiz sapı düzeyinde bu inhibitör etkinin azalması laktotrop hücrelerin daha fazla prolaktin salmasına yol açar; prolaktin yüksekliği de GnRH pulslarını baskılayarak adet düzensizliğine katkı verir.",
+    "Adrenal kortekste kortizol üretiminin azalmasıyla ACTH geri bildiriminin güçlenmesi": "Kortizol azalması ACTH artışıyla sonuçlanabilir ve adrenal aks bulguları oluşturur. Bu mekanizma meme akıntısı ve prolaktin yüksekliğini doğrudan açıklamaz; vakadaki temel hormon paterni hipotalamo-hipofizer prolaktin kontrolüyle ilişkilidir."
   },
   "evidenceChain": [
     {
-      "title": "Başlangıç koşulu",
-      "text": "İlk artış yutma olmadan gerçekleşti → mide içi distansiyon ya da duodenal kimus gerekmemiştir",
+      "title": "Prolaktin düzeyi",
+      "text": "Prolaktin 126 ng/mL → laktotrop hücre aktivitesi belirgin artmıştır",
       "weight": "high",
       "source": "case"
     },
     {
-      "title": "Asit çıkışı",
-      "text": "1.8 → 5.9 mEq/saat → erken mide sekresyonu artmıştır",
+      "title": "Gebelik testi",
+      "text": "β-hCG negatif → fizyolojik gebelik ilişkili açıklama dışlanmıştır",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "title": "Tiroid verisi",
+      "text": "TSH normal → primer tiroid aksı üzerinden açıklama güçlü değildir",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "title": "Gonadotropinler",
+      "text": "LH ve FSH düşük-normal → üreme aksı uyarılmaktan çok baskılanmış görünür",
       "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Gastrin yanıtı",
-      "text": "Gastrin 42 → 88 pg/mL → mide salgısını destekleyen hormonal bileşen eşlik etmiştir",
-      "weight": "medium",
-      "source": "case"
-    },
-    {
-      "title": "Duodenal veri",
-      "text": "Duodenal pH korunmuş ve bikarbonat çıkışı bazale yakın → erken sekretin-bikarbonat yanıtı baskın değildir",
-      "weight": "medium",
       "source": "case"
     }
   ],
   "whyWrong": {
-    "Duodenal asit artışıyla sekretin aracılı pankreatik bikarbonat salınımı": "Duodenal asit, sekretin salınımını artırarak pankreatik bikarbonat sekresyonunu güçlendirir; bu daha çok asidik kimus duodenuma ulaştıktan sonra beklenir. Bu olguda besin henüz mideye ve duodenuma geçmeden mide salgısı artmıştır. Bu nedenle sekretin-bikarbonat yanıtı zamanlama açısından ana açıklama değildir.",
-    "İleal safra tuzu emilimiyle hepatik safra sentezinin geri bildirimle azalması": "İleal safra tuzu emilimi enterohepatik dolaşım ve safra havuzunun korunmasıyla ilişkilidir. Yemek öncesi mide asit çıkışındaki kısa süreli artışı doğrudan açıklamaz. Bu seçenek, yağ sindirimi ve safra döngüsünü mide salgısının erken nöral fazıyla karıştırma hatasını sınar.",
-    "Kolonik distansiyonla kitle hareketlerinin parasempatik olarak tetiklenmesi": "Kolonik distansiyon kitle hareketleri ve defekasyon refleksiyle ilişkili olabilir. Ancak burada ölçüm kolon motilitesi değil mide salgısıdır ve olay yemek öncesi uyarılarla başlamıştır. Bu nedenle kolonik parasempatik refleks bu kayıt için uygun mekanizma değildir.",
-    "Pankreatik proteaz artışıyla gastrik boşalmanın enterik düzeyde yavaşlaması": "Pankreatik proteazlar protein sindiriminde görev alır ve intestinal fazda geri bildirimlerle pankreas sekresyonunu etkileyebilir. Bu olguda proteaz düzeyi değil mide asit çıkışı, üstelik besin mideye girmeden önce ölçülmüştür. Gastrik boşalma yavaşlaması da asit sekresyonunun erken artışını açıklamaz."
+    "Tirotrop hücrelerde TSH salınımının primer artmasıyla TRH yanıtının güçlenmesi": "Primer TSH artışı tiroid aksı üzerinden prolaktini dolaylı etkileyebilir; genellikle TSH yüksekliği ve hipotiroidi bulguları eşlik eder. Bu hastada TSH normal aralıkta olduğundan galaktore ve adet düzensizliğini temel olarak tirotrop hücre aktivitesiyle açıklamak uygun değildir.",
+    "Hipotalamik GnRH atımlarının hızlanmasıyla LH piklerinin daha sık ortaya çıkması": "GnRH atımlarının hızlanması gonadotropin paternini değiştirebilir; ancak bu mekanizma süt gelmesini açıklamaz. Olguda LH/FSH baskılanmış ölçülmüş ve bu durum GnRH aktivitesinin artmasından çok prolaktin yüksekliğinin üreme aksını baskılamasına uyar.",
+    "Posterior hipofizde oksitosin salınımının artmasıyla süt kanallarının boşalması": "Oksitosin süt ejeksiyonunda görev alır; süt üretimini ve prolaktin yüksekliğini primer olarak açıklamaz. Bu vakada ana bulgu süt kanallarının boşalmasından çok prolaktin düzeyinin belirgin yüksekliği ve adet döngüsünün bozulmasıdır.",
+    "Adrenal kortekste kortizol üretiminin azalmasıyla ACTH geri bildiriminin güçlenmesi": "Kortizol azalması ACTH artışıyla sonuçlanabilir ve adrenal aks bulguları oluşturur. Bu mekanizma meme akıntısı ve prolaktin yüksekliğini doğrudan açıklamaz; vakadaki temel hormon paterni hipotalamo-hipofizer prolaktin kontrolüyle ilişkilidir."
   },
-  "mechanismExplanation": "Yemekle ilişkili duyusal uyaranlar vagal efferent çıkışı artırır; parietal hücreler doğrudan, ECL hücreleri histaminle ve G hücreleri gastrinle uyarılır; mide asit sekresyonu besin ulaşmadan artar.",
-  "scientificComment": "Soru, gastrointestinal sekresyonu faz-zamanlama ilişkisi üzerinden ayırt ettirir ve sekretin/CCK gibi intestinal yanıtlarla sefalik-vagal yanıtın karışmasını önler.",
-  "helpText": "GI sekresyon sorularında önce uyaranın nerede ve ne zaman başladığını belirle; fazı doğru kurarsan hormon/refleks seçimi kolaylaşır.",
+  "mechanismExplanation": "Dopaminerjik tonik inhibisyon azalınca laktotrop hücreler daha fazla prolaktin salgılar; yüksek prolaktin GnRH pulslarını baskılayarak gonadotropin yanıtını ve ovulatuvar döngüyü zayıflatır.",
+  "scientificComment": "Soru, hipotalamo-hipofizer akslarda uyarıcı feedback mantığı ile prolaktinin tonik inhibitör kontrolünü ayırmayı hedefler.",
+  "helpText": "Prolaktin yüksekliğini değerlendirirken gebelik, tiroid aksı ve dopaminerjik tonik kontrolü birlikte düşün.",
   "preserveInvestigationOrder": true
 },
 {
-  "id": "v217-new-001-oksijen-desteginde-sinirli-duzelme",
+  "id": "v214-new-005-ani-nefes-sikismasi-sonrasi-uyusma",
   "branchId": "physiology",
   "caseType": "standard",
   "relatedBranch": "Fizyoloji",
-  "title": "Oksijen desteğinde sınırlı düzelme",
-  "difficulty": "Zor",
-  "difficultyTag": "Zor",
-  "clinicalFocus": "Yüksek oksijen desteğine rağmen sınırlı düzelme gösteren hipoksemiyi kan gazı, A-a farkı ve gaz değişimi mekanizmaları üzerinden yorumlama.",
-  "learningTarget": "Hipoksemide hipoventilasyon, V/Q dengesizliği, difüzyon kısıtlılığı, ölü boşluk ve oksijenlenmeden karışan kan akımı paternlerini ayırt edebilme.",
-  "demographics": "3 günlük erkek yenidoğan",
-  "setting": "Yenidoğan yoğun bakım ünitesi",
-  "chiefComplaint": "Bebek, beslenme sırasında morarma ve oksijen desteğine rağmen düşük satürasyon nedeniyle izleniyor.",
-  "stem": "Bebek doğumdan sonraki ilk saatlerde kısa süreli morarma atakları yaşamış, ikinci günden itibaren emme sırasında dudak çevresindeki renk değişikliği daha belirgin hale gelmiştir. Hemşire izleminde ağlama veya pozisyon değişikliğiyle satürasyon değerleri kısa süreli dalgalanmış, ancak oksijen başlığı altında beklenen yükselme olmamıştır. Anne gebelikte belirgin enfeksiyon geçirmediğini, doğumun sorunsuz tamamlandığını ve bebeğin ilk gün emmeye istekli olduğunu anlatır. İzlem ekibi, oksijen desteği artırıldığında yanıtın sınırlı kalması üzerine arter kan gazı ve hiperoksi kaydı almıştır.",
+  "title": "Ani nefes sıkışması sonrası uyuşma",
+  "difficulty": "Orta",
+  "difficultyTag": "Orta",
+  "clinicalFocus": "Akut hızlı soluma sonrası kan gazı ve iyonize kalsiyum değişimini mekanizma düzeyinde yorumlama.",
+  "learningTarget": "Akut PaCO₂ azalmasının pH ve protein-kalsiyum bağlanması üzerinden nöromüsküler uyarılabilirliği nasıl etkilediğini ayırt edebilme.",
+  "demographics": "24 yaşında kadın hasta",
+  "setting": "Acil servis",
+  "chiefComplaint": "Hasta, ani nefes sıkışması, parmaklarda karıncalanma ve ağız çevresinde uyuşma nedeniyle başvuruyor.",
+  "stem": "Hasta, kalabalık bir ortamda başlayan göğüste sıkışma hissinden sonra hızlı nefes almaya başladığını anlatır. Yaklaşık 15 dakika içinde dudak çevresinde uyuşma, parmak uçlarında karıncalanma ve ellerinde kasılma hissi gelişmiştir. Göğüs ağrısı bıçak saplanır tarzda değildir; bayılma, ateş, öksürük, balgam veya uzun süre hareketsiz kalma öyküsü yoktur. Yakınları, başvuru öncesinde nefeslerinin kısa ve sık olduğunu fark ettiklerini söyler.",
   "patientIntro": {
-    "profile": "3 günlük erkek yenidoğan, yenidoğan yoğun bakım ünitesi bağlamında değerlendiriliyor.",
-    "presentation": "Beslenmeyle belirginleşen morarma ve oksijen desteğine sınırlı satürasyon yanıtı vardır.",
-    "historySummary": "Bebek doğumdan sonraki ilk saatlerde kısa süreli morarma atakları yaşamış, ikinci günden itibaren emme sırasında dudak çevresindeki renk değişikliği daha belirgin hale gelmiştir. Hemşire izleminde ağlama veya pozisyon değişikliğiyle satürasyon değerleri kısa süreli dalgalanmış, ancak oksijen başlığı altında beklenen yükselme olmamıştır. Anne gebelikte belirgin enfeksiyon geçirmediğini, doğumun sorunsuz tamamlandığını ve bebeğin ilk gün emmeye istekli olduğunu anlatır. İzlem ekibi, oksijen desteği artırıldığında yanıtın sınırlı kalması üzerine arter kan gazı ve hiperoksi kaydı almıştır."
+    "profile": "24 yaşında kadın hasta, ani hızlı nefes alma sonrası uyuşma ve el kasılması hissiyle değerlendiriliyor.",
+    "presentation": "Ağız çevresinde uyuşma, parmaklarda karıncalanma ve hızlı soluma vardır.",
+    "historySummary": "Hasta, kalabalık bir ortamda başlayan göğüste sıkışma hissinden sonra hızlı nefes almaya başladığını anlatır. Yaklaşık 15 dakika içinde dudak çevresinde uyuşma, parmak uçlarında karıncalanma ve ellerinde kasılma hissi gelişmiştir. Göğüs ağrısı bıçak saplanır tarzda değildir; bayılma, ateş, öksürük, balgam veya uzun süre hareketsiz kalma öyküsü yoktur. Yakınları, başvuru öncesinde nefeslerinin kısa ve sık olduğunu fark ettiklerini söyler."
   },
   "vitals": {
-    "TA": "68/42 mmHg",
-    "Nabız": "154/dk",
-    "Solunum": "54/dk",
-    "SpO2": "%78, oda havasında; %82, yüksek akımlı oksijen altında",
-    "Ateş": "36.8 °C",
-    "Şok indeksi": "2.26 - yenidoğan için klinikle birlikte yorumlanmalı"
+    "TA": "122/76 mmHg",
+    "Nabız": "106/dk",
+    "Solunum": "30/dk",
+    "SpO2": "%99, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "0.87 - normal-sınır aralıkta"
   },
   "exam": [
-    "Bebek uyanık, emme sırasında yorulan ve perioral siyanozu belirginleşen görünümdedir.",
-    "Akciğer oskültasyonunda belirgin yaygın hışıltı veya fokal krepitan ral duyulmaz.",
-    "Periferik nabızlar alınabilir, kapiller dolum yaklaşık 3 saniyedir.",
-    "Solunum eforu hafif artmıştır; belirgin apne veya santral solunum baskılanması izlenmez."
+    "Hasta anksiyöz görünümde ve hızlı yüzeyel solumaktadır.",
+    "Akciğer oskültasyonunda ral, ronküs veya belirgin wheezing duyulmaz.",
+    "Periferik siyanoz yoktur; kapiller dolum 2 saniyeden kısadır.",
+    "Ellerde hafif karpopedal postür eğilimi izlenir, bilinç açıktır."
   ],
   "investigations": [
     {
-      "id": "v217-new-001-oksijen-desteginde-sinirli-duzelme-arter-kan-gazi-ve-oksijen-yaniti",
-      "label": "Arter kan gazı ve oksijen yanıtı",
-      "title": "Arter kan gazı ve oksijen yanıtı",
+      "id": "v214-new-005-ani-nefes-sikismasi-sonrasi-uyusma-arter-kan-gazi",
+      "label": "Arter kan gazı",
+      "title": "Arter kan gazı",
+      "orderLabel": "Arter kan gazı",
       "type": "laboratory",
       "priority": "essential",
-      "subtype": "Kan gazı",
+      "subtype": "Kan gazı değerlendirmesi",
       "category": "laboratory",
       "testTypeCategory": "laboratory",
-      "summary": "Oda havasında hipoksemi vardır; yüksek oksijen altında PaO₂ artışı sınırlı kalmıştır.",
-      "clinicalMeaning": "Oda havasında hipoksemi vardır; yüksek oksijen altında PaO₂ artışı sınırlı kalmıştır.",
+      "summary": "Kan gazında pH yüksek, PaCO₂ düşük ve bikarbonat akut dönemde belirgin yükselmemiştir.",
+      "clinicalMeaning": "Kan gazında pH yüksek, PaCO₂ düşük ve bikarbonat akut dönemde belirgin yükselmemiştir.",
       "testValueLabel": "Kritik veri",
       "educationalValue": "Kritik veri",
       "clinicalPriorityLabel": "Kritik veri",
@@ -276792,3284 +273130,352 @@ export const rawCases = [
       "source": "case",
       "clinicalFlowOrder": 1,
       "result": {
-        "title": "Arter kan gazı ve oksijen yanıtı",
-        "summary": "Oda havasında hipoksemi vardır; yüksek oksijen altında PaO₂ artışı sınırlı kalmıştır.",
-        "interpretation": "Oda havasında hipoksemi vardır; yüksek oksijen altında PaO₂ artışı sınırlı kalmıştır.",
+        "title": "Arter kan gazı",
+        "summary": "Kan gazında pH yüksek, PaCO₂ düşük ve bikarbonat akut dönemde belirgin yükselmemiştir.",
+        "interpretation": "Kan gazında pH yüksek, PaCO₂ düşük ve bikarbonat akut dönemde belirgin yükselmemiştir.",
         "values": [
           [
             "pH",
-            "7.39",
+            "7.55",
             "7.35-7.45",
-            "Normal"
+            "Yüksek"
           ],
           [
             "PaCO₂",
-            "33 mmHg",
+            "25 mmHg",
             "35-45 mmHg",
-            "Düşük-normal"
-          ],
-          [
-            "PaO₂",
-            "38 → 48 mmHg",
-            "80-100 mmHg; oksijenle artış beklenir",
-            "Sınırlı artış"
+            "Düşük"
           ],
           [
             "HCO₃⁻",
-            "20 mmol/L",
+            "22 mmol/L",
             "22-26 mmol/L",
-            "Hafif düşük"
+            "Alt-normal"
+          ],
+          [
+            "PaO₂",
+            "101 mmHg",
+            "80-100 mmHg",
+            "Normal-yüksek"
           ]
         ],
         "rows": [
           [
             "pH",
-            "7.39",
+            "7.55",
             "7.35-7.45",
-            "Normal"
+            "Yüksek"
           ],
           [
             "PaCO₂",
-            "33 mmHg",
+            "25 mmHg",
             "35-45 mmHg",
-            "Düşük-normal"
-          ],
-          [
-            "PaO₂",
-            "38 → 48 mmHg",
-            "80-100 mmHg; oksijenle artış beklenir",
-            "Sınırlı artış"
+            "Düşük"
           ],
           [
             "HCO₃⁻",
-            "20 mmol/L",
+            "22 mmol/L",
             "22-26 mmol/L",
-            "Hafif düşük"
+            "Alt-normal"
+          ],
+          [
+            "PaO₂",
+            "101 mmHg",
+            "80-100 mmHg",
+            "Normal-yüksek"
           ]
         ]
       },
       "rows": [
         [
           "pH",
-          "7.39",
+          "7.55",
           "7.35-7.45",
-          "Normal"
+          "Yüksek"
         ],
         [
           "PaCO₂",
-          "33 mmHg",
+          "25 mmHg",
           "35-45 mmHg",
-          "Düşük-normal"
-        ],
-        [
-          "PaO₂",
-          "38 → 48 mmHg",
-          "80-100 mmHg; oksijenle artış beklenir",
-          "Sınırlı artış"
-        ],
-        [
-          "HCO₃⁻",
-          "20 mmol/L",
-          "22-26 mmol/L",
-          "Hafif düşük"
-        ]
-      ],
-      "postAnswerExplanation": "Oda havasında hipoksemi vardır; yüksek oksijen altında PaO₂ artışı sınırlı kalmıştır.",
-      "interpretation": "Oda havasında hipoksemi vardır; yüksek oksijen altında PaO₂ artışı sınırlı kalmıştır.",
-      "inlineFeedback": "Oda havasında hipoksemi vardır; yüksek oksijen altında PaO₂ artışı sınırlı kalmıştır.",
-      "explanationAfterAnswer": "Oda havasında hipoksemi vardır; yüksek oksijen altında PaO₂ artışı sınırlı kalmıştır."
-    },
-    {
-      "id": "v217-new-001-oksijen-desteginde-sinirli-duzelme-hiperoksi-ve-a-a-farki",
-      "label": "Hiperoksi ve A-a farkı kaydı",
-      "title": "Hiperoksi ve A-a farkı kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Oksijen yanıt testi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Yüksek FiO₂ altında arteriyel oksijenlenme hedeflenen düzeye ulaşmamış ve A-a farkı geniş kalmıştır.",
-      "clinicalMeaning": "Yüksek FiO₂ altında arteriyel oksijenlenme hedeflenen düzeye ulaşmamış ve A-a farkı geniş kalmıştır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 4,
-      "scoreValue": 4,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "Hiperoksi ve A-a farkı kaydı",
-        "summary": "Yüksek FiO₂ altında arteriyel oksijenlenme hedeflenen düzeye ulaşmamış ve A-a farkı geniş kalmıştır.",
-        "interpretation": "Yüksek FiO₂ altında arteriyel oksijenlenme hedeflenen düzeye ulaşmamış ve A-a farkı geniş kalmıştır.",
-        "values": [
-          [
-            "FiO₂",
-            "1.0",
-            "Test koşulu",
-            "Yüksek"
-          ],
-          [
-            "SpO₂",
-            "%82",
-            ">%95 beklenir",
-            "Düşük"
-          ],
-          [
-            "Hesaplanan A-a farkı",
-            "Belirgin geniş",
-            "Yaşa ve FiO₂’ye göre düşük beklenir",
-            "Geniş"
-          ],
-          [
-            "Akciğer grafisi havalanması",
-            "Yaygın ağır opasite yok",
-            "Klinikle birlikte yorumlanır",
-            "Belirgin değil"
-          ]
-        ],
-        "rows": [
-          [
-            "FiO₂",
-            "1.0",
-            "Test koşulu",
-            "Yüksek"
-          ],
-          [
-            "SpO₂",
-            "%82",
-            ">%95 beklenir",
-            "Düşük"
-          ],
-          [
-            "Hesaplanan A-a farkı",
-            "Belirgin geniş",
-            "Yaşa ve FiO₂’ye göre düşük beklenir",
-            "Geniş"
-          ],
-          [
-            "Akciğer grafisi havalanması",
-            "Yaygın ağır opasite yok",
-            "Klinikle birlikte yorumlanır",
-            "Belirgin değil"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "FiO₂",
-          "1.0",
-          "Test koşulu",
-          "Yüksek"
-        ],
-        [
-          "SpO₂",
-          "%82",
-          ">%95 beklenir",
           "Düşük"
         ],
         [
-          "Hesaplanan A-a farkı",
-          "Belirgin geniş",
-          "Yaşa ve FiO₂’ye göre düşük beklenir",
-          "Geniş"
+          "HCO₃⁻",
+          "22 mmol/L",
+          "22-26 mmol/L",
+          "Alt-normal"
         ],
         [
-          "Akciğer grafisi havalanması",
-          "Yaygın ağır opasite yok",
-          "Klinikle birlikte yorumlanır",
-          "Belirgin değil"
+          "PaO₂",
+          "101 mmHg",
+          "80-100 mmHg",
+          "Normal-yüksek"
         ]
       ],
-      "postAnswerExplanation": "Yüksek FiO₂ altında arteriyel oksijenlenme hedeflenen düzeye ulaşmamış ve A-a farkı geniş kalmıştır.",
-      "interpretation": "Yüksek FiO₂ altında arteriyel oksijenlenme hedeflenen düzeye ulaşmamış ve A-a farkı geniş kalmıştır.",
-      "inlineFeedback": "Yüksek FiO₂ altında arteriyel oksijenlenme hedeflenen düzeye ulaşmamış ve A-a farkı geniş kalmıştır.",
-      "explanationAfterAnswer": "Yüksek FiO₂ altında arteriyel oksijenlenme hedeflenen düzeye ulaşmamış ve A-a farkı geniş kalmıştır."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu oksijenlenme paternini en iyi açıklayan temel gaz değişimi mekanizması hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "oxygen_refractory_hypoxemia_mixing_mechanism",
-  "diagnosis": {
-    "correct": "Ventile olmayan kan akımının oksijenlenmiş arter kanına karışması",
-    "options": [
-      "Alveoler hipoventilasyonla alveoler oksijen basıncının azalması",
-      "Düşük V/Q birimlerinde ventilasyonun perfüzyona göre geride kalması",
-      "Ventile olmayan kan akımının oksijenlenmiş arter kanına karışması",
-      "Difüzyon mesafesi artışıyla kapiller denge süresinin uzaması",
-      "Ölü boşluk artışıyla ventilasyonun perfüzyonsuz alanlara yönelmesi"
-    ],
-    "question": "Bu oksijenlenme paternini en iyi açıklayan temel gaz değişimi mekanizması hangisidir?",
-    "explanation": "Olguda hipoksemiye rağmen PaCO₂ yüksek değildir; bu durum primer alveoler hipoventilasyonu zayıflatır. A-a farkının geniş kalması ve yüksek FiO₂ altında PaO₂ artışının sınırlı olması, oksijen verilen alveollerden geçen kanın tamamen sorunu düzeltemediğini gösterir. Oksijenlenmemiş kan oksijenlenmiş kana karıştığında arteriyel oksijen içeriği yüksek oksijen desteğine rağmen yeterince yükselmez.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "Hipoksemi sorularında oksijen yanıtı ayırt ettiricidir: hipoventilasyon ve birçok düşük V/Q durumunda oksijenle belirgin düzelme beklenirken, oksijenlenmeden karışan kan akımında yanıt sınırlı kalır."
-      }
-    ],
-    "optionComparison": {
-      "Alveoler hipoventilasyonla alveoler oksijen basıncının azalması": "Alveoler hipoventilasyon PaCO₂ artışı ve alveoler oksijen basıncında düşme ile hipoksemi yapabilir; santral solunum baskılanması veya ağır nöromüsküler zayıflıkta akla gelir. Bu olguda PaCO₂ düşük-normal sınıra inmiş, hasta dakika ventilasyonunu artırmış ve A-a farkı belirgin genişlemiştir. Ayrıca yüksek oksijenle beklenen düzelmenin sınırlı kalması, yalnızca alveoler gaz azalmasıyla açıklanamaz.",
-      "Düşük V/Q birimlerinde ventilasyonun perfüzyona göre geride kalması": "Düşük V/Q birimleri oksijen desteğine genellikle anlamlı yanıt verir; pnömoni veya atelektazide sık karışan çeldiricidir. Bu bebekte %100 oksijen altında PaO₂ artışı çok sınırlı kalmış ve hiperoksi testinde satürasyon hedeflenen düzeye ulaşmamıştır. Bu yanıt paterni, ventilasyonu azalmış ama erişilebilir alveollerden ziyade oksijenlenmeye uğramayan kanın dolaşıma katıldığını düşündürür.",
-      "Ventile olmayan kan akımının oksijenlenmiş arter kanına karışması": "Doğru seçenek budur. Oksijenlenmeden dolaşıma dönen kan, oksijenlenmiş pulmoner venöz kanla karıştığında arteriyel oksijen içeriği yükseltilemez; yüksek FiO₂ yalnızca ventilasyon gören alveollerdeki hemoglobini daha fazla doyurabilir. PaCO₂'nin yüksek olmaması, geniş A-a farkı ve hiperoksiye sınırlı PaO₂ yanıtı bu mekanizmayı birlikte destekler.",
-      "Difüzyon mesafesi artışıyla kapiller denge süresinin uzaması": "Difüzyon mesafesi artışı özellikle egzersizde denge süresi kısaldığında desatürasyon oluşturabilir ve oksijenle çoğu zaman belirgin düzelir. Olguda istirahatte ciddi hipoksemi ve hiperoksiye sınırlı yanıt öne çıkmaktadır. Bu nedenle problem temel olarak alveol-kapiller geçiş süresinin uzamasından çok oksijenlenmemiş kanın karışmasıdır.",
-      "Ölü boşluk artışıyla ventilasyonun perfüzyonsuz alanlara yönelmesi": "Ölü boşluk artışında bazı alveoller ventile edilir ancak perfüze edilmez; bu durum etkili ventilasyonu azaltabilir ve PaCO₂ yükselme eğilimi doğurabilir. Bu olguda hipoksemiye rağmen PaCO₂ düşüktür ve oksijen yanıtı sınırlıdır. Perfüzyonsuz alveol ventilasyonu, arteriyel kana oksijenlenmemiş kan eklenmesini açıklamaz."
-    },
-    "answerFeedback": {
-      "Alveoler hipoventilasyonla alveoler oksijen basıncının azalması": "Alveoler hipoventilasyon PaCO₂ artışı ve alveoler oksijen basıncında düşme ile hipoksemi yapabilir; santral solunum baskılanması veya ağır nöromüsküler zayıflıkta akla gelir. Bu olguda PaCO₂ düşük-normal sınıra inmiş, hasta dakika ventilasyonunu artırmış ve A-a farkı belirgin genişlemiştir. Ayrıca yüksek oksijenle beklenen düzelmenin sınırlı kalması, yalnızca alveoler gaz azalmasıyla açıklanamaz.",
-      "Düşük V/Q birimlerinde ventilasyonun perfüzyona göre geride kalması": "Düşük V/Q birimleri oksijen desteğine genellikle anlamlı yanıt verir; pnömoni veya atelektazide sık karışan çeldiricidir. Bu bebekte %100 oksijen altında PaO₂ artışı çok sınırlı kalmış ve hiperoksi testinde satürasyon hedeflenen düzeye ulaşmamıştır. Bu yanıt paterni, ventilasyonu azalmış ama erişilebilir alveollerden ziyade oksijenlenmeye uğramayan kanın dolaşıma katıldığını düşündürür.",
-      "Ventile olmayan kan akımının oksijenlenmiş arter kanına karışması": "Doğru seçenek budur. Oksijenlenmeden dolaşıma dönen kan, oksijenlenmiş pulmoner venöz kanla karıştığında arteriyel oksijen içeriği yükseltilemez; yüksek FiO₂ yalnızca ventilasyon gören alveollerdeki hemoglobini daha fazla doyurabilir. PaCO₂'nin yüksek olmaması, geniş A-a farkı ve hiperoksiye sınırlı PaO₂ yanıtı bu mekanizmayı birlikte destekler.",
-      "Difüzyon mesafesi artışıyla kapiller denge süresinin uzaması": "Difüzyon mesafesi artışı özellikle egzersizde denge süresi kısaldığında desatürasyon oluşturabilir ve oksijenle çoğu zaman belirgin düzelir. Olguda istirahatte ciddi hipoksemi ve hiperoksiye sınırlı yanıt öne çıkmaktadır. Bu nedenle problem temel olarak alveol-kapiller geçiş süresinin uzamasından çok oksijenlenmemiş kanın karışmasıdır.",
-      "Ölü boşluk artışıyla ventilasyonun perfüzyonsuz alanlara yönelmesi": "Ölü boşluk artışında bazı alveoller ventile edilir ancak perfüze edilmez; bu durum etkili ventilasyonu azaltabilir ve PaCO₂ yükselme eğilimi doğurabilir. Bu olguda hipoksemiye rağmen PaCO₂ düşüktür ve oksijen yanıtı sınırlıdır. Perfüzyonsuz alveol ventilasyonu, arteriyel kana oksijenlenmemiş kan eklenmesini açıklamaz."
-    }
-  },
-  "coreKnowledge": "Hipoksemi mekanizmaları PaCO₂, A-a farkı ve oksijen yanıtı birlikte değerlendirilerek ayrılır. Oksijenlenmemiş kanın arteriyel dolaşıma karıştığı paternlerde yüksek FiO₂, ventilasyon gören birimlerde oksijen içeriğini artırsa da karışan düşük oksijenli kan nedeniyle arteriyel PaO₂ sınırlı yükselir.",
-  "examPearl": "Hipoksemi sorularında oksijen yanıtı ayırt ettiricidir: hipoventilasyon ve birçok düşük V/Q durumunda oksijenle belirgin düzelme beklenirken, oksijenlenmeden karışan kan akımında yanıt sınırlı kalır.",
-  "whyCorrect": "Doğru seçenek budur. Oksijenlenmeden dolaşıma dönen kan, oksijenlenmiş pulmoner venöz kanla karıştığında arteriyel oksijen içeriği yükseltilemez; yüksek FiO₂ yalnızca ventilasyon gören alveollerdeki hemoglobini daha fazla doyurabilir. PaCO₂'nin yüksek olmaması, geniş A-a farkı ve hiperoksiye sınırlı PaO₂ yanıtı bu mekanizmayı birlikte destekler.",
-  "optionComparison": {
-    "Alveoler hipoventilasyonla alveoler oksijen basıncının azalması": "Alveoler hipoventilasyon PaCO₂ artışı ve alveoler oksijen basıncında düşme ile hipoksemi yapabilir; santral solunum baskılanması veya ağır nöromüsküler zayıflıkta akla gelir. Bu olguda PaCO₂ düşük-normal sınıra inmiş, hasta dakika ventilasyonunu artırmış ve A-a farkı belirgin genişlemiştir. Ayrıca yüksek oksijenle beklenen düzelmenin sınırlı kalması, yalnızca alveoler gaz azalmasıyla açıklanamaz.",
-    "Düşük V/Q birimlerinde ventilasyonun perfüzyona göre geride kalması": "Düşük V/Q birimleri oksijen desteğine genellikle anlamlı yanıt verir; pnömoni veya atelektazide sık karışan çeldiricidir. Bu bebekte %100 oksijen altında PaO₂ artışı çok sınırlı kalmış ve hiperoksi testinde satürasyon hedeflenen düzeye ulaşmamıştır. Bu yanıt paterni, ventilasyonu azalmış ama erişilebilir alveollerden ziyade oksijenlenmeye uğramayan kanın dolaşıma katıldığını düşündürür.",
-    "Ventile olmayan kan akımının oksijenlenmiş arter kanına karışması": "Doğru seçenek budur. Oksijenlenmeden dolaşıma dönen kan, oksijenlenmiş pulmoner venöz kanla karıştığında arteriyel oksijen içeriği yükseltilemez; yüksek FiO₂ yalnızca ventilasyon gören alveollerdeki hemoglobini daha fazla doyurabilir. PaCO₂'nin yüksek olmaması, geniş A-a farkı ve hiperoksiye sınırlı PaO₂ yanıtı bu mekanizmayı birlikte destekler.",
-    "Difüzyon mesafesi artışıyla kapiller denge süresinin uzaması": "Difüzyon mesafesi artışı özellikle egzersizde denge süresi kısaldığında desatürasyon oluşturabilir ve oksijenle çoğu zaman belirgin düzelir. Olguda istirahatte ciddi hipoksemi ve hiperoksiye sınırlı yanıt öne çıkmaktadır. Bu nedenle problem temel olarak alveol-kapiller geçiş süresinin uzamasından çok oksijenlenmemiş kanın karışmasıdır.",
-    "Ölü boşluk artışıyla ventilasyonun perfüzyonsuz alanlara yönelmesi": "Ölü boşluk artışında bazı alveoller ventile edilir ancak perfüze edilmez; bu durum etkili ventilasyonu azaltabilir ve PaCO₂ yükselme eğilimi doğurabilir. Bu olguda hipoksemiye rağmen PaCO₂ düşüktür ve oksijen yanıtı sınırlıdır. Perfüzyonsuz alveol ventilasyonu, arteriyel kana oksijenlenmemiş kan eklenmesini açıklamaz."
-  },
-  "evidenceChain": [
-    {
-      "title": "Oksijen yanıtı",
-      "text": "%100 oksijen altında PaO₂ 38 → 48 mmHg ile sınırlı artmıştır → alveollere verilen oksijen tek başına arteriyel içeriği düzeltememiştir",
-      "weight": "high",
-      "source": "case"
+      "postAnswerExplanation": "Kan gazında pH yüksek, PaCO₂ düşük ve bikarbonat akut dönemde belirgin yükselmemiştir.",
+      "interpretation": "Kan gazında pH yüksek, PaCO₂ düşük ve bikarbonat akut dönemde belirgin yükselmemiştir.",
+      "explanationAfterAnswer": "Kan gazında pH yüksek, PaCO₂ düşük ve bikarbonat akut dönemde belirgin yükselmemiştir.",
+      "inlineFeedback": "Kan gazında pH yüksek, PaCO₂ düşük ve bikarbonat akut dönemde belirgin yükselmemiştir."
     },
     {
-      "title": "Ventilasyon yönü",
-      "text": "PaCO₂ 33 mmHg → primer alveoler hipoventilasyon baskın değildir",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Gradient",
-      "text": "A-a farkı geniş → alveoler oksijen varlığına rağmen arteriyel oksijenlenme yetersizdir",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Akciğer bulgusu",
-      "text": "Yaygın ağır opasite ve belirgin hışıltı yok → yalnız obstrüksiyon veya yaygın parankimal dolma paterni desteklenmez",
-      "weight": "medium",
-      "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "Alveoler hipoventilasyonla alveoler oksijen basıncının azalması": "Alveoler hipoventilasyon PaCO₂ artışı ve alveoler oksijen basıncında düşme ile hipoksemi yapabilir; santral solunum baskılanması veya ağır nöromüsküler zayıflıkta akla gelir. Bu olguda PaCO₂ düşük-normal sınıra inmiş, hasta dakika ventilasyonunu artırmış ve A-a farkı belirgin genişlemiştir. Ayrıca yüksek oksijenle beklenen düzelmenin sınırlı kalması, yalnızca alveoler gaz azalmasıyla açıklanamaz.",
-    "Düşük V/Q birimlerinde ventilasyonun perfüzyona göre geride kalması": "Düşük V/Q birimleri oksijen desteğine genellikle anlamlı yanıt verir; pnömoni veya atelektazide sık karışan çeldiricidir. Bu bebekte %100 oksijen altında PaO₂ artışı çok sınırlı kalmış ve hiperoksi testinde satürasyon hedeflenen düzeye ulaşmamıştır. Bu yanıt paterni, ventilasyonu azalmış ama erişilebilir alveollerden ziyade oksijenlenmeye uğramayan kanın dolaşıma katıldığını düşündürür.",
-    "Difüzyon mesafesi artışıyla kapiller denge süresinin uzaması": "Difüzyon mesafesi artışı özellikle egzersizde denge süresi kısaldığında desatürasyon oluşturabilir ve oksijenle çoğu zaman belirgin düzelir. Olguda istirahatte ciddi hipoksemi ve hiperoksiye sınırlı yanıt öne çıkmaktadır. Bu nedenle problem temel olarak alveol-kapiller geçiş süresinin uzamasından çok oksijenlenmemiş kanın karışmasıdır.",
-    "Ölü boşluk artışıyla ventilasyonun perfüzyonsuz alanlara yönelmesi": "Ölü boşluk artışında bazı alveoller ventile edilir ancak perfüze edilmez; bu durum etkili ventilasyonu azaltabilir ve PaCO₂ yükselme eğilimi doğurabilir. Bu olguda hipoksemiye rağmen PaCO₂ düşüktür ve oksijen yanıtı sınırlıdır. Perfüzyonsuz alveol ventilasyonu, arteriyel kana oksijenlenmemiş kan eklenmesini açıklamaz."
-  },
-  "mechanismExplanation": "Yüksek FiO₂ altında ventilasyon gören alveollerde oksijen yüklenmesi artar; ancak oksijenlenmeden dönen kan oksijenli kanla karıştığında arteriyel oksijen içeriği sınırlı kalır ve A-a farkı geniş seyreder.",
-  "scientificComment": "Soru, hipoksemide oksijen yanıtını ezber tanı yerine gaz değişimi fizyolojisi üzerinden yorumlatır.",
-  "helpText": "Hipoksemi sorusunda önce PaCO₂'ye bak; sonra A-a farkı ve oksijen yanıtıyla mekanizmayı daralt.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v217-new-002-genis-nabiz-basinci-kaydi",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Geniş nabız basıncı kaydı",
-  "difficulty": "Orta",
-  "difficultyTag": "Orta",
-  "clinicalFocus": "Normal atım hacmine rağmen geniş nabız basıncı ve artmış nabız dalga hızını arteriyel basınç-damar elastikiyeti ilişkisiyle yorumlama.",
-  "learningTarget": "Büyük arterlerin sistolde enerji depolayan, diyastolde geri veren elastik rezervuar etkisini hemodinamik verilerle ayırt edebilme.",
-  "demographics": "68 yaşında erkek hasta",
-  "setting": "Kardiyovasküler fizyoloji değerlendirmesi",
-  "chiefComplaint": "Hasta, rutin kontrolde ölçülen geniş tansiyon farkı nedeniyle hemodinamik kayıtla değerlendiriliyor.",
-  "stem": "Hasta son birkaç aydır evde yaptığı ölçümlerde büyük ve küçük tansiyon arasındaki farkın açıldığını fark etmiş, ancak belirgin göğüs ağrısı veya bayılma yaşamamıştır. Merdiven çıkarken kısa süreli çarpıntı hissettiğini, istirahatte nefes darlığının olmadığını söyler. Düzenli yürüyüş yapabildiğini, son günlerde sıvı kaybı veya ateşli hastalık geçirmediğini belirtir. Poliklinikte tekrarlanan ölçümlerde benzer değerler izlenince nabız dalga analizi ve ekokardiyografik akım kaydı alınmıştır.",
-  "patientIntro": {
-    "profile": "68 yaşında erkek hasta, kardiyovasküler fizyoloji değerlendirmesi bağlamında değerlendiriliyor.",
-    "presentation": "Rutin ölçümlerde sistolik-diyastolik tansiyon farkı geniş bulunmuş, ek kardiyak akım kaydı yapılmıştır.",
-    "historySummary": "Hasta son birkaç aydır evde yaptığı ölçümlerde büyük ve küçük tansiyon arasındaki farkın açıldığını fark etmiş, ancak belirgin göğüs ağrısı veya bayılma yaşamamıştır. Merdiven çıkarken kısa süreli çarpıntı hissettiğini, istirahatte nefes darlığının olmadığını söyler. Düzenli yürüyüş yapabildiğini, son günlerde sıvı kaybı veya ateşli hastalık geçirmediğini belirtir. Poliklinikte tekrarlanan ölçümlerde benzer değerler izlenince nabız dalga analizi ve ekokardiyografik akım kaydı alınmıştır."
-  },
-  "vitals": {
-    "TA": "162/66 mmHg",
-    "Nabız": "72/dk",
-    "Solunum": "16/dk",
-    "SpO2": "%98, oda havasında",
-    "Ateş": "36.6 °C",
-    "Şok indeksi": "0.44"
-  },
-  "exam": [
-    "Hasta uyanık, koopere ve istirahatte rahat görünümdedir.",
-    "Periferik nabızlar belirgin ve hızlı yükselen karakterdedir; ekstremiteler sıcak ve perfüzyonu iyidir.",
-    "Akciğer oskültasyonunda ral duyulmaz; bacaklarda belirgin pitting ödem yoktur.",
-    "Kardiyak oskültasyonda düzenli ritim vardır; belirgin taşikardi veya akut dolaşım yetmezliği bulgusu izlenmez."
-  ],
-  "investigations": [
-    {
-      "id": "v217-new-002-genis-nabiz-basinci-kaydi-arteriyel-basinç-kaydi",
-      "label": "Arteriyel basınç ve nabız dalga kaydı",
-      "title": "Arteriyel basınç ve nabız dalga kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Hemodinamik kayıt",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Sistolik basınç yüksek, diyastolik basınç düşük-normal ve nabız dalga hızı artmıştır.",
-      "clinicalMeaning": "Sistolik basınç yüksek, diyastolik basınç düşük-normal ve nabız dalga hızı artmıştır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "Arteriyel basınç ve nabız dalga kaydı",
-        "summary": "Sistolik basınç yüksek, diyastolik basınç düşük-normal ve nabız dalga hızı artmıştır.",
-        "interpretation": "Sistolik basınç yüksek, diyastolik basınç düşük-normal ve nabız dalga hızı artmıştır.",
-        "values": [
-          [
-            "Sistolik basınç",
-            "162 mmHg",
-            "<120 mmHg",
-            "Yüksek"
-          ],
-          [
-            "Diyastolik basınç",
-            "66 mmHg",
-            "<80 mmHg",
-            "Düşük-normal"
-          ],
-          [
-            "Nabız basıncı",
-            "96 mmHg",
-            "Yaklaşık 40 mmHg",
-            "Geniş"
-          ],
-          [
-            "Nabız dalga hızı",
-            "13.8 m/sn",
-            "Genellikle <10 m/sn",
-            "Artmış"
-          ]
-        ],
-        "rows": [
-          [
-            "Sistolik basınç",
-            "162 mmHg",
-            "<120 mmHg",
-            "Yüksek"
-          ],
-          [
-            "Diyastolik basınç",
-            "66 mmHg",
-            "<80 mmHg",
-            "Düşük-normal"
-          ],
-          [
-            "Nabız basıncı",
-            "96 mmHg",
-            "Yaklaşık 40 mmHg",
-            "Geniş"
-          ],
-          [
-            "Nabız dalga hızı",
-            "13.8 m/sn",
-            "Genellikle <10 m/sn",
-            "Artmış"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Sistolik basınç",
-          "162 mmHg",
-          "<120 mmHg",
-          "Yüksek"
-        ],
-        [
-          "Diyastolik basınç",
-          "66 mmHg",
-          "<80 mmHg",
-          "Düşük-normal"
-        ],
-        [
-          "Nabız basıncı",
-          "96 mmHg",
-          "Yaklaşık 40 mmHg",
-          "Geniş"
-        ],
-        [
-          "Nabız dalga hızı",
-          "13.8 m/sn",
-          "Genellikle <10 m/sn",
-          "Artmış"
-        ]
-      ],
-      "postAnswerExplanation": "Sistolik basınç yüksek, diyastolik basınç düşük-normal ve nabız dalga hızı artmıştır.",
-      "interpretation": "Sistolik basınç yüksek, diyastolik basınç düşük-normal ve nabız dalga hızı artmıştır.",
-      "inlineFeedback": "Sistolik basınç yüksek, diyastolik basınç düşük-normal ve nabız dalga hızı artmıştır.",
-      "explanationAfterAnswer": "Sistolik basınç yüksek, diyastolik basınç düşük-normal ve nabız dalga hızı artmıştır."
-    },
-    {
-      "id": "v217-new-002-genis-nabiz-basinci-kaydi-ekokardiyografik-akim-kaydi",
-      "label": "Ekokardiyografik akım kaydı",
-      "title": "Ekokardiyografik akım kaydı",
-      "type": "imaging",
-      "priority": "essential",
-      "subtype": "Kardiyak akım ölçümü",
-      "category": "imaging",
-      "testTypeCategory": "imaging",
-      "summary": "Atım hacmi korunmuş, belirgin kapak geri kaçışı veya düşük debi paterni saptanmamıştır.",
-      "clinicalMeaning": "Atım hacmi korunmuş, belirgin kapak geri kaçışı veya düşük debi paterni saptanmamıştır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 4,
-      "scoreValue": 4,
+      "id": "v214-new-005-ani-nefes-sikismasi-sonrasi-uyusma-kalsiyum-ve-laktat",
+      "label": "Kalsiyum fraksiyonu ve laktat",
+      "title": "Kalsiyum fraksiyonu ve laktat",
+      "orderLabel": "Kalsiyum fraksiyonu ve laktat",
+      "type": "laboratory",
+      "priority": "supportive",
+      "subtype": "Metabolik destek verisi",
+      "category": "laboratory",
+      "testTypeCategory": "laboratory",
+      "summary": "Total kalsiyum normal kalırken iyonize kalsiyum düşük ölçülmüş, laktat yüksekliği saptanmamıştır.",
+      "clinicalMeaning": "Total kalsiyum normal kalırken iyonize kalsiyum düşük ölçülmüş, laktat yüksekliği saptanmamıştır.",
+      "testValueLabel": "Destekleyici veri",
+      "educationalValue": "Destekleyici veri",
+      "clinicalPriorityLabel": "Destekleyici veri",
+      "scoreImpact": 3,
+      "scoreValue": 3,
       "source": "case",
       "clinicalFlowOrder": 2,
       "result": {
-        "title": "Ekokardiyografik akım kaydı",
-        "summary": "Atım hacmi korunmuş, belirgin kapak geri kaçışı veya düşük debi paterni saptanmamıştır.",
-        "interpretation": "Atım hacmi korunmuş, belirgin kapak geri kaçışı veya düşük debi paterni saptanmamıştır.",
+        "title": "Kalsiyum fraksiyonu ve laktat",
+        "summary": "Total kalsiyum normal kalırken iyonize kalsiyum düşük ölçülmüş, laktat yüksekliği saptanmamıştır.",
+        "interpretation": "Total kalsiyum normal kalırken iyonize kalsiyum düşük ölçülmüş, laktat yüksekliği saptanmamıştır.",
         "values": [
           [
-            "Atım hacmi",
-            "74 mL",
-            "60-100 mL",
-            "Korunmuş"
+            "Total kalsiyum",
+            "9.4 mg/dL",
+            "8.5-10.5 mg/dL",
+            "Normal"
           ],
           [
-            "Sol ventrikül ejeksiyon fraksiyonu",
-            "%61",
-            "%55-70",
-            "Korunmuş"
+            "İyonize kalsiyum",
+            "1.02 mmol/L",
+            "1.12-1.32 mmol/L",
+            "Düşük"
           ],
           [
-            "Aort kapak geri kaçışı",
-            "Belirgin değil",
-            "Olmaması beklenir",
-            "Yok"
+            "Laktat",
+            "1.1 mmol/L",
+            "0.5-2.0 mmol/L",
+            "Normal"
           ],
           [
-            "Kalp hızı",
-            "72/dk",
-            "60-100/dk",
+            "Serum K⁺",
+            "3.8 mmol/L",
+            "3.5-5.0 mmol/L",
             "Normal"
           ]
         ],
         "rows": [
           [
-            "Atım hacmi",
-            "74 mL",
-            "60-100 mL",
-            "Korunmuş"
+            "Total kalsiyum",
+            "9.4 mg/dL",
+            "8.5-10.5 mg/dL",
+            "Normal"
           ],
           [
-            "Sol ventrikül ejeksiyon fraksiyonu",
-            "%61",
-            "%55-70",
-            "Korunmuş"
+            "İyonize kalsiyum",
+            "1.02 mmol/L",
+            "1.12-1.32 mmol/L",
+            "Düşük"
           ],
           [
-            "Aort kapak geri kaçışı",
-            "Belirgin değil",
-            "Olmaması beklenir",
-            "Yok"
+            "Laktat",
+            "1.1 mmol/L",
+            "0.5-2.0 mmol/L",
+            "Normal"
           ],
           [
-            "Kalp hızı",
-            "72/dk",
-            "60-100/dk",
+            "Serum K⁺",
+            "3.8 mmol/L",
+            "3.5-5.0 mmol/L",
             "Normal"
           ]
         ]
       },
       "rows": [
         [
-          "Atım hacmi",
-          "74 mL",
-          "60-100 mL",
-          "Korunmuş"
-        ],
-        [
-          "Sol ventrikül ejeksiyon fraksiyonu",
-          "%61",
-          "%55-70",
-          "Korunmuş"
-        ],
-        [
-          "Aort kapak geri kaçışı",
-          "Belirgin değil",
-          "Olmaması beklenir",
-          "Yok"
-        ],
-        [
-          "Kalp hızı",
-          "72/dk",
-          "60-100/dk",
+          "Total kalsiyum",
+          "9.4 mg/dL",
+          "8.5-10.5 mg/dL",
           "Normal"
-        ]
-      ],
-      "postAnswerExplanation": "Atım hacmi korunmuş, belirgin kapak geri kaçışı veya düşük debi paterni saptanmamıştır.",
-      "interpretation": "Atım hacmi korunmuş, belirgin kapak geri kaçışı veya düşük debi paterni saptanmamıştır.",
-      "inlineFeedback": "Atım hacmi korunmuş, belirgin kapak geri kaçışı veya düşük debi paterni saptanmamıştır.",
-      "explanationAfterAnswer": "Atım hacmi korunmuş, belirgin kapak geri kaçışı veya düşük debi paterni saptanmamıştır."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu basınç paternini en iyi açıklayan kardiyovasküler fizyolojik mekanizma hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "reduced_arterial_compliance_wide_pulse_pressure",
-  "diagnosis": {
-    "correct": "Büyük arter kompliyansının azalmasıyla aynı atım hacminde basınç salınımının artması",
-    "options": [
-      "Venöz kapasitansın artmasıyla diyastol sonunda ventrikül dolumunun yükselmesi",
-      "Arteriol direncinin akut azalmasıyla ortalama arter basıncının yükselmesi",
-      "Kalp hızının azalmasıyla sistol süresinin diyastole göre belirgin uzaması",
-      "Büyük arter kompliyansının azalmasıyla aynı atım hacminde basınç salınımının artması",
-      "Kapiller geçirgenliğin azalmasıyla plazma onkotik basıncının düşmesi"
-    ],
-    "question": "Bu basınç paternini en iyi açıklayan kardiyovasküler fizyolojik mekanizma hangisidir?",
-    "explanation": "Bu olguda atım hacmi korunmasına rağmen sistolik basınç belirgin yüksek, diyastolik basınç düşük-normal ve nabız basıncı geniştir. Büyük arterlerin elastik rezervuar kapasitesi azaldığında sistolde gelen hacim daha büyük basınç yükselmesi oluşturur; diyastolde ise elastik geri çekilme etkisi zayıflar. Artmış nabız dalga hızı da aynı mekanik sertleşme paternini destekler.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "Geniş nabız basıncı her zaman yüksek debi demek değildir; normal atım hacmiyle birlikte artmış nabız dalga hızı varsa büyük arter elastikiyetini düşün."
-      }
-    ],
-    "optionComparison": {
-      "Büyük arter kompliyansının azalmasıyla aynı atım hacminde basınç salınımının artması": "Doğru seçenek budur. Atım hacmi sertleşmiş büyük arterlere aktarıldığında damar duvarı yeterince genişleyemez ve sistolik basınç daha fazla yükselir. Elastik geri çekilme zayıfladığı için diyastolik basınç daha düşük kalabilir; normal atım hacmine rağmen nabız basıncı genişler ve nabız dalga hızı artar.",
-      "Venöz kapasitansın artmasıyla diyastol sonunda ventrikül dolumunun yükselmesi": "Venöz kapasitans artışı kanın venöz depolarda göllenmesine ve venöz dönüşün azalmasına yol açabilir; bu durum geniş nabız basıncından çok düşük dolum ve düşük atım hacmiyle ilişkilidir. Olguda ekokardiyografik atım hacmi normal aralıkta ve sorun büyük arter basınç dalgasındadır. Bu seçenek preload değişimini arteriyel tamponlama bozukluğuyla karıştırır.",
-      "Arteriol direncinin akut azalmasıyla ortalama arter basıncının yükselmesi": "Arteriol direncinin akut azalması ortalama arter basıncını genellikle düşürür ve refleks taşikardiye yol açabilir. Bu olguda belirgin hipotansiyon değil, yüksek sistolik ve düşük-normal diyastolik değerlerle geniş nabız basıncı vardır. Nabız dalga hızının artması direnç damarlarından çok büyük arter elastik özelliklerine işaret eder.",
-      "Kalp hızının azalmasıyla sistol süresinin diyastole göre belirgin uzaması": "Kalp hızı azalınca diyastol süresi uzar ve bazı durumlarda dolum değişebilir; ancak buradaki nabız basıncı genişliği bradikardiye bağlı değildir. Nabız 72/dk olup belirgin hız bozukluğu yoktur. Sistol-diyastol zamanlaması bu olgudaki yüksek nabız dalga hızı ve düşük kompliyans kaydını açıklamaz.",
-      "Kapiller geçirgenliğin azalmasıyla plazma onkotik basıncının düşmesi": "Kapiller geçirgenlik ve plazma onkotik basıncı ödem oluşumu ve interstisyel sıvı hareketleriyle ilişkilidir. Nabız basıncı, büyük arterlerin atım hacmini elastik olarak tamponlama kapasitesiyle belirlenir. Olguda kapiller sıvı dengesi bozukluğunu düşündüren veri yoktur."
-    },
-    "answerFeedback": {
-      "Büyük arter kompliyansının azalmasıyla aynı atım hacminde basınç salınımının artması": "Doğru seçenek budur. Atım hacmi sertleşmiş büyük arterlere aktarıldığında damar duvarı yeterince genişleyemez ve sistolik basınç daha fazla yükselir. Elastik geri çekilme zayıfladığı için diyastolik basınç daha düşük kalabilir; normal atım hacmine rağmen nabız basıncı genişler ve nabız dalga hızı artar.",
-      "Venöz kapasitansın artmasıyla diyastol sonunda ventrikül dolumunun yükselmesi": "Venöz kapasitans artışı kanın venöz depolarda göllenmesine ve venöz dönüşün azalmasına yol açabilir; bu durum geniş nabız basıncından çok düşük dolum ve düşük atım hacmiyle ilişkilidir. Olguda ekokardiyografik atım hacmi normal aralıkta ve sorun büyük arter basınç dalgasındadır. Bu seçenek preload değişimini arteriyel tamponlama bozukluğuyla karıştırır.",
-      "Arteriol direncinin akut azalmasıyla ortalama arter basıncının yükselmesi": "Arteriol direncinin akut azalması ortalama arter basıncını genellikle düşürür ve refleks taşikardiye yol açabilir. Bu olguda belirgin hipotansiyon değil, yüksek sistolik ve düşük-normal diyastolik değerlerle geniş nabız basıncı vardır. Nabız dalga hızının artması direnç damarlarından çok büyük arter elastik özelliklerine işaret eder.",
-      "Kalp hızının azalmasıyla sistol süresinin diyastole göre belirgin uzaması": "Kalp hızı azalınca diyastol süresi uzar ve bazı durumlarda dolum değişebilir; ancak buradaki nabız basıncı genişliği bradikardiye bağlı değildir. Nabız 72/dk olup belirgin hız bozukluğu yoktur. Sistol-diyastol zamanlaması bu olgudaki yüksek nabız dalga hızı ve düşük kompliyans kaydını açıklamaz.",
-      "Kapiller geçirgenliğin azalmasıyla plazma onkotik basıncının düşmesi": "Kapiller geçirgenlik ve plazma onkotik basıncı ödem oluşumu ve interstisyel sıvı hareketleriyle ilişkilidir. Nabız basıncı, büyük arterlerin atım hacmini elastik olarak tamponlama kapasitesiyle belirlenir. Olguda kapiller sıvı dengesi bozukluğunu düşündüren veri yoktur."
-    }
-  },
-  "coreKnowledge": "Büyük elastik arterler sistolde enerjinin bir kısmını damar duvarında depolar, diyastolde geri vererek akımı sürdürür. Kompliyans azaldığında aynı atım hacmi daha büyük sistolik basınç artışı oluşturur ve diyastolik elastik geri destek azalır; bu nedenle nabız basıncı genişler.",
-  "examPearl": "Geniş nabız basıncı her zaman yüksek debi demek değildir; normal atım hacmiyle birlikte artmış nabız dalga hızı varsa büyük arter elastikiyetini düşün.",
-  "whyCorrect": "Doğru seçenek budur. Atım hacmi sertleşmiş büyük arterlere aktarıldığında damar duvarı yeterince genişleyemez ve sistolik basınç daha fazla yükselir. Elastik geri çekilme zayıfladığı için diyastolik basınç daha düşük kalabilir; normal atım hacmine rağmen nabız basıncı genişler ve nabız dalga hızı artar.",
-  "optionComparison": {
-    "Büyük arter kompliyansının azalmasıyla aynı atım hacminde basınç salınımının artması": "Doğru seçenek budur. Atım hacmi sertleşmiş büyük arterlere aktarıldığında damar duvarı yeterince genişleyemez ve sistolik basınç daha fazla yükselir. Elastik geri çekilme zayıfladığı için diyastolik basınç daha düşük kalabilir; normal atım hacmine rağmen nabız basıncı genişler ve nabız dalga hızı artar.",
-    "Venöz kapasitansın artmasıyla diyastol sonunda ventrikül dolumunun yükselmesi": "Venöz kapasitans artışı kanın venöz depolarda göllenmesine ve venöz dönüşün azalmasına yol açabilir; bu durum geniş nabız basıncından çok düşük dolum ve düşük atım hacmiyle ilişkilidir. Olguda ekokardiyografik atım hacmi normal aralıkta ve sorun büyük arter basınç dalgasındadır. Bu seçenek preload değişimini arteriyel tamponlama bozukluğuyla karıştırır.",
-    "Arteriol direncinin akut azalmasıyla ortalama arter basıncının yükselmesi": "Arteriol direncinin akut azalması ortalama arter basıncını genellikle düşürür ve refleks taşikardiye yol açabilir. Bu olguda belirgin hipotansiyon değil, yüksek sistolik ve düşük-normal diyastolik değerlerle geniş nabız basıncı vardır. Nabız dalga hızının artması direnç damarlarından çok büyük arter elastik özelliklerine işaret eder.",
-    "Kalp hızının azalmasıyla sistol süresinin diyastole göre belirgin uzaması": "Kalp hızı azalınca diyastol süresi uzar ve bazı durumlarda dolum değişebilir; ancak buradaki nabız basıncı genişliği bradikardiye bağlı değildir. Nabız 72/dk olup belirgin hız bozukluğu yoktur. Sistol-diyastol zamanlaması bu olgudaki yüksek nabız dalga hızı ve düşük kompliyans kaydını açıklamaz.",
-    "Kapiller geçirgenliğin azalmasıyla plazma onkotik basıncının düşmesi": "Kapiller geçirgenlik ve plazma onkotik basıncı ödem oluşumu ve interstisyel sıvı hareketleriyle ilişkilidir. Nabız basıncı, büyük arterlerin atım hacmini elastik olarak tamponlama kapasitesiyle belirlenir. Olguda kapiller sıvı dengesi bozukluğunu düşündüren veri yoktur."
-  },
-  "evidenceChain": [
-    {
-      "title": "Basınç paternı",
-      "text": "162/66 mmHg → sistolik yükselme ve diyastolik düşük-normal değer nabız basıncını genişletmiştir",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Atım hacmi",
-      "text": "Atım hacmi 74 mL → geniş basınç farkı yüksek atım hacmiyle açıklanmak zorunda değildir",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Dalga hızı",
-      "text": "Nabız dalga hızı 13.8 m/sn → büyük arter duvarının elastik tamponlama kapasitesi azalmıştır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Dışlanan veri",
-      "text": "Belirgin kapak geri kaçışı yok → basınç farkı tek başına valvüler geri kaçışla açıklanmaz",
-      "weight": "medium",
-      "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "Venöz kapasitansın artmasıyla diyastol sonunda ventrikül dolumunun yükselmesi": "Venöz kapasitans artışı kanın venöz depolarda göllenmesine ve venöz dönüşün azalmasına yol açabilir; bu durum geniş nabız basıncından çok düşük dolum ve düşük atım hacmiyle ilişkilidir. Olguda ekokardiyografik atım hacmi normal aralıkta ve sorun büyük arter basınç dalgasındadır. Bu seçenek preload değişimini arteriyel tamponlama bozukluğuyla karıştırır.",
-    "Arteriol direncinin akut azalmasıyla ortalama arter basıncının yükselmesi": "Arteriol direncinin akut azalması ortalama arter basıncını genellikle düşürür ve refleks taşikardiye yol açabilir. Bu olguda belirgin hipotansiyon değil, yüksek sistolik ve düşük-normal diyastolik değerlerle geniş nabız basıncı vardır. Nabız dalga hızının artması direnç damarlarından çok büyük arter elastik özelliklerine işaret eder.",
-    "Kalp hızının azalmasıyla sistol süresinin diyastole göre belirgin uzaması": "Kalp hızı azalınca diyastol süresi uzar ve bazı durumlarda dolum değişebilir; ancak buradaki nabız basıncı genişliği bradikardiye bağlı değildir. Nabız 72/dk olup belirgin hız bozukluğu yoktur. Sistol-diyastol zamanlaması bu olgudaki yüksek nabız dalga hızı ve düşük kompliyans kaydını açıklamaz.",
-    "Kapiller geçirgenliğin azalmasıyla plazma onkotik basıncının düşmesi": "Kapiller geçirgenlik ve plazma onkotik basıncı ödem oluşumu ve interstisyel sıvı hareketleriyle ilişkilidir. Nabız basıncı, büyük arterlerin atım hacmini elastik olarak tamponlama kapasitesiyle belirlenir. Olguda kapiller sıvı dengesi bozukluğunu düşündüren veri yoktur."
-  },
-  "mechanismExplanation": "Azalmış arteriyel kompliyans, korunmuş atım hacminin daha büyük basınç salınımına dönüşmesine neden olur; sistolik basınç artar, diyastolik destek azalır ve nabız dalga hızı yükselir.",
-  "scientificComment": "Soru, kan basıncını yalnız periferik dirençle değil büyük arter elastik rezervuar fizyolojisiyle değerlendirmeyi hedefler.",
-  "helpText": "Nabız basıncı = sistolik - diyastolik basınç; atım hacmi ve büyük arter kompliyansı birlikte belirler.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v217-new-003-filtrat-yuku-artisinda-proksimal-yanit",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Filtrat yükü artışında tübüler kayıt",
-  "difficulty": "Orta",
-  "difficultyTag": "Orta",
-  "clinicalFocus": "GFR artışı sırasında filtre edilen yük, idrar sodyum atılımı ve tübüler geri emilim dengesini birlikte yorumlama.",
-  "learningTarget": "Filtre edilen yük arttığında erken tübüler geri emilimin nasıl paralel ayarlandığını RAAS, ADH ve medüller yoğunlaştırma mekanizmalarından ayırt edebilme.",
-  "demographics": "24 yaşında sağlıklı kadın gönüllü",
-  "setting": "Renal fizyoloji laboratuvarı",
-  "chiefComplaint": "Gönüllü, kontrollü aminoasit infüzyonu sırasında böbrek filtrasyon ve tübüler geri emilim yanıtı için izleniyor.",
-  "stem": "Gönüllü sabah açlığından sonra laboratuvara gelir ve işlemden önce standart miktarda su içer. Başlangıç idrar örneği alındıktan sonra düşük doz aminoasit infüzyonu başlatılır ve takip eden bir saat içinde kan-idrar örnekleri toplanır. İşlem sırasında baş dönmesi, bulantı veya belirgin susama tariflemez. Araştırma ekibi, filtrasyon miktarı değişirken idrarla sodyum kaybının orantısız artıp artmadığını değerlendirmek için seri klirens kaydı alır.",
-  "patientIntro": {
-    "profile": "24 yaşında sağlıklı kadın gönüllü, renal fizyoloji laboratuvarı bağlamında değerlendiriliyor.",
-    "presentation": "Kontrollü infüzyon sırasında GFR ve proksimal geri emilim göstergeleri birlikte ölçülüyor.",
-    "historySummary": "Gönüllü sabah açlığından sonra laboratuvara gelir ve işlemden önce standart miktarda su içer. Başlangıç idrar örneği alındıktan sonra düşük doz aminoasit infüzyonu başlatılır ve takip eden bir saat içinde kan-idrar örnekleri toplanır. İşlem sırasında baş dönmesi, bulantı veya belirgin susama tariflemez. Araştırma ekibi, filtrasyon miktarı değişirken idrarla sodyum kaybının orantısız artıp artmadığını değerlendirmek için seri klirens kaydı alır."
-  },
-  "vitals": {
-    "TA": "112/70 mmHg",
-    "Nabız": "74/dk",
-    "Solunum": "14/dk",
-    "SpO2": "%99, oda havasında",
-    "Ateş": "36.4 °C",
-    "Şok indeksi": "0.66"
-  },
-  "exam": [
-    "Gönüllü uyanık, koopere ve sıvı alım protokolüne uyumludur.",
-    "Mukozalar nemli, periferik perfüzyon doğaldır.",
-    "Pretibial ödem veya dehidratasyon bulgusu saptanmaz.",
-    "İşlem sırasında kan basıncı ve kalp hızı stabil seyretmiştir."
-  ],
-  "investigations": [
-    {
-      "id": "v217-new-003-filtrat-yuku-artisinda-proksimal-yanit-klirens-ve-filtrasyon-kaydi",
-      "label": "Klirens ve filtrasyon kaydı",
-      "title": "Klirens ve filtrasyon kaydı",
-      "type": "laboratory",
-      "priority": "essential",
-      "subtype": "Renal klirens",
-      "category": "laboratory",
-      "testTypeCategory": "laboratory",
-      "summary": "GFR artmış ve filtre edilen sodyum yükü yükselmiş; idrarla sodyum atılımı yalnız sınırlı artmıştır.",
-      "clinicalMeaning": "GFR artmış ve filtre edilen sodyum yükü yükselmiş; idrarla sodyum atılımı yalnız sınırlı artmıştır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "Klirens ve filtrasyon kaydı",
-        "summary": "GFR artmış ve filtre edilen sodyum yükü yükselmiş; idrarla sodyum atılımı yalnız sınırlı artmıştır.",
-        "interpretation": "GFR artmış ve filtre edilen sodyum yükü yükselmiş; idrarla sodyum atılımı yalnız sınırlı artmıştır.",
-        "values": [
-          [
-            "GFR",
-            "118 → 152 mL/dk",
-            "90-125 mL/dk",
-            "Artmış"
-          ],
-          [
-            "Filtre edilen Na⁺ yükü",
-            "17.0 → 21.9 mmol/dk",
-            "GFR ve plazma Na⁺ ile değişir",
-            "Artmış"
-          ],
-          [
-            "İdrar Na⁺ atılımı",
-            "0.14 → 0.22 mmol/dk",
-            "Sıvı ve filtre yüke göre değişir",
-            "Sınırlı artış"
-          ],
-          [
-            "Fraksiyonel Na⁺ atılımı",
-            "%0.8 → %1.0",
-            "<%1-2",
-            "Sınırlı artış"
-          ]
-        ],
-        "rows": [
-          [
-            "GFR",
-            "118 → 152 mL/dk",
-            "90-125 mL/dk",
-            "Artmış"
-          ],
-          [
-            "Filtre edilen Na⁺ yükü",
-            "17.0 → 21.9 mmol/dk",
-            "GFR ve plazma Na⁺ ile değişir",
-            "Artmış"
-          ],
-          [
-            "İdrar Na⁺ atılımı",
-            "0.14 → 0.22 mmol/dk",
-            "Sıvı ve filtre yüke göre değişir",
-            "Sınırlı artış"
-          ],
-          [
-            "Fraksiyonel Na⁺ atılımı",
-            "%0.8 → %1.0",
-            "<%1-2",
-            "Sınırlı artış"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "GFR",
-          "118 → 152 mL/dk",
-          "90-125 mL/dk",
-          "Artmış"
         ],
         [
-          "Filtre edilen Na⁺ yükü",
-          "17.0 → 21.9 mmol/dk",
-          "GFR ve plazma Na⁺ ile değişir",
-          "Artmış"
-        ],
-        [
-          "İdrar Na⁺ atılımı",
-          "0.14 → 0.22 mmol/dk",
-          "Sıvı ve filtre yüke göre değişir",
-          "Sınırlı artış"
-        ],
-        [
-          "Fraksiyonel Na⁺ atılımı",
-          "%0.8 → %1.0",
-          "<%1-2",
-          "Sınırlı artış"
-        ]
-      ],
-      "postAnswerExplanation": "GFR artmış ve filtre edilen sodyum yükü yükselmiş; idrarla sodyum atılımı yalnız sınırlı artmıştır.",
-      "interpretation": "GFR artmış ve filtre edilen sodyum yükü yükselmiş; idrarla sodyum atılımı yalnız sınırlı artmıştır.",
-      "inlineFeedback": "GFR artmış ve filtre edilen sodyum yükü yükselmiş; idrarla sodyum atılımı yalnız sınırlı artmıştır.",
-      "explanationAfterAnswer": "GFR artmış ve filtre edilen sodyum yükü yükselmiş; idrarla sodyum atılımı yalnız sınırlı artmıştır."
-    },
-    {
-      "id": "v217-new-003-filtrat-yuku-artisinda-proksimal-yanit-idrar-ve-hormon-kaydi",
-      "label": "İdrar ve hormon kaydı",
-      "title": "İdrar ve hormon kaydı",
-      "type": "laboratory",
-      "priority": "essential",
-      "subtype": "İdrar elektrolitleri",
-      "category": "laboratory",
-      "testTypeCategory": "laboratory",
-      "summary": "Distal sodyum yükü hafif artmış ancak belirgin sodyum kaybı veya su dengesi bozukluğu izlenmemiştir.",
-      "clinicalMeaning": "Distal sodyum yükü hafif artmış ancak belirgin sodyum kaybı veya su dengesi bozukluğu izlenmemiştir.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 4,
-      "scoreValue": 4,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "İdrar ve hormon kaydı",
-        "summary": "Distal sodyum yükü hafif artmış ancak belirgin sodyum kaybı veya su dengesi bozukluğu izlenmemiştir.",
-        "interpretation": "Distal sodyum yükü hafif artmış ancak belirgin sodyum kaybı veya su dengesi bozukluğu izlenmemiştir.",
-        "values": [
-          [
-            "İdrar akımı",
-            "1.2 → 1.5 mL/dk",
-            "Sıvı durumuna göre değişir",
-            "Hafif artmış"
-          ],
-          [
-            "Fraksiyonel Na⁺ atılımı",
-            "%0.8 → %1.0",
-            "<%1-2",
-            "Sınırlı artış"
-          ],
-          [
-            "Plazma renin aktivitesi",
-            "Düşük-normal",
-            "Hacim ve NaCl sinyaline göre değişir",
-            "Belirgin artış yok"
-          ],
-          [
-            "İdrar osmolalitesi",
-            "520 → 500 mOsm/kg",
-            "Sıvı durumuna göre değişir",
-            "Yakın"
-          ]
-        ],
-        "rows": [
-          [
-            "İdrar akımı",
-            "1.2 → 1.5 mL/dk",
-            "Sıvı durumuna göre değişir",
-            "Hafif artmış"
-          ],
-          [
-            "Fraksiyonel Na⁺ atılımı",
-            "%0.8 → %1.0",
-            "<%1-2",
-            "Sınırlı artış"
-          ],
-          [
-            "Plazma renin aktivitesi",
-            "Düşük-normal",
-            "Hacim ve NaCl sinyaline göre değişir",
-            "Belirgin artış yok"
-          ],
-          [
-            "İdrar osmolalitesi",
-            "520 → 500 mOsm/kg",
-            "Sıvı durumuna göre değişir",
-            "Yakın"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "İdrar akımı",
-          "1.2 → 1.5 mL/dk",
-          "Sıvı durumuna göre değişir",
-          "Hafif artmış"
-        ],
-        [
-          "Fraksiyonel Na⁺ atılımı",
-          "%0.8 → %1.0",
-          "<%1-2",
-          "Sınırlı artış"
-        ],
-        [
-          "Plazma renin aktivitesi",
-          "Düşük-normal",
-          "Hacim ve NaCl sinyaline göre değişir",
-          "Belirgin artış yok"
-        ],
-        [
-          "İdrar osmolalitesi",
-          "520 → 500 mOsm/kg",
-          "Sıvı durumuna göre değişir",
-          "Yakın"
-        ]
-      ],
-      "postAnswerExplanation": "Distal sodyum yükü hafif artmış ancak belirgin sodyum kaybı veya su dengesi bozukluğu izlenmemiştir.",
-      "interpretation": "Distal sodyum yükü hafif artmış ancak belirgin sodyum kaybı veya su dengesi bozukluğu izlenmemiştir.",
-      "inlineFeedback": "Distal sodyum yükü hafif artmış ancak belirgin sodyum kaybı veya su dengesi bozukluğu izlenmemiştir.",
-      "explanationAfterAnswer": "Distal sodyum yükü hafif artmış ancak belirgin sodyum kaybı veya su dengesi bozukluğu izlenmemiştir."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu kayıtları en iyi açıklayan renal fizyolojik düzenleme hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "glomerulotubular_balance_proximal_reabsorption",
-  "diagnosis": {
-    "correct": "Proksimal tübül geri emiliminin filtre edilen sodyum ve su yüküyle birlikte artması",
-    "options": [
-      "Toplayıcı kanal su geçirgenliğinin düşmesiyle serbest su atılımının artması",
-      "Proksimal tübül geri emiliminin filtre edilen sodyum ve su yüküyle birlikte artması",
-      "Distal nefronda potasyum sekresyonunun azalmasıyla idrar potasyumunun düşmesi",
-      "Makula densa sinyalinin baskılanmasıyla renin salınımının sürekli artması",
-      "Medüller gradyanın kaybolmasıyla idrar yoğunlaştırma kapasitesinin azalması"
-    ],
-    "question": "Bu kayıtları en iyi açıklayan renal fizyolojik düzenleme hangisidir?",
-    "explanation": "GFR artışı filtre edilen sodyum ve su yükünü artırmıştır; ancak proksimal geri emilen mutlak miktar da benzer yönde yükseldiği için fraksiyonel geri emilim korunmuştur. Bu, distal segmente aşırı yük geçmesini sınırlayan proksimal eşleşme yanıtıdır. Renin, ADH veya medüller gradyan verileri ana değişikliğin distal/hormonal bir yanıt olmadığını destekler.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "GFR artınca idrarla aynı oranda sodyum kaybı olmak zorunda değildir; proksimal tübül filtre edilen yükle geri emilimi paralel artırarak distal yükü tamponlar."
-      }
-    ],
-    "optionComparison": {
-      "Proksimal tübül geri emiliminin filtre edilen sodyum ve su yüküyle birlikte artması": "Doğru seçenek budur. GFR arttığında proksimal tübüle gelen filtre edilmiş Na⁺ ve su yükü artar; proksimal epitel transportu ve peritübüler kapiller Starling kuvvetleri geri emilimi aynı yönde artırır. Bu nedenle distal segmente ulaşan yük artışı sınırlanır ve fraksiyonel proksimal geri emilim yaklaşık korunur.",
-      "Toplayıcı kanal su geçirgenliğinin düşmesiyle serbest su atılımının artması": "Toplayıcı kanal su geçirgenliği ADH etkisiyle değişir ve su dengesi/idrar osmolalitesi açısından önemlidir. Bu olguda kısa süreli GFR artışına rağmen proksimal geri emilen sodyum ve su miktarının da arttığı görülmektedir. Veriler serbest su atılımından çok filtre edilen yük ile proksimal geri emilim eşleşmesini sınar.",
-      "Distal nefronda potasyum sekresyonunun azalmasıyla idrar potasyumunun düşmesi": "Distal potasyum sekresyonu akım hızı, aldosteron ve distal sodyum sunumundan etkilenir. Ancak olgudaki ana kayıt potasyum değil, GFR ve proksimal Na⁺-su geri emilimidir. İdrar potasyumunun düşmesi bu veri setindeki temel homeostatik yanıtı açıklamaz.",
-      "Makula densa sinyalinin baskılanmasıyla renin salınımının sürekli artması": "Makula densa-renin ilişkisi distal NaCl algısı ve RAAS düzenlemesiyle bağlantılıdır. Bu olguda renin sürekli artmamış, plazma renin aktivitesi düşük-normal kalmıştır; ayrıca ölçüm proksimal yük eşleşmesi üzerine kuruludur. Bu seçenek tubuloglomerüler/RAAS yanıtını proksimal glomerülotübüler dengeyle karıştırır.",
-      "Medüller gradyanın kaybolmasıyla idrar yoğunlaştırma kapasitesinin azalması": "Medüller gradyanın kaybı idrarı yoğunlaştırma yeteneğini bozar ve poliüriye yol açabilir. Burada idrar osmolalitesi belirgin bozulmamış, sorun medüller konsantrasyon mekanizması değil artan filtrat yükünün proksimalde karşılanmasıdır. Bu nedenle medüller gradyan kaybı ana açıklama değildir."
-    },
-    "answerFeedback": {
-      "Proksimal tübül geri emiliminin filtre edilen sodyum ve su yüküyle birlikte artması": "Doğru seçenek budur. GFR arttığında proksimal tübüle gelen filtre edilmiş Na⁺ ve su yükü artar; proksimal epitel transportu ve peritübüler kapiller Starling kuvvetleri geri emilimi aynı yönde artırır. Bu nedenle distal segmente ulaşan yük artışı sınırlanır ve fraksiyonel proksimal geri emilim yaklaşık korunur.",
-      "Toplayıcı kanal su geçirgenliğinin düşmesiyle serbest su atılımının artması": "Toplayıcı kanal su geçirgenliği ADH etkisiyle değişir ve su dengesi/idrar osmolalitesi açısından önemlidir. Bu olguda kısa süreli GFR artışına rağmen proksimal geri emilen sodyum ve su miktarının da arttığı görülmektedir. Veriler serbest su atılımından çok filtre edilen yük ile proksimal geri emilim eşleşmesini sınar.",
-      "Distal nefronda potasyum sekresyonunun azalmasıyla idrar potasyumunun düşmesi": "Distal potasyum sekresyonu akım hızı, aldosteron ve distal sodyum sunumundan etkilenir. Ancak olgudaki ana kayıt potasyum değil, GFR ve proksimal Na⁺-su geri emilimidir. İdrar potasyumunun düşmesi bu veri setindeki temel homeostatik yanıtı açıklamaz.",
-      "Makula densa sinyalinin baskılanmasıyla renin salınımının sürekli artması": "Makula densa-renin ilişkisi distal NaCl algısı ve RAAS düzenlemesiyle bağlantılıdır. Bu olguda renin sürekli artmamış, plazma renin aktivitesi düşük-normal kalmıştır; ayrıca ölçüm proksimal yük eşleşmesi üzerine kuruludur. Bu seçenek tubuloglomerüler/RAAS yanıtını proksimal glomerülotübüler dengeyle karıştırır.",
-      "Medüller gradyanın kaybolmasıyla idrar yoğunlaştırma kapasitesinin azalması": "Medüller gradyanın kaybı idrarı yoğunlaştırma yeteneğini bozar ve poliüriye yol açabilir. Burada idrar osmolalitesi belirgin bozulmamış, sorun medüller konsantrasyon mekanizması değil artan filtrat yükünün proksimalde karşılanmasıdır. Bu nedenle medüller gradyan kaybı ana açıklama değildir."
-    }
-  },
-  "coreKnowledge": "Glomerülotübüler denge, proksimal tübülün filtre edilen sodyum ve su yükü arttığında geri emilen mutlak miktarı da artırmasıdır. Peritübüler kapiller onkotik/hidrostatik kuvvetler ve proksimal transport kapasitesi bu eşleşmeye katkı verir; distal nefron aşırı yükten korunur.",
-  "examPearl": "GFR artınca idrarla aynı oranda sodyum kaybı olmak zorunda değildir; proksimal tübül filtre edilen yükle geri emilimi paralel artırarak distal yükü tamponlar.",
-  "whyCorrect": "Doğru seçenek budur. GFR arttığında proksimal tübüle gelen filtre edilmiş Na⁺ ve su yükü artar; proksimal epitel transportu ve peritübüler kapiller Starling kuvvetleri geri emilimi aynı yönde artırır. Bu nedenle distal segmente ulaşan yük artışı sınırlanır ve fraksiyonel proksimal geri emilim yaklaşık korunur.",
-  "optionComparison": {
-    "Proksimal tübül geri emiliminin filtre edilen sodyum ve su yüküyle birlikte artması": "Doğru seçenek budur. GFR arttığında proksimal tübüle gelen filtre edilmiş Na⁺ ve su yükü artar; proksimal epitel transportu ve peritübüler kapiller Starling kuvvetleri geri emilimi aynı yönde artırır. Bu nedenle distal segmente ulaşan yük artışı sınırlanır ve fraksiyonel proksimal geri emilim yaklaşık korunur.",
-    "Toplayıcı kanal su geçirgenliğinin düşmesiyle serbest su atılımının artması": "Toplayıcı kanal su geçirgenliği ADH etkisiyle değişir ve su dengesi/idrar osmolalitesi açısından önemlidir. Bu olguda kısa süreli GFR artışına rağmen proksimal geri emilen sodyum ve su miktarının da arttığı görülmektedir. Veriler serbest su atılımından çok filtre edilen yük ile proksimal geri emilim eşleşmesini sınar.",
-    "Distal nefronda potasyum sekresyonunun azalmasıyla idrar potasyumunun düşmesi": "Distal potasyum sekresyonu akım hızı, aldosteron ve distal sodyum sunumundan etkilenir. Ancak olgudaki ana kayıt potasyum değil, GFR ve proksimal Na⁺-su geri emilimidir. İdrar potasyumunun düşmesi bu veri setindeki temel homeostatik yanıtı açıklamaz.",
-    "Makula densa sinyalinin baskılanmasıyla renin salınımının sürekli artması": "Makula densa-renin ilişkisi distal NaCl algısı ve RAAS düzenlemesiyle bağlantılıdır. Bu olguda renin sürekli artmamış, plazma renin aktivitesi düşük-normal kalmıştır; ayrıca ölçüm proksimal yük eşleşmesi üzerine kuruludur. Bu seçenek tubuloglomerüler/RAAS yanıtını proksimal glomerülotübüler dengeyle karıştırır.",
-    "Medüller gradyanın kaybolmasıyla idrar yoğunlaştırma kapasitesinin azalması": "Medüller gradyanın kaybı idrarı yoğunlaştırma yeteneğini bozar ve poliüriye yol açabilir. Burada idrar osmolalitesi belirgin bozulmamış, sorun medüller konsantrasyon mekanizması değil artan filtrat yükünün proksimalde karşılanmasıdır. Bu nedenle medüller gradyan kaybı ana açıklama değildir."
-  },
-  "evidenceChain": [
-    {
-      "title": "Filtrasyon",
-      "text": "GFR 118 → 152 mL/dk → filtre edilen Na⁺ ve su yükü artmıştır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Atılım yanıtı",
-      "text": "İdrar Na⁺ atılımı yalnız sınırlı artmıştır → filtre edilen yükün büyük kısmı geri emilimle karşılanmıştır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Fraksiyon",
-      "text": "Fraksiyonel Na⁺ atılımı %0.8 → %1.0 → filtre edilen yük artışına rağmen sodyum kaybı orantısız yükselmemiştir",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Hormon verisi",
-      "text": "Renin belirgin artmamış ve idrar osmolalitesi yakın seyretmiştir → ana yanıt distal hormonal su-sodyum düzenlemesi değildir",
-      "weight": "medium",
-      "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "Toplayıcı kanal su geçirgenliğinin düşmesiyle serbest su atılımının artması": "Toplayıcı kanal su geçirgenliği ADH etkisiyle değişir ve su dengesi/idrar osmolalitesi açısından önemlidir. Bu olguda kısa süreli GFR artışına rağmen proksimal geri emilen sodyum ve su miktarının da arttığı görülmektedir. Veriler serbest su atılımından çok filtre edilen yük ile proksimal geri emilim eşleşmesini sınar.",
-    "Distal nefronda potasyum sekresyonunun azalmasıyla idrar potasyumunun düşmesi": "Distal potasyum sekresyonu akım hızı, aldosteron ve distal sodyum sunumundan etkilenir. Ancak olgudaki ana kayıt potasyum değil, GFR ve proksimal Na⁺-su geri emilimidir. İdrar potasyumunun düşmesi bu veri setindeki temel homeostatik yanıtı açıklamaz.",
-    "Makula densa sinyalinin baskılanmasıyla renin salınımının sürekli artması": "Makula densa-renin ilişkisi distal NaCl algısı ve RAAS düzenlemesiyle bağlantılıdır. Bu olguda renin sürekli artmamış, plazma renin aktivitesi düşük-normal kalmıştır; ayrıca ölçüm proksimal yük eşleşmesi üzerine kuruludur. Bu seçenek tubuloglomerüler/RAAS yanıtını proksimal glomerülotübüler dengeyle karıştırır.",
-    "Medüller gradyanın kaybolmasıyla idrar yoğunlaştırma kapasitesinin azalması": "Medüller gradyanın kaybı idrarı yoğunlaştırma yeteneğini bozar ve poliüriye yol açabilir. Burada idrar osmolalitesi belirgin bozulmamış, sorun medüller konsantrasyon mekanizması değil artan filtrat yükünün proksimalde karşılanmasıdır. Bu nedenle medüller gradyan kaybı ana açıklama değildir."
-  },
-  "mechanismExplanation": "Filtre edilen yük arttığında proksimal geri emilim paralel artar; fraksiyonel geri emilim yaklaşık sabit kalır ve distal sodyum-su sunumu sınırlı yükselir.",
-  "scientificComment": "Soru, renal fizyolojide GFR değişikliğini yalnız filtrasyon olarak değil tübüler eşleşme ile birlikte yorumlatır.",
-  "helpText": "GFR değişirse sadece filtre edilen miktarı değil, proksimal geri emilen mutlak miktarı da izle.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v217-new-004-aclikta-glukoz-koruma-kaydi",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Açlıkta glukoz koruma kaydı",
-  "difficulty": "Orta",
-  "difficultyTag": "Orta",
-  "clinicalFocus": "Kısa süreli açlıkta glukozun korunmasını insülin, karşı düzenleyici hormon yanıtı ve hepatik glukoz üretimi üzerinden yorumlama.",
-  "learningTarget": "Açlık ve tokluk metabolizmasında pankreatik hormon yanıtlarını, inkretin etkisini ve uzun dönem enerji sinyallerini ayırt edebilme.",
-  "demographics": "21 yaşında sağlıklı erkek gönüllü",
-  "setting": "Endokrin-metabolizma fizyolojisi laboratuvarı",
-  "chiefComplaint": "Gönüllü, kontrollü açlık protokolünde kan glukozu ve metabolik yanıt açısından izleniyor.",
-  "stem": "Gönüllü akşam yemeğinden sonra yalnızca su içerek geceyi geçirir ve sabah laboratuvara gelir. İlk ölçümden sonra protokol 20. saate kadar sürdürülür; bu sırada kısa yürüyüş dışında egzersiz yapmaz. Gün içinde hafif açlık hissi ve yorgunluk tarifler, ancak terleme, bilinç bulanıklığı veya bayılma yaşamaz. Araştırma ekibi, glukoz düzeyi alt sınıra yaklaşırken dolaşımdaki yakıt kullanımı ve karaciğer çıkışını seri olarak kaydeder.",
-  "patientIntro": {
-    "profile": "21 yaşında sağlıklı erkek gönüllü, endokrin-metabolizma fizyolojisi laboratuvarı bağlamında değerlendiriliyor.",
-    "presentation": "Uzayan açlık sırasında glukoz düzeyi, insülin ve hepatik glukoz çıkışı birlikte değerlendiriliyor.",
-    "historySummary": "Gönüllü akşam yemeğinden sonra yalnızca su içerek geceyi geçirir ve sabah laboratuvara gelir. İlk ölçümden sonra protokol 20. saate kadar sürdürülür; bu sırada kısa yürüyüş dışında egzersiz yapmaz. Gün içinde hafif açlık hissi ve yorgunluk tarifler, ancak terleme, bilinç bulanıklığı veya bayılma yaşamaz. Araştırma ekibi, glukoz düzeyi alt sınıra yaklaşırken dolaşımdaki yakıt kullanımı ve karaciğer çıkışını seri olarak kaydeder."
-  },
-  "vitals": {
-    "TA": "110/68 mmHg",
-    "Nabız": "78/dk",
-    "Solunum": "15/dk",
-    "SpO2": "%99, oda havasında",
-    "Ateş": "36.5 °C",
-    "Şok indeksi": "0.71"
-  },
-  "exam": [
-    "Gönüllü uyanık, oryante ve sorulara uygun yanıt verir.",
-    "Mukozalar nemli, periferik dolaşım doğaldır.",
-    "Titreme, terleme veya nöroglikopenik davranış değişikliği izlenmez.",
-    "Karın muayenesi doğaldır; belirgin ağrı veya kusma yoktur."
-  ],
-  "investigations": [
-    {
-      "id": "v217-new-004-aclikta-glukoz-koruma-kaydi-kan-glukozu-ve-insulin-kaydi",
-      "label": "Kan glukozu ve insülin kaydı",
-      "title": "Kan glukozu ve insülin kaydı",
-      "type": "laboratory",
-      "priority": "essential",
-      "subtype": "Metabolik laboratuvar",
-      "category": "laboratory",
-      "testTypeCategory": "laboratory",
-      "summary": "Açlık süresi uzadıkça glukoz alt sınıra yaklaşmış, insülin düzeyi düşmüştür.",
-      "clinicalMeaning": "Açlık süresi uzadıkça glukoz alt sınıra yaklaşmış, insülin düzeyi düşmüştür.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "Kan glukozu ve insülin kaydı",
-        "summary": "Açlık süresi uzadıkça glukoz alt sınıra yaklaşmış, insülin düzeyi düşmüştür.",
-        "interpretation": "Açlık süresi uzadıkça glukoz alt sınıra yaklaşmış, insülin düzeyi düşmüştür.",
-        "values": [
-          [
-            "Plazma glukozu",
-            "92 → 72 mg/dL",
-            "70-100 mg/dL",
-            "Alt sınıra yakın"
-          ],
-          [
-            "Serum insülin",
-            "9.8 → 2.1 µIU/mL",
-            "Açlıkta düşük beklenir",
-            "Azalmış"
-          ],
-          [
-            "C-peptid",
-            "1.8 → 0.6 ng/mL",
-            "0.5-2.0 ng/mL",
-            "Azalmış"
-          ],
-          [
-            "Laktat",
-            "1.1 mmol/L",
-            "0.5-2.2 mmol/L",
-            "Normal"
-          ]
-        ],
-        "rows": [
-          [
-            "Plazma glukozu",
-            "92 → 72 mg/dL",
-            "70-100 mg/dL",
-            "Alt sınıra yakın"
-          ],
-          [
-            "Serum insülin",
-            "9.8 → 2.1 µIU/mL",
-            "Açlıkta düşük beklenir",
-            "Azalmış"
-          ],
-          [
-            "C-peptid",
-            "1.8 → 0.6 ng/mL",
-            "0.5-2.0 ng/mL",
-            "Azalmış"
-          ],
-          [
-            "Laktat",
-            "1.1 mmol/L",
-            "0.5-2.2 mmol/L",
-            "Normal"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Plazma glukozu",
-          "92 → 72 mg/dL",
-          "70-100 mg/dL",
-          "Alt sınıra yakın"
-        ],
-        [
-          "Serum insülin",
-          "9.8 → 2.1 µIU/mL",
-          "Açlıkta düşük beklenir",
-          "Azalmış"
-        ],
-        [
-          "C-peptid",
-          "1.8 → 0.6 ng/mL",
-          "0.5-2.0 ng/mL",
-          "Azalmış"
+          "İyonize kalsiyum",
+          "1.02 mmol/L",
+          "1.12-1.32 mmol/L",
+          "Düşük"
         ],
         [
           "Laktat",
           "1.1 mmol/L",
-          "0.5-2.2 mmol/L",
+          "0.5-2.0 mmol/L",
           "Normal"
-        ]
-      ],
-      "postAnswerExplanation": "Açlık süresi uzadıkça glukoz alt sınıra yaklaşmış, insülin düzeyi düşmüştür.",
-      "interpretation": "Açlık süresi uzadıkça glukoz alt sınıra yaklaşmış, insülin düzeyi düşmüştür.",
-      "inlineFeedback": "Açlık süresi uzadıkça glukoz alt sınıra yaklaşmış, insülin düzeyi düşmüştür.",
-      "explanationAfterAnswer": "Açlık süresi uzadıkça glukoz alt sınıra yaklaşmış, insülin düzeyi düşmüştür."
-    },
-    {
-      "id": "v217-new-004-aclikta-glukoz-koruma-kaydi-yakit-ve-hepatik-cikis-kaydi",
-      "label": "Yakıt kullanımı ve hepatik çıkış kaydı",
-      "title": "Yakıt kullanımı ve hepatik çıkış kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Metabolik akım kaydı",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Serbest yağ asidi ve ketonlar hafif artmış, karaciğer glukoz çıkışı korunmuştur.",
-      "clinicalMeaning": "Serbest yağ asidi ve ketonlar hafif artmış, karaciğer glukoz çıkışı korunmuştur.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 4,
-      "scoreValue": 4,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "Yakıt kullanımı ve hepatik çıkış kaydı",
-        "summary": "Serbest yağ asidi ve ketonlar hafif artmış, karaciğer glukoz çıkışı korunmuştur.",
-        "interpretation": "Serbest yağ asidi ve ketonlar hafif artmış, karaciğer glukoz çıkışı korunmuştur.",
-        "values": [
-          [
-            "Serbest yağ asidi",
-            "0.38 → 0.82 mmol/L",
-            "Beslenme durumuna göre değişir",
-            "Artmış"
-          ],
-          [
-            "Beta-hidroksibutirat",
-            "0.1 → 0.5 mmol/L",
-            "Açlıkla artabilir",
-            "Hafif artmış"
-          ],
-          [
-            "Hepatik glukoz çıkışı",
-            "Korunmuş",
-            "Açlıkta sürmesi beklenir",
-            "Sürmüş"
-          ],
-          [
-            "Oral besin alımı",
-            "Yok",
-            "Protokole göre",
-            "Yok"
-          ]
-        ],
-        "rows": [
-          [
-            "Serbest yağ asidi",
-            "0.38 → 0.82 mmol/L",
-            "Beslenme durumuna göre değişir",
-            "Artmış"
-          ],
-          [
-            "Beta-hidroksibutirat",
-            "0.1 → 0.5 mmol/L",
-            "Açlıkla artabilir",
-            "Hafif artmış"
-          ],
-          [
-            "Hepatik glukoz çıkışı",
-            "Korunmuş",
-            "Açlıkta sürmesi beklenir",
-            "Sürmüş"
-          ],
-          [
-            "Oral besin alımı",
-            "Yok",
-            "Protokole göre",
-            "Yok"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Serbest yağ asidi",
-          "0.38 → 0.82 mmol/L",
-          "Beslenme durumuna göre değişir",
-          "Artmış"
         ],
         [
-          "Beta-hidroksibutirat",
-          "0.1 → 0.5 mmol/L",
-          "Açlıkla artabilir",
-          "Hafif artmış"
-        ],
-        [
-          "Hepatik glukoz çıkışı",
-          "Korunmuş",
-          "Açlıkta sürmesi beklenir",
-          "Sürmüş"
-        ],
-        [
-          "Oral besin alımı",
-          "Yok",
-          "Protokole göre",
-          "Yok"
-        ]
-      ],
-      "postAnswerExplanation": "Serbest yağ asidi ve ketonlar hafif artmış, karaciğer glukoz çıkışı korunmuştur.",
-      "interpretation": "Serbest yağ asidi ve ketonlar hafif artmış, karaciğer glukoz çıkışı korunmuştur.",
-      "inlineFeedback": "Serbest yağ asidi ve ketonlar hafif artmış, karaciğer glukoz çıkışı korunmuştur.",
-      "explanationAfterAnswer": "Serbest yağ asidi ve ketonlar hafif artmış, karaciğer glukoz çıkışı korunmuştur."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu açlık paterninde glukozun korunmasını en iyi açıklayan erken hormonal yanıt hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "fasting_glucose_preservation_glucagon_response",
-  "diagnosis": {
-    "correct": "Glukagon artışıyla karaciğerde glikojen yıkımı ve glukoz yapımının desteklenmesi",
-    "options": [
-      "İnsülin artışıyla kas ve yağ dokusunda glukoz alımının güçlenmesi",
-      "İnkretin artışıyla beta hücrelerinden öğün ilişkili insülin salınımının artması",
-      "Somatostatin azalmasıyla pankreatik hormonların tümünün eş zamanlı baskılanması",
-      "Leptin artışıyla kısa süreli hepatik glukoz çıkışının doğrudan durdurulması",
-      "Glukagon artışıyla karaciğerde glikojen yıkımı ve glukoz yapımının desteklenmesi"
-    ],
-    "question": "Bu açlık paterninde glukozun korunmasını en iyi açıklayan erken hormonal yanıt hangisidir?",
-    "explanation": "Uzayan açlıkta glukoz düzeyi düşme eğilimi gösterirken insülin azalır; bu durum periferik depolama yanıtının baskılandığını gösterir. Hepatik glukoz çıkışının korunması, düşük insülin ortamında karşı düzenleyici pankreatik yanıtla karaciğer glukoz üretiminin sürdürülmesine dayanır. Serbest yağ asidi ve hafif keton artışı da açlıkta yakıt kullanımının değiştiğini destekler.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "Açlığın erken döneminde kan glukozunu koruyan ana yön: insülin azalır, karaciğerden glukoz çıkışı sürer; tokluk-incretin yanıtıyla karıştırma."
-      }
-    ],
-    "optionComparison": {
-      "İnsülin artışıyla kas ve yağ dokusunda glukoz alımının güçlenmesi": "İnsülin artışı toklukta glukozun kas ve yağ dokusuna alınmasını kolaylaştırır; oral glukoz veya öğün sonrası akla gelir. Bu olguda açlık süresi uzamış, serum insülini düşük ve hepatik glukoz çıkışı korunmuştur. Bu nedenle temel erken yanıt insülin aracılı periferik glukoz depolanması değildir.",
-      "Glukagon artışıyla karaciğerde glikojen yıkımı ve glukoz yapımının desteklenmesi": "Doğru seçenek budur. Açlıkta plazma glukozu düşme eğilimi gösterirken insülin azalır ve pankreas alfa hücre yanıtı karaciğerden glukoz çıkışını destekler. İlk saatlerde glikojen yıkımı, daha uzun sürede glukoneogenez katkısı artar; düşük insülin, artmış serbest yağ asidi ve korunmuş hepatik glukoz çıkışı bu yanıtla uyumludur.",
-      "İnkretin artışıyla beta hücrelerinden öğün ilişkili insülin salınımının artması": "İnkretinler oral besin alımı sonrası bağırsaktan salınır ve aynı glukoz düzeyinde insülin yanıtını güçlendirir. Gönüllü aç kalmış ve oral glukoz yükü almamıştır; insülin de düşük seyretmiştir. Bu seçenek tokluk-incretin yanıtını açlıkta glukoz koruma yanıtıyla karıştırır.",
-      "Somatostatin azalmasıyla pankreatik hormonların tümünün eş zamanlı baskılanması": "Somatostatin pankreatik hormon salınımını baskılayabilir, ancak seçenek kendi içinde yön açısından da uygun değildir; somatostatin azalması hormonların tümünü baskılamaz. Olguda belirleyici patern seçici olarak düşük insülin ve karaciğer glukoz çıkışının sürmesidir. Bu veri açlıkta karşı düzenleyici yanıtı destekler.",
-      "Leptin artışıyla kısa süreli hepatik glukoz çıkışının doğrudan durdurulması": "Leptin uzun dönem enerji depoları ve iştah düzenlenmesiyle ilişkilidir; kısa süreli açlıkta dakikalar-saatler içinde hepatik glukoz çıkışını doğrudan durduran ana mekanizma değildir. Olguda glukozun korunması, hepatik üretimin sürmesiyle sağlanmaktadır. Leptin bu akut metabolik paternin temel açıklaması değildir."
-    },
-    "answerFeedback": {
-      "İnsülin artışıyla kas ve yağ dokusunda glukoz alımının güçlenmesi": "İnsülin artışı toklukta glukozun kas ve yağ dokusuna alınmasını kolaylaştırır; oral glukoz veya öğün sonrası akla gelir. Bu olguda açlık süresi uzamış, serum insülini düşük ve hepatik glukoz çıkışı korunmuştur. Bu nedenle temel erken yanıt insülin aracılı periferik glukoz depolanması değildir.",
-      "Glukagon artışıyla karaciğerde glikojen yıkımı ve glukoz yapımının desteklenmesi": "Doğru seçenek budur. Açlıkta plazma glukozu düşme eğilimi gösterirken insülin azalır ve pankreas alfa hücre yanıtı karaciğerden glukoz çıkışını destekler. İlk saatlerde glikojen yıkımı, daha uzun sürede glukoneogenez katkısı artar; düşük insülin, artmış serbest yağ asidi ve korunmuş hepatik glukoz çıkışı bu yanıtla uyumludur.",
-      "İnkretin artışıyla beta hücrelerinden öğün ilişkili insülin salınımının artması": "İnkretinler oral besin alımı sonrası bağırsaktan salınır ve aynı glukoz düzeyinde insülin yanıtını güçlendirir. Gönüllü aç kalmış ve oral glukoz yükü almamıştır; insülin de düşük seyretmiştir. Bu seçenek tokluk-incretin yanıtını açlıkta glukoz koruma yanıtıyla karıştırır.",
-      "Somatostatin azalmasıyla pankreatik hormonların tümünün eş zamanlı baskılanması": "Somatostatin pankreatik hormon salınımını baskılayabilir, ancak seçenek kendi içinde yön açısından da uygun değildir; somatostatin azalması hormonların tümünü baskılamaz. Olguda belirleyici patern seçici olarak düşük insülin ve karaciğer glukoz çıkışının sürmesidir. Bu veri açlıkta karşı düzenleyici yanıtı destekler.",
-      "Leptin artışıyla kısa süreli hepatik glukoz çıkışının doğrudan durdurulması": "Leptin uzun dönem enerji depoları ve iştah düzenlenmesiyle ilişkilidir; kısa süreli açlıkta dakikalar-saatler içinde hepatik glukoz çıkışını doğrudan durduran ana mekanizma değildir. Olguda glukozun korunması, hepatik üretimin sürmesiyle sağlanmaktadır. Leptin bu akut metabolik paternin temel açıklaması değildir."
-    }
-  },
-  "coreKnowledge": "Açlıkta pankreatik hormon dengesi tokluktan ters yöne kayar. İnsülin düşerken karşı düzenleyici yanıt karaciğerde glikojen yıkımı ve glukoneogenezi destekler; böylece beyin ve eritrositler için plazma glukozu korunur.",
-  "examPearl": "Açlığın erken döneminde kan glukozunu koruyan ana yön: insülin azalır, karaciğerden glukoz çıkışı sürer; tokluk-incretin yanıtıyla karıştırma.",
-  "whyCorrect": "Doğru seçenek budur. Açlıkta plazma glukozu düşme eğilimi gösterirken insülin azalır ve pankreas alfa hücre yanıtı karaciğerden glukoz çıkışını destekler. İlk saatlerde glikojen yıkımı, daha uzun sürede glukoneogenez katkısı artar; düşük insülin, artmış serbest yağ asidi ve korunmuş hepatik glukoz çıkışı bu yanıtla uyumludur.",
-  "optionComparison": {
-    "İnsülin artışıyla kas ve yağ dokusunda glukoz alımının güçlenmesi": "İnsülin artışı toklukta glukozun kas ve yağ dokusuna alınmasını kolaylaştırır; oral glukoz veya öğün sonrası akla gelir. Bu olguda açlık süresi uzamış, serum insülini düşük ve hepatik glukoz çıkışı korunmuştur. Bu nedenle temel erken yanıt insülin aracılı periferik glukoz depolanması değildir.",
-    "Glukagon artışıyla karaciğerde glikojen yıkımı ve glukoz yapımının desteklenmesi": "Doğru seçenek budur. Açlıkta plazma glukozu düşme eğilimi gösterirken insülin azalır ve pankreas alfa hücre yanıtı karaciğerden glukoz çıkışını destekler. İlk saatlerde glikojen yıkımı, daha uzun sürede glukoneogenez katkısı artar; düşük insülin, artmış serbest yağ asidi ve korunmuş hepatik glukoz çıkışı bu yanıtla uyumludur.",
-    "İnkretin artışıyla beta hücrelerinden öğün ilişkili insülin salınımının artması": "İnkretinler oral besin alımı sonrası bağırsaktan salınır ve aynı glukoz düzeyinde insülin yanıtını güçlendirir. Gönüllü aç kalmış ve oral glukoz yükü almamıştır; insülin de düşük seyretmiştir. Bu seçenek tokluk-incretin yanıtını açlıkta glukoz koruma yanıtıyla karıştırır.",
-    "Somatostatin azalmasıyla pankreatik hormonların tümünün eş zamanlı baskılanması": "Somatostatin pankreatik hormon salınımını baskılayabilir, ancak seçenek kendi içinde yön açısından da uygun değildir; somatostatin azalması hormonların tümünü baskılamaz. Olguda belirleyici patern seçici olarak düşük insülin ve karaciğer glukoz çıkışının sürmesidir. Bu veri açlıkta karşı düzenleyici yanıtı destekler.",
-    "Leptin artışıyla kısa süreli hepatik glukoz çıkışının doğrudan durdurulması": "Leptin uzun dönem enerji depoları ve iştah düzenlenmesiyle ilişkilidir; kısa süreli açlıkta dakikalar-saatler içinde hepatik glukoz çıkışını doğrudan durduran ana mekanizma değildir. Olguda glukozun korunması, hepatik üretimin sürmesiyle sağlanmaktadır. Leptin bu akut metabolik paternin temel açıklaması değildir."
-  },
-  "evidenceChain": [
-    {
-      "title": "Glukoz eğilimi",
-      "text": "Plazma glukozu 92 → 72 mg/dL → glukoz alt sınıra yaklaşmıştır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "İnsülin yönü",
-      "text": "İnsülin 9.8 → 2.1 µIU/mL → tokluk tipi depolama yanıtı baskılanmıştır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Karaciğer çıkışı",
-      "text": "Hepatik glukoz çıkışı korunmuş → dolaşım glukozu üretimle desteklenmiştir",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Besin durumu",
-      "text": "Oral besin alımı yok → inkretin aracılı öğün yanıtı beklenmez",
-      "weight": "medium",
-      "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "İnsülin artışıyla kas ve yağ dokusunda glukoz alımının güçlenmesi": "İnsülin artışı toklukta glukozun kas ve yağ dokusuna alınmasını kolaylaştırır; oral glukoz veya öğün sonrası akla gelir. Bu olguda açlık süresi uzamış, serum insülini düşük ve hepatik glukoz çıkışı korunmuştur. Bu nedenle temel erken yanıt insülin aracılı periferik glukoz depolanması değildir.",
-    "İnkretin artışıyla beta hücrelerinden öğün ilişkili insülin salınımının artması": "İnkretinler oral besin alımı sonrası bağırsaktan salınır ve aynı glukoz düzeyinde insülin yanıtını güçlendirir. Gönüllü aç kalmış ve oral glukoz yükü almamıştır; insülin de düşük seyretmiştir. Bu seçenek tokluk-incretin yanıtını açlıkta glukoz koruma yanıtıyla karıştırır.",
-    "Somatostatin azalmasıyla pankreatik hormonların tümünün eş zamanlı baskılanması": "Somatostatin pankreatik hormon salınımını baskılayabilir, ancak seçenek kendi içinde yön açısından da uygun değildir; somatostatin azalması hormonların tümünü baskılamaz. Olguda belirleyici patern seçici olarak düşük insülin ve karaciğer glukoz çıkışının sürmesidir. Bu veri açlıkta karşı düzenleyici yanıtı destekler.",
-    "Leptin artışıyla kısa süreli hepatik glukoz çıkışının doğrudan durdurulması": "Leptin uzun dönem enerji depoları ve iştah düzenlenmesiyle ilişkilidir; kısa süreli açlıkta dakikalar-saatler içinde hepatik glukoz çıkışını doğrudan durduran ana mekanizma değildir. Olguda glukozun korunması, hepatik üretimin sürmesiyle sağlanmaktadır. Leptin bu akut metabolik paternin temel açıklaması değildir."
-  },
-  "mechanismExplanation": "Düşen glukoz ve düşük insülin ortamında karaciğer glukoz üretimi desteklenir; serbest yağ asidi ve keton artışı periferik yakıt kullanımının açlık yönüne kaydığını gösterir.",
-  "scientificComment": "Soru, endokrin fizyolojide hormon adını ezberletmek yerine beslenme durumu-hormon-yakıt akışı ilişkisini kurdurur.",
-  "helpText": "Toklukta insülin/incretin; açlıkta düşük insülin ve karşı düzenleyici hepatik glukoz üretimi düşün.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v217-new-005-kas-uzunlugu-ve-kuvvet-kaydi",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Kas uzunluğu ve kuvvet kaydı",
-  "difficulty": "Orta",
-  "difficultyTag": "Orta",
-  "clinicalFocus": "Sabit uyarı altında farklı kas uzunluklarında oluşan aktif ve pasif gerimi sarkomer düzeyindeki filament örtüşmesiyle yorumlama.",
-  "learningTarget": "İskelet kasında uzunluk-gerim ilişkisini motor ünite katılımı, nöromüsküler iletim ve kalsiyum geri alım mekanizmalarından ayırt edebilme.",
-  "demographics": "22 yaşında sağlıklı kadın gönüllüden alınan eğitim verisi",
-  "setting": "Kas fizyolojisi laboratuvarı",
-  "chiefComplaint": "Standart deney preparatında farklı başlangıç uzunluklarında izometrik kasılma kuvveti ölçülüyor.",
-  "stem": "Laboratuvar oturumunda öğrenciler aynı kas preparatını üç farklı başlangıç uzunluğunda sabitleyerek uyarı protokolünü tekrarlar. Her ölçümden önce preparatın dinlenmesi beklenir ve elektrot yerleşimi değiştirilmez. Kısa uzunlukta kasın gevşek durduğu, orta uzunlukta uyarı sonrası kuvvetin belirgin arttığı, en uzun ayarda ise istirahat geriminin yükseldiği fark edilir. Eğitmen, aynı uyarıya rağmen kuvvetin neden uzunluğa bağlı değiştiğini açıklamalarını ister.",
-  "patientIntro": {
-    "profile": "22 yaşında sağlıklı kadın gönüllüden alınan eğitim verisi, kas fizyolojisi laboratuvarı bağlamında değerlendiriliyor.",
-    "presentation": "Sabit uyarı protokolünde başlangıç kas uzunluğu değiştirilince aktif kuvvet ve pasif gerim farklı ölçülüyor.",
-    "historySummary": "Laboratuvar oturumunda öğrenciler aynı kas preparatını üç farklı başlangıç uzunluğunda sabitleyerek uyarı protokolünü tekrarlar. Her ölçümden önce preparatın dinlenmesi beklenir ve elektrot yerleşimi değiştirilmez. Kısa uzunlukta kasın gevşek durduğu, orta uzunlukta uyarı sonrası kuvvetin belirgin arttığı, en uzun ayarda ise istirahat geriminin yükseldiği fark edilir. Eğitmen, aynı uyarıya rağmen kuvvetin neden uzunluğa bağlı değiştiğini açıklamalarını ister."
-  },
-  "vitals": {
-    "TA": "108/66 mmHg",
-    "Nabız": "70/dk",
-    "Solunum": "14/dk",
-    "SpO2": "%99, oda havasında",
-    "Ateş": "36.6 °C",
-    "Şok indeksi": "0.65"
-  },
-  "exam": [
-    "Gönüllü sağlıklı eğitim protokolüne katılmıştır; sistemik hastalık veya akut yakınma bildirmez.",
-    "Ön kol kas gücü ve duyu muayenesi kabaca simetriktir.",
-    "Deney sırasında elektrot teması ve uyarı şiddeti sabit tutulmuştur.",
-    "Kas preparatında gözlenen farklar başlangıç uzunluğu değiştirildikten sonra ortaya çıkmıştır."
-  ],
-  "investigations": [
-    {
-      "id": "v217-new-005-kas-uzunlugu-ve-kuvvet-kaydi-izometrik-kuvvet-kaydi",
-      "label": "İzometrik kuvvet kaydı",
-      "title": "İzometrik kuvvet kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Kas kuvvet ölçümü",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Aynı uyarı altında aktif kuvvet orta uzunlukta en yüksek, aşırı kısa ve uzun ayarlarda daha düşük ölçülmüştür.",
-      "clinicalMeaning": "Aynı uyarı altında aktif kuvvet orta uzunlukta en yüksek, aşırı kısa ve uzun ayarlarda daha düşük ölçülmüştür.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "İzometrik kuvvet kaydı",
-        "summary": "Aynı uyarı altında aktif kuvvet orta uzunlukta en yüksek, aşırı kısa ve uzun ayarlarda daha düşük ölçülmüştür.",
-        "interpretation": "Aynı uyarı altında aktif kuvvet orta uzunlukta en yüksek, aşırı kısa ve uzun ayarlarda daha düşük ölçülmüştür.",
-        "values": [
-          [
-            "Başlangıç uzunluğu",
-            "Kısa",
-            "Protokol koşulu",
-            "Aktif kuvvet düşük"
-          ],
-          [
-            "Başlangıç uzunluğu",
-            "Orta",
-            "Protokol koşulu",
-            "Aktif kuvvet en yüksek"
-          ],
-          [
-            "Başlangıç uzunluğu",
-            "Uzun",
-            "Protokol koşulu",
-            "Aktif kuvvet azalmış"
-          ],
-          [
-            "Uyarı frekansı",
-            "Sabit",
-            "Protokol koşulu",
-            "Değişmedi"
-          ]
-        ],
-        "rows": [
-          [
-            "Başlangıç uzunluğu",
-            "Kısa",
-            "Protokol koşulu",
-            "Aktif kuvvet düşük"
-          ],
-          [
-            "Başlangıç uzunluğu",
-            "Orta",
-            "Protokol koşulu",
-            "Aktif kuvvet en yüksek"
-          ],
-          [
-            "Başlangıç uzunluğu",
-            "Uzun",
-            "Protokol koşulu",
-            "Aktif kuvvet azalmış"
-          ],
-          [
-            "Uyarı frekansı",
-            "Sabit",
-            "Protokol koşulu",
-            "Değişmedi"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Başlangıç uzunluğu",
-          "Kısa",
-          "Protokol koşulu",
-          "Aktif kuvvet düşük"
-        ],
-        [
-          "Başlangıç uzunluğu",
-          "Orta",
-          "Protokol koşulu",
-          "Aktif kuvvet en yüksek"
-        ],
-        [
-          "Başlangıç uzunluğu",
-          "Uzun",
-          "Protokol koşulu",
-          "Aktif kuvvet azalmış"
-        ],
-        [
-          "Uyarı frekansı",
-          "Sabit",
-          "Protokol koşulu",
-          "Değişmedi"
-        ]
-      ],
-      "postAnswerExplanation": "Aynı uyarı altında aktif kuvvet orta uzunlukta en yüksek, aşırı kısa ve uzun ayarlarda daha düşük ölçülmüştür.",
-      "interpretation": "Aynı uyarı altında aktif kuvvet orta uzunlukta en yüksek, aşırı kısa ve uzun ayarlarda daha düşük ölçülmüştür.",
-      "inlineFeedback": "Aynı uyarı altında aktif kuvvet orta uzunlukta en yüksek, aşırı kısa ve uzun ayarlarda daha düşük ölçülmüştür.",
-      "explanationAfterAnswer": "Aynı uyarı altında aktif kuvvet orta uzunlukta en yüksek, aşırı kısa ve uzun ayarlarda daha düşük ölçülmüştür."
-    },
-    {
-      "id": "v217-new-005-kas-uzunlugu-ve-kuvvet-kaydi-pasif-gerim-ve-zaman-kaydi",
-      "label": "Pasif gerim ve kasılma zamanı kaydı",
-      "title": "Pasif gerim ve kasılma zamanı kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Kas gerim analizi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Uzun başlangıç ayarında pasif gerim artmış, kasılma başlangıç zamanı belirgin değişmemiştir.",
-      "clinicalMeaning": "Uzun başlangıç ayarında pasif gerim artmış, kasılma başlangıç zamanı belirgin değişmemiştir.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 4,
-      "scoreValue": 4,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "Pasif gerim ve kasılma zamanı kaydı",
-        "summary": "Uzun başlangıç ayarında pasif gerim artmış, kasılma başlangıç zamanı belirgin değişmemiştir.",
-        "interpretation": "Uzun başlangıç ayarında pasif gerim artmış, kasılma başlangıç zamanı belirgin değişmemiştir.",
-        "values": [
-          [
-            "Pasif gerim - kısa uzunluk",
-            "Düşük",
-            "Uzunluğa göre değişir",
-            "Düşük"
-          ],
-          [
-            "Pasif gerim - uzun ayar",
-            "Artmış",
-            "Uzunluğa göre değişir",
-            "Yüksek"
-          ],
-          [
-            "Kasılma başlangıç gecikmesi",
-            "Benzer",
-            "Uyarı iletimine bağlı",
-            "Değişmedi"
-          ],
-          [
-            "Uyarı şiddeti",
-            "Sabit eşik üstü",
-            "Protokol koşulu",
-            "Değişmedi"
-          ]
-        ],
-        "rows": [
-          [
-            "Pasif gerim - kısa uzunluk",
-            "Düşük",
-            "Uzunluğa göre değişir",
-            "Düşük"
-          ],
-          [
-            "Pasif gerim - uzun ayar",
-            "Artmış",
-            "Uzunluğa göre değişir",
-            "Yüksek"
-          ],
-          [
-            "Kasılma başlangıç gecikmesi",
-            "Benzer",
-            "Uyarı iletimine bağlı",
-            "Değişmedi"
-          ],
-          [
-            "Uyarı şiddeti",
-            "Sabit eşik üstü",
-            "Protokol koşulu",
-            "Değişmedi"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Pasif gerim - kısa uzunluk",
-          "Düşük",
-          "Uzunluğa göre değişir",
-          "Düşük"
-        ],
-        [
-          "Pasif gerim - uzun ayar",
-          "Artmış",
-          "Uzunluğa göre değişir",
-          "Yüksek"
-        ],
-        [
-          "Kasılma başlangıç gecikmesi",
-          "Benzer",
-          "Uyarı iletimine bağlı",
-          "Değişmedi"
-        ],
-        [
-          "Uyarı şiddeti",
-          "Sabit eşik üstü",
-          "Protokol koşulu",
-          "Değişmedi"
-        ]
-      ],
-      "postAnswerExplanation": "Uzun başlangıç ayarında pasif gerim artmış, kasılma başlangıç zamanı belirgin değişmemiştir.",
-      "interpretation": "Uzun başlangıç ayarında pasif gerim artmış, kasılma başlangıç zamanı belirgin değişmemiştir.",
-      "inlineFeedback": "Uzun başlangıç ayarında pasif gerim artmış, kasılma başlangıç zamanı belirgin değişmemiştir.",
-      "explanationAfterAnswer": "Uzun başlangıç ayarında pasif gerim artmış, kasılma başlangıç zamanı belirgin değişmemiştir."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu kuvvet paternini en iyi açıklayan iskelet kası fizyolojisi mekanizması hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "skeletal_muscle_length_tension_crossbridge_overlap",
-  "diagnosis": {
-    "correct": "Sarkomer uzunluğunun uygun aralıkta olmasıyla çapraz köprü kurulumunun en yüksek düzeye ulaşması",
-    "options": [
-      "Sarkomer uzunluğunun uygun aralıkta olmasıyla çapraz köprü kurulumunun en yüksek düzeye ulaşması",
-      "Motor ünite sayısının artmasıyla aynı lifte aksiyon potansiyeli genliğinin sürekli büyümesi",
-      "Asetilkolin salınımının azalmasıyla son plak potansiyelinin kasılmayı güçlendirmesi",
-      "SERCA aktivitesinin baskılanmasıyla gevşemenin hızlanıp aktif kuvvetin artması",
-      "Miyozin başlarının aktinden tamamen ayrılmasıyla pasif gerilimin ortadan kalkması"
-    ],
-    "question": "Bu kuvvet paternini en iyi açıklayan iskelet kası fizyolojisi mekanizması hangisidir?",
-    "explanation": "Deneyde uyarı şiddeti ve frekansı sabitken değiştirilen ana değişken başlangıç kas uzunluğudur. Aktif kuvvetin orta uzunlukta en yüksek, aşırı kısa ve uzun ayarlarda daha düşük olması, aktin-miyozin örtüşmesinin kuvvet üretimini belirlediğini gösterir. Uzun ayarda pasif gerimin artması ise aktif çapraz köprü kuvvetinden ayrı elastik bileşen katkısını gösterir.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "İskelet kasında aktif gerim en uygun filament örtüşmesinde maksimumdur; çok kısa veya çok uzun sarkomerlerde çapraz köprü kuvveti azalır."
-      }
-    ],
-    "optionComparison": {
-      "Sarkomer uzunluğunun uygun aralıkta olmasıyla çapraz köprü kurulumunun en yüksek düzeye ulaşması": "Doğru seçenek budur. İskelet kasında aktif gerim, aktin ve miyozin filamentlerinin uygun örtüşme aralığında en yüksektir; çok kısa uzunlukta filament sıkışması, çok uzun uzunlukta ise köprü kurabilecek temas azalması kuvveti düşürür. Aynı uyarı frekansında orta uzunlukta en yüksek aktif kuvvetin ölçülmesi bu uzunluk-gerim ilişkisini gösterir.",
-      "Motor ünite sayısının artmasıyla aynı lifte aksiyon potansiyeli genliğinin sürekli büyümesi": "Motor ünite katılımı tüm kas kuvvetini artırabilir, ancak bu deneyde aynı kas şeridine sabit uyarı verilirken uzunluk değiştirilmiştir. Tek lif veya sabit preparatta aksiyon potansiyeli genliği her uzunlukta sürekli büyümez. Verideki fark, sinirsel rekruitmandan çok sarkomer geometrisine bağlı aktif gerim değişimidir.",
-      "Asetilkolin salınımının azalmasıyla son plak potansiyelinin kasılmayı güçlendirmesi": "Asetilkolin salınımının azalması son plak potansiyelini küçültür ve kasılmayı güçlendirmez; nöromüsküler iletim yetmezliğinde kuvvet azalır. Bu deneyde uyarı eşiği aşılmış ve aynı elektriksel protokol uygulanmıştır. Uzunluğa bağlı kuvvet paternini presinaptik asetilkolin azalması açıklamaz.",
-      "SERCA aktivitesinin baskılanmasıyla gevşemenin hızlanıp aktif kuvvetin artması": "SERCA kalsiyumu sarkoplazmik retikuluma geri alarak gevşemeyi sağlar; baskılanması gevşemeyi hızlandırmaz. Kalsiyum uzaklaştırmanın bozulması kasılma-gevşeme zamanlamasını etkileyebilir, ancak burada temel değişken kas uzunluğudur. Orta uzunlukta aktif gerimin maksimum olması SERCA baskılanmasıyla açıklanmaz.",
-      "Miyozin başlarının aktinden tamamen ayrılmasıyla pasif gerilimin ortadan kalkması": "Miyozin başlarının aktinden tamamen ayrılması çapraz köprü kuvvetini ortadan kaldırır; aktif gerimi artırmaz. Pasif gerim ise titin ve bağ dokusu gibi elastik bileşenlerle yüksek uzunluklarda artabilir. Veride orta uzunlukta aktif kuvvetin yüksek, aşırı uzunlukta pasif gerimin artması uzunluk-gerim ayrımını gösterir."
-    },
-    "answerFeedback": {
-      "Sarkomer uzunluğunun uygun aralıkta olmasıyla çapraz köprü kurulumunun en yüksek düzeye ulaşması": "Doğru seçenek budur. İskelet kasında aktif gerim, aktin ve miyozin filamentlerinin uygun örtüşme aralığında en yüksektir; çok kısa uzunlukta filament sıkışması, çok uzun uzunlukta ise köprü kurabilecek temas azalması kuvveti düşürür. Aynı uyarı frekansında orta uzunlukta en yüksek aktif kuvvetin ölçülmesi bu uzunluk-gerim ilişkisini gösterir.",
-      "Motor ünite sayısının artmasıyla aynı lifte aksiyon potansiyeli genliğinin sürekli büyümesi": "Motor ünite katılımı tüm kas kuvvetini artırabilir, ancak bu deneyde aynı kas şeridine sabit uyarı verilirken uzunluk değiştirilmiştir. Tek lif veya sabit preparatta aksiyon potansiyeli genliği her uzunlukta sürekli büyümez. Verideki fark, sinirsel rekruitmandan çok sarkomer geometrisine bağlı aktif gerim değişimidir.",
-      "Asetilkolin salınımının azalmasıyla son plak potansiyelinin kasılmayı güçlendirmesi": "Asetilkolin salınımının azalması son plak potansiyelini küçültür ve kasılmayı güçlendirmez; nöromüsküler iletim yetmezliğinde kuvvet azalır. Bu deneyde uyarı eşiği aşılmış ve aynı elektriksel protokol uygulanmıştır. Uzunluğa bağlı kuvvet paternini presinaptik asetilkolin azalması açıklamaz.",
-      "SERCA aktivitesinin baskılanmasıyla gevşemenin hızlanıp aktif kuvvetin artması": "SERCA kalsiyumu sarkoplazmik retikuluma geri alarak gevşemeyi sağlar; baskılanması gevşemeyi hızlandırmaz. Kalsiyum uzaklaştırmanın bozulması kasılma-gevşeme zamanlamasını etkileyebilir, ancak burada temel değişken kas uzunluğudur. Orta uzunlukta aktif gerimin maksimum olması SERCA baskılanmasıyla açıklanmaz.",
-      "Miyozin başlarının aktinden tamamen ayrılmasıyla pasif gerilimin ortadan kalkması": "Miyozin başlarının aktinden tamamen ayrılması çapraz köprü kuvvetini ortadan kaldırır; aktif gerimi artırmaz. Pasif gerim ise titin ve bağ dokusu gibi elastik bileşenlerle yüksek uzunluklarda artabilir. Veride orta uzunlukta aktif kuvvetin yüksek, aşırı uzunlukta pasif gerimin artması uzunluk-gerim ayrımını gösterir."
-    }
-  },
-  "coreKnowledge": "İskelet kasında aktif kuvvet, sarkomer içindeki aktin ve miyozin filamentlerinin örtüşme derecesine bağlıdır. Orta uzunlukta çapraz köprü kurulumu maksimuma yaklaşır; aşırı kısalıkta filament sıkışması, aşırı uzunlukta ise temas azalması kuvveti düşürür. Pasif gerim ise uzunluk arttıkça elastik yapılardan kaynaklanabilir.",
-  "examPearl": "İskelet kasında aktif gerim en uygun filament örtüşmesinde maksimumdur; çok kısa veya çok uzun sarkomerlerde çapraz köprü kuvveti azalır.",
-  "whyCorrect": "Doğru seçenek budur. İskelet kasında aktif gerim, aktin ve miyozin filamentlerinin uygun örtüşme aralığında en yüksektir; çok kısa uzunlukta filament sıkışması, çok uzun uzunlukta ise köprü kurabilecek temas azalması kuvveti düşürür. Aynı uyarı frekansında orta uzunlukta en yüksek aktif kuvvetin ölçülmesi bu uzunluk-gerim ilişkisini gösterir.",
-  "optionComparison": {
-    "Sarkomer uzunluğunun uygun aralıkta olmasıyla çapraz köprü kurulumunun en yüksek düzeye ulaşması": "Doğru seçenek budur. İskelet kasında aktif gerim, aktin ve miyozin filamentlerinin uygun örtüşme aralığında en yüksektir; çok kısa uzunlukta filament sıkışması, çok uzun uzunlukta ise köprü kurabilecek temas azalması kuvveti düşürür. Aynı uyarı frekansında orta uzunlukta en yüksek aktif kuvvetin ölçülmesi bu uzunluk-gerim ilişkisini gösterir.",
-    "Motor ünite sayısının artmasıyla aynı lifte aksiyon potansiyeli genliğinin sürekli büyümesi": "Motor ünite katılımı tüm kas kuvvetini artırabilir, ancak bu deneyde aynı kas şeridine sabit uyarı verilirken uzunluk değiştirilmiştir. Tek lif veya sabit preparatta aksiyon potansiyeli genliği her uzunlukta sürekli büyümez. Verideki fark, sinirsel rekruitmandan çok sarkomer geometrisine bağlı aktif gerim değişimidir.",
-    "Asetilkolin salınımının azalmasıyla son plak potansiyelinin kasılmayı güçlendirmesi": "Asetilkolin salınımının azalması son plak potansiyelini küçültür ve kasılmayı güçlendirmez; nöromüsküler iletim yetmezliğinde kuvvet azalır. Bu deneyde uyarı eşiği aşılmış ve aynı elektriksel protokol uygulanmıştır. Uzunluğa bağlı kuvvet paternini presinaptik asetilkolin azalması açıklamaz.",
-    "SERCA aktivitesinin baskılanmasıyla gevşemenin hızlanıp aktif kuvvetin artması": "SERCA kalsiyumu sarkoplazmik retikuluma geri alarak gevşemeyi sağlar; baskılanması gevşemeyi hızlandırmaz. Kalsiyum uzaklaştırmanın bozulması kasılma-gevşeme zamanlamasını etkileyebilir, ancak burada temel değişken kas uzunluğudur. Orta uzunlukta aktif gerimin maksimum olması SERCA baskılanmasıyla açıklanmaz.",
-    "Miyozin başlarının aktinden tamamen ayrılmasıyla pasif gerilimin ortadan kalkması": "Miyozin başlarının aktinden tamamen ayrılması çapraz köprü kuvvetini ortadan kaldırır; aktif gerimi artırmaz. Pasif gerim ise titin ve bağ dokusu gibi elastik bileşenlerle yüksek uzunluklarda artabilir. Veride orta uzunlukta aktif kuvvetin yüksek, aşırı uzunlukta pasif gerimin artması uzunluk-gerim ayrımını gösterir."
-  },
-  "evidenceChain": [
-    {
-      "title": "Sabit uyarı",
-      "text": "Uyarı frekansı ve şiddeti sabit → kuvvet farkı uyarı protokolünden kaynaklanmaz",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Aktif kuvvet",
-      "text": "Orta uzunlukta aktif kuvvet en yüksek → çapraz köprü kurulumu için uygun geometri vardır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Aşırı uzunluk",
-      "text": "Uzun ayarda aktif kuvvet azalırken pasif gerim artmıştır → aktif ve pasif gerim bileşenleri ayrılmalıdır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "İletim verisi",
-      "text": "Kasılma başlangıç gecikmesi benzer → temel sorun nöromüsküler iletim süresi değildir",
-      "weight": "medium",
-      "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "Motor ünite sayısının artmasıyla aynı lifte aksiyon potansiyeli genliğinin sürekli büyümesi": "Motor ünite katılımı tüm kas kuvvetini artırabilir, ancak bu deneyde aynı kas şeridine sabit uyarı verilirken uzunluk değiştirilmiştir. Tek lif veya sabit preparatta aksiyon potansiyeli genliği her uzunlukta sürekli büyümez. Verideki fark, sinirsel rekruitmandan çok sarkomer geometrisine bağlı aktif gerim değişimidir.",
-    "Asetilkolin salınımının azalmasıyla son plak potansiyelinin kasılmayı güçlendirmesi": "Asetilkolin salınımının azalması son plak potansiyelini küçültür ve kasılmayı güçlendirmez; nöromüsküler iletim yetmezliğinde kuvvet azalır. Bu deneyde uyarı eşiği aşılmış ve aynı elektriksel protokol uygulanmıştır. Uzunluğa bağlı kuvvet paternini presinaptik asetilkolin azalması açıklamaz.",
-    "SERCA aktivitesinin baskılanmasıyla gevşemenin hızlanıp aktif kuvvetin artması": "SERCA kalsiyumu sarkoplazmik retikuluma geri alarak gevşemeyi sağlar; baskılanması gevşemeyi hızlandırmaz. Kalsiyum uzaklaştırmanın bozulması kasılma-gevşeme zamanlamasını etkileyebilir, ancak burada temel değişken kas uzunluğudur. Orta uzunlukta aktif gerimin maksimum olması SERCA baskılanmasıyla açıklanmaz.",
-    "Miyozin başlarının aktinden tamamen ayrılmasıyla pasif gerilimin ortadan kalkması": "Miyozin başlarının aktinden tamamen ayrılması çapraz köprü kuvvetini ortadan kaldırır; aktif gerimi artırmaz. Pasif gerim ise titin ve bağ dokusu gibi elastik bileşenlerle yüksek uzunluklarda artabilir. Veride orta uzunlukta aktif kuvvetin yüksek, aşırı uzunlukta pasif gerimin artması uzunluk-gerim ayrımını gösterir."
-  },
-  "mechanismExplanation": "Başlangıç uzunluğu sarkomer filament örtüşmesini değiştirir; uygun uzunlukta çapraz köprü sayısı artar, aşırı kısa/uzun durumda aktif kuvvet azalır.",
-  "scientificComment": "Soru, kas kuvvetini yalnız uyarı veya motor ünite sayısıyla değil, sarkomer geometrisi ve aktif-pasif gerim ayrımıyla düşündürür.",
-  "helpText": "Uzunluk-gerim grafiğinde aktif gerim orta uzunlukta maksimum, pasif gerim yüksek uzunluklarda artar.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v218-new-001-boyun-basisi-sirasinda-ritim-kaydi",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Boyun basısı sırasında ritim kaydı",
-  "difficulty": "Orta",
-  "difficultyTag": "Orta",
-  "clinicalFocus": "Kısa süreli otonom uyarı sırasında SA ve AV nodda kalp hızı ile iletim değişikliğini hücresel iyon akımları düzeyinde yorumlama.",
-  "learningTarget": "Nodal dokuda parasempatik etkinin faz 4 depolarizasyon eğimi, K+ iletkenliği, cAMP-bağımlı içe akımlar ve AV iletim süresi üzerindeki yönünü ayırt edebilme.",
-  "demographics": "28 yaşında sağlıklı erkek gönüllüden alınan eğitim verisi",
-  "setting": "Kardiyovasküler fizyoloji laboratuvarı",
-  "chiefComplaint": "Kısa süreli boyun basısı protokolü sırasında kalp hızı ve PR aralığı birlikte kaydediliyor.",
-  "stem": "Fizyoloji laboratuvarında sağlıklı gönüllüye kısa süreli ve kontrollü bir boyun basısı manevrası uygulanır. Gönüllü işlem öncesinde kafein almadığını, çarpıntı veya bayılma öyküsü olmadığını söyler. Manevra başlatıldığında birkaç saniye içinde nabzın yavaşladığı fark edilir ve kayıt boyunca ritim düzenli kalır. Uygulama sonlandırıldıktan kısa süre sonra kalp hızı başlangıç değerine yaklaşır.",
-  "patientIntro": {
-    "profile": "28 yaşında sağlıklı erkek gönüllü, kardiyovasküler fizyoloji laboratuvarında kısa süreli ritim yanıtı açısından izleniyor.",
-    "presentation": "Boyun basısı protokolünde kalp hızı azalıyor, ritim düzenli kalıyor ve yanıt uygulama bitince geri dönüyor.",
-    "historySummary": "Fizyoloji laboratuvarında sağlıklı gönüllüye kısa süreli ve kontrollü bir boyun basısı manevrası uygulanır. Gönüllü işlem öncesinde kafein almadığını, çarpıntı veya bayılma öyküsü olmadığını söyler. Manevra başlatıldığında birkaç saniye içinde nabzın yavaşladığı fark edilir ve kayıt boyunca ritim düzenli kalır. Uygulama sonlandırıldıktan kısa süre sonra kalp hızı başlangıç değerine yaklaşır."
-  },
-  "vitals": {
-    "TA": "118/74 mmHg",
-    "Nabız": "72/dk",
-    "Solunum": "14/dk",
-    "SpO2": "%99, oda havasında",
-    "Ateş": "36.5 °C",
-    "Şok indeksi": "0.61"
-  },
-  "exam": [
-    "Gönüllü uyanık, koopere ve işlem boyunca semptomsuzdur.",
-    "Kalp sesleri ritmik, ek ses veya üfürüm duyulmaz.",
-    "Periferik nabızlar simetrik ve dolgun alınır.",
-    "Manevra sırasında belirgin hipotansiyon veya oksijen satürasyonu düşüşü izlenmez."
-  ],
-  "investigations": [
-    {
-      "id": "v218-new-001-boyun-basisi-sirasinda-ritim-kaydi-ekg-ritim-kaydi",
-      "label": "EKG ritim kaydı",
-      "title": "EKG ritim kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Nodal ritim analizi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Manevra sırasında sinüs hızı belirgin azalırken QRS morfolojisi değişmemiştir.",
-      "clinicalMeaning": "Manevra sırasında sinüs hızı belirgin azalırken QRS morfolojisi değişmemiştir.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "EKG ritim kaydı",
-        "summary": "Manevra sırasında sinüs hızı belirgin azalırken QRS morfolojisi değişmemiştir.",
-        "interpretation": "Manevra sırasında sinüs hızı belirgin azalırken QRS morfolojisi değişmemiştir.",
-        "values": [
-          [
-            "Başlangıç kalp hızı",
-            "72/dk",
-            "60-100/dk",
-            "Düzenli sinüs ritmi"
-          ],
-          [
-            "Manevra sırası kalp hızı",
-            "48/dk",
-            "Protokol yanıtı",
-            "Düzenli yavaşlama"
-          ],
-          [
-            "QRS süresi",
-            "90 ms",
-            "<120 ms",
-            "Belirgin değişiklik yok"
-          ],
-          [
-            "Ritim düzeni",
-            "Düzenli",
-            "Düzenli",
-            "Ektopik atım izlenmedi"
-          ]
-        ],
-        "rows": [
-          [
-            "Başlangıç kalp hızı",
-            "72/dk",
-            "60-100/dk",
-            "Düzenli sinüs ritmi"
-          ],
-          [
-            "Manevra sırası kalp hızı",
-            "48/dk",
-            "Protokol yanıtı",
-            "Düzenli yavaşlama"
-          ],
-          [
-            "QRS süresi",
-            "90 ms",
-            "<120 ms",
-            "Belirgin değişiklik yok"
-          ],
-          [
-            "Ritim düzeni",
-            "Düzenli",
-            "Düzenli",
-            "Ektopik atım izlenmedi"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Başlangıç kalp hızı",
-          "72/dk",
-          "60-100/dk",
-          "Düzenli sinüs ritmi"
-        ],
-        [
-          "Manevra sırası kalp hızı",
-          "48/dk",
-          "Protokol yanıtı",
-          "Düzenli yavaşlama"
-        ],
-        [
-          "QRS süresi",
-          "90 ms",
-          "<120 ms",
-          "Belirgin değişiklik yok"
-        ],
-        [
-          "Ritim düzeni",
-          "Düzenli",
-          "Düzenli",
-          "Ektopik atım izlenmedi"
-        ]
-      ],
-      "postAnswerExplanation": "Manevra sırasında sinüs hızı belirgin azalırken QRS morfolojisi değişmemiştir.",
-      "interpretation": "Manevra sırasında sinüs hızı belirgin azalırken QRS morfolojisi değişmemiştir.",
-      "inlineFeedback": "Manevra sırasında sinüs hızı belirgin azalırken QRS morfolojisi değişmemiştir.",
-      "explanationAfterAnswer": "Manevra sırasında sinüs hızı belirgin azalırken QRS morfolojisi değişmemiştir."
-    },
-    {
-      "id": "v218-new-001-boyun-basisi-sirasinda-ritim-kaydi-iletim-suresi-kaydi",
-      "label": "AV iletim süresi kaydı",
-      "title": "AV iletim süresi kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "PR aralığı analizi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Manevra sırasında PR aralığı hafif uzamış, uygulama bitince başlangıca yaklaşmıştır.",
-      "clinicalMeaning": "Manevra sırasında PR aralığı hafif uzamış, uygulama bitince başlangıca yaklaşmıştır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 4,
-      "scoreValue": 4,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "AV iletim süresi kaydı",
-        "summary": "Manevra sırasında PR aralığı hafif uzamış, uygulama bitince başlangıca yaklaşmıştır.",
-        "interpretation": "Manevra sırasında PR aralığı hafif uzamış, uygulama bitince başlangıca yaklaşmıştır.",
-        "values": [
-          [
-            "Başlangıç PR aralığı",
-            "160 ms",
-            "120-200 ms",
-            "Normal aralıkta"
-          ],
-          [
-            "Manevra sırası PR aralığı",
-            "210 ms",
-            "Protokol yanıtı",
-            "Hafif uzama"
-          ],
-          [
-            "Kan basıncı",
-            "116/72 mmHg",
-            "Protokol koşulu",
-            "Belirgin düşüş yok"
-          ],
-          [
-            "Yanıt süresi",
-            "Saniyeler içinde",
-            "Protokol yanıtı",
-            "Kısa süreli ve geri dönüşlü"
-          ]
-        ],
-        "rows": [
-          [
-            "Başlangıç PR aralığı",
-            "160 ms",
-            "120-200 ms",
-            "Normal aralıkta"
-          ],
-          [
-            "Manevra sırası PR aralığı",
-            "210 ms",
-            "Protokol yanıtı",
-            "Hafif uzama"
-          ],
-          [
-            "Kan basıncı",
-            "116/72 mmHg",
-            "Protokol koşulu",
-            "Belirgin düşüş yok"
-          ],
-          [
-            "Yanıt süresi",
-            "Saniyeler içinde",
-            "Protokol yanıtı",
-            "Kısa süreli ve geri dönüşlü"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Başlangıç PR aralığı",
-          "160 ms",
-          "120-200 ms",
-          "Normal aralıkta"
-        ],
-        [
-          "Manevra sırası PR aralığı",
-          "210 ms",
-          "Protokol yanıtı",
-          "Hafif uzama"
-        ],
-        [
-          "Kan basıncı",
-          "116/72 mmHg",
-          "Protokol koşulu",
-          "Belirgin düşüş yok"
-        ],
-        [
-          "Yanıt süresi",
-          "Saniyeler içinde",
-          "Protokol yanıtı",
-          "Kısa süreli ve geri dönüşlü"
-        ]
-      ],
-      "postAnswerExplanation": "Manevra sırasında PR aralığı hafif uzamış, uygulama bitince başlangıca yaklaşmıştır.",
-      "interpretation": "Manevra sırasında PR aralığı hafif uzamış, uygulama bitince başlangıca yaklaşmıştır.",
-      "inlineFeedback": "Manevra sırasında PR aralığı hafif uzamış, uygulama bitince başlangıca yaklaşmıştır.",
-      "explanationAfterAnswer": "Manevra sırasında PR aralığı hafif uzamış, uygulama bitince başlangıca yaklaşmıştır."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu kayıtta kalp hızındaki değişimi en iyi açıklayan nodal hücre olayı hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "parasympathetic_nodal_m2_ion_current_response",
-  "diagnosis": {
-    "correct": "Asetilkolin etkisiyle K+ iletkenliğinin artması ve cAMP-bağımlı içe akımların azalması",
-    "options": [
-      "HCN kanallarının cAMP etkisiyle daha fazla açılması ve faz 4 eğiminin artması",
-      "L tipi kalsiyum akımının artmasıyla AV nodal iletimin belirgin hızlanması",
-      "Na+/K+ ATPaz baskılanmasıyla nodal hücrenin eşik değere daha erken ulaşması",
-      "Asetilkolin etkisiyle K+ iletkenliğinin artması ve cAMP-bağımlı içe akımların azalması",
-      "Purkinje liflerinde hızlı sodyum kanallarının kalıcı aktivasyon göstermesi"
-    ],
-    "question": "Bu kayıtta kalp hızındaki değişimi en iyi açıklayan nodal hücre olayı hangisidir?",
-    "explanation": "Kısa süreli boyun basısı sırasında düzenli sinüs yavaşlaması ve PR aralığında hafif uzama, nodal dokunun parasempatik modülasyonunu düşündürür. Asetilkolin M2 reseptörleri üzerinden adenilat siklazı baskılar, cAMP-bağımlı HCN ve kalsiyum akımlarını azaltır ve K+ iletkenliğini artırır. Bu kombinasyon SA nodda faz 4 depolarizasyonunu yavaşlatır ve AV nodda iletimi geciktirerek kayıttaki paternle uyumlu sonuç oluşturur.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "Nodal dokuda parasempatik etki; kalp hızını azaltır, AV iletimi yavaşlatır ve bunu K+ iletkenliği artışı ile cAMP-bağımlı içe akımların azalması üzerinden yapar."
-      }
-    ],
-    "optionComparison": {
-      "HCN kanallarının cAMP etkisiyle daha fazla açılması ve faz 4 eğiminin artması": "Bu seçenek sempatik beta-adrenerjik uyarıda beklenebilecek bir nodal yanıttır; cAMP artışı HCN aracılı içe akımı güçlendirir ve faz 4 depolarizasyonunu hızlandırır. Olguda ise uygulama sırasında kalp hızı azalmakta ve PR aralığı uzamaktadır. Bu nedenle hızlandırıcı sempatik patern, ölçülen ritim değişikliğini açıklamaz.",
-      "L tipi kalsiyum akımının artmasıyla AV nodal iletimin belirgin hızlanması": "L tipi kalsiyum akımının artması SA ve AV nodda depolarizasyonu ve iletimi hızlandırabilir; bu durum genellikle sempatik uyarıyla ilişkilidir. Kayıtta AV nodal iletim hızlanmamış, PR aralığı hafif uzamıştır. Bu nedenle gözlenen yavaşlama kalsiyum akımının artışıyla değil, nodal hücrelerin daha geç eşik değere ulaşmasıyla uyumludur.",
-      "Na+/K+ ATPaz baskılanmasıyla nodal hücrenin eşik değere daha erken ulaşması": "Na+/K+ ATPazın baskılanması membran iyon gradyanlarını bozabilir, ancak kısa süreli boyun basısı sırasında düzenli ve geri dönüşlü kalp hızı azalmasını açıklayan temel olay değildir. Ayrıca bu mekanizma fizyolojik bir refleks yanıtı gibi hızlı başlayıp hızla normale dönmez. Verideki düzenli sinüs yavaşlaması, iyon gradyan pompası yetmezliğinden çok otonom nodal modülasyonla uyumludur.",
-      "Asetilkolin etkisiyle K+ iletkenliğinin artması ve cAMP-bağımlı içe akımların azalması": "Doğru seçenek budur. Boyun basısı sırasında oluşan kısa süreli ritim değişikliğinde parasempatik çıkış artar; asetilkolin M2 reseptörleri üzerinden nodal hücrelerde K+ iletkenliğini artırır, cAMP düzeyini düşürür ve HCN/kalsiyum akımlarını azaltır. Böylece faz 4 depolarizasyon eğimi azalır, SA nod daha geç eşik değere ulaşır ve AV nodal iletim yavaşlayabilir.",
-      "Purkinje liflerinde hızlı sodyum kanallarının kalıcı aktivasyon göstermesi": "Purkinje liflerindeki hızlı sodyum kanalları ventrikül iletiminde önemlidir, ancak bu olguda temel değişiklik düzenli sinüs hızı ve AV nodal iletim süresindedir. Kalıcı sodyum kanal aktivasyonu fizyolojik kısa süreli yavaşlama paternini açıklamaz; iletim bozukluğu veya aritmi beklenebilirdi. Kayıttaki geri dönüşlü yanıt nodal otonom kontrol düzeyindedir."
-    },
-    "answerFeedback": {
-      "HCN kanallarının cAMP etkisiyle daha fazla açılması ve faz 4 eğiminin artması": "Bu seçenek sempatik beta-adrenerjik uyarıda beklenebilecek bir nodal yanıttır; cAMP artışı HCN aracılı içe akımı güçlendirir ve faz 4 depolarizasyonunu hızlandırır. Olguda ise uygulama sırasında kalp hızı azalmakta ve PR aralığı uzamaktadır. Bu nedenle hızlandırıcı sempatik patern, ölçülen ritim değişikliğini açıklamaz.",
-      "L tipi kalsiyum akımının artmasıyla AV nodal iletimin belirgin hızlanması": "L tipi kalsiyum akımının artması SA ve AV nodda depolarizasyonu ve iletimi hızlandırabilir; bu durum genellikle sempatik uyarıyla ilişkilidir. Kayıtta AV nodal iletim hızlanmamış, PR aralığı hafif uzamıştır. Bu nedenle gözlenen yavaşlama kalsiyum akımının artışıyla değil, nodal hücrelerin daha geç eşik değere ulaşmasıyla uyumludur.",
-      "Na+/K+ ATPaz baskılanmasıyla nodal hücrenin eşik değere daha erken ulaşması": "Na+/K+ ATPazın baskılanması membran iyon gradyanlarını bozabilir, ancak kısa süreli boyun basısı sırasında düzenli ve geri dönüşlü kalp hızı azalmasını açıklayan temel olay değildir. Ayrıca bu mekanizma fizyolojik bir refleks yanıtı gibi hızlı başlayıp hızla normale dönmez. Verideki düzenli sinüs yavaşlaması, iyon gradyan pompası yetmezliğinden çok otonom nodal modülasyonla uyumludur.",
-      "Asetilkolin etkisiyle K+ iletkenliğinin artması ve cAMP-bağımlı içe akımların azalması": "Doğru seçenek budur. Boyun basısı sırasında oluşan kısa süreli ritim değişikliğinde parasempatik çıkış artar; asetilkolin M2 reseptörleri üzerinden nodal hücrelerde K+ iletkenliğini artırır, cAMP düzeyini düşürür ve HCN/kalsiyum akımlarını azaltır. Böylece faz 4 depolarizasyon eğimi azalır, SA nod daha geç eşik değere ulaşır ve AV nodal iletim yavaşlayabilir.",
-      "Purkinje liflerinde hızlı sodyum kanallarının kalıcı aktivasyon göstermesi": "Purkinje liflerindeki hızlı sodyum kanalları ventrikül iletiminde önemlidir, ancak bu olguda temel değişiklik düzenli sinüs hızı ve AV nodal iletim süresindedir. Kalıcı sodyum kanal aktivasyonu fizyolojik kısa süreli yavaşlama paternini açıklamaz; iletim bozukluğu veya aritmi beklenebilirdi. Kayıttaki geri dönüşlü yanıt nodal otonom kontrol düzeyindedir."
-    }
-  },
-  "coreKnowledge": "SA ve AV nod hücrelerinde parasempatik uyarı M2 reseptörleri aracılığıyla cAMP’yi azaltır ve K+ iletkenliğini artırır. Bu durum faz 4 depolarizasyon eğimini düşürür, SA nod hızını azaltır ve AV nodal iletimi yavaşlatabilir. Sempatik uyarı ise cAMP artışıyla bunun ters yönünde etki gösterir.",
-  "examPearl": "Nodal dokuda parasempatik etki; kalp hızını azaltır, AV iletimi yavaşlatır ve bunu K+ iletkenliği artışı ile cAMP-bağımlı içe akımların azalması üzerinden yapar.",
-  "whyCorrect": "Doğru seçenek budur. Boyun basısı sırasında oluşan kısa süreli ritim değişikliğinde parasempatik çıkış artar; asetilkolin M2 reseptörleri üzerinden nodal hücrelerde K+ iletkenliğini artırır, cAMP düzeyini düşürür ve HCN/kalsiyum akımlarını azaltır. Böylece faz 4 depolarizasyon eğimi azalır, SA nod daha geç eşik değere ulaşır ve AV nodal iletim yavaşlayabilir.",
-  "optionComparison": {
-    "HCN kanallarının cAMP etkisiyle daha fazla açılması ve faz 4 eğiminin artması": "Bu seçenek sempatik beta-adrenerjik uyarıda beklenebilecek bir nodal yanıttır; cAMP artışı HCN aracılı içe akımı güçlendirir ve faz 4 depolarizasyonunu hızlandırır. Olguda ise uygulama sırasında kalp hızı azalmakta ve PR aralığı uzamaktadır. Bu nedenle hızlandırıcı sempatik patern, ölçülen ritim değişikliğini açıklamaz.",
-    "L tipi kalsiyum akımının artmasıyla AV nodal iletimin belirgin hızlanması": "L tipi kalsiyum akımının artması SA ve AV nodda depolarizasyonu ve iletimi hızlandırabilir; bu durum genellikle sempatik uyarıyla ilişkilidir. Kayıtta AV nodal iletim hızlanmamış, PR aralığı hafif uzamıştır. Bu nedenle gözlenen yavaşlama kalsiyum akımının artışıyla değil, nodal hücrelerin daha geç eşik değere ulaşmasıyla uyumludur.",
-    "Na+/K+ ATPaz baskılanmasıyla nodal hücrenin eşik değere daha erken ulaşması": "Na+/K+ ATPazın baskılanması membran iyon gradyanlarını bozabilir, ancak kısa süreli boyun basısı sırasında düzenli ve geri dönüşlü kalp hızı azalmasını açıklayan temel olay değildir. Ayrıca bu mekanizma fizyolojik bir refleks yanıtı gibi hızlı başlayıp hızla normale dönmez. Verideki düzenli sinüs yavaşlaması, iyon gradyan pompası yetmezliğinden çok otonom nodal modülasyonla uyumludur.",
-    "Asetilkolin etkisiyle K+ iletkenliğinin artması ve cAMP-bağımlı içe akımların azalması": "Doğru seçenek budur. Boyun basısı sırasında oluşan kısa süreli ritim değişikliğinde parasempatik çıkış artar; asetilkolin M2 reseptörleri üzerinden nodal hücrelerde K+ iletkenliğini artırır, cAMP düzeyini düşürür ve HCN/kalsiyum akımlarını azaltır. Böylece faz 4 depolarizasyon eğimi azalır, SA nod daha geç eşik değere ulaşır ve AV nodal iletim yavaşlayabilir.",
-    "Purkinje liflerinde hızlı sodyum kanallarının kalıcı aktivasyon göstermesi": "Purkinje liflerindeki hızlı sodyum kanalları ventrikül iletiminde önemlidir, ancak bu olguda temel değişiklik düzenli sinüs hızı ve AV nodal iletim süresindedir. Kalıcı sodyum kanal aktivasyonu fizyolojik kısa süreli yavaşlama paternini açıklamaz; iletim bozukluğu veya aritmi beklenebilirdi. Kayıttaki geri dönüşlü yanıt nodal otonom kontrol düzeyindedir."
-  },
-  "evidenceChain": [
-    {
-      "title": "Ritim yanıtı",
-      "text": "Manevra sırasında düzenli sinüs hızının azalması → temel değişiklik nodal otomatisite düzeyindedir",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "İletim süresi",
-      "text": "PR aralığının hafif uzaması → AV nodal iletimin kısa süreli yavaşladığını gösterir",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "QRS kaydı",
-      "text": "QRS süresinin değişmemesi → ventrikül içi hızlı iletim sistemi temel hedef değildir",
-      "weight": "medium",
-      "source": "case"
-    },
-    {
-      "title": "Geri dönüşlülük",
-      "text": "Uygulama bitince hızın normale yaklaşması → iyon kanal ekspresyon kaybından çok akut otonom modülasyon vardır",
-      "weight": "medium",
-      "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "HCN kanallarının cAMP etkisiyle daha fazla açılması ve faz 4 eğiminin artması": "Bu seçenek sempatik beta-adrenerjik uyarıda beklenebilecek bir nodal yanıttır; cAMP artışı HCN aracılı içe akımı güçlendirir ve faz 4 depolarizasyonunu hızlandırır. Olguda ise uygulama sırasında kalp hızı azalmakta ve PR aralığı uzamaktadır. Bu nedenle hızlandırıcı sempatik patern, ölçülen ritim değişikliğini açıklamaz.",
-    "L tipi kalsiyum akımının artmasıyla AV nodal iletimin belirgin hızlanması": "L tipi kalsiyum akımının artması SA ve AV nodda depolarizasyonu ve iletimi hızlandırabilir; bu durum genellikle sempatik uyarıyla ilişkilidir. Kayıtta AV nodal iletim hızlanmamış, PR aralığı hafif uzamıştır. Bu nedenle gözlenen yavaşlama kalsiyum akımının artışıyla değil, nodal hücrelerin daha geç eşik değere ulaşmasıyla uyumludur.",
-    "Na+/K+ ATPaz baskılanmasıyla nodal hücrenin eşik değere daha erken ulaşması": "Na+/K+ ATPazın baskılanması membran iyon gradyanlarını bozabilir, ancak kısa süreli boyun basısı sırasında düzenli ve geri dönüşlü kalp hızı azalmasını açıklayan temel olay değildir. Ayrıca bu mekanizma fizyolojik bir refleks yanıtı gibi hızlı başlayıp hızla normale dönmez. Verideki düzenli sinüs yavaşlaması, iyon gradyan pompası yetmezliğinden çok otonom nodal modülasyonla uyumludur.",
-    "Purkinje liflerinde hızlı sodyum kanallarının kalıcı aktivasyon göstermesi": "Purkinje liflerindeki hızlı sodyum kanalları ventrikül iletiminde önemlidir, ancak bu olguda temel değişiklik düzenli sinüs hızı ve AV nodal iletim süresindedir. Kalıcı sodyum kanal aktivasyonu fizyolojik kısa süreli yavaşlama paternini açıklamaz; iletim bozukluğu veya aritmi beklenebilirdi. Kayıttaki geri dönüşlü yanıt nodal otonom kontrol düzeyindedir."
-  },
-  "mechanismExplanation": "Kısa süreli boyun basısı sırasında artan parasempatik çıkış nodal hücrelerin eşik değere ulaşmasını geciktirir; bu yüzden düzenli sinüs yavaşlaması ve PR uzaması oluşur.",
-  "scientificComment": "Soru, kalp hızı değişimini yalnız refleks etiketiyle değil, nodal hücre membran akımlarının yönüyle çözmeyi hedefler.",
-  "helpText": "Kalp hızındaki akut değişikliklerde SA nod faz 4 eğimi ve AV nodal iletim süresi birlikte düşünülmelidir.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v218-new-002-gogus-travmasi-sonrasi-solunum-kaydi",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Göğüs travması sonrası solunum kaydı",
-  "difficulty": "Orta-Zor",
-  "difficultyTag": "Orta-Zor",
-  "clinicalFocus": "Tek taraflı göğüs travması sonrası akciğer hacmi azalmasını plevral basınç ve transpulmoner basınç ilişkisiyle yorumlama.",
-  "learningTarget": "Negatif intraplevral basıncın akciğeri açık tutmadaki rolünü, yüzey gerilimi, hava yolu obstrüksiyonu ve difüzyon bozukluğundan ayırt edebilme.",
-  "demographics": "31 yaşında erkek hasta",
-  "setting": "Acil servis gözlem alanı",
-  "chiefComplaint": "Bisiklet kazasından sonra başlayan tek taraflı göğüs ağrısı ve nefes alamama hissi nedeniyle değerlendiriliyor.",
-  "stem": "Hasta bir bisiklet kazasında sağ yan göğsünü kaldırıma çarptıktan sonra ağrı hissettiğini anlatır. İlk dakikalarda yürüyebilmiş, ancak kısa süre sonra derin nefes almakta zorlandığını ve sağ tarafında batma olduğunu fark etmiştir. Öksürükle kan gelmediğini, daha önce astım atağı yaşamadığını ve olaydan önce solunum yakınması olmadığını söyler. Yakınları, konuşurken cümlelerini daha kısa tuttuğunu fark ederek onu acil servise getirmiştir.",
-  "patientIntro": {
-    "profile": "31 yaşında erkek hasta, tek taraflı göğüs travması sonrası solunum mekaniği açısından değerlendiriliyor.",
-    "presentation": "Travmadan sonra sağ hemitoraksta ağrı ve derin nefes alamama hissi gelişmiş, solunum ölçümleri tek taraflı hacim azalmasını göstermiştir.",
-    "historySummary": "Hasta bir bisiklet kazasında sağ yan göğsünü kaldırıma çarptıktan sonra ağrı hissettiğini anlatır. İlk dakikalarda yürüyebilmiş, ancak kısa süre sonra derin nefes almakta zorlandığını ve sağ tarafında batma olduğunu fark etmiştir. Öksürükle kan gelmediğini, daha önce astım atağı yaşamadığını ve olaydan önce solunum yakınması olmadığını söyler. Yakınları, konuşurken cümlelerini daha kısa tuttuğunu fark ederek onu acil servise getirmiştir."
-  },
-  "vitals": {
-    "TA": "124/78 mmHg",
-    "Nabız": "96/dk",
-    "Solunum": "24/dk",
-    "SpO2": "%93, oda havasında",
-    "Ateş": "36.7 °C",
-    "Şok indeksi": "0.77"
-  },
-  "exam": [
-    "Hasta uyanık ve koopere, konuşurken kısa cümlelerle yanıt verir.",
-    "Sağ hemitoraksta solunum sesleri belirgin azalmıştır.",
-    "Sol hemitoraksta wheezing veya yaygın ronküs duyulmaz.",
-    "Boyun ven dolgunluğu ve belirgin trakea deviasyonu izlenmez."
-  ],
-  "investigations": [
-    {
-      "id": "v218-new-002-gogus-travmasi-sonrasi-solunum-kaydi-basinc-hacim-kaydi",
-      "label": "Plevral basınç ve hacim kaydı",
-      "title": "Plevral basınç ve hacim kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Solunum mekaniği analizi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Etkilenen tarafta plevral basınç daha az negatif ölçülmüş ve akciğer hacmi azalmıştır.",
-      "clinicalMeaning": "Etkilenen tarafta plevral basınç daha az negatif ölçülmüş ve akciğer hacmi azalmıştır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "Plevral basınç ve hacim kaydı",
-        "summary": "Etkilenen tarafta plevral basınç daha az negatif ölçülmüş ve akciğer hacmi azalmıştır.",
-        "interpretation": "Etkilenen tarafta plevral basınç daha az negatif ölçülmüş ve akciğer hacmi azalmıştır.",
-        "values": [
-          [
-            "Sağ plevral basınç",
-            "-1 cmH2O",
-            "Yaklaşık -5 cmH2O",
-            "Daha az negatif"
-          ],
-          [
-            "Sol plevral basınç",
-            "-5 cmH2O",
-            "Yaklaşık -5 cmH2O",
-            "Beklenen aralıkta"
-          ],
-          [
-            "Sağ akciğer hacmi",
-            "Azalmış",
-            "Simetrik havalanma",
-            "Tek taraflı azalma"
-          ],
-          [
-            "İnspiratuvar efor",
-            "Artmış",
-            "Protokol dışı",
-            "Hasta daha sık soluyor"
-          ]
-        ],
-        "rows": [
-          [
-            "Sağ plevral basınç",
-            "-1 cmH2O",
-            "Yaklaşık -5 cmH2O",
-            "Daha az negatif"
-          ],
-          [
-            "Sol plevral basınç",
-            "-5 cmH2O",
-            "Yaklaşık -5 cmH2O",
-            "Beklenen aralıkta"
-          ],
-          [
-            "Sağ akciğer hacmi",
-            "Azalmış",
-            "Simetrik havalanma",
-            "Tek taraflı azalma"
-          ],
-          [
-            "İnspiratuvar efor",
-            "Artmış",
-            "Protokol dışı",
-            "Hasta daha sık soluyor"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Sağ plevral basınç",
-          "-1 cmH2O",
-          "Yaklaşık -5 cmH2O",
-          "Daha az negatif"
-        ],
-        [
-          "Sol plevral basınç",
-          "-5 cmH2O",
-          "Yaklaşık -5 cmH2O",
-          "Beklenen aralıkta"
-        ],
-        [
-          "Sağ akciğer hacmi",
-          "Azalmış",
-          "Simetrik havalanma",
-          "Tek taraflı azalma"
-        ],
-        [
-          "İnspiratuvar efor",
-          "Artmış",
-          "Protokol dışı",
-          "Hasta daha sık soluyor"
-        ]
-      ],
-      "postAnswerExplanation": "Etkilenen tarafta plevral basınç daha az negatif ölçülmüş ve akciğer hacmi azalmıştır.",
-      "interpretation": "Etkilenen tarafta plevral basınç daha az negatif ölçülmüş ve akciğer hacmi azalmıştır.",
-      "inlineFeedback": "Etkilenen tarafta plevral basınç daha az negatif ölçülmüş ve akciğer hacmi azalmıştır.",
-      "explanationAfterAnswer": "Etkilenen tarafta plevral basınç daha az negatif ölçülmüş ve akciğer hacmi azalmıştır."
-    },
-    {
-      "id": "v218-new-002-gogus-travmasi-sonrasi-solunum-kaydi-gaz-ve-gorunum-kaydi",
-      "label": "Gaz değişimi ve akciğer görünümü",
-      "title": "Gaz değişimi ve akciğer görünümü",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Solunum verisi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Oda havasında hafif hipoksemi saptanmış, sağ akciğer alanında hacim kaybı izlenmiştir.",
-      "clinicalMeaning": "Oda havasında hafif hipoksemi saptanmış, sağ akciğer alanında hacim kaybı izlenmiştir.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 4,
-      "scoreValue": 4,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "Gaz değişimi ve akciğer görünümü",
-        "summary": "Oda havasında hafif hipoksemi saptanmış, sağ akciğer alanında hacim kaybı izlenmiştir.",
-        "interpretation": "Oda havasında hafif hipoksemi saptanmış, sağ akciğer alanında hacim kaybı izlenmiştir.",
-        "values": [
-          [
-            "SpO2",
-            "%93",
-            "%95-100",
-            "Hafif düşük"
-          ],
-          [
-            "PaCO2",
-            "36 mmHg",
-            "35-45 mmHg",
-            "Yüksek değil"
-          ],
-          [
-            "Sağ akciğer alanı",
-            "Hacim azalmış",
-            "Simetrik görünüm",
-            "Tek taraflı"
-          ],
-          [
-            "Ekspiratuvar akım bulgusu",
-            "Yaygın kısıtlılık yok",
-            "Beklenmez",
-            "Obstrüktif patern baskın değil"
-          ]
-        ],
-        "rows": [
-          [
-            "SpO2",
-            "%93",
-            "%95-100",
-            "Hafif düşük"
-          ],
-          [
-            "PaCO2",
-            "36 mmHg",
-            "35-45 mmHg",
-            "Yüksek değil"
-          ],
-          [
-            "Sağ akciğer alanı",
-            "Hacim azalmış",
-            "Simetrik görünüm",
-            "Tek taraflı"
-          ],
-          [
-            "Ekspiratuvar akım bulgusu",
-            "Yaygın kısıtlılık yok",
-            "Beklenmez",
-            "Obstrüktif patern baskın değil"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "SpO2",
-          "%93",
-          "%95-100",
-          "Hafif düşük"
-        ],
-        [
-          "PaCO2",
-          "36 mmHg",
-          "35-45 mmHg",
-          "Yüksek değil"
-        ],
-        [
-          "Sağ akciğer alanı",
-          "Hacim azalmış",
-          "Simetrik görünüm",
-          "Tek taraflı"
-        ],
-        [
-          "Ekspiratuvar akım bulgusu",
-          "Yaygın kısıtlılık yok",
-          "Beklenmez",
-          "Obstrüktif patern baskın değil"
-        ]
-      ],
-      "postAnswerExplanation": "Oda havasında hafif hipoksemi saptanmış, sağ akciğer alanında hacim kaybı izlenmiştir.",
-      "interpretation": "Oda havasında hafif hipoksemi saptanmış, sağ akciğer alanında hacim kaybı izlenmiştir.",
-      "inlineFeedback": "Oda havasında hafif hipoksemi saptanmış, sağ akciğer alanında hacim kaybı izlenmiştir.",
-      "explanationAfterAnswer": "Oda havasında hafif hipoksemi saptanmış, sağ akciğer alanında hacim kaybı izlenmiştir."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu solunum mekaniği paternini en iyi açıklayan temel değişiklik hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "loss_of_transpulmonary_pressure_due_to_pleural_air",
-  "diagnosis": {
-    "correct": "Plevral basıncın atmosferik değere yaklaşmasıyla transpulmoner basıncın azalması",
-    "options": [
-      "Alveoler yüzey geriliminin azalmasıyla akciğer kompliyansının artması",
-      "Plevral basıncın atmosferik değere yaklaşmasıyla transpulmoner basıncın azalması",
-      "Diyafram kasılmasının artmasıyla intratorasik hacmin kalıcı genişlemesi",
-      "Pulmoner kapiller hidrostatik basıncın düşmesiyle gaz difüzyonunun azalması",
-      "Hava yolu düz kas tonusunun artmasıyla ekspiratuvar akımın sınırlanması"
-    ],
-    "question": "Bu solunum mekaniği paternini en iyi açıklayan temel değişiklik hangisidir?",
-    "explanation": "Normal akciğer hacmi, alveol içi basınç ile plevral basınç arasındaki transpulmoner basınç farkına bağlıdır. Travma sonrası plevral boşluğa hava girdiğinde plevral basınç negatifliğini kaybeder ve atmosferik değere yaklaşır. Bu durumda akciğeri açık tutan basınç farkı azalır, elastik geri çekilme baskın hale gelir ve etkilenen tarafta hacim kaybı ile solunum sesi azalması ortaya çıkar.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "Tek taraflı hacim kaybı + plevral basıncın daha az negatif olması, akciğerin açık kalmasını sağlayan transpulmoner basınç farkının azaldığını düşündürür."
-      }
-    ],
-    "optionComparison": {
-      "Alveoler yüzey geriliminin azalmasıyla akciğer kompliyansının artması": "Yüzey geriliminin azalması sürfaktan etkisiyle alveol açılmasını kolaylaştırır ve özellikle küçük alveollerde kollaps eğilimini azaltır. Bu olguda sorun alveol yüzey kuvvetinin azalması değil, göğüs duvarı ile akciğer arasındaki basınç ilişkisinin bozulmasıdır. Etkilenen tarafta solunum seslerinin azalması ve plevral basıncın daha az negatif ölçülmesi bu seçeneği desteklemez.",
-      "Plevral basıncın atmosferik değere yaklaşmasıyla transpulmoner basıncın azalması": "Doğru seçenek budur. Normalde plevral basıncın negatif olması akciğeri göğüs duvarına doğru açık tutan transpulmoner basıncı oluşturur. Plevral boşluğa hava girdiğinde plevral basınç atmosferik değere yaklaşır, transpulmoner basınç azalır ve akciğerin elastik geri çekilme eğilimi baskın hale gelerek etkilenen tarafta hacim kaybı oluşturur.",
-      "Diyafram kasılmasının artmasıyla intratorasik hacmin kalıcı genişlemesi": "Diyafram kasılması inspirasyonda intratorasik hacmi artırıp alveoler basıncı düşürerek hava girişini sağlar. Ancak tek taraflı hacim kaybı ve plevral basınç değişikliği, diyaframın kalıcı genişletici etkisinden kaynaklanmaz. Gönüllü inspirasyon çabası artsa bile plevral boşluktaki hava akciğeri açık tutan basınç farkını azaltır.",
-      "Pulmoner kapiller hidrostatik basıncın düşmesiyle gaz difüzyonunun azalması": "Kapiller hidrostatik basınç değişiklikleri pulmoner ödem veya sıvı hareketi açısından önemlidir; gaz difüzyon mesafesini dolaylı etkileyebilir. Bu olguda veri, sıvı birikimi veya kapiller basınç düşüşünden ziyade tek taraflı plevral hava ve akciğer hacmi azalmasını göstermektedir. Mekanik sorun alveol-kapiller membran değil, akciğer ile göğüs duvarı arasındaki basınç farkıdır.",
-      "Hava yolu düz kas tonusunun artmasıyla ekspiratuvar akımın sınırlanması": "Hava yolu düz kas tonusu artışı astım benzeri obstrüktif patern oluşturur; uzamış ekspiryum, wheezing ve akım kısıtlılığı beklenir. Bu olguda etkilenen tarafta solunum sesi azalması, plevral basıncın daha az negatifleşmesi ve tek taraflı hacim kaybı öne çıkar. Bulgular bronş düz kas tonusundan çok plevral mekanik ayrışma ile açıklanır."
-    },
-    "answerFeedback": {
-      "Alveoler yüzey geriliminin azalmasıyla akciğer kompliyansının artması": "Yüzey geriliminin azalması sürfaktan etkisiyle alveol açılmasını kolaylaştırır ve özellikle küçük alveollerde kollaps eğilimini azaltır. Bu olguda sorun alveol yüzey kuvvetinin azalması değil, göğüs duvarı ile akciğer arasındaki basınç ilişkisinin bozulmasıdır. Etkilenen tarafta solunum seslerinin azalması ve plevral basıncın daha az negatif ölçülmesi bu seçeneği desteklemez.",
-      "Plevral basıncın atmosferik değere yaklaşmasıyla transpulmoner basıncın azalması": "Doğru seçenek budur. Normalde plevral basıncın negatif olması akciğeri göğüs duvarına doğru açık tutan transpulmoner basıncı oluşturur. Plevral boşluğa hava girdiğinde plevral basınç atmosferik değere yaklaşır, transpulmoner basınç azalır ve akciğerin elastik geri çekilme eğilimi baskın hale gelerek etkilenen tarafta hacim kaybı oluşturur.",
-      "Diyafram kasılmasının artmasıyla intratorasik hacmin kalıcı genişlemesi": "Diyafram kasılması inspirasyonda intratorasik hacmi artırıp alveoler basıncı düşürerek hava girişini sağlar. Ancak tek taraflı hacim kaybı ve plevral basınç değişikliği, diyaframın kalıcı genişletici etkisinden kaynaklanmaz. Gönüllü inspirasyon çabası artsa bile plevral boşluktaki hava akciğeri açık tutan basınç farkını azaltır.",
-      "Pulmoner kapiller hidrostatik basıncın düşmesiyle gaz difüzyonunun azalması": "Kapiller hidrostatik basınç değişiklikleri pulmoner ödem veya sıvı hareketi açısından önemlidir; gaz difüzyon mesafesini dolaylı etkileyebilir. Bu olguda veri, sıvı birikimi veya kapiller basınç düşüşünden ziyade tek taraflı plevral hava ve akciğer hacmi azalmasını göstermektedir. Mekanik sorun alveol-kapiller membran değil, akciğer ile göğüs duvarı arasındaki basınç farkıdır.",
-      "Hava yolu düz kas tonusunun artmasıyla ekspiratuvar akımın sınırlanması": "Hava yolu düz kas tonusu artışı astım benzeri obstrüktif patern oluşturur; uzamış ekspiryum, wheezing ve akım kısıtlılığı beklenir. Bu olguda etkilenen tarafta solunum sesi azalması, plevral basıncın daha az negatifleşmesi ve tek taraflı hacim kaybı öne çıkar. Bulgular bronş düz kas tonusundan çok plevral mekanik ayrışma ile açıklanır."
-    }
-  },
-  "coreKnowledge": "Akciğeri açık tutan temel mekanik kuvvet, alveol içi basınç ile plevral basınç arasındaki transpulmoner basınçtır. Plevral basınç negatifliğini kaybederse akciğer göğüs duvarından mekanik olarak ayrılır ve elastik geri çekilme hacim kaybına yol açar. Bu mekanizma bronş düz kas tonusu veya alveol yüzey gerilimi değişikliğinden farklıdır.",
-  "examPearl": "Tek taraflı hacim kaybı + plevral basıncın daha az negatif olması, akciğerin açık kalmasını sağlayan transpulmoner basınç farkının azaldığını düşündürür.",
-  "whyCorrect": "Doğru seçenek budur. Normalde plevral basıncın negatif olması akciğeri göğüs duvarına doğru açık tutan transpulmoner basıncı oluşturur. Plevral boşluğa hava girdiğinde plevral basınç atmosferik değere yaklaşır, transpulmoner basınç azalır ve akciğerin elastik geri çekilme eğilimi baskın hale gelerek etkilenen tarafta hacim kaybı oluşturur.",
-  "optionComparison": {
-    "Alveoler yüzey geriliminin azalmasıyla akciğer kompliyansının artması": "Yüzey geriliminin azalması sürfaktan etkisiyle alveol açılmasını kolaylaştırır ve özellikle küçük alveollerde kollaps eğilimini azaltır. Bu olguda sorun alveol yüzey kuvvetinin azalması değil, göğüs duvarı ile akciğer arasındaki basınç ilişkisinin bozulmasıdır. Etkilenen tarafta solunum seslerinin azalması ve plevral basıncın daha az negatif ölçülmesi bu seçeneği desteklemez.",
-    "Plevral basıncın atmosferik değere yaklaşmasıyla transpulmoner basıncın azalması": "Doğru seçenek budur. Normalde plevral basıncın negatif olması akciğeri göğüs duvarına doğru açık tutan transpulmoner basıncı oluşturur. Plevral boşluğa hava girdiğinde plevral basınç atmosferik değere yaklaşır, transpulmoner basınç azalır ve akciğerin elastik geri çekilme eğilimi baskın hale gelerek etkilenen tarafta hacim kaybı oluşturur.",
-    "Diyafram kasılmasının artmasıyla intratorasik hacmin kalıcı genişlemesi": "Diyafram kasılması inspirasyonda intratorasik hacmi artırıp alveoler basıncı düşürerek hava girişini sağlar. Ancak tek taraflı hacim kaybı ve plevral basınç değişikliği, diyaframın kalıcı genişletici etkisinden kaynaklanmaz. Gönüllü inspirasyon çabası artsa bile plevral boşluktaki hava akciğeri açık tutan basınç farkını azaltır.",
-    "Pulmoner kapiller hidrostatik basıncın düşmesiyle gaz difüzyonunun azalması": "Kapiller hidrostatik basınç değişiklikleri pulmoner ödem veya sıvı hareketi açısından önemlidir; gaz difüzyon mesafesini dolaylı etkileyebilir. Bu olguda veri, sıvı birikimi veya kapiller basınç düşüşünden ziyade tek taraflı plevral hava ve akciğer hacmi azalmasını göstermektedir. Mekanik sorun alveol-kapiller membran değil, akciğer ile göğüs duvarı arasındaki basınç farkıdır.",
-    "Hava yolu düz kas tonusunun artmasıyla ekspiratuvar akımın sınırlanması": "Hava yolu düz kas tonusu artışı astım benzeri obstrüktif patern oluşturur; uzamış ekspiryum, wheezing ve akım kısıtlılığı beklenir. Bu olguda etkilenen tarafta solunum sesi azalması, plevral basıncın daha az negatifleşmesi ve tek taraflı hacim kaybı öne çıkar. Bulgular bronş düz kas tonusundan çok plevral mekanik ayrışma ile açıklanır."
-  },
-  "evidenceChain": [
-    {
-      "title": "Tek taraflı bulgu",
-      "text": "Sağ tarafta solunum sesinin azalması → sorun yaygın hava yolu daralmasından çok lokal mekanik değişikliktir",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Plevral basınç",
-      "text": "Sağ plevral basıncın daha az negatif olması → akciğeri açık tutan basınç farkı azalmıştır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Hacim kaydı",
-      "text": "Sağ akciğer hacminin azalması → elastik geri çekilme kuvveti karşılanamamaktadır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Gaz verisi",
-      "text": "PaCO2’nin yüksek olmaması → primer yaygın alveoler hipoventilasyon baskın mekanizma değildir",
-      "weight": "medium",
-      "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "Alveoler yüzey geriliminin azalmasıyla akciğer kompliyansının artması": "Yüzey geriliminin azalması sürfaktan etkisiyle alveol açılmasını kolaylaştırır ve özellikle küçük alveollerde kollaps eğilimini azaltır. Bu olguda sorun alveol yüzey kuvvetinin azalması değil, göğüs duvarı ile akciğer arasındaki basınç ilişkisinin bozulmasıdır. Etkilenen tarafta solunum seslerinin azalması ve plevral basıncın daha az negatif ölçülmesi bu seçeneği desteklemez.",
-    "Diyafram kasılmasının artmasıyla intratorasik hacmin kalıcı genişlemesi": "Diyafram kasılması inspirasyonda intratorasik hacmi artırıp alveoler basıncı düşürerek hava girişini sağlar. Ancak tek taraflı hacim kaybı ve plevral basınç değişikliği, diyaframın kalıcı genişletici etkisinden kaynaklanmaz. Gönüllü inspirasyon çabası artsa bile plevral boşluktaki hava akciğeri açık tutan basınç farkını azaltır.",
-    "Pulmoner kapiller hidrostatik basıncın düşmesiyle gaz difüzyonunun azalması": "Kapiller hidrostatik basınç değişiklikleri pulmoner ödem veya sıvı hareketi açısından önemlidir; gaz difüzyon mesafesini dolaylı etkileyebilir. Bu olguda veri, sıvı birikimi veya kapiller basınç düşüşünden ziyade tek taraflı plevral hava ve akciğer hacmi azalmasını göstermektedir. Mekanik sorun alveol-kapiller membran değil, akciğer ile göğüs duvarı arasındaki basınç farkıdır.",
-    "Hava yolu düz kas tonusunun artmasıyla ekspiratuvar akımın sınırlanması": "Hava yolu düz kas tonusu artışı astım benzeri obstrüktif patern oluşturur; uzamış ekspiryum, wheezing ve akım kısıtlılığı beklenir. Bu olguda etkilenen tarafta solunum sesi azalması, plevral basıncın daha az negatifleşmesi ve tek taraflı hacim kaybı öne çıkar. Bulgular bronş düz kas tonusundan çok plevral mekanik ayrışma ile açıklanır."
-  },
-  "mechanismExplanation": "Plevral boşluğa hava girişi plevral basıncın negatifliğini azaltır; transpulmoner basınç düşer ve akciğerin elastik geri çekilmesi etkilenen tarafta hacim kaybı oluşturur.",
-  "scientificComment": "Soru, travma sonrası hipoksemiyi yalnız klinik etiketle değil, plevral basınç-akciğer hacmi ilişkisiyle yorumlatır.",
-  "helpText": "Solunum mekaniği sorularında akciğer hacmini belirleyen plevral basınç, alveoler basınç ve transpulmoner basınç ilişkisi birlikte düşünülmelidir.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v218-new-003-potasyum-yuklemesi-sonrasi-idrar-kaydi",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Potasyum yüklemesi sonrası idrar kaydı",
-  "difficulty": "Zor",
-  "difficultyTag": "Zor",
-  "clinicalFocus": "Akut potasyum artışında renin belirgin yükselmeden aldosteron ve distal nefron potasyum sekresyonu yanıtını yorumlama.",
-  "learningTarget": "Ekstrasellüler K+ artışının zona glomeruloza ve principal hücre düzeyindeki etkisini, ADH, GFR değişimi ve asit-baz kaynaklı çeldiricilerden ayırt edebilme.",
-  "demographics": "24 yaşında sağlıklı kadın gönüllüden alınan eğitim verisi",
-  "setting": "Renal fizyoloji laboratuvarı",
-  "chiefComplaint": "Kontrollü potasyum içeriği yüksek öğünden sonra serum ve idrar elektrolit değişimleri izleniyor.",
-  "stem": "Sağlıklı gönüllü, sabah açlık örneği alındıktan sonra potasyum içeriği yüksek standart bir öğün tüketir. Önceki gün yoğun egzersiz yapmadığını, kusma veya ishal olmadığını ve düzenli ilaç kullanmadığını belirtir. Öğünden sonraki birkaç saat içinde kendini iyi hissettiğini, çarpıntı veya kas güçsüzlüğü yaşamadığını söyler. Protokol gereği aynı süre boyunca kan ve idrar örnekleri toplanır.",
-  "patientIntro": {
-    "profile": "24 yaşında sağlıklı kadın gönüllü, renal fizyoloji laboratuvarında elektrolit yanıtı açısından izleniyor.",
-    "presentation": "Potasyum içeriği yüksek standart öğün sonrası serum ve idrar elektrolitleri seri olarak ölçülüyor.",
-    "historySummary": "Sağlıklı gönüllü, sabah açlık örneği alındıktan sonra potasyum içeriği yüksek standart bir öğün tüketir. Önceki gün yoğun egzersiz yapmadığını, kusma veya ishal olmadığını ve düzenli ilaç kullanmadığını belirtir. Öğünden sonraki birkaç saat içinde kendini iyi hissettiğini, çarpıntı veya kas güçsüzlüğü yaşamadığını söyler. Protokol gereği aynı süre boyunca kan ve idrar örnekleri toplanır."
-  },
-  "vitals": {
-    "TA": "110/68 mmHg",
-    "Nabız": "74/dk",
-    "Solunum": "14/dk",
-    "SpO2": "%99, oda havasında",
-    "Ateş": "36.6 °C",
-    "Şok indeksi": "0.67"
-  },
-  "exam": [
-    "Gönüllü uyanık, koopere ve genel durumu iyidir.",
-    "Kas gücü simetrik, derin tendon refleksleri kabaca normaldir.",
-    "Mukozalar nemli, belirgin dehidratasyon bulgusu yoktur.",
-    "Kardiyak oskültasyonda ritim düzenli, belirgin ek ses duyulmaz."
-  ],
-  "investigations": [
-    {
-      "id": "v218-new-003-potasyum-yuklemesi-sonrasi-idrar-kaydi-serum-hormon-kaydi",
-      "label": "Serum elektrolit ve hormon kaydı",
-      "title": "Serum elektrolit ve hormon kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Renal-endokrin yanıt analizi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Öğün sonrası serum K+ hafif yükselmiş, renin belirgin yükselmemiş ve kan basıncı stabil kalmıştır.",
-      "clinicalMeaning": "Öğün sonrası serum K+ hafif yükselmiş, renin belirgin yükselmemiş ve kan basıncı stabil kalmıştır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "Serum elektrolit ve hormon kaydı",
-        "summary": "Öğün sonrası serum K+ hafif yükselmiş, renin belirgin yükselmemiş ve kan basıncı stabil kalmıştır.",
-        "interpretation": "Öğün sonrası serum K+ hafif yükselmiş, renin belirgin yükselmemiş ve kan basıncı stabil kalmıştır.",
-        "values": [
-          [
-            "Serum K+",
-            "5.4 mmol/L",
-            "3.5-5.0 mmol/L",
-            "Hafif yüksek"
-          ],
-          [
-            "Serum Na+",
-            "140 mmol/L",
-            "135-145 mmol/L",
-            "Normal"
-          ],
-          [
-            "Plazma renin aktivitesi",
-            "Normal aralıkta",
-            "Referans aralığı",
-            "Belirgin artış yok"
-          ],
-          [
-            "Kan basıncı izlemi",
-            "Stabil",
-            "Protokol koşulu",
-            "Hacim kaybı bulgusu yok"
-          ]
-        ],
-        "rows": [
-          [
-            "Serum K+",
-            "5.4 mmol/L",
-            "3.5-5.0 mmol/L",
-            "Hafif yüksek"
-          ],
-          [
-            "Serum Na+",
-            "140 mmol/L",
-            "135-145 mmol/L",
-            "Normal"
-          ],
-          [
-            "Plazma renin aktivitesi",
-            "Normal aralıkta",
-            "Referans aralığı",
-            "Belirgin artış yok"
-          ],
-          [
-            "Kan basıncı izlemi",
-            "Stabil",
-            "Protokol koşulu",
-            "Hacim kaybı bulgusu yok"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Serum K+",
-          "5.4 mmol/L",
+          "Serum K⁺",
+          "3.8 mmol/L",
           "3.5-5.0 mmol/L",
-          "Hafif yüksek"
-        ],
-        [
-          "Serum Na+",
-          "140 mmol/L",
-          "135-145 mmol/L",
           "Normal"
-        ],
-        [
-          "Plazma renin aktivitesi",
-          "Normal aralıkta",
-          "Referans aralığı",
-          "Belirgin artış yok"
-        ],
-        [
-          "Kan basıncı izlemi",
-          "Stabil",
-          "Protokol koşulu",
-          "Hacim kaybı bulgusu yok"
         ]
       ],
-      "postAnswerExplanation": "Öğün sonrası serum K+ hafif yükselmiş, renin belirgin yükselmemiş ve kan basıncı stabil kalmıştır.",
-      "interpretation": "Öğün sonrası serum K+ hafif yükselmiş, renin belirgin yükselmemiş ve kan basıncı stabil kalmıştır.",
-      "inlineFeedback": "Öğün sonrası serum K+ hafif yükselmiş, renin belirgin yükselmemiş ve kan basıncı stabil kalmıştır.",
-      "explanationAfterAnswer": "Öğün sonrası serum K+ hafif yükselmiş, renin belirgin yükselmemiş ve kan basıncı stabil kalmıştır."
-    },
-    {
-      "id": "v218-new-003-potasyum-yuklemesi-sonrasi-idrar-kaydi-idrar-elektrolit-kaydi",
-      "label": "İdrar elektrolit kaydı",
-      "title": "İdrar elektrolit kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Distal nefron yanıtı",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Toplanan idrarda potasyum atılımı artmış, kreatinin ve asit-baz değerleri belirgin bozulmamıştır.",
-      "clinicalMeaning": "Toplanan idrarda potasyum atılımı artmış, kreatinin ve asit-baz değerleri belirgin bozulmamıştır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 4,
-      "scoreValue": 4,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "İdrar elektrolit kaydı",
-        "summary": "Toplanan idrarda potasyum atılımı artmış, kreatinin ve asit-baz değerleri belirgin bozulmamıştır.",
-        "interpretation": "Toplanan idrarda potasyum atılımı artmış, kreatinin ve asit-baz değerleri belirgin bozulmamıştır.",
-        "values": [
-          [
-            "İdrar K+ atılımı",
-            "Artmış",
-            "Alıma göre değişir",
-            "Başlangıca göre yüksek"
-          ],
-          [
-            "İdrar Na+",
-            "Orta düzeyde",
-            "Alıma göre değişir",
-            "Distal sunum sürüyor"
-          ],
-          [
-            "Serum kreatinin",
-            "0.8 mg/dL",
-            "0.6-1.1 mg/dL",
-            "Normal"
-          ],
-          [
-            "Venöz HCO3-",
-            "24 mmol/L",
-            "22-26 mmol/L",
-            "Normal aralıkta"
-          ]
-        ],
-        "rows": [
-          [
-            "İdrar K+ atılımı",
-            "Artmış",
-            "Alıma göre değişir",
-            "Başlangıca göre yüksek"
-          ],
-          [
-            "İdrar Na+",
-            "Orta düzeyde",
-            "Alıma göre değişir",
-            "Distal sunum sürüyor"
-          ],
-          [
-            "Serum kreatinin",
-            "0.8 mg/dL",
-            "0.6-1.1 mg/dL",
-            "Normal"
-          ],
-          [
-            "Venöz HCO3-",
-            "24 mmol/L",
-            "22-26 mmol/L",
-            "Normal aralıkta"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "İdrar K+ atılımı",
-          "Artmış",
-          "Alıma göre değişir",
-          "Başlangıca göre yüksek"
-        ],
-        [
-          "İdrar Na+",
-          "Orta düzeyde",
-          "Alıma göre değişir",
-          "Distal sunum sürüyor"
-        ],
-        [
-          "Serum kreatinin",
-          "0.8 mg/dL",
-          "0.6-1.1 mg/dL",
-          "Normal"
-        ],
-        [
-          "Venöz HCO3-",
-          "24 mmol/L",
-          "22-26 mmol/L",
-          "Normal aralıkta"
-        ]
-      ],
-      "postAnswerExplanation": "Toplanan idrarda potasyum atılımı artmış, kreatinin ve asit-baz değerleri belirgin bozulmamıştır.",
-      "interpretation": "Toplanan idrarda potasyum atılımı artmış, kreatinin ve asit-baz değerleri belirgin bozulmamıştır.",
-      "inlineFeedback": "Toplanan idrarda potasyum atılımı artmış, kreatinin ve asit-baz değerleri belirgin bozulmamıştır.",
-      "explanationAfterAnswer": "Toplanan idrarda potasyum atılımı artmış, kreatinin ve asit-baz değerleri belirgin bozulmamıştır."
+      "postAnswerExplanation": "Total kalsiyum normal kalırken iyonize kalsiyum düşük ölçülmüş, laktat yüksekliği saptanmamıştır.",
+      "interpretation": "Total kalsiyum normal kalırken iyonize kalsiyum düşük ölçülmüş, laktat yüksekliği saptanmamıştır.",
+      "explanationAfterAnswer": "Total kalsiyum normal kalırken iyonize kalsiyum düşük ölçülmüş, laktat yüksekliği saptanmamıştır.",
+      "inlineFeedback": "Total kalsiyum normal kalırken iyonize kalsiyum düşük ölçülmüş, laktat yüksekliği saptanmamıştır."
     }
   ],
   "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
+  "managementSequence": {
+    "enabled": false
+  },
   "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu elektrolit yanıtını en iyi açıklayan homeostatik mekanizma hangisidir?",
+  "shuffleOptions": false,
+  "question": "Bu hastadaki uyuşma ve el kasılması eğilimini en iyi açıklayan asit-baz ilişkili fizyolojik mekanizma hangisidir?",
   "questionType": "physiology_mechanism",
-  "answerTarget": "hyperkalemia_direct_aldosterone_principal_cell_potassium_secretion",
+  "answerTarget": "acute_respiratory_alkalosis_ionized_calcium_binding",
   "diagnosis": {
-    "correct": "Yüksek ekstrasellüler K+ etkisiyle aldosteron salınımının artması ve principal hücre K+ sekresyonunun yükselmesi",
+    "correct": "Akut alveoler hiperventilasyonla PaCO₂ azalması ve iyonize kalsiyumun düşmesi",
     "options": [
-      "Yüksek ekstrasellüler K+ etkisiyle aldosteron salınımının artması ve principal hücre K+ sekresyonunun yükselmesi",
-      "Plazma osmolalitesi azalmasına bağlı ADH salınımının artması ve su geri emiliminin güçlenmesi",
-      "Afferent arteriyol daralmasına bağlı GFR düşmesi ve filtre edilen potasyum yükünün azalması",
-      "Proksimal tübülde bikarbonat geri emiliminin azalması ve distal sodyum sunumunun kesilmesi",
-      "Toplayıcı kanalda proton sekresyonunun azalması ve potasyumun lümenden geri alınması"
+      "Alveoler hipoventilasyonla PaCO₂ artışı ve pH düşüşü gelişmesi",
+      "Renal bikarbonat kaybıyla primer metabolik asidoz tablosu oluşması",
+      "Laktat artışıyla anyon açıklıklı metabolik asidoz paterninin belirginleşmesi",
+      "Kusmaya bağlı klor kaybıyla metabolik alkaloz ve potasyum kaybı gelişmesi",
+      "Akut alveoler hiperventilasyonla PaCO₂ azalması ve iyonize kalsiyumun düşmesi"
     ],
-    "question": "Bu elektrolit yanıtını en iyi açıklayan homeostatik mekanizma hangisidir?",
-    "explanation": "Potasyum yükü sonrası plazma K+ artışı, zona glomeruloza hücrelerinde aldosteron salınımını doğrudan artırabilir. Renin belirgin yükselmeden aldosteronun artması bu doğrudan elektrolit uyarısını destekler. Aldosteron distal nefronda sodyum geri emilimini ve lümen-negatif potansiyeli artırarak principal hücrelerden K+ sekresyonunu yükseltir; idrarda K+ atılımının artması bu kompansatuvar yanıtın sonucudur.",
+    "question": "Bu hastadaki uyuşma ve el kasılması eğilimini en iyi açıklayan asit-baz ilişkili fizyolojik mekanizma hangisidir?",
+    "explanation": "Kan gazında yüksek pH, düşük PaCO₂ ve normal-yakın HCO₃⁻ akut solunumsal alkaloz paternini gösterir. pH yükseldiğinde albüminin kalsiyuma bağlanması artar; total kalsiyum normal kalsa bile iyonize kalsiyum azalır ve nöromüsküler uyarılabilirlik artarak parestezi ve karpopedal kasılma eğilimi gelişir.",
     "pearls": [
       {
         "label": "Sınav notu",
-        "text": "Renin artmadan aldosteron artışı ve idrar K+ atılımı yüksekliği, potasyumun zona glomerulozayı doğrudan uyarması ile distal K+ sekresyonunu düşündürür."
+        "text": "Total kalsiyum normal olsa bile alkalemide iyonize kalsiyum düşebilir; semptomları açıklayan fraksiyon çoğu zaman iyonize kalsiyumdur."
       }
     ],
     "optionComparison": {
-      "Yüksek ekstrasellüler K+ etkisiyle aldosteron salınımının artması ve principal hücre K+ sekresyonunun yükselmesi": "Doğru seçenek budur. Plazma K+ artışı zona glomeruloza hücrelerini doğrudan uyararak aldosteron salınımını artırabilir; bu yanıt renin artışı olmadan da gelişebilir. Aldosteron distal nefronda ENaC ve Na+/K+ ATPaz etkinliğini artırarak lümen-negatif potansiyeli güçlendirir ve principal hücrelerden K+ sekresyonunu yükseltir. Olguda yüksek idrar K+ atılımı bu homeostatik yanıtla uyumludur.",
-      "Plazma osmolalitesi azalmasına bağlı ADH salınımının artması ve su geri emiliminin güçlenmesi": "ADH su dengesini düzenler ve plazma osmolalitesi veya efektif dolaşım hacmine duyarlıdır; potasyum yükünün hızlı atılımındaki temel hormon değildir. Bu olguda idrar osmolalitesi belirgin yoğunlaşmamış, temel değişiklik idrar potasyum atılımındadır. Bu nedenle su geri emilimini artıran ADH yanıtı gözlenen elektrolit paternini açıklamaz.",
-      "Afferent arteriyol daralmasına bağlı GFR düşmesi ve filtre edilen potasyum yükünün azalması": "Afferent arteriyol daralması GFR’yi azaltabilir ve filtre edilen yükleri düşürebilir; bu durum potasyum atılımını artırmak yerine azaltma eğilimindedir. Olguda kreatinin ve GFR yaklaşık normaldir, ayrıca idrar K+ atılımı artmıştır. Veriler glomerüler filtrasyon azalmasından çok distal sekresyon yanıtını destekler.",
-      "Proksimal tübülde bikarbonat geri emiliminin azalması ve distal sodyum sunumunun kesilmesi": "Proksimal bikarbonat geri emiliminin azalması asit-baz dengesini etkileyebilir ve distal akımı değiştirebilir, ancak bu olguda pH ve HCO3- normal aralıktadır. Distal sodyum sunumunun kesilmesi principal hücre K+ sekresyonunu azaltır; oysa idrar K+ atılımı yüksektir. Bu seçenek ölçülen yanıt yönüyle uyumlu değildir.",
-      "Toplayıcı kanalda proton sekresyonunun azalması ve potasyumun lümenden geri alınması": "Toplayıcı kanalda proton sekresyonu interkale hücrelerle ilişkilidir ve asit-baz dengesinde önemlidir. Potasyumun lümenden geri alınması bazı potasyum kaybı durumlarında anlam kazanabilir; burada ise fazla K+ atılmaktadır. Yüksek idrar K+ ve aldosteron artışı, potasyumun geri alınmasından çok principal hücre sekresyonunun yükseldiğini gösterir."
+      "Alveoler hipoventilasyonla PaCO₂ artışı ve pH düşüşü gelişmesi": "Alveoler hipoventilasyon PaCO₂ artışı ve asidemi oluşturur; bu durumda pH düşer. Bu hastanın kan gazında PaCO₂ düşük ve pH yüksektir, bu nedenle primer olay CO₂ tutulumu değil CO₂ azalmasıdır.",
+      "Renal bikarbonat kaybıyla primer metabolik asidoz tablosu oluşması": "Renal bikarbonat kaybı primer metabolik asidoz yapar ve HCO₃⁻ belirgin düşük beklenir. Bu vakada HCO₃⁻ belirgin düşmemiş, değişiklik akut solunumsal paternle uyumludur.",
+      "Laktat artışıyla anyon açıklıklı metabolik asidoz paterninin belirginleşmesi": "Laktat artışı anyon açıklıklı metabolik asidoz oluşturur ve pH düşüklüğü beklenir. Olguda laktat normal, pH yüksek ve PaCO₂ düşüktür; bu nedenle laktik asidoz klinik tabloyu açıklamaz.",
+      "Kusmaya bağlı klor kaybıyla metabolik alkaloz ve potasyum kaybı gelişmesi": "Kusmaya bağlı metabolik alkalozda klor kaybı, hipokalemi ve yüksek HCO₃⁻ beklenebilir. Bu hastada kusma öyküsü yoktur ve HCO₃⁻ akut dönemde belirgin yüksek değildir; tablo solunum kaynaklıdır.",
+      "Akut alveoler hiperventilasyonla PaCO₂ azalması ve iyonize kalsiyumun düşmesi": "Doğru seçenek budur. Hızlı ve derin soluma PaCO₂’yi düşürerek pH’ı yükseltir. Alkalozda albümine kalsiyum bağlanması artar, iyonize kalsiyum azalır; bu durum perioral uyuşma, parmaklarda karıncalanma ve karpopedal spazm eğilimini açıklar."
     },
     "answerFeedback": {
-      "Yüksek ekstrasellüler K+ etkisiyle aldosteron salınımının artması ve principal hücre K+ sekresyonunun yükselmesi": "Doğru seçenek budur. Plazma K+ artışı zona glomeruloza hücrelerini doğrudan uyararak aldosteron salınımını artırabilir; bu yanıt renin artışı olmadan da gelişebilir. Aldosteron distal nefronda ENaC ve Na+/K+ ATPaz etkinliğini artırarak lümen-negatif potansiyeli güçlendirir ve principal hücrelerden K+ sekresyonunu yükseltir. Olguda yüksek idrar K+ atılımı bu homeostatik yanıtla uyumludur.",
-      "Plazma osmolalitesi azalmasına bağlı ADH salınımının artması ve su geri emiliminin güçlenmesi": "ADH su dengesini düzenler ve plazma osmolalitesi veya efektif dolaşım hacmine duyarlıdır; potasyum yükünün hızlı atılımındaki temel hormon değildir. Bu olguda idrar osmolalitesi belirgin yoğunlaşmamış, temel değişiklik idrar potasyum atılımındadır. Bu nedenle su geri emilimini artıran ADH yanıtı gözlenen elektrolit paternini açıklamaz.",
-      "Afferent arteriyol daralmasına bağlı GFR düşmesi ve filtre edilen potasyum yükünün azalması": "Afferent arteriyol daralması GFR’yi azaltabilir ve filtre edilen yükleri düşürebilir; bu durum potasyum atılımını artırmak yerine azaltma eğilimindedir. Olguda kreatinin ve GFR yaklaşık normaldir, ayrıca idrar K+ atılımı artmıştır. Veriler glomerüler filtrasyon azalmasından çok distal sekresyon yanıtını destekler.",
-      "Proksimal tübülde bikarbonat geri emiliminin azalması ve distal sodyum sunumunun kesilmesi": "Proksimal bikarbonat geri emiliminin azalması asit-baz dengesini etkileyebilir ve distal akımı değiştirebilir, ancak bu olguda pH ve HCO3- normal aralıktadır. Distal sodyum sunumunun kesilmesi principal hücre K+ sekresyonunu azaltır; oysa idrar K+ atılımı yüksektir. Bu seçenek ölçülen yanıt yönüyle uyumlu değildir.",
-      "Toplayıcı kanalda proton sekresyonunun azalması ve potasyumun lümenden geri alınması": "Toplayıcı kanalda proton sekresyonu interkale hücrelerle ilişkilidir ve asit-baz dengesinde önemlidir. Potasyumun lümenden geri alınması bazı potasyum kaybı durumlarında anlam kazanabilir; burada ise fazla K+ atılmaktadır. Yüksek idrar K+ ve aldosteron artışı, potasyumun geri alınmasından çok principal hücre sekresyonunun yükseldiğini gösterir."
+      "summary": "Kan gazında yüksek pH, düşük PaCO₂ ve normal-yakın HCO₃⁻ akut solunumsal alkaloz paternini gösterir.",
+      "whyCorrect": "Doğru seçenek budur. Hızlı ve derin soluma PaCO₂’yi düşürerek pH’ı yükseltir. Alkalozda albümine kalsiyum bağlanması artar, iyonize kalsiyum azalır; bu durum perioral uyuşma, parmaklarda karıncalanma ve karpopedal spazm eğilimini açıklar.",
+      "keyClues": [
+        "pH 7.55 → belirgin alkalemi vardır",
+        "PaCO₂ 25 mmHg → primer solunumsal CO₂ azalması yönünde veri sağlar",
+        "HCO₃⁻ 22 mmol/L → belirgin primer metabolik alkaloz paterni yoktur"
+      ],
+      "examPearl": "Total kalsiyum normal olsa bile alkalemide iyonize kalsiyum düşebilir; semptomları açıklayan fraksiyon çoğu zaman iyonize kalsiyumdur.",
+      "evidenceChain": [
+        {
+          "title": "Kan gazı pH",
+          "text": "pH 7.55 → belirgin alkalemi vardır",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "PaCO₂",
+          "text": "PaCO₂ 25 mmHg → primer solunumsal CO₂ azalması yönünde veri sağlar",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Bikarbonat",
+          "text": "HCO₃⁻ 22 mmol/L → belirgin primer metabolik alkaloz paterni yoktur",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Kalsiyum fraksiyonu",
+          "text": "Total kalsiyum normal, iyonize kalsiyum düşük → pH bağımlı bağlanma değişikliği düşündürür",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Alveoler hipoventilasyonla PaCO₂ artışı ve pH düşüşü gelişmesi": "Alveoler hipoventilasyon PaCO₂ artışı ve asidemi oluşturur; bu durumda pH düşer. Bu hastanın kan gazında PaCO₂ düşük ve pH yüksektir, bu nedenle primer olay CO₂ tutulumu değil CO₂ azalmasıdır.",
+        "Renal bikarbonat kaybıyla primer metabolik asidoz tablosu oluşması": "Renal bikarbonat kaybı primer metabolik asidoz yapar ve HCO₃⁻ belirgin düşük beklenir. Bu vakada HCO₃⁻ belirgin düşmemiş, değişiklik akut solunumsal paternle uyumludur.",
+        "Laktat artışıyla anyon açıklıklı metabolik asidoz paterninin belirginleşmesi": "Laktat artışı anyon açıklıklı metabolik asidoz oluşturur ve pH düşüklüğü beklenir. Olguda laktat normal, pH yüksek ve PaCO₂ düşüktür; bu nedenle laktik asidoz klinik tabloyu açıklamaz.",
+        "Kusmaya bağlı klor kaybıyla metabolik alkaloz ve potasyum kaybı gelişmesi": "Kusmaya bağlı metabolik alkalozda klor kaybı, hipokalemi ve yüksek HCO₃⁻ beklenebilir. Bu hastada kusma öyküsü yoktur ve HCO₃⁻ akut dönemde belirgin yüksek değildir; tablo solunum kaynaklıdır.",
+        "Akut alveoler hiperventilasyonla PaCO₂ azalması ve iyonize kalsiyumun düşmesi": "Doğru seçenek budur. Hızlı ve derin soluma PaCO₂’yi düşürerek pH’ı yükseltir. Alkalozda albümine kalsiyum bağlanması artar, iyonize kalsiyum azalır; bu durum perioral uyuşma, parmaklarda karıncalanma ve karpopedal spazm eğilimini açıklar."
+      },
+      "answerFeedbackByOption": {
+        "Alveoler hipoventilasyonla PaCO₂ artışı ve pH düşüşü gelişmesi": {
+          "explanation": "Alveoler hipoventilasyon PaCO₂ artışı ve asidemi oluşturur; bu durumda pH düşer. Bu hastanın kan gazında PaCO₂ düşük ve pH yüksektir, bu nedenle primer olay CO₂ tutulumu değil CO₂ azalmasıdır."
+        },
+        "Renal bikarbonat kaybıyla primer metabolik asidoz tablosu oluşması": {
+          "explanation": "Renal bikarbonat kaybı primer metabolik asidoz yapar ve HCO₃⁻ belirgin düşük beklenir. Bu vakada HCO₃⁻ belirgin düşmemiş, değişiklik akut solunumsal paternle uyumludur."
+        },
+        "Laktat artışıyla anyon açıklıklı metabolik asidoz paterninin belirginleşmesi": {
+          "explanation": "Laktat artışı anyon açıklıklı metabolik asidoz oluşturur ve pH düşüklüğü beklenir. Olguda laktat normal, pH yüksek ve PaCO₂ düşüktür; bu nedenle laktik asidoz klinik tabloyu açıklamaz."
+        },
+        "Kusmaya bağlı klor kaybıyla metabolik alkaloz ve potasyum kaybı gelişmesi": {
+          "explanation": "Kusmaya bağlı metabolik alkalozda klor kaybı, hipokalemi ve yüksek HCO₃⁻ beklenebilir. Bu hastada kusma öyküsü yoktur ve HCO₃⁻ akut dönemde belirgin yüksek değildir; tablo solunum kaynaklıdır."
+        },
+        "Akut alveoler hiperventilasyonla PaCO₂ azalması ve iyonize kalsiyumun düşmesi": {
+          "explanation": "Doğru seçenek budur. Hızlı ve derin soluma PaCO₂’yi düşürerek pH’ı yükseltir. Alkalozda albümine kalsiyum bağlanması artar, iyonize kalsiyum azalır; bu durum perioral uyuşma, parmaklarda karıncalanma ve karpopedal spazm eğilimini açıklar."
+        }
+      },
+      "learningOutcome": "Akut PaCO₂ azalmasının pH ve protein-kalsiyum bağlanması üzerinden nöromüsküler uyarılabilirliği nasıl etkilediğini ayırt edebilme.",
+      "clinicalPearls": [
+        "Total kalsiyum normal olsa bile alkalemide iyonize kalsiyum düşebilir; semptomları açıklayan fraksiyon çoğu zaman iyonize kalsiyumdur."
+      ],
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Total kalsiyum normal olsa bile alkalemide iyonize kalsiyum düşebilir; semptomları açıklayan fraksiyon çoğu zaman iyonize kalsiyumdur."
+        }
+      ]
     }
   },
-  "coreKnowledge": "Aldosteron yalnız RAAS ile değil, ekstrasellüler K+ artışıyla da doğrudan uyarılabilir. Distal nefronda principal hücreler aldosteron etkisiyle Na+ geri emilimini ve K+ sekresyonunu artırır. Bu düzenleme potasyum yükünden sonra serum K+ düzeyini sınırlayan temel hızlı homeostatik yanıtlardan biridir.",
-  "examPearl": "Renin artmadan aldosteron artışı ve idrar K+ atılımı yüksekliği, potasyumun zona glomerulozayı doğrudan uyarması ile distal K+ sekresyonunu düşündürür.",
-  "whyCorrect": "Doğru seçenek budur. Plazma K+ artışı zona glomeruloza hücrelerini doğrudan uyararak aldosteron salınımını artırabilir; bu yanıt renin artışı olmadan da gelişebilir. Aldosteron distal nefronda ENaC ve Na+/K+ ATPaz etkinliğini artırarak lümen-negatif potansiyeli güçlendirir ve principal hücrelerden K+ sekresyonunu yükseltir. Olguda yüksek idrar K+ atılımı bu homeostatik yanıtla uyumludur.",
+  "coreKnowledge": "Akut respiratuvar alkalozda PaCO₂ düşer, pH yükselir ve proteinlere kalsiyum bağlanması artarak iyonize kalsiyum azalabilir.",
+  "examPearl": "Total kalsiyum normal olsa bile alkalemide iyonize kalsiyum düşebilir; semptomları açıklayan fraksiyon çoğu zaman iyonize kalsiyumdur.",
+  "whyCorrect": "Doğru seçenek budur. Hızlı ve derin soluma PaCO₂’yi düşürerek pH’ı yükseltir. Alkalozda albümine kalsiyum bağlanması artar, iyonize kalsiyum azalır; bu durum perioral uyuşma, parmaklarda karıncalanma ve karpopedal spazm eğilimini açıklar.",
   "optionComparison": {
-    "Yüksek ekstrasellüler K+ etkisiyle aldosteron salınımının artması ve principal hücre K+ sekresyonunun yükselmesi": "Doğru seçenek budur. Plazma K+ artışı zona glomeruloza hücrelerini doğrudan uyararak aldosteron salınımını artırabilir; bu yanıt renin artışı olmadan da gelişebilir. Aldosteron distal nefronda ENaC ve Na+/K+ ATPaz etkinliğini artırarak lümen-negatif potansiyeli güçlendirir ve principal hücrelerden K+ sekresyonunu yükseltir. Olguda yüksek idrar K+ atılımı bu homeostatik yanıtla uyumludur.",
-    "Plazma osmolalitesi azalmasına bağlı ADH salınımının artması ve su geri emiliminin güçlenmesi": "ADH su dengesini düzenler ve plazma osmolalitesi veya efektif dolaşım hacmine duyarlıdır; potasyum yükünün hızlı atılımındaki temel hormon değildir. Bu olguda idrar osmolalitesi belirgin yoğunlaşmamış, temel değişiklik idrar potasyum atılımındadır. Bu nedenle su geri emilimini artıran ADH yanıtı gözlenen elektrolit paternini açıklamaz.",
-    "Afferent arteriyol daralmasına bağlı GFR düşmesi ve filtre edilen potasyum yükünün azalması": "Afferent arteriyol daralması GFR’yi azaltabilir ve filtre edilen yükleri düşürebilir; bu durum potasyum atılımını artırmak yerine azaltma eğilimindedir. Olguda kreatinin ve GFR yaklaşık normaldir, ayrıca idrar K+ atılımı artmıştır. Veriler glomerüler filtrasyon azalmasından çok distal sekresyon yanıtını destekler.",
-    "Proksimal tübülde bikarbonat geri emiliminin azalması ve distal sodyum sunumunun kesilmesi": "Proksimal bikarbonat geri emiliminin azalması asit-baz dengesini etkileyebilir ve distal akımı değiştirebilir, ancak bu olguda pH ve HCO3- normal aralıktadır. Distal sodyum sunumunun kesilmesi principal hücre K+ sekresyonunu azaltır; oysa idrar K+ atılımı yüksektir. Bu seçenek ölçülen yanıt yönüyle uyumlu değildir.",
-    "Toplayıcı kanalda proton sekresyonunun azalması ve potasyumun lümenden geri alınması": "Toplayıcı kanalda proton sekresyonu interkale hücrelerle ilişkilidir ve asit-baz dengesinde önemlidir. Potasyumun lümenden geri alınması bazı potasyum kaybı durumlarında anlam kazanabilir; burada ise fazla K+ atılmaktadır. Yüksek idrar K+ ve aldosteron artışı, potasyumun geri alınmasından çok principal hücre sekresyonunun yükseldiğini gösterir."
+    "Alveoler hipoventilasyonla PaCO₂ artışı ve pH düşüşü gelişmesi": "Alveoler hipoventilasyon PaCO₂ artışı ve asidemi oluşturur; bu durumda pH düşer. Bu hastanın kan gazında PaCO₂ düşük ve pH yüksektir, bu nedenle primer olay CO₂ tutulumu değil CO₂ azalmasıdır.",
+    "Renal bikarbonat kaybıyla primer metabolik asidoz tablosu oluşması": "Renal bikarbonat kaybı primer metabolik asidoz yapar ve HCO₃⁻ belirgin düşük beklenir. Bu vakada HCO₃⁻ belirgin düşmemiş, değişiklik akut solunumsal paternle uyumludur.",
+    "Laktat artışıyla anyon açıklıklı metabolik asidoz paterninin belirginleşmesi": "Laktat artışı anyon açıklıklı metabolik asidoz oluşturur ve pH düşüklüğü beklenir. Olguda laktat normal, pH yüksek ve PaCO₂ düşüktür; bu nedenle laktik asidoz klinik tabloyu açıklamaz.",
+    "Kusmaya bağlı klor kaybıyla metabolik alkaloz ve potasyum kaybı gelişmesi": "Kusmaya bağlı metabolik alkalozda klor kaybı, hipokalemi ve yüksek HCO₃⁻ beklenebilir. Bu hastada kusma öyküsü yoktur ve HCO₃⁻ akut dönemde belirgin yüksek değildir; tablo solunum kaynaklıdır.",
+    "Akut alveoler hiperventilasyonla PaCO₂ azalması ve iyonize kalsiyumun düşmesi": "Doğru seçenek budur. Hızlı ve derin soluma PaCO₂’yi düşürerek pH’ı yükseltir. Alkalozda albümine kalsiyum bağlanması artar, iyonize kalsiyum azalır; bu durum perioral uyuşma, parmaklarda karıncalanma ve karpopedal spazm eğilimini açıklar."
   },
   "evidenceChain": [
     {
-      "title": "Serum K+",
-      "text": "Öğün sonrası K+ düzeyinin yükselmesi → potasyum homeostazı için hızlı atılım yanıtı gerekir",
+      "title": "Kan gazı pH",
+      "text": "pH 7.55 → belirgin alkalemi vardır",
       "weight": "high",
       "source": "case"
     },
     {
-      "title": "Hacim bulgusu",
-      "text": "Kan basıncının stabil ve reninin belirgin artmamış olması → yanıt hacim azalmasından çok elektrolit yüküyle uyumludur",
+      "title": "PaCO₂",
+      "text": "PaCO₂ 25 mmHg → primer solunumsal CO₂ azalması yönünde veri sağlar",
       "weight": "high",
       "source": "case"
     },
     {
-      "title": "İdrar K+",
-      "text": "İdrarda K+ atılımının artması → distal nefronda sekresyon yönü artmıştır",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Asit-baz verisi",
-      "text": "HCO3- normal aralıkta → temel patern primer asit-baz bozukluğu ile açıklanmaz",
+      "title": "Bikarbonat",
+      "text": "HCO₃⁻ 22 mmol/L → belirgin primer metabolik alkaloz paterni yoktur",
       "weight": "medium",
       "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "Plazma osmolalitesi azalmasına bağlı ADH salınımının artması ve su geri emiliminin güçlenmesi": "ADH su dengesini düzenler ve plazma osmolalitesi veya efektif dolaşım hacmine duyarlıdır; potasyum yükünün hızlı atılımındaki temel hormon değildir. Bu olguda idrar osmolalitesi belirgin yoğunlaşmamış, temel değişiklik idrar potasyum atılımındadır. Bu nedenle su geri emilimini artıran ADH yanıtı gözlenen elektrolit paternini açıklamaz.",
-    "Afferent arteriyol daralmasına bağlı GFR düşmesi ve filtre edilen potasyum yükünün azalması": "Afferent arteriyol daralması GFR’yi azaltabilir ve filtre edilen yükleri düşürebilir; bu durum potasyum atılımını artırmak yerine azaltma eğilimindedir. Olguda kreatinin ve GFR yaklaşık normaldir, ayrıca idrar K+ atılımı artmıştır. Veriler glomerüler filtrasyon azalmasından çok distal sekresyon yanıtını destekler.",
-    "Proksimal tübülde bikarbonat geri emiliminin azalması ve distal sodyum sunumunun kesilmesi": "Proksimal bikarbonat geri emiliminin azalması asit-baz dengesini etkileyebilir ve distal akımı değiştirebilir, ancak bu olguda pH ve HCO3- normal aralıktadır. Distal sodyum sunumunun kesilmesi principal hücre K+ sekresyonunu azaltır; oysa idrar K+ atılımı yüksektir. Bu seçenek ölçülen yanıt yönüyle uyumlu değildir.",
-    "Toplayıcı kanalda proton sekresyonunun azalması ve potasyumun lümenden geri alınması": "Toplayıcı kanalda proton sekresyonu interkale hücrelerle ilişkilidir ve asit-baz dengesinde önemlidir. Potasyumun lümenden geri alınması bazı potasyum kaybı durumlarında anlam kazanabilir; burada ise fazla K+ atılmaktadır. Yüksek idrar K+ ve aldosteron artışı, potasyumun geri alınmasından çok principal hücre sekresyonunun yükseldiğini gösterir."
-  },
-  "mechanismExplanation": "Serum K+ artışı aldosteron salınımını doğrudan artırır; aldosteron distal nefronda lümen-negatif potansiyeli güçlendirerek K+ sekresyonunu ve idrarla atılımını yükseltir.",
-  "scientificComment": "Soru, aldosteronu yalnız hacim/renin ekseniyle değil, potasyum homeostazının doğrudan geri bildirim yanıtıyla ilişkilendirir.",
-  "helpText": "Potasyum sorularında aldosteronun iki ana uyarısını ayır: efektif hacim azalması ve ekstrasellüler K+ artışı.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v218-new-004-uyari-araligi-degisince-noron-kaydi",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Uyarı aralığı değişince nöron kaydı",
-  "difficulty": "Orta",
-  "difficultyTag": "Orta",
-  "clinicalFocus": "Aynı şiddetteki sinaptik uyarıların farklı zaman aralıklarında postsinaptik membran potansiyeline etkisini yorumlama.",
-  "learningTarget": "Zamansal summasyonun eşik altı EPSP’leri nasıl aksiyon potansiyeline yaklaştırdığını; presinaptik salınım, inhibitör giriş ve akson iletimi çeldiricilerinden ayırt edebilme.",
-  "demographics": "21 yaşında sağlıklı gönüllüden modellenmiş nörofizyoloji eğitim kaydı",
-  "setting": "Nörofizyoloji laboratuvarı",
-  "chiefComplaint": "Bilgisayar destekli nöron kayıt modelinde aynı uyarıların farklı aralıklarla verilmesine yanıt ölçülüyor.",
-  "stem": "Laboratuvar oturumunda öğrenciler aynı postsinaptik nöron modeline eşit şiddette presinaptik uyarılar uygular. İlk denemede tek uyarı sonrası küçük bir depolarizasyon görülür, ancak ateşleme oluşmaz. İkinci denemede iki uyarı uzun aralıkla verildiğinde kayıt başlangıca döner ve yine ateşleme izlenmez. Üçüncü denemede aynı iki uyarı daha kısa aralıkla verildiğinde ikinci depolarizasyon birincinin üzerine eklenmiş gibi görünür ve kayıt eşik çizgisini geçer.",
-  "patientIntro": {
-    "profile": "21 yaşında sağlıklı gönüllüden modellenmiş nörofizyoloji eğitim kaydı, sinaptik entegrasyon açısından değerlendiriliyor.",
-    "presentation": "Eşit şiddette presinaptik uyarılar farklı zaman aralıklarıyla verildiğinde postsinaptik membran yanıtı değişiyor.",
-    "historySummary": "Laboratuvar oturumunda öğrenciler aynı postsinaptik nöron modeline eşit şiddette presinaptik uyarılar uygular. İlk denemede tek uyarı sonrası küçük bir depolarizasyon görülür, ancak ateşleme oluşmaz. İkinci denemede iki uyarı uzun aralıkla verildiğinde kayıt başlangıca döner ve yine ateşleme izlenmez. Üçüncü denemede aynı iki uyarı daha kısa aralıkla verildiğinde ikinci depolarizasyon birincinin üzerine eklenmiş gibi görünür ve kayıt eşik çizgisini geçer."
-  },
-  "vitals": {
-    "TA": "112/70 mmHg",
-    "Nabız": "76/dk",
-    "Solunum": "15/dk",
-    "SpO2": "%99, oda havasında",
-    "Ateş": "36.4 °C",
-    "Şok indeksi": "0.68"
-  },
-  "exam": [
-    "Gönüllünün nörolojik yakınması yoktur; deney eğitim amaçlı bilgisayar destekli kayıt üzerinden yürütülmüştür.",
-    "Bilinç açık, konuşma ve motor yanıtlar normaldir.",
-    "Duyu ve kas gücü muayenesinde kaba asimetri saptanmaz.",
-    "Uyarı şiddeti ve elektrot konumu tüm denemelerde sabit tutulmuştur."
-  ],
-  "investigations": [
-    {
-      "id": "v218-new-004-uyari-araligi-degisince-noron-kaydi-membran-potansiyeli-kaydi",
-      "label": "Postsinaptik membran potansiyeli kaydı",
-      "title": "Postsinaptik membran potansiyeli kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Sinaptik yanıt analizi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Tekil uyarı eşik altı depolarizasyon oluşturmuş, kısa aralıklı çift uyarı eşik çizgisini geçmiştir.",
-      "clinicalMeaning": "Tekil uyarı eşik altı depolarizasyon oluşturmuş, kısa aralıklı çift uyarı eşik çizgisini geçmiştir.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "Postsinaptik membran potansiyeli kaydı",
-        "summary": "Tekil uyarı eşik altı depolarizasyon oluşturmuş, kısa aralıklı çift uyarı eşik çizgisini geçmiştir.",
-        "interpretation": "Tekil uyarı eşik altı depolarizasyon oluşturmuş, kısa aralıklı çift uyarı eşik çizgisini geçmiştir.",
-        "values": [
-          [
-            "Tek uyarı yanıtı",
-            "-60 mV’ye kadar depolarizasyon",
-            "Eşik yaklaşık -55 mV",
-            "Eşik altı"
-          ],
-          [
-            "Uzun aralıklı çift uyarı",
-            "İki ayrı eşik altı yanıt",
-            "Eşik yaklaşık -55 mV",
-            "Ateşleme yok"
-          ],
-          [
-            "Kısa aralıklı çift uyarı",
-            "-54 mV’ye ulaşım",
-            "Eşik yaklaşık -55 mV",
-            "Ateşleme oluştu"
-          ],
-          [
-            "İstirahat potansiyeli",
-            "-70 mV",
-            "Yaklaşık -70 mV",
-            "Stabil"
-          ]
-        ],
-        "rows": [
-          [
-            "Tek uyarı yanıtı",
-            "-60 mV’ye kadar depolarizasyon",
-            "Eşik yaklaşık -55 mV",
-            "Eşik altı"
-          ],
-          [
-            "Uzun aralıklı çift uyarı",
-            "İki ayrı eşik altı yanıt",
-            "Eşik yaklaşık -55 mV",
-            "Ateşleme yok"
-          ],
-          [
-            "Kısa aralıklı çift uyarı",
-            "-54 mV’ye ulaşım",
-            "Eşik yaklaşık -55 mV",
-            "Ateşleme oluştu"
-          ],
-          [
-            "İstirahat potansiyeli",
-            "-70 mV",
-            "Yaklaşık -70 mV",
-            "Stabil"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Tek uyarı yanıtı",
-          "-60 mV’ye kadar depolarizasyon",
-          "Eşik yaklaşık -55 mV",
-          "Eşik altı"
-        ],
-        [
-          "Uzun aralıklı çift uyarı",
-          "İki ayrı eşik altı yanıt",
-          "Eşik yaklaşık -55 mV",
-          "Ateşleme yok"
-        ],
-        [
-          "Kısa aralıklı çift uyarı",
-          "-54 mV’ye ulaşım",
-          "Eşik yaklaşık -55 mV",
-          "Ateşleme oluştu"
-        ],
-        [
-          "İstirahat potansiyeli",
-          "-70 mV",
-          "Yaklaşık -70 mV",
-          "Stabil"
-        ]
-      ],
-      "postAnswerExplanation": "Tekil uyarı eşik altı depolarizasyon oluşturmuş, kısa aralıklı çift uyarı eşik çizgisini geçmiştir.",
-      "interpretation": "Tekil uyarı eşik altı depolarizasyon oluşturmuş, kısa aralıklı çift uyarı eşik çizgisini geçmiştir.",
-      "inlineFeedback": "Tekil uyarı eşik altı depolarizasyon oluşturmuş, kısa aralıklı çift uyarı eşik çizgisini geçmiştir.",
-      "explanationAfterAnswer": "Tekil uyarı eşik altı depolarizasyon oluşturmuş, kısa aralıklı çift uyarı eşik çizgisini geçmiştir."
     },
     {
-      "id": "v218-new-004-uyari-araligi-degisince-noron-kaydi-uyari-protokolu-kaydi",
-      "label": "Uyarı protokolü kaydı",
-      "title": "Uyarı protokolü kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Zamanlama analizi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Uyarı şiddeti sabit kalmış, ateşleme yalnız kısa aralık protokolünde izlenmiştir.",
-      "clinicalMeaning": "Uyarı şiddeti sabit kalmış, ateşleme yalnız kısa aralık protokolünde izlenmiştir.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 4,
-      "scoreValue": 4,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "Uyarı protokolü kaydı",
-        "summary": "Uyarı şiddeti sabit kalmış, ateşleme yalnız kısa aralık protokolünde izlenmiştir.",
-        "interpretation": "Uyarı şiddeti sabit kalmış, ateşleme yalnız kısa aralık protokolünde izlenmiştir.",
-        "values": [
-          [
-            "Uyarı genliği",
-            "Sabit",
-            "Protokol koşulu",
-            "Değişmedi"
-          ],
-          [
-            "Uzun aralık",
-            "80 ms",
-            "Protokol koşulu",
-            "Yanıtlar ayrıldı"
-          ],
-          [
-            "Kısa aralık",
-            "8 ms",
-            "Protokol koşulu",
-            "Yanıtlar üst üste geldi"
-          ],
-          [
-            "Presinaptik lif iletimi",
-            "Korunmuş",
-            "Protokol koşulu",
-            "Her uyarı ulaştı"
-          ]
-        ],
-        "rows": [
-          [
-            "Uyarı genliği",
-            "Sabit",
-            "Protokol koşulu",
-            "Değişmedi"
-          ],
-          [
-            "Uzun aralık",
-            "80 ms",
-            "Protokol koşulu",
-            "Yanıtlar ayrıldı"
-          ],
-          [
-            "Kısa aralık",
-            "8 ms",
-            "Protokol koşulu",
-            "Yanıtlar üst üste geldi"
-          ],
-          [
-            "Presinaptik lif iletimi",
-            "Korunmuş",
-            "Protokol koşulu",
-            "Her uyarı ulaştı"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Uyarı genliği",
-          "Sabit",
-          "Protokol koşulu",
-          "Değişmedi"
-        ],
-        [
-          "Uzun aralık",
-          "80 ms",
-          "Protokol koşulu",
-          "Yanıtlar ayrıldı"
-        ],
-        [
-          "Kısa aralık",
-          "8 ms",
-          "Protokol koşulu",
-          "Yanıtlar üst üste geldi"
-        ],
-        [
-          "Presinaptik lif iletimi",
-          "Korunmuş",
-          "Protokol koşulu",
-          "Her uyarı ulaştı"
-        ]
-      ],
-      "postAnswerExplanation": "Uyarı şiddeti sabit kalmış, ateşleme yalnız kısa aralık protokolünde izlenmiştir.",
-      "interpretation": "Uyarı şiddeti sabit kalmış, ateşleme yalnız kısa aralık protokolünde izlenmiştir.",
-      "inlineFeedback": "Uyarı şiddeti sabit kalmış, ateşleme yalnız kısa aralık protokolünde izlenmiştir.",
-      "explanationAfterAnswer": "Uyarı şiddeti sabit kalmış, ateşleme yalnız kısa aralık protokolünde izlenmiştir."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu kayıtta ateşleme oluşmasını en iyi açıklayan sinaptik entegrasyon mekanizması hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "temporal_summation_of_epsps_to_threshold",
-  "diagnosis": {
-    "correct": "Ardışık EPSP’lerin kısa aralıkta toplanarak başlangıç segmentini eşiğe yaklaştırması",
-    "options": [
-      "Presinaptik terminalde vezikül salınımının uzun aralıkta daha fazla birikmesi",
-      "İnhibitör interneuron girişinin her uyarıda eşik değerini kalıcı olarak düşürmesi",
-      "Miyelinli aksonda saltator iletimin tek uyarıdan sonra belirgin yavaşlaması",
-      "Postsinaptik membranda repolarizasyonun klor çıkışıyla hızlanması",
-      "Ardışık EPSP’lerin kısa aralıkta toplanarak başlangıç segmentini eşiğe yaklaştırması"
-    ],
-    "question": "Bu kayıtta ateşleme oluşmasını en iyi açıklayan sinaptik entegrasyon mekanizması hangisidir?",
-    "explanation": "Tekil EPSP eşik altında kalmış, uzun aralıklı uyarılarda membran potansiyeli başlangıca döndüğü için ateşleme oluşmamıştır. Kısa aralıkta ikinci EPSP, birincinin etkisi tam kaybolmadan geldiği için depolarizasyonlar üst üste binmiş ve akson başlangıç segmenti eşik değere ulaşmıştır. Bu patern, nöronların sinaptik girdileri zaman içinde entegre ederek karar vermesinin tipik örneğidir.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "Eşik altı EPSP tek başına ateşlemez; kısa aralıkla tekrarlanırsa zamansal summasyonla eşik değere ulaşabilir."
-      }
-    ],
-    "optionComparison": {
-      "Presinaptik terminalde vezikül salınımının uzun aralıkta daha fazla birikmesi": "Presinaptik salınım bazı sinapslarda fasilitasyon veya depresyon gösterebilir, ancak veride uzun aralıkta yanıt artışı değil, kısa aralıkta postsinaptik potansiyellerin üst üste binmesi öne çıkar. Tekil uyarılar benzer küçük depolarizasyon üretmiş, uzak aralıklı çift uyarı aksiyon potansiyeli oluşturamamıştır. Bu nedenle temel ayırıcı nokta presinaptik vezikül birikimi değil postsinaptik zamanlama etkisidir.",
-      "İnhibitör interneuron girişinin her uyarıda eşik değerini kalıcı olarak düşürmesi": "İnhibitör giriş eşik değerini kalıcı olarak düşürmez; çoğu durumda hiperpolarizasyon veya şant etkisiyle nöronun ateşleme olasılığını azaltır. Bu kayıtta kısa aralıklı uyarılar ateşlemeyi kolaylaştırmaktadır. İnhibisyon baskın olsaydı depolarizan potansiyellerin eşik değere yaklaşması değil, eşikten uzaklaşması beklenirdi.",
-      "Miyelinli aksonda saltator iletimin tek uyarıdan sonra belirgin yavaşlaması": "Saltator iletim aksiyon potansiyelinin miyelinli akson boyunca hızlı ilerlemesini sağlar; bu mekanizma postsinaptik hücrede iki küçük potansiyelin kısa aralıkta birleşmesini açıklamaz. Veride iletim bloğu veya akson boyunca yavaşlama değil, dendrit/soma düzeyinde membran potansiyeli birikimi gösterilmiştir. Bu nedenle temel olay akson iletimi değil sinaptik entegrasyondur.",
-      "Postsinaptik membranda repolarizasyonun klor çıkışıyla hızlanması": "Klor çıkışı şeklinde ifade edilen repolarizasyon bu deney paternini açıklamaz; birçok inhibitör sinapsta klor iletkenliği artışı membranı eşikten uzaklaştırır veya şantlar. Kayıtta kısa aralıkta depolarizasyonlar büyüyerek eşik çizgisine yaklaşmıştır. Bu seçenek, ateşlemeyi kolaylaştıran depolarizan toplama yerine inhibisyon benzeri bir yön önerir.",
-      "Ardışık EPSP’lerin kısa aralıkta toplanarak başlangıç segmentini eşiğe yaklaştırması": "Doğru seçenek budur. Tekil EPSP eşik altı kalabilir; ancak membran potansiyeli tam olarak başlangıca dönmeden ikinci EPSP gelirse depolarizasyonlar zamansal olarak toplanır. Kısa aralıklı iki uyarıda akson başlangıç segmentinin eşik değere ulaşması ve uzun aralıkta aynı sonucun oluşmaması, zamansal sinaptik entegrasyonu gösterir."
-    },
-    "answerFeedback": {
-      "Presinaptik terminalde vezikül salınımının uzun aralıkta daha fazla birikmesi": "Presinaptik salınım bazı sinapslarda fasilitasyon veya depresyon gösterebilir, ancak veride uzun aralıkta yanıt artışı değil, kısa aralıkta postsinaptik potansiyellerin üst üste binmesi öne çıkar. Tekil uyarılar benzer küçük depolarizasyon üretmiş, uzak aralıklı çift uyarı aksiyon potansiyeli oluşturamamıştır. Bu nedenle temel ayırıcı nokta presinaptik vezikül birikimi değil postsinaptik zamanlama etkisidir.",
-      "İnhibitör interneuron girişinin her uyarıda eşik değerini kalıcı olarak düşürmesi": "İnhibitör giriş eşik değerini kalıcı olarak düşürmez; çoğu durumda hiperpolarizasyon veya şant etkisiyle nöronun ateşleme olasılığını azaltır. Bu kayıtta kısa aralıklı uyarılar ateşlemeyi kolaylaştırmaktadır. İnhibisyon baskın olsaydı depolarizan potansiyellerin eşik değere yaklaşması değil, eşikten uzaklaşması beklenirdi.",
-      "Miyelinli aksonda saltator iletimin tek uyarıdan sonra belirgin yavaşlaması": "Saltator iletim aksiyon potansiyelinin miyelinli akson boyunca hızlı ilerlemesini sağlar; bu mekanizma postsinaptik hücrede iki küçük potansiyelin kısa aralıkta birleşmesini açıklamaz. Veride iletim bloğu veya akson boyunca yavaşlama değil, dendrit/soma düzeyinde membran potansiyeli birikimi gösterilmiştir. Bu nedenle temel olay akson iletimi değil sinaptik entegrasyondur.",
-      "Postsinaptik membranda repolarizasyonun klor çıkışıyla hızlanması": "Klor çıkışı şeklinde ifade edilen repolarizasyon bu deney paternini açıklamaz; birçok inhibitör sinapsta klor iletkenliği artışı membranı eşikten uzaklaştırır veya şantlar. Kayıtta kısa aralıkta depolarizasyonlar büyüyerek eşik çizgisine yaklaşmıştır. Bu seçenek, ateşlemeyi kolaylaştıran depolarizan toplama yerine inhibisyon benzeri bir yön önerir.",
-      "Ardışık EPSP’lerin kısa aralıkta toplanarak başlangıç segmentini eşiğe yaklaştırması": "Doğru seçenek budur. Tekil EPSP eşik altı kalabilir; ancak membran potansiyeli tam olarak başlangıca dönmeden ikinci EPSP gelirse depolarizasyonlar zamansal olarak toplanır. Kısa aralıklı iki uyarıda akson başlangıç segmentinin eşik değere ulaşması ve uzun aralıkta aynı sonucun oluşmaması, zamansal sinaptik entegrasyonu gösterir."
-    }
-  },
-  "coreKnowledge": "Zamansal summasyon, aynı veya benzer sinaptik girdilerin kısa aralıklarla gelmesi sonucu postsinaptik potansiyellerin üst üste binmesidir. Depolarizasyonlar akson başlangıç segmentinde eşik değere ulaşırsa aksiyon potansiyeli oluşur. Uyarılar fazla aralıklıysa membran potansiyeli başlangıca döner ve toplam etki kaybolur.",
-  "examPearl": "Eşik altı EPSP tek başına ateşlemez; kısa aralıkla tekrarlanırsa zamansal summasyonla eşik değere ulaşabilir.",
-  "whyCorrect": "Doğru seçenek budur. Tekil EPSP eşik altı kalabilir; ancak membran potansiyeli tam olarak başlangıca dönmeden ikinci EPSP gelirse depolarizasyonlar zamansal olarak toplanır. Kısa aralıklı iki uyarıda akson başlangıç segmentinin eşik değere ulaşması ve uzun aralıkta aynı sonucun oluşmaması, zamansal sinaptik entegrasyonu gösterir.",
-  "optionComparison": {
-    "Presinaptik terminalde vezikül salınımının uzun aralıkta daha fazla birikmesi": "Presinaptik salınım bazı sinapslarda fasilitasyon veya depresyon gösterebilir, ancak veride uzun aralıkta yanıt artışı değil, kısa aralıkta postsinaptik potansiyellerin üst üste binmesi öne çıkar. Tekil uyarılar benzer küçük depolarizasyon üretmiş, uzak aralıklı çift uyarı aksiyon potansiyeli oluşturamamıştır. Bu nedenle temel ayırıcı nokta presinaptik vezikül birikimi değil postsinaptik zamanlama etkisidir.",
-    "İnhibitör interneuron girişinin her uyarıda eşik değerini kalıcı olarak düşürmesi": "İnhibitör giriş eşik değerini kalıcı olarak düşürmez; çoğu durumda hiperpolarizasyon veya şant etkisiyle nöronun ateşleme olasılığını azaltır. Bu kayıtta kısa aralıklı uyarılar ateşlemeyi kolaylaştırmaktadır. İnhibisyon baskın olsaydı depolarizan potansiyellerin eşik değere yaklaşması değil, eşikten uzaklaşması beklenirdi.",
-    "Miyelinli aksonda saltator iletimin tek uyarıdan sonra belirgin yavaşlaması": "Saltator iletim aksiyon potansiyelinin miyelinli akson boyunca hızlı ilerlemesini sağlar; bu mekanizma postsinaptik hücrede iki küçük potansiyelin kısa aralıkta birleşmesini açıklamaz. Veride iletim bloğu veya akson boyunca yavaşlama değil, dendrit/soma düzeyinde membran potansiyeli birikimi gösterilmiştir. Bu nedenle temel olay akson iletimi değil sinaptik entegrasyondur.",
-    "Postsinaptik membranda repolarizasyonun klor çıkışıyla hızlanması": "Klor çıkışı şeklinde ifade edilen repolarizasyon bu deney paternini açıklamaz; birçok inhibitör sinapsta klor iletkenliği artışı membranı eşikten uzaklaştırır veya şantlar. Kayıtta kısa aralıkta depolarizasyonlar büyüyerek eşik çizgisine yaklaşmıştır. Bu seçenek, ateşlemeyi kolaylaştıran depolarizan toplama yerine inhibisyon benzeri bir yön önerir.",
-    "Ardışık EPSP’lerin kısa aralıkta toplanarak başlangıç segmentini eşiğe yaklaştırması": "Doğru seçenek budur. Tekil EPSP eşik altı kalabilir; ancak membran potansiyeli tam olarak başlangıca dönmeden ikinci EPSP gelirse depolarizasyonlar zamansal olarak toplanır. Kısa aralıklı iki uyarıda akson başlangıç segmentinin eşik değere ulaşması ve uzun aralıkta aynı sonucun oluşmaması, zamansal sinaptik entegrasyonu gösterir."
-  },
-  "evidenceChain": [
-    {
-      "title": "Tekil yanıt",
-      "text": "Tek uyarının eşik altı kalması → tek EPSP aksiyon potansiyeli için yeterli değildir",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Uzun aralık",
-      "text": "Membran başlangıca dönünce ikinci yanıt yine eşik altı kalır → birikim oluşmaz",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Kısa aralık",
-      "text": "İkinci depolarizasyon birincinin üzerine eklenir → eşik değere ulaşma olasılığı artar",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Sabit uyarı",
-      "text": "Uyarı genliği değişmediği halde sonuç değişir → fark zamanlamaya bağlı sinaptik entegrasyondur",
-      "weight": "medium",
-      "source": "case"
-    }
-  ],
-  "whyWrong": {
-    "Presinaptik terminalde vezikül salınımının uzun aralıkta daha fazla birikmesi": "Presinaptik salınım bazı sinapslarda fasilitasyon veya depresyon gösterebilir, ancak veride uzun aralıkta yanıt artışı değil, kısa aralıkta postsinaptik potansiyellerin üst üste binmesi öne çıkar. Tekil uyarılar benzer küçük depolarizasyon üretmiş, uzak aralıklı çift uyarı aksiyon potansiyeli oluşturamamıştır. Bu nedenle temel ayırıcı nokta presinaptik vezikül birikimi değil postsinaptik zamanlama etkisidir.",
-    "İnhibitör interneuron girişinin her uyarıda eşik değerini kalıcı olarak düşürmesi": "İnhibitör giriş eşik değerini kalıcı olarak düşürmez; çoğu durumda hiperpolarizasyon veya şant etkisiyle nöronun ateşleme olasılığını azaltır. Bu kayıtta kısa aralıklı uyarılar ateşlemeyi kolaylaştırmaktadır. İnhibisyon baskın olsaydı depolarizan potansiyellerin eşik değere yaklaşması değil, eşikten uzaklaşması beklenirdi.",
-    "Miyelinli aksonda saltator iletimin tek uyarıdan sonra belirgin yavaşlaması": "Saltator iletim aksiyon potansiyelinin miyelinli akson boyunca hızlı ilerlemesini sağlar; bu mekanizma postsinaptik hücrede iki küçük potansiyelin kısa aralıkta birleşmesini açıklamaz. Veride iletim bloğu veya akson boyunca yavaşlama değil, dendrit/soma düzeyinde membran potansiyeli birikimi gösterilmiştir. Bu nedenle temel olay akson iletimi değil sinaptik entegrasyondur.",
-    "Postsinaptik membranda repolarizasyonun klor çıkışıyla hızlanması": "Klor çıkışı şeklinde ifade edilen repolarizasyon bu deney paternini açıklamaz; birçok inhibitör sinapsta klor iletkenliği artışı membranı eşikten uzaklaştırır veya şantlar. Kayıtta kısa aralıkta depolarizasyonlar büyüyerek eşik çizgisine yaklaşmıştır. Bu seçenek, ateşlemeyi kolaylaştıran depolarizan toplama yerine inhibisyon benzeri bir yön önerir."
-  },
-  "mechanismExplanation": "Membran potansiyeli tamamen eski düzeye dönmeden gelen ikinci EPSP, ilk depolarizasyonla toplanır ve başlangıç segmentini eşik değere yaklaştırır.",
-  "scientificComment": "Soru, nöronal yanıtı yalnız uyarı şiddetiyle değil, postsinaptik potansiyellerin zaman içindeki entegrasyonuyla düşündürür.",
-  "helpText": "Sinaptik entegrasyonda uyarıların şiddeti kadar geliş zamanı ve membran zaman sabiti de önemlidir.",
-  "preserveInvestigationOrder": true
-},
-{
-  "id": "v218-new-005-glukoz-artisinda-beta-hucre-kaydi",
-  "branchId": "physiology",
-  "caseType": "standard",
-  "relatedBranch": "Fizyoloji",
-  "title": "Glukoz artışında beta hücre kaydı",
-  "difficulty": "Orta",
-  "difficultyTag": "Orta",
-  "clinicalFocus": "Glukoz artışı sonrası pankreas beta hücresinde metabolik sinyalin membran potansiyeli, kalsiyum girişi ve insülin salınımına dönüşmesini yorumlama.",
-  "learningTarget": "Beta hücresinde ATP duyarlı K+ kanalı kapanması, depolarizasyon, voltaj kapılı Ca2+ girişi ve ekzositoz sırasını çeldirici iyon akımlarından ayırt edebilme.",
-  "demographics": "26 yaşında sağlıklı erkek gönüllüden alınan eğitim verisi",
-  "setting": "Endokrin fizyoloji laboratuvarı",
-  "chiefComplaint": "Standart glukoz yüklemesi sonrası beta hücre yanıtını temsil eden metabolik ve elektriksel kayıtlar değerlendiriliyor.",
-  "stem": "Sağlıklı gönüllü gece açlığı sonrası laboratuvara gelir ve standart glukoz yükleme protokolüne alınır. İşlem öncesinde herhangi bir ilaç kullanmadığını, diyabet öyküsü bulunmadığını ve son saatlerde yoğun egzersiz yapmadığını belirtir. Glukoz alımından sonra belirgin yakınma yaşamaz; protokol sırasında seri kan örnekleri ve eğitim amaçlı beta hücre model kayıtları birlikte incelenir. Öğrenciler, glukoz artışının elektriksel yanıt ve hormon salınımına nasıl çevrildiğini açıklamaya çalışır.",
-  "patientIntro": {
-    "profile": "26 yaşında sağlıklı erkek gönüllü, endokrin fizyoloji laboratuvarında glukoz-insülin yanıtı açısından izleniyor.",
-    "presentation": "Glukoz yüklemesi sonrası seri insülin ölçümü ve beta hücre modelinde iyon akımı-kalsiyum sinyali kaydı değerlendiriliyor.",
-    "historySummary": "Sağlıklı gönüllü gece açlığı sonrası laboratuvara gelir ve standart glukoz yükleme protokolüne alınır. İşlem öncesinde herhangi bir ilaç kullanmadığını, diyabet öyküsü bulunmadığını ve son saatlerde yoğun egzersiz yapmadığını belirtir. Glukoz alımından sonra belirgin yakınma yaşamaz; protokol sırasında seri kan örnekleri ve eğitim amaçlı beta hücre model kayıtları birlikte incelenir. Öğrenciler, glukoz artışının elektriksel yanıt ve hormon salınımına nasıl çevrildiğini açıklamaya çalışır."
-  },
-  "vitals": {
-    "TA": "116/72 mmHg",
-    "Nabız": "78/dk",
-    "Solunum": "14/dk",
-    "SpO2": "%99, oda havasında",
-    "Ateş": "36.5 °C",
-    "Şok indeksi": "0.67"
-  },
-  "exam": [
-    "Gönüllünün genel durumu iyi, bilinç açık ve koopere.",
-    "Ağız kuruluğu, ketotik koku veya dehidratasyon bulgusu yoktur.",
-    "Karın muayenesi doğal, hassasiyet saptanmaz.",
-    "Protokol boyunca belirgin tremor, terleme veya hipotansiyon izlenmez."
-  ],
-  "investigations": [
-    {
-      "id": "v218-new-005-glukoz-artisinda-beta-hucre-kaydi-glukoz-insulin-kaydi",
-      "label": "Glukoz ve insülin kaydı",
-      "title": "Glukoz ve insülin kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "Endokrin yanıt analizi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Glukoz yüklemesi sonrası plazma glukozu artmış ve buna eşlik eden insülin yükselmesi izlenmiştir.",
-      "clinicalMeaning": "Glukoz yüklemesi sonrası plazma glukozu artmış ve buna eşlik eden insülin yükselmesi izlenmiştir.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 5,
-      "scoreValue": 5,
-      "source": "case",
-      "clinicalFlowOrder": 1,
-      "result": {
-        "title": "Glukoz ve insülin kaydı",
-        "summary": "Glukoz yüklemesi sonrası plazma glukozu artmış ve buna eşlik eden insülin yükselmesi izlenmiştir.",
-        "interpretation": "Glukoz yüklemesi sonrası plazma glukozu artmış ve buna eşlik eden insülin yükselmesi izlenmiştir.",
-        "values": [
-          [
-            "Açlık plazma glukozu",
-            "88 mg/dL",
-            "70-99 mg/dL",
-            "Normal"
-          ],
-          [
-            "30. dk plazma glukozu",
-            "142 mg/dL",
-            "Protokol yanıtı",
-            "Artmış"
-          ],
-          [
-            "Açlık insülin",
-            "Düşük-normal",
-            "Açlık yanıtı",
-            "Beklenen aralıkta"
-          ],
-          [
-            "30. dk insülin",
-            "Belirgin artmış",
-            "Protokol yanıtı",
-            "Glukoza eşlik ediyor"
-          ]
-        ],
-        "rows": [
-          [
-            "Açlık plazma glukozu",
-            "88 mg/dL",
-            "70-99 mg/dL",
-            "Normal"
-          ],
-          [
-            "30. dk plazma glukozu",
-            "142 mg/dL",
-            "Protokol yanıtı",
-            "Artmış"
-          ],
-          [
-            "Açlık insülin",
-            "Düşük-normal",
-            "Açlık yanıtı",
-            "Beklenen aralıkta"
-          ],
-          [
-            "30. dk insülin",
-            "Belirgin artmış",
-            "Protokol yanıtı",
-            "Glukoza eşlik ediyor"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Açlık plazma glukozu",
-          "88 mg/dL",
-          "70-99 mg/dL",
-          "Normal"
-        ],
-        [
-          "30. dk plazma glukozu",
-          "142 mg/dL",
-          "Protokol yanıtı",
-          "Artmış"
-        ],
-        [
-          "Açlık insülin",
-          "Düşük-normal",
-          "Açlık yanıtı",
-          "Beklenen aralıkta"
-        ],
-        [
-          "30. dk insülin",
-          "Belirgin artmış",
-          "Protokol yanıtı",
-          "Glukoza eşlik ediyor"
-        ]
-      ],
-      "postAnswerExplanation": "Glukoz yüklemesi sonrası plazma glukozu artmış ve buna eşlik eden insülin yükselmesi izlenmiştir.",
-      "interpretation": "Glukoz yüklemesi sonrası plazma glukozu artmış ve buna eşlik eden insülin yükselmesi izlenmiştir.",
-      "inlineFeedback": "Glukoz yüklemesi sonrası plazma glukozu artmış ve buna eşlik eden insülin yükselmesi izlenmiştir.",
-      "explanationAfterAnswer": "Glukoz yüklemesi sonrası plazma glukozu artmış ve buna eşlik eden insülin yükselmesi izlenmiştir."
-    },
-    {
-      "id": "v218-new-005-glukoz-artisinda-beta-hucre-kaydi-beta-hucre-elektriksel-kaydi",
-      "label": "Beta hücre elektriksel kaydı",
-      "title": "Beta hücre elektriksel kaydı",
-      "type": "functional",
-      "priority": "essential",
-      "subtype": "İyon akımı analizi",
-      "category": "physiologyTest",
-      "testTypeCategory": "physiologyTest",
-      "summary": "Model kayıtta ATP artışıyla K+ akımı azalmış, membran depolarizasyonu ve Ca2+ geçişleri artmıştır.",
-      "clinicalMeaning": "Model kayıtta ATP artışıyla K+ akımı azalmış, membran depolarizasyonu ve Ca2+ geçişleri artmıştır.",
-      "testValueLabel": "Kritik veri",
-      "educationalValue": "Kritik veri",
-      "clinicalPriorityLabel": "Kritik veri",
-      "scoreImpact": 4,
-      "scoreValue": 4,
-      "source": "case",
-      "clinicalFlowOrder": 2,
-      "result": {
-        "title": "Beta hücre elektriksel kaydı",
-        "summary": "Model kayıtta ATP artışıyla K+ akımı azalmış, membran depolarizasyonu ve Ca2+ geçişleri artmıştır.",
-        "interpretation": "Model kayıtta ATP artışıyla K+ akımı azalmış, membran depolarizasyonu ve Ca2+ geçişleri artmıştır.",
-        "values": [
-          [
-            "Hücre içi ATP/ADP oranı",
-            "Artmış",
-            "Glukoz metabolizmasına duyarlı",
-            "Başlangıca göre yüksek"
-          ],
-          [
-            "K+ dışa akımı",
-            "Azalmış",
-            "Kanal durumuna bağlı",
-            "Başlangıca göre düşük"
-          ],
-          [
-            "Membran potansiyeli",
-            "Daha az negatif",
-            "Beta hücre yanıtı",
-            "Depolarizasyon"
-          ],
-          [
-            "Ca2+ geçişleri",
-            "Artmış",
-            "Sekresyon yanıtı",
-            "Başlangıca göre yüksek"
-          ]
-        ],
-        "rows": [
-          [
-            "Hücre içi ATP/ADP oranı",
-            "Artmış",
-            "Glukoz metabolizmasına duyarlı",
-            "Başlangıca göre yüksek"
-          ],
-          [
-            "K+ dışa akımı",
-            "Azalmış",
-            "Kanal durumuna bağlı",
-            "Başlangıca göre düşük"
-          ],
-          [
-            "Membran potansiyeli",
-            "Daha az negatif",
-            "Beta hücre yanıtı",
-            "Depolarizasyon"
-          ],
-          [
-            "Ca2+ geçişleri",
-            "Artmış",
-            "Sekresyon yanıtı",
-            "Başlangıca göre yüksek"
-          ]
-        ]
-      },
-      "rows": [
-        [
-          "Hücre içi ATP/ADP oranı",
-          "Artmış",
-          "Glukoz metabolizmasına duyarlı",
-          "Başlangıca göre yüksek"
-        ],
-        [
-          "K+ dışa akımı",
-          "Azalmış",
-          "Kanal durumuna bağlı",
-          "Başlangıca göre düşük"
-        ],
-        [
-          "Membran potansiyeli",
-          "Daha az negatif",
-          "Beta hücre yanıtı",
-          "Depolarizasyon"
-        ],
-        [
-          "Ca2+ geçişleri",
-          "Artmış",
-          "Sekresyon yanıtı",
-          "Başlangıca göre yüksek"
-        ]
-      ],
-      "postAnswerExplanation": "Model kayıtta ATP artışıyla K+ akımı azalmış, membran depolarizasyonu ve Ca2+ geçişleri artmıştır.",
-      "interpretation": "Model kayıtta ATP artışıyla K+ akımı azalmış, membran depolarizasyonu ve Ca2+ geçişleri artmıştır.",
-      "inlineFeedback": "Model kayıtta ATP artışıyla K+ akımı azalmış, membran depolarizasyonu ve Ca2+ geçişleri artmıştır.",
-      "explanationAfterAnswer": "Model kayıtta ATP artışıyla K+ akımı azalmış, membran depolarizasyonu ve Ca2+ geçişleri artmıştır."
-    }
-  ],
-  "useSyntheticInvestigationBank": false,
-  "managementSequence": [],
-  "hideExamSignal": true,
-  "shuffleOptions": true,
-  "question": "Bu insülin yanıtını başlatan temel beta hücre mekanizması hangisidir?",
-  "questionType": "physiology_mechanism",
-  "answerTarget": "glucose_stimulated_insulin_secretion_katp_closure_calcium_influx",
-  "diagnosis": {
-    "correct": "ATP duyarlı K+ kanallarının kapanmasıyla depolarizasyon ve Ca2+ girişinin artması",
-    "options": [
-      "Glukoz girişinin azalmasıyla hücre içi ATP’nin düşmesi ve K+ çıkışının artması",
-      "Sodyum kanallarının sürekli açık kalmasıyla beta hücresinin refrakter hale gelmesi",
-      "ATP duyarlı K+ kanallarının kapanmasıyla depolarizasyon ve Ca2+ girişinin artması",
-      "cAMP azalmasıyla ekzositoz granüllerinin membrana yaklaşmasının hızlanması",
-      "Klor girişinin artmasıyla membran potansiyelinin daha negatif düzeye çekilmesi"
-    ],
-    "question": "Bu insülin yanıtını başlatan temel beta hücre mekanizması hangisidir?",
-    "explanation": "Glukoz beta hücresine girdikten sonra metabolize edilir ve ATP/ADP oranı yükselir. ATP duyarlı K+ kanallarının kapanması K+ çıkışını azaltır; membran depolarize olur ve voltaj kapılı Ca2+ kanalları açılır. Hücre içine giren Ca2+, insülin granüllerinin ekzositozunu tetikler; glukoz, K+ akımı, Ca2+ sinyali ve insülin artışının birlikte izlenmesi bu mekanizmayı destekler.",
-    "pearls": [
-      {
-        "label": "Sınav notu",
-        "text": "Beta hücresinde glukoz → ATP artışı → KATP kapanması → depolarizasyon → Ca2+ girişi → insülin ekzositozu sırası klasik mekanizma zinciridir."
-      }
-    ],
-    "optionComparison": {
-      "Glukoz girişinin azalmasıyla hücre içi ATP’nin düşmesi ve K+ çıkışının artması": "Glukoz girişi ve metabolizması azaldığında ATP üretimi düşer, ATP duyarlı K+ kanalları daha açık kalır ve beta hücresi hiperpolarize olma eğilimindedir. Bu durum insülin salınımını artırmak yerine azaltır. Olguda glukoz sonrası ATP artışı, K+ akımında azalma ve insülin yükselmesi izlendiği için bu seçenek yön olarak terstir.",
-      "Sodyum kanallarının sürekli açık kalmasıyla beta hücresinin refrakter hale gelmesi": "Beta hücrelerinde insülin sekresyonunun temel başlatıcı olayı hızlı sodyum kanallarının sürekli açık kalması değildir. Sürekli açık sodyum kanalları refrakterlik ve iletim sorunları gibi nöronal/kardiyak bağlamlarda düşünülür. Bu kayıtta K+ akımı, membran depolarizasyonu ve Ca2+ sinyali belirleyici olduğu için seçenek uygun değildir.",
-      "ATP duyarlı K+ kanallarının kapanmasıyla depolarizasyon ve Ca2+ girişinin artması": "Doğru seçenek budur. Glukoz beta hücresinde metabolize edilince ATP/ADP oranı artar; ATP duyarlı K+ kanalları kapanır ve K+ çıkışı azalır. Membran depolarize olur, voltaj kapılı Ca2+ kanalları açılır ve hücre içine giren Ca2+ insülin granüllerinin ekzositozunu başlatır. Kayıttaki K+ akımı azalması, Ca2+ sinyali ve insülin artışı bu zinciri destekler.",
-      "cAMP azalmasıyla ekzositoz granüllerinin membrana yaklaşmasının hızlanması": "cAMP birçok durumda ekzositozu kolaylaştırıcı destek sinyali olabilir; ancak azalması insülin granüllerinin membrana yaklaşmasını hızlandıran ana mekanizma değildir. Ayrıca bu olguda primer kayıt ATP artışı, K+ akımı azalması ve Ca2+ girişidir. cAMP azalması, glukozun beta hücresindeki temel sekresyon başlatıcı zincirini açıklamaz.",
-      "Klor girişinin artmasıyla membran potansiyelinin daha negatif düzeye çekilmesi": "Klor girişinin artması membranı daha negatif düzeye çekerek depolarizasyonu zorlaştırabilir; bu durum voltaj kapılı Ca2+ kanallarının açılmasını ve insülin salınımını desteklemez. Olguda membran potansiyeli daha az negatifleşmiş ve Ca2+ sinyali artmıştır. Bu nedenle hiperpolarizan klor yanıtı ölçülen paternle uyumlu değildir."
-    },
-    "answerFeedback": {
-      "Glukoz girişinin azalmasıyla hücre içi ATP’nin düşmesi ve K+ çıkışının artması": "Glukoz girişi ve metabolizması azaldığında ATP üretimi düşer, ATP duyarlı K+ kanalları daha açık kalır ve beta hücresi hiperpolarize olma eğilimindedir. Bu durum insülin salınımını artırmak yerine azaltır. Olguda glukoz sonrası ATP artışı, K+ akımında azalma ve insülin yükselmesi izlendiği için bu seçenek yön olarak terstir.",
-      "Sodyum kanallarının sürekli açık kalmasıyla beta hücresinin refrakter hale gelmesi": "Beta hücrelerinde insülin sekresyonunun temel başlatıcı olayı hızlı sodyum kanallarının sürekli açık kalması değildir. Sürekli açık sodyum kanalları refrakterlik ve iletim sorunları gibi nöronal/kardiyak bağlamlarda düşünülür. Bu kayıtta K+ akımı, membran depolarizasyonu ve Ca2+ sinyali belirleyici olduğu için seçenek uygun değildir.",
-      "ATP duyarlı K+ kanallarının kapanmasıyla depolarizasyon ve Ca2+ girişinin artması": "Doğru seçenek budur. Glukoz beta hücresinde metabolize edilince ATP/ADP oranı artar; ATP duyarlı K+ kanalları kapanır ve K+ çıkışı azalır. Membran depolarize olur, voltaj kapılı Ca2+ kanalları açılır ve hücre içine giren Ca2+ insülin granüllerinin ekzositozunu başlatır. Kayıttaki K+ akımı azalması, Ca2+ sinyali ve insülin artışı bu zinciri destekler.",
-      "cAMP azalmasıyla ekzositoz granüllerinin membrana yaklaşmasının hızlanması": "cAMP birçok durumda ekzositozu kolaylaştırıcı destek sinyali olabilir; ancak azalması insülin granüllerinin membrana yaklaşmasını hızlandıran ana mekanizma değildir. Ayrıca bu olguda primer kayıt ATP artışı, K+ akımı azalması ve Ca2+ girişidir. cAMP azalması, glukozun beta hücresindeki temel sekresyon başlatıcı zincirini açıklamaz.",
-      "Klor girişinin artmasıyla membran potansiyelinin daha negatif düzeye çekilmesi": "Klor girişinin artması membranı daha negatif düzeye çekerek depolarizasyonu zorlaştırabilir; bu durum voltaj kapılı Ca2+ kanallarının açılmasını ve insülin salınımını desteklemez. Olguda membran potansiyeli daha az negatifleşmiş ve Ca2+ sinyali artmıştır. Bu nedenle hiperpolarizan klor yanıtı ölçülen paternle uyumlu değildir."
-    }
-  },
-  "coreKnowledge": "Pankreas beta hücresinde glukoz metabolizması ATP/ADP oranını artırır. ATP duyarlı K+ kanalları kapanınca membran depolarize olur, voltaj kapılı Ca2+ kanalları açılır ve Ca2+ girişi insülin granül ekzositozunu başlatır. Bu mekanizma glukozun metabolik bilgisini hormon sekresyonuna çeviren temel elektriksel-kimyasal bağlantıdır.",
-  "examPearl": "Beta hücresinde glukoz → ATP artışı → KATP kapanması → depolarizasyon → Ca2+ girişi → insülin ekzositozu sırası klasik mekanizma zinciridir.",
-  "whyCorrect": "Doğru seçenek budur. Glukoz beta hücresinde metabolize edilince ATP/ADP oranı artar; ATP duyarlı K+ kanalları kapanır ve K+ çıkışı azalır. Membran depolarize olur, voltaj kapılı Ca2+ kanalları açılır ve hücre içine giren Ca2+ insülin granüllerinin ekzositozunu başlatır. Kayıttaki K+ akımı azalması, Ca2+ sinyali ve insülin artışı bu zinciri destekler.",
-  "optionComparison": {
-    "Glukoz girişinin azalmasıyla hücre içi ATP’nin düşmesi ve K+ çıkışının artması": "Glukoz girişi ve metabolizması azaldığında ATP üretimi düşer, ATP duyarlı K+ kanalları daha açık kalır ve beta hücresi hiperpolarize olma eğilimindedir. Bu durum insülin salınımını artırmak yerine azaltır. Olguda glukoz sonrası ATP artışı, K+ akımında azalma ve insülin yükselmesi izlendiği için bu seçenek yön olarak terstir.",
-    "Sodyum kanallarının sürekli açık kalmasıyla beta hücresinin refrakter hale gelmesi": "Beta hücrelerinde insülin sekresyonunun temel başlatıcı olayı hızlı sodyum kanallarının sürekli açık kalması değildir. Sürekli açık sodyum kanalları refrakterlik ve iletim sorunları gibi nöronal/kardiyak bağlamlarda düşünülür. Bu kayıtta K+ akımı, membran depolarizasyonu ve Ca2+ sinyali belirleyici olduğu için seçenek uygun değildir.",
-    "ATP duyarlı K+ kanallarının kapanmasıyla depolarizasyon ve Ca2+ girişinin artması": "Doğru seçenek budur. Glukoz beta hücresinde metabolize edilince ATP/ADP oranı artar; ATP duyarlı K+ kanalları kapanır ve K+ çıkışı azalır. Membran depolarize olur, voltaj kapılı Ca2+ kanalları açılır ve hücre içine giren Ca2+ insülin granüllerinin ekzositozunu başlatır. Kayıttaki K+ akımı azalması, Ca2+ sinyali ve insülin artışı bu zinciri destekler.",
-    "cAMP azalmasıyla ekzositoz granüllerinin membrana yaklaşmasının hızlanması": "cAMP birçok durumda ekzositozu kolaylaştırıcı destek sinyali olabilir; ancak azalması insülin granüllerinin membrana yaklaşmasını hızlandıran ana mekanizma değildir. Ayrıca bu olguda primer kayıt ATP artışı, K+ akımı azalması ve Ca2+ girişidir. cAMP azalması, glukozun beta hücresindeki temel sekresyon başlatıcı zincirini açıklamaz.",
-    "Klor girişinin artmasıyla membran potansiyelinin daha negatif düzeye çekilmesi": "Klor girişinin artması membranı daha negatif düzeye çekerek depolarizasyonu zorlaştırabilir; bu durum voltaj kapılı Ca2+ kanallarının açılmasını ve insülin salınımını desteklemez. Olguda membran potansiyeli daha az negatifleşmiş ve Ca2+ sinyali artmıştır. Bu nedenle hiperpolarizan klor yanıtı ölçülen paternle uyumlu değildir."
-  },
-  "evidenceChain": [
-    {
-      "title": "Glukoz yanıtı",
-      "text": "Glukoz yükselmesini insülin artışının izlemesi → beta hücre sekresyon yanıtı devrededir",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Enerji durumu",
-      "text": "ATP/ADP oranının artması → glukoz metabolizması elektriksel yanıta bağlanabilir",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "K+ akımı",
-      "text": "K+ dışa akımının azalması → membran daha az negatif hale gelir",
-      "weight": "high",
-      "source": "case"
-    },
-    {
-      "title": "Ca2+ sinyali",
-      "text": "Ca2+ geçişlerinin artması → granül ekzositozunu başlatan son ortak sinyal oluşmuştur",
+      "title": "Kalsiyum fraksiyonu",
+      "text": "Total kalsiyum normal, iyonize kalsiyum düşük → pH bağımlı bağlanma değişikliği düşündürür",
       "weight": "high",
       "source": "case"
     }
   ],
   "whyWrong": {
-    "Glukoz girişinin azalmasıyla hücre içi ATP’nin düşmesi ve K+ çıkışının artması": "Glukoz girişi ve metabolizması azaldığında ATP üretimi düşer, ATP duyarlı K+ kanalları daha açık kalır ve beta hücresi hiperpolarize olma eğilimindedir. Bu durum insülin salınımını artırmak yerine azaltır. Olguda glukoz sonrası ATP artışı, K+ akımında azalma ve insülin yükselmesi izlendiği için bu seçenek yön olarak terstir.",
-    "Sodyum kanallarının sürekli açık kalmasıyla beta hücresinin refrakter hale gelmesi": "Beta hücrelerinde insülin sekresyonunun temel başlatıcı olayı hızlı sodyum kanallarının sürekli açık kalması değildir. Sürekli açık sodyum kanalları refrakterlik ve iletim sorunları gibi nöronal/kardiyak bağlamlarda düşünülür. Bu kayıtta K+ akımı, membran depolarizasyonu ve Ca2+ sinyali belirleyici olduğu için seçenek uygun değildir.",
-    "cAMP azalmasıyla ekzositoz granüllerinin membrana yaklaşmasının hızlanması": "cAMP birçok durumda ekzositozu kolaylaştırıcı destek sinyali olabilir; ancak azalması insülin granüllerinin membrana yaklaşmasını hızlandıran ana mekanizma değildir. Ayrıca bu olguda primer kayıt ATP artışı, K+ akımı azalması ve Ca2+ girişidir. cAMP azalması, glukozun beta hücresindeki temel sekresyon başlatıcı zincirini açıklamaz.",
-    "Klor girişinin artmasıyla membran potansiyelinin daha negatif düzeye çekilmesi": "Klor girişinin artması membranı daha negatif düzeye çekerek depolarizasyonu zorlaştırabilir; bu durum voltaj kapılı Ca2+ kanallarının açılmasını ve insülin salınımını desteklemez. Olguda membran potansiyeli daha az negatifleşmiş ve Ca2+ sinyali artmıştır. Bu nedenle hiperpolarizan klor yanıtı ölçülen paternle uyumlu değildir."
+    "Alveoler hipoventilasyonla PaCO₂ artışı ve pH düşüşü gelişmesi": "Alveoler hipoventilasyon PaCO₂ artışı ve asidemi oluşturur; bu durumda pH düşer. Bu hastanın kan gazında PaCO₂ düşük ve pH yüksektir, bu nedenle primer olay CO₂ tutulumu değil CO₂ azalmasıdır.",
+    "Renal bikarbonat kaybıyla primer metabolik asidoz tablosu oluşması": "Renal bikarbonat kaybı primer metabolik asidoz yapar ve HCO₃⁻ belirgin düşük beklenir. Bu vakada HCO₃⁻ belirgin düşmemiş, değişiklik akut solunumsal paternle uyumludur.",
+    "Laktat artışıyla anyon açıklıklı metabolik asidoz paterninin belirginleşmesi": "Laktat artışı anyon açıklıklı metabolik asidoz oluşturur ve pH düşüklüğü beklenir. Olguda laktat normal, pH yüksek ve PaCO₂ düşüktür; bu nedenle laktik asidoz klinik tabloyu açıklamaz.",
+    "Kusmaya bağlı klor kaybıyla metabolik alkaloz ve potasyum kaybı gelişmesi": "Kusmaya bağlı metabolik alkalozda klor kaybı, hipokalemi ve yüksek HCO₃⁻ beklenebilir. Bu hastada kusma öyküsü yoktur ve HCO₃⁻ akut dönemde belirgin yüksek değildir; tablo solunum kaynaklıdır."
   },
-  "mechanismExplanation": "Glukoz metabolizması ATP’yi artırır; KATP kanalları kapanınca membran depolarize olur, Ca2+ girişi artar ve insülin granülleri ekzositozla salınır.",
-  "scientificComment": "Soru, glukoz-insülin ilişkisini yalnız hormon artışı olarak değil, metabolik sinyalden iyon kanalına ve ekzositoza uzanan mekanik sıra olarak sorgular.",
-  "helpText": "Glukozla uyarılan insülin salınımında metabolik değişiklik önce K+ kanal durumuna, ardından membran potansiyeline ve Ca2+ girişine yansır.",
+  "mechanismExplanation": "Akut hiperventilasyon PaCO₂’yi düşürür, pH yükselir, albümine kalsiyum bağlanması artar ve iyonize kalsiyum azalınca sinir-kas uyarılabilirliği yükselir.",
+  "scientificComment": "Soru, akut solunumsal alkalozu metabolik alkaloz/asidoz paternlerinden ve total-iyonize kalsiyum ayrımından ayırmayı hedefler.",
+  "helpText": "pH, PaCO₂ ve HCO₃⁻ yönlerini önce primer bozukluk için; ardından iyonize kalsiyumu semptomlar için kullan.",
   "preserveInvestigationOrder": true
 }
-
 
 ];
 
