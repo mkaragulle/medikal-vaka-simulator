@@ -5596,3 +5596,41 @@ html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.professi
     font-size: 15.5px !important;
   }
 }
+
+/* ===== V416 — Olgu sunumu bölüm başlıkları mikro küçültme =====
+   PROFİL / BAŞVURU / HASTA ÖYKÜSÜ başlıkları hâlâ gövde metninden ayırt edilir,
+   ancak önceki 16px değerinden daha kompakt ve dengeli görünür. */
+.case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-detail-label,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-detail-label,
+.case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-card--presentation .summary-detail-label,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--presentation .summary-detail-label,
+.case-page-shell .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--presentation .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--presentation .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span {
+  font-size: 15.25px !important;
+  line-height: 1.17 !important;
+  font-weight: 810 !important;
+  letter-spacing: 0.042em !important;
+}
+
+@media (max-width: 680px) {
+  .case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-detail-label,
+  .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-detail-label,
+  .case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-card--presentation .summary-detail-label,
+  .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--presentation .summary-detail-label,
+  .case-page-shell .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+  .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span,
+  .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-detail-label,
+  .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-detail-label,
+  .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--presentation .summary-detail-label,
+  .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--presentation .summary-detail-label,
+  .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+  .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span {
+    font-size: 14.9px !important;
+  }
+}
