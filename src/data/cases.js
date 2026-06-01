@@ -246071,7 +246071,9697 @@ export const rawCases = [
     "Sağ L5 periferik sinir kökü lezyonu": "L5 kök lezyonu dermatomal radiküler ağrı, ayak dorsifleksiyon/başparmak ekstansiyon zayıflığı ve segmental duyu değişikliği yapabilir. Buradaki ipsilateral dorsal kolon kaybı ve kontralateral ağrı-sıcaklık kaybı kök lezyonuyla açıklanamaz.",
     "Sol medulla oblongata lezyonu": "Medulla lezyonları kraniyal sinir, bulber bulgu veya beyin sapı çapraz bulgularıyla ilişkilidir. Bu vakada travma torakal düzeydedir ve MRG torakal sağ hemikord lezyonunu göstermektedir."
   }
+},
+{
+  "id": "v197-new-343-dirsek-travmasi-sonrasi-parmak-ekstansiyon-kaybi",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi / Ortopedi",
+  "title": "Dirsek travması sonrası parmak ekstansiyon kaybı",
+  "difficulty": "Orta",
+  "clinicalFocus": "Dirsek çevresi travma sonrası motor-duyusal paternleri radial sinir dallarıyla eşleştirme.",
+  "learningTarget": "Radial sinirin proksimal ana gövde, yüzeyel duyu dalı ve derin motor dal etkilenimlerini muayene bulgularıyla ayırabilme.",
+  "demographics": "31 yaşında erkek hasta",
+  "setting": "Ortopedi acili",
+  "chiefComplaint": "Hasta, düşme sonrası sağ dirsek ağrısı ve parmaklarını açmakta zorlanma nedeniyle başvuruyor.",
+  "stem": "Hasta, iki saat önce bisikletten düşerken sağ dirseğinin dış yanıyla yere çarptığını anlatır. İlk anda dirsek çevresinde ağrı ve şişlik fark etmiş, kısa süre sonra kalem tutarken parmaklarını düzleştirmekte zorlandığını söylemiştir. Bileğini yukarı kaldırabildiğini ancak bunu eskisine göre daha zayıf yaptığını belirtir. El sırtında belirgin uyuşma hissetmediğini, omuz veya boyun ağrısı olmadığını ifade eder. Ağrı özellikle ön kolu çevirmeye çalıştığında artmıştır.",
+  "patientIntro": {
+    "profile": "31 yaşında erkek hasta, dirsek travması sonrası ortopedi acilinde değerlendiriliyor.",
+    "presentation": "Sağ dirsek ağrısı, ön kol hareketlerinde ağrı ve parmak-başparmak ekstansiyonunda güçlük vardır.",
+    "historySummary": "Hasta, iki saat önce bisikletten düşerken sağ dirseğinin dış yanıyla yere çarptığını anlatır. İlk anda dirsek çevresinde ağrı ve şişlik fark etmiş, kısa süre sonra kalem tutarken parmaklarını düzleştirmekte zorlandığını söylemiştir. Bileğini yukarı kaldırabildiğini ancak bunu eskisine göre daha zayıf yaptığını belirtir. El sırtında belirgin uyuşma hissetmediğini, omuz veya boyun ağrısı olmadığını ifade eder. Ağrı özellikle ön kolu çevirmeye çalıştığında artmıştır."
+  },
+  "vitals": {
+    "TA": "122/76 mmHg",
+    "Nabız": "84/dk",
+    "Solunum": "16/dk",
+    "SpO2": "%99, oda havasında",
+    "Ateş": "36.6 °C",
+    "Şok indeksi": "0.69 normal"
+  },
+  "exam": [
+    "Sağ lateral dirsek çevresinde hassasiyet ve hafif şişlik izlenir.",
+    "Parmakların MCP düzeyinde ekstansiyonu ve başparmak ekstansiyonu belirgin zayıftır.",
+    "El bileği ekstansiyonu korunmuştur ancak dirençle hafif zayıflık ve radial tarafa deviasyon gözlenir.",
+    "Dorsal radial el duyusu ve ön kol lateral duyusu karşı tarafla benzerdir; radial nabız alınmaktadır."
+  ],
+  "investigations": [
+    {
+      "id": "v197-new-343-dirsek-travmasi-sonrasi-parmak-ekstansiyon-kaybi-dirsek-grafisi-ve-motor-patern",
+      "label": "Dirsek grafisi ve hedefe yönelik motor-duyu değerlendirmesi",
+      "title": "Dirsek grafisi ve hedefe yönelik motor-duyu değerlendirmesi",
+      "orderLabel": "Dirsek grafisi ve hedefe yönelik motor-duyu değerlendirmesi",
+      "type": "xray",
+      "priority": "essential",
+      "subtype": "Dirsek grafisi ve hedefe yönelik motor-duyu değerlendirmesi",
+      "category": "imaging",
+      "testTypeCategory": "imaging",
+      "summary": "Grafide radial baş-boyun çevresinde sınırlı kırık hattı, muayenede ise distal ekstansör motor paternin duyu kaybı olmadan etkilendiği görülmektedir.",
+      "clinicalMeaning": "Grafide radial baş-boyun çevresinde sınırlı kırık hattı, muayenede ise distal ekstansör motor paternin duyu kaybı olmadan etkilendiği görülmektedir.",
+      "result": {
+        "title": "Dirsek grafisi ve hedefe yönelik motor-duyu değerlendirmesi",
+        "summary": "Grafide radial baş-boyun çevresinde sınırlı kırık hattı, muayenede ise distal ekstansör motor paternin duyu kaybı olmadan etkilendiği görülmektedir.",
+        "interpretation": "Grafide radial baş-boyun çevresinde sınırlı kırık hattı, muayenede ise distal ekstansör motor paternin duyu kaybı olmadan etkilendiği görülmektedir.",
+        "values": [
+          [
+            "Kemik düzeyi",
+            "Radial baş-boyun bileşkesi çevresinde deplase olmayan kırık hattı izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Motor bulgu",
+            "MCP ekstansiyonu ve başparmak ekstansiyonu belirgin zayıf.",
+            "",
+            ""
+          ],
+          [
+            "Duyu bulgusu",
+            "Dorsal radial el duyusu korunmuş.",
+            "",
+            ""
+          ],
+          [
+            "Proksimal motor bulgu",
+            "Dirsek fleksiyonu ve omuz hareketleri korunmuş.",
+            "",
+            ""
+          ]
+        ],
+        "rows": [
+          [
+            "Kemik düzeyi",
+            "Radial baş-boyun bileşkesi çevresinde deplase olmayan kırık hattı izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Motor bulgu",
+            "MCP ekstansiyonu ve başparmak ekstansiyonu belirgin zayıf.",
+            "",
+            ""
+          ],
+          [
+            "Duyu bulgusu",
+            "Dorsal radial el duyusu korunmuş.",
+            "",
+            ""
+          ],
+          [
+            "Proksimal motor bulgu",
+            "Dirsek fleksiyonu ve omuz hareketleri korunmuş.",
+            "",
+            ""
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Kemik düzeyi",
+          "Radial baş-boyun bileşkesi çevresinde deplase olmayan kırık hattı izlendi.",
+          "",
+          ""
+        ],
+        [
+          "Motor bulgu",
+          "MCP ekstansiyonu ve başparmak ekstansiyonu belirgin zayıf.",
+          "",
+          ""
+        ],
+        [
+          "Duyu bulgusu",
+          "Dorsal radial el duyusu korunmuş.",
+          "",
+          ""
+        ],
+        [
+          "Proksimal motor bulgu",
+          "Dirsek fleksiyonu ve omuz hareketleri korunmuş.",
+          "",
+          ""
+        ]
+      ],
+      "postAnswerExplanation": "Grafide radial baş-boyun çevresinde sınırlı kırık hattı, muayenede ise distal ekstansör motor paternin duyu kaybı olmadan etkilendiği görülmektedir.",
+      "interpretation": "Grafide radial baş-boyun çevresinde sınırlı kırık hattı, muayenede ise distal ekstansör motor paternin duyu kaybı olmadan etkilendiği görülmektedir.",
+      "explanationAfterAnswer": "Grafide radial baş-boyun çevresinde sınırlı kırık hattı, muayenede ise distal ekstansör motor paternin duyu kaybı olmadan etkilendiği görülmektedir.",
+      "testValueLabel": "Anatomik doğrulama",
+      "educationalValue": "Anatomik doğrulama",
+      "clinicalPriorityLabel": "Anatomik doğrulama",
+      "scoreImpact": 5,
+      "scoreValue": 5,
+      "clinicalFlowOrder": 1,
+      "purpose": "Vakadaki fonksiyonel kaybın anatomik lokalizasyonla ilişkilendirilmesi için objektif bulgu sağlar.",
+      "inlineFeedback": "Grafide radial baş-boyun çevresinde sınırlı kırık hattı, muayenede ise distal ekstansör motor paternin duyu kaybı olmadan etkilendiği görülmektedir."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "question": "Bu hastadaki motor-duyusal paterni en iyi açıklayan sinir/dal etkilenimi hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Nervus interosseus posterior",
+    "options": [
+      "Nervus radialis superficialis",
+      "Nervus interosseus posterior",
+      "Nervus interosseus anterior",
+      "Nervus ulnaris profundus",
+      "Nervus musculocutaneus"
+    ],
+    "question": "Bu hastadaki motor-duyusal paterni en iyi açıklayan sinir/dal etkilenimi hangisidir?",
+    "explanation": "Proksimal radioulnar bölgeye yakın travma sonrası parmak ve başparmak ekstansiyonunun belirgin zayıflaması, buna karşın el bileği ekstansiyonunun kısmen korunması ve yüzeyel duyu kaybının olmaması motor ağırlıklı derin radial dal etkilenimini destekler. Bu yapı supinator kas içinden geçerken sıkışma veya travmaya duyarlı olabilir. Dorsal el duyusunun korunması yüzeyel radial dalı, tenar/ön kol fleksör paterninin olmaması median dalları geri plana iter.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Parmak-başparmak ekstansiyon kaybı, el bileği ekstansiyonunun kısmen korunması ve duyu kaybının olmaması derin radial motor dal düzeyini düşündürür."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Travma düzeyi, motor kaybın dağılımı ve duyunun korunması birlikte değerlendirildiğinde radial sinirin distal motor dalı öne çıkar.",
+      "whyCorrect": "Proksimal radioulnar bölgeye yakın travma sonrası parmak ve başparmak ekstansiyonunun belirgin zayıflaması, buna karşın el bileği ekstansiyonunun kısmen korunması ve yüzeyel duyu kaybının olmaması motor ağırlıklı derin radial dal etkilenimini destekler. Bu yapı supinator kas içinden geçerken sıkışma veya travmaya duyarlı olabilir. Dorsal el duyusunun korunması yüzeyel radial dalı, tenar/ön kol fleksör paterninin olmaması median dalları geri plana iter.",
+      "rationale": "Proksimal radioulnar bölgeye yakın travma sonrası parmak ve başparmak ekstansiyonunun belirgin zayıflaması, buna karşın el bileği ekstansiyonunun kısmen korunması ve yüzeyel duyu kaybının olmaması motor ağırlıklı derin radial dal etkilenimini destekler. Bu yapı supinator kas içinden geçerken sıkışma veya travmaya duyarlı olabilir. Dorsal el duyusunun korunması yüzeyel radial dalı, tenar/ön kol fleksör paterninin olmaması median dalları geri plana iter.",
+      "correctOptionFeedback": "Doğru yanıttır; motor ağırlıklı derin radial dal parmak ve başparmak ekstansörlerini etkilerken yüzeyel dorsal el duyusu korunabilir. El bileği ekstansiyonunun tamamen kaybolmaması lezyonun spiral oluk düzeyinden daha distal olduğunu düşündürür.",
+      "keyClues": [
+        "Dirsek dış yanına düşme ve proksimal radioulnar hassasiyet → radial baş çevresindeki derin motor dalın etkilenebileceği düzeyi işaret eder.",
+        "MCP düzeyinde parmak ve başparmak ekstansiyon zayıflığı → ekstansör kompartman motor innervasyonunda bozulmayı destekler.",
+        "El bileği ekstansiyonunun kısmen korunması → lezyonun radial sinirin daha proksimal ana gövdesinden çok distal motor dal düzeyinde olduğunu düşündürür.",
+        "Dorsal radial el duyusunun korunması → yüzeyel duyu dalının primer etkilenmediğini gösterir."
+      ],
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Dirsek dış yanına düşme ve proksimal radioulnar hassasiyet → radial baş çevresindeki derin motor dalın etkilenebileceği düzeyi işaret eder.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "MCP düzeyinde parmak ve başparmak ekstansiyon zayıflığı → ekstansör kompartman motor innervasyonunda bozulmayı destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "El bileği ekstansiyonunun kısmen korunması → lezyonun radial sinirin daha proksimal ana gövdesinden çok distal motor dal düzeyinde olduğunu düşündürür.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Dorsal radial el duyusunun korunması → yüzeyel duyu dalının primer etkilenmediğini gösterir.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Parmak ekstansiyon kaybı + dorsal el duyusu korunması, radial ana gövde lezyonundan çok motor dal etkilenimini düşündürür.",
+      "optionComparison": {
+        "Nervus radialis superficialis": "Yüzeyel radial dal dorsal radial el duyusuyla ilişkilidir ve belirgin motor ekstansiyon kaybı yapması beklenmez. Bu vakada duyu korunmuş, ana sorun parmak-başparmak ekstansiyonundadır.",
+        "Nervus interosseus posterior": "Doğru yanıttır; motor ağırlıklı derin radial dal parmak ve başparmak ekstansörlerini etkilerken yüzeyel dorsal el duyusu korunabilir. El bileği ekstansiyonunun tamamen kaybolmaması lezyonun spiral oluk düzeyinden daha distal olduğunu düşündürür.",
+        "Nervus interosseus anterior": "Anterior interosseöz sinir median sinirin motor dalıdır; başparmak ve işaret parmağı fleksiyonuyla ilgili OK işareti zayıflığı yapar. Bu hastadaki ekstansiyon paternini ve dorsal duyu korunmasını açıklamaz.",
+        "Nervus ulnaris profundus": "Ulnar derin dal interosseözler ve adduktor pollicis üzerinden ince el hareketlerini etkiler. Parmak ekstansör kaybı ve radial baş çevresi travması bu dağılıma uymaz.",
+        "Nervus musculocutaneus": "Musculocutaneus sinir dirsek fleksiyonu ve ön kol lateral duyusuyla ilişkilidir. Bu olguda biseps gücü ve ön kol lateral duyusu korunmuştur."
+      },
+      "whyWrong": {
+        "Nervus radialis superficialis": "Yüzeyel radial dal dorsal radial el duyusuyla ilişkilidir ve belirgin motor ekstansiyon kaybı yapması beklenmez. Bu vakada duyu korunmuş, ana sorun parmak-başparmak ekstansiyonundadır.",
+        "Nervus interosseus anterior": "Anterior interosseöz sinir median sinirin motor dalıdır; başparmak ve işaret parmağı fleksiyonuyla ilgili OK işareti zayıflığı yapar. Bu hastadaki ekstansiyon paternini ve dorsal duyu korunmasını açıklamaz.",
+        "Nervus ulnaris profundus": "Ulnar derin dal interosseözler ve adduktor pollicis üzerinden ince el hareketlerini etkiler. Parmak ekstansör kaybı ve radial baş çevresi travması bu dağılıma uymaz.",
+        "Nervus musculocutaneus": "Musculocutaneus sinir dirsek fleksiyonu ve ön kol lateral duyusuyla ilişkilidir. Bu olguda biseps gücü ve ön kol lateral duyusu korunmuştur."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Radial sinir dallarını motor-duyusal muayene üzerinden ayırt edebilme.",
+      "coreKnowledge": "Posterior interosseöz sinir radial sinirin derin motor dalı olarak supinator komşuluğundan geçer ve parmak-başparmak ekstansörlerini innerve eder; yüzeyel el duyusu taşımaz."
+    },
+    "whyCorrect": "Proksimal radioulnar bölgeye yakın travma sonrası parmak ve başparmak ekstansiyonunun belirgin zayıflaması, buna karşın el bileği ekstansiyonunun kısmen korunması ve yüzeyel duyu kaybının olmaması motor ağırlıklı derin radial dal etkilenimini destekler. Bu yapı supinator kas içinden geçerken sıkışma veya travmaya duyarlı olabilir. Dorsal el duyusunun korunması yüzeyel radial dalı, tenar/ön kol fleksör paterninin olmaması median dalları geri plana iter.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Dirsek dış yanına düşme ve proksimal radioulnar hassasiyet → radial baş çevresindeki derin motor dalın etkilenebileceği düzeyi işaret eder.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "MCP düzeyinde parmak ve başparmak ekstansiyon zayıflığı → ekstansör kompartman motor innervasyonunda bozulmayı destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "El bileği ekstansiyonunun kısmen korunması → lezyonun radial sinirin daha proksimal ana gövdesinden çok distal motor dal düzeyinde olduğunu düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Dorsal radial el duyusunun korunması → yüzeyel duyu dalının primer etkilenmediğini gösterir.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Nervus radialis superficialis": "Yüzeyel radial dal dorsal radial el duyusuyla ilişkilidir ve belirgin motor ekstansiyon kaybı yapması beklenmez. Bu vakada duyu korunmuş, ana sorun parmak-başparmak ekstansiyonundadır.",
+      "Nervus interosseus posterior": "Doğru yanıttır; motor ağırlıklı derin radial dal parmak ve başparmak ekstansörlerini etkilerken yüzeyel dorsal el duyusu korunabilir. El bileği ekstansiyonunun tamamen kaybolmaması lezyonun spiral oluk düzeyinden daha distal olduğunu düşündürür.",
+      "Nervus interosseus anterior": "Anterior interosseöz sinir median sinirin motor dalıdır; başparmak ve işaret parmağı fleksiyonuyla ilgili OK işareti zayıflığı yapar. Bu hastadaki ekstansiyon paternini ve dorsal duyu korunmasını açıklamaz.",
+      "Nervus ulnaris profundus": "Ulnar derin dal interosseözler ve adduktor pollicis üzerinden ince el hareketlerini etkiler. Parmak ekstansör kaybı ve radial baş çevresi travması bu dağılıma uymaz.",
+      "Nervus musculocutaneus": "Musculocutaneus sinir dirsek fleksiyonu ve ön kol lateral duyusuyla ilişkilidir. Bu olguda biseps gücü ve ön kol lateral duyusu korunmuştur."
+    },
+    "coreKnowledge": "Posterior interosseöz sinir radial sinirin derin motor dalı olarak supinator komşuluğundan geçer ve parmak-başparmak ekstansörlerini innerve eder; yüzeyel el duyusu taşımaz.",
+    "examPearl": "Parmak ekstansiyon kaybı + dorsal el duyusu korunması, radial ana gövde lezyonundan çok motor dal etkilenimini düşündürür.",
+    "whyWrong": {
+      "Nervus radialis superficialis": "Yüzeyel radial dal dorsal radial el duyusuyla ilişkilidir ve belirgin motor ekstansiyon kaybı yapması beklenmez. Bu vakada duyu korunmuş, ana sorun parmak-başparmak ekstansiyonundadır.",
+      "Nervus interosseus anterior": "Anterior interosseöz sinir median sinirin motor dalıdır; başparmak ve işaret parmağı fleksiyonuyla ilgili OK işareti zayıflığı yapar. Bu hastadaki ekstansiyon paternini ve dorsal duyu korunmasını açıklamaz.",
+      "Nervus ulnaris profundus": "Ulnar derin dal interosseözler ve adduktor pollicis üzerinden ince el hareketlerini etkiler. Parmak ekstansör kaybı ve radial baş çevresi travması bu dağılıma uymaz.",
+      "Nervus musculocutaneus": "Musculocutaneus sinir dirsek fleksiyonu ve ön kol lateral duyusuyla ilişkilidir. Bu olguda biseps gücü ve ön kol lateral duyusu korunmuştur."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Orta",
+  "aiMeta": {
+    "generatedAt": "manual-v197-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial"
+  },
+  "listTitle": "Dirsek travması sonrası parmak ekstansiyon kaybı",
+  "cardTitle": "Dirsek travması sonrası parmak ekstansiyon kaybı",
+  "coreKnowledge": "Posterior interosseöz sinir radial sinirin derin motor dalı olarak supinator komşuluğundan geçer ve parmak-başparmak ekstansörlerini innerve eder; yüzeyel el duyusu taşımaz.",
+  "examPearl": "Parmak ekstansiyon kaybı + dorsal el duyusu korunması, radial ana gövde lezyonundan çok motor dal etkilenimini düşündürür.",
+  "whyCorrect": "Proksimal radioulnar bölgeye yakın travma sonrası parmak ve başparmak ekstansiyonunun belirgin zayıflaması, buna karşın el bileği ekstansiyonunun kısmen korunması ve yüzeyel duyu kaybının olmaması motor ağırlıklı derin radial dal etkilenimini destekler. Bu yapı supinator kas içinden geçerken sıkışma veya travmaya duyarlı olabilir. Dorsal el duyusunun korunması yüzeyel radial dalı, tenar/ön kol fleksör paterninin olmaması median dalları geri plana iter.",
+  "optionComparison": {
+    "Nervus radialis superficialis": "Yüzeyel radial dal dorsal radial el duyusuyla ilişkilidir ve belirgin motor ekstansiyon kaybı yapması beklenmez. Bu vakada duyu korunmuş, ana sorun parmak-başparmak ekstansiyonundadır.",
+    "Nervus interosseus posterior": "Doğru yanıttır; motor ağırlıklı derin radial dal parmak ve başparmak ekstansörlerini etkilerken yüzeyel dorsal el duyusu korunabilir. El bileği ekstansiyonunun tamamen kaybolmaması lezyonun spiral oluk düzeyinden daha distal olduğunu düşündürür.",
+    "Nervus interosseus anterior": "Anterior interosseöz sinir median sinirin motor dalıdır; başparmak ve işaret parmağı fleksiyonuyla ilgili OK işareti zayıflığı yapar. Bu hastadaki ekstansiyon paternini ve dorsal duyu korunmasını açıklamaz.",
+    "Nervus ulnaris profundus": "Ulnar derin dal interosseözler ve adduktor pollicis üzerinden ince el hareketlerini etkiler. Parmak ekstansör kaybı ve radial baş çevresi travması bu dağılıma uymaz.",
+    "Nervus musculocutaneus": "Musculocutaneus sinir dirsek fleksiyonu ve ön kol lateral duyusuyla ilişkilidir. Bu olguda biseps gücü ve ön kol lateral duyusu korunmuştur."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Dirsek dış yanına düşme ve proksimal radioulnar hassasiyet → radial baş çevresindeki derin motor dalın etkilenebileceği düzeyi işaret eder.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "MCP düzeyinde parmak ve başparmak ekstansiyon zayıflığı → ekstansör kompartman motor innervasyonunda bozulmayı destekler.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "El bileği ekstansiyonunun kısmen korunması → lezyonun radial sinirin daha proksimal ana gövdesinden çok distal motor dal düzeyinde olduğunu düşündürür.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Dorsal radial el duyusunun korunması → yüzeyel duyu dalının primer etkilenmediğini gösterir.",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Nervus radialis superficialis": "Yüzeyel radial dal dorsal radial el duyusuyla ilişkilidir ve belirgin motor ekstansiyon kaybı yapması beklenmez. Bu vakada duyu korunmuş, ana sorun parmak-başparmak ekstansiyonundadır.",
+    "Nervus interosseus anterior": "Anterior interosseöz sinir median sinirin motor dalıdır; başparmak ve işaret parmağı fleksiyonuyla ilgili OK işareti zayıflığı yapar. Bu hastadaki ekstansiyon paternini ve dorsal duyu korunmasını açıklamaz.",
+    "Nervus ulnaris profundus": "Ulnar derin dal interosseözler ve adduktor pollicis üzerinden ince el hareketlerini etkiler. Parmak ekstansör kaybı ve radial baş çevresi travması bu dağılıma uymaz.",
+    "Nervus musculocutaneus": "Musculocutaneus sinir dirsek fleksiyonu ve ön kol lateral duyusuyla ilişkilidir. Bu olguda biseps gücü ve ön kol lateral duyusu korunmuştur."
+  }
+},
+{
+  "id": "v197-new-344-orbita-travmasi-sonrasi-cift-gorme",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi / Göz Hastalıkları",
+  "title": "Orbita travması sonrası çift görme",
+  "difficulty": "Orta",
+  "clinicalFocus": "Orbita kırıklarında ekstraoküler kas fonksiyonunu görüntüleme ve bakış kısıtlılığı ile ilişkilendirme.",
+  "learningTarget": "Orbita tabanı travmasında vertikal diplopi ve pasif hareket kısıtlılığını ekstraoküler kas anatomisiyle eşleştirebilme.",
+  "demographics": "19 yaşında erkek hasta",
+  "setting": "Acil servis",
+  "chiefComplaint": "Hasta, yüzüne top çarpması sonrası sağ göz çevresinde ağrı ve yukarı bakarken çift görme nedeniyle başvuruyor.",
+  "stem": "Hasta, basketbol oynarken sağ göz çevresine sert şekilde top çarptığını anlatır. Olaydan sonra göz altında şişlik ve morarma gelişmiş, birkaç saat içinde merdiven çıkarken yukarı baktığında çift gördüğünü fark etmiştir. Görmesinde belirgin bulanıklık olmadığını, ışığa karşı aşırı hassasiyet veya bilinç kaybı yaşamadığını söyler. Burun kanaması kısa sürede durmuş, bulantı veya kusma olmamıştır. Yakınması özellikle yukarı bakmaya çalıştığında belirginleşmiştir.",
+  "patientIntro": {
+    "profile": "19 yaşında erkek hasta, künt orbita travması sonrası acil serviste değerlendiriliyor.",
+    "presentation": "Sağ periorbital ağrı, ödem ve yukarı bakışta artan çift görme yakınması vardır.",
+    "historySummary": "Hasta, basketbol oynarken sağ göz çevresine sert şekilde top çarptığını anlatır. Olaydan sonra göz altında şişlik ve morarma gelişmiş, birkaç saat içinde merdiven çıkarken yukarı baktığında çift gördüğünü fark etmiştir. Görmesinde belirgin bulanıklık olmadığını, ışığa karşı aşırı hassasiyet veya bilinç kaybı yaşamadığını söyler. Burun kanaması kısa sürede durmuş, bulantı veya kusma olmamıştır. Yakınması özellikle yukarı bakmaya çalıştığında belirginleşmiştir."
+  },
+  "vitals": {
+    "TA": "118/72 mmHg",
+    "Nabız": "78/dk",
+    "Solunum": "15/dk",
+    "SpO2": "%99, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "0.66 normal"
+  },
+  "exam": [
+    "Sağ alt göz kapağı ve infraorbital bölgede ekimoz ve hassasiyet vardır.",
+    "Sağ gözde yukarı bakış belirgin kısıtlıdır; yatay bakışlar büyük ölçüde korunmuştur.",
+    "Pasif elevasyon denemesinde mekanik direnç hissedilir.",
+    "Pupillalar eşit ve ışık refleksi doğaldır; görme keskinliği yatak başı değerlendirmede korunmuştur."
+  ],
+  "investigations": [
+    {
+      "id": "v197-new-344-orbita-travmasi-sonrasi-cift-gorme-orbita-bt-ve-goz-hareketleri",
+      "label": "Orbita BT ve göz hareket muayenesi",
+      "title": "Orbita BT ve göz hareket muayenesi",
+      "orderLabel": "Orbita BT ve göz hareket muayenesi",
+      "type": "ct",
+      "priority": "essential",
+      "subtype": "Orbita BT ve göz hareket muayenesi",
+      "category": "imaging",
+      "testTypeCategory": "imaging",
+      "summary": "Orbita BT’de taban düzeyinde kırık ve alt orbital yumuşak doku çökmesi, muayenede yukarı bakışı sınırlayan mekanik paternle birlikte görülmektedir.",
+      "clinicalMeaning": "Orbita BT’de taban düzeyinde kırık ve alt orbital yumuşak doku çökmesi, muayenede yukarı bakışı sınırlayan mekanik paternle birlikte görülmektedir.",
+      "result": {
+        "title": "Orbita BT ve göz hareket muayenesi",
+        "summary": "Orbita BT’de taban düzeyinde kırık ve alt orbital yumuşak doku çökmesi, muayenede yukarı bakışı sınırlayan mekanik paternle birlikte görülmektedir.",
+        "interpretation": "Orbita BT’de taban düzeyinde kırık ve alt orbital yumuşak doku çökmesi, muayenede yukarı bakışı sınırlayan mekanik paternle birlikte görülmektedir.",
+        "values": [
+          [
+            "Görüntüleme",
+            "Sağ orbita tabanında kırık hattı ve maksiller sinüs yönüne yumuşak doku çökmesi izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Globus bütünlüğü",
+            "Globus konturu korunmuş.",
+            "",
+            ""
+          ],
+          [
+            "Bakış testi",
+            "Yukarı bakışta belirgin kısıtlılık ve vertikal diplopi kaydedildi.",
+            "",
+            ""
+          ],
+          [
+            "Nöro-oftalmolojik veri",
+            "Pupilla refleksleri ve yatak başı görme keskinliği korunmuş.",
+            "",
+            ""
+          ]
+        ],
+        "rows": [
+          [
+            "Görüntüleme",
+            "Sağ orbita tabanında kırık hattı ve maksiller sinüs yönüne yumuşak doku çökmesi izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Globus bütünlüğü",
+            "Globus konturu korunmuş.",
+            "",
+            ""
+          ],
+          [
+            "Bakış testi",
+            "Yukarı bakışta belirgin kısıtlılık ve vertikal diplopi kaydedildi.",
+            "",
+            ""
+          ],
+          [
+            "Nöro-oftalmolojik veri",
+            "Pupilla refleksleri ve yatak başı görme keskinliği korunmuş.",
+            "",
+            ""
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Görüntüleme",
+          "Sağ orbita tabanında kırık hattı ve maksiller sinüs yönüne yumuşak doku çökmesi izlendi.",
+          "",
+          ""
+        ],
+        [
+          "Globus bütünlüğü",
+          "Globus konturu korunmuş.",
+          "",
+          ""
+        ],
+        [
+          "Bakış testi",
+          "Yukarı bakışta belirgin kısıtlılık ve vertikal diplopi kaydedildi.",
+          "",
+          ""
+        ],
+        [
+          "Nöro-oftalmolojik veri",
+          "Pupilla refleksleri ve yatak başı görme keskinliği korunmuş.",
+          "",
+          ""
+        ]
+      ],
+      "postAnswerExplanation": "Orbita BT’de taban düzeyinde kırık ve alt orbital yumuşak doku çökmesi, muayenede yukarı bakışı sınırlayan mekanik paternle birlikte görülmektedir.",
+      "interpretation": "Orbita BT’de taban düzeyinde kırık ve alt orbital yumuşak doku çökmesi, muayenede yukarı bakışı sınırlayan mekanik paternle birlikte görülmektedir.",
+      "explanationAfterAnswer": "Orbita BT’de taban düzeyinde kırık ve alt orbital yumuşak doku çökmesi, muayenede yukarı bakışı sınırlayan mekanik paternle birlikte görülmektedir.",
+      "testValueLabel": "Anatomik doğrulama",
+      "educationalValue": "Anatomik doğrulama",
+      "clinicalPriorityLabel": "Anatomik doğrulama",
+      "scoreImpact": 5,
+      "scoreValue": 5,
+      "clinicalFlowOrder": 1,
+      "purpose": "Vakadaki fonksiyonel kaybın anatomik lokalizasyonla ilişkilendirilmesi için objektif bulgu sağlar.",
+      "inlineFeedback": "Orbita BT’de taban düzeyinde kırık ve alt orbital yumuşak doku çökmesi, muayenede yukarı bakışı sınırlayan mekanik paternle birlikte görülmektedir."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "question": "Bu hastada kısıtlanan göz hareketini en iyi açıklayan ekstraoküler kas hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Musculus rectus inferior",
+    "options": [
+      "Musculus rectus superior",
+      "Musculus obliquus inferior",
+      "Musculus rectus medialis",
+      "Musculus rectus inferior",
+      "Musculus obliquus superior"
+    ],
+    "question": "Bu hastada kısıtlanan göz hareketini en iyi açıklayan ekstraoküler kas hangisidir?",
+    "explanation": "Orbita tabanı kırığı sonrası vertikal diplopinin özellikle yukarı bakışta artması ve pasif elevasyonun kısıtlanması, globun altındaki ekstraoküler kasın mekanik sıkışmasıyla açıklanır. Görme keskinliği ve pupilla reflekslerinin korunması optik sinir veya parasempatik yol hasarını geri plana iter. Medial veya oblik kas paternleri yatay ya da torsiyonel yakınmaları daha belirgin yapardı.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Orbita tabanı kırığı sonrası yukarı bakışta diplopi ve pasif elevasyon kısıtlılığı alt orbital kompartman sıkışmasını düşündürür."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Kırık düzeyi, bakış kısıtlılığı ve pasif hareket bulgusu birlikte mekanik ekstraoküler kas etkilenimini gösterir.",
+      "whyCorrect": "Orbita tabanı kırığı sonrası vertikal diplopinin özellikle yukarı bakışta artması ve pasif elevasyonun kısıtlanması, globun altındaki ekstraoküler kasın mekanik sıkışmasıyla açıklanır. Görme keskinliği ve pupilla reflekslerinin korunması optik sinir veya parasempatik yol hasarını geri plana iter. Medial veya oblik kas paternleri yatay ya da torsiyonel yakınmaları daha belirgin yapardı.",
+      "rationale": "Orbita tabanı kırığı sonrası vertikal diplopinin özellikle yukarı bakışta artması ve pasif elevasyonun kısıtlanması, globun altındaki ekstraoküler kasın mekanik sıkışmasıyla açıklanır. Görme keskinliği ve pupilla reflekslerinin korunması optik sinir veya parasempatik yol hasarını geri plana iter. Medial veya oblik kas paternleri yatay ya da torsiyonel yakınmaları daha belirgin yapardı.",
+      "correctOptionFeedback": "Doğru yanıttır; orbita tabanı kırıklarında alt rektus ve çevre yumuşak dokular maksiller sinüs yönüne sıkışabilir. Yukarı bakışta diplopi ve pasif elevasyon kısıtlılığı bu mekanik paternle uyumludur.",
+      "keyClues": [
+        "Orbita tabanında kırık ve yumuşak doku çökmesi → alt orbital kompartmandaki yapıların mekanik etkilenme riskini artırır.",
+        "Yukarı bakışta belirgin diplopi → elevasyon sırasında karşı koyan veya sıkışan alt orbital yapı paternini düşündürür.",
+        "Pasif elevasyonun da kısıtlı olması → yalnız nörolojik paraliziden çok mekanik kısıtlanmayı destekler.",
+        "Pupilla ve görme keskinliğinin korunması → optik sinir veya yaygın orbital apex tutulumunu desteklemez."
+      ],
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Orbita tabanında kırık ve yumuşak doku çökmesi → alt orbital kompartmandaki yapıların mekanik etkilenme riskini artırır.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Yukarı bakışta belirgin diplopi → elevasyon sırasında karşı koyan veya sıkışan alt orbital yapı paternini düşündürür.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Pasif elevasyonun da kısıtlı olması → yalnız nörolojik paraliziden çok mekanik kısıtlanmayı destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Pupilla ve görme keskinliğinin korunması → optik sinir veya yaygın orbital apex tutulumunu desteklemez.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Taban kırığı + yukarı bakışta diplopi + pasif elevasyon kısıtlılığı mekanik alt orbital kas etkilenimini düşündürür.",
+      "optionComparison": {
+        "Musculus rectus superior": "Superior rectus elevasyonda rol alır ancak orbita tavanı komşuluğunda değerlendirilir; taban kırığı ve yukarı bakışta mekanik kısıtlanma bu kası birincil hedef yapmaz.",
+        "Musculus obliquus inferior": "Inferior oblik elevasyon ve dışa rotasyon katkısı sağlar; taban kırığında klinik olarak karışabilir. Ancak pasif elevasyon kısıtlılığı ve alt orbital içerik çökmesi daha çok alt rektus sıkışmasını destekler.",
+        "Musculus rectus medialis": "Medial rectus adduksiyonla ilişkilidir ve medial orbital duvar patolojilerinde daha anlamlıdır. Bu hastada esas sorun yatay bakış değil yukarı bakışta vertikal diplopidir.",
+        "Musculus rectus inferior": "Doğru yanıttır; orbita tabanı kırıklarında alt rektus ve çevre yumuşak dokular maksiller sinüs yönüne sıkışabilir. Yukarı bakışta diplopi ve pasif elevasyon kısıtlılığı bu mekanik paternle uyumludur.",
+        "Musculus obliquus superior": "Superior oblik depresyon ve intorsiyon fonksiyonlarıyla ilişkilidir; troklear sinir paterninde aşağı bakışta zorlanma beklenebilir. Taban kırığına bağlı yukarı bakış kısıtlılığını en iyi açıklamaz."
+      },
+      "whyWrong": {
+        "Musculus rectus superior": "Superior rectus elevasyonda rol alır ancak orbita tavanı komşuluğunda değerlendirilir; taban kırığı ve yukarı bakışta mekanik kısıtlanma bu kası birincil hedef yapmaz.",
+        "Musculus obliquus inferior": "Inferior oblik elevasyon ve dışa rotasyon katkısı sağlar; taban kırığında klinik olarak karışabilir. Ancak pasif elevasyon kısıtlılığı ve alt orbital içerik çökmesi daha çok alt rektus sıkışmasını destekler.",
+        "Musculus rectus medialis": "Medial rectus adduksiyonla ilişkilidir ve medial orbital duvar patolojilerinde daha anlamlıdır. Bu hastada esas sorun yatay bakış değil yukarı bakışta vertikal diplopidir.",
+        "Musculus obliquus superior": "Superior oblik depresyon ve intorsiyon fonksiyonlarıyla ilişkilidir; troklear sinir paterninde aşağı bakışta zorlanma beklenebilir. Taban kırığına bağlı yukarı bakış kısıtlılığını en iyi açıklamaz."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Orbita travmasında ekstraoküler kas hareketlerini kırık lokalizasyonuyla ilişkilendirebilme.",
+      "coreKnowledge": "Orbita tabanı kırıklarında alt orbital içerikler maksiller sinüs yönüne yer değiştirebilir; yukarı bakış kısıtlılığı mekanik sıkışma paternini gösterir."
+    },
+    "whyCorrect": "Orbita tabanı kırığı sonrası vertikal diplopinin özellikle yukarı bakışta artması ve pasif elevasyonun kısıtlanması, globun altındaki ekstraoküler kasın mekanik sıkışmasıyla açıklanır. Görme keskinliği ve pupilla reflekslerinin korunması optik sinir veya parasempatik yol hasarını geri plana iter. Medial veya oblik kas paternleri yatay ya da torsiyonel yakınmaları daha belirgin yapardı.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Orbita tabanında kırık ve yumuşak doku çökmesi → alt orbital kompartmandaki yapıların mekanik etkilenme riskini artırır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Yukarı bakışta belirgin diplopi → elevasyon sırasında karşı koyan veya sıkışan alt orbital yapı paternini düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Pasif elevasyonun da kısıtlı olması → yalnız nörolojik paraliziden çok mekanik kısıtlanmayı destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Pupilla ve görme keskinliğinin korunması → optik sinir veya yaygın orbital apex tutulumunu desteklemez.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Musculus rectus superior": "Superior rectus elevasyonda rol alır ancak orbita tavanı komşuluğunda değerlendirilir; taban kırığı ve yukarı bakışta mekanik kısıtlanma bu kası birincil hedef yapmaz.",
+      "Musculus obliquus inferior": "Inferior oblik elevasyon ve dışa rotasyon katkısı sağlar; taban kırığında klinik olarak karışabilir. Ancak pasif elevasyon kısıtlılığı ve alt orbital içerik çökmesi daha çok alt rektus sıkışmasını destekler.",
+      "Musculus rectus medialis": "Medial rectus adduksiyonla ilişkilidir ve medial orbital duvar patolojilerinde daha anlamlıdır. Bu hastada esas sorun yatay bakış değil yukarı bakışta vertikal diplopidir.",
+      "Musculus rectus inferior": "Doğru yanıttır; orbita tabanı kırıklarında alt rektus ve çevre yumuşak dokular maksiller sinüs yönüne sıkışabilir. Yukarı bakışta diplopi ve pasif elevasyon kısıtlılığı bu mekanik paternle uyumludur.",
+      "Musculus obliquus superior": "Superior oblik depresyon ve intorsiyon fonksiyonlarıyla ilişkilidir; troklear sinir paterninde aşağı bakışta zorlanma beklenebilir. Taban kırığına bağlı yukarı bakış kısıtlılığını en iyi açıklamaz."
+    },
+    "coreKnowledge": "Orbita tabanı kırıklarında alt orbital içerikler maksiller sinüs yönüne yer değiştirebilir; yukarı bakış kısıtlılığı mekanik sıkışma paternini gösterir.",
+    "examPearl": "Taban kırığı + yukarı bakışta diplopi + pasif elevasyon kısıtlılığı mekanik alt orbital kas etkilenimini düşündürür.",
+    "whyWrong": {
+      "Musculus rectus superior": "Superior rectus elevasyonda rol alır ancak orbita tavanı komşuluğunda değerlendirilir; taban kırığı ve yukarı bakışta mekanik kısıtlanma bu kası birincil hedef yapmaz.",
+      "Musculus obliquus inferior": "Inferior oblik elevasyon ve dışa rotasyon katkısı sağlar; taban kırığında klinik olarak karışabilir. Ancak pasif elevasyon kısıtlılığı ve alt orbital içerik çökmesi daha çok alt rektus sıkışmasını destekler.",
+      "Musculus rectus medialis": "Medial rectus adduksiyonla ilişkilidir ve medial orbital duvar patolojilerinde daha anlamlıdır. Bu hastada esas sorun yatay bakış değil yukarı bakışta vertikal diplopidir.",
+      "Musculus obliquus superior": "Superior oblik depresyon ve intorsiyon fonksiyonlarıyla ilişkilidir; troklear sinir paterninde aşağı bakışta zorlanma beklenebilir. Taban kırığına bağlı yukarı bakış kısıtlılığını en iyi açıklamaz."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Orta",
+  "aiMeta": {
+    "generatedAt": "manual-v197-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial"
+  },
+  "listTitle": "Orbita travması sonrası çift görme",
+  "cardTitle": "Orbita travması sonrası çift görme",
+  "coreKnowledge": "Orbita tabanı kırıklarında alt orbital içerikler maksiller sinüs yönüne yer değiştirebilir; yukarı bakış kısıtlılığı mekanik sıkışma paternini gösterir.",
+  "examPearl": "Taban kırığı + yukarı bakışta diplopi + pasif elevasyon kısıtlılığı mekanik alt orbital kas etkilenimini düşündürür.",
+  "whyCorrect": "Orbita tabanı kırığı sonrası vertikal diplopinin özellikle yukarı bakışta artması ve pasif elevasyonun kısıtlanması, globun altındaki ekstraoküler kasın mekanik sıkışmasıyla açıklanır. Görme keskinliği ve pupilla reflekslerinin korunması optik sinir veya parasempatik yol hasarını geri plana iter. Medial veya oblik kas paternleri yatay ya da torsiyonel yakınmaları daha belirgin yapardı.",
+  "optionComparison": {
+    "Musculus rectus superior": "Superior rectus elevasyonda rol alır ancak orbita tavanı komşuluğunda değerlendirilir; taban kırığı ve yukarı bakışta mekanik kısıtlanma bu kası birincil hedef yapmaz.",
+    "Musculus obliquus inferior": "Inferior oblik elevasyon ve dışa rotasyon katkısı sağlar; taban kırığında klinik olarak karışabilir. Ancak pasif elevasyon kısıtlılığı ve alt orbital içerik çökmesi daha çok alt rektus sıkışmasını destekler.",
+    "Musculus rectus medialis": "Medial rectus adduksiyonla ilişkilidir ve medial orbital duvar patolojilerinde daha anlamlıdır. Bu hastada esas sorun yatay bakış değil yukarı bakışta vertikal diplopidir.",
+    "Musculus rectus inferior": "Doğru yanıttır; orbita tabanı kırıklarında alt rektus ve çevre yumuşak dokular maksiller sinüs yönüne sıkışabilir. Yukarı bakışta diplopi ve pasif elevasyon kısıtlılığı bu mekanik paternle uyumludur.",
+    "Musculus obliquus superior": "Superior oblik depresyon ve intorsiyon fonksiyonlarıyla ilişkilidir; troklear sinir paterninde aşağı bakışta zorlanma beklenebilir. Taban kırığına bağlı yukarı bakış kısıtlılığını en iyi açıklamaz."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Orbita tabanında kırık ve yumuşak doku çökmesi → alt orbital kompartmandaki yapıların mekanik etkilenme riskini artırır.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Yukarı bakışta belirgin diplopi → elevasyon sırasında karşı koyan veya sıkışan alt orbital yapı paternini düşündürür.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Pasif elevasyonun da kısıtlı olması → yalnız nörolojik paraliziden çok mekanik kısıtlanmayı destekler.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Pupilla ve görme keskinliğinin korunması → optik sinir veya yaygın orbital apex tutulumunu desteklemez.",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Musculus rectus superior": "Superior rectus elevasyonda rol alır ancak orbita tavanı komşuluğunda değerlendirilir; taban kırığı ve yukarı bakışta mekanik kısıtlanma bu kası birincil hedef yapmaz.",
+    "Musculus obliquus inferior": "Inferior oblik elevasyon ve dışa rotasyon katkısı sağlar; taban kırığında klinik olarak karışabilir. Ancak pasif elevasyon kısıtlılığı ve alt orbital içerik çökmesi daha çok alt rektus sıkışmasını destekler.",
+    "Musculus rectus medialis": "Medial rectus adduksiyonla ilişkilidir ve medial orbital duvar patolojilerinde daha anlamlıdır. Bu hastada esas sorun yatay bakış değil yukarı bakışta vertikal diplopidir.",
+    "Musculus obliquus superior": "Superior oblik depresyon ve intorsiyon fonksiyonlarıyla ilişkilidir; troklear sinir paterninde aşağı bakışta zorlanma beklenebilir. Taban kırığına bağlı yukarı bakış kısıtlılığını en iyi açıklamaz."
+  }
+},
+{
+  "id": "v197-new-345-ust-gastrointestinal-kanama-ve-venoz-genisleme",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi / Gastroenteroloji",
+  "title": "Üst gastrointestinal kanama ve venöz genişleme",
+  "difficulty": "Orta",
+  "clinicalFocus": "Portosistemik anastomoz bölgelerini klinik kanama yeri ve görüntüleme bulgularıyla eşleştirme.",
+  "learningTarget": "Distal özofagus-kardiya venöz genişlemelerinde portal sistem tarafındaki temel venöz yapıyı ayırt edebilme.",
+  "demographics": "58 yaşında erkek hasta",
+  "setting": "Acil servis",
+  "chiefComplaint": "Hasta, kanlı kusma ve siyah dışkılama sonrası acil serviste değerlendiriliyor.",
+  "stem": "Hasta, iki gündür halsizlik ve baş dönmesi yaşadığını, sabah saatlerinde koyu renkli kusma sonrası ailesi tarafından acile getirildiğini anlatır. Son haftalarda karın şişliğinin arttığını ve çabuk yorulduğunu fark etmiştir. Daha önce benzer şiddette kanama geçirmediğini, düzenli kan sulandırıcı kullanmadığını söyler. Dışkısının son iki gündür siyaha yakın renkte olduğunu belirtir. Göbek çevresinde yeni belirginleşen damar fark etmediğini ve makattan parlak kırmızı kan gelmediğini ifade eder.",
+  "patientIntro": {
+    "profile": "58 yaşında erkek hasta, üst gastrointestinal kanama bulguları nedeniyle acil serviste değerlendiriliyor.",
+    "presentation": "Kanlı kusma, siyah dışkılama, baş dönmesi ve kronik karaciğer hastalığına eşlik edebilecek karın şişliği vardır.",
+    "historySummary": "Hasta, iki gündür halsizlik ve baş dönmesi yaşadığını, sabah saatlerinde koyu renkli kusma sonrası ailesi tarafından acile getirildiğini anlatır. Son haftalarda karın şişliğinin arttığını ve çabuk yorulduğunu fark etmiştir. Daha önce benzer şiddette kanama geçirmediğini, düzenli kan sulandırıcı kullanmadığını söyler. Dışkısının son iki gündür siyaha yakın renkte olduğunu belirtir. Göbek çevresinde yeni belirginleşen damar fark etmediğini ve makattan parlak kırmızı kan gelmediğini ifade eder."
+  },
+  "vitals": {
+    "TA": "96/58 mmHg",
+    "Nabız": "112/dk",
+    "Solunum": "20/dk",
+    "SpO2": "%97, oda havasında",
+    "Ateş": "36.9 °C",
+    "Şok indeksi": "1.17 artmış"
+  },
+  "exam": [
+    "Hasta soluk ve terli görünümdedir; konfüzyon saptanmaz.",
+    "Karında hafif distansiyon ve dalak alt polünde ele gelme vardır.",
+    "Rektal tuşede siyah renkli dışkı izlenir; parlak kırmızı aktif kanama görülmez.",
+    "Göbek çevresinde belirgin radyal yüzeyel venöz kabarıklık izlenmez."
+  ],
+  "investigations": [
+    {
+      "id": "v197-new-345-ust-gastrointestinal-kanama-ve-venoz-genisleme-endoskopi-ve-abdominal-usg",
+      "label": "Endoskopi ve abdominal ultrasonografi",
+      "title": "Endoskopi ve abdominal ultrasonografi",
+      "orderLabel": "Endoskopi ve abdominal ultrasonografi",
+      "type": "endoscopy",
+      "priority": "essential",
+      "subtype": "Endoskopi ve abdominal ultrasonografi",
+      "category": "imaging",
+      "testTypeCategory": "imaging",
+      "summary": "Endoskopide distal özofagus-kardiya düzeyinde kanama odağı taşıyan venöz genişleme, ultrasonografide portal basınç artışıyla uyumlu zeminle birlikte görülmektedir.",
+      "clinicalMeaning": "Endoskopide distal özofagus-kardiya düzeyinde kanama odağı taşıyan venöz genişleme, ultrasonografide portal basınç artışıyla uyumlu zeminle birlikte görülmektedir.",
+      "result": {
+        "title": "Endoskopi ve abdominal ultrasonografi",
+        "summary": "Endoskopide distal özofagus-kardiya düzeyinde kanama odağı taşıyan venöz genişleme, ultrasonografide portal basınç artışıyla uyumlu zeminle birlikte görülmektedir.",
+        "interpretation": "Endoskopide distal özofagus-kardiya düzeyinde kanama odağı taşıyan venöz genişleme, ultrasonografide portal basınç artışıyla uyumlu zeminle birlikte görülmektedir.",
+        "values": [
+          [
+            "Endoskopi",
+            "Distal özofagus ve kardiya çevresinde geniş, kıvrımlı submukozal venöz kolonlar izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Kanama bulgusu",
+            "Venöz kolon üzerinde taze pıhtı ile uyumlu odak görüldü.",
+            "",
+            ""
+          ],
+          [
+            "Karaciğer USG",
+            "Nodüler kontur ve splenomegali saptandı.",
+            "",
+            ""
+          ],
+          [
+            "Rektal değerlendirme",
+            "Distal rektumda kanayan venöz odak izlenmedi.",
+            "",
+            ""
+          ]
+        ],
+        "rows": [
+          [
+            "Endoskopi",
+            "Distal özofagus ve kardiya çevresinde geniş, kıvrımlı submukozal venöz kolonlar izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Kanama bulgusu",
+            "Venöz kolon üzerinde taze pıhtı ile uyumlu odak görüldü.",
+            "",
+            ""
+          ],
+          [
+            "Karaciğer USG",
+            "Nodüler kontur ve splenomegali saptandı.",
+            "",
+            ""
+          ],
+          [
+            "Rektal değerlendirme",
+            "Distal rektumda kanayan venöz odak izlenmedi.",
+            "",
+            ""
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Endoskopi",
+          "Distal özofagus ve kardiya çevresinde geniş, kıvrımlı submukozal venöz kolonlar izlendi.",
+          "",
+          ""
+        ],
+        [
+          "Kanama bulgusu",
+          "Venöz kolon üzerinde taze pıhtı ile uyumlu odak görüldü.",
+          "",
+          ""
+        ],
+        [
+          "Karaciğer USG",
+          "Nodüler kontur ve splenomegali saptandı.",
+          "",
+          ""
+        ],
+        [
+          "Rektal değerlendirme",
+          "Distal rektumda kanayan venöz odak izlenmedi.",
+          "",
+          ""
+        ]
+      ],
+      "postAnswerExplanation": "Endoskopide distal özofagus-kardiya düzeyinde kanama odağı taşıyan venöz genişleme, ultrasonografide portal basınç artışıyla uyumlu zeminle birlikte görülmektedir.",
+      "interpretation": "Endoskopide distal özofagus-kardiya düzeyinde kanama odağı taşıyan venöz genişleme, ultrasonografide portal basınç artışıyla uyumlu zeminle birlikte görülmektedir.",
+      "explanationAfterAnswer": "Endoskopide distal özofagus-kardiya düzeyinde kanama odağı taşıyan venöz genişleme, ultrasonografide portal basınç artışıyla uyumlu zeminle birlikte görülmektedir.",
+      "testValueLabel": "Anatomik doğrulama",
+      "educationalValue": "Anatomik doğrulama",
+      "clinicalPriorityLabel": "Anatomik doğrulama",
+      "scoreImpact": 5,
+      "scoreValue": 5,
+      "clinicalFlowOrder": 1,
+      "purpose": "Vakadaki fonksiyonel kaybın anatomik lokalizasyonla ilişkilendirilmesi için objektif bulgu sağlar.",
+      "inlineFeedback": "Endoskopide distal özofagus-kardiya düzeyinde kanama odağı taşıyan venöz genişleme, ultrasonografide portal basınç artışıyla uyumlu zeminle birlikte görülmektedir."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "question": "Bu kanama bölgesinin portal sistem tarafındaki temel venöz bağlantısı aşağıdakilerden hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Vena gastrica sinistra",
+    "options": [
+      "Vena paraumbilicalis",
+      "Vena rectalis superior",
+      "Vena gastrica sinistra",
+      "Vena colica media",
+      "Vena epigastrica superficialis"
+    ],
+    "question": "Bu kanama bölgesinin portal sistem tarafındaki temel venöz bağlantısı aşağıdakilerden hangisidir?",
+    "explanation": "Portal basınç artışında distal özofagus ve kardiya çevresindeki submukozal venöz genişlemeler portal sistem ile sistemik azigos drenajı arasındaki bağlantı üzerinden belirginleşir. Bu bölgenin portal tarafındaki ana katkısı mide küçük kurvaturu ve distal özofagus çevresinden gelen venöz drenajdır. Rektal, paraumbilikal veya ön karın duvarı venleri farklı portosistemik bölgeleri açıklar; endoskopideki üst gastrointestinal kaynak için en uygun yapı değildir.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Distal özofagus venöz genişlemeleri portosistemik bağlantı anatomisi üzerinden değerlendirilir; klinik bölge hangi venin sorulduğunu belirler."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Kanamanın yerleşimi, endoskopik venöz kolonlar ve portal basınç artışı birlikte doğru portosistemik bağlantıyı işaret eder.",
+      "whyCorrect": "Portal basınç artışında distal özofagus ve kardiya çevresindeki submukozal venöz genişlemeler portal sistem ile sistemik azigos drenajı arasındaki bağlantı üzerinden belirginleşir. Bu bölgenin portal tarafındaki ana katkısı mide küçük kurvaturu ve distal özofagus çevresinden gelen venöz drenajdır. Rektal, paraumbilikal veya ön karın duvarı venleri farklı portosistemik bölgeleri açıklar; endoskopideki üst gastrointestinal kaynak için en uygun yapı değildir.",
+      "rationale": "Portal basınç artışında distal özofagus ve kardiya çevresindeki submukozal venöz genişlemeler portal sistem ile sistemik azigos drenajı arasındaki bağlantı üzerinden belirginleşir. Bu bölgenin portal tarafındaki ana katkısı mide küçük kurvaturu ve distal özofagus çevresinden gelen venöz drenajdır. Rektal, paraumbilikal veya ön karın duvarı venleri farklı portosistemik bölgeleri açıklar; endoskopideki üst gastrointestinal kaynak için en uygun yapı değildir.",
+      "correctOptionFeedback": "Doğru yanıttır; distal özofagus ve mide kardiyası çevresindeki venöz bağlantıda portal tarafı sol gastrik ven oluşturur. Kanlı kusma ve endoskopik distal özofagus venöz kolonları bu bölgeyle uyumludur.",
+      "keyClues": [
+        "Kanlı kusma ve melena → üst gastrointestinal kaynaklı venöz kanama olasılığını artırır.",
+        "Endoskopide distal özofagus ve kardiya çevresinde geniş venöz kolonlar → portosistemik bağlantı bölgesini gösterir.",
+        "Karın USG’de nodüler karaciğer ve splenomegali → portal basınç artışını destekleyen zemini sağlar.",
+        "Rektal kanama veya göbek çevresi venöz belirginleşme olmaması → diğer kollateral bölgeleri daha az olası yapar."
+      ],
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Kanlı kusma ve melena → üst gastrointestinal kaynaklı venöz kanama olasılığını artırır.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Endoskopide distal özofagus ve kardiya çevresinde geniş venöz kolonlar → portosistemik bağlantı bölgesini gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Karın USG’de nodüler karaciğer ve splenomegali → portal basınç artışını destekleyen zemini sağlar.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Rektal kanama veya göbek çevresi venöz belirginleşme olmaması → diğer kollateral bölgeleri daha az olası yapar.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Üst gastrointestinal venöz kanama bölgesi distal özofagus ise portal tarafta sol gastrik ven akla gelir; rektal ve paraumbilikal bağlantılar farklı klinik alanlardır.",
+      "optionComparison": {
+        "Vena paraumbilicalis": "Paraumbilikal venler göbek çevresi kollateral genişlemeleri ve caput medusae görünümüyle ilişkilidir. Bu hastada belirgin bulgu distal özofagus-kardiya düzeyindeki venöz genişlemedir.",
+        "Vena rectalis superior": "Superior rektal ven anorektal portosistemik bağlantının portal tarafıdır. Hematokezya veya rektal venöz genişleme paterninde akla gelir; üst gastrointestinal endoskopi bulgusunu açıklamaz.",
+        "Vena gastrica sinistra": "Doğru yanıttır; distal özofagus ve mide kardiyası çevresindeki venöz bağlantıda portal tarafı sol gastrik ven oluşturur. Kanlı kusma ve endoskopik distal özofagus venöz kolonları bu bölgeyle uyumludur.",
+        "Vena colica media": "Orta kolik ven transvers kolon drenajına katılır ve portal sisteme mezenterik yol üzerinden döner. Distal özofagus submukozal venöz genişlemenin temel portal bağlantısı değildir.",
+        "Vena epigastrica superficialis": "Yüzeyel epigastrik ven ön karın duvarının sistemik venöz drenajıyla ilişkilidir. Göbek çevresi kollateral görünümünde yardımcı olabilir; endoskopideki distal özofagus bulgusunu primer açıklamaz."
+      },
+      "whyWrong": {
+        "Vena paraumbilicalis": "Paraumbilikal venler göbek çevresi kollateral genişlemeleri ve caput medusae görünümüyle ilişkilidir. Bu hastada belirgin bulgu distal özofagus-kardiya düzeyindeki venöz genişlemedir.",
+        "Vena rectalis superior": "Superior rektal ven anorektal portosistemik bağlantının portal tarafıdır. Hematokezya veya rektal venöz genişleme paterninde akla gelir; üst gastrointestinal endoskopi bulgusunu açıklamaz.",
+        "Vena colica media": "Orta kolik ven transvers kolon drenajına katılır ve portal sisteme mezenterik yol üzerinden döner. Distal özofagus submukozal venöz genişlemenin temel portal bağlantısı değildir.",
+        "Vena epigastrica superficialis": "Yüzeyel epigastrik ven ön karın duvarının sistemik venöz drenajıyla ilişkilidir. Göbek çevresi kollateral görünümünde yardımcı olabilir; endoskopideki distal özofagus bulgusunu primer açıklamaz."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Portosistemik anastomozları klinik kanama lokalizasyonuna göre ayırt edebilme.",
+      "coreKnowledge": "Distal özofagus çevresinde portal sistem venleri sistemik azigos drenajı ile bağlantı kurar; portal hipertansiyonda bu alan kanamaya eğilimli genişlemeler oluşturabilir."
+    },
+    "whyCorrect": "Portal basınç artışında distal özofagus ve kardiya çevresindeki submukozal venöz genişlemeler portal sistem ile sistemik azigos drenajı arasındaki bağlantı üzerinden belirginleşir. Bu bölgenin portal tarafındaki ana katkısı mide küçük kurvaturu ve distal özofagus çevresinden gelen venöz drenajdır. Rektal, paraumbilikal veya ön karın duvarı venleri farklı portosistemik bölgeleri açıklar; endoskopideki üst gastrointestinal kaynak için en uygun yapı değildir.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Kanlı kusma ve melena → üst gastrointestinal kaynaklı venöz kanama olasılığını artırır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Endoskopide distal özofagus ve kardiya çevresinde geniş venöz kolonlar → portosistemik bağlantı bölgesini gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Karın USG’de nodüler karaciğer ve splenomegali → portal basınç artışını destekleyen zemini sağlar.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Rektal kanama veya göbek çevresi venöz belirginleşme olmaması → diğer kollateral bölgeleri daha az olası yapar.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Vena paraumbilicalis": "Paraumbilikal venler göbek çevresi kollateral genişlemeleri ve caput medusae görünümüyle ilişkilidir. Bu hastada belirgin bulgu distal özofagus-kardiya düzeyindeki venöz genişlemedir.",
+      "Vena rectalis superior": "Superior rektal ven anorektal portosistemik bağlantının portal tarafıdır. Hematokezya veya rektal venöz genişleme paterninde akla gelir; üst gastrointestinal endoskopi bulgusunu açıklamaz.",
+      "Vena gastrica sinistra": "Doğru yanıttır; distal özofagus ve mide kardiyası çevresindeki venöz bağlantıda portal tarafı sol gastrik ven oluşturur. Kanlı kusma ve endoskopik distal özofagus venöz kolonları bu bölgeyle uyumludur.",
+      "Vena colica media": "Orta kolik ven transvers kolon drenajına katılır ve portal sisteme mezenterik yol üzerinden döner. Distal özofagus submukozal venöz genişlemenin temel portal bağlantısı değildir.",
+      "Vena epigastrica superficialis": "Yüzeyel epigastrik ven ön karın duvarının sistemik venöz drenajıyla ilişkilidir. Göbek çevresi kollateral görünümünde yardımcı olabilir; endoskopideki distal özofagus bulgusunu primer açıklamaz."
+    },
+    "coreKnowledge": "Distal özofagus çevresinde portal sistem venleri sistemik azigos drenajı ile bağlantı kurar; portal hipertansiyonda bu alan kanamaya eğilimli genişlemeler oluşturabilir.",
+    "examPearl": "Üst gastrointestinal venöz kanama bölgesi distal özofagus ise portal tarafta sol gastrik ven akla gelir; rektal ve paraumbilikal bağlantılar farklı klinik alanlardır.",
+    "whyWrong": {
+      "Vena paraumbilicalis": "Paraumbilikal venler göbek çevresi kollateral genişlemeleri ve caput medusae görünümüyle ilişkilidir. Bu hastada belirgin bulgu distal özofagus-kardiya düzeyindeki venöz genişlemedir.",
+      "Vena rectalis superior": "Superior rektal ven anorektal portosistemik bağlantının portal tarafıdır. Hematokezya veya rektal venöz genişleme paterninde akla gelir; üst gastrointestinal endoskopi bulgusunu açıklamaz.",
+      "Vena colica media": "Orta kolik ven transvers kolon drenajına katılır ve portal sisteme mezenterik yol üzerinden döner. Distal özofagus submukozal venöz genişlemenin temel portal bağlantısı değildir.",
+      "Vena epigastrica superficialis": "Yüzeyel epigastrik ven ön karın duvarının sistemik venöz drenajıyla ilişkilidir. Göbek çevresi kollateral görünümünde yardımcı olabilir; endoskopideki distal özofagus bulgusunu primer açıklamaz."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Orta",
+  "aiMeta": {
+    "generatedAt": "manual-v197-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial"
+  },
+  "listTitle": "Üst gastrointestinal kanama ve venöz genişleme",
+  "cardTitle": "Üst gastrointestinal kanama ve venöz genişleme",
+  "coreKnowledge": "Distal özofagus çevresinde portal sistem venleri sistemik azigos drenajı ile bağlantı kurar; portal hipertansiyonda bu alan kanamaya eğilimli genişlemeler oluşturabilir.",
+  "examPearl": "Üst gastrointestinal venöz kanama bölgesi distal özofagus ise portal tarafta sol gastrik ven akla gelir; rektal ve paraumbilikal bağlantılar farklı klinik alanlardır.",
+  "whyCorrect": "Portal basınç artışında distal özofagus ve kardiya çevresindeki submukozal venöz genişlemeler portal sistem ile sistemik azigos drenajı arasındaki bağlantı üzerinden belirginleşir. Bu bölgenin portal tarafındaki ana katkısı mide küçük kurvaturu ve distal özofagus çevresinden gelen venöz drenajdır. Rektal, paraumbilikal veya ön karın duvarı venleri farklı portosistemik bölgeleri açıklar; endoskopideki üst gastrointestinal kaynak için en uygun yapı değildir.",
+  "optionComparison": {
+    "Vena paraumbilicalis": "Paraumbilikal venler göbek çevresi kollateral genişlemeleri ve caput medusae görünümüyle ilişkilidir. Bu hastada belirgin bulgu distal özofagus-kardiya düzeyindeki venöz genişlemedir.",
+    "Vena rectalis superior": "Superior rektal ven anorektal portosistemik bağlantının portal tarafıdır. Hematokezya veya rektal venöz genişleme paterninde akla gelir; üst gastrointestinal endoskopi bulgusunu açıklamaz.",
+    "Vena gastrica sinistra": "Doğru yanıttır; distal özofagus ve mide kardiyası çevresindeki venöz bağlantıda portal tarafı sol gastrik ven oluşturur. Kanlı kusma ve endoskopik distal özofagus venöz kolonları bu bölgeyle uyumludur.",
+    "Vena colica media": "Orta kolik ven transvers kolon drenajına katılır ve portal sisteme mezenterik yol üzerinden döner. Distal özofagus submukozal venöz genişlemenin temel portal bağlantısı değildir.",
+    "Vena epigastrica superficialis": "Yüzeyel epigastrik ven ön karın duvarının sistemik venöz drenajıyla ilişkilidir. Göbek çevresi kollateral görünümünde yardımcı olabilir; endoskopideki distal özofagus bulgusunu primer açıklamaz."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Kanlı kusma ve melena → üst gastrointestinal kaynaklı venöz kanama olasılığını artırır.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Endoskopide distal özofagus ve kardiya çevresinde geniş venöz kolonlar → portosistemik bağlantı bölgesini gösterir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Karın USG’de nodüler karaciğer ve splenomegali → portal basınç artışını destekleyen zemini sağlar.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Rektal kanama veya göbek çevresi venöz belirginleşme olmaması → diğer kollateral bölgeleri daha az olası yapar.",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Vena paraumbilicalis": "Paraumbilikal venler göbek çevresi kollateral genişlemeleri ve caput medusae görünümüyle ilişkilidir. Bu hastada belirgin bulgu distal özofagus-kardiya düzeyindeki venöz genişlemedir.",
+    "Vena rectalis superior": "Superior rektal ven anorektal portosistemik bağlantının portal tarafıdır. Hematokezya veya rektal venöz genişleme paterninde akla gelir; üst gastrointestinal endoskopi bulgusunu açıklamaz.",
+    "Vena colica media": "Orta kolik ven transvers kolon drenajına katılır ve portal sisteme mezenterik yol üzerinden döner. Distal özofagus submukozal venöz genişlemenin temel portal bağlantısı değildir.",
+    "Vena epigastrica superficialis": "Yüzeyel epigastrik ven ön karın duvarının sistemik venöz drenajıyla ilişkilidir. Göbek çevresi kollateral görünümünde yardımcı olabilir; endoskopideki distal özofagus bulgusunu primer açıklamaz."
+  }
+},
+{
+  "id": "v197-new-346-toraks-girisimi-sonrasi-nefes-darligi",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi / Göğüs Cerrahisi",
+  "title": "Toraks girişimi sonrası nefes darlığı",
+  "difficulty": "Orta",
+  "clinicalFocus": "Üst toraks girişimleri sonrası solunum mekaniği bulgularını mediastinal sinir anatomisiyle eşleştirme.",
+  "learningTarget": "Tek taraflı hemidiyafram elevasyonu ve paradoks hareket bulgusunu diyafram motor innervasyonuyla ilişkilendirebilme.",
+  "demographics": "64 yaşında kadın hasta",
+  "setting": "Göğüs hastalıkları servisi",
+  "chiefComplaint": "Hasta, santral venöz kateter işlemi sonrası başlayan eforla nefes darlığı nedeniyle değerlendiriliyor.",
+  "stem": "Hasta, yoğun bakım izlemi sırasında sağ köprücük kemiği altından damar yolu açıldığını ve işlemden sonraki gün yürürken daha çabuk nefesinin kesildiğini anlatır. Yatarken sağ yanına döndüğünde solunumunun zorlaştığını fark etmiş, merdiven çıkınca mola verme ihtiyacı artmıştır. Sesinde belirgin kısıklık olmadığını, yutarken takılma veya öksürük nöbeti yaşamadığını söyler. İşlem öncesinde benzer nefes darlığı olmadığını belirtir. Göğüs ağrısı keskin tarzda değildir ve ateş tariflemez.",
+  "patientIntro": {
+    "profile": "64 yaşında kadın hasta, üst toraks bölgesinden yapılan damar yolu girişimi sonrası serviste değerlendiriliyor.",
+    "presentation": "İşlem sonrası başlayan efor dispnesi ve pozisyonla artan solunum güçlüğü vardır.",
+    "historySummary": "Hasta, yoğun bakım izlemi sırasında sağ köprücük kemiği altından damar yolu açıldığını ve işlemden sonraki gün yürürken daha çabuk nefesinin kesildiğini anlatır. Yatarken sağ yanına döndüğünde solunumunun zorlaştığını fark etmiş, merdiven çıkınca mola verme ihtiyacı artmıştır. Sesinde belirgin kısıklık olmadığını, yutarken takılma veya öksürük nöbeti yaşamadığını söyler. İşlem öncesinde benzer nefes darlığı olmadığını belirtir. Göğüs ağrısı keskin tarzda değildir ve ateş tariflemez."
+  },
+  "vitals": {
+    "TA": "130/78 mmHg",
+    "Nabız": "92/dk",
+    "Solunum": "22/dk",
+    "SpO2": "%94, oda havasında",
+    "Ateş": "36.8 °C",
+    "Şok indeksi": "0.71 normal"
+  },
+  "exam": [
+    "Hasta konuşurken cümlelerini tamamlayabilmektedir ancak derin inspiryumda zorlanma tarifler.",
+    "Sağ akciğer bazalinde solunum sesleri hafif azalmıştır; yaygın ronküs veya stridor duyulmaz.",
+    "Boyunda hematom veya progresif şişlik izlenmez.",
+    "Ses kalitesi belirgin kısık değildir; yutma sırasında öksürük tetiklenmez."
+  ],
+  "investigations": [
+    {
+      "id": "v197-new-346-toraks-girisimi-sonrasi-nefes-darligi-akciger-grafisi-ve-diyafram-hareketi",
+      "label": "Akciğer grafisi ve diyafram hareket değerlendirmesi",
+      "title": "Akciğer grafisi ve diyafram hareket değerlendirmesi",
+      "orderLabel": "Akciğer grafisi ve diyafram hareket değerlendirmesi",
+      "type": "xray",
+      "priority": "essential",
+      "subtype": "Akciğer grafisi ve diyafram hareket değerlendirmesi",
+      "category": "imaging",
+      "testTypeCategory": "imaging",
+      "summary": "Görüntüleme ve dinamik hareket değerlendirmesi sağ hemidiyaframın inspiryumda yeterli aşağı hareket yapmadığını göstermektedir.",
+      "clinicalMeaning": "Görüntüleme ve dinamik hareket değerlendirmesi sağ hemidiyaframın inspiryumda yeterli aşağı hareket yapmadığını göstermektedir.",
+      "result": {
+        "title": "Akciğer grafisi ve diyafram hareket değerlendirmesi",
+        "summary": "Görüntüleme ve dinamik hareket değerlendirmesi sağ hemidiyaframın inspiryumda yeterli aşağı hareket yapmadığını göstermektedir.",
+        "interpretation": "Görüntüleme ve dinamik hareket değerlendirmesi sağ hemidiyaframın inspiryumda yeterli aşağı hareket yapmadığını göstermektedir.",
+        "values": [
+          [
+            "Akciğer grafisi",
+            "Sağ hemidiyafram sol tarafa göre belirgin yüksek izlenmektedir.",
+            "",
+            ""
+          ],
+          [
+            "Bazal akciğer alanı",
+            "Sağ bazalde sınırlı çizgisel atelektatik görünüm vardır.",
+            "",
+            ""
+          ],
+          [
+            "Dinamik hareket",
+            "İnspiryum sırasında sağ hemidiyaframda paradoks yukarı hareket kaydedildi.",
+            "",
+            ""
+          ],
+          [
+            "Laringeal bulgu",
+            "Ses kısıklığı ve stridor saptanmadı.",
+            "",
+            ""
+          ]
+        ],
+        "rows": [
+          [
+            "Akciğer grafisi",
+            "Sağ hemidiyafram sol tarafa göre belirgin yüksek izlenmektedir.",
+            "",
+            ""
+          ],
+          [
+            "Bazal akciğer alanı",
+            "Sağ bazalde sınırlı çizgisel atelektatik görünüm vardır.",
+            "",
+            ""
+          ],
+          [
+            "Dinamik hareket",
+            "İnspiryum sırasında sağ hemidiyaframda paradoks yukarı hareket kaydedildi.",
+            "",
+            ""
+          ],
+          [
+            "Laringeal bulgu",
+            "Ses kısıklığı ve stridor saptanmadı.",
+            "",
+            ""
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Akciğer grafisi",
+          "Sağ hemidiyafram sol tarafa göre belirgin yüksek izlenmektedir.",
+          "",
+          ""
+        ],
+        [
+          "Bazal akciğer alanı",
+          "Sağ bazalde sınırlı çizgisel atelektatik görünüm vardır.",
+          "",
+          ""
+        ],
+        [
+          "Dinamik hareket",
+          "İnspiryum sırasında sağ hemidiyaframda paradoks yukarı hareket kaydedildi.",
+          "",
+          ""
+        ],
+        [
+          "Laringeal bulgu",
+          "Ses kısıklığı ve stridor saptanmadı.",
+          "",
+          ""
+        ]
+      ],
+      "postAnswerExplanation": "Görüntüleme ve dinamik hareket değerlendirmesi sağ hemidiyaframın inspiryumda yeterli aşağı hareket yapmadığını göstermektedir.",
+      "interpretation": "Görüntüleme ve dinamik hareket değerlendirmesi sağ hemidiyaframın inspiryumda yeterli aşağı hareket yapmadığını göstermektedir.",
+      "explanationAfterAnswer": "Görüntüleme ve dinamik hareket değerlendirmesi sağ hemidiyaframın inspiryumda yeterli aşağı hareket yapmadığını göstermektedir.",
+      "testValueLabel": "Anatomik doğrulama",
+      "educationalValue": "Anatomik doğrulama",
+      "clinicalPriorityLabel": "Anatomik doğrulama",
+      "scoreImpact": 5,
+      "scoreValue": 5,
+      "clinicalFlowOrder": 1,
+      "purpose": "Vakadaki fonksiyonel kaybın anatomik lokalizasyonla ilişkilendirilmesi için objektif bulgu sağlar.",
+      "inlineFeedback": "Görüntüleme ve dinamik hareket değerlendirmesi sağ hemidiyaframın inspiryumda yeterli aşağı hareket yapmadığını göstermektedir."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "question": "Bu tabloyu en iyi açıklayan sinir etkilenimi hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Nervus phrenicus",
+    "options": [
+      "Nervus phrenicus",
+      "Nervus vagus",
+      "Nervus intercostalis",
+      "Nervus laryngeus recurrens",
+      "Nervus splanchnicus major"
+    ],
+    "question": "Bu tabloyu en iyi açıklayan sinir etkilenimi hangisidir?",
+    "explanation": "Santral venöz girişim ve üst toraks komşuluğu sonrasında tek taraflı hemidiyafram yükselmesi, inspiryumda paradoks hareket ve aynı tarafta bazal atelektazi diyafram motor innervasyonunun bozulduğunu gösterir. Ses kısıklığı veya vokal fold immobilitesi olmaması rekürren laringeal siniri, bağırsak-otonom bulgu olmaması splanknik yapıları geri plana iter. İnterkostal sinir hasarı lokal duyu ve segmental kas ağrısıyla sınırlı kalmaya daha yatkındır.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Tek taraflı hemidiyafram elevasyonu ve paradoks hareket diyafram motor innervasyonunu düşündüren temel anatomik ipucudur."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Girişim yeri, hemidiyafram elevasyonu ve dinamik hareket bozukluğu birlikte diyafram motor siniri düzeyini gösterir.",
+      "whyCorrect": "Santral venöz girişim ve üst toraks komşuluğu sonrasında tek taraflı hemidiyafram yükselmesi, inspiryumda paradoks hareket ve aynı tarafta bazal atelektazi diyafram motor innervasyonunun bozulduğunu gösterir. Ses kısıklığı veya vokal fold immobilitesi olmaması rekürren laringeal siniri, bağırsak-otonom bulgu olmaması splanknik yapıları geri plana iter. İnterkostal sinir hasarı lokal duyu ve segmental kas ağrısıyla sınırlı kalmaya daha yatkındır.",
+      "rationale": "Santral venöz girişim ve üst toraks komşuluğu sonrasında tek taraflı hemidiyafram yükselmesi, inspiryumda paradoks hareket ve aynı tarafta bazal atelektazi diyafram motor innervasyonunun bozulduğunu gösterir. Ses kısıklığı veya vokal fold immobilitesi olmaması rekürren laringeal siniri, bağırsak-otonom bulgu olmaması splanknik yapıları geri plana iter. İnterkostal sinir hasarı lokal duyu ve segmental kas ağrısıyla sınırlı kalmaya daha yatkındır.",
+      "correctOptionFeedback": "Doğru yanıttır; C3-C5 kökenli bu sinir diyaframın motor innervasyonunu taşır ve mediastinal/servikotorasik girişimlerde risk altında olabilir. Hemidiyafram elevasyonu ve paradoks hareket bu seçenekle uyumludur.",
+      "keyClues": [
+        "Sağ subklavyen bölge girişimi → servikotorasik nörovasküler komşulukta sinir etkilenimi riski oluşturur.",
+        "Sağ hemidiyafram yükselmesi → diyaframın tek taraflı motor fonksiyon kaybını düşündürür.",
+        "Floroskopide inspiryumda paradoks hareket → diyafram paralizisi lehine objektif bulgudur.",
+        "Ses kısıklığı olmaması → laringeal motor dal etkilenimini desteklemez."
+      ],
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Sağ subklavyen bölge girişimi → servikotorasik nörovasküler komşulukta sinir etkilenimi riski oluşturur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Sağ hemidiyafram yükselmesi → diyaframın tek taraflı motor fonksiyon kaybını düşündürür.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Floroskopide inspiryumda paradoks hareket → diyafram paralizisi lehine objektif bulgudur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ses kısıklığı olmaması → laringeal motor dal etkilenimini desteklemez.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Hemidiyafram elevasyonu + paradoks hareket varsa interkostal kaslardan önce diyafram motor innervasyonu düşünülür.",
+      "optionComparison": {
+        "Nervus phrenicus": "Doğru yanıttır; C3-C5 kökenli bu sinir diyaframın motor innervasyonunu taşır ve mediastinal/servikotorasik girişimlerde risk altında olabilir. Hemidiyafram elevasyonu ve paradoks hareket bu seçenekle uyumludur.",
+        "Nervus vagus": "Vagus toraksta özofagus ve kardiyopulmoner pleksuslarla ilişkilidir; tek taraflı diyafram motor kaybının ana siniri değildir. Bu olguda bradikardi, belirgin otonom disfonksiyon veya özofageal motilite bulgusu yoktur.",
+        "Nervus intercostalis": "İnterkostal sinirler segmental duyu ve interkostal kaslarla ilişkilidir. Tek hemidiyafram elevasyonu ve paradoks hareketi doğrudan açıklamaz.",
+        "Nervus laryngeus recurrens": "Rekürren laringeal sinir vokal fold hareketiyle ilişkilidir; hasarında ses kısıklığı ve aspirasyon yakınması beklenebilir. Bu hastada ses değişikliği yok, ana bulgu diyafram hareketidir.",
+        "Nervus splanchnicus major": "Majör splanknik sinir sempatik lifleri abdomen prevertebral ganglionlarına taşır. Toraks girişimi sonrası gelişen solunum mekaniği ve hemidiyafram bulgusunu açıklamaz."
+      },
+      "whyWrong": {
+        "Nervus vagus": "Vagus toraksta özofagus ve kardiyopulmoner pleksuslarla ilişkilidir; tek taraflı diyafram motor kaybının ana siniri değildir. Bu olguda bradikardi, belirgin otonom disfonksiyon veya özofageal motilite bulgusu yoktur.",
+        "Nervus intercostalis": "İnterkostal sinirler segmental duyu ve interkostal kaslarla ilişkilidir. Tek hemidiyafram elevasyonu ve paradoks hareketi doğrudan açıklamaz.",
+        "Nervus laryngeus recurrens": "Rekürren laringeal sinir vokal fold hareketiyle ilişkilidir; hasarında ses kısıklığı ve aspirasyon yakınması beklenebilir. Bu hastada ses değişikliği yok, ana bulgu diyafram hareketidir.",
+        "Nervus splanchnicus major": "Majör splanknik sinir sempatik lifleri abdomen prevertebral ganglionlarına taşır. Toraks girişimi sonrası gelişen solunum mekaniği ve hemidiyafram bulgusunu açıklamaz."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Mediastinal ve servikotorasik sinir komşuluklarını solunum bulgularıyla ilişkilendirebilme.",
+      "coreKnowledge": "Diyafram motor innervasyonu C3-C5 kökenli sinirle sağlanır; tek taraflı hasarda hemidiyafram yükselmesi, bazal atelektazi ve inspiryumda paradoks hareket görülebilir."
+    },
+    "whyCorrect": "Santral venöz girişim ve üst toraks komşuluğu sonrasında tek taraflı hemidiyafram yükselmesi, inspiryumda paradoks hareket ve aynı tarafta bazal atelektazi diyafram motor innervasyonunun bozulduğunu gösterir. Ses kısıklığı veya vokal fold immobilitesi olmaması rekürren laringeal siniri, bağırsak-otonom bulgu olmaması splanknik yapıları geri plana iter. İnterkostal sinir hasarı lokal duyu ve segmental kas ağrısıyla sınırlı kalmaya daha yatkındır.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Sağ subklavyen bölge girişimi → servikotorasik nörovasküler komşulukta sinir etkilenimi riski oluşturur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Sağ hemidiyafram yükselmesi → diyaframın tek taraflı motor fonksiyon kaybını düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Floroskopide inspiryumda paradoks hareket → diyafram paralizisi lehine objektif bulgudur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Ses kısıklığı olmaması → laringeal motor dal etkilenimini desteklemez.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Nervus phrenicus": "Doğru yanıttır; C3-C5 kökenli bu sinir diyaframın motor innervasyonunu taşır ve mediastinal/servikotorasik girişimlerde risk altında olabilir. Hemidiyafram elevasyonu ve paradoks hareket bu seçenekle uyumludur.",
+      "Nervus vagus": "Vagus toraksta özofagus ve kardiyopulmoner pleksuslarla ilişkilidir; tek taraflı diyafram motor kaybının ana siniri değildir. Bu olguda bradikardi, belirgin otonom disfonksiyon veya özofageal motilite bulgusu yoktur.",
+      "Nervus intercostalis": "İnterkostal sinirler segmental duyu ve interkostal kaslarla ilişkilidir. Tek hemidiyafram elevasyonu ve paradoks hareketi doğrudan açıklamaz.",
+      "Nervus laryngeus recurrens": "Rekürren laringeal sinir vokal fold hareketiyle ilişkilidir; hasarında ses kısıklığı ve aspirasyon yakınması beklenebilir. Bu hastada ses değişikliği yok, ana bulgu diyafram hareketidir.",
+      "Nervus splanchnicus major": "Majör splanknik sinir sempatik lifleri abdomen prevertebral ganglionlarına taşır. Toraks girişimi sonrası gelişen solunum mekaniği ve hemidiyafram bulgusunu açıklamaz."
+    },
+    "coreKnowledge": "Diyafram motor innervasyonu C3-C5 kökenli sinirle sağlanır; tek taraflı hasarda hemidiyafram yükselmesi, bazal atelektazi ve inspiryumda paradoks hareket görülebilir.",
+    "examPearl": "Hemidiyafram elevasyonu + paradoks hareket varsa interkostal kaslardan önce diyafram motor innervasyonu düşünülür.",
+    "whyWrong": {
+      "Nervus vagus": "Vagus toraksta özofagus ve kardiyopulmoner pleksuslarla ilişkilidir; tek taraflı diyafram motor kaybının ana siniri değildir. Bu olguda bradikardi, belirgin otonom disfonksiyon veya özofageal motilite bulgusu yoktur.",
+      "Nervus intercostalis": "İnterkostal sinirler segmental duyu ve interkostal kaslarla ilişkilidir. Tek hemidiyafram elevasyonu ve paradoks hareketi doğrudan açıklamaz.",
+      "Nervus laryngeus recurrens": "Rekürren laringeal sinir vokal fold hareketiyle ilişkilidir; hasarında ses kısıklığı ve aspirasyon yakınması beklenebilir. Bu hastada ses değişikliği yok, ana bulgu diyafram hareketidir.",
+      "Nervus splanchnicus major": "Majör splanknik sinir sempatik lifleri abdomen prevertebral ganglionlarına taşır. Toraks girişimi sonrası gelişen solunum mekaniği ve hemidiyafram bulgusunu açıklamaz."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Orta",
+  "aiMeta": {
+    "generatedAt": "manual-v197-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial"
+  },
+  "listTitle": "Toraks girişimi sonrası nefes darlığı",
+  "cardTitle": "Toraks girişimi sonrası nefes darlığı",
+  "coreKnowledge": "Diyafram motor innervasyonu C3-C5 kökenli sinirle sağlanır; tek taraflı hasarda hemidiyafram yükselmesi, bazal atelektazi ve inspiryumda paradoks hareket görülebilir.",
+  "examPearl": "Hemidiyafram elevasyonu + paradoks hareket varsa interkostal kaslardan önce diyafram motor innervasyonu düşünülür.",
+  "whyCorrect": "Santral venöz girişim ve üst toraks komşuluğu sonrasında tek taraflı hemidiyafram yükselmesi, inspiryumda paradoks hareket ve aynı tarafta bazal atelektazi diyafram motor innervasyonunun bozulduğunu gösterir. Ses kısıklığı veya vokal fold immobilitesi olmaması rekürren laringeal siniri, bağırsak-otonom bulgu olmaması splanknik yapıları geri plana iter. İnterkostal sinir hasarı lokal duyu ve segmental kas ağrısıyla sınırlı kalmaya daha yatkındır.",
+  "optionComparison": {
+    "Nervus phrenicus": "Doğru yanıttır; C3-C5 kökenli bu sinir diyaframın motor innervasyonunu taşır ve mediastinal/servikotorasik girişimlerde risk altında olabilir. Hemidiyafram elevasyonu ve paradoks hareket bu seçenekle uyumludur.",
+    "Nervus vagus": "Vagus toraksta özofagus ve kardiyopulmoner pleksuslarla ilişkilidir; tek taraflı diyafram motor kaybının ana siniri değildir. Bu olguda bradikardi, belirgin otonom disfonksiyon veya özofageal motilite bulgusu yoktur.",
+    "Nervus intercostalis": "İnterkostal sinirler segmental duyu ve interkostal kaslarla ilişkilidir. Tek hemidiyafram elevasyonu ve paradoks hareketi doğrudan açıklamaz.",
+    "Nervus laryngeus recurrens": "Rekürren laringeal sinir vokal fold hareketiyle ilişkilidir; hasarında ses kısıklığı ve aspirasyon yakınması beklenebilir. Bu hastada ses değişikliği yok, ana bulgu diyafram hareketidir.",
+    "Nervus splanchnicus major": "Majör splanknik sinir sempatik lifleri abdomen prevertebral ganglionlarına taşır. Toraks girişimi sonrası gelişen solunum mekaniği ve hemidiyafram bulgusunu açıklamaz."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Sağ subklavyen bölge girişimi → servikotorasik nörovasküler komşulukta sinir etkilenimi riski oluşturur.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Sağ hemidiyafram yükselmesi → diyaframın tek taraflı motor fonksiyon kaybını düşündürür.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Floroskopide inspiryumda paradoks hareket → diyafram paralizisi lehine objektif bulgudur.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Ses kısıklığı olmaması → laringeal motor dal etkilenimini desteklemez.",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Nervus vagus": "Vagus toraksta özofagus ve kardiyopulmoner pleksuslarla ilişkilidir; tek taraflı diyafram motor kaybının ana siniri değildir. Bu olguda bradikardi, belirgin otonom disfonksiyon veya özofageal motilite bulgusu yoktur.",
+    "Nervus intercostalis": "İnterkostal sinirler segmental duyu ve interkostal kaslarla ilişkilidir. Tek hemidiyafram elevasyonu ve paradoks hareketi doğrudan açıklamaz.",
+    "Nervus laryngeus recurrens": "Rekürren laringeal sinir vokal fold hareketiyle ilişkilidir; hasarında ses kısıklığı ve aspirasyon yakınması beklenebilir. Bu hastada ses değişikliği yok, ana bulgu diyafram hareketidir.",
+    "Nervus splanchnicus major": "Majör splanknik sinir sempatik lifleri abdomen prevertebral ganglionlarına taşır. Toraks girişimi sonrası gelişen solunum mekaniği ve hemidiyafram bulgusunu açıklamaz."
+  }
+},
+{
+  "id": "v197-new-347-bas-donmesi-ve-capraz-duyu-kaybi",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi / Nöroloji",
+  "title": "Baş dönmesi ve çapraz duyu kaybı",
+  "difficulty": "Zor",
+  "clinicalFocus": "Beyin sapı vasküler sendromlarını kraniyal sinir, duyu yolu ve serebellar bulgularla lokalize etme.",
+  "learningTarget": "Dorsolateral medulla bulgularını arka dolaşım arter anatomisiyle eşleştirebilme.",
+  "demographics": "67 yaşında erkek hasta",
+  "setting": "Nöroloji acili",
+  "chiefComplaint": "Hasta, aniden başlayan baş dönmesi, dengesizlik, yutma güçlüğü ve vücudun bir tarafında duyu değişikliği nedeniyle getiriliyor.",
+  "stem": "Hasta, kahvaltıdan sonra bir anda oda dönmesi hissi başladığını ve ayağa kalkınca sağa doğru sendelediğini anlatır. Aynı gün içinde su içerken boğazına kaçma hissi olmuş, konuşurken sesinin eskisine göre daha boğuk çıktığını fark etmiştir. Yüzünün sağ tarafında sıcak-soğuğu eskisi kadar seçemediğini, gövde ve sol bacağında ise iğne batmasını daha az hissettiğini söyler. Kol ve bacaklarında belirgin kuvvet kaybı olmadığını, çift görmesinin kısa süreli olduğunu belirtir. Yakınları yüzünde hafif asimetri değil, daha çok göz kapağında düşüklük fark ettiklerini söyler.",
+  "patientIntro": {
+    "profile": "67 yaşında erkek hasta, ani başlayan vestibüler ve bulber yakınmalar nedeniyle nöroloji acilinde değerlendiriliyor.",
+    "presentation": "Baş dönmesi, dengesizlik, yutma güçlüğü, ses değişikliği ve çapraz ağrı-sıcaklık duyusu azalması vardır.",
+    "historySummary": "Hasta, kahvaltıdan sonra bir anda oda dönmesi hissi başladığını ve ayağa kalkınca sağa doğru sendelediğini anlatır. Aynı gün içinde su içerken boğazına kaçma hissi olmuş, konuşurken sesinin eskisine göre daha boğuk çıktığını fark etmiştir. Yüzünün sağ tarafında sıcak-soğuğu eskisi kadar seçemediğini, gövde ve sol bacağında ise iğne batmasını daha az hissettiğini söyler. Kol ve bacaklarında belirgin kuvvet kaybı olmadığını, çift görmesinin kısa süreli olduğunu belirtir. Yakınları yüzünde hafif asimetri değil, daha çok göz kapağında düşüklük fark ettiklerini söyler."
+  },
+  "vitals": {
+    "TA": "158/92 mmHg",
+    "Nabız": "88/dk",
+    "Solunum": "18/dk",
+    "SpO2": "%96, oda havasında",
+    "Ateş": "36.5 °C",
+    "Şok indeksi": "0.56 normal"
+  },
+  "exam": [
+    "Sağ tarafta hafif pitozis ve miyoz izlenir; yüz kas hareketleri belirgin korunmuştur.",
+    "Sağ yüzde ağrı-sıcaklık duyusu azalmış, sol gövde ve sol alt ekstremitede ağrı-sıcaklık duyusu belirgin azalmıştır.",
+    "Sağ parmak-burun testinde dismetri ve geniş tabanlı yürüme vardır.",
+    "Motor güç dört ekstremitede 5/5’tir; Babinski yanıtı alınmaz.",
+    "Yutma değerlendirmesinde sıvıyla öksürme eğilimi ve hafif nazal olmayan boğuk ses fark edilir."
+  ],
+  "investigations": [
+    {
+      "id": "v197-new-347-bas-donmesi-ve-capraz-duyu-kaybi-beyin-mrg-ve-norolojik-lokalizasyon",
+      "label": "Beyin MRG ve nörolojik lokalizasyon bulguları",
+      "title": "Beyin MRG ve nörolojik lokalizasyon bulguları",
+      "orderLabel": "Beyin MRG ve nörolojik lokalizasyon bulguları",
+      "type": "mri",
+      "priority": "essential",
+      "subtype": "Beyin MRG ve nörolojik lokalizasyon bulguları",
+      "category": "imaging",
+      "testTypeCategory": "imaging",
+      "summary": "MRG’de sağ dorsolateral medulla yerleşimli akut lezyon, muayenede çapraz ağrı-sıcaklık duyusu ve ipsilateral serebellar bulgularla birlikte izlenmektedir.",
+      "clinicalMeaning": "MRG’de sağ dorsolateral medulla yerleşimli akut lezyon, muayenede çapraz ağrı-sıcaklık duyusu ve ipsilateral serebellar bulgularla birlikte izlenmektedir.",
+      "result": {
+        "title": "Beyin MRG ve nörolojik lokalizasyon bulguları",
+        "summary": "MRG’de sağ dorsolateral medulla yerleşimli akut lezyon, muayenede çapraz ağrı-sıcaklık duyusu ve ipsilateral serebellar bulgularla birlikte izlenmektedir.",
+        "interpretation": "MRG’de sağ dorsolateral medulla yerleşimli akut lezyon, muayenede çapraz ağrı-sıcaklık duyusu ve ipsilateral serebellar bulgularla birlikte izlenmektedir.",
+        "values": [
+          [
+            "Difüzyon MRG",
+            "Sağ dorsolateral medulla düzeyinde küçük akut difüzyon kısıtlılığı izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Motor trakt bulgusu",
+            "Belirgin kortikospinal motor defisit saptanmadı.",
+            "",
+            ""
+          ],
+          [
+            "Duyu paterni",
+            "Sağ yüzde ve sol vücutta ağrı-sıcaklık azalması kaydedildi.",
+            "",
+            ""
+          ],
+          [
+            "Serebellar bulgu",
+            "Sağ ekstremite ataksisi ve nistagmus eşlik ediyor.",
+            "",
+            ""
+          ]
+        ],
+        "rows": [
+          [
+            "Difüzyon MRG",
+            "Sağ dorsolateral medulla düzeyinde küçük akut difüzyon kısıtlılığı izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Motor trakt bulgusu",
+            "Belirgin kortikospinal motor defisit saptanmadı.",
+            "",
+            ""
+          ],
+          [
+            "Duyu paterni",
+            "Sağ yüzde ve sol vücutta ağrı-sıcaklık azalması kaydedildi.",
+            "",
+            ""
+          ],
+          [
+            "Serebellar bulgu",
+            "Sağ ekstremite ataksisi ve nistagmus eşlik ediyor.",
+            "",
+            ""
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Difüzyon MRG",
+          "Sağ dorsolateral medulla düzeyinde küçük akut difüzyon kısıtlılığı izlendi.",
+          "",
+          ""
+        ],
+        [
+          "Motor trakt bulgusu",
+          "Belirgin kortikospinal motor defisit saptanmadı.",
+          "",
+          ""
+        ],
+        [
+          "Duyu paterni",
+          "Sağ yüzde ve sol vücutta ağrı-sıcaklık azalması kaydedildi.",
+          "",
+          ""
+        ],
+        [
+          "Serebellar bulgu",
+          "Sağ ekstremite ataksisi ve nistagmus eşlik ediyor.",
+          "",
+          ""
+        ]
+      ],
+      "postAnswerExplanation": "MRG’de sağ dorsolateral medulla yerleşimli akut lezyon, muayenede çapraz ağrı-sıcaklık duyusu ve ipsilateral serebellar bulgularla birlikte izlenmektedir.",
+      "interpretation": "MRG’de sağ dorsolateral medulla yerleşimli akut lezyon, muayenede çapraz ağrı-sıcaklık duyusu ve ipsilateral serebellar bulgularla birlikte izlenmektedir.",
+      "explanationAfterAnswer": "MRG’de sağ dorsolateral medulla yerleşimli akut lezyon, muayenede çapraz ağrı-sıcaklık duyusu ve ipsilateral serebellar bulgularla birlikte izlenmektedir.",
+      "testValueLabel": "Anatomik doğrulama",
+      "educationalValue": "Anatomik doğrulama",
+      "clinicalPriorityLabel": "Anatomik doğrulama",
+      "scoreImpact": 5,
+      "scoreValue": 5,
+      "clinicalFlowOrder": 1,
+      "purpose": "Vakadaki fonksiyonel kaybın anatomik lokalizasyonla ilişkilendirilmesi için objektif bulgu sağlar.",
+      "inlineFeedback": "MRG’de sağ dorsolateral medulla yerleşimli akut lezyon, muayenede çapraz ağrı-sıcaklık duyusu ve ipsilateral serebellar bulgularla birlikte izlenmektedir."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "question": "Bu anatomik lezyon paternini en iyi açıklayan arter aşağıdakilerden hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Arteria cerebelli posterior inferior",
+    "options": [
+      "Arteria cerebri posterior",
+      "Arteria cerebelli superior",
+      "Arteria cerebelli anterior inferior",
+      "Arteria spinalis anterior",
+      "Arteria cerebelli posterior inferior"
+    ],
+    "question": "Bu anatomik lezyon paternini en iyi açıklayan arter aşağıdakilerden hangisidir?",
+    "explanation": "Dorsolateral medulla yerleşimli küçük enfarkt bulguları; ipsilateral yüz ağrı-sıcaklık azalması, karşı vücut ağrı-sıcaklık azalması, ataksi, disfaji-ses değişikliği ve Horner bulgularının birlikte görülmesiyle açıklanır. Bu bölgenin en tipik vasküler ilişkisi posterior inferior serebellar arter veya vertebral arter dal alanıdır. Kortikal görme alanı, medial medulla motor yolu ya da pons-iç kulak paterninin olmaması diğer seçenekleri geri plana iter.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Çapraz ağrı-sıcaklık kaybı, ataksi ve bulber yakınmalar birlikte olduğunda lezyon düzeyi korteksten çok lateral beyin sapı olarak düşünülmelidir."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "MRG lokalizasyonu, çapraz duyu paterni ve bulber-serebellar bulgular aynı arka dolaşım alanında birleşir.",
+      "whyCorrect": "Dorsolateral medulla yerleşimli küçük enfarkt bulguları; ipsilateral yüz ağrı-sıcaklık azalması, karşı vücut ağrı-sıcaklık azalması, ataksi, disfaji-ses değişikliği ve Horner bulgularının birlikte görülmesiyle açıklanır. Bu bölgenin en tipik vasküler ilişkisi posterior inferior serebellar arter veya vertebral arter dal alanıdır. Kortikal görme alanı, medial medulla motor yolu ya da pons-iç kulak paterninin olmaması diğer seçenekleri geri plana iter.",
+      "rationale": "Dorsolateral medulla yerleşimli küçük enfarkt bulguları; ipsilateral yüz ağrı-sıcaklık azalması, karşı vücut ağrı-sıcaklık azalması, ataksi, disfaji-ses değişikliği ve Horner bulgularının birlikte görülmesiyle açıklanır. Bu bölgenin en tipik vasküler ilişkisi posterior inferior serebellar arter veya vertebral arter dal alanıdır. Kortikal görme alanı, medial medulla motor yolu ya da pons-iç kulak paterninin olmaması diğer seçenekleri geri plana iter.",
+      "correctOptionFeedback": "Doğru yanıttır; dorsolateral medulla ve inferior serebellar bölge paterninde yutma-ses değişikliği, ipsilateral yüz/kontralateral vücut ağrı-sıcaklık kaybı, ataksi ve Horner bulguları birlikte görülebilir.",
+      "keyClues": [
+        "Ani vertigo, ataksi ve nistagmus → arka dolaşım ve serebellar/beyin sapı bağlantısını düşündürür.",
+        "Sağ yüzde ağrı-sıcaklık azalması ile sol vücutta ağrı-sıcaklık azalması → çapraz duyusal beyin sapı paternidir.",
+        "Disfaji ve ses değişikliği → lateral bulber motor çekirdek/çıkış yolları komşuluğunu destekler.",
+        "MRG’de sağ dorsolateral medulla difüzyon kısıtlılığı → vasküler alanı anatomik olarak sınırlar."
+      ],
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ani vertigo, ataksi ve nistagmus → arka dolaşım ve serebellar/beyin sapı bağlantısını düşündürür.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Sağ yüzde ağrı-sıcaklık azalması ile sol vücutta ağrı-sıcaklık azalması → çapraz duyusal beyin sapı paternidir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Disfaji ve ses değişikliği → lateral bulber motor çekirdek/çıkış yolları komşuluğunu destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "MRG’de sağ dorsolateral medulla difüzyon kısıtlılığı → vasküler alanı anatomik olarak sınırlar.",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Dorsolateral medulla + ipsilateral yüz/kontralateral vücut ağrı-sıcaklık kaybı + disfaji-ataksi paterninde PICA alanı klasik ayırıcıdır.",
+      "optionComparison": {
+        "Arteria cerebri posterior": "Posterior serebral arter oksipital korteks ve talamik alanlarla ilişkilidir; homonim hemianopi veya talamik duyu bulguları beklenebilir. Bu vakadaki bulber bulgular ve dorsolateral medulla lokalizasyonu bu seçeneği desteklemez.",
+        "Arteria cerebelli superior": "Superior serebellar arter daha rostral serebellar ve üst beyin sapı komşuluklarıyla ilişkilidir. Disfaji, ipsilateral yüz ve kontralateral vücut ağrı-sıcaklık paterni dorsolateral medulla alanına daha iyi uyar.",
+        "Arteria cerebelli anterior inferior": "AICA tutulumu lateral pons, fasiyal bulgular ve işitme-vestibüler yakınmalarla karışabilir. Bu hastada fasiyal paralizi veya işitme kaybı yok, MRG medulla düzeyindedir.",
+        "Arteria spinalis anterior": "Anterior spinal arter medial medulla veya spinal kord ön iki üçte alanıyla ilişkilidir; piramidal motor kayıp daha belirgin olurdu. Bu olguda motor güç korunmuş, çapraz ağrı-sıcaklık ve bulber bulgu öndedir.",
+        "Arteria cerebelli posterior inferior": "Doğru yanıttır; dorsolateral medulla ve inferior serebellar bölge paterninde yutma-ses değişikliği, ipsilateral yüz/kontralateral vücut ağrı-sıcaklık kaybı, ataksi ve Horner bulguları birlikte görülebilir."
+      },
+      "whyWrong": {
+        "Arteria cerebri posterior": "Posterior serebral arter oksipital korteks ve talamik alanlarla ilişkilidir; homonim hemianopi veya talamik duyu bulguları beklenebilir. Bu vakadaki bulber bulgular ve dorsolateral medulla lokalizasyonu bu seçeneği desteklemez.",
+        "Arteria cerebelli superior": "Superior serebellar arter daha rostral serebellar ve üst beyin sapı komşuluklarıyla ilişkilidir. Disfaji, ipsilateral yüz ve kontralateral vücut ağrı-sıcaklık paterni dorsolateral medulla alanına daha iyi uyar.",
+        "Arteria cerebelli anterior inferior": "AICA tutulumu lateral pons, fasiyal bulgular ve işitme-vestibüler yakınmalarla karışabilir. Bu hastada fasiyal paralizi veya işitme kaybı yok, MRG medulla düzeyindedir.",
+        "Arteria spinalis anterior": "Anterior spinal arter medial medulla veya spinal kord ön iki üçte alanıyla ilişkilidir; piramidal motor kayıp daha belirgin olurdu. Bu olguda motor güç korunmuş, çapraz ağrı-sıcaklık ve bulber bulgu öndedir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Beyin sapı arter alanlarını çapraz nörolojik bulgularla lokalize edebilme.",
+      "coreKnowledge": "Lateral medulla; spinal trigeminal yol, spinotalamik yol, inferior serebellar bağlantılar, sempatik lifler ve nucleus ambiguus komşuluğu nedeniyle çapraz duyu, ataksi, Horner ve yutma-ses bulgularını birlikte verebilir."
+    },
+    "whyCorrect": "Dorsolateral medulla yerleşimli küçük enfarkt bulguları; ipsilateral yüz ağrı-sıcaklık azalması, karşı vücut ağrı-sıcaklık azalması, ataksi, disfaji-ses değişikliği ve Horner bulgularının birlikte görülmesiyle açıklanır. Bu bölgenin en tipik vasküler ilişkisi posterior inferior serebellar arter veya vertebral arter dal alanıdır. Kortikal görme alanı, medial medulla motor yolu ya da pons-iç kulak paterninin olmaması diğer seçenekleri geri plana iter.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Ani vertigo, ataksi ve nistagmus → arka dolaşım ve serebellar/beyin sapı bağlantısını düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Sağ yüzde ağrı-sıcaklık azalması ile sol vücutta ağrı-sıcaklık azalması → çapraz duyusal beyin sapı paternidir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Disfaji ve ses değişikliği → lateral bulber motor çekirdek/çıkış yolları komşuluğunu destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "MRG’de sağ dorsolateral medulla difüzyon kısıtlılığı → vasküler alanı anatomik olarak sınırlar.",
+        "weight": "high",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Arteria cerebri posterior": "Posterior serebral arter oksipital korteks ve talamik alanlarla ilişkilidir; homonim hemianopi veya talamik duyu bulguları beklenebilir. Bu vakadaki bulber bulgular ve dorsolateral medulla lokalizasyonu bu seçeneği desteklemez.",
+      "Arteria cerebelli superior": "Superior serebellar arter daha rostral serebellar ve üst beyin sapı komşuluklarıyla ilişkilidir. Disfaji, ipsilateral yüz ve kontralateral vücut ağrı-sıcaklık paterni dorsolateral medulla alanına daha iyi uyar.",
+      "Arteria cerebelli anterior inferior": "AICA tutulumu lateral pons, fasiyal bulgular ve işitme-vestibüler yakınmalarla karışabilir. Bu hastada fasiyal paralizi veya işitme kaybı yok, MRG medulla düzeyindedir.",
+      "Arteria spinalis anterior": "Anterior spinal arter medial medulla veya spinal kord ön iki üçte alanıyla ilişkilidir; piramidal motor kayıp daha belirgin olurdu. Bu olguda motor güç korunmuş, çapraz ağrı-sıcaklık ve bulber bulgu öndedir.",
+      "Arteria cerebelli posterior inferior": "Doğru yanıttır; dorsolateral medulla ve inferior serebellar bölge paterninde yutma-ses değişikliği, ipsilateral yüz/kontralateral vücut ağrı-sıcaklık kaybı, ataksi ve Horner bulguları birlikte görülebilir."
+    },
+    "coreKnowledge": "Lateral medulla; spinal trigeminal yol, spinotalamik yol, inferior serebellar bağlantılar, sempatik lifler ve nucleus ambiguus komşuluğu nedeniyle çapraz duyu, ataksi, Horner ve yutma-ses bulgularını birlikte verebilir.",
+    "examPearl": "Dorsolateral medulla + ipsilateral yüz/kontralateral vücut ağrı-sıcaklık kaybı + disfaji-ataksi paterninde PICA alanı klasik ayırıcıdır.",
+    "whyWrong": {
+      "Arteria cerebri posterior": "Posterior serebral arter oksipital korteks ve talamik alanlarla ilişkilidir; homonim hemianopi veya talamik duyu bulguları beklenebilir. Bu vakadaki bulber bulgular ve dorsolateral medulla lokalizasyonu bu seçeneği desteklemez.",
+      "Arteria cerebelli superior": "Superior serebellar arter daha rostral serebellar ve üst beyin sapı komşuluklarıyla ilişkilidir. Disfaji, ipsilateral yüz ve kontralateral vücut ağrı-sıcaklık paterni dorsolateral medulla alanına daha iyi uyar.",
+      "Arteria cerebelli anterior inferior": "AICA tutulumu lateral pons, fasiyal bulgular ve işitme-vestibüler yakınmalarla karışabilir. Bu hastada fasiyal paralizi veya işitme kaybı yok, MRG medulla düzeyindedir.",
+      "Arteria spinalis anterior": "Anterior spinal arter medial medulla veya spinal kord ön iki üçte alanıyla ilişkilidir; piramidal motor kayıp daha belirgin olurdu. Bu olguda motor güç korunmuş, çapraz ağrı-sıcaklık ve bulber bulgu öndedir."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Zor",
+  "aiMeta": {
+    "generatedAt": "manual-v197-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial"
+  },
+  "listTitle": "Baş dönmesi ve çapraz duyu kaybı",
+  "cardTitle": "Baş dönmesi ve çapraz duyu kaybı",
+  "coreKnowledge": "Lateral medulla; spinal trigeminal yol, spinotalamik yol, inferior serebellar bağlantılar, sempatik lifler ve nucleus ambiguus komşuluğu nedeniyle çapraz duyu, ataksi, Horner ve yutma-ses bulgularını birlikte verebilir.",
+  "examPearl": "Dorsolateral medulla + ipsilateral yüz/kontralateral vücut ağrı-sıcaklık kaybı + disfaji-ataksi paterninde PICA alanı klasik ayırıcıdır.",
+  "whyCorrect": "Dorsolateral medulla yerleşimli küçük enfarkt bulguları; ipsilateral yüz ağrı-sıcaklık azalması, karşı vücut ağrı-sıcaklık azalması, ataksi, disfaji-ses değişikliği ve Horner bulgularının birlikte görülmesiyle açıklanır. Bu bölgenin en tipik vasküler ilişkisi posterior inferior serebellar arter veya vertebral arter dal alanıdır. Kortikal görme alanı, medial medulla motor yolu ya da pons-iç kulak paterninin olmaması diğer seçenekleri geri plana iter.",
+  "optionComparison": {
+    "Arteria cerebri posterior": "Posterior serebral arter oksipital korteks ve talamik alanlarla ilişkilidir; homonim hemianopi veya talamik duyu bulguları beklenebilir. Bu vakadaki bulber bulgular ve dorsolateral medulla lokalizasyonu bu seçeneği desteklemez.",
+    "Arteria cerebelli superior": "Superior serebellar arter daha rostral serebellar ve üst beyin sapı komşuluklarıyla ilişkilidir. Disfaji, ipsilateral yüz ve kontralateral vücut ağrı-sıcaklık paterni dorsolateral medulla alanına daha iyi uyar.",
+    "Arteria cerebelli anterior inferior": "AICA tutulumu lateral pons, fasiyal bulgular ve işitme-vestibüler yakınmalarla karışabilir. Bu hastada fasiyal paralizi veya işitme kaybı yok, MRG medulla düzeyindedir.",
+    "Arteria spinalis anterior": "Anterior spinal arter medial medulla veya spinal kord ön iki üçte alanıyla ilişkilidir; piramidal motor kayıp daha belirgin olurdu. Bu olguda motor güç korunmuş, çapraz ağrı-sıcaklık ve bulber bulgu öndedir.",
+    "Arteria cerebelli posterior inferior": "Doğru yanıttır; dorsolateral medulla ve inferior serebellar bölge paterninde yutma-ses değişikliği, ipsilateral yüz/kontralateral vücut ağrı-sıcaklık kaybı, ataksi ve Horner bulguları birlikte görülebilir."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Ani vertigo, ataksi ve nistagmus → arka dolaşım ve serebellar/beyin sapı bağlantısını düşündürür.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Sağ yüzde ağrı-sıcaklık azalması ile sol vücutta ağrı-sıcaklık azalması → çapraz duyusal beyin sapı paternidir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Disfaji ve ses değişikliği → lateral bulber motor çekirdek/çıkış yolları komşuluğunu destekler.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "MRG’de sağ dorsolateral medulla difüzyon kısıtlılığı → vasküler alanı anatomik olarak sınırlar.",
+      "weight": "high",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Arteria cerebri posterior": "Posterior serebral arter oksipital korteks ve talamik alanlarla ilişkilidir; homonim hemianopi veya talamik duyu bulguları beklenebilir. Bu vakadaki bulber bulgular ve dorsolateral medulla lokalizasyonu bu seçeneği desteklemez.",
+    "Arteria cerebelli superior": "Superior serebellar arter daha rostral serebellar ve üst beyin sapı komşuluklarıyla ilişkilidir. Disfaji, ipsilateral yüz ve kontralateral vücut ağrı-sıcaklık paterni dorsolateral medulla alanına daha iyi uyar.",
+    "Arteria cerebelli anterior inferior": "AICA tutulumu lateral pons, fasiyal bulgular ve işitme-vestibüler yakınmalarla karışabilir. Bu hastada fasiyal paralizi veya işitme kaybı yok, MRG medulla düzeyindedir.",
+    "Arteria spinalis anterior": "Anterior spinal arter medial medulla veya spinal kord ön iki üçte alanıyla ilişkilidir; piramidal motor kayıp daha belirgin olurdu. Bu olguda motor güç korunmuş, çapraz ağrı-sıcaklık ve bulber bulgu öndedir."
+  }
+},
+  {
+    "id": "v198-new-348-el-ayasi-kesigi-sonrasi-kavrama-guclugu",
+    "branchId": "anatomy",
+    "caseType": "standard",
+    "relatedBranch": "Anatomi / Ortopedi",
+    "title": "El ayası kesiği sonrası kavrama güçlüğü",
+    "difficulty": "Orta",
+    "clinicalFocus": "Tenar bölge travması sonrası başparmak motor fonksiyonunu median sinir dallarıyla eşleştirme.",
+    "learningTarget": "Başparmak opposition-abdüksiyon kaybını, duyu korunumu ve ön kol fleksör bütünlüğüyle birlikte distal median motor dal düzeyinde lokalize edebilme.",
+    "demographics": "28 yaşında kadın hasta",
+    "setting": "El cerrahisi polikliniği",
+    "chiefComplaint": "Hasta, sağ el ayasında kesi sonrası başparmağını kullanarak kavrama hareketinde zorlanma nedeniyle değerlendiriliyor.",
+    "stem": "Hasta, mutfakta kırılan cam bardağı toplarken sağ el ayasının başparmak tarafında kesi oluştuğunu anlatır. Kesi acilde temizlenip kapatıldıktan sonra ağrısı azalmış, ancak ertesi gün anahtar çevirirken ve kalemi kavrarken başparmağını avuç içine doğru yeterince getiremediğini fark etmiştir. Parmak uçlarında belirgin uyuşma tariflememiş, gece uykudan uyandıran karıncalanması olmadığını söylemiştir. Dikiş bölgesi gerildikçe kavrama hareketi daha güvensiz hale geldiği için kontrol muayenesine başvurmuştur. Ön kol veya dirsek bölgesinde ek travma olmadığını belirtir.",
+    "patientIntro": {
+      "profile": "28 yaşında kadın hasta, el ayasında kesi sonrası gelişen kavrama güçlüğü nedeniyle el cerrahisi polikliniğinde değerlendiriliyor.",
+      "presentation": "Sağ başparmakla kavrama ve anahtar çevirme hareketinde güçlük vardır; belirgin parmak ucu uyuşması tariflenmemektedir.",
+      "historySummary": "Hasta, mutfakta kırılan cam bardağı toplarken sağ el ayasının başparmak tarafında kesi oluştuğunu anlatır. Kesi acilde temizlenip kapatıldıktan sonra ağrısı azalmış, ancak ertesi gün anahtar çevirirken ve kalemi kavrarken başparmağını avuç içine doğru yeterince getiremediğini fark etmiştir. Parmak uçlarında belirgin uyuşma tariflememiş, gece uykudan uyandıran karıncalanması olmadığını söylemiştir. Dikiş bölgesi gerildikçe kavrama hareketi daha güvensiz hale geldiği için kontrol muayenesine başvurmuştur. Ön kol veya dirsek bölgesinde ek travma olmadığını belirtir."
+    },
+    "vitals": {
+      "TA": "116/72 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "15/dk",
+      "SpO2": "%99, oda havasında",
+      "Ateş": "36.6 °C",
+      "Şok indeksi": "0.67 normal"
+    },
+    "exam": [
+      "Sağ tenar bölgede sütüre edilmiş 2 cm kesi hattı ve çevresinde hafif hassasiyet izlenir.",
+      "Başparmak opposition ve palmar abdüksiyon hareketleri dirençle belirgin zayıftır.",
+      "Başparmak IP fleksiyonu, işaret parmağı DIP fleksiyonu ve el bileği fleksiyonu korunmuştur.",
+      "Median sinirin dijital duyu alanlarında belirgin hipoestezi yoktur; kapiller dolum normaldir."
+    ],
+    "investigations": [
+      {
+        "id": "v198-new-348-el-ayasi-kesigi-sonrasi-kavrama-guclugu-hedefli-el-muayenesi",
+        "label": "Hedefli el muayenesi ve yara lokalizasyonu",
+        "title": "Hedefli el muayenesi ve yara lokalizasyonu",
+        "orderLabel": "Hedefli el muayenesi ve yara lokalizasyonu",
+        "type": "clinical",
+        "priority": "essential",
+        "subtype": "Hedefli el muayenesi ve yara lokalizasyonu",
+        "category": "clinicalAssessment",
+        "testTypeCategory": "clinicalAssessment",
+        "summary": "Kesi hattı tenar bölgeye yakın yerleşimli olup belirgin duyu kaybı olmadan başparmak opposition-abdüksiyon hareketlerinde motor zayıflık göstermektedir.",
+        "clinicalMeaning": "Kesi hattı tenar bölgeye yakın yerleşimli olup belirgin duyu kaybı olmadan başparmak opposition-abdüksiyon hareketlerinde motor zayıflık göstermektedir.",
+        "result": {
+          "title": "Hedefli el muayenesi ve yara lokalizasyonu",
+          "summary": "Kesi hattı tenar bölgeye yakın yerleşimli olup belirgin duyu kaybı olmadan başparmak opposition-abdüksiyon hareketlerinde motor zayıflık göstermektedir.",
+          "interpretation": "Kesi hattı tenar bölgeye yakın yerleşimli olup belirgin duyu kaybı olmadan başparmak opposition-abdüksiyon hareketlerinde motor zayıflık göstermektedir.",
+          "values": [
+            [
+              "Yara yerleşimi",
+              "Tenar eminensin proksimal-radial kenarında yüzeyel-derin karışık kesi hattı izlendi.",
+              "",
+              ""
+            ],
+            [
+              "Motor değerlendirme",
+              "Başparmağın avuç içine getirilmesi ve küçük parmağa yaklaştırılması belirgin zayıf.",
+              "",
+              ""
+            ],
+            [
+              "Fleksör bütünlük",
+              "Başparmak IP fleksiyonu ve işaret parmağı distal fleksiyonu korunmuş.",
+              "",
+              ""
+            ],
+            [
+              "Duyu değerlendirmesi",
+              "Başparmak, işaret ve orta parmak pulpa duyuları karşı tarafla benzerdir.",
+              "",
+              ""
+            ]
+          ],
+          "rows": [
+            [
+              "Yara yerleşimi",
+              "Tenar eminensin proksimal-radial kenarında yüzeyel-derin karışık kesi hattı izlendi.",
+              "",
+              ""
+            ],
+            [
+              "Motor değerlendirme",
+              "Başparmağın avuç içine getirilmesi ve küçük parmağa yaklaştırılması belirgin zayıf.",
+              "",
+              ""
+            ],
+            [
+              "Fleksör bütünlük",
+              "Başparmak IP fleksiyonu ve işaret parmağı distal fleksiyonu korunmuş.",
+              "",
+              ""
+            ],
+            [
+              "Duyu değerlendirmesi",
+              "Başparmak, işaret ve orta parmak pulpa duyuları karşı tarafla benzerdir.",
+              "",
+              ""
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Yara yerleşimi",
+            "Tenar eminensin proksimal-radial kenarında yüzeyel-derin karışık kesi hattı izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Motor değerlendirme",
+            "Başparmağın avuç içine getirilmesi ve küçük parmağa yaklaştırılması belirgin zayıf.",
+            "",
+            ""
+          ],
+          [
+            "Fleksör bütünlük",
+            "Başparmak IP fleksiyonu ve işaret parmağı distal fleksiyonu korunmuş.",
+            "",
+            ""
+          ],
+          [
+            "Duyu değerlendirmesi",
+            "Başparmak, işaret ve orta parmak pulpa duyuları karşı tarafla benzerdir.",
+            "",
+            ""
+          ]
+        ],
+        "postAnswerExplanation": "Kesi hattı tenar bölgeye yakın yerleşimli olup belirgin duyu kaybı olmadan başparmak opposition-abdüksiyon hareketlerinde motor zayıflık göstermektedir.",
+        "interpretation": "Kesi hattı tenar bölgeye yakın yerleşimli olup belirgin duyu kaybı olmadan başparmak opposition-abdüksiyon hareketlerinde motor zayıflık göstermektedir.",
+        "explanationAfterAnswer": "Kesi hattı tenar bölgeye yakın yerleşimli olup belirgin duyu kaybı olmadan başparmak opposition-abdüksiyon hareketlerinde motor zayıflık göstermektedir.",
+        "testValueLabel": "Hedefli el muayenesi ve yara lokalizasyonu",
+        "educationalValue": "Hedefli el muayenesi ve yara lokalizasyonu",
+        "clinicalPriorityLabel": "Hedefli el muayenesi ve yara lokalizasyonu",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "clinicalFlowOrder": 1,
+        "purpose": "Hedefli el muayenesi ve yara lokalizasyonu",
+        "inlineFeedback": "Kesi hattı tenar bölgeye yakın yerleşimli olup belirgin duyu kaybı olmadan başparmak opposition-abdüksiyon hareketlerinde motor zayıflık göstermektedir."
+      }
+    ],
+    "useSyntheticInvestigationBank": false,
+    "managementSequence": {
+      "enabled": false
+    },
+    "hideExamSignal": true,
+    "question": "Bu hastadaki motor paternini en iyi açıklayan sinir dalı hangisidir?",
+    "questionType": "anatomy",
+    "answerTarget": "anatomy",
+    "diagnosis": {
+      "correct": "Ramus recurrens nervi mediani",
+      "options": [
+        "Ramus profundus nervi ulnaris",
+        "Nervus interosseus anterior",
+        "Ramus recurrens nervi mediani",
+        "Ramus palmaris nervi mediani",
+        "Nervus radialis superficialis"
+      ],
+      "question": "Bu hastadaki motor paternini en iyi açıklayan sinir dalı hangisidir?",
+      "explanation": "El ayasındaki kesinin tenar bölgeye yakın olması, başparmak opposition-abdüksiyon hareketlerinin zayıflaması ve buna karşın dijital duyunun ve ön kol fleksörlerinin korunması lezyonu distal palmar motor dal düzeyine taşır. Bu dal tenar kasların önemli bölümünü innerve ettiği için ana yakınma kavrama ve başparmağı avuç içine getirme güçlüğüdür. Duyu dalları, ulnar intrensek kaslar veya ön kol median motor dalı bu bulgu kombinasyonunu tek başına açıklamaz.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Tenar motor kayıp + median dijital duyu korunumu, el ayasında distal motor dal düzeyini düşündürür."
+        }
+      ],
+      "answerFeedback": {
+        "summary": "Kesi lokalizasyonu, tenar motor kayıp ve duyu korunumu birlikte değerlendirildiğinde distal median motor dal en uyumlu seçenektir.",
+        "whyCorrect": "El ayasındaki kesinin tenar bölgeye yakın olması, başparmak opposition-abdüksiyon hareketlerinin zayıflaması ve buna karşın dijital duyunun ve ön kol fleksörlerinin korunması lezyonu distal palmar motor dal düzeyine taşır. Bu dal tenar kasların önemli bölümünü innerve ettiği için ana yakınma kavrama ve başparmağı avuç içine getirme güçlüğüdür. Duyu dalları, ulnar intrensek kaslar veya ön kol median motor dalı bu bulgu kombinasyonunu tek başına açıklamaz.",
+        "rationale": "El ayasındaki kesinin tenar bölgeye yakın olması, başparmak opposition-abdüksiyon hareketlerinin zayıflaması ve buna karşın dijital duyunun ve ön kol fleksörlerinin korunması lezyonu distal palmar motor dal düzeyine taşır. Bu dal tenar kasların önemli bölümünü innerve ettiği için ana yakınma kavrama ve başparmağı avuç içine getirme güçlüğüdür. Duyu dalları, ulnar intrensek kaslar veya ön kol median motor dalı bu bulgu kombinasyonunu tek başına açıklamaz.",
+        "correctOptionFeedback": "Doğru yanıttır; tenar bölgede yüzeyel seyreden bu motor dal, opponens pollicis ve abductor pollicis brevis gibi kaslarla başparmak opposition-abdüksiyonunu sağlar. Duyu alanının korunması ve ön kol fleksörlerinin sağlam olması lezyonu median sinirin ana gövdesinden çok distal motor dal düzeyine indirger.",
+        "keyClues": [
+          "Tenar bölgeye yakın kesi",
+          "Opposition-abdüksiyon zayıflığı",
+          "Dijital duyunun korunması",
+          "Ön kol fleksörlerinin sağlam olması"
+        ],
+        "evidenceChain": [
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Kesi hattının tenar eminense yakın olması → distal palmar motor dalların etkilenebileceği anatomik bölgeyi gösterir.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Başparmak opposition-abdüksiyon zayıflığı → tenar motor fonksiyon kaybını destekler.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Başparmak IP ve işaret DIP fleksiyonunun korunması → ön kol düzeyindeki motor median dal etkilenimini geri plana iter.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Dijital duyunun korunması → median sinir ana gövdesi veya belirgin dijital duyu dalı hasarını desteklemez.",
+            "weight": "medium",
+            "source": "case"
+          }
+        ],
+        "examPearl": "Opposition kaybı ile OK işareti kaybını ayır: opposition tenar motor dalı, OK işareti anterior interosseöz siniri düşündürür.",
+        "optionComparison": {
+          "Ramus profundus nervi ulnaris": "Derin ulnar dal interosseöz kaslar ve adduktor pollicis üzerinden parmak abdüksiyon-adduksiyonunu ve başparmak adduksiyonunu etkiler. Bu olguda temel sorun tenar opposition-abdüksiyon hareketindedir ve ulnar intrensek kas paterni ön planda değildir.",
+          "Nervus interosseus anterior": "Anterior interosseöz sinir ön kolda median sinirin motor dalıdır; başparmak IP ve işaret DIP fleksiyonunu bozarak OK işaretinde zayıflık yapar. Bu vakada fleksör testleri korunmuş, lezyon el ayası düzeyinde kalmıştır.",
+          "Ramus recurrens nervi mediani": "Doğru yanıttır; tenar bölgede yüzeyel seyreden bu motor dal, opponens pollicis ve abductor pollicis brevis gibi kaslarla başparmak opposition-abdüksiyonunu sağlar. Duyu alanının korunması ve ön kol fleksörlerinin sağlam olması lezyonu median sinirin ana gövdesinden çok distal motor dal düzeyine indirger.",
+          "Ramus palmaris nervi mediani": "Palmar kutanöz dal thenar cilt duyusuyla ilişkilidir ve karpal tünel dışından seyreder. Motor opposition kaybını açıklamaz; ayrıca olguda belirgin palmar duyu azalması yoktur.",
+          "Nervus radialis superficialis": "Yüzeyel radial sinir el sırtının radial kısmında duyu taşır ve motor lif içermez. Bu hastadaki palmar kesi ve tenar motor güçsüzlük radial duyu dalı dağılımına uymaz."
+        },
+        "whyWrong": {
+          "Ramus profundus nervi ulnaris": "Derin ulnar dal interosseöz kaslar ve adduktor pollicis üzerinden parmak abdüksiyon-adduksiyonunu ve başparmak adduksiyonunu etkiler. Bu olguda temel sorun tenar opposition-abdüksiyon hareketindedir ve ulnar intrensek kas paterni ön planda değildir.",
+          "Nervus interosseus anterior": "Anterior interosseöz sinir ön kolda median sinirin motor dalıdır; başparmak IP ve işaret DIP fleksiyonunu bozarak OK işaretinde zayıflık yapar. Bu vakada fleksör testleri korunmuş, lezyon el ayası düzeyinde kalmıştır.",
+          "Ramus palmaris nervi mediani": "Palmar kutanöz dal thenar cilt duyusuyla ilişkilidir ve karpal tünel dışından seyreder. Motor opposition kaybını açıklamaz; ayrıca olguda belirgin palmar duyu azalması yoktur.",
+          "Nervus radialis superficialis": "Yüzeyel radial sinir el sırtının radial kısmında duyu taşır ve motor lif içermez. Bu hastadaki palmar kesi ve tenar motor güçsüzlük radial duyu dalı dağılımına uymaz."
+        },
+        "managementSteps": [],
+        "management": [],
+        "learningOutcome": "El ayası travmasında distal median motor dal ile median ana gövde, anterior interosseöz sinir ve ulnar derin dal paternlerini ayırabilme.",
+        "coreKnowledge": "Tenar kasların önemli motor innervasyonu median sinirin distal palmar motor dalıyla sağlanır; bu dalın lezyonunda başparmak opposition ve palmar abdüksiyon güçsüzleşirken median dijital duyular korunabilir."
+      },
+      "whyCorrect": "El ayasındaki kesinin tenar bölgeye yakın olması, başparmak opposition-abdüksiyon hareketlerinin zayıflaması ve buna karşın dijital duyunun ve ön kol fleksörlerinin korunması lezyonu distal palmar motor dal düzeyine taşır. Bu dal tenar kasların önemli bölümünü innerve ettiği için ana yakınma kavrama ve başparmağı avuç içine getirme güçlüğüdür. Duyu dalları, ulnar intrensek kaslar veya ön kol median motor dalı bu bulgu kombinasyonunu tek başına açıklamaz.",
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Kesi hattının tenar eminense yakın olması → distal palmar motor dalların etkilenebileceği anatomik bölgeyi gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Başparmak opposition-abdüksiyon zayıflığı → tenar motor fonksiyon kaybını destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Başparmak IP ve işaret DIP fleksiyonunun korunması → ön kol düzeyindeki motor median dal etkilenimini geri plana iter.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Dijital duyunun korunması → median sinir ana gövdesi veya belirgin dijital duyu dalı hasarını desteklemez.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Ramus profundus nervi ulnaris": "Derin ulnar dal interosseöz kaslar ve adduktor pollicis üzerinden parmak abdüksiyon-adduksiyonunu ve başparmak adduksiyonunu etkiler. Bu olguda temel sorun tenar opposition-abdüksiyon hareketindedir ve ulnar intrensek kas paterni ön planda değildir.",
+        "Nervus interosseus anterior": "Anterior interosseöz sinir ön kolda median sinirin motor dalıdır; başparmak IP ve işaret DIP fleksiyonunu bozarak OK işaretinde zayıflık yapar. Bu vakada fleksör testleri korunmuş, lezyon el ayası düzeyinde kalmıştır.",
+        "Ramus recurrens nervi mediani": "Doğru yanıttır; tenar bölgede yüzeyel seyreden bu motor dal, opponens pollicis ve abductor pollicis brevis gibi kaslarla başparmak opposition-abdüksiyonunu sağlar. Duyu alanının korunması ve ön kol fleksörlerinin sağlam olması lezyonu median sinirin ana gövdesinden çok distal motor dal düzeyine indirger.",
+        "Ramus palmaris nervi mediani": "Palmar kutanöz dal thenar cilt duyusuyla ilişkilidir ve karpal tünel dışından seyreder. Motor opposition kaybını açıklamaz; ayrıca olguda belirgin palmar duyu azalması yoktur.",
+        "Nervus radialis superficialis": "Yüzeyel radial sinir el sırtının radial kısmında duyu taşır ve motor lif içermez. Bu hastadaki palmar kesi ve tenar motor güçsüzlük radial duyu dalı dağılımına uymaz."
+      },
+      "coreKnowledge": "Tenar kasların önemli motor innervasyonu median sinirin distal palmar motor dalıyla sağlanır; bu dalın lezyonunda başparmak opposition ve palmar abdüksiyon güçsüzleşirken median dijital duyular korunabilir.",
+      "examPearl": "Opposition kaybı ile OK işareti kaybını ayır: opposition tenar motor dalı, OK işareti anterior interosseöz siniri düşündürür.",
+      "whyWrong": {
+        "Ramus profundus nervi ulnaris": "Derin ulnar dal interosseöz kaslar ve adduktor pollicis üzerinden parmak abdüksiyon-adduksiyonunu ve başparmak adduksiyonunu etkiler. Bu olguda temel sorun tenar opposition-abdüksiyon hareketindedir ve ulnar intrensek kas paterni ön planda değildir.",
+        "Nervus interosseus anterior": "Anterior interosseöz sinir ön kolda median sinirin motor dalıdır; başparmak IP ve işaret DIP fleksiyonunu bozarak OK işaretinde zayıflık yapar. Bu vakada fleksör testleri korunmuş, lezyon el ayası düzeyinde kalmıştır.",
+        "Ramus palmaris nervi mediani": "Palmar kutanöz dal thenar cilt duyusuyla ilişkilidir ve karpal tünel dışından seyreder. Motor opposition kaybını açıklamaz; ayrıca olguda belirgin palmar duyu azalması yoktur.",
+        "Nervus radialis superficialis": "Yüzeyel radial sinir el sırtının radial kısmında duyu taşır ve motor lif içermez. Bu hastadaki palmar kesi ve tenar motor güçsüzlük radial duyu dalı dağılımına uymaz."
+      }
+    },
+    "shuffleOptions": false,
+    "difficultyTag": "Orta",
+    "aiMeta": {
+      "generatedAt": "manual-v198-anatomy-five-case-expansion",
+      "generator": "manual-editorial-anatomy-clinical-case-expansion",
+      "schemaVersion": "clinical-standard-v397-compatible",
+      "validationWarnings": [],
+      "provider": "manual-editorial"
+    },
+    "listTitle": "El ayası kesiği sonrası kavrama güçlüğü",
+    "cardTitle": "El ayası kesiği sonrası kavrama güçlüğü",
+    "coreKnowledge": "Tenar kasların önemli motor innervasyonu median sinirin distal palmar motor dalıyla sağlanır; bu dalın lezyonunda başparmak opposition ve palmar abdüksiyon güçsüzleşirken median dijital duyular korunabilir.",
+    "examPearl": "Opposition kaybı ile OK işareti kaybını ayır: opposition tenar motor dalı, OK işareti anterior interosseöz siniri düşündürür.",
+    "whyCorrect": "El ayasındaki kesinin tenar bölgeye yakın olması, başparmak opposition-abdüksiyon hareketlerinin zayıflaması ve buna karşın dijital duyunun ve ön kol fleksörlerinin korunması lezyonu distal palmar motor dal düzeyine taşır. Bu dal tenar kasların önemli bölümünü innerve ettiği için ana yakınma kavrama ve başparmağı avuç içine getirme güçlüğüdür. Duyu dalları, ulnar intrensek kaslar veya ön kol median motor dalı bu bulgu kombinasyonunu tek başına açıklamaz.",
+    "optionComparison": {
+      "Ramus profundus nervi ulnaris": "Derin ulnar dal interosseöz kaslar ve adduktor pollicis üzerinden parmak abdüksiyon-adduksiyonunu ve başparmak adduksiyonunu etkiler. Bu olguda temel sorun tenar opposition-abdüksiyon hareketindedir ve ulnar intrensek kas paterni ön planda değildir.",
+      "Nervus interosseus anterior": "Anterior interosseöz sinir ön kolda median sinirin motor dalıdır; başparmak IP ve işaret DIP fleksiyonunu bozarak OK işaretinde zayıflık yapar. Bu vakada fleksör testleri korunmuş, lezyon el ayası düzeyinde kalmıştır.",
+      "Ramus recurrens nervi mediani": "Doğru yanıttır; tenar bölgede yüzeyel seyreden bu motor dal, opponens pollicis ve abductor pollicis brevis gibi kaslarla başparmak opposition-abdüksiyonunu sağlar. Duyu alanının korunması ve ön kol fleksörlerinin sağlam olması lezyonu median sinirin ana gövdesinden çok distal motor dal düzeyine indirger.",
+      "Ramus palmaris nervi mediani": "Palmar kutanöz dal thenar cilt duyusuyla ilişkilidir ve karpal tünel dışından seyreder. Motor opposition kaybını açıklamaz; ayrıca olguda belirgin palmar duyu azalması yoktur.",
+      "Nervus radialis superficialis": "Yüzeyel radial sinir el sırtının radial kısmında duyu taşır ve motor lif içermez. Bu hastadaki palmar kesi ve tenar motor güçsüzlük radial duyu dalı dağılımına uymaz."
+    },
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Kesi hattının tenar eminense yakın olması → distal palmar motor dalların etkilenebileceği anatomik bölgeyi gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Başparmak opposition-abdüksiyon zayıflığı → tenar motor fonksiyon kaybını destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Başparmak IP ve işaret DIP fleksiyonunun korunması → ön kol düzeyindeki motor median dal etkilenimini geri plana iter.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Dijital duyunun korunması → median sinir ana gövdesi veya belirgin dijital duyu dalı hasarını desteklemez.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "whyWrong": {
+      "Ramus profundus nervi ulnaris": "Derin ulnar dal interosseöz kaslar ve adduktor pollicis üzerinden parmak abdüksiyon-adduksiyonunu ve başparmak adduksiyonunu etkiler. Bu olguda temel sorun tenar opposition-abdüksiyon hareketindedir ve ulnar intrensek kas paterni ön planda değildir.",
+      "Nervus interosseus anterior": "Anterior interosseöz sinir ön kolda median sinirin motor dalıdır; başparmak IP ve işaret DIP fleksiyonunu bozarak OK işaretinde zayıflık yapar. Bu vakada fleksör testleri korunmuş, lezyon el ayası düzeyinde kalmıştır.",
+      "Ramus palmaris nervi mediani": "Palmar kutanöz dal thenar cilt duyusuyla ilişkilidir ve karpal tünel dışından seyreder. Motor opposition kaybını açıklamaz; ayrıca olguda belirgin palmar duyu azalması yoktur.",
+      "Nervus radialis superficialis": "Yüzeyel radial sinir el sırtının radial kısmında duyu taşır ve motor lif içermez. Bu hastadaki palmar kesi ve tenar motor güçsüzlük radial duyu dalı dağılımına uymaz."
+    }
+  },
+  {
+    "id": "v198-new-349-ayak-sirti-travmasi-sonrasi-parmak-arasi-uyusma",
+    "branchId": "anatomy",
+    "caseType": "standard",
+    "relatedBranch": "Anatomi / Ortopedi",
+    "title": "Ayak sırtı travması sonrası parmak arası uyuşma",
+    "difficulty": "Orta",
+    "clinicalFocus": "Ayak dorsumu travmasında motor ve sınırlı duyu paternini fibular sinir dallarıyla eşleştirme.",
+    "learningTarget": "Birinci interdigital aralık duyusu ve başparmak ekstansiyon bulgusunu derin fibular sinir anatomisiyle ilişkilendirebilme.",
+    "demographics": "22 yaşında erkek hasta",
+    "setting": "Spor hekimliği polikliniği",
+    "chiefComplaint": "Hasta, ayak sırtına darbe sonrası başparmağını yukarı kaldırmakta zorlanma ve parmak arasında uyuşma nedeniyle başvuruyor.",
+    "stem": "Hasta, futbol maçında ayağının üst kısmına rakibinin kramponuyla basıldığını anlatır. Maçtan sonra ayakkabısını çıkarırken ayak sırtında ağrı ve şişlik fark etmiş, ertesi sabah merdiven çıkarken başparmağını yukarı kaldırmakta zorlandığını söylemiştir. Uyuşmanın özellikle birinci ve ikinci parmak arasındaki dar bölgede belirgin olduğunu, ayağın dış kenarında aynı hissi yaşamadığını belirtir. Bileğini yukarı çekebilse de başparmağındaki zayıflık nedeniyle yürürken ayağını yere daha dikkatli koymaya başlamıştır. Diz çevresinde darbe veya uzun süreli çömelme öyküsü yoktur.",
+    "patientIntro": {
+      "profile": "22 yaşında erkek hasta, spor sırasında ayak sırtına aldığı darbe sonrası spor hekimliği polikliniğinde değerlendiriliyor.",
+      "presentation": "Ayak dorsumunda ağrıya, başparmak ekstansiyon güçlüğü ve birinci-ikinci parmak arasında uyuşma eşlik etmektedir.",
+      "historySummary": "Hasta, futbol maçında ayağının üst kısmına rakibinin kramponuyla basıldığını anlatır. Maçtan sonra ayakkabısını çıkarırken ayak sırtında ağrı ve şişlik fark etmiş, ertesi sabah merdiven çıkarken başparmağını yukarı kaldırmakta zorlandığını söylemiştir. Uyuşmanın özellikle birinci ve ikinci parmak arasındaki dar bölgede belirgin olduğunu, ayağın dış kenarında aynı hissi yaşamadığını belirtir. Bileğini yukarı çekebilse de başparmağındaki zayıflık nedeniyle yürürken ayağını yere daha dikkatli koymaya başlamıştır. Diz çevresinde darbe veya uzun süreli çömelme öyküsü yoktur."
+    },
+    "vitals": {
+      "TA": "118/70 mmHg",
+      "Nabız": "76/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%99, oda havasında",
+      "Ateş": "36.4 °C",
+      "Şok indeksi": "0.64 normal"
+    },
+    "exam": [
+      "Sağ ayak dorsumunda lokal ödem ve tarsometatarsal hat üzerinde hassasiyet vardır.",
+      "Başparmak ekstansiyonu dirençle belirgin zayıf, ayak bileği dorsifleksiyonu hafif ağrılı ancak yapılabilir.",
+      "Birinci interdigital aralıkta dokunma ve iğne duyusu azalmıştır.",
+      "Plantar duyu, lateral ayak duyusu ve medial ayak bileği çevresi duyusu korunmuştur."
+    ],
+    "investigations": [
+      {
+        "id": "v198-new-349-ayak-sirti-travmasi-sonrasi-parmak-arasi-uyusma-ayak-grafisi-ve-duyu-motor-degerlendirme",
+        "label": "Ayak grafisi ve hedefli duyu-motor değerlendirme",
+        "title": "Ayak grafisi ve hedefli duyu-motor değerlendirme",
+        "orderLabel": "Ayak grafisi ve hedefli duyu-motor değerlendirme",
+        "type": "xray",
+        "priority": "essential",
+        "subtype": "Ayak grafisi ve hedefli duyu-motor değerlendirme",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "summary": "Ayak dorsumundaki travma sonrası başparmak ekstansiyon zayıflığına birinci interdigital aralıkta sınırlı duyu azalması eşlik etmektedir.",
+        "clinicalMeaning": "Ayak dorsumundaki travma sonrası başparmak ekstansiyon zayıflığına birinci interdigital aralıkta sınırlı duyu azalması eşlik etmektedir.",
+        "result": {
+          "title": "Ayak grafisi ve hedefli duyu-motor değerlendirme",
+          "summary": "Ayak dorsumundaki travma sonrası başparmak ekstansiyon zayıflığına birinci interdigital aralıkta sınırlı duyu azalması eşlik etmektedir.",
+          "interpretation": "Ayak dorsumundaki travma sonrası başparmak ekstansiyon zayıflığına birinci interdigital aralıkta sınırlı duyu azalması eşlik etmektedir.",
+          "values": [
+            [
+              "Travma alanı",
+              "Ayak dorsumunda tarsometatarsal bölgeye yakın ödem ve lokal hassasiyet saptandı.",
+              "",
+              ""
+            ],
+            [
+              "Motor test",
+              "Başparmak ekstansiyonu belirgin zayıf; ayak bileği dorsifleksiyonu kısmen korunmuş.",
+              "",
+              ""
+            ],
+            [
+              "Duyu alanı",
+              "Birinci interdigital aralıkta hipoestezi var; lateral ayak ve medial malleol çevresi duyusu korunmuş.",
+              "",
+              ""
+            ],
+            [
+              "Grafi bulgusu",
+              "Belirgin deplase kırık yok, yumuşak doku şişliği izleniyor.",
+              "",
+              ""
+            ]
+          ],
+          "rows": [
+            [
+              "Travma alanı",
+              "Ayak dorsumunda tarsometatarsal bölgeye yakın ödem ve lokal hassasiyet saptandı.",
+              "",
+              ""
+            ],
+            [
+              "Motor test",
+              "Başparmak ekstansiyonu belirgin zayıf; ayak bileği dorsifleksiyonu kısmen korunmuş.",
+              "",
+              ""
+            ],
+            [
+              "Duyu alanı",
+              "Birinci interdigital aralıkta hipoestezi var; lateral ayak ve medial malleol çevresi duyusu korunmuş.",
+              "",
+              ""
+            ],
+            [
+              "Grafi bulgusu",
+              "Belirgin deplase kırık yok, yumuşak doku şişliği izleniyor.",
+              "",
+              ""
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Travma alanı",
+            "Ayak dorsumunda tarsometatarsal bölgeye yakın ödem ve lokal hassasiyet saptandı.",
+            "",
+            ""
+          ],
+          [
+            "Motor test",
+            "Başparmak ekstansiyonu belirgin zayıf; ayak bileği dorsifleksiyonu kısmen korunmuş.",
+            "",
+            ""
+          ],
+          [
+            "Duyu alanı",
+            "Birinci interdigital aralıkta hipoestezi var; lateral ayak ve medial malleol çevresi duyusu korunmuş.",
+            "",
+            ""
+          ],
+          [
+            "Grafi bulgusu",
+            "Belirgin deplase kırık yok, yumuşak doku şişliği izleniyor.",
+            "",
+            ""
+          ]
+        ],
+        "postAnswerExplanation": "Ayak dorsumundaki travma sonrası başparmak ekstansiyon zayıflığına birinci interdigital aralıkta sınırlı duyu azalması eşlik etmektedir.",
+        "interpretation": "Ayak dorsumundaki travma sonrası başparmak ekstansiyon zayıflığına birinci interdigital aralıkta sınırlı duyu azalması eşlik etmektedir.",
+        "explanationAfterAnswer": "Ayak dorsumundaki travma sonrası başparmak ekstansiyon zayıflığına birinci interdigital aralıkta sınırlı duyu azalması eşlik etmektedir.",
+        "testValueLabel": "Ayak grafisi ve hedefli duyu-motor değerlendirme",
+        "educationalValue": "Ayak grafisi ve hedefli duyu-motor değerlendirme",
+        "clinicalPriorityLabel": "Ayak grafisi ve hedefli duyu-motor değerlendirme",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "clinicalFlowOrder": 1,
+        "purpose": "Ayak grafisi ve hedefli duyu-motor değerlendirme",
+        "inlineFeedback": "Ayak dorsumundaki travma sonrası başparmak ekstansiyon zayıflığına birinci interdigital aralıkta sınırlı duyu azalması eşlik etmektedir."
+      }
+    ],
+    "useSyntheticInvestigationBank": false,
+    "managementSequence": {
+      "enabled": false
+    },
+    "hideExamSignal": true,
+    "question": "Bu hastadaki motor-duyu paternini en iyi açıklayan sinir hangisidir?",
+    "questionType": "anatomy",
+    "answerTarget": "anatomy",
+    "diagnosis": {
+      "correct": "Nervus fibularis profundus",
+      "options": [
+        "Nervus fibularis superficialis",
+        "Nervus fibularis profundus",
+        "Nervus suralis",
+        "Nervus tibialis",
+        "Nervus saphenus"
+      ],
+      "question": "Bu hastadaki motor-duyu paternini en iyi açıklayan sinir hangisidir?",
+      "explanation": "Ayak dorsumuna gelen travma sonrası başparmak ekstansiyonunun zayıflaması ve duyu kaybının özellikle birinci interdigital aralıkla sınırlı kalması derin fibular sinir dağılımını destekler. Yüzeyel fibular sinir ayak dorsumunda daha geniş bir duyu alanı oluşturur; sural ve saphen sinirler farklı kenar duyu alanlarıyla ilişkilidir. Tibial sinir bulguları ise plantar yüz ve plantar fleksör paterninde beklenirdi.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Birinci parmak arası dar duyu alanı, ayak dorsumu sinir sorularında derin fibular siniri ayırt ettirir."
+        }
+      ],
+      "answerFeedback": {
+        "summary": "Dar interdigital duyu kaybı ile başparmak ekstansiyon zayıflığı aynı anatomik dağılımda birleşmektedir.",
+        "whyCorrect": "Ayak dorsumuna gelen travma sonrası başparmak ekstansiyonunun zayıflaması ve duyu kaybının özellikle birinci interdigital aralıkla sınırlı kalması derin fibular sinir dağılımını destekler. Yüzeyel fibular sinir ayak dorsumunda daha geniş bir duyu alanı oluşturur; sural ve saphen sinirler farklı kenar duyu alanlarıyla ilişkilidir. Tibial sinir bulguları ise plantar yüz ve plantar fleksör paterninde beklenirdi.",
+        "rationale": "Ayak dorsumuna gelen travma sonrası başparmak ekstansiyonunun zayıflaması ve duyu kaybının özellikle birinci interdigital aralıkla sınırlı kalması derin fibular sinir dağılımını destekler. Yüzeyel fibular sinir ayak dorsumunda daha geniş bir duyu alanı oluşturur; sural ve saphen sinirler farklı kenar duyu alanlarıyla ilişkilidir. Tibial sinir bulguları ise plantar yüz ve plantar fleksör paterninde beklenirdi.",
+        "correctOptionFeedback": "Doğru yanıttır; derin fibular sinir ayak dorsumunda birinci interdigital aralığın duyusunu taşır ve ekstansör hallucis longus gibi dorsifleksör-ekstansör yapılarla ilişkilidir. Duyu kaybının dar alanda kalması ve başparmak ekstansiyonunun etkilenmesi bu seçeneği destekler.",
+        "keyClues": [
+          "Ayak dorsumuna direkt travma",
+          "Başparmak ekstansiyon zayıflığı",
+          "Birinci interdigital aralık hipoestezisi",
+          "Lateral ve plantar duyu alanlarının korunması"
+        ],
+        "evidenceChain": [
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Ayak dorsumuna doğrudan bası travması → dorsal nörovasküler yapıların etkilenebileceği lokal bölgeyi gösterir.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Başparmak ekstansiyon zayıflığı → anterior kompartman ekstansör motor fonksiyonuyla ilişkilidir.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Birinci interdigital aralıkta sınırlı hipoestezi → ayak dorsumundaki dar ve özgül duyu alanını işaret eder.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Lateral ayak ve medial malleol çevresi duyusunun korunması → sural ve saphen duyu alanlarını geri plana iter.",
+            "weight": "medium",
+            "source": "case"
+          }
+        ],
+        "examPearl": "Ayak dorsumu genel uyuşması yüzeyel fibular siniri, yalnız birinci parmak arası uyuşması derin fibular siniri düşündürür.",
+        "optionComparison": {
+          "Nervus fibularis superficialis": "Yüzeyel fibular sinir ayak dorsumunun büyük bölümünde duyu taşır ve eversiyon kaslarıyla ilişkilidir. Birinci interdigital aralıkta sınırlı duyu kaybı ve başparmak ekstansiyon zayıflığı derin dal lehinedir.",
+          "Nervus fibularis profundus": "Doğru yanıttır; derin fibular sinir ayak dorsumunda birinci interdigital aralığın duyusunu taşır ve ekstansör hallucis longus gibi dorsifleksör-ekstansör yapılarla ilişkilidir. Duyu kaybının dar alanda kalması ve başparmak ekstansiyonunun etkilenmesi bu seçeneği destekler.",
+          "Nervus suralis": "Sural sinir posterolateral bacak ve lateral ayak duyusuyla ilişkilidir. Hastada lateral ayakta duyu kaybı yoktur ve başparmak ekstansiyon zayıflığı sural sinirle açıklanamaz.",
+          "Nervus tibialis": "Tibial sinir plantar yüz duyusu ve plantar fleksör/intrensek ayak kaslarıyla ilişkilidir. Bu vakada plantar duyu ve ayak bileği plantar fleksiyonu korunmuş, dorsal ekstansör patern öne çıkmıştır.",
+          "Nervus saphenus": "Saphen sinir saf duyu dalıdır ve medial bacak-medial ayak bileği bölgesini etkiler. Birinci interdigital aralık bulgusu ve motor ekstansiyon zayıflığı bu dağılıma uymaz."
+        },
+        "whyWrong": {
+          "Nervus fibularis superficialis": "Yüzeyel fibular sinir ayak dorsumunun büyük bölümünde duyu taşır ve eversiyon kaslarıyla ilişkilidir. Birinci interdigital aralıkta sınırlı duyu kaybı ve başparmak ekstansiyon zayıflığı derin dal lehinedir.",
+          "Nervus suralis": "Sural sinir posterolateral bacak ve lateral ayak duyusuyla ilişkilidir. Hastada lateral ayakta duyu kaybı yoktur ve başparmak ekstansiyon zayıflığı sural sinirle açıklanamaz.",
+          "Nervus tibialis": "Tibial sinir plantar yüz duyusu ve plantar fleksör/intrensek ayak kaslarıyla ilişkilidir. Bu vakada plantar duyu ve ayak bileği plantar fleksiyonu korunmuş, dorsal ekstansör patern öne çıkmıştır.",
+          "Nervus saphenus": "Saphen sinir saf duyu dalıdır ve medial bacak-medial ayak bileği bölgesini etkiler. Birinci interdigital aralık bulgusu ve motor ekstansiyon zayıflığı bu dağılıma uymaz."
+        },
+        "managementSteps": [],
+        "management": [],
+        "learningOutcome": "Ayak bileği ve ayak dorsumu travmalarında fibular sinir dallarını duyu alanı ve motor fonksiyonla ayırt edebilme.",
+        "coreKnowledge": "Derin fibular sinir anterior kompartman motor fonksiyonuyla ve ayakta birinci interdigital aralığın duyusuyla ilişkilidir; yüzeyel fibular sinir ayak dorsumunda daha geniş duyu alanı sağlar."
+      },
+      "whyCorrect": "Ayak dorsumuna gelen travma sonrası başparmak ekstansiyonunun zayıflaması ve duyu kaybının özellikle birinci interdigital aralıkla sınırlı kalması derin fibular sinir dağılımını destekler. Yüzeyel fibular sinir ayak dorsumunda daha geniş bir duyu alanı oluşturur; sural ve saphen sinirler farklı kenar duyu alanlarıyla ilişkilidir. Tibial sinir bulguları ise plantar yüz ve plantar fleksör paterninde beklenirdi.",
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ayak dorsumuna doğrudan bası travması → dorsal nörovasküler yapıların etkilenebileceği lokal bölgeyi gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Başparmak ekstansiyon zayıflığı → anterior kompartman ekstansör motor fonksiyonuyla ilişkilidir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Birinci interdigital aralıkta sınırlı hipoestezi → ayak dorsumundaki dar ve özgül duyu alanını işaret eder.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Lateral ayak ve medial malleol çevresi duyusunun korunması → sural ve saphen duyu alanlarını geri plana iter.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Nervus fibularis superficialis": "Yüzeyel fibular sinir ayak dorsumunun büyük bölümünde duyu taşır ve eversiyon kaslarıyla ilişkilidir. Birinci interdigital aralıkta sınırlı duyu kaybı ve başparmak ekstansiyon zayıflığı derin dal lehinedir.",
+        "Nervus fibularis profundus": "Doğru yanıttır; derin fibular sinir ayak dorsumunda birinci interdigital aralığın duyusunu taşır ve ekstansör hallucis longus gibi dorsifleksör-ekstansör yapılarla ilişkilidir. Duyu kaybının dar alanda kalması ve başparmak ekstansiyonunun etkilenmesi bu seçeneği destekler.",
+        "Nervus suralis": "Sural sinir posterolateral bacak ve lateral ayak duyusuyla ilişkilidir. Hastada lateral ayakta duyu kaybı yoktur ve başparmak ekstansiyon zayıflığı sural sinirle açıklanamaz.",
+        "Nervus tibialis": "Tibial sinir plantar yüz duyusu ve plantar fleksör/intrensek ayak kaslarıyla ilişkilidir. Bu vakada plantar duyu ve ayak bileği plantar fleksiyonu korunmuş, dorsal ekstansör patern öne çıkmıştır.",
+        "Nervus saphenus": "Saphen sinir saf duyu dalıdır ve medial bacak-medial ayak bileği bölgesini etkiler. Birinci interdigital aralık bulgusu ve motor ekstansiyon zayıflığı bu dağılıma uymaz."
+      },
+      "coreKnowledge": "Derin fibular sinir anterior kompartman motor fonksiyonuyla ve ayakta birinci interdigital aralığın duyusuyla ilişkilidir; yüzeyel fibular sinir ayak dorsumunda daha geniş duyu alanı sağlar.",
+      "examPearl": "Ayak dorsumu genel uyuşması yüzeyel fibular siniri, yalnız birinci parmak arası uyuşması derin fibular siniri düşündürür.",
+      "whyWrong": {
+        "Nervus fibularis superficialis": "Yüzeyel fibular sinir ayak dorsumunun büyük bölümünde duyu taşır ve eversiyon kaslarıyla ilişkilidir. Birinci interdigital aralıkta sınırlı duyu kaybı ve başparmak ekstansiyon zayıflığı derin dal lehinedir.",
+        "Nervus suralis": "Sural sinir posterolateral bacak ve lateral ayak duyusuyla ilişkilidir. Hastada lateral ayakta duyu kaybı yoktur ve başparmak ekstansiyon zayıflığı sural sinirle açıklanamaz.",
+        "Nervus tibialis": "Tibial sinir plantar yüz duyusu ve plantar fleksör/intrensek ayak kaslarıyla ilişkilidir. Bu vakada plantar duyu ve ayak bileği plantar fleksiyonu korunmuş, dorsal ekstansör patern öne çıkmıştır.",
+        "Nervus saphenus": "Saphen sinir saf duyu dalıdır ve medial bacak-medial ayak bileği bölgesini etkiler. Birinci interdigital aralık bulgusu ve motor ekstansiyon zayıflığı bu dağılıma uymaz."
+      }
+    },
+    "shuffleOptions": false,
+    "difficultyTag": "Orta",
+    "aiMeta": {
+      "generatedAt": "manual-v198-anatomy-five-case-expansion",
+      "generator": "manual-editorial-anatomy-clinical-case-expansion",
+      "schemaVersion": "clinical-standard-v397-compatible",
+      "validationWarnings": [],
+      "provider": "manual-editorial"
+    },
+    "listTitle": "Ayak sırtı travması sonrası parmak arası uyuşma",
+    "cardTitle": "Ayak sırtı travması sonrası parmak arası uyuşma",
+    "coreKnowledge": "Derin fibular sinir anterior kompartman motor fonksiyonuyla ve ayakta birinci interdigital aralığın duyusuyla ilişkilidir; yüzeyel fibular sinir ayak dorsumunda daha geniş duyu alanı sağlar.",
+    "examPearl": "Ayak dorsumu genel uyuşması yüzeyel fibular siniri, yalnız birinci parmak arası uyuşması derin fibular siniri düşündürür.",
+    "whyCorrect": "Ayak dorsumuna gelen travma sonrası başparmak ekstansiyonunun zayıflaması ve duyu kaybının özellikle birinci interdigital aralıkla sınırlı kalması derin fibular sinir dağılımını destekler. Yüzeyel fibular sinir ayak dorsumunda daha geniş bir duyu alanı oluşturur; sural ve saphen sinirler farklı kenar duyu alanlarıyla ilişkilidir. Tibial sinir bulguları ise plantar yüz ve plantar fleksör paterninde beklenirdi.",
+    "optionComparison": {
+      "Nervus fibularis superficialis": "Yüzeyel fibular sinir ayak dorsumunun büyük bölümünde duyu taşır ve eversiyon kaslarıyla ilişkilidir. Birinci interdigital aralıkta sınırlı duyu kaybı ve başparmak ekstansiyon zayıflığı derin dal lehinedir.",
+      "Nervus fibularis profundus": "Doğru yanıttır; derin fibular sinir ayak dorsumunda birinci interdigital aralığın duyusunu taşır ve ekstansör hallucis longus gibi dorsifleksör-ekstansör yapılarla ilişkilidir. Duyu kaybının dar alanda kalması ve başparmak ekstansiyonunun etkilenmesi bu seçeneği destekler.",
+      "Nervus suralis": "Sural sinir posterolateral bacak ve lateral ayak duyusuyla ilişkilidir. Hastada lateral ayakta duyu kaybı yoktur ve başparmak ekstansiyon zayıflığı sural sinirle açıklanamaz.",
+      "Nervus tibialis": "Tibial sinir plantar yüz duyusu ve plantar fleksör/intrensek ayak kaslarıyla ilişkilidir. Bu vakada plantar duyu ve ayak bileği plantar fleksiyonu korunmuş, dorsal ekstansör patern öne çıkmıştır.",
+      "Nervus saphenus": "Saphen sinir saf duyu dalıdır ve medial bacak-medial ayak bileği bölgesini etkiler. Birinci interdigital aralık bulgusu ve motor ekstansiyon zayıflığı bu dağılıma uymaz."
+    },
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Ayak dorsumuna doğrudan bası travması → dorsal nörovasküler yapıların etkilenebileceği lokal bölgeyi gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Başparmak ekstansiyon zayıflığı → anterior kompartman ekstansör motor fonksiyonuyla ilişkilidir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Birinci interdigital aralıkta sınırlı hipoestezi → ayak dorsumundaki dar ve özgül duyu alanını işaret eder.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Lateral ayak ve medial malleol çevresi duyusunun korunması → sural ve saphen duyu alanlarını geri plana iter.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "whyWrong": {
+      "Nervus fibularis superficialis": "Yüzeyel fibular sinir ayak dorsumunun büyük bölümünde duyu taşır ve eversiyon kaslarıyla ilişkilidir. Birinci interdigital aralıkta sınırlı duyu kaybı ve başparmak ekstansiyon zayıflığı derin dal lehinedir.",
+      "Nervus suralis": "Sural sinir posterolateral bacak ve lateral ayak duyusuyla ilişkilidir. Hastada lateral ayakta duyu kaybı yoktur ve başparmak ekstansiyon zayıflığı sural sinirle açıklanamaz.",
+      "Nervus tibialis": "Tibial sinir plantar yüz duyusu ve plantar fleksör/intrensek ayak kaslarıyla ilişkilidir. Bu vakada plantar duyu ve ayak bileği plantar fleksiyonu korunmuş, dorsal ekstansör patern öne çıkmıştır.",
+      "Nervus saphenus": "Saphen sinir saf duyu dalıdır ve medial bacak-medial ayak bileği bölgesini etkiler. Birinci interdigital aralık bulgusu ve motor ekstansiyon zayıflığı bu dağılıma uymaz."
+    }
+  },
+  {
+    "id": "v198-new-350-dis-cekimi-sonrasi-dilde-uyusma",
+    "branchId": "anatomy",
+    "caseType": "standard",
+    "relatedBranch": "Anatomi / Ağız-Diş-Çene Cerrahisi",
+    "title": "Diş çekimi sonrası dilde uyuşma",
+    "difficulty": "Orta",
+    "clinicalFocus": "Mandibular molar cerrahisi sonrası dil duyusu ve tat değişikliğini trigeminal dal anatomisiyle eşleştirme.",
+    "learningTarget": "Alt molar komşuluğundaki duyu-tat paternini mandibular sinir dalları ve korda timpani lifleriyle birlikte yorumlayabilme.",
+    "demographics": "26 yaşında kadın hasta",
+    "setting": "Ağız, diş ve çene cerrahisi kontrolü",
+    "chiefComplaint": "Hasta, alt yirmi yaş dişi çekimi sonrası dilinin bir tarafında uyuşma ve tat algısında azalma nedeniyle kontrole geliyor.",
+    "stem": "Hasta, gömülü alt yirmi yaş dişi çekiminden birkaç saat sonra dilinin aynı tarafında garip bir uyuşma fark ettiğini anlatır. İlk gün bunu lokal anestezinin uzaması sanmış, ancak ertesi gün yemek yerken dilinin kenarını birkaç kez ısırınca tekrar diş hekimine başvurmuştur. Çorba ve çay içerken sıcaklığı daha geç fark ettiğini, bazı tatları aynı tarafta daha silik algıladığını söylemiştir. Alt dudak ve çene ucunda belirgin uyuşma olmadığını, ağzını açıp kapatırken çenesinde kilitlenme yaşamadığını belirtir. Kanama veya nefes alma güçlüğü olmadan günlük konuşmasını sürdürebilmektedir.",
+    "patientIntro": {
+      "profile": "26 yaşında kadın hasta, alt molar diş çekimi sonrası gelişen dil yakınması nedeniyle ağız, diş ve çene cerrahisi kontrolünde değerlendiriliyor.",
+      "presentation": "Aynı taraf ön dil bölümünde uyuşma ve tat algısında azalma vardır; alt dudak ve çene ucu duyusu korunmuştur.",
+      "historySummary": "Hasta, gömülü alt yirmi yaş dişi çekiminden birkaç saat sonra dilinin aynı tarafında garip bir uyuşma fark ettiğini anlatır. İlk gün bunu lokal anestezinin uzaması sanmış, ancak ertesi gün yemek yerken dilinin kenarını birkaç kez ısırınca tekrar diş hekimine başvurmuştur. Çorba ve çay içerken sıcaklığı daha geç fark ettiğini, bazı tatları aynı tarafta daha silik algıladığını söylemiştir. Alt dudak ve çene ucunda belirgin uyuşma olmadığını, ağzını açıp kapatırken çenesinde kilitlenme yaşamadığını belirtir. Kanama veya nefes alma güçlüğü olmadan günlük konuşmasını sürdürebilmektedir."
+    },
+    "vitals": {
+      "TA": "112/68 mmHg",
+      "Nabız": "74/dk",
+      "Solunum": "15/dk",
+      "SpO2": "%99, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "0.66 normal"
+    },
+    "exam": [
+      "Alt üçüncü molar çekim alanında beklenen sınırlı ödem ve hassasiyet vardır.",
+      "Aynı taraf ön dil bölümünde dokunma ve iğne duyusu karşı tarafa göre azalmıştır.",
+      "Tatlı-tuzlu uyarı algısı aynı taraf ön dil bölümünde belirgin daha siliktir.",
+      "Alt dudak, çene ucu ve yanak mukozası duyuları korunmuştur; çiğneme kas gücü simetriktir."
+    ],
+    "investigations": [
+      {
+        "id": "v198-new-350-dis-cekimi-sonrasi-dilde-uyusma-oral-muayene-ve-duyu-tat-degerlendirmesi",
+        "label": "Oral muayene ve duyu-tat değerlendirmesi",
+        "title": "Oral muayene ve duyu-tat değerlendirmesi",
+        "orderLabel": "Oral muayene ve duyu-tat değerlendirmesi",
+        "type": "clinical",
+        "priority": "essential",
+        "subtype": "Oral muayene ve duyu-tat değerlendirmesi",
+        "category": "clinicalAssessment",
+        "testTypeCategory": "clinicalAssessment",
+        "summary": "Alt molar işlem sonrası aynı taraf ön dil bölümünde genel duyu ve tat algısı azalırken alt dudak-çene ucu duyusu korunmuştur.",
+        "clinicalMeaning": "Alt molar işlem sonrası aynı taraf ön dil bölümünde genel duyu ve tat algısı azalırken alt dudak-çene ucu duyusu korunmuştur.",
+        "result": {
+          "title": "Oral muayene ve duyu-tat değerlendirmesi",
+          "summary": "Alt molar işlem sonrası aynı taraf ön dil bölümünde genel duyu ve tat algısı azalırken alt dudak-çene ucu duyusu korunmuştur.",
+          "interpretation": "Alt molar işlem sonrası aynı taraf ön dil bölümünde genel duyu ve tat algısı azalırken alt dudak-çene ucu duyusu korunmuştur.",
+          "values": [
+            [
+              "İşlem alanı",
+              "Alt üçüncü molar soketi çevresinde beklenen postoperatif ödem izlendi.",
+              "",
+              ""
+            ],
+            [
+              "Duyu muayenesi",
+              "Aynı taraf ön dil bölümünde dokunma ve iğne duyusu azalmış.",
+              "",
+              ""
+            ],
+            [
+              "Tat değerlendirmesi",
+              "Aynı taraf ön dil bölümünde tat algısı karşı tarafa göre azalmış.",
+              "",
+              ""
+            ],
+            [
+              "Komşu alan",
+              "Alt dudak ve çene ucu duyusu korunmuş; masseter kasılma gücü simetrik.",
+              "",
+              ""
+            ]
+          ],
+          "rows": [
+            [
+              "İşlem alanı",
+              "Alt üçüncü molar soketi çevresinde beklenen postoperatif ödem izlendi.",
+              "",
+              ""
+            ],
+            [
+              "Duyu muayenesi",
+              "Aynı taraf ön dil bölümünde dokunma ve iğne duyusu azalmış.",
+              "",
+              ""
+            ],
+            [
+              "Tat değerlendirmesi",
+              "Aynı taraf ön dil bölümünde tat algısı karşı tarafa göre azalmış.",
+              "",
+              ""
+            ],
+            [
+              "Komşu alan",
+              "Alt dudak ve çene ucu duyusu korunmuş; masseter kasılma gücü simetrik.",
+              "",
+              ""
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "İşlem alanı",
+            "Alt üçüncü molar soketi çevresinde beklenen postoperatif ödem izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Duyu muayenesi",
+            "Aynı taraf ön dil bölümünde dokunma ve iğne duyusu azalmış.",
+            "",
+            ""
+          ],
+          [
+            "Tat değerlendirmesi",
+            "Aynı taraf ön dil bölümünde tat algısı karşı tarafa göre azalmış.",
+            "",
+            ""
+          ],
+          [
+            "Komşu alan",
+            "Alt dudak ve çene ucu duyusu korunmuş; masseter kasılma gücü simetrik.",
+            "",
+            ""
+          ]
+        ],
+        "postAnswerExplanation": "Alt molar işlem sonrası aynı taraf ön dil bölümünde genel duyu ve tat algısı azalırken alt dudak-çene ucu duyusu korunmuştur.",
+        "interpretation": "Alt molar işlem sonrası aynı taraf ön dil bölümünde genel duyu ve tat algısı azalırken alt dudak-çene ucu duyusu korunmuştur.",
+        "explanationAfterAnswer": "Alt molar işlem sonrası aynı taraf ön dil bölümünde genel duyu ve tat algısı azalırken alt dudak-çene ucu duyusu korunmuştur.",
+        "testValueLabel": "Oral muayene ve duyu-tat değerlendirmesi",
+        "educationalValue": "Oral muayene ve duyu-tat değerlendirmesi",
+        "clinicalPriorityLabel": "Oral muayene ve duyu-tat değerlendirmesi",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "clinicalFlowOrder": 1,
+        "purpose": "Oral muayene ve duyu-tat değerlendirmesi",
+        "inlineFeedback": "Alt molar işlem sonrası aynı taraf ön dil bölümünde genel duyu ve tat algısı azalırken alt dudak-çene ucu duyusu korunmuştur."
+      }
+    ],
+    "useSyntheticInvestigationBank": false,
+    "managementSequence": {
+      "enabled": false
+    },
+    "hideExamSignal": true,
+    "question": "Bu hastadaki duyu-tat paternini en iyi açıklayan sinir hangisidir?",
+    "questionType": "anatomy",
+    "answerTarget": "anatomy",
+    "diagnosis": {
+      "correct": "Nervus lingualis",
+      "options": [
+        "Nervus alveolaris inferior",
+        "Nervus buccalis",
+        "Nervus mentalis",
+        "Nervus lingualis",
+        "N. mandibularis - auriculotemporal dalı"
+      ],
+      "question": "Bu hastadaki duyu-tat paternini en iyi açıklayan sinir hangisidir?",
+      "explanation": "Mandibular üçüncü molar cerrahisi sonrasında ön dilde genel duyu azalması ve aynı bölgede tat algısının azalması, alt dudak-çene ucu duyusunun korunmasıyla birlikte dilin oral kısmına giden sinirle uyumludur. Bu sinir aynı zamanda korda timpani liflerini taşıdığı için tat yakınması da tabloya katılabilir. İnferior alveolar veya mental sinir lezyonunda alt dudak-çene ucu hipoestezisi beklenirdi; buccal ve auriculotemporal dallar ise farklı mukozal/temporal alanlarla ilişkilidir.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Alt üçüncü molar komşuluğu sonrası ön dil uyuşması ve tat azalması, alt dudak duyusu korunuyorsa mandibular kanal lezyonundan ayrılır."
+        }
+      ],
+      "answerFeedback": {
+        "summary": "İşlem alanı, ön dil genel duyusu, tat azalması ve mental alanın korunması aynı mandibular dal düzeyini destekler.",
+        "whyCorrect": "Mandibular üçüncü molar cerrahisi sonrasında ön dilde genel duyu azalması ve aynı bölgede tat algısının azalması, alt dudak-çene ucu duyusunun korunmasıyla birlikte dilin oral kısmına giden sinirle uyumludur. Bu sinir aynı zamanda korda timpani liflerini taşıdığı için tat yakınması da tabloya katılabilir. İnferior alveolar veya mental sinir lezyonunda alt dudak-çene ucu hipoestezisi beklenirdi; buccal ve auriculotemporal dallar ise farklı mukozal/temporal alanlarla ilişkilidir.",
+        "rationale": "Mandibular üçüncü molar cerrahisi sonrasında ön dilde genel duyu azalması ve aynı bölgede tat algısının azalması, alt dudak-çene ucu duyusunun korunmasıyla birlikte dilin oral kısmına giden sinirle uyumludur. Bu sinir aynı zamanda korda timpani liflerini taşıdığı için tat yakınması da tabloya katılabilir. İnferior alveolar veya mental sinir lezyonunda alt dudak-çene ucu hipoestezisi beklenirdi; buccal ve auriculotemporal dallar ise farklı mukozal/temporal alanlarla ilişkilidir.",
+        "correctOptionFeedback": "Doğru yanıttır; mandibular üçüncü molar komşuluğunda seyreder ve ön dilin genel duyusunu taşır, ayrıca korda timpani lifleri bu sinire katılarak tat liflerini ulaştırır. Ön dilde uyuşma ve tat azalması, alt dudak duyusunun korunmasıyla birlikte bu anatomik yapıyı destekler.",
+        "keyClues": [
+          "Alt üçüncü molar işlemi",
+          "Ön dil genel duyu azalması",
+          "Aynı bölgede tat azalması",
+          "Alt dudak-çene ucu duyusunun korunması"
+        ],
+        "evidenceChain": [
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Alt üçüncü molar işlemi → mandibular arka diş çevresindeki yumuşak doku komşuluğunu riskli hale getirir.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Ön dil bölümünde genel duyu azalması → dilin oral kısmına giden duyu liflerinin etkilendiğini gösterir.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Aynı bölgede tat algısının azalması → bu duyu yoluna katılan özel visseral afferent liflerin de etkilendiğini düşündürür.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Alt dudak ve çene ucu duyusunun korunması → mandibular kanal/mental dal paternini dışlar.",
+            "weight": "medium",
+            "source": "case"
+          }
+        ],
+        "examPearl": "Ön dil uyuşması + tat azalması ile alt dudak uyuşmasını ayırmak, alt molar cerrahisi sonrası sinir lokalizasyonunda ana ipucudur.",
+        "optionComparison": {
+          "Nervus alveolaris inferior": "İnferior alveolar sinir mandibular kanal içinde alt dişler ve mental dal aracılığıyla alt dudak-çene ucu duyusuyla ilişkilidir. Bu hastada alt dudak ve çene ucu duyusu korunmuştur; asıl bulgu ön dil duyusu ve tat azalmasıdır.",
+          "Nervus buccalis": "Buccal sinir yanak mukozası ve bukkal gingiva duyusuyla ilişkilidir. Dilin ön bölümündeki genel duyu-tat değişikliğini ve işlem sonrası dil ısırma yakınmasını açıklamaz.",
+          "Nervus mentalis": "Mental sinir inferior alveolar sinirin terminal duyu dalıdır ve alt dudak ile çene ucunu etkiler. Bu alanların sağlam olması mental siniri geri plana iter.",
+          "Nervus lingualis": "Doğru yanıttır; mandibular üçüncü molar komşuluğunda seyreder ve ön dilin genel duyusunu taşır, ayrıca korda timpani lifleri bu sinire katılarak tat liflerini ulaştırır. Ön dilde uyuşma ve tat azalması, alt dudak duyusunun korunmasıyla birlikte bu anatomik yapıyı destekler.",
+          "N. mandibularis - auriculotemporal dalı": "Auriculotemporal sinir temporal bölge, dış kulak çevresi ve parotisle ilişkili lifler taşır. Alt molar işlem sonrası ön dil duyusu ve tat bulgusu bu sinirin dağılımına uymaz."
+        },
+        "whyWrong": {
+          "Nervus alveolaris inferior": "İnferior alveolar sinir mandibular kanal içinde alt dişler ve mental dal aracılığıyla alt dudak-çene ucu duyusuyla ilişkilidir. Bu hastada alt dudak ve çene ucu duyusu korunmuştur; asıl bulgu ön dil duyusu ve tat azalmasıdır.",
+          "Nervus buccalis": "Buccal sinir yanak mukozası ve bukkal gingiva duyusuyla ilişkilidir. Dilin ön bölümündeki genel duyu-tat değişikliğini ve işlem sonrası dil ısırma yakınmasını açıklamaz.",
+          "Nervus mentalis": "Mental sinir inferior alveolar sinirin terminal duyu dalıdır ve alt dudak ile çene ucunu etkiler. Bu alanların sağlam olması mental siniri geri plana iter.",
+          "N. mandibularis - auriculotemporal dalı": "Auriculotemporal sinir temporal bölge, dış kulak çevresi ve parotisle ilişkili lifler taşır. Alt molar işlem sonrası ön dil duyusu ve tat bulgusu bu sinirin dağılımına uymaz."
+        },
+        "managementSteps": [],
+        "management": [],
+        "learningOutcome": "Mandibular sinir dallarını oral kavite duyu alanları, diş cerrahisi komşulukları ve tat lifleriyle ayırt edebilme.",
+        "coreKnowledge": "Mandibular sinirin dil duyusuyla ilişkili dalı, alt üçüncü molar komşuluğunda yüzeyel seyredebilir; korda timpani lifleri bu dala katılarak ön iki üç dil tat duyusunu taşır."
+      },
+      "whyCorrect": "Mandibular üçüncü molar cerrahisi sonrasında ön dilde genel duyu azalması ve aynı bölgede tat algısının azalması, alt dudak-çene ucu duyusunun korunmasıyla birlikte dilin oral kısmına giden sinirle uyumludur. Bu sinir aynı zamanda korda timpani liflerini taşıdığı için tat yakınması da tabloya katılabilir. İnferior alveolar veya mental sinir lezyonunda alt dudak-çene ucu hipoestezisi beklenirdi; buccal ve auriculotemporal dallar ise farklı mukozal/temporal alanlarla ilişkilidir.",
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Alt üçüncü molar işlemi → mandibular arka diş çevresindeki yumuşak doku komşuluğunu riskli hale getirir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ön dil bölümünde genel duyu azalması → dilin oral kısmına giden duyu liflerinin etkilendiğini gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Aynı bölgede tat algısının azalması → bu duyu yoluna katılan özel visseral afferent liflerin de etkilendiğini düşündürür.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Alt dudak ve çene ucu duyusunun korunması → mandibular kanal/mental dal paternini dışlar.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Nervus alveolaris inferior": "İnferior alveolar sinir mandibular kanal içinde alt dişler ve mental dal aracılığıyla alt dudak-çene ucu duyusuyla ilişkilidir. Bu hastada alt dudak ve çene ucu duyusu korunmuştur; asıl bulgu ön dil duyusu ve tat azalmasıdır.",
+        "Nervus buccalis": "Buccal sinir yanak mukozası ve bukkal gingiva duyusuyla ilişkilidir. Dilin ön bölümündeki genel duyu-tat değişikliğini ve işlem sonrası dil ısırma yakınmasını açıklamaz.",
+        "Nervus mentalis": "Mental sinir inferior alveolar sinirin terminal duyu dalıdır ve alt dudak ile çene ucunu etkiler. Bu alanların sağlam olması mental siniri geri plana iter.",
+        "Nervus lingualis": "Doğru yanıttır; mandibular üçüncü molar komşuluğunda seyreder ve ön dilin genel duyusunu taşır, ayrıca korda timpani lifleri bu sinire katılarak tat liflerini ulaştırır. Ön dilde uyuşma ve tat azalması, alt dudak duyusunun korunmasıyla birlikte bu anatomik yapıyı destekler.",
+        "N. mandibularis - auriculotemporal dalı": "Auriculotemporal sinir temporal bölge, dış kulak çevresi ve parotisle ilişkili lifler taşır. Alt molar işlem sonrası ön dil duyusu ve tat bulgusu bu sinirin dağılımına uymaz."
+      },
+      "coreKnowledge": "Mandibular sinirin dil duyusuyla ilişkili dalı, alt üçüncü molar komşuluğunda yüzeyel seyredebilir; korda timpani lifleri bu dala katılarak ön iki üç dil tat duyusunu taşır.",
+      "examPearl": "Ön dil uyuşması + tat azalması ile alt dudak uyuşmasını ayırmak, alt molar cerrahisi sonrası sinir lokalizasyonunda ana ipucudur.",
+      "whyWrong": {
+        "Nervus alveolaris inferior": "İnferior alveolar sinir mandibular kanal içinde alt dişler ve mental dal aracılığıyla alt dudak-çene ucu duyusuyla ilişkilidir. Bu hastada alt dudak ve çene ucu duyusu korunmuştur; asıl bulgu ön dil duyusu ve tat azalmasıdır.",
+        "Nervus buccalis": "Buccal sinir yanak mukozası ve bukkal gingiva duyusuyla ilişkilidir. Dilin ön bölümündeki genel duyu-tat değişikliğini ve işlem sonrası dil ısırma yakınmasını açıklamaz.",
+        "Nervus mentalis": "Mental sinir inferior alveolar sinirin terminal duyu dalıdır ve alt dudak ile çene ucunu etkiler. Bu alanların sağlam olması mental siniri geri plana iter.",
+        "N. mandibularis - auriculotemporal dalı": "Auriculotemporal sinir temporal bölge, dış kulak çevresi ve parotisle ilişkili lifler taşır. Alt molar işlem sonrası ön dil duyusu ve tat bulgusu bu sinirin dağılımına uymaz."
+      }
+    },
+    "shuffleOptions": false,
+    "difficultyTag": "Orta",
+    "aiMeta": {
+      "generatedAt": "manual-v198-anatomy-five-case-expansion",
+      "generator": "manual-editorial-anatomy-clinical-case-expansion",
+      "schemaVersion": "clinical-standard-v397-compatible",
+      "validationWarnings": [],
+      "provider": "manual-editorial"
+    },
+    "listTitle": "Diş çekimi sonrası dilde uyuşma",
+    "cardTitle": "Diş çekimi sonrası dilde uyuşma",
+    "coreKnowledge": "Mandibular sinirin dil duyusuyla ilişkili dalı, alt üçüncü molar komşuluğunda yüzeyel seyredebilir; korda timpani lifleri bu dala katılarak ön iki üç dil tat duyusunu taşır.",
+    "examPearl": "Ön dil uyuşması + tat azalması ile alt dudak uyuşmasını ayırmak, alt molar cerrahisi sonrası sinir lokalizasyonunda ana ipucudur.",
+    "whyCorrect": "Mandibular üçüncü molar cerrahisi sonrasında ön dilde genel duyu azalması ve aynı bölgede tat algısının azalması, alt dudak-çene ucu duyusunun korunmasıyla birlikte dilin oral kısmına giden sinirle uyumludur. Bu sinir aynı zamanda korda timpani liflerini taşıdığı için tat yakınması da tabloya katılabilir. İnferior alveolar veya mental sinir lezyonunda alt dudak-çene ucu hipoestezisi beklenirdi; buccal ve auriculotemporal dallar ise farklı mukozal/temporal alanlarla ilişkilidir.",
+    "optionComparison": {
+      "Nervus alveolaris inferior": "İnferior alveolar sinir mandibular kanal içinde alt dişler ve mental dal aracılığıyla alt dudak-çene ucu duyusuyla ilişkilidir. Bu hastada alt dudak ve çene ucu duyusu korunmuştur; asıl bulgu ön dil duyusu ve tat azalmasıdır.",
+      "Nervus buccalis": "Buccal sinir yanak mukozası ve bukkal gingiva duyusuyla ilişkilidir. Dilin ön bölümündeki genel duyu-tat değişikliğini ve işlem sonrası dil ısırma yakınmasını açıklamaz.",
+      "Nervus mentalis": "Mental sinir inferior alveolar sinirin terminal duyu dalıdır ve alt dudak ile çene ucunu etkiler. Bu alanların sağlam olması mental siniri geri plana iter.",
+      "Nervus lingualis": "Doğru yanıttır; mandibular üçüncü molar komşuluğunda seyreder ve ön dilin genel duyusunu taşır, ayrıca korda timpani lifleri bu sinire katılarak tat liflerini ulaştırır. Ön dilde uyuşma ve tat azalması, alt dudak duyusunun korunmasıyla birlikte bu anatomik yapıyı destekler.",
+      "N. mandibularis - auriculotemporal dalı": "Auriculotemporal sinir temporal bölge, dış kulak çevresi ve parotisle ilişkili lifler taşır. Alt molar işlem sonrası ön dil duyusu ve tat bulgusu bu sinirin dağılımına uymaz."
+    },
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Alt üçüncü molar işlemi → mandibular arka diş çevresindeki yumuşak doku komşuluğunu riskli hale getirir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Ön dil bölümünde genel duyu azalması → dilin oral kısmına giden duyu liflerinin etkilendiğini gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Aynı bölgede tat algısının azalması → bu duyu yoluna katılan özel visseral afferent liflerin de etkilendiğini düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Alt dudak ve çene ucu duyusunun korunması → mandibular kanal/mental dal paternini dışlar.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "whyWrong": {
+      "Nervus alveolaris inferior": "İnferior alveolar sinir mandibular kanal içinde alt dişler ve mental dal aracılığıyla alt dudak-çene ucu duyusuyla ilişkilidir. Bu hastada alt dudak ve çene ucu duyusu korunmuştur; asıl bulgu ön dil duyusu ve tat azalmasıdır.",
+      "Nervus buccalis": "Buccal sinir yanak mukozası ve bukkal gingiva duyusuyla ilişkilidir. Dilin ön bölümündeki genel duyu-tat değişikliğini ve işlem sonrası dil ısırma yakınmasını açıklamaz.",
+      "Nervus mentalis": "Mental sinir inferior alveolar sinirin terminal duyu dalıdır ve alt dudak ile çene ucunu etkiler. Bu alanların sağlam olması mental siniri geri plana iter.",
+      "N. mandibularis - auriculotemporal dalı": "Auriculotemporal sinir temporal bölge, dış kulak çevresi ve parotisle ilişkili lifler taşır. Alt molar işlem sonrası ön dil duyusu ve tat bulgusu bu sinirin dağılımına uymaz."
+    }
+  },
+  {
+    "id": "v198-new-351-epigastrik-agri-sonrasi-masif-kanama",
+    "branchId": "anatomy",
+    "caseType": "standard",
+    "relatedBranch": "Anatomi / Gastroenteroloji",
+    "title": "Epigastrik ağrı sonrası masif kanama",
+    "difficulty": "Orta",
+    "clinicalFocus": "Duodenum komşulukları üzerinden peptik ülser kanamasında arteriyel kaynağı anatomik olarak belirleme.",
+    "learningTarget": "Posterior duodenal bulbus ülserini çevre arter anatomisiyle ilişkilendirerek kanama kaynağını ayırt edebilme.",
+    "demographics": "58 yaşında erkek hasta",
+    "setting": "Acil servis",
+    "chiefComplaint": "Hasta, epigastrik ağrı öyküsünü izleyen koyu dışkılama, kahve telvesi görünümünde kusma ve baş dönmesi nedeniyle getiriliyor.",
+    "stem": "Hasta, birkaç haftadır yemeklerden sonra artan epigastrik yanma ve gece uykudan uyandıran ağrı yaşadığını anlatır. Ağrı için reçetesiz ağrı kesici kullandığını, son iki gündür halsizliğinin arttığını ve dışkısının koyulaştığını fark ettiğini söyler. Başvuru sabahı kahve telvesi görünümünde kusması olmuş, ardından ayağa kalkınca göz kararması yaşadığı için yakınları tarafından acile getirilmiştir. Daha önce karaciğer hastalığı veya özofagus varisi tanısı almadığını, travma geçirmediğini belirtir. Acil servise geldiğinde üst karın ağrısı devam etmektedir.",
+    "patientIntro": {
+      "profile": "58 yaşında erkek hasta, üst gastrointestinal kanama bulguları nedeniyle acil serviste değerlendiriliyor.",
+      "presentation": "Epigastrik ağrı, melena, kahve telvesi görünümünde kusma ve ortostatik yakınma vardır.",
+      "historySummary": "Hasta, birkaç haftadır yemeklerden sonra artan epigastrik yanma ve gece uykudan uyandıran ağrı yaşadığını anlatır. Ağrı için reçetesiz ağrı kesici kullandığını, son iki gündür halsizliğinin arttığını ve dışkısının koyulaştığını fark ettiğini söyler. Başvuru sabahı kahve telvesi görünümünde kusması olmuş, ardından ayağa kalkınca göz kararması yaşadığı için yakınları tarafından acile getirilmiştir. Daha önce karaciğer hastalığı veya özofagus varisi tanısı almadığını, travma geçirmediğini belirtir. Acil servise geldiğinde üst karın ağrısı devam etmektedir."
+    },
+    "vitals": {
+      "TA": "92/58 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "20/dk",
+      "SpO2": "%97, oda havasında",
+      "Ateş": "36.5 °C",
+      "Şok indeksi": "1.22 - dolaşım riski"
+    },
+    "exam": [
+      "Hasta soluk ve halsiz görünümdedir; mukozalar kurudur.",
+      "Epigastrik bölgede hassasiyet vardır, yaygın periton irritasyonu saptanmaz.",
+      "Rektal muayenede melena ile uyumlu koyu renkli dışkı izlenir.",
+      "Belirgin sarılık, asit veya karaciğer kronik hastalık bulgusu yoktur."
+    ],
+    "investigations": [
+      {
+        "id": "v198-new-351-epigastrik-agri-sonrasi-masif-kanama-ust-endoskopi-ve-kanama-odagi",
+        "label": "Üst endoskopi ve kanama odağı",
+        "title": "Üst endoskopi ve kanama odağı",
+        "orderLabel": "Üst endoskopi ve kanama odağı",
+        "type": "endoscopy",
+        "priority": "essential",
+        "subtype": "Üst endoskopi ve kanama odağı",
+        "category": "gastrointestinal",
+        "testTypeCategory": "gastrointestinal",
+        "summary": "Üst endoskopide posterior duodenal bulbus yerleşimli ülser odağı ve aktif kanama bulgusu izlenmiş, varis lehine bulgu saptanmamıştır.",
+        "clinicalMeaning": "Üst endoskopide posterior duodenal bulbus yerleşimli ülser odağı ve aktif kanama bulgusu izlenmiş, varis lehine bulgu saptanmamıştır.",
+        "result": {
+          "title": "Üst endoskopi ve kanama odağı",
+          "summary": "Üst endoskopide posterior duodenal bulbus yerleşimli ülser odağı ve aktif kanama bulgusu izlenmiş, varis lehine bulgu saptanmamıştır.",
+          "interpretation": "Üst endoskopide posterior duodenal bulbus yerleşimli ülser odağı ve aktif kanama bulgusu izlenmiş, varis lehine bulgu saptanmamıştır.",
+          "values": [
+            [
+              "Endoskopik odak",
+              "Bulbus duodeni posterior duvarında tabanı pıhtılı ülser alanı izlendi.",
+              "",
+              ""
+            ],
+            [
+              "Kanama bulgusu",
+              "Aynı alanda aralıklı aktif sızıntı ve adheran pıhtı kaydedildi.",
+              "",
+              ""
+            ],
+            [
+              "Hemoglobin",
+              "8.4 g/dL",
+              "13.5–17.5 g/dL",
+              "Düşük"
+            ],
+            [
+              "Karaciğer bulgusu",
+              "Özofagus varisi veya portal hipertansiyon bulgusu izlenmedi.",
+              "",
+              ""
+            ]
+          ],
+          "rows": [
+            [
+              "Endoskopik odak",
+              "Bulbus duodeni posterior duvarında tabanı pıhtılı ülser alanı izlendi.",
+              "",
+              ""
+            ],
+            [
+              "Kanama bulgusu",
+              "Aynı alanda aralıklı aktif sızıntı ve adheran pıhtı kaydedildi.",
+              "",
+              ""
+            ],
+            [
+              "Hemoglobin",
+              "8.4 g/dL",
+              "13.5–17.5 g/dL",
+              "Düşük"
+            ],
+            [
+              "Karaciğer bulgusu",
+              "Özofagus varisi veya portal hipertansiyon bulgusu izlenmedi.",
+              "",
+              ""
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Endoskopik odak",
+            "Bulbus duodeni posterior duvarında tabanı pıhtılı ülser alanı izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Kanama bulgusu",
+            "Aynı alanda aralıklı aktif sızıntı ve adheran pıhtı kaydedildi.",
+            "",
+            ""
+          ],
+          [
+            "Hemoglobin",
+            "8.4 g/dL",
+            "13.5–17.5 g/dL",
+            "Düşük"
+          ],
+          [
+            "Karaciğer bulgusu",
+            "Özofagus varisi veya portal hipertansiyon bulgusu izlenmedi.",
+            "",
+            ""
+          ]
+        ],
+        "postAnswerExplanation": "Üst endoskopide posterior duodenal bulbus yerleşimli ülser odağı ve aktif kanama bulgusu izlenmiş, varis lehine bulgu saptanmamıştır.",
+        "interpretation": "Üst endoskopide posterior duodenal bulbus yerleşimli ülser odağı ve aktif kanama bulgusu izlenmiş, varis lehine bulgu saptanmamıştır.",
+        "explanationAfterAnswer": "Üst endoskopide posterior duodenal bulbus yerleşimli ülser odağı ve aktif kanama bulgusu izlenmiş, varis lehine bulgu saptanmamıştır.",
+        "testValueLabel": "Üst endoskopi ve kanama odağı",
+        "educationalValue": "Üst endoskopi ve kanama odağı",
+        "clinicalPriorityLabel": "Üst endoskopi ve kanama odağı",
+        "scoreImpact": 5,
+        "scoreValue": 5,
+        "clinicalFlowOrder": 1,
+        "purpose": "Üst endoskopi ve kanama odağı",
+        "inlineFeedback": "Üst endoskopide posterior duodenal bulbus yerleşimli ülser odağı ve aktif kanama bulgusu izlenmiş, varis lehine bulgu saptanmamıştır."
+      }
+    ],
+    "useSyntheticInvestigationBank": false,
+    "managementSequence": {
+      "enabled": false
+    },
+    "hideExamSignal": true,
+    "question": "Bu kanama odağında en olası etkilenen arter hangisidir?",
+    "questionType": "anatomy",
+    "answerTarget": "anatomy",
+    "diagnosis": {
+      "correct": "Arteria gastroduodenalis",
+      "options": [
+        "Arteria gastroduodenalis",
+        "Arteria gastrica sinistra",
+        "Arteria lienalis",
+        "Arteria mesenterica superior",
+        "Arteria pancreaticoduodenalis inferior"
+      ],
+      "question": "Bu kanama odağında en olası etkilenen arter hangisidir?",
+      "explanation": "Posterior duodenal bulbus yerleşimli ülser, duodenum birinci kısmının arka komşuluğundaki arteriyel yapıyı erode ederek ciddi üst gastrointestinal kanamaya yol açabilir. Hastadaki melena, kahve telvesi kusma, hemoglobin düşüklüğü ve endoskopik posterior bulbus odağı aynı anatomik ilişkiyi destekler. Varis bulgularının olmaması venöz portal kaynakları; küçük kurvatur, pankreas üst kenarı veya distal duodenal alan seçeneklerini geri plana iter.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Posterior duodenal bulbus ülseri ciddi arteriyel kanama yaptığında soru çoğunlukla birinci duodenum arka komşuluğunu ölçer."
+        }
+      ],
+      "answerFeedback": {
+        "summary": "Endoskopik odak ve kanama paterninin aynı bölgede birleşmesi, duodenum birinci kısmının posterior arter komşuluğunu öne çıkarır.",
+        "whyCorrect": "Posterior duodenal bulbus yerleşimli ülser, duodenum birinci kısmının arka komşuluğundaki arteriyel yapıyı erode ederek ciddi üst gastrointestinal kanamaya yol açabilir. Hastadaki melena, kahve telvesi kusma, hemoglobin düşüklüğü ve endoskopik posterior bulbus odağı aynı anatomik ilişkiyi destekler. Varis bulgularının olmaması venöz portal kaynakları; küçük kurvatur, pankreas üst kenarı veya distal duodenal alan seçeneklerini geri plana iter.",
+        "rationale": "Posterior duodenal bulbus yerleşimli ülser, duodenum birinci kısmının arka komşuluğundaki arteriyel yapıyı erode ederek ciddi üst gastrointestinal kanamaya yol açabilir. Hastadaki melena, kahve telvesi kusma, hemoglobin düşüklüğü ve endoskopik posterior bulbus odağı aynı anatomik ilişkiyi destekler. Varis bulgularının olmaması venöz portal kaynakları; küçük kurvatur, pankreas üst kenarı veya distal duodenal alan seçeneklerini geri plana iter.",
+        "correctOptionFeedback": "Doğru yanıttır; duodenum birinci kısmının posterior komşuluğunda seyreder ve posterior duodenal ülserlerde ciddi üst gastrointestinal kanamanın klasik anatomik kaynağı olabilir. Endoskopik odağın posterior bulbus olması bu damarı öne çıkarır.",
+        "keyClues": [
+          "Kahve telvesi kusma ve melena",
+          "Posterior duodenal bulbus ülseri",
+          "Aktif kanama ve düşük hemoglobin",
+          "Varis bulgusu olmaması"
+        ],
+        "evidenceChain": [
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Melena ve kahve telvesi kusma → üst gastrointestinal kanama odağını destekler.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Endoskopide posterior duodenal bulbus ülseri → birinci kısım arka komşuluğundaki damar ilişkisini gündeme getirir.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Aktif sızıntı ve hemoglobin düşüklüğü → yüzeyel mukozal kanamadan çok arteriyel erozyon riskini artırır.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Varis bulgusu olmaması → portal-sistemik venöz kanama kaynaklarını geri plana iter.",
+            "weight": "medium",
+            "source": "case"
+          }
+        ],
+        "examPearl": "Duodenal ülser kanamasında anterior ülser perforasyonla, posterior ülser arteriyel kanamayla daha sık sınavlaştırılır.",
+        "optionComparison": {
+          "Arteria gastroduodenalis": "Doğru yanıttır; duodenum birinci kısmının posterior komşuluğunda seyreder ve posterior duodenal ülserlerde ciddi üst gastrointestinal kanamanın klasik anatomik kaynağı olabilir. Endoskopik odağın posterior bulbus olması bu damarı öne çıkarır.",
+          "Arteria gastrica sinistra": "Sol gastrik arter küçük kurvatur ve distal özofagus komşuluğuyla ilişkilidir. Varis veya küçük kurvatur odaklı mide lezyonu olsaydı daha çok akla gelirdi; bu vakada odak posterior duodenal bulbus düzeyindedir.",
+          "Arteria lienalis": "Splenik arter pankreas üst kenarı boyunca dalak hilusuna ilerler ve posterior mide/pankreas komşuluklarıyla ilişkilidir. Duodenum birinci kısmının posterior ülser kanamasını en doğrudan açıklayan damar değildir.",
+          "Arteria mesenterica superior": "Süperior mezenterik arter duodenumun üçüncü kısmı ve ince bağırsak mezenteriyle önemli komşuluklar yapar. Posterior bulbus ülseri ve akut üst gastrointestinal kanama paterninde ilk beklenen erozyon kaynağı değildir.",
+          "Arteria pancreaticoduodenalis inferior": "İnferior pankreatikoduodenal arter SMA kökenli olup duodenumun daha distal bölümleri ve pankreas başı çevresiyle ilişkilidir. Posterior birinci kısım ülserinin klasik kanama kaynağı farklıdır."
+        },
+        "whyWrong": {
+          "Arteria gastrica sinistra": "Sol gastrik arter küçük kurvatur ve distal özofagus komşuluğuyla ilişkilidir. Varis veya küçük kurvatur odaklı mide lezyonu olsaydı daha çok akla gelirdi; bu vakada odak posterior duodenal bulbus düzeyindedir.",
+          "Arteria lienalis": "Splenik arter pankreas üst kenarı boyunca dalak hilusuna ilerler ve posterior mide/pankreas komşuluklarıyla ilişkilidir. Duodenum birinci kısmının posterior ülser kanamasını en doğrudan açıklayan damar değildir.",
+          "Arteria mesenterica superior": "Süperior mezenterik arter duodenumun üçüncü kısmı ve ince bağırsak mezenteriyle önemli komşuluklar yapar. Posterior bulbus ülseri ve akut üst gastrointestinal kanama paterninde ilk beklenen erozyon kaynağı değildir.",
+          "Arteria pancreaticoduodenalis inferior": "İnferior pankreatikoduodenal arter SMA kökenli olup duodenumun daha distal bölümleri ve pankreas başı çevresiyle ilişkilidir. Posterior birinci kısım ülserinin klasik kanama kaynağı farklıdır."
+        },
+        "managementSteps": [],
+        "management": [],
+        "learningOutcome": "Duodenum, pankreas ve mide çevresi arter komşuluklarını peptik ülser kanaması üzerinden ayırt edebilme.",
+        "coreKnowledge": "Duodenum birinci kısmının posteriorunda seyreden arteriyel komşuluk, posterior duodenal ülserlerde hayatı tehdit eden üst gastrointestinal kanama kaynağı olabilir."
+      },
+      "whyCorrect": "Posterior duodenal bulbus yerleşimli ülser, duodenum birinci kısmının arka komşuluğundaki arteriyel yapıyı erode ederek ciddi üst gastrointestinal kanamaya yol açabilir. Hastadaki melena, kahve telvesi kusma, hemoglobin düşüklüğü ve endoskopik posterior bulbus odağı aynı anatomik ilişkiyi destekler. Varis bulgularının olmaması venöz portal kaynakları; küçük kurvatur, pankreas üst kenarı veya distal duodenal alan seçeneklerini geri plana iter.",
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Melena ve kahve telvesi kusma → üst gastrointestinal kanama odağını destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Endoskopide posterior duodenal bulbus ülseri → birinci kısım arka komşuluğundaki damar ilişkisini gündeme getirir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Aktif sızıntı ve hemoglobin düşüklüğü → yüzeyel mukozal kanamadan çok arteriyel erozyon riskini artırır.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Varis bulgusu olmaması → portal-sistemik venöz kanama kaynaklarını geri plana iter.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Arteria gastroduodenalis": "Doğru yanıttır; duodenum birinci kısmının posterior komşuluğunda seyreder ve posterior duodenal ülserlerde ciddi üst gastrointestinal kanamanın klasik anatomik kaynağı olabilir. Endoskopik odağın posterior bulbus olması bu damarı öne çıkarır.",
+        "Arteria gastrica sinistra": "Sol gastrik arter küçük kurvatur ve distal özofagus komşuluğuyla ilişkilidir. Varis veya küçük kurvatur odaklı mide lezyonu olsaydı daha çok akla gelirdi; bu vakada odak posterior duodenal bulbus düzeyindedir.",
+        "Arteria lienalis": "Splenik arter pankreas üst kenarı boyunca dalak hilusuna ilerler ve posterior mide/pankreas komşuluklarıyla ilişkilidir. Duodenum birinci kısmının posterior ülser kanamasını en doğrudan açıklayan damar değildir.",
+        "Arteria mesenterica superior": "Süperior mezenterik arter duodenumun üçüncü kısmı ve ince bağırsak mezenteriyle önemli komşuluklar yapar. Posterior bulbus ülseri ve akut üst gastrointestinal kanama paterninde ilk beklenen erozyon kaynağı değildir.",
+        "Arteria pancreaticoduodenalis inferior": "İnferior pankreatikoduodenal arter SMA kökenli olup duodenumun daha distal bölümleri ve pankreas başı çevresiyle ilişkilidir. Posterior birinci kısım ülserinin klasik kanama kaynağı farklıdır."
+      },
+      "coreKnowledge": "Duodenum birinci kısmının posteriorunda seyreden arteriyel komşuluk, posterior duodenal ülserlerde hayatı tehdit eden üst gastrointestinal kanama kaynağı olabilir.",
+      "examPearl": "Duodenal ülser kanamasında anterior ülser perforasyonla, posterior ülser arteriyel kanamayla daha sık sınavlaştırılır.",
+      "whyWrong": {
+        "Arteria gastrica sinistra": "Sol gastrik arter küçük kurvatur ve distal özofagus komşuluğuyla ilişkilidir. Varis veya küçük kurvatur odaklı mide lezyonu olsaydı daha çok akla gelirdi; bu vakada odak posterior duodenal bulbus düzeyindedir.",
+        "Arteria lienalis": "Splenik arter pankreas üst kenarı boyunca dalak hilusuna ilerler ve posterior mide/pankreas komşuluklarıyla ilişkilidir. Duodenum birinci kısmının posterior ülser kanamasını en doğrudan açıklayan damar değildir.",
+        "Arteria mesenterica superior": "Süperior mezenterik arter duodenumun üçüncü kısmı ve ince bağırsak mezenteriyle önemli komşuluklar yapar. Posterior bulbus ülseri ve akut üst gastrointestinal kanama paterninde ilk beklenen erozyon kaynağı değildir.",
+        "Arteria pancreaticoduodenalis inferior": "İnferior pankreatikoduodenal arter SMA kökenli olup duodenumun daha distal bölümleri ve pankreas başı çevresiyle ilişkilidir. Posterior birinci kısım ülserinin klasik kanama kaynağı farklıdır."
+      }
+    },
+    "shuffleOptions": false,
+    "difficultyTag": "Orta",
+    "aiMeta": {
+      "generatedAt": "manual-v198-anatomy-five-case-expansion",
+      "generator": "manual-editorial-anatomy-clinical-case-expansion",
+      "schemaVersion": "clinical-standard-v397-compatible",
+      "validationWarnings": [],
+      "provider": "manual-editorial"
+    },
+    "listTitle": "Epigastrik ağrı sonrası masif kanama",
+    "cardTitle": "Epigastrik ağrı sonrası masif kanama",
+    "coreKnowledge": "Duodenum birinci kısmının posteriorunda seyreden arteriyel komşuluk, posterior duodenal ülserlerde hayatı tehdit eden üst gastrointestinal kanama kaynağı olabilir.",
+    "examPearl": "Duodenal ülser kanamasında anterior ülser perforasyonla, posterior ülser arteriyel kanamayla daha sık sınavlaştırılır.",
+    "whyCorrect": "Posterior duodenal bulbus yerleşimli ülser, duodenum birinci kısmının arka komşuluğundaki arteriyel yapıyı erode ederek ciddi üst gastrointestinal kanamaya yol açabilir. Hastadaki melena, kahve telvesi kusma, hemoglobin düşüklüğü ve endoskopik posterior bulbus odağı aynı anatomik ilişkiyi destekler. Varis bulgularının olmaması venöz portal kaynakları; küçük kurvatur, pankreas üst kenarı veya distal duodenal alan seçeneklerini geri plana iter.",
+    "optionComparison": {
+      "Arteria gastroduodenalis": "Doğru yanıttır; duodenum birinci kısmının posterior komşuluğunda seyreder ve posterior duodenal ülserlerde ciddi üst gastrointestinal kanamanın klasik anatomik kaynağı olabilir. Endoskopik odağın posterior bulbus olması bu damarı öne çıkarır.",
+      "Arteria gastrica sinistra": "Sol gastrik arter küçük kurvatur ve distal özofagus komşuluğuyla ilişkilidir. Varis veya küçük kurvatur odaklı mide lezyonu olsaydı daha çok akla gelirdi; bu vakada odak posterior duodenal bulbus düzeyindedir.",
+      "Arteria lienalis": "Splenik arter pankreas üst kenarı boyunca dalak hilusuna ilerler ve posterior mide/pankreas komşuluklarıyla ilişkilidir. Duodenum birinci kısmının posterior ülser kanamasını en doğrudan açıklayan damar değildir.",
+      "Arteria mesenterica superior": "Süperior mezenterik arter duodenumun üçüncü kısmı ve ince bağırsak mezenteriyle önemli komşuluklar yapar. Posterior bulbus ülseri ve akut üst gastrointestinal kanama paterninde ilk beklenen erozyon kaynağı değildir.",
+      "Arteria pancreaticoduodenalis inferior": "İnferior pankreatikoduodenal arter SMA kökenli olup duodenumun daha distal bölümleri ve pankreas başı çevresiyle ilişkilidir. Posterior birinci kısım ülserinin klasik kanama kaynağı farklıdır."
+    },
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Melena ve kahve telvesi kusma → üst gastrointestinal kanama odağını destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Endoskopide posterior duodenal bulbus ülseri → birinci kısım arka komşuluğundaki damar ilişkisini gündeme getirir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Aktif sızıntı ve hemoglobin düşüklüğü → yüzeyel mukozal kanamadan çok arteriyel erozyon riskini artırır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Varis bulgusu olmaması → portal-sistemik venöz kanama kaynaklarını geri plana iter.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "whyWrong": {
+      "Arteria gastrica sinistra": "Sol gastrik arter küçük kurvatur ve distal özofagus komşuluğuyla ilişkilidir. Varis veya küçük kurvatur odaklı mide lezyonu olsaydı daha çok akla gelirdi; bu vakada odak posterior duodenal bulbus düzeyindedir.",
+      "Arteria lienalis": "Splenik arter pankreas üst kenarı boyunca dalak hilusuna ilerler ve posterior mide/pankreas komşuluklarıyla ilişkilidir. Duodenum birinci kısmının posterior ülser kanamasını en doğrudan açıklayan damar değildir.",
+      "Arteria mesenterica superior": "Süperior mezenterik arter duodenumun üçüncü kısmı ve ince bağırsak mezenteriyle önemli komşuluklar yapar. Posterior bulbus ülseri ve akut üst gastrointestinal kanama paterninde ilk beklenen erozyon kaynağı değildir.",
+      "Arteria pancreaticoduodenalis inferior": "İnferior pankreatikoduodenal arter SMA kökenli olup duodenumun daha distal bölümleri ve pankreas başı çevresiyle ilişkilidir. Posterior birinci kısım ülserinin klasik kanama kaynağı farklıdır."
+    }
+  },
+  {
+    "id": "v198-new-352-aksiller-islem-sonrasi-ic-kol-uyusmasi",
+    "branchId": "anatomy",
+    "caseType": "standard",
+    "relatedBranch": "Anatomi / Genel Cerrahi",
+    "title": "Aksiller işlem sonrası iç kol uyuşması",
+    "difficulty": "Kolay-Orta",
+    "clinicalFocus": "Aksiller cerrahi sonrası sınırlı duyu kaybını motor aksiller dallardan ayırma.",
+    "learningTarget": "Aksiller lenf nodu işlemlerinde medial üst kol duyusu ile ilişkili kutanöz dalı, long thoracic ve thoracodorsal motor paternlerinden ayırt edebilme.",
+    "demographics": "45 yaşında kadın hasta",
+    "setting": "Genel cerrahi kontrol polikliniği",
+    "chiefComplaint": "Hasta, aksiller işlem sonrası kolunun iç-üst tarafında uyuşma fark ettiği için kontrol ediliyor.",
+    "stem": "Hasta, sol memedeki şüpheli kitle nedeniyle yapılan sınırlı aksiller örnekleme işleminden iki gün sonra kontrol için çağrıldığını anlatır. İlk gün kesi yerinde beklenen ağrı dışında belirgin sorun yaşamamış, ancak pansuman değiştirirken kolunun iç-üst tarafında dokunmayı daha az hissettiğini fark etmiştir. Kolunu yukarı kaldırabildiğini, saçını tararken veya eşyayı rafa koyarken belirgin güçsüzlük olmadığını söyler. Sırtını kaşırken ya da omzunu geriye çekerken yeni bir hareket kaybı hissetmediğini belirtir. Uyuşma alanı dar bir şerit şeklinde kaldığı için cerrahi kontrolünde bunu özellikle dile getirmiştir.",
+    "patientIntro": {
+      "profile": "45 yaşında kadın hasta, sınırlı aksiller cerrahi işlem sonrası gelişen lokal duyu yakınması nedeniyle genel cerrahi kontrolünde değerlendiriliyor.",
+      "presentation": "Kolun iç-üst bölümünde dar alanda uyuşma vardır; belirgin omuz veya skapula motor güçsüzlüğü tariflenmemektedir.",
+      "historySummary": "Hasta, sol memedeki şüpheli kitle nedeniyle yapılan sınırlı aksiller örnekleme işleminden iki gün sonra kontrol için çağrıldığını anlatır. İlk gün kesi yerinde beklenen ağrı dışında belirgin sorun yaşamamış, ancak pansuman değiştirirken kolunun iç-üst tarafında dokunmayı daha az hissettiğini fark etmiştir. Kolunu yukarı kaldırabildiğini, saçını tararken veya eşyayı rafa koyarken belirgin güçsüzlük olmadığını söyler. Sırtını kaşırken ya da omzunu geriye çekerken yeni bir hareket kaybı hissetmediğini belirtir. Uyuşma alanı dar bir şerit şeklinde kaldığı için cerrahi kontrolünde bunu özellikle dile getirmiştir."
+    },
+    "vitals": {
+      "TA": "124/78 mmHg",
+      "Nabız": "82/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "0.66 normal"
+    },
+    "exam": [
+      "Sol aksillada sınırlı insizyon hattı temiz görünümdedir; hematom veya belirgin enfeksiyon bulgusu yoktur.",
+      "Kolun medial-üst bölümünde dar bant şeklinde dokunma duyusu azalmıştır.",
+      "Skapular kanatlanma izlenmez; omuz abdüksiyonu ve öne elevasyonu korunmuştur.",
+      "Latissimus dorsi ve pektoralis kas fonksiyonları simetriktir; distal nabızlar normaldir."
+    ],
+    "investigations": [
+      {
+        "id": "v198-new-352-aksiller-islem-sonrasi-ic-kol-uyusmasi-aksiller-muayene-ve-duyu-haritasi",
+        "label": "Aksiller muayene ve duyu haritası",
+        "title": "Aksiller muayene ve duyu haritası",
+        "orderLabel": "Aksiller muayene ve duyu haritası",
+        "type": "clinical",
+        "priority": "essential",
+        "subtype": "Aksiller muayene ve duyu haritası",
+        "category": "clinicalAssessment",
+        "testTypeCategory": "clinicalAssessment",
+        "summary": "Aksiller işlem sonrası motor fonksiyonlar korunurken kol medial-üst bölümünde sınırlı duyu azalması saptanmıştır.",
+        "clinicalMeaning": "Aksiller işlem sonrası motor fonksiyonlar korunurken kol medial-üst bölümünde sınırlı duyu azalması saptanmıştır.",
+        "result": {
+          "title": "Aksiller muayene ve duyu haritası",
+          "summary": "Aksiller işlem sonrası motor fonksiyonlar korunurken kol medial-üst bölümünde sınırlı duyu azalması saptanmıştır.",
+          "interpretation": "Aksiller işlem sonrası motor fonksiyonlar korunurken kol medial-üst bölümünde sınırlı duyu azalması saptanmıştır.",
+          "values": [
+            [
+              "Cerrahi alan",
+              "Aksilla tabanına yakın sınırlı insizyon ve hafif çevresel ödem izlendi.",
+              "",
+              ""
+            ],
+            [
+              "Duyu alanı",
+              "Kolun medial-üst bölümünde dar bant şeklinde hipoestezi saptandı.",
+              "",
+              ""
+            ],
+            [
+              "Omuz fonksiyonu",
+              "Omuz abdüksiyonu ve skapular stabilizasyon karşı tarafla benzerdir.",
+              "",
+              ""
+            ],
+            [
+              "Latissimus/pektoral test",
+              "Omuz adduksiyon-iç rotasyon ve pektoral kas kontraksiyonu korunmuş.",
+              "",
+              ""
+            ]
+          ],
+          "rows": [
+            [
+              "Cerrahi alan",
+              "Aksilla tabanına yakın sınırlı insizyon ve hafif çevresel ödem izlendi.",
+              "",
+              ""
+            ],
+            [
+              "Duyu alanı",
+              "Kolun medial-üst bölümünde dar bant şeklinde hipoestezi saptandı.",
+              "",
+              ""
+            ],
+            [
+              "Omuz fonksiyonu",
+              "Omuz abdüksiyonu ve skapular stabilizasyon karşı tarafla benzerdir.",
+              "",
+              ""
+            ],
+            [
+              "Latissimus/pektoral test",
+              "Omuz adduksiyon-iç rotasyon ve pektoral kas kontraksiyonu korunmuş.",
+              "",
+              ""
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Cerrahi alan",
+            "Aksilla tabanına yakın sınırlı insizyon ve hafif çevresel ödem izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Duyu alanı",
+            "Kolun medial-üst bölümünde dar bant şeklinde hipoestezi saptandı.",
+            "",
+            ""
+          ],
+          [
+            "Omuz fonksiyonu",
+            "Omuz abdüksiyonu ve skapular stabilizasyon karşı tarafla benzerdir.",
+            "",
+            ""
+          ],
+          [
+            "Latissimus/pektoral test",
+            "Omuz adduksiyon-iç rotasyon ve pektoral kas kontraksiyonu korunmuş.",
+            "",
+            ""
+          ]
+        ],
+        "postAnswerExplanation": "Aksiller işlem sonrası motor fonksiyonlar korunurken kol medial-üst bölümünde sınırlı duyu azalması saptanmıştır.",
+        "interpretation": "Aksiller işlem sonrası motor fonksiyonlar korunurken kol medial-üst bölümünde sınırlı duyu azalması saptanmıştır.",
+        "explanationAfterAnswer": "Aksiller işlem sonrası motor fonksiyonlar korunurken kol medial-üst bölümünde sınırlı duyu azalması saptanmıştır.",
+        "testValueLabel": "Aksiller muayene ve duyu haritası",
+        "educationalValue": "Aksiller muayene ve duyu haritası",
+        "clinicalPriorityLabel": "Aksiller muayene ve duyu haritası",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "clinicalFlowOrder": 1,
+        "purpose": "Aksiller muayene ve duyu haritası",
+        "inlineFeedback": "Aksiller işlem sonrası motor fonksiyonlar korunurken kol medial-üst bölümünde sınırlı duyu azalması saptanmıştır."
+      }
+    ],
+    "useSyntheticInvestigationBank": false,
+    "managementSequence": {
+      "enabled": false
+    },
+    "hideExamSignal": true,
+    "question": "Bu hastadaki sınırlı duyu kaybını en iyi açıklayan sinir hangisidir?",
+    "questionType": "anatomy",
+    "answerTarget": "anatomy",
+    "diagnosis": {
+      "correct": "Nervus intercostobrachialis",
+      "options": [
+        "Nervus thoracicus longus",
+        "Nervus thoracodorsalis",
+        "Nervus pectoralis medialis",
+        "Nervus suprascapularis",
+        "Nervus intercostobrachialis"
+      ],
+      "question": "Bu hastadaki sınırlı duyu kaybını en iyi açıklayan sinir hangisidir?",
+      "explanation": "Aksiller işlem sonrası kolun medial-üst bölümünde dar bant şeklinde duyu azalması, motor fonksiyonların korunmasıyla birlikte aksilla tabanından geçen kutanöz duyu dalı etkilenimini düşündürür. Serratus anterior, latissimus dorsi veya pektoral kaslara giden motor dalların hasarında belirgin hareket paternleri beklenirdi. Supraskapular sinir ise aksilla içindeki bu duyu alanını açıklamaz.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Aksiller diseksiyon sonrası yalnız medial üst kol uyuşması varsa motor dallardan önce interkostobrakiyal duyu dalı düşünülür."
+        }
+      ],
+      "answerFeedback": {
+        "summary": "Aksiller işlem alanı, medial üst kol duyu kaybı ve motor fonksiyonların korunması aynı kutanöz dal tutulumunu destekler.",
+        "whyCorrect": "Aksiller işlem sonrası kolun medial-üst bölümünde dar bant şeklinde duyu azalması, motor fonksiyonların korunmasıyla birlikte aksilla tabanından geçen kutanöz duyu dalı etkilenimini düşündürür. Serratus anterior, latissimus dorsi veya pektoral kaslara giden motor dalların hasarında belirgin hareket paternleri beklenirdi. Supraskapular sinir ise aksilla içindeki bu duyu alanını açıklamaz.",
+        "rationale": "Aksiller işlem sonrası kolun medial-üst bölümünde dar bant şeklinde duyu azalması, motor fonksiyonların korunmasıyla birlikte aksilla tabanından geçen kutanöz duyu dalı etkilenimini düşündürür. Serratus anterior, latissimus dorsi veya pektoral kaslara giden motor dalların hasarında belirgin hareket paternleri beklenirdi. Supraskapular sinir ise aksilla içindeki bu duyu alanını açıklamaz.",
+        "correctOptionFeedback": "Doğru yanıttır; aksiller lenf nodu işlemleri sırasında etkilenebilen bu duyu dalı kolun medial-üst bölümünde his azalmasına yol açabilir. Motor kayıp olmaması ve duyu alanının aksiller-medial kolda sınırlı kalması bu seçeneği destekler.",
+        "keyClues": [
+          "Aksiller cerrahi işlem",
+          "Medial üst kol hipoestezisi",
+          "Skapular kanatlanma olmaması",
+          "Latissimus ve pektoral motor fonksiyonların korunması"
+        ],
+        "evidenceChain": [
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Aksiller cerrahi örnekleme → aksilla tabanına yakın duyu dallarının etkilenebileceği bir işlem alanı oluşturur.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Kol medial-üst bölümünde dar bant şeklinde hipoestezi → motor sinirden çok bölgesel kutanöz dal tutulumunu düşündürür.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Skapular stabilizasyonun korunması → serratus anterior motor innervasyonunu geri plana iter.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Latissimus ve pektoral kas testlerinin korunması → aksilladaki büyük motor dalların primer etkilenmediğini gösterir.",
+            "weight": "medium",
+            "source": "case"
+          }
+        ],
+        "examPearl": "Aksilla cerrahisi sonrası motor kayıp yoksa ama medial üst kol uyuşmuşsa, pektoralis/latissimus/serratus dalları yerine kutanöz dalı düşün.",
+        "optionComparison": {
+          "Nervus thoracicus longus": "Uzun torasik sinir serratus anterioru innerve eder; hasarında skapular kanatlanma ve omuz fleksiyon-abdüksiyonunda fonksiyonel güçlük beklenir. Bu hastada skapular stabilizasyon korunmuştur.",
+          "Nervus thoracodorsalis": "Thoracodorsal sinir latissimus dorsi ile ilişkilidir; omuz adduksiyon, ekstansiyon ve iç rotasyonunda zayıflık oluşturabilir. Olguda bu motor patern yok, yakınma sınırlı duyu kaybıdır.",
+          "Nervus pectoralis medialis": "Medial pektoral sinir pektoralis kaslarına motor lif taşır. Pektoral kontraksiyon korunmuş ve kol iç-üst kısmındaki bant şeklinde duyu kaybı bu sinirin göreviyle uyumlu değildir.",
+          "Nervus suprascapularis": "Supraskapular sinir supraspinatus-infraspinatus kaslarıyla ilişkilidir ve daha posterior omuz fonksiyonunu etkiler. Aksilla tabanı çevresindeki dar medial kol duyusu bu sinirin dağılımı değildir.",
+          "Nervus intercostobrachialis": "Doğru yanıttır; aksiller lenf nodu işlemleri sırasında etkilenebilen bu duyu dalı kolun medial-üst bölümünde his azalmasına yol açabilir. Motor kayıp olmaması ve duyu alanının aksiller-medial kolda sınırlı kalması bu seçeneği destekler."
+        },
+        "whyWrong": {
+          "Nervus thoracicus longus": "Uzun torasik sinir serratus anterioru innerve eder; hasarında skapular kanatlanma ve omuz fleksiyon-abdüksiyonunda fonksiyonel güçlük beklenir. Bu hastada skapular stabilizasyon korunmuştur.",
+          "Nervus thoracodorsalis": "Thoracodorsal sinir latissimus dorsi ile ilişkilidir; omuz adduksiyon, ekstansiyon ve iç rotasyonunda zayıflık oluşturabilir. Olguda bu motor patern yok, yakınma sınırlı duyu kaybıdır.",
+          "Nervus pectoralis medialis": "Medial pektoral sinir pektoralis kaslarına motor lif taşır. Pektoral kontraksiyon korunmuş ve kol iç-üst kısmındaki bant şeklinde duyu kaybı bu sinirin göreviyle uyumlu değildir.",
+          "Nervus suprascapularis": "Supraskapular sinir supraspinatus-infraspinatus kaslarıyla ilişkilidir ve daha posterior omuz fonksiyonunu etkiler. Aksilla tabanı çevresindeki dar medial kol duyusu bu sinirin dağılımı değildir."
+        },
+        "managementSteps": [],
+        "management": [],
+        "learningOutcome": "Aksiller cerrahi komşuluklarda kutanöz duyu dallarını ve motor sinir yaralanmalarını klinik bulgularla ayırabilme.",
+        "coreKnowledge": "Aksilladan geçen interkostobrakiyal duyu dalı, aksiller lenf nodu işlemleri sırasında etkilenebilir ve kolun medial-üst bölümünde duyu azalması yapabilir; uzun torasik ve thoracodorsal sinirler motor paternlerle ayırt edilir."
+      },
+      "whyCorrect": "Aksiller işlem sonrası kolun medial-üst bölümünde dar bant şeklinde duyu azalması, motor fonksiyonların korunmasıyla birlikte aksilla tabanından geçen kutanöz duyu dalı etkilenimini düşündürür. Serratus anterior, latissimus dorsi veya pektoral kaslara giden motor dalların hasarında belirgin hareket paternleri beklenirdi. Supraskapular sinir ise aksilla içindeki bu duyu alanını açıklamaz.",
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Aksiller cerrahi örnekleme → aksilla tabanına yakın duyu dallarının etkilenebileceği bir işlem alanı oluşturur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Kol medial-üst bölümünde dar bant şeklinde hipoestezi → motor sinirden çok bölgesel kutanöz dal tutulumunu düşündürür.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Skapular stabilizasyonun korunması → serratus anterior motor innervasyonunu geri plana iter.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Latissimus ve pektoral kas testlerinin korunması → aksilladaki büyük motor dalların primer etkilenmediğini gösterir.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Nervus thoracicus longus": "Uzun torasik sinir serratus anterioru innerve eder; hasarında skapular kanatlanma ve omuz fleksiyon-abdüksiyonunda fonksiyonel güçlük beklenir. Bu hastada skapular stabilizasyon korunmuştur.",
+        "Nervus thoracodorsalis": "Thoracodorsal sinir latissimus dorsi ile ilişkilidir; omuz adduksiyon, ekstansiyon ve iç rotasyonunda zayıflık oluşturabilir. Olguda bu motor patern yok, yakınma sınırlı duyu kaybıdır.",
+        "Nervus pectoralis medialis": "Medial pektoral sinir pektoralis kaslarına motor lif taşır. Pektoral kontraksiyon korunmuş ve kol iç-üst kısmındaki bant şeklinde duyu kaybı bu sinirin göreviyle uyumlu değildir.",
+        "Nervus suprascapularis": "Supraskapular sinir supraspinatus-infraspinatus kaslarıyla ilişkilidir ve daha posterior omuz fonksiyonunu etkiler. Aksilla tabanı çevresindeki dar medial kol duyusu bu sinirin dağılımı değildir.",
+        "Nervus intercostobrachialis": "Doğru yanıttır; aksiller lenf nodu işlemleri sırasında etkilenebilen bu duyu dalı kolun medial-üst bölümünde his azalmasına yol açabilir. Motor kayıp olmaması ve duyu alanının aksiller-medial kolda sınırlı kalması bu seçeneği destekler."
+      },
+      "coreKnowledge": "Aksilladan geçen interkostobrakiyal duyu dalı, aksiller lenf nodu işlemleri sırasında etkilenebilir ve kolun medial-üst bölümünde duyu azalması yapabilir; uzun torasik ve thoracodorsal sinirler motor paternlerle ayırt edilir.",
+      "examPearl": "Aksilla cerrahisi sonrası motor kayıp yoksa ama medial üst kol uyuşmuşsa, pektoralis/latissimus/serratus dalları yerine kutanöz dalı düşün.",
+      "whyWrong": {
+        "Nervus thoracicus longus": "Uzun torasik sinir serratus anterioru innerve eder; hasarında skapular kanatlanma ve omuz fleksiyon-abdüksiyonunda fonksiyonel güçlük beklenir. Bu hastada skapular stabilizasyon korunmuştur.",
+        "Nervus thoracodorsalis": "Thoracodorsal sinir latissimus dorsi ile ilişkilidir; omuz adduksiyon, ekstansiyon ve iç rotasyonunda zayıflık oluşturabilir. Olguda bu motor patern yok, yakınma sınırlı duyu kaybıdır.",
+        "Nervus pectoralis medialis": "Medial pektoral sinir pektoralis kaslarına motor lif taşır. Pektoral kontraksiyon korunmuş ve kol iç-üst kısmındaki bant şeklinde duyu kaybı bu sinirin göreviyle uyumlu değildir.",
+        "Nervus suprascapularis": "Supraskapular sinir supraspinatus-infraspinatus kaslarıyla ilişkilidir ve daha posterior omuz fonksiyonunu etkiler. Aksilla tabanı çevresindeki dar medial kol duyusu bu sinirin dağılımı değildir."
+      }
+    },
+    "shuffleOptions": false,
+    "difficultyTag": "Kolay-Orta",
+    "aiMeta": {
+      "generatedAt": "manual-v198-anatomy-five-case-expansion",
+      "generator": "manual-editorial-anatomy-clinical-case-expansion",
+      "schemaVersion": "clinical-standard-v397-compatible",
+      "validationWarnings": [],
+      "provider": "manual-editorial"
+    },
+    "listTitle": "Aksiller işlem sonrası iç kol uyuşması",
+    "cardTitle": "Aksiller işlem sonrası iç kol uyuşması",
+    "coreKnowledge": "Aksilladan geçen interkostobrakiyal duyu dalı, aksiller lenf nodu işlemleri sırasında etkilenebilir ve kolun medial-üst bölümünde duyu azalması yapabilir; uzun torasik ve thoracodorsal sinirler motor paternlerle ayırt edilir.",
+    "examPearl": "Aksilla cerrahisi sonrası motor kayıp yoksa ama medial üst kol uyuşmuşsa, pektoralis/latissimus/serratus dalları yerine kutanöz dalı düşün.",
+    "whyCorrect": "Aksiller işlem sonrası kolun medial-üst bölümünde dar bant şeklinde duyu azalması, motor fonksiyonların korunmasıyla birlikte aksilla tabanından geçen kutanöz duyu dalı etkilenimini düşündürür. Serratus anterior, latissimus dorsi veya pektoral kaslara giden motor dalların hasarında belirgin hareket paternleri beklenirdi. Supraskapular sinir ise aksilla içindeki bu duyu alanını açıklamaz.",
+    "optionComparison": {
+      "Nervus thoracicus longus": "Uzun torasik sinir serratus anterioru innerve eder; hasarında skapular kanatlanma ve omuz fleksiyon-abdüksiyonunda fonksiyonel güçlük beklenir. Bu hastada skapular stabilizasyon korunmuştur.",
+      "Nervus thoracodorsalis": "Thoracodorsal sinir latissimus dorsi ile ilişkilidir; omuz adduksiyon, ekstansiyon ve iç rotasyonunda zayıflık oluşturabilir. Olguda bu motor patern yok, yakınma sınırlı duyu kaybıdır.",
+      "Nervus pectoralis medialis": "Medial pektoral sinir pektoralis kaslarına motor lif taşır. Pektoral kontraksiyon korunmuş ve kol iç-üst kısmındaki bant şeklinde duyu kaybı bu sinirin göreviyle uyumlu değildir.",
+      "Nervus suprascapularis": "Supraskapular sinir supraspinatus-infraspinatus kaslarıyla ilişkilidir ve daha posterior omuz fonksiyonunu etkiler. Aksilla tabanı çevresindeki dar medial kol duyusu bu sinirin dağılımı değildir.",
+      "Nervus intercostobrachialis": "Doğru yanıttır; aksiller lenf nodu işlemleri sırasında etkilenebilen bu duyu dalı kolun medial-üst bölümünde his azalmasına yol açabilir. Motor kayıp olmaması ve duyu alanının aksiller-medial kolda sınırlı kalması bu seçeneği destekler."
+    },
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Aksiller cerrahi örnekleme → aksilla tabanına yakın duyu dallarının etkilenebileceği bir işlem alanı oluşturur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Kol medial-üst bölümünde dar bant şeklinde hipoestezi → motor sinirden çok bölgesel kutanöz dal tutulumunu düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Skapular stabilizasyonun korunması → serratus anterior motor innervasyonunu geri plana iter.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Latissimus ve pektoral kas testlerinin korunması → aksilladaki büyük motor dalların primer etkilenmediğini gösterir.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "whyWrong": {
+      "Nervus thoracicus longus": "Uzun torasik sinir serratus anterioru innerve eder; hasarında skapular kanatlanma ve omuz fleksiyon-abdüksiyonunda fonksiyonel güçlük beklenir. Bu hastada skapular stabilizasyon korunmuştur.",
+      "Nervus thoracodorsalis": "Thoracodorsal sinir latissimus dorsi ile ilişkilidir; omuz adduksiyon, ekstansiyon ve iç rotasyonunda zayıflık oluşturabilir. Olguda bu motor patern yok, yakınma sınırlı duyu kaybıdır.",
+      "Nervus pectoralis medialis": "Medial pektoral sinir pektoralis kaslarına motor lif taşır. Pektoral kontraksiyon korunmuş ve kol iç-üst kısmındaki bant şeklinde duyu kaybı bu sinirin göreviyle uyumlu değildir.",
+      "Nervus suprascapularis": "Supraskapular sinir supraspinatus-infraspinatus kaslarıyla ilişkilidir ve daha posterior omuz fonksiyonunu etkiler. Aksilla tabanı çevresindeki dar medial kol duyusu bu sinirin dağılımı değildir."
+    }
+  },
+{
+  "id": "v199-new-391-posterior-burun-kanamasi",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi / Kulak Burun Boğaz",
+  "title": "Posterior burun kanaması",
+  "difficulty": "Orta",
+  "clinicalFocus": "Burun boşluğu duvarları, septal alanlar ve arteriyel beslenme bölgelerini klinik kanama paterni üzerinden ayırt etme.",
+  "learningTarget": "Anterior ve posterior burun kanamalarında kaynak arterleri lokalizasyon, akım yönü ve endoskopik bulgularla ilişkilendirebilme.",
+  "demographics": "58 yaşında erkek hasta",
+  "setting": "Acil servis",
+  "chiefComplaint": "Ani başlayan yoğun burun kanaması ve kanın boğaza akması nedeniyle acil serviste değerlendiriliyor.",
+  "stem": "Hasta akşam yemeğinden sonra burnunun sağ tarafından aniden kan gelmeye başladığını anlatır. Önce burun kanadına bası yapmış, fakat kanama azalmadığı gibi boğazına doğru akmaya devam etmiştir. Evde başını öne eğdiğinde ağzına kan dolduğunu fark etmiş ve birkaç kez pıhtı tükürmüştür. Yakın zamanda yüz travması, burun ameliyatı veya dudak-damak yaralanması geçirmediğini söyler.",
+  "patientIntro": {
+    "profile": "58 yaşında erkek hasta, yoğun ve posteriora akan burun kanaması nedeniyle acil serviste değerlendiriliyor.",
+    "presentation": "Ön basıya rağmen devam eden ve orofarenkse akan tek taraflı burun kanaması vardır.",
+    "historySummary": "Hasta akşam yemeğinden sonra burnunun sağ tarafından aniden kan gelmeye başladığını anlatır. Önce burun kanadına bası yapmış, fakat kanama azalmadığı gibi boğazına doğru akmaya devam etmiştir. Evde başını öne eğdiğinde ağzına kan dolduğunu fark etmiş ve birkaç kez pıhtı tükürmüştür. Yakın zamanda yüz travması, burun ameliyatı veya dudak-damak yaralanması geçirmediğini söyler."
+  },
+  "vitals": {
+    "TA": "146/88 mmHg",
+    "Nabız": "94/dk",
+    "Solunum": "17/dk",
+    "SpO2": "%98, oda havasında",
+    "Ateş": "36.6 °C",
+    "Şok indeksi": "0.64 normal"
+  },
+  "exam": [
+    "Hasta öne eğildiğinde orofarenkste taze kan ve pıhtı birikimi izlenir.",
+    "Anterior septumda belirgin aktif kanama odağı görülmez; burun kanadı basısı ile kanama tamamen durmaz.",
+    "Sağ nazal pasajın derin bölümünde kan göllenmesi vardır; dudak, sert damak ve yüz cildinde aktif yaralanma saptanmaz.",
+    "Bilinç açık ve koopere; belirgin solunum sıkıntısı yoktur."
+  ],
+  "investigations": [
+    {
+      "id": "v199-new-391-posterior-burun-kanamasi-nazal-endoskopik-lokalizasyon",
+      "label": "Nazal endoskopik değerlendirme ve kanama lokalizasyonu",
+      "title": "Nazal endoskopik değerlendirme ve kanama lokalizasyonu",
+      "orderLabel": "Nazal endoskopik değerlendirme ve kanama lokalizasyonu",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "Nazal endoskopik değerlendirme ve kanama lokalizasyonu",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Aktif kanama anterior septumda görülmemiş, kanın orofarenkse aktığı izlenmiş ve endoskopide posterior-lateral nazal duvar düzeyinde devam eden odak kaydedilmiştir.",
+      "clinicalMeaning": "Aktif kanama anterior septumda görülmemiş, kanın orofarenkse aktığı izlenmiş ve endoskopide posterior-lateral nazal duvar düzeyinde devam eden odak kaydedilmiştir.",
+      "result": {
+        "title": "Nazal endoskopik değerlendirme ve kanama lokalizasyonu",
+        "summary": "Aktif kanama anterior septumda görülmemiş, kanın orofarenkse aktığı izlenmiş ve endoskopide posterior-lateral nazal duvar düzeyinde devam eden odak kaydedilmiştir.",
+        "interpretation": "Aktif kanama anterior septumda görülmemiş, kanın orofarenkse aktığı izlenmiş ve endoskopide posterior-lateral nazal duvar düzeyinde devam eden odak kaydedilmiştir.",
+        "values": [
+          [
+            "Anterior septum",
+            "Belirgin aktif kanama odağı izlenmedi.",
+            "",
+            ""
+          ],
+          [
+            "Akım yönü",
+            "Kan arka nazal açıklığa ve orofarenkse doğru akıyor.",
+            "",
+            ""
+          ],
+          [
+            "Aktif odak",
+            "Sağ posterior-lateral nazal duvar düzeyinde sızıntı şeklinde arteriyel odak izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Ek yaralanma",
+            "Dudak, sert damak veya yüz cildinde aktif yaralanma saptanmadı.",
+            "",
+            ""
+          ]
+        ],
+        "rows": [
+          [
+            "Anterior septum",
+            "Belirgin aktif kanama odağı izlenmedi.",
+            "",
+            ""
+          ],
+          [
+            "Akım yönü",
+            "Kan arka nazal açıklığa ve orofarenkse doğru akıyor.",
+            "",
+            ""
+          ],
+          [
+            "Aktif odak",
+            "Sağ posterior-lateral nazal duvar düzeyinde sızıntı şeklinde arteriyel odak izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Ek yaralanma",
+            "Dudak, sert damak veya yüz cildinde aktif yaralanma saptanmadı.",
+            "",
+            ""
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Anterior septum",
+          "Belirgin aktif kanama odağı izlenmedi.",
+          "",
+          ""
+        ],
+        [
+          "Akım yönü",
+          "Kan arka nazal açıklığa ve orofarenkse doğru akıyor.",
+          "",
+          ""
+        ],
+        [
+          "Aktif odak",
+          "Sağ posterior-lateral nazal duvar düzeyinde sızıntı şeklinde arteriyel odak izlendi.",
+          "",
+          ""
+        ],
+        [
+          "Ek yaralanma",
+          "Dudak, sert damak veya yüz cildinde aktif yaralanma saptanmadı.",
+          "",
+          ""
+        ]
+      ],
+      "postAnswerExplanation": "Aktif kanama anterior septumda görülmemiş, kanın orofarenkse aktığı izlenmiş ve endoskopide posterior-lateral nazal duvar düzeyinde devam eden odak kaydedilmiştir.",
+      "interpretation": "Aktif kanama anterior septumda görülmemiş, kanın orofarenkse aktığı izlenmiş ve endoskopide posterior-lateral nazal duvar düzeyinde devam eden odak kaydedilmiştir.",
+      "explanationAfterAnswer": "Aktif kanama anterior septumda görülmemiş, kanın orofarenkse aktığı izlenmiş ve endoskopide posterior-lateral nazal duvar düzeyinde devam eden odak kaydedilmiştir.",
+      "testValueLabel": "Nazal endoskopik değerlendirme ve kanama lokalizasyonu",
+      "educationalValue": "Nazal endoskopik değerlendirme ve kanama lokalizasyonu",
+      "clinicalPriorityLabel": "Nazal endoskopik değerlendirme ve kanama lokalizasyonu",
+      "scoreImpact": 4,
+      "scoreValue": 4,
+      "clinicalFlowOrder": 1,
+      "purpose": "Nazal endoskopik değerlendirme ve kanama lokalizasyonu",
+      "inlineFeedback": "Aktif kanama anterior septumda görülmemiş, kanın orofarenkse aktığı izlenmiş ve endoskopide posterior-lateral nazal duvar düzeyinde devam eden odak kaydedilmiştir."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": false,
+  "question": "Bu kanama paternini en iyi açıklayan arter hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Arteria sphenopalatina",
+    "options": [
+      "Arteria ethmoidalis anterior",
+      "Arteria sphenopalatina",
+      "Arteria labialis superior",
+      "Arteria palatina major",
+      "Arteria facialis"
+    ],
+    "question": "Bu kanama paternini en iyi açıklayan arter hangisidir?",
+    "explanation": "Kanamanın ön septumda görünmemesi, basıyla kontrol edilememesi ve kanın orofarenkse doğru akması posterior nazal kaynak lehinedir. Posterior-lateral nazal duvarda aktif odak görülmesi, yüzeyel fasiyal, labial veya palatal dallardan çok posterior nazal arteriyel beslenmeyle uyumludur.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Burun kanamasında kan boğaza akıyor ve ön bası etkisiz kalıyorsa, anterior septal ağ yerine posterior nazal arteriyel kaynakları düşün."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Kanamanın ön septumda görünmemesi, basıyla kontrol edilememesi ve kanın orofarenkse doğru akması posterior nazal kaynak lehinedir. Posterior-lateral nazal duvarda aktif odak görülmesi, yüzeyel fasiyal, labial veya palatal dallardan çok posterior nazal arteriyel beslenmeyle uyumludur.",
+      "whyCorrect": "Kanamanın ön septumda görünmemesi, basıyla kontrol edilememesi ve kanın orofarenkse doğru akması posterior nazal kaynak lehinedir. Posterior-lateral nazal duvarda aktif odak görülmesi, yüzeyel fasiyal, labial veya palatal dallardan çok posterior nazal arteriyel beslenmeyle uyumludur.",
+      "rationale": "Kanamanın ön septumda görünmemesi, basıyla kontrol edilememesi ve kanın orofarenkse doğru akması posterior nazal kaynak lehinedir. Posterior-lateral nazal duvarda aktif odak görülmesi, yüzeyel fasiyal, labial veya palatal dallardan çok posterior nazal arteriyel beslenmeyle uyumludur.",
+      "correctOptionFeedback": "Doğru yanıttır; burun boşluğunun posterior-lateral ve septal bölgelerine önemli dallar verir ve dirençli posterior burun kanamalarında temel arteriyel kaynaklardan biridir. Kanın farenkse akması, anterior septal odak görülmemesi ve posterior-lateral duvar düzeyinde aktif odak izlenmesi bu seçeneği destekler.",
+      "keyClues": [
+        "Kanın burundan çok boğaza akması",
+        "Anterior bası ve ön tamponla kontrol sağlanamaması",
+        "Endoskopide posterior-lateral nazal duvar düzeyinde aktif odak izlenmesi",
+        "Dudak, damak veya yüzeyel yüz yaralanması olmaması"
+      ],
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Kanın burundan çok boğaza akması → kanama odağının anterior septumdan daha posterior yerleşimli olabileceğini gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Anterior bası ve ön tamponla kontrol sağlanamaması → ön septal arteriyel ağın tek başına açıklayıcı olmadığını düşündürür.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Endoskopide posterior-lateral nazal duvar düzeyinde aktif odak izlenmesi → derin posterior nazal arteriyel beslenmeyi öne çıkarır.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Dudak, damak veya yüzeyel yüz yaralanması olmaması → labial, palatal ve yüzeyel fasiyal dalları geri plana iter.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Burun kanamasında kan boğaza akıyor ve ön bası etkisiz kalıyorsa, anterior septal ağ yerine posterior nazal arteriyel kaynakları düşün.",
+      "optionComparison": {
+        "Arteria ethmoidalis anterior": "Anterior ethmoidal arter burun boşluğunun ön-üst bölümü ve anterior septal alanda önemlidir. Kanama ön septumdan kaynaklansa ve dış basıyla daha kolay kontrol edilseydi bu seçenek güçlenirdi; bu vakada kan posteriora akmakta ve ön tampon etkisiz kalmaktadır.",
+        "Arteria sphenopalatina": "Doğru yanıttır; burun boşluğunun posterior-lateral ve septal bölgelerine önemli dallar verir ve dirençli posterior burun kanamalarında temel arteriyel kaynaklardan biridir. Kanın farenkse akması, anterior septal odak görülmemesi ve posterior-lateral duvar düzeyinde aktif odak izlenmesi bu seçeneği destekler.",
+        "Arteria labialis superior": "Üst labial arter dudak ve burun vestibülüne yakın yüzeyel alanlarla ilişkilidir. Üst dudak kesisi, vestibüler kanama veya anterior çok yüzeyel odak olsaydı akla gelebilirdi; posterior nazal akım ve farenkse kan birikimi bu dağılıma uymaz.",
+        "Arteria palatina major": "Büyük palatin arter sert damak üzerinden ilerler ve nazal boşlukla bağlantılı dalları olsa da ana klinik odak damak veya posterior sert damak kanaması değildir. Endoskopide odak lateral nazal duvarın posterior bölümündedir.",
+        "Arteria facialis": "Fasiyal arter yüzün yüzeyel yumuşak dokuları, dudaklar ve burun çevresine dallar verir. Yüzeyel yüz yaralanması veya dudak-burun dış kısmı kanaması beklenirdi; bu hastada kanama burun boşluğunun derin posterior bölümünden gelmektedir."
+      },
+      "whyWrong": {
+        "Arteria ethmoidalis anterior": "Anterior ethmoidal arter burun boşluğunun ön-üst bölümü ve anterior septal alanda önemlidir. Kanama ön septumdan kaynaklansa ve dış basıyla daha kolay kontrol edilseydi bu seçenek güçlenirdi; bu vakada kan posteriora akmakta ve ön tampon etkisiz kalmaktadır.",
+        "Arteria labialis superior": "Üst labial arter dudak ve burun vestibülüne yakın yüzeyel alanlarla ilişkilidir. Üst dudak kesisi, vestibüler kanama veya anterior çok yüzeyel odak olsaydı akla gelebilirdi; posterior nazal akım ve farenkse kan birikimi bu dağılıma uymaz.",
+        "Arteria palatina major": "Büyük palatin arter sert damak üzerinden ilerler ve nazal boşlukla bağlantılı dalları olsa da ana klinik odak damak veya posterior sert damak kanaması değildir. Endoskopide odak lateral nazal duvarın posterior bölümündedir.",
+        "Arteria facialis": "Fasiyal arter yüzün yüzeyel yumuşak dokuları, dudaklar ve burun çevresine dallar verir. Yüzeyel yüz yaralanması veya dudak-burun dış kısmı kanaması beklenirdi; bu hastada kanama burun boşluğunun derin posterior bölümünden gelmektedir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Anterior ve posterior burun kanamalarında kaynak arterleri lokalizasyon, akım yönü ve endoskopik bulgularla ilişkilendirebilme.",
+      "coreKnowledge": "Dirençli posterior burun kanamalarında kan akımı çoğu kez boğaza yönelir; anterior septal odak görülmemesi ve posterior-lateral nazal duvar odağı, posterior nazal arteriyel kaynakları düşündürür."
+    },
+    "whyCorrect": "Kanamanın ön septumda görünmemesi, basıyla kontrol edilememesi ve kanın orofarenkse doğru akması posterior nazal kaynak lehinedir. Posterior-lateral nazal duvarda aktif odak görülmesi, yüzeyel fasiyal, labial veya palatal dallardan çok posterior nazal arteriyel beslenmeyle uyumludur.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Kanın burundan çok boğaza akması → kanama odağının anterior septumdan daha posterior yerleşimli olabileceğini gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Anterior bası ve ön tamponla kontrol sağlanamaması → ön septal arteriyel ağın tek başına açıklayıcı olmadığını düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Endoskopide posterior-lateral nazal duvar düzeyinde aktif odak izlenmesi → derin posterior nazal arteriyel beslenmeyi öne çıkarır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Dudak, damak veya yüzeyel yüz yaralanması olmaması → labial, palatal ve yüzeyel fasiyal dalları geri plana iter.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Arteria ethmoidalis anterior": "Anterior ethmoidal arter burun boşluğunun ön-üst bölümü ve anterior septal alanda önemlidir. Kanama ön septumdan kaynaklansa ve dış basıyla daha kolay kontrol edilseydi bu seçenek güçlenirdi; bu vakada kan posteriora akmakta ve ön tampon etkisiz kalmaktadır.",
+      "Arteria sphenopalatina": "Doğru yanıttır; burun boşluğunun posterior-lateral ve septal bölgelerine önemli dallar verir ve dirençli posterior burun kanamalarında temel arteriyel kaynaklardan biridir. Kanın farenkse akması, anterior septal odak görülmemesi ve posterior-lateral duvar düzeyinde aktif odak izlenmesi bu seçeneği destekler.",
+      "Arteria labialis superior": "Üst labial arter dudak ve burun vestibülüne yakın yüzeyel alanlarla ilişkilidir. Üst dudak kesisi, vestibüler kanama veya anterior çok yüzeyel odak olsaydı akla gelebilirdi; posterior nazal akım ve farenkse kan birikimi bu dağılıma uymaz.",
+      "Arteria palatina major": "Büyük palatin arter sert damak üzerinden ilerler ve nazal boşlukla bağlantılı dalları olsa da ana klinik odak damak veya posterior sert damak kanaması değildir. Endoskopide odak lateral nazal duvarın posterior bölümündedir.",
+      "Arteria facialis": "Fasiyal arter yüzün yüzeyel yumuşak dokuları, dudaklar ve burun çevresine dallar verir. Yüzeyel yüz yaralanması veya dudak-burun dış kısmı kanaması beklenirdi; bu hastada kanama burun boşluğunun derin posterior bölümünden gelmektedir."
+    },
+    "coreKnowledge": "Dirençli posterior burun kanamalarında kan akımı çoğu kez boğaza yönelir; anterior septal odak görülmemesi ve posterior-lateral nazal duvar odağı, posterior nazal arteriyel kaynakları düşündürür.",
+    "examPearl": "Burun kanamasında kan boğaza akıyor ve ön bası etkisiz kalıyorsa, anterior septal ağ yerine posterior nazal arteriyel kaynakları düşün.",
+    "whyWrong": {
+      "Arteria ethmoidalis anterior": "Anterior ethmoidal arter burun boşluğunun ön-üst bölümü ve anterior septal alanda önemlidir. Kanama ön septumdan kaynaklansa ve dış basıyla daha kolay kontrol edilseydi bu seçenek güçlenirdi; bu vakada kan posteriora akmakta ve ön tampon etkisiz kalmaktadır.",
+      "Arteria labialis superior": "Üst labial arter dudak ve burun vestibülüne yakın yüzeyel alanlarla ilişkilidir. Üst dudak kesisi, vestibüler kanama veya anterior çok yüzeyel odak olsaydı akla gelebilirdi; posterior nazal akım ve farenkse kan birikimi bu dağılıma uymaz.",
+      "Arteria palatina major": "Büyük palatin arter sert damak üzerinden ilerler ve nazal boşlukla bağlantılı dalları olsa da ana klinik odak damak veya posterior sert damak kanaması değildir. Endoskopide odak lateral nazal duvarın posterior bölümündedir.",
+      "Arteria facialis": "Fasiyal arter yüzün yüzeyel yumuşak dokuları, dudaklar ve burun çevresine dallar verir. Yüzeyel yüz yaralanması veya dudak-burun dış kısmı kanaması beklenirdi; bu hastada kanama burun boşluğunun derin posterior bölümünden gelmektedir."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Orta",
+  "aiMeta": {
+    "generatedAt": "manual-v199-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial"
+  },
+  "listTitle": "Posterior burun kanaması",
+  "cardTitle": "Posterior burun kanaması",
+  "coreKnowledge": "Dirençli posterior burun kanamalarında kan akımı çoğu kez boğaza yönelir; anterior septal odak görülmemesi ve posterior-lateral nazal duvar odağı, posterior nazal arteriyel kaynakları düşündürür.",
+  "examPearl": "Burun kanamasında kan boğaza akıyor ve ön bası etkisiz kalıyorsa, anterior septal ağ yerine posterior nazal arteriyel kaynakları düşün.",
+  "whyCorrect": "Kanamanın ön septumda görünmemesi, basıyla kontrol edilememesi ve kanın orofarenkse doğru akması posterior nazal kaynak lehinedir. Posterior-lateral nazal duvarda aktif odak görülmesi, yüzeyel fasiyal, labial veya palatal dallardan çok posterior nazal arteriyel beslenmeyle uyumludur.",
+  "optionComparison": {
+    "Arteria ethmoidalis anterior": "Anterior ethmoidal arter burun boşluğunun ön-üst bölümü ve anterior septal alanda önemlidir. Kanama ön septumdan kaynaklansa ve dış basıyla daha kolay kontrol edilseydi bu seçenek güçlenirdi; bu vakada kan posteriora akmakta ve ön tampon etkisiz kalmaktadır.",
+    "Arteria sphenopalatina": "Doğru yanıttır; burun boşluğunun posterior-lateral ve septal bölgelerine önemli dallar verir ve dirençli posterior burun kanamalarında temel arteriyel kaynaklardan biridir. Kanın farenkse akması, anterior septal odak görülmemesi ve posterior-lateral duvar düzeyinde aktif odak izlenmesi bu seçeneği destekler.",
+    "Arteria labialis superior": "Üst labial arter dudak ve burun vestibülüne yakın yüzeyel alanlarla ilişkilidir. Üst dudak kesisi, vestibüler kanama veya anterior çok yüzeyel odak olsaydı akla gelebilirdi; posterior nazal akım ve farenkse kan birikimi bu dağılıma uymaz.",
+    "Arteria palatina major": "Büyük palatin arter sert damak üzerinden ilerler ve nazal boşlukla bağlantılı dalları olsa da ana klinik odak damak veya posterior sert damak kanaması değildir. Endoskopide odak lateral nazal duvarın posterior bölümündedir.",
+    "Arteria facialis": "Fasiyal arter yüzün yüzeyel yumuşak dokuları, dudaklar ve burun çevresine dallar verir. Yüzeyel yüz yaralanması veya dudak-burun dış kısmı kanaması beklenirdi; bu hastada kanama burun boşluğunun derin posterior bölümünden gelmektedir."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Kanın burundan çok boğaza akması → kanama odağının anterior septumdan daha posterior yerleşimli olabileceğini gösterir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Anterior bası ve ön tamponla kontrol sağlanamaması → ön septal arteriyel ağın tek başına açıklayıcı olmadığını düşündürür.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Endoskopide posterior-lateral nazal duvar düzeyinde aktif odak izlenmesi → derin posterior nazal arteriyel beslenmeyi öne çıkarır.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Dudak, damak veya yüzeyel yüz yaralanması olmaması → labial, palatal ve yüzeyel fasiyal dalları geri plana iter.",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Arteria ethmoidalis anterior": "Anterior ethmoidal arter burun boşluğunun ön-üst bölümü ve anterior septal alanda önemlidir. Kanama ön septumdan kaynaklansa ve dış basıyla daha kolay kontrol edilseydi bu seçenek güçlenirdi; bu vakada kan posteriora akmakta ve ön tampon etkisiz kalmaktadır.",
+    "Arteria labialis superior": "Üst labial arter dudak ve burun vestibülüne yakın yüzeyel alanlarla ilişkilidir. Üst dudak kesisi, vestibüler kanama veya anterior çok yüzeyel odak olsaydı akla gelebilirdi; posterior nazal akım ve farenkse kan birikimi bu dağılıma uymaz.",
+    "Arteria palatina major": "Büyük palatin arter sert damak üzerinden ilerler ve nazal boşlukla bağlantılı dalları olsa da ana klinik odak damak veya posterior sert damak kanaması değildir. Endoskopide odak lateral nazal duvarın posterior bölümündedir.",
+    "Arteria facialis": "Fasiyal arter yüzün yüzeyel yumuşak dokuları, dudaklar ve burun çevresine dallar verir. Yüzeyel yüz yaralanması veya dudak-burun dış kısmı kanaması beklenirdi; bu hastada kanama burun boşluğunun derin posterior bölümünden gelmektedir."
+  }
+},
+{
+  "id": "v199-new-392-parasternal-girisim-sonrasi-kanama",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi / Kardiyoloji",
+  "title": "Parasternal girişim sonrası kanama",
+  "difficulty": "Orta",
+  "clinicalFocus": "Anterior toraks duvarı girişimlerinde interkostal aralık, sternum komşuluğu ve damar seyri bilgisini klinik komplikasyonla ilişkilendirme.",
+  "learningTarget": "Parasternal girişimlerde anterior toraks duvarındaki damar komşuluklarını ve kanama riskini ayırt edebilme.",
+  "demographics": "62 yaşında erkek hasta",
+  "setting": "Acil servis",
+  "chiefComplaint": "Perikardiyal sıvı nedeniyle yapılan parasternal girişim sırasında lokal arteriyel kanama gelişmiştir.",
+  "stem": "Hasta göğüs ağrısı ve nefes darlığı nedeniyle acile getirilmiş, yatak başı ultrasonografide kalp çevresinde sıvı izlenmesi üzerine acil girişim planlanmıştır. İşlem sırasında iğne sternumun sol kenarına yakın bir aralıktan ilerletilirken giriş yerinde aniden parlak kırmızı kanama görülmüştür. Hasta bu sırada keskin lokal ağrı tariflemiş, işlem durdurularak bölgeye bası uygulanmıştır. Daha önce göğüs duvarı ameliyatı, aynı bölgede travma veya bilinen kanama hastalığı öyküsü olmadığını yakınları belirtmiştir.",
+  "patientIntro": {
+    "profile": "62 yaşında erkek hasta, perikardiyal sıvı nedeniyle yapılan anterior toraks duvarı girişimi sırasında kanama gelişmesi üzerine değerlendiriliyor.",
+    "presentation": "Sternum kenarına yakın parasternal girişim sonrası lokal parlak kırmızı kanama vardır.",
+    "historySummary": "Hasta göğüs ağrısı ve nefes darlığı nedeniyle acile getirilmiş, yatak başı ultrasonografide kalp çevresinde sıvı izlenmesi üzerine acil girişim planlanmıştır. İşlem sırasında iğne sternumun sol kenarına yakın bir aralıktan ilerletilirken giriş yerinde aniden parlak kırmızı kanama görülmüştür. Hasta bu sırada keskin lokal ağrı tariflemiş, işlem durdurularak bölgeye bası uygulanmıştır. Daha önce göğüs duvarı ameliyatı, aynı bölgede travma veya bilinen kanama hastalığı öyküsü olmadığını yakınları belirtmiştir."
+  },
+  "vitals": {
+    "TA": "104/66 mmHg",
+    "Nabız": "104/dk",
+    "Solunum": "16/dk",
+    "SpO2": "%99, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "1.00 sınırda yüksek"
+  },
+  "exam": [
+    "Giriş yerinde sternum sol kenarına yakın beşinci interkostal aralık hizasında kanama ve lokal hassasiyet vardır.",
+    "Kanama parlak kırmızı renkte izlenmiş ve doğrudan basıyla belirgin azalmıştır.",
+    "Lateral toraks duvarında, aksiller çizgide veya posterior göğüs duvarında yeni ekimoz saptanmaz.",
+    "Solunum sesleri iki tarafta alınır; girişim alanı dışında yaygın cilt altı amfizemi izlenmez."
+  ],
+  "investigations": [
+    {
+      "id": "v199-new-392-parasternal-girisim-sonrasi-kanama-giris-yeri-ve-kanama-lokalizasyonu",
+      "label": "Giriş yeri değerlendirmesi ve kanama lokalizasyonu",
+      "title": "Giriş yeri değerlendirmesi ve kanama lokalizasyonu",
+      "orderLabel": "Giriş yeri değerlendirmesi ve kanama lokalizasyonu",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "Giriş yeri değerlendirmesi ve kanama lokalizasyonu",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Parasternal hatta yapılan girişim sırasında sternum kenarına yakın düzeyde parlak kırmızı kanama gelişmiş, kanama odağı posterior veya lateral göğüs duvarına değil anterior duvar komşuluğuna lokalize edilmiştir.",
+      "clinicalMeaning": "Parasternal hatta yapılan girişim sırasında sternum kenarına yakın düzeyde parlak kırmızı kanama gelişmiş, kanama odağı posterior veya lateral göğüs duvarına değil anterior duvar komşuluğuna lokalize edilmiştir.",
+      "result": {
+        "title": "Giriş yeri değerlendirmesi ve kanama lokalizasyonu",
+        "summary": "Parasternal hatta yapılan girişim sırasında sternum kenarına yakın düzeyde parlak kırmızı kanama gelişmiş, kanama odağı posterior veya lateral göğüs duvarına değil anterior duvar komşuluğuna lokalize edilmiştir.",
+        "interpretation": "Parasternal hatta yapılan girişim sırasında sternum kenarına yakın düzeyde parlak kırmızı kanama gelişmiş, kanama odağı posterior veya lateral göğüs duvarına değil anterior duvar komşuluğuna lokalize edilmiştir.",
+        "values": [
+          [
+            "Giriş düzeyi",
+            "Sternum sol kenarına yakın beşinci interkostal aralık hizası.",
+            "",
+            ""
+          ],
+          [
+            "Kanama görünümü",
+            "İğne ilerletilmesi sırasında parlak kırmızı lokal kanama başladı.",
+            "",
+            ""
+          ],
+          [
+            "Basınç yanıtı",
+            "Doğrudan basıyla kanama belirgin azaldı.",
+            "",
+            ""
+          ],
+          [
+            "Komşu duvar bulgusu",
+            "Lateral aksiller veya posterior toraks duvarında yeni ekimoz saptanmadı.",
+            "",
+            ""
+          ]
+        ],
+        "rows": [
+          [
+            "Giriş düzeyi",
+            "Sternum sol kenarına yakın beşinci interkostal aralık hizası.",
+            "",
+            ""
+          ],
+          [
+            "Kanama görünümü",
+            "İğne ilerletilmesi sırasında parlak kırmızı lokal kanama başladı.",
+            "",
+            ""
+          ],
+          [
+            "Basınç yanıtı",
+            "Doğrudan basıyla kanama belirgin azaldı.",
+            "",
+            ""
+          ],
+          [
+            "Komşu duvar bulgusu",
+            "Lateral aksiller veya posterior toraks duvarında yeni ekimoz saptanmadı.",
+            "",
+            ""
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Giriş düzeyi",
+          "Sternum sol kenarına yakın beşinci interkostal aralık hizası.",
+          "",
+          ""
+        ],
+        [
+          "Kanama görünümü",
+          "İğne ilerletilmesi sırasında parlak kırmızı lokal kanama başladı.",
+          "",
+          ""
+        ],
+        [
+          "Basınç yanıtı",
+          "Doğrudan basıyla kanama belirgin azaldı.",
+          "",
+          ""
+        ],
+        [
+          "Komşu duvar bulgusu",
+          "Lateral aksiller veya posterior toraks duvarında yeni ekimoz saptanmadı.",
+          "",
+          ""
+        ]
+      ],
+      "postAnswerExplanation": "Parasternal hatta yapılan girişim sırasında sternum kenarına yakın düzeyde parlak kırmızı kanama gelişmiş, kanama odağı posterior veya lateral göğüs duvarına değil anterior duvar komşuluğuna lokalize edilmiştir.",
+      "interpretation": "Parasternal hatta yapılan girişim sırasında sternum kenarına yakın düzeyde parlak kırmızı kanama gelişmiş, kanama odağı posterior veya lateral göğüs duvarına değil anterior duvar komşuluğuna lokalize edilmiştir.",
+      "explanationAfterAnswer": "Parasternal hatta yapılan girişim sırasında sternum kenarına yakın düzeyde parlak kırmızı kanama gelişmiş, kanama odağı posterior veya lateral göğüs duvarına değil anterior duvar komşuluğuna lokalize edilmiştir.",
+      "testValueLabel": "Giriş yeri değerlendirmesi ve kanama lokalizasyonu",
+      "educationalValue": "Giriş yeri değerlendirmesi ve kanama lokalizasyonu",
+      "clinicalPriorityLabel": "Giriş yeri değerlendirmesi ve kanama lokalizasyonu",
+      "scoreImpact": 4,
+      "scoreValue": 4,
+      "clinicalFlowOrder": 1,
+      "purpose": "Giriş yeri değerlendirmesi ve kanama lokalizasyonu",
+      "inlineFeedback": "Parasternal hatta yapılan girişim sırasında sternum kenarına yakın düzeyde parlak kırmızı kanama gelişmiş, kanama odağı posterior veya lateral göğüs duvarına değil anterior duvar komşuluğuna lokalize edilmiştir."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": false,
+  "question": "Bu komplikasyon en olası hangi arterin zedelenmesiyle açıklanır?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Arteria thoracica interna",
+    "options": [
+      "Arteria thoracica lateralis",
+      "Arteria intercostalis posterior",
+      "Arteria musculophrenica",
+      "Arteria thoracica interna",
+      "Arteria thoracoacromialis"
+    ],
+    "question": "Bu komplikasyon en olası hangi arterin zedelenmesiyle açıklanır?",
+    "explanation": "Girişim yerinin sternum kenarına yakın olması, anterior toraks duvarındaki parasternal damar seyrini klinik olarak önemli hale getirir. Lateral aksiller veya posterior interkostal yerleşim bulgusu olmadan parlak kırmızı lokal kanama gelişmesi, anterior parasternal arteriyel komşuluğun zedelenmesiyle en iyi açıklanır.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Parasternal girişimlerde kaburga aralığını bilmek yetmez; sternum kenarına yakın seyreden anterior duvar damarları da korunmalıdır."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Girişim yerinin sternum kenarına yakın olması, anterior toraks duvarındaki parasternal damar seyrini klinik olarak önemli hale getirir. Lateral aksiller veya posterior interkostal yerleşim bulgusu olmadan parlak kırmızı lokal kanama gelişmesi, anterior parasternal arteriyel komşuluğun zedelenmesiyle en iyi açıklanır.",
+      "whyCorrect": "Girişim yerinin sternum kenarına yakın olması, anterior toraks duvarındaki parasternal damar seyrini klinik olarak önemli hale getirir. Lateral aksiller veya posterior interkostal yerleşim bulgusu olmadan parlak kırmızı lokal kanama gelişmesi, anterior parasternal arteriyel komşuluğun zedelenmesiyle en iyi açıklanır.",
+      "rationale": "Girişim yerinin sternum kenarına yakın olması, anterior toraks duvarındaki parasternal damar seyrini klinik olarak önemli hale getirir. Lateral aksiller veya posterior interkostal yerleşim bulgusu olmadan parlak kırmızı lokal kanama gelişmesi, anterior parasternal arteriyel komşuluğun zedelenmesiyle en iyi açıklanır.",
+      "correctOptionFeedback": "Doğru yanıttır; bu arter sternumun lateral kenarına yakın anterior toraks duvarında seyreder ve parasternal girişimlerde zedelenme riski taşır. Kanamanın sternum kenarına yakın olması ve lateral aksiller ya da posterior interkostal hatta olmaması bu seçeneği destekler.",
+      "keyClues": [
+        "Girişim noktasının sternum sol kenarına çok yakın seçilmesi",
+        "Kanamanın iğne ilerletilirken hemen ve parlak kırmızı başlaması",
+        "Kanama odağının lateral aksiller veya posterior göğüs duvarında olmaması",
+        "Ultrasonla sıvının hedeflenmesine rağmen yüzeyel duvar seviyesinde komplikasyon gelişmesi"
+      ],
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Girişim noktasının sternum sol kenarına çok yakın seçilmesi → anterior parasternal damar hattını riskli hale getirir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Kanamanın iğne ilerletilirken hemen ve parlak kırmızı başlaması → lokal arteriyel zedelenme olasılığını artırır.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Kanama odağının lateral aksiller veya posterior göğüs duvarında olmaması → lateral torasik ve posterior interkostal seçenekleri zayıflatır.",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ultrasonla sıvının hedeflenmesine rağmen yüzeyel duvar seviyesinde komplikasyon gelişmesi → toraks duvarı komşuluk bilgisini öne çıkarır.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Parasternal girişimlerde kaburga aralığını bilmek yetmez; sternum kenarına yakın seyreden anterior duvar damarları da korunmalıdır.",
+      "optionComparison": {
+        "Arteria thoracica lateralis": "Lateral torasik arter aksilla ve lateral göğüs duvarı/meme komşuluğunda önemlidir. Ancak girişim sternum kenarına yakın anterior toraks duvarındadır; lateral aksiller damar hattı bu kanama odağıyla uyumlu değildir.",
+        "Arteria intercostalis posterior": "Posterior interkostal arterler kaburgaların alt kenarı boyunca daha posterior-lateral seyir gösterir ve toraks duvarı girişimlerinde akla gelebilir. Bu olguda kanama sternuma çok yakın parasternal hatta geliştiği için posterior interkostal sistem birinci açıklama değildir.",
+        "Arteria musculophrenica": "Musculophrenic arter daha aşağıda kostal ark ve diyafragma komşuluğuna uzanan terminal dallardan biridir. Beşinci aralıkta sternum kenarına yakın erken kanama odağı, terminal alt dal düzeyinden çok ana parasternal damar hattını düşündürür.",
+        "Arteria thoracica interna": "Doğru yanıttır; bu arter sternumun lateral kenarına yakın anterior toraks duvarında seyreder ve parasternal girişimlerde zedelenme riski taşır. Kanamanın sternum kenarına yakın olması ve lateral aksiller ya da posterior interkostal hatta olmaması bu seçeneği destekler.",
+        "Arteria thoracoacromialis": "Thorakoakromiyal arter pektoralis, deltoid ve akromiyal dallarıyla klavikula-altı/pektoral üst bölgeye yönelir. Alt parasternal interkostal girişimde görülen kanama için beklenen ana komşuluk değildir."
+      },
+      "whyWrong": {
+        "Arteria thoracica lateralis": "Lateral torasik arter aksilla ve lateral göğüs duvarı/meme komşuluğunda önemlidir. Ancak girişim sternum kenarına yakın anterior toraks duvarındadır; lateral aksiller damar hattı bu kanama odağıyla uyumlu değildir.",
+        "Arteria intercostalis posterior": "Posterior interkostal arterler kaburgaların alt kenarı boyunca daha posterior-lateral seyir gösterir ve toraks duvarı girişimlerinde akla gelebilir. Bu olguda kanama sternuma çok yakın parasternal hatta geliştiği için posterior interkostal sistem birinci açıklama değildir.",
+        "Arteria musculophrenica": "Musculophrenic arter daha aşağıda kostal ark ve diyafragma komşuluğuna uzanan terminal dallardan biridir. Beşinci aralıkta sternum kenarına yakın erken kanama odağı, terminal alt dal düzeyinden çok ana parasternal damar hattını düşündürür.",
+        "Arteria thoracoacromialis": "Thorakoakromiyal arter pektoralis, deltoid ve akromiyal dallarıyla klavikula-altı/pektoral üst bölgeye yönelir. Alt parasternal interkostal girişimde görülen kanama için beklenen ana komşuluk değildir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Parasternal girişimlerde anterior toraks duvarındaki damar komşuluklarını ve kanama riskini ayırt edebilme.",
+      "coreKnowledge": "Anterior toraks duvarında sternuma yakın girişimlerde internal torasik damarlar akılda tutulmalıdır; interkostal arterlerin posterior-lateral, lateral torasik arterin ise aksiller-lateral yerleşimi çeldirici olabilir."
+    },
+    "whyCorrect": "Girişim yerinin sternum kenarına yakın olması, anterior toraks duvarındaki parasternal damar seyrini klinik olarak önemli hale getirir. Lateral aksiller veya posterior interkostal yerleşim bulgusu olmadan parlak kırmızı lokal kanama gelişmesi, anterior parasternal arteriyel komşuluğun zedelenmesiyle en iyi açıklanır.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Girişim noktasının sternum sol kenarına çok yakın seçilmesi → anterior parasternal damar hattını riskli hale getirir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Kanamanın iğne ilerletilirken hemen ve parlak kırmızı başlaması → lokal arteriyel zedelenme olasılığını artırır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Kanama odağının lateral aksiller veya posterior göğüs duvarında olmaması → lateral torasik ve posterior interkostal seçenekleri zayıflatır.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Ultrasonla sıvının hedeflenmesine rağmen yüzeyel duvar seviyesinde komplikasyon gelişmesi → toraks duvarı komşuluk bilgisini öne çıkarır.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Arteria thoracica lateralis": "Lateral torasik arter aksilla ve lateral göğüs duvarı/meme komşuluğunda önemlidir. Ancak girişim sternum kenarına yakın anterior toraks duvarındadır; lateral aksiller damar hattı bu kanama odağıyla uyumlu değildir.",
+      "Arteria intercostalis posterior": "Posterior interkostal arterler kaburgaların alt kenarı boyunca daha posterior-lateral seyir gösterir ve toraks duvarı girişimlerinde akla gelebilir. Bu olguda kanama sternuma çok yakın parasternal hatta geliştiği için posterior interkostal sistem birinci açıklama değildir.",
+      "Arteria musculophrenica": "Musculophrenic arter daha aşağıda kostal ark ve diyafragma komşuluğuna uzanan terminal dallardan biridir. Beşinci aralıkta sternum kenarına yakın erken kanama odağı, terminal alt dal düzeyinden çok ana parasternal damar hattını düşündürür.",
+      "Arteria thoracica interna": "Doğru yanıttır; bu arter sternumun lateral kenarına yakın anterior toraks duvarında seyreder ve parasternal girişimlerde zedelenme riski taşır. Kanamanın sternum kenarına yakın olması ve lateral aksiller ya da posterior interkostal hatta olmaması bu seçeneği destekler.",
+      "Arteria thoracoacromialis": "Thorakoakromiyal arter pektoralis, deltoid ve akromiyal dallarıyla klavikula-altı/pektoral üst bölgeye yönelir. Alt parasternal interkostal girişimde görülen kanama için beklenen ana komşuluk değildir."
+    },
+    "coreKnowledge": "Anterior toraks duvarında sternuma yakın girişimlerde internal torasik damarlar akılda tutulmalıdır; interkostal arterlerin posterior-lateral, lateral torasik arterin ise aksiller-lateral yerleşimi çeldirici olabilir.",
+    "examPearl": "Parasternal girişimlerde kaburga aralığını bilmek yetmez; sternum kenarına yakın seyreden anterior duvar damarları da korunmalıdır.",
+    "whyWrong": {
+      "Arteria thoracica lateralis": "Lateral torasik arter aksilla ve lateral göğüs duvarı/meme komşuluğunda önemlidir. Ancak girişim sternum kenarına yakın anterior toraks duvarındadır; lateral aksiller damar hattı bu kanama odağıyla uyumlu değildir.",
+      "Arteria intercostalis posterior": "Posterior interkostal arterler kaburgaların alt kenarı boyunca daha posterior-lateral seyir gösterir ve toraks duvarı girişimlerinde akla gelebilir. Bu olguda kanama sternuma çok yakın parasternal hatta geliştiği için posterior interkostal sistem birinci açıklama değildir.",
+      "Arteria musculophrenica": "Musculophrenic arter daha aşağıda kostal ark ve diyafragma komşuluğuna uzanan terminal dallardan biridir. Beşinci aralıkta sternum kenarına yakın erken kanama odağı, terminal alt dal düzeyinden çok ana parasternal damar hattını düşündürür.",
+      "Arteria thoracoacromialis": "Thorakoakromiyal arter pektoralis, deltoid ve akromiyal dallarıyla klavikula-altı/pektoral üst bölgeye yönelir. Alt parasternal interkostal girişimde görülen kanama için beklenen ana komşuluk değildir."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Orta",
+  "aiMeta": {
+    "generatedAt": "manual-v199-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial"
+  },
+  "listTitle": "Parasternal girişim sonrası kanama",
+  "cardTitle": "Parasternal girişim sonrası kanama",
+  "coreKnowledge": "Anterior toraks duvarında sternuma yakın girişimlerde internal torasik damarlar akılda tutulmalıdır; interkostal arterlerin posterior-lateral, lateral torasik arterin ise aksiller-lateral yerleşimi çeldirici olabilir.",
+  "examPearl": "Parasternal girişimlerde kaburga aralığını bilmek yetmez; sternum kenarına yakın seyreden anterior duvar damarları da korunmalıdır.",
+  "whyCorrect": "Girişim yerinin sternum kenarına yakın olması, anterior toraks duvarındaki parasternal damar seyrini klinik olarak önemli hale getirir. Lateral aksiller veya posterior interkostal yerleşim bulgusu olmadan parlak kırmızı lokal kanama gelişmesi, anterior parasternal arteriyel komşuluğun zedelenmesiyle en iyi açıklanır.",
+  "optionComparison": {
+    "Arteria thoracica lateralis": "Lateral torasik arter aksilla ve lateral göğüs duvarı/meme komşuluğunda önemlidir. Ancak girişim sternum kenarına yakın anterior toraks duvarındadır; lateral aksiller damar hattı bu kanama odağıyla uyumlu değildir.",
+    "Arteria intercostalis posterior": "Posterior interkostal arterler kaburgaların alt kenarı boyunca daha posterior-lateral seyir gösterir ve toraks duvarı girişimlerinde akla gelebilir. Bu olguda kanama sternuma çok yakın parasternal hatta geliştiği için posterior interkostal sistem birinci açıklama değildir.",
+    "Arteria musculophrenica": "Musculophrenic arter daha aşağıda kostal ark ve diyafragma komşuluğuna uzanan terminal dallardan biridir. Beşinci aralıkta sternum kenarına yakın erken kanama odağı, terminal alt dal düzeyinden çok ana parasternal damar hattını düşündürür.",
+    "Arteria thoracica interna": "Doğru yanıttır; bu arter sternumun lateral kenarına yakın anterior toraks duvarında seyreder ve parasternal girişimlerde zedelenme riski taşır. Kanamanın sternum kenarına yakın olması ve lateral aksiller ya da posterior interkostal hatta olmaması bu seçeneği destekler.",
+    "Arteria thoracoacromialis": "Thorakoakromiyal arter pektoralis, deltoid ve akromiyal dallarıyla klavikula-altı/pektoral üst bölgeye yönelir. Alt parasternal interkostal girişimde görülen kanama için beklenen ana komşuluk değildir."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Girişim noktasının sternum sol kenarına çok yakın seçilmesi → anterior parasternal damar hattını riskli hale getirir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Kanamanın iğne ilerletilirken hemen ve parlak kırmızı başlaması → lokal arteriyel zedelenme olasılığını artırır.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Kanama odağının lateral aksiller veya posterior göğüs duvarında olmaması → lateral torasik ve posterior interkostal seçenekleri zayıflatır.",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Ultrasonla sıvının hedeflenmesine rağmen yüzeyel duvar seviyesinde komplikasyon gelişmesi → toraks duvarı komşuluk bilgisini öne çıkarır.",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Arteria thoracica lateralis": "Lateral torasik arter aksilla ve lateral göğüs duvarı/meme komşuluğunda önemlidir. Ancak girişim sternum kenarına yakın anterior toraks duvarındadır; lateral aksiller damar hattı bu kanama odağıyla uyumlu değildir.",
+    "Arteria intercostalis posterior": "Posterior interkostal arterler kaburgaların alt kenarı boyunca daha posterior-lateral seyir gösterir ve toraks duvarı girişimlerinde akla gelebilir. Bu olguda kanama sternuma çok yakın parasternal hatta geliştiği için posterior interkostal sistem birinci açıklama değildir.",
+    "Arteria musculophrenica": "Musculophrenic arter daha aşağıda kostal ark ve diyafragma komşuluğuna uzanan terminal dallardan biridir. Beşinci aralıkta sternum kenarına yakın erken kanama odağı, terminal alt dal düzeyinden çok ana parasternal damar hattını düşündürür.",
+    "Arteria thoracoacromialis": "Thorakoakromiyal arter pektoralis, deltoid ve akromiyal dallarıyla klavikula-altı/pektoral üst bölgeye yönelir. Alt parasternal interkostal girişimde görülen kanama için beklenen ana komşuluk değildir."
+  }
+},
+{
+  "id": "v199-new-393-dalak-hilusu-diseksiyonu-sonrasi-dren-amilazi",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi / Genel Cerrahi",
+  "title": "Dalak hilusu diseksiyonu sonrası dren amilazı",
+  "difficulty": "Zor",
+  "clinicalFocus": "Splenik hilus cerrahisinde komşu organ ilişkisini postoperatif dren verisiyle birlikte yorumlama.",
+  "learningTarget": "Dalak hilusu, splenorenal ligament ve sol üst kadran komşuluklarını klinik cerrahi bulgularla ilişkilendirebilme.",
+  "demographics": "38 yaşında erkek hasta",
+  "setting": "Genel cerrahi servisi",
+  "chiefComplaint": "Travmatik dalak yaralanması nedeniyle yapılan ameliyattan sonra sol üst kadran dreninden sıvı gelişi artmıştır.",
+  "stem": "Hasta trafik kazası sonrası dalak yaralanması nedeniyle acil ameliyata alınmış ve ameliyattan sonra cerrahi serviste izlenmeye başlanmıştır. İlk gün ağrısı beklenen düzeydeyken ikinci gün sol üst kadrandaki dren torbasında daha fazla açık renkli sıvı biriktiği fark edilmiştir. Bulantı veya dışkı içerikli drenaj tariflenmemiş, idrar renginde belirgin değişiklik olmamıştır. Cerrahi ekip özellikle hilusa yakın çalışılan bölgenin komşulukları açısından hastayı yeniden değerlendirmiştir.",
+  "patientIntro": {
+    "profile": "38 yaşında erkek hasta, splenektomi sonrası sol üst kadran drenaj artışı nedeniyle cerrahi serviste değerlendiriliyor.",
+    "presentation": "Dalak hilusuna yakın işlem sonrası açık renkli drenaj ve biyokimyasal anormallik vardır.",
+    "historySummary": "Hasta trafik kazası sonrası dalak yaralanması nedeniyle acil ameliyata alınmış ve ameliyattan sonra cerrahi serviste izlenmeye başlanmıştır. İlk gün ağrısı beklenen düzeydeyken ikinci gün sol üst kadrandaki dren torbasında daha fazla açık renkli sıvı biriktiği fark edilmiştir. Bulantı veya dışkı içerikli drenaj tariflenmemiş, idrar renginde belirgin değişiklik olmamıştır. Cerrahi ekip özellikle hilusa yakın çalışılan bölgenin komşulukları açısından hastayı yeniden değerlendirmiştir."
+  },
+  "vitals": {
+    "TA": "112/70 mmHg",
+    "Nabız": "88/dk",
+    "Solunum": "16/dk",
+    "SpO2": "%99, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "0.79 normal"
+  },
+  "exam": [
+    "Sol üst kadran insizyon çevresinde beklenen postoperatif hassasiyet dışında belirgin yaygın defans yoktur.",
+    "Dren torbasında açık sarı renkte, kokusuz ve partikülsüz sıvı artışı izlenir.",
+    "Kostovertebral açı hassasiyeti belirgin değildir; idrar sondasında makroskopik hematüri görülmez.",
+    "Karın distansiyonu hafiftir; bağırsak sesleri azalmış ancak tamamen kaybolmamıştır."
+  ],
+  "investigations": [
+    {
+      "id": "v199-new-393-dalak-hilusu-diseksiyonu-sonrasi-dren-amilazi-postoperatif-dren-ve-biyokimya",
+      "label": "Postoperatif dren değerlendirmesi ve biyokimyasal analiz",
+      "title": "Postoperatif dren değerlendirmesi ve biyokimyasal analiz",
+      "orderLabel": "Postoperatif dren değerlendirmesi ve biyokimyasal analiz",
+      "type": "lab",
+      "priority": "essential",
+      "subtype": "Postoperatif dren değerlendirmesi ve biyokimyasal analiz",
+      "category": "laboratory",
+      "testTypeCategory": "laboratory",
+      "summary": "Splenektomi sonrası sol üst kadran dreninde artmış açık renkli sıvı izlenmiş, dren amilazı yüksek bulunmuş; hematüri, fekal içerik veya yaygın peritonit bulgusu saptanmamıştır.",
+      "clinicalMeaning": "Splenektomi sonrası sol üst kadran dreninde artmış açık renkli sıvı izlenmiş, dren amilazı yüksek bulunmuş; hematüri, fekal içerik veya yaygın peritonit bulgusu saptanmamıştır.",
+      "result": {
+        "title": "Postoperatif dren değerlendirmesi ve biyokimyasal analiz",
+        "summary": "Splenektomi sonrası sol üst kadran dreninde artmış açık renkli sıvı izlenmiş, dren amilazı yüksek bulunmuş; hematüri, fekal içerik veya yaygın peritonit bulgusu saptanmamıştır.",
+        "interpretation": "Splenektomi sonrası sol üst kadran dreninde artmış açık renkli sıvı izlenmiş, dren amilazı yüksek bulunmuş; hematüri, fekal içerik veya yaygın peritonit bulgusu saptanmamıştır.",
+        "values": [
+          [
+            "Dren görünümü",
+            "Sol üst kadran dreninde açık sarı, partikülsüz sıvı artışı izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Dren amilazı",
+            "Serum değerinin belirgin üzerinde ölçüldü.",
+            "",
+            ""
+          ],
+          [
+            "İdrar değerlendirmesi",
+            "Makroskopik hematüri izlenmedi.",
+            "",
+            ""
+          ],
+          [
+            "Periton irritasyonu",
+            "Yaygın defans veya fekal içerikli drenaj saptanmadı.",
+            "",
+            ""
+          ]
+        ],
+        "rows": [
+          [
+            "Dren görünümü",
+            "Sol üst kadran dreninde açık sarı, partikülsüz sıvı artışı izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Dren amilazı",
+            "Serum değerinin belirgin üzerinde ölçüldü.",
+            "",
+            ""
+          ],
+          [
+            "İdrar değerlendirmesi",
+            "Makroskopik hematüri izlenmedi.",
+            "",
+            ""
+          ],
+          [
+            "Periton irritasyonu",
+            "Yaygın defans veya fekal içerikli drenaj saptanmadı.",
+            "",
+            ""
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Dren görünümü",
+          "Sol üst kadran dreninde açık sarı, partikülsüz sıvı artışı izlendi.",
+          "",
+          ""
+        ],
+        [
+          "Dren amilazı",
+          "Serum değerinin belirgin üzerinde ölçüldü.",
+          "",
+          ""
+        ],
+        [
+          "İdrar değerlendirmesi",
+          "Makroskopik hematüri izlenmedi.",
+          "",
+          ""
+        ],
+        [
+          "Periton irritasyonu",
+          "Yaygın defans veya fekal içerikli drenaj saptanmadı.",
+          "",
+          ""
+        ]
+      ],
+      "postAnswerExplanation": "Splenektomi sonrası sol üst kadran dreninde artmış açık renkli sıvı izlenmiş, dren amilazı yüksek bulunmuş; hematüri, fekal içerik veya yaygın peritonit bulgusu saptanmamıştır.",
+      "interpretation": "Splenektomi sonrası sol üst kadran dreninde artmış açık renkli sıvı izlenmiş, dren amilazı yüksek bulunmuş; hematüri, fekal içerik veya yaygın peritonit bulgusu saptanmamıştır.",
+      "explanationAfterAnswer": "Splenektomi sonrası sol üst kadran dreninde artmış açık renkli sıvı izlenmiş, dren amilazı yüksek bulunmuş; hematüri, fekal içerik veya yaygın peritonit bulgusu saptanmamıştır.",
+      "testValueLabel": "Postoperatif dren değerlendirmesi ve biyokimyasal analiz",
+      "educationalValue": "Postoperatif dren değerlendirmesi ve biyokimyasal analiz",
+      "clinicalPriorityLabel": "Postoperatif dren değerlendirmesi ve biyokimyasal analiz",
+      "scoreImpact": 4,
+      "scoreValue": 4,
+      "clinicalFlowOrder": 1,
+      "purpose": "Postoperatif dren değerlendirmesi ve biyokimyasal analiz",
+      "inlineFeedback": "Splenektomi sonrası sol üst kadran dreninde artmış açık renkli sıvı izlenmiş, dren amilazı yüksek bulunmuş; hematüri, fekal içerik veya yaygın peritonit bulgusu saptanmamıştır."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": false,
+  "question": "Bu bulgular cerrahi alanda en olası hangi yapının etkilenmesiyle açıklanır?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Cauda pancreatis",
+    "options": [
+      "Glandula suprarenalis sinistra",
+      "Flexura coli sinistra",
+      "Cauda pancreatis",
+      "Curvatura major ventriculi",
+      "Ren sinister"
+    ],
+    "question": "Bu bulgular cerrahi alanda en olası hangi yapının etkilenmesiyle açıklanır?",
+    "explanation": "Dalak hilusuna yakın diseksiyonda sol üst kadranın ligamentöz komşulukları önemlidir. Dren sıvısında amilaz yüksekliği, kolon, mide, böbrek veya sürrenalden çok dalak hilusuna kadar uzanabilen ekzokrin pankreatik doku etkilenimini düşündürür.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Splenektomi sonrası amilazdan zengin drenaj gördüğünde sol üst kadran komşulukları içinde dalak hilusuna uzanan pankreatik dokuyu düşün."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Dalak hilusuna yakın diseksiyonda sol üst kadranın ligamentöz komşulukları önemlidir. Dren sıvısında amilaz yüksekliği, kolon, mide, böbrek veya sürrenalden çok dalak hilusuna kadar uzanabilen ekzokrin pankreatik doku etkilenimini düşündürür.",
+      "whyCorrect": "Dalak hilusuna yakın diseksiyonda sol üst kadranın ligamentöz komşulukları önemlidir. Dren sıvısında amilaz yüksekliği, kolon, mide, böbrek veya sürrenalden çok dalak hilusuna kadar uzanabilen ekzokrin pankreatik doku etkilenimini düşündürür.",
+      "rationale": "Dalak hilusuna yakın diseksiyonda sol üst kadranın ligamentöz komşulukları önemlidir. Dren sıvısında amilaz yüksekliği, kolon, mide, böbrek veya sürrenalden çok dalak hilusuna kadar uzanabilen ekzokrin pankreatik doku etkilenimini düşündürür.",
+      "correctOptionFeedback": "Doğru yanıttır; pankreas kuyruğu splenorenal ligament içinde dalak hilusuna kadar uzanabilir ve splenektomi sırasında hilusa yakın diseksiyonda zedelenebilir. Sol üst kadran drenajı ile birlikte amilaz yüksekliği bu komşuluğu güçlü biçimde destekler.",
+      "keyClues": [
+        "Diseksiyonun dalak hilusuna yakın yapılması",
+        "Postoperatif sol üst kadran dreninde berrak-açık renkli sıvı artışı",
+        "Dren sıvısında amilaz yüksekliği",
+        "Hematüri ve yaygın peritonit bulgusunun olmaması"
+      ],
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Diseksiyonun dalak hilusuna yakın yapılması → hilusa uzanan komşu organ dokusunun risk altında olduğunu gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Postoperatif sol üst kadran dreninde berrak-açık renkli sıvı artışı → gastrointestinal perforasyondan farklı bir kaçak paternini düşündürür.",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Dren sıvısında amilaz yüksekliği → ekzokrin salgı içeren anatomik komşuluğa işaret eder.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Hematüri ve yaygın peritonit bulgusunun olmaması → böbrek, kolon veya mide yaralanmasını geri plana iter.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Splenektomi sonrası amilazdan zengin drenaj gördüğünde sol üst kadran komşulukları içinde dalak hilusuna uzanan pankreatik dokuyu düşün.",
+      "optionComparison": {
+        "Glandula suprarenalis sinistra": "Sol sürrenal bez üst kutup ve retroperitoneal komşuluk nedeniyle splenik cerrahide anatomik olarak akla gelebilir. Ancak sürrenal etkilenimde dren sıvısında amilaz yüksekliği beklenmez; olgudaki bulgu hilusa yakın ekzokrin doku komşuluğunu düşündürür.",
+        "Flexura coli sinistra": "Sol kolik fleksura dalak alt kutbuna komşudur ve mobilizasyon sırasında yaralanabilir. Kolonik yaralanmada fekal içerik, peritonit veya gaz-kaçak bulguları beklenirdi; dren amilaz yüksekliği bu yapıyı birincil açıklama yapmaz.",
+        "Cauda pancreatis": "Doğru yanıttır; pankreas kuyruğu splenorenal ligament içinde dalak hilusuna kadar uzanabilir ve splenektomi sırasında hilusa yakın diseksiyonda zedelenebilir. Sol üst kadran drenajı ile birlikte amilaz yüksekliği bu komşuluğu güçlü biçimde destekler.",
+        "Curvatura major ventriculi": "Midenin büyük kurvaturası gastrosplenik ligament ve kısa gastrik damarlar nedeniyle cerrahi alana yakındır. Ancak mide yaralanması ağızdan kontrast kaçağı, peritoneal irritasyon veya gastrik içerik ile ilişkili olur; izole yüksek amilaz paternini açıklamaz.",
+        "Ren sinister": "Sol böbrek retroperitoneal yerleşimiyle posterior komşulukta bulunur. Böbrek yaralanmasında hematüri, retroperitoneal kanama veya üriner kaçak daha beklenir; dren amilaz artışı renal komşuluğa uymaz."
+      },
+      "whyWrong": {
+        "Glandula suprarenalis sinistra": "Sol sürrenal bez üst kutup ve retroperitoneal komşuluk nedeniyle splenik cerrahide anatomik olarak akla gelebilir. Ancak sürrenal etkilenimde dren sıvısında amilaz yüksekliği beklenmez; olgudaki bulgu hilusa yakın ekzokrin doku komşuluğunu düşündürür.",
+        "Flexura coli sinistra": "Sol kolik fleksura dalak alt kutbuna komşudur ve mobilizasyon sırasında yaralanabilir. Kolonik yaralanmada fekal içerik, peritonit veya gaz-kaçak bulguları beklenirdi; dren amilaz yüksekliği bu yapıyı birincil açıklama yapmaz.",
+        "Curvatura major ventriculi": "Midenin büyük kurvaturası gastrosplenik ligament ve kısa gastrik damarlar nedeniyle cerrahi alana yakındır. Ancak mide yaralanması ağızdan kontrast kaçağı, peritoneal irritasyon veya gastrik içerik ile ilişkili olur; izole yüksek amilaz paternini açıklamaz.",
+        "Ren sinister": "Sol böbrek retroperitoneal yerleşimiyle posterior komşulukta bulunur. Böbrek yaralanmasında hematüri, retroperitoneal kanama veya üriner kaçak daha beklenir; dren amilaz artışı renal komşuluğa uymaz."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Dalak hilusu, splenorenal ligament ve sol üst kadran komşuluklarını klinik cerrahi bulgularla ilişkilendirebilme.",
+      "coreKnowledge": "Pankreas kuyruğu dalak hilusuna kadar uzanabildiği için splenektomi ve splenik hilus diseksiyonlarında risk altındadır; dren amilazı yüksekliği bu komşuluğun klinik ipucudur."
+    },
+    "whyCorrect": "Dalak hilusuna yakın diseksiyonda sol üst kadranın ligamentöz komşulukları önemlidir. Dren sıvısında amilaz yüksekliği, kolon, mide, böbrek veya sürrenalden çok dalak hilusuna kadar uzanabilen ekzokrin pankreatik doku etkilenimini düşündürür.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Diseksiyonun dalak hilusuna yakın yapılması → hilusa uzanan komşu organ dokusunun risk altında olduğunu gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Postoperatif sol üst kadran dreninde berrak-açık renkli sıvı artışı → gastrointestinal perforasyondan farklı bir kaçak paternini düşündürür.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Dren sıvısında amilaz yüksekliği → ekzokrin salgı içeren anatomik komşuluğa işaret eder.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Hematüri ve yaygın peritonit bulgusunun olmaması → böbrek, kolon veya mide yaralanmasını geri plana iter.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Glandula suprarenalis sinistra": "Sol sürrenal bez üst kutup ve retroperitoneal komşuluk nedeniyle splenik cerrahide anatomik olarak akla gelebilir. Ancak sürrenal etkilenimde dren sıvısında amilaz yüksekliği beklenmez; olgudaki bulgu hilusa yakın ekzokrin doku komşuluğunu düşündürür.",
+      "Flexura coli sinistra": "Sol kolik fleksura dalak alt kutbuna komşudur ve mobilizasyon sırasında yaralanabilir. Kolonik yaralanmada fekal içerik, peritonit veya gaz-kaçak bulguları beklenirdi; dren amilaz yüksekliği bu yapıyı birincil açıklama yapmaz.",
+      "Cauda pancreatis": "Doğru yanıttır; pankreas kuyruğu splenorenal ligament içinde dalak hilusuna kadar uzanabilir ve splenektomi sırasında hilusa yakın diseksiyonda zedelenebilir. Sol üst kadran drenajı ile birlikte amilaz yüksekliği bu komşuluğu güçlü biçimde destekler.",
+      "Curvatura major ventriculi": "Midenin büyük kurvaturası gastrosplenik ligament ve kısa gastrik damarlar nedeniyle cerrahi alana yakındır. Ancak mide yaralanması ağızdan kontrast kaçağı, peritoneal irritasyon veya gastrik içerik ile ilişkili olur; izole yüksek amilaz paternini açıklamaz.",
+      "Ren sinister": "Sol böbrek retroperitoneal yerleşimiyle posterior komşulukta bulunur. Böbrek yaralanmasında hematüri, retroperitoneal kanama veya üriner kaçak daha beklenir; dren amilaz artışı renal komşuluğa uymaz."
+    },
+    "coreKnowledge": "Pankreas kuyruğu dalak hilusuna kadar uzanabildiği için splenektomi ve splenik hilus diseksiyonlarında risk altındadır; dren amilazı yüksekliği bu komşuluğun klinik ipucudur.",
+    "examPearl": "Splenektomi sonrası amilazdan zengin drenaj gördüğünde sol üst kadran komşulukları içinde dalak hilusuna uzanan pankreatik dokuyu düşün.",
+    "whyWrong": {
+      "Glandula suprarenalis sinistra": "Sol sürrenal bez üst kutup ve retroperitoneal komşuluk nedeniyle splenik cerrahide anatomik olarak akla gelebilir. Ancak sürrenal etkilenimde dren sıvısında amilaz yüksekliği beklenmez; olgudaki bulgu hilusa yakın ekzokrin doku komşuluğunu düşündürür.",
+      "Flexura coli sinistra": "Sol kolik fleksura dalak alt kutbuna komşudur ve mobilizasyon sırasında yaralanabilir. Kolonik yaralanmada fekal içerik, peritonit veya gaz-kaçak bulguları beklenirdi; dren amilaz yüksekliği bu yapıyı birincil açıklama yapmaz.",
+      "Curvatura major ventriculi": "Midenin büyük kurvaturası gastrosplenik ligament ve kısa gastrik damarlar nedeniyle cerrahi alana yakındır. Ancak mide yaralanması ağızdan kontrast kaçağı, peritoneal irritasyon veya gastrik içerik ile ilişkili olur; izole yüksek amilaz paternini açıklamaz.",
+      "Ren sinister": "Sol böbrek retroperitoneal yerleşimiyle posterior komşulukta bulunur. Böbrek yaralanmasında hematüri, retroperitoneal kanama veya üriner kaçak daha beklenir; dren amilaz artışı renal komşuluğa uymaz."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Zor",
+  "aiMeta": {
+    "generatedAt": "manual-v199-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial"
+  },
+  "listTitle": "Dalak hilusu diseksiyonu sonrası dren amilazı",
+  "cardTitle": "Dalak hilusu diseksiyonu sonrası dren amilazı",
+  "coreKnowledge": "Pankreas kuyruğu dalak hilusuna kadar uzanabildiği için splenektomi ve splenik hilus diseksiyonlarında risk altındadır; dren amilazı yüksekliği bu komşuluğun klinik ipucudur.",
+  "examPearl": "Splenektomi sonrası amilazdan zengin drenaj gördüğünde sol üst kadran komşulukları içinde dalak hilusuna uzanan pankreatik dokuyu düşün.",
+  "whyCorrect": "Dalak hilusuna yakın diseksiyonda sol üst kadranın ligamentöz komşulukları önemlidir. Dren sıvısında amilaz yüksekliği, kolon, mide, böbrek veya sürrenalden çok dalak hilusuna kadar uzanabilen ekzokrin pankreatik doku etkilenimini düşündürür.",
+  "optionComparison": {
+    "Glandula suprarenalis sinistra": "Sol sürrenal bez üst kutup ve retroperitoneal komşuluk nedeniyle splenik cerrahide anatomik olarak akla gelebilir. Ancak sürrenal etkilenimde dren sıvısında amilaz yüksekliği beklenmez; olgudaki bulgu hilusa yakın ekzokrin doku komşuluğunu düşündürür.",
+    "Flexura coli sinistra": "Sol kolik fleksura dalak alt kutbuna komşudur ve mobilizasyon sırasında yaralanabilir. Kolonik yaralanmada fekal içerik, peritonit veya gaz-kaçak bulguları beklenirdi; dren amilaz yüksekliği bu yapıyı birincil açıklama yapmaz.",
+    "Cauda pancreatis": "Doğru yanıttır; pankreas kuyruğu splenorenal ligament içinde dalak hilusuna kadar uzanabilir ve splenektomi sırasında hilusa yakın diseksiyonda zedelenebilir. Sol üst kadran drenajı ile birlikte amilaz yüksekliği bu komşuluğu güçlü biçimde destekler.",
+    "Curvatura major ventriculi": "Midenin büyük kurvaturası gastrosplenik ligament ve kısa gastrik damarlar nedeniyle cerrahi alana yakındır. Ancak mide yaralanması ağızdan kontrast kaçağı, peritoneal irritasyon veya gastrik içerik ile ilişkili olur; izole yüksek amilaz paternini açıklamaz.",
+    "Ren sinister": "Sol böbrek retroperitoneal yerleşimiyle posterior komşulukta bulunur. Böbrek yaralanmasında hematüri, retroperitoneal kanama veya üriner kaçak daha beklenir; dren amilaz artışı renal komşuluğa uymaz."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Diseksiyonun dalak hilusuna yakın yapılması → hilusa uzanan komşu organ dokusunun risk altında olduğunu gösterir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Postoperatif sol üst kadran dreninde berrak-açık renkli sıvı artışı → gastrointestinal perforasyondan farklı bir kaçak paternini düşündürür.",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Dren sıvısında amilaz yüksekliği → ekzokrin salgı içeren anatomik komşuluğa işaret eder.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Hematüri ve yaygın peritonit bulgusunun olmaması → böbrek, kolon veya mide yaralanmasını geri plana iter.",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Glandula suprarenalis sinistra": "Sol sürrenal bez üst kutup ve retroperitoneal komşuluk nedeniyle splenik cerrahide anatomik olarak akla gelebilir. Ancak sürrenal etkilenimde dren sıvısında amilaz yüksekliği beklenmez; olgudaki bulgu hilusa yakın ekzokrin doku komşuluğunu düşündürür.",
+    "Flexura coli sinistra": "Sol kolik fleksura dalak alt kutbuna komşudur ve mobilizasyon sırasında yaralanabilir. Kolonik yaralanmada fekal içerik, peritonit veya gaz-kaçak bulguları beklenirdi; dren amilaz yüksekliği bu yapıyı birincil açıklama yapmaz.",
+    "Curvatura major ventriculi": "Midenin büyük kurvaturası gastrosplenik ligament ve kısa gastrik damarlar nedeniyle cerrahi alana yakındır. Ancak mide yaralanması ağızdan kontrast kaçağı, peritoneal irritasyon veya gastrik içerik ile ilişkili olur; izole yüksek amilaz paternini açıklamaz.",
+    "Ren sinister": "Sol böbrek retroperitoneal yerleşimiyle posterior komşulukta bulunur. Böbrek yaralanmasında hematüri, retroperitoneal kanama veya üriner kaçak daha beklenir; dren amilaz artışı renal komşuluğa uymaz."
+  }
+},
+{
+  "id": "v199-new-394-diz-cikigi-sonrasi-distal-dolasim-azalmasi",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi / Ortopedi",
+  "title": "Diz çıkığı sonrası distal dolaşım azalması",
+  "difficulty": "Acil",
+  "clinicalFocus": "Diz travması sonrası distal dolaşım muayenesini kullanarak diz arkası damar ilişkilerini yorumlama.",
+  "learningTarget": "Diz çıkığı ve posterior diz komşuluklarında ana damar yaralanması riskini distal nabız ve perfüzyon bulgularıyla ilişkilendirebilme.",
+  "demographics": "24 yaşında erkek hasta",
+  "setting": "Acil servis",
+  "chiefComplaint": "Futbol sırasında dizinin ters dönmesi sonrası dizde şekil bozukluğu ve ayakta soğukluk gelişmiştir.",
+  "stem": "Hasta maç sırasında ayağı yerde sabitken dizinin geriye doğru zorlandığını ve kısa süreli belirgin şekil bozukluğu olduğunu anlatır. Takım arkadaşları bacağını düzleştirirken dizin yerine oturur gibi olduğunu fark etmiş, fakat sonrasında ayağında soğukluk ve uyuşma başlamıştır. Ağrı nedeniyle üzerine basamamış ve ambulansla acile getirilmiştir. Daha önce aynı dizden ameliyat geçirmediğini, olay öncesinde bacağında dolaşım problemi olmadığını belirtir.",
+  "patientIntro": {
+    "profile": "24 yaşında erkek hasta, yüksek enerjili diz travması sonrası distal dolaşım bulguları nedeniyle acil serviste değerlendiriliyor.",
+    "presentation": "Diz çıkığı mekanizmasını izleyen ayak soğukluğu, distal nabız azalması ve perfüzyon bozulması vardır.",
+    "historySummary": "Hasta maç sırasında ayağı yerde sabitken dizinin geriye doğru zorlandığını ve kısa süreli belirgin şekil bozukluğu olduğunu anlatır. Takım arkadaşları bacağını düzleştirirken dizin yerine oturur gibi olduğunu fark etmiş, fakat sonrasında ayağında soğukluk ve uyuşma başlamıştır. Ağrı nedeniyle üzerine basamamış ve ambulansla acile getirilmiştir. Daha önce aynı dizden ameliyat geçirmediğini, olay öncesinde bacağında dolaşım problemi olmadığını belirtir."
+  },
+  "vitals": {
+    "TA": "124/78 mmHg",
+    "Nabız": "96/dk",
+    "Solunum": "16/dk",
+    "SpO2": "%99, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "0.77 normal"
+  },
+  "exam": [
+    "Sağ dizde yaygın şişlik, hareketle belirgin ağrı ve posterior fossada dolgunluk vardır.",
+    "Sağ ayak sol tarafa göre daha soğuk izlenir; kapiller dolum yaklaşık 4 saniyedir.",
+    "Sağ dorsalis pedis ve posterior tibial nabızları sol tarafa göre belirgin zayıf palpe edilir.",
+    "Ayak parmak dorsifleksiyon-plantar fleksiyon hareketleri ağrı nedeniyle kısıtlı değerlendirilse de belirgin açık motor paralizi saptanmaz."
+  ],
+  "investigations": [
+    {
+      "id": "v199-new-394-diz-cikigi-sonrasi-distal-dolasim-azalmasi-vaskuler-muayene-ve-abi",
+      "label": "Distal vasküler muayene ve ayak bileği-kol indeksi",
+      "title": "Distal vasküler muayene ve ayak bileği-kol indeksi",
+      "orderLabel": "Distal vasküler muayene ve ayak bileği-kol indeksi",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "Distal vasküler muayene ve ayak bileği-kol indeksi",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Diz çıkığı sonrası distal ayakta soğukluk, kapiller dolum uzaması, iki distal nabızda birlikte azalma ve düşük ayak bileği-kol indeksi saptanmıştır.",
+      "clinicalMeaning": "Diz çıkığı sonrası distal ayakta soğukluk, kapiller dolum uzaması, iki distal nabızda birlikte azalma ve düşük ayak bileği-kol indeksi saptanmıştır.",
+      "result": {
+        "title": "Distal vasküler muayene ve ayak bileği-kol indeksi",
+        "summary": "Diz çıkığı sonrası distal ayakta soğukluk, kapiller dolum uzaması, iki distal nabızda birlikte azalma ve düşük ayak bileği-kol indeksi saptanmıştır.",
+        "interpretation": "Diz çıkığı sonrası distal ayakta soğukluk, kapiller dolum uzaması, iki distal nabızda birlikte azalma ve düşük ayak bileği-kol indeksi saptanmıştır.",
+        "values": [
+          [
+            "Dorsalis pedis nabzı",
+            "Sağda sola göre belirgin zayıf palpe edildi.",
+            "",
+            ""
+          ],
+          [
+            "Posterior tibial nabız",
+            "Sağda sola göre belirgin zayıf palpe edildi.",
+            "",
+            ""
+          ],
+          [
+            "Kapiller dolum",
+            "Sağ ayak parmaklarında yaklaşık 4 saniye ölçüldü.",
+            "",
+            ""
+          ],
+          [
+            "Ayak bileği-kol indeksi",
+            "Sağda 0.72 ölçüldü.",
+            "",
+            "Ölçülebilir dolaşım azalması"
+          ]
+        ],
+        "rows": [
+          [
+            "Dorsalis pedis nabzı",
+            "Sağda sola göre belirgin zayıf palpe edildi.",
+            "",
+            ""
+          ],
+          [
+            "Posterior tibial nabız",
+            "Sağda sola göre belirgin zayıf palpe edildi.",
+            "",
+            ""
+          ],
+          [
+            "Kapiller dolum",
+            "Sağ ayak parmaklarında yaklaşık 4 saniye ölçüldü.",
+            "",
+            ""
+          ],
+          [
+            "Ayak bileği-kol indeksi",
+            "Sağda 0.72 ölçüldü.",
+            "",
+            "Ölçülebilir dolaşım azalması"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Dorsalis pedis nabzı",
+          "Sağda sola göre belirgin zayıf palpe edildi.",
+          "",
+          ""
+        ],
+        [
+          "Posterior tibial nabız",
+          "Sağda sola göre belirgin zayıf palpe edildi.",
+          "",
+          ""
+        ],
+        [
+          "Kapiller dolum",
+          "Sağ ayak parmaklarında yaklaşık 4 saniye ölçüldü.",
+          "",
+          ""
+        ],
+        [
+          "Ayak bileği-kol indeksi",
+          "Sağda 0.72 ölçüldü.",
+          "",
+          "Ölçülebilir dolaşım azalması"
+        ]
+      ],
+      "postAnswerExplanation": "Diz çıkığı sonrası distal ayakta soğukluk, kapiller dolum uzaması, iki distal nabızda birlikte azalma ve düşük ayak bileği-kol indeksi saptanmıştır.",
+      "interpretation": "Diz çıkığı sonrası distal ayakta soğukluk, kapiller dolum uzaması, iki distal nabızda birlikte azalma ve düşük ayak bileği-kol indeksi saptanmıştır.",
+      "explanationAfterAnswer": "Diz çıkığı sonrası distal ayakta soğukluk, kapiller dolum uzaması, iki distal nabızda birlikte azalma ve düşük ayak bileği-kol indeksi saptanmıştır.",
+      "testValueLabel": "Distal vasküler muayene ve ayak bileği-kol indeksi",
+      "educationalValue": "Distal vasküler muayene ve ayak bileği-kol indeksi",
+      "clinicalPriorityLabel": "Distal vasküler muayene ve ayak bileği-kol indeksi",
+      "scoreImpact": 4,
+      "scoreValue": 4,
+      "clinicalFlowOrder": 1,
+      "purpose": "Distal vasküler muayene ve ayak bileği-kol indeksi",
+      "inlineFeedback": "Diz çıkığı sonrası distal ayakta soğukluk, kapiller dolum uzaması, iki distal nabızda birlikte azalma ve düşük ayak bileği-kol indeksi saptanmıştır."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": false,
+  "question": "Bu dolaşım bozulmasını en iyi açıklayan arter hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Arteria poplitea",
+    "options": [
+      "Arteria poplitea",
+      "Arteria femoralis profunda",
+      "Arteria tibialis posterior",
+      "Arteria fibularis",
+      "Arteria descendens genus"
+    ],
+    "question": "Bu dolaşım bozulmasını en iyi açıklayan arter hangisidir?",
+    "explanation": "Diz çıkığı mekanizması, diz arkasındaki ana damar segmentinin gerilme veya intimal yaralanma riskini artırır. İki distal nabzın birlikte zayıflaması ve ayakta soğukluk olması, izole bir distal dal hasarından çok diz seviyesi ana akım bozukluğunu destekler.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Diz çıkığı + distal nabız azalması, kırık olmasa bile diz arkası ana damar yaralanması açısından acil kabul edilir."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Diz çıkığı mekanizması, diz arkasındaki ana damar segmentinin gerilme veya intimal yaralanma riskini artırır. İki distal nabzın birlikte zayıflaması ve ayakta soğukluk olması, izole bir distal dal hasarından çok diz seviyesi ana akım bozukluğunu destekler.",
+      "whyCorrect": "Diz çıkığı mekanizması, diz arkasındaki ana damar segmentinin gerilme veya intimal yaralanma riskini artırır. İki distal nabzın birlikte zayıflaması ve ayakta soğukluk olması, izole bir distal dal hasarından çok diz seviyesi ana akım bozukluğunu destekler.",
+      "rationale": "Diz çıkığı mekanizması, diz arkasındaki ana damar segmentinin gerilme veya intimal yaralanma riskini artırır. İki distal nabzın birlikte zayıflaması ve ayakta soğukluk olması, izole bir distal dal hasarından çok diz seviyesi ana akım bozukluğunu destekler.",
+      "correctOptionFeedback": "Doğru yanıttır; diz ekleminin arkasında sabit komşuluklar arasında seyrettiği için diz çıkığı veya ciddi translasyon travmalarında gerilebilir, intimal hasar alabilir ya da tromboze olabilir. Distal nabız azalması, ayak soğukluğu ve düşük ayak bileği-kol indeksi bu düzeydeki ana akım bozulmasını destekler.",
+      "keyClues": [
+        "Diz ekleminin belirgin yer değiştirmesi ve spontan redüksiyon öyküsü",
+        "Ayakta soğukluk ve kapiller dolumun uzaması",
+        "Dorsalis pedis ve posterior tibial nabızların birlikte zayıflaması",
+        "Ayak bileği-kol indeksinin düşük ölçülmesi"
+      ],
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Diz ekleminin belirgin yer değiştirmesi ve spontan redüksiyon öyküsü → diz arkası nörovasküler yapıların gerilebileceği yüksek riskli mekanizmadır.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ayakta soğukluk ve kapiller dolumun uzaması → distal perfüzyonun azaldığını gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Dorsalis pedis ve posterior tibial nabızların birlikte zayıflaması → tek distal dal değil daha proksimal ana akım düzeyi lehinedir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ayak bileği-kol indeksinin düşük ölçülmesi → klinik muayenedeki dolaşım bozukluğunu objektif olarak destekler.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Diz çıkığı + distal nabız azalması, kırık olmasa bile diz arkası ana damar yaralanması açısından acil kabul edilir.",
+      "optionComparison": {
+        "Arteria poplitea": "Doğru yanıttır; diz ekleminin arkasında sabit komşuluklar arasında seyrettiği için diz çıkığı veya ciddi translasyon travmalarında gerilebilir, intimal hasar alabilir ya da tromboze olabilir. Distal nabız azalması, ayak soğukluğu ve düşük ayak bileği-kol indeksi bu düzeydeki ana akım bozulmasını destekler.",
+        "Arteria femoralis profunda": "Derin femoral arter uyluğun derin kas ve perforan dallarıyla ilişkilidir; proksimal uyluk travmalarında akla gelir. Diz çıkığı sonrası ayak nabızlarının azalması ve popliteal fossada dolgunluk daha distal, diz arkası ana damar segmentini düşündürür.",
+        "Arteria tibialis posterior": "Posterior tibial arter ayak bileği ve plantar dolaşımla ilişkilidir. İzole distal arter yaralanması tek bir nabzı etkileyebilir; bu hastada hem dorsalis pedis hem posterior tibial nabızların zayıflaması daha proksimal akım sorununu destekler.",
+        "Arteria fibularis": "Fibular arter bacağın lateral-posterior derin dolaşımına katkı verir, ancak rutin distal nabız muayenesinde ana belirleyici değildir. Diz çıkığı sonrası yaygın distal perfüzyon azalmasını tek başına açıklaması beklenmez.",
+        "Arteria descendens genus": "Desendan geniküler arter diz çevresi anastomozlarına katkı verir ve femoral arterden ayrılır. Kollateral rolü olsa da akut diz çıkığında distal ayak nabızlarının belirgin azalmasını açıklayan ana yaralanma hedefi değildir."
+      },
+      "whyWrong": {
+        "Arteria femoralis profunda": "Derin femoral arter uyluğun derin kas ve perforan dallarıyla ilişkilidir; proksimal uyluk travmalarında akla gelir. Diz çıkığı sonrası ayak nabızlarının azalması ve popliteal fossada dolgunluk daha distal, diz arkası ana damar segmentini düşündürür.",
+        "Arteria tibialis posterior": "Posterior tibial arter ayak bileği ve plantar dolaşımla ilişkilidir. İzole distal arter yaralanması tek bir nabzı etkileyebilir; bu hastada hem dorsalis pedis hem posterior tibial nabızların zayıflaması daha proksimal akım sorununu destekler.",
+        "Arteria fibularis": "Fibular arter bacağın lateral-posterior derin dolaşımına katkı verir, ancak rutin distal nabız muayenesinde ana belirleyici değildir. Diz çıkığı sonrası yaygın distal perfüzyon azalmasını tek başına açıklaması beklenmez.",
+        "Arteria descendens genus": "Desendan geniküler arter diz çevresi anastomozlarına katkı verir ve femoral arterden ayrılır. Kollateral rolü olsa da akut diz çıkığında distal ayak nabızlarının belirgin azalmasını açıklayan ana yaralanma hedefi değildir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Diz çıkığı ve posterior diz komşuluklarında ana damar yaralanması riskini distal nabız ve perfüzyon bulgularıyla ilişkilendirebilme.",
+      "coreKnowledge": "Diz çıkığı, redükte görünse bile popliteal bölgedeki ana arter için yüksek risk taşır; distal nabızlar ve ayak bileği-kol indeksi mutlaka değerlendirilmelidir."
+    },
+    "whyCorrect": "Diz çıkığı mekanizması, diz arkasındaki ana damar segmentinin gerilme veya intimal yaralanma riskini artırır. İki distal nabzın birlikte zayıflaması ve ayakta soğukluk olması, izole bir distal dal hasarından çok diz seviyesi ana akım bozukluğunu destekler.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Diz ekleminin belirgin yer değiştirmesi ve spontan redüksiyon öyküsü → diz arkası nörovasküler yapıların gerilebileceği yüksek riskli mekanizmadır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Ayakta soğukluk ve kapiller dolumun uzaması → distal perfüzyonun azaldığını gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Dorsalis pedis ve posterior tibial nabızların birlikte zayıflaması → tek distal dal değil daha proksimal ana akım düzeyi lehinedir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Ayak bileği-kol indeksinin düşük ölçülmesi → klinik muayenedeki dolaşım bozukluğunu objektif olarak destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Arteria poplitea": "Doğru yanıttır; diz ekleminin arkasında sabit komşuluklar arasında seyrettiği için diz çıkığı veya ciddi translasyon travmalarında gerilebilir, intimal hasar alabilir ya da tromboze olabilir. Distal nabız azalması, ayak soğukluğu ve düşük ayak bileği-kol indeksi bu düzeydeki ana akım bozulmasını destekler.",
+      "Arteria femoralis profunda": "Derin femoral arter uyluğun derin kas ve perforan dallarıyla ilişkilidir; proksimal uyluk travmalarında akla gelir. Diz çıkığı sonrası ayak nabızlarının azalması ve popliteal fossada dolgunluk daha distal, diz arkası ana damar segmentini düşündürür.",
+      "Arteria tibialis posterior": "Posterior tibial arter ayak bileği ve plantar dolaşımla ilişkilidir. İzole distal arter yaralanması tek bir nabzı etkileyebilir; bu hastada hem dorsalis pedis hem posterior tibial nabızların zayıflaması daha proksimal akım sorununu destekler.",
+      "Arteria fibularis": "Fibular arter bacağın lateral-posterior derin dolaşımına katkı verir, ancak rutin distal nabız muayenesinde ana belirleyici değildir. Diz çıkığı sonrası yaygın distal perfüzyon azalmasını tek başına açıklaması beklenmez.",
+      "Arteria descendens genus": "Desendan geniküler arter diz çevresi anastomozlarına katkı verir ve femoral arterden ayrılır. Kollateral rolü olsa da akut diz çıkığında distal ayak nabızlarının belirgin azalmasını açıklayan ana yaralanma hedefi değildir."
+    },
+    "coreKnowledge": "Diz çıkığı, redükte görünse bile popliteal bölgedeki ana arter için yüksek risk taşır; distal nabızlar ve ayak bileği-kol indeksi mutlaka değerlendirilmelidir.",
+    "examPearl": "Diz çıkığı + distal nabız azalması, kırık olmasa bile diz arkası ana damar yaralanması açısından acil kabul edilir.",
+    "whyWrong": {
+      "Arteria femoralis profunda": "Derin femoral arter uyluğun derin kas ve perforan dallarıyla ilişkilidir; proksimal uyluk travmalarında akla gelir. Diz çıkığı sonrası ayak nabızlarının azalması ve popliteal fossada dolgunluk daha distal, diz arkası ana damar segmentini düşündürür.",
+      "Arteria tibialis posterior": "Posterior tibial arter ayak bileği ve plantar dolaşımla ilişkilidir. İzole distal arter yaralanması tek bir nabzı etkileyebilir; bu hastada hem dorsalis pedis hem posterior tibial nabızların zayıflaması daha proksimal akım sorununu destekler.",
+      "Arteria fibularis": "Fibular arter bacağın lateral-posterior derin dolaşımına katkı verir, ancak rutin distal nabız muayenesinde ana belirleyici değildir. Diz çıkığı sonrası yaygın distal perfüzyon azalmasını tek başına açıklaması beklenmez.",
+      "Arteria descendens genus": "Desendan geniküler arter diz çevresi anastomozlarına katkı verir ve femoral arterden ayrılır. Kollateral rolü olsa da akut diz çıkığında distal ayak nabızlarının belirgin azalmasını açıklayan ana yaralanma hedefi değildir."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Orta",
+  "aiMeta": {
+    "generatedAt": "manual-v199-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial"
+  },
+  "listTitle": "Diz çıkığı sonrası distal dolaşım azalması",
+  "cardTitle": "Diz çıkığı sonrası distal dolaşım azalması",
+  "coreKnowledge": "Diz çıkığı, redükte görünse bile popliteal bölgedeki ana arter için yüksek risk taşır; distal nabızlar ve ayak bileği-kol indeksi mutlaka değerlendirilmelidir.",
+  "examPearl": "Diz çıkığı + distal nabız azalması, kırık olmasa bile diz arkası ana damar yaralanması açısından acil kabul edilir.",
+  "whyCorrect": "Diz çıkığı mekanizması, diz arkasındaki ana damar segmentinin gerilme veya intimal yaralanma riskini artırır. İki distal nabzın birlikte zayıflaması ve ayakta soğukluk olması, izole bir distal dal hasarından çok diz seviyesi ana akım bozukluğunu destekler.",
+  "optionComparison": {
+    "Arteria poplitea": "Doğru yanıttır; diz ekleminin arkasında sabit komşuluklar arasında seyrettiği için diz çıkığı veya ciddi translasyon travmalarında gerilebilir, intimal hasar alabilir ya da tromboze olabilir. Distal nabız azalması, ayak soğukluğu ve düşük ayak bileği-kol indeksi bu düzeydeki ana akım bozulmasını destekler.",
+    "Arteria femoralis profunda": "Derin femoral arter uyluğun derin kas ve perforan dallarıyla ilişkilidir; proksimal uyluk travmalarında akla gelir. Diz çıkığı sonrası ayak nabızlarının azalması ve popliteal fossada dolgunluk daha distal, diz arkası ana damar segmentini düşündürür.",
+    "Arteria tibialis posterior": "Posterior tibial arter ayak bileği ve plantar dolaşımla ilişkilidir. İzole distal arter yaralanması tek bir nabzı etkileyebilir; bu hastada hem dorsalis pedis hem posterior tibial nabızların zayıflaması daha proksimal akım sorununu destekler.",
+    "Arteria fibularis": "Fibular arter bacağın lateral-posterior derin dolaşımına katkı verir, ancak rutin distal nabız muayenesinde ana belirleyici değildir. Diz çıkığı sonrası yaygın distal perfüzyon azalmasını tek başına açıklaması beklenmez.",
+    "Arteria descendens genus": "Desendan geniküler arter diz çevresi anastomozlarına katkı verir ve femoral arterden ayrılır. Kollateral rolü olsa da akut diz çıkığında distal ayak nabızlarının belirgin azalmasını açıklayan ana yaralanma hedefi değildir."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Diz ekleminin belirgin yer değiştirmesi ve spontan redüksiyon öyküsü → diz arkası nörovasküler yapıların gerilebileceği yüksek riskli mekanizmadır.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Ayakta soğukluk ve kapiller dolumun uzaması → distal perfüzyonun azaldığını gösterir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Dorsalis pedis ve posterior tibial nabızların birlikte zayıflaması → tek distal dal değil daha proksimal ana akım düzeyi lehinedir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Ayak bileği-kol indeksinin düşük ölçülmesi → klinik muayenedeki dolaşım bozukluğunu objektif olarak destekler.",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Arteria femoralis profunda": "Derin femoral arter uyluğun derin kas ve perforan dallarıyla ilişkilidir; proksimal uyluk travmalarında akla gelir. Diz çıkığı sonrası ayak nabızlarının azalması ve popliteal fossada dolgunluk daha distal, diz arkası ana damar segmentini düşündürür.",
+    "Arteria tibialis posterior": "Posterior tibial arter ayak bileği ve plantar dolaşımla ilişkilidir. İzole distal arter yaralanması tek bir nabzı etkileyebilir; bu hastada hem dorsalis pedis hem posterior tibial nabızların zayıflaması daha proksimal akım sorununu destekler.",
+    "Arteria fibularis": "Fibular arter bacağın lateral-posterior derin dolaşımına katkı verir, ancak rutin distal nabız muayenesinde ana belirleyici değildir. Diz çıkığı sonrası yaygın distal perfüzyon azalmasını tek başına açıklaması beklenmez.",
+    "Arteria descendens genus": "Desendan geniküler arter diz çevresi anastomozlarına katkı verir ve femoral arterden ayrılır. Kollateral rolü olsa da akut diz çıkığında distal ayak nabızlarının belirgin azalmasını açıklayan ana yaralanma hedefi değildir."
+  }
+},
+{
+  "id": "v199-new-395-omuz-kusagi-duzeyinde-ayrismis-duyu-kaybi",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi / Nöroloji",
+  "title": "Omuz kuşağı düzeyinde ayrışmış duyu kaybı",
+  "difficulty": "Zor",
+  "clinicalFocus": "Duyu modaliteleri ve spinal kord kesit anatomisini birlikte kullanarak santral kord lezyonlarında etkilenen yapıyı ayırt etme.",
+  "learningTarget": "Ağrı-sıcaklık, dorsal kolon ve motor yol bulgularını kullanarak spinal kord kesitinde lezyon lokalizasyonu yapabilme.",
+  "demographics": "21 yaşında kadın hasta",
+  "setting": "Nöroloji polikliniği",
+  "chiefComplaint": "Son aylarda omuz ve üst kol çevresinde sıcak-soğuk farkını eskisi kadar iyi ayırt edememe yakınması vardır.",
+  "stem": "Hasta birkaç aydır duş alırken omuzlarının ve üst kollarının sıcak suyu eskisi kadar net hissetmediğini fark ettiğini anlatır. Aynı dönemde çantasını taşıma, yazı yazma ve merdiven çıkma gibi günlük işlerinde belirgin güç kaybı olmamıştır. Yakınması yavaş ilerlemiş, son haftalarda mutfakta hafif bir yanığı geç fark etmesi üzerine randevu almıştır. Bacaklarında uyuşma, idrar kaçırma, ani travma veya ateşli hastalık öyküsü vermez.",
+  "patientIntro": {
+    "profile": "21 yaşında kadın hasta, omuz-kuşak düzeyinde seçici duyu azalması nedeniyle nöroloji polikliniğinde değerlendiriliyor.",
+    "presentation": "Ağrı-sıcaklık duyusu iki taraflı ve segmenter biçimde azalırken motor muayene ve derin duyu korunmuştur.",
+    "historySummary": "Hasta birkaç aydır duş alırken omuzlarının ve üst kollarının sıcak suyu eskisi kadar net hissetmediğini fark ettiğini anlatır. Aynı dönemde çantasını taşıma, yazı yazma ve merdiven çıkma gibi günlük işlerinde belirgin güç kaybı olmamıştır. Yakınması yavaş ilerlemiş, son haftalarda mutfakta hafif bir yanığı geç fark etmesi üzerine randevu almıştır. Bacaklarında uyuşma, idrar kaçırma, ani travma veya ateşli hastalık öyküsü vermez."
+  },
+  "vitals": {
+    "TA": "110/68 mmHg",
+    "Nabız": "72/dk",
+    "Solunum": "16/dk",
+    "SpO2": "%99, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "0.65 normal"
+  },
+  "exam": [
+    "Her iki omuz ve üst kol proksimalinde iğne ucu ve sıcak-soğuk ayrımı belirgin azalmıştır.",
+    "Hafif dokunma, vibrasyon ve eklem pozisyon duyusu üst ve alt ekstremitelerde korunmuştur.",
+    "Üst ekstremite kas gücü tamdır; atrofi, fasikülasyon veya belirgin tonus artışı izlenmez.",
+    "Derin tendon refleksleri simetriktir; patolojik refleks saptanmaz."
+  ],
+  "investigations": [
+    {
+      "id": "v199-new-395-omuz-kusagi-duzeyinde-ayrismis-duyu-kaybi-norolojik-muayene-ve-servikal-mrg",
+      "label": "Nörolojik duyu muayenesi ve servikal MRG bulgusu",
+      "title": "Nörolojik duyu muayenesi ve servikal MRG bulgusu",
+      "orderLabel": "Nörolojik duyu muayenesi ve servikal MRG bulgusu",
+      "type": "imaging",
+      "priority": "essential",
+      "subtype": "Nörolojik duyu muayenesi ve servikal MRG bulgusu",
+      "category": "imaging",
+      "testTypeCategory": "imaging",
+      "summary": "Servikal MRG’de orta hatta küçük santral kavite izlenmiş; muayenede iki taraflı omuz-kuşak düzeyinde ağrı-sıcaklık duyusu azalırken pozisyon, vibrasyon, kuvvet ve refleksler korunmuştur.",
+      "clinicalMeaning": "Servikal MRG’de orta hatta küçük santral kavite izlenmiş; muayenede iki taraflı omuz-kuşak düzeyinde ağrı-sıcaklık duyusu azalırken pozisyon, vibrasyon, kuvvet ve refleksler korunmuştur.",
+      "result": {
+        "title": "Nörolojik duyu muayenesi ve servikal MRG bulgusu",
+        "summary": "Servikal MRG’de orta hatta küçük santral kavite izlenmiş; muayenede iki taraflı omuz-kuşak düzeyinde ağrı-sıcaklık duyusu azalırken pozisyon, vibrasyon, kuvvet ve refleksler korunmuştur.",
+        "interpretation": "Servikal MRG’de orta hatta küçük santral kavite izlenmiş; muayenede iki taraflı omuz-kuşak düzeyinde ağrı-sıcaklık duyusu azalırken pozisyon, vibrasyon, kuvvet ve refleksler korunmuştur.",
+        "values": [
+          [
+            "Ağrı-sıcaklık duyusu",
+            "Her iki omuz ve üst kol proksimalinde belirgin azalmış.",
+            "",
+            ""
+          ],
+          [
+            "Derin duyu",
+            "Vibrasyon ve eklem pozisyon duyusu korunmuş.",
+            "",
+            ""
+          ],
+          [
+            "Motor sistem",
+            "Kas gücü tam; atrofi veya patolojik refleks saptanmadı.",
+            "",
+            ""
+          ],
+          [
+            "Servikal MRG",
+            "Alt servikal düzeyde orta hatta küçük santral kavite izlendi.",
+            "",
+            ""
+          ]
+        ],
+        "rows": [
+          [
+            "Ağrı-sıcaklık duyusu",
+            "Her iki omuz ve üst kol proksimalinde belirgin azalmış.",
+            "",
+            ""
+          ],
+          [
+            "Derin duyu",
+            "Vibrasyon ve eklem pozisyon duyusu korunmuş.",
+            "",
+            ""
+          ],
+          [
+            "Motor sistem",
+            "Kas gücü tam; atrofi veya patolojik refleks saptanmadı.",
+            "",
+            ""
+          ],
+          [
+            "Servikal MRG",
+            "Alt servikal düzeyde orta hatta küçük santral kavite izlendi.",
+            "",
+            ""
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Ağrı-sıcaklık duyusu",
+          "Her iki omuz ve üst kol proksimalinde belirgin azalmış.",
+          "",
+          ""
+        ],
+        [
+          "Derin duyu",
+          "Vibrasyon ve eklem pozisyon duyusu korunmuş.",
+          "",
+          ""
+        ],
+        [
+          "Motor sistem",
+          "Kas gücü tam; atrofi veya patolojik refleks saptanmadı.",
+          "",
+          ""
+        ],
+        [
+          "Servikal MRG",
+          "Alt servikal düzeyde orta hatta küçük santral kavite izlendi.",
+          "",
+          ""
+        ]
+      ],
+      "postAnswerExplanation": "Servikal MRG’de orta hatta küçük santral kavite izlenmiş; muayenede iki taraflı omuz-kuşak düzeyinde ağrı-sıcaklık duyusu azalırken pozisyon, vibrasyon, kuvvet ve refleksler korunmuştur.",
+      "interpretation": "Servikal MRG’de orta hatta küçük santral kavite izlenmiş; muayenede iki taraflı omuz-kuşak düzeyinde ağrı-sıcaklık duyusu azalırken pozisyon, vibrasyon, kuvvet ve refleksler korunmuştur.",
+      "explanationAfterAnswer": "Servikal MRG’de orta hatta küçük santral kavite izlenmiş; muayenede iki taraflı omuz-kuşak düzeyinde ağrı-sıcaklık duyusu azalırken pozisyon, vibrasyon, kuvvet ve refleksler korunmuştur.",
+      "testValueLabel": "Nörolojik duyu muayenesi ve servikal MRG bulgusu",
+      "educationalValue": "Nörolojik duyu muayenesi ve servikal MRG bulgusu",
+      "clinicalPriorityLabel": "Nörolojik duyu muayenesi ve servikal MRG bulgusu",
+      "scoreImpact": 4,
+      "scoreValue": 4,
+      "clinicalFlowOrder": 1,
+      "purpose": "Nörolojik duyu muayenesi ve servikal MRG bulgusu",
+      "inlineFeedback": "Servikal MRG’de orta hatta küçük santral kavite izlenmiş; muayenede iki taraflı omuz-kuşak düzeyinde ağrı-sıcaklık duyusu azalırken pozisyon, vibrasyon, kuvvet ve refleksler korunmuştur."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": false,
+  "question": "Bu seçici duyu kaybını en iyi açıklayan spinal kord yapısı hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Commissura alba anterior",
+    "options": [
+      "Tractus spinothalamicus lateralis",
+      "Fasciculus cuneatus",
+      "Cornu anterius",
+      "Tractus corticospinalis lateralis",
+      "Commissura alba anterior"
+    ],
+    "question": "Bu seçici duyu kaybını en iyi açıklayan spinal kord yapısı hangisidir?",
+    "explanation": "Olguda ağrı-sıcaklık duyusu iki taraflı ve segmenter biçimde azalırken dorsal kolon modaliteleri ve motor yollar korunmuştur. Servikal orta hat lezyonu, ağrı-sıcaklık liflerinin segmenter çaprazlaşma bölgesini etkileyerek bu ayrışmış duyu kaybı paternini oluşturur.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Ağrı-sıcaklık kaybı iki taraflı ve segmenterse, uzun trakt lezyonundan önce segmenter çaprazlaşma bölgesini düşün."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Olguda ağrı-sıcaklık duyusu iki taraflı ve segmenter biçimde azalırken dorsal kolon modaliteleri ve motor yollar korunmuştur. Servikal orta hat lezyonu, ağrı-sıcaklık liflerinin segmenter çaprazlaşma bölgesini etkileyerek bu ayrışmış duyu kaybı paternini oluşturur.",
+      "whyCorrect": "Olguda ağrı-sıcaklık duyusu iki taraflı ve segmenter biçimde azalırken dorsal kolon modaliteleri ve motor yollar korunmuştur. Servikal orta hat lezyonu, ağrı-sıcaklık liflerinin segmenter çaprazlaşma bölgesini etkileyerek bu ayrışmış duyu kaybı paternini oluşturur.",
+      "rationale": "Olguda ağrı-sıcaklık duyusu iki taraflı ve segmenter biçimde azalırken dorsal kolon modaliteleri ve motor yollar korunmuştur. Servikal orta hat lezyonu, ağrı-sıcaklık liflerinin segmenter çaprazlaşma bölgesini etkileyerek bu ayrışmış duyu kaybı paternini oluşturur.",
+      "correctOptionFeedback": "Doğru yanıttır; omurilikte ağrı-sıcaklık lifleri segmenter düzeyde orta hatta çaprazlaşırken santral yerleşimli lezyonlarla iki taraflı ve segmenter kayıp oluşturabilir. Dokunma, vibrasyon ve motor yolların korunması, seçici ağrı-sıcaklık kaybını bu yapı üzerinden açıklar.",
+      "keyClues": [
+        "Duyu kaybının iki taraflı ve omuz-kuşak/üst ekstremite proksimalinde belirgin olması",
+        "Ağrı ve sıcaklık duyusunun azalmasına rağmen hafif dokunma ve pozisyon duyusunun korunması",
+        "Kuvvet ve reflekslerin korunması",
+        "Servikal orta hatta küçük santral kavite izlenmesi"
+      ],
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Duyu kaybının iki taraflı ve omuz-kuşak/üst ekstremite proksimalinde belirgin olması → segmenter santral kord düzeyini düşündürür.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ağrı ve sıcaklık duyusunun azalmasına rağmen hafif dokunma ve pozisyon duyusunun korunması → duyu modalitelerinin ayrıştığını gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Kuvvet ve reflekslerin korunması → primer kortikospinal trakt veya ön boynuz etkilenimini zayıflatır.",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Servikal orta hatta küçük santral kavite izlenmesi → orta hat çaprazlaşan liflerin etkilenebileceği anatomik yerleşimi destekler.",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Ağrı-sıcaklık kaybı iki taraflı ve segmenterse, uzun trakt lezyonundan önce segmenter çaprazlaşma bölgesini düşün.",
+      "optionComparison": {
+        "Tractus spinothalamicus lateralis": "Lateral spinotalamik trakt ağrı ve sıcaklık duyusunu daha yukarı seviyelere taşır ve unilateral lezyonda karşı tarafta segmentlerin altında kayıp beklenir. Bu hastadaki iki taraflı, segmenter ve omuz-kuşak düzeyinde sınırlı kayıp doğrudan lateral trakt lezyonundan çok çaprazlaşma bölgesini düşündürür.",
+        "Fasciculus cuneatus": "Fasciculus cuneatus üst gövde ve üst ekstremiteden gelen vibrasyon, pozisyon ve ince dokunma duyusunu taşır. Olguda vibrasyon ve eklem pozisyon duyusu korunmuştur; kayıp ağrı-sıcaklık modalitesindedir.",
+        "Cornu anterius": "Ön boynuz motor nöron gövdelerini içerir ve etkileniminde alt motor nöron tipi güçsüzlük, atrofi ve fasikülasyon beklenir. Bu vakada ana bulgu seçici duyu kaybıdır; belirgin segmenter motor nöron bulgusu tariflenmemiştir.",
+        "Tractus corticospinalis lateralis": "Lateral kortikospinal trakt istemli motor kontrolle ilişkilidir ve lezyonunda spastisite, hiperrefleksi veya piramidal güçsüzlük beklenir. Hastanın kuvveti ve refleksleri korunmuş olduğundan duyu paternini bu trakt açıklamaz.",
+        "Commissura alba anterior": "Doğru yanıttır; omurilikte ağrı-sıcaklık lifleri segmenter düzeyde orta hatta çaprazlaşırken santral yerleşimli lezyonlarla iki taraflı ve segmenter kayıp oluşturabilir. Dokunma, vibrasyon ve motor yolların korunması, seçici ağrı-sıcaklık kaybını bu yapı üzerinden açıklar."
+      },
+      "whyWrong": {
+        "Tractus spinothalamicus lateralis": "Lateral spinotalamik trakt ağrı ve sıcaklık duyusunu daha yukarı seviyelere taşır ve unilateral lezyonda karşı tarafta segmentlerin altında kayıp beklenir. Bu hastadaki iki taraflı, segmenter ve omuz-kuşak düzeyinde sınırlı kayıp doğrudan lateral trakt lezyonundan çok çaprazlaşma bölgesini düşündürür.",
+        "Fasciculus cuneatus": "Fasciculus cuneatus üst gövde ve üst ekstremiteden gelen vibrasyon, pozisyon ve ince dokunma duyusunu taşır. Olguda vibrasyon ve eklem pozisyon duyusu korunmuştur; kayıp ağrı-sıcaklık modalitesindedir.",
+        "Cornu anterius": "Ön boynuz motor nöron gövdelerini içerir ve etkileniminde alt motor nöron tipi güçsüzlük, atrofi ve fasikülasyon beklenir. Bu vakada ana bulgu seçici duyu kaybıdır; belirgin segmenter motor nöron bulgusu tariflenmemiştir.",
+        "Tractus corticospinalis lateralis": "Lateral kortikospinal trakt istemli motor kontrolle ilişkilidir ve lezyonunda spastisite, hiperrefleksi veya piramidal güçsüzlük beklenir. Hastanın kuvveti ve refleksleri korunmuş olduğundan duyu paternini bu trakt açıklamaz."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Ağrı-sıcaklık, dorsal kolon ve motor yol bulgularını kullanarak spinal kord kesitinde lezyon lokalizasyonu yapabilme.",
+      "coreKnowledge": "Santral kord lezyonları, özellikle ağrı-sıcaklık liflerinin segmenter çaprazlaştığı orta hat bölgesini etkileyerek iki taraflı segmenter ağrı-sıcaklık kaybı yapabilir; dorsal kolon duyuları ve motor yollar başlangıçta korunabilir."
+    },
+    "whyCorrect": "Olguda ağrı-sıcaklık duyusu iki taraflı ve segmenter biçimde azalırken dorsal kolon modaliteleri ve motor yollar korunmuştur. Servikal orta hat lezyonu, ağrı-sıcaklık liflerinin segmenter çaprazlaşma bölgesini etkileyerek bu ayrışmış duyu kaybı paternini oluşturur.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Duyu kaybının iki taraflı ve omuz-kuşak/üst ekstremite proksimalinde belirgin olması → segmenter santral kord düzeyini düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Ağrı ve sıcaklık duyusunun azalmasına rağmen hafif dokunma ve pozisyon duyusunun korunması → duyu modalitelerinin ayrıştığını gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Kuvvet ve reflekslerin korunması → primer kortikospinal trakt veya ön boynuz etkilenimini zayıflatır.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Servikal orta hatta küçük santral kavite izlenmesi → orta hat çaprazlaşan liflerin etkilenebileceği anatomik yerleşimi destekler.",
+        "weight": "high",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Tractus spinothalamicus lateralis": "Lateral spinotalamik trakt ağrı ve sıcaklık duyusunu daha yukarı seviyelere taşır ve unilateral lezyonda karşı tarafta segmentlerin altında kayıp beklenir. Bu hastadaki iki taraflı, segmenter ve omuz-kuşak düzeyinde sınırlı kayıp doğrudan lateral trakt lezyonundan çok çaprazlaşma bölgesini düşündürür.",
+      "Fasciculus cuneatus": "Fasciculus cuneatus üst gövde ve üst ekstremiteden gelen vibrasyon, pozisyon ve ince dokunma duyusunu taşır. Olguda vibrasyon ve eklem pozisyon duyusu korunmuştur; kayıp ağrı-sıcaklık modalitesindedir.",
+      "Cornu anterius": "Ön boynuz motor nöron gövdelerini içerir ve etkileniminde alt motor nöron tipi güçsüzlük, atrofi ve fasikülasyon beklenir. Bu vakada ana bulgu seçici duyu kaybıdır; belirgin segmenter motor nöron bulgusu tariflenmemiştir.",
+      "Tractus corticospinalis lateralis": "Lateral kortikospinal trakt istemli motor kontrolle ilişkilidir ve lezyonunda spastisite, hiperrefleksi veya piramidal güçsüzlük beklenir. Hastanın kuvveti ve refleksleri korunmuş olduğundan duyu paternini bu trakt açıklamaz.",
+      "Commissura alba anterior": "Doğru yanıttır; omurilikte ağrı-sıcaklık lifleri segmenter düzeyde orta hatta çaprazlaşırken santral yerleşimli lezyonlarla iki taraflı ve segmenter kayıp oluşturabilir. Dokunma, vibrasyon ve motor yolların korunması, seçici ağrı-sıcaklık kaybını bu yapı üzerinden açıklar."
+    },
+    "coreKnowledge": "Santral kord lezyonları, özellikle ağrı-sıcaklık liflerinin segmenter çaprazlaştığı orta hat bölgesini etkileyerek iki taraflı segmenter ağrı-sıcaklık kaybı yapabilir; dorsal kolon duyuları ve motor yollar başlangıçta korunabilir.",
+    "examPearl": "Ağrı-sıcaklık kaybı iki taraflı ve segmenterse, uzun trakt lezyonundan önce segmenter çaprazlaşma bölgesini düşün.",
+    "whyWrong": {
+      "Tractus spinothalamicus lateralis": "Lateral spinotalamik trakt ağrı ve sıcaklık duyusunu daha yukarı seviyelere taşır ve unilateral lezyonda karşı tarafta segmentlerin altında kayıp beklenir. Bu hastadaki iki taraflı, segmenter ve omuz-kuşak düzeyinde sınırlı kayıp doğrudan lateral trakt lezyonundan çok çaprazlaşma bölgesini düşündürür.",
+      "Fasciculus cuneatus": "Fasciculus cuneatus üst gövde ve üst ekstremiteden gelen vibrasyon, pozisyon ve ince dokunma duyusunu taşır. Olguda vibrasyon ve eklem pozisyon duyusu korunmuştur; kayıp ağrı-sıcaklık modalitesindedir.",
+      "Cornu anterius": "Ön boynuz motor nöron gövdelerini içerir ve etkileniminde alt motor nöron tipi güçsüzlük, atrofi ve fasikülasyon beklenir. Bu vakada ana bulgu seçici duyu kaybıdır; belirgin segmenter motor nöron bulgusu tariflenmemiştir.",
+      "Tractus corticospinalis lateralis": "Lateral kortikospinal trakt istemli motor kontrolle ilişkilidir ve lezyonunda spastisite, hiperrefleksi veya piramidal güçsüzlük beklenir. Hastanın kuvveti ve refleksleri korunmuş olduğundan duyu paternini bu trakt açıklamaz."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Zor",
+  "aiMeta": {
+    "generatedAt": "manual-v199-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial"
+  },
+  "listTitle": "Omuz kuşağı düzeyinde ayrışmış duyu kaybı",
+  "cardTitle": "Omuz kuşağı düzeyinde ayrışmış duyu kaybı",
+  "coreKnowledge": "Santral kord lezyonları, özellikle ağrı-sıcaklık liflerinin segmenter çaprazlaştığı orta hat bölgesini etkileyerek iki taraflı segmenter ağrı-sıcaklık kaybı yapabilir; dorsal kolon duyuları ve motor yollar başlangıçta korunabilir.",
+  "examPearl": "Ağrı-sıcaklık kaybı iki taraflı ve segmenterse, uzun trakt lezyonundan önce segmenter çaprazlaşma bölgesini düşün.",
+  "whyCorrect": "Olguda ağrı-sıcaklık duyusu iki taraflı ve segmenter biçimde azalırken dorsal kolon modaliteleri ve motor yollar korunmuştur. Servikal orta hat lezyonu, ağrı-sıcaklık liflerinin segmenter çaprazlaşma bölgesini etkileyerek bu ayrışmış duyu kaybı paternini oluşturur.",
+  "optionComparison": {
+    "Tractus spinothalamicus lateralis": "Lateral spinotalamik trakt ağrı ve sıcaklık duyusunu daha yukarı seviyelere taşır ve unilateral lezyonda karşı tarafta segmentlerin altında kayıp beklenir. Bu hastadaki iki taraflı, segmenter ve omuz-kuşak düzeyinde sınırlı kayıp doğrudan lateral trakt lezyonundan çok çaprazlaşma bölgesini düşündürür.",
+    "Fasciculus cuneatus": "Fasciculus cuneatus üst gövde ve üst ekstremiteden gelen vibrasyon, pozisyon ve ince dokunma duyusunu taşır. Olguda vibrasyon ve eklem pozisyon duyusu korunmuştur; kayıp ağrı-sıcaklık modalitesindedir.",
+    "Cornu anterius": "Ön boynuz motor nöron gövdelerini içerir ve etkileniminde alt motor nöron tipi güçsüzlük, atrofi ve fasikülasyon beklenir. Bu vakada ana bulgu seçici duyu kaybıdır; belirgin segmenter motor nöron bulgusu tariflenmemiştir.",
+    "Tractus corticospinalis lateralis": "Lateral kortikospinal trakt istemli motor kontrolle ilişkilidir ve lezyonunda spastisite, hiperrefleksi veya piramidal güçsüzlük beklenir. Hastanın kuvveti ve refleksleri korunmuş olduğundan duyu paternini bu trakt açıklamaz.",
+    "Commissura alba anterior": "Doğru yanıttır; omurilikte ağrı-sıcaklık lifleri segmenter düzeyde orta hatta çaprazlaşırken santral yerleşimli lezyonlarla iki taraflı ve segmenter kayıp oluşturabilir. Dokunma, vibrasyon ve motor yolların korunması, seçici ağrı-sıcaklık kaybını bu yapı üzerinden açıklar."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Duyu kaybının iki taraflı ve omuz-kuşak/üst ekstremite proksimalinde belirgin olması → segmenter santral kord düzeyini düşündürür.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Ağrı ve sıcaklık duyusunun azalmasına rağmen hafif dokunma ve pozisyon duyusunun korunması → duyu modalitelerinin ayrıştığını gösterir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Kuvvet ve reflekslerin korunması → primer kortikospinal trakt veya ön boynuz etkilenimini zayıflatır.",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Servikal orta hatta küçük santral kavite izlenmesi → orta hat çaprazlaşan liflerin etkilenebileceği anatomik yerleşimi destekler.",
+      "weight": "high",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Tractus spinothalamicus lateralis": "Lateral spinotalamik trakt ağrı ve sıcaklık duyusunu daha yukarı seviyelere taşır ve unilateral lezyonda karşı tarafta segmentlerin altında kayıp beklenir. Bu hastadaki iki taraflı, segmenter ve omuz-kuşak düzeyinde sınırlı kayıp doğrudan lateral trakt lezyonundan çok çaprazlaşma bölgesini düşündürür.",
+    "Fasciculus cuneatus": "Fasciculus cuneatus üst gövde ve üst ekstremiteden gelen vibrasyon, pozisyon ve ince dokunma duyusunu taşır. Olguda vibrasyon ve eklem pozisyon duyusu korunmuştur; kayıp ağrı-sıcaklık modalitesindedir.",
+    "Cornu anterius": "Ön boynuz motor nöron gövdelerini içerir ve etkileniminde alt motor nöron tipi güçsüzlük, atrofi ve fasikülasyon beklenir. Bu vakada ana bulgu seçici duyu kaybıdır; belirgin segmenter motor nöron bulgusu tariflenmemiştir.",
+    "Tractus corticospinalis lateralis": "Lateral kortikospinal trakt istemli motor kontrolle ilişkilidir ve lezyonunda spastisite, hiperrefleksi veya piramidal güçsüzlük beklenir. Hastanın kuvveti ve refleksleri korunmuş olduğundan duyu paternini bu trakt açıklamaz."
+  }
+},
+
+  {
+    "id": "v200-new-396-dirsek-travmasi-sonrasi-distal-dolasim-azalmasi",
+    "branchId": "anatomy",
+    "caseType": "standard",
+    "relatedBranch": "Anatomi / Ortopedi",
+    "title": "Dirsek travması sonrası distal dolaşım azalması",
+    "difficulty": "Orta",
+    "clinicalFocus": "Dirsek çevresi kırıklarında fossa cubiti komşuluğunu ve üst ekstremite arteriyel akımını klinik dolaşım bulgularıyla ilişkilendirme.",
+    "learningTarget": "Distal nabız azalması, el soğukluğu ve suprakondiler bölge yerleşimini kullanarak dirsek önünden geçen ana arteriyel yapıyı ayırt edebilme.",
+    "demographics": "9 yaşında erkek çocuk",
+    "setting": "Ortopedi acili",
+    "chiefComplaint": "Hasta, düşme sonrası sağ dirsek ağrısı, şekil bozukluğu ve elinde soğukluk fark edilmesi nedeniyle getiriliyor.",
+    "stem": "Hasta okul bahçesinde koşarken takılıp açık eli üzerine düştüğünü anlatır. Düşmeden hemen sonra sağ dirseğinde şiddetli ağrı başlamış ve kolunu bükülü tutarak hareket ettirmek istememiştir. Ailesi kısa süre içinde dirsek çevresinde şişlik ve şekil bozukluğu geliştiğini, parmaklarını oynatmasına rağmen elinin karşı tarafa göre daha soğuk göründüğünü fark etmiştir. Evde pansuman yapılmamış, kanama ya da açık yara izlenmemiştir. Daha önce aynı koldan kırık veya damar işlemi geçirmediği öğrenilir.",
+    "patientIntro": {
+      "profile": "9 yaşında erkek çocuk, düşme sonrası sağ dirsek travması nedeniyle ortopedi acilinde değerlendiriliyor.",
+      "presentation": "Sağ dirsekte ağrı ve şişlik ile birlikte distal elde soğukluk ve nabız azalması vardır.",
+      "historySummary": "Hasta okul bahçesinde koşarken takılıp açık eli üzerine düştüğünü anlatır. Düşmeden hemen sonra sağ dirseğinde şiddetli ağrı başlamış ve kolunu bükülü tutarak hareket ettirmek istememiştir. Ailesi kısa süre içinde dirsek çevresinde şişlik ve şekil bozukluğu geliştiğini, parmaklarını oynatmasına rağmen elinin karşı tarafa göre daha soğuk göründüğünü fark etmiştir. Evde pansuman yapılmamış, kanama ya da açık yara izlenmemiştir. Daha önce aynı koldan kırık veya damar işlemi geçirmediği öğrenilir."
+    },
+    "vitals": {
+      "TA": "104/66 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "20/dk",
+      "SpO2": "99%, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "1.08 travma ağrısı ile uyumlu hafif artmış"
+    },
+    "exam": [
+      "Sağ dirsek çevresinde belirgin şişlik, hassasiyet ve hareketle artan ağrı vardır.",
+      "Sağ radial ve ulnar nabızlar sol tarafa göre zayıf palpabl alınır; el parmaklarında kapiller dolum gecikmiştir.",
+      "Parmak fleksiyon-ekstansiyonu ağrıya rağmen yapılabilmektedir; belirgin açık yara yoktur.",
+      "Önkol kompartmanları gergin değildir; elde yaygın duyu kaybı saptanmaz."
+    ],
+    "investigations": [
+      {
+        "id": "v200-new-396-dirsek-travmasi-sonrasi-distal-dolasim-azalmasi-dirsek-grafi-ve-doppler",
+        "label": "Dirsek grafisi ve distal akım değerlendirmesi",
+        "title": "Dirsek grafisi ve distal akım değerlendirmesi",
+        "orderLabel": "Dirsek grafisi ve distal akım değerlendirmesi",
+        "type": "xray",
+        "priority": "essential",
+        "subtype": "Dirsek grafisi ve distal akım değerlendirmesi",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "summary": "Distal humerustaki deplase kırık hattı ve aynı ekstremitede zayıflayan distal akım, dirsek önündeki ana arteriyel komşuluğun değerlendirilmesini gerektirir.",
+        "clinicalMeaning": "Distal humerustaki deplase kırık hattı ve aynı ekstremitede zayıflayan distal akım, dirsek önündeki ana arteriyel komşuluğun değerlendirilmesini gerektirir.",
+        "result": {
+          "title": "Dirsek grafisi ve distal akım değerlendirmesi",
+          "summary": "Distal humerustaki deplase kırık hattı ve aynı ekstremitede zayıflayan distal akım, dirsek önündeki ana arteriyel komşuluğun değerlendirilmesini gerektirir.",
+          "interpretation": "Distal humerustaki deplase kırık hattı ve aynı ekstremitede zayıflayan distal akım, dirsek önündeki ana arteriyel komşuluğun değerlendirilmesini gerektirir.",
+          "values": [
+            [
+              "Kemik düzeyi",
+              "Distal humerusta suprakondiler düzeyi içeren deplase kırık hattı izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Eklem hizalanması",
+              "Dirsek çevresinde yumuşak doku şişliği vardır; radius başı hizalanması korunmuştur.",
+              "",
+              ""
+            ],
+            [
+              "Distal akım",
+              "El bileği düzeyinde arteriyel akım sinyalleri karşı tarafa göre zayıf kaydedilmiştir.",
+              "",
+              ""
+            ],
+            [
+              "Yumuşak doku",
+              "Açık kırık lehine cilt bütünlüğü kaybı izlenmemiştir.",
+              "",
+              ""
+            ]
+          ],
+          "rows": [
+            [
+              "Kemik düzeyi",
+              "Distal humerusta suprakondiler düzeyi içeren deplase kırık hattı izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Eklem hizalanması",
+              "Dirsek çevresinde yumuşak doku şişliği vardır; radius başı hizalanması korunmuştur.",
+              "",
+              ""
+            ],
+            [
+              "Distal akım",
+              "El bileği düzeyinde arteriyel akım sinyalleri karşı tarafa göre zayıf kaydedilmiştir.",
+              "",
+              ""
+            ],
+            [
+              "Yumuşak doku",
+              "Açık kırık lehine cilt bütünlüğü kaybı izlenmemiştir.",
+              "",
+              ""
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kemik düzeyi",
+            "Distal humerusta suprakondiler düzeyi içeren deplase kırık hattı izlenir.",
+            "",
+            ""
+          ],
+          [
+            "Eklem hizalanması",
+            "Dirsek çevresinde yumuşak doku şişliği vardır; radius başı hizalanması korunmuştur.",
+            "",
+            ""
+          ],
+          [
+            "Distal akım",
+            "El bileği düzeyinde arteriyel akım sinyalleri karşı tarafa göre zayıf kaydedilmiştir.",
+            "",
+            ""
+          ],
+          [
+            "Yumuşak doku",
+            "Açık kırık lehine cilt bütünlüğü kaybı izlenmemiştir.",
+            "",
+            ""
+          ]
+        ],
+        "postAnswerExplanation": "Distal humerustaki deplase kırık hattı ve aynı ekstremitede zayıflayan distal akım, dirsek önündeki ana arteriyel komşuluğun değerlendirilmesini gerektirir.",
+        "interpretation": "Distal humerustaki deplase kırık hattı ve aynı ekstremitede zayıflayan distal akım, dirsek önündeki ana arteriyel komşuluğun değerlendirilmesini gerektirir.",
+        "explanationAfterAnswer": "Distal humerustaki deplase kırık hattı ve aynı ekstremitede zayıflayan distal akım, dirsek önündeki ana arteriyel komşuluğun değerlendirilmesini gerektirir.",
+        "testValueLabel": "Dirsek grafisi ve distal akım değerlendirmesi",
+        "educationalValue": "Dirsek grafisi ve distal akım değerlendirmesi",
+        "clinicalPriorityLabel": "Dirsek grafisi ve distal akım değerlendirmesi",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "clinicalFlowOrder": 1,
+        "purpose": "Dirsek grafisi ve distal akım değerlendirmesi",
+        "inlineFeedback": "Distal humerustaki deplase kırık hattı ve aynı ekstremitede zayıflayan distal akım, dirsek önündeki ana arteriyel komşuluğun değerlendirilmesini gerektirir."
+      }
+    ],
+    "useSyntheticInvestigationBank": false,
+    "managementSequence": {
+      "enabled": false
+    },
+    "hideExamSignal": false,
+    "question": "Bu bulgularla yaralanması en olası arter hangisidir?",
+    "questionType": "anatomy",
+    "answerTarget": "anatomy",
+    "diagnosis": {
+      "correct": "Arteria brachialis",
+      "options": [
+        "Arteria profunda brachii",
+        "Arteria radialis",
+        "Arteria brachialis",
+        "Arteria ulnaris",
+        "Arteria interossea anterior"
+      ],
+      "question": "Bu bulgularla yaralanması en olası arter hangisidir?",
+      "explanation": "Deplase suprakondiler distal humerus kırığı, dirsek önünde seyreden ana damar yapısını gererek veya sıkıştırarak el bileği düzeyindeki distal akımı azaltabilir. Radial ve ulnar nabızların birlikte zayıflaması lezyonun tek bir distal önkol dalından daha proksimalde olduğunu gösterir; derin kol arteri ise daha proksimal-posterior kompartmanla ilişkilidir.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Suprakondiler distal humerus travması + radial ve ulnar nabızların birlikte zayıflaması, tek bir distal dal yerine dirsek önündeki ana arteriyel yapıyı düşündürür."
+        }
+      ],
+      "answerFeedback": {
+        "summary": "Deplase suprakondiler distal humerus kırığı, dirsek önünde seyreden ana damar yapısını gererek veya sıkıştırarak el bileği düzeyindeki distal akımı azaltabilir. Radial ve ulnar nabızların birlikte zayıflaması lezyonun tek bir distal önkol dalından daha proksimalde olduğunu gösterir; derin kol arteri ise daha proksimal-posterior kompartmanla ilişkilidir.",
+        "whyCorrect": "Deplase suprakondiler distal humerus kırığı, dirsek önünde seyreden ana damar yapısını gererek veya sıkıştırarak el bileği düzeyindeki distal akımı azaltabilir. Radial ve ulnar nabızların birlikte zayıflaması lezyonun tek bir distal önkol dalından daha proksimalde olduğunu gösterir; derin kol arteri ise daha proksimal-posterior kompartmanla ilişkilidir.",
+        "rationale": "Deplase suprakondiler distal humerus kırığı, dirsek önünde seyreden ana damar yapısını gererek veya sıkıştırarak el bileği düzeyindeki distal akımı azaltabilir. Radial ve ulnar nabızların birlikte zayıflaması lezyonun tek bir distal önkol dalından daha proksimalde olduğunu gösterir; derin kol arteri ise daha proksimal-posterior kompartmanla ilişkilidir.",
+        "correctOptionFeedback": "Doğru yanıttır; kolun ana arteri fossa cubiti düzeyinde radial ve ulnar dallara ayrılmadan önce dirsek önünden geçer. Suprakondiler kırık sonrası distal iki ana nabzın birlikte zayıflaması ve elde soğukluk bu anatomik komşulukla uyumludur.",
+        "keyClues": [
+          "Deplase suprakondiler kırık hattı",
+          "Radial ve ulnar nabızların birlikte zayıflaması",
+          "El parmaklarında kapiller dolum gecikmesi",
+          "Açık yara ve yaygın sinir kaybı olmaması"
+        ],
+        "evidenceChain": [
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Deplase suprakondiler kırık hattı → dirsek önündeki nörovasküler geçişin risk altında olduğunu gösterir.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Radial ve ulnar nabızların birlikte zayıflaması → tek bir distal önkol dalından daha proksimal arteriyel etkilenimi destekler.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "El parmaklarında kapiller dolumun gecikmesi → distal perfüzyonun klinik olarak azaldığını gösterir.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Parmak hareketlerinin korunması ve yaygın duyu kaybının olmaması → ana bulgunun primer motor sinir lezyonundan çok dolaşım azalması olduğunu düşündürür.",
+            "weight": "medium",
+            "source": "case"
+          }
+        ],
+        "examPearl": "Suprakondiler distal humerus travması + radial ve ulnar nabızların birlikte zayıflaması, tek bir distal dal yerine dirsek önündeki ana arteriyel yapıyı düşündürür.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Suprakondiler distal humerus travması + radial ve ulnar nabızların birlikte zayıflaması, tek bir distal dal yerine dirsek önündeki ana arteriyel yapıyı düşündürür."
+          }
+        ],
+        "optionComparison": {
+          "Arteria profunda brachii": "Derin kol arteri humerusun posterior kompartmanı ve radial sinir komşuluğunda önemlidir; humerus cisim kırığı ve posterior kol bulguları olduğunda akla gelir. Bu olguda sorun dirsek önüne yakın suprakondiler düzeyde ve hem radial hem ulnar distal akımı etkileyen daha ana bir damar düzeyindedir.",
+          "Arteria radialis": "Radial arter distal önkol ve el bileği lateralinde palpasyonla değerlendirilir; tek başına etkilenirse ulnar akım korunabilir. Bu vakada radial ve ulnar nabızların birlikte zayıflaması lezyonun radial arter ayrımından önceki düzeye yakın olduğunu düşündürür.",
+          "Arteria brachialis": "Doğru yanıttır; kolun ana arteri fossa cubiti düzeyinde radial ve ulnar dallara ayrılmadan önce dirsek önünden geçer. Suprakondiler kırık sonrası distal iki ana nabzın birlikte zayıflaması ve elde soğukluk bu anatomik komşulukla uyumludur.",
+          "Arteria ulnaris": "Ulnar arter önkolun medial tarafı ve elin derin-yüzeyel ark katkısıyla ilişkilidir; tek dal etkileniminde radial nabız genellikle korunur. Burada iki distal nabzın birlikte azalması ulnar arterin izole lezyonundan çok daha proksimal bir noktayı destekler.",
+          "Arteria interossea anterior": "Anterior interosseöz arter önkol derin fleksör kompartmanı ve interosseöz membran çevresine dallar verir. Dirsek travması sonrası elin genel perfüzyonunun azalması ve iki ana distal nabzın zayıflaması bu küçük derin dal ile açıklanamaz."
+        },
+        "whyWrong": {
+          "Arteria profunda brachii": "Derin kol arteri humerusun posterior kompartmanı ve radial sinir komşuluğunda önemlidir; humerus cisim kırığı ve posterior kol bulguları olduğunda akla gelir. Bu olguda sorun dirsek önüne yakın suprakondiler düzeyde ve hem radial hem ulnar distal akımı etkileyen daha ana bir damar düzeyindedir.",
+          "Arteria radialis": "Radial arter distal önkol ve el bileği lateralinde palpasyonla değerlendirilir; tek başına etkilenirse ulnar akım korunabilir. Bu vakada radial ve ulnar nabızların birlikte zayıflaması lezyonun radial arter ayrımından önceki düzeye yakın olduğunu düşündürür.",
+          "Arteria ulnaris": "Ulnar arter önkolun medial tarafı ve elin derin-yüzeyel ark katkısıyla ilişkilidir; tek dal etkileniminde radial nabız genellikle korunur. Burada iki distal nabzın birlikte azalması ulnar arterin izole lezyonundan çok daha proksimal bir noktayı destekler.",
+          "Arteria interossea anterior": "Anterior interosseöz arter önkol derin fleksör kompartmanı ve interosseöz membran çevresine dallar verir. Dirsek travması sonrası elin genel perfüzyonunun azalması ve iki ana distal nabzın zayıflaması bu küçük derin dal ile açıklanamaz."
+        },
+        "managementSteps": [],
+        "management": [],
+        "learningOutcome": "Distal nabız azalması, el soğukluğu ve suprakondiler bölge yerleşimini kullanarak dirsek önünden geçen ana arteriyel yapıyı ayırt edebilme.",
+        "coreKnowledge": "Kolun ana arteri dirsek önünde radial ve ulnar dallara ayrılır; bu ayrımdan önceki etkilenim iki distal nabızda birlikte azalma oluşturabilir."
+      },
+      "whyCorrect": "Deplase suprakondiler distal humerus kırığı, dirsek önünde seyreden ana damar yapısını gererek veya sıkıştırarak el bileği düzeyindeki distal akımı azaltabilir. Radial ve ulnar nabızların birlikte zayıflaması lezyonun tek bir distal önkol dalından daha proksimalde olduğunu gösterir; derin kol arteri ise daha proksimal-posterior kompartmanla ilişkilidir.",
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Deplase suprakondiler kırık hattı → dirsek önündeki nörovasküler geçişin risk altında olduğunu gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Radial ve ulnar nabızların birlikte zayıflaması → tek bir distal önkol dalından daha proksimal arteriyel etkilenimi destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "El parmaklarında kapiller dolumun gecikmesi → distal perfüzyonun klinik olarak azaldığını gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Parmak hareketlerinin korunması ve yaygın duyu kaybının olmaması → ana bulgunun primer motor sinir lezyonundan çok dolaşım azalması olduğunu düşündürür.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Arteria profunda brachii": "Derin kol arteri humerusun posterior kompartmanı ve radial sinir komşuluğunda önemlidir; humerus cisim kırığı ve posterior kol bulguları olduğunda akla gelir. Bu olguda sorun dirsek önüne yakın suprakondiler düzeyde ve hem radial hem ulnar distal akımı etkileyen daha ana bir damar düzeyindedir.",
+        "Arteria radialis": "Radial arter distal önkol ve el bileği lateralinde palpasyonla değerlendirilir; tek başına etkilenirse ulnar akım korunabilir. Bu vakada radial ve ulnar nabızların birlikte zayıflaması lezyonun radial arter ayrımından önceki düzeye yakın olduğunu düşündürür.",
+        "Arteria brachialis": "Doğru yanıttır; kolun ana arteri fossa cubiti düzeyinde radial ve ulnar dallara ayrılmadan önce dirsek önünden geçer. Suprakondiler kırık sonrası distal iki ana nabzın birlikte zayıflaması ve elde soğukluk bu anatomik komşulukla uyumludur.",
+        "Arteria ulnaris": "Ulnar arter önkolun medial tarafı ve elin derin-yüzeyel ark katkısıyla ilişkilidir; tek dal etkileniminde radial nabız genellikle korunur. Burada iki distal nabzın birlikte azalması ulnar arterin izole lezyonundan çok daha proksimal bir noktayı destekler.",
+        "Arteria interossea anterior": "Anterior interosseöz arter önkol derin fleksör kompartmanı ve interosseöz membran çevresine dallar verir. Dirsek travması sonrası elin genel perfüzyonunun azalması ve iki ana distal nabzın zayıflaması bu küçük derin dal ile açıklanamaz."
+      },
+      "coreKnowledge": "Kolun ana arteri dirsek önünde radial ve ulnar dallara ayrılır; bu ayrımdan önceki etkilenim iki distal nabızda birlikte azalma oluşturabilir.",
+      "examPearl": "Suprakondiler distal humerus travması + radial ve ulnar nabızların birlikte zayıflaması, tek bir distal dal yerine dirsek önündeki ana arteriyel yapıyı düşündürür.",
+      "whyWrong": {
+        "Arteria profunda brachii": "Derin kol arteri humerusun posterior kompartmanı ve radial sinir komşuluğunda önemlidir; humerus cisim kırığı ve posterior kol bulguları olduğunda akla gelir. Bu olguda sorun dirsek önüne yakın suprakondiler düzeyde ve hem radial hem ulnar distal akımı etkileyen daha ana bir damar düzeyindedir.",
+        "Arteria radialis": "Radial arter distal önkol ve el bileği lateralinde palpasyonla değerlendirilir; tek başına etkilenirse ulnar akım korunabilir. Bu vakada radial ve ulnar nabızların birlikte zayıflaması lezyonun radial arter ayrımından önceki düzeye yakın olduğunu düşündürür.",
+        "Arteria ulnaris": "Ulnar arter önkolun medial tarafı ve elin derin-yüzeyel ark katkısıyla ilişkilidir; tek dal etkileniminde radial nabız genellikle korunur. Burada iki distal nabzın birlikte azalması ulnar arterin izole lezyonundan çok daha proksimal bir noktayı destekler.",
+        "Arteria interossea anterior": "Anterior interosseöz arter önkol derin fleksör kompartmanı ve interosseöz membran çevresine dallar verir. Dirsek travması sonrası elin genel perfüzyonunun azalması ve iki ana distal nabzın zayıflaması bu küçük derin dal ile açıklanamaz."
+      }
+    },
+    "shuffleOptions": false,
+    "difficultyTag": "Orta",
+    "aiMeta": {
+      "generatedAt": "manual-v200-anatomy-five-case-expansion",
+      "generator": "manual-editorial-anatomy-clinical-case-expansion",
+      "schemaVersion": "clinical-standard-v397-compatible",
+      "validationWarnings": [],
+      "provider": "manual-editorial",
+      "topicControl": "upper-extremity-vascular"
+    },
+    "listTitle": "Dirsek travması sonrası distal dolaşım azalması",
+    "cardTitle": "Dirsek travması sonrası distal dolaşım azalması",
+    "coreKnowledge": "Kolun ana arteri dirsek önünde radial ve ulnar dallara ayrılır; bu ayrımdan önceki etkilenim iki distal nabızda birlikte azalma oluşturabilir.",
+    "examPearl": "Suprakondiler distal humerus travması + radial ve ulnar nabızların birlikte zayıflaması, tek bir distal dal yerine dirsek önündeki ana arteriyel yapıyı düşündürür.",
+    "whyCorrect": "Deplase suprakondiler distal humerus kırığı, dirsek önünde seyreden ana damar yapısını gererek veya sıkıştırarak el bileği düzeyindeki distal akımı azaltabilir. Radial ve ulnar nabızların birlikte zayıflaması lezyonun tek bir distal önkol dalından daha proksimalde olduğunu gösterir; derin kol arteri ise daha proksimal-posterior kompartmanla ilişkilidir.",
+    "optionComparison": {
+      "Arteria profunda brachii": "Derin kol arteri humerusun posterior kompartmanı ve radial sinir komşuluğunda önemlidir; humerus cisim kırığı ve posterior kol bulguları olduğunda akla gelir. Bu olguda sorun dirsek önüne yakın suprakondiler düzeyde ve hem radial hem ulnar distal akımı etkileyen daha ana bir damar düzeyindedir.",
+      "Arteria radialis": "Radial arter distal önkol ve el bileği lateralinde palpasyonla değerlendirilir; tek başına etkilenirse ulnar akım korunabilir. Bu vakada radial ve ulnar nabızların birlikte zayıflaması lezyonun radial arter ayrımından önceki düzeye yakın olduğunu düşündürür.",
+      "Arteria brachialis": "Doğru yanıttır; kolun ana arteri fossa cubiti düzeyinde radial ve ulnar dallara ayrılmadan önce dirsek önünden geçer. Suprakondiler kırık sonrası distal iki ana nabzın birlikte zayıflaması ve elde soğukluk bu anatomik komşulukla uyumludur.",
+      "Arteria ulnaris": "Ulnar arter önkolun medial tarafı ve elin derin-yüzeyel ark katkısıyla ilişkilidir; tek dal etkileniminde radial nabız genellikle korunur. Burada iki distal nabzın birlikte azalması ulnar arterin izole lezyonundan çok daha proksimal bir noktayı destekler.",
+      "Arteria interossea anterior": "Anterior interosseöz arter önkol derin fleksör kompartmanı ve interosseöz membran çevresine dallar verir. Dirsek travması sonrası elin genel perfüzyonunun azalması ve iki ana distal nabzın zayıflaması bu küçük derin dal ile açıklanamaz."
+    },
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Deplase suprakondiler kırık hattı → dirsek önündeki nörovasküler geçişin risk altında olduğunu gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Radial ve ulnar nabızların birlikte zayıflaması → tek bir distal önkol dalından daha proksimal arteriyel etkilenimi destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "El parmaklarında kapiller dolumun gecikmesi → distal perfüzyonun klinik olarak azaldığını gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Parmak hareketlerinin korunması ve yaygın duyu kaybının olmaması → ana bulgunun primer motor sinir lezyonundan çok dolaşım azalması olduğunu düşündürür.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "whyWrong": {
+      "Arteria profunda brachii": "Derin kol arteri humerusun posterior kompartmanı ve radial sinir komşuluğunda önemlidir; humerus cisim kırığı ve posterior kol bulguları olduğunda akla gelir. Bu olguda sorun dirsek önüne yakın suprakondiler düzeyde ve hem radial hem ulnar distal akımı etkileyen daha ana bir damar düzeyindedir.",
+      "Arteria radialis": "Radial arter distal önkol ve el bileği lateralinde palpasyonla değerlendirilir; tek başına etkilenirse ulnar akım korunabilir. Bu vakada radial ve ulnar nabızların birlikte zayıflaması lezyonun radial arter ayrımından önceki düzeye yakın olduğunu düşündürür.",
+      "Arteria ulnaris": "Ulnar arter önkolun medial tarafı ve elin derin-yüzeyel ark katkısıyla ilişkilidir; tek dal etkileniminde radial nabız genellikle korunur. Burada iki distal nabzın birlikte azalması ulnar arterin izole lezyonundan çok daha proksimal bir noktayı destekler.",
+      "Arteria interossea anterior": "Anterior interosseöz arter önkol derin fleksör kompartmanı ve interosseöz membran çevresine dallar verir. Dirsek travması sonrası elin genel perfüzyonunun azalması ve iki ana distal nabzın zayıflaması bu küçük derin dal ile açıklanamaz."
+    }
+  },
+  {
+    "id": "v200-new-397-kulak-islemi-sonrasi-tat-degisikligi",
+    "branchId": "anatomy",
+    "caseType": "standard",
+    "relatedBranch": "Anatomi / Kulak Burun Boğaz",
+    "title": "Kulak işlemi sonrası tat değişikliği",
+    "difficulty": "Orta",
+    "clinicalFocus": "Orta kulak komşuluklarını yüz siniri dalları, tat lifleri ve parasempatik sekresyon bulgularıyla ilişkilendirme.",
+    "learningTarget": "Ön dil tadı ve submandibular-sublingual sekresyon bulgularını yüz kas fonksiyonu korunmuşken orta kulak düzeyindeki sinir dalıyla eşleştirebilme.",
+    "demographics": "31 yaşında kadın hasta",
+    "setting": "Kulak burun boğaz polikliniği",
+    "chiefComplaint": "Hasta, kulak zarına yönelik işlemden sonra dilin ön kısmında tat azalması ve ağız kuruluğu hissi nedeniyle değerlendiriliyor.",
+    "stem": "Hasta tekrarlayan orta kulak yakınmaları nedeniyle bir hafta önce sağ kulağından küçük bir işlem geçirdiğini anlatır. İlk günlerde kulak dolgunluğu ve hafif ağrı beklediği gibi azalmış, ancak yemek yerken dilinin sağ ön tarafında tatları daha silik algıladığını fark etmiştir. Özellikle ekşi ve tuzlu tatlarda fark belirginleşmiş, aynı tarafta ağız içinin daha kuru olduğunu söylemiştir. Yüzünde kayma, göz kapatmada güçlük veya işitmede ani belirgin kötüleşme tariflemez. Şikâyetleri işlemden önce yoktur.",
+    "patientIntro": {
+      "profile": "31 yaşında kadın hasta, orta kulak işlemi sonrası yeni gelişen tat değişikliği nedeniyle KBB polikliniğinde değerlendiriliyor.",
+      "presentation": "Dilin ön bölümünde tek taraflı tat azalması ve ağız kuruluğu hissi vardır; yüz motor fonksiyonları korunmuştur.",
+      "historySummary": "Hasta tekrarlayan orta kulak yakınmaları nedeniyle bir hafta önce sağ kulağından küçük bir işlem geçirdiğini anlatır. İlk günlerde kulak dolgunluğu ve hafif ağrı beklediği gibi azalmış, ancak yemek yerken dilinin sağ ön tarafında tatları daha silik algıladığını fark etmiştir. Özellikle ekşi ve tuzlu tatlarda fark belirginleşmiş, aynı tarafta ağız içinin daha kuru olduğunu söylemiştir. Yüzünde kayma, göz kapatmada güçlük veya işitmede ani belirgin kötüleşme tariflemez. Şikâyetleri işlemden önce yoktur."
+    },
+    "vitals": {
+      "TA": "116/72 mmHg",
+      "Nabız": "76/dk",
+      "Solunum": "15/dk",
+      "SpO2": "99%, oda havasında",
+      "Ateş": "36.5 °C",
+      "Şok indeksi": "0.66 normal"
+    },
+    "exam": [
+      "Yüz mimik kasları simetriktir; göz kapama ve ağız köşesi hareketleri tamdır.",
+      "Dilin sağ ön iki bölümünde tat duyusu karşı tarafa göre azalmış olarak tariflenir.",
+      "Aynı tarafta submandibular bölge palpasyonunda belirgin şişlik veya taş lehine hassasiyet yoktur.",
+      "Dış kulak yolunda aktif akıntı yoktur; genel nörolojik muayenede başka kraniyal sinir defisiti saptanmaz."
+    ],
+    "investigations": [
+      {
+        "id": "v200-new-397-kulak-islemi-sonrasi-tat-degisikligi-tat-ve-otoskopi-degerlendirmesi",
+        "label": "Otoskopi ve tat-duyu değerlendirmesi",
+        "title": "Otoskopi ve tat-duyu değerlendirmesi",
+        "orderLabel": "Otoskopi ve tat-duyu değerlendirmesi",
+        "type": "clinical",
+        "priority": "essential",
+        "subtype": "Otoskopi ve tat-duyu değerlendirmesi",
+        "category": "clinicalAssessment",
+        "testTypeCategory": "clinicalAssessment",
+        "summary": "Objektif değerlendirme, yüz motor fonksiyonları korunurken dilin ön bölümünde tek taraflı tat azalmasını ve orta kulak işlem alanı ile zaman ilişkisini gösterir.",
+        "clinicalMeaning": "Objektif değerlendirme, yüz motor fonksiyonları korunurken dilin ön bölümünde tek taraflı tat azalmasını ve orta kulak işlem alanı ile zaman ilişkisini gösterir.",
+        "result": {
+          "title": "Otoskopi ve tat-duyu değerlendirmesi",
+          "summary": "Objektif değerlendirme, yüz motor fonksiyonları korunurken dilin ön bölümünde tek taraflı tat azalmasını ve orta kulak işlem alanı ile zaman ilişkisini gösterir.",
+          "interpretation": "Objektif değerlendirme, yüz motor fonksiyonları korunurken dilin ön bölümünde tek taraflı tat azalmasını ve orta kulak işlem alanı ile zaman ilişkisini gösterir.",
+          "values": [
+            [
+              "İşlem alanı",
+              "Sağ timpanik membran çevresinde iyileşen sınırlı işlem izi izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Tat değerlendirmesi",
+              "Dilin sağ ön bölümünde tat algısı karşı tarafa göre azalmış kaydedilir.",
+              "",
+              ""
+            ],
+            [
+              "Yüz motor muayenesi",
+              "Alın kırıştırma, göz kapama ve gülümseme simetriktir.",
+              "",
+              ""
+            ],
+            [
+              "İşitme taraması",
+              "Yatak başı değerlendirmede ani belirgin asimetri saptanmaz.",
+              "",
+              ""
+            ]
+          ],
+          "rows": [
+            [
+              "İşlem alanı",
+              "Sağ timpanik membran çevresinde iyileşen sınırlı işlem izi izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Tat değerlendirmesi",
+              "Dilin sağ ön bölümünde tat algısı karşı tarafa göre azalmış kaydedilir.",
+              "",
+              ""
+            ],
+            [
+              "Yüz motor muayenesi",
+              "Alın kırıştırma, göz kapama ve gülümseme simetriktir.",
+              "",
+              ""
+            ],
+            [
+              "İşitme taraması",
+              "Yatak başı değerlendirmede ani belirgin asimetri saptanmaz.",
+              "",
+              ""
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "İşlem alanı",
+            "Sağ timpanik membran çevresinde iyileşen sınırlı işlem izi izlenir.",
+            "",
+            ""
+          ],
+          [
+            "Tat değerlendirmesi",
+            "Dilin sağ ön bölümünde tat algısı karşı tarafa göre azalmış kaydedilir.",
+            "",
+            ""
+          ],
+          [
+            "Yüz motor muayenesi",
+            "Alın kırıştırma, göz kapama ve gülümseme simetriktir.",
+            "",
+            ""
+          ],
+          [
+            "İşitme taraması",
+            "Yatak başı değerlendirmede ani belirgin asimetri saptanmaz.",
+            "",
+            ""
+          ]
+        ],
+        "postAnswerExplanation": "Objektif değerlendirme, yüz motor fonksiyonları korunurken dilin ön bölümünde tek taraflı tat azalmasını ve orta kulak işlem alanı ile zaman ilişkisini gösterir.",
+        "interpretation": "Objektif değerlendirme, yüz motor fonksiyonları korunurken dilin ön bölümünde tek taraflı tat azalmasını ve orta kulak işlem alanı ile zaman ilişkisini gösterir.",
+        "explanationAfterAnswer": "Objektif değerlendirme, yüz motor fonksiyonları korunurken dilin ön bölümünde tek taraflı tat azalmasını ve orta kulak işlem alanı ile zaman ilişkisini gösterir.",
+        "testValueLabel": "Otoskopi ve tat-duyu değerlendirmesi",
+        "educationalValue": "Otoskopi ve tat-duyu değerlendirmesi",
+        "clinicalPriorityLabel": "Otoskopi ve tat-duyu değerlendirmesi",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "clinicalFlowOrder": 1,
+        "purpose": "Otoskopi ve tat-duyu değerlendirmesi",
+        "inlineFeedback": "Objektif değerlendirme, yüz motor fonksiyonları korunurken dilin ön bölümünde tek taraflı tat azalmasını ve orta kulak işlem alanı ile zaman ilişkisini gösterir."
+      }
+    ],
+    "useSyntheticInvestigationBank": false,
+    "managementSequence": {
+      "enabled": false
+    },
+    "hideExamSignal": false,
+    "question": "Bu bulguları en iyi açıklayan etkilenen sinir dalı hangisidir?",
+    "questionType": "anatomy",
+    "answerTarget": "anatomy",
+    "diagnosis": {
+      "correct": "N. facialis - chorda tympani dalı",
+      "options": [
+        "N. facialis - petrosus major dalı",
+        "N. facialis - stapedius dalı",
+        "N. facialis - chorda tympani dalı",
+        "N. glossopharyngeus - timpanik dal",
+        "N. mandibularis - auriculotemporal dalı"
+      ],
+      "question": "Bu bulguları en iyi açıklayan etkilenen sinir dalı hangisidir?",
+      "explanation": "Ön dilde tat azalması ve submandibular-sublingual sekresyon etkilenimi, yüz kasları korunmuşken yüz sinirinin motor ana gövdesinden ayrılan özel bir dal düzeyini düşündürür. Orta kulak işleminden sonra başlaması, bu liflerin timpanik kavite komşuluğunda etkilenmesiyle uyumludur; stapedius dalı hiperakuziyle, major petrosal dal lakrimal sekresyonla, auriculotemporal sinir ise parotis ve temporal bölge duyusuyla daha ilişkilidir.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Orta kulak işlemi sonrası yüz felci olmadan ön dil tadı azalırsa, ana motor gövdeden çok timpanik kaviteyle ilişkili tat-parasempatik dalı düşün."
+        }
+      ],
+      "answerFeedback": {
+        "summary": "Ön dilde tat azalması ve submandibular-sublingual sekresyon etkilenimi, yüz kasları korunmuşken yüz sinirinin motor ana gövdesinden ayrılan özel bir dal düzeyini düşündürür. Orta kulak işleminden sonra başlaması, bu liflerin timpanik kavite komşuluğunda etkilenmesiyle uyumludur; stapedius dalı hiperakuziyle, major petrosal dal lakrimal sekresyonla, auriculotemporal sinir ise parotis ve temporal bölge duyusuyla daha ilişkilidir.",
+        "whyCorrect": "Ön dilde tat azalması ve submandibular-sublingual sekresyon etkilenimi, yüz kasları korunmuşken yüz sinirinin motor ana gövdesinden ayrılan özel bir dal düzeyini düşündürür. Orta kulak işleminden sonra başlaması, bu liflerin timpanik kavite komşuluğunda etkilenmesiyle uyumludur; stapedius dalı hiperakuziyle, major petrosal dal lakrimal sekresyonla, auriculotemporal sinir ise parotis ve temporal bölge duyusuyla daha ilişkilidir.",
+        "rationale": "Ön dilde tat azalması ve submandibular-sublingual sekresyon etkilenimi, yüz kasları korunmuşken yüz sinirinin motor ana gövdesinden ayrılan özel bir dal düzeyini düşündürür. Orta kulak işleminden sonra başlaması, bu liflerin timpanik kavite komşuluğunda etkilenmesiyle uyumludur; stapedius dalı hiperakuziyle, major petrosal dal lakrimal sekresyonla, auriculotemporal sinir ise parotis ve temporal bölge duyusuyla daha ilişkilidir.",
+        "correctOptionFeedback": "Doğru yanıttır; orta kulak boşluğu ile yakın seyrederek dilin ön iki bölümünden tat lifleri ve submandibular-sublingual bezlere parasempatik lifler taşır. Yüz kasları korunmuşken işlem sonrası tat azalması ve ağız kuruluğu bu dal düzeyini destekler.",
+        "keyClues": [
+          "Yakınmaların orta kulak işleminden sonra başlaması",
+          "Dilin ön bölümünde tek taraflı tat azalması",
+          "Yüz mimik hareketlerinin korunması",
+          "Aynı tarafta ağız kuruluğu hissinin eşlik etmesi"
+        ],
+        "evidenceChain": [
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Yakınmaların orta kulak işleminden sonra başlaması → timpanik kavite komşuluğundaki küçük sinir dallarını riskli hale getirir.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Dilin ön bölümünde tat azalması → genel somatik duyudan çok özel visseral afferent tat liflerinin etkilendiğini gösterir.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Yüz mimik hareketlerinin korunması → yüz sinirinin ana motor gövdesinde geniş lezyon olmadığını destekler.",
+            "weight": "medium",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Ağız kuruluğu hissinin eşlik etmesi → submandibular-sublingual parasempatik liflerle birlikte giden dalı güçlendirir.",
+            "weight": "medium",
+            "source": "case"
+          }
+        ],
+        "examPearl": "Orta kulak işlemi sonrası yüz felci olmadan ön dil tadı azalırsa, ana motor gövdeden çok timpanik kaviteyle ilişkili tat-parasempatik dalı düşün.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Orta kulak işlemi sonrası yüz felci olmadan ön dil tadı azalırsa, ana motor gövdeden çok timpanik kaviteyle ilişkili tat-parasempatik dalı düşün."
+          }
+        ],
+        "optionComparison": {
+          "N. facialis - petrosus major dalı": "Major petrosal sinir lakrimal bez ve nazopalatin bölge parasempatik yolunda önemlidir; göz kuruluğu ve pterigopalatin ganglion ilişkili bulgularla öne çıkar. Bu olguda baskın bulgu ön dil tadı ve ağız içi kuruluk hissidir, yüz motor kaybı da yoktur.",
+          "N. facialis - stapedius dalı": "Stapedius dalı orta kulakta küçük bir kasa gider; etkilenirse özellikle seslere aşırı hassasiyet beklenir. Ön dil tat azalması ve submandibular-sublingual sekresyon şikâyeti bu dalın temel fonksiyonuyla açıklanamaz.",
+          "N. facialis - chorda tympani dalı": "Doğru yanıttır; orta kulak boşluğu ile yakın seyrederek dilin ön iki bölümünden tat lifleri ve submandibular-sublingual bezlere parasempatik lifler taşır. Yüz kasları korunmuşken işlem sonrası tat azalması ve ağız kuruluğu bu dal düzeyini destekler.",
+          "N. glossopharyngeus - timpanik dal": "Timpanik sinir glossopharyngeal sinirden gelir ve orta kulak mukozası ile parotis parasempatik yoluna katkı sağlar. Ön dil tadının azalması ve submandibular-sublingual sekresyon etkilenimi bu seçenekten çok yüz siniriyle ilişkili tat dalını düşündürür.",
+          "N. mandibularis - auriculotemporal dalı": "Auriculotemporal sinir mandibular sinir dalıdır; temporal bölge, dış kulak çevresi duyusu ve parotisle ilişkili lifler taşır. Dilin ön bölümündeki tat kaybı ve orta kulak işlemine bağlı tabloyu primer olarak açıklamaz."
+        },
+        "whyWrong": {
+          "N. facialis - petrosus major dalı": "Major petrosal sinir lakrimal bez ve nazopalatin bölge parasempatik yolunda önemlidir; göz kuruluğu ve pterigopalatin ganglion ilişkili bulgularla öne çıkar. Bu olguda baskın bulgu ön dil tadı ve ağız içi kuruluk hissidir, yüz motor kaybı da yoktur.",
+          "N. facialis - stapedius dalı": "Stapedius dalı orta kulakta küçük bir kasa gider; etkilenirse özellikle seslere aşırı hassasiyet beklenir. Ön dil tat azalması ve submandibular-sublingual sekresyon şikâyeti bu dalın temel fonksiyonuyla açıklanamaz.",
+          "N. glossopharyngeus - timpanik dal": "Timpanik sinir glossopharyngeal sinirden gelir ve orta kulak mukozası ile parotis parasempatik yoluna katkı sağlar. Ön dil tadının azalması ve submandibular-sublingual sekresyon etkilenimi bu seçenekten çok yüz siniriyle ilişkili tat dalını düşündürür.",
+          "N. mandibularis - auriculotemporal dalı": "Auriculotemporal sinir mandibular sinir dalıdır; temporal bölge, dış kulak çevresi duyusu ve parotisle ilişkili lifler taşır. Dilin ön bölümündeki tat kaybı ve orta kulak işlemine bağlı tabloyu primer olarak açıklamaz."
+        },
+        "managementSteps": [],
+        "management": [],
+        "learningOutcome": "Ön dil tadı ve submandibular-sublingual sekresyon bulgularını yüz kas fonksiyonu korunmuşken orta kulak düzeyindeki sinir dalıyla eşleştirebilme.",
+        "coreKnowledge": "Ön dil tadı yüz siniriyle ilişkili bir dal üzerinden taşınır; yüz motor fonksiyonu korunmuşken tat ve sekresyon bulgusu ana motor lezyondan çok dal düzeyini düşündürür."
+      },
+      "whyCorrect": "Ön dilde tat azalması ve submandibular-sublingual sekresyon etkilenimi, yüz kasları korunmuşken yüz sinirinin motor ana gövdesinden ayrılan özel bir dal düzeyini düşündürür. Orta kulak işleminden sonra başlaması, bu liflerin timpanik kavite komşuluğunda etkilenmesiyle uyumludur; stapedius dalı hiperakuziyle, major petrosal dal lakrimal sekresyonla, auriculotemporal sinir ise parotis ve temporal bölge duyusuyla daha ilişkilidir.",
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Yakınmaların orta kulak işleminden sonra başlaması → timpanik kavite komşuluğundaki küçük sinir dallarını riskli hale getirir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Dilin ön bölümünde tat azalması → genel somatik duyudan çok özel visseral afferent tat liflerinin etkilendiğini gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Yüz mimik hareketlerinin korunması → yüz sinirinin ana motor gövdesinde geniş lezyon olmadığını destekler.",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ağız kuruluğu hissinin eşlik etmesi → submandibular-sublingual parasempatik liflerle birlikte giden dalı güçlendirir.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "N. facialis - petrosus major dalı": "Major petrosal sinir lakrimal bez ve nazopalatin bölge parasempatik yolunda önemlidir; göz kuruluğu ve pterigopalatin ganglion ilişkili bulgularla öne çıkar. Bu olguda baskın bulgu ön dil tadı ve ağız içi kuruluk hissidir, yüz motor kaybı da yoktur.",
+        "N. facialis - stapedius dalı": "Stapedius dalı orta kulakta küçük bir kasa gider; etkilenirse özellikle seslere aşırı hassasiyet beklenir. Ön dil tat azalması ve submandibular-sublingual sekresyon şikâyeti bu dalın temel fonksiyonuyla açıklanamaz.",
+        "N. facialis - chorda tympani dalı": "Doğru yanıttır; orta kulak boşluğu ile yakın seyrederek dilin ön iki bölümünden tat lifleri ve submandibular-sublingual bezlere parasempatik lifler taşır. Yüz kasları korunmuşken işlem sonrası tat azalması ve ağız kuruluğu bu dal düzeyini destekler.",
+        "N. glossopharyngeus - timpanik dal": "Timpanik sinir glossopharyngeal sinirden gelir ve orta kulak mukozası ile parotis parasempatik yoluna katkı sağlar. Ön dil tadının azalması ve submandibular-sublingual sekresyon etkilenimi bu seçenekten çok yüz siniriyle ilişkili tat dalını düşündürür.",
+        "N. mandibularis - auriculotemporal dalı": "Auriculotemporal sinir mandibular sinir dalıdır; temporal bölge, dış kulak çevresi duyusu ve parotisle ilişkili lifler taşır. Dilin ön bölümündeki tat kaybı ve orta kulak işlemine bağlı tabloyu primer olarak açıklamaz."
+      },
+      "coreKnowledge": "Ön dil tadı yüz siniriyle ilişkili bir dal üzerinden taşınır; yüz motor fonksiyonu korunmuşken tat ve sekresyon bulgusu ana motor lezyondan çok dal düzeyini düşündürür.",
+      "examPearl": "Orta kulak işlemi sonrası yüz felci olmadan ön dil tadı azalırsa, ana motor gövdeden çok timpanik kaviteyle ilişkili tat-parasempatik dalı düşün.",
+      "whyWrong": {
+        "N. facialis - petrosus major dalı": "Major petrosal sinir lakrimal bez ve nazopalatin bölge parasempatik yolunda önemlidir; göz kuruluğu ve pterigopalatin ganglion ilişkili bulgularla öne çıkar. Bu olguda baskın bulgu ön dil tadı ve ağız içi kuruluk hissidir, yüz motor kaybı da yoktur.",
+        "N. facialis - stapedius dalı": "Stapedius dalı orta kulakta küçük bir kasa gider; etkilenirse özellikle seslere aşırı hassasiyet beklenir. Ön dil tat azalması ve submandibular-sublingual sekresyon şikâyeti bu dalın temel fonksiyonuyla açıklanamaz.",
+        "N. glossopharyngeus - timpanik dal": "Timpanik sinir glossopharyngeal sinirden gelir ve orta kulak mukozası ile parotis parasempatik yoluna katkı sağlar. Ön dil tadının azalması ve submandibular-sublingual sekresyon etkilenimi bu seçenekten çok yüz siniriyle ilişkili tat dalını düşündürür.",
+        "N. mandibularis - auriculotemporal dalı": "Auriculotemporal sinir mandibular sinir dalıdır; temporal bölge, dış kulak çevresi duyusu ve parotisle ilişkili lifler taşır. Dilin ön bölümündeki tat kaybı ve orta kulak işlemine bağlı tabloyu primer olarak açıklamaz."
+      }
+    },
+    "shuffleOptions": false,
+    "difficultyTag": "Orta",
+    "aiMeta": {
+      "generatedAt": "manual-v200-anatomy-five-case-expansion",
+      "generator": "manual-editorial-anatomy-clinical-case-expansion",
+      "schemaVersion": "clinical-standard-v397-compatible",
+      "validationWarnings": [],
+      "provider": "manual-editorial",
+      "topicControl": "head-neck-cranial-nerve-branch"
+    },
+    "listTitle": "Kulak işlemi sonrası tat değişikliği",
+    "cardTitle": "Kulak işlemi sonrası tat değişikliği",
+    "coreKnowledge": "Ön dil tadı yüz siniriyle ilişkili bir dal üzerinden taşınır; yüz motor fonksiyonu korunmuşken tat ve sekresyon bulgusu ana motor lezyondan çok dal düzeyini düşündürür.",
+    "examPearl": "Orta kulak işlemi sonrası yüz felci olmadan ön dil tadı azalırsa, ana motor gövdeden çok timpanik kaviteyle ilişkili tat-parasempatik dalı düşün.",
+    "whyCorrect": "Ön dilde tat azalması ve submandibular-sublingual sekresyon etkilenimi, yüz kasları korunmuşken yüz sinirinin motor ana gövdesinden ayrılan özel bir dal düzeyini düşündürür. Orta kulak işleminden sonra başlaması, bu liflerin timpanik kavite komşuluğunda etkilenmesiyle uyumludur; stapedius dalı hiperakuziyle, major petrosal dal lakrimal sekresyonla, auriculotemporal sinir ise parotis ve temporal bölge duyusuyla daha ilişkilidir.",
+    "optionComparison": {
+      "N. facialis - petrosus major dalı": "Major petrosal sinir lakrimal bez ve nazopalatin bölge parasempatik yolunda önemlidir; göz kuruluğu ve pterigopalatin ganglion ilişkili bulgularla öne çıkar. Bu olguda baskın bulgu ön dil tadı ve ağız içi kuruluk hissidir, yüz motor kaybı da yoktur.",
+      "N. facialis - stapedius dalı": "Stapedius dalı orta kulakta küçük bir kasa gider; etkilenirse özellikle seslere aşırı hassasiyet beklenir. Ön dil tat azalması ve submandibular-sublingual sekresyon şikâyeti bu dalın temel fonksiyonuyla açıklanamaz.",
+      "N. facialis - chorda tympani dalı": "Doğru yanıttır; orta kulak boşluğu ile yakın seyrederek dilin ön iki bölümünden tat lifleri ve submandibular-sublingual bezlere parasempatik lifler taşır. Yüz kasları korunmuşken işlem sonrası tat azalması ve ağız kuruluğu bu dal düzeyini destekler.",
+      "N. glossopharyngeus - timpanik dal": "Timpanik sinir glossopharyngeal sinirden gelir ve orta kulak mukozası ile parotis parasempatik yoluna katkı sağlar. Ön dil tadının azalması ve submandibular-sublingual sekresyon etkilenimi bu seçenekten çok yüz siniriyle ilişkili tat dalını düşündürür.",
+      "N. mandibularis - auriculotemporal dalı": "Auriculotemporal sinir mandibular sinir dalıdır; temporal bölge, dış kulak çevresi duyusu ve parotisle ilişkili lifler taşır. Dilin ön bölümündeki tat kaybı ve orta kulak işlemine bağlı tabloyu primer olarak açıklamaz."
+    },
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Yakınmaların orta kulak işleminden sonra başlaması → timpanik kavite komşuluğundaki küçük sinir dallarını riskli hale getirir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Dilin ön bölümünde tat azalması → genel somatik duyudan çok özel visseral afferent tat liflerinin etkilendiğini gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Yüz mimik hareketlerinin korunması → yüz sinirinin ana motor gövdesinde geniş lezyon olmadığını destekler.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Ağız kuruluğu hissinin eşlik etmesi → submandibular-sublingual parasempatik liflerle birlikte giden dalı güçlendirir.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "whyWrong": {
+      "N. facialis - petrosus major dalı": "Major petrosal sinir lakrimal bez ve nazopalatin bölge parasempatik yolunda önemlidir; göz kuruluğu ve pterigopalatin ganglion ilişkili bulgularla öne çıkar. Bu olguda baskın bulgu ön dil tadı ve ağız içi kuruluk hissidir, yüz motor kaybı da yoktur.",
+      "N. facialis - stapedius dalı": "Stapedius dalı orta kulakta küçük bir kasa gider; etkilenirse özellikle seslere aşırı hassasiyet beklenir. Ön dil tat azalması ve submandibular-sublingual sekresyon şikâyeti bu dalın temel fonksiyonuyla açıklanamaz.",
+      "N. glossopharyngeus - timpanik dal": "Timpanik sinir glossopharyngeal sinirden gelir ve orta kulak mukozası ile parotis parasempatik yoluna katkı sağlar. Ön dil tadının azalması ve submandibular-sublingual sekresyon etkilenimi bu seçenekten çok yüz siniriyle ilişkili tat dalını düşündürür.",
+      "N. mandibularis - auriculotemporal dalı": "Auriculotemporal sinir mandibular sinir dalıdır; temporal bölge, dış kulak çevresi duyusu ve parotisle ilişkili lifler taşır. Dilin ön bölümündeki tat kaybı ve orta kulak işlemine bağlı tabloyu primer olarak açıklamaz."
+    }
+  },
+  {
+    "id": "v200-new-398-meme-ic-kadraninda-nodal-degerlendirme",
+    "branchId": "anatomy",
+    "caseType": "standard",
+    "relatedBranch": "Anatomi / Genel Cerrahi",
+    "title": "Meme iç kadranında nodal değerlendirme",
+    "difficulty": "Orta",
+    "clinicalFocus": "Meme lenf drenajında iç kadran, aksiller ve parasternal yolları klinik lokalizasyon üzerinden ayırt etme.",
+    "learningTarget": "Meme tümörünün kadranına göre öncelikli lenfatik yayılım yollarını ve nodal değerlendirme bölgelerini ayırt edebilme.",
+    "demographics": "52 yaşında kadın hasta",
+    "setting": "Genel cerrahi polikliniği",
+    "chiefComplaint": "Hasta, sol memenin iç tarafında ele gelen sertlik nedeniyle nodal yayılım açısından değerlendiriliyor.",
+    "stem": "Hasta iki ay önce duş sırasında sol memesinin iç tarafında küçük bir sertlik fark ettiğini anlatır. Başlangıçta ağrısız olduğu için takip etmiş, ancak sertliğin kaybolmaması üzerine muayene randevusu almıştır. Meme başından kanlı akıntı, yakın zamanda travma veya emzirme öyküsü olmadığını söyler. Ailesinden biri fark edilir koltuk altı şişliği olup olmadığını sorduğunda belirgin bir şişlik hissetmediğini belirtmiştir. Daha önce meme cerrahisi veya radyoterapi geçirmemiştir.",
+    "patientIntro": {
+      "profile": "52 yaşında kadın hasta, sol memenin iç tarafında ele gelen kitle nedeniyle genel cerrahi polikliniğinde değerlendiriliyor.",
+      "presentation": "İç kadran yerleşimli meme kitlesinde nodal yayılım yönü ve değerlendirme bölgesi sorgulanmaktadır.",
+      "historySummary": "Hasta iki ay önce duş sırasında sol memesinin iç tarafında küçük bir sertlik fark ettiğini anlatır. Başlangıçta ağrısız olduğu için takip etmiş, ancak sertliğin kaybolmaması üzerine muayene randevusu almıştır. Meme başından kanlı akıntı, yakın zamanda travma veya emzirme öyküsü olmadığını söyler. Ailesinden biri fark edilir koltuk altı şişliği olup olmadığını sorduğunda belirgin bir şişlik hissetmediğini belirtmiştir. Daha önce meme cerrahisi veya radyoterapi geçirmemiştir."
+    },
+    "vitals": {
+      "TA": "128/76 mmHg",
+      "Nabız": "82/dk",
+      "Solunum": "16/dk",
+      "SpO2": "98%, oda havasında",
+      "Ateş": "36.6 °C",
+      "Şok indeksi": "0.64 normal"
+    },
+    "exam": [
+      "Sol memenin üst-iç kadranında yaklaşık 2 cm, sınırlı hareket eden sert nodüler alan palpe edilir.",
+      "Meme cildinde belirgin ülserasyon veya yaygın kızarıklık yoktur; meme başı retraksiyonu saptanmaz.",
+      "Aksiller palpasyonda belirgin büyük fikse nod izlenmez.",
+      "Supraklaviküler bölgede palpabl kitle saptanmaz; karşı meme muayenesi olağandır."
+    ],
+    "investigations": [
+      {
+        "id": "v200-new-398-meme-ic-kadraninda-nodal-degerlendirme-meme-usg-ve-nodal-haritalama",
+        "label": "Meme ultrasonografisi ve nodal haritalama",
+        "title": "Meme ultrasonografisi ve nodal haritalama",
+        "orderLabel": "Meme ultrasonografisi ve nodal haritalama",
+        "type": "ultrasound",
+        "priority": "essential",
+        "subtype": "Meme ultrasonografisi ve nodal haritalama",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "summary": "Görüntüleme, kitlenin iç kadran yerleşimini ve aksiller belirgin tutulum olmadan medial torasik lenfatik zincirin ayrıca değerlendirilmesi gerektiğini gösterir.",
+        "clinicalMeaning": "Görüntüleme, kitlenin iç kadran yerleşimini ve aksiller belirgin tutulum olmadan medial torasik lenfatik zincirin ayrıca değerlendirilmesi gerektiğini gösterir.",
+        "result": {
+          "title": "Meme ultrasonografisi ve nodal haritalama",
+          "summary": "Görüntüleme, kitlenin iç kadran yerleşimini ve aksiller belirgin tutulum olmadan medial torasik lenfatik zincirin ayrıca değerlendirilmesi gerektiğini gösterir.",
+          "interpretation": "Görüntüleme, kitlenin iç kadran yerleşimini ve aksiller belirgin tutulum olmadan medial torasik lenfatik zincirin ayrıca değerlendirilmesi gerektiğini gösterir.",
+          "values": [
+            [
+              "Kitle lokalizasyonu",
+              "Sol meme üst-iç kadranda 2.1 cm solid lezyon izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Aksilla",
+              "Belirgin büyük veya korteksi kalınlaşmış aksiller nod saptanmadı.",
+              "",
+              ""
+            ],
+            [
+              "Medial torasik komşuluk",
+              "Sternum kenarına yakın derin lenfatik zincirde küçük oval nodlar seçiliyor.",
+              "",
+              ""
+            ],
+            [
+              "Karşı meme",
+              "Belirgin odak lezyon izlenmedi.",
+              "",
+              ""
+            ]
+          ],
+          "rows": [
+            [
+              "Kitle lokalizasyonu",
+              "Sol meme üst-iç kadranda 2.1 cm solid lezyon izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Aksilla",
+              "Belirgin büyük veya korteksi kalınlaşmış aksiller nod saptanmadı.",
+              "",
+              ""
+            ],
+            [
+              "Medial torasik komşuluk",
+              "Sternum kenarına yakın derin lenfatik zincirde küçük oval nodlar seçiliyor.",
+              "",
+              ""
+            ],
+            [
+              "Karşı meme",
+              "Belirgin odak lezyon izlenmedi.",
+              "",
+              ""
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kitle lokalizasyonu",
+            "Sol meme üst-iç kadranda 2.1 cm solid lezyon izlenir.",
+            "",
+            ""
+          ],
+          [
+            "Aksilla",
+            "Belirgin büyük veya korteksi kalınlaşmış aksiller nod saptanmadı.",
+            "",
+            ""
+          ],
+          [
+            "Medial torasik komşuluk",
+            "Sternum kenarına yakın derin lenfatik zincirde küçük oval nodlar seçiliyor.",
+            "",
+            ""
+          ],
+          [
+            "Karşı meme",
+            "Belirgin odak lezyon izlenmedi.",
+            "",
+            ""
+          ]
+        ],
+        "postAnswerExplanation": "Görüntüleme, kitlenin iç kadran yerleşimini ve aksiller belirgin tutulum olmadan medial torasik lenfatik zincirin ayrıca değerlendirilmesi gerektiğini gösterir.",
+        "interpretation": "Görüntüleme, kitlenin iç kadran yerleşimini ve aksiller belirgin tutulum olmadan medial torasik lenfatik zincirin ayrıca değerlendirilmesi gerektiğini gösterir.",
+        "explanationAfterAnswer": "Görüntüleme, kitlenin iç kadran yerleşimini ve aksiller belirgin tutulum olmadan medial torasik lenfatik zincirin ayrıca değerlendirilmesi gerektiğini gösterir.",
+        "testValueLabel": "Meme ultrasonografisi ve nodal haritalama",
+        "educationalValue": "Meme ultrasonografisi ve nodal haritalama",
+        "clinicalPriorityLabel": "Meme ultrasonografisi ve nodal haritalama",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "clinicalFlowOrder": 1,
+        "purpose": "Meme ultrasonografisi ve nodal haritalama",
+        "inlineFeedback": "Görüntüleme, kitlenin iç kadran yerleşimini ve aksiller belirgin tutulum olmadan medial torasik lenfatik zincirin ayrıca değerlendirilmesi gerektiğini gösterir."
+      }
+    ],
+    "useSyntheticInvestigationBank": false,
+    "managementSequence": {
+      "enabled": false
+    },
+    "hideExamSignal": false,
+    "question": "Bu tümör lokalizasyonunda özellikle değerlendirilmesi gereken lenf nodu grubu hangisidir?",
+    "questionType": "anatomy",
+    "answerTarget": "anatomy",
+    "diagnosis": {
+      "correct": "Nodi lymphatici parasternales",
+      "options": [
+        "Nodi lymphatici axillares pectorales",
+        "Nodi lymphatici interpectorales",
+        "Nodi lymphatici parasternales",
+        "Nodi lymphatici axillares centrales",
+        "Nodi lymphatici supraclaviculares"
+      ],
+      "question": "Bu tümör lokalizasyonunda özellikle değerlendirilmesi gereken lenf nodu grubu hangisidir?",
+      "explanation": "Memenin iç kadranlarından gelen lenfatik akım, aksiller yola ek olarak sternum kenarı boyunca uzanan medial torasik nodal zincire yönlenebilir. Kitle iç kadranda olduğu ve belirgin aksiller büyük nod saptanmadığı için nodal değerlendirmede parasternal grup özellikle önem kazanır; lateral meme lezyonlarında pektoral ve santral aksiller nodlar daha baskın beklenir.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Meme iç kadran lezyonlarında aksiller nodlar yanında sternum kenarı boyunca uzanan medial nodal zincir mutlaka akılda tutulur."
+        }
+      ],
+      "answerFeedback": {
+        "summary": "Memenin iç kadranlarından gelen lenfatik akım, aksiller yola ek olarak sternum kenarı boyunca uzanan medial torasik nodal zincire yönlenebilir. Kitle iç kadranda olduğu ve belirgin aksiller büyük nod saptanmadığı için nodal değerlendirmede parasternal grup özellikle önem kazanır; lateral meme lezyonlarında pektoral ve santral aksiller nodlar daha baskın beklenir.",
+        "whyCorrect": "Memenin iç kadranlarından gelen lenfatik akım, aksiller yola ek olarak sternum kenarı boyunca uzanan medial torasik nodal zincire yönlenebilir. Kitle iç kadranda olduğu ve belirgin aksiller büyük nod saptanmadığı için nodal değerlendirmede parasternal grup özellikle önem kazanır; lateral meme lezyonlarında pektoral ve santral aksiller nodlar daha baskın beklenir.",
+        "rationale": "Memenin iç kadranlarından gelen lenfatik akım, aksiller yola ek olarak sternum kenarı boyunca uzanan medial torasik nodal zincire yönlenebilir. Kitle iç kadranda olduğu ve belirgin aksiller büyük nod saptanmadığı için nodal değerlendirmede parasternal grup özellikle önem kazanır; lateral meme lezyonlarında pektoral ve santral aksiller nodlar daha baskın beklenir.",
+        "correctOptionFeedback": "Doğru yanıttır; memenin medial kadranlarından lenf, sternum kenarı ve internal torasik damarlar boyunca yerleşen parasternal nodlara drene olabilir. İç kadran kitlesi ve medial torasik nodal zincirin görüntülenmesi bu seçeneği destekler.",
+        "keyClues": [
+          "Kitlenin üst-iç kadranda yerleşmesi",
+          "Aksiller palpasyonda belirgin büyük nod olmaması",
+          "Medial torasik zincirde küçük nodların seçilmesi",
+          "Karşı memede belirgin odak olmaması"
+        ],
+        "evidenceChain": [
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Kitlenin üst-iç kadranda yerleşmesi → medial lenfatik drenaj yollarını klinik olarak önemli hale getirir.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Aksiller palpasyonda belirgin büyük nod olmaması → yalnız aksiller gruplarla sınırlı düşünmeyi zayıflatır.",
+            "weight": "medium",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Sternum kenarına yakın derin nodların seçilmesi → medial torasik lenfatik zinciri değerlendirme gereğini destekler.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Karşı memede odak olmaması → bulguların sol meme lokalizasyonuna göre yorumlanmasını kolaylaştırır.",
+            "weight": "low",
+            "source": "case"
+          }
+        ],
+        "examPearl": "Meme iç kadran lezyonlarında aksiller nodlar yanında sternum kenarı boyunca uzanan medial nodal zincir mutlaka akılda tutulur.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Meme iç kadran lezyonlarında aksiller nodlar yanında sternum kenarı boyunca uzanan medial nodal zincir mutlaka akılda tutulur."
+          }
+        ],
+        "optionComparison": {
+          "Nodi lymphatici axillares pectorales": "Pektoral aksiller nodlar özellikle memenin lateral ve anterior torasik duvar drenajında sık değerlendirilir. Meme kanserinde çok önemli olsalar da bu vakada kitle iç kadrandadır ve aksiller muayenede belirgin büyük nod yoktur; medial drenaj grubu özellikle sorgulanmalıdır.",
+          "Nodi lymphatici interpectorales": "İnterpektoral nodlar pektoralis major ve minor arasındaki lenf nodlarıdır ve aksiller zincirle ilişkili ara durak olarak akla gelebilir. Ancak iç kadran yerleşimli bir lezyonda doğrudan sternum kenarı boyunca uzanan medial nodal grup daha öğretici anatomik hedeftir.",
+          "Nodi lymphatici parasternales": "Doğru yanıttır; memenin medial kadranlarından lenf, sternum kenarı ve internal torasik damarlar boyunca yerleşen parasternal nodlara drene olabilir. İç kadran kitlesi ve medial torasik nodal zincirin görüntülenmesi bu seçeneği destekler.",
+          "Nodi lymphatici axillares centrales": "Santral aksiller nodlar aksillanın merkezinde yer alır ve aksiller drenajın önemli bir istasyonudur. Lateral meme lezyonlarında ve belirgin aksiller nodal büyümede daha öne çıkar; iç kadran-medial zincir ilişkisini tek başına açıklamaz.",
+          "Nodi lymphatici supraclaviculares": "Supraklaviküler nodlar daha ileri veya üst lenfatik yayılım değerlendirmesinde önemlidir. İlk anatomik drenaj ayrımı iç kadran yerleşiminde parasternal yol üzerinedir; muayenede supraklaviküler kitle de saptanmamıştır."
+        },
+        "whyWrong": {
+          "Nodi lymphatici axillares pectorales": "Pektoral aksiller nodlar özellikle memenin lateral ve anterior torasik duvar drenajında sık değerlendirilir. Meme kanserinde çok önemli olsalar da bu vakada kitle iç kadrandadır ve aksiller muayenede belirgin büyük nod yoktur; medial drenaj grubu özellikle sorgulanmalıdır.",
+          "Nodi lymphatici interpectorales": "İnterpektoral nodlar pektoralis major ve minor arasındaki lenf nodlarıdır ve aksiller zincirle ilişkili ara durak olarak akla gelebilir. Ancak iç kadran yerleşimli bir lezyonda doğrudan sternum kenarı boyunca uzanan medial nodal grup daha öğretici anatomik hedeftir.",
+          "Nodi lymphatici axillares centrales": "Santral aksiller nodlar aksillanın merkezinde yer alır ve aksiller drenajın önemli bir istasyonudur. Lateral meme lezyonlarında ve belirgin aksiller nodal büyümede daha öne çıkar; iç kadran-medial zincir ilişkisini tek başına açıklamaz.",
+          "Nodi lymphatici supraclaviculares": "Supraklaviküler nodlar daha ileri veya üst lenfatik yayılım değerlendirmesinde önemlidir. İlk anatomik drenaj ayrımı iç kadran yerleşiminde parasternal yol üzerinedir; muayenede supraklaviküler kitle de saptanmamıştır."
+        },
+        "managementSteps": [],
+        "management": [],
+        "learningOutcome": "Meme tümörünün kadranına göre öncelikli lenfatik yayılım yollarını ve nodal değerlendirme bölgelerini ayırt edebilme.",
+        "coreKnowledge": "Meme lenfi çoğunlukla aksiller yola gitse de medial kadranlardan parasternal nodlara belirgin drenaj olabilir; bu klinik lokalizasyon nodal değerlendirmeyi değiştirir."
+      },
+      "whyCorrect": "Memenin iç kadranlarından gelen lenfatik akım, aksiller yola ek olarak sternum kenarı boyunca uzanan medial torasik nodal zincire yönlenebilir. Kitle iç kadranda olduğu ve belirgin aksiller büyük nod saptanmadığı için nodal değerlendirmede parasternal grup özellikle önem kazanır; lateral meme lezyonlarında pektoral ve santral aksiller nodlar daha baskın beklenir.",
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Kitlenin üst-iç kadranda yerleşmesi → medial lenfatik drenaj yollarını klinik olarak önemli hale getirir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Aksiller palpasyonda belirgin büyük nod olmaması → yalnız aksiller gruplarla sınırlı düşünmeyi zayıflatır.",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Sternum kenarına yakın derin nodların seçilmesi → medial torasik lenfatik zinciri değerlendirme gereğini destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Karşı memede odak olmaması → bulguların sol meme lokalizasyonuna göre yorumlanmasını kolaylaştırır.",
+          "weight": "low",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Nodi lymphatici axillares pectorales": "Pektoral aksiller nodlar özellikle memenin lateral ve anterior torasik duvar drenajında sık değerlendirilir. Meme kanserinde çok önemli olsalar da bu vakada kitle iç kadrandadır ve aksiller muayenede belirgin büyük nod yoktur; medial drenaj grubu özellikle sorgulanmalıdır.",
+        "Nodi lymphatici interpectorales": "İnterpektoral nodlar pektoralis major ve minor arasındaki lenf nodlarıdır ve aksiller zincirle ilişkili ara durak olarak akla gelebilir. Ancak iç kadran yerleşimli bir lezyonda doğrudan sternum kenarı boyunca uzanan medial nodal grup daha öğretici anatomik hedeftir.",
+        "Nodi lymphatici parasternales": "Doğru yanıttır; memenin medial kadranlarından lenf, sternum kenarı ve internal torasik damarlar boyunca yerleşen parasternal nodlara drene olabilir. İç kadran kitlesi ve medial torasik nodal zincirin görüntülenmesi bu seçeneği destekler.",
+        "Nodi lymphatici axillares centrales": "Santral aksiller nodlar aksillanın merkezinde yer alır ve aksiller drenajın önemli bir istasyonudur. Lateral meme lezyonlarında ve belirgin aksiller nodal büyümede daha öne çıkar; iç kadran-medial zincir ilişkisini tek başına açıklamaz.",
+        "Nodi lymphatici supraclaviculares": "Supraklaviküler nodlar daha ileri veya üst lenfatik yayılım değerlendirmesinde önemlidir. İlk anatomik drenaj ayrımı iç kadran yerleşiminde parasternal yol üzerinedir; muayenede supraklaviküler kitle de saptanmamıştır."
+      },
+      "coreKnowledge": "Meme lenfi çoğunlukla aksiller yola gitse de medial kadranlardan parasternal nodlara belirgin drenaj olabilir; bu klinik lokalizasyon nodal değerlendirmeyi değiştirir.",
+      "examPearl": "Meme iç kadran lezyonlarında aksiller nodlar yanında sternum kenarı boyunca uzanan medial nodal zincir mutlaka akılda tutulur.",
+      "whyWrong": {
+        "Nodi lymphatici axillares pectorales": "Pektoral aksiller nodlar özellikle memenin lateral ve anterior torasik duvar drenajında sık değerlendirilir. Meme kanserinde çok önemli olsalar da bu vakada kitle iç kadrandadır ve aksiller muayenede belirgin büyük nod yoktur; medial drenaj grubu özellikle sorgulanmalıdır.",
+        "Nodi lymphatici interpectorales": "İnterpektoral nodlar pektoralis major ve minor arasındaki lenf nodlarıdır ve aksiller zincirle ilişkili ara durak olarak akla gelebilir. Ancak iç kadran yerleşimli bir lezyonda doğrudan sternum kenarı boyunca uzanan medial nodal grup daha öğretici anatomik hedeftir.",
+        "Nodi lymphatici axillares centrales": "Santral aksiller nodlar aksillanın merkezinde yer alır ve aksiller drenajın önemli bir istasyonudur. Lateral meme lezyonlarında ve belirgin aksiller nodal büyümede daha öne çıkar; iç kadran-medial zincir ilişkisini tek başına açıklamaz.",
+        "Nodi lymphatici supraclaviculares": "Supraklaviküler nodlar daha ileri veya üst lenfatik yayılım değerlendirmesinde önemlidir. İlk anatomik drenaj ayrımı iç kadran yerleşiminde parasternal yol üzerinedir; muayenede supraklaviküler kitle de saptanmamıştır."
+      }
+    },
+    "shuffleOptions": false,
+    "difficultyTag": "Orta",
+    "aiMeta": {
+      "generatedAt": "manual-v200-anatomy-five-case-expansion",
+      "generator": "manual-editorial-anatomy-clinical-case-expansion",
+      "schemaVersion": "clinical-standard-v397-compatible",
+      "validationWarnings": [],
+      "provider": "manual-editorial",
+      "topicControl": "thorax-breast-lymphatics"
+    },
+    "listTitle": "Meme iç kadranında nodal değerlendirme",
+    "cardTitle": "Meme iç kadranında nodal değerlendirme",
+    "coreKnowledge": "Meme lenfi çoğunlukla aksiller yola gitse de medial kadranlardan parasternal nodlara belirgin drenaj olabilir; bu klinik lokalizasyon nodal değerlendirmeyi değiştirir.",
+    "examPearl": "Meme iç kadran lezyonlarında aksiller nodlar yanında sternum kenarı boyunca uzanan medial nodal zincir mutlaka akılda tutulur.",
+    "whyCorrect": "Memenin iç kadranlarından gelen lenfatik akım, aksiller yola ek olarak sternum kenarı boyunca uzanan medial torasik nodal zincire yönlenebilir. Kitle iç kadranda olduğu ve belirgin aksiller büyük nod saptanmadığı için nodal değerlendirmede parasternal grup özellikle önem kazanır; lateral meme lezyonlarında pektoral ve santral aksiller nodlar daha baskın beklenir.",
+    "optionComparison": {
+      "Nodi lymphatici axillares pectorales": "Pektoral aksiller nodlar özellikle memenin lateral ve anterior torasik duvar drenajında sık değerlendirilir. Meme kanserinde çok önemli olsalar da bu vakada kitle iç kadrandadır ve aksiller muayenede belirgin büyük nod yoktur; medial drenaj grubu özellikle sorgulanmalıdır.",
+      "Nodi lymphatici interpectorales": "İnterpektoral nodlar pektoralis major ve minor arasındaki lenf nodlarıdır ve aksiller zincirle ilişkili ara durak olarak akla gelebilir. Ancak iç kadran yerleşimli bir lezyonda doğrudan sternum kenarı boyunca uzanan medial nodal grup daha öğretici anatomik hedeftir.",
+      "Nodi lymphatici parasternales": "Doğru yanıttır; memenin medial kadranlarından lenf, sternum kenarı ve internal torasik damarlar boyunca yerleşen parasternal nodlara drene olabilir. İç kadran kitlesi ve medial torasik nodal zincirin görüntülenmesi bu seçeneği destekler.",
+      "Nodi lymphatici axillares centrales": "Santral aksiller nodlar aksillanın merkezinde yer alır ve aksiller drenajın önemli bir istasyonudur. Lateral meme lezyonlarında ve belirgin aksiller nodal büyümede daha öne çıkar; iç kadran-medial zincir ilişkisini tek başına açıklamaz.",
+      "Nodi lymphatici supraclaviculares": "Supraklaviküler nodlar daha ileri veya üst lenfatik yayılım değerlendirmesinde önemlidir. İlk anatomik drenaj ayrımı iç kadran yerleşiminde parasternal yol üzerinedir; muayenede supraklaviküler kitle de saptanmamıştır."
+    },
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Kitlenin üst-iç kadranda yerleşmesi → medial lenfatik drenaj yollarını klinik olarak önemli hale getirir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Aksiller palpasyonda belirgin büyük nod olmaması → yalnız aksiller gruplarla sınırlı düşünmeyi zayıflatır.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Sternum kenarına yakın derin nodların seçilmesi → medial torasik lenfatik zinciri değerlendirme gereğini destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Karşı memede odak olmaması → bulguların sol meme lokalizasyonuna göre yorumlanmasını kolaylaştırır.",
+        "weight": "low",
+        "source": "case"
+      }
+    ],
+    "whyWrong": {
+      "Nodi lymphatici axillares pectorales": "Pektoral aksiller nodlar özellikle memenin lateral ve anterior torasik duvar drenajında sık değerlendirilir. Meme kanserinde çok önemli olsalar da bu vakada kitle iç kadrandadır ve aksiller muayenede belirgin büyük nod yoktur; medial drenaj grubu özellikle sorgulanmalıdır.",
+      "Nodi lymphatici interpectorales": "İnterpektoral nodlar pektoralis major ve minor arasındaki lenf nodlarıdır ve aksiller zincirle ilişkili ara durak olarak akla gelebilir. Ancak iç kadran yerleşimli bir lezyonda doğrudan sternum kenarı boyunca uzanan medial nodal grup daha öğretici anatomik hedeftir.",
+      "Nodi lymphatici axillares centrales": "Santral aksiller nodlar aksillanın merkezinde yer alır ve aksiller drenajın önemli bir istasyonudur. Lateral meme lezyonlarında ve belirgin aksiller nodal büyümede daha öne çıkar; iç kadran-medial zincir ilişkisini tek başına açıklamaz.",
+      "Nodi lymphatici supraclaviculares": "Supraklaviküler nodlar daha ileri veya üst lenfatik yayılım değerlendirmesinde önemlidir. İlk anatomik drenaj ayrımı iç kadran yerleşiminde parasternal yol üzerinedir; muayenede supraklaviküler kitle de saptanmamıştır."
+    }
+  },
+  {
+    "id": "v200-new-399-retroperitoneal-cerrahi-sonrasi-ejakulasyon-bozuklugu",
+    "branchId": "anatomy",
+    "caseType": "standard",
+    "relatedBranch": "Anatomi / Üroloji",
+    "title": "Retroperitoneal cerrahi sonrası ejakülasyon bozukluğu",
+    "difficulty": "Zor",
+    "clinicalFocus": "Aort bifurkasyonu çevresi retroperitoneal diseksiyonda otonom pleksusları ve erkek üreme fonksiyonunu anatomik düzeyle ilişkilendirme.",
+    "learningTarget": "Retroperitoneal orta hat diseksiyonundan sonra ejakülasyon fazı bozulduğunda sempatik otonom pleksus düzeyini ayırt edebilme.",
+    "demographics": "29 yaşında erkek hasta",
+    "setting": "Üroloji kontrolü",
+    "chiefComplaint": "Hasta, retroperitoneal lenf nodu diseksiyonu sonrası orgazm sırasında meni çıkışının belirgin azalması nedeniyle başvuruyor.",
+    "stem": "Hasta üç hafta önce testis tümörü nedeniyle karın arka duvarına yönelik lenf nodu diseksiyonu geçirdiğini anlatır. Ameliyattan sonra yara ağrısı giderek azalmış ve günlük yürüyüşlerine başlamıştır. Cinsel isteği ve ereksiyonunun ameliyat öncesine benzer olduğunu, ancak orgazm sırasında dışarı meni gelmediğini fark etmiştir. İdrar yaparken yanma, perine uyuşması veya bacaklarda güçsüzlük tariflemez. Daha önce prostat ya da mesane boynu ameliyatı geçirmemiştir.",
+    "patientIntro": {
+      "profile": "29 yaşında erkek hasta, retroperitoneal cerrahi sonrası ejakülasyon fazında değişiklik nedeniyle üroloji kontrolünde değerlendiriliyor.",
+      "presentation": "Ereksiyon korunurken orgazm sırasında meni çıkışının azalması ve idrar yakınmasının olmaması vardır.",
+      "historySummary": "Hasta üç hafta önce testis tümörü nedeniyle karın arka duvarına yönelik lenf nodu diseksiyonu geçirdiğini anlatır. Ameliyattan sonra yara ağrısı giderek azalmış ve günlük yürüyüşlerine başlamıştır. Cinsel isteği ve ereksiyonunun ameliyat öncesine benzer olduğunu, ancak orgazm sırasında dışarı meni gelmediğini fark etmiştir. İdrar yaparken yanma, perine uyuşması veya bacaklarda güçsüzlük tariflemez. Daha önce prostat ya da mesane boynu ameliyatı geçirmemiştir."
+    },
+    "vitals": {
+      "TA": "122/74 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "16/dk",
+      "SpO2": "99%, oda havasında",
+      "Ateş": "36.8 °C",
+      "Şok indeksi": "0.64 normal"
+    },
+    "exam": [
+      "Alt ekstremite motor gücü tamdır; patellar ve Aşil refleksleri simetriktir.",
+      "Perineal hafif dokunma duyusu korunmuştur; anal sfinkter tonusu olağandır.",
+      "Penil ereksiyon yanıtı öyküye göre korunmuştur; dış genital muayenede akut enfeksiyon bulgusu yoktur.",
+      "Abdominal insizyon hattı iyileşmektedir; belirgin hematom veya ateş eşlik etmez."
+    ],
+    "investigations": [
+      {
+        "id": "v200-new-399-retroperitoneal-cerrahi-sonrasi-ejakulasyon-bozuklugu-operasyon-notu-ve-idrar-incelemesi",
+        "label": "Operasyon notu ve ejakülat sonrası idrar incelemesi",
+        "title": "Operasyon notu ve ejakülat sonrası idrar incelemesi",
+        "orderLabel": "Operasyon notu ve ejakülat sonrası idrar incelemesi",
+        "type": "clinical",
+        "priority": "essential",
+        "subtype": "Operasyon notu ve ejakülat sonrası idrar incelemesi",
+        "category": "clinicalAssessment",
+        "testTypeCategory": "clinicalAssessment",
+        "summary": "Operasyon alanı orta hat retroperitoneal otonom liflerin geçtiği damar komşuluğunu içerir; motor-duyu muayenesinin korunması somatik pleksus hasarını desteklemez.",
+        "clinicalMeaning": "Operasyon alanı orta hat retroperitoneal otonom liflerin geçtiği damar komşuluğunu içerir; motor-duyu muayenesinin korunması somatik pleksus hasarını desteklemez.",
+        "result": {
+          "title": "Operasyon notu ve ejakülat sonrası idrar incelemesi",
+          "summary": "Operasyon alanı orta hat retroperitoneal otonom liflerin geçtiği damar komşuluğunu içerir; motor-duyu muayenesinin korunması somatik pleksus hasarını desteklemez.",
+          "interpretation": "Operasyon alanı orta hat retroperitoneal otonom liflerin geçtiği damar komşuluğunu içerir; motor-duyu muayenesinin korunması somatik pleksus hasarını desteklemez.",
+          "values": [
+            [
+              "Cerrahi alan",
+              "Aort bifurkasyonu ve common iliak damar başlangıçları çevresinde nodal diseksiyon yapılmış.",
+              "",
+              ""
+            ],
+            [
+              "Motor-duyu taraması",
+              "Alt ekstremite kuvveti ve perineal duyu korunmuş.",
+              "",
+              ""
+            ],
+            [
+              "Ejakülat sonrası idrar",
+              "İlk idrar örneğinde spermatozoa izlendi.",
+              "",
+              ""
+            ],
+            [
+              "Enfeksiyon bulgusu",
+              "İdrarda belirgin lökosit artışı veya nitrit pozitifliği saptanmadı.",
+              "",
+              ""
+            ]
+          ],
+          "rows": [
+            [
+              "Cerrahi alan",
+              "Aort bifurkasyonu ve common iliak damar başlangıçları çevresinde nodal diseksiyon yapılmış.",
+              "",
+              ""
+            ],
+            [
+              "Motor-duyu taraması",
+              "Alt ekstremite kuvveti ve perineal duyu korunmuş.",
+              "",
+              ""
+            ],
+            [
+              "Ejakülat sonrası idrar",
+              "İlk idrar örneğinde spermatozoa izlendi.",
+              "",
+              ""
+            ],
+            [
+              "Enfeksiyon bulgusu",
+              "İdrarda belirgin lökosit artışı veya nitrit pozitifliği saptanmadı.",
+              "",
+              ""
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Cerrahi alan",
+            "Aort bifurkasyonu ve common iliak damar başlangıçları çevresinde nodal diseksiyon yapılmış.",
+            "",
+            ""
+          ],
+          [
+            "Motor-duyu taraması",
+            "Alt ekstremite kuvveti ve perineal duyu korunmuş.",
+            "",
+            ""
+          ],
+          [
+            "Ejakülat sonrası idrar",
+            "İlk idrar örneğinde spermatozoa izlendi.",
+            "",
+            ""
+          ],
+          [
+            "Enfeksiyon bulgusu",
+            "İdrarda belirgin lökosit artışı veya nitrit pozitifliği saptanmadı.",
+            "",
+            ""
+          ]
+        ],
+        "postAnswerExplanation": "Operasyon alanı orta hat retroperitoneal otonom liflerin geçtiği damar komşuluğunu içerir; motor-duyu muayenesinin korunması somatik pleksus hasarını desteklemez.",
+        "interpretation": "Operasyon alanı orta hat retroperitoneal otonom liflerin geçtiği damar komşuluğunu içerir; motor-duyu muayenesinin korunması somatik pleksus hasarını desteklemez.",
+        "explanationAfterAnswer": "Operasyon alanı orta hat retroperitoneal otonom liflerin geçtiği damar komşuluğunu içerir; motor-duyu muayenesinin korunması somatik pleksus hasarını desteklemez.",
+        "testValueLabel": "Operasyon notu ve ejakülat sonrası idrar incelemesi",
+        "educationalValue": "Operasyon notu ve ejakülat sonrası idrar incelemesi",
+        "clinicalPriorityLabel": "Operasyon notu ve ejakülat sonrası idrar incelemesi",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "clinicalFlowOrder": 1,
+        "purpose": "Operasyon notu ve ejakülat sonrası idrar incelemesi",
+        "inlineFeedback": "Operasyon alanı orta hat retroperitoneal otonom liflerin geçtiği damar komşuluğunu içerir; motor-duyu muayenesinin korunması somatik pleksus hasarını desteklemez."
+      }
+    ],
+    "useSyntheticInvestigationBank": false,
+    "managementSequence": {
+      "enabled": false
+    },
+    "hideExamSignal": false,
+    "question": "Bu tabloyu en iyi açıklayan etkilenen anatomik yapı hangisidir?",
+    "questionType": "anatomy",
+    "answerTarget": "anatomy",
+    "diagnosis": {
+      "correct": "Plexus hypogastricus superior",
+      "options": [
+        "Plexus mesentericus inferior",
+        "Plexus hypogastricus superior",
+        "Plexus hypogastricus inferior",
+        "Plexus prostaticus",
+        "Plexus sacralis"
+      ],
+      "question": "Bu tabloyu en iyi açıklayan etkilenen anatomik yapı hangisidir?",
+      "explanation": "Ereksiyon ve somatik perine duyusu korunurken emisyon/ejakülasyon fazının bozulması, retroperitoneal orta hatta seyreden sempatik otonom liflerin etkilenmesini düşündürür. Aort bifurkasyonu ve common iliak başlangıçları çevresindeki diseksiyon, superior hipogastrik pleksus düzeyini riskli hale getirir; sakral somatik pleksus veya pudendal alan bulguları yoktur.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Retroperitoneal orta hat diseksiyonu sonrası ereksiyon korunup emisyon bozuluyorsa, somatik sakral yapılardan önce sempatik hipogastrik pleksus düşünülür."
+        }
+      ],
+      "answerFeedback": {
+        "summary": "Ereksiyon ve somatik perine duyusu korunurken emisyon/ejakülasyon fazının bozulması, retroperitoneal orta hatta seyreden sempatik otonom liflerin etkilenmesini düşündürür. Aort bifurkasyonu ve common iliak başlangıçları çevresindeki diseksiyon, superior hipogastrik pleksus düzeyini riskli hale getirir; sakral somatik pleksus veya pudendal alan bulguları yoktur.",
+        "whyCorrect": "Ereksiyon ve somatik perine duyusu korunurken emisyon/ejakülasyon fazının bozulması, retroperitoneal orta hatta seyreden sempatik otonom liflerin etkilenmesini düşündürür. Aort bifurkasyonu ve common iliak başlangıçları çevresindeki diseksiyon, superior hipogastrik pleksus düzeyini riskli hale getirir; sakral somatik pleksus veya pudendal alan bulguları yoktur.",
+        "rationale": "Ereksiyon ve somatik perine duyusu korunurken emisyon/ejakülasyon fazının bozulması, retroperitoneal orta hatta seyreden sempatik otonom liflerin etkilenmesini düşündürür. Aort bifurkasyonu ve common iliak başlangıçları çevresindeki diseksiyon, superior hipogastrik pleksus düzeyini riskli hale getirir; sakral somatik pleksus veya pudendal alan bulguları yoktur.",
+        "correctOptionFeedback": "Doğru yanıttır; aort bifurkasyonu önünde ve sakral promontoryum komşuluğunda yer alan sempatik ağırlıklı otonom pleksus, retroperitoneal lenf nodu diseksiyonlarında risk altındadır. Ereksiyon korunurken meni çıkışının azalması ve ejakülat sonrası idrarda sperm görülmesi bu düzeyi destekler.",
+        "keyClues": [
+          "Aort bifurkasyonu çevresinde diseksiyon yapılması",
+          "Ereksiyonun korunması",
+          "Orgazm sırasında meni çıkışının azalması",
+          "Perine duyusu ve alt ekstremite motor muayenesinin korunması"
+        ],
+        "evidenceChain": [
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Aort bifurkasyonu çevresinde diseksiyon yapılması → orta hat retroperitoneal otonom pleksusları anatomik olarak riskli hale getirir.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Ereksiyonun korunması → parasempatik erektil yolun baskın olarak korunduğunu düşündürür.",
+            "weight": "medium",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Orgazm sırasında meni çıkışının azalması ve idrarda sperm görülmesi → emisyon/mesane boynu kapanma mekanizmasında sempatik etkilenimi destekler.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Perine duyusu ve alt ekstremite motor muayenesinin korunması → sakral somatik pleksus hasarını geri plana iter.",
+            "weight": "medium",
+            "source": "case"
+          }
+        ],
+        "examPearl": "Retroperitoneal orta hat diseksiyonu sonrası ereksiyon korunup emisyon bozuluyorsa, somatik sakral yapılardan önce sempatik hipogastrik pleksus düşünülür.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Retroperitoneal orta hat diseksiyonu sonrası ereksiyon korunup emisyon bozuluyorsa, somatik sakral yapılardan önce sempatik hipogastrik pleksus düşünülür."
+          }
+        ],
+        "optionComparison": {
+          "Plexus mesentericus inferior": "İnferior mezenterik pleksus, kolonun distal bölümleriyle ilişkili otonom lifler açısından önemlidir ve aort çevresinde akla gelebilir. Ancak bu vakadaki temel klinik sorun kolon motilitesi değil, retroperitoneal orta hat diseksiyonundan sonra erkek emisyon/ejakülasyon fazının bozulmasıdır.",
+          "Plexus hypogastricus superior": "Doğru yanıttır; aort bifurkasyonu önünde ve sakral promontoryum komşuluğunda yer alan sempatik ağırlıklı otonom pleksus, retroperitoneal lenf nodu diseksiyonlarında risk altındadır. Ereksiyon korunurken meni çıkışının azalması ve ejakülat sonrası idrarda sperm görülmesi bu düzeyi destekler.",
+          "Plexus hypogastricus inferior": "İnferior hipogastrik pleksus pelvis yan duvarında viseral organlara dallar verir ve pelvik cerrahilerde önemlidir. Bu hastada cerrahi alan aort bifurkasyonu çevresi retroperitoneal orta hattadır; alt pelvik yan duvar veya mesane-prostat cerrahisi öyküsü yoktur.",
+          "Plexus prostaticus": "Prostatik pleksus prostat ve kavernöz sinirlerle ilişkili pelvik otonom ağdır; radikal prostat cerrahisi veya prostat çevresi diseksiyonda daha tipik etkilenir. Bu olguda prostat cerrahisi yoktur ve esas risk karın arka duvarı orta hat diseksiyonudur.",
+          "Plexus sacralis": "Sakral pleksus alt ekstremite motor-duyu innervasyonunun ana kaynağıdır. Bacak güçsüzlüğü, duyu kaybı veya refleks asimetrisi beklenirdi; muayenenin korunması bu seçeneği zayıflatır."
+        },
+        "whyWrong": {
+          "Plexus mesentericus inferior": "İnferior mezenterik pleksus, kolonun distal bölümleriyle ilişkili otonom lifler açısından önemlidir ve aort çevresinde akla gelebilir. Ancak bu vakadaki temel klinik sorun kolon motilitesi değil, retroperitoneal orta hat diseksiyonundan sonra erkek emisyon/ejakülasyon fazının bozulmasıdır.",
+          "Plexus hypogastricus inferior": "İnferior hipogastrik pleksus pelvis yan duvarında viseral organlara dallar verir ve pelvik cerrahilerde önemlidir. Bu hastada cerrahi alan aort bifurkasyonu çevresi retroperitoneal orta hattadır; alt pelvik yan duvar veya mesane-prostat cerrahisi öyküsü yoktur.",
+          "Plexus prostaticus": "Prostatik pleksus prostat ve kavernöz sinirlerle ilişkili pelvik otonom ağdır; radikal prostat cerrahisi veya prostat çevresi diseksiyonda daha tipik etkilenir. Bu olguda prostat cerrahisi yoktur ve esas risk karın arka duvarı orta hat diseksiyonudur.",
+          "Plexus sacralis": "Sakral pleksus alt ekstremite motor-duyu innervasyonunun ana kaynağıdır. Bacak güçsüzlüğü, duyu kaybı veya refleks asimetrisi beklenirdi; muayenenin korunması bu seçeneği zayıflatır."
+        },
+        "managementSteps": [],
+        "management": [],
+        "learningOutcome": "Retroperitoneal orta hat diseksiyonundan sonra ejakülasyon fazı bozulduğunda sempatik otonom pleksus düzeyini ayırt edebilme.",
+        "coreKnowledge": "Emisyon fazı büyük ölçüde sempatik otonom kontrolle ilişkilidir; aort bifurkasyonu çevresi diseksiyonlarında superior hipogastrik pleksus hasarı klasik fonksiyonel sonuç oluşturabilir."
+      },
+      "whyCorrect": "Ereksiyon ve somatik perine duyusu korunurken emisyon/ejakülasyon fazının bozulması, retroperitoneal orta hatta seyreden sempatik otonom liflerin etkilenmesini düşündürür. Aort bifurkasyonu ve common iliak başlangıçları çevresindeki diseksiyon, superior hipogastrik pleksus düzeyini riskli hale getirir; sakral somatik pleksus veya pudendal alan bulguları yoktur.",
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Aort bifurkasyonu çevresinde diseksiyon yapılması → orta hat retroperitoneal otonom pleksusları anatomik olarak riskli hale getirir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ereksiyonun korunması → parasempatik erektil yolun baskın olarak korunduğunu düşündürür.",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Orgazm sırasında meni çıkışının azalması ve idrarda sperm görülmesi → emisyon/mesane boynu kapanma mekanizmasında sempatik etkilenimi destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Perine duyusu ve alt ekstremite motor muayenesinin korunması → sakral somatik pleksus hasarını geri plana iter.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Plexus mesentericus inferior": "İnferior mezenterik pleksus, kolonun distal bölümleriyle ilişkili otonom lifler açısından önemlidir ve aort çevresinde akla gelebilir. Ancak bu vakadaki temel klinik sorun kolon motilitesi değil, retroperitoneal orta hat diseksiyonundan sonra erkek emisyon/ejakülasyon fazının bozulmasıdır.",
+        "Plexus hypogastricus superior": "Doğru yanıttır; aort bifurkasyonu önünde ve sakral promontoryum komşuluğunda yer alan sempatik ağırlıklı otonom pleksus, retroperitoneal lenf nodu diseksiyonlarında risk altındadır. Ereksiyon korunurken meni çıkışının azalması ve ejakülat sonrası idrarda sperm görülmesi bu düzeyi destekler.",
+        "Plexus hypogastricus inferior": "İnferior hipogastrik pleksus pelvis yan duvarında viseral organlara dallar verir ve pelvik cerrahilerde önemlidir. Bu hastada cerrahi alan aort bifurkasyonu çevresi retroperitoneal orta hattadır; alt pelvik yan duvar veya mesane-prostat cerrahisi öyküsü yoktur.",
+        "Plexus prostaticus": "Prostatik pleksus prostat ve kavernöz sinirlerle ilişkili pelvik otonom ağdır; radikal prostat cerrahisi veya prostat çevresi diseksiyonda daha tipik etkilenir. Bu olguda prostat cerrahisi yoktur ve esas risk karın arka duvarı orta hat diseksiyonudur.",
+        "Plexus sacralis": "Sakral pleksus alt ekstremite motor-duyu innervasyonunun ana kaynağıdır. Bacak güçsüzlüğü, duyu kaybı veya refleks asimetrisi beklenirdi; muayenenin korunması bu seçeneği zayıflatır."
+      },
+      "coreKnowledge": "Emisyon fazı büyük ölçüde sempatik otonom kontrolle ilişkilidir; aort bifurkasyonu çevresi diseksiyonlarında superior hipogastrik pleksus hasarı klasik fonksiyonel sonuç oluşturabilir.",
+      "examPearl": "Retroperitoneal orta hat diseksiyonu sonrası ereksiyon korunup emisyon bozuluyorsa, somatik sakral yapılardan önce sempatik hipogastrik pleksus düşünülür.",
+      "whyWrong": {
+        "Plexus mesentericus inferior": "İnferior mezenterik pleksus, kolonun distal bölümleriyle ilişkili otonom lifler açısından önemlidir ve aort çevresinde akla gelebilir. Ancak bu vakadaki temel klinik sorun kolon motilitesi değil, retroperitoneal orta hat diseksiyonundan sonra erkek emisyon/ejakülasyon fazının bozulmasıdır.",
+        "Plexus hypogastricus inferior": "İnferior hipogastrik pleksus pelvis yan duvarında viseral organlara dallar verir ve pelvik cerrahilerde önemlidir. Bu hastada cerrahi alan aort bifurkasyonu çevresi retroperitoneal orta hattadır; alt pelvik yan duvar veya mesane-prostat cerrahisi öyküsü yoktur.",
+        "Plexus prostaticus": "Prostatik pleksus prostat ve kavernöz sinirlerle ilişkili pelvik otonom ağdır; radikal prostat cerrahisi veya prostat çevresi diseksiyonda daha tipik etkilenir. Bu olguda prostat cerrahisi yoktur ve esas risk karın arka duvarı orta hat diseksiyonudur.",
+        "Plexus sacralis": "Sakral pleksus alt ekstremite motor-duyu innervasyonunun ana kaynağıdır. Bacak güçsüzlüğü, duyu kaybı veya refleks asimetrisi beklenirdi; muayenenin korunması bu seçeneği zayıflatır."
+      }
+    },
+    "shuffleOptions": false,
+    "difficultyTag": "Zor",
+    "aiMeta": {
+      "generatedAt": "manual-v200-anatomy-five-case-expansion",
+      "generator": "manual-editorial-anatomy-clinical-case-expansion",
+      "schemaVersion": "clinical-standard-v397-compatible",
+      "validationWarnings": [],
+      "provider": "manual-editorial",
+      "topicControl": "pelvis-autonomic-plexus"
+    },
+    "listTitle": "Retroperitoneal cerrahi sonrası ejakülasyon bozukluğu",
+    "cardTitle": "Retroperitoneal cerrahi sonrası ejakülasyon bozukluğu",
+    "coreKnowledge": "Emisyon fazı büyük ölçüde sempatik otonom kontrolle ilişkilidir; aort bifurkasyonu çevresi diseksiyonlarında superior hipogastrik pleksus hasarı klasik fonksiyonel sonuç oluşturabilir.",
+    "examPearl": "Retroperitoneal orta hat diseksiyonu sonrası ereksiyon korunup emisyon bozuluyorsa, somatik sakral yapılardan önce sempatik hipogastrik pleksus düşünülür.",
+    "whyCorrect": "Ereksiyon ve somatik perine duyusu korunurken emisyon/ejakülasyon fazının bozulması, retroperitoneal orta hatta seyreden sempatik otonom liflerin etkilenmesini düşündürür. Aort bifurkasyonu ve common iliak başlangıçları çevresindeki diseksiyon, superior hipogastrik pleksus düzeyini riskli hale getirir; sakral somatik pleksus veya pudendal alan bulguları yoktur.",
+    "optionComparison": {
+      "Plexus mesentericus inferior": "İnferior mezenterik pleksus, kolonun distal bölümleriyle ilişkili otonom lifler açısından önemlidir ve aort çevresinde akla gelebilir. Ancak bu vakadaki temel klinik sorun kolon motilitesi değil, retroperitoneal orta hat diseksiyonundan sonra erkek emisyon/ejakülasyon fazının bozulmasıdır.",
+      "Plexus hypogastricus superior": "Doğru yanıttır; aort bifurkasyonu önünde ve sakral promontoryum komşuluğunda yer alan sempatik ağırlıklı otonom pleksus, retroperitoneal lenf nodu diseksiyonlarında risk altındadır. Ereksiyon korunurken meni çıkışının azalması ve ejakülat sonrası idrarda sperm görülmesi bu düzeyi destekler.",
+      "Plexus hypogastricus inferior": "İnferior hipogastrik pleksus pelvis yan duvarında viseral organlara dallar verir ve pelvik cerrahilerde önemlidir. Bu hastada cerrahi alan aort bifurkasyonu çevresi retroperitoneal orta hattadır; alt pelvik yan duvar veya mesane-prostat cerrahisi öyküsü yoktur.",
+      "Plexus prostaticus": "Prostatik pleksus prostat ve kavernöz sinirlerle ilişkili pelvik otonom ağdır; radikal prostat cerrahisi veya prostat çevresi diseksiyonda daha tipik etkilenir. Bu olguda prostat cerrahisi yoktur ve esas risk karın arka duvarı orta hat diseksiyonudur.",
+      "Plexus sacralis": "Sakral pleksus alt ekstremite motor-duyu innervasyonunun ana kaynağıdır. Bacak güçsüzlüğü, duyu kaybı veya refleks asimetrisi beklenirdi; muayenenin korunması bu seçeneği zayıflatır."
+    },
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Aort bifurkasyonu çevresinde diseksiyon yapılması → orta hat retroperitoneal otonom pleksusları anatomik olarak riskli hale getirir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Ereksiyonun korunması → parasempatik erektil yolun baskın olarak korunduğunu düşündürür.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Orgazm sırasında meni çıkışının azalması ve idrarda sperm görülmesi → emisyon/mesane boynu kapanma mekanizmasında sempatik etkilenimi destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Perine duyusu ve alt ekstremite motor muayenesinin korunması → sakral somatik pleksus hasarını geri plana iter.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "whyWrong": {
+      "Plexus mesentericus inferior": "İnferior mezenterik pleksus, kolonun distal bölümleriyle ilişkili otonom lifler açısından önemlidir ve aort çevresinde akla gelebilir. Ancak bu vakadaki temel klinik sorun kolon motilitesi değil, retroperitoneal orta hat diseksiyonundan sonra erkek emisyon/ejakülasyon fazının bozulmasıdır.",
+      "Plexus hypogastricus inferior": "İnferior hipogastrik pleksus pelvis yan duvarında viseral organlara dallar verir ve pelvik cerrahilerde önemlidir. Bu hastada cerrahi alan aort bifurkasyonu çevresi retroperitoneal orta hattadır; alt pelvik yan duvar veya mesane-prostat cerrahisi öyküsü yoktur.",
+      "Plexus prostaticus": "Prostatik pleksus prostat ve kavernöz sinirlerle ilişkili pelvik otonom ağdır; radikal prostat cerrahisi veya prostat çevresi diseksiyonda daha tipik etkilenir. Bu olguda prostat cerrahisi yoktur ve esas risk karın arka duvarı orta hat diseksiyonudur.",
+      "Plexus sacralis": "Sakral pleksus alt ekstremite motor-duyu innervasyonunun ana kaynağıdır. Bacak güçsüzlüğü, duyu kaybı veya refleks asimetrisi beklenirdi; muayenenin korunması bu seçeneği zayıflatır."
+    }
+  },
+  {
+    "id": "v200-new-400-derin-yerlesimli-kucuk-inme-sonrasi-saf-motor-kayip",
+    "branchId": "anatomy",
+    "caseType": "standard",
+    "relatedBranch": "Anatomi / Nöroloji",
+    "title": "Derin yerleşimli küçük inme sonrası saf motor kayıp",
+    "difficulty": "Zor",
+    "clinicalFocus": "Bazal ganglion-talamus komşuluğundaki beyaz cevher yollarını saf motor defisit paterni ve küçük derin lezyonla lokalize etme.",
+    "learningTarget": "Kortikal bulgular olmadan yüz-kol-bacak motor kaybı geliştiğinde kortikospinal ve kortikobulber liflerin sıkı geçtiği derin anatomik bölgeyi ayırt edebilme.",
+    "demographics": "67 yaşında erkek hasta",
+    "setting": "Nöroloji acili",
+    "chiefComplaint": "Hasta, sabah uyanınca sağ yüz, kol ve bacakta güçsüzlük fark etmesi nedeniyle getiriliyor.",
+    "stem": "Hasta sabah yatağından kalkmaya çalışırken sağ kolunu kaldırmakta zorlandığını ve sağ bacağının üzerine güvenle basamadığını fark etmiştir. Aynaya baktığında ağız köşesinin hafif asimetrik olduğunu görmüş ve konuşması yakınları tarafından daha peltek algılanmıştır. Görme alanında kayıp, şiddetli baş ağrısı, nöbet, bilinç kaybı veya kelime bulma güçlüğü yaşamamıştır. Son bir haftadır travma ya da ateş öyküsü yoktur. Yakınları, benzer bir atağı daha önce geçirmediğini belirtir.",
+    "patientIntro": {
+      "profile": "67 yaşında erkek hasta, ani başlayan sağ taraflı motor güçsüzlük nedeniyle nöroloji acilinde değerlendiriliyor.",
+      "presentation": "Yüz, kol ve bacağı birlikte tutan motor kayıp vardır; belirgin kortikal duyu, görme alanı veya afazi bulgusu eşlik etmez.",
+      "historySummary": "Hasta sabah yatağından kalkmaya çalışırken sağ kolunu kaldırmakta zorlandığını ve sağ bacağının üzerine güvenle basamadığını fark etmiştir. Aynaya baktığında ağız köşesinin hafif asimetrik olduğunu görmüş ve konuşması yakınları tarafından daha peltek algılanmıştır. Görme alanında kayıp, şiddetli baş ağrısı, nöbet, bilinç kaybı veya kelime bulma güçlüğü yaşamamıştır. Son bir haftadır travma ya da ateş öyküsü yoktur. Yakınları, benzer bir atağı daha önce geçirmediğini belirtir."
+    },
+    "vitals": {
+      "TA": "158/92 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "17/dk",
+      "SpO2": "97%, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "0.56 normal"
+    },
+    "exam": [
+      "Sağ alt yüz kaslarında hafif güçsüzlük, sağ kolda ve sağ bacakta piramidal dağılımda kuvvet azalması vardır.",
+      "Sağda derin tendon refleksleri canlıdır; Babinski yanıtı ekstansördür.",
+      "Ağrı, sıcaklık, vibrasyon ve pozisyon duyusu belirgin asimetri göstermemektedir.",
+      "Afazi, ihmal, görme alanı kaybı veya bakış deviasyonu saptanmaz."
+    ],
+    "investigations": [
+      {
+        "id": "v200-new-400-derin-yerlesimli-kucuk-inme-sonrasi-saf-motor-kayip-kraniyal-mrg-diffuzyon",
+        "label": "Kraniyal MRG difüzyon incelemesi",
+        "title": "Kraniyal MRG difüzyon incelemesi",
+        "orderLabel": "Kraniyal MRG difüzyon incelemesi",
+        "type": "mri",
+        "priority": "essential",
+        "subtype": "Kraniyal MRG difüzyon incelemesi",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "summary": "MRG, kortikal yayılım göstermeyen ve lentiform nukleus-talamus komşuluğunda yerleşen küçük derin lezyonu ortaya koyar.",
+        "clinicalMeaning": "MRG, kortikal yayılım göstermeyen ve lentiform nukleus-talamus komşuluğunda yerleşen küçük derin lezyonu ortaya koyar.",
+        "result": {
+          "title": "Kraniyal MRG difüzyon incelemesi",
+          "summary": "MRG, kortikal yayılım göstermeyen ve lentiform nukleus-talamus komşuluğunda yerleşen küçük derin lezyonu ortaya koyar.",
+          "interpretation": "MRG, kortikal yayılım göstermeyen ve lentiform nukleus-talamus komşuluğunda yerleşen küçük derin lezyonu ortaya koyar.",
+          "values": [
+            [
+              "Lezyon tipi",
+              "Sol derin hemisferik beyaz cevherde küçük akut difüzyon kısıtlılığı izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Komşuluk",
+              "Odak lentiform nukleusun medialinde ve talamusun lateralinde yerleşmiştir.",
+              "",
+              ""
+            ],
+            [
+              "Kortikal alan",
+              "Frontal, parietal ve temporal kortekste akut yaygın kortikal infarkt izlenmedi.",
+              "",
+              ""
+            ],
+            [
+              "Beyin sapı",
+              "Mezensefalon, pons ve bulbus düzeyinde akut odak saptanmadı.",
+              "",
+              ""
+            ]
+          ],
+          "rows": [
+            [
+              "Lezyon tipi",
+              "Sol derin hemisferik beyaz cevherde küçük akut difüzyon kısıtlılığı izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Komşuluk",
+              "Odak lentiform nukleusun medialinde ve talamusun lateralinde yerleşmiştir.",
+              "",
+              ""
+            ],
+            [
+              "Kortikal alan",
+              "Frontal, parietal ve temporal kortekste akut yaygın kortikal infarkt izlenmedi.",
+              "",
+              ""
+            ],
+            [
+              "Beyin sapı",
+              "Mezensefalon, pons ve bulbus düzeyinde akut odak saptanmadı.",
+              "",
+              ""
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Lezyon tipi",
+            "Sol derin hemisferik beyaz cevherde küçük akut difüzyon kısıtlılığı izlenir.",
+            "",
+            ""
+          ],
+          [
+            "Komşuluk",
+            "Odak lentiform nukleusun medialinde ve talamusun lateralinde yerleşmiştir.",
+            "",
+            ""
+          ],
+          [
+            "Kortikal alan",
+            "Frontal, parietal ve temporal kortekste akut yaygın kortikal infarkt izlenmedi.",
+            "",
+            ""
+          ],
+          [
+            "Beyin sapı",
+            "Mezensefalon, pons ve bulbus düzeyinde akut odak saptanmadı.",
+            "",
+            ""
+          ]
+        ],
+        "postAnswerExplanation": "MRG, kortikal yayılım göstermeyen ve lentiform nukleus-talamus komşuluğunda yerleşen küçük derin lezyonu ortaya koyar.",
+        "interpretation": "MRG, kortikal yayılım göstermeyen ve lentiform nukleus-talamus komşuluğunda yerleşen küçük derin lezyonu ortaya koyar.",
+        "explanationAfterAnswer": "MRG, kortikal yayılım göstermeyen ve lentiform nukleus-talamus komşuluğunda yerleşen küçük derin lezyonu ortaya koyar.",
+        "testValueLabel": "Kraniyal MRG difüzyon incelemesi",
+        "educationalValue": "Kraniyal MRG difüzyon incelemesi",
+        "clinicalPriorityLabel": "Kraniyal MRG difüzyon incelemesi",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "clinicalFlowOrder": 1,
+        "purpose": "Kraniyal MRG difüzyon incelemesi",
+        "inlineFeedback": "MRG, kortikal yayılım göstermeyen ve lentiform nukleus-talamus komşuluğunda yerleşen küçük derin lezyonu ortaya koyar."
+      }
+    ],
+    "useSyntheticInvestigationBank": false,
+    "managementSequence": {
+      "enabled": false
+    },
+    "hideExamSignal": false,
+    "question": "Bu defisite yol açan lezyon en olası hangi anatomik yapıyı etkilemiştir?",
+    "questionType": "anatomy",
+    "answerTarget": "anatomy",
+    "diagnosis": {
+      "correct": "Crus posterius capsulae internae",
+      "options": [
+        "Genu capsulae internae",
+        "Capsula externa",
+        "Crus posterius capsulae internae",
+        "Crus anterius capsulae internae",
+        "Corona radiata"
+      ],
+      "question": "Bu defisite yol açan lezyon en olası hangi anatomik yapıyı etkilemiştir?",
+      "explanation": "Kortikal bulgular olmadan karşı yüz, kol ve bacağı birlikte tutan saf motor defisit, motor liflerin dar bir derin beyaz cevher alanından geçtiği lokalizasyonu düşündürür. MRG’de odak lentiform nukleusun medialinde ve talamusun lateralindedir; bu komşuluk kortikospinal liflerin yoğun geçtiği posterior iç kapsül düzeyini destekler. Kortikal yayılım, kapsula eksterna veya beyin sapı lezyonu için destekleyici bulgu yoktur.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Saf motor hemiparezi + kortikal bulgu yokluğu + lentiform nukleus ile talamus arasındaki küçük derin odak, iç kapsül posterior liflerini akla getirir."
+        }
+      ],
+      "answerFeedback": {
+        "summary": "Kortikal bulgular olmadan karşı yüz, kol ve bacağı birlikte tutan saf motor defisit, motor liflerin dar bir derin beyaz cevher alanından geçtiği lokalizasyonu düşündürür. MRG’de odak lentiform nukleusun medialinde ve talamusun lateralindedir; bu komşuluk kortikospinal liflerin yoğun geçtiği posterior iç kapsül düzeyini destekler. Kortikal yayılım, kapsula eksterna veya beyin sapı lezyonu için destekleyici bulgu yoktur.",
+        "whyCorrect": "Kortikal bulgular olmadan karşı yüz, kol ve bacağı birlikte tutan saf motor defisit, motor liflerin dar bir derin beyaz cevher alanından geçtiği lokalizasyonu düşündürür. MRG’de odak lentiform nukleusun medialinde ve talamusun lateralindedir; bu komşuluk kortikospinal liflerin yoğun geçtiği posterior iç kapsül düzeyini destekler. Kortikal yayılım, kapsula eksterna veya beyin sapı lezyonu için destekleyici bulgu yoktur.",
+        "rationale": "Kortikal bulgular olmadan karşı yüz, kol ve bacağı birlikte tutan saf motor defisit, motor liflerin dar bir derin beyaz cevher alanından geçtiği lokalizasyonu düşündürür. MRG’de odak lentiform nukleusun medialinde ve talamusun lateralindedir; bu komşuluk kortikospinal liflerin yoğun geçtiği posterior iç kapsül düzeyini destekler. Kortikal yayılım, kapsula eksterna veya beyin sapı lezyonu için destekleyici bulgu yoktur.",
+        "correctOptionFeedback": "Doğru yanıttır; kortikospinal lifler iç kapsülün arka bacağında yoğun seyreder ve küçük derin lezyonlar karşı tarafta saf motor hemiparezi oluşturabilir. Lentiform nukleusun medialinde, talamusun lateralinde yerleşim ve kortikal bulgu yokluğu bu yapıyı destekler.",
+        "keyClues": [
+          "Yüz, kol ve bacağın birlikte motor etkilenmesi",
+          "Duyu ve kortikal fonksiyonların belirgin korunması",
+          "Lentiform nukleus medialinde ve talamus lateralinde küçük odak",
+          "Beyin sapı ve kortekste akut odak izlenmemesi"
+        ],
+        "evidenceChain": [
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Yüz, kol ve bacağın birlikte motor etkilenmesi → kortikobulber ve kortikospinal liflerin yakın seyrettiği dar bir alanı düşündürür.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Afazi, ihmal ve görme alanı kaybının olmaması → yaygın kortikal lezyonu zayıflatır.",
+            "weight": "medium",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Lentiform nukleus medialinde ve talamus lateralinde küçük odak → iç kapsül arka bölümü komşuluğunu destekler.",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Duyu modalitelerinin belirgin korunması → primer talamik veya geniş duysal yol lezyonunu geri plana iter.",
+            "weight": "medium",
+            "source": "case"
+          }
+        ],
+        "examPearl": "Saf motor hemiparezi + kortikal bulgu yokluğu + lentiform nukleus ile talamus arasındaki küçük derin odak, iç kapsül posterior liflerini akla getirir.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Saf motor hemiparezi + kortikal bulgu yokluğu + lentiform nukleus ile talamus arasındaki küçük derin odak, iç kapsül posterior liflerini akla getirir."
+          }
+        ],
+        "optionComparison": {
+          "Genu capsulae internae": "İç kapsül genu bölgesi kortikobulber liflerle ilişkilidir ve yüz-dil-farenks motor bulgularında akla gelebilir. Ancak bu hastada yüz bulgusuna kol ve bacak piramidal güçsüzlüğü de belirgin eşlik etmektedir; odak lentiform nukleus ile talamus arasındaki arka komşuluğa daha uygundur.",
+          "Capsula externa": "Kapsula eksterna lentiform nukleusun lateralinde yer alır ve bu kadar yoğun yüz-kol-bacak saf motor demeti oluşturmaz. MRG odak tanımı lentiform nukleusun lateralinden çok medialinde ve talamus lateralindedir.",
+          "Crus posterius capsulae internae": "Doğru yanıttır; kortikospinal lifler iç kapsülün arka bacağında yoğun seyreder ve küçük derin lezyonlar karşı tarafta saf motor hemiparezi oluşturabilir. Lentiform nukleusun medialinde, talamusun lateralinde yerleşim ve kortikal bulgu yokluğu bu yapıyı destekler.",
+          "Crus anterius capsulae internae": "İç kapsül ön bacağı daha çok frontopontin ve talamokortikal bağlantılarla ilişkilidir. Saf yüz-kol-bacak piramidal motor kaybı, posterior motor liflerin yoğun geçtiği bölge kadar iyi açıklanamaz.",
+          "Corona radiata": "Corona radiata korteksten inen liflerin daha yaygın ve fan şeklindeki üst bölümüdür; lezyonları motor kayıp yapabilir. Ancak MRG odak lentiform nukleus-talamus arasında dar derin bölgede tanımlanmıştır ve klinik tablo daha kompakt iç kapsül motor liflerine uyar."
+        },
+        "whyWrong": {
+          "Genu capsulae internae": "İç kapsül genu bölgesi kortikobulber liflerle ilişkilidir ve yüz-dil-farenks motor bulgularında akla gelebilir. Ancak bu hastada yüz bulgusuna kol ve bacak piramidal güçsüzlüğü de belirgin eşlik etmektedir; odak lentiform nukleus ile talamus arasındaki arka komşuluğa daha uygundur.",
+          "Capsula externa": "Kapsula eksterna lentiform nukleusun lateralinde yer alır ve bu kadar yoğun yüz-kol-bacak saf motor demeti oluşturmaz. MRG odak tanımı lentiform nukleusun lateralinden çok medialinde ve talamus lateralindedir.",
+          "Crus anterius capsulae internae": "İç kapsül ön bacağı daha çok frontopontin ve talamokortikal bağlantılarla ilişkilidir. Saf yüz-kol-bacak piramidal motor kaybı, posterior motor liflerin yoğun geçtiği bölge kadar iyi açıklanamaz.",
+          "Corona radiata": "Corona radiata korteksten inen liflerin daha yaygın ve fan şeklindeki üst bölümüdür; lezyonları motor kayıp yapabilir. Ancak MRG odak lentiform nukleus-talamus arasında dar derin bölgede tanımlanmıştır ve klinik tablo daha kompakt iç kapsül motor liflerine uyar."
+        },
+        "managementSteps": [],
+        "management": [],
+        "learningOutcome": "Kortikal bulgular olmadan yüz-kol-bacak motor kaybı geliştiğinde kortikospinal ve kortikobulber liflerin sıkı geçtiği derin anatomik bölgeyi ayırt edebilme.",
+        "coreKnowledge": "İç kapsülün posterior bölümü kortikospinal liflerin sıkı paketlendiği derin bir geçiş alanıdır; küçük lezyonlar kortikal belirti olmadan belirgin saf motor kayıp yapabilir."
+      },
+      "whyCorrect": "Kortikal bulgular olmadan karşı yüz, kol ve bacağı birlikte tutan saf motor defisit, motor liflerin dar bir derin beyaz cevher alanından geçtiği lokalizasyonu düşündürür. MRG’de odak lentiform nukleusun medialinde ve talamusun lateralindedir; bu komşuluk kortikospinal liflerin yoğun geçtiği posterior iç kapsül düzeyini destekler. Kortikal yayılım, kapsula eksterna veya beyin sapı lezyonu için destekleyici bulgu yoktur.",
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Yüz, kol ve bacağın birlikte motor etkilenmesi → kortikobulber ve kortikospinal liflerin yakın seyrettiği dar bir alanı düşündürür.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Afazi, ihmal ve görme alanı kaybının olmaması → yaygın kortikal lezyonu zayıflatır.",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Lentiform nukleus medialinde ve talamus lateralinde küçük odak → iç kapsül arka bölümü komşuluğunu destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Duyu modalitelerinin belirgin korunması → primer talamik veya geniş duysal yol lezyonunu geri plana iter.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Genu capsulae internae": "İç kapsül genu bölgesi kortikobulber liflerle ilişkilidir ve yüz-dil-farenks motor bulgularında akla gelebilir. Ancak bu hastada yüz bulgusuna kol ve bacak piramidal güçsüzlüğü de belirgin eşlik etmektedir; odak lentiform nukleus ile talamus arasındaki arka komşuluğa daha uygundur.",
+        "Capsula externa": "Kapsula eksterna lentiform nukleusun lateralinde yer alır ve bu kadar yoğun yüz-kol-bacak saf motor demeti oluşturmaz. MRG odak tanımı lentiform nukleusun lateralinden çok medialinde ve talamus lateralindedir.",
+        "Crus posterius capsulae internae": "Doğru yanıttır; kortikospinal lifler iç kapsülün arka bacağında yoğun seyreder ve küçük derin lezyonlar karşı tarafta saf motor hemiparezi oluşturabilir. Lentiform nukleusun medialinde, talamusun lateralinde yerleşim ve kortikal bulgu yokluğu bu yapıyı destekler.",
+        "Crus anterius capsulae internae": "İç kapsül ön bacağı daha çok frontopontin ve talamokortikal bağlantılarla ilişkilidir. Saf yüz-kol-bacak piramidal motor kaybı, posterior motor liflerin yoğun geçtiği bölge kadar iyi açıklanamaz.",
+        "Corona radiata": "Corona radiata korteksten inen liflerin daha yaygın ve fan şeklindeki üst bölümüdür; lezyonları motor kayıp yapabilir. Ancak MRG odak lentiform nukleus-talamus arasında dar derin bölgede tanımlanmıştır ve klinik tablo daha kompakt iç kapsül motor liflerine uyar."
+      },
+      "coreKnowledge": "İç kapsülün posterior bölümü kortikospinal liflerin sıkı paketlendiği derin bir geçiş alanıdır; küçük lezyonlar kortikal belirti olmadan belirgin saf motor kayıp yapabilir.",
+      "examPearl": "Saf motor hemiparezi + kortikal bulgu yokluğu + lentiform nukleus ile talamus arasındaki küçük derin odak, iç kapsül posterior liflerini akla getirir.",
+      "whyWrong": {
+        "Genu capsulae internae": "İç kapsül genu bölgesi kortikobulber liflerle ilişkilidir ve yüz-dil-farenks motor bulgularında akla gelebilir. Ancak bu hastada yüz bulgusuna kol ve bacak piramidal güçsüzlüğü de belirgin eşlik etmektedir; odak lentiform nukleus ile talamus arasındaki arka komşuluğa daha uygundur.",
+        "Capsula externa": "Kapsula eksterna lentiform nukleusun lateralinde yer alır ve bu kadar yoğun yüz-kol-bacak saf motor demeti oluşturmaz. MRG odak tanımı lentiform nukleusun lateralinden çok medialinde ve talamus lateralindedir.",
+        "Crus anterius capsulae internae": "İç kapsül ön bacağı daha çok frontopontin ve talamokortikal bağlantılarla ilişkilidir. Saf yüz-kol-bacak piramidal motor kaybı, posterior motor liflerin yoğun geçtiği bölge kadar iyi açıklanamaz.",
+        "Corona radiata": "Corona radiata korteksten inen liflerin daha yaygın ve fan şeklindeki üst bölümüdür; lezyonları motor kayıp yapabilir. Ancak MRG odak lentiform nukleus-talamus arasında dar derin bölgede tanımlanmıştır ve klinik tablo daha kompakt iç kapsül motor liflerine uyar."
+      }
+    },
+    "shuffleOptions": false,
+    "difficultyTag": "Zor",
+    "aiMeta": {
+      "generatedAt": "manual-v200-anatomy-five-case-expansion",
+      "generator": "manual-editorial-anatomy-clinical-case-expansion",
+      "schemaVersion": "clinical-standard-v397-compatible",
+      "validationWarnings": [],
+      "provider": "manual-editorial",
+      "topicControl": "neuroanatomy-internal-capsule"
+    },
+    "listTitle": "Derin yerleşimli küçük inme sonrası saf motor kayıp",
+    "cardTitle": "Derin yerleşimli küçük inme sonrası saf motor kayıp",
+    "coreKnowledge": "İç kapsülün posterior bölümü kortikospinal liflerin sıkı paketlendiği derin bir geçiş alanıdır; küçük lezyonlar kortikal belirti olmadan belirgin saf motor kayıp yapabilir.",
+    "examPearl": "Saf motor hemiparezi + kortikal bulgu yokluğu + lentiform nukleus ile talamus arasındaki küçük derin odak, iç kapsül posterior liflerini akla getirir.",
+    "whyCorrect": "Kortikal bulgular olmadan karşı yüz, kol ve bacağı birlikte tutan saf motor defisit, motor liflerin dar bir derin beyaz cevher alanından geçtiği lokalizasyonu düşündürür. MRG’de odak lentiform nukleusun medialinde ve talamusun lateralindedir; bu komşuluk kortikospinal liflerin yoğun geçtiği posterior iç kapsül düzeyini destekler. Kortikal yayılım, kapsula eksterna veya beyin sapı lezyonu için destekleyici bulgu yoktur.",
+    "optionComparison": {
+      "Genu capsulae internae": "İç kapsül genu bölgesi kortikobulber liflerle ilişkilidir ve yüz-dil-farenks motor bulgularında akla gelebilir. Ancak bu hastada yüz bulgusuna kol ve bacak piramidal güçsüzlüğü de belirgin eşlik etmektedir; odak lentiform nukleus ile talamus arasındaki arka komşuluğa daha uygundur.",
+      "Capsula externa": "Kapsula eksterna lentiform nukleusun lateralinde yer alır ve bu kadar yoğun yüz-kol-bacak saf motor demeti oluşturmaz. MRG odak tanımı lentiform nukleusun lateralinden çok medialinde ve talamus lateralindedir.",
+      "Crus posterius capsulae internae": "Doğru yanıttır; kortikospinal lifler iç kapsülün arka bacağında yoğun seyreder ve küçük derin lezyonlar karşı tarafta saf motor hemiparezi oluşturabilir. Lentiform nukleusun medialinde, talamusun lateralinde yerleşim ve kortikal bulgu yokluğu bu yapıyı destekler.",
+      "Crus anterius capsulae internae": "İç kapsül ön bacağı daha çok frontopontin ve talamokortikal bağlantılarla ilişkilidir. Saf yüz-kol-bacak piramidal motor kaybı, posterior motor liflerin yoğun geçtiği bölge kadar iyi açıklanamaz.",
+      "Corona radiata": "Corona radiata korteksten inen liflerin daha yaygın ve fan şeklindeki üst bölümüdür; lezyonları motor kayıp yapabilir. Ancak MRG odak lentiform nukleus-talamus arasında dar derin bölgede tanımlanmıştır ve klinik tablo daha kompakt iç kapsül motor liflerine uyar."
+    },
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Yüz, kol ve bacağın birlikte motor etkilenmesi → kortikobulber ve kortikospinal liflerin yakın seyrettiği dar bir alanı düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Afazi, ihmal ve görme alanı kaybının olmaması → yaygın kortikal lezyonu zayıflatır.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Lentiform nukleus medialinde ve talamus lateralinde küçük odak → iç kapsül arka bölümü komşuluğunu destekler.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Duyu modalitelerinin belirgin korunması → primer talamik veya geniş duysal yol lezyonunu geri plana iter.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "whyWrong": {
+      "Genu capsulae internae": "İç kapsül genu bölgesi kortikobulber liflerle ilişkilidir ve yüz-dil-farenks motor bulgularında akla gelebilir. Ancak bu hastada yüz bulgusuna kol ve bacak piramidal güçsüzlüğü de belirgin eşlik etmektedir; odak lentiform nukleus ile talamus arasındaki arka komşuluğa daha uygundur.",
+      "Capsula externa": "Kapsula eksterna lentiform nukleusun lateralinde yer alır ve bu kadar yoğun yüz-kol-bacak saf motor demeti oluşturmaz. MRG odak tanımı lentiform nukleusun lateralinden çok medialinde ve talamus lateralindedir.",
+      "Crus anterius capsulae internae": "İç kapsül ön bacağı daha çok frontopontin ve talamokortikal bağlantılarla ilişkilidir. Saf yüz-kol-bacak piramidal motor kaybı, posterior motor liflerin yoğun geçtiği bölge kadar iyi açıklanamaz.",
+      "Corona radiata": "Corona radiata korteksten inen liflerin daha yaygın ve fan şeklindeki üst bölümüdür; lezyonları motor kayıp yapabilir. Ancak MRG odak lentiform nukleus-talamus arasında dar derin bölgede tanımlanmıştır ve klinik tablo daha kompakt iç kapsül motor liflerine uyar."
+    }
+  }
+,
+{
+    "id": "v201-new-401-omuz-arkasinda-agri-ve-dis-rotasyon-zayifligi",
+    "branchId": "anatomy",
+    "caseType": "standard",
+    "relatedBranch": "Anatomi / Ortopedi",
+    "title": "Omuz arkasında ağrı ve dış rotasyon zayıflığı",
+    "difficulty": "Orta",
+    "clinicalFocus": "Omuz çevresi motor defisitini, cilt duyusu korunumu ve hedefli görüntüleme bulgularıyla ayırt etme.",
+    "learningTarget": "Posterior omuz ağrısı, dış rotasyon zayıflığı ve deltoid-duyu korunumu birlikte olduğunda ilgili skapular geçişte etkilenebilecek siniri seçebilme.",
+    "demographics": "28 yaşında erkek sporcu",
+    "setting": "Spor hekimliği polikliniği",
+    "chiefComplaint": "Hasta, baş üstü servis hareketlerinden sonra artan sağ omuz arkası ağrı ve dış rotasyon güçsüzlüğü nedeniyle başvuruyor.",
+    "stem": "Hasta son üç aydır voleybol antrenmanlarının özellikle servis ve smaç tekrarlarından sonra sağ omzunun arka tarafında derin bir ağrı hissettiğini anlatır. Başlangıçta dinlenince geçen bu yakınma, son haftalarda topa vururken kolunu dışa çevirmekte zorlanma ve atış gücünde azalma şeklinde günlük performansını etkilemeye başlamıştır. Omzunda belirgin çıkık hissi, boyundan kola yayılan elektriklenme veya elde uyuşma tariflemez. Ağrı kesiciyle kısa süre rahatladığını ancak antrenmana dönünce aynı hareketlerde tekrar zorlandığını söyler. Daha önce sağ omuz ameliyatı geçirmemiştir.",
+    "patientIntro": {
+      "profile": "28 yaşında erkek sporcu, spor hekimliği polikliniği bağlamında değerlendiriliyor.",
+      "presentation": "Baş üstü aktiviteyle artan posterior omuz ağrısı, dış rotasyon zayıflığı ve lateral omuz cilt duyusunun korunması vardır.",
+      "historySummary": "Hasta son üç aydır voleybol antrenmanlarının özellikle servis ve smaç tekrarlarından sonra sağ omzunun arka tarafında derin bir ağrı hissettiğini anlatır. Başlangıçta dinlenince geçen bu yakınma, son haftalarda topa vururken kolunu dışa çevirmekte zorlanma ve atış gücünde azalma şeklinde günlük performansını etkilemeye başlamıştır. Omzunda belirgin çıkık hissi, boyundan kola yayılan elektriklenme veya elde uyuşma tariflemez. Ağrı kesiciyle kısa süre rahatladığını ancak antrenmana dönünce aynı hareketlerde tekrar zorlandığını söyler. Daha önce sağ omuz ameliyatı geçirmemiştir."
+    },
+    "vitals": {
+      "TA": "118/72 mmHg",
+      "Nabız": "74/dk",
+      "Solunum": "14/dk",
+      "SpO2": "99%, oda havasında",
+      "Ateş": "36.6 °C",
+      "Şok indeksi": "0.63 normal"
+    },
+    "exam": [
+      "Sağ omuz dış rotasyonu dirençli testte belirgin zayıftır; ağrı özellikle posterior omuz derininde tariflenir.",
+      "İlk 15 derecelik abdüksiyon hafif zayıfken deltoid gücü belirgin korunmuştur.",
+      "Lateral omuz rozet alanında ve elde belirgin duyu kaybı saptanmaz.",
+      "Duvara itme testinde belirgin medial skapular kanatlanma izlenmez; dirsek ve el bileği motor muayenesi doğaldır."
+    ],
+    "investigations": [
+      {
+        "id": "v201-new-401-omuz-arkasinda-agri-ve-dis-rotasyon-zayifligi-omuz-mrg-ve-emg",
+        "label": "Omuz MRG ve hedefli elektrofizyoloji",
+        "title": "Omuz MRG ve hedefli elektrofizyoloji",
+        "orderLabel": "Omuz MRG ve hedefli elektrofizyoloji",
+        "type": "mri",
+        "priority": "essential",
+        "subtype": "Omuz MRG ve hedefli elektrofizyoloji",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "summary": "Görüntüleme ve elektrofizyoloji, posterior omuz rotator kaslarına sınırlı etkilenimi ve deltoid-duyu alanının korunmasını gösterir.",
+        "clinicalMeaning": "Görüntüleme ve elektrofizyoloji, posterior omuz rotator kaslarına sınırlı etkilenimi ve deltoid-duyu alanının korunmasını gösterir.",
+        "result": {
+          "title": "Omuz MRG ve hedefli elektrofizyoloji",
+          "summary": "Görüntüleme ve elektrofizyoloji, posterior omuz rotator kaslarına sınırlı etkilenimi ve deltoid-duyu alanının korunmasını gösterir.",
+          "interpretation": "Görüntüleme ve elektrofizyoloji, posterior omuz rotator kaslarına sınırlı etkilenimi ve deltoid-duyu alanının korunmasını gösterir.",
+          "values": [
+            [
+              "Kistik görünüm",
+              "Skapulanın üst kenarındaki çentik komşuluğunda küçük paralabral kistik lezyon izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Kas sinyali",
+              "Supraspinatus ve infraspinatus kaslarında hafif denervasyon ödemi ile uyumlu sinyal artışı vardır.",
+              "",
+              ""
+            ],
+            [
+              "Deltoid kas",
+              "Deltoid kas hacmi ve sinyal özelliği korunmuştur.",
+              "",
+              ""
+            ],
+            [
+              "Elektrofizyoloji",
+              "Posterior omuz rotator kaslarında reinnervasyon bulguları izlenir; distal el kaslarında patolojik bulgu yoktur.",
+              "",
+              ""
+            ]
+          ],
+          "rows": [
+            [
+              "Kistik görünüm",
+              "Skapulanın üst kenarındaki çentik komşuluğunda küçük paralabral kistik lezyon izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Kas sinyali",
+              "Supraspinatus ve infraspinatus kaslarında hafif denervasyon ödemi ile uyumlu sinyal artışı vardır.",
+              "",
+              ""
+            ],
+            [
+              "Deltoid kas",
+              "Deltoid kas hacmi ve sinyal özelliği korunmuştur.",
+              "",
+              ""
+            ],
+            [
+              "Elektrofizyoloji",
+              "Posterior omuz rotator kaslarında reinnervasyon bulguları izlenir; distal el kaslarında patolojik bulgu yoktur.",
+              "",
+              ""
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Kistik görünüm",
+            "Skapulanın üst kenarındaki çentik komşuluğunda küçük paralabral kistik lezyon izlenir.",
+            "",
+            ""
+          ],
+          [
+            "Kas sinyali",
+            "Supraspinatus ve infraspinatus kaslarında hafif denervasyon ödemi ile uyumlu sinyal artışı vardır.",
+            "",
+            ""
+          ],
+          [
+            "Deltoid kas",
+            "Deltoid kas hacmi ve sinyal özelliği korunmuştur.",
+            "",
+            ""
+          ],
+          [
+            "Elektrofizyoloji",
+            "Posterior omuz rotator kaslarında reinnervasyon bulguları izlenir; distal el kaslarında patolojik bulgu yoktur.",
+            "",
+            ""
+          ]
+        ],
+        "postAnswerExplanation": "Görüntüleme ve elektrofizyoloji, posterior omuz rotator kaslarına sınırlı etkilenimi ve deltoid-duyu alanının korunmasını gösterir.",
+        "interpretation": "Görüntüleme ve elektrofizyoloji, posterior omuz rotator kaslarına sınırlı etkilenimi ve deltoid-duyu alanının korunmasını gösterir.",
+        "explanationAfterAnswer": "Görüntüleme ve elektrofizyoloji, posterior omuz rotator kaslarına sınırlı etkilenimi ve deltoid-duyu alanının korunmasını gösterir.",
+        "testValueLabel": "Omuz MRG ve hedefli elektrofizyoloji",
+        "educationalValue": "Omuz MRG ve hedefli elektrofizyoloji",
+        "clinicalPriorityLabel": "Omuz MRG ve hedefli elektrofizyoloji",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "clinicalFlowOrder": 1,
+        "purpose": "Omuz MRG ve hedefli elektrofizyoloji",
+        "inlineFeedback": "Görüntüleme ve elektrofizyoloji, posterior omuz rotator kaslarına sınırlı etkilenimi ve deltoid-duyu alanının korunmasını gösterir."
+      }
+    ],
+    "useSyntheticInvestigationBank": false,
+    "managementSequence": {
+      "enabled": false
+    },
+    "hideExamSignal": false,
+    "question": "Bu motor paternini en iyi açıklayan sinir hangisidir?",
+    "questionType": "anatomy",
+    "answerTarget": "anatomy",
+    "diagnosis": {
+      "correct": "Nervus suprascapularis",
+      "options": [
+        "Nervus axillaris",
+        "Nervus thoracodorsalis",
+        "Nervus dorsalis scapulae",
+        "Nervus suprascapularis",
+        "Nervus thoracicus longus"
+      ],
+      "question": "Bu motor paternini en iyi açıklayan sinir hangisidir?",
+      "explanation": "Baş üstü aktiviteye bağlı posterior omuz ağrısı, dış rotasyon zayıflığı ve supraspinatus-infraspinatus etkilenimi; deltoid fonksiyonu ile lateral omuz duyusunun korunmasıyla birlikte değerlendirildiğinde lezyon rotator cuff kaslarını innerve eden skapular geçiş sinirini destekler. Axillary sinir lezyonunda deltoid ve lateral omuz cilt duyusu daha belirgin etkilenirdi; long thoracic sinirde ise skapular kanatlanma beklenirdi.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Dış rotasyon zayıflığı + deltoid ve lateral omuz duyusunun korunması, posterior omuz rotator kaslarına giden sinir etkilenimini düşündürür."
+        }
+      ],
+      "answerFeedback": {
+        "summary": "Baş üstü aktiviteye bağlı posterior omuz ağrısı, dış rotasyon zayıflığı ve supraspinatus-infraspinatus etkilenimi; deltoid fonksiyonu ile lateral omuz duyusunun korunmasıyla birlikte değerlendirildiğinde lezyon rotator cuff kaslarını innerve eden skapular geçiş sinirini destekler. Axillary sinir lezyonunda deltoid ve lateral omuz cilt duyusu daha belirgin etkilenirdi; long thoracic sinirde ise skapular kanatlanma beklenirdi.",
+        "whyCorrect": "Baş üstü aktiviteye bağlı posterior omuz ağrısı, dış rotasyon zayıflığı ve supraspinatus-infraspinatus etkilenimi; deltoid fonksiyonu ile lateral omuz duyusunun korunmasıyla birlikte değerlendirildiğinde lezyon rotator cuff kaslarını innerve eden skapular geçiş sinirini destekler. Axillary sinir lezyonunda deltoid ve lateral omuz cilt duyusu daha belirgin etkilenirdi; long thoracic sinirde ise skapular kanatlanma beklenirdi.",
+        "rationale": "Baş üstü aktiviteye bağlı posterior omuz ağrısı, dış rotasyon zayıflığı ve supraspinatus-infraspinatus etkilenimi; deltoid fonksiyonu ile lateral omuz duyusunun korunmasıyla birlikte değerlendirildiğinde lezyon rotator cuff kaslarını innerve eden skapular geçiş sinirini destekler. Axillary sinir lezyonunda deltoid ve lateral omuz cilt duyusu daha belirgin etkilenirdi; long thoracic sinirde ise skapular kanatlanma beklenirdi.",
+        "correctOptionFeedback": "Doğru yanıttır; bu sinir supraspinatus ve infraspinatus kaslarını innerve eder. Üst skapular çentik çevresindeki kistik bası, ilk abdüksiyon katkısında ve özellikle dış rotasyonda zayıflık oluştururken deltoid gücü ve lateral omuz cilt duyusu korunabilir.",
+        "keyClues": [
+          "Baş üstü aktiviteyle artan posterior omuz ağrısı",
+          "Dış rotasyon zayıflığı ve hafif ilk abdüksiyon kusuru",
+          "Deltoid gücü ve lateral omuz duyusunun korunması",
+          "Skapula üst kenarı çentik komşuluğunda kistik bası görünümü"
+        ],
+        "evidenceChain": [
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Baş üstü aktiviteyle artan posterior omuz ağrısı",
+            "weight": "medium",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Dış rotasyon zayıflığı ve hafif ilk abdüksiyon kusuru",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Deltoid gücü ve lateral omuz duyusunun korunması",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Skapula üst kenarı çentik komşuluğunda kistik bası görünümü",
+            "weight": "high",
+            "source": "case"
+          }
+        ],
+        "examPearl": "Dış rotasyon zayıflığı + deltoid ve lateral omuz duyusunun korunması, posterior omuz rotator kaslarına giden sinir etkilenimini düşündürür.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Dış rotasyon zayıflığı + deltoid ve lateral omuz duyusunun korunması, posterior omuz rotator kaslarına giden sinir etkilenimini düşündürür."
+          }
+        ],
+        "optionComparison": {
+          "Nervus axillaris": "Axillary sinir cerrahi boyun travması veya kuadrangular aralık sorunlarında deltoid-teres minor fonksiyonunu ve lateral omuz cilt duyusunu etkileyebilir. Bu olguda deltoid gücü ve lateral omuz duyusu korunmuş, seçici problem daha çok rotator cuff başlangıç/dış rotasyon hattında yoğunlaşmıştır.",
+          "Nervus thoracodorsalis": "Thoracodorsal sinir latissimus dorsi fonksiyonuyla ilişkilidir; kolun adduksiyon, ekstansiyon ve iç rotasyon gücünü etkiler. Bu hastada duvara tırmanma veya kolu gövdeye çekme kaybı değil, omuz dış rotasyonu ve ilk abdüksiyon bileşeni öne çıkmaktadır.",
+          "Nervus dorsalis scapulae": "Dorsal scapular sinir rhomboid kasları ve levator scapulae ile ilişkilidir; skapulanın retraksiyon ve medial stabilizasyon kusurlarında düşünülür. Olguda belirgin skapular retraksiyon kaybı veya rhomboid atrofisi değil, posterior omuz kaslarına sınırlı motor zayıflık vardır.",
+          "Nervus suprascapularis": "Doğru yanıttır; bu sinir supraspinatus ve infraspinatus kaslarını innerve eder. Üst skapular çentik çevresindeki kistik bası, ilk abdüksiyon katkısında ve özellikle dış rotasyonda zayıflık oluştururken deltoid gücü ve lateral omuz cilt duyusu korunabilir.",
+          "Nervus thoracicus longus": "Long thoracic sinir serratus anterior kasını innerve eder ve duvara itme sırasında medial skapular kanatlanma ile akla gelir. Bu vakada duvara itme testi belirgin kanatlanma oluşturmamakta, sorun glenohumeral dış rotasyon ve rotator cuff kas paternindedir."
+        },
+        "whyWrong": {
+          "Nervus axillaris": "Axillary sinir cerrahi boyun travması veya kuadrangular aralık sorunlarında deltoid-teres minor fonksiyonunu ve lateral omuz cilt duyusunu etkileyebilir. Bu olguda deltoid gücü ve lateral omuz duyusu korunmuş, seçici problem daha çok rotator cuff başlangıç/dış rotasyon hattında yoğunlaşmıştır.",
+          "Nervus thoracodorsalis": "Thoracodorsal sinir latissimus dorsi fonksiyonuyla ilişkilidir; kolun adduksiyon, ekstansiyon ve iç rotasyon gücünü etkiler. Bu hastada duvara tırmanma veya kolu gövdeye çekme kaybı değil, omuz dış rotasyonu ve ilk abdüksiyon bileşeni öne çıkmaktadır.",
+          "Nervus dorsalis scapulae": "Dorsal scapular sinir rhomboid kasları ve levator scapulae ile ilişkilidir; skapulanın retraksiyon ve medial stabilizasyon kusurlarında düşünülür. Olguda belirgin skapular retraksiyon kaybı veya rhomboid atrofisi değil, posterior omuz kaslarına sınırlı motor zayıflık vardır.",
+          "Nervus thoracicus longus": "Long thoracic sinir serratus anterior kasını innerve eder ve duvara itme sırasında medial skapular kanatlanma ile akla gelir. Bu vakada duvara itme testi belirgin kanatlanma oluşturmamakta, sorun glenohumeral dış rotasyon ve rotator cuff kas paternindedir."
+        },
+        "managementSteps": [],
+        "management": [],
+        "learningOutcome": "Posterior omuz ağrısı, dış rotasyon zayıflığı ve deltoid-duyu korunumu birlikte olduğunda ilgili skapular geçişte etkilenebilecek siniri seçebilme.",
+        "coreKnowledge": "Posterior omuz rotator kasları ve ilk abdüksiyon katkısı, omuz çevresi sinir lezyonlarını ayırmada deltoid gücü ve cilt duyusu ile birlikte değerlendirilmelidir."
+      },
+      "whyCorrect": "Baş üstü aktiviteye bağlı posterior omuz ağrısı, dış rotasyon zayıflığı ve supraspinatus-infraspinatus etkilenimi; deltoid fonksiyonu ile lateral omuz duyusunun korunmasıyla birlikte değerlendirildiğinde lezyon rotator cuff kaslarını innerve eden skapular geçiş sinirini destekler. Axillary sinir lezyonunda deltoid ve lateral omuz cilt duyusu daha belirgin etkilenirdi; long thoracic sinirde ise skapular kanatlanma beklenirdi.",
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Baş üstü aktiviteyle artan posterior omuz ağrısı",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Dış rotasyon zayıflığı ve hafif ilk abdüksiyon kusuru",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Deltoid gücü ve lateral omuz duyusunun korunması",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Skapula üst kenarı çentik komşuluğunda kistik bası görünümü",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Nervus axillaris": "Axillary sinir cerrahi boyun travması veya kuadrangular aralık sorunlarında deltoid-teres minor fonksiyonunu ve lateral omuz cilt duyusunu etkileyebilir. Bu olguda deltoid gücü ve lateral omuz duyusu korunmuş, seçici problem daha çok rotator cuff başlangıç/dış rotasyon hattında yoğunlaşmıştır.",
+        "Nervus thoracodorsalis": "Thoracodorsal sinir latissimus dorsi fonksiyonuyla ilişkilidir; kolun adduksiyon, ekstansiyon ve iç rotasyon gücünü etkiler. Bu hastada duvara tırmanma veya kolu gövdeye çekme kaybı değil, omuz dış rotasyonu ve ilk abdüksiyon bileşeni öne çıkmaktadır.",
+        "Nervus dorsalis scapulae": "Dorsal scapular sinir rhomboid kasları ve levator scapulae ile ilişkilidir; skapulanın retraksiyon ve medial stabilizasyon kusurlarında düşünülür. Olguda belirgin skapular retraksiyon kaybı veya rhomboid atrofisi değil, posterior omuz kaslarına sınırlı motor zayıflık vardır.",
+        "Nervus suprascapularis": "Doğru yanıttır; bu sinir supraspinatus ve infraspinatus kaslarını innerve eder. Üst skapular çentik çevresindeki kistik bası, ilk abdüksiyon katkısında ve özellikle dış rotasyonda zayıflık oluştururken deltoid gücü ve lateral omuz cilt duyusu korunabilir.",
+        "Nervus thoracicus longus": "Long thoracic sinir serratus anterior kasını innerve eder ve duvara itme sırasında medial skapular kanatlanma ile akla gelir. Bu vakada duvara itme testi belirgin kanatlanma oluşturmamakta, sorun glenohumeral dış rotasyon ve rotator cuff kas paternindedir."
+      },
+      "coreKnowledge": "Posterior omuz rotator kasları ve ilk abdüksiyon katkısı, omuz çevresi sinir lezyonlarını ayırmada deltoid gücü ve cilt duyusu ile birlikte değerlendirilmelidir.",
+      "examPearl": "Dış rotasyon zayıflığı + deltoid ve lateral omuz duyusunun korunması, posterior omuz rotator kaslarına giden sinir etkilenimini düşündürür.",
+      "whyWrong": {
+        "Nervus axillaris": "Axillary sinir cerrahi boyun travması veya kuadrangular aralık sorunlarında deltoid-teres minor fonksiyonunu ve lateral omuz cilt duyusunu etkileyebilir. Bu olguda deltoid gücü ve lateral omuz duyusu korunmuş, seçici problem daha çok rotator cuff başlangıç/dış rotasyon hattında yoğunlaşmıştır.",
+        "Nervus thoracodorsalis": "Thoracodorsal sinir latissimus dorsi fonksiyonuyla ilişkilidir; kolun adduksiyon, ekstansiyon ve iç rotasyon gücünü etkiler. Bu hastada duvara tırmanma veya kolu gövdeye çekme kaybı değil, omuz dış rotasyonu ve ilk abdüksiyon bileşeni öne çıkmaktadır.",
+        "Nervus dorsalis scapulae": "Dorsal scapular sinir rhomboid kasları ve levator scapulae ile ilişkilidir; skapulanın retraksiyon ve medial stabilizasyon kusurlarında düşünülür. Olguda belirgin skapular retraksiyon kaybı veya rhomboid atrofisi değil, posterior omuz kaslarına sınırlı motor zayıflık vardır.",
+        "Nervus thoracicus longus": "Long thoracic sinir serratus anterior kasını innerve eder ve duvara itme sırasında medial skapular kanatlanma ile akla gelir. Bu vakada duvara itme testi belirgin kanatlanma oluşturmamakta, sorun glenohumeral dış rotasyon ve rotator cuff kas paternindedir."
+      }
+    },
+    "shuffleOptions": false,
+    "difficultyTag": "Orta",
+    "aiMeta": {
+      "generatedAt": "manual-v201-anatomy-five-case-expansion",
+      "generator": "manual-editorial-anatomy-clinical-case-expansion",
+      "schemaVersion": "clinical-standard-v397-compatible",
+      "validationWarnings": [],
+      "provider": "manual-editorial",
+      "topicControl": "upper-limb-suprascapular-nerve"
+    },
+    "listTitle": "Omuz arkasında ağrı ve dış rotasyon zayıflığı",
+    "cardTitle": "Omuz arkasında ağrı ve dış rotasyon zayıflığı",
+    "coreKnowledge": "Posterior omuz rotator kasları ve ilk abdüksiyon katkısı, omuz çevresi sinir lezyonlarını ayırmada deltoid gücü ve cilt duyusu ile birlikte değerlendirilmelidir.",
+    "examPearl": "Dış rotasyon zayıflığı + deltoid ve lateral omuz duyusunun korunması, posterior omuz rotator kaslarına giden sinir etkilenimini düşündürür.",
+    "whyCorrect": "Baş üstü aktiviteye bağlı posterior omuz ağrısı, dış rotasyon zayıflığı ve supraspinatus-infraspinatus etkilenimi; deltoid fonksiyonu ile lateral omuz duyusunun korunmasıyla birlikte değerlendirildiğinde lezyon rotator cuff kaslarını innerve eden skapular geçiş sinirini destekler. Axillary sinir lezyonunda deltoid ve lateral omuz cilt duyusu daha belirgin etkilenirdi; long thoracic sinirde ise skapular kanatlanma beklenirdi.",
+    "optionComparison": {
+      "Nervus axillaris": "Axillary sinir cerrahi boyun travması veya kuadrangular aralık sorunlarında deltoid-teres minor fonksiyonunu ve lateral omuz cilt duyusunu etkileyebilir. Bu olguda deltoid gücü ve lateral omuz duyusu korunmuş, seçici problem daha çok rotator cuff başlangıç/dış rotasyon hattında yoğunlaşmıştır.",
+      "Nervus thoracodorsalis": "Thoracodorsal sinir latissimus dorsi fonksiyonuyla ilişkilidir; kolun adduksiyon, ekstansiyon ve iç rotasyon gücünü etkiler. Bu hastada duvara tırmanma veya kolu gövdeye çekme kaybı değil, omuz dış rotasyonu ve ilk abdüksiyon bileşeni öne çıkmaktadır.",
+      "Nervus dorsalis scapulae": "Dorsal scapular sinir rhomboid kasları ve levator scapulae ile ilişkilidir; skapulanın retraksiyon ve medial stabilizasyon kusurlarında düşünülür. Olguda belirgin skapular retraksiyon kaybı veya rhomboid atrofisi değil, posterior omuz kaslarına sınırlı motor zayıflık vardır.",
+      "Nervus suprascapularis": "Doğru yanıttır; bu sinir supraspinatus ve infraspinatus kaslarını innerve eder. Üst skapular çentik çevresindeki kistik bası, ilk abdüksiyon katkısında ve özellikle dış rotasyonda zayıflık oluştururken deltoid gücü ve lateral omuz cilt duyusu korunabilir.",
+      "Nervus thoracicus longus": "Long thoracic sinir serratus anterior kasını innerve eder ve duvara itme sırasında medial skapular kanatlanma ile akla gelir. Bu vakada duvara itme testi belirgin kanatlanma oluşturmamakta, sorun glenohumeral dış rotasyon ve rotator cuff kas paternindedir."
+    },
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Baş üstü aktiviteyle artan posterior omuz ağrısı",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Dış rotasyon zayıflığı ve hafif ilk abdüksiyon kusuru",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Deltoid gücü ve lateral omuz duyusunun korunması",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Skapula üst kenarı çentik komşuluğunda kistik bası görünümü",
+        "weight": "high",
+        "source": "case"
+      }
+    ],
+    "whyWrong": {
+      "Nervus axillaris": "Axillary sinir cerrahi boyun travması veya kuadrangular aralık sorunlarında deltoid-teres minor fonksiyonunu ve lateral omuz cilt duyusunu etkileyebilir. Bu olguda deltoid gücü ve lateral omuz duyusu korunmuş, seçici problem daha çok rotator cuff başlangıç/dış rotasyon hattında yoğunlaşmıştır.",
+      "Nervus thoracodorsalis": "Thoracodorsal sinir latissimus dorsi fonksiyonuyla ilişkilidir; kolun adduksiyon, ekstansiyon ve iç rotasyon gücünü etkiler. Bu hastada duvara tırmanma veya kolu gövdeye çekme kaybı değil, omuz dış rotasyonu ve ilk abdüksiyon bileşeni öne çıkmaktadır.",
+      "Nervus dorsalis scapulae": "Dorsal scapular sinir rhomboid kasları ve levator scapulae ile ilişkilidir; skapulanın retraksiyon ve medial stabilizasyon kusurlarında düşünülür. Olguda belirgin skapular retraksiyon kaybı veya rhomboid atrofisi değil, posterior omuz kaslarına sınırlı motor zayıflık vardır.",
+      "Nervus thoracicus longus": "Long thoracic sinir serratus anterior kasını innerve eder ve duvara itme sırasında medial skapular kanatlanma ile akla gelir. Bu vakada duvara itme testi belirgin kanatlanma oluşturmamakta, sorun glenohumeral dış rotasyon ve rotator cuff kas paternindedir."
+    }
+  },
+  {
+    "id": "v201-new-402-oturur-pozisyondan-kalkarken-kalca-ekstansiyon-zayifligi",
+    "branchId": "anatomy",
+    "caseType": "standard",
+    "relatedBranch": "Anatomi / Ortopedi",
+    "title": "Oturur pozisyondan kalkarken kalça ekstansiyon zayıflığı",
+    "difficulty": "Orta",
+    "clinicalFocus": "Kalça cerrahisi sonrası gluteal motor paternleri pelvis stabilizasyonu, ekstansiyon gücü ve distal sinir muayenesiyle ayırt etme.",
+    "learningTarget": "Posterior kalça yaklaşımı sonrası sandalyeden kalkma ve merdiven çıkmada zorlanma olduğunda ilgili gluteal motor siniri seçebilme.",
+    "demographics": "64 yaşında erkek hasta",
+    "setting": "Ortopedi polikliniği",
+    "chiefComplaint": "Hasta, kalça ameliyatından sonra sandalyeden kalkarken ve merdiven çıkarken sağ kalçasında güçsüzlük hissetmesi nedeniyle kontrole geliyor.",
+    "stem": "Hasta üç hafta önce sağ kalçasına posterior yaklaşımla protez revizyonu yapıldığını anlatır. İlk günlerde ameliyat ağrısı nedeniyle hareketleri sınırlıyken, fizik tedaviye başladıktan sonra özellikle alçak sandalyeden kalkarken gövdesini öne fazla eğmek zorunda kaldığını fark etmiştir. Merdiven çıkarken sağ bacağıyla basamak itişi yapmakta zorlanmakta, fakat düz zeminde kısa mesafe yürürken belirgin ayak takılması yaşamamaktadır. Uyluğun iç yanında uyuşma, ayak sırtında his kaybı veya dizini düzleştirmede belirgin sorun tariflemez. Ameliyat öncesinde bu şekilde kalkma güçlüğü olmadığını söyler.",
+    "patientIntro": {
+      "profile": "64 yaşında erkek hasta, ortopedi polikliniği bağlamında değerlendiriliyor.",
+      "presentation": "Posterior kalça cerrahisi sonrası kalça ekstansiyon gücü azalmıştır; abdüksiyon ve distal ayak fonksiyonları belirgin korunmuştur.",
+      "historySummary": "Hasta üç hafta önce sağ kalçasına posterior yaklaşımla protez revizyonu yapıldığını anlatır. İlk günlerde ameliyat ağrısı nedeniyle hareketleri sınırlıyken, fizik tedaviye başladıktan sonra özellikle alçak sandalyeden kalkarken gövdesini öne fazla eğmek zorunda kaldığını fark etmiştir. Merdiven çıkarken sağ bacağıyla basamak itişi yapmakta zorlanmakta, fakat düz zeminde kısa mesafe yürürken belirgin ayak takılması yaşamamaktadır. Uyluğun iç yanında uyuşma, ayak sırtında his kaybı veya dizini düzleştirmede belirgin sorun tariflemez. Ameliyat öncesinde bu şekilde kalkma güçlüğü olmadığını söyler."
+    },
+    "vitals": {
+      "TA": "128/76 mmHg",
+      "Nabız": "84/dk",
+      "Solunum": "16/dk",
+      "SpO2": "98%, oda havasında",
+      "Ateş": "36.7 °C",
+      "Şok indeksi": "0.66 normal"
+    },
+    "exam": [
+      "Sağ kalça ekstansiyonu, özellikle diz fleksiyondayken dirençli testte belirgin zayıftır.",
+      "Trendelenburg testi belirgin pozitif değildir; kalça abdüksiyon gücü büyük ölçüde korunmuştur.",
+      "Diz ekstansiyonu, patella refleksi, ayak dorsifleksiyonu ve plantar fleksiyonu simetriktir.",
+      "Medial uyluk, ayak sırtı ve plantar yüzde belirgin duyu kaybı saptanmaz."
+    ],
+    "investigations": [
+      {
+        "id": "v201-new-402-oturur-pozisyondan-kalkarken-kalca-ekstansiyon-zayifligi-kalca-mrg-ve-emg",
+        "label": "Kalça MRG ve hedefli elektrofizyoloji",
+        "title": "Kalça MRG ve hedefli elektrofizyoloji",
+        "orderLabel": "Kalça MRG ve hedefli elektrofizyoloji",
+        "type": "mri",
+        "priority": "essential",
+        "subtype": "Kalça MRG ve hedefli elektrofizyoloji",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "summary": "Hedefli değerlendirme, posterior gluteal bölgede ekstansiyon kasına sınırlı etkilenim ve distal siyatik-femoral motor alanların korunmasını gösterir.",
+        "clinicalMeaning": "Hedefli değerlendirme, posterior gluteal bölgede ekstansiyon kasına sınırlı etkilenim ve distal siyatik-femoral motor alanların korunmasını gösterir.",
+        "result": {
+          "title": "Kalça MRG ve hedefli elektrofizyoloji",
+          "summary": "Hedefli değerlendirme, posterior gluteal bölgede ekstansiyon kasına sınırlı etkilenim ve distal siyatik-femoral motor alanların korunmasını gösterir.",
+          "interpretation": "Hedefli değerlendirme, posterior gluteal bölgede ekstansiyon kasına sınırlı etkilenim ve distal siyatik-femoral motor alanların korunmasını gösterir.",
+          "values": [
+            [
+              "Cerrahi yaklaşım",
+              "Posterior gluteal insizyon hattında sınırlı postoperatif ödem ve skar dokusu izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Kas sinyali",
+              "Gluteus maximus kasında sağda denervasyon ödemi ile uyumlu hafif sinyal artışı vardır.",
+              "",
+              ""
+            ],
+            [
+              "Pelvis stabilizatörleri",
+              "Gluteus medius ve minimus kas hacimleri belirgin korunmuştur.",
+              "",
+              ""
+            ],
+            [
+              "Distal sinir alanı",
+              "Hamstring ve distal bacak kaslarında yaygın denervasyon bulgusu izlenmez.",
+              "",
+              ""
+            ]
+          ],
+          "rows": [
+            [
+              "Cerrahi yaklaşım",
+              "Posterior gluteal insizyon hattında sınırlı postoperatif ödem ve skar dokusu izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Kas sinyali",
+              "Gluteus maximus kasında sağda denervasyon ödemi ile uyumlu hafif sinyal artışı vardır.",
+              "",
+              ""
+            ],
+            [
+              "Pelvis stabilizatörleri",
+              "Gluteus medius ve minimus kas hacimleri belirgin korunmuştur.",
+              "",
+              ""
+            ],
+            [
+              "Distal sinir alanı",
+              "Hamstring ve distal bacak kaslarında yaygın denervasyon bulgusu izlenmez.",
+              "",
+              ""
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Cerrahi yaklaşım",
+            "Posterior gluteal insizyon hattında sınırlı postoperatif ödem ve skar dokusu izlenir.",
+            "",
+            ""
+          ],
+          [
+            "Kas sinyali",
+            "Gluteus maximus kasında sağda denervasyon ödemi ile uyumlu hafif sinyal artışı vardır.",
+            "",
+            ""
+          ],
+          [
+            "Pelvis stabilizatörleri",
+            "Gluteus medius ve minimus kas hacimleri belirgin korunmuştur.",
+            "",
+            ""
+          ],
+          [
+            "Distal sinir alanı",
+            "Hamstring ve distal bacak kaslarında yaygın denervasyon bulgusu izlenmez.",
+            "",
+            ""
+          ]
+        ],
+        "postAnswerExplanation": "Hedefli değerlendirme, posterior gluteal bölgede ekstansiyon kasına sınırlı etkilenim ve distal siyatik-femoral motor alanların korunmasını gösterir.",
+        "interpretation": "Hedefli değerlendirme, posterior gluteal bölgede ekstansiyon kasına sınırlı etkilenim ve distal siyatik-femoral motor alanların korunmasını gösterir.",
+        "explanationAfterAnswer": "Hedefli değerlendirme, posterior gluteal bölgede ekstansiyon kasına sınırlı etkilenim ve distal siyatik-femoral motor alanların korunmasını gösterir.",
+        "testValueLabel": "Kalça MRG ve hedefli elektrofizyoloji",
+        "educationalValue": "Kalça MRG ve hedefli elektrofizyoloji",
+        "clinicalPriorityLabel": "Kalça MRG ve hedefli elektrofizyoloji",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "clinicalFlowOrder": 1,
+        "purpose": "Kalça MRG ve hedefli elektrofizyoloji",
+        "inlineFeedback": "Hedefli değerlendirme, posterior gluteal bölgede ekstansiyon kasına sınırlı etkilenim ve distal siyatik-femoral motor alanların korunmasını gösterir."
+      }
+    ],
+    "useSyntheticInvestigationBank": false,
+    "managementSequence": {
+      "enabled": false
+    },
+    "hideExamSignal": false,
+    "question": "Bu motor paternini en iyi açıklayan sinir hangisidir?",
+    "questionType": "anatomy",
+    "answerTarget": "anatomy",
+    "diagnosis": {
+      "correct": "Nervus gluteus inferior",
+      "options": [
+        "Nervus gluteus superior",
+        "Nervus gluteus inferior",
+        "Nervus ischiadicus",
+        "Nervus femoralis",
+        "Nervus obturatorius"
+      ],
+      "question": "Bu motor paternini en iyi açıklayan sinir hangisidir?",
+      "explanation": "Posterior kalça cerrahisi sonrası oturur pozisyondan kalkma, merdiven çıkma ve dirençli kalça ekstansiyonunda zayıflık; gluteus maximus motor hattının etkilenmesini destekler. Kalça abdüksiyonunun korunması superior gluteal siniri, distal ayak motor-duyu bulgularının olmaması siyatik siniri, diz ekstansiyonunun korunması femoral siniri geri plana iter.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Sandalyeden kalkma ve merdiven çıkmada güçlü kalça ekstansiyonu bozulup Trendelenburg/distal ayak bulguları yoksa gluteus maximus motor hattı düşünülür."
+        }
+      ],
+      "answerFeedback": {
+        "summary": "Posterior kalça cerrahisi sonrası oturur pozisyondan kalkma, merdiven çıkma ve dirençli kalça ekstansiyonunda zayıflık; gluteus maximus motor hattının etkilenmesini destekler. Kalça abdüksiyonunun korunması superior gluteal siniri, distal ayak motor-duyu bulgularının olmaması siyatik siniri, diz ekstansiyonunun korunması femoral siniri geri plana iter.",
+        "whyCorrect": "Posterior kalça cerrahisi sonrası oturur pozisyondan kalkma, merdiven çıkma ve dirençli kalça ekstansiyonunda zayıflık; gluteus maximus motor hattının etkilenmesini destekler. Kalça abdüksiyonunun korunması superior gluteal siniri, distal ayak motor-duyu bulgularının olmaması siyatik siniri, diz ekstansiyonunun korunması femoral siniri geri plana iter.",
+        "rationale": "Posterior kalça cerrahisi sonrası oturur pozisyondan kalkma, merdiven çıkma ve dirençli kalça ekstansiyonunda zayıflık; gluteus maximus motor hattının etkilenmesini destekler. Kalça abdüksiyonunun korunması superior gluteal siniri, distal ayak motor-duyu bulgularının olmaması siyatik siniri, diz ekstansiyonunun korunması femoral siniri geri plana iter.",
+        "correctOptionFeedback": "Doğru yanıttır; bu sinir gluteus maximus kasının motor innervasyonunu taşır. Posterior kalça yaklaşımı sonrası sandalyeden kalkma, merdiven çıkma ve gövde fleksiyondayken kalçayı ekstansiyona getirme zayıflığı bu motor paternle uyumludur.",
+        "keyClues": [
+          "Posterior kalça yaklaşımı sonrası başlangıç",
+          "Oturur pozisyondan kalkma ve merdiven çıkmada zorlanma",
+          "Diz fleksiyondayken kalça ekstansiyonunun zayıf olması",
+          "Trendelenburg, distal ayak ve patella refleksi bulgularının olmaması"
+        ],
+        "evidenceChain": [
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Posterior kalça yaklaşımı sonrası başlangıç",
+            "weight": "medium",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Oturur pozisyondan kalkma ve merdiven çıkmada zorlanma",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Diz fleksiyondayken kalça ekstansiyonunun zayıf olması",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Trendelenburg, distal ayak ve patella refleksi bulgularının olmaması",
+            "weight": "medium",
+            "source": "case"
+          }
+        ],
+        "examPearl": "Sandalyeden kalkma ve merdiven çıkmada güçlü kalça ekstansiyonu bozulup Trendelenburg/distal ayak bulguları yoksa gluteus maximus motor hattı düşünülür.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Sandalyeden kalkma ve merdiven çıkmada güçlü kalça ekstansiyonu bozulup Trendelenburg/distal ayak bulguları yoksa gluteus maximus motor hattı düşünülür."
+          }
+        ],
+        "optionComparison": {
+          "Nervus gluteus superior": "Superior gluteal sinir gluteus medius, gluteus minimus ve tensor fasciae latae ile pelvis stabilizasyonunda önemlidir. Hasarında Trendelenburg paterni ve kalça abdüksiyon zayıflığı beklenir; bu hastada karşı pelvis düşmesi değil, oturur pozisyondan kalkma ve güçlü kalça ekstansiyonu bozulmuştur.",
+          "Nervus gluteus inferior": "Doğru yanıttır; bu sinir gluteus maximus kasının motor innervasyonunu taşır. Posterior kalça yaklaşımı sonrası sandalyeden kalkma, merdiven çıkma ve gövde fleksiyondayken kalçayı ekstansiyona getirme zayıflığı bu motor paternle uyumludur.",
+          "Nervus ischiadicus": "Siyatik sinir hamstringleri ve bacak-ayak kaslarının büyük bölümünü etkiler; lezyonunda diz fleksiyonu, ayak bileği-parmak hareketleri ve distal duyu alanlarında belirgin defisit beklenir. Bu olguda distal ayak motor-duyu muayenesi korunmuş ve kayıp gluteal ekstansiyon hattında sınırlıdır.",
+          "Nervus femoralis": "Femoral sinir kalça fleksiyonu, diz ekstansiyonu ve patella refleksiyle ilişkilidir. Hastada diz ekstansiyonu ve patella refleksi normaldir; temel güçlük kalça fleksiyonu değil, kalçayı güçlü ekstansiyona getirme işlevindedir.",
+          "Nervus obturatorius": "Obturator sinir medial uyluk adduktor kaslarını ve medial uyluk duyusunu etkiler. Bu vakada adduksiyon kaybı veya medial uyluk hipoestezisi yoktur; asıl sorun posterior kalça motor kuvvetidir."
+        },
+        "whyWrong": {
+          "Nervus gluteus superior": "Superior gluteal sinir gluteus medius, gluteus minimus ve tensor fasciae latae ile pelvis stabilizasyonunda önemlidir. Hasarında Trendelenburg paterni ve kalça abdüksiyon zayıflığı beklenir; bu hastada karşı pelvis düşmesi değil, oturur pozisyondan kalkma ve güçlü kalça ekstansiyonu bozulmuştur.",
+          "Nervus ischiadicus": "Siyatik sinir hamstringleri ve bacak-ayak kaslarının büyük bölümünü etkiler; lezyonunda diz fleksiyonu, ayak bileği-parmak hareketleri ve distal duyu alanlarında belirgin defisit beklenir. Bu olguda distal ayak motor-duyu muayenesi korunmuş ve kayıp gluteal ekstansiyon hattında sınırlıdır.",
+          "Nervus femoralis": "Femoral sinir kalça fleksiyonu, diz ekstansiyonu ve patella refleksiyle ilişkilidir. Hastada diz ekstansiyonu ve patella refleksi normaldir; temel güçlük kalça fleksiyonu değil, kalçayı güçlü ekstansiyona getirme işlevindedir.",
+          "Nervus obturatorius": "Obturator sinir medial uyluk adduktor kaslarını ve medial uyluk duyusunu etkiler. Bu vakada adduksiyon kaybı veya medial uyluk hipoestezisi yoktur; asıl sorun posterior kalça motor kuvvetidir."
+        },
+        "managementSteps": [],
+        "management": [],
+        "learningOutcome": "Posterior kalça yaklaşımı sonrası sandalyeden kalkma ve merdiven çıkmada zorlanma olduğunda ilgili gluteal motor siniri seçebilme.",
+        "coreKnowledge": "Gluteal sinir ayrımında superior dal pelvis stabilizasyonu ve abdüksiyon, inferior dal ise güçlü kalça ekstansiyonu üzerinden ayırt edilir."
+      },
+      "whyCorrect": "Posterior kalça cerrahisi sonrası oturur pozisyondan kalkma, merdiven çıkma ve dirençli kalça ekstansiyonunda zayıflık; gluteus maximus motor hattının etkilenmesini destekler. Kalça abdüksiyonunun korunması superior gluteal siniri, distal ayak motor-duyu bulgularının olmaması siyatik siniri, diz ekstansiyonunun korunması femoral siniri geri plana iter.",
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Posterior kalça yaklaşımı sonrası başlangıç",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Oturur pozisyondan kalkma ve merdiven çıkmada zorlanma",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Diz fleksiyondayken kalça ekstansiyonunun zayıf olması",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Trendelenburg, distal ayak ve patella refleksi bulgularının olmaması",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Nervus gluteus superior": "Superior gluteal sinir gluteus medius, gluteus minimus ve tensor fasciae latae ile pelvis stabilizasyonunda önemlidir. Hasarında Trendelenburg paterni ve kalça abdüksiyon zayıflığı beklenir; bu hastada karşı pelvis düşmesi değil, oturur pozisyondan kalkma ve güçlü kalça ekstansiyonu bozulmuştur.",
+        "Nervus gluteus inferior": "Doğru yanıttır; bu sinir gluteus maximus kasının motor innervasyonunu taşır. Posterior kalça yaklaşımı sonrası sandalyeden kalkma, merdiven çıkma ve gövde fleksiyondayken kalçayı ekstansiyona getirme zayıflığı bu motor paternle uyumludur.",
+        "Nervus ischiadicus": "Siyatik sinir hamstringleri ve bacak-ayak kaslarının büyük bölümünü etkiler; lezyonunda diz fleksiyonu, ayak bileği-parmak hareketleri ve distal duyu alanlarında belirgin defisit beklenir. Bu olguda distal ayak motor-duyu muayenesi korunmuş ve kayıp gluteal ekstansiyon hattında sınırlıdır.",
+        "Nervus femoralis": "Femoral sinir kalça fleksiyonu, diz ekstansiyonu ve patella refleksiyle ilişkilidir. Hastada diz ekstansiyonu ve patella refleksi normaldir; temel güçlük kalça fleksiyonu değil, kalçayı güçlü ekstansiyona getirme işlevindedir.",
+        "Nervus obturatorius": "Obturator sinir medial uyluk adduktor kaslarını ve medial uyluk duyusunu etkiler. Bu vakada adduksiyon kaybı veya medial uyluk hipoestezisi yoktur; asıl sorun posterior kalça motor kuvvetidir."
+      },
+      "coreKnowledge": "Gluteal sinir ayrımında superior dal pelvis stabilizasyonu ve abdüksiyon, inferior dal ise güçlü kalça ekstansiyonu üzerinden ayırt edilir.",
+      "examPearl": "Sandalyeden kalkma ve merdiven çıkmada güçlü kalça ekstansiyonu bozulup Trendelenburg/distal ayak bulguları yoksa gluteus maximus motor hattı düşünülür.",
+      "whyWrong": {
+        "Nervus gluteus superior": "Superior gluteal sinir gluteus medius, gluteus minimus ve tensor fasciae latae ile pelvis stabilizasyonunda önemlidir. Hasarında Trendelenburg paterni ve kalça abdüksiyon zayıflığı beklenir; bu hastada karşı pelvis düşmesi değil, oturur pozisyondan kalkma ve güçlü kalça ekstansiyonu bozulmuştur.",
+        "Nervus ischiadicus": "Siyatik sinir hamstringleri ve bacak-ayak kaslarının büyük bölümünü etkiler; lezyonunda diz fleksiyonu, ayak bileği-parmak hareketleri ve distal duyu alanlarında belirgin defisit beklenir. Bu olguda distal ayak motor-duyu muayenesi korunmuş ve kayıp gluteal ekstansiyon hattında sınırlıdır.",
+        "Nervus femoralis": "Femoral sinir kalça fleksiyonu, diz ekstansiyonu ve patella refleksiyle ilişkilidir. Hastada diz ekstansiyonu ve patella refleksi normaldir; temel güçlük kalça fleksiyonu değil, kalçayı güçlü ekstansiyona getirme işlevindedir.",
+        "Nervus obturatorius": "Obturator sinir medial uyluk adduktor kaslarını ve medial uyluk duyusunu etkiler. Bu vakada adduksiyon kaybı veya medial uyluk hipoestezisi yoktur; asıl sorun posterior kalça motor kuvvetidir."
+      }
+    },
+    "shuffleOptions": false,
+    "difficultyTag": "Orta",
+    "aiMeta": {
+      "generatedAt": "manual-v201-anatomy-five-case-expansion",
+      "generator": "manual-editorial-anatomy-clinical-case-expansion",
+      "schemaVersion": "clinical-standard-v397-compatible",
+      "validationWarnings": [],
+      "provider": "manual-editorial",
+      "topicControl": "lower-limb-inferior-gluteal-nerve"
+    },
+    "listTitle": "Oturur pozisyondan kalkarken kalça ekstansiyon zayıflığı",
+    "cardTitle": "Oturur pozisyondan kalkarken kalça ekstansiyon zayıflığı",
+    "coreKnowledge": "Gluteal sinir ayrımında superior dal pelvis stabilizasyonu ve abdüksiyon, inferior dal ise güçlü kalça ekstansiyonu üzerinden ayırt edilir.",
+    "examPearl": "Sandalyeden kalkma ve merdiven çıkmada güçlü kalça ekstansiyonu bozulup Trendelenburg/distal ayak bulguları yoksa gluteus maximus motor hattı düşünülür.",
+    "whyCorrect": "Posterior kalça cerrahisi sonrası oturur pozisyondan kalkma, merdiven çıkma ve dirençli kalça ekstansiyonunda zayıflık; gluteus maximus motor hattının etkilenmesini destekler. Kalça abdüksiyonunun korunması superior gluteal siniri, distal ayak motor-duyu bulgularının olmaması siyatik siniri, diz ekstansiyonunun korunması femoral siniri geri plana iter.",
+    "optionComparison": {
+      "Nervus gluteus superior": "Superior gluteal sinir gluteus medius, gluteus minimus ve tensor fasciae latae ile pelvis stabilizasyonunda önemlidir. Hasarında Trendelenburg paterni ve kalça abdüksiyon zayıflığı beklenir; bu hastada karşı pelvis düşmesi değil, oturur pozisyondan kalkma ve güçlü kalça ekstansiyonu bozulmuştur.",
+      "Nervus gluteus inferior": "Doğru yanıttır; bu sinir gluteus maximus kasının motor innervasyonunu taşır. Posterior kalça yaklaşımı sonrası sandalyeden kalkma, merdiven çıkma ve gövde fleksiyondayken kalçayı ekstansiyona getirme zayıflığı bu motor paternle uyumludur.",
+      "Nervus ischiadicus": "Siyatik sinir hamstringleri ve bacak-ayak kaslarının büyük bölümünü etkiler; lezyonunda diz fleksiyonu, ayak bileği-parmak hareketleri ve distal duyu alanlarında belirgin defisit beklenir. Bu olguda distal ayak motor-duyu muayenesi korunmuş ve kayıp gluteal ekstansiyon hattında sınırlıdır.",
+      "Nervus femoralis": "Femoral sinir kalça fleksiyonu, diz ekstansiyonu ve patella refleksiyle ilişkilidir. Hastada diz ekstansiyonu ve patella refleksi normaldir; temel güçlük kalça fleksiyonu değil, kalçayı güçlü ekstansiyona getirme işlevindedir.",
+      "Nervus obturatorius": "Obturator sinir medial uyluk adduktor kaslarını ve medial uyluk duyusunu etkiler. Bu vakada adduksiyon kaybı veya medial uyluk hipoestezisi yoktur; asıl sorun posterior kalça motor kuvvetidir."
+    },
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Posterior kalça yaklaşımı sonrası başlangıç",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Oturur pozisyondan kalkma ve merdiven çıkmada zorlanma",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Diz fleksiyondayken kalça ekstansiyonunun zayıf olması",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Trendelenburg, distal ayak ve patella refleksi bulgularının olmaması",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "whyWrong": {
+      "Nervus gluteus superior": "Superior gluteal sinir gluteus medius, gluteus minimus ve tensor fasciae latae ile pelvis stabilizasyonunda önemlidir. Hasarında Trendelenburg paterni ve kalça abdüksiyon zayıflığı beklenir; bu hastada karşı pelvis düşmesi değil, oturur pozisyondan kalkma ve güçlü kalça ekstansiyonu bozulmuştur.",
+      "Nervus ischiadicus": "Siyatik sinir hamstringleri ve bacak-ayak kaslarının büyük bölümünü etkiler; lezyonunda diz fleksiyonu, ayak bileği-parmak hareketleri ve distal duyu alanlarında belirgin defisit beklenir. Bu olguda distal ayak motor-duyu muayenesi korunmuş ve kayıp gluteal ekstansiyon hattında sınırlıdır.",
+      "Nervus femoralis": "Femoral sinir kalça fleksiyonu, diz ekstansiyonu ve patella refleksiyle ilişkilidir. Hastada diz ekstansiyonu ve patella refleksi normaldir; temel güçlük kalça fleksiyonu değil, kalçayı güçlü ekstansiyona getirme işlevindedir.",
+      "Nervus obturatorius": "Obturator sinir medial uyluk adduktor kaslarını ve medial uyluk duyusunu etkiler. Bu vakada adduksiyon kaybı veya medial uyluk hipoestezisi yoktur; asıl sorun posterior kalça motor kuvvetidir."
+    }
+  },
+  {
+    "id": "v201-new-403-boyun-on-yaklasimi-sonrasi-goz-kapagi-dusuklugu",
+    "branchId": "anatomy",
+    "caseType": "standard",
+    "relatedBranch": "Anatomi / Beyin ve Sinir Cerrahisi",
+    "title": "Boyun ön yaklaşımı sonrası göz kapağı düşüklüğü",
+    "difficulty": "Zor",
+    "clinicalFocus": "Anterior boyun cerrahisi sonrası okülosempatik bulguları servikal nöroanatomik komşulukla ilişkilendirme.",
+    "learningTarget": "Anterior servikal yaklaşım sonrası pitoz, miyozis ve anhidroz birlikteliğinde etkilenen boyun nöroanatomik yapısını ayırt edebilme.",
+    "demographics": "48 yaşında erkek hasta",
+    "setting": "Beyin ve sinir cerrahisi servisi",
+    "chiefComplaint": "Hasta, boyun fıtığı ameliyatından sonra aynı tarafta göz kapağında düşüklük ve yüzde terleme azalması fark edilmesi nedeniyle değerlendiriliyor.",
+    "stem": "Hasta üç gün önce sağ taraftan yapılan anterior servikal disk cerrahisi geçirdiğini anlatır. Ameliyattan sonraki ilk gün boyun ağrısı ve yutkunurken hafif rahatsızlık beklediği şekilde azalmış, ancak aynaya baktığında sağ üst göz kapağının daha düşük göründüğünü fark etmiştir. Aynı gün yakınları sağ göz bebeğinin diğer tarafa göre daha küçük olduğunu söylemiş, hasta da egzersiz sırasında yüzünün sağ tarafında terlemenin azaldığını belirtmiştir. Çift görme, görme kaybı, yeni ses kısıklığı veya dilini oynatmada güçlük yaşamamıştır. Daha önce benzer göz bulgusu ya da kafa-boyun travması öyküsü yoktur.",
+    "patientIntro": {
+      "profile": "48 yaşında erkek hasta, beyin ve sinir cerrahisi servisi bağlamında değerlendiriliyor.",
+      "presentation": "Anterior servikal cerrahi sonrası ipsilateral hafif pitoz, miyozis ve yüz terlemesinde azalma vardır; ekstraoküler hareketler korunmuştur.",
+      "historySummary": "Hasta üç gün önce sağ taraftan yapılan anterior servikal disk cerrahisi geçirdiğini anlatır. Ameliyattan sonraki ilk gün boyun ağrısı ve yutkunurken hafif rahatsızlık beklediği şekilde azalmış, ancak aynaya baktığında sağ üst göz kapağının daha düşük göründüğünü fark etmiştir. Aynı gün yakınları sağ göz bebeğinin diğer tarafa göre daha küçük olduğunu söylemiş, hasta da egzersiz sırasında yüzünün sağ tarafında terlemenin azaldığını belirtmiştir. Çift görme, görme kaybı, yeni ses kısıklığı veya dilini oynatmada güçlük yaşamamıştır. Daha önce benzer göz bulgusu ya da kafa-boyun travması öyküsü yoktur."
+    },
+    "vitals": {
+      "TA": "124/78 mmHg",
+      "Nabız": "80/dk",
+      "Solunum": "15/dk",
+      "SpO2": "98%, oda havasında",
+      "Ateş": "36.6 °C",
+      "Şok indeksi": "0.65 normal"
+    },
+    "exam": [
+      "Sağda hafif üst kapak düşüklüğü ve sağ pupilde karşı tarafa göre küçüklük izlenir; pupil ışık refleksi alınır.",
+      "Ekstraoküler hareketler tamdır; diplopi veya görme alanı kaybı saptanmaz.",
+      "Yüzün sağ yarısında terleme belirgin azalmıştır; fasiyal mimik kas gücü korunmuştur.",
+      "Ses kalitesi, dil protrüzyonu, omuz elevasyonu ve diyafram solunum hareketleri belirgin asimetri göstermez."
+    ],
+    "investigations": [
+      {
+        "id": "v201-new-403-boyun-on-yaklasimi-sonrasi-goz-kapagi-dusuklugu-servikal-mrg-ve-laringoskopi",
+        "label": "Servikal MRG ve hedefli kraniyal sinir değerlendirmesi",
+        "title": "Servikal MRG ve hedefli kraniyal sinir değerlendirmesi",
+        "orderLabel": "Servikal MRG ve hedefli kraniyal sinir değerlendirmesi",
+        "type": "mri",
+        "priority": "essential",
+        "subtype": "Servikal MRG ve hedefli kraniyal sinir değerlendirmesi",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "summary": "Postoperatif görüntüleme ve hedefli değerlendirme, anterior servikal yaklaşım hattına sınırlı ödemi ve vokal fold/diyafram fonksiyonlarının korunmasını gösterir.",
+        "clinicalMeaning": "Postoperatif görüntüleme ve hedefli değerlendirme, anterior servikal yaklaşım hattına sınırlı ödemi ve vokal fold/diyafram fonksiyonlarının korunmasını gösterir.",
+        "result": {
+          "title": "Servikal MRG ve hedefli kraniyal sinir değerlendirmesi",
+          "summary": "Postoperatif görüntüleme ve hedefli değerlendirme, anterior servikal yaklaşım hattına sınırlı ödemi ve vokal fold/diyafram fonksiyonlarının korunmasını gösterir.",
+          "interpretation": "Postoperatif görüntüleme ve hedefli değerlendirme, anterior servikal yaklaşım hattına sınırlı ödemi ve vokal fold/diyafram fonksiyonlarının korunmasını gösterir.",
+          "values": [
+            [
+              "Cerrahi düzey",
+              "Sağ anterior servikal yaklaşım hattında longus colli komşuluğunda sınırlı postoperatif ödem izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Hematoma ait bulgu",
+              "Karotis kılıfını belirgin iten koleksiyon veya genişleyen hematom saptanmaz.",
+              "",
+              ""
+            ],
+            [
+              "Larenks değerlendirmesi",
+              "Vokal fold hareketleri iki tarafta simetriktir.",
+              "",
+              ""
+            ],
+            [
+              "Diyafram hareketi",
+              "Akciğer grafisinde belirgin hemidiyafram elevasyonu izlenmez.",
+              "",
+              ""
+            ]
+          ],
+          "rows": [
+            [
+              "Cerrahi düzey",
+              "Sağ anterior servikal yaklaşım hattında longus colli komşuluğunda sınırlı postoperatif ödem izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Hematoma ait bulgu",
+              "Karotis kılıfını belirgin iten koleksiyon veya genişleyen hematom saptanmaz.",
+              "",
+              ""
+            ],
+            [
+              "Larenks değerlendirmesi",
+              "Vokal fold hareketleri iki tarafta simetriktir.",
+              "",
+              ""
+            ],
+            [
+              "Diyafram hareketi",
+              "Akciğer grafisinde belirgin hemidiyafram elevasyonu izlenmez.",
+              "",
+              ""
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Cerrahi düzey",
+            "Sağ anterior servikal yaklaşım hattında longus colli komşuluğunda sınırlı postoperatif ödem izlenir.",
+            "",
+            ""
+          ],
+          [
+            "Hematoma ait bulgu",
+            "Karotis kılıfını belirgin iten koleksiyon veya genişleyen hematom saptanmaz.",
+            "",
+            ""
+          ],
+          [
+            "Larenks değerlendirmesi",
+            "Vokal fold hareketleri iki tarafta simetriktir.",
+            "",
+            ""
+          ],
+          [
+            "Diyafram hareketi",
+            "Akciğer grafisinde belirgin hemidiyafram elevasyonu izlenmez.",
+            "",
+            ""
+          ]
+        ],
+        "postAnswerExplanation": "Postoperatif görüntüleme ve hedefli değerlendirme, anterior servikal yaklaşım hattına sınırlı ödemi ve vokal fold/diyafram fonksiyonlarının korunmasını gösterir.",
+        "interpretation": "Postoperatif görüntüleme ve hedefli değerlendirme, anterior servikal yaklaşım hattına sınırlı ödemi ve vokal fold/diyafram fonksiyonlarının korunmasını gösterir.",
+        "explanationAfterAnswer": "Postoperatif görüntüleme ve hedefli değerlendirme, anterior servikal yaklaşım hattına sınırlı ödemi ve vokal fold/diyafram fonksiyonlarının korunmasını gösterir.",
+        "testValueLabel": "Servikal MRG ve hedefli kraniyal sinir değerlendirmesi",
+        "educationalValue": "Servikal MRG ve hedefli kraniyal sinir değerlendirmesi",
+        "clinicalPriorityLabel": "Servikal MRG ve hedefli kraniyal sinir değerlendirmesi",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "clinicalFlowOrder": 1,
+        "purpose": "Servikal MRG ve hedefli kraniyal sinir değerlendirmesi",
+        "inlineFeedback": "Postoperatif görüntüleme ve hedefli değerlendirme, anterior servikal yaklaşım hattına sınırlı ödemi ve vokal fold/diyafram fonksiyonlarının korunmasını gösterir."
+      }
+    ],
+    "useSyntheticInvestigationBank": false,
+    "managementSequence": {
+      "enabled": false
+    },
+    "hideExamSignal": false,
+    "question": "Bu okülosempatik bulguları en iyi açıklayan etkilenen yapı hangisidir?",
+    "questionType": "anatomy",
+    "answerTarget": "anatomy",
+    "diagnosis": {
+      "correct": "Truncus sympathicus cervicalis",
+      "options": [
+        "Nervus vagus cervicalis",
+        "Nervus phrenicus cervicalis",
+        "Truncus sympathicus cervicalis",
+        "Nervus laryngeus recurrens",
+        "Nervus hypoglossus cervicalis"
+      ],
+      "question": "Bu okülosempatik bulguları en iyi açıklayan etkilenen yapı hangisidir?",
+      "explanation": "Anterior servikal yaklaşım sonrası aynı tarafta hafif pitoz, miyozis ve yüz terlemesinde azalma, baş-boyuna çıkan sempatik yolun servikal bölümde etkilenmesini destekler. Ekstraoküler hareketlerin korunması okülomotor kas felcini, normal vokal fold hareketi rekürren laringeal siniri, normal diyafram hareketi ise phrenic siniri geri plana iter.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Pitoz + miyozis + anhidroz birlikteliği, motor kraniyal sinir felcinden çok baş-boyun sempatik yol kesintisini düşündürür."
+        }
+      ],
+      "answerFeedback": {
+        "summary": "Anterior servikal yaklaşım sonrası aynı tarafta hafif pitoz, miyozis ve yüz terlemesinde azalma, baş-boyuna çıkan sempatik yolun servikal bölümde etkilenmesini destekler. Ekstraoküler hareketlerin korunması okülomotor kas felcini, normal vokal fold hareketi rekürren laringeal siniri, normal diyafram hareketi ise phrenic siniri geri plana iter.",
+        "whyCorrect": "Anterior servikal yaklaşım sonrası aynı tarafta hafif pitoz, miyozis ve yüz terlemesinde azalma, baş-boyuna çıkan sempatik yolun servikal bölümde etkilenmesini destekler. Ekstraoküler hareketlerin korunması okülomotor kas felcini, normal vokal fold hareketi rekürren laringeal siniri, normal diyafram hareketi ise phrenic siniri geri plana iter.",
+        "rationale": "Anterior servikal yaklaşım sonrası aynı tarafta hafif pitoz, miyozis ve yüz terlemesinde azalma, baş-boyuna çıkan sempatik yolun servikal bölümde etkilenmesini destekler. Ekstraoküler hareketlerin korunması okülomotor kas felcini, normal vokal fold hareketi rekürren laringeal siniri, normal diyafram hareketi ise phrenic siniri geri plana iter.",
+        "correctOptionFeedback": "Doğru yanıttır; servikal sempatik zincir longus colli komşuluğunda anterior servikal yaklaşımlarda gerilebilir veya basıya uğrayabilir. İpsilateral hafif pitoz, miyozis ve yüz terlemesinde azalma, okülosempatik yolun kesintiye uğradığını gösterir.",
+        "keyClues": [
+          "Anterior servikal cerrahi sonrası aynı tarafta bulgu gelişmesi",
+          "Hafif pitoz ve miyozisin birlikte görülmesi",
+          "Yüz terlemesinde ipsilateral azalma",
+          "Vokal fold, dil, diyafram ve ekstraoküler hareketlerin korunması"
+        ],
+        "evidenceChain": [
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Anterior servikal cerrahi sonrası aynı tarafta bulgu gelişmesi",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Hafif pitoz ve miyozisin birlikte görülmesi",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Yüz terlemesinde ipsilateral azalma",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Vokal fold, dil, diyafram ve ekstraoküler hareketlerin korunması",
+            "weight": "medium",
+            "source": "case"
+          }
+        ],
+        "examPearl": "Pitoz + miyozis + anhidroz birlikteliği, motor kraniyal sinir felcinden çok baş-boyun sempatik yol kesintisini düşündürür.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Pitoz + miyozis + anhidroz birlikteliği, motor kraniyal sinir felcinden çok baş-boyun sempatik yol kesintisini düşündürür."
+          }
+        ],
+        "optionComparison": {
+          "Nervus vagus cervicalis": "Vagus siniri karotis kılıfı içinde seyreder ve larinks, farinks ile parasempatik visseral fonksiyonlarla ilişkilidir. Bu olguda ses kısıklığı, yutma güçlüğü veya belirgin kardiyovagal bulgu yoktur; bulgular tek taraflı okülosempatik kayıp paternindedir.",
+          "Nervus phrenicus cervicalis": "Phrenic sinir diyafragmanın motor innervasyonunu sağlar ve anterior skalen kas üzerinde seyreder. Yaralanmasında hemidiyafram elevasyonu ve dispne beklenir; bu hastada solunum bulgusu değil göz kapağı-pupil-terleme paterni vardır.",
+          "Truncus sympathicus cervicalis": "Doğru yanıttır; servikal sempatik zincir longus colli komşuluğunda anterior servikal yaklaşımlarda gerilebilir veya basıya uğrayabilir. İpsilateral hafif pitoz, miyozis ve yüz terlemesinde azalma, okülosempatik yolun kesintiye uğradığını gösterir.",
+          "Nervus laryngeus recurrens": "Rekürren laringeal sinir tiroid ve trakeoözofageal oluk komşuluğunda vokal kord hareketleri için önemlidir. Hasarında ses kısıklığı ve vokal fold hareket azalması beklenir; bu olguda laringoskopi ve ses kalitesi doğaldır.",
+          "Nervus hypoglossus cervicalis": "Hypoglossal sinir dil kaslarının motor innervasyonunu taşır; lezyonunda dil protrüzyonunda deviasyon ve artikülasyon etkilenimi beklenir. Bu hastada dil hareketleri normaldir ve temel bulgu pupil-kapak-terleme birlikteliğidir."
+        },
+        "whyWrong": {
+          "Nervus vagus cervicalis": "Vagus siniri karotis kılıfı içinde seyreder ve larinks, farinks ile parasempatik visseral fonksiyonlarla ilişkilidir. Bu olguda ses kısıklığı, yutma güçlüğü veya belirgin kardiyovagal bulgu yoktur; bulgular tek taraflı okülosempatik kayıp paternindedir.",
+          "Nervus phrenicus cervicalis": "Phrenic sinir diyafragmanın motor innervasyonunu sağlar ve anterior skalen kas üzerinde seyreder. Yaralanmasında hemidiyafram elevasyonu ve dispne beklenir; bu hastada solunum bulgusu değil göz kapağı-pupil-terleme paterni vardır.",
+          "Nervus laryngeus recurrens": "Rekürren laringeal sinir tiroid ve trakeoözofageal oluk komşuluğunda vokal kord hareketleri için önemlidir. Hasarında ses kısıklığı ve vokal fold hareket azalması beklenir; bu olguda laringoskopi ve ses kalitesi doğaldır.",
+          "Nervus hypoglossus cervicalis": "Hypoglossal sinir dil kaslarının motor innervasyonunu taşır; lezyonunda dil protrüzyonunda deviasyon ve artikülasyon etkilenimi beklenir. Bu hastada dil hareketleri normaldir ve temel bulgu pupil-kapak-terleme birlikteliğidir."
+        },
+        "managementSteps": [],
+        "management": [],
+        "learningOutcome": "Anterior servikal yaklaşım sonrası pitoz, miyozis ve anhidroz birlikteliğinde etkilenen boyun nöroanatomik yapısını ayırt edebilme.",
+        "coreKnowledge": "Anterior servikal cerrahilerde longus colli çevresi, karotis kılıfı ve servikal sempatik zincir komşuluğu birlikte düşünülmelidir."
+      },
+      "whyCorrect": "Anterior servikal yaklaşım sonrası aynı tarafta hafif pitoz, miyozis ve yüz terlemesinde azalma, baş-boyuna çıkan sempatik yolun servikal bölümde etkilenmesini destekler. Ekstraoküler hareketlerin korunması okülomotor kas felcini, normal vokal fold hareketi rekürren laringeal siniri, normal diyafram hareketi ise phrenic siniri geri plana iter.",
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Anterior servikal cerrahi sonrası aynı tarafta bulgu gelişmesi",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Hafif pitoz ve miyozisin birlikte görülmesi",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Yüz terlemesinde ipsilateral azalma",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Vokal fold, dil, diyafram ve ekstraoküler hareketlerin korunması",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Nervus vagus cervicalis": "Vagus siniri karotis kılıfı içinde seyreder ve larinks, farinks ile parasempatik visseral fonksiyonlarla ilişkilidir. Bu olguda ses kısıklığı, yutma güçlüğü veya belirgin kardiyovagal bulgu yoktur; bulgular tek taraflı okülosempatik kayıp paternindedir.",
+        "Nervus phrenicus cervicalis": "Phrenic sinir diyafragmanın motor innervasyonunu sağlar ve anterior skalen kas üzerinde seyreder. Yaralanmasında hemidiyafram elevasyonu ve dispne beklenir; bu hastada solunum bulgusu değil göz kapağı-pupil-terleme paterni vardır.",
+        "Truncus sympathicus cervicalis": "Doğru yanıttır; servikal sempatik zincir longus colli komşuluğunda anterior servikal yaklaşımlarda gerilebilir veya basıya uğrayabilir. İpsilateral hafif pitoz, miyozis ve yüz terlemesinde azalma, okülosempatik yolun kesintiye uğradığını gösterir.",
+        "Nervus laryngeus recurrens": "Rekürren laringeal sinir tiroid ve trakeoözofageal oluk komşuluğunda vokal kord hareketleri için önemlidir. Hasarında ses kısıklığı ve vokal fold hareket azalması beklenir; bu olguda laringoskopi ve ses kalitesi doğaldır.",
+        "Nervus hypoglossus cervicalis": "Hypoglossal sinir dil kaslarının motor innervasyonunu taşır; lezyonunda dil protrüzyonunda deviasyon ve artikülasyon etkilenimi beklenir. Bu hastada dil hareketleri normaldir ve temel bulgu pupil-kapak-terleme birlikteliğidir."
+      },
+      "coreKnowledge": "Anterior servikal cerrahilerde longus colli çevresi, karotis kılıfı ve servikal sempatik zincir komşuluğu birlikte düşünülmelidir.",
+      "examPearl": "Pitoz + miyozis + anhidroz birlikteliği, motor kraniyal sinir felcinden çok baş-boyun sempatik yol kesintisini düşündürür.",
+      "whyWrong": {
+        "Nervus vagus cervicalis": "Vagus siniri karotis kılıfı içinde seyreder ve larinks, farinks ile parasempatik visseral fonksiyonlarla ilişkilidir. Bu olguda ses kısıklığı, yutma güçlüğü veya belirgin kardiyovagal bulgu yoktur; bulgular tek taraflı okülosempatik kayıp paternindedir.",
+        "Nervus phrenicus cervicalis": "Phrenic sinir diyafragmanın motor innervasyonunu sağlar ve anterior skalen kas üzerinde seyreder. Yaralanmasında hemidiyafram elevasyonu ve dispne beklenir; bu hastada solunum bulgusu değil göz kapağı-pupil-terleme paterni vardır.",
+        "Nervus laryngeus recurrens": "Rekürren laringeal sinir tiroid ve trakeoözofageal oluk komşuluğunda vokal kord hareketleri için önemlidir. Hasarında ses kısıklığı ve vokal fold hareket azalması beklenir; bu olguda laringoskopi ve ses kalitesi doğaldır.",
+        "Nervus hypoglossus cervicalis": "Hypoglossal sinir dil kaslarının motor innervasyonunu taşır; lezyonunda dil protrüzyonunda deviasyon ve artikülasyon etkilenimi beklenir. Bu hastada dil hareketleri normaldir ve temel bulgu pupil-kapak-terleme birlikteliğidir."
+      }
+    },
+    "shuffleOptions": false,
+    "difficultyTag": "Zor",
+    "aiMeta": {
+      "generatedAt": "manual-v201-anatomy-five-case-expansion",
+      "generator": "manual-editorial-anatomy-clinical-case-expansion",
+      "schemaVersion": "clinical-standard-v397-compatible",
+      "validationWarnings": [],
+      "provider": "manual-editorial",
+      "topicControl": "head-neck-cervical-sympathetic-chain"
+    },
+    "listTitle": "Boyun ön yaklaşımı sonrası göz kapağı düşüklüğü",
+    "cardTitle": "Boyun ön yaklaşımı sonrası göz kapağı düşüklüğü",
+    "coreKnowledge": "Anterior servikal cerrahilerde longus colli çevresi, karotis kılıfı ve servikal sempatik zincir komşuluğu birlikte düşünülmelidir.",
+    "examPearl": "Pitoz + miyozis + anhidroz birlikteliği, motor kraniyal sinir felcinden çok baş-boyun sempatik yol kesintisini düşündürür.",
+    "whyCorrect": "Anterior servikal yaklaşım sonrası aynı tarafta hafif pitoz, miyozis ve yüz terlemesinde azalma, baş-boyuna çıkan sempatik yolun servikal bölümde etkilenmesini destekler. Ekstraoküler hareketlerin korunması okülomotor kas felcini, normal vokal fold hareketi rekürren laringeal siniri, normal diyafram hareketi ise phrenic siniri geri plana iter.",
+    "optionComparison": {
+      "Nervus vagus cervicalis": "Vagus siniri karotis kılıfı içinde seyreder ve larinks, farinks ile parasempatik visseral fonksiyonlarla ilişkilidir. Bu olguda ses kısıklığı, yutma güçlüğü veya belirgin kardiyovagal bulgu yoktur; bulgular tek taraflı okülosempatik kayıp paternindedir.",
+      "Nervus phrenicus cervicalis": "Phrenic sinir diyafragmanın motor innervasyonunu sağlar ve anterior skalen kas üzerinde seyreder. Yaralanmasında hemidiyafram elevasyonu ve dispne beklenir; bu hastada solunum bulgusu değil göz kapağı-pupil-terleme paterni vardır.",
+      "Truncus sympathicus cervicalis": "Doğru yanıttır; servikal sempatik zincir longus colli komşuluğunda anterior servikal yaklaşımlarda gerilebilir veya basıya uğrayabilir. İpsilateral hafif pitoz, miyozis ve yüz terlemesinde azalma, okülosempatik yolun kesintiye uğradığını gösterir.",
+      "Nervus laryngeus recurrens": "Rekürren laringeal sinir tiroid ve trakeoözofageal oluk komşuluğunda vokal kord hareketleri için önemlidir. Hasarında ses kısıklığı ve vokal fold hareket azalması beklenir; bu olguda laringoskopi ve ses kalitesi doğaldır.",
+      "Nervus hypoglossus cervicalis": "Hypoglossal sinir dil kaslarının motor innervasyonunu taşır; lezyonunda dil protrüzyonunda deviasyon ve artikülasyon etkilenimi beklenir. Bu hastada dil hareketleri normaldir ve temel bulgu pupil-kapak-terleme birlikteliğidir."
+    },
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Anterior servikal cerrahi sonrası aynı tarafta bulgu gelişmesi",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Hafif pitoz ve miyozisin birlikte görülmesi",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Yüz terlemesinde ipsilateral azalma",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Vokal fold, dil, diyafram ve ekstraoküler hareketlerin korunması",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "whyWrong": {
+      "Nervus vagus cervicalis": "Vagus siniri karotis kılıfı içinde seyreder ve larinks, farinks ile parasempatik visseral fonksiyonlarla ilişkilidir. Bu olguda ses kısıklığı, yutma güçlüğü veya belirgin kardiyovagal bulgu yoktur; bulgular tek taraflı okülosempatik kayıp paternindedir.",
+      "Nervus phrenicus cervicalis": "Phrenic sinir diyafragmanın motor innervasyonunu sağlar ve anterior skalen kas üzerinde seyreder. Yaralanmasında hemidiyafram elevasyonu ve dispne beklenir; bu hastada solunum bulgusu değil göz kapağı-pupil-terleme paterni vardır.",
+      "Nervus laryngeus recurrens": "Rekürren laringeal sinir tiroid ve trakeoözofageal oluk komşuluğunda vokal kord hareketleri için önemlidir. Hasarında ses kısıklığı ve vokal fold hareket azalması beklenir; bu olguda laringoskopi ve ses kalitesi doğaldır.",
+      "Nervus hypoglossus cervicalis": "Hypoglossal sinir dil kaslarının motor innervasyonunu taşır; lezyonunda dil protrüzyonunda deviasyon ve artikülasyon etkilenimi beklenir. Bu hastada dil hareketleri normaldir ve temel bulgu pupil-kapak-terleme birlikteliğidir."
+    }
+  },
+  {
+    "id": "v201-new-404-kilo-kaybi-sonrasi-yemekle-artan-kusma",
+    "branchId": "anatomy",
+    "caseType": "standard",
+    "relatedBranch": "Anatomi / Gastroenteroloji",
+    "title": "Kilo kaybı sonrası yemekle artan kusma",
+    "difficulty": "Zor",
+    "clinicalFocus": "Kesitsel abdominal anatomide damar-komşuluk ilişkisini, obstrüksiyon düzeyi ve duodenum segmentleri üzerinden yorumlama.",
+    "learningTarget": "Aortomezenterik açı daralması ve proksimal duodenal dilatasyon birlikteliğinde etkilenen duodenum segmentini seçebilme.",
+    "demographics": "19 yaşında kadın hasta",
+    "setting": "Gastroenteroloji polikliniği",
+    "chiefComplaint": "Hasta, hızlı kilo kaybından sonra yemeklerle artan epigastrik dolgunluk ve kusma yakınmasıyla başvuruyor.",
+    "stem": "Hasta son iki ayda yoğun sınav dönemi ve iştah azalması nedeniyle belirgin kilo verdiğini anlatır. Başlangıçta yalnızca çabuk doyma hissi varken son haftalarda yemeklerden kısa süre sonra epigastrik dolgunluk, bulantı ve bazen rahatlatıcı kusma gelişmeye başlamıştır. Yakınmaları sırtüstü uzandığında artmakta, yan yatınca veya dizlerini karnına çekince bir miktar hafiflemektedir. Ateş, ishal, kanlı kusma veya daha önce geçirilmiş karın ameliyatı öyküsü yoktur. Sıvı alımıyla daha az, katı öğünlerden sonra daha belirgin zorlandığını söyler.",
+    "patientIntro": {
+      "profile": "19 yaşında kadın hasta, gastroenteroloji polikliniği bağlamında değerlendiriliyor.",
+      "presentation": "Hızlı kilo kaybı sonrası postprandiyal dolgunluk, kusma ve pozisyonla değişen üst gastrointestinal tıkanma paterni vardır.",
+      "historySummary": "Hasta son iki ayda yoğun sınav dönemi ve iştah azalması nedeniyle belirgin kilo verdiğini anlatır. Başlangıçta yalnızca çabuk doyma hissi varken son haftalarda yemeklerden kısa süre sonra epigastrik dolgunluk, bulantı ve bazen rahatlatıcı kusma gelişmeye başlamıştır. Yakınmaları sırtüstü uzandığında artmakta, yan yatınca veya dizlerini karnına çekince bir miktar hafiflemektedir. Ateş, ishal, kanlı kusma veya daha önce geçirilmiş karın ameliyatı öyküsü yoktur. Sıvı alımıyla daha az, katı öğünlerden sonra daha belirgin zorlandığını söyler."
+    },
+    "vitals": {
+      "TA": "106/68 mmHg",
+      "Nabız": "92/dk",
+      "Solunum": "16/dk",
+      "SpO2": "99%, oda havasında",
+      "Ateş": "36.5 °C",
+      "Şok indeksi": "0.87 normal-sınıra yakın"
+    },
+    "exam": [
+      "Hasta zayıf görünümlüdür; batında epigastrik bölgede hafif distansiyon ve sıçrama tarzı sıvı sesi alınır.",
+      "Defans, rebound veya yaygın peritonit bulgusu yoktur.",
+      "Barsak sesleri mevcuttur; rektal kanama bulgusu saptanmaz.",
+      "Nörolojik muayene ve alt ekstremite motor-duyu değerlendirmesi doğaldır."
+    ],
+    "investigations": [
+      {
+        "id": "v201-new-404-kilo-kaybi-sonrasi-yemekle-artan-kusma-batin-bt-ust-gis-gecis",
+        "label": "Kontrastlı batın BT ve üst gastrointestinal geçiş değerlendirmesi",
+        "title": "Kontrastlı batın BT ve üst gastrointestinal geçiş değerlendirmesi",
+        "orderLabel": "Kontrastlı batın BT ve üst gastrointestinal geçiş değerlendirmesi",
+        "type": "ct",
+        "priority": "essential",
+        "subtype": "Kontrastlı batın BT ve üst gastrointestinal geçiş değerlendirmesi",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "summary": "Kesitsel inceleme, üst abdominal iki büyük damar arasındaki daralmaya bağlı proksimal mide-duodenum genişlemesi ve distal geçiş azalması gösterir.",
+        "clinicalMeaning": "Kesitsel inceleme, üst abdominal iki büyük damar arasındaki daralmaya bağlı proksimal mide-duodenum genişlemesi ve distal geçiş azalması gösterir.",
+        "result": {
+          "title": "Kontrastlı batın BT ve üst gastrointestinal geçiş değerlendirmesi",
+          "summary": "Kesitsel inceleme, üst abdominal iki büyük damar arasındaki daralmaya bağlı proksimal mide-duodenum genişlemesi ve distal geçiş azalması gösterir.",
+          "interpretation": "Kesitsel inceleme, üst abdominal iki büyük damar arasındaki daralmaya bağlı proksimal mide-duodenum genişlemesi ve distal geçiş azalması gösterir.",
+          "values": [
+            [
+              "Proksimal genişleme",
+              "Mide ve proksimal duodenumda belirgin sıvı-gaz distansiyonu izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Vasküler açı",
+              "Aorta ile üst mezenterik arter arasındaki açı belirgin daralmıştır.",
+              "",
+              ""
+            ],
+            [
+              "Geçiş düzeyi",
+              "Kontrast geçişinde iki damar arasındaki horizontal hat seviyesinde belirgin daralma izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Distal barsak",
+              "Jejunal anslarda yaygın mekanik tıkanıklık veya kitle bulgusu saptanmaz.",
+              "",
+              ""
+            ]
+          ],
+          "rows": [
+            [
+              "Proksimal genişleme",
+              "Mide ve proksimal duodenumda belirgin sıvı-gaz distansiyonu izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Vasküler açı",
+              "Aorta ile üst mezenterik arter arasındaki açı belirgin daralmıştır.",
+              "",
+              ""
+            ],
+            [
+              "Geçiş düzeyi",
+              "Kontrast geçişinde iki damar arasındaki horizontal hat seviyesinde belirgin daralma izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Distal barsak",
+              "Jejunal anslarda yaygın mekanik tıkanıklık veya kitle bulgusu saptanmaz.",
+              "",
+              ""
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "Proksimal genişleme",
+            "Mide ve proksimal duodenumda belirgin sıvı-gaz distansiyonu izlenir.",
+            "",
+            ""
+          ],
+          [
+            "Vasküler açı",
+            "Aorta ile üst mezenterik arter arasındaki açı belirgin daralmıştır.",
+            "",
+            ""
+          ],
+          [
+            "Geçiş düzeyi",
+            "Kontrast geçişinde iki damar arasındaki horizontal hat seviyesinde belirgin daralma izlenir.",
+            "",
+            ""
+          ],
+          [
+            "Distal barsak",
+            "Jejunal anslarda yaygın mekanik tıkanıklık veya kitle bulgusu saptanmaz.",
+            "",
+            ""
+          ]
+        ],
+        "postAnswerExplanation": "Kesitsel inceleme, üst abdominal iki büyük damar arasındaki daralmaya bağlı proksimal mide-duodenum genişlemesi ve distal geçiş azalması gösterir.",
+        "interpretation": "Kesitsel inceleme, üst abdominal iki büyük damar arasındaki daralmaya bağlı proksimal mide-duodenum genişlemesi ve distal geçiş azalması gösterir.",
+        "explanationAfterAnswer": "Kesitsel inceleme, üst abdominal iki büyük damar arasındaki daralmaya bağlı proksimal mide-duodenum genişlemesi ve distal geçiş azalması gösterir.",
+        "testValueLabel": "Kontrastlı batın BT ve üst gastrointestinal geçiş değerlendirmesi",
+        "educationalValue": "Kontrastlı batın BT ve üst gastrointestinal geçiş değerlendirmesi",
+        "clinicalPriorityLabel": "Kontrastlı batın BT ve üst gastrointestinal geçiş değerlendirmesi",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "clinicalFlowOrder": 1,
+        "purpose": "Kontrastlı batın BT ve üst gastrointestinal geçiş değerlendirmesi",
+        "inlineFeedback": "Kesitsel inceleme, üst abdominal iki büyük damar arasındaki daralmaya bağlı proksimal mide-duodenum genişlemesi ve distal geçiş azalması gösterir."
+      }
+    ],
+    "useSyntheticInvestigationBank": false,
+    "managementSequence": {
+      "enabled": false
+    },
+    "hideExamSignal": false,
+    "question": "Bu bası paterninde etkilenmesi en olası duodenum segmenti hangisidir?",
+    "questionType": "anatomy",
+    "answerTarget": "anatomy",
+    "diagnosis": {
+      "correct": "Pars horizontalis duodeni",
+      "options": [
+        "Pars superior duodeni",
+        "Pars descendens duodeni",
+        "Pars ascendens duodeni",
+        "Bulbus duodeni",
+        "Pars horizontalis duodeni"
+      ],
+      "question": "Bu bası paterninde etkilenmesi en olası duodenum segmenti hangisidir?",
+      "explanation": "Aorta ile üst mezenterik arter arasındaki açının daralması, bu iki yapı arasından geçen duodenum segmentini sıkıştırarak proksimal mide-duodenum dilatasyonu ve postprandiyal kusma oluşturabilir. Pylorusa yakın superior/bulbus segmentleri veya pankreas başı komşuluğundaki inen segment, BT’de tariflenen aortomezenterik geçiş düzeyiyle uyumlu değildir.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Aortomezenterik açı daralması + proksimal duodenal genişleme, damarlar arasından geçen horizontal duodenum segmentini düşündürür."
+        }
+      ],
+      "answerFeedback": {
+        "summary": "Aorta ile üst mezenterik arter arasındaki açının daralması, bu iki yapı arasından geçen duodenum segmentini sıkıştırarak proksimal mide-duodenum dilatasyonu ve postprandiyal kusma oluşturabilir. Pylorusa yakın superior/bulbus segmentleri veya pankreas başı komşuluğundaki inen segment, BT’de tariflenen aortomezenterik geçiş düzeyiyle uyumlu değildir.",
+        "whyCorrect": "Aorta ile üst mezenterik arter arasındaki açının daralması, bu iki yapı arasından geçen duodenum segmentini sıkıştırarak proksimal mide-duodenum dilatasyonu ve postprandiyal kusma oluşturabilir. Pylorusa yakın superior/bulbus segmentleri veya pankreas başı komşuluğundaki inen segment, BT’de tariflenen aortomezenterik geçiş düzeyiyle uyumlu değildir.",
+        "rationale": "Aorta ile üst mezenterik arter arasındaki açının daralması, bu iki yapı arasından geçen duodenum segmentini sıkıştırarak proksimal mide-duodenum dilatasyonu ve postprandiyal kusma oluşturabilir. Pylorusa yakın superior/bulbus segmentleri veya pankreas başı komşuluğundaki inen segment, BT’de tariflenen aortomezenterik geçiş düzeyiyle uyumlu değildir.",
+        "correctOptionFeedback": "Doğru yanıttır; duodenumun horizontal kısmı aorta ile üst mezenterik arter arasında geçer. Belirgin kilo kaybı sonrası aortomezenterik açının daralması bu segmentte bası yaparak mide-proksimal duodenum dilatasyonu ve yemek sonrası kusma oluşturabilir.",
+        "keyClues": [
+          "Hızlı kilo kaybı sonrası yakınmaların başlaması",
+          "Yemekle artan ve kusmayla rahatlayan üst abdominal dolgunluk",
+          "Aortomezenterik açının belirgin daralması",
+          "Kontrast geçişinde horizontal damar aralığı düzeyinde daralma"
+        ],
+        "evidenceChain": [
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Hızlı kilo kaybı sonrası yakınmaların başlaması",
+            "weight": "medium",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Yemekle artan ve kusmayla rahatlayan üst abdominal dolgunluk",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Aortomezenterik açının belirgin daralması",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Kontrast geçişinde horizontal damar aralığı düzeyinde daralma",
+            "weight": "high",
+            "source": "case"
+          }
+        ],
+        "examPearl": "Aortomezenterik açı daralması + proksimal duodenal genişleme, damarlar arasından geçen horizontal duodenum segmentini düşündürür.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Aortomezenterik açı daralması + proksimal duodenal genişleme, damarlar arasından geçen horizontal duodenum segmentini düşündürür."
+          }
+        ],
+        "optionComparison": {
+          "Pars superior duodeni": "Duodenumun superior kısmı pylorusa yakın başlangıç segmentidir ve peptik ülser/perforasyon sorularında sık gündeme gelir. Bu olguda geçiş noktası daha distal, aorta ile üst mezenterik arter arasındaki horizontal seviyede tanımlanmıştır.",
+          "Pars descendens duodeni": "İnen duodenum segmenti pankreas başı ve safra-pankreas kanal açılımı ile ilişkilidir. Bu hastada biliyer-pankreatik kanal bulgusu değil, vasküler açı arasında kalan horizontal geçiş düzeyi ve proksimal dilatasyon vardır.",
+          "Pars ascendens duodeni": "Yükselen duodenum segmenti duodenojejunal bileşkeye yakın sol üst abdominal bölgede yer alır. BT’de bası aortomezenterik aralıkta daha önceki horizontal segment düzeyinde tariflenmiştir.",
+          "Bulbus duodeni": "Duodenal bulbus pylorus sonrası geniş başlangıç kısmıdır ve ön duvar ülseri gibi tablolarla karışabilir. Burada yemek sonrası kusmayı açıklayan odak bulbus değil, damarlar arasında sıkışan daha distal horizontal segmenttir.",
+          "Pars horizontalis duodeni": "Doğru yanıttır; duodenumun horizontal kısmı aorta ile üst mezenterik arter arasında geçer. Belirgin kilo kaybı sonrası aortomezenterik açının daralması bu segmentte bası yaparak mide-proksimal duodenum dilatasyonu ve yemek sonrası kusma oluşturabilir."
+        },
+        "whyWrong": {
+          "Pars superior duodeni": "Duodenumun superior kısmı pylorusa yakın başlangıç segmentidir ve peptik ülser/perforasyon sorularında sık gündeme gelir. Bu olguda geçiş noktası daha distal, aorta ile üst mezenterik arter arasındaki horizontal seviyede tanımlanmıştır.",
+          "Pars descendens duodeni": "İnen duodenum segmenti pankreas başı ve safra-pankreas kanal açılımı ile ilişkilidir. Bu hastada biliyer-pankreatik kanal bulgusu değil, vasküler açı arasında kalan horizontal geçiş düzeyi ve proksimal dilatasyon vardır.",
+          "Pars ascendens duodeni": "Yükselen duodenum segmenti duodenojejunal bileşkeye yakın sol üst abdominal bölgede yer alır. BT’de bası aortomezenterik aralıkta daha önceki horizontal segment düzeyinde tariflenmiştir.",
+          "Bulbus duodeni": "Duodenal bulbus pylorus sonrası geniş başlangıç kısmıdır ve ön duvar ülseri gibi tablolarla karışabilir. Burada yemek sonrası kusmayı açıklayan odak bulbus değil, damarlar arasında sıkışan daha distal horizontal segmenttir."
+        },
+        "managementSteps": [],
+        "management": [],
+        "learningOutcome": "Aortomezenterik açı daralması ve proksimal duodenal dilatasyon birlikteliğinde etkilenen duodenum segmentini seçebilme.",
+        "coreKnowledge": "Duodenum segmentleri sorulurken yalnız semptom değil, BT’deki geçiş düzeyi ve damar-komşuluk ilişkisi birlikte okunmalıdır."
+      },
+      "whyCorrect": "Aorta ile üst mezenterik arter arasındaki açının daralması, bu iki yapı arasından geçen duodenum segmentini sıkıştırarak proksimal mide-duodenum dilatasyonu ve postprandiyal kusma oluşturabilir. Pylorusa yakın superior/bulbus segmentleri veya pankreas başı komşuluğundaki inen segment, BT’de tariflenen aortomezenterik geçiş düzeyiyle uyumlu değildir.",
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Hızlı kilo kaybı sonrası yakınmaların başlaması",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Yemekle artan ve kusmayla rahatlayan üst abdominal dolgunluk",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Aortomezenterik açının belirgin daralması",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Kontrast geçişinde horizontal damar aralığı düzeyinde daralma",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Pars superior duodeni": "Duodenumun superior kısmı pylorusa yakın başlangıç segmentidir ve peptik ülser/perforasyon sorularında sık gündeme gelir. Bu olguda geçiş noktası daha distal, aorta ile üst mezenterik arter arasındaki horizontal seviyede tanımlanmıştır.",
+        "Pars descendens duodeni": "İnen duodenum segmenti pankreas başı ve safra-pankreas kanal açılımı ile ilişkilidir. Bu hastada biliyer-pankreatik kanal bulgusu değil, vasküler açı arasında kalan horizontal geçiş düzeyi ve proksimal dilatasyon vardır.",
+        "Pars ascendens duodeni": "Yükselen duodenum segmenti duodenojejunal bileşkeye yakın sol üst abdominal bölgede yer alır. BT’de bası aortomezenterik aralıkta daha önceki horizontal segment düzeyinde tariflenmiştir.",
+        "Bulbus duodeni": "Duodenal bulbus pylorus sonrası geniş başlangıç kısmıdır ve ön duvar ülseri gibi tablolarla karışabilir. Burada yemek sonrası kusmayı açıklayan odak bulbus değil, damarlar arasında sıkışan daha distal horizontal segmenttir.",
+        "Pars horizontalis duodeni": "Doğru yanıttır; duodenumun horizontal kısmı aorta ile üst mezenterik arter arasında geçer. Belirgin kilo kaybı sonrası aortomezenterik açının daralması bu segmentte bası yaparak mide-proksimal duodenum dilatasyonu ve yemek sonrası kusma oluşturabilir."
+      },
+      "coreKnowledge": "Duodenum segmentleri sorulurken yalnız semptom değil, BT’deki geçiş düzeyi ve damar-komşuluk ilişkisi birlikte okunmalıdır.",
+      "examPearl": "Aortomezenterik açı daralması + proksimal duodenal genişleme, damarlar arasından geçen horizontal duodenum segmentini düşündürür.",
+      "whyWrong": {
+        "Pars superior duodeni": "Duodenumun superior kısmı pylorusa yakın başlangıç segmentidir ve peptik ülser/perforasyon sorularında sık gündeme gelir. Bu olguda geçiş noktası daha distal, aorta ile üst mezenterik arter arasındaki horizontal seviyede tanımlanmıştır.",
+        "Pars descendens duodeni": "İnen duodenum segmenti pankreas başı ve safra-pankreas kanal açılımı ile ilişkilidir. Bu hastada biliyer-pankreatik kanal bulgusu değil, vasküler açı arasında kalan horizontal geçiş düzeyi ve proksimal dilatasyon vardır.",
+        "Pars ascendens duodeni": "Yükselen duodenum segmenti duodenojejunal bileşkeye yakın sol üst abdominal bölgede yer alır. BT’de bası aortomezenterik aralıkta daha önceki horizontal segment düzeyinde tariflenmiştir.",
+        "Bulbus duodeni": "Duodenal bulbus pylorus sonrası geniş başlangıç kısmıdır ve ön duvar ülseri gibi tablolarla karışabilir. Burada yemek sonrası kusmayı açıklayan odak bulbus değil, damarlar arasında sıkışan daha distal horizontal segmenttir."
+      }
+    },
+    "shuffleOptions": false,
+    "difficultyTag": "Zor",
+    "aiMeta": {
+      "generatedAt": "manual-v201-anatomy-five-case-expansion",
+      "generator": "manual-editorial-anatomy-clinical-case-expansion",
+      "schemaVersion": "clinical-standard-v397-compatible",
+      "validationWarnings": [],
+      "provider": "manual-editorial",
+      "topicControl": "abdominal-cross-sectional-duodenum-sma"
+    },
+    "listTitle": "Kilo kaybı sonrası yemekle artan kusma",
+    "cardTitle": "Kilo kaybı sonrası yemekle artan kusma",
+    "coreKnowledge": "Duodenum segmentleri sorulurken yalnız semptom değil, BT’deki geçiş düzeyi ve damar-komşuluk ilişkisi birlikte okunmalıdır.",
+    "examPearl": "Aortomezenterik açı daralması + proksimal duodenal genişleme, damarlar arasından geçen horizontal duodenum segmentini düşündürür.",
+    "whyCorrect": "Aorta ile üst mezenterik arter arasındaki açının daralması, bu iki yapı arasından geçen duodenum segmentini sıkıştırarak proksimal mide-duodenum dilatasyonu ve postprandiyal kusma oluşturabilir. Pylorusa yakın superior/bulbus segmentleri veya pankreas başı komşuluğundaki inen segment, BT’de tariflenen aortomezenterik geçiş düzeyiyle uyumlu değildir.",
+    "optionComparison": {
+      "Pars superior duodeni": "Duodenumun superior kısmı pylorusa yakın başlangıç segmentidir ve peptik ülser/perforasyon sorularında sık gündeme gelir. Bu olguda geçiş noktası daha distal, aorta ile üst mezenterik arter arasındaki horizontal seviyede tanımlanmıştır.",
+      "Pars descendens duodeni": "İnen duodenum segmenti pankreas başı ve safra-pankreas kanal açılımı ile ilişkilidir. Bu hastada biliyer-pankreatik kanal bulgusu değil, vasküler açı arasında kalan horizontal geçiş düzeyi ve proksimal dilatasyon vardır.",
+      "Pars ascendens duodeni": "Yükselen duodenum segmenti duodenojejunal bileşkeye yakın sol üst abdominal bölgede yer alır. BT’de bası aortomezenterik aralıkta daha önceki horizontal segment düzeyinde tariflenmiştir.",
+      "Bulbus duodeni": "Duodenal bulbus pylorus sonrası geniş başlangıç kısmıdır ve ön duvar ülseri gibi tablolarla karışabilir. Burada yemek sonrası kusmayı açıklayan odak bulbus değil, damarlar arasında sıkışan daha distal horizontal segmenttir.",
+      "Pars horizontalis duodeni": "Doğru yanıttır; duodenumun horizontal kısmı aorta ile üst mezenterik arter arasında geçer. Belirgin kilo kaybı sonrası aortomezenterik açının daralması bu segmentte bası yaparak mide-proksimal duodenum dilatasyonu ve yemek sonrası kusma oluşturabilir."
+    },
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Hızlı kilo kaybı sonrası yakınmaların başlaması",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Yemekle artan ve kusmayla rahatlayan üst abdominal dolgunluk",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Aortomezenterik açının belirgin daralması",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Kontrast geçişinde horizontal damar aralığı düzeyinde daralma",
+        "weight": "high",
+        "source": "case"
+      }
+    ],
+    "whyWrong": {
+      "Pars superior duodeni": "Duodenumun superior kısmı pylorusa yakın başlangıç segmentidir ve peptik ülser/perforasyon sorularında sık gündeme gelir. Bu olguda geçiş noktası daha distal, aorta ile üst mezenterik arter arasındaki horizontal seviyede tanımlanmıştır.",
+      "Pars descendens duodeni": "İnen duodenum segmenti pankreas başı ve safra-pankreas kanal açılımı ile ilişkilidir. Bu hastada biliyer-pankreatik kanal bulgusu değil, vasküler açı arasında kalan horizontal geçiş düzeyi ve proksimal dilatasyon vardır.",
+      "Pars ascendens duodeni": "Yükselen duodenum segmenti duodenojejunal bileşkeye yakın sol üst abdominal bölgede yer alır. BT’de bası aortomezenterik aralıkta daha önceki horizontal segment düzeyinde tariflenmiştir.",
+      "Bulbus duodeni": "Duodenal bulbus pylorus sonrası geniş başlangıç kısmıdır ve ön duvar ülseri gibi tablolarla karışabilir. Burada yemek sonrası kusmayı açıklayan odak bulbus değil, damarlar arasında sıkışan daha distal horizontal segmenttir."
+    }
+  },
+  {
+    "id": "v201-new-405-karanlikta-artan-dengesizlik-ve-vibrasyon-kaybi",
+    "branchId": "anatomy",
+    "caseType": "standard",
+    "relatedBranch": "Anatomi / Nöroloji",
+    "title": "Karanlıkta artan dengesizlik ve vibrasyon kaybı",
+    "difficulty": "Zor",
+    "clinicalFocus": "Spinal kord duyu yollarını, modalite seçiciliği ve funikulus yerleşimi üzerinden lokalize etme.",
+    "learningTarget": "Ağrı-sıcaklık korunurken alt ekstremite vibrasyon/propriosepsiyon kaybı olduğunda ilgili arka funikulus yolunu ayırt edebilme.",
+    "demographics": "62 yaşında kadın hasta",
+    "setting": "Nöroloji polikliniği",
+    "chiefComplaint": "Hasta, karanlıkta belirginleşen dengesizlik ve ayaklarını zeminde net hissedememe nedeniyle değerlendiriliyor.",
+    "stem": "Hasta son altı aydır özellikle akşam ışıklar kapalıyken yürürken dengesinin bozulduğunu ve banyoda gözlerini kapattığında ayaklarını yerleştirmekte zorlandığını anlatır. Başlangıçta bunu yorgunluğa bağlamış, ancak son haftalarda merdiven inerken trabzana tutunma ihtiyacı artmıştır. Baş dönmesi, kulakta çınlama, ani güç kaybı veya belden bacağa yayılan şiddetli ağrı tariflemez. Ayakkabısının içinde küçük taş varmış gibi bir his olduğunu söyler, fakat iğne batmasını ve sıcak-soğuk temasını genellikle ayırt edebilmektedir. Daha önce inme veya omurga travması geçirmemiştir.",
+    "patientIntro": {
+      "profile": "62 yaşında kadın hasta, nöroloji polikliniği bağlamında değerlendiriliyor.",
+      "presentation": "Alt ekstremitede vibrasyon-pozisyon duyusu kaybı, pozitif Romberg ve ağrı-sıcaklık duyusunun korunması vardır.",
+      "historySummary": "Hasta son altı aydır özellikle akşam ışıklar kapalıyken yürürken dengesinin bozulduğunu ve banyoda gözlerini kapattığında ayaklarını yerleştirmekte zorlandığını anlatır. Başlangıçta bunu yorgunluğa bağlamış, ancak son haftalarda merdiven inerken trabzana tutunma ihtiyacı artmıştır. Baş dönmesi, kulakta çınlama, ani güç kaybı veya belden bacağa yayılan şiddetli ağrı tariflemez. Ayakkabısının içinde küçük taş varmış gibi bir his olduğunu söyler, fakat iğne batmasını ve sıcak-soğuk temasını genellikle ayırt edebilmektedir. Daha önce inme veya omurga travması geçirmemiştir."
+    },
+    "vitals": {
+      "TA": "132/80 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "15/dk",
+      "SpO2": "98%, oda havasında",
+      "Ateş": "36.6 °C",
+      "Şok indeksi": "0.59 normal"
+    },
+    "exam": [
+      "Romberg testinde gözler kapatılınca belirgin salınım artar; gözler açıkken denge kısmen korunur.",
+      "Her iki ayak başparmağında pozisyon duyusu ve malleol düzeyinde vibrasyon duyusu azalmıştır.",
+      "İğne ucu ve sıcak-soğuk duyusu alt ekstremitelerde belirgin asimetri göstermez.",
+      "Alt ekstremite kas gücü büyük ölçüde korunmuştur; belirgin spastisite veya ekstansör plantar yanıt saptanmaz."
+    ],
+    "investigations": [
+      {
+        "id": "v201-new-405-karanlikta-artan-dengesizlik-ve-vibrasyon-kaybi-spinal-mrg-duyu-yollari",
+        "label": "Spinal MRG ve hedefli duyu değerlendirmesi",
+        "title": "Spinal MRG ve hedefli duyu değerlendirmesi",
+        "orderLabel": "Spinal MRG ve hedefli duyu değerlendirmesi",
+        "type": "mri",
+        "priority": "essential",
+        "subtype": "Spinal MRG ve hedefli duyu değerlendirmesi",
+        "category": "imaging",
+        "testTypeCategory": "imaging",
+        "summary": "Görüntüleme ve duyu muayenesi, alt ekstremite proprioseptif-vibrasyon duyusunu taşıyan medial posterior funikulus ağırlıklı etkilenimi gösterir.",
+        "clinicalMeaning": "Görüntüleme ve duyu muayenesi, alt ekstremite proprioseptif-vibrasyon duyusunu taşıyan medial posterior funikulus ağırlıklı etkilenimi gösterir.",
+        "result": {
+          "title": "Spinal MRG ve hedefli duyu değerlendirmesi",
+          "summary": "Görüntüleme ve duyu muayenesi, alt ekstremite proprioseptif-vibrasyon duyusunu taşıyan medial posterior funikulus ağırlıklı etkilenimi gösterir.",
+          "interpretation": "Görüntüleme ve duyu muayenesi, alt ekstremite proprioseptif-vibrasyon duyusunu taşıyan medial posterior funikulus ağırlıklı etkilenimi gösterir.",
+          "values": [
+            [
+              "MRG sinyali",
+              "Alt torakal düzeylerde arka funikulusun medial bölümünde bilateral T2 sinyal artışı izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Üst ekstremite alanı",
+              "Servikal üst lateral arka funikuluslarda belirgin sinyal artışı saptanmaz.",
+              "",
+              ""
+            ],
+            [
+              "Motor yol",
+              "Lateral kord motor yol komşuluğunda belirgin atrofi veya fokal bası bulgusu yoktur.",
+              "",
+              ""
+            ],
+            [
+              "Duyu modalitesi",
+              "Ağrı-sıcaklık testleri korunurken vibrasyon ve eklem pozisyon duyusu alt ekstremitede azalmıştır.",
+              "",
+              ""
+            ]
+          ],
+          "rows": [
+            [
+              "MRG sinyali",
+              "Alt torakal düzeylerde arka funikulusun medial bölümünde bilateral T2 sinyal artışı izlenir.",
+              "",
+              ""
+            ],
+            [
+              "Üst ekstremite alanı",
+              "Servikal üst lateral arka funikuluslarda belirgin sinyal artışı saptanmaz.",
+              "",
+              ""
+            ],
+            [
+              "Motor yol",
+              "Lateral kord motor yol komşuluğunda belirgin atrofi veya fokal bası bulgusu yoktur.",
+              "",
+              ""
+            ],
+            [
+              "Duyu modalitesi",
+              "Ağrı-sıcaklık testleri korunurken vibrasyon ve eklem pozisyon duyusu alt ekstremitede azalmıştır.",
+              "",
+              ""
+            ]
+          ]
+        },
+        "rows": [
+          [
+            "MRG sinyali",
+            "Alt torakal düzeylerde arka funikulusun medial bölümünde bilateral T2 sinyal artışı izlenir.",
+            "",
+            ""
+          ],
+          [
+            "Üst ekstremite alanı",
+            "Servikal üst lateral arka funikuluslarda belirgin sinyal artışı saptanmaz.",
+            "",
+            ""
+          ],
+          [
+            "Motor yol",
+            "Lateral kord motor yol komşuluğunda belirgin atrofi veya fokal bası bulgusu yoktur.",
+            "",
+            ""
+          ],
+          [
+            "Duyu modalitesi",
+            "Ağrı-sıcaklık testleri korunurken vibrasyon ve eklem pozisyon duyusu alt ekstremitede azalmıştır.",
+            "",
+            ""
+          ]
+        ],
+        "postAnswerExplanation": "Görüntüleme ve duyu muayenesi, alt ekstremite proprioseptif-vibrasyon duyusunu taşıyan medial posterior funikulus ağırlıklı etkilenimi gösterir.",
+        "interpretation": "Görüntüleme ve duyu muayenesi, alt ekstremite proprioseptif-vibrasyon duyusunu taşıyan medial posterior funikulus ağırlıklı etkilenimi gösterir.",
+        "explanationAfterAnswer": "Görüntüleme ve duyu muayenesi, alt ekstremite proprioseptif-vibrasyon duyusunu taşıyan medial posterior funikulus ağırlıklı etkilenimi gösterir.",
+        "testValueLabel": "Spinal MRG ve hedefli duyu değerlendirmesi",
+        "educationalValue": "Spinal MRG ve hedefli duyu değerlendirmesi",
+        "clinicalPriorityLabel": "Spinal MRG ve hedefli duyu değerlendirmesi",
+        "scoreImpact": 4,
+        "scoreValue": 4,
+        "clinicalFlowOrder": 1,
+        "purpose": "Spinal MRG ve hedefli duyu değerlendirmesi",
+        "inlineFeedback": "Görüntüleme ve duyu muayenesi, alt ekstremite proprioseptif-vibrasyon duyusunu taşıyan medial posterior funikulus ağırlıklı etkilenimi gösterir."
+      }
+    ],
+    "useSyntheticInvestigationBank": false,
+    "managementSequence": {
+      "enabled": false
+    },
+    "hideExamSignal": false,
+    "question": "Bu seçici duyu paternini en iyi açıklayan spinal kord yolu hangisidir?",
+    "questionType": "anatomy",
+    "answerTarget": "anatomy",
+    "diagnosis": {
+      "correct": "Fasciculus gracilis",
+      "options": [
+        "Tractus spinothalamicus lateralis",
+        "Tractus corticospinalis lateralis",
+        "Fasciculus gracilis",
+        "Fasciculus cuneatus",
+        "Commissura alba anterior"
+      ],
+      "question": "Bu seçici duyu paternini en iyi açıklayan spinal kord yolu hangisidir?",
+      "explanation": "Karanlıkta artan dengesizlik, pozitif Romberg ve alt ekstremitede vibrasyon-pozisyon duyusu kaybı bilinçli propriosepsiyon yolunu destekler. Etkilenimin alt ekstremite ağırlıklı ve arka funikulusun medial bölümünde olması gracile fasikül ile uyumludur; ağrı-sıcaklık duyusunun korunması spinotalamik yol veya anterior komissür lezyonunu geri plana iter.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Alt ekstremite vibrasyon/propriosepsiyon kaybı + pozitif Romberg + ağrı-sıcaklık korunumu, medial posterior funikulus yolunu düşündürür."
+        }
+      ],
+      "answerFeedback": {
+        "summary": "Karanlıkta artan dengesizlik, pozitif Romberg ve alt ekstremitede vibrasyon-pozisyon duyusu kaybı bilinçli propriosepsiyon yolunu destekler. Etkilenimin alt ekstremite ağırlıklı ve arka funikulusun medial bölümünde olması gracile fasikül ile uyumludur; ağrı-sıcaklık duyusunun korunması spinotalamik yol veya anterior komissür lezyonunu geri plana iter.",
+        "whyCorrect": "Karanlıkta artan dengesizlik, pozitif Romberg ve alt ekstremitede vibrasyon-pozisyon duyusu kaybı bilinçli propriosepsiyon yolunu destekler. Etkilenimin alt ekstremite ağırlıklı ve arka funikulusun medial bölümünde olması gracile fasikül ile uyumludur; ağrı-sıcaklık duyusunun korunması spinotalamik yol veya anterior komissür lezyonunu geri plana iter.",
+        "rationale": "Karanlıkta artan dengesizlik, pozitif Romberg ve alt ekstremitede vibrasyon-pozisyon duyusu kaybı bilinçli propriosepsiyon yolunu destekler. Etkilenimin alt ekstremite ağırlıklı ve arka funikulusun medial bölümünde olması gracile fasikül ile uyumludur; ağrı-sıcaklık duyusunun korunması spinotalamik yol veya anterior komissür lezyonunu geri plana iter.",
+        "correctOptionFeedback": "Doğru yanıttır; alt gövde ve alt ekstremiteden gelen bilinçli propriosepsiyon ve vibrasyon duyusu arka funikulusun medial bölümünde taşınır. Alt ekstremitede vibrasyon-pozisyon kaybı, pozitif Romberg ve alt torakal medial posterior funikulus sinyali bu yapıyı destekler.",
+        "keyClues": [
+          "Karanlıkta ve göz kapatınca dengenin bozulması",
+          "Alt ekstremitede vibrasyon ve pozisyon duyusu kaybı",
+          "Ağrı-sıcaklık duyusunun korunması",
+          "Arka funikulusun medial bölümünde bilateral sinyal artışı"
+        ],
+        "evidenceChain": [
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Karanlıkta ve göz kapatınca dengenin bozulması",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Alt ekstremitede vibrasyon ve pozisyon duyusu kaybı",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Ağrı-sıcaklık duyusunun korunması",
+            "weight": "high",
+            "source": "case"
+          },
+          {
+            "title": "Klinik-anatomik ipucu",
+            "text": "Arka funikulusun medial bölümünde bilateral sinyal artışı",
+            "weight": "high",
+            "source": "case"
+          }
+        ],
+        "examPearl": "Alt ekstremite vibrasyon/propriosepsiyon kaybı + pozitif Romberg + ağrı-sıcaklık korunumu, medial posterior funikulus yolunu düşündürür.",
+        "pearls": [
+          {
+            "label": "Sınav notu",
+            "text": "Alt ekstremite vibrasyon/propriosepsiyon kaybı + pozitif Romberg + ağrı-sıcaklık korunumu, medial posterior funikulus yolunu düşündürür."
+          }
+        ],
+        "optionComparison": {
+          "Tractus spinothalamicus lateralis": "Lateral spinotalamik trakt ağrı ve sıcaklık duyusunu taşır; etkileniminde karşı taraf ağrı-sıcaklık kaybı beklenir. Bu hastada ağrı-sıcaklık duyusu korunmuş, esas kayıp vibrasyon ve pozisyon duyusundadır.",
+          "Tractus corticospinalis lateralis": "Lateral kortikospinal trakt üst motor nöron bulguları, spastisite, hiperrefleksi ve piramidal güçsüzlükle ilişkilidir. Olguda belirgin motor güç kaybı veya Babinski bulgusu değil, göz kapatınca artan duyu-ataksi paterni öne çıkmaktadır.",
+          "Fasciculus gracilis": "Doğru yanıttır; alt gövde ve alt ekstremiteden gelen bilinçli propriosepsiyon ve vibrasyon duyusu arka funikulusun medial bölümünde taşınır. Alt ekstremitede vibrasyon-pozisyon kaybı, pozitif Romberg ve alt torakal medial posterior funikulus sinyali bu yapıyı destekler.",
+          "Fasciculus cuneatus": "Cuneate fasikül üst gövde ve üst ekstremite duyularıyla ilişkilidir ve daha lateral yerleşir. Bu olguda üst ekstremite belirgin etkilenmemiş, bulgular ayak bileği-parmak pozisyonu ve alt ekstremite vibrasyon kaybında yoğunlaşmıştır.",
+          "Commissura alba anterior": "Anterior beyaz komissür ağrı-sıcaklık liflerinin segmental çaprazlaşma bölgesidir; santral kord lezyonlarında iki taraflı segmental ağrı-sıcaklık kaybı yapabilir. Bu hastada ayrışmış ağrı-sıcaklık kaybı değil, vibrasyon ve pozisyon duyusu kaybı vardır."
+        },
+        "whyWrong": {
+          "Tractus spinothalamicus lateralis": "Lateral spinotalamik trakt ağrı ve sıcaklık duyusunu taşır; etkileniminde karşı taraf ağrı-sıcaklık kaybı beklenir. Bu hastada ağrı-sıcaklık duyusu korunmuş, esas kayıp vibrasyon ve pozisyon duyusundadır.",
+          "Tractus corticospinalis lateralis": "Lateral kortikospinal trakt üst motor nöron bulguları, spastisite, hiperrefleksi ve piramidal güçsüzlükle ilişkilidir. Olguda belirgin motor güç kaybı veya Babinski bulgusu değil, göz kapatınca artan duyu-ataksi paterni öne çıkmaktadır.",
+          "Fasciculus cuneatus": "Cuneate fasikül üst gövde ve üst ekstremite duyularıyla ilişkilidir ve daha lateral yerleşir. Bu olguda üst ekstremite belirgin etkilenmemiş, bulgular ayak bileği-parmak pozisyonu ve alt ekstremite vibrasyon kaybında yoğunlaşmıştır.",
+          "Commissura alba anterior": "Anterior beyaz komissür ağrı-sıcaklık liflerinin segmental çaprazlaşma bölgesidir; santral kord lezyonlarında iki taraflı segmental ağrı-sıcaklık kaybı yapabilir. Bu hastada ayrışmış ağrı-sıcaklık kaybı değil, vibrasyon ve pozisyon duyusu kaybı vardır."
+        },
+        "managementSteps": [],
+        "management": [],
+        "learningOutcome": "Ağrı-sıcaklık korunurken alt ekstremite vibrasyon/propriosepsiyon kaybı olduğunda ilgili arka funikulus yolunu ayırt edebilme.",
+        "coreKnowledge": "Duyu yolu lokalizasyonunda önce modaliteyi, sonra vücut bölgesini ve funikulus içindeki medial-lateral yerleşimi ayırmak gerekir."
+      },
+      "whyCorrect": "Karanlıkta artan dengesizlik, pozitif Romberg ve alt ekstremitede vibrasyon-pozisyon duyusu kaybı bilinçli propriosepsiyon yolunu destekler. Etkilenimin alt ekstremite ağırlıklı ve arka funikulusun medial bölümünde olması gracile fasikül ile uyumludur; ağrı-sıcaklık duyusunun korunması spinotalamik yol veya anterior komissür lezyonunu geri plana iter.",
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Karanlıkta ve göz kapatınca dengenin bozulması",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Alt ekstremitede vibrasyon ve pozisyon duyusu kaybı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Ağrı-sıcaklık duyusunun korunması",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Arka funikulusun medial bölümünde bilateral sinyal artışı",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "optionComparison": {
+        "Tractus spinothalamicus lateralis": "Lateral spinotalamik trakt ağrı ve sıcaklık duyusunu taşır; etkileniminde karşı taraf ağrı-sıcaklık kaybı beklenir. Bu hastada ağrı-sıcaklık duyusu korunmuş, esas kayıp vibrasyon ve pozisyon duyusundadır.",
+        "Tractus corticospinalis lateralis": "Lateral kortikospinal trakt üst motor nöron bulguları, spastisite, hiperrefleksi ve piramidal güçsüzlükle ilişkilidir. Olguda belirgin motor güç kaybı veya Babinski bulgusu değil, göz kapatınca artan duyu-ataksi paterni öne çıkmaktadır.",
+        "Fasciculus gracilis": "Doğru yanıttır; alt gövde ve alt ekstremiteden gelen bilinçli propriosepsiyon ve vibrasyon duyusu arka funikulusun medial bölümünde taşınır. Alt ekstremitede vibrasyon-pozisyon kaybı, pozitif Romberg ve alt torakal medial posterior funikulus sinyali bu yapıyı destekler.",
+        "Fasciculus cuneatus": "Cuneate fasikül üst gövde ve üst ekstremite duyularıyla ilişkilidir ve daha lateral yerleşir. Bu olguda üst ekstremite belirgin etkilenmemiş, bulgular ayak bileği-parmak pozisyonu ve alt ekstremite vibrasyon kaybında yoğunlaşmıştır.",
+        "Commissura alba anterior": "Anterior beyaz komissür ağrı-sıcaklık liflerinin segmental çaprazlaşma bölgesidir; santral kord lezyonlarında iki taraflı segmental ağrı-sıcaklık kaybı yapabilir. Bu hastada ayrışmış ağrı-sıcaklık kaybı değil, vibrasyon ve pozisyon duyusu kaybı vardır."
+      },
+      "coreKnowledge": "Duyu yolu lokalizasyonunda önce modaliteyi, sonra vücut bölgesini ve funikulus içindeki medial-lateral yerleşimi ayırmak gerekir.",
+      "examPearl": "Alt ekstremite vibrasyon/propriosepsiyon kaybı + pozitif Romberg + ağrı-sıcaklık korunumu, medial posterior funikulus yolunu düşündürür.",
+      "whyWrong": {
+        "Tractus spinothalamicus lateralis": "Lateral spinotalamik trakt ağrı ve sıcaklık duyusunu taşır; etkileniminde karşı taraf ağrı-sıcaklık kaybı beklenir. Bu hastada ağrı-sıcaklık duyusu korunmuş, esas kayıp vibrasyon ve pozisyon duyusundadır.",
+        "Tractus corticospinalis lateralis": "Lateral kortikospinal trakt üst motor nöron bulguları, spastisite, hiperrefleksi ve piramidal güçsüzlükle ilişkilidir. Olguda belirgin motor güç kaybı veya Babinski bulgusu değil, göz kapatınca artan duyu-ataksi paterni öne çıkmaktadır.",
+        "Fasciculus cuneatus": "Cuneate fasikül üst gövde ve üst ekstremite duyularıyla ilişkilidir ve daha lateral yerleşir. Bu olguda üst ekstremite belirgin etkilenmemiş, bulgular ayak bileği-parmak pozisyonu ve alt ekstremite vibrasyon kaybında yoğunlaşmıştır.",
+        "Commissura alba anterior": "Anterior beyaz komissür ağrı-sıcaklık liflerinin segmental çaprazlaşma bölgesidir; santral kord lezyonlarında iki taraflı segmental ağrı-sıcaklık kaybı yapabilir. Bu hastada ayrışmış ağrı-sıcaklık kaybı değil, vibrasyon ve pozisyon duyusu kaybı vardır."
+      }
+    },
+    "shuffleOptions": false,
+    "difficultyTag": "Zor",
+    "aiMeta": {
+      "generatedAt": "manual-v201-anatomy-five-case-expansion",
+      "generator": "manual-editorial-anatomy-clinical-case-expansion",
+      "schemaVersion": "clinical-standard-v397-compatible",
+      "validationWarnings": [],
+      "provider": "manual-editorial",
+      "topicControl": "neuroanatomy-dorsal-column-gracile-fasciculus"
+    },
+    "listTitle": "Karanlıkta artan dengesizlik ve vibrasyon kaybı",
+    "cardTitle": "Karanlıkta artan dengesizlik ve vibrasyon kaybı",
+    "coreKnowledge": "Duyu yolu lokalizasyonunda önce modaliteyi, sonra vücut bölgesini ve funikulus içindeki medial-lateral yerleşimi ayırmak gerekir.",
+    "examPearl": "Alt ekstremite vibrasyon/propriosepsiyon kaybı + pozitif Romberg + ağrı-sıcaklık korunumu, medial posterior funikulus yolunu düşündürür.",
+    "whyCorrect": "Karanlıkta artan dengesizlik, pozitif Romberg ve alt ekstremitede vibrasyon-pozisyon duyusu kaybı bilinçli propriosepsiyon yolunu destekler. Etkilenimin alt ekstremite ağırlıklı ve arka funikulusun medial bölümünde olması gracile fasikül ile uyumludur; ağrı-sıcaklık duyusunun korunması spinotalamik yol veya anterior komissür lezyonunu geri plana iter.",
+    "optionComparison": {
+      "Tractus spinothalamicus lateralis": "Lateral spinotalamik trakt ağrı ve sıcaklık duyusunu taşır; etkileniminde karşı taraf ağrı-sıcaklık kaybı beklenir. Bu hastada ağrı-sıcaklık duyusu korunmuş, esas kayıp vibrasyon ve pozisyon duyusundadır.",
+      "Tractus corticospinalis lateralis": "Lateral kortikospinal trakt üst motor nöron bulguları, spastisite, hiperrefleksi ve piramidal güçsüzlükle ilişkilidir. Olguda belirgin motor güç kaybı veya Babinski bulgusu değil, göz kapatınca artan duyu-ataksi paterni öne çıkmaktadır.",
+      "Fasciculus gracilis": "Doğru yanıttır; alt gövde ve alt ekstremiteden gelen bilinçli propriosepsiyon ve vibrasyon duyusu arka funikulusun medial bölümünde taşınır. Alt ekstremitede vibrasyon-pozisyon kaybı, pozitif Romberg ve alt torakal medial posterior funikulus sinyali bu yapıyı destekler.",
+      "Fasciculus cuneatus": "Cuneate fasikül üst gövde ve üst ekstremite duyularıyla ilişkilidir ve daha lateral yerleşir. Bu olguda üst ekstremite belirgin etkilenmemiş, bulgular ayak bileği-parmak pozisyonu ve alt ekstremite vibrasyon kaybında yoğunlaşmıştır.",
+      "Commissura alba anterior": "Anterior beyaz komissür ağrı-sıcaklık liflerinin segmental çaprazlaşma bölgesidir; santral kord lezyonlarında iki taraflı segmental ağrı-sıcaklık kaybı yapabilir. Bu hastada ayrışmış ağrı-sıcaklık kaybı değil, vibrasyon ve pozisyon duyusu kaybı vardır."
+    },
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Karanlıkta ve göz kapatınca dengenin bozulması",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Alt ekstremitede vibrasyon ve pozisyon duyusu kaybı",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Ağrı-sıcaklık duyusunun korunması",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Arka funikulusun medial bölümünde bilateral sinyal artışı",
+        "weight": "high",
+        "source": "case"
+      }
+    ],
+    "whyWrong": {
+      "Tractus spinothalamicus lateralis": "Lateral spinotalamik trakt ağrı ve sıcaklık duyusunu taşır; etkileniminde karşı taraf ağrı-sıcaklık kaybı beklenir. Bu hastada ağrı-sıcaklık duyusu korunmuş, esas kayıp vibrasyon ve pozisyon duyusundadır.",
+      "Tractus corticospinalis lateralis": "Lateral kortikospinal trakt üst motor nöron bulguları, spastisite, hiperrefleksi ve piramidal güçsüzlükle ilişkilidir. Olguda belirgin motor güç kaybı veya Babinski bulgusu değil, göz kapatınca artan duyu-ataksi paterni öne çıkmaktadır.",
+      "Fasciculus cuneatus": "Cuneate fasikül üst gövde ve üst ekstremite duyularıyla ilişkilidir ve daha lateral yerleşir. Bu olguda üst ekstremite belirgin etkilenmemiş, bulgular ayak bileği-parmak pozisyonu ve alt ekstremite vibrasyon kaybında yoğunlaşmıştır.",
+      "Commissura alba anterior": "Anterior beyaz komissür ağrı-sıcaklık liflerinin segmental çaprazlaşma bölgesidir; santral kord lezyonlarında iki taraflı segmental ağrı-sıcaklık kaybı yapabilir. Bu hastada ayrışmış ağrı-sıcaklık kaybı değil, vibrasyon ve pozisyon duyusu kaybı vardır."
+    }
+  },
+{
+  "id": "v202-new-406-kol-on-yuz-kesisi-sonrasi-dirsek-fleksiyon-zayifligi",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi / Ortopedi",
+  "title": "Kol ön yüzü kesisi sonrası fleksiyon zayıflığı",
+  "difficulty": "Orta",
+  "clinicalFocus": "Üst kol kesisi sonrasında motor-duyu dağılımını kullanarak etkilenen periferik siniri ayırt etme.",
+  "learningTarget": "Dirsek fleksiyonu, supinasyon ve lateral ön kol duyusunun birlikte değerlendirilmesiyle kol ön kompartımanı sinirini seçebilme.",
+  "demographics": "31 yaşında erkek hasta",
+  "setting": "Acil ortopedi değerlendirmesi",
+  "chiefComplaint": "Hasta, cam kesisi sonrası sağ kol ön yüzünde ağrı ve dirseğini güçlü bükememe nedeniyle başvuruyor.",
+  "stem": "Hasta mutfakta kırılan camı toplarken sağ üst kolunun ön tarafına derin olmayan ancak kanamalı bir kesi aldığını anlatır. Kanama evde bası ile yavaşlamış, ancak pansuman sırasında dirseğini bükmeye çalıştığında kolunda belirgin güçsüzlük fark etmiştir. Ertesi sabah çantasını kaldırırken aynı kolunu kullanmakta zorlanmış ve özellikle avuç yukarı çevirerek yük taşımada güçlük yaşamıştır. El parmaklarında belirgin uyuşma ya da omuz hareketlerinde kısıtlılık hissetmediğini söyler. Ağrı kesici aldıktan sonra ağrı azalsa da güçsüzlük devam ettiği için başvurmuştur.",
+  "patientIntro": {
+    "profile": "31 yaşında erkek hasta, sağ üst kol ön yüzünde kesi sonrası motor fonksiyon kaybı açısından değerlendiriliyor.",
+    "presentation": "Sağ dirsek fleksiyonu ve dirençli supinasyon zayıflığına ön kol lateralinde sınırlı duyu azalması eşlik etmektedir.",
+    "historySummary": "Hasta mutfakta kırılan camı toplarken sağ üst kolunun ön tarafına derin olmayan ancak kanamalı bir kesi aldığını anlatır. Kanama evde bası ile yavaşlamış, ancak pansuman sırasında dirseğini bükmeye çalıştığında kolunda belirgin güçsüzlük fark etmiştir. Ertesi sabah çantasını kaldırırken aynı kolunu kullanmakta zorlanmış ve özellikle avuç yukarı çevirerek yük taşımada güçlük yaşamıştır. El parmaklarında belirgin uyuşma ya da omuz hareketlerinde kısıtlılık hissetmediğini söyler. Ağrı kesici aldıktan sonra ağrı azalsa da güçsüzlük devam ettiği için başvurmuştur."
+  },
+  "vitals": {
+    "TA": "118/74 mmHg",
+    "Nabız": "76/dk",
+    "Solunum": "14/dk",
+    "SpO2": "99%, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "0.64 normal"
+  },
+  "exam": [
+    "Sağ üst kol ön yüzünde temiz kenarlı, sutüre edilmiş kesi hattı izlenir; aktif kanama yoktur.",
+    "Dirençli dirsek fleksiyonu ve dirsek fleksiyonda iken supinasyon sağda belirgin zayıftır.",
+    "Ön kol lateral yüzünde hafif hipoestezi vardır; elin palmar ve dorsal duyusu belirgin korunmuştur.",
+    "El bileği ekstansiyonu, parmak fleksiyonu ve parmak abdüksiyon-adduksiyonu simetriktir."
+  ],
+  "investigations": [
+    {
+      "id": "v202-new-406-kol-on-yuz-kesisi-sonrasi-dirsek-fleksiyon-zayifligi-hedefli-ust-ekstremite-noromuskuler-degerlendirme",
+      "label": "Hedefli üst ekstremite nöromüsküler değerlendirme",
+      "title": "Hedefli üst ekstremite nöromüsküler değerlendirme",
+      "orderLabel": "Hedefli üst ekstremite nöromüsküler değerlendirme",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "Hedefli üst ekstremite nöromüsküler değerlendirme",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Hedefli muayene, üst kol ön kompartımanı motor fonksiyonunda azalma ve lateral ön kol duyusunda sınırlı kayıp gösterirken el bileği, parmak ve omuz çevresi temel motor fonksiyonları korunmuştur.",
+      "clinicalMeaning": "Hedefli muayene, üst kol ön kompartımanı motor fonksiyonunda azalma ve lateral ön kol duyusunda sınırlı kayıp gösterirken el bileği, parmak ve omuz çevresi temel motor fonksiyonları korunmuştur.",
+      "result": {
+        "title": "Hedefli üst ekstremite nöromüsküler değerlendirme",
+        "summary": "Hedefli muayene, üst kol ön kompartımanı motor fonksiyonunda azalma ve lateral ön kol duyusunda sınırlı kayıp gösterirken el bileği, parmak ve omuz çevresi temel motor fonksiyonları korunmuştur.",
+        "interpretation": "Hedefli muayene, üst kol ön kompartımanı motor fonksiyonunda azalma ve lateral ön kol duyusunda sınırlı kayıp gösterirken el bileği, parmak ve omuz çevresi temel motor fonksiyonları korunmuştur.",
+        "values": [
+          [
+            "Dirençli dirsek fleksiyonu",
+            "Sağda belirgin zayıf",
+            "",
+            ""
+          ],
+          [
+            "Dirençli supinasyon",
+            "Dirsek fleksiyonda iken sağda zayıf",
+            "",
+            ""
+          ],
+          [
+            "Duyu alanı",
+            "Ön kol lateralinde sınırlı hipoestezi",
+            "",
+            ""
+          ],
+          [
+            "Distal motor fonksiyon",
+            "El bileği ekstansiyonu, parmak fleksiyonu ve parmak abdüksiyonu korunmuş",
+            "",
+            ""
+          ]
+        ],
+        "rows": [
+          [
+            "Dirençli dirsek fleksiyonu",
+            "Sağda belirgin zayıf",
+            "",
+            ""
+          ],
+          [
+            "Dirençli supinasyon",
+            "Dirsek fleksiyonda iken sağda zayıf",
+            "",
+            ""
+          ],
+          [
+            "Duyu alanı",
+            "Ön kol lateralinde sınırlı hipoestezi",
+            "",
+            ""
+          ],
+          [
+            "Distal motor fonksiyon",
+            "El bileği ekstansiyonu, parmak fleksiyonu ve parmak abdüksiyonu korunmuş",
+            "",
+            ""
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Dirençli dirsek fleksiyonu",
+          "Sağda belirgin zayıf",
+          "",
+          ""
+        ],
+        [
+          "Dirençli supinasyon",
+          "Dirsek fleksiyonda iken sağda zayıf",
+          "",
+          ""
+        ],
+        [
+          "Duyu alanı",
+          "Ön kol lateralinde sınırlı hipoestezi",
+          "",
+          ""
+        ],
+        [
+          "Distal motor fonksiyon",
+          "El bileği ekstansiyonu, parmak fleksiyonu ve parmak abdüksiyonu korunmuş",
+          "",
+          ""
+        ]
+      ],
+      "postAnswerExplanation": "Hedefli muayene, üst kol ön kompartımanı motor fonksiyonunda azalma ve lateral ön kol duyusunda sınırlı kayıp gösterirken el bileği, parmak ve omuz çevresi temel motor fonksiyonları korunmuştur.",
+      "interpretation": "Hedefli muayene, üst kol ön kompartımanı motor fonksiyonunda azalma ve lateral ön kol duyusunda sınırlı kayıp gösterirken el bileği, parmak ve omuz çevresi temel motor fonksiyonları korunmuştur.",
+      "explanationAfterAnswer": "Hedefli muayene, üst kol ön kompartımanı motor fonksiyonunda azalma ve lateral ön kol duyusunda sınırlı kayıp gösterirken el bileği, parmak ve omuz çevresi temel motor fonksiyonları korunmuştur.",
+      "testValueLabel": "Hedefli üst ekstremite nöromüsküler değerlendirme",
+      "educationalValue": "Hedefli üst ekstremite nöromüsküler değerlendirme",
+      "clinicalPriorityLabel": "Hedefli üst ekstremite nöromüsküler değerlendirme",
+      "scoreImpact": 4,
+      "scoreValue": 4,
+      "clinicalFlowOrder": 1,
+      "purpose": "Hedefli muayene, üst kol ön kompartımanı motor fonksiyonunda azalma ve lateral ön kol duyusunda sınırlı kayıp gösterirken el bileği, parmak ve omuz çevresi temel motor fonksiyonları korunmuştur.",
+      "inlineFeedback": "Hedefli muayene, üst kol ön kompartımanı motor fonksiyonunda azalma ve lateral ön kol duyusunda sınırlı kayıp gösterirken el bileği, parmak ve omuz çevresi temel motor fonksiyonları korunmuştur.",
+      "treatmentImpact": "Hedefli muayene, üst kol ön kompartımanı motor fonksiyonunda azalma ve lateral ön kol duyusunda sınırlı kayıp gösterirken el bileği, parmak ve omuz çevresi temel motor fonksiyonları korunmuştur.",
+      "emergencyValue": "Hedefli muayene, üst kol ön kompartımanı motor fonksiyonunda azalma ve lateral ön kol duyusunda sınırlı kayıp gösterirken el bileği, parmak ve omuz çevresi temel motor fonksiyonları korunmuştur."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": false,
+  "question": "Bu motor-duyu paternini en iyi açıklayan sinir hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Nervus musculocutaneus",
+    "options": [
+      "Nervus medianus",
+      "Nervus musculocutaneus",
+      "Nervus radialis",
+      "Nervus ulnaris",
+      "Nervus axillaris"
+    ],
+    "question": "Bu motor-duyu paternini en iyi açıklayan sinir hangisidir?",
+    "explanation": "Kesinin lokalizasyonu, dirsek fleksiyonu ve supinasyon zayıflığı ile lateral ön kol duyusundaki sınırlı kayıp birlikte değerlendirildiğinde üst kol ön kompartımanı ve onun kutanöz devamı etkilenmiştir. Distal median-ulnar fonksiyonların, radial ekstansör paternin ve axillary omuz bulgularının korunması lezyonu kol düzeyindeki bu sinire yönlendirir.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Dirsek fleksiyonu + supinasyon zayıflığı + lateral ön kol duyusu, üst kol ön kompartımanı sinirini düşündürür."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Kesinin lokalizasyonu, dirsek fleksiyonu ve supinasyon zayıflığı ile lateral ön kol duyusundaki sınırlı kayıp birlikte değerlendirildiğinde üst kol ön kompartımanı ve onun kutanöz devamı etkilenmiştir. Distal median-ulnar fonksiyonların, radial ekstansör paternin ve axillary omuz bulgularının korunması lezyonu kol düzeyindeki bu sinire yönlendirir.",
+      "whyCorrect": "Kesinin lokalizasyonu, dirsek fleksiyonu ve supinasyon zayıflığı ile lateral ön kol duyusundaki sınırlı kayıp birlikte değerlendirildiğinde üst kol ön kompartımanı ve onun kutanöz devamı etkilenmiştir. Distal median-ulnar fonksiyonların, radial ekstansör paternin ve axillary omuz bulgularının korunması lezyonu kol düzeyindeki bu sinire yönlendirir.",
+      "rationale": "Kesinin lokalizasyonu, dirsek fleksiyonu ve supinasyon zayıflığı ile lateral ön kol duyusundaki sınırlı kayıp birlikte değerlendirildiğinde üst kol ön kompartımanı ve onun kutanöz devamı etkilenmiştir. Distal median-ulnar fonksiyonların, radial ekstansör paternin ve axillary omuz bulgularının korunması lezyonu kol düzeyindeki bu sinire yönlendirir.",
+      "correctOptionFeedback": "Doğru yanıttır; bu sinir kol ön kompartımanındaki biceps brachii, brachialis ve coracobrachialis kaslarını innerve eder ve lateral antebrachial kutanöz dalı ile ön kolun lateral duyusunu taşır. Ön kol fleksörlerinin ve el intrinsiklerinin korunması, lezyonun daha distal median veya ulnar sinir paterninden ayrılmasını sağlar.",
+      "keyClues": [
+        "Kesinin üst kol ön yüzünde ve korakobrakial-biceps hattına yakın olması",
+        "Dirsek fleksiyonunun ve dirençli supinasyonun belirgin zayıflaması",
+        "Lateral ön kolda sınırlı hipoestezi saptanması",
+        "El bileği ekstansiyonu, parmak fleksiyonu ve el intrinsiklerinin korunması"
+      ],
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Kesinin üst kol ön yüzünde ve korakobrakial-biceps hattına yakın olması",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Dirsek fleksiyonunun ve dirençli supinasyonun belirgin zayıflaması",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Lateral ön kolda sınırlı hipoestezi saptanması",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "El bileği ekstansiyonu, parmak fleksiyonu ve el intrinsiklerinin korunması",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Dirsek fleksiyonu + supinasyon zayıflığı + lateral ön kol duyusu, üst kol ön kompartımanı sinirini düşündürür.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Dirsek fleksiyonu + supinasyon zayıflığı + lateral ön kol duyusu, üst kol ön kompartımanı sinirini düşündürür."
+        }
+      ],
+      "optionComparison": {
+        "Nervus medianus": "Median sinir ön kolun birçok fleksör-pronator kası ve elde tenar fonksiyonlarla ilişkilidir; bilek fleksiyonu, pronasyon veya radial üç buçuk parmak duyusu etkilenimiyle daha çok akla gelir. Bu olguda parmak fleksiyonu ve thenar motor patern korunmuş, kayıp dirsek fleksiyonu-supinasyon ve lateral ön kol duyusunda yoğunlaşmıştır.",
+        "Nervus musculocutaneus": "Doğru yanıttır; bu sinir kol ön kompartımanındaki biceps brachii, brachialis ve coracobrachialis kaslarını innerve eder ve lateral antebrachial kutanöz dalı ile ön kolun lateral duyusunu taşır. Ön kol fleksörlerinin ve el intrinsiklerinin korunması, lezyonun daha distal median veya ulnar sinir paterninden ayrılmasını sağlar.",
+        "Nervus radialis": "Radial sinir kol arka kompartımanı ve el bileği-parmak ekstansiyonu ile ilişkilidir; hasarında düşük el bileği ve dorsal el duyusunda bozulma beklenir. Bu vakada ekstansör fonksiyonlar korunmuş, sorun kol ön yüzü motor hattında ve lateral ön kol duyusundadır.",
+        "Nervus ulnaris": "Ulnar sinir el intrinsikleri, parmak abdüksiyon-adduksiyonu ve ulnar taraf duyusu ile ayırt edilir. Hastada interosseöz kas gücü, ulnar parmak duyusu ve pençeleşme bulguları olmadığı için bu seçenek klinik paternle uyumlu değildir.",
+        "Nervus axillaris": "Axillary sinir deltoid-teres minor fonksiyonu ve lateral omuz rozet alanı duyusuyla ilişkilidir. Olguda omuz abdüksiyonu ve lateral omuz duyusu korunmuş; defisit üst kol ön kompartımanı ve ön kol lateral duyusunda sınırlıdır."
+      },
+      "whyWrong": {
+        "Nervus medianus": "Median sinir ön kolun birçok fleksör-pronator kası ve elde tenar fonksiyonlarla ilişkilidir; bilek fleksiyonu, pronasyon veya radial üç buçuk parmak duyusu etkilenimiyle daha çok akla gelir. Bu olguda parmak fleksiyonu ve thenar motor patern korunmuş, kayıp dirsek fleksiyonu-supinasyon ve lateral ön kol duyusunda yoğunlaşmıştır.",
+        "Nervus radialis": "Radial sinir kol arka kompartımanı ve el bileği-parmak ekstansiyonu ile ilişkilidir; hasarında düşük el bileği ve dorsal el duyusunda bozulma beklenir. Bu vakada ekstansör fonksiyonlar korunmuş, sorun kol ön yüzü motor hattında ve lateral ön kol duyusundadır.",
+        "Nervus ulnaris": "Ulnar sinir el intrinsikleri, parmak abdüksiyon-adduksiyonu ve ulnar taraf duyusu ile ayırt edilir. Hastada interosseöz kas gücü, ulnar parmak duyusu ve pençeleşme bulguları olmadığı için bu seçenek klinik paternle uyumlu değildir.",
+        "Nervus axillaris": "Axillary sinir deltoid-teres minor fonksiyonu ve lateral omuz rozet alanı duyusuyla ilişkilidir. Olguda omuz abdüksiyonu ve lateral omuz duyusu korunmuş; defisit üst kol ön kompartımanı ve ön kol lateral duyusunda sınırlıdır."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Dirsek fleksiyonu, supinasyon ve lateral ön kol duyusunun birlikte değerlendirilmesiyle kol ön kompartımanı sinirini seçebilme.",
+      "coreKnowledge": "Kol ön kompartımanı sinirleri değerlendirilirken yalnız motor kayıp değil, sinirin kutanöz devamı olan ön kol duyu alanı da ayırıcı değerdedir."
+    },
+    "whyCorrect": "Kesinin lokalizasyonu, dirsek fleksiyonu ve supinasyon zayıflığı ile lateral ön kol duyusundaki sınırlı kayıp birlikte değerlendirildiğinde üst kol ön kompartımanı ve onun kutanöz devamı etkilenmiştir. Distal median-ulnar fonksiyonların, radial ekstansör paternin ve axillary omuz bulgularının korunması lezyonu kol düzeyindeki bu sinire yönlendirir.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Kesinin üst kol ön yüzünde ve korakobrakial-biceps hattına yakın olması",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Dirsek fleksiyonunun ve dirençli supinasyonun belirgin zayıflaması",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Lateral ön kolda sınırlı hipoestezi saptanması",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "El bileği ekstansiyonu, parmak fleksiyonu ve el intrinsiklerinin korunması",
+        "weight": "high",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Nervus medianus": "Median sinir ön kolun birçok fleksör-pronator kası ve elde tenar fonksiyonlarla ilişkilidir; bilek fleksiyonu, pronasyon veya radial üç buçuk parmak duyusu etkilenimiyle daha çok akla gelir. Bu olguda parmak fleksiyonu ve thenar motor patern korunmuş, kayıp dirsek fleksiyonu-supinasyon ve lateral ön kol duyusunda yoğunlaşmıştır.",
+      "Nervus musculocutaneus": "Doğru yanıttır; bu sinir kol ön kompartımanındaki biceps brachii, brachialis ve coracobrachialis kaslarını innerve eder ve lateral antebrachial kutanöz dalı ile ön kolun lateral duyusunu taşır. Ön kol fleksörlerinin ve el intrinsiklerinin korunması, lezyonun daha distal median veya ulnar sinir paterninden ayrılmasını sağlar.",
+      "Nervus radialis": "Radial sinir kol arka kompartımanı ve el bileği-parmak ekstansiyonu ile ilişkilidir; hasarında düşük el bileği ve dorsal el duyusunda bozulma beklenir. Bu vakada ekstansör fonksiyonlar korunmuş, sorun kol ön yüzü motor hattında ve lateral ön kol duyusundadır.",
+      "Nervus ulnaris": "Ulnar sinir el intrinsikleri, parmak abdüksiyon-adduksiyonu ve ulnar taraf duyusu ile ayırt edilir. Hastada interosseöz kas gücü, ulnar parmak duyusu ve pençeleşme bulguları olmadığı için bu seçenek klinik paternle uyumlu değildir.",
+      "Nervus axillaris": "Axillary sinir deltoid-teres minor fonksiyonu ve lateral omuz rozet alanı duyusuyla ilişkilidir. Olguda omuz abdüksiyonu ve lateral omuz duyusu korunmuş; defisit üst kol ön kompartımanı ve ön kol lateral duyusunda sınırlıdır."
+    },
+    "coreKnowledge": "Kol ön kompartımanı sinirleri değerlendirilirken yalnız motor kayıp değil, sinirin kutanöz devamı olan ön kol duyu alanı da ayırıcı değerdedir.",
+    "examPearl": "Dirsek fleksiyonu + supinasyon zayıflığı + lateral ön kol duyusu, üst kol ön kompartımanı sinirini düşündürür.",
+    "whyWrong": {
+      "Nervus medianus": "Median sinir ön kolun birçok fleksör-pronator kası ve elde tenar fonksiyonlarla ilişkilidir; bilek fleksiyonu, pronasyon veya radial üç buçuk parmak duyusu etkilenimiyle daha çok akla gelir. Bu olguda parmak fleksiyonu ve thenar motor patern korunmuş, kayıp dirsek fleksiyonu-supinasyon ve lateral ön kol duyusunda yoğunlaşmıştır.",
+      "Nervus radialis": "Radial sinir kol arka kompartımanı ve el bileği-parmak ekstansiyonu ile ilişkilidir; hasarında düşük el bileği ve dorsal el duyusunda bozulma beklenir. Bu vakada ekstansör fonksiyonlar korunmuş, sorun kol ön yüzü motor hattında ve lateral ön kol duyusundadır.",
+      "Nervus ulnaris": "Ulnar sinir el intrinsikleri, parmak abdüksiyon-adduksiyonu ve ulnar taraf duyusu ile ayırt edilir. Hastada interosseöz kas gücü, ulnar parmak duyusu ve pençeleşme bulguları olmadığı için bu seçenek klinik paternle uyumlu değildir.",
+      "Nervus axillaris": "Axillary sinir deltoid-teres minor fonksiyonu ve lateral omuz rozet alanı duyusuyla ilişkilidir. Olguda omuz abdüksiyonu ve lateral omuz duyusu korunmuş; defisit üst kol ön kompartımanı ve ön kol lateral duyusunda sınırlıdır."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Orta",
+  "aiMeta": {
+    "generatedAt": "manual-v202-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial",
+    "topicControl": "upper-limb-musculocutaneous-nerve-anterior-arm-laceration"
+  },
+  "listTitle": "Kol ön yüzü kesisi sonrası fleksiyon zayıflığı",
+  "cardTitle": "Kol ön yüzü kesisi sonrası fleksiyon zayıflığı",
+  "coreKnowledge": "Kol ön kompartımanı sinirleri değerlendirilirken yalnız motor kayıp değil, sinirin kutanöz devamı olan ön kol duyu alanı da ayırıcı değerdedir.",
+  "examPearl": "Dirsek fleksiyonu + supinasyon zayıflığı + lateral ön kol duyusu, üst kol ön kompartımanı sinirini düşündürür.",
+  "whyCorrect": "Kesinin lokalizasyonu, dirsek fleksiyonu ve supinasyon zayıflığı ile lateral ön kol duyusundaki sınırlı kayıp birlikte değerlendirildiğinde üst kol ön kompartımanı ve onun kutanöz devamı etkilenmiştir. Distal median-ulnar fonksiyonların, radial ekstansör paternin ve axillary omuz bulgularının korunması lezyonu kol düzeyindeki bu sinire yönlendirir.",
+  "optionComparison": {
+    "Nervus medianus": "Median sinir ön kolun birçok fleksör-pronator kası ve elde tenar fonksiyonlarla ilişkilidir; bilek fleksiyonu, pronasyon veya radial üç buçuk parmak duyusu etkilenimiyle daha çok akla gelir. Bu olguda parmak fleksiyonu ve thenar motor patern korunmuş, kayıp dirsek fleksiyonu-supinasyon ve lateral ön kol duyusunda yoğunlaşmıştır.",
+    "Nervus musculocutaneus": "Doğru yanıttır; bu sinir kol ön kompartımanındaki biceps brachii, brachialis ve coracobrachialis kaslarını innerve eder ve lateral antebrachial kutanöz dalı ile ön kolun lateral duyusunu taşır. Ön kol fleksörlerinin ve el intrinsiklerinin korunması, lezyonun daha distal median veya ulnar sinir paterninden ayrılmasını sağlar.",
+    "Nervus radialis": "Radial sinir kol arka kompartımanı ve el bileği-parmak ekstansiyonu ile ilişkilidir; hasarında düşük el bileği ve dorsal el duyusunda bozulma beklenir. Bu vakada ekstansör fonksiyonlar korunmuş, sorun kol ön yüzü motor hattında ve lateral ön kol duyusundadır.",
+    "Nervus ulnaris": "Ulnar sinir el intrinsikleri, parmak abdüksiyon-adduksiyonu ve ulnar taraf duyusu ile ayırt edilir. Hastada interosseöz kas gücü, ulnar parmak duyusu ve pençeleşme bulguları olmadığı için bu seçenek klinik paternle uyumlu değildir.",
+    "Nervus axillaris": "Axillary sinir deltoid-teres minor fonksiyonu ve lateral omuz rozet alanı duyusuyla ilişkilidir. Olguda omuz abdüksiyonu ve lateral omuz duyusu korunmuş; defisit üst kol ön kompartımanı ve ön kol lateral duyusunda sınırlıdır."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Kesinin üst kol ön yüzünde ve korakobrakial-biceps hattına yakın olması",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Dirsek fleksiyonunun ve dirençli supinasyonun belirgin zayıflaması",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Lateral ön kolda sınırlı hipoestezi saptanması",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "El bileği ekstansiyonu, parmak fleksiyonu ve el intrinsiklerinin korunması",
+      "weight": "high",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Nervus medianus": "Median sinir ön kolun birçok fleksör-pronator kası ve elde tenar fonksiyonlarla ilişkilidir; bilek fleksiyonu, pronasyon veya radial üç buçuk parmak duyusu etkilenimiyle daha çok akla gelir. Bu olguda parmak fleksiyonu ve thenar motor patern korunmuş, kayıp dirsek fleksiyonu-supinasyon ve lateral ön kol duyusunda yoğunlaşmıştır.",
+    "Nervus radialis": "Radial sinir kol arka kompartımanı ve el bileği-parmak ekstansiyonu ile ilişkilidir; hasarında düşük el bileği ve dorsal el duyusunda bozulma beklenir. Bu vakada ekstansör fonksiyonlar korunmuş, sorun kol ön yüzü motor hattında ve lateral ön kol duyusundadır.",
+    "Nervus ulnaris": "Ulnar sinir el intrinsikleri, parmak abdüksiyon-adduksiyonu ve ulnar taraf duyusu ile ayırt edilir. Hastada interosseöz kas gücü, ulnar parmak duyusu ve pençeleşme bulguları olmadığı için bu seçenek klinik paternle uyumlu değildir.",
+    "Nervus axillaris": "Axillary sinir deltoid-teres minor fonksiyonu ve lateral omuz rozet alanı duyusuyla ilişkilidir. Olguda omuz abdüksiyonu ve lateral omuz duyusu korunmuş; defisit üst kol ön kompartımanı ve ön kol lateral duyusunda sınırlıdır."
+  }
+},
+{
+  "id": "v202-new-407-bogaz-islemi-sonrasi-yutkunma-ve-tat-degisikligi",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi / Kulak Burun Boğaz",
+  "title": "Boğaz işlemi sonrası yutkunma ve tat değişikliği",
+  "difficulty": "Orta",
+  "clinicalFocus": "Tonsil çevresi cerrahi sonrası kraniyal sinir duyusal-motor ayrımını klinik bulgularla yapma.",
+  "learningTarget": "Posterior dil duyusu, farengeal afferent yanıt ve korunmuş vagal/hypoglossal motor bulgular üzerinden ilgili kraniyal siniri ayırt edebilme.",
+  "demographics": "19 yaşında kadın hasta",
+  "setting": "Kulak burun boğaz polikliniği",
+  "chiefComplaint": "Hasta, boğaz işleminden sonra yutkunurken rahatsızlık ve dilin arka kısmında tat değişikliği nedeniyle kontrol başvurusuna geliyor.",
+  "stem": "Hasta bir hafta önce tekrarlayan bademcik enfeksiyonları nedeniyle cerrahi işlem geçirdiğini, ilk günlerde beklenen boğaz ağrısı yaşadığını anlatır. Ağrı azalırken su içerken boğazının sağ tarafında farklı bir his oluştuğunu ve bazı yiyeceklerin tadını dilinin arka tarafında eskisi gibi alamadığını fark etmiştir. Konuşurken sesinde belirgin kısılma olmadığını, sıvıların burnuna kaçmadığını ve dilini hareket ettirmekte zorlanmadığını söyler. Ateş, yeni kanama veya nefes darlığı tariflemez. Kontrole gelmesinin nedeni ağrıdan çok bu yeni duyusal değişikliğin devam etmesidir.",
+  "patientIntro": {
+    "profile": "19 yaşında kadın hasta, yakın dönem orofarengeal işlem sonrası duyusal yakınmalar açısından değerlendiriliyor.",
+    "presentation": "Dil arka bölümünde tat-duyu azalması ve tek taraflı farengeal yanıt zayıflığı vardır; belirgin ses veya dil motor bozukluğu yoktur.",
+    "historySummary": "Hasta bir hafta önce tekrarlayan bademcik enfeksiyonları nedeniyle cerrahi işlem geçirdiğini, ilk günlerde beklenen boğaz ağrısı yaşadığını anlatır. Ağrı azalırken su içerken boğazının sağ tarafında farklı bir his oluştuğunu ve bazı yiyeceklerin tadını dilinin arka tarafında eskisi gibi alamadığını fark etmiştir. Konuşurken sesinde belirgin kısılma olmadığını, sıvıların burnuna kaçmadığını ve dilini hareket ettirmekte zorlanmadığını söyler. Ateş, yeni kanama veya nefes darlığı tariflemez. Kontrole gelmesinin nedeni ağrıdan çok bu yeni duyusal değişikliğin devam etmesidir."
+  },
+  "vitals": {
+    "TA": "118/74 mmHg",
+    "Nabız": "76/dk",
+    "Solunum": "14/dk",
+    "SpO2": "99%, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "0.64 normal"
+  },
+  "exam": [
+    "Orofarenkste sağ tonsil lojunda iyileşme dokusu izlenir; aktif kanama veya apse görünümü yoktur.",
+    "Dil arka sağ bölümünde tat ve genel duyu algısı karşı tarafa göre azalmıştır.",
+    "Sağ farengeal duvar uyarısında yanıt belirgin zayıftır; sol taraftan uyarı daha güçlü yanıt oluşturur.",
+    "Uvula orta hatta yükselir, ses kalitesi doğaldır ve dil protrüzyonunda deviasyon saptanmaz."
+  ],
+  "investigations": [
+    {
+      "id": "v202-new-407-bogaz-islemi-sonrasi-yutkunma-ve-tat-degisikligi-kbb-ve-kraniyal-sinir-muayenesi",
+      "label": "KBB ve kraniyal sinir muayenesi",
+      "title": "KBB ve kraniyal sinir muayenesi",
+      "orderLabel": "KBB ve kraniyal sinir muayenesi",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "KBB ve kraniyal sinir muayenesi",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "KBB muayenesinde posterior dil duyusu ve farengeal duyusal yanıt tek taraflı azalmış; yumuşak damak, vokal fold ve dil motor fonksiyonları belirgin korunmuştur.",
+      "clinicalMeaning": "KBB muayenesinde posterior dil duyusu ve farengeal duyusal yanıt tek taraflı azalmış; yumuşak damak, vokal fold ve dil motor fonksiyonları belirgin korunmuştur.",
+      "result": {
+        "title": "KBB ve kraniyal sinir muayenesi",
+        "summary": "KBB muayenesinde posterior dil duyusu ve farengeal duyusal yanıt tek taraflı azalmış; yumuşak damak, vokal fold ve dil motor fonksiyonları belirgin korunmuştur.",
+        "interpretation": "KBB muayenesinde posterior dil duyusu ve farengeal duyusal yanıt tek taraflı azalmış; yumuşak damak, vokal fold ve dil motor fonksiyonları belirgin korunmuştur.",
+        "values": [
+          [
+            "Orofarenks",
+            "Sağ tonsil lojunda iyileşen cerrahi alan, aktif kanama yok",
+            "",
+            ""
+          ],
+          [
+            "Posterior dil duyusu",
+            "Sağ arka bölümde tat ve dokunma algısı azalmış",
+            "",
+            ""
+          ],
+          [
+            "Farengeal uyarı",
+            "Sağ taraftan uyarıda yanıt belirgin zayıf",
+            "",
+            ""
+          ],
+          [
+            "Motor eşlik",
+            "Uvula orta hatta, ses kalitesi ve dil protrüzyonu doğal",
+            "",
+            ""
+          ]
+        ],
+        "rows": [
+          [
+            "Orofarenks",
+            "Sağ tonsil lojunda iyileşen cerrahi alan, aktif kanama yok",
+            "",
+            ""
+          ],
+          [
+            "Posterior dil duyusu",
+            "Sağ arka bölümde tat ve dokunma algısı azalmış",
+            "",
+            ""
+          ],
+          [
+            "Farengeal uyarı",
+            "Sağ taraftan uyarıda yanıt belirgin zayıf",
+            "",
+            ""
+          ],
+          [
+            "Motor eşlik",
+            "Uvula orta hatta, ses kalitesi ve dil protrüzyonu doğal",
+            "",
+            ""
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Orofarenks",
+          "Sağ tonsil lojunda iyileşen cerrahi alan, aktif kanama yok",
+          "",
+          ""
+        ],
+        [
+          "Posterior dil duyusu",
+          "Sağ arka bölümde tat ve dokunma algısı azalmış",
+          "",
+          ""
+        ],
+        [
+          "Farengeal uyarı",
+          "Sağ taraftan uyarıda yanıt belirgin zayıf",
+          "",
+          ""
+        ],
+        [
+          "Motor eşlik",
+          "Uvula orta hatta, ses kalitesi ve dil protrüzyonu doğal",
+          "",
+          ""
+        ]
+      ],
+      "postAnswerExplanation": "KBB muayenesinde posterior dil duyusu ve farengeal duyusal yanıt tek taraflı azalmış; yumuşak damak, vokal fold ve dil motor fonksiyonları belirgin korunmuştur.",
+      "interpretation": "KBB muayenesinde posterior dil duyusu ve farengeal duyusal yanıt tek taraflı azalmış; yumuşak damak, vokal fold ve dil motor fonksiyonları belirgin korunmuştur.",
+      "explanationAfterAnswer": "KBB muayenesinde posterior dil duyusu ve farengeal duyusal yanıt tek taraflı azalmış; yumuşak damak, vokal fold ve dil motor fonksiyonları belirgin korunmuştur.",
+      "testValueLabel": "KBB ve kraniyal sinir muayenesi",
+      "educationalValue": "KBB ve kraniyal sinir muayenesi",
+      "clinicalPriorityLabel": "KBB ve kraniyal sinir muayenesi",
+      "scoreImpact": 4,
+      "scoreValue": 4,
+      "clinicalFlowOrder": 1,
+      "purpose": "KBB muayenesinde posterior dil duyusu ve farengeal duyusal yanıt tek taraflı azalmış; yumuşak damak, vokal fold ve dil motor fonksiyonları belirgin korunmuştur.",
+      "inlineFeedback": "KBB muayenesinde posterior dil duyusu ve farengeal duyusal yanıt tek taraflı azalmış; yumuşak damak, vokal fold ve dil motor fonksiyonları belirgin korunmuştur.",
+      "treatmentImpact": "KBB muayenesinde posterior dil duyusu ve farengeal duyusal yanıt tek taraflı azalmış; yumuşak damak, vokal fold ve dil motor fonksiyonları belirgin korunmuştur.",
+      "emergencyValue": "KBB muayenesinde posterior dil duyusu ve farengeal duyusal yanıt tek taraflı azalmış; yumuşak damak, vokal fold ve dil motor fonksiyonları belirgin korunmuştur."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": false,
+  "question": "Bu bulguları en iyi açıklayan etkilenen sinir hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Nervus glossopharyngeus",
+    "options": [
+      "Nervus vagus",
+      "Nervus hypoglossus",
+      "Nervus facialis",
+      "Nervus glossopharyngeus",
+      "Nervus trigeminus"
+    ],
+    "question": "Bu bulguları en iyi açıklayan etkilenen sinir hangisidir?",
+    "explanation": "Cerrahi alanın tonsiller fossa komşuluğunda olması, posterior dil tat-genel duyusu ve farengeal afferent yanıt kaybı ile birlikte düşünülmelidir. Uvula, ses ve dil motor fonksiyonlarının korunması vagal motor ya da hypoglossal motor lezyonu geri plana iter; bulgular tonsil lojuna komşu duyusal kraniyal sinir etkilenimiyle en iyi açıklanır.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Posterior dil duyusu ve gag afferenti, tonsil çevresi cerrahi sonrası ayırt ettirici iki ipucudur."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Cerrahi alanın tonsiller fossa komşuluğunda olması, posterior dil tat-genel duyusu ve farengeal afferent yanıt kaybı ile birlikte düşünülmelidir. Uvula, ses ve dil motor fonksiyonlarının korunması vagal motor ya da hypoglossal motor lezyonu geri plana iter; bulgular tonsil lojuna komşu duyusal kraniyal sinir etkilenimiyle en iyi açıklanır.",
+      "whyCorrect": "Cerrahi alanın tonsiller fossa komşuluğunda olması, posterior dil tat-genel duyusu ve farengeal afferent yanıt kaybı ile birlikte düşünülmelidir. Uvula, ses ve dil motor fonksiyonlarının korunması vagal motor ya da hypoglossal motor lezyonu geri plana iter; bulgular tonsil lojuna komşu duyusal kraniyal sinir etkilenimiyle en iyi açıklanır.",
+      "rationale": "Cerrahi alanın tonsiller fossa komşuluğunda olması, posterior dil tat-genel duyusu ve farengeal afferent yanıt kaybı ile birlikte düşünülmelidir. Uvula, ses ve dil motor fonksiyonlarının korunması vagal motor ya da hypoglossal motor lezyonu geri plana iter; bulgular tonsil lojuna komşu duyusal kraniyal sinir etkilenimiyle en iyi açıklanır.",
+      "correctOptionFeedback": "Doğru yanıttır; bu sinir tonsiller fossa komşuluğundan geçer, posterior üçte bir dilin tat-genel duyusunu ve gag refleksinin afferent kolunu taşır. Uvulanın orta hatta kalması ve vokal fold hareketinin korunması, vagal motor etkilenimin baskın olmadığını gösterir.",
+      "keyClues": [
+        "İşlemin tonsil lojuna yakın cerrahi alanda yapılmış olması",
+        "Dil arka bölümünde tat ve dokunma duyusunun azalması",
+        "Sağ farengeal uyarana yanıtın belirgin zayıflaması",
+        "Uvula pozisyonu, ses kalitesi ve dil motor hareketlerinin korunması"
+      ],
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "İşlemin tonsil lojuna yakın cerrahi alanda yapılmış olması",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Dil arka bölümünde tat ve dokunma duyusunun azalması",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Sağ farengeal uyarana yanıtın belirgin zayıflaması",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Uvula pozisyonu, ses kalitesi ve dil motor hareketlerinin korunması",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Posterior dil duyusu ve gag afferenti, tonsil çevresi cerrahi sonrası ayırt ettirici iki ipucudur.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Posterior dil duyusu ve gag afferenti, tonsil çevresi cerrahi sonrası ayırt ettirici iki ipucudur."
+        }
+      ],
+      "optionComparison": {
+        "Nervus vagus": "Vagus siniri yumuşak damak hareketi, larenks fonksiyonu ve efferent gag yanıtı ile ilişkilidir; uvula deviasyonu, ses kısıklığı veya vokal fold hareket bozukluğu daha belirgin olurdu. Bu hastada vokal bulgu yoktur ve temel kayıp tonsil lojuna komşu posterior dil-duyu hattında yoğunlaşmıştır.",
+        "Nervus hypoglossus": "Hypoglossal sinir dil kaslarının motor innervasyonunu sağlar; hasarında dil protrüzyonunda deviasyon, atrofi veya fasikülasyon beklenir. Bu olguda dil motor hareketleri korunmuş, tat ve farengeal duyusal yanıt ön plandadır.",
+        "Nervus facialis": "Facial sinir yüz mimik kasları, stapedius ve chorda tympani üzerinden ön iki üçün tat duyusu ile ilişkilidir. Hastada yüz asimetrisi veya ön dil tat kaybı değil, arka dil ve farengeal duyu paternine uyan bulgular vardır.",
+        "Nervus glossopharyngeus": "Doğru yanıttır; bu sinir tonsiller fossa komşuluğundan geçer, posterior üçte bir dilin tat-genel duyusunu ve gag refleksinin afferent kolunu taşır. Uvulanın orta hatta kalması ve vokal fold hareketinin korunması, vagal motor etkilenimin baskın olmadığını gösterir.",
+        "Nervus trigeminus": "Trigeminal sinir yüz duyusu ve çiğneme kaslarıyla ilişkilidir; mandibular dal ağız tabanı ve genel somatik duyuda rol alsa da posterior dil tat duyusunu ve gag afferentini açıklamaz. Çene hareketleri ve yüz duyusu korunmuş olduğu için bu seçenek geri plandadır."
+      },
+      "whyWrong": {
+        "Nervus vagus": "Vagus siniri yumuşak damak hareketi, larenks fonksiyonu ve efferent gag yanıtı ile ilişkilidir; uvula deviasyonu, ses kısıklığı veya vokal fold hareket bozukluğu daha belirgin olurdu. Bu hastada vokal bulgu yoktur ve temel kayıp tonsil lojuna komşu posterior dil-duyu hattında yoğunlaşmıştır.",
+        "Nervus hypoglossus": "Hypoglossal sinir dil kaslarının motor innervasyonunu sağlar; hasarında dil protrüzyonunda deviasyon, atrofi veya fasikülasyon beklenir. Bu olguda dil motor hareketleri korunmuş, tat ve farengeal duyusal yanıt ön plandadır.",
+        "Nervus facialis": "Facial sinir yüz mimik kasları, stapedius ve chorda tympani üzerinden ön iki üçün tat duyusu ile ilişkilidir. Hastada yüz asimetrisi veya ön dil tat kaybı değil, arka dil ve farengeal duyu paternine uyan bulgular vardır.",
+        "Nervus trigeminus": "Trigeminal sinir yüz duyusu ve çiğneme kaslarıyla ilişkilidir; mandibular dal ağız tabanı ve genel somatik duyuda rol alsa da posterior dil tat duyusunu ve gag afferentini açıklamaz. Çene hareketleri ve yüz duyusu korunmuş olduğu için bu seçenek geri plandadır."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Posterior dil duyusu, farengeal afferent yanıt ve korunmuş vagal/hypoglossal motor bulgular üzerinden ilgili kraniyal siniri ayırt edebilme.",
+      "coreKnowledge": "Baş-boyun anatomisinde aynı bölgede komşu sinirler bulunur; posterior dil duyusu ile yumuşak damak-larenks motor bulgularını ayrı değerlendirmek gerekir."
+    },
+    "whyCorrect": "Cerrahi alanın tonsiller fossa komşuluğunda olması, posterior dil tat-genel duyusu ve farengeal afferent yanıt kaybı ile birlikte düşünülmelidir. Uvula, ses ve dil motor fonksiyonlarının korunması vagal motor ya da hypoglossal motor lezyonu geri plana iter; bulgular tonsil lojuna komşu duyusal kraniyal sinir etkilenimiyle en iyi açıklanır.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "İşlemin tonsil lojuna yakın cerrahi alanda yapılmış olması",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Dil arka bölümünde tat ve dokunma duyusunun azalması",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Sağ farengeal uyarana yanıtın belirgin zayıflaması",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Uvula pozisyonu, ses kalitesi ve dil motor hareketlerinin korunması",
+        "weight": "high",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Nervus vagus": "Vagus siniri yumuşak damak hareketi, larenks fonksiyonu ve efferent gag yanıtı ile ilişkilidir; uvula deviasyonu, ses kısıklığı veya vokal fold hareket bozukluğu daha belirgin olurdu. Bu hastada vokal bulgu yoktur ve temel kayıp tonsil lojuna komşu posterior dil-duyu hattında yoğunlaşmıştır.",
+      "Nervus hypoglossus": "Hypoglossal sinir dil kaslarının motor innervasyonunu sağlar; hasarında dil protrüzyonunda deviasyon, atrofi veya fasikülasyon beklenir. Bu olguda dil motor hareketleri korunmuş, tat ve farengeal duyusal yanıt ön plandadır.",
+      "Nervus facialis": "Facial sinir yüz mimik kasları, stapedius ve chorda tympani üzerinden ön iki üçün tat duyusu ile ilişkilidir. Hastada yüz asimetrisi veya ön dil tat kaybı değil, arka dil ve farengeal duyu paternine uyan bulgular vardır.",
+      "Nervus glossopharyngeus": "Doğru yanıttır; bu sinir tonsiller fossa komşuluğundan geçer, posterior üçte bir dilin tat-genel duyusunu ve gag refleksinin afferent kolunu taşır. Uvulanın orta hatta kalması ve vokal fold hareketinin korunması, vagal motor etkilenimin baskın olmadığını gösterir.",
+      "Nervus trigeminus": "Trigeminal sinir yüz duyusu ve çiğneme kaslarıyla ilişkilidir; mandibular dal ağız tabanı ve genel somatik duyuda rol alsa da posterior dil tat duyusunu ve gag afferentini açıklamaz. Çene hareketleri ve yüz duyusu korunmuş olduğu için bu seçenek geri plandadır."
+    },
+    "coreKnowledge": "Baş-boyun anatomisinde aynı bölgede komşu sinirler bulunur; posterior dil duyusu ile yumuşak damak-larenks motor bulgularını ayrı değerlendirmek gerekir.",
+    "examPearl": "Posterior dil duyusu ve gag afferenti, tonsil çevresi cerrahi sonrası ayırt ettirici iki ipucudur.",
+    "whyWrong": {
+      "Nervus vagus": "Vagus siniri yumuşak damak hareketi, larenks fonksiyonu ve efferent gag yanıtı ile ilişkilidir; uvula deviasyonu, ses kısıklığı veya vokal fold hareket bozukluğu daha belirgin olurdu. Bu hastada vokal bulgu yoktur ve temel kayıp tonsil lojuna komşu posterior dil-duyu hattında yoğunlaşmıştır.",
+      "Nervus hypoglossus": "Hypoglossal sinir dil kaslarının motor innervasyonunu sağlar; hasarında dil protrüzyonunda deviasyon, atrofi veya fasikülasyon beklenir. Bu olguda dil motor hareketleri korunmuş, tat ve farengeal duyusal yanıt ön plandadır.",
+      "Nervus facialis": "Facial sinir yüz mimik kasları, stapedius ve chorda tympani üzerinden ön iki üçün tat duyusu ile ilişkilidir. Hastada yüz asimetrisi veya ön dil tat kaybı değil, arka dil ve farengeal duyu paternine uyan bulgular vardır.",
+      "Nervus trigeminus": "Trigeminal sinir yüz duyusu ve çiğneme kaslarıyla ilişkilidir; mandibular dal ağız tabanı ve genel somatik duyuda rol alsa da posterior dil tat duyusunu ve gag afferentini açıklamaz. Çene hareketleri ve yüz duyusu korunmuş olduğu için bu seçenek geri plandadır."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Orta",
+  "aiMeta": {
+    "generatedAt": "manual-v202-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial",
+    "topicControl": "head-neck-glossopharyngeal-tonsillar-fossa-postoperative-sensory-deficit"
+  },
+  "listTitle": "Boğaz işlemi sonrası yutkunma ve tat değişikliği",
+  "cardTitle": "Boğaz işlemi sonrası yutkunma ve tat değişikliği",
+  "coreKnowledge": "Baş-boyun anatomisinde aynı bölgede komşu sinirler bulunur; posterior dil duyusu ile yumuşak damak-larenks motor bulgularını ayrı değerlendirmek gerekir.",
+  "examPearl": "Posterior dil duyusu ve gag afferenti, tonsil çevresi cerrahi sonrası ayırt ettirici iki ipucudur.",
+  "whyCorrect": "Cerrahi alanın tonsiller fossa komşuluğunda olması, posterior dil tat-genel duyusu ve farengeal afferent yanıt kaybı ile birlikte düşünülmelidir. Uvula, ses ve dil motor fonksiyonlarının korunması vagal motor ya da hypoglossal motor lezyonu geri plana iter; bulgular tonsil lojuna komşu duyusal kraniyal sinir etkilenimiyle en iyi açıklanır.",
+  "optionComparison": {
+    "Nervus vagus": "Vagus siniri yumuşak damak hareketi, larenks fonksiyonu ve efferent gag yanıtı ile ilişkilidir; uvula deviasyonu, ses kısıklığı veya vokal fold hareket bozukluğu daha belirgin olurdu. Bu hastada vokal bulgu yoktur ve temel kayıp tonsil lojuna komşu posterior dil-duyu hattında yoğunlaşmıştır.",
+    "Nervus hypoglossus": "Hypoglossal sinir dil kaslarının motor innervasyonunu sağlar; hasarında dil protrüzyonunda deviasyon, atrofi veya fasikülasyon beklenir. Bu olguda dil motor hareketleri korunmuş, tat ve farengeal duyusal yanıt ön plandadır.",
+    "Nervus facialis": "Facial sinir yüz mimik kasları, stapedius ve chorda tympani üzerinden ön iki üçün tat duyusu ile ilişkilidir. Hastada yüz asimetrisi veya ön dil tat kaybı değil, arka dil ve farengeal duyu paternine uyan bulgular vardır.",
+    "Nervus glossopharyngeus": "Doğru yanıttır; bu sinir tonsiller fossa komşuluğundan geçer, posterior üçte bir dilin tat-genel duyusunu ve gag refleksinin afferent kolunu taşır. Uvulanın orta hatta kalması ve vokal fold hareketinin korunması, vagal motor etkilenimin baskın olmadığını gösterir.",
+    "Nervus trigeminus": "Trigeminal sinir yüz duyusu ve çiğneme kaslarıyla ilişkilidir; mandibular dal ağız tabanı ve genel somatik duyuda rol alsa da posterior dil tat duyusunu ve gag afferentini açıklamaz. Çene hareketleri ve yüz duyusu korunmuş olduğu için bu seçenek geri plandadır."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "İşlemin tonsil lojuna yakın cerrahi alanda yapılmış olması",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Dil arka bölümünde tat ve dokunma duyusunun azalması",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Sağ farengeal uyarana yanıtın belirgin zayıflaması",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Uvula pozisyonu, ses kalitesi ve dil motor hareketlerinin korunması",
+      "weight": "high",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Nervus vagus": "Vagus siniri yumuşak damak hareketi, larenks fonksiyonu ve efferent gag yanıtı ile ilişkilidir; uvula deviasyonu, ses kısıklığı veya vokal fold hareket bozukluğu daha belirgin olurdu. Bu hastada vokal bulgu yoktur ve temel kayıp tonsil lojuna komşu posterior dil-duyu hattında yoğunlaşmıştır.",
+    "Nervus hypoglossus": "Hypoglossal sinir dil kaslarının motor innervasyonunu sağlar; hasarında dil protrüzyonunda deviasyon, atrofi veya fasikülasyon beklenir. Bu olguda dil motor hareketleri korunmuş, tat ve farengeal duyusal yanıt ön plandadır.",
+    "Nervus facialis": "Facial sinir yüz mimik kasları, stapedius ve chorda tympani üzerinden ön iki üçün tat duyusu ile ilişkilidir. Hastada yüz asimetrisi veya ön dil tat kaybı değil, arka dil ve farengeal duyu paternine uyan bulgular vardır.",
+    "Nervus trigeminus": "Trigeminal sinir yüz duyusu ve çiğneme kaslarıyla ilişkilidir; mandibular dal ağız tabanı ve genel somatik duyuda rol alsa da posterior dil tat duyusunu ve gag afferentini açıklamaz. Çene hareketleri ve yüz duyusu korunmuş olduğu için bu seçenek geri plandadır."
+  }
+},
+{
+  "id": "v202-new-408-perineal-travma-sonrasi-idrar-kacagi",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi / Üroloji",
+  "title": "Perineal travma sonrası idrar kaçağı",
+  "difficulty": "Orta",
+  "clinicalFocus": "Perineal travma sonrası kontrast yayılımını kullanarak üretra segmentini ayırt etme.",
+  "learningTarget": "Straddle travma, meatusta kan ve yüzeyel perineal ekstravazasyon paterninden etkilenen üretra segmentini seçebilme.",
+  "demographics": "27 yaşında erkek hasta",
+  "setting": "Acil üroloji değerlendirmesi",
+  "chiefComplaint": "Hasta, bisiklet kazası sonrası perinede ağrı, meatusta kan ve işeme girişimiyle artan şişlik nedeniyle getiriliyor.",
+  "stem": "Hasta bisiklet sürerken ön tekerin kaldırıma takıldığını ve kadronun üzerine oturur pozisyonda düştüğünü anlatır. İlk anda perinede keskin bir ağrı hissetmiş, birkaç dakika sonra iç çamaşırında kan lekesi fark etmiştir. Eve gitmeye çalışırken idrar yapma isteği olmuş ancak işeme girişiminden sonra skrotum ve penis tabanında hızla artan dolgunluk oluşmuştur. Kalça üzerine yüksek enerjili düşme, bacaklarda uyuşma veya karın içine yayılan ağrı tariflemez. Şişliğin artması ve idrar yapamaması üzerine acil servise başvurmuştur.",
+  "patientIntro": {
+    "profile": "27 yaşında erkek hasta, perineal darbe sonrası alt üriner sistem yaralanması açısından değerlendiriliyor.",
+    "presentation": "Meatusta kan, perine-skrotumda şişlik ve işeme girişimiyle artan yüzeyel yumuşak doku dolgunluğu vardır.",
+    "historySummary": "Hasta bisiklet sürerken ön tekerin kaldırıma takıldığını ve kadronun üzerine oturur pozisyonda düştüğünü anlatır. İlk anda perinede keskin bir ağrı hissetmiş, birkaç dakika sonra iç çamaşırında kan lekesi fark etmiştir. Eve gitmeye çalışırken idrar yapma isteği olmuş ancak işeme girişiminden sonra skrotum ve penis tabanında hızla artan dolgunluk oluşmuştur. Kalça üzerine yüksek enerjili düşme, bacaklarda uyuşma veya karın içine yayılan ağrı tariflemez. Şişliğin artması ve idrar yapamaması üzerine acil servise başvurmuştur."
+  },
+  "vitals": {
+    "TA": "118/74 mmHg",
+    "Nabız": "76/dk",
+    "Solunum": "14/dk",
+    "SpO2": "99%, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "0.64 normal"
+  },
+  "exam": [
+    "Perinede orta hatta hassasiyet ve skrotum tabanına uzanan yumuşak doku şişliği vardır.",
+    "Dış üretral meatus çevresinde az miktarda kan görülür; rektal muayenede prostat yüksek yerleşimli hissedilmez.",
+    "Alt ekstremite nörolojik muayenesi ve distal nabızlar doğaldır.",
+    "Karında defans veya suprapubik belirgin ekimoz saptanmaz."
+  ],
+  "investigations": [
+    {
+      "id": "v202-new-408-perineal-travma-sonrasi-idrar-kacagi-retrograd-uretrografi-ve-pelvis-degerlendirmesi",
+      "label": "Retrograd üretrografi ve pelvis değerlendirmesi",
+      "title": "Retrograd üretrografi ve pelvis değerlendirmesi",
+      "orderLabel": "Retrograd üretrografi ve pelvis değerlendirmesi",
+      "type": "imaging",
+      "priority": "essential",
+      "subtype": "Retrograd üretrografi ve pelvis değerlendirmesi",
+      "category": "imaging",
+      "testTypeCategory": "imaging",
+      "summary": "Retrograd üretrografide kontrast yüzeyel perineal aralık, skrotal doku ve penil kılıflara yayılmış; pelvis kırığı veya proksimal yüksek kaçak bulgusu izlenmemiştir.",
+      "clinicalMeaning": "Retrograd üretrografide kontrast yüzeyel perineal aralık, skrotal doku ve penil kılıflara yayılmış; pelvis kırığı veya proksimal yüksek kaçak bulgusu izlenmemiştir.",
+      "result": {
+        "title": "Retrograd üretrografi ve pelvis değerlendirmesi",
+        "summary": "Retrograd üretrografide kontrast yüzeyel perineal aralık, skrotal doku ve penil kılıflara yayılmış; pelvis kırığı veya proksimal yüksek kaçak bulgusu izlenmemiştir.",
+        "interpretation": "Retrograd üretrografide kontrast yüzeyel perineal aralık, skrotal doku ve penil kılıflara yayılmış; pelvis kırığı veya proksimal yüksek kaçak bulgusu izlenmemiştir.",
+        "values": [
+          [
+            "Meatus çevresi",
+            "Az miktarda kanlı sızıntı izlenir",
+            "",
+            ""
+          ],
+          [
+            "Kontrast dağılımı",
+            "Yüzeyel perineal aralık, skrotal doku ve penil kılıflara yayılım",
+            "",
+            ""
+          ],
+          [
+            "Pelvik halka",
+            "Direkt grafide belirgin kırık hattı izlenmez",
+            "",
+            ""
+          ],
+          [
+            "Mesane dolumu",
+            "Proksimal dolumda belirgin intrapelvik kaçak gösterilmedi",
+            "",
+            ""
+          ]
+        ],
+        "rows": [
+          [
+            "Meatus çevresi",
+            "Az miktarda kanlı sızıntı izlenir",
+            "",
+            ""
+          ],
+          [
+            "Kontrast dağılımı",
+            "Yüzeyel perineal aralık, skrotal doku ve penil kılıflara yayılım",
+            "",
+            ""
+          ],
+          [
+            "Pelvik halka",
+            "Direkt grafide belirgin kırık hattı izlenmez",
+            "",
+            ""
+          ],
+          [
+            "Mesane dolumu",
+            "Proksimal dolumda belirgin intrapelvik kaçak gösterilmedi",
+            "",
+            ""
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Meatus çevresi",
+          "Az miktarda kanlı sızıntı izlenir",
+          "",
+          ""
+        ],
+        [
+          "Kontrast dağılımı",
+          "Yüzeyel perineal aralık, skrotal doku ve penil kılıflara yayılım",
+          "",
+          ""
+        ],
+        [
+          "Pelvik halka",
+          "Direkt grafide belirgin kırık hattı izlenmez",
+          "",
+          ""
+        ],
+        [
+          "Mesane dolumu",
+          "Proksimal dolumda belirgin intrapelvik kaçak gösterilmedi",
+          "",
+          ""
+        ]
+      ],
+      "postAnswerExplanation": "Retrograd üretrografide kontrast yüzeyel perineal aralık, skrotal doku ve penil kılıflara yayılmış; pelvis kırığı veya proksimal yüksek kaçak bulgusu izlenmemiştir.",
+      "interpretation": "Retrograd üretrografide kontrast yüzeyel perineal aralık, skrotal doku ve penil kılıflara yayılmış; pelvis kırığı veya proksimal yüksek kaçak bulgusu izlenmemiştir.",
+      "explanationAfterAnswer": "Retrograd üretrografide kontrast yüzeyel perineal aralık, skrotal doku ve penil kılıflara yayılmış; pelvis kırığı veya proksimal yüksek kaçak bulgusu izlenmemiştir.",
+      "testValueLabel": "Retrograd üretrografi ve pelvis değerlendirmesi",
+      "educationalValue": "Retrograd üretrografi ve pelvis değerlendirmesi",
+      "clinicalPriorityLabel": "Retrograd üretrografi ve pelvis değerlendirmesi",
+      "scoreImpact": 4,
+      "scoreValue": 4,
+      "clinicalFlowOrder": 1,
+      "purpose": "Retrograd üretrografide kontrast yüzeyel perineal aralık, skrotal doku ve penil kılıflara yayılmış; pelvis kırığı veya proksimal yüksek kaçak bulgusu izlenmemiştir.",
+      "inlineFeedback": "Retrograd üretrografide kontrast yüzeyel perineal aralık, skrotal doku ve penil kılıflara yayılmış; pelvis kırığı veya proksimal yüksek kaçak bulgusu izlenmemiştir.",
+      "treatmentImpact": "Retrograd üretrografide kontrast yüzeyel perineal aralık, skrotal doku ve penil kılıflara yayılmış; pelvis kırığı veya proksimal yüksek kaçak bulgusu izlenmemiştir.",
+      "emergencyValue": "Retrograd üretrografide kontrast yüzeyel perineal aralık, skrotal doku ve penil kılıflara yayılmış; pelvis kırığı veya proksimal yüksek kaçak bulgusu izlenmemiştir."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": false,
+  "question": "Bu yaralanma paterninde etkilenmesi en olası üretra segmenti hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Pars spongiosa urethrae",
+    "options": [
+      "Pars prostatica urethrae",
+      "Pars membranacea urethrae",
+      "Pars spongiosa urethrae",
+      "Pars intramuralis urethrae",
+      "Pars preprostatica urethrae"
+    ],
+    "question": "Bu yaralanma paterninde etkilenmesi en olası üretra segmenti hangisidir?",
+    "explanation": "Straddle tipi perineal darbe, meatusta kan ve idrarın yüzeyel perineal alanlara yayılması distal perineal üretra yaralanmasını destekler. Pelvik kırık, yüksek prostat veya intrapelvik kaçak olmaması membranöz ya da daha proksimal üretra yaralanmasını geri plana iter; kontrastın skrotal ve penil kılıflara yayılması ilgili süngerimsi segmentle uyumludur.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Straddle travma + yüzeyel perineal/skrotal ekstravazasyon distal perineal üretra segmentini düşündürür."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Straddle tipi perineal darbe, meatusta kan ve idrarın yüzeyel perineal alanlara yayılması distal perineal üretra yaralanmasını destekler. Pelvik kırık, yüksek prostat veya intrapelvik kaçak olmaması membranöz ya da daha proksimal üretra yaralanmasını geri plana iter; kontrastın skrotal ve penil kılıflara yayılması ilgili süngerimsi segmentle uyumludur.",
+      "whyCorrect": "Straddle tipi perineal darbe, meatusta kan ve idrarın yüzeyel perineal alanlara yayılması distal perineal üretra yaralanmasını destekler. Pelvik kırık, yüksek prostat veya intrapelvik kaçak olmaması membranöz ya da daha proksimal üretra yaralanmasını geri plana iter; kontrastın skrotal ve penil kılıflara yayılması ilgili süngerimsi segmentle uyumludur.",
+      "rationale": "Straddle tipi perineal darbe, meatusta kan ve idrarın yüzeyel perineal alanlara yayılması distal perineal üretra yaralanmasını destekler. Pelvik kırık, yüksek prostat veya intrapelvik kaçak olmaması membranöz ya da daha proksimal üretra yaralanmasını geri plana iter; kontrastın skrotal ve penil kılıflara yayılması ilgili süngerimsi segmentle uyumludur.",
+      "correctOptionFeedback": "Doğru yanıttır; bulböz/penil üretra süngerimsi doku içinde seyreder ve straddle tarzı perineal travmada hasarlanabilir. İdrar-kaçak dağılımının skrotum, penis kılıfları ve yüzeyel perineal aralıkla sınırlı olması bu segmenti destekler.",
+      "keyClues": [
+        "Bisiklet kadrosuna oturur şekilde düşme ile perineal darbe oluşması",
+        "Meatusta kan ve işeme girişimi sonrası perine-skrotum şişliği gelişmesi",
+        "Retrograd üretrografide yüzeyel perineal aralık ve penil kılıflara kontrast yayılımı",
+        "Pelvik halka kırığı ve yüksek proksimal üretra bulgusunun olmaması"
+      ],
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Bisiklet kadrosuna oturur şekilde düşme ile perineal darbe oluşması",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Meatusta kan ve işeme girişimi sonrası perine-skrotum şişliği gelişmesi",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Retrograd üretrografide yüzeyel perineal aralık ve penil kılıflara kontrast yayılımı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Pelvik halka kırığı ve yüksek proksimal üretra bulgusunun olmaması",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Straddle travma + yüzeyel perineal/skrotal ekstravazasyon distal perineal üretra segmentini düşündürür.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Straddle travma + yüzeyel perineal/skrotal ekstravazasyon distal perineal üretra segmentini düşündürür."
+        }
+      ],
+      "optionComparison": {
+        "Pars prostatica urethrae": "Prostatik üretra pelvis içinde prostat bezinden geçen segmenttir; yaralanmaları daha çok pelvik kırık veya prostatik girişimlerle ilişkilidir. Bu hastada travma perineal straddle mekanizmasıyla gelişmiş ve kaçak yüzeyel perineal alanlara yayılmıştır.",
+        "Pars membranacea urethrae": "Membranöz üretra derin perineal boşluk ve ürogenital diyafram düzeyiyle ilişkilidir; pelvik kırık sonrası yüksek yerleşimli kopmalarda akla gelir. Olguda pelvis grafisi doğal ve kontrast yayılımı yüzeyel perineal doku ile sınırlıdır.",
+        "Pars spongiosa urethrae": "Doğru yanıttır; bulböz/penil üretra süngerimsi doku içinde seyreder ve straddle tarzı perineal travmada hasarlanabilir. İdrar-kaçak dağılımının skrotum, penis kılıfları ve yüzeyel perineal aralıkla sınırlı olması bu segmenti destekler.",
+        "Pars intramuralis urethrae": "İntramural/preprostatik başlangıç bölümü mesane boynuna yakın kısa segmenttir ve perineal yüzeyel dokuya sınırlı ekstravazasyon oluşturması beklenmez. Mesane boynu yaralanması veya suprapubik ağrı-retansiyon paternleri bu vakadaki dağılımdan farklıdır.",
+        "Pars preprostatica urethrae": "Preprostatik segment mesane boynu ile prostatik üretra arasında kısa bir proksimal bölgedir. Straddle travma sonrası kan meatus ve yüzeyel perineal-skrotal yayılım bu proksimal segmentten çok distal perineal üretra yaralanmasıyla uyumludur."
+      },
+      "whyWrong": {
+        "Pars prostatica urethrae": "Prostatik üretra pelvis içinde prostat bezinden geçen segmenttir; yaralanmaları daha çok pelvik kırık veya prostatik girişimlerle ilişkilidir. Bu hastada travma perineal straddle mekanizmasıyla gelişmiş ve kaçak yüzeyel perineal alanlara yayılmıştır.",
+        "Pars membranacea urethrae": "Membranöz üretra derin perineal boşluk ve ürogenital diyafram düzeyiyle ilişkilidir; pelvik kırık sonrası yüksek yerleşimli kopmalarda akla gelir. Olguda pelvis grafisi doğal ve kontrast yayılımı yüzeyel perineal doku ile sınırlıdır.",
+        "Pars intramuralis urethrae": "İntramural/preprostatik başlangıç bölümü mesane boynuna yakın kısa segmenttir ve perineal yüzeyel dokuya sınırlı ekstravazasyon oluşturması beklenmez. Mesane boynu yaralanması veya suprapubik ağrı-retansiyon paternleri bu vakadaki dağılımdan farklıdır.",
+        "Pars preprostatica urethrae": "Preprostatik segment mesane boynu ile prostatik üretra arasında kısa bir proksimal bölgedir. Straddle travma sonrası kan meatus ve yüzeyel perineal-skrotal yayılım bu proksimal segmentten çok distal perineal üretra yaralanmasıyla uyumludur."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Straddle travma, meatusta kan ve yüzeyel perineal ekstravazasyon paterninden etkilenen üretra segmentini seçebilme.",
+      "coreKnowledge": "Üretra yaralanmalarında travma mekanizması ve idrar/kontrastın hangi fasyal aralıklara yayıldığı segment lokalizasyonunda en kritik bilgidir."
+    },
+    "whyCorrect": "Straddle tipi perineal darbe, meatusta kan ve idrarın yüzeyel perineal alanlara yayılması distal perineal üretra yaralanmasını destekler. Pelvik kırık, yüksek prostat veya intrapelvik kaçak olmaması membranöz ya da daha proksimal üretra yaralanmasını geri plana iter; kontrastın skrotal ve penil kılıflara yayılması ilgili süngerimsi segmentle uyumludur.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Bisiklet kadrosuna oturur şekilde düşme ile perineal darbe oluşması",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Meatusta kan ve işeme girişimi sonrası perine-skrotum şişliği gelişmesi",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Retrograd üretrografide yüzeyel perineal aralık ve penil kılıflara kontrast yayılımı",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Pelvik halka kırığı ve yüksek proksimal üretra bulgusunun olmaması",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Pars prostatica urethrae": "Prostatik üretra pelvis içinde prostat bezinden geçen segmenttir; yaralanmaları daha çok pelvik kırık veya prostatik girişimlerle ilişkilidir. Bu hastada travma perineal straddle mekanizmasıyla gelişmiş ve kaçak yüzeyel perineal alanlara yayılmıştır.",
+      "Pars membranacea urethrae": "Membranöz üretra derin perineal boşluk ve ürogenital diyafram düzeyiyle ilişkilidir; pelvik kırık sonrası yüksek yerleşimli kopmalarda akla gelir. Olguda pelvis grafisi doğal ve kontrast yayılımı yüzeyel perineal doku ile sınırlıdır.",
+      "Pars spongiosa urethrae": "Doğru yanıttır; bulböz/penil üretra süngerimsi doku içinde seyreder ve straddle tarzı perineal travmada hasarlanabilir. İdrar-kaçak dağılımının skrotum, penis kılıfları ve yüzeyel perineal aralıkla sınırlı olması bu segmenti destekler.",
+      "Pars intramuralis urethrae": "İntramural/preprostatik başlangıç bölümü mesane boynuna yakın kısa segmenttir ve perineal yüzeyel dokuya sınırlı ekstravazasyon oluşturması beklenmez. Mesane boynu yaralanması veya suprapubik ağrı-retansiyon paternleri bu vakadaki dağılımdan farklıdır.",
+      "Pars preprostatica urethrae": "Preprostatik segment mesane boynu ile prostatik üretra arasında kısa bir proksimal bölgedir. Straddle travma sonrası kan meatus ve yüzeyel perineal-skrotal yayılım bu proksimal segmentten çok distal perineal üretra yaralanmasıyla uyumludur."
+    },
+    "coreKnowledge": "Üretra yaralanmalarında travma mekanizması ve idrar/kontrastın hangi fasyal aralıklara yayıldığı segment lokalizasyonunda en kritik bilgidir.",
+    "examPearl": "Straddle travma + yüzeyel perineal/skrotal ekstravazasyon distal perineal üretra segmentini düşündürür.",
+    "whyWrong": {
+      "Pars prostatica urethrae": "Prostatik üretra pelvis içinde prostat bezinden geçen segmenttir; yaralanmaları daha çok pelvik kırık veya prostatik girişimlerle ilişkilidir. Bu hastada travma perineal straddle mekanizmasıyla gelişmiş ve kaçak yüzeyel perineal alanlara yayılmıştır.",
+      "Pars membranacea urethrae": "Membranöz üretra derin perineal boşluk ve ürogenital diyafram düzeyiyle ilişkilidir; pelvik kırık sonrası yüksek yerleşimli kopmalarda akla gelir. Olguda pelvis grafisi doğal ve kontrast yayılımı yüzeyel perineal doku ile sınırlıdır.",
+      "Pars intramuralis urethrae": "İntramural/preprostatik başlangıç bölümü mesane boynuna yakın kısa segmenttir ve perineal yüzeyel dokuya sınırlı ekstravazasyon oluşturması beklenmez. Mesane boynu yaralanması veya suprapubik ağrı-retansiyon paternleri bu vakadaki dağılımdan farklıdır.",
+      "Pars preprostatica urethrae": "Preprostatik segment mesane boynu ile prostatik üretra arasında kısa bir proksimal bölgedir. Straddle travma sonrası kan meatus ve yüzeyel perineal-skrotal yayılım bu proksimal segmentten çok distal perineal üretra yaralanmasıyla uyumludur."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Orta",
+  "aiMeta": {
+    "generatedAt": "manual-v202-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial",
+    "topicControl": "pelvis-perineum-spongy-urethra-straddle-injury-extravasation"
+  },
+  "listTitle": "Perineal travma sonrası idrar kaçağı",
+  "cardTitle": "Perineal travma sonrası idrar kaçağı",
+  "coreKnowledge": "Üretra yaralanmalarında travma mekanizması ve idrar/kontrastın hangi fasyal aralıklara yayıldığı segment lokalizasyonunda en kritik bilgidir.",
+  "examPearl": "Straddle travma + yüzeyel perineal/skrotal ekstravazasyon distal perineal üretra segmentini düşündürür.",
+  "whyCorrect": "Straddle tipi perineal darbe, meatusta kan ve idrarın yüzeyel perineal alanlara yayılması distal perineal üretra yaralanmasını destekler. Pelvik kırık, yüksek prostat veya intrapelvik kaçak olmaması membranöz ya da daha proksimal üretra yaralanmasını geri plana iter; kontrastın skrotal ve penil kılıflara yayılması ilgili süngerimsi segmentle uyumludur.",
+  "optionComparison": {
+    "Pars prostatica urethrae": "Prostatik üretra pelvis içinde prostat bezinden geçen segmenttir; yaralanmaları daha çok pelvik kırık veya prostatik girişimlerle ilişkilidir. Bu hastada travma perineal straddle mekanizmasıyla gelişmiş ve kaçak yüzeyel perineal alanlara yayılmıştır.",
+    "Pars membranacea urethrae": "Membranöz üretra derin perineal boşluk ve ürogenital diyafram düzeyiyle ilişkilidir; pelvik kırık sonrası yüksek yerleşimli kopmalarda akla gelir. Olguda pelvis grafisi doğal ve kontrast yayılımı yüzeyel perineal doku ile sınırlıdır.",
+    "Pars spongiosa urethrae": "Doğru yanıttır; bulböz/penil üretra süngerimsi doku içinde seyreder ve straddle tarzı perineal travmada hasarlanabilir. İdrar-kaçak dağılımının skrotum, penis kılıfları ve yüzeyel perineal aralıkla sınırlı olması bu segmenti destekler.",
+    "Pars intramuralis urethrae": "İntramural/preprostatik başlangıç bölümü mesane boynuna yakın kısa segmenttir ve perineal yüzeyel dokuya sınırlı ekstravazasyon oluşturması beklenmez. Mesane boynu yaralanması veya suprapubik ağrı-retansiyon paternleri bu vakadaki dağılımdan farklıdır.",
+    "Pars preprostatica urethrae": "Preprostatik segment mesane boynu ile prostatik üretra arasında kısa bir proksimal bölgedir. Straddle travma sonrası kan meatus ve yüzeyel perineal-skrotal yayılım bu proksimal segmentten çok distal perineal üretra yaralanmasıyla uyumludur."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Bisiklet kadrosuna oturur şekilde düşme ile perineal darbe oluşması",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Meatusta kan ve işeme girişimi sonrası perine-skrotum şişliği gelişmesi",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Retrograd üretrografide yüzeyel perineal aralık ve penil kılıflara kontrast yayılımı",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Pelvik halka kırığı ve yüksek proksimal üretra bulgusunun olmaması",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Pars prostatica urethrae": "Prostatik üretra pelvis içinde prostat bezinden geçen segmenttir; yaralanmaları daha çok pelvik kırık veya prostatik girişimlerle ilişkilidir. Bu hastada travma perineal straddle mekanizmasıyla gelişmiş ve kaçak yüzeyel perineal alanlara yayılmıştır.",
+    "Pars membranacea urethrae": "Membranöz üretra derin perineal boşluk ve ürogenital diyafram düzeyiyle ilişkilidir; pelvik kırık sonrası yüksek yerleşimli kopmalarda akla gelir. Olguda pelvis grafisi doğal ve kontrast yayılımı yüzeyel perineal doku ile sınırlıdır.",
+    "Pars intramuralis urethrae": "İntramural/preprostatik başlangıç bölümü mesane boynuna yakın kısa segmenttir ve perineal yüzeyel dokuya sınırlı ekstravazasyon oluşturması beklenmez. Mesane boynu yaralanması veya suprapubik ağrı-retansiyon paternleri bu vakadaki dağılımdan farklıdır.",
+    "Pars preprostatica urethrae": "Preprostatik segment mesane boynu ile prostatik üretra arasında kısa bir proksimal bölgedir. Straddle travma sonrası kan meatus ve yüzeyel perineal-skrotal yayılım bu proksimal segmentten çok distal perineal üretra yaralanmasıyla uyumludur."
+  }
+},
+{
+  "id": "v202-new-409-ani-cift-gorme-ve-karsi-taraf-gucsuzluk",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi / Nöroloji",
+  "title": "Ani çift görme ve karşı taraf güçsüzlük",
+  "difficulty": "Zor",
+  "clinicalFocus": "Beyin sapı nöroanatomi bulgularını damar sulama alanı ile ilişkilendirme.",
+  "learningTarget": "İpsilateral okülomotor bulgu ve kontralateral piramidal güçsüzlük birlikteliğinden ilgili paramedian damar alanını seçebilme.",
+  "demographics": "62 yaşında erkek hasta",
+  "setting": "Acil nöroloji ünitesi",
+  "chiefComplaint": "Hasta, aniden başlayan çift görme, sağ göz kapağında düşme ve sol taraf güçsüzlüğü nedeniyle değerlendiriliyor.",
+  "stem": "Hasta kahvaltıdan sonra gazete okurken görüntülerin üst üste bindiğini ve sağ göz kapağının ağırlaştığını fark ettiğini anlatır. Kısa süre içinde sol elindeki bardağı tutmakta zorlanmış, ayağa kalkınca sol bacağının yeterince taşıyamadığını hissetmiştir. Yakınları konuşmasının anlaşılır olduğunu ancak yürürken sola doğru çöktüğünü söylemiştir. Daha önce benzer bir atak geçirmediğini, olay sırasında başını çarpma, şiddetli baş ağrısı veya bilinç kaybı olmadığını belirtir. Yakınmanın bir saat içinde düzelmemesi üzerine acil servise getirilmiştir.",
+  "patientIntro": {
+    "profile": "62 yaşında erkek hasta, akut başlangıçlı göz hareketi ve karşı taraf motor bulguları nedeniyle değerlendiriliyor.",
+    "presentation": "Sağ göz kapağı düşüklüğü ve pupilla-dahil göz hareketi bulgularına sol taraf güçsüzlüğü eşlik etmektedir.",
+    "historySummary": "Hasta kahvaltıdan sonra gazete okurken görüntülerin üst üste bindiğini ve sağ göz kapağının ağırlaştığını fark ettiğini anlatır. Kısa süre içinde sol elindeki bardağı tutmakta zorlanmış, ayağa kalkınca sol bacağının yeterince taşıyamadığını hissetmiştir. Yakınları konuşmasının anlaşılır olduğunu ancak yürürken sola doğru çöktüğünü söylemiştir. Daha önce benzer bir atak geçirmediğini, olay sırasında başını çarpma, şiddetli baş ağrısı veya bilinç kaybı olmadığını belirtir. Yakınmanın bir saat içinde düzelmemesi üzerine acil servise getirilmiştir."
+  },
+  "vitals": {
+    "TA": "118/74 mmHg",
+    "Nabız": "76/dk",
+    "Solunum": "14/dk",
+    "SpO2": "99%, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "0.64 normal"
+  },
+  "exam": [
+    "Sağ palpebral aralık belirgin daralmış, sağ göz istirahatte dış-aşağı pozisyondadır.",
+    "Sağ pupilla sola göre daha geniştir ve direkt ışık yanıtı azalmıştır.",
+    "Sol üst ve alt ekstremitede piramidal dağılımda güç azalması vardır; plantar yanıt solda ekstansördür.",
+    "Duyma kaybı, yutma güçlüğü, belirgin fasiyal asimetri veya serebellar dismetri baskın değildir."
+  ],
+  "investigations": [
+    {
+      "id": "v202-new-409-ani-cift-gorme-ve-karsi-taraf-gucsuzluk-acil-norolojik-muayene-ve-dwi-mrg",
+      "label": "Acil nörolojik muayene ve DWI-MRG",
+      "title": "Acil nörolojik muayene ve DWI-MRG",
+      "orderLabel": "Acil nörolojik muayene ve DWI-MRG",
+      "type": "mri",
+      "priority": "essential",
+      "subtype": "Acil nörolojik muayene ve DWI-MRG",
+      "category": "imaging",
+      "testTypeCategory": "imaging",
+      "summary": "Acil nörolojik değerlendirme ve DWI incelemesi, sağ üst beyin sapı ön-iç bölümünde sınırlı akut odak ile aynı tarafta okülomotor bulgular ve karşı tarafta motor etkilenim gösterir.",
+      "clinicalMeaning": "Acil nörolojik değerlendirme ve DWI incelemesi, sağ üst beyin sapı ön-iç bölümünde sınırlı akut odak ile aynı tarafta okülomotor bulgular ve karşı tarafta motor etkilenim gösterir.",
+      "result": {
+        "title": "Acil nörolojik muayene ve DWI-MRG",
+        "summary": "Acil nörolojik değerlendirme ve DWI incelemesi, sağ üst beyin sapı ön-iç bölümünde sınırlı akut odak ile aynı tarafta okülomotor bulgular ve karşı tarafta motor etkilenim gösterir.",
+        "interpretation": "Acil nörolojik değerlendirme ve DWI incelemesi, sağ üst beyin sapı ön-iç bölümünde sınırlı akut odak ile aynı tarafta okülomotor bulgular ve karşı tarafta motor etkilenim gösterir.",
+        "values": [
+          [
+            "Göz bulgusu",
+            "Sağ kapak düşüklüğü, dış-aşağı bakış pozisyonu ve ışık yanıtında azalma",
+            "",
+            ""
+          ],
+          [
+            "Motor muayene",
+            "Sol yüz-kol-bacakta üst motor nöron paterninde güç azalması",
+            "",
+            ""
+          ],
+          [
+            "Eşlik etmeyen bulgular",
+            "Belirgin disfaji, işitme kaybı veya periferik yüz felci yok",
+            "",
+            ""
+          ],
+          [
+            "DWI-MRG",
+            "Sağ üst beyin sapı ön-iç bölümünde küçük akut difüzyon kısıtlılığı",
+            "",
+            ""
+          ]
+        ],
+        "rows": [
+          [
+            "Göz bulgusu",
+            "Sağ kapak düşüklüğü, dış-aşağı bakış pozisyonu ve ışık yanıtında azalma",
+            "",
+            ""
+          ],
+          [
+            "Motor muayene",
+            "Sol yüz-kol-bacakta üst motor nöron paterninde güç azalması",
+            "",
+            ""
+          ],
+          [
+            "Eşlik etmeyen bulgular",
+            "Belirgin disfaji, işitme kaybı veya periferik yüz felci yok",
+            "",
+            ""
+          ],
+          [
+            "DWI-MRG",
+            "Sağ üst beyin sapı ön-iç bölümünde küçük akut difüzyon kısıtlılığı",
+            "",
+            ""
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Göz bulgusu",
+          "Sağ kapak düşüklüğü, dış-aşağı bakış pozisyonu ve ışık yanıtında azalma",
+          "",
+          ""
+        ],
+        [
+          "Motor muayene",
+          "Sol yüz-kol-bacakta üst motor nöron paterninde güç azalması",
+          "",
+          ""
+        ],
+        [
+          "Eşlik etmeyen bulgular",
+          "Belirgin disfaji, işitme kaybı veya periferik yüz felci yok",
+          "",
+          ""
+        ],
+        [
+          "DWI-MRG",
+          "Sağ üst beyin sapı ön-iç bölümünde küçük akut difüzyon kısıtlılığı",
+          "",
+          ""
+        ]
+      ],
+      "postAnswerExplanation": "Acil nörolojik değerlendirme ve DWI incelemesi, sağ üst beyin sapı ön-iç bölümünde sınırlı akut odak ile aynı tarafta okülomotor bulgular ve karşı tarafta motor etkilenim gösterir.",
+      "interpretation": "Acil nörolojik değerlendirme ve DWI incelemesi, sağ üst beyin sapı ön-iç bölümünde sınırlı akut odak ile aynı tarafta okülomotor bulgular ve karşı tarafta motor etkilenim gösterir.",
+      "explanationAfterAnswer": "Acil nörolojik değerlendirme ve DWI incelemesi, sağ üst beyin sapı ön-iç bölümünde sınırlı akut odak ile aynı tarafta okülomotor bulgular ve karşı tarafta motor etkilenim gösterir.",
+      "testValueLabel": "Acil nörolojik muayene ve DWI-MRG",
+      "educationalValue": "Acil nörolojik muayene ve DWI-MRG",
+      "clinicalPriorityLabel": "Acil nörolojik muayene ve DWI-MRG",
+      "scoreImpact": 4,
+      "scoreValue": 4,
+      "clinicalFlowOrder": 1,
+      "purpose": "Acil nörolojik değerlendirme ve DWI incelemesi, sağ üst beyin sapı ön-iç bölümünde sınırlı akut odak ile aynı tarafta okülomotor bulgular ve karşı tarafta motor etkilenim gösterir.",
+      "inlineFeedback": "Acil nörolojik değerlendirme ve DWI incelemesi, sağ üst beyin sapı ön-iç bölümünde sınırlı akut odak ile aynı tarafta okülomotor bulgular ve karşı tarafta motor etkilenim gösterir.",
+      "treatmentImpact": "Acil nörolojik değerlendirme ve DWI incelemesi, sağ üst beyin sapı ön-iç bölümünde sınırlı akut odak ile aynı tarafta okülomotor bulgular ve karşı tarafta motor etkilenim gösterir.",
+      "emergencyValue": "Acil nörolojik değerlendirme ve DWI incelemesi, sağ üst beyin sapı ön-iç bölümünde sınırlı akut odak ile aynı tarafta okülomotor bulgular ve karşı tarafta motor etkilenim gösterir."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": false,
+  "question": "Bu anatomik-damar paternini en iyi açıklayan arteriyel beslenme alanı hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Arteria cerebri posterior paramedian dalları",
+    "options": [
+      "Arteria cerebelli superior",
+      "Arteria basilaris paramedian pontin dalları",
+      "Arteria cerebelli anterior inferior",
+      "Arteria cerebelli posterior inferior",
+      "Arteria cerebri posterior paramedian dalları"
+    ],
+    "question": "Bu anatomik-damar paternini en iyi açıklayan arteriyel beslenme alanı hangisidir?",
+    "explanation": "Aynı tarafta pupilla-dahil okülomotor bulgular ve karşı tarafta piramidal güçsüzlük birlikteliği, kortikospinal liflerle okülomotor fasiküllerin yakın seyrettiği üst beyin sapı ön-iç bölgesini düşündürür. Lateral medulla, lateral pons veya serebellar arter paternlerinde beklenen disfaji, işitme-vestibüler bulgular ya da belirgin serebellar bulguların olmaması doğru damar alanını daraltır.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "İpsilateral üçüncü sinir bulgusu + kontralateral hemiparezi, rostral beyin sapının medial perforan damar alanı için güçlü lokalizasyon ipucudur."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Aynı tarafta pupilla-dahil okülomotor bulgular ve karşı tarafta piramidal güçsüzlük birlikteliği, kortikospinal liflerle okülomotor fasiküllerin yakın seyrettiği üst beyin sapı ön-iç bölgesini düşündürür. Lateral medulla, lateral pons veya serebellar arter paternlerinde beklenen disfaji, işitme-vestibüler bulgular ya da belirgin serebellar bulguların olmaması doğru damar alanını daraltır.",
+      "whyCorrect": "Aynı tarafta pupilla-dahil okülomotor bulgular ve karşı tarafta piramidal güçsüzlük birlikteliği, kortikospinal liflerle okülomotor fasiküllerin yakın seyrettiği üst beyin sapı ön-iç bölgesini düşündürür. Lateral medulla, lateral pons veya serebellar arter paternlerinde beklenen disfaji, işitme-vestibüler bulgular ya da belirgin serebellar bulguların olmaması doğru damar alanını daraltır.",
+      "rationale": "Aynı tarafta pupilla-dahil okülomotor bulgular ve karşı tarafta piramidal güçsüzlük birlikteliği, kortikospinal liflerle okülomotor fasiküllerin yakın seyrettiği üst beyin sapı ön-iç bölgesini düşündürür. Lateral medulla, lateral pons veya serebellar arter paternlerinde beklenen disfaji, işitme-vestibüler bulgular ya da belirgin serebellar bulguların olmaması doğru damar alanını daraltır.",
+      "correctOptionFeedback": "Doğru yanıttır; posterior serebral arterin paramedian perforan dalları rostral beyin sapı ön-iç bölgelerini besleyebilir. Aynı tarafta pupilla-dahil okülomotor bulgu ve karşı tarafta kortikospinal güçsüzlük birlikteliği bu damar alanındaki medial üst beyin sapı etkilenimiyle uyumludur.",
+      "keyClues": [
+        "Sağ göz kapağında düşüklük, dış-aşağı pozisyon ve ışık yanıtında azalma",
+        "Sol yüz-kol-bacakta akut güç kaybı gelişmesi",
+        "Duyma kaybı, disfaji ve periferik yüz felci bulgularının olmaması",
+        "DWI’da sağ üst beyin sapı ön-iç bölümünde sınırlı akut odak izlenmesi"
+      ],
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Sağ göz kapağında düşüklük, dış-aşağı pozisyon ve ışık yanıtında azalma",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Sol yüz-kol-bacakta akut güç kaybı gelişmesi",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Duyma kaybı, disfaji ve periferik yüz felci bulgularının olmaması",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "DWI’da sağ üst beyin sapı ön-iç bölümünde sınırlı akut odak izlenmesi",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "examPearl": "İpsilateral üçüncü sinir bulgusu + kontralateral hemiparezi, rostral beyin sapının medial perforan damar alanı için güçlü lokalizasyon ipucudur.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "İpsilateral üçüncü sinir bulgusu + kontralateral hemiparezi, rostral beyin sapının medial perforan damar alanı için güçlü lokalizasyon ipucudur."
+        }
+      ],
+      "optionComparison": {
+        "Arteria cerebelli superior": "Superior serebellar arter üst serebellum ve bazı beyin sapı komşuluklarını etkileyebilir; ataksi ve serebellar bulgular daha baskın beklenir. Bu hastada belirgin ipsilateral üçüncü sinir bulgusu ile karşı taraf piramidal güçsüzlük birlikteliği daha ön plandadır.",
+        "Arteria basilaris paramedian pontin dalları": "Paramedian pontin dallar pons medial lezyonlarında abdusens ilişkili bakış bulguları, fasiyal etkilenim veya pontin motor-duyu paternleri yapabilir. Olgudaki pupilla-dahil göz kapağı ve göz hareketi bulguları pons yerine daha rostral bir okülomotor fasikül-komşuluk düzeyini düşündürür.",
+        "Arteria cerebelli anterior inferior": "AICA lezyonlarında lateral pons, fasiyal sinir bulguları, işitme/vestibüler yakınmalar ve ipsilateral yüz duyusu değişiklikleri beklenebilir. Bu vakada işitme kaybı, periferik yüz felci veya lateral pontin patern baskın değildir.",
+        "Arteria cerebelli posterior inferior": "PICA lezyonu lateral medulla paterninde disfaji, ses kısıklığı, vertigo, ipsilateral yüz ve karşı gövde ağrı-sıcaklık kaybı gibi bulgularla düşünülür. Hastada bu lateral medüller bulgular yok; esas tablo okülomotor bulgu ve karşı taraf motor kayıptır.",
+        "Arteria cerebri posterior paramedian dalları": "Doğru yanıttır; posterior serebral arterin paramedian perforan dalları rostral beyin sapı ön-iç bölgelerini besleyebilir. Aynı tarafta pupilla-dahil okülomotor bulgu ve karşı tarafta kortikospinal güçsüzlük birlikteliği bu damar alanındaki medial üst beyin sapı etkilenimiyle uyumludur."
+      },
+      "whyWrong": {
+        "Arteria cerebelli superior": "Superior serebellar arter üst serebellum ve bazı beyin sapı komşuluklarını etkileyebilir; ataksi ve serebellar bulgular daha baskın beklenir. Bu hastada belirgin ipsilateral üçüncü sinir bulgusu ile karşı taraf piramidal güçsüzlük birlikteliği daha ön plandadır.",
+        "Arteria basilaris paramedian pontin dalları": "Paramedian pontin dallar pons medial lezyonlarında abdusens ilişkili bakış bulguları, fasiyal etkilenim veya pontin motor-duyu paternleri yapabilir. Olgudaki pupilla-dahil göz kapağı ve göz hareketi bulguları pons yerine daha rostral bir okülomotor fasikül-komşuluk düzeyini düşündürür.",
+        "Arteria cerebelli anterior inferior": "AICA lezyonlarında lateral pons, fasiyal sinir bulguları, işitme/vestibüler yakınmalar ve ipsilateral yüz duyusu değişiklikleri beklenebilir. Bu vakada işitme kaybı, periferik yüz felci veya lateral pontin patern baskın değildir.",
+        "Arteria cerebelli posterior inferior": "PICA lezyonu lateral medulla paterninde disfaji, ses kısıklığı, vertigo, ipsilateral yüz ve karşı gövde ağrı-sıcaklık kaybı gibi bulgularla düşünülür. Hastada bu lateral medüller bulgular yok; esas tablo okülomotor bulgu ve karşı taraf motor kayıptır."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "İpsilateral okülomotor bulgu ve kontralateral piramidal güçsüzlük birlikteliğinden ilgili paramedian damar alanını seçebilme.",
+      "coreKnowledge": "Beyin sapı vasküler lokalizasyonunda kraniyal sinir tarafı lezyon tarafını, uzun trakt bulguları ise çapraz karşı taraf etkilenimi gösterir."
+    },
+    "whyCorrect": "Aynı tarafta pupilla-dahil okülomotor bulgular ve karşı tarafta piramidal güçsüzlük birlikteliği, kortikospinal liflerle okülomotor fasiküllerin yakın seyrettiği üst beyin sapı ön-iç bölgesini düşündürür. Lateral medulla, lateral pons veya serebellar arter paternlerinde beklenen disfaji, işitme-vestibüler bulgular ya da belirgin serebellar bulguların olmaması doğru damar alanını daraltır.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Sağ göz kapağında düşüklük, dış-aşağı pozisyon ve ışık yanıtında azalma",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Sol yüz-kol-bacakta akut güç kaybı gelişmesi",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Duyma kaybı, disfaji ve periferik yüz felci bulgularının olmaması",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "DWI’da sağ üst beyin sapı ön-iç bölümünde sınırlı akut odak izlenmesi",
+        "weight": "high",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Arteria cerebelli superior": "Superior serebellar arter üst serebellum ve bazı beyin sapı komşuluklarını etkileyebilir; ataksi ve serebellar bulgular daha baskın beklenir. Bu hastada belirgin ipsilateral üçüncü sinir bulgusu ile karşı taraf piramidal güçsüzlük birlikteliği daha ön plandadır.",
+      "Arteria basilaris paramedian pontin dalları": "Paramedian pontin dallar pons medial lezyonlarında abdusens ilişkili bakış bulguları, fasiyal etkilenim veya pontin motor-duyu paternleri yapabilir. Olgudaki pupilla-dahil göz kapağı ve göz hareketi bulguları pons yerine daha rostral bir okülomotor fasikül-komşuluk düzeyini düşündürür.",
+      "Arteria cerebelli anterior inferior": "AICA lezyonlarında lateral pons, fasiyal sinir bulguları, işitme/vestibüler yakınmalar ve ipsilateral yüz duyusu değişiklikleri beklenebilir. Bu vakada işitme kaybı, periferik yüz felci veya lateral pontin patern baskın değildir.",
+      "Arteria cerebelli posterior inferior": "PICA lezyonu lateral medulla paterninde disfaji, ses kısıklığı, vertigo, ipsilateral yüz ve karşı gövde ağrı-sıcaklık kaybı gibi bulgularla düşünülür. Hastada bu lateral medüller bulgular yok; esas tablo okülomotor bulgu ve karşı taraf motor kayıptır.",
+      "Arteria cerebri posterior paramedian dalları": "Doğru yanıttır; posterior serebral arterin paramedian perforan dalları rostral beyin sapı ön-iç bölgelerini besleyebilir. Aynı tarafta pupilla-dahil okülomotor bulgu ve karşı tarafta kortikospinal güçsüzlük birlikteliği bu damar alanındaki medial üst beyin sapı etkilenimiyle uyumludur."
+    },
+    "coreKnowledge": "Beyin sapı vasküler lokalizasyonunda kraniyal sinir tarafı lezyon tarafını, uzun trakt bulguları ise çapraz karşı taraf etkilenimi gösterir.",
+    "examPearl": "İpsilateral üçüncü sinir bulgusu + kontralateral hemiparezi, rostral beyin sapının medial perforan damar alanı için güçlü lokalizasyon ipucudur.",
+    "whyWrong": {
+      "Arteria cerebelli superior": "Superior serebellar arter üst serebellum ve bazı beyin sapı komşuluklarını etkileyebilir; ataksi ve serebellar bulgular daha baskın beklenir. Bu hastada belirgin ipsilateral üçüncü sinir bulgusu ile karşı taraf piramidal güçsüzlük birlikteliği daha ön plandadır.",
+      "Arteria basilaris paramedian pontin dalları": "Paramedian pontin dallar pons medial lezyonlarında abdusens ilişkili bakış bulguları, fasiyal etkilenim veya pontin motor-duyu paternleri yapabilir. Olgudaki pupilla-dahil göz kapağı ve göz hareketi bulguları pons yerine daha rostral bir okülomotor fasikül-komşuluk düzeyini düşündürür.",
+      "Arteria cerebelli anterior inferior": "AICA lezyonlarında lateral pons, fasiyal sinir bulguları, işitme/vestibüler yakınmalar ve ipsilateral yüz duyusu değişiklikleri beklenebilir. Bu vakada işitme kaybı, periferik yüz felci veya lateral pontin patern baskın değildir.",
+      "Arteria cerebelli posterior inferior": "PICA lezyonu lateral medulla paterninde disfaji, ses kısıklığı, vertigo, ipsilateral yüz ve karşı gövde ağrı-sıcaklık kaybı gibi bulgularla düşünülür. Hastada bu lateral medüller bulgular yok; esas tablo okülomotor bulgu ve karşı taraf motor kayıptır."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Zor",
+  "aiMeta": {
+    "generatedAt": "manual-v202-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial",
+    "topicControl": "neuroanatomy-pca-paramedian-midbrain-oculomotor-corticospinal"
+  },
+  "listTitle": "Ani çift görme ve karşı taraf güçsüzlük",
+  "cardTitle": "Ani çift görme ve karşı taraf güçsüzlük",
+  "coreKnowledge": "Beyin sapı vasküler lokalizasyonunda kraniyal sinir tarafı lezyon tarafını, uzun trakt bulguları ise çapraz karşı taraf etkilenimi gösterir.",
+  "examPearl": "İpsilateral üçüncü sinir bulgusu + kontralateral hemiparezi, rostral beyin sapının medial perforan damar alanı için güçlü lokalizasyon ipucudur.",
+  "whyCorrect": "Aynı tarafta pupilla-dahil okülomotor bulgular ve karşı tarafta piramidal güçsüzlük birlikteliği, kortikospinal liflerle okülomotor fasiküllerin yakın seyrettiği üst beyin sapı ön-iç bölgesini düşündürür. Lateral medulla, lateral pons veya serebellar arter paternlerinde beklenen disfaji, işitme-vestibüler bulgular ya da belirgin serebellar bulguların olmaması doğru damar alanını daraltır.",
+  "optionComparison": {
+    "Arteria cerebelli superior": "Superior serebellar arter üst serebellum ve bazı beyin sapı komşuluklarını etkileyebilir; ataksi ve serebellar bulgular daha baskın beklenir. Bu hastada belirgin ipsilateral üçüncü sinir bulgusu ile karşı taraf piramidal güçsüzlük birlikteliği daha ön plandadır.",
+    "Arteria basilaris paramedian pontin dalları": "Paramedian pontin dallar pons medial lezyonlarında abdusens ilişkili bakış bulguları, fasiyal etkilenim veya pontin motor-duyu paternleri yapabilir. Olgudaki pupilla-dahil göz kapağı ve göz hareketi bulguları pons yerine daha rostral bir okülomotor fasikül-komşuluk düzeyini düşündürür.",
+    "Arteria cerebelli anterior inferior": "AICA lezyonlarında lateral pons, fasiyal sinir bulguları, işitme/vestibüler yakınmalar ve ipsilateral yüz duyusu değişiklikleri beklenebilir. Bu vakada işitme kaybı, periferik yüz felci veya lateral pontin patern baskın değildir.",
+    "Arteria cerebelli posterior inferior": "PICA lezyonu lateral medulla paterninde disfaji, ses kısıklığı, vertigo, ipsilateral yüz ve karşı gövde ağrı-sıcaklık kaybı gibi bulgularla düşünülür. Hastada bu lateral medüller bulgular yok; esas tablo okülomotor bulgu ve karşı taraf motor kayıptır.",
+    "Arteria cerebri posterior paramedian dalları": "Doğru yanıttır; posterior serebral arterin paramedian perforan dalları rostral beyin sapı ön-iç bölgelerini besleyebilir. Aynı tarafta pupilla-dahil okülomotor bulgu ve karşı tarafta kortikospinal güçsüzlük birlikteliği bu damar alanındaki medial üst beyin sapı etkilenimiyle uyumludur."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Sağ göz kapağında düşüklük, dış-aşağı pozisyon ve ışık yanıtında azalma",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Sol yüz-kol-bacakta akut güç kaybı gelişmesi",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Duyma kaybı, disfaji ve periferik yüz felci bulgularının olmaması",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "DWI’da sağ üst beyin sapı ön-iç bölümünde sınırlı akut odak izlenmesi",
+      "weight": "high",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Arteria cerebelli superior": "Superior serebellar arter üst serebellum ve bazı beyin sapı komşuluklarını etkileyebilir; ataksi ve serebellar bulgular daha baskın beklenir. Bu hastada belirgin ipsilateral üçüncü sinir bulgusu ile karşı taraf piramidal güçsüzlük birlikteliği daha ön plandadır.",
+    "Arteria basilaris paramedian pontin dalları": "Paramedian pontin dallar pons medial lezyonlarında abdusens ilişkili bakış bulguları, fasiyal etkilenim veya pontin motor-duyu paternleri yapabilir. Olgudaki pupilla-dahil göz kapağı ve göz hareketi bulguları pons yerine daha rostral bir okülomotor fasikül-komşuluk düzeyini düşündürür.",
+    "Arteria cerebelli anterior inferior": "AICA lezyonlarında lateral pons, fasiyal sinir bulguları, işitme/vestibüler yakınmalar ve ipsilateral yüz duyusu değişiklikleri beklenebilir. Bu vakada işitme kaybı, periferik yüz felci veya lateral pontin patern baskın değildir.",
+    "Arteria cerebelli posterior inferior": "PICA lezyonu lateral medulla paterninde disfaji, ses kısıklığı, vertigo, ipsilateral yüz ve karşı gövde ağrı-sıcaklık kaybı gibi bulgularla düşünülür. Hastada bu lateral medüller bulgular yok; esas tablo okülomotor bulgu ve karşı taraf motor kayıptır."
+  }
+},
+{
+  "id": "v202-new-410-bazal-plevral-sivi-ve-girisim-plani",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi / Göğüs Hastalıkları",
+  "title": "Bazal plevral sıvı ve girişim planı",
+  "difficulty": "Kolay-Orta",
+  "clinicalFocus": "Plevral boşluk yansımalarını görüntüleme bulgusu ve girişim planı ile ilişkilendirme.",
+  "learningTarget": "Oturur pozisyonda bazal sıvı toplanma alanını pleura anatomisi üzerinden seçebilme.",
+  "demographics": "54 yaşında kadın hasta",
+  "setting": "Göğüs hastalıkları servisi",
+  "chiefComplaint": "Hasta, birkaç gündür artan nefes darlığı ve sağ alt toraksta baskı hissi nedeniyle değerlendiriliyor.",
+  "stem": "Hasta son dört gündür merdiven çıkarken nefesinin daha çabuk kesildiğini ve sağ alt göğüs yanında dolgunluk hissettiğini anlatır. Başlangıçta bunu yorgunlukla ilişkilendirmiş, ancak gece yatınca sağ tarafa döndüğünde rahatsızlığı arttığı için başını yükselterek uyumaya başlamıştır. Öksürüğü hafif ve kuru olup kanlı balgam tariflemez. Göğüs ağrısı keskin değil, daha çok derin nefeste basınç hissi şeklindedir. Yakınmasının giderek günlük hareketlerini kısıtlaması üzerine polikliniğe başvurmuştur.",
+  "patientIntro": {
+    "profile": "54 yaşında kadın hasta, sağ bazal toraks yakınması ve eforla artan nefes darlığı nedeniyle değerlendiriliyor.",
+    "presentation": "Sağ hemitoraks bazalinde matite ve görüntülemede posterolateral bazal sıvı birikimi vardır.",
+    "historySummary": "Hasta son dört gündür merdiven çıkarken nefesinin daha çabuk kesildiğini ve sağ alt göğüs yanında dolgunluk hissettiğini anlatır. Başlangıçta bunu yorgunlukla ilişkilendirmiş, ancak gece yatınca sağ tarafa döndüğünde rahatsızlığı arttığı için başını yükselterek uyumaya başlamıştır. Öksürüğü hafif ve kuru olup kanlı balgam tariflemez. Göğüs ağrısı keskin değil, daha çok derin nefeste basınç hissi şeklindedir. Yakınmasının giderek günlük hareketlerini kısıtlaması üzerine polikliniğe başvurmuştur."
+  },
+  "vitals": {
+    "TA": "118/74 mmHg",
+    "Nabız": "76/dk",
+    "Solunum": "14/dk",
+    "SpO2": "99%, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "0.64 normal"
+  },
+  "exam": [
+    "Sağ alt posterolateral toraks perküsyonunda matite alınır.",
+    "Aynı bölgede solunum sesleri bazalde azalmıştır; belirgin wheezing yoktur.",
+    "Trakea orta hatta, boyun venöz dolgunluğu belirgin değildir.",
+    "Oksijen satürasyonu oda havasında normal sınırlardadır."
+  ],
+  "investigations": [
+    {
+      "id": "v202-new-410-bazal-plevral-sivi-ve-girisim-plani-akciger-grafisi-ve-toraks-usg",
+      "label": "Akciğer grafisi ve toraks USG",
+      "title": "Akciğer grafisi ve toraks USG",
+      "orderLabel": "Akciğer grafisi ve toraks USG",
+      "type": "ultrasound",
+      "priority": "essential",
+      "subtype": "Akciğer grafisi ve toraks USG",
+      "category": "imaging",
+      "testTypeCategory": "imaging",
+      "summary": "Akciğer grafisi ve toraks USG, sıvının oturur pozisyonda posterolateral bazal plevral yansıma alanında toplandığını; apeks veya ön parasternal hatta baskın koleksiyon olmadığını gösterir.",
+      "clinicalMeaning": "Akciğer grafisi ve toraks USG, sıvının oturur pozisyonda posterolateral bazal plevral yansıma alanında toplandığını; apeks veya ön parasternal hatta baskın koleksiyon olmadığını gösterir.",
+      "result": {
+        "title": "Akciğer grafisi ve toraks USG",
+        "summary": "Akciğer grafisi ve toraks USG, sıvının oturur pozisyonda posterolateral bazal plevral yansıma alanında toplandığını; apeks veya ön parasternal hatta baskın koleksiyon olmadığını gösterir.",
+        "interpretation": "Akciğer grafisi ve toraks USG, sıvının oturur pozisyonda posterolateral bazal plevral yansıma alanında toplandığını; apeks veya ön parasternal hatta baskın koleksiyon olmadığını gösterir.",
+        "values": [
+          [
+            "PA akciğer grafisi",
+            "Sağ lateral bazal açıda silinme ve menisküs görünümü",
+            "",
+            ""
+          ],
+          [
+            "Toraks USG",
+            "Diyafram kubbesi üstünde posterolateral bazal sıvı cebi",
+            "",
+            ""
+          ],
+          [
+            "Apeks değerlendirmesi",
+            "Üst plevral bölgede belirgin koleksiyon izlenmez",
+            "",
+            ""
+          ],
+          [
+            "Ön parasternal hat",
+            "Baskın sıvı cebi saptanmaz",
+            "",
+            ""
+          ]
+        ],
+        "rows": [
+          [
+            "PA akciğer grafisi",
+            "Sağ lateral bazal açıda silinme ve menisküs görünümü",
+            "",
+            ""
+          ],
+          [
+            "Toraks USG",
+            "Diyafram kubbesi üstünde posterolateral bazal sıvı cebi",
+            "",
+            ""
+          ],
+          [
+            "Apeks değerlendirmesi",
+            "Üst plevral bölgede belirgin koleksiyon izlenmez",
+            "",
+            ""
+          ],
+          [
+            "Ön parasternal hat",
+            "Baskın sıvı cebi saptanmaz",
+            "",
+            ""
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "PA akciğer grafisi",
+          "Sağ lateral bazal açıda silinme ve menisküs görünümü",
+          "",
+          ""
+        ],
+        [
+          "Toraks USG",
+          "Diyafram kubbesi üstünde posterolateral bazal sıvı cebi",
+          "",
+          ""
+        ],
+        [
+          "Apeks değerlendirmesi",
+          "Üst plevral bölgede belirgin koleksiyon izlenmez",
+          "",
+          ""
+        ],
+        [
+          "Ön parasternal hat",
+          "Baskın sıvı cebi saptanmaz",
+          "",
+          ""
+        ]
+      ],
+      "postAnswerExplanation": "Akciğer grafisi ve toraks USG, sıvının oturur pozisyonda posterolateral bazal plevral yansıma alanında toplandığını; apeks veya ön parasternal hatta baskın koleksiyon olmadığını gösterir.",
+      "interpretation": "Akciğer grafisi ve toraks USG, sıvının oturur pozisyonda posterolateral bazal plevral yansıma alanında toplandığını; apeks veya ön parasternal hatta baskın koleksiyon olmadığını gösterir.",
+      "explanationAfterAnswer": "Akciğer grafisi ve toraks USG, sıvının oturur pozisyonda posterolateral bazal plevral yansıma alanında toplandığını; apeks veya ön parasternal hatta baskın koleksiyon olmadığını gösterir.",
+      "testValueLabel": "Akciğer grafisi ve toraks USG",
+      "educationalValue": "Akciğer grafisi ve toraks USG",
+      "clinicalPriorityLabel": "Akciğer grafisi ve toraks USG",
+      "scoreImpact": 4,
+      "scoreValue": 4,
+      "clinicalFlowOrder": 1,
+      "purpose": "Akciğer grafisi ve toraks USG, sıvının oturur pozisyonda posterolateral bazal plevral yansıma alanında toplandığını; apeks veya ön parasternal hatta baskın koleksiyon olmadığını gösterir.",
+      "inlineFeedback": "Akciğer grafisi ve toraks USG, sıvının oturur pozisyonda posterolateral bazal plevral yansıma alanında toplandığını; apeks veya ön parasternal hatta baskın koleksiyon olmadığını gösterir.",
+      "treatmentImpact": "Akciğer grafisi ve toraks USG, sıvının oturur pozisyonda posterolateral bazal plevral yansıma alanında toplandığını; apeks veya ön parasternal hatta baskın koleksiyon olmadığını gösterir.",
+      "emergencyValue": "Akciğer grafisi ve toraks USG, sıvının oturur pozisyonda posterolateral bazal plevral yansıma alanında toplandığını; apeks veya ön parasternal hatta baskın koleksiyon olmadığını gösterir."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": false,
+  "question": "Bu sıvının öncelikle biriktiği anatomik plevral bölge hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Recessus costodiaphragmaticus",
+    "options": [
+      "Recessus costodiaphragmaticus",
+      "Recessus costomediastinalis",
+      "Cupula pleurae",
+      "Pars mediastinalis pleurae",
+      "Fissura obliqua pulmonis"
+    ],
+    "question": "Bu sıvının öncelikle biriktiği anatomik plevral bölge hangisidir?",
+    "explanation": "Oturur pozisyonda plevral sıvı yerçekimine bağlı olarak akciğer tabanı ile diyafram komşuluğundaki bağımlı plevral yansıma alanında belirginleşir. Grafide bazal açı silinmesi ve USG’de diyafram üstü posterolateral sıvı cebi, apikal veya ön mediastinal plevral bölgeden çok bu bazal resesi destekler.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Plevral sıvı, ayakta veya oturur pozisyonda en bağımlı bazal plevral reseste erken belirginleşir."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Oturur pozisyonda plevral sıvı yerçekimine bağlı olarak akciğer tabanı ile diyafram komşuluğundaki bağımlı plevral yansıma alanında belirginleşir. Grafide bazal açı silinmesi ve USG’de diyafram üstü posterolateral sıvı cebi, apikal veya ön mediastinal plevral bölgeden çok bu bazal resesi destekler.",
+      "whyCorrect": "Oturur pozisyonda plevral sıvı yerçekimine bağlı olarak akciğer tabanı ile diyafram komşuluğundaki bağımlı plevral yansıma alanında belirginleşir. Grafide bazal açı silinmesi ve USG’de diyafram üstü posterolateral sıvı cebi, apikal veya ön mediastinal plevral bölgeden çok bu bazal resesi destekler.",
+      "rationale": "Oturur pozisyonda plevral sıvı yerçekimine bağlı olarak akciğer tabanı ile diyafram komşuluğundaki bağımlı plevral yansıma alanında belirginleşir. Grafide bazal açı silinmesi ve USG’de diyafram üstü posterolateral sıvı cebi, apikal veya ön mediastinal plevral bölgeden çok bu bazal resesi destekler.",
+      "correctOptionFeedback": "Doğru yanıttır; kostal ve diyafragmatik plevranın karşılaştığı bazal yansıma alanı, ayakta veya oturur pozisyonda plevral sıvının en erken ve en belirgin toplandığı bağımlı bölgedir. Posterolateral bazal sıvı ve kostofrenik açı silinmesi bu bölgeyle uyumludur.",
+      "keyClues": [
+        "Nefes darlığına oturur pozisyonda bazal matite eşlik etmesi",
+        "Akciğer grafisinde lateral bazal açı silinmesi görülmesi",
+        "USG’de diyafram kubbesi üstünde posterolateral sıvı cebi izlenmesi",
+        "Apeks, ön parasternal hat ve mediastinal komşulukta baskın sıvı olmaması"
+      ],
+      "evidenceChain": [
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Nefes darlığına oturur pozisyonda bazal matite eşlik etmesi",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Akciğer grafisinde lateral bazal açı silinmesi görülmesi",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "USG’de diyafram kubbesi üstünde posterolateral sıvı cebi izlenmesi",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "title": "Klinik-anatomik ipucu",
+          "text": "Apeks, ön parasternal hat ve mediastinal komşulukta baskın sıvı olmaması",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Plevral sıvı, ayakta veya oturur pozisyonda en bağımlı bazal plevral reseste erken belirginleşir.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Plevral sıvı, ayakta veya oturur pozisyonda en bağımlı bazal plevral reseste erken belirginleşir."
+        }
+      ],
+      "optionComparison": {
+        "Recessus costodiaphragmaticus": "Doğru yanıttır; kostal ve diyafragmatik plevranın karşılaştığı bazal yansıma alanı, ayakta veya oturur pozisyonda plevral sıvının en erken ve en belirgin toplandığı bağımlı bölgedir. Posterolateral bazal sıvı ve kostofrenik açı silinmesi bu bölgeyle uyumludur.",
+        "Recessus costomediastinalis": "Costomediastinal reses sternuma yakın ön plevral yansıma bölgesidir ve özellikle sol ön tarafta kalp komşuluğu nedeniyle önem taşır. Bazal posterolateral sıvı birikimi ve diyafram kubbesi komşuluğu bu ön mediastinal plevral aralığı desteklemez.",
+        "Cupula pleurae": "Pleura kubbesi akciğer apeksini örten servikotorasik üst plevral bölgedir; subklavyen damarlar ve boyun kökü komşuluklarıyla ilişkilidir. Sıvının oturur pozisyonda bazalde toplanması apeks bölgesiyle açıklanamaz.",
+        "Pars mediastinalis pleurae": "Mediastinal plevra akciğerlerin mediastene bakan yüzünü örter; hilus ve perikard komşuluklarıyla ilişkilidir. Olguda sıvı en bağımlı posterolateral bazal hatta izlendiği için geniş bir mediastinal plevra tanımı yeterli değildir.",
+        "Fissura obliqua pulmonis": "Oblik fissür akciğer lobları arasında yer alan intrapulmoner yarıktır; plevral boşluğun en bağımlı toplama alanı değildir. Görüntüleme loblar arası sıvıdan çok bazal plevral sıvı birikimini göstermektedir."
+      },
+      "whyWrong": {
+        "Recessus costomediastinalis": "Costomediastinal reses sternuma yakın ön plevral yansıma bölgesidir ve özellikle sol ön tarafta kalp komşuluğu nedeniyle önem taşır. Bazal posterolateral sıvı birikimi ve diyafram kubbesi komşuluğu bu ön mediastinal plevral aralığı desteklemez.",
+        "Cupula pleurae": "Pleura kubbesi akciğer apeksini örten servikotorasik üst plevral bölgedir; subklavyen damarlar ve boyun kökü komşuluklarıyla ilişkilidir. Sıvının oturur pozisyonda bazalde toplanması apeks bölgesiyle açıklanamaz.",
+        "Pars mediastinalis pleurae": "Mediastinal plevra akciğerlerin mediastene bakan yüzünü örter; hilus ve perikard komşuluklarıyla ilişkilidir. Olguda sıvı en bağımlı posterolateral bazal hatta izlendiği için geniş bir mediastinal plevra tanımı yeterli değildir.",
+        "Fissura obliqua pulmonis": "Oblik fissür akciğer lobları arasında yer alan intrapulmoner yarıktır; plevral boşluğun en bağımlı toplama alanı değildir. Görüntüleme loblar arası sıvıdan çok bazal plevral sıvı birikimini göstermektedir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Oturur pozisyonda bazal sıvı toplanma alanını pleura anatomisi üzerinden seçebilme.",
+      "coreKnowledge": "Plevra anatomisinde klinik girişim planı, yalnız interkostal aralık bilgisiyle değil, sıvının yerçekimine bağlı hangi plevral yansımada toplandığıyla birlikte değerlendirilir."
+    },
+    "whyCorrect": "Oturur pozisyonda plevral sıvı yerçekimine bağlı olarak akciğer tabanı ile diyafram komşuluğundaki bağımlı plevral yansıma alanında belirginleşir. Grafide bazal açı silinmesi ve USG’de diyafram üstü posterolateral sıvı cebi, apikal veya ön mediastinal plevral bölgeden çok bu bazal resesi destekler.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Nefes darlığına oturur pozisyonda bazal matite eşlik etmesi",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Akciğer grafisinde lateral bazal açı silinmesi görülmesi",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "USG’de diyafram kubbesi üstünde posterolateral sıvı cebi izlenmesi",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Apeks, ön parasternal hat ve mediastinal komşulukta baskın sıvı olmaması",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Recessus costodiaphragmaticus": "Doğru yanıttır; kostal ve diyafragmatik plevranın karşılaştığı bazal yansıma alanı, ayakta veya oturur pozisyonda plevral sıvının en erken ve en belirgin toplandığı bağımlı bölgedir. Posterolateral bazal sıvı ve kostofrenik açı silinmesi bu bölgeyle uyumludur.",
+      "Recessus costomediastinalis": "Costomediastinal reses sternuma yakın ön plevral yansıma bölgesidir ve özellikle sol ön tarafta kalp komşuluğu nedeniyle önem taşır. Bazal posterolateral sıvı birikimi ve diyafram kubbesi komşuluğu bu ön mediastinal plevral aralığı desteklemez.",
+      "Cupula pleurae": "Pleura kubbesi akciğer apeksini örten servikotorasik üst plevral bölgedir; subklavyen damarlar ve boyun kökü komşuluklarıyla ilişkilidir. Sıvının oturur pozisyonda bazalde toplanması apeks bölgesiyle açıklanamaz.",
+      "Pars mediastinalis pleurae": "Mediastinal plevra akciğerlerin mediastene bakan yüzünü örter; hilus ve perikard komşuluklarıyla ilişkilidir. Olguda sıvı en bağımlı posterolateral bazal hatta izlendiği için geniş bir mediastinal plevra tanımı yeterli değildir.",
+      "Fissura obliqua pulmonis": "Oblik fissür akciğer lobları arasında yer alan intrapulmoner yarıktır; plevral boşluğun en bağımlı toplama alanı değildir. Görüntüleme loblar arası sıvıdan çok bazal plevral sıvı birikimini göstermektedir."
+    },
+    "coreKnowledge": "Plevra anatomisinde klinik girişim planı, yalnız interkostal aralık bilgisiyle değil, sıvının yerçekimine bağlı hangi plevral yansımada toplandığıyla birlikte değerlendirilir.",
+    "examPearl": "Plevral sıvı, ayakta veya oturur pozisyonda en bağımlı bazal plevral reseste erken belirginleşir.",
+    "whyWrong": {
+      "Recessus costomediastinalis": "Costomediastinal reses sternuma yakın ön plevral yansıma bölgesidir ve özellikle sol ön tarafta kalp komşuluğu nedeniyle önem taşır. Bazal posterolateral sıvı birikimi ve diyafram kubbesi komşuluğu bu ön mediastinal plevral aralığı desteklemez.",
+      "Cupula pleurae": "Pleura kubbesi akciğer apeksini örten servikotorasik üst plevral bölgedir; subklavyen damarlar ve boyun kökü komşuluklarıyla ilişkilidir. Sıvının oturur pozisyonda bazalde toplanması apeks bölgesiyle açıklanamaz.",
+      "Pars mediastinalis pleurae": "Mediastinal plevra akciğerlerin mediastene bakan yüzünü örter; hilus ve perikard komşuluklarıyla ilişkilidir. Olguda sıvı en bağımlı posterolateral bazal hatta izlendiği için geniş bir mediastinal plevra tanımı yeterli değildir.",
+      "Fissura obliqua pulmonis": "Oblik fissür akciğer lobları arasında yer alan intrapulmoner yarıktır; plevral boşluğun en bağımlı toplama alanı değildir. Görüntüleme loblar arası sıvıdan çok bazal plevral sıvı birikimini göstermektedir."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Kolay-Orta",
+  "aiMeta": {
+    "generatedAt": "manual-v202-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial",
+    "topicControl": "thorax-pleural-recess-costodiaphragmatic-effusion-imaging"
+  },
+  "listTitle": "Bazal plevral sıvı ve girişim planı",
+  "cardTitle": "Bazal plevral sıvı ve girişim planı",
+  "coreKnowledge": "Plevra anatomisinde klinik girişim planı, yalnız interkostal aralık bilgisiyle değil, sıvının yerçekimine bağlı hangi plevral yansımada toplandığıyla birlikte değerlendirilir.",
+  "examPearl": "Plevral sıvı, ayakta veya oturur pozisyonda en bağımlı bazal plevral reseste erken belirginleşir.",
+  "whyCorrect": "Oturur pozisyonda plevral sıvı yerçekimine bağlı olarak akciğer tabanı ile diyafram komşuluğundaki bağımlı plevral yansıma alanında belirginleşir. Grafide bazal açı silinmesi ve USG’de diyafram üstü posterolateral sıvı cebi, apikal veya ön mediastinal plevral bölgeden çok bu bazal resesi destekler.",
+  "optionComparison": {
+    "Recessus costodiaphragmaticus": "Doğru yanıttır; kostal ve diyafragmatik plevranın karşılaştığı bazal yansıma alanı, ayakta veya oturur pozisyonda plevral sıvının en erken ve en belirgin toplandığı bağımlı bölgedir. Posterolateral bazal sıvı ve kostofrenik açı silinmesi bu bölgeyle uyumludur.",
+    "Recessus costomediastinalis": "Costomediastinal reses sternuma yakın ön plevral yansıma bölgesidir ve özellikle sol ön tarafta kalp komşuluğu nedeniyle önem taşır. Bazal posterolateral sıvı birikimi ve diyafram kubbesi komşuluğu bu ön mediastinal plevral aralığı desteklemez.",
+    "Cupula pleurae": "Pleura kubbesi akciğer apeksini örten servikotorasik üst plevral bölgedir; subklavyen damarlar ve boyun kökü komşuluklarıyla ilişkilidir. Sıvının oturur pozisyonda bazalde toplanması apeks bölgesiyle açıklanamaz.",
+    "Pars mediastinalis pleurae": "Mediastinal plevra akciğerlerin mediastene bakan yüzünü örter; hilus ve perikard komşuluklarıyla ilişkilidir. Olguda sıvı en bağımlı posterolateral bazal hatta izlendiği için geniş bir mediastinal plevra tanımı yeterli değildir.",
+    "Fissura obliqua pulmonis": "Oblik fissür akciğer lobları arasında yer alan intrapulmoner yarıktır; plevral boşluğun en bağımlı toplama alanı değildir. Görüntüleme loblar arası sıvıdan çok bazal plevral sıvı birikimini göstermektedir."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Nefes darlığına oturur pozisyonda bazal matite eşlik etmesi",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Akciğer grafisinde lateral bazal açı silinmesi görülmesi",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "USG’de diyafram kubbesi üstünde posterolateral sıvı cebi izlenmesi",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Apeks, ön parasternal hat ve mediastinal komşulukta baskın sıvı olmaması",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Recessus costomediastinalis": "Costomediastinal reses sternuma yakın ön plevral yansıma bölgesidir ve özellikle sol ön tarafta kalp komşuluğu nedeniyle önem taşır. Bazal posterolateral sıvı birikimi ve diyafram kubbesi komşuluğu bu ön mediastinal plevral aralığı desteklemez.",
+    "Cupula pleurae": "Pleura kubbesi akciğer apeksini örten servikotorasik üst plevral bölgedir; subklavyen damarlar ve boyun kökü komşuluklarıyla ilişkilidir. Sıvının oturur pozisyonda bazalde toplanması apeks bölgesiyle açıklanamaz.",
+    "Pars mediastinalis pleurae": "Mediastinal plevra akciğerlerin mediastene bakan yüzünü örter; hilus ve perikard komşuluklarıyla ilişkilidir. Olguda sıvı en bağımlı posterolateral bazal hatta izlendiği için geniş bir mediastinal plevra tanımı yeterli değildir.",
+    "Fissura obliqua pulmonis": "Oblik fissür akciğer lobları arasında yer alan intrapulmoner yarıktır; plevral boşluğun en bağımlı toplama alanı değildir. Görüntüleme loblar arası sıvıdan çok bazal plevral sıvı birikimini göstermektedir."
+  }
 }
+
+
 ];
 
 export const cases = attachClinicalVisualsToCases(rawCases.map(sanitizeClinicalCaseExam), clinicalVisualManifest);
