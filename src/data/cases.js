@@ -244306,7 +244306,1772 @@ export const rawCases = [
       "Periferik puberte prekoks": "Periferik puberte prekoks gonadotropinden bağımsızdır; genellikle LH baskılıdır ve over/adrenal kaynaklı hormon üretimi veya exojen temas aranır. Bu vakada uyarılmış LH yanıtı pubertal düzeydedir ve adneksiyel kitle ya da hormon teması yoktur.",
       "McCune-Albright sendromu": "McCune-Albright sendromunda otonom periferik puberte, café-au-lait makülleri ve fibröz displazi gibi bulgular beklenebilir; gonadotropin yanıtı başlangıçta baskılı olabilir. Bu vakada bu fenotipik bulgular yoktur ve yanıt santral aks aktivasyonunu destekler."
     }
+  },
+{
+  "id": "v196-new-338-bisiklet-sonrasi-ulnar-el-guclugu",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi",
+  "title": "Bisiklet sonrası elde ince hareket güçlüğü",
+  "difficulty": "Orta",
+  "clinicalFocus": "El bileği düzeyindeki ulnar sinir basısını motor-duyusal dağılım ve dorsal duyu korunumu üzerinden lokalize etme.",
+  "learningTarget": "Guyon kanalı düzeyindeki ulnar sinir etkilenmesini kubital tünel, median sinir ve radial sinir lezyonlarından ayırt edebilme.",
+  "demographics": "29 yaşında erkek hasta",
+  "setting": "Nöroloji polikliniği",
+  "chiefComplaint": "Hasta, uzun bisiklet sürüşlerinden sonra sağ elde güçsüzlük, küçük parmak tarafında uyuşma ve anahtar çevirmede zorlanma nedeniyle başvuruyor.",
+  "stem": "Hasta son bir ayda hafta sonları uzun mesafe bisiklet sürdüğünü ve sürüş sırasında avuç içinin gidona uzun süre dayandığını anlatır. İlk günlerde yalnızca serçe parmak tarafında geçici karıncalanma olmuş, son iki haftada bu his dinlenme sonrası da daha uzun sürmeye başlamıştır. Son günlerde anahtar çevirirken, fermuar tutarken ve parmaklarını hızlı hareket ettirirken sağ elinin eskisi kadar kontrollü olmadığını fark etmiştir. Dirsek çevresine çarpma, boyun ağrısı, omuzdan kola yayılan ağrı veya gece tüm elde uyuşma tariflemez. Yakınması özellikle sürüş sonrasında belirginleştiği için değerlendirilmek üzere başvurmuştur.",
+  "patientIntro": {
+    "profile": "29 yaşında erkek hasta, tekrarlayan uzun bisiklet sürüşleri sonrası elde ince motor güçlük nedeniyle nöroloji polikliniğinde değerlendiriliyor.",
+    "presentation": "Sağ elin ulnar tarafında uyuşma, kavrama sırasında güçsüzlük ve parmakları birbirine yaklaştırıp uzaklaştırmada zorlanma vardır.",
+    "historySummary": "Hasta son bir ayda hafta sonları uzun mesafe bisiklet sürdüğünü ve sürüş sırasında avuç içinin gidona uzun süre dayandığını anlatır. İlk günlerde yalnızca serçe parmak tarafında geçici karıncalanma olmuş, son iki haftada bu his dinlenme sonrası da daha uzun sürmeye başlamıştır. Son günlerde anahtar çevirirken, fermuar tutarken ve parmaklarını hızlı hareket ettirirken sağ elinin eskisi kadar kontrollü olmadığını fark etmiştir. Dirsek çevresine çarpma, boyun ağrısı, omuzdan kola yayılan ağrı veya gece tüm elde uyuşma tariflemez. Yakınması özellikle sürüş sonrasında belirginleştiği için değerlendirilmek üzere başvurmuştur."
+  },
+  "vitals": {
+    "TA": "118/76 mmHg",
+    "Nabız": "78/dk",
+    "Solunum": "16/dk",
+    "SpO2": "%99, oda havasında",
+    "Ateş": "36.6 °C",
+    "Şok indeksi": "0.66 normal"
+  },
+  "exam": [
+    "Sağ elde interosseöz kas gücü karşı tarafa göre azalmıştır; parmak abduksiyon-adduksiyon hareketleri zayıftır.",
+    "Froment testi sağda pozitiftir; kağıt tutma sırasında başparmak interfalangeal fleksiyona kaçar.",
+    "Serçe parmak ve yüzük parmağın ulnar yarısında palmar duyu azalmıştır; el sırtının ulnar tarafında duyu korunmuştur.",
+    "Başparmak oppozisyonu, ilk üç parmak duyusu ve el bileği ekstansiyonu korunmuştur. Dirsek fleksiyonunda belirgin provokasyon saptanmaz."
+  ],
+  "investigations": [
+    {
+      "id": "v196-new-338-bisiklet-sonrasi-ulnar-el-guclugu-sinir-iletim-calismasi",
+      "label": "Üst ekstremite sinir iletim çalışması",
+      "title": "Üst ekstremite sinir iletim çalışması",
+      "orderLabel": "Üst ekstremite sinir iletim çalışması",
+      "type": "neurophysiology",
+      "priority": "essential",
+      "subtype": "Üst ekstremite sinir iletim çalışması",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Ulnar sinirde el bileği düzeyinde motor iletim yavaşlaması saptanırken dorsal ulnar kutanöz duyu yanıtı korunmuştur.",
+      "clinicalMeaning": "Ulnar sinirde el bileği düzeyinde motor iletim yavaşlaması saptanırken dorsal ulnar kutanöz duyu yanıtı korunmuştur.",
+      "result": {
+        "title": "Üst ekstremite sinir iletim çalışması",
+        "summary": "Ulnar sinirde el bileği düzeyinde motor iletim yavaşlaması saptanırken dorsal ulnar kutanöz duyu yanıtı korunmuştur.",
+        "interpretation": "El bileği düzeyinde ulnar sinir etkilenimi, palmar ulnar duyu ve intrinsik el kas bulgularıyla birlikte değerlendirildiğinde lokalizasyonu destekler.",
+        "values": [
+          [
+            "Motor iletim",
+            "Ulnar sinirin el bileği segmentinde birinci dorsal interosseöz kaydında distal latans uzamış",
+            "",
+            "Lokal distal etkilenim"
+          ],
+          [
+            "Duyu yanıtı",
+            "Dorsal ulnar kutanöz duyu yanıtı korunmuş",
+            "",
+            "Lezyonun dorsal dal ayrıldıktan sonraki düzeyde olduğunu destekler"
+          ],
+          [
+            "Median sinir",
+            "Median motor ve duyu iletimleri belirgin patoloji göstermiyor",
+            "",
+            "Karpal tünel paternini desteklemez"
+          ],
+          [
+            "Servikal kök taraması",
+            "Aktif radikülopati lehine yaygın denervasyon izlenmedi",
+            "",
+            "Kök düzeyi bulgusu yok"
+          ]
+        ],
+        "rows": [
+          [
+            "Motor iletim",
+            "Ulnar sinirin el bileği segmentinde birinci dorsal interosseöz kaydında distal latans uzamış",
+            "",
+            "Lokal distal etkilenim"
+          ],
+          [
+            "Duyu yanıtı",
+            "Dorsal ulnar kutanöz duyu yanıtı korunmuş",
+            "",
+            "Lezyonun dorsal dal ayrıldıktan sonraki düzeyde olduğunu destekler"
+          ],
+          [
+            "Median sinir",
+            "Median motor ve duyu iletimleri belirgin patoloji göstermiyor",
+            "",
+            "Karpal tünel paternini desteklemez"
+          ],
+          [
+            "Servikal kök taraması",
+            "Aktif radikülopati lehine yaygın denervasyon izlenmedi",
+            "",
+            "Kök düzeyi bulgusu yok"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Motor iletim",
+          "Ulnar sinirin el bileği segmentinde birinci dorsal interosseöz kaydında distal latans uzamış",
+          "",
+          "Lokal distal etkilenim"
+        ],
+        [
+          "Duyu yanıtı",
+          "Dorsal ulnar kutanöz duyu yanıtı korunmuş",
+          "",
+          "Lezyonun dorsal dal ayrıldıktan sonraki düzeyde olduğunu destekler"
+        ],
+        [
+          "Median sinir",
+          "Median motor ve duyu iletimleri belirgin patoloji göstermiyor",
+          "",
+          "Karpal tünel paternini desteklemez"
+        ],
+        [
+          "Servikal kök taraması",
+          "Aktif radikülopati lehine yaygın denervasyon izlenmedi",
+          "",
+          "Kök düzeyi bulgusu yok"
+        ]
+      ],
+      "postAnswerExplanation": "El bileği düzeyinde ulnar sinir etkilenimi, palmar ulnar duyu ve intrinsik el kas bulgularıyla birlikte değerlendirildiğinde lokalizasyonu destekler.",
+      "interpretation": "El bileği düzeyinde ulnar sinir etkilenimi, palmar ulnar duyu ve intrinsik el kas bulgularıyla birlikte değerlendirildiğinde lokalizasyonu destekler.",
+      "explanationAfterAnswer": "El bileği düzeyinde ulnar sinir etkilenimi, palmar ulnar duyu ve intrinsik el kas bulgularıyla birlikte değerlendirildiğinde lokalizasyonu destekler."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "question": "Bu hastadaki palmar ulnar duyu azalması, interosseöz kas güçsüzlüğü ve dorsal ulnar el duyusunun korunmasını en iyi açıklayan sinir hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Nervus ulnaris",
+    "options": [
+      "Nervus medianus",
+      "Nervus ulnaris",
+      "Nervus radialis",
+      "Nervus musculocutaneus",
+      "Nervus axillaris"
+    ],
+    "question": "Bu hastadaki palmar ulnar duyu azalması, interosseöz kas güçsüzlüğü ve dorsal ulnar el duyusunun korunmasını en iyi açıklayan sinir hangisidir?",
+    "explanation": "Gidon basısı el bileğinin ulnar tarafındaki Guyon kanalı düzeyinde ulnar siniri etkileyebilir. Ulnar sinir intrinsik el kaslarının önemli bölümünü ve palmar ulnar duyu alanını taşır; dorsal ulnar kutanöz dal ise daha proksimalden ayrıldığı için Guyon kanalı lezyonunda el sırtı duyusu korunabilir. Median sinir bulgularını düşündürecek başparmak oppozisyon kaybı veya ilk üç parmak duyusu etkilenimi, radial sinir bulgularını düşündürecek el bileği ekstansiyon kaybı yoktur.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Bisiklet gidon basısı + interosseöz güçsüzlük + palmar ulnar uyuşma + dorsal ulnar duyu korunumu, Guyon kanalı düzeyinde ulnar sinir basısını düşündürür."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Palmar ulnar duyu kaybı, interosseöz kas güçsüzlüğü ve dorsal ulnar kutanöz duyunun korunması, el bileği düzeyindeki ulnar sinir basısı için birlikte lokalize edici bir paterndir.",
+      "whyCorrect": "Gidon basısı el bileğinin ulnar tarafındaki Guyon kanalı düzeyinde ulnar siniri etkileyebilir. Ulnar sinir intrinsik el kaslarının önemli bölümünü ve palmar ulnar duyu alanını taşır; dorsal ulnar kutanöz dal ise daha proksimalden ayrıldığı için Guyon kanalı lezyonunda el sırtı duyusu korunabilir. Median sinir bulgularını düşündürecek başparmak oppozisyon kaybı veya ilk üç parmak duyusu etkilenimi, radial sinir bulgularını düşündürecek el bileği ekstansiyon kaybı yoktur.",
+      "rationale": "Gidon basısı el bileğinin ulnar tarafındaki Guyon kanalı düzeyinde ulnar siniri etkileyebilir. Ulnar sinir intrinsik el kaslarının önemli bölümünü ve palmar ulnar duyu alanını taşır; dorsal ulnar kutanöz dal ise daha proksimalden ayrıldığı için Guyon kanalı lezyonunda el sırtı duyusu korunabilir. Median sinir bulgularını düşündürecek başparmak oppozisyon kaybı veya ilk üç parmak duyusu etkilenimi, radial sinir bulgularını düşündürecek el bileği ekstansiyon kaybı yoktur.",
+      "correctOptionFeedback": "Doğru yanıttır; ulnar sinir Guyon kanalı düzeyinde basıya uğradığında palmar ulnar duyu alanı ve intrinsik el kasları etkilenebilir. Dorsal ulnar kutanöz duyunun korunması, lezyonun el bileği düzeyinde ve dorsal dal ayrıldıktan sonra olduğunu ayırt ettirir.",
+      "keyClues": [
+        "Gidon basısı → el bileğinin ulnar tarafındaki Guyon kanalı çevresinde kompresyon riski oluşturur.",
+        "Parmak abduksiyon-adduksiyon zayıflığı → ulnar sinirle innerve edilen interosseöz kasları işaret eder.",
+        "Palmar ulnar duyu azalması → ulnar sinirin eldeki duyu dağılımıyla uyumludur.",
+        "Dorsal ulnar kutanöz duyunun korunması → lezyonun dorsal dal ayrıldıktan sonraki distal düzeyde olduğunu destekler."
+      ],
+      "evidenceChain": [
+        {
+          "text": "Uzun süreli gidon basısı → el bileğinde ulnar taraftaki kanal düzeyinde kompresyon mekanizması oluşturur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "İnterosseöz güçsüzlük ve Froment pozitifliği → ulnar motor dağılımın etkilendiğini gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Palmar ulnar duyu azalması → eldeki ulnar kutanöz alana uyar.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Dorsal ulnar duyu korunumu → kubital tünel yerine Guyon kanalı düzeyini destekler.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Bisiklet gidon basısı + interosseöz güçsüzlük + palmar ulnar uyuşma + dorsal ulnar duyu korunumu, Guyon kanalı düzeyinde ulnar sinir basısını düşündürür.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Bisiklet gidon basısı + interosseöz güçsüzlük + palmar ulnar uyuşma + dorsal ulnar duyu korunumu, Guyon kanalı düzeyinde ulnar sinir basısını düşündürür."
+        }
+      ],
+      "clinicalPearls": [
+        {
+          "label": "Klinik anatomi",
+          "text": "Kubital tünel lezyonu daha proksimal olduğu için dorsal ulnar kutanöz duyu da etkilenebilir; Guyon kanalı lezyonunda bu dal çoğu kez korunur."
+        }
+      ],
+      "optionComparison": {
+        "Nervus medianus": "Nervus medianus karpal tünelde etkilenirse ilk üç parmakta uyuşma, tenar güçsüzlük ve başparmak oppozisyonunda bozulma beklenir. Bu vakada yakınma ulnar iki parmak tarafında, interosseöz kaslarda ve Froment testi üzerinden belirgindir; median sinir dağılımı korunmuştur.",
+        "Nervus ulnaris": "Doğru yanıttır; ulnar sinir Guyon kanalı düzeyinde basıya uğradığında palmar ulnar duyu alanı ve intrinsik el kasları etkilenebilir. Dorsal ulnar kutanöz duyunun korunması, lezyonun el bileği düzeyinde ve dorsal dal ayrıldıktan sonra olduğunu ayırt ettirir.",
+        "Nervus radialis": "Radial sinir el bileği ve parmak ekstansiyonunu taşır; spiral oluk veya posterior interosseöz etkilenimde düşük el ya da parmak ekstansiyon kaybı beklenir. Bu hastada el bileği ekstansiyonu korunmuştur ve temel sorun parmak abduksiyon-adduksiyon hareketlerindedir.",
+        "Nervus musculocutaneus": "Musculocutaneus sinir biceps-brachialis bölgesi ve ön kol lateral duyusuyla ilişkilidir. Dirsek fleksiyonu veya ön kol lateral duyu alanında bozukluk olmadığı için eldeki intrinsik kas paternini açıklamaz.",
+        "Nervus axillaris": "Axillaris sinir deltoid ve lateral omuz duyusuyla ilişkilidir. Omuz abdüksiyonu ve rozet alanı duyusu etkilenmediğinden el bileği düzeyindeki ulnar motor-duyusal bulgularla uyumlu değildir."
+      },
+      "optionFeedback": {
+        "Nervus medianus": {
+          "explanation": "Nervus medianus karpal tünelde etkilenirse ilk üç parmakta uyuşma, tenar güçsüzlük ve başparmak oppozisyonunda bozulma beklenir. Bu vakada yakınma ulnar iki parmak tarafında, interosseöz kaslarda ve Froment testi üzerinden belirgindir; median sinir dağılımı korunmuştur."
+        },
+        "Nervus ulnaris": {
+          "explanation": "Doğru yanıttır; ulnar sinir Guyon kanalı düzeyinde basıya uğradığında palmar ulnar duyu alanı ve intrinsik el kasları etkilenebilir. Dorsal ulnar kutanöz duyunun korunması, lezyonun el bileği düzeyinde ve dorsal dal ayrıldıktan sonra olduğunu ayırt ettirir."
+        },
+        "Nervus radialis": {
+          "explanation": "Radial sinir el bileği ve parmak ekstansiyonunu taşır; spiral oluk veya posterior interosseöz etkilenimde düşük el ya da parmak ekstansiyon kaybı beklenir. Bu hastada el bileği ekstansiyonu korunmuştur ve temel sorun parmak abduksiyon-adduksiyon hareketlerindedir."
+        },
+        "Nervus musculocutaneus": {
+          "explanation": "Musculocutaneus sinir biceps-brachialis bölgesi ve ön kol lateral duyusuyla ilişkilidir. Dirsek fleksiyonu veya ön kol lateral duyu alanında bozukluk olmadığı için eldeki intrinsik kas paternini açıklamaz."
+        },
+        "Nervus axillaris": {
+          "explanation": "Axillaris sinir deltoid ve lateral omuz duyusuyla ilişkilidir. Omuz abdüksiyonu ve rozet alanı duyusu etkilenmediğinden el bileği düzeyindeki ulnar motor-duyusal bulgularla uyumlu değildir."
+        }
+      },
+      "whyWrong": {
+        "Nervus medianus": "Nervus medianus karpal tünelde etkilenirse ilk üç parmakta uyuşma, tenar güçsüzlük ve başparmak oppozisyonunda bozulma beklenir. Bu vakada yakınma ulnar iki parmak tarafında, interosseöz kaslarda ve Froment testi üzerinden belirgindir; median sinir dağılımı korunmuştur.",
+        "Nervus radialis": "Radial sinir el bileği ve parmak ekstansiyonunu taşır; spiral oluk veya posterior interosseöz etkilenimde düşük el ya da parmak ekstansiyon kaybı beklenir. Bu hastada el bileği ekstansiyonu korunmuştur ve temel sorun parmak abduksiyon-adduksiyon hareketlerindedir.",
+        "Nervus musculocutaneus": "Musculocutaneus sinir biceps-brachialis bölgesi ve ön kol lateral duyusuyla ilişkilidir. Dirsek fleksiyonu veya ön kol lateral duyu alanında bozukluk olmadığı için eldeki intrinsik kas paternini açıklamaz.",
+        "Nervus axillaris": "Axillaris sinir deltoid ve lateral omuz duyusuyla ilişkilidir. Omuz abdüksiyonu ve rozet alanı duyusu etkilenmediğinden el bileği düzeyindeki ulnar motor-duyusal bulgularla uyumlu değildir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Guyon kanalı düzeyindeki ulnar sinir etkilenmesini kubital tünel, median sinir ve radial sinir lezyonlarından ayırt edebilme.",
+      "coreKnowledge": "Guyon kanalı lezyonunda ulnar sinirin palmar duyu ve intrinsik el kas dağılımı etkilenebilir; dorsal ulnar kutanöz dal daha proksimal ayrıldığı için dorsal ulnar el duyusu korunabilir."
+    },
+    "whyCorrect": "Gidon basısı el bileğinin ulnar tarafındaki Guyon kanalı düzeyinde ulnar siniri etkileyebilir. Ulnar sinir intrinsik el kaslarının önemli bölümünü ve palmar ulnar duyu alanını taşır; dorsal ulnar kutanöz dal ise daha proksimalden ayrıldığı için Guyon kanalı lezyonunda el sırtı duyusu korunabilir. Median sinir bulgularını düşündürecek başparmak oppozisyon kaybı veya ilk üç parmak duyusu etkilenimi, radial sinir bulgularını düşündürecek el bileği ekstansiyon kaybı yoktur.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Uzun süreli gidon basısı → el bileğinde ulnar taraftaki kanal düzeyinde kompresyon mekanizması oluşturur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "İnterosseöz güçsüzlük ve Froment pozitifliği → ulnar motor dağılımın etkilendiğini gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Palmar ulnar duyu azalması → eldeki ulnar kutanöz alana uyar.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Dorsal ulnar duyu korunumu → kubital tünel yerine Guyon kanalı düzeyini destekler.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Nervus medianus": "Nervus medianus karpal tünelde etkilenirse ilk üç parmakta uyuşma, tenar güçsüzlük ve başparmak oppozisyonunda bozulma beklenir. Bu vakada yakınma ulnar iki parmak tarafında, interosseöz kaslarda ve Froment testi üzerinden belirgindir; median sinir dağılımı korunmuştur.",
+      "Nervus ulnaris": "Doğru yanıttır; ulnar sinir Guyon kanalı düzeyinde basıya uğradığında palmar ulnar duyu alanı ve intrinsik el kasları etkilenebilir. Dorsal ulnar kutanöz duyunun korunması, lezyonun el bileği düzeyinde ve dorsal dal ayrıldıktan sonra olduğunu ayırt ettirir.",
+      "Nervus radialis": "Radial sinir el bileği ve parmak ekstansiyonunu taşır; spiral oluk veya posterior interosseöz etkilenimde düşük el ya da parmak ekstansiyon kaybı beklenir. Bu hastada el bileği ekstansiyonu korunmuştur ve temel sorun parmak abduksiyon-adduksiyon hareketlerindedir.",
+      "Nervus musculocutaneus": "Musculocutaneus sinir biceps-brachialis bölgesi ve ön kol lateral duyusuyla ilişkilidir. Dirsek fleksiyonu veya ön kol lateral duyu alanında bozukluk olmadığı için eldeki intrinsik kas paternini açıklamaz.",
+      "Nervus axillaris": "Axillaris sinir deltoid ve lateral omuz duyusuyla ilişkilidir. Omuz abdüksiyonu ve rozet alanı duyusu etkilenmediğinden el bileği düzeyindeki ulnar motor-duyusal bulgularla uyumlu değildir."
+    },
+    "optionFeedback": {
+      "Nervus medianus": {
+        "explanation": "Nervus medianus karpal tünelde etkilenirse ilk üç parmakta uyuşma, tenar güçsüzlük ve başparmak oppozisyonunda bozulma beklenir. Bu vakada yakınma ulnar iki parmak tarafında, interosseöz kaslarda ve Froment testi üzerinden belirgindir; median sinir dağılımı korunmuştur."
+      },
+      "Nervus ulnaris": {
+        "explanation": "Doğru yanıttır; ulnar sinir Guyon kanalı düzeyinde basıya uğradığında palmar ulnar duyu alanı ve intrinsik el kasları etkilenebilir. Dorsal ulnar kutanöz duyunun korunması, lezyonun el bileği düzeyinde ve dorsal dal ayrıldıktan sonra olduğunu ayırt ettirir."
+      },
+      "Nervus radialis": {
+        "explanation": "Radial sinir el bileği ve parmak ekstansiyonunu taşır; spiral oluk veya posterior interosseöz etkilenimde düşük el ya da parmak ekstansiyon kaybı beklenir. Bu hastada el bileği ekstansiyonu korunmuştur ve temel sorun parmak abduksiyon-adduksiyon hareketlerindedir."
+      },
+      "Nervus musculocutaneus": {
+        "explanation": "Musculocutaneus sinir biceps-brachialis bölgesi ve ön kol lateral duyusuyla ilişkilidir. Dirsek fleksiyonu veya ön kol lateral duyu alanında bozukluk olmadığı için eldeki intrinsik kas paternini açıklamaz."
+      },
+      "Nervus axillaris": {
+        "explanation": "Axillaris sinir deltoid ve lateral omuz duyusuyla ilişkilidir. Omuz abdüksiyonu ve rozet alanı duyusu etkilenmediğinden el bileği düzeyindeki ulnar motor-duyusal bulgularla uyumlu değildir."
+      }
+    },
+    "coreKnowledge": "Guyon kanalı lezyonunda ulnar sinirin palmar duyu ve intrinsik el kas dağılımı etkilenebilir; dorsal ulnar kutanöz dal daha proksimal ayrıldığı için dorsal ulnar el duyusu korunabilir.",
+    "examPearl": "Bisiklet gidon basısı + interosseöz güçsüzlük + palmar ulnar uyuşma + dorsal ulnar duyu korunumu, Guyon kanalı düzeyinde ulnar sinir basısını düşündürür.",
+    "whyWrong": {
+      "Nervus medianus": "Nervus medianus karpal tünelde etkilenirse ilk üç parmakta uyuşma, tenar güçsüzlük ve başparmak oppozisyonunda bozulma beklenir. Bu vakada yakınma ulnar iki parmak tarafında, interosseöz kaslarda ve Froment testi üzerinden belirgindir; median sinir dağılımı korunmuştur.",
+      "Nervus radialis": "Radial sinir el bileği ve parmak ekstansiyonunu taşır; spiral oluk veya posterior interosseöz etkilenimde düşük el ya da parmak ekstansiyon kaybı beklenir. Bu hastada el bileği ekstansiyonu korunmuştur ve temel sorun parmak abduksiyon-adduksiyon hareketlerindedir.",
+      "Nervus musculocutaneus": "Musculocutaneus sinir biceps-brachialis bölgesi ve ön kol lateral duyusuyla ilişkilidir. Dirsek fleksiyonu veya ön kol lateral duyu alanında bozukluk olmadığı için eldeki intrinsik kas paternini açıklamaz.",
+      "Nervus axillaris": "Axillaris sinir deltoid ve lateral omuz duyusuyla ilişkilidir. Omuz abdüksiyonu ve rozet alanı duyusu etkilenmediğinden el bileği düzeyindeki ulnar motor-duyusal bulgularla uyumlu değildir."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Orta",
+  "aiMeta": {
+    "generatedAt": "manual-v196-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial"
+  },
+  "listTitle": "Bisiklet sonrası elde ince hareket güçlüğü",
+  "cardTitle": "Bisiklet sonrası elde ince hareket güçlüğü",
+  "coreKnowledge": "Guyon kanalı lezyonunda ulnar sinirin palmar duyu ve intrinsik el kas dağılımı etkilenebilir; dorsal ulnar kutanöz dal daha proksimal ayrıldığı için dorsal ulnar el duyusu korunabilir.",
+  "examPearl": "Bisiklet gidon basısı + interosseöz güçsüzlük + palmar ulnar uyuşma + dorsal ulnar duyu korunumu, Guyon kanalı düzeyinde ulnar sinir basısını düşündürür.",
+  "whyCorrect": "Gidon basısı el bileğinin ulnar tarafındaki Guyon kanalı düzeyinde ulnar siniri etkileyebilir. Ulnar sinir intrinsik el kaslarının önemli bölümünü ve palmar ulnar duyu alanını taşır; dorsal ulnar kutanöz dal ise daha proksimalden ayrıldığı için Guyon kanalı lezyonunda el sırtı duyusu korunabilir. Median sinir bulgularını düşündürecek başparmak oppozisyon kaybı veya ilk üç parmak duyusu etkilenimi, radial sinir bulgularını düşündürecek el bileği ekstansiyon kaybı yoktur.",
+  "optionComparison": {
+    "Nervus medianus": "Nervus medianus karpal tünelde etkilenirse ilk üç parmakta uyuşma, tenar güçsüzlük ve başparmak oppozisyonunda bozulma beklenir. Bu vakada yakınma ulnar iki parmak tarafında, interosseöz kaslarda ve Froment testi üzerinden belirgindir; median sinir dağılımı korunmuştur.",
+    "Nervus ulnaris": "Doğru yanıttır; ulnar sinir Guyon kanalı düzeyinde basıya uğradığında palmar ulnar duyu alanı ve intrinsik el kasları etkilenebilir. Dorsal ulnar kutanöz duyunun korunması, lezyonun el bileği düzeyinde ve dorsal dal ayrıldıktan sonra olduğunu ayırt ettirir.",
+    "Nervus radialis": "Radial sinir el bileği ve parmak ekstansiyonunu taşır; spiral oluk veya posterior interosseöz etkilenimde düşük el ya da parmak ekstansiyon kaybı beklenir. Bu hastada el bileği ekstansiyonu korunmuştur ve temel sorun parmak abduksiyon-adduksiyon hareketlerindedir.",
+    "Nervus musculocutaneus": "Musculocutaneus sinir biceps-brachialis bölgesi ve ön kol lateral duyusuyla ilişkilidir. Dirsek fleksiyonu veya ön kol lateral duyu alanında bozukluk olmadığı için eldeki intrinsik kas paternini açıklamaz.",
+    "Nervus axillaris": "Axillaris sinir deltoid ve lateral omuz duyusuyla ilişkilidir. Omuz abdüksiyonu ve rozet alanı duyusu etkilenmediğinden el bileği düzeyindeki ulnar motor-duyusal bulgularla uyumlu değildir."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Uzun süreli gidon basısı → el bileğinde ulnar taraftaki kanal düzeyinde kompresyon mekanizması oluşturur.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "İnterosseöz güçsüzlük ve Froment pozitifliği → ulnar motor dağılımın etkilendiğini gösterir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Palmar ulnar duyu azalması → eldeki ulnar kutanöz alana uyar.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Dorsal ulnar duyu korunumu → kubital tünel yerine Guyon kanalı düzeyini destekler.",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Nervus medianus": "Nervus medianus karpal tünelde etkilenirse ilk üç parmakta uyuşma, tenar güçsüzlük ve başparmak oppozisyonunda bozulma beklenir. Bu vakada yakınma ulnar iki parmak tarafında, interosseöz kaslarda ve Froment testi üzerinden belirgindir; median sinir dağılımı korunmuştur.",
+    "Nervus radialis": "Radial sinir el bileği ve parmak ekstansiyonunu taşır; spiral oluk veya posterior interosseöz etkilenimde düşük el ya da parmak ekstansiyon kaybı beklenir. Bu hastada el bileği ekstansiyonu korunmuştur ve temel sorun parmak abduksiyon-adduksiyon hareketlerindedir.",
+    "Nervus musculocutaneus": "Musculocutaneus sinir biceps-brachialis bölgesi ve ön kol lateral duyusuyla ilişkilidir. Dirsek fleksiyonu veya ön kol lateral duyu alanında bozukluk olmadığı için eldeki intrinsik kas paternini açıklamaz.",
+    "Nervus axillaris": "Axillaris sinir deltoid ve lateral omuz duyusuyla ilişkilidir. Omuz abdüksiyonu ve rozet alanı duyusu etkilenmediğinden el bileği düzeyindeki ulnar motor-duyusal bulgularla uyumlu değildir."
   }
+},
+{
+  "id": "v196-new-339-ayak-bilegi-ic-yaninda-yanma-ve-uyusma",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi",
+  "title": "Ayak bileği iç yanında yanma ve uyuşma",
+  "difficulty": "Orta",
+  "clinicalFocus": "Tarsal tünel düzeyindeki tibial sinir basısını plantar duyu ve intrinsik ayak kas fonksiyonu üzerinden ayırt etme.",
+  "learningTarget": "Medial malleol arkasından geçen tibial sinir dağılımını peroneal, sural ve safen sinir duyusal alanlarından ayırabilme.",
+  "demographics": "47 yaşında kadın hasta",
+  "setting": "Fizik tedavi ve rehabilitasyon polikliniği",
+  "chiefComplaint": "Hasta, sağ ayak tabanında yanma, gece artan karıncalanma ve uzun süre ayakta kalınca artan iç ayak bileği ağrısı nedeniyle başvuruyor.",
+  "stem": "Hasta yaklaşık iki aydır gün sonunda sağ ayak tabanında yanma ve karıncalanma hissettiğini anlatır. Market çalışanı olduğu için vardiya boyunca uzun süre ayakta kalmakta, yakınması özellikle mesai sonunda ve dar ayakkabı giydiği günlerde artmaktadır. Başlangıçta yalnızca topuk çevresinde hissettiği rahatsızlık zamanla ayak tabanına ve parmaklara doğru yayılmıştır. Belden bacağa yayılan ağrı, diz dış yanında travma veya ayak sırtında belirgin uyuşma tariflemez. Gece uykudan uyandıran yanma başladığı için değerlendirme istemiştir.",
+  "patientIntro": {
+    "profile": "47 yaşında kadın hasta, uzun süre ayakta kalınca artan plantar yanma ve uyuşma nedeniyle poliklinikte değerlendiriliyor.",
+    "presentation": "Sağ ayak tabanında yanma, topuk-medial ayak bileği hattında hassasiyet ve parmak fleksiyonunda hafif güçsüzlük vardır.",
+    "historySummary": "Hasta yaklaşık iki aydır gün sonunda sağ ayak tabanında yanma ve karıncalanma hissettiğini anlatır. Market çalışanı olduğu için vardiya boyunca uzun süre ayakta kalmakta, yakınması özellikle mesai sonunda ve dar ayakkabı giydiği günlerde artmaktadır. Başlangıçta yalnızca topuk çevresinde hissettiği rahatsızlık zamanla ayak tabanına ve parmaklara doğru yayılmıştır. Belden bacağa yayılan ağrı, diz dış yanında travma veya ayak sırtında belirgin uyuşma tariflemez. Gece uykudan uyandıran yanma başladığı için değerlendirme istemiştir."
+  },
+  "vitals": {
+    "TA": "126/80 mmHg",
+    "Nabız": "82/dk",
+    "Solunum": "16/dk",
+    "SpO2": "%98, oda havasında",
+    "Ateş": "36.7 °C",
+    "Şok indeksi": "0.65 normal"
+  },
+  "exam": [
+    "Sağ medial malleol posteriorunda palpasyonla hassasiyet ve Tinel benzeri parestezi oluşur.",
+    "Ayak tabanında özellikle medial ve lateral plantar alanda hafif dokunma duyusu azalmıştır; ayak sırtı duyusu korunmuştur.",
+    "Parmak fleksiyonunda ve ayak intrinsik kas aktivasyonunda karşı tarafa göre hafif güçsüzlük izlenir.",
+    "Ayak dorsifleksiyonu ve başparmak ekstansiyonu tamdır; lateral ayak kenarında izole sural duyu kaybı yoktur."
+  ],
+  "investigations": [
+    {
+      "id": "v196-new-339-ayak-bilegi-ic-yaninda-yanma-ve-uyusma-ayak-bilegi-usg-ve-iletim",
+      "label": "Ayak bileği ultrasonografi ve sinir iletim bulgusu",
+      "title": "Ayak bileği ultrasonografi ve sinir iletim bulgusu",
+      "orderLabel": "Ayak bileği ultrasonografi ve sinir iletim bulgusu",
+      "type": "ultrasound",
+      "priority": "essential",
+      "subtype": "Ayak bileği ultrasonografi ve sinir iletim bulgusu",
+      "category": "imaging",
+      "testTypeCategory": "imaging",
+      "summary": "Medial malleol arkasında fleksör retinakulum altında tibial sinir çevresinde daralma bulgusu ve plantar duyu iletiminde gecikme saptanmıştır.",
+      "clinicalMeaning": "Medial malleol arkasında fleksör retinakulum altında tibial sinir çevresinde daralma bulgusu ve plantar duyu iletiminde gecikme saptanmıştır.",
+      "result": {
+        "title": "Ayak bileği ultrasonografi ve sinir iletim bulgusu",
+        "summary": "Medial malleol arkasında fleksör retinakulum altında tibial sinir çevresinde daralma bulgusu ve plantar duyu iletiminde gecikme saptanmıştır.",
+        "interpretation": "Medial malleol arkasındaki tünel düzeyi, plantar duyu değişikliği ve parmak fleksiyon/intrinsik kas bulgularıyla aynı anatomik dağılımda birleşmektedir.",
+        "values": [
+          [
+            "Ultrasonografik lokalizasyon",
+            "Medial malleol posteriorunda fleksör retinakulum altında sinir çevresinde hafif kalınlaşma ve bası görünümü",
+            "",
+            "Tarsal tünel düzeyi"
+          ],
+          [
+            "Medial plantar duyu iletimi",
+            "Karşı tarafla kıyaslandığında latans uzamış",
+            "",
+            "Plantar duyu dalı etkilenimi"
+          ],
+          [
+            "Derin peroneal motor yanıt",
+            "Dorsal ayak kası kaydında belirgin patoloji yok",
+            "",
+            "Anterior kompartman paternini desteklemez"
+          ],
+          [
+            "Ayak sırtı duyusu",
+            "Klinik olarak korunmuş",
+            "",
+            "Peroneal duyu alanı korunmuş"
+          ]
+        ],
+        "rows": [
+          [
+            "Ultrasonografik lokalizasyon",
+            "Medial malleol posteriorunda fleksör retinakulum altında sinir çevresinde hafif kalınlaşma ve bası görünümü",
+            "",
+            "Tarsal tünel düzeyi"
+          ],
+          [
+            "Medial plantar duyu iletimi",
+            "Karşı tarafla kıyaslandığında latans uzamış",
+            "",
+            "Plantar duyu dalı etkilenimi"
+          ],
+          [
+            "Derin peroneal motor yanıt",
+            "Dorsal ayak kası kaydında belirgin patoloji yok",
+            "",
+            "Anterior kompartman paternini desteklemez"
+          ],
+          [
+            "Ayak sırtı duyusu",
+            "Klinik olarak korunmuş",
+            "",
+            "Peroneal duyu alanı korunmuş"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Ultrasonografik lokalizasyon",
+          "Medial malleol posteriorunda fleksör retinakulum altında sinir çevresinde hafif kalınlaşma ve bası görünümü",
+          "",
+          "Tarsal tünel düzeyi"
+        ],
+        [
+          "Medial plantar duyu iletimi",
+          "Karşı tarafla kıyaslandığında latans uzamış",
+          "",
+          "Plantar duyu dalı etkilenimi"
+        ],
+        [
+          "Derin peroneal motor yanıt",
+          "Dorsal ayak kası kaydında belirgin patoloji yok",
+          "",
+          "Anterior kompartman paternini desteklemez"
+        ],
+        [
+          "Ayak sırtı duyusu",
+          "Klinik olarak korunmuş",
+          "",
+          "Peroneal duyu alanı korunmuş"
+        ]
+      ],
+      "postAnswerExplanation": "Medial malleol arkasındaki tünel düzeyi, plantar duyu değişikliği ve parmak fleksiyon/intrinsik kas bulgularıyla aynı anatomik dağılımda birleşmektedir.",
+      "interpretation": "Medial malleol arkasındaki tünel düzeyi, plantar duyu değişikliği ve parmak fleksiyon/intrinsik kas bulgularıyla aynı anatomik dağılımda birleşmektedir.",
+      "explanationAfterAnswer": "Medial malleol arkasındaki tünel düzeyi, plantar duyu değişikliği ve parmak fleksiyon/intrinsik kas bulgularıyla aynı anatomik dağılımda birleşmektedir."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "question": "Bu hastadaki plantar yanma, medial malleol posteriorunda provokasyon ve parmak fleksiyon-intrinsik kas güçsüzlüğünü en iyi açıklayan sinir hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Nervus tibialis",
+    "options": [
+      "Nervus tibialis",
+      "Nervus fibularis profundus",
+      "Nervus fibularis superficialis",
+      "Nervus suralis",
+      "Nervus saphenus"
+    ],
+    "question": "Bu hastadaki plantar yanma, medial malleol posteriorunda provokasyon ve parmak fleksiyon-intrinsik kas güçsüzlüğünü en iyi açıklayan sinir hangisidir?",
+    "explanation": "Nervus tibialis medial malleol arkasında tarsal tünelden geçer ve medial-lateral plantar dallarıyla ayak tabanı duyusu ile ayak intrinsik kaslarının önemli bölümünü taşır. Bu vakada plantar yanma, tarsal tünel üzerinde Tinel benzeri parestezi ve parmak fleksiyon/intrinsik kas zayıflığı aynı dağılımı destekler. Ayak sırtı duyusunun ve dorsifleksiyonun korunması peroneal sinirleri, lateral ayak kenarında izole duyu kaybı olmaması sural siniri, medial bacak-ayak kenarı paterninin olmaması saphenusu geri plana iter.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Plantar yanma + medial malleol posteriorunda Tinel + ayak sırtı duyusunun korunması, tarsal tünel düzeyindeki tibial sinir etkilenimini düşündürür."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Medial malleol arkasındaki provokasyon bulgusu ile plantar duyu ve intrinsik ayak kas bulgularının birleşmesi tarsal tünel düzeyindeki tibial sinir etkilenimini gösterir.",
+      "whyCorrect": "Nervus tibialis medial malleol arkasında tarsal tünelden geçer ve medial-lateral plantar dallarıyla ayak tabanı duyusu ile ayak intrinsik kaslarının önemli bölümünü taşır. Bu vakada plantar yanma, tarsal tünel üzerinde Tinel benzeri parestezi ve parmak fleksiyon/intrinsik kas zayıflığı aynı dağılımı destekler. Ayak sırtı duyusunun ve dorsifleksiyonun korunması peroneal sinirleri, lateral ayak kenarında izole duyu kaybı olmaması sural siniri, medial bacak-ayak kenarı paterninin olmaması saphenusu geri plana iter.",
+      "rationale": "Nervus tibialis medial malleol arkasında tarsal tünelden geçer ve medial-lateral plantar dallarıyla ayak tabanı duyusu ile ayak intrinsik kaslarının önemli bölümünü taşır. Bu vakada plantar yanma, tarsal tünel üzerinde Tinel benzeri parestezi ve parmak fleksiyon/intrinsik kas zayıflığı aynı dağılımı destekler. Ayak sırtı duyusunun ve dorsifleksiyonun korunması peroneal sinirleri, lateral ayak kenarında izole duyu kaybı olmaması sural siniri, medial bacak-ayak kenarı paterninin olmaması saphenusu geri plana iter.",
+      "correctOptionFeedback": "Doğru yanıttır; tibial sinir tarsal tünelden geçer ve plantar dalları ayak tabanı duyusu ile intrinsik kasların önemli kısmını taşır. Medial malleol posteriorunda provokasyon, plantar yanma ve parmak fleksiyon-intrinsik kas zayıflığı aynı anatomik hattı gösterir.",
+      "keyClues": [
+        "Medial malleol posteriorunda hassasiyet ve parestezi → tarsal tünel lokalizasyonunu destekler.",
+        "Ayak tabanında yanma ve duyu azalması → plantar dalların dağılımına uyar.",
+        "Parmak fleksiyonu ve intrinsik ayak kas aktivasyonunda zayıflık → tibial motor dağılımı düşündürür.",
+        "Ayak sırtı duyusu ve dorsifleksiyonun korunması → peroneal sinir seçeneklerini zayıflatır."
+      ],
+      "evidenceChain": [
+        {
+          "text": "Uzun süre ayakta kalma ve dar ayakkabı ile artan yakınma → tünel düzeyinde kompresyonu klinik olarak destekler.",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "text": "Medial malleol posteriorunda Tinel benzeri parestezi → tibial sinirin geçtiği tarsal tünel hattına lokalize bulgudur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Plantar duyu azalması → medial ve lateral plantar dalların duyusal dağılımıyla uyumludur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Dorsifleksiyon ve ayak sırtı duyusunun korunması → derin/yüzeyel peroneal sinir etkilenimini desteklemez.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Plantar yanma + medial malleol posteriorunda Tinel + ayak sırtı duyusunun korunması, tarsal tünel düzeyindeki tibial sinir etkilenimini düşündürür.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Plantar yanma + medial malleol posteriorunda Tinel + ayak sırtı duyusunun korunması, tarsal tünel düzeyindeki tibial sinir etkilenimini düşündürür."
+        }
+      ],
+      "clinicalPearls": [
+        {
+          "label": "Klinik anatomi",
+          "text": "Tarsal tünelde önden arkaya tibialis posterior, flexor digitorum longus, posterior tibial damarlar, tibial sinir ve flexor hallucis longus yapıları medial malleol arkasında yakın komşuluktadır."
+        }
+      ],
+      "optionComparison": {
+        "Nervus tibialis": "Doğru yanıttır; tibial sinir tarsal tünelden geçer ve plantar dalları ayak tabanı duyusu ile intrinsik kasların önemli kısmını taşır. Medial malleol posteriorunda provokasyon, plantar yanma ve parmak fleksiyon-intrinsik kas zayıflığı aynı anatomik hattı gösterir.",
+        "Nervus fibularis profundus": "Derin fibular sinir dorsifleksiyon, başparmak ekstansiyonu ve birinci web aralığı duyusuyla ilişkilidir. Bu hastada dorsifleksiyon ve başparmak ekstansiyonu korunmuş, yakınma ayak tabanına yerleşmiştir.",
+        "Nervus fibularis superficialis": "Yüzeyel fibular sinir ayak sırtının çoğu ve eversiyon kaslarıyla ilişkilidir. Plantar yanma ve medial malleol arkasında Tinel bulgusu bu sinirin anatomik seyrine uymaz.",
+        "Nervus suralis": "Sural sinir lateral ayak kenarı ve posterolateral bacak duyusunu taşır; motor fonksiyonu yoktur. Bu olguda plantar yaygın duyu değişikliği ve parmak fleksiyon-intrinsik kas güçsüzlüğü motor-duyusal bir tibial patern oluşturur.",
+        "Nervus saphenus": "Saphenus sinir femoral sinirin saf duyusal dalıdır ve medial bacak ile medial ayak kenarında duyu taşır. Ayak tabanı duyusu ve intrinsik ayak kas fonksiyonu ile ilişkili olmadığı için bu vaka paternini açıklamaz."
+      },
+      "optionFeedback": {
+        "Nervus tibialis": {
+          "explanation": "Doğru yanıttır; tibial sinir tarsal tünelden geçer ve plantar dalları ayak tabanı duyusu ile intrinsik kasların önemli kısmını taşır. Medial malleol posteriorunda provokasyon, plantar yanma ve parmak fleksiyon-intrinsik kas zayıflığı aynı anatomik hattı gösterir."
+        },
+        "Nervus fibularis profundus": {
+          "explanation": "Derin fibular sinir dorsifleksiyon, başparmak ekstansiyonu ve birinci web aralığı duyusuyla ilişkilidir. Bu hastada dorsifleksiyon ve başparmak ekstansiyonu korunmuş, yakınma ayak tabanına yerleşmiştir."
+        },
+        "Nervus fibularis superficialis": {
+          "explanation": "Yüzeyel fibular sinir ayak sırtının çoğu ve eversiyon kaslarıyla ilişkilidir. Plantar yanma ve medial malleol arkasında Tinel bulgusu bu sinirin anatomik seyrine uymaz."
+        },
+        "Nervus suralis": {
+          "explanation": "Sural sinir lateral ayak kenarı ve posterolateral bacak duyusunu taşır; motor fonksiyonu yoktur. Bu olguda plantar yaygın duyu değişikliği ve parmak fleksiyon-intrinsik kas güçsüzlüğü motor-duyusal bir tibial patern oluşturur."
+        },
+        "Nervus saphenus": {
+          "explanation": "Saphenus sinir femoral sinirin saf duyusal dalıdır ve medial bacak ile medial ayak kenarında duyu taşır. Ayak tabanı duyusu ve intrinsik ayak kas fonksiyonu ile ilişkili olmadığı için bu vaka paternini açıklamaz."
+        }
+      },
+      "whyWrong": {
+        "Nervus fibularis profundus": "Derin fibular sinir dorsifleksiyon, başparmak ekstansiyonu ve birinci web aralığı duyusuyla ilişkilidir. Bu hastada dorsifleksiyon ve başparmak ekstansiyonu korunmuş, yakınma ayak tabanına yerleşmiştir.",
+        "Nervus fibularis superficialis": "Yüzeyel fibular sinir ayak sırtının çoğu ve eversiyon kaslarıyla ilişkilidir. Plantar yanma ve medial malleol arkasında Tinel bulgusu bu sinirin anatomik seyrine uymaz.",
+        "Nervus suralis": "Sural sinir lateral ayak kenarı ve posterolateral bacak duyusunu taşır; motor fonksiyonu yoktur. Bu olguda plantar yaygın duyu değişikliği ve parmak fleksiyon-intrinsik kas güçsüzlüğü motor-duyusal bir tibial patern oluşturur.",
+        "Nervus saphenus": "Saphenus sinir femoral sinirin saf duyusal dalıdır ve medial bacak ile medial ayak kenarında duyu taşır. Ayak tabanı duyusu ve intrinsik ayak kas fonksiyonu ile ilişkili olmadığı için bu vaka paternini açıklamaz."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Medial malleol arkasından geçen tibial sinir dağılımını peroneal, sural ve safen sinir duyusal alanlarından ayırabilme.",
+      "coreKnowledge": "Tibial sinir tarsal tünelde medial malleol arkasından geçer; plantar duyu, parmak fleksiyonu ve intrinsik ayak kas fonksiyonları tibial/plantar dallarla ilişkilidir."
+    },
+    "whyCorrect": "Nervus tibialis medial malleol arkasında tarsal tünelden geçer ve medial-lateral plantar dallarıyla ayak tabanı duyusu ile ayak intrinsik kaslarının önemli bölümünü taşır. Bu vakada plantar yanma, tarsal tünel üzerinde Tinel benzeri parestezi ve parmak fleksiyon/intrinsik kas zayıflığı aynı dağılımı destekler. Ayak sırtı duyusunun ve dorsifleksiyonun korunması peroneal sinirleri, lateral ayak kenarında izole duyu kaybı olmaması sural siniri, medial bacak-ayak kenarı paterninin olmaması saphenusu geri plana iter.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Uzun süre ayakta kalma ve dar ayakkabı ile artan yakınma → tünel düzeyinde kompresyonu klinik olarak destekler.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Medial malleol posteriorunda Tinel benzeri parestezi → tibial sinirin geçtiği tarsal tünel hattına lokalize bulgudur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Plantar duyu azalması → medial ve lateral plantar dalların duyusal dağılımıyla uyumludur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Dorsifleksiyon ve ayak sırtı duyusunun korunması → derin/yüzeyel peroneal sinir etkilenimini desteklemez.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Nervus tibialis": "Doğru yanıttır; tibial sinir tarsal tünelden geçer ve plantar dalları ayak tabanı duyusu ile intrinsik kasların önemli kısmını taşır. Medial malleol posteriorunda provokasyon, plantar yanma ve parmak fleksiyon-intrinsik kas zayıflığı aynı anatomik hattı gösterir.",
+      "Nervus fibularis profundus": "Derin fibular sinir dorsifleksiyon, başparmak ekstansiyonu ve birinci web aralığı duyusuyla ilişkilidir. Bu hastada dorsifleksiyon ve başparmak ekstansiyonu korunmuş, yakınma ayak tabanına yerleşmiştir.",
+      "Nervus fibularis superficialis": "Yüzeyel fibular sinir ayak sırtının çoğu ve eversiyon kaslarıyla ilişkilidir. Plantar yanma ve medial malleol arkasında Tinel bulgusu bu sinirin anatomik seyrine uymaz.",
+      "Nervus suralis": "Sural sinir lateral ayak kenarı ve posterolateral bacak duyusunu taşır; motor fonksiyonu yoktur. Bu olguda plantar yaygın duyu değişikliği ve parmak fleksiyon-intrinsik kas güçsüzlüğü motor-duyusal bir tibial patern oluşturur.",
+      "Nervus saphenus": "Saphenus sinir femoral sinirin saf duyusal dalıdır ve medial bacak ile medial ayak kenarında duyu taşır. Ayak tabanı duyusu ve intrinsik ayak kas fonksiyonu ile ilişkili olmadığı için bu vaka paternini açıklamaz."
+    },
+    "optionFeedback": {
+      "Nervus tibialis": {
+        "explanation": "Doğru yanıttır; tibial sinir tarsal tünelden geçer ve plantar dalları ayak tabanı duyusu ile intrinsik kasların önemli kısmını taşır. Medial malleol posteriorunda provokasyon, plantar yanma ve parmak fleksiyon-intrinsik kas zayıflığı aynı anatomik hattı gösterir."
+      },
+      "Nervus fibularis profundus": {
+        "explanation": "Derin fibular sinir dorsifleksiyon, başparmak ekstansiyonu ve birinci web aralığı duyusuyla ilişkilidir. Bu hastada dorsifleksiyon ve başparmak ekstansiyonu korunmuş, yakınma ayak tabanına yerleşmiştir."
+      },
+      "Nervus fibularis superficialis": {
+        "explanation": "Yüzeyel fibular sinir ayak sırtının çoğu ve eversiyon kaslarıyla ilişkilidir. Plantar yanma ve medial malleol arkasında Tinel bulgusu bu sinirin anatomik seyrine uymaz."
+      },
+      "Nervus suralis": {
+        "explanation": "Sural sinir lateral ayak kenarı ve posterolateral bacak duyusunu taşır; motor fonksiyonu yoktur. Bu olguda plantar yaygın duyu değişikliği ve parmak fleksiyon-intrinsik kas güçsüzlüğü motor-duyusal bir tibial patern oluşturur."
+      },
+      "Nervus saphenus": {
+        "explanation": "Saphenus sinir femoral sinirin saf duyusal dalıdır ve medial bacak ile medial ayak kenarında duyu taşır. Ayak tabanı duyusu ve intrinsik ayak kas fonksiyonu ile ilişkili olmadığı için bu vaka paternini açıklamaz."
+      }
+    },
+    "coreKnowledge": "Tibial sinir tarsal tünelde medial malleol arkasından geçer; plantar duyu, parmak fleksiyonu ve intrinsik ayak kas fonksiyonları tibial/plantar dallarla ilişkilidir.",
+    "examPearl": "Plantar yanma + medial malleol posteriorunda Tinel + ayak sırtı duyusunun korunması, tarsal tünel düzeyindeki tibial sinir etkilenimini düşündürür.",
+    "whyWrong": {
+      "Nervus fibularis profundus": "Derin fibular sinir dorsifleksiyon, başparmak ekstansiyonu ve birinci web aralığı duyusuyla ilişkilidir. Bu hastada dorsifleksiyon ve başparmak ekstansiyonu korunmuş, yakınma ayak tabanına yerleşmiştir.",
+      "Nervus fibularis superficialis": "Yüzeyel fibular sinir ayak sırtının çoğu ve eversiyon kaslarıyla ilişkilidir. Plantar yanma ve medial malleol arkasında Tinel bulgusu bu sinirin anatomik seyrine uymaz.",
+      "Nervus suralis": "Sural sinir lateral ayak kenarı ve posterolateral bacak duyusunu taşır; motor fonksiyonu yoktur. Bu olguda plantar yaygın duyu değişikliği ve parmak fleksiyon-intrinsik kas güçsüzlüğü motor-duyusal bir tibial patern oluşturur.",
+      "Nervus saphenus": "Saphenus sinir femoral sinirin saf duyusal dalıdır ve medial bacak ile medial ayak kenarında duyu taşır. Ayak tabanı duyusu ve intrinsik ayak kas fonksiyonu ile ilişkili olmadığı için bu vaka paternini açıklamaz."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Orta",
+  "aiMeta": {
+    "generatedAt": "manual-v196-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial"
+  },
+  "listTitle": "Ayak bileği iç yanında yanma ve uyuşma",
+  "cardTitle": "Ayak bileği iç yanında yanma ve uyuşma",
+  "coreKnowledge": "Tibial sinir tarsal tünelde medial malleol arkasından geçer; plantar duyu, parmak fleksiyonu ve intrinsik ayak kas fonksiyonları tibial/plantar dallarla ilişkilidir.",
+  "examPearl": "Plantar yanma + medial malleol posteriorunda Tinel + ayak sırtı duyusunun korunması, tarsal tünel düzeyindeki tibial sinir etkilenimini düşündürür.",
+  "whyCorrect": "Nervus tibialis medial malleol arkasında tarsal tünelden geçer ve medial-lateral plantar dallarıyla ayak tabanı duyusu ile ayak intrinsik kaslarının önemli bölümünü taşır. Bu vakada plantar yanma, tarsal tünel üzerinde Tinel benzeri parestezi ve parmak fleksiyon/intrinsik kas zayıflığı aynı dağılımı destekler. Ayak sırtı duyusunun ve dorsifleksiyonun korunması peroneal sinirleri, lateral ayak kenarında izole duyu kaybı olmaması sural siniri, medial bacak-ayak kenarı paterninin olmaması saphenusu geri plana iter.",
+  "optionComparison": {
+    "Nervus tibialis": "Doğru yanıttır; tibial sinir tarsal tünelden geçer ve plantar dalları ayak tabanı duyusu ile intrinsik kasların önemli kısmını taşır. Medial malleol posteriorunda provokasyon, plantar yanma ve parmak fleksiyon-intrinsik kas zayıflığı aynı anatomik hattı gösterir.",
+    "Nervus fibularis profundus": "Derin fibular sinir dorsifleksiyon, başparmak ekstansiyonu ve birinci web aralığı duyusuyla ilişkilidir. Bu hastada dorsifleksiyon ve başparmak ekstansiyonu korunmuş, yakınma ayak tabanına yerleşmiştir.",
+    "Nervus fibularis superficialis": "Yüzeyel fibular sinir ayak sırtının çoğu ve eversiyon kaslarıyla ilişkilidir. Plantar yanma ve medial malleol arkasında Tinel bulgusu bu sinirin anatomik seyrine uymaz.",
+    "Nervus suralis": "Sural sinir lateral ayak kenarı ve posterolateral bacak duyusunu taşır; motor fonksiyonu yoktur. Bu olguda plantar yaygın duyu değişikliği ve parmak fleksiyon-intrinsik kas güçsüzlüğü motor-duyusal bir tibial patern oluşturur.",
+    "Nervus saphenus": "Saphenus sinir femoral sinirin saf duyusal dalıdır ve medial bacak ile medial ayak kenarında duyu taşır. Ayak tabanı duyusu ve intrinsik ayak kas fonksiyonu ile ilişkili olmadığı için bu vaka paternini açıklamaz."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Uzun süre ayakta kalma ve dar ayakkabı ile artan yakınma → tünel düzeyinde kompresyonu klinik olarak destekler.",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Medial malleol posteriorunda Tinel benzeri parestezi → tibial sinirin geçtiği tarsal tünel hattına lokalize bulgudur.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Plantar duyu azalması → medial ve lateral plantar dalların duyusal dağılımıyla uyumludur.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Dorsifleksiyon ve ayak sırtı duyusunun korunması → derin/yüzeyel peroneal sinir etkilenimini desteklemez.",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Nervus fibularis profundus": "Derin fibular sinir dorsifleksiyon, başparmak ekstansiyonu ve birinci web aralığı duyusuyla ilişkilidir. Bu hastada dorsifleksiyon ve başparmak ekstansiyonu korunmuş, yakınma ayak tabanına yerleşmiştir.",
+    "Nervus fibularis superficialis": "Yüzeyel fibular sinir ayak sırtının çoğu ve eversiyon kaslarıyla ilişkilidir. Plantar yanma ve medial malleol arkasında Tinel bulgusu bu sinirin anatomik seyrine uymaz.",
+    "Nervus suralis": "Sural sinir lateral ayak kenarı ve posterolateral bacak duyusunu taşır; motor fonksiyonu yoktur. Bu olguda plantar yaygın duyu değişikliği ve parmak fleksiyon-intrinsik kas güçsüzlüğü motor-duyusal bir tibial patern oluşturur.",
+    "Nervus saphenus": "Saphenus sinir femoral sinirin saf duyusal dalıdır ve medial bacak ile medial ayak kenarında duyu taşır. Ayak tabanı duyusu ve intrinsik ayak kas fonksiyonu ile ilişkili olmadığı için bu vaka paternini açıklamaz."
+  }
+},
+{
+  "id": "v196-new-340-plevral-girisimde-kaburga-komsulugu",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi",
+  "title": "Plevral girişimde kaburga komşuluğu",
+  "difficulty": "Kolay",
+  "clinicalFocus": "Toraks duvarı girişimlerinde interkostal nörovasküler demetin kaburga alt kenarındaki seyrini klinik uygulamayla ilişkilendirme.",
+  "learningTarget": "Torasentez veya plevral girişimde iğne/tüp yolunun kaburga üst kenarına yakın seçilmesi gerektiğini anatomik gerekçesiyle ayırt edebilme.",
+  "demographics": "68 yaşında erkek hasta",
+  "setting": "Göğüs hastalıkları servisi",
+  "chiefComplaint": "Hasta, plevral sıvı nedeniyle yapılan girişim sonrası giriş yerinde şiddetli yanıcı ağrı ve sınırlı kanama gelişmesi üzerine değerlendiriliyor.",
+  "stem": "Hasta birkaç gündür artan nefes darlığı nedeniyle serviste izlenirken sağ tarafta plevral sıvı saptanmıştır. Sıvı boşaltma işlemi sırasında giriş yerinde aniden keskin ve yanıcı bir ağrı hissettiğini, ağrının aynı kaburga aralığı boyunca öne doğru yayıldığını anlatır. İşlemden sonra bölgede morarma ve sızıntı şeklinde kanama fark edilmiştir. Daha önce aynı taraftan toraks cerrahisi geçirmemiştir ve işlem öncesinde bu hatta benzer bir ağrısı olmadığını söyler. Yakınmanın girişimle aynı anda başlaması nedeniyle tekrar değerlendirilmiştir.",
+  "patientIntro": {
+    "profile": "68 yaşında erkek hasta, plevral sıvı nedeniyle yapılan girişim sonrasında toraks duvarı ağrısı ve lokal kanama açısından değerlendiriliyor.",
+    "presentation": "Girişim yerinde kaburga hattı boyunca yanıcı ağrı ve interkostal aralıkta hassasiyet vardır.",
+    "historySummary": "Hasta birkaç gündür artan nefes darlığı nedeniyle serviste izlenirken sağ tarafta plevral sıvı saptanmıştır. Sıvı boşaltma işlemi sırasında giriş yerinde aniden keskin ve yanıcı bir ağrı hissettiğini, ağrının aynı kaburga aralığı boyunca öne doğru yayıldığını anlatır. İşlemden sonra bölgede morarma ve sızıntı şeklinde kanama fark edilmiştir. Daha önce aynı taraftan toraks cerrahisi geçirmemiştir ve işlem öncesinde bu hatta benzer bir ağrısı olmadığını söyler. Yakınmanın girişimle aynı anda başlaması nedeniyle tekrar değerlendirilmiştir."
+  },
+  "vitals": {
+    "TA": "132/78 mmHg",
+    "Nabız": "90/dk",
+    "Solunum": "20/dk",
+    "SpO2": "95%, nazal oksijen ile",
+    "Ateş": "36.9 °C",
+    "Şok indeksi": "0.68 normal"
+  },
+  "exam": [
+    "Sağ posterolateral toraks duvarında girişim alanı çevresinde sınırlı ekimoz ve palpasyonla hassasiyet vardır.",
+    "Ağrı aynı interkostal aralık boyunca öne doğru yayılan yanıcı karakterdedir.",
+    "Solunum sesleri bazalde azalmış ancak akut tansiyon pnömotoraks bulgusu yoktur.",
+    "Giriş yerinde aktif masif kanama yoktur; periferik perfüzyon korunmuştur."
+  ],
+  "investigations": [
+    {
+      "id": "v196-new-340-plevral-girisimde-kaburga-komsulugu-toraks-duvari-usg",
+      "label": "Toraks duvarı ve plevral ultrasonografi bulgusu",
+      "title": "Toraks duvarı ve plevral ultrasonografi bulgusu",
+      "orderLabel": "Toraks duvarı ve plevral ultrasonografi bulgusu",
+      "type": "ultrasound",
+      "priority": "essential",
+      "subtype": "Toraks duvarı ve plevral ultrasonografi bulgusu",
+      "category": "imaging",
+      "testTypeCategory": "imaging",
+      "summary": "Giriş yerinin kaburga alt kenarına yakın seyrettiği, plevral sıvının bazalde sürdüğü ve cilt altında sınırlı hematom bulunduğu izlenmiştir.",
+      "clinicalMeaning": "Giriş yerinin kaburga alt kenarına yakın seyrettiği, plevral sıvının bazalde sürdüğü ve cilt altında sınırlı hematom bulunduğu izlenmiştir.",
+      "result": {
+        "title": "Toraks duvarı ve plevral ultrasonografi bulgusu",
+        "summary": "Giriş yerinin kaburga alt kenarına yakın seyrettiği, plevral sıvının bazalde sürdüğü ve cilt altında sınırlı hematom bulunduğu izlenmiştir.",
+        "interpretation": "Kaburga alt kenarına yakın giriş yolu, kostal olukta seyreden interkostal nörovasküler demete yaklaşır ve ağrı/kanama riskini artırır.",
+        "values": [
+          [
+            "Plevral alan",
+            "Sağ bazalde serbest plevral sıvı devam ediyor",
+            "",
+            "Girişim hedefi plevral aralık"
+          ],
+          [
+            "Girişim hattı",
+            "İğne yolu kaburga alt kenarına yakın izleniyor",
+            "",
+            "Kostal oluk komşuluğu"
+          ],
+          [
+            "Toraks duvarı",
+            "Cilt altında sınırlı hematom",
+            "",
+            "Lokal damar yaralanmasıyla uyumlu"
+          ],
+          [
+            "Akciğer kayma bulgusu",
+            "Girişim alanı üstünde korunmuş",
+            "",
+            "Belirgin pnömotoraks bulgusu yok"
+          ]
+        ],
+        "rows": [
+          [
+            "Plevral alan",
+            "Sağ bazalde serbest plevral sıvı devam ediyor",
+            "",
+            "Girişim hedefi plevral aralık"
+          ],
+          [
+            "Girişim hattı",
+            "İğne yolu kaburga alt kenarına yakın izleniyor",
+            "",
+            "Kostal oluk komşuluğu"
+          ],
+          [
+            "Toraks duvarı",
+            "Cilt altında sınırlı hematom",
+            "",
+            "Lokal damar yaralanmasıyla uyumlu"
+          ],
+          [
+            "Akciğer kayma bulgusu",
+            "Girişim alanı üstünde korunmuş",
+            "",
+            "Belirgin pnömotoraks bulgusu yok"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Plevral alan",
+          "Sağ bazalde serbest plevral sıvı devam ediyor",
+          "",
+          "Girişim hedefi plevral aralık"
+        ],
+        [
+          "Girişim hattı",
+          "İğne yolu kaburga alt kenarına yakın izleniyor",
+          "",
+          "Kostal oluk komşuluğu"
+        ],
+        [
+          "Toraks duvarı",
+          "Cilt altında sınırlı hematom",
+          "",
+          "Lokal damar yaralanmasıyla uyumlu"
+        ],
+        [
+          "Akciğer kayma bulgusu",
+          "Girişim alanı üstünde korunmuş",
+          "",
+          "Belirgin pnömotoraks bulgusu yok"
+        ]
+      ],
+      "postAnswerExplanation": "Kaburga alt kenarına yakın giriş yolu, kostal olukta seyreden interkostal nörovasküler demete yaklaşır ve ağrı/kanama riskini artırır.",
+      "interpretation": "Kaburga alt kenarına yakın giriş yolu, kostal olukta seyreden interkostal nörovasküler demete yaklaşır ve ağrı/kanama riskini artırır.",
+      "explanationAfterAnswer": "Kaburga alt kenarına yakın giriş yolu, kostal olukta seyreden interkostal nörovasküler demete yaklaşır ve ağrı/kanama riskini artırır."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "question": "Bu tip plevral girişimlerde interkostal nörovasküler demeti korumak için iğne veya tüp en güvenli olarak hangi anatomik hattan ilerletilmelidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Alt kaburganın üst kenarına yakın",
+    "options": [
+      "Üst kaburganın alt kenarına yakın",
+      "Alt kaburganın üst kenarına yakın",
+      "İnterkostal aralığın tam ortasından",
+      "Kaburganın kostal oluğu boyunca",
+      "Sternuma en yakın medial hattan"
+    ],
+    "question": "Bu tip plevral girişimlerde interkostal nörovasküler demeti korumak için iğne veya tüp en güvenli olarak hangi anatomik hattan ilerletilmelidir?",
+    "explanation": "İnterkostal ven, arter ve sinir tipik olarak kaburganın alt kenarındaki kostal oluk içinde seyreder. Bu nedenle torasentez veya plevral drenajda iğne/tüp, seçilen interkostal aralıkta alt kaburganın üst kenarına yakın ilerletilerek üstteki kaburganın alt kenarındaki nörovasküler demetten uzak tutulur. Bu vakada kaburga alt kenarına yakın girişim hattı, dermatomal yanıcı ağrı ve lokal hematomla birlikte nörovasküler demet iritasyonu/yaralanması açısından uyarıcıdır.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Torasentez güvenliği için klasik kural: üstteki kaburganın alt kenarından değil, alttaki kaburganın üst kenarından gir."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Kaburga alt kenarı kostal oluk ve interkostal nörovasküler demetle ilişkili olduğundan plevral girişimler alt kaburganın üst kenarından yapılmalıdır.",
+      "whyCorrect": "İnterkostal ven, arter ve sinir tipik olarak kaburganın alt kenarındaki kostal oluk içinde seyreder. Bu nedenle torasentez veya plevral drenajda iğne/tüp, seçilen interkostal aralıkta alt kaburganın üst kenarına yakın ilerletilerek üstteki kaburganın alt kenarındaki nörovasküler demetten uzak tutulur. Bu vakada kaburga alt kenarına yakın girişim hattı, dermatomal yanıcı ağrı ve lokal hematomla birlikte nörovasküler demet iritasyonu/yaralanması açısından uyarıcıdır.",
+      "rationale": "İnterkostal ven, arter ve sinir tipik olarak kaburganın alt kenarındaki kostal oluk içinde seyreder. Bu nedenle torasentez veya plevral drenajda iğne/tüp, seçilen interkostal aralıkta alt kaburganın üst kenarına yakın ilerletilerek üstteki kaburganın alt kenarındaki nörovasküler demetten uzak tutulur. Bu vakada kaburga alt kenarına yakın girişim hattı, dermatomal yanıcı ağrı ve lokal hematomla birlikte nörovasküler demet iritasyonu/yaralanması açısından uyarıcıdır.",
+      "correctOptionFeedback": "Doğru yanıttır; seçilen interkostal aralıkta alt kaburganın üst kenarına yakın ilerlemek, üst kaburganın alt kenarında seyreden nörovasküler demetten uzak kalmayı sağlar. Torasentez ve plevral drenaj güvenliğinde temel anatomik prensip budur.",
+      "keyClues": [
+        "Girişim sırasında aynı interkostal aralık boyunca yayılan yanıcı ağrı → interkostal sinir irritasyonunu düşündürür.",
+        "Lokal hematom → interkostal damar komşuluğunu akla getirir.",
+        "İğne yolunun kaburga alt kenarına yakın olması → kostal oluk içindeki nörovasküler demete yaklaşımı gösterir.",
+        "Plevral girişim güvenliği → kaburga üst kenarı tercihinin anatomik gerekçesidir."
+      ],
+      "evidenceChain": [
+        {
+          "text": "Kaburga alt kenarına yakın girişim hattı → kostal oluğa ve interkostal nörovasküler demete yakın seyreder.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Dermatomal yanıcı ağrı → interkostal sinir irritasyonunu destekler.",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "text": "Sınırlı hematom → interkostal damar komşuluğu ile uyumlu lokal yaralanma bulgusudur.",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "text": "Plevral sıvı hedeflenirken güvenli yol → alt kaburganın üst kenarına yakın ilerlemektir.",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Torasentez güvenliği için klasik kural: üstteki kaburganın alt kenarından değil, alttaki kaburganın üst kenarından gir.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Torasentez güvenliği için klasik kural: üstteki kaburganın alt kenarından değil, alttaki kaburganın üst kenarından gir."
+        }
+      ],
+      "clinicalPearls": [
+        {
+          "label": "Klinik anatomi",
+          "text": "Kostal olukta tipik sıralama üstten alta ven-arter-sinir şeklindedir; ancak klinik güvenlikte ezberlenmesi gereken ana nokta demetin kaburga alt kenarında yer almasıdır."
+        }
+      ],
+      "optionComparison": {
+        "Üst kaburganın alt kenarına yakın": "Bu yol üstteki kaburganın kostal oluğuna yaklaşır ve interkostal ven-arter-sinir demetini yaralama riskini artırır. Vakadaki ağrı ve hematom tam da bu komşuluk hatasını düşündürür.",
+        "Alt kaburganın üst kenarına yakın": "Doğru yanıttır; seçilen interkostal aralıkta alt kaburganın üst kenarına yakın ilerlemek, üst kaburganın alt kenarında seyreden nörovasküler demetten uzak kalmayı sağlar. Torasentez ve plevral drenaj güvenliğinde temel anatomik prensip budur.",
+        "İnterkostal aralığın tam ortasından": "Aralığın ortası nörovasküler demetten daha uzak gibi düşünülse de standart güvenli referans değildir; varyasyonlar ve dalcıklar nedeniyle kaburga üst kenarı prensibi daha güvenlidir. Sınavda net anatomik cevap alt kaburganın üst kenarıdır.",
+        "Kaburganın kostal oluğu boyunca": "Kostal oluk doğrudan interkostal nörovasküler demetin tipik seyridir. Bu seçeneğin tercih edilmesi sinir ve damar yaralanması riskini en çok artıran yaklaşımlardan biridir.",
+        "Sternuma en yakın medial hattan": "Medial hat seçimi güvenli anatomik ilişkiyi tek başına belirlemez ve internal torasik damarlar gibi farklı komşuluklar da önem kazanabilir. Sorunun ana hedefi interkostal aralıkta kaburga üst-alt kenar ayrımıdır."
+      },
+      "optionFeedback": {
+        "Üst kaburganın alt kenarına yakın": {
+          "explanation": "Bu yol üstteki kaburganın kostal oluğuna yaklaşır ve interkostal ven-arter-sinir demetini yaralama riskini artırır. Vakadaki ağrı ve hematom tam da bu komşuluk hatasını düşündürür."
+        },
+        "Alt kaburganın üst kenarına yakın": {
+          "explanation": "Doğru yanıttır; seçilen interkostal aralıkta alt kaburganın üst kenarına yakın ilerlemek, üst kaburganın alt kenarında seyreden nörovasküler demetten uzak kalmayı sağlar. Torasentez ve plevral drenaj güvenliğinde temel anatomik prensip budur."
+        },
+        "İnterkostal aralığın tam ortasından": {
+          "explanation": "Aralığın ortası nörovasküler demetten daha uzak gibi düşünülse de standart güvenli referans değildir; varyasyonlar ve dalcıklar nedeniyle kaburga üst kenarı prensibi daha güvenlidir. Sınavda net anatomik cevap alt kaburganın üst kenarıdır."
+        },
+        "Kaburganın kostal oluğu boyunca": {
+          "explanation": "Kostal oluk doğrudan interkostal nörovasküler demetin tipik seyridir. Bu seçeneğin tercih edilmesi sinir ve damar yaralanması riskini en çok artıran yaklaşımlardan biridir."
+        },
+        "Sternuma en yakın medial hattan": {
+          "explanation": "Medial hat seçimi güvenli anatomik ilişkiyi tek başına belirlemez ve internal torasik damarlar gibi farklı komşuluklar da önem kazanabilir. Sorunun ana hedefi interkostal aralıkta kaburga üst-alt kenar ayrımıdır."
+        }
+      },
+      "whyWrong": {
+        "Üst kaburganın alt kenarına yakın": "Bu yol üstteki kaburganın kostal oluğuna yaklaşır ve interkostal ven-arter-sinir demetini yaralama riskini artırır. Vakadaki ağrı ve hematom tam da bu komşuluk hatasını düşündürür.",
+        "İnterkostal aralığın tam ortasından": "Aralığın ortası nörovasküler demetten daha uzak gibi düşünülse de standart güvenli referans değildir; varyasyonlar ve dalcıklar nedeniyle kaburga üst kenarı prensibi daha güvenlidir. Sınavda net anatomik cevap alt kaburganın üst kenarıdır.",
+        "Kaburganın kostal oluğu boyunca": "Kostal oluk doğrudan interkostal nörovasküler demetin tipik seyridir. Bu seçeneğin tercih edilmesi sinir ve damar yaralanması riskini en çok artıran yaklaşımlardan biridir.",
+        "Sternuma en yakın medial hattan": "Medial hat seçimi güvenli anatomik ilişkiyi tek başına belirlemez ve internal torasik damarlar gibi farklı komşuluklar da önem kazanabilir. Sorunun ana hedefi interkostal aralıkta kaburga üst-alt kenar ayrımıdır."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Torasentez veya plevral girişimde iğne/tüp yolunun kaburga üst kenarına yakın seçilmesi gerektiğini anatomik gerekçesiyle ayırt edebilme.",
+      "coreKnowledge": "İnterkostal nörovasküler demet kaburganın alt kenarındaki kostal olukta seyreder; plevral girişimlerde iğne/tüp alt kaburganın üst kenarına yakın ilerletilir."
+    },
+    "whyCorrect": "İnterkostal ven, arter ve sinir tipik olarak kaburganın alt kenarındaki kostal oluk içinde seyreder. Bu nedenle torasentez veya plevral drenajda iğne/tüp, seçilen interkostal aralıkta alt kaburganın üst kenarına yakın ilerletilerek üstteki kaburganın alt kenarındaki nörovasküler demetten uzak tutulur. Bu vakada kaburga alt kenarına yakın girişim hattı, dermatomal yanıcı ağrı ve lokal hematomla birlikte nörovasküler demet iritasyonu/yaralanması açısından uyarıcıdır.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Kaburga alt kenarına yakın girişim hattı → kostal oluğa ve interkostal nörovasküler demete yakın seyreder.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Dermatomal yanıcı ağrı → interkostal sinir irritasyonunu destekler.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Sınırlı hematom → interkostal damar komşuluğu ile uyumlu lokal yaralanma bulgusudur.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Plevral sıvı hedeflenirken güvenli yol → alt kaburganın üst kenarına yakın ilerlemektir.",
+        "weight": "high",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Üst kaburganın alt kenarına yakın": "Bu yol üstteki kaburganın kostal oluğuna yaklaşır ve interkostal ven-arter-sinir demetini yaralama riskini artırır. Vakadaki ağrı ve hematom tam da bu komşuluk hatasını düşündürür.",
+      "Alt kaburganın üst kenarına yakın": "Doğru yanıttır; seçilen interkostal aralıkta alt kaburganın üst kenarına yakın ilerlemek, üst kaburganın alt kenarında seyreden nörovasküler demetten uzak kalmayı sağlar. Torasentez ve plevral drenaj güvenliğinde temel anatomik prensip budur.",
+      "İnterkostal aralığın tam ortasından": "Aralığın ortası nörovasküler demetten daha uzak gibi düşünülse de standart güvenli referans değildir; varyasyonlar ve dalcıklar nedeniyle kaburga üst kenarı prensibi daha güvenlidir. Sınavda net anatomik cevap alt kaburganın üst kenarıdır.",
+      "Kaburganın kostal oluğu boyunca": "Kostal oluk doğrudan interkostal nörovasküler demetin tipik seyridir. Bu seçeneğin tercih edilmesi sinir ve damar yaralanması riskini en çok artıran yaklaşımlardan biridir.",
+      "Sternuma en yakın medial hattan": "Medial hat seçimi güvenli anatomik ilişkiyi tek başına belirlemez ve internal torasik damarlar gibi farklı komşuluklar da önem kazanabilir. Sorunun ana hedefi interkostal aralıkta kaburga üst-alt kenar ayrımıdır."
+    },
+    "optionFeedback": {
+      "Üst kaburganın alt kenarına yakın": {
+        "explanation": "Bu yol üstteki kaburganın kostal oluğuna yaklaşır ve interkostal ven-arter-sinir demetini yaralama riskini artırır. Vakadaki ağrı ve hematom tam da bu komşuluk hatasını düşündürür."
+      },
+      "Alt kaburganın üst kenarına yakın": {
+        "explanation": "Doğru yanıttır; seçilen interkostal aralıkta alt kaburganın üst kenarına yakın ilerlemek, üst kaburganın alt kenarında seyreden nörovasküler demetten uzak kalmayı sağlar. Torasentez ve plevral drenaj güvenliğinde temel anatomik prensip budur."
+      },
+      "İnterkostal aralığın tam ortasından": {
+        "explanation": "Aralığın ortası nörovasküler demetten daha uzak gibi düşünülse de standart güvenli referans değildir; varyasyonlar ve dalcıklar nedeniyle kaburga üst kenarı prensibi daha güvenlidir. Sınavda net anatomik cevap alt kaburganın üst kenarıdır."
+      },
+      "Kaburganın kostal oluğu boyunca": {
+        "explanation": "Kostal oluk doğrudan interkostal nörovasküler demetin tipik seyridir. Bu seçeneğin tercih edilmesi sinir ve damar yaralanması riskini en çok artıran yaklaşımlardan biridir."
+      },
+      "Sternuma en yakın medial hattan": {
+        "explanation": "Medial hat seçimi güvenli anatomik ilişkiyi tek başına belirlemez ve internal torasik damarlar gibi farklı komşuluklar da önem kazanabilir. Sorunun ana hedefi interkostal aralıkta kaburga üst-alt kenar ayrımıdır."
+      }
+    },
+    "coreKnowledge": "İnterkostal nörovasküler demet kaburganın alt kenarındaki kostal olukta seyreder; plevral girişimlerde iğne/tüp alt kaburganın üst kenarına yakın ilerletilir.",
+    "examPearl": "Torasentez güvenliği için klasik kural: üstteki kaburganın alt kenarından değil, alttaki kaburganın üst kenarından gir.",
+    "whyWrong": {
+      "Üst kaburganın alt kenarına yakın": "Bu yol üstteki kaburganın kostal oluğuna yaklaşır ve interkostal ven-arter-sinir demetini yaralama riskini artırır. Vakadaki ağrı ve hematom tam da bu komşuluk hatasını düşündürür.",
+      "İnterkostal aralığın tam ortasından": "Aralığın ortası nörovasküler demetten daha uzak gibi düşünülse de standart güvenli referans değildir; varyasyonlar ve dalcıklar nedeniyle kaburga üst kenarı prensibi daha güvenlidir. Sınavda net anatomik cevap alt kaburganın üst kenarıdır.",
+      "Kaburganın kostal oluğu boyunca": "Kostal oluk doğrudan interkostal nörovasküler demetin tipik seyridir. Bu seçeneğin tercih edilmesi sinir ve damar yaralanması riskini en çok artıran yaklaşımlardan biridir.",
+      "Sternuma en yakın medial hattan": "Medial hat seçimi güvenli anatomik ilişkiyi tek başına belirlemez ve internal torasik damarlar gibi farklı komşuluklar da önem kazanabilir. Sorunun ana hedefi interkostal aralıkta kaburga üst-alt kenar ayrımıdır."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Kolay",
+  "aiMeta": {
+    "generatedAt": "manual-v196-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial"
+  },
+  "listTitle": "Plevral girişimde kaburga komşuluğu",
+  "cardTitle": "Plevral girişimde kaburga komşuluğu",
+  "coreKnowledge": "İnterkostal nörovasküler demet kaburganın alt kenarındaki kostal olukta seyreder; plevral girişimlerde iğne/tüp alt kaburganın üst kenarına yakın ilerletilir.",
+  "examPearl": "Torasentez güvenliği için klasik kural: üstteki kaburganın alt kenarından değil, alttaki kaburganın üst kenarından gir.",
+  "whyCorrect": "İnterkostal ven, arter ve sinir tipik olarak kaburganın alt kenarındaki kostal oluk içinde seyreder. Bu nedenle torasentez veya plevral drenajda iğne/tüp, seçilen interkostal aralıkta alt kaburganın üst kenarına yakın ilerletilerek üstteki kaburganın alt kenarındaki nörovasküler demetten uzak tutulur. Bu vakada kaburga alt kenarına yakın girişim hattı, dermatomal yanıcı ağrı ve lokal hematomla birlikte nörovasküler demet iritasyonu/yaralanması açısından uyarıcıdır.",
+  "optionComparison": {
+    "Üst kaburganın alt kenarına yakın": "Bu yol üstteki kaburganın kostal oluğuna yaklaşır ve interkostal ven-arter-sinir demetini yaralama riskini artırır. Vakadaki ağrı ve hematom tam da bu komşuluk hatasını düşündürür.",
+    "Alt kaburganın üst kenarına yakın": "Doğru yanıttır; seçilen interkostal aralıkta alt kaburganın üst kenarına yakın ilerlemek, üst kaburganın alt kenarında seyreden nörovasküler demetten uzak kalmayı sağlar. Torasentez ve plevral drenaj güvenliğinde temel anatomik prensip budur.",
+    "İnterkostal aralığın tam ortasından": "Aralığın ortası nörovasküler demetten daha uzak gibi düşünülse de standart güvenli referans değildir; varyasyonlar ve dalcıklar nedeniyle kaburga üst kenarı prensibi daha güvenlidir. Sınavda net anatomik cevap alt kaburganın üst kenarıdır.",
+    "Kaburganın kostal oluğu boyunca": "Kostal oluk doğrudan interkostal nörovasküler demetin tipik seyridir. Bu seçeneğin tercih edilmesi sinir ve damar yaralanması riskini en çok artıran yaklaşımlardan biridir.",
+    "Sternuma en yakın medial hattan": "Medial hat seçimi güvenli anatomik ilişkiyi tek başına belirlemez ve internal torasik damarlar gibi farklı komşuluklar da önem kazanabilir. Sorunun ana hedefi interkostal aralıkta kaburga üst-alt kenar ayrımıdır."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Kaburga alt kenarına yakın girişim hattı → kostal oluğa ve interkostal nörovasküler demete yakın seyreder.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Dermatomal yanıcı ağrı → interkostal sinir irritasyonunu destekler.",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Sınırlı hematom → interkostal damar komşuluğu ile uyumlu lokal yaralanma bulgusudur.",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Plevral sıvı hedeflenirken güvenli yol → alt kaburganın üst kenarına yakın ilerlemektir.",
+      "weight": "high",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Üst kaburganın alt kenarına yakın": "Bu yol üstteki kaburganın kostal oluğuna yaklaşır ve interkostal ven-arter-sinir demetini yaralama riskini artırır. Vakadaki ağrı ve hematom tam da bu komşuluk hatasını düşündürür.",
+    "İnterkostal aralığın tam ortasından": "Aralığın ortası nörovasküler demetten daha uzak gibi düşünülse de standart güvenli referans değildir; varyasyonlar ve dalcıklar nedeniyle kaburga üst kenarı prensibi daha güvenlidir. Sınavda net anatomik cevap alt kaburganın üst kenarıdır.",
+    "Kaburganın kostal oluğu boyunca": "Kostal oluk doğrudan interkostal nörovasküler demetin tipik seyridir. Bu seçeneğin tercih edilmesi sinir ve damar yaralanması riskini en çok artıran yaklaşımlardan biridir.",
+    "Sternuma en yakın medial hattan": "Medial hat seçimi güvenli anatomik ilişkiyi tek başına belirlemez ve internal torasik damarlar gibi farklı komşuluklar da önem kazanabilir. Sorunun ana hedefi interkostal aralıkta kaburga üst-alt kenar ayrımıdır."
+  }
+},
+{
+  "id": "v196-new-341-karotis-cerrahisi-sonrasi-dil-deviasyonu",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi",
+  "title": "Karotis cerrahisi sonrası dil deviasyonu",
+  "difficulty": "Orta",
+  "clinicalFocus": "Karotis üçgeni cerrahisi sonrası hipoglossal sinir yaralanmasını dil motor bulguları üzerinden tanıma.",
+  "learningTarget": "Nervus hypoglossus lezyonunda dilin protrüzyon sırasında lezyon tarafına deviye olduğunu vagus, glossopharyngeus, accessory ve facial sinir bulgularından ayırabilme.",
+  "demographics": "63 yaşında erkek hasta",
+  "setting": "Damar cerrahisi servisi",
+  "chiefComplaint": "Hasta, karotis endarterektomi sonrası konuşurken zorlanma ve dilini dışarı çıkarınca sağa kayma fark edilmesi nedeniyle değerlendiriliyor.",
+  "stem": "Hasta sağ karotis darlığı nedeniyle planlı ameliyat geçirmiştir. Ameliyattan sonra sıvı içerken belirgin aspirasyon yaşamadığını ancak konuşurken bazı kelimeleri eskisi kadar net çıkaramadığını fark etmiştir. Aynaya baktığında dilini dışarı uzattığında dil ucunun sağa kaydığını görmüş, bu durum sabah vizitinde de yakınları tarafından fark edilmiştir. Sesinde belirgin kısıklık, yüzünde kayma veya omuz kaldırmada belirgin güçsüzlük tariflemez. Şikâyet ameliyat sonrasında başladığı için cerrahi saha komşuluğu açısından değerlendirilmiştir.",
+  "patientIntro": {
+    "profile": "63 yaşında erkek hasta, karotis endarterektomi sonrası erken dönemde dil hareketinde asimetri nedeniyle damar cerrahisi servisinde değerlendiriliyor.",
+    "presentation": "Dil protrüzyonunda sağa deviasyon, artikülasyonda hafif bozulma ve dilin sağ yarısında güçsüzlük vardır.",
+    "historySummary": "Hasta sağ karotis darlığı nedeniyle planlı ameliyat geçirmiştir. Ameliyattan sonra sıvı içerken belirgin aspirasyon yaşamadığını ancak konuşurken bazı kelimeleri eskisi kadar net çıkaramadığını fark etmiştir. Aynaya baktığında dilini dışarı uzattığında dil ucunun sağa kaydığını görmüş, bu durum sabah vizitinde de yakınları tarafından fark edilmiştir. Sesinde belirgin kısıklık, yüzünde kayma veya omuz kaldırmada belirgin güçsüzlük tariflemez. Şikâyet ameliyat sonrasında başladığı için cerrahi saha komşuluğu açısından değerlendirilmiştir."
+  },
+  "vitals": {
+    "TA": "138/82 mmHg",
+    "Nabız": "86/dk",
+    "Solunum": "17/dk",
+    "SpO2": "97%, oda havasında",
+    "Ateş": "36.8 °C",
+    "Şok indeksi": "0.62 normal"
+  },
+  "exam": [
+    "Dil istirahatte hafif sağ yarı hacim azalması eğilimindedir; protrüzyonda dil ucu sağa deviye olur.",
+    "Yumuşak damak elevasyonu simetriktir ve öğürme refleksi alınır.",
+    "Ses kısıklığı veya vokal kord paralizisini düşündüren nefesli ses belirgin değildir.",
+    "Yüz mimikleri simetriktir; omuz silkme ve başı karşı yöne çevirme gücü korunmuştur."
+  ],
+  "investigations": [
+    {
+      "id": "v196-new-341-karotis-cerrahisi-sonrasi-dil-deviasyonu-postop-laringoskopi-ve-yutma",
+      "label": "Postoperatif kraniyal sinir değerlendirmesi",
+      "title": "Postoperatif kraniyal sinir değerlendirmesi",
+      "orderLabel": "Postoperatif kraniyal sinir değerlendirmesi",
+      "type": "clinical",
+      "priority": "essential",
+      "subtype": "Postoperatif kraniyal sinir değerlendirmesi",
+      "category": "clinicalAssessment",
+      "testTypeCategory": "clinicalAssessment",
+      "summary": "Laringoskopide vokal kord hareketleri korunmuş, yumuşak damak simetrik izlenmiş ve ana objektif bulgu dil protrüzyonunda sağa deviasyon olarak kaydedilmiştir.",
+      "clinicalMeaning": "Laringoskopide vokal kord hareketleri korunmuş, yumuşak damak simetrik izlenmiş ve ana objektif bulgu dil protrüzyonunda sağa deviasyon olarak kaydedilmiştir.",
+      "result": {
+        "title": "Postoperatif kraniyal sinir değerlendirmesi",
+        "summary": "Laringoskopide vokal kord hareketleri korunmuş, yumuşak damak simetrik izlenmiş ve ana objektif bulgu dil protrüzyonunda sağa deviasyon olarak kaydedilmiştir.",
+        "interpretation": "Postoperatif bulgular laringeal veya fasiyal defisitten çok karotis üçgeni komşuluğunda seyreden dil motor sinirini düşündürür.",
+        "values": [
+          [
+            "Dil hareketi",
+            "Protrüzyonda sağa deviasyon",
+            "",
+            "Sağ dil kas motor paternini gösterir"
+          ],
+          [
+            "Vokal kord hareketi",
+            "Bilateral hareket korunmuş",
+            "",
+            "Vagus-rekürren laringeal patern zayıf"
+          ],
+          [
+            "Yumuşak damak",
+            "Elevasyon simetrik",
+            "",
+            "Glossopharyngeal-vagal palatal patern yok"
+          ],
+          [
+            "Omuz elevasyonu",
+            "Trapezius gücü korunmuş",
+            "",
+            "Accessory sinir paternini desteklemez"
+          ]
+        ],
+        "rows": [
+          [
+            "Dil hareketi",
+            "Protrüzyonda sağa deviasyon",
+            "",
+            "Sağ dil kas motor paternini gösterir"
+          ],
+          [
+            "Vokal kord hareketi",
+            "Bilateral hareket korunmuş",
+            "",
+            "Vagus-rekürren laringeal patern zayıf"
+          ],
+          [
+            "Yumuşak damak",
+            "Elevasyon simetrik",
+            "",
+            "Glossopharyngeal-vagal palatal patern yok"
+          ],
+          [
+            "Omuz elevasyonu",
+            "Trapezius gücü korunmuş",
+            "",
+            "Accessory sinir paternini desteklemez"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Dil hareketi",
+          "Protrüzyonda sağa deviasyon",
+          "",
+          "Sağ dil kas motor paternini gösterir"
+        ],
+        [
+          "Vokal kord hareketi",
+          "Bilateral hareket korunmuş",
+          "",
+          "Vagus-rekürren laringeal patern zayıf"
+        ],
+        [
+          "Yumuşak damak",
+          "Elevasyon simetrik",
+          "",
+          "Glossopharyngeal-vagal palatal patern yok"
+        ],
+        [
+          "Omuz elevasyonu",
+          "Trapezius gücü korunmuş",
+          "",
+          "Accessory sinir paternini desteklemez"
+        ]
+      ],
+      "postAnswerExplanation": "Postoperatif bulgular laringeal veya fasiyal defisitten çok karotis üçgeni komşuluğunda seyreden dil motor sinirini düşündürür.",
+      "interpretation": "Postoperatif bulgular laringeal veya fasiyal defisitten çok karotis üçgeni komşuluğunda seyreden dil motor sinirini düşündürür.",
+      "explanationAfterAnswer": "Postoperatif bulgular laringeal veya fasiyal defisitten çok karotis üçgeni komşuluğunda seyreden dil motor sinirini düşündürür."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "question": "Bu hastada karotis cerrahisi sonrası gelişen dil protrüzyonunda sağa deviasyonu en iyi açıklayan kraniyal sinir hasarı hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Nervus hypoglossus",
+    "options": [
+      "Nervus glossopharyngeus",
+      "Nervus vagus",
+      "Nervus accessorius",
+      "Nervus hypoglossus",
+      "Nervus facialis"
+    ],
+    "question": "Bu hastada karotis cerrahisi sonrası gelişen dil protrüzyonunda sağa deviasyonu en iyi açıklayan kraniyal sinir hasarı hangisidir?",
+    "explanation": "Nervus hypoglossus dilin intrinsik ve ekstrinsik kaslarının motor innervasyonunu sağlar ve karotis üçgeninde cerrahi disseksiyon alanına yakın seyreder. Alt motor nöron tipinde tek taraflı hipoglossal hasarda dil protrüzyon sırasında zayıf tarafa deviye olur; bu vakada sağa deviasyon sağ hipoglossal etkilenimi destekler. Vokal kord hareketlerinin korunması vagus/recurrent laryngeal, palatal simetrinin korunması glossopharyngeal-vagal, omuz gücünün korunması accessory ve yüz mimiklerinin simetrik olması facial sinir seçeneklerini zayıflatır.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Karotis üçgeni cerrahisi sonrası izole dil deviasyonu görürsen, ses kısıklığı yoksa vagustan önce hypoglossusu düşün."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "Karotis cerrahisi sonrası izole dil protrüzyon deviasyonu, karotis üçgeni komşuluğunda seyreden hipoglossal sinir yaralanması için tipik lokalize edici bulgudur.",
+      "whyCorrect": "Nervus hypoglossus dilin intrinsik ve ekstrinsik kaslarının motor innervasyonunu sağlar ve karotis üçgeninde cerrahi disseksiyon alanına yakın seyreder. Alt motor nöron tipinde tek taraflı hipoglossal hasarda dil protrüzyon sırasında zayıf tarafa deviye olur; bu vakada sağa deviasyon sağ hipoglossal etkilenimi destekler. Vokal kord hareketlerinin korunması vagus/recurrent laryngeal, palatal simetrinin korunması glossopharyngeal-vagal, omuz gücünün korunması accessory ve yüz mimiklerinin simetrik olması facial sinir seçeneklerini zayıflatır.",
+      "rationale": "Nervus hypoglossus dilin intrinsik ve ekstrinsik kaslarının motor innervasyonunu sağlar ve karotis üçgeninde cerrahi disseksiyon alanına yakın seyreder. Alt motor nöron tipinde tek taraflı hipoglossal hasarda dil protrüzyon sırasında zayıf tarafa deviye olur; bu vakada sağa deviasyon sağ hipoglossal etkilenimi destekler. Vokal kord hareketlerinin korunması vagus/recurrent laryngeal, palatal simetrinin korunması glossopharyngeal-vagal, omuz gücünün korunması accessory ve yüz mimiklerinin simetrik olması facial sinir seçeneklerini zayıflatır.",
+      "correctOptionFeedback": "Doğru yanıttır; hipoglossal sinir dil kaslarının motor siniridir ve karotis üçgeni cerrahisinde risk altındadır. Tek taraflı alt motor nöron hasarında dil protrüzyon sırasında lezyon tarafına deviye olur; sağa deviasyon sağ hipoglossal etkilenimi destekler.",
+      "keyClues": [
+        "Karotis endarterektomi → karotis üçgenindeki sinir komşuluklarını riskli hale getirir.",
+        "Dil protrüzyonunda sağa deviasyon → sağ hipoglossal motor zayıflığına uyar.",
+        "Vokal kord hareketlerinin korunması → vagus/recurrent laryngeal hasarı desteklemez.",
+        "Yüz ve omuz motor fonksiyonlarının korunması → facial ve accessory sinirleri dışlamaya yardım eder."
+      ],
+      "evidenceChain": [
+        {
+          "text": "Karotis cerrahisi sonrası başlangıç → karotis üçgeni komşuluğundaki kraniyal sinirler anatomik risk altındadır.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Dil protrüzyonunda sağa deviasyon → sağ dil kaslarının motor zayıflığını gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Ses kısıklığı ve vokal kord hareket kusuru olmaması → vagus/recurrent laryngeal etkilenimini zayıflatır.",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "text": "Omuz silkme ve mimik kaslarının korunması → accessory ve facial sinir hasarıyla uyumlu değildir.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Karotis üçgeni cerrahisi sonrası izole dil deviasyonu görürsen, ses kısıklığı yoksa vagustan önce hypoglossusu düşün.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Karotis üçgeni cerrahisi sonrası izole dil deviasyonu görürsen, ses kısıklığı yoksa vagustan önce hypoglossusu düşün."
+        }
+      ],
+      "clinicalPearls": [
+        {
+          "label": "Klinik anatomi",
+          "text": "Hipoglossal sinir karotis bifurkasyonu ve digastrik arka karnı çevresindeki disseksiyonlarda görülebilen önemli cerrahi komşuluklardan biridir."
+        }
+      ],
+      "optionComparison": {
+        "Nervus glossopharyngeus": "Glossopharyngeus sinir yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. Bu vakada yumuşak damak simetrik, belirgin yutma refleksi sorunu yok ve temel bulgu dil motor deviasyonudur.",
+        "Nervus vagus": "Vagus veya rekürren laringeal dal hasarında ses kısıklığı, vokal kord hareket kusuru ve palatal asimetri daha öne çıkar. Laringoskopide vokal kord hareketleri korunmuştur; dil deviasyonu vagus yerine hipoglossal siniri düşündürür.",
+        "Nervus accessorius": "Accessory sinir sternocleidomastoid ve trapezius kaslarını innerve eder; hasarında omuz düşüklüğü, omuz silkmede güçsüzlük veya baş çevirme zayıflığı beklenir. Bu hastada omuz ve boyun motor fonksiyonu korunmuştur.",
+        "Nervus hypoglossus": "Doğru yanıttır; hipoglossal sinir dil kaslarının motor siniridir ve karotis üçgeni cerrahisinde risk altındadır. Tek taraflı alt motor nöron hasarında dil protrüzyon sırasında lezyon tarafına deviye olur; sağa deviasyon sağ hipoglossal etkilenimi destekler.",
+        "Nervus facialis": "Facial sinir mimik kasları, stapedius ve bazı tat-parasempatik fonksiyonlarla ilişkilidir. Yüz asimetrisi veya orbiküler kas güçsüzlüğü yoktur; dil protrüzyon motoru facial sinirle açıklanmaz."
+      },
+      "optionFeedback": {
+        "Nervus glossopharyngeus": {
+          "explanation": "Glossopharyngeus sinir yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. Bu vakada yumuşak damak simetrik, belirgin yutma refleksi sorunu yok ve temel bulgu dil motor deviasyonudur."
+        },
+        "Nervus vagus": {
+          "explanation": "Vagus veya rekürren laringeal dal hasarında ses kısıklığı, vokal kord hareket kusuru ve palatal asimetri daha öne çıkar. Laringoskopide vokal kord hareketleri korunmuştur; dil deviasyonu vagus yerine hipoglossal siniri düşündürür."
+        },
+        "Nervus accessorius": {
+          "explanation": "Accessory sinir sternocleidomastoid ve trapezius kaslarını innerve eder; hasarında omuz düşüklüğü, omuz silkmede güçsüzlük veya baş çevirme zayıflığı beklenir. Bu hastada omuz ve boyun motor fonksiyonu korunmuştur."
+        },
+        "Nervus hypoglossus": {
+          "explanation": "Doğru yanıttır; hipoglossal sinir dil kaslarının motor siniridir ve karotis üçgeni cerrahisinde risk altındadır. Tek taraflı alt motor nöron hasarında dil protrüzyon sırasında lezyon tarafına deviye olur; sağa deviasyon sağ hipoglossal etkilenimi destekler."
+        },
+        "Nervus facialis": {
+          "explanation": "Facial sinir mimik kasları, stapedius ve bazı tat-parasempatik fonksiyonlarla ilişkilidir. Yüz asimetrisi veya orbiküler kas güçsüzlüğü yoktur; dil protrüzyon motoru facial sinirle açıklanmaz."
+        }
+      },
+      "whyWrong": {
+        "Nervus glossopharyngeus": "Glossopharyngeus sinir yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. Bu vakada yumuşak damak simetrik, belirgin yutma refleksi sorunu yok ve temel bulgu dil motor deviasyonudur.",
+        "Nervus vagus": "Vagus veya rekürren laringeal dal hasarında ses kısıklığı, vokal kord hareket kusuru ve palatal asimetri daha öne çıkar. Laringoskopide vokal kord hareketleri korunmuştur; dil deviasyonu vagus yerine hipoglossal siniri düşündürür.",
+        "Nervus accessorius": "Accessory sinir sternocleidomastoid ve trapezius kaslarını innerve eder; hasarında omuz düşüklüğü, omuz silkmede güçsüzlük veya baş çevirme zayıflığı beklenir. Bu hastada omuz ve boyun motor fonksiyonu korunmuştur.",
+        "Nervus facialis": "Facial sinir mimik kasları, stapedius ve bazı tat-parasempatik fonksiyonlarla ilişkilidir. Yüz asimetrisi veya orbiküler kas güçsüzlüğü yoktur; dil protrüzyon motoru facial sinirle açıklanmaz."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Nervus hypoglossus lezyonunda dilin protrüzyon sırasında lezyon tarafına deviye olduğunu vagus, glossopharyngeus, accessory ve facial sinir bulgularından ayırabilme.",
+      "coreKnowledge": "Nervus hypoglossus dil motor innervasyonunu taşır; tek taraflı alt motor nöron lezyonunda dil protrüzyon sırasında lezyon tarafına deviye olur."
+    },
+    "whyCorrect": "Nervus hypoglossus dilin intrinsik ve ekstrinsik kaslarının motor innervasyonunu sağlar ve karotis üçgeninde cerrahi disseksiyon alanına yakın seyreder. Alt motor nöron tipinde tek taraflı hipoglossal hasarda dil protrüzyon sırasında zayıf tarafa deviye olur; bu vakada sağa deviasyon sağ hipoglossal etkilenimi destekler. Vokal kord hareketlerinin korunması vagus/recurrent laryngeal, palatal simetrinin korunması glossopharyngeal-vagal, omuz gücünün korunması accessory ve yüz mimiklerinin simetrik olması facial sinir seçeneklerini zayıflatır.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Karotis cerrahisi sonrası başlangıç → karotis üçgeni komşuluğundaki kraniyal sinirler anatomik risk altındadır.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Dil protrüzyonunda sağa deviasyon → sağ dil kaslarının motor zayıflığını gösterir.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Ses kısıklığı ve vokal kord hareket kusuru olmaması → vagus/recurrent laryngeal etkilenimini zayıflatır.",
+        "weight": "medium",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Omuz silkme ve mimik kaslarının korunması → accessory ve facial sinir hasarıyla uyumlu değildir.",
+        "weight": "medium",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Nervus glossopharyngeus": "Glossopharyngeus sinir yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. Bu vakada yumuşak damak simetrik, belirgin yutma refleksi sorunu yok ve temel bulgu dil motor deviasyonudur.",
+      "Nervus vagus": "Vagus veya rekürren laringeal dal hasarında ses kısıklığı, vokal kord hareket kusuru ve palatal asimetri daha öne çıkar. Laringoskopide vokal kord hareketleri korunmuştur; dil deviasyonu vagus yerine hipoglossal siniri düşündürür.",
+      "Nervus accessorius": "Accessory sinir sternocleidomastoid ve trapezius kaslarını innerve eder; hasarında omuz düşüklüğü, omuz silkmede güçsüzlük veya baş çevirme zayıflığı beklenir. Bu hastada omuz ve boyun motor fonksiyonu korunmuştur.",
+      "Nervus hypoglossus": "Doğru yanıttır; hipoglossal sinir dil kaslarının motor siniridir ve karotis üçgeni cerrahisinde risk altındadır. Tek taraflı alt motor nöron hasarında dil protrüzyon sırasında lezyon tarafına deviye olur; sağa deviasyon sağ hipoglossal etkilenimi destekler.",
+      "Nervus facialis": "Facial sinir mimik kasları, stapedius ve bazı tat-parasempatik fonksiyonlarla ilişkilidir. Yüz asimetrisi veya orbiküler kas güçsüzlüğü yoktur; dil protrüzyon motoru facial sinirle açıklanmaz."
+    },
+    "optionFeedback": {
+      "Nervus glossopharyngeus": {
+        "explanation": "Glossopharyngeus sinir yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. Bu vakada yumuşak damak simetrik, belirgin yutma refleksi sorunu yok ve temel bulgu dil motor deviasyonudur."
+      },
+      "Nervus vagus": {
+        "explanation": "Vagus veya rekürren laringeal dal hasarında ses kısıklığı, vokal kord hareket kusuru ve palatal asimetri daha öne çıkar. Laringoskopide vokal kord hareketleri korunmuştur; dil deviasyonu vagus yerine hipoglossal siniri düşündürür."
+      },
+      "Nervus accessorius": {
+        "explanation": "Accessory sinir sternocleidomastoid ve trapezius kaslarını innerve eder; hasarında omuz düşüklüğü, omuz silkmede güçsüzlük veya baş çevirme zayıflığı beklenir. Bu hastada omuz ve boyun motor fonksiyonu korunmuştur."
+      },
+      "Nervus hypoglossus": {
+        "explanation": "Doğru yanıttır; hipoglossal sinir dil kaslarının motor siniridir ve karotis üçgeni cerrahisinde risk altındadır. Tek taraflı alt motor nöron hasarında dil protrüzyon sırasında lezyon tarafına deviye olur; sağa deviasyon sağ hipoglossal etkilenimi destekler."
+      },
+      "Nervus facialis": {
+        "explanation": "Facial sinir mimik kasları, stapedius ve bazı tat-parasempatik fonksiyonlarla ilişkilidir. Yüz asimetrisi veya orbiküler kas güçsüzlüğü yoktur; dil protrüzyon motoru facial sinirle açıklanmaz."
+      }
+    },
+    "coreKnowledge": "Nervus hypoglossus dil motor innervasyonunu taşır; tek taraflı alt motor nöron lezyonunda dil protrüzyon sırasında lezyon tarafına deviye olur.",
+    "examPearl": "Karotis üçgeni cerrahisi sonrası izole dil deviasyonu görürsen, ses kısıklığı yoksa vagustan önce hypoglossusu düşün.",
+    "whyWrong": {
+      "Nervus glossopharyngeus": "Glossopharyngeus sinir yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. Bu vakada yumuşak damak simetrik, belirgin yutma refleksi sorunu yok ve temel bulgu dil motor deviasyonudur.",
+      "Nervus vagus": "Vagus veya rekürren laringeal dal hasarında ses kısıklığı, vokal kord hareket kusuru ve palatal asimetri daha öne çıkar. Laringoskopide vokal kord hareketleri korunmuştur; dil deviasyonu vagus yerine hipoglossal siniri düşündürür.",
+      "Nervus accessorius": "Accessory sinir sternocleidomastoid ve trapezius kaslarını innerve eder; hasarında omuz düşüklüğü, omuz silkmede güçsüzlük veya baş çevirme zayıflığı beklenir. Bu hastada omuz ve boyun motor fonksiyonu korunmuştur.",
+      "Nervus facialis": "Facial sinir mimik kasları, stapedius ve bazı tat-parasempatik fonksiyonlarla ilişkilidir. Yüz asimetrisi veya orbiküler kas güçsüzlüğü yoktur; dil protrüzyon motoru facial sinirle açıklanmaz."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Orta",
+  "aiMeta": {
+    "generatedAt": "manual-v196-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial"
+  },
+  "listTitle": "Karotis cerrahisi sonrası dil deviasyonu",
+  "cardTitle": "Karotis cerrahisi sonrası dil deviasyonu",
+  "coreKnowledge": "Nervus hypoglossus dil motor innervasyonunu taşır; tek taraflı alt motor nöron lezyonunda dil protrüzyon sırasında lezyon tarafına deviye olur.",
+  "examPearl": "Karotis üçgeni cerrahisi sonrası izole dil deviasyonu görürsen, ses kısıklığı yoksa vagustan önce hypoglossusu düşün.",
+  "whyCorrect": "Nervus hypoglossus dilin intrinsik ve ekstrinsik kaslarının motor innervasyonunu sağlar ve karotis üçgeninde cerrahi disseksiyon alanına yakın seyreder. Alt motor nöron tipinde tek taraflı hipoglossal hasarda dil protrüzyon sırasında zayıf tarafa deviye olur; bu vakada sağa deviasyon sağ hipoglossal etkilenimi destekler. Vokal kord hareketlerinin korunması vagus/recurrent laryngeal, palatal simetrinin korunması glossopharyngeal-vagal, omuz gücünün korunması accessory ve yüz mimiklerinin simetrik olması facial sinir seçeneklerini zayıflatır.",
+  "optionComparison": {
+    "Nervus glossopharyngeus": "Glossopharyngeus sinir yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. Bu vakada yumuşak damak simetrik, belirgin yutma refleksi sorunu yok ve temel bulgu dil motor deviasyonudur.",
+    "Nervus vagus": "Vagus veya rekürren laringeal dal hasarında ses kısıklığı, vokal kord hareket kusuru ve palatal asimetri daha öne çıkar. Laringoskopide vokal kord hareketleri korunmuştur; dil deviasyonu vagus yerine hipoglossal siniri düşündürür.",
+    "Nervus accessorius": "Accessory sinir sternocleidomastoid ve trapezius kaslarını innerve eder; hasarında omuz düşüklüğü, omuz silkmede güçsüzlük veya baş çevirme zayıflığı beklenir. Bu hastada omuz ve boyun motor fonksiyonu korunmuştur.",
+    "Nervus hypoglossus": "Doğru yanıttır; hipoglossal sinir dil kaslarının motor siniridir ve karotis üçgeni cerrahisinde risk altındadır. Tek taraflı alt motor nöron hasarında dil protrüzyon sırasında lezyon tarafına deviye olur; sağa deviasyon sağ hipoglossal etkilenimi destekler.",
+    "Nervus facialis": "Facial sinir mimik kasları, stapedius ve bazı tat-parasempatik fonksiyonlarla ilişkilidir. Yüz asimetrisi veya orbiküler kas güçsüzlüğü yoktur; dil protrüzyon motoru facial sinirle açıklanmaz."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Karotis cerrahisi sonrası başlangıç → karotis üçgeni komşuluğundaki kraniyal sinirler anatomik risk altındadır.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Dil protrüzyonunda sağa deviasyon → sağ dil kaslarının motor zayıflığını gösterir.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Ses kısıklığı ve vokal kord hareket kusuru olmaması → vagus/recurrent laryngeal etkilenimini zayıflatır.",
+      "weight": "medium",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Omuz silkme ve mimik kaslarının korunması → accessory ve facial sinir hasarıyla uyumlu değildir.",
+      "weight": "medium",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Nervus glossopharyngeus": "Glossopharyngeus sinir yutma, farinks duyusu ve gag refleksinin afferent koluyla ilişkilidir. Bu vakada yumuşak damak simetrik, belirgin yutma refleksi sorunu yok ve temel bulgu dil motor deviasyonudur.",
+    "Nervus vagus": "Vagus veya rekürren laringeal dal hasarında ses kısıklığı, vokal kord hareket kusuru ve palatal asimetri daha öne çıkar. Laringoskopide vokal kord hareketleri korunmuştur; dil deviasyonu vagus yerine hipoglossal siniri düşündürür.",
+    "Nervus accessorius": "Accessory sinir sternocleidomastoid ve trapezius kaslarını innerve eder; hasarında omuz düşüklüğü, omuz silkmede güçsüzlük veya baş çevirme zayıflığı beklenir. Bu hastada omuz ve boyun motor fonksiyonu korunmuştur.",
+    "Nervus facialis": "Facial sinir mimik kasları, stapedius ve bazı tat-parasempatik fonksiyonlarla ilişkilidir. Yüz asimetrisi veya orbiküler kas güçsüzlüğü yoktur; dil protrüzyon motoru facial sinirle açıklanmaz."
+  }
+},
+{
+  "id": "v196-new-342-torakal-bicaklanma-sonrasi-cift-duyu-paterni",
+  "branchId": "anatomy",
+  "caseType": "standard",
+  "relatedBranch": "Anatomi",
+  "title": "Torakal bıçaklanma sonrası çift duyu paterni",
+  "difficulty": "Zor",
+  "clinicalFocus": "Spinal kord hemiseksiyonunda motor, dorsal kolon ve spinotalamik yol bulgularını lezyon tarafı ve seviyesiyle ilişkilendirme.",
+  "learningTarget": "Brown-Séquard paterninde ipsilateral motor/propriosepsiyon kaybı ile kontralateral ağrı-sıcaklık kaybını anatomik trakt çaprazları üzerinden lokalize edebilme.",
+  "demographics": "34 yaşında erkek hasta",
+  "setting": "Acil servis",
+  "chiefComplaint": "Hasta, sırtın sağ tarafına kesici alet yaralanması sonrası sağ bacakta güçsüzlük ve solda ağrı-sıcaklık duyusunda azalma nedeniyle değerlendiriliyor.",
+  "stem": "Hasta tartışma sırasında sırtının sağ tarafına kesici bir cisimle yaralandığını ve olaydan hemen sonra bacaklarında dengesizlik hissettiğini anlatır. Acil servise gelirken sağ bacağını yere daha zor bastığını, merdiven çıkmaya çalışınca sağ bacağının kontrolsüz kaldığını fark etmiştir. Kısa süre sonra sol bacağında sıcak-soğuk ayrımını eskisi kadar net yapamadığını söylemiştir. Bilincini kaybetmemiştir; kol hareketlerinde belirgin sorun, baş-boyun travması veya daha önce benzer nörolojik yakınma tariflemez. Yaralanma hattının olduğu bölgede ağrı devam ettiği için acil değerlendirmeye alınmıştır.",
+  "patientIntro": {
+    "profile": "34 yaşında erkek hasta, torakal bölgede kesici alet yaralanması sonrası nörolojik defisit nedeniyle acil serviste değerlendiriliyor.",
+    "presentation": "Sağ bacakta üst motor nöron paterninde güçsüzlük, sağda vibrasyon-pozisyon duyusu azalması ve solda ağrı-sıcaklık duyusu kaybı vardır.",
+    "historySummary": "Hasta tartışma sırasında sırtının sağ tarafına kesici bir cisimle yaralandığını ve olaydan hemen sonra bacaklarında dengesizlik hissettiğini anlatır. Acil servise gelirken sağ bacağını yere daha zor bastığını, merdiven çıkmaya çalışınca sağ bacağının kontrolsüz kaldığını fark etmiştir. Kısa süre sonra sol bacağında sıcak-soğuk ayrımını eskisi kadar net yapamadığını söylemiştir. Bilincini kaybetmemiştir; kol hareketlerinde belirgin sorun, baş-boyun travması veya daha önce benzer nörolojik yakınma tariflemez. Yaralanma hattının olduğu bölgede ağrı devam ettiği için acil değerlendirmeye alınmıştır."
+  },
+  "vitals": {
+    "TA": "122/74 mmHg",
+    "Nabız": "104/dk",
+    "Solunum": "19/dk",
+    "SpO2": "98%, oda havasında",
+    "Ateş": "36.5 °C",
+    "Şok indeksi": "0.85 sınırda"
+  },
+  "exam": [
+    "Sağ alt ekstremitede kas gücü 4/5 olup tonus artışı ve patella refleksinde belirginleşme izlenir.",
+    "Sağ alt ekstremitede vibrasyon ve eklem pozisyon duyusu T10 dermatomu altından itibaren azalmıştır.",
+    "Sol alt ekstremitede ağrı ve sıcaklık duyusu yaklaşık T12 dermatomu altından itibaren azalmıştır.",
+    "Üst ekstremite motor ve duyu muayenesi doğaldır; perianal duyu korunmuş ve idrar retansiyonu saptanmamıştır."
+  ],
+  "investigations": [
+    {
+      "id": "v196-new-342-torakal-bicaklanma-sonrasi-cift-duyu-paterni-torakal-mrg",
+      "label": "Torakal spinal MRG bulgusu",
+      "title": "Torakal spinal MRG bulgusu",
+      "orderLabel": "Torakal spinal MRG bulgusu",
+      "type": "mri",
+      "priority": "essential",
+      "subtype": "Torakal spinal MRG bulgusu",
+      "category": "imaging",
+      "testTypeCategory": "imaging",
+      "summary": "T10 vertebra düzeyinde sağ posterolateral kord yarısında sınırlı kontüzyon ve ödem izlenmiş, sol hemikordda belirgin sinyal değişikliği saptanmamıştır.",
+      "clinicalMeaning": "T10 vertebra düzeyinde sağ posterolateral kord yarısında sınırlı kontüzyon ve ödem izlenmiş, sol hemikordda belirgin sinyal değişikliği saptanmamıştır.",
+      "result": {
+        "title": "Torakal spinal MRG bulgusu",
+        "summary": "T10 vertebra düzeyinde sağ posterolateral kord yarısında sınırlı kontüzyon ve ödem izlenmiş, sol hemikordda belirgin sinyal değişikliği saptanmamıştır.",
+        "interpretation": "MRG’de tek taraflı sağ torakal kord etkilenimi, muayenedeki ipsilateral motor-dorsal kolon ve kontralateral spinotalamik bulgularla birlikte yorumlanmalıdır.",
+        "values": [
+          [
+            "Görüntüleme düzeyi",
+            "T10 vertebra düzeyi",
+            "",
+            "Torakal kord segmentiyle ilişkili"
+          ],
+          [
+            "Kord tutulumu",
+            "Sağ posterolateral hemikordda sınırlı kontüzyon ve ödem",
+            "",
+            "Tek taraflı trakt etkilenimi"
+          ],
+          [
+            "Sol hemikord",
+            "Belirgin sinyal değişikliği izlenmedi",
+            "",
+            "Bulgular asimetrik"
+          ],
+          [
+            "Kanal basısı",
+            "Tam transvers bası veya yaygın kord ödemi yok",
+            "",
+            "Tam kord kesisi paternini desteklemez"
+          ]
+        ],
+        "rows": [
+          [
+            "Görüntüleme düzeyi",
+            "T10 vertebra düzeyi",
+            "",
+            "Torakal kord segmentiyle ilişkili"
+          ],
+          [
+            "Kord tutulumu",
+            "Sağ posterolateral hemikordda sınırlı kontüzyon ve ödem",
+            "",
+            "Tek taraflı trakt etkilenimi"
+          ],
+          [
+            "Sol hemikord",
+            "Belirgin sinyal değişikliği izlenmedi",
+            "",
+            "Bulgular asimetrik"
+          ],
+          [
+            "Kanal basısı",
+            "Tam transvers bası veya yaygın kord ödemi yok",
+            "",
+            "Tam kord kesisi paternini desteklemez"
+          ]
+        ]
+      },
+      "rows": [
+        [
+          "Görüntüleme düzeyi",
+          "T10 vertebra düzeyi",
+          "",
+          "Torakal kord segmentiyle ilişkili"
+        ],
+        [
+          "Kord tutulumu",
+          "Sağ posterolateral hemikordda sınırlı kontüzyon ve ödem",
+          "",
+          "Tek taraflı trakt etkilenimi"
+        ],
+        [
+          "Sol hemikord",
+          "Belirgin sinyal değişikliği izlenmedi",
+          "",
+          "Bulgular asimetrik"
+        ],
+        [
+          "Kanal basısı",
+          "Tam transvers bası veya yaygın kord ödemi yok",
+          "",
+          "Tam kord kesisi paternini desteklemez"
+        ]
+      ],
+      "postAnswerExplanation": "MRG’de tek taraflı sağ torakal kord etkilenimi, muayenedeki ipsilateral motor-dorsal kolon ve kontralateral spinotalamik bulgularla birlikte yorumlanmalıdır.",
+      "interpretation": "MRG’de tek taraflı sağ torakal kord etkilenimi, muayenedeki ipsilateral motor-dorsal kolon ve kontralateral spinotalamik bulgularla birlikte yorumlanmalıdır.",
+      "explanationAfterAnswer": "MRG’de tek taraflı sağ torakal kord etkilenimi, muayenedeki ipsilateral motor-dorsal kolon ve kontralateral spinotalamik bulgularla birlikte yorumlanmalıdır."
+    }
+  ],
+  "useSyntheticInvestigationBank": false,
+  "managementSequence": {
+    "enabled": false
+  },
+  "hideExamSignal": true,
+  "question": "Bu hastadaki nörolojik bulguları en iyi açıklayan anatomik lezyon lokalizasyonu hangisidir?",
+  "questionType": "anatomy",
+  "answerTarget": "anatomy",
+  "diagnosis": {
+    "correct": "Sağ T10 hemikord lezyonu",
+    "options": [
+      "Sağ T10 hemikord lezyonu",
+      "Sol T10 hemikord lezyonu",
+      "T10 düzeyinde tam transvers kord lezyonu",
+      "Sağ L5 periferik sinir kökü lezyonu",
+      "Sol medulla oblongata lezyonu"
+    ],
+    "question": "Bu hastadaki nörolojik bulguları en iyi açıklayan anatomik lezyon lokalizasyonu hangisidir?",
+    "explanation": "Spinal kord hemiseksiyonunda kortikospinal trakt ve dorsal kolon bulguları lezyon tarafında, spinotalamik ağrı-sıcaklık kaybı ise lifler segmental düzeyde çaprazlandıktan sonra karşı tarafta ortaya çıkar. Bu vakada sağ bacakta üst motor nöron paterninde güçsüzlük ve sağda vibrasyon-pozisyon duyusu kaybı, sağ kord yarısındaki kortikospinal trakt ve dorsal kolon etkilenimini gösterir. Solda birkaç segment aşağıdan başlayan ağrı-sıcaklık kaybı ise sağ spinotalamik trakt etkilenimiyle uyumludur; MRG’nin sağ T10 hemikord sinyal değişikliği bu lokalizasyonu destekler.",
+    "pearls": [
+      {
+        "label": "Sınav notu",
+        "text": "Aynı tarafta UMN + propriosepsiyon kaybı, karşı tarafta ağrı-sıcaklık kaybı varsa spinal hemiseksiyon tarafını motor/dorsal kolon tarafı belirler."
+      }
+    ],
+    "answerFeedback": {
+      "summary": "İpsilateral motor-dorsal kolon kaybı ile kontralateral ağrı-sıcaklık kaybının birlikte görülmesi, torakal kordda hemiseksiyon paternini düşündürür.",
+      "whyCorrect": "Spinal kord hemiseksiyonunda kortikospinal trakt ve dorsal kolon bulguları lezyon tarafında, spinotalamik ağrı-sıcaklık kaybı ise lifler segmental düzeyde çaprazlandıktan sonra karşı tarafta ortaya çıkar. Bu vakada sağ bacakta üst motor nöron paterninde güçsüzlük ve sağda vibrasyon-pozisyon duyusu kaybı, sağ kord yarısındaki kortikospinal trakt ve dorsal kolon etkilenimini gösterir. Solda birkaç segment aşağıdan başlayan ağrı-sıcaklık kaybı ise sağ spinotalamik trakt etkilenimiyle uyumludur; MRG’nin sağ T10 hemikord sinyal değişikliği bu lokalizasyonu destekler.",
+      "rationale": "Spinal kord hemiseksiyonunda kortikospinal trakt ve dorsal kolon bulguları lezyon tarafında, spinotalamik ağrı-sıcaklık kaybı ise lifler segmental düzeyde çaprazlandıktan sonra karşı tarafta ortaya çıkar. Bu vakada sağ bacakta üst motor nöron paterninde güçsüzlük ve sağda vibrasyon-pozisyon duyusu kaybı, sağ kord yarısındaki kortikospinal trakt ve dorsal kolon etkilenimini gösterir. Solda birkaç segment aşağıdan başlayan ağrı-sıcaklık kaybı ise sağ spinotalamik trakt etkilenimiyle uyumludur; MRG’nin sağ T10 hemikord sinyal değişikliği bu lokalizasyonu destekler.",
+      "correctOptionFeedback": "Doğru yanıttır; sağ hemikord lezyonu sağ kortikospinal ve dorsal kolon bulgularını, spinotalamik çapraz nedeniyle solda ağrı-sıcaklık kaybını açıklar. MRG’deki sağ T10 sınırlı kord sinyali bu anatomik lokalizasyonu destekler.",
+      "keyClues": [
+        "Sağ bacakta UMN paterninde güçsüzlük → sağ kortikospinal trakt etkilenimini destekler.",
+        "Sağ vibrasyon-pozisyon duyusu kaybı → sağ dorsal kolon etkilenimine uyar.",
+        "Solda ağrı-sıcaklık kaybı → spinotalamik liflerin çaprazlanma özelliği nedeniyle karşı taraf bulgusudur.",
+        "MRG’de sağ T10 hemikordda sınırlı lezyon → Brown-Séquard paternini anatomik olarak destekler."
+      ],
+      "evidenceChain": [
+        {
+          "text": "Sağ alt ekstremitede UMN bulgusu → sağ kortikospinal trakt tutulumunu düşündürür.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Sağ vibrasyon ve pozisyon duyusu azalması → sağ dorsal kolon etkilenimiyle uyumludur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Sol ağrı-sıcaklık kaybı → karşı taraftaki spinotalamik yol bulgusudur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "T10 sağ hemikord MRG sinyal değişikliği → klinik trakt paternini anatomik düzeyle birleştirir.",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "examPearl": "Aynı tarafta UMN + propriosepsiyon kaybı, karşı tarafta ağrı-sıcaklık kaybı varsa spinal hemiseksiyon tarafını motor/dorsal kolon tarafı belirler.",
+      "pearls": [
+        {
+          "label": "Sınav notu",
+          "text": "Aynı tarafta UMN + propriosepsiyon kaybı, karşı tarafta ağrı-sıcaklık kaybı varsa spinal hemiseksiyon tarafını motor/dorsal kolon tarafı belirler."
+        }
+      ],
+      "clinicalPearls": [
+        {
+          "label": "Nöroanatomi",
+          "text": "Dorsal kolon medullada çaprazlanana kadar ipsilateral seyreder; spinotalamik lifler spinal kordda segmental düzeyde çaprazlanır."
+        }
+      ],
+      "optionComparison": {
+        "Sağ T10 hemikord lezyonu": "Doğru yanıttır; sağ hemikord lezyonu sağ kortikospinal ve dorsal kolon bulgularını, spinotalamik çapraz nedeniyle solda ağrı-sıcaklık kaybını açıklar. MRG’deki sağ T10 sınırlı kord sinyali bu anatomik lokalizasyonu destekler.",
+        "Sol T10 hemikord lezyonu": "Sol hemikord lezyonunda sol motor-proprioseptif kayıp ve sağ ağrı-sıcaklık kaybı beklenirdi. Bu vakada taraflar ters yöndedir; motor ve dorsal kolon kaybı sağdadır.",
+        "T10 düzeyinde tam transvers kord lezyonu": "Tam transvers lezyonda bilateral motor, duyu ve çoğu kez otonom etkilenim daha yaygın olurdu. Bu hastada bulgular belirgin asimetriktir, perianal duyu ve idrar fonksiyonu korunmuştur.",
+        "Sağ L5 periferik sinir kökü lezyonu": "L5 kök lezyonu dermatomal radiküler ağrı, ayak dorsifleksiyon/başparmak ekstansiyon zayıflığı ve segmental duyu değişikliği yapabilir. Buradaki ipsilateral dorsal kolon kaybı ve kontralateral ağrı-sıcaklık kaybı kök lezyonuyla açıklanamaz.",
+        "Sol medulla oblongata lezyonu": "Medulla lezyonları kraniyal sinir, bulber bulgu veya beyin sapı çapraz bulgularıyla ilişkilidir. Bu vakada travma torakal düzeydedir ve MRG torakal sağ hemikord lezyonunu göstermektedir."
+      },
+      "optionFeedback": {
+        "Sağ T10 hemikord lezyonu": {
+          "explanation": "Doğru yanıttır; sağ hemikord lezyonu sağ kortikospinal ve dorsal kolon bulgularını, spinotalamik çapraz nedeniyle solda ağrı-sıcaklık kaybını açıklar. MRG’deki sağ T10 sınırlı kord sinyali bu anatomik lokalizasyonu destekler."
+        },
+        "Sol T10 hemikord lezyonu": {
+          "explanation": "Sol hemikord lezyonunda sol motor-proprioseptif kayıp ve sağ ağrı-sıcaklık kaybı beklenirdi. Bu vakada taraflar ters yöndedir; motor ve dorsal kolon kaybı sağdadır."
+        },
+        "T10 düzeyinde tam transvers kord lezyonu": {
+          "explanation": "Tam transvers lezyonda bilateral motor, duyu ve çoğu kez otonom etkilenim daha yaygın olurdu. Bu hastada bulgular belirgin asimetriktir, perianal duyu ve idrar fonksiyonu korunmuştur."
+        },
+        "Sağ L5 periferik sinir kökü lezyonu": {
+          "explanation": "L5 kök lezyonu dermatomal radiküler ağrı, ayak dorsifleksiyon/başparmak ekstansiyon zayıflığı ve segmental duyu değişikliği yapabilir. Buradaki ipsilateral dorsal kolon kaybı ve kontralateral ağrı-sıcaklık kaybı kök lezyonuyla açıklanamaz."
+        },
+        "Sol medulla oblongata lezyonu": {
+          "explanation": "Medulla lezyonları kraniyal sinir, bulber bulgu veya beyin sapı çapraz bulgularıyla ilişkilidir. Bu vakada travma torakal düzeydedir ve MRG torakal sağ hemikord lezyonunu göstermektedir."
+        }
+      },
+      "whyWrong": {
+        "Sol T10 hemikord lezyonu": "Sol hemikord lezyonunda sol motor-proprioseptif kayıp ve sağ ağrı-sıcaklık kaybı beklenirdi. Bu vakada taraflar ters yöndedir; motor ve dorsal kolon kaybı sağdadır.",
+        "T10 düzeyinde tam transvers kord lezyonu": "Tam transvers lezyonda bilateral motor, duyu ve çoğu kez otonom etkilenim daha yaygın olurdu. Bu hastada bulgular belirgin asimetriktir, perianal duyu ve idrar fonksiyonu korunmuştur.",
+        "Sağ L5 periferik sinir kökü lezyonu": "L5 kök lezyonu dermatomal radiküler ağrı, ayak dorsifleksiyon/başparmak ekstansiyon zayıflığı ve segmental duyu değişikliği yapabilir. Buradaki ipsilateral dorsal kolon kaybı ve kontralateral ağrı-sıcaklık kaybı kök lezyonuyla açıklanamaz.",
+        "Sol medulla oblongata lezyonu": "Medulla lezyonları kraniyal sinir, bulber bulgu veya beyin sapı çapraz bulgularıyla ilişkilidir. Bu vakada travma torakal düzeydedir ve MRG torakal sağ hemikord lezyonunu göstermektedir."
+      },
+      "managementSteps": [],
+      "management": [],
+      "learningOutcome": "Brown-Séquard paterninde ipsilateral motor/propriosepsiyon kaybı ile kontralateral ağrı-sıcaklık kaybını anatomik trakt çaprazları üzerinden lokalize edebilme.",
+      "coreKnowledge": "Brown-Séquard paterninde hemikord tarafında kortikospinal trakt ve dorsal kolon kaybı, karşı tarafta ise spinotalamik ağrı-sıcaklık kaybı beklenir; spinotalamik kayıp genellikle birkaç segment aşağıdan belirginleşir."
+    },
+    "whyCorrect": "Spinal kord hemiseksiyonunda kortikospinal trakt ve dorsal kolon bulguları lezyon tarafında, spinotalamik ağrı-sıcaklık kaybı ise lifler segmental düzeyde çaprazlandıktan sonra karşı tarafta ortaya çıkar. Bu vakada sağ bacakta üst motor nöron paterninde güçsüzlük ve sağda vibrasyon-pozisyon duyusu kaybı, sağ kord yarısındaki kortikospinal trakt ve dorsal kolon etkilenimini gösterir. Solda birkaç segment aşağıdan başlayan ağrı-sıcaklık kaybı ise sağ spinotalamik trakt etkilenimiyle uyumludur; MRG’nin sağ T10 hemikord sinyal değişikliği bu lokalizasyonu destekler.",
+    "evidenceChain": [
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Sağ alt ekstremitede UMN bulgusu → sağ kortikospinal trakt tutulumunu düşündürür.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Sağ vibrasyon ve pozisyon duyusu azalması → sağ dorsal kolon etkilenimiyle uyumludur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "Sol ağrı-sıcaklık kaybı → karşı taraftaki spinotalamik yol bulgusudur.",
+        "weight": "high",
+        "source": "case"
+      },
+      {
+        "title": "Klinik-anatomik ipucu",
+        "text": "T10 sağ hemikord MRG sinyal değişikliği → klinik trakt paternini anatomik düzeyle birleştirir.",
+        "weight": "high",
+        "source": "case"
+      }
+    ],
+    "optionComparison": {
+      "Sağ T10 hemikord lezyonu": "Doğru yanıttır; sağ hemikord lezyonu sağ kortikospinal ve dorsal kolon bulgularını, spinotalamik çapraz nedeniyle solda ağrı-sıcaklık kaybını açıklar. MRG’deki sağ T10 sınırlı kord sinyali bu anatomik lokalizasyonu destekler.",
+      "Sol T10 hemikord lezyonu": "Sol hemikord lezyonunda sol motor-proprioseptif kayıp ve sağ ağrı-sıcaklık kaybı beklenirdi. Bu vakada taraflar ters yöndedir; motor ve dorsal kolon kaybı sağdadır.",
+      "T10 düzeyinde tam transvers kord lezyonu": "Tam transvers lezyonda bilateral motor, duyu ve çoğu kez otonom etkilenim daha yaygın olurdu. Bu hastada bulgular belirgin asimetriktir, perianal duyu ve idrar fonksiyonu korunmuştur.",
+      "Sağ L5 periferik sinir kökü lezyonu": "L5 kök lezyonu dermatomal radiküler ağrı, ayak dorsifleksiyon/başparmak ekstansiyon zayıflığı ve segmental duyu değişikliği yapabilir. Buradaki ipsilateral dorsal kolon kaybı ve kontralateral ağrı-sıcaklık kaybı kök lezyonuyla açıklanamaz.",
+      "Sol medulla oblongata lezyonu": "Medulla lezyonları kraniyal sinir, bulber bulgu veya beyin sapı çapraz bulgularıyla ilişkilidir. Bu vakada travma torakal düzeydedir ve MRG torakal sağ hemikord lezyonunu göstermektedir."
+    },
+    "optionFeedback": {
+      "Sağ T10 hemikord lezyonu": {
+        "explanation": "Doğru yanıttır; sağ hemikord lezyonu sağ kortikospinal ve dorsal kolon bulgularını, spinotalamik çapraz nedeniyle solda ağrı-sıcaklık kaybını açıklar. MRG’deki sağ T10 sınırlı kord sinyali bu anatomik lokalizasyonu destekler."
+      },
+      "Sol T10 hemikord lezyonu": {
+        "explanation": "Sol hemikord lezyonunda sol motor-proprioseptif kayıp ve sağ ağrı-sıcaklık kaybı beklenirdi. Bu vakada taraflar ters yöndedir; motor ve dorsal kolon kaybı sağdadır."
+      },
+      "T10 düzeyinde tam transvers kord lezyonu": {
+        "explanation": "Tam transvers lezyonda bilateral motor, duyu ve çoğu kez otonom etkilenim daha yaygın olurdu. Bu hastada bulgular belirgin asimetriktir, perianal duyu ve idrar fonksiyonu korunmuştur."
+      },
+      "Sağ L5 periferik sinir kökü lezyonu": {
+        "explanation": "L5 kök lezyonu dermatomal radiküler ağrı, ayak dorsifleksiyon/başparmak ekstansiyon zayıflığı ve segmental duyu değişikliği yapabilir. Buradaki ipsilateral dorsal kolon kaybı ve kontralateral ağrı-sıcaklık kaybı kök lezyonuyla açıklanamaz."
+      },
+      "Sol medulla oblongata lezyonu": {
+        "explanation": "Medulla lezyonları kraniyal sinir, bulber bulgu veya beyin sapı çapraz bulgularıyla ilişkilidir. Bu vakada travma torakal düzeydedir ve MRG torakal sağ hemikord lezyonunu göstermektedir."
+      }
+    },
+    "coreKnowledge": "Brown-Séquard paterninde hemikord tarafında kortikospinal trakt ve dorsal kolon kaybı, karşı tarafta ise spinotalamik ağrı-sıcaklık kaybı beklenir; spinotalamik kayıp genellikle birkaç segment aşağıdan belirginleşir.",
+    "examPearl": "Aynı tarafta UMN + propriosepsiyon kaybı, karşı tarafta ağrı-sıcaklık kaybı varsa spinal hemiseksiyon tarafını motor/dorsal kolon tarafı belirler.",
+    "whyWrong": {
+      "Sol T10 hemikord lezyonu": "Sol hemikord lezyonunda sol motor-proprioseptif kayıp ve sağ ağrı-sıcaklık kaybı beklenirdi. Bu vakada taraflar ters yöndedir; motor ve dorsal kolon kaybı sağdadır.",
+      "T10 düzeyinde tam transvers kord lezyonu": "Tam transvers lezyonda bilateral motor, duyu ve çoğu kez otonom etkilenim daha yaygın olurdu. Bu hastada bulgular belirgin asimetriktir, perianal duyu ve idrar fonksiyonu korunmuştur.",
+      "Sağ L5 periferik sinir kökü lezyonu": "L5 kök lezyonu dermatomal radiküler ağrı, ayak dorsifleksiyon/başparmak ekstansiyon zayıflığı ve segmental duyu değişikliği yapabilir. Buradaki ipsilateral dorsal kolon kaybı ve kontralateral ağrı-sıcaklık kaybı kök lezyonuyla açıklanamaz.",
+      "Sol medulla oblongata lezyonu": "Medulla lezyonları kraniyal sinir, bulber bulgu veya beyin sapı çapraz bulgularıyla ilişkilidir. Bu vakada travma torakal düzeydedir ve MRG torakal sağ hemikord lezyonunu göstermektedir."
+    }
+  },
+  "shuffleOptions": false,
+  "difficultyTag": "Zor",
+  "aiMeta": {
+    "generatedAt": "manual-v196-anatomy-five-case-expansion",
+    "generator": "manual-editorial-anatomy-clinical-case-expansion",
+    "schemaVersion": "clinical-standard-v397-compatible",
+    "validationWarnings": [],
+    "provider": "manual-editorial"
+  },
+  "listTitle": "Torakal bıçaklanma sonrası çift duyu paterni",
+  "cardTitle": "Torakal bıçaklanma sonrası çift duyu paterni",
+  "coreKnowledge": "Brown-Séquard paterninde hemikord tarafında kortikospinal trakt ve dorsal kolon kaybı, karşı tarafta ise spinotalamik ağrı-sıcaklık kaybı beklenir; spinotalamik kayıp genellikle birkaç segment aşağıdan belirginleşir.",
+  "examPearl": "Aynı tarafta UMN + propriosepsiyon kaybı, karşı tarafta ağrı-sıcaklık kaybı varsa spinal hemiseksiyon tarafını motor/dorsal kolon tarafı belirler.",
+  "whyCorrect": "Spinal kord hemiseksiyonunda kortikospinal trakt ve dorsal kolon bulguları lezyon tarafında, spinotalamik ağrı-sıcaklık kaybı ise lifler segmental düzeyde çaprazlandıktan sonra karşı tarafta ortaya çıkar. Bu vakada sağ bacakta üst motor nöron paterninde güçsüzlük ve sağda vibrasyon-pozisyon duyusu kaybı, sağ kord yarısındaki kortikospinal trakt ve dorsal kolon etkilenimini gösterir. Solda birkaç segment aşağıdan başlayan ağrı-sıcaklık kaybı ise sağ spinotalamik trakt etkilenimiyle uyumludur; MRG’nin sağ T10 hemikord sinyal değişikliği bu lokalizasyonu destekler.",
+  "optionComparison": {
+    "Sağ T10 hemikord lezyonu": "Doğru yanıttır; sağ hemikord lezyonu sağ kortikospinal ve dorsal kolon bulgularını, spinotalamik çapraz nedeniyle solda ağrı-sıcaklık kaybını açıklar. MRG’deki sağ T10 sınırlı kord sinyali bu anatomik lokalizasyonu destekler.",
+    "Sol T10 hemikord lezyonu": "Sol hemikord lezyonunda sol motor-proprioseptif kayıp ve sağ ağrı-sıcaklık kaybı beklenirdi. Bu vakada taraflar ters yöndedir; motor ve dorsal kolon kaybı sağdadır.",
+    "T10 düzeyinde tam transvers kord lezyonu": "Tam transvers lezyonda bilateral motor, duyu ve çoğu kez otonom etkilenim daha yaygın olurdu. Bu hastada bulgular belirgin asimetriktir, perianal duyu ve idrar fonksiyonu korunmuştur.",
+    "Sağ L5 periferik sinir kökü lezyonu": "L5 kök lezyonu dermatomal radiküler ağrı, ayak dorsifleksiyon/başparmak ekstansiyon zayıflığı ve segmental duyu değişikliği yapabilir. Buradaki ipsilateral dorsal kolon kaybı ve kontralateral ağrı-sıcaklık kaybı kök lezyonuyla açıklanamaz.",
+    "Sol medulla oblongata lezyonu": "Medulla lezyonları kraniyal sinir, bulber bulgu veya beyin sapı çapraz bulgularıyla ilişkilidir. Bu vakada travma torakal düzeydedir ve MRG torakal sağ hemikord lezyonunu göstermektedir."
+  },
+  "evidenceChain": [
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Sağ alt ekstremitede UMN bulgusu → sağ kortikospinal trakt tutulumunu düşündürür.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Sağ vibrasyon ve pozisyon duyusu azalması → sağ dorsal kolon etkilenimiyle uyumludur.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "Sol ağrı-sıcaklık kaybı → karşı taraftaki spinotalamik yol bulgusudur.",
+      "weight": "high",
+      "source": "case"
+    },
+    {
+      "title": "Klinik-anatomik ipucu",
+      "text": "T10 sağ hemikord MRG sinyal değişikliği → klinik trakt paternini anatomik düzeyle birleştirir.",
+      "weight": "high",
+      "source": "case"
+    }
+  ],
+  "whyWrong": {
+    "Sol T10 hemikord lezyonu": "Sol hemikord lezyonunda sol motor-proprioseptif kayıp ve sağ ağrı-sıcaklık kaybı beklenirdi. Bu vakada taraflar ters yöndedir; motor ve dorsal kolon kaybı sağdadır.",
+    "T10 düzeyinde tam transvers kord lezyonu": "Tam transvers lezyonda bilateral motor, duyu ve çoğu kez otonom etkilenim daha yaygın olurdu. Bu hastada bulgular belirgin asimetriktir, perianal duyu ve idrar fonksiyonu korunmuştur.",
+    "Sağ L5 periferik sinir kökü lezyonu": "L5 kök lezyonu dermatomal radiküler ağrı, ayak dorsifleksiyon/başparmak ekstansiyon zayıflığı ve segmental duyu değişikliği yapabilir. Buradaki ipsilateral dorsal kolon kaybı ve kontralateral ağrı-sıcaklık kaybı kök lezyonuyla açıklanamaz.",
+    "Sol medulla oblongata lezyonu": "Medulla lezyonları kraniyal sinir, bulber bulgu veya beyin sapı çapraz bulgularıyla ilişkilidir. Bu vakada travma torakal düzeydedir ve MRG torakal sağ hemikord lezyonunu göstermektedir."
+  }
+}
 ];
 
 export const cases = attachClinicalVisualsToCases(rawCases.map(sanitizeClinicalCaseExam), clinicalVisualManifest);
