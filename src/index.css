@@ -55337,3 +55337,87 @@ html[data-theme='dark'] .clinical-case.qbank-case .patient-summary-card.professi
   font-weight: 820 !important;
   letter-spacing: 0.045em !important;
 }
+
+/* ===== V417 — Olgu sunumu dark iç zemin tekilleştirme + başlık mikro küçültme =====
+   Dark modda Profil/Başvuru/Hasta Öyküsü bloğunun büyük iç panel zemini
+   tamamen kaldırılır; içerik doğrudan dış olgu kartının koyu yüzeyine oturur.
+   Bu blok import/override sırasına karşı hem index, hem refine, hem dark sistem
+   dosyasının sonunda tekrar edilerek sabitlenmiştir. */
+html[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.professional-patient-summary-card.clinical-summary-card.premium-reference-summary-card,
+.app-shell[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.professional-patient-summary-card.clinical-summary-card.premium-reference-summary-card,
+[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.professional-patient-summary-card.clinical-summary-card.premium-reference-summary-card {
+  --ps-card-bg: transparent !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  isolation: auto !important;
+}
+
+html[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.premium-reference-summary-card .patient-summary-unified-card,
+html[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.premium-reference-summary-card .summary-unified-section,
+html[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.premium-reference-summary-card .summary-detail-card,
+html[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block,
+.app-shell[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.premium-reference-summary-card .patient-summary-unified-card,
+.app-shell[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.premium-reference-summary-card .summary-unified-section,
+.app-shell[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.premium-reference-summary-card .summary-detail-card,
+.app-shell[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block,
+[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.premium-reference-summary-card .patient-summary-unified-card,
+[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.premium-reference-summary-card .summary-unified-section,
+[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.premium-reference-summary-card .summary-detail-card,
+[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+html[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.premium-reference-summary-card .patient-summary-unified-card > .summary-unified-section:not(:last-child)::after,
+.app-shell[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.premium-reference-summary-card .patient-summary-unified-card > .summary-unified-section:not(:last-child)::after,
+[data-theme='dark'] .clinical-case.qbank-case .case-hero-card.card-surface.professional-case-hero .patient-summary-card.premium-reference-summary-card .patient-summary-unified-card > .summary-unified-section:not(:last-child)::after {
+  content: '' !important;
+  display: block !important;
+  background: rgba(148, 163, 184, 0.22) !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
+
+.case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-detail-label,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-detail-label,
+.case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-card--presentation .summary-detail-label,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--presentation .summary-detail-label,
+.case-page-shell .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+.case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--presentation .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--presentation .summary-detail-label,
+.clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+.clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span {
+  font-size: 15px !important;
+  line-height: 1.16 !important;
+  font-weight: 805 !important;
+  letter-spacing: 0.04em !important;
+}
+
+@media (max-width: 680px) {
+  .case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-detail-label,
+  .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-detail-label,
+  .case-page-shell .patient-summary-card.premium-reference-summary-card .summary-detail-card--presentation .summary-detail-label,
+  .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--presentation .summary-detail-label,
+  .case-page-shell .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+  .case-page-shell .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span,
+  .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-detail-label,
+  .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-detail-label,
+  .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .summary-detail-card--presentation .summary-detail-label,
+  .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--presentation .summary-detail-label,
+  .clinical-case.qbank-case .patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+  .clinical-case.qbank-case .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block .summary-story-label span {
+    font-size: 14.75px !important;
+  }
+}
