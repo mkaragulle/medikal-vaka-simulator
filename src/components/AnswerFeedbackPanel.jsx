@@ -1,3 +1,4 @@
+import { memo, useMemo } from 'react';
 import { Icon, IconBadge } from './ui.jsx';
 import GlossaryText from './GlossaryTooltip.jsx';
 import { formatAppearedYears, resolveExamSignal } from '../utils/examMeta.js';
@@ -1164,30 +1165,52 @@ function AnswerFeedbackPanel({
   hardMode = false,
 }) {
   const selectedDiagnosis = selected;
-  const whyCorrect = deriveWhyCorrect(clinicalCase);
-  const evidenceChain = deriveEvidenceChain(clinicalCase);
-  const optionComparisons = buildOptionComparisons(clinicalCase, selectedDiagnosis, evidenceChain);
-  const selectedComparison = optionComparisons.find((item) => item.option === selectedDiagnosis);
-  const whyWrong = deriveWhyWrong(clinicalCase, selectedDiagnosis, selectedComparison);
-  const reasoningText = whyCorrect;
-  const rawPearls = derivePearls(clinicalCase);
-  const managementSteps = deriveManagementSteps(clinicalCase);
+  const feedbackModel = useMemo(() => {
+    const whyCorrect = deriveWhyCorrect(clinicalCase);
+    const evidenceChain = deriveEvidenceChain(clinicalCase);
+    const optionComparisons = buildOptionComparisons(clinicalCase, selectedDiagnosis, evidenceChain);
+    const selectedComparison = optionComparisons.find((item) => item.option === selectedDiagnosis);
+    const whyWrong = deriveWhyWrong(clinicalCase, selectedDiagnosis, selectedComparison);
+    const reasoningText = whyCorrect;
+    const rawPearls = derivePearls(clinicalCase);
+    const managementSteps = deriveManagementSteps(clinicalCase);
+    const dedupedFeedback = feedbackDuplicationGate({
+      signal: resolveExamSignal(clinicalCase),
+      pearls: rawPearls,
+      reasoningText,
+      evidenceChain,
+      managementSteps,
+      correctAnswer: clinicalCase.diagnosis?.correct || '',
+    });
+
+    return {
+      whyCorrect,
+      evidenceChain,
+      optionComparisons,
+      whyWrong,
+      reasoningText,
+      managementSteps,
+      examSignal: dedupedFeedback.signal,
+      pearls: dedupedFeedback.pearls,
+      singleLinePearl: deriveSingleLinePearl(clinicalCase, reasoningText),
+    };
+  }, [clinicalCase, selectedDiagnosis]);
+
+  const {
+    whyCorrect,
+    evidenceChain,
+    optionComparisons,
+    whyWrong,
+    reasoningText,
+    managementSteps,
+    examSignal,
+    pearls,
+    singleLinePearl,
+  } = feedbackModel;
   const glossaryEnabled = !hardMode;
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
-  const dedupedFeedback = feedbackDuplicationGate({
-    signal: resolveExamSignal(clinicalCase),
-    pearls: rawPearls,
-    reasoningText,
-    evidenceChain,
-    managementSteps,
-    correctAnswer: clinicalCase.diagnosis?.correct || '',
-  });
-  const examSignal = dedupedFeedback.signal;
-  const pearls = dedupedFeedback.pearls;
   const shouldRenderPearls = pearls.length && (!isSpotCase || !examSignal.hasContent);
   const isAISpot = clinicalCase.caseType === 'ai-spot';
-  const singleLinePearl = deriveSingleLinePearl(clinicalCase, reasoningText);
-  const aiSpotFocusedComparisons = buildAISpotFocusedComparisons(optionComparisons, selectedDiagnosis, isCorrect);
 
   if (isAISpot) {
     return (
@@ -1221,4 +1244,4 @@ function AnswerFeedbackPanel({
   );
 }
 
-export default AnswerFeedbackPanel;
+export default memo(AnswerFeedbackPanel);

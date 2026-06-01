@@ -686,6 +686,71 @@ function splitClinicalExamFindingsForVisualGate(examFindings = [], hasClinicalVi
   }, { visible: [], visualGated: [] });
 }
 
+
+function getExplicitInvestigationSourceCount(clinicalCase = {}) {
+  if (Array.isArray(clinicalCase.availableInvestigations)) return clinicalCase.availableInvestigations.length;
+  if (Array.isArray(clinicalCase.investigations)) return clinicalCase.investigations.length;
+  return 0;
+}
+
+function useDeferredInvestigationOrders(clinicalCase, enabled = true) {
+  const [state, setState] = useState({ ready: false, orders: [] });
+
+  useEffect(() => {
+    let cancelled = false;
+    let rafId = 0;
+    let idleId = 0;
+    let timerId = 0;
+
+    setState({ ready: false, orders: [] });
+    if (!enabled) {
+      setState({ ready: true, orders: [] });
+      return undefined;
+    }
+
+    const computeOrders = () => {
+      if (cancelled) return;
+      const nextOrders = buildInvestigationOrders(clinicalCase);
+      if (!cancelled) setState({ ready: true, orders: nextOrders });
+    };
+
+    if (typeof window === 'undefined') {
+      computeOrders();
+      return undefined;
+    }
+
+    rafId = window.requestAnimationFrame(() => {
+      if ('requestIdleCallback' in window) {
+        idleId = window.requestIdleCallback(computeOrders, { timeout: 520 });
+      } else {
+        timerId = window.setTimeout(computeOrders, 32);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+      if (rafId) window.cancelAnimationFrame(rafId);
+      if (idleId) window.cancelIdleCallback?.(idleId);
+      if (timerId) window.clearTimeout(timerId);
+    };
+  }, [clinicalCase, enabled]);
+
+  return state;
+}
+
+function DeferredCaseSection({ title = 'Bölüm', subtitle = 'İçerik hazırlanıyor.' }) {
+  return (
+    <section className="card-surface deferred-case-section-shell" aria-busy="true">
+      <div className="panel-title-row compact refined-section-heading">
+        <div>
+          <h2>{title}</h2>
+          <p>{subtitle}</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function CasePlayer({
   clinicalCase,
   branch,
@@ -710,7 +775,9 @@ function CasePlayer({
   const patientSummary = useMemo(() => buildPatientSummary(clinicalCase), [clinicalCase]);
   const caseExamSignal = useMemo(() => resolveExamSignal(clinicalCase), [clinicalCase]);
   const vitalEntries = useMemo(() => buildDerivedVitalEntries(clinicalCase.vitals), [clinicalCase.vitals]);
-  const investigationOrders = useMemo(() => buildInvestigationOrders(clinicalCase), [clinicalCase]);
+  const explicitInvestigationSourceCount = getExplicitInvestigationSourceCount(clinicalCase);
+  const mayHaveInvestigationOrders = explicitInvestigationSourceCount > 0 || clinicalCase.useSyntheticInvestigationBank === true;
+  const { ready: investigationOrdersReady, orders: investigationOrders } = useDeferredInvestigationOrders(clinicalCase, mayHaveInvestigationOrders);
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const caseGlossaryEnabled = !hardMode;
   const hasExamData = sanitizedExamFindings.some((finding) => String(finding || '').trim());
@@ -724,7 +791,7 @@ function CasePlayer({
   const hasVitalData = vitalEntries.length > 0;
   const showExamPanel = !isSpotCase || hasExamData || hasVitalData || hasClinicalExamVisuals;
   const hasInvestigationOrders = investigationOrders.length > 0;
-  const showInvestigationPanel = hasInvestigationOrders;
+  const showInvestigationPanel = mayHaveInvestigationOrders && (!investigationOrdersReady || hasInvestigationOrders);
   const hasExplicitManagementSteps = Array.isArray(clinicalCase.managementSequence?.steps)
     ? clinicalCase.managementSequence.steps.length > 0
     : true;
@@ -1068,15 +1135,19 @@ function CasePlayer({
 
             {showInvestigationPanel ? (
               <section id="case-investigations" className="section-anchor" ref={ordersRef} data-section="case-investigations">
-                <InvestigationPanel
-                  clinicalCase={clinicalCase}
-                  mode={examMeta?.active ? 'exam' : mode}
-                  hardMode={hardMode}
-                  orderedInvestigationIds={orderedInvestigationIds}
-                  onOrderInvestigation={handleOrderInvestigation}
-                  orders={investigationOrders}
-                  glossaryRevealMode={caseGlossaryRevealMode}
-                />
+                {investigationOrdersReady && hasInvestigationOrders ? (
+                  <InvestigationPanel
+                    clinicalCase={clinicalCase}
+                    mode={examMeta?.active ? 'exam' : mode}
+                    hardMode={hardMode}
+                    orderedInvestigationIds={orderedInvestigationIds}
+                    onOrderInvestigation={handleOrderInvestigation}
+                    orders={investigationOrders}
+                    glossaryRevealMode={caseGlossaryRevealMode}
+                  />
+                ) : (
+                  <DeferredCaseSection title="Objektif Veri / Tetkik" subtitle="Tetkik listesi ilk ekranı bloklamadan hazırlanıyor." />
+                )}
               </section>
             ) : null}
 
