@@ -22,6 +22,8 @@ import { listAIQuestionBranches } from './utils/aiQuestionGenerator.js';
 import { isGoogleAuthConfigured, signInWithGoogle } from './services/googleAuth.js';
 
 const loadCasePlayer = () => import('./components/CasePlayer.jsx');
+const loadInvestigationPanel = () => import('./components/InvestigationPanel.jsx');
+const loadManagementSequencePanel = () => import('./components/ManagementSequencePanel.jsx');
 const loadKomiteModeWorkspace = () => import('./components/KomiteModeWorkspace.jsx');
 const loadStudyReviewHub = () => import('./components/StudyReviewHub.jsx');
 const loadTusPearlStudyScreen = () => import('./components/TusPearlStudyScreen.jsx');
@@ -530,18 +532,32 @@ function App() {
   useEffect(() => {
     if (!currentUser) return undefined;
 
-    // Warm route chunks without stealing the first interactive frames from the
-    // home/branch selector. CasePlayer still preloads early, while heavier
-    // secondary work is staggered to idle periods.
-    const cancelWarmups = [
-      scheduleIdleWork(() => { loadCasePlayer(); }, 260),
-      scheduleIdleWork(() => { loadStudyReviewHub(); }, 520),
-      scheduleIdleWork(() => { loadTusPearlStudyScreen(); }, 760),
-      scheduleIdleWork(() => { loadExamResults(); loadAIGeneratedQuestionView(); }, 980),
-      scheduleIdleWork(() => { loadKomiteModeWorkspace(); }, 1400),
-    ];
+    // Kritik vaka rotası hemen ısıtılır; daha ağır alt paneller ise idle zamanda
+    // çekilir. Böylece branş kartına tıklayınca ilk ekran hızlı gelir, ama tetkik
+    // ve yönetim bölümleri kullanıcı kaydırmadan önce hazır olmaya çalışır.
+    loadCasePlayer();
 
-    return () => cancelWarmups.forEach((cancel) => cancel?.());
+    const cancelStudyHubWarmup = scheduleIdleWork(() => {
+      loadStudyReviewHub();
+      loadAIGeneratedQuestionView();
+    }, 420);
+
+    const cancelCasePanelWarmup = scheduleIdleWork(() => {
+      loadInvestigationPanel();
+      loadManagementSequencePanel();
+      loadExamResults();
+      loadTusPearlStudyScreen();
+    }, 900);
+
+    const cancelKomiteWarmup = scheduleIdleWork(() => {
+      loadKomiteModeWorkspace();
+    }, 1700);
+
+    return () => {
+      cancelStudyHubWarmup?.();
+      cancelCasePanelWarmup?.();
+      cancelKomiteWarmup?.();
+    };
   }, [currentUser]);
 
   function clearAIQuestionTimer() {
@@ -590,7 +606,6 @@ function App() {
   );
 
   const activeBranchCasePool = filteredBranchCases.length ? filteredBranchCases : branchCases;
-  const activeBranchCaseIdSet = useMemo(() => new Set(activeBranchCasePool.map((clinicalCase) => clinicalCase.id)), [activeBranchCasePool]);
 
   const deferredBottomCaseSearchQuery = useDeferredValue(bottomCaseSearchQuery);
 
@@ -610,9 +625,9 @@ function App() {
     if (!selectedCaseId) return activeBranchCasePool[0] ?? null;
     if (!accessibleCaseIds.has(selectedCaseId)) return activeBranchCasePool[0] ?? null;
     const candidate = accessibleCaseIndex.byId.get(selectedCaseId);
-    if (candidate && activeBranchCaseIdSet.has(candidate.id)) return candidate;
+    if (candidate && activeBranchCasePool.some((clinicalCase) => clinicalCase.id === candidate.id)) return candidate;
     return activeBranchCasePool[0] ?? null;
-  }, [selectedCaseId, activeBranchCasePool, activeBranchCaseIdSet, examState, accessibleCaseIds, accessibleCases, accessibleCaseIndex]);
+  }, [selectedCaseId, activeBranchCasePool, examState, accessibleCaseIds, accessibleCases, accessibleCaseIndex]);
 
   const persistCurrentUser = (patch) => {
     setCurrentUser((current) => {
@@ -994,10 +1009,10 @@ function App() {
       setSelectedCaseId(null);
       return;
     }
-    if (!activeBranchCaseIdSet.has(selectedCaseId)) {
+    if (!activeBranchCasePool.some((clinicalCase) => clinicalCase.id === selectedCaseId)) {
       setSelectedCaseId(activeBranchCasePool[0]?.id ?? null);
     }
-  }, [selectedBranchId, activeBranchCasePool, activeBranchCaseIdSet, selectedCaseId, visibleBranches]);
+  }, [selectedBranchId, activeBranchCasePool, selectedCaseId, visibleBranches]);
 
   useEffect(() => {
     if (!examState?.active) return undefined;
@@ -1113,18 +1128,17 @@ function App() {
     setWrongAnswersPageOpen(false);
     if (isDemoUser && !visibleBranches.some((branch) => branch.id === branchId)) return;
     const rawBranchPool = accessibleCaseIndex.byBranchId.get(branchId) ?? [];
-    if (!rawBranchPool.length) return;
+    const branchPool = sortCasesBySolvedStatus(rawBranchPool, solvedCaseIdSet);
+    if (!branchPool.length) return;
 
     clearBranchRouteTimers();
     setBranchRouteTransition(null);
+    setBranchDifficultyFilter('all');
+    setSelectedBranchId(branchId);
+    setSelectedCaseId(branchPool[0]?.id ?? null);
+    setIsCaseSidebarOpen(true);
     scrollToTopSmart({ smooth: false });
-    startTransition(() => {
-      setBranchDifficultyFilter('all');
-      setSelectedBranchId(branchId);
-      setSelectedCaseId(rawBranchPool[0]?.id ?? null);
-      setIsCaseSidebarOpen(true);
-    });
-  }, [accessibleCaseIndex, clearBranchRouteTimers, closePearlStudy, isDemoUser, visibleBranches]);
+  }, [accessibleCaseIndex, clearBranchRouteTimers, closePearlStudy, isDemoUser, solvedCaseIdSet, visibleBranches]);
 
   const handleSelectCase = useCallback((caseId) => {
     if (!accessibleCaseIds.has(caseId)) return;

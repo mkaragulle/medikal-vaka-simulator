@@ -16,6 +16,7 @@ export default defineConfig({
           if (id.includes('node_modules/jszip')) return 'vendor-zip';
           if (id.includes('/src/data/cases.js')) return 'case-bank';
           if (id.includes('/src/data/tusPearlCards.js')) return 'pearl-bank';
+          if (id.includes('/src/components/GlossaryTooltip.full.jsx') || id.includes('/src/utils/glossary.js') || id.includes('/src/data/tusGlossary')) return 'glossary-bank';
           return undefined;
         },
       },

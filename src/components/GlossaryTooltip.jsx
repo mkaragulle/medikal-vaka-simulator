@@ -1,86 +1,69 @@
-import { memo, lazy, Suspense, useEffect, useMemo, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
-let glossaryCorePromise = null;
+let glossaryModulePromise = null;
+let glossaryComponent = null;
 
-function loadGlossaryCore() {
-  if (!glossaryCorePromise) {
-    glossaryCorePromise = import('./GlossaryTooltipCore.jsx');
+function loadFullGlossaryTooltip() {
+  if (glossaryComponent) return Promise.resolve(glossaryComponent);
+  if (!glossaryModulePromise) {
+    glossaryModulePromise = import('./GlossaryTooltip.full.jsx').then((module) => {
+      glossaryComponent = module.default;
+      return glossaryComponent;
+    });
   }
-  return glossaryCorePromise;
+  return glossaryModulePromise;
 }
 
-const GlossaryTooltipCore = lazy(loadGlossaryCore);
+export function preloadGlossaryTooltip() {
+  return loadFullGlossaryTooltip();
+}
 
-function scheduleNonBlocking(callback, timeout = 900) {
+function scheduleIdle(callback, timeout = 1400) {
   if (typeof window === 'undefined') return () => {};
   if ('requestIdleCallback' in window) {
-    const idleId = window.requestIdleCallback(callback, { timeout });
-    return () => window.cancelIdleCallback?.(idleId);
+    const id = window.requestIdleCallback(callback, { timeout });
+    return () => window.cancelIdleCallback?.(id);
   }
-  const timerId = window.setTimeout(callback, Math.min(timeout, 220));
-  return () => window.clearTimeout(timerId);
+  const id = window.setTimeout(callback, Math.min(timeout, 700));
+  return () => window.clearTimeout(id);
 }
 
-function shouldHydrateGlossaryText({ enabled, text, maxTerms, nestingLevel }) {
-  if (!enabled || maxTerms === 0) return false;
-  if (Number(nestingLevel || 0) > 0) return true;
-  const sourceText = String(text || '').trim();
-  if (sourceText.length < 3) return false;
-  if (!/[\p{L}]/u.test(sourceText)) return false;
-  if (/^[\d\s.,:+/<>=%°µμ\-–()]+$/u.test(sourceText)) return false;
-  return true;
-}
-
-function PlainGlossaryText({ text = '', nestingLevel = 0, contextMode = '' }) {
+function DeferredPlainText({ text = '', nestingLevel = 0, contextMode = '' }) {
   return (
-    <span className="glossary-text-flow glossary-text-flow--pending" data-nesting-level={nestingLevel} data-glossary-context-mode={contextMode || undefined}>
+    <span
+      className="glossary-text-flow glossary-text-flow-deferred"
+      data-nesting-level={nestingLevel}
+      data-glossary-context-mode={contextMode || 'deferred'}
+    >
       {String(text || '')}
     </span>
   );
 }
 
 function GlossaryText(props) {
-  const {
-    text = '',
-    enabled = true,
-    maxTerms = undefined,
-    nestingLevel = 0,
-    contextMode = '',
-  } = props;
-  const shouldHydrate = useMemo(
-    () => shouldHydrateGlossaryText({ enabled, text, maxTerms, nestingLevel }),
-    [enabled, text, maxTerms, nestingLevel],
-  );
-  const [coreReady, setCoreReady] = useState(() => glossaryCorePromise !== null);
+  const { text = '', enabled = true, nestingLevel = 0, contextMode = '' } = props;
+  const [FullGlossaryText, setFullGlossaryText] = useState(() => glossaryComponent);
 
   useEffect(() => {
-    if (!shouldHydrate) return undefined;
-    let cancelled = false;
-    const cancelScheduledLoad = scheduleNonBlocking(() => {
-      loadGlossaryCore().then(() => {
-        if (!cancelled) setCoreReady(true);
-      });
-    }, Number(nestingLevel || 0) > 0 ? 120 : 1100);
+    if (!enabled || FullGlossaryText) return undefined;
 
-    return () => {
-      cancelled = true;
-      cancelScheduledLoad?.();
-    };
-  }, [shouldHydrate, nestingLevel]);
+    let active = true;
+    return scheduleIdle(() => {
+      loadFullGlossaryTooltip()
+        .then((Component) => {
+          if (active) setFullGlossaryText(() => Component);
+        })
+        .catch(() => {
+          // Tooltip katmanı başarısız olursa metin yine okunabilir kalır.
+        });
+    });
+  }, [enabled, FullGlossaryText]);
 
-  if (!shouldHydrate || !coreReady) {
-    return <PlainGlossaryText text={text} nestingLevel={nestingLevel} contextMode={contextMode} />;
+  if (!enabled || !FullGlossaryText) {
+    return <DeferredPlainText text={text} nestingLevel={nestingLevel} contextMode={contextMode} />;
   }
 
-  return (
-    <Suspense fallback={<PlainGlossaryText text={text} nestingLevel={nestingLevel} contextMode={contextMode} />}>
-      <GlossaryTooltipCore {...props} />
-    </Suspense>
-  );
-}
-
-export function preloadGlossaryText() {
-  return loadGlossaryCore();
+  return <FullGlossaryText {...props} />;
 }
 
 export default memo(GlossaryText);
