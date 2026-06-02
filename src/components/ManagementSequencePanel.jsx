@@ -236,6 +236,7 @@ function ManagementStepCard({
   canMoveDown,
   hardMode = false,
   mode = 'study',
+  glossaryRevealMode: parentGlossaryRevealMode = 'preAnswer',
 }) {
   const correctOrder = correctById.get(step.id);
   const isWrongSelection = submitted && !step.required && inPlan;
@@ -388,6 +389,7 @@ function ManagementSequencePanel({ clinicalCase, mode = 'study', hardMode = fals
                 submitted={submitted}
                 mode={mode}
                 hardMode={hardMode}
+                glossaryRevealMode={glossaryRevealMode}
               />
             ))}
           </div>
@@ -415,6 +417,7 @@ function ManagementSequencePanel({ clinicalCase, mode = 'study', hardMode = fals
                   onRemove={() => removeStep(step.id)}
                   mode={mode}
                   hardMode={hardMode}
+                  glossaryRevealMode={glossaryRevealMode}
                 />
               ))}
             </div>
