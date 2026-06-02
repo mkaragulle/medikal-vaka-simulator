@@ -405,8 +405,15 @@ function attachImages(item, clinicalCase) {
   return images.filter((image) => visualMatchesInvestigation(image, item));
 }
 
+function getExamText(clinicalCase = {}) {
+  const exam = clinicalCase.exam;
+  if (Array.isArray(exam)) return exam.join(' ');
+  if (typeof exam === 'string') return exam;
+  return '';
+}
+
 function caseContext(clinicalCase = {}) {
-  return `${clinicalCase.title || ''} ${clinicalCase.clinicalFocus || ''} ${clinicalCase.chiefComplaint || ''} ${clinicalCase.stem || ''} ${(clinicalCase.exam || []).join(' ')}`.toLocaleLowerCase('tr');
+  return `${clinicalCase.title || ''} ${clinicalCase.clinicalFocus || ''} ${clinicalCase.chiefComplaint || ''} ${clinicalCase.stem || ''} ${getExamText(clinicalCase)}`.toLocaleLowerCase('tr');
 }
 
 

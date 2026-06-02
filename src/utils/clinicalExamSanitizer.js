@@ -87,11 +87,22 @@ export function isVitalsOnlyExamFinding(finding = '', vitals = {}) {
   return false;
 }
 
+function normalizeExamInput(exam = []) {
+  if (Array.isArray(exam)) return exam;
+  if (typeof exam === 'string' && exam.trim()) {
+    return exam
+      .split(/\s*;\s*|(?<=[.!?])\s+/u)
+      .map((item) => item.trim())
+      .filter(Boolean);
+  }
+  return [];
+}
+
 export function sanitizeClinicalExamFindings(exam = [], vitals = {}) {
-  if (!Array.isArray(exam)) return [];
+  const normalizedExam = normalizeExamInput(exam);
   const seen = new Set();
 
-  return exam
+  return normalizedExam
     .map((finding) => stripLeadingVitalClausePreservingClinicalText(finding))
     .filter((finding) => finding && !isVitalsOnlyExamFinding(finding, vitals))
     .map((finding) => finding.replace(/\s+([,.;:])/g, '$1').replace(/\.{2,}$/u, '.').trim())
@@ -111,14 +122,16 @@ export function sanitizeClinicalCaseExam(clinicalCase = {}) {
 
   if (cleanExam === clinicalCase.exam && cleanFindingsExam === clinicalCase.findings?.exam) return clinicalCase;
 
+  const nextFindings = clinicalCase.findings && !Array.isArray(clinicalCase.findings)
+    ? {
+        ...clinicalCase.findings,
+        ...(cleanFindingsExam ? { exam: cleanFindingsExam } : {}),
+      }
+    : clinicalCase.findings;
+
   return {
     ...clinicalCase,
     exam: cleanExam,
-    findings: clinicalCase.findings
-      ? {
-          ...clinicalCase.findings,
-          ...(cleanFindingsExam ? { exam: cleanFindingsExam } : {}),
-        }
-      : clinicalCase.findings,
+    findings: nextFindings,
   };
 }
