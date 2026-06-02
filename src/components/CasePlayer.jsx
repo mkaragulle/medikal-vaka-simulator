@@ -184,15 +184,13 @@ function getVitalStatus(label, value = '') {
   return 'neutral';
 }
 
-function getExamText(clinicalCase = {}) {
-  const exam = clinicalCase.exam;
+function examToSearchText(exam = []) {
   if (Array.isArray(exam)) return exam.join(' ');
-  if (typeof exam === 'string') return exam;
-  return '';
+  return String(exam || '');
 }
 
 function extractClinicalChips(clinicalCase) {
-  const source = `${clinicalCase.stem} ${clinicalCase.chiefComplaint} ${getExamText(clinicalCase)}`
+  const source = `${clinicalCase.stem} ${clinicalCase.chiefComplaint} ${examToSearchText(clinicalCase.exam)}`
     .toLocaleLowerCase('tr');
 
   const rules = [
@@ -221,7 +219,7 @@ function extractClinicalChips(clinicalCase) {
 }
 
 function extractPatientRiskChips(clinicalCase) {
-  const source = `${clinicalCase.stem} ${clinicalCase.chiefComplaint} ${getExamText(clinicalCase)}`
+  const source = `${clinicalCase.stem} ${clinicalCase.chiefComplaint} ${examToSearchText(clinicalCase.exam)}`
     .toLocaleLowerCase('tr');
   const rules = [
     ['Hipertansiyon', /hipertansiyon|yüksek tansiyon/],
@@ -238,7 +236,7 @@ function extractPatientRiskChips(clinicalCase) {
 }
 
 function extractPatientClueChips(clinicalCase) {
-  const source = `${clinicalCase.stem} ${clinicalCase.chiefComplaint} ${getExamText(clinicalCase)}`
+  const source = `${clinicalCase.stem} ${clinicalCase.chiefComplaint} ${examToSearchText(clinicalCase.exam)}`
     .toLocaleLowerCase('tr');
   const rules = [
     ['Soğuk terleme', /soğuk terleme/],

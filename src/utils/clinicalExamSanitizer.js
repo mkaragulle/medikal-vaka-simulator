@@ -11,6 +11,19 @@ function normalizeExamText(value = '') {
     .trim();
 }
 
+function normalizeExamInput(exam = []) {
+  if (Array.isArray(exam)) return exam;
+  if (typeof exam === 'string') {
+    const normalized = normalizeExamText(exam);
+    if (!normalized) return [];
+    return normalized
+      .split(/(?<=[.!?])\s+/u)
+      .map((finding) => finding.trim())
+      .filter(Boolean);
+  }
+  return [];
+}
+
 function hasAnyVitals(vitals = {}) {
   return Boolean(vitals && Object.values(vitals).some((value) => String(value || '').trim()));
 }
@@ -87,22 +100,11 @@ export function isVitalsOnlyExamFinding(finding = '', vitals = {}) {
   return false;
 }
 
-function normalizeExamInput(exam = []) {
-  if (Array.isArray(exam)) return exam;
-  if (typeof exam === 'string' && exam.trim()) {
-    return exam
-      .split(/\s*;\s*|(?<=[.!?])\s+/u)
-      .map((item) => item.trim())
-      .filter(Boolean);
-  }
-  return [];
-}
-
 export function sanitizeClinicalExamFindings(exam = [], vitals = {}) {
-  const normalizedExam = normalizeExamInput(exam);
+  const examItems = normalizeExamInput(exam);
   const seen = new Set();
 
-  return normalizedExam
+  return examItems
     .map((finding) => stripLeadingVitalClausePreservingClinicalText(finding))
     .filter((finding) => finding && !isVitalsOnlyExamFinding(finding, vitals))
     .map((finding) => finding.replace(/\s+([,.;:])/g, '$1').replace(/\.{2,}$/u, '.').trim())
@@ -122,16 +124,14 @@ export function sanitizeClinicalCaseExam(clinicalCase = {}) {
 
   if (cleanExam === clinicalCase.exam && cleanFindingsExam === clinicalCase.findings?.exam) return clinicalCase;
 
-  const nextFindings = clinicalCase.findings && !Array.isArray(clinicalCase.findings)
-    ? {
-        ...clinicalCase.findings,
-        ...(cleanFindingsExam ? { exam: cleanFindingsExam } : {}),
-      }
-    : clinicalCase.findings;
-
   return {
     ...clinicalCase,
     exam: cleanExam,
-    findings: nextFindings,
+    findings: clinicalCase.findings
+      ? {
+          ...clinicalCase.findings,
+          ...(cleanFindingsExam ? { exam: cleanFindingsExam } : {}),
+        }
+      : clinicalCase.findings,
   };
 }
