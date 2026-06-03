@@ -178,6 +178,47 @@ export function formatShockIndex(heartRate, systolicBP) {
   return result ? `${result.formatted} ${result.note}` : '';
 }
 
+
+function deriveShockIndexNote(value) {
+  const number = Number.parseFloat(String(value || '').replace(',', '.'));
+  if (!Number.isFinite(number)) return '';
+  if (number >= 1) return 'yüksek';
+  if (number >= 0.9) return 'sınırda';
+  return 'normal';
+}
+
+function splitShockIndexAndEmbeddedPerfusion(value = '') {
+  const cleaned = sanitizeMeasurementText(value);
+  const numericMatch = cleaned.match(/^(\d+(?:\.\d+)?)(.*)$/u);
+  if (!numericMatch) return { shockIndex: cleaned, perfusion: '' };
+
+  const numericValue = numericMatch[1];
+  let trailing = (numericMatch[2] || '').replace(/^\s*[;:,-]?\s*/u, '').trim();
+  let explicitNote = '';
+  const noteMatch = trailing.match(/^(yüksek|normal|sınırda|sinirda|düşük|dusuk)\b\s*(.*)$/iu);
+  if (noteMatch) {
+    explicitNote = noteMatch[1].trim();
+    trailing = (noteMatch[2] || '').replace(/^\s*[;:,-]?\s*/u, '').trim();
+  }
+
+  if (!trailing) {
+    return { shockIndex: `${numericValue} ${explicitNote || deriveShockIndexNote(numericValue)}`.trim(), perfusion: '' };
+  }
+
+  const perfusionStart = trailing.search(/\b(kapiller\s+dolum|periferik\s+perfüzyon|periferik\s+perfuzyon|mukoza|mukozalar|ekstremite|soğuk|soguk|soluk|nemli|kuru)\b/iu);
+  if (perfusionStart === -1) {
+    return { shockIndex: `${numericValue} ${explicitNote || trailing || deriveShockIndexNote(numericValue)}`.trim(), perfusion: '' };
+  }
+
+  const shockNoteCandidate = trailing.slice(0, perfusionStart).replace(/[;:,.-]+$/g, '').trim();
+  const shockNote = explicitNote || (/^(yüksek|normal|sınırda|sinirda|düşük|dusuk)$/iu.test(shockNoteCandidate) ? shockNoteCandidate : deriveShockIndexNote(numericValue));
+  const perfusion = trailing.slice(perfusionStart).replace(/^[;:,-]+\s*/g, '').trim();
+  return {
+    shockIndex: `${numericValue} ${shockNote}`.trim(),
+    perfusion,
+  };
+}
+
 export function formatLabValue(value, unit = '') {
   const cleanedValue = sanitizeMeasurementText(value);
   const cleanedUnit = normalizeClinicalUnit(unit);
@@ -220,10 +261,11 @@ export function formatVitalMeasurement(label = '', value = '') {
   }
 
   if (normalizedLabel === 'Şok indeksi') {
-    const match = raw.match(/^(\d+(?:\.\d+)?)(?:\s*[;:,-]\s*(.+)|\s+(.+))?$/);
+    const split = splitShockIndexAndEmbeddedPerfusion(raw);
+    const match = split.shockIndex.match(/^(\d+(?:\.\d+)?)(?:\s*[;:,-]?\s*(.+))?$/u);
     if (match) {
-      const note = (match[2] || match[3] || '').trim();
-      return { primary: match[1], unit: '', note, formatted: raw };
+      const note = (match[2] || '').trim() || deriveShockIndexNote(match[1]);
+      return { primary: match[1], unit: '', note, formatted: `${match[1]} ${note}`.trim() };
     }
   }
 
@@ -303,7 +345,16 @@ export function sanitizeVitalsObject(vitals = {}) {
       output[key] = display.formatted === '—' ? sanitizeMeasurementText(value) : display.formatted;
       return;
     }
-    if (key === 'Nabız' || key === 'Solunum' || key === 'Ateş' || key === 'SpO2' || key === 'Şok indeksi') {
+    if (key === 'Şok indeksi') {
+      const split = splitShockIndexAndEmbeddedPerfusion(value);
+      const display = formatVitalMeasurement(key, split.shockIndex);
+      output[key] = display.formatted === '—' ? sanitizeMeasurementText(split.shockIndex) : display.formatted;
+      if (split.perfusion && !output.Perfüzyon) {
+        output.Perfüzyon = sanitizeMeasurementText(split.perfusion);
+      }
+      return;
+    }
+    if (key === 'Nabız' || key === 'Solunum' || key === 'Ateş' || key === 'SpO2') {
       const display = formatVitalMeasurement(key, value);
       output[key] = display.formatted === '—' ? sanitizeMeasurementText(value) : display.formatted;
       return;

@@ -56118,3 +56118,227 @@ html[data-theme='dark'] .vitals-grid .vital-card .vital-note,
     min-height: 54px !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   V249 — Vital cards content-safe axis layout
+   --------------------------------------------------------------------------
+   Purpose: keep every vital card on the same icon/content axis while allowing
+   long clinical notes to wrap inside the card instead of leaking outside it.
+*/
+.professional-vitals-grid,
+.vitals-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  align-items: stretch !important;
+}
+
+.professional-vitals-grid .vital-card,
+.vitals-grid .vital-card {
+  box-sizing: border-box !important;
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: 64px minmax(0, 1fr) !important;
+  align-items: center !important;
+  column-gap: 16px !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  min-height: 142px !important;
+  height: auto !important;
+  padding: 18px 24px !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+}
+
+.professional-vitals-grid .vital-card .icon-badge,
+.vitals-grid .vital-card .icon-badge {
+  align-self: center !important;
+  justify-self: center !important;
+  width: 64px !important;
+  height: 64px !important;
+  min-width: 64px !important;
+  border-radius: 20px !important;
+}
+
+.professional-vitals-grid .vital-card .vital-copy,
+.vitals-grid .vital-card .vital-copy {
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  align-self: center !important;
+  text-align: left !important;
+}
+
+.professional-vitals-grid .vital-card .vital-label,
+.vitals-grid .vital-card .vital-label {
+  box-sizing: border-box !important;
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  color: color-mix(in srgb, var(--text-secondary) 82%, var(--text-primary) 18%) !important;
+  font-family: inherit !important;
+  font-size: 13px !important;
+  font-weight: 820 !important;
+  line-height: 1.16 !important;
+  letter-spacing: 0.045em !important;
+  text-align: left !important;
+  text-transform: uppercase !important;
+  white-space: normal !important;
+  word-break: keep-all !important;
+  overflow-wrap: break-word !important;
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: unset !important;
+  text-wrap: normal !important;
+}
+
+.professional-vitals-grid .vital-card .vital-reading,
+.vitals-grid .vital-card .vital-reading {
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-align: left !important;
+}
+
+.professional-vitals-grid .vital-card .vital-value,
+.vitals-grid .vital-card .vital-value {
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: baseline !important;
+  justify-content: flex-start !important;
+  flex-wrap: wrap !important;
+  gap: 4px !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  text-align: left !important;
+  white-space: normal !important;
+}
+
+.professional-vitals-grid .vital-card .vital-value-main,
+.vitals-grid .vital-card .vital-value-main,
+.professional-vitals-grid .vital-card .vital-value-unit,
+.vitals-grid .vital-card .vital-value-unit {
+  box-sizing: border-box !important;
+  display: inline !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  color: var(--text-primary) !important;
+  font-family: inherit !important;
+  font-weight: 820 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.015em !important;
+  text-align: left !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+
+.professional-vitals-grid .vital-card .vital-value-main,
+.vitals-grid .vital-card .vital-value-main {
+  font-size: clamp(18px, 1.55vw, 23px) !important;
+}
+
+.professional-vitals-grid .vital-card .vital-value-unit,
+.vitals-grid .vital-card .vital-value-unit {
+  font-size: clamp(15px, 1.25vw, 20px) !important;
+  font-weight: 760 !important;
+  color: color-mix(in srgb, var(--text-secondary) 78%, var(--text-primary) 22%) !important;
+}
+
+.professional-vitals-grid .vital-card .vital-note,
+.vitals-grid .vital-card .vital-note {
+  box-sizing: border-box !important;
+  display: block !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  color: color-mix(in srgb, var(--text-secondary) 82%, var(--text-primary) 18%) !important;
+  font-family: inherit !important;
+  font-size: 13.5px !important;
+  font-weight: 740 !important;
+  line-height: 1.25 !important;
+  text-align: left !important;
+  text-transform: none !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+.professional-vitals-grid .vital-card .vital-note.is-empty,
+.vitals-grid .vital-card .vital-note.is-empty {
+  display: none !important;
+}
+
+.professional-vitals-grid .vital-card[data-long-text="true"] .vital-value-main,
+.vitals-grid .vital-card[data-long-text="true"] .vital-value-main {
+  font-size: clamp(17px, 1.25vw, 20px) !important;
+  line-height: 1.16 !important;
+}
+
+.professional-vitals-grid .vital-card[data-long-text="true"] .vital-note,
+.vitals-grid .vital-card[data-long-text="true"] .vital-note {
+  font-size: 12.8px !important;
+  line-height: 1.28 !important;
+}
+
+.professional-vitals-grid .vital-card[data-vital="Şok indeksi"] .vital-note,
+.vitals-grid .vital-card[data-vital="Şok indeksi"] .vital-note {
+  text-transform: capitalize !important;
+}
+
+.professional-vitals-grid .vital-card[data-vital="Perfüzyon"] .vital-value-main,
+.vitals-grid .vital-card[data-vital="Perfüzyon"] .vital-value-main {
+  font-size: clamp(16px, 1.25vw, 20px) !important;
+  line-height: 1.2 !important;
+}
+
+@media (max-width: 1180px) {
+  .professional-vitals-grid,
+  .vitals-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .professional-vitals-grid,
+  .vitals-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .professional-vitals-grid .vital-card,
+  .vitals-grid .vital-card {
+    grid-template-columns: 52px minmax(0, 1fr) !important;
+    min-height: 124px !important;
+    padding: 16px 18px !important;
+    column-gap: 14px !important;
+  }
+
+  .professional-vitals-grid .vital-card .icon-badge,
+  .vitals-grid .vital-card .icon-badge {
+    width: 52px !important;
+    height: 52px !important;
+    min-width: 52px !important;
+  }
+}
