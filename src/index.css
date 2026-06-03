@@ -55638,3 +55638,243 @@ html[data-theme='dark'] .vitals-grid .vital-card .vital-note,
     min-width: 52px !important;
   }
 }
+
+/* ===== V419 — Vital cards final alignment + robust long text rendering =====
+   Fixes remaining issues where long/extra vital text (especially perfusion) looked
+   visually different, broke awkwardly, or did not align cleanly with the icon. */
+.professional-vitals-grid,
+.vitals-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(280px, 1fr)) !important;
+  gap: 14px !important;
+  align-items: stretch !important;
+}
+
+.professional-vitals-grid .vital-card,
+.vitals-grid .vital-card {
+  display: grid !important;
+  grid-template-columns: 64px minmax(0, 1fr) !important;
+  align-items: center !important;
+  column-gap: 18px !important;
+  min-width: 0 !important;
+  min-height: 150px !important;
+  height: 100% !important;
+  padding: 18px 24px !important;
+  overflow: visible !important;
+  border-radius: 22px !important;
+}
+
+.professional-vitals-grid .vital-card[data-has-note='true'],
+.vitals-grid .vital-card[data-has-note='true'] {
+  min-height: 164px !important;
+}
+
+.professional-vitals-grid .vital-card .icon-badge,
+.vitals-grid .vital-card .icon-badge {
+  width: 58px !important;
+  height: 58px !important;
+  min-width: 58px !important;
+  min-height: 58px !important;
+  justify-self: start !important;
+  align-self: center !important;
+  border-radius: 18px !important;
+}
+
+.professional-vitals-grid .vital-card .vital-copy,
+.vitals-grid .vital-card .vital-copy {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  text-align: left !important;
+  overflow: visible !important;
+  font-family: var(--font-ui, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif) !important;
+}
+
+.professional-vitals-grid .vital-card .vital-label,
+.vitals-grid .vital-card .vital-label,
+.professional-vitals-grid .vital-card .vital-reading,
+.vitals-grid .vital-card .vital-reading,
+.professional-vitals-grid .vital-card .vital-value,
+.vitals-grid .vital-card .vital-value,
+.professional-vitals-grid .vital-card .vital-value-main,
+.vitals-grid .vital-card .vital-value-main,
+.professional-vitals-grid .vital-card .vital-value-unit,
+.vitals-grid .vital-card .vital-value-unit,
+.professional-vitals-grid .vital-card .vital-note,
+.vitals-grid .vital-card .vital-note {
+  font-family: var(--font-ui, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif) !important;
+  text-align: left !important;
+  text-transform: none !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  -webkit-line-clamp: unset !important;
+  hyphens: none !important;
+}
+
+.professional-vitals-grid .vital-card .vital-label,
+.vitals-grid .vital-card .vital-label {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  color: color-mix(in srgb, var(--text-secondary) 82%, var(--text-primary) 18%) !important;
+  font-size: 13px !important;
+  font-weight: 820 !important;
+  line-height: 1.18 !important;
+  letter-spacing: 0.052em !important;
+  text-transform: uppercase !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+.professional-vitals-grid .vital-card .vital-reading,
+.vitals-grid .vital-card .vital-reading {
+  width: 100% !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 5px !important;
+}
+
+.professional-vitals-grid .vital-card .vital-value,
+.vitals-grid .vital-card .vital-value {
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: baseline !important;
+  justify-content: flex-start !important;
+  flex-wrap: wrap !important;
+  column-gap: 5px !important;
+  row-gap: 2px !important;
+  color: var(--text-primary) !important;
+  font-size: 20px !important;
+  font-weight: 820 !important;
+  line-height: 1.16 !important;
+  letter-spacing: -0.012em !important;
+  font-variant-numeric: tabular-nums !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+.professional-vitals-grid .vital-card .vital-value-main,
+.vitals-grid .vital-card .vital-value-main,
+.professional-vitals-grid .vital-card .vital-value-unit,
+.vitals-grid .vital-card .vital-value-unit {
+  display: inline !important;
+  max-width: 100% !important;
+  color: var(--text-primary) !important;
+  font-size: 20px !important;
+  font-weight: 820 !important;
+  line-height: 1.16 !important;
+  letter-spacing: -0.012em !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+.professional-vitals-grid .vital-card .vital-note,
+.vitals-grid .vital-card .vital-note {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  color: color-mix(in srgb, var(--text-secondary) 86%, var(--text-primary) 14%) !important;
+  font-size: 13px !important;
+  font-weight: 720 !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0 !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+.professional-vitals-grid .vital-card[data-vital-kind='perfusion'] .vital-value,
+.vitals-grid .vital-card[data-vital-kind='perfusion'] .vital-value,
+.professional-vitals-grid .vital-card[data-vital-kind='extended'] .vital-value,
+.vitals-grid .vital-card[data-vital-kind='extended'] .vital-value,
+.professional-vitals-grid .vital-card[data-long-text='true'] .vital-value,
+.vitals-grid .vital-card[data-long-text='true'] .vital-value,
+.professional-vitals-grid .vital-card[data-vital-kind='perfusion'] .vital-value-main,
+.vitals-grid .vital-card[data-vital-kind='perfusion'] .vital-value-main,
+.professional-vitals-grid .vital-card[data-vital-kind='extended'] .vital-value-main,
+.vitals-grid .vital-card[data-vital-kind='extended'] .vital-value-main,
+.professional-vitals-grid .vital-card[data-long-text='true'] .vital-value-main,
+.vitals-grid .vital-card[data-long-text='true'] .vital-value-main {
+  font-size: 18px !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.006em !important;
+}
+
+html[data-theme='dark'] .professional-vitals-grid .vital-card .vital-label,
+html[data-theme='dark'] .vitals-grid .vital-card .vital-label,
+.app-shell[data-theme='dark'] .professional-vitals-grid .vital-card .vital-label,
+.app-shell[data-theme='dark'] .vitals-grid .vital-card .vital-label {
+  color: color-mix(in srgb, var(--text-primary) 74%, #9fb2c7 26%) !important;
+}
+
+html[data-theme='dark'] .professional-vitals-grid .vital-card .vital-value,
+html[data-theme='dark'] .vitals-grid .vital-card .vital-value,
+html[data-theme='dark'] .professional-vitals-grid .vital-card .vital-value-main,
+html[data-theme='dark'] .vitals-grid .vital-card .vital-value-main,
+html[data-theme='dark'] .professional-vitals-grid .vital-card .vital-value-unit,
+html[data-theme='dark'] .vitals-grid .vital-card .vital-value-unit,
+.app-shell[data-theme='dark'] .professional-vitals-grid .vital-card .vital-value,
+.app-shell[data-theme='dark'] .vitals-grid .vital-card .vital-value,
+.app-shell[data-theme='dark'] .professional-vitals-grid .vital-card .vital-value-main,
+.app-shell[data-theme='dark'] .vitals-grid .vital-card .vital-value-main,
+.app-shell[data-theme='dark'] .professional-vitals-grid .vital-card .vital-value-unit,
+.app-shell[data-theme='dark'] .vitals-grid .vital-card .vital-value-unit {
+  color: #f8fbff !important;
+}
+
+html[data-theme='dark'] .professional-vitals-grid .vital-card .vital-note,
+html[data-theme='dark'] .vitals-grid .vital-card .vital-note,
+.app-shell[data-theme='dark'] .professional-vitals-grid .vital-card .vital-note,
+.app-shell[data-theme='dark'] .vitals-grid .vital-card .vital-note {
+  color: color-mix(in srgb, var(--text-primary) 72%, #9db0c4 28%) !important;
+}
+
+@media (max-width: 1180px) {
+  .professional-vitals-grid,
+  .vitals-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr)) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .professional-vitals-grid,
+  .vitals-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .professional-vitals-grid .vital-card,
+  .vitals-grid .vital-card {
+    grid-template-columns: 54px minmax(0, 1fr) !important;
+    column-gap: 15px !important;
+    min-height: 128px !important;
+    padding: 16px !important;
+  }
+
+  .professional-vitals-grid .vital-card[data-has-note='true'],
+  .vitals-grid .vital-card[data-has-note='true'] {
+    min-height: 142px !important;
+  }
+
+  .professional-vitals-grid .vital-card .icon-badge,
+  .vitals-grid .vital-card .icon-badge {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+    min-height: 50px !important;
+  }
+}

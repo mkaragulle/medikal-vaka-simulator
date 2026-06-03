@@ -227,6 +227,38 @@ export function formatVitalMeasurement(label = '', value = '') {
     }
   }
 
+  if (normalizedLabel === 'Perfüzyon') {
+    const semicolonSplit = raw.match(/^(.{1,46}?)(?:\s*[;:]\s+)(.+)$/);
+    if (semicolonSplit) {
+      return {
+        primary: semicolonSplit[1].trim(),
+        unit: '',
+        note: semicolonSplit[2].trim(),
+        formatted: raw,
+      };
+    }
+
+    const capillarySplit = raw.match(/^(kapiller dolum\s*(?:[<≤>]\s*)?\d+(?:\.\d+)?\s*(?:sn|saniye|s))(?:[,;:]?\s+(.+))?$/iu);
+    if (capillarySplit) {
+      return {
+        primary: capillarySplit[1].trim(),
+        unit: '',
+        note: (capillarySplit[2] || '').trim(),
+        formatted: raw,
+      };
+    }
+
+    const commaSplit = raw.match(/^(kapiller dolum\s+[^,;:]{1,28})(?:[,;:]\s+(.+))$/iu);
+    if (commaSplit) {
+      return {
+        primary: commaSplit[1].trim(),
+        unit: '',
+        note: commaSplit[2].trim(),
+        formatted: raw,
+      };
+    }
+  }
+
   const punctuationSplit = raw.match(/^(.{1,44}?)(?:\s*[;:]\s+)(.+)$/);
   if (punctuationSplit) {
     return {
@@ -258,6 +290,7 @@ function canonicalVitalKey(key = '') {
   if (/^(spo2|spo 2|oksijen saturasyonu|oksijen sat)$/.test(normalized)) return 'SpO2';
   if (/^(ates|temperature|temp)$/.test(normalized)) return 'Ateş';
   if (/^(sok indeksi|shock index|shockindex)$/.test(normalized)) return 'Şok indeksi';
+  if (/^(perfuzyon|perfuzyon gostergesi|perfuzyon bulgulari|kapiller dolum|capillary refill)$/.test(normalized)) return 'Perfüzyon';
   return key;
 }
 

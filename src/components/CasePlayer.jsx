@@ -52,7 +52,7 @@ const vitalLabels = {
   SpO2: 'SpO₂',
   Ateş: 'Ateş',
   'Şok indeksi': 'Şok indeksi',
-  Perfüzyon: 'Perfüzyon',
+  Perfüzyon: 'Perfüzyon göstergesi',
 };
 
 const vitalIcons = {
@@ -65,6 +65,18 @@ const vitalIcons = {
   Perfüzyon: 'Activity',
 };
 
+const STANDARD_VITAL_KEYS = new Set(['TA', 'Nabız', 'Solunum', 'SpO2', 'Ateş', 'Şok indeksi']);
+
+function getVitalCardKind(label = '', display = {}) {
+  if (STANDARD_VITAL_KEYS.has(label)) return 'standard';
+  if (label === 'Perfüzyon') return 'perfusion';
+  const combinedLength = `${display?.primary || ''} ${display?.note || ''}`.trim().length;
+  return combinedLength > 28 ? 'extended' : 'standard';
+}
+
+function hasLongVitalText(display = {}) {
+  return String(display?.primary || '').length > 18 || String(display?.note || '').length > 24;
+}
 
 function ExamSignalBox({ signal, compact = false }) {
   if (!signal?.hasContent) return null;
@@ -512,11 +524,16 @@ function VitalCard({ label, value, glossaryEnabled = true }) {
   const status = getVitalStatus(label, value);
   const display = buildVitalDisplay(label, value);
 
+  const cardKind = getVitalCardKind(label, display);
+  const longText = hasLongVitalText(display);
+
   return (
     <article
       className={`vital-card ${status}`}
       data-vital={label}
+      data-vital-kind={cardKind}
       data-has-note={display.note ? 'true' : 'false'}
+      data-long-text={longText ? 'true' : 'false'}
       title={display.formatted}
       aria-label={`${vitalLabels[label] ?? label}: ${display.formatted}`}
     >
