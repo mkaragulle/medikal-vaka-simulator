@@ -52,7 +52,7 @@ const vitalLabels = {
   SpO2: 'SpO₂',
   Ateş: 'Ateş',
   'Şok indeksi': 'Şok indeksi',
-  Perfüzyon: 'Perfüzyon göstergesi',
+  Perfüzyon: 'Perfüzyon',
 };
 
 const vitalIcons = {
@@ -557,7 +557,9 @@ function VitalCard({ label, value, glossaryEnabled = true }) {
             <span className="vital-value-main">{display.primary}</span>
             {display.unit ? <span className="vital-value-unit">{display.unit}</span> : null}
           </strong>
-          {display.note ? <span className="vital-note">{display.note}</span> : null}
+          <span className={`vital-note${display.note ? '' : ' is-empty'}`} aria-hidden={display.note ? undefined : 'true'}>
+            {display.note || '\u00A0'}
+          </span>
         </div>
       </div>
     </article>
