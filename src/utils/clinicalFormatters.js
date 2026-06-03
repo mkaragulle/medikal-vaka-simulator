@@ -220,8 +220,21 @@ export function formatVitalMeasurement(label = '', value = '') {
   }
 
   if (normalizedLabel === 'Şok indeksi') {
-    const match = raw.match(/^(\d+(?:\.\d+)?)(?:\s+(.+))?$/);
-    if (match) return { primary: match[1], unit: '', note: match[2] || '', formatted: raw };
+    const match = raw.match(/^(\d+(?:\.\d+)?)(?:\s*[;:,-]\s*(.+)|\s+(.+))?$/);
+    if (match) {
+      const note = (match[2] || match[3] || '').trim();
+      return { primary: match[1], unit: '', note, formatted: raw };
+    }
+  }
+
+  const punctuationSplit = raw.match(/^(.{1,44}?)(?:\s*[;:]\s+)(.+)$/);
+  if (punctuationSplit) {
+    return {
+      primary: punctuationSplit[1].trim(),
+      unit: '',
+      note: punctuationSplit[2].trim(),
+      formatted: raw,
+    };
   }
 
   return { primary: raw, unit: '', note: '', formatted: raw };

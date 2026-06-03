@@ -52,6 +52,7 @@ const vitalLabels = {
   SpO2: 'SpO₂',
   Ateş: 'Ateş',
   'Şok indeksi': 'Şok indeksi',
+  Perfüzyon: 'Perfüzyon',
 };
 
 const vitalIcons = {
@@ -61,6 +62,7 @@ const vitalIcons = {
   SpO2: 'Droplets',
   Ateş: 'Thermometer',
   'Şok indeksi': 'Target',
+  Perfüzyon: 'Activity',
 };
 
 
@@ -511,7 +513,13 @@ function VitalCard({ label, value, glossaryEnabled = true }) {
   const display = buildVitalDisplay(label, value);
 
   return (
-    <article className={`vital-card ${status}`} data-vital={label} data-has-note={display.note ? 'true' : 'false'}>
+    <article
+      className={`vital-card ${status}`}
+      data-vital={label}
+      data-has-note={display.note ? 'true' : 'false'}
+      title={display.formatted}
+      aria-label={`${vitalLabels[label] ?? label}: ${display.formatted}`}
+    >
       <IconBadge
         icon={vitalIcons[label] ?? 'Activity'}
         tone={
