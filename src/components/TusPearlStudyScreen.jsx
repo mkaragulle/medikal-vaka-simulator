@@ -8,6 +8,7 @@ import {
   addId,
   defaultPearlState,
   loadPearlState,
+  PEARL_PROGRESS_UPDATED_EVENT,
   markCatalogStudied,
   rememberStudyStart,
   removeId,
@@ -764,6 +765,17 @@ function TusPearlStudyScreen({
   const branchMenuTriggerRef = useRef(null);
   const branchMenuRef = useRef(null);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+    const syncPearlProgress = () => setPearlState(loadPearlState());
+    window.addEventListener(PEARL_PROGRESS_UPDATED_EVENT, syncPearlProgress);
+    window.addEventListener('storage', syncPearlProgress);
+    return () => {
+      window.removeEventListener(PEARL_PROGRESS_UPDATED_EVENT, syncPearlProgress);
+      window.removeEventListener('storage', syncPearlProgress);
+    };
+  }, []);
+
   const hiddenSet = useMemo(() => toSet(pearlState.hiddenPearlCardIds), [pearlState.hiddenPearlCardIds]);
   const allCards = useMemo(() => ([...SYSTEM_PEARL_CARDS, ...(pearlState.userPearlCards || [])].filter((card) => !hiddenSet.has(card.id))), [hiddenSet, pearlState.userPearlCards]);
   const cardById = useMemo(() => new Map(allCards.map((card) => [card.id, card])), [allCards]);
@@ -861,23 +873,6 @@ function TusPearlStudyScreen({
 
   const commitState = useCallback((updater) => {
     setPearlState((current) => savePearlState(updater(current || defaultPearlState)));
-  }, []);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return undefined;
-
-    const refreshPearlState = () => {
-      setPearlState(loadPearlState());
-      lastDeckSignature.current = '';
-    };
-
-    window.addEventListener('klinikiq:pearl-state-updated', refreshPearlState);
-    window.addEventListener('storage', refreshPearlState);
-
-    return () => {
-      window.removeEventListener('klinikiq:pearl-state-updated', refreshPearlState);
-      window.removeEventListener('storage', refreshPearlState);
-    };
   }, []);
 
   const rebuildStudySession = useCallback((cards = filteredCards) => {

@@ -6,6 +6,7 @@ import {
   addId,
   defaultPearlState,
   loadPearlState,
+  PEARL_PROGRESS_UPDATED_EVENT,
   savePearlState,
   upsertUserPearlCard,
 } from '../utils/pearlCardStorage.js';
@@ -47,6 +48,17 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
   const [pearlState, setPearlState] = useState(() => loadPearlState());
   const [editorOpen, setEditorOpen] = useState(false);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+    const syncPearlProgress = () => setPearlState(loadPearlState());
+    window.addEventListener(PEARL_PROGRESS_UPDATED_EVENT, syncPearlProgress);
+    window.addEventListener('storage', syncPearlProgress);
+    return () => {
+      window.removeEventListener(PEARL_PROGRESS_UPDATED_EVENT, syncPearlProgress);
+      window.removeEventListener('storage', syncPearlProgress);
+    };
+  }, []);
+
   const allCards = useMemo(() => [...SYSTEM_PEARL_CARDS, ...(pearlState.userPearlCards || [])], [pearlState.userPearlCards]);
   const favoriteSet = useMemo(() => toSet(pearlState.favoritePearlCardIds), [pearlState.favoritePearlCardIds]);
   const wrongSet = useMemo(() => toSet(pearlState.wrongPearlCardIds), [pearlState.wrongPearlCardIds]);
@@ -57,22 +69,6 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
   function commitState(updater) {
     setPearlState((current) => savePearlState(updater(current || defaultPearlState)));
   }
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return undefined;
-
-    const refreshPearlState = () => {
-      setPearlState(loadPearlState());
-    };
-
-    window.addEventListener('klinikiq:pearl-state-updated', refreshPearlState);
-    window.addEventListener('storage', refreshPearlState);
-
-    return () => {
-      window.removeEventListener('klinikiq:pearl-state-updated', refreshPearlState);
-      window.removeEventListener('storage', refreshPearlState);
-    };
-  }, []);
 
   const repeatListItems = useMemo(() => buildPearlRepeatListItems(pearlState, allCards), [allCards, pearlState]);
   const repeatCounts = useMemo(() => getPearlRepeatListCounts(pearlState, allCards), [allCards, pearlState]);
