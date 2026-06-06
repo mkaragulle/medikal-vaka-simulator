@@ -1,6 +1,6 @@
 import DiagnosisQuiz from './DiagnosisQuiz.jsx';
 import GlossaryText from './GlossaryTooltip.jsx';
-import { Icon, IconBadge } from './ui.jsx';
+import { Icon } from './ui.jsx';
 import { getDifficultyMeta } from '../utils/scoring.js';
 import {
   buildAISpotContextLine,
@@ -195,17 +195,15 @@ function AISpotNarrativePanel({ question, hardMode = false, embedded = false }) 
       id="ai-spot-narrative"
       aria-label="AI TUS spot soru metni"
     >
-      <div className="ai-spot-narrative-topline">
-        <div className="ai-spot-narrative-badges" aria-label="Soru üst bilgisi">
-          <AISpotMetaBadge icon="Stethoscope" tone="blue">{question.relatedBranch || question.branchName || 'TUS'}</AISpotMetaBadge>
-          <AISpotMetaBadge icon="Trophy" tone="amber">{difficultyMeta.label} · {difficultyMeta.points} Puan</AISpotMetaBadge>
+      <div className="ai-spot-narrative-simple-header" aria-label="Soru üst bilgisi">
+        <div className="ai-spot-narrative-simple-title">
+          <Icon name="ClipboardList" size={17} />
+          <span>Klinik olgu</span>
         </div>
-      </div>
-
-      <div className="ai-spot-narrative-heading no-title refined">
-        <IconBadge icon="ClipboardList" tone="teal" size="lg" />
-        <div>
-          <span className="ai-spot-narrative-eyebrow">Klinik olgu</span>
+        <div className="ai-spot-narrative-simple-meta">
+          <span>{question.relatedBranch || question.branchName || 'TUS'}</span>
+          <span className="ai-spot-simple-dot" aria-hidden="true" />
+          <span>{difficultyMeta.label} · {difficultyMeta.points} puan</span>
         </div>
       </div>
 

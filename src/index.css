@@ -57347,3 +57347,203 @@ html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem.label
   justify-content: center !important;
   text-align: center !important;
 }
+
+/* ==========================================================
+   KlinikIQ V388 — AI TUS button icon/text true center lock
+   Keeps the icon + label group mathematically centered inside
+   both answer action buttons and AI question generation buttons.
+   ========================================================== */
+.ai-button-content-center,
+.quiz-action-btn-inner {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  vertical-align: middle !important;
+  transform: none !important;
+}
+
+.ai-button-content-center > svg,
+.quiz-action-btn-inner > svg {
+  display: block !important;
+  width: 17px !important;
+  height: 17px !important;
+  min-width: 17px !important;
+  flex: 0 0 17px !important;
+  align-self: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.ai-button-content-center > span,
+.quiz-action-btn-inner > span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  transform: translateY(0) !important;
+}
+
+.ai-spot-answer-flow .answer-evaluate-btn,
+.ai-spot-answer-flow .answer-next-case-btn,
+.diagnostic-decision-panel .answer-evaluate-btn,
+.diagnostic-decision-panel .answer-next-case-btn,
+.ai-practice-actions-pro .ai-spot-generate-btn,
+.ai-practice-actions-pro .ai-generate-cta,
+.ai-ready-cta {
+  display: grid !important;
+  place-items: center !important;
+  align-content: center !important;
+  justify-content: center !important;
+  padding-block: 0 !important;
+  text-align: center !important;
+  line-height: 1 !important;
+}
+
+.ai-spot-answer-flow .answer-evaluate-btn,
+.ai-spot-answer-flow .answer-next-case-btn,
+.diagnostic-decision-panel .answer-evaluate-btn,
+.diagnostic-decision-panel .answer-next-case-btn {
+  min-height: 56px !important;
+  height: 56px !important;
+  padding-inline: 18px !important;
+}
+
+.ai-practice-actions-pro .ai-spot-generate-btn,
+.ai-practice-actions-pro .ai-generate-cta,
+.ai-ready-cta {
+  min-height: 54px !important;
+  height: 54px !important;
+}
+
+.ai-spot-answer-flow .answer-evaluate-btn > .quiz-action-btn-inner,
+.ai-spot-answer-flow .answer-next-case-btn > .quiz-action-btn-inner,
+.diagnostic-decision-panel .answer-evaluate-btn > .quiz-action-btn-inner,
+.diagnostic-decision-panel .answer-next-case-btn > .quiz-action-btn-inner,
+.ai-practice-actions-pro .ai-spot-generate-btn > .ai-button-content-center,
+.ai-practice-actions-pro .ai-generate-cta > .ai-button-content-center,
+.ai-ready-cta > .ai-button-content-center {
+  justify-self: center !important;
+  align-self: center !important;
+  pointer-events: none;
+}
+
+@media (max-width: 520px) {
+  .ai-button-content-center,
+  .quiz-action-btn-inner,
+  .ai-button-content-center > span,
+  .quiz-action-btn-inner > span {
+    white-space: normal !important;
+  }
+}
+
+/* =========================================================
+   KLINIKIQ V389 — AI TUS üst bilgi sadeleştirme
+   - Yeni TUS Sorusu Üret ekranındaki TUS soru / Doğruluk / Pratik puanı kutuları JSX'ten kaldırıldı.
+   - Üretilen TUS sorusu üst bilgisi tek satırlı, sade ve hizalı bir header yapısına alındı.
+   ========================================================= */
+.ai-spot-narrative-simple-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 0 0 18px;
+  padding: 2px 2px 14px;
+  border-bottom: 1px solid rgba(15, 118, 110, 0.10);
+}
+
+.ai-spot-narrative-simple-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  color: #0f766e;
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ai-spot-narrative-simple-title svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+  stroke-width: 2.05;
+}
+
+.ai-spot-narrative-simple-meta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.25;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  text-align: right;
+}
+
+.ai-spot-narrative-simple-meta > span:not(.ai-spot-simple-dot) {
+  min-width: 0;
+}
+
+.ai-spot-simple-dot {
+  width: 4px;
+  height: 4px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.36);
+}
+
+html[data-theme="dark"] .ai-spot-narrative-simple-header,
+.app-shell[data-theme="dark"] .ai-spot-narrative-simple-header {
+  border-bottom-color: rgba(94, 234, 212, 0.14);
+}
+
+html[data-theme="dark"] .ai-spot-narrative-simple-title,
+.app-shell[data-theme="dark"] .ai-spot-narrative-simple-title {
+  color: #5eead4;
+}
+
+html[data-theme="dark"] .ai-spot-narrative-simple-meta,
+.app-shell[data-theme="dark"] .ai-spot-narrative-simple-meta {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .ai-spot-simple-dot,
+.app-shell[data-theme="dark"] .ai-spot-simple-dot {
+  background: rgba(94, 234, 212, 0.42);
+}
+
+@media (max-width: 720px) {
+  .ai-spot-narrative-simple-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-spot-narrative-simple-meta {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}

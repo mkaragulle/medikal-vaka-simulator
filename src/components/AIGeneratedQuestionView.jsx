@@ -637,7 +637,10 @@ function AIReadyState({ branchFilter, difficulty, onGenerateQuestion }) {
         <p className="ai-ready-selection"><strong>{branchLabel}</strong><span aria-hidden="true">·</span><strong>{difficulty}</strong></p>
       </div>
       <button type="button" className="btn btn-primary ai-ready-cta" onClick={onGenerateQuestion}>
-        <Icon name="Sparkles" /> Yeni TUS Sorusu Üret
+        <span className="ai-button-content-center">
+          <Icon name="Sparkles" />
+          <span>Yeni TUS Sorusu Üret</span>
+        </span>
       </button>
     </section>
   );
@@ -801,16 +804,13 @@ function AIGeneratedQuestionView({
               <span aria-hidden="true">←</span> Dashboard’a dön
             </button>
             <button type="button" className="btn btn-primary ai-generate-cta ai-spot-generate-btn" onClick={onGenerateQuestion} disabled={loading}>
-              <Icon name="Sparkles" /> Yeni TUS Sorusu Üret
+              <span className="ai-button-content-center">
+                <Icon name="Sparkles" />
+                <span>Yeni TUS Sorusu Üret</span>
+              </span>
             </button>
           </div>
         </div>
-      </section>
-
-      <section className="ai-practice-stats-grid" aria-label="AI pratik istatistikleri">
-        <AIStat icon="ClipboardList" tone="blue" label="TUS soru" value={aiStats?.attempts || 0} />
-        <AIStat icon="Target" tone="teal" label="Doğruluk" value={`%${accuracy}`} />
-        <AIStat icon="Trophy" tone="warning" label="Pratik puanı" value={aiStats?.score || 0} />
       </section>
 
       {fallback && fallbackNotice && !loading && !error ? (
