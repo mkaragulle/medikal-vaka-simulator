@@ -183,7 +183,7 @@ export function applyCostProfileToMaxTokens(scope = 'GENERAL', task = 'default',
 
   const caps = {
     ultra: {
-      tusspotquestion: 1150,
+      tusspotquestion: 1450,
       materialanalysis: 950,
       materialflashcards: 2200,
       materialquestions: 3400,

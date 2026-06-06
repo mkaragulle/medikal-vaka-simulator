@@ -97,6 +97,7 @@ const defaultAIPracticeState = {
   generationSource: null,
   usedRemoteAI: false,
   fallback: false,
+  fallbackNotice: false,
 };
 
 function loadStoredValue(key, fallback) {
@@ -930,6 +931,7 @@ function App() {
         generationSource: 'Kişisel tekrar arşivi',
         usedRemoteAI: Boolean(restoredQuestion.aiMeta?.remote),
         fallback: Boolean(restoredQuestion.aiMeta?.fallback),
+        fallbackNotice: Boolean(restoredQuestion.aiMeta?.fallbackNotice),
       });
       scrollToTopSmart({ smooth: false });
       return;
@@ -1253,6 +1255,7 @@ function App() {
       generationSource: null,
       usedRemoteAI: false,
       fallback: false,
+      fallbackNotice: false,
     }));
 
     void (async () => {
@@ -1267,6 +1270,7 @@ function App() {
           generationSource: result.source || result.question?.source || null,
           usedRemoteAI: Boolean(result.usedRemoteAI),
           fallback: Boolean(result.fallback),
+          fallbackNotice: Boolean(result.fallback && result.showFallbackNotice !== false && result.question?.aiMeta?.fallbackNotice !== false),
         });
       } catch (error) {
         if (latestAIQuestionRequestId.current !== requestId) return;
@@ -1278,6 +1282,7 @@ function App() {
           generationSource: null,
           usedRemoteAI: false,
           fallback: false,
+          fallbackNotice: false,
         }));
       } finally {
         if (latestAIQuestionRequestId.current === requestId) aiQuestionTimer.current = null;
@@ -1320,6 +1325,7 @@ function App() {
       generationSource: null,
       usedRemoteAI: false,
       fallback: false,
+      fallbackNotice: false,
     }));
   }, []);
 
@@ -1339,6 +1345,7 @@ function App() {
       generationSource: null,
       usedRemoteAI: false,
       fallback: false,
+      fallbackNotice: false,
     }));
   }, []);
 
@@ -1687,6 +1694,7 @@ function App() {
           generationSource={aiPracticeState.generationSource}
           usedRemoteAI={aiPracticeState.usedRemoteAI}
           fallback={aiPracticeState.fallback}
+          fallbackNotice={aiPracticeState.fallbackNotice}
           branchFilter={aiBranchFilter}
           branchOptions={aiQuestionBranches}
           difficulty={aiDifficulty}

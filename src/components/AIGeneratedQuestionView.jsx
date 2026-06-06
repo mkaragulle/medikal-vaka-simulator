@@ -61,7 +61,7 @@ const AI_LOADING_STAGES = [
 
 const AI_WAITING_FLASHCARD_STATUS_KEY = 'klinikiq.aiQuestion.waitingFlashcards.status.v1';
 const AI_WAITING_FLASHCARD_SHOWN_KEY = 'klinikiq.aiQuestion.waitingFlashcards.shown.v1';
-const AI_WAITING_FLASHCARD_COUNT = 3;
+const AI_WAITING_FLASHCARD_COUNT = 10;
 
 const BRANCH_NAME_LOOKUP = new Map((branches || []).flatMap((branch) => [
   [branch.id, branch.id],
@@ -532,6 +532,33 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
   const progressPercent = questionReady ? 100 : Math.min(96, Math.max(8, (elapsedSeconds / estimatedTotalSeconds) * 100));
   const stage = questionReady ? { title: 'Sorunuz hazırlandı, istediğiniz zaman çözebilirsiniz.' } : getGenerationStage(elapsedSeconds);
   const etaLabel = questionReady ? 'Hazır' : remainingSeconds > 0 ? `${remainingSeconds} sn` : 'Son kontroller';
+  const getCardsPerView = useCallback(() => {
+    if (typeof window === 'undefined') return 3;
+    if (window.innerWidth <= 760) return 1;
+    if (window.innerWidth <= 1180) return 2;
+    return 3;
+  }, []);
+  const [cardsPerView, setCardsPerView] = useState(getCardsPerView);
+  const [carouselIndex, setCarouselIndex] = useState(0);
+
+  useEffect(() => {
+    const syncCardsPerView = () => setCardsPerView(getCardsPerView());
+    syncCardsPerView();
+    window.addEventListener('resize', syncCardsPerView);
+    return () => window.removeEventListener('resize', syncCardsPerView);
+  }, [getCardsPerView]);
+
+  useEffect(() => {
+    setCarouselIndex(0);
+  }, [flashcards, questionReady]);
+
+  const maxCarouselIndex = Math.max(0, flashcards.length - cardsPerView);
+  const safeCarouselIndex = Math.min(carouselIndex, maxCarouselIndex);
+  const visibleFlashcards = flashcards.slice(safeCarouselIndex, safeCarouselIndex + cardsPerView);
+  const canGoPrev = safeCarouselIndex > 0;
+  const canGoNext = safeCarouselIndex < maxCarouselIndex;
+  const visibleRangeStart = flashcards.length ? safeCarouselIndex + 1 : 0;
+  const visibleRangeEnd = flashcards.length ? Math.min(flashcards.length, safeCarouselIndex + cardsPerView) : 0;
 
   return (
     <section className={`ai-generation-state ai-generation-state-countdown ai-generation-state-live ai-generation-study-wait ${questionReady ? 'question-ready' : ''}`.trim()} aria-live="polite">
@@ -565,16 +592,39 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
             <div>
               <strong>Sorunuz oluşturulurken hap kartlar ile çalışın.</strong>
             </div>
+            <div className="ai-waiting-pearl-carousel-status" aria-live="polite">
+              <span>{visibleRangeStart}-{visibleRangeEnd} / {flashcards.length}</span>
+            </div>
           </div>
-          <div className="ai-waiting-pearl-grid">
-            {flashcards.map((card) => (
-              <WaitingPearlCard
-                key={card.id}
-                card={card}
-                rating={ratings[card.id]}
-                onRate={onRateFlashcard}
-              />
-            ))}
+          <div className="ai-waiting-pearl-carousel-shell">
+            <button
+              type="button"
+              className="ai-waiting-pearl-carousel-arrow"
+              onClick={() => setCarouselIndex((current) => Math.max(0, current - 1))}
+              disabled={!canGoPrev}
+              aria-label="Önceki hap kartlar"
+            >
+              <Icon name="ChevronLeft" size={20} />
+            </button>
+            <div className="ai-waiting-pearl-grid ai-waiting-pearl-grid-carousel">
+              {visibleFlashcards.map((card) => (
+                <WaitingPearlCard
+                  key={card.id}
+                  card={card}
+                  rating={ratings[card.id]}
+                  onRate={onRateFlashcard}
+                />
+              ))}
+            </div>
+            <button
+              type="button"
+              className="ai-waiting-pearl-carousel-arrow"
+              onClick={() => setCarouselIndex((current) => Math.min(maxCarouselIndex, current + 1))}
+              disabled={!canGoNext}
+              aria-label="Sonraki hap kartlar"
+            >
+              <Icon name="ChevronRight" size={20} />
+            </button>
           </div>
         </div>
       ) : null}
@@ -621,6 +671,7 @@ function AIGeneratedQuestionView({
   generationSource = null,
   usedRemoteAI = false,
   fallback = false,
+  fallbackNotice = false,
   branchFilter = 'random',
   branchOptions = [],
   difficulty = 'Orta',
@@ -767,7 +818,7 @@ function AIGeneratedQuestionView({
         <AIStat icon="Trophy" tone="warning" label="Pratik puanı" value={aiStats?.score || 0} />
       </section>
 
-      {fallback && !loading && !error ? (
+      {fallback && fallbackNotice && !loading && !error ? (
         <section className="ai-fallback-notice card-surface" aria-live="polite">
           <Icon name="ShieldCheck" />
           <span>AI yanıtı alınamadığından dolayı KlinikIQ soru üretim sistemi devreye girdi.</span>

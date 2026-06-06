@@ -56651,6 +56651,59 @@ html[data-theme='dark'] .vitals-grid .vital-card .vital-note,
   font-weight: 900;
 }
 
+
+.ai-waiting-pearl-carousel-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: .35rem .75rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 14%, var(--border-subtle));
+  background: color-mix(in srgb, var(--surface-2) 84%, transparent);
+  color: var(--text-secondary);
+  font-size: .8rem;
+  font-weight: 800;
+}
+
+.ai-waiting-pearl-carousel-shell {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: stretch;
+  gap: .8rem;
+}
+
+.ai-waiting-pearl-carousel-arrow {
+  align-self: center;
+  justify-self: center;
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border-subtle));
+  background: color-mix(in srgb, var(--surface-1) 94%, white 6%);
+  color: var(--text-primary);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--shadow-color, #0f172a) 5%, transparent);
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, opacity .18s ease;
+}
+
+.ai-waiting-pearl-carousel-arrow:hover:not(:disabled) {
+  transform: translateY(-1px) scale(1.03);
+  border-color: color-mix(in srgb, var(--accent) 28%, var(--border-subtle));
+  box-shadow: 0 14px 24px color-mix(in srgb, var(--shadow-color, #0f172a) 9%, transparent);
+}
+
+.ai-waiting-pearl-carousel-arrow:disabled {
+  opacity: .42;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.ai-waiting-pearl-grid-carousel {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .ai-waiting-pearl-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -56873,6 +56926,49 @@ html[data-theme="dark"] .ai-waiting-pearl-actions button.active,
   .ai-waiting-pearl-actions {
     grid-template-columns: 1fr;
   }
+}
+
+
+
+@media (max-width: 1180px) {
+  .ai-waiting-pearl-grid-carousel {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .ai-waiting-pearl-carousel-shell {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: .5rem;
+  }
+
+  .ai-waiting-pearl-grid-carousel {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ai-waiting-pearl-carousel-arrow {
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+  }
+
+  .ai-waiting-pearl-carousel-status {
+    align-self: flex-start;
+  }
+}
+
+html[data-theme="dark"] .ai-waiting-pearl-carousel-arrow,
+.app-shell[data-theme="dark"] .ai-waiting-pearl-carousel-arrow {
+  background: rgba(15, 23, 42, .66);
+  border-color: rgba(94, 234, 212, .16);
+  color: #ecfeff;
+}
+
+html[data-theme="dark"] .ai-waiting-pearl-carousel-status,
+.app-shell[data-theme="dark"] .ai-waiting-pearl-carousel-status {
+  background: rgba(15, 23, 42, .48);
+  border-color: rgba(94, 234, 212, .16);
+  color: #d1fae5;
 }
 
 /* === V378 — AI bekleme kartları scroll/CTA refinement === */
