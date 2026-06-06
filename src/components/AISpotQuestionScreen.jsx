@@ -7,7 +7,6 @@ import {
   buildAISpotNarrativeStem,
   buildAISpotQuestionPrompt,
   getAISpotPreviewDiagnostics,
-  getAISpotSupportDataGroups,
 } from '../utils/aiSpotNarrative.js';
 
 const AI_SPOT_BRANCH = {
@@ -185,7 +184,8 @@ function CompactDataGroup({ title, items = [] }) {
 function AISpotNarrativePanel({ question, hardMode = false, embedded = false }) {
   const contextLine = buildAISpotContextLine(question);
   const paragraphs = buildAISpotNarrativeStem(question);
-  const supportDataGroups = getAISpotSupportDataGroups(question);
+  // V383: AI TUS sorularında sağ taraftaki destek/veri paneli gösterilmez; tüm veri soru paragrafına entegre edilir.
+  const supportDataGroups = [];
   const difficultyMeta = getDifficultyMeta(question.difficulty);
   const diagnostics = import.meta.env?.DEV ? getAISpotPreviewDiagnostics(question) : null;
 

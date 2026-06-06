@@ -37,12 +37,22 @@ Write one Turkish TUS-style single-best-answer question. The item must be scient
 Core standards:
 - Test one narrow TUS reasoning target.
 - Build a natural clinical vignette with a clear beginning, focused clues and one decisive learning point.
-- Keep the stem, objective data, question, options, evidenceChain and feedback aligned with the same target.
+- Keep the stem, question, options, evidenceChain and feedback aligned with the same target.
 - Make all five options plausible, same-category and centered on one clearly best answer.
 - Use only necessary findings. Avoid filler labs, vitals, imaging, repeated data, awkward fragments and artificial phrasing.
-- Do not ask for information that is already directly given in the stem or data panels.
-- compactObjectiveData must contain only short, readable supportive findings. Do not place answer-equivalent results, final interpretations, decisive diagnostic labels, repeated stem text or incomplete values there. If objective data is not needed, return an empty array.
+- Do not ask for information that is already directly given without requiring interpretation.
+- IMPORTANT UI RULE: KlinikIQ will no longer show right-side objective data tables for AI TUS questions. Therefore every clinically relevant vital sign, laboratory value, imaging result, examination finding or microbiology clue must be written naturally inside the stem paragraph.
+- compactVitals and compactObjectiveData must be returned as empty arrays [] unless absolutely unavoidable; prefer integrating the data into the stem. Never place isolated labels, fragments, final interpretations, answer-equivalent results or incomplete values in these arrays.
 - Avoid overly simple increase/decrease questions unless the reasoning mechanism is the actual target.
+
+Clinical realism and branch-uniform quality:
+- All branches must be written at the same high standard. Pediatrics, anatomy, physiology, biochemistry, pathology, pharmacology, microbiology, internal medicine, surgery and OB/GYN must all have clear, scientific, understandable TUS-quality stems.
+- Do not let anatomy or basic science questions become memorization-only fragments. When possible, frame them with a clean clinical/surgical/anatomical context, then ask one precise structure-mechanism-innervation-pathology relationship.
+- Pediatric questions must include age-appropriate context and physiologically plausible values. Fever must be realistic, typically 38.0-41.5 °C when used; never output values such as 6.0 °C. Heart rate, respiratory rate and blood pressure must match the age/severity if numerical.
+- Adult vital signs and laboratory values must be physiologically plausible and clinically coherent. If you are uncertain about a numeric value, write the finding qualitatively instead of inventing a number.
+- Imaging and laboratory findings must be grammatically complete and clinically meaningful inside the stem. Do not output malformed phrases such as isolated labels, repeated modality names, or broken Turkish fragments.
+- The stem must be a readable vignette paragraph of 3-6 complete sentences. It should include demographics, presentation, key examination/lab/imaging clues and the decision question context without using separate tables.
+- Before returning JSON, run a final sanity check: no impossible temperature, no contradictory findings, no copy-pasted panel labels, no malformed Turkish, no random Z-score/lab value unless it is necessary and interpreted in context.
 
 Clinical decision clarity:
 - If a treatment option is supportive but not definitive, or correct only under specific severity criteria, the question wording must clearly distinguish supportive care, first emergency step, definitive treatment, specific antidote, diagnostic confirmation or mechanism.
@@ -69,7 +79,7 @@ Output contract:
 - correctAnswer must be exactly one of: A, B, C, D, E. Do not default to A; distribute the correct answer naturally across options.
 - relatedBranch and difficulty must exactly match the dynamic values given by the user message.
 - answerTarget should briefly name the actual focus, such as diagnosis, mechanism, treatment, diagnostic_test, first_step, complication or lab_interpretation.
-- compactVitals and compactObjectiveData may be empty arrays when not needed.
+- compactVitals and compactObjectiveData should normally be empty arrays. Any necessary vital/lab/imaging information must be integrated into the stem paragraph so the question is understandable without a side table.
 - managementSteps must be used only for treatment, first-step, next-step, emergency or management questions. Include 2-4 concise clinical steps in correct order. For diagnosis, mechanism, etiology, lab interpretation, anatomy or pathology questions, return [].
 
 Return JSON in this exact schema:
@@ -137,7 +147,7 @@ export function buildUserPrompt({
     ? 'Full depth: keep all educational fields detailed, but avoid repetition or filler.'
     : normalizedDetailMode === 'standard'
       ? 'Standard depth: keep all fields complete; explanation 2-3 sentences, each option feedback 1-2 concise scientific sentences, evidenceChain exactly 3 short reasons.'
-      : 'Fast concise depth: keep the same JSON schema and medical safety, but minimize output tokens. explanation must be 2 strong sentences. Each option feedback must be exactly 1 complete, option-specific scientific Turkish sentence. evidenceChain must contain exactly 3 short reasons. examPearl must be one high-yield sentence. Do not add filler.';
+      : 'Fast concise depth: keep the same JSON schema and medical safety, but do not sacrifice clarity. The stem must still be a coherent 3-6 sentence vignette. explanation must be 2 strong sentences. Each option feedback must be exactly 1 complete, option-specific scientific Turkish sentence. evidenceChain must contain exactly 3 short reasons. examPearl must be one high-yield sentence. Do not add filler.';
 
   return `Generate one Turkish TUS spot question for KlinikIQ using the static system rules exactly.
 

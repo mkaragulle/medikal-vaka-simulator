@@ -7,7 +7,7 @@ import {
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v35-cost-latency-concise';
+const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v36-integrated-stem-quality';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -483,6 +483,7 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   if (hasPhysiologyDeterminantPanel(question)) errors.push('fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor');
   if (hasUnwantedDirectionOnlyQuestion(question, correctText)) errors.push('basit artar/azalır/değişmez sorusu mekanizma hedefi olmadan üretilmiş');
   if (hasIncompleteObjectiveData(question)) errors.push('eksik veya tamamlanmamış objektif veri değeri var');
+  if (hasImpossibleClinicalValue(question)) errors.push('imkansız veya bozuk klinik değer/ifade var');
   if (asArray(question.evidenceChain).some((item) => containsAnswerLeak(item, correctText))) errors.push('kanıt zinciri doğru cevabı doğrudan söylüyor');
   if (hasDuplicateFeedbackSentences(question)) errors.push('feedback içinde tekrar eden cümle var');
   if (!isManagementTarget(question.answerTarget) && asArray(question.managementSteps).length) errors.push('bu soru tipinde yönetim basamağı gereksiz');
@@ -509,12 +510,64 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)), options, correctText };
 }
 
+
+function formatInlineClinicalData(items = [], prefix = '') {
+  const rows = asArray(items)
+    .map((item) => {
+      if (typeof item === 'string') return cleanText(item);
+      const label = cleanText(item?.label || item?.name || item?.parameter || item?.title || '');
+      const value = cleanText(item?.value || item?.result || item?.text || item?.finding || '');
+      if (!label && !value) return '';
+      if (!value) return label;
+      return `${label}: ${value}`;
+    })
+    .filter(Boolean)
+    .filter((line) => !/^(görüntüleme|destekleyici veriler|laboratuvar|fizik muayene|eko|ekokardiyografi)$/iu.test(line));
+  if (!rows.length) return '';
+  return ensureSentence(`${prefix}${rows.join('; ')}`);
+}
+
+function integrateCompactDataIntoStem(stem = '', vitals = [], objectiveData = []) {
+  const base = ensureSentence(stem || '');
+  const vitalSentence = formatInlineClinicalData(vitals, 'Ek klinik verilerde ');
+  const objectiveSentence = formatInlineClinicalData(objectiveData, 'Tetkik ve destekleyici bulgularda ');
+  return [base, vitalSentence, objectiveSentence]
+    .filter(Boolean)
+    .join(' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function hasImpossibleClinicalValue(question = {}) {
+  const text = collectStrings(question).join(' | ');
+  const normalized = cleanText(text);
+
+  const feverMatches = [...normalized.matchAll(/(?:ateş|ates|sıcaklık|sicaklik)[^0-9-]{0,24}(-?\d{1,2}(?:[.,]\d)?)/giu)];
+  for (const match of feverMatches) {
+    const value = Number.parseFloat(String(match[1]).replace(',', '.'));
+    if (Number.isFinite(value) && (value < 30 || value > 45)) return true;
+  }
+
+  const spo2Matches = [...normalized.matchAll(/(?:spo₂|spo2|satürasyon|saturasyon)[^0-9]{0,24}%?\s*(\d{1,3})/giu)];
+  for (const match of spo2Matches) {
+    const value = Number.parseFloat(match[1]);
+    if (Number.isFinite(value) && (value < 40 || value > 100)) return true;
+  }
+
+  if (/\byapılanmada\b|\byapilanmada\b|\bsağ koroner arter Z-skoru 3\b.*\bZ-skoru 3\.5\b/iu.test(normalized)) return true;
+  if (/(?:ekokardiyografi|eko|bt|mr|usg|laboratuvar|destekleyici veriler)\s*[|;]\s*(?:ekokardiyografi|eko|bt|mr|usg|laboratuvar|destekleyici veriler)/iu.test(normalized)) return true;
+  return false;
+}
+
 function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
   const options = normalizeOptions(question.options);
   const correctId = String(question.correctAnswer || '').trim().toUpperCase();
   const correctText = options.find((item) => item.id === correctId)?.text || options[0]?.text || '';
   const answerTarget = cleanText(question.answerTarget || question.questionIntent || '');
   const allowManagementSteps = isManagementTarget(answerTarget);
+  const rawCompactVitals = compactItems(question.compactVitals || question.vitals || [], 5);
+  const rawCompactObjectiveData = compactItems(question.compactObjectiveData || question.objectiveData || [], 8);
+  const integratedStem = integrateCompactDataIntoStem(question.stem, rawCompactVitals, rawCompactObjectiveData);
   const sanitized = {
     id: cleanText(question.id) || `ai-spot-openai-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     source: 'real-ai',
@@ -526,9 +579,9 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
     demographics: cleanText(question.demographics || ''),
     setting: cleanText(question.setting || ''),
     chiefComplaint: cleanText(question.chiefComplaint || ''),
-    stem: ensureSentence(question.stem),
-    compactVitals: compactItems(question.compactVitals || question.vitals || [], 5),
-    compactObjectiveData: compactItems(question.compactObjectiveData || question.objectiveData || [], 8),
+    stem: integratedStem,
+    compactVitals: [],
+    compactObjectiveData: [],
     question: ensureQuestion(question.question),
     options,
     correctAnswer: OPTION_IDS.includes(correctId) ? correctId : (options[0]?.id || 'A'),

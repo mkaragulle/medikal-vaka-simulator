@@ -57154,3 +57154,18 @@ html[data-theme="dark"] .ai-waiting-pearl-carousel-arrow,
   color: #ccfbf1 !important;
 }
 
+
+
+/* === V383 — AI TUS soru kalite düzeltmesi: sağ veri paneli kapalı === */
+.ai-spot-narrative-content-grid.has-support-data,
+.ai-spot-narrative-content-grid.no-support-data {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+.ai-spot-support-data-panel {
+  display: none !important;
+}
+
+.ai-spot-narrative-reading-panel {
+  max-width: none !important;
+}
