@@ -126,15 +126,23 @@ export function buildUserPrompt({
   recentCompact = 'Yok',
   attempt = 1,
   antiRepeatNonce = '',
+  detailMode = 'concise',
 }) {
   const branchText = cleanText(branch);
   const targetText = cleanText(target);
   const selectedDifficulty = normalizeDifficulty(difficulty);
   const preferredFocus = targetText || 'Choose the most suitable TUS-style focus for this branch.';
+  const normalizedDetailMode = ['full', 'standard', 'concise'].includes(String(detailMode || '').toLowerCase()) ? String(detailMode).toLowerCase() : 'concise';
+  const outputDepthInstruction = normalizedDetailMode === 'full'
+    ? 'Full depth: keep all educational fields detailed, but avoid repetition or filler.'
+    : normalizedDetailMode === 'standard'
+      ? 'Standard depth: keep all fields complete; explanation 2-3 sentences, each option feedback 1-2 concise scientific sentences, evidenceChain exactly 3 short reasons.'
+      : 'Fast concise depth: keep the same JSON schema and medical safety, but minimize output tokens. explanation must be 2 strong sentences. Each option feedback must be exactly 1 complete, option-specific scientific Turkish sentence. evidenceChain must contain exactly 3 short reasons. examPearl must be one high-yield sentence. Do not add filler.';
 
   return `Generate one Turkish TUS spot question for KlinikIQ using the static system rules exactly.
 
 Dynamic task values:
+Output depth: ${outputDepthInstruction}
 Branch: ${branchText}
 Difficulty: ${selectedDifficulty}
 Focus: ${preferredFocus}

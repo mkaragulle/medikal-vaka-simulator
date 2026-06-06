@@ -8,10 +8,10 @@ import {
 const runtimeEnv = import.meta.env || {};
 const AI_ENDPOINT = runtimeEnv.VITE_AI_QUESTION_ENDPOINT || '/api/generate-ai-question';
 const ENABLE_REAL_AI = String(runtimeEnv.VITE_ENABLE_REAL_AI ?? 'true').toLowerCase() !== 'false';
-const AI_REQUEST_TIMEOUT_MS = Number(runtimeEnv.VITE_AI_REQUEST_TIMEOUT_MS || 45000);
+const AI_REQUEST_TIMEOUT_MS = Number(runtimeEnv.VITE_AI_REQUEST_TIMEOUT_MS || 25000);
 const AI_REMOTE_RETRY_COUNT = Math.max(1, Math.min(2, Number(runtimeEnv.VITE_AI_REMOTE_RETRY_COUNT || 1)));
-const ENABLE_CLIENT_PREFETCH = String(runtimeEnv.VITE_AI_ENABLE_NEXT_QUESTION_PREFETCH ?? 'true').toLowerCase() !== 'false';
-const MAX_PREFETCHED_PER_KEY = Math.max(1, Math.min(2, Number(runtimeEnv.VITE_AI_PREFETCH_QUEUE_SIZE || 1)));
+const ENABLE_CLIENT_PREFETCH = String(runtimeEnv.VITE_AI_ENABLE_NEXT_QUESTION_PREFETCH ?? 'false').toLowerCase() === 'true';
+const MAX_PREFETCHED_PER_KEY = Math.max(0, Math.min(2, Number(runtimeEnv.VITE_AI_PREFETCH_QUEUE_SIZE || 0)));
 
 const prefetchedQuestionQueues = new Map();
 const activePrefetches = new Map();

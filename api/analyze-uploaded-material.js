@@ -1,12 +1,12 @@
 import { sendJson, parseJsonBody, callOpenAIJson, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
 import { ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT, buildAnalyzeUploadedMaterialPrompt } from './prompts/analyzeUploadedMaterialPrompt.js';
-import { buildOutputCacheKey, compactMaterialSources, createSourceFingerprint, getDurableCachedOutput, logAIUsage, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
+import { buildOutputCacheKey, compactMaterialSources, createSourceFingerprint, defaultModelForScope, getDurableCachedOutput, logAIUsage, resolveModelForScope, resolveSourceCharLimit, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
 
 const TASK_NAME = 'materialAnalysis';
-const PROMPT_VERSION = 'komite-material-analysis-v2-token-cache';
+const PROMPT_VERSION = 'komite-material-analysis-v3-cost-capped';
 
 function currentKomiteModel() {
-  return process.env.KOMITE_OPENAI_MODEL || process.env.OPENAI_MODEL || 'gpt-4.1-mini';
+  return resolveModelForScope('KOMITE');
 }
 
 function envNumber(name, fallback) {
@@ -62,7 +62,7 @@ function compactTextWindow(text = '', maxChars = 12000) {
   return [start, middle, end].join('\n\n');
 }
 
-function sourceTextFromMaterialPacket(packet = {}, maxTotalChars = envNumber('KOMITE_ANALYSIS_MAX_SOURCE_CHARS', 10000)) {
+function sourceTextFromMaterialPacket(packet = {}, maxTotalChars = resolveSourceCharLimit('KOMITE_ANALYSIS_MAX_SOURCE_CHARS', 10000, 'KOMITE', TASK_NAME)) {
   const files = Array.isArray(packet.files)
     ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
     : [];
@@ -82,7 +82,7 @@ export default async function handler(request, response) {
     const sourceCheck = verifyCurrentSourceManifest(body);
     if (!sourceCheck.ok) return sendJson(response, 409, { ok: false, error: 'Current source session validation failed', validation: sourceCheck });
     const sourceFingerprint = createSourceFingerprint({ clientFingerprint: body.sourceFingerprint || sourceCheck.fingerprint || '', files: body.materialPacket?.files || [] });
-    const currentSourceText = compactMaterialSources(body.materialPacket?.files || [], envNumber('KOMITE_ANALYSIS_MAX_SOURCE_CHARS', 10000));
+    const currentSourceText = compactMaterialSources(body.materialPacket?.files || [], resolveSourceCharLimit('KOMITE_ANALYSIS_MAX_SOURCE_CHARS', 10000, 'KOMITE', TASK_NAME));
     if (!currentSourceText) return sendJson(response, 422, { ok: false, error: 'Current material packet has no readable text.' });
     const cacheKey = buildOutputCacheKey({ scope: 'KOMITE', task: TASK_NAME, promptVersion: PROMPT_VERSION, model: currentKomiteModel(), sourceFingerprint });
     return await withInFlightDedupe(cacheKey, async () => {

@@ -4,16 +4,16 @@ import {
   buildUserPrompt,
   normalizeDifficulty,
 } from './tus-question-prompt.js';
-import { buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, envFlag, getDurableCachedOutput, getQuestionBankItems, logAIUsage, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
+import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v34-feedback-completeness-anatomy-guard';
+const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v35-cost-latency-concise';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
 
 function currentTusModel() {
-  return process.env.TUS_OPENAI_MODEL || process.env.OPENAI_MODEL || process.env.DEFAULT_GENERATOR_MODEL || 'gpt-4o-mini';
+  return resolveModelForScope('TUS');
 }
 
 function useQuestionBank() {
@@ -613,7 +613,7 @@ function extractResponsesText(payload = {}) {
   return chunks.join('\n');
 }
 
-function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummaries = [], attempt = 1, antiRepeatNonce = '' }) {
+function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummaries = [], attempt = 1, antiRepeatNonce = '', detailMode = detailModeForProfile('TUS') }) {
   const answerTarget = cleanText(target || '');
   const selectedDifficulty = normalizeDifficulty(difficulty);
   const recentCompact = buildRecentCompact(recentQuestionSummaries);
@@ -624,6 +624,7 @@ function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummar
     recentCompact,
     attempt,
     antiRepeatNonce: antiRepeatNonce || Date.now(),
+    detailMode,
   });
 }
 
@@ -655,18 +656,19 @@ function safeVerbosity(value = '') {
   return /^(low|medium|high)$/i.test(String(value || '')) ? String(value).toLowerCase() : 'medium';
 }
 
-async function callOpenAI(prompt) {
+async function callOpenAI(prompt, { detailMode = detailModeForProfile('TUS') } = {}) {
   const apiKey = process.env.TUS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
   if (!apiKey) return null;
   const model = currentTusModel();
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
   const timeoutMs = Number(process.env.TUS_OPENAI_PER_REQUEST_TIMEOUT_MS || process.env.OPENAI_PER_REQUEST_TIMEOUT_MS || 25000);
-  const maxTokens = Number(process.env.TUS_OPENAI_MAX_OUTPUT_TOKENS || process.env.OPENAI_MAX_OUTPUT_TOKENS || 1800);
+  const requestedMaxTokens = Number(process.env.TUS_OPENAI_MAX_OUTPUT_TOKENS || process.env.OPENAI_MAX_OUTPUT_TOKENS || 0);
+  const maxTokens = requestedMaxTokens > 0 ? requestedMaxTokens : applyCostProfileToMaxTokens('TUS', TASK_NAME, 1800);
   const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';
-  const reasoningEffort = safeReasoningEffort(process.env.TUS_OPENAI_REASONING_EFFORT || process.env.OPENAI_REASONING_EFFORT || 'low');
-  const verbosity = safeVerbosity(process.env.TUS_OPENAI_VERBOSITY || process.env.OPENAI_VERBOSITY || 'medium');
+  const reasoningEffort = safeReasoningEffort(process.env.TUS_OPENAI_REASONING_EFFORT || process.env.OPENAI_REASONING_EFFORT || defaultReasoningEffortForProfile('TUS'));
+  const verbosity = safeVerbosity(process.env.TUS_OPENAI_VERBOSITY || process.env.OPENAI_VERBOSITY || defaultVerbosityForProfile('TUS'));
   const { signal, cancel } = createAbortSignal(timeoutMs);
   try {
     const promptCacheConfig = buildPromptCacheConfig('TUS', TASK_NAME, PROMPT_VERSION);
@@ -725,9 +727,9 @@ async function callOpenAI(prompt) {
   }
 }
 
-async function generateRemote({ branch, target, difficulty, recentQuestionSummaries, attempt, antiRepeatNonce }) {
-  const prompt = buildPrompt({ branch, target, difficulty, recentQuestionSummaries, attempt, antiRepeatNonce });
-  const result = await callOpenAI(prompt);
+async function generateRemote({ branch, target, difficulty, recentQuestionSummaries, attempt, antiRepeatNonce, detailMode = detailModeForProfile('TUS') }) {
+  const prompt = buildPrompt({ branch, target, difficulty, recentQuestionSummaries, attempt, antiRepeatNonce, detailMode });
+  const result = await callOpenAI(prompt, { detailMode });
   if (!result) throw new Error('OPENAI_API_KEY tanımlı değil; AI üretim yapılamadı.');
   const sanitized = sanitizeQuestion(result.question, branch, difficulty);
   sanitized.provider = 'openai';
@@ -735,6 +737,7 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
   sanitized.openAIMode = result.mode;
   sanitized.promptVersion = PROMPT_VERSION;
   sanitized.schemaVersion = SCHEMA_VERSION;
+  sanitized.aiMeta = { ...(sanitized.aiMeta || {}), costProfile: getAICostProfile('TUS'), detailMode };
   const validation = validateQuestion(sanitized, recentQuestionSummaries);
   if (!validation.ok) {
     // Balanced gate: block only unsafe/structural failures. Pedagogic improvements
@@ -803,7 +806,7 @@ export default async function handler(request, response) {
   const branch = chooseBranch(body.branchFilter);
   const requestedDifficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
   const recentQuestionSummaries = asArray(body.recentQuestionSummaries).slice(0, 12);
-  const remoteAttempts = Math.max(1, Math.min(2, Number(process.env.REMOTE_AI_ATTEMPTS || 2)));
+  const remoteAttempts = Math.max(1, Math.min(2, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.TUS_REMOTE_AI_ATTEMPTS || 1)));
   const errors = [];
   const target = body.target || body.answerTarget || '';
   const model = currentTusModel();
@@ -835,9 +838,18 @@ export default async function handler(request, response) {
       return sendJson(response, 200, { ok: true, cached: true, fallback: false, provider: cachedPayload.provider || 'openai-output-cache', question: cachedPayload.question });
     }
 
+    if (!envFlag('KLINIKIQ_LIVE_TUS_AI', true)) {
+      const question = fallbackQuestion({ branchFilter: branch, difficulty: requestedDifficulty, recentQuestionSummaries });
+      question.provider = 'local-cost-safe-bank';
+      question.fallback = true;
+      question.aiMeta = { ...(question.aiMeta || {}), liveAIDisabled: true, costProfile: getAICostProfile('TUS') };
+      return sendJson(response, 200, { ok: true, provider: 'local-cost-safe-bank', fallback: true, safeFallback: true, question });
+    }
+
+    const detailMode = detailModeForProfile('TUS');
     for (let attempt = 1; attempt <= remoteAttempts; attempt += 1) {
     try {
-      const question = await generateRemote({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries, attempt, antiRepeatNonce: body.antiRepeatNonce });
+      const question = await generateRemote({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries, attempt, antiRepeatNonce: body.antiRepeatNonce, detailMode });
         await storeReusableQuestion({ branch, target, difficulty: requestedDifficulty, question });
         await setDurableCachedOutput(oneShotCacheKey, { provider: 'openai-output-cache', question });
         return sendJson(response, 200, {

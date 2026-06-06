@@ -127,6 +127,123 @@ export function setCachedOutput(cacheKey, value, ttlMs = envNumber('KLINIKIQ_AI_
   return true;
 }
 
+
+
+// KlinikIQ aggressive cost/latency profile helpers.
+// These helpers intentionally reduce live-generation cost without changing stored schema.
+// They cap output size, default to faster/cheaper models when no explicit model is set,
+// and keep high-detail generation available via env overrides.
+export function getAICostProfile(scope = 'GENERAL') {
+  const prefix = String(scope || 'GENERAL').toUpperCase();
+  const raw = process.env[`${prefix}_AI_COST_PROFILE`] || process.env.KLINIKIQ_AI_COST_PROFILE || 'ultra';
+  const value = safeString(raw).toLowerCase();
+  if (['quality', 'high', 'full'].includes(value)) return 'quality';
+  if (['balanced', 'standard'].includes(value)) return 'balanced';
+  return 'ultra';
+}
+
+export function defaultModelForScope(scope = 'GENERAL') {
+  const prefix = String(scope || 'GENERAL').toUpperCase();
+  const profile = getAICostProfile(prefix);
+  const fastModel = process.env[`${prefix}_OPENAI_FAST_MODEL`] || process.env.OPENAI_FAST_MODEL || 'gpt-5-mini';
+  const qualityModel = process.env[`${prefix}_OPENAI_QUALITY_MODEL`] || process.env.OPENAI_QUALITY_MODEL || 'gpt-4.1-mini';
+  return profile === 'quality' ? qualityModel : fastModel;
+}
+
+
+export function resolveModelForScope(scope = 'GENERAL') {
+  const prefix = String(scope || 'GENERAL').toUpperCase();
+  const profile = getAICostProfile(prefix);
+  const fastModel = process.env[`${prefix}_OPENAI_FAST_MODEL`] || process.env.OPENAI_FAST_MODEL || defaultModelForScope(prefix);
+  const exactModel = process.env[`${prefix}_OPENAI_MODEL`] || process.env.OPENAI_MODEL || process.env.DEFAULT_GENERATOR_MODEL || '';
+  const forceFastDefault = profile !== 'quality';
+  const forceFast = envFlag(`${prefix}_FORCE_FAST_MODEL`, envFlag('KLINIKIQ_FORCE_FAST_MODEL', forceFastDefault));
+  if (forceFast && profile !== 'quality') return fastModel;
+  return exactModel || defaultModelForScope(prefix);
+}
+
+export function defaultReasoningEffortForProfile(scope = 'GENERAL') {
+  const profile = getAICostProfile(scope);
+  if (profile === 'quality') return 'low';
+  return 'low';
+}
+
+export function defaultVerbosityForProfile(scope = 'GENERAL') {
+  const profile = getAICostProfile(scope);
+  return profile === 'quality' ? 'medium' : 'low';
+}
+
+export function applyCostProfileToMaxTokens(scope = 'GENERAL', task = 'default', fallback = 2000) {
+  const base = Math.max(256, Number(fallback || 2000));
+  if (envFlag('KLINIKIQ_AI_DISABLE_COST_CAPS', false)) return base;
+  const profile = getAICostProfile(scope);
+  const taskName = safeString(task).toLowerCase();
+  const explicit = Number(process.env[`KLINIKIQ_${safeString(scope).toUpperCase()}_${safeString(task).toUpperCase()}_MAX_OUTPUT_TOKENS`]);
+  if (Number.isFinite(explicit) && explicit > 0) return explicit;
+
+  const caps = {
+    ultra: {
+      tusspotquestion: 1150,
+      materialanalysis: 950,
+      materialflashcards: 2200,
+      materialquestions: 3400,
+      lesson: 2800,
+      default: Math.ceil(base * 0.58),
+    },
+    balanced: {
+      tusspotquestion: 1450,
+      materialanalysis: 1300,
+      materialflashcards: 2400,
+      materialquestions: 3400,
+      lesson: 3600,
+      default: Math.ceil(base * 0.78),
+    },
+    quality: {
+      default: base,
+    },
+  };
+  const profileCaps = caps[profile] || caps.ultra;
+  return Math.max(600, Math.min(base, profileCaps[taskName] || profileCaps.default || base));
+}
+
+export function resolveSourceCharLimit(envName = '', fallback = 12000, scope = 'GENERAL', task = 'default') {
+  const explicit = Number(process.env[envName]);
+  if (Number.isFinite(explicit) && explicit > 0) return explicit;
+  if (envFlag('KLINIKIQ_AI_DISABLE_COST_CAPS', false)) return Number(fallback || 12000);
+  const profile = getAICostProfile(scope);
+  const taskName = safeString(task).toLowerCase();
+  const base = Number(fallback || 12000);
+  const caps = {
+    ultra: {
+      materialanalysis: 6000,
+      materialflashcards: 6500,
+      materialquestions: 7500,
+      lesson: 9000,
+      default: Math.ceil(base * 0.55),
+    },
+    balanced: {
+      materialanalysis: 8500,
+      materialflashcards: 9500,
+      materialquestions: 11000,
+      lesson: 12500,
+      default: Math.ceil(base * 0.75),
+    },
+    quality: { default: base },
+  };
+  const selected = caps[profile] || caps.ultra;
+  return Math.max(2500, Math.min(base, selected[taskName] || selected.default || base));
+}
+
+export function detailModeForProfile(scope = 'GENERAL') {
+  const prefix = String(scope || 'GENERAL').toUpperCase();
+  const raw = process.env[`${prefix}_AI_OUTPUT_DETAIL_MODE`] || process.env.KLINIKIQ_AI_OUTPUT_DETAIL_MODE || '';
+  const normalized = safeString(raw).toLowerCase();
+  if (['full', 'detailed', 'quality'].includes(normalized)) return 'full';
+  if (['standard', 'balanced'].includes(normalized)) return 'standard';
+  if (['minimal', 'concise', 'fast'].includes(normalized)) return 'concise';
+  return getAICostProfile(scope) === 'quality' ? 'full' : 'concise';
+}
+
 function usageMetric(usage = {}, ...paths) {
   for (const path of paths) {
     const value = path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), usage);
