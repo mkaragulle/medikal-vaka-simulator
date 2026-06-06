@@ -1,15 +1,18 @@
 import crypto from 'node:crypto';
+import fs from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
 
 const outputCache = new Map();
 const DEFAULT_OUTPUT_CACHE_TTL_MS = 30 * 60 * 1000;
 
-function envFlag(name, defaultValue = false) {
+export function envFlag(name, defaultValue = false) {
   const raw = process.env[name];
   if (raw === undefined || raw === null || String(raw).trim() === '') return defaultValue;
   return /^(1|true|yes|on)$/i.test(String(raw).trim());
 }
 
-function envNumber(name, fallback) {
+export function envNumber(name, fallback) {
   const value = Number(process.env[name]);
   return Number.isFinite(value) && value > 0 ? value : fallback;
 }
@@ -149,8 +152,168 @@ export function logAIUsage({ task = 'unknown', model = '', usage = null, cached 
     cachedInputTokens,
     reasoningTokens,
     totalTokens,
+    estimatedCostUsd: estimateOpenAICostUsd({ usage: safeUsage }),
     cacheHit: Boolean(cached),
   }));
+}
+
+
+const inFlightJobs = new Map();
+const durableCacheMemory = new Map();
+const DEFAULT_DURABLE_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
+const DEFAULT_QUESTION_BANK_TTL_MS = 14 * 24 * 60 * 60 * 1000;
+
+function cacheRootDir() {
+  return process.env.KLINIKIQ_AI_CACHE_DIR || path.join(os.tmpdir(), 'klinikiq-ai-cache');
+}
+
+function durableCacheFilePath(key = '') {
+  const safeKey = sha256(key).slice(0, 48);
+  return path.join(cacheRootDir(), `${safeKey}.json`);
+}
+
+function nowMs() {
+  return Date.now();
+}
+
+function safeJsonStringify(value) {
+  try { return JSON.stringify(value); } catch { return JSON.stringify(null); }
+}
+
+function getKvRestConfig() {
+  const url = safeString(process.env.KLINIKIQ_KV_REST_API_URL || process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || '');
+  const token = safeString(process.env.KLINIKIQ_KV_REST_API_TOKEN || process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || '');
+  if (!url || !token || typeof fetch !== 'function') return null;
+  return { url: url.replace(/\/$/u, ''), token };
+}
+
+async function kvCommand(command, ...args) {
+  const config = getKvRestConfig();
+  if (!config) return null;
+  try {
+    const response = await fetch(config.url, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${config.token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify([command, ...args]),
+    });
+    if (!response.ok) return null;
+    const data = await response.json().catch(() => null);
+    if (data && Object.prototype.hasOwnProperty.call(data, 'result')) return data.result;
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+export function buildDurableCacheKey({ scope = 'klinikiq', task = 'default', promptVersion = 'v1', model = '', sourceFingerprint = '', extra = {} } = {}) {
+  return buildOutputCacheKey({ scope, task, promptVersion, model, sourceFingerprint, extra });
+}
+
+export async function getDurableCachedOutput(cacheKey) {
+  if (!shouldUseOutputCache() || !cacheKey) return null;
+
+  const memoryItem = durableCacheMemory.get(cacheKey) || outputCache.get(cacheKey);
+  if (memoryItem) {
+    const expiresAt = Number(memoryItem.expiresAt || 0);
+    if (!expiresAt || expiresAt > nowMs()) return memoryItem.value;
+    durableCacheMemory.delete(cacheKey);
+    outputCache.delete(cacheKey);
+  }
+
+  const kvResult = await kvCommand('GET', cacheKey);
+  if (typeof kvResult === 'string' && kvResult) {
+    try {
+      const parsed = JSON.parse(kvResult);
+      const expiresAt = Number(parsed?.expiresAt || 0);
+      if (!expiresAt || expiresAt > nowMs()) {
+        durableCacheMemory.set(cacheKey, { value: parsed.value, expiresAt });
+        return parsed.value;
+      }
+    } catch { /* ignore invalid KV cache */ }
+  }
+
+  try {
+    const raw = await fs.readFile(durableCacheFilePath(cacheKey), 'utf8');
+    const parsed = JSON.parse(raw);
+    const expiresAt = Number(parsed?.expiresAt || 0);
+    if (expiresAt && expiresAt <= nowMs()) {
+      await fs.unlink(durableCacheFilePath(cacheKey)).catch(() => {});
+      return null;
+    }
+    durableCacheMemory.set(cacheKey, { value: parsed.value, expiresAt });
+    return parsed.value;
+  } catch {
+    return null;
+  }
+}
+
+export async function setDurableCachedOutput(cacheKey, value, ttlMs = envNumber('KLINIKIQ_AI_OUTPUT_CACHE_TTL_MS', DEFAULT_DURABLE_CACHE_TTL_MS)) {
+  if (!shouldUseOutputCache() || !cacheKey || value === undefined || value === null) return false;
+  const expiresAt = nowMs() + Number(ttlMs || DEFAULT_DURABLE_CACHE_TTL_MS);
+  const payload = { value, expiresAt, createdAt: nowMs() };
+  durableCacheMemory.set(cacheKey, { value, expiresAt });
+  setCachedOutput(cacheKey, value, ttlMs);
+
+  const ttlSeconds = Math.max(1, Math.floor(Number(ttlMs || DEFAULT_DURABLE_CACHE_TTL_MS) / 1000));
+  void kvCommand('SET', cacheKey, safeJsonStringify(payload), 'EX', ttlSeconds);
+
+  try {
+    await fs.mkdir(cacheRootDir(), { recursive: true });
+    await fs.writeFile(durableCacheFilePath(cacheKey), JSON.stringify(payload), 'utf8');
+  } catch {
+    // Filesystem cache is best-effort on serverless platforms.
+  }
+  return true;
+}
+
+export async function withInFlightDedupe(jobKey, worker) {
+  if (!jobKey || typeof worker !== 'function') return worker();
+  if (inFlightJobs.has(jobKey)) return inFlightJobs.get(jobKey);
+  const promise = Promise.resolve().then(worker).finally(() => inFlightJobs.delete(jobKey));
+  inFlightJobs.set(jobKey, promise);
+  return promise;
+}
+
+function compactQuestionForBank(question = {}) {
+  if (!question || typeof question !== 'object') return null;
+  return {
+    ...question,
+    cachedFromQuestionBank: true,
+    aiMeta: {
+      ...(question.aiMeta || {}),
+      questionBank: true,
+    },
+  };
+}
+
+export function buildQuestionBankKey({ scope = 'TUS', branch = '', difficulty = '', target = '', promptVersion = 'v1', model = '' } = {}) {
+  const targetText = safeString(target || 'general').toLowerCase().slice(0, 120) || 'general';
+  const raw = normalizeForFingerprint({ scope, branch: safeString(branch), difficulty: safeString(difficulty), target: targetText, promptVersion, model });
+  return `qbank_${sha256(raw).slice(0, 48)}`;
+}
+
+export async function getQuestionBankItems(bankKey, { maxItems = 20 } = {}) {
+  const cached = await getDurableCachedOutput(bankKey);
+  const items = Array.isArray(cached?.items) ? cached.items : [];
+  return items.slice(0, Math.max(1, Number(maxItems || 20))).map(compactQuestionForBank).filter(Boolean);
+}
+
+export async function addQuestionToBank(bankKey, question, { maxItems = 60, ttlMs = envNumber('KLINIKIQ_AI_QUESTION_BANK_TTL_MS', DEFAULT_QUESTION_BANK_TTL_MS) } = {}) {
+  if (!bankKey || !question || typeof question !== 'object') return false;
+  const current = await getDurableCachedOutput(bankKey);
+  const items = Array.isArray(current?.items) ? current.items : [];
+  const signature = safeString(question.semanticFingerprint || question.id || createSourceFingerprint(question));
+  const nextItem = { ...question, bankedAt: nowMs(), semanticFingerprint: question.semanticFingerprint || signature };
+  const filtered = items.filter((item) => safeString(item?.semanticFingerprint || item?.id) !== signature);
+  const next = [nextItem, ...filtered].slice(0, Math.max(1, Number(maxItems || 60)));
+  return setDurableCachedOutput(bankKey, { items: next, updatedAt: nowMs() }, ttlMs);
+}
+
+export function estimateOpenAICostUsd({ usage = {}, inputPerMillion = Number(process.env.KLINIKIQ_AI_INPUT_USD_PER_MILLION || 0), outputPerMillion = Number(process.env.KLINIKIQ_AI_OUTPUT_USD_PER_MILLION || 0) } = {}) {
+  const inputTokens = usageMetric(usage || {}, 'input_tokens', 'prompt_tokens');
+  const outputTokens = usageMetric(usage || {}, 'output_tokens', 'completion_tokens');
+  if (!inputPerMillion && !outputPerMillion) return 0;
+  return Number(((inputTokens / 1_000_000) * inputPerMillion + (outputTokens / 1_000_000) * outputPerMillion).toFixed(6));
 }
 
 function hasPromptCacheParams(body = {}) {

@@ -17,7 +17,7 @@ import { cases, getCaseById } from './data/cases.js';
 import { scoreAttempt, calculateAccuracy } from './utils/scoring.js';
 import { pickRandom, shuffleArray } from './utils/randomize.js';
 import { localBackend } from './services/localBackend.js';
-import { createAIQuestion } from './services/aiQuestionService.js';
+import { createAIQuestion, prefetchNextAIQuestion } from './services/aiQuestionService.js';
 import { listAIQuestionBranches } from './utils/aiQuestionGenerator.js';
 import { isGoogleAuthConfigured, signInWithGoogle } from './services/googleAuth.js';
 
@@ -1344,6 +1344,14 @@ function App() {
   }, []);
 
   const handleSubmitAIAnswer = useCallback(({ clinicalCase, selected, isCorrect }) => {
+    if (aiPracticeState.question?.id) {
+      void prefetchNextAIQuestion({
+        previousQuestionId: aiPracticeState.question.id,
+        branchFilter: aiBranchFilter,
+        difficulty: aiDifficulty,
+      });
+    }
+
     const scored = scoreAttempt(clinicalCase.difficulty, isCorrect, aiPracticeStats.streak);
     const earnedPoints = isCorrect ? 5 : 0;
 
@@ -1366,7 +1374,7 @@ function App() {
     });
 
     return { ...scored, earnedPoints, nextStreak: isCorrect ? aiPracticeStats.streak + 1 : 0 };
-  }, [addWrongAnswer, aiPracticeStats.streak]);
+  }, [addWrongAnswer, aiBranchFilter, aiDifficulty, aiPracticeState.question?.id, aiPracticeStats.streak]);
 
   function startBlockExam(sourceCases = accessibleCases, title = isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı') {
     const safeSourceCases = (Array.isArray(sourceCases) ? sourceCases : accessibleCases)

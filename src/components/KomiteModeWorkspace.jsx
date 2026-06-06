@@ -923,8 +923,14 @@ function normalizeGeneratedDeckShape(deck = {}, material = {}) {
   return { ...deck, deckTitle: cleanTitle, cards };
 }
 
+const activeKomiteAIRequests = new Map();
+
 async function postKomiteAI(endpoint, payload) {
   if (typeof fetch !== 'function') throw new Error('Fetch is not available');
+  const dedupeKey = `${endpoint}::${payload?.sourceFingerprint || payload?.studyContext?.sourceFingerprint || 'no-source'}`;
+  if (activeKomiteAIRequests.has(dedupeKey)) return activeKomiteAIRequests.get(dedupeKey);
+
+  const requestPromise = (async () => {
   let response;
   try {
     response = await fetch(endpoint, {
@@ -953,6 +959,14 @@ async function postKomiteAI(endpoint, payload) {
     throw new Error(rawMessage);
   }
   return json;
+  })();
+
+  activeKomiteAIRequests.set(dedupeKey, requestPromise);
+  try {
+    return await requestPromise;
+  } finally {
+    activeKomiteAIRequests.delete(dedupeKey);
+  }
 }
 
 function buildMaterialAnalysisFallback(material, packet = null) {

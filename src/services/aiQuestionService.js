@@ -10,6 +10,48 @@ const AI_ENDPOINT = runtimeEnv.VITE_AI_QUESTION_ENDPOINT || '/api/generate-ai-qu
 const ENABLE_REAL_AI = String(runtimeEnv.VITE_ENABLE_REAL_AI ?? 'true').toLowerCase() !== 'false';
 const AI_REQUEST_TIMEOUT_MS = Number(runtimeEnv.VITE_AI_REQUEST_TIMEOUT_MS || 45000);
 const AI_REMOTE_RETRY_COUNT = Math.max(1, Math.min(2, Number(runtimeEnv.VITE_AI_REMOTE_RETRY_COUNT || 1)));
+const ENABLE_CLIENT_PREFETCH = String(runtimeEnv.VITE_AI_ENABLE_NEXT_QUESTION_PREFETCH ?? 'true').toLowerCase() !== 'false';
+const MAX_PREFETCHED_PER_KEY = Math.max(1, Math.min(2, Number(runtimeEnv.VITE_AI_PREFETCH_QUEUE_SIZE || 1)));
+
+const prefetchedQuestionQueues = new Map();
+const activePrefetches = new Map();
+
+function queueKey(branchFilter = 'random', difficulty = 'Orta') {
+  return `${String(branchFilter || 'random').trim()}::${String(difficulty || 'Orta').trim()}`;
+}
+
+function getQueue(key) {
+  if (!prefetchedQuestionQueues.has(key)) prefetchedQuestionQueues.set(key, []);
+  return prefetchedQuestionQueues.get(key);
+}
+
+function takePrefetchedQuestion({ branchFilter, difficulty, context }) {
+  const key = queueKey(branchFilter, difficulty);
+  const queue = getQueue(key);
+  while (queue.length) {
+    const item = queue.shift();
+    if (item?.question && !isTooSimilarToRecent(item.question, context?.recentQuestionSummaries || [])) {
+      const historyItem = rememberAIQuestion(item.question);
+      item.question.aiMeta = {
+        ...(item.question.aiMeta || {}),
+        historyItemId: historyItem.id,
+        servedFromClientPrefetch: true,
+      };
+      return { ...item, prefetched: true };
+    }
+  }
+  return null;
+}
+
+function storePrefetchedQuestion({ branchFilter, difficulty, result }) {
+  if (!result?.ok || !result?.question || result.fallback) return false;
+  const key = queueKey(branchFilter, difficulty);
+  const queue = getQueue(key);
+  if (queue.length >= MAX_PREFETCHED_PER_KEY) return false;
+  result.question.aiMeta = { ...(result.question.aiMeta || {}), clientPrefetched: true };
+  queue.push(result);
+  return true;
+}
 
 function withTimeout(ms = AI_REQUEST_TIMEOUT_MS) {
   const controller = new AbortController();
@@ -140,8 +182,32 @@ function createClientFallback({ branchFilter, difficulty = 'Orta', context, reas
   };
 }
 
+
+export function prefetchNextAIQuestion({ previousQuestionId = null, branchFilter = 'random', difficulty = 'Orta' } = {}) {
+  if (!ENABLE_CLIENT_PREFETCH || !canUseRemote()) return null;
+  const key = queueKey(branchFilter, difficulty);
+  if (activePrefetches.has(key) || getQueue(key).length >= MAX_PREFETCHED_PER_KEY) return activePrefetches.get(key) || null;
+
+  const context = buildRecentQuestionContext(30);
+  const promise = (async () => {
+    try {
+      const result = await fetchOneRemoteQuestion({ previousQuestionId, branchFilter, difficulty, context, attempt: 1 });
+      storePrefetchedQuestion({ branchFilter, difficulty, result });
+      return result;
+    } catch {
+      return null;
+    } finally {
+      activePrefetches.delete(key);
+    }
+  })();
+  activePrefetches.set(key, promise);
+  return promise;
+}
+
 export async function createAIQuestion({ previousQuestionId = null, branchFilter = 'random', difficulty = 'Orta' } = {}) {
   const context = buildRecentQuestionContext(30);
+  const prefetched = takePrefetchedQuestion({ branchFilter, difficulty, context });
+  if (prefetched?.ok) return { ...prefetched, source: prefetched.source || 'client-prefetch-cache', usedRemoteAI: true };
   try {
     const remote = await requestRemoteQuestion({ previousQuestionId, branchFilter, difficulty, context });
     if (remote?.ok) return remote;
@@ -159,5 +225,5 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
 
 
 export function getAIServiceMode() {
-  return ENABLE_REAL_AI ? 'simple-openai-one-call' : 'real-ai-disabled';
+  return ENABLE_REAL_AI ? 'openai-cache-bank-prefetch' : 'real-ai-disabled';
 }

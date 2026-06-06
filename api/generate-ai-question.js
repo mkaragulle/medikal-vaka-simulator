@@ -4,13 +4,22 @@ import {
   buildUserPrompt,
   normalizeDifficulty,
 } from './tus-question-prompt.js';
-import { buildPromptCacheConfig, callOpenAIWithPromptCacheFallback, logAIUsage } from './lib/ai-token-optimizer.js';
+import { buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, envFlag, getDurableCachedOutput, getQuestionBankItems, logAIUsage, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v34-feedback-completeness-anatomy-guard';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
+
+function currentTusModel() {
+  return process.env.TUS_OPENAI_MODEL || process.env.OPENAI_MODEL || process.env.DEFAULT_GENERATOR_MODEL || 'gpt-4o-mini';
+}
+
+function useQuestionBank() {
+  return envFlag('KLINIKIQ_AI_QUESTION_BANK', true);
+}
+
 
 const ALLOWED_BRANCHES = [
   'İç Hastalıkları',
@@ -649,7 +658,7 @@ function safeVerbosity(value = '') {
 async function callOpenAI(prompt) {
   const apiKey = process.env.TUS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
   if (!apiKey) return null;
-  const model = process.env.TUS_OPENAI_MODEL || process.env.OPENAI_MODEL || process.env.DEFAULT_GENERATOR_MODEL || 'gpt-4o-mini';
+  const model = currentTusModel();
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
   const timeoutMs = Number(process.env.TUS_OPENAI_PER_REQUEST_TIMEOUT_MS || process.env.OPENAI_PER_REQUEST_TIMEOUT_MS || 25000);
   const maxTokens = Number(process.env.TUS_OPENAI_MAX_OUTPUT_TOKENS || process.env.OPENAI_MAX_OUTPUT_TOKENS || 1800);
@@ -748,6 +757,44 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
   return sanitized;
 }
 
+
+function questionMatchesRecent(question = {}, recentQuestionSummaries = []) {
+  const signature = normalize(question.semanticFingerprint || question.id || '');
+  const correct = normalize(getCorrectText(question));
+  const target = normalize(question.learningTarget || question.answerTarget || question.question || '');
+  return asArray(recentQuestionSummaries).some((item) => {
+    const itemSignature = normalize(item.semanticFingerprint || item.id || item.questionId || '');
+    if (signature && itemSignature && signature === itemSignature) return true;
+    const itemCorrect = normalize(item.correct || item.correctAnswerText || item.correctAnswer || '');
+    const itemTarget = normalize(item.learningTarget || item.answerTarget || item.question || '');
+    return Boolean(correct && itemCorrect && correct === itemCorrect && target && itemTarget && target === itemTarget);
+  });
+}
+
+async function getReusableBankQuestion({ branch, target, difficulty, recentQuestionSummaries }) {
+  if (!useQuestionBank()) return null;
+  const model = currentTusModel();
+  const bankKey = buildQuestionBankKey({ scope: 'TUS', branch, difficulty, target, promptVersion: PROMPT_VERSION, model });
+  const items = await getQuestionBankItems(bankKey, { maxItems: 40 });
+  const reusable = items.find((item) => !questionMatchesRecent(item, recentQuestionSummaries));
+  if (!reusable) return null;
+  const cloned = sanitizeQuestion({ ...reusable, id: `ai-spot-bank-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, branch, difficulty);
+  cloned.provider = 'openai-question-bank';
+  cloned.cached = true;
+  cloned.openAIModel = reusable.openAIModel || model;
+  cloned.promptVersion = reusable.promptVersion || PROMPT_VERSION;
+  cloned.schemaVersion = reusable.schemaVersion || SCHEMA_VERSION;
+  cloned.aiMeta = { ...(cloned.aiMeta || {}), questionBank: true, cached: true };
+  return cloned;
+}
+
+async function storeReusableQuestion({ branch, target, difficulty, question }) {
+  if (!useQuestionBank() || !question || question.fallback) return false;
+  const model = question.openAIModel || currentTusModel();
+  const bankKey = buildQuestionBankKey({ scope: 'TUS', branch, difficulty, target, promptVersion: PROMPT_VERSION, model });
+  return addQuestionToBank(bankKey, question);
+}
+
 export default async function handler(request, response) {
   if (request.method !== 'POST') return sendJson(response, 405, { ok: false, error: 'Method not allowed' });
   let body;
@@ -758,11 +805,42 @@ export default async function handler(request, response) {
   const recentQuestionSummaries = asArray(body.recentQuestionSummaries).slice(0, 12);
   const remoteAttempts = Math.max(1, Math.min(2, Number(process.env.REMOTE_AI_ATTEMPTS || 2)));
   const errors = [];
+  const target = body.target || body.answerTarget || '';
+  const model = currentTusModel();
+  const oneShotCacheKey = buildOutputCacheKey({
+    scope: 'TUS',
+    task: TASK_NAME,
+    promptVersion: PROMPT_VERSION,
+    model,
+    sourceFingerprint: `${branch}:${requestedDifficulty}:${target || 'general'}`,
+    extra: { recent: recentQuestionSummaries.map((item) => item?.semanticFingerprint || item?.id || item?.learningTarget || '').slice(0, 6) },
+  });
 
-  for (let attempt = 1; attempt <= remoteAttempts; attempt += 1) {
-    try {
-      const question = await generateRemote({ branch, target: body.target || body.answerTarget, difficulty: requestedDifficulty, recentQuestionSummaries, attempt, antiRepeatNonce: body.antiRepeatNonce });
+  return await withInFlightDedupe(oneShotCacheKey, async () => {
+    const reusable = await getReusableBankQuestion({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries });
+    if (reusable) {
+      logAIUsage({ task: `${TASK_NAME}:questionBank`, model: reusable.openAIModel || model, cached: true, apiStyle: 'question_bank' });
       return sendJson(response, 200, {
+        ok: true,
+        provider: 'openai-question-bank',
+        cached: true,
+        fallback: false,
+        question: reusable,
+      });
+    }
+
+    const cachedPayload = await getDurableCachedOutput(oneShotCacheKey);
+    if (cachedPayload?.question && !questionMatchesRecent(cachedPayload.question, recentQuestionSummaries)) {
+      logAIUsage({ task: `${TASK_NAME}:outputCache`, model: cachedPayload.question.openAIModel || model, cached: true, apiStyle: 'output_cache' });
+      return sendJson(response, 200, { ok: true, cached: true, fallback: false, provider: cachedPayload.provider || 'openai-output-cache', question: cachedPayload.question });
+    }
+
+    for (let attempt = 1; attempt <= remoteAttempts; attempt += 1) {
+    try {
+      const question = await generateRemote({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries, attempt, antiRepeatNonce: body.antiRepeatNonce });
+        await storeReusableQuestion({ branch, target, difficulty: requestedDifficulty, question });
+        await setDurableCachedOutput(oneShotCacheKey, { provider: 'openai-output-cache', question });
+        return sendJson(response, 200, {
         ok: true,
         provider: 'openai',
         fallback: false,
@@ -787,5 +865,7 @@ export default async function handler(request, response) {
     });
   }
 
-  return sendJson(response, 502, { ok: false, error: 'AI question generation failed', attempts: errors.slice(0, 3) });
+    return sendJson(response, 502, { ok: false, error: 'AI question generation failed', attempts: errors.slice(0, 3) });
+  });
 }
+
