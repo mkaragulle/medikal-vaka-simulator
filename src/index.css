@@ -57311,3 +57311,39 @@ html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem.label
   justify-content: center !important;
   align-items: center !important;
 }
+
+
+/* === V387 — action buttons exact internal centering === */
+.quiz-action-btn-inner {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  width: auto !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.ai-spot-answer-flow .answer-evaluate-btn,
+.ai-spot-answer-flow .answer-next-case-btn,
+.diagnostic-decision-panel .answer-evaluate-btn,
+.diagnostic-decision-panel .answer-next-case-btn {
+  padding-inline: 18px !important;
+}
+
+.ai-spot-answer-flow .answer-evaluate-btn > .quiz-action-btn-inner,
+.ai-spot-answer-flow .answer-next-case-btn > .quiz-action-btn-inner,
+.diagnostic-decision-panel .answer-evaluate-btn > .quiz-action-btn-inner,
+.diagnostic-decision-panel .answer-next-case-btn > .quiz-action-btn-inner {
+  pointer-events: none;
+}
+
+.ai-spot-answer-flow .answer-evaluate-btn > .quiz-action-btn-inner > span,
+.ai-spot-answer-flow .answer-next-case-btn > .quiz-action-btn-inner > span,
+.diagnostic-decision-panel .answer-evaluate-btn > .quiz-action-btn-inner > span,
+.diagnostic-decision-panel .answer-next-case-btn > .quiz-action-btn-inner > span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}

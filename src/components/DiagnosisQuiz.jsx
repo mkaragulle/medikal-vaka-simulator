@@ -312,14 +312,18 @@ function DiagnosisQuiz({
           disabled={!selected || submitted}
           onClick={handleSubmit}
         >
-          <Icon name="TrendUp" />
-          <span>{examMeta?.active ? 'Yanıtı kaydet' : 'Yanıtı değerlendir'}</span>
+          <span className="quiz-action-btn-inner">
+            <Icon name="TrendUp" />
+            <span>{examMeta?.active ? 'Yanıtı kaydet' : 'Yanıtı değerlendir'}</span>
+          </span>
         </button>
 
         {!examMeta?.active ? (
           <button className="btn btn-secondary answer-next-case-btn" type="button" onClick={onRandomCase}>
-            <Icon name="RotateCcw" />
-            <span>{randomActionLabel}</span>
+            <span className="quiz-action-btn-inner">
+              <Icon name="RotateCcw" />
+              <span>{randomActionLabel}</span>
+            </span>
           </button>
         ) : null}
       </div>
