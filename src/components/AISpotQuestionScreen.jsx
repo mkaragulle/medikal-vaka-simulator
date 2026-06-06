@@ -202,11 +202,10 @@ function AISpotNarrativePanel({ question, hardMode = false, embedded = false }) 
         </div>
       </div>
 
-      <div className="ai-spot-narrative-heading no-title">
+      <div className="ai-spot-narrative-heading no-title refined">
         <IconBadge icon="ClipboardList" tone="teal" size="lg" />
         <div>
           <span className="ai-spot-narrative-eyebrow">Klinik olgu</span>
-          <p><GlossaryText text={contextLine} enabled={!hardMode} revealMode="preAnswer" maxTerms={3} /></p>
         </div>
       </div>
 
@@ -271,9 +270,11 @@ function AISpotQuestionScreen({
             randomActionLabel={randomActionLabel}
             hideSpotQuestionCallout
             questionPromptOverride={questionPrompt}
-            questionHeadingOverride="Yanıt seçenekleri"
-            questionSubtextOverride={questionPrompt || 'En uygun seçeneği işaretle.'}
+            questionHeadingOverride=""
+            questionSubtextOverride=""
             hideQuestionScoreChip
+            hideQuestionHeader
+            hideInlineQuestionStemLabel
           />
         </div>
       </section>

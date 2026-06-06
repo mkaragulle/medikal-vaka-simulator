@@ -759,13 +759,7 @@ export function buildSafeAISpotTitle(question = {}) {
 }
 
 export function buildAISpotContextLine(question = {}) {
-  const branch = asText(question.relatedBranch || question.branchName || 'TUS Spot');
-  const type = String(question.questionType || '').toLocaleLowerCase('tr');
-  if (type === 'test') return `${branch} bağlamında TUS tarzı veri yorumu.`;
-  if (type === 'treatment') return `${branch} bağlamında ilk yaklaşım kararı.`;
-  if (type === 'mechanism') return `${branch} bağlamında mekanizma sorusu.`;
-  if (type === 'diagnosis') return `${branch} bağlamında kısa klinik olgu yorumu.`;
-  return `${branch} branşında bilimsel ve TUS uyumlu spot sorusu.`;
+  return '';
 }
 
 export function buildAISpotNarrativeStem(question = {}) {

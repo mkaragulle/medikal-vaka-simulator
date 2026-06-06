@@ -57169,3 +57169,103 @@ html[data-theme="dark"] .ai-waiting-pearl-carousel-arrow,
 .ai-spot-narrative-reading-panel {
   max-width: none !important;
 }
+
+
+/* === V384 — AI TUS soru ekranı üst/alt görsel sadeleştirme === */
+.ai-spot-narrative-heading.no-title.refined {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  margin-bottom: 16px !important;
+  padding: 10px 2px 2px !important;
+}
+
+.ai-spot-narrative-heading.no-title.refined .icon-badge {
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 22px !important;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.06) !important;
+}
+
+.ai-spot-narrative-heading.no-title.refined .ai-spot-narrative-eyebrow {
+  margin: 0 !important;
+  font-size: 13px !important;
+  letter-spacing: 0.11em !important;
+  font-weight: 900 !important;
+}
+
+.ai-spot-narrative-heading.no-title.refined p {
+  display: none !important;
+}
+
+.ai-spot-narrative-reading-panel {
+  border-radius: 28px !important;
+  padding: clamp(24px, 2.8vw, 34px) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(248,250,252,0.9)) !important;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.055), inset 0 1px 0 rgba(255,255,255,0.9) !important;
+}
+
+.ai-spot-answer-flow .question-panel.diagnostic-decision-panel {
+  padding-top: 4px;
+}
+
+.ai-spot-answer-flow .question-panel-head.diagnostic-head {
+  display: none !important;
+}
+
+.ai-spot-answer-flow .ai-spot-inline-question-stem.label-hidden {
+  gap: 0 !important;
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.ai-spot-answer-flow .ai-spot-inline-question-stem.label-hidden strong {
+  display: block !important;
+  color: #12202b !important;
+  font-size: clamp(20px, 1.75vw, 24px) !important;
+  line-height: 1.45 !important;
+  font-weight: 860 !important;
+  letter-spacing: -0.03em !important;
+  margin-bottom: 2px !important;
+}
+
+.ai-spot-answer-flow .quiz-actions {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+}
+
+.ai-spot-answer-flow .quiz-actions .btn,
+.ai-spot-answer-flow .answer-evaluate-btn,
+.ai-spot-answer-flow .answer-next-case-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  text-align: center !important;
+}
+
+.ai-spot-answer-flow .answer-next-case-btn .answer-next-case-arrow {
+  display: none !important;
+}
+
+.ai-spot-answer-flow .quiz-actions .btn span {
+  text-align: center !important;
+}
+
+@media (max-width: 760px) {
+  .ai-spot-answer-flow .quiz-actions {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ai-spot-answer-flow .ai-spot-inline-question-stem.label-hidden strong {
+    font-size: clamp(18px, 5vw, 21px) !important;
+  }
+}
+
+html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem.label-hidden strong,
+.app-shell[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem.label-hidden strong {
+  color: #edf7f5 !important;
+}
