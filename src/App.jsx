@@ -1304,7 +1304,6 @@ function App() {
 
   const handleGenerateNextAIQuestion = useCallback(() => {
     generateNextAIQuestion(aiPracticeState.question?.id ?? null, aiBranchFilter, aiDifficulty);
-    scrollToTopSmart({ smooth: false });
   }, [aiBranchFilter, aiDifficulty, aiPracticeState.question?.id, generateNextAIQuestion]);
 
   const handleAIBranchFilterChange = useCallback((nextFilter) => {

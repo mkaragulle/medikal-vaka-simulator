@@ -863,6 +863,23 @@ function TusPearlStudyScreen({
     setPearlState((current) => savePearlState(updater(current || defaultPearlState)));
   }, []);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+
+    const refreshPearlState = () => {
+      setPearlState(loadPearlState());
+      lastDeckSignature.current = '';
+    };
+
+    window.addEventListener('klinikiq:pearl-state-updated', refreshPearlState);
+    window.addEventListener('storage', refreshPearlState);
+
+    return () => {
+      window.removeEventListener('klinikiq:pearl-state-updated', refreshPearlState);
+      window.removeEventListener('storage', refreshPearlState);
+    };
+  }, []);
+
   const rebuildStudySession = useCallback((cards = filteredCards) => {
     const deckKey = makeDeckKey(filter, branchFilter, activeCatalogId);
     const seed = `${deckKey}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;

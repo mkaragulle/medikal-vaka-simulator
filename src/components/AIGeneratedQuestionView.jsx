@@ -4,6 +4,7 @@ import AISpotQuestionScreen from './AISpotQuestionScreen.jsx';
 import { Icon, IconBadge } from './ui.jsx';
 import { TUS_PEARL_CARDS } from '../data/tusPearlCards.js';
 import { branches } from '../data/branches.js';
+import { addId, flushPearlStateSave, loadPearlState, removeId, savePearlState } from '../utils/pearlCardStorage.js';
 
 
 const AI_DURATION_STORAGE_GLOBAL_KEY = 'klinikiq.aiQuestion.duration.global.v1';
@@ -170,12 +171,49 @@ function readWaitingFlashcardRatings(cards = []) {
 }
 
 function writeWaitingFlashcardRating(cardId, status) {
+  const safeCardId = String(cardId || '').trim();
+  if (!safeCardId) return;
+
   const statusMap = readLocalJSON(AI_WAITING_FLASHCARD_STATUS_KEY, {});
   const next = {
     ...statusMap,
-    [cardId]: { status, updatedAt: Date.now() },
+    [safeCardId]: { status, updatedAt: Date.now() },
   };
   writeLocalJSON(AI_WAITING_FLASHCARD_STATUS_KEY, next);
+
+  const currentPearlState = loadPearlState();
+  let nextPearlState = currentPearlState;
+
+  if (status === 'known') {
+    nextPearlState = {
+      ...currentPearlState,
+      knownPearlCardIds: addId(currentPearlState.knownPearlCardIds, safeCardId),
+      wrongPearlCardIds: removeId(currentPearlState.wrongPearlCardIds, safeCardId),
+      reviewPearlCardIds: removeId(currentPearlState.reviewPearlCardIds, safeCardId),
+    };
+  } else if (status === 'review') {
+    nextPearlState = {
+      ...currentPearlState,
+      reviewPearlCardIds: addId(currentPearlState.reviewPearlCardIds, safeCardId),
+      knownPearlCardIds: removeId(currentPearlState.knownPearlCardIds, safeCardId),
+    };
+  } else if (status === 'hard') {
+    nextPearlState = {
+      ...currentPearlState,
+      wrongPearlCardIds: addId(currentPearlState.wrongPearlCardIds, safeCardId),
+      reviewPearlCardIds: addId(currentPearlState.reviewPearlCardIds, safeCardId),
+      knownPearlCardIds: removeId(currentPearlState.knownPearlCardIds, safeCardId),
+    };
+  }
+
+  const savedPearlState = savePearlState(nextPearlState);
+  flushPearlStateSave();
+
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('klinikiq:pearl-state-updated', {
+      detail: { cardId: safeCardId, status, pearlState: savedPearlState },
+    }));
+  }
 }
 
 function getPearlCardFront(card = {}) {
@@ -480,7 +518,6 @@ function WaitingPearlCard({ card, rating, onRate }) {
   const answer = getPearlCardAnswer(card);
   const explanation = getPearlCardExplanation(card);
   const frontText = getPearlCardFront(card);
-  const backText = [answer, explanation].filter(Boolean).join(' ');
 
   return (
     <article className={`ai-waiting-pearl-card ${isFlipped ? 'is-flipped' : ''}`.trim()}>
@@ -493,11 +530,12 @@ function WaitingPearlCard({ card, rating, onRate }) {
         <span className="ai-waiting-pearl-flip-inner" aria-hidden="true">
           <span className="ai-waiting-pearl-face ai-waiting-pearl-front">
             <span className="ai-waiting-pearl-face-text">{frontText}</span>
-            <span className="ai-waiting-pearl-face-hint">Cevap için karta dokun</span>
           </span>
           <span className="ai-waiting-pearl-face ai-waiting-pearl-back">
-            <span className="ai-waiting-pearl-face-text">{backText || 'Bu kart için cevap metni hazırlanıyor.'}</span>
-            <span className="ai-waiting-pearl-face-hint">Soruya dönmek için tekrar dokun</span>
+            <span className="ai-waiting-pearl-back-stack">
+              <span className="ai-waiting-pearl-back-box ai-waiting-pearl-back-answer">{answer || 'Bu kart için kısa cevap hazırlanıyor.'}</span>
+              <span className="ai-waiting-pearl-back-box ai-waiting-pearl-back-explanation">{explanation || 'Bu kart için açıklama hazırlanıyor.'}</span>
+            </span>
           </span>
         </span>
       </button>
@@ -510,7 +548,7 @@ function WaitingPearlCard({ card, rating, onRate }) {
   );
 }
 
-function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashcard, questionReady = false, onRevealQuestion }) {
+function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashcard, questionReady = false, onRevealQuestion, containerRef = null, reviewRef = null }) {
   const elapsedSeconds = Math.max(0, Number(progress?.elapsedSeconds) || 0);
   const estimatedTotalSeconds = clampNumber(progress?.estimatedTotalSeconds || 12, 6, 45);
   const remainingSeconds = Math.max(0, Number(progress?.remainingSeconds) || 0);
@@ -519,7 +557,7 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
   const etaLabel = questionReady ? 'Hazır' : remainingSeconds > 0 ? `${remainingSeconds} sn` : 'Son kontroller';
 
   return (
-    <section className={`ai-generation-state ai-generation-state-countdown ai-generation-state-live ai-generation-study-wait ${questionReady ? 'question-ready' : ''}`.trim()} aria-live="polite">
+    <section ref={containerRef} className={`ai-generation-state ai-generation-state-countdown ai-generation-state-live ai-generation-study-wait ${questionReady ? 'question-ready' : ''}`.trim()} aria-live="polite">
       <div className="ai-generation-live-main">
         <span className="ai-generation-orb" aria-hidden="true"><Icon name={questionReady ? 'CheckCircle' : 'Sparkles'} /></span>
         <div className="ai-generation-live-copy">
@@ -534,8 +572,7 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
       <div className="ai-generation-live-side">
         {questionReady ? (
           <button type="button" className="btn btn-primary ai-question-ready-cta" onClick={onRevealQuestion}>
-            <span className="ai-question-ready-cta-main"><Icon name="Eye" /> Soruyu gör</span>
-            <span className="ai-question-ready-cta-sub">Hazırlandı — çözmeye başla</span>
+            <span className="ai-question-ready-cta-main">Soruyu Gör</span>
           </button>
         ) : (
           <div className="ai-generation-countdown ai-generation-countdown-live" aria-label={`Tahmini süre ${etaLabel}`}>
@@ -546,7 +583,7 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
       </div>
 
       {flashcards.length ? (
-        <div className="ai-waiting-pearl-review" aria-label="Soru hazırlanırken hap bilgi tekrarı">
+        <div ref={reviewRef} className="ai-waiting-pearl-review" aria-label="Soru hazırlanırken hap bilgi tekrarı">
           <div className="ai-waiting-pearl-review-head">
             <div>
               <strong>Sorunuz oluşturulurken hap kartlar ile çalışın.</strong>
@@ -629,6 +666,9 @@ function AIGeneratedQuestionView({
   const [waitingFlashcards, setWaitingFlashcards] = useState([]);
   const [waitingFlashcardRatings, setWaitingFlashcardRatings] = useState({});
   const [questionRevealPending, setQuestionRevealPending] = useState(false);
+  const loadingStateRef = useRef(null);
+  const waitingReviewRef = useRef(null);
+  const loadingScrollLockRef = useRef(false);
 
   const handleRateWaitingFlashcard = useCallback((cardId, status) => {
     writeWaitingFlashcardRating(cardId, status);
@@ -658,6 +698,7 @@ function AIGeneratedQuestionView({
         rememberGenerationDuration(branchFilter, difficulty, elapsed);
         loadingStartedAtRef.current = null;
       }
+      loadingScrollLockRef.current = false;
       setGenerationProgress((current) => ({ ...current, elapsedSeconds: 0, remainingSeconds: 0 }));
       return undefined;
     }
@@ -684,11 +725,31 @@ function AIGeneratedQuestionView({
     return () => window.clearInterval(timer);
   }, [loading, branchFilter, difficulty]);
 
+  useEffect(() => {
+    if (!loading || loadingScrollLockRef.current) return;
+    const node = loadingStateRef.current;
+    if (!node) return;
+    loadingScrollLockRef.current = true;
+
+    const scrollToWaitingArea = () => {
+      const target = loadingStateRef.current;
+      if (!target) return;
+      const top = target.getBoundingClientRect().top + window.scrollY - 84;
+      window.scrollTo({ top: Math.max(top, 0), behavior: 'auto' });
+    };
+
+    const frame = window.requestAnimationFrame(() => {
+      window.setTimeout(scrollToWaitingArea, 30);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [loading, waitingFlashcards.length]);
+
   const showWaitingReview = loading || (!loading && !error && question && questionRevealPending && waitingFlashcards.length > 0);
   const showGeneratedQuestion = !loading && !error && question && (!questionRevealPending || waitingFlashcards.length === 0);
 
   return (
-    <section className="page-shell ai-practice-page-shell">
+    <section className={`page-shell ai-practice-page-shell ${showWaitingReview ? 'ai-practice-waiting-focus' : ''}`.trim()}>
       <section className="ai-practice-hero card-surface">
         <div className="ai-practice-title-block">
           <h1>Yeni TUS Sorusu Üret</h1>
@@ -747,6 +808,8 @@ function AIGeneratedQuestionView({
           onRateFlashcard={handleRateWaitingFlashcard}
           questionReady={!loading && Boolean(question)}
           onRevealQuestion={handleRevealGeneratedQuestion}
+          containerRef={loadingStateRef}
+          reviewRef={waitingReviewRef}
         />
       ) : null}
       {!loading && error ? <AIErrorState onGenerateQuestion={onGenerateQuestion} /> : null}

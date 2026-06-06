@@ -1,4 +1,4 @@
-import { memo, useMemo, useState } from 'react';
+import { memo, useEffect, useMemo, useState } from 'react';
 import { Icon } from './ui.jsx';
 import { TUS_PEARL_CARDS } from '../data/tusPearlCards.js';
 import { branches } from '../data/branches.js';
@@ -57,6 +57,22 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
   function commitState(updater) {
     setPearlState((current) => savePearlState(updater(current || defaultPearlState)));
   }
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+
+    const refreshPearlState = () => {
+      setPearlState(loadPearlState());
+    };
+
+    window.addEventListener('klinikiq:pearl-state-updated', refreshPearlState);
+    window.addEventListener('storage', refreshPearlState);
+
+    return () => {
+      window.removeEventListener('klinikiq:pearl-state-updated', refreshPearlState);
+      window.removeEventListener('storage', refreshPearlState);
+    };
+  }, []);
 
   const repeatListItems = useMemo(() => buildPearlRepeatListItems(pearlState, allCards), [allCards, pearlState]);
   const repeatCounts = useMemo(() => getPearlRepeatListCounts(pearlState, allCards), [allCards, pearlState]);
