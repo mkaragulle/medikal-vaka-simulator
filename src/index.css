@@ -52960,7 +52960,7 @@ html[data-theme='dark'] .bottom-case-browser .bottom-case-search:focus-within,
 
 @media (max-width: 860px) {
   .bottom-case-browser .bottom-case-search {
-    width: min(100%, 460px) !important;
+    width: min(100%, 520px) !important;
   }
 }
 
@@ -57618,12 +57618,13 @@ html[data-theme="dark"] .ai-spot-simple-dot,
   display: inline-grid !important;
   grid-template-columns: minmax(0, 1fr) auto !important;
   align-items: center !important;
-  justify-content: center !important;
-  gap: .7rem !important;
-  width: clamp(250px, 24vw, 390px) !important;
+  justify-items: start !important;
+  justify-content: start !important;
+  gap: .8rem !important;
+  width: clamp(330px, 31vw, 520px) !important;
   min-width: 0 !important;
   min-height: 0 !important;
-  padding: .56rem .66rem .56rem .88rem !important;
+  padding: .62rem .72rem .62rem 1rem !important;
   border-radius: 999px !important;
   border: 1px solid color-mix(in srgb, var(--accent) 14%, var(--border-subtle)) !important;
   background: color-mix(in srgb, var(--surface-1) 86%, transparent) !important;
@@ -57635,15 +57636,17 @@ html[data-theme="dark"] .ai-spot-simple-dot,
   display: block !important;
   min-width: 0 !important;
   max-width: 100% !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  text-align: left !important;
+  justify-self: stretch !important;
   margin: 0 !important;
   color: var(--text-secondary) !important;
-  font-size: .82rem !important;
+  font-size: .84rem !important;
   font-weight: 780 !important;
   letter-spacing: 0 !important;
-  line-height: 1.18 !important;
+  line-height: 1.2 !important;
   text-transform: none !important;
 }
 
@@ -57729,7 +57732,7 @@ html[data-theme="dark"] .ai-generation-countdown-live.ai-generation-compact-stat
   }
 
   .ai-generation-countdown.ai-generation-countdown-live.ai-generation-compact-status {
-    width: min(100%, 460px) !important;
+    width: min(100%, 520px) !important;
   }
 }
 
@@ -57743,14 +57746,51 @@ html[data-theme="dark"] .ai-generation-countdown-live.ai-generation-compact-stat
   }
 
   .ai-generation-countdown.ai-generation-countdown-live.ai-generation-compact-status {
-    grid-template-columns: 1fr !important;
-    gap: .42rem !important;
-    align-items: start !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    gap: .6rem !important;
+    align-items: center !important;
+    justify-items: start !important;
     border-radius: 1rem !important;
+    width: 100% !important;
   }
 
   .ai-question-ready-cta.ai-question-ready-cta-compact,
   .ai-generation-study-wait .ai-question-ready-cta {
     width: 100% !important;
   }
+}
+
+
+/* === V393 — AI waiting flashcards carousel arrows redesigned === */
+.ai-waiting-pearl-carousel-arrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  place-self: center !important;
+  overflow: hidden !important;
+}
+
+.ai-waiting-pearl-carousel-arrow-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  line-height: 1 !important;
+}
+
+.ai-waiting-pearl-carousel-arrow svg,
+.ai-waiting-pearl-carousel-arrow-icon svg {
+  display: block !important;
+  margin: 0 auto !important;
+  flex: 0 0 auto !important;
+}
+
+.ai-waiting-pearl-carousel-arrow-prev svg {
+  transform: translateX(-0.5px) !important;
+}
+
+.ai-waiting-pearl-carousel-arrow-next svg {
+  transform: translateX(0.5px) !important;
 }

@@ -594,12 +594,12 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
           <div className="ai-waiting-pearl-carousel-shell">
             <button
               type="button"
-              className="ai-waiting-pearl-carousel-arrow"
+              className="ai-waiting-pearl-carousel-arrow ai-waiting-pearl-carousel-arrow-prev"
               onClick={() => setCarouselIndex((current) => Math.max(0, current - 1))}
               disabled={!canGoPrev}
               aria-label="Önceki hap kartlar"
             >
-              <Icon name="ChevronLeft" size={20} />
+              <span className="ai-waiting-pearl-carousel-arrow-icon" aria-hidden="true"><Icon name="ArrowLeft" size={18} strokeWidth={2.3} /></span>
             </button>
             <div className="ai-waiting-pearl-grid ai-waiting-pearl-grid-carousel">
               {visibleFlashcards.map((card) => (
@@ -613,12 +613,12 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
             </div>
             <button
               type="button"
-              className="ai-waiting-pearl-carousel-arrow"
+              className="ai-waiting-pearl-carousel-arrow ai-waiting-pearl-carousel-arrow-next"
               onClick={() => setCarouselIndex((current) => Math.min(maxCarouselIndex, current + 1))}
               disabled={!canGoNext}
               aria-label="Sonraki hap kartlar"
             >
-              <Icon name="ChevronRight" size={20} />
+              <span className="ai-waiting-pearl-carousel-arrow-icon" aria-hidden="true"><Icon name="ArrowRight" size={18} strokeWidth={2.3} /></span>
             </button>
           </div>
         </div>
