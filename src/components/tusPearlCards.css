@@ -20280,3 +20280,49 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
     white-space: normal !important;
   }
 }
+
+
+/* ==========================================================
+   V401 — AI TUS pearl text spacing fix
+   Purpose: prevent odd word distribution in TUS ipucu text.
+   ========================================================== */
+.ai-spot-feedback-pearl-card-v246 > div:last-child {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.ai-spot-feedback-pearl-card-v246 p,
+.ai-spot-detailed-feedback-panel-v246 .ai-spot-feedback-pearl-card-v246 p {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  text-align: left !important;
+  white-space: normal !important;
+  word-spacing: normal !important;
+  letter-spacing: -0.005em !important;
+  overflow-wrap: anywhere !important;
+}
+
+.ai-spot-feedback-pearl-card-v246 p > .glossary-text-flow,
+.ai-spot-feedback-pearl-card-v246 p .glossary-text-flow,
+.ai-spot-feedback-pearl-card-v246 p .glossary-plain-segment,
+.ai-spot-feedback-pearl-card-v246 p .glossary-term,
+.ai-spot-feedback-pearl-card-v246 p .smart-glossary-term,
+.ai-spot-detailed-feedback-panel-v246 .ai-spot-feedback-pearl-card-v246 p > .glossary-text-flow,
+.ai-spot-detailed-feedback-panel-v246 .ai-spot-feedback-pearl-card-v246 p .glossary-text-flow,
+.ai-spot-detailed-feedback-panel-v246 .ai-spot-feedback-pearl-card-v246 p .glossary-plain-segment,
+.ai-spot-detailed-feedback-panel-v246 .ai-spot-feedback-pearl-card-v246 p .glossary-term,
+.ai-spot-detailed-feedback-panel-v246 .ai-spot-feedback-pearl-card-v246 p .smart-glossary-term {
+  display: inline !important;
+  width: auto !important;
+  max-width: none !important;
+  white-space: inherit !important;
+  word-spacing: inherit !important;
+  letter-spacing: inherit !important;
+  text-align: inherit !important;
+  justify-content: flex-start !important;
+  align-items: baseline !important;
+  gap: 0 !important;
+  flex-wrap: nowrap !important;
+}
