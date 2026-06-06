@@ -68,7 +68,9 @@ Clinical realism and branch-uniform quality:
 - Pediatric questions must include age-appropriate context and physiologically plausible values. Fever must be realistic, typically 38.0-41.5 °C when used; never output values such as 6.0 °C. Heart rate, respiratory rate and blood pressure must match the age/severity if numerical.
 - Adult vital signs and laboratory values must be physiologically plausible and clinically coherent. If you are uncertain about a numeric value, write the finding qualitatively instead of inventing a number.
 - Imaging and laboratory findings must be grammatically complete and clinically meaningful inside the stem. Do not output malformed phrases such as isolated labels, repeated modality names, or broken Turkish fragments.
-- The stem must be a readable vignette paragraph of 3-6 complete sentences. It should include demographics, presentation, key examination/lab/imaging clues and the decision question context without using separate tables.
+- The stem must be a readable vignette paragraph of 3-6 complete sentences. For clinical branches it should usually be 70-110 words; for basic-science/anatomy/physiology questions it should still be a clear contextual mini-vignette, not a fragment. It must include demographics, presentation, key examination/lab/imaging clues and the decision question context without using separate tables.
+- HARD RULE: The student must be able to solve the question from the stem alone before reading the explanation. If the stem lacks the decisive clue, threshold, severity, timing, stability status, physical finding, laboratory result or imaging clue needed to choose one best answer, rewrite the stem before returning JSON.
+- Avoid ultra-short stems. Do not return a one-sentence or generic stem unless it contains all decisive data, and even then prefer a fuller 2-4 sentence clinical paragraph.
 - Before returning JSON, run a final sanity check: no impossible temperature, no contradictory findings, no copy-pasted panel labels, no malformed Turkish, no random Z-score/lab value unless it is necessary and interpreted in context.
 
 Clinical decision clarity:
@@ -178,4 +180,4 @@ Anti-repeat key: ${cleanText(antiRepeatNonce)}-${attempt}
 Recent outputs are listed only to avoid repetition. Do not copy their topic, case structure, wording or answer:
 ${recentCompact}
 
-Final pre-output checklist: stem is not generic; stem includes patient-specific clues; the question can be solved without hidden data; no placeholder sentence is present; Turkish wording is fluent and not machine-translated; emergency management questions include all needed severity/threshold/timing data. Return only valid JSON. relatedBranch must be "${branchText}" and difficulty must be "${selectedDifficulty}".`;}
+Final pre-output checklist: stem is not generic; stem is at least a real 2-4 sentence clinical/contextual paragraph; stem includes patient-specific clues; the question can be solved without hidden data; no placeholder sentence is present; Turkish wording is fluent and not machine-translated; emergency management questions include all needed severity/threshold/timing data; evidenceChain uses only visible clues from the stem. Return only valid JSON. relatedBranch must be "${branchText}" and difficulty must be "${selectedDifficulty}".`;}

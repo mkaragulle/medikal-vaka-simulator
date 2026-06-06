@@ -7,7 +7,7 @@ import {
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v38-editorial-emergency-quality-gate';
+const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v39-clinical-sufficiency-hard-gate';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -451,6 +451,116 @@ function optionCategory(text = '') {
   return 'other';
 }
 
+
+function wordCount(value = '') {
+  return cleanText(value).split(/\s+/u).filter(Boolean).length;
+}
+
+function richSentenceCount(value = '') {
+  const text = cleanText(value);
+  if (!text) return 0;
+  const punctuated = text.split(/(?<=[.!?])\s+/u).map((item) => item.trim()).filter(Boolean).length;
+  if (punctuated >= 2) return punctuated;
+  // Fallback for long Turkish clinical sentences separated by semicolons/commas.
+  return text.split(/\s*(?:;)\s*/u).map((item) => item.trim()).filter((item) => wordCount(item) >= 8).length || 1;
+}
+
+function isBasicScienceBranch(branch = '') {
+  const value = normalize(branch);
+  return /anatomi|histoloji|embriyoloji|biyokimya|fizyoloji/.test(value);
+}
+
+function countClinicalCueGroups(question = {}) {
+  const text = normalize([
+    question.demographics,
+    question.setting,
+    question.chiefComplaint,
+    question.stem,
+  ].filter(Boolean).join(' '));
+
+  const groups = [
+    /\b(?:\d+\s*(?:yaş|yas|aylık|aylik|günlük|gunluk|haftalık|haftalik)|yenidogan|yenidoğan|bebek|çocuk|cocuk|ergen|kadın|kadin|erkek|gebe|postpartum)\b/u,
+    /\b(?:saat|gün|gun|hafta|ay|yıl|yildir|gündür|gundur|başlayan|baslayan|sonra|önce|once|akut|kronik|tekrarlayan|uzun süren|uzun suren)\b/u,
+    /\b(?:ateş|ates|ağrı|agri|öksürük|oksuruk|dispne|nefes darlığı|nefes darligi|kusma|ishal|sarılık|sarilik|ödem|odem|döküntü|dokuntu|kanama|nöbet|nobet|senkop|halsizlik|kilo kaybı|kilo kaybi|emme güçlüğü|emme guclugu|beslenememe|baş ağrısı|bas agrisi|çarpıntı|carpinti)\b/u,
+    /\b(?:muayene|oskulasyon|palpasyon|defans|rebound|ral|ronkus|wheezing|hışıltı|hisilti|üfürüm|ufurum|hepatomegali|splenomegali|lenfadenopati|döküntü|dokuntu|bilinç|bilinc|letarji|hipotoni|rijidite|trismus|ödem|odem|solunum sıkıntısı|solunum sikintisi)\b/u,
+    /\b(?:tansiyon|kan basıncı|kan basinci|nabız|nabiz|taşikardi|tasikardi|bradikardi|solunum sayısı|solunum sayisi|spo2|spo₂|satürasyon|saturasyon|ateşi|atesi|hipotansiyon|hipoksi|şok|sok)\b/u,
+    /\b(?:hemoglobin|lökosit|lokosit|trombosit|crp|sedimentasyon|glukoz|sodyum|potasyum|kalsiyum|kreatinin|üre|ure|ast|alt|bilirubin|troponin|ph|hco3|pco2|po2|laktat|amonyak|keton|proteinüri|proteinuri|hematüri|hematuri|mmol|mg\/dl|iu\/l|µmol|umol|z-skor|z skor)\b/u,
+    /\b(?:grafi|akciğer grafisi|akciger grafisi|ultrason|usg|bt|mr|mrg|ekg|eko|ekokardiyografi|biyopsi|kültür|kultur|pcr|seroloji|idrar tahlili|periferik yayma|tomografi)\b/u,
+    /\b(?:öyküsünde|oykusunde|aile öyküsü|aile oykusu|travma|ilaç|ilac|aşı|asi|temas|seyahat|prematüre|premature|doğum|dogum|gebelik|ameliyat|operasyon|risk faktörü|risk faktoru)\b/u,
+    /\b(?:yok|saptanmadı|saptanmadi|tariflemiyor|eşlik etmiyor|eslik etmiyor|normal|negatif|stabil|hipoksi yok|solunum sıkıntısı yok|solunum sikintisi yok)\b/u,
+  ];
+
+  return groups.reduce((count, pattern) => count + (pattern.test(text) ? 1 : 0), 0);
+}
+
+function hasSufficientClinicalVignette(question = {}) {
+  const errors = [];
+  const branch = cleanText(question.relatedBranch || '');
+  const stem = cleanText(question.stem || '');
+  const combined = cleanText([
+    question.demographics,
+    question.setting,
+    question.chiefComplaint,
+    stem,
+  ].filter(Boolean).join(' '));
+  const basicScience = isBasicScienceBranch(branch);
+  const stemWords = wordCount(stem);
+  const totalWords = wordCount(combined);
+  const minStemWords = basicScience ? 42 : 58;
+  const minTotalWords = basicScience ? 52 : 72;
+  const minCueGroups = basicScience ? 3 : 4;
+
+  if (stemWords < minStemWords || totalWords < minTotalWords) {
+    errors.push('klinik olgu yetersiz: ana metin çözülebilirlik için çok kısa');
+  }
+  if (richSentenceCount(stem) < 2) {
+    errors.push('klinik olgu yetersiz: ana metin en az iki tam cümle içermeli');
+  }
+
+  const hasPatientContext = /\b(?:\d+\s*(?:yaş|yas|aylık|aylik|günlük|gunluk|haftalık|haftalik)|yenidoğan|yenidogan|bebek|çocuk|cocuk|ergen|kadın|kadin|erkek|hasta|gebe)\b/iu.test(combined);
+  if (!hasPatientContext) {
+    errors.push('klinik olgu yetersiz: yaş/cinsiyet veya hasta bağlamı eksik');
+  }
+
+  const cueGroups = countClinicalCueGroups(question);
+  if (cueGroups < minCueGroups) {
+    errors.push('klinik olgu yetersiz: ayırt ettirici klinik ipucu sayısı az');
+  }
+
+  const questionText = normalize(question.question || '');
+  const requiresDecisionContext = /tedavi|müdahale|mudahale|yaklaşım|yaklasim|ilk|acil|öncelikli|oncelikli|tanı|tani|test|tetkik|doğrula|dogrula|yönetim|yonetim|hangisi/.test(questionText);
+  const hasDecisionData = /ateş|ates|ağrı|agri|muayene|laboratuvar|grafi|usg|bt|mr|ekg|eko|kültür|kultur|pcr|seroloji|ph|hco3|glukoz|sodyum|potasyum|kreatinin|troponin|laktat|amonyak|hipotansiyon|hipoksi|bilinç|bilinc|nöbet|nobet|stabil|şok|sok|z-skor|z skor|risk|kontrendikasyon|doz|düzey|duzey|değer|deger|pozitif|negatif/iu.test(combined);
+  if (requiresDecisionContext && !hasDecisionData) {
+    errors.push('klinik olgu yetersiz: soruyu çözdürecek laboratuvar/muayene/görüntüleme veya karar verdirici veri eksik');
+  }
+
+  const isTreatmentQuestion = /tedavi|müdahale|mudahale|yaklaşım|yaklasim|ilk|acil|öncelikli|oncelikli|yönetim|yonetim|profilaksi/.test(questionText);
+  const hasTreatmentTimingOrSeverity = /stabil|unstabil|hipotansiyon|şok|sok|hipoksi|solunum sıkıntısı|solunum sikintisi|bilinç|bilinc|nöbet|nobet|ağır|agir|hafif|orta|yüksek|yuksek|düşük|dusuk|hızla|hizla|saat|gün|gun|hafta|başlangıç|baslangic|sonra|önce|once|risk|kontrendikasyon|düzey|duzey|mg\/dl|mmol|µmol|umol|z-skor|z skor|başlanmış|baslanmis|yanıt|yanit/.test(normalize(combined));
+  if (isTreatmentQuestion && !hasTreatmentTimingOrSeverity) {
+    errors.push('klinik olgu yetersiz: tedavi/ilk yaklaşım için şiddet, stabilite, zamanlama veya eşik bilgisi eksik');
+  }
+
+  return errors;
+}
+
+function hasEvidenceBasedOnVisibleStem(question = {}) {
+  const visible = normalize([
+    question.demographics,
+    question.setting,
+    question.chiefComplaint,
+    question.stem,
+  ].filter(Boolean).join(' '));
+  const evidence = asArray(question.evidenceChain).map((item) => normalize(item)).filter(Boolean);
+  if (evidence.length !== 3) return false;
+  const clinicalTokens = /ateş|ates|ağrı|agri|muayene|laboratuvar|grafi|bt|mr|usg|ekg|eko|kültür|kultur|pcr|seroloji|sodyum|potasyum|glukoz|ph|hco3|amonyak|troponin|laktat|hipotansiyon|hipoksi|nöbet|nobet|bilinç|bilinc|öykü|oyku|z-skor|z skor|mmol|mg\/dl|µmol|umol/;
+  return evidence.every((item) => {
+    if (!clinicalTokens.test(item)) return true;
+    const words = item.split(/\s+/u).filter((word) => word.length >= 5 && !/^(bulgu|olgu|hasta|klinik|destekler|uyumludur|gösterir|gosterir|nedeniyle|birlikte)$/u.test(word));
+    return words.some((word) => visible.includes(word));
+  });
+}
+
+
 function validateQuestion(question = {}, recentQuestionSummaries = []) {
   const errors = [];
   const options = normalizeOptions(question.options);
@@ -462,6 +572,8 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   if (!question.stem || cleanText(question.stem).split(/\s+/).length < 25) errors.push('stem çok kısa');
   if (isGenericOrPlaceholderStem(question.stem)) errors.push('stem placeholder veya klinik bağlamdan yoksun');
   if (!hasVisibleClinicalPattern(question)) errors.push('soru kökünde görünür klinik patern yok');
+  errors.push(...hasSufficientClinicalVignette(question));
+  if (!hasEvidenceBasedOnVisibleStem(question)) errors.push('kanıt zinciri ana metindeki görünür verilere dayanmıyor');
   if (!question.question || !/\?$/u.test(ensureQuestion(question.question))) errors.push('question net soru cümlesi değil');
   if (options.length !== 5) errors.push('tam 5 seçenek yok');
   if (!OPTION_IDS.includes(correctId)) errors.push('correctAnswer A-E değil');
@@ -808,7 +920,7 @@ async function callOpenAI(prompt, { detailMode = tusQuestionDetailMode() } = {})
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
   const timeoutMs = Number(process.env.TUS_OPENAI_PER_REQUEST_TIMEOUT_MS || process.env.OPENAI_PER_REQUEST_TIMEOUT_MS || 25000);
   const requestedMaxTokens = Number(process.env.TUS_OPENAI_MAX_OUTPUT_TOKENS || process.env.OPENAI_MAX_OUTPUT_TOKENS || 0);
-  const maxTokens = requestedMaxTokens > 0 ? requestedMaxTokens : applyCostProfileToMaxTokens('TUS', TASK_NAME, 1800);
+  const maxTokens = requestedMaxTokens > 0 ? requestedMaxTokens : applyCostProfileToMaxTokens('TUS', TASK_NAME, 2400);
   const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';
@@ -885,22 +997,15 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
   sanitized.aiMeta = { ...(sanitized.aiMeta || {}), costProfile: getAICostProfile('TUS'), detailMode };
   const validation = validateQuestion(sanitized, recentQuestionSummaries);
   if (!validation.ok) {
-    // Balanced gate: block only unsafe/structural failures. Pedagogic improvements
-    // such as non-ideal feedback, weak pearl, broad wording, or near-repeat are kept
-    // as quality notes so the UI still receives a usable question instead of failing.
-    const blockingErrors = validation.errors.filter((message) =>
-      /branch eksik|stem çok kısa|stem placeholder|görünür klinik patern yok|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda/iu.test(message)
-    );
-    if (blockingErrors.length) {
-      const error = new Error(blockingErrors.join('; '));
-      error.validationErrors = blockingErrors;
-      error.question = sanitized;
-      throw error;
-    }
-    sanitized.qualityNotes = validation.errors;
-    sanitized.qualityGate = 'passed-with-notes';
+    // V397 strict gate: do not ship weak, under-specified or poorly solvable questions.
+    // Any validation error triggers another generation attempt; after retries the API falls
+    // back to the curated local bank instead of returning a low-quality AI item.
+    const error = new Error(validation.errors.join('; '));
+    error.validationErrors = validation.errors;
+    error.question = sanitized;
+    throw error;
   } else {
-    sanitized.qualityGate = 'passed';
+    sanitized.qualityGate = 'strict-passed';
   }
   return sanitized;
 }
@@ -924,7 +1029,11 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
   const model = currentTusModel();
   const bankKey = buildQuestionBankKey({ scope: 'TUS', branch, difficulty, target, promptVersion: PROMPT_VERSION, model });
   const items = await getQuestionBankItems(bankKey, { maxItems: 40 });
-  const reusable = items.find((item) => !questionMatchesRecent(item, recentQuestionSummaries));
+  const reusable = items.find((item) => {
+    if (questionMatchesRecent(item, recentQuestionSummaries)) return false;
+    const candidate = sanitizeQuestion({ ...item, id: `ai-spot-bank-check-${Date.now()}` }, branch, difficulty);
+    return validateQuestion(candidate, recentQuestionSummaries).ok;
+  });
   if (!reusable) return null;
   const cloned = sanitizeQuestion({ ...reusable, id: `ai-spot-bank-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, branch, difficulty);
   cloned.provider = 'openai-question-bank';
@@ -951,7 +1060,7 @@ export default async function handler(request, response) {
   const branch = chooseBranch(body.branchFilter);
   const requestedDifficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
   const recentQuestionSummaries = asArray(body.recentQuestionSummaries).slice(0, 12);
-  const remoteAttempts = Math.max(1, Math.min(2, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.TUS_REMOTE_AI_ATTEMPTS || 2)));
+  const remoteAttempts = Math.max(1, Math.min(3, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.TUS_REMOTE_AI_ATTEMPTS || 3)));
   const errors = [];
   const target = body.target || body.answerTarget || '';
   const model = currentTusModel();
