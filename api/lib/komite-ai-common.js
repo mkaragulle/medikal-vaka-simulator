@@ -1,3 +1,4 @@
+import { buildPromptCacheConfig, callOpenAIWithPromptCacheFallback, logAIUsage } from './ai-token-optimizer.js';
 export function sendJson(response, status, payload) {
   response.statusCode = status;
   response.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -301,7 +302,7 @@ function parseOpenAIJsonOrThrow(text = '', data = {}) {
   throw error;
 }
 
-export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 2500, jsonSchema = null, scope = 'KOMITE' } = {}) {
+export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 2500, jsonSchema = null, scope = 'KOMITE', task = 'komiteJson', promptVersion = 'v1' } = {}) {
   const envPrefix = String(scope || 'KOMITE').toUpperCase();
   const apiKey = firstEnv(`${envPrefix}_OPENAI_API_KEY`, 'OPENAI_API_KEY');
   if (!apiKey) {
@@ -331,24 +332,31 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
 
   try {
     const url = useResponses ? `${baseUrl}/responses` : `${baseUrl}/chat/completions`;
+    const promptCacheConfig = buildPromptCacheConfig(scope, task, promptVersion);
     const requestBody = useResponses
-      ? buildResponsesBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort, verbosity })
-      : buildChatCompletionBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort });
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
-      signal: controller.signal,
-      body: JSON.stringify(requestBody),
+      ? { ...buildResponsesBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort, verbosity }), ...promptCacheConfig }
+      : { ...buildChatCompletionBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort }), ...promptCacheConfig };
+    const result = await callOpenAIWithPromptCacheFallback({
+      body: requestBody,
+      endpointType: useResponses ? 'responses' : 'chat_completions',
+      task,
+      openai: (bodyToSend) => fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+        signal: controller.signal,
+        body: JSON.stringify(bodyToSend),
+      }),
     });
-    if (!response.ok) {
-      const details = await response.text();
-      const error = new Error(`OpenAI ${response.status}: ${details.slice(0, 500)}`);
-      error.status = response.status;
+    if (!result.ok) {
+      const error = new Error(`OpenAI ${result.status}: ${String(result.text || '').slice(0, 500)}`);
+      error.status = result.status;
       throw error;
     }
-    const data = await response.json();
+    const data = JSON.parse(result.text || '{}');
     const text = useResponses ? extractResponsesText(data) : (extractChatText(data) || extractResponsesText(data));
-    return { json: parseOpenAIJsonOrThrow(text, data), model: data.model || model, apiStyle: useResponses ? 'responses' : 'chat_completions' };
+    const apiStyleName = useResponses ? 'responses' : 'chat_completions';
+    logAIUsage({ task, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: apiStyleName });
+    return { json: parseOpenAIJsonOrThrow(text, data), model: data.model || model, apiStyle: apiStyleName, usage: data.usage || null, promptCacheFallback: result.cacheFallback };
   } catch (error) {
     if (error?.name === 'AbortError' || /aborted/i.test(String(error?.message || ''))) {
       const timeoutError = new Error('AI yanıtı belirtilen süre içinde tamamlanamadı. Dosya metni korunuyor; daha hızlı bir KOMITE modeli seçin, KOMITE zaman aşımı değerini artırın veya çok büyük dosyada kaynak uzunluğu limitini düşürün.');
@@ -363,7 +371,7 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
 }
 
 
-export async function callOpenAIText({ systemPrompt, userPrompt, maxTokens = 3000, scope = 'KOMITE' } = {}) {
+export async function callOpenAIText({ systemPrompt, userPrompt, maxTokens = 3000, scope = 'KOMITE', task = 'komiteText', promptVersion = 'v1' } = {}) {
   const envPrefix = String(scope || 'KOMITE').toUpperCase();
   const apiKey = firstEnv(`${envPrefix}_OPENAI_API_KEY`, 'OPENAI_API_KEY');
   if (!apiKey) {
@@ -393,26 +401,33 @@ export async function callOpenAIText({ systemPrompt, userPrompt, maxTokens = 300
 
   try {
     const url = useResponses ? `${baseUrl}/responses` : `${baseUrl}/chat/completions`;
+    const promptCacheConfig = buildPromptCacheConfig(scope, task, promptVersion);
     const requestBody = useResponses
-      ? buildResponsesTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens, reasoningEffort, verbosity })
-      : buildChatTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens, reasoningEffort });
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
-      signal: controller.signal,
-      body: JSON.stringify(requestBody),
+      ? { ...buildResponsesTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens, reasoningEffort, verbosity }), ...promptCacheConfig }
+      : { ...buildChatTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens, reasoningEffort }), ...promptCacheConfig };
+    const result = await callOpenAIWithPromptCacheFallback({
+      body: requestBody,
+      endpointType: useResponses ? 'responses' : 'chat_completions',
+      task,
+      openai: (bodyToSend) => fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+        signal: controller.signal,
+        body: JSON.stringify(bodyToSend),
+      }),
     });
-    if (!response.ok) {
-      const details = await response.text();
-      const error = new Error(`OpenAI ${response.status}: ${details.slice(0, 500)}`);
-      error.status = response.status;
+    if (!result.ok) {
+      const error = new Error(`OpenAI ${result.status}: ${String(result.text || '').slice(0, 500)}`);
+      error.status = result.status;
       throw error;
     }
-    const data = await response.json();
+    const data = JSON.parse(result.text || '{}');
     const text = useResponses ? extractResponsesText(data) : (extractChatText(data) || extractResponsesText(data));
     const cleanText = String(text || '').trim();
+    const apiStyleName = useResponses ? 'responses' : 'chat_completions';
+    logAIUsage({ task, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: apiStyleName });
     if (cleanText) {
-      return { text: cleanText, model: data.model || model, apiStyle: useResponses ? 'responses' : 'chat_completions', usage: data.usage || null, status: data.status || '' };
+      return { text: cleanText, model: data.model || model, apiStyle: apiStyleName, usage: data.usage || null, status: data.status || '', promptCacheFallback: result.cacheFallback };
     }
     const error = new Error(describeIncompleteResponse(data));
     error.code = 'ai_empty_output';

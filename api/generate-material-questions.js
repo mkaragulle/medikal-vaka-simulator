@@ -1,6 +1,14 @@
 import { sendJson, parseJsonBody, callOpenAIJson, validateQuestionsShape, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
 import { GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, buildGenerateMaterialQuestionsPrompt } from './prompts/generateMaterialQuestionsPrompt.js';
+import { buildOutputCacheKey, compactMaterialSources, createSourceFingerprint, getCachedOutput, logAIUsage, setCachedOutput } from './lib/ai-token-optimizer.js';
 
+
+const TASK_NAME = 'materialQuestions';
+const PROMPT_VERSION = 'komite-material-questions-v2-token-cache';
+
+function currentKomiteModel() {
+  return process.env.KOMITE_OPENAI_MODEL || process.env.OPENAI_MODEL || 'gpt-4.1-mini';
+}
 
 const QUESTION_JSON_SCHEMA = {
   name: 'komite_questions_response',
@@ -88,14 +96,23 @@ export default async function handler(request, response) {
   try {
     const sourceCheck = verifyCurrentSourceManifest(body);
     if (!sourceCheck.ok) return sendJson(response, 409, { ok: false, error: 'Current source session validation failed', validation: sourceCheck });
-    const currentSourceText = sourceTextFromMaterialPacket(body.materialPacket || {});
+    const sourceFingerprint = createSourceFingerprint({ clientFingerprint: body.sourceFingerprint || sourceCheck.fingerprint || '', files: body.materialPacket?.files || [] });
+    const currentSourceText = compactMaterialSources(body.materialPacket?.files || [], envNumber('KOMITE_QUESTIONS_MAX_SOURCE_CHARS', 14000));
     if (!currentSourceText) return sendJson(response, 422, { ok: false, error: 'Current material packet has no readable text.' });
+    const cacheKey = buildOutputCacheKey({ scope: 'KOMITE', task: TASK_NAME, promptVersion: PROMPT_VERSION, model: currentKomiteModel(), sourceFingerprint });
+    const cachedOutput = getCachedOutput(cacheKey);
+    if (cachedOutput) {
+      logAIUsage({ task: TASK_NAME, model: cachedOutput.model || currentKomiteModel(), cached: true, apiStyle: cachedOutput.apiStyle || 'output_cache' });
+      return sendJson(response, 200, { ok: true, cached: true, ...cachedOutput });
+    }
     const prompt = buildGenerateMaterialQuestionsPrompt({ sourceTextChunks: currentSourceText });
-    const result = await callOpenAIJson({ systemPrompt: GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: envNumber('KOMITE_QUESTIONS_MAX_OUTPUT_TOKENS', 4200), jsonSchema: QUESTION_JSON_SCHEMA, scope: 'KOMITE' });
+    const result = await callOpenAIJson({ systemPrompt: GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: envNumber('KOMITE_QUESTIONS_MAX_OUTPUT_TOKENS', 4200), jsonSchema: QUESTION_JSON_SCHEMA, scope: 'KOMITE', task: TASK_NAME, promptVersion: PROMPT_VERSION });
     const questions = Array.isArray(result.json.questions) ? result.json.questions : [];
     const validation = validateQuestionsShape({ questions });
     const responseValidation = validation.ok ? validation : { ok: true, warnings: validation.errors || [], note: 'Non-blocking question normalization warnings.' };
-    return sendJson(response, 200, { ok: true, provider: 'openai', model: result.model, questions, validation: responseValidation });
+    const payload = { provider: 'openai', model: result.model, apiStyle: result.apiStyle, questions, validation: responseValidation };
+    setCachedOutput(cacheKey, payload);
+    return sendJson(response, 200, { ok: true, cached: false, ...payload });
   } catch (error) {
     return sendJson(response, error.code === 'missing_api_key' ? 501 : (error.status || 502), { ok: false, error: error.message });
   }

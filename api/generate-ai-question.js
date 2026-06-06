@@ -4,11 +4,13 @@ import {
   buildUserPrompt,
   normalizeDifficulty,
 } from './tus-question-prompt.js';
+import { buildPromptCacheConfig, callOpenAIWithPromptCacheFallback, logAIUsage } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v34-feedback-completeness-anatomy-guard';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
+const TASK_NAME = 'tusSpotQuestion';
 
 const ALLOWED_BRANCHES = [
   'İç Hastalıkları',
@@ -658,6 +660,7 @@ async function callOpenAI(prompt) {
   const verbosity = safeVerbosity(process.env.TUS_OPENAI_VERBOSITY || process.env.OPENAI_VERBOSITY || 'medium');
   const { signal, cancel } = createAbortSignal(timeoutMs);
   try {
+    const promptCacheConfig = buildPromptCacheConfig('TUS', TASK_NAME, PROMPT_VERSION);
     const body = useResponses
       ? {
           model,
@@ -668,6 +671,7 @@ async function callOpenAI(prompt) {
           max_output_tokens: maxTokens,
           store: false,
           truncation: 'auto',
+          ...promptCacheConfig,
         }
       : {
           model,
@@ -677,23 +681,29 @@ async function callOpenAI(prompt) {
           ],
           response_format: { type: 'json_object' },
           max_completion_tokens: maxTokens,
+          ...promptCacheConfig,
         };
     if (!useResponses && modelSupportsReasoningEffort(model)) {
       body.reasoning_effort = reasoningEffort;
     }
-    const response = await fetch(`${baseUrl}${useResponses ? '/responses' : '/chat/completions'}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
-      body: JSON.stringify(body),
-      signal,
+    const apiResult = await callOpenAIWithPromptCacheFallback({
+      body,
+      endpointType: useResponses ? 'responses' : 'chat_completions',
+      task: TASK_NAME,
+      openai: (bodyToSend) => fetch(`${baseUrl}${useResponses ? '/responses' : '/chat/completions'}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+        body: JSON.stringify(bodyToSend),
+        signal,
+      }),
     });
-    if (!response.ok) {
-      const errorText = await response.text();
-      const error = new Error(`OpenAI ${response.status}: ${errorText.slice(0, 500)}`);
-      error.status = response.status;
+    if (!apiResult.ok) {
+      const error = new Error(`OpenAI ${apiResult.status}: ${String(apiResult.text || '').slice(0, 500)}`);
+      error.status = apiResult.status;
       throw error;
     }
-    const data = await response.json();
+    const data = JSON.parse(apiResult.text || '{}');
+    logAIUsage({ task: TASK_NAME, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: style });
     const text = useResponses ? extractResponsesText(data) : extractChatText(data);
     if (!String(text || '').trim()) {
       const reason = data?.incomplete_details?.reason || data?.status || 'empty_output';
