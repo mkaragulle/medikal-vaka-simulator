@@ -530,8 +530,9 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
   const estimatedTotalSeconds = clampNumber(progress?.estimatedTotalSeconds || 12, 6, 45);
   const remainingSeconds = Math.max(0, Number(progress?.remainingSeconds) || 0);
   const progressPercent = questionReady ? 100 : Math.min(96, Math.max(8, (elapsedSeconds / estimatedTotalSeconds) * 100));
-  const stage = questionReady ? { title: 'Sorunuz hazırlandı, istediğiniz zaman çözebilirsiniz.' } : getGenerationStage(elapsedSeconds);
+  const stage = questionReady ? { title: 'Soru hazır.' } : getGenerationStage(elapsedSeconds);
   const etaLabel = questionReady ? 'Hazır' : remainingSeconds > 0 ? `${remainingSeconds} sn` : 'Son kontroller';
+  const statusLabel = questionReady ? 'Çözmeye hazır' : stage.title;
   const getCardsPerView = useCallback(() => {
     if (typeof window === 'undefined') return 3;
     if (window.innerWidth <= 760) return 1;
@@ -563,8 +564,7 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
       <div className="ai-generation-live-main">
         <span className="ai-generation-orb" aria-hidden="true"><Icon name={questionReady ? 'CheckCircle' : 'Sparkles'} /></span>
         <div className="ai-generation-live-copy">
-          <h2>{questionReady ? 'Sorunuz hazırlandı, istediğiniz zaman çözebilirsiniz.' : 'Yeni TUS sorunuz hazırlanıyor.'}</h2>
-          {!questionReady ? <p>{stage.title}</p> : null}
+          <h2>{questionReady ? 'Sorunuz hazırlandı, çözmeye başlayabilirsiniz.' : 'Yeni TUS sorunuz hazırlanıyor.'}</h2>
           <div className="ai-generation-progress-track" aria-hidden="true">
             <span style={{ width: `${progressPercent}%` }} />
           </div>
@@ -573,12 +573,12 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
 
       <div className="ai-generation-live-side">
         {questionReady ? (
-          <button type="button" className="btn btn-primary ai-question-ready-cta" onClick={onRevealQuestion}>
+          <button type="button" className="btn btn-primary ai-question-ready-cta ai-question-ready-cta-compact" onClick={onRevealQuestion}>
             <span className="ai-question-ready-cta-main"><Icon name="Eye" /> Soruyu Gör</span>
           </button>
         ) : (
-          <div className="ai-generation-countdown ai-generation-countdown-live" aria-label={`Tahmini süre ${etaLabel}`}>
-            <span>Tahmini süre</span>
+          <div className="ai-generation-countdown ai-generation-countdown-live ai-generation-compact-status" aria-label={`Tahmini süre ${etaLabel}`}>
+            <span className="ai-generation-status-label">{statusLabel}</span>
             <strong>{etaLabel}</strong>
           </div>
         )}

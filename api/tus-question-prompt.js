@@ -45,6 +45,18 @@ Core standards:
 - compactVitals and compactObjectiveData must be returned as empty arrays [] unless absolutely unavoidable; prefer integrating the data into the stem. Never place isolated labels, fragments, final interpretations, answer-equivalent results or incomplete values in these arrays.
 - Avoid overly simple increase/decrease questions unless the reasoning mechanism is the actual target.
 
+Language and editorial red lines:
+- Use fluent, medically natural Turkish. Never output literal machine-translation phrases, malformed symptom names or broken clinical wording.
+- Forbidden malformed examples include: "yoğunlaşma kaybı", "konsantrasyon kaybı" as a symptom, "hasta değerlendirildi" without real context, isolated labels, and English drug/procedure names when a standard Turkish medical term exists.
+- Prefer natural phrases such as "bilinç bulanıklığı", "letarji", "emme güçlüğü", "beslenememe", "tekrarlayan kusma", "hipotoni", "nöbet" or "dehidratasyon bulguları" when clinically appropriate.
+- Drug and procedure options should be written in Turkish medical usage first; if needed, add the international term in parentheses, e.g. "karglumik asit (N-asetilglutamat analoğu)".
+
+High-risk emergency management rules:
+- For emergency/treatment questions, do not compare several partially correct treatment components unless the question wording precisely defines timing: first stabilizing step, fastest toxin removal, definitive treatment, adjunctive therapy, or disease-specific antidote.
+- Neonatal hyperammonemia / suspected urea-cycle disorder questions must include the decision-critical data if asking about acute treatment: mental status or neurologic severity, ammonia value or a clearly stated severe hyperammonemia threshold, acid-base/glucose context when relevant, and whether protein intake has been stopped/supportive anti-catabolic therapy has begun.
+- If the intended answer is hemodialysis for hyperammonemia, the stem must explicitly state severe symptomatic hyperammonemia, rapidly rising or very high ammonia level, coma/seizure/encephalopathy, or failure/insufficiency of initial scavenger/anti-catabolic therapy. Otherwise choose a different target such as initial anti-catabolic therapy, nitrogen scavenger mechanism, or diagnostic pattern.
+- Do not write vague wording such as "amonyak nörotoksisitesini en hızlı azaltacak müdahale" unless the stem contains the severity/threshold that makes one option uniquely best.
+
 Clinical realism and branch-uniform quality:
 - NEVER return a generic or placeholder stem. Forbidden examples: "Kısa klinik bağlam ve karar verdirici bulgular birlikte değerlendirilir.", "Bu bulgulara göre..." without actually listing the findings, "Klinik veriler birlikte değerlendirilir.", or any stem that does not contain patient-specific information.
 - The stem is mandatory and must be a real vignette. It must contain at least: patient age/sex or relevant context, chief complaint/presentation, 2-4 discriminating clinical findings, and any necessary lab/imaging/vital clue written as natural Turkish sentences.
@@ -166,4 +178,4 @@ Anti-repeat key: ${cleanText(antiRepeatNonce)}-${attempt}
 Recent outputs are listed only to avoid repetition. Do not copy their topic, case structure, wording or answer:
 ${recentCompact}
 
-Final pre-output checklist: stem is not generic; stem includes patient-specific clues; the question can be solved without hidden data; no placeholder sentence is present. Return only valid JSON. relatedBranch must be "${branchText}" and difficulty must be "${selectedDifficulty}".`;}
+Final pre-output checklist: stem is not generic; stem includes patient-specific clues; the question can be solved without hidden data; no placeholder sentence is present; Turkish wording is fluent and not machine-translated; emergency management questions include all needed severity/threshold/timing data. Return only valid JSON. relatedBranch must be "${branchText}" and difficulty must be "${selectedDifficulty}".`;}
