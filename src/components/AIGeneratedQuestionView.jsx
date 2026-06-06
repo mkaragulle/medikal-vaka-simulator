@@ -550,15 +550,13 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
 
   useEffect(() => {
     setCarouselIndex(0);
-  }, [flashcards, questionReady]);
+  }, [flashcards]);
 
   const maxCarouselIndex = Math.max(0, flashcards.length - cardsPerView);
   const safeCarouselIndex = Math.min(carouselIndex, maxCarouselIndex);
   const visibleFlashcards = flashcards.slice(safeCarouselIndex, safeCarouselIndex + cardsPerView);
   const canGoPrev = safeCarouselIndex > 0;
   const canGoNext = safeCarouselIndex < maxCarouselIndex;
-  const visibleRangeStart = flashcards.length ? safeCarouselIndex + 1 : 0;
-  const visibleRangeEnd = flashcards.length ? Math.min(flashcards.length, safeCarouselIndex + cardsPerView) : 0;
 
   return (
     <section className={`ai-generation-state ai-generation-state-countdown ai-generation-state-live ai-generation-study-wait ${questionReady ? 'question-ready' : ''}`.trim()} aria-live="polite">
@@ -591,9 +589,6 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
           <div className="ai-waiting-pearl-review-head">
             <div>
               <strong>Sorunuz oluşturulurken hap kartlar ile çalışın.</strong>
-            </div>
-            <div className="ai-waiting-pearl-carousel-status" aria-live="polite">
-              <span>{visibleRangeStart}-{visibleRangeEnd} / {flashcards.length}</span>
             </div>
           </div>
           <div className="ai-waiting-pearl-carousel-shell">
