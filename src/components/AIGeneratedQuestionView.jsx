@@ -476,26 +476,31 @@ function AIDifficultyFilter({ difficulty = 'Orta', onChangeDifficulty, disabled 
 }
 
 function WaitingPearlCard({ card, rating, onRate }) {
-  const keywords = Array.isArray(card.keywords) ? card.keywords.slice(0, 3) : [];
+  const [isFlipped, setIsFlipped] = useState(false);
   const answer = getPearlCardAnswer(card);
   const explanation = getPearlCardExplanation(card);
+  const frontText = getPearlCardFront(card);
+  const backText = [answer, explanation].filter(Boolean).join(' ');
 
   return (
-    <article className="ai-waiting-pearl-card">
-      <div className="ai-waiting-pearl-card-head">
-        <span>{card.subject || 'TUS'}</span>
-        <strong>{card.topic || 'Hap bilgi'}</strong>
-      </div>
-      <p className="ai-waiting-pearl-question">{getPearlCardFront(card)}</p>
-      {answer ? (
-        <p className="ai-waiting-pearl-answer"><strong>Kısa cevap:</strong> {answer}</p>
-      ) : null}
-      {explanation ? <p className="ai-waiting-pearl-explanation">{explanation}</p> : null}
-      {keywords.length ? (
-        <div className="ai-waiting-pearl-keywords" aria-label="Anahtar kelimeler">
-          {keywords.map((keyword) => <span key={`${card.id}-${keyword}`}>{keyword}</span>)}
-        </div>
-      ) : null}
+    <article className={`ai-waiting-pearl-card ${isFlipped ? 'is-flipped' : ''}`.trim()}>
+      <button
+        type="button"
+        className="ai-waiting-pearl-flip"
+        onClick={() => setIsFlipped((current) => !current)}
+        aria-label={isFlipped ? 'Kartın soru yüzüne dön' : 'Kartın cevap yüzünü gör'}
+      >
+        <span className="ai-waiting-pearl-flip-inner" aria-hidden="true">
+          <span className="ai-waiting-pearl-face ai-waiting-pearl-front">
+            <span className="ai-waiting-pearl-face-text">{frontText}</span>
+            <span className="ai-waiting-pearl-face-hint">Cevap için karta dokun</span>
+          </span>
+          <span className="ai-waiting-pearl-face ai-waiting-pearl-back">
+            <span className="ai-waiting-pearl-face-text">{backText || 'Bu kart için cevap metni hazırlanıyor.'}</span>
+            <span className="ai-waiting-pearl-face-hint">Soruya dönmek için tekrar dokun</span>
+          </span>
+        </span>
+      </button>
       <div className="ai-waiting-pearl-actions" aria-label="Kart tekrar durumu">
         <button type="button" className={rating === 'known' ? 'active known' : ''} onClick={() => onRate(card.id, 'known')}>Biliyorum</button>
         <button type="button" className={rating === 'review' ? 'active review' : ''} onClick={() => onRate(card.id, 'review')}>Tekrar et</button>
@@ -510,7 +515,7 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
   const estimatedTotalSeconds = clampNumber(progress?.estimatedTotalSeconds || 12, 6, 45);
   const remainingSeconds = Math.max(0, Number(progress?.remainingSeconds) || 0);
   const progressPercent = questionReady ? 100 : Math.min(96, Math.max(8, (elapsedSeconds / estimatedTotalSeconds) * 100));
-  const stage = questionReady ? { title: 'Soru hazırlandı. Mini tekrarı bitirince soruya geçebilirsin.' } : getGenerationStage(elapsedSeconds);
+  const stage = questionReady ? { title: 'Sorunuz hazırlandı, istediğiniz zaman çözebilirsiniz.' } : getGenerationStage(elapsedSeconds);
   const etaLabel = questionReady ? 'Hazır' : remainingSeconds > 0 ? `${remainingSeconds} sn` : 'Son kontroller';
 
   return (
@@ -518,9 +523,8 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
       <div className="ai-generation-live-main">
         <span className="ai-generation-orb" aria-hidden="true"><Icon name={questionReady ? 'CheckCircle' : 'Sparkles'} /></span>
         <div className="ai-generation-live-copy">
-          <span className="ai-generation-live-kicker ai-generation-study-kicker">Beklerken mini tekrar</span>
-          <h2>{questionReady ? 'Soru hazır — mini tekrarı tamamlayabilirsin' : 'Yeni TUS spot sorusu hazırlanıyor'}</h2>
-          <p>{stage.title}</p>
+          <h2>{questionReady ? 'Sorunuz hazırlandı, istediğiniz zaman çözebilirsiniz.' : 'Yeni TUS sorunuz hazırlanıyor.'}</h2>
+          {!questionReady ? <p>{stage.title}</p> : null}
           <div className="ai-generation-progress-track" aria-hidden="true">
             <span style={{ width: `${progressPercent}%` }} />
           </div>
@@ -530,7 +534,8 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
       <div className="ai-generation-live-side">
         {questionReady ? (
           <button type="button" className="btn btn-primary ai-question-ready-cta" onClick={onRevealQuestion}>
-            <Icon name="Eye" /> Soruyu gör
+            <span className="ai-question-ready-cta-main"><Icon name="Eye" /> Soruyu gör</span>
+            <span className="ai-question-ready-cta-sub">Hazırlandı — çözmeye başla</span>
           </button>
         ) : (
           <div className="ai-generation-countdown ai-generation-countdown-live" aria-label={`Tahmini süre ${etaLabel}`}>
@@ -544,10 +549,8 @@ function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashca
         <div className="ai-waiting-pearl-review" aria-label="Soru hazırlanırken hap bilgi tekrarı">
           <div className="ai-waiting-pearl-review-head">
             <div>
-              <span>Beklerken tekrar et</span>
-              <strong>Sorun oluşturulurken bu kısa hap kartları çalışabilirsin.</strong>
+              <strong>Sorunuz oluşturulurken hap kartlar ile çalışın.</strong>
             </div>
-            {questionReady ? <em>Soru hazır olduğunda kartlar kapanmaz; geçiş sende.</em> : <em>Ek AI maliyeti yok: hazır hap kart havuzundan seçildi.</em>}
           </div>
           <div className="ai-waiting-pearl-grid">
             {flashcards.map((card) => (
