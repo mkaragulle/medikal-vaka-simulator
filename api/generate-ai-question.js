@@ -7,7 +7,7 @@ import {
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v36-integrated-stem-quality';
+const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v37-no-placeholder-vignette-quality';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -460,6 +460,8 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
 
   if (!question.relatedBranch || cleanText(question.relatedBranch).length < 3) errors.push('branch eksik');
   if (!question.stem || cleanText(question.stem).split(/\s+/).length < 25) errors.push('stem çok kısa');
+  if (isGenericOrPlaceholderStem(question.stem)) errors.push('stem placeholder veya klinik bağlamdan yoksun');
+  if (!hasVisibleClinicalPattern(question)) errors.push('soru kökünde görünür klinik patern yok');
   if (!question.question || !/\?$/u.test(ensureQuestion(question.question))) errors.push('question net soru cümlesi değil');
   if (options.length !== 5) errors.push('tam 5 seçenek yok');
   if (!OPTION_IDS.includes(correctId)) errors.push('correctAnswer A-E değil');
@@ -538,6 +540,36 @@ function integrateCompactDataIntoStem(stem = '', vitals = [], objectiveData = []
     .trim();
 }
 
+
+function isGenericOrPlaceholderStem(stem = '') {
+  const value = normalize(stem);
+  if (!value) return true;
+  const wordCount = cleanText(stem).split(/\s+/).filter(Boolean).length;
+  if (wordCount < 32) return true;
+  return [
+    /kisa klinik baglam/,
+    /karar verdirici bulgular birlikte degerlendirilir/,
+    /klinik veriler birlikte degerlendirilir/,
+    /bu bulgulara gore$/,
+    /bu olguda en uygun secenek hangisidir$/,
+    /kisa klinik olgu verileri/,
+    /hasta degerlendirilir$/,
+  ].some((pattern) => pattern.test(value));
+}
+
+function hasVisibleClinicalPattern(question = {}) {
+  const stem = cleanText(question.stem || '');
+  const branch = normalize(question.relatedBranch || '');
+  const questionText = normalize(question.question || '');
+  const combined = normalize([question.demographics, question.setting, question.chiefComplaint, question.stem].filter(Boolean).join(' '));
+  const hasAgeOrPatient = /\b(?:yaş|yas|aylık|aylik|günlük|gunluk|haftalık|haftalik|yenidoğan|yenidogan|bebek|çocuk|cocuk|ergen|kadın|kadin|erkek|hasta|geb[eelikli]*)\b/.test(combined);
+  const hasClinicalFinding = /ateş|ates|ağrı|agri|öksürük|oksuruk|dispne|kusma|ishal|ödem|odem|döküntü|dokuntu|kanama|sarılık|sarilik|nöbet|nobet|halsizlik|kilo|büyüme|buyume|muayene|hipotansiyon|taşikardi|tasikardi|laboratuvar|sodyum|potasyum|glukoz|ph|hco3|kreatinin|lökosit|lokosit|trombosit|hemoglobin|troponin|ekg|usg|bt|mr|grafi|biyopsi|kültür|kultur|öykü|oyku/.test(combined);
+  const asksFromFindings = /bu bulgulara gore|bu olguda|verilen bulgular|asagidaki testlerden|hangi test|hangi tedavi|hangi tani|hangisi/.test(questionText);
+  if (asksFromFindings && (!hasAgeOrPatient || !hasClinicalFinding)) return false;
+  if (/cocuk sagligi|pediatri/.test(branch) && !/(aylık|aylik|yaş|yas|günlük|gunluk|yenidoğan|yenidogan|bebek|çocuk|cocuk|ergen)/iu.test(stem)) return false;
+  return true;
+}
+
 function hasImpossibleClinicalValue(question = {}) {
   const text = collectStrings(question).join(' | ');
   const normalized = cleanText(text);
@@ -579,7 +611,7 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
     demographics: cleanText(question.demographics || ''),
     setting: cleanText(question.setting || ''),
     chiefComplaint: cleanText(question.chiefComplaint || ''),
-    stem: integratedStem,
+    stem: isGenericOrPlaceholderStem(integratedStem) ? '' : integratedStem,
     compactVitals: [],
     compactObjectiveData: [],
     question: ensureQuestion(question.question),

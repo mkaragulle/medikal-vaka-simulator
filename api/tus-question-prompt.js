@@ -46,6 +46,11 @@ Core standards:
 - Avoid overly simple increase/decrease questions unless the reasoning mechanism is the actual target.
 
 Clinical realism and branch-uniform quality:
+- NEVER return a generic or placeholder stem. Forbidden examples: "Kısa klinik bağlam ve karar verdirici bulgular birlikte değerlendirilir.", "Bu bulgulara göre..." without actually listing the findings, "Klinik veriler birlikte değerlendirilir.", or any stem that does not contain patient-specific information.
+- The stem is mandatory and must be a real vignette. It must contain at least: patient age/sex or relevant context, chief complaint/presentation, 2-4 discriminating clinical findings, and any necessary lab/imaging/vital clue written as natural Turkish sentences.
+- If the question asks for a diagnostic test, first step, definitive treatment or mechanism, the stem must include the exact findings that make that answer uniquely best. Do not ask "which test confirms this?" unless the suspected condition is supported by visible clinical findings.
+- For classical 21-hydroxylase deficiency / congenital adrenal hyperplasia type questions, include realistic clues such as neonatal/infant age, ambiguous genitalia or virilization when appropriate, vomiting/dehydration, hyponatremia/hyperkalemia, salt-wasting risk, or family history before asking for 17-OHP/testing/treatment.
+- Every generated item must be understandable without any hidden data panel. A student should be able to read the stem and know what clinical pattern is being tested before seeing the options.
 - All branches must be written at the same high standard. Pediatrics, anatomy, physiology, biochemistry, pathology, pharmacology, microbiology, internal medicine, surgery and OB/GYN must all have clear, scientific, understandable TUS-quality stems.
 - Do not let anatomy or basic science questions become memorization-only fragments. When possible, frame them with a clean clinical/surgical/anatomical context, then ask one precise structure-mechanism-innervation-pathology relationship.
 - Pediatric questions must include age-appropriate context and physiologically plausible values. Fever must be realistic, typically 38.0-41.5 °C when used; never output values such as 6.0 °C. Heart rate, respiratory rate and blood pressure must match the age/severity if numerical.
@@ -147,7 +152,7 @@ export function buildUserPrompt({
     ? 'Full depth: keep all educational fields detailed, but avoid repetition or filler.'
     : normalizedDetailMode === 'standard'
       ? 'Standard depth: keep all fields complete; explanation 2-3 sentences, each option feedback 1-2 concise scientific sentences, evidenceChain exactly 3 short reasons.'
-      : 'Fast concise depth: keep the same JSON schema and medical safety, but do not sacrifice clarity. The stem must still be a coherent 3-6 sentence vignette. explanation must be 2 strong sentences. Each option feedback must be exactly 1 complete, option-specific scientific Turkish sentence. evidenceChain must contain exactly 3 short reasons. examPearl must be one high-yield sentence. Do not add filler.';
+      : 'Fast concise depth: keep the same JSON schema and medical safety, but do not sacrifice clarity. The stem must still be a coherent 3-6 sentence vignette with patient-specific findings; never use generic placeholder context. explanation must be 2 strong sentences. Each option feedback must be exactly 1 complete, option-specific scientific Turkish sentence. evidenceChain must contain exactly 3 short reasons. examPearl must be one high-yield sentence. Do not add filler.';
 
   return `Generate one Turkish TUS spot question for KlinikIQ using the static system rules exactly.
 
@@ -161,4 +166,4 @@ Anti-repeat key: ${cleanText(antiRepeatNonce)}-${attempt}
 Recent outputs are listed only to avoid repetition. Do not copy their topic, case structure, wording or answer:
 ${recentCompact}
 
-Return only valid JSON. relatedBranch must be "${branchText}" and difficulty must be "${selectedDifficulty}".`;}
+Final pre-output checklist: stem is not generic; stem includes patient-specific clues; the question can be solved without hidden data; no placeholder sentence is present. Return only valid JSON. relatedBranch must be "${branchText}" and difficulty must be "${selectedDifficulty}".`;}

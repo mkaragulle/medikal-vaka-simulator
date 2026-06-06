@@ -732,7 +732,7 @@ function limitNarrativeLength(sentences = [], questionPrompt = '') {
 
 function splitTusParagraphsFromSentences(sentences = []) {
   const bodySentences = sentences.filter((sentence) => sentence && !isQuestionSentence(sentence));
-  if (!bodySentences.length) return ['Kısa klinik bağlam ve karar verdirici bulgular birlikte değerlendirilir.'];
+  if (!bodySentences.length) return ['Bu soru için klinik bağlam eksik üretildi; lütfen yeni bir TUS sorusu üretin.'];
   const body = bodySentences.join(' ').trim();
   if (body.length < 760) return [body];
 

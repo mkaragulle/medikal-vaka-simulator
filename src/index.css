@@ -57269,3 +57269,45 @@ html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem.label
 .app-shell[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem.label-hidden strong {
   color: #edf7f5 !important;
 }
+
+
+/* === V385 — AI TUS action buttons hard-center alignment === */
+.ai-spot-answer-flow .quiz-actions .btn,
+.ai-spot-answer-flow .answer-evaluate-btn,
+.ai-spot-answer-flow .answer-next-case-btn,
+.diagnostic-decision-panel .quiz-actions .btn,
+.diagnostic-decision-panel .answer-evaluate-btn,
+.diagnostic-decision-panel .answer-next-case-btn {
+  display: flex !important;
+  width: 100% !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  text-align: center !important;
+}
+
+.ai-spot-answer-flow .quiz-actions .btn > span,
+.ai-spot-answer-flow .answer-evaluate-btn > span,
+.ai-spot-answer-flow .answer-next-case-btn > span,
+.ai-spot-answer-flow .quiz-actions .btn > svg,
+.ai-spot-answer-flow .answer-evaluate-btn > svg,
+.ai-spot-answer-flow .answer-next-case-btn > svg,
+.diagnostic-decision-panel .quiz-actions .btn > span,
+.diagnostic-decision-panel .answer-evaluate-btn > span,
+.diagnostic-decision-panel .answer-next-case-btn > span,
+.diagnostic-decision-panel .quiz-actions .btn > svg,
+.diagnostic-decision-panel .answer-evaluate-btn > svg,
+.diagnostic-decision-panel .answer-next-case-btn > svg {
+  flex: 0 0 auto !important;
+}
+
+.ai-spot-answer-flow .quiz-actions .btn > span,
+.ai-spot-answer-flow .answer-evaluate-btn > span,
+.ai-spot-answer-flow .answer-next-case-btn > span,
+.diagnostic-decision-panel .quiz-actions .btn > span,
+.diagnostic-decision-panel .answer-evaluate-btn > span,
+.diagnostic-decision-panel .answer-next-case-btn > span {
+  text-align: center !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
