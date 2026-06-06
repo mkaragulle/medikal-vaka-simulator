@@ -7,7 +7,7 @@ import {
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v39-clinical-sufficiency-hard-gate';
+const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v40-balanced-clinical-quality-gate';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -506,9 +506,9 @@ function hasSufficientClinicalVignette(question = {}) {
   const basicScience = isBasicScienceBranch(branch);
   const stemWords = wordCount(stem);
   const totalWords = wordCount(combined);
-  const minStemWords = basicScience ? 42 : 58;
-  const minTotalWords = basicScience ? 52 : 72;
-  const minCueGroups = basicScience ? 3 : 4;
+  const minStemWords = basicScience ? 28 : 42;
+  const minTotalWords = basicScience ? 36 : 55;
+  const minCueGroups = basicScience ? 2 : 3;
 
   if (stemWords < minStemWords || totalWords < minTotalWords) {
     errors.push('klinik olgu yetersiz: ana metin çözülebilirlik için çok kısa');
@@ -997,13 +997,24 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
   sanitized.aiMeta = { ...(sanitized.aiMeta || {}), costProfile: getAICostProfile('TUS'), detailMode };
   const validation = validateQuestion(sanitized, recentQuestionSummaries);
   if (!validation.ok) {
-    // V397 strict gate: do not ship weak, under-specified or poorly solvable questions.
-    // Any validation error triggers another generation attempt; after retries the API falls
-    // back to the curated local bank instead of returning a low-quality AI item.
-    const error = new Error(validation.errors.join('; '));
-    error.validationErrors = validation.errors;
-    error.question = sanitized;
-    throw error;
+    // V398 balanced gate:
+    // Hard-block only errors that make the question unsafe, structurally invalid,
+    // impossible to solve from the stem, malformed, or answer-leaking.
+    // Educational polish issues are kept as quality notes so live AI generation
+    // does not collapse into safe local fallback on every request.
+    const hardBlockingErrors = validation.errors.filter((message) =>
+      /branch eksik|stem çok kısa|stem placeholder|görünür klinik patern yok|klinik olgu yetersiz|soruyu çözdürecek|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda/iu.test(message)
+    );
+
+    if (hardBlockingErrors.length) {
+      const error = new Error(hardBlockingErrors.join('; '));
+      error.validationErrors = hardBlockingErrors;
+      error.question = sanitized;
+      throw error;
+    }
+
+    sanitized.qualityNotes = validation.errors;
+    sanitized.qualityGate = 'passed-with-editorial-notes';
   } else {
     sanitized.qualityGate = 'strict-passed';
   }
@@ -1032,7 +1043,11 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
   const reusable = items.find((item) => {
     if (questionMatchesRecent(item, recentQuestionSummaries)) return false;
     const candidate = sanitizeQuestion({ ...item, id: `ai-spot-bank-check-${Date.now()}` }, branch, difficulty);
-    return validateQuestion(candidate, recentQuestionSummaries).ok;
+    const validation = validateQuestion(candidate, recentQuestionSummaries);
+    if (validation.ok) return true;
+    return !validation.errors.some((message) =>
+      /branch eksik|stem çok kısa|stem placeholder|görünür klinik patern yok|klinik olgu yetersiz|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda/iu.test(message)
+    );
   });
   if (!reusable) return null;
   const cloned = sanitizeQuestion({ ...reusable, id: `ai-spot-bank-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, branch, difficulty);
