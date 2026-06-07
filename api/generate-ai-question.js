@@ -4,10 +4,10 @@ import {
   buildUserPrompt,
   normalizeDifficulty,
 } from './tus-question-prompt.js';
-import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
+import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, envNumber, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v47-cost-trim-quality-lock';
+const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v48-repair-pass-cost-quality';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -91,6 +91,12 @@ function standardizeTurkishMedicalText(value = '') {
     [/\byonlendir/giu, 'yönlendir'],
     [/\blife[-\s]?threatening\b/giu, 'yaşamı tehdit eden'],
     [/\bstemde\b/giu, 'soru kökünde'],
+    [/\btherapeutic\b/giu, 'terapötik'],
+    [/\bvaginal\b/giu, 'vajinal'],
+    [/\bkontraendike\b/giu, 'kontrendike'],
+    [/\birreversibl\b/giu, 'geri dönüşümsüz'],
+    [/\bchylomikron\b/giu, 'şilomikron'],
+    [/\bacinar\b/giu, 'asiner'],
     [/\bchemoreseptör\b/giu, 'kemoreseptör'],
     [/\bchemoreseptor\b/giu, 'kemoreseptör'],
     [/\bkemoreseptor\b/giu, 'kemoreseptör'],
@@ -99,9 +105,10 @@ function standardizeTurkishMedicalText(value = '') {
     [/\bkranial\b/giu, 'kraniyal'],
     [/\btubul\b/giu, 'tübül'],
     [/\btubulus\b/giu, 'tübül'],
+    [/\bglomerul\b/giu, 'glomerül'],
     [/\bdiffus\b/giu, 'diffüz'],
+    [/\bembryolojik\b/giu, 'embriyolojik'],
     [/\binfeksiyon\b/giu, 'enfeksiyon'],
-    [/\bkontrendikasyon yoktur\b/giu, 'kontrendikasyon belirtilmemiştir'],
     [/\bexpectant\b/giu, 'bekle-gör'],
     [/\bbilious\b/giu, 'safralı'],
   ];
@@ -670,6 +677,11 @@ function hasTooWeakDistractors(question = {}, options = [], correctId = '') {
   return weak.length >= 2;
 }
 
+function hasDuplicateOptions(options = []) {
+  const normalized = options.map((option) => normalize(option.text)).filter(Boolean);
+  return new Set(normalized).size !== normalized.length;
+}
+
 function validateQuestion(question = {}, recentQuestionSummaries = []) {
   const errors = [];
   const options = normalizeOptions(question.options);
@@ -678,6 +690,7 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   const allText = collectStrings(question).join(' | ');
 
   if (!question.relatedBranch || cleanText(question.relatedBranch).length < 3) errors.push('branch eksik');
+  if (!cleanText(question.stem)) errors.push('soru kökü boş');
   if (!question.stem || cleanText(question.stem).split(/\s+/).length < 25) errors.push('stem çok kısa');
   if (isGenericOrPlaceholderStem(question.stem)) errors.push('stem placeholder veya klinik bağlamdan yoksun');
   if (!hasVisibleClinicalPattern(question)) errors.push('soru kökünde görünür klinik patern yok');
@@ -685,6 +698,7 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   if (!hasEvidenceBasedOnVisibleStem(question)) errors.push('kanıt zinciri ana metindeki görünür verilere dayanmıyor');
   if (!question.question || !/\?$/u.test(ensureQuestion(question.question))) errors.push('question net soru cümlesi değil');
   if (options.length !== 5) errors.push('tam 5 seçenek yok');
+  if (options.length === 5 && hasDuplicateOptions(options)) errors.push('aynı seçenek iki kez tekrar ediyor');
   if (!OPTION_IDS.includes(correctId)) errors.push('correctAnswer A-E değil');
   if (!correctText) errors.push('correctAnswer seçeneklerle eşleşmiyor');
   if (!question.explanation || cleanText(question.explanation).length < 45) errors.push('explanation yetersiz');
@@ -736,6 +750,81 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   });
 
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)), options, correctText };
+}
+
+function classifyValidationErrors(errors = []) {
+  const list = Array.from(new Set(asArray(errors).map(cleanText).filter(Boolean)));
+  const fatalPatterns = [
+    /soru kökü boş/iu,
+    /tam 5 seçenek yok/iu,
+    /correctAnswer A-E değil/iu,
+    /correctAnswer seçeneklerle eşleşmiyor/iu,
+    /aynı seçenek iki kez tekrar ediyor/iu,
+  ];
+  const repairablePatterns = [
+    /stem çok kısa|placeholder|klinik olgu yetersiz|görünür klinik patern/iu,
+    /kanıt zinciri|evidenceChain|examPearl|TUS ipucu/iu,
+    /explanation|açıklaması|feedback|jenerik|tekrar eden cümle/iu,
+    /soru kökünde olmayan olgu verisi|doğru şık uzunluğu|çeldiriciler|bozuk Türkçe|makine çevirisi/iu,
+    /seçenekler aynı kavramsal kategoride değil|yönetim basamağı gereksiz/iu,
+    /eşik|şiddet|zamanlama|klinik bağlam daraltılmamış|basit artar/iu,
+  ];
+  const fatal = list.filter((message) => fatalPatterns.some((pattern) => pattern.test(message)));
+  const repairable = list.filter((message) => !fatal.includes(message) && repairablePatterns.some((pattern) => pattern.test(message)));
+  const advisory = list.filter((message) => !fatal.includes(message) && !repairable.includes(message));
+  return { fatal, repairable, advisory };
+}
+
+const TUS_REPAIR_SYSTEM_PROMPT = `KlinikIQ TUS soru editörüsün. Yeni soru üretme; verilen JSON'u aynı şemada kısa ve güvenli şekilde düzelt. Doğru cevabı ve ana öğrenme hedefini koru. Feedbackte kökte/panelde olmayan hasta-özel veri varsa ya stem/compactObjectiveData'ya ekle ya feedbackten çıkar. Şıkları aynı kategori ve benzer uzunlukta tut. Bozuk Türkçe tıp dilini düzelt. Açıklamayı en fazla 2 cümle, her seçenek feedbackini 1 kısa öğretici cümle yap. Sadece geçerli JSON döndür.`;
+
+function compactQuestionForRepair(question = {}) {
+  return {
+    relatedBranch: question.relatedBranch,
+    difficulty: question.difficulty,
+    learningTarget: question.learningTarget,
+    answerTarget: question.answerTarget,
+    demographics: question.demographics,
+    setting: question.setting,
+    chiefComplaint: question.chiefComplaint,
+    stem: question.stem,
+    compactVitals: question.compactVitals || [],
+    compactObjectiveData: question.compactObjectiveData || [],
+    question: question.question,
+    options: question.options || [],
+    correctAnswer: question.correctAnswer,
+    explanation: question.explanation,
+    wrongOptionFeedback: question.wrongOptionFeedback || {},
+    evidenceChain: question.evidenceChain || [],
+    examPearl: question.examPearl,
+    managementSteps: question.managementSteps || [],
+  };
+}
+
+function buildRepairPrompt(question = {}, errors = []) {
+  return `Aşağıdaki TUS JSON'unu yeniden üretmeden sadece düzelt.
+Hatalar: ${asArray(errors).slice(0, 6).join('; ')}
+Kurallar: gizli hasta verisi kullanma; gerekiyorsa eksik kritik veriyi stem/panele ekle; iki doğru kalıyorsa kökü netleştir; doğru şık uzun görünmesin; feedback tekrarsız ve kısa olsun; zorluk gerçekçi olsun.
+JSON:
+${JSON.stringify(compactQuestionForRepair(question))}`;
+}
+
+async function repairQuestionWithAI(question, { branch, difficulty, errors, detailMode } = {}) {
+  const prompt = buildRepairPrompt(question, errors);
+  const result = await callOpenAI(prompt, {
+    detailMode,
+    instructions: TUS_REPAIR_SYSTEM_PROMPT,
+    maxTokensOverride: envNumber('TUS_OPENAI_REPAIR_MAX_OUTPUT_TOKENS', 1200),
+    taskSuffix: 'repair',
+  });
+  if (!result) return null;
+  const repaired = sanitizeQuestion(result.question, branch || question.relatedBranch, difficulty || question.difficulty);
+  repaired.provider = 'openai-repair';
+  repaired.openAIModel = result.model;
+  repaired.openAIMode = result.mode;
+  repaired.promptVersion = PROMPT_VERSION;
+  repaired.schemaVersion = SCHEMA_VERSION;
+  repaired.aiMeta = { ...(repaired.aiMeta || {}), costProfile: getAICostProfile('TUS'), detailMode, repairPass: true };
+  return repaired;
 }
 
 
@@ -837,6 +926,10 @@ function hasMalformedTurkishClinicalWording(question = {}) {
     /karar verdirici bulgular birlikte degerlendirilir/,
     /kisa klinik baglam/,
     /amonyak seviyesinin yol acacagi norotoksisite/,
+    /bilinc bulan hasta/,
+    /artikulasyon duzeyi/,
+    /nazokompleks/,
+    /kloak\s*\/\s*ors/,
   ];
   if (forbidden.some((pattern) => pattern.test(value))) return true;
 
@@ -895,7 +988,7 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
     source: 'real-ai',
     caseType: 'ai-spot',
     relatedBranch: standardizeTurkishMedicalText(question.relatedBranch || branch),
-    difficulty: normalizeDifficulty(requestedDifficulty || question.difficulty || 'Orta'),
+    difficulty: normalizeDifficulty(question.difficulty || requestedDifficulty || 'Orta'),
     learningTarget: standardizeTurkishMedicalText(question.learningTarget || ''),
     answerTarget,
     demographics: standardizeTurkishMedicalText(question.demographics || ''),
@@ -1038,14 +1131,14 @@ function safeVerbosity(value = '') {
   return /^(low|medium|high)$/i.test(String(value || '')) ? String(value).toLowerCase() : 'medium';
 }
 
-async function callOpenAI(prompt, { detailMode = tusQuestionDetailMode() } = {}) {
+async function callOpenAI(prompt, { detailMode = tusQuestionDetailMode(), instructions = SYSTEM_PROMPT, maxTokensOverride = 0, taskSuffix = '' } = {}) {
   const apiKey = process.env.TUS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
   if (!apiKey) return null;
   const model = currentTusModel();
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
   const timeoutMs = Number(process.env.TUS_OPENAI_PER_REQUEST_TIMEOUT_MS || process.env.OPENAI_PER_REQUEST_TIMEOUT_MS || 25000);
   const requestedMaxTokens = Number(process.env.TUS_OPENAI_MAX_OUTPUT_TOKENS || process.env.OPENAI_MAX_OUTPUT_TOKENS || 0);
-  const maxTokens = requestedMaxTokens > 0 ? requestedMaxTokens : applyCostProfileToMaxTokens('TUS', TASK_NAME, 1700);
+  const maxTokens = Number(maxTokensOverride || 0) > 0 ? Number(maxTokensOverride) : (requestedMaxTokens > 0 ? requestedMaxTokens : applyCostProfileToMaxTokens('TUS', TASK_NAME, 1700));
   const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';
@@ -1057,7 +1150,7 @@ async function callOpenAI(prompt, { detailMode = tusQuestionDetailMode() } = {})
     const body = useResponses
       ? {
           model,
-          instructions: SYSTEM_PROMPT,
+          instructions,
           input: prompt,
           text: { format: { type: 'json_object' }, verbosity },
           ...(modelSupportsReasoningEffort(model) ? { reasoning: { effort: reasoningEffort } } : {}),
@@ -1069,7 +1162,7 @@ async function callOpenAI(prompt, { detailMode = tusQuestionDetailMode() } = {})
       : {
           model,
           messages: [
-            { role: 'system', content: SYSTEM_PROMPT },
+            { role: 'system', content: instructions },
             { role: 'user', content: prompt },
           ],
           response_format: { type: 'json_object' },
@@ -1096,7 +1189,7 @@ async function callOpenAI(prompt, { detailMode = tusQuestionDetailMode() } = {})
       throw error;
     }
     const data = JSON.parse(apiResult.text || '{}');
-    logAIUsage({ task: TASK_NAME, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: style });
+    logAIUsage({ task: taskSuffix ? `${TASK_NAME}:${taskSuffix}` : TASK_NAME, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: style });
     const text = useResponses ? extractResponsesText(data) : extractChatText(data);
     if (!String(text || '').trim()) {
       const reason = data?.incomplete_details?.reason || data?.status || 'empty_output';
@@ -1132,28 +1225,56 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
   sanitized.schemaVersion = SCHEMA_VERSION;
   sanitized.aiMeta = { ...(sanitized.aiMeta || {}), costProfile: getAICostProfile('TUS'), detailMode };
   const validation = validateQuestion(sanitized, recentQuestionSummaries);
-  if (!validation.ok) {
-    // V406 AI-preserving balanced gate:
-    // Hard-block only structural/safety failures.
-    // Educational quality issues stay as qualityNotes; they must not force
-    // local safe fallback when a live OpenAI question was successfully produced.
-    const hardBlockingErrors = validation.errors.filter((message) =>
-      /branch eksik|stem çok kısa|stem placeholder|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|açıklama\/feedback soru kökünde olmayan olgu verisi kullanıyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda/iu.test(message)
-    );
+  const severity = classifyValidationErrors(validation.errors);
 
-    if (hardBlockingErrors.length) {
-      const error = new Error(hardBlockingErrors.join('; '));
-      error.validationErrors = hardBlockingErrors;
-      error.question = sanitized;
-      throw error;
-    }
-
-    sanitized.qualityNotes = validation.errors;
-    sanitized.qualityGate = 'passed-with-editorial-notes';
-  } else {
-    sanitized.qualityGate = 'strict-passed';
+  if (severity.fatal.length) {
+    const error = new Error(severity.fatal.join('; '));
+    error.validationErrors = severity.fatal;
+    error.question = sanitized;
+    throw error;
   }
-  return sanitized;
+
+  let finalQuestion = sanitized;
+  let finalValidation = validation;
+  let finalSeverity = severity;
+
+  if (severity.repairable.length && envFlag('KLINIKIQ_TUS_AI_REPAIR_PASS', true)) {
+    try {
+      const repaired = await repairQuestionWithAI(sanitized, {
+        branch,
+        difficulty,
+        errors: severity.repairable,
+        detailMode,
+      });
+      if (repaired) {
+        const repairedValidation = validateQuestion(repaired, recentQuestionSummaries);
+        const repairedSeverity = classifyValidationErrors(repairedValidation.errors);
+        if (!repairedSeverity.fatal.length) {
+          finalQuestion = repaired;
+          finalValidation = repairedValidation;
+          finalSeverity = repairedSeverity;
+          finalQuestion.aiMeta = { ...(finalQuestion.aiMeta || {}), repairedFromErrors: severity.repairable.slice(0, 6) };
+        }
+      }
+    } catch (repairError) {
+      sanitized.qualityNotes = [
+        ...(Array.isArray(sanitized.qualityNotes) ? sanitized.qualityNotes : []),
+        `AI repair geçilemedi: ${repairError?.message || repairError}`,
+      ];
+    }
+  }
+
+  if (finalValidation.ok) {
+    finalQuestion.qualityGate = finalQuestion.aiMeta?.repairPass ? 'strict-passed-after-ai-repair' : 'strict-passed';
+  } else {
+    finalQuestion.qualityNotes = Array.from(new Set([
+      ...(Array.isArray(finalQuestion.qualityNotes) ? finalQuestion.qualityNotes : []),
+      ...finalSeverity.repairable,
+      ...finalSeverity.advisory,
+    ]));
+    finalQuestion.qualityGate = finalSeverity.repairable.length ? 'passed-after-repairable-quality-notes' : 'passed-with-advisory-notes';
+  }
+  return finalQuestion;
 }
 
 

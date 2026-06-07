@@ -1,4 +1,4 @@
-// KlinikIQ — V407 compact TUS AI prompt setup
+// KlinikIQ — V408 compact TUS AI prompt setup
 // Purpose: low-cost Turkish TUS-quality single-best-answer questions with a stable JSON contract.
 
 function cleanText(value = '') {
@@ -51,19 +51,19 @@ export function normalizeDifficulty(value = 'Orta') {
   return 'Orta';
 }
 
-export const OPTIMIZED_TUS_SYSTEM_PROMPT = `KlinikIQ için tek doğru cevaplı Türkçe TUS sorusu üret. Sadece geçerli ve kompakt JSON döndür.
+export const OPTIMIZED_TUS_SYSTEM_PROMPT = `KlinikIQ için tek doğru cevaplı, öğretici ve temiz Türkçe TUS sorusu üret. Sadece geçerli kompakt JSON döndür.
 
 Kalite sözleşmesi:
-1) Kök tek başına çözdürmeli: açıklama/feedbackte kullanılan tüm olguya özel kritik veri kök, vital veya objektif veri panelinde görünmeli. Sonradan BT derecesi, laktat, sodyum, MR invazyonu, stabilite, eşik veya tedavi başarısızlığı ekleme.
-2) İki seçenek savunulabiliyorsa köke ayırt ettirici eşik/zamanlama/stabilite/kontrendikasyon ekle veya hedefi değiştir.
-3) Şıklar aynı kategoriden, benzer uzunlukta ve benzer ciddiyette olsun; doğru şık uzunluk/detayla ele vermesin.
+1) Kök/panel tek başına çözdürmeli. Açıklama veya feedbackte kullanılan hasta-özel veri mutlaka stem, compactVitals veya compactObjectiveData içinde görünmeli; gizli BT/MR bulgusu, lab değeri, eşik, stabilite, invazyon, grade, tedavi başarısızlığı ekleme.
+2) İki seçenek savunulabiliyorsa köke ayırt ettirici eşik, zamanlama, stabilite, kontrendikasyon veya amaç ekle; netleştiremiyorsan soru hedefini değiştir.
+3) Şıklar aynı kategoriden, benzer uzunlukta ve benzer teknik seviyede olsun; doğru şık daha uzun/detaylı görünmesin.
 4) Çeldiriciler saçma değil, aynı algoritmanın yanlış basamağı veya yakın ayırıcı olmalı.
-5) Zorluk gerçekçi: klasik bilgi=Orta, güçlü yakın çeldirici + karar verdirici ipucu=Zor.
-6) Feedback kısa, seçenek-özel ve tekrarsız olsun; yanlış şık için “ne zaman düşünülür + bu kökte neden değil” mantığını tek cümlede ver.
+5) Zorluk gerçekçi olsun: klasik tek bilgi=Orta; güçlü çeldirici + algoritma/eşik/mekanizma ayrımı=Zor. Gerekiyorsa difficulty alanını Orta yaz.
+6) Feedback kısa, seçenek-özel ve tekrarsız olsun. Yanlış şıkta tek cümlede “ne zaman düşünülür + bu kökte neden değil” mantığı ver.
 7) Temiz Türkçe tıp dili kullan; İngilizce kırıntı, bozuk terim ve yarım cümle bırakma.
-8) Soru tipini çeşitlendir; sürekli “en uygun sonraki adım” yazma.
+8) Soru tipini çeşitlendir; sürekli “en uygun sonraki adım” formatına düşme.
 
-Alan kuralları: relatedBranch/difficulty görevle aynı olsun. answerTarget: diagnosis, diagnostic_test, confirmation_test, first_step, next_step, treatment, management, emergency_approach, mechanism, expected_finding, unexpected_finding, contraindication, complication, prognosis, lab_interpretation, imaging_interpretation, anatomy_localization, embryology_defect. stem 3-5 cümle; explanation en fazla 2 cümle; A-E feedbackleri birer öğretici cümle; evidenceChain 3 kısa görünür ipucu; examPearl tek kısa cümle; managementSteps yalnızca yönetim sorusunda 2-3 kısa adım.
+Alan kuralları: relatedBranch görevle aynı olsun. answerTarget: diagnosis, diagnostic_test, confirmation_test, first_step, next_step, treatment, management, emergency_approach, mechanism, expected_finding, unexpected_finding, contraindication, complication, prognosis, lab_interpretation, imaging_interpretation, anatomy_localization, embryology_defect. stem 3-5 cümle; explanation en fazla 2 cümle; A-E feedbackleri birer öğretici cümle; evidenceChain 3 kısa görünür ipucu; examPearl tek kısa cümle; managementSteps yalnızca yönetim sorusunda 2-3 kısa adım.
 
 Kompakt şema: {"relatedBranch":"","difficulty":"","learningTarget":"","answerTarget":"","demographics":"","setting":"","chiefComplaint":"","stem":"","compactVitals":[],"compactObjectiveData":[],"question":"","options":[{"id":"A","text":""},{"id":"B","text":""},{"id":"C","text":""},{"id":"D","text":""},{"id":"E","text":""}],"correctAnswer":"","explanation":"","wrongOptionFeedback":{"A":"","B":"","C":"","D":"","E":""},"evidenceChain":["","",""],"examPearl":"","managementSteps":[]}`;
 
@@ -98,7 +98,7 @@ export function buildUserPrompt({
     ? 'Biraz daha öğretici ama tekrar etme.'
     : 'Kompakt tut: explanation 2 cümle, feedbackler tek cümle.';
 
-  return `TUS JSON üret. branch=${branchText}; difficulty=${selectedDifficulty}; focus=${preferredFocus}; depth=${depth}; preferredLetter=${answerLetter || 'soft'}; nonce=${cleanText(antiRepeatNonce)}-${attempt}.
+  return `TUS JSON üret. branch=${branchText}; difficultyHint=${selectedDifficulty}; focus=${preferredFocus}; depth=${depth}; preferredLetter=${answerLetter || 'soft'}; nonce=${cleanText(antiRepeatNonce)}-${attempt}.
 Yakın tekrar yapma: ${recentCompact}
-Çıkıştan önce kontrol: kök tek başına çözdürüyor mu, feedbackte gizli olgu verisi var mı, iki doğru kalıyor mu, doğru şık uzunlukla ele veriyor mu, dil temiz mi? relatedBranch="${branchText}" ve difficulty="${selectedDifficulty}".`;
+Çıkıştan önce kontrol: kök/panel tek başına çözdürüyor mu, feedbackte gizli hasta verisi var mı, iki doğru kalıyor mu, doğru şık uzunlukla ele veriyor mu, zorluk gerçekçi mi, dil temiz mi? relatedBranch="${branchText}"; difficulty klasikse Orta, gerçekten algoritmik/zor ayrım varsa Zor yaz.`;
 }
