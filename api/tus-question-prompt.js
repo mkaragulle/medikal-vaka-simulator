@@ -1,4 +1,4 @@
-// KlinikIQ V414 — simple direct TUS prompts
+// KlinikIQ V416 — story-first simple direct TUS prompts
 // System and user prompts are sourced from the simplified KlinikIQ prompt files.
 
 function cleanText(value = '') {
@@ -25,21 +25,22 @@ Kısa, bilimsel, öğretici, tek doğru cevaplı ve kullanıcıya doğrudan gös
 TEMEL KALİTE KURALLARI
 1. Soru kökü tek başına çözülebilir olmalı.
 2. Açıklama ve seçenek feedbacklerinde, soru kökünde veya veri panelinde olmayan hasta-özel bilgi kullanılmamalı.
-3. İki seçenek savunulabiliyorsa soru kökünü netleştir:
+3. Soru kökü mutlaka hikâyeleştirilmiş 2-4 doğal klinik cümle olsun: hasta yakınması, süre/bağlam ve muayene ilişkisi anlatılsın. "Ek klinik verilerde...", "Tetkik ve destekleyici bulgularda..." diye başlayan ham veri cümleleri kök olmaz. Laboratuvar, vital, görüntüleme ve ölçüm değerleri "cv"/"co" alanlarına madde madde yazılsın; aynı ölçüm hem "s" hem "co" içinde tekrar edilmesin.
+4. İki seçenek savunulabiliyorsa soru kökünü netleştir:
    - eşik değer ekle,
    - zamanlama ekle,
    - stabilite/instabilite bilgisini belirt,
    - tetkik sonucu ekle,
    - dışlama bilgisi ver,
    - ya da soru hedefini daha açık yaz.
-4. Beş seçenek aynı klinik/bilimsel kategoriden olmalı.
-5. Seçenekler benzer uzunlukta ve ciddi çeldirici kalitesinde olmalı.
-6. Doğru seçenek, uzunluk veya aşırı ayrıntı nedeniyle kendini ele vermemeli.
-7. Açıklama kısa olmalı:
+5. Beş seçenek aynı klinik/bilimsel kategoriden olmalı.
+6. Seçenekler benzer uzunlukta ve ciddi çeldirici kalitesinde olmalı.
+7. Doğru seçenek, uzunluk veya aşırı ayrıntı nedeniyle kendini ele vermemeli.
+8. Açıklama kısa olmalı:
    - ana açıklama en fazla 2 kısa cümle,
    - her seçenek feedbacki 1 kısa ve seçenek-özel cümle.
-8. Aynı bilgiyi farklı başlıklarda tekrar etme.
-9. Soru metnine iç rehber veya debug kalıntısı yazma. Şunlar kesinlikle yasaktır:
+9. Aynı bilgiyi farklı başlıklarda tekrar etme.
+10. Soru metnine iç rehber veya debug kalıntısı yazma. Şunlar kesinlikle yasaktır:
    - “öğrenme hedefi”
    - “hedeflenen ayırıcı”
    - “kısıtlama”
@@ -49,9 +50,9 @@ TEMEL KALİTE KURALLARI
    - “A) A)” veya “B) B)” gibi tekrarlar
    - yarım cümleler
    - boş başlıklar
-10. Temiz Türkçe tıp dili kullan.
-11. İngilizce kırıntı, bozuk terim, yarım cümle veya jenerik “uygun değildir” bırakma.
-12. Zorluk gerçekçi olmalı:
+11. Temiz Türkçe tıp dili kullan.
+12. İngilizce kırıntı, bozuk terim, yarım cümle veya jenerik “uygun değildir” bırakma.
+13. Zorluk gerçekçi olmalı:
    - klasik tek bilgi sorusu: Orta
    - güçlü ayırıcı, eşik, algoritma veya mekanizma ayrımı: Zor
    - basit tanı/hatırlama sorusu: Kolay veya Orta
@@ -80,12 +81,12 @@ Aşağıdaki kompakt JSON şemasına birebir uy:
   "dem": "hasta demografisi",
   "set": "klinik ortam",
   "cc": "başvuru nedeni",
-  "s": "3-5 cümlelik adil ve tek başına çözülebilir soru kökü",
+  "s": "2-4 cümlelik hikâyeleştirilmiş klinik olgu; ham lab/vital/görüntüleme listesi ve iç başlık içermez",
   "cv": [
-    {"label": "klinik veri", "value": "değer"}
+    {"label": "vital/klinik ölçüm", "value": "değer"}
   ],
   "co": [
-    {"label": "tetkik/veri", "value": "sonuç"}
+    {"label": "laboratuvar/görüntüleme/veri", "value": "sonuç"}
   ],
   "q": "net soru cümlesi",
   "o": [
@@ -115,6 +116,8 @@ Aşağıdaki kompakt JSON şemasına birebir uy:
 SON KONTROL
 JSON döndürmeden önce sessizce kontrol et:
 - Soru kökü doğru cevabı seçtirebiliyor mu?
+- Soru kökü ham veri listesi değil, hasta yakınması ve bağlam içeren doğal bir klinik hikâye mi?
+- Ham laboratuvar/vital/görüntüleme değerleri hikâyede tekrarlanmadan cv/co alanlarına ayrıldı mı?
 - Feedbackte kökte olmayan hasta-özel veri var mı?
 - Tek doğru cevap var mı?
 - Doğru seçenek gereğinden uzun mu?
@@ -158,6 +161,9 @@ Kurallar:
 - "A feedback", "B feedback", "TUS ipucu.", "öğrenme hedefi", "hedeflenen ayırıcı", "kısıtlama" gibi üretim kalıntıları yazılmasın.
 - Seçeneklerde "A) A)", "B) B)" gibi tekrarlar olmasın.
 - Soru kökü tek başına çözülebilir olsun.
+- Soru kökünü mutlaka hikâyeleştir: hasta yakınması, süre/bağlam ve muayene ilişkisi olan 2-4 doğal cümle yaz. "Ek klinik verilerde..." veya "Tetkik ve destekleyici bulgularda..." diye başlayan ham veri kökü yazma.
+- Serum Na, osmolalite, laktat, β-hCG, BT/MR/USG bulgusu gibi ham değerleri cümle içine yığma, cv/co alanlarına madde madde koy.
+- Aynı laboratuvar/vital/görüntüleme değerini hem soru kökünde hem veri panelinde tekrar etme.
 - Açıklama ve feedback, soru kökünde veya veri panelinde olmayan hasta-özel bilgi eklemesin.
 - Beş seçenek aynı kategoriden, benzer uzunlukta ve ciddi çeldirici kalitesinde olsun.
 - Doğru seçenek uzunluk veya aşırı ayrıntı nedeniyle kendini ele vermesin.

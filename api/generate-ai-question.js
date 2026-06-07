@@ -13,7 +13,7 @@ import {
 } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v414-sade-prompts-replaced';
+const PROMPT_VERSION = 'klinikiq-v416-story-first-data-panel';
 const SCHEMA_VERSION = 'simple-ai-spot-v3-compact';
 const TASK_NAME = 'tusSpotQuestion';
 
@@ -145,6 +145,43 @@ function compactItems(items = [], max = 8) {
   }).filter((item) => item.label && item.value).slice(0, max);
 }
 
+function looksLikeRawDataStem(value = '') {
+  const text = cleanText(value);
+  if (!text) return true;
+  if (/^(?:ek klinik verilerde|ek klinik veri|tetkik ve destekleyici bulgularda|tetkiklerde|laboratuvar|vital bulgu|vital bulgular|serum|idrar|transvajinal|usg|bt|mr|mri|ekg|β-hcg|beta-hcg)\b/iu.test(text)) return true;
+  const objectiveHits = [
+    /\b(?:serum|idrar|plazma|kan gazı|laktat|sodyum|na\+?|na⁺|osmolalite|osmolarite|trigliserid|kalsiyum|troponin|d-dimer|hcg|β-hcg|usg|bt|mr|mri|ekg)\b/iu,
+    /\b(?:mmol\/L|mEq\/L|mOsm\/kg|IU\/L|IU\/mL|mg\/dL|mg\/L|ng\/mL|mmHg|%)\b/iu,
+    /[:：=]/u,
+  ].reduce((count, pattern) => count + (pattern.test(text) ? 1 : 0), 0);
+  const sentenceCount = text.split(/[.!?]+/u).filter((part) => part.trim()).length;
+  return objectiveHits >= 2 && sentenceCount <= 2;
+}
+
+function buildStoryStem(payload = {}, { branch = '', compactVitals = [], compactObjectiveData = [] } = {}) {
+  let stem = standardizeTurkishMedicalText(payload.s || payload.stem || '');
+  const hasSupportData = Boolean(compactVitals.length || compactObjectiveData.length);
+  if (hasSupportData) {
+    stem = stem
+      .replace(/\b(?:Ek klinik verilerde|Ek klinik veri|Ek verilerde|Tetkik ve destekleyici bulgularda|Tetkiklerde|Laboratuvar verilerinde|Vital bulgularda)\s*[:：]?\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  if (stem && !looksLikeRawDataStem(stem)) return stem;
+
+  const dem = standardizeTurkishMedicalText(payload.dem || payload.demographics || 'Hasta');
+  const setting = standardizeTurkishMedicalText(payload.set || payload.setting || 'klinik değerlendirmede');
+  const complaint = standardizeTurkishMedicalText(payload.cc || payload.chiefComplaint || 'yakınmaları');
+  const branchText = standardizeTurkishMedicalText(payload.b || payload.relatedBranch || branch || 'TUS');
+  const lowerSetting = setting ? setting.charAt(0).toLocaleLowerCase('tr') + setting.slice(1) : 'klinik değerlendirmede';
+  const intro = `${dem}, ${complaint} nedeniyle ${lowerSetting} değerlendirilmektedir.`;
+  const context = /kadın hastalıkları|doğum/iu.test(branchText)
+    ? 'Hemodinamik durum, gebelik olasılığı ve muayene bulguları birlikte yorumlanmaktadır.'
+    : 'Öykü, fizik muayene ve objektif veriler birlikte yorumlanarak klinik karar verilecektir.';
+  return `${intro} ${context}`;
+}
+
 function normalizeOptions(raw = []) {
   const arr = Array.isArray(raw)
     ? raw
@@ -206,6 +243,9 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
   const options = normalizeOptions(payload.o || payload.options);
   const correctAnswer = resolveCorrectId(payload, options);
   const explanation = ensureSentence(standardizeTurkishMedicalText(payload.e || payload.explanation || ''));
+  const compactVitals = compactItems(payload.cv || payload.compactVitals || payload.vitals || [], 5);
+  const compactObjectiveData = compactItems(payload.co || payload.compactObjectiveData || payload.objectiveData || [], 8);
+  const storyStem = buildStoryStem(payload, { branch, compactVitals, compactObjectiveData });
 
   const question = {
     id: `ai-spot-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -216,9 +256,9 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
     demographics: standardizeTurkishMedicalText(payload.dem || payload.demographics || ''),
     setting: standardizeTurkishMedicalText(payload.set || payload.setting || ''),
     chiefComplaint: standardizeTurkishMedicalText(payload.cc || payload.chiefComplaint || ''),
-    stem: ensureSentence(standardizeTurkishMedicalText(payload.s || payload.stem || '')),
-    compactVitals: compactItems(payload.cv || payload.compactVitals || payload.vitals || [], 5),
-    compactObjectiveData: compactItems(payload.co || payload.compactObjectiveData || payload.objectiveData || [], 8),
+    stem: ensureSentence(storyStem),
+    compactVitals,
+    compactObjectiveData,
     question: ensureQuestion(standardizeTurkishMedicalText(payload.q || payload.question || '')),
     options,
     correctAnswer,
