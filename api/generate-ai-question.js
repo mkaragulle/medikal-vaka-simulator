@@ -304,6 +304,19 @@ function createAbortSignal(timeoutMs) {
   return { signal: controller.signal, cancel: () => clearTimeout(timeout) };
 }
 
+function isPromptCacheProviderError(status, text = '') {
+  return Number(status) >= 400
+    && Number(status) < 500
+    && /prompt_cache_key|prompt_cache_retention|unknown parameter|unrecognized|unsupported parameter|string_above_max_length/i.test(String(text || ''));
+}
+
+function stripPromptCacheParams(body = {}) {
+  const next = { ...body };
+  delete next.prompt_cache_key;
+  delete next.prompt_cache_retention;
+  return next;
+}
+
 async function callOpenAI(prompt) {
   const apiKey = process.env.TUS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
   if (!apiKey) {
@@ -349,14 +362,23 @@ async function callOpenAI(prompt) {
         };
     if (!useResponses && modelSupportsReasoningEffort(model)) body.reasoning_effort = reasoningEffort;
 
-    const response = await fetch(`${baseUrl}${useResponses ? '/responses' : '/chat/completions'}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
-      body: JSON.stringify(body),
-      signal,
-    });
+    const endpoint = `${baseUrl}${useResponses ? '/responses' : '/chat/completions'}`;
+    const sendBody = async (requestBody) => {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+        body: JSON.stringify(requestBody),
+        signal,
+      });
+      const text = await res.text();
+      return { res, text };
+    };
 
-    const textResponse = await response.text();
+    let { res: response, text: textResponse } = await sendBody(body);
+    if (!response.ok && (body.prompt_cache_key || body.prompt_cache_retention) && isPromptCacheProviderError(response.status, textResponse)) {
+      ({ res: response, text: textResponse } = await sendBody(stripPromptCacheParams(body)));
+    }
+
     if (!response.ok) {
       const error = new Error(`OpenAI ${response.status}: ${textResponse.slice(0, 500)}`);
       error.statusCode = response.status;
