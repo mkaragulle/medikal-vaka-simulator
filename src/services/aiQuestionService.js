@@ -13,7 +13,7 @@ const AI_REMOTE_RETRY_COUNT = Math.max(1, Math.min(2, Number(runtimeEnv.VITE_AI_
 const ENABLE_CLIENT_PREFETCH = String(runtimeEnv.VITE_AI_ENABLE_NEXT_QUESTION_PREFETCH ?? 'false').toLowerCase() === 'true';
 const MAX_PREFETCHED_PER_KEY = Math.max(0, Math.min(2, Number(runtimeEnv.VITE_AI_PREFETCH_QUEUE_SIZE || 0)));
 const PREFETCH_FIRST_WAIT_MS = Math.max(0, Math.min(4500, Number(runtimeEnv.VITE_AI_PREFETCH_FIRST_WAIT_MS || 1800)));
-const FALLBACK_GRACE_WAIT_MS = Math.max(0, Math.min(6500, Number(runtimeEnv.VITE_AI_FALLBACK_GRACE_WAIT_MS || 3200)));
+const FALLBACK_GRACE_WAIT_MS = Math.max(0, Math.min(6500, Number(runtimeEnv.VITE_AI_FALLBACK_GRACE_WAIT_MS || 0)));
 const SHOW_FALLBACK_NOTICE = String(runtimeEnv.VITE_AI_SHOW_FALLBACK_NOTICE ?? 'false').toLowerCase() === 'true';
 
 const prefetchedQuestionQueues = new Map();
@@ -266,13 +266,13 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
     const recoveredPrefetch = await waitForActivePrefetch({ branchFilter, difficulty, context, timeoutMs: FALLBACK_GRACE_WAIT_MS });
     if (recoveredPrefetch?.ok) return { ...recoveredPrefetch, source: recoveredPrefetch.source || 'client-prefetch-cache', usedRemoteAI: true, showFallbackNotice: false };
 
-    if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'true').toLowerCase() !== 'true') {
+    if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'false').toLowerCase() !== 'true') {
       return { ok: false, question: null, source: 'openai-error', usedRemoteAI: false, fallback: false, showFallbackNotice: false, error };
     }
     return createClientFallback({ branchFilter, difficulty, context, reason: error });
   }
 
-  if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'true').toLowerCase() === 'true') {
+  if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'false').toLowerCase() === 'true') {
     return createClientFallback({ branchFilter, difficulty, context, reason: null });
   }
   return { ok: false, question: null, source: 'openai-unavailable', usedRemoteAI: false, fallback: false, showFallbackNotice: false, error: new Error('AI servisi kullanılamıyor.') };
@@ -280,5 +280,5 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
 
 
 export function getAIServiceMode() {
-  return ENABLE_REAL_AI ? 'openai-cache-bank-prefetch' : 'real-ai-disabled';
+  return ENABLE_REAL_AI ? 'openai-simple-direct' : 'real-ai-disabled';
 }
