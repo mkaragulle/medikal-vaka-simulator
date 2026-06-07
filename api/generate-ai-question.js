@@ -13,7 +13,7 @@ import {
 } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v417-simple-clean-repair';
+const PROMPT_VERSION = 'klinikiq-v418-timeout-abort-fix';
 const SCHEMA_VERSION = 'simple-ai-spot-v4-compact';
 const TASK_NAME = 'tusSpotQuestion';
 
@@ -407,10 +407,9 @@ function findRepairableDefects(question = {}) {
   if (missingTerms.length) defects.push(`Feedbackte kökte/veri panelinde görünmeyen hasta-özel veri var: ${missingTerms.slice(0, 4).join(', ')}.`);
   if (hasAnswerLeak(question)) defects.push('Soru kökü veya öğrenme hedefi doğru cevabı fazla açık veriyor.');
   if (optionLengthLeak(question)) defects.push('Doğru seçenek diğer seçeneklerden belirgin uzun.');
-  if (/\b(?:kesinlikle|asla|her zaman)\b/iu.test(explanationText(question))) defects.push('Feedbackte gereksiz mutlak klinik ifade olabilir.');
-  if (question.relatedBranch && /anatomi|embriyoloji/iu.test(question.relatedBranch) && /(?:sinir|ark|kese|oluk|krest|faringeal|motor|duyu|kas)/iu.test(finalText)) {
-    defects.push('Anatomi/embriyoloji lokalizasyon veya ark-kese-krest uyumu tekrar kontrol edilmeli.');
-  }
+  // Advisory-style medical nuance checks should not trigger a second AI call.
+  // Keep this repair pass only for visible product defects such as hidden patient data,
+  // placeholders, story/data mixing, answer leak or option-length leak.
   return defects.slice(0, 5);
 }
 
@@ -468,10 +467,20 @@ function safeVerbosity(value = '') {
   return /^(low|medium|high)$/i.test(String(value || '')) ? String(value).toLowerCase() : 'low';
 }
 
-function createAbortSignal(timeoutMs) {
+function createAbortSignal(timeoutMs, label = 'OpenAI isteği') {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  const timeout = setTimeout(() => {
+    const error = new Error(`${label} ${Math.round(timeoutMs / 1000)} saniye içinde tamamlanamadı.`);
+    error.name = 'AbortError';
+    error.statusCode = 504;
+    try { controller.abort(error); } catch { controller.abort(); }
+  }, timeoutMs);
   return { signal: controller.signal, cancel: () => clearTimeout(timeout) };
+}
+
+function isAbortLikeError(error) {
+  return error?.name === 'AbortError'
+    || /aborted|abort|signal is aborted|timeout|timed out/i.test(String(error?.message || error || ''));
 }
 
 async function callOpenAI(prompt, { systemPrompt = OPTIMIZED_TUS_SYSTEM_PROMPT, maxTokens = null, purpose = TASK_NAME } = {}) {
@@ -484,14 +493,14 @@ async function callOpenAI(prompt, { systemPrompt = OPTIMIZED_TUS_SYSTEM_PROMPT, 
 
   const model = resolveModelForScope('TUS');
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
-  const timeoutMs = envNumber('TUS_OPENAI_PER_REQUEST_TIMEOUT_MS', envNumber('OPENAI_PER_REQUEST_TIMEOUT_MS', 25000));
+  const timeoutMs = envNumber('TUS_OPENAI_PER_REQUEST_TIMEOUT_MS', envNumber('OPENAI_PER_REQUEST_TIMEOUT_MS', 75000));
   const outputLimit = maxTokens || envNumber('TUS_OPENAI_MAX_OUTPUT_TOKENS', envNumber('OPENAI_MAX_OUTPUT_TOKENS', 1100));
   const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';
   const reasoningEffort = safeReasoningEffort(process.env.TUS_OPENAI_REASONING_EFFORT || process.env.OPENAI_REASONING_EFFORT || defaultReasoningEffortForProfile('TUS'));
   const verbosity = safeVerbosity(process.env.TUS_OPENAI_VERBOSITY || process.env.OPENAI_VERBOSITY || defaultVerbosityForProfile('TUS'));
-  const { signal, cancel } = createAbortSignal(timeoutMs);
+  const { signal, cancel } = createAbortSignal(timeoutMs, purpose === TASK_NAME ? 'TUS soru üretimi' : 'TUS soru düzeltme');
 
   try {
     const body = useResponses
@@ -517,12 +526,22 @@ async function callOpenAI(prompt, { systemPrompt = OPTIMIZED_TUS_SYSTEM_PROMPT, 
     if (!useResponses && modelSupportsReasoningEffort(model)) body.reasoning_effort = reasoningEffort;
 
     const endpoint = `${baseUrl}${useResponses ? '/responses' : '/chat/completions'}`;
-    const res = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
-      body: JSON.stringify(body),
-      signal,
-    });
+    let res;
+    try {
+      res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+        body: JSON.stringify(body),
+        signal,
+      });
+    } catch (error) {
+      if (isAbortLikeError(error)) {
+        const timeoutError = new Error(`${purpose === TASK_NAME ? 'TUS soru üretimi' : 'TUS soru düzeltme'} zaman aşımına uğradı. Model yanıtı tamamlayamadı; lütfen tekrar deneyin veya daha hızlı model/timeout ayarı kullanın.`);
+        timeoutError.statusCode = 504;
+        throw timeoutError;
+      }
+      throw error;
+    }
     const raw = await res.text();
     if (!res.ok) {
       const error = new Error(`OpenAI ${res.status}: ${raw.slice(0, 500)}`);

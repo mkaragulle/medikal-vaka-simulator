@@ -4,14 +4,23 @@ import { createSimpleFallbackQuestion, normalizeSimpleAIQuestion } from '../util
 const runtimeEnv = import.meta.env || {};
 const AI_ENDPOINT = runtimeEnv.VITE_AI_QUESTION_ENDPOINT || '/api/generate-ai-question';
 const ENABLE_REAL_AI = String(runtimeEnv.VITE_ENABLE_REAL_AI ?? 'true').toLowerCase() !== 'false';
-const AI_REQUEST_TIMEOUT_MS = Number(runtimeEnv.VITE_AI_REQUEST_TIMEOUT_MS || 25000);
+const AI_REQUEST_TIMEOUT_MS = Number(runtimeEnv.VITE_AI_REQUEST_TIMEOUT_MS || 90000);
 const ENABLE_CLIENT_FALLBACK = String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'false').toLowerCase() === 'true';
 const SHOW_FALLBACK_NOTICE = String(runtimeEnv.VITE_AI_SHOW_FALLBACK_NOTICE ?? 'false').toLowerCase() === 'true';
 
 function withTimeout(ms = AI_REQUEST_TIMEOUT_MS) {
   const controller = new AbortController();
-  const timeoutId = window.setTimeout(() => controller.abort(), Math.max(1000, Number(ms || AI_REQUEST_TIMEOUT_MS)));
-  return { controller, timeoutId };
+  const timeoutMs = Math.max(1000, Number(ms || AI_REQUEST_TIMEOUT_MS));
+  const timeoutId = window.setTimeout(() => {
+    const error = new DOMException(`AI isteği ${Math.round(timeoutMs / 1000)} saniye içinde tamamlanamadı.`, 'AbortError');
+    try { controller.abort(error); } catch { controller.abort(); }
+  }, timeoutMs);
+  return { controller, timeoutId, timeoutMs };
+}
+
+function isAbortLikeError(error) {
+  return error?.name === 'AbortError'
+    || /aborted|abort|signal is aborted|timeout|timed out/i.test(String(error?.message || error || ''));
 }
 
 function makeAntiRepeatNonce() {
@@ -130,7 +139,10 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
   try {
     return await fetchRemoteQuestion({ previousQuestionId, branchFilter, difficulty, context });
   } catch (error) {
-    if (ENABLE_CLIENT_FALLBACK) return createClientFallback({ branchFilter, difficulty, context, reason: error });
+    const normalizedError = isAbortLikeError(error)
+      ? new Error('AI isteği zaman aşımına uğradı. Bu kalite gate veya fallback hatası değildir; model yanıtı süre içinde tamamlayamadı. Tekrar deneyin veya VITE_AI_REQUEST_TIMEOUT_MS / TUS_OPENAI_PER_REQUEST_TIMEOUT_MS değerlerini artırın.')
+      : error;
+    if (ENABLE_CLIENT_FALLBACK) return createClientFallback({ branchFilter, difficulty, context, reason: normalizedError });
     return {
       ok: false,
       question: null,
@@ -138,11 +150,11 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
       usedRemoteAI: false,
       fallback: false,
       showFallbackNotice: false,
-      error,
+      error: normalizedError,
     };
   }
 }
 
 export function getAIServiceMode() {
-  return ENABLE_REAL_AI ? 'openai-simple-clean-repair-v417' : 'real-ai-disabled';
+  return ENABLE_REAL_AI ? 'openai-simple-clean-repair-v418' : 'real-ai-disabled';
 }
