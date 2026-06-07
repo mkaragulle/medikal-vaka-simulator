@@ -13,27 +13,23 @@ import {
 } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v418-timeout-abort-fix';
+const PROMPT_VERSION = 'klinikiq-v419-branch-only-no-topic-steering';
 const SCHEMA_VERSION = 'simple-ai-spot-v4-compact';
 const TASK_NAME = 'tusSpotQuestion';
 
 const ALLOWED_BRANCHES = [
-  'İç Hastalıkları',
   'Çocuk Sağlığı ve Hastalıkları',
-  'Genel Cerrahi',
   'Kadın Hastalıkları ve Doğum',
-  'Nöroloji',
-  'Kardiyoloji',
+  'İç Hastalıkları',
+  'Genel Cerrahi',
   'Tıbbi Mikrobiyoloji',
   'Tıbbi Farmakoloji',
-  'Acil Tıp',
-  'Romatoloji',
-  'Göğüs Hastalıkları',
-  'Ortopedi',
-  'Anatomi',
-  'Histoloji ve Embriyoloji',
   'Tıbbi Biyokimya',
   'Tıbbi Patoloji',
+  'Fizyoloji',
+  'Anatomi',
+  'Histoloji ve Embriyoloji',
+  'Küçük Stajlar',
 ];
 
 const FORBIDDEN_RESIDUE = /\b(?:A feedback|B feedback|C feedback|D feedback|E feedback|TUS ipucu\.?|öğrenme hedefi\s*:|hedeflenen ayırıcı\s*:|kısıtlama\s*:|gereken klinik soru\s*:|ek klinik verilerde|tetkik ve destekleyici bulgularda)\b/iu;

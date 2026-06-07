@@ -41,9 +41,10 @@ function readPayloadError(payload, status) {
 
 function buildRequestContext(context = {}) {
   return {
-    recentQuestionSummaries: Array.isArray(context.recentQuestionSummaries)
-      ? context.recentQuestionSummaries.slice(0, 3)
-      : [],
+    // V419: Do not send previous question text/topic/correct-answer content to the model.
+    // Semantic recent summaries can prime the next generation toward the same topic.
+    recentQuestionSummaries: [],
+    recentQuestionCount: Array.isArray(context.recentQuestionSummaries) ? context.recentQuestionSummaries.length : 0,
   };
 }
 
@@ -156,5 +157,5 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
 }
 
 export function getAIServiceMode() {
-  return ENABLE_REAL_AI ? 'openai-simple-clean-repair-v418' : 'real-ai-disabled';
+  return ENABLE_REAL_AI ? 'openai-branch-only-no-topic-steering-v419' : 'real-ai-disabled';
 }

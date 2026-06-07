@@ -18,7 +18,12 @@ export function normalizeDifficulty(value = 'Orta') {
 
 export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Sen KlinikIQ için profesyonel Türkçe TUS sorusu yazan tıp editörüsün. Yalnızca geçerli JSON döndür; markdown veya yorum yazma.
 
-Görev: kısa, hikâyeleştirilmiş, bilimsel, öğretici, tek doğru cevaplı ve ekranda doğrudan gösterilebilir bir TUS sorusu üret.
+Görev: seçilen branşta kısa, hikâyeleştirilmiş, bilimsel, öğretici, tek doğru cevaplı ve ekranda doğrudan gösterilebilir bir TUS sorusu üret.
+
+Konu seçimi:
+- Branş yalnızca üst ders/alan filtresidir; branş içinde gizli konu listesi, sabit hastalık havuzu veya yönlendirilmiş alt konu kullanma.
+- Ek hedef verilmemişse branş içinde tıbben anlamlı herhangi bir TUS konusu seç; aynı semptom/organ sistemi/duyu alanına takılı kalma.
+- Final soruda iç rehber, öğrenme hedefi açıklaması veya üretim notu gösterme.
 
 Kısa kalite kuralları:
 1) "s" alanı 2-4 doğal klinik cümlelik olgu hikâyesi olsun; ham laboratuvar/vital/görüntüleme listesi yazma. Ölçülebilir verileri "cv" veya "co" alanına madde madde koy.
@@ -35,14 +40,8 @@ Kompakt JSON şeması:
 {"b":"branş","d":"Kolay|Orta|Zor","lt":"kısa hedef","at":"diagnosis|diagnostic_test|confirmation_test|first_step|next_step|treatment|mechanism|expected_finding|unexpected_finding|contraindication|complication|prognosis|lab_interpretation|imaging_interpretation|anatomy_localization|embryology_defect","dem":"demografi","set":"ortam","cc":"başvuru","s":"hikâyeleştirilmiş olgu","cv":[{"label":"","value":""}],"co":[{"label":"","value":""}],"q":"net soru?","o":["A","B","C","D","E"],"c":"A|B|C|D|E","e":"2 kısa cümle","f":["A feedback","B feedback","C feedback","D feedback","E feedback"],"k":["ipucu1","ipucu2"],"p":"tek kısa sınav ipucu","m":[]}`;
 
 export function buildRecentCompact(recentQuestionSummaries = []) {
-  const rows = Array.isArray(recentQuestionSummaries) ? recentQuestionSummaries : [];
-  const compact = rows.slice(0, 5).map((item, index) => {
-    const target = cleanText(item.learningTarget || item.answerTarget || item.target || '').slice(0, 48);
-    const correct = cleanText(item.correctAnswerText || item.correct || item.correctAnswer || '').slice(0, 42);
-    const stem = cleanText(item.stem || item.normalizedStem || '').slice(0, 70);
-    return `${index + 1}) ${[target, correct, stem].filter(Boolean).join(' / ')}`;
-  }).filter(Boolean);
-  return compact.length ? compact.join('; ') : 'Yok';
+  const count = Array.isArray(recentQuestionSummaries) ? recentQuestionSummaries.length : 0;
+  return count ? `${Math.min(count, 8)} yakın soru var; içerikleri prompta eklenmedi.` : 'Yok';
 }
 
 export function buildUserPrompt({
@@ -54,6 +53,7 @@ export function buildUserPrompt({
 } = {}) {
   const branchText = cleanText(branch || 'Rastgele');
   const selectedDifficulty = normalizeDifficulty(difficulty);
-  const focus = cleanText(target) || 'Branşa uygun, son sorulardan farklı tanı/mekanizma/karar hedefi seç.';
-  return `Branş: ${branchText}\nZorluk: ${selectedDifficulty}\nOdak: ${focus}\nSon tekrarlar: ${recentCompact}\nAnti-repeat: ${cleanText(antiRepeatNonce)}\n\nKompakt JSON üret. b kesinlikle "${branchText}" olsun. Olgu hikâye gibi aksın; ölçüm/tetkikleri cv/co paneline ayır. Aynı tanı, aynı ana ipucu, aynı seçenek seti veya aynı klinik karar mantığını tekrar etme.`;
+  const explicitTarget = cleanText(target);
+  const targetLine = explicitTarget ? `\nEk hedef: ${explicitTarget}` : '';
+  return `Branş: ${branchText}\nZorluk: ${selectedDifficulty}${targetLine}\nYakın tekrar durumu: ${recentCompact}\nAnti-repeat: ${cleanText(antiRepeatNonce)}\n\nKompakt JSON üret. b kesinlikle "${branchText}" olsun. Branş içi konu seçimini serbest yap; gizli konu havuzu veya son soru metinlerinden konu yönlendirmesi kullanma. Olgu hikâye gibi aksın; ölçüm/tetkikleri cv/co paneline ayır.`;
 }
