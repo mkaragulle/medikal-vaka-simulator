@@ -34,7 +34,7 @@ Goal: produce one original, single-best-answer Turkish TUS item that would score
 NON-NEGOTIABLE QUALITY RULES
 1) Stem-feedback lock: every fact used in explanation, evidenceChain, examPearl or option feedback must be explicitly visible in the stem. Never add hidden data later. If a lab, imaging result, stability status, treatment already given, threshold or exposure is needed to justify the answer, write it in the stem first.
 2) One best answer: if two options could be acceptable, rewrite the stem with decision-critical context such as stability, timing, severity, threshold, previous failed treatment, imaging stage, intent (screening/confirmation/lateralization/definitive treatment) or contraindication.
-3) Balanced answer key: place the true answer in the requested correct-answer letter by reordering options. Do not default to A/B. Do not make the correct option longer, more detailed or more polished than the distractors.
+3) Balanced answer key: use the requested correct-answer letter as a preference, not at the expense of medical correctness. If reordering options can preserve the same valid question, place the true answer in that letter; otherwise choose the medically best answer and keep the item valid. Do not default to A/B.
 4) Task variety: do not overuse “ilk test/en uygun sonraki adım”. Depending on the requested focus, also use diagnosis, mechanism, expected/unexpected finding, contraindication, complication, prognosis, lab/imaging interpretation or anatomy/localization questions.
 5) Realistic difficulty: Kolay = classic direct cue; Orta = diagnosis plus algorithm/interpretation; Zor = at least two plausible same-algorithm distractors and a clear discriminating clue. Do not label classic direct recall as Zor unless the options require a genuine distinction.
 6) Plausible distractors: all five options must be the same conceptual category when possible. At least two wrong options should be tempting but wrong because of timing, indication, disease subtype, mechanism or algorithm step.
@@ -64,7 +64,7 @@ OUTPUT FIELD RULES
 - managementSteps: [] unless answerTarget is first_step, next_step, treatment, management or emergency; then give 2-4 ordered steps.
 
 FINAL SELF-CHECK BEFORE JSON
-Pass all: stem alone solves it; no explanation-only facts; one best answer; requested correct letter used; at least 2 strong distractors; no generic feedback; no answer leak by option length; no malformed Turkish; no repeated feedback; realistic difficulty; medically accurate mechanism.
+Pass all: stem alone solves it; no explanation-only facts; one best answer; preferred correct letter used when medically natural; at least 2 strong distractors; no generic feedback; no answer leak by option length; no malformed Turkish; no repeated feedback; realistic difficulty; medically accurate mechanism.
 
 Return JSON in this exact schema:
 {
@@ -140,11 +140,11 @@ Task values:
 - Difficulty: ${selectedDifficulty}
 - Focus: ${preferredFocus}
 - Output depth: ${outputDepthInstruction}
-- Required correctAnswer letter: ${answerLetter || 'Use the least represented A-E option; never default to A.'}
+- Preferred correctAnswer letter: ${answerLetter || 'Use the least represented A-E option when natural; never default to A.'}
 - Anti-repeat key: ${cleanText(antiRepeatNonce)}-${attempt}
 
 Recent outputs to avoid repeating topic, stem structure, option set, answer and question type:
 ${recentCompact}
 
-Must pass before output: correctAnswer is ${answerLetter || 'balanced across A-E'}; stem contains every fact used in explanation/feedback; no generic feedback; at least two plausible distractors; no hidden labs/imaging in feedback; relatedBranch must be "${branchText}"; difficulty must be "${selectedDifficulty}". Return only valid JSON.`;
+Must pass before output: correctAnswer preferably uses ${answerLetter || 'a balanced A-E letter'} when option reordering keeps the item medically valid; stem contains every fact used in explanation/feedback; no generic feedback; at least two plausible distractors; no hidden labs/imaging in feedback; relatedBranch must be "${branchText}"; difficulty must be "${selectedDifficulty}". Return only valid JSON.`;
 }

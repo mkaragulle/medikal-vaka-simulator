@@ -7,7 +7,7 @@ import {
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v41-9of10-balanced-answer-quality-gate';
+const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v42-ai-preserving-soft-quality-gate';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -1015,10 +1015,15 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
   const result = await callOpenAI(prompt, { detailMode });
   if (!result) throw new Error('OPENAI_API_KEY tanımlı değil; AI üretim yapılamadı.');
   const sanitized = sanitizeQuestion(result.question, branch, difficulty);
+  // Correct-answer distribution is a soft target only.
+  // Never reject a medically valid live-AI question just because the model placed
+  // the answer in a different option letter; strict rejection caused excessive
+  // local safe-fallback usage. Keep it as an editorial note instead.
   if (desiredCorrectAnswer && sanitized.correctAnswer !== desiredCorrectAnswer) {
-    const error = new Error(`correctAnswer dağılım hedefiyle uyumsuz: beklenen ${desiredCorrectAnswer}, gelen ${sanitized.correctAnswer}`);
-    error.question = sanitized;
-    throw error;
+    sanitized.qualityNotes = [
+      ...(Array.isArray(sanitized.qualityNotes) ? sanitized.qualityNotes : []),
+      `Doğru şık dağılım hedefi yumuşak uyarı: hedef ${desiredCorrectAnswer}, gelen ${sanitized.correctAnswer}.`,
+    ];
   }
   sanitized.provider = 'openai';
   sanitized.openAIModel = result.model;
@@ -1028,13 +1033,12 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
   sanitized.aiMeta = { ...(sanitized.aiMeta || {}), costProfile: getAICostProfile('TUS'), detailMode };
   const validation = validateQuestion(sanitized, recentQuestionSummaries);
   if (!validation.ok) {
-    // V398 balanced gate:
-    // Hard-block only errors that make the question unsafe, structurally invalid,
-    // impossible to solve from the stem, malformed, or answer-leaking.
-    // Educational polish issues are kept as quality notes so live AI generation
-    // does not collapse into safe local fallback on every request.
+    // V404 AI-preserving balanced gate:
+    // Hard-block only structural/safety failures.
+    // Educational quality issues stay as qualityNotes; they must not force
+    // local safe fallback when a live OpenAI question was successfully produced.
     const hardBlockingErrors = validation.errors.filter((message) =>
-      /branch eksik|stem çok kısa|stem placeholder|görünür klinik patern yok|klinik olgu yetersiz|soruyu çözdürecek|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kanıt zinciri ana metindeki|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda|feedback eksik|feedback eksik veya zayıf|jenerik\/yasak feedback|doğru cevap açıklaması klinik|TUS ipucu karar|feedback içinde tekrar|seçenekler aynı kavramsal kategoride değil/iu.test(message)
+      /branch eksik|stem çok kısa|stem placeholder|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda/iu.test(message)
     );
 
     if (hardBlockingErrors.length) {
@@ -1077,7 +1081,7 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
     const validation = validateQuestion(candidate, recentQuestionSummaries);
     if (validation.ok) return true;
     return !validation.errors.some((message) =>
-      /branch eksik|stem çok kısa|stem placeholder|görünür klinik patern yok|klinik olgu yetersiz|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|kanıt zinciri ana metindeki|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda|feedback eksik|feedback eksik veya zayıf|jenerik\/yasak feedback|doğru cevap açıklaması klinik|TUS ipucu karar|feedback içinde tekrar/iu.test(message)
+      /branch eksik|stem çok kısa|stem placeholder|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda/iu.test(message)
     );
   });
   if (!reusable) return null;
