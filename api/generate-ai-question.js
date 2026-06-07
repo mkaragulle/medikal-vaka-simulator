@@ -7,7 +7,7 @@ import {
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v42-ai-preserving-soft-quality-gate';
+const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v46-lean-quality-anti-repeat';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -17,7 +17,13 @@ function currentTusModel() {
 }
 
 function useQuestionBank() {
-  return envFlag('KLINIKIQ_AI_QUESTION_BANK', true);
+  // Disabled by default for live "Yeni TUS sorusu" generation; enable explicitly for reuse/demo modes.
+  return envFlag('KLINIKIQ_AI_QUESTION_BANK', false);
+}
+
+function useOutputCache() {
+  // Output cache can save cost, but it may weaken the user's expectation of a fresh question.
+  return envFlag('KLINIKIQ_TUS_OUTPUT_CACHE', false) || envFlag('KLINIKIQ_AI_OUTPUT_CACHE', false);
 }
 
 
@@ -502,6 +508,8 @@ function countClinicalCueGroups(question = {}) {
     question.setting,
     question.chiefComplaint,
     question.stem,
+    ...compactItems(question.compactVitals || question.vitals || [], 5).flatMap((item) => [item.label, item.value]),
+    ...compactItems(question.compactObjectiveData || question.objectiveData || [], 8).flatMap((item) => [item.label, item.value]),
   ].filter(Boolean).join(' '));
 
   const groups = [
@@ -528,6 +536,8 @@ function hasSufficientClinicalVignette(question = {}) {
     question.setting,
     question.chiefComplaint,
     stem,
+    ...compactItems(question.compactVitals || question.vitals || [], 5).flatMap((item) => [item.label, item.value]),
+    ...compactItems(question.compactObjectiveData || question.objectiveData || [], 8).flatMap((item) => [item.label, item.value]),
   ].filter(Boolean).join(' '));
   const basicScience = isBasicScienceBranch(branch);
   const stemWords = wordCount(stem);
@@ -575,6 +585,8 @@ function hasEvidenceBasedOnVisibleStem(question = {}) {
     question.setting,
     question.chiefComplaint,
     question.stem,
+    ...compactItems(question.compactVitals || question.vitals || [], 5).flatMap((item) => [item.label, item.value]),
+    ...compactItems(question.compactObjectiveData || question.objectiveData || [], 8).flatMap((item) => [item.label, item.value]),
   ].filter(Boolean).join(' '));
   const evidence = asArray(question.evidenceChain).map((item) => normalize(item)).filter(Boolean);
   if (evidence.length !== 3) return false;
@@ -685,7 +697,7 @@ function isGenericOrPlaceholderStem(stem = '') {
   const value = normalize(stem);
   if (!value) return true;
   const wordCount = cleanText(stem).split(/\s+/).filter(Boolean).length;
-  if (wordCount < 32) return true;
+  if (wordCount < 18) return true;
   return [
     /kisa klinik baglam/,
     /karar verdirici bulgular birlikte degerlendirilir/,
@@ -701,12 +713,19 @@ function hasVisibleClinicalPattern(question = {}) {
   const stem = cleanText(question.stem || '');
   const branch = normalize(question.relatedBranch || '');
   const questionText = normalize(question.question || '');
-  const combined = normalize([question.demographics, question.setting, question.chiefComplaint, question.stem].filter(Boolean).join(' '));
+  const combined = normalize([
+    question.demographics,
+    question.setting,
+    question.chiefComplaint,
+    question.stem,
+    ...compactItems(question.compactVitals || question.vitals || [], 5).flatMap((item) => [item.label, item.value]),
+    ...compactItems(question.compactObjectiveData || question.objectiveData || [], 8).flatMap((item) => [item.label, item.value]),
+  ].filter(Boolean).join(' '));
   const hasAgeOrPatient = /\b(?:yaş|yas|aylık|aylik|günlük|gunluk|haftalık|haftalik|yenidoğan|yenidogan|bebek|çocuk|cocuk|ergen|kadın|kadin|erkek|hasta|geb[eelikli]*)\b/.test(combined);
   const hasClinicalFinding = /ateş|ates|ağrı|agri|öksürük|oksuruk|dispne|kusma|ishal|ödem|odem|döküntü|dokuntu|kanama|sarılık|sarilik|nöbet|nobet|halsizlik|kilo|büyüme|buyume|muayene|hipotansiyon|taşikardi|tasikardi|laboratuvar|sodyum|potasyum|glukoz|ph|hco3|kreatinin|lökosit|lokosit|trombosit|hemoglobin|troponin|ekg|usg|bt|mr|grafi|biyopsi|kültür|kultur|öykü|oyku/.test(combined);
   const asksFromFindings = /bu bulgulara gore|bu olguda|verilen bulgular|asagidaki testlerden|hangi test|hangi tedavi|hangi tani|hangisi/.test(questionText);
   if (asksFromFindings && (!hasAgeOrPatient || !hasClinicalFinding)) return false;
-  if (/cocuk sagligi|pediatri/.test(branch) && !/(aylık|aylik|yaş|yas|günlük|gunluk|yenidoğan|yenidogan|bebek|çocuk|cocuk|ergen)/iu.test(stem)) return false;
+  if (/cocuk sagligi|pediatri/.test(branch) && !/(aylık|aylik|yaş|yas|günlük|gunluk|yenidoğan|yenidogan|bebek|çocuk|cocuk|ergen)/iu.test(combined)) return false;
   return true;
 }
 
@@ -760,7 +779,11 @@ function hasMalformedTurkishClinicalWording(question = {}) {
 function hasAmbiguousHyperammonemiaEmergencyTarget(question = {}) {
   const rawText = collectStrings(question).join(' | ');
   const value = normalize(rawText);
-  const stem = normalize([question.stem, question.compactVitals, question.compactObjectiveData].filter(Boolean).join(' | '));
+  const stem = normalize([
+    question.stem,
+    ...compactItems(question.compactVitals || question.vitals || [], 5).flatMap((item) => [item.label, item.value]),
+    ...compactItems(question.compactObjectiveData || question.objectiveData || [], 8).flatMap((item) => [item.label, item.value]),
+  ].filter(Boolean).join(' | '));
   const questionText = normalize(question.question || '');
   const optionsText = normalize(asArray(question.options).map((option) => typeof option === 'string' ? option : option?.text || '').join(' | '));
 
@@ -792,7 +815,7 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
   const allowManagementSteps = isManagementTarget(answerTarget);
   const rawCompactVitals = compactItems(question.compactVitals || question.vitals || [], 5);
   const rawCompactObjectiveData = compactItems(question.compactObjectiveData || question.objectiveData || [], 8);
-  const integratedStem = integrateCompactDataIntoStem(question.stem, rawCompactVitals, rawCompactObjectiveData);
+  const stemText = cleanText(question.stem || '');
   const sanitized = {
     id: cleanText(question.id) || `ai-spot-openai-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     source: 'real-ai',
@@ -804,9 +827,9 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
     demographics: cleanText(question.demographics || ''),
     setting: cleanText(question.setting || ''),
     chiefComplaint: cleanText(question.chiefComplaint || ''),
-    stem: isGenericOrPlaceholderStem(integratedStem) ? '' : integratedStem,
-    compactVitals: [],
-    compactObjectiveData: [],
+    stem: isGenericOrPlaceholderStem(stemText) ? '' : stemText,
+    compactVitals: rawCompactVitals,
+    compactObjectiveData: rawCompactObjectiveData,
     question: ensureQuestion(question.question),
     options,
     correctAnswer: OPTION_IDS.includes(correctId) ? correctId : (options[0]?.id || 'A'),
@@ -822,7 +845,11 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
     managementSteps: allowManagementSteps ? asArray(question.managementSteps).map(ensureSentence).filter(Boolean).slice(0, 3) : [],
   };
   if (!sanitized.evidenceChain.length) {
-    sanitized.evidenceChain = [sanitized.stem, ...sanitized.compactObjectiveData.map((item) => `${item.label}: ${item.value}`)]
+    sanitized.evidenceChain = [
+      sanitized.stem,
+      ...sanitized.compactVitals.map((item) => `${item.label}: ${item.value}`),
+      ...sanitized.compactObjectiveData.map((item) => `${item.label}: ${item.value}`),
+    ]
       .map(ensureSentence)
       .filter(Boolean)
       .slice(0, 3);
@@ -1033,7 +1060,7 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
   sanitized.aiMeta = { ...(sanitized.aiMeta || {}), costProfile: getAICostProfile('TUS'), detailMode };
   const validation = validateQuestion(sanitized, recentQuestionSummaries);
   if (!validation.ok) {
-    // V404 AI-preserving balanced gate:
+    // V406 AI-preserving balanced gate:
     // Hard-block only structural/safety failures.
     // Educational quality issues stay as qualityNotes; they must not force
     // local safe fallback when a live OpenAI question was successfully produced.
@@ -1057,16 +1084,58 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
 }
 
 
+function tokenSet(value = '') {
+  return new Set(normalize(value).split(/\s+/u).filter((word) => word.length >= 4));
+}
+
+function overlapScore(a = '', b = '') {
+  const setA = tokenSet(a);
+  const setB = tokenSet(b);
+  if (!setA.size || !setB.size) return 0;
+  let hits = 0;
+  setA.forEach((word) => { if (setB.has(word)) hits += 1; });
+  return hits / Math.min(setA.size, setB.size);
+}
+
+function recentOptionText(item = {}) {
+  if (Array.isArray(item.optionTexts)) return item.optionTexts.join(' | ');
+  if (Array.isArray(item.options)) return item.options.map((option) => (typeof option === 'string' ? option : option?.text || option?.label || '')).join(' | ');
+  return item.optionSetSignature || '';
+}
+
+function recentCorrectText(item = {}) {
+  if (item.correctAnswerText) return item.correctAnswerText;
+  if (item.correct && !OPTION_IDS.includes(String(item.correct).toUpperCase())) return item.correct;
+  const letter = String(item.correctAnswer || item.correct || '').toUpperCase();
+  const options = Array.isArray(item.optionTexts) ? item.optionTexts : [];
+  const index = OPTION_IDS.indexOf(letter);
+  return index >= 0 ? options[index] || letter : (item.correctAnswer || '');
+}
+
 function questionMatchesRecent(question = {}, recentQuestionSummaries = []) {
   const signature = normalize(question.semanticFingerprint || question.id || '');
   const correct = normalize(getCorrectText(question));
   const target = normalize(question.learningTarget || question.answerTarget || question.question || '');
+  const branch = normalize(question.relatedBranch || '');
+  const stem = [question.stem, question.question].filter(Boolean).join(' ');
+  const optionSet = normalizeOptions(question.options).map((item) => item.text).sort().join(' | ');
+
   return asArray(recentQuestionSummaries).some((item) => {
     const itemSignature = normalize(item.semanticFingerprint || item.id || item.questionId || '');
     if (signature && itemSignature && signature === itemSignature) return true;
-    const itemCorrect = normalize(item.correct || item.correctAnswerText || item.correctAnswer || '');
-    const itemTarget = normalize(item.learningTarget || item.answerTarget || item.question || '');
-    return Boolean(correct && itemCorrect && correct === itemCorrect && target && itemTarget && target === itemTarget);
+
+    const itemBranch = normalize(item.branch || item.relatedBranch || item.branchName || '');
+    const sameBranch = !branch || !itemBranch || branch === itemBranch;
+    const itemCorrect = normalize(recentCorrectText(item));
+    const itemTarget = normalize(item.learningTarget || item.answerTarget || item.questionType || item.question || '');
+    const itemStem = [item.stem, item.normalizedStem, item.question].filter(Boolean).join(' ');
+    const itemOptions = recentOptionText(item);
+
+    if (correct && itemCorrect && correct === itemCorrect && target && itemTarget && overlapScore(target, itemTarget) >= 0.75) return true;
+    if (sameBranch && stem && itemStem && overlapScore(stem, itemStem) >= 0.72) return true;
+    if (sameBranch && optionSet && itemOptions && overlapScore(optionSet, itemOptions) >= 0.85) return true;
+    if (sameBranch && correct && itemCorrect && correct === itemCorrect && target && itemTarget && overlapScore(target, itemTarget) >= 0.55) return true;
+    return false;
   });
 }
 
@@ -1114,13 +1183,22 @@ export default async function handler(request, response) {
   const errors = [];
   const target = body.target || body.answerTarget || '';
   const model = currentTusModel();
+  const outputCacheEnabled = body.useOutputCache === true || useOutputCache();
+  const generationNonce = cleanText(body.antiRepeatNonce || body.requestId || `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`);
+  const recentCacheFingerprint = recentQuestionSummaries.map((item) => item?.semanticFingerprint || item?.id || item?.questionId || stableHash([
+    item?.branch || item?.relatedBranch || '',
+    item?.learningTarget || item?.answerTarget || '',
+    item?.correct || item?.correctAnswerText || item?.correctAnswer || '',
+    item?.stem || item?.question || '',
+    asArray(item?.optionTexts || item?.options).join(' | '),
+  ].filter(Boolean).join(' :: '))).slice(0, 10);
   const oneShotCacheKey = buildOutputCacheKey({
     scope: 'TUS',
     task: TASK_NAME,
     promptVersion: PROMPT_VERSION,
     model,
     sourceFingerprint: `${branch}:${requestedDifficulty}:${target || 'general'}`,
-    extra: { recent: recentQuestionSummaries.map((item) => item?.semanticFingerprint || item?.id || item?.learningTarget || '').slice(0, 6) },
+    extra: { recent: recentCacheFingerprint, nonce: outputCacheEnabled ? '' : generationNonce },
   });
 
   return await withInFlightDedupe(oneShotCacheKey, async () => {
@@ -1136,10 +1214,12 @@ export default async function handler(request, response) {
       });
     }
 
-    const cachedPayload = await getDurableCachedOutput(oneShotCacheKey);
-    if (cachedPayload?.question && !questionMatchesRecent(cachedPayload.question, recentQuestionSummaries)) {
-      logAIUsage({ task: `${TASK_NAME}:outputCache`, model: cachedPayload.question.openAIModel || model, cached: true, apiStyle: 'output_cache' });
-      return sendJson(response, 200, { ok: true, cached: true, fallback: false, provider: cachedPayload.provider || 'openai-output-cache', question: cachedPayload.question });
+    if (outputCacheEnabled) {
+      const cachedPayload = await getDurableCachedOutput(oneShotCacheKey);
+      if (cachedPayload?.question && !questionMatchesRecent(cachedPayload.question, recentQuestionSummaries)) {
+        logAIUsage({ task: `${TASK_NAME}:outputCache`, model: cachedPayload.question.openAIModel || model, cached: true, apiStyle: 'output_cache' });
+        return sendJson(response, 200, { ok: true, cached: true, fallback: false, provider: cachedPayload.provider || 'openai-output-cache', question: cachedPayload.question });
+      }
     }
 
     if (!envFlag('KLINIKIQ_LIVE_TUS_AI', true)) {
@@ -1153,9 +1233,9 @@ export default async function handler(request, response) {
     const detailMode = tusQuestionDetailMode();
     for (let attempt = 1; attempt <= remoteAttempts; attempt += 1) {
     try {
-      const question = await generateRemote({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries, attempt, antiRepeatNonce: body.antiRepeatNonce, detailMode });
+      const question = await generateRemote({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries, attempt, antiRepeatNonce: generationNonce, detailMode });
         await storeReusableQuestion({ branch, target, difficulty: requestedDifficulty, question });
-        await setDurableCachedOutput(oneShotCacheKey, { provider: 'openai-output-cache', question });
+        if (outputCacheEnabled) await setDurableCachedOutput(oneShotCacheKey, { provider: 'openai-output-cache', question });
         return sendJson(response, 200, {
         ok: true,
         provider: 'openai',
