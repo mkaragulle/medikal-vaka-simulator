@@ -7,7 +7,7 @@ import {
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v40-balanced-clinical-quality-gate';
+const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v41-9of10-balanced-answer-quality-gate';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -120,6 +120,29 @@ function chooseBranch(branchFilter = 'random') {
     return ALLOWED_BRANCHES[Math.floor(Math.random() * ALLOWED_BRANCHES.length)];
   }
   return raw;
+}
+
+function extractCorrectAnswerLetter(item = {}) {
+  const candidates = [item.correctAnswer, item.correctAnswerId, item.answer, item.selectedAnswer];
+  for (const candidate of candidates) {
+    const value = String(candidate || '').trim().toUpperCase();
+    if (OPTION_IDS.includes(value)) return value;
+  }
+  return '';
+}
+
+function chooseDesiredCorrectAnswer(recentQuestionSummaries = [], attempt = 1, antiRepeatNonce = '') {
+  const counts = OPTION_IDS.reduce((acc, id) => ({ ...acc, [id]: 0 }), {});
+  asArray(recentQuestionSummaries).slice(0, 25).forEach((item) => {
+    const letter = extractCorrectAnswerLetter(item);
+    if (letter) counts[letter] += 1;
+  });
+  const min = Math.min(...OPTION_IDS.map((id) => counts[id]));
+  const candidates = OPTION_IDS.filter((id) => counts[id] === min);
+  const seedText = normalize(`${antiRepeatNonce || ''}-${attempt}-${Date.now()}`);
+  let seed = attempt;
+  for (let index = 0; index < seedText.length; index += 1) seed = (seed + seedText.charCodeAt(index)) % 997;
+  return candidates[seed % candidates.length] || OPTION_IDS[(attempt - 1) % OPTION_IDS.length];
 }
 
 function normalizeOptions(rawOptions = []) {
@@ -318,6 +341,9 @@ const FORBIDDEN_PHRASES = [
   /diğer seçeneklerden ayrılır/iu,
   /olgudaki veriler birlikte değerlendirildiğinde/iu,
   /bu seçenek bu soru hedefi/iu,
+  /ana karar noktasını .* karşılamaz/iu,
+  /doğru seçenek kadar iyi/iu,
+  /bu seçenek bu olgudaki/iu,
   /bu klinik hedef için uygundur/iu,
   /^\s*(?:n|h)\.?\s*$/iu,
   /^\s*tanıyı destekler\.?\s*$/iu,
@@ -805,13 +831,11 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
     sanitized.evidenceChain.push('Olgu kökü, seçenekler arasında tek en iyi yanıt seçmeyi gerektirir.');
   }
   OPTION_IDS.forEach((id) => {
-    if (!cleanText(sanitized.wrongOptionFeedback[id])) {
-      sanitized.wrongOptionFeedback[id] = id === sanitized.correctAnswer
-        ? ensureSentence(sanitized.explanation || `${correctText} bu olguda en uygun yanıttır`)
-        : 'Bu seçenek bu olgudaki ana karar noktasını doğru seçenek kadar iyi karşılamaz.';
+    if (!cleanText(sanitized.wrongOptionFeedback[id]) && id === sanitized.correctAnswer) {
+      sanitized.wrongOptionFeedback[id] = ensureSentence(sanitized.explanation || `${correctText} bu olguda en uygun yanıttır`);
     }
   });
-  if (!cleanText(sanitized.examPearl)) sanitized.examPearl = 'Soru kökünde verilen ayırt ettirici ipuçları, seçenekleri aynı karar ekseninde karşılaştırarak kullanılmalıdır.';
+  if (!cleanText(sanitized.examPearl)) sanitized.examPearl = '';
   sanitized.correctAnswerText = correctText;
   sanitized.semanticFingerprint = makeSignature(sanitized);
   return sanitized;
@@ -870,7 +894,7 @@ function tusQuestionDetailMode() {
   return mode === 'concise' ? 'standard' : mode;
 }
 
-function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummaries = [], attempt = 1, antiRepeatNonce = '', detailMode = tusQuestionDetailMode() }) {
+function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummaries = [], attempt = 1, antiRepeatNonce = '', detailMode = tusQuestionDetailMode(), desiredCorrectAnswer = '' }) {
   const answerTarget = cleanText(target || '');
   const selectedDifficulty = normalizeDifficulty(difficulty);
   const recentCompact = buildRecentCompact(recentQuestionSummaries);
@@ -882,6 +906,7 @@ function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummar
     attempt,
     antiRepeatNonce: antiRepeatNonce || Date.now(),
     detailMode,
+    desiredCorrectAnswer,
   });
 }
 
@@ -985,10 +1010,16 @@ async function callOpenAI(prompt, { detailMode = tusQuestionDetailMode() } = {})
 }
 
 async function generateRemote({ branch, target, difficulty, recentQuestionSummaries, attempt, antiRepeatNonce, detailMode = tusQuestionDetailMode() }) {
-  const prompt = buildPrompt({ branch, target, difficulty, recentQuestionSummaries, attempt, antiRepeatNonce, detailMode });
+  const desiredCorrectAnswer = chooseDesiredCorrectAnswer(recentQuestionSummaries, attempt, antiRepeatNonce);
+  const prompt = buildPrompt({ branch, target, difficulty, recentQuestionSummaries, attempt, antiRepeatNonce, detailMode, desiredCorrectAnswer });
   const result = await callOpenAI(prompt, { detailMode });
   if (!result) throw new Error('OPENAI_API_KEY tanımlı değil; AI üretim yapılamadı.');
   const sanitized = sanitizeQuestion(result.question, branch, difficulty);
+  if (desiredCorrectAnswer && sanitized.correctAnswer !== desiredCorrectAnswer) {
+    const error = new Error(`correctAnswer dağılım hedefiyle uyumsuz: beklenen ${desiredCorrectAnswer}, gelen ${sanitized.correctAnswer}`);
+    error.question = sanitized;
+    throw error;
+  }
   sanitized.provider = 'openai';
   sanitized.openAIModel = result.model;
   sanitized.openAIMode = result.mode;
@@ -1003,7 +1034,7 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
     // Educational polish issues are kept as quality notes so live AI generation
     // does not collapse into safe local fallback on every request.
     const hardBlockingErrors = validation.errors.filter((message) =>
-      /branch eksik|stem çok kısa|stem placeholder|görünür klinik patern yok|klinik olgu yetersiz|soruyu çözdürecek|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda/iu.test(message)
+      /branch eksik|stem çok kısa|stem placeholder|görünür klinik patern yok|klinik olgu yetersiz|soruyu çözdürecek|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kanıt zinciri ana metindeki|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda|feedback eksik|feedback eksik veya zayıf|jenerik\/yasak feedback|doğru cevap açıklaması klinik|TUS ipucu karar|feedback içinde tekrar|seçenekler aynı kavramsal kategoride değil/iu.test(message)
     );
 
     if (hardBlockingErrors.length) {
@@ -1046,7 +1077,7 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
     const validation = validateQuestion(candidate, recentQuestionSummaries);
     if (validation.ok) return true;
     return !validation.errors.some((message) =>
-      /branch eksik|stem çok kısa|stem placeholder|görünür klinik patern yok|klinik olgu yetersiz|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda/iu.test(message)
+      /branch eksik|stem çok kısa|stem placeholder|görünür klinik patern yok|klinik olgu yetersiz|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|kanıt zinciri ana metindeki|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda|feedback eksik|feedback eksik veya zayıf|jenerik\/yasak feedback|doğru cevap açıklaması klinik|TUS ipucu karar|feedback içinde tekrar/iu.test(message)
     );
   });
   if (!reusable) return null;
