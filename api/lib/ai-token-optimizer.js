@@ -86,17 +86,10 @@ function sanitizeCachePart(value = '') {
 }
 
 export function buildPromptCacheConfig(scope = 'klinikiq', task = 'default', promptVersion = 'v1') {
-  if (!envFlag('OPENAI_PROMPT_CACHE_KEY', false)) return {};
-
-  // OpenAI currently rejects prompt_cache_key values longer than 64 chars.
-  // Keep human-readable keys when possible; otherwise use a stable short hash.
-  const rawKey = `klinikiq:${sanitizeCachePart(scope)}:${sanitizeCachePart(task)}:${sanitizeCachePart(promptVersion)}`;
-  const promptCacheKey = rawKey.length <= 64 ? rawKey : `klinikiq:${sha256(rawKey).slice(0, 54)}`;
-
-  const config = { prompt_cache_key: promptCacheKey };
-  const retention = safeString(process.env.OPENAI_PROMPT_CACHE_RETENTION || '24h');
-  if (retention) config.prompt_cache_retention = retention;
-  return config;
+  // Disabled intentionally: prompt_cache_key is not needed for KlinikIQ's simple direct AI flow.
+  // Avoid sending provider-specific cache parameters so no character-limit or unsupported-parameter
+  // error can block question generation.
+  return {};
 }
 
 export function buildOutputCacheKey({ scope = 'klinikiq', task = 'default', promptVersion = 'v1', model = '', sourceFingerprint = '', extra = {} } = {}) {

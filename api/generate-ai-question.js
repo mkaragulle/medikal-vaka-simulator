@@ -5,7 +5,6 @@ import {
   normalizeDifficulty,
 } from './tus-question-prompt.js';
 import {
-  buildPromptCacheConfig,
   defaultReasoningEffortForProfile,
   defaultVerbosityForProfile,
   envNumber,
@@ -14,7 +13,7 @@ import {
 } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v411-simple-direct-no-gates';
+const PROMPT_VERSION = 'klinikiq-v414-sade-prompts-replaced';
 const SCHEMA_VERSION = 'simple-ai-spot-v3-compact';
 const TASK_NAME = 'tusSpotQuestion';
 
@@ -304,19 +303,6 @@ function createAbortSignal(timeoutMs) {
   return { signal: controller.signal, cancel: () => clearTimeout(timeout) };
 }
 
-function isPromptCacheProviderError(status, text = '') {
-  return Number(status) >= 400
-    && Number(status) < 500
-    && /prompt_cache_key|prompt_cache_retention|unknown parameter|unrecognized|unsupported parameter|string_above_max_length/i.test(String(text || ''));
-}
-
-function stripPromptCacheParams(body = {}) {
-  const next = { ...body };
-  delete next.prompt_cache_key;
-  delete next.prompt_cache_retention;
-  return next;
-}
-
 async function callOpenAI(prompt) {
   const apiKey = process.env.TUS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
   if (!apiKey) {
@@ -337,7 +323,6 @@ async function callOpenAI(prompt) {
   const { signal, cancel } = createAbortSignal(timeoutMs);
 
   try {
-    const promptCacheConfig = buildPromptCacheConfig('TUS', TASK_NAME, PROMPT_VERSION);
     const body = useResponses
       ? {
           model,
@@ -348,7 +333,6 @@ async function callOpenAI(prompt) {
           max_output_tokens: maxTokens,
           store: false,
           truncation: 'auto',
-          ...promptCacheConfig,
         }
       : {
           model,
@@ -358,7 +342,6 @@ async function callOpenAI(prompt) {
           ],
           response_format: { type: 'json_object' },
           max_completion_tokens: maxTokens,
-          ...promptCacheConfig,
         };
     if (!useResponses && modelSupportsReasoningEffort(model)) body.reasoning_effort = reasoningEffort;
 
@@ -374,10 +357,7 @@ async function callOpenAI(prompt) {
       return { res, text };
     };
 
-    let { res: response, text: textResponse } = await sendBody(body);
-    if (!response.ok && (body.prompt_cache_key || body.prompt_cache_retention) && isPromptCacheProviderError(response.status, textResponse)) {
-      ({ res: response, text: textResponse } = await sendBody(stripPromptCacheParams(body)));
-    }
+    const { res: response, text: textResponse } = await sendBody(body);
 
     if (!response.ok) {
       const error = new Error(`OpenAI ${response.status}: ${textResponse.slice(0, 500)}`);
