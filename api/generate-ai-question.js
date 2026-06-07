@@ -14,7 +14,7 @@ import {
 } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v410-simple-tus-compact-json';
+const PROMPT_VERSION = 'klinikiq-v411-simple-direct-no-gates';
 const SCHEMA_VERSION = 'simple-ai-spot-v3-compact';
 const TASK_NAME = 'tusSpotQuestion';
 
@@ -147,10 +147,14 @@ function compactItems(items = [], max = 8) {
 }
 
 function normalizeOptions(raw = []) {
-  const arr = Array.isArray(raw) ? raw : [];
+  const arr = Array.isArray(raw)
+    ? raw
+    : raw && typeof raw === 'object'
+      ? OPTION_IDS.map((id) => raw[id] || raw[id.toLowerCase()] || raw[`option${id}`])
+      : [];
   return OPTION_IDS.map((id, index) => {
     const source = arr.find((item) => typeof item === 'object' && String(item?.id || '').toUpperCase() === id) ?? arr[index];
-    const text = standardizeTurkishMedicalText(typeof source === 'string' ? source : source?.text || source?.label || '');
+    const text = standardizeTurkishMedicalText(typeof source === 'string' ? source : source?.text || source?.label || source?.value || '');
     return { id, text };
   }).filter((option) => option.text);
 }
@@ -167,9 +171,11 @@ function resolveCorrectId(payload = {}, options = []) {
 }
 
 function feedbackObject(rawFeedback = [], correctId = 'A', explanation = '') {
-  const arr = Array.isArray(rawFeedback) ? rawFeedback : OPTION_IDS.map((id) => rawFeedback?.[id] || '');
+  const arr = Array.isArray(rawFeedback)
+    ? rawFeedback
+    : OPTION_IDS.map((id) => rawFeedback?.[id] || rawFeedback?.[id.toLowerCase()] || rawFeedback?.[`option${id}`] || '');
   return OPTION_IDS.reduce((acc, id, index) => {
-    const fallback = id === correctId ? explanation : 'Bu seçenek bu olgudaki ayırt ettirici bulgularla en iyi uyumlu değildir.';
+    const fallback = id === correctId ? explanation : 'Bu seçenek aynı karar alanındadır; ancak soru kökündeki ayırt ettirici ipuçları doğru cevabı daha güçlü destekler.';
     acc[id] = ensureSentence(standardizeTurkishMedicalText(arr[index] || fallback));
     return acc;
   }, {});
@@ -186,7 +192,15 @@ function getJsonCandidate(text = '') {
 }
 
 function parseModelJson(text = '') {
-  return JSON.parse(getJsonCandidate(text));
+  const candidate = getJsonCandidate(text);
+  try {
+    return JSON.parse(candidate);
+  } catch (error) {
+    const repaired = candidate
+      .replace(/,\s*([}\]])/g, '$1')
+      .replace(/[\u0000-\u001F\u007F]+/g, ' ');
+    return JSON.parse(repaired);
+  }
 }
 
 function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, mode } = {}) {
@@ -234,15 +248,16 @@ function assertUsableQuestion(question = {}) {
   const errors = [];
   if (!cleanText(question.stem)) errors.push('soru kökü boş');
   if (!cleanText(question.question)) errors.push('soru cümlesi boş');
-  if (!Array.isArray(question.options) || question.options.length !== 5) errors.push('tam 5 seçenek yok');
-  if (!OPTION_IDS.includes(String(question.correctAnswer || '').toUpperCase())) errors.push('correctAnswer A-E değil');
+  if (!Array.isArray(question.options) || question.options.length !== 5) errors.push(`tam 5 seçenek yok (${question.options?.length || 0})`);
+  if (!OPTION_IDS.includes(String(question.correctAnswer || '').toUpperCase())) errors.push(`correctAnswer A-E değil (${question.correctAnswer || 'boş'})`);
   if (!cleanText(question.explanation)) errors.push('açıklama boş');
   if (errors.length) {
-    const error = new Error(errors.join('; '));
+    const error = new Error(`Model JSON döndü ama temel soru alanları eksik: ${errors.join('; ')}`);
     error.statusCode = 422;
     throw error;
   }
 }
+
 
 function extractChatText(payload = {}) {
   const content = payload?.choices?.[0]?.message?.content;
@@ -300,7 +315,7 @@ async function callOpenAI(prompt) {
   const model = resolveModelForScope('TUS');
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
   const timeoutMs = envNumber('TUS_OPENAI_PER_REQUEST_TIMEOUT_MS', envNumber('OPENAI_PER_REQUEST_TIMEOUT_MS', 25000));
-  const maxTokens = envNumber('TUS_OPENAI_MAX_OUTPUT_TOKENS', envNumber('OPENAI_MAX_OUTPUT_TOKENS', 900));
+  const maxTokens = envNumber('TUS_OPENAI_MAX_OUTPUT_TOKENS', envNumber('OPENAI_MAX_OUTPUT_TOKENS', 1100));
   const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';

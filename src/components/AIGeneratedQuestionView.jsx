@@ -646,13 +646,14 @@ function AIReadyState({ branchFilter, difficulty, onGenerateQuestion }) {
   );
 }
 
-function AIErrorState({ onGenerateQuestion }) {
+function AIErrorState({ error, onGenerateQuestion }) {
+  const message = error?.message || 'AI servisi bu denemede geçerli bir soru döndüremedi.';
   return (
     <section className="ai-generation-state card-surface error" aria-live="polite">
       <span className="ai-generation-orb" aria-hidden="true"><Icon name="AlertTriangle" /></span>
       <div>
-        <h2>Uygun soru üretilemedi.</h2>
-        <p>Bu denemede TUS dili, bilimsel doğruluk ve tekrar kontrolünden geçen yeni bir soru oluşturulamadı. Farklı bir branş seçerek yeniden deneyebilirsin.</p>
+        <h2>AI sorusu oluşturulamadı.</h2>
+        <p>Bu artık kalite gate veya yerel fallback mesajı değildir. Gerçek hata: {message}</p>
       </div>
       <button type="button" className="btn btn-primary" onClick={onGenerateQuestion}>
         <Icon name="RotateCcw" /> Tekrar dene
@@ -832,7 +833,7 @@ function AIGeneratedQuestionView({
           />
         </div>
       ) : null}
-      {!loading && error ? <AIErrorState onGenerateQuestion={onGenerateQuestion} /> : null}
+      {!loading && error ? <AIErrorState error={error} onGenerateQuestion={onGenerateQuestion} /> : null}
       {!loading && !error && !question ? (
         <AIReadyState branchFilter={branchFilter} difficulty={difficulty} onGenerateQuestion={onGenerateQuestion} />
       ) : null}

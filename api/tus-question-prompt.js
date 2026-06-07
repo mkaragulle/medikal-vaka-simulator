@@ -1,4 +1,4 @@
-// KlinikIQ V410 — simple, low-token TUS prompt
+// KlinikIQ V411 — simple, low-token TUS prompt
 // One job: produce a professional Turkish TUS-style single-best-answer question.
 
 function cleanText(value = '') {
@@ -16,7 +16,7 @@ export function normalizeDifficulty(value = 'Orta') {
   return 'Orta';
 }
 
-export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Sen KlinikIQ için profesyonel Türkçe TUS sorusu yazan bir tıp editörüsün. Yalnızca geçerli JSON döndür.
+export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Sen KlinikIQ için profesyonel Türkçe TUS sorusu yazan bir tıp editörüsün. Yalnızca geçerli JSON döndür; markdown yazma.
 
 Amaç: kısa, bilimsel, öğretici, tek doğru cevaplı TUS sorusu üretmek.
 
@@ -24,7 +24,7 @@ Kurallar:
 - Soru kökü tek başına doğru cevabı seçtirmeli; açıklama/feedback kökte veya veri panelinde olmayan hasta-özel bilgi eklememeli.
 - İki seçenek savunulabiliyorsa köke ayırt ettirici eşik, zamanlama, stabilite, tetkik veya dışlama bilgisi ekle.
 - Beş seçenek aynı kategoriden, benzer uzunlukta ve ciddi çeldirici olsun; doğru şık uzunlukla ele vermesin.
-- Açıklama en fazla 2 cümle; her şık feedbacki 1 kısa, seçenek-özel öğretici cümle olsun.
+- Açıklama 2 kısa cümle; her şık feedbacki 1 kısa, seçenek-özel öğretici cümle olsun.
 - Zorluk gerçekçi olsun: klasik bilgi Orta, algoritma/eşik/mekanizma ayrımı Zor.
 - Temiz Türkçe tıp dili kullan; İngilizce kırıntı, bozuk terim ve jenerik “uygun değildir” feedbacki bırakma.
 
