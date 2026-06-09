@@ -131,5 +131,5 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
 }
 
 export function getAIServiceMode() {
-  return ENABLE_REAL_AI ? 'openai-qc-min-token-v436' : 'real-ai-disabled';
+  return ENABLE_REAL_AI ? 'openai-skeleton-feedback-v437' : 'real-ai-disabled';
 }

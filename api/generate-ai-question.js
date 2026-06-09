@@ -6,8 +6,8 @@ import {
 import { envNumber, logAIUsage, resolveModelForScope } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v436-qc-min-token';
-const SCHEMA_VERSION = 'simple-ai-spot-v11-qc-minimal';
+const PROMPT_VERSION = 'klinikiq-v437-skeleton-feedback-min-token';
+const SCHEMA_VERSION = 'simple-ai-spot-v12-skeleton-feedback';
 const TASK_NAME = 'tusSpotQuestion';
 
 const ALLOWED_BRANCHES = [
@@ -101,7 +101,16 @@ function normalizeMedicalTurkish(value = '') {
     .replace(/\brekürren\b/giu, 'tekrarlayan')
     .replace(/\babsolute lymphocyte count\b/giu, 'mutlak lenfosit sayısı')
     .replace(/\bplatelet count\b/giu, 'trombosit sayısı')
-    .replace(/\btrombozitoz\b/giu, 'trombositopeni');
+    .replace(/\btrombozitoz\b/giu, 'trombositopeni')
+    .replace(/\banion\s*gap\b/giu, 'anyon açıklığı')
+    .replace(/\baminoasit\b/giu, 'amino asit')
+    .replace(/\bNH3\b/gu, 'amonyak')
+    .replace(/\bhemitiroidectomy\b/giu, 'hemitiroidektomi')
+    .replace(/\binferior\s+thyroid\s+arter\b/giu, 'inferior tiroid arter')
+    .replace(/\btekrarlayan\s+laringeal\s+sinir\b/giu, 'rekürren laringeal sinir')
+    .replace(/\bperitonitis\b/giu, 'peritonit')
+    .replace(/\bCT[-\s]?angio\b/giu, 'BT anjiyografi')
+    .replace(/\bcil\s+laparotomi\b/giu, 'acil laparotomi');
 }
 
 function cleanText(value = '') {
@@ -215,10 +224,35 @@ function detectFeedbackDrift(feedback = '', currentOption = {}, allOptions = [])
   return other >= 0.5 && other > own + 0.2;
 }
 
+function isBadFeedbackText(value = '') {
+  const text = cleanText(value);
+  const norm = normalize(text);
+  if (!text) return true;
+  if (/\b(?:geri bildirim|feedback|gerekçe|açıklama)\b/iu.test(text)) return true;
+  if (/birlikte\s+z\.?$/iu.test(text) || /\bz\.?$/iu.test(text)) return true;
+  if (/üretilemedi|placeholder|lorem|undefined|null/iu.test(text)) return true;
+  if (norm.split(/\s+/u).length < 4) return true;
+  return false;
+}
+
 function fallbackFeedback(id = '', correctId = '') {
   return id === correctId
-    ? 'Bu seçenek, kökteki ayırt edici bulgularla en iyi uyumu gösterir.'
-    : 'Bu seçenek, kökteki ana bulguları birlikte açıklamaz.';
+    ? 'Kökteki ayırt edici bulgular bu cevabı destekler.'
+    : 'Kök bu seçeneği destekleyen beklenen paterni göstermiyor.';
+}
+
+function compactReason(value = '') {
+  const sentence = cleanBrokenSentences(cleanFeedback(value), 1);
+  if (isBadFeedbackText(sentence)) return '';
+  return sentence.replace(/[.!?]$/u, '');
+}
+
+function composeFeedback(id = '', correctId = '', reason = '') {
+  const r = compactReason(reason);
+  if (id === correctId) {
+    return ensureSentence(r || 'Kökteki ayırt edici bulgular bu cevabı destekler');
+  }
+  return ensureSentence(r || 'Kök bu seçeneği destekleyen beklenen paterni göstermiyor');
 }
 
 
@@ -283,19 +317,18 @@ function resolveCorrectId(payload = {}, options = []) {
   return loose?.id || '';
 }
 
-function feedbackObject(rawFeedback = [], correctId = 'A', explanation = '', options = [], visibleText = '') {
-  const arr = Array.isArray(rawFeedback)
-    ? rawFeedback
-    : OPTION_IDS.map((id) => rawFeedback?.[id] || rawFeedback?.[id.toLowerCase()] || rawFeedback?.[`option${id}`] || '');
+function feedbackObject(rawReasons = [], correctId = 'A', explanation = '', options = [], visibleText = '') {
+  const source = rawReasons && typeof rawReasons === 'object' && !Array.isArray(rawReasons)
+    ? OPTION_IDS.map((id) => rawReasons?.[id] || rawReasons?.[id.toLowerCase()] || rawReasons?.[`option${id}`] || '')
+    : asArray(rawReasons);
   return OPTION_IDS.reduce((acc, id, index) => {
     const option = options.find((item) => item.id === id) || { id, text: '' };
-    const rawText = arr[index] || fallbackFeedback(id, correctId);
-    let text = cleanBrokenSentences(cleanFeedback(rawText), 1);
-    if (!text || detectFeedbackDrift(text, option, options)) text = fallbackFeedback(id, correctId);
+    let reason = source[index] || '';
+    if (!reason && id === correctId) reason = explanation;
+    let text = composeFeedback(id, correctId, reason);
+    if (detectFeedbackDrift(text, option, options)) text = fallbackFeedback(id, correctId);
     text = pruneUnsupportedEvidence(text, visibleText, fallbackFeedback(id, correctId));
-    if (id === correctId && normalize(text) === normalize(fallbackFeedback(id, correctId)) && explanation) {
-      text = cleanBrokenSentences(explanation, 1) || text;
-    }
+    if (isBadFeedbackText(text)) text = fallbackFeedback(id, correctId);
     acc[id] = ensureSentence(text);
     return acc;
   }, {});
@@ -355,7 +388,8 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
   const visibleText = [stem, ...options.map((option) => option.text)].join(' ');
   const explanationRaw = payload.e || payload.explanation || '';
   const explanation = ensureSentence(pruneUnsupportedEvidence(cleanBrokenSentences(explanationRaw, 2), visibleText, 'Kökteki ayırt edici bulgular doğru cevabı destekler.'));
-  const feedback = feedbackObject(payload.f || payload.wrongOptionFeedback || payload.optionFeedback || {}, correctAnswer, explanation, options, visibleText);
+  const reasonSource = payload.r || payload.reasons || payload.f || payload.wrongOptionFeedback || payload.optionFeedback || {};
+  const feedback = feedbackObject(reasonSource, correctAnswer, explanation, options, visibleText);
   return {
     id: `ai-spot-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     relatedBranch: cleanText(payload.b || payload.relatedBranch || branch),
@@ -381,7 +415,7 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
     openAIMode: mode || '',
     promptVersion: PROMPT_VERSION,
     schemaVersion: SCHEMA_VERSION,
-    aiMeta: { provider: 'openai', remote: true, fallback: false, simplified: true, ultraCompact: true, deterministicQC: true },
+    aiMeta: { provider: 'openai', remote: true, fallback: false, simplified: true, skeletonFeedback: true, deterministicQC: true },
   };
 }
 
@@ -450,7 +484,7 @@ async function callOpenAI(prompt) {
   const model = resolveModelForScope('TUS');
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
   const timeoutMs = envNumber('TUS_OPENAI_PER_REQUEST_TIMEOUT_MS', envNumber('OPENAI_PER_REQUEST_TIMEOUT_MS', 60000));
-  const outputLimit = envNumber('TUS_OPENAI_MAX_OUTPUT_TOKENS', envNumber('OPENAI_MAX_OUTPUT_TOKENS', 720));
+  const outputLimit = envNumber('TUS_OPENAI_MAX_OUTPUT_TOKENS', envNumber('OPENAI_MAX_OUTPUT_TOKENS', 650));
   const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';

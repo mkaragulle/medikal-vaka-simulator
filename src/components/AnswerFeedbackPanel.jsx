@@ -162,6 +162,9 @@ function normalizeText(value = '') {
     .replace(/\bASİT\s*[-–—]?\s*baz\b/giu, 'Asit-baz')
     .replace(/\bASIT\s*[-–—]?\s*baz\b/giu, 'Asit-baz')
     .replace(/\bASİT\s*[-–—]?\s*BAZ\b/giu, 'Asit-baz')
+    .replace(/Bu seçenek, kökteki ana bulguları birlikte z\.?/giu, 'Kök bu seçeneği destekleyen beklenen paterni göstermiyor.')
+    .replace(/^\s*[A-E]\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/giu, '')
+    .replace(/\b(?:undefined|null|placeholder)\b/giu, '')
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .trim();

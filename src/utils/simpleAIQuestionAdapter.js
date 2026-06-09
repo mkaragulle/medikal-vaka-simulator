@@ -52,6 +52,35 @@ function ensureQuestion(value = '') {
   return /\?$/u.test(text) ? text : `${text}?`;
 }
 
+function isBadFeedbackText(value = '') {
+  const text = cleanText(value);
+  if (!text) return true;
+  if (/\b(?:geri bildirim|feedback|gerekçe|açıklama)\b/iu.test(text)) return true;
+  if (/birlikte\s+z\.?$/iu.test(text) || /\bz\.?$/iu.test(text)) return true;
+  if (/üretilemedi|placeholder|undefined|null/iu.test(text)) return true;
+  return normalizeForCompare(text).split(/\s+/u).length < 4;
+}
+
+function fallbackFeedback(id = '', correctId = '') {
+  return id === correctId
+    ? 'Kökteki ayırt edici bulgular bu cevabı destekler.'
+    : 'Kök bu seçeneği destekleyen beklenen paterni göstermiyor.';
+}
+
+function cleanFeedback(value = '') {
+  return cleanText(value)
+    .replace(/^\s*[A-E]\s*\)?\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/iu, '')
+    .replace(/^\s*[A-E]\s*\)\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
+    .replace(/^\s*(?:doğru|yanlış|seçimin|doğru\s+cevap|açıklama)\s*[:：.-]?\s*/iu, '')
+    .replace(/Bu seçenek, kökteki ana bulguları birlikte z\.?/giu, 'Kök bu seçeneği destekleyen beklenen paterni göstermiyor.')
+    .trim();
+}
+
+function composeFeedback(id = '', correctId = '', value = '') {
+  const cleaned = ensureSentence(cleanFeedback(value));
+  return isBadFeedbackText(cleaned) ? fallbackFeedback(id, correctId) : cleaned;
+}
+
 function normalizeDifficulty(value = 'Orta') {
   const text = cleanText(value).toLocaleLowerCase('tr');
   if (/kolay|easy/.test(text)) return 'Kolay';
@@ -80,11 +109,12 @@ function resolveCorrectOption(options = [], rawCorrect = '') {
 }
 
 function feedbackMap(raw = {}, correctId = 'A', explanation = '') {
-  const arr = Array.isArray(raw)
+  const source = Array.isArray(raw)
     ? raw
     : OPTION_IDS.map((id) => raw?.[id] || raw?.[id.toLowerCase()] || raw?.[`option${id}`] || '');
   return OPTION_IDS.reduce((acc, id, index) => {
-    acc[id] = ensureSentence(cleanText(arr[index] || (id === correctId ? explanation : 'Bu seçenek olgudaki ayırt ettirici verilerle en iyi açıklama değildir.')));
+    const value = source[index] || (id === correctId ? explanation : '');
+    acc[id] = ensureSentence(composeFeedback(id, correctId, value));
     return acc;
   }, {});
 }
@@ -112,7 +142,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const options = normalizeOptions(payload.options || payload.o || []);
   const correctOption = resolveCorrectOption(options, payload.correctAnswer || payload.c || payload.answer || '') || options[0] || { id: 'A', text: '' };
   const explanation = ensureSentence(payload.explanation || payload.e || '');
-  const optionRationales = feedbackMap(payload.wrongOptionFeedback || payload.optionFeedback || payload.f || {}, correctOption.id, explanation);
+  const optionRationales = feedbackMap(payload.wrongOptionFeedback || payload.optionFeedback || payload.r || payload.reasons || payload.f || {}, correctOption.id, explanation);
   const stem = ensureSentence(payload.stem || payload.s || '');
   const branch = cleanText(payload.relatedBranch || payload.branch || payload.b || meta.branchFilter || 'TUS');
   const difficulty = normalizeDifficulty(payload.difficulty || payload.d || meta.difficulty || 'Orta');
